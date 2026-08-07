@@ -4,7 +4,7 @@ An evidence-backed buyer’s guide to carbon gravel and all-road bikes and frame
 
 **Current scope:** carbon complete bikes and framesets that generally support more than 38 mm nominal tires, with emphasis on value, dated China prices, usable clearance, modern standards, manufacturing evidence, and finished-bike cost.
 
-[Open the buyer guide](https://OWNER.github.io/china-carbon-bike-guide/) · [Browse the data](data/) · [Contribute research](CONTRIBUTING.md)
+[Open the buyer guide](https://p0s.github.io/china-carbon-bike-guide/) · [Browse the data](data/) · [Contribute research](CONTRIBUTING.md)
 
 > Replace `OWNER` in the link above and in `CITATION.cff` after creating the GitHub repository. The deployed site itself derives the correct repository path automatically in GitHub Actions.
 
