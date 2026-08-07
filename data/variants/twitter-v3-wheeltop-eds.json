@@ -1,0 +1,55 @@
+{
+  "id": "twitter-v3-wheeltop-eds",
+  "platform_id": "twitter-gravel-v3",
+  "name": "Gravel V3 WheelTop EDS 2×12",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Best complete-bike value at the observed ¥5,191 price. A self-build with comparable electronic hydraulic parts costs materially more.",
+    "best_for": [
+      "electronic shifting value",
+      "budget performance",
+      "drop-bar gravel"
+    ],
+    "strengths": [
+      "Wireless electronic 2×12 and hydraulic brakes",
+      "Carbon frame, fork, and cockpit",
+      "T47 bottom bracket",
+      "Approximately 9.9 kg claim"
+    ],
+    "caveats": [
+      "Wheels are aluminum, not carbon",
+      "Maximum clearance is unverified",
+      "Proprietary electronic drivetrain has a smaller service network than Shimano"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 5300,
+      "fair_buy_below": 6000,
+      "not_compelling_above": 6800
+    }
+  },
+  "source_ids": [
+    "twitter-v3-official",
+    "market-snapshot-2026-08-05"
+  ],
+  "drivetrain": {
+    "brand": "WheelTop",
+    "model": "EDS TX",
+    "speeds": "2x12",
+    "shifting": "electronic-wireless",
+    "layout": "double"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×40C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true
+  },
+  "claimed_complete_weight_g": 9900
+}

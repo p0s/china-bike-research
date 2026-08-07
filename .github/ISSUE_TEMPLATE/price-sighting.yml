@@ -1,0 +1,53 @@
+name: Submit a price sighting
+description: Add a dated price for an exact existing configuration.
+title: "Price: [model] — ¥[amount] — [date]"
+labels: [research, price]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Exact variant ID or full model/configuration
+    validations:
+      required: true
+  - type: input
+    id: amount
+    attributes:
+      label: Checkout or list price
+      placeholder: "¥5,191"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Observation date
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+  - type: dropdown
+    id: price_type
+    attributes:
+      label: Price type
+      options: [Observed checkout, Official list, Reference range, Historical promotion]
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Platform and conditions
+      description: Seller type, coupon, subsidy, membership, trade-in, size/color restriction, and whether shipping is included.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public link or privacy-safe cropped evidence
+      description: Do not attach a full account/order screen.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: The evidence contains no personal, account, order, shipping, tracking, or payment information.
+          required: true

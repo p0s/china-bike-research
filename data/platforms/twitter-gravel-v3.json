@@ -1,0 +1,35 @@
+{
+  "id": "twitter-gravel-v3",
+  "brand_id": "twitter",
+  "name": "Gravel V3",
+  "name_zh": "Gravel V3",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Extremely aggressive complete-bike pricing with carbon frame, fork, and integrated cockpit. Best treated as a value platform with incomplete frame-provenance disclosure.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal",
+    "claimed_fiber": "high-modulus"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "conditional",
+    "note": "Official stock tire is 40C; no dependable published maximum was found. Confirm actual measured width and remaining clearance.",
+    "stock_nominal_mm": 40
+  },
+  "mounts": [
+    "fender"
+  ],
+  "internal_storage": false,
+  "china_availability": "mainland-domestic",
+  "source_ids": [
+    "twitter-v3-official",
+    "twitter-company-profile"
+  ],
+  "last_reviewed": "2026-08-06"
+}

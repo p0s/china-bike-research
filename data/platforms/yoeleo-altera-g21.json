@@ -1,0 +1,35 @@
+{
+  "id": "yoeleo-altera-g21",
+  "brand_id": "yoeleo",
+  "name": "Altera G21",
+  "name_zh": "Altera G21",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Broad-capability premium package with 53 mm 1× clearance, T47, UDH, storage, cockpit, and flexible seatpost.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 980
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official 1× maximum; verify 2× clearance separately.",
+    "published_max_mm": 53
+  },
+  "mounts": [
+    "top-tube",
+    "fender"
+  ],
+  "internal_storage": true,
+  "china_availability": "direct-brand",
+  "source_ids": [
+    "yoeleo-altera-g21-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

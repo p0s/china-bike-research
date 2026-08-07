@@ -1,0 +1,34 @@
+{
+  "id": "incolor-voyager",
+  "brand_id": "incolor",
+  "name": "Voyager",
+  "name_zh": "Voyager",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Light premium frame with 45C clearance and UDH, but weak value against wider and cheaper alternatives.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "unknown",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 850
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "retailer-claim",
+    "eligibility": "pass",
+    "note": "Retailer claim; verify with current manufacturer documentation.",
+    "published_max_mm": 45
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "mainland-and-direct",
+  "source_ids": [
+    "incolor-voyager-retailer"
+  ],
+  "last_reviewed": "2026-08-06"
+}

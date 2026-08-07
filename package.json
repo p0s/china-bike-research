@@ -1,0 +1,19 @@
+{
+  "name": "china-carbon-bike-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Evidence-backed buyer's guide to carbon gravel and all-road bikes available in China.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate-data.mjs",
+    "privacy": "node scripts/check-privacy.mjs",
+    "stale:report": "node scripts/stale-report.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run privacy && npm run validate && npm test && npm run build"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "seka-exaero-gr-frameset",
+  "platform_id": "seka-exaero-gr",
+  "name": "ExAero GR frameset",
+  "kind": "frameset",
+  "market": "mainland-china-or-direct",
+  "editorial": {
+    "verdict": "One of the most sophisticated high-end designs in the dataset, priced for aero development and brand rather than value.",
+    "best_for": [
+      "premium aero racer"
+    ],
+    "strengths": [
+      "56/52 mm clearance",
+      "T47, UDH, storage",
+      "High-end material claims"
+    ],
+    "caveats": [
+      "Premium price",
+      "Factory ownership not clearly public"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 14500,
+      "fair_buy_below": 15800,
+      "not_compelling_above": 17500
+    }
+  },
+  "source_ids": [
+    "seka-official",
+    "compiled-research-2026-08-06"
+  ],
+  "included": [
+    "frame",
+    "fork",
+    "small parts; verify exact package"
+  ]
+}

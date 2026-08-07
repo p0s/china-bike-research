@@ -1,0 +1,63 @@
+name: Add a model
+description: Propose an exact complete bike or frameset with evidence.
+title: "Add: [brand] [exact model]"
+labels: [research, new-model]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Identify the exact generation and remove all personal, account, order, shipping, and payment information from attachments.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Product type
+      options: [Complete bike, Frameset]
+    validations:
+      required: true
+  - type: input
+    id: brand
+    attributes:
+      label: Brand and Chinese name
+      placeholder: "Example Brand / 中文品牌名"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Exact model, generation, and configuration
+    validations:
+      required: true
+  - type: textarea
+    id: specs
+    attributes:
+      label: Decision-relevant specifications
+      description: Tire evidence, bar type, frame/fork, BB, hanger, mounts, storage, drivetrain, wheels, weight, and warranty.
+    validations:
+      required: true
+  - type: textarea
+    id: price
+    attributes:
+      label: Dated price and purchase route
+      description: Amount/range, currency, date, platform, promotion conditions, and shipping. Do not include order details.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: One URL per line, with what each source supports.
+    validations:
+      required: true
+  - type: textarea
+    id: unknowns
+    attributes:
+      label: Known unknowns and caveats
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed names, avatars, accounts, contacts, addresses, order IDs, tracking, payment data, and private messages.
+          required: true

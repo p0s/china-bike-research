@@ -1,0 +1,37 @@
+{
+  "id": "seka-exaero-gr",
+  "brand_id": "seka",
+  "name": "ExAero GR",
+  "name_zh": "ExAero GR",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Premium aero race frame with very large asymmetric clearance, storage, and high-end material claims.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 980,
+    "claimed_fiber": "T1100/M46J-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official front 56 mm and rear 52 mm maxima.",
+    "published_front_max_mm": 56,
+    "published_rear_max_mm": 52
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": true,
+  "china_availability": "mainland-and-direct",
+  "source_ids": [
+    "seka-official",
+    "compiled-research-2026-08-06"
+  ],
+  "last_reviewed": "2026-08-06"
+}

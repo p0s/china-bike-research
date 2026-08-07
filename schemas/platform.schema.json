@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/platform.schema.json",
+  "title": "Platform",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "brand_id",
+    "name",
+    "category",
+    "frame",
+    "tire_clearance",
+    "source_ids",
+    "last_reviewed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "brand_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "frame": {
+      "type": "object"
+    },
+    "tire_clearance": {
+      "type": "object"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

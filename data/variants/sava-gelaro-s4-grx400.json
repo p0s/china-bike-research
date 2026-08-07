@@ -1,0 +1,52 @@
+{
+  "id": "sava-gelaro-s4-grx400",
+  "platform_id": "sava-gelaro",
+  "name": "Gelaro S4 GRX400",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Closest conventional alternative to Twitter when Shimano serviceability and a published 45C maximum matter more than electronic shifting.",
+    "best_for": [
+      "Shimano-first buyer",
+      "reliability-focused budget buyer"
+    ],
+    "strengths": [
+      "Shimano GRX hydraulic system",
+      "Official 45C maximum",
+      "Established complete-bike distribution"
+    ],
+    "caveats": [
+      "Usually costs more than Twitter EDS with less headline component value",
+      "T800 label does not independently prove better frame execution"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 6300,
+      "fair_buy_below": 6800,
+      "not_compelling_above": 7500
+    }
+  },
+  "source_ids": [
+    "sava-gelaro-s4-official",
+    "compiled-research-2026-08-06"
+  ],
+  "drivetrain": {
+    "brand": "Shimano",
+    "model": "GRX400",
+    "speeds": "2x10",
+    "shifting": "mechanical",
+    "layout": "double"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×40C",
+  "cockpit": {
+    "material": "aluminum",
+    "integrated": false
+  },
+  "claimed_complete_weight_g": 10200
+}

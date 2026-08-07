@@ -1,0 +1,37 @@
+{
+  "id": "pardus-uragano-sport",
+  "brand_id": "pardus",
+  "name": "Uragano Sport",
+  "name_zh": "Uragano Sport",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "A more expensive but better-documented carbon platform from a strong domestic manufacturer.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "unknown",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal",
+    "claimed_fiber": "Toray-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official maximum 45C.",
+    "stock_nominal_mm": 40,
+    "published_max_mm": 45
+  },
+  "mounts": [
+    "fender",
+    "rack"
+  ],
+  "internal_storage": false,
+  "china_availability": "mainland-domestic",
+  "source_ids": [
+    "pardus-uragano-sport-official",
+    "pardus-company-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

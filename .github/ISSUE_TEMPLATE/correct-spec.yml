@@ -1,0 +1,43 @@
+name: Correct a specification
+description: Correct one or more fields with exact model context and sources.
+title: "Correction: [brand/model] — [field]"
+labels: [research, correction]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Exact model, generation, and variant
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field being corrected
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Current value and proposed value
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_type
+    attributes:
+      label: Evidence type
+      options: [Measured, Official, Seller claim, Community report, Inferred]
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting source and explanation
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: Any attached evidence is free of personal and transaction data.
+          required: true

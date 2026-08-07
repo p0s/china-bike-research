@@ -1,0 +1,35 @@
+{
+  "id": "tfsa-jh37",
+  "brand_id": "tfsa",
+  "name": "JH37",
+  "name_zh": "JH37",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Very light claimed budget frame with T47 and 40C support. The aggressive weight makes model-specific test evidence especially valuable.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 850,
+    "claimed_fiber": "T800-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official 700C maximum 40C; 650B claim is wider.",
+    "published_max_mm": 40
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "tfsa-jh37-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

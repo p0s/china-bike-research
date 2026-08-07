@@ -1,0 +1,35 @@
+{
+  "id": "bxt-055",
+  "brand_id": "bxt",
+  "name": "BXT-055",
+  "name_zh": "BXT-055",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Low-cost direct frame with T47, UDH, and 50C clearance. The modern feature list is stronger than the public QC documentation.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1100,
+    "claimed_fiber": "T1000-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 50C maximum.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "bxt-055-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

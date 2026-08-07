@@ -1,0 +1,32 @@
+{
+  "id": "pardus-super-sport-gen2",
+  "brand_id": "pardus",
+  "name": "Super Sport Gen2",
+  "name_zh": "Super Sport 二代",
+  "category": "all-road",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Endurance/all-road platform with 40C capability and attractive launch configurations. Better for rough roads and dry hardpack than deep gravel.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "unknown",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "industry-report",
+    "eligibility": "pass",
+    "note": "Launch coverage states 40C capability; leave more caution for mud than on a true 45–50C gravel frame.",
+    "published_max_mm": 40
+  },
+  "mounts": [],
+  "internal_storage": false,
+  "china_availability": "mainland-domestic",
+  "source_ids": [
+    "pardus-super-sport-launch",
+    "pardus-company-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

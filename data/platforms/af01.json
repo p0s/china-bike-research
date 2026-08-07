@@ -1,0 +1,35 @@
+{
+  "id": "af01",
+  "brand_id": "af-bicycles",
+  "name": "AF01",
+  "name_zh": "AF01",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Well-specified 50C frame with T47, UDH, and a five-year warranty claim. Manufacturing provenance is less clear than the product specification.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 980
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 50C maximum.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "top-tube",
+    "fender"
+  ],
+  "internal_storage": false,
+  "china_availability": "direct-brand",
+  "source_ids": [
+    "af01-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

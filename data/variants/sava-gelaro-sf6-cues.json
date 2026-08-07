@@ -1,0 +1,51 @@
+{
+  "id": "sava-gelaro-sf6-cues",
+  "platform_id": "sava-gelaro-sf",
+  "name": "Gelaro SF6 CUES",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "A sensible flat-bar carbon option, not a direct drop-bar Twitter substitute.",
+    "best_for": [
+      "flat-bar rider",
+      "urban and mixed-surface riding"
+    ],
+    "strengths": [
+      "Official 45C maximum",
+      "Shimano CUES serviceability",
+      "Simple control layout"
+    ],
+    "caveats": [
+      "Fewer hand positions than a drop bar",
+      "Price varies materially by channel"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 6000,
+      "fair_buy_below": 6800,
+      "not_compelling_above": 7600
+    }
+  },
+  "source_ids": [
+    "sava-gelaro-sf6-official",
+    "compiled-research-2026-08-06"
+  ],
+  "drivetrain": {
+    "brand": "Shimano",
+    "model": "CUES",
+    "speeds": "1x11",
+    "shifting": "mechanical",
+    "layout": "single"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×40C",
+  "cockpit": {
+    "material": "aluminum",
+    "integrated": false
+  }
+}

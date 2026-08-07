@@ -1,0 +1,34 @@
+{
+  "id": "winspace-g5",
+  "brand_id": "winspace",
+  "name": "G5",
+  "name_zh": "G5",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Aero gravel flagship with unusually large front/rear clearance and internal storage.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official front/rear maxima differ; rear clearance governs matching tire setups.",
+    "published_front_max_mm": 58,
+    "published_rear_max_mm": 53
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": true,
+  "china_availability": "mainland-and-direct",
+  "source_ids": [
+    "winspace-g5-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

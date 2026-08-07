@@ -1,0 +1,34 @@
+{
+  "id": "spcycle-g026",
+  "brand_id": "spcycle",
+  "name": "G026",
+  "name_zh": "G026",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "One of the cheapest modern frames with T47, UDH, 50C clearance, and downtube storage.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official catalog claim.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "top-tube",
+    "fender"
+  ],
+  "internal_storage": true,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "spcycle-gravel-catalog"
+  ],
+  "last_reviewed": "2026-08-06"
+}

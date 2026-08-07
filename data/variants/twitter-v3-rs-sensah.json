@@ -1,0 +1,53 @@
+{
+  "id": "twitter-v3-rs-sensah",
+  "platform_id": "twitter-gravel-v3",
+  "name": "Gravel V3 RS / Sensah 2×12",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Cheapest traceable complete in the dataset and the default sub-¥4,200 recommendation.",
+    "best_for": [
+      "budget complete",
+      "drop-bar gravel",
+      "high component value"
+    ],
+    "strengths": [
+      "Full carbon frame/fork/cockpit package at an unusually low complete-bike price",
+      "Hydraulic braking",
+      "Domestic purchase route"
+    ],
+    "caveats": [
+      "Maximum clearance is not clearly published",
+      "Frame-molding provenance and model-specific testing are not transparent",
+      "Exact component substitutions must be checked"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 4100,
+      "fair_buy_below": 4500,
+      "not_compelling_above": 5000
+    }
+  },
+  "source_ids": [
+    "twitter-v3-official",
+    "market-snapshot-2026-08-05"
+  ],
+  "drivetrain": {
+    "brand": "Sensah",
+    "model": "RS 2×12",
+    "speeds": "2x12",
+    "shifting": "mechanical",
+    "layout": "double"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×40C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true
+  }
+}

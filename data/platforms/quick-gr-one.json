@@ -1,0 +1,35 @@
+{
+  "id": "quick-gr-one",
+  "brand_id": "quick",
+  "name": "GR:ONE",
+  "name_zh": "GR:ONE",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "High-end monocoque race frame with lower 45 mm clearance than several cheaper modern alternatives.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 919,
+    "claimed_fiber": "high-modulus-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 45 mm maximum.",
+    "published_max_mm": 45
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "mainland-and-direct",
+  "source_ids": [
+    "quick-gr-one-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

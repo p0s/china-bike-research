@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/source.schema.json",
+  "title": "Source",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "type",
+    "title",
+    "publisher",
+    "accessed_at",
+    "reliability"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "accessed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "reliability": {
+      "type": "object"
+    }
+  }
+}

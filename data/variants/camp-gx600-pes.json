@@ -1,0 +1,50 @@
+{
+  "id": "camp-gx600-pes",
+  "platform_id": "camp-gx600",
+  "name": "GX600 PES",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Interesting official ¥5,688 flat-bar complete, but excluded from the >38 mm recommendation until clearance is confirmed.",
+    "best_for": [
+      "flat-bar all-road rider"
+    ],
+    "strengths": [
+      "Low claimed weight",
+      "Wireless 1×12",
+      "Clear domestic list price"
+    ],
+    "caveats": [
+      "Published stock tire is only 35C",
+      "Maximum tire capability is unknown"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 5600,
+      "fair_buy_below": 6000,
+      "not_compelling_above": 6500
+    }
+  },
+  "source_ids": [
+    "camp-gx600-official"
+  ],
+  "drivetrain": {
+    "brand": "Magene",
+    "model": "PES",
+    "speeds": "1x12",
+    "shifting": "electronic-wireless",
+    "layout": "single"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×35C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": false
+  },
+  "claimed_complete_weight_g": 9100
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lightcarbon-lcg071s-pro",
+  "brand_id": "lightcarbon",
+  "name": "LCG071S-PRO",
+  "name_zh": "LCG071S-PRO",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Modern direct-factory frame with 50C clearance, T47, UDH, downtube storage, and unusually complete public specification.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_fiber": "T700/T800-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal maximum 50C; verify actual tire/rim combination.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "fender",
+    "rack",
+    "top-tube"
+  ],
+  "internal_storage": true,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "lightcarbon-lcg071s-official",
+    "lightcarbon-company-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

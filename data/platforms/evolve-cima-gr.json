@@ -1,0 +1,36 @@
+{
+  "id": "evolve-cima-gr",
+  "brand_id": "evolve",
+  "name": "CIMA GR",
+  "name_zh": "CIMA GR",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "preorder",
+  "summary": "Extremely light premium gravel frame with impressive material and aero claims, but first-generation/preorder uncertainty is material.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "BSA",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 750,
+    "claimed_fiber": "T1100/T800/M40-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 50C maximum.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "preorder-direct",
+  "source_ids": [
+    "evolve-cima-official",
+    "compiled-research-2026-08-06"
+  ],
+  "last_reviewed": "2026-08-06"
+}

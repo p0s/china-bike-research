@@ -1,0 +1,35 @@
+{
+  "id": "xmcarbonspeed-cs-gr01",
+  "brand_id": "xmcarbonspeed",
+  "name": "CS-GR01",
+  "name_zh": "CS-GR01",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Clear direct-sale modern frame with 50C, T47, UDH, and a three-year warranty claim.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1234
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 50C maximum.",
+    "published_max_mm": 50
+  },
+  "mounts": [
+    "top-tube",
+    "fender"
+  ],
+  "internal_storage": false,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "xmcarbonspeed-gr01-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

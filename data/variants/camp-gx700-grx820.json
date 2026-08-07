@@ -1,0 +1,51 @@
+{
+  "id": "camp-gx700-grx820",
+  "platform_id": "camp-gx700",
+  "name": "GX700 GRX 1×12",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "A strong proper-gravel specification, but weak value relative to the Twitter EDS unless Shimano and 45C are worth almost twice the price.",
+    "best_for": [
+      "Shimano-first buyer",
+      "proper gravel buyer"
+    ],
+    "strengths": [
+      "Official 45C setup",
+      "GRX 1×12",
+      "Carbon cockpit and seatpost",
+      "Domestic official SKU"
+    ],
+    "caveats": [
+      "Approximately twice the Twitter EDS price",
+      "Aluminum wheels"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 9000,
+      "fair_buy_below": 10000,
+      "not_compelling_above": 11000
+    }
+  },
+  "source_ids": [
+    "camp-gx700-official"
+  ],
+  "drivetrain": {
+    "brand": "Shimano",
+    "model": "GRX RX820/RX822",
+    "speeds": "1x12",
+    "shifting": "mechanical",
+    "layout": "single"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×45C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true
+  }
+}

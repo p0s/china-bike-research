@@ -1,0 +1,38 @@
+name: Submit an owner report
+description: Add a measurement, issue, inspection finding, or warranty outcome.
+title: "Owner report: [brand/model] — [topic]"
+labels: [research, owner-report]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Exact model, generation, size, and configuration
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Purchase and usage context
+      description: Approximate month, rider weight range if relevant, mileage, terrain, and changes from stock. Do not include seller/account/order identity.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Observation
+      description: For clearance include tire, rim internal width, pressure, measured width, remaining gaps, and method.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Resolution or current status
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed names, contacts, addresses, accounts, order IDs, tracking, and payment information.
+          required: true

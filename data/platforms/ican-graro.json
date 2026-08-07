@@ -1,0 +1,36 @@
+{
+  "id": "ican-graro",
+  "brand_id": "ican",
+  "name": "Graro",
+  "name_zh": "Graro",
+  "category": "gravel-race",
+  "handlebar": "drop",
+  "status": "current",
+  "summary": "Lighter premium ICAN frame with UCI listing and a more polished race-oriented package.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "T47",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1085,
+    "claimed_fiber": "T700/T800/T1000-claimed"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Official nominal 45C maximum.",
+    "published_max_mm": 45
+  },
+  "mounts": [
+    "top-tube"
+  ],
+  "internal_storage": false,
+  "china_availability": "direct-factory",
+  "source_ids": [
+    "ican-graro-official",
+    "ican-company-official"
+  ],
+  "last_reviewed": "2026-08-06"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "pardus-super-sport-gen2-egr",
+  "platform_id": "pardus-super-sport-gen2",
+  "name": "Super Sport Gen2 eGR",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Potentially the best-manufactured frame close to ¥5,000 for mostly paved and dry all-road use, but not a substitute for a 45–50C adventure frame.",
+    "best_for": [
+      "all-road rider",
+      "rough-road commuter",
+      "value buyer"
+    ],
+    "strengths": [
+      "Strong brand/manufacturing confidence",
+      "Attractive launch price",
+      "40C all-road capability"
+    ],
+    "caveats": [
+      "Launch price may not persist",
+      "Less mud and adventure margin than a true gravel platform"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 5100,
+      "fair_buy_below": 5800,
+      "not_compelling_above": 6500
+    }
+  },
+  "source_ids": [
+    "pardus-super-sport-launch",
+    "pardus-company-official"
+  ],
+  "drivetrain": {
+    "brand": "L-TWOO",
+    "model": "eGR",
+    "speeds": "1x12",
+    "shifting": "electronic-wireless",
+    "layout": "single"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "up to 700×40C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true
+  }
+}

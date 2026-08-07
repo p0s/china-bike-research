@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/price.schema.json",
+  "title": "Price",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "variant_id",
+    "observed_at",
+    "price_type",
+    "currency",
+    "source_ids"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "variant_id": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "price_type": {
+      "type": "string"
+    },
+    "currency": {
+      "const": "CNY"
+    },
+    "amount_cny": {
+      "type": "number"
+    },
+    "low_cny": {
+      "type": "number"
+    },
+    "high_cny": {
+      "type": "number"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "trinx-gtr-c6",
+  "platform_id": "trinx-gtr-c6",
+  "name": "GTR C6",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "Manufacturing-confidence upgrade over Twitter if a current exact SKU is available near the historical ¥7,000 price.",
+    "best_for": [
+      "manufacturing-confidence buyer"
+    ],
+    "strengths": [
+      "Own carbon production and testing evidence",
+      "True drop-bar gravel format"
+    ],
+    "caveats": [
+      "Observed prices are historical references",
+      "Exact current BOM must be confirmed"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 7000,
+      "fair_buy_below": 7600,
+      "not_compelling_above": 8500
+    }
+  },
+  "source_ids": [
+    "trinx-company-official",
+    "trinx-factory-biketo",
+    "compiled-research-2026-08-06"
+  ],
+  "drivetrain": {
+    "brand": "varies",
+    "model": "12-speed build",
+    "speeds": "1x12",
+    "shifting": "mechanical",
+    "layout": "single"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "wheels": {
+    "rim_material": "aluminum"
+  },
+  "tires": "700×40C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true
+  }
+}

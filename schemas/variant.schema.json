@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/variant.schema.json",
+  "title": "Variant",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "platform_id",
+    "name",
+    "kind",
+    "editorial",
+    "source_ids"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "platform_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "complete-bike",
+        "frameset"
+      ]
+    },
+    "editorial": {
+      "type": "object"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
