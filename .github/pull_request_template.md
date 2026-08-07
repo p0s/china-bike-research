@@ -1,6 +1,6 @@
 ## What changed
 
-<!-- Identify exact brands, platforms, variants, prices, sources, or guides. -->
+<!-- Identify exact brands, platforms, variants, prices, sources, or images. -->
 
 ## Evidence
 
@@ -13,7 +13,7 @@
 ## Privacy
 
 - [ ] No personal, account, order, shipping, tracking, payment, credential, or private-message data is included.
-- [ ] Third-party images or excerpts are omitted or have clear redistribution permission.
+- [ ] Images have exactness, source, rights, credit, and alt-text metadata; third-party files are not committed without permission or a compatible license.
 
 ## Validation
 

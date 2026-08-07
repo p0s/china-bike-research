@@ -1,8 +1,15 @@
 {
   "project": "China Carbon Bike Guide",
   "scope": "Carbon gravel and all-road bikes and framesets available to riders in mainland China, generally with nominal tire capability above 38 mm.",
-  "snapshot_date": "2026-08-06",
+  "snapshot_date": "2026-08-07",
   "currency": "CNY",
   "buyer_note": "Prices are dated observations or reference ranges, not live quotes. Verify the exact SKU, measured tire width, remaining clearance, component substitutions, serial number, and warranty before paying.",
-  "privacy": "The dataset contains public product information and anonymized market observations only. It contains no buyer identity, account details, private messages, or private screenshots."
+  "privacy": "The dataset contains public product information, anonymized market observations, remote product-image URLs and credits, and original project placeholders only. It contains no buyer identity, account details, private messages, private screenshots, or personal permission correspondence.",
+  "frameset_build_assumption": {
+    "amount_cny": 6000,
+    "label": "standard China-market build",
+    "drivetrain_label": "Electronic 2×12 standard build",
+    "summary": "A fixed allowance for a China-market electronic hydraulic 2×12 drivetrain, alloy wheels, tires, cockpit or finishing kit, and assembly.",
+    "reviewed_at": "2026-08-07"
+  }
 }

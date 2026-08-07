@@ -1,50 +1,35 @@
 # China Carbon Bike Guide
 
-An evidence-backed buyer’s guide to carbon gravel and all-road bikes and framesets available to riders in mainland China.
+A minimalist, evidence-backed comparison of carbon gravel and all-road bikes available to riders in mainland China.
 
-**Current scope:** carbon complete bikes and framesets that generally support more than 38 mm nominal tires, with emphasis on value, dated China prices, usable clearance, modern standards, manufacturing evidence, and finished-bike cost.
+The GitHub Pages site opens directly into one unified catalog. Complete bikes and frameset-based builds are sorted and filtered together, so the visible price is always comparable:
 
-[Open the buyer guide](https://p0s.github.io/china-bike-research/) · [Browse the data](data/) · [Contribute research](CONTRIBUTING.md)
+- complete bike: latest dated complete-bike price;
+- frameset: latest dated frameset price plus a fixed **¥6,000** China-market build allowance.
 
-> GitHub repository ownership has been set to `p0s` in the project metadata and links above now resolve for this repo owner.
+The allowance represents an electronic hydraulic 2×12 drivetrain, alloy wheels, tires, finishing parts, and assembly. It is deliberately identical for every frame; the underlying frame price and all price assumptions remain visible in the price details.
 
-## Current quick picks
+## Site behavior
 
-| Buyer need | Current reference | Great-buy price | Main caveat |
-|---|---|---:|---|
-| Cheapest traceable complete | Twitter Gravel V3 RS/Sensah | ≤ ¥4,100 | Maximum clearance and frame-molding provenance are not fully documented |
-| Best complete-bike value | Twitter Gravel V3 WheelTop EDS | ≤ ¥5,300 | Aluminum wheels; smaller drivetrain service network than Shimano |
-| Shimano budget alternative | SAVA Gelaro S4 GRX400 | ≤ ¥6,300 | Less component value than the Twitter EDS build |
-| Conservative budget custom frame | LightCarbon LCG071S-PRO | ≤ ¥4,200 frameset | Finished custom build costs materially more than a value complete |
-| Premium versatile package | Yoeleo Altera G21 | Model-dependent | Different price class from the budget completes |
-
-These are dated editorial reference points, not permanent rankings. The website displays the underlying price date, evidence status, and caveats.
-
-## What is included
-
-- Buyer-facing static website for GitHub Pages
-- Separate complete-bike and frameset explorers
-- Side-by-side comparison for up to four products
-- Exact frame platforms separated from build configurations and dated prices
-- Evidence labels for tire-clearance and technical claims
-- Manufacturing-provenance assessments with explicit confidence
-- Reusable custom-build cost profiles
-- Brand pages, buyer guides, watchlist, and exclusions
+- Product images, search, filters, and sorting on the homepage
+- Complete bikes and estimated frame builds in one list
+- Inline comparison of two to four selected products
+- Price date, freshness, promotion conditions, clearance evidence, and buy thresholds in accessible info popovers
+- Individual model pages for rationale, caveats, seller questions, source records, and manufacturing context
+- Product-image credits and automatic local fallbacks for broken remote images
 - Public JSON and CSV exports
-- Structured GitHub issue forms and pull-request workflow
-- Cross-reference validation, privacy scanning, tests, internal-link checks, and static-site build validation
 
-The initial dataset contains **23 brands, 29 platforms, 30 configurations, 30 dated price records, and 35 sources**. It deliberately preserves uncertainty instead of filling missing facts with confident guesses.
+There are no accounts, analytics, advertisements, affiliate rankings, or backend services.
 
-## Local development
+## Run locally
 
-Prerequisite: **Node.js 20 or newer**. The project has no runtime or build dependencies, so no package installation is required.
+Requires Node.js 20 or newer. The project has no external runtime or build dependencies.
 
 ```bash
 npm run dev
 ```
 
-This builds the site and serves it at `http://127.0.0.1:4173`.
+Open `http://127.0.0.1:4173`.
 
 Run the complete quality gate:
 
@@ -52,55 +37,47 @@ Run the complete quality gate:
 npm run check
 ```
 
-That command performs:
-
-1. privacy-pattern scan;
-2. data and cross-reference validation;
-3. Node test suite;
-4. production static build;
-5. generated internal-link validation.
+This performs the privacy scan, data and image validation, tests, static build, and internal-link validation.
 
 ## Publish with GitHub Pages
 
-1. Create a new **public** GitHub repository.
-2. Upload the contents of this repository so `package.json` is at the repository root.
+1. Create a public GitHub repository.
+2. Upload these files so `package.json` is at repository root.
 3. Use `main` as the default branch.
-4. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-5. Push to `main`, or manually run **Deploy GitHub Pages** under the Actions tab.
+4. Open **Settings → Pages** and choose **GitHub Actions** as the source.
+5. Push to `main`.
 
-The build derives the GitHub project-page base path from `GITHUB_REPOSITORY`, so it continues to work when the repository is renamed. A repository named `p0s.github.io` is also handled without a project subpath.
+The included workflow derives the correct project-page base path from the repository name.
 
-Optional local deployment variables are documented in `.env.example`. GitHub Actions does not require them.
-
-## Data structure
+## Data model
 
 ```text
 data/
-├── brands/          # company, manufacturing relationship, support
-├── platforms/       # shared frame facts, clearance, standards
-├── variants/        # exact complete-bike or frameset configuration
-├── prices/          # dated observations and ranges
-├── sources/         # source identity and reliability notes
-├── build-profiles/  # reusable parts-cost assumptions
-├── recommendations/ # buyer-facing quick picks
-├── candidates/      # interesting but incomplete products
-└── exclusions/      # explicit exclusion reason and review trigger
+├── brands/          # manufacturer relationship and China support
+├── platforms/       # shared frame, clearance, geometry-standard facts
+├── variants/        # exact complete-bike or frameset offering
+├── prices/          # dated observations and reference ranges
+├── sources/         # source identity, access date, and reliability notes
+├── images/          # product-image source, exactness, rights, and URL
+├── recommendations/ # compact buyer-facing recommendation labels
+├── candidates/      # promising models still missing evidence
+└── exclusions/      # excluded products and the reason
 ```
 
-A price is never stored as a timeless property of a model. A frame platform is not duplicated for every drivetrain configuration. Human-edited records use JSON, and reference schemas are published in `schemas/`.
+A price is never stored as a timeless product property. Shared frame facts are not duplicated across drivetrain variants. Missing evidence lowers confidence rather than being treated as proof of poor quality.
 
-## Privacy
+## Images
 
-The initial repository contains no buyer identity, personal name, private email, phone number, address, account handle, order ID, tracking number, payment information, private message, or private screenshot. Marketplace observations are anonymized and retain only decision-relevant model, price, date, and condition facts.
+Current product photos are loaded from their credited official manufacturer or retailer host and are not copied into this repository. Every image has source, exactness, credit, rights-status, and fallback metadata. See [IMAGE_SOURCES.md](IMAGE_SOURCES.md) and [THIRD_PARTY.md](THIRD_PARTY.md).
 
-Contributors must remove personal and transaction data from attachments. See the generated `/privacy/` page and [CONTRIBUTING.md](CONTRIBUTING.md).
+## Contributing
 
-## Evidence and limitations
+Research is added through structured GitHub issues and pull requests. Exact model identity, dated evidence, and privacy-safe submissions are required. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-“Official” means a manufacturer or brand claim, not independent verification. “Unknown” means missing evidence, not a negative quality judgment. The guide is not structural certification, a professional fit service, or a live inventory system. Verify the exact SKU, measured tire/rim combination, remaining clearance, BOM, serial number, warranty, and return terms before purchase.
+## Privacy and licenses
 
-## Licenses
+The repository contains no buyer identity, private messages, order details, payment information, addresses, or private screenshots.
 
-- Code: [MIT](LICENSE)
+- Code and original fallback artwork: [MIT](LICENSE)
 - Original research text and structured data: [CC BY 4.0](LICENSE-DATA)
-- Product names, trademarks, and linked third-party material remain with their owners; see [THIRD_PARTY.md](THIRD_PARTY.md).
+- Product names, trademarks, linked pages, and third-party photography remain with their respective owners.

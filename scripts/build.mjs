@@ -4,25 +4,18 @@ import {
   loadDataset,
   joinProducts,
   validateDataset,
+  formatAllInPrice,
   formatPrice,
   maxClearance,
-  clearanceLabel
+  clearanceLongLabel
 } from '../src/lib/data.mjs';
-import { parseFrontmatter } from '../src/lib/html.mjs';
 import {
   renderHome,
-  renderExplorerPage,
   renderModel,
-  renderBrandsIndex,
-  renderBrand,
-  renderCompare,
-  renderResearch,
-  renderGuidesIndex,
-  renderGuide,
   renderMethodology,
   renderPrivacy,
-  renderContribute,
-  renderAbout,
+  renderImagePolicy,
+  renderImageSources,
   render404
 } from '../src/render.mjs';
 
@@ -34,7 +27,7 @@ const projectBase = repository && !repository.endsWith('.github.io') ? `/${repos
 const rawBase = process.env.PUBLIC_BASE_PATH ?? (process.env.GITHUB_ACTIONS === 'true' ? projectBase : '');
 const base = rawBase ? `/${rawBase.replace(/^\/+|\/+$/g, '')}` : '';
 const siteUrl = (process.env.PUBLIC_SITE_URL ?? (owner ? `https://${owner}.github.io` : 'https://example.invalid')).replace(/\/$/, '');
-const repositoryUrl = (process.env.PUBLIC_REPOSITORY_URL ?? (githubRepository ? `https://github.com/${githubRepository}` : 'https://github.com/p0s/china-bike-research')).replace(/\/$/, '');
+const repositoryUrl = (process.env.PUBLIC_REPOSITORY_URL ?? (githubRepository ? `https://github.com/${githubRepository}` : 'https://github.com/your-org/your-repo')).replace(/\/$/, '');
 
 function ensureDir(file) { fs.mkdirSync(path.dirname(file), { recursive: true }); }
 function write(relative, content) {
@@ -72,29 +65,12 @@ if (errors.length) {
   process.exit(1);
 }
 const products = joinProducts(data);
-const now = new Date();
-const ctx = { data, products, base, siteUrl, repositoryUrl, now };
+const ctx = { data, products, base, siteUrl, repositoryUrl, now: new Date() };
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 copyDir(path.join(root, 'assets'), path.join(dist, 'assets'));
 write('.nojekyll', '');
-
-const guideDir = path.join(root, 'content/guides');
-const guides = fs.readdirSync(guideDir)
-  .filter((name) => name.endsWith('.md'))
-  .sort()
-  .map((name) => {
-    const slug = name.replace(/\.md$/, '');
-    const { data: frontmatter, body } = parseFrontmatter(fs.readFileSync(path.join(guideDir, name), 'utf8'));
-    return {
-      slug,
-      title: frontmatter.title ?? slug,
-      description: frontmatter.description ?? '',
-      reviewed: frontmatter.reviewed ?? data.meta.snapshot_date,
-      body
-    };
-  });
 
 const pages = new Map();
 function add(route, html, includeInSitemap = true) {
@@ -104,59 +80,57 @@ function add(route, html, includeInSitemap = true) {
 }
 
 add('/', renderHome(ctx));
-add('/bikes/', renderExplorerPage(ctx, 'complete-bike'));
-add('/frames/', renderExplorerPage(ctx, 'frameset'));
-add('/compare/', renderCompare(ctx));
-add('/brands/', renderBrandsIndex(ctx));
-for (const brand of data.brands) {
-  if (products.some((product) => product.brand.id === brand.id)) add(`/brands/${brand.id}/`, renderBrand(ctx, brand));
-}
 for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product));
-add('/guides/', renderGuidesIndex(ctx, guides));
-for (const guide of guides) add(`/guides/${guide.slug}/`, renderGuide(ctx, guide));
-add('/research/', renderResearch(ctx));
 add('/methodology/', renderMethodology(ctx));
 add('/privacy/', renderPrivacy(ctx));
-add('/contribute/', renderContribute(ctx));
-add('/about/', renderAbout(ctx));
+add('/image-policy/', renderImagePolicy(ctx));
+add('/image-sources/', renderImageSources(ctx));
 add('/404.html', render404(ctx), false);
 
 const catalog = {
   generated_at: new Date().toISOString(),
   snapshot_date: data.meta.snapshot_date,
   scope: data.meta.scope,
+  frameset_build_assumption: data.meta.frameset_build_assumption,
   license: 'CC BY 4.0',
-  products: products.map(({ brand, platform, variant, prices, sources }) => ({
+  products: products.map(({ brand, platform, variant, prices, latestPrice, allInPrice, sources, image, imageSource }) => ({
     id: variant.id,
     brand: { id: brand.id, name: brand.name, name_zh: brand.name_zh ?? null },
     platform,
     variant,
     prices,
+    latest_price: latestPrice,
+    display_price: {
+      label: formatAllInPrice({ allInPrice }),
+      ...allInPrice
+    },
+    image,
+    image_source: imageSource ? { id: imageSource.id, type: imageSource.type, title: imageSource.title, publisher: imageSource.publisher, url: imageSource.url ?? null } : null,
     sources: sources.map(({ id, type, title, publisher, language, accessed_at, url, reliability, notes }) => ({ id, type, title, publisher, language, accessed_at, url, reliability, notes }))
   }))
 };
 write('data/catalog.json', `${JSON.stringify(catalog, null, 2)}\n`);
 write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_at, sources: data.sources }, null, 2)}\n`);
-write('data/build-profiles.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_profiles: data.buildProfiles }, null, 2)}\n`);
+write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images }, null, 2)}\n`);
 
 const headers = [
-  'id','brand','brand_zh','model','kind','category','handlebar','price_cny','price_label','price_date','price_type','price_status',
-  'clearance_mm','clearance_label','clearance_note','clearance_evidence','eligibility','bottom_bracket','hanger','storage','frame_weight_g','complete_weight_g',
-  'drivetrain','manufacturing_relationship','manufacturing_confidence','china_availability','verdict','model_url'
+  'id','brand','brand_zh','model','type','category','handlebar',
+  'complete_price_low_cny','complete_price_high_cny','complete_price_label','is_estimate','frameset_price_label','price_date','price_status',
+  'clearance_mm','clearance_label','clearance_note','clearance_evidence','eligibility',
+  'bottom_bracket','hanger','storage','frame_weight_g','complete_weight_g','drivetrain',
+  'manufacturing_relationship','manufacturing_confidence','china_availability','verdict','image_url','image_source','model_url'
 ];
-const rows = products.map(({ brand, platform, variant, latestPrice }) => {
-  const value = latestPrice?.amount_cny ?? latestPrice?.low_cny ?? '';
-  return [
-    variant.id, brand.name, brand.name_zh ?? '', variant.name, variant.kind, platform.category, platform.handlebar,
-    value, formatPrice(latestPrice), latestPrice?.observed_at ?? '', latestPrice?.price_type ?? '', latestPrice?.status ?? '',
-    maxClearance(platform) ?? '', clearanceLabel(platform), platform.tire_clearance.note, platform.tire_clearance.evidence, platform.tire_clearance.eligibility,
-    platform.frame.bottom_bracket, platform.frame.derailleur_hanger, platform.internal_storage ? 'yes' : 'no',
-    platform.frame.claimed_frame_weight_g ?? '', variant.claimed_complete_weight_g ?? '',
-    variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : 'frameset',
-    brand.manufacturing.relationship, brand.manufacturing.confidence, platform.china_availability, variant.editorial.verdict,
-    `${siteUrl}${base}/models/${variant.id}/`
-  ];
-});
+const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, image, imageSource }) => [
+  variant.id, brand.name, brand.name_zh ?? '', variant.name, variant.kind, platform.category, platform.handlebar,
+  allInPrice.low ?? '', allInPrice.high ?? '', formatAllInPrice({ allInPrice }), allInPrice.estimated ? 'yes' : 'no', variant.kind === 'frameset' ? formatPrice(latestPrice) : '', latestPrice?.observed_at ?? '', latestPrice?.status ?? '',
+  maxClearance(platform) ?? '', clearanceLongLabel(platform), platform.tire_clearance.note, platform.tire_clearance.evidence, platform.tire_clearance.eligibility,
+  platform.frame.bottom_bracket, platform.frame.derailleur_hanger, platform.internal_storage ? 'yes' : 'no',
+  platform.frame.claimed_frame_weight_g ?? '', variant.claimed_complete_weight_g ?? '',
+  variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : data.meta.frameset_build_assumption.drivetrain_label,
+  brand.manufacturing.relationship, brand.manufacturing.confidence, platform.china_availability, variant.editorial.verdict,
+  image?.hosting.mode === 'remote' ? image.hosting.remote_url : image ? `${siteUrl}${base}${image.hosting.local_path}` : '',
+  imageSource?.url ?? '', `${siteUrl}${base}/models/${variant.id}/`
+]);
 write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) => row.map(csvCell).join(',')).join('\n')}\n`);
 
 const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSitemap).map(([route]) => route);
@@ -173,7 +147,7 @@ write('build-manifest.json', `${JSON.stringify({
     variants: data.variants.length,
     prices: data.prices.length,
     sources: data.sources.length,
-    guides: guides.length,
+    images: data.images.length,
     pages: pages.size
   }
 }, null, 2)}\n`);
@@ -189,10 +163,10 @@ function routeToExistingPath(pathname) {
 }
 
 const linkErrors = [];
-for (const [route, info] of pages) {
+for (const [, info] of pages) {
   const file = path.join(dist, info.file);
   const html = fs.readFileSync(file, 'utf8');
-  const pageUrl = `https://local.invalid${base}${route}`;
+  const pageUrl = `https://local.invalid${base}/${info.file === 'index.html' ? '' : info.file}`;
   for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     const value = match[1];
     if (!value || value.startsWith('#') || /^(?:mailto:|tel:|javascript:|data:)/i.test(value)) continue;

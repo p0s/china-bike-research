@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/image.schema.json",
+  "title": "Product image record",
+  "type": "object",
+  "required": [
+    "id",
+    "platform_id",
+    "role",
+    "subject_accuracy",
+    "media_type",
+    "hosting",
+    "source_id",
+    "rights",
+    "credit",
+    "alt",
+    "reviewed_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "platform_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "variant_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    },
+    "role": {
+      "const": "primary"
+    },
+    "subject_accuracy": {
+      "enum": [
+        "exact-variant",
+        "exact-platform",
+        "same-platform",
+        "same-model-different-color",
+        "same-model-different-market-build",
+        "illustrative"
+      ]
+    },
+    "media_type": {
+      "enum": [
+        "official-product-photo",
+        "retailer-product-photo",
+        "project-placeholder"
+      ]
+    },
+    "hosting": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "mode",
+            "remote_url"
+          ],
+          "properties": {
+            "mode": {
+              "const": "remote"
+            },
+            "remote_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "mode",
+            "local_path"
+          ],
+          "properties": {
+            "mode": {
+              "const": "local"
+            },
+            "local_path": {
+              "type": "string",
+              "pattern": "^/assets/images/"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "status",
+        "copyright_holder",
+        "usage_note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "project-owned",
+            "contributor-owned",
+            "permission-granted",
+            "brand-media-license",
+            "cc-licensed",
+            "public-domain",
+            "official-page-embed",
+            "retailer-page-embed"
+          ]
+        },
+        "copyright_holder": {
+          "type": "string",
+          "minLength": 1
+        },
+        "usage_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permission_date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+    "credit": {
+      "type": "string",
+      "minLength": 3
+    },
+    "alt": {
+      "type": "string",
+      "minLength": 10
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "display_note": {
+      "type": "string",
+      "minLength": 10
+    }
+  },
+  "additionalProperties": false
+}

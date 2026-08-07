@@ -1,170 +1,367 @@
 import {
-  buildProfileRange, clearanceLabel, formatCny, formatPrice, freshness,
-  maxClearance, priceSortValue
+  clearanceLabel,
+  clearanceLongLabel,
+  formatAllInPrice,
+  formatCny,
+  formatPrice,
+  freshness,
+  maxClearance
 } from './lib/data.mjs';
-import { badge, escapeAttr, escapeHtml, layout, renderMarkdown, safeJson, url } from './lib/html.mjs';
+import {
+  escapeAttr,
+  escapeHtml,
+  layout,
+  safeJson,
+  url
+} from './lib/html.mjs';
 
-const description = 'Evidence-backed comparisons of carbon gravel and all-road bikes and framesets available to riders in China.';
+const description = 'A concise comparison of carbon gravel and all-road bikes and frame builds available to riders in China.';
+let tooltipIndex = 0;
 
-function page(ctx, {title='', current='', path='/', description:desc=description, body, noindex=false}) {
-  return layout({base:ctx.base,repositoryUrl:ctx.repositoryUrl,siteUrl:ctx.siteUrl,title,current,path,description:desc,body,noindex});
+function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '' }) {
+  return layout({
+    base: ctx.base,
+    repositoryUrl: ctx.repositoryUrl,
+    siteUrl: ctx.siteUrl,
+    title,
+    current,
+    path,
+    description: desc,
+    body,
+    noindex,
+    image,
+    imageAlt
+  });
 }
-function breadcrumbs(ctx, items) {
-  return `<nav class="breadcrumbs">${items.map((item,index)=>`${index?'<span>›</span>':''}${item.href?`<a href="${url(ctx.base,item.href)}">${escapeHtml(item.label)}</a>`:`<span>${escapeHtml(item.label)}</span>`}`).join('')}</nav>`;
+
+function fallbackImage(ctx, product) {
+  return url(ctx.base, product.variant.kind === 'complete-bike'
+    ? '/assets/images/placeholders/complete-bike.svg'
+    : '/assets/images/placeholders/frameset.svg');
 }
-function fact(label, value) { return `<dl class="fact"><dt>${escapeHtml(label)}</dt><dd>${value}</dd></dl>`; }
-function productCard(ctx, product) {
-  const {variant,platform,brand,latestPrice}=product;
-  const fresh=freshness(latestPrice?.observed_at,ctx.now);
-  const max=maxClearance(platform);
-  const drivetrain=variant.drivetrain?`${variant.drivetrain.brand} ${variant.drivetrain.speeds}`:'Frameset';
-  const searchable=[brand.name,brand.name_zh,variant.name,platform.name,platform.category,drivetrain,platform.frame.bottom_bracket,platform.frame.derailleur_hanger].filter(Boolean).join(' ').toLowerCase();
-  const price=priceSortValue(latestPrice);
-  return `<article class="product-card" data-product-card data-id="${escapeAttr(variant.id)}" data-search="${escapeAttr(searchable)}" data-price="${Number.isFinite(price)?price:''}" data-clearance="${max??''}" data-handlebar="${escapeAttr(platform.handlebar)}" data-category="${escapeAttr(platform.category)}" data-evidence="${escapeAttr(platform.tire_clearance.evidence)}" data-eligibility="${escapeAttr(platform.tire_clearance.eligibility)}" data-bb="${escapeAttr(platform.frame.bottom_bracket)}" data-udh="${platform.frame.derailleur_hanger==='UDH'?'yes':'no'}" data-storage="${platform.internal_storage?'yes':'no'}" data-shifting="${escapeAttr(variant.drivetrain?.shifting??'frameset')}">
-    <div class="product-card-top">
-      <div class="card-kicker"><span class="brand-name">${escapeHtml(brand.name)}${brand.name_zh?` · ${escapeHtml(brand.name_zh)}`:''}</span>${badge(platform.tire_clearance.eligibility,platform.tire_clearance.eligibility,platform.tire_clearance.note)}</div>
-      <h3><a href="${url(ctx.base,`/models/${variant.id}/`)}">${escapeHtml(variant.name)}</a></h3>
-      <p class="verdict">${escapeHtml(variant.editorial.verdict)}</p>
+
+function imageUrl(ctx, image) {
+  if (!image) return '';
+  return image.hosting.mode === 'remote'
+    ? image.hosting.remote_url
+    : url(ctx.base, image.hosting.local_path);
+}
+
+function accuracyLabel(accuracy) {
+  return {
+    'exact-variant': 'Exact configuration shown',
+    'exact-platform': 'Exact frame platform',
+    'same-platform': 'Same frame platform; components may differ',
+    'same-model-different-color': 'Exact model; color may differ',
+    'same-model-different-market-build': 'Same model name; regional build differs',
+    illustrative: 'Project placeholder; not a product photo'
+  }[accuracy] ?? 'Image status unclassified';
+}
+
+function imageElement(ctx, product, { hero = false, className = '' } = {}) {
+  const source = imageUrl(ctx, product.image) || fallbackImage(ctx, product);
+  const fallback = fallbackImage(ctx, product);
+  const alt = product.image?.alt ?? `${product.brand.name} ${product.variant.name}`;
+  const remote = product.image?.hosting.mode === 'remote';
+  return `<img class="${escapeAttr(className)}" src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+}
+
+function infoTip(label, lines) {
+  const id = `tooltip-${++tooltipIndex}`;
+  const content = lines.filter(Boolean).map((line) => `<span>${escapeHtml(line)}</span>`).join('');
+  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-describedby="${id}">i</button><span class="tooltip-content" role="tooltip" id="${id}">${content}</span></span>`;
+}
+
+function buildAssumption(ctx) {
+  return ctx.data.meta.frameset_build_assumption;
+}
+
+function priceTooltipLines(ctx, product) {
+  const { variant, latestPrice, allInPrice } = product;
+  const fresh = freshness(latestPrice?.observed_at, ctx.now);
+  const threshold = variant.editorial.price_thresholds_cny?.great_buy_below;
+  const lines = [];
+  if (variant.kind === 'frameset') {
+    lines.push(`Frameset price: ${formatPrice(latestPrice)}.`);
+    lines.push(`Estimated complete adds a fixed ${formatCny(allInPrice.buildAmount)} ${buildAssumption(ctx).label}.`);
+    if (threshold) lines.push(`Great-buy reference: below ${formatCny(threshold + allInPrice.buildAmount)} complete (${formatCny(threshold)} frameset).`);
+  } else if (threshold) {
+    lines.push(`Great-buy reference: below ${formatCny(threshold)}.`);
+  }
+  if (latestPrice?.observed_at) lines.push(`Price observed ${latestPrice.observed_at}; ${fresh.label.toLowerCase()} as of this snapshot.`);
+  if (latestPrice?.status) lines.push(`Record status: ${latestPrice.status.replaceAll('-', ' ')}.`);
+  if (latestPrice?.conditions) lines.push(latestPrice.conditions);
+  return lines;
+}
+
+function clearanceTooltipLines(product) {
+  const clearance = product.platform.tire_clearance;
+  return [
+    `${clearanceLongLabel(product.platform)}.`,
+    `Evidence: ${clearance.evidence.replaceAll('-', ' ')}.`,
+    clearance.note,
+    clearance.eligibility !== 'pass' ? `Eligibility: ${clearance.eligibility}. Verify the exact SKU before buying.` : ''
+  ];
+}
+
+function drivetrainLabel(ctx, product) {
+  if (product.variant.kind === 'frameset') return 'Assumed electronic 2×12';
+  const drivetrain = product.variant.drivetrain;
+  if (!drivetrain) return 'Not recorded';
+  return `${drivetrain.brand} ${drivetrain.model}`;
+}
+
+function drivetrainSubline(ctx, product) {
+  if (product.variant.kind === 'frameset') return '';
+  const drivetrain = product.variant.drivetrain;
+  return drivetrain ? `${drivetrain.speeds} · ${drivetrain.shifting.replaceAll('-', ' ')}` : '';
+}
+
+function weightLabel(product) {
+  if (product.variant.kind === 'complete-bike') {
+    return product.variant.claimed_complete_weight_g
+      ? `${(product.variant.claimed_complete_weight_g / 1000).toFixed(1)} kg`
+      : '—';
+  }
+  return product.platform.frame.claimed_frame_weight_g
+    ? `${new Intl.NumberFormat('en-US').format(product.platform.frame.claimed_frame_weight_g)} g frame`
+    : '—';
+}
+
+function weightSubline() { return ''; }
+
+function frameStandard(product) {
+  const frame = product.platform.frame;
+  const parts = [];
+  if (frame.bottom_bracket && frame.bottom_bracket !== 'unknown') parts.push(frame.bottom_bracket);
+  if (frame.derailleur_hanger === 'UDH') parts.push('UDH');
+  return parts.join(' · ') || '—';
+}
+
+function frameTooltipLines(product) {
+  const { frame } = product.platform;
+  const lines = [
+    `Bottom bracket: ${frame.bottom_bracket ?? 'unknown'}.`,
+    `Derailleur hanger: ${frame.derailleur_hanger ?? 'unknown'}.`,
+    frame.claimed_fiber ? `Carbon claim: ${frame.claimed_fiber}.` : '',
+    frame.cable_routing ? `Cable routing: ${frame.cable_routing.replaceAll('-', ' ')}.` : '',
+    product.platform.internal_storage ? 'Internal frame storage.' : '',
+    product.platform.mounts?.length ? `Mounts: ${product.platform.mounts.join(', ')}.` : '',
+    `${product.brand.manufacturing.relationship.replaceAll('-', ' ')}; evidence confidence ${product.brand.manufacturing.confidence}.`
+  ];
+  return lines;
+}
+
+function recommendationLabel(ctx, product) {
+  const recommendation = ctx.data.recommendations.find((item) => item.variant_id === product.variant.id);
+  if (!recommendation) return '';
+  const labels = {
+    'cheapest-traceable-complete': 'Cheapest complete',
+    'best-complete-value': 'Best value',
+    'best-shimano-budget': 'Shimano pick',
+    'best-budget-frame': 'Budget frame pick',
+    'best-premium-package': 'Versatile premium',
+    'best-premium-race-value': 'Race value'
+  };
+  return labels[recommendation.id] ?? recommendation.title;
+}
+
+function statusFlag(product) {
+  const eligibility = product.platform.tire_clearance.eligibility;
+  if (eligibility === 'pass') return '';
+  return `<span class="verify-flag">Verify${infoTip('Why this needs verification', clearanceTooltipLines(product))}</span>`;
+}
+
+function productImage(ctx, product, { hero = false } = {}) {
+  const accuracy = product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative';
+  const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
+  return `<span class="product-image ${hero ? 'hero-image' : ''}">${imageElement(ctx, product, { hero })}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'])}</span>` : ''}</span>`;
+}
+
+function productRow(ctx, product) {
+  const { variant, platform, brand, allInPrice } = product;
+  const max = maxClearance(platform) ?? 0;
+  const searchable = [
+    brand.name,
+    brand.name_zh,
+    variant.name,
+    platform.name,
+    platform.name_zh,
+    platform.category,
+    platform.handlebar,
+    drivetrainLabel(ctx, product),
+    platform.frame.bottom_bracket,
+    platform.frame.derailleur_hanger,
+    ...(variant.editorial.best_for ?? [])
+  ].filter(Boolean).join(' ').toLowerCase();
+  const recommended = recommendationLabel(ctx, product);
+  return `<article class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${allInPrice.midpoint}" data-price-filter="${allInPrice.low ?? ''}" data-clearance="${max}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}">
+    <label class="compare-toggle" role="cell"><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label>
+    <div class="catalog-product" role="cell">
+      ${productImage(ctx, product)}
+      <span class="product-copy">
+        <span class="product-meta"><span>${escapeHtml(brand.name)}${brand.name_zh ? ` · ${escapeHtml(brand.name_zh)}` : ''}</span>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommended ? `<span class="pick-pill">${escapeHtml(recommended)}</span>` : ''}${statusFlag(product)}</span>
+        <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}">${escapeHtml(variant.name)}</a></strong>
+      </span>
     </div>
-    <div class="card-specs">
-      <div class="card-spec"><span>Clearance</span><strong title="${escapeAttr(clearanceLabel(platform))}">${escapeHtml(clearanceLabel(platform))}</strong></div>
-      <div class="card-spec"><span>Drivetrain</span><strong title="${escapeAttr(drivetrain)}">${escapeHtml(drivetrain)}</strong></div>
-      <div class="card-spec"><span>Frame standard</span><strong>${escapeHtml(platform.frame.bottom_bracket)} · ${escapeHtml(platform.frame.derailleur_hanger)}</strong></div>
-      <div class="card-spec"><span>Evidence</span><strong>${escapeHtml(platform.tire_clearance.evidence)}</strong></div>
-    </div>
-    <div class="card-footer">
-      <div><span class="price">${escapeHtml(formatPrice(latestPrice))}</span><span class="price-date">${escapeHtml(latestPrice?.observed_at??'No date')} · ${badge(fresh.label,fresh.key)}</span></div>
-      <label class="compare-check"><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"> Compare</label>
-    </div>
+    <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main">${escapeHtml(formatAllInPrice(product))}${infoTip('Price details', priceTooltipLines(ctx, product))}</span></div>
+    <div class="catalog-cell clearance-cell" role="cell" data-label="Clearance"><span class="metric-main">${escapeHtml(clearanceLabel(platform))}${infoTip('Tire-clearance details', clearanceTooltipLines(product))}</span></div>
+    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain"><span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span></div>
+    <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span><span class="metric-sub">${escapeHtml(weightSubline(product))}</span></div>
+    <div class="catalog-cell frame-cell" role="cell" data-label="Frame"><span class="metric-main">${escapeHtml(frameStandard(product))}${infoTip('Frame details', frameTooltipLines(product))}</span></div>
+    <div class="row-link-cell" role="cell"><a class="row-link" href="${url(ctx.base, `/models/${variant.id}/`)}" aria-label="View ${escapeAttr(brand.name)} ${escapeAttr(variant.name)} details">›</a></div>
   </article>`;
 }
-function recommendationCard(ctx, recommendation, product) {
-  return `<article class="recommendation-card"><span class="rank">${recommendation.priority}</span><p class="eyebrow">${escapeHtml(recommendation.title)}</p><h3><a href="${url(ctx.base,`/models/${product.variant.id}/`)}">${escapeHtml(product.brand.name)} ${escapeHtml(product.variant.name)}</a></h3><p class="price-line">${escapeHtml(recommendation.price_label)}</p><p>${escapeHtml(recommendation.reason)}</p><p class="caveat"><strong>Caveat:</strong> ${escapeHtml(recommendation.caveat)}</p></article>`;
+
+function comparisonSummary(ctx, product) {
+  return {
+    id: product.variant.id,
+    brand: product.brand.name,
+    name: product.variant.name,
+    url: url(ctx.base, `/models/${product.variant.id}/`),
+    image: imageUrl(ctx, product.image) || fallbackImage(ctx, product),
+    imageFallback: fallbackImage(ctx, product),
+    imageAlt: product.image?.alt ?? `${product.brand.name} ${product.variant.name}`,
+    imageRemote: product.image?.hosting.mode === 'remote',
+    type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
+    price: formatAllInPrice(product),
+    priceDetails: priceTooltipLines(ctx, product).join(' '),
+    clearance: clearanceLabel(product.platform),
+    clearanceDetails: clearanceTooltipLines(product).join(' '),
+    drivetrain: drivetrainLabel(ctx, product),
+    drivetrainSubline: drivetrainSubline(ctx, product),
+    weight: weightLabel(product),
+    weightSubline: weightSubline(product),
+    frame: frameStandard(product),
+    category: `${product.platform.category.replaceAll('-', ' ')} · ${product.platform.handlebar}-bar`,
+    storage: product.platform.internal_storage ? 'Yes' : 'No',
+    mounts: product.platform.mounts?.join(', ') || 'None recorded',
+    manufacturing: `${product.brand.manufacturing.relationship.replaceAll('-', ' ')} · confidence ${product.brand.manufacturing.confidence}`,
+    availability: product.platform.china_availability.replaceAll('-', ' '),
+    bestFor: product.variant.editorial.best_for?.join(', ') || 'Not specified',
+    verdict: product.variant.editorial.verdict,
+    caveats: product.variant.editorial.caveats?.join('; ') || 'None recorded'
+  };
 }
-function explorer(ctx, products, kind) {
-  const categories=[...new Set(products.map((p)=>p.platform.category))].sort();
-  return `<div data-explorer-root>
-    <div class="filter-shell"><div class="filter-grid">
-      <div class="field search-field"><label for="search">Search</label><input id="search" type="search" placeholder="Brand, model, drivetrain, BB…" autocomplete="off" data-filter-search></div>
-      <div class="field"><label for="category">Category</label><select id="category" data-filter="category"><option value="">All</option>${categories.map((item)=>`<option value="${escapeAttr(item)}">${escapeHtml(item)}</option>`).join('')}</select></div>
-      <div class="field"><label for="clearance">Minimum clearance</label><select id="clearance" data-filter-clearance><option value="0">Any</option><option value="40">40 mm</option><option value="45">45 mm</option><option value="50">50 mm</option><option value="55">55 mm</option></select></div>
-      <div class="field"><label for="eligibility">Eligibility</label><select id="eligibility" data-filter="eligibility"><option value="">All</option><option value="pass">Pass</option><option value="conditional">Conditional</option><option value="unverified">Unverified</option></select></div>
-      <div class="field"><label for="sort">Sort</label><select id="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="clearance-desc">Clearance: widest first</option><option value="name">Brand and model</option></select></div>
-    </div><div class="filter-meta"><span><strong data-result-count>${products.length}</strong> ${kind==='complete-bike'?'complete bikes':'framesets'}</span><button class="button ghost small-button" type="button" data-reset>Reset filters</button></div></div>
-    <div class="product-grid" data-product-grid>${products.map((p)=>productCard(ctx,p)).join('')}<div class="empty-state" data-empty hidden>No products match those filters.</div></div>
-  </div>`;
+
+function watchlistNote(ctx) {
+  return `<details class="research-note"><summary>Models still being verified</summary><div class="research-list">${ctx.data.candidates.map((item) => `<div><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.why_interesting)}</span><small>Needs: ${escapeHtml(item.missing.join(' · '))}</small></div>`).join('')}</div><p class="research-footnote">These are not ranked until the exact model, current price, clearance, or manufacturer can be verified. <a href="${ctx.repositoryUrl}/issues">Add evidence on GitHub</a>.</p></details>`;
 }
+
 function sourceList(sources) {
-  return `<div class="source-list">${sources.map((source)=>`<div class="source-item">${source.url?`<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>`:`<strong>${escapeHtml(source.title)}</strong>`}<div class="source-meta">${escapeHtml(source.publisher)} · ${escapeHtml(source.type)} · accessed ${escapeHtml(source.accessed_at)}</div><p class="small">${escapeHtml(source.notes)}</p></div>`).join('')}</div>`;
-}
-function prosePage(ctx,{title,desc,path,eyebrow='Buyer guide',html,current=''}) {
-  return page(ctx,{title,current,path,description:desc,body:`<section class="detail-hero"><div class="page prose"><p class="eyebrow">${escapeHtml(eyebrow)}</p><h1>${escapeHtml(title)}</h1><p class="lede">${escapeHtml(desc)}</p></div></section><section class="section compact"><article class="page prose">${html}</article></section>`});
+  return `<div class="source-list">${sources.map((source) => `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · accessed ${escapeHtml(source.accessed_at)}</span>${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`).join('')}</div>`;
 }
 
 export function renderHome(ctx) {
-  const productMap=new Map(ctx.products.map((p)=>[p.variant.id,p]));
-  const recs=[...ctx.data.recommendations].sort((a,b)=>a.priority-b.priority).map((r)=>[r,productMap.get(r.variant_id)]).filter(([,p])=>p);
-  const featured=['twitter-v3-wheeltop-eds','sava-gelaro-s4-grx400','lightcarbon-lcg071s-pro-frameset'].map((id)=>productMap.get(id)).filter(Boolean);
-  const complete=ctx.products.filter((p)=>p.variant.kind==='complete-bike').length;
-  const frames=ctx.products.filter((p)=>p.variant.kind==='frameset').length;
-  const latest=[...ctx.products.map((p)=>p.platform.last_reviewed)].sort().at(-1);
-  const body=`<section class="hero"><div class="page hero-grid"><div><p class="eyebrow">China-first · evidence-labelled · buyer focused</p><h1>Find the right carbon bike <span>without searching everywhere.</span></h1><p class="lede">One practical overview of carbon gravel and all-road bikes you can buy in China—complete builds, framesets, dated prices, tire-clearance evidence, manufacturing confidence, and the caveats sellers leave out.</p><div class="hero-actions"><a class="button primary" href="${url(ctx.base,'/bikes/')}">Explore complete bikes</a><a class="button" href="${url(ctx.base,'/frames/')}">Explore framesets</a><a class="button ghost" href="${url(ctx.base,'/methodology/')}">How evidence works</a></div></div><aside class="hero-note"><span class="number">${ctx.products.length}</span><strong>decision-ready configurations</strong><dl><dt>Complete bikes</dt><dd>${complete}</dd><dt>Framesets</dt><dd>${frames}</dd><dt>Brands</dt><dd>${ctx.data.brands.length}</dd><dt>Last reviewed</dt><dd>${latest}</dd></dl></aside></div></section>
-  <section class="section compact"><div class="page notice warning"><p><strong>Prices are observations, not promises.</strong> China marketplace coupons, configuration substitutions, sizes, and promotions change quickly. Every price is dated; historical deals are labelled rather than silently presented as current.</p></div></section>
-  <section class="section"><div class="page"><header class="section-header"><div><p class="eyebrow">Current quick picks</p><h2>Start with the decision, not the spreadsheet.</h2></div><a class="button" href="${url(ctx.base,'/compare/')}">Compare models</a></header><div class="recommendation-grid">${recs.map(([r,p])=>recommendationCard(ctx,r,p)).join('')}</div></div></section>
-  <section class="section"><div class="page"><header class="section-header"><div><p class="eyebrow">Three useful reference points</p><h2>Cheap complete, serviceable alternative, modern custom frame.</h2></div></header><div class="product-grid">${featured.map((p)=>productCard(ctx,p)).join('')}</div></div></section>
-  <section class="section"><div class="page detail-grid"><div><p class="eyebrow">Why this exists</p><h2>China has excellent bike value—and fragmented information.</h2><p class="lede">Useful facts are scattered across official pages, marketplace variants, Bilibili videos, Chinese launch reports, factory pages, owner posts, and temporary promotions. The guide separates frame platforms from complete-bike configurations and dated prices so the information stays maintainable.</p></div><div class="panel"><h3>What “unknown” means here</h3><p>Missing information increases uncertainty. It does <strong>not</strong> automatically mean a frame is bad.</p><p><a href="${url(ctx.base,'/guides/carbon-claims/')}">Read the carbon-quality guide →</a></p></div></div></section>`;
-  return page(ctx,{path:'/',body});
-}
+  const categories = [...new Set(ctx.products.map((product) => product.platform.category))].sort();
+  const assumption = buildAssumption(ctx);
+  const summaries = ctx.products.map((product) => comparisonSummary(ctx, product));
+  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Carbon bikes in China</h1><p>Gravel and all-road bikes with practical wide-tire capability, sorted by estimated complete-bike price.</p></div><div class="assumption-note"><strong>Frameset estimates add ${formatCny(assumption.amount_cny)}</strong>${infoTip('Frameset build assumption', [assumption.summary, `Reviewed ${assumption.reviewed_at}.`])}</div></div></section>
+  <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
+    <div class="filter-bar">
+      <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search brand, model or drivetrain" autocomplete="off" data-filter-search></div>
+      <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame builds</button></div>
+      <label class="compact-select"><span>Max price</span><select data-filter-price><option value="">Any</option><option value="6000">¥6,000</option><option value="8000">¥8,000</option><option value="10000">¥10,000</option><option value="15000">¥15,000</option><option value="20000">¥20,000</option></select></label>
+      <label class="compact-select"><span>Min tire</span><select data-filter-clearance><option value="0">Any</option><option value="40">40 mm</option><option value="45">45 mm</option><option value="50">50 mm</option><option value="55">55 mm</option></select></label>
+      <label class="compact-select"><span>Style</span><select data-filter-style><option value="">Any</option>${categories.map((category) => `<option value="category:${escapeAttr(category)}">${escapeHtml(category.replaceAll('-', ' '))}</option>`).join('')}<option value="handlebar:flat">flat-bar</option></select></label>
+      <label class="compact-select"><span>Sort</span><select data-sort><option value="price">Price</option><option value="clearance">Tire clearance</option><option value="name">Brand</option></select></label>
+      <button class="reset-button" type="button" data-reset hidden>Clear</button>
+    </div>
 
-export function renderExplorerPage(ctx,kind) {
-  const isBikes=kind==='complete-bike';
-  const products=ctx.products.filter((p)=>p.variant.kind===kind);
-  const title=isBikes?'Complete bikes':'Framesets';
-  const lede=isBikes?'Compare actual configurations—not just frame names. Prices, drivetrains, bar types, clearance evidence, and value thresholds are kept separate for each SKU.':'Use a frameset when geometry, 45–57 mm clearance, UDH, storage, mounts, or manufacturing provenance matters more than absolute complete-bike value.';
-  const note=isBikes?'':`<div class="notice info" style="margin-bottom:22px"><p><strong>Self-building usually does not beat Twitter’s complete-bike price.</strong> Use the model pages to add a reusable component profile and see a realistic finished-bike range.</p></div>`;
-  return page(ctx,{title,current:isBikes?'bikes':'frames',path:isBikes?'/bikes/':'/frames/',body:`<section class="detail-hero"><div class="page"><p class="eyebrow">${isBikes?'Ready to ride':'Build your own'}</p><h1>${title}</h1><p class="lede">${lede}</p></div></section><section class="section compact"><div class="page">${note}${explorer(ctx,products,kind)}</div></section>`});
+    <section class="inline-compare" id="compare" data-inline-compare hidden>
+      <div class="compare-heading"><div><h2>Compare</h2></div><div><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
+      <div data-compare-content></div>
+    </section>
+
+    <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length}</strong> matches</span><span>Select two to four bikes to compare</span></div>
+    <div class="catalog-table" data-product-list role="table" aria-label="Carbon bike comparison">
+      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader">Bike</span><span role="columnheader">Full-bike price</span><span role="columnheader">Tire</span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
+      ${ctx.products.map((product) => productRow(ctx, product)).join('')}
+      <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
+    </div>
+    ${watchlistNote(ctx)}
+    <script type="application/json" id="catalog-data">${safeJson(summaries)}</script>
+  </div></section>`;
+  return page(ctx, { current: 'catalog', path: '/', body });
 }
 
 export function renderModel(ctx, product) {
-  const {variant,platform,brand,latestPrice,prices,sources}=product;
-  const fresh=freshness(latestPrice?.observed_at,ctx.now);
-  const frameLow=latestPrice?.amount_cny??latestPrice?.low_cny??0;
-  const frameHigh=latestPrice?.amount_cny??latestPrice?.high_cny??latestPrice?.low_cny??0;
-  const defaultProfile=ctx.data.buildProfiles.find((p)=>p.id==='twitter-eds-equivalent')??ctx.data.buildProfiles[0];
-  const defaultParts=defaultProfile?buildProfileRange(defaultProfile):[0,0];
-  const alternatives=ctx.products.filter((p)=>p.variant.kind===variant.kind&&p.variant.id!==variant.id).sort((a,b)=>Math.abs(priceSortValue(a.latestPrice)-priceSortValue(latestPrice))-Math.abs(priceSortValue(b.latestPrice)-priceSortValue(latestPrice))).slice(0,3);
-  const max=platform.tire_clearance.published_max_mm??platform.tire_clearance.published_rear_max_mm??platform.tire_clearance.stock_nominal_mm??40;
-  const sellerMessage=`请确认 ${brand.name} ${variant.name} 的准确年份、配置和车架批次。请提供：\n1. 车架和前叉准确材料；\n2. 原装轮圈内宽；\n3. 安装标称 ${max}C 外胎后的实测宽度；\n4. 前叉、后下叉和座管位置的最小剩余净空；\n5. 五通、桶轴和尾钩标准；\n6. 完整 BOM，不接受未经确认的同级替换；\n7. 车架序列号、国内质保主体和退换条件。`;
-  const complete=variant.kind==='complete-bike'?`<article class="panel"><h2>Complete-bike configuration</h2><div class="fact-grid">${fact('Drivetrain',escapeHtml(variant.drivetrain?`${variant.drivetrain.brand} ${variant.drivetrain.model} · ${variant.drivetrain.speeds}`:'Not recorded'))}${fact('Shifting',escapeHtml(variant.drivetrain?.shifting??'Not recorded'))}${fact('Brakes',escapeHtml(variant.brakes?`${variant.brakes.actuation} ${variant.brakes.type}`:'Not recorded'))}${fact('Wheels',escapeHtml(variant.wheels?.rim_material??'Not recorded'))}${fact('Tires',escapeHtml(variant.tires??'Not recorded'))}${fact('Complete weight',variant.claimed_complete_weight_g?`${(variant.claimed_complete_weight_g/1000).toFixed(1)} kg claimed`:'Not published')}</div></article>`:'';
-  const calculator=variant.kind==='frameset'&&defaultProfile?`<article class="panel" data-build-calculator data-frame-low="${frameLow}" data-frame-high="${frameHigh}"><h2>Estimated complete-build cost</h2><p class="muted">Select a reusable parts profile. This adds retail parts to the current frameset reference; it is not a quotation.</p><div class="field" style="max-width:440px"><label for="profile">Build profile</label><select id="profile" data-build-profile>${ctx.data.buildProfiles.map((profile)=>{const range=buildProfileRange(profile);return `<option value="${escapeAttr(profile.id)}" data-low="${range[0]}" data-high="${range[1]}"${profile.id===defaultProfile.id?' selected':''}>${escapeHtml(profile.name)}</option>`}).join('')}</select></div><p style="margin-top:18px"><span class="eyebrow">Estimated finished bike</span><strong style="font-size:2rem" data-build-total>${formatCny(frameLow+defaultParts[0])}–${formatCny(frameHigh+defaultParts[1])}</strong></p><p class="small muted">Frameset ${formatPrice(latestPrice)} + parts <span data-parts-range>${formatCny(defaultParts[0])}–${formatCny(defaultParts[1])}</span>. A cockpit included in the frameset may lower this range.</p></article>`:'';
-  const thresholds=variant.editorial.price_thresholds_cny?`<h3>Price thresholds</h3><div class="fact-grid">${fact('Great buy below',formatCny(variant.editorial.price_thresholds_cny.great_buy_below))}${fact('Fair below',formatCny(variant.editorial.price_thresholds_cny.fair_buy_below))}${fact('Not compelling above',formatCny(variant.editorial.price_thresholds_cny.not_compelling_above))}</div>`:'';
-  const body=`<section class="detail-hero"><div class="page">${breadcrumbs(ctx,[{label:'Home',href:'/'},{label:variant.kind==='complete-bike'?'Complete bikes':'Framesets',href:variant.kind==='complete-bike'?'/bikes/':'/frames/'},{label:variant.name}])}<div class="detail-title"><div><p class="eyebrow"><a href="${url(ctx.base,`/brands/${brand.id}/`)}">${escapeHtml(brand.name)}${brand.name_zh?` · ${escapeHtml(brand.name_zh)}`:''}</a></p><h1>${escapeHtml(variant.name)}</h1><p class="lede">${escapeHtml(variant.editorial.verdict)}</p></div><div class="detail-price"><span class="price">${escapeHtml(formatPrice(latestPrice))}</span><span class="price-date">Observed ${escapeHtml(latestPrice?.observed_at??'unknown')} · ${badge(fresh.label,fresh.key)}</span></div></div></div></section>
-  <section class="section compact"><div class="page detail-grid"><div>
-    <article class="panel"><h2>Decision summary</h2><div class="fact-grid">${fact('Type',variant.kind==='complete-bike'?'Complete bike':'Frameset')}${fact('Category',`${escapeHtml(platform.category)} · ${escapeHtml(platform.handlebar)}-bar`)}${fact('Tire capability',escapeHtml(clearanceLabel(platform)))}${fact('Eligibility',badge(platform.tire_clearance.eligibility,platform.tire_clearance.eligibility))}${fact('Bottom bracket',escapeHtml(platform.frame.bottom_bracket))}${fact('Hanger',escapeHtml(platform.frame.derailleur_hanger))}${fact('Frame weight',platform.frame.claimed_frame_weight_g?`${platform.frame.claimed_frame_weight_g} g claimed`:'Not published')}${fact('China availability',escapeHtml(platform.china_availability))}</div><h3>Clearance evidence</h3><p>${badge(platform.tire_clearance.evidence,'info')} ${escapeHtml(platform.tire_clearance.note)}</p></article>
-    ${complete}${calculator}
-    <article class="panel"><h2>Strengths and caveats</h2><div class="detail-grid" style="grid-template-columns:1fr 1fr;gap:24px"><div><h3>Why consider it</h3><ul class="clean-list">${variant.editorial.strengths.map((x)=>`<li>${escapeHtml(x)}</li>`).join('')}</ul></div><div><h3>What to verify</h3><ul class="clean-list">${variant.editorial.caveats.map((x)=>`<li>${escapeHtml(x)}</li>`).join('')}</ul></div></div>${thresholds}</article>
-    <article class="panel"><h2>Ask the seller in Chinese</h2><p class="muted">This asks for measured clearance and the exact bill of materials instead of accepting “supports 40C” as sufficient.</p><pre id="seller-message"><code>${escapeHtml(sellerMessage)}</code></pre><button class="button small-button" type="button" data-copy-target="seller-message">Copy message</button></article>
-    <article class="panel"><h2>Price history</h2><div class="table-wrap" style="box-shadow:none"><table><thead><tr><th>Date</th><th>Price</th><th>Type</th><th>Status</th><th>Conditions</th></tr></thead><tbody>${prices.map((price)=>`<tr><td>${escapeHtml(price.observed_at)}</td><td>${escapeHtml(formatPrice(price))}</td><td>${escapeHtml(price.price_type)}</td><td>${escapeHtml(price.status)}</td><td>${escapeHtml(price.conditions)}</td></tr>`).join('')}</tbody></table></div></article>
-    <article class="panel"><h2>Sources</h2>${sourceList(sources)}</article>
-  </div><aside><div class="panel sticky-panel"><p class="eyebrow">Brand and manufacturing</p><h2><a href="${url(ctx.base,`/brands/${brand.id}/`)}">${escapeHtml(brand.name)}</a></h2><p>${escapeHtml(brand.manufacturing.summary)}</p><div class="fact-grid">${fact('Relationship',escapeHtml(brand.manufacturing.relationship))}${fact('Confidence',escapeHtml(brand.manufacturing.confidence))}</div><p class="small muted" style="margin-top:14px">Confidence describes the public evidence about manufacturing and process—not a guarantee that one individual frame is good or bad.</p></div></aside></div></section>
-  <section class="section"><div class="page"><header class="section-header"><div><p class="eyebrow">Nearby choices</p><h2>Alternatives at a similar price</h2></div></header><div class="product-grid">${alternatives.map((p)=>productCard(ctx,p)).join('')}</div></div></section>`;
-  return page(ctx,{title:`${brand.name} ${variant.name}`,path:`/models/${variant.id}/`,description:variant.editorial.verdict,body});
+  const { variant, platform, brand, latestPrice, prices, sources } = product;
+  const assumption = buildAssumption(ctx);
+  const max = maxClearance(platform) ?? 40;
+  const sellerMessage = `请确认 ${brand.name} ${variant.name} 的准确年份、配置和车架批次。请提供：\n1. 车架和前叉准确材料；\n2. 原装轮圈内宽；\n3. 安装标称 ${max}C 外胎后的实测宽度；\n4. 前叉、后下叉和座管位置的最小剩余净空；\n5. 五通、桶轴和尾钩标准；\n6. 完整 BOM，不接受未经确认的同级替换；\n7. 车架序列号、国内质保主体和退换条件。`;
+  const priceSubline = variant.kind === 'frameset' ? 'Estimated complete build' : '';
+  const imageAccuracy = accuracyLabel(product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative');
+  const detailFacts = [
+    ['Tire clearance', clearanceLabel(platform), infoTip('Tire-clearance details', clearanceTooltipLines(product))],
+    ['Drivetrain', drivetrainLabel(ctx, product), ''],
+    ['Weight', weightLabel(product), ''],
+    ['Frame standard', frameStandard(product), ''],
+    ['Category', `${platform.category.replaceAll('-', ' ')} · ${platform.handlebar}-bar`, ''],
+    ['Availability', platform.china_availability.replaceAll('-', ' '), '']
+  ];
+  const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}">← All bikes</a><div class="model-grid">
+    <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    <div class="model-summary"><div class="model-brand">${escapeHtml(brand.name)}${brand.name_zh ? ` · ${escapeHtml(brand.name_zh)}` : ''}${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-verdict">${escapeHtml(variant.editorial.verdict)}</p><div class="model-price"><strong>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
+  </div>
+  <div class="model-content">
+    <section class="decision-block"><div><h2>Why consider it</h2><ul>${variant.editorial.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h2>What to verify</h2><ul>${variant.editorial.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></section>
+    <details class="detail-panel"><summary>Frame, support and manufacturing</summary><div class="detail-panel-body"><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(platform.frame.cable_routing ?? 'Not recorded')}</dd></div><div><dt>Storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(brand.manufacturing.relationship.replaceAll('-', ' '))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(brand.manufacturing.confidence)}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(brand.china_support.domestic_purchase?.replaceAll('-', ' ') ?? 'unknown')}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(brand.china_support.warranty?.replaceAll('-', ' ') ?? 'verify')}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></div></details>
+    <details class="detail-panel"><summary>Ask the seller in Chinese</summary><div class="detail-panel-body"><pre id="seller-message"><code>${escapeHtml(sellerMessage)}</code></pre><button class="secondary-button" type="button" data-copy-target="seller-message">Copy message</button></div></details>
+    <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(price.price_type.replaceAll('-', ' '))} · ${escapeHtml(price.status.replaceAll('-', ' '))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(sources)}</div></details>
+  </div></div></section>`;
+  return page(ctx, {
+    title: `${brand.name} ${variant.name}`,
+    path: `/models/${variant.id}/`,
+    description: variant.editorial.verdict,
+    image: imageUrl(ctx, product.image) || fallbackImage(ctx, product),
+    imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
+    body
+  });
 }
 
-export function renderBrandsIndex(ctx) {
-  const brands=ctx.data.brands.map((brand)=>({brand,count:ctx.products.filter((p)=>p.brand.id===brand.id).length})).filter((x)=>x.count>0).sort((a,b)=>a.brand.name.localeCompare(b.brand.name));
-  return page(ctx,{title:'Brands',current:'brands',path:'/brands/',body:`<section class="detail-hero"><div class="page"><p class="eyebrow">Manufacturing context</p><h1>Brands and factories</h1><p class="lede">A product page tells you what is claimed. A brand page helps you understand who designs, molds, assembles, sells, and supports it—and where that relationship remains unknown.</p></div></section><section class="section compact"><div class="page brand-grid">${brands.map(({brand,count})=>`<a class="brand-card" href="${url(ctx.base,`/brands/${brand.id}/`)}"><p class="eyebrow">${escapeHtml(brand.name_zh??'')}</p><h3>${escapeHtml(brand.name)}</h3><p>${escapeHtml(brand.manufacturing.summary)}</p><p><strong>${count}</strong> published configuration${count===1?'':'s'} · confidence ${escapeHtml(brand.manufacturing.confidence)}</p></a>`).join('')}</div></section>`});
-}
-export function renderBrand(ctx, brand) {
-  const products=ctx.products.filter((p)=>p.brand.id===brand.id);
-  const sourceIds=[...new Set(products.flatMap((p)=>p.sources.map((s)=>s.id)))];
-  const sourceMap=new Map(ctx.data.sources.map((s)=>[s.id,s]));
-  const sources=sourceIds.map((id)=>sourceMap.get(id)).filter(Boolean);
-  const body=`<section class="detail-hero"><div class="page">${breadcrumbs(ctx,[{label:'Home',href:'/'},{label:'Brands',href:'/brands/'},{label:brand.name}])}<p class="eyebrow">${escapeHtml(brand.name_zh??'')} · ${escapeHtml(brand.country)}</p><h1>${escapeHtml(brand.name)}</h1><p class="lede">${escapeHtml(brand.manufacturing.summary)}</p></div></section>
-  <section class="section compact"><div class="page detail-grid"><div><article class="panel"><h2>Manufacturing assessment</h2><div class="fact-grid">${fact('Relationship',escapeHtml(brand.manufacturing.relationship))}${fact('Evidence confidence',escapeHtml(brand.manufacturing.confidence))}${fact('China purchase',escapeHtml(brand.china_support.domestic_purchase))}${fact('Warranty',escapeHtml(brand.china_support.warranty))}</div><p style="margin-top:18px">This is a provenance and process-confidence assessment, not a universal quality score. Contract-manufactured frames can be excellent; owning a factory does not guarantee every unit is perfect.</p></article></div><aside><div class="panel"><h2>Official site</h2><p><a class="button" href="${escapeAttr(brand.website)}" rel="noreferrer">Open ${escapeHtml(brand.name)} website</a></p><p class="small muted">Verify that a marketplace seller is authorized to provide the warranty it advertises.</p></div></aside></div></section>
-  <section class="section"><div class="page"><header class="section-header"><div><p class="eyebrow">Published products</p><h2>${products.length} configuration${products.length===1?'':'s'} in the guide</h2></div></header><div class="product-grid">${products.map((p)=>productCard(ctx,p)).join('')}</div></div></section>
-  ${sources.length?`<section class="section compact"><div class="page panel"><h2>Sources used across this brand</h2>${sourceList(sources)}</div></section>`:''}`;
-  return page(ctx,{title:brand.name,current:'brands',path:`/brands/${brand.id}/`,body});
-}
-
-export function renderCompare(ctx) {
-  const summaries=ctx.products.map((p)=>({id:p.variant.id,brand:p.brand.name,name:p.variant.name,kind:p.variant.kind,price:formatPrice(p.latestPrice),priceDate:p.latestPrice?.observed_at??'Unknown',priceStatus:p.latestPrice?.status??'Unknown',category:`${p.platform.category} · ${p.platform.handlebar}-bar`,clearance:clearanceLabel(p.platform),evidence:p.platform.tire_clearance.evidence,eligibility:p.platform.tire_clearance.eligibility,bb:p.platform.frame.bottom_bracket,hanger:p.platform.frame.derailleur_hanger,storage:p.platform.internal_storage?'Yes':'No',mounts:p.platform.mounts.join(', ')||'None recorded',frameWeight:p.platform.frame.claimed_frame_weight_g?`${p.platform.frame.claimed_frame_weight_g} g claimed`:'Not published',completeWeight:p.variant.claimed_complete_weight_g?`${(p.variant.claimed_complete_weight_g/1000).toFixed(1)} kg claimed`:'Not published',drivetrain:p.variant.drivetrain?`${p.variant.drivetrain.brand} ${p.variant.drivetrain.model} · ${p.variant.drivetrain.speeds} · ${p.variant.drivetrain.shifting}`:'Frameset',wheels:p.variant.wheels?.rim_material??'Not included / not recorded',manufacturing:`${p.brand.manufacturing.relationship} · confidence ${p.brand.manufacturing.confidence}`,availability:p.platform.china_availability,verdict:p.variant.editorial.verdict,greatBuy:p.variant.editorial.price_thresholds_cny?.great_buy_below?formatCny(p.variant.editorial.price_thresholds_cny.great_buy_below):'Not set',caveats:p.variant.editorial.caveats.join('; ')}));
-  const selects=[0,1,2,3].map((index)=>`<div class="field"><label for="compare-${index}">Choice ${index+1}</label><select id="compare-${index}" data-compare-select><option value="">Select a product</option>${ctx.products.map((p)=>`<option value="${escapeAttr(p.variant.id)}">${escapeHtml(p.brand.name)} ${escapeHtml(p.variant.name)}</option>`).join('')}</select></div>`).join('');
-  const body=`<section class="detail-hero"><div class="page"><p class="eyebrow">Side by side</p><h1>Compare up to four products</h1><p class="lede">Complete bikes and framesets can be mixed, but their prices are not directly comparable. The table keeps package value, frame standards, evidence, and manufacturing confidence separate.</p></div></section><section class="section compact"><div class="page"><div class="panel"><div class="filter-grid comparison-selects">${selects}</div><div class="hero-actions" style="margin-top:16px"><button class="button ghost small-button" type="button" data-clear-compare>Clear</button><button class="button small-button" type="button" data-share-compare>Copy comparison link</button></div></div><div class="notice warning" data-mixed-warning hidden style="margin-top:18px"><p><strong>Mixed comparison:</strong> a frameset price excludes most components, while a complete-bike price includes them. Use the frameset model page’s build calculator before deciding on value.</p></div><div class="table-wrap" style="margin-top:22px" data-comparison-wrap hidden><table class="comparison-table"><thead><tr data-comparison-head><th>Field</th></tr></thead><tbody data-comparison-body></tbody></table></div><div class="empty-state" data-comparison-empty>Select two to four products above, or choose products from the explorers.</div><script type="application/json" id="comparison-data">${safeJson(summaries)}</script></div></section>`;
-  return page(ctx,{title:'Compare',current:'compare',path:'/compare/',body});
-}
-
-export function renderResearch(ctx) {
-  const body=`<section class="detail-hero"><div class="page"><p class="eyebrow">Transparent uncertainty</p><h1>Watchlist and exclusions</h1><p class="lede">Interesting products stay visible even when the evidence is not strong enough for the main catalog. This prevents an unknown specification from quietly becoming a confident claim.</p></div></section><section class="section compact"><div class="page"><header class="section-header"><div><h2>Needs more evidence</h2><p class="muted">These may be good products. They are waiting for an exact SKU, current price, clearance proof, or manufacturing identity.</p></div></header><div class="watch-grid">${ctx.data.candidates.map((item)=>`<article class="watch-card"><p class="eyebrow">${escapeHtml(item.type)} · ${escapeHtml(item.status)}</p><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.why_interesting)}</p><h4>Missing</h4><ul>${item.missing.map((x)=>`<li>${escapeHtml(x)}</li>`).join('')}</ul></article>`).join('')}</div></div></section><section class="section"><div class="page"><header class="section-header"><div><h2>Excluded for now</h2><p class="muted">Exclusion is a data-quality decision, not a declaration that the bike is unsafe or bad.</p></div></header><div class="watch-grid">${ctx.data.exclusions.map((item)=>`<article class="watch-card"><p class="eyebrow">Reviewed ${escapeHtml(item.last_reviewed)}</p><h3>${escapeHtml(item.name)}</h3><p><strong>Why:</strong> ${escapeHtml(item.reason)}</p><p><strong>Reconsider when:</strong> ${escapeHtml(item.review_again_when)}</p></article>`).join('')}</div></div></section>`;
-  return page(ctx,{title:'Watchlist and exclusions',current:'research',path:'/research/',body});
-}
-
-export function renderGuidesIndex(ctx, guides) {
-  const body=`<section class="detail-hero"><div class="page"><p class="eyebrow">Durable knowledge</p><h1>Buyer guides</h1><p class="lede">Prices expire. Good methods keep working: identify the exact SKU, separate claims from measurements, compare total build cost, and inspect the bike while a return remains possible.</p></div></section><section class="section compact"><div class="page guide-grid">${guides.map((guide)=>`<a class="guide-card" href="${url(ctx.base,`/guides/${guide.slug}/`)}"><p class="eyebrow">Guide</p><h3>${escapeHtml(guide.title)}</h3><p>${escapeHtml(guide.description)}</p></a>`).join('')}</div></section>`;
-  return page(ctx,{title:'Buyer guides',current:'guides',path:'/guides/',body});
-}
-export function renderGuide(ctx, guide) {
-  const html=renderMarkdown(guide.body);
-  const body=`<section class="detail-hero"><div class="page prose">${breadcrumbs(ctx,[{label:'Home',href:'/'},{label:'Guides',href:'/guides/'},{label:guide.title}])}<p class="eyebrow">Buyer guide · reviewed ${escapeHtml(guide.reviewed)}</p><h1>${escapeHtml(guide.title)}</h1><p class="lede">${escapeHtml(guide.description)}</p></div></section><section class="section compact"><article class="page prose">${html}</article></section>`;
-  return page(ctx,{title:guide.title,current:'guides',path:`/guides/${guide.slug}/`,description:guide.description,body});
+function prosePage(ctx, { title, desc, path, html, current = '' }) {
+  return page(ctx, {
+    title,
+    current,
+    path,
+    description: desc,
+    body: `<section class="simple-page"><article class="page prose"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
+  });
 }
 
 export function renderMethodology(ctx) {
-  const html=`<h2>Inclusion</h2><p>The primary catalog covers carbon gravel and all-road complete bikes and framesets relevant to buyers in mainland China. Products generally need nominal tire capability above 38 mm, but conditional models remain visible when a stock tire fits and the true maximum is missing.</p><p>A published product needs an exact identity, at least one usable specification source, a clearance evidence label, a purchase route, a dated price or range, caveats, and a review date. Incomplete products go to the watchlist instead of disappearing.</p><h2>Entities stay separate</h2><p>A frame platform is not the same as a complete-bike configuration, and neither is the same as a price. Two builds can share one frame while having different drivetrains and price histories.</p><h2>Evidence labels</h2><div class="table-wrap"><table><thead><tr><th>Label</th><th>Meaning</th></tr></thead><tbody><tr><td>Measured</td><td>An independent measurement with a described setup.</td></tr><tr><td>Official</td><td>A manufacturer or brand claim.</td></tr><tr><td>Seller claim</td><td>A specific listing or seller statement.</td></tr><tr><td>Community report</td><td>An owner or reviewer observation.</td></tr><tr><td>Inferred</td><td>A stated inference from supporting evidence.</td></tr><tr><td>Unknown</td><td>No adequate evidence has been found.</td></tr></tbody></table></div><h2>Eligibility is not quality</h2><p><strong>Pass</strong> means adequate evidence for the tire criterion. <strong>Conditional</strong> means exact-SKU or measured-clearance confirmation is still needed. <strong>Unverified</strong> means the available information does not support the criterion. These labels do not declare a frame safe or unsafe.</p><h2>Manufacturing confidence</h2><p>Public evidence is assessed for the relationship between brand and factory, process control, inspection, testing, traceability, and warranty. Higher confidence means the manufacturing story is clearer. It does not guarantee an individual unit.</p><h2>Price handling</h2><p>Every price has a date, type, channel, status, conditions, and sources. Exact observations, official list prices, reference ranges, historical promotions, and estimates are not collapsed into one timeless number.</p><ul><li><strong>Current:</strong> 0–30 days old</li><li><strong>Recent:</strong> 31–90 days</li><li><strong>Historical:</strong> 91–180 days</li><li><strong>Old:</strong> more than 180 days</li></ul><h2>Value thresholds</h2><p>Instead of one universal score, configurations can have great-buy, fair-buy, and not-compelling-above thresholds. The recommendation can therefore change with price.</p><h2>Custom-build estimates</h2><p>Frameset pages add reusable parts profiles. The estimate is a range, not a quote.</p><h2>Corrections</h2><p>Corrections need the exact model/generation and supporting source. Unknown values remain unknown.</p>`;
-  return prosePage(ctx,{title:'Methodology',desc:'The goal is not a perfect universal ranking. It is a transparent decision system that preserves exact models, dated prices, claim-level evidence, and uncertainty.',path:'/methodology/',eyebrow:'How the guide works',html});
+  const assumption = buildAssumption(ctx);
+  const html = `<h2>What is compared</h2><p>The main list mixes complete bikes and frameset-based builds because total cost matters more than the sticker price of a bare frame. Products generally need carbon construction and practical tire capability above 38 mm.</p><h2>Frameset price estimate</h2><p>Every frameset receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} This keeps frame comparisons consistent. It is an estimate, not a shopping cart or guarantee.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button beside it contains the underlying frame price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Tire clearance</h2><p>The visible number is the best published or stock evidence. The info button explains whether it is official, seller-reported, measured, inferred, or still conditional. A nominal tire can measure wider on a particular rim.</p><h2>Carbon and manufacturing</h2><p>Fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a frame is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frame builds, tire clearance and manufacturing evidence are handled.', path: '/methodology/', current: 'methodology', html });
 }
+
 export function renderPrivacy(ctx) {
-  const html=`<h2>What the site collects</h2><p>The project code does not collect personal information. It has no backend, login, newsletter, ad tracker, analytics SDK, or payment system. Comparison selections are stored only in the visitor’s browser using local storage.</p><h2>What the repository contains</h2><p>Public product information, original analysis, source links, anonymized price observations, and community contributions. The initial dataset intentionally excludes buyer names, seller chat identities, account handles, phone numbers, email addresses, shipping addresses, payment details, order IDs, tracking numbers, and private screenshots.</p><h2>GitHub contributions are public</h2><p>Issues and pull requests are governed by GitHub’s account and privacy system. Contributors should remove personal and transaction details before submitting screenshots or owner reports.</p><h2>Automated privacy check</h2><p>Continuous integration scans committed text for common local file paths, credentials, non-placeholder email addresses, private network addresses, order identifiers, and chat-export markers. Automation cannot catch everything; contributors remain responsible for reviewing attachments.</p>`;
-  return prosePage(ctx,{title:'Privacy',desc:'The website is a static buyer’s guide. It does not need accounts, analytics, cookies, or private buyer data.',path:'/privacy/',eyebrow:'Public data only',html});
+  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike selections are stored only in the visitor’s browser.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer host. The host receives a normal image request. Images use <code>referrerpolicy="no-referrer"</code>, and a local placeholder appears when a source image fails.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, and location metadata before submitting screenshots or photos.</p>`;
+  return prosePage(ctx, { title: 'Privacy', desc: 'No accounts or analytics; third-party product images are disclosed.', path: '/privacy/', html });
 }
-export function renderContribute(ctx) {
-  const forms=[['Add a model','Propose an exact bike or frameset with identity, specifications, price, and sources.','add-model.yml'],['Submit a price sighting','Add a dated checkout or list-price observation without exposing account or order data.','price-sighting.yml'],['Correct a specification','Fix an exact field with model-generation context and evidence.','correct-spec.yml'],['Submit an owner report','Share a measurement, recurring issue, inspection finding, or warranty outcome.','owner-report.yml']];
-  const body=`<section class="detail-hero"><div class="page"><p class="eyebrow">Research through GitHub</p><h1>Improve the guide</h1><p class="lede">The website stays buyer-focused. New research enters through structured GitHub issues and pull requests, where the evidence and exact SKU can be reviewed.</p></div></section><section class="section compact"><div class="page guide-grid">${forms.map(([title,text,template])=>`<a class="guide-card" href="${ctx.repositoryUrl}/issues/new?template=${template}"><p class="eyebrow">GitHub issue form</p><h3>${title}</h3><p>${text}</p></a>`).join('')}</div></section><section class="section"><div class="page prose"><h2>Before attaching a screenshot</h2><p>Crop or redact names, avatars, account IDs, phone numbers, addresses, order IDs, tracking numbers, payment data, and unrelated purchases. A useful price submission needs the exact variant, amount, date, platform, promotion conditions, and whether shipping is included—not the buyer’s identity.</p><h2>Pull requests</h2><p>Small, evidence-backed changes are preferred. Data belongs in JSON; editorial explanations belong in guides or model notes. Run <code>npm run check</code> before opening a pull request.</p><p><a class="button primary" href="${ctx.repositoryUrl}/pulls">Open the repository</a></p></div></section>`;
-  return page(ctx,{title:'Contribute',path:'/contribute/',body});
+
+export function renderImagePolicy(ctx) {
+  const html = `<h2>Image use</h2><p>The repository stores structured credits and remote image URLs rather than copying third-party product photography. Product images remain the property of their credited owners.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Fallbacks and corrections</h2><p>A project-owned placeholder replaces broken external images. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, or a rights-cleared replacement.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
-export function renderAbout(ctx) {
-  return prosePage(ctx,{title:'About the project',desc:'An open, static buyer’s guide for riders who do not want to repeat hours of fragmented Chinese-language research for every purchase.',path:'/about/',eyebrow:'One place for the decision',html:`<h2>Scope</h2><p>Version 1 covers carbon gravel and all-road bikes and framesets that can plausibly be purchased from mainland China or directly from a Chinese manufacturer. The project emphasizes value, usable tire clearance, modern standards, manufacturing evidence, and real finished-bike cost.</p><h2>Editorial position</h2><p>The project is independent and contains no paid rankings. Affiliate links are not used in the initial release. Product names and trademarks belong to their owners.</p><h2>What it is not</h2><p>It is not structural certification, professional bike fitting, a safety guarantee, or a live inventory system. Buyers remain responsible for verifying the exact configuration and inspecting the delivered product.</p>`});
+
+export function renderImageSources(ctx) {
+  const platforms = new Map(ctx.data.platforms.map((item) => [item.id, item]));
+  const brands = new Map(ctx.data.brands.map((item) => [item.id, item]));
+  const sources = new Map(ctx.data.sources.map((item) => [item.id, item]));
+  const firstProductByPlatform = new Map();
+  for (const product of ctx.products) if (!firstProductByPlatform.has(product.platform.id)) firstProductByPlatform.set(product.platform.id, product);
+  const entries = ctx.data.images.map((image) => {
+    const platform = platforms.get(image.platform_id);
+    const brand = brands.get(platform.brand_id);
+    const source = sources.get(image.source_id);
+    return { image, platform, brand, source, product: firstProductByPlatform.get(image.platform_id) };
+  }).sort((a, b) => `${a.brand.name} ${a.platform.name}`.localeCompare(`${b.brand.name} ${b.platform.name}`));
+  const html = `<div class="credit-list">${entries.map(({ image, platform, brand, source, product }) => `<article><a class="credit-image" href="${url(ctx.base, `/models/${product.variant.id}/`)}">${imageElement(ctx, { ...product, image })}</a><div><h2>${escapeHtml(brand.name)} ${escapeHtml(platform.name)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
+
 export function render404(ctx) {
-  return page(ctx,{title:'Page not found',path:'/404.html',noindex:true,body:`<section class="hero"><div class="page prose"><p class="eyebrow">404</p><h1>This route went off course.</h1><p class="lede">The model may have moved, been renamed, or remained in the research queue.</p><p><a class="button primary" href="${url(ctx.base,'/')}">Return to the guide</a></p></div></section>`});
+  return page(ctx, { title: 'Page not found', path: '/404.html', noindex: true, body: `<section class="simple-page"><div class="page prose"><h1>Page not found</h1><p class="page-lede">The bike or route may have moved.</p><p><a class="primary-button" href="${url(ctx.base, '/')}">Return to all bikes</a></p></div></section>` });
 }

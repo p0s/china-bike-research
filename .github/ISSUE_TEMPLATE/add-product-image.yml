@@ -1,0 +1,102 @@
+name: Add or fix a product image
+description: Propose a rights-safe image, repair a broken embed, or correct attribution or exactness.
+title: "Image: [brand and exact model]"
+labels: ["image", "research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Product images must be accurately identified and rights-safe. Do not upload copied marketplace, social-media, or reviewer images without permission.
+  - type: input
+    id: product
+    attributes:
+      label: Exact platform or variant ID
+      description: Use the existing kebab-case ID where possible.
+      placeholder: twitter-v3-wheeltop-eds
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Request type
+      options:
+        - Add a new image
+        - Replace an inaccurate image
+        - Fix a broken remote image
+        - Correct credit or source
+        - Report a rights concern
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Original source page
+      description: Link to the page where the image is published, not only the raw image file.
+      placeholder: https://example.com/product-page
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Image URL or proposed file
+      description: For a remote embed, provide the HTTPS image URL. For an original photo, describe how it will be supplied.
+    validations:
+      required: true
+  - type: dropdown
+    id: exactness
+    attributes:
+      label: What does the image show?
+      options:
+        - Exact complete-bike configuration
+        - Exact frame platform or frameset
+        - Same frame platform but different components
+        - Exact model but different color
+        - Same model name but a different market/build
+        - Illustrative placeholder only
+    validations:
+      required: true
+  - type: dropdown
+    id: rights
+    attributes:
+      label: Rights basis
+      options:
+        - I created the image and can license it to the project
+        - Written permission from the rights holder
+        - Manufacturer media license
+        - Compatible Creative Commons license
+        - Public domain
+        - Proposed remote embed from the official product page
+        - Proposed remote embed from a retailer product page
+        - Rights concern or removal request
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Required public credit
+      placeholder: Product image © Brand
+    validations:
+      required: true
+  - type: textarea
+    id: alt
+    attributes:
+      label: Proposed alt text
+      description: Describe the bike or frameset; do not repeat marketing copy.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and limitations
+      description: Mention component, color, crop, watermark, stability, or attribution limitations.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have not included a person’s name, face, address, account ID, order ID, payment data, location metadata, or private correspondence.
+          required: true
+        - label: I have accurately described who owns the image and why the proposed use is allowed or limited to a remote embed.
+          required: true
+        - label: I understand that a public webpage does not by itself grant a redistribution license.
+          required: true

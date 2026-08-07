@@ -30,7 +30,7 @@ export function loadDataset() {
     variants: loadDirectory('variants'),
     prices: loadDirectory('prices'),
     sources: loadDirectory('sources'),
-    buildProfiles: loadDirectory('build-profiles'),
+    images: loadDirectory('images'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions')
@@ -50,7 +50,11 @@ function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$
 export function validateDataset(data = loadDataset()) {
   const errors = [];
   const requireFields = (kind, record, fields) => {
-    for (const field of fields) if (record[field] === undefined || record[field] === null || record[field] === '') errors.push(`${kind} ${record.id ?? '(missing id)'}: missing ${field}`);
+    for (const field of fields) {
+      if (record[field] === undefined || record[field] === null || record[field] === '') {
+        errors.push(`${kind} ${record.id ?? '(missing id)'}: missing ${field}`);
+      }
+    }
   };
   const unique = (kind, records) => {
     const seen = new Set();
@@ -62,66 +66,170 @@ export function validateDataset(data = loadDataset()) {
   };
 
   for (const [kind, records] of Object.entries({
-    brand:data.brands, platform:data.platforms, variant:data.variants, price:data.prices,
-    source:data.sources, buildProfile:data.buildProfiles, recommendation:data.recommendations,
-    candidate:data.candidates, exclusion:data.exclusions
+    brand: data.brands,
+    platform: data.platforms,
+    variant: data.variants,
+    price: data.prices,
+    source: data.sources,
+    image: data.images,
+    recommendation: data.recommendations,
+    candidate: data.candidates,
+    exclusion: data.exclusions
   })) unique(kind, records);
+
+  const buildAssumption = data.meta?.frameset_build_assumption;
+  if (!isObject(buildAssumption)) errors.push('meta: missing frameset_build_assumption');
+  else {
+    if (typeof buildAssumption.amount_cny !== 'number' || buildAssumption.amount_cny <= 0) errors.push('meta: invalid frameset_build_assumption.amount_cny');
+    if (typeof buildAssumption.label !== 'string' || !buildAssumption.label.trim()) errors.push('meta: missing frameset_build_assumption.label');
+    if (typeof buildAssumption.drivetrain_label !== 'string' || !buildAssumption.drivetrain_label.trim()) errors.push('meta: missing frameset_build_assumption.drivetrain_label');
+    if (!isDate(buildAssumption.reviewed_at)) errors.push('meta: invalid frameset_build_assumption.reviewed_at');
+  }
 
   const brandIds = new Set(data.brands.map((x) => x.id));
   const platformIds = new Set(data.platforms.map((x) => x.id));
   const variantIds = new Set(data.variants.map((x) => x.id));
   const sourceIds = new Set(data.sources.map((x) => x.id));
+  const variantsById = new Map(data.variants.map((x) => [x.id, x]));
 
   for (const brand of data.brands) {
-    requireFields('brand', brand, ['name','manufacturing','china_support','last_reviewed']);
+    requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
     if (!isObject(brand.manufacturing)) errors.push(`brand ${brand.id}: manufacturing must be an object`);
     if (!isDate(brand.last_reviewed)) errors.push(`brand ${brand.id}: invalid last_reviewed`);
   }
+
   for (const platform of data.platforms) {
-    requireFields('platform', platform, ['brand_id','name','category','handlebar','frame','tire_clearance','source_ids','last_reviewed']);
+    requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'tire_clearance', 'source_ids', 'last_reviewed']);
     if (!brandIds.has(platform.brand_id)) errors.push(`platform ${platform.id}: missing brand ${platform.brand_id}`);
-    if (!['drop','flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
+    if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
     const clearance = platform.tire_clearance ?? {};
-    if (!['pass','conditional','fail','unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
+    if (!['pass', 'conditional', 'fail', 'unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
     const anyClearance = clearance.stock_nominal_mm ?? clearance.published_max_mm ?? clearance.published_front_max_mm ?? clearance.published_rear_max_mm;
     if (clearance.eligibility === 'pass' && anyClearance === undefined) errors.push(`platform ${platform.id}: pass without a clearance number`);
-    for (const key of ['stock_nominal_mm','published_max_mm','published_front_max_mm','published_rear_max_mm']) {
+    for (const key of ['stock_nominal_mm', 'published_max_mm', 'published_front_max_mm', 'published_rear_max_mm']) {
       const value = clearance[key];
       if (value !== undefined && (typeof value !== 'number' || value <= 0 || value > 100)) errors.push(`platform ${platform.id}: invalid ${key}`);
     }
     for (const sourceId of platform.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`platform ${platform.id}: missing source ${sourceId}`);
   }
+
   for (const variant of data.variants) {
-    requireFields('variant', variant, ['platform_id','name','kind','editorial','source_ids']);
+    requireFields('variant', variant, ['platform_id', 'name', 'kind', 'editorial', 'source_ids']);
     if (!platformIds.has(variant.platform_id)) errors.push(`variant ${variant.id}: missing platform ${variant.platform_id}`);
-    if (!['complete-bike','frameset'].includes(variant.kind)) errors.push(`variant ${variant.id}: invalid kind`);
+    if (!['complete-bike', 'frameset'].includes(variant.kind)) errors.push(`variant ${variant.id}: invalid kind`);
     const thresholds = variant.editorial?.price_thresholds_cny;
     if (thresholds && !(thresholds.great_buy_below <= thresholds.fair_buy_below && thresholds.fair_buy_below <= thresholds.not_compelling_above)) errors.push(`variant ${variant.id}: invalid threshold ordering`);
     for (const sourceId of variant.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`variant ${variant.id}: missing source ${sourceId}`);
   }
+
   for (const price of data.prices) {
-    requireFields('price', price, ['variant_id','observed_at','price_type','currency','source_ids']);
+    requireFields('price', price, ['variant_id', 'observed_at', 'price_type', 'currency', 'source_ids']);
     if (!variantIds.has(price.variant_id)) errors.push(`price ${price.id}: missing variant ${price.variant_id}`);
     if (!isDate(price.observed_at)) errors.push(`price ${price.id}: invalid observed_at`);
     if (price.currency !== 'CNY') errors.push(`price ${price.id}: currency must be CNY`);
     if (price.amount_cny === undefined && price.low_cny === undefined) errors.push(`price ${price.id}: needs amount_cny or low_cny`);
     if (price.low_cny !== undefined && price.high_cny !== undefined && price.low_cny > price.high_cny) errors.push(`price ${price.id}: low_cny exceeds high_cny`);
-    for (const key of ['amount_cny','low_cny','high_cny']) if (price[key] !== undefined && (typeof price[key] !== 'number' || price[key] <= 0)) errors.push(`price ${price.id}: invalid ${key}`);
+    for (const key of ['amount_cny', 'low_cny', 'high_cny']) {
+      if (price[key] !== undefined && (typeof price[key] !== 'number' || price[key] <= 0)) errors.push(`price ${price.id}: invalid ${key}`);
+    }
     for (const sourceId of price.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`price ${price.id}: missing source ${sourceId}`);
   }
+
   for (const source of data.sources) {
-    requireFields('source', source, ['type','title','publisher','accessed_at','reliability','notes']);
+    requireFields('source', source, ['type', 'title', 'publisher', 'accessed_at', 'reliability', 'notes']);
     if (!isDate(source.accessed_at)) errors.push(`source ${source.id}: invalid accessed_at`);
-    if (source.url) { try { new URL(source.url); } catch { errors.push(`source ${source.id}: invalid URL`); } }
+    if (source.url) {
+      try { new URL(source.url); } catch { errors.push(`source ${source.id}: invalid URL`); }
+    }
   }
+
+  const accuracyValues = new Set(['exact-variant', 'exact-platform', 'same-platform', 'same-model-different-color', 'same-model-different-market-build', 'illustrative']);
+  const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'project-placeholder']);
+  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed']);
+  for (const image of data.images) {
+    requireFields('image', image, ['platform_id', 'role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
+    if (!platformIds.has(image.platform_id)) errors.push(`image ${image.id}: missing platform ${image.platform_id}`);
+    if (image.role !== 'primary') errors.push(`image ${image.id}: unsupported role ${image.role}`);
+    if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
+    if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
+    if (!isDate(image.reviewed_at)) errors.push(`image ${image.id}: invalid reviewed_at`);
+    if (!sourceIds.has(image.source_id)) errors.push(`image ${image.id}: missing source ${image.source_id}`);
+    if (!isObject(image.rights) || !rightsValues.has(image.rights?.status)) errors.push(`image ${image.id}: invalid rights status`);
+    if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`image ${image.id}: alt text is too short`);
+    if (typeof image.credit !== 'string' || image.credit.trim().length < 3) errors.push(`image ${image.id}: credit is required`);
+    for (const variantId of image.variant_ids ?? []) {
+      const variant = variantsById.get(variantId);
+      if (!variant) errors.push(`image ${image.id}: missing variant ${variantId}`);
+      else if (variant.platform_id !== image.platform_id) errors.push(`image ${image.id}: variant ${variantId} belongs to another platform`);
+    }
+    const mode = image.hosting?.mode;
+    if (mode === 'remote') {
+      if (!['official-page-embed', 'retailer-page-embed', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
+      try {
+        const parsed = new URL(image.hosting.remote_url);
+        if (parsed.protocol !== 'https:') errors.push(`image ${image.id}: remote URL must use HTTPS`);
+      } catch { errors.push(`image ${image.id}: invalid remote URL`); }
+    } else if (mode === 'local') {
+      const localPath = image.hosting?.local_path;
+      if (typeof localPath !== 'string' || !localPath.startsWith('/assets/images/')) errors.push(`image ${image.id}: invalid local_path`);
+      else if (!fs.existsSync(path.join(root, localPath.replace(/^\//, '')))) errors.push(`image ${image.id}: missing local asset ${localPath}`);
+      if (['official-page-embed', 'retailer-page-embed'].includes(image.rights?.status)) errors.push(`image ${image.id}: embed-only image cannot be stored locally`);
+    } else errors.push(`image ${image.id}: hosting mode must be remote or local`);
+  }
+
+  for (const platform of data.platforms) {
+    if (!data.images.some((image) => image.platform_id === platform.id && image.role === 'primary')) errors.push(`platform ${platform.id}: no primary visual`);
+  }
+
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
-  for (const profile of data.buildProfiles) {
-    requireFields('build profile', profile, ['name','parts','last_reviewed']);
-    for (const [part, range] of Object.entries(profile.parts ?? {})) if (!Array.isArray(range) || range.length !== 2 || range.some((x) => typeof x !== 'number' || x < 0) || range[0] > range[1]) errors.push(`build profile ${profile.id}: invalid range for ${part}`);
-  }
   for (const variant of data.variants) if (!data.prices.some((price) => price.variant_id === variant.id)) errors.push(`variant ${variant.id}: no price record`);
   return errors;
+}
+
+function choosePrimaryImage(images, variantId) {
+  return images.find((image) => image.role === 'primary' && image.variant_ids?.includes(variantId))
+    ?? images.find((image) => image.role === 'primary' && !(image.variant_ids?.length))
+    ?? images.find((image) => image.role === 'primary')
+    ?? null;
+}
+
+export function priceBounds(price) {
+  if (!price) return [undefined, undefined];
+  const low = price.amount_cny ?? price.low_cny;
+  const high = price.amount_cny ?? price.high_cny ?? price.low_cny;
+  return [low, high];
+}
+
+export function framesetBuildAssumption(data = loadDataset()) {
+  return data.meta.frameset_build_assumption;
+}
+
+export function allInPriceFor(variant, price, data = loadDataset()) {
+  const [rawLow, rawHigh] = priceBounds(price);
+  if (rawLow === undefined) {
+    return {
+      estimated: variant.kind === 'frameset',
+      low: undefined,
+      high: undefined,
+      midpoint: Number.POSITIVE_INFINITY,
+      buildAmount: variant.kind === 'frameset' ? framesetBuildAssumption(data).amount_cny : 0,
+      frameLow: rawLow,
+      frameHigh: rawHigh
+    };
+  }
+  const buildAmount = variant.kind === 'frameset' ? framesetBuildAssumption(data).amount_cny : 0;
+  const low = rawLow + buildAmount;
+  const high = (rawHigh ?? rawLow) + buildAmount;
+  return {
+    estimated: variant.kind === 'frameset',
+    low,
+    high,
+    midpoint: Math.round((low + high) / 2),
+    buildAmount,
+    frameLow: rawLow,
+    frameHigh: rawHigh ?? rawLow
+  };
 }
 
 export function joinProducts(data = loadDataset()) {
@@ -133,10 +241,36 @@ export function joinProducts(data = loadDataset()) {
     if (!platform) throw new Error(`Missing platform ${variant.platform_id}`);
     const brand = brands.get(platform.brand_id);
     if (!brand) throw new Error(`Missing brand ${platform.brand_id}`);
-    const prices = data.prices.filter((price) => price.variant_id === variant.id).sort((a,b) => b.observed_at.localeCompare(a.observed_at));
-    const sourceIds = new Set([...(variant.source_ids ?? []), ...(platform.source_ids ?? []), ...prices.flatMap((price) => price.source_ids ?? [])]);
-    return { variant, platform, brand, prices, latestPrice:prices[0], sources:[...sourceIds].map((id) => sources.get(id)).filter(Boolean) };
-  }).sort((a,b) => priceSortValue(a.latestPrice) - priceSortValue(b.latestPrice));
+    const prices = data.prices.filter((price) => price.variant_id === variant.id).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
+    const latestPrice = prices[0];
+    const platformImages = data.images.filter((image) => image.platform_id === platform.id);
+    const selectedImage = choosePrimaryImage(platformImages, variant.id);
+    const image = selectedImage ? {
+      ...selectedImage,
+      display_accuracy: selectedImage.subject_accuracy === 'illustrative'
+        ? 'illustrative'
+        : selectedImage.variant_ids?.includes(variant.id)
+          ? selectedImage.subject_accuracy
+          : 'same-platform'
+    } : null;
+    const sourceIds = new Set([
+      ...(variant.source_ids ?? []),
+      ...(platform.source_ids ?? []),
+      ...prices.flatMap((price) => price.source_ids ?? []),
+      ...(image?.source_id ? [image.source_id] : [])
+    ]);
+    return {
+      variant,
+      platform,
+      brand,
+      prices,
+      latestPrice,
+      allInPrice: allInPriceFor(variant, latestPrice, data),
+      image,
+      imageSource: image ? sources.get(image.source_id) ?? null : null,
+      sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
+    };
+  }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);
 }
 
 export function priceSortValue(price) { return price?.amount_cny ?? price?.low_cny ?? Number.POSITIVE_INFINITY; }
@@ -146,12 +280,20 @@ export function priceMidpoint(price) {
   if (price.low_cny !== undefined && price.high_cny !== undefined) return Math.round((price.low_cny + price.high_cny) / 2);
   return price.low_cny;
 }
-export function formatCny(value) { return value === undefined ? 'Price unknown' : `¥${new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(value)}`; }
+export function formatCny(value) { return value === undefined ? 'Price unknown' : `¥${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value)}`; }
+export function formatRange(low, high, { estimated = false } = {}) {
+  if (low === undefined) return 'Price not verified';
+  const prefix = estimated ? 'Est. ' : '';
+  if (high === undefined || high === low) return `${prefix}${formatCny(low)}`;
+  const number = (value) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value);
+  return `${prefix}¥${number(low)}–${number(high)}`;
+}
 export function formatPrice(price) {
-  if (!price) return 'Price not verified';
-  if (price.amount_cny !== undefined) return formatCny(price.amount_cny);
-  if (price.low_cny !== undefined && price.high_cny !== undefined) return `${formatCny(price.low_cny)}–${formatCny(price.high_cny)}`;
-  return `From ${formatCny(price.low_cny)}`;
+  const [low, high] = priceBounds(price);
+  return formatRange(low, high);
+}
+export function formatAllInPrice(product) {
+  return formatRange(product.allInPrice.low, product.allInPrice.high, { estimated: product.allInPrice.estimated });
 }
 export function maxClearance(platform) {
   const c = platform.tire_clearance;
@@ -159,23 +301,24 @@ export function maxClearance(platform) {
 }
 export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
+  if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
+  if (c.published_max_mm) return `${c.published_max_mm} mm`;
+  if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm`;
+  return 'Unverified';
+}
+export function clearanceLongLabel(platform) {
+  const c = platform.tire_clearance;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;
-  if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock; max unverified`;
+  if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock; maximum unverified`;
   return 'Unverified';
 }
 export function freshness(observedAt, now = new Date()) {
-  if (!observedAt) return {label:'No price date',key:'unknown'};
+  if (!observedAt) return { label: 'No price date', key: 'unknown' };
   const observed = new Date(`${observedAt}T00:00:00Z`);
-  const days = Math.max(0, Math.floor((now.getTime()-observed.getTime())/86_400_000));
-  if (days <= 30) return {label:'Current',key:'current',days};
-  if (days <= 90) return {label:'Recent',key:'recent',days};
-  if (days <= 180) return {label:'Historical',key:'historical',days};
-  return {label:'Old',key:'old',days};
-}
-export function buildProfileRange(profile, cockpitIncluded=false) {
-  return Object.entries(profile.parts).reduce((sum,[key,range]) => {
-    if (cockpitIncluded && key === 'cockpit_if_needed') return sum;
-    return [sum[0]+range[0],sum[1]+range[1]];
-  },[0,0]);
+  const days = Math.max(0, Math.floor((now.getTime() - observed.getTime()) / 86_400_000));
+  if (days <= 30) return { label: 'Current', key: 'current', days };
+  if (days <= 90) return { label: 'Recent', key: 'recent', days };
+  if (days <= 180) return { label: 'Historical', key: 'historical', days };
+  return { label: 'Old', key: 'old', days };
 }
