@@ -7,7 +7,7 @@ test('HTML escaping prevents markup injection', () => {
 });
 
 test('base-aware URLs work for GitHub project pages', () => {
-  assert.equal(url('/china-carbon-bike-guide', '/models/example/'), '/china-carbon-bike-guide/models/example/');
+  assert.equal(url('/china-bike-research', '/models/example/'), '/china-bike-research/models/example/');
   assert.equal(url('', '/'), '/');
 });
 
