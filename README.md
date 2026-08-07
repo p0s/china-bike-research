@@ -6,7 +6,7 @@ An evidence-backed buyer’s guide to carbon gravel and all-road bikes and frame
 
 [Open the buyer guide](https://p0s.github.io/china-carbon-bike-guide/) · [Browse the data](data/) · [Contribute research](CONTRIBUTING.md)
 
-> Replace `OWNER` in the link above and in `CITATION.cff` after creating the GitHub repository. The deployed site itself derives the correct repository path automatically in GitHub Actions.
+> GitHub repository ownership has been set to `p0s` in the project metadata and links above now resolve for this repo owner.
 
 ## Current quick picks
 
@@ -68,7 +68,7 @@ That command performs:
 4. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 5. Push to `main`, or manually run **Deploy GitHub Pages** under the Actions tab.
 
-The build derives the GitHub project-page base path from `GITHUB_REPOSITORY`, so it continues to work when the repository is renamed. A repository named `OWNER.github.io` is also handled without a project subpath.
+The build derives the GitHub project-page base path from `GITHUB_REPOSITORY`, so it continues to work when the repository is renamed. A repository named `p0s.github.io` is also handled without a project subpath.
 
 Optional local deployment variables are documented in `.env.example`. GitHub Actions does not require them.
 

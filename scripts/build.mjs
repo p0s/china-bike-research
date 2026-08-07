@@ -34,7 +34,7 @@ const projectBase = repository && !repository.endsWith('.github.io') ? `/${repos
 const rawBase = process.env.PUBLIC_BASE_PATH ?? (process.env.GITHUB_ACTIONS === 'true' ? projectBase : '');
 const base = rawBase ? `/${rawBase.replace(/^\/+|\/+$/g, '')}` : '';
 const siteUrl = (process.env.PUBLIC_SITE_URL ?? (owner ? `https://${owner}.github.io` : 'https://example.invalid')).replace(/\/$/, '');
-const repositoryUrl = (process.env.PUBLIC_REPOSITORY_URL ?? (githubRepository ? `https://github.com/${githubRepository}` : 'https://github.com/OWNER/china-carbon-bike-guide')).replace(/\/$/, '');
+const repositoryUrl = (process.env.PUBLIC_REPOSITORY_URL ?? (githubRepository ? `https://github.com/${githubRepository}` : 'https://github.com/p0s/china-carbon-bike-guide')).replace(/\/$/, '');
 
 function ensureDir(file) { fs.mkdirSync(path.dirname(file), { recursive: true }); }
 function write(relative, content) {
