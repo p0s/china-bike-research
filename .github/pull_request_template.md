@@ -1,22 +1,17 @@
-## What changed
+## Change
 
-<!-- Identify exact brands, platforms, variants, prices, sources, or images. -->
+<!-- Exact models, records, or UI behavior changed. -->
 
 ## Evidence
 
-<!-- State which claim each source supports and its evidence type. -->
+<!-- Link each material claim to its source and evidence type. State unresolved unknowns. -->
 
-## Exact model scope
+## Checks
 
-<!-- Generation, size/configuration, and whether the frame platform is shared. -->
-
-## Privacy
-
-- [ ] No personal, account, order, shipping, tracking, payment, credential, or private-message data is included.
-- [ ] Images have exactness, source, rights, credit, and alt-text metadata; third-party files are not committed without permission or a compatible license.
-
-## Validation
-
-- [ ] `npm run check` passes locally.
-- [ ] Existing dated prices were preserved; new observations were added rather than overwriting history.
-- [ ] Unknown facts remain unknown and confidence is separate from expected quality.
+- [ ] Exact model, generation, and variant scope is clear.
+- [ ] New prices are dated records; price history was not overwritten.
+- [ ] Unknown facts remain unknown; no sibling model was inferred without evidence.
+- [ ] No personal, account, order, shipping, tracking, payment, credential, GPS, EXIF, or private-message data is included.
+- [ ] Images have accurate source, rights, credit, exactness, alt text, and fallback metadata.
+- [ ] UI changes preserve the unified minimalist comparison and avoid repeated content.
+- [ ] `npm run check` passes.

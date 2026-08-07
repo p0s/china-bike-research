@@ -37,3 +37,9 @@ test('secondary price and clearance data are placed in accessible tooltips', () 
   assert.match(html, /role="tooltip"/);
   assert.match(html, /data-result-summary aria-live="polite" hidden/);
 });
+
+
+test('generic project copy is category-neutral', () => {
+  assert.match(html, /<h1>Bikes in China<\/h1>/);
+  assert.doesNotMatch(html, /Carbon bikes in China|Gravel and all-road bikes|above 38 mm/i);
+});

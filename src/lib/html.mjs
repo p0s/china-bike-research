@@ -8,7 +8,7 @@ export function url(base, pathname='/') {
   return `${base}${p}` || '/';
 }
 export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt=''}) {
-  const siteName='China Carbon Bike Guide';
+  const siteName='China Bike Research';
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,path)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
@@ -34,7 +34,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="page header-inner">
-      <a class="brand" href="${url(base,'/')}" aria-label="China Carbon Bike Guide home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Carbon Bike Guide</span></a>
+      <a class="brand" href="${url(base,'/')}" aria-label="China Bike Research home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bike Research</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="${url(base,'/')}"${current==='catalog'?' aria-current="page"':''}>Bikes</a>
@@ -47,7 +47,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <main id="content">${body}</main>
   <footer class="site-footer">
     <div class="page footer-inner">
-      <span>Independent comparison of carbon bikes available in China.</span>
+      <span>Independent comparison of bicycles available in China.</span>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>

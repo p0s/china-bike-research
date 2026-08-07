@@ -15,7 +15,7 @@ import {
   url
 } from './lib/html.mjs';
 
-const description = 'A concise comparison of carbon gravel and all-road bikes and frame builds available to riders in China.';
+const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 let tooltipIndex = 0;
 
 function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '' }) {
@@ -256,7 +256,7 @@ export function renderHome(ctx) {
   const categories = [...new Set(ctx.products.map((product) => product.platform.category))].sort();
   const assumption = buildAssumption(ctx);
   const summaries = ctx.products.map((product) => comparisonSummary(ctx, product));
-  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Carbon bikes in China</h1><p>Gravel and all-road bikes with practical wide-tire capability, sorted by estimated complete-bike price.</p></div><div class="assumption-note"><strong>Frameset estimates add ${formatCny(assumption.amount_cny)}</strong>${infoTip('Frameset build assumption', [assumption.summary, `Reviewed ${assumption.reviewed_at}.`])}</div></div></section>
+  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frameset builds by full-bike price, category, components, and evidence.</p></div><div class="assumption-note"><strong>Frameset estimates add ${formatCny(assumption.amount_cny)}</strong>${infoTip('Frameset build assumption', [assumption.summary, `Reviewed ${assumption.reviewed_at}.`])}</div></div></section>
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
     <div class="filter-bar">
       <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search brand, model or drivetrain" autocomplete="off" data-filter-search></div>
@@ -274,7 +274,7 @@ export function renderHome(ctx) {
     </section>
 
     <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length}</strong> matches</span><span>Select two to four bikes to compare</span></div>
-    <div class="catalog-table" data-product-list role="table" aria-label="Carbon bike comparison">
+    <div class="catalog-table" data-product-list role="table" aria-label="Bike comparison">
       <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader">Bike</span><span role="columnheader">Full-bike price</span><span role="columnheader">Tire</span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
       ${ctx.products.map((product) => productRow(ctx, product)).join('')}
       <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
@@ -332,8 +332,8 @@ function prosePage(ctx, { title, desc, path, html, current = '' }) {
 
 export function renderMethodology(ctx) {
   const assumption = buildAssumption(ctx);
-  const html = `<h2>What is compared</h2><p>The main list mixes complete bikes and frameset-based builds because total cost matters more than the sticker price of a bare frame. Products generally need carbon construction and practical tire capability above 38 mm.</p><h2>Frameset price estimate</h2><p>Every frameset receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} This keeps frame comparisons consistent. It is an estimate, not a shopping cart or guarantee.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button beside it contains the underlying frame price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Tire clearance</h2><p>The visible number is the best published or stock evidence. The info button explains whether it is official, seller-reported, measured, inferred, or still conditional. A nominal tire can measure wider on a particular rim.</p><h2>Carbon and manufacturing</h2><p>Fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a frame is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
-  return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frame builds, tire clearance and manufacturing evidence are handled.', path: '/methodology/', current: 'methodology', html });
+  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset currently receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} It is an estimate, not a shopping cart or guarantee. Framesets remain candidates when this assumption would be materially misleading.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Specifications</h2><p>The catalog shows a compact common core and adds category-specific facts only when useful. Tire clearance is one example; other categories may require different compatibility or performance fields.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frameset estimates, specifications, and evidence are handled.', path: '/methodology/', current: 'methodology', html });
 }
 
 export function renderPrivacy(ctx) {
