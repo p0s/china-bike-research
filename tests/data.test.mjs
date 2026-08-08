@@ -91,9 +91,23 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     if (image.hosting.mode === 'remote') assert.match(image.hosting.remote_url, /^https:\/\//, image.id);
     if (image.hosting.mode === 'local') assert.match(image.hosting.local_path, /^\/assets\/images\//, image.id);
   }
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 29);
-  assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, 28);
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'local').length, 28);
+  const unresolvedImagePlatforms = [
+    'elves-falath-r7170',
+    'huanyu-az-one',
+    'irefox-by446',
+    'java-fuoco-2025',
+    'legit-ac1',
+    'lightcarbon-speedz',
+    'pardus-spark-sport-pes',
+    'sunpeed-wudi-e-2026',
+    'viqi-r8000'
+  ];
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 48);
+  assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
+  assert.deepEqual(
+    data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
+    unresolvedImagePlatforms.sort()
+  );
 });
 
 test('category-specific facts stay scoped to the categories that use them', () => {
