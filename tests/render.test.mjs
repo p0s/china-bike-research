@@ -31,9 +31,14 @@ test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /href="[^"]*\/guides\//i);
 });
 
-test('secondary price and clearance data are placed in accessible tooltips', () => {
+test('secondary price and category-fit data are placed in accessible tooltips', () => {
   assert.match(html, /aria-label="Price details"/);
-  assert.match(html, /aria-label="Tire-clearance details"/);
+  assert.match(html, /aria-label="Tire details"/);
+  assert.match(html, /aria-label="Suspension details"/);
+  assert.match(html, /data-filter-capability/);
+  assert.match(html, /E-road/);
+  assert.match(html, /Folding/);
+  assert.match(html, /Triathlon/);
   assert.match(html, /role="tooltip"/);
   assert.match(html, /data-result-summary aria-live="polite" hidden/);
 });

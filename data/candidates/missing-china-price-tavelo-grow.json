@@ -1,0 +1,19 @@
+{
+  "id": "missing-china-price-tavelo-grow",
+  "name": "Tavelo Grow China price target",
+  "model_id": "tavelo-grow",
+  "category": "gravel-race",
+  "type": "frameset",
+  "why_interesting": "Modern wide-clearance aero gravel frame; needs a mainland RMB observation.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "existing_record_id": "tavelo-grow-frameset",
+  "research_priority": "high",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}

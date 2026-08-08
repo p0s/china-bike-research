@@ -1,0 +1,18 @@
+{
+  "id": "missing-china-price-canyon-ultimate",
+  "name": "Canyon Ultimate China price target",
+  "model_id": "canyon-ultimate",
+  "category": "road",
+  "type": "research",
+  "why_interesting": "Relevant if mainland buyability can be verified.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "research_priority": "medium",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}

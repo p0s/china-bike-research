@@ -16,12 +16,15 @@ test('dataset validates without errors', () => {
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 23);
-  assert.equal(data.platforms.length, 29);
-  assert.equal(data.variants.length, 30);
-  assert.equal(data.prices.length, 30);
-  assert.equal(data.images.length, 29);
-  assert.ok(data.sources.length >= 41);
+  assert.equal(data.brands.length, 36);
+  assert.equal(data.platforms.length, 57);
+  assert.equal(data.variants.length, 59);
+  assert.equal(data.prices.length, 60);
+  assert.equal(data.images.length, 57);
+  assert.ok(data.sources.length >= 61);
+  assert.equal(data.candidates.length, 150);
+  assert.equal(data.exclusions.length, 13);
+  assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -33,11 +36,15 @@ test('frame platforms and configurations remain separate', () => {
 
 test('observed Twitter prices are retained exactly and anonymously', () => {
   const eds = data.prices.find((item) => item.id === 'twitter-eds-2026-08-05');
+  const currentEds = data.prices.find((item) => item.id === 'twitter-eds-2026-08-08');
   const rs = data.prices.find((item) => item.id === 'twitter-rs-2026-08-05');
   assert.equal(eds.amount_cny, 5191);
+  assert.equal(currentEds.amount_cny, 4951);
+  assert.equal(currentEds.price_basis, 'coupon');
   assert.equal(rs.amount_cny, 3991);
   assert.equal(eds.channel, 'china-market');
   assert.equal(eds.source_ids.includes('market-snapshot-2026-08-05'), true);
+  assert.equal(currentEds.source_ids.includes('taobao-snapshot-2026-08-08'), true);
 });
 
 test('freshness uses explicit age buckets', () => {
@@ -53,7 +60,7 @@ test('all framesets use one transparent full-bike build allowance', () => {
   assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9200, 10900]);
   assert.equal(frame.allInPrice.estimated, true);
   const complete = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
-  assert.deepEqual([complete.allInPrice.low, complete.allInPrice.high], [5191, 5191]);
+  assert.deepEqual([complete.allInPrice.low, complete.allInPrice.high], [4951, 4951]);
   assert.equal(complete.allInPrice.estimated, false);
 });
 
@@ -85,7 +92,36 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     if (image.hosting.mode === 'local') assert.match(image.hosting.local_path, /^\/assets\/images\//, image.id);
   }
   assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 29);
-  assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, 0);
+  assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, 28);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'local').length, 28);
+});
+
+test('category-specific facts stay scoped to the categories that use them', () => {
+  const gravel = data.platforms.find((item) => item.id === 'sava-gelaro-s8');
+  const mtb = data.platforms.find((item) => item.id === 'icanian-p9');
+  const triathlon = data.platforms.find((item) => item.id === 'felt-ia-2');
+  const eRoad = data.candidates.find((item) => item.id === 'cosmosworks-carbon-e-road');
+  const folding = data.candidates.find((item) => item.id === 'qingsha-carbon-folding');
+
+  assert.ok(gravel.tire_clearance);
+  assert.equal(mtb.tire_clearance, undefined);
+  assert.equal(mtb.category_details.suspension.travel_front_mm, 150);
+  assert.equal(triathlon.tire_clearance, undefined);
+  assert.equal(triathlon.category_details.discipline, 'triathlon/time-trial');
+  assert.equal(eRoad.category, 'e-road');
+  assert.equal(folding.category, 'folding');
+});
+
+test('research ledger reconciles every bundle group and preserves backlog status', () => {
+  const ledger = data.research.find((item) => item.id === 'taobao-2026-08-08');
+  assert.equal(ledger.model_group_count, 133);
+  assert.equal(ledger.group_dispositions.length, 133);
+  assert.equal(ledger.priority_additions.length, 35);
+  assert.equal(ledger.titanium_additions.length, 13);
+  assert.equal(ledger.missing_china_price_targets.length, 35);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'published-variant').length, 30);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 94);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 9);
 });
 
 test('shared frame images do not masquerade as exact component builds', () => {

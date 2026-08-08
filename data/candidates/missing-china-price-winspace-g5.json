@@ -1,0 +1,19 @@
+{
+  "id": "missing-china-price-winspace-g5",
+  "name": "Winspace G5 China price target",
+  "model_id": "winspace-g5",
+  "category": "gravel-race",
+  "type": "research",
+  "why_interesting": "Current flagship gravel platform; domestic price needed.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "existing_record_id": "winspace-g5-frameset",
+  "research_priority": "high",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}

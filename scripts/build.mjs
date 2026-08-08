@@ -4,6 +4,7 @@ import {
   loadDataset,
   joinProducts,
   validateDataset,
+  categoryMetric,
   formatAllInPrice,
   formatPrice,
   maxClearance,
@@ -117,20 +118,25 @@ const headers = [
   'id','brand','brand_zh','model','type','category','handlebar',
   'complete_price_low_cny','complete_price_high_cny','complete_price_label','is_estimate','frameset_price_label','price_date','price_status',
   'clearance_mm','clearance_label','clearance_note','clearance_evidence','eligibility',
-  'bottom_bracket','hanger','storage','frame_weight_g','complete_weight_g','drivetrain',
+  'category_metric_label','category_metric','category_metric_details','bottom_bracket','hanger','storage','frame_weight_g','complete_weight_g','drivetrain',
   'manufacturing_relationship','manufacturing_confidence','china_availability','verdict','image_url','image_source','model_url'
 ];
-const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, image, imageSource }) => [
+const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, image, imageSource }) => {
+  const metric = categoryMetric(platform);
+  const clearance = platform.tire_clearance ?? {};
+  return [
   variant.id, brand.name, brand.name_zh ?? '', variant.name, variant.kind, platform.category, platform.handlebar,
   allInPrice.low ?? '', allInPrice.high ?? '', formatAllInPrice({ allInPrice }), allInPrice.estimated ? 'yes' : 'no', variant.kind === 'frameset' ? formatPrice(latestPrice) : '', latestPrice?.observed_at ?? '', latestPrice?.status ?? '',
-  maxClearance(platform) ?? '', clearanceLongLabel(platform), platform.tire_clearance.note, platform.tire_clearance.evidence, platform.tire_clearance.eligibility,
+  maxClearance(platform) ?? '', clearanceLongLabel(platform), clearance.note ?? '', clearance.evidence ?? '', clearance.eligibility ?? '',
+  metric.label, metric.value, metric.details.join(' '),
   platform.frame.bottom_bracket, platform.frame.derailleur_hanger, platform.internal_storage ? 'yes' : 'no',
   platform.frame.claimed_frame_weight_g ?? '', variant.claimed_complete_weight_g ?? '',
   variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : data.meta.frameset_build_assumption.drivetrain_label,
   brand.manufacturing.relationship, brand.manufacturing.confidence, platform.china_availability, variant.editorial.verdict,
   image?.hosting.mode === 'remote' ? image.hosting.remote_url : image ? `${siteUrl}${base}${image.hosting.local_path}` : '',
   imageSource?.url ?? '', `${siteUrl}${base}/models/${variant.id}/`
-]);
+  ];
+});
 write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) => row.map(csvCell).join(',')).join('\n')}\n`);
 
 const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSitemap).map(([route]) => route);

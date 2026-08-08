@@ -1,0 +1,37 @@
+{
+  "id": "twitter-cyclone-electronic",
+  "platform_id": "twitter-cyclone-electronic",
+  "name": "Cyclone electronic",
+  "kind": "complete-bike",
+  "market": "mainland-china-marketplace",
+  "editorial": {
+    "verdict": "Dated China-market aero road lead for the exact visible Cyclone electronic configuration; use it as a comparison benchmark while confirming the final SKU and BOM.",
+    "best_for": [
+      "aero road"
+    ],
+    "strengths": [
+      "Exact model/configuration is visible in the 2026-08-08 snapshot",
+      "Dated mainland-China price observation"
+    ],
+    "caveats": [
+      "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
+      "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
+    ]
+  },
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-bikes-gravel-catalog-2026-08-08"
+  ],
+  "drivetrain": {
+    "brand": "WheelTop",
+    "model": "EDS TX",
+    "speeds": "2x12",
+    "shifting": "electronic-wireless",
+    "layout": "double"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc"
+  },
+  "claimed_complete_weight_g": 8700
+}

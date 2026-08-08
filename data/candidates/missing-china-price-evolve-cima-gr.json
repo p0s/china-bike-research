@@ -1,0 +1,19 @@
+{
+  "id": "missing-china-price-evolve-cima-gr",
+  "name": "Evolve CIMA GR China price target",
+  "model_id": "evolve-cima-gr",
+  "category": "gravel-race",
+  "type": "frameset",
+  "why_interesting": "Ultra-light emerging Chinese gravel frame; price and production status need monitoring.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "existing_record_id": "evolve-cima-gr-frameset",
+  "research_priority": "medium",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}

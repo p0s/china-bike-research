@@ -1,0 +1,18 @@
+{
+  "id": "missing-china-price-specialized-crux",
+  "name": "Specialized Crux China price target",
+  "model_id": "specialized-crux",
+  "category": "gravel-race",
+  "type": "research",
+  "why_interesting": "Important lightweight gravel benchmark.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "research_priority": "high",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}
