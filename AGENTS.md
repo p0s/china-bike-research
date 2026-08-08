@@ -8,6 +8,12 @@
 
 User instructions override this file. `SPEC.md` overrides incidental existing behavior.
 
+## Repository workflow
+
+- `p0s/china-bike-research` is a public GitHub repository. Do not assume private visibility or use tooling restricted to private repositories.
+- Never push directly to `origin/main`; direct pushes to remote `main` are prohibited even if the active credentials technically permit them.
+- Put changes on a feature branch, push that branch, open a pull request to `main`, wait for required checks, and merge through the pull request. GitHub Pages deploys from `main` after the merge.
+
 ## Working rules
 
 - Make the smallest coherent change that fully solves the task.

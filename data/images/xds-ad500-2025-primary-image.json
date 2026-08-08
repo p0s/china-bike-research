@@ -5,20 +5,20 @@
     "xds-ad500-2025"
   ],
   "role": "primary",
-  "subject_accuracy": "illustrative",
-  "media_type": "project-placeholder",
+  "subject_accuracy": "exact-platform",
+  "media_type": "retailer-product-photo",
   "hosting": {
-    "mode": "local",
-    "local_path": "/assets/images/placeholders/complete-bike.svg"
+    "mode": "remote",
+    "remote_url": "https://www.bikecity.hk/cdn/shop/files/001953249444f61d952d94bad7bb0e7e.png?v=1757664418&width=1445"
   },
-  "source_id": "project-image-placeholders",
+  "source_id": "xds-ad500-retailer-2026-08-08",
   "rights": {
-    "status": "project-owned",
-    "copyright_holder": "China Bike Research",
-    "usage_note": "Original project placeholder; it is not a product photograph."
+    "status": "retailer-page-embed",
+    "copyright_holder": "XDS / BikeCity Hong Kong",
+    "usage_note": "Remote embed from the cited retailer page. Copyright remains with the image owner; no redistribution license is asserted."
   },
-  "credit": "China Bike Research project placeholder",
-  "alt": "Project placeholder for XDS / X-LAB AD500 2025; not a product photograph",
-  "display_note": "No rights-cleared exact product photo is included. Confirm the exact configuration from the seller and official source.",
+  "credit": "Product image © XDS / BikeCity Hong Kong",
+  "alt": "XDS AD500 2025 road bike shown from the drive side",
+  "display_note": "Exact-model/year retailer photo; it does not establish the mainland-China purchase route or price.",
   "reviewed_at": "2026-08-08"
 }
