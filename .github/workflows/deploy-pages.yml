@@ -23,7 +23,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Validate and build
         run: npm run check
       - name: Upload Pages artifact
