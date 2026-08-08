@@ -70,7 +70,7 @@
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
   const search = catalogRoot.querySelector('[data-filter-search]');
   const price = catalogRoot.querySelector('[data-filter-price]');
-  const clearance = catalogRoot.querySelector('[data-filter-clearance]');
+  const capability = catalogRoot.querySelector('[data-filter-capability]');
   const style = catalogRoot.querySelector('[data-filter-style]');
   const sort = catalogRoot.querySelector('[data-sort]');
   const reset = catalogRoot.querySelector('[data-reset]');
@@ -90,26 +90,33 @@
   }
 
   function hasFilters() {
-    return Boolean(activeType || search?.value.trim() || price?.value || Number(clearance?.value || 0) || style?.value || (sort?.value && sort.value !== 'price'));
+    return Boolean(activeType || search?.value.trim() || price?.value || capability?.value || style?.value || (sort?.value && sort.value !== 'price'));
+  }
+
+  function matchesCapability(row, value) {
+    if (!value) return true;
+    const [kind, threshold] = value.split(':');
+    if (kind === 'kind') return row.dataset.capabilityKind === threshold;
+    return row.dataset.capabilityKind === kind && Number(row.dataset.capabilitySort || 0) >= Number(threshold || 0);
   }
 
   function rowMatches(row) {
     const query = search?.value.trim().toLowerCase() ?? '';
     const maxPrice = Number(price?.value || 0);
-    const minClearance = Number(clearance?.value || 0);
+    const capabilityValue = capability?.value ?? '';
     const styleValue = style?.value ?? '';
     const [styleKind, styleChoice] = styleValue.split(':');
     return (!query || row.dataset.search?.includes(query)) &&
       (!activeType || row.dataset.type === activeType) &&
       (!maxPrice || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
-      (!minClearance || Number(row.dataset.clearance || 0) >= minClearance) &&
+      matchesCapability(row, capabilityValue) &&
       (!styleValue || (styleKind === 'category' ? row.dataset.category === styleChoice : row.dataset.handlebar === styleChoice));
   }
 
   function sortRows(items) {
     const mode = sort?.value ?? 'price';
     return [...items].sort((a, b) => {
-      if (mode === 'clearance') return Number(b.dataset.clearance || -1) - Number(a.dataset.clearance || -1) || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
+      if (mode === 'capability') return Number(b.dataset.capabilitySort || -1) - Number(a.dataset.capabilitySort || -1) || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
       if (mode === 'name') return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
       return Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
     });
@@ -132,12 +139,12 @@
   }
 
   search?.addEventListener('input', updateCatalog);
-  [price, clearance, style, sort].forEach((element) => element?.addEventListener('change', updateCatalog));
+  [price, capability, style, sort].forEach((element) => element?.addEventListener('change', updateCatalog));
   typeButtons.forEach((button) => button.addEventListener('click', () => setType(button.dataset.typeValue ?? '')));
   reset?.addEventListener('click', () => {
     if (search) search.value = '';
     if (price) price.value = '';
-    if (clearance) clearance.value = '0';
+    if (capability) capability.value = '';
     if (style) style.value = '';
     if (sort) sort.value = 'price';
     setType('');
@@ -261,7 +268,7 @@
     if (!compareContent || items.length < 2) return;
     const coreFields = [
       ['Price', (item) => valueCell(item.price)],
-      ['Tire', (item) => valueCell(item.clearance)],
+      ['Category fit', (item) => valueCell(item.categoryMetric, item.categoryMetricLabel)],
       ['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)],
       ['Weight', (item) => valueCell(item.weight, item.weightSubline)],
       ['Frame', (item) => valueCell(item.frame)],
@@ -270,7 +277,7 @@
     ];
     const secondaryFields = [
       ['Price details', (item) => valueCell(item.priceDetails)],
-      ['Clearance evidence', (item) => valueCell(item.clearanceDetails)],
+      ['Category-fit evidence', (item) => valueCell(item.categoryMetricDetails)],
       ['Category', (item) => valueCell(item.category)],
       ['Storage', (item) => valueCell(item.storage)],
       ['Mounts', (item) => valueCell(item.mounts)],

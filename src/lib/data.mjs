@@ -3,6 +3,129 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
+export const supportedCategories = [
+  'road', 'road-race', 'road-aero', 'road-endurance', 'road-climbing',
+  'gravel', 'gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel', 'all-road',
+  'mtb-xc', 'mtb-trail', 'mtb-enduro',
+  'e-road', 'folding', 'triathlon'
+];
+
+const categoryLabels = {
+  road: 'Road',
+  'road-race': 'Road race',
+  'road-aero': 'Aero road',
+  'road-endurance': 'Endurance road',
+  'road-climbing': 'Climbing road',
+  gravel: 'Gravel',
+  'gravel-race': 'Race gravel',
+  'gravel-flatbar': 'Flat-bar gravel',
+  'gravel-touring': 'Gravel touring',
+  'gravel-adventure': 'Adventure gravel',
+  'adventure-gravel': 'Adventure gravel',
+  'all-road': 'All-road',
+  'mtb-xc': 'Cross-country MTB',
+  'mtb-trail': 'Trail MTB',
+  'mtb-enduro': 'Enduro MTB',
+  'e-road': 'E-road',
+  folding: 'Folding',
+  triathlon: 'Triathlon / time trial'
+};
+
+export function categoryLabel(category) {
+  return categoryLabels[category] ?? String(category).replaceAll('-', ' ');
+}
+
+function categoryDetailLines(platform) {
+  const details = platform.category_details ?? {};
+  return [details.note, details.evidence ? `Evidence: ${String(details.evidence).replaceAll('-', ' ')}.` : ''].filter(Boolean);
+}
+
+export function categoryMetric(platform) {
+  const category = platform.category;
+  const clearance = platform.tire_clearance;
+  if (category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(category)) {
+    return {
+      label: 'Tire',
+      value: clearanceLabel(platform),
+      sortValue: maxClearance(platform) ?? 0,
+      kind: 'tire',
+      details: [
+        clearanceLongLabel(platform),
+        clearance?.evidence ? `Evidence: ${String(clearance.evidence).replaceAll('-', ' ')}.` : 'Maximum is not recorded for this platform.',
+        clearance?.note
+      ].filter(Boolean)
+    };
+  }
+  if (category.startsWith('mtb-')) {
+    const suspension = platform.category_details?.suspension ?? {};
+    const front = suspension.travel_front_mm;
+    const rear = suspension.travel_rear_mm;
+    const value = front && rear ? `${front}/${rear} mm` : front ? `${front} mm front` : 'Unverified';
+    return {
+      label: 'Suspension',
+      value,
+      sortValue: front ?? 0,
+      kind: 'suspension',
+      details: [
+        suspension.layout ? `Layout: ${String(suspension.layout).replaceAll('-', ' ')}.` : 'Suspension layout is not recorded.',
+        suspension.shock_included ? `Shock included: ${String(suspension.shock_included).replaceAll('-', ' ')}.` : '',
+        ...categoryDetailLines(platform)
+      ].filter(Boolean)
+    };
+  }
+  if (category === 'e-road') {
+    const motor = platform.category_details?.motor ?? {};
+    return {
+      label: 'Motor',
+      value: motor.model ?? 'Unverified',
+      sortValue: motor.power_w ?? 0,
+      kind: 'motor',
+      details: [
+        motor.power_w ? `${motor.power_w} W listed power.` : 'Motor power is not recorded.',
+        motor.battery_wh ? `${motor.battery_wh} Wh battery.` : 'Battery capacity is not recorded.',
+        ...categoryDetailLines(platform)
+      ].filter(Boolean)
+    };
+  }
+  if (category === 'folding') {
+    const folding = platform.category_details?.folding ?? {};
+    const dimensions = folding.folded_dimensions_mm;
+    return {
+      label: 'Fold',
+      value: dimensions ? dimensions.join(' × ') + ' mm' : (folding.wheel_size ?? 'Unverified'),
+      sortValue: 0,
+      kind: 'folding',
+      details: [
+        folding.wheel_size ? `Wheel size: ${folding.wheel_size}.` : 'Wheel size is not recorded.',
+        dimensions ? 'Folded dimensions are recorded.' : 'Folded dimensions are not recorded.',
+        ...categoryDetailLines(platform)
+      ].filter(Boolean)
+    };
+  }
+  if (category === 'triathlon') {
+    const triathlon = platform.category_details ?? {};
+    return {
+      label: 'Format',
+      value: triathlon.discipline ?? 'Triathlon / time trial',
+      sortValue: 0,
+      kind: 'triathlon',
+      details: [
+        triathlon.aero_bars ? `Aero bars: ${triathlon.aero_bars}.` : 'Aero-bar package is not recorded.',
+        triathlon.storage ? `Storage: ${triathlon.storage}.` : 'Storage is not recorded.',
+        ...categoryDetailLines(platform)
+      ].filter(Boolean)
+    };
+  }
+  const details = platform.category_details ?? {};
+  return {
+    label: 'Use',
+    value: details.discipline ?? categoryLabel(category),
+    sortValue: 0,
+    kind: 'discipline',
+    details: categoryDetailLines(platform).length ? categoryDetailLines(platform) : [`Category: ${categoryLabel(category)}.`]
+  };
+}
+
 /** @param {string} directory */
 export function loadDirectory(directory) {
   const absolute = path.join(root, 'data', directory);
@@ -33,7 +156,8 @@ export function loadDataset() {
     images: loadDirectory('images'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
-    exclusions: loadDirectory('exclusions')
+    exclusions: loadDirectory('exclusions'),
+    research: loadDirectory('research')
   };
   return cache;
 }
@@ -46,6 +170,8 @@ function isObject(value) { return value !== null && typeof value === 'object' &&
 function isDate(value) { return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`)); }
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
+function categoryValues(value) { return String(value).split('|').map((item) => item.trim()).filter(Boolean); }
+function hasSupportedCategory(value, categorySet) { return categoryValues(value).every((category) => categorySet.has(category)); }
 
 export function validateDataset(data = loadDataset()) {
   const errors = [];
@@ -74,7 +200,8 @@ export function validateDataset(data = loadDataset()) {
     image: data.images,
     recommendation: data.recommendations,
     candidate: data.candidates,
-    exclusion: data.exclusions
+    exclusion: data.exclusions,
+    research: data.research
   })) unique(kind, records);
 
   const buildAssumption = data.meta?.frameset_build_assumption;
@@ -91,6 +218,9 @@ export function validateDataset(data = loadDataset()) {
   const variantIds = new Set(data.variants.map((x) => x.id));
   const sourceIds = new Set(data.sources.map((x) => x.id));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
+  const candidateIds = new Set(data.candidates.map((x) => x.id));
+  const exclusionIds = new Set(data.exclusions.map((x) => x.id));
+  const categorySet = new Set(supportedCategories);
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
@@ -99,18 +229,27 @@ export function validateDataset(data = loadDataset()) {
   }
 
   for (const platform of data.platforms) {
-    requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'tire_clearance', 'source_ids', 'last_reviewed']);
+    requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'source_ids', 'last_reviewed']);
     if (!brandIds.has(platform.brand_id)) errors.push(`platform ${platform.id}: missing brand ${platform.brand_id}`);
+    if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
-    const clearance = platform.tire_clearance ?? {};
-    if (!['pass', 'conditional', 'fail', 'unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
-    const anyClearance = clearance.stock_nominal_mm ?? clearance.published_max_mm ?? clearance.published_front_max_mm ?? clearance.published_rear_max_mm;
-    if (clearance.eligibility === 'pass' && anyClearance === undefined) errors.push(`platform ${platform.id}: pass without a clearance number`);
-    for (const key of ['stock_nominal_mm', 'published_max_mm', 'published_front_max_mm', 'published_rear_max_mm']) {
-      const value = clearance[key];
-      if (value !== undefined && (typeof value !== 'number' || value <= 0 || value > 100)) errors.push(`platform ${platform.id}: invalid ${key}`);
+    const requiresClearance = platform.category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(platform.category);
+    if (requiresClearance && !isObject(platform.tire_clearance)) errors.push(`platform ${platform.id}: gravel-family platform needs tire_clearance`);
+    if (platform.tire_clearance !== undefined) {
+      const clearance = platform.tire_clearance;
+      if (!isObject(clearance) || !['pass', 'conditional', 'fail', 'unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
+      const anyClearance = clearance.stock_nominal_mm ?? clearance.published_max_mm ?? clearance.published_front_max_mm ?? clearance.published_rear_max_mm;
+      if (clearance.eligibility === 'pass' && anyClearance === undefined) errors.push(`platform ${platform.id}: pass without a clearance number`);
+      for (const key of ['stock_nominal_mm', 'published_max_mm', 'published_front_max_mm', 'published_rear_max_mm']) {
+        const value = clearance[key];
+        if (value !== undefined && (typeof value !== 'number' || value <= 0 || value > 100)) errors.push(`platform ${platform.id}: invalid ${key}`);
+      }
     }
+    if (platform.category.startsWith('mtb-') && !isObject(platform.category_details?.suspension)) errors.push(`platform ${platform.id}: MTB platform needs category_details.suspension`);
+    if (platform.category === 'e-road' && !isObject(platform.category_details?.motor)) errors.push(`platform ${platform.id}: e-road platform needs category_details.motor`);
+    if (platform.category === 'folding' && !isObject(platform.category_details?.folding)) errors.push(`platform ${platform.id}: folding platform needs category_details.folding`);
+    if (platform.category === 'triathlon' && typeof platform.category_details?.discipline !== 'string') errors.push(`platform ${platform.id}: triathlon platform needs category_details.discipline`);
     for (const sourceId of platform.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`platform ${platform.id}: missing source ${sourceId}`);
   }
 
@@ -142,6 +281,46 @@ export function validateDataset(data = loadDataset()) {
     if (source.url) {
       try { new URL(source.url); } catch { errors.push(`source ${source.id}: invalid URL`); }
     }
+  }
+
+  for (const candidate of data.candidates) {
+    requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
+    if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
+    if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
+    if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
+    for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);
+  }
+
+  for (const exclusion of data.exclusions) {
+    requireFields('exclusion', exclusion, ['name', 'reason', 'review_again_when', 'last_reviewed']);
+    if (!isDate(exclusion.last_reviewed)) errors.push(`exclusion ${exclusion.id}: invalid last_reviewed`);
+    if (exclusion.category && !hasSupportedCategory(exclusion.category, categorySet)) errors.push(`exclusion ${exclusion.id}: unsupported category ${exclusion.category}`);
+    if (exclusion.source_snapshot_id && !sourceIds.has(exclusion.source_snapshot_id)) errors.push(`exclusion ${exclusion.id}: missing source snapshot ${exclusion.source_snapshot_id}`);
+  }
+
+  const dispositionIds = new Set([...variantIds, ...candidateIds, ...exclusionIds]);
+  for (const snapshot of data.research) {
+    requireFields('research', snapshot, ['source_id', 'observed_at', 'screenshot_count', 'listing_observation_count', 'model_group_count', 'group_dispositions']);
+    if (!isDate(snapshot.observed_at)) errors.push(`research ${snapshot.id}: invalid observed_at`);
+    if (!sourceIds.has(snapshot.source_id)) errors.push(`research ${snapshot.id}: missing source ${snapshot.source_id}`);
+    if (snapshot.model_group_count !== snapshot.group_dispositions.length) errors.push(`research ${snapshot.id}: model_group_count does not match group_dispositions`);
+    const groupIds = new Set();
+    for (const group of snapshot.group_dispositions) {
+      if (!isId(group.model_id)) errors.push(`research ${snapshot.id}: invalid model_id ${group.model_id}`);
+      if (groupIds.has(group.model_id)) errors.push(`research ${snapshot.id}: duplicate model_id ${group.model_id}`);
+      groupIds.add(group.model_id);
+      if (!hasSupportedCategory(group.category, categorySet)) errors.push(`research ${snapshot.id}: unsupported category ${group.category}`);
+      if (!['publish_now', 'verify_before_publish', 'research_queue', 'exclude', 'split_variants_before_publish'].includes(group.dashboard_status)) errors.push(`research ${snapshot.id}: invalid dashboard status ${group.dashboard_status}`);
+      const disposition = group.disposition;
+      if (!isObject(disposition) || !['published-variant', 'candidate', 'exclusion'].includes(disposition.disposition)) errors.push(`research ${snapshot.id}: invalid disposition for ${group.model_id}`);
+      else if (!dispositionIds.has(disposition.record_id)) errors.push(`research ${snapshot.id}: missing disposition record ${disposition.record_id}`);
+      if (group.dashboard_status === 'exclude' && disposition?.disposition !== 'exclusion') errors.push(`research ${snapshot.id}: excluded group ${group.model_id} is not an exclusion`);
+      if (['verify_before_publish', 'research_queue'].includes(group.dashboard_status) && disposition?.disposition !== 'candidate') errors.push(`research ${snapshot.id}: unresolved group ${group.model_id} must remain a candidate`);
+    }
+    if (snapshot.priority_additions?.length !== 35) errors.push(`research ${snapshot.id}: expected 35 priority additions`);
+    if (snapshot.titanium_additions?.length !== 13) errors.push(`research ${snapshot.id}: expected 13 titanium additions`);
+    if (snapshot.missing_china_price_targets?.length !== 35) errors.push(`research ${snapshot.id}: expected 35 missing-price targets`);
   }
 
   const accuracyValues = new Set(['exact-variant', 'exact-platform', 'same-platform', 'same-model-different-color', 'same-model-different-market-build', 'illustrative']);
@@ -297,10 +476,12 @@ export function formatAllInPrice(product) {
 }
 export function maxClearance(platform) {
   const c = platform.tire_clearance;
+  if (!c) return undefined;
   return c.published_max_mm ?? c.published_rear_max_mm ?? c.stock_nominal_mm;
 }
 export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
+  if (!c) return 'Not applicable';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm`;
@@ -308,6 +489,7 @@ export function clearanceLabel(platform) {
 }
 export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
+  if (!c) return 'Not recorded for this category';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock; maximum unverified`;

@@ -1,0 +1,18 @@
+{
+  "id": "missing-china-price-canyon-aeroad",
+  "name": "Canyon Aeroad China price target",
+  "model_id": "canyon-aeroad",
+  "category": "road-aero",
+  "type": "research",
+  "why_interesting": "Relevant if a verifiable mainland purchase and warranty route exists.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "research_priority": "medium",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}

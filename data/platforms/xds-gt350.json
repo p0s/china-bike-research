@@ -1,0 +1,36 @@
+{
+  "id": "xds-gt350",
+  "brand_id": "xds",
+  "name": "GT350",
+  "name_zh": "GT350",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "snapshot-published",
+  "summary": "The anonymized 2026-08-08 snapshot identifies XDS / X-LAB GT350 as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "unknown",
+    "bottom_bracket": "unknown",
+    "derailleur_hanger": "unknown",
+    "cable_routing": "unknown"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "unknown",
+    "eligibility": "unverified",
+    "note": "The snapshot identifies the model but does not establish a model-specific maximum tire clearance."
+  },
+  "category_details": {
+    "discipline": "gravel",
+    "geometry": "unknown",
+    "evidence": "snapshot-classification",
+    "note": "Exact model visible."
+  },
+  "mounts": [],
+  "internal_storage": false,
+  "china_availability": "mainland-marketplace-observed",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
+  "last_reviewed": "2026-08-08"
+}

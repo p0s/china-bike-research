@@ -21,6 +21,8 @@ The main catalog shows a compact common core:
 
 Category-specific facts should appear only when useful. Tire clearance, suspension travel, motor system, folded size, mounting points, or other fields must not be forced onto unrelated categories. Dates, price status, promotion conditions, evidence detail, thresholds, provenance, and caveats belong in accessible popovers or the model page.
 
+The supported category vocabulary includes road, road-aero, road-endurance, road-climbing, gravel families, MTB, e-road, folding, and triathlon/time trial. Gravel-family products may expose tire clearance; MTB products may expose suspension travel; e-road products may expose motor and battery facts; folding products may expose wheel or folded-size facts; and triathlon products may expose time-trial fit or storage facts. A category without a verified value must show an unknown or verification state rather than borrowing a field from another category.
+
 The site remains static, fast, responsive, accessible, and usable without accounts, analytics, ads, or a backend.
 
 ## 2. Catalog scope
@@ -47,6 +49,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. Use `data
 - `images/`: subject accuracy, source, rights status, credit, and fallback.
 - `recommendations/`: compact buyer-facing labels, updated only when evidence changes the conclusion.
 - `candidates/` and `exclusions/`: unresolved or rejected products with reasons.
+- `research/`: dated import ledgers that reconcile source bundles, dispositions, priority targets, and research queues without becoming buyer-facing product records.
 
 Do not duplicate platform facts across variants. A new component configuration on the same platform is normally a new variant, not a new platform. New categories may add category-specific fields, validation, and UI only as needed.
 
@@ -90,3 +93,5 @@ npm run check
 ```
 
 For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
+
+Research bundles are evidence inputs, not publication authority. A dated marketplace snapshot may support an exact price observation, but a price is attachable only to the exact variant it identifies. Split or ambiguous trims remain candidates; screenshots, seller identities, and copied third-party images are never public data assets.

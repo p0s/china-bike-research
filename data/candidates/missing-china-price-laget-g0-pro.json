@@ -1,0 +1,19 @@
+{
+  "id": "missing-china-price-laget-g0-pro",
+  "name": "LAGET G0 PRO China price target",
+  "model_id": "laget-g0-pro",
+  "category": "gravel",
+  "type": "frameset",
+  "why_interesting": "Modern 3D-feature titanium gravel model; public current RMB price still needed.",
+  "missing": [
+    "Dated mainland-China RMB observation",
+    "Exact current SKU and China purchase route",
+    "Source supporting the price and warranty conditions"
+  ],
+  "status": "missing-china-price",
+  "existing_record_id": "laget-discovery-one-pro",
+  "research_priority": "high",
+  "price_status": "missing mainland-China RMB observation",
+  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "last_reviewed": "2026-08-08"
+}
