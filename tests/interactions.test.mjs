@@ -27,6 +27,18 @@ test('catalog previews enlarge the full hit target from a useful default size', 
   assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-table \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(styles, /@media \(max-width: 780px\)[\s\S]*?\.filter-primary \{ grid-template-columns: 1fr; \}[\s\S]*?\.catalog-table \{ grid-template-columns: 1fr; \}/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
+  assert.match(script, /\.catalog-row \.product-image-link'[\s\S]*?addEventListener\('mouseenter'[\s\S]*?closeTooltip\(\)/);
+  assert.match(styles, /\.product-image:has\(\.product-image-link:hover\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
+});
+
+test('catalog headings and compact control share directional sorting', () => {
+  assert.match(script, /const defaultSortModes = \{ price: 'price-asc', name: 'name-asc', capability: 'capability-desc' \}/);
+  assert.match(script, /function canonicalSortMode\(value\)/);
+  assert.match(script, /function updateSortHeadings\(\)/);
+  assert.match(script, /heading\?\.setAttribute\('aria-sort'/);
+  assert.match(script, /sortHeadingButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
+  assert.match(script, /Boolean\(aValue\) !== Boolean\(bValue\)/);
+  assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
 });
 
 test('shared disclosures and copy feedback have complete dismissal and failure states', () => {

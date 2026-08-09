@@ -432,7 +432,7 @@ export function renderHome(ctx) {
       <div class="filter-secondary" id="secondary-filters">
         <label class="compact-select"><span>Max price</span><select name="max-price" data-filter-price><option value="">Any</option><option value="6000">¥6,000</option><option value="8000">¥8,000</option><option value="10000">¥10,000</option><option value="15000">¥15,000</option><option value="20000">¥20,000</option></select></label>
         <label class="compact-select"><span>Capability</span><select name="capability" data-filter-capability><option value="">Any</option>${capabilitySelectOptions(ctx)}</select></label>
-        <label class="compact-select"><span>Sort</span><select name="sort" data-sort><option value="price">Price</option><option value="capability">Category fact</option><option value="name">Brand</option></select></label>
+        <label class="compact-select"><span>Sort</span><select name="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label>
         <div class="filter-actions"><button class="text-button" type="button" data-copy-catalog-view>Copy view</button><button class="reset-button" type="button" data-reset hidden>Clear</button></div>
       </div>
     </div>
@@ -444,7 +444,7 @@ export function renderHome(ctx) {
 
     <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length}</strong> matches<span data-result-context></span><span data-filter-notice></span></span><span>Select two to four bikes to compare</span></div>
     <div class="catalog-table" data-product-list role="table" aria-label="Bike comparison">
-      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader">Bike</span><span role="columnheader">Full-bike price</span><span role="columnheader">Category fact</span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
+      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button></span><span role="columnheader" aria-sort="ascending"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Full-bike price</span></button></span><span role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button></span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
       ${ctx.products.map((product) => productRow(ctx, product)).join('')}
       <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
     </div>
