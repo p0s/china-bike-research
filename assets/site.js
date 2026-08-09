@@ -35,6 +35,24 @@
   const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
   let activeTooltipButton = null;
   let tooltipPinned = false;
+  let tooltipDismissTimer = null;
+
+  function cancelTooltipDismiss() {
+    if (tooltipDismissTimer === null) return;
+    clearTimeout(tooltipDismissTimer);
+    tooltipDismissTimer = null;
+  }
+
+  function scheduleTooltipClose() {
+    cancelTooltipDismiss();
+    tooltipDismissTimer = setTimeout(() => {
+      tooltipDismissTimer = null;
+      if (tooltipPinned) return;
+      if (activeTooltipButton?.matches(':hover') || document.activeElement === activeTooltipButton) return;
+      if (tooltipPanel instanceof HTMLElement && tooltipPanel.matches(':hover')) return;
+      closeTooltip();
+    }, 140);
+  }
 
   function tooltipTopInset() {
     let inset = 12;
@@ -61,6 +79,8 @@
     tooltipPanel.style.removeProperty('right');
     tooltipPanel.style.removeProperty('top');
     tooltipPanel.style.removeProperty('bottom');
+    tooltipPanel.style.removeProperty('--tooltip-anchor-x');
+    tooltipPanel.style.removeProperty('--tooltip-anchor-y');
 
     const margin = innerWidth <= 720 ? 12 : 16;
     const gap = 8;
@@ -96,9 +116,12 @@
     tooltipPanel.dataset.placement = placement;
     tooltipPanel.style.left = `${Math.round(left)}px`;
     tooltipPanel.style.top = `${Math.round(top)}px`;
+    tooltipPanel.style.setProperty('--tooltip-anchor-x', `${Math.round(Math.min(panel.width - 14, Math.max(14, anchor.left + anchor.width / 2 - left)))}px`);
+    tooltipPanel.style.setProperty('--tooltip-anchor-y', `${Math.round(Math.min(panel.height - 14, Math.max(14, anchor.top + anchor.height / 2 - top)))}px`);
   }
 
   function closeTooltip() {
+    cancelTooltipDismiss();
     if (activeTooltipButton instanceof HTMLButtonElement) {
       activeTooltipButton.setAttribute('aria-expanded', 'false');
       activeTooltipButton.removeAttribute('aria-describedby');
@@ -113,11 +136,14 @@
       tooltipPanel.style.removeProperty('right');
       tooltipPanel.style.removeProperty('top');
       tooltipPanel.style.removeProperty('bottom');
+      tooltipPanel.style.removeProperty('--tooltip-anchor-x');
+      tooltipPanel.style.removeProperty('--tooltip-anchor-y');
     }
   }
 
   function openTooltip(button, { pinned = false } = {}) {
     if (!(button instanceof HTMLButtonElement) || !(tooltipPanel instanceof HTMLElement)) return;
+    cancelTooltipDismiss();
     let lines = [];
     try { lines = JSON.parse(button.dataset.tooltipLines ?? '[]'); } catch { lines = []; }
     if (!Array.isArray(lines) || !lines.length) return;
@@ -146,16 +172,20 @@
       if (precisePointer.matches && !tooltipPinned) openTooltip(button);
     });
     button.addEventListener('mouseleave', () => {
-      if (precisePointer.matches && activeTooltipButton === button && !tooltipPinned && document.activeElement !== button) closeTooltip();
+      if (precisePointer.matches && activeTooltipButton === button && !tooltipPinned) scheduleTooltipClose();
     });
     button.addEventListener('focus', () => requestAnimationFrame(() => {
       if (document.activeElement === button && button.matches(':focus-visible') && activeTooltipButton !== button) openTooltip(button);
     }));
-    button.addEventListener('blur', () => {
-      if (activeTooltipButton === button) closeTooltip();
-    });
+    button.addEventListener('blur', () => requestAnimationFrame(() => {
+      if (activeTooltipButton === button && document.activeElement !== button && !(tooltipPanel instanceof HTMLElement && tooltipPanel.matches(':hover'))) closeTooltip();
+    }));
     button.addEventListener('click', () => toggleTooltip(button));
   });
+
+  tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
+  tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
+  tooltipPanel?.addEventListener('pointerdown', (event) => event.preventDefault());
 
   async function copyText(text) {
     if (navigator.clipboard?.writeText) {
