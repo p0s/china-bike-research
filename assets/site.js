@@ -68,6 +68,7 @@
   const empty = catalogRoot.querySelector('[data-empty]');
   const resultCount = catalogRoot.querySelector('[data-result-count]');
   const resultSummary = catalogRoot.querySelector('[data-result-summary]');
+  const resultContext = catalogRoot.querySelector('[data-result-context]');
   const search = catalogRoot.querySelector('[data-filter-search]');
   const price = catalogRoot.querySelector('[data-filter-price]');
   const capability = catalogRoot.querySelector('[data-filter-capability]');
@@ -75,22 +76,42 @@
   const sort = catalogRoot.querySelector('[data-sort]');
   const reset = catalogRoot.querySelector('[data-reset]');
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
+  const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
+  const brandValues = new Set(rows.map((row) => row.dataset.brand).filter(Boolean));
+  const brandLabels = new Map(brandButtons.map((button) => [button.dataset.brandFilter, button.textContent.trim()]));
   let activeType = '';
+  let activeBrand = '';
+
+  function updateFilterUrl() {
+    const next = new URL(location.href);
+    if (activeType) next.searchParams.set('type', activeType);
+    else next.searchParams.delete('type');
+    if (activeBrand) next.searchParams.set('brand', activeBrand);
+    else next.searchParams.delete('brand');
+    try { history.replaceState(null, '', `${next.pathname}${next.search}${next.hash}`); } catch { /* normal navigation origin required */ }
+  }
 
   function setType(value, { updateUrl = true } = {}) {
     activeType = ['complete-bike', 'frameset'].includes(value) ? value : '';
     typeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.typeValue === activeType)));
-    if (updateUrl) {
-      const next = new URL(location.href);
-      if (activeType) next.searchParams.set('type', activeType);
-      else next.searchParams.delete('type');
-      try { history.replaceState(null, '', `${next.pathname}${next.search}${next.hash}`); } catch { /* normal navigation origin required */ }
-    }
+    if (updateUrl) updateFilterUrl();
+    updateCatalog();
+  }
+
+  function setBrand(value, { updateUrl = true } = {}) {
+    activeBrand = brandValues.has(value) ? value : '';
+    brandButtons.forEach((button) => {
+      const isActive = button.dataset.brandFilter === activeBrand;
+      const label = brandLabels.get(button.dataset.brandFilter) || button.textContent.trim();
+      button.setAttribute('aria-pressed', String(isActive));
+      button.setAttribute('aria-label', isActive ? `${label} — remove brand filter` : `${label} — filter catalog to this brand`);
+    });
+    if (updateUrl) updateFilterUrl();
     updateCatalog();
   }
 
   function hasFilters() {
-    return Boolean(activeType || search?.value.trim() || price?.value || capability?.value || style?.value || (sort?.value && sort.value !== 'price'));
+    return Boolean(activeType || activeBrand || search?.value.trim() || price?.value || capability?.value || style?.value || (sort?.value && sort.value !== 'price'));
   }
 
   function matchesCapability(row, value) {
@@ -108,6 +129,7 @@
     const [styleKind, styleChoice] = styleValue.split(':');
     return (!query || row.dataset.search?.includes(query)) &&
       (!activeType || row.dataset.type === activeType) &&
+      (!activeBrand || row.dataset.brand === activeBrand) &&
       (!maxPrice || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       matchesCapability(row, capabilityValue) &&
       (!styleValue || (styleKind === 'category' ? row.dataset.category === styleChoice : row.dataset.handlebar === styleChoice));
@@ -133,6 +155,7 @@
     });
     const filtered = hasFilters();
     if (resultCount) resultCount.textContent = String(visible);
+    if (resultContext) resultContext.textContent = activeBrand ? ` for ${brandLabels.get(activeBrand) ?? activeBrand}` : '';
     if (resultSummary) resultSummary.hidden = !filtered;
     if (empty) empty.hidden = visible !== 0;
     if (reset) reset.hidden = !filtered;
@@ -141,16 +164,23 @@
   search?.addEventListener('input', updateCatalog);
   [price, capability, style, sort].forEach((element) => element?.addEventListener('change', updateCatalog));
   typeButtons.forEach((button) => button.addEventListener('click', () => setType(button.dataset.typeValue ?? '')));
+  brandButtons.forEach((button) => button.addEventListener('click', () => {
+    const value = button.dataset.brandFilter ?? '';
+    setBrand(value === activeBrand ? '' : value);
+    button.focus({ preventScroll: true });
+  }));
   reset?.addEventListener('click', () => {
     if (search) search.value = '';
     if (price) price.value = '';
     if (capability) capability.value = '';
     if (style) style.value = '';
     if (sort) sort.value = 'price';
+    setBrand('', { updateUrl: false });
     setType('');
   });
 
   const initialParams = new URLSearchParams(location.search);
+  setBrand(initialParams.get('brand') ?? '', { updateUrl: false });
   setType(initialParams.get('type') ?? '', { updateUrl: false });
 
   const compareTray = document.querySelector('[data-compare-tray]');

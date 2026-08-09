@@ -6,6 +6,7 @@ This is the canonical product and data contract. Intentional behavior changes mu
 
 - The homepage is the unified catalog and inline comparison.
 - Category is a first-class filter; generic project copy must describe bicycles broadly.
+- Brand names in catalog rows and model details lead to a shareable exact-brand catalog filter. The visible result status names the active brand.
 - Complete bikes and compatible frameset builds may appear together on a comparable full-bike price basis.
 - A published frameset estimate uses its latest relevant price plus the fixed allowance in `data/meta.json`.
 - Do not publish a frameset where that allowance would materially mislead buyers; keep it as a candidate until the methodology is updated.
@@ -24,6 +25,7 @@ Category-specific facts should appear only when useful. Tire clearance, suspensi
 The supported category vocabulary includes road, road-aero, road-endurance, road-climbing, gravel families, MTB, e-road, folding, and triathlon/time trial. Gravel-family products may expose tire clearance; MTB products may expose suspension travel; e-road products may expose motor and battery facts; folding products may expose wheel or folded-size facts; and triathlon products may expose time-trial fit or storage facts. A category without a verified value must show an unknown or verification state rather than borrowing a field from another category.
 
 The site remains static, fast, responsive, accessible, and usable without accounts, analytics, ads, or a backend.
+Catalog thumbnails link to model details. On fine-pointer devices, a thumbnail may enlarge on hover without moving the table layout; touch layouts keep the stable thumbnail size.
 
 ## 2. Catalog scope
 

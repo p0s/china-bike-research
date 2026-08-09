@@ -70,7 +70,7 @@ function imageElement(ctx, product, { hero = false, className = '' } = {}) {
 function infoTip(label, lines) {
   const id = `tooltip-${++tooltipIndex}`;
   const content = lines.filter(Boolean).map((line) => `<span>${escapeHtml(line)}</span>`).join('');
-  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-describedby="${id}">i</button><span class="tooltip-content" role="tooltip" id="${id}">${content}</span></span>`;
+  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-describedby="${id}"><span aria-hidden="true">i</span></button><span class="tooltip-content" role="tooltip" id="${id}">${content}</span></span>`;
 }
 
 function buildAssumption(ctx) {
@@ -175,10 +175,14 @@ function statusFlag(product) {
   return `<span class="verify-flag">Verify${infoTip('Why this needs verification', clearanceTooltipLines(product))}</span>`;
 }
 
-function productImage(ctx, product, { hero = false } = {}) {
+function productImage(ctx, product, { hero = false, href = '' } = {}) {
   const accuracy = product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative';
   const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
-  return `<span class="product-image ${hero ? 'hero-image' : ''}">${imageElement(ctx, product, { hero })}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'])}</span>` : ''}</span>`;
+  const image = imageElement(ctx, product, { hero });
+  const visual = href
+    ? `<a class="product-image-link" href="${escapeAttr(href)}" aria-label="View ${escapeAttr(product.brand.name)} ${escapeAttr(product.variant.name)} details">${image}</a>`
+    : image;
+  return `<span class="product-image ${hero ? 'hero-image' : ''}">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), product.image?.display_note ?? 'The image identifies the product family but may not show the exact listed components.'])}</span>` : ''}</span>`;
 }
 
 function productRow(ctx, product) {
@@ -199,12 +203,13 @@ function productRow(ctx, product) {
     ...(variant.editorial.best_for ?? [])
   ].filter(Boolean).join(' ').toLowerCase();
   const recommended = recommendationLabel(ctx, product);
-  return `<article class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${allInPrice.midpoint}" data-price-filter="${allInPrice.low ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}">
+  const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
+  return `<article class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${allInPrice.midpoint}" data-price-filter="${allInPrice.low ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}">
     <label class="compare-toggle" role="cell"><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label>
     <div class="catalog-product" role="cell">
-      ${productImage(ctx, product)}
+      ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
       <span class="product-copy">
-        <span class="product-meta"><span>${escapeHtml(brand.name)}${brand.name_zh ? ` · ${escapeHtml(brand.name_zh)}` : ''}</span>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommended ? `<span class="pick-pill">${escapeHtml(recommended)}</span>` : ''}${statusFlag(product)}</span>
+        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommended ? `<span class="pick-pill">${escapeHtml(recommended)}</span>` : ''}${statusFlag(product)}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}">${escapeHtml(variant.name)}</a></strong>
       </span>
     </div>
@@ -274,10 +279,10 @@ export function renderHome(ctx) {
     <div class="filter-bar">
       <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search brand, model or drivetrain" autocomplete="off" data-filter-search></div>
       <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame builds</button></div>
-      <label class="compact-select"><span>Max price</span><select data-filter-price><option value="">Any</option><option value="6000">¥6,000</option><option value="8000">¥8,000</option><option value="10000">¥10,000</option><option value="15000">¥15,000</option><option value="20000">¥20,000</option></select></label>
-      <label class="compact-select"><span>Capability</span><select data-filter-capability><option value="">Any</option><option value="tire:40">Tire ≥40 mm</option><option value="tire:45">Tire ≥45 mm</option><option value="tire:50">Tire ≥50 mm</option><option value="suspension:100">Suspension ≥100 mm</option><option value="suspension:150">Suspension ≥150 mm</option><option value="kind:motor">Motor system</option><option value="kind:folding">Folded-size data</option><option value="kind:triathlon">Triathlon / TT</option></select></label>
-      <label class="compact-select"><span>Category</span><select data-filter-style><option value="">Any</option>${categories.map((category) => `<option value="category:${escapeAttr(category.value)}">${escapeHtml(category.label)}</option>`).join('')}<option value="handlebar:flat">Flat-bar</option></select></label>
-      <label class="compact-select"><span>Sort</span><select data-sort><option value="price">Price</option><option value="capability">Category fit</option><option value="name">Brand</option></select></label>
+      <label class="compact-select"><span>Max price</span><select name="max-price" data-filter-price><option value="">Any</option><option value="6000">¥6,000</option><option value="8000">¥8,000</option><option value="10000">¥10,000</option><option value="15000">¥15,000</option><option value="20000">¥20,000</option></select></label>
+      <label class="compact-select"><span>Capability</span><select name="capability" data-filter-capability><option value="">Any</option><option value="tire:40">Tire ≥40 mm</option><option value="tire:45">Tire ≥45 mm</option><option value="tire:50">Tire ≥50 mm</option><option value="suspension:100">Suspension ≥100 mm</option><option value="suspension:150">Suspension ≥150 mm</option><option value="kind:motor">Motor system</option><option value="kind:folding">Folded-size data</option><option value="kind:triathlon">Triathlon / TT</option></select></label>
+      <label class="compact-select"><span>Category</span><select name="category" data-filter-style><option value="">Any</option>${categories.map((category) => `<option value="category:${escapeAttr(category.value)}">${escapeHtml(category.label)}</option>`).join('')}<option value="handlebar:flat">Flat-bar</option></select></label>
+      <label class="compact-select"><span>Sort</span><select name="sort" data-sort><option value="price">Price</option><option value="capability">Category fit</option><option value="name">Brand</option></select></label>
       <button class="reset-button" type="button" data-reset hidden>Clear</button>
     </div>
 
@@ -286,7 +291,7 @@ export function renderHome(ctx) {
       <div data-compare-content></div>
     </section>
 
-    <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length}</strong> matches</span><span>Select two to four bikes to compare</span></div>
+    <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length}</strong> matches<span data-result-context></span></span><span>Select two to four bikes to compare</span></div>
     <div class="catalog-table" data-product-list role="table" aria-label="Bike comparison">
       <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader">Bike</span><span role="columnheader">Full-bike price</span><span role="columnheader">Category fit</span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
       ${ctx.products.map((product) => productRow(ctx, product)).join('')}
@@ -315,6 +320,7 @@ export function renderModel(ctx, product) {
             : '请提供几何表、尺码建议、轮组规格和与该类别相关的兼容性信息。';
   const sellerMessage = `请确认 ${brand.name} ${variant.name} 的准确年份、配置和车架批次。请提供：\n1. 车架和前叉准确材料；\n2. ${categoryQuestion}\n3. 五通、桶轴和尾钩标准；\n4. 完整 BOM，不接受未经确认的同级替换；\n5. 车架序列号、国内质保主体和退换条件。`;
   const priceSubline = variant.kind === 'frameset' ? 'Estimated complete build' : '';
+  const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const imageAccuracy = accuracyLabel(product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative');
   const detailFacts = [
     [metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)],
@@ -326,7 +332,7 @@ export function renderModel(ctx, product) {
   ];
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}">← All bikes</a><div class="model-grid">
     <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
-    <div class="model-summary"><div class="model-brand">${escapeHtml(brand.name)}${brand.name_zh ? ` · ${escapeHtml(brand.name_zh)}` : ''}${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-verdict">${escapeHtml(variant.editorial.verdict)}</p><div class="model-price"><strong>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><p class="model-verdict">${escapeHtml(variant.editorial.verdict)}</p><div class="model-price"><strong>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
     <section class="decision-block"><div><h2>Why consider it</h2><ul>${variant.editorial.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h2>What to verify</h2><ul>${variant.editorial.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></section>
