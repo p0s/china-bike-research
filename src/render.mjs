@@ -70,7 +70,7 @@ function imageElement(ctx, product, { hero = false, className = '' } = {}) {
 
 function infoTip(label, lines) {
   const content = JSON.stringify(lines.filter(Boolean).map(String));
-  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" data-tooltip-lines="${escapeAttr(content)}"><span aria-hidden="true">i</span></button></span>`;
+  return `<span class="tooltip"><button class="info-button" type="button" aria-label="${escapeAttr(label)}" aria-expanded="false" aria-controls="shared-tooltip" data-tooltip-lines="${escapeAttr(content)}"><span aria-hidden="true">i</span></button></span>`;
 }
 
 function buildAssumption(ctx) {
@@ -405,8 +405,8 @@ export function renderHome(ctx) {
       </div>
     </div>
 
-    <section class="inline-compare" id="compare" data-inline-compare hidden>
-      <div class="compare-heading"><div><h2>Compare</h2></div><div><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
+    <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
+      <div class="compare-heading"><div><h2 id="compare-title">Compare</h2></div><div><button class="text-button" type="button" data-copy-comparison>Copy link</button><button class="text-button" type="button" data-close-compare>Close</button></div></div>
       <div data-compare-content></div>
     </section>
 
@@ -461,6 +461,7 @@ export function renderModel(ctx, product) {
   </div></div></section>`;
   return page(ctx, {
     title: `${brand.name} ${variant.name}`,
+    current: variant.kind === 'frameset' ? 'framesets' : 'catalog',
     path: `/models/${variant.id}/`,
     description: variant.editorial.verdict,
     image: imageUrl(ctx, product.image) || fallbackImage(ctx, product),

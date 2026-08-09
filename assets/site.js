@@ -34,6 +34,69 @@
   const tooltipButtons = [...document.querySelectorAll('[data-tooltip-lines]')];
   const precisePointer = matchMedia('(hover: hover) and (pointer: fine)');
   let activeTooltipButton = null;
+  let tooltipPinned = false;
+
+  function tooltipTopInset() {
+    let inset = 12;
+    document.querySelectorAll('.site-header, .filter-bar').forEach((element) => {
+      if (!(element instanceof HTMLElement)) return;
+      const style = getComputedStyle(element);
+      const configuredTop = Number.parseFloat(style.top) || 0;
+      const rect = element.getBoundingClientRect();
+      const isObstruction = style.position === 'fixed' || (style.position === 'sticky' && rect.top <= configuredTop + 1);
+      if (isObstruction && rect.bottom > 0) inset = Math.max(inset, rect.bottom + 8);
+    });
+    return inset;
+  }
+
+  function tooltipBottomInset() {
+    const tray = document.querySelector('[data-compare-tray]');
+    if (!(tray instanceof HTMLElement) || !tray.classList.contains('is-visible') || tray.classList.contains('is-comparing')) return 12;
+    return Math.max(12, innerHeight - tray.getBoundingClientRect().top + 10);
+  }
+
+  function positionTooltip(button) {
+    if (!(tooltipPanel instanceof HTMLElement)) return;
+    tooltipPanel.style.removeProperty('left');
+    tooltipPanel.style.removeProperty('right');
+    tooltipPanel.style.removeProperty('top');
+    tooltipPanel.style.removeProperty('bottom');
+
+    const margin = innerWidth <= 720 ? 12 : 16;
+    const gap = 8;
+    const anchor = button.getBoundingClientRect();
+    const panel = tooltipPanel.getBoundingClientRect();
+    const topInset = tooltipTopInset();
+    const bottomInset = tooltipBottomInset();
+    const maxLeft = Math.max(margin, innerWidth - panel.width - margin);
+    const maxTop = Math.max(topInset, innerHeight - bottomInset - panel.height);
+    const centeredLeft = Math.min(maxLeft, Math.max(margin, anchor.left + anchor.width / 2 - panel.width / 2));
+    const above = anchor.top - panel.height - gap;
+    const below = anchor.bottom + gap;
+    let left = centeredLeft;
+    let top;
+    let placement;
+
+    if (above >= topInset) {
+      top = above;
+      placement = 'above';
+    } else if (innerWidth > 720 && anchor.left - panel.width - gap >= margin) {
+      left = anchor.left - panel.width - gap;
+      top = Math.min(maxTop, Math.max(topInset, anchor.top + anchor.height / 2 - panel.height / 2));
+      placement = 'left';
+    } else if (innerWidth > 720 && anchor.right + panel.width + gap <= innerWidth - margin) {
+      left = anchor.right + gap;
+      top = Math.min(maxTop, Math.max(topInset, anchor.top + anchor.height / 2 - panel.height / 2));
+      placement = 'right';
+    } else {
+      top = Math.min(maxTop, Math.max(topInset, below));
+      placement = below <= maxTop ? 'below' : 'clamped';
+    }
+
+    tooltipPanel.dataset.placement = placement;
+    tooltipPanel.style.left = `${Math.round(left)}px`;
+    tooltipPanel.style.top = `${Math.round(top)}px`;
+  }
 
   function closeTooltip() {
     if (activeTooltipButton instanceof HTMLButtonElement) {
@@ -41,16 +104,19 @@
       activeTooltipButton.removeAttribute('aria-describedby');
     }
     activeTooltipButton = null;
+    tooltipPinned = false;
     if (tooltipPanel instanceof HTMLElement) {
       tooltipPanel.hidden = true;
       tooltipPanel.replaceChildren();
+      delete tooltipPanel.dataset.placement;
       tooltipPanel.style.removeProperty('left');
       tooltipPanel.style.removeProperty('right');
       tooltipPanel.style.removeProperty('top');
+      tooltipPanel.style.removeProperty('bottom');
     }
   }
 
-  function openTooltip(button) {
+  function openTooltip(button, { pinned = false } = {}) {
     if (!(button instanceof HTMLButtonElement) || !(tooltipPanel instanceof HTMLElement)) return;
     let lines = [];
     try { lines = JSON.parse(button.dataset.tooltipLines ?? '[]'); } catch { lines = []; }
@@ -63,31 +129,33 @@
     }));
     tooltipPanel.hidden = false;
     activeTooltipButton = button;
+    tooltipPinned = pinned;
     button.setAttribute('aria-expanded', 'true');
     button.setAttribute('aria-describedby', tooltipPanel.id);
-    if (innerWidth > 720) {
-      const anchor = button.getBoundingClientRect();
-      const panel = tooltipPanel.getBoundingClientRect();
-      const left = Math.min(innerWidth - panel.width - 16, Math.max(16, anchor.left + anchor.width / 2 - panel.width / 2));
-      const above = anchor.top - panel.height - 9;
-      tooltipPanel.style.left = `${Math.round(left)}px`;
-      tooltipPanel.style.top = `${Math.round(above >= 12 ? above : anchor.bottom + 9)}px`;
-    }
+    positionTooltip(button);
+  }
+
+  function toggleTooltip(button) {
+    const isPinnedOpen = activeTooltipButton === button && tooltipPinned && tooltipPanel instanceof HTMLElement && !tooltipPanel.hidden;
+    if (isPinnedOpen) closeTooltip();
+    else openTooltip(button, { pinned: true });
   }
 
   tooltipButtons.forEach((button) => {
-    button.addEventListener('mouseenter', () => { if (precisePointer.matches) openTooltip(button); });
-    button.addEventListener('mouseleave', () => { if (precisePointer.matches && document.activeElement !== button) closeTooltip(); });
-    button.addEventListener('focus', () => openTooltip(button));
-    button.addEventListener('blur', closeTooltip);
-    button.addEventListener('click', () => openTooltip(button));
+    button.addEventListener('mouseenter', () => {
+      if (precisePointer.matches && !tooltipPinned) openTooltip(button);
+    });
+    button.addEventListener('mouseleave', () => {
+      if (precisePointer.matches && activeTooltipButton === button && !tooltipPinned && document.activeElement !== button) closeTooltip();
+    });
+    button.addEventListener('focus', () => requestAnimationFrame(() => {
+      if (document.activeElement === button && button.matches(':focus-visible') && activeTooltipButton !== button) openTooltip(button);
+    }));
+    button.addEventListener('blur', () => {
+      if (activeTooltipButton === button) closeTooltip();
+    });
+    button.addEventListener('click', () => toggleTooltip(button));
   });
-  document.addEventListener('click', (event) => {
-    if (!(event.target instanceof Element) || !event.target.closest('[data-tooltip-lines]')) closeTooltip();
-  });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeTooltip(); });
-  addEventListener('resize', closeTooltip);
-  addEventListener('scroll', closeTooltip, true);
 
   async function copyText(text) {
     if (navigator.clipboard?.writeText) {
@@ -100,30 +168,79 @@
     field.style.opacity = '0';
     document.body.append(field);
     field.select();
-    const copied = document.execCommand('copy');
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch { copied = false; }
     field.remove();
     return copied;
   }
 
+  const copyStatus = document.querySelector('#copy-status');
+  const copyFeedbackTimers = new WeakMap();
+
+  function showCopyFeedback(button, copied) {
+    if (!(button instanceof HTMLButtonElement)) return;
+    const pending = copyFeedbackTimers.get(button);
+    if (pending) clearTimeout(pending);
+    const idleLabel = button.dataset.copyIdleLabel ?? button.textContent?.trim() ?? 'Copy';
+    button.dataset.copyIdleLabel = idleLabel;
+    button.textContent = copied ? 'Copied' : 'Copy failed';
+    if (copyStatus instanceof HTMLElement) {
+      copyStatus.textContent = '';
+      requestAnimationFrame(() => { copyStatus.textContent = copied ? 'Copied to clipboard.' : 'Copy failed. Please copy manually.'; });
+    }
+    const timer = setTimeout(() => {
+      button.textContent = button.dataset.copyIdleLabel ?? idleLabel;
+      delete button.dataset.copyIdleLabel;
+      copyFeedbackTimers.delete(button);
+    }, 1400);
+    copyFeedbackTimers.set(button, timer);
+  }
+
   const menuButton = document.querySelector('.menu-button');
   const navigation = document.querySelector('#main-nav');
-  menuButton?.addEventListener('click', () => {
-    const open = navigation?.classList.toggle('open') ?? false;
+
+  function setMenuOpen(open) {
+    if (!(menuButton instanceof HTMLButtonElement) || !(navigation instanceof HTMLElement)) return;
+    navigation.classList.toggle('open', open);
     menuButton.setAttribute('aria-expanded', String(open));
+  }
+
+  function closeMenu({ restoreFocus = false } = {}) {
+    const wasOpen = navigation instanceof HTMLElement && navigation.classList.contains('open');
+    setMenuOpen(false);
+    if (restoreFocus && wasOpen && menuButton instanceof HTMLButtonElement) menuButton.focus({ preventScroll: true });
+  }
+
+  menuButton?.addEventListener('click', () => {
+    const open = !(navigation?.classList.contains('open') ?? false);
+    setMenuOpen(open);
   });
-  navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    navigation.classList.remove('open');
-    menuButton?.setAttribute('aria-expanded', 'false');
-  }));
+  navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    if (!target?.closest('[data-tooltip-lines]')) closeTooltip();
+    if (!target?.closest('.menu-button') && !target?.closest('#main-nav')) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const hadTooltip = activeTooltipButton !== null;
+    const hadMenu = navigation instanceof HTMLElement && navigation.classList.contains('open');
+    if (!hadTooltip && !hadMenu) return;
+    closeTooltip();
+    closeMenu({ restoreFocus: hadMenu });
+    event.preventDefault();
+  });
+  addEventListener('resize', () => {
+    closeTooltip();
+    closeMenu();
+  });
+  addEventListener('scroll', closeTooltip, true);
 
   document.querySelectorAll('[data-copy-target]').forEach((button) => {
     button.addEventListener('click', async () => {
       const target = document.getElementById(button.dataset.copyTarget);
-      if (!target) return;
-      await copyText(target.textContent ?? '');
-      const original = button.textContent;
-      button.textContent = 'Copied';
-      setTimeout(() => { button.textContent = original; }, 1300);
+      const copied = target ? await copyText(target.textContent ?? '') : false;
+      showCopyFeedback(button, copied);
     });
   });
 
@@ -199,6 +316,8 @@
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
   const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
+  const catalogNav = document.querySelector('[data-nav-catalog]');
+  const framesetNav = document.querySelector('[data-nav-framesets]');
   const brandValues = new Set(rows.map((row) => row.dataset.brand).filter(Boolean));
   const brandLabels = new Map(brandButtons.map((button) => [button.dataset.brandFilter, button.textContent.trim()]));
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
@@ -236,6 +355,14 @@
   function setType(value, { historyMode = 'push', update = true } = {}) {
     activeType = ['complete-bike', 'frameset'].includes(value) ? value : '';
     typeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.typeValue === activeType)));
+    if (catalogNav instanceof HTMLAnchorElement) {
+      if (activeType === 'frameset') catalogNav.removeAttribute('aria-current');
+      else catalogNav.setAttribute('aria-current', 'page');
+    }
+    if (framesetNav instanceof HTMLAnchorElement) {
+      if (activeType === 'frameset') framesetNav.setAttribute('aria-current', 'page');
+      else framesetNav.removeAttribute('aria-current');
+    }
     if (update) updateCatalog({ historyMode });
   }
 
@@ -418,10 +545,7 @@
   });
   copyCatalogView?.addEventListener('click', async () => {
     updateFilterUrl('replace');
-    await copyText(location.href);
-    const original = copyCatalogView.textContent;
-    copyCatalogView.textContent = 'Copied';
-    setTimeout(() => { copyCatalogView.textContent = original; }, 1200);
+    showCopyFeedback(copyCatalogView, await copyText(location.href));
   });
   addEventListener('popstate', () => restoreFromParams(new URLSearchParams(location.search)));
 
@@ -576,32 +700,31 @@
     try { history.replaceState(null, '', `${next.pathname}${next.search}#compare`); } catch { /* normal navigation origin required */ }
   }
 
-  function openComparison({ scroll = true } = {}) {
+  function openComparison({ scroll = true, focus = scroll } = {}) {
     if (!comparePanel || selection.length < 2) return;
     comparePanel.hidden = false;
     compareTray?.classList.add('is-comparing');
     renderComparison();
+    if (focus && comparePanel instanceof HTMLElement) comparePanel.focus({ preventScroll: true });
     if (scroll) comparePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function closeComparison() {
+  function closeComparison({ restoreFocus = false } = {}) {
     if (comparePanel) comparePanel.hidden = true;
     compareTray?.classList.remove('is-comparing');
     const next = new URL(location.href);
     next.searchParams.delete('compare');
     try { history.replaceState(null, '', `${next.pathname}${next.search}${location.hash === '#compare' ? '' : location.hash}`); } catch { /* normal navigation origin required */ }
+    if (restoreFocus && openCompareButton instanceof HTMLButtonElement && !openCompareButton.disabled) openCompareButton.focus({ preventScroll: true });
   }
 
   openCompareButton?.addEventListener('click', () => openComparison());
   document.querySelector('[data-clear-selection]')?.addEventListener('click', () => setSelection([]));
-  catalogRoot.querySelector('[data-close-compare]')?.addEventListener('click', closeComparison);
+  catalogRoot.querySelector('[data-close-compare]')?.addEventListener('click', () => closeComparison({ restoreFocus: true }));
   catalogRoot.querySelector('[data-copy-comparison]')?.addEventListener('click', async (event) => {
     if (selection.length >= 2) renderComparison();
-    await copyText(location.href);
     if (event.currentTarget instanceof HTMLButtonElement) {
-      const original = event.currentTarget.textContent;
-      event.currentTarget.textContent = 'Copied';
-      setTimeout(() => { event.currentTarget.textContent = original; }, 1200);
+      showCopyFeedback(event.currentTarget, await copyText(location.href));
     }
   });
 
