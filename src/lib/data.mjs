@@ -35,9 +35,33 @@ export function categoryLabel(category) {
   return categoryLabels[category] ?? String(category).replaceAll('-', ' ');
 }
 
+export function categoryFamily(category) {
+  if (String(category).startsWith('road')) return 'road';
+  if (String(category).startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(category)) return 'gravel';
+  if (String(category).startsWith('mtb-')) return 'mtb';
+  return category;
+}
+
+export function evidenceLabel(value) {
+  const labels = {
+    official: 'official source',
+    'industry-report': 'industry report',
+    'retailer-claim': 'retailer claim',
+    'seller-claim': 'seller claim',
+    'seller-listing': 'seller listing',
+    'snapshot-classification': 'marketplace listing classification',
+    unknown: 'unverified'
+  };
+  return labels[value] ?? String(value).replaceAll('-', ' ');
+}
+
+export function supportsStandardFramesetBuild(category) {
+  return ['road', 'gravel'].includes(categoryFamily(category));
+}
+
 function categoryDetailLines(platform) {
   const details = platform.category_details ?? {};
-  return [details.note, details.evidence ? `Evidence: ${String(details.evidence).replaceAll('-', ' ')}.` : ''].filter(Boolean);
+  return [details.note, details.evidence ? `Evidence: ${evidenceLabel(details.evidence)}.` : ''].filter(Boolean);
 }
 
 export function categoryMetric(platform) {
@@ -51,7 +75,7 @@ export function categoryMetric(platform) {
       kind: 'tire',
       details: [
         clearanceLongLabel(platform),
-        clearance?.evidence ? `Evidence: ${String(clearance.evidence).replaceAll('-', ' ')}.` : 'Maximum is not recorded for this platform.',
+        clearance?.evidence ? `Evidence: ${evidenceLabel(clearance.evidence)}.` : 'Maximum is not recorded for this platform.',
         clearance?.note
       ].filter(Boolean)
     };
@@ -111,7 +135,9 @@ export function categoryMetric(platform) {
       kind: 'triathlon',
       details: [
         triathlon.aero_bars ? `Aero bars: ${triathlon.aero_bars}.` : 'Aero-bar package is not recorded.',
-        triathlon.storage ? `Storage: ${triathlon.storage}.` : 'Storage is not recorded.',
+        triathlon.storage && triathlon.storage !== 'unknown'
+          ? `Triathlon storage / boxes: ${triathlon.storage}.`
+          : 'Triathlon storage / boxes: Unknown.',
         ...categoryDetailLines(platform)
       ].filter(Boolean)
     };
@@ -215,6 +241,7 @@ export function validateDataset(data = loadDataset()) {
 
   const brandIds = new Set(data.brands.map((x) => x.id));
   const platformIds = new Set(data.platforms.map((x) => x.id));
+  const platformsById = new Map(data.platforms.map((x) => [x.id, x]));
   const variantIds = new Set(data.variants.map((x) => x.id));
   const sourceIds = new Set(data.sources.map((x) => x.id));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
@@ -229,7 +256,7 @@ export function validateDataset(data = loadDataset()) {
   }
 
   for (const platform of data.platforms) {
-    requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'source_ids', 'last_reviewed']);
+    requireFields('platform', platform, ['brand_id', 'name', 'category', 'handlebar', 'frame', 'china_availability', 'source_ids', 'last_reviewed']);
     if (!brandIds.has(platform.brand_id)) errors.push(`platform ${platform.id}: missing brand ${platform.brand_id}`);
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
@@ -246,6 +273,7 @@ export function validateDataset(data = loadDataset()) {
         if (value !== undefined && (typeof value !== 'number' || value <= 0 || value > 100)) errors.push(`platform ${platform.id}: invalid ${key}`);
       }
     }
+    if (platform.category.startsWith('mtb-') && platform.handlebar !== 'flat') errors.push(`platform ${platform.id}: MTB platform must use a flat handlebar`);
     if (platform.category.startsWith('mtb-') && !isObject(platform.category_details?.suspension)) errors.push(`platform ${platform.id}: MTB platform needs category_details.suspension`);
     if (platform.category === 'e-road' && !isObject(platform.category_details?.motor)) errors.push(`platform ${platform.id}: e-road platform needs category_details.motor`);
     if (platform.category === 'folding' && !isObject(platform.category_details?.folding)) errors.push(`platform ${platform.id}: folding platform needs category_details.folding`);
@@ -257,13 +285,21 @@ export function validateDataset(data = loadDataset()) {
     requireFields('variant', variant, ['platform_id', 'name', 'kind', 'editorial', 'source_ids']);
     if (!platformIds.has(variant.platform_id)) errors.push(`variant ${variant.id}: missing platform ${variant.platform_id}`);
     if (!['complete-bike', 'frameset'].includes(variant.kind)) errors.push(`variant ${variant.id}: invalid kind`);
+    if (variant.kind === 'complete-bike') {
+      if (!isObject(variant.drivetrain)) errors.push(`variant ${variant.id}: complete bike needs an exact drivetrain`);
+      else requireFields('drivetrain', { id: variant.id, ...variant.drivetrain }, ['brand', 'model', 'speeds', 'shifting']);
+    }
+    if (variant.kind === 'frameset') {
+      const platform = platformsById.get(variant.platform_id);
+      if (platform && !supportsStandardFramesetBuild(platform.category)) errors.push(`variant ${variant.id}: fixed frameset build allowance is not approved for ${platform.category}`);
+    }
     const thresholds = variant.editorial?.price_thresholds_cny;
     if (thresholds && !(thresholds.great_buy_below <= thresholds.fair_buy_below && thresholds.fair_buy_below <= thresholds.not_compelling_above)) errors.push(`variant ${variant.id}: invalid threshold ordering`);
     for (const sourceId of variant.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`variant ${variant.id}: missing source ${sourceId}`);
   }
 
   for (const price of data.prices) {
-    requireFields('price', price, ['variant_id', 'observed_at', 'price_type', 'currency', 'source_ids']);
+    requireFields('price', price, ['variant_id', 'observed_at', 'price_type', 'currency', 'channel', 'status', 'conditions', 'source_ids']);
     if (!variantIds.has(price.variant_id)) errors.push(`price ${price.id}: missing variant ${price.variant_id}`);
     if (!isDate(price.observed_at)) errors.push(`price ${price.id}: invalid observed_at`);
     if (price.currency !== 'CNY') errors.push(`price ${price.id}: currency must be CNY`);
