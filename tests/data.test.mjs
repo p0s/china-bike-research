@@ -20,6 +20,14 @@ test('publication gates reject incomplete builds and category-mismatched framese
   delete incompleteBuild.variants.find((item) => item.id === 'twitter-v3-wheeltop-eds').drivetrain;
   assert.ok(validateDataset(incompleteBuild).some((error) => error.includes('complete bike needs an exact drivetrain')));
 
+  const placeholderBuild = structuredClone(data);
+  placeholderBuild.variants.find((item) => item.id === 'twitter-v3-wheeltop-eds').drivetrain.brand = 'Unknown';
+  assert.ok(validateDataset(placeholderBuild).some((error) => error.includes('drivetrain brand must identify one exact build')));
+
+  const ambiguousLayout = structuredClone(data);
+  ambiguousLayout.variants.find((item) => item.id === 'twitter-v3-wheeltop-eds').drivetrain.layout = 'single-or-double';
+  assert.ok(validateDataset(ambiguousLayout).some((error) => error.includes('drivetrain layout must be single or double')));
+
   const dropBarMtb = structuredClone(data);
   const mtbPlatform = dropBarMtb.platforms.find((item) => item.id === 'twitter-gravel-v3');
   mtbPlatform.category = 'mtb-xc';
@@ -38,13 +46,13 @@ test('publication gates reject incomplete builds and category-mismatched framese
 
 test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
-  assert.equal(data.platforms.length, 42);
-  assert.equal(data.variants.length, 44);
-  assert.equal(data.prices.length, 45);
-  assert.equal(data.images.length, 42);
+  assert.equal(data.platforms.length, 35);
+  assert.equal(data.variants.length, 37);
+  assert.equal(data.prices.length, 38);
+  assert.equal(data.images.length, 35);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 87);
-  assert.equal(data.candidates.length, 171);
+  assert.equal(data.candidates.length, 177);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
@@ -116,11 +124,9 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   const unresolvedImagePlatforms = [
     'elves-falath-r7170',
     'lightcarbon-speedz',
-    'sunpeed-wudi-e-2026',
-    'tfsa-jh37',
-    'viqi-r8000'
+    'tfsa-jh37'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 37);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 32);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -188,13 +194,12 @@ test('shared frame images do not masquerade as exact component builds', () => {
   assert.equal(pardus.image.display_accuracy, 'same-platform');
 });
 
-test('previously unresolved platforms now have credited product references', () => {
+test('published images stay credited while incomplete builds remain candidates', () => {
   const ican = products.find((product) => product.platform.id === 'ican-gra04');
-  const trinx = products.find((product) => product.platform.id === 'trinx-gtr-c6');
+  const trinx = data.candidates.find((candidate) => candidate.id === 'trinx-gtr-c6');
   assert.equal(ican.image.hosting.mode, 'remote');
   assert.equal(ican.image.display_accuracy, 'exact-variant');
   assert.equal(ican.image.rights.status, 'retailer-page-embed');
-  assert.equal(trinx.image.hosting.mode, 'remote');
-  assert.equal(trinx.image.display_accuracy, 'same-model-different-market-build');
-  assert.match(trinx.image.display_note, /does not depict the China-market carbon specification/i);
+  assert.equal(trinx.status, 'exact-trim-unproven');
+  assert.ok(trinx.missing.some((item) => /new publishable variant record/i.test(item)));
 });

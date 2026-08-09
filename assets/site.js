@@ -750,8 +750,8 @@
     return head;
   }
 
-  function valueCell(primary, secondary = '') {
-    const cell = element('div', 'compare-value');
+  function valueCell(primary, secondary = '', modifier = '') {
+    const cell = element('div', `compare-value${modifier ? ` ${modifier}` : ''}`);
     const strong = element('strong', '', primary || '—');
     cell.append(strong);
     if (secondary) cell.append(element('small', '', secondary));
@@ -789,8 +789,9 @@
       ['Category', (item) => valueCell(item.category)],
       ...metricFields,
       ['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)],
-      ['Weight', (item) => valueCell(item.weight, item.weightSubline)],
+      ['Claimed weight', (item) => valueCell(item.weight, item.weightSubline)],
       ['Frame', (item) => valueCell(item.frame)],
+      ['What to verify', (item) => valueCell(item.caveats, '', 'is-warning')],
       ['Best for', (item) => valueCell(item.bestFor)],
       ['Verdict', (item) => valueCell(item.verdict)]
     ];
@@ -799,8 +800,7 @@
       ['Internal frame storage', (item) => valueCell(item.internalFrameStorage)],
       ['Mounts', (item) => valueCell(item.mounts)],
       ['Manufacturing', (item) => valueCell(item.manufacturing)],
-      ['Availability', (item) => valueCell(item.availability)],
-      ['Caveats', (item) => valueCell(item.caveats)]
+      ['Availability', (item) => valueCell(item.availability)]
     ];
     const mixedCategories = metricKinds.length > 1;
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, mixedCategories

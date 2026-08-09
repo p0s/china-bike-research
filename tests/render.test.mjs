@@ -20,6 +20,8 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /Frame estimate/);
   assert.match(html, /Est\. ¥9,200–10,900/);
   assert.match(html, /Full-bike price/);
+  assert.match(html, /placeholder="Search model, use or drivetrain"/);
+  assert.match(html, /class="product-fit"><span>Best for<\/span>/);
 });
 
 test('homepage omits developer-facing dashboards and legacy sections', () => {
@@ -56,6 +58,38 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /<option value="name-desc">Bike: Z to A<\/option>/);
   assert.match(html, /<option value="capability-desc" disabled>Category fact: high to low<\/option>/);
   assert.doesNotMatch(html, /data-filter-style/);
+  assert.match(html, /class="metric-sub">Claimed<\/span>/);
+  assert.match(html, /Why Best value/);
+  assert.match(html, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
+});
+
+test('model evidence labels claims, source roles, confidence, and inaccessible snapshots', () => {
+  const product = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
+  const detail = renderModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  }, product);
+  assert.match(detail, /<dt>Claimed weight<\/dt><dd>9\.9 kg<\/dd>/);
+  assert.match(detail, /Each source is labelled by what it supports/);
+  assert.match(detail, /Twitter Bikes · Manufacturer product page · Product facts · Image/);
+  assert.match(detail, /Product facts: Medium–high · Image: High/);
+  assert.match(detail, /Archived evidence; no public link/);
+
+  const placeholderProduct = products.find((item) => item.variant.id === 'tfsa-jh37-frameset');
+  const placeholderDetail = renderModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  }, placeholderProduct);
+  assert.match(placeholderDetail, /Project-owned local asset/);
+  assert.doesNotMatch(placeholderDetail, /Project-owned product image placeholders[\s\S]*Archived evidence; no public link/);
 });
 
 test('primary navigation reflects catalog and exact model context', () => {
@@ -83,7 +117,7 @@ test('primary navigation reflects catalog and exact model context', () => {
 });
 
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
-  assert.match(html, /data-id="pardus-uragano-sport"[^>]*data-price-filter="12000"/);
+  assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="6500"/);
   assert.match(html, /Triathlon storage \/ boxes: Unknown\./);
   assert.match(html, /"internalFrameStorage":"No"/);
   assert.doesNotMatch(html, /<article class="catalog-row" role="row"/);
