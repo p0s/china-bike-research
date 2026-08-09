@@ -43,11 +43,37 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /role="tooltip"/);
   assert.equal((html.match(/role="tooltip"/g) ?? []).length, 1);
   assert.match(html, /data-tooltip-lines=/);
+  assert.match(html, /aria-controls="shared-tooltip"/);
+  assert.match(html, /role="status" aria-live="polite" id="copy-status"/);
   assert.match(html, /data-result-summary aria-live="polite" hidden/);
   assert.match(html, /class="metric-sub price-state [^"]*">Promo · 2026-08-08<\/span>/);
   assert.match(html, /data-filter-category/);
   assert.match(html, /Category fact/);
   assert.doesNotMatch(html, /data-filter-style/);
+});
+
+test('primary navigation reflects catalog and exact model context', () => {
+  assert.match(html, /data-nav-catalog aria-current="page"/);
+  assert.doesNotMatch(html, /data-nav-framesets aria-current="page"/);
+
+  const complete = products.find((item) => item.variant.kind === 'complete-bike');
+  const frameset = products.find((item) => item.variant.kind === 'frameset');
+  assert.ok(complete);
+  assert.ok(frameset);
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  };
+  const completeDetail = renderModel(context, complete);
+  const framesetDetail = renderModel(context, frameset);
+  assert.match(completeDetail, /data-nav-catalog aria-current="page"/);
+  assert.doesNotMatch(completeDetail, /data-nav-framesets aria-current="page"/);
+  assert.doesNotMatch(framesetDetail, /data-nav-catalog aria-current="page"/);
+  assert.match(framesetDetail, /data-nav-framesets aria-current="page"/);
 });
 
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {

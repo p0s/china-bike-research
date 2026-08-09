@@ -37,8 +37,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <a class="brand" href="${url(base,'/')}" aria-label="China Bike Research home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bike Research</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
-        <a href="${url(base,'/')}"${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-        <a href="${url(base,'/?type=frameset#catalog')}">Framesets</a>
+        <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
+        <a href="${url(base,'/?type=frameset#catalog')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
         <a href="${url(base,'/methodology/')}"${current==='methodology'?' aria-current="page"':''}>Methodology</a>
         <a class="nav-external" href="${repositoryUrl}">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
@@ -65,6 +65,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
     </div>
   </aside>
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
+  <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
   <script src="${url(base,'/assets/site.js')}" defer></script>
 </body>
 </html>`;
