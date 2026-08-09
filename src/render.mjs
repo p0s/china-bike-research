@@ -206,7 +206,10 @@ function weightLabel(product) {
     : '—';
 }
 
-function weightSubline() { return ''; }
+function weightSubline(product) {
+  if (product.variant.kind === 'complete-bike') return product.variant.claimed_complete_weight_g ? 'Claimed' : '';
+  return product.platform.frame.claimed_frame_weight_g ? 'Claimed frame weight' : '';
+}
 
 function frameStandard(product) {
   const frame = product.platform.frame;
@@ -230,8 +233,11 @@ function frameTooltipLines(product) {
   return lines;
 }
 
-function recommendationLabel(ctx, product) {
-  const recommendation = ctx.data.recommendations.find((item) => item.variant_id === product.variant.id);
+function recommendationFor(ctx, product) {
+  return ctx.data.recommendations.find((item) => item.variant_id === product.variant.id) ?? null;
+}
+
+function recommendationLabel(recommendation) {
   if (!recommendation) return '';
   const labels = {
     'cheapest-traceable-complete': 'Cheapest complete',
@@ -242,6 +248,18 @@ function recommendationLabel(ctx, product) {
     'best-premium-race-value': 'Race value'
   };
   return labels[recommendation.id] ?? recommendation.title;
+}
+
+function recommendationBadge(recommendation) {
+  if (!recommendation) return '';
+  const label = recommendationLabel(recommendation);
+  return `<span class="pick-flag"><span class="pick-pill">${escapeHtml(label)}</span>${infoTip(`Why ${label}`, [recommendation.price_label, recommendation.reason, recommendation.caveat ? `Caveat: ${recommendation.caveat}` : ''])}</span>`;
+}
+
+function bestForLabel(product) {
+  const values = product.variant.editorial.best_for ?? [];
+  if (values.length === 1 && values[0].toLowerCase() === categoryLabel(product.platform.category).toLowerCase()) return '';
+  return values.join(' · ');
 }
 
 function statusFlag(product) {
@@ -278,15 +296,17 @@ function productRow(ctx, product) {
     metric.value,
     ...(variant.editorial.best_for ?? [])
   ].filter(Boolean).join(' ').toLowerCase();
-  const recommended = recommendationLabel(ctx, product);
+  const recommendation = recommendationFor(ctx, product);
+  const bestFor = bestForLabel(product);
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   return `<div class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${allInPrice.midpoint}" data-price-filter="${allInPrice.high ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}">
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="cell">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
       <span class="product-copy">
-        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommended ? `<span class="pick-pill">${escapeHtml(recommended)}</span>` : ''}${statusFlag(product)}</span>
+        <span class="product-meta"><button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${recommendationBadge(recommendation)}${statusFlag(product)}</span>
         <strong class="product-name"><a href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link>${escapeHtml(variant.name)}</a></strong>
+        ${bestFor ? `<span class="product-fit"><span>Best for</span> ${escapeHtml(bestFor)}</span>` : ''}
       </span>
     </div>
     <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main">${escapeHtml(formatAllInPrice(product))}${infoTip('Price details', priceTooltipLines(ctx, product))}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(priceState(product))}</span></div>
@@ -327,7 +347,7 @@ function comparisonSummary(ctx, product) {
     mounts: product.platform.mounts?.join(', ') || 'None recorded',
     manufacturing: `${relationshipLabel(product.brand.manufacturing.relationship)} · ${confidenceLabel(product.brand.manufacturing.confidence)} confidence`,
     availability: availabilityLabel(product.platform.china_availability),
-    bestFor: product.variant.editorial.best_for?.join(', ') || 'Not specified',
+    bestFor: bestForLabel(product).replaceAll(' · ', ', ') || 'Not specified beyond category',
     verdict: product.variant.editorial.verdict,
     caveats: product.variant.editorial.caveats?.join('; ') || 'None recorded'
   };
@@ -339,8 +359,34 @@ function watchlistNote(ctx) {
   return `<details class="research-note"><summary>Research queue (${ctx.data.candidates.length} models)</summary><p class="research-summary">The structured backlog stays out of ranking until the exact model, current price, category-specific facts, or purchase route is verified.</p><div class="research-list">${visible.map((item) => `<div><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.why_interesting)}</span><small>Needs: ${escapeHtml(item.missing.join(' · '))}</small></div>`).join('')}</div>${remaining ? `<p class="research-footnote">${remaining} more candidates remain in the repository research ledger.</p>` : ''}<p class="research-footnote"><a href="${ctx.repositoryUrl}/issues">Add evidence on GitHub</a>.</p></details>`;
 }
 
-function sourceList(sources) {
-  return `<div class="source-list">${sources.map((source) => `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · accessed ${escapeHtml(source.accessed_at)}</span>${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`).join('')}</div>`;
+function sourceUsages(ctx, product) {
+  const sources = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const usages = new Map();
+  const add = (ids, role, reliabilityKey) => {
+    for (const id of ids ?? []) {
+      const source = sources.get(id);
+      if (!source) continue;
+      const usage = usages.get(id) ?? { source, roles: [] };
+      if (!usage.roles.some((item) => item.role === role)) usage.roles.push({ role, reliabilityKey });
+      usages.set(id, usage);
+    }
+  };
+  add([...(product.variant.source_ids ?? []), ...(product.platform.source_ids ?? [])], 'Product facts', 'specification');
+  add(product.prices.flatMap((price) => price.source_ids ?? []), 'Price', 'price');
+  add(product.image?.source_id ? [product.image.source_id] : [], 'Image', 'identity');
+  return [...usages.values()];
+}
+
+function sourceList(ctx, product) {
+  const usages = sourceUsages(ctx, product);
+  return `<div class="source-list"><p class="source-intro">Each source is labelled by what it supports. Confidence applies only to that role.</p>${usages.map(({ source, roles }) => {
+    const roleLabels = roles.map(({ role }) => role).join(' · ');
+    const confidence = roles.map(({ role, reliabilityKey }) => `${role}: ${confidenceLabel(source.reliability?.[reliabilityKey])}`).join(' · ');
+    const unavailable = source.url ? '' : source.type === 'project-asset'
+      ? '<span class="source-local">Project-owned local asset</span>'
+      : '<span class="source-unavailable">Archived evidence; no public link</span>';
+    return `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · ${escapeHtml(roleLabels)}</span><span>${escapeHtml(confidence)} · accessed ${escapeHtml(source.accessed_at)}</span>${unavailable}${source.notes ? `<p>${escapeHtml(source.notes)}</p>` : ''}</div>`;
+  }).join('')}</div>`;
 }
 
 function videoFormatLabel(value) {
@@ -424,7 +470,7 @@ export function renderHome(ctx) {
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
     <div class="filter-bar filters-collapsed">
       <div class="filter-primary">
-        <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search brand, model or drivetrain" autocomplete="off" data-filter-search></div>
+        <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search model, use or drivetrain" autocomplete="off" data-filter-search></div>
         <label class="compact-select category-select"><span>Category</span><select name="category" data-filter-category><option value="">All verified categories</option>${categorySelectOptions(ctx)}</select></label>
         <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame builds</button></div>
       </div>
@@ -455,7 +501,7 @@ export function renderHome(ctx) {
 }
 
 export function renderModel(ctx, product) {
-  const { variant, platform, brand, latestPrice, prices, sources, videos } = product;
+  const { variant, platform, brand, latestPrice, prices, videos } = product;
   const assumption = buildAssumption(ctx);
   const metric = categoryMetric(platform);
   const categoryQuestion = metric.kind === 'tire'
@@ -476,7 +522,7 @@ export function renderModel(ctx, product) {
   const detailFacts = [
     [metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)],
     ['Drivetrain', drivetrainLabel(ctx, product), ''],
-    ['Weight', weightLabel(product), ''],
+    [weightSubline(product) ? 'Claimed weight' : 'Weight', weightLabel(product), ''],
     ['Frame standard', frameStandard(product), ''],
     ['Category', `${categoryLabel(platform.category)} · ${platform.handlebar}-bar`, ''],
     ['Availability', availabilityLabel(platform.china_availability), '']
@@ -490,7 +536,7 @@ export function renderModel(ctx, product) {
     ${videoContext(videos)}
     <details class="detail-panel"><summary>Frame, category facts, support and manufacturing</summary><div class="detail-panel-body"><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(relationshipLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></div></details>
     <details class="detail-panel"><summary>Ask the seller in Chinese</summary><div class="detail-panel-body"><pre id="seller-message"><code>${escapeHtml(sellerMessage)}</code></pre><button class="secondary-button" type="button" data-copy-target="seller-message">Copy message</button></div></details>
-    <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(sources)}</div></details>
+    <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
   return page(ctx, {
     title: `${brand.name} ${variant.name}`,

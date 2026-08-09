@@ -251,6 +251,9 @@ export function validateDataset(data = loadDataset()) {
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
   const categorySet = new Set(supportedCategories);
+  const isUnresolvedExactField = (value) => typeof value !== 'string'
+    || !value.trim()
+    || /\b(?:unknown|varies|variable|unspecified|not recorded)\b/i.test(value);
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
@@ -290,7 +293,16 @@ export function validateDataset(data = loadDataset()) {
     if (!['complete-bike', 'frameset'].includes(variant.kind)) errors.push(`variant ${variant.id}: invalid kind`);
     if (variant.kind === 'complete-bike') {
       if (!isObject(variant.drivetrain)) errors.push(`variant ${variant.id}: complete bike needs an exact drivetrain`);
-      else requireFields('drivetrain', { id: variant.id, ...variant.drivetrain }, ['brand', 'model', 'speeds', 'shifting']);
+      else {
+        requireFields('drivetrain', { id: variant.id, ...variant.drivetrain }, ['brand', 'model', 'speeds', 'shifting', 'layout']);
+        for (const field of ['brand', 'model', 'speeds', 'layout']) {
+          if (isUnresolvedExactField(variant.drivetrain[field])) errors.push(`variant ${variant.id}: complete bike drivetrain ${field} must identify one exact build`);
+        }
+        if (!/^[12]x\d{1,2}$/.test(variant.drivetrain.speeds)) errors.push(`variant ${variant.id}: complete bike drivetrain speeds must use an exact chainring-by-cog count`);
+        if (!['single', 'double'].includes(variant.drivetrain.layout)) errors.push(`variant ${variant.id}: complete bike drivetrain layout must be single or double`);
+        if ((variant.drivetrain.layout === 'single') !== variant.drivetrain.speeds.startsWith('1x')) errors.push(`variant ${variant.id}: complete bike drivetrain layout must match its speed count`);
+        if (!['mechanical', 'electronic', 'electronic-wireless'].includes(variant.drivetrain.shifting)) errors.push(`variant ${variant.id}: complete bike drivetrain shifting must identify one exact build`);
+      }
     }
     if (variant.kind === 'frameset') {
       const platform = platformsById.get(variant.platform_id);

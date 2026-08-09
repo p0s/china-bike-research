@@ -41,6 +41,14 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
 });
 
+test('comparison keeps uncertainty in the core decision table', () => {
+  assert.match(script, /\['Claimed weight', \(item\) => valueCell\(item\.weight, item\.weightSubline\)\]/);
+  assert.match(script, /\['What to verify', \(item\) => valueCell\(item\.caveats, '', 'is-warning'\)\]/);
+  assert.ok(script.indexOf("['What to verify'") < script.indexOf('const secondaryFields'));
+  assert.doesNotMatch(script.slice(script.indexOf('const secondaryFields'), script.indexOf('const mixedCategories')), /Caveats/);
+  assert.match(styles, /\.compare-value\.is-warning strong/);
+});
+
 test('shared disclosures and copy feedback have complete dismissal and failure states', () => {
   assert.match(script, /function closeMenu\(\{ restoreFocus = false \} = \{\}\)/);
   assert.match(script, /if \(event\.key !== 'Escape'\) return/);
