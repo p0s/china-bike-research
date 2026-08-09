@@ -180,6 +180,7 @@ export function loadDataset() {
     prices: loadDirectory('prices'),
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
+    videos: loadDirectory('videos'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -224,6 +225,7 @@ export function validateDataset(data = loadDataset()) {
     price: data.prices,
     source: data.sources,
     image: data.images,
+    video: data.videos,
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -247,6 +249,7 @@ export function validateDataset(data = loadDataset()) {
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
   const candidateIds = new Set(data.candidates.map((x) => x.id));
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
+  const videoIds = new Set(data.videos.map((x) => x.id));
   const categorySet = new Set(supportedCategories);
 
   for (const brand of data.brands) {
@@ -326,6 +329,11 @@ export function validateDataset(data = loadDataset()) {
     if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
     if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
     for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);
+    for (const videoId of candidate.video_ids ?? []) {
+      const video = data.videos.find((item) => item.id === videoId);
+      if (!videoIds.has(videoId)) errors.push(`candidate ${candidate.id}: missing video ${videoId}`);
+      else if (video?.target?.candidate_id !== candidate.id) errors.push(`candidate ${candidate.id}: video ${videoId} targets another record`);
+    }
   }
 
   for (const exclusion of data.exclusions) {
@@ -395,6 +403,57 @@ export function validateDataset(data = loadDataset()) {
 
   for (const platform of data.platforms) {
     if (!data.images.some((image) => image.platform_id === platform.id && image.role === 'primary')) errors.push(`platform ${platform.id}: no primary visual`);
+  }
+
+  const youtubeIds = new Set();
+  const platformVideoCounts = new Map();
+  const videoFormats = new Set(['hands-on-review', 'long-term-review', 'model-overview', 'build-and-ride']);
+  const videoRelationships = new Set(['retailer-linked', 'product-supplied', 'publication-review', 'owner-review']);
+  for (const video of data.videos) {
+    requireFields('video', video, [
+      'provider', 'youtube_video_id', 'title', 'channel_name', 'channel_url', 'url', 'language',
+      'accessed_at', 'target', 'match', 'format', 'relationship', 'disclosure', 'disclosure_url', 'summary'
+    ]);
+    if (video.provider !== 'youtube') errors.push(`video ${video.id}: unsupported provider ${video.provider}`);
+    if (typeof video.youtube_video_id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(video.youtube_video_id)) errors.push(`video ${video.id}: invalid YouTube video ID`);
+    if (youtubeIds.has(video.youtube_video_id)) errors.push(`video ${video.id}: duplicate YouTube video ID ${video.youtube_video_id}`);
+    youtubeIds.add(video.youtube_video_id);
+    const expectedUrl = `https://www.youtube.com/watch?v=${video.youtube_video_id}`;
+    if (video.url !== expectedUrl) errors.push(`video ${video.id}: URL must match its YouTube video ID`);
+    try {
+      const channel = new URL(video.channel_url);
+      if (channel.protocol !== 'https:' || !['www.youtube.com', 'youtube.com'].includes(channel.hostname)) errors.push(`video ${video.id}: invalid YouTube channel URL`);
+    } catch { errors.push(`video ${video.id}: invalid channel URL`); }
+    if (!isDate(video.accessed_at)) errors.push(`video ${video.id}: invalid accessed_at`);
+    if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);
+    if (!videoFormats.has(video.format)) errors.push(`video ${video.id}: invalid format`);
+    if (!videoRelationships.has(video.relationship)) errors.push(`video ${video.id}: invalid relationship`);
+    if (typeof video.summary !== 'string' || video.summary.trim().length < 30) errors.push(`video ${video.id}: summary is too short`);
+    if (typeof video.disclosure !== 'string' || video.disclosure.trim().length < 20) errors.push(`video ${video.id}: disclosure is too short`);
+    try {
+      const disclosureUrl = new URL(video.disclosure_url);
+      if (disclosureUrl.protocol !== 'https:') errors.push(`video ${video.id}: disclosure URL must use HTTPS`);
+    } catch { errors.push(`video ${video.id}: invalid disclosure URL`); }
+
+    const target = isObject(video.target) ? video.target : {};
+    const targetKeys = ['platform_id', 'variant_id', 'candidate_id'].filter((key) => target[key] !== undefined);
+    if (targetKeys.length !== 1) errors.push(`video ${video.id}: target must identify exactly one platform, variant, or candidate`);
+    if (target.platform_id !== undefined) {
+      if (!platformIds.has(target.platform_id)) errors.push(`video ${video.id}: missing platform ${target.platform_id}`);
+      if (video.match !== 'exact-platform') errors.push(`video ${video.id}: platform target must use exact-platform match`);
+      platformVideoCounts.set(target.platform_id, (platformVideoCounts.get(target.platform_id) ?? 0) + 1);
+    }
+    if (target.variant_id !== undefined) {
+      if (!variantIds.has(target.variant_id)) errors.push(`video ${video.id}: missing variant ${target.variant_id}`);
+      if (video.match !== 'exact-variant') errors.push(`video ${video.id}: variant target must use exact-variant match`);
+    }
+    if (target.candidate_id !== undefined) {
+      if (!candidateIds.has(target.candidate_id)) errors.push(`video ${video.id}: missing candidate ${target.candidate_id}`);
+      if (video.match !== 'exact-model-lead') errors.push(`video ${video.id}: candidate target must use exact-model-lead match`);
+    }
+  }
+  for (const [platformId, count] of platformVideoCounts) {
+    if (count > 2) errors.push(`platform ${platformId}: more than two curated videos`);
   }
 
   for (const recommendation of data.recommendations) if (!variantIds.has(recommendation.variant_id)) errors.push(`recommendation ${recommendation.id}: missing variant ${recommendation.variant_id}`);
@@ -474,6 +533,9 @@ export function joinProducts(data = loadDataset()) {
       ...prices.flatMap((price) => price.source_ids ?? []),
       ...(image?.source_id ? [image.source_id] : [])
     ]);
+    const videos = data.videos
+      .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
+      .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
     return {
       variant,
       platform,
@@ -483,6 +545,7 @@ export function joinProducts(data = loadDataset()) {
       allInPrice: allInPriceFor(variant, latestPrice, data),
       image,
       imageSource: image ? sources.get(image.source_id) ?? null : null,
+      videos,
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
   }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);

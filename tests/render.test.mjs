@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
-import { renderHome, renderModel } from '../src/render.mjs';
+import { renderHome, renderModel, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -123,6 +123,31 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   assert.match(detail, /marketplace listing classification/);
   assert.match(detail, /Promotion-conditional price/);
   assert.doesNotMatch(detail, /snapshot-classification|from_image|medium-low|promotion-conditional/);
+});
+
+test('model videos are exact, disclosed, and privacy-preserving before interaction', () => {
+  const product = products.find((item) => item.variant.id === 'yoeleo-altera-g21-frameset');
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  };
+  const detail = renderModel(context, product);
+  assert.match(detail, /Selected video context/);
+  assert.match(detail, /data-video-shell data-youtube-id="jmdVakRJPQ8" data-video-title="\$1278 for a frame THIS GOOD! The Yoeleo G21 Altera"/);
+  assert.match(detail, /No YouTube request until you choose/);
+  assert.match(detail, /Retailer-linked/);
+  assert.match(detail, /Disclosure basis/);
+  assert.match(detail, /href="https:\/\/www\.youtube\.com\/watch\?v=jmdVakRJPQ8" rel="noreferrer"/);
+  assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
+
+  const privacy = renderPrivacy(context);
+  assert.match(privacy, /youtube-nocookie\.com/);
+  assert.match(privacy, /only after the visitor presses/);
+  assert.match(privacy, /videos do not autoplay/);
 });
 
 
