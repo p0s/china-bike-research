@@ -64,6 +64,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <button class="primary-button" type="button" data-open-compare>Compare</button>
     </div>
   </aside>
+  <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <script src="${url(base,'/assets/site.js')}" defer></script>
 </body>
 </html>`;

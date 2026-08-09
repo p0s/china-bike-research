@@ -15,14 +15,35 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('publication gates reject incomplete builds and category-mismatched framesets', () => {
+  const incompleteBuild = structuredClone(data);
+  delete incompleteBuild.variants.find((item) => item.id === 'twitter-v3-wheeltop-eds').drivetrain;
+  assert.ok(validateDataset(incompleteBuild).some((error) => error.includes('complete bike needs an exact drivetrain')));
+
+  const dropBarMtb = structuredClone(data);
+  const mtbPlatform = dropBarMtb.platforms.find((item) => item.id === 'twitter-gravel-v3');
+  mtbPlatform.category = 'mtb-xc';
+  mtbPlatform.category_details = { suspension: {} };
+  delete mtbPlatform.tire_clearance;
+  assert.ok(validateDataset(dropBarMtb).some((error) => error.includes('MTB platform must use a flat handlebar')));
+
+  const mtbFrameset = structuredClone(data);
+  const framePlatform = mtbFrameset.platforms.find((item) => item.id === 'lightcarbon-lcg071s-pro');
+  framePlatform.category = 'mtb-xc';
+  framePlatform.handlebar = 'flat';
+  framePlatform.category_details = { suspension: {} };
+  delete framePlatform.tire_clearance;
+  assert.ok(validateDataset(mtbFrameset).some((error) => error.includes('fixed frameset build allowance is not approved')));
+});
+
 test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
-  assert.equal(data.platforms.length, 57);
-  assert.equal(data.variants.length, 59);
-  assert.equal(data.prices.length, 60);
-  assert.equal(data.images.length, 57);
-  assert.ok(data.sources.length >= 61);
-  assert.equal(data.candidates.length, 150);
+  assert.equal(data.platforms.length, 42);
+  assert.equal(data.variants.length, 44);
+  assert.equal(data.prices.length, 45);
+  assert.equal(data.images.length, 42);
+  assert.ok(data.sources.length >= 87);
+  assert.equal(data.candidates.length, 165);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
@@ -93,16 +114,12 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   }
   const unresolvedImagePlatforms = [
     'elves-falath-r7170',
-    'huanyu-az-one',
-    'irefox-by446',
-    'java-fuoco-2025',
-    'legit-ac1',
     'lightcarbon-speedz',
-    'pardus-spark-sport-pes',
     'sunpeed-wudi-e-2026',
+    'tfsa-jh37',
     'viqi-r8000'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 48);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 37);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -112,16 +129,19 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
 
 test('category-specific facts stay scoped to the categories that use them', () => {
   const gravel = data.platforms.find((item) => item.id === 'sava-gelaro-s8');
-  const mtb = data.platforms.find((item) => item.id === 'icanian-p9');
-  const triathlon = data.platforms.find((item) => item.id === 'felt-ia-2');
+  const triathlon = data.platforms.find((item) => item.id === 'twitter-t3-tt');
+  const mtb = data.candidates.find((item) => item.id === 'icanian-p9');
+  const fatBike = data.candidates.find((item) => item.id === 'icanian-sn04');
   const eRoad = data.candidates.find((item) => item.id === 'cosmosworks-carbon-e-road');
   const folding = data.candidates.find((item) => item.id === 'qingsha-carbon-folding');
 
   assert.ok(gravel.tire_clearance);
-  assert.equal(mtb.tire_clearance, undefined);
-  assert.equal(mtb.category_details.suspension.travel_front_mm, 150);
   assert.equal(triathlon.tire_clearance, undefined);
   assert.equal(triathlon.category_details.discipline, 'triathlon/time-trial');
+  assert.equal(data.platforms.some((item) => item.category.startsWith('mtb-')), false);
+  assert.equal(mtb.status, 'publication-gate-not-met');
+  assert.match(mtb.why_interesting, /150 mm rear-travel.*160 mm fork.*flat MTB bar/i);
+  assert.match(fatBike.why_interesting, /120 mm full-suspension fat-bike/i);
   assert.equal(eRoad.category, 'e-road');
   assert.equal(folding.category, 'folding');
 });
@@ -133,8 +153,8 @@ test('research ledger reconciles every bundle group and preserves backlog status
   assert.equal(ledger.priority_additions.length, 35);
   assert.equal(ledger.titanium_additions.length, 13);
   assert.equal(ledger.missing_china_price_targets.length, 35);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'published-variant').length, 30);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 94);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'published-variant').length, 15);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 109);
   assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 9);
 });
 

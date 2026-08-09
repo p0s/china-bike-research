@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
       - name: Check public source links without failing on temporary retailer blocks
         uses: lycheeverse/lychee-action@v2
         with:
@@ -23,3 +26,6 @@ jobs:
             './**/*.md'
             './data/**/*.json'
           fail: false
+      - name: Report remote image health without treating host blocking as a product failure
+        continue-on-error: true
+        run: npm run image:report

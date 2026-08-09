@@ -142,6 +142,18 @@ write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) =
 const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSitemap).map(([route]) => route);
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map((route) => `  <url><loc>${xml(`${siteUrl}${base}${route}`)}</loc><lastmod>${data.meta.snapshot_date}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
+const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+const performanceBudget = { home_html_bytes: 325_000, home_elements: 2_600 };
+const performance = {
+  home_html_bytes: Buffer.byteLength(homeHtml),
+  home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
+};
+for (const [metric, limit] of Object.entries(performanceBudget)) {
+  if (performance[metric] > limit) {
+    console.error(`Performance budget exceeded: ${metric} is ${performance[metric]}, limit ${limit}.`);
+    process.exit(1);
+  }
+}
 write('build-manifest.json', `${JSON.stringify({
   generated_at: catalog.generated_at,
   base,
@@ -155,7 +167,9 @@ write('build-manifest.json', `${JSON.stringify({
     sources: data.sources.length,
     images: data.images.length,
     pages: pages.size
-  }
+  },
+  performance,
+  performance_budget: performanceBudget
 }, null, 2)}\n`);
 
 function routeToExistingPath(pathname) {

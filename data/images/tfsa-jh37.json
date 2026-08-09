@@ -5,19 +5,20 @@
     "tfsa-jh37-frameset"
   ],
   "role": "primary",
-  "subject_accuracy": "exact-variant",
-  "media_type": "official-product-photo",
+  "subject_accuracy": "illustrative",
+  "media_type": "project-placeholder",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-1.avif"
+    "mode": "local",
+    "local_path": "/assets/images/placeholders/frameset.svg"
   },
-  "source_id": "tfsa-jh37-official",
+  "source_id": "project-image-placeholders",
   "rights": {
-    "status": "official-page-embed",
-    "copyright_holder": "TFSA",
-    "usage_note": "Remote embed from the cited product page. Copyright remains with the image owner; no redistribution license is asserted."
+    "status": "project-owned",
+    "copyright_holder": "China Bike Research",
+    "usage_note": "Original project placeholder; it is not a product photograph."
   },
-  "credit": "Product image © TFSA",
-  "alt": "TFSA JH37 carbon gravel frameset",
-  "reviewed_at": "2026-08-07"
+  "credit": "China Bike Research project placeholder",
+  "alt": "Project placeholder for TFSA JH37 frameset; not a product photograph",
+  "display_note": "The official product page remains cited for identity and specifications, but its current image endpoint does not return an embeddable image. No substitute photograph is shown.",
+  "reviewed_at": "2026-08-09"
 }

@@ -6,11 +6,11 @@
   "listing_observation_count": 160,
   "model_group_count": 133,
   "status_counts": {
-    "exclude": 9,
-    "publish_now": 75,
+    "publish_now": 60,
+    "verify_before_publish": 47,
     "research_queue": 13,
-    "split_variants_before_publish": 4,
-    "verify_before_publish": 32
+    "exclude": 9,
+    "split_variants_before_publish": 4
   },
   "group_dispositions": [
     {
@@ -56,19 +56,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6885.png",
       "source_refs": "IMG_6885.png#L1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Embedded product card beneath video.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "xds-ad350-2026",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "xds-ad350-2026",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -85,19 +85,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6875.png",
       "source_refs": "IMG_6875.png#R1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "150/160 mm four-bar frame; determine whether shock is included.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "icanian-p9",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "icanian-p9",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -114,19 +114,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6861.png",
       "source_refs": "IMG_6861.png#L2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Exact model visible.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "xds-ad500-2025",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "xds-ad500-2025",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -230,19 +230,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6860.png",
       "source_refs": "IMG_6860.png#L2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Exact model visible.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "xds-gt350",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "xds-gt350",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -259,19 +259,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6876.png",
       "source_refs": "IMG_6876.png#L1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "100 mm soft-tail platform.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "icanian-sn04",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "icanian-sn04",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -578,19 +578,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6878.png",
       "source_refs": "IMG_6878.png#R1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Exact model visible.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "java-fuoco-2025",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "java-fuoco-2025",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -839,19 +839,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Multiple observations/configurations; do not assume identical specification",
       "screenshots": "IMG_6882.png, IMG_6888.png",
       "source_refs": "IMG_6882.png#L2, IMG_6888.png#L1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Exact model visible. | Repeated observation.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "pardus-spark-sport-pes",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "pardus-spark-sport-pes",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -868,19 +868,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6857.png",
       "source_refs": "IMG_6857.png#R1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Official-looking SilverBase/LEGIT listing; 2026 model shown.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "legit-ac1",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "legit-ac1",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -1419,19 +1419,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6866.png",
       "source_refs": "IMG_6866.png#R2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Exact model visible.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "irefox-by446",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "irefox-by446",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -1622,19 +1622,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6864.png",
       "source_refs": "IMG_6864.png#R2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "French women's team designated training bike image.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "winspace-m6",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "winspace-m6",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -2028,19 +2028,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6858.png",
       "source_refs": "IMG_6858.png#R1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Search image says 战机 T1600.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "winspace-t1600",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "winspace-t1600",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -2057,19 +2057,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6858.png",
       "source_refs": "IMG_6858.png#L1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Image identifies 青龙·赤子 AZ ONE.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "huanyu-az-one",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "huanyu-az-one",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -2086,19 +2086,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6881.png",
       "source_refs": "IMG_6881.png#R2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Official flagship listing.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "pinarello-f5",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "pinarello-f5",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -2144,19 +2144,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6894.png",
       "source_refs": "IMG_6894.png#L1",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Official flagship listing.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "colnago-y1rs",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "colnago-y1rs",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -2173,19 +2173,19 @@
       "confidence_min": "high",
       "confidence_max": "high",
       "listing_risk": "normal",
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "price_range_interpretation": "Single visible configuration",
       "screenshots": "IMG_6894.png",
       "source_refs": "IMG_6894.png#R2",
-      "recommendation": "Add as a dated mainland-China Taobao price observation for the exact visible configuration.",
+      "recommendation": "Retain as a candidate until the exact SKU, BOM, purchase route, and category-appropriate comparison basis are proven.",
       "notes": "Premium triathlon complete.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "felt-ia-2",
-        "dashboard_status": "publish_now",
-        "disposition": "published-variant",
+        "dashboard_status": "verify_before_publish",
+        "disposition": "candidate",
         "record_id": "felt-ia-2",
-        "evidence_scope": "Exact visible model/configuration published with a dated snapshot price and project placeholder image; unrecorded specs remain unknown."
+        "evidence_scope": "The listing supports a model and price lead, but not the full exact-variant publication gate; retained as a candidate."
       }
     },
     {
@@ -3879,11 +3879,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 3998,
       "observed_price_max_cny": 3998,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Embedded product card beneath video.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "xds-ad350-2026"
       }
     },
@@ -3894,11 +3894,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 4499,
       "observed_price_max_cny": 4499,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Exact model visible.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "xds-ad500-2025"
       }
     },
@@ -3909,11 +3909,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 4698,
       "observed_price_max_cny": 4698,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Exact model visible.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "xds-gt350"
       }
     },
@@ -4014,11 +4014,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 6999,
       "observed_price_max_cny": 6999,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Exact model visible.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "java-fuoco-2025"
       }
     },
@@ -4059,11 +4059,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 8599,
       "observed_price_max_cny": 8599,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Official-looking SilverBase/LEGIT listing; 2026 model shown.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "legit-ac1"
       }
     },
@@ -4074,11 +4074,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 8597.25,
       "observed_price_max_cny": 8597.25,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Exact model visible. | Repeated observation.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "pardus-spark-sport-pes"
       }
     },
@@ -4149,11 +4149,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 12777.25,
       "observed_price_max_cny": 12777.25,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Exact model visible.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "irefox-by446"
       }
     },
@@ -4179,11 +4179,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 13599.2,
       "observed_price_max_cny": 13599.2,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "French women's team designated training bike image.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "winspace-m6"
       }
     },
@@ -4194,11 +4194,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 22400,
       "observed_price_max_cny": 22400,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Search image says 战机 T1600.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "winspace-t1600"
       }
     },
@@ -4209,11 +4209,11 @@
       "item_type": "frameset",
       "observed_price_min_cny": 4205,
       "observed_price_max_cny": 4205,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "150/160 mm four-bar frame; determine whether shock is included.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "icanian-p9"
       }
     },
@@ -4224,11 +4224,11 @@
       "item_type": "frameset",
       "observed_price_min_cny": 4835,
       "observed_price_max_cny": 4835,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "100 mm soft-tail platform.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "icanian-sn04"
       }
     },
@@ -4329,11 +4329,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 26800,
       "observed_price_max_cny": 26800,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Official flagship listing.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "pinarello-f5"
       }
     },
@@ -4344,11 +4344,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 59800,
       "observed_price_max_cny": 59800,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Official flagship listing.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "colnago-y1rs"
       }
     },
@@ -4359,11 +4359,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 88998.25,
       "observed_price_max_cny": 88998.25,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Premium triathlon complete.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "felt-ia-2"
       }
     },
@@ -4389,11 +4389,11 @@
       "item_type": "complete",
       "observed_price_min_cny": 26800,
       "observed_price_max_cny": 26800,
-      "dashboard_status": "publish_now",
+      "dashboard_status": "verify_before_publish",
       "notes": "Image identifies 青龙·赤子 AZ ONE.",
       "why_relevant": null,
       "disposition": {
-        "type": "published-variant",
+        "type": "candidate",
         "record_id": "huanyu-az-one"
       }
     }
