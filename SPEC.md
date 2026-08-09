@@ -9,6 +9,7 @@ This is the canonical product and data contract. Intentional behavior changes mu
 - The category control groups published products into broad road, gravel/all-road, MTB, e-road, folding, and triathlon families. Published subcategories are selectable; supported categories with no publication-ready products are labelled as research queue context and must not create dead-end catalog filters.
 - Brand names in catalog rows and model details lead to a shareable exact-brand catalog filter. The visible result status names the active brand.
 - Search, category, capability, price, sort, brand, product type, and comparison selections are URL-addressable. Browser back/forward restores filter state, and model links preserve a safe return path to the filtered catalog.
+- On desktop, the Bike, Full-bike price, and eligible category-fact table headings are keyboard-accessible sort controls. Repeated activation reverses direction, the active heading exposes its order, and the Sort control offers the same directional choices when headings are hidden.
 - `Max price` is a strict ceiling on the full published range or estimate. A product whose upper bound exceeds the selected amount does not match. Incompatible capability options are disabled for the active category/type/brand context; stale capability or category-sort URL state is cleared and canonicalized.
 - Complete bikes and compatible frameset builds may appear together on a comparable full-bike price basis.
 - A published frameset estimate uses its latest relevant price plus the fixed allowance in `data/meta.json`.

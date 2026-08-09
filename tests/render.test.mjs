@@ -49,6 +49,12 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /class="metric-sub price-state [^"]*">Promo · 2026-08-08<\/span>/);
   assert.match(html, /data-filter-category/);
   assert.match(html, /Category fact/);
+  assert.match(html, /role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="name"/);
+  assert.match(html, /role="columnheader" aria-sort="ascending"><button class="catalog-sort-button" type="button" data-sort-heading="price"/);
+  assert.match(html, /data-sort-heading="capability" disabled/);
+  assert.match(html, /<option value="price-asc">Price: low to high<\/option>/);
+  assert.match(html, /<option value="name-desc">Bike: Z to A<\/option>/);
+  assert.match(html, /<option value="capability-desc" disabled>Category fact: high to low<\/option>/);
   assert.doesNotMatch(html, /data-filter-style/);
 });
 

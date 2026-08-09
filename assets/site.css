@@ -98,7 +98,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .filter-primary,
 .filter-secondary { display: grid; gap: 8px; align-items: end; min-width: 0; }
 .filter-primary { grid-template-columns: minmax(230px, 1fr) minmax(170px, .65fr) auto; }
-.filter-secondary { grid-template-columns: repeat(3, minmax(112px, 1fr)) auto; }
+.filter-secondary { grid-template-columns: minmax(112px, .8fr) minmax(112px, .8fr) minmax(190px, 1.35fr) auto; }
 .filter-actions { display: flex; align-items: center; justify-content: flex-end; min-height: 39px; white-space: nowrap; }
 .more-filters { display: none; min-height: 38px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--muted); cursor: pointer; font-size: .8rem; font-weight: 680; }
 .search-box { position: relative; min-width: 0; }
@@ -148,6 +148,33 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   letter-spacing: .055em;
   text-transform: uppercase;
 }
+.catalog-sort-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 34px;
+  margin: -4px -8px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.catalog-sort-button::after { content: '↕'; color: var(--line-strong); font-size: .72rem; line-height: 1; }
+.catalog-sort-button:hover { background: color-mix(in srgb, var(--accent-soft) 50%, transparent); color: var(--ink); }
+[role="columnheader"][aria-sort="ascending"] .catalog-sort-button,
+[role="columnheader"][aria-sort="descending"] .catalog-sort-button { color: var(--accent); }
+[role="columnheader"][aria-sort="ascending"] .catalog-sort-button::after { content: '↑'; color: currentColor; }
+[role="columnheader"][aria-sort="descending"] .catalog-sort-button::after { content: '↓'; color: currentColor; }
+.catalog-sort-button:disabled { color: var(--muted); cursor: not-allowed; opacity: .58; }
+.catalog-sort-button:disabled::after { content: ''; }
+.catalog-sort-button:disabled:hover { background: transparent; color: var(--muted); }
 .catalog-row {
   --catalog-preview-scale: 2.6;
   position: relative;
@@ -173,7 +200,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .product-image-link > img { pointer-events: none; }
 .product-image > img.is-fallback,
 .product-image-link > img.is-fallback { padding: 0; }
-.image-info { position: absolute; z-index: 12; right: 5px; top: 5px; }
+.image-info { position: absolute; z-index: 12; right: 5px; top: 5px; transition: opacity .08s ease; }
 .product-copy { display: grid; min-width: 0; }
 .product-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 4px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
 .catalog-brand-filter { appearance: none; display: inline-flex; align-items: center; min-height: 24px; margin: -3px -2px; padding: 3px 2px; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; text-transform: inherit; text-decoration: underline transparent; text-underline-offset: 3px; cursor: pointer; }
@@ -209,6 +236,10 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
     transform: scale(var(--catalog-preview-scale));
     background: var(--surface);
     box-shadow: 0 0 0 1px var(--line), var(--shadow);
+  }
+  .catalog-row .product-image:has(.product-image-link:hover) .image-info {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -427,7 +458,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 @media (max-width: 1220px) {
   .filter-bar { grid-template-columns: 1fr; }
   .filter-primary { grid-template-columns: minmax(260px, 1fr) minmax(190px, .65fr) auto; }
-  .filter-secondary { grid-template-columns: repeat(3, minmax(130px, 1fr)) auto; }
+  .filter-secondary { grid-template-columns: minmax(130px, 1fr) minmax(130px, 1fr) minmax(190px, 1.25fr) auto; }
   .catalog-head,
   .catalog-row { grid-template-columns: 32px minmax(335px, 2fr) minmax(135px, .85fr) 86px minmax(145px, 1fr) 84px minmax(118px, .7fr) 26px; gap: 11px; }
   .catalog-row { --catalog-preview-scale: 2.5; min-height: 116px; }

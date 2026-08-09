@@ -186,6 +186,11 @@
   tooltipPanel?.addEventListener('mouseenter', cancelTooltipDismiss);
   tooltipPanel?.addEventListener('mouseleave', scheduleTooltipClose);
   tooltipPanel?.addEventListener('pointerdown', (event) => event.preventDefault());
+  document.querySelectorAll('.catalog-row .product-image-link').forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      if (precisePointer.matches) closeTooltip();
+    });
+  });
 
   async function copyText(text) {
     if (navigator.clipboard?.writeText) {
@@ -358,7 +363,11 @@
   const capability = catalogRoot.querySelector('[data-filter-capability]');
   const category = catalogRoot.querySelector('[data-filter-category]');
   const sort = catalogRoot.querySelector('[data-sort]');
-  const capabilitySortOption = sort?.querySelector('option[value="capability"]');
+  const capabilitySortOptions = [...(sort?.querySelectorAll('option[value^="capability-"]') ?? [])];
+  const sortHeadingButtons = [...catalogRoot.querySelectorAll('[data-sort-heading]')];
+  const sortHeadingByKey = new Map(sortHeadingButtons.map((button) => [button.dataset.sortHeading, button]));
+  const capabilitySortHeading = sortHeadingByKey.get('capability');
+  const capabilityHeadingLabel = capabilitySortHeading?.querySelector('[data-capability-heading-label]');
   const reset = catalogRoot.querySelector('[data-reset]');
   const copyCatalogView = catalogRoot.querySelector('[data-copy-catalog-view]');
   const moreFilters = catalogRoot.querySelector('[data-more-filters]');
@@ -372,6 +381,21 @@
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
   let activeType = '';
   let activeBrand = '';
+
+  const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
+  const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
+
+  function canonicalSortMode(value) {
+    const candidate = legacySortModes[value] ?? value;
+    return ['price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc'].includes(candidate)
+      ? candidate
+      : 'price-asc';
+  }
+
+  function sortModeParts(value = sort?.value) {
+    const [key, direction] = canonicalSortMode(value).split('-');
+    return { key, direction };
+  }
 
   function setParam(url, name, value, defaultValue = '') {
     if (value && value !== defaultValue) url.searchParams.set(name, value);
@@ -395,7 +419,7 @@
     setParam(next, 'max', price?.value);
     setParam(next, 'capability', capability?.value);
     setParam(next, 'category', category?.value);
-    setParam(next, 'sort', sort?.value, 'price');
+    setParam(next, 'sort', sort?.value, 'price-asc');
     const target = `${next.pathname}${next.search}${next.hash}`;
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', target); } catch { /* normal navigation origin required */ }
     updateModelLinks();
@@ -427,7 +451,7 @@
   }
 
   function hasFilters() {
-    return Boolean(activeType || activeBrand || search?.value.trim() || price?.value || capability?.value || category?.value || (sort?.value && sort.value !== 'price'));
+    return Boolean(activeType || activeBrand || search?.value.trim() || price?.value || capability?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
   }
 
   function matchesCapability(row, value) {
@@ -480,26 +504,58 @@
   }
 
   function updateSortAvailability(items) {
-    if (!(capabilitySortOption instanceof HTMLOptionElement)) return false;
     const kinds = new Set(items.map((row) => row.dataset.capabilityKind).filter(Boolean));
     const sortableKinds = new Set(['tire', 'suspension', 'motor']);
     const kind = kinds.size === 1 ? [...kinds][0] : '';
     const sortable = sortableKinds.has(kind) && items.some((row) => Number(row.dataset.capabilitySort || 0) > 0);
-    capabilitySortOption.disabled = !sortable;
-    capabilitySortOption.textContent = sortable ? `${kind === 'tire' ? 'Tire clearance' : kind === 'suspension' ? 'Suspension travel' : 'Motor power'}` : 'Category fact — choose one category';
-    if (!sortable && sort?.value === 'capability') {
-      sort.value = 'price';
+    const label = sortable ? (kind === 'tire' ? 'Tire clearance' : kind === 'suspension' ? 'Suspension travel' : 'Motor power') : 'Category fact';
+    capabilitySortOptions.forEach((option) => {
+      option.disabled = !sortable;
+      option.textContent = sortable
+        ? `${label}: ${option.value.endsWith('-desc') ? 'high to low' : 'low to high'}`
+        : `Category fact: ${option.value.endsWith('-desc') ? 'high to low' : 'low to high'} — choose one category`;
+    });
+    if (capabilitySortHeading instanceof HTMLButtonElement) {
+      capabilitySortHeading.disabled = !sortable;
+      capabilitySortHeading.title = sortable ? '' : 'Choose one comparable category to sort this column';
+    }
+    if (capabilityHeadingLabel) capabilityHeadingLabel.textContent = label;
+    if (!sortable && sortModeParts().key === 'capability') {
+      sort.value = 'price-asc';
       return true;
     }
     return false;
   }
 
+  function updateSortHeadings() {
+    const { key, direction } = sortModeParts();
+    sortHeadingButtons.forEach((button) => {
+      const heading = button.closest('[role="columnheader"]');
+      const isActive = button.dataset.sortHeading === key;
+      heading?.setAttribute('aria-sort', isActive ? (direction === 'desc' ? 'descending' : 'ascending') : 'none');
+      if (button instanceof HTMLButtonElement) {
+        const defaultDirection = sortModeParts(defaultSortModes[button.dataset.sortHeading]).direction;
+        const nextDirection = isActive ? (direction === 'asc' ? 'descending' : 'ascending') : (defaultDirection === 'desc' ? 'descending' : 'ascending');
+        const label = button.textContent.trim();
+        button.setAttribute('aria-label', isActive
+          ? `${label}, sorted ${direction === 'asc' ? 'ascending' : 'descending'}. Activate to sort ${nextDirection}.`
+          : `Sort by ${label} ${nextDirection}.`);
+      }
+    });
+  }
+
   function sortRows(items) {
-    const mode = sort?.value ?? 'price';
+    const { key, direction } = sortModeParts();
+    const multiplier = direction === 'desc' ? -1 : 1;
     return [...items].sort((a, b) => {
-      if (mode === 'capability') return Number(b.dataset.capabilitySort || -1) - Number(a.dataset.capabilitySort || -1) || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
-      if (mode === 'name') return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
-      return Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
+      if (key === 'capability') {
+        const aValue = Number(a.dataset.capabilitySort || 0);
+        const bValue = Number(b.dataset.capabilitySort || 0);
+        if (Boolean(aValue) !== Boolean(bValue)) return aValue ? -1 : 1;
+        return (aValue - bValue) * multiplier || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
+      }
+      if (key === 'name') return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '') * multiplier;
+      return (Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity)) * multiplier;
     });
   }
 
@@ -507,6 +563,7 @@
     const capabilityCleared = updateCapabilityAvailability();
     const matching = rows.filter(rowMatches);
     const sortCorrected = updateSortAvailability(matching);
+    updateSortHeadings();
     const ordered = sortRows(rows);
     let visible = 0;
     ordered.forEach((row) => {
@@ -522,7 +579,7 @@
     if (resultSummary) resultSummary.hidden = !filtered;
     if (empty) empty.hidden = visible !== 0;
     if (reset) reset.hidden = !filtered;
-    const hasSecondaryFilter = Boolean(price?.value || capability?.value || (sort?.value && sort.value !== 'price'));
+    const hasSecondaryFilter = Boolean(price?.value || capability?.value || (sort?.value && sort.value !== 'price-asc'));
     if (hasSecondaryFilter) catalogRoot.querySelector('.filter-bar')?.classList.remove('filters-collapsed');
     if (moreFilters) moreFilters.setAttribute('aria-expanded', String(!catalogRoot.querySelector('.filter-bar')?.classList.contains('filters-collapsed')));
     if (historyMode) updateFilterUrl(historyMode);
@@ -542,7 +599,7 @@
     const requestedBrand = params.get('brand') ?? '';
     const requestedType = params.get('type') ?? '';
     const requestedCapability = params.get('capability') ?? '';
-    const requestedSort = params.get('sort') ?? 'price';
+    const requestedSort = params.get('sort') ?? 'price-asc';
     if (search) search.value = requestedSearch;
     if (price) price.value = validSelectValue(price, requestedPrice);
     if (category) category.value = validSelectValue(category, requestedCategory);
@@ -554,7 +611,7 @@
       capability.value = [...capability.options].some((option) => option.value === requestedCapability) ? requestedCapability : '';
     }
     if (sort) {
-      sort.value = ['price', 'capability', 'name'].includes(requestedSort) ? requestedSort : 'price';
+      sort.value = canonicalSortMode(requestedSort);
     }
     updateCatalog();
     const capabilityRejected = requestedCapability !== (capability?.value ?? '');
@@ -571,6 +628,16 @@
 
   search?.addEventListener('input', () => updateCatalog({ historyMode: 'replace' }));
   [price, capability, category, sort].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  sortHeadingButtons.forEach((button) => button.addEventListener('click', () => {
+    if (!(button instanceof HTMLButtonElement) || button.disabled) return;
+    const key = button.dataset.sortHeading;
+    const current = sortModeParts();
+    const nextMode = current.key === key
+      ? `${key}-${current.direction === 'asc' ? 'desc' : 'asc'}`
+      : defaultSortModes[key];
+    if (sort && nextMode) sort.value = nextMode;
+    updateCatalog({ historyMode: 'push' });
+  }));
   typeButtons.forEach((button) => button.addEventListener('click', () => setType(button.dataset.typeValue ?? '', { historyMode: 'push' })));
   brandButtons.forEach((button) => button.addEventListener('click', () => {
     const value = button.dataset.brandFilter ?? '';
@@ -582,7 +649,7 @@
     if (price) price.value = '';
     if (capability) capability.value = '';
     if (category) category.value = '';
-    if (sort) sort.value = 'price';
+    if (sort) sort.value = 'price-asc';
     setBrand('', { update: false });
     setType('', { update: false });
     updateCatalog({ historyMode: 'push' });
