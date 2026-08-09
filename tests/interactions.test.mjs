@@ -20,3 +20,13 @@ test('shared disclosures and copy feedback have complete dismissal and failure s
   assert.match(script, /button\.textContent = copied \? 'Copied' : 'Copy failed'/);
   assert.match(script, /showCopyFeedback\(copyCatalogView, await copyText\(location\.href\)\)/);
 });
+
+test('video embeds are created only after an explicit click and never autoplay', () => {
+  assert.match(script, /document\.querySelectorAll\('\[data-video-shell\]'\)/);
+  assert.match(script, /button\.addEventListener\('click', \(\) => \{/);
+  assert.match(script, /youtube-nocookie\.com\/embed\/\$\{videoId\}\?rel=0/);
+  assert.match(script, /shell\.dataset\.videoTitle \|\| 'Model video'/);
+  assert.match(script, /frame\.referrerPolicy = 'strict-origin-when-cross-origin'/);
+  assert.match(script, /shell\.replaceChildren\(frame\)/);
+  assert.doesNotMatch(script, /autoplay=1/);
+});

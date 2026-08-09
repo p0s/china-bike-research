@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/video.schema.json",
+  "title": "Curated model video",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "provider",
+    "youtube_video_id",
+    "title",
+    "channel_name",
+    "channel_url",
+    "url",
+    "language",
+    "accessed_at",
+    "target",
+    "match",
+    "format",
+    "relationship",
+    "disclosure",
+    "disclosure_url",
+    "summary"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "provider": { "const": "youtube" },
+    "youtube_video_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "channel_name": { "type": "string", "minLength": 1 },
+    "channel_url": { "type": "string", "format": "uri" },
+    "url": { "type": "string", "format": "uri" },
+    "language": { "type": "string", "minLength": 2 },
+    "published_at": { "type": "string", "format": "date" },
+    "accessed_at": { "type": "string", "format": "date" },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "platform_id": { "type": "string" },
+        "variant_id": { "type": "string" },
+        "candidate_id": { "type": "string" }
+      },
+      "oneOf": [
+        { "required": ["platform_id"] },
+        { "required": ["variant_id"] },
+        { "required": ["candidate_id"] }
+      ]
+    },
+    "match": { "enum": ["exact-platform", "exact-variant", "exact-model-lead"] },
+    "format": { "enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"] },
+    "relationship": { "enum": ["retailer-linked", "product-supplied", "publication-review", "owner-review"] },
+    "disclosure": { "type": "string", "minLength": 20 },
+    "disclosure_url": { "type": "string", "format": "uri" },
+    "summary": { "type": "string", "minLength": 30 }
+  }
+}

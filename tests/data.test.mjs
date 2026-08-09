@@ -42,8 +42,9 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.variants.length, 44);
   assert.equal(data.prices.length, 45);
   assert.equal(data.images.length, 42);
+  assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 87);
-  assert.equal(data.candidates.length, 165);
+  assert.equal(data.candidates.length, 171);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
@@ -125,6 +126,26 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
     unresolvedImagePlatforms.sort()
   );
+});
+
+test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
+  const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
+  const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
+  assert.equal(publishedVideos.length, 4);
+  assert.equal(candidateVideos.length, 8);
+  assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
+  assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
+  assert.ok(data.videos.every((video) => video.disclosure.length >= 20));
+  assert.equal(products.find((product) => product.platform.id === 'yoeleo-altera-g21').videos[0].channel_name, 'China Cycling');
+  assert.equal(products.find((product) => product.platform.id === 'winspace-g3').videos.length, 0);
+
+  const malformed = structuredClone(data);
+  malformed.videos[0].url = 'https://www.youtube.com/watch?v=wrong-id';
+  assert.ok(validateDataset(malformed).some((error) => error.includes('URL must match its YouTube video ID')));
+
+  const mismatchedTarget = structuredClone(data);
+  mismatchedTarget.candidates.find((candidate) => candidate.id === 'incolor-ssr').video_ids = ['china-cycling-quick-pro-er-one'];
+  assert.ok(validateDataset(mismatchedTarget).some((error) => error.includes('targets another record')));
 });
 
 test('category-specific facts stay scoped to the categories that use them', () => {

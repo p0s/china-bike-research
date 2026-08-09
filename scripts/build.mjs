@@ -94,7 +94,7 @@ const catalog = {
   scope: data.meta.scope,
   frameset_build_assumption: data.meta.frameset_build_assumption,
   license: 'CC BY 4.0',
-  products: products.map(({ brand, platform, variant, prices, latestPrice, allInPrice, sources, image, imageSource }) => ({
+  products: products.map(({ brand, platform, variant, prices, latestPrice, allInPrice, sources, image, imageSource, videos }) => ({
     id: variant.id,
     brand: { id: brand.id, name: brand.name, name_zh: brand.name_zh ?? null },
     platform,
@@ -107,12 +107,14 @@ const catalog = {
     },
     image,
     image_source: imageSource ? { id: imageSource.id, type: imageSource.type, title: imageSource.title, publisher: imageSource.publisher, url: imageSource.url ?? null } : null,
+    videos,
     sources: sources.map(({ id, type, title, publisher, language, accessed_at, url, reliability, notes }) => ({ id, type, title, publisher, language, accessed_at, url, reliability, notes }))
   }))
 };
 write('data/catalog.json', `${JSON.stringify(catalog, null, 2)}\n`);
 write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_at, sources: data.sources }, null, 2)}\n`);
 write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images }, null, 2)}\n`);
+write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 
 const headers = [
   'id','brand','brand_zh','model','type','category','handlebar',
@@ -166,6 +168,7 @@ write('build-manifest.json', `${JSON.stringify({
     prices: data.prices.length,
     sources: data.sources.length,
     images: data.images.length,
+    videos: data.videos.length,
     pages: pages.size
   },
   performance,

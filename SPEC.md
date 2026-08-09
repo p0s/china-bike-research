@@ -32,6 +32,8 @@ Category-specific numeric sorting is available only when every visible product u
 The site remains static, fast, responsive, accessible, and usable without accounts, analytics, ads, or a backend.
 Catalog thumbnails link to model details. On fine-pointer devices, a thumbnail may enlarge on hover without moving the table layout; touch layouts keep the stable thumbnail size.
 
+Model pages may include a compact, curated video section when a video maps to the exact variant or physical platform. Videos are optional editorial context, not specification, price, BOM, recommendation, or publication authority. The shown build may differ from the published variant. Channel relationships, supplied-product context, and other material disclosures must be visible. A YouTube embed loads only after an explicit visitor action, never autoplays, and always retains a normal external-link fallback.
+
 ## 2. Catalog scope
 
 Publish a product in the main catalog only when it has:
@@ -55,6 +57,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. Use `data
 - `prices/`: dated observations; never timeless product properties.
 - `sources/`: source identity, date, reliability, and supported claims.
 - `images/`: subject accuracy, source, rights status, credit, and fallback.
+- `videos/`: exact model/platform or candidate mapping, channel provenance, editorial format, commercial context, and privacy-safe embed identity.
 - `recommendations/`: compact buyer-facing labels, updated only when evidence changes the conclusion.
 - `candidates/` and `exclusions/`: unresolved or rejected products with reasons.
 - `research/`: dated import ledgers that reconcile source bundles, dispositions, priority targets, and research queues without becoming buyer-facing product records.
@@ -76,6 +79,8 @@ Classify claims as:
 
 Prefer exact-model primary sources, current China-market listings, and credible independent measurements. Secondary summaries are mainly for discovery.
 
+Editorial videos may identify research candidates and add build, ownership, or ride context. They cannot independently satisfy the publication gate or support a current price, exact BOM, specification, manufacturing relationship, or recommendation. Candidate leads discovered in videos must be deduplicated against published platforms, existing candidates, and exclusions.
+
 Never infer specifications across generations, sizes, or similarly named models without evidence. Keep expected quality separate from confidence in that estimate. Do not create a universal score or imply that products from different categories serve the same use case.
 
 ## 5. Price rules
@@ -87,12 +92,13 @@ Never infer specifications across generations, sizes, or similarly named models 
 - `data/meta.json.snapshot_date` is the last catalog-wide review date, not the date of every small edit.
 - The frameset allowance changes only with explicit maintainer approval and a dated rationale.
 
-## 6. Images and privacy
+## 6. Media and privacy
 
 - Third-party images may be remotely embedded only with source, owner, exactness, rights status, alt text, and fallback metadata.
 - Do not commit third-party image files without permission or a compatible license.
 - Never present another configuration as exact.
 - Scheduled image-health reporting may identify broken, blocked, or wrong-content-type remote embeds, but temporary host blocking is non-fatal because every image has a project-owned fallback.
+- YouTube videos use a validated video ID and a click-to-load `youtube-nocookie.com` embed. Initial model-page rendering must not request a YouTube thumbnail, player, script, or iframe. The external YouTube link remains available without loading the embed.
 - Do not publish names, accounts, contacts, addresses, order or tracking IDs, payment data, private messages, private permission correspondence, credentials, GPS, or EXIF metadata.
 
 ## 7. Acceptance criteria
@@ -103,7 +109,7 @@ Every change must preserve valid cross-references and pass:
 npm run check
 ```
 
-For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
+For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image and video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
 
 The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. Budget changes require a measured browser rationale.
 
