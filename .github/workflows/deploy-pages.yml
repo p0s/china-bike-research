@@ -23,8 +23,12 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v6
       - name: Validate and build
+        env:
+          PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}
         run: npm run check
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5

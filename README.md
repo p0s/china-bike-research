@@ -2,7 +2,7 @@
 
 A minimalist, evidence-backed comparison of bicycles available to riders in mainland China.
 
-**[Open the guide](https://p0s.github.io/china-bike-research/)**
+**[Open the guide](https://china-bikes.p0s.eu/)**
 
 The catalog combines complete bikes and suitable frameset builds in one comparison. It prioritizes information that changes a buying decision: China-market price, category, components, weight, compatibility, evidence quality, and estimated full-bike cost where applicable.
 
