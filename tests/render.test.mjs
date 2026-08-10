@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { loadDataset, joinProducts } from '../src/lib/data.mjs';
 import { renderHome, renderModel, renderPrivacy } from '../src/render.mjs';
 
@@ -31,6 +32,22 @@ test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, />Watchlist</i);
   assert.doesNotMatch(html, /href="[^"]*\/compare\//i);
   assert.doesNotMatch(html, /href="[^"]*\/guides\//i);
+});
+
+test('research queue surfaces recent community leads without promoting them', () => {
+  assert.match(html, /PARDUS 瑞豹 Spark Sport PES/);
+  assert.match(html, /Winspace SLC3 China price target/);
+  assert.match(html, /Community links are dated leads, not verified product facts/);
+  assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/6a2fed300000000011005ae5" rel="noreferrer"/);
+  assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/66f3eba6000000001a021f4e" rel="noreferrer"/);
+  assert.doesNotMatch(html, /data-id="pardus-spark-sport-pes"/);
+  assert.doesNotMatch(html, /data-id="winspace-slc3"/);
+});
+
+test('local builds use the live repository for public contribution links', () => {
+  const buildSource = fs.readFileSync(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
+  assert.match(buildSource, /https:\/\/github\.com\/p0s\/china-bike-research/);
+  assert.doesNotMatch(buildSource, /github\.com\/your-org\/your-repo/);
 });
 
 test('category-specific details stay accessible while price state is visible', () => {

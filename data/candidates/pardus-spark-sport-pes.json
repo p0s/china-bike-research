@@ -4,13 +4,23 @@
   "model_id": "pardus-spark-sport-pes",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "The exact model name appeared twice with a consistent price lead, but neither observation identified the exact drivetrain and BOM.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Proof that the repeated price maps to one exact trim", "Current domestic warranty and return route"],
+  "why_interesting": "The exact Spark Sport PES name appears in official and marketplace evidence; two public XHS leads add ownership and review context, including one reported after 1,200 km, but the stock trim and price mapping remain unproven.",
+  "missing": [
+    "Exact stock drivetrain, wheels, brakes, and included accessories",
+    "Proof that the repeated price maps to one exact trim",
+    "Independent exact-generation ownership corroboration",
+    "Current domestic warranty and return route"
+  ],
   "status": "exact-trim-unproven",
+  "research_priority": "high",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["pardus-spark-sport-official-2026-08-09"],
+  "source_ids": [
+    "pardus-spark-sport-official-2026-08-09",
+    "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
+    "xhs-pardus-spark-sport-pes-review-lead-2026-08-10"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {"amount_cny": 8597.25, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 2},
   "source_refs": "IMG_6882.png#L2, IMG_6888.png#L1",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-10"
 }
