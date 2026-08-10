@@ -14,7 +14,7 @@ This is the canonical product and data contract. Intentional behavior changes mu
 - Complete bikes and compatible frameset builds may appear together on a comparable full-bike price basis.
 - A published frameset estimate uses its latest relevant price plus the fixed allowance in `data/meta.json`.
 - Do not publish a frameset where that allowance would materially mislead buyers; keep it as a candidate until the methodology is updated.
-- Candidates appear only as compact secondary context.
+- Candidates appear only as compact secondary context. The queue prioritizes recently reviewed, high-priority leads and may link dated community reports only when they remain clearly labelled as unverified leads rather than catalog facts.
 - Do not add landing-page marketing, catalog counts, status dashboards, standalone guides, or repeated summaries.
 
 The main catalog shows a compact common core:

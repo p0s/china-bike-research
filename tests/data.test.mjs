@@ -77,6 +77,35 @@ test('observed Twitter prices are retained exactly and anonymously', () => {
   assert.equal(currentEds.source_ids.includes('taobao-snapshot-2026-08-08'), true);
 });
 
+test('XHS community reports remain privacy-safe candidate leads', () => {
+  const ids = [
+    'xhs-winspace-slc3-200km-2026-08-10',
+    'xhs-winspace-slc3-review-lead-2026-08-10',
+    'xhs-pardus-spark-sport-pes-1200km-2026-08-10',
+    'xhs-pardus-spark-sport-pes-review-lead-2026-08-10'
+  ];
+  const sources = ids.map((id) => data.sources.find((source) => source.id === id));
+  assert.ok(sources.every(Boolean));
+  for (const source of sources) {
+    assert.equal(source.type, 'community-report');
+    assert.equal(source.claim_class, 'community report');
+    assert.equal(source.publisher, 'Xiaohongshu');
+    assert.match(source.url, /^https:\/\/www\.xiaohongshu\.com\/explore\/[a-f0-9]{24}$/);
+    assert.equal(Object.hasOwn(source, 'creator'), false);
+    assert.equal(Object.hasOwn(source, 'creator_name'), false);
+  }
+  const winspace = data.candidates.find((candidate) => candidate.id === 'missing-china-price-winspace-slc3');
+  const pardus = data.candidates.find((candidate) => candidate.id === 'pardus-spark-sport-pes');
+  assert.ok(ids.slice(0, 2).every((id) => winspace.source_ids.includes(id)));
+  assert.ok(ids.slice(2).every((id) => pardus.source_ids.includes(id)));
+  const publishedSourceIds = new Set([
+    ...data.platforms.flatMap((item) => item.source_ids ?? []),
+    ...data.variants.flatMap((item) => item.source_ids ?? []),
+    ...data.prices.flatMap((item) => item.source_ids ?? [])
+  ]);
+  assert.ok(ids.every((id) => !publishedSourceIds.has(id)));
+});
+
 test('freshness uses explicit age buckets', () => {
   const now = new Date('2026-08-06T12:00:00Z');
   assert.equal(freshness('2026-08-05', now).key, 'current');

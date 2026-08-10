@@ -354,9 +354,23 @@ function comparisonSummary(ctx, product) {
 }
 
 function watchlistNote(ctx) {
-  const visible = ctx.data.candidates.slice().sort((a, b) => a.name.localeCompare(b.name)).slice(0, 8);
+  const priorities = new Map([['high', 0], ['medium', 1], ['low', 2]]);
+  const sourceById = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const visible = ctx.data.candidates.slice().sort((a, b) => {
+    const priority = (priorities.get(a.research_priority) ?? 9) - (priorities.get(b.research_priority) ?? 9);
+    if (priority) return priority;
+    const reviewed = String(b.last_reviewed).localeCompare(String(a.last_reviewed));
+    return reviewed || a.name.localeCompare(b.name);
+  }).slice(0, 8);
   const remaining = Math.max(0, ctx.data.candidates.length - visible.length);
-  return `<details class="research-note"><summary>Research queue (${ctx.data.candidates.length} models)</summary><p class="research-summary">The structured backlog stays out of ranking until the exact model, current price, category-specific facts, or purchase route is verified.</p><div class="research-list">${visible.map((item) => `<div><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.why_interesting)}</span><small>Needs: ${escapeHtml(item.missing.join(' · '))}</small></div>`).join('')}</div>${remaining ? `<p class="research-footnote">${remaining} more candidates remain in the repository research ledger.</p>` : ''}<p class="research-footnote"><a href="${ctx.repositoryUrl}/issues">Add evidence on GitHub</a>.</p></details>`;
+  const candidate = (item) => {
+    const leads = (item.source_ids ?? []).map((id) => sourceById.get(id)).filter((source) => source?.type === 'community-report' && source.url);
+    const evidence = leads.length
+      ? `<small class="research-evidence">Community leads: ${leads.map((source) => `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>`).join(' · ')}</small>`
+      : '';
+    return `<div><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.why_interesting)}</span><small>Needs: ${escapeHtml(item.missing.join(' · '))}</small>${evidence}</div>`;
+  };
+  return `<details class="research-note"><summary>Research queue (${ctx.data.candidates.length} models)</summary><p class="research-summary">The structured backlog stays out of ranking until the exact model, current price, category-specific facts, or purchase route is verified. Community links are dated leads, not verified product facts.</p><div class="research-list">${visible.map(candidate).join('')}</div>${remaining ? `<p class="research-footnote">${remaining} more candidates remain in the repository research ledger.</p>` : ''}<p class="research-footnote"><a href="${ctx.repositoryUrl}/issues">Add evidence on GitHub</a>.</p></details>`;
 }
 
 function sourceUsages(ctx, product) {

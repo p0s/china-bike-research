@@ -4,15 +4,20 @@
   "model_id": "winspace-slc3",
   "category": "road-climbing",
   "type": "research",
-  "why_interesting": "Important lightweight Chinese road platform.",
+  "why_interesting": "Important lightweight Chinese road platform. Two public XHS posts identify SLC3 ownership and review leads, including one after more than 200 km; they do not establish a current SKU, price, or warranty.",
   "missing": [
     "Dated mainland-China RMB observation",
     "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Source supporting the price and warranty conditions",
+    "Independent exact-generation corroboration before using community ride or finish impressions"
   ],
   "status": "missing-china-price",
   "research_priority": "high",
   "price_status": "missing mainland-China RMB observation",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "xhs-winspace-slc3-200km-2026-08-10",
+    "xhs-winspace-slc3-review-lead-2026-08-10"
+  ],
+  "last_reviewed": "2026-08-10"
 }

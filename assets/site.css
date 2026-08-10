@@ -360,6 +360,8 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .research-list strong, .research-list span, .research-list small { display: block; }
 .research-list span { margin-top: 2px; color: var(--muted); font-size: .78rem; }
 .research-list small { margin-top: 4px; color: var(--muted); font-size: .69rem; }
+.research-list .research-evidence { margin-top: 7px; color: var(--accent); }
+.research-evidence a { color: inherit; font-weight: 650; text-underline-offset: 2px; }
 .research-footnote { margin: 0; padding: 12px 14px 14px; color: var(--muted); font-size: .76rem; }
 
 /* Model page */
