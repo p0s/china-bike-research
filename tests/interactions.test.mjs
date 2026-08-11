@@ -41,12 +41,28 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
 });
 
-test('comparison keeps uncertainty in the core decision table', () => {
+test('candidate discovery stays URL-addressable without repeated missing-data warnings', () => {
+  assert.match(script, /let allModelsVisible = false/);
+  assert.match(script, /function rowInScope\(row\)/);
+  assert.match(script, /row\.dataset\.defaultVisible === 'true'/);
+  assert.match(script, /setParam\(next, 'scope', allModelsVisible \? 'all' : ''\)/);
+  assert.match(script, /showAllModels\?\.addEventListener\('click'/);
+  assert.match(script, /const hasValue = \(key\) => items\.some/);
+  assert.match(script, /if \(secondaryFields\.length\)/);
+  assert.match(script, /remove\.setAttribute\('aria-label', `Remove \$\{label\}`\)/);
   assert.match(script, /\['Claimed weight', \(item\) => valueCell\(item\.weight, item\.weightSubline\)\]/);
-  assert.match(script, /\['What to verify', \(item\) => valueCell\(item\.caveats, '', 'is-warning'\)\]/);
-  assert.ok(script.indexOf("['What to verify'") < script.indexOf('const secondaryFields'));
-  assert.doesNotMatch(script.slice(script.indexOf('const secondaryFields'), script.indexOf('const mixedCategories')), /Caveats/);
-  assert.match(styles, /\.compare-value\.is-warning strong/);
+  assert.doesNotMatch(script, /\['What to verify'/);
+  assert.doesNotMatch(styles, /\.compare-value\.is-warning strong/);
+});
+
+test('brand filtering covers candidate-only brands and frameset overrides stay shareable', () => {
+  assert.match(script, /const brandValues = new Set\(rows\.map\(\(row\) => row\.dataset\.brand\)/);
+  assert.match(script, /brandButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
+  assert.match(script, /function updateFramesetPrices\(value\)/);
+  assert.match(script, /row\.dataset\.priceFilter = String\(high\)/);
+  assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
+  assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
+  assert.match(script, /if \(comparePanel && !comparePanel\.hidden && selection\.length >= 2\) renderComparison\(\)/);
 });
 
 test('shared disclosures and copy feedback have complete dismissal and failure states', () => {

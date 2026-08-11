@@ -363,6 +363,7 @@
   const capability = catalogRoot.querySelector('[data-filter-capability]');
   const category = catalogRoot.querySelector('[data-filter-category]');
   const sort = catalogRoot.querySelector('[data-sort]');
+  const buildAllowance = document.querySelector('[data-frameset-build-allowance]');
   const capabilitySortOptions = [...(sort?.querySelectorAll('option[value^="capability-"]') ?? [])];
   const sortHeadingButtons = [...catalogRoot.querySelectorAll('[data-sort-heading]')];
   const sortHeadingByKey = new Map(sortHeadingButtons.map((button) => [button.dataset.sortHeading, button]));
@@ -371,6 +372,7 @@
   const reset = catalogRoot.querySelector('[data-reset]');
   const copyCatalogView = catalogRoot.querySelector('[data-copy-catalog-view]');
   const moreFilters = catalogRoot.querySelector('[data-more-filters]');
+  const showAllModels = catalogRoot.querySelector('[data-show-all-models]');
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
   const typeButtons = [...catalogRoot.querySelectorAll('[data-type-value]')];
   const brandButtons = [...catalogRoot.querySelectorAll('[data-brand-filter]')];
@@ -381,6 +383,10 @@
   modelLinks.forEach((link) => { link.dataset.baseHref = link.getAttribute('href') ?? ''; });
   let activeType = '';
   let activeBrand = '';
+  let allModelsVisible = false;
+  const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
+  let currentBuildAllowance = defaultBuildAllowance;
+  const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
   const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
@@ -402,6 +408,60 @@
     else url.searchParams.delete(name);
   }
 
+  function formatYuan(value) {
+    return `¥${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value)}`;
+  }
+
+  function formatEstimatedRange(low, high) {
+    return low === high
+      ? `Est. ${formatYuan(low)}`
+      : `Est. ${formatYuan(low)}–${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(high)}`;
+  }
+
+  function normalizedBuildAllowance(value) {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return defaultBuildAllowance;
+    return Math.min(100000, Math.max(0, Math.round(number)));
+  }
+
+  function updateFramesetPrices(value) {
+    currentBuildAllowance = normalizedBuildAllowance(value);
+    if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(currentBuildAllowance);
+    rows.forEach((row) => {
+      if (!row.dataset.framePriceLow) return;
+      const frameLow = Number(row.dataset.framePriceLow);
+      const frameHigh = Number(row.dataset.framePriceHigh || row.dataset.framePriceLow);
+      const low = frameLow + currentBuildAllowance;
+      const high = frameHigh + currentBuildAllowance;
+      row.dataset.priceSort = String(Math.round((low + high) / 2));
+      row.dataset.priceFilter = String(high);
+      const priceLabel = row.querySelector('[data-calculated-price]');
+      if (priceLabel) priceLabel.textContent = formatEstimatedRange(low, high);
+      const priceTip = row.querySelector('[data-frameset-price-tip]');
+      if (priceTip instanceof HTMLButtonElement) {
+        let lines = [];
+        try { lines = JSON.parse(priceTip.dataset.tooltipLines ?? '[]'); } catch { lines = []; }
+        const threshold = Number(priceTip.dataset.frameThreshold || 0);
+        priceTip.dataset.tooltipLines = JSON.stringify(lines.map((line) => {
+          if (line.startsWith('Estimated complete adds')) return `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`;
+          if (threshold && line.startsWith('Great-buy reference:')) return `Great-buy reference: below ${formatYuan(threshold + currentBuildAllowance)} complete (${formatYuan(threshold)} frameset).`;
+          return line;
+        }));
+      }
+    });
+    products.forEach((item) => {
+      if (!item.estimated || !Number.isFinite(item.frameLow)) return;
+      const low = Number(item.frameLow) + currentBuildAllowance;
+      const high = Number(item.frameHigh ?? item.frameLow) + currentBuildAllowance;
+      item.price = formatEstimatedRange(low, high);
+      item.priceDetails = String(defaultPriceDetails.get(item.id) ?? '')
+        .replace(/Estimated complete adds a fixed ¥[\d,]+ [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`)
+        .replace(/Great-buy reference: below ¥[\d,]+ complete/, item.greatBuyFrameThreshold
+          ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
+          : 'Great-buy reference: below complete');
+    });
+  }
+
   function updateModelLinks() {
     const from = `${location.pathname}${location.search}#catalog`;
     modelLinks.forEach((link) => {
@@ -420,6 +480,8 @@
     setParam(next, 'capability', capability?.value);
     setParam(next, 'category', category?.value);
     setParam(next, 'sort', sort?.value, 'price-asc');
+    setParam(next, 'scope', allModelsVisible ? 'all' : '');
+    setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
     const target = `${next.pathname}${next.search}${next.hash}`;
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', target); } catch { /* normal navigation origin required */ }
     updateModelLinks();
@@ -451,7 +513,7 @@
   }
 
   function hasFilters() {
-    return Boolean(activeType || activeBrand || search?.value.trim() || price?.value || capability?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
+    return Boolean(activeType || activeBrand || allModelsVisible || search?.value.trim() || price?.value || capability?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
   }
 
   function matchesCapability(row, value) {
@@ -465,9 +527,17 @@
     if (!value) return true;
     const [kind, choice] = value.split(':');
     if (kind === 'family') return row.dataset.family === choice;
-    if (kind === 'category') return row.dataset.category === choice;
+    if (kind === 'category') {
+      const canonical = (item) => item === 'gravel-adventure' ? 'adventure-gravel' : item;
+      return String(row.dataset.category ?? '').split('|').map(canonical).includes(canonical(choice));
+    }
     if (kind === 'handlebar') return row.dataset.handlebar === choice;
     return false;
+  }
+
+  function rowInScope(row) {
+    const query = search?.value.trim() ?? '';
+    return row.dataset.stage !== 'candidate' || row.dataset.defaultVisible === 'true' || allModelsVisible || Boolean(query);
   }
 
   function matchesPrimaryContext(row) {
@@ -480,7 +550,8 @@
   function rowMatches(row, { capabilityValue = capability?.value ?? '' } = {}) {
     const query = search?.value.trim().toLowerCase() ?? '';
     const maxPrice = Number(price?.value || 0);
-    return (!query || row.dataset.search?.includes(query)) &&
+    return rowInScope(row) &&
+      (!query || row.dataset.search?.includes(query)) &&
       matchesPrimaryContext(row) &&
       (!maxPrice || Number(row.dataset.priceFilter || Infinity) <= maxPrice) &&
       matchesCapability(row, capabilityValue);
@@ -579,6 +650,10 @@
     if (resultSummary) resultSummary.hidden = !filtered;
     if (empty) empty.hidden = visible !== 0;
     if (reset) reset.hidden = !filtered;
+    if (showAllModels instanceof HTMLButtonElement) {
+      showAllModels.setAttribute('aria-pressed', String(allModelsVisible));
+      showAllModels.textContent = allModelsVisible ? 'Show focused list' : 'Show all models';
+    }
     const hasSecondaryFilter = Boolean(price?.value || capability?.value || (sort?.value && sort.value !== 'price-asc'));
     if (hasSecondaryFilter) catalogRoot.querySelector('.filter-bar')?.classList.remove('filters-collapsed');
     if (moreFilters) moreFilters.setAttribute('aria-expanded', String(!catalogRoot.querySelector('.filter-bar')?.classList.contains('filters-collapsed')));
@@ -600,9 +675,12 @@
     const requestedType = params.get('type') ?? '';
     const requestedCapability = params.get('capability') ?? '';
     const requestedSort = params.get('sort') ?? 'price-asc';
+    const requestedBuildAllowance = params.get('build') ?? String(defaultBuildAllowance);
+    allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
     if (price) price.value = validSelectValue(price, requestedPrice);
     if (category) category.value = validSelectValue(category, requestedCategory);
+    updateFramesetPrices(requestedBuildAllowance);
     setBrand(requestedBrand, { update: false });
     setType(requestedType, { update: false });
     if (capability) capability.value = '';
@@ -620,6 +698,8 @@
       requestedCategory !== (category?.value ?? '') ||
       requestedBrand !== activeBrand ||
       requestedType !== activeType ||
+      requestedBuildAllowance !== String(currentBuildAllowance) ||
+      (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       capabilityRejected ||
       requestedSort !== (sort?.value ?? 'price');
     if (capabilityRejected && filterNotice) filterNotice.textContent = ' · incompatible capability cleared';
@@ -650,6 +730,8 @@
     if (capability) capability.value = '';
     if (category) category.value = '';
     if (sort) sort.value = 'price-asc';
+    updateFramesetPrices(defaultBuildAllowance);
+    allModelsVisible = false;
     setBrand('', { update: false });
     setType('', { update: false });
     updateCatalog({ historyMode: 'push' });
@@ -659,11 +741,18 @@
     const collapsed = bar?.classList.toggle('filters-collapsed') ?? false;
     moreFilters.setAttribute('aria-expanded', String(!collapsed));
   });
+  showAllModels?.addEventListener('click', () => {
+    allModelsVisible = !allModelsVisible;
+    updateCatalog({ historyMode: 'push' });
+  });
   copyCatalogView?.addEventListener('click', async () => {
     updateFilterUrl('replace');
     showCopyFeedback(copyCatalogView, await copyText(location.href));
   });
-  addEventListener('popstate', () => restoreFromParams(new URLSearchParams(location.search)));
+  addEventListener('popstate', () => {
+    restoreFromParams(new URLSearchParams(location.search));
+    if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
+  });
 
   const initialParams = new URLSearchParams(location.search);
   restoreFromParams(initialParams);
@@ -736,15 +825,18 @@
     if (item.imageRemote) image.referrerPolicy = 'no-referrer';
     enableImageFallback(image);
     const copy = element('div');
-    const link = element('a', '', `${item.brand} ${item.name}`);
-    const target = new URL(item.url, location.origin);
-    target.searchParams.set('from', `${location.pathname}${location.search}#catalog`);
-    link.href = `${target.pathname}${target.search}`;
+    const label = [item.brand, item.name].filter(Boolean).join(' ');
+    const title = item.url ? element('a', '', label) : element('span', '', label);
+    if (item.url) {
+      const target = new URL(item.url, location.origin);
+      target.searchParams.set('from', `${location.pathname}${location.search}#catalog`);
+      title.href = `${target.pathname}${target.search}`;
+    }
     const type = element('span', '', item.type);
-    copy.append(link, type);
+    copy.append(title, type);
     const remove = element('button', 'remove-compare', '×');
     remove.type = 'button';
-    remove.setAttribute('aria-label', `Remove ${item.brand} ${item.name}`);
+    remove.setAttribute('aria-label', `Remove ${label}`);
     remove.addEventListener('click', () => setSelection(selection.filter((id) => id !== item.id)));
     head.append(image, copy, remove);
     return head;
@@ -782,34 +874,36 @@
       const sample = items.find((item) => item.categoryMetricKind === kind);
       return [sample?.categoryMetricLabel ?? 'Category fact', (item) => item.categoryMetricKind === kind
         ? valueCell(item.categoryMetric, item.categoryMetricDetails)
-        : valueCell('—', 'Not applicable to this category')];
+        : valueCell('—')];
     });
+    const hasValue = (key) => items.some((item) => item[key] && item[key] !== '—');
     const coreFields = [
       ['Price', (item) => valueCell(item.price, item.priceState)],
       ['Category', (item) => valueCell(item.category)],
       ...metricFields,
-      ['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)],
-      ['Claimed weight', (item) => valueCell(item.weight, item.weightSubline)],
-      ['Frame', (item) => valueCell(item.frame)],
-      ['What to verify', (item) => valueCell(item.caveats, '', 'is-warning')],
-      ['Best for', (item) => valueCell(item.bestFor)],
-      ['Verdict', (item) => valueCell(item.verdict)]
+      ...(hasValue('drivetrain') ? [['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)]] : []),
+      ...(hasValue('weight') ? [['Claimed weight', (item) => valueCell(item.weight, item.weightSubline)]] : []),
+      ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame)]] : []),
+      ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor)]] : []),
+      ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict)]] : [])
     ];
     const secondaryFields = [
-      ['Price details', (item) => valueCell(item.priceDetails)],
-      ['Internal frame storage', (item) => valueCell(item.internalFrameStorage)],
-      ['Mounts', (item) => valueCell(item.mounts)],
-      ['Manufacturing', (item) => valueCell(item.manufacturing)],
-      ['Availability', (item) => valueCell(item.availability)]
+      ...(hasValue('priceDetails') ? [['Price details', (item) => valueCell(item.priceDetails)]] : []),
+      ...(hasValue('internalFrameStorage') ? [['Internal frame storage', (item) => valueCell(item.internalFrameStorage)]] : []),
+      ...(hasValue('mounts') ? [['Mounts', (item) => valueCell(item.mounts)]] : []),
+      ...(hasValue('manufacturing') ? [['Manufacturing', (item) => valueCell(item.manufacturing)]] : []),
+      ...(hasValue('availability') ? [['Availability', (item) => valueCell(item.availability)]] : [])
     ];
     const mixedCategories = metricKinds.length > 1;
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, mixedCategories
       ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
       : `Category-specific facts are comparable across these ${items.length} selections.`);
     compareContent.replaceChildren(context, comparisonGrid(items, coreFields, true));
-    const more = element('details', 'compare-more');
-    more.append(element('summary', '', 'More details'), comparisonGrid(items, secondaryFields));
-    compareContent.append(more);
+    if (secondaryFields.length) {
+      const more = element('details', 'compare-more');
+      more.append(element('summary', '', 'More details'), comparisonGrid(items, secondaryFields));
+      compareContent.append(more);
+    }
 
     const next = new URL(location.href);
     next.searchParams.set('compare', selection.join(','));
@@ -848,4 +942,19 @@
   if (querySelection.length) selection = querySelection;
   renderTray();
   if (querySelection.length >= 2) openComparison({ scroll: false });
+
+  function applyBuildAllowance({ historyMode }) {
+    if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return;
+    updateFramesetPrices(buildAllowance.value);
+    updateCatalog({ historyMode });
+    if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
+  }
+
+  buildAllowance?.addEventListener('input', () => applyBuildAllowance({ historyMode: 'replace' }));
+  buildAllowance?.addEventListener('change', () => {
+    if (buildAllowance instanceof HTMLInputElement && !buildAllowance.value.trim()) {
+      buildAllowance.value = String(defaultBuildAllowance);
+    }
+    applyBuildAllowance({ historyMode: 'push' });
+  });
 })();
