@@ -34,12 +34,16 @@ test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /href="[^"]*\/guides\//i);
 });
 
-test('research queue surfaces recent community leads without promoting them', () => {
+test('candidate leads share the catalog without a separate research queue', () => {
   assert.match(html, /PARDUS 瑞豹 Spark Sport PES/);
   assert.match(html, /Winspace SLC3 China price target/);
-  assert.match(html, /Community links are dated leads, not verified product facts/);
-  assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/6a2fed300000000011005ae5" rel="noreferrer"/);
+  assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
+  assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
+  assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
   assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/66f3eba6000000001a021f4e" rel="noreferrer"/);
+  assert.match(html, /data-show-all-models aria-pressed="false"/);
+  assert.doesNotMatch(html, /Research queue/);
+  assert.doesNotMatch(html, /Needs:/);
   assert.doesNotMatch(html, /data-id="pardus-spark-sport-pes"/);
   assert.doesNotMatch(html, /data-id="winspace-slc3"/);
 });
@@ -55,9 +59,10 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /aria-label="Tire details"/);
   assert.match(html, /aria-label="Format details"/);
   assert.match(html, /data-filter-capability/);
-  assert.match(html, /<option disabled>Mountain bikes — research queue<\/option>/);
-  assert.match(html, /<option disabled>E-road — research queue<\/option>/);
-  assert.match(html, /<option disabled>Folding — research queue<\/option>/);
+  assert.match(html, /<option value="family:mtb">All mountain bikes<\/option>/);
+  assert.match(html, /<option value="category:e-road">E-road<\/option>/);
+  assert.match(html, /<option value="category:folding">Folding<\/option>/);
+  assert.doesNotMatch(html, /research queue/i);
   assert.match(html, /Triathlon/);
   assert.match(html, /role="tooltip"/);
   assert.equal((html.match(/role="tooltip"/g) ?? []).length, 1);
@@ -150,6 +155,8 @@ test('brand names expose an exact, base-safe catalog filter', () => {
   assert.match(html, /data-result-context/);
   assert.match(html, /class="product-image-link" href="\/china-bike-research\/models\/twitter-v3-wheeltop-eds\/" data-model-link aria-label="View Twitter Gravel V3 WheelTop EDS 2×12 details"/);
   assert.match(html, /select name="category" data-filter-category/);
+  assert.match(html, /data-id="candidate-basso-venta-disc" data-brand="candidate-brand-basso"/);
+  assert.match(html, /data-brand-filter="candidate-brand-basso" aria-pressed="false" aria-label="BASSO — filter catalog to this brand"/);
 
   const product = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
   const detail = renderModel({
@@ -165,6 +172,13 @@ test('brand names expose an exact, base-safe catalog filter', () => {
   assert.match(detail, /data-catalog-back/);
   assert.match(detail, /data-add-to-comparison/);
   assert.match(detail, /data-model-compare-link/);
+});
+
+test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {
+  assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
+  assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
+  assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
+  assert.match(html, /data-frameset-price-tip=""/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {

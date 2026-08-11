@@ -6,20 +6,21 @@ This is the canonical product and data contract. Intentional behavior changes mu
 
 - The homepage is the unified catalog and inline comparison.
 - Category is a first-class filter; generic project copy must describe bicycles broadly.
-- The category control groups published products into broad road, gravel/all-road, MTB, e-road, folding, and triathlon families. Published subcategories are selectable; supported categories with no publication-ready products are labelled as research queue context and must not create dead-end catalog filters.
+- The category control groups catalog entries into broad road, gravel/all-road, MTB, e-road, folding, and triathlon families. Any category represented by a published product or a non-duplicate candidate is selectable; the control must not create dead-end filters.
 - Brand names in catalog rows and model details lead to a shareable exact-brand catalog filter. The visible result status names the active brand.
-- Search, category, capability, price, sort, brand, product type, and comparison selections are URL-addressable. Browser back/forward restores filter state, and model links preserve a safe return path to the filtered catalog.
+- Search, category, capability, price, sort, brand, product type, frameset build allowance, and comparison selections are URL-addressable. Browser back/forward restores filter state, and model links preserve a safe return path to the filtered catalog.
 - On desktop, the Bike, Full-bike price, and eligible category-fact table headings are keyboard-accessible sort controls. Repeated activation reverses direction, the active heading exposes its order, and the Sort control offers the same directional choices when headings are hidden.
 - `Max price` is a strict ceiling on the full published range or estimate. A product whose upper bound exceeds the selected amount does not match. Incompatible capability options are disabled for the active category/type/brand context; stale capability or category-sort URL state is cleared and canonicalized.
 - Complete bikes and compatible frameset builds may appear together on a comparable full-bike price basis.
-- A published frameset estimate uses its latest relevant price plus the fixed allowance in `data/meta.json`.
+- A published frameset estimate uses its latest relevant price plus the reviewed default allowance in `data/meta.json`. A buyer may edit that allowance locally to model their own build; the resulting URL and visible totals must make the selected allowance reproducible without changing the reviewed dataset default.
 - Do not publish a frameset where that allowance would materially mislead buyers; keep it as a candidate until the methodology is updated.
-- Candidates appear only as compact secondary context. The queue prioritizes recently reviewed, high-priority leads and may link dated community reports only when they remain clearly labelled as unverified leads rather than catalog facts.
+- Candidates share the comparison table instead of appearing in a separate research queue. A candidate appears in the focused default view when it has a dated official price; a dated observed price attached to an identifiable model; high or medium research priority; or at least two named sources. Generic, model-unclear, and title-mismatch price leads do not qualify on price alone. All non-duplicate candidates remain searchable, and one quiet control may expose the complete set. A candidate that points to an existing published record must not create a duplicate row.
+- Candidate rows render only available facts. Unknown drivetrain, weight, frame, price, or category-specific values use the same quiet em dash as other unavailable cells; do not repeat per-field missing-data warnings. Candidate prices retain their observed/official date and frameset basis, candidates do not receive recommendations, and missing publication evidence must not be inferred.
 - Do not add landing-page marketing, catalog counts, status dashboards, standalone guides, or repeated summaries.
 
-The main catalog shows a compact common core:
+The main catalog shows a compact common core. Publication-ready rows provide the full core; candidate rows leave unavailable cells empty rather than inventing values:
 
-- image and exact model/configuration;
+- image when its exactness and rights are documented, plus the exact model/configuration or candidate name;
 - category and comparable price;
 - drivetrain and weight;
 - the most decision-relevant compatibility or frame facts.
@@ -37,7 +38,7 @@ Model pages may include a compact, curated video section when a video maps to th
 
 ## 2. Catalog scope
 
-Publish a product in the main catalog only when it has:
+Publish a full product record, model page, or recommendation only when it has:
 
 - an exact brand, model, generation, product type, and category;
 - for a complete bike, an exact drivetrain and enough BOM evidence to identify the published configuration rather than only a model-family listing;
@@ -48,7 +49,7 @@ Publish a product in the main catalog only when it has:
 - sources for decision-relevant claims;
 - explicit caveats and unknowns.
 
-Use `data/candidates/` when a promising product lacks enough evidence. Use `data/exclusions/` when a product is obsolete, too ambiguous, outside the useful comparison, or otherwise unsuitable.
+Use `data/candidates/` when a promising product lacks enough evidence. A candidate may have a sparse table preview under the focused-view rules above without becoming a published product record. Use `data/exclusions/` when a product is obsolete, too ambiguous, outside the useful comparison, or otherwise unsuitable.
 
 ## 3. Data model
 
@@ -91,7 +92,7 @@ Never infer specifications across generations, sizes, or similarly named models 
 - Distinguish observed checkout, official list, reference range, historical promotion, and estimate.
 - Record coupons, subsidies, memberships, trade-ins, size/color limits, shipping, and other conditions when known.
 - `data/meta.json.snapshot_date` is the last catalog-wide review date, not the date of every small edit.
-- The frameset allowance changes only with explicit maintainer approval and a dated rationale.
+- The reviewed default frameset allowance changes only with explicit maintainer approval and a dated rationale. A buyer-side calculator override is not an evidence or methodology change.
 
 ## 6. Media and privacy
 
@@ -112,6 +113,6 @@ npm run check
 
 For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image and video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
 
-The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. Budget changes require a measured browser rationale.
+The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-11 unified 204-row catalog baseline is capped at 625,000 HTML bytes and 5,500 elements after measuring 576,620 bytes and 5,024 elements; desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
 
 Research bundles are evidence inputs, not publication authority. A dated marketplace snapshot may support an exact price observation, but a price is attachable only to the exact variant it identifies. Split or ambiguous trims remain candidates; screenshots, seller identities, and copied third-party images are never public data assets.

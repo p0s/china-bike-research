@@ -12,6 +12,8 @@ Prices are dated observations, not live quotes. Unknown facts remain unknown rat
 
 Use the structured GitHub issue forms to add a model, submit a price, correct a specification, report owner experience, or fix an image. Pull requests are welcome.
 
+See [DATA_ENTRY_PLAN.md](DATA_ENTRY_PLAN.md) for the evidence order, candidate-promotion gates, and proposed local authoring workflow for completing sparse records without adding maintenance UI to the public site.
+
 For agent-assisted work, point the LLM at the repository and tell it to read [AGENTS.md](AGENTS.md) first.
 
 - [VISION.md](VISION.md) — purpose and product principles

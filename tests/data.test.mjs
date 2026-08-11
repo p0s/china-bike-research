@@ -4,12 +4,14 @@ import {
   loadDataset,
   validateDataset,
   joinProducts,
+  joinCatalogCandidates,
   freshness,
   maxClearance
 } from '../src/lib/data.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
+const catalogCandidates = joinCatalogCandidates(data);
 
 test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
@@ -56,6 +58,38 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
+});
+
+test('candidate catalog keeps the focused view useful without losing discovery', () => {
+  assert.equal(catalogCandidates.length, 167);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 135);
+  assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id));
+  assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
+
+  const pardus = catalogCandidates.find((entry) => entry.candidate.id === 'pardus-spark-sport-pes');
+  assert.equal(pardus.defaultVisible, true);
+  assert.equal(pardus.priceKind, 'observed');
+  assert.equal(pardus.priceMidpoint, 8597.25);
+
+  const earlyLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
+  assert.equal(earlyLead.defaultVisible, false);
+  const unclearModel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-carbon-road-gravel-unknown');
+  assert.equal(unclearModel.defaultVisible, false);
+  const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
+  assert.equal(genericBuild.defaultVisible, false);
+
+  const basso = catalogCandidates.find((entry) => entry.candidate.id === 'basso-venta-disc');
+  assert.deepEqual(basso.brand, { id: 'candidate-brand-basso', name: 'BASSO' });
+  const vanRysel = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-van-rysel-rcr');
+  assert.deepEqual(vanRysel.brand, { id: 'candidate-brand-van-rysel', name: 'Van Rysel' });
+  assert.ok(catalogCandidates.every((entry) => entry.brand?.id && entry.brand?.name));
+  const brandLabels = new Map();
+  for (const entry of catalogCandidates) {
+    const labels = brandLabels.get(entry.brand.id) ?? new Set();
+    labels.add(entry.brand.name);
+    brandLabels.set(entry.brand.id, labels);
+  }
+  assert.ok([...brandLabels.values()].every((labels) => labels.size === 1));
 });
 
 test('frame platforms and configurations remain separate', () => {

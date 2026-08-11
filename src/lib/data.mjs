@@ -563,6 +563,92 @@ export function joinProducts(data = loadDataset()) {
   }).sort((a, b) => a.allInPrice.midpoint - b.allInPrice.midpoint);
 }
 
+function candidateBrand(candidate, brands) {
+  const identity = `${candidate.model_id ?? ''} ${candidate.id ?? ''}`.toLowerCase();
+  const candidateName = String(candidate.name ?? '').trim();
+  const name = candidateName.toLowerCase();
+  const publishedBrand = brands
+    .slice()
+    .sort((a, b) => b.id.length - a.id.length)
+    .find((brand) => {
+      const idPattern = new RegExp(`(^|-)${brand.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(-|$)`);
+      if (idPattern.test(identity.replaceAll(' ', '-'))) return true;
+      const labels = [brand.name, brand.name_zh].filter(Boolean).map((value) => String(value).toLowerCase());
+      return labels.some((label) => name === label || name.startsWith(`${label} `) || name.startsWith(`${label} /`));
+    });
+  if (publishedBrand) return publishedBrand;
+
+  if (!candidateName || /^generic custom seller\b/i.test(candidateName)) return null;
+  const multiwordPrefixes = [
+    'DE ROSA',
+    'Flying Pigeon',
+    'Giant',
+    'Hi-Light',
+    'MY WAY',
+    'Quick Pro',
+    'ROLLING STONE',
+    'TSB / Titan Super Bond',
+    'Van Rysel',
+    'WEST BIKING',
+    'X-TREME / 美涵达',
+    '轻鲨 QingSha'
+  ];
+  const displayName = multiwordPrefixes.find((prefix) => name === prefix.toLowerCase() || name.startsWith(`${prefix.toLowerCase()} `))
+    ?? candidateName.split(/\s+/)[0];
+  const id = displayName
+    .normalize('NFKD')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return id ? { id: `candidate-brand-${id}`, name: displayName } : null;
+}
+
+/**
+ * Candidate records stay distinct from publication-ready variants, but useful
+ * candidates can share the catalog surface. Records pointing at an existing
+ * published variant are omitted so one physical configuration never appears
+ * twice.
+ */
+export function joinCatalogCandidates(data = loadDataset()) {
+  const sources = new Map(data.sources.map((item) => [item.id, item]));
+  return data.candidates
+    .filter((candidate) => !candidate.existing_record_id)
+    .map((candidate) => {
+      const categories = categoryValues(candidate.category);
+      const observedPrice = candidate.observed_price ?? null;
+      const officialPrice = candidate.official_price ?? null;
+      const price = [observedPrice, officialPrice]
+        .filter(Boolean)
+        .sort((a, b) => String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? '')))[0] ?? null;
+      const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';
+      const sourceIds = candidate.source_ids ?? [];
+      const source = sourceIds.map((id) => sources.get(id)).find((item) => item?.url) ?? null;
+      const priority = candidate.research_priority;
+      const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
+        !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
+      return {
+        id: `candidate-${candidate.id}`,
+        candidate,
+        brand: candidateBrand(candidate, data.brands),
+        categories,
+        category: categories[0] ?? '',
+        kind: ['complete-bike', 'frameset'].includes(candidate.type) ? candidate.type : '',
+        price,
+        priceKind,
+        priceMidpoint: priceMidpoint(price) ?? Number.POSITIVE_INFINITY,
+        source,
+        defaultVisible: Boolean(
+          officialPrice ||
+          (observedPrice && hasIdentifiableModel) ||
+          priority === 'high' ||
+          priority === 'medium' ||
+          sourceIds.length >= 2
+        )
+      };
+    })
+    .sort((a, b) => a.priceMidpoint - b.priceMidpoint || a.candidate.name.localeCompare(b.candidate.name));
+}
+
 export function priceSortValue(price) { return price?.amount_cny ?? price?.low_cny ?? Number.POSITIVE_INFINITY; }
 export function priceMidpoint(price) {
   if (!price) return undefined;

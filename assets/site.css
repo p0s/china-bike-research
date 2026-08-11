@@ -76,6 +76,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .catalog-intro p { margin: 8px 0 0; color: var(--muted); font-size: 1.02rem; }
 .assumption-note { display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto; padding: 9px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: .8rem; }
 .assumption-note strong { color: var(--ink); font-weight: 680; }
+.assumption-note > span { white-space: nowrap; }
+.assumption-note input { width: 76px; min-height: 30px; border: 1px solid var(--line); border-radius: 7px; padding: 4px 7px; background: var(--bg); color: var(--ink); font: inherit; font-variant-numeric: tabular-nums; }
+.assumption-note input:focus { border-color: var(--accent); outline: 0; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent); }
 .catalog-section { padding-bottom: 56px; }
 
 /* Controls */
@@ -127,6 +130,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .reset-button:hover, .text-button:hover { color: var(--ink); }
 .catalog-meta { display: flex; justify-content: space-between; gap: 16px; padding: 0 2px 9px; color: var(--muted); font-size: .76rem; }
 .catalog-meta strong { color: var(--ink); }
+.catalog-meta-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-left: auto; }
+.catalog-scope-button { margin: -7px -8px; }
+.catalog-scope-button[aria-pressed="true"] { color: var(--ink); }
 
 /* Catalog table */
 .catalog-table { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); }
@@ -186,6 +192,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .catalog-row:last-of-type { border-bottom: 0; }
 .catalog-row:hover { z-index: 3; background: color-mix(in srgb, var(--accent-soft) 24%, var(--surface)); }
 .catalog-row[hidden] { display: none; }
+.catalog-row.is-candidate { min-height: 76px; }
 .compare-toggle { display: grid; place-items: center; }
 .compare-toggle label { display: grid; place-items: center; cursor: pointer; }
 .compare-toggle input { position: absolute; opacity: 0; pointer-events: none; }
@@ -200,6 +207,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .product-image-link > img { pointer-events: none; }
 .product-image > img.is-fallback,
 .product-image-link > img.is-fallback { padding: 0; }
+.catalog-row.is-candidate .catalog-product { display: block; }
+.catalog-row.is-candidate .catalog-cell { color: var(--muted); font-size: .88rem; }
+.catalog-row.is-candidate .price-cell { color: var(--ink); }
 .image-info { position: absolute; z-index: 12; right: 5px; top: 5px; transition: opacity .08s ease; }
 .product-copy { display: grid; min-width: 0; }
 .product-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 4px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
@@ -310,7 +320,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .compare-value { font-size: .82rem; }
 .compare-value strong { display: block; font-size: .9rem; }
 .compare-value small { display: block; margin-top: 3px; color: var(--muted); line-height: 1.35; }
-.compare-value.is-warning strong { color: var(--warning); font-weight: 680; }
 .compare-more { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .compare-more summary { padding: 10px 12px; cursor: pointer; color: var(--muted); font-weight: 680; }
 .compare-more[open] summary { border-bottom: 1px solid var(--line); }
@@ -349,20 +358,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .primary-button { background: #f5f7f5; color: #1b2720; }
 .primary-button:disabled { opacity: .45; cursor: not-allowed; }
 .secondary-button { border-color: var(--line-strong); background: var(--surface); color: var(--ink); }
-
-/* Research note */
-.research-note { margin-top: 16px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); }
-.research-note summary { padding: 12px 14px; cursor: pointer; color: var(--muted); font-size: .82rem; font-weight: 680; }
-.research-note[open] summary { border-bottom: 1px solid var(--line); color: var(--ink); }
-.research-summary { margin: 0; padding: 12px 14px 0; color: var(--muted); font-size: .78rem; }
-.research-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; padding: 8px 14px 0; }
-.research-list > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
-.research-list strong, .research-list span, .research-list small { display: block; }
-.research-list span { margin-top: 2px; color: var(--muted); font-size: .78rem; }
-.research-list small { margin-top: 4px; color: var(--muted); font-size: .69rem; }
-.research-list .research-evidence { margin-top: 7px; color: var(--accent); }
-.research-evidence a { color: inherit; font-weight: 650; text-underline-offset: 2px; }
-.research-footnote { margin: 0; padding: 12px 14px 14px; color: var(--muted); font-size: .76rem; }
 
 /* Model page */
 .model-page { padding: 28px 0 60px; }
@@ -542,7 +537,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .more-filters { display: inline-flex; align-items: center; justify-content: center; }
   .filters-collapsed .filter-secondary { display: none; }
   .segmented { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .catalog-meta span:last-child { display: none; }
+  .catalog-selection-hint { display: none; }
   .catalog-table { grid-template-columns: 1fr; }
   .catalog-row { --catalog-preview-scale: 2.15; }
   .catalog-product { grid-template-columns: 132px minmax(0, 1fr); }
@@ -567,7 +562,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .simple-page { padding-top: 34px; }
   .credit-list article { grid-template-columns: 105px minmax(0, 1fr); }
   .credit-image { width: 105px; }
-  .research-list { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; }
   .footer-inner nav { justify-content: flex-start; }
 }
