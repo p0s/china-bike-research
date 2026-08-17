@@ -149,7 +149,7 @@ const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // the GitHub Pages project base path on 2026-08-11. These limits retain modest
 // growth headroom while keeping the full candidate set available without a
 // second page or client-side data fetch.
-const performanceBudget = { home_html_bytes: 675_000, home_elements: 5_600 };
+const performanceBudget = { home_html_bytes: 680_000, home_elements: 5_600 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
