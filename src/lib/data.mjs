@@ -313,6 +313,11 @@ export function validateDataset(data = loadDataset()) {
       const platform = platformsById.get(variant.platform_id);
       if (platform && !supportsStandardFramesetBuild(platform.category)) errors.push(`variant ${variant.id}: fixed frameset build allowance is not approved for ${platform.category}`);
     }
+    for (const key of ['claimed_complete_weight_g', 'claimed_frame_weight_g']) {
+      if (variant[key] !== undefined && (typeof variant[key] !== 'number' || variant[key] <= 0)) {
+        errors.push(`variant ${variant.id}: invalid ${key}`);
+      }
+    }
     const thresholds = variant.editorial?.price_thresholds_cny;
     if (thresholds && !(thresholds.great_buy_below <= thresholds.fair_buy_below && thresholds.fair_buy_below <= thresholds.not_compelling_above)) errors.push(`variant ${variant.id}: invalid threshold ordering`);
     for (const sourceId of variant.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`variant ${variant.id}: missing source ${sourceId}`);

@@ -201,6 +201,18 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   }, placeholderProduct);
   assert.match(placeholderDetail, /Project-owned local asset/);
   assert.doesNotMatch(placeholderDetail, /Project-owned product image placeholders[\s\S]*Archived evidence; no public link/);
+
+  const falath = products.find((item) => item.variant.id === 'elves-falath-r7170');
+  const falathDetail = renderModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  }, falath);
+  assert.match(falathDetail, /<dt>Claimed weight<\/dt><dd>1,160 g frame<\/dd>/);
+  assert.match(falathDetail, /<dt>Claimed frame weight<\/dt><dd>1,160 g<\/dd>/);
 });
 
 test('primary navigation reflects catalog and exact model context', () => {

@@ -45,7 +45,7 @@ Make the catalog materially more useful without converting uncertain leads into 
 - 101 distinct catalog candidates still lack a dedicated image, while nine alias candidates intentionally use an existing published record's image.
 - The remaining high-priority exact-image blockers are the LightCarbon Speed7 complete-bike and frameset candidates. The only medium-priority blocker is the ELVES Mori community lead.
 - Many popular global models still lack a verifiable mainland SKU, current CNY checkout, stock, duties/returns, or local warranty route.
-- Published records still have 30 geometry gaps, 23 frame-weight gaps, 12 BB gaps, five complete-weight gaps, five incomplete BOMs, and seven weak/non-exact primary-image relationships.
+- Published records still have 30 geometry gaps, 22 frame-weight gaps, 12 BB gaps, five complete-weight gaps, five incomplete BOMs, and seven weak/non-exact primary-image relationships. The exact Falath R7170 frame claim is now surfaced from its variant record rather than counted as missing.
 - Current manufacturer pages sometimes conflict on global price or components; these conflicts remain explicit until one exact market/variant explanation is verified.
 - Web/official-source attempt budgets are complete for this batch. The ledger currently has 22 open atomic fields, all waiting on public-post work; the canonical local capture extension is enabled, but the first signed-in search in the current window reached Security Verification, so the lane is paused until a later research window or confirmed normal access.
 

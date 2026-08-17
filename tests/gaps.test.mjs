@@ -37,3 +37,10 @@ test('gap report exposes the latest atomic research status without hiding the ga
   assert.equal(gap.research.status, 'temporarily-exhausted');
   assert.equal(report.research_status_counts['temporarily-exhausted'], 1);
 });
+
+test('gap report recognizes an exact frame-weight claim stored on a complete-bike variant', () => {
+  const report = buildGapReport(loadDataset(), '2026-08-18');
+  const record = report.records.find((item) => item.id === 'elves-falath-r7170');
+  assert.ok(record);
+  assert.doesNotMatch(JSON.stringify(record.gaps), /frame-weight-missing/);
+});

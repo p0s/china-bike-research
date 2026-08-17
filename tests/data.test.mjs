@@ -176,6 +176,10 @@ test('candidate facts and foreign-price reference estimates reject malformed evi
   invalidSourceUrl.candidates.find((item) => item.id === 'quick-pro-er-one').source_url = 'http://example.com/not-https';
   assert.ok(validateDataset(invalidSourceUrl).some((error) => error.includes('source_url must use HTTPS')));
 
+  const invalidVariantWeight = structuredClone(data);
+  invalidVariantWeight.variants.find((item) => item.id === 'elves-falath-r7170').claimed_frame_weight_g = 0;
+  assert.ok(validateDataset(invalidVariantWeight).some((error) => error.includes('invalid claimed_frame_weight_g')));
+
   const invalidDistinct = structuredClone(data);
   delete invalidDistinct.candidates.find((item) => item.id === 'missing-china-price-winspace-g3').existing_record_id;
   assert.ok(validateDataset(invalidDistinct).some((error) => error.includes('catalog_distinct_reason requires')));

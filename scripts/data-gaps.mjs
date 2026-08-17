@@ -53,7 +53,8 @@ function productGaps(product, asOf) {
   if (unresolved(frame.geometry) || typeof frame.geometry !== 'object') {
     addGap(gaps, 'geometry-missing', 'No structured frame geometry', 20);
   }
-  if (unresolved(frame.claimed_frame_weight_g) && unresolved(frame.claimed_frame_weight_g_by_size)) {
+  const hasVariantFrameWeight = Number.isFinite(variant.claimed_frame_weight_g) && variant.claimed_frame_weight_g > 0;
+  if (unresolved(frame.claimed_frame_weight_g) && unresolved(frame.claimed_frame_weight_g_by_size) && !hasVariantFrameWeight) {
     addGap(gaps, 'frame-weight-missing', 'No frame-weight claim', 14);
   }
   if (variant.kind === 'complete-bike' && unresolved(variant.claimed_complete_weight_g)) {

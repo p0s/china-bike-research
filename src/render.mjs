@@ -226,8 +226,9 @@ function drivetrainSubline(ctx, product) {
 
 function weightLabel(product) {
   if (product.variant.kind === 'complete-bike') {
-    return product.variant.claimed_complete_weight_g
-      ? `${(product.variant.claimed_complete_weight_g / 1000).toFixed(1)} kg`
+    if (product.variant.claimed_complete_weight_g) return `${(product.variant.claimed_complete_weight_g / 1000).toFixed(1)} kg`;
+    return product.variant.claimed_frame_weight_g
+      ? `${new Intl.NumberFormat('en-US').format(product.variant.claimed_frame_weight_g)} g frame`
       : '—';
   }
   return product.platform.frame.claimed_frame_weight_g
@@ -236,7 +237,10 @@ function weightLabel(product) {
 }
 
 function weightSubline(product) {
-  if (product.variant.kind === 'complete-bike') return product.variant.claimed_complete_weight_g ? 'Claimed' : '';
+  if (product.variant.kind === 'complete-bike') {
+    if (product.variant.claimed_complete_weight_g) return 'Claimed';
+    return product.variant.claimed_frame_weight_g ? 'Claimed frame weight' : '';
+  }
   return product.platform.frame.claimed_frame_weight_g ? 'Claimed frame weight' : '';
 }
 
@@ -276,8 +280,11 @@ function geometrySummary(platform) {
 }
 
 function publishedSpecificationRows(product) {
+  const frameWeight = product.variant.claimed_frame_weight_g
+    ?? product.platform.frame?.claimed_frame_weight_g;
   const rows = [
     ['Bottom bracket', product.platform.frame?.bottom_bracket === 'unknown' ? '' : product.platform.frame?.bottom_bracket],
+    ['Claimed frame weight', Number.isFinite(frameWeight) ? `${new Intl.NumberFormat('en-US').format(frameWeight)} g` : ''],
     ['Included package', product.variant.kind === 'frameset' ? product.variant.included?.join(', ') : ''],
     ['Wheels', componentDescription(product.variant.wheels)],
     ['Tires', product.variant.tires],
