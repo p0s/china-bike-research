@@ -15,10 +15,21 @@
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "canyon-ultimate-cfr-axs-official-2026-08-17"
+    "canyon-ultimate-cfr-axs-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "official_price": {
+    "amount_cny": 71282,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 10499,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://www.canyon.com/en-us/road-bikes/race-bikes/ultimate/cfr/ultimate-cfr-axs/4071.html",
-  "source_note": "Official US product page supports the exact SRAM Red AXS build. This is a foreign reference, not a mainland CNY checkout.",
+  "source_note": "Official US product page lists US$10,499 and supports the exact SRAM Red AXS build. The approximate CNY reference excludes card FX, shipping, tax and duties and is not a mainland checkout.",
   "facts": {
     "drivetrain": "SRAM Red AXS 2×12",
     "brakes": "SRAM Red AXS HRD",

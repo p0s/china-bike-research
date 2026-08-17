@@ -16,10 +16,22 @@
   ],
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "sava-hawkeye-f20-official-2026-08-17"
+    "sava-hawkeye-f20-official-2026-08-17",
+    "public-sava-hawkeye-price-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "official_price": {
+    "amount_cny": 12893,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1899,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://savadeck-bike.com/products/2023-sava-hawkeye-7-2-full-carbon-road-bike-24-speed",
-  "source_note": "Official global store listed a US$1,899 sale price, approximately 8.7 kg weight, carbon wheels, BB92 and Shimano 105 R7120 on 2026-08-17. Mainland CNY checkout and local warranty handling remain unverified.",
+  "source_note": "Official global store listed a US$1,899 sale price, approximately 8.7 kg weight, carbon wheels, BB92 and Shimano 105 R7120 on 2026-08-17. Mainland CNY checkout and local warranty handling remain unverified. A separate Ultegra Di2 Hawkeye post reported ¥19,999 in 2023; that historical trim is not the current 105 build.",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "facts": {

@@ -1,6 +1,7 @@
 (() => {
   const base = document.body.dataset.base ?? '';
   const selectionStorageKey = 'china-bike-guide-selection-v2';
+  const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
 
   function readStoredSelection() {
     try {
@@ -11,6 +12,17 @@
 
   function writeStoredSelection(selection) {
     try { localStorage.setItem(selectionStorageKey, JSON.stringify(selection.slice(0, 4))); } catch { /* selection remains usable for this page */ }
+  }
+
+  function readStoredBuildAllowance() {
+    try {
+      const value = Number(localStorage.getItem(buildAllowanceStorageKey));
+      return Number.isFinite(value) ? value : null;
+    } catch { return null; }
+  }
+
+  function writeStoredBuildAllowance(value) {
+    try { localStorage.setItem(buildAllowanceStorageKey, String(value)); } catch { /* the URL still carries the selected amount */ }
   }
 
   function enableImageFallback(image) {
@@ -344,6 +356,28 @@
     }, { once: true });
   });
 
+  const modelFramePrice = document.querySelector('[data-model-frame-price-low]');
+  if (modelFramePrice instanceof HTMLElement) {
+    const defaultAllowance = Number(modelFramePrice.dataset.modelDefaultAllowance || 0);
+    const requested = new URLSearchParams(location.search).get('build');
+    const stored = readStoredBuildAllowance();
+    const raw = requested === null ? stored ?? defaultAllowance : Number(requested);
+    const allowance = Number.isFinite(raw) ? Math.min(100000, Math.max(0, Math.round(raw))) : defaultAllowance;
+    const frameLow = Number(modelFramePrice.dataset.modelFramePriceLow);
+    const frameHigh = Number(modelFramePrice.dataset.modelFramePriceHigh || frameLow);
+    const priceLabel = formatEstimatedRange(frameLow + allowance, frameHigh + allowance);
+    const calculated = modelFramePrice.querySelector('[data-model-calculated-price]');
+    if (calculated) calculated.textContent = priceLabel;
+    const brief = document.querySelector('[data-model-price-brief]');
+    if (brief) {
+      brief.textContent = String(brief.textContent ?? '').replace(
+        /^The displayed .*? estimate adds the adjustable ¥[\d,]+ build allowance/,
+        `The displayed ${priceLabel} estimate adds the adjustable ${formatYuan(allowance)} build allowance`
+      );
+    }
+    writeStoredBuildAllowance(allowance);
+  }
+
   const catalogRoot = document.querySelector('[data-catalog-root]');
   const catalogData = document.querySelector('#catalog-data');
   if (!catalogRoot || !catalogData) return;
@@ -466,6 +500,7 @@
     modelLinks.forEach((link) => {
       const target = new URL(link.dataset.baseHref || link.getAttribute('href') || '', location.origin);
       target.searchParams.set('from', from);
+      setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       link.href = `${target.pathname}${target.search}`;
     });
   }
@@ -674,7 +709,7 @@
     const requestedType = params.get('type') ?? '';
     const requestedCapability = params.get('capability') ?? '';
     const requestedSort = params.get('sort') ?? 'price-asc';
-    const requestedBuildAllowance = params.get('build') ?? String(defaultBuildAllowance);
+    const requestedBuildAllowance = params.get('build') ?? String(readStoredBuildAllowance() ?? defaultBuildAllowance);
     allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
     if (price) price.value = validSelectValue(price, requestedPrice);
@@ -943,6 +978,7 @@
   function applyBuildAllowance({ historyMode }) {
     if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return;
     updateFramesetPrices(buildAllowance.value);
+    writeStoredBuildAllowance(currentBuildAllowance);
     updateCatalog({ historyMode });
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
   }

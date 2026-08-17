@@ -12,9 +12,9 @@ This is the canonical product and data contract. Intentional behavior changes mu
 - On desktop, the Bike, Full-bike price, and eligible category-fact table headings are keyboard-accessible sort controls. Repeated activation reverses direction, the active heading exposes its order, and the Sort control offers the same directional choices when headings are hidden.
 - `Max price` is a strict ceiling on the full published range or estimate. A product whose upper bound exceeds the selected amount does not match. Incompatible capability options are disabled for the active category/type/brand context; stale capability or category-sort URL state is cleared and canonicalized.
 - Complete bikes and compatible frameset builds may appear together on a comparable full-bike price basis.
-- A published frameset estimate uses its latest relevant price plus the reviewed default allowance in `data/meta.json`. A buyer may edit that allowance locally to model their own build; the resulting URL and visible totals must make the selected allowance reproducible without changing the reviewed dataset default.
+- A published frameset estimate uses its latest relevant price plus the reviewed default allowance in `data/meta.json`. A buyer may edit that allowance locally to model their own build; the resulting URL, catalog totals, comparison, and frameset detail page must preserve the selected allowance without changing the reviewed dataset default.
 - Do not publish a frameset where that allowance would materially mislead buyers; keep it as a candidate until the methodology is updated.
-- Candidates share the comparison table instead of appearing in a separate research queue. A candidate appears in the focused default view when it has a dated official price; a dated observed price attached to an identifiable model; high or medium research priority; or at least two named sources. Generic, model-unclear, and title-mismatch price leads do not qualify on price alone. All non-duplicate candidates remain searchable, and one quiet control may expose the complete set. A candidate that points to an existing published record must not create a duplicate row.
+- Candidates share the comparison table instead of appearing in a separate research queue. A candidate appears in the focused default view when it has a dated official price; a dated observed price attached to an identifiable model; high or medium research priority; or at least two named sources. Generic, model-unclear, and title-mismatch price leads do not qualify on price alone. All non-duplicate candidates remain searchable, and one quiet control may expose the complete set. A candidate that points to an existing published record must not create a duplicate row unless `catalog_distinct_reason` documents a materially different configuration, such as an exact complete bike tracked alongside a frameset-only record.
 - Candidate rows render only available facts. Unknown drivetrain, weight, frame, price, or category-specific values use the same quiet em dash as other unavailable cells; do not repeat per-field missing-data warnings. Candidate prices retain their observed/official date and frameset basis, candidates do not receive recommendations, and missing publication evidence must not be inferred.
 - Do not add landing-page marketing, catalog counts, status dashboards, standalone guides, or repeated summaries.
 
@@ -35,6 +35,8 @@ The site remains static, fast, responsive, accessible, and usable without accoun
 Catalog thumbnails link to model details and must be large enough to identify a bicycle's silhouette at rest. On fine-pointer devices, the whole thumbnail link enlarges on hover so the preview remains stable as the pointer moves across it, without moving the table layout; touch layouts keep the larger stable thumbnail size.
 
 Model pages may include a compact, curated video section when a video maps to the exact variant or physical platform. Videos are optional editorial context, not specification, price, BOM, recommendation, or publication authority. The shown build may differ from the published variant. Channel relationships, supplied-product context, and other material disclosures must be visible. A YouTube embed loads only after an explicit visitor action, never autoplays, and always retains a normal external-link fallback.
+
+Every distinct catalog entry has an internal detail page with a concise, always-visible buyer brief. Published products combine the editorial verdict with exact price context, intended use, important configuration/category facts, strengths, trade-offs, and meaningful unknowns. Candidates are clearly labelled as research-stage profiles and show only attributed known facts, price context, and unresolved gaps; they are not recommendations. Both should read like precise short reviews rather than data dumps or long articles. Key product/support facts must not be hidden behind disclosure controls. Seller-contact scripts and internal research prompts are not buyer-facing content; detailed evidence records may remain in a compact disclosure beneath the visible brief.
 
 ## 2. Catalog scope
 
@@ -98,6 +100,7 @@ Never infer specifications across generations, sizes, or similarly named models 
 ## 6. Media and privacy
 
 - Third-party images may be remotely embedded only with source, owner, exactness, rights status, alt text, and fallback metadata.
+- A public-post photo may use `public-post-embed` only as a remote reference with the original owner credited, no redistribution license asserted, no personal identity retained, and a project-owned fallback. It must never be downloaded into the repository or outrank an exact official image.
 - Every image record targets exactly one published platform or one candidate. A candidate image may identify the model without promoting the candidate or resolving its missing publication evidence.
 - Do not commit third-party image files without permission or a compatible license.
 - Never present another configuration as exact.
@@ -115,7 +118,7 @@ npm run check
 
 For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image and video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
 
-The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-11 unified 204-row catalog baseline is capped at 650,000 HTML bytes and 5,500 elements after measuring the GitHub Pages base-path build at 633,916 bytes and 5,369 elements; desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
+The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-17 unified 226-row catalog with internal candidate links measures 789,207 HTML bytes and 6,500 elements; it is capped at 820,000 bytes and 6,750 elements. Desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
 
 Research bundles are evidence inputs, not publication authority. A dated marketplace snapshot may support an exact price observation, but a price is attachable only to the exact variant it identifies. Split or ambiguous trims remain candidates; screenshots, seller identities, and copied third-party images are never public data assets.
 

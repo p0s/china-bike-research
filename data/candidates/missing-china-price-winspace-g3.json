@@ -8,24 +8,40 @@
   "missing": [
     "Dated mainland-China RMB observation and purchase route",
     "Current mainland stock, checkout conditions and warranty handling",
-    "Resolve the same-site global price conflict and verify complete weight, BB and maximum clearance"
+    "Resolve the same-site global price conflict and verify complete weight"
   ],
   "status": "official-global-reference",
   "existing_record_id": "winspace-g3-frameset",
+  "catalog_distinct_reason": "This is an exact complete-bike build; the referenced published record is the frameset-only configuration.",
   "research_priority": "high",
   "price_status": "official global reference only; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling; Resolve the same-site global price conflict and verify complete weight, BB and maximum clearance",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "winspace-g3-pro-di2-official-2026-08-17"
+    "winspace-g3-pro-di2-official-2026-08-17",
+    "winspace-g3-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "official_price": {
+    "amount_cny": 26472,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 3899,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://www.winspace.cc/collections/complete-bike/products/g3-gravel-pro-di2",
-  "source_note": "Official product and collection pages support the exact build but conflict at US$3,899 versus US$4,099. No mainland CNY checkout price is shown.",
+  "source_note": "Official product and collection pages support the exact build but conflict at US$3,899 versus US$4,099. The displayed reference uses the lower product-page figure and excludes card FX, shipping, tax and duties; no mainland CNY checkout is shown.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
     "frame": "Winspace G3 carbon gravel frame",
     "wheels": "Lún Gryper 35/45 carbon, carbon spokes",
     "tires": "700×40C",
-    "cockpit": "Integrated Winspace carbon handlebar"
+    "cockpit": "Integrated Winspace carbon handlebar",
+    "bottom_bracket": "T47-68 threaded",
+    "tire_clearance_mm": 50,
+    "sizes": "XS, S, M, L and XL"
   }
 }

@@ -341,6 +341,9 @@ export function validateDataset(data = loadDataset()) {
     if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
     if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
     for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);
+    if (candidate.catalog_distinct_reason !== undefined && (!candidate.existing_record_id || typeof candidate.catalog_distinct_reason !== 'string' || !candidate.catalog_distinct_reason.trim())) {
+      errors.push(`candidate ${candidate.id}: catalog_distinct_reason requires an existing_record_id and a non-empty explanation`);
+    }
     if (candidate.facts !== undefined) {
       if (!isObject(candidate.facts)) {
         errors.push(`candidate ${candidate.id}: facts must be an object`);
@@ -416,8 +419,8 @@ export function validateDataset(data = loadDataset()) {
   }
 
   const accuracyValues = new Set(['exact-variant', 'exact-platform', 'same-platform', 'same-model-different-color', 'same-model-different-market-build', 'illustrative']);
-  const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'project-placeholder']);
-  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed']);
+  const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'community-post-photo', 'project-placeholder']);
+  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed']);
   for (const image of data.images) {
     requireFields('image', image, ['role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
     const targetKeys = ['platform_id', 'candidate_id'].filter((key) => image[key] !== undefined);
@@ -440,7 +443,7 @@ export function validateDataset(data = loadDataset()) {
     if (image.candidate_id !== undefined && image.variant_ids?.length) errors.push(`image ${image.id}: candidate image cannot target variants`);
     const mode = image.hosting?.mode;
     if (mode === 'remote') {
-      if (!['official-page-embed', 'retailer-page-embed', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
+      if (!['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
       try {
         const parsed = new URL(image.hosting.remote_url);
         if (parsed.protocol !== 'https:') errors.push(`image ${image.id}: remote URL must use HTTPS`);
@@ -449,7 +452,7 @@ export function validateDataset(data = loadDataset()) {
       const localPath = image.hosting?.local_path;
       if (typeof localPath !== 'string' || !localPath.startsWith('/assets/images/')) errors.push(`image ${image.id}: invalid local_path`);
       else if (!fs.existsSync(path.join(root, localPath.replace(/^\//, '')))) errors.push(`image ${image.id}: missing local asset ${localPath}`);
-      if (['official-page-embed', 'retailer-page-embed'].includes(image.rights?.status)) errors.push(`image ${image.id}: embed-only image cannot be stored locally`);
+      if (['official-page-embed', 'retailer-page-embed', 'public-post-embed'].includes(image.rights?.status)) errors.push(`image ${image.id}: embed-only image cannot be stored locally`);
     } else errors.push(`image ${image.id}: hosting mode must be remote or local`);
   }
 
@@ -647,12 +650,13 @@ function candidateBrand(candidate, brands) {
  * Candidate records stay distinct from publication-ready variants, but useful
  * candidates can share the catalog surface. Records pointing at an existing
  * published variant are omitted so one physical configuration never appears
- * twice.
+ * twice. A materially distinct configuration can remain visible only when its
+ * data record explains the split explicitly.
  */
 export function joinCatalogCandidates(data = loadDataset()) {
   const sources = new Map(data.sources.map((item) => [item.id, item]));
   return data.candidates
-    .filter((candidate) => !candidate.existing_record_id)
+    .filter((candidate) => !candidate.existing_record_id || candidate.catalog_distinct_reason)
     .map((candidate) => {
       const categories = categoryValues(candidate.category);
       const observedPrice = candidate.observed_price ?? null;
@@ -662,7 +666,8 @@ export function joinCatalogCandidates(data = loadDataset()) {
         .sort((a, b) => String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? '')))[0] ?? null;
       const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';
       const sourceIds = candidate.source_ids ?? [];
-      const source = sourceIds.map((id) => sources.get(id)).find((item) => item?.url) ?? null;
+      const candidateSources = sourceIds.map((id) => sources.get(id)).filter(Boolean);
+      const source = candidateSources.find((item) => item?.url) ?? null;
       const image = data.images.find((item) => item.candidate_id === candidate.id && item.role === 'primary') ?? null;
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
@@ -678,6 +683,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         priceKind,
         priceMidpoint: priceMidpoint(price) ?? Number.POSITIVE_INFINITY,
         source,
+        sources: candidateSources,
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         defaultVisible: Boolean(

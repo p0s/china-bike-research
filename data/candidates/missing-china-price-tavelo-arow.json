@@ -6,22 +6,42 @@
   "type": "frameset",
   "why_interesting": "Exact official premium Chinese aero-road frameset with manufacturer imagery; mainland retail and support details remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation and purchase route",
-    "Exact mainland SKU, stock, duties/returns and warranty handling"
+    "Current mainland-China price and purchase route",
+    "Exact current SKU, stock and warranty handling"
   ],
   "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "price_status": "historical mainland launch range plus current official global reference",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "video_ids": [
     "china-cycling-tavelo-arow-2026-build"
   ],
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "tavelo-arow-race-polestar-official-2026-08-17"
+    "tavelo-arow-race-polestar-official-2026-08-17",
+    "tavelo-arow-2024-launch",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "observed_price": {
+    "low_cny": 9800,
+    "high_cny": 11500,
+    "currency": "CNY",
+    "observed_at": "2024-04-29",
+    "price_basis": "launch range without and with integrated cockpit",
+    "observation_count": 1
+  },
+  "official_price": {
+    "amount_cny": 11203,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1650,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://www.tavelo.cc/products/tavelo-arow-race-polestar",
-  "source_note": "Official global manufacturer page supports the Arow Race Polestar frameset and exact image. A dated mainland RMB frame price and purchase route remain unverified.",
+  "source_note": "A 2024 mainland launch table lists the Arow Race frameset at ¥9,800 without its cockpit and ¥11,500 with it; the SL trim remains separate. The current global page lists US$1,650. Current mainland stock, price and warranty handling remain unverified.",
   "facts": {
     "frame": "Tavelo Arow Race carbon frameset"
   }

@@ -4,7 +4,7 @@
   "model_id": "pardus-spark-sport-pes",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "The exact Spark Sport PES name appears in official and marketplace evidence; two public XHS leads add ownership and review context, including one reported after 1,200 km, but the stock trim and price mapping remain unproven.",
+  "why_interesting": "The exact Spark Sport 3 PES name appears in public ownership evidence with more than 1,200 km of use, while official and marketplace evidence establish the wider platform; stock trim and price mapping remain unresolved.",
   "missing": [
     "Exact stock drivetrain, wheels, brakes, and included accessories",
     "Proof that the repeated price maps to one exact trim",
@@ -17,10 +17,19 @@
   "source_ids": [
     "pardus-spark-sport-official-2026-08-09",
     "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
-    "xhs-pardus-spark-sport-pes-review-lead-2026-08-10"
+    "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
+    "pardus-spark-sport-official-cn-2026-08-17",
+    "pardus-spark-family-official-2026-08-17"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {"amount_cny": 8597.25, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 2},
+  "facts": {
+    "drivetrain": "Official Spark Sport reference: Magene QED electronic 2×12 with hydraulic discs; exact PES mapping remains unconfirmed",
+    "complete_weight_g": 8500,
+    "frame": "HS-EPS+ carbon",
+    "wheels": "Official Spark Sport reference: PW5 alloy"
+  },
+  "source_note": "The owner reports about ¥5,999 and roughly 8.5 kg for an XS stock bike without pedals, plus heavier stock wheels and one slow brake-lever return. The retained ¥8,597.25 marketplace record may represent another trim or channel.",
   "source_refs": "IMG_6882.png#L2, IMG_6888.png#L1",
   "last_reviewed": "2026-08-10"
 }

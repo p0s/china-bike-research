@@ -15,10 +15,21 @@
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "elves-vanyar-pro-disc-official-2026-08-17"
+    "elves-vanyar-pro-disc-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "official_price": {
+    "amount_cny": 7468,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1100,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame",
-  "source_note": "Official product page supports the 2024 Vanyar Pro Disc frameset identity and image. Mainland price, stock and warranty handling remain unverified.",
+  "source_note": "The official regional page supports the 2024 Vanyar Pro Disc identity, image and US$1,100 global reference price. The approximate CNY conversion excludes card FX, shipping, tax and duties; mainland price, stock and warranty handling remain unverified.",
   "facts": {
     "frame": "ELVES Vanyar Pro Disc full-carbon frameset"
   }

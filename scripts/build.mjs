@@ -3,6 +3,7 @@ import path from 'node:path';
 import {
   loadDataset,
   joinProducts,
+  joinCatalogCandidates,
   validateDataset,
   categoryMetric,
   formatAllInPrice,
@@ -13,6 +14,7 @@ import {
 import {
   renderHome,
   renderModel,
+  renderCandidateModel,
   renderMethodology,
   renderPrivacy,
   renderImagePolicy,
@@ -66,6 +68,7 @@ if (errors.length) {
   process.exit(1);
 }
 const products = joinProducts(data);
+const candidates = joinCatalogCandidates(data);
 const ctx = { data, products, base, siteUrl, repositoryUrl, now: new Date() };
 
 fs.rmSync(dist, { recursive: true, force: true });
@@ -82,6 +85,7 @@ function add(route, html, includeInSitemap = true) {
 
 add('/', renderHome(ctx));
 for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product));
+for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible);
 add('/methodology/', renderMethodology(ctx));
 add('/privacy/', renderPrivacy(ctx));
 add('/image-policy/', renderImagePolicy(ctx));
@@ -145,11 +149,11 @@ const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSi
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map((route) => `  <url><loc>${xml(`${siteUrl}${base}${route}`)}</loc><lastmod>${data.meta.snapshot_date}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-// The 204-row unified catalog measured 633,916 bytes and 5,369 elements with
-// the GitHub Pages project base path on 2026-08-11. These limits retain modest
-// growth headroom while keeping the full candidate set available without a
-// second page or client-side data fetch.
-const performanceBudget = { home_html_bytes: 680_000, home_elements: 5_600 };
+// The 226-row unified catalog with internal candidate-profile links measured
+// 789,207 bytes and 6,500 elements on 2026-08-17. These limits retain modest growth headroom while
+// keeping the full candidate set available without a second page or client-side
+// data fetch.
+const performanceBudget = { home_html_bytes: 820_000, home_elements: 6_750 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

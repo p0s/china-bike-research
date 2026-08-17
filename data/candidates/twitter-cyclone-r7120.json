@@ -4,7 +4,7 @@
   "model_id": "twitter-cyclone-r7120",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Search image has unusual wave wheels; verify included wheelset.",
+  "why_interesting": "An exact official Cyclone 3rd R7120 build now supplies weight, drivetrain, bottom-bracket, tire, size and image evidence for the dated China-market price lead.",
   "missing": [
     "Exact model year/SKU, complete BOM, and exact domestic warranty route",
     "Seller/authenticity and final checkout price"
@@ -19,6 +19,15 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
+  "source_ids": ["twitter-cyclone-r7120-official-2026-08-17"],
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 hydraulic 2×12",
+    "complete_weight_g": 8700,
+    "bottom_bracket": "T47×24",
+    "tires": "Maxxis 700×28",
+    "sizes": "43.5, 46, 48, 50, 52 and 54"
+  },
+  "source_note": "The official global storefront lists this exact build at US$1,589. That foreign price is reference-only; the retained ¥7,769 record is the separate China-market observation.",
   "source_refs": "IMG_6896.png#L2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

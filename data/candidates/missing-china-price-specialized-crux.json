@@ -1,18 +1,26 @@
 {
   "id": "missing-china-price-specialized-crux",
-  "name": "Specialized Crux China price target",
+  "name": "Specialized Crux Comp GRX",
   "model_id": "specialized-crux",
   "category": "gravel-race",
-  "type": "research",
-  "why_interesting": "Important lightweight gravel benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "A current official Crux Comp GRX build provides a lightweight gravel benchmark with 47 mm clearance and a threaded bottom bracket.",
   "missing": [
     "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Exact mainland-China SKU and purchase route",
+    "Mainland stock, checkout outcome and warranty conditions"
   ],
   "status": "missing-china-price",
   "research_priority": "high",
   "price_status": "missing mainland-China RMB observation",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "source_ids": ["specialized-crux-comp-grx-official-2026-08-17"],
+  "facts": {
+    "drivetrain": "Shimano GRX 12-speed",
+    "frame": "FACT 10r carbon",
+    "bottom_bracket": "BSA threaded",
+    "tire_clearance_mm": 47
+  },
+  "source_note": "The exact official build is a global reference. A current mainland CNY price, checkout route and local warranty handling remain unverified.",
+  "last_reviewed": "2026-08-17"
 }

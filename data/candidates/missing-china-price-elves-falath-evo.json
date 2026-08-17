@@ -8,15 +8,25 @@
   "missing": [
     "Dated mainland-China RMB observation",
     "Exact mainland-China purchase route and checkout conditions",
-    "Stable rights-documented exact product image"
+    "Domestic warranty handling and current stock"
   ],
-  "status": "official-spec-price-missing",
+  "status": "official-global-reference",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
+  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
   "required_before_dashboard": "China purchase route, dated RMB price, checkout conditions, and domestic warranty handling",
-  "source_ids": ["elves-falath-evo-official-2026-08-17"],
+  "source_ids": ["elves-falath-evo-official-2026-08-17", "elves-falath-evo-frameset-official-2026-08-17", "usd-cny-central-parity-2026-07-31"],
+  "official_price": {
+    "amount_cny": 7468,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1100,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://elvesbike.com/more.php?id=142&lm=8",
-  "source_note": "Official current product page establishes the exact frame, specification, certification and five-year global frame warranty, but publishes no price and no explicit mainland checkout route.",
+  "source_note": "Official pages establish the frame, specification, certification, five-year global frame warranty and a US$1,100 global-store price. The approximate CNY reference excludes card FX, shipping, tax and duties; EVO/EVO+ suffix usage and mainland checkout still need confirmation.",
   "facts": {
     "frame": "Toray T800+T1000 full carbon, EPS molded",
     "frame_weight_g": 1050,
