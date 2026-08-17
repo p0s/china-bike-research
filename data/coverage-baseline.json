@@ -17342,6 +17342,8 @@
         "target.record_type"
       ],
       "variant-lightcarbon-speedz-complete-frame-weight-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -27971,10 +27973,11 @@
     },
     "variant-lightcarbon-speedz-complete-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"LIGHTCARBON SPEEDZ 整车 车架 重量\",\"signed-in public search through the canonical local capture extension\",\"blocked\",\"2026-08-18\"]",
         "[\"web\",1,\"LightCarbon SPEEDZ frame_weight official exact page\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\"]",
         "[\"web\",2,\"LightCarbon SPEEDZ frame_weight official catalog PDF\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\"]",
         "[\"web\",3,\"LightCarbon SPEEDZ frame_weight authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\"]"
