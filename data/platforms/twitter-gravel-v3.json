@@ -13,7 +13,13 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "standard",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "high-modulus"
+    "claimed_fiber": "high-modulus",
+    "configuration_notes": {
+      "source_id": "twitter-v3-official-2026-08-16",
+      "frame_heights_cm": [45, 48, 51, 54],
+      "net_weight_claim_g": 9900,
+      "bottom_bracket_variants": ["T47 24 mm", "T47 29 mm"]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -29,7 +35,8 @@
   "china_availability": "mainland-domestic",
   "source_ids": [
     "twitter-v3-official",
-    "twitter-company-profile"
+    "twitter-company-profile",
+    "twitter-v3-official-2026-08-16"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-16"
 }

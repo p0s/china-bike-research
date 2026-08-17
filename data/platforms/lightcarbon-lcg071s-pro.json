@@ -13,7 +13,30 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "T700/T800-claimed"
+    "claimed_fiber": "T700/T800-claimed",
+    "warranty_claim": {
+      "duration_years": 2,
+      "basis": "official product page",
+      "note": "Manufacturer direct claim; verify the mainland order route and exact exclusions."
+    },
+    "claimed_frame_weight_g_by_size": {
+      "basis": "manufacturer claim, includes downtube lid, ±40 g",
+      "490": 1110,
+      "520": 1140,
+      "550": 1170,
+      "580": 1200
+    },
+    "geometry": {
+      "basis": "manufacturer geometry table",
+      "source_id": "lightcarbon-lcg071s-official-2026-08-16",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "490", "rider_height": "165–172 cm", "seatpost_insert_mm": 180, "reach_mm": 374.1, "top_tube_mm": 535, "stack_mm": 542.6, "wheelbase_mm": 1008.9, "chainstay_mm": 430, "front_center_mm": 593.8, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 73.5, "head_angle_deg": 71, "seat_tube_mm": 490, "head_tube_mm": 120, "standover_700c_53c_mm": 776.4, "standover_650b_2_1_mm": 766.4, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 69.3 },
+        { "size": "520", "rider_height": "173–179 cm", "seatpost_insert_mm": 220, "reach_mm": 377.5, "top_tube_mm": 550, "stack_mm": 563.4, "wheelbase_mm": 1014.5, "chainstay_mm": 430, "front_center_mm": 599.4, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 73, "head_angle_deg": 71.5, "seat_tube_mm": 520, "head_tube_mm": 140, "standover_700c_53c_mm": 793.4, "standover_650b_2_1_mm": 783.4, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 66.1 },
+        { "size": "550", "rider_height": "180–186 cm", "seatpost_insert_mm": 250, "reach_mm": 386, "top_tube_mm": 575, "stack_mm": 598.6, "wheelbase_mm": 1029.6, "chainstay_mm": 430, "front_center_mm": 614.5, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 72.5, "head_angle_deg": 72, "seat_tube_mm": 550, "head_tube_mm": 175, "standover_700c_53c_mm": 833.4, "standover_650b_2_1_mm": 823.4, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 62.7 },
+        { "size": "580", "rider_height": "187–194 cm", "seatpost_insert_mm": 270, "reach_mm": 397.1, "top_tube_mm": 595, "stack_mm": 627.1, "wheelbase_mm": 1049.8, "chainstay_mm": 430, "front_center_mm": 634.5, "bb_drop_mm": 70, "bb_height_mm": 285, "seat_angle_deg": 72.5, "head_angle_deg": 72, "seat_tube_mm": 580, "head_tube_mm": 205, "standover_700c_53c_mm": 863.9, "standover_650b_2_1_mm": 853.9, "fork_offset_mm": 50, "fork_length_mm": 397, "trail_mm": 62.7 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -31,7 +54,8 @@
   "china_availability": "direct-factory",
   "source_ids": [
     "lightcarbon-lcg071s-official",
-    "lightcarbon-company-official"
+    "lightcarbon-company-official",
+    "lightcarbon-lcg071s-official-2026-08-16"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-16"
 }

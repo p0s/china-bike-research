@@ -13,7 +13,12 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 980
+    "claimed_frame_weight_g": 980,
+    "warranty_claim": {
+      "duration_years": 6,
+      "basis": "official platform guide",
+      "note": "Manufacturer direct/global claim; verify mainland seller and exact SKU terms."
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -29,7 +34,8 @@
   "internal_storage": true,
   "china_availability": "direct-brand",
   "source_ids": [
-    "yoeleo-altera-g21-official"
+    "yoeleo-altera-g21-official",
+    "yoeleo-altera-g21-official-2026-08-16"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-16"
 }

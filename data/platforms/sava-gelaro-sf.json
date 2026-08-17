@@ -13,7 +13,26 @@
     "bottom_bracket": "unknown",
     "derailleur_hanger": "standard",
     "cable_routing": "internal",
-    "claimed_fiber": "T800-claimed"
+    "claimed_fiber": "T800-claimed",
+    "warranty_claim": {
+      "duration_years": 2,
+      "return_days": 14,
+      "basis": "official product page banner",
+      "note": "Global/direct page terms; verify mainland seller, exact SKU, and exclusions."
+    },
+    "geometry": {
+      "basis": "manufacturer geometry table",
+      "source_id": "sava-gelaro-sf6-official-2026-08-16",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "470", "rider_height": "Below 166 cm", "seat_tube_mm": 470, "top_tube_mm": 512.4, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 74, "head_angle_deg": 70.3, "front_center_mm": 582.2, "head_tube_mm": 110, "fork_offset_mm": 50, "reach_mm": 360, "stack_mm": 533.6, "fork_length_mm": 394, "wheelbase_mm": 1000.7, "standover_mm": 769.8 },
+        { "size": "490", "rider_height": "166–174 cm", "seat_tube_mm": 480, "top_tube_mm": 530.1, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 74, "head_angle_deg": 70.3, "front_center_mm": 601.1, "head_tube_mm": 140, "fork_offset_mm": 50, "reach_mm": 369, "stack_mm": 561.8, "fork_length_mm": 394, "wheelbase_mm": 1019.8, "standover_mm": 792.29 },
+        { "size": "510", "rider_height": "172–180 cm", "seat_tube_mm": 510, "top_tube_mm": 557.6, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 73, "head_angle_deg": 70.3, "front_center_mm": 618.1, "head_tube_mm": 160, "fork_offset_mm": 50, "reach_mm": 380, "stack_mm": 580.6, "fork_length_mm": 394, "wheelbase_mm": 1037.6, "standover_mm": 810.6 },
+        { "size": "535", "rider_height": "178–186 cm", "seat_tube_mm": 550, "top_tube_mm": 576.2, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 73, "head_angle_deg": 70.3, "front_center_mm": 638.1, "head_tube_mm": 190, "fork_offset_mm": 50, "reach_mm": 390, "stack_mm": 608.9, "fork_length_mm": 394, "wheelbase_mm": 1057.7, "standover_mm": 837.97 },
+        { "size": "550", "rider_height": "186–192 cm", "seat_tube_mm": 580, "top_tube_mm": 591.9, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 73, "head_angle_deg": 70.3, "front_center_mm": 655.8, "head_tube_mm": 210, "fork_offset_mm": 50, "reach_mm": 400, "stack_mm": 627.7, "fork_length_mm": 394, "wheelbase_mm": 1074.4, "standover_mm": 851.94 },
+        { "size": "580", "rider_height": "Above 190 cm", "seat_tube_mm": 580, "top_tube_mm": 604.8, "bb_drop_mm": 75, "chainstay_mm": 430, "seat_angle_deg": 73, "head_angle_deg": 70.3, "front_center_mm": 664.4, "head_tube_mm": 220, "fork_offset_mm": 50, "reach_mm": 410, "stack_mm": 637.1, "fork_length_mm": 394, "wheelbase_mm": 1087.8, "standover_mm": 869.8 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -27,7 +46,8 @@
   "internal_storage": false,
   "china_availability": "mainland-and-direct",
   "source_ids": [
-    "sava-gelaro-sf6-official"
+    "sava-gelaro-sf6-official",
+    "sava-gelaro-sf6-official-2026-08-16"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-16"
 }
