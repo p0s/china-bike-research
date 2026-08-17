@@ -1,0 +1,56 @@
+{
+  "id": "candidate-sava-a4-identity-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-a4"
+  },
+  "field": "identity",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA A4 exact model/generation community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "萨瓦 A4 入门公路 exact model/generation",
+          "route": "Xiaohongshu public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact public-post URL retained; no account or token recorded.",
+          "result_url": "https://www.xiaohongshu.com/explore/6846a0e8000000000303c7fe"
+        },
+        {
+          "attempt": 3,
+          "query": "SAVA A4 A4 入门公路 2026 exact model/generation review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "public-sava-a4-product-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+}

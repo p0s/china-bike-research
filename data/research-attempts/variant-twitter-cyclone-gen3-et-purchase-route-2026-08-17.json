@@ -1,0 +1,44 @@
+{
+  "id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-cyclone-gen3-et"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Cyclone 3rd ET current purchase route",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Manufacturer page is catalog/contact without visible checkout.",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Cyclone 3rd ET current regional store",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Twitter Bike USA has exact made-to-order listing with add-to-bag and international shipping.",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-et"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-cyclone-gen3-et-usa-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

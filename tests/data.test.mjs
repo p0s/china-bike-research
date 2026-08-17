@@ -6,7 +6,8 @@ import {
   joinProducts,
   joinCatalogCandidates,
   freshness,
-  maxClearance
+  maxClearance,
+  supportsStandardFramesetBuild
 } from '../src/lib/data.mjs';
 
 const data = loadDataset();
@@ -50,19 +51,20 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
   assert.equal(data.platforms.length, 35);
   assert.equal(data.variants.length, 37);
-  assert.equal(data.prices.length, 41);
-  assert.equal(data.images.length, 113);
+  assert.equal(data.prices.length, 43);
+  assert.equal(data.images.length, 123);
   assert.equal(data.videos.length, 12);
-  assert.ok(data.sources.length >= 229);
+  assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 198);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
+  assert.equal(data.researchAttempts.length, 325);
   assert.equal(products.length, data.variants.length);
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 189);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 160);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 161);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
@@ -133,6 +135,15 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(roubaix.price.amount_cny, 15990);
   const quickTr = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   assert.equal(quickTr.price.amount_cny, 21800);
+  assert.equal(quickTr.priceKind, 'observed');
+  const meridaEndurance = catalogCandidates.find((entry) => entry.candidate.id === 'merida-scultura-endurance-4000-community-lead');
+  assert.equal(meridaEndurance.price.price_type, 'official-mainland-list');
+  const canyonGrail = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-canyon-grail');
+  assert.equal(canyonGrail.price.price_type, 'official-conflict');
+  assert.equal(canyonGrail.candidate.source_ids.includes('canyon-grail-cf7-promotional-crawl-2026-08-17'), true);
+  const tsbPioneer = catalogCandidates.find((entry) => entry.candidate.id === 'tsb-titan-super-bond-pioneer-one');
+  assert.equal(tsbPioneer.price.price_type, 'official-mainland-retail');
+  assert.equal(tsbPioneer.candidate.source_ids.includes('titanium-laget-pioneer-one-official'), true);
   const quickXrFrame = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-xr-one-frameset-aelous-gravel');
   assert.equal(quickXrFrame.kind, 'frameset');
   assert.equal(quickXrFrame.price.amount_cny, 10998);
@@ -231,6 +242,7 @@ test('freshness uses explicit age buckets', () => {
 });
 
 test('all framesets use one transparent full-bike build allowance', () => {
+  assert.equal(supportsStandardFramesetBuild('triathlon'), true);
   assert.equal(data.meta.frameset_build_assumption.amount_cny, 6000);
   const frame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
   assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9200, 10900]);
@@ -272,8 +284,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 111);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 78);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 121);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 88);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),

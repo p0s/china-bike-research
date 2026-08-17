@@ -1,0 +1,59 @@
+{
+  "id": "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-van-rysel-rcr"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Van Rysel RCR-F Pro official global price",
+          "route": "official global manufacturer",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Not China.",
+          "result_url": "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505"
+        },
+        {
+          "attempt": 2,
+          "query": "Van Rysel RCR-F Pro China launch price",
+          "route": "China industry/launch report",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Historical/current stock unverified.",
+          "result_url": "https://www.cyclingchina.net/site/html/2025/new_product_0331/9682.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Decathlon China exact SKU price",
+          "route": "official China store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No amount.",
+          "result_url": "https://decathlon.jd.com/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [
+    "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
+    "van-rysel-rcr-f-pro-official-global-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

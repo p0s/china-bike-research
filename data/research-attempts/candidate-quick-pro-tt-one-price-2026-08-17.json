@@ -1,0 +1,59 @@
+{
+  "id": "candidate-quick-pro-tt-one-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-tt-one"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "QUICKPRO TT:ONE China price",
+          "route": "official China manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No amount.",
+          "result_url": "https://www.quick-bikes.com.cn/product/30.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Quick Pro TT:ONE marketplace price",
+          "route": "authorized/current marketplace",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Foreign reference.",
+          "result_url": "https://shop.app/products/7690851975233/tt-one-frame"
+        },
+        {
+          "attempt": 3,
+          "query": "Quick Pro TT:ONE foreign dealer price",
+          "route": "credible/current marketplace",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Foreign reference.",
+          "result_url": "https://www.pandapodium.cc/product/quick-pro-ttone-carbon-time-trial-bike-frameset/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [
+    "round3-tt-one-frame-listing-7c7380f9a6",
+    "round3-quick-pro-tt-one-panda-podium-0b483e3fde"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

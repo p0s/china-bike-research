@@ -7,20 +7,23 @@
   "why_interesting": "A current official Crux Comp GRX build provides a lightweight gravel benchmark with 47 mm clearance and a threaded bottom bracket.",
   "missing": [
     "Dated mainland-China RMB observation",
-    "Exact mainland-China SKU and purchase route",
-    "Mainland stock, checkout outcome and warranty conditions"
+    "Exact mainland stock and checkout outcome",
+    "Resolve conflicting public warranty wording and exact eligibility"
   ],
   "status": "missing-china-price",
   "research_priority": "high",
   "price_status": "missing mainland-China RMB observation",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "source_ids": ["specialized-crux-comp-grx-official-2026-08-17"],
+  "source_ids": [
+    "specialized-crux-comp-grx-official-2026-08-17",
+    "specialized-crux-comp-china-2026-08-17"
+  ],
   "facts": {
     "drivetrain": "Shimano GRX 12-speed",
     "frame": "FACT 10r carbon",
     "bottom_bracket": "BSA threaded",
     "tire_clearance_mm": 47
   },
-  "source_note": "The exact official build is a global reference. A current mainland CNY price, checkout route and local warranty handling remain unverified.",
+  "source_note": "The exact official mainland product route is now established. A reproducible current CNY amount, stock result and unambiguous warranty term remain unverified.",
   "last_reviewed": "2026-08-17"
 }

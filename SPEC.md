@@ -87,6 +87,8 @@ Editorial videos may identify research candidates and add build, ownership, or r
 
 Never infer specifications across generations, sizes, or similarly named models without evidence. Keep expected quality separate from confidence in that estimate. Do not create a universal score or imply that products from different categories serve the same use case.
 
+Research completion is tracked per exact target and missing field. High-priority gaps normally receive up to three distinct public-post attempts and three distinct web/official attempts. Stop early when exact attributable evidence is accepted. Mark a gap temporarily exhausted only after every required channel reaches its attempt limit; record queries, routes, rejection reasons, search date, and a retry date. A temporarily exhausted search remains an unknown, never negative evidence. See `docs/research-stopping-policy.md`.
+
 ## 5. Price rules
 
 - Every price has a date, exact variant, market/channel, type, conditions, and source.

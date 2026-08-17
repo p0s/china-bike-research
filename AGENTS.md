@@ -47,6 +47,13 @@ Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in 
 - Keep generic project copy broad; keep model-specific category descriptions accurate.
 - Keep the design minimalist, responsive, keyboard-accessible, and base-path safe for GitHub Pages.
 
+## Public-post browser research
+
+- Use only the dedicated research Chrome and the local request-capture extension. Keep capture data local, and never expose cookies, tokens, or private request parameters in repository records.
+- Keep one active search or detail tab. Do not fan out concurrent tabs or use the extension's bulk auto-mode for evidence collection.
+- Stop the lane immediately on a verification or HTTP 412 challenge, record the field as blocked, and retry in a later research window. Do not solve or bypass the challenge and do not repeatedly probe it.
+- There is no verified numeric safe delay. A rapid tab fan-out was followed by a challenge, while a slower single-tab retry remained challenged, so use moderate variable pacing without treating it as a guarantee.
+
 ## Validation and handoff
 
 Run:

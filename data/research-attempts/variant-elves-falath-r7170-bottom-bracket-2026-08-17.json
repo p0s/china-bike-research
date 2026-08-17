@@ -1,0 +1,81 @@
+{
+  "id": "variant-elves-falath-r7170-bottom-bracket-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "elves-falath-r7170"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath R7170 build material, standards, clearance and BOM community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "精灵 Falath R7170 material, standards, clearance and BOM",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "ELVES Falath R7170 build Falath R7170 2026 material, standards, clearance and BOM review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath R7170 bottom_bracket official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Official page is Falath EVO, not the published Falath R7170 build.",
+          "result_url": "https://www.elvesbike.com/more.php?id=142"
+        },
+        {
+          "attempt": 2,
+          "query": "ELVES Falath R7170 bottom_bracket official store",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Store page is a Falath EVO frameset; no R7170 mapping.",
+          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved"
+        },
+        {
+          "attempt": 3,
+          "query": "ELVES Falath R7170 bottom_bracket authorized dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact Falath R7170 build source with this field was located."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

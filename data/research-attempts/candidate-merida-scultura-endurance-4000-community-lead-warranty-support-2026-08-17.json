@@ -1,0 +1,40 @@
+{
+  "id": "candidate-merida-scultura-endurance-4000-community-lead-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "merida-scultura-endurance-4000-community-lead"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Merida Scultura Endurance warranty",
+          "route": "official China warranty",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Brand-level public statement.",
+          "result_url": "https://www.merida.cn/zh-tw/p/%E4%BF%9D%E5%9B%BA%E5%A3%B0%E6%98%8E%E8%87%AA%E5%B7%B1%E4%BC%A0%E7%9A%84/%E4%BF%9D%E5%9B%BA%E5%A3%B0%E6%98%8E%E8%87%AA%E5%B7%B1%E4%BC%A0%E7%9A%84"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "merida-warranty-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

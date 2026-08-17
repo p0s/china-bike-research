@@ -1,0 +1,54 @@
+{
+  "id": "candidate-airwolf-current-gravel-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-current-gravel"
+  },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The required external route was inaccessible during this pass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Airwolf current gravel frame price",
+          "route": "official manufacturer/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Sibling SKU evidence only.",
+          "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        },
+        {
+          "attempt": 2,
+          "query": "Airwolf alternate gravel SKU price",
+          "route": "authorized/current marketplace",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "No candidate mapping.",
+          "result_url": "https://www.alibaba.com/product-detail/Wholesale-Price-Airwolf-700C-T1100-Full_1601254735901.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Airwolf model catalog",
+          "route": "credible catalog",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Blocked on missing SKU.",
+          "result_url": "https://bikeinsights.com/brands/airwolf"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: blocked. Unknowns and blocks are not negative evidence."
+}

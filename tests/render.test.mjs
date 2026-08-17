@@ -90,6 +90,9 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17[\s\S]*?38 mm/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
+  assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17/);
+  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥11,700–14,700[\s\S]*?Official price conflict · 2026-08-17/);
+  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-08-17/);
 });
 
 test('local builds use the live repository for public contribution links', () => {
@@ -227,6 +230,7 @@ test('brand names expose an exact, base-safe catalog filter', () => {
 
 test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
+  assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
   assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
@@ -266,6 +270,10 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   }, product);
   assert.match(detail, /marketplace listing classification/);
   assert.match(detail, /Promotion-conditional price/);
+  assert.match(detail, /Specification snapshot/);
+  assert.match(detail, /700C carbon wheelset, 24H/);
+  assert.match(detail, /5 sizes \(440–560\) · stack 509\.3–580\.5 mm · reach 358\.4–390\.3 mm/);
+  assert.match(detail, /Official global-direct checkout at US\$1,699/);
   assert.doesNotMatch(detail, /snapshot-classification|from_image|medium-low|promotion-conditional/);
 });
 

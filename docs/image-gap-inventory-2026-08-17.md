@@ -5,10 +5,10 @@ This is the current full-catalog provenance inventory after the official, author
 ## Snapshot
 
 - 35 published platforms; all 35 have one primary image record.
-- 113 total primary image records: 35 published-platform targets and 78 candidate targets.
-- 111 remote records and 2 project-owned local fallbacks.
-- Subject accuracy: 62 exact-variant, 31 exact-platform, 7 same-model/different-market-build, 11 same-platform, and 2 illustrative.
-- The complete batch added 52 remote images. Exact mainland images were preferred; foreign or sibling-build images carry visible trim/market caveats. Five exact public-post embeds remain remote-only, credited, and explicitly unlicensed for redistribution.
+- 123 total primary image records: 35 published-platform targets and 88 candidate targets.
+- 121 remote records and 2 project-owned local fallbacks.
+- Subject accuracy: 68 exact-variant, 35 exact-platform, 7 same-model/different-market-build, 11 same-platform, and 2 illustrative.
+- The complete batches added 62 remote images. Exact mainland images were preferred; foreign or sibling-build images carry visible trim/market caveats. Five exact public-post embeds remain remote-only, credited, and explicitly unlicensed for redistribution.
 
 ## Published-platform gaps retained
 
@@ -30,15 +30,15 @@ These nine no-dedicated-image candidates have `existing_record_id` and intention
 
 ## Candidates still without a dedicated image
 
-The complete set is 111 records (8 high, 5 medium, and 98 low/unspecified).
+The complete set is 101 records (2 high, 1 medium, and 98 low/unspecified).
 
 ### High priority
 
-`giant-propel-gen4-community-lead`, `lightcarbon-speed7-complete`, `lightcarbon-speed7-frameset`, `quick-pro-tr-one`, `quick-pro-tt-one`, `sava-a4`, `seka-spear-rdc`, `tavelo-arden`
+`lightcarbon-speed7-complete`, `lightcarbon-speed7-frameset`
 
 ### Medium priority
 
-`bigrock-sohtea`, `elves-mori-community-lead`, `incolor-ssr`, `tavelo-arow-sl-community-lead`, `voicevelo-g-major`
+`elves-mori-community-lead`
 
 ### Low, unspecified, or identity-gated
 
@@ -48,4 +48,4 @@ The complete set is 111 records (8 high, 5 medium, and 98 low/unspecified).
 
 No image was promoted solely to increase coverage. Exact-image research remains blocked where an official page timed out, exposed only a dynamic gallery, showed a sibling trim, lacked a stable direct asset, or did not establish generation/market exactness.
 
-The highest-impact unresolved direct-image targets are the eight high-priority candidates listed above. Alias candidates already inherit a published image, while the exact Winspace G3 Pro Di2 complete-bike candidate now has an explicit same-platform official frameset photo. `quick-t10` remains identity-gated because no current official T10 product page or exact image was verified.
+The highest-impact unresolved direct-image targets are the two LightCarbon Speed7 candidates listed above. Alias candidates already inherit a published image, while the exact Winspace G3 Pro Di2 complete-bike candidate has an explicit same-platform official frameset photo. `quick-t10` remains identity-gated because no current official T10 product page or exact image was verified.

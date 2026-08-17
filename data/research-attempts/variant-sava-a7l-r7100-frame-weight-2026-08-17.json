@@ -1,0 +1,55 @@
+{
+  "id": "variant-sava-a7l-r7100-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-a7l-r7100"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA A7L R7100 frame-only weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Current page gives complete-bike estimate and no frame-only weight.",
+          "result_url": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed"
+        },
+        {
+          "attempt": 2,
+          "query": "SAVA A7L R7100 frame weight official regional catalog",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Older official A7L page has placeholder fields and no frame-only measurement.",
+          "result_url": "https://sava-official.com/64-sava-bike-a7l--a7l-pro-carbon-fiber-road-bike-with-shimano-105-r7100-and-hydraulic-brakes.html"
+        },
+        {
+          "attempt": 3,
+          "query": "SAVA A7L R7100 frame weight exact-SKU dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No authorized exact-SKU frame-only measurement located."
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

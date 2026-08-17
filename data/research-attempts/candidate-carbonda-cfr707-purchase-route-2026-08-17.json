@@ -1,0 +1,35 @@
+{
+  "id": "candidate-carbonda-cfr707-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "carbonda-cfr707"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Carbonda CFR707 exact quote route",
+          "route": "official manufacturer",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Page access limited but route/model identity established.",
+          "result_url": "https://carbonda.com/road/cfr-707.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "carbonda-cfr707-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

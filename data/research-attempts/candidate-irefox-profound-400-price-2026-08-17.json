@@ -1,0 +1,53 @@
+{
+  "id": "candidate-irefox-profound-400-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "irefox-profound-400"
+  },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX Profound 400 China launch price",
+          "route": "China product launch",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Historical launch/promo conditions.",
+          "result_url": "https://www.biketo.com/product/51881.html"
+        },
+        {
+          "attempt": 2,
+          "query": "IREFOX current Profound catalog",
+          "route": "official China manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Old-stock/out-of-catalog.",
+          "result_url": "https://irefox.net/cn/"
+        },
+        {
+          "attempt": 3,
+          "query": "IREFOX current JD catalog",
+          "route": "official/current marketplace",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No current exact 400.",
+          "result_url": "https://www.jd.com/jiage/131810d11b5e44e5573b.html"
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [
+    "round3-irefox-profound-launch-review-84f8968e36"
+  ],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

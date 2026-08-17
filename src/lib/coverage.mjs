@@ -11,7 +11,8 @@ export const COVERAGE_COLLECTIONS = [
   'recommendations',
   'candidates',
   'exclusions',
-  'research'
+  'research',
+  'researchAttempts'
 ];
 
 export const IMAGE_ACCURACY_RANKS = {
@@ -45,6 +46,7 @@ const relationshipKeys = new Set([
   'source_id',
   'source_ids',
   'source_snapshot_id',
+  'record_id',
   'variant_id',
   'variant_ids',
   'video_ids'

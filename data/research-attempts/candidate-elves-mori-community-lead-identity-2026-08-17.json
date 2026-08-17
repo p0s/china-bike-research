@@ -1,0 +1,53 @@
+{
+  "id": "candidate-elves-mori-community-lead-identity-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "elves-mori-community-lead"
+  },
+  "field": "identity",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "conflicted",
+      "conflict": "The two public Mori posts do not establish whether this lead is Mori AeroX or another Mori subtrim; do not merge the identity.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Mori gravel frameset (subtrim unconfirmed) exact model/generation community",
+          "route": "YouTube public search",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "精灵 Mori 砾石车架组 exact model/generation",
+          "route": "Xiaohongshu public search",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Exact public-post URL retained; no account or token recorded.",
+          "result_url": "https://www.xiaohongshu.com/explore/6a1f32db00000000370346a7"
+        },
+        {
+          "attempt": 3,
+          "query": "ELVES Mori gravel frameset (subtrim unconfirmed) Mori 砾石车架组 2026 exact model/generation review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "public-elves-mori-family-build-2026-08-17",
+    "public-elves-mori-frame-price-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: conflicted. Unknowns and blocks are not negative evidence."
+}

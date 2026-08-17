@@ -1,0 +1,58 @@
+{
+  "id": "candidate-pardus-spark-rs-community-lead-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-spark-rs-community-lead"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Pardus Spark RS Rival China price",
+          "route": "official China product",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No amount.",
+          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=17548&color=17545&id=39567&pz=17542&t=27444"
+        },
+        {
+          "attempt": 2,
+          "query": "Pardus Spark RS JD price",
+          "route": "official China marketplace",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No amount.",
+          "result_url": "https://pardus.jd.com/"
+        },
+        {
+          "attempt": 3,
+          "query": "Pardus Spark RS foreign price",
+          "route": "credible dealer fallback",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Foreign reference only.",
+          "result_url": "https://www.pro-bike.ru/product/pardus-spark-rs-disc-rival-2023/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [
+    "round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

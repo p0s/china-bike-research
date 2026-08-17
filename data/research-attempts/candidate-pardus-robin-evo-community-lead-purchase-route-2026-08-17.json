@@ -1,0 +1,40 @@
+{
+  "id": "candidate-pardus-robin-evo-community-lead-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-robin-evo-community-lead"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Pardus Robin EVO China purchase route",
+          "route": "official China manufacturer/dealer",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Price/stock require inquiry.",
+          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "pardus-robin-evo-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

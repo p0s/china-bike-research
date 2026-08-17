@@ -1,0 +1,54 @@
+{
+  "id": "candidate-carbonda-cfr707-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "carbonda-cfr707"
+  },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Carbonda CFR707 official price",
+          "route": "official manufacturer/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Quote-only.",
+          "result_url": "https://carbonda.com/road/cfr-707.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Carbonda CFR707 owner quote",
+          "route": "credible exact-model report",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Foreign package quote.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1r78oyq/carbonda_cfr707/"
+        },
+        {
+          "attempt": 3,
+          "query": "Carbonda CFR707 archive quote",
+          "route": "credible exact-model archive",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Reference only.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1g4j7h5/carbonda_cfr707/"
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [
+    "round3-carbonda-cfr707-owner-quote-4064c36fbf",
+    "carbonda-cfr707-official-2026-08-17"
+  ],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

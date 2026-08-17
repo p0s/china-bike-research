@@ -19,7 +19,9 @@
     ]
   },
   "source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "scott-addict-2026-manual-2026-08-17",
+    "scott-addict-rc-40-poland-2026-08-17"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -31,5 +33,10 @@
   "brakes": {
     "actuation": "hydraulic",
     "type": "disc"
-  }
+  },
+  "wheels": { "rim_material": "aluminum", "description": "Syncros RP2.0" },
+  "tires": "Schwalbe One Race-Guard Fold 700×28C",
+  "cockpit": { "material": "aluminum", "integrated": false, "description": "Syncros alloy stem and handlebar" },
+  "claimed_complete_weight_g": 7900,
+  "purchase_route": "SCOTT regional dealer route; current mainland stock and final price remain tied to the dated marketplace record."
 }

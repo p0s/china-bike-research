@@ -247,6 +247,45 @@ function frameStandard(product) {
   return parts.join(' · ') || '—';
 }
 
+function componentDescription(component) {
+  if (!component) return '';
+  if (typeof component === 'string') return component;
+  if (component.description) return component.description;
+  const values = [
+    component.rim_material ? `${sentenceLabel(component.rim_material)} rims` : '',
+    Number.isFinite(component.depth_mm) ? `${component.depth_mm} mm depth` : '',
+    component.dimensions ?? '',
+    component.material ? `${sentenceLabel(component.material)}${component.integrated ? ' integrated' : ''}` : '',
+    component.flare ? 'flared' : ''
+  ].filter(Boolean);
+  return values.join(' · ');
+}
+
+function geometrySummary(platform) {
+  const sizes = platform.frame?.geometry?.sizes;
+  if (!Array.isArray(sizes) || sizes.length === 0) return '';
+  const first = sizes[0];
+  const last = sizes.at(-1);
+  const reach = sizes.map((size) => size.reach_mm).filter(Number.isFinite);
+  const stack = sizes.map((size) => size.stack_mm).filter(Number.isFinite);
+  const parts = [`${sizes.length} sizes (${first.size}–${last.size})`];
+  if (stack.length === sizes.length) parts.push(`stack ${Math.min(...stack)}–${Math.max(...stack)} mm`);
+  if (reach.length === sizes.length) parts.push(`reach ${Math.min(...reach)}–${Math.max(...reach)} mm`);
+  return parts.join(' · ');
+}
+
+function publishedSpecificationRows(product) {
+  const rows = [
+    ['Bottom bracket', product.platform.frame?.bottom_bracket === 'unknown' ? '' : product.platform.frame?.bottom_bracket],
+    ['Wheels', componentDescription(product.variant.wheels)],
+    ['Tires', product.variant.tires],
+    ['Cockpit', componentDescription(product.variant.cockpit)],
+    ['Fit range', geometrySummary(product.platform)],
+    ['Purchase route', product.variant.purchase_route]
+  ];
+  return rows.filter(([, value]) => value);
+}
+
 function frameTooltipLines(product) {
   const { frame } = product.platform;
   const lines = [
@@ -408,9 +447,12 @@ function candidatePriceLabel(ctx, entry) {
 
 function candidatePriceState(entry) {
   if (!entry.price) return '';
-  const basis = entry.price.price_type === 'reference-conversion'
+  const priceType = entry.price.price_type ?? '';
+  const basis = priceType === 'reference-conversion'
     ? 'Official FX estimate'
-    : entry.priceKind === 'official' ? 'Official' : 'Observed';
+    : priceType === 'official-conflict'
+      ? 'Official price conflict'
+      : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
   const framePrice = entry.kind === 'frameset' ? `Frame ${formatPrice(entry.price)}` : '';
   return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
 }
@@ -787,12 +829,14 @@ export function renderModel(ctx, product) {
     ['Category', `${categoryLabel(platform.category)} · ${platform.handlebar}-bar`, ''],
     ['Availability', availabilityLabel(platform.china_availability), '']
   ];
+  const specificationRows = publishedSpecificationRows(product);
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
     <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
+    ${specificationRows.length ? `<section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specification snapshot</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="decision-block"><div><h2>Strengths</h2><ul>${variant.editorial.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h2>Trade-offs and unknowns</h2><ul>${variant.editorial.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></section>
     <section class="detail-section" aria-labelledby="key-details-title"><h2 id="key-details-title">Key details</h2><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(relationshipLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></section>
     ${videoContext(videos)}

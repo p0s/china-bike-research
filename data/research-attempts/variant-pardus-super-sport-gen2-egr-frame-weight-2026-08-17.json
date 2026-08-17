@@ -1,0 +1,56 @@
+{
+  "id": "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "pardus-super-sport-gen2-egr"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS SUPG2 SPORT 2026 EGR frame weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Official dealer locator provides no frame-only weight.",
+          "result_url": "https://parduscycle.com/find.aspx"
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS SUPG2 SPORT EGR frame weight catalog",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Older official page is Gen1 and does not document Gen2 EGR frame-only weight.",
+          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5176&color=5183&id=21398&pz=5175&t=1030"
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS SUPG2 SPORT EGR frame weight exact SKU",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Exact retailer provides complete-bike estimate only.",
+          "result_url": "https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

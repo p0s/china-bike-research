@@ -1,0 +1,54 @@
+{
+  "id": "candidate-lightcarbon-speed7-complete-bom-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-speed7-complete"
+  },
+  "field": "bom",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon Speed7 105 mechanical complete bike material, standards, clearance and BOM community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon 速7 105整车 material, standards, clearance and BOM",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon Speed7 105 mechanical complete bike 速7 105整车 2026 material, standards, clearance and BOM review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

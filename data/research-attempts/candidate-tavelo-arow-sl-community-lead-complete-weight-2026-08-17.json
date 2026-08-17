@@ -1,0 +1,51 @@
+{
+  "id": "candidate-tavelo-arow-sl-community-lead-complete-weight-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arow-sl-community-lead"
+  },
+  "field": "complete-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arow SL custom build complete-build weight community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "踏为乐 Arow SL 6.2kg complete-build weight",
+          "route": "Xiaohongshu public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact public-post URL retained; no account or token recorded.",
+          "result_url": "https://www.xiaohongshu.com/explore/6a6c772b000000002c0018af"
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo Arow SL custom build Arow SL 6.2kg 2026 complete-build weight review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "public-tavelo-arow-sl-build-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+}

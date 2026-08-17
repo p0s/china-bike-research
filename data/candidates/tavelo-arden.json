@@ -2,17 +2,38 @@
   "id": "tavelo-arden",
   "name": "Tavelo ARDEN",
   "category": "road-aero",
-  "type": "research",
-  "why_interesting": "An exact-model owner post confirms the ARDEN name and Bubble Silver colorway.",
+  "type": "frameset",
+  "why_interesting": "A light all-road race frameset with UDH, threaded BSA and unusually broad 34 mm dual-ring or 38 mm single-ring clearance.",
   "missing": [
-    "Official exact-model product page and generation",
-    "Frame, geometry, weight and component specification",
-    "Current frameset or complete-bike price and mainland purchase route"
+    "Current mainland frameset price, stock and purchase route",
+    "Numeric geometry and exact size-to-weight mapping",
+    "Mainland warranty and service handling"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
-    "public-tavelo-arden-owner-2026-08-17"
+    "public-tavelo-arden-owner-2026-08-17",
+    "tavelo-arden-official-2026-08-17",
+    "tavelo-arden-china-launch-2026-08-17",
+    "tavelo-warranty-official-2026-08-17"
   ],
+  "facts": {
+    "frame": "Toray Race carbon; UDH; 12×100 / 12×142 mm thru axles",
+    "frame_weight_g": 780,
+    "bottom_bracket": "BSA 68 threaded",
+    "tire_clearance_mm": 38,
+    "sizes": "Official frame-weight basis is size L",
+    "cockpit": "Frameset listing includes fork and seatpost; cockpit configuration varies"
+  },
+  "observed_price": {
+    "low_cny": 9999,
+    "high_cny": 12999,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_basis": "domestic launch report range for ARDEN Race and SL framesets without cockpit"
+  },
+  "price_status": "launch-report branch range; exact Race versus SL package must be selected",
+  "support_note": "Official policy states lifetime frameset coverage for the original purchaser through official or authorized channels; serial and receipt are required, and paint/decals are covered for one year.",
+  "source_note": "Official weights are 780±25 g frame, 355 g fork and 115 g seatpost, excluding paint and accessories. The 38 mm maximum requires 1×; 2× is limited to 34 mm. The ¥9,999–12,999 range spans Race and SL launch packages without cockpit, so it is not one interchangeable SKU.",
   "last_reviewed": "2026-08-17"
 }

@@ -16,3 +16,24 @@ test('gap report ranks actionable published and candidate records without mutati
     assert.ok(report.records[index - 1].priority_score >= report.records[index].priority_score);
   }
 });
+
+test('gap report exposes the latest atomic research status without hiding the gap', () => {
+  const data = structuredClone(loadDataset());
+  data.researchAttempts = [{
+    id: 'lightcarbon-speedz-complete-geometry-2026-08-17',
+    target: { record_type: 'variant', record_id: 'lightcarbon-speedz-complete' },
+    field: 'geometry',
+    priority: 'high',
+    searched_at: '2026-08-17',
+    required_channels: ['web'],
+    channels: { web: { status: 'temporarily-exhausted', attempts: [] } },
+    status: 'temporarily-exhausted',
+    retry_after: '2026-11-17',
+    notes: 'Fixture for gap report state.'
+  }];
+  const report = buildGapReport(data, '2026-08-17');
+  const record = report.records.find((item) => item.id === 'lightcarbon-speedz-complete');
+  const gap = record.gaps.find((item) => item.code === 'geometry-missing');
+  assert.equal(gap.research.status, 'temporarily-exhausted');
+  assert.equal(report.research_status_counts['temporarily-exhausted'], 1);
+});

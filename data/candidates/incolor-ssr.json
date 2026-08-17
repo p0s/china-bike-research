@@ -4,16 +4,32 @@
   "model_id": "incolor-ssr",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Distinctive aero-road frameset with a detailed, exact-model walkaround.",
+  "why_interesting": "An electronic-only aero frameset with an integrated seat mast, broad seven-size range and up to 36 mm clearance in a 1× build.",
   "missing": [
-    "Exact current primary-source specification and generation",
     "Dated mainland-China RMB observation and purchase route",
-    "Warranty terms and evidence for decision-relevant claims"
+    "Manufacturer confirmation of generation and warranty",
+    "Independent frame-weight, rider-limit and quality-control evidence"
   ],
   "status": "research-lead",
   "research_priority": "medium",
   "video_ids": [
     "china-cycling-incolor-ssr"
   ],
-  "last_reviewed": "2026-08-09"
+  "source_ids": [
+    "incolor-ssr-panda-podium-2026-08-17",
+    "incolor-services-official-2026-08-17",
+    "incolor-ssr-price-pdf-lead-2026-08-17"
+  ],
+  "facts": {
+    "frame": "80T/T1100-claimed carbon with integrated seat mast; electronic shifting only",
+    "frame_weight_g": 750,
+    "bottom_bracket": "Asymmetric T47, 76.75 mm shell",
+    "tire_clearance_mm": 36,
+    "sizes": "45, 48, 51, 54, 56, 58 and 60",
+    "cockpit": "Fully internal routing; integrated-seat-mast configuration"
+  },
+  "price_status": "discovery-only official PDF lead; not displayed as a current catalog price",
+  "support_note": "The official mainland route is the Taobao flagship or dealer locator. InColor states lifetime carbon frame/fork coverage, five years for listed carbon components and two years for metal components, subject to purchase and normal-use conditions.",
+  "source_note": "The 750 g claim is for an unpainted size-54 frame with the integrated seat mast. A 2× build is limited to 32C; 36C applies to 1×. An official PDF lead showed ¥29,800 standard and ¥23,800 custom-geometry packages, but the PDF timed out, so neither is promoted as current.",
+  "last_reviewed": "2026-08-17"
 }

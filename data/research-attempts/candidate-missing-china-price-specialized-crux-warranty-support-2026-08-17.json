@@ -1,0 +1,61 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "China warranty/FAQ describe registered lifetime frame/fork coverage, while China terms describe up to one year; require invoice/registration confirmation.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized China warranty page",
+          "route": "official China warranty",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Registration/retailer conditions.",
+          "result_url": "https://www.specialized.com.cn/cn/en/warranty"
+        },
+        {
+          "attempt": 2,
+          "query": "Specialized China terms",
+          "route": "official China terms",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Preserve conflict.",
+          "result_url": "https://www.specialized.com.cn/cn/en/terms-and-conditions"
+        },
+        {
+          "attempt": 3,
+          "query": "Specialized China FAQ",
+          "route": "official China FAQ",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Conditions matter.",
+          "result_url": "https://www.specialized.com.cn/cn/zh/stories/faq"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "round3-specialized-china-warranty-8f335b54cd",
+    "round3-specialized-china-terms-78ff9e5eba",
+    "round3-specialized-china-faq-63941cf802"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: conflicted. Unknowns and blocks are not negative evidence."
+}

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateResearchAttempts } from './research-attempts.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -56,7 +57,7 @@ export function evidenceLabel(value) {
 }
 
 export function supportsStandardFramesetBuild(category) {
-  return ['road', 'gravel'].includes(categoryFamily(category));
+  return ['road', 'gravel', 'triathlon'].includes(categoryFamily(category));
 }
 
 function categoryDetailLines(platform) {
@@ -184,7 +185,8 @@ export function loadDataset() {
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
-    research: loadDirectory('research')
+    research: loadDirectory('research'),
+    researchAttempts: loadDirectory('research-attempts')
   };
   return cache;
 }
@@ -229,7 +231,8 @@ export function validateDataset(data = loadDataset()) {
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
-    research: data.research
+    research: data.research,
+    researchAttempt: data.researchAttempts
   })) unique(kind, records);
 
   const buildAssumption = data.meta?.frameset_build_assumption;
@@ -254,6 +257,8 @@ export function validateDataset(data = loadDataset()) {
   const isUnresolvedExactField = (value) => typeof value !== 'string'
     || !value.trim()
     || /\b(?:unknown|varies|variable|unspecified|not recorded)\b/i.test(value);
+
+  errors.push(...validateResearchAttempts(data.researchAttempts, data));
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);

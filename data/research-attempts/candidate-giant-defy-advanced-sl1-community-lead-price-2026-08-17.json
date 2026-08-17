@@ -1,0 +1,56 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant China Defy Advanced SL 1 price",
+          "route": "official China product",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Wrong trim.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1790"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant China finder Defy Advanced SL 1",
+          "route": "official China catalog",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact candidate.",
+          "result_url": "https://giant.com.cn/index.php/index/bike_finder.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Giant China dealer route Defy SL 1",
+          "route": "official dealer/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Route only.",
+          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

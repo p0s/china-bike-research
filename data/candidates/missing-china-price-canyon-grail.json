@@ -6,19 +6,31 @@
   "type": "complete-bike",
   "why_interesting": "Exact official global gravel build and imagery; mainland purchase, price and warranty remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation and purchase route",
-    "Exact mainland SKU, stock, duties/returns and warranty handling"
+    "Resolve the current ¥14,700 page versus non-reproduced ¥11,700 promotion",
+    "Exact size stock and final landed checkout total"
   ],
   "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "price_status": "official mainland price conflict; verify live size-specific checkout",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "canyon-grail-cf-7-official-2026-08-17"
+    "canyon-grail-cf-7-official-2026-08-17",
+    "canyon-grail-cf7-china-2026-08-17",
+    "canyon-grail-cf7-promotional-crawl-2026-08-17",
+    "canyon-china-warranty-2026-08-17"
   ],
+  "observed_price": {
+    "low_cny": 11700,
+    "high_cny": 14700,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_type": "official-conflict",
+    "price_basis": "official China page and an official promotional crawl that could not be reproduced on page open"
+  },
   "source_url": "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html",
-  "source_note": "Official France product page supports the exact Grail CF 7 identity and gallery. It is not a mainland-China price or purchase source.",
+  "support_note": "Canyon China states a two-year quality warranty, a six-year guarantee for Canyon-designed frame, fork, handlebar and seatpost parts, and a 30-day return route, subject to eligibility.",
+  "source_note": "The opened exact mainland page showed ¥14,700 with size selection and order flow; an official crawl separately showed a ¥11,700 promotion. Both are preserved until live checkout resolves the promotion and stock conditions.",
   "facts": {
     "frame": "Canyon Grail CF carbon complete-bike platform"
   }

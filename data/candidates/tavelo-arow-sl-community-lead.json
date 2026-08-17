@@ -3,16 +3,28 @@
   "name": "Tavelo Arow SL custom build",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "An exact-model title reports a 6.2 kg Arow SL build, which must remain separate from other Arow generations and trims.",
+  "why_interesting": "A 710 g-class aero frameset with T1100-claimed carbon, BB86 and 32 mm clearance, plus a separately reported 6.2 kg custom build.",
   "missing": [
-    "Official exact-model page, frame and complete component list",
     "Measured weight evidence and factory claimed weight",
-    "Current frame or complete-bike price and mainland purchase route"
+    "Current mainland frame or complete-bike price and purchase route",
+    "Exact component list and repeatability of the reported custom-build weight"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "medium",
-  "source_ids": ["public-tavelo-arow-sl-build-2026-08-17"],
-  "facts": { "complete_weight_g": 6200 },
-  "source_note": "The 6.2 kg figure is an attributed custom-build claim without a reliable visible component list.",
+  "source_ids": [
+    "public-tavelo-arow-sl-build-2026-08-17",
+    "tavelo-arow-sl-official-2026-08-17",
+    "tavelo-warranty-official-2026-08-17"
+  ],
+  "facts": {
+    "complete_weight_g": 6200,
+    "frame": "T1100-claimed frame; T800-claimed fork and seatpost; official raw frame starts at 710 g",
+    "bottom_bracket": "BB86",
+    "tire_clearance_mm": 32,
+    "cockpit": "AVRO Gen-1 integrated aero handlebar",
+    "sizes": "Official starting frame-weight basis is XS"
+  },
+  "support_note": "The official page provides a direct global route. Tavelo's policy states lifetime frameset coverage for the original purchaser through official or authorized channels; mainland handling and custom-build components require confirmation.",
+  "source_note": "The official page verifies the frameset facts only. The 6.2 kg figure remains a public-post claim for one custom build without a complete parts list, price or independent scale evidence.",
   "last_reviewed": "2026-08-17"
 }

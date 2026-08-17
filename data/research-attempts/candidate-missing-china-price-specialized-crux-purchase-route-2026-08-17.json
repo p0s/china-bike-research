@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized China Crux Comp exact route",
+          "route": "official China product/store",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Inventory/price not rendered.",
+          "result_url": "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "specialized-crux-comp-china-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

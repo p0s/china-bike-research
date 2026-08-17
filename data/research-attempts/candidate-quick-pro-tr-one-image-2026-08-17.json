@@ -1,0 +1,67 @@
+{
+  "id": "candidate-quick-pro-tr-one-image-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-tr-one"
+  },
+  "field": "image",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro TR:ONE image community",
+          "route": "YouTube public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "found",
+          "result_url": "https://www.youtube.com/watch?v=iU_CBldBUmo"
+        },
+        {
+          "attempt": 2,
+          "query": "快客 TR:ONE 铁三 image",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Quick Pro TR:ONE TR:ONE 铁三 2026 image review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:quickprousa.com/products/tr-one-pre-order TR:ONE FRAME image",
+          "route": "official Quick Pro USA exact-model product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "The page is explicitly titled TR:ONE FRAME and its Aurora Blue CDN asset loads as the exact model.",
+          "result_url": "https://www.quickprousa.com/cdn/shop/files/TRONE_AuroraBlue.png?crop=center&height=2048&v=1781728357&width=2048"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "round3-quick-pro-tr-one-first-look-3faf45308b",
+    "quick-pro-tr-one-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+}

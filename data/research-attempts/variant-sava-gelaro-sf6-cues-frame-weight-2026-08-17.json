@@ -1,0 +1,49 @@
+{
+  "id": "variant-sava-gelaro-sf6-cues-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-sf6-cues"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro SF6 CUES frame-only weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Official page provides a complete-bike estimate for U6000 only, not frame-only.",
+          "result_url": "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike"
+        },
+        {
+          "attempt": 2,
+          "query": "SAVA Gelaro SF6 CUES frame weight official catalog",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No frame-only measurement found."
+        },
+        {
+          "attempt": 3,
+          "query": "SAVA Gelaro SF6 CUES frame weight exact-SKU dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact option-specific frame weight located."
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

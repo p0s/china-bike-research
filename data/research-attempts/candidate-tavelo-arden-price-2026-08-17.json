@@ -1,0 +1,60 @@
+{
+  "id": "candidate-tavelo-arden-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "China launch report gives RACE/SL domestic frameset prices excluding cockpit; official global price is foreign and current China package/stock remains unresolved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo ARDEN China domestic frameset price",
+          "route": "China industry launch",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Official detailed sales information was pending; package branch matters.",
+          "result_url": "https://www.cyclingchina.net/site/html/2026/industry_0510/10451.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Tavelo Arden official global price",
+          "route": "official manufacturer",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-17",
+          "note": "Not mainland price.",
+          "result_url": "https://www.tavelo.cc/products/tavelo-arden-race-frameset"
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo China contact/current list",
+          "route": "official manufacturer contact",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Conflict unresolved.",
+          "result_url": "https://tavelo.cc/pages/contact-us"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "tavelo-arden-china-launch-2026-08-17",
+    "tavelo-arden-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: conflicted. Unknowns and blocks are not negative evidence."
+}
