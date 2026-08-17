@@ -1,18 +1,48 @@
 {
   "id": "missing-china-price-x-lab-xds-gt8",
-  "name": "X-LAB / XDS GT8 China price target",
+  "name": "X-LAB GT8 GRX Di2",
   "model_id": "x-lab-xds-gt8",
   "category": "gravel",
-  "type": "research",
-  "why_interesting": "High-value premium Chinese complete with wide clearance and carbon wheels.",
+  "type": "complete-bike",
+  "why_interesting": "A current 8.78 kg claimed gravel complete with GRX Di2, a dual-sided power meter, carbon wheels, storage and 55 mm clearance.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Exact domestic configuration, stock, warranty and service route"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and domestic configuration/warranty evidence",
+  "source_ids": [
+    "xlab-gt8-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "official_price": {
+    "amount_cny": 21700,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 3199,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://xds.co/en-intl/products/gt8",
+  "source_note": "Official international price US$3,199. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes actual FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "facts": {
+    "drivetrain": "Shimano GRX RX717 Di2 1×12",
+    "complete_weight_g": 8780,
+    "frame": "Toray T800 carbon, UDH compatible",
+    "bottom_bracket": "T47 24 mm",
+    "tire_clearance_mm": 55,
+    "wheels": "Branta C45 Gravel carbon",
+    "cockpit": "Branta carbon stem and gravel carbon handlebar",
+    "storage": "Integrated downtube storage",
+    "mounts": "Top tube, downtube and both fork legs",
+    "brakes": "Shimano GRX BR-RX715 hydraulic",
+    "tires": "Continental Terra Trail 700×45C",
+    "sizes": "XS, S, M, L, XL and XXL"
+  },
+  "support_note": "Official page states a 110 kg rider-plus-cargo limit, local-bike-shop general service, dealer support for warranty/customization, 1× and 2× drivetrain compatibility, 27.2 mm dropper compatibility, and tubeless-ready wheels/tires.",
+  "last_reviewed": "2026-08-17"
 }

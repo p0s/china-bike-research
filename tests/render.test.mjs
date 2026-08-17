@@ -36,17 +36,28 @@ test('homepage omits developer-facing dashboards and legacy sections', () => {
 
 test('candidate leads share the catalog without a separate research queue', () => {
   assert.match(html, /PARDUS 瑞豹 Spark Sport PES/);
-  assert.match(html, /Winspace SLC3 China price target/);
+  assert.match(html, /Winspace SLC3\.0 frameset/);
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+alt="XDS GT350 gravel bike shown from the drive side"[^>]+referrerpolicy="no-referrer"/);
   assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
-  assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/66f3eba6000000001a021f4e" rel="noreferrer"/);
+  assert.match(html, /href="https:\/\/www\.winspace\.cc\/products\/slc3-frameset" rel="noreferrer"/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
   assert.doesNotMatch(html, /Research queue/);
   assert.doesNotMatch(html, /Needs:/);
   assert.doesNotMatch(html, /data-id="pardus-spark-sport-pes"/);
   assert.doesNotMatch(html, /data-id="winspace-slc3"/);
+});
+
+test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
+  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33900"[^>]*data-price-filter="33900"/);
+  assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,900[\s\S]*?Official FX estimate · 2026-08-17[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
+  assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-capability-sort="50"/);
+  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<span class="metric-main">50 mm<\/span>/);
+  assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21700"[^>]*data-capability-sort="55"/);
+  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?Est\. ¥21,700[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
+  assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
+  assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Frame ¥9,800 · Official FX estimate/);
 });
 
 test('local builds use the live repository for public contribution links', () => {

@@ -1,10 +1,10 @@
 {
-  "id": "missing-china-price-quick-pro-xr-one",
-  "name": "Quick Pro XR:ONE GRX Di2 1×12",
-  "model_id": "quick-pro-xr-one",
-  "category": "gravel-adventure",
+  "id": "quick-pro-gr-one-grx-di2",
+  "name": "Quick Pro GR:ONE GRX Di2 1×12",
+  "model_id": "quick-pro-gr-one",
+  "category": "gravel-race",
   "type": "complete-bike",
-  "why_interesting": "A 50 mm-clearance adventure build with in-frame storage, extensive mounts, GRX Di2 and an official global list price.",
+  "why_interesting": "A race-oriented 45 mm-clearance GRX Di2 complete build with an official global price, complementing the published GR:ONE frameset.",
   "missing": [
     "Dated mainland-China RMB checkout observation and purchase route",
     "Mainland delivery, duties, returns, and warranty-handling confirmation",
@@ -14,36 +14,31 @@
   "research_priority": "high",
   "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and local warranty evidence",
-  "video_ids": [
-    "china-cycling-quick-pro-xr-one"
-  ],
   "source_ids": [
-    "quick-pro-xr-one-grx-di2-official-2026-08-17",
+    "quick-pro-gr-one-grx-di2-official-2026-08-17",
     "quick-pro-global-support-2026-08-17",
     "usd-cny-central-parity-2026-07-31"
   ],
   "official_price": {
-    "amount_cny": 29900,
+    "amount_cny": 32600,
     "currency": "CNY",
     "price_type": "reference-conversion",
     "observed_at": "2026-08-17",
-    "original_amount": 4399,
+    "original_amount": 4799,
     "original_currency": "USD",
     "conversion_rate_cny_per_original_unit": 6.7894,
     "conversion_rate_date": "2026-07-31"
   },
-  "source_url": "https://www.quickprousa.com/products/xr-one-shimano",
-  "source_note": "Official global-store price US$4,399. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "source_url": "https://www.quickprousa.com/products/gr-one-shimano",
+  "source_note": "Official global-store price US$4,799. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
     "frame": "High-modulus monocoque carbon",
-    "frame_weight_g": 839,
-    "bottom_bracket": "T47-85.5 threaded",
-    "tire_clearance_mm": 50,
-    "wheels": "RORE Terra 32 Adventure",
-    "cockpit": "CANWIN AELOUS SSL integrated cockpit",
-    "storage": "Integrated in-frame toolbox",
-    "mounts": "Up to 26 mounting points"
+    "frame_weight_g": 919,
+    "bottom_bracket": "T47-68 threaded",
+    "tire_clearance_mm": 45,
+    "wheels": "RORE Terra 45 Race",
+    "cockpit": "CANWIN AELOUS integrated cockpit"
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
   "last_reviewed": "2026-08-17"

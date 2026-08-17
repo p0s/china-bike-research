@@ -3,17 +3,44 @@
   "name": "Quick Pro ER:ONE",
   "model_id": "quick-pro-er-one",
   "category": "road-aero",
-  "type": "frameset",
-  "why_interesting": "Named aero-road platform with a model-specific walkaround and ride discussion.",
+  "type": "complete-bike",
+  "why_interesting": "A 7.1 kg claimed complete aero-road build with Ultegra Di2 and an official global list price.",
   "missing": [
-    "Exact current primary-source specification and generation",
-    "Dated mainland-China RMB observation and purchase route",
-    "Warranty terms and evidence for decision-relevant claims"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Mainland delivery, duties, returns, and warranty-handling confirmation"
   ],
-  "status": "research-lead",
+  "status": "official-global-complete-bike",
   "research_priority": "high",
   "video_ids": [
     "china-cycling-quick-pro-er-one"
   ],
-  "last_reviewed": "2026-08-09"
+  "source_ids": [
+    "quick-pro-er-one-ultegra-official-2026-08-17",
+    "quick-pro-global-support-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "official_price": {
+    "amount_cny": 33900,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 4999,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://www.quickprousa.com/products/er-one-ultegra",
+  "source_note": "Official global-store price US$4,999. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "facts": {
+    "drivetrain": "Shimano Ultegra R8170 Di2 2×12",
+    "complete_weight_g": 7100,
+    "frame": "T1100/M65 monocoque carbon",
+    "frame_weight_g": 840,
+    "bottom_bracket": "T47-68 threaded",
+    "tire_clearance_mm": 32,
+    "cockpit": "Integrated carbon cockpit",
+    "wheels": "Selectable RORE wheel configuration"
+  },
+  "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
+  "last_reviewed": "2026-08-17"
 }

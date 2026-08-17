@@ -341,6 +341,42 @@ export function validateDataset(data = loadDataset()) {
     if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
     if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
     for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);
+    if (candidate.facts !== undefined) {
+      if (!isObject(candidate.facts)) {
+        errors.push(`candidate ${candidate.id}: facts must be an object`);
+      } else {
+        for (const key of ['drivetrain', 'brakes', 'frame', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
+          if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'string' || !candidate.facts[key].trim())) {
+            errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
+          }
+        }
+        for (const key of ['complete_weight_g', 'frame_weight_g', 'tire_clearance_mm']) {
+          if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'number' || candidate.facts[key] <= 0)) {
+            errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
+          }
+        }
+      }
+    }
+    for (const [priceKey, candidatePrice] of [['observed_price', candidate.observed_price], ['official_price', candidate.official_price]]) {
+      if (candidatePrice === undefined) continue;
+      if (!isObject(candidatePrice)) {
+        errors.push(`candidate ${candidate.id}: ${priceKey} must be an object`);
+        continue;
+      }
+      if (candidatePrice.currency !== 'CNY') errors.push(`candidate ${candidate.id}: ${priceKey} currency must be CNY`);
+      if (!isDate(candidatePrice.observed_at)) errors.push(`candidate ${candidate.id}: ${priceKey} needs a valid observed_at`);
+      if (candidatePrice.amount_cny === undefined && candidatePrice.low_cny === undefined) errors.push(`candidate ${candidate.id}: ${priceKey} needs amount_cny or low_cny`);
+      for (const key of ['amount_cny', 'low_cny', 'high_cny']) {
+        if (candidatePrice[key] !== undefined && (typeof candidatePrice[key] !== 'number' || candidatePrice[key] <= 0)) errors.push(`candidate ${candidate.id}: invalid ${priceKey}.${key}`);
+      }
+      if (candidatePrice.price_type === 'reference-conversion') {
+        if (priceKey !== 'official_price') errors.push(`candidate ${candidate.id}: reference conversion must use official_price`);
+        if (typeof candidatePrice.original_amount !== 'number' || candidatePrice.original_amount <= 0) errors.push(`candidate ${candidate.id}: reference conversion needs original_amount`);
+        if (typeof candidatePrice.original_currency !== 'string' || !candidatePrice.original_currency.trim() || candidatePrice.original_currency === 'CNY') errors.push(`candidate ${candidate.id}: reference conversion needs a foreign original_currency`);
+        if (typeof candidatePrice.conversion_rate_cny_per_original_unit !== 'number' || candidatePrice.conversion_rate_cny_per_original_unit <= 0) errors.push(`candidate ${candidate.id}: reference conversion needs a positive rate`);
+        if (!isDate(candidatePrice.conversion_rate_date)) errors.push(`candidate ${candidate.id}: reference conversion needs conversion_rate_date`);
+      }
+    }
     for (const videoId of candidate.video_ids ?? []) {
       const video = data.videos.find((item) => item.id === videoId);
       if (!videoIds.has(videoId)) errors.push(`candidate ${candidate.id}: missing video ${videoId}`);

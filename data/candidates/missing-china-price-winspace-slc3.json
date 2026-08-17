@@ -1,23 +1,40 @@
 {
   "id": "missing-china-price-winspace-slc3",
-  "name": "Winspace SLC3 China price target",
+  "name": "Winspace SLC3.0 frameset",
   "model_id": "winspace-slc3",
   "category": "road-climbing",
-  "type": "research",
-  "why_interesting": "Important lightweight Chinese road platform. Two public XHS posts identify SLC3 ownership and review leads, including one after more than 200 km; they do not establish a current SKU, price, or warranty.",
+  "type": "frameset",
+  "why_interesting": "Important current lightweight Chinese road frameset with a 699 g claimed frame and a dated official direct sale price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions",
-    "Independent exact-generation corroboration before using community ride or finish impressions"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Exact domestic warranty handling and final landed cost"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
+  "price_status": "official global USD sale price with dated CNY reference conversion; mainland checkout unverified",
+  "required_before_dashboard": "Mainland-China purchase route, dated checkout price, landed cost, and domestic warranty handling",
   "source_ids": [
+    "winspace-slc3-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31",
     "xhs-winspace-slc3-200km-2026-08-10",
     "xhs-winspace-slc3-review-lead-2026-08-10"
   ],
-  "last_reviewed": "2026-08-10"
+  "official_price": {
+    "amount_cny": 9800,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1450,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://www.winspace.cc/products/slc3-frameset",
+  "source_note": "Official page showed a US$1,450 sale price from US$1,780. CNY reference excludes actual FX, shipping, tax and duties; the catalog adds the adjustable standard build allowance for the displayed full-bike estimate.",
+  "facts": {
+    "frame": "Ultralight carbon road frameset",
+    "frame_weight_g": 699,
+    "sizes": "460, 480, 500, 530 and 550 mm"
+  },
+  "last_reviewed": "2026-08-17"
 }

@@ -51,7 +51,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 35);
   assert.equal(data.variants.length, 37);
   assert.equal(data.prices.length, 38);
-  assert.equal(data.images.length, 50);
+  assert.equal(data.images.length, 61);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 87);
   assert.equal(data.candidates.length, 177);
@@ -62,7 +62,7 @@ test('public dataset has the expected coverage', () => {
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 167);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 135);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 136);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
@@ -87,6 +87,25 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.deepEqual(basso.brand, { id: 'candidate-brand-basso', name: 'BASSO' });
   const vanRysel = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-van-rysel-rcr');
   assert.deepEqual(vanRysel.brand, { id: 'candidate-brand-van-rysel', name: 'Van Rysel' });
+  const quickEr = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-er-one');
+  assert.equal(quickEr.kind, 'complete-bike');
+  assert.equal(quickEr.price.amount_cny, 33900);
+  assert.equal(quickEr.price.price_type, 'reference-conversion');
+  assert.equal(quickEr.candidate.facts.drivetrain, 'Shimano Ultegra R8170 Di2 2×12');
+  assert.equal(quickEr.candidate.facts.complete_weight_g, 7100);
+  assert.equal(quickEr.image.subject_accuracy, 'exact-variant');
+  assert.match(quickEr.image.hosting.remote_url, /ERONE___SHIMANO_UT_DI2/);
+  const gt8 = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-x-lab-xds-gt8');
+  assert.equal(gt8.price.amount_cny, 21700);
+  assert.equal(gt8.candidate.facts.complete_weight_g, 8780);
+  assert.equal(gt8.image.subject_accuracy, 'exact-variant');
+  const trek = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-trek-madone-gen-8');
+  assert.equal(trek.price.amount_cny, 21800);
+  assert.equal(trek.image.subject_accuracy, 'exact-variant');
+  const specialized = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-specialized-tarmac-sl8');
+  assert.equal(specialized.price.amount_cny, 30990);
+  assert.equal(specialized.image.subject_accuracy, 'exact-variant');
+  assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'xlab-gt8'), false);
   assert.ok(catalogCandidates.every((entry) => entry.brand?.id && entry.brand?.name));
   const brandLabels = new Map();
   for (const entry of catalogCandidates) {
@@ -95,6 +114,16 @@ test('candidate catalog keeps the focused view useful without losing discovery',
     brandLabels.set(entry.brand.id, labels);
   }
   assert.ok([...brandLabels.values()].every((labels) => labels.size === 1));
+});
+
+test('candidate facts and foreign-price reference estimates reject malformed evidence', () => {
+  const invalidFacts = structuredClone(data);
+  invalidFacts.candidates.find((item) => item.id === 'quick-pro-er-one').facts.complete_weight_g = -1;
+  assert.ok(validateDataset(invalidFacts).some((error) => error.includes('invalid facts.complete_weight_g')));
+
+  const invalidRate = structuredClone(data);
+  invalidRate.candidates.find((item) => item.id === 'quick-pro-er-one').official_price.conversion_rate_date = 'today';
+  assert.ok(validateDataset(invalidRate).some((error) => error.includes('reference conversion needs conversion_rate_date')));
 });
 
 test('frame platforms and configurations remain separate', () => {
@@ -194,8 +223,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 48);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 15);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 59);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 26);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),

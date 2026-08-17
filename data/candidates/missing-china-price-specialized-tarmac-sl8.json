@@ -1,18 +1,41 @@
 {
   "id": "missing-china-price-specialized-tarmac-sl8",
-  "name": "Specialized Tarmac SL8 China price target",
-  "model_id": "specialized-tarmac-sl8",
+  "name": "Specialized Tarmac SL8 Comp 105 Di2",
+  "model_id": "specialized-tarmac-sl8-comp-105-di2-4221578",
   "category": "road-race",
-  "type": "research",
-  "why_interesting": "Premium Western benchmark with strong China presence.",
+  "type": "complete-bike",
+  "why_interesting": "A current exact mainland benchmark with 105 Di2, a 7.68 kg size-56 claim, official China price and complete model-specific specification.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Current mainland stock and final checkout conditions",
+    "Exact China warranty and service handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-price",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland-China list price",
+  "required_before_dashboard": "Current stock, final checkout conditions, and exact China warranty handling",
+  "source_ids": [
+    "specialized-china-tarmac-sl8-comp-price-2026-08-17",
+    "specialized-tarmac-sl8-comp-spec-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 30990,
+    "currency": "CNY",
+    "price_type": "official-retail",
+    "observed_at": "2026-08-17"
+  },
+  "source_url": "https://www.specialized.com.cn/cn/zh/tarmac-sl8-comp---shimano-105-di2/p/4221578",
+  "source_note": "Official Specialized China catalog lists exact product 4221578 at ¥30,990. It is a list price; stock and final checkout conditions must be confirmed.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7170 Di2 2×12",
+    "complete_weight_g": 7680,
+    "frame": "FACT 10r carbon with clean internal routing",
+    "bottom_bracket": "BSA threaded",
+    "tire_clearance_mm": 32,
+    "wheels": "DT Swiss R470 tubeless-ready alloy",
+    "cockpit": "Tarmac stem and Specialized Shallow Drop alloy bar",
+    "brakes": "Shimano 105 hydraulic disc",
+    "tires": "S-Works Turbo 700×26C",
+    "sizes": "44, 49, 52, 54, 56, 58 and 61"
+  },
+  "last_reviewed": "2026-08-17"
 }
