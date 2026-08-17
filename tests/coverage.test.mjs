@@ -97,6 +97,11 @@ test('recorded research attempts cannot silently disappear or be rewritten', () 
   const urlRecord = addedResultUrl.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
   urlRecord.channels['public-post'].attempts[0].result_url = 'https://example.com/public-result';
   assert.ok(errorsFor(addedResultUrl).some((error) => error.includes('lost protected attempt details')));
+
+  const rewrittenResolution = structuredClone(data);
+  const resolutionRecord = rewrittenResolution.researchAttempts.find((item) => item.id === 'variant-elves-falath-r7170-cockpit-2026-08-17');
+  resolutionRecord.resolution.note = 'Unexpected resolution rewrite.';
+  assert.ok(errorsFor(rewrittenResolution).some((error) => error.includes('lost protected resolution details')));
 });
 
 test('new information requires monotonic baseline acceptance', () => {

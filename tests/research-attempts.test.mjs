@@ -60,6 +60,25 @@ test('a successful exact source stops the search early and links accepted eviden
   assert.deepEqual(validateResearchAttempts([record], data), []);
 });
 
+test('same-target source reuse can resolve a field without rewriting or fabricating a search attempt', () => {
+  const record = baseRecord();
+  record.channels['public-post'] = { status: 'not-run', attempts: [] };
+  record.status = 'found';
+  record.accepted_source_ids = ['example-source'];
+  record.resolution = {
+    kind: 'source-reuse',
+    resolved_at: '2026-08-18',
+    source_ids: ['example-source'],
+    note: 'The exact source already accepted for this target directly publishes the image field.'
+  };
+  record.retry_after = null;
+  assert.deepEqual(validateResearchAttempts([record], data), []);
+
+  const invalid = structuredClone(record);
+  invalid.resolution.source_ids = ['missing-source'];
+  assert.ok(validateResearchAttempts([invalid], data).some((error) => error.includes('resolution references missing source')));
+});
+
 test('repeated queries and routes do not count as distinct attempts', () => {
   const record = baseRecord();
   record.channels.web.attempts[1].query = record.channels.web.attempts[0].query;

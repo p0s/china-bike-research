@@ -48,8 +48,14 @@
       ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["elves-falath-pro-105-sa-2026-08-17"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-18",
+    "source_ids": ["elves-falath-pro-105-sa-2026-08-17"],
+    "note": "The exact Falath Pro 105 R7170 build source already accepted for this variant's BOM lists the OROME AERO PRO integrated cockpit. No historical search attempt was rewritten."
+  },
   "retry_after": null,
   "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
 }

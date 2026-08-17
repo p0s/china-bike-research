@@ -17092,6 +17092,7 @@
         "target.record_type"
       ],
       "variant-elves-falath-r7170-cockpit-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17099,6 +17100,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -17136,6 +17141,7 @@
         "target.record_type"
       ],
       "variant-elves-falath-r7170-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17143,6 +17149,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -17227,6 +17237,7 @@
         "target.record_type"
       ],
       "variant-elves-falath-r7170-tires-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17234,6 +17245,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -21831,6 +21846,7 @@
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-cockpit-2026-08-17": [
+        "resolution.source_ids=elves-falath-pro-105-sa-2026-08-17",
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-complete-weight-2026-08-17": [
@@ -21840,6 +21856,7 @@
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-frame-weight-2026-08-17": [
+        "resolution.source_ids=elves-falath-pro-official-2026-08-17",
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-geometry-2026-08-17": [
@@ -21858,6 +21875,7 @@
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-tires-2026-08-17": [
+        "resolution.source_ids=elves-falath-pro-105-sa-2026-08-17",
         "target.record_id=elves-falath-r7170"
       ],
       "variant-elves-falath-r7170-warranty-support-2026-08-17": [
@@ -27735,7 +27753,12 @@
         "[\"web\",2,\"ELVES Falath R7170 bom.cockpit official store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Store page is a Falath EVO frameset; no R7170 mapping.\",\"https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved\"]",
         "[\"web\",3,\"ELVES Falath R7170 bom.cockpit authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact Falath R7170 build source with this field was located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-18\",\"source_ids\":[\"elves-falath-pro-105-sa-2026-08-17\"],\"note\":\"The exact Falath Pro 105 R7170 build source already accepted for this variant's BOM lists the OROME AERO PRO integrated cockpit. No historical search attempt was rewritten.\"}"
+      ],
+      "accepted_source_ids": [
+        "elves-falath-pro-105-sa-2026-08-17"
+      ]
     },
     "variant-elves-falath-r7170-complete-weight-2026-08-17": {
       "channel_attempt_counts": {
@@ -27778,7 +27801,12 @@
         "[\"web\",2,\"ELVES Falath R7170 frame_weight official store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Store page is a Falath EVO frameset; no R7170 mapping.\",\"https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved\"]",
         "[\"web\",3,\"ELVES Falath R7170 frame_weight authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact Falath R7170 build source with this field was located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-18\",\"source_ids\":[\"elves-falath-pro-official-2026-08-17\"],\"note\":\"The exact Falath Pro manufacturer frame source already accepted for this variant's frame field states a 1,160 g size-46 frame weight. No historical search attempt was rewritten.\"}"
+      ],
+      "accepted_source_ids": [
+        "elves-falath-pro-official-2026-08-17"
+      ]
     },
     "variant-elves-falath-r7170-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -27869,7 +27897,12 @@
         "[\"web\",2,\"ELVES Falath R7170 bom.tires official store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Store page is a Falath EVO frameset; no R7170 mapping.\",\"https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved\"]",
         "[\"web\",3,\"ELVES Falath R7170 bom.tires authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact Falath R7170 build source with this field was located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-18\",\"source_ids\":[\"elves-falath-pro-105-sa-2026-08-17\"],\"note\":\"The exact Falath Pro 105 R7170 build source already accepted for this variant's BOM lists Continental GP5000 700x28 tires. No historical search attempt was rewritten.\"}"
+      ],
+      "accepted_source_ids": [
+        "elves-falath-pro-105-sa-2026-08-17"
+      ]
     },
     "variant-elves-falath-r7170-warranty-support-2026-08-17": {
       "channel_attempt_counts": {

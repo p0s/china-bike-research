@@ -23,10 +23,14 @@ function normalized(value) {
   return String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
+function hasEvidenceResolution(record) {
+  return isObject(record.resolution) && Array.isArray(record.resolution.source_ids) && record.resolution.source_ids.length > 0;
+}
+
 function expectedRecordStatus(record) {
   const statuses = record.required_channels.map((channel) => record.channels?.[channel]?.status);
   if (statuses.includes('conflicted')) return 'conflicted';
-  if (statuses.includes('found')) return 'found';
+  if (statuses.includes('found') || hasEvidenceResolution(record)) return 'found';
   if (statuses.length && statuses.every((status) => status === 'temporarily-exhausted')) return 'temporarily-exhausted';
   if (statuses.length && statuses.every((status) => ['temporarily-exhausted', 'blocked'].includes(status)) && statuses.includes('blocked')) return 'blocked';
   return 'open';
@@ -142,6 +146,23 @@ export function validateResearchAttempts(records, data) {
         continue;
       }
       errors.push(...validateChannel(record, channelName, record.channels?.[channelName]));
+    }
+    if (record.resolution !== undefined) {
+      if (!isObject(record.resolution)) {
+        errors.push(`${label}: resolution must be an object`);
+      } else {
+        if (record.resolution.kind !== 'source-reuse') errors.push(`${label}: resolution.kind must be source-reuse`);
+        if (!isDate(record.resolution.resolved_at)) errors.push(`${label}: resolution needs a valid resolved_at date`);
+        if (!Array.isArray(record.resolution.source_ids) || record.resolution.source_ids.length === 0) {
+          errors.push(`${label}: resolution needs source_ids`);
+        }
+        if (typeof record.resolution.note !== 'string' || !record.resolution.note.trim()) errors.push(`${label}: resolution needs a concise note`);
+        for (const sourceId of record.resolution.source_ids ?? []) {
+          if (!sourceIds.has(sourceId)) errors.push(`${label}: resolution references missing source ${sourceId}`);
+          if (!(record.accepted_source_ids ?? []).includes(sourceId)) errors.push(`${label}: resolution source ${sourceId} must also be accepted`);
+        }
+        if (record.status !== 'found') errors.push(`${label}: source-reuse resolution requires found status`);
+      }
     }
     const expected = expectedRecordStatus(record);
     if (record.status !== expected) errors.push(`${label}: status ${record.status} does not match channel outcome ${expected}`);

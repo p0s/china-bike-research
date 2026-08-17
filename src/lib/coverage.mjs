@@ -190,9 +190,16 @@ function researchAttemptProtection(record) {
       ]));
     }
   }
+  const resolutionEntries = record.resolution ? [JSON.stringify({
+    kind: record.resolution.kind ?? null,
+    resolved_at: record.resolution.resolved_at ?? null,
+    source_ids: sortedUnique(record.resolution.source_ids ?? []),
+    note: record.resolution.note ?? null
+  })] : [];
   return {
     channel_attempt_counts: channelAttemptCounts,
     attempt_entries: sortedUnique(attemptEntries),
+    ...(resolutionEntries.length ? { resolution_entries: sortedUnique(resolutionEntries) } : {}),
     accepted_source_ids: sortedUnique(record.accepted_source_ids ?? [])
   };
 }
@@ -294,6 +301,10 @@ function normalizedAttemptEntries(entries = [], reference = []) {
   const referenceArrays = reference.map(parseAttemptEntry).filter((entry) => Array.isArray(entry) && entry.length >= 8);
   return entries.map((entry) => {
     const parsed = parseAttemptEntry(entry);
+    // An earlier migration briefly appended resolution JSON to each attempt
+    // tuple. Keep the stable eight attempt fields while moving resolutions to
+    // their dedicated protection list.
+    if (parsed?.length === 9) return JSON.stringify(parsed.slice(0, 8));
     // Coverage schema v1 recorded six attempt fields. If a current full entry
     // has the same stable identity fields, use it to migrate the old tuple;
     // otherwise retain explicit nulls so an unknown legacy detail is still
@@ -389,6 +400,7 @@ export function mergeCoverageBaseline(previous, current, updatedAt) {
         ...Object.keys(before.channel_attempt_counts ?? {}),
         ...Object.keys(now.channel_attempt_counts ?? {})
       ]);
+      const resolutionEntries = mergeLists(before.resolution_entries, now.resolution_entries);
       researchEffort[id] = {
         channel_attempt_counts: Object.fromEntries(channels.map((channel) => [
           channel,
@@ -398,6 +410,7 @@ export function mergeCoverageBaseline(previous, current, updatedAt) {
           normalizedAttemptEntries(before.attempt_entries, now.attempt_entries),
           normalizedAttemptEntries(now.attempt_entries)
         ),
+        ...(resolutionEntries.length ? { resolution_entries: resolutionEntries } : {}),
         accepted_source_ids: mergeLists(before.accepted_source_ids, now.accepted_source_ids)
       };
     }
@@ -485,6 +498,9 @@ export function validateBaselineTransition(previous, current) {
       normalizedAttemptEntries(now.attempt_entries)
     )) {
       errors.push(`coverage baseline erased a recorded attempt researchAttempts:${id} ${entry}`);
+    }
+    for (const entry of missingItems(before.resolution_entries, now.resolution_entries)) {
+      errors.push(`coverage baseline erased a recorded resolution researchAttempts:${id} ${entry}`);
     }
     for (const sourceId of missingItems(before.accepted_source_ids, now.accepted_source_ids)) {
       errors.push(`coverage baseline erased accepted source researchAttempts:${id}=${sourceId}`);
@@ -655,6 +671,9 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     ).length) {
       errors.push(`researchAttempts:${id} lost protected attempt details`);
     }
+    if (missingItems(required.resolution_entries, actual.resolution_entries).length) {
+      errors.push(`researchAttempts:${id} lost protected resolution details`);
+    }
     for (const sourceId of missingItems(required.accepted_source_ids, actual.accepted_source_ids)) {
       errors.push(`researchAttempts:${id} lost protected accepted source ${sourceId}`);
     }
@@ -744,8 +763,9 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
         normalizedAttemptEntries(actual.attempt_entries),
         normalizedAttemptEntries(required.attempt_entries, actual.attempt_entries)
       );
+      const newResolutions = missingItems(actual.resolution_entries, required.resolution_entries);
       const newSources = missingItems(actual.accepted_source_ids, required.accepted_source_ids);
-      if (strongerCount || newEntries.length || newSources.length) stale.push(`researchAttempts:${id} has stronger unaccepted effort protection`);
+      if (strongerCount || newEntries.length || newResolutions.length || newSources.length) stale.push(`researchAttempts:${id} has stronger unaccepted effort protection`);
     }
     for (const [target, actual] of Object.entries(current.image_targets)) {
       const required = baseline.image_targets?.[target];

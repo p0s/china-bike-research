@@ -13,6 +13,8 @@ An attempt counts only when its query and route are materially different. Repeat
 
 Stop early when exact, attributable evidence resolves the field. Preserve the original source, access date, model/trim/market match, conditions, authority, and any conflict. Images also require a stable remote asset, subject exactness, credit, rights status, alt text, and fallback. Prices must distinguish complete bike, frameset/package, promotion, used sale, deposit, foreign reference, and current mainland observation.
 
+When an already accepted source for the same exact target directly publishes another atomic field, reuse it with a `resolution.kind: source-reuse` record instead of rewriting a historical attempt or repeating an identical search. The resolution must name the accepted source, date the reconciliation, state the exact claim and model/trim match, and preserve any unrun channel as `not-run`; source reuse is evidence reuse, not a fabricated search attempt.
+
 ## Exhaustion states
 
 - `found`: exact evidence was accepted; later channels may remain unrun.
