@@ -43,12 +43,40 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Giant Propel Gen 4\" bom official",
+          "route": "Giant official product route",
+          "outcome": "rejected",
+          "result_url": "https://www.giant-bicycles.com/gb/propel-advanced-pro-0--di2-",
+          "accessed_at": "2026-08-17",
+          "note": "Opened current Advanced Pro sibling, not unspecified mainland candidate trim."
+        },
+        {
+          "attempt": 2,
+          "query": "site:giant-bicycles.com Propel 2027 manual bom",
+          "route": "Giant official regional manual route",
+          "outcome": "rejected",
+          "result_url": "https://www.giant-bicycles.com/_upload/manuals/01_Giant/Propel/Giant_Propel_EN.pdf",
+          "accessed_at": "2026-08-17",
+          "note": "Generic Propel manual; generation/trim not attributable."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Giant Propel Gen 4\" bom dealer review",
+          "route": "Credible exact-generation industry route",
+          "outcome": "rejected",
+          "result_url": "https://bikerumor.com/4th-gen-giant-propel-aero-bike-launch-2026/",
+          "accessed_at": "2026-08-17",
+          "note": "Range/flagship evidence does not resolve exact candidate trim/package."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Three distinct routes did not resolve the unspecified mainland trim/package. Public-post channel remains blocked."
 }

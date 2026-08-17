@@ -43,12 +43,37 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Bianchi Oltre Race 105 12sp\" maximum tire clearance",
+          "route": "manufacturer exact-model search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact maximum-clearance statement found."
+        },
+        {
+          "attempt": 2,
+          "query": "site:bianchi.com Oltre Race tire clearance 28c",
+          "route": "manufacturer regional/catalog/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Exact pages state an installed 28C tire but do not state maximum clearance."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Bianchi Oltre Race\" \"32C\"",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact source established 32C or another maximum."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Do not infer maximum clearance from the equipped 28C tire. Keep the field unknown."
 }

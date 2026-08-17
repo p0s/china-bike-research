@@ -43,12 +43,43 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd\" warranty official",
+          "route": "manufacturer exact support route",
+          "outcome": "rejected",
+          "result_url": "https://www.twittercycles.com/warranty.html",
+          "accessed_at": "2026-08-17",
+          "note": "Manufacturer warranty page was accessible but contained bracket placeholders, so its terms were rejected."
+        },
+        {
+          "attempt": 2,
+          "query": "Twitter Bikes USA Cyclone warranty",
+          "route": "manufacturer regional support route",
+          "outcome": "found",
+          "result_url": "https://twitterbikeusa.com/en-ca/pages/warranty",
+          "accessed_at": "2026-08-17",
+          "note": "Official regional warranty page states one-year limited direct-purchase coverage for frame, fork and components."
+        },
+        {
+          "attempt": 3,
+          "query": "Twitter Cyclone authorized distributor warranty policy",
+          "route": "alternate authorized-distributor support route",
+          "outcome": "found",
+          "result_url": "https://twitterbikefactory.com/pages/warranty-policy",
+          "accessed_at": "2026-08-17",
+          "note": "Authorized Twitter Bike Factory policy states three-year frame and one-year component coverage for eligible original orders."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "twitterbikefactory-warranty-2026-08-17",
+    "twitterbikeusa-warranty-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Warranty is market/seller-specific. The manufacturer page's bracket placeholders were rejected; verify which authorized seller route applies to the China snapshot."
 }

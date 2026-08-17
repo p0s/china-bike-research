@@ -433,6 +433,10 @@ function candidatePriceBounds(entry) {
   return { low, high };
 }
 
+function candidateFramePriceTerm(entry) {
+  return /package|cockpit|accessor/i.test(entry.price?.price_basis ?? '') ? 'Frame package' : 'Frame';
+}
+
 function candidatePriceLabel(ctx, entry) {
   if (!entry.price) return '—';
   if (entry.kind !== 'frameset') {
@@ -453,7 +457,7 @@ function candidatePriceState(entry) {
     : priceType === 'official-conflict'
       ? 'Official price conflict'
       : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
-  const framePrice = entry.kind === 'frameset' ? `Frame ${formatPrice(entry.price)}` : '';
+  const framePrice = entry.kind === 'frameset' ? `${candidateFramePriceTerm(entry)} ${formatPrice(entry.price)}` : '';
   return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
 }
 
@@ -878,7 +882,7 @@ export function renderCandidateModel(ctx, entry) {
   const priceBrief = !entry.price
     ? 'No defensible price is recorded yet.'
     : entry.kind === 'frameset'
-      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} frame price.`
+      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.`
       : entry.price.price_type === 'reference-conversion'
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
@@ -925,7 +929,7 @@ function prosePage(ctx, { title, desc, path, html, current = '' }) {
 
 export function renderMethodology(ctx) {
   const assumption = buildAssumption(ctx);
-  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset currently receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} It is an estimate, not a shopping cart or guarantee. Framesets remain candidates when this assumption would be materially misleading.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset currently receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} It is an estimate, not a shopping cart or guarantee. Framesets remain candidates when this assumption would be materially misleading.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame or included-package price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frameset estimates, specifications, and evidence are handled.', path: '/methodology/', current: 'methodology', html });
 }
 

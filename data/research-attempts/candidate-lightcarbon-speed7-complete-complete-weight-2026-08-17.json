@@ -43,12 +43,40 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"LightCarbon Speed7\" complete weight official",
+          "route": "LightCarbon exact manufacturer product search",
+          "outcome": "rejected",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact SKU LCR017-D, but page does not name Speed7."
+        },
+        {
+          "attempt": 2,
+          "query": "site:lightcarbon.com/uploadfile/downloads \"速7 (LCR017-D)\" complete weight",
+          "route": "LightCarbon official Chinese catalog/manual route",
+          "outcome": "blocked",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+          "accessed_at": "2026-08-17",
+          "note": "Official catalog search result maps 速7 to LCR017-D, but PDF was not openable; snippets alone rejected."
+        },
+        {
+          "attempt": 3,
+          "query": "\"LightCarbon Speed7\" LCR017-D complete weight authorized",
+          "route": "LightCarbon alternate exact-SKU manufacturer route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No second accessible manufacturer page established the alias or requested field."
+        }
+      ],
+      "blocker": "Exact LCR017-D specifications are accessible, but Speed7↔LCR017-D identity depends on an inaccessible official PDF/search snippet; complete 105 configuration is also unproven. Public-post channel remains blocked."
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact LCR017-D specifications are accessible, but Speed7↔LCR017-D identity depends on an inaccessible official PDF/search snippet; complete 105 configuration is also unproven. Public-post channel remains blocked."
 }

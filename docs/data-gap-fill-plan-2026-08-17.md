@@ -23,8 +23,9 @@ Make the catalog materially more useful without converting uncertain leads into 
 - Added 62 remote image records over the starting snapshot. The latest ten close the Giant Propel Gen 4, Quick Pro TR:ONE and TT ONE, SAVA A4, SEKA Spear RDC, Tavelo Arden and Arow SL, BIGROCK Sohtea, INCOLOR SSR, and Voicevelo G Major gaps. Exact official imagery is preferred; five exact public-post images remain remote-only, credited, visibly caveated, and lower-ranked than official imagery.
 - Added internal detail pages for every distinct candidate. Each page keeps its short version, price basis, hardware, strengths, trade-offs, unknowns, and key facts visible while collapsing only the raw source ledger.
 - Rechecked all 100 exact-model screenshot-bundle records. Ninety-five already mapped to current records, LightCarbon Speed7 was split into two candidates, and two tenfold price transcription errors were corrected to ¥2,100 and ¥1,500.
-- Strengthened monotonic coverage so record identities, facts, prices, sources, relationships, image quality, remote hosting, and frameset-price metadata cannot silently regress.
-- Added 325 atomic field records covering 609 public-post attempts and 407 web/official attempts. A field can be called temporarily exhausted only after three distinct attempts in every required channel, and successful evidence, conflicts, blocks, and retry dates remain explicit.
+- Strengthened monotonic coverage so record identities, facts, prices, sources, relationships, image quality, remote hosting, frameset-price metadata, and every recorded research-attempt entry and accepted source cannot silently regress.
+- Added 325 atomic field records covering 609 public-post attempts and 606 web/official attempts. All 83 previously unrun web lanes were completed in a fourth pass. A field can be called temporarily exhausted only after three distinct attempts in every required channel, and successful evidence, conflicts, blocks, and retry dates remain explicit.
+- Added exact-model or exact-generation detail facts for Bianchi Oltre Race, ELVES Falath R7170, PARDUS Super Sport Gen2 eGR, Giant Propel Gen 4, Quick Pro TR:ONE and TT ONE, SAVA A4, and SEKA Spear RDC. Foreign prices and unresolved trim mappings remain references rather than mainland facts.
 - Expanded published model pages with a concise specification snapshot for bottom bracket, wheels, tires, cockpit, fit range, and purchase route when those facts are supported.
 - Kept promotional, custom-build, foreign-market, secondary-report, and public-community observations visibly separate from authoritative mainland facts, preserving every remaining unknown instead of filling it by inference.
 
@@ -32,7 +33,7 @@ Make the catalog materially more useful without converting uncertain leads into 
 
 | Measure | Before | After | Change |
 | --- | ---: | ---: | ---: |
-| Source records | 121 | 304 | +183 |
+| Source records | 121 | 320 | +199 |
 | Primary image records | 61 | 123 | +62 |
 | Candidate-targeted images | 26 | 88 | +62 |
 | Distinct catalog candidates without a dedicated image | 151 | 101 | -50 despite 21 new candidate records |
@@ -46,11 +47,13 @@ Make the catalog materially more useful without converting uncertain leads into 
 - Many popular global models still lack a verifiable mainland SKU, current CNY checkout, stock, duties/returns, or local warranty route.
 - Published records still have 30 geometry gaps, 23 frame-weight gaps, 13 BB gaps, five complete-weight gaps, five incomplete BOMs, and seven weak/non-exact primary-image relationships.
 - Current manufacturer pages sometimes conflict on global price or components; these conflicts remain explicit until one exact market/variant explanation is verified.
+- Web/official-source attempt budgets are complete for this batch. The only 23 open atomic records are public-post lanes that require the canonical local capture extension; that extension remains disabled in the dedicated research profile.
 
 ## Next research queue
 
 1. Exact official images for the two LightCarbon Speed7 candidates, then the ELVES Mori-family lead and the highest-visibility low-priority exact models.
 2. Official mainland price and purchase-route confirmation for the remaining 19 price-missing candidate groups.
-3. Exact official BOM/weight/BB/geometry extraction for Trek Checkpoint and Domane, then Winspace G3 and other high-visibility complete bikes.
-4. Published-variant cleanup for the seven weak images and the highest-priority geometry/weight/BOM gaps.
-5. A fresh strict image-health run before every content merge and scheduled weekly health verification afterward.
+3. Enable the canonical local capture extension and process the remaining public-post fields one at a time with `npm run research:queue -- --channel public-post --channel-status not-run --limit 1`.
+4. Exact official BOM/weight/BB/geometry extraction for Trek Checkpoint and Domane, then Winspace G3 and other high-visibility complete bikes when new exact-source leads appear.
+5. Published-variant cleanup for the seven weak images and the highest-priority geometry/weight/BOM gaps.
+6. A fresh strict image-health run before every content merge and scheduled weekly health verification afterward.

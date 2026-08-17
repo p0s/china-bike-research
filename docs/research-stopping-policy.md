@@ -26,3 +26,11 @@ Temporary exhaustion is not negative evidence. It means “not found through the
 ## Durable ledger
 
 Each atomic result lives in `data/research-attempts/`. `npm run research:check` rejects duplicate target fields, repeated queries or route labels, incomplete exhaustion, invalid references, private access parameters, and found results without accepted source records. `npm run research:report` summarizes coverage and effort. `npm run research:queue` separates ready work, evidence awaiting integration, deferred exhaustion, blockers, and conflicts; fields without a coarse catalog gap code stay visible as ledger-only queue items. The attempt ledger is included in the monotonic coverage baseline so completed searches cannot silently disappear.
+
+For a sequential browser pass, request only one unresolved channel item at a time:
+
+```bash
+npm run research:queue -- --channel public-post --channel-status not-run --limit 1
+```
+
+Finish or record that atomic field before requesting the next item. The limit is a workflow guard against turning a research queue into concurrent tabs; it is not a claim about a safe request cadence.

@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:quickprousa.com/products/tt-one-frame Quick Pro TT:ONE bottom bracket",
+          "route": "Quick Pro official global exact-model route",
+          "outcome": "found",
+          "result_url": "https://www.quickprousa.com/products/tt-one-frame",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact TT:ONE page with requested field."
+        },
+        {
+          "attempt": 2,
+          "query": "site:quick-bikes.com.cn/product/30.html QUICKPRO TT:ONE bottom bracket",
+          "route": "Quick Pro official regional China route",
+          "outcome": "blocked",
+          "result_url": "https://www.quick-bikes.com.cn/product/30.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact China result; direct open returned 403."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "quick-pro-tt-one-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Global exact-model evidence accepted; China route inaccessible."
 }

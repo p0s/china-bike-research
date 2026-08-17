@@ -43,12 +43,35 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Bianchi Oltre Race 105 12sp\" official specifications components",
+          "route": "manufacturer exact regional product page",
+          "outcome": "found",
+          "result_url": "https://www.bianchi.am/am/oltre-race-105-12sp",
+          "accessed_at": "2026-08-17",
+          "note": "The exact Armenia listing publishes frame, fork, groupset, brakes, wheels, tires, cockpit, sizes, and BB details."
+        },
+        {
+          "attempt": 2,
+          "query": "site:bianchi.com \"Oltre Race\" 105 12sp",
+          "route": "manufacturer global product page",
+          "outcome": "conflict",
+          "result_url": "https://www.bianchi.com/store/int_EN/bikes/road/racing/oltre/oltre-race/oltre-race.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact SKU YTB8D is confirmed, but the global page is sparse."
+        }
+      ],
+      "conflict": "Exact-model regional/dealer pages show different wheelset configurations; neither proves the China snapshot's exact wheelset."
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-armenia-2026-08-17",
+    "bianchi-oltre-race-dealer-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Use accepted specs as exact-model references only. Preserve the Fulcrum-versus-Velomann build conflict and do not silently replace the existing China-market observation."
 }

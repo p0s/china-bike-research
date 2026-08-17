@@ -43,12 +43,37 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:bianchi.com \"Oltre Race\" \"weight\"",
+          "route": "manufacturer exact-model search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Returned unrelated/e-Oltre material; no exact complete Oltre Race weight accepted."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 12sp official manual complete weight",
+          "route": "official regional/catalog/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Armenia and Hungary pages do not publish complete weight; a third-party manual page was exact-model-looking but did not state complete weight."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Bianchi Oltre Race\" \"8.64 kg\" authorized dealer",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact authorized source established 8.64 kg; snippets and unrelated discussions were rejected."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Retain the existing dated 8,640 g marketplace observation. Web research did not independently verify the same build's complete weight."
 }

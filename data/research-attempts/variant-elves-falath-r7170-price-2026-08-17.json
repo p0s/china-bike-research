@@ -43,12 +43,42 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"FALATH PRO\" \"105 R7170\" price",
+          "route": "authorized exact complete-bike route",
+          "outcome": "rejected",
+          "result_url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105",
+          "accessed_at": "2026-08-17",
+          "note": "South Africa exact build page shows R99,000 for FALATH PRO - 105."
+        },
+        {
+          "attempt": 2,
+          "query": "Falath PRO Disc Complete Bike 105 Di2 price",
+          "route": "authorized regional exact-build route",
+          "outcome": "rejected",
+          "result_url": "https://elvesbikesaustralia.com.au/products/falath-pro-complete-bike",
+          "accessed_at": "2026-08-17",
+          "note": "Australia exact Falath PRO selector lists AUD $6,490 for 105 Di2 12-speed."
+        },
+        {
+          "attempt": 3,
+          "query": "site:store.elvesbike.com Falath Pro 105 Di2 mainland China price",
+          "route": "official global store and current catalog route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "The current official store did not expose an exact Falath Pro R7170 mainland-China price."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "blocked",
+  "accepted_source_ids": [
+    "elves-falath-pro-105-sa-2026-08-17",
+    "elves-falath-pro-complete-au-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Foreign exact-build prices were found, but no current mainland-China manufacturer/authorized price was established. Retain the China snapshot price separately."
 }

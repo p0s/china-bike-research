@@ -43,12 +43,34 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:sekabikes.com \"Spear RDC\" warranty",
+          "route": "SEKA official global policy route",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/en/seka-warranty/",
+          "accessed_at": "2026-08-17",
+          "note": "Global policy opened."
+        },
+        {
+          "attempt": 2,
+          "query": "site:sekabikes.com warranty-cn SEKA China Spear",
+          "route": "SEKA official China policy route",
+          "outcome": "found",
+          "result_url": "https://www.sekabikes.com/warranty-cn/",
+          "accessed_at": "2026-08-17",
+          "note": "China policy opened with mainland support routes."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-warranty-cn-official-2026-08-17",
+    "seka-warranty-global-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact official China support accepted."
 }

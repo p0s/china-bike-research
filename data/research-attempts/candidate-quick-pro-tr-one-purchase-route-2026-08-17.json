@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:quickprousa.com Quick Pro TR:ONE purchase route",
+          "route": "Quick Pro official global exact-model product route",
+          "outcome": "found",
+          "result_url": "https://www.quickprousa.com/products/tr-one-pre-order",
+          "accessed_at": "2026-08-17",
+          "note": "Exact page live with $3,599 global price and Add to cart."
+        },
+        {
+          "attempt": 2,
+          "query": "site:quick-bikes.com.cn Quick Pro TR:ONE China purchase",
+          "route": "Quick Pro official regional China route",
+          "outcome": "blocked",
+          "result_url": "https://www.quick-bikes.com.cn/product/38.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact China result; direct open returned 403."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "quick-pro-tr-one-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Direct-factory route only; no mainland stock/tax/service claim."
 }

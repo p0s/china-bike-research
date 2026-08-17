@@ -43,12 +43,37 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Super Sport Gen2 EGR warranty",
+          "route": "manufacturer exact-model support route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Official PARDUS product/root pages expose support/contact but no exact warranty term."
+        },
+        {
+          "attempt": 2,
+          "query": "site:parduscycle.com Super Sport Gen2 warranty",
+          "route": "manufacturer catalog/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact Gen2 EGR warranty policy was found."
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS SUPG2 SPORT 2026 EGR authorized dealer warranty",
+          "route": "alternate authorized-retailer route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "888bike exact listing did not state a warranty term."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Ask the purchase-market dealer or PARDUS support for the applicable warranty; do not infer coverage from retailer existence."
 }

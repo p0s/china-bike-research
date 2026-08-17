@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadDataset } from '../src/lib/data.mjs';
-import { buildResearchQueue } from '../scripts/research-queue.mjs';
+import { buildResearchQueue, filterResearchQueue } from '../scripts/research-queue.mjs';
 
 function exhaustedAttempt(target) {
   return {
@@ -39,4 +39,22 @@ test('research queue keeps atomic ledger fields that have no coarse gap-code map
   const queue = buildResearchQueue(data, '2026-08-18');
   assert.ok(queue.deferred.some((item) =>
     item.attempt_id === cockpit.id && item.gap === 'cockpit' && item.ledger_only === true));
+});
+
+test('research queue can return one channel-specific item for sequential browser work', () => {
+  const data = structuredClone(loadDataset());
+  const pending = exhaustedAttempt('lightcarbon-speedz-complete');
+  pending.status = 'open';
+  pending.channels['public-post'] = { status: 'not-run', attempts: [] };
+  data.researchAttempts = [pending];
+  const queue = buildResearchQueue(data, '2026-08-18');
+  const next = filterResearchQueue(queue, data, {
+    channel: 'public-post',
+    channelStatus: 'not-run',
+    limit: 1
+  });
+  assert.deepEqual(next.filters, { channel: 'public-post', channel_status: 'not-run', limit: 1 });
+  assert.equal(Object.values(next.counts).reduce((sum, count) => sum + count, 0), 1);
+  assert.equal(next.ready[0].attempt_id, pending.id);
+  assert.equal(next.ready[0].channel_status, 'not-run');
 });

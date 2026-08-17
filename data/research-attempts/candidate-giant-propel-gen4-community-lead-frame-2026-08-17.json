@@ -43,12 +43,24 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Giant Propel Gen 4\" frame material official",
+          "route": "Exact-generation industry web route",
+          "outcome": "found",
+          "result_url": "https://bikerumor.com/4th-gen-giant-propel-aero-bike-launch-2026/",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact Gen 4 report: range uses Advanced and Advanced SL composite technologies; top-tier SL uses carbon fiber with nanotube resin."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-propel-gen4-bikerumor-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Range-level platform claim only; do not infer the candidate mainland trim grade."
 }

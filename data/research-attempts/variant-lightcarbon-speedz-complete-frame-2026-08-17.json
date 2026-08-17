@@ -43,12 +43,37 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"LightCarbon SPEEDZ\" frame geometry",
+          "route": "exact manufacturer/model/field search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact SPEEDZ result was found."
+        },
+        {
+          "attempt": 2,
+          "query": "site:lightcarbon.com SPEEDZ geometry",
+          "route": "official LightCarbon catalog/manual route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Current LightCarbon catalogs/pages returned other model IDs (for example LCR/LCG); sibling-model results were rejected."
+        },
+        {
+          "attempt": 3,
+          "query": "\"LightCarbon SPEEDZ\" frameset shop",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No accessible exact SPEEDZ listing, SKU, or warranty page was found."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Three materially distinct current routes returned no accessible exact LightCarbon SPEEDZ record. Current LightCarbon LCR/LCG catalogs and similarly named Speedz pages were rejected as sibling/unmatched models; preserve the existing snapshot unknown."
 }

@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:shopsekabikes.com/products \"Spear RDC Frameset\" purchase",
+          "route": "SEKA official exact-model store route",
+          "outcome": "found",
+          "result_url": "https://www.shopsekabikes.com/products/spear-spear-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Spear RDC page live with store route/package/returns."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA SPEAR RDC China official Taobao purchase",
+          "route": "SEKA official China support route",
+          "outcome": "rejected",
+          "result_url": "https://www.sekabikes.com/warranty-cn/",
+          "accessed_at": "2026-08-17",
+          "note": "China policy links Taobao/dealers but not exact SKU checkout."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "seka-spear-rdc-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Direct-factory route with mainland caveat."
 }

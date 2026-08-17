@@ -6,25 +6,34 @@
   "category": "road-aero",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The anonymized 2026-08-08 snapshot identifies Elves Falath R7170 build as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "summary": "The dated China snapshot identifies a Falath build with Shimano 105 Di2 R7170. Exact Falath Pro manufacturer and regional pages support the frame standard, 28C maximum, and principal build parts; current mainland price and seller warranty still need confirmation.",
   "frame": {
     "material": "carbon",
-    "fork_material": "unknown",
-    "bottom_bracket": "unknown",
+    "fork_material": "carbon",
+    "bottom_bracket": "BB86",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown"
+    "cable_routing": "fully-internal"
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "The exact Falath Pro manufacturer frame page states a 700×28C maximum.",
+    "published_max_mm": 28
   },
   "category_details": {
     "discipline": "aero road",
     "geometry": "unknown",
     "evidence": "snapshot-classification",
-    "note": "Seller title says 精灵法拉斯717."
+    "note": "The seller title says 精灵法拉斯717 and the visible R7170 build aligns with exact Falath Pro 105 Di2 references."
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "elves-falath-pro-official-2026-08-17",
+    "elves-falath-pro-105-sa-2026-08-17"
   ],
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

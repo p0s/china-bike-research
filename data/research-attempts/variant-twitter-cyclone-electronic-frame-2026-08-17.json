@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd ET\" carbon frame fork T47",
+          "route": "manufacturer exact model page",
+          "outcome": "found",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html",
+          "accessed_at": "2026-08-17",
+          "note": "China manufacturer page publishes high-modulus carbon aero frame/fork, internal routing, T47x24, axles, and sizes."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Twitter Cyclone 3rd\" EDS TX frame specifications",
+          "route": "manufacturer regional exact-build route",
+          "outcome": "rejected",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-et",
+          "accessed_at": "2026-08-17",
+          "note": "USA exact ET/EDS page corroborates the same Cyclone 3rd frame platform."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-cyclone-gen3-et-china-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact Cyclone 3rd ET evidence resolves the frame field; keep EVO and 3K build-specific details separate."
 }

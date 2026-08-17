@@ -43,12 +43,38 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd ET\" maximum tire clearance",
+          "route": "manufacturer exact model search",
+          "outcome": "no-result",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact pages list fitted 700x28C tires but do not state maximum clearance."
+        },
+        {
+          "attempt": 2,
+          "query": "site:twitterbikeusa.com Cyclone EDS TX tire clearance",
+          "route": "manufacturer regional/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact maximum-clearance figure found."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Twitter Cyclone\" 32C tire clearance EDS TX",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No accessible exact source established 32C or another maximum."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Do not infer maximum clearance from the equipped 700x28C tire."
 }

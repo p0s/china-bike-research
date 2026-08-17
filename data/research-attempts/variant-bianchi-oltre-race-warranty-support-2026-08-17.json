@@ -43,12 +43,39 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:bianchi.com Oltre Race lifetime warranty eligible models",
+          "route": "manufacturer exact-model warranty route",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.com/lifetime-warranty-eligible-models/",
+          "accessed_at": "2026-08-17",
+          "note": "Official warranty eligibility search result pointed to an exact list, but the linked page redirected/failed to open; snippets were not accepted."
+        },
+        {
+          "attempt": 2,
+          "query": "site:bianchi.com warranty standard frame 5-year Oltre",
+          "route": "manufacturer warranty policy/manual route",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.com/wp-content/uploads/2026/05/STANDARD-WARRANTY-POLICY-ENGLISH-18_07_2025.pdf",
+          "accessed_at": "2026-08-17",
+          "note": "Official policy PDF/search result was not accessible in this run; no exact-model warranty claim accepted."
+        },
+        {
+          "attempt": 3,
+          "query": "Bianchi Oltre Race warranty authorized dealer 2026",
+          "route": "alternate authorized dealer support route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Dealer product pages did not publish an exact warranty term."
+        }
+      ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Warranty remains unresolved for this purchase market. Do not convert inaccessible policy snippets into a model claim."
 }

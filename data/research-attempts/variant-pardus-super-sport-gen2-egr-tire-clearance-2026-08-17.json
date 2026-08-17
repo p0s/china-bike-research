@@ -43,12 +43,34 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"PARDUS SUPG2 SPORT 2026\" maximum tire clearance",
+          "route": "authorized exact-SKU route",
+          "outcome": "found",
+          "result_url": "https://www.888bike.net/en/product/11484",
+          "accessed_at": "2026-08-17",
+          "note": "888bike exact page states maximum 700x40C."
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Super Sport Gen2 40C official",
+          "route": "current industry/China product route",
+          "outcome": "found",
+          "result_url": "https://www.wildto.com/news/58865.html",
+          "accessed_at": "2026-08-17",
+          "note": "Wildto exact Gen2 launch coverage states compatibility with 40C tires."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "pardus-super-sport-egr-888bike-2026-08-17",
+    "pardus-super-sport-launch-wildto-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Two exact-model routes agree on 40C maximum compatibility."
 }

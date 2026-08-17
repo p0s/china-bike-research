@@ -68,7 +68,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 
 Do not duplicate platform facts across variants. A new component configuration on the same platform is normally a new variant, not a new platform. New categories may add category-specific fields, validation, and UI only as needed.
 
-Published MTB platforms use MTB-appropriate flat-bar configuration data. The fixed frameset allowance is publication-eligible only for road and gravel/all-road families; MTB, e-road, folding, and triathlon framesets remain candidates unless the approved methodology is explicitly changed.
+Published MTB platforms use MTB-appropriate flat-bar configuration data. The fixed frameset allowance is publication-eligible only for road, gravel/all-road, and triathlon families whose recorded base price identifies the included frame package and whose allowance covers only the components and assembly still required. MTB, e-road, and folding framesets remain candidates unless the approved methodology is explicitly changed.
 
 ## 4. Evidence rules
 

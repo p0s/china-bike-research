@@ -43,12 +43,41 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo ARDEN current mainland frameset price official",
+          "route": "Tavelo official exact-model route",
+          "outcome": "rejected",
+          "result_url": "https://tavelo.cc/products/tavelo-arden-race-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Live page shows USD 1,899 Race pre-order, not mainland."
+        },
+        {
+          "attempt": 2,
+          "query": "site:cyclingchina.net TAVELO ARDEN 9999 12999",
+          "route": "China industry launch route",
+          "outcome": "blocked",
+          "result_url": "https://www.cyclingchina.net/site/html/2026/industry_0510/10451.html",
+          "accessed_at": "2026-08-17",
+          "note": "Search result describes CNY 9,999 Race / CNY 12,999 SL excluding cockpit, but direct open internal-error; not accepted current quote."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo ARDEN authorized dealer China current frameset price",
+          "route": "Alternate exact-model dealer route",
+          "outcome": "rejected",
+          "result_url": "https://www.cheungkee.co/en/products/tavelo-arden-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Hong Kong listing HK$15,000, sold out; market/package/stock mismatch."
+        }
+      ],
+      "blocker": "No current exact mainland price; preserve Race-versus-SL launch conflict and do not use inaccessible launch report as current evidence."
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. No current exact mainland price; preserve Race-versus-SL launch conflict and do not use inaccessible launch report as current evidence."
 }

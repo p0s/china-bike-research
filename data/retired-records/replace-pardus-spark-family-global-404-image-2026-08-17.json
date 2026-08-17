@@ -1,0 +1,16 @@
+{
+  "id": "replace-pardus-spark-family-global-404-image-2026-08-17",
+  "record_type": "images",
+  "record_id": "pardus-spark-family-global-primary-image",
+  "action": "replace",
+  "reason": "The provisional global image asset returned HTTP 404 in live image-health validation; the replacement is a responsive official China image for the exact Spark Sport product page.",
+  "evidence_source_ids": [
+    "pardus-spark-sport-official-cn-2026-08-17",
+    "pardus-spark-sport-official-global-2026-08-17"
+  ],
+  "replacement": {
+    "record_type": "images",
+    "record_id": "pardus-spark-family-cn-alt-color-primary-image"
+  },
+  "reviewed_at": "2026-08-17"
+}

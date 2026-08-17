@@ -43,12 +43,24 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:savadeck-bike.com SAVA A4 geometry tire clearance",
+          "route": "SAVA official exact-model product route",
+          "outcome": "found",
+          "result_url": "https://savadeck-bike.com/sv/collections/carbon-frame-bike/products/a4-carbon-road-bike-20s?variant=42811681308811",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact A4 product geometry table."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-a4-official-global-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact global A4 geometry accepted."
 }

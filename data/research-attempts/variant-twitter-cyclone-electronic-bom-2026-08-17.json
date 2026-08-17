@@ -43,12 +43,35 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd ET\" WheelTop EDS TX specifications",
+          "route": "manufacturer exact model page",
+          "outcome": "found",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html",
+          "accessed_at": "2026-08-17",
+          "note": "China manufacturer page publishes the EDS TX drivetrain and detailed frame, cockpit, brake, BB, wheel and tire options."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Twitter Cyclone 3rd\" EDS TX complete bike components",
+          "route": "manufacturer regional exact-build route",
+          "outcome": "found",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-et",
+          "accessed_at": "2026-08-17",
+          "note": "USA pages corroborate exact Cyclone EDS-TX build details."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-cyclone-2025-eds-tx-2026-08-17",
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-gen3-et-usa-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact EDS-TX component evidence is strong, but wheel/finish options differ across regional pages. Do not overwrite the snapshot's exact wheel choice unless the seller configuration is confirmed."
 }

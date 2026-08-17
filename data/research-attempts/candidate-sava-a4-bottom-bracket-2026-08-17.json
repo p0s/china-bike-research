@@ -43,12 +43,24 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:savadeck-bike.com SAVA A4 bottom bracket official",
+          "route": "SAVA official exact-model specification route",
+          "outcome": "found",
+          "result_url": "https://savadeck-bike.com/pages/a4-specifications",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact A4 specification page."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-a4-specifications-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact global A4 trim resolved; no mainland price/checkout claim."
 }

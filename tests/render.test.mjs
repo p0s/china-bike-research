@@ -256,6 +256,8 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   const candidateDetail = renderCandidateModel(context, candidateFrame);
   assert.match(candidateDetail, /data-model-frame-price-low="21800" data-model-frame-price-high="21800" data-model-default-allowance="6000"/);
   assert.match(candidateDetail, /data-model-calculated-price>Est\. ¥27,800/);
+  assert.match(candidateDetail, /Frame package ¥21,800/);
+  assert.match(candidateDetail, /recorded ¥21,800 frame package price/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {

@@ -43,12 +43,34 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"FALATH PRO\" \"105 R7170\" complete bike components",
+          "route": "authorized exact-SKU/complete-bike route",
+          "outcome": "found",
+          "result_url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Falath Pro 105 page lists the R7170 Di2 groupset and the complete-build component choices."
+        },
+        {
+          "attempt": 2,
+          "query": "site:elvesbike.com Falath Pro 2022 specifications",
+          "route": "manufacturer exact frame route",
+          "outcome": "found",
+          "result_url": "https://www.elvesbike.com/more.php?id=91&lm=8",
+          "accessed_at": "2026-08-17",
+          "note": "Manufacturer page confirms Falath Pro 2022 frame/fork/BB/standards and 28C maximum."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "elves-falath-pro-105-sa-2026-08-17",
+    "elves-falath-pro-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. The exact manufacturer identity is Falath Pro 2022; the China snapshot seller title is 'Falath 717'. Confirm that seller naming maps to Falath Pro 2022 before integrating these fields."
 }

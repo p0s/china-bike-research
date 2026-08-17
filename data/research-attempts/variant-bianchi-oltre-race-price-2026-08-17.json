@@ -43,12 +43,44 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Bianchi Oltre Race 105 12sp\" price official",
+          "route": "manufacturer global product page",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.com/store/int_EN/bikes/road/racing/oltre/oltre-race/oltre-race.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact global SKU YTB8D page shows €2,850."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Bianchi Oltre Race 105 12sp\" Armenia price",
+          "route": "manufacturer regional product page",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.am/am/oltre-race-105-12sp",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Armenia listing shows AMD 1,390,000, reduced from AMD 1,490,000."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Bianchi Oltre Race 105 12sp\" dealer price 2025",
+          "route": "alternate authorized dealer route",
+          "outcome": "rejected",
+          "result_url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Hungary dealer listing shows HUF 1,249,990."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "blocked",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-armenia-2026-08-17",
+    "bianchi-oltre-race-dealer-2026-08-17",
+    "bianchi-oltre-race-global-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact foreign-market prices were found, but no current mainland-China manufacturer/authorized price was established. Do not overwrite the existing China marketplace observation."
 }

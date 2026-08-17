@@ -4,6 +4,7 @@ import { buildGapReport } from './data-gaps.mjs';
 import { loadDataset } from '../src/lib/data.mjs';
 
 const nonAtomicCodes = new Set(['candidate-blockers', 'image-health-unverified']);
+const bucketNames = ['ready', 'evidence-found', 'deferred', 'blocked', 'conflicted'];
 
 export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISOString().slice(0, 10)) {
   const report = buildGapReport(data, asOf);
@@ -72,9 +73,57 @@ export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISO
   };
 }
 
+export function filterResearchQueue(queue, data, options = {}) {
+  const channel = options.channel ?? null;
+  const channelStatus = options.channelStatus ?? null;
+  const limit = options.limit ?? null;
+  if (!channel && !channelStatus && limit == null) return queue;
+  if (channelStatus && !channel) throw new Error('--channel-status requires --channel');
+  if (channel && !['public-post', 'web'].includes(channel)) throw new Error(`Unsupported channel: ${channel}`);
+  if (limit != null && (!Number.isInteger(limit) || limit < 1)) throw new Error('--limit must be a positive integer');
+
+  const attemptsById = new Map((data.researchAttempts ?? []).map((attempt) => [attempt.id, attempt]));
+  let remaining = limit ?? Number.POSITIVE_INFINITY;
+  const filtered = {};
+  for (const bucketName of bucketNames) {
+    filtered[bucketName] = [];
+    for (const item of queue[bucketName]) {
+      if (remaining === 0) break;
+      const attempt = item.attempt_id ? attemptsById.get(item.attempt_id) : null;
+      const status = channel ? (attempt?.channels?.[channel]?.status ?? 'missing-ledger') : null;
+      if (channelStatus && status !== channelStatus) continue;
+      filtered[bucketName].push(channel ? { ...item, channel_status: status } : item);
+      remaining -= 1;
+    }
+  }
+  return {
+    as_of: queue.as_of,
+    filters: {
+      ...(channel ? { channel } : {}),
+      ...(channelStatus ? { channel_status: channelStatus } : {}),
+      ...(limit != null ? { limit } : {})
+    },
+    counts: Object.fromEntries(bucketNames.map((name) => [name, filtered[name].length])),
+    ...filtered
+  };
+}
+
+function argumentValue(args, name) {
+  const equals = args.find((arg) => arg.startsWith(`${name}=`));
+  if (equals) return equals.slice(name.length + 1);
+  const index = args.indexOf(name);
+  return index === -1 ? null : args[index + 1];
+}
+
 function main() {
   const asOf = process.env.DATA_GAPS_AS_OF ?? new Date().toISOString().slice(0, 10);
-  console.log(JSON.stringify(buildResearchQueue(loadDataset(), asOf), null, 2));
+  const data = loadDataset();
+  const channel = argumentValue(process.argv.slice(2), '--channel');
+  const channelStatus = argumentValue(process.argv.slice(2), '--channel-status');
+  const limitValue = argumentValue(process.argv.slice(2), '--limit');
+  const limit = limitValue == null ? null : Number(limitValue);
+  const queue = buildResearchQueue(data, asOf);
+  console.log(JSON.stringify(filterResearchQueue(queue, data, { channel, channelStatus, limit }), null, 2));
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

@@ -43,12 +43,42 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"PARDUS SUPG2 SPORT 2026\" EGR price",
+          "route": "authorized exact-SKU route",
+          "outcome": "rejected",
+          "result_url": "https://www.888bike.net/en/product/11484",
+          "accessed_at": "2026-08-17",
+          "note": "888bike lists THB 32,900 for the EGR option."
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Super Sport Gen2 EGR 4999元",
+          "route": "manufacturer/industry China launch route",
+          "outcome": "rejected",
+          "result_url": "https://www.wildto.com/news/58865.html",
+          "accessed_at": "2026-08-17",
+          "note": "Wildto's 2026-03-19 launch coverage gives CNY 4,999 for the EGR 1x12 build."
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS Super Sport Gen2 EGR current China price",
+          "route": "official manufacturer current catalog route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "PARDUS official root/catalog did not expose a current dated China checkout price."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "blocked",
+  "accepted_source_ids": [
+    "pardus-super-sport-egr-888bike-2026-08-17",
+    "pardus-super-sport-launch-wildto-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. A dated China launch price and a current Thailand authorized-retailer price were found; no current mainland-China price as of the audit date was verified. Keep the existing 2026-08-08 observation authoritative for current China-market pricing."
 }

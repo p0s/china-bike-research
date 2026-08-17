@@ -43,12 +43,24 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Giant Propel Gen 4\" tire clearance official",
+          "route": "Exact-generation industry web route",
+          "outcome": "found",
+          "result_url": "https://bikerumor.com/4th-gen-giant-propel-aero-bike-launch-2026/",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact report: frame and fork allow up to 32 mm."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-propel-gen4-bikerumor-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Exact-generation range claim; no trim-specific rim compatibility inferred."
 }

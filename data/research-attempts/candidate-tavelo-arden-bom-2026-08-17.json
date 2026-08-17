@@ -43,12 +43,24 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:tavelo.cc/products/tavelo-arden-race-frameset Tavelo ARDEN bom",
+          "route": "Tavelo official exact-model route",
+          "outcome": "found",
+          "result_url": "https://tavelo.cc/products/tavelo-arden-race-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact current Arden Race specification."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "tavelo-arden-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Race version only; preserve size/drive-train conditions."
 }

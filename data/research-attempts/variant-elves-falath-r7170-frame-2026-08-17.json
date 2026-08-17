@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"ELVES FALATH PRO 2022\" frame weight geometry tire clearance",
+          "route": "manufacturer exact product page",
+          "outcome": "found",
+          "result_url": "https://www.elvesbike.com/more.php?id=91&lm=8",
+          "accessed_at": "2026-08-17",
+          "note": "Exact manufacturer page publishes frame/fork materials, standards, sizes, and maximum 700x28C."
+        },
+        {
+          "attempt": 2,
+          "query": "\"FALATH PRO\" \"105 R7170\" frame",
+          "route": "authorized exact build route",
+          "outcome": "rejected",
+          "result_url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105",
+          "accessed_at": "2026-08-17",
+          "note": "Complete-bike page confirms the Falath Pro frame is the selected platform."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "elves-falath-pro-official-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Use only after confirming that 'Falath 717' in the China listing is the Falath Pro 2022 identity."
 }

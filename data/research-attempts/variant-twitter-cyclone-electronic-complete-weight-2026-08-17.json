@@ -43,12 +43,45 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd ET\" net weight",
+          "route": "manufacturer exact model page",
+          "outcome": "found",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html",
+          "accessed_at": "2026-08-17",
+          "note": "China manufacturer ET page claims 9.2 kg for both listed wheel options."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Twitter Cyclone 3rd\" EDS TX weight official",
+          "route": "manufacturer regional exact-build route",
+          "outcome": "found",
+          "result_url": "https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-cyclone-2025-wheeltop-eds-tx-2-12-speed-wireless-pearl-blue-xl-52cm-carbon-wheel",
+          "accessed_at": "2026-08-17",
+          "note": "2025 USA EDS-TX page claims 9.0 kg carbon-wheel / 9.2 kg alloy-wheel."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Twitter Cyclone 3rd 3K ED\" weight",
+          "route": "alternate manufacturer exact configuration route",
+          "outcome": "found",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-3k-ed",
+          "accessed_at": "2026-08-17",
+          "note": "3K ED page claims an approximately 8.8 kg configuration, but it is a separate 3K carbon-wheel/finish build."
+        }
+      ],
+      "conflict": "Preserve the conflict. Resolve wheel material, finish, size, pedals/accessories, and measurement basis before changing the existing 8.7 kg China snapshot."
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "twitter-cyclone-2025-eds-tx-2026-08-17",
+    "twitter-cyclone-electronic-official-2026-08-17",
+    "twitter-cyclone-gen3-et-china-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. Preserve the conflict. Resolve wheel material, finish, size, pedals/accessories, and measurement basis before changing the existing 8.7 kg China snapshot."
 }

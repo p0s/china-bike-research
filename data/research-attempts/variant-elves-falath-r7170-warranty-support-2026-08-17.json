@@ -43,12 +43,33 @@
       ]
     },
     "web": {
-      "status": "not-run",
-      "attempts": []
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath Pro frame warranty registration",
+          "route": "manufacturer exact support route",
+          "outcome": "found",
+          "result_url": "https://elvesbike.com/ProductRegistration.php",
+          "accessed_at": "2026-08-17",
+          "note": "Official registration page states a limited five-year frame-kit warranty for original owners who register within 30 days."
+        },
+        {
+          "attempt": 2,
+          "query": "ELVES Falath Pro global support contact",
+          "route": "manufacturer support route",
+          "outcome": "rejected",
+          "result_url": "https://elvesbike.com/contact.php",
+          "accessed_at": "2026-08-17",
+          "note": "Official contact page lists worldwide customer support and China/HK/Taiwan locations."
+        }
+      ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "elves-warranty-registration-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-four official/web completion. This is a conditional frame-kit warranty, not a complete-bike/component warranty. Confirm purchase-market eligibility and registration timing."
 }
