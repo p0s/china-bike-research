@@ -45,15 +45,15 @@ Make the catalog materially more useful without converting uncertain leads into 
 - 101 distinct catalog candidates still lack a dedicated image, while nine alias candidates intentionally use an existing published record's image.
 - The remaining high-priority exact-image blockers are the LightCarbon Speed7 complete-bike and frameset candidates. The only medium-priority blocker is the ELVES Mori community lead.
 - Many popular global models still lack a verifiable mainland SKU, current CNY checkout, stock, duties/returns, or local warranty route.
-- Published records still have 30 geometry gaps, 23 frame-weight gaps, 13 BB gaps, five complete-weight gaps, five incomplete BOMs, and seven weak/non-exact primary-image relationships.
+- Published records still have 30 geometry gaps, 23 frame-weight gaps, 12 BB gaps, five complete-weight gaps, five incomplete BOMs, and seven weak/non-exact primary-image relationships.
 - Current manufacturer pages sometimes conflict on global price or components; these conflicts remain explicit until one exact market/variant explanation is verified.
-- Web/official-source attempt budgets are complete for this batch. The only 23 open atomic records are public-post lanes that require the canonical local capture extension; that extension remains disabled in the dedicated research profile.
+- Web/official-source attempt budgets are complete for this batch. The ledger currently has 22 open atomic fields, all waiting on public-post work; the canonical local capture extension is enabled, but the first signed-in search in the current window reached Security Verification, so the lane is paused until a later research window or confirmed normal access.
 
 ## Next research queue
 
 1. Exact official images for the two LightCarbon Speed7 candidates, then the ELVES Mori-family lead and the highest-visibility low-priority exact models.
 2. Official mainland price and purchase-route confirmation for the remaining 19 price-missing candidate groups.
-3. Enable the canonical local capture extension and process the remaining public-post fields one at a time with `npm run research:queue -- --channel public-post --channel-status not-run --limit 1`.
+3. In a later normal-access window, process the next public-post field one at a time with `npm run research:queue -- --channel public-post --channel-status not-run --limit 1`; the current next item is the PARDUS Super Sport Gen2 eGR frame-weight field.
 4. Exact official BOM/weight/BB/geometry extraction for Trek Checkpoint and Domane, then Winspace G3 and other high-visibility complete bikes when new exact-source leads appear.
 5. Published-variant cleanup for the seven weak images and the highest-priority geometry/weight/BOM gaps.
 6. A fresh strict image-health run before every content merge and scheduled weekly health verification afterward.

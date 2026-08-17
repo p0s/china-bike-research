@@ -189,6 +189,7 @@ function priceTooltipLines(ctx, product) {
   if (variant.kind === 'frameset') {
     lines.push(`Frameset price: ${formatPrice(latestPrice)}.`);
     lines.push(`Estimated complete adds a fixed ${formatCny(allInPrice.buildAmount)} ${buildAssumption(ctx).label}.`);
+    if (variant.included?.length) lines.push(`Recorded package includes: ${variant.included.join(', ')}.`);
     if (threshold) lines.push(`Great-buy reference: below ${formatCny(threshold + allInPrice.buildAmount)} complete (${formatCny(threshold)} frameset).`);
   } else if (threshold) {
     lines.push(`Great-buy reference: below ${formatCny(threshold)}.`);
@@ -277,6 +278,7 @@ function geometrySummary(platform) {
 function publishedSpecificationRows(product) {
   const rows = [
     ['Bottom bracket', product.platform.frame?.bottom_bracket === 'unknown' ? '' : product.platform.frame?.bottom_bracket],
+    ['Included package', product.variant.kind === 'frameset' ? product.variant.included?.join(', ') : ''],
     ['Wheels', componentDescription(product.variant.wheels)],
     ['Tires', product.variant.tires],
     ['Cockpit', componentDescription(product.variant.cockpit)],
@@ -461,6 +463,25 @@ function candidatePriceState(entry) {
   return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
 }
 
+function candidatePriceRecordLabel(entry) {
+  const priceType = entry.price?.price_type ?? '';
+  if (priceType === 'reference-conversion') return 'Official FX estimate';
+  if (priceType === 'official-conflict') return 'Official price conflict';
+  if (entry.priceKind === 'official' || priceType.startsWith('official-')) return 'Official reference';
+  return 'Observed market record';
+}
+
+function candidatePackageOverlapNote(entry) {
+  if (entry.kind !== 'frameset' || !entry.price) return '';
+  const basis = `${entry.price.price_basis ?? ''} ${entry.price.conditions ?? ''}`;
+  const included = [];
+  if (/cockpit|handlebar/i.test(basis)) included.push('cockpit/handlebar');
+  if (/accessor/i.test(basis)) included.push('accessories');
+  if (/seatpost/i.test(basis)) included.push('seatpost');
+  if (!included.length) return '';
+  return `The recorded package mentions ${included.join(' and ')}; adjust the allowance to avoid double-counting included parts.`;
+}
+
 function candidateRow(ctx, entry) {
   const { candidate, brand } = entry;
   const metric = candidateMetric(entry);
@@ -642,8 +663,12 @@ function candidateFactRows(entry) {
 function candidateSourceList(entry) {
   const sources = new Map((entry.sources ?? []).map((source) => [source.id, source]));
   if (entry.imageSource) sources.set(entry.imageSource.id, entry.imageSource);
-  if (!sources.size) return '<p class="source-intro">No public source link is recorded yet.</p>';
-  return `<div class="source-list"><p class="source-intro">These sources support this research-stage profile; individual claims retain the confidence of their cited source.</p>${[...sources.values()].map((source) => {
+  const directUrl = entry.candidate.source_url;
+  const directLink = directUrl && ![...sources.values()].some((source) => source.url === directUrl)
+    ? `<p class="source-direct-link">Direct candidate link: <a href="${escapeAttr(directUrl)}" rel="noreferrer">open recorded source</a></p>`
+    : '';
+  if (!sources.size && !directLink) return '<p class="source-intro">No public source link is recorded yet.</p>';
+  return `<div class="source-list"><p class="source-intro">These sources support this research-stage profile; individual claims retain the confidence of their cited source.</p>${directLink}${[...sources.values()].map((source) => {
     const confidence = ['identity', 'specification', 'price']
       .filter((key) => source.reliability?.[key])
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
@@ -882,7 +907,7 @@ export function renderCandidateModel(ctx, entry) {
   const priceBrief = !entry.price
     ? 'No defensible price is recorded yet.'
     : entry.kind === 'frameset'
-      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.`
+      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
       : entry.price.price_type === 'reference-conversion'
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
@@ -904,7 +929,7 @@ export function renderCandidateModel(ctx, entry) {
     <section class="bike-brief" aria-labelledby="candidate-brief-title"><h2 id="candidate-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(reason)}</p><p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${keyHardware ? `<p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p>` : ''}<p class="research-profile-note">This is a research-stage profile. Useful exact-model evidence is shown, but unresolved fields prevent it from being treated as a publication-ready recommendation.</p></section>
     <section class="decision-block"><div><h2>What is known</h2>${facts.length ? `<ul>${facts.map(([label, value]) => `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`).join('')}</ul>` : '<p>No model-specific hardware facts are verified yet.</p>'}</div><div><h2>Trade-offs and unknowns</h2>${missing.length ? `<ul>${missing.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '<p>No additional evidence gaps are documented.</p>'}</div></section>
     <section class="detail-section" aria-labelledby="candidate-key-details-title"><h2 id="candidate-key-details-title">Key details</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
-    <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(entry.priceKind === 'official' ? 'Official reference' : 'Observed market record')}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
+    <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {
     title: pageTitle,

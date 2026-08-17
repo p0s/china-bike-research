@@ -95,6 +95,41 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-08-17/);
 });
 
+test('candidate detail preserves official price conflicts and direct source links', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const canyon = candidates.find((entry) => entry.candidate.id === 'missing-china-price-canyon-grail');
+  const canyonDetail = renderCandidateModel(context, canyon);
+  assert.match(canyonDetail, /Official price conflict/);
+  assert.doesNotMatch(canyonDetail, /Observed market record/);
+
+  const direct = structuredClone(candidates.find((entry) => entry.candidate.id === 'tsb-titan-super-bond-pioneer-one'));
+  direct.candidate.source_url = 'https://example.com/direct-source';
+  const directDetail = renderCandidateModel(context, direct);
+  assert.match(directDetail, /Direct candidate link:/);
+});
+
+test('frameset package details warn when the recorded price includes build parts', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const quick = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
+  const detail = renderCandidateModel(context, quick);
+  assert.match(detail, /package mentions cockpit\/handlebar and accessories/);
+  assert.match(detail, /adjust the allowance to avoid double-counting/);
+});
+
 test('local builds use the live repository for public contribution links', () => {
   const buildSource = fs.readFileSync(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
   assert.match(buildSource, /https:\/\/github\.com\/p0s\/china-bike-research/);
@@ -251,6 +286,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(publishedDetail, /data-model-frame-price-low="3200" data-model-frame-price-high="4900" data-model-default-allowance="6000"/);
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
   assert.match(publishedDetail, /data-model-price-brief/);
+  assert.match(publishedDetail, /Included package/);
 
   const candidateFrame = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   const candidateDetail = renderCandidateModel(context, candidateFrame);

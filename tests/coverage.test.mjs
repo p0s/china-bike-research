@@ -87,6 +87,16 @@ test('recorded research attempts cannot silently disappear or be rewritten', () 
   const rewrittenRecord = rewritten.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
   rewrittenRecord.channels['public-post'].attempts[0].query = 'replacement query';
   assert.ok(errorsFor(rewritten).some((error) => error.includes('lost protected attempt details')));
+
+  const rewrittenNote = structuredClone(data);
+  const noteRecord = rewrittenNote.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  noteRecord.channels['public-post'].attempts[0].note = 'replacement result note';
+  assert.ok(errorsFor(rewrittenNote).some((error) => error.includes('lost protected attempt details')));
+
+  const addedResultUrl = structuredClone(data);
+  const urlRecord = addedResultUrl.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  urlRecord.channels['public-post'].attempts[0].result_url = 'https://example.com/public-result';
+  assert.ok(errorsFor(addedResultUrl).some((error) => error.includes('lost protected attempt details')));
 });
 
 test('new information requires monotonic baseline acceptance', () => {

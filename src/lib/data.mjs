@@ -343,6 +343,14 @@ export function validateDataset(data = loadDataset()) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.source_url !== undefined) {
+      try {
+        const sourceUrl = new URL(candidate.source_url);
+        if (sourceUrl.protocol !== 'https:') errors.push(`candidate ${candidate.id}: source_url must use HTTPS`);
+      } catch {
+        errors.push(`candidate ${candidate.id}: invalid source_url`);
+      }
+    }
     if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
     if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
     for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);

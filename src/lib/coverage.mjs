@@ -184,7 +184,9 @@ function researchAttemptProtection(record) {
         attempt.query,
         attempt.route,
         attempt.outcome,
-        attempt.accessed_at
+        attempt.accessed_at,
+        attempt.note ?? null,
+        attempt.result_url ?? null
       ]));
     }
   }
@@ -279,6 +281,31 @@ function mergeLists(previous = [], current = []) {
   return sortedUnique([...previous, ...current]);
 }
 
+function parseAttemptEntry(entry) {
+  try {
+    const parsed = JSON.parse(entry);
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+function normalizedAttemptEntries(entries = [], reference = []) {
+  const referenceArrays = reference.map(parseAttemptEntry).filter((entry) => Array.isArray(entry) && entry.length >= 8);
+  return entries.map((entry) => {
+    const parsed = parseAttemptEntry(entry);
+    // Coverage schema v1 recorded six attempt fields. If a current full entry
+    // has the same stable identity fields, use it to migrate the old tuple;
+    // otherwise retain explicit nulls so an unknown legacy detail is still
+    // protected rather than silently dropped.
+    if (parsed?.length === 6) {
+      const migrated = referenceArrays.find((candidate) => candidate.slice(0, 6).every((value, index) => value === parsed[index]));
+      return JSON.stringify(migrated ?? [...parsed, null, null]);
+    }
+    return entry;
+  });
+}
+
 function mergeCollectionMaps(previous = {}, current = {}) {
   const merged = {};
   for (const id of sortedUnique([...Object.keys(previous), ...Object.keys(current)])) {
@@ -367,7 +394,10 @@ export function mergeCoverageBaseline(previous, current, updatedAt) {
           channel,
           Math.max(before.channel_attempt_counts?.[channel] ?? 0, now.channel_attempt_counts?.[channel] ?? 0)
         ])),
-        attempt_entries: mergeLists(before.attempt_entries, now.attempt_entries),
+        attempt_entries: mergeLists(
+          normalizedAttemptEntries(before.attempt_entries, now.attempt_entries),
+          normalizedAttemptEntries(now.attempt_entries)
+        ),
         accepted_source_ids: mergeLists(before.accepted_source_ids, now.accepted_source_ids)
       };
     }
@@ -450,7 +480,10 @@ export function validateBaselineTransition(previous, current) {
         errors.push(`coverage baseline lowered ${channel} attempt count researchAttempts:${id}`);
       }
     }
-    for (const entry of missingItems(before.attempt_entries, now.attempt_entries)) {
+    for (const entry of missingItems(
+      normalizedAttemptEntries(before.attempt_entries, now.attempt_entries),
+      normalizedAttemptEntries(now.attempt_entries)
+    )) {
       errors.push(`coverage baseline erased a recorded attempt researchAttempts:${id} ${entry}`);
     }
     for (const sourceId of missingItems(before.accepted_source_ids, now.accepted_source_ids)) {
@@ -616,7 +649,10 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
         errors.push(`researchAttempts:${id} lost a protected ${channel} attempt`);
       }
     }
-    if (missingItems(required.attempt_entries, actual.attempt_entries).length) {
+    if (missingItems(
+      normalizedAttemptEntries(required.attempt_entries, actual.attempt_entries),
+      normalizedAttemptEntries(actual.attempt_entries)
+    ).length) {
       errors.push(`researchAttempts:${id} lost protected attempt details`);
     }
     for (const sourceId of missingItems(required.accepted_source_ids, actual.accepted_source_ids)) {
@@ -704,7 +740,10 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
       }
       const strongerCount = Object.entries(actual.channel_attempt_counts ?? {})
         .some(([channel, count]) => count > (required.channel_attempt_counts?.[channel] ?? 0));
-      const newEntries = missingItems(actual.attempt_entries, required.attempt_entries);
+      const newEntries = missingItems(
+        normalizedAttemptEntries(actual.attempt_entries),
+        normalizedAttemptEntries(required.attempt_entries, actual.attempt_entries)
+      );
       const newSources = missingItems(actual.accepted_source_ids, required.accepted_source_ids);
       if (strongerCount || newEntries.length || newSources.length) stale.push(`researchAttempts:${id} has stronger unaccepted effort protection`);
     }
