@@ -383,8 +383,11 @@ export function validateDataset(data = loadDataset()) {
   const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'project-placeholder']);
   const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed']);
   for (const image of data.images) {
-    requireFields('image', image, ['platform_id', 'role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
-    if (!platformIds.has(image.platform_id)) errors.push(`image ${image.id}: missing platform ${image.platform_id}`);
+    requireFields('image', image, ['role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
+    const targetKeys = ['platform_id', 'candidate_id'].filter((key) => image[key] !== undefined);
+    if (targetKeys.length !== 1) errors.push(`image ${image.id}: target must identify exactly one platform or candidate`);
+    if (image.platform_id !== undefined && !platformIds.has(image.platform_id)) errors.push(`image ${image.id}: missing platform ${image.platform_id}`);
+    if (image.candidate_id !== undefined && !candidateIds.has(image.candidate_id)) errors.push(`image ${image.id}: missing candidate ${image.candidate_id}`);
     if (image.role !== 'primary') errors.push(`image ${image.id}: unsupported role ${image.role}`);
     if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
@@ -398,6 +401,7 @@ export function validateDataset(data = loadDataset()) {
       if (!variant) errors.push(`image ${image.id}: missing variant ${variantId}`);
       else if (variant.platform_id !== image.platform_id) errors.push(`image ${image.id}: variant ${variantId} belongs to another platform`);
     }
+    if (image.candidate_id !== undefined && image.variant_ids?.length) errors.push(`image ${image.id}: candidate image cannot target variants`);
     const mode = image.hosting?.mode;
     if (mode === 'remote') {
       if (!['official-page-embed', 'retailer-page-embed', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
@@ -623,6 +627,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';
       const sourceIds = candidate.source_ids ?? [];
       const source = sourceIds.map((id) => sources.get(id)).find((item) => item?.url) ?? null;
+      const image = data.images.find((item) => item.candidate_id === candidate.id && item.role === 'primary') ?? null;
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -637,6 +642,8 @@ export function joinCatalogCandidates(data = loadDataset()) {
         priceKind,
         priceMidpoint: priceMidpoint(price) ?? Number.POSITIVE_INFINITY,
         source,
+        image,
+        imageSource: image ? sources.get(image.source_id) ?? null : null,
         defaultVisible: Boolean(
           officialPrice ||
           (observedPrice && hasIdentifiableModel) ||

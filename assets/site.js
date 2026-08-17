@@ -370,7 +370,6 @@
   const capabilitySortHeading = sortHeadingByKey.get('capability');
   const capabilityHeadingLabel = capabilitySortHeading?.querySelector('[data-capability-heading-label]');
   const reset = catalogRoot.querySelector('[data-reset]');
-  const copyCatalogView = catalogRoot.querySelector('[data-copy-catalog-view]');
   const moreFilters = catalogRoot.querySelector('[data-more-filters]');
   const showAllModels = catalogRoot.querySelector('[data-show-all-models]');
   const modelLinks = [...catalogRoot.querySelectorAll('[data-model-link]')];
@@ -745,10 +744,6 @@
     allModelsVisible = !allModelsVisible;
     updateCatalog({ historyMode: 'push' });
   });
-  copyCatalogView?.addEventListener('click', async () => {
-    updateFilterUrl('replace');
-    showCopyFeedback(copyCatalogView, await copyText(location.href));
-  });
   addEventListener('popstate', () => {
     restoreFromParams(new URLSearchParams(location.search));
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
@@ -813,19 +808,21 @@
 
   function productHeader(item) {
     const head = element('div', 'compare-product-head');
+    const label = [item.brand, item.name].filter(Boolean).join(' ');
     const image = document.createElement('img');
     image.src = item.image;
-    image.alt = item.imageAlt;
+    image.alt = item.imageAlt || label;
     image.width = 120;
     image.height = 80;
     image.loading = 'lazy';
     image.decoding = 'async';
     image.dataset.productImage = '';
-    image.dataset.fallback = item.imageFallback;
+    image.dataset.fallback = item.imageFallback || (item.type === 'Frame estimate'
+      ? catalogRoot.dataset.framesetFallback
+      : catalogRoot.dataset.completeBikeFallback);
     if (item.imageRemote) image.referrerPolicy = 'no-referrer';
     enableImageFallback(image);
     const copy = element('div');
-    const label = [item.brand, item.name].filter(Boolean).join(' ');
     const title = item.url ? element('a', '', label) : element('span', '', label);
     if (item.url) {
       const target = new URL(item.url, location.origin);

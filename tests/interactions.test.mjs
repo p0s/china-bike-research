@@ -63,6 +63,7 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
   assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
   assert.match(script, /if \(comparePanel && !comparePanel\.hidden && selection\.length >= 2\) renderComparison\(\)/);
+  assert.doesNotMatch(script, /data-copy-catalog-view|copyCatalogView/);
 });
 
 test('shared disclosures and copy feedback have complete dismissal and failure states', () => {
@@ -71,7 +72,7 @@ test('shared disclosures and copy feedback have complete dismissal and failure s
   assert.match(script, /!target\?\.closest\('\.menu-button'\)/);
   assert.match(script, /addEventListener\('resize', \(\) => \{/);
   assert.match(script, /button\.textContent = copied \? 'Copied' : 'Copy failed'/);
-  assert.match(script, /showCopyFeedback\(copyCatalogView, await copyText\(location\.href\)\)/);
+  assert.match(script, /showCopyFeedback\(event\.currentTarget, await copyText\(location\.href\)\)/);
 });
 
 test('video embeds are created only after an explicit click and never autoplay', () => {

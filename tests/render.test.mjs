@@ -39,6 +39,7 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /Winspace SLC3 China price target/);
   assert.match(html, /data-stage="candidate" data-default-visible="true" data-id="candidate-pardus-spark-sport-pes"/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
+  assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+alt="XDS GT350 gravel bike shown from the drive side"[^>]+referrerpolicy="no-referrer"/);
   assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
   assert.match(html, /href="https:\/\/www\.xiaohongshu\.com\/explore\/66f3eba6000000001a021f4e" rel="noreferrer"/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
@@ -101,7 +102,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   assert.match(detail, /Product facts: Medium–high · Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
 
-  const placeholderProduct = products.find((item) => item.variant.id === 'tfsa-jh37-frameset');
+  const placeholderProduct = products.find((item) => item.variant.id === 'elves-falath-r7170');
   const placeholderDetail = renderModel({
     data,
     products,
@@ -179,6 +180,9 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
   assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
+  assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
+  assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">Frame ¥/);
+  assert.doesNotMatch(html, /data-copy-catalog-view|>Copy view</);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {

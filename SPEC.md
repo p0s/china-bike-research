@@ -97,6 +97,7 @@ Never infer specifications across generations, sizes, or similarly named models 
 ## 6. Media and privacy
 
 - Third-party images may be remotely embedded only with source, owner, exactness, rights status, alt text, and fallback metadata.
+- Every image record targets exactly one published platform or one candidate. A candidate image may identify the model without promoting the candidate or resolving its missing publication evidence.
 - Do not commit third-party image files without permission or a compatible license.
 - Never present another configuration as exact.
 - Scheduled image-health reporting may identify broken, blocked, or wrong-content-type remote embeds, but temporary host blocking is non-fatal because every image has a project-owned fallback.
