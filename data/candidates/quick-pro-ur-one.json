@@ -3,17 +3,44 @@
   "name": "Quick Pro UR:ONE",
   "model_id": "quick-pro-ur-one",
   "category": "road",
-  "type": "frameset",
-  "why_interesting": "Named 2026 road platform with an exact-model first look and unresolved category positioning.",
+  "type": "complete-bike",
+  "why_interesting": "A lightweight road build pairing a 629 g claimed frame with Dura-Ace Di2 and a current official global price.",
   "missing": [
-    "Exact primary-source category and production specification",
-    "Dated mainland-China RMB observation and purchase route",
-    "Warranty terms and evidence for decision-relevant claims"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Mainland delivery, duties, returns, and warranty-handling confirmation",
+    "Official claimed complete-bike weight"
   ],
-  "status": "research-lead",
-  "research_priority": "medium",
+  "status": "official-global-complete-bike",
+  "research_priority": "high",
   "video_ids": [
     "china-cycling-quick-pro-ur-one"
   ],
-  "last_reviewed": "2026-08-09"
+  "source_ids": [
+    "quick-pro-ur-one-dura-ace-official-2026-08-17",
+    "quick-pro-global-support-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "official_price": {
+    "amount_cny": 46800,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 6899,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://www.quickprousa.com/products/ur-one-dura-ace-di2",
+  "source_note": "Official global-store price US$6,899. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace R9270 Di2 2×12",
+    "frame": "High-modulus monocoque carbon",
+    "frame_weight_g": 629,
+    "bottom_bracket": "BSA-68 threaded",
+    "tire_clearance_mm": 32,
+    "cockpit": "CANWIN ZEPHYR SSL integrated cockpit",
+    "wheels": "Selectable wheel configuration"
+  },
+  "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
+  "last_reviewed": "2026-08-17"
 }

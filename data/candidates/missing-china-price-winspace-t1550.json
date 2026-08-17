@@ -1,18 +1,38 @@
 {
   "id": "missing-china-price-winspace-t1550",
-  "name": "Winspace T1550 China price target",
+  "name": "Winspace T1550 Gen 2 frameset",
   "model_id": "winspace-t1550",
   "category": "road-aero",
-  "type": "research",
-  "why_interesting": "Major Chinese aero-road benchmark; current domestic trims and prices needed.",
+  "type": "frameset",
+  "why_interesting": "A major Chinese aero-road benchmark with a current Gen 2 identity, 828 g claimed frame, 32 mm clearance and official direct price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Exact domestic warranty handling and final landed cost"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "required_before_dashboard": "Mainland-China purchase route, dated checkout price, landed cost, and domestic warranty handling",
+  "source_ids": ["winspace-t1550-official-2026-08-17", "usd-cny-central-parity-2026-07-31"],
+  "official_price": {
+    "amount_cny": 12900,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1900,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://www.winspace.cc/products/t15502ndgen",
+  "source_note": "Official page currently showed US$1,900, while embedded specification copy still said US$1,780; the current visible price is used. CNY reference excludes actual FX, shipping, tax and duties, and the catalog adds the adjustable standard build allowance.",
+  "facts": {
+    "frame": "Toray T1000+T800 one-piece carbon",
+    "frame_weight_g": 828,
+    "bottom_bracket": "T47-85.5",
+    "tire_clearance_mm": 32,
+    "sizes": "440, 470, 490, 520 and 550 mm"
+  },
+  "support_note": "Official page states a limited three-year frameset warranty and includes frame, fork, seatpost, headset, cable stoppers and direct-mount hanger.",
+  "last_reviewed": "2026-08-17"
 }

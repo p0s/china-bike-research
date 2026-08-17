@@ -1,18 +1,38 @@
 {
   "id": "missing-china-price-winspace-agile",
-  "name": "Winspace AGILE China price target",
+  "name": "Winspace Agile frameset",
   "model_id": "winspace-agile",
   "category": "road",
-  "type": "research",
-  "why_interesting": "Broadens Winspace beyond aero and gravel.",
+  "type": "frameset",
+  "why_interesting": "Winspace's all-round road frameset combines an 850 g claimed frame, T47, 32 mm clearance and a current official direct price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB checkout observation and purchase route",
+    "Exact domestic warranty handling and final landed cost"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-frameset",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "required_before_dashboard": "Mainland-China purchase route, dated checkout price, landed cost, and domestic warranty handling",
+  "source_ids": ["winspace-agile-official-2026-08-17", "usd-cny-central-parity-2026-07-31"],
+  "official_price": {
+    "amount_cny": 13400,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1980,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_url": "https://www.winspace.cc/products/agile-bundle",
+  "source_note": "Official US$1,980 frame price. CNY reference excludes actual FX, shipping, tax and duties; the catalog adds the adjustable standard build allowance for the displayed full-bike estimate.",
+  "facts": {
+    "frame": "T800+T1000 carbon",
+    "frame_weight_g": 850,
+    "bottom_bracket": "T47-85.5",
+    "tire_clearance_mm": 32,
+    "sizes": "410, 440, 470, 510 and 550 mm"
+  },
+  "support_note": "Official page states a limited three-year frameset warranty and includes frame, fork, seatpost, headset, cable stoppers and direct-mount hanger.",
+  "last_reviewed": "2026-08-17"
 }

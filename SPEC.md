@@ -88,6 +88,7 @@ Never infer specifications across generations, sizes, or similarly named models 
 ## 5. Price rules
 
 - Every price has a date, exact variant, market/channel, type, conditions, and source.
+- A foreign-currency official complete-bike list price may appear on a candidate only as a dated CNY reference estimate with the original amount and currency, conversion rate/source/date, and checkout/import caveat. It is not a China-market price observation.
 - Add a new observation; do not overwrite price history.
 - Distinguish observed checkout, official list, reference range, historical promotion, and estimate.
 - Record coupons, subsidies, memberships, trade-ins, size/color limits, shipping, and other conditions when known.

@@ -1,18 +1,30 @@
 {
   "id": "missing-china-price-elves-falath-evo",
-  "name": "ELVES Falath Evo China price target",
+  "name": "ELVES Falath EVO frameset",
   "model_id": "elves-falath-evo",
   "category": "road-aero",
-  "type": "research",
-  "why_interesting": "Core ELVES road platform; complements the Falath R7170 listing.",
+  "type": "frameset",
+  "why_interesting": "Current UCI-approved aero frameset with T800/T1000 carbon, T47, 32 mm clearance and a five-year global frame warranty.",
   "missing": [
     "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Exact mainland-China purchase route and checkout conditions",
+    "Stable rights-documented exact product image"
   ],
-  "status": "missing-china-price",
+  "status": "official-spec-price-missing",
   "research_priority": "high",
   "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "required_before_dashboard": "China purchase route, dated RMB price, checkout conditions, and domestic warranty handling",
+  "source_ids": ["elves-falath-evo-official-2026-08-17"],
+  "source_url": "https://elvesbike.com/more.php?id=142&lm=8",
+  "source_note": "Official current product page establishes the exact frame, specification, certification and five-year global frame warranty, but publishes no price and no explicit mainland checkout route.",
+  "facts": {
+    "frame": "Toray T800+T1000 full carbon, EPS molded",
+    "frame_weight_g": 1050,
+    "bottom_bracket": "T47 threaded",
+    "tire_clearance_mm": 32,
+    "sizes": "46, 49, 52, 54, 56, 59 and 61",
+    "brakes": "Flat-mount disc, up to 160 mm rotor"
+  },
+  "support_note": "Official page states UCI approval, EN 14766 and ISO 4210-6:2023 compliance, Di2/eTap compatibility, full internal routing, 415 g fork, 250 g seatpost and a five-year global frame warranty.",
+  "last_reviewed": "2026-08-17"
 }

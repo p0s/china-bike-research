@@ -379,12 +379,13 @@ function candidateMetric(entry) {
           : kind === 'triathlon'
             ? 'Format'
             : 'Use';
+  const tireClearance = entry.candidate.facts?.tire_clearance_mm;
   return {
     label,
-    value: category ? categoryLabel(category) : '—',
-    sortValue: 0,
+    value: kind === 'tire' && Number.isFinite(tireClearance) ? `${tireClearance} mm` : category ? categoryLabel(category) : '—',
+    sortValue: kind === 'tire' && Number.isFinite(tireClearance) ? tireClearance : 0,
     kind,
-    details: ''
+    details: kind === 'tire' && Number.isFinite(tireClearance) ? 'Official maximum tire clearance.' : ''
   };
 }
 
@@ -397,7 +398,10 @@ function candidatePriceBounds(entry) {
 
 function candidatePriceLabel(ctx, entry) {
   if (!entry.price) return '—';
-  if (entry.kind !== 'frameset') return formatPrice(entry.price);
+  if (entry.kind !== 'frameset') {
+    const price = formatPrice(entry.price);
+    return entry.price.price_type === 'reference-conversion' ? `Est. ${price}` : price;
+  }
   const { low, high } = candidatePriceBounds(entry);
   if (!Number.isFinite(low)) return '—';
   const allowance = buildAssumption(ctx).amount_cny;
@@ -406,7 +410,9 @@ function candidatePriceLabel(ctx, entry) {
 
 function candidatePriceState(entry) {
   if (!entry.price) return '';
-  const basis = entry.priceKind === 'official' ? 'Official' : 'Observed';
+  const basis = entry.price.price_type === 'reference-conversion'
+    ? 'Official FX estimate'
+    : entry.priceKind === 'official' ? 'Official' : 'Observed';
   const framePrice = entry.kind === 'frameset' ? `Frame ${formatPrice(entry.price)}` : '';
   return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
 }
@@ -414,10 +420,14 @@ function candidatePriceState(entry) {
 function candidateRow(ctx, entry) {
   const { candidate, brand } = entry;
   const metric = candidateMetric(entry);
+  const facts = candidate.facts ?? {};
   const searchable = [
     candidate.name,
     brand?.name,
     brand?.name_zh,
+    facts.drivetrain,
+    facts.frame,
+    facts.bottom_bracket,
     ...entry.categories.map(categoryLabel)
   ].filter(Boolean).join(' ').toLowerCase();
   const sourceName = entry.source?.url
@@ -441,7 +451,14 @@ function candidateRow(ctx, entry) {
   const brandButton = brand
     ? `<button class="catalog-brand-filter" type="button" data-brand-filter="${escapeAttr(brand.id)}" aria-pressed="false" aria-label="${escapeAttr(brandLabel)} — filter catalog to this brand">${escapeHtml(brandLabel)}</button>`
     : '';
-  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${priceSort}" data-price-filter="${priceHigh}"${framePriceData} data-capability-sort="0" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
+  const weight = Number.isFinite(facts.complete_weight_g)
+    ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg`
+    : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
+      ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
+      : '—';
+  const weightState = Number.isFinite(facts.complete_weight_g) ? '<span class="metric-sub">Claimed</span>' : '';
+  const frame = facts.frame ?? candidate.manufacturing ?? '—';
+  return `<div class="catalog-row is-candidate" role="row" data-product-row data-stage="candidate" data-default-visible="${entry.defaultVisible}" data-id="${escapeAttr(entry.id)}" data-brand="${escapeAttr(brand?.id ?? '')}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(entry.kind)}" data-family="${escapeAttr(categoryFamily(entry.category))}" data-category="${escapeAttr(entry.categories.join('|'))}" data-handlebar="" data-price-sort="${priceSort}" data-price-filter="${priceHigh}"${framePriceData} data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(candidate.name.toLowerCase())}"${entry.defaultVisible ? '' : ' hidden'}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(entry.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(candidate.name)} for comparison</span></label></div>
     <div class="catalog-product" role="cell">
       ${candidateImage(ctx, entry)}
@@ -453,9 +470,9 @@ function candidateRow(ctx, entry) {
     </div>
     <div class="catalog-cell price-cell" role="cell" data-label="Full-bike price"><span class="metric-main"${priceLabelData}>${escapeHtml(candidatePriceLabel(ctx, entry))}</span><span class="metric-sub price-state">${escapeHtml(candidatePriceState(entry))}</span></div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}"><span class="metric-main">${escapeHtml(metric.value)}</span></div>
-    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">—</div>
-    <div class="catalog-cell weight-cell" role="cell" data-label="Weight">—</div>
-    <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(candidate.manufacturing ?? '—')}</div>
+    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${escapeHtml(facts.drivetrain ?? '—')}</div>
+    <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}${weightState}</div>
+    <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
     <div class="row-link-cell" role="cell"></div>
   </div>`;
 }
@@ -504,6 +521,16 @@ function candidateComparisonSummary(ctx, entry) {
   const assumption = buildAssumption(ctx);
   const fallback = candidateFallback(ctx, entry);
   const image = imageUrl(ctx, entry.image) || fallback;
+  const facts = entry.candidate.facts ?? {};
+  const weight = Number.isFinite(facts.complete_weight_g)
+    ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg`
+    : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
+      ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
+      : '—';
+  const priceDetails = estimated
+    ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds a fixed ${formatCny(assumption.amount_cny)} ${assumption.label}.`
+    : entry.candidate.source_note ?? '';
+  const frame = facts.frame ?? entry.candidate.manufacturing;
   return {
     id: entry.id,
     name: entry.candidate.name,
@@ -515,15 +542,16 @@ function candidateComparisonSummary(ctx, entry) {
     frameLow: estimated ? frameLow : null,
     frameHigh: estimated ? frameHigh : null,
     priceState: candidatePriceState(entry),
-    priceDetails: estimated
-      ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds a fixed ${formatCny(assumption.amount_cny)} ${assumption.label}.`
-      : '',
+    ...(priceDetails ? { priceDetails } : {}),
     categoryMetric: metric.value,
     categoryMetricLabel: metric.label,
     categoryMetricKind: metric.kind,
-    frame: entry.candidate.manufacturing ?? '—',
+    ...(facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
+    ...(weight !== '—' ? { weight } : {}),
+    ...(Number.isFinite(facts.complete_weight_g) ? { weightSubline: 'Claimed' } : {}),
+    ...(frame ? { frame } : {}),
     category: entry.categories.map(categoryLabel).join(' · ') || '—',
-    manufacturing: entry.candidate.manufacturing ?? '—'
+    ...(entry.candidate.manufacturing ? { manufacturing: entry.candidate.manufacturing } : {})
   };
 }
 

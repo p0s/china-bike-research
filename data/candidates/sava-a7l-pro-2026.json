@@ -4,13 +4,13 @@
   "model_id": "sava-a7l-pro-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "R7120/R7170 hydraulic configuration shown.",
+  "why_interesting": "A current exact 2026 R08/R7120 complete bike with a dated mainland price, 105 2×12 hydraulic build, carbon wheels and official geometry.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Current domestic warranty and support route",
+    "Final mainland checkout conditions, stock, size and component-substitution confirmation"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-current-sku-price-lead",
+  "research_priority": "high",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,6 +20,23 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
+  "source_ids": [
+    "sava-a7l-pro-2026-official-2026-08-17",
+    "taobao-snapshot-2026-08-08"
+  ],
+  "source_url": "https://savadeck-bike.com/products/2026-sava-a7l-pro-105-r7120-full-carbon-road-bike-24sp",
+  "source_note": "Official current model is 2026 A7L PRO R08-R7120-24S at US$1,799 globally. The catalog retains the stronger exact mainland Taobao observation of ¥4,996.25; final checkout, stock and domestic warranty still require confirmation.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7100/R7120 mechanical 2×12",
+    "complete_weight_g": 8800,
+    "frame": "R08 T800 carbon frame and fork",
+    "bottom_bracket": "BB86-24R press-fit",
+    "wheels": "50 mm carbon, 21 mm internal / 28 mm external",
+    "cockpit": "Integrated T800 carbon 400×100 mm",
+    "brakes": "Shimano BR-R7170 hydraulic disc",
+    "tires": "700×25C",
+    "sizes": "44, 47, 51, 54 and 56 cm"
+  },
   "source_refs": "IMG_6859.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }
