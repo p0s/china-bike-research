@@ -101,7 +101,7 @@ Never infer specifications across generations, sizes, or similarly named models 
 - Every image record targets exactly one published platform or one candidate. A candidate image may identify the model without promoting the candidate or resolving its missing publication evidence.
 - Do not commit third-party image files without permission or a compatible license.
 - Never present another configuration as exact.
-- Scheduled image-health reporting may identify broken, blocked, or wrong-content-type remote embeds, but temporary host blocking is non-fatal because every image has a project-owned fallback.
+- Scheduled image-health reporting fails on confirmed broken or wrong-content-type remote embeds. Temporary host blocking and network unreachability remain non-fatal because every image has a project-owned fallback.
 - YouTube videos use a validated video ID and a click-to-load `youtube-nocookie.com` embed. Initial model-page rendering must not request a YouTube thumbnail, player, script, or iframe. The external YouTube link remains available without loading the embed.
 - Do not publish names, accounts, contacts, addresses, order or tracking IDs, payment data, private messages, private permission correspondence, credentials, GPS, or EXIF metadata.
 
@@ -118,3 +118,12 @@ For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, 
 The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-11 unified 204-row catalog baseline is capped at 650,000 HTML bytes and 5,500 elements after measuring the GitHub Pages base-path build at 633,916 bytes and 5,369 elements; desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
 
 Research bundles are evidence inputs, not publication authority. A dated marketplace snapshot may support an exact price observation, but a price is attachable only to the exact variant it identifies. Split or ambiguous trims remain candidates; screenshots, seller identities, and copied third-party images are never public data assets.
+
+## 8. Information-retention contract
+
+- `data/coverage-baseline.json` is a monotonic, machine-generated inventory of accepted record identities, populated evidence fields, record relationships, price coverage, and image quality.
+- Run `npm run coverage:accept` after adding catalog information. The command may add protection or raise its minimum quality, but it must never erase an accepted identity, field, relationship, price target, or image-quality level.
+- `npm run coverage:check` fails when accepted information disappears, an image becomes less exact or loses its protected source or hosting quality, an active bike loses its primary image or price coverage, or new information has not yet been added to the baseline.
+- Correct a materially wrong record by adding the supported replacement and documenting the old identity in `data/retired-records/`. Each retirement needs a reason, active evidence, review date, and an active replacement when one exists.
+- Retirement records authorize only the named identity removal. They do not authorize an active bike to lose protected price, evidence, fact, or image coverage.
+- CI publishes a before-and-after coverage report for review. Baseline, retirement, and guard changes require code-owner review on branches where GitHub branch protection enforces CODEOWNERS.

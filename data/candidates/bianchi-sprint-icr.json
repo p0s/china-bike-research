@@ -1,16 +1,18 @@
 {
   "id": "bianchi-sprint-icr",
-  "name": "BIANCHI 比安奇 Sprint ICR",
+  "name": "Bianchi Sprint ICR 105 Di2 (YTBR6)",
   "model_id": "bianchi-sprint-icr",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Full-internal frame; 7120 mechanical shown.",
+  "why_interesting": "Exact official global all-round road build with component and size evidence; mainland availability remains unresolved.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Mainland China SKU, dealer route, CNY price and stock",
+    "China warranty policy",
+    "Complete-bike/frame weight",
+    "Numerical geometry and tire-clearance limit",
+    "Direct image asset URL"
   ],
-  "status": "publication-gate-not-met",
+  "status": "official-global-reference",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +23,23 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6897.png#L2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17",
+  "research_priority": "high",
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Mainland China SKU, dealer route, CNY price and stock; China warranty policy; Complete-bike/frame weight; Numerical geometry and tire-clearance limit; Direct image asset URL",
+  "source_ids": [
+    "bianchi-sprint-icr-official-2026-08-17"
+  ],
+  "source_note": "Official Bianchi listing supports code YTBR6, the component build and €3,650 reference price. No mainland CNY price, dealer route or weight was verified.",
+  "source_url": "https://www.bianchi.com/en/shop/bikes/road/all-rounder/sprint/sprint-2/sprint-sprint-sprint-icr/",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2×12",
+    "brakes": "Shimano BR-R7170 hydraulic disc",
+    "frame": "Carbon monocoque with full-carbon aero fork",
+    "bottom_bracket": "PressFit 86.5×41",
+    "wheels": "Velomann alloy 30 mm",
+    "tires": "Vittoria Rubino IV 700×25",
+    "cockpit": "Velomann",
+    "sizes": "47, 50, 53, 55, 57, 59, 61"
+  }
 }

@@ -1,18 +1,33 @@
 {
   "id": "missing-china-price-trek-checkpoint",
-  "name": "Trek Checkpoint China price target",
+  "name": "Trek Checkpoint SL 5 AXS Gen 3",
   "model_id": "trek-checkpoint",
   "category": "gravel",
-  "type": "research",
-  "why_interesting": "Mainstream gravel benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official Trek China gravel model with a current CNY list price and product identifier.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Exact current BOM, weight, frame/geometry, BB and clearance",
+    "Direct image asset URL",
+    "Current dealer stock, checkout outcome and China warranty policy"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Exact current BOM, weight, frame/geometry, BB and clearance; Direct image asset URL; Current dealer stock, checkout outcome and China warranty policy",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "trek-china-checkpoint-category-2026-08-17",
+    "trek-china-checkpoint-product-47071-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 27800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Trek Checkpoint SL 5 AXS Gen 3 at ¥27,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/砾石自行车/c/B546/",
+  "facts": {
+    "frame": "Checkpoint SL Gen 3 carbon platform; exact current BOM still requires extraction"
+  }
 }

@@ -1,18 +1,38 @@
 {
   "id": "missing-china-price-giant-defy-advanced",
-  "name": "Giant Defy Advanced China price target",
+  "name": "Giant Defy Advanced 2",
   "model_id": "giant-defy-advanced",
   "category": "road-endurance",
-  "type": "research",
-  "why_interesting": "Essential endurance-road benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Official mainland-China endurance complete bike with an exact trim, clearance claim and suggested retail price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Complete-bike/frame weight",
+    "Full wheel, tire, cockpit and drivetrain detail",
+    "Bottom-bracket standard",
+    "Numerical geometry and sizes",
+    "Current stock/checkout and warranty policy",
+    "Direct image asset URL"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Complete-bike/frame weight; Full wheel, tire, cockpit and drivetrain detail; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy; Direct image asset URL",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "giant-china-defy-advanced-2-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 14800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Giant Defy Advanced 2 at ¥14,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837",
+  "facts": {
+    "drivetrain": "Shimano 105 with RS520 50/34 crank",
+    "brakes": "Shimano 105 HRD hydraulic disc",
+    "frame": "Advanced-Grade Composite with full-composite OverDrive fork",
+    "tire_clearance_mm": 38
+  }
 }

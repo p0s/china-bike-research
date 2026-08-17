@@ -1,19 +1,30 @@
 {
   "id": "missing-china-price-winspace-g5",
-  "name": "Winspace G5 China price target",
+  "name": "Winspace G5 gravel frameset",
   "model_id": "winspace-g5",
   "category": "gravel-race",
-  "type": "research",
-  "why_interesting": "Current flagship gravel platform; domestic price needed.",
+  "type": "frameset",
+  "why_interesting": "Exact official global frameset evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "existing_record_id": "winspace-g5-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "winspace-g5-gravel-official-2026-08-17",
+    "public-winspace-g5-owner-image-2026-08-17"
+  ],
+  "source_url": "https://www.winspace.cc/products/g5-gravel",
+  "source_note": "Official global page lists the frameset at US$2,200 and claims up to 57-58 mm front/53 mm rear clearance. The catalog uses the limiting 53 mm value; mainland price and complete-bike configuration remain unresolved.",
+  "facts": {
+    "frame": "Winspace G5 carbon gravel frameset",
+    "tire_clearance_mm": 53,
+    "storage": "Downtube storage with magnetic cover",
+    "sizes": "XS, S, M, L, XL, XXL"
+  }
 }

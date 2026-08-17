@@ -51,9 +51,9 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 35);
   assert.equal(data.variants.length, 37);
   assert.equal(data.prices.length, 38);
-  assert.equal(data.images.length, 61);
+  assert.equal(data.images.length, 87);
   assert.equal(data.videos.length, 12);
-  assert.ok(data.sources.length >= 87);
+  assert.ok(data.sources.length >= 168);
   assert.equal(data.candidates.length, 177);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
@@ -105,6 +105,24 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const specialized = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-specialized-tarmac-sl8');
   assert.equal(specialized.price.amount_cny, 30990);
   assert.equal(specialized.image.subject_accuracy, 'exact-variant');
+  const defy = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-giant-defy-advanced');
+  assert.equal(defy.price.amount_cny, 14800);
+  assert.equal(defy.candidate.facts.tire_clearance_mm, 38);
+  assert.equal(defy.image.subject_accuracy, 'exact-platform');
+  const reacto = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-merida-reacto');
+  assert.equal(reacto.price.amount_cny, 23800);
+  assert.equal(reacto.candidate.facts.drivetrain, 'Shimano 105 Di2 2×12');
+  assert.equal(reacto.image.subject_accuracy, 'exact-variant');
+  const scultura = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-merida-scultura');
+  assert.equal(scultura.price.amount_cny, 16800);
+  assert.equal(scultura.candidate.facts.complete_weight_g, 8200);
+  const domane = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-trek-domane');
+  assert.equal(domane.price.amount_cny, 20800);
+  const hawkeye = catalogCandidates.find((entry) => entry.candidate.id === 'sava-f20-hawkeye');
+  assert.equal(hawkeye.candidate.facts.complete_weight_g, 8700);
+  assert.equal(hawkeye.image.subject_accuracy, 'exact-variant');
+  const sprint = catalogCandidates.find((entry) => entry.candidate.id === 'bianchi-sprint-icr');
+  assert.equal(sprint.image.subject_accuracy, 'exact-variant');
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'xlab-gt8'), false);
   assert.ok(catalogCandidates.every((entry) => entry.brand?.id && entry.brand?.name));
   const brandLabels = new Map();
@@ -223,8 +241,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 59);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 26);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 85);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 52);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),

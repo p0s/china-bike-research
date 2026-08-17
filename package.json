@@ -12,10 +12,13 @@
     "build": "node scripts/build.mjs",
     "validate": "node scripts/validate-data.mjs",
     "privacy": "node scripts/check-privacy.mjs",
+    "coverage:check": "node scripts/coverage.mjs",
+    "coverage:accept": "node scripts/coverage.mjs --accept",
+    "coverage:report": "node scripts/coverage.mjs --report",
     "data:gaps": "node scripts/data-gaps.mjs",
     "image:report": "node scripts/image-health-report.mjs",
     "stale:report": "node scripts/stale-report.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run privacy && npm run validate && npm test && npm run build"
+    "check": "npm run privacy && npm run validate && npm run coverage:check && npm test && npm run build"
   }
 }

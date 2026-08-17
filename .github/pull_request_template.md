@@ -13,5 +13,7 @@
 - [ ] Unknown facts remain unknown; no sibling model was inferred without evidence.
 - [ ] No personal, account, order, shipping, tracking, payment, credential, GPS, EXIF, or private-message data is included.
 - [ ] Images have accurate source, rights, credit, exactness, alt text, and fallback metadata.
+- [ ] `npm run coverage:accept` was run after adding evidence; every removal has a reviewed retirement record and replacement when available.
+- [ ] The generated catalog coverage report shows no unexplained record, image-quality, price, fact, or evidence regression.
 - [ ] UI changes preserve the unified minimalist comparison and avoid repeated content.
 - [ ] `npm run check` passes.

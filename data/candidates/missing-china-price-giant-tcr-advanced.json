@@ -1,18 +1,40 @@
 {
   "id": "missing-china-price-giant-tcr-advanced",
-  "name": "Giant TCR Advanced China price target",
+  "name": "Giant TCR Advanced 3-GC",
   "model_id": "giant-tcr-advanced",
   "category": "road",
-  "type": "research",
-  "why_interesting": "Essential mass-market China benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Official mainland-China TCR complete-bike benchmark with an exact trim and suggested retail price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Complete-bike and frame weight",
+    "Bottom-bracket standard",
+    "Numerical geometry and exact size list",
+    "Tire clearance",
+    "Current stock/checkout and warranty policy",
+    "Direct image asset URL"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Complete-bike and frame weight; Bottom-bracket standard; Numerical geometry and exact size list; Tire clearance; Current stock/checkout and warranty policy; Direct image asset URL",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 6998,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Giant TCR Advanced 3-GC at ¥6,998. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
+  "facts": {
+    "drivetrain": "Shimano Tiagra 2×10",
+    "brakes": "Shimano Tiagra rim brake",
+    "frame": "Giant carbon frame with full-carbon OverDrive fork",
+    "wheels": "Giant aluminum rims and hubs",
+    "tires": "Giant S-R4 700×25C",
+    "cockpit": "Giant Contact alloy"
+  }
 }

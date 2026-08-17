@@ -1,19 +1,31 @@
 {
   "id": "missing-china-price-winspace-g3",
-  "name": "Winspace G3 China price target",
+  "name": "Winspace G3 Pro Di2 complete bike",
   "model_id": "winspace-g3",
   "category": "gravel",
-  "type": "research",
-  "why_interesting": "Already conceptually relevant; needs a dated mainland-China RMB observation.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official global complete-bike evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling",
+    "Resolve the same-site global price conflict and verify complete weight, BB and maximum clearance"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "existing_record_id": "winspace-g3-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling; Resolve the same-site global price conflict and verify complete weight, BB and maximum clearance",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "winspace-g3-pro-di2-official-2026-08-17"
+  ],
+  "source_url": "https://www.winspace.cc/collections/complete-bike/products/g3-gravel-pro-di2",
+  "source_note": "Official product and collection pages support the exact build but conflict at US$3,899 versus US$4,099. No mainland CNY checkout price is shown.",
+  "facts": {
+    "drivetrain": "Shimano GRX RX825 Di2 1×12",
+    "frame": "Winspace G3 carbon gravel frame",
+    "wheels": "Lún Gryper 35/45 carbon, carbon spokes",
+    "tires": "700×40C",
+    "cockpit": "Integrated Winspace carbon handlebar"
+  }
 }

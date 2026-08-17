@@ -1,16 +1,15 @@
 {
   "id": "twitter-cyclone-gen3-7170",
-  "name": "TWITTER 骓特 Cyclone Gen 3 7170",
+  "name": "TWITTER Cyclone 3rd Shimano 105 R7120",
   "model_id": "twitter-cyclone-gen3-7170",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "R7120/R7170 configurations shown.",
+  "why_interesting": "Exact official global complete-bike evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
-  "status": "publication-gate-not-met",
+  "status": "official-global-reference",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +20,17 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6883.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17",
+  "research_priority": "high",
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
+  "source_ids": [
+    "twitter-cyclone-3rd-r7120-official-2026-08-17"
+  ],
+  "source_url": "https://twitterbikeusa.com/products/cyclone-3rd-r7120-small",
+  "source_note": "Official global-store exact build lists US$1,509 and claims 8.7 kg. Mainland CNY price, stock, tax and warranty route remain unverified.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 2×12",
+    "complete_weight_g": 8700
+  }
 }

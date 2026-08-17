@@ -1,18 +1,35 @@
 {
   "id": "missing-china-price-merida-silex",
-  "name": "Merida Silex China price target",
+  "name": "Merida SILEX 7000 25",
   "model_id": "merida-silex",
   "category": "gravel",
-  "type": "research",
-  "why_interesting": "Important mainstream gravel benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official SILEX 7000 build with full geometry and clearance; mainland SKU and checkout remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Mainland China SKU, dealer/checkout route and current stock",
+    "Complete-bike/frame weight",
+    "Exact mainland warranty policy",
+    "Whether the displayed CNY price is current mainland suggested retail"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Mainland China SKU, dealer/checkout route and current stock; Complete-bike/frame weight; Exact mainland warranty policy; Whether the displayed CNY price is current mainland suggested retail",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "merida-silex-7000-25-official-cny-reference-2026-08-17"
+  ],
+  "source_note": "Official Merida zh-TW reference supports the exact build, geometry, 45 mm clearance and a displayed ¥20,800 reference. It is not evidence of a mainland-China checkout price.",
+  "source_url": "https://www.merida.cn/zh-tw/bikefinder/bike/98/%3Aslug.html",
+  "facts": {
+    "drivetrain": "Shimano GRX 820 2×12",
+    "brakes": "Shimano GRX 820 with RT64 rotors",
+    "frame": "SILEX CF2 II carbon with carbon fork",
+    "bottom_bracket": "Shimano SM-BBR60",
+    "wheels": "Easton EA70AX",
+    "tires": "Maxxis Rambler",
+    "tire_clearance_mm": 45,
+    "mounts": "Multiple frame and fork mounts",
+    "sizes": "XXS, XS, S, M, L, XL"
+  }
 }
