@@ -51,7 +51,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 35);
   assert.equal(data.variants.length, 37);
   assert.equal(data.prices.length, 38);
-  assert.equal(data.images.length, 35);
+  assert.equal(data.images.length, 50);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 87);
   assert.equal(data.candidates.length, 177);
@@ -70,6 +70,11 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(pardus.defaultVisible, true);
   assert.equal(pardus.priceKind, 'observed');
   assert.equal(pardus.priceMidpoint, 8597.25);
+
+  const gt350 = catalogCandidates.find((entry) => entry.candidate.id === 'xds-gt350');
+  assert.equal(gt350.image.candidate_id, 'xds-gt350');
+  assert.equal(gt350.image.subject_accuracy, 'exact-platform');
+  assert.equal(gt350.imageSource.id, 'xds-gt350-retailer-2026-08-08');
 
   const earlyLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
   assert.equal(earlyLead.defaultVisible, false);
@@ -163,8 +168,9 @@ test('wide-clearance products preserve the narrower rear limit', () => {
 });
 
 test('every platform and variant resolves a primary visual', () => {
-  assert.equal(data.images.length, data.platforms.length);
-  const imagedPlatforms = new Set(data.images.filter((image) => image.role === 'primary').map((image) => image.platform_id));
+  const platformImages = data.images.filter((image) => image.platform_id);
+  assert.equal(platformImages.length, data.platforms.length);
+  const imagedPlatforms = new Set(platformImages.filter((image) => image.role === 'primary').map((image) => image.platform_id));
   assert.deepEqual([...imagedPlatforms].sort(), data.platforms.map((platform) => platform.id).sort());
   for (const product of products) {
     assert.ok(product.image, product.variant.id);
@@ -186,15 +192,19 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   }
   const unresolvedImagePlatforms = [
     'elves-falath-r7170',
-    'lightcarbon-speedz',
-    'tfsa-jh37'
+    'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 32);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 48);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 15);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
     unresolvedImagePlatforms.sort()
   );
+
+  const malformedTarget = structuredClone(data);
+  malformedTarget.images.find((image) => image.candidate_id).platform_id = data.platforms[0].id;
+  assert.ok(validateDataset(malformedTarget).some((error) => error.includes('target must identify exactly one platform or candidate')));
 });
 
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
