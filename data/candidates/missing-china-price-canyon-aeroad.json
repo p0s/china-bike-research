@@ -1,18 +1,33 @@
 {
   "id": "missing-china-price-canyon-aeroad",
-  "name": "Canyon Aeroad China price target",
+  "name": "Canyon Aeroad CFR Di2",
   "model_id": "canyon-aeroad",
   "category": "road-aero",
-  "type": "research",
-  "why_interesting": "Relevant if a verifiable mainland purchase and warranty route exists.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official global aero build with Dura-Ace Di2, full component evidence and official imagery; mainland buyability remains unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Exact mainland SKU, stock, duties/returns and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "canyon-aeroad-cfr-di2-official-2026-08-17"
+  ],
+  "source_url": "https://www.canyon.com/en-us/road-bikes/aero-bikes/aeroad/cfr/aeroad-cfr-di2/4480.html",
+  "source_note": "Official US product page lists US$10,499 and supports the exact build. This is a foreign reference, not a mainland CNY checkout.",
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace Di2 2×12 with power meter",
+    "brakes": "Shimano Dura-Ace hydraulic disc",
+    "frame": "Canyon Aeroad CFR carbon; 990 g claimed frame",
+    "frame_weight_g": 990,
+    "bottom_bracket": "Shimano Pressfit BB92 / PF86.5",
+    "wheels": "DT Swiss ARC 1100 DICUT db 55",
+    "tires": "Continental GP5000 S TR 28 mm / Aero 111 26 mm",
+    "cockpit": "Canyon CP0048 PACE carbon",
+    "tire_clearance_mm": 32
+  }
 }

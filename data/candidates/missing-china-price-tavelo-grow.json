@@ -1,19 +1,31 @@
 {
   "id": "missing-china-price-tavelo-grow",
-  "name": "Tavelo Grow China price target",
+  "name": "Tavelo Grow gravel frameset",
   "model_id": "tavelo-grow",
   "category": "gravel-race",
   "type": "frameset",
-  "why_interesting": "Modern wide-clearance aero gravel frame; needs a mainland RMB observation.",
+  "why_interesting": "Exact official global frameset evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "existing_record_id": "tavelo-grow-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "tavelo-grow-official-2026-08-17"
+  ],
+  "source_url": "https://tavelo.cc/products/tavelo-grow",
+  "source_note": "Official global page supports US$1,650 reference, size-dependent 830-960 g frame claims, BSA and 55 mm front/50 mm rear measured clearance. Mainland CNY checkout remains unverified.",
+  "facts": {
+    "frame": "T800 carbon; 830-960 g claimed by size",
+    "frame_weight_g": 830,
+    "bottom_bracket": "BSA threaded",
+    "tire_clearance_mm": 50,
+    "storage": "Downtube FidLock storage bag",
+    "sizes": "430, 460, 490, 515, 540, 570"
+  }
 }

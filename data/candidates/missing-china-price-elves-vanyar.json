@@ -1,18 +1,25 @@
 {
   "id": "missing-china-price-elves-vanyar",
-  "name": "ELVES Vanyar China price target",
+  "name": "ELVES Vanyar Pro Disc 2024 frameset",
   "model_id": "elves-vanyar",
   "category": "road-climbing",
-  "type": "research",
-  "why_interesting": "Adds lightweight-road coverage from a well-known Chinese brand.",
+  "type": "frameset",
+  "why_interesting": "Exact official lightweight carbon road frameset with manufacturer imagery; mainland price and support remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Exact mainland SKU, stock, duties/returns and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "elves-vanyar-pro-disc-official-2026-08-17"
+  ],
+  "source_url": "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame",
+  "source_note": "Official product page supports the 2024 Vanyar Pro Disc frameset identity and image. Mainland price, stock and warranty handling remain unverified.",
+  "facts": {
+    "frame": "ELVES Vanyar Pro Disc full-carbon frameset"
+  }
 }

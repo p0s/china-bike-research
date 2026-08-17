@@ -4,12 +4,16 @@
   "model_id": "giant-propel-advanced-3",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Official flagship card; verify exact year, size and build.",
+  "why_interesting": "Official mainland-China aero complete bike with an exact current trim, specification and suggested retail price.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Complete-bike weight and frame weight",
+    "Bottom-bracket standard",
+    "Numerical geometry and size availability",
+    "Current stock and checkout outcome",
+    "Exact Giant China warranty policy text",
+    "Direct image asset URL"
   ],
-  "status": "verify-before-publish",
+  "status": "official-mainland-complete-bike",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +24,29 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6878.png#L2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17",
+  "research_priority": "high",
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Complete-bike weight and frame weight; Bottom-bracket standard; Numerical geometry and size availability; Current stock and checkout outcome; Exact Giant China warranty policy text; Direct image asset URL",
+  "source_ids": [
+    "giant-china-propel-advanced-3-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 10800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists GIANT 捷安特 Propel Advanced 3 at ¥10,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3416",
+  "facts": {
+    "drivetrain": "Shimano Tiagra R4720 2×10",
+    "brakes": "Shimano R4720 hydraulic disc",
+    "frame": "Advanced-Grade Composite, 12×142 mm thru-axle",
+    "bottom_bracket": "Shimano PressFit",
+    "wheels": "Giant P-A2",
+    "tires": "Giant Gavia Course 1 tubeless",
+    "cockpit": "Giant Contact SL Aero",
+    "tire_clearance_mm": 30
+  }
 }

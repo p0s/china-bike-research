@@ -1,18 +1,39 @@
 {
   "id": "missing-china-price-merida-reacto",
-  "name": "Merida Reacto China price target",
+  "name": "Merida REACTO 6000 CN 27",
   "model_id": "merida-reacto",
   "category": "road-aero",
-  "type": "research",
-  "why_interesting": "Major aero-road benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Official mainland-China aero complete bike with an exact 105 Di2 trim, full geometry and suggested retail price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Complete-bike/frame weight",
+    "Bottom-bracket standard",
+    "Tire clearance",
+    "Current stock/checkout and exact warranty policy"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Complete-bike/frame weight; Bottom-bracket standard; Tire clearance; Current stock/checkout and exact warranty policy",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "merida-china-reacto-6000-cn-27-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 23800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Merida REACTO 6000 CN 27 at ¥23,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.merida.cn/index/bikefinder/detail/id/126.html",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2×12",
+    "brakes": "Shimano 105 hydraulic disc",
+    "frame": "REACTO CF3 carbon frame and fork",
+    "wheels": "Novatec R6 carbon integrated wheelset",
+    "tires": "Continental GP TR 700×28",
+    "cockpit": "Carbon integrated cockpit",
+    "sizes": "3XS, XXS, XS, S, M, L"
+  }
 }

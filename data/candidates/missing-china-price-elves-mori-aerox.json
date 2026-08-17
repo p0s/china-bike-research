@@ -1,19 +1,30 @@
 {
   "id": "missing-china-price-elves-mori-aerox",
-  "name": "ELVES Mori AeroX China price target",
+  "name": "ELVES Mori AeroX frameset",
   "model_id": "elves-mori-aerox",
   "category": "gravel-race",
-  "type": "research",
-  "why_interesting": "Important lower-premium Chinese gravel frame and already in project research.",
+  "type": "frameset",
+  "why_interesting": "Exact official global frameset evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "existing_record_id": "elves-mori-aerox-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "elves-mori-aerox-official-2026-08-17"
+  ],
+  "source_url": "https://uk.elvesbike.com/products/elves-mori-aerox-carbon-aero-gravel-framesets",
+  "source_note": "Official global page supports a US$998 sale reference, T47, UDH, 700×45C/650b×50 clearance and 960-1080 g frame claims. No mainland CNY checkout or complete-bike build was verified.",
+  "facts": {
+    "frame": "Toray T800/T1000 carbon; 960-1080 g claimed by size",
+    "frame_weight_g": 960,
+    "bottom_bracket": "T47 threaded",
+    "tire_clearance_mm": 45,
+    "sizes": "46, 49, 52, 54, 56, 59"
+  }
 }

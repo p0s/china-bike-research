@@ -1,18 +1,33 @@
 {
   "id": "missing-china-price-trek-domane",
-  "name": "Trek Domane China price target",
+  "name": "Trek Domane SL 5 Gen 4",
   "model_id": "trek-domane",
   "category": "road-endurance",
-  "type": "research",
-  "why_interesting": "Mainstream endurance benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official Trek China endurance-road model with a current CNY list price and product identifier.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Exact current BOM, weight, frame/geometry, BB and clearance",
+    "Direct image asset URL",
+    "Current dealer stock, checkout outcome and China warranty policy"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Exact current BOM, weight, frame/geometry, BB and clearance; Direct image asset URL; Current dealer stock, checkout outcome and China warranty policy",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "trek-china-domane-category-2026-08-17",
+    "trek-china-domane-product-57629-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 20800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Trek Domane SL 5 Gen 4 at ¥20,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/高性能公路车/domane/c/B221/?listing=true",
+  "facts": {
+    "frame": "Domane SL Gen 4 carbon platform; exact current BOM still requires extraction"
+  }
 }

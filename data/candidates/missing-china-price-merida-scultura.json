@@ -1,18 +1,39 @@
 {
   "id": "missing-china-price-merida-scultura",
-  "name": "Merida Scultura China price target",
+  "name": "Merida SCULTURA 6000 25",
   "model_id": "merida-scultura",
   "category": "road",
-  "type": "research",
-  "why_interesting": "Major China-market road benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "Official mainland-China race complete bike with an exact 105 Di2 trim, weight, geometry and suggested retail price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Tire clearance",
+    "Current stock/checkout and exact warranty policy"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Tire clearance; Current stock/checkout and exact warranty policy",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "merida-china-scultura-6000-25-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 16800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Merida SCULTURA 6000 25 at ¥16,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.merida.cn/index/bikefinder/detail/id/23.html",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2×12",
+    "brakes": "Shimano 105 hydraulic disc with RT64 rotors",
+    "frame": "SCULTURA CF3 V carbon",
+    "bottom_bracket": "Shimano SM-BB72-41B",
+    "wheels": "Novatec R4",
+    "tires": "Maxxis Highroad 700×28 tubeless-ready",
+    "cockpit": "MERIDA EXPERT SLII",
+    "sizes": "3XS, XXS, XS, S, M, L, XL",
+    "complete_weight_g": 8200
+  }
 }

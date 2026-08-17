@@ -1,19 +1,32 @@
 {
   "id": "missing-china-price-seka-exaero-gr",
-  "name": "SEKA ExAero GR China price target",
+  "name": "SEKA ExAero GR RDC frameset",
   "model_id": "seka-exaero-gr",
   "category": "gravel-race",
   "type": "frameset",
-  "why_interesting": "High-end Chinese aero-gravel reference; domestic checkout price needed.",
+  "why_interesting": "Exact official global frameset evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "existing_record_id": "seka-exaero-gr-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official global reference only; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "seka-exaero-gr-rdc-official-2026-08-17",
+    "seka-exaero-gr-rdc-collection-2026-08-17",
+    "public-seka-exaero-owner-2026-08-17"
+  ],
+  "source_url": "https://www.shopsekabikes.com/products/exaero-gr-rdc-frameset",
+  "source_note": "Official pages support the exact frameset and 56 mm front/52 mm rear clearance, but conflict at US$2,531 and US$3,299. The product page is sold out and no mainland CNY checkout was verified.",
+  "facts": {
+    "frame": "SEKA ExAero GR RDC carbon frameset",
+    "tire_clearance_mm": 52,
+    "cockpit": "Gladius GR integrated handlebar",
+    "storage": "Integrated internal storage",
+    "sizes": "49, 52, 54, 56, 58, 61"
+  }
 }

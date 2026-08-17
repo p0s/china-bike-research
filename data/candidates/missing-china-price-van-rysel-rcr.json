@@ -1,18 +1,35 @@
 {
   "id": "missing-china-price-van-rysel-rcr",
-  "name": "Van Rysel RCR China price target",
+  "name": "Van Rysel RCR-F Pro Shimano 105 Di2",
   "model_id": "van-rysel-rcr",
   "category": "road-race",
-  "type": "research",
-  "why_interesting": "High-value global benchmark likely relevant to China buyers.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official global performance-road complete bike with weight, frame and component evidence; current mainland price remains unverified.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Current official mainland China product page, SKU, stock and checkout",
+    "Current mainland price confirmation",
+    "China warranty/service policy",
+    "Numerical geometry, BB and tire-clearance specification",
+    "Resolve the product-page comparison conflict over tires/powermeter"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Current official mainland China product page, SKU, stock and checkout; Current mainland price confirmation; China warranty/service policy; Numerical geometry, BB and tire-clearance specification; Resolve the product-page comparison conflict over tires/powermeter",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "van-rysel-rcr-f-pro-official-global-2026-08-17",
+    "van-rysel-rcr-f-pro-china-trade-report-2026-08-17"
+  ],
+  "source_note": "Official global page lists £5,000 and the exact build. A secondary China report gives a ¥39,999.90 lead, but no current official mainland checkout was verified, so no CNY catalog price is shown.",
+  "source_url": "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2×12",
+    "brakes": "Shimano 105 hydraulic disc",
+    "frame": "High-/super-high-modulus carbon; 830 g claimed frame in size M",
+    "frame_weight_g": 830,
+    "complete_weight_g": 8000,
+    "wheels": "Swiss Side Hadron Classic 470",
+    "tires": "Continental GP5000 S TLR"
+  }
 }

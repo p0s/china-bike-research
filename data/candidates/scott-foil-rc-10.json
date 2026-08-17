@@ -1,16 +1,16 @@
 {
   "id": "scott-foil-rc-10",
-  "name": "SCOTT Foil RC 10",
+  "name": "SCOTT Foil RC 10 (425337)",
   "model_id": "scott-foil-rc-10",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Ultegra electronic build shown.",
+  "why_interesting": "Exact official global aero complete-bike evidence with a full Ultegra Di2 build and claimed weight.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Mainland China product page, dealer route and CNY price",
+    "Current China stock/checkout and warranty policy",
+    "Numerical geometry and tire-clearance limit"
   ],
-  "status": "publication-gate-not-met",
+  "status": "official-global-reference",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +21,23 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6872.png#L1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17",
+  "research_priority": "high",
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Mainland China product page, dealer route and CNY price; Current China stock/checkout and warranty policy; Numerical geometry and tire-clearance limit",
+  "source_ids": [
+    "scott-foil-rc-10-official-2026-08-17"
+  ],
+  "source_note": "Official SCOTT page supports model 425337, the full build, approximate 7.9 kg weight and US$5,899.99 reference. Mainland price, stock and warranty route remain unverified.",
+  "source_url": "https://www.scott-sports.com/us/en/product/scott-foil-rc-10-bike",
+  "facts": {
+    "drivetrain": "Shimano Ultegra Di2 R8170 2×12",
+    "brakes": "Shimano BR-R8170 hydraulic disc",
+    "frame": "FOIL RC HMX carbon frame and fork",
+    "bottom_bracket": "Shimano SM-BB71-41B",
+    "wheels": "Syncros Capital 1.0 60",
+    "tires": "Schwalbe Pro One Aero TL-Easy 700×28",
+    "cockpit": "Syncros Creston 1.0 Aero",
+    "complete_weight_g": 7900
+  }
 }

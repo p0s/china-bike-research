@@ -1,18 +1,36 @@
 {
   "id": "missing-china-price-giant-revolt-advanced",
-  "name": "Giant Revolt Advanced China price target",
+  "name": "Giant Revolt Advanced 2",
   "model_id": "giant-revolt-advanced",
   "category": "gravel",
-  "type": "research",
-  "why_interesting": "Essential mainstream gravel benchmark in China.",
+  "type": "complete-bike",
+  "why_interesting": "Official mainland-China gravel complete bike with an exact GRX trim and suggested retail price.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Complete-bike/frame weight",
+    "Exact wheel/tire build and numeric clearance",
+    "Bottom-bracket standard",
+    "Numerical geometry and sizes",
+    "Current stock/checkout and warranty policy"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "required_before_dashboard": "Complete-bike/frame weight; Exact wheel/tire build and numeric clearance; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "giant-china-revolt-advanced-2-official-2026-08-17"
+  ],
+  "official_price": {
+    "amount_cny": 15800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-17"
+  },
+  "source_note": "Official mainland-China page lists Giant Revolt Advanced 2 at ¥15,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852",
+  "facts": {
+    "drivetrain": "Shimano GRX RX-820 2×12 with FSA Omega 48/32 crank",
+    "brakes": "Shimano GRX RX-610 hydraulic disc",
+    "frame": "Advanced-Grade Composite with full-composite OverDrive fork"
+  }
 }

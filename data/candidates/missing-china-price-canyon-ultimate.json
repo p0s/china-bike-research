@@ -1,18 +1,33 @@
 {
   "id": "missing-china-price-canyon-ultimate",
-  "name": "Canyon Ultimate China price target",
+  "name": "Canyon Ultimate CFR AXS",
   "model_id": "canyon-ultimate",
   "category": "road",
-  "type": "research",
-  "why_interesting": "Relevant if mainland buyability can be verified.",
+  "type": "complete-bike",
+  "why_interesting": "Exact official global climbing/race build with SRAM Red AXS, component evidence and official imagery; mainland buyability remains unresolved.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Dated mainland-China RMB observation and purchase route",
+    "Exact mainland SKU, stock, duties/returns and warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
+  "last_reviewed": "2026-08-17",
+  "source_ids": [
+    "canyon-ultimate-cfr-axs-official-2026-08-17"
+  ],
+  "source_url": "https://www.canyon.com/en-us/road-bikes/race-bikes/ultimate/cfr/ultimate-cfr-axs/4071.html",
+  "source_note": "Official US product page supports the exact SRAM Red AXS build. This is a foreign reference, not a mainland CNY checkout.",
+  "facts": {
+    "drivetrain": "SRAM Red AXS 2×12",
+    "brakes": "SRAM Red AXS HRD",
+    "frame": "Canyon Ultimate CFR carbon; 780 g claimed frame",
+    "frame_weight_g": 780,
+    "bottom_bracket": "SRAM DUB Pressfit / PF86.5",
+    "wheels": "DT Swiss ARC 1100 DICUT db 38",
+    "tires": "Pirelli P Zero Race RS 28 mm",
+    "cockpit": "Canyon CP0048 PACE carbon",
+    "tire_clearance_mm": 33
+  }
 }

@@ -7,8 +7,8 @@
       "platforms": 35,
       "variants": 37,
       "prices": 38,
-      "sources": 121,
-      "images": 61,
+      "sources": 168,
+      "images": 87,
       "videos": 12,
       "recommendations": 6,
       "candidates": 177,
@@ -16,18 +16,18 @@
       "research": 1
     },
     "image_accuracy": {
-      "exact-platform": 15,
-      "exact-variant": 37,
+      "exact-platform": 22,
+      "exact-variant": 56,
       "illustrative": 2,
       "same-model-different-market-build": 3,
       "same-platform": 4
     },
     "image_hosting": {
       "local": 2,
-      "remote": 59
+      "remote": 85
     },
     "candidate_prices": {
-      "official": 22,
+      "official": 30,
       "observed": 115
     }
   },
@@ -189,21 +189,33 @@
     "sources": [
       "af01-official",
       "bianchi-oltre-race-official-2026-08-08",
+      "bianchi-sprint-icr-official-2026-08-17",
       "bxt-055-official",
       "camp-ace-qed-official-2026-08-08",
       "camp-gx600-official",
       "camp-gx700-official",
+      "canyon-aeroad-cfr-di2-official-2026-08-17",
+      "canyon-grail-cf-7-official-2026-08-17",
+      "canyon-ultimate-cfr-axs-official-2026-08-17",
       "carbonda-cfr696-official",
       "colnago-china-storefront-2026-08-09",
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
+      "de-rosa-838-official-2026-08-17",
       "elves-falath-evo-official-2026-08-17",
       "elves-mori-aerox-official-2026-08-17",
       "elves-mori-aerox-retailer",
+      "elves-vanyar-pro-disc-official-2026-08-17",
       "evolve-cima-gr-official-2026-08-17",
       "evolve-cima-gr-spectrum-2026-08-09",
       "evolve-cima-official",
       "felt-ia-2-official-2026-08-08",
+      "giant-china-defy-advanced-2-official-2026-08-17",
+      "giant-china-propel-advanced-3-official-2026-08-17",
+      "giant-china-revolt-advanced-2-official-2026-08-17",
+      "giant-china-tcr-advanced-3-gc-official-2026-08-17",
+      "giant-defy-advanced-0-official-image-2026-08-17",
+      "giant-tcr-advanced-0-axs-official-image-2026-08-17",
       "ican-company-official",
       "ican-gra04-alibaba-image",
       "ican-gra04-official",
@@ -218,8 +230,13 @@
       "lightcarbon-image-reference",
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
+      "look-765-optimum-105-di2-official-2026-08-17",
       "market-snapshot-2026-08-05",
+      "merida-china-reacto-6000-cn-27-official-2026-08-17",
+      "merida-china-scultura-6000-25-official-2026-08-17",
+      "merida-silex-7000-25-official-cny-reference-2026-08-17",
       "pardus-company-official",
+      "pardus-robin-sport-official-image-2026-08-17",
       "pardus-spark-sport-official-2026-08-09",
       "pardus-super-sport-image-reference",
       "pardus-super-sport-launch",
@@ -227,6 +244,15 @@
       "pardus-uragano-sport-official",
       "pinarello-f5-official-2026-08-08",
       "project-image-placeholders",
+      "public-pardus-super-sport-gen2-price-2026-08-17",
+      "public-quick-pro-er-one-build-2026-08-17",
+      "public-quick-pro-er-one-preorder-2026-08-17",
+      "public-seka-exaero-owner-2026-08-17",
+      "public-winspace-g5-owner-image-2026-08-17",
+      "public-xds-gt350-owner-2026-08-17",
+      "public-xds-gt350-price-2026-08-17",
+      "public-xds-gt600-overview-2026-08-17",
+      "public-xlab-gt8-overview-2026-08-17",
       "quick-gr-one-official",
       "quick-pro-er-one-official-2026-08-17",
       "quick-pro-er-one-ultegra-official-2026-08-17",
@@ -239,19 +265,30 @@
       "rinasclta-gr025-official",
       "sava-2026-carbon-lineup-2026-08-08",
       "sava-a7l-official-2026-08-08",
+      "sava-a7l-official-image-2026-08-17",
       "sava-a7l-pro-2026-official-2026-08-17",
+      "sava-dream-maker-official-image-2026-08-17",
       "sava-gelaro-s4-official",
       "sava-gelaro-s4-official-2026-08-16",
+      "sava-gelaro-s4-official-image-2026-08-17",
       "sava-gelaro-s8-official-2026-08-08",
       "sava-gelaro-sf6-official",
       "sava-gelaro-sf6-official-2026-08-16",
+      "sava-hawkeye-f20-official-2026-08-17",
+      "sava-r8-r8170-official-image-2026-08-17",
       "scott-addict-rc-40-retailer-2026-08-08",
+      "scott-foil-rc-10-official-2026-08-17",
       "seka-exaero-gr-official-store-2026-08-09",
+      "seka-exaero-gr-rdc-collection-2026-08-17",
+      "seka-exaero-gr-rdc-official-2026-08-17",
       "seka-official",
       "spcycle-gravel-catalog",
       "specialized-china-tarmac-sl8-comp-price-2026-08-17",
       "specialized-tarmac-sl8-comp-spec-2026-08-17",
       "taobao-snapshot-2026-08-08",
+      "tavelo-arow-race-polestar-official-2026-08-17",
+      "tavelo-attack-official-2026-08-17",
+      "tavelo-grow-official-2026-08-17",
       "tavelo-official",
       "tfsa-jh37-official",
       "titanium-hi-light-g0-official",
@@ -267,6 +304,10 @@
       "titanium-laget-pioneer-official",
       "titanium-laget-pioneer-one-official",
       "titanium-tsb-titan-super-bond-pioneer-one-official",
+      "trek-china-checkpoint-category-2026-08-17",
+      "trek-china-checkpoint-product-47071-2026-08-17",
+      "trek-china-domane-category-2026-08-17",
+      "trek-china-domane-product-57629-2026-08-17",
       "trek-china-madone-sl-range-2026-08-17",
       "trek-madone-sl5-gen8-official-spec-2026-08-17",
       "trinx-company-official",
@@ -275,6 +316,7 @@
       "trinx-road-catalog-2026-08-08",
       "twitter-bikes-gravel-catalog-2026-08-08",
       "twitter-company-profile",
+      "twitter-cyclone-3rd-r7120-official-2026-08-17",
       "twitter-cyclone-electronic-official-2026-08-08",
       "twitter-cyclone-electronic-official-2026-08-17",
       "twitter-cyclone-gen3-et-official-2026-08-08",
@@ -282,11 +324,15 @@
       "twitter-v3-official",
       "twitter-v3-official-2026-08-16",
       "usd-cny-central-parity-2026-07-31",
+      "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
+      "van-rysel-rcr-f-pro-official-global-2026-08-17",
       "vook-v8e-pro-official-2026-08-08",
       "winspace-agile-official-2026-08-17",
       "winspace-complete-builds-2026-08-09",
       "winspace-g3-official",
       "winspace-g3-official-2026-08-16",
+      "winspace-g3-pro-di2-official-2026-08-17",
+      "winspace-g5-gravel-official-2026-08-17",
       "winspace-g5-official",
       "winspace-m6-official-2026-08-08",
       "winspace-slc3-official-2026-08-17",
@@ -296,6 +342,7 @@
       "xds-ad350-official-2026-08-08",
       "xds-ad500-official-2026-08-09",
       "xds-ad500-retailer-2026-08-08",
+      "xds-ad7-105-di2-official-image-2026-08-17",
       "xds-gt350-hk-spec-2026-08-09",
       "xds-gt350-retailer-2026-08-08",
       "xds-gt600-jd",
@@ -312,16 +359,26 @@
     "images": [
       "af01-primary-image",
       "bianchi-oltre-race-primary-image",
+      "bianchi-sprint-icr-primary-image",
       "bxt-055-primary-image",
       "camp-ace-qed-primary-image",
       "camp-gx600-primary-image",
       "camp-gx700-primary-image",
+      "canyon-aeroad-cfr-di2-primary-image",
+      "canyon-grail-cf-7-primary-image",
+      "canyon-ultimate-cfr-axs-primary-image",
       "carbonda-cfr696-primary-image",
       "colnago-y1rs-primary-image",
+      "de-rosa-new-838-primary-image",
       "elves-falath-r7170-primary-image",
       "elves-mori-aerox-primary-image",
+      "elves-vanyar-pro-disc-primary-image",
       "evolve-cima-gr-primary-image",
       "felt-ia-2-primary-image",
+      "giant-defy-advanced-primary-image",
+      "giant-propel-advanced-3-primary-image",
+      "giant-revolt-advanced-2-primary-image",
+      "giant-tcr-advanced-primary-image",
       "ican-gra04-primary-image",
       "ican-graro-primary-image",
       "icanian-p9-primary-image",
@@ -329,6 +386,11 @@
       "incolor-voyager-primary-image",
       "lightcarbon-lcg071s-pro-primary-image",
       "lightcarbon-speedz-primary-image",
+      "look-765-electronic-primary-image",
+      "merida-reacto-6000-cn-27-primary-image",
+      "merida-scultura-6000-25-primary-image",
+      "merida-silex-7000-25-primary-image",
+      "pardus-robin-sport-pes-primary-image",
       "pardus-super-sport-gen2-primary-image",
       "pardus-uragano-sport-primary-image",
       "pinarello-f5-primary-image",
@@ -338,24 +400,34 @@
       "quick-pro-ur-one-primary-image",
       "quick-pro-xr-one-primary-image",
       "rinasclta-gr025-primary-image",
+      "sava-a7l-2026-primary-image",
       "sava-a7l-pro-2026-primary-image",
       "sava-a7l-r7100-primary-image",
+      "sava-dream-maker-primary-image",
       "sava-gelaro-primary-image",
+      "sava-gelaro-s4-primary-image",
       "sava-gelaro-s8-primary-image",
       "sava-gelaro-sf-primary-image",
+      "sava-hawkeye-f20-primary-image",
+      "sava-r8-r8170-primary-image",
       "scott-addict-rc-40-primary-image",
+      "scott-foil-rc-10-primary-image",
       "seka-exaero-gr-primary-image",
       "spcycle-g026-primary-image",
       "spcycle-g028-primary-image",
       "specialized-tarmac-sl8-comp-primary-image",
+      "tavelo-arow-race-polestar-primary-image",
+      "tavelo-attack-primary-image",
       "tavelo-grow-primary-image",
       "tfsa-jh37-primary-image",
       "trek-madone-sl5-gen8-primary-image",
       "trinx-gtr-c6-primary-image",
+      "twitter-cyclone-3rd-r7120-primary-image",
       "twitter-cyclone-electronic-primary-image",
       "twitter-cyclone-gen3-et-primary-image",
       "twitter-gravel-v3-primary-image",
       "twitter-t3-tt-primary-image",
+      "van-rysel-rcr-f-pro-primary-image",
       "vook-v8e-pro-primary-image",
       "winspace-agile-primary-image",
       "winspace-g3-primary-image",
@@ -366,6 +438,7 @@
       "winspace-t1600-primary-image",
       "xds-ad350-2026-primary-image",
       "xds-ad500-2025-primary-image",
+      "xds-ad7-primary-image",
       "xds-gt350-primary-image",
       "xds-gt600-primary-image",
       "xlab-gt8-primary-image",
@@ -3055,6 +3128,19 @@
         "type",
         "url"
       ],
+      "bianchi-sprint-icr-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bxt-055-official": [
         "accessed_at",
         "language",
@@ -3097,6 +3183,45 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "canyon-aeroad-cfr-di2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "canyon-grail-cf-7-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "canyon-ultimate-cfr-axs-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3150,6 +3275,19 @@
         "title",
         "type"
       ],
+      "de-rosa-838-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "elves-falath-evo-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -3181,6 +3319,19 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elves-vanyar-pro-disc-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3229,6 +3380,81 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-china-defy-advanced-2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-china-propel-advanced-3-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-china-revolt-advanced-2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-china-tcr-advanced-3-gc-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-defy-advanced-0-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "giant-tcr-advanced-0-axs-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3403,6 +3629,19 @@
         "type",
         "url"
       ],
+      "look-765-optimum-105-di2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "market-snapshot-2026-08-05": [
         "accessed_at",
         "language",
@@ -3414,12 +3653,64 @@
         "title",
         "type"
       ],
+      "merida-china-reacto-6000-cn-27-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "merida-china-scultura-6000-25-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "merida-silex-7000-25-official-cny-reference-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-company-official": [
         "accessed_at",
         "language",
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-robin-sport-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3508,6 +3799,114 @@
         "reliability.specification",
         "title",
         "type"
+      ],
+      "public-pardus-super-sport-gen2-price-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-quick-pro-er-one-build-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-quick-pro-er-one-preorder-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-seka-exaero-owner-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-winspace-g5-owner-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xds-gt350-owner-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xds-gt350-price-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xds-gt600-overview-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xlab-gt8-overview-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
       ],
       "quick-gr-one-official": [
         "accessed_at",
@@ -3653,12 +4052,38 @@
         "type",
         "url"
       ],
+      "sava-a7l-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-a7l-pro-2026-official-2026-08-17": [
         "accessed_at",
         "language",
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-dream-maker-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3683,6 +4108,19 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-gelaro-s4-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -3725,6 +4163,32 @@
         "type",
         "url"
       ],
+      "sava-hawkeye-f20-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-r8-r8170-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "scott-addict-rc-40-retailer-2026-08-08": [
         "accessed_at",
         "language",
@@ -3737,7 +4201,44 @@
         "type",
         "url"
       ],
+      "scott-foil-rc-10-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "seka-exaero-gr-official-store-2026-08-09": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-exaero-gr-rdc-collection-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-exaero-gr-rdc-official-2026-08-17": [
         "accessed_at",
         "language",
         "notes",
@@ -3807,6 +4308,44 @@
         "reliability.specification",
         "title",
         "type"
+      ],
+      "tavelo-arow-race-polestar-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "tavelo-attack-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "tavelo-grow-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
       ],
       "tavelo-official": [
         "accessed_at",
@@ -3988,6 +4527,54 @@
         "type",
         "url"
       ],
+      "trek-china-checkpoint-category-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "trek-china-checkpoint-product-47071-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "trek-china-domane-category-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "trek-china-domane-product-57629-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "trek-china-madone-sl-range-2026-08-17": [
         "accessed_at",
         "language",
@@ -4084,6 +4671,18 @@
         "type",
         "url"
       ],
+      "twitter-cyclone-3rd-r7120-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "twitter-cyclone-electronic-official-2026-08-08": [
         "accessed_at",
         "language",
@@ -4167,6 +4766,31 @@
         "type",
         "url"
       ],
+      "van-rysel-rcr-f-pro-china-trade-report-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "van-rysel-rcr-f-pro-official-global-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "vook-v8e-pro-official-2026-08-08": [
         "accessed_at",
         "language",
@@ -4216,6 +4840,30 @@
         "url"
       ],
       "winspace-g3-official-2026-08-16": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-g3-pro-di2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-g5-gravel-official-2026-08-17": [
         "accessed_at",
         "language",
         "notes",
@@ -4329,6 +4977,19 @@
         "notes",
         "publisher",
         "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-ad7-105-di2-official-image-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -4522,6 +5183,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "bianchi-sprint-icr-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "bxt-055-primary-image": [
         "alt",
         "credit",
@@ -4586,6 +5263,54 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "canyon-aeroad-cfr-di2-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "canyon-grail-cf-7-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "canyon-ultimate-cfr-axs-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "carbonda-cfr696-primary-image": [
         "alt",
         "credit",
@@ -4603,6 +5328,22 @@
         "variant_ids"
       ],
       "colnago-y1rs-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "de-rosa-new-838-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -4651,6 +5392,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "elves-vanyar-pro-disc-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "evolve-cima-gr-primary-image": [
         "alt",
         "credit",
@@ -4668,6 +5425,70 @@
         "variant_ids"
       ],
       "felt-ia-2-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "giant-defy-advanced-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "giant-propel-advanced-3-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "giant-revolt-advanced-2-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "giant-tcr-advanced-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -4795,6 +5616,86 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "look-765-electronic-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "merida-reacto-6000-cn-27-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "merida-scultura-6000-25-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "merida-silex-7000-25-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-robin-sport-pes-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "pardus-super-sport-gen2-primary-image": [
         "alt",
@@ -4940,6 +5841,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "sava-a7l-2026-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "sava-a7l-pro-2026-primary-image": [
         "alt",
         "candidate_id",
@@ -4973,6 +5890,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "sava-dream-maker-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "sava-gelaro-primary-image": [
         "alt",
         "credit",
@@ -4988,6 +5921,22 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "sava-gelaro-s4-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "sava-gelaro-s8-primary-image": [
         "alt",
@@ -5021,6 +5970,38 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "sava-hawkeye-f20-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "sava-r8-r8170-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "scott-addict-rc-40-primary-image": [
         "alt",
         "credit",
@@ -5036,6 +6017,22 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "scott-foil-rc-10-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "seka-exaero-gr-primary-image": [
         "alt",
@@ -5086,6 +6083,38 @@
         "variant_ids"
       ],
       "specialized-tarmac-sl8-comp-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "tavelo-arow-race-polestar-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "tavelo-attack-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -5166,6 +6195,22 @@
         "source_id",
         "subject_accuracy"
       ],
+      "twitter-cyclone-3rd-r7120-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "twitter-cyclone-electronic-primary-image": [
         "alt",
         "credit",
@@ -5230,6 +6275,22 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "van-rysel-rcr-f-pro-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "vook-v8e-pro-primary-image": [
         "alt",
@@ -5376,6 +6437,22 @@
         "subject_accuracy"
       ],
       "xds-ad500-2025-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "xds-ad7-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -5780,6 +6857,14 @@
       ],
       "bianchi-sprint-icr": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -5789,8 +6874,13 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -6046,8 +7136,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -6166,6 +7258,14 @@
       ],
       "giant-propel-advanced-3": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -6175,8 +7275,17 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -6870,8 +7979,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -6946,33 +8057,61 @@
       ],
       "missing-china-price-canyon-aeroad": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-canyon-grail": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-canyon-ultimate": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7001,22 +8140,34 @@
       "missing-china-price-elves-mori-aerox": [
         "category",
         "existing_record_id",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-elves-vanyar": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7035,33 +8186,67 @@
       ],
       "missing-china-price-giant-defy-advanced": [
         "category",
+        "facts.brakes",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-giant-revolt-advanced": [
         "category",
+        "facts.brakes",
+        "facts.drivetrain",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-giant-tcr-advanced": [
         "category",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7080,33 +8265,75 @@
       ],
       "missing-china-price-merida-reacto": [
         "category",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-merida-scultura": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-merida-silex": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.mounts",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7159,11 +8386,19 @@
       "missing-china-price-seka-exaero-gr": [
         "category",
         "existing_record_id",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.sizes",
+        "facts.storage",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7220,11 +8455,15 @@
       ],
       "missing-china-price-tavelo-arow": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "video_ids",
@@ -7232,11 +8471,15 @@
       ],
       "missing-china-price-tavelo-attack": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7244,33 +8487,58 @@
       "missing-china-price-tavelo-grow": [
         "category",
         "existing_record_id",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.storage",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-trek-checkpoint": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "missing-china-price-trek-domane": [
         "category",
+        "facts.frame",
         "last_reviewed",
         "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_type",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7314,11 +8582,21 @@
       ],
       "missing-china-price-van-rysel-rcr": [
         "category",
+        "facts.brakes",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7354,11 +8632,19 @@
       "missing-china-price-winspace-g3": [
         "category",
         "existing_record_id",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7366,11 +8652,18 @@
       "missing-china-price-winspace-g5": [
         "category",
         "existing_record_id",
+        "facts.frame",
+        "facts.sizes",
+        "facts.storage",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7554,8 +8847,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7632,6 +8927,7 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
         "status",
@@ -7900,8 +9196,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -7947,18 +9245,33 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
       ],
       "sava-f20-hawkeye": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
+        "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "video_ids",
@@ -7975,8 +9288,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -8009,8 +9324,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -8053,6 +9370,14 @@
       ],
       "scott-foil-rc-10": [
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -8062,8 +9387,13 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -8201,6 +9531,8 @@
       ],
       "twitter-cyclone-gen3-7170": [
         "category",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
         "last_reviewed",
         "model_id",
         "name",
@@ -8210,8 +9542,13 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -8599,8 +9936,10 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -9403,21 +10742,33 @@
     "sources": {
       "af01-official": [],
       "bianchi-oltre-race-official-2026-08-08": [],
+      "bianchi-sprint-icr-official-2026-08-17": [],
       "bxt-055-official": [],
       "camp-ace-qed-official-2026-08-08": [],
       "camp-gx600-official": [],
       "camp-gx700-official": [],
+      "canyon-aeroad-cfr-di2-official-2026-08-17": [],
+      "canyon-grail-cf-7-official-2026-08-17": [],
+      "canyon-ultimate-cfr-axs-official-2026-08-17": [],
       "carbonda-cfr696-official": [],
       "colnago-china-storefront-2026-08-09": [],
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
+      "de-rosa-838-official-2026-08-17": [],
       "elves-falath-evo-official-2026-08-17": [],
       "elves-mori-aerox-official-2026-08-17": [],
       "elves-mori-aerox-retailer": [],
+      "elves-vanyar-pro-disc-official-2026-08-17": [],
       "evolve-cima-gr-official-2026-08-17": [],
       "evolve-cima-gr-spectrum-2026-08-09": [],
       "evolve-cima-official": [],
       "felt-ia-2-official-2026-08-08": [],
+      "giant-china-defy-advanced-2-official-2026-08-17": [],
+      "giant-china-propel-advanced-3-official-2026-08-17": [],
+      "giant-china-revolt-advanced-2-official-2026-08-17": [],
+      "giant-china-tcr-advanced-3-gc-official-2026-08-17": [],
+      "giant-defy-advanced-0-official-image-2026-08-17": [],
+      "giant-tcr-advanced-0-axs-official-image-2026-08-17": [],
       "ican-company-official": [],
       "ican-gra04-alibaba-image": [],
       "ican-gra04-official": [],
@@ -9432,8 +10783,13 @@
       "lightcarbon-image-reference": [],
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
+      "look-765-optimum-105-di2-official-2026-08-17": [],
       "market-snapshot-2026-08-05": [],
+      "merida-china-reacto-6000-cn-27-official-2026-08-17": [],
+      "merida-china-scultura-6000-25-official-2026-08-17": [],
+      "merida-silex-7000-25-official-cny-reference-2026-08-17": [],
       "pardus-company-official": [],
+      "pardus-robin-sport-official-image-2026-08-17": [],
       "pardus-spark-sport-official-2026-08-09": [],
       "pardus-super-sport-image-reference": [],
       "pardus-super-sport-launch": [],
@@ -9441,6 +10797,15 @@
       "pardus-uragano-sport-official": [],
       "pinarello-f5-official-2026-08-08": [],
       "project-image-placeholders": [],
+      "public-pardus-super-sport-gen2-price-2026-08-17": [],
+      "public-quick-pro-er-one-build-2026-08-17": [],
+      "public-quick-pro-er-one-preorder-2026-08-17": [],
+      "public-seka-exaero-owner-2026-08-17": [],
+      "public-winspace-g5-owner-image-2026-08-17": [],
+      "public-xds-gt350-owner-2026-08-17": [],
+      "public-xds-gt350-price-2026-08-17": [],
+      "public-xds-gt600-overview-2026-08-17": [],
+      "public-xlab-gt8-overview-2026-08-17": [],
       "quick-gr-one-official": [],
       "quick-pro-er-one-official-2026-08-17": [],
       "quick-pro-er-one-ultegra-official-2026-08-17": [],
@@ -9453,19 +10818,30 @@
       "rinasclta-gr025-official": [],
       "sava-2026-carbon-lineup-2026-08-08": [],
       "sava-a7l-official-2026-08-08": [],
+      "sava-a7l-official-image-2026-08-17": [],
       "sava-a7l-pro-2026-official-2026-08-17": [],
+      "sava-dream-maker-official-image-2026-08-17": [],
       "sava-gelaro-s4-official": [],
       "sava-gelaro-s4-official-2026-08-16": [],
+      "sava-gelaro-s4-official-image-2026-08-17": [],
       "sava-gelaro-s8-official-2026-08-08": [],
       "sava-gelaro-sf6-official": [],
       "sava-gelaro-sf6-official-2026-08-16": [],
+      "sava-hawkeye-f20-official-2026-08-17": [],
+      "sava-r8-r8170-official-image-2026-08-17": [],
       "scott-addict-rc-40-retailer-2026-08-08": [],
+      "scott-foil-rc-10-official-2026-08-17": [],
       "seka-exaero-gr-official-store-2026-08-09": [],
+      "seka-exaero-gr-rdc-collection-2026-08-17": [],
+      "seka-exaero-gr-rdc-official-2026-08-17": [],
       "seka-official": [],
       "spcycle-gravel-catalog": [],
       "specialized-china-tarmac-sl8-comp-price-2026-08-17": [],
       "specialized-tarmac-sl8-comp-spec-2026-08-17": [],
       "taobao-snapshot-2026-08-08": [],
+      "tavelo-arow-race-polestar-official-2026-08-17": [],
+      "tavelo-attack-official-2026-08-17": [],
+      "tavelo-grow-official-2026-08-17": [],
       "tavelo-official": [],
       "tfsa-jh37-official": [],
       "titanium-hi-light-g0-official": [],
@@ -9481,6 +10857,10 @@
       "titanium-laget-pioneer-official": [],
       "titanium-laget-pioneer-one-official": [],
       "titanium-tsb-titan-super-bond-pioneer-one-official": [],
+      "trek-china-checkpoint-category-2026-08-17": [],
+      "trek-china-checkpoint-product-47071-2026-08-17": [],
+      "trek-china-domane-category-2026-08-17": [],
+      "trek-china-domane-product-57629-2026-08-17": [],
       "trek-china-madone-sl-range-2026-08-17": [],
       "trek-madone-sl5-gen8-official-spec-2026-08-17": [],
       "trinx-company-official": [],
@@ -9489,6 +10869,7 @@
       "trinx-road-catalog-2026-08-08": [],
       "twitter-bikes-gravel-catalog-2026-08-08": [],
       "twitter-company-profile": [],
+      "twitter-cyclone-3rd-r7120-official-2026-08-17": [],
       "twitter-cyclone-electronic-official-2026-08-08": [],
       "twitter-cyclone-electronic-official-2026-08-17": [],
       "twitter-cyclone-gen3-et-official-2026-08-08": [],
@@ -9496,11 +10877,15 @@
       "twitter-v3-official": [],
       "twitter-v3-official-2026-08-16": [],
       "usd-cny-central-parity-2026-07-31": [],
+      "van-rysel-rcr-f-pro-china-trade-report-2026-08-17": [],
+      "van-rysel-rcr-f-pro-official-global-2026-08-17": [],
       "vook-v8e-pro-official-2026-08-08": [],
       "winspace-agile-official-2026-08-17": [],
       "winspace-complete-builds-2026-08-09": [],
       "winspace-g3-official": [],
       "winspace-g3-official-2026-08-16": [],
+      "winspace-g3-pro-di2-official-2026-08-17": [],
+      "winspace-g5-gravel-official-2026-08-17": [],
       "winspace-g5-official": [],
       "winspace-m6-official-2026-08-08": [],
       "winspace-slc3-official-2026-08-17": [],
@@ -9510,6 +10895,7 @@
       "xds-ad350-official-2026-08-08": [],
       "xds-ad500-official-2026-08-09": [],
       "xds-ad500-retailer-2026-08-08": [],
+      "xds-ad7-105-di2-official-image-2026-08-17": [],
       "xds-gt350-hk-spec-2026-08-09": [],
       "xds-gt350-retailer-2026-08-08": [],
       "xds-gt600-jd": [],
@@ -9534,6 +10920,10 @@
         "source_id=bianchi-oltre-race-official-2026-08-08",
         "variant_ids=bianchi-oltre-race"
       ],
+      "bianchi-sprint-icr-primary-image": [
+        "candidate_id=bianchi-sprint-icr",
+        "source_id=bianchi-sprint-icr-official-2026-08-17"
+      ],
       "bxt-055-primary-image": [
         "platform_id=bxt-055",
         "source_id=bxt-055-official",
@@ -9553,6 +10943,18 @@
         "source_id=camp-gx700-official",
         "variant_ids=camp-gx700-grx820"
       ],
+      "canyon-aeroad-cfr-di2-primary-image": [
+        "candidate_id=missing-china-price-canyon-aeroad",
+        "source_id=canyon-aeroad-cfr-di2-official-2026-08-17"
+      ],
+      "canyon-grail-cf-7-primary-image": [
+        "candidate_id=missing-china-price-canyon-grail",
+        "source_id=canyon-grail-cf-7-official-2026-08-17"
+      ],
+      "canyon-ultimate-cfr-axs-primary-image": [
+        "candidate_id=missing-china-price-canyon-ultimate",
+        "source_id=canyon-ultimate-cfr-axs-official-2026-08-17"
+      ],
       "carbonda-cfr696-primary-image": [
         "platform_id=carbonda-cfr696",
         "source_id=carbonda-cfr696-official",
@@ -9561,6 +10963,10 @@
       "colnago-y1rs-primary-image": [
         "candidate_id=colnago-y1rs",
         "source_id=colnago-y1rs-official-2026-08-08"
+      ],
+      "de-rosa-new-838-primary-image": [
+        "candidate_id=de-rosa-new-838",
+        "source_id=de-rosa-838-official-2026-08-17"
       ],
       "elves-falath-r7170-primary-image": [
         "platform_id=elves-falath-r7170",
@@ -9572,6 +10978,10 @@
         "source_id=elves-mori-aerox-official-2026-08-17",
         "variant_ids=elves-mori-aerox-frameset"
       ],
+      "elves-vanyar-pro-disc-primary-image": [
+        "candidate_id=missing-china-price-elves-vanyar",
+        "source_id=elves-vanyar-pro-disc-official-2026-08-17"
+      ],
       "evolve-cima-gr-primary-image": [
         "platform_id=evolve-cima-gr",
         "source_id=evolve-cima-gr-official-2026-08-17",
@@ -9580,6 +10990,22 @@
       "felt-ia-2-primary-image": [
         "candidate_id=felt-ia-2",
         "source_id=felt-ia-2-official-2026-08-08"
+      ],
+      "giant-defy-advanced-primary-image": [
+        "candidate_id=missing-china-price-giant-defy-advanced",
+        "source_id=giant-defy-advanced-0-official-image-2026-08-17"
+      ],
+      "giant-propel-advanced-3-primary-image": [
+        "candidate_id=giant-propel-advanced-3",
+        "source_id=giant-china-propel-advanced-3-official-2026-08-17"
+      ],
+      "giant-revolt-advanced-2-primary-image": [
+        "candidate_id=missing-china-price-giant-revolt-advanced",
+        "source_id=giant-china-revolt-advanced-2-official-2026-08-17"
+      ],
+      "giant-tcr-advanced-primary-image": [
+        "candidate_id=missing-china-price-giant-tcr-advanced",
+        "source_id=giant-tcr-advanced-0-axs-official-image-2026-08-17"
       ],
       "ican-gra04-primary-image": [
         "platform_id=ican-gra04",
@@ -9614,6 +11040,26 @@
         "source_id=project-image-placeholders",
         "variant_ids=lightcarbon-speedz-complete",
         "variant_ids=lightcarbon-speedz-frameset"
+      ],
+      "look-765-electronic-primary-image": [
+        "candidate_id=look-765-electronic",
+        "source_id=look-765-optimum-105-di2-official-2026-08-17"
+      ],
+      "merida-reacto-6000-cn-27-primary-image": [
+        "candidate_id=missing-china-price-merida-reacto",
+        "source_id=merida-china-reacto-6000-cn-27-official-2026-08-17"
+      ],
+      "merida-scultura-6000-25-primary-image": [
+        "candidate_id=missing-china-price-merida-scultura",
+        "source_id=merida-china-scultura-6000-25-official-2026-08-17"
+      ],
+      "merida-silex-7000-25-primary-image": [
+        "candidate_id=missing-china-price-merida-silex",
+        "source_id=merida-silex-7000-25-official-cny-reference-2026-08-17"
+      ],
+      "pardus-robin-sport-pes-primary-image": [
+        "candidate_id=pardus-robin-sport-pes",
+        "source_id=pardus-robin-sport-official-image-2026-08-17"
       ],
       "pardus-super-sport-gen2-primary-image": [
         "platform_id=pardus-super-sport-gen2",
@@ -9654,6 +11100,10 @@
         "source_id=rinasclta-gr025-official",
         "variant_ids=rinasclta-gr025-frameset"
       ],
+      "sava-a7l-2026-primary-image": [
+        "candidate_id=sava-a7l-2026",
+        "source_id=sava-a7l-official-image-2026-08-17"
+      ],
       "sava-a7l-pro-2026-primary-image": [
         "candidate_id=sava-a7l-pro-2026",
         "source_id=sava-a7l-pro-2026-official-2026-08-17"
@@ -9663,10 +11113,18 @@
         "source_id=sava-a7l-official-2026-08-08",
         "variant_ids=sava-a7l-r7100"
       ],
+      "sava-dream-maker-primary-image": [
+        "candidate_id=sava-dream-maker",
+        "source_id=sava-dream-maker-official-image-2026-08-17"
+      ],
       "sava-gelaro-primary-image": [
         "platform_id=sava-gelaro",
         "source_id=sava-gelaro-s4-official",
         "variant_ids=sava-gelaro-s4-grx400"
+      ],
+      "sava-gelaro-s4-primary-image": [
+        "candidate_id=sava-gelaro-s4",
+        "source_id=sava-gelaro-s4-official-image-2026-08-17"
       ],
       "sava-gelaro-s8-primary-image": [
         "platform_id=sava-gelaro-s8",
@@ -9678,10 +11136,22 @@
         "source_id=sava-gelaro-sf6-official",
         "variant_ids=sava-gelaro-sf6-cues"
       ],
+      "sava-hawkeye-f20-primary-image": [
+        "candidate_id=sava-f20-hawkeye",
+        "source_id=sava-hawkeye-f20-official-2026-08-17"
+      ],
+      "sava-r8-r8170-primary-image": [
+        "candidate_id=sava-r8-r8170",
+        "source_id=sava-r8-r8170-official-image-2026-08-17"
+      ],
       "scott-addict-rc-40-primary-image": [
         "platform_id=scott-addict-rc-40",
         "source_id=scott-addict-rc-40-retailer-2026-08-08",
         "variant_ids=scott-addict-rc-40"
+      ],
+      "scott-foil-rc-10-primary-image": [
+        "candidate_id=scott-foil-rc-10",
+        "source_id=scott-foil-rc-10-official-2026-08-17"
       ],
       "seka-exaero-gr-primary-image": [
         "platform_id=seka-exaero-gr",
@@ -9702,6 +11172,14 @@
         "candidate_id=missing-china-price-specialized-tarmac-sl8",
         "source_id=specialized-tarmac-sl8-comp-spec-2026-08-17"
       ],
+      "tavelo-arow-race-polestar-primary-image": [
+        "candidate_id=missing-china-price-tavelo-arow",
+        "source_id=tavelo-arow-race-polestar-official-2026-08-17"
+      ],
+      "tavelo-attack-primary-image": [
+        "candidate_id=missing-china-price-tavelo-attack",
+        "source_id=tavelo-attack-official-2026-08-17"
+      ],
       "tavelo-grow-primary-image": [
         "platform_id=tavelo-grow",
         "source_id=tavelo-official",
@@ -9719,6 +11197,10 @@
       "trinx-gtr-c6-primary-image": [
         "candidate_id=trinx-gtr-c6",
         "source_id=trinx-gtr-c6-retailer-image"
+      ],
+      "twitter-cyclone-3rd-r7120-primary-image": [
+        "candidate_id=twitter-cyclone-gen3-7170",
+        "source_id=twitter-cyclone-3rd-r7120-official-2026-08-17"
       ],
       "twitter-cyclone-electronic-primary-image": [
         "platform_id=twitter-cyclone-electronic",
@@ -9739,6 +11221,10 @@
         "platform_id=twitter-t3-tt",
         "source_id=twitter-t3-tt-official-2026-08-08",
         "variant_ids=twitter-t3-tt"
+      ],
+      "van-rysel-rcr-f-pro-primary-image": [
+        "candidate_id=missing-china-price-van-rysel-rcr",
+        "source_id=van-rysel-rcr-f-pro-official-global-2026-08-17"
       ],
       "vook-v8e-pro-primary-image": [
         "candidate_id=vook-v8e-pro",
@@ -9781,6 +11267,10 @@
       "xds-ad500-2025-primary-image": [
         "candidate_id=xds-ad500-2025",
         "source_id=xds-ad500-retailer-2026-08-08"
+      ],
+      "xds-ad7-primary-image": [
+        "candidate_id=xds-ad7",
+        "source_id=xds-ad7-105-di2-official-image-2026-08-17"
       ],
       "xds-gt350-primary-image": [
         "candidate_id=xds-gt350",
@@ -9875,6 +11365,7 @@
       ],
       "bianchi-sprint-icr": [
         "model_id=bianchi-sprint-icr",
+        "source_ids=bianchi-sprint-icr-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "bigrock-sohtea": [
@@ -9938,6 +11429,7 @@
       ],
       "de-rosa-new-838": [
         "model_id=de-rosa-new-838",
+        "source_ids=de-rosa-838-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "dengfu-gravel": [],
@@ -9968,6 +11460,7 @@
       ],
       "giant-propel-advanced-3": [
         "model_id=giant-propel-advanced-3",
+        "source_ids=giant-china-propel-advanced-3-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "gios-aerolite": [
@@ -10135,6 +11628,7 @@
       ],
       "look-765-electronic": [
         "model_id=look-765-electronic",
+        "source_ids=look-765-optimum-105-di2-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "meihanda-phantom-p10": [
@@ -10154,13 +11648,16 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "missing-china-price-canyon-aeroad": [
-        "model_id=canyon-aeroad"
+        "model_id=canyon-aeroad",
+        "source_ids=canyon-aeroad-cfr-di2-official-2026-08-17"
       ],
       "missing-china-price-canyon-grail": [
-        "model_id=canyon-grail"
+        "model_id=canyon-grail",
+        "source_ids=canyon-grail-cf-7-official-2026-08-17"
       ],
       "missing-china-price-canyon-ultimate": [
-        "model_id=canyon-ultimate"
+        "model_id=canyon-ultimate",
+        "source_ids=canyon-ultimate-cfr-axs-official-2026-08-17"
       ],
       "missing-china-price-elves-falath-evo": [
         "model_id=elves-falath-evo",
@@ -10168,36 +11665,44 @@
       ],
       "missing-china-price-elves-mori-aerox": [
         "existing_record_id=elves-mori-aerox-frameset",
-        "model_id=elves-mori-aerox"
+        "model_id=elves-mori-aerox",
+        "source_ids=elves-mori-aerox-official-2026-08-17"
       ],
       "missing-china-price-elves-vanyar": [
-        "model_id=elves-vanyar"
+        "model_id=elves-vanyar",
+        "source_ids=elves-vanyar-pro-disc-official-2026-08-17"
       ],
       "missing-china-price-evolve-cima-gr": [
         "existing_record_id=evolve-cima-gr-frameset",
         "model_id=evolve-cima-gr"
       ],
       "missing-china-price-giant-defy-advanced": [
-        "model_id=giant-defy-advanced"
+        "model_id=giant-defy-advanced",
+        "source_ids=giant-china-defy-advanced-2-official-2026-08-17"
       ],
       "missing-china-price-giant-revolt-advanced": [
-        "model_id=giant-revolt-advanced"
+        "model_id=giant-revolt-advanced",
+        "source_ids=giant-china-revolt-advanced-2-official-2026-08-17"
       ],
       "missing-china-price-giant-tcr-advanced": [
-        "model_id=giant-tcr-advanced"
+        "model_id=giant-tcr-advanced",
+        "source_ids=giant-china-tcr-advanced-3-gc-official-2026-08-17"
       ],
       "missing-china-price-laget-g0-pro": [
         "existing_record_id=laget-discovery-one-pro",
         "model_id=laget-g0-pro"
       ],
       "missing-china-price-merida-reacto": [
-        "model_id=merida-reacto"
+        "model_id=merida-reacto",
+        "source_ids=merida-china-reacto-6000-cn-27-official-2026-08-17"
       ],
       "missing-china-price-merida-scultura": [
-        "model_id=merida-scultura"
+        "model_id=merida-scultura",
+        "source_ids=merida-china-scultura-6000-25-official-2026-08-17"
       ],
       "missing-china-price-merida-silex": [
-        "model_id=merida-silex"
+        "model_id=merida-silex",
+        "source_ids=merida-silex-7000-25-official-cny-reference-2026-08-17"
       ],
       "missing-china-price-quick-pro-gr-one": [
         "existing_record_id=quick-gr-one-frameset",
@@ -10212,7 +11717,10 @@
       ],
       "missing-china-price-seka-exaero-gr": [
         "existing_record_id=seka-exaero-gr-frameset",
-        "model_id=seka-exaero-gr"
+        "model_id=seka-exaero-gr",
+        "source_ids=public-seka-exaero-owner-2026-08-17",
+        "source_ids=seka-exaero-gr-rdc-collection-2026-08-17",
+        "source_ids=seka-exaero-gr-rdc-official-2026-08-17"
       ],
       "missing-china-price-specialized-crux": [
         "model_id=specialized-crux"
@@ -10227,20 +11735,27 @@
       ],
       "missing-china-price-tavelo-arow": [
         "model_id=tavelo-arow",
+        "source_ids=tavelo-arow-race-polestar-official-2026-08-17",
         "video_ids=china-cycling-tavelo-arow-2026-build"
       ],
       "missing-china-price-tavelo-attack": [
-        "model_id=tavelo-attack"
+        "model_id=tavelo-attack",
+        "source_ids=tavelo-attack-official-2026-08-17"
       ],
       "missing-china-price-tavelo-grow": [
         "existing_record_id=tavelo-grow-frameset",
-        "model_id=tavelo-grow"
+        "model_id=tavelo-grow",
+        "source_ids=tavelo-grow-official-2026-08-17"
       ],
       "missing-china-price-trek-checkpoint": [
-        "model_id=trek-checkpoint"
+        "model_id=trek-checkpoint",
+        "source_ids=trek-china-checkpoint-category-2026-08-17",
+        "source_ids=trek-china-checkpoint-product-47071-2026-08-17"
       ],
       "missing-china-price-trek-domane": [
-        "model_id=trek-domane"
+        "model_id=trek-domane",
+        "source_ids=trek-china-domane-category-2026-08-17",
+        "source_ids=trek-china-domane-product-57629-2026-08-17"
       ],
       "missing-china-price-trek-madone-gen-8": [
         "model_id=trek-madone-sl-5-gen-8-57653",
@@ -10252,7 +11767,9 @@
         "model_id=tsb-titan-super-bond-pioneer-one"
       ],
       "missing-china-price-van-rysel-rcr": [
-        "model_id=van-rysel-rcr"
+        "model_id=van-rysel-rcr",
+        "source_ids=van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
+        "source_ids=van-rysel-rcr-f-pro-official-global-2026-08-17"
       ],
       "missing-china-price-winspace-agile": [
         "model_id=winspace-agile",
@@ -10261,11 +11778,14 @@
       ],
       "missing-china-price-winspace-g3": [
         "existing_record_id=winspace-g3-frameset",
-        "model_id=winspace-g3"
+        "model_id=winspace-g3",
+        "source_ids=winspace-g3-pro-di2-official-2026-08-17"
       ],
       "missing-china-price-winspace-g5": [
         "existing_record_id=winspace-g5-frameset",
-        "model_id=winspace-g5"
+        "model_id=winspace-g5",
+        "source_ids=public-winspace-g5-owner-image-2026-08-17",
+        "source_ids=winspace-g5-gravel-official-2026-08-17"
       ],
       "missing-china-price-winspace-slc3": [
         "model_id=winspace-slc3",
@@ -10281,6 +11801,7 @@
       ],
       "missing-china-price-x-lab-xds-gt8": [
         "model_id=x-lab-xds-gt8",
+        "source_ids=public-xlab-gt8-overview-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "source_ids=xlab-gt8-official-2026-08-17"
       ],
@@ -10306,6 +11827,7 @@
       ],
       "pardus-robin-sport-pes": [
         "model_id=pardus-robin-sport-pes",
+        "source_ids=pardus-robin-sport-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-spark": [
@@ -10326,6 +11848,7 @@
       ],
       "pardus-super-sport-gen2": [
         "model_id=pardus-super-sport-gen2",
+        "source_ids=public-pardus-super-sport-gen2-price-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-uragano-evo": [
@@ -10358,6 +11881,8 @@
       ],
       "quick-pro-er-one": [
         "model_id=quick-pro-er-one",
+        "source_ids=public-quick-pro-er-one-build-2026-08-17",
+        "source_ids=public-quick-pro-er-one-preorder-2026-08-17",
         "source_ids=quick-pro-er-one-ultegra-official-2026-08-17",
         "source_ids=quick-pro-global-support-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31",
@@ -10390,6 +11915,7 @@
       ],
       "sava-a7l-2026": [
         "model_id=sava-a7l-2026",
+        "source_ids=sava-a7l-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "sava-a7l-pro-2026": [
@@ -10400,14 +11926,17 @@
       ],
       "sava-dream-maker": [
         "model_id=sava-dream-maker",
+        "source_ids=sava-dream-maker-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "sava-f20-hawkeye": [
         "model_id=sava-f20-hawkeye",
+        "source_ids=sava-hawkeye-f20-official-2026-08-17",
         "video_ids=china-cycling-sava-f20-hawkeye"
       ],
       "sava-gelaro-s4": [
         "model_id=sava-gelaro-s4",
+        "source_ids=sava-gelaro-s4-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "sava-gelaro-sf": [
@@ -10416,6 +11945,7 @@
       ],
       "sava-r8-r8170": [
         "model_id=sava-r8-r8170",
+        "source_ids=sava-r8-r8170-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "sava-r9": [
@@ -10428,6 +11958,7 @@
       ],
       "scott-foil-rc-10": [
         "model_id=scott-foil-rc-10",
+        "source_ids=scott-foil-rc-10-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "spect-mira": [
@@ -10464,6 +11995,7 @@
       ],
       "twitter-cyclone-gen3-7170": [
         "model_id=twitter-cyclone-gen3-7170",
+        "source_ids=twitter-cyclone-3rd-r7120-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "twitter-cyclone-r7120": [
@@ -10564,6 +12096,7 @@
       ],
       "xds-ad7": [
         "model_id=xds-ad7",
+        "source_ids=xds-ad7-105-di2-official-image-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "xds-carbon-road-13980": [
@@ -10572,6 +12105,8 @@
       ],
       "xds-gt350": [
         "model_id=xds-gt350",
+        "source_ids=public-xds-gt350-owner-2026-08-17",
+        "source_ids=public-xds-gt350-price-2026-08-17",
         "source_ids=xds-gt350-hk-spec-2026-08-09",
         "source_ids=xds-gt350-retailer-2026-08-08",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
@@ -10579,6 +12114,7 @@
       "xds-gt600": [
         "model_id=xds-gt600",
         "source_ids=compiled-research-2026-08-06",
+        "source_ids=public-xds-gt600-overview-2026-08-17",
         "source_ids=xds-manufacturing-government"
       ]
     },
@@ -10647,6 +12183,15 @@
         "specification": 3
       }
     },
+    "bianchi-sprint-icr-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "bxt-055-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -10675,6 +12220,33 @@
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "canyon-aeroad-cfr-di2-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "canyon-grail-cf-7-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "canyon-ultimate-cfr-axs-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
         "price": 3,
         "specification": 3
       }
@@ -10711,6 +12283,15 @@
         "specification": 1
       }
     },
+    "de-rosa-838-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "elves-falath-evo-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -10734,6 +12315,15 @@
         "identity": 2,
         "price": 1,
         "specification": 2
+      }
+    },
+    "elves-vanyar-pro-disc-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "evolve-cima-gr-official-2026-08-17": {
@@ -10765,6 +12355,57 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
+        "specification": 3
+      }
+    },
+    "giant-china-defy-advanced-2-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "giant-china-propel-advanced-3-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "giant-china-revolt-advanced-2-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "giant-china-tcr-advanced-3-gc-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "giant-defy-advanced-0-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "giant-tcr-advanced-0-axs-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -10880,6 +12521,15 @@
         "specification": 3
       }
     },
+    "look-765-optimum-105-di2-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "market-snapshot-2026-08-05": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -10888,12 +12538,48 @@
         "specification": 0
       }
     },
+    "merida-china-reacto-6000-cn-27-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "merida-china-scultura-6000-25-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "merida-silex-7000-25-official-cny-reference-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "pardus-company-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
         "specification": 2
+      }
+    },
+    "pardus-robin-sport-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "pardus-spark-sport-official-2026-08-09": {
@@ -10950,6 +12636,78 @@
         "identity": 3,
         "price": -1,
         "specification": -1
+      }
+    },
+    "public-pardus-super-sport-gen2-price-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-quick-pro-er-one-build-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-quick-pro-er-one-preorder-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-seka-exaero-owner-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-winspace-g5-owner-image-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-xds-gt350-owner-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-xds-gt350-price-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-xds-gt600-overview-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-xlab-gt8-overview-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
       }
     },
     "quick-gr-one-official": {
@@ -11048,12 +12806,30 @@
         "specification": 2
       }
     },
+    "sava-a7l-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "sava-a7l-pro-2026-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "sava-dream-maker-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "sava-gelaro-s4-official": {
@@ -11070,6 +12846,15 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "sava-gelaro-s4-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "sava-gelaro-s8-official-2026-08-08": {
@@ -11096,6 +12881,24 @@
         "specification": 3
       }
     },
+    "sava-hawkeye-f20-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "sava-r8-r8170-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "scott-addict-rc-40-retailer-2026-08-08": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -11104,11 +12907,36 @@
         "specification": 2
       }
     },
+    "scott-foil-rc-10-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "seka-exaero-gr-official-store-2026-08-09": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 2,
+        "specification": 3
+      }
+    },
+    "seka-exaero-gr-rdc-collection-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 0
+      }
+    },
+    "seka-exaero-gr-rdc-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -11150,6 +12978,32 @@
         "identity": 1,
         "price": 1,
         "specification": 0.5
+      }
+    },
+    "tavelo-arow-race-polestar-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "tavelo-attack-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "tavelo-grow-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "tavelo-official": {
@@ -11272,6 +13126,38 @@
         "specification": 1
       }
     },
+    "trek-china-checkpoint-category-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 0
+      }
+    },
+    "trek-china-checkpoint-product-47071-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
+    "trek-china-domane-category-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 0
+      }
+    },
+    "trek-china-domane-product-57629-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
     "trek-china-madone-sl-range-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -11336,6 +13222,14 @@
         "specification": 1
       }
     },
+    "twitter-cyclone-3rd-r7120-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "twitter-cyclone-electronic-official-2026-08-08": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -11391,6 +13285,23 @@
         "price": 3
       }
     },
+    "van-rysel-rcr-f-pro-china-trade-report-2026-08-17": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "van-rysel-rcr-f-pro-official-global-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "vook-v8e-pro-official-2026-08-08": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -11429,6 +13340,22 @@
         "identity": 3,
         "price": 0,
         "specification": 2
+      }
+    },
+    "winspace-g3-pro-di2-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "winspace-g5-gravel-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "winspace-g5-official": {
@@ -11501,6 +13428,15 @@
         "identity": 3,
         "price": 1,
         "specification": 2
+      }
+    },
+    "xds-ad7-105-di2-official-image-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "xds-gt350-hk-spec-2026-08-09": {
@@ -11619,6 +13555,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "bianchi-sprint-icr-primary-image": {
+      "target": "candidates:bianchi-sprint-icr",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "bxt-055-primary-image": {
       "target": "platforms:bxt-055",
       "minimum_accuracy_rank": 4,
@@ -11647,6 +13590,27 @@
       "remote_required": true,
       "primary_required": true
     },
+    "canyon-aeroad-cfr-di2-primary-image": {
+      "target": "candidates:missing-china-price-canyon-aeroad",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "canyon-grail-cf-7-primary-image": {
+      "target": "candidates:missing-china-price-canyon-grail",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "canyon-ultimate-cfr-axs-primary-image": {
+      "target": "candidates:missing-china-price-canyon-ultimate",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "carbonda-cfr696-primary-image": {
       "target": "platforms:carbonda-cfr696",
       "minimum_accuracy_rank": 4,
@@ -11657,6 +13621,13 @@
     "colnago-y1rs-primary-image": {
       "target": "candidates:colnago-y1rs",
       "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "de-rosa-new-838-primary-image": {
+      "target": "candidates:de-rosa-new-838",
+      "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
@@ -11675,6 +13646,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "elves-vanyar-pro-disc-primary-image": {
+      "target": "candidates:missing-china-price-elves-vanyar",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "evolve-cima-gr-primary-image": {
       "target": "platforms:evolve-cima-gr",
       "minimum_accuracy_rank": 4,
@@ -11685,6 +13663,34 @@
     "felt-ia-2-primary-image": {
       "target": "candidates:felt-ia-2",
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "giant-defy-advanced-primary-image": {
+      "target": "candidates:missing-china-price-giant-defy-advanced",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "giant-propel-advanced-3-primary-image": {
+      "target": "candidates:giant-propel-advanced-3",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "giant-revolt-advanced-2-primary-image": {
+      "target": "candidates:missing-china-price-giant-revolt-advanced",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "giant-tcr-advanced-primary-image": {
+      "target": "candidates:missing-china-price-giant-tcr-advanced",
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
@@ -11736,6 +13742,41 @@
       "minimum_accuracy_rank": 0,
       "minimum_source_tier": 0,
       "remote_required": false,
+      "primary_required": true
+    },
+    "look-765-electronic-primary-image": {
+      "target": "candidates:look-765-electronic",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "merida-reacto-6000-cn-27-primary-image": {
+      "target": "candidates:missing-china-price-merida-reacto",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "merida-scultura-6000-25-primary-image": {
+      "target": "candidates:missing-china-price-merida-scultura",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "merida-silex-7000-25-primary-image": {
+      "target": "candidates:missing-china-price-merida-silex",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "pardus-robin-sport-pes-primary-image": {
+      "target": "candidates:pardus-robin-sport-pes",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
       "primary_required": true
     },
     "pardus-super-sport-gen2-primary-image": {
@@ -11801,6 +13842,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "sava-a7l-2026-primary-image": {
+      "target": "candidates:sava-a7l-2026",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "sava-a7l-pro-2026-primary-image": {
       "target": "candidates:sava-a7l-pro-2026",
       "minimum_accuracy_rank": 4,
@@ -11815,9 +13863,23 @@
       "remote_required": true,
       "primary_required": true
     },
+    "sava-dream-maker-primary-image": {
+      "target": "candidates:sava-dream-maker",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "sava-gelaro-primary-image": {
       "target": "platforms:sava-gelaro",
       "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "sava-gelaro-s4-primary-image": {
+      "target": "candidates:sava-gelaro-s4",
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
@@ -11836,10 +13898,31 @@
       "remote_required": true,
       "primary_required": true
     },
+    "sava-hawkeye-f20-primary-image": {
+      "target": "candidates:sava-f20-hawkeye",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "sava-r8-r8170-primary-image": {
+      "target": "candidates:sava-r8-r8170",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "scott-addict-rc-40-primary-image": {
       "target": "platforms:scott-addict-rc-40",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "scott-foil-rc-10-primary-image": {
+      "target": "candidates:scott-foil-rc-10",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
     },
@@ -11866,6 +13949,20 @@
     },
     "specialized-tarmac-sl8-comp-primary-image": {
       "target": "candidates:missing-china-price-specialized-tarmac-sl8",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "tavelo-arow-race-polestar-primary-image": {
+      "target": "candidates:missing-china-price-tavelo-arow",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "tavelo-attack-primary-image": {
+      "target": "candidates:missing-china-price-tavelo-attack",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
@@ -11899,6 +13996,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "twitter-cyclone-3rd-r7120-primary-image": {
+      "target": "candidates:twitter-cyclone-gen3-7170",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "twitter-cyclone-electronic-primary-image": {
       "target": "platforms:twitter-cyclone-electronic",
       "minimum_accuracy_rank": 2,
@@ -11922,6 +14026,13 @@
     },
     "twitter-t3-tt-primary-image": {
       "target": "platforms:twitter-t3-tt",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "van-rysel-rcr-f-pro-primary-image": {
+      "target": "candidates:missing-china-price-van-rysel-rcr",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
@@ -11997,6 +14108,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "xds-ad7-primary-image": {
+      "target": "candidates:xds-ad7",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "xds-gt350-primary-image": {
       "target": "candidates:xds-gt350",
       "minimum_accuracy_rank": 3,
@@ -12034,6 +14152,11 @@
     }
   },
   "image_targets": {
+    "candidates:bianchi-sprint-icr": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:camp-ace-qed": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
@@ -12044,8 +14167,18 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:de-rosa-new-838": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:felt-ia-2": {
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:giant-propel-advanced-3": {
+      "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
     },
@@ -12059,6 +14192,61 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:look-765-electronic": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-canyon-aeroad": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-canyon-grail": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-canyon-ultimate": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-elves-vanyar": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-giant-defy-advanced": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-giant-revolt-advanced": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-giant-tcr-advanced": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-merida-reacto": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-merida-scultura": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-merida-silex": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:missing-china-price-quick-pro-xr-one": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
@@ -12069,7 +14257,22 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:missing-china-price-tavelo-arow": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-tavelo-attack": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:missing-china-price-trek-madone-gen-8": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:missing-china-price-van-rysel-rcr": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
@@ -12091,6 +14294,11 @@
     },
     "candidates:missing-china-price-x-lab-xds-gt8": {
       "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:pardus-robin-sport-pes": {
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true
     },
@@ -12119,7 +14327,37 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:sava-a7l-2026": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:sava-a7l-pro-2026": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:sava-dream-maker": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:sava-f20-hawkeye": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:sava-gelaro-s4": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:sava-r8-r8170": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:scott-foil-rc-10": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
@@ -12127,6 +14365,11 @@
     "candidates:trinx-gtr-c6": {
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 1,
+      "remote_required": true
+    },
+    "candidates:twitter-cyclone-gen3-7170": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "candidates:vook-v8e-pro": {
@@ -12152,6 +14395,11 @@
     "candidates:xds-ad500-2025": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
+      "remote_required": true
+    },
+    "candidates:xds-ad7": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "candidates:xds-gt350": {
@@ -12451,7 +14699,8 @@
         "observed_price"
       ],
       "giant-propel-advanced-3": [
-        "observed_price"
+        "observed_price",
+        "official_price"
       ],
       "gios-aerolite": [
         "observed_price"
@@ -12582,10 +14831,31 @@
       "missile-e6000": [
         "observed_price"
       ],
+      "missing-china-price-giant-defy-advanced": [
+        "official_price"
+      ],
+      "missing-china-price-giant-revolt-advanced": [
+        "official_price"
+      ],
+      "missing-china-price-giant-tcr-advanced": [
+        "official_price"
+      ],
+      "missing-china-price-merida-reacto": [
+        "official_price"
+      ],
+      "missing-china-price-merida-scultura": [
+        "official_price"
+      ],
       "missing-china-price-quick-pro-xr-one": [
         "official_price"
       ],
       "missing-china-price-specialized-tarmac-sl8": [
+        "official_price"
+      ],
+      "missing-china-price-trek-checkpoint": [
+        "official_price"
+      ],
+      "missing-china-price-trek-domane": [
         "official_price"
       ],
       "missing-china-price-trek-madone-gen-8": [
