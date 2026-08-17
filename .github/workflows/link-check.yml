@@ -26,6 +26,5 @@ jobs:
             './**/*.md'
             './data/**/*.json'
           fail: false
-      - name: Report remote image health without treating host blocking as a product failure
-        continue-on-error: true
-        run: npm run image:report
+      - name: Fail on confirmed broken image responses while tolerating host blocking
+        run: npm run image:report -- --strict
