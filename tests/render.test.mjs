@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { loadDataset, joinProducts } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderPrivacy } from '../src/render.mjs';
+import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
+const candidates = joinCatalogCandidates(data);
 const html = renderHome({
   data,
   products,
@@ -41,12 +42,39 @@ test('candidate leads share the catalog without a separate research queue', () =
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"/);
   assert.match(html, /data-id="candidate-xds-gt350"[\s\S]*?<span class="product-image">[\s\S]*?<img[^>]+alt="XDS GT350 gravel bike shown from the drive side"[^>]+referrerpolicy="no-referrer"/);
   assert.match(html, /<span class="metric-main">¥8,597<\/span><span class="metric-sub price-state">Observed · 2026-08-08<\/span>/);
-  assert.match(html, /href="https:\/\/www\.winspace\.cc\/products\/slc3-frameset" rel="noreferrer"/);
+  assert.match(html, /href="\/china-bike-research\/models\/missing-china-price-winspace-slc3\/" data-model-link/);
   assert.match(html, /data-show-all-models aria-pressed="false"/);
   assert.doesNotMatch(html, /Research queue/);
   assert.doesNotMatch(html, /Needs:/);
   assert.doesNotMatch(html, /data-id="pardus-spark-sport-pes"/);
   assert.doesNotMatch(html, /data-id="winspace-slc3"/);
+});
+
+test('candidate bikes have concise internal research profiles with visible facts and unknowns', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const quick = candidates.find((entry) => entry.candidate.id === 'quick-pro-er-one');
+  const quickDetail = renderCandidateModel(context, quick);
+  assert.match(quickDetail, /<h1>Quick Pro ER:ONE<\/h1>/);
+  assert.match(quickDetail, /Official global model/);
+  assert.match(quickDetail, /<section class="bike-brief"[^>]*>[\s\S]*The short version/);
+  assert.match(quickDetail, /Est\. ¥33,900 is a dated currency conversion/);
+  assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
+  assert.match(quickDetail, /Trade-offs and unknowns/);
+  assert.match(quickDetail, /Price record and sources/);
+  assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
+
+  const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
+  const sparseDetail = renderCandidateModel(context, sparse);
+  assert.match(sparseDetail, /Price not verified/);
+  assert.match(sparseDetail, /No model-specific hardware facts are verified yet/);
+  assert.match(sparseDetail, /Identity not confirmed/);
 });
 
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
@@ -116,6 +144,13 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   assert.match(detail, /Twitter Bikes · Manufacturer product page · Product facts · Image/);
   assert.match(detail, /Product facts: Medium–high · Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
+  assert.match(detail, /<section class="bike-brief"[^>]*>[\s\S]*The short version/);
+  assert.match(detail, /The recorded complete-bike price is ¥4,951/);
+  assert.match(detail, /Best suited to electronic shifting value, budget performance, drop-bar gravel/);
+  assert.match(detail, /<section class="detail-section"[^>]*>[\s\S]*Key details/);
+  assert.match(detail, /Trade-offs and unknowns/);
+  assert.doesNotMatch(detail, /Ask the seller in Chinese|seller-message/);
+  assert.doesNotMatch(detail, /<details class="detail-panel"><summary>Frame, category facts/);
 
   const placeholderProduct = products.find((item) => item.variant.id === 'elves-falath-r7170');
   const placeholderDetail = renderModel({
@@ -198,6 +233,25 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
   assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">Frame ¥/);
   assert.doesNotMatch(html, /data-copy-catalog-view|>Copy view</);
+
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const publishedFrame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
+  const publishedDetail = renderModel(context, publishedFrame);
+  assert.match(publishedDetail, /data-model-frame-price-low="3200" data-model-frame-price-high="4900" data-model-default-allowance="6000"/);
+  assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
+  assert.match(publishedDetail, /data-model-price-brief/);
+
+  const candidateFrame = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
+  const candidateDetail = renderCandidateModel(context, candidateFrame);
+  assert.match(candidateDetail, /data-model-frame-price-low="21800" data-model-frame-price-high="21800" data-model-default-allowance="6000"/);
+  assert.match(candidateDetail, /data-model-calculated-price>Est\. ¥27,800/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {

@@ -15,10 +15,22 @@
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "tavelo-attack-official-2026-08-17"
+    "tavelo-attack-official-2026-08-17",
+    "public-tavelo-attack-build-2026-08-17",
+    "usd-cny-central-parity-2026-07-31"
   ],
+  "official_price": {
+    "amount_cny": 10184,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-17",
+    "original_amount": 1500,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
   "source_url": "https://www.tavelo.cc/products/tavelo-attack",
-  "source_note": "Official global manufacturer page supports the Attack frameset and exact image. A dated mainland RMB frame price and purchase route remain unverified.",
+  "source_note": "Official global manufacturer page lists the Attack frameset at US$1,500 and supports the exact image. The approximate CNY reference excludes card FX, shipping, tax and duties. One public custom Dura-Ace R9270 build with 52/58 wheels and 28 mm tubeless tires was reported at 6.84 kg excluding pedals and bar tape.",
   "facts": {
     "frame": "Tavelo Attack carbon frameset"
   }

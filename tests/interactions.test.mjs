@@ -62,6 +62,10 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.match(script, /row\.dataset\.priceFilter = String\(high\)/);
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
   assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
+  assert.match(script, /buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1'/);
+  assert.match(script, /writeStoredBuildAllowance\(currentBuildAllowance\)/);
+  assert.match(script, /document\.querySelector\('\[data-model-frame-price-low\]'\)/);
+  assert.match(script, /target\.searchParams\.set\('from', from\)[\s\S]*?setParam\(target, 'build'/);
   assert.match(script, /if \(comparePanel && !comparePanel\.hidden && selection\.length >= 2\) renderComparison\(\)/);
   assert.doesNotMatch(script, /data-copy-catalog-view|copyCatalogView/);
 });

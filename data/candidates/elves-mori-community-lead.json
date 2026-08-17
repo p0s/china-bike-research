@@ -1,0 +1,23 @@
+{
+  "id": "elves-mori-community-lead",
+  "name": "ELVES Mori gravel frameset (subtrim unconfirmed)",
+  "category": "gravel-race",
+  "type": "frameset",
+  "why_interesting": "A current Mori-family build and price floor may cover a separate subtrim from the published Mori AeroX frameset.",
+  "missing": [
+    "Exact Mori subtrim and proof of relationship to Mori AeroX",
+    "Official product page, geometry and exact package contents",
+    "Precise current checkout price, stock and warranty route"
+  ],
+  "status": "needs-exact-model",
+  "research_priority": "medium",
+  "source_ids": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+  "observed_price": {
+    "low_cny": 6000,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_basis": "public Mori-family frame-price floor"
+  },
+  "source_note": "Both public reports place a Mori-family frameset above ¥6,000, but neither proves the AeroX subtrim.",
+  "last_reviewed": "2026-08-17"
+}

@@ -4,10 +4,10 @@
   "model_id": "xds-gt350",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "The exact model name and dated price lead were visible, but the listing did not establish one exact complete-bike trim.",
+  "why_interesting": "A dated mainland price lead, an exact Hong Kong build sheet and public ownership context make the GT350 unusually well documented for an entry gravel bike, although market trims differ.",
   "missing": [
-    "Exact drivetrain, wheels, brakes, and included accessories",
-    "Exact trim-to-price mapping",
+    "Exact mainland drivetrain, wheels, brakes, weight and included accessories",
+    "Proof that the mainland price maps to the documented Hong Kong trim",
     "Current seller, warranty, and return route"
   ],
   "status": "exact-trim-unproven",
@@ -16,7 +16,9 @@
     "xds-gt350-retailer-2026-08-08",
     "xds-gt350-hk-spec-2026-08-09",
     "public-xds-gt350-owner-2026-08-17",
-    "public-xds-gt350-price-2026-08-17"
+    "public-xds-gt350-price-2026-08-17",
+    "public-xds-gt350-custom-build-2026-08-17",
+    "xds-gt350-smzdm-price-observation"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -26,6 +28,17 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
+  "facts": {
+    "drivetrain": "Hong Kong build: L-TWOO 1×10",
+    "brakes": "Hong Kong build: L-TWOO hydraulic disc",
+    "frame": "Hong Kong build: X6 aluminum frame and carbon fork",
+    "wheels": "Hong Kong build: 30 mm double-wall alloy rims",
+    "tires": "Hong Kong build: 700×40C",
+    "complete_weight_g": 11050,
+    "sizes": "Hong Kong build: 460 and 490 mm",
+    "mounts": "Owner report notes multiple rack and bottle-mount provisions"
+  },
+  "source_note": "Public observations span a roughly ¥2,800 promotion, ¥3,790 negotiated purchase, ¥4,500 list context and listings around ¥5,000. The retained ¥4,698 observation is the dated marketplace record; price and trim are channel-sensitive. A separate GRX/carbon-wheel custom build was reported below ¥10,000 and about 9.5 kg, but those figures are not stock-bike facts.",
   "source_refs": "IMG_6860.png#L2",
   "last_reviewed": "2026-08-17"
 }

@@ -14,12 +14,14 @@
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
-    "amount_cny": 21000,
+    "amount_cny": 2100,
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "listed",
-    "observation_count": 1
+    "observation_count": 1,
+    "correction_note": "Digit grouping rechecked against IMG_6884.png#R1; the visible amount is ¥2,100, not ¥21,000."
   },
+  "source_note": "The screenshot visibly shows ¥2,100. Exact model identity, complete bill of materials and final checkout still require live verification.",
   "source_refs": "IMG_6884.png#R1",
   "last_reviewed": "2026-08-08"
 }

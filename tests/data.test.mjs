@@ -50,20 +50,20 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
   assert.equal(data.platforms.length, 35);
   assert.equal(data.variants.length, 37);
-  assert.equal(data.prices.length, 38);
-  assert.equal(data.images.length, 87);
+  assert.equal(data.prices.length, 41);
+  assert.equal(data.images.length, 113);
   assert.equal(data.videos.length, 12);
-  assert.ok(data.sources.length >= 168);
-  assert.equal(data.candidates.length, 177);
+  assert.ok(data.sources.length >= 229);
+  assert.equal(data.candidates.length, 198);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(products.length, data.variants.length);
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 167);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 136);
-  assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id));
+  assert.equal(catalogCandidates.length, 189);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 160);
+  assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
   const pardus = catalogCandidates.find((entry) => entry.candidate.id === 'pardus-spark-sport-pes');
@@ -119,11 +119,29 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const domane = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-trek-domane');
   assert.equal(domane.price.amount_cny, 20800);
   const hawkeye = catalogCandidates.find((entry) => entry.candidate.id === 'sava-f20-hawkeye');
+  assert.equal(hawkeye.price.amount_cny, 12893);
   assert.equal(hawkeye.candidate.facts.complete_weight_g, 8700);
   assert.equal(hawkeye.image.subject_accuracy, 'exact-variant');
   const sprint = catalogCandidates.find((entry) => entry.candidate.id === 'bianchi-sprint-icr');
   assert.equal(sprint.image.subject_accuracy, 'exact-variant');
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'xlab-gt8'), false);
+  const winspaceComplete = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-winspace-g3');
+  assert.equal(winspaceComplete.kind, 'complete-bike');
+  assert.equal(winspaceComplete.price.amount_cny, 26472);
+  assert.match(winspaceComplete.candidate.catalog_distinct_reason, /frameset-only/);
+  const roubaix = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-specialized-roubaix-sl8');
+  assert.equal(roubaix.price.amount_cny, 15990);
+  const quickTr = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
+  assert.equal(quickTr.price.amount_cny, 21800);
+  const quickXrFrame = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-xr-one-frameset-aelous-gravel');
+  assert.equal(quickXrFrame.kind, 'frameset');
+  assert.equal(quickXrFrame.price.amount_cny, 10998);
+  assert.equal(quickXrFrame.image.subject_accuracy, 'same-platform');
+  const speed7Complete = catalogCandidates.find((entry) => entry.candidate.id === 'lightcarbon-speed7-complete');
+  const speed7Frame = catalogCandidates.find((entry) => entry.candidate.id === 'lightcarbon-speed7-frameset');
+  assert.equal(speed7Complete.price.amount_cny, 11399);
+  assert.equal(speed7Frame.price.amount_cny, 5599);
+  assert.notEqual(speed7Complete.kind, speed7Frame.kind);
   assert.ok(catalogCandidates.every((entry) => entry.brand?.id && entry.brand?.name));
   const brandLabels = new Map();
   for (const entry of catalogCandidates) {
@@ -142,6 +160,19 @@ test('candidate facts and foreign-price reference estimates reject malformed evi
   const invalidRate = structuredClone(data);
   invalidRate.candidates.find((item) => item.id === 'quick-pro-er-one').official_price.conversion_rate_date = 'today';
   assert.ok(validateDataset(invalidRate).some((error) => error.includes('reference conversion needs conversion_rate_date')));
+
+  const invalidDistinct = structuredClone(data);
+  delete invalidDistinct.candidates.find((item) => item.id === 'missing-china-price-winspace-g3').existing_record_id;
+  assert.ok(validateDataset(invalidDistinct).some((error) => error.includes('catalog_distinct_reason requires')));
+});
+
+test('rechecked screenshot prices preserve their corrected digit grouping', () => {
+  const meinier = data.candidates.find((item) => item.id === 'meinier-superlight-2');
+  const rollingStone = data.candidates.find((item) => item.id === 'rolling-stone-comp');
+  assert.equal(meinier.observed_price.amount_cny, 2100);
+  assert.equal(rollingStone.observed_price.amount_cny, 1500);
+  assert.match(meinier.observed_price.correction_note, /not ¥21,000/);
+  assert.match(rollingStone.observed_price.correction_note, /not ¥15,000/);
 });
 
 test('frame platforms and configurations remain separate', () => {
@@ -228,7 +259,7 @@ test('every platform and variant resolves a primary visual', () => {
 test('image records preserve exactness, source, rights, and fallback-safe hosting', () => {
   const allowedRights = new Set([
     'project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license',
-    'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed'
+    'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed'
   ]);
   for (const image of data.images) {
     assert.ok(image.alt.length >= 10, image.id);
@@ -241,8 +272,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 85);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 52);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 111);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 78);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -252,6 +283,17 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   const malformedTarget = structuredClone(data);
   malformedTarget.images.find((image) => image.candidate_id).platform_id = data.platforms[0].id;
   assert.ok(validateDataset(malformedTarget).some((error) => error.includes('target must identify exactly one platform or candidate')));
+});
+
+test('public-post images must remain credited remote embeds', () => {
+  const remote = structuredClone(data);
+  const image = remote.images.find((item) => item.id === 'quick-pro-er-one-primary-image');
+  image.media_type = 'community-post-photo';
+  image.rights.status = 'public-post-embed';
+  assert.deepEqual(validateDataset(remote), []);
+
+  image.hosting = { mode: 'local', local_path: '/assets/images/placeholders/complete-bike.svg' };
+  assert.ok(validateDataset(remote).some((error) => error.includes('embed-only image cannot be stored locally')));
 });
 
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {

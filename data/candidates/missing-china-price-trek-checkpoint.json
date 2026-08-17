@@ -6,8 +6,7 @@
   "type": "complete-bike",
   "why_interesting": "Exact official Trek China gravel model with a current CNY list price and product identifier.",
   "missing": [
-    "Exact current BOM, weight, frame/geometry, BB and clearance",
-    "Direct image asset URL",
+    "Exact current BOM, weight, geometry and bottom bracket",
     "Current dealer stock, checkout outcome and China warranty policy"
   ],
   "status": "official-mainland-complete-bike",
@@ -17,7 +16,10 @@
   "last_reviewed": "2026-08-17",
   "source_ids": [
     "trek-china-checkpoint-category-2026-08-17",
-    "trek-china-checkpoint-product-47071-2026-08-17"
+    "trek-china-checkpoint-product-47071-2026-08-17",
+    "trek-checkpoint-china-category-47071-2026-08-17",
+    "trek-checkpoint-sl-gen3-official-2026-08-17",
+    "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17"
   ],
   "official_price": {
     "amount_cny": 27800,
@@ -28,6 +30,7 @@
   "source_note": "Official mainland-China page lists Trek Checkpoint SL 5 AXS Gen 3 at ¥27,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
   "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/砾石自行车/c/B546/",
   "facts": {
-    "frame": "Checkpoint SL Gen 3 carbon platform; exact current BOM still requires extraction"
+    "frame": "500 Series OCLV carbon",
+    "tire_clearance_mm": 50
   }
 }

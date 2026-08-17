@@ -1,0 +1,32 @@
+{
+  "id": "seka-spear-rdc",
+  "name": "SEKA SPEAR RDC",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "An exact-model owner build supplies price, weight and component context for SEKA's SPEAR RDC aero platform.",
+  "missing": [
+    "Official exact-model frame and geometry page",
+    "Proof that the reported price maps to the complete listed build",
+    "Current purchase route, stock, warranty and included accessories"
+  ],
+  "status": "publication-gate-not-met",
+  "research_priority": "high",
+  "source_ids": [
+    "public-seka-spear-rdc-owner-2026-08-17"
+  ],
+  "facts": {
+    "drivetrain": "Shimano Ultegra electronic; exact series unconfirmed",
+    "complete_weight_g": 7100,
+    "frame": "SEKA SPEAR RDC MR frame",
+    "wheels": "Voso Lite50 carbon",
+    "cockpit": "375×120 mm integrated handlebar"
+  },
+  "observed_price": {
+    "amount_cny": 16900,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_basis": "owner-reported list price"
+  },
+  "source_note": "The 7.1 kg report excludes pedals, bottle cages and the computer mount, so it is build-specific rather than a stock-bike claim.",
+  "last_reviewed": "2026-08-17"
+}

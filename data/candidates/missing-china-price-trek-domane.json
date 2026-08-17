@@ -6,8 +6,7 @@
   "type": "complete-bike",
   "why_interesting": "Exact official Trek China endurance-road model with a current CNY list price and product identifier.",
   "missing": [
-    "Exact current BOM, weight, frame/geometry, BB and clearance",
-    "Direct image asset URL",
+    "Exact current weight, geometry and bottom bracket",
     "Current dealer stock, checkout outcome and China warranty policy"
   ],
   "status": "official-mainland-complete-bike",
@@ -17,7 +16,9 @@
   "last_reviewed": "2026-08-17",
   "source_ids": [
     "trek-china-domane-category-2026-08-17",
-    "trek-china-domane-product-57629-2026-08-17"
+    "trek-china-domane-product-57629-2026-08-17",
+    "trek-domane-sl5-gen4-official-2026-08-17",
+    "trek-domane-sl5-gen4-sefiles-2026-08-17"
   ],
   "official_price": {
     "amount_cny": 20800,
@@ -28,6 +29,8 @@
   "source_note": "Official mainland-China page lists Trek Domane SL 5 Gen 4 at ¥20,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
   "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/高性能公路车/domane/c/B221/?listing=true",
   "facts": {
-    "frame": "Domane SL Gen 4 carbon platform; exact current BOM still requires extraction"
+    "drivetrain": "Shimano 105 2×12",
+    "frame": "500 Series OCLV carbon",
+    "tire_clearance_mm": 38
   }
 }

@@ -5,15 +5,22 @@
   "category": "road",
   "type": "frameset",
   "why_interesting": "3D-printed titanium-joint frame with strong manufacturing relevance; current retail price missing.",
+  "source_ids": ["titanium-tsb-titan-super-bond-pioneer-one-official"],
+  "facts": {
+    "frame": "Ti-3Al-2.5V titanium",
+    "wheels": "700C",
+    "sizes": "XS, S, M, L and XL"
+  },
   "missing": [
     "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Current stock and purchase route",
+    "Warranty, included parts and final checkout conditions"
   ],
   "status": "missing-china-price",
   "existing_record_id": "tsb-pioneer-one",
   "research_priority": "high",
   "price_status": "missing mainland-China RMB observation",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "source_note": "The official product page establishes the PIONEER ONE titanium frame material, 700C wheel standard and five-size range. It does not publish a price.",
+  "last_reviewed": "2026-08-17"
 }

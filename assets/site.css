@@ -222,8 +222,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .product-name a { display: inline-block; min-height: 24px; text-decoration: none; }
 .product-fit { display: -webkit-box; margin-top: 3px; overflow: hidden; color: var(--muted); font-size: .68rem; line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .product-fit > span { color: var(--ink); font-weight: 690; }
-.type-pill, .pick-pill, .verify-flag { display: inline-flex; align-items: center; gap: 4px; width: max-content; padding: 2px 6px; border-radius: 999px; font-size: .6rem; font-weight: 760; letter-spacing: .025em; text-transform: none; }
+.type-pill, .pick-pill, .verify-flag, .status-pill { display: inline-flex; align-items: center; gap: 4px; width: max-content; padding: 2px 6px; border-radius: 999px; font-size: .6rem; font-weight: 760; letter-spacing: .025em; text-transform: none; }
 .type-pill { background: var(--surface-soft); color: var(--muted); }
+.status-pill { border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
 .pick-pill { background: var(--accent-soft); color: var(--accent); }
 .pick-flag { display: inline-flex; align-items: center; gap: 1px; }
 .pick-flag .info-button { margin: -5px; }
@@ -374,7 +375,6 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .model-brand-filter { color: inherit; text-decoration-color: transparent; text-underline-offset: 3px; }
 .model-brand-filter:hover { color: var(--ink); text-decoration-color: currentColor; }
 .model-summary h1 { margin-top: 7px; font-size: clamp(2rem, 4.5vw, 4rem); }
-.model-verdict { margin: 14px 0 0; color: var(--muted); font-size: 1.03rem; }
 .model-price { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-top: 22px; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .model-price strong { font-size: 1.8rem; letter-spacing: -.035em; }
 .model-price > span:last-child { flex-basis: 100%; color: var(--muted); font-size: .74rem; }
@@ -386,10 +386,16 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .model-facts dt { color: var(--muted); font-size: .72rem; }
 .model-facts dd { margin: 0; font-weight: 660; }
 .model-content { max-width: 980px; margin: 42px auto 0; }
+.bike-brief { max-width: 780px; margin-bottom: 30px; }
+.bike-brief h2, .detail-section h2 { font-size: 1.35rem; }
+.bike-brief p { margin: 9px 0 0; color: var(--muted); line-height: 1.65; }
+.bike-brief .bike-brief-lede { color: var(--ink); font-size: 1.08rem; font-weight: 650; }
+.bike-brief .research-profile-note { font-size: .76rem; }
 .decision-block { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-bottom: 18px; }
 .decision-block h2 { font-size: 1.18rem; }
 .decision-block ul { margin: 10px 0 0; padding-left: 1.15rem; color: var(--muted); }
 .decision-block li + li { margin-top: 6px; }
+.decision-block p { margin: 10px 0 0; color: var(--muted); }
 .video-context { margin: 30px 0 22px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .video-intro { max-width: 700px; }
 .video-intro > span { color: var(--accent); font-size: .68rem; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
@@ -413,6 +419,8 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .video-copy > small a { color: inherit; text-underline-offset: 2px; }
 .video-meta { display: flex; flex-wrap: wrap; gap: 6px; }
 .video-meta span { padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+.detail-section { margin: 28px 0 6px; padding: 24px 0 10px; border-top: 1px solid var(--line); }
+.detail-section > p { max-width: 760px; margin: 0; color: var(--muted); }
 .detail-panel { border-top: 1px solid var(--line); }
 .detail-panel:last-child { border-bottom: 1px solid var(--line); }
 .detail-panel summary { padding: 15px 2px; cursor: pointer; font-weight: 710; }

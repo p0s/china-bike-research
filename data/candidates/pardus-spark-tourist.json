@@ -6,8 +6,21 @@
   "missing": [
     "Confirm 2026 frame continuity",
     "Exact maximum clearance",
-    "Current availability"
+    "Current stock, checkout and warranty route"
   ],
   "status": "needs-current-verification",
-  "last_reviewed": "2026-08-06"
+  "price_status": "2026 mainland launch price",
+  "official_price": {
+    "amount_cny": 5499,
+    "currency": "CNY",
+    "price_type": "official-launch",
+    "observed_at": "2026-08-17"
+  },
+  "source_ids": ["pardus-2026-conference-wildto"],
+  "facts": {
+    "drivetrain": "Magene PES 1×12",
+    "frame": "PARDUS Spark Tourist complete-bike platform"
+  },
+  "source_note": "The 2026 manufacturer-conference report lists the Spark Tourist PES 1×12 complete bike at ¥5,499. Current stock and final checkout remain unverified.",
+  "last_reviewed": "2026-08-17"
 }

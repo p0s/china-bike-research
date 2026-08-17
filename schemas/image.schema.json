@@ -5,7 +5,6 @@
   "type": "object",
   "required": [
     "id",
-    "platform_id",
     "role",
     "subject_accuracy",
     "media_type",
@@ -22,6 +21,10 @@
       "pattern": "^[a-z0-9][a-z0-9-]*$"
     },
     "platform_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "candidate_id": {
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*$"
     },
@@ -50,6 +53,7 @@
       "enum": [
         "official-product-photo",
         "retailer-product-photo",
+        "community-post-photo",
         "project-placeholder"
       ]
     },
@@ -113,7 +117,8 @@
             "cc-licensed",
             "public-domain",
             "official-page-embed",
-            "retailer-page-embed"
+            "retailer-page-embed",
+            "public-post-embed"
           ]
         },
         "copyright_holder": {
@@ -154,5 +159,15 @@
       "minLength": 10
     }
   },
+  "oneOf": [
+    {
+      "required": ["platform_id"],
+      "not": { "required": ["candidate_id"] }
+    },
+    {
+      "required": ["candidate_id"],
+      "not": { "required": ["platform_id"] }
+    }
+  ],
   "additionalProperties": false
 }

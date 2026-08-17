@@ -1,18 +1,33 @@
 {
   "id": "missing-china-price-specialized-roubaix-sl8",
-  "name": "Specialized Roubaix SL8 China price target",
+  "name": "Specialized Roubaix SL8 Tiagra",
   "model_id": "specialized-roubaix-sl8",
   "category": "road-endurance",
-  "type": "research",
-  "why_interesting": "Important endurance-road benchmark.",
+  "type": "complete-bike",
+  "why_interesting": "A current official Roubaix SL8 Tiagra build provides an endurance-road benchmark with a 950 g frame and 40 mm clearance.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Confirm the exact mainland-China SKU and dealer stock",
+    "Final dealer checkout and offer duration",
+    "Mainland warranty conditions"
   ],
-  "status": "missing-china-price",
+  "status": "mainland-price-observed",
   "research_priority": "medium",
-  "price_status": "missing mainland-China RMB observation",
+  "price_status": "official China catalog offer observed; final dealer checkout unverified",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "source_ids": ["specialized-roubaix-sl8-tiagra-official-2026-08-17", "specialized-cn-store-finder-2026"],
+  "official_price": {
+    "amount_cny": 15990,
+    "currency": "CNY",
+    "price_type": "official-catalog-offer",
+    "observed_at": "2026-08-17"
+  },
+  "facts": {
+    "frame": "Roubaix SL8 carbon, 950 g claimed frame",
+    "frame_weight_g": 950,
+    "complete_weight_g": 9460,
+    "bottom_bracket": "BSA threaded",
+    "tire_clearance_mm": 40
+  },
+  "source_note": "The exact official Tiagra build is supported by the product page. The China catalog displayed ¥15,990 from ¥17,990 on 2026-08-17; stock, offer duration, final checkout and local warranty handling remain unverified.",
+  "last_reviewed": "2026-08-17"
 }

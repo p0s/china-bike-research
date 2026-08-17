@@ -4,10 +4,24 @@
   "type": "complete-bike",
   "why_interesting": "Potential flat-bar carbon bargain around historical ¥4,999 promotions.",
   "missing": [
-    "Exact current SKU",
-    "Current live price",
-    "Current platform clearance written by seller"
+    "Confirm the exact current SKU and maximum tire clearance",
+    "Recheck price after the dated promotion window",
+    "Current stock, final checkout and warranty route"
   ],
   "status": "needs-current-verification",
-  "last_reviewed": "2026-08-06"
+  "price_status": "dated mainland promotional observation",
+  "observed_price": {
+    "amount_cny": 4849,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_basis": "official-store-promotion",
+    "observation_count": 1
+  },
+  "source_ids": ["pardus-uragano-f-official-store-promo-2026-08"],
+  "facts": {
+    "drivetrain": "12-speed flat-bar gravel configuration",
+    "frame": "PARDUS Uragano F platform"
+  },
+  "source_note": "The public official-store mirror showed ¥4,849 against ¥7,099 during a promotion ending 2026-08-19. It is a time-bounded observation, not an evergreen list price, and checkout was not tested.",
+  "last_reviewed": "2026-08-17"
 }

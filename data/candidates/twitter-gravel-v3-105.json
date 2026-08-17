@@ -4,7 +4,7 @@
   "model_id": "twitter-gravel-v3-105",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Title and image identify Gravel V3.",
+  "why_interesting": "The exact Gravel V3 platform has an official 9.9 kg multi-build specification and a dated local 105 price lead.",
   "missing": [
     "Exact trim-to-existing-variant mapping",
     "Exact groupset, wheels, and included accessories",
@@ -20,6 +20,14 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
+  "source_ids": ["twitter-gravel-v3-official-2026-08-17"],
+  "facts": {
+    "drivetrain": "Official option: Shimano 105 R7120 2×12; storefront lists other builds",
+    "complete_weight_g": 9900,
+    "bottom_bracket": "T47×24",
+    "tires": "700×40 tanwall"
+  },
+  "source_note": "The official page lists multiple build choices, so its platform facts are retained while exact wheels and accessories for the ¥4,567.25 observation remain unverified.",
   "source_refs": "IMG_6860.png#L1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

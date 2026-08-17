@@ -14,12 +14,14 @@
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
-    "amount_cny": 15000,
+    "amount_cny": 1500,
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "listed",
-    "observation_count": 1
+    "observation_count": 1,
+    "correction_note": "Digit grouping rechecked against IMG_6867.png#R2; the visible amount is ¥1,500, not ¥15,000."
   },
+  "source_note": "The screenshot visibly shows ¥1,500, but whether that figure covers a complete bike or a parts/package option remains unresolved.",
   "source_refs": "IMG_6867.png#R2",
   "last_reviewed": "2026-08-08"
 }

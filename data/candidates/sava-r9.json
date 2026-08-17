@@ -4,7 +4,7 @@
   "model_id": "sava-r9",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "T1000 and Shimano 9270 shown. | Second price observation.",
+  "why_interesting": "The official mainland Blade R9 page confirms the exact platform and a displayed Dura-Ace carbon-wheel build, alongside two dated marketplace price observations.",
   "missing": [
     "Exact current SKU and complete BOM from a primary or authorized China-market source",
     "Category-specific fit/compatibility facts needed for comparison",
@@ -21,6 +21,13 @@
     "price_basis": "coupon",
     "observation_count": 2
   },
+  "source_ids": ["sava-blade-r9-official-cn-2026-08-17"],
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace build shown; exact marketplace trim mapping unconfirmed",
+    "frame": "Carbon frame",
+    "wheels": "Deep-section carbon wheelset shown"
+  },
+  "source_note": "The official image and component presentation establish a Blade R9 reference build, but do not prove that both marketplace prices use that same specification.",
   "source_refs": "IMG_6883.png#L1, IMG_6887.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

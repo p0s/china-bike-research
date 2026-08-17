@@ -17,35 +17,37 @@ Make the catalog materially more useful without converting uncertain leads into 
 
 ## Completed in this batch
 
-- Added eight exact official mainland complete-bike price records covering Giant, Merida, and Trek models; seven records moved out of `price-missing` because Propel already had an observed marketplace price.
-- Added exact official global facts for Merida SILEX, Van Rysel RCR-F Pro, SCOTT Foil RC 10, Bianchi Sprint ICR, three Canyon models, SAVA Hawkeye F20, Twitter Cyclone, Winspace G3/G5, SEKA ExAero GR, Tavelo Grow/Arow/Attack, ELVES Mori/Vanyar, and related exact-model candidates.
-- Added current official source or context records to 29 previously source-poor candidates.
-- Added 26 official remote image records, including exact mainland images where exposed and exact-platform fallbacks with explicit trim/market caveats.
-- Kept promotional, custom-build, foreign-market, secondary-report, and public-community observations visibly separate from authoritative mainland facts.
-- Preserved every remaining unknown in each candidate's `missing` list instead of inferring absent values.
+- Added exact mainland prices for major Giant, Merida, Trek, Specialized, Quick Pro, PARDUS, SEKA, and Tavelo configurations. Frameset/package prices stay distinct from complete bikes, and older dated observations remain in place.
+- Added dated official global reference prices and substantive specifications for Canyon, ELVES, SAVA, Tavelo, Winspace, Quick Pro, Specialized, and other exact builds without presenting them as mainland checkout quotes.
+- Added 21 candidate records, including distinct Quick Pro framesets, Specialized Crux/Roubaix trims, new public-build leads, and separate LightCarbon Speed7 complete-bike and frameset records.
+- Added 52 remote image records over the starting snapshot. Exact official imagery is preferred; five exact public-post images remain remote-only, credited, visibly caveated, and lower-ranked than official imagery.
+- Added internal detail pages for every distinct candidate. Each page keeps its short version, price basis, hardware, strengths, trade-offs, unknowns, and key facts visible while collapsing only the raw source ledger.
+- Rechecked all 100 exact-model screenshot-bundle records. Ninety-five already mapped to current records, LightCarbon Speed7 was split into two candidates, and two tenfold price transcription errors were corrected to ¥2,100 and ¥1,500.
+- Strengthened monotonic coverage so record identities, facts, prices, sources, relationships, image quality, remote hosting, and frameset-price metadata cannot silently regress.
+- Kept promotional, custom-build, foreign-market, secondary-report, and public-community observations visibly separate from authoritative mainland facts, preserving every remaining unknown instead of filling it by inference.
 
 ## Quantitative result
 
 | Measure | Before | After | Change |
 | --- | ---: | ---: | ---: |
-| Source records | 121 | 168 | +47 |
-| Primary image records | 61 | 87 | +26 |
-| Candidate-targeted images | 26 | 52 | +26 |
-| Candidates without a dedicated image | 151 | 125 | -26 |
-| Candidate `source-missing` gaps | 126 | 97 | -29 |
+| Source records | 121 | 229 | +108 |
+| Primary image records | 61 | 113 | +52 |
+| Candidate-targeted images | 26 | 78 | +52 |
+| Distinct catalog candidates without a dedicated image | 151 | 111 | -40 despite 21 new candidate records |
+| Candidate `source-missing` gaps | 126 | 88 | -38 |
 | Candidate `price-missing` gaps | 30 | 23 | -7 |
 
 ## Remaining blockers
 
-- 125 candidates still lack a dedicated image, although ten alias candidates intentionally use an existing published record's image.
-- High-priority exact-image blockers remain for ELVES Falath EVO, Specialized Crux, Trek Checkpoint, and PARDUS Spark Sport PES. Several official galleries are dynamic or expose only sibling trims.
+- 111 distinct catalog candidates still lack a dedicated image, while nine alias candidates intentionally use an existing published record's image.
+- High-priority exact-image blockers now center on Quick Pro TR:ONE and TT ONE, LightCarbon Speed7, SAVA A4, SEKA Spear RDC, Tavelo Arden, and the separate Giant Propel Gen 4 lead. Verified official or directly attributable remote assets were not exposed for these exact records.
 - Many popular global models still lack a verifiable mainland SKU, current CNY checkout, stock, duties/returns, or local warranty route.
 - Published records still have 34 geometry gaps, 23 frame-weight gaps, 17 BB gaps, 11 complete-weight gaps, nine incomplete BOMs, and seven weak/non-exact primary-image relationships.
 - Current manufacturer pages sometimes conflict on global price or components; these conflicts remain explicit until one exact market/variant explanation is verified.
 
 ## Next research queue
 
-1. Exact official images for the four high-priority blockers above, then Specialized Roubaix, Trek Domane, Voicevelo G Major, BIGROCK Sohtea, and INCOLOR SSR.
+1. Exact official images for the remaining high-priority blockers above, then Voicevelo G Major, BIGROCK Sohtea, INCOLOR SSR, ELVES Mori-family and Tavelo Arow SL leads.
 2. Official mainland price and purchase-route confirmation for the remaining 23 price-missing candidate groups.
 3. Exact official BOM/weight/BB/geometry extraction for Trek Checkpoint and Domane, then Winspace G3 and other high-visibility complete bikes.
 4. Published-variant cleanup for the seven weak images and the highest-priority geometry/weight/BOM gaps.
