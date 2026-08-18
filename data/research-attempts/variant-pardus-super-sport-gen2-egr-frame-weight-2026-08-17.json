@@ -13,8 +13,19 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS SUPG2 SPORT EGR frame weight",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-18",
+          "note": "Security Verification appeared before any search results; no challenge was solved per policy.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=PARDUS%20SUPG2%20SPORT%20EGR"
+        }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,8 +60,8 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: blocked; specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
 }

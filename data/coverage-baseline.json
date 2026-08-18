@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-17",
+  "updated_at": "2026-08-18",
   "catalog_metrics": {
     "records": {
       "brands": 36,
@@ -17701,6 +17701,8 @@
         "target.record_type"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -28349,10 +28351,11 @@
     },
     "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"PARDUS SUPG2 SPORT EGR frame weight\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-18\",\"Security Verification appeared before any search results; no challenge was solved per policy.\",\"https://www.xiaohongshu.com/search_result?keyword=PARDUS%20SUPG2%20SPORT%20EGR\"]",
         "[\"web\",1,\"PARDUS SUPG2 SPORT 2026 EGR frame weight official\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\",\"Official dealer locator provides no frame-only weight.\",\"https://parduscycle.com/find.aspx\"]",
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR frame weight catalog\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Older official page is Gen1 and does not document Gen2 EGR frame-only weight.\",\"https://www.parduscycle.com/Hightxq.aspx?cc=5176&color=5183&id=21398&pz=5175&t=1030\"]",
         "[\"web\",3,\"PARDUS SUPG2 SPORT EGR frame weight exact SKU\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"rejected\",\"2026-08-17\",\"Exact retailer provides complete-bike estimate only.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
