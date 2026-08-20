@@ -49,13 +49,13 @@ test('publication gates reject incomplete builds and category-mismatched framese
 
 test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
-  assert.equal(data.platforms.length, 35);
-  assert.equal(data.variants.length, 37);
-  assert.equal(data.prices.length, 43);
-  assert.equal(data.images.length, 123);
+  assert.equal(data.platforms.length, 36);
+  assert.equal(data.variants.length, 38);
+  assert.equal(data.prices.length, 44);
+  assert.equal(data.images.length, 124);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 198);
+  assert.equal(data.candidates.length, 199);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 325);
@@ -63,8 +63,8 @@ test('public dataset has the expected coverage', () => {
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 189);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 161);
+  assert.equal(catalogCandidates.length, 190);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 162);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
@@ -194,10 +194,29 @@ test('rechecked screenshot prices preserve their corrected digit grouping', () =
   assert.match(rollingStone.observed_price.correction_note, /not ¥15,000/);
 });
 
-test('frame platforms and configurations remain separate', () => {
-  const twitterVariants = data.variants.filter((item) => item.platform_id === 'twitter-gravel-v3');
-  assert.equal(twitterVariants.length, 2);
+test('Twitter Gravel V3 generations and configurations remain separate', () => {
+  const currentVariants = data.variants.filter((item) => item.platform_id === 'twitter-gravel-v3');
+  const oldVariants = data.variants.filter((item) => item.platform_id === 'twitter-gravel-v3-2024');
+  assert.deepEqual(currentVariants.map((item) => item.id).sort(), ['twitter-v3-rs-sensah', 'twitter-v3-wheeltop-eds']);
+  assert.deepEqual(oldVariants.map((item) => item.id), ['twitter-v3-2024-rs-sensah-alloy']);
   assert.equal(data.platforms.filter((item) => item.id === 'twitter-gravel-v3').length, 1);
+  assert.equal(data.platforms.filter((item) => item.id === 'twitter-gravel-v3-2024').length, 1);
+  assert.equal(data.platforms.find((item) => item.id === 'twitter-gravel-v3').frame.bottom_bracket, 'T47');
+  assert.match(data.platforms.find((item) => item.id === 'twitter-gravel-v3-2024').frame.bottom_bracket, /BB92.*press-fit/);
+});
+
+test('2024 Twitter alloy and carbon-wave evidence never share a price', () => {
+  const alloy = data.variants.find((item) => item.id === 'twitter-v3-2024-rs-sensah-alloy');
+  const carbon = data.candidates.find((item) => item.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
+  const price = data.prices.find((item) => item.id === 'twitter-v3-2024-rs-alloy-2026-08-21');
+  assert.equal(alloy.wheels.rim_material, 'aluminum');
+  assert.equal(alloy.claimed_complete_weight_g, 9900);
+  assert.equal(carbon.observed_price, undefined);
+  assert.equal(carbon.facts.complete_weight_g, 9500);
+  assert.match(carbon.facts.wheels, /50 mm wave-profile carbon/);
+  assert.equal(price.amount_cny, 3991);
+  assert.match(price.conditions, /alloy-wheel/);
+  assert.match(price.conditions, /Do not apply this price.*carbon-wave-wheel/);
 });
 
 test('observed Twitter prices are retained exactly and anonymously', () => {
@@ -290,7 +309,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   }
   const unresolvedImagePlatforms = [
     'elves-falath-r7170',
-    'lightcarbon-speedz'
+    'lightcarbon-speedz',
+    'twitter-gravel-v3-2024'
   ];
   assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 121);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 88);
@@ -370,9 +390,11 @@ test('research ledger reconciles every bundle group and preserves backlog status
 test('shared frame images do not masquerade as exact component builds', () => {
   const eds = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
   const rs = products.find((item) => item.variant.id === 'twitter-v3-rs-sensah');
+  const oldRs = products.find((item) => item.variant.id === 'twitter-v3-2024-rs-sensah-alloy');
   const pardus = products.find((item) => item.variant.id === 'pardus-super-sport-gen2-egr');
   assert.equal(eds.image.display_accuracy, 'exact-variant');
   assert.equal(rs.image.display_accuracy, 'same-platform');
+  assert.equal(oldRs.image.display_accuracy, 'illustrative');
   assert.equal(pardus.image.display_accuracy, 'same-platform');
 });
 
