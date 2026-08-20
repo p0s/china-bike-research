@@ -1,0 +1,56 @@
+{
+  "id": "candidate-quick-pro-tr-one-bom-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-tr-one"
+  },
+  "field": "bom",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro TR:ONE material, standards, clearance and BOM community",
+          "route": "YouTube public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "found",
+          "result_url": "https://www.youtube.com/watch?v=iU_CBldBUmo"
+        },
+        {
+          "attempt": 2,
+          "query": "快客 TR:ONE 铁三 material, standards, clearance and BOM",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Quick Pro TR:ONE TR:ONE 铁三 2026 material, standards, clearance and BOM review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "round3-quick-pro-tr-one-first-look-3faf45308b"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+}

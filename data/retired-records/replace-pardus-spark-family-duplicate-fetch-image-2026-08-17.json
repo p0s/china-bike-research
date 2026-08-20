@@ -1,0 +1,15 @@
+{
+  "id": "replace-pardus-spark-family-duplicate-fetch-image-2026-08-17",
+  "record_type": "images",
+  "record_id": "pardus-spark-family-cn-color-primary-image",
+  "action": "replace",
+  "reason": "The first China-page replacement duplicated another record's remote asset and one concurrent live health request failed; the replacement uses a distinct responsive color image from the same exact official page.",
+  "evidence_source_ids": [
+    "pardus-spark-sport-official-cn-2026-08-17"
+  ],
+  "replacement": {
+    "record_type": "images",
+    "record_id": "pardus-spark-family-cn-alt-color-primary-image"
+  },
+  "reviewed_at": "2026-08-17"
+}

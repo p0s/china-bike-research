@@ -21,7 +21,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "sava-a7l-official-2026-08-08",
-    "sava-2026-carbon-lineup-2026-08-08"
+    "sava-2026-carbon-lineup-2026-08-08",
+    "sava-a7l-official-global-2026-08-17"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -33,5 +34,10 @@
   "brakes": {
     "actuation": "hydraulic",
     "type": "disc"
-  }
+  },
+  "wheels": { "rim_material": "carbon", "depth_mm": 50, "description": "700C carbon wheelset, 24H" },
+  "tires": "700×25C clincher",
+  "cockpit": { "material": "carbon", "integrated": true, "dimensions": "400×100 mm" },
+  "claimed_complete_weight_g": 8600,
+  "purchase_route": "Official global-direct checkout at US$1,699 on 2026-08-17; mainland-China checkout not established."
 }

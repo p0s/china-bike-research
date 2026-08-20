@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-canyon-grail-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-canyon-grail"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Canyon China Grail warranty",
+          "route": "official China warranty",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact product sold on China route.",
+          "result_url": "https://www.canyon.com.cn/zh-cn/%E5%AE%A2%E6%88%B7%E6%9C%8D%E5%8A%A1/%E7%BB%B4%E4%BF%AE-%E5%A4%87%E4%BB%B6-%E8%B4%A8%E4%BF%9D/warranty-guarantee.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "canyon-china-warranty-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

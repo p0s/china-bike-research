@@ -12,17 +12,31 @@
     "fork_material": "unknown",
     "bottom_bracket": "unknown",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown"
+    "cable_routing": "unknown",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry table",
+      "source_id": "sava-gelaro-s8-official-2026-08-17",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "470", "seat_tube_mm": 470, "top_tube_mm": 512.4, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 360, "stack_mm": 533.6, "wheelbase_mm": 1000.7 },
+        { "size": "490", "seat_tube_mm": 480, "top_tube_mm": 530.1, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 369, "stack_mm": 561.8, "wheelbase_mm": 1019.8 },
+        { "size": "510", "seat_tube_mm": 510, "top_tube_mm": 557.6, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 380, "stack_mm": 580.6, "wheelbase_mm": 1037.6 },
+        { "size": "535", "seat_tube_mm": 550, "top_tube_mm": 576.2, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 390, "stack_mm": 608.9, "wheelbase_mm": 1057.7 },
+        { "size": "550", "seat_tube_mm": 580, "top_tube_mm": 591.9, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 400, "stack_mm": 627.7, "wheelbase_mm": 1074.4 },
+        { "size": "580", "seat_tube_mm": 580, "top_tube_mm": 604.8, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 410, "stack_mm": 637.1, "wheelbase_mm": 1087.8 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "unknown",
-    "eligibility": "unverified",
-    "note": "The snapshot identifies the model but does not establish a model-specific maximum tire clearance."
+    "evidence": "official",
+    "eligibility": "pass",
+    "published_max_mm": 45,
+    "note": "Official exact-model page states clearance up to 45C; stock tires are 700×40C."
   },
   "category_details": {
     "discipline": "gravel",
-    "geometry": "unknown",
+    "geometry": "manufacturer exact-model table",
     "evidence": "snapshot-classification",
     "note": "GRX 820 double-chainring build shown."
   },
@@ -31,7 +45,8 @@
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "sava-2026-carbon-lineup-2026-08-08"
+    "sava-2026-carbon-lineup-2026-08-08",
+    "sava-gelaro-s8-official-2026-08-17"
   ],
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

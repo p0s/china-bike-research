@@ -1,0 +1,75 @@
+{
+  "id": "variant-bianchi-oltre-race-frame-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "frame",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race material, standards, clearance and BOM community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 material, standards, clearance and BOM",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Bianchi Oltre Race Oltre Race 105 2026 material, standards, clearance and BOM review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Oltre Race 105 12sp\" carbon frame specifications",
+          "route": "manufacturer exact regional product page",
+          "outcome": "found",
+          "result_url": "https://www.bianchi.am/am/oltre-race-105-12sp",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Armenia page gives frame material, internal routing, BB, axle standards, sizes, and fork details."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 12sp frame geometry official",
+          "route": "manufacturer global/regional catalog route",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.com/store/int_EN/bikes/road/racing/oltre/oltre-race/oltre-race.html",
+          "accessed_at": "2026-08-17",
+          "note": "Global exact page confirms identity but does not add a full geometry table."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-armenia-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Exact model frame facts are supported. Keep configuration-specific wheel and weight facts separate."
+}

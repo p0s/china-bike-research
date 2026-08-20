@@ -1,0 +1,66 @@
+{
+  "id": "candidate-tavelo-arden-tire-clearance-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo ARDEN material, standards, clearance and BOM community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "踏为乐 ARDEN Bubble Silver material, standards, clearance and BOM",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo ARDEN ARDEN Bubble Silver 2026 material, standards, clearance and BOM review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:tavelo.cc/products/tavelo-arden-race-frameset Tavelo ARDEN tire clearance",
+          "route": "Tavelo official exact-model route",
+          "outcome": "found",
+          "result_url": "https://tavelo.cc/products/tavelo-arden-race-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Opened exact current Arden Race specification."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "tavelo-arden-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Race version only; preserve size/drive-train conditions."
+}

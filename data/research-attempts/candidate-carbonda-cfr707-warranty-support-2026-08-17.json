@@ -1,0 +1,53 @@
+{
+  "id": "candidate-carbonda-cfr707-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "carbonda-cfr707"
+  },
+  "field": "warranty-support",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Carbonda CFR707 official warranty",
+          "route": "official manufacturer/support",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No policy.",
+          "result_url": "https://carbonda.com/road/cfr-707.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Carbonda CFR707 owner warranty",
+          "route": "credible exact-model report",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Low-confidence lead.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1r78oyq/carbonda-cfr707/"
+        },
+        {
+          "attempt": 3,
+          "query": "Carbonda support warranty",
+          "route": "official manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No policy.",
+          "result_url": "https://carbonda.com/"
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [
+    "round3-carbonda-cfr707-owner-quote-4064c36fbf"
+  ],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

@@ -1,0 +1,67 @@
+{
+  "id": "candidate-tavelo-arden-image-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "image",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo ARDEN image community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "踏为乐 ARDEN Bubble Silver image",
+          "route": "Xiaohongshu public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact public-post URL retained; no account or token recorded.",
+          "result_url": "https://www.xiaohongshu.com/explore/6a73adc5000000002501460f"
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo ARDEN ARDEN Bubble Silver 2026 image review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:tavelo.cc/products/tavelo-arden-race-frameset Arden frameset image",
+          "route": "official Tavelo manufacturer product page/CDN",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "The official page is titled TAVELO Arden Race Frameset and exposes a stable 1000x1000 CDN derivative.",
+          "result_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2607/20/products/1.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "public-tavelo-arden-owner-2026-08-17",
+    "tavelo-arden-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+}

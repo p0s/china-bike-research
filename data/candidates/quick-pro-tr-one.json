@@ -1,25 +1,32 @@
 {
   "id": "quick-pro-tr-one",
   "name": "Quick Pro TR:ONE",
-  "category": "road-aero",
+  "category": "triathlon",
   "type": "frameset",
-  "why_interesting": "A current exact-model lead for Quick Pro's premium aero platform includes useful size, weight and price context.",
+  "why_interesting": "A purpose-built triathlon frameset with integrated hydration and storage, a broad fit range, threaded T47 and 32 mm tire clearance.",
   "missing": [
-    "Official exact-model page, geometry and material specification",
-    "Current stock, final checkout and exact package contents",
-    "Independent complete-build weight, warranty and service route"
+    "Current mainland stock, final checkout and exact package confirmation",
+    "Independent ride, fit and service evidence",
+    "Independent complete-build weight and China-specific warranty/service handling"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "price_status": "dated mainland launch price for the frameset package",
   "source_ids": [
     "public-quick-pro-tr-one-summary-2026-08-17",
-    "quick-2026-one-series-launch"
+    "quick-2026-one-series-launch",
+    "quick-pro-tr-one-official-2026-08-17",
+    "quick-pro-warranty-official-2026-08-17"
   ],
   "facts": {
+    "frame": "High-strength, high-modulus carbon; 12×100 / 12×142 mm thru axles",
     "frame_weight_g": 1219,
-    "sizes": "XS, S, M and L",
-    "cockpit": "Integrated handlebar included in the reported frame package"
+    "bottom_bracket": "T47-68 threaded",
+    "tire_clearance_mm": 32,
+    "sizes": "XS–L; stack 516–560 mm and reach 374–443.5 mm",
+    "cockpit": "TR:ONE integrated handlebar",
+    "storage": "Concealed 1.2 L hydration plus hidden removable storage",
+    "warranty": "Five-year original-purchaser frameset policy with proof, serial and photo requirements; China handling unverified"
   },
   "observed_price": {
     "amount_cny": 21800,
@@ -28,6 +35,6 @@
     "price_basis": "launch-report frame, cockpit and accessory package",
     "observation_count": 2
   },
-  "source_note": "A dated launch report and a separate public model post both support a ¥21,800 frame package. The public post also describes complete builds above ¥50,000; the catalog's adjustable frame-build allowance is only a comparison estimate and does not reproduce that premium build.",
+  "source_note": "A dated launch report and a separate public model post support a ¥21,800 frame package. The official page confirms this is a triathlon frameset, not an aero-road bike. The adjustable build allowance remains a comparison estimate, not a quoted Quick Pro complete build.",
   "last_reviewed": "2026-08-17"
 }

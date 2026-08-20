@@ -1,4 +1,5 @@
 import { freshness, joinCatalogCandidates, joinProducts, loadDataset } from '../src/lib/data.mjs';
+import { latestResearchAttemptIndex } from '../src/lib/research-attempts.mjs';
 
 const DEFAULT_AS_OF = new Date().toISOString().slice(0, 10);
 
@@ -52,7 +53,8 @@ function productGaps(product, asOf) {
   if (unresolved(frame.geometry) || typeof frame.geometry !== 'object') {
     addGap(gaps, 'geometry-missing', 'No structured frame geometry', 20);
   }
-  if (unresolved(frame.claimed_frame_weight_g) && unresolved(frame.claimed_frame_weight_g_by_size)) {
+  const hasVariantFrameWeight = Number.isFinite(variant.claimed_frame_weight_g) && variant.claimed_frame_weight_g > 0;
+  if (unresolved(frame.claimed_frame_weight_g) && unresolved(frame.claimed_frame_weight_g_by_size) && !hasVariantFrameWeight) {
     addGap(gaps, 'frame-weight-missing', 'No frame-weight claim', 14);
   }
   if (variant.kind === 'complete-bike' && unresolved(variant.claimed_complete_weight_g)) {
@@ -142,6 +144,48 @@ function candidateGaps(entry) {
   };
 }
 
+const gapFieldIds = {
+  'image-missing': 'image',
+  'image-exactness': 'image',
+  'price-missing': 'price',
+  'price-not-observed': 'price',
+  'price-reference-range': 'price',
+  'price-historical': 'price',
+  'purchase-route': 'purchase-route',
+  'geometry-missing': 'geometry',
+  'frame-weight-missing': 'frame-weight',
+  'complete-weight-missing': 'complete-weight',
+  'clearance-unverified': 'tire-clearance',
+  'bottom-bracket-missing': 'bottom-bracket',
+  'bom-incomplete': 'bom',
+  'support-warranty': 'warranty-support'
+};
+
+function attachResearchState(records, attempts) {
+  const index = latestResearchAttemptIndex(attempts);
+  return records.map((record) => ({
+    ...record,
+    gaps: record.gaps.map((gap) => {
+      const field = gapFieldIds[gap.code];
+      if (!field) return gap;
+      const keys = record.record_type === 'candidate'
+        ? [`candidate:${record.id}:${field}`]
+        : [`variant:${record.id}:${field}`, `platform:${record.platform_id}:${field}`];
+      const attempt = keys.map((key) => index.get(key)).find(Boolean);
+      if (!attempt) return gap;
+      return {
+        ...gap,
+        research: {
+          attempt_id: attempt.id,
+          status: attempt.status,
+          searched_at: attempt.searched_at,
+          retry_after: attempt.retry_after ?? null
+        }
+      };
+    })
+  }));
+}
+
 /**
  * Build a deterministic, read-only buyer-impact gap report. The report is
  * intentionally not written into data/research: that directory is a dated
@@ -151,14 +195,21 @@ function candidateGaps(entry) {
 export function buildGapReport(data = loadDataset(), asOf = DEFAULT_AS_OF) {
   const published = joinProducts(data).map((product) => productGaps(product, asOf));
   const candidates = joinCatalogCandidates(data).map(candidateGaps);
-  const gaps = [...published, ...candidates].sort((a, b) => b.priority_score - a.priority_score || a.id.localeCompare(b.id));
+  const gaps = attachResearchState([...published, ...candidates], data.researchAttempts ?? [])
+    .sort((a, b) => b.priority_score - a.priority_score || a.id.localeCompare(b.id));
   const gapCounts = {};
+  const researchStatusCounts = {};
   for (const record of gaps) for (const gap of record.gaps) gapCounts[gap.code] = (gapCounts[gap.code] ?? 0) + 1;
+  for (const record of gaps) for (const gap of record.gaps) {
+    const status = gap.research?.status;
+    if (status) researchStatusCounts[status] = (researchStatusCounts[status] ?? 0) + 1;
+  }
   return {
     as_of: asOf,
     generated_by: 'npm run data:gaps',
     scope: { published_variants: published.length, candidates: candidates.length },
     gap_counts: Object.fromEntries(Object.entries(gapCounts).sort((a, b) => a[0].localeCompare(b[0]))),
+    research_status_counts: Object.fromEntries(Object.entries(researchStatusCounts).sort((a, b) => a[0].localeCompare(b[0]))),
     records: gaps
   };
 }

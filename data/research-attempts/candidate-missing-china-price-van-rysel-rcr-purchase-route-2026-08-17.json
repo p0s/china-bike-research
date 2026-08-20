@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-van-rysel-rcr"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Van Rysel RCR-F Pro China route",
+          "route": "official China Decathlon",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact current SKU stock unshown.",
+          "result_url": "https://decathlon.jd.com/"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "decathlon-china-rcrf-route-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

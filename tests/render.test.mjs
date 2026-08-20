@@ -109,6 +109,44 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17[\s\S]*?38 mm/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
+  assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17/);
+  assert.match(html, /Canyon Grail CF 7[\s\S]*?¥11,700–14,700[\s\S]*?Official price conflict · 2026-08-17/);
+  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-08-17/);
+});
+
+test('candidate detail preserves official price conflicts and direct source links', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const canyon = candidates.find((entry) => entry.candidate.id === 'missing-china-price-canyon-grail');
+  const canyonDetail = renderCandidateModel(context, canyon);
+  assert.match(canyonDetail, /Official price conflict/);
+  assert.doesNotMatch(canyonDetail, /Observed market record/);
+
+  const direct = structuredClone(candidates.find((entry) => entry.candidate.id === 'tsb-titan-super-bond-pioneer-one'));
+  direct.candidate.source_url = 'https://example.com/direct-source';
+  const directDetail = renderCandidateModel(context, direct);
+  assert.match(directDetail, /Direct candidate link:/);
+});
+
+test('frameset package details warn when the recorded price includes build parts', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const quick = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
+  const detail = renderCandidateModel(context, quick);
+  assert.match(detail, /package mentions cockpit\/handlebar and accessories/);
+  assert.match(detail, /adjust the allowance to avoid double-counting/);
 });
 
 test('local builds use the live repository for public contribution links', () => {
@@ -182,6 +220,18 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   }, placeholderProduct);
   assert.match(placeholderDetail, /Project-owned local asset/);
   assert.doesNotMatch(placeholderDetail, /Project-owned product image placeholders[\s\S]*Archived evidence; no public link/);
+
+  const falath = products.find((item) => item.variant.id === 'elves-falath-r7170');
+  const falathDetail = renderModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-09T00:00:00Z')
+  }, falath);
+  assert.match(falathDetail, /<dt>Claimed weight<\/dt><dd>1,160 g frame<\/dd>/);
+  assert.match(falathDetail, /<dt>Claimed frame weight<\/dt><dd>1,160 g<\/dd>/);
 });
 
 test('primary navigation reflects catalog and exact model context', () => {
@@ -246,6 +296,7 @@ test('brand names expose an exact, base-safe catalog filter', () => {
 
 test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
+  assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
   assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
@@ -266,11 +317,14 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(publishedDetail, /data-model-frame-price-low="3200" data-model-frame-price-high="4900" data-model-default-allowance="6000"/);
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
   assert.match(publishedDetail, /data-model-price-brief/);
+  assert.match(publishedDetail, /Included package/);
 
   const candidateFrame = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   const candidateDetail = renderCandidateModel(context, candidateFrame);
   assert.match(candidateDetail, /data-model-frame-price-low="21800" data-model-frame-price-high="21800" data-model-default-allowance="6000"/);
   assert.match(candidateDetail, /data-model-calculated-price>Est\. ¥27,800/);
+  assert.match(candidateDetail, /Frame package ¥21,800/);
+  assert.match(candidateDetail, /recorded ¥21,800 frame package price/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {
@@ -285,6 +339,10 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   }, product);
   assert.match(detail, /marketplace listing classification/);
   assert.match(detail, /Promotion-conditional price/);
+  assert.match(detail, /Specification snapshot/);
+  assert.match(detail, /700C carbon wheelset, 24H/);
+  assert.match(detail, /5 sizes \(440–560\) · stack 509\.3–580\.5 mm · reach 358\.4–390\.3 mm/);
+  assert.match(detail, /Official global-direct checkout at US\$1,699/);
   assert.doesNotMatch(detail, /snapshot-classification|from_image|medium-low|promotion-conditional/);
 });
 

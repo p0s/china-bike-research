@@ -34,7 +34,9 @@ Popularity or engagement may break a tie, but it cannot replace exact-model evid
 
 ### Phase 1 — gap report
 
-Implemented in this worktree: the dependency-free `npm run data:gaps` command reads the existing JSON and prints one ranked, machine-readable report. Each candidate or published variant includes actionable high-value gaps, linked source IDs, last review date, and the exact record/source files that would be created or edited. It does not create a public route or transmit data. Run `npm run --silent data:gaps` when a pure JSON stream is needed for another local tool.
+The dependency-free `npm run data:gaps` command reads the existing JSON and prints one ranked, machine-readable report. Each candidate or published variant includes actionable high-value gaps, linked source IDs, last review date, exact record/source files, and the latest atomic research status when one exists. It does not create a public route or transmit data. Run `npm run --silent data:gaps` when a pure JSON stream is needed for another local tool.
+
+Use `npm run research:queue` to separate ready gaps from accepted evidence awaiting integration, temporarily exhausted work, blockers, and conflicts. Apply the fixed per-field attempt budget in [the research stopping policy](docs/research-stopping-policy.md), then record completed work in `data/research-attempts/`. `npm run research:check` verifies that exhaustion is supported by three genuinely distinct attempts in every required channel.
 
 ### Phase 2 — guided writer
 

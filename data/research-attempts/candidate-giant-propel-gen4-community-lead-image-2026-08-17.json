@@ -1,0 +1,67 @@
+{
+  "id": "candidate-giant-propel-gen4-community-lead-image-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead"
+  },
+  "field": "image",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Propel Gen 4 image community",
+          "route": "YouTube public search",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "found",
+          "result_url": "https://www.youtube.com/watch?v=zP_XuJ_sP1I"
+        },
+        {
+          "attempt": 2,
+          "query": "捷安特 Propel 四代 image",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Giant Propel Gen 4 Propel 四代 2026 image review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:giant-bicycles.com Propel Advanced 2 2027 official product image",
+          "route": "official Giant US manufacturer product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "The official 2027 Propel Advanced 2 page exposes the same Giant CDN asset through a stable untransformed/original route. The 100x100 derivative was rejected; the community-lead trim itself is not specified.",
+          "result_url": "https://images2.giant-bicycles.com/msnng8mraon1ugaxand9/MY27PropelAdvanced2_ColorAWhite.jpg"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "round3-new-2027-giant-propel-gen4-in-depth-review-012b465f21",
+    "giant-propel-gen4-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+}

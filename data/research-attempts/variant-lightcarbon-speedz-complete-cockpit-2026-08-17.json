@@ -1,0 +1,83 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-cockpit-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "cockpit",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ cockpit",
+          "route": "Xiaohongshu public search exact English query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Visible cards included a factory-account post titled 速7整车已发货, but no opened exact post exposed a cockpit claim; cards and snippets were not accepted.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20cockpit"
+        },
+        {
+          "attempt": 2,
+          "query": "速7 一体把",
+          "route": "Xiaohongshu public search Chinese alias query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Visible results were generic integrated-handlebar posts and did not identify the SPEEDZ/速7 exact build or cockpit component.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E4%B8%80%E4%BD%93%E6%8A%8A"
+        },
+        {
+          "attempt": 3,
+          "query": "LC-SPEED 7 整车 一体把",
+          "route": "Xiaohongshu public search factory alias query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "No exact-model cockpit claim was visible; the result page exposed no usable exact post content.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LC-SPEED%207%20%E6%95%B4%E8%BD%A6%20%E4%B8%80%E4%BD%93%E6%8A%8A"
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ bom.cockpit official exact page",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No public LightCarbon product page exposing an exact SPEEDZ SKU and this field was found."
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon SPEEDZ bom.cockpit official catalog PDF",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Current LightCarbon catalog lists other LCR families and no SPEEDZ mapping.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon SPEEDZ bom.cockpit authorized dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No authorized exact-SPEEDZ listing with this field was located.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html"
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-09-20",
+  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

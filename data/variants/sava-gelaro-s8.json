@@ -20,7 +20,8 @@
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "sava-2026-carbon-lineup-2026-08-08"
+    "sava-2026-carbon-lineup-2026-08-08",
+    "sava-gelaro-s8-official-2026-08-17"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -32,5 +33,10 @@
   "brakes": {
     "actuation": "hydraulic",
     "type": "disc"
-  }
+  },
+  "wheels": { "rim_material": "aluminum" },
+  "tires": "700×40C",
+  "cockpit": { "material": "aluminum", "integrated": true, "flare": true },
+  "claimed_complete_weight_g": 10200,
+  "purchase_route": "Official global-direct checkout at US$2,199 on 2026-08-17; mainland-China checkout not established."
 }

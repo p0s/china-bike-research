@@ -1,0 +1,35 @@
+{
+  "id": "variant-scott-addict-rc-40-complete-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "complete-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SCOTT Addict RC 40 2026 complete weight",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact SCOTT regional page states approximate 7.9 kg.",
+          "result_url": "https://www.scott.pl/produkt/1635/12093/Rower-Addict-RC-40"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "scott-addict-rc-40-poland-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

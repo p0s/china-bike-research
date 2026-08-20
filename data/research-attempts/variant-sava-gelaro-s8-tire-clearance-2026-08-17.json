@@ -1,0 +1,40 @@
+{
+  "id": "variant-sava-gelaro-s8-tire-clearance-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s8"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S8 GRX820 maximum tire clearance",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact page says 700×40C and compatible up to 45C.",
+          "result_url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-gelaro-s8-official-2026-08-08"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

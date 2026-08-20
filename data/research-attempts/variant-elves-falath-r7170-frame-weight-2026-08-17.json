@@ -1,0 +1,61 @@
+{
+  "id": "variant-elves-falath-r7170-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "elves-falath-r7170"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath R7170 frame_weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Official page is Falath EVO, not the published Falath R7170 build.",
+          "result_url": "https://www.elvesbike.com/more.php?id=142"
+        },
+        {
+          "attempt": 2,
+          "query": "ELVES Falath R7170 frame_weight official store",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Store page is a Falath EVO frameset; no R7170 mapping.",
+          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved"
+        },
+        {
+          "attempt": 3,
+          "query": "ELVES Falath R7170 frame_weight authorized dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact Falath R7170 build source with this field was located."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["elves-falath-pro-official-2026-08-17"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-18",
+    "source_ids": ["elves-falath-pro-official-2026-08-17"],
+    "note": "The exact Falath Pro manufacturer frame source already accepted for this variant's frame field states a 1,160 g size-46 frame weight. No historical search attempt was rewritten."
+  },
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

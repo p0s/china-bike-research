@@ -1,0 +1,40 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant China warranty Defy SL 1",
+          "route": "official China warranty",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact receipt/channel required.",
+          "result_url": "https://www.giant.com.cn/index.php/index/custom/13"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-china-warranty-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

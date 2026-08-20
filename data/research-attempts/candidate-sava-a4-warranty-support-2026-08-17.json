@@ -1,0 +1,84 @@
+{
+  "id": "candidate-sava-a4-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-a4"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA A4 purchase and warranty route community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "萨瓦 A4 入门公路 purchase and warranty route",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "SAVA A4 A4 入门公路 2026 purchase and warranty route review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA A4 China warranty",
+          "route": "official China support",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No duration.",
+          "result_url": "https://www.savabike.com/h-col-103.html"
+        },
+        {
+          "attempt": 2,
+          "query": "SAVA A4 foreign warranty",
+          "route": "SAVADECK global warranty page",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Market/entity mismatch.",
+          "result_url": "https://savadeck-bike.com/pages/warranty"
+        },
+        {
+          "attempt": 3,
+          "query": "SAVA European lifetime warranty",
+          "route": "SAVA Europe warranty page",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Market mismatch.",
+          "result_url": "https://sava-bicycles.com/pages/lifetime-warranty"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "sava-china-support-store-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-canyon-grail-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-canyon-grail"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Canyon Grail CF 7 exact China order route",
+          "route": "official China manufacturer/store",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Availability/landed shipping vary.",
+          "result_url": "https://www.canyon.com.cn/zh-cn/%E7%A0%BE%E7%9F%B3-%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD/grail/cf/grail-cf-7/4149.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "canyon-grail-cf7-china-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

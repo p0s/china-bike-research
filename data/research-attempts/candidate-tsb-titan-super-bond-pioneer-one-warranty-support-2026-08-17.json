@@ -1,0 +1,40 @@
+{
+  "id": "candidate-tsb-titan-super-bond-pioneer-one-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tsb-titan-super-bond-pioneer-one"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Laget Pioneer One authorized warranty",
+          "route": "authorized dealer",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Foreign distributor; confirm mainland terms.",
+          "result_url": "https://tipartstitanium.com/products/laget-pioneer-one-titanium-road-frameset-3d-printed-titanium-polished-silver-1350g-s-32mm-tyre-clearance"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "laget-pioneer-one-tiparts-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

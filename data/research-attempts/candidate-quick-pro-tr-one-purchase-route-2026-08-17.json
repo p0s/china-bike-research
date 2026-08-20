@@ -1,0 +1,75 @@
+{
+  "id": "candidate-quick-pro-tr-one-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-tr-one"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro TR:ONE purchase and warranty route community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "快客 TR:ONE 铁三 purchase and warranty route",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Quick Pro TR:ONE TR:ONE 铁三 2026 purchase and warranty route review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:quickprousa.com Quick Pro TR:ONE purchase route",
+          "route": "Quick Pro official global exact-model product route",
+          "outcome": "found",
+          "result_url": "https://www.quickprousa.com/products/tr-one-pre-order",
+          "accessed_at": "2026-08-17",
+          "note": "Exact page live with $3,599 global price and Add to cart."
+        },
+        {
+          "attempt": 2,
+          "query": "site:quick-bikes.com.cn Quick Pro TR:ONE China purchase",
+          "route": "Quick Pro official regional China route",
+          "outcome": "blocked",
+          "result_url": "https://www.quick-bikes.com.cn/product/38.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact China result; direct open returned 403."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "quick-pro-tr-one-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Direct-factory route only; no mainland stock/tax/service claim."
+}

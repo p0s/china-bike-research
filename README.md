@@ -14,6 +14,8 @@ Use the structured GitHub issue forms to add a model, submit a price, correct a 
 
 See [DATA_ENTRY_PLAN.md](DATA_ENTRY_PLAN.md) for the evidence order, candidate-promotion gates, and proposed local authoring workflow for completing sparse records without adding maintenance UI to the public site.
 
+Research uses a per-bike, per-field stopping rule documented in [docs/research-stopping-policy.md](docs/research-stopping-policy.md). `npm run research:queue` prints the current atomic queue, while `npm run research:check` prevents incomplete or repeated searches from being mislabeled as exhausted.
+
 After adding catalog evidence, run `npm run coverage:accept` to extend the append-only information baseline, then run `npm run check`. Removing a protected record requires a documented entry in `data/retired-records/`; lowering totals or editing the baseline cannot bypass CI.
 
 For agent-assisted work, point the LLM at the repository and tell it to read [AGENTS.md](AGENTS.md) first.

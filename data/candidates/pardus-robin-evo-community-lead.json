@@ -5,19 +5,22 @@
   "type": "complete-bike",
   "why_interesting": "An exact-model 6.2 kg competition build shows the Robin EVO's lightweight potential while remaining separate from factory trims.",
   "missing": [
-    "Official exact-generation Robin EVO product page and stock BOM",
+    "Current exact-generation Robin EVO stock BOM",
     "Current mainland price and factory claimed weight",
-    "Stock wheel/tire specification, warranty and purchase route"
+    "Stock wheel/tire specification and warranty conditions"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
-  "source_ids": ["public-pardus-robin-evo-build-2026-08-17"],
+  "source_ids": [
+    "public-pardus-robin-evo-build-2026-08-17",
+    "pardus-robin-evo-official-2026-08-17"
+  ],
   "facts": {
     "drivetrain": "Custom build: Shimano Dura-Ace R9270 with 10-36 cassette",
     "complete_weight_g": 6200,
     "wheels": "Breo 40 mm custom wheelset",
     "tires": "28C tubeless rear and 25C front"
   },
-  "source_note": "The 6.2 kg report is for an XS competition custom build, not an official stock-bike weight.",
+  "source_note": "The official product/dealer route is established. The 6.2 kg report remains an XS competition custom build, not an official stock-bike weight.",
   "last_reviewed": "2026-08-17"
 }

@@ -16,9 +16,12 @@
     "coverage:accept": "node scripts/coverage.mjs --accept",
     "coverage:report": "node scripts/coverage.mjs --report",
     "data:gaps": "node scripts/data-gaps.mjs",
+    "research:check": "node scripts/research-attempts.mjs",
+    "research:report": "node scripts/research-attempts.mjs --report",
+    "research:queue": "node scripts/research-queue.mjs",
     "image:report": "node scripts/image-health-report.mjs",
     "stale:report": "node scripts/stale-report.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run privacy && npm run validate && npm run coverage:check && npm test && npm run build"
+    "check": "npm run privacy && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build"
   }
 }

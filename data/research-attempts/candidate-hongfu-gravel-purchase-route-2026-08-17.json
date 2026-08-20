@@ -1,0 +1,54 @@
+{
+  "id": "candidate-hongfu-gravel-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hongfu-gravel"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The required external route was inaccessible during this pass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hongfu exact manufacturer route",
+          "route": "official manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No mapping.",
+          "result_url": "https://www.hongfu-bikes.com/products/17.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Hongfu official marketplace route",
+          "route": "authorized/current marketplace",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact candidate.",
+          "result_url": "https://hongfu-bikes.en.alibaba.com/es_ES/productgrouplist-813177868/Gravel_frame.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Hongfu FM279 foreign route",
+          "route": "credible marketplace",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Blocked.",
+          "result_url": "https://germany.alibaba.com/product-detail/Hongfu-2019-Carbon-Gravel-Road-Bike_62256653470.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "round3-hongfu-fm279-gravel-frame-fa3ede485c"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: blocked. Unknowns and blocks are not negative evidence."
+}

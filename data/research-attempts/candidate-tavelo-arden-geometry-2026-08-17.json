@@ -1,0 +1,82 @@
+{
+  "id": "candidate-tavelo-arden-geometry-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo ARDEN geometry and sizes community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "踏为乐 ARDEN Bubble Silver geometry and sizes",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo ARDEN ARDEN Bubble Silver 2026 geometry and sizes review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:tavelo.cc/products/tavelo-arden-race-frameset Tavelo ARDEN geometry",
+          "route": "Tavelo official exact-model route",
+          "outcome": "blocked",
+          "result_url": "https://tavelo.cc/products/tavelo-arden-race-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Geometry tab is image/dynamic; no accessible text table accepted."
+        },
+        {
+          "attempt": 2,
+          "query": "site:tavelo.cc Tavelo ARDEN Reach Stack Wheelbase geometry",
+          "route": "Tavelo official catalog/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No official text geometry table found."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo ARDEN authorized dealer geometry exact frameset",
+          "route": "Alternate exact-model dealer route",
+          "outcome": "rejected",
+          "result_url": "https://www.cheungkee.co/en/products/tavelo-arden-frameset",
+          "accessed_at": "2026-08-17",
+          "note": "Hong Kong dealer repeats broad claims but geometry is image-only and listing sold out."
+        }
+      ],
+      "blocker": "Numeric ARDEN geometry table not accepted; exact page asset is inaccessible as text."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Numeric ARDEN geometry table not accepted; exact page asset is inaccessible as text."
+}

@@ -6,9 +6,9 @@
   "type": "complete-bike",
   "why_interesting": "Exact official SILEX 7000 build with full geometry and clearance; mainland SKU and checkout remain unresolved.",
   "missing": [
-    "Mainland China SKU, dealer/checkout route and current stock",
+    "Mainland China SKU, exact dealer stock and current price",
     "Complete-bike/frame weight",
-    "Exact mainland warranty policy",
+    "Exact-model mainland warranty eligibility",
     "Whether the displayed CNY price is current mainland suggested retail"
   ],
   "status": "official-global-reference",
@@ -17,8 +17,11 @@
   "required_before_dashboard": "Mainland China SKU, dealer/checkout route and current stock; Complete-bike/frame weight; Exact mainland warranty policy; Whether the displayed CNY price is current mainland suggested retail",
   "last_reviewed": "2026-08-17",
   "source_ids": [
-    "merida-silex-7000-25-official-cny-reference-2026-08-17"
+    "merida-silex-7000-25-official-cny-reference-2026-08-17",
+    "merida-china-sales-channels-2026-08-17",
+    "merida-warranty-official-2026-08-17"
   ],
+  "support_note": "Merida publishes official mainland sales channels and a designated-dealer warranty route, but the exact Silex SKU, stock and price remain unresolved.",
   "source_note": "Official Merida zh-TW reference supports the exact build, geometry, 45 mm clearance and a displayed ¥20,800 reference. It is not evidence of a mainland-China checkout price.",
   "source_url": "https://www.merida.cn/zh-tw/bikefinder/bike/98/%3Aslug.html",
   "facts": {

@@ -1,0 +1,79 @@
+{
+  "id": "variant-bianchi-oltre-race-complete-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race complete-build weight community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 complete-build weight",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Bianchi Oltre Race Oltre Race 105 2026 complete-build weight review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:bianchi.com \"Oltre Race\" \"weight\"",
+          "route": "manufacturer exact-model search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Returned unrelated/e-Oltre material; no exact complete Oltre Race weight accepted."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 12sp official manual complete weight",
+          "route": "official regional/catalog/manual route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Armenia and Hungary pages do not publish complete weight; a third-party manual page was exact-model-looking but did not state complete weight."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Bianchi Oltre Race\" \"8.64 kg\" authorized dealer",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact authorized source established 8.64 kg; snippets and unrelated discussions were rejected."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Retain the existing dated 8,640 g marketplace observation. Web research did not independently verify the same build's complete weight."
+}

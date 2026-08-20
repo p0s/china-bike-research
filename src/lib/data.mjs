@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateResearchAttempts } from './research-attempts.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -56,7 +57,7 @@ export function evidenceLabel(value) {
 }
 
 export function supportsStandardFramesetBuild(category) {
-  return ['road', 'gravel'].includes(categoryFamily(category));
+  return ['road', 'gravel', 'triathlon'].includes(categoryFamily(category));
 }
 
 function categoryDetailLines(platform) {
@@ -184,7 +185,8 @@ export function loadDataset() {
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
-    research: loadDirectory('research')
+    research: loadDirectory('research'),
+    researchAttempts: loadDirectory('research-attempts')
   };
   return cache;
 }
@@ -229,7 +231,8 @@ export function validateDataset(data = loadDataset()) {
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
-    research: data.research
+    research: data.research,
+    researchAttempt: data.researchAttempts
   })) unique(kind, records);
 
   const buildAssumption = data.meta?.frameset_build_assumption;
@@ -254,6 +257,8 @@ export function validateDataset(data = loadDataset()) {
   const isUnresolvedExactField = (value) => typeof value !== 'string'
     || !value.trim()
     || /\b(?:unknown|varies|variable|unspecified|not recorded)\b/i.test(value);
+
+  errors.push(...validateResearchAttempts(data.researchAttempts, data));
 
   for (const brand of data.brands) {
     requireFields('brand', brand, ['name', 'manufacturing', 'china_support', 'last_reviewed']);
@@ -308,6 +313,11 @@ export function validateDataset(data = loadDataset()) {
       const platform = platformsById.get(variant.platform_id);
       if (platform && !supportsStandardFramesetBuild(platform.category)) errors.push(`variant ${variant.id}: fixed frameset build allowance is not approved for ${platform.category}`);
     }
+    for (const key of ['claimed_complete_weight_g', 'claimed_frame_weight_g']) {
+      if (variant[key] !== undefined && (typeof variant[key] !== 'number' || variant[key] <= 0)) {
+        errors.push(`variant ${variant.id}: invalid ${key}`);
+      }
+    }
     const thresholds = variant.editorial?.price_thresholds_cny;
     if (thresholds && !(thresholds.great_buy_below <= thresholds.fair_buy_below && thresholds.fair_buy_below <= thresholds.not_compelling_above)) errors.push(`variant ${variant.id}: invalid threshold ordering`);
     for (const sourceId of variant.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`variant ${variant.id}: missing source ${sourceId}`);
@@ -338,6 +348,14 @@ export function validateDataset(data = loadDataset()) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.source_url !== undefined) {
+      try {
+        const sourceUrl = new URL(candidate.source_url);
+        if (sourceUrl.protocol !== 'https:') errors.push(`candidate ${candidate.id}: source_url must use HTTPS`);
+      } catch {
+        errors.push(`candidate ${candidate.id}: invalid source_url`);
+      }
+    }
     if (candidate.category && !hasSupportedCategory(candidate.category, categorySet)) errors.push(`candidate ${candidate.id}: unsupported category ${candidate.category}`);
     if (candidate.source_snapshot_id && !sourceIds.has(candidate.source_snapshot_id)) errors.push(`candidate ${candidate.id}: missing source snapshot ${candidate.source_snapshot_id}`);
     for (const sourceId of candidate.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: missing source ${sourceId}`);

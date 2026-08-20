@@ -1,0 +1,65 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-18",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The first signed-in public search redirected immediately to a security-verification challenge. The challenge was not solved, no further query was sent, and the lane stopped for later retry.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LIGHTCARBON SPEEDZ 整车 车架 重量",
+          "route": "signed-in public search through the canonical local capture extension",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-18",
+          "note": "The first sequential search redirected to Security Verification before results rendered. No CAPTCHA was solved and no second request was attempted."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ frame_weight official exact page",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No public LightCarbon product page exposing an exact SPEEDZ SKU and this field was found."
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon SPEEDZ frame_weight official catalog PDF",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Current LightCarbon catalog lists other LCR families and no SPEEDZ mapping.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon SPEEDZ frame_weight authorized dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No authorized exact-SPEEDZ listing with this field was located.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. The web lane is temporarily exhausted; the signed-in public lane stopped on its first security-verification redirect. Unknowns and blocks are not negative evidence."
+}

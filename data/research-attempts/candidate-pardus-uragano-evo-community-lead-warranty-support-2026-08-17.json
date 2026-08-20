@@ -1,0 +1,58 @@
+{
+  "id": "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-evo-community-lead"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Pardus Uragano official warranty",
+          "route": "official China support",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Term absent.",
+          "result_url": "https://parduscycle.com/"
+        },
+        {
+          "attempt": 2,
+          "query": "Pardus Uragano dealer support",
+          "route": "official dealer locator",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Term absent.",
+          "result_url": "https://parduscycle.com/find.aspx"
+        },
+        {
+          "attempt": 3,
+          "query": "Pardus warranty article",
+          "route": "unofficial article",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Rejected.",
+          "result_url": "https://m.sohu.com/a/942125348_121238090/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [
+    "round3-pardus-authorized-dealer-locator-ec9c2e79f6"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

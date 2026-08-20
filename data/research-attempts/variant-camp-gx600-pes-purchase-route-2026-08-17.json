@@ -1,0 +1,35 @@
+{
+  "id": "variant-camp-gx600-pes-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "camp-gx600-pes"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX600 PES current purchase route",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Official page has price, add-to-cart, delivery estimate and JD link.",
+          "result_url": "https://www.campbicycle.com/en/gx600.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "camp-gx600-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

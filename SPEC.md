@@ -68,7 +68,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 
 Do not duplicate platform facts across variants. A new component configuration on the same platform is normally a new variant, not a new platform. New categories may add category-specific fields, validation, and UI only as needed.
 
-Published MTB platforms use MTB-appropriate flat-bar configuration data. The fixed frameset allowance is publication-eligible only for road and gravel/all-road families; MTB, e-road, folding, and triathlon framesets remain candidates unless the approved methodology is explicitly changed.
+Published MTB platforms use MTB-appropriate flat-bar configuration data. The fixed frameset allowance is publication-eligible only for road, gravel/all-road, and triathlon families whose recorded base price identifies the included frame package and whose allowance covers only the components and assembly still required. MTB, e-road, and folding framesets remain candidates unless the approved methodology is explicitly changed.
 
 ## 4. Evidence rules
 
@@ -86,6 +86,8 @@ Prefer exact-model primary sources, current China-market listings, and credible 
 Editorial videos may identify research candidates and add build, ownership, or ride context. They cannot independently satisfy the publication gate or support a current price, exact BOM, specification, manufacturing relationship, or recommendation. Candidate leads discovered in videos must be deduplicated against published platforms, existing candidates, and exclusions.
 
 Never infer specifications across generations, sizes, or similarly named models without evidence. Keep expected quality separate from confidence in that estimate. Do not create a universal score or imply that products from different categories serve the same use case.
+
+Research completion is tracked per exact target and missing field. High-priority gaps normally receive up to three distinct public-post attempts and three distinct web/official attempts. Stop early when exact attributable evidence is accepted. Mark a gap temporarily exhausted only after every required channel reaches its attempt limit; record queries, routes, rejection reasons, search date, and a retry date. A temporarily exhausted search remains an unknown, never negative evidence. See `docs/research-stopping-policy.md`.
 
 ## 5. Price rules
 

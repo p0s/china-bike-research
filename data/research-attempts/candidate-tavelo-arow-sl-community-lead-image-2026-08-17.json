@@ -1,0 +1,66 @@
+{
+  "id": "candidate-tavelo-arow-sl-community-lead-image-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arow-sl-community-lead"
+  },
+  "field": "image",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arow SL custom build image community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "踏为乐 Arow SL 6.2kg image",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo Arow SL custom build Arow SL 6.2kg 2026 image review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:tavelo.cc/products/tavelo-arow-sl-neo-black Arow SL image",
+          "route": "official Tavelo manufacturer product page/CDN",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "The official page is explicitly TAVELO Arow SL Neo Black and exposes a stable 1000x1000 product image.",
+          "result_url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2509/12/products/11--160856f8a2.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "tavelo-arow-sl-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: temporarily-exhausted; images: found. Unknowns and blocks are not negative evidence."
+}

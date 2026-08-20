@@ -6,16 +6,27 @@
   "type": "frameset",
   "why_interesting": "Factory-backed Chinese additive-manufacturing story; printed parts passed ISO 4210 dynamic-fatigue testing in the BLT case study.",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Exact included package and current dealer stock",
+    "Confirm distributor warranty terms for a mainland purchase",
     "Rights-cleared exact product image"
   ],
   "status": "titanium-priority",
   "source_ids": [
-    "titanium-tsb-titan-super-bond-pioneer-one-official"
+    "titanium-tsb-titan-super-bond-pioneer-one-official",
+    "titanium-laget-pioneer-one-official",
+    "laget-china-contact-2026-08-17",
+    "laget-pioneer-one-tiparts-2026-08-17"
   ],
   "source_url": "https://www.tsbcycles.com/productinfo/1340984.html",
-  "source_note": "Official product exists; no public current RMB price found.",
+  "observed_price": {
+    "amount_cny": 21900,
+    "currency": "CNY",
+    "observed_at": "2026-08-17",
+    "price_type": "official-mainland-retail",
+    "price_basis": "official Laget mainland retail price for the exact Pioneer One frameset"
+  },
+  "support_note": "The official Laget route lists a Beijing authorized dealer. A foreign authorized distributor states lifetime titanium-frame, three-year titanium-component and one-year carbon-component coverage; mainland applicability requires confirmation.",
+  "source_note": "The official product page lists ¥21,900 retail. The catalog displays that frameset price plus the adjustable build allowance as an estimated full-bike total.",
   "manufacturing": "3D-printed titanium-joint frame",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-17"
 }

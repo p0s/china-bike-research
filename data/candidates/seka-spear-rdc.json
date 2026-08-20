@@ -3,23 +3,30 @@
   "name": "SEKA SPEAR RDC",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "An exact-model owner build supplies price, weight and component context for SEKA's SPEAR RDC aero platform.",
+  "why_interesting": "A premium domestic aero platform with a claimed 685 g bare frame, threaded BSA bottom bracket and a separately documented 7.1 kg custom build.",
   "missing": [
-    "Official exact-model frame and geometry page",
     "Proof that the reported price maps to the complete listed build",
-    "Current purchase route, stock, warranty and included accessories"
+    "Current mainland exact-SKU checkout and stock",
+    "Independent frame-weight measurement"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
-    "public-seka-spear-rdc-owner-2026-08-17"
+    "public-seka-spear-rdc-owner-2026-08-17",
+    "seka-spear-rdc-official-2026-08-17",
+    "seka-spear-rdc-geometry-official-2026-08-17",
+    "seka-warranty-cn-official-2026-08-17",
+    "seka-warranty-global-official-2026-08-17"
   ],
   "facts": {
     "drivetrain": "Shimano Ultegra electronic; exact series unconfirmed",
     "complete_weight_g": 7100,
-    "frame": "SEKA SPEAR RDC MR frame",
+    "frame": "SEKA SPEAR RDC MR frame; official bare-frame claim 685 g ±35 g",
+    "bottom_bracket": "BSA threaded",
     "wheels": "Voso Lite50 carbon",
-    "cockpit": "375×120 mm integrated handlebar"
+    "cockpit": "375×120 mm integrated handlebar on the custom build; official frameset uses the Rapier integrated bar",
+    "sizes": "XS, S, M, MR, L, LR and XL; official stack 508–600 mm and reach 362–402 mm",
+    "warranty": "Official China policy: lifetime frameset, five years carbon parts, two years spare parts; dealer, WeChat and Taobao support routes"
   },
   "observed_price": {
     "amount_cny": 16900,
@@ -27,6 +34,6 @@
     "observed_at": "2026-08-17",
     "price_basis": "owner-reported list price"
   },
-  "source_note": "The 7.1 kg report excludes pedals, bottle cages and the computer mount, so it is build-specific rather than a stock-bike claim.",
+  "source_note": "The official source verifies the frameset, frame-weight claim, BSA standard and package. The 7.1 kg report excludes pedals, bottle cages and the computer mount; the ¥16,900 figure is not an official repeatable checkout.",
   "last_reviewed": "2026-08-17"
 }

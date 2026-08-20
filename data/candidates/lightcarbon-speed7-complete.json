@@ -24,9 +24,14 @@
   },
   "facts": {
     "drivetrain": "Shimano 105 mechanical listing claim",
-    "wheels": "Carbon wheelset listing claim",
-    "frame": "UCI-approved carbon frameset listing claim"
+    "wheels": "Carbon wheelset listing claim; a manufacturer customer-return post includes a PROX wheel hashtag, but the exact wheel model and package mapping remain unverified",
+    "frame": "UCI-approved carbon frameset listing claim",
+    "factory_weight_context": "Manufacturer social post claims 7.8 kg for a 7120 build, 7.5 kg for 7170, and 7.2 kg for 8170; configuration and measurement conditions are not published"
   },
-  "source_note": "The screenshot identifies Speed7 and a ¥11,399 complete-bike/four-piece package. It is kept separate from the ¥5,599 frameset/accessory card and from the published SpeedZ platform until live identity proof is found.",
+  "source_ids": [
+    "public-lightcarbon-speed7-factory-weight-2026-08-20",
+    "public-lightcarbon-speed7-customer-return-2026-08-20"
+  ],
+  "source_note": "The screenshot identifies Speed7 and a ¥11,399 complete-bike/four-piece package. Manufacturer social posts add configuration-specific weight claims and a PROX wheel hashtag, but do not establish the exact BOM or package mapping. The candidate remains separate from the ¥5,599 frameset/accessory card and from the published SpeedZ platform until live identity proof is found.",
   "last_reviewed": "2026-08-17"
 }

@@ -1,0 +1,15 @@
+{
+  "id": "replace-pardus-spark-family-dead-image-2026-08-17",
+  "record_type": "images",
+  "record_id": "pardus-spark-family-primary-image",
+  "action": "replace",
+  "reason": "The original official China image URL became persistently unreachable in two live health checks; the replacement uses a responsive color image from the same exact official China product page.",
+  "evidence_source_ids": [
+    "pardus-spark-sport-official-cn-2026-08-17"
+  ],
+  "replacement": {
+    "record_type": "images",
+    "record_id": "pardus-spark-family-cn-alt-color-primary-image"
+  },
+  "reviewed_at": "2026-08-17"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "variant-twitter-cyclone-electronic-price-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-cyclone-electronic"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Cyclone electronic current mainland complete/full-bike price community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "骓特 Cyclone EDS TX current mainland complete/full-bike price",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "TWITTER Cyclone electronic Cyclone EDS TX 2026 current mainland complete/full-bike price review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Twitter Cyclone 3rd ET\" price China manufacturer",
+          "route": "manufacturer exact China product page",
+          "outcome": "no-result",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html",
+          "accessed_at": "2026-08-17",
+          "note": "Manufacturer page says domestic dealer quotation in RMB but gives no numeric current price."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Twitter CYCLONE 2025\" WheelTop EDS-TX price",
+          "route": "manufacturer regional exact-build route",
+          "outcome": "rejected",
+          "result_url": "https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-cyclone-2025-wheeltop-eds-tx-2-12-speed-wireless-pearl-blue-xl-52cm-carbon-wheel",
+          "accessed_at": "2026-08-17",
+          "note": "USA exact 2025 EDS-TX carbon-wheel listing shows US$1,710."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Twitter Cyclone 3rd 3K ED\" price",
+          "route": "alternate manufacturer exact configuration route",
+          "outcome": "rejected",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-3k-ed",
+          "accessed_at": "2026-08-17",
+          "note": "USA exact 3K ED page shows a dynamic/current foreign price for a separate 3K build."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "twitter-cyclone-2025-eds-tx-2026-08-17",
+    "twitter-cyclone-electronic-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. No numeric current mainland-China EDS-TX price was found on the manufacturer page. Retain the existing China marketplace range and do not substitute foreign checkout prices."
+}

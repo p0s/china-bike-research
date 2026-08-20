@@ -1,0 +1,49 @@
+{
+  "id": "variant-camp-gx700-grx820-bottom-bracket-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "camp-gx700-grx820"
+  },
+  "field": "bottom-bracket",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX700 GRX820 bottom bracket standard official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Official product page omits BB standard.",
+          "result_url": "https://www.campbicycle.com/en/gravel_92368/gx700.html"
+        },
+        {
+          "attempt": 2,
+          "query": "CAMP GX700 GRX820 bottom bracket official catalog",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No official manual/technical sheet with BB located."
+        },
+        {
+          "attempt": 3,
+          "query": "CAMP GX700 GRX820 bottom bracket exact dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact-SKU dealer BB standard located."
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

@@ -11,7 +11,8 @@
     ],
     "strengths": [
       "Exact model/configuration is visible in the 2026-08-08 snapshot",
-      "Dated mainland-China price observation"
+      "Dated mainland-China price observation",
+      "Exact Falath Pro references support the frame standard, cockpit, and 28C setup"
     ],
     "caveats": [
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
@@ -19,7 +20,10 @@
     ]
   },
   "source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "elves-falath-pro-official-2026-08-17",
+    "elves-falath-pro-105-sa-2026-08-17",
+    "elves-warranty-registration-2026-08-17"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -31,5 +35,12 @@
   "brakes": {
     "actuation": "hydraulic",
     "type": "disc"
+  },
+  "claimed_frame_weight_g": 1160,
+  "tires": "Continental GP5000 700×28C",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true,
+    "description": "OROME AERO PRO compact integrated cockpit"
   }
 }

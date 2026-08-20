@@ -1,0 +1,50 @@
+{
+  "id": "variant-scott-addict-rc-40-frame-weight-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SCOTT Addict RC 40 frame-only weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Product page supplies only approximate complete-bike weight.",
+          "result_url": "https://www.scott.pl/produkt/1635/12093/Rower-Addict-RC-40"
+        },
+        {
+          "attempt": 2,
+          "query": "SCOTT Addict RC 40 frame weight official manual",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "2026 manual has geometry/warranty but no frame-only measurement.",
+          "result_url": "https://asset-misc.scott-sports.com/Add/Addict_Manual_A4_2026_Scott-Sports_EN_2267141.pdf"
+        },
+        {
+          "attempt": 3,
+          "query": "SCOTT Addict RC 40 frame weight authorized dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact RC 40 frame-only measurement located."
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

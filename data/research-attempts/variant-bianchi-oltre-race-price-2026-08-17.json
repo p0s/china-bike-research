@@ -1,0 +1,86 @@
+{
+  "id": "variant-bianchi-oltre-race-price-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race current mainland complete/full-bike price community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 current mainland complete/full-bike price",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "Bianchi Oltre Race Oltre Race 105 2026 current mainland complete/full-bike price review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Bianchi Oltre Race 105 12sp\" price official",
+          "route": "manufacturer global product page",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.com/store/int_EN/bikes/road/racing/oltre/oltre-race/oltre-race.html",
+          "accessed_at": "2026-08-17",
+          "note": "Exact global SKU YTB8D page shows €2,850."
+        },
+        {
+          "attempt": 2,
+          "query": "\"Bianchi Oltre Race 105 12sp\" Armenia price",
+          "route": "manufacturer regional product page",
+          "outcome": "rejected",
+          "result_url": "https://www.bianchi.am/am/oltre-race-105-12sp",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Armenia listing shows AMD 1,390,000, reduced from AMD 1,490,000."
+        },
+        {
+          "attempt": 3,
+          "query": "\"Bianchi Oltre Race 105 12sp\" dealer price 2025",
+          "route": "alternate authorized dealer route",
+          "outcome": "rejected",
+          "result_url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611",
+          "accessed_at": "2026-08-17",
+          "note": "Exact Hungary dealer listing shows HUF 1,249,990."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-armenia-2026-08-17",
+    "bianchi-oltre-race-dealer-2026-08-17",
+    "bianchi-oltre-race-global-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Exact foreign-market prices were found, but no current mainland-China manufacturer/authorized price was established. Do not overwrite the existing China marketplace observation."
+}

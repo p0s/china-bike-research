@@ -3,16 +3,31 @@
   "name": "SAVA A4",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "A current exact-model lead positions the A4 as an entry-level SAVA road bike.",
+  "why_interesting": "An entry-level full-carbon endurance road bike with a Shimano Tiagra 2×10 drivetrain and hydraulic discs at a claimed 9.5 kg.",
   "missing": [
-    "Official exact-model page and generation",
-    "Exact frame, drivetrain, brakes, wheels and claimed weight",
     "Current mainland price, stock, warranty and return route"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
-    "public-sava-a4-product-2026-08-17"
+    "public-sava-a4-product-2026-08-17",
+    "sava-a4-official-global-2026-08-17",
+    "sava-a4-specifications-official-2026-08-17",
+    "sava-china-support-store-2026-08-17"
   ],
+  "facts": {
+    "drivetrain": "Shimano Tiagra R4700 2×10; Prowheel 50/34 and 11–34 cassette",
+    "brakes": "Sensah hydraulic shifters and hydraulic disc brakes",
+    "frame": "T800-claimed carbon frame, fork and seatpost",
+    "bottom_bracket": "BB86",
+    "wheels": "700C aluminum wheelset",
+    "tires": "700×25C",
+    "cockpit": "Integrated aluminum handlebar",
+    "sizes": "44, 47, 51, 54 and 56",
+    "complete_weight_g": 9500,
+    "tire_clearance_mm": 28
+  },
+  "support_note": "SAVA publishes a mainland shopping and after-sales route, but exact A4 stock, price and warranty conditions remain unresolved.",
+  "source_note": "The exact global model RO8 CR-A4-R4700-20S is verified. Its claimed weight varies by size; the mainland brand route is known, but exact price and availability remain open.",
   "last_reviewed": "2026-08-17"
 }

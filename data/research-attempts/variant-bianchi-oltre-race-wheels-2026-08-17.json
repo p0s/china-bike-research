@@ -1,0 +1,44 @@
+{
+  "id": "variant-bianchi-oltre-race-wheels-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "wheels",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race 105 mechanical bom.wheels",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Official page confirms platform; component line exposed by authorized regional listing.",
+          "result_url": "https://www.bianchi.com/bikes/bikes/road/aero-road/oltre/oltre-race/"
+        },
+        {
+          "attempt": 2,
+          "query": "Bianchi Oltre Race 105 mechanical bom.wheels authorized regional listing",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Authorized exact Oltre Race 105 page lists the component.",
+          "result_url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-dealer-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

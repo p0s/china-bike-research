@@ -1,0 +1,51 @@
+{
+  "id": "candidate-hongfu-gravel-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hongfu-gravel"
+  },
+  "field": "warranty-support",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hongfu official warranty",
+          "route": "official manufacturer/support",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No policy.",
+          "result_url": "https://www.hongfu-bikes.com/products/17.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Hongfu marketplace warranty",
+          "route": "authorized/current marketplace",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No term.",
+          "result_url": "https://hongfu-bikes.en.alibaba.com/es_ES/productgrouplist-813177868/Gravel_frame.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Hongfu general support warranty",
+          "route": "official manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No term.",
+          "result_url": "https://www.hongfu-bikes.com/"
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-17",
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

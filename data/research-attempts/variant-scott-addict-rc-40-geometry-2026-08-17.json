@@ -1,0 +1,35 @@
+{
+  "id": "variant-scott-addict-rc-40-geometry-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "geometry",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SCOTT Addict RC 40 2026 geometry official manual",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Official SCOTT 2026 Addict manual has exact seven-size geometry table and tire-width limit.",
+          "result_url": "https://asset-misc.scott-sports.com/Add/Addict_Manual_A4_2026_Scott-Sports_EN_2267141.pdf"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "scott-addict-2026-manual-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+}

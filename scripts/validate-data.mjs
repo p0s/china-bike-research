@@ -7,4 +7,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Validated ${data.brands.length} brands, ${data.platforms.length} platforms, ${data.variants.length} variants, ${data.prices.length} prices, ${data.sources.length} sources, ${data.images.length} primary image records, ${data.videos.length} curated videos, and ${data.candidates.length} candidates.`);
+console.log(`Validated ${data.brands.length} brands, ${data.platforms.length} platforms, ${data.variants.length} variants, ${data.prices.length} prices, ${data.sources.length} sources, ${data.images.length} primary image records, ${data.videos.length} curated videos, ${data.candidates.length} candidates, and ${data.researchAttempts.length} atomic research records.`);

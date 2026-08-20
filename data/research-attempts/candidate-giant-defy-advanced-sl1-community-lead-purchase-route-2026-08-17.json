@@ -1,0 +1,40 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced SL 1 authorized China route",
+          "route": "official dealer locator",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact SL 1 stock not shown.",
+          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-china-dealer-locator-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

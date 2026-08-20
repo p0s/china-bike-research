@@ -1,0 +1,58 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-price-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized China Crux Comp GRX price",
+          "route": "official China product",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No price.",
+          "result_url": "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+        },
+        {
+          "attempt": 2,
+          "query": "Specialized China store Crux price",
+          "route": "official China store/dealer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No price.",
+          "result_url": "https://www.specialized.com.cn/cn/zh"
+        },
+        {
+          "attempt": 3,
+          "query": "Specialized Crux Comp Japan price",
+          "route": "official global fallback",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Do not convert.",
+          "result_url": "https://www.specialized.com/jp/ja/crux-comp/p/4223483"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [
+    "round3-crux-comp-specialized-japan-7e315e3e21"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

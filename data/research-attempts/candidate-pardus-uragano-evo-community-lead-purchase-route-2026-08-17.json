@@ -1,0 +1,40 @@
+{
+  "id": "candidate-pardus-uragano-evo-community-lead-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-evo-community-lead"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Pardus Uragano EVO China route",
+          "route": "official China JD/dealer",
+          "outcome": "found",
+          "accessed_at": "2026-08-17",
+          "note": "Exact EVO variant stock/price requires inquiry.",
+          "result_url": "https://pardus.jd.com/view_search-2595878-25171610-99-1-20-1.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "pardus-uragano-jd-route-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+}

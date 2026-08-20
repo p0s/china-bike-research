@@ -1,0 +1,81 @@
+{
+  "id": "candidate-lightcarbon-speed7-complete-image-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-speed7-complete"
+  },
+  "field": "image",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon Speed7 105 mechanical complete bike image community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon 速7 105整车 image",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon Speed7 105 mechanical complete bike 速7 105整车 2026 image review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:lightcarbon.com Speed7 complete bike official product image",
+          "route": "official LightCarbon product/media page",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "The manufacturer page and image identify LCR017-D/速7, but do not establish that the catalog alias SPEED7 is the same SKU or that this is the complete-bike package.",
+          "result_url": "https://www.lightcarbon.com/js/htmledit/kindeditor/attached/20240416/20240416225804_78369.jpg"
+        },
+        {
+          "attempt": 2,
+          "query": "site:lightcarbon.com 2026-2027 LightCarbon catalog LCR017-D",
+          "route": "official LightCarbon catalog PDF/CDN",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "The catalog confirms LCR017-D/速7 but contains no verified SPEED7 alias mapping or separate complete-bike image/package definition.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"
+        },
+        {
+          "attempt": 3,
+          "query": "site:lightcarbon.com \"SPEED7\" complete bike",
+          "route": "targeted exact-alias/domain query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No manufacturer page or attributable direct image independently links SPEED7 to a complete-bike SKU."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. public: temporarily-exhausted; images: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+}

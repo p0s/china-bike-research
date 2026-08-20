@@ -1,0 +1,52 @@
+{
+  "id": "candidate-irefox-profound-400-purchase-route-2026-08-17",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "irefox-profound-400"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The required external route was inaccessible during this pass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX Profound 400 current route",
+          "route": "official China manufacturer",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Exact old-stock route unavailable.",
+          "result_url": "https://irefox.net/cn/"
+        },
+        {
+          "attempt": 2,
+          "query": "IREFOX Profound 400 launch route",
+          "route": "China product launch",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "Not current route.",
+          "result_url": "https://www.biketo.com/product/51881.html"
+        },
+        {
+          "attempt": 3,
+          "query": "IREFOX current marketplace route",
+          "route": "official/current marketplace",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Blocked.",
+          "result_url": "https://www.jd.com/jiage/131810d11b5e44e5573b.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-three systematic search. prices: blocked. Unknowns and blocks are not negative evidence."
+}

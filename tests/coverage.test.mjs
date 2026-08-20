@@ -13,9 +13,13 @@ import {
 const root = path.resolve(import.meta.dirname, '..');
 const data = loadDataset();
 const baseline = JSON.parse(fs.readFileSync(path.join(root, 'data/coverage-baseline.json'), 'utf8'));
+const retirements = fs.readdirSync(path.join(root, 'data/retired-records'))
+  .filter((name) => name.endsWith('.json'))
+  .sort()
+  .map((name) => JSON.parse(fs.readFileSync(path.join(root, 'data/retired-records', name), 'utf8')));
 
-function errorsFor(mutated, accepted = baseline, retirements = [], options = {}) {
-  return validateCoverage(mutated, createCoverageSnapshot(mutated), accepted, retirements, options);
+function errorsFor(mutated, accepted = baseline, retirementRecords = retirements, options = {}) {
+  return validateCoverage(mutated, createCoverageSnapshot(mutated), accepted, retirementRecords, options);
 }
 
 test('accepted catalog coverage passes without exceptions', () => {
@@ -73,14 +77,41 @@ test('catalog-wide frameset price metadata cannot silently disappear', () => {
   assert.ok(errorsFor(mutated).some((error) => error.includes('meta lost protected field frameset_build_assumption.amount_cny')));
 });
 
+test('recorded research attempts cannot silently disappear or be rewritten', () => {
+  const mutated = structuredClone(data);
+  const record = mutated.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  record.channels['public-post'].attempts.pop();
+  assert.ok(errorsFor(mutated).some((error) => error.includes('lost a protected public-post attempt')));
+
+  const rewritten = structuredClone(data);
+  const rewrittenRecord = rewritten.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  rewrittenRecord.channels['public-post'].attempts[0].query = 'replacement query';
+  assert.ok(errorsFor(rewritten).some((error) => error.includes('lost protected attempt details')));
+
+  const rewrittenNote = structuredClone(data);
+  const noteRecord = rewrittenNote.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  noteRecord.channels['public-post'].attempts[0].note = 'replacement result note';
+  assert.ok(errorsFor(rewrittenNote).some((error) => error.includes('lost protected attempt details')));
+
+  const addedResultUrl = structuredClone(data);
+  const urlRecord = addedResultUrl.researchAttempts.find((item) => item.id === 'candidate-bigrock-sohtea-bom-2026-08-17');
+  urlRecord.channels['public-post'].attempts[0].result_url = 'https://example.com/public-result';
+  assert.ok(errorsFor(addedResultUrl).some((error) => error.includes('lost protected attempt details')));
+
+  const rewrittenResolution = structuredClone(data);
+  const resolutionRecord = rewrittenResolution.researchAttempts.find((item) => item.id === 'variant-elves-falath-r7170-cockpit-2026-08-17');
+  resolutionRecord.resolution.note = 'Unexpected resolution rewrite.';
+  assert.ok(errorsFor(rewrittenResolution).some((error) => error.includes('lost protected resolution details')));
+});
+
 test('new information requires monotonic baseline acceptance', () => {
   const mutated = structuredClone(data);
   mutated.candidates[0].facts = { newly_verified_weight_g: 9000 };
   const current = createCoverageSnapshot(mutated);
-  assert.ok(validateCoverage(mutated, current, baseline, [], { requireCurrentBaseline: true })
+  assert.ok(validateCoverage(mutated, current, baseline, retirements, { requireCurrentBaseline: true })
     .some((error) => error.includes('coverage baseline is stale')));
   const merged = mergeCoverageBaseline(baseline, current, '2026-08-17');
-  assert.deepEqual(validateCoverage(mutated, current, merged, []), []);
+  assert.deepEqual(validateCoverage(mutated, current, merged, retirements), []);
 });
 
 test('acceptance never erases prior identities or lowers image quality', () => {
@@ -122,7 +153,7 @@ test('documented replacements authorize record retirement but not target-quality
   replacement.source_id = 'quick-pro-er-one-ultegra-official-2026-08-17';
   replacement.subject_accuracy = 'exact-variant';
   mutated.images.push(replacement);
-  const retirement = [{
+  const retirement = [...retirements, {
     id: 'replace-quick-pro-er-one-image-2026-08-17',
     record_type: 'images',
     record_id: 'quick-pro-er-one-primary-image',

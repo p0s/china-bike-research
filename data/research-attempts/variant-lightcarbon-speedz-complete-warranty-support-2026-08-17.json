@@ -1,0 +1,79 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-warranty-support-2026-08-17",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-08-17",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ complete purchase and warranty route community",
+          "route": "YouTube public search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No opened exact-model public post accepted from this English query."
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon SPEEDZ 105整车 purchase and warranty route",
+          "route": "Xiaohongshu public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "CAPTCHA/verification was not solved per policy."
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon SPEEDZ complete SPEEDZ 105整车 2026 purchase and warranty route review build",
+          "route": "Bilibili public search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-17",
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"LightCarbon SPEEDZ\" warranty",
+          "route": "exact manufacturer/model/field search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact SPEEDZ result was found."
+        },
+        {
+          "attempt": 2,
+          "query": "site:lightcarbon.com SPEEDZ warranty",
+          "route": "official LightCarbon catalog/manual route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Current LightCarbon catalogs/pages returned other model IDs (for example LCR/LCG); sibling-model results were rejected."
+        },
+        {
+          "attempt": 3,
+          "query": "\"LightCarbon SPEEDZ\" authorized dealer warranty",
+          "route": "alternate authorized/industry route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No accessible exact SPEEDZ listing, SKU, or warranty page was found."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Round-four official/web completion. Three materially distinct current routes returned no accessible exact LightCarbon SPEEDZ record. Current LightCarbon LCR/LCG catalogs and similarly named Speedz pages were rejected as sibling/unmatched models; preserve the existing snapshot unknown."
+}
