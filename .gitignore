@@ -8,6 +8,9 @@ dist/
 stale-report.md
 .research/
 
+# Third-party media is staged and deployed outside this public Git repository.
+infra/media/public/media/
+
 # Local repo helper paths
 _gitdir/
 .write_probe

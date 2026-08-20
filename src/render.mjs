@@ -51,6 +51,42 @@ function imageUrl(ctx, image) {
     : url(ctx.base, image.hosting.local_path);
 }
 
+function responsiveImage(image, { hero = false, comparison = false } = {}) {
+  const variants = image?.hosting?.variants;
+  if (!Array.isArray(variants) || variants.length === 0) return null;
+  const sorted = [...variants].sort((a, b) => a.width - b.width);
+  const largest = sorted.at(-1);
+  return {
+    width: largest.width,
+    height: largest.height,
+    srcset: sorted.map((variant) => `${variant.url} ${variant.width}w`).join(', '),
+    sizes: comparison
+      ? '120px'
+      : hero
+        ? '(max-width: 720px) calc(100vw - 24px), 680px'
+        : '(max-width: 720px) 132px, 156px'
+  };
+}
+
+function responsiveAttributes(image, options) {
+  const responsive = responsiveImage(image, options);
+  if (!responsive) return { width: 1200, height: 800, attributes: '' };
+  return {
+    ...responsive,
+    attributes: ` srcset="${escapeAttr(responsive.srcset)}" sizes="${escapeAttr(responsive.sizes)}"`
+  };
+}
+
+function comparisonImageFields(image) {
+  const responsive = responsiveImage(image, { comparison: true });
+  return responsive ? {
+    imageSrcset: responsive.srcset,
+    imageSizes: responsive.sizes,
+    imageWidth: responsive.width,
+    imageHeight: responsive.height
+  } : {};
+}
+
 function accuracyLabel(accuracy) {
   return {
     'exact-variant': 'Exact configuration shown',
@@ -62,6 +98,12 @@ function accuracyLabel(accuracy) {
   }[accuracy] ?? 'Image status unclassified';
 }
 
+function imageUsageLabel(image) {
+  return image?.rights?.status === 'public-post-quotation'
+    ? 'Compressed editorial quotation; no license asserted'
+    : '';
+}
+
 function imageElement(ctx, product, { hero = false, className = '' } = {}) {
   const fallback = fallbackImage(ctx, product);
   const placeholder = product.image?.media_type === 'project-placeholder';
@@ -71,7 +113,8 @@ function imageElement(ctx, product, { hero = false, className = '' } = {}) {
     : product.image?.alt ?? `${product.brand.name} ${product.variant.name}`;
   const remote = !placeholder && product.image?.hosting.mode === 'remote';
   const classes = [className, placeholder ? 'is-placeholder' : ''].filter(Boolean).join(' ');
-  return `<img class="${escapeAttr(classes)}" src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+  const responsive = responsiveAttributes(placeholder ? null : product.image, { hero });
+  return `<img class="${escapeAttr(classes)}" src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateFallback(ctx, entry) {
@@ -88,7 +131,8 @@ function candidateImageElement(ctx, entry, { hero = false } = {}) {
     ? `Illustrated placeholder for ${entry.candidate.name}; verified product photo unavailable`
     : entry.image?.alt ?? `${entry.candidate.name} candidate image`;
   const remote = !placeholder && entry.image?.hosting.mode === 'remote';
-  return `<img${placeholder ? ' class="is-placeholder"' : ''} src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+  const responsive = responsiveAttributes(placeholder ? null : entry.image, { hero });
+  return `<img${placeholder ? ' class="is-placeholder"' : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateImage(ctx, entry) {
@@ -564,6 +608,7 @@ function comparisonSummary(ctx, product) {
     url: url(ctx.base, `/models/${product.variant.id}/`),
     image: imageUrl(ctx, product.image) || fallbackImage(ctx, product),
     imageRemote: product.image?.hosting.mode === 'remote',
+    ...comparisonImageFields(product.image),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
     price: formatAllInPrice(product),
     estimated: product.allInPrice.estimated,
@@ -615,6 +660,7 @@ function candidateComparisonSummary(ctx, entry) {
     name: entry.candidate.name,
     image,
     imageRemote: entry.image?.hosting.mode === 'remote',
+    ...comparisonImageFields(entry.image),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
     price: candidatePriceLabel(ctx, entry),
     estimated,
@@ -874,7 +920,7 @@ export function renderModel(ctx, product) {
   ];
   const specificationRows = publishedSpecificationRows(product);
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption><span data-image-caption-status>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}</span>${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption><span data-image-caption-status>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${imageUsageLabel(product.image) ? ` · ${escapeHtml(imageUsageLabel(product.image))}` : ''}</span>${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
@@ -936,7 +982,7 @@ export function renderCandidateModel(ctx, entry) {
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}</span>${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}${imageUsageLabel(entry.image) ? ` · ${escapeHtml(imageUsageLabel(entry.image))}` : ''}</span>${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
     <div class="model-summary"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Profile status</dt><dd>${escapeHtml(maturity)}</dd></div>${facts.slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
@@ -973,12 +1019,12 @@ export function renderMethodology(ctx) {
 }
 
 export function renderPrivacy(ctx) {
-  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike selections and the optional frameset allowance are stored only in the visitor’s browser.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer, retailer, or public-post host. The host receives a normal image request. Images use <code>referrerpolicy="no-referrer"</code>, and a local placeholder appears when a source image fails.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, and location metadata before submitting screenshots or photos.</p>`;
+  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike selections and the optional frameset allowance are stored only in the visitor’s browser.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected public-post quotations load from the project’s separate Contabo media origin. That service disables application access logs and serves only sanitized, metadata-free WebP derivatives, but the VPS and network providers still process a normal HTTPS request. Images use <code>referrerpolicy="no-referrer"</code>, and a local project placeholder appears when a source fails.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, and location metadata before submitting screenshots or photos. A removal request may identify the model and source URL without publishing private contact details.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'No accounts or analytics; optional third-party media is disclosed.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Image use</h2><p>The repository stores structured credits and remote image URLs rather than copying third-party product photography. Manufacturer images are preferred. Retailer and public-post images are used only when their subject and source are explicit; copyright remains with the credited owner and no redistribution license is implied.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Fallbacks and corrections</h2><p>A project-owned placeholder replaces broken external images. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a rights-cleared replacement.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. A selected public XHS photo may be served from the project’s external media origin only as one compressed editorial quotation supporting direct model identification and commentary. Copyright remains with the original owner, the exact post stays linked, and no license or universal right to reuse is implied.</p><h2>Quotation limits</h2><p>Public availability and attribution alone are not enough. A quoted photo must be secondary to the profile, limited to the purpose, stripped of metadata and visible personal identifiers, and recorded with content hashes and a privacy review. When that rationale is uncertain, the project uses its own placeholder.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Fallbacks and corrections</h2><p>A project-owned placeholder replaces broken external images. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a rights-cleared replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
@@ -1012,7 +1058,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}${imageUsageLabel(image) ? ` · ${escapeHtml(imageUsageLabel(image))}` : ''}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

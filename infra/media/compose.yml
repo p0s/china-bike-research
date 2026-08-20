@@ -1,0 +1,42 @@
+services:
+  media:
+    image: nginx:1.29-alpine
+    container_name: china-bike-media
+    restart: unless-stopped
+    user: "101:101"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /var/cache/nginx:size=16m,mode=0750,uid=101,gid=101
+      - /var/run:size=1m,mode=0750,uid=101,gid=101
+      - /tmp:size=1m,mode=0750,uid=101,gid=101
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8080/health.json || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=coolify
+      - traefik.http.middlewares.china-bike-media-redirect.redirectscheme.scheme=https
+      - traefik.http.routers.china-bike-media-http.entrypoints=http
+      - traefik.http.routers.china-bike-media-http.middlewares=china-bike-media-redirect
+      - traefik.http.routers.china-bike-media-http.rule=Host(`china-bike-media.161-97-123-19.sslip.io`)
+      - traefik.http.routers.china-bike-media-https.entrypoints=https
+      - traefik.http.routers.china-bike-media-https.rule=Host(`china-bike-media.161-97-123-19.sslip.io`)
+      - traefik.http.routers.china-bike-media-https.tls=true
+      - traefik.http.routers.china-bike-media-https.tls.certresolver=letsencrypt
+      - traefik.http.services.china-bike-media.loadbalancer.server.port=8080
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true

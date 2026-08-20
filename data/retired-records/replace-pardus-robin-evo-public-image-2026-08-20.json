@@ -1,0 +1,16 @@
+{
+  "id": "replace-pardus-robin-evo-public-image-2026-08-20",
+  "record_type": "images",
+  "record_id": "pardus-robin-evo-public-primary-image",
+  "action": "replace",
+  "reason": "The expiring direct embed is replaced by a privacy-reviewed, content-addressed quotation from a newly verified exact Robin EVO post.",
+  "evidence_source_ids": [
+    "public-pardus-robin-evo-build-2026-08-17",
+    "public-pardus-robin-evo-photo-2026-08-20"
+  ],
+  "replacement": {
+    "record_type": "images",
+    "record_id": "pardus-robin-evo-public-quotation-primary-image"
+  },
+  "reviewed_at": "2026-08-20"
+}

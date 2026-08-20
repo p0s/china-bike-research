@@ -19,6 +19,7 @@
     "research:check": "node scripts/research-attempts.mjs",
     "research:report": "node scripts/research-attempts.mjs --report",
     "research:queue": "node scripts/research-queue.mjs",
+    "media:optimize": "node scripts/optimize-image.mjs",
     "image:report": "node scripts/image-health-report.mjs",
     "stale:report": "node scripts/stale-report.mjs",
     "test": "node --test tests/*.test.mjs",
