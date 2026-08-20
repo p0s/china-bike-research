@@ -29,6 +29,12 @@ test('catalog previews enlarge the full hit target from a useful default size', 
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
   assert.match(script, /\.catalog-row \.product-image-link'[\s\S]*?addEventListener\('mouseenter'[\s\S]*?closeTooltip\(\)/);
   assert.match(styles, /\.product-image:has\(\.product-image-link:hover\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
+  assert.match(styles, /\.product-image\.hero-image > img:is\(\.is-fallback, \.is-placeholder\) \{ padding: 0; \}/);
+  assert.doesNotMatch(styles, /\.selection-actions \.text-button \{ display: none; \}/);
+});
+
+test('failed product photos disclose the visible placeholder', () => {
+  assert.match(script, /captionStatus\.textContent = 'Source image unavailable · Project placeholder shown'/);
 });
 
 test('catalog headings and compact control share directional sorting', () => {

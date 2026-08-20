@@ -26,6 +26,25 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
 });
 
+test('project placeholders match the exact product kind and use useful alt text', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-17T00:00:00Z')
+  };
+  const frameset = products.find((item) => item.variant.id === 'lightcarbon-speedz-frameset');
+  const complete = products.find((item) => item.variant.id === 'lightcarbon-speedz-complete');
+  const framesetDetail = renderModel(context, frameset);
+  const completeDetail = renderModel(context, complete);
+
+  assert.match(framesetDetail, /class="is-placeholder" src="\/china-bike-research\/assets\/images\/placeholders\/frameset\.svg" alt="Illustrated placeholder for LightCarbon SPEEDZ frameset; verified product photo unavailable"/);
+  assert.match(completeDetail, /class="is-placeholder" src="\/china-bike-research\/assets\/images\/placeholders\/complete-bike\.svg" alt="Illustrated placeholder for LightCarbon SPEEDZ complete; verified product photo unavailable"/);
+  assert.match(framesetDetail, /<figcaption><span data-image-caption-status>China Bike Research project placeholder · Project placeholder; not a product photo<\/span><\/figcaption>/);
+});
+
 test('homepage omits developer-facing dashboards and legacy sections', () => {
   assert.doesNotMatch(html, /decision-ready configurations/i);
   assert.doesNotMatch(html, /Current quick picks/i);

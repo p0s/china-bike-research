@@ -63,11 +63,15 @@ function accuracyLabel(accuracy) {
 }
 
 function imageElement(ctx, product, { hero = false, className = '' } = {}) {
-  const source = imageUrl(ctx, product.image) || fallbackImage(ctx, product);
   const fallback = fallbackImage(ctx, product);
-  const alt = product.image?.alt ?? `${product.brand.name} ${product.variant.name}`;
-  const remote = product.image?.hosting.mode === 'remote';
-  return `<img class="${escapeAttr(className)}" src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+  const placeholder = product.image?.media_type === 'project-placeholder';
+  const source = placeholder ? fallback : imageUrl(ctx, product.image) || fallback;
+  const alt = placeholder
+    ? `Illustrated placeholder for ${product.brand.name} ${product.variant.name}; verified product photo unavailable`
+    : product.image?.alt ?? `${product.brand.name} ${product.variant.name}`;
+  const remote = !placeholder && product.image?.hosting.mode === 'remote';
+  const classes = [className, placeholder ? 'is-placeholder' : ''].filter(Boolean).join(' ');
+  return `<img class="${escapeAttr(classes)}" src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateFallback(ctx, entry) {
@@ -78,10 +82,13 @@ function candidateFallback(ctx, entry) {
 
 function candidateImageElement(ctx, entry, { hero = false } = {}) {
   const fallback = candidateFallback(ctx, entry);
-  const source = imageUrl(ctx, entry.image) || fallback;
-  const alt = entry.image?.alt ?? `${entry.candidate.name} candidate image`;
-  const remote = entry.image?.hosting.mode === 'remote';
-  return `<img src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+  const placeholder = entry.image?.media_type === 'project-placeholder';
+  const source = placeholder ? fallback : imageUrl(ctx, entry.image) || fallback;
+  const alt = placeholder
+    ? `Illustrated placeholder for ${entry.candidate.name}; verified product photo unavailable`
+    : entry.image?.alt ?? `${entry.candidate.name} candidate image`;
+  const remote = !placeholder && entry.image?.hosting.mode === 'remote';
+  return `<img${placeholder ? ' class="is-placeholder"' : ''} src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateImage(ctx, entry) {
@@ -867,7 +874,7 @@ export function renderModel(ctx, product) {
   ];
   const specificationRows = publishedSpecificationRows(product);
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption><span data-image-caption-status>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}</span>${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
@@ -929,7 +936,7 @@ export function renderCandidateModel(ctx, entry) {
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}</span>${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
     <div class="model-summary"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Profile status</dt><dd>${escapeHtml(maturity)}</dd></div>${facts.slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
