@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-18",
+  "updated_at": "2026-08-20",
   "catalog_metrics": {
     "records": {
       "brands": 36,
       "platforms": 35,
       "variants": 37,
       "prices": 43,
-      "sources": 320,
+      "sources": 322,
       "images": 123,
       "videos": 12,
       "recommendations": 6,
@@ -296,6 +296,8 @@
       "public-elves-mori-frame-price-2026-08-17",
       "public-giant-defy-advanced-sl1-2026-08-17",
       "public-giant-propel-gen4-2026-08-17",
+      "public-lightcarbon-speed7-customer-return-2026-08-20",
+      "public-lightcarbon-speed7-factory-weight-2026-08-20",
       "public-merida-scultura-endurance-4000-2026-08-17",
       "public-pardus-robin-evo-build-2026-08-17",
       "public-pardus-spark-rs-build-2026-08-17",
@@ -5039,6 +5041,30 @@
         "url"
       ],
       "public-giant-propel-gen4-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-lightcarbon-speed7-customer-return-2026-08-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-lightcarbon-speed7-factory-weight-2026-08-20": [
         "accessed_at",
         "language",
         "notes",
@@ -11156,6 +11182,7 @@
       "lightcarbon-speed7-complete": [
         "category",
         "facts.drivetrain",
+        "facts.factory_weight_context",
         "facts.frame",
         "facts.wheels",
         "last_reviewed",
@@ -11168,6 +11195,7 @@
         "observed_price.price_basis",
         "price_status",
         "research_priority",
+        "source_ids",
         "source_note",
         "source_refs",
         "source_snapshot_id",
@@ -15409,6 +15437,7 @@
       ],
       "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17": [
         "accepted_source_ids",
+        "channels.public-post.attempts",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -15416,6 +15445,7 @@
         "notes",
         "priority",
         "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -17316,6 +17346,7 @@
         "target.record_type"
       ],
       "variant-lightcarbon-speedz-complete-cockpit-2026-08-17": [
+        "channels.public-post.attempts",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17323,6 +17354,7 @@
         "notes",
         "priority",
         "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -17449,6 +17481,7 @@
         "target.record_type"
       ],
       "variant-lightcarbon-speedz-complete-tires-2026-08-17": [
+        "channels.public-post.attempts",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17456,6 +17489,7 @@
         "notes",
         "priority",
         "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -17477,6 +17511,7 @@
         "target.record_type"
       ],
       "variant-lightcarbon-speedz-complete-wheels-2026-08-17": [
+        "channels.public-post.attempts",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -17484,6 +17519,7 @@
         "notes",
         "priority",
         "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -19376,6 +19412,8 @@
       "public-elves-mori-frame-price-2026-08-17": [],
       "public-giant-defy-advanced-sl1-2026-08-17": [],
       "public-giant-propel-gen4-2026-08-17": [],
+      "public-lightcarbon-speed7-customer-return-2026-08-20": [],
+      "public-lightcarbon-speed7-factory-weight-2026-08-20": [],
       "public-merida-scultura-endurance-4000-2026-08-17": [],
       "public-pardus-robin-evo-build-2026-08-17": [],
       "public-pardus-spark-rs-build-2026-08-17": [],
@@ -20501,6 +20539,8 @@
       ],
       "lightcarbon-speed7-complete": [
         "model_id=lightcarbon-speed7",
+        "source_ids=public-lightcarbon-speed7-customer-return-2026-08-20",
+        "source_ids=public-lightcarbon-speed7-factory-weight-2026-08-20",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "lightcarbon-speed7-frameset": [
@@ -23035,6 +23075,22 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-lightcarbon-speed7-customer-return-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
+    "public-lightcarbon-speed7-factory-weight-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "public-merida-scultura-endurance-4000-2026-08-17": {
@@ -26127,10 +26183,13 @@
     },
     "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 3,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"PARDUS Robin EVO 保修\",\"Xiaohongshu public search exact-model warranty query plus visible post inspection\",\"no-result\",\"2026-08-20\",\"Exact Robin EVO posts and a generic 瑞豹保修 result were visible, but no opened exact-model post exposed a warranty duration, terms, or support route.\",\"https://www.xiaohongshu.com/search_result?keyword=PARDUS%20Robin%20EVO%20%E4%BF%9D%E4%BF%AE\"]",
+        "[\"public-post\",2,\"瑞豹 Robin EVO 售后\",\"Xiaohongshu public search Chinese model/after-sales query\",\"no-result\",\"2026-08-20\",\"Results included general PARDUS after-sales anecdotes and exact Robin EVO posts, but no attributable exact-model warranty condition was visible.\",\"https://www.xiaohongshu.com/search_result?keyword=%E7%91%9E%E8%B1%B9%20Robin%20EVO%20%E5%94%AE%E5%90%8E\"]",
+        "[\"public-post\",3,\"PARDUS 罗宾 EVO 质保\",\"Xiaohongshu public search Chinese alias/warranty query\",\"no-result\",\"2026-08-20\",\"Results were generic bicycle-warranty discussions or other PARDUS generations; no exact Robin EVO term or duration was exposed.\",\"https://www.xiaohongshu.com/search_result?keyword=PARDUS%20%E7%BD%97%E5%AE%BE%20EVO%20%E8%B4%A8%E4%BF%9D\"]",
         "[\"web\",1,\"Pardus Robin EVO official warranty\",\"official China support\",\"no-result\",\"2026-08-17\",\"Term absent.\",\"https://parduscycle.com/\"]",
         "[\"web\",2,\"Pardus Robin authorized dealer support\",\"official dealer locator\",\"no-result\",\"2026-08-17\",\"Term absent.\",\"https://parduscycle.com/find.aspx\"]",
         "[\"web\",3,\"Pardus warranty article\",\"unofficial article\",\"rejected\",\"2026-08-17\",\"Rejected.\",\"https://m.sohu.com/a/942125348_121238090/\"]"
@@ -27969,10 +28028,13 @@
     },
     "variant-lightcarbon-speedz-complete-cockpit-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 3,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"LightCarbon SPEEDZ cockpit\",\"Xiaohongshu public search exact English query\",\"no-result\",\"2026-08-20\",\"Visible cards included a factory-account post titled 速7整车已发货, but no opened exact post exposed a cockpit claim; cards and snippets were not accepted.\",\"https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20cockpit\"]",
+        "[\"public-post\",2,\"速7 一体把\",\"Xiaohongshu public search Chinese alias query\",\"no-result\",\"2026-08-20\",\"Visible results were generic integrated-handlebar posts and did not identify the SPEEDZ/速7 exact build or cockpit component.\",\"https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E4%B8%80%E4%BD%93%E6%8A%8A\"]",
+        "[\"public-post\",3,\"LC-SPEED 7 整车 一体把\",\"Xiaohongshu public search factory alias query\",\"no-result\",\"2026-08-20\",\"No exact-model cockpit claim was visible; the result page exposed no usable exact post content.\",\"https://www.xiaohongshu.com/search_result?keyword=LC-SPEED%207%20%E6%95%B4%E8%BD%A6%20%E4%B8%80%E4%BD%93%E6%8A%8A\"]",
         "[\"web\",1,\"LightCarbon SPEEDZ bom.cockpit official exact page\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\",\"No public LightCarbon product page exposing an exact SPEEDZ SKU and this field was found.\",null]",
         "[\"web\",2,\"LightCarbon SPEEDZ bom.cockpit official catalog PDF\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\",\"Current LightCarbon catalog lists other LCR families and no SPEEDZ mapping.\",\"https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf\"]",
         "[\"web\",3,\"LightCarbon SPEEDZ bom.cockpit authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No authorized exact-SPEEDZ listing with this field was located.\",\"https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html\"]"
@@ -28099,10 +28161,13 @@
     },
     "variant-lightcarbon-speedz-complete-tires-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 3,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"LightCarbon SPEEDZ tires\",\"Xiaohongshu public search exact English query plus visible factory-card inspection\",\"no-result\",\"2026-08-20\",\"Visible search cards included an exact LC-SPEED 7 factory post, but the opened post exposed no exact tire model, size, or BOM field; cards/snippets were not accepted as evidence.\",\"https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20tires\"]",
+        "[\"public-post\",2,\"速7 轮胎\",\"Xiaohongshu public search Chinese alias plus field query\",\"no-result\",\"2026-08-20\",\"Results were dominated by unrelated automobile-tire posts; no exact LightCarbon SPEEDZ/LC-SPEED 7 bicycle tire claim was visible.\",\"https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E8%BD%AE%E8%83%8E\"]",
+        "[\"public-post\",3,\"LC-SPEED 7 整车 轮胎\",\"Xiaohongshu public search factory/model alias query plus visible post inspection\",\"no-result\",\"2026-08-20\",\"Exact factory cards for LC-SPEED 7 and a customer-return post were visible, but the opened post showed no exact tire specification; generic tire posts were not attributed to this build.\",\"https://www.xiaohongshu.com/search_result?keyword=LC-SPEED%207%20%E6%95%B4%E8%BD%A6%20%E8%BD%AE%E8%83%8E\"]",
         "[\"web\",1,\"LightCarbon SPEEDZ bom.tires official exact page\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\",\"No public LightCarbon product page exposing an exact SPEEDZ SKU and this field was found.\",null]",
         "[\"web\",2,\"LightCarbon SPEEDZ bom.tires official catalog PDF\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\",\"Current LightCarbon catalog lists other LCR families and no SPEEDZ mapping.\",\"https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf\"]",
         "[\"web\",3,\"LightCarbon SPEEDZ bom.tires authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No authorized exact-SPEEDZ listing with this field was located.\",\"https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html\"]"
@@ -28126,10 +28191,13 @@
     },
     "variant-lightcarbon-speedz-complete-wheels-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 3,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"LightCarbon SPEEDZ wheels\",\"Xiaohongshu public search exact English query plus visible factory-card inspection\",\"no-result\",\"2026-08-20\",\"Visible results included exact-model SPEED 7 factory posts, but the opened post exposed no exact wheel model, depth, or build mapping; cards/snippets were not accepted as evidence.\",\"https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20wheels\"]",
+        "[\"public-post\",2,\"速7 轮组\",\"Xiaohongshu public search Chinese alias plus component query\",\"no-result\",\"2026-08-20\",\"Results included a generic LightCarbon account result and unrelated wheel posts; no exact SPEEDZ/LC-SPEED 7 wheel specification was visible.\",\"https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E8%BD%AE%E7%BB%84\"]",
+        "[\"public-post\",3,\"LightCarbon SPEED 7 轮组\",\"Xiaohongshu public search factory/model alias query plus visible customer-post inspection\",\"no-result\",\"2026-08-20\",\"An exact LC-SPEED 7 customer-return post was visible and carries a PROX wheel hashtag, but no exact rim/model or complete-build mapping was exposed; it is retained as candidate context, not SPEEDZ catalog evidence.\",\"https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEED%207%20%E8%BD%AE%E7%BB%84\"]",
         "[\"web\",1,\"LightCarbon SPEEDZ bom.wheels official exact page\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\",\"No public LightCarbon product page exposing an exact SPEEDZ SKU and this field was found.\",null]",
         "[\"web\",2,\"LightCarbon SPEEDZ bom.wheels official catalog PDF\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\",\"Current LightCarbon catalog lists other LCR families and no SPEEDZ mapping.\",\"https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf\"]",
         "[\"web\",3,\"LightCarbon SPEEDZ bom.wheels authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No authorized exact-SPEEDZ listing with this field was located.\",\"https://www.lightcarbon.com/lightcarbon-aero-endurance-disc-brake-road-carbon-frameset-with-integrated-handlebar_p268.html\"]"

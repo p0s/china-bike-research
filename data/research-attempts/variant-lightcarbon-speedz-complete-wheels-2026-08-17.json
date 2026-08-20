@@ -13,8 +13,36 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ wheels",
+          "route": "Xiaohongshu public search exact English query plus visible factory-card inspection",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Visible results included exact-model SPEED 7 factory posts, but the opened post exposed no exact wheel model, depth, or build mapping; cards/snippets were not accepted as evidence.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20wheels"
+        },
+        {
+          "attempt": 2,
+          "query": "速7 轮组",
+          "route": "Xiaohongshu public search Chinese alias plus component query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Results included a generic LightCarbon account result and unrelated wheel posts; no exact SPEEDZ/LC-SPEED 7 wheel specification was visible.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E8%BD%AE%E7%BB%84"
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon SPEED 7 轮组",
+          "route": "Xiaohongshu public search factory/model alias query plus visible customer-post inspection",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "An exact LC-SPEED 7 customer-return post was visible and carries a PROX wheel hashtag, but no exact rim/model or complete-build mapping was exposed; it is retained as candidate context, not SPEEDZ catalog evidence.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEED%207%20%E8%BD%AE%E7%BB%84"
+        }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -48,8 +76,8 @@
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-20",
+  "notes": "Round-three systematic search. Public and official-spec lanes are temporarily exhausted for the published SPEEDZ variant. Exact SPEED 7 social-post context remains separate because the SPEED 7↔SPEEDZ identity and complete-build mapping are unresolved. Unknowns and blocks are not negative evidence."
 }

@@ -13,8 +13,36 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ tires",
+          "route": "Xiaohongshu public search exact English query plus visible factory-card inspection",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Visible search cards included an exact LC-SPEED 7 factory post, but the opened post exposed no exact tire model, size, or BOM field; cards/snippets were not accepted as evidence.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LightCarbon%20SPEEDZ%20tires"
+        },
+        {
+          "attempt": 2,
+          "query": "速7 轮胎",
+          "route": "Xiaohongshu public search Chinese alias plus field query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Results were dominated by unrelated automobile-tire posts; no exact LightCarbon SPEEDZ/LC-SPEED 7 bicycle tire claim was visible.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=%E9%80%9F7%20%E8%BD%AE%E8%83%8E"
+        },
+        {
+          "attempt": 3,
+          "query": "LC-SPEED 7 整车 轮胎",
+          "route": "Xiaohongshu public search factory/model alias query plus visible post inspection",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Exact factory cards for LC-SPEED 7 and a customer-return post were visible, but the opened post showed no exact tire specification; generic tire posts were not attributed to this build.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=LC-SPEED%207%20%E6%95%B4%E8%BD%A6%20%E8%BD%AE%E8%83%8E"
+        }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -48,8 +76,8 @@
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-20",
+  "notes": "Round-three systematic search. Public and official-spec lanes are temporarily exhausted for this exact field. Unknowns and blocks are not negative evidence."
 }

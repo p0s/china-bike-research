@@ -13,8 +13,36 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Robin EVO 保修",
+          "route": "Xiaohongshu public search exact-model warranty query plus visible post inspection",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Exact Robin EVO posts and a generic 瑞豹保修 result were visible, but no opened exact-model post exposed a warranty duration, terms, or support route.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=PARDUS%20Robin%20EVO%20%E4%BF%9D%E4%BF%AE"
+        },
+        {
+          "attempt": 2,
+          "query": "瑞豹 Robin EVO 售后",
+          "route": "Xiaohongshu public search Chinese model/after-sales query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Results included general PARDUS after-sales anecdotes and exact Robin EVO posts, but no attributable exact-model warranty condition was visible.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=%E7%91%9E%E8%B1%B9%20Robin%20EVO%20%E5%94%AE%E5%90%8E"
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS 罗宾 EVO 质保",
+          "route": "Xiaohongshu public search Chinese alias/warranty query",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-20",
+          "note": "Results were generic bicycle-warranty discussions or other PARDUS generations; no exact Robin EVO term or duration was exposed.",
+          "result_url": "https://www.xiaohongshu.com/search_result?keyword=PARDUS%20%E7%BD%97%E5%AE%BE%20EVO%20%E8%B4%A8%E4%BF%9D"
+        }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,10 +77,10 @@
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [
     "round3-pardus-official-site-9fa248ee4c"
   ],
-  "retry_after": null,
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-20",
+  "notes": "Round-three systematic search. Official support route is recorded, but no warranty duration or exact Robin EVO terms were found in three distinct public searches. Unknowns and blocks are not negative evidence."
 }
