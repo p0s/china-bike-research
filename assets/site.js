@@ -36,6 +36,8 @@
       image.classList.add('is-fallback');
       image.removeAttribute('referrerpolicy');
       image.alt = `${image.alt || 'Product image'} — source unavailable; showing project placeholder`;
+      const captionStatus = image.closest('.model-figure')?.querySelector('[data-image-caption-status]');
+      if (captionStatus instanceof HTMLElement) captionStatus.textContent = 'Source image unavailable · Project placeholder shown';
     };
     image.addEventListener('error', useFallback, { once: true });
     if (image.complete && image.naturalWidth === 0) useFallback();

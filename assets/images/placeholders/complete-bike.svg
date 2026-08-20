@@ -1,27 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
   <title id="title">Complete bike image placeholder</title>
-  <desc id="desc">Original line illustration used when a verified product photograph is unavailable.</desc>
+  <desc id="desc">A project-owned technical illustration of a complete road bicycle, shown when a verified product photograph is unavailable.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#eef4eb"/>
-      <stop offset="1" stop-color="#dce9d6"/>
+    <linearGradient id="background" x1="80" y1="30" x2="1120" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5f7f3"/>
+      <stop offset="1" stop-color="#e6ede7"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#193227" flood-opacity=".12"/>
-    </filter>
+    <linearGradient id="frame" x1="320" y1="505" x2="875" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#274d39"/>
+      <stop offset="1" stop-color="#4f775f"/>
+    </linearGradient>
   </defs>
-  <rect width="1200" height="800" rx="42" fill="url(#bg)"/>
-  <circle cx="1030" cy="120" r="175" fill="none" stroke="#b7f36b" stroke-width="58" opacity=".45"/>
-  <g filter="url(#shadow)" fill="none" stroke="#17352b" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="330" cy="505" r="154" stroke-width="20"/>
-    <circle cx="874" cy="505" r="154" stroke-width="20"/>
-    <path d="M330 505 498 294 640 505H330Zm168-211 227 30 149 181M640 505l85-181M498 294l-30-82m-57 0h112m202 112 42-80m-23-6h88" stroke-width="25"/>
-    <path d="M640 505h234" stroke-width="18" opacity=".55"/>
-    <circle cx="640" cy="505" r="35" stroke-width="17"/>
-    <path d="M640 505 583 578m57-73 59 71" stroke-width="15"/>
+
+  <rect width="1200" height="800" fill="url(#background)"/>
+  <circle cx="1015" cy="105" r="225" fill="#dbe8dd" opacity=".72"/>
+  <path d="M70 656c218-43 402-55 553-37 181 21 345 13 507-31" fill="none" stroke="#cad7cd" stroke-width="5" opacity=".72"/>
+  <ellipse cx="598" cy="683" rx="450" ry="22" fill="#17352b" opacity=".08"/>
+
+  <g fill="none" stroke="#75877c" stroke-width="5" opacity=".35">
+    <path d="M320 340v330M155 505h330M203 388l234 234M203 622l234-234"/>
+    <path d="M875 340v330M710 505h330M758 388l234 234M758 622l234-234"/>
   </g>
-  <g font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" text-anchor="middle">
-    <text x="600" y="710" fill="#17352b" font-size="38" font-weight="800">Product image not yet verified</text>
-    <text x="600" y="754" fill="#577064" font-size="24">A source-labelled photo can be added through GitHub</text>
+
+  <g fill="none" stroke="#26362d" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="320" cy="505" r="165" stroke-width="20"/>
+    <circle cx="875" cy="505" r="165" stroke-width="20"/>
+    <circle cx="320" cy="505" r="10" fill="#315e45" stroke="none"/>
+    <circle cx="875" cy="505" r="10" fill="#315e45" stroke="none"/>
+    <path d="M319 505 588 479M320 505l272 50" stroke="#617469" stroke-width="7"/>
+  </g>
+
+  <g fill="none" stroke="url(#frame)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m320 505 200-213 72 213H320Z"/>
+    <path d="m520 292 222 33 24 108-174 72-72-213Z"/>
+  </g>
+
+  <g fill="none" stroke="#26362d" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m759 407 116 98M746 326l20 107" stroke-width="24"/>
+    <path d="m520 292-23-80M447 210h100" stroke-width="22"/>
+    <path d="m743 326 39-32 70 4" stroke-width="20"/>
+    <path d="M846 297c24 4 28 24 14 37-9 9-26 7-26-7" stroke-width="17"/>
+    <circle cx="592" cy="505" r="34" stroke-width="15"/>
+    <path d="m592 505-52 70m52-70 55-70" stroke-width="13"/>
+    <path d="M518 577h45M627 433h45" stroke-width="11"/>
   </g>
 </svg>
