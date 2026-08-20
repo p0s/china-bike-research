@@ -1,20 +1,22 @@
 {
   "id": "merida-scultura-endurance-4000-community-lead",
+  "brand_id": "merida",
   "name": "Merida Scultura Endurance 4000",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "An exact-model owner review supplies a useful 34 mm-clearance endurance build that is distinct from the existing Scultura 6000 race-bike target.",
+  "why_interesting": "An exact-model owner review supplies a useful older 11-speed endurance build, while current official pages document a materially different 12-speed generation and a mainland list reference.",
   "missing": [
-    "Claimed complete weight and exact current factory BOM",
-    "Current dealer stock and final transaction price",
-    "Numeric geometry for the exact 2025 mainland trim"
+    "Map the public R7000 review to an exact model year and generation",
+    "Claimed complete weight and numeric geometry for the reviewed older generation",
+    "Current dealer stock and final mainland transaction price"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-merida-scultura-endurance-4000-2026-08-17",
     "merida-scultura-endurance-4000-china-2026-08-17",
-    "merida-warranty-official-2026-08-17"
+    "merida-warranty-official-2026-08-17",
+    "merida-scultura-endurance-4000-official-global-2026-08-20"
   ],
   "observed_price": {
     "amount_cny": 14800,
@@ -28,11 +30,11 @@
     "brakes": "Shimano 105 hydraulic disc",
     "frame": "CF3 carbon",
     "wheels": "Merida Expert SL alloy",
-    "tires": "Maxxis Detonator 32 mm",
+    "tires": "Maxxis Detonator 32C",
     "tire_clearance_mm": 34,
     "mounts": "Fender provision"
   },
   "support_note": "Purchase through the official dealer finder. Merida's policy requires first-owner designated-dealer purchase, warranty card and receipt, with service through the original dealer or a Merida store.",
-  "source_note": "The official mainland page lists ¥14,800 suggested retail and a dealer route. The review's comment that the stock alloy wheels feel heavy remains owner context, not a universal ride verdict.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The official mainland page lists ¥14,800 suggested retail and a dealer route. The review describes the stock alloy wheels as heavy; this is owner context rather than a universal ride verdict. The current global page instead lists CF3 II, Shimano 105 R7100 12-speed, Expert SLIII wheels, Re-Fuse 32 mm tires and 35 mm clearance, so those newer facts are not assigned to the reviewed older build.",
+  "last_reviewed": "2026-08-20"
 }

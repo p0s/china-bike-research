@@ -249,6 +249,7 @@ export function validateDataset(data = loadDataset()) {
   const platformsById = new Map(data.platforms.map((x) => [x.id, x]));
   const variantIds = new Set(data.variants.map((x) => x.id));
   const sourceIds = new Set(data.sources.map((x) => x.id));
+  const sourcesById = new Map(data.sources.map((x) => [x.id, x]));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
   const candidateIds = new Set(data.candidates.map((x) => x.id));
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
@@ -438,7 +439,7 @@ export function validateDataset(data = loadDataset()) {
 
   const accuracyValues = new Set(['exact-variant', 'exact-platform', 'same-platform', 'same-model-different-color', 'same-model-different-market-build', 'illustrative']);
   const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'community-post-photo', 'project-placeholder']);
-  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed']);
+  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation']);
   for (const image of data.images) {
     requireFields('image', image, ['role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
     const targetKeys = ['platform_id', 'candidate_id'].filter((key) => image[key] !== undefined);
@@ -461,16 +462,63 @@ export function validateDataset(data = loadDataset()) {
     if (image.candidate_id !== undefined && image.variant_ids?.length) errors.push(`image ${image.id}: candidate image cannot target variants`);
     const mode = image.hosting?.mode;
     if (mode === 'remote') {
-      if (!['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
+      if (!['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(image.rights?.status)) errors.push(`image ${image.id}: remote image has incompatible rights status`);
       try {
         const parsed = new URL(image.hosting.remote_url);
         if (parsed.protocol !== 'https:') errors.push(`image ${image.id}: remote URL must use HTTPS`);
       } catch { errors.push(`image ${image.id}: invalid remote URL`); }
+      if (image.rights?.status === 'public-post-quotation') {
+        const variants = image.hosting?.variants;
+        if (!Array.isArray(variants) || variants.length !== 2) {
+          errors.push(`image ${image.id}: public-post quotation needs card and detail variants`);
+        } else {
+          const purposes = new Set();
+          for (const variant of variants) {
+            purposes.add(variant?.purpose);
+            const byteLimit = variant?.purpose === 'card' ? 40_000 : variant?.purpose === 'detail' ? 88_000 : 0;
+            const widthLimit = variant?.purpose === 'card' ? 480 : variant?.purpose === 'detail' ? 1200 : 0;
+            if (!byteLimit) errors.push(`image ${image.id}: invalid media variant purpose`);
+            if (!Number.isInteger(variant?.bytes) || variant.bytes < 1 || variant.bytes > byteLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} variant exceeds its byte budget`);
+            if (!Number.isInteger(variant?.width) || variant.width < 1 || variant.width > widthLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} variant has invalid width`);
+            if (!Number.isInteger(variant?.height) || variant.height < 1 || variant.height > 2400) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} variant has invalid height`);
+            if (variant?.format !== 'image/webp') errors.push(`image ${image.id}: quotation variants must be WebP`);
+            if (!/^[a-f0-9]{64}$/.test(variant?.sha256 ?? '')) errors.push(`image ${image.id}: quotation variant needs a SHA-256 digest`);
+            try {
+              const parsed = new URL(variant?.url);
+              if (parsed.protocol !== 'https:' || parsed.hostname !== 'china-bike-media.161-97-123-19.sslip.io') errors.push(`image ${image.id}: quotation variant must use the approved media origin`);
+              if (!/^\/media\/xhs\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(parsed.pathname)) errors.push(`image ${image.id}: quotation variant URL is not immutable`);
+            } catch { errors.push(`image ${image.id}: invalid quotation variant URL`); }
+          }
+          if (purposes.size !== 2 || !purposes.has('card') || !purposes.has('detail')) errors.push(`image ${image.id}: public-post quotation needs one card and one detail variant`);
+          const detail = variants.find((variant) => variant.purpose === 'detail');
+          if (detail && image.hosting.remote_url !== detail.url) errors.push(`image ${image.id}: remote_url must be the detail variant`);
+        }
+        const quotation = image.editorial_quotation;
+        if (quotation?.purpose !== 'editorial-identification-and-commentary'
+          || quotation?.scope !== 'one-compressed-public-post-photo'
+          || quotation?.source_link_required !== true
+          || quotation?.no_license_asserted !== true) errors.push(`image ${image.id}: incomplete editorial quotation record`);
+        try {
+          const route = new URL(quotation?.removal_route);
+          if (route.protocol !== 'https:') errors.push(`image ${image.id}: removal route must use HTTPS`);
+        } catch { errors.push(`image ${image.id}: invalid removal route`); }
+        const privacy = image.privacy_review;
+        if (!isDate(privacy?.reviewed_at)
+          || privacy?.embedded_metadata !== 'stripped'
+          || privacy?.faces !== 'none-visible'
+          || privacy?.vehicle_registration !== 'none-visible'
+          || privacy?.account_identifiers !== 'none-visible'
+          || privacy?.location_identifiers !== 'none-visible') errors.push(`image ${image.id}: incomplete privacy review`);
+        const source = sourcesById.get(image.source_id);
+        if (image.media_type !== 'community-post-photo' || !/^https:\/\/www\.xiaohongshu\.com\/explore\/[a-f0-9]{24}$/.test(source?.url ?? '')) {
+          errors.push(`image ${image.id}: public-post quotation needs an exact public XHS source`);
+        }
+      }
     } else if (mode === 'local') {
       const localPath = image.hosting?.local_path;
       if (typeof localPath !== 'string' || !localPath.startsWith('/assets/images/')) errors.push(`image ${image.id}: invalid local_path`);
       else if (!fs.existsSync(path.join(root, localPath.replace(/^\//, '')))) errors.push(`image ${image.id}: missing local asset ${localPath}`);
-      if (['official-page-embed', 'retailer-page-embed', 'public-post-embed'].includes(image.rights?.status)) errors.push(`image ${image.id}: embed-only image cannot be stored locally`);
+      if (['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(image.rights?.status)) errors.push(`image ${image.id}: third-party remote image cannot be stored locally`);
     } else errors.push(`image ${image.id}: hosting mode must be remote or local`);
   }
 

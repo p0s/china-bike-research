@@ -1,19 +1,22 @@
 {
   "id": "pardus-robin-evo-community-lead",
+  "brand_id": "pardus",
   "name": "PARDUS Robin EVO competition build",
   "category": "road-climbing",
   "type": "complete-bike",
-  "why_interesting": "An exact-model 6.2 kg competition build shows the Robin EVO's lightweight potential while remaining separate from factory trims.",
+  "why_interesting": "An exact-model 6.2 kg competition build shows the Robin EVO's lightweight potential, and official product pages provide a factory reference without conflating the builds.",
   "missing": [
-    "Current exact-generation Robin EVO stock BOM",
-    "Current mainland price and factory claimed weight",
-    "Stock wheel/tire specification and warranty conditions"
+    "Map the competition post to the official 750 g generation or the newer Robin EVO platform",
+    "Current mainland price, current-generation stock BOM and stock state",
+    "Current warranty terms and confirm that the official purchase route is active"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-pardus-robin-evo-build-2026-08-17",
-    "pardus-robin-evo-official-2026-08-17"
+    "public-pardus-robin-evo-photo-2026-08-20",
+    "pardus-robin-evo-official-2026-08-17",
+    "pardus-robin-evo-ultegra-di2-official-2026-08-20"
   ],
   "facts": {
     "drivetrain": "Custom build: Shimano Dura-Ace R9270 with 10-36 cassette",
@@ -21,6 +24,6 @@
     "wheels": "Breo 40 mm custom wheelset",
     "tires": "28C tubeless rear and 25C front"
   },
-  "source_note": "The official product/dealer route is established. The 6.2 kg report remains an XS competition custom build, not an official stock-bike weight.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The official product and dealer route is established, but the 6.2 kg report remains an XS competition custom build rather than an official stock-bike weight. The referenced Ultegra Di2 page states 750 g for an M frame, 290 g for the fork and 295 g for a 400 mm cockpit; generation mapping is still unresolved.",
+  "last_reviewed": "2026-08-20"
 }

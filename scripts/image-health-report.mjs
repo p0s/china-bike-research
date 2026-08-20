@@ -11,6 +11,13 @@ export function classifyImageResponse({ status, contentType = '' }) {
   return contentType.toLowerCase().startsWith('image/') ? 'healthy' : 'wrong-content-type';
 }
 
+export function isBlockingImageResult(result) {
+  let projectOperated = false;
+  try { projectOperated = new URL(result.url).hostname === 'china-bike-media.161-97-123-19.sslip.io'; } catch { /* malformed URLs are handled by data validation */ }
+  return ['broken', 'wrong-content-type'].includes(result.classification)
+    || (projectOperated && result.classification !== 'healthy');
+}
+
 async function requestImage(url, method = 'HEAD') {
   const headers = { 'user-agent': 'china-bike-research-image-health/1.0' };
   if (method === 'GET') headers.range = 'bytes=0-2047';
@@ -29,8 +36,8 @@ async function requestImage(url, method = 'HEAD') {
   return result;
 }
 
-async function inspect(image) {
-  const url = image.hosting.remote_url;
+async function inspect(target) {
+  const { id, url } = target;
   try {
     let response = await requestImage(url, 'HEAD');
     let classification = classifyImageResponse(response);
@@ -38,9 +45,9 @@ async function inspect(image) {
       response = await requestImage(url, 'GET');
       classification = classifyImageResponse(response);
     }
-    return { id: image.id, url, classification, ...response };
+    return { id, url, classification, ...response };
   } catch (error) {
-    return { id: image.id, url, classification: 'unreachable', error: error instanceof Error ? error.message : String(error) };
+    return { id, url, classification: 'unreachable', error: error instanceof Error ? error.message : String(error) };
   }
 }
 
@@ -49,8 +56,8 @@ async function inspectBatch(images) {
   let next = 0;
   const worker = async () => {
     while (next < images.length) {
-      const image = images[next++];
-      results.push(await inspect(image));
+      const target = images[next++];
+      results.push(await inspect(target));
     }
   };
   await Promise.all(Array.from({ length: Math.min(concurrency, images.length) }, worker));
@@ -58,16 +65,20 @@ async function inspectBatch(images) {
 }
 
 async function main() {
-  const images = loadDataset().images.filter((image) => image.hosting.mode === 'remote');
-  const results = await inspectBatch(images);
+  const targets = loadDataset().images
+    .filter((image) => image.hosting.mode === 'remote')
+    .flatMap((image) => image.hosting.variants?.length
+      ? image.hosting.variants.map((variant) => ({ id: `${image.id}:${variant.purpose}`, url: variant.url }))
+      : [{ id: image.id, url: image.hosting.remote_url }]);
+  const results = await inspectBatch(targets);
   const summary = Object.fromEntries(['healthy', 'host-blocked', 'wrong-content-type', 'broken', 'unreachable'].map((key) => [key, results.filter((result) => result.classification === key).length]));
   for (const result of results) {
     const detail = result.status ? `${result.status} ${result.contentType || 'unknown content type'}` : result.error;
     console.log(`${result.classification.padEnd(18)} ${result.id} — ${detail}`);
   }
-  console.log(`\nChecked ${results.length} remote images: ${Object.entries(summary).map(([key, count]) => `${count} ${key}`).join(', ')}.`);
+  console.log(`\nChecked ${results.length} remote image resources: ${Object.entries(summary).map(([key, count]) => `${count} ${key}`).join(', ')}.`);
   console.log('Host-blocked and unreachable embeds remain non-blocking because the site provides rights-safe local fallbacks.');
-  if (process.argv.includes('--strict') && (summary.broken || summary['wrong-content-type'])) process.exitCode = 1;
+  if (process.argv.includes('--strict') && results.some(isBlockingImageResult)) process.exitCode = 1;
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

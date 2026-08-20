@@ -4,11 +4,20 @@
   "role": "primary",
   "subject_accuracy": "exact-platform",
   "media_type": "community-post-photo",
-  "hosting": { "mode": "remote", "remote_url": "https://sns-webpic-qc.xhscdn.com/202608171823/1eb6cdaecf97fc588f30511e9b6d341a/note_pre_post_uhdr/1040g3r831ue5jprd2abg5o3aock08kc7aii1ia0!nd_dft_wlteh_webp_3" },
+  "hosting": {
+    "mode": "remote",
+    "remote_url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/pardus-spark-rs/a0ed3c4fdd93602c-detail-w920.webp",
+    "variants": [
+      { "purpose": "card", "url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/pardus-spark-rs/263dd375a2669346-card-w480.webp", "width": 480, "height": 389, "bytes": 38814, "sha256": "263dd375a26693461a5ab924c5f44e032ab4f231e3c269a16dd3f76667a335d1", "format": "image/webp" },
+      { "purpose": "detail", "url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/pardus-spark-rs/a0ed3c4fdd93602c-detail-w920.webp", "width": 920, "height": 745, "bytes": 84380, "sha256": "a0ed3c4fdd93602c0b15a0a0f7db6754a06b18229361a3d2e696fdde5de7fc1d", "format": "image/webp" }
+    ]
+  },
   "source_id": "public-pardus-spark-rs-build-2026-08-17",
-  "rights": { "status": "public-post-embed", "copyright_holder": "Original public-post image owner", "usage_note": "Remote embed of a public post image; no redistribution license is asserted and the file is not stored by the project." },
-  "credit": "Original public-post image owner (identity not retained)",
-  "alt": "Public post photo of a PARDUS Spark RS custom road build",
-  "reviewed_at": "2026-08-17",
-  "display_note": "Exact Spark RS platform in a custom build; components may differ from a factory trim."
+  "rights": { "status": "public-post-quotation", "copyright_holder": "Original XHS post creator", "usage_note": "One compressed editorial quotation is hosted on the project media origin; no reuse license is asserted and the source file is not stored in Git." },
+  "credit": "Original XHS post creator; see the linked source",
+  "alt": "Quoted public-post photo of a white PARDUS Spark RS custom road build",
+  "reviewed_at": "2026-08-20",
+  "display_note": "Exact Spark RS platform in a custom build; components may differ from a factory trim.",
+  "editorial_quotation": { "purpose": "editorial-identification-and-commentary", "scope": "one-compressed-public-post-photo", "source_link_required": true, "no_license_asserted": true, "removal_route": "https://github.com/p0s/china-bike-research/issues" },
+  "privacy_review": { "reviewed_at": "2026-08-20", "embedded_metadata": "stripped", "faces": "none-visible", "vehicle_registration": "none-visible", "account_identifiers": "none-visible", "location_identifiers": "none-visible" }
 }

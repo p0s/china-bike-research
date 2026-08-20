@@ -1,11 +1,12 @@
 {
   "id": "pardus-spark-rs-community-lead",
+  "brand_id": "pardus",
   "name": "PARDUS Spark RS custom build",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "An exact-model Spark RS build adds a separately identified high-performance branch to the broader Spark family.",
+  "why_interesting": "An exact-model custom build and exact official Spark RS pages identify a high-performance branch separately from the broader Spark family and its factory Rival trim.",
   "missing": [
-    "Current exact-generation Spark RS stock BOM",
+    "Map the custom post's frame generation and color to the official Spark RS classic page",
     "Current mainland list price, dealer stock and trim mapping",
     "Claimed stock weight, warranty and service route"
   ],
@@ -14,15 +15,16 @@
   "source_ids": [
     "public-pardus-spark-rs-build-2026-08-17",
     "pardus-spark-family-official-2026-08-17",
-    "pardus-spark-rs-official-2026-08-17"
+    "pardus-spark-rs-official-2026-08-17",
+    "pardus-spark-rs-rival-official-2026-08-20"
   ],
   "facts": {
     "drivetrain": "Custom build: Shimano 105 mechanical with R8170 crank/chain upgrade",
     "frame": "T800 carbon reported",
-    "wheels": "Custom reinforced T700/T800 carbon wheel build",
+    "wheels": "Airwolf carbon wheelset",
     "tires": "Pirelli P Zero Race TLR",
     "cockpit": "PARDUS M-BRONZE integrated carbon cockpit"
   },
-  "source_note": "An official exact-model product/dealer route is established. The public record is still an owner build rather than a factory configuration, and its mentioned price drop has no defensible amount.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "Official exact-model product and dealer routes are established. The public record remains an owner build rather than a factory configuration, and its mentioned price drop has no defensible amount. The official Spark RS classic page separately lists an HS-EPS+ frame, hidden-cable cockpit, SRAM Rival hydraulic 2×11 and PW-5 DB alloy wheels.",
+  "last_reviewed": "2026-08-20"
 }
