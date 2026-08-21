@@ -52,7 +52,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 44);
-  assert.equal(data.images.length, 124);
+  assert.equal(data.images.length, 125);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 199);
@@ -77,6 +77,12 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(gt350.image.candidate_id, 'xds-gt350');
   assert.equal(gt350.image.subject_accuracy, 'exact-platform');
   assert.equal(gt350.imageSource.id, 'xds-gt350-retailer-2026-08-08');
+
+  const oldTwitterCarbon = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
+  assert.equal(oldTwitterCarbon.candidate.status, 'superseded');
+  assert.equal(oldTwitterCarbon.image.subject_accuracy, 'exact-platform');
+  assert.equal(oldTwitterCarbon.image.hosting.mode, 'remote');
+  assert.equal(oldTwitterCarbon.imageSource.id, 'twitter-gravel-v3-2024-public-listing-image-2026-08-21');
 
   const earlyLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
   assert.equal(earlyLead.defaultVisible, false);
@@ -202,7 +208,10 @@ test('Twitter Gravel V3 generations and configurations remain separate', () => {
   assert.equal(data.platforms.filter((item) => item.id === 'twitter-gravel-v3').length, 1);
   assert.equal(data.platforms.filter((item) => item.id === 'twitter-gravel-v3-2024').length, 1);
   assert.equal(data.platforms.find((item) => item.id === 'twitter-gravel-v3').frame.bottom_bracket, 'T47');
-  assert.match(data.platforms.find((item) => item.id === 'twitter-gravel-v3-2024').frame.bottom_bracket, /BB92.*press-fit/);
+  const oldPlatform = data.platforms.find((item) => item.id === 'twitter-gravel-v3-2024');
+  assert.match(oldPlatform.frame.bottom_bracket, /BB92.*press-fit/);
+  assert.equal(oldPlatform.status, 'superseded');
+  assert.equal(oldPlatform.successor.platform_id, 'twitter-gravel-v3');
 });
 
 test('2024 Twitter alloy and carbon-wave evidence never share a price', () => {
@@ -215,6 +224,9 @@ test('2024 Twitter alloy and carbon-wave evidence never share a price', () => {
   assert.equal(carbon.facts.complete_weight_g, 9500);
   assert.match(carbon.facts.wheels, /50 mm wave-profile carbon/);
   assert.equal(price.amount_cny, 3991);
+  assert.equal(price.status, 'historical-superseded');
+  assert.equal(carbon.status, 'superseded');
+  assert.match(carbon.availability_note, /no longer sold new.*superseded by the 2025 Gravel V3/i);
   assert.match(price.conditions, /alloy-wheel/);
   assert.match(price.conditions, /Do not apply this price.*carbon-wave-wheel/);
 });
@@ -312,8 +324,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'lightcarbon-speedz',
     'twitter-gravel-v3-2024'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 121);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 88);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 122);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 89);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),

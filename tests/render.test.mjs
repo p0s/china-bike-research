@@ -94,6 +94,33 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(sparseDetail, /Price not verified/);
   assert.match(sparseDetail, /No model-specific hardware facts are verified yet/);
   assert.match(sparseDetail, /Identity not confirmed/);
+
+  const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
+  const oldTwitterCarbonDetail = renderCandidateModel(context, oldTwitterCarbon);
+  assert.match(oldTwitterCarbonDetail, /<strong>Not sold new<\/strong><span>Superseded by 2025 Gravel V3<\/span>/);
+  assert.match(oldTwitterCarbonDetail, /Superseded model/);
+  assert.match(oldTwitterCarbonDetail, /This 2024 version is no longer sold new\. It was superseded by the 2025 Gravel V3/);
+  assert.match(oldTwitterCarbonDetail, /Product image via public marketplace listing mirror · Exact frame platform/);
+  assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 carbon-wave public listing image/);
+  assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
+});
+
+test('superseded published bikes show availability instead of a historical price headline', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-21T00:00:00Z')
+  };
+  const oldTwitterAlloy = products.find((entry) => entry.variant.id === 'twitter-v3-2024-rs-sensah-alloy');
+  const detail = renderModel(context, oldTwitterAlloy);
+  assert.match(detail, /<strong>Not sold new<\/strong>/);
+  assert.match(detail, /Superseded by 2025 Gravel V3/);
+  assert.match(detail, /The dated price record below is historical only/);
+  assert.match(detail, /¥3,991[\s\S]*Historical listing option · Historical price for a superseded model/);
+  assert.doesNotMatch(detail, /The recorded complete-bike price is ¥3,991/);
 });
 
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {

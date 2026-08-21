@@ -5,8 +5,12 @@
   "name_zh": "Gravel V3 2024款",
   "category": "gravel",
   "handlebar": "drop",
-  "status": "historical",
-  "summary": "Older press-fit Gravel V3 generation sold with mechanical RS/Sensah 2×12, full-hydraulic brakes, and separate 38 mm alloy or 50 mm wave-carbon wheel packages. Keep it distinct from later T47 V3 builds that reuse the same model name.",
+  "status": "superseded",
+  "summary": "Discontinued press-fit Gravel V3 generation sold with mechanical RS/Sensah 2×12, full-hydraulic brakes, and separate 38 mm alloy or 50 mm wave-carbon wheel packages. It is no longer sold new and was superseded by the 2025 Gravel V3; keep it distinct from later T47 builds that reuse the same model name.",
+  "successor": {
+    "platform_id": "twitter-gravel-v3",
+    "label": "2025 Gravel V3"
+  },
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
@@ -51,7 +55,7 @@
   },
   "mounts": [],
   "internal_storage": false,
-  "china_availability": "mainland-marketplace-observed",
+  "china_availability": "discontinued-superseded",
   "source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21"
   ],
