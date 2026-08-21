@@ -123,16 +123,19 @@ function candidateFallback(ctx, entry) {
     : '/assets/images/placeholders/complete-bike.svg');
 }
 
-function candidateImageElement(ctx, entry, { hero = false } = {}) {
+function candidateImageElement(ctx, entry, { hero = false, image = entry.image, className = '', decorative = false, galleryHero = false } = {}) {
   const fallback = candidateFallback(ctx, entry);
-  const placeholder = entry.image?.media_type === 'project-placeholder';
-  const source = placeholder ? fallback : imageUrl(ctx, entry.image) || fallback;
-  const alt = placeholder
+  const placeholder = image?.media_type === 'project-placeholder';
+  const source = placeholder ? fallback : imageUrl(ctx, image) || fallback;
+  const alt = decorative
+    ? ''
+    : placeholder
     ? `Illustrated placeholder for ${entry.candidate.name}; verified product photo unavailable`
-    : entry.image?.alt ?? `${entry.candidate.name} candidate image`;
-  const remote = !placeholder && entry.image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(placeholder ? null : entry.image, { hero });
-  return `<img${placeholder ? ' class="is-placeholder"' : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+    : image?.alt ?? `${entry.candidate.name} candidate image`;
+  const remote = !placeholder && image?.hosting.mode === 'remote';
+  const classes = [className, placeholder ? 'is-placeholder' : ''].filter(Boolean).join(' ');
+  const responsive = responsiveAttributes(placeholder ? null : image, { hero });
+  return `<img${classes ? ` class="${escapeAttr(classes)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateImage(ctx, entry) {
@@ -142,6 +145,31 @@ function candidateImage(ctx, entry) {
   const detailUrl = url(ctx.base, `/models/${entry.candidate.id}/`);
   const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} research profile">${candidateImageElement(ctx, entry)}</a>`;
   return `<span class="product-image">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'])}</span>` : ''}</span>`;
+}
+
+function candidateGalleryFigure(ctx, entry) {
+  const primary = entry.image;
+  const images = [primary, ...(entry.galleryImages ?? [])].filter(Boolean);
+  const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
+  const primarySource = entry.imageSource;
+  if (images.length < 2) {
+    const usage = imageUsageLabel(primary);
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Project placeholder')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+  }
+
+  const imageSource = (image) => image === primary ? primarySource : image.source;
+  const caption = (image, index) => [
+    image.credit ?? 'Product image',
+    accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
+    imageUsageLabel(image),
+    `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
+  ].filter(Boolean).join(' · ');
+  const thumbs = images.map((image, index) => {
+    const source = imageSource(image);
+    const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+  }).join('');
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
 function infoTip(label, lines, attributes = {}) {
@@ -185,6 +213,7 @@ function availabilityLabel(value) {
     'mainland-and-direct': 'mainland retail and direct',
     'mainland-domestic': 'mainland domestic',
     'mainland-marketplace-observed': 'mainland marketplace observed',
+    'discontinued-superseded': 'discontinued; superseded by the 2025 Gravel V3',
     'preorder-direct': 'direct preorder'
   });
 }
@@ -200,6 +229,7 @@ function priceStatusLabel(status) {
     'configuration-or-promotion-range': 'configuration or promotion range',
     historical: 'historical price',
     'historical-promo': 'historical promotion',
+    'historical-superseded': 'historical price for a superseded model',
     'observed-current': 'observed current price',
     'official-current': 'official current price',
     'promotion-conditional': 'promotion-conditional price'
@@ -213,6 +243,7 @@ function compactPriceStatus(status) {
     'configuration-or-promotion-range': 'Variable',
     historical: 'Historical',
     'historical-promo': 'Historical promo',
+    'historical-superseded': 'Historical · superseded',
     'observed-current': 'Observed',
     'official-current': 'Official',
     'promotion-conditional': 'Promo'
@@ -232,11 +263,30 @@ function priceStateClass(product) {
   return '';
 }
 
+function platformIsSuperseded(product) {
+  return product.platform.status === 'superseded';
+}
+
+function successorLabel(record, fallback = 'newer generation') {
+  return record?.successor?.label ?? fallback;
+}
+
+function publishedPriceLabel(product) {
+  return platformIsSuperseded(product) ? 'Not sold new' : formatAllInPrice(product);
+}
+
+function publishedPriceState(product) {
+  return platformIsSuperseded(product)
+    ? `Superseded by ${successorLabel(product.platform)}`
+    : priceState(product);
+}
+
 function priceTooltipLines(ctx, product) {
   const { variant, latestPrice, allInPrice } = product;
   const fresh = freshness(latestPrice?.observed_at, ctx.now);
-  const threshold = variant.editorial.price_thresholds_cny?.great_buy_below;
+  const threshold = platformIsSuperseded(product) ? null : variant.editorial.price_thresholds_cny?.great_buy_below;
   const lines = [];
+  if (platformIsSuperseded(product)) lines.push(`This version is no longer sold new and was superseded by the ${successorLabel(product.platform)}.`);
   if (variant.kind === 'frameset') {
     lines.push(`Frameset price: ${formatPrice(latestPrice)}.`);
     lines.push(`Estimated complete adds a fixed ${formatCny(allInPrice.buildAmount)} ${buildAssumption(ctx).label}.`);
@@ -245,7 +295,11 @@ function priceTooltipLines(ctx, product) {
   } else if (threshold) {
     lines.push(`Great-buy reference: below ${formatCny(threshold)}.`);
   }
-  if (latestPrice?.observed_at) lines.push(`Price observed ${latestPrice.observed_at}; ${fresh.label.toLowerCase()} as of this snapshot.`);
+  if (latestPrice?.observed_at) {
+    lines.push(latestPrice.status?.startsWith('historical')
+      ? `Historical price observed ${latestPrice.observed_at}.`
+      : `Price observed ${latestPrice.observed_at}; ${fresh.label.toLowerCase()} as of this snapshot.`);
+  }
   if (latestPrice?.status) lines.push(`Record status: ${priceStatusLabel(latestPrice.status)}.`);
   if (latestPrice?.conditions) lines.push(latestPrice.conditions);
   return lines;
@@ -424,6 +478,7 @@ function productRow(ctx, product) {
     ...(variant.editorial.best_for ?? [])
   ].filter(Boolean).join(' ').toLowerCase();
   const recommendation = recommendationFor(ctx, product);
+  const superseded = platformIsSuperseded(product);
   const bestFor = bestForLabel(product);
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const framesetData = variant.kind === 'frameset'
@@ -432,7 +487,7 @@ function productRow(ctx, product) {
   const priceTipAttributes = variant.kind === 'frameset'
     ? { 'data-frameset-price-tip': '', 'data-frame-threshold': variant.editorial.price_thresholds_cny?.great_buy_below ?? '' }
     : {};
-  return `<div class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${allInPrice.midpoint}" data-price-filter="${allInPrice.high ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
+  return `<div class="catalog-row" role="row" data-product-row data-id="${escapeAttr(variant.id)}" data-brand="${escapeAttr(brand.id)}" data-search="${escapeAttr(searchable)}" data-type="${escapeAttr(variant.kind)}" data-family="${escapeAttr(categoryFamily(platform.category))}" data-category="${escapeAttr(platform.category)}" data-handlebar="${escapeAttr(platform.handlebar)}" data-price-sort="${superseded ? '' : allInPrice.midpoint}" data-price-filter="${superseded ? '' : allInPrice.high ?? ''}" data-capability-sort="${metric.sortValue}" data-capability-kind="${escapeAttr(metric.kind)}" data-name="${escapeAttr(`${brand.name} ${variant.name}`.toLowerCase())}"${framesetData}>
     <div class="compare-toggle" role="cell"><label><input type="checkbox" data-compare-id="${escapeAttr(variant.id)}"><span aria-hidden="true"></span><span class="sr-only">Select ${escapeHtml(brand.name)} ${escapeHtml(variant.name)} for comparison</span></label></div>
     <div class="catalog-product" role="cell">
       ${productImage(ctx, product, { href: url(ctx.base, `/models/${variant.id}/`) })}
@@ -442,7 +497,7 @@ function productRow(ctx, product) {
         ${bestFor ? `<span class="product-fit"><span>Best for</span> ${escapeHtml(bestFor)}</span>` : ''}
       </span>
     </div>
-    <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main"><span data-calculated-price>${escapeHtml(formatAllInPrice(product))}</span>${infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes)}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(priceState(product))}</span></div>
+    <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main"><span data-calculated-price>${escapeHtml(publishedPriceLabel(product))}</span>${infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes)}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(publishedPriceState(product))}</span></div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}"><span class="metric-main">${escapeHtml(metric.value)}${infoTip(`${metric.label} details`, metric.details)}</span></div>
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain"><span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span></div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span><span class="metric-sub">${escapeHtml(weightSubline(product))}</span></div>
@@ -498,7 +553,7 @@ function candidateFramePriceTerm(entry) {
 }
 
 function candidatePriceLabel(ctx, entry) {
-  if (!entry.price) return '—';
+  if (!entry.price) return entry.candidate.status === 'superseded' ? 'Not sold new' : '—';
   if (entry.kind !== 'frameset') {
     const price = formatPrice(entry.price);
     return entry.price.price_type === 'reference-conversion' ? `Est. ${price}` : price;
@@ -510,7 +565,11 @@ function candidatePriceLabel(ctx, entry) {
 }
 
 function candidatePriceState(entry) {
-  if (!entry.price) return '';
+  if (!entry.price) {
+    return entry.candidate.status === 'superseded'
+      ? `Superseded by ${successorLabel(entry.candidate)}`
+      : '';
+  }
   const priceType = entry.price.price_type ?? '';
   const basis = priceType === 'reference-conversion'
     ? 'Official FX estimate'
@@ -610,12 +669,12 @@ function comparisonSummary(ctx, product) {
     imageRemote: product.image?.hosting.mode === 'remote',
     ...comparisonImageFields(product.image),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
-    price: formatAllInPrice(product),
+    price: publishedPriceLabel(product),
     estimated: product.allInPrice.estimated,
     frameLow: product.allInPrice.frameLow,
     frameHigh: product.allInPrice.frameHigh,
-    greatBuyFrameThreshold: product.variant.editorial.price_thresholds_cny?.great_buy_below ?? null,
-    priceState: priceState(product),
+    greatBuyFrameThreshold: platformIsSuperseded(product) ? null : product.variant.editorial.price_thresholds_cny?.great_buy_below ?? null,
+    priceState: publishedPriceState(product),
     priceDetails: priceTooltipLines(ctx, product).join(' '),
     categoryMetric: metric.value,
     categoryMetricLabel: metric.label,
@@ -650,7 +709,9 @@ function candidateComparisonSummary(ctx, entry) {
     : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
       ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
       : '—';
-  const priceDetails = estimated
+  const priceDetails = entry.candidate.status === 'superseded'
+    ? candidatePublicText(entry.candidate.availability_note)
+    : estimated
     ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds a fixed ${formatCny(assumption.amount_cny)} ${assumption.label}.`
     : entry.candidate.source_note ?? '';
   const frame = facts.frame ?? entry.candidate.manufacturing;
@@ -849,7 +910,10 @@ export function renderHome(ctx) {
     ...candidates.map((entry) => candidateComparisonSummary(ctx, entry))
   ];
   const rows = [
-    ...ctx.products.map((product) => ({ price: product.allInPrice.midpoint, html: productRow(ctx, product) })),
+    ...ctx.products.map((product) => ({
+      price: platformIsSuperseded(product) ? Number.POSITIVE_INFINITY : product.allInPrice.midpoint,
+      html: productRow(ctx, product)
+    })),
     ...candidates.map((entry) => ({
       price: entry.priceMidpoint + (entry.kind === 'frameset' && Number.isFinite(entry.priceMidpoint) ? assumption.amount_cny : 0),
       html: candidateRow(ctx, entry)
@@ -892,7 +956,10 @@ export function renderModel(ctx, product) {
   const { variant, platform, brand, latestPrice, prices, videos } = product;
   const assumption = buildAssumption(ctx);
   const metric = categoryMetric(platform);
-  const priceSubline = [variant.kind === 'frameset' ? 'Estimated complete build' : '', priceState(product)].filter(Boolean).join(' · ');
+  const superseded = platformIsSuperseded(product);
+  const priceSubline = superseded
+    ? publishedPriceState(product)
+    : [variant.kind === 'frameset' ? 'Estimated complete build' : '', priceState(product)].filter(Boolean).join(' · ');
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
   const imageAccuracy = accuracyLabel(product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative');
   const bestFor = variant.editorial.best_for?.join(', ');
@@ -904,7 +971,9 @@ export function renderModel(ctx, product) {
     weight !== '—' ? `${weight} claimed weight` : null,
     metric.kind !== 'discipline' && metric.value !== '—' ? `${metric.label.toLowerCase()} ${metric.value}` : null
   ].filter(Boolean).join('; ');
-  const priceBrief = variant.kind === 'frameset'
+  const priceBrief = superseded
+    ? `This version is no longer sold new and was superseded by the ${successorLabel(platform)}. The dated price record below is historical only.`
+    : variant.kind === 'frameset'
     ? `The displayed ${formatAllInPrice(product)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the latest frame price.`
     : `The recorded complete-bike price is ${formatAllInPrice(product)}; the dated price record below preserves its channel and conditions.`;
   const modelPriceAttributes = variant.kind === 'frameset'
@@ -921,7 +990,7 @@ export function renderModel(ctx, product) {
   const specificationRows = publishedSpecificationRows(product);
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
     <figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption><span data-image-caption-status>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${imageUsageLabel(product.image) ? ` · ${escapeHtml(imageUsageLabel(product.image))}` : ''}</span>${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
-    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(formatAllInPrice(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
@@ -948,6 +1017,7 @@ function candidateMaturityLabel(status) {
   if (['exact-trim-unproven', 'exact-build-unproven', 'split-variant-before-publish'].includes(status)) return 'Exact configuration not confirmed';
   if (status === 'missing-china-price') return 'China price not verified';
   if (status === 'old-stock-only') return 'Old-stock lead';
+  if (status === 'superseded') return 'Superseded model';
   if (['needs-exact-model', 'needs-provenance', 'needs-provenance-and-price'].includes(status)) return 'Identity not confirmed';
   return 'Research profile';
 }
@@ -960,12 +1030,14 @@ export function renderCandidateModel(ctx, entry) {
   const maturity = candidateMaturityLabel(candidate.status);
   const brandLabel = brand ? `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}` : 'Brand not confirmed';
   const category = entry.categories.map(categoryLabel).join(' · ') || 'Category not confirmed';
-  const imageAccuracy = accuracyLabel(entry.image?.display_accuracy ?? entry.image?.subject_accuracy ?? 'illustrative');
-  const price = entry.price ? candidatePriceLabel(ctx, entry) : 'Price not verified';
+  const isSuperseded = candidate.status === 'superseded';
+  const price = entry.price || isSuperseded ? candidatePriceLabel(ctx, entry) : 'Price not verified';
   const priceState = candidatePriceState(entry);
   const assumption = buildAssumption(ctx);
   const priceBrief = !entry.price
-    ? 'No defensible price is recorded yet.'
+    ? isSuperseded
+      ? candidatePublicText(candidate.availability_note) || `This version is no longer sold new and was superseded by the ${successorLabel(candidate)}.`
+      : 'No defensible price is recorded yet.'
     : entry.kind === 'frameset'
       ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
       : entry.price.price_type === 'reference-conversion'
@@ -982,7 +1054,7 @@ export function renderCandidateModel(ctx, entry) {
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}${imageUsageLabel(entry.image) ? ` · ${escapeHtml(imageUsageLabel(entry.image))}` : ''}</span>${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    ${candidateGalleryFigure(ctx, entry)}
     <div class="model-summary"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Profile status</dt><dd>${escapeHtml(maturity)}</dd></div>${facts.slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">

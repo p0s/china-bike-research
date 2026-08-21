@@ -446,7 +446,8 @@ export function validateDataset(data = loadDataset()) {
     if (targetKeys.length !== 1) errors.push(`image ${image.id}: target must identify exactly one platform or candidate`);
     if (image.platform_id !== undefined && !platformIds.has(image.platform_id)) errors.push(`image ${image.id}: missing platform ${image.platform_id}`);
     if (image.candidate_id !== undefined && !candidateIds.has(image.candidate_id)) errors.push(`image ${image.id}: missing candidate ${image.candidate_id}`);
-    if (image.role !== 'primary') errors.push(`image ${image.id}: unsupported role ${image.role}`);
+    if (!['primary', 'gallery'].includes(image.role)) errors.push(`image ${image.id}: unsupported role ${image.role}`);
+    if (image.role === 'gallery' && image.candidate_id === undefined) errors.push(`image ${image.id}: gallery images currently require a candidate target`);
     if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
     if (!isDate(image.reviewed_at)) errors.push(`image ${image.id}: invalid reviewed_at`);
@@ -734,7 +735,12 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const sourceIds = candidate.source_ids ?? [];
       const candidateSources = sourceIds.map((id) => sources.get(id)).filter(Boolean);
       const source = candidateSources.find((item) => item?.url) ?? null;
-      const image = data.images.find((item) => item.candidate_id === candidate.id && item.role === 'primary') ?? null;
+      const candidateImages = data.images.filter((item) => item.candidate_id === candidate.id);
+      const image = candidateImages.find((item) => item.role === 'primary') ?? null;
+      const galleryImages = candidateImages
+        .filter((item) => item.role === 'gallery')
+        .sort((a, b) => (a.sort_order ?? Number.POSITIVE_INFINITY) - (b.sort_order ?? Number.POSITIVE_INFINITY) || a.id.localeCompare(b.id))
+        .map((item) => ({ ...item, source: sources.get(item.source_id) ?? null }));
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -752,6 +758,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         sources: candidateSources,
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
+        galleryImages,
         defaultVisible: Boolean(
           officialPrice ||
           (observedPrice && hasIdentifiableModel) ||

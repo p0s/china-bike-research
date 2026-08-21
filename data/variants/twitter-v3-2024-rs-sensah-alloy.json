@@ -1,0 +1,67 @@
+{
+  "id": "twitter-v3-2024-rs-sensah-alloy",
+  "platform_id": "twitter-gravel-v3-2024",
+  "name": "Gravel V3 2024 RS / Sensah 2×12 alloy",
+  "kind": "complete-bike",
+  "market": "mainland-china",
+  "editorial": {
+    "verdict": "This discontinued 2024 V3 build paired mechanical 2×12 and hydraulic braking with 38 mm alloy wheels. It was superseded by the 2025 Gravel V3; the retained ¥3,991 observation is historical and does not describe the carbon-wave sibling SKU.",
+    "best_for": [
+      "budget complete",
+      "drop-bar gravel",
+      "battery-free shifting"
+    ],
+    "strengths": [
+      "Carbon frame, fork, and cockpit package at an unusually low complete-bike price",
+      "Full-hydraulic braking with mechanical shifting",
+      "Dated domestic marketplace SKU evidence"
+    ],
+    "caveats": [
+      "No longer sold new; any used example or remaining stock needs independent condition and provenance checks",
+      "Older press-fit frame generation rather than the later T47 V3",
+      "Maximum clearance and frame-molding provenance are not clearly published",
+      "The reused Taobao page has conflicting size graphics and warns that exact component batches can vary"
+    ],
+    "price_thresholds_cny": {
+      "great_buy_below": 4100,
+      "fair_buy_below": 4500,
+      "not_compelling_above": 5000
+    }
+  },
+  "source_ids": [
+    "twitter-gravel-v3-2024-taobao-2026-08-21"
+  ],
+  "drivetrain": {
+    "brand": "RS / Sensah",
+    "model": "HRC6900 / RD8500 2×12",
+    "speeds": "2x12",
+    "shifting": "mechanical",
+    "layout": "double",
+    "shifters": "HRC/HRD6900-family mechanical 2×12 controls",
+    "front_derailleur": "Microshift in one table; RS in another reused graphic",
+    "rear_derailleur": "RD8500-family 12-speed",
+    "crankset": "SENICX PR6 hollow-alloy 50/34T",
+    "cassette": "Sunshine 12-speed 11–32T",
+    "chain": "SUMC 12-speed"
+  },
+  "brakes": {
+    "actuation": "hydraulic",
+    "type": "disc",
+    "calipers": "Sensah/RS G100-family flat-mount",
+    "rotors": "160/160 mm center-lock"
+  },
+  "wheels": {
+    "rim_material": "aluminum",
+    "depth_mm": 38,
+    "description": "Seller-listed 38 mm double-wall aluminum wheelset; separate from the 50 mm wave-carbon option"
+  },
+  "tires": "Innova 700×40C tan-wall (seller-listed stock tire)",
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true,
+    "dimensions": "nominally 420×90 mm"
+  },
+  "seatpost": "Proprietary aero carbon seatpost",
+  "claimed_complete_weight_g": 9900,
+  "purchase_route": "No longer sold new; superseded by the 2025 Gravel V3. Treat the Taobao page only as legacy product evidence. Used examples or claimed remaining stock need independent SKU, condition, and provenance checks."
+}

@@ -37,6 +37,20 @@ test('failed product photos disclose the visible placeholder', () => {
   assert.match(script, /captionStatus\.textContent = 'Source image unavailable · Project placeholder shown'/);
 });
 
+test('product galleries are explicit, keyboard-operable, and motion-safe', () => {
+  assert.match(script, /document\.querySelectorAll\('\[data-image-gallery\]'\)/);
+  assert.match(script, /const selectImage = \(button\) =>/);
+  assert.match(script, /button\.addEventListener\('click', \(\) => selectImage\(button\)\)/);
+  assert.match(script, /ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1/);
+  assert.match(script, /event\.key === 'Home'/);
+  assert.match(script, /event\.key === 'End'/);
+  assert.match(script, /hero\.dataset\.fallbackApplied = ''/);
+  assert.match(styles, /\.model-gallery-strip \{[^}]*grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.gallery-hero-image\.is-switching \{[^}]*opacity: \.18/);
+  assert.match(styles, /\.gallery-thumb\[aria-pressed="true"\]/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+});
+
 test('catalog headings and compact control share directional sorting', () => {
   assert.match(script, /const defaultSortModes = \{ price: 'price-asc', name: 'name-asc', capability: 'capability-desc' \}/);
   assert.match(script, /function canonicalSortMode\(value\)/);

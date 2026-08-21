@@ -38,13 +38,58 @@
       image.classList.add('is-fallback');
       image.removeAttribute('referrerpolicy');
       image.alt = `${image.alt || 'Product image'} — source unavailable; showing project placeholder`;
-      const captionStatus = image.closest('.model-figure')?.querySelector('[data-image-caption-status]');
+      const captionStatus = image.closest('.model-gallery-strip')
+        ? null
+        : image.closest('.model-figure')?.querySelector('[data-image-caption-status]');
       if (captionStatus instanceof HTMLElement) captionStatus.textContent = 'Source image unavailable · Project placeholder shown';
     };
-    image.addEventListener('error', useFallback, { once: true });
+    image.addEventListener('error', useFallback);
     if (image.complete && image.naturalWidth === 0) useFallback();
   }
   document.querySelectorAll('[data-product-image]').forEach(enableImageFallback);
+
+  document.querySelectorAll('[data-image-gallery]').forEach((gallery) => {
+    const hero = gallery.querySelector('[data-gallery-hero]');
+    const caption = gallery.querySelector('[data-gallery-caption]');
+    const sourceLink = gallery.querySelector('[data-gallery-source-link]');
+    const buttons = [...gallery.querySelectorAll('[data-gallery-thumb]')];
+    if (!(hero instanceof HTMLImageElement) || !buttons.length) return;
+
+    const selectImage = (button) => {
+      if (!(button instanceof HTMLButtonElement) || button.getAttribute('aria-pressed') === 'true') return;
+      hero.classList.add('is-switching');
+      window.setTimeout(() => {
+        hero.dataset.fallbackApplied = '';
+        hero.classList.remove('is-fallback', 'is-placeholder');
+        hero.src = button.dataset.gallerySrc ?? hero.src;
+        hero.alt = button.dataset.galleryAlt ?? hero.alt;
+        if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
+        else hero.removeAttribute('referrerpolicy');
+        if (caption instanceof HTMLElement) caption.textContent = button.dataset.galleryCaption ?? '';
+        if (sourceLink instanceof HTMLAnchorElement) {
+          const href = button.dataset.gallerySource;
+          sourceLink.hidden = !href;
+          if (href) sourceLink.href = href;
+        }
+        buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        requestAnimationFrame(() => hero.classList.remove('is-switching'));
+      }, 80);
+    };
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => selectImage(button));
+      button.addEventListener('keydown', (event) => {
+        const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+        let nextIndex = offsets[event.key] === undefined ? index : (index + offsets[event.key] + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = buttons.length - 1;
+        else if (offsets[event.key] === undefined) return;
+        event.preventDefault();
+        buttons[nextIndex].focus();
+        selectImage(buttons[nextIndex]);
+      });
+    });
+  });
 
   const tooltipPanel = document.querySelector('#shared-tooltip');
   const tooltipButtons = [...document.querySelectorAll('[data-tooltip-lines]')];

@@ -1,0 +1,63 @@
+{
+  "id": "twitter-gravel-v3-2024",
+  "brand_id": "twitter",
+  "name": "Gravel V3 2024",
+  "name_zh": "Gravel V3 2024款",
+  "category": "gravel",
+  "handlebar": "drop",
+  "status": "superseded",
+  "summary": "Discontinued press-fit Gravel V3 generation sold with mechanical RS/Sensah 2×12, full-hydraulic brakes, and separate 38 mm alloy or 50 mm wave-carbon wheel packages. It is no longer sold new and was superseded by the 2025 Gravel V3; keep it distinct from later T47 builds that reuse the same model name.",
+  "successor": {
+    "platform_id": "twitter-gravel-v3",
+    "label": "2025 Gravel V3"
+  },
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "BB92×41×24 press-fit (seller listing)",
+    "derailleur_hanger": "standard",
+    "cable_routing": "fully-internal",
+    "claimed_fiber": "high-modulus carbon (seller claim)",
+    "configuration_notes": {
+      "source_id": "twitter-gravel-v3-2024-taobao-2026-08-21",
+      "listed_item_number": "GRAVEL-V3顺泰",
+      "listed_launch": "Summer 2024",
+      "front_thru_axle": "12×100 mm",
+      "rear_thru_axle": "12×142 mm",
+      "seatpost": "proprietary aero carbon",
+      "listed_colors": [
+        "pink-white",
+        "orange-red",
+        "black-grey",
+        "cyan-green",
+        "silver-brown",
+        "full color-shift"
+      ],
+      "size_grid_conflict": [
+        "Older product material and the size-51 configuration indicate 45 / 48 / 51 / 54.",
+        "The visible Taobao selector transcription says 45 / 48 / 50 / 54."
+      ],
+      "size_51_geometry_claim_mm": {
+        "stack": 550,
+        "reach": 385,
+        "effective_top_tube": 540,
+        "head_tube": 130,
+        "wheelbase": 1021
+      }
+    }
+  },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "seller-listing",
+    "eligibility": "conditional",
+    "note": "The listing specifies a stock 700×40C tire but does not establish a dependable maximum clearance. The conflicting reused page graphics also prevent transferring a later V3 clearance claim.",
+    "stock_nominal_mm": 40
+  },
+  "mounts": [],
+  "internal_storage": false,
+  "china_availability": "discontinued-superseded",
+  "source_ids": [
+    "twitter-gravel-v3-2024-taobao-2026-08-21"
+  ],
+  "last_reviewed": "2026-08-21"
+}
