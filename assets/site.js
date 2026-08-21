@@ -16,7 +16,9 @@
 
   function readStoredBuildAllowance() {
     try {
-      const value = Number(localStorage.getItem(buildAllowanceStorageKey));
+      const stored = localStorage.getItem(buildAllowanceStorageKey);
+      if (stored === null) return null;
+      const value = Number(stored);
       return Number.isFinite(value) ? value : null;
     } catch { return null; }
   }

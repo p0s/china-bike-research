@@ -84,6 +84,8 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
   assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
   assert.match(script, /buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1'/);
+  assert.match(script, /const stored = localStorage\.getItem\(buildAllowanceStorageKey\);/);
+  assert.match(script, /if \(stored === null\) return null;/);
   assert.match(script, /writeStoredBuildAllowance\(currentBuildAllowance\)/);
   assert.match(script, /document\.querySelector\('\[data-model-frame-price-low\]'\)/);
   assert.match(script, /target\.searchParams\.set\('from', from\)[\s\S]*?setParam\(target, 'build'/);
