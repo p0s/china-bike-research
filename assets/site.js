@@ -50,7 +50,7 @@
 
   document.querySelectorAll('[data-image-gallery]').forEach((gallery) => {
     const hero = gallery.querySelector('[data-gallery-hero]');
-    const caption = gallery.querySelector('[data-gallery-caption]');
+    const caption = gallery.querySelector('[data-image-caption-status][data-gallery-caption]');
     const sourceLink = gallery.querySelector('[data-gallery-source-link]');
     const buttons = [...gallery.querySelectorAll('[data-gallery-thumb]')];
     if (!(hero instanceof HTMLImageElement) || !buttons.length) return;

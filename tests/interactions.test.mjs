@@ -39,6 +39,7 @@ test('failed product photos disclose the visible placeholder', () => {
 
 test('product galleries are explicit, keyboard-operable, and motion-safe', () => {
   assert.match(script, /document\.querySelectorAll\('\[data-image-gallery\]'\)/);
+  assert.match(script, /const caption = gallery\.querySelector\('\[data-image-caption-status\]\[data-gallery-caption\]'\)/);
   assert.match(script, /const selectImage = \(button\) =>/);
   assert.match(script, /button\.addEventListener\('click', \(\) => selectImage\(button\)\)/);
   assert.match(script, /ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1/);
