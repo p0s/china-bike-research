@@ -103,11 +103,13 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(oldTwitterCarbonDetail, /Product image via public marketplace listing mirror · Exact frame platform/);
   assert.match(oldTwitterCarbonDetail, /data-image-gallery/);
   assert.equal((oldTwitterCarbonDetail.match(/data-gallery-thumb/g) ?? []).length, 4);
-  assert.match(oldTwitterCarbonDetail, /Silver carbon-wave build \(1 of 4\)/);
+  assert.match(oldTwitterCarbonDetail, /TWITTER 骓特 Gravel V3 2024 RS 2×12/);
+  assert.doesNotMatch(oldTwitterCarbonDetail, /<h1>[^<]*carbon-wave/i);
+  assert.match(oldTwitterCarbonDetail, /Silver full-bike view \(1 of 4\)/);
   assert.match(oldTwitterCarbonDetail, /Alternate-color full-bike view/);
   assert.match(oldTwitterCarbonDetail, /Mechanical cockpit detail/);
   assert.match(oldTwitterCarbonDetail, /Hydraulic caliper detail/);
-  assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 carbon-wave public listing image/);
+  assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 public listing images/);
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
 });
 
