@@ -52,7 +52,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 44);
-  assert.equal(data.images.length, 125);
+  assert.equal(data.images.length, 128);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 199);
@@ -83,6 +83,12 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(oldTwitterCarbon.image.subject_accuracy, 'exact-platform');
   assert.equal(oldTwitterCarbon.image.hosting.mode, 'remote');
   assert.equal(oldTwitterCarbon.imageSource.id, 'twitter-gravel-v3-2024-public-listing-image-2026-08-21');
+  assert.deepEqual(oldTwitterCarbon.galleryImages.map((image) => image.label), [
+    'Alternate-color full-bike view',
+    'Mechanical cockpit detail',
+    'Hydraulic caliper detail'
+  ]);
+  assert.ok(oldTwitterCarbon.galleryImages.every((image) => image.source.id === 'twitter-gravel-v3-2024-public-listing-image-2026-08-21'));
 
   const earlyLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
   assert.equal(earlyLead.defaultVisible, false);
@@ -321,11 +327,10 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   }
   const unresolvedImagePlatforms = [
     'elves-falath-r7170',
-    'lightcarbon-speedz',
-    'twitter-gravel-v3-2024'
+    'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 122);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 89);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 126);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 92);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -335,6 +340,12 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   const malformedTarget = structuredClone(data);
   malformedTarget.images.find((image) => image.candidate_id).platform_id = data.platforms[0].id;
   assert.ok(validateDataset(malformedTarget).some((error) => error.includes('target must identify exactly one platform or candidate')));
+
+  const malformedGallery = structuredClone(data);
+  const gallery = malformedGallery.images.find((image) => image.role === 'gallery');
+  delete gallery.candidate_id;
+  gallery.platform_id = data.platforms[0].id;
+  assert.ok(validateDataset(malformedGallery).some((error) => error.includes('gallery images currently require a candidate target')));
 });
 
 test('public-post images must remain credited remote embeds', () => {
@@ -406,7 +417,7 @@ test('shared frame images do not masquerade as exact component builds', () => {
   const pardus = products.find((item) => item.variant.id === 'pardus-super-sport-gen2-egr');
   assert.equal(eds.image.display_accuracy, 'exact-variant');
   assert.equal(rs.image.display_accuracy, 'same-platform');
-  assert.equal(oldRs.image.display_accuracy, 'illustrative');
+  assert.equal(oldRs.image.display_accuracy, 'same-model-different-market-build');
   assert.equal(pardus.image.display_accuracy, 'same-platform');
 });
 

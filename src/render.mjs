@@ -80,15 +80,18 @@ function candidateFallback(ctx, entry) {
     : '/assets/images/placeholders/complete-bike.svg');
 }
 
-function candidateImageElement(ctx, entry, { hero = false } = {}) {
+function candidateImageElement(ctx, entry, { hero = false, image = entry.image, className = '', decorative = false, galleryHero = false } = {}) {
   const fallback = candidateFallback(ctx, entry);
-  const placeholder = entry.image?.media_type === 'project-placeholder';
-  const source = placeholder ? fallback : imageUrl(ctx, entry.image) || fallback;
-  const alt = placeholder
+  const placeholder = image?.media_type === 'project-placeholder';
+  const source = placeholder ? fallback : imageUrl(ctx, image) || fallback;
+  const alt = decorative
+    ? ''
+    : placeholder
     ? `Illustrated placeholder for ${entry.candidate.name}; verified product photo unavailable`
-    : entry.image?.alt ?? `${entry.candidate.name} candidate image`;
-  const remote = !placeholder && entry.image?.hosting.mode === 'remote';
-  return `<img${placeholder ? ' class="is-placeholder"' : ''} src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
+    : image?.alt ?? `${entry.candidate.name} candidate image`;
+  const remote = !placeholder && image?.hosting.mode === 'remote';
+  const classes = [className, placeholder ? 'is-placeholder' : ''].filter(Boolean).join(' ');
+  return `<img${classes ? ` class="${escapeAttr(classes)}"` : ''} src="${escapeAttr(source)}" alt="${escapeAttr(alt)}" width="1200" height="800" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image data-fallback="${escapeAttr(fallback)}">`;
 }
 
 function candidateImage(ctx, entry) {
@@ -98,6 +101,25 @@ function candidateImage(ctx, entry) {
   const detailUrl = url(ctx.base, `/models/${entry.candidate.id}/`);
   const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} research profile">${candidateImageElement(ctx, entry)}</a>`;
   return `<span class="product-image">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'])}</span>` : ''}</span>`;
+}
+
+function candidateGalleryFigure(ctx, entry) {
+  const primary = entry.image;
+  const images = [primary, ...(entry.galleryImages ?? [])].filter(Boolean);
+  const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
+  const primarySource = entry.imageSource;
+  if (images.length < 2) {
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Project placeholder')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+  }
+
+  const imageSource = (image) => image === primary ? primarySource : image.source;
+  const caption = (image, index) => `${image.credit ?? 'Product image'} · ${accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative')} · ${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`;
+  const thumbs = images.map((image, index) => {
+    const source = imageSource(image);
+    const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+  }).join('');
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
 function infoTip(label, lines, attributes = {}) {
@@ -956,7 +978,6 @@ export function renderCandidateModel(ctx, entry) {
   const maturity = candidateMaturityLabel(candidate.status);
   const brandLabel = brand ? `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}` : 'Brand not confirmed';
   const category = entry.categories.map(categoryLabel).join(' · ') || 'Category not confirmed';
-  const imageAccuracy = accuracyLabel(entry.image?.display_accuracy ?? entry.image?.subject_accuracy ?? 'illustrative');
   const isSuperseded = candidate.status === 'superseded';
   const price = entry.price || isSuperseded ? candidatePriceLabel(ctx, entry) : 'Price not verified';
   const priceState = candidatePriceState(entry);
@@ -981,7 +1002,7 @@ export function renderCandidateModel(ctx, entry) {
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid">
-    <figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(entry.image?.credit ?? 'Project placeholder')} · ${escapeHtml(imageAccuracy)}</span>${entry.imageSource?.url ? ` · <a href="${escapeAttr(entry.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>
+    ${candidateGalleryFigure(ctx, entry)}
     <div class="model-summary"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Profile status</dt><dd>${escapeHtml(maturity)}</dd></div>${facts.slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">

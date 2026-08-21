@@ -8,7 +8,7 @@
       "variants": 38,
       "prices": 44,
       "sources": 332,
-      "images": 125,
+      "images": 128,
       "videos": 12,
       "recommendations": 6,
       "candidates": 199,
@@ -19,13 +19,14 @@
     "image_accuracy": {
       "exact-platform": 36,
       "exact-variant": 68,
-      "illustrative": 3,
-      "same-model-different-market-build": 7,
-      "same-platform": 11
+      "illustrative": 2,
+      "same-model-different-color": 1,
+      "same-model-different-market-build": 8,
+      "same-platform": 13
     },
     "image_hosting": {
-      "local": 3,
-      "remote": 122
+      "local": 2,
+      "remote": 126
     },
     "candidate_prices": {
       "official": 44,
@@ -636,7 +637,11 @@
       "twitter-cyclone-r7120-primary-image",
       "twitter-cyclone-sport-primary-image",
       "twitter-gravel-v3-105-primary-image",
+      "twitter-gravel-v3-2024-listing-primary-image",
       "twitter-gravel-v3-2024-primary-image",
+      "twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery",
+      "twitter-gravel-v3-2024-rs-carbon-wave-brakes-gallery",
+      "twitter-gravel-v3-2024-rs-carbon-wave-cockpit-gallery",
       "twitter-gravel-v3-2024-rs-carbon-wave-primary-image",
       "twitter-gravel-v3-primary-image",
       "twitter-t10-pro-primary-image",
@@ -9574,6 +9579,24 @@
         "source_id",
         "subject_accuracy"
       ],
+      "twitter-gravel-v3-2024-listing-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "fallback_local_path",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "twitter-gravel-v3-2024-primary-image": [
         "alt",
         "credit",
@@ -9591,6 +9614,63 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "fallback_local_path",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-brakes-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "fallback_local_path",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-cockpit-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "fallback_local_path",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
       "twitter-gravel-v3-2024-rs-carbon-wave-primary-image": [
         "alt",
         "candidate_id",
@@ -9599,12 +9679,14 @@
         "fallback_local_path",
         "hosting.mode",
         "hosting.remote_url",
+        "label",
         "media_type",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
         "rights.usage_note",
         "role",
+        "sort_order",
         "source_id",
         "subject_accuracy"
       ],
@@ -20413,10 +20495,27 @@
         "candidate_id=twitter-gravel-v3-105",
         "source_id=twitter-gravel-v3-official-2026-08-17"
       ],
+      "twitter-gravel-v3-2024-listing-primary-image": [
+        "platform_id=twitter-gravel-v3-2024",
+        "source_id=twitter-gravel-v3-2024-public-listing-image-2026-08-21",
+        "variant_ids=twitter-v3-2024-rs-sensah-alloy"
+      ],
       "twitter-gravel-v3-2024-primary-image": [
         "platform_id=twitter-gravel-v3-2024",
         "source_id=project-image-placeholders",
         "variant_ids=twitter-v3-2024-rs-sensah-alloy"
+      ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery": [
+        "candidate_id=twitter-gravel-v3-2024-rs-carbon-wave",
+        "source_id=twitter-gravel-v3-2024-public-listing-image-2026-08-21"
+      ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-brakes-gallery": [
+        "candidate_id=twitter-gravel-v3-2024-rs-carbon-wave",
+        "source_id=twitter-gravel-v3-2024-public-listing-image-2026-08-21"
+      ],
+      "twitter-gravel-v3-2024-rs-carbon-wave-cockpit-gallery": [
+        "candidate_id=twitter-gravel-v3-2024-rs-carbon-wave",
+        "source_id=twitter-gravel-v3-2024-public-listing-image-2026-08-21"
       ],
       "twitter-gravel-v3-2024-rs-carbon-wave-primary-image": [
         "candidate_id=twitter-gravel-v3-2024-rs-carbon-wave",
@@ -30463,12 +30562,40 @@
       "remote_required": true,
       "primary_required": true
     },
+    "twitter-gravel-v3-2024-listing-primary-image": {
+      "target": "platforms:twitter-gravel-v3-2024",
+      "minimum_accuracy_rank": 2,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": true
+    },
     "twitter-gravel-v3-2024-primary-image": {
       "target": "platforms:twitter-gravel-v3-2024",
       "minimum_accuracy_rank": 0,
       "minimum_source_tier": 0,
       "remote_required": false,
       "primary_required": true
+    },
+    "twitter-gravel-v3-2024-rs-carbon-wave-alt-color-gallery": {
+      "target": "candidates:twitter-gravel-v3-2024-rs-carbon-wave",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "twitter-gravel-v3-2024-rs-carbon-wave-brakes-gallery": {
+      "target": "candidates:twitter-gravel-v3-2024-rs-carbon-wave",
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "twitter-gravel-v3-2024-rs-carbon-wave-cockpit-gallery": {
+      "target": "candidates:twitter-gravel-v3-2024-rs-carbon-wave",
+      "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": false
     },
     "twitter-gravel-v3-2024-rs-carbon-wave-primary-image": {
       "target": "candidates:twitter-gravel-v3-2024-rs-carbon-wave",
@@ -31229,9 +31356,9 @@
       "remote_required": true
     },
     "platforms:twitter-gravel-v3-2024": {
-      "minimum_accuracy_rank": 0,
-      "minimum_source_tier": 0,
-      "remote_required": false
+      "minimum_accuracy_rank": 2,
+      "minimum_source_tier": 1,
+      "remote_required": true
     },
     "platforms:twitter-t3-tt": {
       "minimum_accuracy_rank": 4,

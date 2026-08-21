@@ -101,6 +101,12 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(oldTwitterCarbonDetail, /Superseded model/);
   assert.match(oldTwitterCarbonDetail, /This 2024 version is no longer sold new\. It was superseded by the 2025 Gravel V3/);
   assert.match(oldTwitterCarbonDetail, /Product image via public marketplace listing mirror · Exact frame platform/);
+  assert.match(oldTwitterCarbonDetail, /data-image-gallery/);
+  assert.equal((oldTwitterCarbonDetail.match(/data-gallery-thumb/g) ?? []).length, 4);
+  assert.match(oldTwitterCarbonDetail, /Silver carbon-wave build \(1 of 4\)/);
+  assert.match(oldTwitterCarbonDetail, /Alternate-color full-bike view/);
+  assert.match(oldTwitterCarbonDetail, /Mechanical cockpit detail/);
+  assert.match(oldTwitterCarbonDetail, /Hydraulic caliper detail/);
   assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 carbon-wave public listing image/);
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
 });
