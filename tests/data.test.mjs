@@ -220,21 +220,23 @@ test('Twitter Gravel V3 generations and configurations remain separate', () => {
   assert.equal(oldPlatform.successor.platform_id, 'twitter-gravel-v3');
 });
 
-test('2024 Twitter alloy and carbon-wave evidence never share a price', () => {
+test('2024 Twitter historical alloy price stays scoped to its exact option', () => {
   const alloy = data.variants.find((item) => item.id === 'twitter-v3-2024-rs-sensah-alloy');
-  const carbon = data.candidates.find((item) => item.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
+  const listingProfile = data.candidates.find((item) => item.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   const price = data.prices.find((item) => item.id === 'twitter-v3-2024-rs-alloy-2026-08-21');
   assert.equal(alloy.wheels.rim_material, 'aluminum');
   assert.equal(alloy.claimed_complete_weight_g, 9900);
-  assert.equal(carbon.observed_price, undefined);
-  assert.equal(carbon.facts.complete_weight_g, 9500);
-  assert.match(carbon.facts.wheels, /50 mm wave-profile carbon/);
+  assert.equal(listingProfile.name, 'TWITTER 骓特 Gravel V3 2024 RS 2×12');
+  assert.equal(listingProfile.observed_price, undefined);
+  assert.equal(listingProfile.facts.complete_weight_g, 9500);
+  assert.match(listingProfile.facts.wheels, /photographs do not establish which package is shown/i);
+  assert.match(listingProfile.facts.wheels, /neither selection is treated as standard/i);
   assert.equal(price.amount_cny, 3991);
   assert.equal(price.status, 'historical-superseded');
-  assert.equal(carbon.status, 'superseded');
-  assert.match(carbon.availability_note, /no longer sold new.*superseded by the 2025 Gravel V3/i);
+  assert.equal(listingProfile.status, 'superseded');
+  assert.match(listingProfile.availability_note, /no longer sold new.*superseded by the 2025 Gravel V3/i);
   assert.match(price.conditions, /alloy-wheel/);
-  assert.match(price.conditions, /Do not apply this price.*carbon-wave-wheel/);
+  assert.match(price.conditions, /Do not apply this price.*other wheel selections/);
 });
 
 test('observed Twitter prices are retained exactly and anonymously', () => {
