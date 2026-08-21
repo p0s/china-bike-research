@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 332,
+      "sources": 338,
       "images": 128,
       "videos": 12,
       "recommendations": 6,
@@ -204,6 +204,7 @@
       "bianchi-oltre-race-official-2026-08-08",
       "bianchi-sprint-icr-official-2026-08-17",
       "bigrock-sohtea-panda-podium-2026-08-17",
+      "biketo-pardus-uragano-evo-review-2023",
       "biketo-quick-gr-one-launch-2025",
       "bxt-055-official",
       "camp-ace-qed-official-2026-08-08",
@@ -246,6 +247,7 @@
       "giant-china-tcr-advanced-3-gc-official-2026-08-17",
       "giant-china-warranty-2026-08-17",
       "giant-defy-advanced-0-official-image-2026-08-17",
+      "giant-defy-advanced-sl1-official-global-2026-08-20",
       "giant-propel-gen4-bikerumor-2026-08-17",
       "giant-propel-gen4-official-2026-08-17",
       "giant-tcr-advanced-0-axs-official-image-2026-08-17",
@@ -274,14 +276,17 @@
       "merida-china-sales-channels-2026-08-17",
       "merida-china-scultura-6000-25-official-2026-08-17",
       "merida-scultura-endurance-4000-china-2026-08-17",
+      "merida-scultura-endurance-4000-official-global-2026-08-20",
       "merida-silex-7000-25-official-cny-reference-2026-08-17",
       "merida-warranty-official-2026-08-17",
       "pardus-2026-conference-wildto",
       "pardus-company-official",
       "pardus-robin-evo-official-2026-08-17",
+      "pardus-robin-evo-ultegra-di2-official-2026-08-20",
       "pardus-robin-sport-official-image-2026-08-17",
       "pardus-spark-family-official-2026-08-17",
       "pardus-spark-rs-official-2026-08-17",
+      "pardus-spark-rs-rival-official-2026-08-20",
       "pardus-spark-sport-official-2026-08-09",
       "pardus-spark-sport-official-cn-2026-08-17",
       "pardus-spark-sport-official-global-2026-08-17",
@@ -312,6 +317,7 @@
       "public-lightcarbon-speed7-factory-weight-2026-08-20",
       "public-merida-scultura-endurance-4000-2026-08-17",
       "public-pardus-robin-evo-build-2026-08-17",
+      "public-pardus-robin-evo-photo-2026-08-20",
       "public-pardus-spark-rs-build-2026-08-17",
       "public-pardus-super-sport-105-build-2026-08-17",
       "public-pardus-super-sport-gen2-price-2026-08-17",
@@ -571,6 +577,7 @@
       "merida-scultura-endurance-4000-public-primary-image",
       "merida-silex-7000-25-primary-image",
       "pardus-robin-evo-public-primary-image",
+      "pardus-robin-evo-public-quotation-primary-image",
       "pardus-robin-sport-pes-primary-image",
       "pardus-spark-family-cn-alt-color-primary-image",
       "pardus-spark-family-cn-color-primary-image",
@@ -3984,6 +3991,18 @@
         "type",
         "url"
       ],
+      "biketo-pardus-uragano-evo-review-2023": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "biketo-quick-gr-one-launch-2025": [
         "accessed_at",
         "language",
@@ -4502,6 +4521,18 @@
         "type",
         "url"
       ],
+      "giant-defy-advanced-sl1-official-global-2026-08-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "giant-propel-gen4-bikerumor-2026-08-17": [
         "accessed_at",
         "language",
@@ -4846,6 +4877,18 @@
         "type",
         "url"
       ],
+      "merida-scultura-endurance-4000-official-global-2026-08-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "merida-silex-7000-25-official-cny-reference-2026-08-17": [
         "accessed_at",
         "language",
@@ -4909,6 +4952,18 @@
         "type",
         "url"
       ],
+      "pardus-robin-evo-ultegra-di2-official-2026-08-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-robin-sport-official-image-2026-08-17": [
         "accessed_at",
         "language",
@@ -4942,6 +4997,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.route",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-spark-rs-rival-official-2026-08-20": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -5296,6 +5363,18 @@
         "url"
       ],
       "public-pardus-robin-evo-build-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-pardus-robin-evo-photo-2026-08-20": [
         "accessed_at",
         "language",
         "notes",
@@ -8223,9 +8302,21 @@
         "alt",
         "candidate_id",
         "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
         "hosting.mode",
         "hosting.remote_url",
+        "hosting.variants",
         "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -8479,9 +8570,21 @@
         "alt",
         "candidate_id",
         "credit",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
         "hosting.mode",
         "hosting.remote_url",
+        "hosting.variants",
         "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -8514,6 +8617,34 @@
         "hosting.mode",
         "hosting.remote_url",
         "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-robin-evo-public-quotation-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.mode",
+        "hosting.remote_url",
+        "hosting.variants",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -8607,9 +8738,21 @@
         "candidate_id",
         "credit",
         "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
         "hosting.mode",
         "hosting.remote_url",
+        "hosting.variants",
         "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -8703,9 +8846,21 @@
         "candidate_id",
         "credit",
         "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
         "hosting.mode",
         "hosting.remote_url",
+        "hosting.variants",
         "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -10779,7 +10934,16 @@
         "why_interesting"
       ],
       "giant-defy-advanced-sl1-community-lead": [
+        "brand_id",
         "category",
+        "facts.brakes",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.mounts",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "name",
         "research_priority",
@@ -11645,6 +11809,7 @@
         "why_interesting"
       ],
       "merida-scultura-endurance-4000-community-lead": [
+        "brand_id",
         "category",
         "facts.brakes",
         "facts.drivetrain",
@@ -12571,6 +12736,7 @@
         "why_interesting"
       ],
       "pardus-robin-evo-community-lead": [
+        "brand_id",
         "category",
         "facts.complete_weight_g",
         "facts.drivetrain",
@@ -12625,6 +12791,7 @@
         "why_interesting"
       ],
       "pardus-spark-rs-community-lead": [
+        "brand_id",
         "category",
         "facts.cockpit",
         "facts.drivetrain",
@@ -12736,11 +12903,15 @@
         "why_interesting"
       ],
       "pardus-uragano-evo-community-lead": [
+        "brand_id",
         "category",
         "facts.bottom_bracket",
         "facts.brakes",
         "facts.cockpit",
         "facts.drivetrain",
+        "facts.frame",
+        "facts.mounts",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "name",
         "research_priority",
@@ -19714,6 +19885,7 @@
       "bianchi-oltre-race-official-2026-08-08": [],
       "bianchi-sprint-icr-official-2026-08-17": [],
       "bigrock-sohtea-panda-podium-2026-08-17": [],
+      "biketo-pardus-uragano-evo-review-2023": [],
       "biketo-quick-gr-one-launch-2025": [],
       "bxt-055-official": [],
       "camp-ace-qed-official-2026-08-08": [],
@@ -19756,6 +19928,7 @@
       "giant-china-tcr-advanced-3-gc-official-2026-08-17": [],
       "giant-china-warranty-2026-08-17": [],
       "giant-defy-advanced-0-official-image-2026-08-17": [],
+      "giant-defy-advanced-sl1-official-global-2026-08-20": [],
       "giant-propel-gen4-bikerumor-2026-08-17": [],
       "giant-propel-gen4-official-2026-08-17": [],
       "giant-tcr-advanced-0-axs-official-image-2026-08-17": [],
@@ -19784,14 +19957,17 @@
       "merida-china-sales-channels-2026-08-17": [],
       "merida-china-scultura-6000-25-official-2026-08-17": [],
       "merida-scultura-endurance-4000-china-2026-08-17": [],
+      "merida-scultura-endurance-4000-official-global-2026-08-20": [],
       "merida-silex-7000-25-official-cny-reference-2026-08-17": [],
       "merida-warranty-official-2026-08-17": [],
       "pardus-2026-conference-wildto": [],
       "pardus-company-official": [],
       "pardus-robin-evo-official-2026-08-17": [],
+      "pardus-robin-evo-ultegra-di2-official-2026-08-20": [],
       "pardus-robin-sport-official-image-2026-08-17": [],
       "pardus-spark-family-official-2026-08-17": [],
       "pardus-spark-rs-official-2026-08-17": [],
+      "pardus-spark-rs-rival-official-2026-08-20": [],
       "pardus-spark-sport-official-2026-08-09": [],
       "pardus-spark-sport-official-cn-2026-08-17": [],
       "pardus-spark-sport-official-global-2026-08-17": [],
@@ -19822,6 +19998,7 @@
       "public-lightcarbon-speed7-factory-weight-2026-08-20": [],
       "public-merida-scultura-endurance-4000-2026-08-17": [],
       "public-pardus-robin-evo-build-2026-08-17": [],
+      "public-pardus-robin-evo-photo-2026-08-20": [],
       "public-pardus-spark-rs-build-2026-08-17": [],
       "public-pardus-super-sport-105-build-2026-08-17": [],
       "public-pardus-super-sport-gen2-price-2026-08-17": [],
@@ -20215,6 +20392,10 @@
       "pardus-robin-evo-public-primary-image": [
         "candidate_id=pardus-robin-evo-community-lead",
         "source_id=public-pardus-robin-evo-build-2026-08-17"
+      ],
+      "pardus-robin-evo-public-quotation-primary-image": [
+        "candidate_id=pardus-robin-evo-community-lead",
+        "source_id=public-pardus-robin-evo-photo-2026-08-20"
       ],
       "pardus-robin-sport-pes-primary-image": [
         "candidate_id=pardus-robin-sport-pes",
@@ -20789,8 +20970,10 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "giant-defy-advanced-sl1-community-lead": [
+        "brand_id=giant",
         "source_ids=giant-china-dealer-locator-2026-08-17",
         "source_ids=giant-china-warranty-2026-08-17",
+        "source_ids=giant-defy-advanced-sl1-official-global-2026-08-20",
         "source_ids=public-giant-defy-adv-sl-custom-build-2026-08-20",
         "source_ids=public-giant-defy-advanced-sl1-2026-08-17",
         "source_ids=public-giant-defy-advanced-sl1-cad-sold-2026-08-20",
@@ -21007,7 +21190,9 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "merida-scultura-endurance-4000-community-lead": [
+        "brand_id=merida",
         "source_ids=merida-scultura-endurance-4000-china-2026-08-17",
+        "source_ids=merida-scultura-endurance-4000-official-global-2026-08-20",
         "source_ids=merida-warranty-official-2026-08-17",
         "source_ids=public-merida-scultura-endurance-4000-2026-08-17"
       ],
@@ -21230,8 +21415,11 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-robin-evo-community-lead": [
+        "brand_id=pardus",
         "source_ids=pardus-robin-evo-official-2026-08-17",
-        "source_ids=public-pardus-robin-evo-build-2026-08-17"
+        "source_ids=pardus-robin-evo-ultegra-di2-official-2026-08-20",
+        "source_ids=public-pardus-robin-evo-build-2026-08-17",
+        "source_ids=public-pardus-robin-evo-photo-2026-08-20"
       ],
       "pardus-robin-sport-pes": [
         "model_id=pardus-robin-sport-pes",
@@ -21245,8 +21433,10 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-spark-rs-community-lead": [
+        "brand_id=pardus",
         "source_ids=pardus-spark-family-official-2026-08-17",
         "source_ids=pardus-spark-rs-official-2026-08-17",
+        "source_ids=pardus-spark-rs-rival-official-2026-08-20",
         "source_ids=public-pardus-spark-rs-build-2026-08-17"
       ],
       "pardus-spark-sport-pes": [
@@ -21277,6 +21467,8 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-uragano-evo-community-lead": [
+        "brand_id=pardus",
+        "source_ids=biketo-pardus-uragano-evo-review-2023",
         "source_ids=pardus-uragano-jd-route-2026-08-17",
         "source_ids=public-pardus-uragano-evo-build-2026-08-17"
       ],
@@ -22730,6 +22922,14 @@
         "specification": 2
       }
     },
+    "biketo-pardus-uragano-evo-review-2023": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "biketo-quick-gr-one-launch-2025": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -23081,6 +23281,14 @@
         "specification": 3
       }
     },
+    "giant-defy-advanced-sl1-official-global-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "giant-propel-gen4-bikerumor-2026-08-17": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -23314,6 +23522,14 @@
         "specification": 3
       }
     },
+    "merida-scultura-endurance-4000-official-global-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "merida-silex-7000-25-official-cny-reference-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -23357,6 +23573,14 @@
         "specification": 3
       }
     },
+    "pardus-robin-evo-ultegra-di2-official-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "pardus-robin-sport-official-image-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -23380,6 +23604,14 @@
         "identity": 3,
         "price": 0,
         "route": 3,
+        "specification": 3
+      }
+    },
+    "pardus-spark-rs-rival-official-2026-08-20": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -23617,6 +23849,14 @@
       }
     },
     "public-pardus-robin-evo-build-2026-08-17": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "public-pardus-robin-evo-photo-2026-08-20": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
@@ -30094,6 +30334,13 @@
       "primary_required": true
     },
     "pardus-robin-evo-public-primary-image": {
+      "target": "candidates:pardus-robin-evo-community-lead",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "pardus-robin-evo-public-quotation-primary-image": {
       "target": "candidates:pardus-robin-evo-community-lead",
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,

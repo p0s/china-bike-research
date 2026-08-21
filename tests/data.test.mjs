@@ -316,7 +316,8 @@ test('every platform and variant resolves a primary visual', () => {
 test('image records preserve exactness, source, rights, and fallback-safe hosting', () => {
   const allowedRights = new Set([
     'project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license',
-    'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed'
+    'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed',
+    'public-post-quotation'
   ]);
   for (const image of data.images) {
     assert.ok(image.alt.length >= 10, image.id);
@@ -356,7 +357,62 @@ test('public-post images must remain credited remote embeds', () => {
   assert.deepEqual(validateDataset(remote), []);
 
   image.hosting = { mode: 'local', local_path: '/assets/images/placeholders/complete-bike.svg' };
-  assert.ok(validateDataset(remote).some((error) => error.includes('embed-only image cannot be stored locally')));
+  assert.ok(validateDataset(remote).some((error) => error.includes('third-party remote image cannot be stored locally')));
+});
+
+test('public-post quotations require bounded immutable media and a completed privacy review', () => {
+  const quoted = structuredClone(data);
+  const image = quoted.images.find((item) => item.id === 'giant-defy-advanced-sl1-public-primary-image');
+  const cardHash = 'a'.repeat(64);
+  const detailHash = 'b'.repeat(64);
+  image.rights.status = 'public-post-quotation';
+  image.rights.usage_note = 'One compressed editorial quotation is hosted externally; no license is asserted.';
+  image.hosting = {
+    mode: 'remote',
+    remote_url: `https://china-bike-media.161-97-123-19.sslip.io/media/xhs/giant-defy-advanced-sl1/${detailHash.slice(0, 16)}-detail-w1040.webp`,
+    variants: [
+      {
+        purpose: 'card',
+        url: `https://china-bike-media.161-97-123-19.sslip.io/media/xhs/giant-defy-advanced-sl1/${cardHash.slice(0, 16)}-card-w480.webp`,
+        width: 480,
+        height: 320,
+        bytes: 39000,
+        sha256: cardHash,
+        format: 'image/webp'
+      },
+      {
+        purpose: 'detail',
+        url: `https://china-bike-media.161-97-123-19.sslip.io/media/xhs/giant-defy-advanced-sl1/${detailHash.slice(0, 16)}-detail-w1040.webp`,
+        width: 1040,
+        height: 693,
+        bytes: 87000,
+        sha256: detailHash,
+        format: 'image/webp'
+      }
+    ]
+  };
+  image.editorial_quotation = {
+    purpose: 'editorial-identification-and-commentary',
+    scope: 'one-compressed-public-post-photo',
+    source_link_required: true,
+    no_license_asserted: true,
+    removal_route: 'https://github.com/p0s/china-bike-research/issues'
+  };
+  image.privacy_review = {
+    reviewed_at: '2026-08-20',
+    embedded_metadata: 'stripped',
+    faces: 'none-visible',
+    vehicle_registration: 'none-visible',
+    account_identifiers: 'none-visible',
+    location_identifiers: 'none-visible'
+  };
+  assert.deepEqual(validateDataset(quoted), []);
+
+  image.hosting.variants[0].bytes = 40001;
+  delete image.privacy_review.faces;
+  const errors = validateDataset(quoted);
+  assert.ok(errors.some((error) => error.includes('card variant exceeds its byte budget')));
+  assert.ok(errors.some((error) => error.includes('incomplete privacy review')));
 });
 
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {

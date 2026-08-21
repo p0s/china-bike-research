@@ -1,26 +1,31 @@
 {
   "id": "pardus-uragano-evo-community-lead",
+  "brand_id": "pardus",
   "name": "PARDUS Uragano EVO gravel build",
   "category": "gravel-race",
   "type": "complete-bike",
-  "why_interesting": "An exact-model build supplies unusually detailed drivetrain, axle, brake and cockpit compatibility for the Uragano EVO.",
+  "why_interesting": "An exact-model build supplies unusually detailed drivetrain compatibility, while a dated independent review adds 45 mm clearance and extensive mounting evidence.",
   "missing": [
-    "Official exact-generation product page, frame material and clearance",
-    "Stock complete-bike BOM, weight and current mainland price",
-    "Exact EVO marketplace stock, price, warranty and service conditions"
+    "Current official exact-generation product page and stock complete-bike BOM",
+    "Claimed stock weight, current mainland price and exact EVO stock state",
+    "Current exact-model purchase route, warranty and service conditions"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-pardus-uragano-evo-build-2026-08-17",
-    "pardus-uragano-jd-route-2026-08-17"
+    "pardus-uragano-jd-route-2026-08-17",
+    "biketo-pardus-uragano-evo-review-2023"
   ],
   "facts": {
     "drivetrain": "Custom SRAM Apex AXS controls with X1 Eagle AXS rear derailleur, 40T and 11-50",
     "brakes": "SRAM Apex AXS hydraulic, flat-mount 160 mm",
     "bottom_bracket": "T47×68",
-    "cockpit": "Carbon gravel cockpit with 20-degree flare"
+    "cockpit": "Carbon gravel cockpit with 20-degree flare",
+    "frame": "Carbon frame reported in the dated BIKETO review",
+    "tire_clearance_mm": 45,
+    "mounts": "Front and rear rack, fork, bottle and fender mounts"
   },
-  "source_note": "An official mainland marketplace storefront route is established for the family. The detailed component list remains a public custom build, not a factory configuration, and exact EVO stock is unresolved.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "An official mainland marketplace storefront route is established for the family. The detailed component list remains a public custom build, not a factory configuration, and exact EVO stock is unresolved. The 45 mm clearance and mounts come from a 2023 independent review, not a current official product page.",
+  "last_reviewed": "2026-08-20"
 }

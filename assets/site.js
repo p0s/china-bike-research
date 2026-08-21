@@ -32,6 +32,8 @@
       const fallback = image.dataset.fallback;
       if (!fallback || image.dataset.fallbackApplied === 'true') return;
       image.dataset.fallbackApplied = 'true';
+      image.removeAttribute('srcset');
+      image.removeAttribute('sizes');
       image.src = fallback;
       image.classList.add('is-fallback');
       image.removeAttribute('referrerpolicy');
@@ -893,9 +895,11 @@
     const label = [item.brand, item.name].filter(Boolean).join(' ');
     const image = document.createElement('img');
     image.src = item.image;
+    if (item.imageSrcset) image.srcset = item.imageSrcset;
+    if (item.imageSizes) image.sizes = item.imageSizes;
     image.alt = item.imageAlt || label;
-    image.width = 120;
-    image.height = 80;
+    image.width = item.imageWidth || 120;
+    image.height = item.imageHeight || 80;
     image.loading = 'lazy';
     image.decoding = 'async';
     image.dataset.productImage = '';

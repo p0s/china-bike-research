@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const textExtensions = new Set(['.md','.json','.mjs','.js','.css','.svg','.yml','.yaml','.cff','.txt','.html','.xml','.example']);
+const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg','.mov','.mp4','.png','.webp']);
 const ignoredDirectories = new Set(['.git','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const findings = [];
@@ -26,7 +27,11 @@ function walk(directory) {
     const absolute = path.join(directory, entry.name);
     const relative = path.relative(root, absolute).replaceAll(path.sep, '/');
     if (entry.isDirectory()) walk(absolute);
-    else if (!ignoredFiles.has(relative) && (textExtensions.has(path.extname(entry.name).toLowerCase()) || entry.name === 'LICENSE' || entry.name === 'LICENSE-DATA')) scan(absolute, relative);
+    else {
+      const extension = path.extname(entry.name).toLowerCase();
+      if (thirdPartyBinaryExtensions.has(extension)) findings.push(`${relative}: third-party media binary is forbidden in the public repository`);
+      else if (!ignoredFiles.has(relative) && (textExtensions.has(extension) || entry.name === 'LICENSE' || entry.name === 'LICENSE-DATA')) scan(absolute, relative);
+    }
   }
 }
 function scan(file, relative) {
@@ -50,4 +55,4 @@ if (findings.length) {
   for (const finding of findings) console.error(`- ${finding}`);
   process.exit(1);
 }
-console.log('Privacy scan passed: no common personal-data, local-path, credential, private-network, order-ID, or chat-export patterns found.');
+console.log('Privacy scan passed: no common personal-data, local-path, credential, private-network, order-ID, chat-export, or third-party media-binary patterns found.');

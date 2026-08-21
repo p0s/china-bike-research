@@ -73,6 +73,56 @@
               "type": "string",
               "format": "uri",
               "pattern": "^https://"
+            },
+            "variants": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 2,
+              "items": {
+                "type": "object",
+                "required": [
+                  "purpose",
+                  "url",
+                  "width",
+                  "height",
+                  "bytes",
+                  "sha256",
+                  "format"
+                ],
+                "properties": {
+                  "purpose": {
+                    "enum": ["card", "detail"]
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://"
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 1200
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2400
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 88000
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "format": {
+                    "const": "image/webp"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "additionalProperties": false
@@ -118,7 +168,8 @@
             "public-domain",
             "official-page-embed",
             "retailer-page-embed",
-            "public-post-embed"
+            "public-post-embed",
+            "public-post-quotation"
           ]
         },
         "copyright_holder": {
@@ -157,6 +208,69 @@
     "display_note": {
       "type": "string",
       "minLength": 10
+    },
+    "editorial_quotation": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "scope",
+        "source_link_required",
+        "no_license_asserted",
+        "removal_route"
+      ],
+      "properties": {
+        "purpose": {
+          "const": "editorial-identification-and-commentary"
+        },
+        "scope": {
+          "const": "one-compressed-public-post-photo"
+        },
+        "source_link_required": {
+          "const": true
+        },
+        "no_license_asserted": {
+          "const": true
+        },
+        "removal_route": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy_review": {
+      "type": "object",
+      "required": [
+        "reviewed_at",
+        "embedded_metadata",
+        "faces",
+        "vehicle_registration",
+        "account_identifiers",
+        "location_identifiers"
+      ],
+      "properties": {
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "embedded_metadata": {
+          "const": "stripped"
+        },
+        "faces": {
+          "const": "none-visible"
+        },
+        "vehicle_registration": {
+          "const": "none-visible"
+        },
+        "account_identifiers": {
+          "const": "none-visible"
+        },
+        "location_identifiers": {
+          "const": "none-visible"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "oneOf": [
