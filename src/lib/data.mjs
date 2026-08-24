@@ -285,6 +285,9 @@ export function validateDataset(data = loadDataset()) {
       if (!Number.isFinite(observation.amount) || observation.amount <= 0) errors.push(`groupset ${groupset.id}: invalid price amount`);
       if (!isDate(observation.observed_at)) errors.push(`groupset ${groupset.id}: invalid price observation date`);
       if (!sourceIds.has(observation.source_id)) errors.push(`groupset ${groupset.id}: missing price source ${observation.source_id}`);
+      if (observation.option_label_zh !== undefined && (typeof observation.option_label_zh !== 'string' || !observation.option_label_zh.trim())) errors.push(`groupset ${groupset.id}: invalid price option label`);
+      if (observation.package_basis !== undefined && !['shift-only', 'shift-brake', 'electronics-only', 'partial-groupset', 'full-groupset', 'component', 'oem-takeoff'].includes(observation.package_basis)) errors.push(`groupset ${groupset.id}: invalid price package basis`);
+      if (observation.checkout_verified !== undefined && typeof observation.checkout_verified !== 'boolean') errors.push(`groupset ${groupset.id}: checkout_verified must be boolean`);
     }
   }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
@@ -377,6 +380,22 @@ export function validateDataset(data = loadDataset()) {
     if (!isDate(source.accessed_at)) errors.push(`source ${source.id}: invalid accessed_at`);
     if (source.url) {
       try { new URL(source.url); } catch { errors.push(`source ${source.id}: invalid URL`); }
+    }
+    if (source.type === 'marketplace-screenshot') {
+      if (!isDate(source.observed_at)) errors.push(`source ${source.id}: invalid observed_at`);
+      if (source.checkout_verified !== false) errors.push(`source ${source.id}: marketplace screenshot must remain checkout-unverified`);
+      if (!Array.isArray(source.observations) || !source.observations.length) errors.push(`source ${source.id}: marketplace screenshot needs observations`);
+      for (const observation of source.observations ?? []) {
+        if (typeof observation.option_label_zh !== 'string' || !observation.option_label_zh.trim()) errors.push(`source ${source.id}: invalid option label`);
+        if (!Number.isFinite(observation.amount_cny) || observation.amount_cny <= 0) errors.push(`source ${source.id}: invalid option amount`);
+        if (!['shift-only', 'shift-brake', 'electronics-only', 'partial-groupset', 'full-groupset', 'component', 'oem-takeoff'].includes(observation.normalized_package)) errors.push(`source ${source.id}: invalid normalized package`);
+        if (!['complete', 'truncated'].includes(observation.label_visibility)) errors.push(`source ${source.id}: invalid option-label visibility`);
+      }
+      if (source.adjacent_system !== undefined) {
+        for (const field of ['name', 'discipline', 'headline_price', 'why_separate']) {
+          if (typeof source.adjacent_system?.[field] !== 'string' || !source.adjacent_system[field].trim()) errors.push(`source ${source.id}: missing adjacent_system.${field}`);
+        }
+      }
     }
   }
 

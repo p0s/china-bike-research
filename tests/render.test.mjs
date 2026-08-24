@@ -476,6 +476,7 @@ test('electronic shifting is a footer and contextual reference, not primary navi
     now: new Date('2026-08-24T00:00:00Z')
   };
   const reference = renderElectronicGroupsets(context);
+  const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
   const wheelTopProduct = products.find((item) => item.variant.id === 'twitter-cyclone-electronic');
   const detail = renderModel(context, wheelTopProduct);
   assert.match(reference, /Electronic groupsets to buy in China/);
@@ -484,16 +485,27 @@ test('electronic shifting is a footer and contextual reference, not primary navi
   assert.match(reference, /L-TWOO · 蓝图/);
   assert.match(reference, /current maximum unresolved/);
   assert.match(reference, /WheelTop · Wheeltop/);
-  assert.match(reference, /QED 1\.15 kg core; PES 1\.25 kg core/);
+  assert.match(reference, /QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g/);
   assert.match(reference, /¥4,150–4,200 dealer observations/);
   assert.match(reference, /Ultegra R8170 \/ Dura-Ace R9270 Di2/);
   assert.match(reference, /34T/);
   assert.match(reference, /¥6,050 dealer observation/);
   assert.match(reference, /No attributable mainland price/);
-  assert.match(reference, /EUR 659 official reference/);
+  assert.match(reference, /¥2,369–3,219 Taobao options/);
+  assert.match(reference, /¥2,369 Taobao options/);
+  assert.match(reference, /¥3,480 Taobao option/);
+  assert.match(reference, /Displayed reference · EUR 659/);
+  assert.match(reference, /Captured price options/);
+  assert.match(reference, /SRAM GX AXS \/ Eagle Transmission/);
+  assert.match(reference, /L-TWOO eRX-TT/);
+  assert.match(reference, /Other disciplines/);
+  assert.match(reference, /<th>System<\/th><th>Best for<\/th><th>Gearing<\/th><th>Setup<\/th><th>Price<\/th>/);
+  assert.doesNotMatch(reference, /<th>Listed weight<\/th>|<th>Battery<\/th>/);
   assert.match(reference, /Package normalization/);
   assert.match(reference, /Shift-only/);
-  assert.match(reference, /supplied synthesis, no public link/);
+  assert.match(reference, /supplied evidence, no public link/);
+  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.reference-table tr \{ display: grid/);
+  assert.match(styles, /\.reference-table td::before \{ content: attr\(data-label\)/);
   assert.doesNotMatch(reference, /href="undefined"/);
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Electronic shifting<\/a>/);

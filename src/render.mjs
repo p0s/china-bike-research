@@ -1123,56 +1123,79 @@ function groupsetPriceLabel(groupset) {
   if (currencies.size === 1 && currencies.has('CNY')) {
     const low = Math.min(...amounts);
     const high = Math.max(...amounts);
-    return low === high ? `¥${format(low)} dealer observation` : `¥${format(low)}–${format(high)} dealer observations`;
+    const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
+    const basis = taobao ? `Taobao option${observations.length === 1 ? '' : 's'}` : `dealer observation${observations.length === 1 ? '' : 's'}`;
+    return low === high ? `¥${format(low)} ${basis}` : `¥${format(low)}–${format(high)} ${basis}`;
   }
   const observation = observations[0];
   return `${observation.currency} ${format(observation.amount)} official reference`;
 }
 
+function groupsetSetupLabel(groupset) {
+  if (/semi-wireless/i.test(groupset.architecture)) return 'Semi-wireless';
+  if (/fully wireless/i.test(groupset.architecture)) return 'Fully wireless';
+  if (/wired/i.test(groupset.architecture)) return 'Wired';
+  return 'Electronic';
+}
+
+function groupsetPriceSummary(groupset) {
+  const observations = (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
+  if (!observations.length) return 'No exact mainland package captured';
+  const dates = [...new Set(observations.map((observation) => observation.observed_at))];
+  const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
+  return `${observations.length} ${taobao ? 'listed option' : 'market observation'}${observations.length === 1 ? '' : 's'} · ${dates.length === 1 ? dates[0] : `${dates[0]}–${dates.at(-1)}`}${taobao ? ' · checkout unverified' : ''}`;
+}
+
+function observationAmount(observation) {
+  const digits = Number.isInteger(observation.amount) ? 0 : 2;
+  const amount = new Intl.NumberFormat('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(observation.amount);
+  return observation.currency === 'CNY' ? `¥${amount}` : `${observation.currency} ${amount}`;
+}
+
 export function renderElectronicGroupsets(ctx) {
   const groupsets = ctx.data.groupsets ?? [];
-  const sourceIds = [...new Set(groupsets.flatMap((groupset) => groupset.source_ids))];
+  const adjacentSources = ctx.data.sources.filter((source) => source.adjacent_system);
+  const sourceIds = [...new Set([...groupsets.flatMap((groupset) => groupset.source_ids), ...adjacentSources.map((source) => source.id)])];
   const sources = sourceIds.map((id) => ctx.data.sources.find((source) => source.id === id)).filter(Boolean);
-  const rowsFor = (scope) => groupsets.filter((groupset) => groupset.scope === scope).map((groupset) => {
-    const variantWeights = groupset.variants
-      .filter((variant) => Number.isFinite(variant.disc_core_weight_g))
-      .map((variant) => `${variant.name} ${(variant.disc_core_weight_g / 1000).toFixed(2)} kg core`)
-      .join('; ');
-    return `<tr>
-      <th scope="row"><strong>${escapeHtml(groupset.name)}</strong><span>${escapeHtml(groupset.maker)}</span></th>
-      <td>${escapeHtml(groupset.positioning)}</td>
-      <td><strong>${escapeHtml(groupset.shifting.cassette_speeds)}</strong><span>${escapeHtml(groupset.shifting.chainrings)} · ${Number.isFinite(groupset.shifting.max_rear_sprocket_teeth) ? `up to ${escapeHtml(groupset.shifting.max_rear_sprocket_teeth)}T rear` : 'current maximum unresolved'}</span></td>
-      <td>${escapeHtml(groupset.architecture)}<span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
-      <td>${escapeHtml(variantWeights || groupset.weight.note)}</td>
-      <td>${escapeHtml(groupset.battery)}</td>
-      <td><strong>${escapeHtml(groupsetPriceLabel(groupset))}</strong><span>${escapeHtml(groupset.china_price_status)}</span></td>
-    </tr>`;
-  }).join('');
+  const rowsFor = (scope) => groupsets.filter((groupset) => groupset.scope === scope).map((groupset) => `<tr>
+      <th scope="row"><a href="#${escapeAttr(groupset.id)}"><strong>${escapeHtml(groupset.name)}</strong><span>${escapeHtml(groupset.maker)}</span></a></th>
+      <td data-label="Best for" data-column="best">${escapeHtml(groupset.use_case)}</td>
+      <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(groupset.shifting.cassette_speeds)}</strong><span>${escapeHtml(groupset.shifting.chainrings)} · ${Number.isFinite(groupset.shifting.max_rear_sprocket_teeth) ? `up to ${escapeHtml(groupset.shifting.max_rear_sprocket_teeth)}T rear` : 'current maximum unresolved'}</span></td>
+      <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
+      <td data-label="Price" data-column="price"><strong>${escapeHtml(groupsetPriceLabel(groupset))}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span></td>
+    </tr>`).join('');
   const details = groupsets.map((groupset) => `<article class="groupset-detail" id="${escapeAttr(groupset.id)}">
     <div><span>${escapeHtml(groupset.status)}</span><h2>${escapeHtml(groupset.name)}</h2><p>${escapeHtml(groupset.use_case)}</p></div>
     <dl class="detail-list">
+      <div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div>
+      <div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div>
       <div><dt>Controls and app</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div>
       <div><dt>What the package means</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div>
       <div><dt>Weight evidence</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div>
       <div><dt>Freehub and cassette</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div>
       <div><dt>Hanger and frame</dt><dd>${escapeHtml(`${groupset.compatibility.hanger}. ${groupset.compatibility.frame}`)}</dd></div>
       <div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div>
+      <div><dt>China pricing</dt><dd>${escapeHtml(groupset.china_price_status)}</dd></div>
     </dl>
+    ${(groupset.price_observations ?? []).length ? `<h3>Captured price options</h3><div class="price-records">${groupset.price_observations.map((observation) => `<div><strong>${escapeHtml(observation.option_label_zh ?? sentenceLabel(observation.price_type))} · ${escapeHtml(observationAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('')}</div>` : ''}
     <h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
   </article>`).join('');
-  const sourceHtml = sources.map((source) => `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · accessed ${escapeHtml(source.accessed_at)}${source.url ? '' : ' · supplied synthesis, no public link'}</span><p>${escapeHtml(source.notes)}</p></div>`).join('');
-  const table = (scope, title, note) => `<section class="reference-group"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(note)}</p><div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>System</th><th>Position</th><th>Gearing</th><th>Wiring and brakes</th><th>Listed weight</th><th>Battery</th><th>Price status</th></tr></thead><tbody>${rowsFor(scope)}</tbody></table></div></section>`;
+  const sourceHtml = sources.map((source) => `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · accessed ${escapeHtml(source.accessed_at)}${source.url ? '' : ' · supplied evidence, no public link'}</span><p>${escapeHtml(source.notes)}</p>${Array.isArray(source.observations) ? `<details class="source-options"><summary>${source.observations.length} captured option${source.observations.length === 1 ? '' : 's'}</summary><ul>${source.observations.map((observation) => `<li><strong>${escapeHtml(observation.option_label_zh)}</strong> · ${escapeHtml(formatCny(observation.amount_cny))}<span>${escapeHtml(observation.configuration)}</span></li>`).join('')}</ul></details>` : ''}</div>`).join('');
+  const table = (scope, title, note) => `<section class="reference-group"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(note)}</p><p class="table-scroll-hint">Scroll sideways to compare every column.</p><div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>System</th><th>Best for</th><th>Gearing</th><th>Setup</th><th>Price</th></tr></thead><tbody>${rowsFor(scope)}</tbody></table></div></section>`;
+  const adjacentRows = adjacentSources.map((source) => `<tr><th scope="row"><strong>${escapeHtml(source.adjacent_system.name)}</strong><span>${escapeHtml(source.adjacent_system.discipline)}</span></th><td data-label="Observed packages" data-column="best">${escapeHtml(source.adjacent_system.headline_price)}</td><td data-label="Why separate" data-column="price">${escapeHtml(source.adjacent_system.why_separate)}</td></tr>`).join('');
+  const adjacentHtml = adjacentRows ? `<section class="reference-group adjacent-reference"><h2>Other disciplines</h2><p>Useful Taobao price sightings kept outside the road and gravel comparison because their controls and package scope are materially different.</p><div class="reference-table-wrap"><table class="reference-table adjacent-table"><thead><tr><th>System</th><th>Observed packages</th><th>Why separate</th></tr></thead><tbody>${adjacentRows}</tbody></table></div></section>` : '';
   const html = `<section class="reference-intro"><p class="eyebrow">Component reference · reviewed 2026-08-24</p><p>This bounded set covers established road/all-road/gravel benchmarks and Chinese alternatives that recur in China-market complete bikes and upgrade searches. The decisive differences are cassette and freehub, hanger and frame requirements, wiring, brake fluid, package scope and what a quoted weight actually includes.</p><p class="reference-note">A family name does not prove an exact kit. Confirm generation, component codes, every included part, the cassette/chain match and the mainland warranty route before buying.</p></section>
   ${table('established-benchmark', 'Established benchmarks', 'Useful reference points for price, compatibility, serviceability and gearing—not an assumption that every bike should use them.')}
   ${table('chinese-alternative', 'Chinese electronic systems', 'Promising alternatives, separated by current revision and kept explicit about incomplete package, price or service evidence.')}
+  ${adjacentHtml}
   <section class="groupset-details">${details}</section>
   <section class="detail-section"><h2>Package normalization</h2><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 remain seller option text. They are not standardized package definitions.</p></section>
-  <section class="detail-section"><h2>China price boundary</h2><p>The R7170 ¥4,150–4,200 range is a dated secondary synthesis of public dealer posts, not an official price or verified checkout. The underlying dealer URLs were not supplied. Other mainland prices remain blank when an attributable, like-for-like package observation was not captured; WheelTop’s euro amount is only an official direct-sale reference.</p></section>
+  <section class="detail-section"><h2>China price boundary</h2><p>The new Taobao amounts are option-level screenshot observations, not verified checkout totals. Package labels are preserved because a ¥2,369 WheelTop shift-and-brake kit, a ¥3,480 eR9 boxed kit and a ¥5,500 GX drivetrain package do not contain the same components. Unspecified bundle discounts are excluded. The R7170 range remains a secondary dealer-post synthesis, and WheelTop’s euro amount remains only an official direct-sale reference.</p></section>
   <section class="detail-section"><h2>Research watchlist</h2><p>Magene QED/PES remains research-stage while public service-action reports lack a matching official bulletin. SENTYEH/SENSAH ECS Pro and unnamed OEM “13-speed eGR” packages are not normalized here because exact public manuals, model codes and package definitions were insufficient in this batch.</p></section>
   <details class="detail-panel"><summary>Official and supplied research sources</summary><div class="detail-panel-body"><div class="source-list">${sourceHtml}</div></div></details>`;
   return prosePage(ctx, {
     title: 'Electronic groupsets to buy in China',
-    desc: 'A compact road, all-road and gravel comparison of established benchmarks and Chinese alternatives, with package boundaries and installation constraints.',
+    desc: 'A compact road, all-road and gravel comparison, plus separate MTB and TT price sightings with explicit package boundaries.',
     path: '/electronic-shifting/',
     html
   });

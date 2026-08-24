@@ -74,10 +74,14 @@ test('electronic groupset references preserve package and price boundaries', () 
   const egr = data.groupsets.find((item) => item.id === 'ltwoo-egr');
   assert.equal(ltwoo.shifting.cassette_speeds, '10-12');
   assert.equal(ltwoo.shifting.max_rear_sprocket_teeth, null);
-  assert.match(ltwoo.china_price_status, /manual Taobao search on 2026-08-24/);
+  assert.match(ltwoo.china_price_status, /boxed alloy-labelled eR9 shift-and-brake kit at ¥3,480/);
+  assert.deepEqual(ltwoo.price_observations.filter((item) => item.headline).map((item) => item.amount), [3480]);
+  assert.equal(ltwoo.price_observations.filter((item) => item.price_type === 'component-option').length, 8);
   assert.equal(wheeltop.shifting.max_rear_sprocket_teeth, 36);
-  assert.equal(wheeltop.price_observations[0].currency, 'EUR');
-  assert.match(wheeltop.price_observations[0].conditions, /not checked/);
+  assert.deepEqual(wheeltop.price_observations.filter((item) => item.headline).map((item) => item.amount), [2369, 2624, 2879, 3219]);
+  const wheelTopOfficialReference = wheeltop.price_observations.find((item) => item.currency === 'EUR');
+  assert.equal(wheelTopOfficialReference.amount, 659);
+  assert.match(wheelTopOfficialReference.conditions, /not checked/);
   assert.deepEqual(magene.variants.map((item) => item.disc_core_weight_g), [1150, 1250]);
   assert.match(magene.package_summary, /Core rim-brake kit/);
   assert.deepEqual(r7170.price_observations.filter((item) => item.headline).map((item) => item.amount), [4150, 4200]);
@@ -87,10 +91,30 @@ test('electronic groupset references preserve package and price boundaries', () 
   assert.equal(r8170.price_observations.find((item) => item.headline).amount, 6050);
   assert.equal(rx825.shifting.max_rear_sprocket_teeth, 36);
   assert.equal(gex.shifting.max_rear_sprocket_teeth, 52);
+  assert.deepEqual(gex.price_observations.filter((item) => item.headline).map((item) => item.amount), [2369, 2369, 2369]);
   assert.equal(egr.shifting.max_rear_sprocket_teeth, 46);
   assert.ok(data.groupsets.every((item) => item.compatibility.brake_fluid));
   assert.deepEqual(data.meta.frameset_build_assumption.presets.map((preset) => preset.amount_cny ?? null), [6000, 7900, null]);
   assert.equal(data.meta.frameset_build_assumption.presets.find((preset) => preset.default).id, 'shimano-105-r7170');
+});
+
+test('Taobao groupset snapshots preserve readable option prices without implying checkout', () => {
+  const ids = [
+    'taobao-wheeltop-eds-tx-options-2026-08-24',
+    'taobao-wheeltop-gex-options-2026-08-24',
+    'taobao-ltwoo-er9-options-2026-08-24',
+    'taobao-sram-gx-axs-transmission-options-2026-08-24',
+    'taobao-ltwoo-erx-tt-options-2026-08-24'
+  ];
+  const sources = ids.map((id) => data.sources.find((source) => source.id === id));
+  assert.ok(sources.every(Boolean));
+  assert.ok(sources.every((source) => source.type === 'marketplace-screenshot' && source.checkout_verified === false));
+  assert.ok(sources.flatMap((source) => source.observations).every((observation) => observation.option_label_zh && observation.amount_cny > 0));
+  assert.deepEqual(sources.filter((source) => source.adjacent_system).map((source) => source.adjacent_system.discipline).sort(), ['MTB', 'Time trial / triathlon']);
+
+  const invalid = structuredClone(data);
+  invalid.sources.find((source) => source.id === ids[0]).checkout_verified = true;
+  assert.ok(validateDataset(invalid).some((error) => error.includes('marketplace screenshot must remain checkout-unverified')));
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {

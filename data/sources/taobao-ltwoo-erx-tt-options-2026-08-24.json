@@ -1,0 +1,35 @@
+{
+  "id": "taobao-ltwoo-erx-tt-options-2026-08-24",
+  "type": "marketplace-screenshot",
+  "title": "L-TWOO eRX-TT Taobao kit and control prices",
+  "publisher": "User-supplied Taobao listing screenshots",
+  "language": "zh-CN",
+  "accessed_at": "2026-08-24",
+  "reliability": { "identity": "medium-high", "specification": "medium", "price": "medium-high" },
+  "observed_at": "2026-08-24",
+  "channel": "taobao",
+  "currency": "CNY",
+  "condition": "new",
+  "checkout_verified": false,
+  "shipping_displayed": "free",
+  "adjacent_system": {
+    "name": "L-TWOO eRX-TT",
+    "discipline": "Time trial / triathlon",
+    "headline_price": "¥4,196.10–4,796.10 for electronics-only and full kits",
+    "why_separate": "TT brake levers with shift buttons and separate aero-extension controllers, not ordinary drop-bar road controls."
+  },
+  "listing_metadata": { "option_count": 18, "visible_option_count": 10, "selected_stock": "nearly-sold-out", "delivery": "estimated-day-after-tomorrow", "returns": "7-day-no-reason-shown", "buyer_protection": "假一赔四 shown" },
+  "observations": [
+    { "option_label_zh": "新款eRX-TT碳纤维大导轮电子变速套装", "normalized_package": "shift-brake", "configuration": "carbon-fibre and large-pulley full TT kit", "amount_cny": 4796.1, "before_coupon_cny": 4799, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "新款eRX-TT电子变速套装", "normalized_package": "shift-brake", "configuration": "standard full TT kit", "amount_cny": 4596.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT 电子部分-不含夹器-大导轮...", "normalized_package": "electronics-only", "configuration": "large-pulley electronic parts excluding calipers; label ending hidden", "amount_cny": 4396.1, "price_basis": "coupon-option", "label_visibility": "truncated" },
+    { "option_label_zh": "eRX-TT 电子部分-不含夹器", "normalized_package": "electronics-only", "configuration": "standard electronic parts excluding calipers", "amount_cny": 4196.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT左刹把（带变速按钮）", "normalized_package": "component", "configuration": "left brake lever with shift button", "amount_cny": 697.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT右刹把（带变速按钮）", "normalized_package": "component", "configuration": "right brake lever with shift button", "amount_cny": 697.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT刹把一对（带变速按钮）", "normalized_package": "component", "configuration": "pair of brake levers with shift buttons", "amount_cny": 1327.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT左控制器", "normalized_package": "component", "configuration": "left aero-extension controller", "amount_cny": 442.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT右控制器", "normalized_package": "component", "configuration": "right aero-extension controller", "amount_cny": 442.1, "price_basis": "coupon-option", "label_visibility": "complete" },
+    { "option_label_zh": "eRX-TT控制器一对", "normalized_package": "component", "configuration": "pair of aero-extension controllers", "amount_cny": 842.1, "price_basis": "coupon-option", "label_visibility": "complete" }
+  ],
+  "notes": "Option-level screenshot prices, not checkout totals. The selected carbon/large-pulley full kit showed ¥4,796.10 after a ¥2.90 coupon reduction from ¥4,799. The repeated ¥400 difference between electronics-only and full-kit options suggests the caliper pair, but that bill of materials remains to be confirmed. Eight unseen options are not inferred. No public listing URL or private buyer data is retained."
+}

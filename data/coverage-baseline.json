@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 364,
+      "sources": 369,
       "images": 128,
       "videos": 12,
       "groupsets": 11,
@@ -460,7 +460,12 @@
       "sram-apex-xplr-axs-d1-official-2026-08-24",
       "sram-rival-axs-e1-official-2026-08-24",
       "sram-rival-xplr-axs-e1-official-2026-08-24",
+      "taobao-ltwoo-er9-options-2026-08-24",
+      "taobao-ltwoo-erx-tt-options-2026-08-24",
       "taobao-snapshot-2026-08-08",
+      "taobao-sram-gx-axs-transmission-options-2026-08-24",
+      "taobao-wheeltop-eds-tx-options-2026-08-24",
+      "taobao-wheeltop-gex-options-2026-08-24",
       "tavelo-arden-china-launch-2026-08-17",
       "tavelo-arden-official-2026-08-17",
       "tavelo-arow-2024-launch",
@@ -7070,6 +7075,56 @@
         "type",
         "url"
       ],
+      "taobao-ltwoo-er9-options-2026-08-24": [
+        "accessed_at",
+        "channel",
+        "checkout_verified",
+        "condition",
+        "currency",
+        "language",
+        "listing_metadata.dispatch",
+        "listing_metadata.option_count",
+        "listing_metadata.returns",
+        "listing_metadata.stock",
+        "notes",
+        "observations",
+        "observed_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "shipping_displayed",
+        "title",
+        "type"
+      ],
+      "taobao-ltwoo-erx-tt-options-2026-08-24": [
+        "accessed_at",
+        "adjacent_system.discipline",
+        "adjacent_system.headline_price",
+        "adjacent_system.name",
+        "adjacent_system.why_separate",
+        "channel",
+        "checkout_verified",
+        "condition",
+        "currency",
+        "language",
+        "listing_metadata.buyer_protection",
+        "listing_metadata.delivery",
+        "listing_metadata.option_count",
+        "listing_metadata.returns",
+        "listing_metadata.selected_stock",
+        "listing_metadata.visible_option_count",
+        "notes",
+        "observations",
+        "observed_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "shipping_displayed",
+        "title",
+        "type"
+      ],
       "taobao-snapshot-2026-08-08": [
         "accessed_at",
         "language",
@@ -7078,6 +7133,81 @@
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type"
+      ],
+      "taobao-sram-gx-axs-transmission-options-2026-08-24": [
+        "accessed_at",
+        "adjacent_system.discipline",
+        "adjacent_system.headline_price",
+        "adjacent_system.name",
+        "adjacent_system.why_separate",
+        "channel",
+        "checkout_verified",
+        "condition",
+        "currency",
+        "language",
+        "listing_metadata.dispatch",
+        "listing_metadata.option_count",
+        "listing_metadata.selected_stock",
+        "listing_metadata.visible_option_count",
+        "notes",
+        "observations",
+        "observed_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "shipping_displayed",
+        "title",
+        "type"
+      ],
+      "taobao-wheeltop-eds-tx-options-2026-08-24": [
+        "accessed_at",
+        "channel",
+        "checkout_verified",
+        "condition",
+        "currency",
+        "language",
+        "listing_metadata.dispatch",
+        "listing_metadata.origin",
+        "listing_metadata.returns",
+        "listing_metadata.sold_count",
+        "listing_metadata.stock",
+        "listing_title",
+        "notes",
+        "observations",
+        "observed_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "shipping_displayed",
+        "title",
+        "type"
+      ],
+      "taobao-wheeltop-gex-options-2026-08-24": [
+        "accessed_at",
+        "channel",
+        "checkout_verified",
+        "condition",
+        "currency",
+        "language",
+        "listing_metadata.dispatch",
+        "listing_metadata.origin",
+        "listing_metadata.returns",
+        "listing_metadata.sold_count",
+        "listing_metadata.stock",
+        "listing_metadata.store_rating",
+        "listing_title",
+        "notes",
+        "observations",
+        "observed_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "shipping_displayed",
         "title",
         "type"
       ],
@@ -10809,6 +10939,7 @@
         "name",
         "package_summary",
         "positioning",
+        "price_observations",
         "reviewed_at",
         "scope",
         "shifting.cassette_speeds",
@@ -11037,6 +11168,7 @@
         "name",
         "package_summary",
         "positioning",
+        "price_observations",
         "reviewed_at",
         "scope",
         "shifting.cassette_speeds",
@@ -20812,7 +20944,12 @@
       "sram-apex-xplr-axs-d1-official-2026-08-24": [],
       "sram-rival-axs-e1-official-2026-08-24": [],
       "sram-rival-xplr-axs-e1-official-2026-08-24": [],
+      "taobao-ltwoo-er9-options-2026-08-24": [],
+      "taobao-ltwoo-erx-tt-options-2026-08-24": [],
       "taobao-snapshot-2026-08-08": [],
+      "taobao-sram-gx-axs-transmission-options-2026-08-24": [],
+      "taobao-wheeltop-eds-tx-options-2026-08-24": [],
+      "taobao-wheeltop-gex-options-2026-08-24": [],
       "tavelo-arden-china-launch-2026-08-17": [],
       "tavelo-arden-official-2026-08-17": [],
       "tavelo-arow-2024-launch": [],
@@ -21542,7 +21679,8 @@
       "ltwoo-erx-er9": [
         "source_ids=ltwoo-erx-manual-catalog-2026-08-24",
         "source_ids=ltwoo-erx-road-official-2026-08-24",
-        "source_ids=ltwoo-erx-user-manual-2026-08-24"
+        "source_ids=ltwoo-erx-user-manual-2026-08-24",
+        "source_ids=taobao-ltwoo-er9-options-2026-08-24"
       ],
       "magene-qed-pes": [
         "source_ids=magene-direct-warranty-official-2026-08-24",
@@ -21583,9 +21721,11 @@
       ],
       "wheeltop-eds-gex": [
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=taobao-wheeltop-gex-options-2026-08-24",
         "source_ids=wheeltop-eds-gex-official-2026-08-24"
       ],
       "wheeltop-eds-tx": [
+        "source_ids=taobao-wheeltop-eds-tx-options-2026-08-24",
         "source_ids=wheeltop-eds-tx-official-2026-08-24"
       ]
     },
@@ -25731,12 +25871,52 @@
         "specification": 3
       }
     },
+    "taobao-ltwoo-er9-options-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 2,
+        "specification": 1
+      }
+    },
+    "taobao-ltwoo-erx-tt-options-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 2,
+        "specification": 1
+      }
+    },
     "taobao-snapshot-2026-08-08": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
         "price": 1,
         "specification": 0.5
+      }
+    },
+    "taobao-sram-gx-axs-transmission-options-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 2,
+        "specification": 0.5
+      }
+    },
+    "taobao-wheeltop-eds-tx-options-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 2,
+        "specification": 1
+      }
+    },
+    "taobao-wheeltop-gex-options-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 2,
+        "specification": 1
       }
     },
     "tavelo-arden-china-launch-2026-08-17": {
