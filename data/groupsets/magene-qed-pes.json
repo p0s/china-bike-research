@@ -1,0 +1,46 @@
+{
+  "id": "magene-qed-pes",
+  "maker": "Magene · 迈金",
+  "name": "QED / PES road electronic",
+  "scope": "chinese-alternative",
+  "use_case": "Road 2× semi-wireless electronic shifting in OEM core or full groupsets",
+  "status": "research-candidate-service-action-unverified",
+  "positioning": "QED is the lighter carbon-injection system and PES trades 100 g for lower-cost construction, but supplied 2026 service-action reports lack a matching official bulletin, so treat both as research-stage purchases.",
+  "variants": [
+    { "name": "QED", "tier": "performance", "material": "carbon-fibre injection moulding", "disc_core_weight_g": 1150, "cassette_speeds": "10-13" },
+    { "name": "PES", "tier": "value", "material": "glass-fibre reinforced plastic", "disc_core_weight_g": 1250, "cassette_speeds": "10-12" }
+  ],
+  "shifting": {
+    "chainrings": "2×",
+    "cassette_speeds": "QED 10-13; PES 10-12",
+    "max_rear_sprocket_teeth": 34,
+    "front_chainring_range_teeth": "50-54",
+    "front_shift_response_ms": 300,
+    "rear_shift_response_ms": 90
+  },
+  "architecture": "Semi-wireless: levers communicate wirelessly; front and rear derailleurs connect to one internal seatpost battery.",
+  "brake_options": ["Hydraulic disc", "Rim brake"],
+  "weight": {
+    "status": "official-disc-core-weight",
+    "note": "Official catalog: QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g. Core means levers, derailleurs and brakes, not cassette, chain or crank."
+  },
+  "battery": "7.4 V 800 mAh seatpost battery, claimed 2,500 km derailleur range, 3-hour charge and 18-month shifter-battery life.",
+  "controls_and_app": "App setup, synchronized shifting, three configurable X/Y/Z buttons, multi-scenario setup and bike-computer/light integration are listed.",
+  "package_summary": "Core rim-brake kit covers levers and derailleurs; core disc kit adds brakes. Full and super OEM groupsets may add cassette, chain, crank or power-meter crank, and some packages add wheels.",
+  "compatibility": {
+    "freehub": "Depends on the chosen 10-13-speed cassette and exact QED/PES generation",
+    "hanger": "Standard derailleur hanger",
+    "frame": "Internal seatpost battery fit and power-wire routing",
+    "brake_fluid": "Confirm the exact caliper generation and specified fluid"
+  },
+  "china_price_status": "No attributable mainland consumer price was captured; the bounded Taobao route timed out on 2026-08-24, while QED/PES availability remains primarily OEM/catalog and complete-bike based.",
+  "price_observations": [],
+  "caveats": [
+    "Public 2026 service-action and free-upgrade reports were supplied without a matching official bulletin; confirm the revised generation and written warranty before purchase.",
+    "Confirm whether a listing is a core kit or a full OEM package; cassette, chain and crank are absent from core groupsets.",
+    "The 2024 launch material described 10-12-speed compatibility, while the newer catalog lists QED through 13 speed; confirm firmware and exact generation.",
+    "Confirm internal battery fit, wire routing, brake-caliper version and an after-sales route for the exact seller or complete bike."
+  ],
+  "source_ids": ["magene-qed-pes-catalog-2026-08-24", "magene-qed-official-overview-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

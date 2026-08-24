@@ -50,6 +50,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <span>Independent comparison of bicycles available in China.</span>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
+        <a href="${url(base,'/electronic-shifting/')}">Electronic shifting</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
         <a href="${url(base,'/privacy/')}">Privacy</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>

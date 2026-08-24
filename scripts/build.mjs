@@ -15,6 +15,7 @@ import {
   renderHome,
   renderModel,
   renderCandidateModel,
+  renderElectronicGroupsets,
   renderMethodology,
   renderPrivacy,
   renderImagePolicy,
@@ -87,6 +88,7 @@ add('/', renderHome(ctx));
 for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product));
 for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible);
 add('/methodology/', renderMethodology(ctx));
+add('/electronic-shifting/', renderElectronicGroupsets(ctx));
 add('/privacy/', renderPrivacy(ctx));
 add('/image-policy/', renderImagePolicy(ctx));
 add('/image-sources/', renderImageSources(ctx));
@@ -119,6 +121,7 @@ write('data/catalog.json', `${JSON.stringify(catalog, null, 2)}\n`);
 write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_at, sources: data.sources }, null, 2)}\n`);
 write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images }, null, 2)}\n`);
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
+write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
 
 const headers = [
   'id','brand','brand_zh','model','type','category','handlebar',
@@ -177,6 +180,7 @@ write('build-manifest.json', `${JSON.stringify({
     sources: data.sources.length,
     images: data.images.length,
     videos: data.videos.length,
+    groupsets: data.groupsets.length,
     pages: pages.size
   },
   performance,

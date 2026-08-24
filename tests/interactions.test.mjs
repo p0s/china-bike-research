@@ -29,12 +29,16 @@ test('catalog previews enlarge the full hit target from a useful default size', 
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
   assert.match(script, /\.catalog-row \.product-image-link'[\s\S]*?addEventListener\('mouseenter'[\s\S]*?closeTooltip\(\)/);
   assert.match(styles, /\.product-image:has\(\.product-image-link:hover\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
-  assert.match(styles, /\.product-image\.hero-image > img:is\(\.is-fallback, \.is-placeholder\) \{ padding: 0; \}/);
+  assert.match(styles, /\.model-figure\.is-unavailable,[\s\S]*?\.gallery-thumb\[hidden\] \{ display: none; \}/);
+  assert.match(styles, /\.catalog-product\.has-no-image \{ grid-template-columns: minmax\(0, 1fr\); \}/);
   assert.doesNotMatch(styles, /\.selection-actions \.text-button \{ display: none; \}/);
 });
 
-test('failed product photos disclose the visible placeholder', () => {
-  assert.match(script, /captionStatus\.textContent = 'Source image unavailable · Project placeholder shown'/);
+test('failed product photos are hidden without substituting a placeholder', () => {
+  assert.match(script, /captionStatus\.textContent = 'Source image unavailable'/);
+  assert.match(script, /container\.remove\(\)/);
+  assert.match(script, /image\.remove\(\)/);
+  assert.doesNotMatch(script, /showing project placeholder|dataset\.completeBikeFallback|dataset\.framesetFallback/);
 });
 
 test('product galleries are explicit, keyboard-operable, and motion-safe', () => {
@@ -45,7 +49,7 @@ test('product galleries are explicit, keyboard-operable, and motion-safe', () =>
   assert.match(script, /ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1/);
   assert.match(script, /event\.key === 'Home'/);
   assert.match(script, /event\.key === 'End'/);
-  assert.match(script, /hero\.dataset\.fallbackApplied = ''/);
+  assert.doesNotMatch(script, /fallbackApplied|dataset\.fallback/);
   assert.match(styles, /\.model-gallery-strip \{[^}]*grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
   assert.match(styles, /\.gallery-hero-image\.is-switching \{[^}]*opacity: \.18/);
   assert.match(styles, /\.gallery-thumb\[aria-pressed="true"\]/);

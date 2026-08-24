@@ -1,0 +1,40 @@
+{
+  "id": "sram-rival-axs-e1",
+  "maker": "SRAM",
+  "name": "Rival AXS E1",
+  "scope": "established-benchmark",
+  "use_case": "Fully wireless road/all-road 1x or 2x12",
+  "status": "current-established",
+  "positioning": "The mainstream fully wireless benchmark: easy electronic installation, but XDR, Flattop, DUB and DOT requirements can raise retrofit cost.",
+  "variants": [
+    { "name": "Rival AXS E1 2x", "tier": "value-road", "cassette_speeds": "12" },
+    { "name": "Rival AXS E1 1x", "tier": "all-road", "cassette_speeds": "12" }
+  ],
+  "shifting": {
+    "chainrings": "1x or 2x",
+    "cassette_speeds": "12",
+    "minimum_rear_sprocket_teeth": 10,
+    "max_rear_sprocket_teeth": 36
+  },
+  "architecture": "Fully wireless AXS control with removable batteries on each derailleur and coin cells in the levers.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "package-dependent", "note": "SRAM states the current family is 213 g lighter than its prior generation, but no cross-brand package total is used here." },
+  "battery": "One removable AXS battery per installed derailleur plus lever coin cells; a 2x setup normally carries two interchangeable derailleur batteries.",
+  "controls_and_app": "AXS app supports setup, personalization, battery state and firmware.",
+  "package_summary": "A road conversion may need levers, RD, optional FD, one or two batteries, charger, calipers, cassette, Flattop chain, crank, DUB bottom bracket and rotors.",
+  "compatibility": {
+    "freehub": "XDR for the normal 10T-start road cassettes",
+    "hanger": "Standard derailleur hanger",
+    "frame": "No electronic wire route; verify XDR wheel and DUB/crank compatibility",
+    "brake_fluid": "DOT 5.1"
+  },
+  "china_price_status": "No attributable exact mainland Rival AXS E1 package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "Count the XDR freehub, Flattop chain, cassette, batteries, charger, DUB parts and DOT bleed equipment before comparing prices.",
+    "Road AXS hydraulic brakes use DOT fluid, not mineral oil.",
+    "Confirm whether a listing is E1 current generation or older Rival eTap AXS."
+  ],
+  "source_ids": ["sram-rival-axs-e1-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

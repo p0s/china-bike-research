@@ -77,7 +77,7 @@ async function main() {
     console.log(`${result.classification.padEnd(18)} ${result.id} — ${detail}`);
   }
   console.log(`\nChecked ${results.length} remote image resources: ${Object.entries(summary).map(([key, count]) => `${count} ${key}`).join(', ')}.`);
-  console.log('Host-blocked and unreachable embeds remain non-blocking because the site provides rights-safe local fallbacks.');
+  console.log('Host-blocked and unreachable third-party embeds remain non-blocking because the site hides failed images without losing product facts.');
   if (process.argv.includes('--strict') && results.some(isBlockingImageResult)) process.exitCode = 1;
 }
 

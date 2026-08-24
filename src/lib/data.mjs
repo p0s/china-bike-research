@@ -168,6 +168,7 @@ export function loadDataset() {
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
+    groupsets: loadDirectory('groupsets'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -185,7 +186,10 @@ function isObject(value) { return value !== null && typeof value === 'object' &&
 function isDate(value) { return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`)); }
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
-function categoryValues(value) { return String(value).split('|').map((item) => item.trim()).filter(Boolean); }
+function categoryValues(value) {
+  if (!value) return [];
+  return String(value).split('|').map((item) => item.trim()).filter(Boolean);
+}
 function hasSupportedCategory(value, categorySet) { return categoryValues(value).every((category) => categorySet.has(category)); }
 
 export function validateDataset(data = loadDataset()) {
@@ -214,6 +218,7 @@ export function validateDataset(data = loadDataset()) {
     source: data.sources,
     image: data.images,
     video: data.videos,
+    groupset: data.groupsets,
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -238,6 +243,31 @@ export function validateDataset(data = loadDataset()) {
   const sourcesById = new Map(data.sources.map((x) => [x.id, x]));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
   const candidateIds = new Set(data.candidates.map((x) => x.id));
+
+  for (const groupset of data.groupsets) {
+    requireFields('groupset', groupset, [
+      'maker', 'name', 'scope', 'use_case', 'status', 'positioning', 'variants', 'shifting',
+      'architecture', 'brake_options', 'weight', 'battery', 'controls_and_app',
+      'package_summary', 'compatibility', 'china_price_status', 'price_observations', 'caveats',
+      'source_ids', 'reviewed_at'
+    ]);
+    if (!['established-benchmark', 'chinese-alternative'].includes(groupset.scope)) errors.push(`groupset ${groupset.id}: invalid scope`);
+    for (const field of ['freehub', 'hanger', 'frame', 'brake_fluid']) {
+      if (!groupset.compatibility?.[field]) errors.push(`groupset ${groupset.id}: missing compatibility.${field}`);
+    }
+    if (!isDate(groupset.reviewed_at)) errors.push(`groupset ${groupset.id}: invalid reviewed_at`);
+    if (!Array.isArray(groupset.variants) || !groupset.variants.length) errors.push(`groupset ${groupset.id}: variants must not be empty`);
+    if (!Array.isArray(groupset.brake_options) || !groupset.brake_options.length) errors.push(`groupset ${groupset.id}: brake_options must not be empty`);
+    if (!Array.isArray(groupset.caveats) || !groupset.caveats.length) errors.push(`groupset ${groupset.id}: caveats must not be empty`);
+    for (const sourceId of groupset.source_ids ?? []) {
+      if (!sourceIds.has(sourceId)) errors.push(`groupset ${groupset.id}: missing source ${sourceId}`);
+    }
+    for (const observation of groupset.price_observations ?? []) {
+      if (!Number.isFinite(observation.amount) || observation.amount <= 0) errors.push(`groupset ${groupset.id}: invalid price amount`);
+      if (!isDate(observation.observed_at)) errors.push(`groupset ${groupset.id}: invalid price observation date`);
+      if (!sourceIds.has(observation.source_id)) errors.push(`groupset ${groupset.id}: missing price source ${observation.source_id}`);
+    }
+  }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
   const categorySet = new Set(supportedCategories);

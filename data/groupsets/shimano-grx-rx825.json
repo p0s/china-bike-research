@@ -1,0 +1,40 @@
+{
+  "id": "shimano-grx-rx825",
+  "maker": "Shimano",
+  "name": "GRX Di2 RX825",
+  "scope": "established-benchmark",
+  "use_case": "Road-biased gravel and all-road 2x12 with a chain stabilizer",
+  "status": "current-established",
+  "positioning": "The strongest 2x benchmark for broken roads and gravel: close road-like steps, 36T range and SHADOW RD+ chain control.",
+  "variants": [
+    { "name": "RX825 2x12", "tier": "gravel-performance", "product_codes": "ST-RX825, FD-RX825, RD-RX825" }
+  ],
+  "shifting": {
+    "chainrings": "2x",
+    "cassette_speeds": "12",
+    "minimum_rear_sprocket_teeth": 11,
+    "max_rear_sprocket_teeth": 36,
+    "rear_capacity_teeth": 40
+  },
+  "architecture": "Semi-wireless: wireless levers with front and rear derailleurs wired to an internal BT-DN300 battery.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "package-dependent", "note": "No normalized complete-groupset total is recorded; compare only like-for-like component packages." },
+  "battery": "Internal BT-DN300 derailleur battery; wireless lever controls.",
+  "controls_and_app": "E-TUBE PROJECT Cyclist plus full or semi-synchronized shift modes; rear derailleur includes SHADOW RD+ stabilization.",
+  "package_summary": "Core electronic purchases need two levers, FD, RD, BT-DN300, SD300 wires, charger and hydraulic brakes; crank, cassette, chain, rotors and bottom bracket may be separate.",
+  "compatibility": {
+    "freehub": "HG for 11-34T or 11-36T 12-speed cassettes",
+    "hanger": "Standard/direct-mount compatible derailleur-hanger system",
+    "frame": "Internal BT-DN300 space, FD mount and two SD300 wire routes",
+    "brake_fluid": "Shimano mineral oil"
+  },
+  "china_price_status": "No attributable exact mainland package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "This is 2x only; do not merge its battery, cassette or derailleur facts with RX717/RX827 1x.",
+    "Confirm whether the chosen crank is 46/30 or 48/31 and whether the cassette is 11-34 or 11-36.",
+    "A retrofit still needs internal battery and wire routing."
+  ],
+  "source_ids": ["shimano-grx-rx825-official-2026-08-24", "shimano-di2-bt-dn300-compatibility-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

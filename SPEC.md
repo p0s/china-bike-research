@@ -20,7 +20,7 @@ This is the canonical product and data contract. Intentional behavior changes mu
 
 The main catalog shows a compact common core. Publication-ready rows provide the full core; candidate rows leave unavailable cells empty rather than inventing values:
 
-- image when its exactness and rights are documented, plus the exact model/configuration or candidate name;
+- image when its exactness and rights are documented, plus the exact model/configuration or candidate name; otherwise omit the image region instead of showing a generic bicycle placeholder;
 - category and comparable price;
 - drivetrain and weight;
 - tire clearance, with a compact unknown state when it is not recorded;
@@ -34,8 +34,11 @@ Tire clearance has its own numeric sort across categories. Other category-specif
 
 The site remains static, fast, responsive, accessible, and usable without accounts, analytics, ads, or a backend.
 Catalog thumbnails link to model details and must be large enough to identify a bicycle's silhouette at rest. On fine-pointer devices, the whole thumbnail link enlarges on hover so the preview remains stable as the pointer moves across it, without moving the table layout; touch layouts keep the larger stable thumbnail size.
+If a remote product image fails, hide that image cleanly while keeping the bike facts and links usable. Do not replace missing or failed product photography with a generic placeholder SVG.
 
 Model pages may include a compact, curated video section when a video maps to the exact variant or physical platform. Videos are optional editorial context, not specification, price, BOM, recommendation, or publication authority. The shown build may differ from the published variant. Channel relationships, supplied-product context, and other material disclosures must be visible. A YouTube embed loads only after an explicit visitor action, never autoplays, and always retains a normal external-link fallback.
+
+A compact component reference may explain current road, all-road, and gravel electronic-shifting systems sold in or for China when it helps interpret bicycle specifications. It may include established benchmarks and Chinese alternatives, and is linked from relevant drivetrain facts and the footer rather than promoted as a primary header destination. It must distinguish normalized package scope, exact brake packages and fluid, wiring and battery architecture, cassette and freehub limits, hanger and frame requirements, the scope of quoted weights, and dated price status. Seller labels such as 小套, 中套, and 大套 are not standardized. A secondary dealer-market synthesis may be retained as such but is neither an official price nor verified checkout evidence. The reference does not turn a component family into proof of an exact bicycle build.
 
 Every distinct catalog entry has an internal detail page with a concise, always-visible buyer brief. Published products combine the editorial verdict with exact price context, intended use, important configuration/category facts, strengths, trade-offs, and meaningful unknowns. Candidates are clearly labelled as research-stage profiles and show only attributed known facts, price context, and unresolved gaps; they are not recommendations. Both should read like precise short reviews rather than data dumps or long articles. Key product/support facts must not be hidden behind disclosure controls. Seller-contact scripts and internal research prompts are not buyer-facing content; detailed evidence records may remain in a compact disclosure beneath the visible brief.
 
@@ -61,8 +64,9 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 - `variants/`: exact complete-bike or frameset configurations.
 - `prices/`: dated observations; never timeless product properties.
 - `sources/`: source identity, date, reliability, and supported claims.
-- `images/`: subject accuracy, source, rights status, credit, and fallback.
+- `images/`: subject accuracy, source, rights status, credit, and compatibility metadata for historical fallbacks; buyer-facing failure behavior is omission.
 - `videos/`: exact model/platform or candidate mapping, channel provenance, editorial format, commercial context, and privacy-safe embed identity.
+- `groupsets/`: compact evidence-backed references for recurring drivetrain families, their variants, package boundaries, compatibility, weights, batteries, price status, and caveats.
 - `recommendations/`: compact buyer-facing labels, updated only when evidence changes the conclusion.
 - `candidates/` and `exclusions/`: unresolved or rejected products with reasons.
 - `research/`: dated import ledgers that reconcile source bundles, dispositions, priority targets, and research queues without becoming buyer-facing product records.
@@ -104,16 +108,16 @@ Research completion is tracked per exact target and missing field. High-priority
 
 ## 6. Media and privacy
 
-- Third-party images may be remotely embedded only with source, owner, exactness, rights status, alt text, and fallback metadata.
-- A public-post photo may use `public-post-embed` only as a remote reference with the original owner credited, no redistribution license asserted, no personal identity retained, and a project-owned fallback. It must never be downloaded into the repository or outrank an exact official image.
-- A public XHS photo may use `public-post-quotation` only as a bounded editorial quotation that identifies and supports commentary about the exact bicycle profile. Use at most one selected photo from a post, keep it secondary to the analysis, link the exact original post, credit the original owner at that source, assert no license, provide a public removal route, and retain a project-owned fallback. Public availability and attribution alone do not establish permission or make every reuse a valid quotation; if the editorial link or scope is doubtful, use the fallback.
+- Third-party images may be remotely embedded only with source, owner, exactness, rights status, alt text, and documented failure behavior.
+- A public-post photo may use `public-post-embed` only as a remote reference with the original owner credited, no redistribution license asserted, and no personal identity retained. It must never be downloaded into the repository or outrank an exact official image.
+- A public XHS photo may use `public-post-quotation` only as a bounded editorial quotation that identifies and supports commentary about the exact bicycle profile. Use at most one selected photo from a post, keep it secondary to the analysis, link the exact original post, credit the original owner at that source, assert no license, and provide a public removal route. Public availability and attribution alone do not establish permission or make every reuse a valid quotation; if the editorial link or scope is doubtful, omit the image.
 - `public-post-quotation` files are served only from the approved project media origin, never from GitHub. The public repository stores derivative URLs and metadata but no original or optimized third-party binary. The origin must expose content-addressed HTTPS WebP paths, disable directory listing and application access logs, and serve no application or user data.
 - Each quoted image has one card derivative no wider than 480 px or larger than 40,000 bytes and one detail derivative no wider than 1,200 px or larger than 88,000 bytes. The renderer uses responsive selection so a catalog card does not download the detail file. Derivatives must be content-addressed, must not be upscaled, and may only be resized, compressed, or minimally cropped to remove private material; do not aesthetically alter evidence.
 - Before upload, strip EXIF, XMP, ICC, GPS, and other embedded metadata. Visually reject any image containing a face, vehicle registration, account identifier, or visible location identifier. Record the review date, variant dimensions, byte counts, SHA-256 digests, and WebP format in the image record.
 - Every image record targets exactly one published platform or one candidate. A candidate image may identify the model without promoting the candidate or resolving its missing publication evidence.
-- Never commit third-party image files. Project-owned placeholders remain the only unlicensed raster/vector media stored in Git; permission-granted or compatibly licensed media requires a separate explicit contract change before local storage.
+- Never commit third-party image files. Historical project-owned placeholder assets may remain in Git for data compatibility, but buyer-facing pages do not render them; permission-granted or compatibly licensed media requires a separate explicit contract change before local storage.
 - Never present another configuration as exact.
-- Scheduled image-health reporting checks every responsive derivative and fails on confirmed broken or wrong-content-type resources. Temporary blocking and network unreachability at unrelated third-party hosts remain non-fatal because every image has a project-owned fallback; project-operated quoted-media failures block delivery.
+- Scheduled image-health reporting checks every responsive derivative and fails on confirmed broken or wrong-content-type resources. Temporary blocking and network unreachability at unrelated third-party hosts remain non-fatal because the interface hides failed images without losing product facts; project-operated quoted-media failures block delivery.
 - YouTube videos use a validated video ID and a click-to-load `youtube-nocookie.com` embed. Initial model-page rendering must not request a YouTube thumbnail, player, script, or iframe. The external YouTube link remains available without loading the embed.
 - Do not publish names, accounts, contacts, addresses, order or tracking IDs, payment data, private messages, private permission correspondence, credentials, GPS, or EXIF metadata.
 
@@ -125,7 +129,7 @@ Every change must preserve valid cross-references and pass:
 npm run check
 ```
 
-For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image and video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
+For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image-failure handling, video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
 
 The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-17 unified 226-row catalog with internal candidate links measures 789,207 HTML bytes and 6,500 elements; it is capped at 820,000 bytes and 6,750 elements. Desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
 

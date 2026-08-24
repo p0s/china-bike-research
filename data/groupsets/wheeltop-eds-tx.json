@@ -1,0 +1,56 @@
+{
+  "id": "wheeltop-eds-tx",
+  "maker": "WheelTop · Wheeltop",
+  "name": "EDS TX road electronic",
+  "scope": "chinese-alternative",
+  "use_case": "Road 1× or 2× electronic shifting with hydraulic or cable brakes",
+  "status": "current-direct-sale",
+  "positioning": "The broad-compatibility option: app-selectable cassette speed and a rim/cable-brake kit as well as hydraulic disc.",
+  "variants": [
+    { "name": "EDS TX hydraulic", "tier": "hydraulic", "lever_material": "carbon", "caliper_style": "separate" },
+    { "name": "EDS TX cable brake", "tier": "cable", "lever_material": "carbon", "caliper_style": "not included" }
+  ],
+  "shifting": {
+    "chainrings": "1× or 2×",
+    "cassette_speeds": "3-14",
+    "minimum_rear_sprocket_teeth": "10-11",
+    "max_rear_sprocket_teeth": 36,
+    "rear_capacity_teeth": 36,
+    "max_front_chainring_teeth": 53
+  },
+  "architecture": "Fully wireless control with separate rechargeable batteries in the front and rear derailleurs; shifters use CR2032 cells.",
+  "brake_options": ["Hydraulic disc", "Cable-actuated rim or mechanical disc"],
+  "weight": {
+    "status": "official-component-weights",
+    "note": "Hydraulic kit listings: 223 g per lever, 336 g rear derailleur, 191 g front derailleur and 163 g per caliper. Hoses, charging parts and small hardware are additional."
+  },
+  "battery": "Rear derailleur 800 mAh, front derailleur 500 mAh, claimed 20,000+ shifts and 800 charge cycles; shifters use CR2032. RD/FD are IP67 and shifters IP65.",
+  "controls_and_app": "App sets cassette speed, button mapping, micro-adjustment, calibration, firmware and battery display; ANT+ integration is advertised.",
+  "package_summary": "Hydraulic kit includes two carbon levers, front and rear derailleurs, two calipers and hoses, magnetic/USB charging parts, instructions and spares. Cable kit omits calipers and hoses; the lever internals are not interchangeable.",
+  "compatibility": {
+    "freehub": "Depends on the selected 3-14-speed cassette; verify cassette, chain and wheel together",
+    "hanger": "Standard derailleur hanger",
+    "frame": "No internal battery or electronic wire route; verify front-derailleur mount for 2x",
+    "brake_fluid": "Confirm the selected hydraulic revision; cable-brake kit has no hydraulic circuit"
+  },
+  "china_price_status": "A bounded manual Taobao search on 2026-08-24 exposed no attributable result card; mainland hydraulic and cable-kit prices remain open.",
+  "price_observations": [
+    {
+      "amount": 659,
+      "currency": "EUR",
+      "market": "manufacturer-direct global store",
+      "price_type": "displayed-reference",
+      "observed_at": "2026-08-24",
+      "conditions": "Displayed reference on the official page; variation, destination, tax, shipping and mainland warranty route were not checked.",
+      "source_id": "wheeltop-eds-tx-official-2026-08-24"
+    }
+  ],
+  "caveats": [
+    "Keep the current 3-14-speed revision separate from older regional 7-13-speed TX records.",
+    "Select the exact cassette speed in the app and verify chain/cassette compatibility rather than treating 3-14-speed support as universal indexing proof.",
+    "The 36T rear limit is narrower than many modern gravel 1× cassettes.",
+    "Confirm brake version, hose length, pad/rotor compatibility and local after-sales route."
+  ],
+  "source_ids": ["wheeltop-eds-tx-official-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

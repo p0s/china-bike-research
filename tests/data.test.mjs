@@ -53,6 +53,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 44);
   assert.equal(data.images.length, 128);
+  assert.equal(data.groupsets.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 199);
@@ -60,6 +61,30 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 325);
   assert.equal(products.length, data.variants.length);
+});
+
+test('electronic groupset references preserve package and price boundaries', () => {
+  const ltwoo = data.groupsets.find((item) => item.id === 'ltwoo-erx-er9');
+  const wheeltop = data.groupsets.find((item) => item.id === 'wheeltop-eds-tx');
+  const magene = data.groupsets.find((item) => item.id === 'magene-qed-pes');
+  const r7170 = data.groupsets.find((item) => item.id === 'shimano-105-r7170');
+  const rx825 = data.groupsets.find((item) => item.id === 'shimano-grx-rx825');
+  const gex = data.groupsets.find((item) => item.id === 'wheeltop-eds-gex');
+  const egr = data.groupsets.find((item) => item.id === 'ltwoo-egr');
+  assert.equal(ltwoo.shifting.cassette_speeds, '10-12');
+  assert.equal(ltwoo.shifting.max_rear_sprocket_teeth, null);
+  assert.match(ltwoo.china_price_status, /manual Taobao search on 2026-08-24/);
+  assert.equal(wheeltop.shifting.max_rear_sprocket_teeth, 36);
+  assert.equal(wheeltop.price_observations[0].currency, 'EUR');
+  assert.match(wheeltop.price_observations[0].conditions, /not checked/);
+  assert.deepEqual(magene.variants.map((item) => item.disc_core_weight_g), [1150, 1250]);
+  assert.match(magene.package_summary, /Core rim-brake kit/);
+  assert.deepEqual(r7170.price_observations.filter((item) => item.headline).map((item) => item.amount), [4150, 4200]);
+  assert.equal(r7170.compatibility.freehub, 'HG road for the supported 11T-start cassettes');
+  assert.equal(rx825.shifting.max_rear_sprocket_teeth, 36);
+  assert.equal(gex.shifting.max_rear_sprocket_teeth, 52);
+  assert.equal(egr.shifting.max_rear_sprocket_teeth, 46);
+  assert.ok(data.groupsets.every((item) => item.compatibility.brake_fluid));
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {

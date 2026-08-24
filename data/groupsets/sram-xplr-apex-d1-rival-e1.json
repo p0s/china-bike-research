@@ -1,0 +1,40 @@
+{
+  "id": "sram-xplr-apex-d1-rival-e1",
+  "maker": "SRAM",
+  "name": "Apex XPLR D1 / Rival XPLR E1",
+  "scope": "established-benchmark",
+  "use_case": "Fully wireless 1x gravel, with different 12- and 13-speed frame constraints",
+  "status": "current-established-split-revisions",
+  "positioning": "Apex D1 is the standard-hanger 12-speed route; Rival E1 is the newer 13-speed Full Mount route and requires a UDH-capable frame.",
+  "variants": [
+    { "name": "Apex XPLR AXS D1", "tier": "value-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 44, "hanger": "standard" },
+    { "name": "Rival XPLR AXS E1", "tier": "performance-gravel", "cassette_speeds": "13", "max_rear_sprocket_teeth": 46, "hanger": "Full Mount / UDH interface" }
+  ],
+  "shifting": {
+    "chainrings": "1x",
+    "cassette_speeds": "Apex 12; Rival 13",
+    "minimum_rear_sprocket_teeth": 10,
+    "max_rear_sprocket_teeth": 46
+  },
+  "architecture": "Fully wireless AXS control with a removable rear-derailleur battery; the two revisions use different cassettes and frame mounts.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "revision-and-package-dependent", "note": "No combined total is used because Apex D1 12-speed and Rival E1 13-speed are different systems." },
+  "battery": "Removable AXS rear-derailleur battery plus lever coin cells.",
+  "controls_and_app": "AXS app supports setup, personalization, battery state and firmware.",
+  "package_summary": "Apex D1 works with 10-36T, 10-44T or 11-44T XPLR cassettes; the 11-44T route can retain HG. Rival E1 uses the 10-46T 13-speed XPLR cassette and Full Mount.",
+  "compatibility": {
+    "freehub": "Apex: HG with 11-44T or XDR with 10T-start cassette; Rival E1: XDR",
+    "hanger": "Apex D1 standard hanger; Rival E1 requires UDH-capable Full Mount frame",
+    "frame": "Rival E1 cannot be fitted to an ordinary non-UDH dropout",
+    "brake_fluid": "DOT 5.1"
+  },
+  "china_price_status": "No attributable exact mainland Apex D1 or Rival E1 package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "Never present 13-speed Rival XPLR E1 as compatible with an ordinary hanger frame.",
+    "Do not merge Apex D1 12-speed cassette compatibility into Rival E1 13-speed.",
+    "Count XDR, Flattop chain, batteries, brakes and installation parts in the conversion price."
+  ],
+  "source_ids": ["sram-apex-xplr-axs-d1-official-2026-08-24", "sram-rival-xplr-axs-e1-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}
