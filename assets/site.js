@@ -472,12 +472,12 @@
   let currentBuildAllowance = defaultBuildAllowance;
   const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
 
-  const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
+  const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
   const legacySortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc' };
 
   function canonicalSortMode(value) {
     const candidate = legacySortModes[value] ?? value;
-    return ['price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc'].includes(candidate)
+    return ['price-asc', 'price-desc', 'name-asc', 'name-desc', 'capability-asc', 'capability-desc', 'tire-asc', 'tire-desc'].includes(candidate)
       ? candidate
       : 'price-asc';
   }
@@ -605,6 +605,7 @@
     if (!value) return true;
     const [kind, threshold] = value.split(':');
     if (kind === 'kind') return row.dataset.capabilityKind === threshold;
+    if (kind === 'tire') return Number(row.dataset.tireClearanceSort || 0) >= Number(threshold || 0);
     return row.dataset.capabilityKind === kind && Number(row.dataset.capabilitySort || 0) >= Number(threshold || 0);
   }
 
@@ -704,9 +705,10 @@
     const { key, direction } = sortModeParts();
     const multiplier = direction === 'desc' ? -1 : 1;
     return [...items].sort((a, b) => {
-      if (key === 'capability') {
-        const aValue = Number(a.dataset.capabilitySort || 0);
-        const bValue = Number(b.dataset.capabilitySort || 0);
+      if (key === 'capability' || key === 'tire') {
+        const datasetKey = key === 'tire' ? 'tireClearanceSort' : 'capabilitySort';
+        const aValue = Number(a.dataset[datasetKey] || 0);
+        const bValue = Number(b.dataset[datasetKey] || 0);
         if (Boolean(aValue) !== Boolean(bValue)) return aValue ? -1 : 1;
         return (aValue - bValue) * multiplier || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
       }
@@ -955,7 +957,7 @@
     const items = selection.map((id) => byId.get(id)).filter(Boolean);
     if (!compareContent || items.length < 2) return;
     const metricKinds = [...new Set(items.map((item) => item.categoryMetricKind))];
-    const metricFields = metricKinds.map((kind) => {
+    const metricFields = metricKinds.filter((kind) => kind !== 'tire').map((kind) => {
       const sample = items.find((item) => item.categoryMetricKind === kind);
       return [sample?.categoryMetricLabel ?? 'Category fact', (item) => item.categoryMetricKind === kind
         ? valueCell(item.categoryMetric, item.categoryMetricDetails)
@@ -965,9 +967,10 @@
     const coreFields = [
       ['Price', (item) => valueCell(item.price, item.priceState)],
       ['Category', (item) => valueCell(item.category)],
+      ...(hasValue('tireClearance') ? [['Tire clearance', (item) => valueCell(item.tireClearance)]] : []),
       ...metricFields,
       ...(hasValue('drivetrain') ? [['Drivetrain', (item) => valueCell(item.drivetrain, item.drivetrainSubline)]] : []),
-      ...(hasValue('weight') ? [['Claimed weight', (item) => valueCell(item.weight, item.weightSubline)]] : []),
+      ...(hasValue('weight') ? [['Weight', (item) => valueCell(item.weight)]] : []),
       ...(hasValue('frame') ? [['Frame', (item) => valueCell(item.frame)]] : []),
       ...(hasValue('bestFor') ? [['Best for', (item) => valueCell(item.bestFor)]] : []),
       ...(hasValue('verdict') ? [['Verdict', (item) => valueCell(item.verdict)]] : [])

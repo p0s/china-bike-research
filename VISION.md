@@ -12,7 +12,7 @@ Within minutes, a buyer should be able to:
 
 - find relevant complete bikes and frameset builds;
 - compare price, category, components, fit-relevant specifications, and trade-offs;
-- distinguish measured facts, official claims, inference, and unknowns;
+- trace important facts to their sources and understand material uncertainty;
 - open the original evidence and know what to confirm before buying.
 
 ## Principles
@@ -20,6 +20,7 @@ Within minutes, a buyer should be able to:
 - **Decision first:** show information that changes a purchase decision.
 - **China reality:** use domestic prices, availability, aliases, support, and Chinese sources.
 - **Evidence over marketing:** date prices and qualify material claims.
+- **Useful coverage:** one reasonably attributable source is enough for a routine specification; prefer a useful value over an unnecessary blank.
 - **Comparable by default:** normalize price where the comparison is honest and useful.
 - **Uncertainty is honest:** missing evidence lowers confidence; it does not prove poor quality.
 - **Minimal interface:** one main comparison, without dashboards, filler, or repetition.
