@@ -1,0 +1,40 @@
+{
+  "id": "wheeltop-eds-gex",
+  "maker": "WheelTop · Wheeltop",
+  "name": "EDS GeX gravel electronic",
+  "scope": "chinese-alternative",
+  "use_case": "Fully wireless 1x gravel with 46T or 52T rear range",
+  "status": "current-direct-sale-split-configurations",
+  "positioning": "The Chinese wide-range wireless option: choose derailleur cage and hanger configuration before treating it as one product.",
+  "variants": [
+    { "name": "GeX 75 mm RD", "tier": "mid-range", "max_rear_sprocket_teeth": 46, "rear_capacity_teeth": 36 },
+    { "name": "GeX 93 mm RD", "tier": "wide-range", "max_rear_sprocket_teeth": 52, "rear_capacity_teeth": 42 }
+  ],
+  "shifting": {
+    "chainrings": "1x",
+    "cassette_speeds": "3-14",
+    "minimum_rear_sprocket_teeth": 10,
+    "max_rear_sprocket_teeth": 52
+  },
+  "architecture": "Fully wireless control with an integrated rechargeable rear-derailleur battery and wireless levers.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "current-total-unverified", "note": "Do not carry the older 7-13-speed RA-package 1.14 kg figure into the current 3-14-speed revision without an exact package match." },
+  "battery": "Rear derailleur 800 mAh; current materials describe about 20,000 shifts and 800 charge cycles.",
+  "controls_and_app": "App speed selection and fine adjustment plus ANT+ support.",
+  "package_summary": "Current packages combine rear derailleur, two levers, hydraulic calipers/hoses and charging cable; confirm 75/93 mm cage, lever material and standard-hanger or UDH-specific configuration.",
+  "compatibility": {
+    "freehub": "Depends on the selected 3-14-speed cassette; verify cassette, chain and wheel together",
+    "hanger": "Standard-hanger and UDH-specific configurations exist; order the exact one",
+    "frame": "No internal electronic wire route; verify cage clearance and selected hanger version",
+    "brake_fluid": "Mineral oil"
+  },
+  "china_price_status": "No attributable exact mainland GeX package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "Keep the current 3-14-speed revision separate from older 7-13-speed RA records.",
+    "A 75 mm 46T unit and 93 mm 52T unit are not interchangeable specifications.",
+    "Confirm cassette indexing, chain, hanger configuration, lever material and warranty route."
+  ],
+  "source_ids": ["wheeltop-eds-gex-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

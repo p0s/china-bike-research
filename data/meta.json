@@ -7,9 +7,31 @@
   "privacy": "The dataset contains public product information, anonymized market observations, remote product-image URLs and credits, and original project placeholders only. It contains no buyer identity, account details, private messages, private screenshots, or personal permission correspondence.",
   "frameset_build_assumption": {
     "amount_cny": 6000,
-    "label": "standard China-market build",
+    "label": "105 Di2-oriented standard build",
     "drivetrain_label": "Electronic 2×12 standard build",
-    "summary": "An adjustable allowance for the drivetrain, wheels, tires, contact points and assembly still needed after the recorded frame package; parts already included in that package remain in the frame price.",
-    "reviewed_at": "2026-08-17"
+    "summary": "An adjustable total allowance for the drivetrain, wheels, tires, contact points and assembly still needed after the recorded frame package; parts already included in that package remain in the frame price.",
+    "presets": [
+      {
+        "id": "shimano-105-r7170",
+        "label": "105 Di2 plan",
+        "amount_cny": 6000,
+        "basis": "Reviewed default electronic 2x12 build allowance",
+        "default": true
+      },
+      {
+        "id": "shimano-ultegra-r8170",
+        "label": "Ultegra Di2 plan",
+        "amount_cny": 7900,
+        "basis": "Reviewed default plus the upper ¥1,900 R8170-versus-R7170 dealer-market premium in the supplied August 2026 synthesis",
+        "source_id": "smzdm-shimano-di2-market-observations-2026-08-24",
+        "observed_at": "2026-08-20"
+      },
+      {
+        "id": "custom",
+        "label": "Custom allowance",
+        "custom": true
+      }
+    ],
+    "reviewed_at": "2026-08-24"
   }
 }

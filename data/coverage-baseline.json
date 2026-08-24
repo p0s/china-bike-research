@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21",
+  "updated_at": "2026-08-24",
   "catalog_metrics": {
     "records": {
       "brands": 36,
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 338,
+      "sources": 364,
       "images": 128,
       "videos": 12,
+      "groupsets": 11,
       "recommendations": 6,
       "candidates": 199,
       "exclusions": 13,
@@ -251,6 +252,7 @@
       "giant-propel-gen4-bikerumor-2026-08-17",
       "giant-propel-gen4-official-2026-08-17",
       "giant-tcr-advanced-0-axs-official-image-2026-08-17",
+      "gpt-pro-electronic-groupsets-input-2026-08-24",
       "ican-company-official",
       "ican-gra04-alibaba-image",
       "ican-gra04-official",
@@ -271,6 +273,14 @@
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
       "look-765-optimum-105-di2-official-2026-08-17",
+      "ltwoo-disc-brake-fluid-official-2026-08-24",
+      "ltwoo-egr-official-2026-08-24",
+      "ltwoo-erx-manual-catalog-2026-08-24",
+      "ltwoo-erx-road-official-2026-08-24",
+      "ltwoo-erx-user-manual-2026-08-24",
+      "magene-direct-warranty-official-2026-08-24",
+      "magene-qed-official-overview-2026-08-24",
+      "magene-qed-pes-catalog-2026-08-24",
       "market-snapshot-2026-08-05",
       "merida-china-reacto-6000-cn-27-official-2026-08-17",
       "merida-china-sales-channels-2026-08-17",
@@ -316,15 +326,18 @@
       "public-lightcarbon-speed7-customer-return-2026-08-20",
       "public-lightcarbon-speed7-factory-weight-2026-08-20",
       "public-merida-scultura-endurance-4000-2026-08-17",
+      "public-merida-silex-7000-25-weight-2026-08-24",
       "public-pardus-robin-evo-build-2026-08-17",
       "public-pardus-robin-evo-photo-2026-08-20",
       "public-pardus-spark-rs-build-2026-08-17",
+      "public-pardus-spark-tourist-pes-2026-08-24",
       "public-pardus-super-sport-105-build-2026-08-17",
       "public-pardus-super-sport-gen2-price-2026-08-17",
       "public-pardus-uragano-evo-build-2026-08-17",
       "public-quick-pro-er-one-build-2026-08-17",
       "public-quick-pro-er-one-preorder-2026-08-17",
       "public-quick-pro-gr-one-build-2026-08-17",
+      "public-quick-pro-gr-one-product-card-2026-08-24",
       "public-quick-pro-tr-one-summary-2026-08-17",
       "public-quick-pro-tt-one-owner-2026-08-17",
       "public-quick-pro-ur-one-owner-2026-08-17",
@@ -337,6 +350,7 @@
       "public-tavelo-arow-sl-build-2026-08-17",
       "public-tavelo-attack-build-2026-08-17",
       "public-tavelo-grow-build-2026-08-17",
+      "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
       "public-winspace-g5-owner-image-2026-08-17",
       "public-winspace-slc3-build-2026-08-17",
       "public-xds-gt350-custom-build-2026-08-17",
@@ -426,6 +440,14 @@
       "seka-spear-rdc-official-2026-08-17",
       "seka-warranty-cn-official-2026-08-17",
       "seka-warranty-global-official-2026-08-17",
+      "shimano-105-r7170-official-2026-08-24",
+      "shimano-di2-bt-dn300-compatibility-2026-08-24",
+      "shimano-dura-ace-r9250-official-2026-08-24",
+      "shimano-grx-rx717-official-2026-08-24",
+      "shimano-grx-rx825-official-2026-08-24",
+      "shimano-grx-rx827-official-2026-08-24",
+      "shimano-ultegra-r8150-official-2026-08-24",
+      "smzdm-shimano-di2-market-observations-2026-08-24",
       "spcycle-gravel-catalog",
       "specialized-china-tarmac-sl8-comp-price-2026-08-17",
       "specialized-cn-crux-page",
@@ -435,6 +457,9 @@
       "specialized-roubaix-sl8-tiagra-official-2026-08-17",
       "specialized-s-works-crux-cn-product-221367",
       "specialized-tarmac-sl8-comp-spec-2026-08-17",
+      "sram-apex-xplr-axs-d1-official-2026-08-24",
+      "sram-rival-axs-e1-official-2026-08-24",
+      "sram-rival-xplr-axs-e1-official-2026-08-24",
       "taobao-snapshot-2026-08-08",
       "tavelo-arden-china-launch-2026-08-17",
       "tavelo-arden-official-2026-08-17",
@@ -502,6 +527,8 @@
       "voicevelo-g-major-panda-podium-2026-08-17",
       "voicevelo-warranty-official-2026-08-17",
       "vook-v8e-pro-official-2026-08-08",
+      "wheeltop-eds-gex-official-2026-08-24",
+      "wheeltop-eds-tx-official-2026-08-24",
       "winspace-agile-official-2026-08-17",
       "winspace-complete-builds-2026-08-09",
       "winspace-g3-official",
@@ -686,6 +713,19 @@
       "china-cycling-yoeleo-altera-g21",
       "julius-domroes-quick-pro-gr-one-review",
       "nero-tavelo-grow-review"
+    ],
+    "groupsets": [
+      "ltwoo-egr",
+      "ltwoo-erx-er9",
+      "magene-qed-pes",
+      "shimano-105-r7170",
+      "shimano-grx-rx717-rx827",
+      "shimano-grx-rx825",
+      "shimano-road-di2-r8170-r9270",
+      "sram-rival-axs-e1",
+      "sram-xplr-apex-d1-rival-e1",
+      "wheeltop-eds-gex",
+      "wheeltop-eds-tx"
     ],
     "recommendations": [
       "best-budget-frame",
@@ -1248,6 +1288,7 @@
     "frameset_build_assumption.amount_cny",
     "frameset_build_assumption.drivetrain_label",
     "frameset_build_assumption.label",
+    "frameset_build_assumption.presets",
     "frameset_build_assumption.reviewed_at",
     "frameset_build_assumption.summary",
     "privacy",
@@ -4570,6 +4611,17 @@
         "type",
         "url"
       ],
+      "gpt-pro-electronic-groupsets-input-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type"
+      ],
       "ican-company-official": [
         "accessed_at",
         "language",
@@ -4808,6 +4860,102 @@
         "publisher",
         "reliability.identity",
         "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ltwoo-disc-brake-fluid-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ltwoo-egr-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ltwoo-erx-manual-catalog-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ltwoo-erx-road-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ltwoo-erx-user-manual-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "magene-direct-warranty-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "magene-qed-official-overview-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "magene-qed-pes-catalog-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -5362,6 +5510,18 @@
         "type",
         "url"
       ],
+      "public-merida-silex-7000-25-weight-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-pardus-robin-evo-build-2026-08-17": [
         "accessed_at",
         "language",
@@ -5387,6 +5547,18 @@
         "url"
       ],
       "public-pardus-spark-rs-build-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-pardus-spark-tourist-pes-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -5459,6 +5631,18 @@
         "url"
       ],
       "public-quick-pro-gr-one-build-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-quick-pro-gr-one-product-card-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -5603,6 +5787,18 @@
         "url"
       ],
       "public-tavelo-grow-build-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -6633,6 +6829,102 @@
         "type",
         "url"
       ],
+      "shimano-105-r7170-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-di2-bt-dn300-compatibility-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-dura-ace-r9250-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-grx-rx717-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-grx-rx825-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-grx-rx827-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-ultegra-r8150-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "smzdm-shimano-di2-market-observations-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "spcycle-gravel-catalog": [
         "accessed_at",
         "language",
@@ -6731,6 +7023,42 @@
         "url"
       ],
       "specialized-tarmac-sl8-comp-spec-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sram-apex-xplr-axs-d1-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sram-rival-axs-e1-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sram-rival-xplr-axs-e1-official-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -7542,6 +7870,30 @@
         "url"
       ],
       "vook-v8e-pro-official-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "wheeltop-eds-gex-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "wheeltop-eds-tx-official-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -8671,6 +9023,7 @@
       ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "alt",
+        "buyer_visibility",
         "candidate_id",
         "credit",
         "display_note",
@@ -8763,6 +9116,7 @@
       ],
       "pardus-spark-sport-pes-cn-color-primary-image": [
         "alt",
+        "buyer_visibility",
         "candidate_id",
         "credit",
         "display_note",
@@ -10409,6 +10763,323 @@
         "title",
         "url",
         "youtube_video_id"
+      ]
+    },
+    "groupsets": {
+      "ltwoo-egr": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "ltwoo-erx-er9": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_note",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "magene-qed-pes": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.front_chainring_range_teeth",
+        "shifting.front_shift_response_ms",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.rear_shift_response_ms",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "shimano-105-r7170": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "shimano-grx-rx717-rx827": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "shimano-grx-rx825": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "shifting.rear_capacity_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "shimano-road-di2-r8170-r9270": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "sram-rival-axs-e1": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "sram-xplr-apex-d1-rival-e1": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "wheeltop-eds-gex": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "wheeltop-eds-tx": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_front_chainring_teeth",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
+        "shifting.rear_capacity_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
       ]
     },
     "recommendations": {
@@ -12154,6 +12825,7 @@
         "category",
         "facts.bottom_bracket",
         "facts.brakes",
+        "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
         "facts.mounts",
@@ -19932,6 +20604,7 @@
       "giant-propel-gen4-bikerumor-2026-08-17": [],
       "giant-propel-gen4-official-2026-08-17": [],
       "giant-tcr-advanced-0-axs-official-image-2026-08-17": [],
+      "gpt-pro-electronic-groupsets-input-2026-08-24": [],
       "ican-company-official": [],
       "ican-gra04-alibaba-image": [],
       "ican-gra04-official": [],
@@ -19952,6 +20625,14 @@
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
+      "ltwoo-disc-brake-fluid-official-2026-08-24": [],
+      "ltwoo-egr-official-2026-08-24": [],
+      "ltwoo-erx-manual-catalog-2026-08-24": [],
+      "ltwoo-erx-road-official-2026-08-24": [],
+      "ltwoo-erx-user-manual-2026-08-24": [],
+      "magene-direct-warranty-official-2026-08-24": [],
+      "magene-qed-official-overview-2026-08-24": [],
+      "magene-qed-pes-catalog-2026-08-24": [],
       "market-snapshot-2026-08-05": [],
       "merida-china-reacto-6000-cn-27-official-2026-08-17": [],
       "merida-china-sales-channels-2026-08-17": [],
@@ -19997,15 +20678,18 @@
       "public-lightcarbon-speed7-customer-return-2026-08-20": [],
       "public-lightcarbon-speed7-factory-weight-2026-08-20": [],
       "public-merida-scultura-endurance-4000-2026-08-17": [],
+      "public-merida-silex-7000-25-weight-2026-08-24": [],
       "public-pardus-robin-evo-build-2026-08-17": [],
       "public-pardus-robin-evo-photo-2026-08-20": [],
       "public-pardus-spark-rs-build-2026-08-17": [],
+      "public-pardus-spark-tourist-pes-2026-08-24": [],
       "public-pardus-super-sport-105-build-2026-08-17": [],
       "public-pardus-super-sport-gen2-price-2026-08-17": [],
       "public-pardus-uragano-evo-build-2026-08-17": [],
       "public-quick-pro-er-one-build-2026-08-17": [],
       "public-quick-pro-er-one-preorder-2026-08-17": [],
       "public-quick-pro-gr-one-build-2026-08-17": [],
+      "public-quick-pro-gr-one-product-card-2026-08-24": [],
       "public-quick-pro-tr-one-summary-2026-08-17": [],
       "public-quick-pro-tt-one-owner-2026-08-17": [],
       "public-quick-pro-ur-one-owner-2026-08-17": [],
@@ -20018,6 +20702,7 @@
       "public-tavelo-arow-sl-build-2026-08-17": [],
       "public-tavelo-attack-build-2026-08-17": [],
       "public-tavelo-grow-build-2026-08-17": [],
+      "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24": [],
       "public-winspace-g5-owner-image-2026-08-17": [],
       "public-winspace-slc3-build-2026-08-17": [],
       "public-xds-gt350-custom-build-2026-08-17": [],
@@ -20107,6 +20792,14 @@
       "seka-spear-rdc-official-2026-08-17": [],
       "seka-warranty-cn-official-2026-08-17": [],
       "seka-warranty-global-official-2026-08-17": [],
+      "shimano-105-r7170-official-2026-08-24": [],
+      "shimano-di2-bt-dn300-compatibility-2026-08-24": [],
+      "shimano-dura-ace-r9250-official-2026-08-24": [],
+      "shimano-grx-rx717-official-2026-08-24": [],
+      "shimano-grx-rx825-official-2026-08-24": [],
+      "shimano-grx-rx827-official-2026-08-24": [],
+      "shimano-ultegra-r8150-official-2026-08-24": [],
+      "smzdm-shimano-di2-market-observations-2026-08-24": [],
       "spcycle-gravel-catalog": [],
       "specialized-china-tarmac-sl8-comp-price-2026-08-17": [],
       "specialized-cn-crux-page": [],
@@ -20116,6 +20809,9 @@
       "specialized-roubaix-sl8-tiagra-official-2026-08-17": [],
       "specialized-s-works-crux-cn-product-221367": [],
       "specialized-tarmac-sl8-comp-spec-2026-08-17": [],
+      "sram-apex-xplr-axs-d1-official-2026-08-24": [],
+      "sram-rival-axs-e1-official-2026-08-24": [],
+      "sram-rival-xplr-axs-e1-official-2026-08-24": [],
       "taobao-snapshot-2026-08-08": [],
       "tavelo-arden-china-launch-2026-08-17": [],
       "tavelo-arden-official-2026-08-17": [],
@@ -20183,6 +20879,8 @@
       "voicevelo-g-major-panda-podium-2026-08-17": [],
       "voicevelo-warranty-official-2026-08-17": [],
       "vook-v8e-pro-official-2026-08-08": [],
+      "wheeltop-eds-gex-official-2026-08-24": [],
+      "wheeltop-eds-tx-official-2026-08-24": [],
       "winspace-agile-official-2026-08-17": [],
       "winspace-complete-builds-2026-08-09": [],
       "winspace-g3-official": [],
@@ -20835,6 +21533,62 @@
         "target.platform_id=tavelo-grow"
       ]
     },
+    "groupsets": {
+      "ltwoo-egr": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=ltwoo-disc-brake-fluid-official-2026-08-24",
+        "source_ids=ltwoo-egr-official-2026-08-24"
+      ],
+      "ltwoo-erx-er9": [
+        "source_ids=ltwoo-erx-manual-catalog-2026-08-24",
+        "source_ids=ltwoo-erx-road-official-2026-08-24",
+        "source_ids=ltwoo-erx-user-manual-2026-08-24"
+      ],
+      "magene-qed-pes": [
+        "source_ids=magene-direct-warranty-official-2026-08-24",
+        "source_ids=magene-qed-official-overview-2026-08-24",
+        "source_ids=magene-qed-pes-catalog-2026-08-24"
+      ],
+      "shimano-105-r7170": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=shimano-105-r7170-official-2026-08-24",
+        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
+        "source_ids=smzdm-shimano-di2-market-observations-2026-08-24"
+      ],
+      "shimano-grx-rx717-rx827": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=shimano-grx-rx717-official-2026-08-24",
+        "source_ids=shimano-grx-rx827-official-2026-08-24"
+      ],
+      "shimano-grx-rx825": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
+        "source_ids=shimano-grx-rx825-official-2026-08-24"
+      ],
+      "shimano-road-di2-r8170-r9270": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
+        "source_ids=shimano-dura-ace-r9250-official-2026-08-24",
+        "source_ids=shimano-ultegra-r8150-official-2026-08-24",
+        "source_ids=smzdm-shimano-di2-market-observations-2026-08-24"
+      ],
+      "sram-rival-axs-e1": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=sram-rival-axs-e1-official-2026-08-24"
+      ],
+      "sram-xplr-apex-d1-rival-e1": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=sram-apex-xplr-axs-d1-official-2026-08-24",
+        "source_ids=sram-rival-xplr-axs-e1-official-2026-08-24"
+      ],
+      "wheeltop-eds-gex": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=wheeltop-eds-gex-official-2026-08-24"
+      ],
+      "wheeltop-eds-tx": [
+        "source_ids=wheeltop-eds-tx-official-2026-08-24"
+      ]
+    },
     "recommendations": {
       "best-budget-frame": [
         "variant_id=lightcarbon-lcg071s-pro-frameset"
@@ -21265,7 +22019,8 @@
         "model_id=merida-silex",
         "source_ids=merida-china-sales-channels-2026-08-17",
         "source_ids=merida-silex-7000-25-official-cny-reference-2026-08-17",
-        "source_ids=merida-warranty-official-2026-08-17"
+        "source_ids=merida-warranty-official-2026-08-17",
+        "source_ids=public-merida-silex-7000-25-weight-2026-08-24"
       ],
       "missing-china-price-quick-pro-gr-one": [
         "existing_record_id=quick-gr-one-frameset",
@@ -21325,6 +22080,7 @@
       ],
       "missing-china-price-trek-checkpoint": [
         "model_id=trek-checkpoint",
+        "source_ids=public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
         "source_ids=trek-checkpoint-china-category-47071-2026-08-17",
         "source_ids=trek-checkpoint-sl-gen3-official-2026-08-17",
         "source_ids=trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
@@ -21449,7 +22205,8 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-spark-tourist": [
-        "source_ids=pardus-2026-conference-wildto"
+        "source_ids=pardus-2026-conference-wildto",
+        "source_ids=public-pardus-spark-tourist-pes-2026-08-24"
       ],
       "pardus-super-sport": [
         "model_id=pardus-super-sport",
@@ -21512,6 +22269,7 @@
       "quick-pro-gr-one-grx-di2": [
         "model_id=quick-pro-gr-one",
         "source_ids=public-quick-pro-gr-one-build-2026-08-17",
+        "source_ids=public-quick-pro-gr-one-product-card-2026-08-24",
         "source_ids=quick-pro-complete-collection-official-2026-08-17",
         "source_ids=quick-pro-global-support-2026-08-17",
         "source_ids=quick-pro-gr-one-complete-official-2026-08-17",
@@ -23314,6 +24072,14 @@
         "specification": 3
       }
     },
+    "gpt-pro-electronic-groupsets-input-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "ican-company-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -23476,6 +24242,70 @@
         "image": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "ltwoo-disc-brake-fluid-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "ltwoo-egr-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "ltwoo-erx-manual-catalog-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "ltwoo-erx-road-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "ltwoo-erx-user-manual-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "magene-direct-warranty-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "magene-qed-official-overview-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "magene-qed-pes-catalog-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "market-snapshot-2026-08-05": {
@@ -23848,6 +24678,14 @@
         "specification": 0
       }
     },
+    "public-merida-silex-7000-25-weight-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "public-pardus-robin-evo-build-2026-08-17": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -23869,6 +24707,14 @@
       "minimum_reliability": {
         "identity": 1,
         "price": 0,
+        "specification": 0
+      }
+    },
+    "public-pardus-spark-tourist-pes-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": -1,
         "specification": 0
       }
     },
@@ -23918,6 +24764,14 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-quick-pro-gr-one-product-card-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "public-quick-pro-tr-one-summary-2026-08-17": {
@@ -24014,6 +24868,14 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1
       }
     },
     "public-winspace-g5-owner-image-2026-08-17": {
@@ -24708,6 +25570,70 @@
         "specification": 3
       }
     },
+    "shimano-105-r7170-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-di2-bt-dn300-compatibility-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "shimano-dura-ace-r9250-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-grx-rx717-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-grx-rx825-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-grx-rx827-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-ultegra-r8150-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "smzdm-shimano-di2-market-observations-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 0
+      }
+    },
     "spcycle-gravel-catalog": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -24774,6 +25700,30 @@
       }
     },
     "specialized-tarmac-sl8-comp-spec-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "sram-apex-xplr-axs-d1-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "sram-rival-axs-e1-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "sram-rival-xplr-axs-e1-official-2026-08-24": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -25316,6 +26266,22 @@
       }
     },
     "vook-v8e-pro-official-2026-08-08": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "wheeltop-eds-gex-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "wheeltop-eds-tx-official-2026-08-24": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,

@@ -1,0 +1,43 @@
+{
+  "id": "ltwoo-erx-er9",
+  "maker": "L-TWOO · 蓝图",
+  "name": "eRX / eR9 road electronic",
+  "scope": "chinese-alternative",
+  "use_case": "Road 2× electronic shifting with hydraulic disc brakes",
+  "status": "current-official-family",
+  "positioning": "eRX is the carbon flagship; eR9 is the lower-cost aluminium entry system with separate calipers.",
+  "variants": [
+    { "name": "eRX", "tier": "flagship", "lever_material": "carbon", "caliper_style": "integrated" },
+    { "name": "eR9", "tier": "entry", "lever_material": "aluminium", "caliper_style": "separate" }
+  ],
+  "shifting": {
+    "chainrings": "2×",
+    "cassette_speeds": "10-12",
+    "max_rear_sprocket_teeth": null,
+    "max_rear_sprocket_note": "The official 2024 catalog generation lists 11-32T, but the current upgraded eRX/eR9 maximum is not stated clearly enough to carry that number forward."
+  },
+  "architecture": "Semi-wireless: both levers send wireless commands; front and rear derailleurs draw power through wires from one seat-tube battery.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": {
+    "status": "component-only-older-catalog",
+    "note": "The official 2024 catalog lists 225 g per lever, 270 g rear derailleur, 135 g front derailleur and 118 g per caliper. It does not give a safe current-generation total."
+  },
+  "battery": "Official manual/catalog generation: internal 7.4 V, 800 mAh battery; current range and charge time are not stated on the current product overview.",
+  "controls_and_app": "L-TWOO app supports speed selection, micro-adjustment and firmware updates; optional flat-bar and time-trial controls are part of the Electric ecosystem.",
+  "package_summary": "The official manual package includes two levers, front and rear derailleurs, two hydraulic calipers, internal battery, two power wires, charger, hardware and mineral brake fluid.",
+  "compatibility": {
+    "freehub": "Depends on the selected 10-12-speed cassette",
+    "hanger": "Standard derailleur hanger",
+    "frame": "Internal seat-tube battery fit and two power-wire routes",
+    "brake_fluid": "L-TWOO O ONE mineral brake fluid; do not substitute DOT"
+  },
+  "china_price_status": "A bounded manual Taobao search on 2026-08-24 required sign-in and exposed no attributable exact-kit card; mainland price remains open.",
+  "price_observations": [],
+  "caveats": [
+    "Confirm the exact generation, maximum rear sprocket, rear-cage range and battery-mount fit before ordering.",
+    "The system requires internal power-wire routing and a workable seat-tube battery mount.",
+    "Use the specified L-TWOO mineral brake fluid rather than DOT fluid."
+  ],
+  "source_ids": ["ltwoo-erx-road-official-2026-08-24", "ltwoo-erx-manual-catalog-2026-08-24", "ltwoo-erx-user-manual-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

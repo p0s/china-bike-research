@@ -27,28 +27,38 @@
     try { localStorage.setItem(buildAllowanceStorageKey, String(value)); } catch { /* the URL still carries the selected amount */ }
   }
 
-  function enableImageFallback(image) {
-    if (!(image instanceof HTMLImageElement) || image.dataset.fallbackReady === 'true') return;
-    image.dataset.fallbackReady = 'true';
-    const useFallback = () => {
-      const fallback = image.dataset.fallback;
-      if (!fallback || image.dataset.fallbackApplied === 'true') return;
-      image.dataset.fallbackApplied = 'true';
+  function enableImageFailureHandling(image) {
+    if (!(image instanceof HTMLImageElement) || image.dataset.imageFailureReady === 'true') return;
+    image.dataset.imageFailureReady = 'true';
+    const hideUnavailable = () => {
+      if (image.dataset.imageFailureHandled === 'true') return;
+      image.dataset.imageFailureHandled = 'true';
       image.removeAttribute('srcset');
       image.removeAttribute('sizes');
-      image.src = fallback;
-      image.classList.add('is-fallback');
-      image.removeAttribute('referrerpolicy');
-      image.alt = `${image.alt || 'Product image'} — source unavailable; showing project placeholder`;
       const captionStatus = image.closest('.model-gallery-strip')
         ? null
         : image.closest('.model-figure')?.querySelector('[data-image-caption-status]');
-      if (captionStatus instanceof HTMLElement) captionStatus.textContent = 'Source image unavailable · Project placeholder shown';
+      if (captionStatus instanceof HTMLElement) captionStatus.textContent = 'Source image unavailable';
+      const thumb = image.closest('.gallery-thumb');
+      if (thumb instanceof HTMLElement) thumb.hidden = true;
+      const figure = image.closest('.model-figure');
+      if (figure instanceof HTMLElement) {
+        figure.classList.add('is-unavailable');
+        figure.closest('.model-grid')?.classList.add('has-no-image');
+      }
+      const container = image.closest('.product-image');
+      if (container instanceof HTMLElement) {
+        container.closest('.catalog-product')?.classList.add('has-no-image');
+        container.remove();
+      }
+      const comparison = image.closest('.compare-product-head');
+      if (comparison instanceof HTMLElement) comparison.classList.add('has-no-image');
+      image.remove();
     };
-    image.addEventListener('error', useFallback);
-    if (image.complete && image.naturalWidth === 0) useFallback();
+    image.addEventListener('error', hideUnavailable);
+    if (image.complete && image.naturalWidth === 0) hideUnavailable();
   }
-  document.querySelectorAll('[data-product-image]').forEach(enableImageFallback);
+  document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
 
   document.querySelectorAll('[data-image-gallery]').forEach((gallery) => {
     const hero = gallery.querySelector('[data-gallery-hero]');
@@ -61,8 +71,6 @@
       if (!(button instanceof HTMLButtonElement) || button.getAttribute('aria-pressed') === 'true') return;
       hero.classList.add('is-switching');
       window.setTimeout(() => {
-        hero.dataset.fallbackApplied = '';
-        hero.classList.remove('is-fallback', 'is-placeholder');
         hero.src = button.dataset.gallerySrc ?? hero.src;
         hero.alt = button.dataset.galleryAlt ?? hero.alt;
         if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
@@ -448,7 +456,9 @@
   const capability = catalogRoot.querySelector('[data-filter-capability]');
   const category = catalogRoot.querySelector('[data-filter-category]');
   const sort = catalogRoot.querySelector('[data-sort]');
+  const buildPreset = document.querySelector('[data-frameset-build-preset]');
   const buildAllowance = document.querySelector('[data-frameset-build-allowance]');
+  const buildCustom = document.querySelector('[data-build-custom]');
   const capabilitySortOptions = [...(sort?.querySelectorAll('option[value^="capability-"]') ?? [])];
   const sortHeadingButtons = [...catalogRoot.querySelectorAll('[data-sort-heading]')];
   const sortHeadingByKey = new Map(sortHeadingButtons.map((button) => [button.dataset.sortHeading, button]));
@@ -470,6 +480,7 @@
   let allModelsVisible = false;
   const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
   let currentBuildAllowance = defaultBuildAllowance;
+  let buildHighlightTimer = 0;
   const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
@@ -508,9 +519,26 @@
     return Math.min(100000, Math.max(0, Math.round(number)));
   }
 
-  function updateFramesetPrices(value) {
+  function syncBuildPreset() {
+    if (!(buildPreset instanceof HTMLSelectElement)) return;
+    const options = [...buildPreset.options];
+    const fixed = options.find((option) => Number(option.dataset.buildAmount) === currentBuildAllowance);
+    const custom = options.find((option) => option.value === 'custom');
+    buildPreset.value = (fixed ?? custom)?.value ?? '';
+    if (buildCustom instanceof HTMLElement) buildCustom.hidden = Boolean(fixed);
+  }
+
+  function highlightBuildPrices() {
+    catalogRoot.classList.remove('is-build-updating');
+    requestAnimationFrame(() => catalogRoot.classList.add('is-build-updating'));
+    window.clearTimeout(buildHighlightTimer);
+    buildHighlightTimer = window.setTimeout(() => catalogRoot.classList.remove('is-build-updating'), 220);
+  }
+
+  function updateFramesetPrices(value, { highlight = false } = {}) {
     currentBuildAllowance = normalizedBuildAllowance(value);
     if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(currentBuildAllowance);
+    syncBuildPreset();
     rows.forEach((row) => {
       if (!row.dataset.framePriceLow) return;
       const frameLow = Number(row.dataset.framePriceLow);
@@ -539,11 +567,12 @@
       const high = Number(item.frameHigh ?? item.frameLow) + currentBuildAllowance;
       item.price = formatEstimatedRange(low, high);
       item.priceDetails = String(defaultPriceDetails.get(item.id) ?? '')
-        .replace(/Estimated complete adds a fixed ¥[\d,]+ [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`)
+        .replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`)
         .replace(/Great-buy reference: below ¥[\d,]+ complete/, item.greatBuyFrameThreshold
           ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
           : 'Great-buy reference: below complete');
     });
+    if (highlight) highlightBuildPrices();
   }
 
   function updateModelLinks() {
@@ -817,7 +846,7 @@
     if (capability) capability.value = '';
     if (category) category.value = '';
     if (sort) sort.value = 'price-asc';
-    updateFramesetPrices(defaultBuildAllowance);
+    updateFramesetPrices(defaultBuildAllowance, { highlight: true });
     allModelsVisible = false;
     setBrand('', { update: false });
     setType('', { update: false });
@@ -897,21 +926,6 @@
   function productHeader(item) {
     const head = element('div', 'compare-product-head');
     const label = [item.brand, item.name].filter(Boolean).join(' ');
-    const image = document.createElement('img');
-    image.src = item.image;
-    if (item.imageSrcset) image.srcset = item.imageSrcset;
-    if (item.imageSizes) image.sizes = item.imageSizes;
-    image.alt = item.imageAlt || label;
-    image.width = item.imageWidth || 120;
-    image.height = item.imageHeight || 80;
-    image.loading = 'lazy';
-    image.decoding = 'async';
-    image.dataset.productImage = '';
-    image.dataset.fallback = item.imageFallback || (item.type === 'Frame estimate'
-      ? catalogRoot.dataset.framesetFallback
-      : catalogRoot.dataset.completeBikeFallback);
-    if (item.imageRemote) image.referrerPolicy = 'no-referrer';
-    enableImageFallback(image);
     const copy = element('div');
     const title = item.url ? element('a', '', label) : element('span', '', label);
     if (item.url) {
@@ -925,7 +939,24 @@
     remove.type = 'button';
     remove.setAttribute('aria-label', `Remove ${label}`);
     remove.addEventListener('click', () => setSelection(selection.filter((id) => id !== item.id)));
-    head.append(image, copy, remove);
+    if (item.image) {
+      const image = document.createElement('img');
+      image.src = item.image;
+      if (item.imageSrcset) image.srcset = item.imageSrcset;
+      if (item.imageSizes) image.sizes = item.imageSizes;
+      image.alt = item.imageAlt || label;
+      image.width = item.imageWidth || 120;
+      image.height = item.imageHeight || 80;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.dataset.productImage = '';
+      if (item.imageRemote) image.referrerPolicy = 'no-referrer';
+      enableImageFailureHandling(image);
+      head.append(image);
+    } else {
+      head.classList.add('has-no-image');
+    }
+    head.append(copy, remove);
     return head;
   }
 
@@ -1033,7 +1064,7 @@
 
   function applyBuildAllowance({ historyMode }) {
     if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return;
-    updateFramesetPrices(buildAllowance.value);
+    updateFramesetPrices(buildAllowance.value, { highlight: true });
     writeStoredBuildAllowance(currentBuildAllowance);
     updateCatalog({ historyMode });
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
@@ -1044,6 +1075,18 @@
     if (buildAllowance instanceof HTMLInputElement && !buildAllowance.value.trim()) {
       buildAllowance.value = String(defaultBuildAllowance);
     }
+    applyBuildAllowance({ historyMode: 'push' });
+  });
+  buildPreset?.addEventListener('change', () => {
+    if (!(buildPreset instanceof HTMLSelectElement)) return;
+    const selected = buildPreset.selectedOptions[0];
+    const amount = Number(selected?.dataset.buildAmount);
+    if (!Number.isFinite(amount)) {
+      if (buildCustom instanceof HTMLElement) buildCustom.hidden = false;
+      if (buildAllowance instanceof HTMLInputElement) buildAllowance.focus({ preventScroll: true });
+      return;
+    }
+    if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(amount);
     applyBuildAllowance({ historyMode: 'push' });
   });
 })();

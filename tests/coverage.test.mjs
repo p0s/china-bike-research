@@ -71,6 +71,16 @@ test('official evidence sources cannot be weakened in place', () => {
   assert.ok(errors.some((error) => error.includes('downgraded specification reliability')));
 });
 
+test('groupset families and compatibility facts cannot silently disappear', () => {
+  const removed = structuredClone(data);
+  removed.groupsets = removed.groupsets.filter((item) => item.id !== 'shimano-105-r7170');
+  assert.ok(errorsFor(removed).some((error) => error.includes('groupsets:shimano-105-r7170 was removed without a retirement record')));
+
+  const weakened = structuredClone(data);
+  delete weakened.groupsets.find((item) => item.id === 'shimano-105-r7170').compatibility.freehub;
+  assert.ok(errorsFor(weakened).some((error) => error.includes('groupsets:shimano-105-r7170 lost protected field compatibility.freehub')));
+});
+
 test('catalog-wide frameset price metadata cannot silently disappear', () => {
   const mutated = structuredClone(data);
   delete mutated.meta.frameset_build_assumption.amount_cny;

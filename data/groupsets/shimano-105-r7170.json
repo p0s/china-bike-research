@@ -1,0 +1,73 @@
+{
+  "id": "shimano-105-r7170",
+  "maker": "Shimano",
+  "name": "105 Di2 R7170",
+  "scope": "established-benchmark",
+  "use_case": "Road and all-road 2x12 electronic shifting with hydraulic disc brakes",
+  "status": "current-established",
+  "positioning": "The default value benchmark: mature parts supply, 36T cassette capacity and an HG-compatible road ecosystem.",
+  "variants": [
+    { "name": "R7170 hydraulic disc", "tier": "value-road", "product_codes": "ST-R7170, FD-R7150, RD-R7150" }
+  ],
+  "shifting": {
+    "chainrings": "2x",
+    "cassette_speeds": "12",
+    "minimum_rear_sprocket_teeth": 11,
+    "max_rear_sprocket_teeth": 36
+  },
+  "architecture": "Semi-wireless: the levers transmit wirelessly; front and rear derailleurs connect to one internal BT-DN300 battery.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": {
+    "status": "package-dependent",
+    "note": "No package-independent total is used. Dealer options vary in whether crank, cassette, chain, calipers, rotors and bottom bracket are present."
+  },
+  "battery": "Internal BT-DN300 derailleur battery; wireless levers use coin cells.",
+  "controls_and_app": "E-TUBE PROJECT Cyclist supports firmware, adjustment and control configuration.",
+  "package_summary": "A large-set label is not normalized. The dated ¥4,150 and ¥4,200 observations say large package without rotors; a separate ¥3,570 observation covers electronic parts plus calipers.",
+  "compatibility": {
+    "freehub": "HG road for the supported 11T-start cassettes",
+    "hanger": "Standard/direct-mount compatible derailleur-hanger system",
+    "frame": "Internal BT-DN300 space and two SD300 wire routes to FD/RD",
+    "brake_fluid": "Shimano mineral oil"
+  },
+  "china_price_status": "Secondary dealer-market synthesis: ¥4,150-4,200 for large packages described without rotors; exact checkout, invoice, warranty and every included component remain unverified.",
+  "price_observations": [
+    {
+      "amount": 4150,
+      "currency": "CNY",
+      "market": "mainland public dealer-post synthesis",
+      "price_type": "dealer-market-observation",
+      "observed_at": "2026-08-19",
+      "conditions": "Large package, described without rotors; underlying dealer-post URL was not supplied.",
+      "headline": true,
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+    },
+    {
+      "amount": 4200,
+      "currency": "CNY",
+      "market": "mainland public dealer-post synthesis",
+      "price_type": "dealer-market-observation",
+      "observed_at": "2026-08-20",
+      "conditions": "Separate large-package observation; exact contents beyond the supplied wording remain unverified.",
+      "headline": true,
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+    },
+    {
+      "amount": 3570,
+      "currency": "CNY",
+      "market": "mainland public dealer-post synthesis",
+      "price_type": "dealer-market-observation",
+      "observed_at": "2026-08-24",
+      "conditions": "Electronic parts plus calipers; not a normalized full groupset.",
+      "headline": false,
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+    }
+  ],
+  "caveats": [
+    "Confirm every included part; small, medium and large package names are seller text, not standards.",
+    "The frame needs internal battery space and wire routing even though the levers are wireless.",
+    "Compare the complete installed cost, including rotors, bottom bracket and any omitted drivetrain parts."
+  ],
+  "source_ids": ["shimano-105-r7170-official-2026-08-24", "shimano-di2-bt-dn300-compatibility-2026-08-24", "smzdm-shimano-di2-market-observations-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

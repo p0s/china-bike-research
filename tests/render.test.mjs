@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderPrivacy } from '../src/render.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -26,7 +26,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
 });
 
-test('project placeholders match the exact product kind and use useful alt text', () => {
+test('products without verified photos omit the image region and social placeholder', () => {
   const context = {
     data,
     products,
@@ -40,9 +40,11 @@ test('project placeholders match the exact product kind and use useful alt text'
   const framesetDetail = renderModel(context, frameset);
   const completeDetail = renderModel(context, complete);
 
-  assert.match(framesetDetail, /class="is-placeholder" src="\/china-bike-research\/assets\/images\/placeholders\/frameset\.svg" alt="Illustrated placeholder for LightCarbon SPEEDZ frameset; verified product photo unavailable"/);
-  assert.match(completeDetail, /class="is-placeholder" src="\/china-bike-research\/assets\/images\/placeholders\/complete-bike\.svg" alt="Illustrated placeholder for LightCarbon SPEEDZ complete; verified product photo unavailable"/);
-  assert.match(framesetDetail, /<figcaption><span data-image-caption-status>China Bike Research project placeholder · Project placeholder; not a product photo<\/span><\/figcaption>/);
+  assert.match(framesetDetail, /class="model-grid has-no-image"/);
+  assert.match(completeDetail, /class="model-grid has-no-image"/);
+  assert.doesNotMatch(framesetDetail, /assets\/images\/placeholders|<figure class="model-figure"|property="og:image"/);
+  assert.doesNotMatch(completeDetail, /assets\/images\/placeholders|<figure class="model-figure"|property="og:image"/);
+  assert.doesNotMatch(renderImageSources(context), /project-placeholder|Project-owned product image placeholders|assets\/images\/placeholders/);
 });
 
 test('homepage omits developer-facing dashboards and legacy sections', () => {
@@ -111,6 +113,20 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(oldTwitterCarbonDetail, /Hydraulic caliper detail/);
   assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 public listing images/);
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
+});
+
+test('candidates without a recorded category show an honest unknown instead of undefined', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'pardus-spark-tourist');
+  const detail = renderCandidateModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-24T00:00:00Z')
+  }, entry);
+  assert.match(detail, /<dt>Category<\/dt><dd>Category not confirmed<\/dd>/);
+  assert.doesNotMatch(detail, />undefined</);
 });
 
 test('superseded published bikes show availability instead of a historical price headline', () => {
@@ -261,8 +277,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, placeholderProduct);
-  assert.match(placeholderDetail, /Project-owned local asset/);
-  assert.doesNotMatch(placeholderDetail, /Project-owned product image placeholders[\s\S]*Archived evidence; no public link/);
+  assert.doesNotMatch(placeholderDetail, /Project-owned product image placeholders|Project-owned local asset/);
 
   const falath = products.find((item) => item.variant.id === 'elves-falath-r7170');
   const falathDetail = renderModel({
@@ -338,6 +353,11 @@ test('brand names expose an exact, base-safe catalog filter', () => {
 });
 
 test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {
+  assert.match(html, /id="frameset-build-preset" data-frameset-build-preset/);
+  assert.match(html, /105 Di2 plan · \+¥6,000/);
+  assert.match(html, /Ultegra Di2 plan · \+¥7,900/);
+  assert.match(html, /Custom allowance/);
+  assert.match(html, /data-build-custom hidden/);
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
   assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
@@ -361,6 +381,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
   assert.match(publishedDetail, /data-model-price-brief/);
   assert.match(publishedDetail, /Included package/);
+  assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);
 
   const candidateFrame = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   const candidateDetail = renderCandidateModel(context, candidateFrame);
@@ -368,6 +389,31 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(candidateDetail, /data-model-calculated-price>Est\. ¥27,800/);
   assert.match(candidateDetail, /Frame package ¥21,800/);
   assert.match(candidateDetail, /recorded ¥21,800 frame package price/);
+  assert.doesNotMatch(candidateDetail, /<dt>Drivetrain<\/dt>/);
+  assert.doesNotMatch(html, /Electronic 2×12 standard build/);
+
+  const buildSource = fs.readFileSync(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
+  assert.match(buildSource, /variant\.drivetrain \? `\$\{variant\.drivetrain\.brand\}/);
+  assert.doesNotMatch(buildSource, /frameset_build_assumption\.drivetrain_label/);
+});
+
+test('failed PARDUS duplicate images stay out of every buyer-facing surface', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-24T00:00:00Z')
+  };
+  for (const id of ['pardus-spark-sport-pes', 'pardus-spark']) {
+    const entry = candidates.find((item) => item.candidate.id === id);
+    const detail = renderCandidateModel(context, entry);
+    assert.match(detail, /class="model-grid has-no-image"/);
+    assert.doesNotMatch(detail, /c048095/);
+  }
+  assert.doesNotMatch(html, /c048095/);
+  assert.doesNotMatch(renderImageSources(context), /c048095/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {
@@ -418,4 +464,39 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
 test('generic project copy is category-neutral', () => {
   assert.match(html, /<h1>Bikes in China<\/h1>/);
   assert.doesNotMatch(html, /Carbon bikes in China|Gravel and all-road bikes|above 38 mm/i);
+});
+
+test('electronic shifting is a footer and contextual reference, not primary navigation', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-24T00:00:00Z')
+  };
+  const reference = renderElectronicGroupsets(context);
+  const wheelTopProduct = products.find((item) => item.variant.id === 'twitter-cyclone-electronic');
+  const detail = renderModel(context, wheelTopProduct);
+  assert.match(reference, /Electronic groupsets to buy in China/);
+  assert.match(reference, /Established benchmarks/);
+  assert.match(reference, /Chinese electronic systems/);
+  assert.match(reference, /L-TWOO · 蓝图/);
+  assert.match(reference, /current maximum unresolved/);
+  assert.match(reference, /WheelTop · Wheeltop/);
+  assert.match(reference, /QED 1\.15 kg core; PES 1\.25 kg core/);
+  assert.match(reference, /¥4,150–4,200 dealer observations/);
+  assert.match(reference, /Ultegra R8170 \/ Dura-Ace R9270 Di2/);
+  assert.match(reference, /34T/);
+  assert.match(reference, /¥6,050 dealer observation/);
+  assert.match(reference, /No attributable mainland price/);
+  assert.match(reference, /EUR 659 official reference/);
+  assert.match(reference, /Package normalization/);
+  assert.match(reference, /Shift-only/);
+  assert.match(reference, /supplied synthesis, no public link/);
+  assert.doesNotMatch(reference, /href="undefined"/);
+  assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
+  assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Electronic shifting<\/a>/);
+  const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert.doesNotMatch(primaryNav, /electronic-shifting/);
 });

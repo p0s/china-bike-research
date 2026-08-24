@@ -1,0 +1,39 @@
+{
+  "id": "ltwoo-egr",
+  "maker": "L-TWOO · 蓝图",
+  "name": "eGR gravel electronic",
+  "scope": "chinese-alternative",
+  "use_case": "Hydraulic 1x10-12-speed gravel shifting to 46T",
+  "status": "current-official-family",
+  "positioning": "The documented L-TWOO gravel option: 46T range, damped rear derailleur and hydraulic controls, but exact kit wiring and mainland package still need checking.",
+  "variants": [
+    { "name": "eGR official 10-12-speed", "tier": "gravel", "max_rear_sprocket_teeth": 46 }
+  ],
+  "shifting": {
+    "chainrings": "1x",
+    "cassette_speeds": "10-12",
+    "minimum_rear_sprocket_teeth": 11,
+    "max_rear_sprocket_teeth": 46
+  },
+  "architecture": "Electronic app-configurable shifting; confirm the exact battery and power-wire routing for the current package before ordering.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "official-component-weights", "note": "Official current page lists 333 g for the damped rear derailleur and 225 g per shift/brake lever; it does not give a normalized full-package total." },
+  "battery": "Current public product page does not expose a sufficiently clear package-level battery specification.",
+  "controls_and_app": "L-TWOO app supports speed selection, adjustment and firmware; rear derailleur includes a friction damping system.",
+  "package_summary": "Confirm levers, rear derailleur, battery, wires/charger, both calipers and hoses; keep unverified OEM 13-speed fully wireless listings separate from this official 10-12-speed record.",
+  "compatibility": {
+    "freehub": "Depends on the chosen 10-12-speed 11-46T cassette",
+    "hanger": "Standard derailleur hanger",
+    "frame": "Confirm battery location, power-wire routing and 1x chainline for the exact generation",
+    "brake_fluid": "L-TWOO O ONE mineral brake fluid; do not substitute DOT"
+  },
+  "china_price_status": "No attributable exact mainland eGR package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "Do not merge unverified OEM 13-speed fully wireless claims into the official 10-12-speed eGR record.",
+    "Confirm battery, wiring, caliper generation and every included item from the exact listing.",
+    "Use the specified L-TWOO mineral fluid and confirm local service support."
+  ],
+  "source_ids": ["ltwoo-egr-official-2026-08-24", "ltwoo-disc-brake-fluid-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

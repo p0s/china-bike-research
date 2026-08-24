@@ -1,0 +1,40 @@
+{
+  "id": "shimano-grx-rx717-rx827",
+  "maker": "Shimano",
+  "name": "GRX Di2 RX717 / RX827",
+  "scope": "established-benchmark",
+  "use_case": "Fully wireless 1x12 gravel with a 10-51T cassette",
+  "status": "current-established",
+  "positioning": "Wide-range wireless gravel: RX717 is the value version and RX827 the tougher premium version, both distinct from wired 2x RX825.",
+  "variants": [
+    { "name": "RX717", "tier": "value-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 51 },
+    { "name": "RX827", "tier": "performance-gravel", "cassette_speeds": "12", "max_rear_sprocket_teeth": 51 }
+  ],
+  "shifting": {
+    "chainrings": "1x",
+    "cassette_speeds": "12",
+    "minimum_rear_sprocket_teeth": 10,
+    "max_rear_sprocket_teeth": 51
+  },
+  "architecture": "Fully wireless shifting with a removable protected battery in the rear derailleur; no internal derailleur battery wiring.",
+  "brake_options": ["Hydraulic disc"],
+  "weight": { "status": "package-dependent", "note": "No normalized package total is recorded; RX717 and RX827 component weights must remain revision-specific." },
+  "battery": "Removable rear-derailleur battery shared across the current RX717/RX827-compatible Shimano wireless family; lever controls use their own cells.",
+  "controls_and_app": "Wireless Di2 control; Automatic Impact Recovery and SHADOW ES-style protection are part of the current rear-derailleur family.",
+  "package_summary": "A usable conversion needs the matching right shift/brake lever, left brake lever, RD battery and charger, 10-51T cassette, chain, crank/chainring and hydraulic brakes.",
+  "compatibility": {
+    "freehub": "Micro Spline for the 10-51T cassette",
+    "hanger": "Conventional replaceable hanger; UDH is not required",
+    "frame": "No internal electronic wire route; verify normal hanger clearance and 1x chainline",
+    "brake_fluid": "Shimano mineral oil"
+  },
+  "china_price_status": "No attributable exact mainland RX717 or RX827 package price captured in this batch.",
+  "price_observations": [],
+  "caveats": [
+    "The 10T start requires a Micro Spline-compatible wheel or freehub body.",
+    "This is 1x only and has larger cadence steps than a 2x road/all-road setup.",
+    "Do not label the normal-hanger RX827 as SRAM-style UDH Full Mount."
+  ],
+  "source_ids": ["shimano-grx-rx717-official-2026-08-24", "shimano-grx-rx827-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

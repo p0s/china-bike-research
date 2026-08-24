@@ -168,6 +168,7 @@ export function loadDataset() {
     sources: loadDirectory('sources'),
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
+    groupsets: loadDirectory('groupsets'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -185,7 +186,10 @@ function isObject(value) { return value !== null && typeof value === 'object' &&
 function isDate(value) { return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`)); }
 /** @param {unknown} value */
 function isId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]*$/.test(value); }
-function categoryValues(value) { return String(value).split('|').map((item) => item.trim()).filter(Boolean); }
+function categoryValues(value) {
+  if (!value) return [];
+  return String(value).split('|').map((item) => item.trim()).filter(Boolean);
+}
 function hasSupportedCategory(value, categorySet) { return categoryValues(value).every((category) => categorySet.has(category)); }
 
 export function validateDataset(data = loadDataset()) {
@@ -214,6 +218,7 @@ export function validateDataset(data = loadDataset()) {
     source: data.sources,
     image: data.images,
     video: data.videos,
+    groupset: data.groupsets,
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -227,6 +232,20 @@ export function validateDataset(data = loadDataset()) {
     if (typeof buildAssumption.amount_cny !== 'number' || buildAssumption.amount_cny <= 0) errors.push('meta: invalid frameset_build_assumption.amount_cny');
     if (typeof buildAssumption.label !== 'string' || !buildAssumption.label.trim()) errors.push('meta: missing frameset_build_assumption.label');
     if (typeof buildAssumption.drivetrain_label !== 'string' || !buildAssumption.drivetrain_label.trim()) errors.push('meta: missing frameset_build_assumption.drivetrain_label');
+    if (!Array.isArray(buildAssumption.presets) || buildAssumption.presets.length < 2) errors.push('meta: frameset_build_assumption.presets must include named and custom options');
+    else {
+      const presetIds = new Set();
+      for (const preset of buildAssumption.presets) {
+        if (!isId(preset.id) || presetIds.has(preset.id)) errors.push('meta: invalid or duplicate frameset build preset id');
+        presetIds.add(preset.id);
+        if (typeof preset.label !== 'string' || !preset.label.trim()) errors.push(`meta: frameset build preset ${preset.id} needs a label`);
+        if (preset.custom !== true && (!Number.isFinite(preset.amount_cny) || preset.amount_cny < 0)) errors.push(`meta: frameset build preset ${preset.id} needs a non-negative amount_cny`);
+      }
+      if (buildAssumption.presets.filter((preset) => preset.default === true).length !== 1) errors.push('meta: frameset build presets need exactly one default');
+      if (buildAssumption.presets.filter((preset) => preset.custom === true).length !== 1) errors.push('meta: frameset build presets need exactly one custom option');
+      const selectedDefault = buildAssumption.presets.find((preset) => preset.default === true);
+      if (selectedDefault?.amount_cny !== buildAssumption.amount_cny) errors.push('meta: default frameset build preset must match amount_cny');
+    }
     if (!isDate(buildAssumption.reviewed_at)) errors.push('meta: invalid frameset_build_assumption.reviewed_at');
   }
 
@@ -238,6 +257,36 @@ export function validateDataset(data = loadDataset()) {
   const sourcesById = new Map(data.sources.map((x) => [x.id, x]));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
   const candidateIds = new Set(data.candidates.map((x) => x.id));
+
+  for (const preset of buildAssumption?.presets ?? []) {
+    if (preset.source_id && !sourceIds.has(preset.source_id)) errors.push(`meta: frameset build preset ${preset.id} is missing source ${preset.source_id}`);
+    if (preset.observed_at && !isDate(preset.observed_at)) errors.push(`meta: frameset build preset ${preset.id} has an invalid observed_at`);
+  }
+
+  for (const groupset of data.groupsets) {
+    requireFields('groupset', groupset, [
+      'maker', 'name', 'scope', 'use_case', 'status', 'positioning', 'variants', 'shifting',
+      'architecture', 'brake_options', 'weight', 'battery', 'controls_and_app',
+      'package_summary', 'compatibility', 'china_price_status', 'price_observations', 'caveats',
+      'source_ids', 'reviewed_at'
+    ]);
+    if (!['established-benchmark', 'chinese-alternative'].includes(groupset.scope)) errors.push(`groupset ${groupset.id}: invalid scope`);
+    for (const field of ['freehub', 'hanger', 'frame', 'brake_fluid']) {
+      if (!groupset.compatibility?.[field]) errors.push(`groupset ${groupset.id}: missing compatibility.${field}`);
+    }
+    if (!isDate(groupset.reviewed_at)) errors.push(`groupset ${groupset.id}: invalid reviewed_at`);
+    if (!Array.isArray(groupset.variants) || !groupset.variants.length) errors.push(`groupset ${groupset.id}: variants must not be empty`);
+    if (!Array.isArray(groupset.brake_options) || !groupset.brake_options.length) errors.push(`groupset ${groupset.id}: brake_options must not be empty`);
+    if (!Array.isArray(groupset.caveats) || !groupset.caveats.length) errors.push(`groupset ${groupset.id}: caveats must not be empty`);
+    for (const sourceId of groupset.source_ids ?? []) {
+      if (!sourceIds.has(sourceId)) errors.push(`groupset ${groupset.id}: missing source ${sourceId}`);
+    }
+    for (const observation of groupset.price_observations ?? []) {
+      if (!Number.isFinite(observation.amount) || observation.amount <= 0) errors.push(`groupset ${groupset.id}: invalid price amount`);
+      if (!isDate(observation.observed_at)) errors.push(`groupset ${groupset.id}: invalid price observation date`);
+      if (!sourceIds.has(observation.source_id)) errors.push(`groupset ${groupset.id}: missing price source ${observation.source_id}`);
+    }
+  }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
   const categorySet = new Set(supportedCategories);
@@ -433,6 +482,7 @@ export function validateDataset(data = loadDataset()) {
     if (image.platform_id !== undefined && !platformIds.has(image.platform_id)) errors.push(`image ${image.id}: missing platform ${image.platform_id}`);
     if (image.candidate_id !== undefined && !candidateIds.has(image.candidate_id)) errors.push(`image ${image.id}: missing candidate ${image.candidate_id}`);
     if (!['primary', 'gallery'].includes(image.role)) errors.push(`image ${image.id}: unsupported role ${image.role}`);
+    if (image.buyer_visibility !== undefined && !['show', 'omit'].includes(image.buyer_visibility)) errors.push(`image ${image.id}: invalid buyer_visibility`);
     if (image.role === 'gallery' && image.candidate_id === undefined) errors.push(`image ${image.id}: gallery images currently require a candidate target`);
     if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);

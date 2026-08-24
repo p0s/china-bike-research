@@ -64,12 +64,16 @@ async function inspectBatch(images) {
   return results.sort((a, b) => a.id.localeCompare(b.id));
 }
 
-async function main() {
-  const targets = loadDataset().images
-    .filter((image) => image.hosting.mode === 'remote')
+export function imageHealthTargets(data = loadDataset()) {
+  return data.images
+    .filter((image) => image.hosting.mode === 'remote' && image.buyer_visibility !== 'omit')
     .flatMap((image) => image.hosting.variants?.length
       ? image.hosting.variants.map((variant) => ({ id: `${image.id}:${variant.purpose}`, url: variant.url }))
       : [{ id: image.id, url: image.hosting.remote_url }]);
+}
+
+async function main() {
+  const targets = imageHealthTargets();
   const results = await inspectBatch(targets);
   const summary = Object.fromEntries(['healthy', 'host-blocked', 'wrong-content-type', 'broken', 'unreachable'].map((key) => [key, results.filter((result) => result.classification === key).length]));
   for (const result of results) {
@@ -77,7 +81,7 @@ async function main() {
     console.log(`${result.classification.padEnd(18)} ${result.id} — ${detail}`);
   }
   console.log(`\nChecked ${results.length} remote image resources: ${Object.entries(summary).map(([key, count]) => `${count} ${key}`).join(', ')}.`);
-  console.log('Host-blocked and unreachable embeds remain non-blocking because the site provides rights-safe local fallbacks.');
+  console.log('Host-blocked and unreachable third-party embeds remain non-blocking because the site hides failed images without losing product facts.');
   if (process.argv.includes('--strict') && results.some(isBlockingImageResult)) process.exitCode = 1;
 }
 
