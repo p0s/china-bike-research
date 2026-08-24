@@ -67,20 +67,6 @@ function categoryDetailLines(platform) {
 
 export function categoryMetric(platform) {
   const category = platform.category;
-  const clearance = platform.tire_clearance;
-  if (category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(category)) {
-    return {
-      label: 'Tire',
-      value: clearanceLabel(platform),
-      sortValue: maxClearance(platform) ?? 0,
-      kind: 'tire',
-      details: [
-        clearanceLongLabel(platform),
-        clearance?.evidence ? `Evidence: ${evidenceLabel(clearance.evidence)}.` : 'Maximum is not recorded for this platform.',
-        clearance?.note
-      ].filter(Boolean)
-    };
-  }
   if (category.startsWith('mtb-')) {
     const suspension = platform.category_details?.suspension ?? {};
     const front = suspension.travel_front_mm;

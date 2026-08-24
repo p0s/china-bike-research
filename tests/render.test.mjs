@@ -134,14 +134,17 @@ test('superseded published bikes show availability instead of a historical price
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
   assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33900"[^>]*data-price-filter="33900"/);
   assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,900[\s\S]*?Official FX estimate · 2026-08-17[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
-  assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-capability-sort="50"/);
-  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<span class="metric-main">50 mm<\/span>/);
-  assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21700"[^>]*data-capability-sort="55"/);
+  assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
+  assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
+  assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21700"[^>]*data-tire-clearance-sort="55"/);
   assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?Est\. ¥21,700[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
   assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Frame ¥9,800 · Official FX estimate/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-type="complete-bike"[^>]*data-price-sort="14800"[^>]*data-price-filter="14800"/);
   assert.match(html, /Giant Defy Advanced 2[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17[\s\S]*?38 mm/);
+  assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-tire-clearance-sort="38"/);
+  assert.match(html, /data-id="candidate-missing-china-price-trek-domane"[^>]*data-tire-clearance-sort="38"/);
+  assert.match(html, /data-id="candidate-missing-china-price-specialized-roubaix-sl8"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /data-id="candidate-missing-china-price-merida-scultura"[^>]*data-type="complete-bike"[^>]*data-price-sort="16800"[^>]*data-price-filter="16800"/);
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
   assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17/);
@@ -192,9 +195,11 @@ test('local builds use the live repository for public contribution links', () =>
 
 test('category-specific details stay accessible while price state is visible', () => {
   assert.match(html, /aria-label="Price details"/);
-  assert.match(html, /aria-label="Tire details"/);
+  assert.doesNotMatch(html, /data-capability-kind="tire"/);
+  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /aria-label="Format details"/);
   assert.match(html, /data-filter-capability/);
+  assert.match(html, /<option value="tire:36">Tire ≥36 mm<\/option>/);
   assert.match(html, /<option value="family:mtb">All mountain bikes<\/option>/);
   assert.match(html, /<option value="category:e-road">E-road<\/option>/);
   assert.match(html, /<option value="category:folding">Folding<\/option>/);
@@ -212,11 +217,14 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="name"/);
   assert.match(html, /role="columnheader" aria-sort="ascending"><button class="catalog-sort-button" type="button" data-sort-heading="price"/);
   assert.match(html, /data-sort-heading="capability" disabled/);
+  assert.match(html, /data-sort-heading="tire"><span>Tire clearance<\/span>/);
+  assert.match(html, /<option value="tire-desc">Tire clearance: high to low<\/option>/);
   assert.match(html, /<option value="price-asc">Price: low to high<\/option>/);
   assert.match(html, /<option value="name-desc">Bike: Z to A<\/option>/);
   assert.match(html, /<option value="capability-desc" disabled>Category fact: high to low<\/option>/);
   assert.doesNotMatch(html, /data-filter-style/);
-  assert.match(html, /class="metric-sub">Claimed<\/span>/);
+  assert.doesNotMatch(html, /class="metric-sub">Claimed<\/span>/);
+  assert.match(html, /data-id="scott-addict-rc-40"[^>]*data-family="road"[^>]*data-tire-clearance-sort="38"/);
   assert.match(html, /Why Best value/);
   assert.match(html, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
 });
@@ -231,7 +239,7 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, product);
-  assert.match(detail, /<dt>Claimed weight<\/dt><dd>9\.9 kg<\/dd>/);
+  assert.match(detail, /<dt>Weight<\/dt><dd>9\.9 kg<\/dd>/);
   assert.match(detail, /Each source is labelled by what it supports/);
   assert.match(detail, /Twitter Bikes · Manufacturer product page · Product facts · Image/);
   assert.match(detail, /Product facts: Medium–high · Image: High/);
@@ -265,8 +273,8 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, falath);
-  assert.match(falathDetail, /<dt>Claimed weight<\/dt><dd>1,160 g frame<\/dd>/);
-  assert.match(falathDetail, /<dt>Claimed frame weight<\/dt><dd>1,160 g<\/dd>/);
+  assert.match(falathDetail, /<dt>Weight<\/dt><dd>1,160 g frame<\/dd>/);
+  assert.match(falathDetail, /<dt>Frame weight<\/dt><dd>1,160 g<\/dd>/);
 });
 
 test('primary navigation reflects catalog and exact model context', () => {

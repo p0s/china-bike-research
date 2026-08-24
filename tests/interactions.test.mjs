@@ -53,12 +53,14 @@ test('product galleries are explicit, keyboard-operable, and motion-safe', () =>
 });
 
 test('catalog headings and compact control share directional sorting', () => {
-  assert.match(script, /const defaultSortModes = \{ price: 'price-asc', name: 'name-asc', capability: 'capability-desc' \}/);
+  assert.match(script, /const defaultSortModes = \{ price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' \}/);
   assert.match(script, /function canonicalSortMode\(value\)/);
   assert.match(script, /function updateSortHeadings\(\)/);
   assert.match(script, /heading\?\.setAttribute\('aria-sort'/);
   assert.match(script, /sortHeadingButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
   assert.match(script, /Boolean\(aValue\) !== Boolean\(bValue\)/);
+  assert.match(script, /key === 'capability' \|\| key === 'tire'/);
+  assert.match(script, /row\.dataset\.tireClearanceSort/);
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
 });
 
@@ -71,7 +73,8 @@ test('candidate discovery stays URL-addressable without repeated missing-data wa
   assert.match(script, /const hasValue = \(key\) => items\.some/);
   assert.match(script, /if \(secondaryFields\.length\)/);
   assert.match(script, /remove\.setAttribute\('aria-label', `Remove \$\{label\}`\)/);
-  assert.match(script, /\['Claimed weight', \(item\) => valueCell\(item\.weight, item\.weightSubline\)\]/);
+  assert.match(script, /\['Tire clearance', \(item\) => valueCell\(item\.tireClearance\)\]/);
+  assert.match(script, /\['Weight', \(item\) => valueCell\(item\.weight\)\]/);
   assert.doesNotMatch(script, /\['What to verify'/);
   assert.doesNotMatch(styles, /\.compare-value\.is-warning strong/);
 });

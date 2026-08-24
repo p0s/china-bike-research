@@ -139,7 +139,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .catalog-head,
 .catalog-row {
   display: grid;
-  grid-template-columns: 34px minmax(370px, 2.2fr) minmax(142px, .85fr) minmax(92px, .55fr) minmax(155px, 1fr) minmax(92px, .55fr) minmax(132px, .75fr) 28px;
+  grid-template-columns: 34px minmax(350px, 2.2fr) minmax(136px, .85fr) minmax(88px, .55fr) minmax(88px, .55fr) minmax(145px, 1fr) minmax(86px, .55fr) minmax(122px, .75fr) 28px;
   gap: 14px;
   align-items: center;
 }
@@ -214,6 +214,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .catalog-row.is-candidate .product-image { width: 120px; }
 .catalog-row.is-candidate .catalog-cell { color: var(--muted); font-size: .88rem; }
 .catalog-row.is-candidate .price-cell { color: var(--ink); }
+.catalog-row.is-candidate :is(.capability-cell, .tire-clearance-cell) { font-weight: 710; }
 .image-info { position: absolute; z-index: 12; right: 5px; top: 5px; transition: opacity .08s ease; }
 .product-copy { display: grid; min-width: 0; }
 .product-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 4px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
@@ -232,6 +233,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .pick-flag .info-button { margin: -5px; }
 .verify-flag { background: var(--warning-soft); color: var(--warning); }
 .catalog-cell { display: grid; min-width: 0; align-content: center; }
+.tire-clearance-cell { font-weight: 710; }
 .metric-main { display: inline-flex; align-items: center; gap: 5px; min-width: 0; font-weight: 710; line-height: 1.27; }
 .compact-metric { font-size: .88rem; }
 .metric-sub { display: block; margin-top: 4px; overflow: hidden; color: var(--muted); font-size: .68rem; line-height: 1.32; text-overflow: ellipsis; }
@@ -486,7 +488,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .filter-primary { grid-template-columns: minmax(260px, 1fr) minmax(190px, .65fr) auto; }
   .filter-secondary { grid-template-columns: minmax(130px, 1fr) minmax(130px, 1fr) minmax(190px, 1.25fr) auto; }
   .catalog-head,
-  .catalog-row { grid-template-columns: 32px minmax(335px, 2fr) minmax(135px, .85fr) 86px minmax(145px, 1fr) 84px minmax(118px, .7fr) 26px; gap: 11px; }
+  .catalog-row { grid-template-columns: 32px minmax(310px, 2fr) minmax(128px, .85fr) 80px 80px minmax(132px, 1fr) 78px minmax(108px, .7fr) 26px; gap: 10px; }
   .catalog-row { --catalog-preview-scale: 2.5; min-height: 116px; }
   .catalog-product { grid-template-columns: 144px minmax(0, 1fr); gap: 12px; }
   .product-image { width: 144px; }
@@ -503,9 +505,9 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
     grid-template-columns: 27px minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
       "select product product"
-      ". price clearance"
-      ". drivetrain weight"
-      ". frame frame";
+      ". price tire"
+      ". categoryfact drivetrain"
+      ". weight frame";
     gap: 12px 14px;
     min-height: 0;
     padding: 14px;
@@ -519,12 +521,14 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .catalog-product { grid-area: product; grid-template-columns: 144px minmax(0, 1fr); }
   .product-image { width: 144px; }
   .price-cell { grid-area: price; }
-  .capability-cell { grid-area: clearance; }
+  .capability-cell { grid-area: categoryfact; }
+  .tire-clearance-cell { grid-area: tire; }
   .drivetrain-cell { grid-area: drivetrain; }
   .weight-cell { grid-area: weight; }
   .frame-cell { grid-area: frame; }
   .catalog-cell { position: relative; padding-top: 14px; border-top: 1px solid var(--line); }
   .catalog-cell::before { content: attr(data-label); position: absolute; top: 0; left: 0; color: var(--muted); font-size: .58rem; font-weight: 720; letter-spacing: .05em; text-transform: uppercase; }
+  .tire-clearance-cell::before { content: 'Tire clearance'; }
   .row-link-cell { display: none; }
   .empty-state { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: 12px; background: var(--surface); }
   .model-grid { grid-template-columns: 1fr; gap: 26px; }
