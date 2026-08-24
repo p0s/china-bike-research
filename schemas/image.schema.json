@@ -39,6 +39,9 @@
     "role": {
       "const": "primary"
     },
+    "buyer_visibility": {
+      "enum": ["show", "omit"]
+    },
     "subject_accuracy": {
       "enum": [
         "exact-variant",

@@ -41,7 +41,7 @@ function page(ctx, { title = '', current = '', path = '/', description: desc = d
 }
 
 function imageUrl(ctx, image) {
-  if (!image || image.media_type === 'project-placeholder') return '';
+  if (!image || image.media_type === 'project-placeholder' || image.buyer_visibility === 'omit') return '';
   return image.hosting.mode === 'remote'
     ? image.hosting.remote_url
     : url(ctx.base, image.hosting.local_path);
@@ -167,6 +167,19 @@ function buildAssumption(ctx) {
   return ctx.data.meta.frameset_build_assumption;
 }
 
+function buildPresetOptions(ctx) {
+  return buildAssumption(ctx).presets.map((preset) => `<option value="${escapeAttr(preset.id)}"${preset.default ? ' selected' : ''}${Number.isFinite(preset.amount_cny) ? ` data-build-amount="${preset.amount_cny}"` : ''}>${escapeHtml(preset.custom ? preset.label : `${preset.label} · +${formatCny(preset.amount_cny)}`)}</option>`).join('');
+}
+
+function buildPresetNotes(ctx) {
+  const assumption = buildAssumption(ctx);
+  return [
+    assumption.summary,
+    ...assumption.presets.filter((preset) => Number.isFinite(preset.amount_cny)).map((preset) => `${preset.label}: ${formatCny(preset.amount_cny)} total build allowance. ${preset.basis}.`),
+    'Choose Custom allowance to enter a current Taobao quote or your own parts budget.'
+  ];
+}
+
 function sentenceLabel(value, labels = {}) {
   if (!value) return 'Unverified';
   const text = labels[value] ?? String(value).replaceAll('-', ' ');
@@ -278,7 +291,7 @@ function priceTooltipLines(ctx, product) {
   if (platformIsSuperseded(product)) lines.push(`This version is no longer sold new and was superseded by the ${successorLabel(product.platform)}.`);
   if (variant.kind === 'frameset') {
     lines.push(`Frameset price: ${formatPrice(latestPrice)}.`);
-    lines.push(`Estimated complete adds a fixed ${formatCny(allInPrice.buildAmount)} ${buildAssumption(ctx).label}.`);
+    lines.push(`Estimated complete adds ${formatCny(allInPrice.buildAmount)} for the selected ${buildAssumption(ctx).label}.`);
     if (variant.included?.length) lines.push(`Recorded package includes: ${variant.included.join(', ')}.`);
     if (threshold) lines.push(`Great-buy reference: below ${formatCny(threshold + allInPrice.buildAmount)} complete (${formatCny(threshold)} frameset).`);
   } else if (threshold) {
@@ -324,7 +337,7 @@ function candidateTireClearance(entry) {
 }
 
 function drivetrainLabel(ctx, product) {
-  if (product.variant.kind === 'frameset') return buildAssumption(ctx).drivetrain_label;
+  if (product.variant.kind === 'frameset') return '';
   const drivetrain = product.variant.drivetrain;
   if (!drivetrain) return 'Not recorded';
   return `${drivetrain.brand} ${drivetrain.model}`;
@@ -503,7 +516,7 @@ function productRow(ctx, product) {
     <div class="catalog-cell price-cell" role="cell" data-label="Price"><span class="metric-main"><span data-calculated-price>${escapeHtml(publishedPriceLabel(product))}</span>${infoTip('Price details', priceTooltipLines(ctx, product), priceTipAttributes)}</span><span class="metric-sub price-state ${priceStateClass(product)}">${escapeHtml(publishedPriceState(product))}</span></div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}"><span class="metric-main">${escapeHtml(metric.value)}${infoTip(`${metric.label} details`, metric.details)}</span></div>
     <div class="catalog-cell tire-clearance-cell" role="cell">${escapeHtml(tireClearance.value)}</div>
-    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain"><span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span></div>
+    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${variant.kind === 'frameset' ? '' : `<span class="metric-main compact-metric">${escapeHtml(drivetrainLabel(ctx, product))}</span><span class="metric-sub">${escapeHtml(drivetrainSubline(ctx, product))}</span>`}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight"><span class="metric-main">${escapeHtml(weightLabel(product))}</span></div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame"><span class="metric-main">${escapeHtml(frameStandard(product))}${infoTip('Frame details', frameTooltipLines(product))}</span></div>
     <div class="row-link-cell" role="cell"><a class="row-link" href="${url(ctx.base, `/models/${variant.id}/`)}" data-model-link aria-label="View ${escapeAttr(brand.name)} ${escapeAttr(variant.name)} details">›</a></div>
@@ -653,7 +666,7 @@ function candidateRow(ctx, entry) {
     <div class="catalog-cell price-cell" role="cell" data-label="Full-bike price"><span class="metric-main"${priceLabelData}>${escapeHtml(candidatePriceLabel(ctx, entry))}</span><span class="metric-sub price-state">${escapeHtml(candidatePriceState(entry))}</span></div>
     <div class="catalog-cell capability-cell" role="cell" data-label="${escapeAttr(metric.label)}">${escapeHtml(metric.value)}</div>
     <div class="catalog-cell tire-clearance-cell" role="cell">${escapeHtml(tireClearance.value)}</div>
-    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${escapeHtml(facts.drivetrain ?? '—')}</div>
+    <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${entry.kind === 'frameset' ? '' : escapeHtml(facts.drivetrain ?? '—')}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}</div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
     <div class="row-link-cell" role="cell"><a href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(candidate.name)} research profile">→</a></div>
@@ -687,8 +700,7 @@ function comparisonSummary(ctx, product) {
     categoryMetricKind: metric.kind,
     categoryMetricDetails: metric.details.join(' '),
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
-    drivetrain: drivetrainLabel(ctx, product),
-    drivetrainSubline: drivetrainSubline(ctx, product),
+    ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
     weight: weightLabel(product),
     frame: frameStandard(product),
     category: `${categoryLabel(product.platform.category)} · ${product.platform.handlebar}-bar`,
@@ -718,7 +730,7 @@ function candidateComparisonSummary(ctx, entry) {
   const priceDetails = entry.candidate.status === 'superseded'
     ? candidatePublicText(entry.candidate.availability_note)
     : estimated
-    ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds a fixed ${formatCny(assumption.amount_cny)} ${assumption.label}.`
+    ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds ${formatCny(assumption.amount_cny)} for the selected ${assumption.label}.`
     : entry.candidate.source_note ?? '';
   const frame = facts.frame ?? entry.candidate.manufacturing;
   return {
@@ -741,7 +753,7 @@ function candidateComparisonSummary(ctx, entry) {
     categoryMetricLabel: metric.label,
     categoryMetricKind: metric.kind,
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
-    ...(facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
+    ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
     ...(weight !== '—' ? { weight } : {}),
     ...(frame ? { frame } : {}),
     category: entry.categories.map(categoryLabel).join(' · ') || '—',
@@ -777,7 +789,7 @@ function candidateFactRows(entry) {
     frame_weight_g: 'Frame weight',
     tire_clearance_mm: 'Tire clearance'
   };
-  return Object.entries(entry.candidate.facts ?? {}).map(([key, value]) => {
+  return Object.entries(entry.candidate.facts ?? {}).filter(([key]) => entry.kind !== 'frameset' || key !== 'drivetrain').map(([key, value]) => {
     const formatted = key === 'complete_weight_g'
       ? `${(value / 1000).toFixed(1)} kg`
       : key === 'frame_weight_g'
@@ -929,7 +941,7 @@ export function renderHome(ctx) {
       html: candidateRow(ctx, entry)
     }))
   ].sort((a, b) => a.price - b.price);
-  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><label class="assumption-note" for="frameset-build-allowance"><strong>Frameset build</strong><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Frameset build allowance in yuan">${infoTip('Frameset build assumption', [assumption.summary, `The reviewed default is ${formatCny(assumption.amount_cny)} as of ${assumption.reviewed_at}. Edit this amount to compare your own build.`])}</label></div></section>
+  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div></section>
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
     <div class="filter-bar filters-collapsed">
       <div class="filter-primary">
@@ -994,7 +1006,7 @@ export function renderModel(ctx, product) {
   const detailFacts = [
     ...(metric.kind === 'tire' ? [] : [[metric.label, metric.value, infoTip(`${metric.label} details`, metric.details)]]),
     ['Tire clearance', tireClearance.value, tireClearance.details.length ? infoTip('Tire clearance details', tireClearance.details) : ''],
-    ['Drivetrain', drivetrainLabel(ctx, product), ''],
+    ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product), '']] : []),
     ['Weight', weightLabel(product), ''],
     ['Frame standard', frameStandard(product), ''],
     ['Category', `${categoryLabel(platform.category)} · ${platform.handlebar}-bar`, ''],
@@ -1168,7 +1180,7 @@ export function renderElectronicGroupsets(ctx) {
 
 export function renderMethodology(ctx) {
   const assumption = buildAssumption(ctx);
-  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset currently receives the same fixed <strong>${formatCny(assumption.amount_cny)}</strong> allowance for ${escapeHtml(assumption.summary.toLowerCase())} It is an estimate, not a shopping cart or guarantee. Framesets remain candidates when this assumption would be materially misleading.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame or included-package price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact build selector offers one evidence-informed upgrade preset and a custom amount for a current quote or personal parts plan. These are planning estimates, not shopping carts or guaranteed package prices. Framesets remain candidates when the allowance would materially mislead buyers.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame or included-package price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frameset estimates, specifications, and evidence are handled.', path: '/methodology/', current: 'methodology', html });
 }
 

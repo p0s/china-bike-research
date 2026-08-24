@@ -353,6 +353,11 @@ test('brand names expose an exact, base-safe catalog filter', () => {
 });
 
 test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {
+  assert.match(html, /id="frameset-build-preset" data-frameset-build-preset/);
+  assert.match(html, /105 Di2 plan · \+¥6,000/);
+  assert.match(html, /Ultegra Di2 plan · \+¥7,900/);
+  assert.match(html, /Custom allowance/);
+  assert.match(html, /data-build-custom hidden/);
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
   assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
@@ -376,6 +381,7 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
   assert.match(publishedDetail, /data-model-price-brief/);
   assert.match(publishedDetail, /Included package/);
+  assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);
 
   const candidateFrame = candidates.find((entry) => entry.candidate.id === 'quick-pro-tr-one');
   const candidateDetail = renderCandidateModel(context, candidateFrame);
@@ -383,6 +389,31 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(candidateDetail, /data-model-calculated-price>Est\. ¥27,800/);
   assert.match(candidateDetail, /Frame package ¥21,800/);
   assert.match(candidateDetail, /recorded ¥21,800 frame package price/);
+  assert.doesNotMatch(candidateDetail, /<dt>Drivetrain<\/dt>/);
+  assert.doesNotMatch(html, /Electronic 2×12 standard build/);
+
+  const buildSource = fs.readFileSync(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
+  assert.match(buildSource, /variant\.drivetrain \? `\$\{variant\.drivetrain\.brand\}/);
+  assert.doesNotMatch(buildSource, /frameset_build_assumption\.drivetrain_label/);
+});
+
+test('failed PARDUS duplicate images stay out of every buyer-facing surface', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-24T00:00:00Z')
+  };
+  for (const id of ['pardus-spark-sport-pes', 'pardus-spark']) {
+    const entry = candidates.find((item) => item.candidate.id === id);
+    const detail = renderCandidateModel(context, entry);
+    assert.match(detail, /class="model-grid has-no-image"/);
+    assert.doesNotMatch(detail, /c048095/);
+  }
+  assert.doesNotMatch(html, /c048095/);
+  assert.doesNotMatch(renderImageSources(context), /c048095/);
 });
 
 test('buyer-facing copy does not expose internal evidence or status enums', () => {
@@ -455,6 +486,9 @@ test('electronic shifting is a footer and contextual reference, not primary navi
   assert.match(reference, /WheelTop · Wheeltop/);
   assert.match(reference, /QED 1\.15 kg core; PES 1\.25 kg core/);
   assert.match(reference, /¥4,150–4,200 dealer observations/);
+  assert.match(reference, /Ultegra R8170 \/ Dura-Ace R9270 Di2/);
+  assert.match(reference, /34T/);
+  assert.match(reference, /¥6,050 dealer observation/);
   assert.match(reference, /No attributable mainland price/);
   assert.match(reference, /EUR 659 official reference/);
   assert.match(reference, /Package normalization/);

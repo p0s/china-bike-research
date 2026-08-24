@@ -1,0 +1,61 @@
+{
+  "id": "shimano-road-di2-r8170-r9270",
+  "maker": "Shimano",
+  "name": "Ultegra R8170 / Dura-Ace R9270 Di2",
+  "scope": "established-benchmark",
+  "use_case": "Premium road 2x12 electronic shifting with hydraulic-disc or generation-specific wired rim-brake controls",
+  "status": "current-established",
+  "positioning": "Premium road benchmarks with lower component weight and additional control features, but no cassette-range advantage over 105 R7170.",
+  "variants": [
+    { "name": "Ultegra R8170", "tier": "premium-road", "product_codes": "ST-R8170, FD-R8150, RD-R8150" },
+    { "name": "Dura-Ace R9270", "tier": "race-road", "product_codes": "ST-R9270, FD-R9250, RD-R9250" }
+  ],
+  "shifting": {
+    "chainrings": "2x",
+    "cassette_speeds": "12",
+    "minimum_rear_sprocket_teeth": 11,
+    "max_rear_sprocket_teeth": 34
+  },
+  "architecture": "Semi-wireless in the hydraulic-disc builds: wireless levers with front and rear derailleurs connected to one internal BT-DN300 battery; current rim-brake controls are wired.",
+  "brake_options": ["Hydraulic disc", "Wired rim-brake controls"],
+  "weight": { "status": "package-dependent", "note": "No package-independent total is used; quoted totals must identify whether crank, cassette, chain, calipers, rotors and bottom bracket are included." },
+  "battery": "Internal BT-DN300 derailleur battery; hydraulic wireless levers use coin cells.",
+  "controls_and_app": "E-TUBE PROJECT Cyclist supports firmware, adjustment and control configuration; these tiers add control and component refinements rather than cassette range.",
+  "package_summary": "The dated R8170 ¥6,050 observation was described as a large package including rotors; a separate ¥5,000 observation covers electronic parts plus calipers. Neither is a normalized checkout package.",
+  "compatibility": {
+    "freehub": "HG road for supported 11T-start 12-speed cassettes",
+    "hanger": "Standard/direct-mount compatible derailleur-hanger system",
+    "frame": "Internal BT-DN300 space and SD300 wire routes to both derailleurs; rim-brake controls require their generation-specific wiring",
+    "brake_fluid": "Shimano mineral oil for hydraulic-disc builds"
+  },
+  "china_price_status": "Secondary dealer-market synthesis: R8170 ¥6,050 large package reportedly including rotors; exact checkout, invoice, warranty and complete contents remain unverified. R9270 price is unverified.",
+  "price_observations": [
+    {
+      "amount": 6050,
+      "currency": "CNY",
+      "market": "mainland public dealer-post synthesis",
+      "price_type": "dealer-market-observation",
+      "observed_at": "2026-08-20",
+      "conditions": "R8170 large package, reported with rotors; underlying dealer checkout was not captured.",
+      "headline": true,
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+    },
+    {
+      "amount": 5000,
+      "currency": "CNY",
+      "market": "mainland public dealer-post synthesis",
+      "price_type": "dealer-market-observation",
+      "observed_at": "2026-08-24",
+      "conditions": "R8170 electronic parts plus calipers; not a normalized full groupset.",
+      "headline": false,
+      "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+    }
+  ],
+  "caveats": [
+    "Both rear derailleurs stop at 34T; 105 R7170 supports 36T.",
+    "Confirm hydraulic-disc versus wired rim-brake controls and every included part.",
+    "Treat the observed R8170 premium as a planning lead, not a guaranteed Taobao checkout difference."
+  ],
+  "source_ids": ["shimano-ultegra-r8150-official-2026-08-24", "shimano-dura-ace-r9250-official-2026-08-24", "shimano-di2-bt-dn300-compatibility-2026-08-24", "smzdm-shimano-di2-market-observations-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "reviewed_at": "2026-08-24"
+}

@@ -86,10 +86,15 @@ test('candidate discovery stays URL-addressable without repeated missing-data wa
 test('brand filtering covers candidate-only brands and frameset overrides stay shareable', () => {
   assert.match(script, /const brandValues = new Set\(rows\.map\(\(row\) => row\.dataset\.brand\)/);
   assert.match(script, /brandButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
-  assert.match(script, /function updateFramesetPrices\(value\)/);
+  assert.match(script, /const buildPreset = document\.querySelector\('\[data-frameset-build-preset\]'\)/);
+  assert.match(script, /function syncBuildPreset\(\)/);
+  assert.match(script, /function updateFramesetPrices\(value, \{ highlight = false \} = \{\}\)/);
   assert.match(script, /row\.dataset\.priceFilter = String\(high\)/);
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
   assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
+  assert.match(script, /buildPreset\?\.addEventListener\('change'/);
+  assert.match(script, /buildCustom\.hidden = false/);
+  assert.match(script, /buildAllowance\.focus\(\{ preventScroll: true \}\)/);
   assert.match(script, /buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1'/);
   assert.match(script, /const stored = localStorage\.getItem\(buildAllowanceStorageKey\);/);
   assert.match(script, /if \(stored === null\) return null;/);

@@ -456,7 +456,9 @@
   const capability = catalogRoot.querySelector('[data-filter-capability]');
   const category = catalogRoot.querySelector('[data-filter-category]');
   const sort = catalogRoot.querySelector('[data-sort]');
+  const buildPreset = document.querySelector('[data-frameset-build-preset]');
   const buildAllowance = document.querySelector('[data-frameset-build-allowance]');
+  const buildCustom = document.querySelector('[data-build-custom]');
   const capabilitySortOptions = [...(sort?.querySelectorAll('option[value^="capability-"]') ?? [])];
   const sortHeadingButtons = [...catalogRoot.querySelectorAll('[data-sort-heading]')];
   const sortHeadingByKey = new Map(sortHeadingButtons.map((button) => [button.dataset.sortHeading, button]));
@@ -478,6 +480,7 @@
   let allModelsVisible = false;
   const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
   let currentBuildAllowance = defaultBuildAllowance;
+  let buildHighlightTimer = 0;
   const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
 
   const defaultSortModes = { price: 'price-asc', name: 'name-asc', capability: 'capability-desc', tire: 'tire-desc' };
@@ -516,9 +519,26 @@
     return Math.min(100000, Math.max(0, Math.round(number)));
   }
 
-  function updateFramesetPrices(value) {
+  function syncBuildPreset() {
+    if (!(buildPreset instanceof HTMLSelectElement)) return;
+    const options = [...buildPreset.options];
+    const fixed = options.find((option) => Number(option.dataset.buildAmount) === currentBuildAllowance);
+    const custom = options.find((option) => option.value === 'custom');
+    buildPreset.value = (fixed ?? custom)?.value ?? '';
+    if (buildCustom instanceof HTMLElement) buildCustom.hidden = Boolean(fixed);
+  }
+
+  function highlightBuildPrices() {
+    catalogRoot.classList.remove('is-build-updating');
+    requestAnimationFrame(() => catalogRoot.classList.add('is-build-updating'));
+    window.clearTimeout(buildHighlightTimer);
+    buildHighlightTimer = window.setTimeout(() => catalogRoot.classList.remove('is-build-updating'), 220);
+  }
+
+  function updateFramesetPrices(value, { highlight = false } = {}) {
     currentBuildAllowance = normalizedBuildAllowance(value);
     if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(currentBuildAllowance);
+    syncBuildPreset();
     rows.forEach((row) => {
       if (!row.dataset.framePriceLow) return;
       const frameLow = Number(row.dataset.framePriceLow);
@@ -547,11 +567,12 @@
       const high = Number(item.frameHigh ?? item.frameLow) + currentBuildAllowance;
       item.price = formatEstimatedRange(low, high);
       item.priceDetails = String(defaultPriceDetails.get(item.id) ?? '')
-        .replace(/Estimated complete adds a fixed ¥[\d,]+ [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`)
+        .replace(/Estimated complete adds (?:a fixed )?¥[\d,]+(?: for the selected)? [^.]+\./, `Estimated complete adds ${formatYuan(currentBuildAllowance)} for the selected build.`)
         .replace(/Great-buy reference: below ¥[\d,]+ complete/, item.greatBuyFrameThreshold
           ? `Great-buy reference: below ${formatYuan(Number(item.greatBuyFrameThreshold) + currentBuildAllowance)} complete`
           : 'Great-buy reference: below complete');
     });
+    if (highlight) highlightBuildPrices();
   }
 
   function updateModelLinks() {
@@ -825,7 +846,7 @@
     if (capability) capability.value = '';
     if (category) category.value = '';
     if (sort) sort.value = 'price-asc';
-    updateFramesetPrices(defaultBuildAllowance);
+    updateFramesetPrices(defaultBuildAllowance, { highlight: true });
     allModelsVisible = false;
     setBrand('', { update: false });
     setType('', { update: false });
@@ -1043,7 +1064,7 @@
 
   function applyBuildAllowance({ historyMode }) {
     if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return;
-    updateFramesetPrices(buildAllowance.value);
+    updateFramesetPrices(buildAllowance.value, { highlight: true });
     writeStoredBuildAllowance(currentBuildAllowance);
     updateCatalog({ historyMode });
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
@@ -1054,6 +1075,18 @@
     if (buildAllowance instanceof HTMLInputElement && !buildAllowance.value.trim()) {
       buildAllowance.value = String(defaultBuildAllowance);
     }
+    applyBuildAllowance({ historyMode: 'push' });
+  });
+  buildPreset?.addEventListener('change', () => {
+    if (!(buildPreset instanceof HTMLSelectElement)) return;
+    const selected = buildPreset.selectedOptions[0];
+    const amount = Number(selected?.dataset.buildAmount);
+    if (!Number.isFinite(amount)) {
+      if (buildCustom instanceof HTMLElement) buildCustom.hidden = false;
+      if (buildAllowance instanceof HTMLInputElement) buildAllowance.focus({ preventScroll: true });
+      return;
+    }
+    if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(amount);
     applyBuildAllowance({ historyMode: 'push' });
   });
 })();

@@ -7,10 +7,10 @@
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 359,
+      "sources": 364,
       "images": 128,
       "videos": 12,
-      "groupsets": 10,
+      "groupsets": 11,
       "recommendations": 6,
       "candidates": 199,
       "exclusions": 13,
@@ -273,10 +273,12 @@
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
       "look-765-optimum-105-di2-official-2026-08-17",
+      "ltwoo-disc-brake-fluid-official-2026-08-24",
       "ltwoo-egr-official-2026-08-24",
       "ltwoo-erx-manual-catalog-2026-08-24",
       "ltwoo-erx-road-official-2026-08-24",
       "ltwoo-erx-user-manual-2026-08-24",
+      "magene-direct-warranty-official-2026-08-24",
       "magene-qed-official-overview-2026-08-24",
       "magene-qed-pes-catalog-2026-08-24",
       "market-snapshot-2026-08-05",
@@ -440,9 +442,12 @@
       "seka-warranty-global-official-2026-08-17",
       "shimano-105-r7170-official-2026-08-24",
       "shimano-di2-bt-dn300-compatibility-2026-08-24",
+      "shimano-dura-ace-r9250-official-2026-08-24",
       "shimano-grx-rx717-official-2026-08-24",
       "shimano-grx-rx825-official-2026-08-24",
       "shimano-grx-rx827-official-2026-08-24",
+      "shimano-ultegra-r8150-official-2026-08-24",
+      "smzdm-shimano-di2-market-observations-2026-08-24",
       "spcycle-gravel-catalog",
       "specialized-china-tarmac-sl8-comp-price-2026-08-17",
       "specialized-cn-crux-page",
@@ -716,6 +721,7 @@
       "shimano-105-r7170",
       "shimano-grx-rx717-rx827",
       "shimano-grx-rx825",
+      "shimano-road-di2-r8170-r9270",
       "sram-rival-axs-e1",
       "sram-xplr-apex-d1-rival-e1",
       "wheeltop-eds-gex",
@@ -1282,6 +1288,7 @@
     "frameset_build_assumption.amount_cny",
     "frameset_build_assumption.drivetrain_label",
     "frameset_build_assumption.label",
+    "frameset_build_assumption.presets",
     "frameset_build_assumption.reviewed_at",
     "frameset_build_assumption.summary",
     "privacy",
@@ -4859,6 +4866,18 @@
         "type",
         "url"
       ],
+      "ltwoo-disc-brake-fluid-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "ltwoo-egr-official-2026-08-24": [
         "accessed_at",
         "language",
@@ -4896,6 +4915,18 @@
         "url"
       ],
       "ltwoo-erx-user-manual-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "magene-direct-warranty-official-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -6822,6 +6853,18 @@
         "type",
         "url"
       ],
+      "shimano-dura-ace-r9250-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "shimano-grx-rx717-official-2026-08-24": [
         "accessed_at",
         "language",
@@ -6847,6 +6890,30 @@
         "url"
       ],
       "shimano-grx-rx827-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-ultegra-r8150-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "smzdm-shimano-di2-market-observations-2026-08-24": [
         "accessed_at",
         "language",
         "notes",
@@ -8956,6 +9023,7 @@
       ],
       "pardus-spark-family-cn-alt-color-primary-image": [
         "alt",
+        "buyer_visibility",
         "candidate_id",
         "credit",
         "display_note",
@@ -9048,6 +9116,7 @@
       ],
       "pardus-spark-sport-pes-cn-color-primary-image": [
         "alt",
+        "buyer_visibility",
         "candidate_id",
         "credit",
         "display_note",
@@ -10861,6 +10930,35 @@
         "shifting.max_rear_sprocket_teeth",
         "shifting.minimum_rear_sprocket_teeth",
         "shifting.rear_capacity_teeth",
+        "source_ids",
+        "status",
+        "use_case",
+        "variants",
+        "weight.note",
+        "weight.status"
+      ],
+      "shimano-road-di2-r8170-r9270": [
+        "architecture",
+        "battery",
+        "brake_options",
+        "caveats",
+        "china_price_status",
+        "compatibility.brake_fluid",
+        "compatibility.frame",
+        "compatibility.freehub",
+        "compatibility.hanger",
+        "controls_and_app",
+        "maker",
+        "name",
+        "package_summary",
+        "positioning",
+        "price_observations",
+        "reviewed_at",
+        "scope",
+        "shifting.cassette_speeds",
+        "shifting.chainrings",
+        "shifting.max_rear_sprocket_teeth",
+        "shifting.minimum_rear_sprocket_teeth",
         "source_ids",
         "status",
         "use_case",
@@ -20527,10 +20625,12 @@
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
+      "ltwoo-disc-brake-fluid-official-2026-08-24": [],
       "ltwoo-egr-official-2026-08-24": [],
       "ltwoo-erx-manual-catalog-2026-08-24": [],
       "ltwoo-erx-road-official-2026-08-24": [],
       "ltwoo-erx-user-manual-2026-08-24": [],
+      "magene-direct-warranty-official-2026-08-24": [],
       "magene-qed-official-overview-2026-08-24": [],
       "magene-qed-pes-catalog-2026-08-24": [],
       "market-snapshot-2026-08-05": [],
@@ -20694,9 +20794,12 @@
       "seka-warranty-global-official-2026-08-17": [],
       "shimano-105-r7170-official-2026-08-24": [],
       "shimano-di2-bt-dn300-compatibility-2026-08-24": [],
+      "shimano-dura-ace-r9250-official-2026-08-24": [],
       "shimano-grx-rx717-official-2026-08-24": [],
       "shimano-grx-rx825-official-2026-08-24": [],
       "shimano-grx-rx827-official-2026-08-24": [],
+      "shimano-ultegra-r8150-official-2026-08-24": [],
+      "smzdm-shimano-di2-market-observations-2026-08-24": [],
       "spcycle-gravel-catalog": [],
       "specialized-china-tarmac-sl8-comp-price-2026-08-17": [],
       "specialized-cn-crux-page": [],
@@ -21433,6 +21536,7 @@
     "groupsets": {
       "ltwoo-egr": [
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=ltwoo-disc-brake-fluid-official-2026-08-24",
         "source_ids=ltwoo-egr-official-2026-08-24"
       ],
       "ltwoo-erx-er9": [
@@ -21441,13 +21545,15 @@
         "source_ids=ltwoo-erx-user-manual-2026-08-24"
       ],
       "magene-qed-pes": [
+        "source_ids=magene-direct-warranty-official-2026-08-24",
         "source_ids=magene-qed-official-overview-2026-08-24",
         "source_ids=magene-qed-pes-catalog-2026-08-24"
       ],
       "shimano-105-r7170": [
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
         "source_ids=shimano-105-r7170-official-2026-08-24",
-        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24"
+        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
+        "source_ids=smzdm-shimano-di2-market-observations-2026-08-24"
       ],
       "shimano-grx-rx717-rx827": [
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
@@ -21458,6 +21564,13 @@
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
         "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
         "source_ids=shimano-grx-rx825-official-2026-08-24"
+      ],
+      "shimano-road-di2-r8170-r9270": [
+        "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
+        "source_ids=shimano-di2-bt-dn300-compatibility-2026-08-24",
+        "source_ids=shimano-dura-ace-r9250-official-2026-08-24",
+        "source_ids=shimano-ultegra-r8150-official-2026-08-24",
+        "source_ids=smzdm-shimano-di2-market-observations-2026-08-24"
       ],
       "sram-rival-axs-e1": [
         "source_ids=gpt-pro-electronic-groupsets-input-2026-08-24",
@@ -24131,6 +24244,14 @@
         "specification": 1
       }
     },
+    "ltwoo-disc-brake-fluid-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "ltwoo-egr-official-2026-08-24": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -24161,6 +24282,14 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "magene-direct-warranty-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "magene-qed-official-overview-2026-08-24": {
@@ -25457,6 +25586,14 @@
         "specification": 3
       }
     },
+    "shimano-dura-ace-r9250-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "shimano-grx-rx717-official-2026-08-24": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -25479,6 +25616,22 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "shimano-ultegra-r8150-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "smzdm-shimano-di2-market-observations-2026-08-24": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 0
       }
     },
     "spcycle-gravel-catalog": {

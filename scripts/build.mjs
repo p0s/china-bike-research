@@ -119,7 +119,7 @@ const catalog = {
 };
 write('data/catalog.json', `${JSON.stringify(catalog, null, 2)}\n`);
 write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_at, sources: data.sources }, null, 2)}\n`);
-write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images }, null, 2)}\n`);
+write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images.filter((image) => image.buyer_visibility !== 'omit') }, null, 2)}\n`);
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
 
@@ -140,7 +140,7 @@ const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, 
   metric.label, metric.value, metric.details.join(' '),
   platform.frame.bottom_bracket, platform.frame.derailleur_hanger, platform.internal_storage ? 'yes' : 'no',
   platform.frame.claimed_frame_weight_g ?? '', variant.claimed_complete_weight_g ?? '',
-  variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : data.meta.frameset_build_assumption.drivetrain_label,
+  variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : '',
   brand.manufacturing.relationship, brand.manufacturing.confidence, platform.china_availability, variant.editorial.verdict,
   image?.hosting.mode === 'remote' ? image.hosting.remote_url : image ? `${siteUrl}${base}${image.hosting.local_path}` : '',
   imageSource?.url ?? '', `${siteUrl}${base}/models/${variant.id}/`

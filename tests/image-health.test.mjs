@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { classifyImageResponse, isBlockingImageResult } from '../scripts/image-health-report.mjs';
+import { classifyImageResponse, imageHealthTargets, isBlockingImageResult } from '../scripts/image-health-report.mjs';
+import { loadDataset } from '../src/lib/data.mjs';
 
 test('remote image health distinguishes usable images from host blocking and bad content', () => {
   assert.equal(classifyImageResponse({ status: 200, contentType: 'image/webp' }), 'healthy');
@@ -10,7 +11,7 @@ test('remote image health distinguishes usable images from host blocking and bad
   assert.equal(classifyImageResponse({ status: 404, contentType: 'text/html' }), 'broken');
 });
 
-test('project-operated media failures block delivery while unrelated host blocking can fall back', () => {
+test('project-operated media failures block delivery while unrelated host blocking stays non-blocking', () => {
   assert.equal(isBlockingImageResult({
     url: 'https://china-bike-media.161-97-123-19.sslip.io/media/xhs/bike/a-card-w480.webp',
     classification: 'unreachable'
@@ -23,4 +24,10 @@ test('project-operated media failures block delivery while unrelated host blocki
     url: 'https://example.invalid/image.webp',
     classification: 'wrong-content-type'
   }), true);
+});
+
+test('buyer-omitted PARDUS images are not health-check targets', () => {
+  const ids = imageHealthTargets(loadDataset()).map((target) => target.id);
+  assert.equal(ids.some((id) => id.startsWith('pardus-spark-family-cn-alt-color-primary-image')), false);
+  assert.equal(ids.some((id) => id.startsWith('pardus-spark-sport-pes-cn-color-primary-image')), false);
 });
