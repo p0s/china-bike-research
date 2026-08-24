@@ -21,20 +21,61 @@
   "weight": { "status": "current-total-unverified", "note": "Do not carry the older 7-13-speed RA-package 1.14 kg figure into the current 3-14-speed revision without an exact package match." },
   "battery": "Rear derailleur 800 mAh; current materials describe about 20,000 shifts and 800 charge cycles.",
   "controls_and_app": "App speed selection and fine adjustment plus ANT+ support.",
-  "package_summary": "Current packages combine rear derailleur, two levers, hydraulic calipers/hoses and charging cable; confirm 75/93 mm cage, lever material and standard-hanger or UDH-specific configuration.",
+  "package_summary": "Current packages combine rear derailleur, two levers, hydraulic calipers/hoses and charging cable. The observed Taobao long-, medium- and short-cage seller options were each ¥2,369, but their screenshots do not map those labels to exact 46T/52T capacities; confirm cage, lever material and standard-hanger or UDH configuration.",
   "compatibility": {
     "freehub": "Depends on the selected 3-14-speed cassette; verify cassette, chain and wheel together",
     "hanger": "Standard-hanger and UDH-specific configurations exist; order the exact one",
     "frame": "No internal electronic wire route; verify cage clearance and selected hanger version",
     "brake_fluid": "Mineral oil"
   },
-  "china_price_status": "No attributable exact mainland GeX package price captured in this batch.",
-  "price_observations": [],
+  "china_price_status": "User-supplied Taobao screenshots show ¥2,369 for each visible long-, medium- and short-cage hydraulic option. These are displayed option prices, not verified checkout totals; the unspecified ¥300 combination discount is excluded.",
+  "price_observations": [
+    {
+      "amount": 2369,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "碟刹长腿版; 1x hydraulic shift-and-brake kit, long-cage seller label; exact sprocket capacity not established by screenshot; checkout unverified.",
+      "option_label_zh": "碟刹长腿版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-gex-options-2026-08-24"
+    },
+    {
+      "amount": 2369,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "碟刹中腿版; 1x hydraulic shift-and-brake kit, medium-cage seller label; exact sprocket capacity not established by screenshot; checkout unverified.",
+      "option_label_zh": "碟刹中腿版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-gex-options-2026-08-24"
+    },
+    {
+      "amount": 2369,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "碟刹短腿版; 1x hydraulic shift-and-brake kit, short-cage seller label; exact sprocket capacity not established by screenshot; checkout unverified.",
+      "option_label_zh": "碟刹短腿版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-gex-options-2026-08-24"
+    }
+  ],
   "caveats": [
     "Keep the current 3-14-speed revision separate from older 7-13-speed RA records.",
     "A 75 mm 46T unit and 93 mm 52T unit are not interchangeable specifications.",
+    "Do not infer 46T or 52T capacity from the Taobao long/medium/short seller labels alone, and do not apply the unspecified ¥300 bundle discount.",
     "Confirm cassette indexing, chain, hanger configuration, lever material and warranty route."
   ],
-  "source_ids": ["wheeltop-eds-gex-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24"],
+  "source_ids": ["wheeltop-eds-gex-official-2026-08-24", "gpt-pro-electronic-groupsets-input-2026-08-24", "taobao-wheeltop-gex-options-2026-08-24"],
   "reviewed_at": "2026-08-24"
 }

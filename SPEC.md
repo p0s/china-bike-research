@@ -40,6 +40,8 @@ Model pages may include a compact, curated video section when a video maps to th
 
 A compact component reference may explain current road, all-road, and gravel electronic-shifting systems sold in or for China when it helps interpret bicycle specifications. It may include established benchmarks and Chinese alternatives, and is linked from relevant drivetrain facts and the footer rather than promoted as a primary header destination. It must distinguish normalized package scope, exact brake packages and fluid, wiring and battery architecture, cassette and freehub limits, hanger and frame requirements, the scope of quoted weights, and dated price status. Seller labels such as 小套, 中套, and 大套 are not standardized. A secondary dealer-market synthesis may be retained as such but is neither an official price nor verified checkout evidence. The reference does not turn a component family into proof of an exact bicycle build.
 
+The component comparison keeps only decision-critical fields in its primary table and moves explanatory architecture, weight, battery, compatibility, and package detail below it. On narrow screens, each row becomes a labelled comparison block rather than requiring an undisclosed horizontal scroll; on intermediate screens, the system identity remains visible while the remaining columns scroll with an explicit cue.
+
 Every distinct catalog entry has an internal detail page with a concise, always-visible buyer brief. Published products combine the editorial verdict with exact price context, intended use, important configuration/category facts, strengths, trade-offs, and meaningful unknowns. Candidates are clearly labelled as research-stage profiles and show only attributed known facts, price context, and unresolved gaps; they are not recommendations. Both should read like precise short reviews rather than data dumps or long articles. Key product/support facts must not be hidden behind disclosure controls. Seller-contact scripts and internal research prompts are not buyer-facing content; detailed evidence records may remain in a compact disclosure beneath the visible brief.
 
 ## 2. Catalog scope
@@ -102,6 +104,7 @@ Research completion is tracked per exact target and missing field. High-priority
 - A foreign-currency official complete-bike list price may appear on a candidate only as a dated CNY reference estimate with the original amount and currency, conversion rate/source/date, and checkout/import caveat. It is not a China-market price observation.
 - Add a new observation; do not overwrite price history.
 - Distinguish observed checkout, official list, reference range, historical promotion, and estimate.
+- A marketplace screenshot is an option-level listed-price observation, not a checkout total. Preserve the exact readable seller option label, package basis, and any truncation; never collapse materially different packages into one headline price or apply an unspecified bundle discount.
 - Record coupons, subsidies, memberships, trade-ins, size/color limits, shipping, and other conditions when known.
 - `data/meta.json.snapshot_date` is the last catalog-wide review date, not the date of every small edit.
 - The reviewed default frameset allowance changes only with explicit maintainer approval and a dated rationale. A buyer-side calculator override is not an evidence or methodology change.

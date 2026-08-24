@@ -26,15 +26,67 @@
   },
   "battery": "Rear derailleur 800 mAh, front derailleur 500 mAh, claimed 20,000+ shifts and 800 charge cycles; shifters use CR2032. RD/FD are IP67 and shifters IP65.",
   "controls_and_app": "App sets cassette speed, button mapping, micro-adjustment, calibration, firmware and battery display; ANT+ integration is advertised.",
-  "package_summary": "Hydraulic kit includes two carbon levers, front and rear derailleurs, two calipers and hoses, magnetic/USB charging parts, instructions and spares. Cable kit omits calipers and hoses; the lever internals are not interchangeable.",
+  "package_summary": "The official hydraulic kit includes two levers, front and rear derailleurs, two calipers and hoses, charging parts, instructions and spares. The observed Taobao options separate 1x/2x and alloy/carbon seller labels; crank, cassette, chain, rotors and bottom bracket were not visible as included. Cable kit omits calipers and hoses, and its lever internals are not interchangeable.",
   "compatibility": {
     "freehub": "Depends on the selected 3-14-speed cassette; verify cassette, chain and wheel together",
     "hanger": "Standard derailleur hanger",
     "frame": "No internal battery or electronic wire route; verify front-derailleur mount for 2x",
     "brake_fluid": "Confirm the selected hydraulic revision; cable-brake kit has no hydraulic circuit"
   },
-  "china_price_status": "A bounded manual Taobao search on 2026-08-24 exposed no attributable result card; mainland hydraulic and cable-kit prices remain open.",
+  "china_price_status": "User-supplied Taobao screenshots show option-level hydraulic-kit prices from ¥2,369 for 1x alloy-labelled to ¥3,219 for 2x carbon-labelled. These are displayed options, not verified checkout totals; the unspecified ¥300 combination discount is excluded.",
   "price_observations": [
+    {
+      "amount": 2369,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "单盘碟刹铝合金版; 1x hydraulic-disc shift-and-brake kit, alloy seller label; checkout unverified; crank, cassette, chain, rotors and bottom bracket not visible as included.",
+      "option_label_zh": "单盘碟刹铝合金版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+    },
+    {
+      "amount": 2624,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "单盘碟刹碳纤维版; 1x hydraulic-disc shift-and-brake kit, carbon-fibre seller label; checkout unverified.",
+      "option_label_zh": "单盘碟刹碳纤维版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+    },
+    {
+      "amount": 2879,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "碟刹铝合金版; 2x hydraulic-disc shift-and-brake kit, alloy seller label; checkout unverified.",
+      "option_label_zh": "碟刹铝合金版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+    },
+    {
+      "amount": 3219,
+      "currency": "CNY",
+      "market": "Taobao seller option",
+      "price_type": "listed-option",
+      "observed_at": "2026-08-24",
+      "conditions": "碟刹碳纤维版; 2x hydraulic-disc shift-and-brake kit, carbon-fibre seller label; checkout unverified.",
+      "option_label_zh": "碟刹碳纤维版",
+      "package_basis": "shift-brake",
+      "checkout_verified": false,
+      "headline": true,
+      "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24"
+    },
     {
       "amount": 659,
       "currency": "EUR",
@@ -42,6 +94,7 @@
       "price_type": "displayed-reference",
       "observed_at": "2026-08-24",
       "conditions": "Displayed reference on the official page; variation, destination, tax, shipping and mainland warranty route were not checked.",
+      "headline": false,
       "source_id": "wheeltop-eds-tx-official-2026-08-24"
     }
   ],
@@ -49,8 +102,9 @@
     "Keep the current 3-14-speed revision separate from older regional 7-13-speed TX records.",
     "Select the exact cassette speed in the app and verify chain/cassette compatibility rather than treating 3-14-speed support as universal indexing proof.",
     "The 36T rear limit is narrower than many modern gravel 1× cassettes.",
+    "Do not subtract the screenshot's unspecified ¥300 combination discount from any selected-option price.",
     "Confirm brake version, hose length, pad/rotor compatibility and local after-sales route."
   ],
-  "source_ids": ["wheeltop-eds-tx-official-2026-08-24"],
+  "source_ids": ["wheeltop-eds-tx-official-2026-08-24", "taobao-wheeltop-eds-tx-options-2026-08-24"],
   "reviewed_at": "2026-08-24"
 }
