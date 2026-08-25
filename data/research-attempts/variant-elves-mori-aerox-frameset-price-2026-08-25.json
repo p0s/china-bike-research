@@ -1,0 +1,23 @@
+{
+  "id": "variant-elves-mori-aerox-frameset-price-2026-08-25",
+  "target": { "record_type": "variant", "record_id": "elves-mori-aerox-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before Mori AeroX could be searched." },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Elves Mori AeroX current price official technical page", "route": "manufacturer technical page", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "The technical page provides specifications and a buy link but no mainland price." },
+        { "attempt": 2, "query": "Elves Mori AeroX official store price", "route": "official global exact-model checkout", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The US$998 official-store amount is a foreign reference, not a mainland CNY observation." },
+        { "attempt": 3, "query": "ELVES Mori AeroX 中国 车架 价格", "route": "mainland marketplace or dealer", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "No attributable exact mainland package and dated CNY price was captured." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Official weight, geometry and direct purchase route are documented; exact mainland price remains unknown."
+}

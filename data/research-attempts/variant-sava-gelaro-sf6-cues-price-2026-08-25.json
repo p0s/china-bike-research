@@ -1,0 +1,23 @@
+{
+  "id": "variant-sava-gelaro-sf6-cues-price-2026-08-25",
+  "target": { "record_type": "variant", "record_id": "sava-gelaro-sf6-cues" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before SF6 could be searched." },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Gelaro SF6 11S official China price", "route": "SAVA China exact-model page", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "The official China page provides an inquiry route but no public price." },
+        { "attempt": 2, "query": "SAVA Gelaro SF6 CUES official direct price", "route": "official global exact-model checkout", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The US$1,399-1,499 official references are foreign checkout prices, not mainland observations." },
+        { "attempt": 3, "query": "萨瓦 越界 SF6 CUES 京东 阿里巴巴 exact package price", "route": "mainland marketplace and factory listings", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "Visible JD options omitted a stable price and Alibaba showed broad wholesale ranges across 10/11-speed packages." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No attributable exact mainland package price was captured; the website should leave the China price blank."
+}

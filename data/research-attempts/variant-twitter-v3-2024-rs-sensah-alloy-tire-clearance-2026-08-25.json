@@ -1,0 +1,29 @@
+{
+  "id": "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25",
+  "target": { "record_type": "variant", "record_id": "twitter-v3-2024-rs-sensah-alloy" },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 2024 2025 车重 胎容", "route": "updated dedicated-XHS extension campaign", "outcome": "blocked", "accessed_at": "2026-08-25", "note": "The only detailed export was a V1 post; the lane then stopped on a malformed detail response before exact 2024 clearance evidence was captured." }
+      ],
+      "blocker": "The updated XHS workflow requires the sequential lane to stop after a malformed detail response; no automatic retry is allowed in the same turn."
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "2024 TWITTER Gravel V3 maximum tire clearance exact Taobao SKU", "route": "dated exact-SKU mainland listing", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The exact listing establishes a 700x40C stock tire, not maximum clearance." },
+        { "attempt": 2, "query": "TWITTER Gravel V3 BB86 frameset max tire clearance official", "route": "official regional frameset page", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The 40C claim belongs to a BB86 listing and cannot be transferred to the exact BB92 seller record." },
+        { "attempt": 3, "query": "TWITTER Gravel V3 2024 max tire exact generation", "route": "manual or exact-generation dealer", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "No exact-generation source distinguished stock tire size from safe published maximum." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Bounded 2026-08-25 pass. Keep 40C as stock fit only; maximum clearance stays unknown."
+}

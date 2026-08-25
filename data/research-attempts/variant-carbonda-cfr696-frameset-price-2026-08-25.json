@@ -1,0 +1,23 @@
+{
+  "id": "variant-carbonda-cfr696-frameset-price-2026-08-25",
+  "target": { "record_type": "variant", "record_id": "carbonda-cfr696-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before CFR696 could be searched." },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Carbonda CFR696 current price official", "route": "manufacturer exact-model page", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "The manufacturer offers Get a quote but publishes no amount." },
+        { "attempt": 2, "query": "Carbonda CFR696 exact current frameset price China", "route": "current authorized or factory-direct listing", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "No exact current package with dated CNY total was found." },
+        { "attempt": 3, "query": "CFR696 UDH frameset price mainland", "route": "mainland marketplace or dealer", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "Only broad or older reference ranges were available, without exact current package mapping." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The current frame, geometry and direct inquiry route are documented; exact mainland price remains unknown."
+}
