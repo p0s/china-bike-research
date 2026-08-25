@@ -7,9 +7,7 @@
   "field": "frame-weight",
   "priority": "medium",
   "searched_at": "2026-08-17",
-  "required_channels": [
-    "web"
-  ],
+  "required_channels": ["web"],
   "channels": {
     "web": {
       "status": "temporarily-exhausted",
@@ -43,8 +41,14 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["scott-addict-rc-40-bikeradar-2026-08-25"],
   "retry_after": "2026-11-17",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-25",
+    "source_ids": ["scott-addict-rc-40-bikeradar-2026-08-25"],
+    "note": "A later exact-model editorial review reports Scott's approximate 850 g frame claim."
+  },
   "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
 }

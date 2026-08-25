@@ -13,7 +13,18 @@
     "bottom_bracket": "BSA",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "T800-claimed"
+    "claimed_fiber": "T800-claimed",
+    "claimed_frame_weight_g": 860,
+    "claimed_frame_weight_basis": "Official raw-finish size-M frame weight; official size range is 830-960 g, each +/-25 g.",
+    "claimed_frame_weight_g_by_size": {
+      "basis": "Manufacturer claim for raw-finish frames, each +/-25 g",
+      "XS": 830,
+      "S": 845,
+      "M": 860,
+      "L": 880,
+      "XL": 895,
+      "XXL": 960
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -31,7 +42,8 @@
   "source_ids": [
     "tavelo-official",
     "compiled-research-2026-08-06",
-    "public-tavelo-grow-build-2026-08-17"
+    "public-tavelo-grow-build-2026-08-17",
+    "tavelo-grow-official-2026-08-25"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-25"
 }

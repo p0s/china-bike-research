@@ -1,0 +1,31 @@
+{
+  "id": "variant-tavelo-grow-frameset-frame-weight-2026-08-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "tavelo-grow-frameset"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-25",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Grow official frame weight by size",
+          "route": "manufacturer exact-model product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-25",
+          "note": "Official page lists raw-finish frame weights from 830 g in XS to 960 g in XXL, each +/-25 g.",
+          "result_url": "https://tavelo.cc/products/tavelo-grow"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["tavelo-grow-official-2026-08-25"],
+  "retry_after": null,
+  "notes": "The exact manufacturer page resolves the frame-weight field with a complete size-by-size basis."
+}

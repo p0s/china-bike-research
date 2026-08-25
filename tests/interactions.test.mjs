@@ -68,6 +68,18 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
 });
 
+test('desktop table headers stay below persistent controls while scrolling', () => {
+  assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: var\(--catalog-head-top\);[\s\S]*?z-index: 34;/);
+  assert.match(styles, /\.reference-table-wrap \{[^}]*overflow: visible;/);
+  assert.match(styles, /\.reference-table \{[^}]*min-width: 0;/);
+  assert.match(styles, /\.reference-table thead th \{[\s\S]*?position: sticky;[\s\S]*?top: var\(--site-header-height\);/);
+  assert.match(script, /function updateStickyTableOffsets\(\)/);
+  assert.match(script, /stickyFilterBar\.offsetHeight/);
+  assert.match(script, /new ResizeObserver\(updateStickyTableOffsets\)/);
+  assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-head \{ display: none; \}/);
+  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.groupset-comparison thead \{ position: absolute;/);
+});
+
 test('candidate discovery stays URL-addressable without repeated missing-data warnings', () => {
   assert.match(script, /let allModelsVisible = false/);
   assert.match(script, /function rowInScope\(row\)/);

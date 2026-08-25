@@ -342,6 +342,25 @@
   });
   addEventListener('scroll', closeTooltip, true);
 
+  const stickySiteHeader = document.querySelector('.site-header');
+  const stickyFilterBar = document.querySelector('.filter-bar');
+  function updateStickyTableOffsets() {
+    const siteHeaderHeight = stickySiteHeader instanceof HTMLElement ? stickySiteHeader.offsetHeight : 60;
+    const filterStyle = stickyFilterBar instanceof HTMLElement ? getComputedStyle(stickyFilterBar) : null;
+    const filterHeight = stickyFilterBar instanceof HTMLElement && filterStyle?.position === 'sticky'
+      ? stickyFilterBar.offsetHeight
+      : 0;
+    document.documentElement.style.setProperty('--site-header-height', `${siteHeaderHeight}px`);
+    document.documentElement.style.setProperty('--catalog-head-top', `${siteHeaderHeight + filterHeight}px`);
+  }
+  updateStickyTableOffsets();
+  addEventListener('resize', updateStickyTableOffsets);
+  if ('ResizeObserver' in window) {
+    const stickyOffsetObserver = new ResizeObserver(updateStickyTableOffsets);
+    if (stickySiteHeader instanceof HTMLElement) stickyOffsetObserver.observe(stickySiteHeader);
+    if (stickyFilterBar instanceof HTMLElement) stickyOffsetObserver.observe(stickyFilterBar);
+  }
+
   document.querySelectorAll('[data-copy-target]').forEach((button) => {
     button.addEventListener('click', async () => {
       const target = document.getElementById(button.dataset.copyTarget);

@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 382,
+      "sources": 387,
       "images": 128,
       "videos": 12,
       "groupsets": 11,
@@ -15,7 +15,7 @@
       "candidates": 199,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 332
+      "researchAttempts": 333
     },
     "image_accuracy": {
       "exact-platform": 36,
@@ -203,6 +203,7 @@
       "bianchi-oltre-race-dealer-2026-08-17",
       "bianchi-oltre-race-global-2026-08-17",
       "bianchi-oltre-race-official-2026-08-08",
+      "bianchi-oltre-race-reddit-frame-weight-2026-08-25",
       "bianchi-sprint-icr-official-2026-08-17",
       "bigrock-sohtea-panda-podium-2026-08-17",
       "biketo-pardus-uragano-evo-review-2023",
@@ -334,6 +335,7 @@
       "public-pardus-spark-rs-build-2026-08-17",
       "public-pardus-spark-tourist-pes-2026-08-24",
       "public-pardus-super-sport-105-build-2026-08-17",
+      "public-pardus-super-sport-gen2-frame-weight-2026-08-25",
       "public-pardus-super-sport-gen2-price-2026-08-17",
       "public-pardus-uragano-evo-build-2026-08-17",
       "public-quick-pro-er-one-build-2026-08-17",
@@ -431,6 +433,7 @@
       "sava-r8-r8170-official-image-2026-08-17",
       "sava-starship-105-official-2026-08-17",
       "scott-addict-2026-manual-2026-08-17",
+      "scott-addict-rc-40-bikeradar-2026-08-25",
       "scott-addict-rc-40-poland-2026-08-17",
       "scott-addict-rc-40-retailer-2026-08-08",
       "scott-foil-rc-10-official-2026-08-17",
@@ -484,6 +487,7 @@
       "tavelo-attack-official-2026-08-17",
       "tavelo-grow-china-launch-2026",
       "tavelo-grow-official-2026-08-17",
+      "tavelo-grow-official-2026-08-25",
       "tavelo-official",
       "tavelo-warranty-official-2026-08-17",
       "tfsa-jh37-official",
@@ -532,6 +536,7 @@
       "twitter-gravel-v3-official-2026-08-17",
       "twitter-t10-pro-official-2026-08-17",
       "twitter-t3-tt-official-2026-08-08",
+      "twitter-t3-tt-official-2026-08-25",
       "twitter-v3-factory-store-2026-08-25",
       "twitter-v3-official",
       "twitter-v3-official-2026-08-16",
@@ -1268,6 +1273,7 @@
       "variant-scott-addict-rc-40-purchase-route-2026-08-17",
       "variant-scott-addict-rc-40-tires-2026-08-17",
       "variant-scott-addict-rc-40-wheels-2026-08-17",
+      "variant-tavelo-grow-frameset-frame-weight-2026-08-25",
       "variant-twitter-cyclone-electronic-bom-2026-08-17",
       "variant-twitter-cyclone-electronic-bottom-bracket-2026-08-17",
       "variant-twitter-cyclone-electronic-cockpit-2026-08-17",
@@ -1776,6 +1782,8 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -2128,6 +2136,8 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -2333,6 +2343,8 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2451,6 +2463,15 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
+        "frame.claimed_frame_weight_g_by_size.basis",
+        "frame.claimed_frame_weight_g_by_size.L",
+        "frame.claimed_frame_weight_g_by_size.M",
+        "frame.claimed_frame_weight_g_by_size.S",
+        "frame.claimed_frame_weight_g_by_size.XL",
+        "frame.claimed_frame_weight_g_by_size.XS",
+        "frame.claimed_frame_weight_g_by_size.XXL",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -3328,6 +3349,7 @@
       "twitter-t3-tt": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_g",
         "drivetrain.brand",
         "drivetrain.layout",
         "drivetrain.model",
@@ -4068,6 +4090,18 @@
         "url"
       ],
       "bianchi-oltre-race-official-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bianchi-oltre-race-reddit-frame-weight-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -5678,6 +5712,18 @@
         "type",
         "url"
       ],
+      "public-pardus-super-sport-gen2-frame-weight-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-pardus-super-sport-gen2-price-2026-08-17": [
         "accessed_at",
         "language",
@@ -6791,6 +6837,18 @@
         "type",
         "url"
       ],
+      "scott-addict-rc-40-bikeradar-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "scott-addict-rc-40-poland-2026-08-17": [
         "accessed_at",
         "language",
@@ -7496,6 +7554,18 @@
         "type",
         "url"
       ],
+      "tavelo-grow-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "tavelo-official": [
         "accessed_at",
         "language",
@@ -8066,6 +8136,18 @@
         "url"
       ],
       "twitter-t3-tt-official-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-t3-tt-official-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -18527,12 +18609,17 @@
         "target.record_type"
       ],
       "variant-bianchi-oltre-race-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -19464,6 +19551,7 @@
         "target.record_type"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -19473,6 +19561,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -19915,12 +20007,17 @@
         "target.record_type"
       ],
       "variant-scott-addict-rc-40-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -19967,6 +20064,19 @@
         "target.record_type"
       ],
       "variant-scott-addict-rc-40-wheels-2026-08-17": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-tavelo-grow-frameset-frame-weight-2026-08-25": [
         "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
@@ -20305,12 +20415,17 @@
         "target.record_type"
       ],
       "variant-twitter-t3-tt-complete-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -20543,6 +20658,7 @@
         "brand_id=bianchi",
         "source_ids=bianchi-oltre-race-armenia-2026-08-17",
         "source_ids=bianchi-oltre-race-dealer-2026-08-17",
+        "source_ids=bianchi-oltre-race-reddit-frame-weight-2026-08-25",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
       "bxt-055": [
@@ -20612,7 +20728,8 @@
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
         "source_ids=pardus-super-sport-launch",
-        "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
+        "source_ids=pardus-super-sport-launch-wildto-2026-08-17",
+        "source_ids=public-pardus-super-sport-gen2-frame-weight-2026-08-25"
       ],
       "quick-gr-one": [
         "brand_id=quick",
@@ -20653,6 +20770,7 @@
         "brand_id=scott",
         "frame.geometry.source_id=scott-addict-2026-manual-2026-08-17",
         "source_ids=scott-addict-2026-manual-2026-08-17",
+        "source_ids=scott-addict-rc-40-bikeradar-2026-08-25",
         "source_ids=scott-addict-rc-40-poland-2026-08-17",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
@@ -20680,6 +20798,7 @@
         "brand_id=tavelo",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-tavelo-grow-build-2026-08-17",
+        "source_ids=tavelo-grow-official-2026-08-25",
         "source_ids=tavelo-official"
       ],
       "tfsa-jh37": [
@@ -20718,7 +20837,8 @@
       "twitter-t3-tt": [
         "brand_id=twitter",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_ids=twitter-bikes-gravel-catalog-2026-08-08"
+        "source_ids=twitter-bikes-gravel-catalog-2026-08-08",
+        "source_ids=twitter-t3-tt-official-2026-08-25"
       ],
       "winspace-g3": [
         "brand_id=winspace",
@@ -20750,6 +20870,7 @@
         "source_ids=bianchi-oltre-race-armenia-2026-08-17",
         "source_ids=bianchi-oltre-race-dealer-2026-08-17",
         "source_ids=bianchi-oltre-race-global-2026-08-17",
+        "source_ids=bianchi-oltre-race-reddit-frame-weight-2026-08-25",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
       "bxt-055-frameset": [
@@ -20822,7 +20943,8 @@
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
         "source_ids=pardus-super-sport-launch",
-        "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
+        "source_ids=pardus-super-sport-launch-wildto-2026-08-17",
+        "source_ids=public-pardus-super-sport-gen2-frame-weight-2026-08-25"
       ],
       "quick-gr-one-frameset": [
         "platform_id=quick-gr-one",
@@ -20862,6 +20984,7 @@
       "scott-addict-rc-40": [
         "platform_id=scott-addict-rc-40",
         "source_ids=scott-addict-2026-manual-2026-08-17",
+        "source_ids=scott-addict-rc-40-bikeradar-2026-08-25",
         "source_ids=scott-addict-rc-40-poland-2026-08-17",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
@@ -20883,6 +21006,7 @@
         "platform_id=tavelo-grow",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-tavelo-grow-build-2026-08-17",
+        "source_ids=tavelo-grow-official-2026-08-25",
         "source_ids=tavelo-official"
       ],
       "tfsa-jh37-frameset": [
@@ -20904,7 +21028,8 @@
       "twitter-t3-tt": [
         "platform_id=twitter-t3-tt",
         "source_ids=taobao-snapshot-2026-08-08",
-        "source_ids=twitter-bikes-gravel-catalog-2026-08-08"
+        "source_ids=twitter-bikes-gravel-catalog-2026-08-08",
+        "source_ids=twitter-t3-tt-official-2026-08-25"
       ],
       "twitter-v3-2024-rs-sensah-alloy": [
         "platform_id=twitter-gravel-v3-2024",
@@ -21150,6 +21275,7 @@
       "bianchi-oltre-race-dealer-2026-08-17": [],
       "bianchi-oltre-race-global-2026-08-17": [],
       "bianchi-oltre-race-official-2026-08-08": [],
+      "bianchi-oltre-race-reddit-frame-weight-2026-08-25": [],
       "bianchi-sprint-icr-official-2026-08-17": [],
       "bigrock-sohtea-panda-podium-2026-08-17": [],
       "biketo-pardus-uragano-evo-review-2023": [],
@@ -21281,6 +21407,7 @@
       "public-pardus-spark-rs-build-2026-08-17": [],
       "public-pardus-spark-tourist-pes-2026-08-24": [],
       "public-pardus-super-sport-105-build-2026-08-17": [],
+      "public-pardus-super-sport-gen2-frame-weight-2026-08-25": [],
       "public-pardus-super-sport-gen2-price-2026-08-17": [],
       "public-pardus-uragano-evo-build-2026-08-17": [],
       "public-quick-pro-er-one-build-2026-08-17": [],
@@ -21378,6 +21505,7 @@
       "sava-r8-r8170-official-image-2026-08-17": [],
       "sava-starship-105-official-2026-08-17": [],
       "scott-addict-2026-manual-2026-08-17": [],
+      "scott-addict-rc-40-bikeradar-2026-08-25": [],
       "scott-addict-rc-40-poland-2026-08-17": [],
       "scott-addict-rc-40-retailer-2026-08-08": [],
       "scott-foil-rc-10-official-2026-08-17": [],
@@ -21431,6 +21559,7 @@
       "tavelo-attack-official-2026-08-17": [],
       "tavelo-grow-china-launch-2026": [],
       "tavelo-grow-official-2026-08-17": [],
+      "tavelo-grow-official-2026-08-25": [],
       "tavelo-official": [],
       "tavelo-warranty-official-2026-08-17": [],
       "tfsa-jh37-official": [],
@@ -21479,6 +21608,7 @@
       "twitter-gravel-v3-official-2026-08-17": [],
       "twitter-t10-pro-official-2026-08-17": [],
       "twitter-t3-tt-official-2026-08-08": [],
+      "twitter-t3-tt-official-2026-08-25": [],
       "twitter-v3-factory-store-2026-08-25": [],
       "twitter-v3-official": [],
       "twitter-v3-official-2026-08-16": [],
@@ -23859,6 +23989,7 @@
         "target.record_id=bianchi-oltre-race"
       ],
       "variant-bianchi-oltre-race-frame-weight-2026-08-17": [
+        "resolution.source_ids=bianchi-oltre-race-reddit-frame-weight-2026-08-25",
         "target.record_id=bianchi-oltre-race"
       ],
       "variant-bianchi-oltre-race-geometry-2026-08-17": [
@@ -24051,6 +24182,7 @@
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": [
+        "resolution.source_ids=public-pardus-super-sport-gen2-frame-weight-2026-08-25",
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17": [
@@ -24147,6 +24279,7 @@
         "target.record_id=scott-addict-rc-40"
       ],
       "variant-scott-addict-rc-40-frame-weight-2026-08-17": [
+        "resolution.source_ids=scott-addict-rc-40-bikeradar-2026-08-25",
         "target.record_id=scott-addict-rc-40"
       ],
       "variant-scott-addict-rc-40-geometry-2026-08-17": [
@@ -24160,6 +24293,9 @@
       ],
       "variant-scott-addict-rc-40-wheels-2026-08-17": [
         "target.record_id=scott-addict-rc-40"
+      ],
+      "variant-tavelo-grow-frameset-frame-weight-2026-08-25": [
+        "target.record_id=tavelo-grow-frameset"
       ],
       "variant-twitter-cyclone-electronic-bom-2026-08-17": [
         "target.record_id=twitter-cyclone-electronic"
@@ -24231,6 +24367,7 @@
         "target.record_id=twitter-t3-tt"
       ],
       "variant-twitter-t3-tt-complete-weight-2026-08-17": [
+        "resolution.source_ids=twitter-t3-tt-official-2026-08-25",
         "target.record_id=twitter-t3-tt"
       ],
       "variant-twitter-t3-tt-frame-weight-2026-08-17": [
@@ -24313,6 +24450,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "bianchi-oltre-race-reddit-frame-weight-2026-08-25": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": -1,
+        "specification": 0
       }
     },
     "bianchi-sprint-icr-official-2026-08-17": {
@@ -25394,6 +25539,14 @@
         "specification": 0
       }
     },
+    "public-pardus-super-sport-gen2-frame-weight-2026-08-25": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "public-pardus-super-sport-gen2-price-2026-08-17": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -26148,6 +26301,14 @@
         "specification": 3
       }
     },
+    "scott-addict-rc-40-bikeradar-2026-08-25": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
     "scott-addict-rc-40-poland-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26577,6 +26738,14 @@
         "specification": 3
       }
     },
+    "tavelo-grow-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "tavelo-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26962,6 +27131,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "twitter-t3-tt-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "twitter-v3-factory-store-2026-08-25": {
@@ -30078,7 +30255,12 @@
         "[\"web\",2,\"Bianchi Oltre Race frame_weight official regional catalog\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Authorized regional product page has no numeric geometry/frame-only weight.\",\"https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611\"]",
         "[\"web\",3,\"Bianchi Oltre Race frame_weight authorized dealer or review\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact mechanical-105 Oltre Race source with this field located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-25\",\"source_ids\":[\"bianchi-oltre-race-reddit-frame-weight-2026-08-25\"],\"note\":\"A later exact-model community discussion supplies a 1,150 g approximate frame reference with size and weighing basis left explicit.\"}"
+      ],
+      "accepted_source_ids": [
+        "bianchi-oltre-race-reddit-frame-weight-2026-08-25"
+      ]
     },
     "variant-bianchi-oltre-race-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -30990,7 +31172,12 @@
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR frame weight catalog\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Older official page is Gen1 and does not document Gen2 EGR frame-only weight.\",\"https://www.parduscycle.com/Hightxq.aspx?cc=5176&color=5183&id=21398&pz=5175&t=1030\"]",
         "[\"web\",3,\"PARDUS SUPG2 SPORT EGR frame weight exact SKU\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"rejected\",\"2026-08-17\",\"Exact retailer provides complete-bike estimate only.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-25\",\"source_ids\":[\"public-pardus-super-sport-gen2-frame-weight-2026-08-25\"],\"note\":\"A later successful dedicated-XHS capture shows the painted XS Gen2 frame at 1,146.9 g.\"}"
+      ],
+      "accepted_source_ids": [
+        "public-pardus-super-sport-gen2-frame-weight-2026-08-25"
+      ]
     },
     "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -31391,7 +31578,12 @@
         "[\"web\",2,\"SCOTT Addict RC 40 frame weight official manual\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\",\"2026 manual has geometry/warranty but no frame-only measurement.\",\"https://asset-misc.scott-sports.com/Add/Addict_Manual_A4_2026_Scott-Sports_EN_2267141.pdf\"]",
         "[\"web\",3,\"SCOTT Addict RC 40 frame weight authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact RC 40 frame-only measurement located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-25\",\"source_ids\":[\"scott-addict-rc-40-bikeradar-2026-08-25\"],\"note\":\"A later exact-model editorial review reports Scott's approximate 850 g frame claim.\"}"
+      ],
+      "accepted_source_ids": [
+        "scott-addict-rc-40-bikeradar-2026-08-25"
+      ]
     },
     "variant-scott-addict-rc-40-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -31435,6 +31627,17 @@
       ],
       "accepted_source_ids": [
         "scott-addict-rc-40-poland-2026-08-17"
+      ]
+    },
+    "variant-tavelo-grow-frameset-frame-weight-2026-08-25": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Tavelo Grow official frame weight by size\",\"manufacturer exact-model product page\",\"found\",\"2026-08-25\",\"Official page lists raw-finish frame weights from 830 g in XS to 960 g in XXL, each +/-25 g.\",\"https://tavelo.cc/products/tavelo-grow\"]"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-official-2026-08-25"
       ]
     },
     "variant-twitter-cyclone-electronic-bom-2026-08-17": {
@@ -31755,7 +31958,12 @@
         "[\"web\",2,\"TWITTER T3 TT complete_weight official regional store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Current T3 TT store listing is TX-TT7110 with Shimano/RS 3K, not published WheelTop EVO trim.\",\"https://twitterbikeusa.com/products/triathlon-t3-tt\"]",
         "[\"web\",3,\"TWITTER T3 TT WheelTop EVO complete_weight exact-SKU dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact EVO T3 TT dealer/spec publication located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-25\",\"source_ids\":[\"twitter-t3-tt-official-2026-08-25\"],\"note\":\"The later official current T3 WheelTop build supplies a 9.5 kg same-model reference; the trim boundary is disclosed.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-t3-tt-official-2026-08-25"
+      ]
     },
     "variant-twitter-t3-tt-frame-weight-2026-08-17": {
       "channel_attempt_counts": {

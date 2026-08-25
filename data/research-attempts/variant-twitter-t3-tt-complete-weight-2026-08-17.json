@@ -7,9 +7,7 @@
   "field": "complete-weight",
   "priority": "medium",
   "searched_at": "2026-08-17",
-  "required_channels": [
-    "web"
-  ],
+  "required_channels": ["web"],
   "channels": {
     "web": {
       "status": "temporarily-exhausted",
@@ -43,8 +41,14 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["twitter-t3-tt-official-2026-08-25"],
   "retry_after": "2026-11-17",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-25",
+    "source_ids": ["twitter-t3-tt-official-2026-08-25"],
+    "note": "The later official current T3 WheelTop build supplies a 9.5 kg same-model reference; the trim boundary is disclosed."
+  },
   "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
 }

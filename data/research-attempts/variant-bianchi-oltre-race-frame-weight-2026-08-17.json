@@ -7,9 +7,7 @@
   "field": "frame-weight",
   "priority": "medium",
   "searched_at": "2026-08-17",
-  "required_channels": [
-    "web"
-  ],
+  "required_channels": ["web"],
   "channels": {
     "web": {
       "status": "temporarily-exhausted",
@@ -43,8 +41,14 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["bianchi-oltre-race-reddit-frame-weight-2026-08-25"],
   "retry_after": "2026-11-17",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-25",
+    "source_ids": ["bianchi-oltre-race-reddit-frame-weight-2026-08-25"],
+    "note": "A later exact-model community discussion supplies a 1,150 g approximate frame reference with size and weighing basis left explicit."
+  },
   "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
 }
