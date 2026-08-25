@@ -39,8 +39,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
         <a href="${url(base,'/?type=frameset#catalog')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
-        <a href="${url(base,'/methodology/')}"${current==='methodology'?' aria-current="page"':''}>Methodology</a>
-        <a class="nav-external" href="${repositoryUrl}">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
       </nav>
     </div>
   </header>
@@ -50,10 +49,11 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <span>Independent comparison of bicycles available in China.</span>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
-        <a href="${url(base,'/electronic-shifting/')}">Electronic shifting</a>
+        <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
         <a href="${url(base,'/privacy/')}">Privacy</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>
+        <a href="${repositoryUrl}">GitHub</a>
         <a href="${repositoryUrl}/issues">Add or correct a bike</a>
       </nav>
     </div>

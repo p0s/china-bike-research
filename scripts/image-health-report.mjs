@@ -65,11 +65,15 @@ async function inspectBatch(images) {
 }
 
 export function imageHealthTargets(data = loadDataset()) {
-  return data.images
+  const catalogTargets = data.images
     .filter((image) => image.hosting.mode === 'remote' && image.buyer_visibility !== 'omit')
     .flatMap((image) => image.hosting.variants?.length
       ? image.hosting.variants.map((variant) => ({ id: `${image.id}:${variant.purpose}`, url: variant.url }))
       : [{ id: image.id, url: image.hosting.remote_url }]);
+  const groupsetTargets = data.groupsets
+    .filter((groupset) => groupset.image?.remote_url)
+    .map((groupset) => ({ id: `groupset:${groupset.id}`, url: groupset.image.remote_url }));
+  return [...catalogTargets, ...groupsetTargets];
 }
 
 async function main() {

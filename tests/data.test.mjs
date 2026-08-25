@@ -94,8 +94,28 @@ test('electronic groupset references preserve package and price boundaries', () 
   assert.deepEqual(gex.price_observations.filter((item) => item.headline).map((item) => item.amount), [2369, 2369, 2369]);
   assert.equal(egr.shifting.max_rear_sprocket_teeth, 46);
   assert.ok(data.groupsets.every((item) => item.compatibility.brake_fluid));
+  const imagedGroupsets = data.groupsets.filter((item) => item.image);
+  assert.equal(imagedGroupsets.length, 10);
+  assert.ok(imagedGroupsets.every((item) => item.image.remote_url.startsWith('https://')));
+  assert.ok(imagedGroupsets.every((item) => item.image.rights.status === 'official-page-embed'));
+  assert.ok(imagedGroupsets.every((item) => item.source_ids.includes(item.image.source_id)));
+  assert.equal(r8170.image, undefined);
   assert.deepEqual(data.meta.frameset_build_assumption.presets.map((preset) => preset.amount_cny ?? null), [6000, 7900, null]);
   assert.equal(data.meta.frameset_build_assumption.presets.find((preset) => preset.default).id, 'shimano-105-r7170');
+});
+
+test('groupset images require exact official-source and rights metadata', () => {
+  const invalidUrl = structuredClone(data);
+  invalidUrl.groupsets.find((item) => item.id === 'shimano-105-r7170').image.remote_url = 'http://example.com/105.jpg';
+  assert.ok(validateDataset(invalidUrl).some((error) => error.includes('image.remote_url must use HTTPS')));
+
+  const invalidSource = structuredClone(data);
+  invalidSource.groupsets.find((item) => item.id === 'wheeltop-eds-tx').image.source_id = 'missing-source';
+  assert.ok(validateDataset(invalidSource).some((error) => error.includes('missing image source')));
+
+  const invalidFeaturedVariant = structuredClone(data);
+  delete invalidFeaturedVariant.groupsets.find((item) => item.id === 'magene-qed-pes').image.featured_variant;
+  assert.ok(validateDataset(invalidFeaturedVariant).some((error) => error.includes('featured image needs featured_variant')));
 });
 
 test('Taobao groupset snapshots preserve readable option prices without implying checkout', () => {

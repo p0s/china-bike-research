@@ -1104,31 +1104,33 @@ export function renderCandidateModel(ctx, entry) {
   });
 }
 
-function prosePage(ctx, { title, desc, path, html, current = '' }) {
+function prosePage(ctx, { title, desc, path, html, current = '', className = '' }) {
   return page(ctx, {
     title,
     current,
     path,
     description: desc,
-    body: `<section class="simple-page"><article class="page prose"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
+    body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
   });
 }
 
+function groupsetHeadlinePrices(groupset) {
+  return (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
+}
+
 function groupsetPriceLabel(groupset) {
-  const observations = (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
-  if (!observations.length) return 'No attributable mainland price';
+  const observations = groupsetHeadlinePrices(groupset);
+  if (!observations.length) return '';
   const amounts = observations.map((observation) => observation.amount);
   const currencies = new Set(observations.map((observation) => observation.currency));
-  const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(amount);
+  const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
   if (currencies.size === 1 && currencies.has('CNY')) {
     const low = Math.min(...amounts);
     const high = Math.max(...amounts);
-    const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
-    const basis = taobao ? `Taobao option${observations.length === 1 ? '' : 's'}` : `dealer observation${observations.length === 1 ? '' : 's'}`;
-    return low === high ? `¥${format(low)} ${basis}` : `¥${format(low)}–${format(high)} ${basis}`;
+    return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
   }
   const observation = observations[0];
-  return `${observation.currency} ${format(observation.amount)} official reference`;
+  return `${observation.currency} ${format(observation.amount)}`;
 }
 
 function groupsetSetupLabel(groupset) {
@@ -1139,11 +1141,14 @@ function groupsetSetupLabel(groupset) {
 }
 
 function groupsetPriceSummary(groupset) {
-  const observations = (groupset.price_observations ?? []).filter((observation) => observation.headline !== false);
-  if (!observations.length) return 'No exact mainland package captured';
-  const dates = [...new Set(observations.map((observation) => observation.observed_at))];
+  const observations = groupsetHeadlinePrices(groupset);
+  if (!observations.length) return '';
   const taobao = observations.every((observation) => /Taobao/i.test(observation.market));
-  return `${observations.length} ${taobao ? 'listed option' : 'market observation'}${observations.length === 1 ? '' : 's'} · ${dates.length === 1 ? dates[0] : `${dates[0]}–${dates.at(-1)}`}${taobao ? ' · checkout unverified' : ''}`;
+  const label = taobao
+    ? `Taobao option${observations.length === 1 ? '' : 's'}`
+    : `Dealer observation${observations.length === 1 ? '' : 's'}`;
+  const dates = [...new Set(observations.map((observation) => observation.observed_at))];
+  return `${label} · ${dates.at(-1)}`;
 }
 
 function observationAmount(observation) {
@@ -1152,51 +1157,115 @@ function observationAmount(observation) {
   return observation.currency === 'CNY' ? `¥${amount}` : `${observation.currency} ${amount}`;
 }
 
+function groupsetDiscipline(groupset) {
+  const text = `${groupset.name} ${groupset.use_case}`.toLowerCase();
+  if (text.includes('gravel')) return text.includes('all-road') ? 'Gravel / all-road' : 'Gravel';
+  if (text.includes('all-road')) return 'Road / all-road';
+  return 'Road';
+}
+
+function groupsetImageHtml(groupset, sourcesById) {
+  const image = groupset.image;
+  if (!image) return '';
+  const source = sourcesById.get(image.source_id);
+  const visual = `<img src="${escapeAttr(image.remote_url)}" alt="${escapeAttr(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-product-image>`;
+  const linked = source?.url
+    ? `<a href="${escapeAttr(source.url)}" rel="noreferrer" aria-label="View the official ${escapeAttr(image.credit)} product page">${visual}</a>`
+    : visual;
+  return `<span class="product-image groupset-image">${linked}</span>`;
+}
+
+function groupsetSourceLinks(sourceIds, sourcesById) {
+  return sourceIds.map((id) => sourcesById.get(id)).filter(Boolean).map((source) => source.url
+    ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>`
+    : `<span>${escapeHtml(source.title)}</span>`).join('');
+}
+
+function groupsetDetailPanel(groupset, sourcesById) {
+  const priceRecords = (groupset.price_observations ?? []).length
+    ? `<section><h3>Captured packages</h3><div class="price-records">${groupset.price_observations.map((observation) => `<div><strong>${escapeHtml(observation.option_label_zh ?? sentenceLabel(observation.price_type))} · ${escapeHtml(observationAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('')}</div></section>`
+    : '';
+  const imageNote = groupset.image
+    ? `<span class="groupset-image-credit">Image: ${escapeHtml(groupset.image.credit)} · ${escapeHtml(groupset.image.subject_accuracy === 'featured-variant' ? `${groupset.image.featured_variant} shown` : 'exact family')}</span>`
+    : '';
+  return `<details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><p class="groupset-use-case">${escapeHtml(groupset.use_case)}</p><div class="groupset-detail-grid"><section><h3>Fit</h3><dl><div><dt>Freehub</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div><div><dt>Hanger</dt><dd>${escapeHtml(groupset.compatibility.hanger)}</dd></div><div><dt>Frame</dt><dd>${escapeHtml(groupset.compatibility.frame)}</dd></div><div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div></dl></section><section><h3>Power & controls</h3><dl><div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div><div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div><div><dt>Controls</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div></dl></section><section><h3>Package & weight</h3><dl><div><dt>Package</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div><div><dt>Weight</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div></dl></section></div><div class="groupset-detail-lower">${priceRecords}<section><h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></div><div class="groupset-source-line"><strong>Sources</strong><span>${groupsetSourceLinks(groupset.source_ids, sourcesById)}</span>${imageNote}</div></div></details>`;
+}
+
+function groupsetRows(groupset, sourcesById) {
+  const maxRear = Number.isFinite(groupset.shifting.max_rear_sprocket_teeth)
+    ? `Up to ${groupset.shifting.max_rear_sprocket_teeth}T rear`
+    : '';
+  const price = groupsetPriceLabel(groupset);
+  const image = groupsetImageHtml(groupset, sourcesById);
+  return `<tbody class="groupset-entry" id="${escapeAttr(groupset.id)}" data-groupset-entry><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity${image ? ' has-image' : ''}">${image}<span class="groupset-name"><strong>${escapeHtml(groupset.name)}</strong><span>${escapeHtml(groupset.maker)}</span></span></div></th>
+    <td data-label="Use" data-column="best"><strong>${escapeHtml(groupsetDiscipline(groupset))}</strong><span>${escapeHtml(groupset.positioning)}</span></td>
+    <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(`${groupset.shifting.chainrings} · ${groupset.shifting.cassette_speeds}`)}</strong>${maxRear ? `<span>${escapeHtml(maxRear)}</span>` : ''}</td>
+    <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
+    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span>` : ''}</td>
+  </tr><tr class="groupset-detail-row"><td colspan="5">${groupsetDetailPanel(groupset, sourcesById)}</td></tr></tbody>`;
+}
+
+function adjacentPriceLabel(source) {
+  const observations = (source.observations ?? []).filter((observation) => observation.normalized_package !== 'component');
+  if (!observations.length) return '';
+  const amounts = observations.map((observation) => observation.amount_cny);
+  const format = (amount) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount);
+  const low = Math.min(...amounts);
+  const high = Math.max(...amounts);
+  return low === high ? `¥${format(low)}` : `¥${format(low)}–${format(high)}`;
+}
+
+function adjacentRows(source) {
+  const system = source.adjacent_system;
+  const price = adjacentPriceLabel(source);
+  const records = (source.observations ?? []).map((observation) => `<div><strong>${escapeHtml(observation.option_label_zh)} · ${escapeHtml(formatCny(observation.amount_cny))}</strong><span>${escapeHtml(`${sentenceLabel(observation.normalized_package)} · ${source.observed_at}`)}</span><p>${escapeHtml(observation.configuration)}</p></div>`).join('');
+  const sourceLink = source.url
+    ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>`
+    : `<span>${escapeHtml(source.title)}</span>`;
+  return `<tbody class="groupset-entry groupset-entry-adjacent" id="adjacent-${escapeAttr(source.id)}" data-groupset-entry><tr class="groupset-summary-row">
+    <th scope="row"><div class="groupset-identity"><span class="groupset-name"><strong>${escapeHtml(system.name)}</strong><span>${escapeHtml(system.discipline)}</span></span></div></th>
+    <td data-label="Use" data-column="best"><strong>${escapeHtml(system.discipline)}</strong><span>${escapeHtml(system.why_separate)}</span></td>
+    <td data-label="Gearing" data-column="gearing"></td>
+    <td data-label="Setup" data-column="setup"></td>
+    <td data-label="China price" data-column="price">${price ? `<strong>${escapeHtml(price)}</strong><span>Taobao options · ${escapeHtml(source.observed_at)}</span>` : ''}</td>
+  </tr><tr class="groupset-detail-row"><td colspan="5"><details class="groupset-row-details"><summary>Details</summary><div class="groupset-row-details-body"><div class="groupset-detail-lower"><section><h3>Captured packages</h3><div class="price-records">${records}</div></section><section><h3>Package boundary</h3><p>${escapeHtml(system.why_separate)}</p><p>${escapeHtml(source.notes)}</p></section></div><div class="groupset-source-line"><strong>Source</strong><span>${sourceLink}</span></div></div></details></td></tr></tbody>`;
+}
+
 export function renderElectronicGroupsets(ctx) {
   const groupsets = ctx.data.groupsets ?? [];
   const adjacentSources = ctx.data.sources.filter((source) => source.adjacent_system);
-  const sourceIds = [...new Set([...groupsets.flatMap((groupset) => groupset.source_ids), ...adjacentSources.map((source) => source.id)])];
-  const sources = sourceIds.map((id) => ctx.data.sources.find((source) => source.id === id)).filter(Boolean);
-  const rowsFor = (scope) => groupsets.filter((groupset) => groupset.scope === scope).map((groupset) => `<tr>
-      <th scope="row"><a href="#${escapeAttr(groupset.id)}"><strong>${escapeHtml(groupset.name)}</strong><span>${escapeHtml(groupset.maker)}</span></a></th>
-      <td data-label="Best for" data-column="best">${escapeHtml(groupset.use_case)}</td>
-      <td data-label="Gearing" data-column="gearing"><strong>${escapeHtml(groupset.shifting.cassette_speeds)}</strong><span>${escapeHtml(groupset.shifting.chainrings)} · ${Number.isFinite(groupset.shifting.max_rear_sprocket_teeth) ? `up to ${escapeHtml(groupset.shifting.max_rear_sprocket_teeth)}T rear` : 'current maximum unresolved'}</span></td>
-      <td data-label="Setup" data-column="setup"><strong>${escapeHtml(groupsetSetupLabel(groupset))}</strong><span>${escapeHtml(groupset.brake_options.join(' · '))}</span></td>
-      <td data-label="Price" data-column="price"><strong>${escapeHtml(groupsetPriceLabel(groupset))}</strong><span>${escapeHtml(groupsetPriceSummary(groupset))}</span></td>
-    </tr>`).join('');
-  const details = groupsets.map((groupset) => `<article class="groupset-detail" id="${escapeAttr(groupset.id)}">
-    <div><span>${escapeHtml(groupset.status)}</span><h2>${escapeHtml(groupset.name)}</h2><p>${escapeHtml(groupset.use_case)}</p></div>
-    <dl class="detail-list">
-      <div><dt>Architecture</dt><dd>${escapeHtml(groupset.architecture)}</dd></div>
-      <div><dt>Battery</dt><dd>${escapeHtml(groupset.battery)}</dd></div>
-      <div><dt>Controls and app</dt><dd>${escapeHtml(groupset.controls_and_app)}</dd></div>
-      <div><dt>What the package means</dt><dd>${escapeHtml(groupset.package_summary)}</dd></div>
-      <div><dt>Weight evidence</dt><dd>${escapeHtml(groupset.weight.note)}</dd></div>
-      <div><dt>Freehub and cassette</dt><dd>${escapeHtml(groupset.compatibility.freehub)}</dd></div>
-      <div><dt>Hanger and frame</dt><dd>${escapeHtml(`${groupset.compatibility.hanger}. ${groupset.compatibility.frame}`)}</dd></div>
-      <div><dt>Brake fluid</dt><dd>${escapeHtml(groupset.compatibility.brake_fluid)}</dd></div>
-      <div><dt>China pricing</dt><dd>${escapeHtml(groupset.china_price_status)}</dd></div>
-    </dl>
-    ${(groupset.price_observations ?? []).length ? `<h3>Captured price options</h3><div class="price-records">${groupset.price_observations.map((observation) => `<div><strong>${escapeHtml(observation.option_label_zh ?? sentenceLabel(observation.price_type))} · ${escapeHtml(observationAmount(observation))}</strong><span>${escapeHtml(`${observation.market} · ${observation.observed_at} · ${sentenceLabel(observation.price_type)}`)}</span><p>${escapeHtml(observation.conditions)}</p></div>`).join('')}</div>` : ''}
-    <h3>Confirm before buying</h3><ul>${groupset.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
-  </article>`).join('');
-  const sourceHtml = sources.map((source) => `<div class="source-item">${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<strong>${escapeHtml(source.title)}</strong>`}<span>${escapeHtml(source.publisher)} · ${escapeHtml(sentenceLabel(source.type))} · accessed ${escapeHtml(source.accessed_at)}${source.url ? '' : ' · supplied evidence, no public link'}</span><p>${escapeHtml(source.notes)}</p>${Array.isArray(source.observations) ? `<details class="source-options"><summary>${source.observations.length} captured option${source.observations.length === 1 ? '' : 's'}</summary><ul>${source.observations.map((observation) => `<li><strong>${escapeHtml(observation.option_label_zh)}</strong> · ${escapeHtml(formatCny(observation.amount_cny))}<span>${escapeHtml(observation.configuration)}</span></li>`).join('')}</ul></details>` : ''}</div>`).join('');
-  const table = (scope, title, note) => `<section class="reference-group"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(note)}</p><p class="table-scroll-hint">Scroll sideways to compare every column.</p><div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>System</th><th>Best for</th><th>Gearing</th><th>Setup</th><th>Price</th></tr></thead><tbody>${rowsFor(scope)}</tbody></table></div></section>`;
-  const adjacentRows = adjacentSources.map((source) => `<tr><th scope="row"><strong>${escapeHtml(source.adjacent_system.name)}</strong><span>${escapeHtml(source.adjacent_system.discipline)}</span></th><td data-label="Observed packages" data-column="best">${escapeHtml(source.adjacent_system.headline_price)}</td><td data-label="Why separate" data-column="price">${escapeHtml(source.adjacent_system.why_separate)}</td></tr>`).join('');
-  const adjacentHtml = adjacentRows ? `<section class="reference-group adjacent-reference"><h2>Other disciplines</h2><p>Useful Taobao price sightings kept outside the road and gravel comparison because their controls and package scope are materially different.</p><div class="reference-table-wrap"><table class="reference-table adjacent-table"><thead><tr><th>System</th><th>Observed packages</th><th>Why separate</th></tr></thead><tbody>${adjacentRows}</tbody></table></div></section>` : '';
-  const html = `<section class="reference-intro"><p class="eyebrow">Component reference · reviewed 2026-08-24</p><p>This bounded set covers established road/all-road/gravel benchmarks and Chinese alternatives that recur in China-market complete bikes and upgrade searches. The decisive differences are cassette and freehub, hanger and frame requirements, wiring, brake fluid, package scope and what a quoted weight actually includes.</p><p class="reference-note">A family name does not prove an exact kit. Confirm generation, component codes, every included part, the cassette/chain match and the mainland warranty route before buying.</p></section>
-  ${table('established-benchmark', 'Established benchmarks', 'Useful reference points for price, compatibility, serviceability and gearing—not an assumption that every bike should use them.')}
-  ${table('chinese-alternative', 'Chinese electronic systems', 'Promising alternatives, separated by current revision and kept explicit about incomplete package, price or service evidence.')}
-  ${adjacentHtml}
-  <section class="groupset-details">${details}</section>
-  <section class="detail-section"><h2>Package normalization</h2><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 remain seller option text. They are not standardized package definitions.</p></section>
-  <section class="detail-section"><h2>China price boundary</h2><p>The new Taobao amounts are option-level screenshot observations, not verified checkout totals. Package labels are preserved because a ¥2,369 WheelTop shift-and-brake kit, a ¥3,480 eR9 boxed kit and a ¥5,500 GX drivetrain package do not contain the same components. Unspecified bundle discounts are excluded. The R7170 range remains a secondary dealer-post synthesis, and WheelTop’s euro amount remains only an official direct-sale reference.</p></section>
-  <section class="detail-section"><h2>Research watchlist</h2><p>Magene QED/PES remains research-stage while public service-action reports lack a matching official bulletin. SENTYEH/SENSAH ECS Pro and unnamed OEM “13-speed eGR” packages are not normalized here because exact public manuals, model codes and package definitions were insufficient in this batch.</p></section>
-  <details class="detail-panel"><summary>Official and supplied research sources</summary><div class="detail-panel-body"><div class="source-list">${sourceHtml}</div></div></details>`;
+  const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  const preferredOrder = [
+    'shimano-105-r7170',
+    'shimano-grx-rx825',
+    'shimano-grx-rx717-rx827',
+    'sram-rival-axs-e1',
+    'sram-xplr-apex-d1-rival-e1',
+    'wheeltop-eds-tx',
+    'wheeltop-eds-gex',
+    'ltwoo-erx-er9',
+    'ltwoo-egr',
+    'magene-qed-pes',
+    'shimano-road-di2-r8170-r9270'
+  ];
+  const orderOf = (groupset) => {
+    const index = preferredOrder.indexOf(groupset.id);
+    return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+  };
+  const ordered = [...groupsets].sort((a, b) => orderOf(a) - orderOf(b) || a.name.localeCompare(b.name));
+  const rows = [
+    ...ordered.map((groupset) => groupsetRows(groupset, sourcesById)),
+    ...adjacentSources.map(adjacentRows)
+  ].join('');
+  const html = `<p class="groupset-table-note"><span>${ordered.length + adjacentSources.length} systems · reviewed 2026-08-25</span> Open a row for fit, batteries, package scope, weight evidence and sources.</p><div class="reference-table-wrap groupset-table-wrap"><table class="reference-table groupset-comparison"><caption class="sr-only">Electronic groupsets available in China</caption><thead><tr><th>System</th><th>Use</th><th>Gearing</th><th>Setup</th><th>China price</th></tr></thead>${rows}</table></div>
+  <details class="reference-guide"><summary>How package labels and prices are normalized</summary><div><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 are retained as option text, never treated as standard packages. Taobao observations are option-level screenshots rather than verified checkout totals.</p></div></details>`;
   return prosePage(ctx, {
-    title: 'Electronic groupsets to buy in China',
-    desc: 'A compact road, all-road and gravel comparison, plus separate MTB and TT price sightings with explicit package boundaries.',
+    title: 'Electronic groupsets in China',
+    desc: 'Road, gravel, MTB and TT electronic shifting compared in one place.',
     path: '/electronic-shifting/',
+    current: 'groupsets',
+    className: 'groupsets-prose',
     html
   });
 }

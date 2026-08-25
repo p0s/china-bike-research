@@ -289,6 +289,32 @@ export function validateDataset(data = loadDataset()) {
       if (observation.package_basis !== undefined && !['shift-only', 'shift-brake', 'electronics-only', 'partial-groupset', 'full-groupset', 'component', 'oem-takeoff'].includes(observation.package_basis)) errors.push(`groupset ${groupset.id}: invalid price package basis`);
       if (observation.checkout_verified !== undefined && typeof observation.checkout_verified !== 'boolean') errors.push(`groupset ${groupset.id}: checkout_verified must be boolean`);
     }
+    if (groupset.image !== undefined) {
+      const image = groupset.image;
+      if (!isObject(image)) errors.push(`groupset ${groupset.id}: image must be an object`);
+      else {
+        for (const field of ['remote_url', 'source_id', 'subject_accuracy', 'credit', 'alt', 'reviewed_at']) {
+          if (typeof image[field] !== 'string' || !image[field].trim()) errors.push(`groupset ${groupset.id}: missing image.${field}`);
+        }
+        try {
+          const imageUrl = new URL(image.remote_url);
+          if (imageUrl.protocol !== 'https:') errors.push(`groupset ${groupset.id}: image.remote_url must use HTTPS`);
+        } catch {
+          errors.push(`groupset ${groupset.id}: invalid image.remote_url`);
+        }
+        if (!sourceIds.has(image.source_id)) errors.push(`groupset ${groupset.id}: missing image source ${image.source_id}`);
+        if (!groupset.source_ids.includes(image.source_id)) errors.push(`groupset ${groupset.id}: image source must be listed in source_ids`);
+        if (!['exact-family', 'featured-variant'].includes(image.subject_accuracy)) errors.push(`groupset ${groupset.id}: invalid image.subject_accuracy`);
+        if (image.subject_accuracy === 'featured-variant' && (typeof image.featured_variant !== 'string' || !image.featured_variant.trim())) errors.push(`groupset ${groupset.id}: featured image needs featured_variant`);
+        if (!Number.isInteger(image.width) || image.width <= 0 || !Number.isInteger(image.height) || image.height <= 0) errors.push(`groupset ${groupset.id}: image needs positive integer dimensions`);
+        if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`groupset ${groupset.id}: image.alt is too short`);
+        if (!isDate(image.reviewed_at)) errors.push(`groupset ${groupset.id}: invalid image.reviewed_at`);
+        if (!isObject(image.rights) || image.rights.status !== 'official-page-embed') errors.push(`groupset ${groupset.id}: image must use official-page-embed rights status`);
+        for (const field of ['copyright_holder', 'usage_note']) {
+          if (typeof image.rights?.[field] !== 'string' || !image.rights[field].trim()) errors.push(`groupset ${groupset.id}: missing image.rights.${field}`);
+        }
+      }
+    }
   }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
