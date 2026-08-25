@@ -3,12 +3,12 @@
   "updated_at": "2026-08-25",
   "catalog_metrics": {
     "records": {
-      "brands": 36,
-      "platforms": 36,
-      "variants": 38,
-      "prices": 44,
-      "sources": 382,
-      "images": 128,
+      "brands": 37,
+      "platforms": 38,
+      "variants": 40,
+      "prices": 46,
+      "sources": 387,
+      "images": 130,
       "videos": 12,
       "groupsets": 11,
       "recommendations": 6,
@@ -19,7 +19,7 @@
     },
     "image_accuracy": {
       "exact-platform": 36,
-      "exact-variant": 68,
+      "exact-variant": 70,
       "illustrative": 2,
       "same-model-different-color": 1,
       "same-model-different-market-build": 8,
@@ -27,7 +27,7 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 126
+      "remote": 128
     },
     "candidate_prices": {
       "official": 44,
@@ -61,6 +61,7 @@
       "scott",
       "seka",
       "spcycle",
+      "specialized",
       "sunpeed",
       "tavelo",
       "tfsa",
@@ -99,6 +100,8 @@
       "seka-exaero-gr",
       "spcycle-g026",
       "spcycle-g028",
+      "specialized-roubaix-sl8",
+      "specialized-tarmac-sl7",
       "tavelo-grow",
       "tfsa-jh37",
       "twitter-cyclone-electronic",
@@ -138,6 +141,8 @@
       "seka-exaero-gr-frameset",
       "spcycle-g026-frameset",
       "spcycle-g028-frameset",
+      "specialized-roubaix-sl8-sport-105",
+      "specialized-tarmac-sl7-sport-105",
       "tavelo-grow-frameset",
       "tfsa-jh37-frameset",
       "twitter-cyclone-electronic",
@@ -182,6 +187,8 @@
       "seka-exaero-gr-2026-08-17",
       "sp-g026-2026-08",
       "sp-g028-2026-08",
+      "specialized-roubaix-sl8-sport-105-price-2026-08-25",
+      "specialized-tarmac-sl7-sport-105-price-2026-08-25",
       "tavelo-grow-2026-08",
       "tavelo-grow-2026-08-17",
       "tfsa-jh37-2026-08",
@@ -464,8 +471,13 @@
       "specialized-cn-store-finder-2026",
       "specialized-crux-comp-china-2026-08-17",
       "specialized-crux-comp-grx-official-2026-08-17",
+      "specialized-roubaix-sl8-sport-105-china-2026-08-25",
+      "specialized-roubaix-sl8-sport-105-official-2026-08-25",
       "specialized-roubaix-sl8-tiagra-official-2026-08-17",
       "specialized-s-works-crux-cn-product-221367",
+      "specialized-tarmac-sl7-faq-2026-08-25",
+      "specialized-tarmac-sl7-sport-china-2026-08-25",
+      "specialized-tarmac-sl7-sport-official-2026-08-25",
       "specialized-tarmac-sl8-comp-spec-2026-08-17",
       "sram-apex-xplr-axs-d1-official-2026-08-24",
       "sram-rival-axs-e1-official-2026-08-24",
@@ -670,8 +682,10 @@
       "specialized-crux-primary-image",
       "specialized-roubaix-sl8-comp-105-primary-image",
       "specialized-roubaix-sl8-primary-image",
+      "specialized-roubaix-sl8-sport-105-primary-image",
       "specialized-s-works-crux-2024-primary-image",
       "specialized-s-works-crux-frameset-primary-image",
+      "specialized-tarmac-sl7-sport-105-primary-image",
       "specialized-tarmac-sl8-comp-primary-image",
       "tavelo-arden-primary-image",
       "tavelo-arow-race-polestar-primary-image",
@@ -1610,6 +1624,18 @@
         "name_zh",
         "website"
       ],
+      "specialized": [
+        "china_support.domestic_purchase",
+        "china_support.warranty",
+        "country",
+        "last_reviewed",
+        "manufacturing.confidence",
+        "manufacturing.relationship",
+        "manufacturing.summary",
+        "name",
+        "name_zh",
+        "website"
+      ],
       "sunpeed": [
         "china_support.domestic_purchase",
         "china_support.warranty",
@@ -2444,6 +2470,75 @@
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
       ],
+      "specialized-roubaix-sl8": [
+        "brand_id",
+        "category",
+        "category_details.discipline",
+        "category_details.evidence",
+        "category_details.geometry",
+        "category_details.note",
+        "china_availability",
+        "frame.bottom_bracket",
+        "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
+        "frame.derailleur_hanger",
+        "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
+        "frame.material",
+        "handlebar",
+        "internal_storage",
+        "last_reviewed",
+        "mounts",
+        "name",
+        "name_zh",
+        "source_ids",
+        "status",
+        "summary",
+        "tire_clearance.eligibility",
+        "tire_clearance.evidence",
+        "tire_clearance.note",
+        "tire_clearance.published_max_mm",
+        "tire_clearance.wheel_size"
+      ],
+      "specialized-tarmac-sl7": [
+        "brand_id",
+        "category",
+        "category_details.discipline",
+        "category_details.evidence",
+        "category_details.geometry",
+        "category_details.note",
+        "china_availability",
+        "frame.bottom_bracket",
+        "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
+        "frame.derailleur_hanger",
+        "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
+        "frame.material",
+        "handlebar",
+        "internal_storage",
+        "last_reviewed",
+        "name",
+        "name_zh",
+        "source_ids",
+        "status",
+        "summary",
+        "tire_clearance.eligibility",
+        "tire_clearance.evidence",
+        "tire_clearance.note",
+        "tire_clearance.published_max_mm",
+        "tire_clearance.wheel_size"
+      ],
       "tavelo-grow": [
         "brand_id",
         "category",
@@ -3252,6 +3347,69 @@
         "platform_id",
         "source_ids"
       ],
+      "specialized-roubaix-sl8-sport-105": [
+        "brakes.actuation",
+        "brakes.rotors",
+        "brakes.type",
+        "claimed_complete_weight_basis",
+        "claimed_complete_weight_g",
+        "cockpit.description",
+        "cockpit.integrated",
+        "cockpit.material",
+        "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.chainrings",
+        "drivetrain.layout",
+        "drivetrain.model",
+        "drivetrain.shifting",
+        "drivetrain.speeds",
+        "editorial.best_for",
+        "editorial.caveats",
+        "editorial.strengths",
+        "editorial.verdict",
+        "kind",
+        "market",
+        "name",
+        "official_part_number",
+        "official_product_id",
+        "platform_id",
+        "purchase_route",
+        "source_ids",
+        "tires",
+        "wheels.description",
+        "wheels.rim_material"
+      ],
+      "specialized-tarmac-sl7-sport-105": [
+        "brakes.actuation",
+        "brakes.type",
+        "claimed_complete_weight_basis",
+        "claimed_complete_weight_g",
+        "cockpit.description",
+        "cockpit.integrated",
+        "cockpit.material",
+        "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.chainrings",
+        "drivetrain.layout",
+        "drivetrain.model",
+        "drivetrain.shifting",
+        "drivetrain.speeds",
+        "editorial.best_for",
+        "editorial.caveats",
+        "editorial.strengths",
+        "editorial.verdict",
+        "kind",
+        "market",
+        "name",
+        "official_part_number",
+        "official_product_id",
+        "platform_id",
+        "purchase_route",
+        "source_ids",
+        "tires",
+        "wheels.description",
+        "wheels.rim_material"
+      ],
       "tavelo-grow-frameset": [
         "editorial.best_for",
         "editorial.caveats",
@@ -3845,6 +4003,31 @@
         "high_cny",
         "low_cny",
         "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "specialized-roubaix-sl8-sport-105-price-2026-08-25": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
+        "price_type",
+        "reference_list_price_cny",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "specialized-tarmac-sl7-sport-105-price-2026-08-25": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
         "price_type",
         "source_ids",
         "status",
@@ -7190,6 +7373,30 @@
         "type",
         "url"
       ],
+      "specialized-roubaix-sl8-sport-105-china-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-roubaix-sl8-sport-105-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "specialized-roubaix-sl8-tiagra-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -7203,6 +7410,42 @@
         "url"
       ],
       "specialized-s-works-crux-cn-product-221367": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-tarmac-sl7-faq-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-tarmac-sl7-sport-china-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-tarmac-sl7-sport-official-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -10136,6 +10379,23 @@
         "source_id",
         "subject_accuracy"
       ],
+      "specialized-roubaix-sl8-sport-105-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "specialized-s-works-crux-2024-primary-image": [
         "alt",
         "candidate_id",
@@ -10167,6 +10427,23 @@
         "role",
         "source_id",
         "subject_accuracy"
+      ],
+      "specialized-tarmac-sl7-sport-105-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
       ],
       "specialized-tarmac-sl8-comp-primary-image": [
         "alt",
@@ -20522,6 +20799,7 @@
       "scott": [],
       "seka": [],
       "spcycle": [],
+      "specialized": [],
       "sunpeed": [],
       "tavelo": [],
       "tfsa": [],
@@ -20675,6 +20953,19 @@
         "source_ids=spcycle-g028-geometry-bikeinsights-2026-08-25",
         "source_ids=spcycle-g028-official-2026-08-25",
         "source_ids=spcycle-gravel-catalog"
+      ],
+      "specialized-roubaix-sl8": [
+        "brand_id=specialized",
+        "frame.geometry.source_id=specialized-roubaix-sl8-sport-105-official-2026-08-25",
+        "source_ids=specialized-roubaix-sl8-sport-105-china-2026-08-25",
+        "source_ids=specialized-roubaix-sl8-sport-105-official-2026-08-25"
+      ],
+      "specialized-tarmac-sl7": [
+        "brand_id=specialized",
+        "frame.geometry.source_id=specialized-tarmac-sl7-sport-official-2026-08-25",
+        "source_ids=specialized-tarmac-sl7-faq-2026-08-25",
+        "source_ids=specialized-tarmac-sl7-sport-china-2026-08-25",
+        "source_ids=specialized-tarmac-sl7-sport-official-2026-08-25"
       ],
       "tavelo-grow": [
         "brand_id=tavelo",
@@ -20879,6 +21170,17 @@
         "platform_id=spcycle-g028",
         "source_ids=spcycle-gravel-catalog"
       ],
+      "specialized-roubaix-sl8-sport-105": [
+        "platform_id=specialized-roubaix-sl8",
+        "source_ids=specialized-roubaix-sl8-sport-105-china-2026-08-25",
+        "source_ids=specialized-roubaix-sl8-sport-105-official-2026-08-25"
+      ],
+      "specialized-tarmac-sl7-sport-105": [
+        "platform_id=specialized-tarmac-sl7",
+        "source_ids=specialized-tarmac-sl7-faq-2026-08-25",
+        "source_ids=specialized-tarmac-sl7-sport-china-2026-08-25",
+        "source_ids=specialized-tarmac-sl7-sport-official-2026-08-25"
+      ],
       "tavelo-grow-frameset": [
         "platform_id=tavelo-grow",
         "source_ids=compiled-research-2026-08-06",
@@ -21080,6 +21382,14 @@
         "source_ids=compiled-research-2026-08-06",
         "source_ids=spcycle-gravel-catalog",
         "variant_id=spcycle-g028-frameset"
+      ],
+      "specialized-roubaix-sl8-sport-105-price-2026-08-25": [
+        "source_ids=specialized-roubaix-sl8-sport-105-china-2026-08-25",
+        "variant_id=specialized-roubaix-sl8-sport-105"
+      ],
+      "specialized-tarmac-sl7-sport-105-price-2026-08-25": [
+        "source_ids=specialized-tarmac-sl7-sport-china-2026-08-25",
+        "variant_id=specialized-tarmac-sl7-sport-105"
       ],
       "tavelo-grow-2026-08": [
         "source_ids=compiled-research-2026-08-06",
@@ -21411,8 +21721,13 @@
       "specialized-cn-store-finder-2026": [],
       "specialized-crux-comp-china-2026-08-17": [],
       "specialized-crux-comp-grx-official-2026-08-17": [],
+      "specialized-roubaix-sl8-sport-105-china-2026-08-25": [],
+      "specialized-roubaix-sl8-sport-105-official-2026-08-25": [],
       "specialized-roubaix-sl8-tiagra-official-2026-08-17": [],
       "specialized-s-works-crux-cn-product-221367": [],
+      "specialized-tarmac-sl7-faq-2026-08-25": [],
+      "specialized-tarmac-sl7-sport-china-2026-08-25": [],
+      "specialized-tarmac-sl7-sport-official-2026-08-25": [],
       "specialized-tarmac-sl8-comp-spec-2026-08-17": [],
       "sram-apex-xplr-axs-d1-official-2026-08-24": [],
       "sram-rival-axs-e1-official-2026-08-24": [],
@@ -21907,6 +22222,11 @@
         "candidate_id=missing-china-price-specialized-roubaix-sl8",
         "source_id=specialized-roubaix-sl8-tiagra-official-2026-08-17"
       ],
+      "specialized-roubaix-sl8-sport-105-primary-image": [
+        "platform_id=specialized-roubaix-sl8",
+        "source_id=specialized-roubaix-sl8-sport-105-china-2026-08-25",
+        "variant_ids=specialized-roubaix-sl8-sport-105"
+      ],
       "specialized-s-works-crux-2024-primary-image": [
         "candidate_id=specialized-s-works-crux-2024-sram-red-xplr",
         "source_id=specialized-crux-comp-grx-official-2026-08-17"
@@ -21914,6 +22234,11 @@
       "specialized-s-works-crux-frameset-primary-image": [
         "candidate_id=specialized-s-works-crux-frameset",
         "source_id=specialized-crux-comp-grx-official-2026-08-17"
+      ],
+      "specialized-tarmac-sl7-sport-105-primary-image": [
+        "platform_id=specialized-tarmac-sl7",
+        "source_id=specialized-tarmac-sl7-sport-china-2026-08-25",
+        "variant_ids=specialized-tarmac-sl7-sport-105"
       ],
       "specialized-tarmac-sl8-comp-primary-image": [
         "candidate_id=missing-china-price-specialized-tarmac-sl8",
@@ -26415,6 +26740,22 @@
         "specification": 3
       }
     },
+    "specialized-roubaix-sl8-sport-105-china-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "specialized-roubaix-sl8-sport-105-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "specialized-roubaix-sl8-tiagra-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26428,6 +26769,30 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
+        "specification": 3
+      }
+    },
+    "specialized-tarmac-sl7-faq-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "specialized-tarmac-sl7-sport-china-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "specialized-tarmac-sl7-sport-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -32525,6 +32890,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "specialized-roubaix-sl8-sport-105-primary-image": {
+      "target": "platforms:specialized-roubaix-sl8",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "specialized-s-works-crux-2024-primary-image": {
       "target": "candidates:specialized-s-works-crux-2024-sram-red-xplr",
       "minimum_accuracy_rank": 1,
@@ -32535,6 +32907,13 @@
     "specialized-s-works-crux-frameset-primary-image": {
       "target": "candidates:specialized-s-works-crux-frameset",
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "specialized-tarmac-sl7-sport-105-primary-image": {
+      "target": "platforms:specialized-tarmac-sl7",
+      "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
@@ -33426,6 +33805,16 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "platforms:specialized-roubaix-sl8": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "platforms:specialized-tarmac-sl7": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "platforms:tavelo-grow": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
@@ -33521,7 +33910,9 @@
       "winspace-g5-frameset": true,
       "xmcarbonspeed-cs-gr01-frameset": true,
       "yoeleo-altera-g21-frameset": true,
-      "twitter-v3-2024-rs-sensah-alloy": true
+      "twitter-v3-2024-rs-sensah-alloy": true,
+      "specialized-roubaix-sl8-sport-105": true,
+      "specialized-tarmac-sl7-sport-105": true
     },
     "candidates": {
       "alums-da54": [

@@ -1,0 +1,58 @@
+{
+  "id": "specialized-tarmac-sl7",
+  "brand_id": "specialized",
+  "name": "Tarmac SL7",
+  "name_zh": "Tarmac SL7",
+  "category": "road",
+  "handlebar": "drop",
+  "status": "official-mainland-published",
+  "summary": "A current official mainland race-bike platform with conventional service standards, a 1,010 g FACT 9r frame claim and a 32 mm maximum tire allowance.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "BSA threaded",
+    "derailleur_hanger": "unknown",
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1010,
+    "claimed_frame_weight_basis": "Exact Tarmac SL7 Sport product-page claim for the FACT 9r frame; size, finish and weighing inclusions were not stated.",
+    "geometry": {
+      "basis": "official Tarmac SL7 Sport size table",
+      "source_id": "specialized-tarmac-sl7-sport-official-2026-08-25",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        { "size": "44", "head_angle_deg": 70.5, "seat_angle_deg": 75.5, "reach_mm": 366, "stack_mm": 501, "wheelbase_mm": 970 },
+        { "size": "49", "head_angle_deg": 71.75, "seat_angle_deg": 75.5, "reach_mm": 375, "stack_mm": 514, "wheelbase_mm": 973 },
+        { "size": "52", "head_angle_deg": 72.5, "seat_angle_deg": 74, "reach_mm": 380, "stack_mm": 527, "wheelbase_mm": 975 },
+        { "size": "54", "head_angle_deg": 73, "seat_angle_deg": 74, "reach_mm": 384, "stack_mm": 544, "wheelbase_mm": 978 },
+        { "size": "56", "head_angle_deg": 73.5, "seat_angle_deg": 73.5, "reach_mm": 395, "stack_mm": 565, "wheelbase_mm": 991 },
+        { "size": "58", "head_angle_deg": 73.5, "seat_angle_deg": 73.5, "reach_mm": 402, "stack_mm": 591, "wheelbase_mm": 1006 },
+        { "size": "61", "head_angle_deg": 74, "seat_angle_deg": 73, "reach_mm": 408, "stack_mm": 612, "wheelbase_mm": 1013 }
+      ]
+    }
+  },
+  "category_details": {
+    "discipline": "race road",
+    "geometry": "official seven-size Tarmac SL7 table",
+    "evidence": "manufacturer-product-page",
+    "note": "Race-focused platform with clean routing and a standard BSA bottom bracket."
+  },
+  "mounts": [],
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "manufacturer-technical-document",
+    "eligibility": "fail",
+    "published_max_mm": 32,
+    "note": "Official SL7 FAQ allows up to 32c on 21 mm rims with 4 mm clearance all around; actual tire and rim dimensions must be checked."
+  },
+  "internal_storage": false,
+  "china_availability": "official-mainland-listing-observed",
+  "source_ids": [
+    "specialized-tarmac-sl7-sport-official-2026-08-25",
+    "specialized-tarmac-sl7-sport-china-2026-08-25",
+    "specialized-tarmac-sl7-faq-2026-08-25"
+  ],
+  "last_reviewed": "2026-08-25"
+}

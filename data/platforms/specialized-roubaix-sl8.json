@@ -1,0 +1,62 @@
+{
+  "id": "specialized-roubaix-sl8",
+  "brand_id": "specialized",
+  "name": "Roubaix SL8",
+  "name_zh": "Roubaix SL8",
+  "category": "all-road",
+  "handlebar": "drop",
+  "status": "official-mainland-published",
+  "summary": "A current mainland endurance-road platform with 40 mm clearance, Future Shock rider suspension, useful mounts and an exact official Shimano 105 build.",
+  "frame": {
+    "material": "carbon",
+    "fork_material": "carbon",
+    "bottom_bracket": "BSA threaded",
+    "derailleur_hanger": "unknown",
+    "cable_routing": "unknown",
+    "claimed_frame_weight_g": 950,
+    "claimed_frame_weight_basis": "Exact Sport build's FACT 10r product-detail claim; size and weighing inclusions were not stated. Generic higher-tier 825 g FACT 12r marketing copy on the same page is not used for this build.",
+    "geometry": {
+      "basis": "official 2025 Roubaix SL8 Sport size table",
+      "source_id": "specialized-roubaix-sl8-sport-105-official-2026-08-25",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        { "size": "44", "head_angle_deg": 69.3, "seat_angle_deg": 75, "reach_mm": 353, "stack_mm": 543, "wheelbase_mm": 994 },
+        { "size": "49", "head_angle_deg": 70.8, "seat_angle_deg": 74, "reach_mm": 363, "stack_mm": 549, "wheelbase_mm": 992 },
+        { "size": "52", "head_angle_deg": 71.5, "seat_angle_deg": 74, "reach_mm": 370, "stack_mm": 566, "wheelbase_mm": 998 },
+        { "size": "54", "head_angle_deg": 72.3, "seat_angle_deg": 74, "reach_mm": 381, "stack_mm": 585, "wheelbase_mm": 1005 },
+        { "size": "56", "head_angle_deg": 73, "seat_angle_deg": 73.5, "reach_mm": 389, "stack_mm": 605, "wheelbase_mm": 1012 },
+        { "size": "58", "head_angle_deg": 73, "seat_angle_deg": 73.5, "reach_mm": 397, "stack_mm": 630, "wheelbase_mm": 1031 },
+        { "size": "61", "head_angle_deg": 73.5, "seat_angle_deg": 73.5, "reach_mm": 403, "stack_mm": 665, "wheelbase_mm": 1042 },
+        { "size": "64", "head_angle_deg": 73.5, "seat_angle_deg": 73, "reach_mm": 409, "stack_mm": 685, "wheelbase_mm": 1054 }
+      ]
+    }
+  },
+  "category_details": {
+    "discipline": "endurance all-road",
+    "geometry": "official eight-size Roubaix SL8 table",
+    "evidence": "manufacturer-product-page",
+    "note": "Future Shock 3.1 supplies 20 mm of rider suspension while the rear triangle remains rigid."
+  },
+  "mounts": [
+    "three bottle positions",
+    "top-tube accessories",
+    "fenders"
+  ],
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "manufacturer-product-page",
+    "eligibility": "pass",
+    "published_max_mm": 40,
+    "note": "Official product page publishes clearance up to 40 mm and describes the platform as suitable for rough roads and light gravel."
+  },
+  "internal_storage": false,
+  "china_availability": "official-mainland-listing-observed",
+  "source_ids": [
+    "specialized-roubaix-sl8-sport-105-official-2026-08-25",
+    "specialized-roubaix-sl8-sport-105-china-2026-08-25"
+  ],
+  "last_reviewed": "2026-08-25"
+}

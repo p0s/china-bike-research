@@ -48,11 +48,11 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 36);
-  assert.equal(data.platforms.length, 36);
-  assert.equal(data.variants.length, 38);
-  assert.equal(data.prices.length, 44);
-  assert.equal(data.images.length, 128);
+  assert.equal(data.brands.length, 37);
+  assert.equal(data.platforms.length, 38);
+  assert.equal(data.variants.length, 40);
+  assert.equal(data.prices.length, 46);
+  assert.equal(data.images.length, 130);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
@@ -407,7 +407,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 126);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 128);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 92);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
