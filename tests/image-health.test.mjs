@@ -31,3 +31,12 @@ test('buyer-omitted PARDUS images are not health-check targets', () => {
   assert.equal(ids.some((id) => id.startsWith('pardus-spark-family-cn-alt-color-primary-image')), false);
   assert.equal(ids.some((id) => id.startsWith('pardus-spark-sport-pes-cn-color-primary-image')), false);
 });
+
+test('official groupset embeds are health-check targets', () => {
+  const targets = imageHealthTargets(loadDataset());
+  const groupsetTargets = targets.filter((target) => target.id.startsWith('groupset:'));
+  assert.equal(groupsetTargets.length, 10);
+  assert.ok(groupsetTargets.every((target) => target.url.startsWith('https://')));
+  assert.ok(groupsetTargets.some((target) => target.id === 'groupset:shimano-105-r7170'));
+  assert.ok(groupsetTargets.some((target) => target.id === 'groupset:magene-qed-pes'));
+});

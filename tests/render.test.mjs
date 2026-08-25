@@ -466,49 +466,50 @@ test('generic project copy is category-neutral', () => {
   assert.doesNotMatch(html, /Carbon bikes in China|Gravel and all-road bikes|above 38 mm/i);
 });
 
-test('electronic shifting is a footer and contextual reference, not primary navigation', () => {
+test('groupsets are one image-led comparison and a primary destination', () => {
   const context = {
     data,
     products,
     base: '/china-bike-research',
     repositoryUrl: 'https://github.com/example/china-bike-research',
     siteUrl: 'https://example.github.io',
-    now: new Date('2026-08-24T00:00:00Z')
+    now: new Date('2026-08-25T00:00:00Z')
   };
   const reference = renderElectronicGroupsets(context);
   const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
   const wheelTopProduct = products.find((item) => item.variant.id === 'twitter-cyclone-electronic');
   const detail = renderModel(context, wheelTopProduct);
-  assert.match(reference, /Electronic groupsets to buy in China/);
-  assert.match(reference, /Established benchmarks/);
-  assert.match(reference, /Chinese electronic systems/);
+  assert.match(reference, /<h1>Electronic groupsets in China<\/h1>/);
+  assert.equal((reference.match(/<table\b/g) ?? []).length, 1);
+  assert.equal((reference.match(/data-groupset-entry/g) ?? []).length, 13);
+  assert.equal((reference.match(/class="groupset-row-details"/g) ?? []).length, 13);
+  assert.equal((reference.match(/class="product-image groupset-image"/g) ?? []).length, 10);
+  assert.match(reference, /<th>System<\/th><th>Use<\/th><th>Gearing<\/th><th>Setup<\/th><th>China price<\/th>/);
   assert.match(reference, /L-TWOO · 蓝图/);
-  assert.match(reference, /current maximum unresolved/);
   assert.match(reference, /WheelTop · Wheeltop/);
   assert.match(reference, /QED disc-brake core groupset 1,150 g; PES disc-brake core groupset 1,250 g/);
-  assert.match(reference, /¥4,150–4,200 dealer observations/);
-  assert.match(reference, /Ultegra R8170 \/ Dura-Ace R9270 Di2/);
-  assert.match(reference, /34T/);
-  assert.match(reference, /¥6,050 dealer observation/);
-  assert.match(reference, /No attributable mainland price/);
-  assert.match(reference, /¥2,369–3,219 Taobao options/);
-  assert.match(reference, /¥2,369 Taobao options/);
-  assert.match(reference, /¥3,480 Taobao option/);
-  assert.match(reference, /Displayed reference · EUR 659/);
-  assert.match(reference, /Captured price options/);
+  assert.match(reference, /¥4,150–4,200/);
+  assert.match(reference, /¥2,369–3,219/);
+  assert.match(reference, /¥3,480/);
   assert.match(reference, /SRAM GX AXS \/ Eagle Transmission/);
   assert.match(reference, /L-TWOO eRX-TT/);
-  assert.match(reference, /Other disciplines/);
-  assert.match(reference, /<th>System<\/th><th>Best for<\/th><th>Gearing<\/th><th>Setup<\/th><th>Price<\/th>/);
-  assert.doesNotMatch(reference, /<th>Listed weight<\/th>|<th>Battery<\/th>/);
-  assert.match(reference, /Package normalization/);
-  assert.match(reference, /Shift-only/);
-  assert.match(reference, /supplied evidence, no public link/);
-  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.reference-table tr \{ display: grid/);
-  assert.match(styles, /\.reference-table td::before \{ content: attr\(data-label\)/);
+  assert.match(reference, /Package & weight/);
+  assert.match(reference, /How package labels and prices are normalized/);
+  assert.match(reference, /referrerpolicy="no-referrer" data-product-image/);
+  assert.match(reference, /id="shimano-grx-rx825"[\s\S]*?<td data-label="China price" data-column="price"><\/td>/);
+  assert.doesNotMatch(reference, /No attributable mainland price|No exact mainland package captured|current maximum unresolved/);
+  assert.doesNotMatch(reference, /Established benchmarks|Chinese electronic systems|Other disciplines/);
+  assert.doesNotMatch(reference, /groupset-details|<article class="groupset-detail"/);
   assert.doesNotMatch(reference, /href="undefined"/);
+  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.groupset-summary-row \{ display: grid/);
+  assert.match(styles, /\.groupset-summary-row > td::before \{ content: attr\(data-label\)/);
+  assert.match(styles, /\.groupset-summary-row > td:empty \{ display: none/);
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
-  assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Electronic shifting<\/a>/);
+  assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.doesNotMatch(primaryNav, /electronic-shifting/);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 3);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
+  const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);
 });
