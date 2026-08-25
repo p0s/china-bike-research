@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 44,
-      "sources": 372,
+      "sources": 382,
       "images": 128,
       "videos": 12,
       "groupsets": 11,
@@ -15,7 +15,7 @@
       "candidates": 199,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 325
+      "researchAttempts": 332
     },
     "image_accuracy": {
       "exact-platform": 36,
@@ -219,6 +219,7 @@
       "canyon-grail-cf7-china-2026-08-17",
       "canyon-grail-cf7-promotional-crawl-2026-08-17",
       "canyon-ultimate-cfr-axs-official-2026-08-17",
+      "carbonda-cfr696-geometry-bikeinsights-2026-08-25",
       "carbonda-cfr696-official",
       "carbonda-cfr707-official-2026-08-17",
       "colnago-china-storefront-2026-08-09",
@@ -235,6 +236,7 @@
       "elves-falath-pro-official-2026-08-17",
       "elves-mori-aerox-official-2026-08-17",
       "elves-mori-aerox-retailer",
+      "elves-mori-aerox-technical-2026-08-25",
       "elves-vanyar-pro-disc-official-2026-08-17",
       "elves-warranty-registration-2026-08-17",
       "evolve-cima-gr-official-2026-08-17",
@@ -424,6 +426,7 @@
       "sava-gelaro-sf6-official",
       "sava-gelaro-sf6-official-2026-08-16",
       "sava-gelaro-sf6-official-2026-08-17",
+      "sava-gelaro-sf6-specifications-2026-08-25",
       "sava-hawkeye-f20-official-2026-08-17",
       "sava-r8-r8170-official-image-2026-08-17",
       "sava-starship-105-official-2026-08-17",
@@ -451,6 +454,10 @@
       "shimano-productinfo-rd-rx827-sgs-2026-08-25",
       "shimano-ultegra-r8150-official-2026-08-24",
       "smzdm-shimano-di2-market-observations-2026-08-24",
+      "spcycle-g026-geometry-bikeinsights-2026-08-25",
+      "spcycle-g026-official-2026-08-25",
+      "spcycle-g028-geometry-bikeinsights-2026-08-25",
+      "spcycle-g028-official-2026-08-25",
       "spcycle-gravel-catalog",
       "specialized-china-tarmac-sl8-comp-price-2026-08-17",
       "specialized-cn-crux-page",
@@ -525,8 +532,10 @@
       "twitter-gravel-v3-official-2026-08-17",
       "twitter-t10-pro-official-2026-08-17",
       "twitter-t3-tt-official-2026-08-08",
+      "twitter-v3-factory-store-2026-08-25",
       "twitter-v3-official",
       "twitter-v3-official-2026-08-16",
+      "twitter-v3-wireless-official-2026-08-25",
       "twitterbikefactory-warranty-2026-08-17",
       "twitterbikeusa-warranty-2026-08-17",
       "usd-cny-central-parity-2026-07-31",
@@ -547,6 +556,7 @@
       "winspace-g5-official",
       "winspace-g5-official-2026-08-17",
       "winspace-g5-pro-di2-official-2026-08-17",
+      "winspace-g5-weight-woods-cycles-2026-08-25",
       "winspace-m6-official-2026-08-08",
       "winspace-slc3-official-2026-08-17",
       "winspace-t1550-official-2026-08-17",
@@ -1177,6 +1187,7 @@
       "variant-camp-gx700-grx820-frame-weight-2026-08-17",
       "variant-camp-gx700-grx820-geometry-2026-08-17",
       "variant-camp-gx700-grx820-purchase-route-2026-08-17",
+      "variant-carbonda-cfr696-frameset-price-2026-08-25",
       "variant-elves-falath-r7170-bom-2026-08-17",
       "variant-elves-falath-r7170-bottom-bracket-2026-08-17",
       "variant-elves-falath-r7170-cockpit-2026-08-17",
@@ -1191,6 +1202,7 @@
       "variant-elves-falath-r7170-tires-2026-08-17",
       "variant-elves-falath-r7170-warranty-support-2026-08-17",
       "variant-elves-falath-r7170-wheels-2026-08-17",
+      "variant-elves-mori-aerox-frameset-price-2026-08-25",
       "variant-lightcarbon-speedz-complete-bom-2026-08-17",
       "variant-lightcarbon-speedz-complete-bottom-bracket-2026-08-17",
       "variant-lightcarbon-speedz-complete-cockpit-2026-08-17",
@@ -1246,6 +1258,7 @@
       "variant-sava-gelaro-s8-wheels-2026-08-17",
       "variant-sava-gelaro-sf6-cues-bottom-bracket-2026-08-17",
       "variant-sava-gelaro-sf6-cues-frame-weight-2026-08-17",
+      "variant-sava-gelaro-sf6-cues-price-2026-08-25",
       "variant-sava-gelaro-sf6-cues-purchase-route-2026-08-17",
       "variant-scott-addict-rc-40-bottom-bracket-2026-08-17",
       "variant-scott-addict-rc-40-cockpit-2026-08-17",
@@ -1284,10 +1297,14 @@
       "variant-twitter-t3-tt-purchase-route-2026-08-17",
       "variant-twitter-t3-tt-tires-2026-08-17",
       "variant-twitter-t3-tt-wheels-2026-08-17",
+      "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25",
+      "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25",
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17",
       "variant-twitter-v3-rs-sensah-geometry-2026-08-17",
       "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17",
-      "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17"
+      "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17",
+      "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25",
+      "variant-winspace-g5-frameset-price-2026-08-25"
     ]
   },
   "meta_fields": [
@@ -1852,8 +1869,15 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -1904,8 +1928,21 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
+        "frame.claimed_frame_weight_g_by_size.46",
+        "frame.claimed_frame_weight_g_by_size.49",
+        "frame.claimed_frame_weight_g_by_size.52",
+        "frame.claimed_frame_weight_g_by_size.54",
+        "frame.claimed_frame_weight_g_by_size.56",
+        "frame.claimed_frame_weight_g_by_size.basis",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2351,8 +2388,15 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2375,8 +2419,15 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2506,6 +2557,11 @@
         "frame.configuration_notes.source_id",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2519,6 +2575,7 @@
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
         "tire_clearance.note",
+        "tire_clearance.published_max_mm",
         "tire_clearance.stock_nominal_mm",
         "tire_clearance.wheel_size"
       ],
@@ -2615,6 +2672,8 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -2812,6 +2871,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "elves-falath-r7170": [
@@ -2850,6 +2910,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "evolve-cima-gr-frameset": [
@@ -3096,6 +3157,7 @@
       "sava-gelaro-sf6-cues": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
@@ -3323,6 +3385,7 @@
       "twitter-v3-rs-sensah": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
@@ -3367,6 +3430,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids",
         "tires",
         "wheels.rim_material"
@@ -4212,6 +4276,18 @@
         "type",
         "url"
       ],
+      "carbonda-cfr696-geometry-bikeinsights-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "carbonda-cfr696-official": [
         "accessed_at",
         "language",
@@ -4398,6 +4474,18 @@
         "url"
       ],
       "elves-mori-aerox-retailer": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elves-mori-aerox-technical-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -6641,6 +6729,18 @@
         "type",
         "url"
       ],
+      "sava-gelaro-sf6-specifications-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-hawkeye-f20-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -6958,6 +7058,54 @@
         "url"
       ],
       "smzdm-shimano-di2-market-observations-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "spcycle-g026-geometry-bikeinsights-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "spcycle-g026-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "spcycle-g028-geometry-bikeinsights-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "spcycle-g028-official-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -7929,6 +8077,18 @@
         "type",
         "url"
       ],
+      "twitter-v3-factory-store-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "twitter-v3-official": [
         "accessed_at",
         "language",
@@ -7942,6 +8102,18 @@
         "url"
       ],
       "twitter-v3-official-2026-08-16": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-v3-wireless-official-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -8183,6 +8355,18 @@
         "url"
       ],
       "winspace-g5-pro-di2-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-g5-weight-woods-cycles-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -13509,6 +13693,7 @@
         "existing_record_id",
         "facts.bottom_bracket",
         "facts.frame",
+        "facts.frame_weight_g",
         "facts.sizes",
         "facts.storage",
         "facts.tire_clearance_mm",
@@ -18602,6 +18787,20 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-carbonda-cfr696-frameset-price-2026-08-25": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-elves-falath-r7170-bom-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -18814,6 +19013,20 @@
       ],
       "variant-elves-falath-r7170-wheels-2026-08-17": [
         "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-elves-mori-aerox-frameset-price-2026-08-25": [
         "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -19484,6 +19697,7 @@
         "target.record_type"
       ],
       "variant-sava-gelaro-s8-bottom-bracket-2026-08-17": [
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -19525,6 +19739,7 @@
         "target.record_type"
       ],
       "variant-sava-gelaro-s8-frame-weight-2026-08-17": [
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -19628,6 +19843,20 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-sava-gelaro-sf6-cues-price-2026-08-25": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -20153,6 +20382,36 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": [
         "channels.web.attempts",
         "channels.web.status",
@@ -20200,6 +20459,35 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-winspace-g5-frameset-price-2026-08-25": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -20271,6 +20559,8 @@
       ],
       "carbonda-cfr696": [
         "brand_id=carbonda",
+        "frame.geometry.source_id=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
+        "source_ids=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
         "source_ids=carbonda-cfr696-official"
       ],
       "elves-falath-r7170": [
@@ -20281,8 +20571,11 @@
       ],
       "elves-mori-aerox": [
         "brand_id=elves",
+        "frame.geometry.source_id=elves-mori-aerox-technical-2026-08-25",
         "source_ids=compiled-research-2026-08-06",
-        "source_ids=elves-mori-aerox-retailer"
+        "source_ids=elves-mori-aerox-official-2026-08-17",
+        "source_ids=elves-mori-aerox-retailer",
+        "source_ids=elves-mori-aerox-technical-2026-08-25"
       ],
       "evolve-cima-gr": [
         "brand_id=evolve",
@@ -20371,10 +20664,16 @@
       ],
       "spcycle-g026": [
         "brand_id=spcycle",
+        "frame.geometry.source_id=spcycle-g026-geometry-bikeinsights-2026-08-25",
+        "source_ids=spcycle-g026-geometry-bikeinsights-2026-08-25",
+        "source_ids=spcycle-g026-official-2026-08-25",
         "source_ids=spcycle-gravel-catalog"
       ],
       "spcycle-g028": [
         "brand_id=spcycle",
+        "frame.geometry.source_id=spcycle-g028-geometry-bikeinsights-2026-08-25",
+        "source_ids=spcycle-g028-geometry-bikeinsights-2026-08-25",
+        "source_ids=spcycle-g028-official-2026-08-25",
         "source_ids=spcycle-gravel-catalog"
       ],
       "tavelo-grow": [
@@ -20403,9 +20702,12 @@
       "twitter-gravel-v3": [
         "brand_id=twitter",
         "frame.configuration_notes.source_id=twitter-v3-official-2026-08-16",
+        "frame.geometry.source_id=twitter-v3-wireless-official-2026-08-25",
         "source_ids=twitter-company-profile",
+        "source_ids=twitter-v3-factory-store-2026-08-25",
         "source_ids=twitter-v3-official",
-        "source_ids=twitter-v3-official-2026-08-16"
+        "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "twitter-gravel-v3-2024": [
         "brand_id=twitter",
@@ -20425,7 +20727,8 @@
       ],
       "winspace-g5": [
         "brand_id=winspace",
-        "source_ids=winspace-g5-official"
+        "source_ids=winspace-g5-official",
+        "source_ids=winspace-g5-weight-woods-cycles-2026-08-25"
       ],
       "xmcarbonspeed-cs-gr01": [
         "brand_id=xmcarbonspeed",
@@ -20465,6 +20768,7 @@
       ],
       "carbonda-cfr696-frameset": [
         "platform_id=carbonda-cfr696",
+        "source_ids=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
         "source_ids=carbonda-cfr696-official"
       ],
       "elves-falath-r7170": [
@@ -20477,7 +20781,9 @@
       "elves-mori-aerox-frameset": [
         "platform_id=elves-mori-aerox",
         "source_ids=compiled-research-2026-08-06",
-        "source_ids=elves-mori-aerox-retailer"
+        "source_ids=elves-mori-aerox-official-2026-08-17",
+        "source_ids=elves-mori-aerox-retailer",
+        "source_ids=elves-mori-aerox-technical-2026-08-25"
       ],
       "evolve-cima-gr-frameset": [
         "platform_id=evolve-cima-gr",
@@ -20550,7 +20856,8 @@
         "source_ids=compiled-research-2026-08-06",
         "source_ids=sava-gelaro-sf6-official",
         "source_ids=sava-gelaro-sf6-official-2026-08-16",
-        "source_ids=sava-gelaro-sf6-official-2026-08-17"
+        "source_ids=sava-gelaro-sf6-official-2026-08-17",
+        "source_ids=sava-gelaro-sf6-specifications-2026-08-25"
       ],
       "scott-addict-rc-40": [
         "platform_id=scott-addict-rc-40",
@@ -20606,13 +20913,16 @@
       "twitter-v3-rs-sensah": [
         "platform_id=twitter-gravel-v3",
         "source_ids=market-snapshot-2026-08-05",
-        "source_ids=twitter-v3-official"
+        "source_ids=twitter-v3-official",
+        "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "twitter-v3-wheeltop-eds": [
         "platform_id=twitter-gravel-v3",
         "source_ids=market-snapshot-2026-08-05",
         "source_ids=twitter-v3-official",
-        "source_ids=twitter-v3-official-2026-08-16"
+        "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "winspace-g3-frameset": [
         "platform_id=winspace-g3",
@@ -20856,6 +21166,7 @@
       "canyon-grail-cf7-china-2026-08-17": [],
       "canyon-grail-cf7-promotional-crawl-2026-08-17": [],
       "canyon-ultimate-cfr-axs-official-2026-08-17": [],
+      "carbonda-cfr696-geometry-bikeinsights-2026-08-25": [],
       "carbonda-cfr696-official": [],
       "carbonda-cfr707-official-2026-08-17": [],
       "colnago-china-storefront-2026-08-09": [],
@@ -20872,6 +21183,7 @@
       "elves-falath-pro-official-2026-08-17": [],
       "elves-mori-aerox-official-2026-08-17": [],
       "elves-mori-aerox-retailer": [],
+      "elves-mori-aerox-technical-2026-08-25": [],
       "elves-vanyar-pro-disc-official-2026-08-17": [],
       "elves-warranty-registration-2026-08-17": [],
       "evolve-cima-gr-official-2026-08-17": [],
@@ -21061,6 +21373,7 @@
       "sava-gelaro-sf6-official": [],
       "sava-gelaro-sf6-official-2026-08-16": [],
       "sava-gelaro-sf6-official-2026-08-17": [],
+      "sava-gelaro-sf6-specifications-2026-08-25": [],
       "sava-hawkeye-f20-official-2026-08-17": [],
       "sava-r8-r8170-official-image-2026-08-17": [],
       "sava-starship-105-official-2026-08-17": [],
@@ -21088,6 +21401,10 @@
       "shimano-productinfo-rd-rx827-sgs-2026-08-25": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
       "smzdm-shimano-di2-market-observations-2026-08-24": [],
+      "spcycle-g026-geometry-bikeinsights-2026-08-25": [],
+      "spcycle-g026-official-2026-08-25": [],
+      "spcycle-g028-geometry-bikeinsights-2026-08-25": [],
+      "spcycle-g028-official-2026-08-25": [],
       "spcycle-gravel-catalog": [],
       "specialized-china-tarmac-sl8-comp-price-2026-08-17": [],
       "specialized-cn-crux-page": [],
@@ -21162,8 +21479,10 @@
       "twitter-gravel-v3-official-2026-08-17": [],
       "twitter-t10-pro-official-2026-08-17": [],
       "twitter-t3-tt-official-2026-08-08": [],
+      "twitter-v3-factory-store-2026-08-25": [],
       "twitter-v3-official": [],
       "twitter-v3-official-2026-08-16": [],
+      "twitter-v3-wireless-official-2026-08-25": [],
       "twitterbikefactory-warranty-2026-08-17": [],
       "twitterbikeusa-warranty-2026-08-17": [],
       "usd-cny-central-parity-2026-07-31": [],
@@ -21184,6 +21503,7 @@
       "winspace-g5-official": [],
       "winspace-g5-official-2026-08-17": [],
       "winspace-g5-pro-di2-official-2026-08-17": [],
+      "winspace-g5-weight-woods-cycles-2026-08-25": [],
       "winspace-m6-official-2026-08-08": [],
       "winspace-slc3-official-2026-08-17": [],
       "winspace-t1550-official-2026-08-17": [],
@@ -22289,7 +22609,8 @@
       "missing-china-price-elves-mori-aerox": [
         "existing_record_id=elves-mori-aerox-frameset",
         "model_id=elves-mori-aerox",
-        "source_ids=elves-mori-aerox-official-2026-08-17"
+        "source_ids=elves-mori-aerox-official-2026-08-17",
+        "source_ids=elves-mori-aerox-technical-2026-08-25"
       ],
       "missing-china-price-elves-vanyar": [
         "model_id=elves-vanyar",
@@ -22438,7 +22759,8 @@
         "source_ids=public-winspace-g5-owner-image-2026-08-17",
         "source_ids=winspace-g5-gravel-official-2026-08-17",
         "source_ids=winspace-g5-official-2026-08-17",
-        "source_ids=winspace-g5-pro-di2-official-2026-08-17"
+        "source_ids=winspace-g5-pro-di2-official-2026-08-17",
+        "source_ids=winspace-g5-weight-woods-cycles-2026-08-25"
       ],
       "missing-china-price-winspace-slc3": [
         "model_id=winspace-slc3",
@@ -23593,6 +23915,9 @@
       "variant-camp-gx700-grx820-purchase-route-2026-08-17": [
         "target.record_id=camp-gx700-grx820"
       ],
+      "variant-carbonda-cfr696-frameset-price-2026-08-25": [
+        "target.record_id=carbonda-cfr696-frameset"
+      ],
       "variant-elves-falath-r7170-bom-2026-08-17": [
         "target.record_id=elves-falath-r7170"
       ],
@@ -23637,6 +23962,9 @@
       ],
       "variant-elves-falath-r7170-wheels-2026-08-17": [
         "target.record_id=elves-falath-r7170"
+      ],
+      "variant-elves-mori-aerox-frameset-price-2026-08-25": [
+        "target.record_id=elves-mori-aerox-frameset"
       ],
       "variant-lightcarbon-speedz-complete-bom-2026-08-17": [
         "target.record_id=lightcarbon-speedz-complete"
@@ -23803,6 +24131,9 @@
       "variant-sava-gelaro-sf6-cues-frame-weight-2026-08-17": [
         "target.record_id=sava-gelaro-sf6-cues"
       ],
+      "variant-sava-gelaro-sf6-cues-price-2026-08-25": [
+        "target.record_id=sava-gelaro-sf6-cues"
+      ],
       "variant-sava-gelaro-sf6-cues-purchase-route-2026-08-17": [
         "target.record_id=sava-gelaro-sf6-cues"
       ],
@@ -23917,6 +24248,12 @@
       "variant-twitter-t3-tt-wheels-2026-08-17": [
         "target.record_id=twitter-t3-tt"
       ],
+      "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25": [
+        "target.record_id=twitter-v3-2024-rs-sensah-alloy"
+      ],
+      "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": [
+        "target.record_id=twitter-v3-2024-rs-sensah-alloy"
+      ],
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": [
         "target.record_id=twitter-v3-rs-sensah"
       ],
@@ -23928,6 +24265,12 @@
       ],
       "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17": [
         "target.record_id=twitter-v3-rs-sensah"
+      ],
+      "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": [
+        "target.record_id=twitter-v3-wheeltop-eds"
+      ],
+      "variant-winspace-g5-frameset-price-2026-08-25": [
+        "target.record_id=winspace-g5-frameset"
       ]
     }
   },
@@ -24105,12 +24448,20 @@
         "specification": 3
       }
     },
+    "carbonda-cfr696-geometry-bikeinsights-2026-08-25": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
     "carbonda-cfr696-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
-        "specification": 2
+        "specification": 3
       }
     },
     "carbonda-cfr707-official-2026-08-17": {
@@ -24237,6 +24588,14 @@
         "identity": 2,
         "price": 1,
         "specification": 2
+      }
+    },
+    "elves-mori-aerox-technical-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "elves-vanyar-pro-disc-official-2026-08-17": {
@@ -25747,6 +26106,14 @@
         "specification": 3
       }
     },
+    "sava-gelaro-sf6-specifications-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "sava-hawkeye-f20-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -25965,6 +26332,38 @@
         "identity": 1,
         "price": 1,
         "specification": 0
+      }
+    },
+    "spcycle-g026-geometry-bikeinsights-2026-08-25": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
+    "spcycle-g026-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "spcycle-g028-geometry-bikeinsights-2026-08-25": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
+    "spcycle-g028-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "spcycle-gravel-catalog": {
@@ -26565,6 +26964,14 @@
         "specification": 3
       }
     },
+    "twitter-v3-factory-store-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 1,
+        "specification": 2
+      }
+    },
     "twitter-v3-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26579,6 +26986,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "twitter-v3-wireless-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "twitterbikefactory-warranty-2026-08-17": {
@@ -26740,6 +27155,14 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "winspace-g5-weight-woods-cycles-2026-08-25": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 1,
+        "specification": 1
       }
     },
     "winspace-m6-official-2026-08-08": {
@@ -29886,6 +30309,18 @@
         "camp-gx700-official-2026-08-17"
       ]
     },
+    "variant-carbonda-cfr696-frameset-price-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Carbonda CFR696 current price official\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-25\",\"The manufacturer offers Get a quote but publishes no amount.\",null]",
+        "[\"web\",2,\"Carbonda CFR696 exact current frameset price China\",\"current authorized or factory-direct listing\",\"no-result\",\"2026-08-25\",\"No exact current package with dated CNY total was found.\",null]",
+        "[\"web\",3,\"CFR696 UDH frameset price mainland\",\"mainland marketplace or dealer\",\"rejected\",\"2026-08-25\",\"Only broad or older reference ranges were available, without exact current package mapping.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "variant-elves-falath-r7170-bom-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 3,
@@ -30105,6 +30540,18 @@
         "[\"web\",1,\"ELVES Falath R7170 bom.wheels official\",\"manufacturer exact page/manual/geometry chart\",\"rejected\",\"2026-08-17\",\"Official page is Falath EVO, not the published Falath R7170 build.\",\"https://www.elvesbike.com/more.php?id=142\"]",
         "[\"web\",2,\"ELVES Falath R7170 bom.wheels official store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Store page is a Falath EVO frameset; no R7170 mapping.\",\"https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved\"]",
         "[\"web\",3,\"ELVES Falath R7170 bom.wheels authorized dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact Falath R7170 build source with this field was located.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-elves-mori-aerox-frameset-price-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Elves Mori AeroX current price official technical page\",\"manufacturer technical page\",\"no-result\",\"2026-08-25\",\"The technical page provides specifications and a buy link but no mainland price.\",null]",
+        "[\"web\",2,\"Elves Mori AeroX official store price\",\"official global exact-model checkout\",\"rejected\",\"2026-08-25\",\"The US$998 official-store amount is a foreign reference, not a mainland CNY observation.\",null]",
+        "[\"web\",3,\"ELVES Mori AeroX 中国 车架 价格\",\"mainland marketplace or dealer\",\"no-result\",\"2026-08-25\",\"No attributable exact mainland package and dated CNY price was captured.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -30879,6 +31326,18 @@
       ],
       "accepted_source_ids": []
     },
+    "variant-sava-gelaro-sf6-cues-price-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Gelaro SF6 11S official China price\",\"SAVA China exact-model page\",\"no-result\",\"2026-08-25\",\"The official China page provides an inquiry route but no public price.\",null]",
+        "[\"web\",2,\"SAVA Gelaro SF6 CUES official direct price\",\"official global exact-model checkout\",\"rejected\",\"2026-08-25\",\"The US$1,399-1,499 official references are foreign checkout prices, not mainland observations.\",null]",
+        "[\"web\",3,\"萨瓦 越界 SF6 CUES 京东 阿里巴巴 exact package price\",\"mainland marketplace and factory listings\",\"rejected\",\"2026-08-25\",\"Visible JD options omitted a stable price and Alibaba showed broad wholesale ranges across 10/11-speed packages.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "variant-sava-gelaro-sf6-cues-purchase-route-2026-08-17": {
       "channel_attempt_counts": {
         "web": 1
@@ -31353,6 +31812,32 @@
       ],
       "accepted_source_ids": []
     },
+    "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"TWITTER Gravel V3 2024 2025 车重 胎容\",\"updated dedicated-XHS extension campaign\",\"blocked\",\"2026-08-25\",\"The only detailed export was a V1 post; the lane then stopped on a malformed detail response before an exact 2024 V3 post was captured.\",null]",
+        "[\"web\",1,\"2024 TWITTER Gravel V3 frame-only weight exact Taobao SKU\",\"dated exact-SKU mainland listing\",\"no-result\",\"2026-08-25\",\"The retained exact Taobao record gives a complete-bike weight but no frame-only weight.\",null]",
+        "[\"web\",2,\"TWITTER Gravel V3 press-fit frameset frame weight official\",\"official regional frameset page\",\"rejected\",\"2026-08-25\",\"A 1.35 kg official-store frame claim is tied to a BB86 listing, not the exact BB92 seller record.\",null]",
+        "[\"web\",3,\"TWITTER Gravel V3 2024 frame weight exact generation\",\"manual or exact-generation dealer\",\"no-result\",\"2026-08-25\",\"No source resolved the bottom-bracket/generation mismatch strongly enough to transfer a frame weight.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"TWITTER Gravel V3 2024 2025 车重 胎容\",\"updated dedicated-XHS extension campaign\",\"blocked\",\"2026-08-25\",\"The only detailed export was a V1 post; the lane then stopped on a malformed detail response before exact 2024 clearance evidence was captured.\",null]",
+        "[\"web\",1,\"2024 TWITTER Gravel V3 maximum tire clearance exact Taobao SKU\",\"dated exact-SKU mainland listing\",\"rejected\",\"2026-08-25\",\"The exact listing establishes a 700x40C stock tire, not maximum clearance.\",null]",
+        "[\"web\",2,\"TWITTER Gravel V3 BB86 frameset max tire clearance official\",\"official regional frameset page\",\"rejected\",\"2026-08-25\",\"The 40C claim belongs to a BB86 listing and cannot be transferred to the exact BB92 seller record.\",null]",
+        "[\"web\",3,\"TWITTER Gravel V3 2024 max tire exact generation\",\"manual or exact-generation dealer\",\"no-result\",\"2026-08-25\",\"No exact-generation source distinguished stock tire size from safe published maximum.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
         "web": 3
@@ -31394,6 +31879,31 @@
         "[\"web\",1,\"TWITTER Gravel V3 RS Sensah maximum tire clearance official\",\"manufacturer exact page/manual/geometry chart\",\"rejected\",\"2026-08-17\",\"Official page lists 700×40C stock tires but no maximum clearance.\",\"https://www.twittercycles.com/products/gravel-v3-gravel-bike.html\"]",
         "[\"web\",2,\"TWITTER Gravel V3 RS Sensah maximum clearance regional store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"USA wireless V3 page is not Sensah trim.\",\"https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike\"]",
         "[\"web\",3,\"TWITTER Gravel V3 RS Sensah maximum clearance exact dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact-Sensah measured maximum located.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"TWITTER Gravel V3 2024 2025 车重 胎容\",\"updated dedicated-XHS extension campaign\",\"blocked\",\"2026-08-25\",\"The only detailed export was a V1 post; the lane stopped before an exact T47 WheelTop build was captured.\",null]",
+        "[\"web\",1,\"TWITTER Gravel V3 T47 frame-only weight official\",\"main manufacturer exact-model page\",\"rejected\",\"2026-08-25\",\"The T47 manufacturer page gives complete configuration weights only.\",null]",
+        "[\"web\",2,\"TWITTER Gravel V3 Wireless T47 frame weight\",\"official regional exact-build page\",\"rejected\",\"2026-08-25\",\"The exact WheelTop page confirms 9.9 kg complete weight but no frame-only value.\",null]",
+        "[\"web\",3,\"TWITTER Gravel V3 T47 frameset weight current generation\",\"factory store or current dealer\",\"no-result\",\"2026-08-25\",\"The available frame-only number belongs to a press-fit listing rather than the current T47 platform.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-winspace-g5-frameset-price-2026-08-25": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G5 current official price\",\"manufacturer exact-model checkout\",\"rejected\",\"2026-08-25\",\"The official US$2,200 direct price is a global checkout reference, not an exact mainland CNY observation.\",null]",
+        "[\"web\",2,\"Winspace G5 frameset price China CNY\",\"mainland official or authorized store\",\"no-result\",\"2026-08-25\",\"No attributable exact mainland package with a dated CNY total was found.\",null]",
+        "[\"web\",3,\"银贝斯 G5 车架 价格\",\"mainland marketplace or public dealer listing\",\"rejected\",\"2026-08-25\",\"Searches returned foreign-market or non-exact references rather than a current mainland checkout.\",null]"
       ],
       "accepted_source_ids": []
     }

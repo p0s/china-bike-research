@@ -6,15 +6,16 @@
   },
   "field": "bottom-bracket",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-25",
   "required_channels": [
     "public-post",
     "web"
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "attempts": [],
+      "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before Gelaro S8 could be searched."
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -47,8 +48,8 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The exact official page was rechecked on 2026-08-25 and still omits the bottom-bracket standard. The prior three web routes remain exhausted; the standard stays unknown."
 }

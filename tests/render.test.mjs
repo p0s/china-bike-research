@@ -212,7 +212,7 @@ test('local builds use the live repository for public contribution links', () =>
 test('category-specific details stay accessible while price state is visible', () => {
   assert.match(html, /aria-label="Price details"/);
   assert.doesNotMatch(html, /data-capability-kind="tire"/);
-  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="40"/);
+  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="45"/);
   assert.match(html, /aria-label="Format details"/);
   assert.match(html, /data-filter-capability/);
   assert.match(html, /<option value="tire:36">Tire ≥36 mm<\/option>/);

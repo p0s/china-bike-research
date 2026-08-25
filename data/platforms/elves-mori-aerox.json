@@ -13,13 +13,38 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "T800/T1000-claimed"
+    "claimed_fiber": "T800/T1000-claimed",
+    "claimed_frame_weight_g": 960,
+    "claimed_frame_weight_basis": "Size 46, unpainted and without metal parts; paint adds 80-180 g depending on finish complexity.",
+    "claimed_frame_weight_g_by_size": {
+      "basis": "Manufacturer claim, unpainted and without metal parts",
+      "46": 960,
+      "49": 990,
+      "52": 1020,
+      "54": 1050,
+      "56": 1080
+    },
+    "geometry": {
+      "basis": "manufacturer interactive exact-model geometry table",
+      "source_id": "elves-mori-aerox-technical-2026-08-25",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        { "size": "46", "seat_tube_mm": 430, "top_tube_mm": 505, "head_tube_mm": 95, "head_angle_deg": 70.5, "seat_angle_deg": 74.5, "bb_drop_mm": 76, "chainstay_mm": 430, "front_center_mm": 582, "reach_mm": 361, "stack_mm": 520 },
+        { "size": "49", "seat_tube_mm": 450, "top_tube_mm": 520, "head_tube_mm": 100, "head_angle_deg": 70.8, "seat_angle_deg": 74.1, "bb_drop_mm": 76, "chainstay_mm": 430, "front_center_mm": 591, "reach_mm": 370, "stack_mm": 526 },
+        { "size": "52", "seat_tube_mm": 470, "top_tube_mm": 538, "head_tube_mm": 110, "head_angle_deg": 70.8, "seat_angle_deg": 73.6, "bb_drop_mm": 76, "chainstay_mm": 430, "front_center_mm": 604, "reach_mm": 380, "stack_mm": 536 },
+        { "size": "54", "seat_tube_mm": 485, "top_tube_mm": 553, "head_tube_mm": 125, "head_angle_deg": 71.3, "seat_angle_deg": 73.6, "bb_drop_mm": 76, "chainstay_mm": 430, "front_center_mm": 616, "reach_mm": 391, "stack_mm": 550 },
+        { "size": "56", "seat_tube_mm": 500, "top_tube_mm": 574, "head_tube_mm": 140, "head_angle_deg": 71.4, "seat_angle_deg": 73.1, "bb_drop_mm": 76, "chainstay_mm": 430, "front_center_mm": 631, "reach_mm": 403, "stack_mm": 564 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "retailer-claim",
+    "evidence": "official",
     "eligibility": "pass",
-    "note": "Retail specification; confirm against current factory documentation.",
+    "note": "Manufacturer technical-page maximum; 650B maximum is 50C.",
     "published_max_mm": 45
   },
   "mounts": [
@@ -28,8 +53,10 @@
   "internal_storage": false,
   "china_availability": "mainland-and-direct",
   "source_ids": [
+    "elves-mori-aerox-technical-2026-08-25",
+    "elves-mori-aerox-official-2026-08-17",
     "elves-mori-aerox-retailer",
     "compiled-research-2026-08-06"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-25"
 }

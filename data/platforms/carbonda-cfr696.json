@@ -12,7 +12,25 @@
     "fork_material": "carbon",
     "bottom_bracket": "BSA",
     "derailleur_hanger": "UDH",
-    "cable_routing": "internal"
+    "cable_routing": "internal",
+    "claimed_frame_weight_g": 1200,
+    "claimed_frame_weight_basis": "Manufacturer claim, +/-50 g; size and finish not stated.",
+    "geometry": {
+      "basis": "Carbonda-sourced geometry transcribed by Bike Insights; current official page links the manufacturer geometry file and lists the same six sizes",
+      "source_id": "carbonda-cfr696-geometry-bikeinsights-2026-08-25",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        { "size": "49", "seat_tube_mm": 490, "top_tube_mm": 520, "head_tube_mm": 120, "head_angle_deg": 70.5, "seat_angle_deg": 74.5, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 594.2, "fork_offset_mm": 50, "reach_mm": 371, "stack_mm": 536.6, "wheelbase_mm": 1020 },
+        { "size": "52", "seat_tube_mm": 520, "top_tube_mm": 535, "head_tube_mm": 140, "head_angle_deg": 71, "seat_angle_deg": 74, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 595.3, "fork_offset_mm": 50, "reach_mm": 375, "stack_mm": 557.4, "wheelbase_mm": 1025 },
+        { "size": "54", "seat_tube_mm": 540, "top_tube_mm": 550, "head_tube_mm": 150, "head_angle_deg": 71.5, "seat_angle_deg": 73, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 600, "fork_offset_mm": 50, "reach_mm": 376, "stack_mm": 568, "wheelbase_mm": 1025 },
+        { "size": "56", "seat_tube_mm": 560, "top_tube_mm": 565, "head_tube_mm": 170, "head_angle_deg": 72, "seat_angle_deg": 73, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 610.6, "fork_offset_mm": 50, "reach_mm": 384.6, "stack_mm": 589.8, "wheelbase_mm": 1036.7 },
+        { "size": "58", "seat_tube_mm": 580, "top_tube_mm": 580, "head_tube_mm": 190, "head_angle_deg": 72, "seat_angle_deg": 73, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 626, "fork_offset_mm": 50, "reach_mm": 393.7, "stack_mm": 608.9, "wheelbase_mm": 1052 },
+        { "size": "61", "seat_tube_mm": 610, "top_tube_mm": 595, "head_tube_mm": 210, "head_angle_deg": 72, "seat_angle_deg": 73, "bb_drop_mm": 67, "chainstay_mm": 435, "front_center_mm": 641, "fork_offset_mm": 50, "reach_mm": 403, "stack_mm": 628, "wheelbase_mm": 1067.5 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -29,7 +47,8 @@
   "internal_storage": false,
   "china_availability": "direct-factory",
   "source_ids": [
-    "carbonda-cfr696-official"
+    "carbonda-cfr696-official",
+    "carbonda-cfr696-geometry-bikeinsights-2026-08-25"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-25"
 }

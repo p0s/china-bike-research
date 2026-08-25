@@ -12,7 +12,21 @@
     "fork_material": "carbon",
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
-    "cable_routing": "fully-internal"
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1250,
+    "claimed_frame_weight_basis": "Manufacturer claim, +/-60 g; size and finish not stated.",
+    "geometry": {
+      "basis": "exact-model geometry attributed to SPcycle, transcribed by Bike Insights",
+      "source_id": "spcycle-g026-geometry-bikeinsights-2026-08-25",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "XS", "seat_tube_mm": 410, "head_tube_mm": 101, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 75, "chainstay_mm": 425, "front_center_mm": 590, "fork_offset_mm": 45, "reach_mm": 362, "stack_mm": 549, "wheelbase_mm": 1005 },
+        { "size": "S", "seat_tube_mm": 450, "head_tube_mm": 125, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 75, "chainstay_mm": 425, "front_center_mm": 620, "fork_offset_mm": 45, "reach_mm": 387, "stack_mm": 573, "wheelbase_mm": 1033 },
+        { "size": "M", "seat_tube_mm": 480, "head_tube_mm": 145, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 75, "chainstay_mm": 425, "front_center_mm": 650, "fork_offset_mm": 45, "reach_mm": 412, "stack_mm": 592, "wheelbase_mm": 1065 },
+        { "size": "L", "seat_tube_mm": 510, "head_tube_mm": 176, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 75, "chainstay_mm": 425, "front_center_mm": 671, "fork_offset_mm": 45, "reach_mm": 422, "stack_mm": 620, "wheelbase_mm": 1086 },
+        { "size": "XL", "seat_tube_mm": 540, "head_tube_mm": 198, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 75, "chainstay_mm": 425, "front_center_mm": 691, "fork_offset_mm": 45, "reach_mm": 447, "stack_mm": 643, "wheelbase_mm": 1119 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -28,7 +42,9 @@
   "internal_storage": true,
   "china_availability": "direct-factory",
   "source_ids": [
+    "spcycle-g026-official-2026-08-25",
+    "spcycle-g026-geometry-bikeinsights-2026-08-25",
     "spcycle-gravel-catalog"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-25"
 }

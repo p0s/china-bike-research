@@ -1,0 +1,29 @@
+{
+  "id": "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25",
+  "target": { "record_type": "variant", "record_id": "twitter-v3-wheeltop-eds" },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 2024 2025 车重 胎容", "route": "updated dedicated-XHS extension campaign", "outcome": "blocked", "accessed_at": "2026-08-25", "note": "The only detailed export was a V1 post; the lane stopped before an exact T47 WheelTop build was captured." }
+      ],
+      "blocker": "The updated XHS workflow requires the sequential lane to stop after a malformed detail response; no automatic retry is allowed in the same turn."
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 T47 frame-only weight official", "route": "main manufacturer exact-model page", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The T47 manufacturer page gives complete configuration weights only." },
+        { "attempt": 2, "query": "TWITTER Gravel V3 Wireless T47 frame weight", "route": "official regional exact-build page", "outcome": "rejected", "accessed_at": "2026-08-25", "note": "The exact WheelTop page confirms 9.9 kg complete weight but no frame-only value." },
+        { "attempt": 3, "query": "TWITTER Gravel V3 T47 frameset weight current generation", "route": "factory store or current dealer", "outcome": "no-result", "accessed_at": "2026-08-25", "note": "The available frame-only number belongs to a press-fit listing rather than the current T47 platform." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Bounded 2026-08-25 pass. Complete weight, geometry, clearance and purchase route were found; frame-only weight remains unknown."
+}

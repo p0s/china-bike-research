@@ -12,7 +12,20 @@
     "fork_material": "carbon",
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
-    "cable_routing": "fully-internal"
+    "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1100,
+    "claimed_frame_weight_basis": "Manufacturer claim for matte-black frame without accessories, +/-60 g; size not stated.",
+    "geometry": {
+      "basis": "current exact-model geometry transcribed by Bike Insights from SPcycle and exact-model dealer sources",
+      "source_id": "spcycle-g028-geometry-bikeinsights-2026-08-25",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "S", "seat_tube_mm": 445, "top_tube_mm": 533.6, "head_tube_mm": 115, "head_angle_deg": 71, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 435, "front_center_mm": 612, "fork_offset_mm": 55, "reach_mm": 385, "stack_mm": 555, "wheelbase_mm": 1034 },
+        { "size": "M", "seat_tube_mm": 480, "top_tube_mm": 558, "head_tube_mm": 135, "head_angle_deg": 71.2, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 435, "front_center_mm": 625, "fork_offset_mm": 55, "reach_mm": 393, "stack_mm": 574, "wheelbase_mm": 1047 },
+        { "size": "L", "seat_tube_mm": 520, "top_tube_mm": 576, "head_tube_mm": 157, "head_angle_deg": 71.2, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 435, "front_center_mm": 644, "fork_offset_mm": 55, "reach_mm": 405.5, "stack_mm": 595, "wheelbase_mm": 1066 },
+        { "size": "XL", "seat_tube_mm": 550, "top_tube_mm": 592, "head_tube_mm": 177, "head_angle_deg": 71.2, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 435, "front_center_mm": 661, "fork_offset_mm": 55, "reach_mm": 416, "stack_mm": 614, "wheelbase_mm": 1083.5 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -29,7 +42,9 @@
   "internal_storage": true,
   "china_availability": "direct-factory",
   "source_ids": [
+    "spcycle-g028-official-2026-08-25",
+    "spcycle-g028-geometry-bikeinsights-2026-08-25",
     "spcycle-gravel-catalog"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-25"
 }
