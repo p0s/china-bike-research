@@ -5,30 +5,35 @@
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
-    "verdict": "Dated China-market gravel lead for the exact visible Gelaro S8 GRX820 configuration; use it as a comparison benchmark while confirming the final SKU and BOM.",
+    "verdict": "Current manufacturer-documented Gelaro S8 GRX820 1×12 build with a dated mainland price lead; confirm that a seller option maps to this exact current SKU before purchase.",
     "best_for": [
       "gravel"
     ],
     "strengths": [
-      "Exact model/configuration is visible in the 2026-08-08 snapshot",
+      "Current exact-model manufacturer specification is available",
       "Dated mainland-China price observation"
     ],
     "caveats": [
-      "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
+      "The dated mainland search-card price is not mapped to the current 1×12 manufacturer build",
       "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
     ]
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "sava-2026-carbon-lineup-2026-08-08",
-    "sava-gelaro-s8-official-2026-08-17"
+    "sava-gelaro-s8-official-2026-08-17",
+    "sava-gelaro-s8-official-2026-08-28"
   ],
   "drivetrain": {
     "brand": "Shimano",
-    "model": "GRX820",
-    "speeds": "2x12",
+    "model": "GRX RX820/RX822",
+    "speeds": "1x12",
     "shifting": "mechanical",
-    "layout": "double"
+    "layout": "single",
+    "shifters": "ST-RX820",
+    "rear_derailleur": "RD-RX822",
+    "crankset": "FC-RX820-1",
+    "cassette": "CS-M6200-12"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -38,5 +43,6 @@
   "tires": "700×40C",
   "cockpit": { "material": "aluminum", "integrated": true, "flare": true },
   "claimed_complete_weight_g": 10200,
+  "claimed_complete_weight_basis": "Official approximate complete-bike weight excluding pedals; size, other accessories and weighing method are not stated",
   "purchase_route": "Official global-direct checkout at US$2,199 on 2026-08-17; mainland-China checkout not established."
 }

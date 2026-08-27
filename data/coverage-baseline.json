@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 476,
+      "sources": 481,
       "images": 180,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 462
+      "researchAttempts": 479
     },
     "image_accuracy": {
       "exact-platform": 62,
@@ -226,6 +226,7 @@
       "camp-gx600-official-2026-08-17",
       "camp-gx700-official",
       "camp-gx700-official-2026-08-17",
+      "camp-gx700-official-2026-08-28",
       "canyon-aeroad-cfr-di2-official-2026-08-17",
       "canyon-china-warranty-2026-08-17",
       "canyon-grail-cf-7-official-2026-08-17",
@@ -484,11 +485,13 @@
       "sava-gelaro-s4-official-image-2026-08-17",
       "sava-gelaro-s8-official-2026-08-08",
       "sava-gelaro-s8-official-2026-08-17",
+      "sava-gelaro-s8-official-2026-08-28",
       "sava-gelaro-sf6-independent-review-2026-08-27",
       "sava-gelaro-sf6-official",
       "sava-gelaro-sf6-official-2026-08-16",
       "sava-gelaro-sf6-official-2026-08-17",
       "sava-gelaro-sf6-official-2026-08-25",
+      "sava-gelaro-sf6-official-2026-08-28",
       "sava-gelaro-sf6-specifications-2026-08-25",
       "sava-hawkeye-f20-official-2026-08-17",
       "sava-jd-official-storefront-2026-08-26",
@@ -655,7 +658,9 @@
       "xds-ad7-jd-smzdm-search",
       "xds-gt350-hk-spec-2026-08-09",
       "xds-gt350-retailer-2026-08-08",
+      "xds-gt350-retailer-2026-08-28",
       "xds-gt350-smzdm-price-observation",
+      "xds-gt600-current-listings-2026-08-28",
       "xds-gt600-jd",
       "xds-manufacturing-government",
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
@@ -1418,8 +1423,17 @@
       "candidate-voicevelo-g-major-warranty-support-2026-08-17",
       "candidate-winspace-g3-mainland-price-2026-08-27",
       "candidate-winspace-g5-mainland-price-2026-08-27",
+      "candidate-xds-gt350-complete-weight-2026-08-28",
+      "candidate-xds-gt350-frame-material-2026-08-28",
+      "candidate-xds-gt350-frame-stiffness-2026-08-28",
+      "candidate-xds-gt350-price-2026-08-28",
+      "candidate-xds-gt350-tire-clearance-2026-08-28",
       "candidate-xds-gt600-complete-weight-2026-08-27",
       "candidate-xds-gt600-fitted-tire-2026-08-27",
+      "candidate-xds-gt600-frame-material-2026-08-28",
+      "candidate-xds-gt600-frame-stiffness-2026-08-28",
+      "candidate-xds-gt600-price-2026-08-28",
+      "candidate-xds-gt600-tire-clearance-2026-08-28",
       "candidate-xlab-ad8-price-2026-08-27",
       "candidate-xlab-ad9-price-2026-08-27",
       "candidate-xlab-gt8-price-2026-08-27",
@@ -1428,6 +1442,9 @@
       "platform-af01-frame-weight-2026-08-27",
       "platform-af01-geometry-2026-08-27",
       "platform-bxt-055-geometry-2026-08-27",
+      "platform-camp-gx700-frame-material-2026-08-28",
+      "platform-camp-gx700-frame-stiffness-2026-08-28",
+      "platform-camp-gx700-tire-clearance-2026-08-28",
       "platform-evolve-cima-gr-frame-weight-2026-08-27",
       "platform-evolve-cima-gr-geometry-2026-08-27",
       "platform-ican-graro-frame-weight-2026-08-27",
@@ -1437,6 +1454,10 @@
       "platform-rinasclta-gr025-geometry-2026-08-27",
       "platform-sava-gelaro-bottom-bracket-2026-08-27",
       "platform-sava-gelaro-frame-weight-2026-08-27",
+      "platform-sava-gelaro-s8-frame-material-2026-08-28",
+      "platform-sava-gelaro-s8-frame-stiffness-2026-08-28",
+      "platform-sava-gelaro-sf-frame-material-2026-08-28",
+      "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
       "platform-seka-exaero-gr-frame-weight-2026-08-27",
       "platform-seka-exaero-gr-geometry-2026-08-27",
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27",
@@ -1553,6 +1574,7 @@
       "variant-sava-gelaro-s8-bottom-bracket-2026-08-17",
       "variant-sava-gelaro-s8-cockpit-2026-08-17",
       "variant-sava-gelaro-s8-complete-weight-2026-08-17",
+      "variant-sava-gelaro-s8-drivetrain-2026-08-28",
       "variant-sava-gelaro-s8-frame-weight-2026-08-17",
       "variant-sava-gelaro-s8-geometry-2026-08-17",
       "variant-sava-gelaro-s8-purchase-route-2026-08-17",
@@ -2174,9 +2196,12 @@
         "frame.cable_routing",
         "frame.claimed_fiber",
         "frame.configuration_notes.seatpost",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2661,6 +2686,7 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2669,6 +2695,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2692,6 +2720,7 @@
         "frame.claimed_fiber",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2700,6 +2729,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
         "frame.warranty_claim.note",
@@ -3618,13 +3649,18 @@
       "sava-gelaro-s8": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.flare",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.crankset",
         "drivetrain.layout",
         "drivetrain.model",
+        "drivetrain.rear_derailleur",
+        "drivetrain.shifters",
         "drivetrain.shifting",
         "drivetrain.speeds",
         "editorial.best_for",
@@ -4828,6 +4864,18 @@
         "url"
       ],
       "camp-gx700-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "camp-gx700-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -7939,6 +7987,18 @@
         "type",
         "url"
       ],
+      "sava-gelaro-s8-official-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-gelaro-sf6-independent-review-2026-08-27": [
         "accessed_at",
         "claim_class",
@@ -7989,6 +8049,18 @@
         "url"
       ],
       "sava-gelaro-sf6-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-gelaro-sf6-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -10081,7 +10153,31 @@
         "type",
         "url"
       ],
+      "xds-gt350-retailer-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "xds-gt350-smzdm-price-observation": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xds-gt600-current-listings-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -18640,11 +18736,15 @@
       "xds-gt350": [
         "category",
         "facts.brakes",
+        "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.mounts",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tires",
         "facts.wheels",
         "last_reviewed",
@@ -18667,9 +18767,13 @@
       "xds-gt600": [
         "category",
         "facts.brakes",
+        "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.stiffness_evidence",
         "facts.tires",
         "facts.wheels",
         "last_reviewed",
@@ -22868,6 +22972,76 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-xds-gt350-complete-weight-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt350-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt350-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt350-price-2026-08-28": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt350-tire-clearance-2026-08-28": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-xds-gt600-complete-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -22886,6 +23060,61 @@
         "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.status",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-price-2026-08-28": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-tire-clearance-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
@@ -23010,6 +23239,46 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-camp-gx700-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-camp-gx700-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-camp-gx700-tire-clearance-2026-08-28": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -23145,6 +23414,58 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-s8-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-s8-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-sf-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-sf-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -24860,6 +25181,22 @@
       ],
       "variant-sava-gelaro-s8-complete-weight-2026-08-17": [
         "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-sava-gelaro-s8-drivetrain-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -25807,7 +26144,8 @@
       "camp-gx700": [
         "brand_id=camp",
         "source_ids=camp-gx700-official",
-        "source_ids=camp-gx700-official-2026-08-17"
+        "source_ids=camp-gx700-official-2026-08-17",
+        "source_ids=camp-gx700-official-2026-08-28"
       ],
       "carbonda-cfr696": [
         "brand_id=carbonda",
@@ -25910,6 +26248,7 @@
         "frame.geometry.source_id=sava-gelaro-s8-official-2026-08-17",
         "source_ids=sava-2026-carbon-lineup-2026-08-08",
         "source_ids=sava-gelaro-s8-official-2026-08-17",
+        "source_ids=sava-gelaro-s8-official-2026-08-28",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
       "sava-gelaro-sf": [
@@ -25919,6 +26258,7 @@
         "source_ids=sava-gelaro-sf6-official",
         "source_ids=sava-gelaro-sf6-official-2026-08-16",
         "source_ids=sava-gelaro-sf6-official-2026-08-25",
+        "source_ids=sava-gelaro-sf6-official-2026-08-28",
         "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "scott-addict-rc-40": [
@@ -26057,7 +26397,8 @@
       "camp-gx700-grx820": [
         "platform_id=camp-gx700",
         "source_ids=camp-gx700-official",
-        "source_ids=camp-gx700-official-2026-08-17"
+        "source_ids=camp-gx700-official-2026-08-17",
+        "source_ids=camp-gx700-official-2026-08-28"
       ],
       "carbonda-cfr696-frameset": [
         "platform_id=carbonda-cfr696",
@@ -26154,6 +26495,7 @@
         "platform_id=sava-gelaro-s8",
         "source_ids=sava-2026-carbon-lineup-2026-08-08",
         "source_ids=sava-gelaro-s8-official-2026-08-17",
+        "source_ids=sava-gelaro-s8-official-2026-08-28",
         "source_ids=taobao-snapshot-2026-08-08"
       ],
       "sava-gelaro-sf6-cues": [
@@ -26163,6 +26505,7 @@
         "source_ids=sava-gelaro-sf6-official-2026-08-16",
         "source_ids=sava-gelaro-sf6-official-2026-08-17",
         "source_ids=sava-gelaro-sf6-official-2026-08-25",
+        "source_ids=sava-gelaro-sf6-official-2026-08-28",
         "source_ids=sava-gelaro-sf6-specifications-2026-08-25",
         "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
@@ -26506,6 +26849,7 @@
       "camp-gx600-official-2026-08-17": [],
       "camp-gx700-official": [],
       "camp-gx700-official-2026-08-17": [],
+      "camp-gx700-official-2026-08-28": [],
       "canyon-aeroad-cfr-di2-official-2026-08-17": [],
       "canyon-china-warranty-2026-08-17": [],
       "canyon-grail-cf-7-official-2026-08-17": [],
@@ -26764,11 +27108,13 @@
       "sava-gelaro-s4-official-image-2026-08-17": [],
       "sava-gelaro-s8-official-2026-08-08": [],
       "sava-gelaro-s8-official-2026-08-17": [],
+      "sava-gelaro-s8-official-2026-08-28": [],
       "sava-gelaro-sf6-independent-review-2026-08-27": [],
       "sava-gelaro-sf6-official": [],
       "sava-gelaro-sf6-official-2026-08-16": [],
       "sava-gelaro-sf6-official-2026-08-17": [],
       "sava-gelaro-sf6-official-2026-08-25": [],
+      "sava-gelaro-sf6-official-2026-08-28": [],
       "sava-gelaro-sf6-specifications-2026-08-25": [],
       "sava-hawkeye-f20-official-2026-08-17": [],
       "sava-jd-official-storefront-2026-08-26": [],
@@ -26935,7 +27281,9 @@
       "xds-ad7-jd-smzdm-search": [],
       "xds-gt350-hk-spec-2026-08-09": [],
       "xds-gt350-retailer-2026-08-08": [],
+      "xds-gt350-retailer-2026-08-28": [],
       "xds-gt350-smzdm-price-observation": [],
+      "xds-gt600-current-listings-2026-08-28": [],
       "xds-gt600-jd": [],
       "xds-manufacturing-government": [],
       "xhs-pardus-spark-sport-pes-1200km-2026-08-10": [],
@@ -29017,6 +29365,7 @@
         "source_ids=public-xds-gt350-price-2026-08-17",
         "source_ids=xds-gt350-hk-spec-2026-08-09",
         "source_ids=xds-gt350-retailer-2026-08-08",
+        "source_ids=xds-gt350-retailer-2026-08-28",
         "source_ids=xds-gt350-smzdm-price-observation",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
@@ -29025,6 +29374,7 @@
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-xds-gt600-overview-2026-08-17",
         "source_ids=public-xds-gt600-retailer-build-2026-08-27",
+        "source_ids=xds-gt600-current-listings-2026-08-28",
         "source_ids=xds-manufacturing-government"
       ],
       "xlab-ad8": [
@@ -29912,10 +30262,37 @@
       "candidate-winspace-g5-mainland-price-2026-08-27": [
         "target.record_id=missing-china-price-winspace-g5"
       ],
+      "candidate-xds-gt350-complete-weight-2026-08-28": [
+        "target.record_id=xds-gt350"
+      ],
+      "candidate-xds-gt350-frame-material-2026-08-28": [
+        "target.record_id=xds-gt350"
+      ],
+      "candidate-xds-gt350-frame-stiffness-2026-08-28": [
+        "target.record_id=xds-gt350"
+      ],
+      "candidate-xds-gt350-price-2026-08-28": [
+        "target.record_id=xds-gt350"
+      ],
+      "candidate-xds-gt350-tire-clearance-2026-08-28": [
+        "target.record_id=xds-gt350"
+      ],
       "candidate-xds-gt600-complete-weight-2026-08-27": [
         "target.record_id=xds-gt600"
       ],
       "candidate-xds-gt600-fitted-tire-2026-08-27": [
+        "target.record_id=xds-gt600"
+      ],
+      "candidate-xds-gt600-frame-material-2026-08-28": [
+        "target.record_id=xds-gt600"
+      ],
+      "candidate-xds-gt600-frame-stiffness-2026-08-28": [
+        "target.record_id=xds-gt600"
+      ],
+      "candidate-xds-gt600-price-2026-08-28": [
+        "target.record_id=xds-gt600"
+      ],
+      "candidate-xds-gt600-tire-clearance-2026-08-28": [
         "target.record_id=xds-gt600"
       ],
       "candidate-xlab-ad8-price-2026-08-27": [
@@ -29941,6 +30318,15 @@
       ],
       "platform-bxt-055-geometry-2026-08-27": [
         "target.record_id=bxt-055"
+      ],
+      "platform-camp-gx700-frame-material-2026-08-28": [
+        "target.record_id=camp-gx700"
+      ],
+      "platform-camp-gx700-frame-stiffness-2026-08-28": [
+        "target.record_id=camp-gx700"
+      ],
+      "platform-camp-gx700-tire-clearance-2026-08-28": [
+        "target.record_id=camp-gx700"
       ],
       "platform-evolve-cima-gr-frame-weight-2026-08-27": [
         "target.record_id=evolve-cima-gr"
@@ -29968,6 +30354,18 @@
       ],
       "platform-sava-gelaro-frame-weight-2026-08-27": [
         "target.record_id=sava-gelaro"
+      ],
+      "platform-sava-gelaro-s8-frame-material-2026-08-28": [
+        "target.record_id=sava-gelaro-s8"
+      ],
+      "platform-sava-gelaro-s8-frame-stiffness-2026-08-28": [
+        "target.record_id=sava-gelaro-s8"
+      ],
+      "platform-sava-gelaro-sf-frame-material-2026-08-28": [
+        "target.record_id=sava-gelaro-sf"
+      ],
+      "platform-sava-gelaro-sf-frame-stiffness-2026-08-28": [
+        "target.record_id=sava-gelaro-sf"
       ],
       "platform-seka-exaero-gr-frame-weight-2026-08-27": [
         "target.record_id=seka-exaero-gr"
@@ -30325,6 +30723,9 @@
       "variant-sava-gelaro-s8-complete-weight-2026-08-17": [
         "target.record_id=sava-gelaro-s8"
       ],
+      "variant-sava-gelaro-s8-drivetrain-2026-08-28": [
+        "target.record_id=sava-gelaro-s8"
+      ],
       "variant-sava-gelaro-s8-frame-weight-2026-08-17": [
         "target.record_id=sava-gelaro-s8"
       ],
@@ -30677,6 +31078,14 @@
       }
     },
     "camp-gx700-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "camp-gx700-official-2026-08-28": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -32757,6 +33166,14 @@
         "specification": 3
       }
     },
+    "sava-gelaro-s8-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "sava-gelaro-sf6-independent-review-2026-08-27": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -32794,6 +33211,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 2,
+        "specification": 3
+      }
+    },
+    "sava-gelaro-sf6-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
         "specification": 3
       }
     },
@@ -34141,11 +34566,27 @@
         "specification": 2
       }
     },
+    "xds-gt350-retailer-2026-08-28": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 2
+      }
+    },
     "xds-gt350-smzdm-price-observation": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
         "identity": 1,
         "price": 1,
+        "specification": 0
+      }
+    },
+    "xds-gt600-current-listings-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
         "specification": 0
       }
     },
@@ -37950,6 +38391,64 @@
       ],
       "accepted_source_ids": []
     },
+    "candidate-xds-gt350-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT350 exact complete bike weight 11.05 kg\",\"current exact-model retailer page\",\"found\",\"2026-08-28\",\"Current retailer page states 11.05 kg for the documented Hong Kong 1x10 trim; size, pedals, accessories, pressure and method are unstated.\",\"https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "xds-gt350-retailer-2026-08-28"
+      ]
+    },
+    "candidate-xds-gt350-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT350 X6 aluminum carbon fork exact frame material\",\"current exact-model retailer page\",\"found\",\"2026-08-28\",\"The documented trim uses an internally routed X6 aluminum frame and carbon fork; exact alloy series, fork fiber grade and manufacturing processes are not published.\",\"https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "xds-gt350-retailer-2026-08-28"
+      ]
+    },
+    "candidate-xds-gt350-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT350 stiffness deflection test\",\"manufacturer and retailer exact-model pages\",\"no-result\",\"2026-08-28\",\"No stiffness or deflection result is published.\",\"https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike\"]",
+        "[\"web\",2,\"喜德盛 GT350 车架 刚性 骑行 评测\",\"independent exact-model reviews\",\"no-result\",\"2026-08-28\",\"Available owner commentary is trim-conflicted and not sufficiently specific for a stiffness claim.\",null]",
+        "[\"web\",3,\"XDS GT350 frame flex measured\",\"technical test and owner-measurement sources\",\"no-result\",\"2026-08-28\",\"No measured result was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-xds-gt350-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT350 current mainland price exact trim\",\"current exact-model retailer page\",\"rejected\",\"2026-08-28\",\"Hong Kong listing is not a mainland selected-option checkout.\",\"https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike\"]",
+        "[\"web\",2,\"喜德盛 GT350 2026 价格\",\"mainland deal-history and roundup pages\",\"rejected\",\"2026-08-28\",\"Activity and historical prices are not current exact-SKU checkout evidence.\",\"https://post.smzdm.com/p/ak8x08l4/\"]",
+        "[\"web\",3,\"SAVA and XDS exact Taobao option price batch 3\",\"dedicated signed-in Taobao Chrome selection\",\"blocked\",\"2026-08-28\",\"Browser site-safety policy denied Taobao navigation; the route was not retried or bypassed.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-xds-gt350-tire-clearance-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT350 maximum tire clearance official\",\"current exact-model retailer page\",\"rejected\",\"2026-08-28\",\"The page proves a fitted 700x40C tire but does not publish maximum clearance.\",\"https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike\"]",
+        "[\"web\",2,\"喜德盛 GT350 最大 胎宽\",\"manufacturer catalog and technical pages\",\"no-result\",\"2026-08-28\",\"No manufacturer maximum-clearance statement was located for the exact trim.\",null]",
+        "[\"web\",3,\"XDS GT350 tyre clearance review\",\"independent and distributor exact-model sources\",\"no-result\",\"2026-08-28\",\"No source distinguished maximum clearance from the 40C fitted tire.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "candidate-xds-gt600-complete-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 1,
@@ -37973,6 +38472,53 @@
       "accepted_source_ids": [
         "public-xds-gt600-retailer-build-2026-08-27"
       ]
+    },
+    "candidate-xds-gt600-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"喜德盛 GT600 碳纤维 车架 前叉 座管\",\"validated prior exact retailer-post archive\",\"found\",\"2026-08-27\",\"The exact archived SRAM Apex 1x11 build identifies a carbon frame, fork and seatpost; fiber grade, lay-up and molding process are not stated.\",\"https://www.xiaohongshu.com/explore/6873301100000000130102e5\"]"
+      ],
+      "accepted_source_ids": [
+        "public-xds-gt600-retailer-build-2026-08-27"
+      ]
+    },
+    "candidate-xds-gt600-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT600 carbon Apex stiffness test\",\"current official marketplace listing surface\",\"no-result\",\"2026-08-28\",\"Current listings provide no stiffness evidence for the archived carbon/Apex build.\",\"https://www.jd.com/hprm/67281de7c78c4042c166.html\"]",
+        "[\"web\",2,\"喜德盛 GT600 碳架 刚性 评测\",\"independent exact-build reviews\",\"no-result\",\"2026-08-28\",\"Available commentary concerns conflicting aluminum or suspension-fork configurations.\",null]",
+        "[\"web\",3,\"XDS GT600 frame flex measured carbon\",\"technical test and owner-measurement sources\",\"no-result\",\"2026-08-28\",\"No measured exact-build result was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-xds-gt600-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"XDS GT600 current JD selected option price carbon SRAM 11\",\"current official marketplace listing surface\",\"no-result\",\"2026-08-28\",\"Current listings do not expose an attributable selected-option checkout value or complete trim mapping.\",\"https://www.jd.com/hprm/67281de7c78c4042c166.html\"]",
+        "[\"web\",2,\"喜德盛 GT600 2026 价格 SRAM Apex\",\"current public price trackers\",\"rejected\",\"2026-08-28\",\"A May 2026 historical price is not a current checkout and its exact generation mapping is uncertain.\",\"https://m.manmanbuy.com/d.aspx?id=8479056\"]",
+        "[\"web\",3,\"XDS GT600 carbon Apex current mainland price\",\"deal-history and retailer coverage\",\"rejected\",\"2026-08-28\",\"The dated 2025 price observation is historical and cannot resolve the current exact build.\",\"https://www.smzdm.com/p/152888325/\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-xds-gt600-tire-clearance-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"喜德盛 GT600 重量 胎宽\",\"validated prior exact retailer-post archive\",\"rejected\",\"2026-08-27\",\"The exact carbon/Apex build uses 700x40C tires, but the post does not state maximum clearance.\",\"https://www.xiaohongshu.com/explore/6873301100000000130102e5\"]",
+        "[\"web\",1,\"XDS GT600 maximum tire clearance official\",\"current official marketplace listing surface\",\"no-result\",\"2026-08-28\",\"Current listings do not expose a maximum-clearance specification.\",\"https://www.jd.com/hprm/67281de7c78c4042c166.html\"]",
+        "[\"web\",2,\"喜德盛 GT600 最大 胎宽 700C\",\"manufacturer catalog and technical pages\",\"no-result\",\"2026-08-28\",\"No exact-generation manufacturer maximum was located.\",null]",
+        "[\"web\",3,\"XDS GT600 tyre clearance carbon Apex\",\"independent and retailer exact-build sources\",\"rejected\",\"2026-08-28\",\"Sources repeat fitted 40C tires without distinguishing a maximum.\",null]"
+      ],
+      "accepted_source_ids": []
     },
     "candidate-xlab-ad8-price-2026-08-27": {
       "channel_attempt_counts": {
@@ -38079,6 +38625,40 @@
         "[\"web\",1,\"BXT-055 official geometry\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Current page exposes sizes and specifications but no numeric geometry table.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]",
         "[\"web\",2,\"BXT 055 geometry stack reach\",\"public web search\",\"rejected\",\"2026-08-27\",\"Unversioned secondary diagrams could not be tied safely to the current 2026 frame.\",null]",
         "[\"web\",3,\"BXT-055 manual PDF geometry\",\"manual and catalog search\",\"no-result\",\"2026-08-27\",\"No current exact-model manual with geometry was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-camp-gx700-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"CAMP GX700 T800 carbon frame construction\",\"manufacturer current exact-model product page\",\"found\",\"2026-08-28\",\"Current page identifies a Toray T800 carbon thru-axle frame and fork plus T700 and T800 carbon cockpit and seatpost; lay-up and molding process remain unpublished.\",\"https://www.campbicycle.com/gravel_92368/gx700.html\"]"
+      ],
+      "accepted_source_ids": [
+        "camp-gx700-official-2026-08-28"
+      ]
+    },
+    "platform-camp-gx700-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"CAMP GX700 stiffness test deflection\",\"manufacturer current exact-model page\",\"rejected\",\"2026-08-28\",\"Material-strength wording is generic marketing and no stiffness result is published.\",\"https://www.campbicycle.com/gravel_92368/gx700.html\"]",
+        "[\"web\",2,\"CAMP GX700 independent review stiffness ride\",\"independent exact-model reviews\",\"no-result\",\"2026-08-28\",\"No sufficiently attributable exact-model ride or stiffness assessment was located.\",null]",
+        "[\"web\",3,\"CAMP GX700 frame flex laboratory measurement\",\"technical test and owner-measurement sources\",\"no-result\",\"2026-08-28\",\"No measured deflection or bottom-bracket/head-tube stiffness result was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-camp-gx700-tire-clearance-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"CAMP GX700 maximum tire clearance official\",\"manufacturer current exact-model page\",\"rejected\",\"2026-08-28\",\"The page establishes a fitted 700x45C tire but does not label it as the maximum.\",\"https://www.campbicycle.com/gravel_92368/gx700.html\"]",
+        "[\"web\",2,\"CAMP GX700 max tyre size specification\",\"official manual and technical catalog\",\"no-result\",\"2026-08-28\",\"No separate official maximum-clearance statement was located.\",null]",
+        "[\"web\",3,\"CAMP GX700 tire clearance exact review\",\"authorized dealer and independent exact-model review\",\"no-result\",\"2026-08-28\",\"No source distinguished a larger manufacturer maximum from the proven 45C stock fit.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -38196,6 +38776,50 @@
         "[\"web\",3,\"SAVA Gelaro R21 frameset weight\",\"authorized retail and specification mirrors\",\"no-result\",\"2026-08-27\",\"Only the approximate complete-bike weight repeated.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "platform-sava-gelaro-s8-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S8 R21 GRX820 T800 frame material construction\",\"manufacturer current exact-model product page\",\"found\",\"2026-08-28\",\"Current page identifies a T800 carbon frame and fork, full internal routing and additional reinforcement at the head tube, bottom bracket and rear dropouts; lay-up schedule and molding process remain unpublished.\",\"https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s8-official-2026-08-28"
+      ]
+    },
+    "platform-sava-gelaro-s8-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S8 stiffness test deflection\",\"manufacturer current exact-model page\",\"rejected\",\"2026-08-28\",\"Shock-absorption, comfort and stability language is marketing and no stiffness measurement is published.\",\"https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s\"]",
+        "[\"web\",2,\"SAVA Gelaro S8 independent review stiffness ride\",\"independent exact-model road and gravel reviews\",\"no-result\",\"2026-08-28\",\"No sufficiently specific exact-model review with attributable stiffness or flex evidence was located.\",null]",
+        "[\"web\",3,\"SAVA R21 Gelaro S8 frame flex laboratory test\",\"technical test and owner-measurement sources\",\"no-result\",\"2026-08-28\",\"No measured deflection, bottom-bracket stiffness or comparable exact-frame result was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-sava-gelaro-sf-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro SF6 R21 U6000 Toray T800 frame construction\",\"manufacturer current exact-model product page\",\"found\",\"2026-08-28\",\"Current page identifies a Toray T800 carbon frame and fork with internal routing; lay-up schedule and molding process are not published.\",\"https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-sf6-official-2026-08-28"
+      ]
+    },
+    "platform-sava-gelaro-sf-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro SF6 independent ride review compliance vibration\",\"independent exact-model review\",\"found\",\"2026-08-28\",\"Review reports noticeable vibration damping and compliance on washboard, chip-seal, hardpack and crushed limestone with stable endurance-gravel handling; qualitative only.\",\"https://thedailycarrylist.com/sava-gelaro-sf6-review/\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-sf6-independent-review-2026-08-27"
+      ]
     },
     "platform-seka-exaero-gr-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
@@ -39814,7 +40438,20 @@
         "[\"web\",1,\"SAVA Gelaro S8 GRX820 complete-bike weight\",\"manufacturer exact page/manual/geometry chart\",\"found\",\"2026-08-17\",\"Exact S8 specification says about 10.2 kg.\",\"https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s\"]"
       ],
       "accepted_source_ids": [
-        "sava-gelaro-s8-official-2026-08-08"
+        "sava-gelaro-s8-official-2026-08-08",
+        "sava-gelaro-s8-official-2026-08-28"
+      ]
+    },
+    "variant-sava-gelaro-s8-drivetrain-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"2026 SAVA Gelaro S8 R21 GRX820 exact drivetrain\",\"manufacturer current exact-model specification\",\"found\",\"2026-08-28\",\"The current main specification lists RD-RX822, FC-RX820-1, CS-M6200-12 and no front derailleur, establishing the current build as 1x12. A duplicated lower-page RX810 label is preserved as a page conflict, not merged.\",\"https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s8-official-2026-08-28"
       ]
     },
     "variant-sava-gelaro-s8-frame-weight-2026-08-17": {

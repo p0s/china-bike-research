@@ -1,0 +1,23 @@
+{
+  "id": "platform-camp-gx700-tire-clearance-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "camp-gx700" },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The required XHS extension runtime is not loaded in the dedicated research Chrome for this session; no same-session retry was made." },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "CAMP GX700 maximum tire clearance official", "route": "manufacturer current exact-model page", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.campbicycle.com/gravel_92368/gx700.html", "note": "The page establishes a fitted 700x45C tire but does not label it as the maximum." },
+        { "attempt": 2, "query": "CAMP GX700 max tyre size specification", "route": "official manual and technical catalog", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No separate official maximum-clearance statement was located." },
+        { "attempt": 3, "query": "CAMP GX700 tire clearance exact review", "route": "authorized dealer and independent exact-model review", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No source distinguished a larger manufacturer maximum from the proven 45C stock fit." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "A nominal 45C fitted tire is proven; maximum clearance remains unknown and is not inferred."
+}

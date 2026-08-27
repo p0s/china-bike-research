@@ -1,0 +1,23 @@
+{
+  "id": "candidate-xds-gt600-price-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "xds-gt600" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The required XHS extension runtime is not loaded in the dedicated research Chrome for this session; no same-session retry was made." },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "XDS GT600 current JD selected option price carbon SRAM 11", "route": "current official marketplace listing surface", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.jd.com/hprm/67281de7c78c4042c166.html", "note": "Current listings do not expose an attributable selected-option checkout value or complete trim mapping." },
+        { "attempt": 2, "query": "喜德盛 GT600 2026 价格 SRAM Apex", "route": "current public price trackers", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://m.manmanbuy.com/d.aspx?id=8479056", "note": "A May 2026 historical price is not a current checkout and its exact generation mapping is uncertain." },
+        { "attempt": 3, "query": "XDS GT600 carbon Apex current mainland price", "route": "deal-history and retailer coverage", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.smzdm.com/p/152888325/", "note": "The dated 2025 price observation is historical and cannot resolve the current exact build." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The existing CNY 6,840-7,600 reference range remains explicitly unresolved; no current exact selected-option checkout was established."
+}

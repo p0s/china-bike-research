@@ -1,0 +1,21 @@
+{
+  "id": "variant-sava-gelaro-s8-drivetrain-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "sava-gelaro-s8" },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The required XHS extension runtime is not loaded in the dedicated research Chrome for this session; no same-session retry was made." },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "2026 SAVA Gelaro S8 R21 GRX820 exact drivetrain", "route": "manufacturer current exact-model specification", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s", "note": "The current main specification lists RD-RX822, FC-RX820-1, CS-M6200-12 and no front derailleur, establishing the current build as 1x12. A duplicated lower-page RX810 label is preserved as a page conflict, not merged." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-s8-official-2026-08-28"],
+  "retry_after": null,
+  "notes": "The current exact manufacturer specification corrects the earlier 2x12 interpretation; dated marketplace pricing is not assumed to map to this build."
+}
