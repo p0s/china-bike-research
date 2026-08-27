@@ -14,7 +14,22 @@
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 1085,
-    "claimed_fiber": "T700/T800/T1000-claimed"
+    "claimed_frame_weight_basis": "Manufacturer nominal frame claim; exact painted storefront examples are listed separately",
+    "claimed_frame_weight_g_by_size": {
+      "52-glossy-ys955": 1073,
+      "52-glossy-ys2386-1": 1095,
+      "54-ice-crack-black-white": 1130,
+      "basis": "Painted exact storefront examples; manufacturer tolerance ±20 g"
+    },
+    "claimed_fork_weight_g_range": {
+      "low": 470,
+      "high": 525,
+      "basis": "Painted fork"
+    },
+    "claimed_fiber": "T700/T800/T1000-claimed",
+    "configuration_notes": {
+      "chainring_limits": "2× up to 48/31T or 1× up to 42T"
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -32,5 +47,5 @@
     "ican-graro-official",
     "ican-company-official"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

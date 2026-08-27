@@ -6,28 +6,33 @@
   "category": "gravel",
   "handlebar": "drop",
   "status": "current",
-  "summary": "Higher-spec domestic complete with GRX 1×12, carbon cockpit/post, and an official 45C tire.",
+  "summary": "Higher-spec domestic complete with GRX 1×12, carbon cockpit and seatpost, plus an official 45C stock tire; the maximum clearance is not stated.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
     "bottom_bracket": "unknown",
     "derailleur_hanger": "standard",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "T800-claimed"
+    "claimed_fiber": "T800-claimed",
+    "configuration_notes": {
+      "seatpost": "T700 + T800 carbon"
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "pass",
-    "note": "Official 45C configuration.",
+    "note": "The official complete comes with a 700×45C tire, proving that nominal width fits; the manufacturer does not state whether a larger tire fits.",
     "stock_nominal_mm": 45,
-    "published_max_mm": 45
+    "published_max_mm": 45,
+    "maximum_unverified": true
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "mainland-domestic",
   "source_ids": [
-    "camp-gx700-official"
+    "camp-gx700-official",
+    "camp-gx700-official-2026-08-17"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

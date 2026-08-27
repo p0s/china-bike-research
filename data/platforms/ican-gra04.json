@@ -14,7 +14,25 @@
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 1100,
-    "claimed_fiber": "mixed-carbon-claimed"
+    "claimed_frame_weight_basis": "Size M, T47, UD matte; manufacturer tolerance ±50 g",
+    "claimed_fork_weight_g": 480,
+    "claimed_fork_weight_basis": "Manufacturer tolerance ±15 g",
+    "claimed_seatpost_weight_g": 220,
+    "claimed_seatpost_weight_basis": "Manufacturer tolerance ±15 g",
+    "weight_conflict_note": "The official geometry diagram retains an older 1,050 g size-M/BB86 annotation, while the current specification table says 1,100 ±50 g for a size-M T47 UD-matte frame; the current table value is used.",
+    "claimed_fiber": "mixed-carbon-claimed",
+    "geometry": {
+      "basis": "Manufacturer exact-model geometry diagram; only unambiguous numeric columns are transcribed. The diagram's older BB86/1,050 g annotation is not used for current frame standards or weight.",
+      "source_id": "ican-gra04-official",
+      "units": {"length": "mm", "angle": "degrees"},
+      "sizes": [
+        {"size": "XS", "top_tube_mm": 526, "head_angle_deg": 71, "seat_angle_deg": 75, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 597, "fork_offset_mm": 48, "reach_mm": 380, "stack_mm": 545, "wheelbase_mm": 1020},
+        {"size": "S", "top_tube_mm": 540, "head_angle_deg": 71.5, "seat_angle_deg": 74.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 602, "fork_offset_mm": 48, "reach_mm": 385, "stack_mm": 560, "wheelbase_mm": 1025},
+        {"size": "M", "top_tube_mm": 561, "head_angle_deg": 72, "seat_angle_deg": 74, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 614, "fork_offset_mm": 48, "reach_mm": 395, "stack_mm": 580, "wheelbase_mm": 1037},
+        {"size": "L", "top_tube_mm": 583, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 625, "fork_offset_mm": 48, "reach_mm": 405, "stack_mm": 600, "wheelbase_mm": 1048},
+        {"size": "XL", "top_tube_mm": 600, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 643, "fork_offset_mm": 48, "reach_mm": 415, "stack_mm": 625, "wheelbase_mm": 1066}
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -33,5 +51,5 @@
     "ican-gra04-official",
     "ican-company-official"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

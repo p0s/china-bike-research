@@ -100,13 +100,13 @@ function imageUsageLabel(image) {
     : '';
 }
 
-function imageElement(ctx, product, { hero = false, className = '' } = {}) {
-  const source = imageUrl(ctx, product.image);
+function imageElement(ctx, product, { hero = false, image = product.image, className = '', decorative = false, galleryHero = false } = {}) {
+  const source = imageUrl(ctx, image);
   if (!source) return '';
-  const alt = product.image?.alt ?? `${product.brand.name} ${product.variant.name}`;
-  const remote = product.image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(product.image, { hero });
-  return `<img class="${escapeAttr(className)}" src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''} data-product-image>`;
+  const alt = decorative ? '' : image?.alt ?? `${product.brand.name} ${product.variant.name}`;
+  const remote = image?.hosting.mode === 'remote';
+  const responsive = responsiveAttributes(image, { hero });
+  return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image>`;
 }
 
 function candidateImageElement(ctx, entry, { hero = false, image = entry.image, className = '', decorative = false, galleryHero = false } = {}) {
@@ -153,6 +153,32 @@ function candidateGalleryFigure(ctx, entry) {
     return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? entry.candidate.name)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${candidateImageElement(ctx, entry, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
   }).join('');
   return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
+}
+
+function productGalleryFigure(ctx, product) {
+  const images = [product.image, ...(product.galleryImages ?? [])].filter((image) => imageUrl(ctx, image));
+  const primary = images[0];
+  if (!primary) return '';
+  const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
+  const primarySource = product.imageSource;
+  if (images.length < 2) {
+    const usage = imageUsageLabel(primary);
+    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+  }
+
+  const imageSource = (image) => image === primary ? primarySource : image.source;
+  const caption = (image, index) => [
+    image.credit ?? 'Product image',
+    accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
+    imageUsageLabel(image),
+    `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
+  ].filter(Boolean).join(' · ');
+  const thumbs = images.map((image, index) => {
+    const source = imageSource(image);
+    const accuracy = accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative');
+    return `<button class="gallery-thumb" type="button" aria-label="Show ${escapeAttr(image.label ?? `product image ${index + 1}`)} — ${escapeAttr(accuracy)}" aria-pressed="${index === 0}" data-gallery-thumb data-gallery-src="${escapeAttr(imageUrl(ctx, image))}" data-gallery-alt="${escapeAttr(image.alt ?? `${product.brand.name} ${product.variant.name}`)}" data-gallery-caption="${escapeAttr(caption(image, index))}" data-gallery-source="${escapeAttr(source?.url ?? '')}" data-gallery-remote="${image.hosting?.mode === 'remote'}"${image.display_note ? ` title="${escapeAttr(image.display_note)}"` : ''}>${imageElement(ctx, product, { image, className: 'gallery-thumb-image', decorative: true })}</button>`;
+  }).join('');
+  return `<figure class="model-figure model-gallery" data-image-gallery><span class="product-image hero-image">${imageElement(ctx, product, { hero: true, className: 'gallery-hero-image', galleryHero: true })}</span><div class="model-gallery-strip" role="group" aria-label="Product image views">${thumbs}</div><figcaption aria-live="polite"><span data-image-caption-status data-gallery-caption>${escapeHtml(caption(primary, 0))}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer" data-gallery-source-link>source</a>` : '<a href="#" rel="noreferrer" data-gallery-source-link hidden>source</a>'}</figcaption></figure>`;
 }
 
 function infoTip(label, lines, attributes = {}) {
@@ -349,16 +375,34 @@ function drivetrainSubline(ctx, product) {
   return drivetrain ? `${drivetrain.speeds} · ${drivetrain.shifting.replaceAll('-', ' ')}` : '';
 }
 
+function gramRangeLabel(low, high) {
+  if (!Number.isFinite(low)) return '';
+  const format = (value) => new Intl.NumberFormat('en-US').format(value);
+  return low === high || !Number.isFinite(high) ? `${format(low)} g` : `${format(low)}–${format(high)} g`;
+}
+
+function frameWeightValueLabel(frame) {
+  if (Number.isFinite(frame?.claimed_frame_weight_g)) return gramRangeLabel(frame.claimed_frame_weight_g, frame.claimed_frame_weight_g);
+  const values = Object.values(frame?.claimed_frame_weight_g_by_size ?? {}).filter(Number.isFinite);
+  return values.length ? gramRangeLabel(Math.min(...values), Math.max(...values)) : '';
+}
+
+function componentWeightValueLabel(frame, key) {
+  const value = frame?.[`claimed_${key}_weight_g`];
+  if (Number.isFinite(value)) return gramRangeLabel(value, value);
+  const range = frame?.[`claimed_${key}_weight_g_range`];
+  return gramRangeLabel(range?.low, range?.high);
+}
+
 function weightLabel(product) {
   if (product.variant.kind === 'complete-bike') {
     if (product.variant.claimed_complete_weight_g) return `${(product.variant.claimed_complete_weight_g / 1000).toFixed(1)} kg`;
-    return product.variant.claimed_frame_weight_g
-      ? `${new Intl.NumberFormat('en-US').format(product.variant.claimed_frame_weight_g)} g frame`
-      : '—';
+    if (product.variant.claimed_frame_weight_g) return `${new Intl.NumberFormat('en-US').format(product.variant.claimed_frame_weight_g)} g frame`;
+    const platformFrameWeight = frameWeightValueLabel(product.platform.frame);
+    return platformFrameWeight ? `${platformFrameWeight} frame` : '—';
   }
-  return product.platform.frame.claimed_frame_weight_g
-    ? `${new Intl.NumberFormat('en-US').format(product.platform.frame.claimed_frame_weight_g)} g frame`
-    : '—';
+  const frameWeight = frameWeightValueLabel(product.platform.frame);
+  return frameWeight ? `${frameWeight} frame` : '—';
 }
 
 function frameStandard(product) {
@@ -383,6 +427,35 @@ function componentDescription(component) {
   return values.join(' · ');
 }
 
+function drivetrainBuildDescription(drivetrain) {
+  if (!drivetrain) return '';
+  const parts = [
+    drivetrain.shifters ? `Shifters: ${drivetrain.shifters}` : drivetrain.shifter ? `Shifter: ${drivetrain.shifter}` : '',
+    drivetrain.front_derailleur ? `FD: ${drivetrain.front_derailleur}` : '',
+    drivetrain.rear_derailleur ? `RD: ${drivetrain.rear_derailleur}` : '',
+    drivetrain.crankset ? `Crank: ${drivetrain.crankset}` : '',
+    drivetrain.cassette ? `Cassette: ${drivetrain.cassette}` : '',
+    drivetrain.chain ? `Chain: ${drivetrain.chain}` : ''
+  ].filter(Boolean);
+  return parts.join(' · ');
+}
+
+function brakeDescription(brakes) {
+  if (!brakes) return '';
+  return [
+    sentenceLabel([brakes.actuation, brakes.type].filter(Boolean).join(' ')),
+    brakes.calipers ? `Calipers: ${brakes.calipers}` : '',
+    brakes.rotors ? `Rotors: ${brakes.rotors}` : ''
+  ].filter(Boolean).join(' · ');
+}
+
+function weightBasisDescription(product) {
+  if (product.variant.kind === 'complete-bike') return product.variant.claimed_complete_weight_basis ?? '';
+  return product.platform.frame?.claimed_frame_weight_basis
+    ?? product.platform.frame?.claimed_frame_weight_g_by_size?.basis
+    ?? '';
+}
+
 function geometrySummary(platform) {
   const sizes = platform.frame?.geometry?.sizes;
   if (!Array.isArray(sizes) || sizes.length === 0) return '';
@@ -397,11 +470,19 @@ function geometrySummary(platform) {
 }
 
 function publishedSpecificationRows(product) {
-  const frameWeight = product.variant.claimed_frame_weight_g
-    ?? product.platform.frame?.claimed_frame_weight_g;
+  const frameWeight = Number.isFinite(product.variant.claimed_frame_weight_g)
+    ? gramRangeLabel(product.variant.claimed_frame_weight_g, product.variant.claimed_frame_weight_g)
+    : frameWeightValueLabel(product.platform.frame);
+  const forkWeight = componentWeightValueLabel(product.platform.frame, 'fork');
+  const seatpostWeight = componentWeightValueLabel(product.platform.frame, 'seatpost');
   const rows = [
     ['Bottom bracket', product.platform.frame?.bottom_bracket === 'unknown' ? '' : product.platform.frame?.bottom_bracket],
-    ['Frame weight', Number.isFinite(frameWeight) ? `${new Intl.NumberFormat('en-US').format(frameWeight)} g` : ''],
+    ['Frame weight', frameWeight],
+    ['Fork weight', forkWeight],
+    ['Seatpost weight', seatpostWeight],
+    ['Weight basis', weightBasisDescription(product)],
+    ['Drivetrain build', product.variant.kind === 'complete-bike' ? drivetrainBuildDescription(product.variant.drivetrain) : ''],
+    ['Brakes', product.variant.kind === 'complete-bike' ? brakeDescription(product.variant.brakes) : ''],
     ['Included package', product.variant.kind === 'frameset' ? product.variant.included?.join(', ') : ''],
     ['Wheels', componentDescription(product.variant.wheels)],
     ['Tires', product.variant.tires],
@@ -983,7 +1064,6 @@ export function renderModel(ctx, product) {
     ? publishedPriceState(product)
     : [variant.kind === 'frameset' ? 'Estimated complete build' : '', priceState(product)].filter(Boolean).join(' · ');
   const brandLabel = `${brand.name}${brand.name_zh ? ` · ${brand.name_zh}` : ''}`;
-  const imageAccuracy = accuracyLabel(product.image?.display_accuracy ?? product.image?.subject_accuracy ?? 'illustrative');
   const bestFor = variant.editorial.best_for?.join(', ');
   const weight = weightLabel(product);
   const tireClearance = publishedTireClearance(product);
@@ -1014,9 +1094,7 @@ export function renderModel(ctx, product) {
   ];
   const specificationRows = publishedSpecificationRows(product);
   const heroImage = imageUrl(ctx, product.image);
-  const imageFigure = heroImage
-    ? `<figure class="model-figure">${productImage(ctx, product, { hero: true })}<figcaption><span data-image-caption-status>${escapeHtml(product.image?.credit ?? 'Product image')} · ${escapeHtml(imageAccuracy)}${imageUsageLabel(product.image) ? ` · ${escapeHtml(imageUsageLabel(product.image))}` : ''}</span>${product.imageSource?.url ? ` · <a href="${escapeAttr(product.imageSource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`
-    : '';
+  const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>

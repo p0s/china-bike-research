@@ -7,6 +7,8 @@ import {
   joinCatalogCandidates,
   freshness,
   maxClearance,
+  clearanceLabel,
+  clearanceLongLabel,
   supportsStandardFramesetBuild
 } from '../src/lib/data.mjs';
 
@@ -51,15 +53,15 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
-  assert.equal(data.prices.length, 44);
-  assert.equal(data.images.length, 128);
+  assert.equal(data.prices.length, 47);
+  assert.equal(data.images.length, 168);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 199);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 332);
+  assert.equal(data.researchAttempts.length, 333);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -377,11 +379,17 @@ test('all framesets use one transparent full-bike build allowance', () => {
 test('wide-clearance products preserve the narrower rear limit', () => {
   const product = products.find((item) => item.variant.id === 'seka-exaero-gr-frameset');
   assert.equal(maxClearance(product.platform), 52);
+
+  const camp = products.find((item) => item.variant.id === 'camp-gx700-grx820');
+  assert.equal(maxClearance(camp.platform), 45);
+  assert.equal(clearanceLabel(camp.platform), '45 mm stock');
+  assert.equal(clearanceLongLabel(camp.platform), '45 mm stock fit; maximum unverified');
 });
 
 test('every platform and variant resolves a primary visual', () => {
   const platformImages = data.images.filter((image) => image.platform_id);
-  assert.equal(platformImages.length, data.platforms.length);
+  const primaryPlatformImages = platformImages.filter((image) => image.role === 'primary');
+  assert.equal(primaryPlatformImages.length, data.platforms.length);
   const imagedPlatforms = new Set(platformImages.filter((image) => image.role === 'primary').map((image) => image.platform_id));
   assert.deepEqual([...imagedPlatforms].sort(), data.platforms.map((platform) => platform.id).sort());
   for (const product of products) {
@@ -407,7 +415,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 126);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 166);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 92);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
@@ -419,11 +427,26 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   malformedTarget.images.find((image) => image.candidate_id).platform_id = data.platforms[0].id;
   assert.ok(validateDataset(malformedTarget).some((error) => error.includes('target must identify exactly one platform or candidate')));
 
-  const malformedGallery = structuredClone(data);
-  const gallery = malformedGallery.images.find((image) => image.role === 'gallery');
+  const platformGallery = structuredClone(data);
+  const gallery = platformGallery.images.find((image) => image.role === 'gallery' && image.candidate_id);
+  const targetVariant = platformGallery.variants[0];
   delete gallery.candidate_id;
-  gallery.platform_id = data.platforms[0].id;
-  assert.ok(validateDataset(malformedGallery).some((error) => error.includes('gallery images currently require a candidate target')));
+  gallery.platform_id = targetVariant.platform_id;
+  gallery.variant_ids = [targetVariant.id];
+  assert.deepEqual(validateDataset(platformGallery), []);
+
+  gallery.variant_ids = [platformGallery.variants.find((item) => item.platform_id !== targetVariant.platform_id).id];
+  assert.ok(validateDataset(platformGallery).some((error) => error.includes('belongs to another platform')));
+});
+
+test('published products expose ordered exact-model gallery images', () => {
+  const quick = products.find((item) => item.variant.id === 'quick-gr-one-frameset');
+  assert.deepEqual(quick.galleryImages.map((image) => image.label), [
+    'Ice Crack Silver',
+    'Diamond Black',
+    'Fresh Grass Green'
+  ]);
+  assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
 test('public-post images must remain credited remote embeds', () => {
@@ -559,7 +582,7 @@ test('published images stay credited while incomplete builds remain candidates',
   const trinx = data.candidates.find((candidate) => candidate.id === 'trinx-gtr-c6');
   assert.equal(ican.image.hosting.mode, 'remote');
   assert.equal(ican.image.display_accuracy, 'exact-variant');
-  assert.equal(ican.image.rights.status, 'retailer-page-embed');
+  assert.equal(ican.image.rights.status, 'official-page-embed');
   assert.equal(trinx.status, 'exact-trim-unproven');
   assert.ok(trinx.missing.some((item) => /new publishable variant record/i.test(item)));
 });

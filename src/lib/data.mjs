@@ -528,7 +528,6 @@ export function validateDataset(data = loadDataset()) {
     if (image.candidate_id !== undefined && !candidateIds.has(image.candidate_id)) errors.push(`image ${image.id}: missing candidate ${image.candidate_id}`);
     if (!['primary', 'gallery'].includes(image.role)) errors.push(`image ${image.id}: unsupported role ${image.role}`);
     if (image.buyer_visibility !== undefined && !['show', 'omit'].includes(image.buyer_visibility)) errors.push(`image ${image.id}: invalid buyer_visibility`);
-    if (image.role === 'gallery' && image.candidate_id === undefined) errors.push(`image ${image.id}: gallery images currently require a candidate target`);
     if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
     if (!isDate(image.reviewed_at)) errors.push(`image ${image.id}: invalid reviewed_at`);
@@ -730,11 +729,24 @@ export function joinProducts(data = loadDataset()) {
           ? selectedImage.subject_accuracy
           : 'same-platform'
     } : null;
+    const galleryImages = platformImages
+      .filter((item) => item.role === 'gallery' && (!(item.variant_ids?.length) || item.variant_ids.includes(variant.id)))
+      .sort((a, b) => (a.sort_order ?? Number.POSITIVE_INFINITY) - (b.sort_order ?? Number.POSITIVE_INFINITY) || a.id.localeCompare(b.id))
+      .map((item) => ({
+        ...item,
+        display_accuracy: item.variant_ids?.includes(variant.id)
+          ? item.subject_accuracy
+          : item.subject_accuracy === 'exact-variant'
+            ? 'same-platform'
+            : item.subject_accuracy,
+        source: sources.get(item.source_id) ?? null
+      }));
     const sourceIds = new Set([
       ...(variant.source_ids ?? []),
       ...(platform.source_ids ?? []),
       ...prices.flatMap((price) => price.source_ids ?? []),
-      ...(image?.source_id ? [image.source_id] : [])
+      ...(image?.source_id ? [image.source_id] : []),
+      ...galleryImages.map((item) => item.source_id)
     ]);
     const videos = data.videos
       .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
@@ -748,6 +760,7 @@ export function joinProducts(data = loadDataset()) {
       allInPrice: allInPriceFor(variant, latestPrice, data),
       image,
       imageSource: image ? sources.get(image.source_id) ?? null : null,
+      galleryImages,
       videos,
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
@@ -883,6 +896,7 @@ export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not applicable';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
+  if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm`;
   return 'Unverified';
@@ -891,6 +905,7 @@ export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not recorded for this category';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
+  if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock fit; maximum unverified`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock; maximum unverified`;
   return 'Unverified';

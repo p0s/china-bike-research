@@ -1,0 +1,48 @@
+{
+  "id": "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
+  "target": {
+    "record_type": "platform",
+    "record_id": "twitter-gravel-v3-2024"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-26",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Dedicated research Chrome redirected to XHS Security Verification before any exact-model post could be opened.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Twitter Gravel V3",
+          "route": "Dedicated signed-in research Chrome exact-model XHS search",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-26",
+          "note": "The search redirected immediately to the XHS Security Verification page before any exact post could be opened."
+        }
+      ]
+    },
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": [
+      "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+    ],
+    "note": "A later exact-generation manual-mirror review resolved the published maximum at 700×40C; the blocked XHS attempt remains preserved as historical effort."
+  },
+  "retry_after": null,
+  "notes": "The initial XHS pass was blocked. A later exact-generation web source now supports the 40 mm maximum while the bottom-bracket wording conflict remains explicit."
+}

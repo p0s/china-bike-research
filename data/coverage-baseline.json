@@ -1,33 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-25",
+  "updated_at": "2026-08-27",
   "catalog_metrics": {
     "records": {
       "brands": 36,
       "platforms": 36,
       "variants": 38,
-      "prices": 44,
-      "sources": 382,
-      "images": 128,
+      "prices": 47,
+      "sources": 393,
+      "images": 168,
       "videos": 12,
       "groupsets": 11,
       "recommendations": 6,
       "candidates": 199,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 332
+      "researchAttempts": 333
     },
     "image_accuracy": {
-      "exact-platform": 36,
-      "exact-variant": 68,
+      "exact-platform": 55,
+      "exact-variant": 73,
       "illustrative": 2,
-      "same-model-different-color": 1,
+      "same-model-different-color": 17,
       "same-model-different-market-build": 8,
       "same-platform": 13
     },
     "image_hosting": {
       "local": 2,
-      "remote": 126
+      "remote": 166
     },
     "candidate_prices": {
       "official": 44,
@@ -157,8 +157,10 @@
       "bxt055-2026-08",
       "camp-gx600-2026-08",
       "camp-gx600-2026-08-17",
+      "camp-gx600-official-2026-08-25",
       "camp-gx700-2026-08",
       "camp-gx700-2026-08-17",
+      "camp-gx700-official-2026-08-25",
       "carbonda-cfr696-2026-08",
       "elves-aerox-2026-08",
       "elves-falath-r7170-price-2026-08-08",
@@ -166,6 +168,7 @@
       "ican-gra04-2026-08",
       "ican-graro-2026-08",
       "incolor-voyager-2026-08",
+      "incolor-voyager-official-list-2026-08-25",
       "lightcarbon-2026-08",
       "lightcarbon-speedz-complete-price-2026-08-08",
       "lightcarbon-speedz-frameset-price-2026-08-08",
@@ -262,8 +265,11 @@
       "ican-sn04-official-2026-08-08",
       "icanian-p9-official-2026-08-08",
       "incolor-services-official-2026-08-17",
+      "incolor-services-official-2026-08-26",
       "incolor-ssr-panda-podium-2026-08-17",
       "incolor-ssr-price-pdf-lead-2026-08-17",
+      "incolor-voyager-official-2026-08-25",
+      "incolor-voyager-official-brochure-2026-08-25",
       "incolor-voyager-retailer",
       "irefox-current-catalog-2026-08-09",
       "java-fuoco-top-105-official-2026-08-09",
@@ -353,6 +359,8 @@
       "public-tavelo-attack-build-2026-08-17",
       "public-tavelo-grow-build-2026-08-17",
       "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
+      "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
+      "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27",
       "public-winspace-g5-owner-image-2026-08-17",
       "public-winspace-slc3-build-2026-08-17",
       "public-xds-gt350-custom-build-2026-08-17",
@@ -361,6 +369,7 @@
       "public-xds-gt600-overview-2026-08-17",
       "public-xlab-gt8-overview-2026-08-17",
       "quick-2026-one-series-launch",
+      "quick-gr-one-china-official-2026-08-25",
       "quick-gr-one-official",
       "quick-pro-complete-collection-official-2026-08-17",
       "quick-pro-er-one-official-2026-08-17",
@@ -420,14 +429,18 @@
       "sava-dream-maker-official-image-2026-08-17",
       "sava-gelaro-s4-official",
       "sava-gelaro-s4-official-2026-08-16",
+      "sava-gelaro-s4-official-2026-08-25",
       "sava-gelaro-s4-official-image-2026-08-17",
       "sava-gelaro-s8-official-2026-08-08",
       "sava-gelaro-s8-official-2026-08-17",
+      "sava-gelaro-sf6-independent-review-2026-08-27",
       "sava-gelaro-sf6-official",
       "sava-gelaro-sf6-official-2026-08-16",
       "sava-gelaro-sf6-official-2026-08-17",
+      "sava-gelaro-sf6-official-2026-08-25",
       "sava-gelaro-sf6-specifications-2026-08-25",
       "sava-hawkeye-f20-official-2026-08-17",
+      "sava-jd-official-storefront-2026-08-26",
       "sava-r8-r8170-official-image-2026-08-17",
       "sava-starship-105-official-2026-08-17",
       "scott-addict-2026-manual-2026-08-17",
@@ -527,6 +540,7 @@
       "twitter-cyclone-gen3-et-usa-2026-08-17",
       "twitter-cyclone-pro-official-2026-08-17",
       "twitter-cyclone-r7120-official-2026-08-17",
+      "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
       "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
       "twitter-gravel-v3-2024-taobao-2026-08-21",
       "twitter-gravel-v3-official-2026-08-17",
@@ -588,7 +602,12 @@
       "bigrock-sohtea-primary-image",
       "bxt-055-primary-image",
       "camp-ace-qed-primary-image",
+      "camp-gx600-blue-gallery",
+      "camp-gx600-grey-gallery",
       "camp-gx600-primary-image",
+      "camp-gx700-black-gallery",
+      "camp-gx700-gold-gallery",
+      "camp-gx700-grey-gallery",
       "camp-gx700-primary-image",
       "canyon-aeroad-cfr-di2-primary-image",
       "canyon-grail-cf-7-primary-image",
@@ -608,12 +627,31 @@
       "giant-propel-gen4-primary-image",
       "giant-revolt-advanced-2-primary-image",
       "giant-tcr-advanced-primary-image",
+      "ican-gra04-detail-03-gallery",
+      "ican-gra04-detail-04-gallery",
+      "ican-gra04-detail-06-gallery",
+      "ican-gra04-detail-07-gallery",
+      "ican-gra04-detail-09-gallery",
+      "ican-gra04-detail-10-gallery",
+      "ican-gra04-detail-11-gallery",
+      "ican-gra04-geometry-gallery",
+      "ican-gra04-official-primary-image",
       "ican-gra04-primary-image",
+      "ican-graro-color-eleven-gallery",
+      "ican-graro-color-twelve-gallery",
       "ican-graro-primary-image",
+      "ican-graro-rear-gallery",
+      "ican-graro-side-gallery",
+      "ican-graro-torque-gallery",
       "icanian-p9-primary-image",
       "icanian-sn04-primary-image",
       "incolor-ssr-primary-image",
+      "incolor-voyager-clearance-gallery",
+      "incolor-voyager-design-gallery",
+      "incolor-voyager-geometry-gallery",
       "incolor-voyager-primary-image",
+      "incolor-voyager-seatpost-gallery",
+      "incolor-voyager-udh-gallery",
       "lightcarbon-lcg071s-pro-primary-image",
       "lightcarbon-speedz-primary-image",
       "look-765-electronic-primary-image",
@@ -637,7 +675,10 @@
       "pardus-uragano-evo-public-primary-image",
       "pardus-uragano-sport-primary-image",
       "pinarello-f5-primary-image",
+      "quick-gr-one-black-gallery",
+      "quick-gr-one-green-gallery",
       "quick-gr-one-primary-image",
+      "quick-gr-one-silver-gallery",
       "quick-pro-er-one-primary-image",
       "quick-pro-gr-one-grx-di2-primary-image",
       "quick-pro-tr-one-primary-image",
@@ -646,6 +687,8 @@
       "quick-pro-ur-one-primary-image",
       "quick-pro-xr-one-frameset-primary-image",
       "quick-pro-xr-one-primary-image",
+      "rinasclta-gr025-clearance-gallery",
+      "rinasclta-gr025-geometry-gallery",
       "rinasclta-gr025-primary-image",
       "sava-a4-primary-image",
       "sava-a7l-2026-primary-image",
@@ -653,9 +696,21 @@
       "sava-a7l-r7100-primary-image",
       "sava-dream-maker-primary-image",
       "sava-gelaro-primary-image",
+      "sava-gelaro-s4-black-gallery",
+      "sava-gelaro-s4-detail-gallery",
+      "sava-gelaro-s4-detail-two-gallery",
       "sava-gelaro-s4-primary-image",
+      "sava-gelaro-s4-white-gallery",
       "sava-gelaro-s8-primary-image",
       "sava-gelaro-sf-primary-image",
+      "sava-gelaro-sf6-frame-gallery",
+      "sava-gelaro-sf6-handlebar-gallery",
+      "sava-gelaro-sf6-shifter-gallery",
+      "sava-gelaro-sf6-tires-gallery",
+      "sava-gelaro-sf6-u6000-black-gallery",
+      "sava-gelaro-sf6-u6000-gold-gallery",
+      "sava-gelaro-sf6-u6000-grey-gallery",
+      "sava-gelaro-sf6-u6000-white-gallery",
       "sava-hawkeye-f20-primary-image",
       "sava-r8-r8170-primary-image",
       "sava-r9-primary-image",
@@ -1163,6 +1218,7 @@
       "candidate-voicevelo-g-major-purchase-route-2026-08-17",
       "candidate-voicevelo-g-major-tire-clearance-2026-08-17",
       "candidate-voicevelo-g-major-warranty-support-2026-08-17",
+      "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
       "variant-bianchi-oltre-race-bom-2026-08-17",
       "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
       "variant-bianchi-oltre-race-cockpit-2026-08-17",
@@ -1821,6 +1877,8 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.configuration_notes.handlebar",
+        "frame.configuration_notes.seatpost",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -1845,6 +1903,7 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.configuration_notes.seatpost",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -1858,6 +1917,7 @@
         "summary",
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
+        "tire_clearance.maximum_unverified",
         "tire_clearance.note",
         "tire_clearance.published_max_mm",
         "tire_clearance.stock_nominal_mm",
@@ -1992,10 +2052,21 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_seatpost_weight_basis",
+        "frame.claimed_seatpost_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
+        "frame.weight_conflict_note",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2018,7 +2089,16 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_g_range.basis",
+        "frame.claimed_fork_weight_g_range.high",
+        "frame.claimed_fork_weight_g_range.low",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_frame_weight_g_by_size.52-glossy-ys2386-1",
+        "frame.claimed_frame_weight_g_by_size.52-glossy-ys955",
+        "frame.claimed_frame_weight_g_by_size.54-ice-crack-black-white",
+        "frame.claimed_frame_weight_g_by_size.basis",
+        "frame.configuration_notes.chainring_limits",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -2043,9 +2123,15 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2146,15 +2232,26 @@
         "tire_clearance.wheel_size"
       ],
       "quick-gr-one": [
+        "availability_note",
         "brand_id",
         "category",
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_seatpost_weight_basis",
+        "frame.claimed_seatpost_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2177,10 +2274,14 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_seatpost_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
+        "frame.weight_conflict_note",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2296,6 +2397,8 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2554,6 +2657,7 @@
         "frame.configuration_notes.bottom_bracket_variants",
         "frame.configuration_notes.frame_heights_cm",
         "frame.configuration_notes.net_weight_claim_g",
+        "frame.configuration_notes.observed_current_electronic_builds",
         "frame.configuration_notes.source_id",
         "frame.derailleur_hanger",
         "frame.fork_material",
@@ -2584,8 +2688,13 @@
         "category",
         "china_availability",
         "frame.bottom_bracket",
+        "frame.bottom_bracket_conflict_note",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.configuration_notes.front_thru_axle",
         "frame.configuration_notes.listed_colors",
         "frame.configuration_notes.listed_item_number",
@@ -2601,6 +2710,11 @@
         "frame.configuration_notes.source_id",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2615,6 +2729,7 @@
         "tire_clearance.eligibility",
         "tire_clearance.evidence",
         "tire_clearance.note",
+        "tire_clearance.published_max_mm",
         "tire_clearance.stock_nominal_mm",
         "tire_clearance.wheel_size"
       ],
@@ -2806,11 +2921,15 @@
       ],
       "camp-gx600-pes": [
         "brakes.actuation",
+        "brakes.calipers",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.crankset",
         "drivetrain.layout",
         "drivetrain.model",
         "drivetrain.shifting",
@@ -2834,12 +2953,17 @@
       "camp-gx700-grx820": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.crankset",
         "drivetrain.layout",
         "drivetrain.model",
+        "drivetrain.rear_derailleur",
+        "drivetrain.shifters",
         "drivetrain.shifting",
         "drivetrain.speeds",
         "editorial.best_for",
@@ -2941,6 +3065,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "ican-graro-frameset": [
@@ -2956,6 +3081,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "incolor-voyager-frameset": [
@@ -2971,6 +3097,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "lightcarbon-lcg071s-pro-frameset": [
@@ -3059,6 +3186,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "rinasclta-gr025-frameset": [
@@ -3074,6 +3202,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "sava-a7l-r7100": [
@@ -3106,12 +3235,18 @@
       "sava-gelaro-s4-grx400": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.crankset",
+        "drivetrain.front_derailleur",
         "drivetrain.layout",
         "drivetrain.model",
+        "drivetrain.rear_derailleur",
+        "drivetrain.shifters",
         "drivetrain.shifting",
         "drivetrain.speeds",
         "editorial.best_for",
@@ -3125,6 +3260,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids",
         "tires",
         "wheels.rim_material"
@@ -3157,12 +3293,16 @@
       "sava-gelaro-sf6-cues": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
         "drivetrain.layout",
         "drivetrain.model",
+        "drivetrain.rear_derailleur",
+        "drivetrain.shifter",
         "drivetrain.shifting",
         "drivetrain.speeds",
         "editorial.best_for",
@@ -3348,6 +3488,7 @@
         "brakes.calipers",
         "brakes.rotors",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.dimensions",
         "cockpit.integrated",
@@ -3555,6 +3696,17 @@
         "status",
         "variant_id"
       ],
+      "camp-gx600-official-2026-08-25": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
       "camp-gx700-2026-08": [
         "amount_cny",
         "channel",
@@ -3567,6 +3719,17 @@
         "variant_id"
       ],
       "camp-gx700-2026-08-17": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "camp-gx700-official-2026-08-25": [
         "amount_cny",
         "channel",
         "conditions",
@@ -3655,6 +3818,17 @@
         "currency",
         "high_cny",
         "low_cny",
+        "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "incolor-voyager-official-list-2026-08-25": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
         "observed_at",
         "price_type",
         "source_ids",
@@ -4803,6 +4977,18 @@
         "type",
         "url"
       ],
+      "incolor-services-official-2026-08-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "incolor-ssr-panda-podium-2026-08-17": [
         "accessed_at",
         "language",
@@ -4816,6 +5002,30 @@
         "url"
       ],
       "incolor-ssr-price-pdf-lead-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-voyager-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-voyager-official-brochure-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -5906,6 +6116,38 @@
         "type",
         "url"
       ],
+      "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-winspace-g5-owner-image-2026-08-17": [
         "accessed_at",
         "language",
@@ -5991,6 +6233,18 @@
         "url"
       ],
       "quick-2026-one-series-launch": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "quick-gr-one-china-official-2026-08-25": [
         "accessed_at",
         "language",
         "notes",
@@ -6656,6 +6910,18 @@
         "type",
         "url"
       ],
+      "sava-gelaro-s4-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-gelaro-s4-official-image-2026-08-17": [
         "accessed_at",
         "language",
@@ -6688,6 +6954,19 @@
         "publisher",
         "reliability.identity",
         "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-gelaro-sf6-independent-review-2026-08-27": [
+        "accessed_at",
+        "claim_class",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.generation",
+        "reliability.identity",
         "reliability.specification",
         "title",
         "type",
@@ -6729,6 +7008,18 @@
         "type",
         "url"
       ],
+      "sava-gelaro-sf6-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-gelaro-sf6-specifications-2026-08-25": [
         "accessed_at",
         "language",
@@ -6748,6 +7039,18 @@
         "publisher",
         "reliability.identity",
         "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-jd-official-storefront-2026-08-26": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
         "reliability.price",
         "reliability.specification",
         "title",
@@ -8013,6 +8316,19 @@
         "type",
         "url"
       ],
+      "twitter-gravel-v3-2024-manual-mirror-2026-08-27": [
+        "accessed_at",
+        "claim_class",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.generation",
+        "reliability.identity",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "twitter-gravel-v3-2024-public-listing-image-2026-08-21": [
         "accessed_at",
         "claim_class",
@@ -8762,6 +9078,42 @@
         "source_id",
         "subject_accuracy"
       ],
+      "camp-gx600-blue-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "camp-gx600-grey-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "camp-gx600-primary-image": [
         "alt",
         "credit",
@@ -8774,6 +9126,60 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "camp-gx700-black-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "camp-gx700-gold-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "camp-gx700-grey-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -9094,6 +9500,166 @@
         "source_id",
         "subject_accuracy"
       ],
+      "ican-gra04-detail-03-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-04-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-06-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-07-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-09-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-10-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-detail-11-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-geometry-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-gra04-official-primary-image": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "ican-gra04-primary-image": [
         "alt",
         "credit",
@@ -9110,6 +9676,42 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "ican-graro-color-eleven-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-graro-color-twelve-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "ican-graro-primary-image": [
         "alt",
         "credit",
@@ -9122,6 +9724,60 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-graro-rear-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-graro-side-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "ican-graro-torque-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -9174,6 +9830,60 @@
         "source_id",
         "subject_accuracy"
       ],
+      "incolor-voyager-clearance-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-voyager-design-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-voyager-geometry-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "incolor-voyager-primary-image": [
         "alt",
         "credit",
@@ -9186,6 +9896,42 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-voyager-seatpost-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-voyager-udh-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -9608,6 +10354,42 @@
         "source_id",
         "subject_accuracy"
       ],
+      "quick-gr-one-black-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "quick-gr-one-green-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "quick-gr-one-primary-image": [
         "alt",
         "credit",
@@ -9620,6 +10402,24 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "quick-gr-one-silver-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -9752,6 +10552,42 @@
         "source_id",
         "subject_accuracy"
       ],
+      "rinasclta-gr025-clearance-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "rinasclta-gr025-geometry-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "rinasclta-gr025-primary-image": [
         "alt",
         "credit",
@@ -9865,6 +10701,60 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "sava-gelaro-s4-black-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-s4-detail-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-s4-detail-two-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "sava-gelaro-s4-primary-image": [
         "alt",
         "candidate_id",
@@ -9880,6 +10770,24 @@
         "role",
         "source_id",
         "subject_accuracy"
+      ],
+      "sava-gelaro-s4-white-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
       ],
       "sava-gelaro-s8-primary-image": [
         "alt",
@@ -9909,6 +10817,150 @@
         "rights.status",
         "rights.usage_note",
         "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-frame-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-handlebar-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-shifter-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-tires-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-u6000-black-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-u6000-gold-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-u6000-grey-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "sava-gelaro-sf6-u6000-white-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -18449,6 +19501,25 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-bianchi-oltre-race-bom-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -19836,12 +20907,17 @@
         "target.record_type"
       ],
       "variant-sava-gelaro-sf6-cues-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -20383,6 +21459,7 @@
         "target.record_type"
       ],
       "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -20392,12 +21469,17 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
         "target.record_type"
       ],
       "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -20407,6 +21489,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -20551,11 +21637,13 @@
       ],
       "camp-gx600": [
         "brand_id=camp",
-        "source_ids=camp-gx600-official"
+        "source_ids=camp-gx600-official",
+        "source_ids=camp-gx600-official-2026-08-17"
       ],
       "camp-gx700": [
         "brand_id=camp",
-        "source_ids=camp-gx700-official"
+        "source_ids=camp-gx700-official",
+        "source_ids=camp-gx700-official-2026-08-17"
       ],
       "carbonda-cfr696": [
         "brand_id=carbonda",
@@ -20584,6 +21672,7 @@
       ],
       "ican-gra04": [
         "brand_id=ican",
+        "frame.geometry.source_id=ican-gra04-official",
         "source_ids=ican-company-official",
         "source_ids=ican-gra04-official"
       ],
@@ -20594,6 +21683,10 @@
       ],
       "incolor-voyager": [
         "brand_id=incolor",
+        "frame.geometry.source_id=incolor-voyager-official-2026-08-25",
+        "source_ids=incolor-services-official-2026-08-26",
+        "source_ids=incolor-voyager-official-2026-08-25",
+        "source_ids=incolor-voyager-official-brochure-2026-08-25",
         "source_ids=incolor-voyager-retailer"
       ],
       "lightcarbon-lcg071s-pro": [
@@ -20616,6 +21709,8 @@
       ],
       "quick-gr-one": [
         "brand_id=quick",
+        "frame.geometry.source_id=quick-gr-one-official",
+        "source_ids=quick-gr-one-china-official-2026-08-25",
         "source_ids=quick-gr-one-official"
       ],
       "rinasclta-gr025": [
@@ -20634,7 +21729,9 @@
         "brand_id=sava",
         "frame.geometry.source_id=sava-gelaro-s4-official-2026-08-16",
         "source_ids=sava-gelaro-s4-official",
-        "source_ids=sava-gelaro-s4-official-2026-08-16"
+        "source_ids=sava-gelaro-s4-official-2026-08-16",
+        "source_ids=sava-gelaro-s4-official-2026-08-25",
+        "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "sava-gelaro-s8": [
         "brand_id=sava",
@@ -20646,8 +21743,11 @@
       "sava-gelaro-sf": [
         "brand_id=sava",
         "frame.geometry.source_id=sava-gelaro-sf6-official-2026-08-16",
+        "source_ids=sava-gelaro-sf6-independent-review-2026-08-27",
         "source_ids=sava-gelaro-sf6-official",
-        "source_ids=sava-gelaro-sf6-official-2026-08-16"
+        "source_ids=sava-gelaro-sf6-official-2026-08-16",
+        "source_ids=sava-gelaro-sf6-official-2026-08-25",
+        "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "scott-addict-rc-40": [
         "brand_id=scott",
@@ -20703,6 +21803,8 @@
         "brand_id=twitter",
         "frame.configuration_notes.source_id=twitter-v3-official-2026-08-16",
         "frame.geometry.source_id=twitter-v3-wireless-official-2026-08-25",
+        "source_ids=public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
+        "source_ids=public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27",
         "source_ids=twitter-company-profile",
         "source_ids=twitter-v3-factory-store-2026-08-25",
         "source_ids=twitter-v3-official",
@@ -20712,6 +21814,8 @@
       "twitter-gravel-v3-2024": [
         "brand_id=twitter",
         "frame.configuration_notes.source_id=twitter-gravel-v3-2024-taobao-2026-08-21",
+        "frame.geometry.source_id=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+        "source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "source_ids=twitter-gravel-v3-2024-taobao-2026-08-21",
         "successor.platform_id=twitter-gravel-v3"
       ],
@@ -20802,6 +21906,9 @@
       ],
       "incolor-voyager-frameset": [
         "platform_id=incolor-voyager",
+        "source_ids=incolor-services-official-2026-08-26",
+        "source_ids=incolor-voyager-official-2026-08-25",
+        "source_ids=incolor-voyager-official-brochure-2026-08-25",
         "source_ids=incolor-voyager-retailer"
       ],
       "lightcarbon-lcg071s-pro-frameset": [
@@ -20826,6 +21933,7 @@
       ],
       "quick-gr-one-frameset": [
         "platform_id=quick-gr-one",
+        "source_ids=quick-gr-one-china-official-2026-08-25",
         "source_ids=quick-gr-one-official"
       ],
       "rinasclta-gr025-frameset": [
@@ -20843,7 +21951,9 @@
         "platform_id=sava-gelaro",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=sava-gelaro-s4-official",
-        "source_ids=sava-gelaro-s4-official-2026-08-16"
+        "source_ids=sava-gelaro-s4-official-2026-08-16",
+        "source_ids=sava-gelaro-s4-official-2026-08-25",
+        "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "sava-gelaro-s8": [
         "platform_id=sava-gelaro-s8",
@@ -20857,7 +21967,9 @@
         "source_ids=sava-gelaro-sf6-official",
         "source_ids=sava-gelaro-sf6-official-2026-08-16",
         "source_ids=sava-gelaro-sf6-official-2026-08-17",
-        "source_ids=sava-gelaro-sf6-specifications-2026-08-25"
+        "source_ids=sava-gelaro-sf6-official-2026-08-25",
+        "source_ids=sava-gelaro-sf6-specifications-2026-08-25",
+        "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "scott-addict-rc-40": [
         "platform_id=scott-addict-rc-40",
@@ -20966,11 +22078,19 @@
         "source_ids=camp-gx600-official-2026-08-17",
         "variant_id=camp-gx600-pes"
       ],
+      "camp-gx600-official-2026-08-25": [
+        "source_ids=camp-gx600-official-2026-08-17",
+        "variant_id=camp-gx600-pes"
+      ],
       "camp-gx700-2026-08": [
         "source_ids=camp-gx700-official",
         "variant_id=camp-gx700-grx820"
       ],
       "camp-gx700-2026-08-17": [
+        "source_ids=camp-gx700-official-2026-08-17",
+        "variant_id=camp-gx700-grx820"
+      ],
+      "camp-gx700-official-2026-08-25": [
         "source_ids=camp-gx700-official-2026-08-17",
         "variant_id=camp-gx700-grx820"
       ],
@@ -21007,6 +22127,10 @@
       "incolor-voyager-2026-08": [
         "source_ids=compiled-research-2026-08-06",
         "source_ids=incolor-voyager-retailer",
+        "variant_id=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-official-list-2026-08-25": [
+        "source_ids=incolor-voyager-official-brochure-2026-08-25",
         "variant_id=incolor-voyager-frameset"
       ],
       "lightcarbon-2026-08": [
@@ -21209,8 +22333,11 @@
       "ican-sn04-official-2026-08-08": [],
       "icanian-p9-official-2026-08-08": [],
       "incolor-services-official-2026-08-17": [],
+      "incolor-services-official-2026-08-26": [],
       "incolor-ssr-panda-podium-2026-08-17": [],
       "incolor-ssr-price-pdf-lead-2026-08-17": [],
+      "incolor-voyager-official-2026-08-25": [],
+      "incolor-voyager-official-brochure-2026-08-25": [],
       "incolor-voyager-retailer": [],
       "irefox-current-catalog-2026-08-09": [],
       "java-fuoco-top-105-official-2026-08-09": [],
@@ -21300,6 +22427,8 @@
       "public-tavelo-attack-build-2026-08-17": [],
       "public-tavelo-grow-build-2026-08-17": [],
       "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24": [],
+      "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27": [],
+      "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27": [],
       "public-winspace-g5-owner-image-2026-08-17": [],
       "public-winspace-slc3-build-2026-08-17": [],
       "public-xds-gt350-custom-build-2026-08-17": [],
@@ -21308,6 +22437,7 @@
       "public-xds-gt600-overview-2026-08-17": [],
       "public-xlab-gt8-overview-2026-08-17": [],
       "quick-2026-one-series-launch": [],
+      "quick-gr-one-china-official-2026-08-25": [],
       "quick-gr-one-official": [],
       "quick-pro-complete-collection-official-2026-08-17": [],
       "quick-pro-er-one-official-2026-08-17": [],
@@ -21367,14 +22497,18 @@
       "sava-dream-maker-official-image-2026-08-17": [],
       "sava-gelaro-s4-official": [],
       "sava-gelaro-s4-official-2026-08-16": [],
+      "sava-gelaro-s4-official-2026-08-25": [],
       "sava-gelaro-s4-official-image-2026-08-17": [],
       "sava-gelaro-s8-official-2026-08-08": [],
       "sava-gelaro-s8-official-2026-08-17": [],
+      "sava-gelaro-sf6-independent-review-2026-08-27": [],
       "sava-gelaro-sf6-official": [],
       "sava-gelaro-sf6-official-2026-08-16": [],
       "sava-gelaro-sf6-official-2026-08-17": [],
+      "sava-gelaro-sf6-official-2026-08-25": [],
       "sava-gelaro-sf6-specifications-2026-08-25": [],
       "sava-hawkeye-f20-official-2026-08-17": [],
+      "sava-jd-official-storefront-2026-08-26": [],
       "sava-r8-r8170-official-image-2026-08-17": [],
       "sava-starship-105-official-2026-08-17": [],
       "scott-addict-2026-manual-2026-08-17": [],
@@ -21474,6 +22608,7 @@
       "twitter-cyclone-gen3-et-usa-2026-08-17": [],
       "twitter-cyclone-pro-official-2026-08-17": [],
       "twitter-cyclone-r7120-official-2026-08-17": [],
+      "twitter-gravel-v3-2024-manual-mirror-2026-08-27": [],
       "twitter-gravel-v3-2024-public-listing-image-2026-08-21": [],
       "twitter-gravel-v3-2024-taobao-2026-08-21": [],
       "twitter-gravel-v3-official-2026-08-17": [],
@@ -21556,10 +22691,35 @@
         "candidate_id=camp-ace-qed",
         "source_id=camp-ace-qed-official-2026-08-08"
       ],
+      "camp-gx600-blue-gallery": [
+        "platform_id=camp-gx600",
+        "source_id=camp-gx600-official-2026-08-17",
+        "variant_ids=camp-gx600-pes"
+      ],
+      "camp-gx600-grey-gallery": [
+        "platform_id=camp-gx600",
+        "source_id=camp-gx600-official-2026-08-17",
+        "variant_ids=camp-gx600-pes"
+      ],
       "camp-gx600-primary-image": [
         "platform_id=camp-gx600",
         "source_id=camp-gx600-official",
         "variant_ids=camp-gx600-pes"
+      ],
+      "camp-gx700-black-gallery": [
+        "platform_id=camp-gx700",
+        "source_id=camp-gx700-official-2026-08-17",
+        "variant_ids=camp-gx700-grx820"
+      ],
+      "camp-gx700-gold-gallery": [
+        "platform_id=camp-gx700",
+        "source_id=camp-gx700-official-2026-08-17",
+        "variant_ids=camp-gx700-grx820"
+      ],
+      "camp-gx700-grey-gallery": [
+        "platform_id=camp-gx700",
+        "source_id=camp-gx700-official-2026-08-17",
+        "variant_ids=camp-gx700-grx820"
       ],
       "camp-gx700-primary-image": [
         "platform_id=camp-gx700",
@@ -21642,12 +22802,82 @@
         "candidate_id=missing-china-price-giant-tcr-advanced",
         "source_id=giant-tcr-advanced-0-axs-official-image-2026-08-17"
       ],
+      "ican-gra04-detail-03-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-04-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-06-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-07-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-09-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-10-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-detail-11-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-geometry-gallery": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
+      "ican-gra04-official-primary-image": [
+        "platform_id=ican-gra04",
+        "source_id=ican-gra04-official",
+        "variant_ids=ican-gra04-frameset"
+      ],
       "ican-gra04-primary-image": [
         "platform_id=ican-gra04",
         "source_id=ican-gra04-alibaba-image",
         "variant_ids=ican-gra04-frameset"
       ],
+      "ican-graro-color-eleven-gallery": [
+        "platform_id=ican-graro",
+        "source_id=ican-graro-official",
+        "variant_ids=ican-graro-frameset"
+      ],
+      "ican-graro-color-twelve-gallery": [
+        "platform_id=ican-graro",
+        "source_id=ican-graro-official",
+        "variant_ids=ican-graro-frameset"
+      ],
       "ican-graro-primary-image": [
+        "platform_id=ican-graro",
+        "source_id=ican-graro-official",
+        "variant_ids=ican-graro-frameset"
+      ],
+      "ican-graro-rear-gallery": [
+        "platform_id=ican-graro",
+        "source_id=ican-graro-official",
+        "variant_ids=ican-graro-frameset"
+      ],
+      "ican-graro-side-gallery": [
+        "platform_id=ican-graro",
+        "source_id=ican-graro-official",
+        "variant_ids=ican-graro-frameset"
+      ],
+      "ican-graro-torque-gallery": [
         "platform_id=ican-graro",
         "source_id=ican-graro-official",
         "variant_ids=ican-graro-frameset"
@@ -21664,9 +22894,34 @@
         "candidate_id=incolor-ssr",
         "source_id=incolor-ssr-panda-podium-2026-08-17"
       ],
+      "incolor-voyager-clearance-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
+        "variant_ids=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-design-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
+        "variant_ids=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-geometry-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
+        "variant_ids=incolor-voyager-frameset"
+      ],
       "incolor-voyager-primary-image": [
         "platform_id=incolor-voyager",
         "source_id=incolor-voyager-retailer",
+        "variant_ids=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-seatpost-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
+        "variant_ids=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-udh-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
         "variant_ids=incolor-voyager-frameset"
       ],
       "lightcarbon-lcg071s-pro-primary-image": [
@@ -21765,7 +23020,22 @@
         "candidate_id=pinarello-f5",
         "source_id=pinarello-f5-official-2026-08-08"
       ],
+      "quick-gr-one-black-gallery": [
+        "platform_id=quick-gr-one",
+        "source_id=quick-gr-one-official",
+        "variant_ids=quick-gr-one-frameset"
+      ],
+      "quick-gr-one-green-gallery": [
+        "platform_id=quick-gr-one",
+        "source_id=quick-gr-one-official",
+        "variant_ids=quick-gr-one-frameset"
+      ],
       "quick-gr-one-primary-image": [
+        "platform_id=quick-gr-one",
+        "source_id=quick-gr-one-official",
+        "variant_ids=quick-gr-one-frameset"
+      ],
+      "quick-gr-one-silver-gallery": [
         "platform_id=quick-gr-one",
         "source_id=quick-gr-one-official",
         "variant_ids=quick-gr-one-frameset"
@@ -21802,6 +23072,16 @@
         "candidate_id=missing-china-price-quick-pro-xr-one",
         "source_id=quick-pro-xr-one-grx-di2-official-2026-08-17"
       ],
+      "rinasclta-gr025-clearance-gallery": [
+        "platform_id=rinasclta-gr025",
+        "source_id=rinasclta-gr025-official",
+        "variant_ids=rinasclta-gr025-frameset"
+      ],
+      "rinasclta-gr025-geometry-gallery": [
+        "platform_id=rinasclta-gr025",
+        "source_id=rinasclta-gr025-official",
+        "variant_ids=rinasclta-gr025-frameset"
+      ],
       "rinasclta-gr025-primary-image": [
         "platform_id=rinasclta-gr025",
         "source_id=rinasclta-gr025-official",
@@ -21833,9 +23113,29 @@
         "source_id=sava-gelaro-s4-official",
         "variant_ids=sava-gelaro-s4-grx400"
       ],
+      "sava-gelaro-s4-black-gallery": [
+        "platform_id=sava-gelaro",
+        "source_id=sava-gelaro-s4-official-2026-08-25",
+        "variant_ids=sava-gelaro-s4-grx400"
+      ],
+      "sava-gelaro-s4-detail-gallery": [
+        "platform_id=sava-gelaro",
+        "source_id=sava-gelaro-s4-official-2026-08-25",
+        "variant_ids=sava-gelaro-s4-grx400"
+      ],
+      "sava-gelaro-s4-detail-two-gallery": [
+        "platform_id=sava-gelaro",
+        "source_id=sava-gelaro-s4-official-2026-08-25",
+        "variant_ids=sava-gelaro-s4-grx400"
+      ],
       "sava-gelaro-s4-primary-image": [
         "candidate_id=sava-gelaro-s4",
         "source_id=sava-gelaro-s4-official-image-2026-08-17"
+      ],
+      "sava-gelaro-s4-white-gallery": [
+        "platform_id=sava-gelaro",
+        "source_id=sava-gelaro-s4-official-2026-08-25",
+        "variant_ids=sava-gelaro-s4-grx400"
       ],
       "sava-gelaro-s8-primary-image": [
         "platform_id=sava-gelaro-s8",
@@ -21845,6 +23145,46 @@
       "sava-gelaro-sf-primary-image": [
         "platform_id=sava-gelaro-sf",
         "source_id=sava-gelaro-sf6-official",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-frame-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-handlebar-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-shifter-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-tires-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-u6000-black-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-u6000-gold-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-u6000-grey-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
+        "variant_ids=sava-gelaro-sf6-cues"
+      ],
+      "sava-gelaro-sf6-u6000-white-gallery": [
+        "platform_id=sava-gelaro-sf",
+        "source_id=sava-gelaro-sf6-official-2026-08-25",
         "variant_ids=sava-gelaro-sf6-cues"
       ],
       "sava-hawkeye-f20-primary-image": [
@@ -23843,6 +25183,10 @@
       "candidate-voicevelo-g-major-warranty-support-2026-08-17": [
         "target.record_id=voicevelo-g-major"
       ],
+      "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
+        "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+        "target.record_id=twitter-gravel-v3-2024"
+      ],
       "variant-bianchi-oltre-race-bom-2026-08-17": [
         "target.record_id=bianchi-oltre-race"
       ],
@@ -24129,6 +25473,7 @@
         "target.record_id=sava-gelaro-sf6-cues"
       ],
       "variant-sava-gelaro-sf6-cues-frame-weight-2026-08-17": [
+        "resolution.source_ids=sava-gelaro-sf6-independent-review-2026-08-27",
         "target.record_id=sava-gelaro-sf6-cues"
       ],
       "variant-sava-gelaro-sf6-cues-price-2026-08-25": [
@@ -24249,9 +25594,11 @@
         "target.record_id=twitter-t3-tt"
       ],
       "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25": [
+        "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-v3-2024-rs-sensah-alloy"
       ],
       "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": [
+        "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-v3-2024-rs-sensah-alloy"
       ],
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": [
@@ -24805,6 +26152,14 @@
         "support": 3
       }
     },
+    "incolor-services-official-2026-08-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "incolor-ssr-panda-podium-2026-08-17": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -24819,6 +26174,22 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "incolor-voyager-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "incolor-voyager-official-brochure-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
+        "specification": 3
       }
     },
     "incolor-voyager-retailer": {
@@ -25546,6 +26917,22 @@
         "specification": -1
       }
     },
+    "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
+    "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "public-winspace-g5-owner-image-2026-08-17": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -25608,6 +26995,14 @@
         "identity": 3,
         "price": 2,
         "specification": 1
+      }
+    },
+    "quick-gr-one-china-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "quick-gr-one-official": {
@@ -26057,6 +27452,14 @@
         "specification": 3
       }
     },
+    "sava-gelaro-s4-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
+        "specification": 3
+      }
+    },
     "sava-gelaro-s4-official-image-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26080,6 +27483,14 @@
         "identity": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "sava-gelaro-sf6-independent-review-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "generation": 1,
+        "identity": 2,
+        "specification": 0.5
       }
     },
     "sava-gelaro-sf6-official": {
@@ -26106,6 +27517,14 @@
         "specification": 3
       }
     },
+    "sava-gelaro-sf6-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
+        "specification": 3
+      }
+    },
     "sava-gelaro-sf6-specifications-2026-08-25": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26121,6 +27540,14 @@
         "image": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "sava-jd-official-storefront-2026-08-26": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "sava-r8-r8170-official-image-2026-08-17": {
@@ -26920,6 +28347,14 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "generation": 2,
+        "identity": 2,
+        "specification": 1
       }
     },
     "twitter-gravel-v3-2024-public-listing-image-2026-08-21": {
@@ -29993,6 +31428,21 @@
         "voicevelo-warranty-official-2026-08-17"
       ]
     },
+    "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 0
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Twitter Gravel V3\",\"Dedicated signed-in research Chrome exact-model XHS search\",\"blocked\",\"2026-08-26\",\"The search redirected immediately to the XHS Security Verification page before any exact post could be opened.\",null]"
+      ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"twitter-gravel-v3-2024-manual-mirror-2026-08-27\"],\"note\":\"A later exact-generation manual-mirror review resolved the published maximum at 700×40C; the blocked XHS attempt remains preserved as historical effort.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
+    },
     "variant-bianchi-oltre-race-bom-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 3,
@@ -31324,7 +32774,12 @@
         "[\"web\",2,\"SAVA Gelaro SF6 CUES frame weight official catalog\",\"official regional catalog/PDF/store\",\"no-result\",\"2026-08-17\",\"No frame-only measurement found.\",null]",
         "[\"web\",3,\"SAVA Gelaro SF6 CUES frame weight exact-SKU dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact option-specific frame weight located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"sava-gelaro-sf6-independent-review-2026-08-27\"],\"note\":\"A later exact-model review supplied an approximate 1,100 g frame observation after the original three-route pass was exhausted.\"}"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-sf6-independent-review-2026-08-27"
+      ]
     },
     "variant-sava-gelaro-sf6-cues-price-2026-08-25": {
       "channel_attempt_counts": {
@@ -31823,7 +33278,12 @@
         "[\"web\",2,\"TWITTER Gravel V3 press-fit frameset frame weight official\",\"official regional frameset page\",\"rejected\",\"2026-08-25\",\"A 1.35 kg official-store frame claim is tied to a BB86 listing, not the exact BB92 seller record.\",null]",
         "[\"web\",3,\"TWITTER Gravel V3 2024 frame weight exact generation\",\"manual or exact-generation dealer\",\"no-result\",\"2026-08-25\",\"No source resolved the bottom-bracket/generation mismatch strongly enough to transfer a frame weight.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"twitter-gravel-v3-2024-manual-mirror-2026-08-27\"],\"note\":\"A later matching press-fit V3 manual mirror supplied the frame and fork weight claims after the original XHS/web pass ended.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
     },
     "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25": {
       "channel_attempt_counts": {
@@ -31836,7 +33296,12 @@
         "[\"web\",2,\"TWITTER Gravel V3 BB86 frameset max tire clearance official\",\"official regional frameset page\",\"rejected\",\"2026-08-25\",\"The 40C claim belongs to a BB86 listing and cannot be transferred to the exact BB92 seller record.\",null]",
         "[\"web\",3,\"TWITTER Gravel V3 2024 max tire exact generation\",\"manual or exact-generation dealer\",\"no-result\",\"2026-08-25\",\"No exact-generation source distinguished stock tire size from safe published maximum.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"twitter-gravel-v3-2024-manual-mirror-2026-08-27\"],\"note\":\"A later matching press-fit V3 manual mirror supplied a 700×40C maximum after the original XHS/web pass ended.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
     },
     "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
@@ -31951,12 +33416,47 @@
       "remote_required": true,
       "primary_required": true
     },
+    "camp-gx600-blue-gallery": {
+      "target": "platforms:camp-gx600",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "camp-gx600-grey-gallery": {
+      "target": "platforms:camp-gx600",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "camp-gx600-primary-image": {
       "target": "platforms:camp-gx600",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "camp-gx700-black-gallery": {
+      "target": "platforms:camp-gx700",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "camp-gx700-gold-gallery": {
+      "target": "platforms:camp-gx700",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "camp-gx700-grey-gallery": {
+      "target": "platforms:camp-gx700",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "camp-gx700-primary-image": {
       "target": "platforms:camp-gx700",
@@ -32091,6 +33591,69 @@
       "remote_required": true,
       "primary_required": true
     },
+    "ican-gra04-detail-03-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-04-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-06-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-07-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-09-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-10-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-detail-11-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-geometry-gallery": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-gra04-official-primary-image": {
+      "target": "platforms:ican-gra04",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "ican-gra04-primary-image": {
       "target": "platforms:ican-gra04",
       "minimum_accuracy_rank": 4,
@@ -32098,12 +33661,47 @@
       "remote_required": true,
       "primary_required": true
     },
+    "ican-graro-color-eleven-gallery": {
+      "target": "platforms:ican-graro",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-graro-color-twelve-gallery": {
+      "target": "platforms:ican-graro",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "ican-graro-primary-image": {
       "target": "platforms:ican-graro",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "ican-graro-rear-gallery": {
+      "target": "platforms:ican-graro",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-graro-side-gallery": {
+      "target": "platforms:ican-graro",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "ican-graro-torque-gallery": {
+      "target": "platforms:ican-graro",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "icanian-p9-primary-image": {
       "target": "candidates:icanian-p9",
@@ -32126,12 +33724,47 @@
       "remote_required": true,
       "primary_required": true
     },
+    "incolor-voyager-clearance-gallery": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "incolor-voyager-design-gallery": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "incolor-voyager-geometry-gallery": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "incolor-voyager-primary-image": {
       "target": "platforms:incolor-voyager",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
+    },
+    "incolor-voyager-seatpost-gallery": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "incolor-voyager-udh-gallery": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "lightcarbon-lcg071s-pro-primary-image": {
       "target": "platforms:lightcarbon-lcg071s-pro",
@@ -32294,12 +33927,33 @@
       "remote_required": true,
       "primary_required": true
     },
+    "quick-gr-one-black-gallery": {
+      "target": "platforms:quick-gr-one",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "quick-gr-one-green-gallery": {
+      "target": "platforms:quick-gr-one",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "quick-gr-one-primary-image": {
       "target": "platforms:quick-gr-one",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "quick-gr-one-silver-gallery": {
+      "target": "platforms:quick-gr-one",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "quick-pro-er-one-primary-image": {
       "target": "candidates:quick-pro-er-one",
@@ -32357,6 +34011,20 @@
       "remote_required": true,
       "primary_required": true
     },
+    "rinasclta-gr025-clearance-gallery": {
+      "target": "platforms:rinasclta-gr025",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "rinasclta-gr025-geometry-gallery": {
+      "target": "platforms:rinasclta-gr025",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "rinasclta-gr025-primary-image": {
       "target": "platforms:rinasclta-gr025",
       "minimum_accuracy_rank": 4,
@@ -32406,12 +34074,40 @@
       "remote_required": true,
       "primary_required": true
     },
+    "sava-gelaro-s4-black-gallery": {
+      "target": "platforms:sava-gelaro",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-s4-detail-gallery": {
+      "target": "platforms:sava-gelaro",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-s4-detail-two-gallery": {
+      "target": "platforms:sava-gelaro",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "sava-gelaro-s4-primary-image": {
       "target": "candidates:sava-gelaro-s4",
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "sava-gelaro-s4-white-gallery": {
+      "target": "platforms:sava-gelaro",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "sava-gelaro-s8-primary-image": {
       "target": "platforms:sava-gelaro-s8",
@@ -32426,6 +34122,62 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "sava-gelaro-sf6-frame-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-handlebar-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-shifter-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-tires-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-u6000-black-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-u6000-gold-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-u6000-grey-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "sava-gelaro-sf6-u6000-white-gallery": {
+      "target": "platforms:sava-gelaro-sf",
+      "minimum_accuracy_rank": -1,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "sava-hawkeye-f20-primary-image": {
       "target": "candidates:sava-f20-hawkeye",
@@ -33348,7 +35100,7 @@
     },
     "platforms:ican-gra04": {
       "minimum_accuracy_rank": 4,
-      "minimum_source_tier": 1,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "platforms:ican-graro": {

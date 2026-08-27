@@ -66,6 +66,9 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(script, /key === 'capability' \|\| key === 'tire'/);
   assert.match(script, /row\.dataset\.tireClearanceSort/);
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
+  assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: 144px;[\s\S]*?z-index: 34;/);
+  assert.match(styles, /@media \(max-width: 1220px\)[\s\S]*?\.catalog-head \{ top: 212px; \}/);
+  assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-head \{ display: none; \}/);
 });
 
 test('candidate discovery stays URL-addressable without repeated missing-data warnings', () => {

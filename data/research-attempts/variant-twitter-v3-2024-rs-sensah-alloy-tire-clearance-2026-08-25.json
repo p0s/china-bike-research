@@ -22,8 +22,14 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["twitter-gravel-v3-2024-manual-mirror-2026-08-27"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": ["twitter-gravel-v3-2024-manual-mirror-2026-08-27"],
+    "note": "A later matching press-fit V3 manual mirror supplied a 700×40C maximum after the original XHS/web pass ended."
+  },
   "retry_after": null,
-  "notes": "Bounded 2026-08-25 pass. Keep 40C as stock fit only; maximum clearance stays unknown."
+  "notes": "The original bounded attempts remain immutable; the later source resolves the published maximum at 40 mm while preserving the separate bottom-bracket wording conflict."
 }

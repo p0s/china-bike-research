@@ -129,6 +129,53 @@ test('candidates without a recorded category show an honest unknown instead of u
   assert.doesNotMatch(detail, />undefined</);
 });
 
+test('published frame pages show exact-model galleries and component weight context', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-25T00:00:00Z')
+  };
+  const quick = products.find((entry) => entry.variant.id === 'quick-gr-one-frameset');
+  const quickDetail = renderModel(context, quick);
+  assert.match(quickDetail, /data-image-gallery/);
+  assert.equal((quickDetail.match(/data-gallery-thumb/g) ?? []).length, 4);
+  assert.match(quickDetail, /Ice Crack Silver/);
+  assert.match(quickDetail, /<dt>Frame weight<\/dt><dd>919 g<\/dd>/);
+  assert.match(quickDetail, /<dt>Fork weight<\/dt><dd>459 g<\/dd>/);
+  assert.match(quickDetail, /<dt>Seatpost weight<\/dt><dd>169 g<\/dd>/);
+  assert.match(quickDetail, /5 sizes \(XS\/426–XL\/546\) · stack 524–599 mm · reach 370–405 mm/);
+
+  const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
+  const incolorDetail = renderModel(context, incolor);
+  assert.equal((incolorDetail.match(/data-gallery-thumb/g) ?? []).length, 6);
+  assert.match(incolorDetail, /Est\. ¥13,800/);
+  assert.match(incolorDetail, /5 sizes \(45–57\) · stack 515–580 mm · reach 358–397 mm/);
+});
+
+test('complete-bike pages expose researched build components and weight basis without another profile section', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-26T00:00:00Z')
+  };
+  const gx600 = products.find((entry) => entry.variant.id === 'camp-gx600-pes');
+  const gx600Detail = renderModel(context, gx600);
+  assert.match(gx600Detail, /<dt>Weight basis<\/dt><dd>Official small-size complete-bike weight excluding pedals and small accessories<\/dd>/);
+  assert.match(gx600Detail, /<dt>Drivetrain build<\/dt><dd>Crank: Yuyong 42T aluminum integrated-axle crank · Cassette: HR 12-speed 11–45T<\/dd>/);
+  assert.match(gx600Detail, /<dt>Brakes<\/dt><dd>Hydraulic disc · Calipers: Tektro hydraulic<\/dd>/);
+
+  const gx700 = products.find((entry) => entry.variant.id === 'camp-gx700-grx820');
+  const gx700Detail = renderModel(context, gx700);
+  assert.match(gx700Detail, /45 mm stock/);
+  assert.match(gx700Detail, /Shifters: ST-RX820 · RD: RD-RX822 · Crank: FC-RX610 36T · Cassette: CS-M6100 12-speed 10–51T/);
+});
+
 test('superseded published bikes show availability instead of a historical price headline', () => {
   const context = {
     data,

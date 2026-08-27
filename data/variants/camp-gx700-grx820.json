@@ -35,7 +35,11 @@
     "model": "GRX RX820/RX822",
     "speeds": "1x12",
     "shifting": "mechanical",
-    "layout": "single"
+    "layout": "single",
+    "shifters": "ST-RX820",
+    "rear_derailleur": "RD-RX822",
+    "crankset": "FC-RX610 36T",
+    "cassette": "CS-M6100 12-speed 10–51T"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -50,5 +54,6 @@
     "integrated": true
   },
   "claimed_complete_weight_g": 10200,
-  "purchase_route": "Official add-to-cart route at CNY 9,999 observed 2026-08-17; confirm exact size stock and checkout total."
+  "claimed_complete_weight_basis": "Official small-size complete-bike weight excluding pedals and small accessories",
+  "purchase_route": "CAMP official add-to-cart page and JD Buy Now route; CNY 9,999 observed 2026-08-25, with delivery and stock checkout-dependent"
 }
