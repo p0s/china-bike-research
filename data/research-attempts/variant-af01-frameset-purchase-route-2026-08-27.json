@@ -1,0 +1,14 @@
+{
+  "id": "variant-af01-frameset-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "af01-frameset" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "AF01 Standard buy direct", "route": "manufacturer direct checkout", "outcome": "found", "result_url": "https://afbicycles.com/products/af01-standard-carbon-gravel-frame", "accessed_at": "2026-08-27", "note": "Exact model is purchasable with or without handlebar selection." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["af01-official"],
+  "notes": "Direct route resolved; mainland warranty and CNY checkout remain separate unknowns."
+}

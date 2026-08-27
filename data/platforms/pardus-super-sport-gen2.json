@@ -10,15 +10,31 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "unknown",
-    "derailleur_hanger": "standard",
-    "cable_routing": "fully-internal"
+    "bottom_bracket": "BSA 68",
+    "derailleur_hanger": "UDH",
+    "cable_routing": "fully-internal",
+    "geometry": {
+      "basis": "manufacturer geometry table",
+      "source_id": "pardus-super-sport-gen2-official-2026-08-27",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        { "size": "XXS", "reach_mm": 351.5, "stack_mm": 515.6, "standover_mm": 728.3, "top_tube_mm": 494.5, "head_angle_deg": 69.5, "seat_angle_deg": 74.5, "wheelbase_mm": 963.7, "chainstay_mm": 420, "front_center_mm": 581, "bb_drop_mm": 70, "seat_tube_mm": 430, "head_tube_mm": 113.3, "fork_offset_mm": 55, "fork_length_mm": 382 },
+        { "size": "XS", "reach_mm": 365.3, "stack_mm": 537.6, "standover_mm": 743.8, "top_tube_mm": 519.5, "head_angle_deg": 70.5, "seat_angle_deg": 74, "wheelbase_mm": 1000.7, "chainstay_mm": 420, "front_center_mm": 592.3, "bb_drop_mm": 75, "seat_tube_mm": 420, "head_tube_mm": 127.2, "fork_offset_mm": 55, "fork_length_mm": 382 },
+        { "size": "S", "reach_mm": 376.2, "stack_mm": 557.2, "standover_mm": 773, "top_tube_mm": 536, "head_angle_deg": 72.5, "seat_angle_deg": 74, "wheelbase_mm": 1003.6, "chainstay_mm": 420, "front_center_mm": 584, "bb_drop_mm": 75, "seat_tube_mm": 455, "head_tube_mm": 142.5, "fork_offset_mm": 50, "fork_length_mm": 382 },
+        { "size": "M", "reach_mm": 386, "stack_mm": 575.6, "standover_mm": 798.8, "top_tube_mm": 556, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1014.6, "chainstay_mm": 425, "front_center_mm": 600.9, "bb_drop_mm": 75, "seat_tube_mm": 486, "head_tube_mm": 157.6, "fork_offset_mm": 50, "fork_length_mm": 382 },
+        { "size": "L", "reach_mm": 395, "stack_mm": 590.46, "standover_mm": 822.5, "top_tube_mm": 570, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1029.8, "chainstay_mm": 425, "front_center_mm": 615, "bb_drop_mm": 72, "seat_tube_mm": 510, "head_tube_mm": 176.4, "fork_offset_mm": 50, "fork_length_mm": 382 },
+        { "size": "XL", "reach_mm": 408, "stack_mm": 620.46, "standover_mm": 855.4, "top_tube_mm": 591.8, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1052.2, "chainstay_mm": 425, "front_center_mm": 637.4, "bb_drop_mm": 72, "seat_tube_mm": 645, "head_tube_mm": 207.8, "fork_offset_mm": 50, "fork_length_mm": 382 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "industry-report",
+    "evidence": "official",
     "eligibility": "pass",
-    "note": "Launch coverage states 40C capability; leave more caution for mud than on a true 45–50C gravel frame.",
+    "note": "Manufacturer specifies a 700x40C maximum for both frame and fork; leave more mud margin than the nominal maximum.",
     "published_max_mm": 40
   },
   "mounts": [],
@@ -28,7 +44,8 @@
     "pardus-super-sport-launch",
     "pardus-company-official",
     "pardus-super-sport-egr-888bike-2026-08-17",
-    "pardus-super-sport-launch-wildto-2026-08-17"
+    "pardus-super-sport-launch-wildto-2026-08-17",
+    "pardus-super-sport-gen2-official-2026-08-27"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-27"
 }

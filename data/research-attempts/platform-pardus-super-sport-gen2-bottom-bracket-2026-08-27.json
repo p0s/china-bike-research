@@ -1,0 +1,26 @@
+{
+  "id": "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "pardus-super-sport-gen2" },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "extension_reload_required",
+      "attempts": [
+        { "attempt": 1, "query": "瑞豹 Super Sport 2 电变 重量 价格 中轴", "route": "host-global XHS capture pool", "outcome": "blocked", "accessed_at": "2026-08-27", "note": "Runtime version preflight stopped before opening XHS." }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "PARDUS SUPG2 SPORT BSA 68 UDH", "route": "manufacturer exact-model page", "outcome": "found", "result_url": "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446", "accessed_at": "2026-08-27", "note": "Official platform specification states BSA 68 mm and UDH." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["pardus-super-sport-gen2-official-2026-08-27"],
+  "notes": "Resolved the shared platform bottom-bracket and hanger fields."
+}

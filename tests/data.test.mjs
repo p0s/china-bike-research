@@ -53,7 +53,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
-  assert.equal(data.prices.length, 47);
+  assert.equal(data.prices.length, 48);
   assert.equal(data.images.length, 169);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -62,7 +62,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 200);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 350);
+  assert.equal(data.researchAttempts.length, 372);
   assert.equal(products.length, data.variants.length);
 });
 

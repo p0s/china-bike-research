@@ -1,0 +1,14 @@
+{
+  "id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "sava-gelaro-s4-grx400" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "SAVA official China Gelaro S4 purchase", "route": "manufacturer China product page", "outcome": "found", "result_url": "https://www.savabike.com/sys-pd/3364.html", "accessed_at": "2026-08-27", "note": "Exact model has a manufacturer purchase action; official JD and global factory-direct routes are also available." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-s4-official-2026-08-25", "sava-jd-official-storefront-2026-08-26"],
+  "notes": "Route is resolved even though a comparable CNY checkout price is not."
+}

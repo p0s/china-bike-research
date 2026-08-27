@@ -77,8 +77,15 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777"
+    "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777",
+    "pardus-super-sport-egr-888bike-2026-08-17"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": ["pardus-super-sport-egr-888bike-2026-08-17"],
+    "note": "The exact retailer source was normalized into a durable source record and reused for the weight basis."
+  },
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Exact EGR size-M retailer claim is approximately 8.6 kg; weighing method and pedal inclusion remain unknown."
 }

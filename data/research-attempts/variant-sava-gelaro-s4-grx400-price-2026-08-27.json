@@ -1,0 +1,18 @@
+{
+  "id": "variant-sava-gelaro-s4-grx400-price-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "sava-gelaro-s4-grx400" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "SAVA Gelaro S4 GRX400 current price", "route": "manufacturer global checkout", "outcome": "rejected", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike", "accessed_at": "2026-08-27", "note": "US$1,799 is current but not a mainland CNY checkout." },
+    { "attempt": 2, "query": "萨瓦 越界 S4 GRX400 京东 价格", "route": "official China page and JD storefront", "outcome": "no-result", "result_url": "https://www.savabike.com/sys-pd/3364.html", "accessed_at": "2026-08-27", "note": "Purchase route exists but no stable exact-option CNY checkout was captured." },
+    { "attempt": 3, "query": "SAVA Gelaro S4 淘宝 大陆 到手价", "route": "mainland marketplace search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No attributable exact-package CNY checkout was available." }
+  ] } },
+  "status": "blocked",
+  "retry_after": "2026-09-03",
+  "notes": "Current mainland price remains empty."
+}

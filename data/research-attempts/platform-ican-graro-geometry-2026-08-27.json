@@ -1,0 +1,18 @@
+{
+  "id": "platform-ican-graro-geometry-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "ican-graro" },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "ICAN Graro current geometry", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://icanwheels.com/collections/gravel-bike-frame/products/graro?variant=44628319469804", "accessed_at": "2026-08-27", "note": "Current page supplies sizes and specifications but no numeric geometry table." },
+    { "attempt": 2, "query": "ICAN Graro geometry 2026 stack reach", "route": "public web search", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "A 2024 geometry record was found but not applied to the current revision without a model-year bridge." },
+    { "attempt": 3, "query": "ICAN Graro manual geometry PDF", "route": "manual and catalog search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No current exact-revision numeric table was found." }
+  ] } },
+  "status": "blocked",
+  "retry_after": "2026-09-10",
+  "notes": "Current numeric geometry remains empty."
+}

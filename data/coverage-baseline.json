@@ -6,8 +6,8 @@
       "brands": 36,
       "platforms": 36,
       "variants": 38,
-      "prices": 47,
-      "sources": 420,
+      "prices": 48,
+      "sources": 425,
       "images": 169,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 200,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 350
+      "researchAttempts": 372
     },
     "image_accuracy": {
       "exact-platform": 55,
@@ -173,6 +173,7 @@
       "lightcarbon-2026-08",
       "lightcarbon-speedz-complete-price-2026-08-08",
       "lightcarbon-speedz-frameset-price-2026-08-08",
+      "pardus-super-sport-gen2-egr-market-2026-08-25",
       "pardus-super-sport-launch-2026",
       "quick-gr-one-2026-08",
       "quick-gr-one-launch-2025-05",
@@ -202,6 +203,7 @@
       "yoeleo-altera-2026-08"
     ],
     "sources": [
+      "af01-manual-2026-08-27",
       "af01-official",
       "bianchi-oltre-race-armenia-2026-08-17",
       "bianchi-oltre-race-dealer-2026-08-17",
@@ -248,8 +250,10 @@
       "elves-warranty-official-2026-08-27",
       "elves-warranty-registration-2026-08-17",
       "evolve-cima-gr-official-2026-08-17",
+      "evolve-cima-gr-pandapodium-2026-08-27",
       "evolve-cima-gr-spectrum-2026-08-09",
       "evolve-cima-official",
+      "evolve-gravel-faq-2026-08-27",
       "felt-ia-2-official-2026-08-08",
       "giant-china-dealer-locator-2026-08-17",
       "giant-china-defy-advanced-2-official-2026-08-17",
@@ -318,6 +322,8 @@
       "pardus-spark-sport-official-cn-2026-08-17",
       "pardus-spark-sport-official-global-2026-08-17",
       "pardus-super-sport-egr-888bike-2026-08-17",
+      "pardus-super-sport-gen2-douyin-2026-08-27",
+      "pardus-super-sport-gen2-official-2026-08-27",
       "pardus-super-sport-gen2-uaecycle-2026-08-17",
       "pardus-super-sport-image-reference",
       "pardus-super-sport-launch",
@@ -1276,7 +1282,20 @@
       "candidate-winspace-g5-mainland-price-2026-08-27",
       "candidate-xlab-gt8-price-2026-08-27",
       "candidate-xlab-gt8-purchase-route-2026-08-27",
+      "platform-af01-frame-weight-2026-08-27",
+      "platform-af01-geometry-2026-08-27",
+      "platform-bxt-055-geometry-2026-08-27",
+      "platform-evolve-cima-gr-frame-weight-2026-08-27",
+      "platform-evolve-cima-gr-geometry-2026-08-27",
+      "platform-ican-graro-geometry-2026-08-27",
+      "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
+      "platform-pardus-super-sport-gen2-geometry-2026-08-27",
+      "platform-sava-gelaro-bottom-bracket-2026-08-27",
+      "platform-sava-gelaro-frame-weight-2026-08-27",
+      "platform-tfsa-jh37-geometry-2026-08-27",
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
+      "variant-af01-frameset-price-2026-08-27",
+      "variant-af01-frameset-purchase-route-2026-08-27",
       "variant-bianchi-oltre-race-bom-2026-08-17",
       "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
       "variant-bianchi-oltre-race-cockpit-2026-08-17",
@@ -1291,6 +1310,8 @@
       "variant-bianchi-oltre-race-tires-2026-08-17",
       "variant-bianchi-oltre-race-warranty-support-2026-08-17",
       "variant-bianchi-oltre-race-wheels-2026-08-17",
+      "variant-bxt-055-frameset-price-2026-08-27",
+      "variant-bxt-055-frameset-purchase-route-2026-08-27",
       "variant-camp-gx600-pes-bottom-bracket-2026-08-17",
       "variant-camp-gx600-pes-frame-weight-2026-08-17",
       "variant-camp-gx600-pes-geometry-2026-08-17",
@@ -1317,6 +1338,9 @@
       "variant-elves-falath-r7170-warranty-support-2026-08-17",
       "variant-elves-falath-r7170-wheels-2026-08-17",
       "variant-elves-mori-aerox-frameset-price-2026-08-25",
+      "variant-evolve-cima-gr-frameset-price-2026-08-27",
+      "variant-evolve-cima-gr-frameset-purchase-route-2026-08-27",
+      "variant-ican-graro-frameset-price-2026-08-27",
       "variant-lightcarbon-lcg071s-package-2026-08-27",
       "variant-lightcarbon-lcg071s-price-2026-08-27",
       "variant-lightcarbon-speedz-complete-bom-2026-08-17",
@@ -1350,6 +1374,7 @@
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17",
       "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17",
       "variant-pardus-super-sport-gen2-egr-image-2026-08-17",
+      "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27",
       "variant-pardus-super-sport-gen2-egr-price-2026-08-17",
       "variant-pardus-super-sport-gen2-egr-purchase-route-2026-08-17",
       "variant-pardus-super-sport-gen2-egr-tire-clearance-2026-08-17",
@@ -1363,6 +1388,8 @@
       "variant-sava-a7l-r7100-purchase-route-2026-08-17",
       "variant-sava-a7l-r7100-tires-2026-08-17",
       "variant-sava-a7l-r7100-wheels-2026-08-17",
+      "variant-sava-gelaro-s4-grx400-price-2026-08-27",
+      "variant-sava-gelaro-s4-grx400-purchase-route-2026-08-27",
       "variant-sava-gelaro-s8-bottom-bracket-2026-08-17",
       "variant-sava-gelaro-s8-cockpit-2026-08-17",
       "variant-sava-gelaro-s8-complete-weight-2026-08-17",
@@ -1384,6 +1411,7 @@
       "variant-scott-addict-rc-40-purchase-route-2026-08-17",
       "variant-scott-addict-rc-40-tires-2026-08-17",
       "variant-scott-addict-rc-40-wheels-2026-08-17",
+      "variant-tfsa-jh37-frameset-price-2026-08-27",
       "variant-twitter-cyclone-electronic-bom-2026-08-17",
       "variant-twitter-cyclone-electronic-bottom-bracket-2026-08-17",
       "variant-twitter-cyclone-electronic-cockpit-2026-08-17",
@@ -1867,9 +1895,17 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -1915,7 +1951,12 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_seatpost_weight_basis",
+        "frame.claimed_seatpost_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -2090,9 +2131,25 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_by_size_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_frame_weight_g_by_size.L",
+        "frame.claimed_frame_weight_g_by_size.M",
+        "frame.claimed_frame_weight_g_by_size.ML",
+        "frame.claimed_frame_weight_g_by_size.S",
+        "frame.claimed_frame_weight_g_by_size.XL",
+        "frame.claimed_frame_weight_g_by_size.XS",
+        "frame.claimed_unpainted_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2280,6 +2337,11 @@
         "frame.cable_routing",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2647,6 +2709,7 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
@@ -2943,6 +3006,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "bianchi-oltre-race": [
@@ -2984,6 +3048,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "camp-gx600-pes": [
@@ -3117,6 +3182,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "ican-gra04-frameset": [
@@ -3215,10 +3281,13 @@
       "pardus-super-sport-gen2-egr": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
+        "drivetrain.cassette",
+        "drivetrain.crankset",
         "drivetrain.layout",
         "drivetrain.model",
         "drivetrain.shifting",
@@ -3487,6 +3556,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "twitter-cyclone-electronic": [
@@ -3938,6 +4008,17 @@
         "status",
         "variant_id"
       ],
+      "pardus-super-sport-gen2-egr-market-2026-08-25": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
       "pardus-super-sport-launch-2026": [
         "amount_cny",
         "channel",
@@ -4260,6 +4341,18 @@
       ]
     },
     "sources": {
+      "af01-manual-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "af01-official": [
         "accessed_at",
         "language",
@@ -4824,6 +4917,18 @@
         "type",
         "url"
       ],
+      "evolve-cima-gr-pandapodium-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "evolve-cima-gr-spectrum-2026-08-09": [
         "accessed_at",
         "language",
@@ -4837,6 +4942,18 @@
         "url"
       ],
       "evolve-cima-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "evolve-gravel-faq-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -5671,6 +5788,30 @@
         "url"
       ],
       "pardus-super-sport-egr-888bike-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-super-sport-gen2-douyin-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-super-sport-gen2-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -20386,6 +20527,172 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-af01-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-af01-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-bxt-055-geometry-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-evolve-cima-gr-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-evolve-cima-gr-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-ican-graro-geometry-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-pardus-super-sport-gen2-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-bottom-bracket-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-frame-weight-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tfsa-jh37-geometry-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -20400,6 +20707,34 @@
         "resolution.note",
         "resolution.resolved_at",
         "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-af01-frameset-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-af01-frameset-purchase-route-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -20601,6 +20936,34 @@
         "target.record_type"
       ],
       "variant-bianchi-oltre-race-wheels-2026-08-17": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-bxt-055-frameset-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-bxt-055-frameset-purchase-route-2026-08-27": [
         "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
@@ -20991,6 +21354,49 @@
         "notes",
         "priority",
         "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-evolve-cima-gr-frameset-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-evolve-cima-gr-frameset-purchase-route-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-ican-graro-frameset-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -21425,6 +21831,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -21492,6 +21902,21 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-pardus-super-sport-gen2-egr-price-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -21503,6 +21928,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -21668,6 +22097,34 @@
       "variant-sava-a7l-r7100-wheels-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-sava-gelaro-s4-grx400-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-sava-gelaro-s4-grx400-purchase-route-2026-08-27": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -21962,6 +22419,21 @@
         "notes",
         "priority",
         "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-tfsa-jh37-frameset-price-2026-08-27": [
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -22543,6 +23015,8 @@
     "platforms": {
       "af01": [
         "brand_id=af-bicycles",
+        "frame.geometry.source_id=af01-manual-2026-08-27",
+        "source_ids=af01-manual-2026-08-27",
         "source_ids=af01-official"
       ],
       "bianchi-oltre-race": [
@@ -22588,8 +23062,11 @@
       ],
       "evolve-cima-gr": [
         "brand_id=evolve",
+        "frame.geometry.source_id=evolve-cima-gr-pandapodium-2026-08-27",
         "source_ids=compiled-research-2026-08-06",
-        "source_ids=evolve-cima-official"
+        "source_ids=evolve-cima-gr-pandapodium-2026-08-27",
+        "source_ids=evolve-cima-official",
+        "source_ids=evolve-gravel-faq-2026-08-27"
       ],
       "ican-gra04": [
         "brand_id=ican",
@@ -22624,8 +23101,10 @@
       ],
       "pardus-super-sport-gen2": [
         "brand_id=pardus",
+        "frame.geometry.source_id=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
+        "source_ids=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-super-sport-launch",
         "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
       ],
@@ -22774,6 +23253,7 @@
     "variants": {
       "af01-frameset": [
         "platform_id=af01",
+        "source_ids=af01-manual-2026-08-27",
         "source_ids=af01-official"
       ],
       "bianchi-oltre-race": [
@@ -22820,6 +23300,7 @@
       "evolve-cima-gr-frameset": [
         "platform_id=evolve-cima-gr",
         "source_ids=compiled-research-2026-08-06",
+        "source_ids=evolve-cima-gr-pandapodium-2026-08-27",
         "source_ids=evolve-cima-official"
       ],
       "ican-gra04-frameset": [
@@ -22857,6 +23338,8 @@
         "platform_id=pardus-super-sport-gen2",
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
+        "source_ids=pardus-super-sport-gen2-douyin-2026-08-27",
+        "source_ids=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-super-sport-launch",
         "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
       ],
@@ -23080,6 +23563,10 @@
         "source_ids=taobao-snapshot-2026-08-08",
         "variant_id=lightcarbon-speedz-frameset"
       ],
+      "pardus-super-sport-gen2-egr-market-2026-08-25": [
+        "source_ids=pardus-super-sport-gen2-douyin-2026-08-27",
+        "variant_id=pardus-super-sport-gen2-egr"
+      ],
       "pardus-super-sport-launch-2026": [
         "source_ids=pardus-super-sport-launch",
         "variant_id=pardus-super-sport-gen2-egr"
@@ -23203,6 +23690,7 @@
       ]
     },
     "sources": {
+      "af01-manual-2026-08-27": [],
       "af01-official": [],
       "bianchi-oltre-race-armenia-2026-08-17": [],
       "bianchi-oltre-race-dealer-2026-08-17": [],
@@ -23249,8 +23737,10 @@
       "elves-warranty-official-2026-08-27": [],
       "elves-warranty-registration-2026-08-17": [],
       "evolve-cima-gr-official-2026-08-17": [],
+      "evolve-cima-gr-pandapodium-2026-08-27": [],
       "evolve-cima-gr-spectrum-2026-08-09": [],
       "evolve-cima-official": [],
+      "evolve-gravel-faq-2026-08-27": [],
       "felt-ia-2-official-2026-08-08": [],
       "giant-china-dealer-locator-2026-08-17": [],
       "giant-china-defy-advanced-2-official-2026-08-17": [],
@@ -23319,6 +23809,8 @@
       "pardus-spark-sport-official-cn-2026-08-17": [],
       "pardus-spark-sport-official-global-2026-08-17": [],
       "pardus-super-sport-egr-888bike-2026-08-17": [],
+      "pardus-super-sport-gen2-douyin-2026-08-27": [],
+      "pardus-super-sport-gen2-official-2026-08-27": [],
       "pardus-super-sport-gen2-uaecycle-2026-08-17": [],
       "pardus-super-sport-image-reference": [],
       "pardus-super-sport-launch": [],
@@ -26260,9 +26752,48 @@
       "candidate-xlab-gt8-purchase-route-2026-08-27": [
         "target.record_id=missing-china-price-x-lab-xds-gt8"
       ],
+      "platform-af01-frame-weight-2026-08-27": [
+        "target.record_id=af01"
+      ],
+      "platform-af01-geometry-2026-08-27": [
+        "target.record_id=af01"
+      ],
+      "platform-bxt-055-geometry-2026-08-27": [
+        "target.record_id=bxt-055"
+      ],
+      "platform-evolve-cima-gr-frame-weight-2026-08-27": [
+        "target.record_id=evolve-cima-gr"
+      ],
+      "platform-evolve-cima-gr-geometry-2026-08-27": [
+        "target.record_id=evolve-cima-gr"
+      ],
+      "platform-ican-graro-geometry-2026-08-27": [
+        "target.record_id=ican-graro"
+      ],
+      "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27": [
+        "target.record_id=pardus-super-sport-gen2"
+      ],
+      "platform-pardus-super-sport-gen2-geometry-2026-08-27": [
+        "target.record_id=pardus-super-sport-gen2"
+      ],
+      "platform-sava-gelaro-bottom-bracket-2026-08-27": [
+        "target.record_id=sava-gelaro"
+      ],
+      "platform-sava-gelaro-frame-weight-2026-08-27": [
+        "target.record_id=sava-gelaro"
+      ],
+      "platform-tfsa-jh37-geometry-2026-08-27": [
+        "target.record_id=tfsa-jh37"
+      ],
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-gravel-v3-2024"
+      ],
+      "variant-af01-frameset-price-2026-08-27": [
+        "target.record_id=af01-frameset"
+      ],
+      "variant-af01-frameset-purchase-route-2026-08-27": [
+        "target.record_id=af01-frameset"
       ],
       "variant-bianchi-oltre-race-bom-2026-08-17": [
         "target.record_id=bianchi-oltre-race"
@@ -26305,6 +26836,12 @@
       ],
       "variant-bianchi-oltre-race-wheels-2026-08-17": [
         "target.record_id=bianchi-oltre-race"
+      ],
+      "variant-bxt-055-frameset-price-2026-08-27": [
+        "target.record_id=bxt-055-frameset"
+      ],
+      "variant-bxt-055-frameset-purchase-route-2026-08-27": [
+        "target.record_id=bxt-055-frameset"
       ],
       "variant-camp-gx600-pes-bottom-bracket-2026-08-17": [
         "target.record_id=camp-gx600-pes"
@@ -26386,6 +26923,15 @@
       ],
       "variant-elves-mori-aerox-frameset-price-2026-08-25": [
         "target.record_id=elves-mori-aerox-frameset"
+      ],
+      "variant-evolve-cima-gr-frameset-price-2026-08-27": [
+        "target.record_id=evolve-cima-gr-frameset"
+      ],
+      "variant-evolve-cima-gr-frameset-purchase-route-2026-08-27": [
+        "target.record_id=evolve-cima-gr-frameset"
+      ],
+      "variant-ican-graro-frameset-price-2026-08-27": [
+        "target.record_id=ican-graro-frameset"
       ],
       "variant-lightcarbon-lcg071s-package-2026-08-27": [
         "target.record_id=lightcarbon-lcg071s-pro-frameset"
@@ -26472,6 +27018,7 @@
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-complete-weight-2026-08-17": [
+        "resolution.source_ids=pardus-super-sport-egr-888bike-2026-08-17",
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-2026-08-17": [
@@ -26486,7 +27033,11 @@
       "variant-pardus-super-sport-gen2-egr-image-2026-08-17": [
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
+      "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": [
+        "target.record_id=pardus-super-sport-gen2-egr"
+      ],
       "variant-pardus-super-sport-gen2-egr-price-2026-08-17": [
+        "resolution.source_ids=pardus-super-sport-gen2-douyin-2026-08-27",
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-purchase-route-2026-08-17": [
@@ -26524,6 +27075,12 @@
       ],
       "variant-sava-a7l-r7100-wheels-2026-08-17": [
         "target.record_id=sava-a7l-r7100"
+      ],
+      "variant-sava-gelaro-s4-grx400-price-2026-08-27": [
+        "target.record_id=sava-gelaro-s4-grx400"
+      ],
+      "variant-sava-gelaro-s4-grx400-purchase-route-2026-08-27": [
+        "target.record_id=sava-gelaro-s4-grx400"
       ],
       "variant-sava-gelaro-s8-bottom-bracket-2026-08-17": [
         "target.record_id=sava-gelaro-s8"
@@ -26588,6 +27145,9 @@
       ],
       "variant-scott-addict-rc-40-wheels-2026-08-17": [
         "target.record_id=scott-addict-rc-40"
+      ],
+      "variant-tfsa-jh37-frameset-price-2026-08-27": [
+        "target.record_id=tfsa-jh37-frameset"
       ],
       "variant-twitter-cyclone-electronic-bom-2026-08-17": [
         "target.record_id=twitter-cyclone-electronic"
@@ -26705,6 +27265,14 @@
     }
   },
   "source_quality": {
+    "af01-manual-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "af01-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -27086,6 +27654,14 @@
         "specification": 3
       }
     },
+    "evolve-cima-gr-pandapodium-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
+        "specification": 3
+      }
+    },
     "evolve-cima-gr-spectrum-2026-08-09": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -27100,6 +27676,14 @@
         "identity": 3,
         "price": 1,
         "specification": 2
+      }
+    },
+    "evolve-gravel-faq-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "felt-ia-2-official-2026-08-08": {
@@ -27664,6 +28248,22 @@
         "identity": 2,
         "price": 2,
         "specification": 2
+      }
+    },
+    "pardus-super-sport-gen2-douyin-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "pardus-super-sport-gen2-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "pardus-super-sport-gen2-uaecycle-2026-08-17": {
@@ -32917,6 +33517,140 @@
         "xlab-gt8-smzdm-market-report-2026-08-27"
       ]
     },
+    "platform-af01-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 Standard frame weight finished\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Page distinguishes 1,200 g finished including hardware/paint from 980 g raw.\",\"https://afbicycles.com/products/af01-standard-carbon-gravel-frame\"]"
+      ],
+      "accepted_source_ids": [
+        "af01-official"
+      ]
+    },
+    "platform-af01-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 official manual geometry\",\"manufacturer manual\",\"found\",\"2026-08-27\",\"Manual supplies complete XS–XXL geometry.\",\"https://cdn.shopify.com/s/files/1/0702/5278/9927/files/AF01_English_ys.pdf?v=1777367540\"]"
+      ],
+      "accepted_source_ids": [
+        "af01-manual-2026-08-27"
+      ]
+    },
+    "platform-bxt-055-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"BXT-055 official geometry\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Current page exposes sizes and specifications but no numeric geometry table.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]",
+        "[\"web\",2,\"BXT 055 geometry stack reach\",\"public web search\",\"rejected\",\"2026-08-27\",\"Unversioned secondary diagrams could not be tied safely to the current 2026 frame.\",null]",
+        "[\"web\",3,\"BXT-055 manual PDF geometry\",\"manual and catalog search\",\"no-result\",\"2026-08-27\",\"No current exact-model manual with geometry was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-evolve-cima-gr-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Evolve CIMA GR real-world frame weights\",\"manufacturer and authorized-retailer exact-model pages\",\"found\",\"2026-08-27\",\"Captured painted size/color examples and separate 750 g M / 375 g fork unpainted claims.\",\"https://www.pandapodium.cc/product/deposit-evolve-cima-gr-carbon-gravel-bike-frameset/\"]"
+      ],
+      "accepted_source_ids": [
+        "evolve-cima-gr-pandapodium-2026-08-27",
+        "evolve-cima-official"
+      ]
+    },
+    "platform-evolve-cima-gr-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Evolve CIMA GR geometry\",\"exact-model authorized-retailer page\",\"found\",\"2026-08-27\",\"Page exposes the complete XS–XL geometry table including 30C/40C/50C standover.\",\"https://www.pandapodium.cc/product/deposit-evolve-cima-gr-carbon-gravel-bike-frameset/\"]"
+      ],
+      "accepted_source_ids": [
+        "evolve-cima-gr-pandapodium-2026-08-27"
+      ]
+    },
+    "platform-ican-graro-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"ICAN Graro current geometry\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Current page supplies sizes and specifications but no numeric geometry table.\",\"https://icanwheels.com/collections/gravel-bike-frame/products/graro?variant=44628319469804\"]",
+        "[\"web\",2,\"ICAN Graro geometry 2026 stack reach\",\"public web search\",\"rejected\",\"2026-08-27\",\"A 2024 geometry record was found but not applied to the current revision without a model-year bridge.\",null]",
+        "[\"web\",3,\"ICAN Graro manual geometry PDF\",\"manual and catalog search\",\"no-result\",\"2026-08-27\",\"No current exact-revision numeric table was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"瑞豹 Super Sport 2 电变 重量 价格 中轴\",\"host-global XHS capture pool\",\"blocked\",\"2026-08-27\",\"Runtime version preflight stopped before opening XHS.\",null]",
+        "[\"web\",1,\"PARDUS SUPG2 SPORT BSA 68 UDH\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Official platform specification states BSA 68 mm and UDH.\",\"https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-super-sport-gen2-official-2026-08-27"
+      ]
+    },
+    "platform-pardus-super-sport-gen2-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS SUPG2 SPORT official geometry\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Official page exposes the complete XXS–XL table.\",\"https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-super-sport-gen2-official-2026-08-27"
+      ]
+    },
+    "platform-sava-gelaro-bottom-bracket-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S4 R21 GRX400 BBT47\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Exact R21-GRX400-20S specification lists BBT47.\",\"https://savadeck-bike.com/cs/collections/us-sklad-kola/products/sava-gelaro-s4-grx400-carbon-gravel-bike-us?variant=46661826150539\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s4-official-2026-08-25"
+      ]
+    },
+    "platform-sava-gelaro-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S4 frame weight R21\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Page publishes only approximate complete-bike weight.\",\"https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike\"]",
+        "[\"web\",2,\"萨瓦 Gelaro 越界 S4 车架 重量\",\"manufacturer China page and indexed images\",\"no-result\",\"2026-08-27\",\"No frame-only weight was exposed.\",\"https://www.savabike.com/sys-pd/3364.html\"]",
+        "[\"web\",3,\"SAVA Gelaro R21 frameset weight\",\"authorized retail and specification mirrors\",\"no-result\",\"2026-08-27\",\"Only the approximate complete-bike weight repeated.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-tfsa-jh37-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TFSA JH37 official geometry\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Current page lists sizes and specifications but no geometry table.\",\"https://www.tfsabike.com/product/carbon-gravel-frame-jh-37/\"]",
+        "[\"web\",2,\"TFSA JH37 geometry stack reach\",\"public web search\",\"no-result\",\"2026-08-27\",\"No exact-model numeric table found.\",null]",
+        "[\"web\",3,\"TFSA JH37 catalog PDF geometry\",\"manual and catalog search\",\"no-result\",\"2026-08-27\",\"No exact-model table was published in accessible documentation.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": {
       "channel_attempt_counts": {
         "public-post": 1,
@@ -32930,6 +33664,29 @@
       ],
       "accepted_source_ids": [
         "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
+    },
+    "variant-af01-frameset-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 Standard frame current price\",\"manufacturer direct checkout\",\"rejected\",\"2026-08-27\",\"Selected Canwin-handlebar option is US$1,099; not a mainland CNY checkout.\",\"https://afbicycles.com/products/af01-standard-carbon-gravel-frame\"]",
+        "[\"web\",2,\"AF01 车架 中国 价格\",\"public web search\",\"no-result\",\"2026-08-27\",\"No exact current mainland package price found.\",null]",
+        "[\"web\",3,\"AF Bicycles AF01 mainland reseller checkout\",\"China dealer search\",\"no-result\",\"2026-08-27\",\"No attributable CNY checkout package found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-af01-frameset-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 Standard buy direct\",\"manufacturer direct checkout\",\"found\",\"2026-08-27\",\"Exact model is purchasable with or without handlebar selection.\",\"https://afbicycles.com/products/af01-standard-carbon-gravel-frame\"]"
+      ],
+      "accepted_source_ids": [
+        "af01-official"
       ]
     },
     "variant-bianchi-oltre-race-bom-2026-08-17": {
@@ -33136,6 +33893,29 @@
       ],
       "accepted_source_ids": [
         "bianchi-oltre-race-dealer-2026-08-17"
+      ]
+    },
+    "variant-bxt-055-frameset-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"BXT-055 current price official\",\"manufacturer direct checkout\",\"rejected\",\"2026-08-27\",\"US$599 is exact and current but not a mainland CNY checkout.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]",
+        "[\"web\",2,\"BXT 055 车架 人民币 价格\",\"public web search\",\"no-result\",\"2026-08-27\",\"No exact current mainland package observation found.\",null]",
+        "[\"web\",3,\"BXT-055 淘宝 京东 当前价格\",\"mainland marketplace search\",\"no-result\",\"2026-08-27\",\"No exact current single-package CNY checkout found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-bxt-055-frameset-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"BXT-055 buy official worldwide\",\"manufacturer direct checkout\",\"found\",\"2026-08-27\",\"Exact option is listed in stock with destination-specific worldwide shipping.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]"
+      ],
+      "accepted_source_ids": [
+        "bxt-055-official"
       ]
     },
     "variant-camp-gx600-pes-bottom-bracket-2026-08-17": {
@@ -33491,6 +34271,42 @@
         "[\"web\",1,\"Elves Mori AeroX current price official technical page\",\"manufacturer technical page\",\"no-result\",\"2026-08-25\",\"The technical page provides specifications and a buy link but no mainland price.\",null]",
         "[\"web\",2,\"Elves Mori AeroX official store price\",\"official global exact-model checkout\",\"rejected\",\"2026-08-25\",\"The US$998 official-store amount is a foreign reference, not a mainland CNY observation.\",null]",
         "[\"web\",3,\"ELVES Mori AeroX 中国 车架 价格\",\"mainland marketplace or dealer\",\"no-result\",\"2026-08-25\",\"No attributable exact mainland package and dated CNY price was captured.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-evolve-cima-gr-frameset-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Evolve CIMA GR frame only price\",\"authorized-retailer preorder\",\"rejected\",\"2026-08-27\",\"US$1,999 regular / US$1,899 preorder is exact but not mainland CNY checkout evidence.\",\"https://www.pandapodium.cc/product/deposit-evolve-cima-gr-carbon-gravel-bike-frameset/\"]",
+        "[\"web\",2,\"Evolve CIMA GR 中国 价格\",\"manufacturer and public web search\",\"no-result\",\"2026-08-27\",\"No exact mainland CNY checkout found.\",null]",
+        "[\"web\",3,\"Evolve CIMA GR mainland dealer price\",\"China dealer search\",\"no-result\",\"2026-08-27\",\"No attributable exact-package CNY observation found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-evolve-cima-gr-frameset-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Evolve CIMA GR preorder buy\",\"manufacturer and authorized-retailer exact-model pages\",\"found\",\"2026-08-27\",\"Manufacturer coupon route and authorized-retailer preorder route are live.\",\"https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/\"]"
+      ],
+      "accepted_source_ids": [
+        "evolve-cima-gr-pandapodium-2026-08-27",
+        "evolve-cima-official"
+      ]
+    },
+    "variant-ican-graro-frameset-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"ICAN Graro current price China warehouse\",\"manufacturer direct checkout\",\"rejected\",\"2026-08-27\",\"US$899 and China-warehouse selection are current, but no mainland CNY checkout amount is shown.\",\"https://icanwheels.com/collections/gravel-bike-frame/products/graro?variant=44628319469804\"]",
+        "[\"web\",2,\"ICAN Graro 人民币 价格\",\"public web search\",\"no-result\",\"2026-08-27\",\"No exact comparable CNY package observation found.\",null]",
+        "[\"web\",3,\"ICAN Graro China reseller checkout\",\"China dealer search\",\"no-result\",\"2026-08-27\",\"No attributable exact-package CNY checkout found.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -33921,7 +34737,11 @@
         "[\"web\",2,\"PARDUS SUPG2 SPORT 2026 EGR China regional complete weight\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"JD result shows SUPG2 SPORT 105, not EGR.\",\"https://www.jd.com/xinkuan/131884f2cdeb220d8236.html\"]",
         "[\"web\",3,\"PARDUS SUPG2 SPORT 2026 EGR exact SKU weight\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"found\",\"2026-08-17\",\"Exact SKU-11484 listing offers EGR and claims about 8.6 kg for size M.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
       ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"pardus-super-sport-egr-888bike-2026-08-17\"],\"note\":\"The exact retailer source was normalized into a durable source record and reused for the weight basis.\"}"
+      ],
       "accepted_source_ids": [
+        "pardus-super-sport-egr-888bike-2026-08-17",
         "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777"
       ]
     },
@@ -33985,6 +34805,18 @@
       ],
       "accepted_source_ids": []
     },
+    "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Super Sport Gen2 eGR official image\",\"manufacturer exact-model page\",\"rejected\",\"2026-08-27\",\"Exact images are visible but no reusable-media rights basis was found.\",null]",
+        "[\"web\",2,\"PARDUS SUPG2 SPORT EGR authorized retailer photos\",\"authorized-retailer exact-SKU page\",\"rejected\",\"2026-08-27\",\"Exact option imagery has no documented redistribution permission.\",null]",
+        "[\"web\",3,\"瑞豹 Super Sport 二代 蓝图 eGR 公开图片\",\"public image and post search\",\"rejected\",\"2026-08-27\",\"Attribution alone is not a reuse-rights basis; an embed is required.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "variant-pardus-super-sport-gen2-egr-price-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 3,
@@ -33998,8 +34830,12 @@
         "[\"web\",2,\"PARDUS Super Sport Gen2 EGR 4999元\",\"manufacturer/industry China launch route\",\"rejected\",\"2026-08-17\",\"Wildto's 2026-03-19 launch coverage gives CNY 4,999 for the EGR 1x12 build.\",\"https://www.wildto.com/news/58865.html\"]",
         "[\"web\",3,\"PARDUS Super Sport Gen2 EGR current China price\",\"official manufacturer current catalog route\",\"no-result\",\"2026-08-17\",\"PARDUS official root/catalog did not expose a current dated China checkout price.\",null]"
       ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-27\",\"source_ids\":[\"pardus-super-sport-gen2-douyin-2026-08-27\"],\"note\":\"A current public exact-model video transcript supplies a new CNY 4,999 market observation without discarding the earlier bounded search.\"}"
+      ],
       "accepted_source_ids": [
         "pardus-super-sport-egr-888bike-2026-08-17",
+        "pardus-super-sport-gen2-douyin-2026-08-27",
         "pardus-super-sport-launch-wildto-2026-08-17"
       ]
     },
@@ -34157,6 +34993,30 @@
       ],
       "accepted_source_ids": [
         "sava-a7l-official-global-2026-08-17"
+      ]
+    },
+    "variant-sava-gelaro-s4-grx400-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S4 GRX400 current price\",\"manufacturer global checkout\",\"rejected\",\"2026-08-27\",\"US$1,799 is current but not a mainland CNY checkout.\",\"https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike\"]",
+        "[\"web\",2,\"萨瓦 越界 S4 GRX400 京东 价格\",\"official China page and JD storefront\",\"no-result\",\"2026-08-27\",\"Purchase route exists but no stable exact-option CNY checkout was captured.\",\"https://www.savabike.com/sys-pd/3364.html\"]",
+        "[\"web\",3,\"SAVA Gelaro S4 淘宝 大陆 到手价\",\"mainland marketplace search\",\"no-result\",\"2026-08-27\",\"No attributable exact-package CNY checkout was available.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-sava-gelaro-s4-grx400-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA official China Gelaro S4 purchase\",\"manufacturer China product page\",\"found\",\"2026-08-27\",\"Exact model has a manufacturer purchase action; official JD and global factory-direct routes are also available.\",\"https://www.savabike.com/sys-pd/3364.html\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s4-official-2026-08-25",
+        "sava-jd-official-storefront-2026-08-26"
       ]
     },
     "variant-sava-gelaro-s8-bottom-bracket-2026-08-17": {
@@ -34404,6 +35264,18 @@
       "accepted_source_ids": [
         "scott-addict-rc-40-poland-2026-08-17"
       ]
+    },
+    "variant-tfsa-jh37-frameset-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TFSA JH37 price\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Manufacturer route is quote-only.\",\"https://www.tfsabike.com/product/carbon-gravel-frame-jh-37/\"]",
+        "[\"web\",2,\"TFSA JH37 Alibaba price\",\"marketplace search\",\"rejected\",\"2026-08-27\",\"US$319–370 lead requires MOQ 2 and is not a single-unit mainland CNY retail package.\",null]",
+        "[\"web\",3,\"TFSA JH37 direct quote single unit CNY\",\"manufacturer quote route review\",\"no-result\",\"2026-08-27\",\"No public single-unit quote was exposed.\",null]"
+      ],
+      "accepted_source_ids": []
     },
     "variant-twitter-cyclone-electronic-bom-2026-08-17": {
       "channel_attempt_counts": {

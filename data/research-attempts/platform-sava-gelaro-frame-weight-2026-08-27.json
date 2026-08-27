@@ -1,0 +1,18 @@
+{
+  "id": "platform-sava-gelaro-frame-weight-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro" },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "SAVA Gelaro S4 frame weight R21", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike", "accessed_at": "2026-08-27", "note": "Page publishes only approximate complete-bike weight." },
+    { "attempt": 2, "query": "萨瓦 Gelaro 越界 S4 车架 重量", "route": "manufacturer China page and indexed images", "outcome": "no-result", "result_url": "https://www.savabike.com/sys-pd/3364.html", "accessed_at": "2026-08-27", "note": "No frame-only weight was exposed." },
+    { "attempt": 3, "query": "SAVA Gelaro R21 frameset weight", "route": "authorized retail and specification mirrors", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Only the approximate complete-bike weight repeated." }
+  ] } },
+  "status": "blocked",
+  "retry_after": "2026-09-10",
+  "notes": "Complete-bike weight remains available; frame-only weight stays empty."
+}

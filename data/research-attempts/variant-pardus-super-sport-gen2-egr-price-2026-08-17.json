@@ -74,11 +74,18 @@
       ]
     }
   },
-  "status": "blocked",
+  "status": "found",
   "accepted_source_ids": [
     "pardus-super-sport-egr-888bike-2026-08-17",
-    "pardus-super-sport-launch-wildto-2026-08-17"
+    "pardus-super-sport-launch-wildto-2026-08-17",
+    "pardus-super-sport-gen2-douyin-2026-08-27"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": ["pardus-super-sport-gen2-douyin-2026-08-27"],
+    "note": "A current public exact-model video transcript supplies a new CNY 4,999 market observation without discarding the earlier bounded search."
+  },
   "retry_after": null,
-  "notes": "Round-four official/web completion. A dated China launch price and a current Thailand authorized-retailer price were found; no current mainland-China price as of the audit date was verified. Keep the existing 2026-08-08 observation authoritative for current China-market pricing."
+  "notes": "The current CNY 4,999 figure is a public-market observation, not a guaranteed checkout price."
 }

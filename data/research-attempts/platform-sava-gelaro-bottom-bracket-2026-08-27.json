@@ -1,0 +1,16 @@
+{
+  "id": "platform-sava-gelaro-bottom-bracket-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro" },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "SAVA Gelaro S4 R21 GRX400 BBT47", "route": "manufacturer exact-model page", "outcome": "found", "result_url": "https://savadeck-bike.com/cs/collections/us-sklad-kola/products/sava-gelaro-s4-grx400-carbon-gravel-bike-us?variant=46661826150539", "accessed_at": "2026-08-27", "note": "Exact R21-GRX400-20S specification lists BBT47." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-s4-official-2026-08-25"],
+  "notes": "Normalized the seller label BBT47 to T47 while preserving it in parentheses."
+}
