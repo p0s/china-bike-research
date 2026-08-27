@@ -142,7 +142,7 @@ npm run check
 
 For UI changes, inspect desktop and mobile behavior, keyboard access, popovers, image-failure handling, video fallbacks, filters, and GitHub Pages base-path routing. Add or update focused tests for behavior changes. Do not add dependencies or top-level pages without a clear need and maintainer sign-off.
 
-The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-17 unified 226-row catalog with internal candidate links measures 789,207 HTML bytes and 6,500 elements; it is capped at 820,000 bytes and 6,750 elements. Desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
+The static build enforces a documented homepage HTML/DOM budget so catalog growth cannot silently degrade the primary route. The 2026-08-27 unified 239-row catalog with production project-base links, typed filters, and Build handoff measures 861,439 HTML bytes and 6,622 elements; it is capped at 875,000 bytes and 6,750 elements. Desktop and mobile browser checks are required when this baseline changes. Budget changes require a measured browser rationale.
 
 Research bundles are evidence inputs, not publication authority. A dated marketplace snapshot may support an exact price observation, but a price is attachable only to the exact variant it identifies. Split or ambiguous trims remain candidates. Raw captures stay local; selected source-attributed images may become public data assets only through the media and privacy contract above.
 

@@ -155,11 +155,12 @@ const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSi
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map((route) => `  <url><loc>${xml(`${siteUrl}${base}${route}`)}</loc><lastmod>${data.meta.snapshot_date}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-// The 235-row unified catalog with production project-base links measured
-// 825,471 bytes and 6,529 elements on 2026-08-20. These limits retain modest growth headroom while
+// The 239-row unified catalog with production project-base links, typed filters,
+// and Build handoff measured 861,439 bytes and 6,622 elements on 2026-08-27.
+// These limits retain modest growth headroom while
 // keeping the full candidate set available without a second page or client-side
 // data fetch.
-const performanceBudget = { home_html_bytes: 850_000, home_elements: 6_750 };
+const performanceBudget = { home_html_bytes: 875_000, home_elements: 6_750 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
