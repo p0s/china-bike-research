@@ -7,15 +7,18 @@
   "why_interesting": "An exact-model build supplies unusually detailed drivetrain compatibility, while a dated independent review adds 45 mm clearance and extensive mounting evidence.",
   "missing": [
     "Current official exact-generation product page and stock complete-bike BOM",
-    "Claimed stock weight, current mainland price and exact EVO stock state",
-    "Current exact-model purchase route, warranty and service conditions"
+    "Current mainland price and exact EVO stock state",
+    "Exact EVO warranty duration and claim conditions"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-pardus-uragano-evo-build-2026-08-17",
     "pardus-uragano-jd-route-2026-08-17",
-    "biketo-pardus-uragano-evo-review-2023"
+    "biketo-pardus-uragano-evo-review-2023",
+    "pardus-current-gravel-catalog-2026-08-27",
+    "pardus-uragano-evo-uae-seller-2026-08-27",
+    "pardus-dealer-locator-2026-08-27"
   ],
   "facts": {
     "drivetrain": "Custom SRAM Apex AXS controls with X1 Eagle AXS rear derailleur, 40T and 11-50",
@@ -23,9 +26,11 @@
     "bottom_bracket": "T47×68",
     "cockpit": "Carbon gravel cockpit with 20-degree flare",
     "frame": "Carbon frame reported in the dated BIKETO review",
+    "complete_weight_g": 9000,
+    "complete_weight_basis": "Seller-listed Rival XPLR build, size M; foreign sold-out configuration",
     "tire_clearance_mm": 45,
     "mounts": "Front and rear rack, fork, bottle and fender mounts"
   },
-  "source_note": "An official mainland marketplace storefront route is established for the family. The detailed component list remains a public custom build, not a factory configuration, and exact EVO stock is unresolved. The 45 mm clearance and mounts come from a 2023 independent review, not a current official product page; the public build independently shows 700x40C tires fitted.",
-  "last_reviewed": "2026-08-24"
+  "source_note": "Official mainland dealer and marketplace routes are established for the family, but the current official catalog exposes Uragano RX600 and Sport rather than an EVO page. A sold-out foreign exact-model Rival XPLR listing supports a 9.0 kg size-M value but not current China stock or price. The detailed public-post component list remains a custom build, not a factory configuration.",
+  "last_reviewed": "2026-08-27"
 }

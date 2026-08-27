@@ -11,6 +11,12 @@ export const supportedCategories = [
   'e-road', 'folding', 'triathlon'
 ];
 
+export const buildSlotIds = [
+  'drivetrain', 'brakes', 'crankset', 'cassette', 'chain', 'bottom-bracket',
+  'rotors', 'wheelset', 'tires', 'tubes-sealant', 'cockpit', 'saddle',
+  'pedals', 'bar-tape', 'assembly'
+];
+
 const categoryLabels = {
   road: 'Road',
   'road-race': 'Road race',
@@ -169,6 +175,7 @@ export function loadDataset() {
     images: loadDirectory('images'),
     videos: loadDirectory('videos'),
     groupsets: loadDirectory('groupsets'),
+    buildParts: loadDirectory('build-parts'),
     recommendations: loadDirectory('recommendations'),
     candidates: loadDirectory('candidates'),
     exclusions: loadDirectory('exclusions'),
@@ -219,6 +226,7 @@ export function validateDataset(data = loadDataset()) {
     image: data.images,
     video: data.videos,
     groupset: data.groupsets,
+    buildPart: data.buildParts,
     recommendation: data.recommendations,
     candidate: data.candidates,
     exclusion: data.exclusions,
@@ -315,6 +323,43 @@ export function validateDataset(data = loadDataset()) {
         }
       }
     }
+  }
+
+  const buildSlotSet = new Set(buildSlotIds);
+  const defaultBuildPartsBySlot = new Map();
+  for (const part of data.buildParts) {
+    requireFields('build part', part, [
+      'maker', 'name', 'slot', 'status', 'weight', 'compatibility',
+      'included_components', 'source_ids', 'reviewed_at'
+    ]);
+    if (!buildSlotSet.has(part.slot)) errors.push(`build part ${part.id}: invalid slot ${part.slot}`);
+    if (!Array.isArray(part.included_components) || !part.included_components.length) errors.push(`build part ${part.id}: included_components must not be empty`);
+    if (!isObject(part.weight) || !['known', 'unknown'].includes(part.weight?.status)) errors.push(`build part ${part.id}: invalid weight status`);
+    if (part.weight?.status === 'known' && (!Number.isFinite(part.weight.grams) || part.weight.grams <= 0)) errors.push(`build part ${part.id}: known weight needs positive grams`);
+    if (typeof part.weight?.basis !== 'string' || !part.weight.basis.trim()) errors.push(`build part ${part.id}: missing weight basis`);
+    if (!['measured', 'official', 'seller claim', 'community report', 'inferred', 'unknown'].includes(part.weight?.claim_type)) errors.push(`build part ${part.id}: invalid weight claim_type`);
+    if (part.weight?.source_id && !sourceIds.has(part.weight.source_id)) errors.push(`build part ${part.id}: missing weight source ${part.weight.source_id}`);
+    if (!isObject(part.compatibility)) errors.push(`build part ${part.id}: compatibility must be an object`);
+    const covered = part.covers ?? [];
+    if (!Array.isArray(covered) || covered.some((slot) => !buildSlotSet.has(slot) || slot === part.slot) || new Set(covered).size !== covered.length) errors.push(`build part ${part.id}: invalid covers`);
+    if (part.groupset_id && !data.groupsets.some((groupset) => groupset.id === part.groupset_id)) errors.push(`build part ${part.id}: missing groupset ${part.groupset_id}`);
+    if (part.price_observation !== undefined) {
+      const price = part.price_observation;
+      if (!isObject(price)) errors.push(`build part ${part.id}: price_observation must be an object`);
+      else {
+        if (!Number.isFinite(price.amount_cny) || price.amount_cny <= 0) errors.push(`build part ${part.id}: invalid price amount`);
+        if (!isDate(price.observed_at)) errors.push(`build part ${part.id}: invalid price date`);
+        if (typeof price.price_type !== 'string' || !price.price_type.trim()) errors.push(`build part ${part.id}: missing price type`);
+        if (typeof price.package_basis !== 'string' || !price.package_basis.trim()) errors.push(`build part ${part.id}: missing package basis`);
+        if (!sourceIds.has(price.source_id)) errors.push(`build part ${part.id}: missing price source ${price.source_id}`);
+      }
+    }
+    for (const sourceId of part.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`build part ${part.id}: missing source ${sourceId}`);
+    if (!isDate(part.reviewed_at)) errors.push(`build part ${part.id}: invalid reviewed_at`);
+    if (part.default === true) defaultBuildPartsBySlot.set(part.slot, (defaultBuildPartsBySlot.get(part.slot) ?? 0) + 1);
+  }
+  for (const [slot, count] of defaultBuildPartsBySlot) {
+    if (count > 1) errors.push(`build parts: slot ${slot} has ${count} defaults`);
   }
   const exclusionIds = new Set(data.exclusions.map((x) => x.id));
   const videoIds = new Set(data.videos.map((x) => x.id));
@@ -528,7 +573,6 @@ export function validateDataset(data = loadDataset()) {
     if (image.candidate_id !== undefined && !candidateIds.has(image.candidate_id)) errors.push(`image ${image.id}: missing candidate ${image.candidate_id}`);
     if (!['primary', 'gallery'].includes(image.role)) errors.push(`image ${image.id}: unsupported role ${image.role}`);
     if (image.buyer_visibility !== undefined && !['show', 'omit'].includes(image.buyer_visibility)) errors.push(`image ${image.id}: invalid buyer_visibility`);
-    if (image.role === 'gallery' && image.candidate_id === undefined) errors.push(`image ${image.id}: gallery images currently require a candidate target`);
     if (!accuracyValues.has(image.subject_accuracy)) errors.push(`image ${image.id}: invalid subject_accuracy`);
     if (!mediaValues.has(image.media_type)) errors.push(`image ${image.id}: invalid media_type`);
     if (!isDate(image.reviewed_at)) errors.push(`image ${image.id}: invalid reviewed_at`);
@@ -730,11 +774,24 @@ export function joinProducts(data = loadDataset()) {
           ? selectedImage.subject_accuracy
           : 'same-platform'
     } : null;
+    const galleryImages = platformImages
+      .filter((item) => item.role === 'gallery' && (!(item.variant_ids?.length) || item.variant_ids.includes(variant.id)))
+      .sort((a, b) => (a.sort_order ?? Number.POSITIVE_INFINITY) - (b.sort_order ?? Number.POSITIVE_INFINITY) || a.id.localeCompare(b.id))
+      .map((item) => ({
+        ...item,
+        display_accuracy: item.variant_ids?.includes(variant.id)
+          ? item.subject_accuracy
+          : item.subject_accuracy === 'exact-variant'
+            ? 'same-platform'
+            : item.subject_accuracy,
+        source: sources.get(item.source_id) ?? null
+      }));
     const sourceIds = new Set([
       ...(variant.source_ids ?? []),
       ...(platform.source_ids ?? []),
       ...prices.flatMap((price) => price.source_ids ?? []),
-      ...(image?.source_id ? [image.source_id] : [])
+      ...(image?.source_id ? [image.source_id] : []),
+      ...galleryImages.map((item) => item.source_id)
     ]);
     const videos = data.videos
       .filter((video) => video.target?.platform_id === platform.id || video.target?.variant_id === variant.id)
@@ -748,6 +805,7 @@ export function joinProducts(data = loadDataset()) {
       allInPrice: allInPriceFor(variant, latestPrice, data),
       image,
       imageSource: image ? sources.get(image.source_id) ?? null : null,
+      galleryImages,
       videos,
       sources: [...sourceIds].map((id) => sources.get(id)).filter(Boolean)
     };
@@ -883,6 +941,7 @@ export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not applicable';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
+  if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm`;
   return 'Unverified';
@@ -891,6 +950,7 @@ export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not recorded for this category';
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
+  if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock fit; maximum unverified`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;
   if (c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock; maximum unverified`;
   return 'Unverified';

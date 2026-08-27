@@ -1,0 +1,19 @@
+{
+  "id": "candidate-seka-exaero-road-identity-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "seka-exaero-road" },
+  "field": "exact-model-identity",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "SEKA ExAero exact road model", "route": "validated XHS detail archive", "outcome": "found", "result_url": "https://www.xiaohongshu.com/explore/6a7ee74d0000000006004fde", "accessed_at": "2026-08-27", "note": "Public SEKA account post identifies the new ExAero road platform and seven-size/cockpit family." }
+    ] },
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "SEKA ExAero official road frameset", "route": "manufacturer exact-model page", "outcome": "found", "result_url": "https://www.sekabikes.com/en/exaero-2/", "accessed_at": "2026-08-27", "note": "Official road-model page distinguishes ExAero from ExAero GR." }
+    ] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["seka-exaero-road-official-2026-08-27", "public-seka-exaero-build-2026-08-17"],
+  "notes": "The prior GR query produced useful evidence for a different exact product. It is now routed to a dedicated road ExAero candidate instead of being discarded or attached to ExAero GR. Archive SHA-256: bc193e33e68dcd684892c062bada155feb1008a20e2d582d19404f9ead800590."
+}

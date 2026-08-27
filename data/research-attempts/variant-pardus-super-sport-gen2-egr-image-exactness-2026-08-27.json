@@ -1,0 +1,22 @@
+{
+  "id": "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "pardus-super-sport-gen2-egr" },
+  "field": "image-exactness",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "PARDUS Super Sport Gen2 eGR official image", "route": "manufacturer exact-model page", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Exact images are visible but no reusable-media rights basis was found." },
+        { "attempt": 2, "query": "PARDUS SUPG2 SPORT EGR authorized retailer photos", "route": "authorized-retailer exact-SKU page", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Exact option imagery has no documented redistribution permission." },
+        { "attempt": 3, "query": "瑞豹 Super Sport 二代 蓝图 eGR 公开图片", "route": "public image and post search", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Attribution alone is not a reuse-rights basis; an embed is required." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "retry_after": "2026-08-28",
+  "notes": "No image was copied. Retry XHS after the extension reload and use an embed unless reuse rights are documented."
+}

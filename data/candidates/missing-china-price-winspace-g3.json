@@ -7,41 +7,44 @@
   "why_interesting": "Exact official global complete-bike evidence with materially useful specifications; mainland market facts remain unresolved.",
   "missing": [
     "Dated mainland-China RMB observation and purchase route",
-    "Current mainland stock, checkout conditions and warranty handling",
-    "Resolve the same-site global price conflict and verify complete weight"
+    "Current mainland stock, checkout conditions and warranty handling"
   ],
   "status": "official-global-reference",
   "existing_record_id": "winspace-g3-frameset",
   "catalog_distinct_reason": "This is an exact complete-bike build; the referenced published record is the frameset-only configuration.",
   "research_priority": "high",
   "price_status": "official global reference only; mainland CNY price unverified",
-  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling; Resolve the same-site global price conflict and verify complete weight, BB and maximum clearance",
-  "last_reviewed": "2026-08-17",
+  "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; current mainland stock, checkout conditions and warranty handling",
+  "last_reviewed": "2026-08-27",
   "source_ids": [
     "winspace-g3-pro-di2-official-2026-08-17",
+    "winspace-g3-pro-di2-official-2026-08-27",
     "winspace-g3-official-2026-08-17",
+    "winspace-warranty-official-2026-08-27",
     "usd-cny-central-parity-2026-07-31"
   ],
   "official_price": {
-    "amount_cny": 26472,
+    "amount_cny": 27830,
     "currency": "CNY",
     "price_type": "reference-conversion",
-    "observed_at": "2026-08-17",
-    "original_amount": 3899,
+    "observed_at": "2026-08-27",
+    "original_amount": 4099,
     "original_currency": "USD",
     "conversion_rate_cny_per_original_unit": 6.7894,
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.winspace.cc/collections/complete-bike/products/g3-gravel-pro-di2",
-  "source_note": "Official product and collection pages support the exact build but conflict at US$3,899 versus US$4,099. The displayed reference uses the lower product-page figure and excludes card FX, shipping, tax and duties; no mainland CNY checkout is shown.",
+  "source_note": "The official product page currently shows US$4,099 and identifies a China warehouse route, but no exact mainland CNY checkout, stock handling or domestic delivery total was exposed. The displayed CNY figure is only a dated reference conversion and excludes card FX, shipping, tax and duties.",
   "facts": {
-    "drivetrain": "Shimano GRX RX825 Di2 1×12",
+    "drivetrain": "Shimano GRX 1×12: ST-RX825 controls, RD-RX827 rear derailleur, 42T crank and 10–51T cassette",
     "frame": "Winspace G3 carbon gravel frame",
+    "complete_weight_g": 8750,
     "wheels": "Lún Gryper 35/45 carbon, carbon spokes",
     "tires": "700×40C",
     "cockpit": "Integrated Winspace carbon handlebar",
     "bottom_bracket": "T47-68 threaded",
     "tire_clearance_mm": 50,
     "sizes": "XS, S, M, L and XL"
-  }
+  },
+  "weight_note": "Official approximate complete-bike weight for size M without pedals."
 }

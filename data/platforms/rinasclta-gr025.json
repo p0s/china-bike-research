@@ -10,10 +10,14 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "unknown",
+    "bottom_bracket": "T47 (86.5 mm shell)",
     "derailleur_hanger": "standard",
     "cable_routing": "internal",
-    "claimed_frame_weight_g": 1200
+    "claimed_frame_weight_g": 1200,
+    "claimed_frame_weight_basis": "Size M; manufacturer tolerance ±20 g",
+    "claimed_fork_weight_g": 450,
+    "claimed_seatpost_weight_g": 190,
+    "weight_conflict_note": "A separate marketing line on the same page says 1,250 g without a clear basis."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -30,5 +34,5 @@
   "source_ids": [
     "rinasclta-gr025-official"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

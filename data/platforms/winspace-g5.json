@@ -10,11 +10,24 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "T47",
+    "bottom_bracket": "T47 68",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 950,
-    "claimed_frame_weight_basis": "Dealer-listed approximate raw size-M frame weight; manufacturer page does not publish a frame-only weight."
+    "claimed_frame_weight_basis": "Dealer-listed approximate raw size-M frame weight; manufacturer page does not publish a frame-only weight.",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry chart",
+      "source_id": "winspace-g5-official",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "XS", "rider_height": "155–163 cm", "stack_mm": 531, "reach_mm": 367, "head_tube_mm": 100, "head_angle_deg": 70.5, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 423, "fork_offset_mm": 54, "fork_length_mm": 398, "seat_tube_mm": 440, "top_tube_mm": 524, "wheelbase_mm": 1000, "standover_mm": 751, "trail_mm": 66.2 },
+        { "size": "S", "rider_height": "163–171 cm", "stack_mm": 544, "reach_mm": 375, "head_tube_mm": 113, "head_angle_deg": 70.7, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 423, "fork_offset_mm": 54, "fork_length_mm": 398, "seat_tube_mm": 460, "top_tube_mm": 536, "wheelbase_mm": 1011, "standover_mm": 768, "trail_mm": 65 },
+        { "size": "M", "rider_height": "171–179 cm", "stack_mm": 561, "reach_mm": 383, "head_tube_mm": 130, "head_angle_deg": 71.2, "seat_angle_deg": 73.5, "bb_drop_mm": 76, "chainstay_mm": 425, "fork_offset_mm": 51, "fork_length_mm": 398, "seat_tube_mm": 480, "top_tube_mm": 549, "wheelbase_mm": 1020, "standover_mm": 788, "trail_mm": 64.9 },
+        { "size": "L", "rider_height": "179–186 cm", "stack_mm": 578, "reach_mm": 391, "head_tube_mm": 147, "head_angle_deg": 71.5, "seat_angle_deg": 73.5, "bb_drop_mm": 76, "chainstay_mm": 425, "fork_offset_mm": 51, "fork_length_mm": 398, "seat_tube_mm": 510, "top_tube_mm": 562, "wheelbase_mm": 1031, "standover_mm": 811, "trail_mm": 63.1 },
+        { "size": "XL", "rider_height": "186–193 cm", "stack_mm": 598, "reach_mm": 399, "head_tube_mm": 170, "head_angle_deg": 71.5, "seat_angle_deg": 73.5, "bb_drop_mm": 74, "chainstay_mm": 427, "fork_offset_mm": 51, "fork_length_mm": 398, "seat_tube_mm": 540, "top_tube_mm": 576, "wheelbase_mm": 1049, "standover_mm": 839, "trail_mm": 63.1 },
+        { "size": "XXL", "rider_height": "193+ cm", "stack_mm": 619, "reach_mm": 407, "head_tube_mm": 193, "head_angle_deg": 71.5, "seat_angle_deg": 73.5, "bb_drop_mm": 74, "chainstay_mm": 427, "fork_offset_mm": 51, "fork_length_mm": 398, "seat_tube_mm": 570, "top_tube_mm": 590, "wheelbase_mm": 1064, "standover_mm": 865, "trail_mm": 63.1 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -33,5 +46,5 @@
     "winspace-g5-official",
     "winspace-g5-weight-woods-cycles-2026-08-25"
   ],
-  "last_reviewed": "2026-08-25"
+  "last_reviewed": "2026-08-27"
 }

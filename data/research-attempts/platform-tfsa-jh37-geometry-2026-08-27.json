@@ -1,0 +1,18 @@
+{
+  "id": "platform-tfsa-jh37-geometry-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "tfsa-jh37" },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "TFSA JH37 official geometry", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://www.tfsabike.com/product/carbon-gravel-frame-jh-37/", "accessed_at": "2026-08-27", "note": "Current page lists sizes and specifications but no geometry table." },
+    { "attempt": 2, "query": "TFSA JH37 geometry stack reach", "route": "public web search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact-model numeric table found." },
+    { "attempt": 3, "query": "TFSA JH37 catalog PDF geometry", "route": "manual and catalog search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact-model table was published in accessible documentation." }
+  ] } },
+  "status": "blocked",
+  "retry_after": "2026-09-10",
+  "notes": "Geometry remains empty."
+}

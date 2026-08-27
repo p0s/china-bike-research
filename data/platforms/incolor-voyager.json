@@ -6,20 +6,111 @@
   "category": "gravel-race",
   "handlebar": "drop",
   "status": "current",
-  "summary": "Light premium frame with 45C clearance and UDH, but weak value against wider and cheaper alternatives.",
+  "summary": "Very light 850 g size-54 frame with 45C clearance, UDH and a full five-size geometry table; the current Taobao checkout still needs confirmation.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "unknown",
+    "bottom_bracket": "Asymmetric T47, 76.75 mm shell",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 850
+    "claimed_frame_weight_g": 850,
+    "claimed_frame_weight_basis": "Size 54, excluding paint and metal hardware",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry table",
+      "source_id": "incolor-voyager-official-2026-08-25",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "45",
+          "rider_height": "155–162 cm",
+          "top_tube_mm": 496,
+          "head_tube_mm": 109,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 75,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 415,
+          "front_center_mm": 580,
+          "fork_offset_mm": 53.7,
+          "reach_mm": 358,
+          "stack_mm": 515,
+          "wheelbase_mm": 984,
+          "standover_mm": 735
+        },
+        {
+          "size": "48",
+          "rider_height": "162–168 cm",
+          "top_tube_mm": 512,
+          "head_tube_mm": 119,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 74.5,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 415,
+          "front_center_mm": 588,
+          "fork_offset_mm": 53.7,
+          "reach_mm": 366,
+          "stack_mm": 526,
+          "wheelbase_mm": 991,
+          "standover_mm": 748.5
+        },
+        {
+          "size": "51",
+          "rider_height": "167–173 cm",
+          "top_tube_mm": 530,
+          "head_tube_mm": 129,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 415,
+          "front_center_mm": 592,
+          "fork_offset_mm": 49.7,
+          "reach_mm": 375,
+          "stack_mm": 539,
+          "wheelbase_mm": 996,
+          "standover_mm": 762
+        },
+        {
+          "size": "54",
+          "rider_height": "172–178 cm",
+          "top_tube_mm": 544,
+          "head_tube_mm": 144,
+          "head_angle_deg": 71.5,
+          "seat_angle_deg": 74,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 415,
+          "front_center_mm": 603,
+          "fork_offset_mm": 49.7,
+          "reach_mm": 385,
+          "stack_mm": 555,
+          "wheelbase_mm": 1007,
+          "standover_mm": 781
+        },
+        {
+          "size": "57",
+          "rider_height": "177–186 cm",
+          "top_tube_mm": 569,
+          "head_tube_mm": 168,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 415,
+          "front_center_mm": 618,
+          "fork_offset_mm": 49.7,
+          "reach_mm": 397,
+          "stack_mm": 580,
+          "wheelbase_mm": 1022,
+          "standover_mm": 806
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "retailer-claim",
+    "evidence": "official",
     "eligibility": "pass",
-    "note": "Retailer claim; verify with current manufacturer documentation.",
+    "note": "Manufacturer states a 45C maximum for knobby tires; actual measured width still depends on the rim and tire.",
     "published_max_mm": 45
   },
   "mounts": [
@@ -28,7 +119,10 @@
   "internal_storage": false,
   "china_availability": "mainland-and-direct",
   "source_ids": [
-    "incolor-voyager-retailer"
+    "incolor-voyager-retailer",
+    "incolor-voyager-official-2026-08-25",
+    "incolor-voyager-official-brochure-2026-08-25",
+    "incolor-services-official-2026-08-26"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

@@ -1090,3 +1090,324 @@
     applyBuildAllowance({ historyMode: 'push' });
   });
 })();
+
+(() => {
+  const root = document.querySelector('[data-bike-builder]');
+  const dataNode = document.querySelector('#build-configurator-data');
+  if (!(root instanceof HTMLElement) || !(dataNode instanceof HTMLScriptElement)) return;
+
+  let data;
+  try { data = JSON.parse(dataNode.textContent || '{}'); } catch { return; }
+  if (data?.schemaVersion !== 1 || !Array.isArray(data.frames) || !Array.isArray(data.parts)) return;
+
+  const storageKey = 'china-bike-builder-v1';
+  const frames = new Map(data.frames.map((frame) => [frame.id, frame]));
+  const parts = new Map(data.parts.map((part) => [part.id, part]));
+  const slots = Array.isArray(data.slots) ? data.slots : [];
+  const frameSelect = root.querySelector('[data-build-frame]');
+  const frameLink = root.querySelector('[data-build-frame-link]');
+  const frameFacts = root.querySelector('[data-build-frame-facts]');
+  const totalPrice = root.querySelector('[data-build-total-price]');
+  const totalWeight = root.querySelector('[data-build-total-weight]');
+  const completeness = root.querySelector('[data-build-completeness]');
+  const compatibility = root.querySelector('[data-build-compatibility]');
+  const buildName = root.querySelector('[data-build-name]');
+  const rows = new Map([...root.querySelectorAll('[data-build-slot]')].map((row) => [row.dataset.buildSlot, row]));
+  const defaultSelections = Object.fromEntries(slots.map((slot) => [
+    slot,
+    data.parts.find((part) => part.slot === slot && part.default)?.id || 'custom'
+  ]));
+
+  function readStoredState() {
+    try {
+      const value = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      return value && typeof value === 'object' ? value : {};
+    } catch { return {}; }
+  }
+
+  const stored = readStoredState();
+  const initialParams = new URLSearchParams(location.search);
+  const firstFrameId = data.frames[0]?.id || '';
+  const requestedFrame = initialParams.get('frame') || stored.frameId;
+  const state = {
+    frameId: frames.has(requestedFrame) ? requestedFrame : firstFrameId,
+    selections: {},
+    custom: {},
+  };
+
+  for (const slot of slots) {
+    const requestedPart = initialParams.get(`part-${slot}`) || stored.selections?.[slot] || defaultSelections[slot];
+    state.selections[slot] = requestedPart === 'custom' || (parts.has(requestedPart) && parts.get(requestedPart).slot === slot)
+      ? requestedPart
+      : defaultSelections[slot];
+    const storedCustom = stored.custom?.[slot] || {};
+    state.custom[slot] = {
+      price: initialParams.get(`price-${slot}`) ?? storedCustom.price ?? '',
+      weight: initialParams.get(`weight-${slot}`) ?? storedCustom.weight ?? '',
+    };
+  }
+
+  function numberOrNull(value) {
+    if (value === '' || value === null || value === undefined) return null;
+    const numeric = Number(value);
+    return Number.isFinite(numeric) && numeric >= 0 ? numeric : null;
+  }
+
+  function formatYuan(value) {
+    return `¥${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(value))}`;
+  }
+
+  function formatPriceRange(low, high) {
+    return low === high ? formatYuan(low) : `${formatYuan(low)}–${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(high))}`;
+  }
+
+  function formatWeight(grams) {
+    return grams >= 1000 ? `${(grams / 1000).toFixed(2)} kg` : `${Math.round(grams)} g`;
+  }
+
+  function selectedPart(slot) {
+    const id = state.selections[slot];
+    return id && id !== 'custom' ? parts.get(id) || null : null;
+  }
+
+  function coveredSlots() {
+    const covered = new Map();
+    for (const slot of slots) {
+      const part = selectedPart(slot);
+      if (!part) continue;
+      for (const coveredSlot of part.covers || []) {
+        if (!covered.has(coveredSlot)) covered.set(coveredSlot, part);
+      }
+    }
+    return covered;
+  }
+
+  function setPartFacts(row, { price = '—', weight = '—', basis = '', source = null }) {
+    const priceNode = row.querySelector('[data-build-part-price]');
+    const weightNode = row.querySelector('[data-build-part-weight]');
+    const basisNode = row.querySelector('[data-build-part-basis]');
+    const sourceNode = row.querySelector('[data-build-part-source]');
+    if (priceNode) priceNode.textContent = price;
+    if (weightNode) weightNode.textContent = weight;
+    if (basisNode) basisNode.textContent = basis;
+    if (sourceNode instanceof HTMLAnchorElement) {
+      sourceNode.hidden = !source?.url;
+      if (source?.url) {
+        sourceNode.href = source.url;
+        sourceNode.title = source.title || 'Source';
+      } else {
+        sourceNode.href = `${document.body.dataset.base || ''}/methodology/`;
+        sourceNode.removeAttribute('title');
+      }
+    }
+  }
+
+  function compatibilityMessages(frame, covered) {
+    const messages = [];
+    const bottomBracket = covered.has('bottom-bracket') ? null : selectedPart('bottom-bracket');
+    const acceptedShells = bottomBracket?.compatibility?.accepted_frame_shells
+      || bottomBracket?.compatibility?.frame_bottom_bracket
+      || [];
+    if (bottomBracket && frame.bottomBracketKey && acceptedShells.length && !acceptedShells.includes(frame.bottomBracketKey)) {
+      messages.push(`${bottomBracket.maker} ${bottomBracket.name} does not list ${frame.bottomBracket} frame compatibility.`);
+    }
+    const tires = covered.has('tires') ? null : selectedPart('tires');
+    const tireWidth = Number(tires?.compatibility?.nominal_tire_width_mm ?? tires?.compatibility?.tire_width_mm);
+    if (tires && Number.isFinite(tireWidth) && Number.isFinite(frame.tireClearanceMm) && tireWidth > frame.tireClearanceMm) {
+      messages.push(`${tireWidth} mm tires exceed the frame's published ${frame.tireClearanceMm} mm limit.`);
+    }
+    const drivetrain = selectedPart('drivetrain');
+    const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
+    const requiredFreehub = drivetrain?.compatibility?.required_freehub;
+    const availableFreehubs = wheelset?.compatibility?.freehubs || [];
+    if (requiredFreehub && availableFreehubs.length && !availableFreehubs.includes(requiredFreehub)) {
+      messages.push(`${drivetrain.maker} ${drivetrain.name} requires ${requiredFreehub}; the selected wheelset does not list it.`);
+    }
+    return messages;
+  }
+
+  function updateUrl(historyMode = 'replace') {
+    const target = new URL(location.href);
+    if (state.frameId) target.searchParams.set('frame', state.frameId);
+    for (const slot of slots) {
+      const selection = state.selections[slot];
+      if (selection && selection !== defaultSelections[slot]) target.searchParams.set(`part-${slot}`, selection);
+      else target.searchParams.delete(`part-${slot}`);
+      const part = selectedPart(slot);
+      const custom = state.custom[slot];
+      for (const [field, value] of [['price', custom.price], ['weight', custom.weight]]) {
+        const key = `${field}-${slot}`;
+        const recordedValue = field === 'price' ? numberOrNull(part?.priceCny) : numberOrNull(part?.weightG);
+        if ((selection === 'custom' || recordedValue === null) && value !== '') target.searchParams.set(key, value);
+        else target.searchParams.delete(key);
+      }
+    }
+    try { history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', `${target.pathname}${target.search}`); } catch { /* normal navigation origin required */ }
+  }
+
+  function persist() {
+    try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { /* URL remains shareable */ }
+  }
+
+  function render({ historyMode = 'replace' } = {}) {
+    const frame = frames.get(state.frameId) || data.frames[0];
+    if (!frame) return;
+    if (frameSelect instanceof HTMLSelectElement) frameSelect.value = frame.id;
+    if (frameLink instanceof HTMLAnchorElement) frameLink.href = frame.url;
+    if (frameFacts) frameFacts.textContent = `${frame.bottomBracket || 'Bottom bracket unknown'} · ${frame.tireClearanceMm ? `${frame.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'} · ${frame.included.length ? frame.included.join(', ') : 'package contents incomplete'}`;
+    if (buildName) buildName.textContent = frame.name;
+
+    let priceLow = Number(frame.priceLow) || 0;
+    let priceHigh = Number(frame.priceHigh ?? frame.priceLow) || priceLow;
+    let knownWeight = Number(frame.frameWeightG) || 0;
+    const missingPrices = [];
+    const missingWeights = [];
+    if (!Number.isFinite(Number(frame.frameWeightG))) missingWeights.push('frameset');
+    else missingWeights.push('fork / frame package remainder');
+    const covered = coveredSlots();
+
+    for (const slot of slots) {
+      const row = rows.get(slot);
+      if (!(row instanceof HTMLElement)) continue;
+      const select = row.querySelector('[data-build-part-select]');
+      const customValues = row.querySelector('[data-build-custom-values]');
+      const customPrice = row.querySelector('[data-build-custom-price]');
+      const customWeight = row.querySelector('[data-build-custom-weight]');
+      const customPriceField = row.querySelector('[data-build-custom-price-field]');
+      const customWeightField = row.querySelector('[data-build-custom-weight-field]');
+      const coveredNote = row.querySelector('[data-build-covered-note]');
+      const coveringPart = covered.get(slot);
+      row.classList.toggle('is-covered', Boolean(coveringPart));
+      if (select instanceof HTMLSelectElement) {
+        select.value = state.selections[slot];
+        select.disabled = Boolean(coveringPart);
+      }
+      if (coveredNote instanceof HTMLElement) {
+        coveredNote.hidden = !coveringPart;
+        coveredNote.textContent = coveringPart ? `Included in ${coveringPart.maker} ${coveringPart.name}; not counted again.` : '';
+      }
+      if (coveringPart) {
+        if (customValues instanceof HTMLElement) customValues.hidden = true;
+        setPartFacts(row, { price: 'Included', weight: 'Counted once', basis: coveringPart.priceBasis || coveringPart.weightBasis });
+        continue;
+      }
+
+      const part = selectedPart(slot);
+      const isCustom = state.selections[slot] === 'custom' || !part;
+      if (customPrice instanceof HTMLInputElement) customPrice.value = state.custom[slot].price;
+      if (customWeight instanceof HTMLInputElement) customWeight.value = state.custom[slot].weight;
+      const recordedPrice = isCustom ? null : numberOrNull(part.priceCny);
+      const recordedWeight = isCustom ? null : numberOrNull(part.weightG);
+      const buyerPrice = numberOrNull(state.custom[slot].price);
+      const buyerWeight = numberOrNull(state.custom[slot].weight);
+      const needsPriceInput = isCustom || recordedPrice === null;
+      const needsWeightInput = isCustom || recordedWeight === null;
+      if (customValues instanceof HTMLElement) customValues.hidden = !needsPriceInput && !needsWeightInput;
+      if (customPriceField instanceof HTMLElement) customPriceField.hidden = !needsPriceInput;
+      if (customWeightField instanceof HTMLElement) customWeightField.hidden = !needsWeightInput;
+      const partPrice = recordedPrice ?? buyerPrice;
+      const partWeight = recordedWeight ?? buyerWeight;
+      if (partPrice === null) missingPrices.push(slot);
+      else { priceLow += partPrice; priceHigh += partPrice; }
+      if (partWeight === null) missingWeights.push(slot);
+      else knownWeight += partWeight;
+      const basis = isCustom
+        ? 'Buyer-entered value'
+        : [
+            part.priceDate,
+            recordedPrice === null && buyerPrice !== null ? 'Buyer-entered price' : part.priceBasis,
+            recordedWeight === null && buyerWeight !== null ? 'Buyer-entered weight' : part.weightBasis,
+          ].filter(Boolean).join(' · ');
+      setPartFacts(row, {
+        price: partPrice === null ? '—' : formatYuan(partPrice),
+        weight: partWeight === null ? '—' : formatWeight(partWeight),
+        basis,
+        source: isCustom ? null : part.source,
+      });
+    }
+
+    if (totalPrice) totalPrice.textContent = missingPrices.length
+      ? `${formatPriceRange(priceLow, priceHigh)} known + ${missingPrices.length} unknown`
+      : formatPriceRange(priceLow, priceHigh);
+    if (totalWeight) totalWeight.textContent = missingWeights.length
+      ? `${formatWeight(knownWeight)} known + ${missingWeights.length} unknown`
+      : formatWeight(knownWeight);
+    if (completeness) completeness.textContent = missingPrices.length || missingWeights.length
+      ? `Complete price needs ${missingPrices.length} more input${missingPrices.length === 1 ? '' : 's'}; complete weight needs ${missingWeights.length} more input${missingWeights.length === 1 ? '' : 's'}.`
+      : 'Every required slot has a price and weight.';
+
+    const conflicts = compatibilityMessages(frame, covered);
+    if (compatibility instanceof HTMLElement) {
+      compatibility.classList.toggle('has-conflicts', conflicts.length > 0);
+      compatibility.replaceChildren();
+      if (conflicts.length) {
+        const heading = document.createElement('strong');
+        heading.textContent = 'Compatibility conflict';
+        const list = document.createElement('ul');
+        conflicts.forEach((message) => {
+          const item = document.createElement('li');
+          item.textContent = message;
+          list.append(item);
+        });
+        compatibility.append(heading, list);
+      } else {
+        const quiet = document.createElement('p');
+        quiet.textContent = 'No conflict in the recorded checks.';
+        compatibility.append(quiet);
+      }
+    }
+    persist();
+    updateUrl(historyMode);
+  }
+
+  frameSelect?.addEventListener('change', () => {
+    if (frameSelect instanceof HTMLSelectElement && frames.has(frameSelect.value)) state.frameId = frameSelect.value;
+    render({ historyMode: 'push' });
+  });
+
+  rows.forEach((row, slot) => {
+    const select = row.querySelector('[data-build-part-select]');
+    const customPrice = row.querySelector('[data-build-custom-price]');
+    const customWeight = row.querySelector('[data-build-custom-weight]');
+    select?.addEventListener('change', () => {
+      if (select instanceof HTMLSelectElement && state.selections[slot] !== select.value) {
+        state.selections[slot] = select.value;
+        state.custom[slot] = { price: '', weight: '' };
+      }
+      render({ historyMode: 'push' });
+    });
+    customPrice?.addEventListener('input', () => {
+      if (customPrice instanceof HTMLInputElement) state.custom[slot].price = customPrice.value;
+      render();
+    });
+    customWeight?.addEventListener('input', () => {
+      if (customWeight instanceof HTMLInputElement) state.custom[slot].weight = customWeight.value;
+      render();
+    });
+  });
+
+  root.querySelector('[data-build-copy]')?.addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        copied = true;
+      } catch { /* HTTPS or clipboard permission may be unavailable. */ }
+    }
+    if (button instanceof HTMLButtonElement) {
+      const original = button.textContent;
+      button.textContent = copied ? 'Copied' : 'Copy failed';
+      setTimeout(() => { button.textContent = original; }, 1200);
+    }
+  });
+  root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
+    state.frameId = firstFrameId;
+    state.selections = { ...defaultSelections };
+    state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '' }]));
+    try { localStorage.removeItem(storageKey); } catch { /* URL still resets */ }
+    render({ historyMode: 'push' });
+  });
+
+  render();
+})();

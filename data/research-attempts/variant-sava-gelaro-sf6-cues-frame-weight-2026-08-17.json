@@ -42,8 +42,18 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-gelaro-sf6-independent-review-2026-08-27"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": [
+      "sava-gelaro-sf6-independent-review-2026-08-27"
+    ],
+    "note": "A later exact-model review supplied an approximate 1,100 g frame observation after the original three-route pass was exhausted."
+  },
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The original three-route search remains immutable; a later evidence source resolved the field with an explicit approximate and basis-limited value."
 }

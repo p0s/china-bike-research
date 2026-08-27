@@ -1,0 +1,26 @@
+{
+  "id": "elitewheels-marvel-g35-wheelset",
+  "maker": "Elitewheels",
+  "name": "Marvel G35 wheelset",
+  "slot": "wheelset",
+  "status": "current-specification-price-open",
+  "default": true,
+  "included_components": ["front wheel", "rear wheel", "rim tape", "tubeless valves"],
+  "weight": {
+    "status": "known",
+    "grams": 1460,
+    "basis": "Claimed pair weight ±30 g, including installed rim tape and tubeless valves.",
+    "claim_type": "official",
+    "source_id": "elitewheels-marvel-g35-brochure-2026-08-27"
+  },
+  "compatibility": {
+    "axles": ["12x100", "12x142"],
+    "rotor_mount": "center-lock",
+    "freehubs": ["hg-road"],
+    "tubeless_ready": true,
+    "internal_rim_width_mm": 22
+  },
+  "note": "Current mainland price remains open; enter the seller quote before treating the build price as complete.",
+  "source_ids": ["elitewheels-marvel-g35-brochure-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

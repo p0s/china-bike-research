@@ -5,7 +5,7 @@
   "kind": "frameset",
   "market": "mainland-china-or-direct",
   "editorial": {
-    "verdict": "A sophisticated high-end aero gravel frame with huge clearance, priced for performance and finish rather than value.",
+    "verdict": "One of the closest practical matches for an aero, relatively light, very-wide-clearance build, but it remains a purpose-built race-gravel chassis rather than a road-geometry frame.",
     "best_for": [
       "premium aero racer"
     ],
@@ -17,7 +17,7 @@
     "caveats": [
       "Premium price",
       "Factory ownership not clearly public",
-      "A public family report claims 820 g versus the recorded 980 g frame claim; generation and RDC mapping remain unresolved"
+      "Size-54 geometry uses 423 mm chainstays and a 1,016 mm wheelbase; do not label it literal road geometry"
     ],
     "price_thresholds_cny": {
       "great_buy_below": 14500,
@@ -27,12 +27,16 @@
   },
   "source_ids": [
     "seka-official",
+    "seka-exaero-gr-official-2026-08-27",
+    "seka-warranty-official-2026-08-27",
     "compiled-research-2026-08-06",
     "public-seka-exaero-build-2026-08-17"
   ],
   "included": [
     "frame",
     "fork",
-    "small parts; verify exact package"
+    "seatpost",
+    "Gladius handlebar",
+    "storage and installation accessories"
   ]
 }

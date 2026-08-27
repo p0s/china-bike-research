@@ -1,0 +1,19 @@
+{
+  "id": "pirelli-cinturato-velo-tlr-700x35-pair",
+  "maker": "Pirelli",
+  "name": "Cinturato Velo TLR 700x35 pair",
+  "slot": "tires",
+  "status": "current-specification-price-open",
+  "included_components": ["two 35-622 tires"],
+  "weight": {
+    "status": "known",
+    "grams": 760,
+    "basis": "Derived pair total: 2 × the exact-size retailer specification of approximately 380 g per tire.",
+    "claim_type": "inferred",
+    "source_id": "pirelli-cinturato-velo-35-retailer-2026-08-27"
+  },
+  "compatibility": { "wheel_size": "700c", "nominal_tire_width_mm": 35, "tubeless_ready": true },
+  "note": "Installed width varies with rim and pressure. Current mainland pair price remains open.",
+  "source_ids": ["pirelli-cinturato-velo-35-retailer-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

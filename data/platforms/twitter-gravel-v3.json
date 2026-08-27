@@ -18,7 +18,23 @@
       "source_id": "twitter-v3-official-2026-08-16",
       "frame_heights_cm": [45, 48, 51, 54],
       "net_weight_claim_g": 9900,
-      "bottom_bracket_variants": ["T47 24 mm", "T47 29 mm"]
+      "bottom_bracket_variants": ["T47 24 mm", "T47 29 mm"],
+      "observed_current_electronic_builds": [
+        {
+          "groupset": "Shimano 105 Di2 R7170",
+          "layout": "2x12",
+          "brakes": "hydraulic-disc",
+          "source_id": "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
+          "note": "The official brand account identifies a current Gravel V3 electronic build as R7170, 24-speed and hydraulic-disc. Exact cassette, wheels, package contents, price and warranty were not captured."
+        },
+        {
+          "groupset": "SENTYEH 13-speed electronic",
+          "layout": null,
+          "topology": "fully-wireless",
+          "source_id": "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27",
+          "note": "The official brand account identifies a current Gravel V3 build with SENTYEH 13-speed fully wireless electronic shifting. Exact layout, cassette, brakes, package contents, price and warranty were not captured."
+        }
+      ]
     },
     "geometry": {
       "basis": "official regional exact-build geometry table for the WheelTop EDS TX configuration",
@@ -53,7 +69,9 @@
     "twitter-company-profile",
     "twitter-v3-official-2026-08-16",
     "twitter-v3-wireless-official-2026-08-25",
-    "twitter-v3-factory-store-2026-08-25"
+    "twitter-v3-factory-store-2026-08-25",
+    "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
+    "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27"
   ],
-  "last_reviewed": "2026-08-25"
+  "last_reviewed": "2026-08-27"
 }

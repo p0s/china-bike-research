@@ -1,0 +1,20 @@
+{
+  "id": "continental-gp5000-str-700x35-pair",
+  "maker": "Continental",
+  "name": "Grand Prix 5000 S TR 700x35 pair",
+  "slot": "tires",
+  "status": "current-specification-price-open",
+  "default": true,
+  "included_components": ["two 35-622 tires"],
+  "weight": {
+    "status": "known",
+    "grams": 760,
+    "basis": "Derived pair total: 2 × the official 380 g per-tire claim.",
+    "claim_type": "inferred",
+    "source_id": "continental-gp5000-str-35-official-2026-08-27"
+  },
+  "compatibility": { "wheel_size": "700c", "nominal_tire_width_mm": 35, "tubeless_ready": true },
+  "note": "Installed width varies with rim and pressure. Current mainland pair price remains open.",
+  "source_ids": ["continental-gp5000-str-35-official-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

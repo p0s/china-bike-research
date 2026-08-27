@@ -15,6 +15,7 @@ import {
   renderHome,
   renderModel,
   renderCandidateModel,
+  renderBikeBuilder,
   renderElectronicGroupsets,
   renderMethodology,
   renderPrivacy,
@@ -88,6 +89,7 @@ add('/', renderHome(ctx));
 for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product));
 for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible);
 add('/methodology/', renderMethodology(ctx));
+add('/build/', renderBikeBuilder(ctx));
 add('/electronic-shifting/', renderElectronicGroupsets(ctx));
 add('/privacy/', renderPrivacy(ctx));
 add('/image-policy/', renderImagePolicy(ctx));
@@ -122,6 +124,7 @@ write('data/sources.json', `${JSON.stringify({ generated_at: catalog.generated_a
 write('data/images.json', `${JSON.stringify({ generated_at: catalog.generated_at, images: data.images.filter((image) => image.buyer_visibility !== 'omit') }, null, 2)}\n`);
 write('data/videos.json', `${JSON.stringify({ generated_at: catalog.generated_at, videos: data.videos }, null, 2)}\n`);
 write('data/groupsets.json', `${JSON.stringify({ generated_at: catalog.generated_at, groupsets: data.groupsets }, null, 2)}\n`);
+write('data/build-parts.json', `${JSON.stringify({ generated_at: catalog.generated_at, build_parts: data.buildParts }, null, 2)}\n`);
 
 const headers = [
   'id','brand','brand_zh','model','type','category','handlebar',
@@ -181,6 +184,7 @@ write('build-manifest.json', `${JSON.stringify({
     images: data.images.length,
     videos: data.videos.length,
     groupsets: data.groupsets.length,
+    build_parts: data.buildParts.length,
     pages: pages.size
   },
   performance,

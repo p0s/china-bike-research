@@ -1,0 +1,16 @@
+{
+  "id": "candidate-xlab-gt8-purchase-route-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-x-lab-xds-gt8" },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "X-LAB GT8 国内 到店 整车", "route": "mainland market report", "outcome": "found", "accessed_at": "2026-08-27", "note": "First domestic dealer arrivals and complete-bike-only availability reported.", "result_url": "https://post.smzdm.com/p/a3mder67/" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["xlab-gt8-smzdm-market-report-2026-08-27"],
+  "retry_after": null,
+  "notes": "Domestic dealer route established; stock and exact included accessories remain order-specific."
+}

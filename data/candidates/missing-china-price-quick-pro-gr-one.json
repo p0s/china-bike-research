@@ -7,13 +7,23 @@
   "why_interesting": "Premium Chinese monocoque gravel frame; domestic RMB price needed.",
   "missing": [
     "Dated mainland-China RMB observation",
-    "Exact current SKU and China purchase route",
-    "Source supporting the price and warranty conditions"
+    "Final stock, exact package contents and mainland warranty handling"
   ],
-  "status": "missing-china-price",
+  "status": "official-mainland-route-price-missing",
   "existing_record_id": "quick-gr-one-frameset",
   "research_priority": "high",
-  "price_status": "missing mainland-China RMB observation",
-  "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "last_reviewed": "2026-08-08"
+  "price_status": "official mainland route with blank price",
+  "required_before_dashboard": "Dated RMB price, final stock, exact package contents and mainland warranty handling",
+  "source_ids": [
+    "quick-gr-one-china-official-2026-08-25",
+    "quick-pro-warranty-official-2026-08-17"
+  ],
+  "source_url": "https://www.quick-bikes.com.cn/product/32.html",
+  "source_note": "The current official China frame page showed inventory 140 and buy/cart controls when inspected, but its price field was blank and no size/color stock split or final package was exposed.",
+  "facts": {
+    "frame_weight_g": 919,
+    "bottom_bracket": "T47-68 threaded",
+    "tire_clearance_mm": 45
+  },
+  "last_reviewed": "2026-08-27"
 }

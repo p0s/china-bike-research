@@ -6,7 +6,7 @@
   "category": "gravel",
   "handlebar": "drop",
   "status": "superseded",
-  "summary": "Discontinued press-fit Gravel V3 generation sold with mechanical RS/Sensah 2×12, full-hydraulic brakes, and separate 38 mm alloy or optional approximately 50 mm carbon wheel selections. Neither wheel selection is treated as standard. It is no longer sold new and was superseded by the 2025 Gravel V3; keep it distinct from later T47 builds that reuse the same model name.",
+  "summary": "Discontinued press-fit Gravel V3 generation with a 1,250 g frame and 40 mm published maximum tire size, sold with mechanical RS/Sensah 2×12, full-hydraulic brakes, and separate 38 mm alloy or optional approximately 50 mm carbon wheel selections. Neither wheel selection is treated as standard. It is no longer sold new and was superseded by the 2025 Gravel V3; keep it distinct from later T47 builds that reuse the same model name.",
   "successor": {
     "platform_id": "twitter-gravel-v3",
     "label": "2025 Gravel V3"
@@ -14,10 +14,81 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "BB92×41×24 press-fit (seller listing)",
+    "bottom_bracket": "BB92×41×24 press-fit (seller table; supplied BB86 material conflicts)",
+    "bottom_bracket_conflict_note": "The exact-model manual mirror and one supplied seller summary say BB86×46, while the retained Summer 2024 seller component table says BB92×41×24. The model page preserves the conflict instead of selecting one standard.",
     "derailleur_hanger": "standard",
     "cable_routing": "fully-internal",
+    "claimed_frame_weight_g": 1250,
+    "claimed_frame_weight_basis": "Exact-model 2024 instruction-manual mirror; approximate value with size and finish unspecified",
+    "claimed_fork_weight_g": 490,
+    "claimed_fork_weight_basis": "Exact-model 2024 instruction-manual mirror; approximate value",
     "claimed_fiber": "high-modulus carbon (seller claim)",
+    "geometry": {
+      "basis": "Exact-model 2024 instruction-manual mirror; its size-51 values match the retained seller transcription",
+      "source_id": "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "45",
+          "seat_tube_mm": 450,
+          "top_tube_mm": 510,
+          "head_tube_mm": 100,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 589,
+          "fork_offset_mm": 55,
+          "reach_mm": 365,
+          "stack_mm": 516
+        },
+        {
+          "size": "48",
+          "seat_tube_mm": 480,
+          "top_tube_mm": 525,
+          "head_tube_mm": 114,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 596,
+          "fork_offset_mm": 55,
+          "reach_mm": 375,
+          "stack_mm": 534
+        },
+        {
+          "size": "51",
+          "seat_tube_mm": 510,
+          "top_tube_mm": 540,
+          "head_tube_mm": 130,
+          "head_angle_deg": 71.5,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 607,
+          "fork_offset_mm": 55,
+          "reach_mm": 385,
+          "stack_mm": 550
+        },
+        {
+          "size": "54",
+          "seat_tube_mm": 540,
+          "top_tube_mm": 555,
+          "head_tube_mm": 150,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 618,
+          "fork_offset_mm": 55,
+          "reach_mm": 395,
+          "stack_mm": 572
+        }
+      ]
+    },
     "configuration_notes": {
       "source_id": "twitter-gravel-v3-2024-taobao-2026-08-21",
       "listed_item_number": "GRAVEL-V3顺泰",
@@ -48,16 +119,18 @@
   },
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "seller-listing",
-    "eligibility": "conditional",
-    "note": "The listing specifies a stock 700×40C tire but does not establish a dependable maximum clearance. The conflicting reused page graphics also prevent transferring a later V3 clearance claim.",
-    "stock_nominal_mm": 40
+    "evidence": "exact-model-manual-mirror-and-seller-listing",
+    "eligibility": "pass",
+    "note": "The exact-model 2024 manual mirror publishes a 700×40C maximum, and the retained Summer 2024 seller listing specifies a stock 700×40C tire.",
+    "stock_nominal_mm": 40,
+    "published_max_mm": 40
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "discontinued-superseded",
   "source_ids": [
-    "twitter-gravel-v3-2024-taobao-2026-08-21"
+    "twitter-gravel-v3-2024-taobao-2026-08-21",
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
   ],
-  "last_reviewed": "2026-08-21"
+  "last_reviewed": "2026-08-27"
 }

@@ -1,0 +1,14 @@
+{
+  "id": "candidate-airwolf-yfr068-tire-clearance-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "airwolf-yfr068" },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Airwolf YFR068 700x40C clearance", "route": "exact storefront page", "outcome": "found", "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/", "accessed_at": "2026-08-27", "note": "Storefront maximum is 700×40C; larger owner reports are not adopted." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["airwolf-yfr068-official-store-2026-08-27"],
+  "notes": "Only the storefront 40C maximum is accepted; larger third-party fit reports remain outside this record."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "candidate-seka-exaero-road-owner-build-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "seka-exaero-road" },
+  "field": "owner-build-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post"],
+  "channels": { "public-post": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "SEKA ExAero RDC owner complete build weight", "route": "validated XHS exact-model owner post", "outcome": "found", "result_url": "https://www.xiaohongshu.com/explore/6a864f340000000005029ed3", "accessed_at": "2026-08-27", "note": "Size-52 RDC custom build reports 6.67 kg with a component list including 60 mm wheels and 2× gearing." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["public-seka-exaero-rdc-owner-build-2026-08-27"],
+  "notes": "Useful realistic build evidence; deliberately not stored as an official or normalized complete-bike weight."
+}

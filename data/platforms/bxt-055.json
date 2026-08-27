@@ -10,10 +10,15 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "T47",
+    "bottom_bracket": "T47, 86 mm shell",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 1100,
+    "claimed_frame_weight_basis": "Size 54; manufacturer tolerance ±50 g",
+    "claimed_fork_weight_g": 410,
+    "claimed_fork_weight_basis": "Manufacturer tolerance ±20 g",
+    "claimed_seatpost_weight_g": 110,
+    "claimed_seatpost_weight_basis": "Manufacturer tolerance ±10 g",
     "claimed_fiber": "T1000-claimed"
   },
   "tire_clearance": {
@@ -31,5 +36,5 @@
   "source_ids": [
     "bxt-055-official"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-27"
 }

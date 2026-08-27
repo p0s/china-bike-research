@@ -1,0 +1,14 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Rinasclta Q-AERO GR 50C", "route": "manufacturer exact-model page", "outcome": "found", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-27", "note": "Official nominal maximum is 700×50C." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["rinasclta-q-aero-gr-official-2026-08-27"],
+  "notes": "The manufacturer nominal maximum is accepted; no measured rim/tire basis is supplied."
+}

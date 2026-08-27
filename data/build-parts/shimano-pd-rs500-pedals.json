@@ -1,0 +1,27 @@
+{
+  "id": "shimano-pd-rs500-pedals",
+  "maker": "Shimano",
+  "name": "PD-RS500 pedal pair",
+  "slot": "pedals",
+  "status": "dated-mainland-price",
+  "default": true,
+  "included_components": ["left pedal", "right pedal", "SM-SH11 cleat pair"],
+  "weight": {
+    "status": "known",
+    "grams": 320,
+    "basis": "Official claimed pair weight.",
+    "claim_type": "official",
+    "source_id": "shimano-pd-rs500-official-2026-08-27"
+  },
+  "compatibility": { "pedal_system": "spd-sl", "crank_thread": "9/16-inch" },
+  "price_observation": {
+    "amount_cny": 368,
+    "observed_at": "2026-07-09",
+    "price_type": "marketplace-promotional-observation",
+    "package_basis": "Pedal pair; public listing snapshot showed ¥368 promotion and ¥558 list price, checkout not reverified.",
+    "source_id": "tmall-pd-rs500-price-2026-08-27"
+  },
+  "note": "Reflectors are optional and not counted.",
+  "source_ids": ["shimano-pd-rs500-official-2026-08-27", "tmall-pd-rs500-price-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

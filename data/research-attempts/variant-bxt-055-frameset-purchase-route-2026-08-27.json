@@ -1,0 +1,14 @@
+{
+  "id": "variant-bxt-055-frameset-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "bxt-055-frameset" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "BXT-055 buy official worldwide", "route": "manufacturer direct checkout", "outcome": "found", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "accessed_at": "2026-08-27", "note": "Exact option is listed in stock with destination-specific worldwide shipping." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["bxt-055-official"],
+  "notes": "Exact package contents and direct purchase route are now stored."
+}

@@ -10,10 +10,26 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "T47",
+    "bottom_bracket": "T47-86",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 980
+    "claimed_frame_weight_g": 1200,
+    "claimed_frame_weight_basis": "Finished size-M frame including hardware and paint; manufacturer tolerance ±50 g. Raw frame claim is 980 g ±50 g excluding hardware and paint.",
+    "claimed_fork_weight_g": 520,
+    "claimed_fork_weight_basis": "Finished fork including hardware and paint; manufacturer tolerance ±15 g. Raw fork claim is 485 g ±15 g.",
+    "geometry": {
+      "basis": "manufacturer manual",
+      "source_id": "af01-manual-2026-08-27",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "XS", "stack_mm": 535, "reach_mm": 375, "head_tube_mm": 110, "bb_drop_mm": 78, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 605, "chainstay_mm": 425, "seat_tube_mm": 379, "wheelbase_mm": 1018, "top_tube_mm": 529, "head_angle_deg": 70, "seat_angle_deg": 74, "standover_mm": 713 },
+        { "size": "S", "stack_mm": 556, "reach_mm": 382, "head_tube_mm": 130, "bb_drop_mm": 78, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 614, "chainstay_mm": 425, "seat_tube_mm": 412, "wheelbase_mm": 1027, "top_tube_mm": 542, "head_angle_deg": 70.5, "seat_angle_deg": 74, "standover_mm": 741 },
+        { "size": "M", "stack_mm": 578, "reach_mm": 389, "head_tube_mm": 152, "bb_drop_mm": 76, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 624, "chainstay_mm": 425, "seat_tube_mm": 445, "wheelbase_mm": 1037, "top_tube_mm": 561, "head_angle_deg": 71, "seat_angle_deg": 73.5, "standover_mm": 773 },
+        { "size": "L", "stack_mm": 601, "reach_mm": 395, "head_tube_mm": 178, "bb_drop_mm": 76, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 638, "chainstay_mm": 425, "seat_tube_mm": 478, "wheelbase_mm": 1052, "top_tube_mm": 573, "head_angle_deg": 71.5, "seat_angle_deg": 73.5, "standover_mm": 807 },
+        { "size": "XL", "stack_mm": 624, "reach_mm": 402, "head_tube_mm": 200, "bb_drop_mm": 76, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 648, "chainstay_mm": 425, "seat_tube_mm": 511, "wheelbase_mm": 1061, "top_tube_mm": 593, "head_angle_deg": 71.5, "seat_angle_deg": 73, "standover_mm": 838 },
+        { "size": "XXL", "stack_mm": 645, "reach_mm": 409, "head_tube_mm": 220, "bb_drop_mm": 76, "fork_length_mm": 395, "fork_offset_mm": 55, "front_center_mm": 656, "chainstay_mm": 425, "seat_tube_mm": 545, "wheelbase_mm": 1070, "top_tube_mm": 607, "head_angle_deg": 72, "seat_angle_deg": 73, "standover_mm": 866 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -26,10 +42,11 @@
     "top-tube",
     "fender"
   ],
-  "internal_storage": false,
+  "internal_storage": true,
   "china_availability": "direct-brand",
   "source_ids": [
-    "af01-official"
+    "af01-official",
+    "af01-manual-2026-08-27"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-27"
 }

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -91,10 +91,13 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Price record and sources/);
   assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
 
-  const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
+  const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
   const sparseDetail = renderCandidateModel(context, sparse);
   assert.match(sparseDetail, /Price not verified/);
-  assert.match(sparseDetail, /No model-specific hardware facts are verified yet/);
+  assert.match(sparseDetail, /Airwolf YFR068 \/ A5/);
+  assert.match(sparseDetail, /40 mm/);
+  assert.match(sparseDetail, /Frame weight basis/);
+  assert.doesNotMatch(sparseDetail, /Frame_weight_basis/);
   assert.match(sparseDetail, /Identity not confirmed/);
 
   const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
@@ -129,6 +132,53 @@ test('candidates without a recorded category show an honest unknown instead of u
   assert.doesNotMatch(detail, />undefined</);
 });
 
+test('published frame pages show exact-model galleries and component weight context', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-25T00:00:00Z')
+  };
+  const quick = products.find((entry) => entry.variant.id === 'quick-gr-one-frameset');
+  const quickDetail = renderModel(context, quick);
+  assert.match(quickDetail, /data-image-gallery/);
+  assert.equal((quickDetail.match(/data-gallery-thumb/g) ?? []).length, 4);
+  assert.match(quickDetail, /Ice Crack Silver/);
+  assert.match(quickDetail, /<dt>Frame weight<\/dt><dd>919 g<\/dd>/);
+  assert.match(quickDetail, /<dt>Fork weight<\/dt><dd>459 g<\/dd>/);
+  assert.match(quickDetail, /<dt>Seatpost weight<\/dt><dd>169 g<\/dd>/);
+  assert.match(quickDetail, /5 sizes \(XS\/426–XL\/546\) · stack 524–599 mm · reach 370–405 mm/);
+
+  const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
+  const incolorDetail = renderModel(context, incolor);
+  assert.equal((incolorDetail.match(/data-gallery-thumb/g) ?? []).length, 6);
+  assert.match(incolorDetail, /Est\. ¥13,800/);
+  assert.match(incolorDetail, /5 sizes \(45–57\) · stack 515–580 mm · reach 358–397 mm/);
+});
+
+test('complete-bike pages expose researched build components and weight basis without another profile section', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-26T00:00:00Z')
+  };
+  const gx600 = products.find((entry) => entry.variant.id === 'camp-gx600-pes');
+  const gx600Detail = renderModel(context, gx600);
+  assert.match(gx600Detail, /<dt>Weight basis<\/dt><dd>Official small-size complete-bike weight excluding pedals and small accessories<\/dd>/);
+  assert.match(gx600Detail, /<dt>Drivetrain build<\/dt><dd>Crank: Yuyong 42T aluminum integrated-axle crank · Cassette: HR 12-speed 11–45T<\/dd>/);
+  assert.match(gx600Detail, /<dt>Brakes<\/dt><dd>Hydraulic disc · Calipers: Tektro hydraulic<\/dd>/);
+
+  const gx700 = products.find((entry) => entry.variant.id === 'camp-gx700-grx820');
+  const gx700Detail = renderModel(context, gx700);
+  assert.match(gx700Detail, /45 mm stock/);
+  assert.match(gx700Detail, /Shifters: ST-RX820 · RD: RD-RX822 · Crank: FC-RX610 36T · Cassette: CS-M6100 12-speed 10–51T/);
+});
+
 test('superseded published bikes show availability instead of a historical price headline', () => {
   const context = {
     data,
@@ -152,8 +202,10 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,900[\s\S]*?Official FX estimate · 2026-08-17[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
   assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
-  assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21700"[^>]*data-tire-clearance-sort="55"/);
-  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?Est\. ¥21,700[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
+  assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
+  assert.match(html, /X-LAB GT8 GRX Di2[\s\S]*?¥21,980[\s\S]*?Observed · 2026-08-21[\s\S]*?8\.8 kg[\s\S]*?Toray T800 carbon/);
+  assert.match(html, /data-id="candidate-specialized-roubaix-sl8-sport-105"[^>]*data-price-sort="23763"[^>]*data-tire-clearance-sort="40"/);
+  assert.match(html, /Specialized 2025 Roubaix SL8 Sport Shimano 105[\s\S]*?Est\. ¥23,763[\s\S]*?Shimano 105 R7100\/R7120 mechanical 2×12[\s\S]*?9\.1 kg[\s\S]*?FACT 10R carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-winspace-slc3"[^>]*data-type="frameset"[^>]*data-frame-price-low="9800"[^>]*data-frame-price-high="9800"/);
   assert.match(html, /Winspace SLC3\.0 frameset[\s\S]*?Est\. ¥15,800[\s\S]*?Frame ¥9,800 · Official FX estimate/);
   assert.match(html, /data-id="candidate-missing-china-price-giant-defy-advanced"[^>]*data-type="complete-bike"[^>]*data-price-sort="14800"[^>]*data-price-filter="14800"/);
@@ -314,6 +366,34 @@ test('primary navigation reflects catalog and exact model context', () => {
   assert.doesNotMatch(completeDetail, /data-nav-framesets aria-current="page"/);
   assert.doesNotMatch(framesetDetail, /data-nav-catalog aria-current="page"/);
   assert.match(framesetDetail, /data-nav-framesets aria-current="page"/);
+});
+
+test('build configurator renders every required slot with sourced package data', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-27T00:00:00Z')
+  };
+  const builder = renderBikeBuilder(context);
+  assert.match(builder, /data-nav-builder aria-current="page"/);
+  assert.match(builder, /<h1>Build a bike from a frame<\/h1>/);
+  assert.equal((builder.match(/data-build-slot=/g) ?? []).length, 15);
+  assert.match(builder, /Shimano 105 Di2 R7170 large package/);
+  assert.match(builder, /Elitewheels Marvel G35 wheelset/);
+  assert.match(builder, /data-build-total-price/);
+  assert.match(builder, /data-build-total-weight/);
+  assert.match(builder, /data-build-custom-price-field/);
+  assert.match(builder, /data-build-custom-weight-field/);
+  assert.doesNotMatch(builder, /<a data-build-part-source/);
+  assert.match(builder, /href="\/china-bike-research\/methodology\/" data-build-part-source hidden/);
+  assert.match(builder, /"covers":\["brakes","crankset","cassette","chain"\]/);
+  assert.match(builder, /"priceCny":4150/);
+  assert.match(builder, /"weightG":1460/);
+  assert.match(builder, /https:\/\/www\.elite-wheels\.com\/wp-content\/uploads/);
+  assert.doesNotMatch(builder, /No attributable mainland price|No exact mainland package captured/);
 });
 
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
@@ -507,8 +587,8 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 3);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 4);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Build<\/a>[\s\S]*>Groupsets<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);

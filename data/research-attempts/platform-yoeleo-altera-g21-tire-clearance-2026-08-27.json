@@ -1,0 +1,21 @@
+{
+  "id": "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "yoeleo-altera-g21" },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Yoeleo Altera G21 53 mm tire clearance 1x", "route": "older manufacturer platform guide", "outcome": "found", "result_url": "https://www.yoeleobike.com/blogs/frames/altera-g21-color-guide", "accessed_at": "2026-08-16", "note": "The older official guide records the 700x53 mm maximum as a 1× condition." },
+        { "attempt": 2, "query": "Yoeleo Altera G21 current tire compatibility", "route": "current manufacturer exact-product page", "outcome": "found", "result_url": "https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple", "accessed_at": "2026-08-27", "note": "The current product independently repeats 700x53 mm only for a single-chainring setup and does not publish a 2× maximum." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["yoeleo-altera-g21-official-2026-08-16", "yoeleo-altera-g21-current-2026-08-27"],
+  "notes": "Two official sources support the same atomic clearance condition. The catalog retains 53 mm for 1× and leaves the 2× maximum unknown."
+}

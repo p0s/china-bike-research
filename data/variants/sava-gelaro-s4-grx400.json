@@ -28,14 +28,22 @@
   "source_ids": [
     "sava-gelaro-s4-official",
     "compiled-research-2026-08-06",
-    "sava-gelaro-s4-official-2026-08-16"
+    "sava-gelaro-s4-official-2026-08-16",
+    "sava-gelaro-s4-official-2026-08-25",
+    "sava-jd-official-storefront-2026-08-26"
   ],
+  "purchase_route": "SAVA official JD storefront or factory-direct global store; the current global exact-model page lists US$1,799, while no current exact mainland CNY checkout was captured",
   "drivetrain": {
     "brand": "Shimano",
     "model": "GRX400",
     "speeds": "2x10",
     "shifting": "mechanical",
-    "layout": "double"
+    "layout": "double",
+    "shifters": "ST-RX400",
+    "front_derailleur": "FD-RX400",
+    "rear_derailleur": "RD-RX400",
+    "crankset": "FC-RX600 46/30T",
+    "cassette": "11–34T"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -49,5 +57,6 @@
     "material": "aluminum",
     "integrated": false
   },
-  "claimed_complete_weight_g": 10200
+  "claimed_complete_weight_g": 10200,
+  "claimed_complete_weight_basis": "Official approximate complete-bike weight; size, pedals and accessories were not stated"
 }

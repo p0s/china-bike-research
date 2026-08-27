@@ -1,7 +1,7 @@
 {
   "id": "sava-gelaro-sf6-cues",
   "platform_id": "sava-gelaro-sf",
-  "name": "Gelaro SF6 CUES",
+  "name": "Gelaro SF6 CUES U6000 1×11",
   "kind": "complete-bike",
   "market": "mainland-china",
   "editorial": {
@@ -30,14 +30,19 @@
     "compiled-research-2026-08-06",
     "sava-gelaro-sf6-official-2026-08-16",
     "sava-gelaro-sf6-official-2026-08-17",
-    "sava-gelaro-sf6-specifications-2026-08-25"
+    "sava-gelaro-sf6-specifications-2026-08-25",
+    "sava-gelaro-sf6-official-2026-08-25",
+    "sava-jd-official-storefront-2026-08-26"
   ],
   "drivetrain": {
     "brand": "Shimano",
-    "model": "CUES",
+    "model": "CUES U6000",
     "speeds": "1x11",
     "shifting": "mechanical",
-    "layout": "single"
+    "layout": "single",
+    "shifter": "SL-U6000-11R",
+    "rear_derailleur": "RD-U6000",
+    "cassette": "CS-LG400-11"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -52,5 +57,6 @@
     "integrated": false
   },
   "claimed_complete_weight_g": 10400,
-  "purchase_route": "Official global-direct checkout at US$1,499 on 2026-08-17; mainland-China checkout not established."
+  "claimed_complete_weight_basis": "Official approximate complete-bike weight; size, pedals and accessories were not stated",
+  "purchase_route": "SAVA official JD storefront or global-direct checkout (US$1,499 observed 2026-08-25); current mainland-China checkout total was not captured"
 }

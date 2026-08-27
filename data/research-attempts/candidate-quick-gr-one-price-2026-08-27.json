@@ -1,0 +1,20 @@
+{
+  "id": "candidate-quick-gr-one-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-quick-pro-gr-one" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Quick GR ONE 中国 官网 价格", "route": "official China product page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Inventory and buy controls are visible, but the price field is blank.", "result_url": "https://www.quick-bikes.com.cn/product/32.html" },
+      { "attempt": 2, "query": "Quick GR ONE official complete price", "route": "official global product page", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "US$4,799 complete-bike price is not a mainland CNY observation.", "result_url": "https://www.quickprousa.com/products/gr-one-shimano" },
+      { "attempt": 3, "query": "Quick GR ONE 国内 发布价", "route": "dated launch report", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Historical CNY 13,598 frame-and-handlebar package is not current checkout evidence.", "result_url": "https://www.biketo.com/industry/54415.html" }
+    ] }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Web routes are exhausted for this round; the public-post/XHS channel remains pending."
+}

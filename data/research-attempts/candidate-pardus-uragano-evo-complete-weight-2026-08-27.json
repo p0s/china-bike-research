@@ -1,0 +1,16 @@
+{
+  "id": "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "pardus-uragano-evo-community-lead" },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "PARDUS Uragano EVO Rival XPLR weight", "route": "exact-model retailer page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.", "result_url": "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["pardus-uragano-evo-uae-seller-2026-08-27"],
+  "retry_after": null,
+  "notes": "Useful exact-build weight retained as a seller value without mapping it to a current China SKU."
+}

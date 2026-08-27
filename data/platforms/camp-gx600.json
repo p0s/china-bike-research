@@ -6,14 +6,18 @@
   "category": "all-road",
   "handlebar": "flat",
   "status": "current",
-  "summary": "Light carbon flat-bar all-road bike, but its published 35C stock tire does not prove greater-than-38 mm capability.",
+  "summary": "Light carbon flat-bar all-road bike with a 9.1 kg small-size complete claim, but its published 35C stock tire does not establish the maximum clearance.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
     "bottom_bracket": "unknown",
     "derailleur_hanger": "standard",
     "cable_routing": "internal",
-    "claimed_fiber": "T800-claimed"
+    "claimed_fiber": "T800 frame; T700 fork and seatpost (official material claim)",
+    "configuration_notes": {
+      "seatpost": "T700 carbon",
+      "handlebar": "aluminum"
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -26,7 +30,8 @@
   "internal_storage": false,
   "china_availability": "mainland-domestic",
   "source_ids": [
-    "camp-gx600-official"
+    "camp-gx600-official",
+    "camp-gx600-official-2026-08-17"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }

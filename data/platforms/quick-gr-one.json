@@ -14,7 +14,102 @@
     "derailleur_hanger": "standard",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 919,
-    "claimed_fiber": "high-modulus-claimed"
+    "claimed_frame_weight_basis": "Size M; manufacturer tolerance ±5%",
+    "claimed_fork_weight_g": 459,
+    "claimed_fork_weight_basis": "Manufacturer tolerance ±5%",
+    "claimed_seatpost_weight_g": 169,
+    "claimed_seatpost_weight_basis": "Manufacturer tolerance ±5%",
+    "claimed_fiber": "high-modulus-claimed",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry table",
+      "source_id": "quick-gr-one-official",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "XS/426",
+          "seat_tube_mm": 426,
+          "top_tube_mm": 518,
+          "head_tube_mm": 95,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 74.2,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 425,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 400,
+          "reach_mm": 370,
+          "stack_mm": 524,
+          "wheelbase_mm": 1006,
+          "standover_mm": 723
+        },
+        {
+          "size": "S/456",
+          "seat_tube_mm": 456,
+          "top_tube_mm": 535,
+          "head_tube_mm": 113,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 425,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 400,
+          "reach_mm": 379,
+          "stack_mm": 543,
+          "wheelbase_mm": 1016,
+          "standover_mm": 742
+        },
+        {
+          "size": "M/486",
+          "seat_tube_mm": 486,
+          "top_tube_mm": 553,
+          "head_tube_mm": 132,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 73.6,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 425,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 400,
+          "reach_mm": 388,
+          "stack_mm": 561,
+          "wheelbase_mm": 1032,
+          "standover_mm": 760
+        },
+        {
+          "size": "L/516",
+          "seat_tube_mm": 516,
+          "top_tube_mm": 572,
+          "head_tube_mm": 152,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 73.3,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 425,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 400,
+          "reach_mm": 398,
+          "stack_mm": 580,
+          "wheelbase_mm": 1048,
+          "standover_mm": 779
+        },
+        {
+          "size": "XL/546",
+          "seat_tube_mm": 546,
+          "top_tube_mm": 590,
+          "head_tube_mm": 172,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 73.8,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 425,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 400,
+          "reach_mm": 405,
+          "stack_mm": 599,
+          "wheelbase_mm": 1062,
+          "standover_mm": 798
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -28,8 +123,10 @@
   ],
   "internal_storage": false,
   "china_availability": "mainland-and-direct",
+  "availability_note": "Official China page displayed stock 140 on 2026-08-26; live size/color availability still requires checkout confirmation.",
   "source_ids": [
-    "quick-gr-one-official"
+    "quick-gr-one-official",
+    "quick-gr-one-china-official-2026-08-25"
   ],
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-26"
 }
