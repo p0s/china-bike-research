@@ -96,7 +96,7 @@ Classify claims as:
 
 Prefer exact-model primary sources, current China-market listings, and credible independent measurements. Secondary summaries are mainly for discovery.
 
-A single reasonably attributable source is normally sufficient for a routine specification. Show supported values plainly in comparison fields; preserve source type, confidence, and caveats in details rather than prefixing ordinary values with labels such as `claimed`. Prefer a sourced value over a blank unless the source is mismatched, contradictory, implausible, or too ambiguous to identify the exact model or field. Material inference and uncertainty must still be explicit.
+A single reasonably credible source attributable to the exact model is normally sufficient for a routine, low-stakes specification. Show supported values plainly in comparison fields; preserve source type, confidence, and caveats in details rather than prefixing ordinary values with labels such as `claimed`. Seek corroboration only for conflicting evidence, model or field ambiguity, safety-, fit-, or compatibility-critical claims, or claims that would materially change a recommendation. Prefer a sourced value over a blank unless the source is mismatched, contradictory, implausible, or too ambiguous to identify the exact model or field. Never infer an exact value; material inference and uncertainty must still be explicit.
 
 Editorial videos may identify research candidates and add build, ownership, or ride context. They cannot independently satisfy the publication gate or support a current price, exact BOM, specification, manufacturing relationship, or recommendation. Candidate leads discovered in videos must be deduplicated against published platforms, existing candidates, and exclusions.
 

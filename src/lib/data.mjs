@@ -797,7 +797,7 @@ export function joinProducts(data = loadDataset()) {
     if (!brand) throw new Error(`Missing brand ${platform.brand_id}`);
     const prices = data.prices.filter((price) => price.variant_id === variant.id).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
     const latestPrice = prices[0];
-    const platformImages = data.images.filter((image) => image.platform_id === platform.id);
+    const platformImages = data.images.filter((image) => image.platform_id === platform.id && image.buyer_visibility !== 'omit');
     const selectedImage = choosePrimaryImage(platformImages, variant.id);
     const image = selectedImage ? {
       ...selectedImage,
@@ -907,7 +907,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const sourceIds = candidate.source_ids ?? [];
       const candidateSources = sourceIds.map((id) => sources.get(id)).filter(Boolean);
       const source = candidateSources.find((item) => item?.url) ?? null;
-      const candidateImages = data.images.filter((item) => item.candidate_id === candidate.id);
+      const candidateImages = data.images.filter((item) => item.candidate_id === candidate.id && item.buyer_visibility !== 'omit');
       const image = candidateImages.find((item) => item.role === 'primary') ?? null;
       const galleryImages = candidateImages
         .filter((item) => item.role === 'gallery')

@@ -20,6 +20,17 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('buyer-hidden images cannot mask an active replacement', () => {
+  const fixture = structuredClone(data);
+  const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
+  fixture.images.unshift({ ...visibleCandidateImage, id: 'hidden-candidate-primary', buyer_visibility: 'omit' });
+  assert.notEqual(joinCatalogCandidates(fixture).find((item) => item.candidate.id === 'pardus-uragano-sport').image.id, 'hidden-candidate-primary');
+
+  const visibleProductImage = fixture.images.find((item) => item.platform_id === 'twitter-gravel-v3' && item.role === 'primary' && item.buyer_visibility !== 'omit');
+  fixture.images.unshift({ ...visibleProductImage, id: 'hidden-product-primary', buyer_visibility: 'omit' });
+  assert.notEqual(joinProducts(fixture).find((item) => item.platform.id === 'twitter-gravel-v3').image.id, 'hidden-product-primary');
+});
+
 test('XHS and Taobao sources use identity-safe canonical public URLs', () => {
   const xhs = structuredClone(data);
   xhs.sources.push({
@@ -90,7 +101,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 48);
-  assert.equal(data.images.length, 169);
+  assert.equal(data.images.length, 172);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -98,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 202);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 395);
+  assert.equal(data.researchAttempts.length, 402);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -494,8 +505,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 167);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 93);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 170);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 96);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),

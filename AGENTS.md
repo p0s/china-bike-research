@@ -26,14 +26,14 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 - Start with `npm run --silent data:gaps` and select the bounded top batch. Never dump whole data directories, schemas, DOMs, or unchanged reports.
 - Research one exact model/source page at a time and extract all supported useful fields. Check linked sources, exact primary sources, mainland listings, then public community sources.
 - Stop at decisive evidence. Use up to three distinct routes only for a still-unresolved, purchase-relevant claim; do not give every field three searches.
-- Research-only batches change data and dated evidence. Leave tooling, `SPEC.md`, rendering, and unrelated UI work for a separate task unless it blocks the frozen batch.
+- Research-only batches normally change data and dated evidence. One small task-blocking tooling, `SPEC.md`, rendering, or presentation fix may stay in the batch when it is cohesive and owned by the same writer; leave unrelated work for another task.
 
 ## XHS and public-community research
 
 - Before any XHS worker starts, preflight dedicated research Chrome once: signed in, the canonical `network-requests-extension` checkout enabled (not a copied worktree), duplicates disabled, and one usable tab.
 - Use one sequential XHS lane. Search cards are discovery only; opened exact posts may support visible claims, while comments remain `community report` evidence.
 - Keep only identity-safe canonical public URLs and privacy-safe summaries. Strip share, referral, invite, tracking, session, and account parameters. Third-party media never enters Git. Selected XHS or marketplace images may use `public-post-quotation` on the approved external media origin when each contributes exact-model or decision-relevant evidence and its record has the exact source, owner or seller credit, no-license statement, removal route, content hashes, alt text, fallback, and completed privacy review.
-- Security Verification, HTTP 412, or rate limiting stops the lane. Close the tab, record the blocker, and retry only in a later turn after the user confirms normal access.
+- CAPTCHA, login, and Security Verification are human-only. HTTP 412, 300013, and rate limits follow the no-bypass, later-turn breaker policy in `docs/research-stopping-policy.md`.
 
 ## Research delegation
 

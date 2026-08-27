@@ -4,15 +4,16 @@
   "model_id": "pardus-uragano-sport",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "A well-documented domestic carbon gravel platform with official 45C clearance and strong manufacturing evidence.",
+  "why_interesting": "A current domestic carbon gravel build with an official 45C limit, a complete Shimano 105 R7000 configuration and practical rack and fender mounts.",
   "missing": [
-    "One exact currently sold groupset and complete BOM",
-    "Exact wheel, cockpit, and size-specific configuration",
-    "Current public price and purchase route for that exact build"
+    "Complete-bike weight for the current mainland 105 R7000 build",
+    "Current public mainland price and checkout route for that exact build",
+    "Domestic warranty duration and claim conditions"
   ],
   "status": "exact-build-unproven",
   "source_ids": [
     "pardus-uragano-sport-official",
+    "pardus-uragano-sport-cn-official-2026-08-27",
     "pardus-company-official",
     "compiled-research-2026-08-06"
   ],
@@ -24,5 +25,18 @@
     "observed_at": "2026-08-06",
     "price_basis": "reference-range"
   },
-  "last_reviewed": "2026-08-06"
+  "facts": {
+    "drivetrain": "Shimano 105 R7000 2×11 with Prowheel 46/30 crank and 11-30 cassette",
+    "brakes": "Tektro R510",
+    "frame": "PARDUS Uragano Sport HS-EPS+ carbon frame with carbon fork",
+    "wheels": "PARDUS PW5 DB alloy",
+    "cockpit": "MVMT M-BLACK AL6061 handlebar with 20-degree flare",
+    "seatpost": "27.2×350 mm alloy, 15 mm offset",
+    "tire_clearance_mm": 45,
+    "sizes": "XS, S, M, L and XL",
+    "axles": "12×100 mm front and 12×142 mm rear",
+    "mounts": "Front and rear rack, fork and fender mounts"
+  },
+  "source_note": "The current official Chinese page identifies a complete Uragano Sport—105 build and supplies its full drivetrain, brakes, wheels, cockpit, five sizes and 700×45C maximum. Its visible price field is blank, and it does not state complete-bike weight.",
+  "last_reviewed": "2026-08-27"
 }

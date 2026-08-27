@@ -7,8 +7,8 @@
       "platforms": 36,
       "variants": 38,
       "prices": 48,
-      "sources": 433,
-      "images": 169,
+      "sources": 435,
+      "images": 172,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
@@ -16,11 +16,11 @@
       "candidates": 202,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 395
+      "researchAttempts": 402
     },
     "image_accuracy": {
       "exact-platform": 55,
-      "exact-variant": 75,
+      "exact-variant": 78,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
@@ -28,7 +28,7 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 167
+      "remote": 170
     },
     "candidate_prices": {
       "official": 45,
@@ -270,6 +270,7 @@
       "giant-propel-gen4-official-2026-08-17",
       "giant-tcr-advanced-0-axs-official-image-2026-08-17",
       "gpt-pro-electronic-groupsets-input-2026-08-24",
+      "hi-light-g7-2-villain-retailer-2026-08-27",
       "ican-company-official",
       "ican-gra04-alibaba-image",
       "ican-gra04-official",
@@ -335,6 +336,7 @@
       "pardus-uragano-evo-uae-seller-2026-08-27",
       "pardus-uragano-f-official-store-promo-2026-08",
       "pardus-uragano-jd-route-2026-08-17",
+      "pardus-uragano-sport-cn-official-2026-08-27",
       "pardus-uragano-sport-official",
       "pinarello-f5-official-2026-08-08",
       "pirelli-cinturato-velo-35-retailer-2026-08-27",
@@ -715,6 +717,10 @@
       "pardus-super-sport-gen2-candidate-primary-image",
       "pardus-super-sport-gen2-primary-image",
       "pardus-uragano-evo-public-primary-image",
+      "pardus-uragano-sport-cn-cockpit-gallery",
+      "pardus-uragano-sport-cn-drivetrain-primary-image",
+      "pardus-uragano-sport-cn-geometry-gallery",
+      "pardus-uragano-sport-cn-rear-brake-gallery",
       "pardus-uragano-sport-primary-image",
       "pinarello-f5-primary-image",
       "quick-gr-one-black-gallery",
@@ -1142,6 +1148,8 @@
       "candidate-giant-propel-gen4-community-lead-purchase-route-2026-08-17",
       "candidate-giant-propel-gen4-community-lead-tire-clearance-2026-08-17",
       "candidate-giant-propel-gen4-community-lead-warranty-support-2026-08-17",
+      "candidate-hi-light-g7-2-frame-weight-2026-08-27",
+      "candidate-hi-light-g7-2-tire-clearance-2026-08-27",
       "candidate-hongfu-gravel-price-2026-08-17",
       "candidate-hongfu-gravel-purchase-route-2026-08-17",
       "candidate-hongfu-gravel-warranty-support-2026-08-17",
@@ -1159,6 +1167,9 @@
       "candidate-irefox-profound-400-price-2026-08-17",
       "candidate-irefox-profound-400-purchase-route-2026-08-17",
       "candidate-irefox-profound-400-warranty-support-2026-08-17",
+      "candidate-laget-discovery-slr-frame-weight-2026-08-27",
+      "candidate-laget-discovery-slr-image-2026-08-27",
+      "candidate-laget-discovery-slr-tire-clearance-2026-08-27",
       "candidate-lightcarbon-speed7-complete-bom-2026-08-17",
       "candidate-lightcarbon-speed7-complete-bottom-bracket-2026-08-17",
       "candidate-lightcarbon-speed7-complete-complete-weight-2026-08-17",
@@ -1207,6 +1218,8 @@
       "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17",
       "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-pardus-uragano-sport-current-configuration-2026-08-27",
+      "candidate-pardus-uragano-sport-tire-clearance-2026-08-27",
       "candidate-quick-gr-one-price-2026-08-27",
       "candidate-quick-gr-one-purchase-route-2026-08-27",
       "candidate-quick-pro-tr-one-bom-2026-08-17",
@@ -5240,6 +5253,18 @@
         "title",
         "type"
       ],
+      "hi-light-g7-2-villain-retailer-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "ican-company-official": [
         "accessed_at",
         "language",
@@ -6029,6 +6054,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.route",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-uragano-sport-cn-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -11035,6 +11072,73 @@
         "source_id",
         "subject_accuracy"
       ],
+      "pardus-uragano-sport-cn-cockpit-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-uragano-sport-cn-drivetrain-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-uragano-sport-cn-geometry-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-uragano-sport-cn-rear-brake-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy"
+      ],
       "pardus-uragano-sport-primary-image": [
         "alt",
         "candidate_id",
@@ -14292,6 +14396,15 @@
       ],
       "hi-light-g7-2": [
         "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.fork_weight_g",
+        "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.mounts",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
         "model_id",
@@ -14741,6 +14854,16 @@
       ],
       "laget-discovery-slr": [
         "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.drivetrain_compatibility",
+        "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.hanger",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
         "model_id",
@@ -16108,6 +16231,16 @@
       ],
       "pardus-uragano-sport": [
         "category",
+        "facts.axles",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.mounts",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -16118,6 +16251,7 @@
         "observed_price.observed_at",
         "observed_price.price_basis",
         "source_ids",
+        "source_note",
         "status",
         "type",
         "why_interesting"
@@ -18536,6 +18670,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-hi-light-g7-2-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-hongfu-gravel-price-2026-08-17": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -18767,6 +18929,48 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-slr-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-slr-image-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-slr-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -19476,6 +19680,34 @@
         "target.record_type"
       ],
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-sport-current-configuration-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -24358,6 +24590,7 @@
       "giant-propel-gen4-official-2026-08-17": [],
       "giant-tcr-advanced-0-axs-official-image-2026-08-17": [],
       "gpt-pro-electronic-groupsets-input-2026-08-24": [],
+      "hi-light-g7-2-villain-retailer-2026-08-27": [],
       "ican-company-official": [],
       "ican-gra04-alibaba-image": [],
       "ican-gra04-official": [],
@@ -24423,6 +24656,7 @@
       "pardus-uragano-evo-uae-seller-2026-08-27": [],
       "pardus-uragano-f-official-store-promo-2026-08": [],
       "pardus-uragano-jd-route-2026-08-17": [],
+      "pardus-uragano-sport-cn-official-2026-08-27": [],
       "pardus-uragano-sport-official": [],
       "pinarello-f5-official-2026-08-08": [],
       "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
@@ -25073,6 +25307,22 @@
       "pardus-uragano-evo-public-primary-image": [
         "candidate_id=pardus-uragano-evo-community-lead",
         "source_id=public-pardus-uragano-evo-build-2026-08-17"
+      ],
+      "pardus-uragano-sport-cn-cockpit-gallery": [
+        "candidate_id=pardus-uragano-sport",
+        "source_id=pardus-uragano-sport-cn-official-2026-08-27"
+      ],
+      "pardus-uragano-sport-cn-drivetrain-primary-image": [
+        "candidate_id=pardus-uragano-sport",
+        "source_id=pardus-uragano-sport-cn-official-2026-08-27"
+      ],
+      "pardus-uragano-sport-cn-geometry-gallery": [
+        "candidate_id=pardus-uragano-sport",
+        "source_id=pardus-uragano-sport-cn-official-2026-08-27"
+      ],
+      "pardus-uragano-sport-cn-rear-brake-gallery": [
+        "candidate_id=pardus-uragano-sport",
+        "source_id=pardus-uragano-sport-cn-official-2026-08-27"
       ],
       "pardus-uragano-sport-primary-image": [
         "candidate_id=pardus-uragano-sport",
@@ -25872,6 +26122,7 @@
       ],
       "hi-light-g7-2": [
         "model_id=hi-light-g7-2",
+        "source_ids=hi-light-g7-2-villain-retailer-2026-08-27",
         "source_ids=titanium-hi-light-g7-2-official"
       ],
       "hi-light-g7-2-grx-gr1600": [
@@ -26336,6 +26587,7 @@
         "model_id=pardus-uragano-sport",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=pardus-company-official",
+        "source_ids=pardus-uragano-sport-cn-official-2026-08-27",
         "source_ids=pardus-uragano-sport-official"
       ],
       "phillips-carbon-road-unknown": [
@@ -26923,6 +27175,12 @@
       "candidate-giant-propel-gen4-community-lead-warranty-support-2026-08-17": [
         "target.record_id=giant-propel-gen4-community-lead"
       ],
+      "candidate-hi-light-g7-2-frame-weight-2026-08-27": [
+        "target.record_id=hi-light-g7-2"
+      ],
+      "candidate-hi-light-g7-2-tire-clearance-2026-08-27": [
+        "target.record_id=hi-light-g7-2"
+      ],
       "candidate-hongfu-gravel-price-2026-08-17": [
         "target.record_id=hongfu-gravel"
       ],
@@ -26973,6 +27231,15 @@
       ],
       "candidate-irefox-profound-400-warranty-support-2026-08-17": [
         "target.record_id=irefox-profound-400"
+      ],
+      "candidate-laget-discovery-slr-frame-weight-2026-08-27": [
+        "target.record_id=laget-discovery-slr"
+      ],
+      "candidate-laget-discovery-slr-image-2026-08-27": [
+        "target.record_id=laget-discovery-slr"
+      ],
+      "candidate-laget-discovery-slr-tire-clearance-2026-08-27": [
+        "target.record_id=laget-discovery-slr"
       ],
       "candidate-lightcarbon-speed7-complete-bom-2026-08-17": [
         "target.record_id=lightcarbon-speed7-complete"
@@ -27117,6 +27384,12 @@
       ],
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
         "target.record_id=pardus-uragano-evo-community-lead"
+      ],
+      "candidate-pardus-uragano-sport-current-configuration-2026-08-27": [
+        "target.record_id=pardus-uragano-sport"
+      ],
+      "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": [
+        "target.record_id=pardus-uragano-sport"
       ],
       "candidate-quick-gr-one-price-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-gr-one"
@@ -28522,6 +28795,14 @@
         "specification": 1
       }
     },
+    "hi-light-g7-2-villain-retailer-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "ican-company-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -29055,6 +29336,14 @@
         "price": 0,
         "route": 3,
         "specification": 0
+      }
+    },
+    "pardus-uragano-sport-cn-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "pardus-uragano-sport-official": {
@@ -30673,7 +30962,7 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
-        "specification": 1
+        "specification": 3
       }
     },
     "titanium-hi-light-r6-105-al-official": {
@@ -30729,7 +31018,7 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
-        "specification": 1
+        "specification": 3
       }
     },
     "titanium-laget-pioneer-official": {
@@ -32154,6 +32443,30 @@
         "giant-china-warranty-2026-08-17"
       ]
     },
+    "candidate-hi-light-g7-2-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 titanium frameset weight\",\"exact-model retailer page\",\"found\",\"2026-08-27\",\"Retailer lists 1,850 g for a size-M frame and 491 g for the carbon fork.\",\"https://villain.shop/products/hi-light-g7-2-titanium-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-villain-retailer-2026-08-27"
+      ]
+    },
+    "candidate-hi-light-g7-2-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 official tire clearance\",\"official exact-model Chinese page\",\"found\",\"2026-08-27\",\"Official specification states ETRTO 47-622 and 700×45C maximum.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/119.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-hi-light-g7-2-official"
+      ]
+    },
     "candidate-hongfu-gravel-price-2026-08-17": {
       "channel_attempt_counts": {
         "web": 3
@@ -32371,6 +32684,40 @@
         "[\"web\",3,\"IREFOX current marketplace support\",\"official/current marketplace\",\"no-result\",\"2026-08-17\",\"No evidence.\",\"https://www.jd.com/jiage/131810d11b5e44e5573b.html\"]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-laget-discovery-slr-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery SLR official weight\",\"official exact-model page\",\"found\",\"2026-08-27\",\"Official page lists 1.55 kg for size S; hardware inclusion is not stated.\",\"https://lagetbike.com/productinfo/3301187.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-slr-official"
+      ]
+    },
+    "candidate-laget-discovery-slr-image-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery SLR official image\",\"official exact-model page\",\"rejected\",\"2026-08-27\",\"The apparent official asset rendered as a blank failed hero in the local site and was rejected rather than published.\",\"https://lagetbike.com/productinfo/3301187.html\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-laget-discovery-slr-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery SLR official tire clearance\",\"official exact-model page\",\"found\",\"2026-08-27\",\"Official specification states 700×45C maximum.\",\"https://lagetbike.com/productinfo/3301187.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-slr-official"
+      ]
     },
     "candidate-lightcarbon-speed7-complete-bom-2026-08-17": {
       "channel_attempt_counts": {
@@ -33020,12 +33367,14 @@
     "candidate-pardus-uragano-evo-complete-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
-        "web": 1
+        "web": 2
       },
       "attempt_entries": [
-        "[\"web\",1,\"PARDUS Uragano EVO Rival XPLR weight\",\"exact-model retailer page\",\"found\",\"2026-08-27\",\"Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]"
+        "[\"web\",1,\"PARDUS Uragano EVO Rival XPLR weight\",\"exact-model retailer page\",\"found\",\"2026-08-27\",\"Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]",
+        "[\"web\",2,\"PARDUS Uragano EVO review weight tire clearance\",\"dated independent exact-model review\",\"found\",\"2026-08-27\",\"BIKETO reports 9.65 kg without pedals for its documented Apex AXS/X1 Eagle AXS review build.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
       ],
       "accepted_source_ids": [
+        "biketo-pardus-uragano-evo-review-2023",
         "pardus-uragano-evo-uae-seller-2026-08-27"
       ]
     },
@@ -33040,6 +33389,30 @@
         "[\"web\",3,\"PARDUS Uragano EVO Rival XPLR\",\"foreign exact-model retailer\",\"rejected\",\"2026-08-27\",\"Sold-out foreign configuration cannot establish the current domestic SKU.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-pardus-uragano-sport-current-configuration-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano Sport 105 official China\",\"official exact-model Chinese page\",\"found\",\"2026-08-27\",\"Official page supplies the complete current 11-speed 105 R7000 configuration, wheels, cockpit, brakes, sizes and frame standards.\",\"https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano Sport 105 official tire clearance\",\"official exact-model Chinese page\",\"found\",\"2026-08-27\",\"Official page states a 700×45C maximum.\",\"https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27"
+      ]
     },
     "candidate-quick-gr-one-price-2026-08-27": {
       "channel_attempt_counts": {
@@ -37370,6 +37743,34 @@
       "remote_required": true,
       "primary_required": true
     },
+    "pardus-uragano-sport-cn-cockpit-gallery": {
+      "target": "candidates:pardus-uragano-sport",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "pardus-uragano-sport-cn-drivetrain-primary-image": {
+      "target": "candidates:pardus-uragano-sport",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "pardus-uragano-sport-cn-geometry-gallery": {
+      "target": "candidates:pardus-uragano-sport",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "pardus-uragano-sport-cn-rear-brake-gallery": {
+      "target": "candidates:pardus-uragano-sport",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "pardus-uragano-sport-primary-image": {
       "target": "candidates:pardus-uragano-sport",
       "minimum_accuracy_rank": 3,
@@ -38315,7 +38716,7 @@
       "remote_required": true
     },
     "candidates:pardus-uragano-sport": {
-      "minimum_accuracy_rank": 3,
+      "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
     },

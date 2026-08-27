@@ -4,15 +4,16 @@
   "model_id": "hi-light-g7-2",
   "category": "gravel",
   "type": "frameset",
-  "why_interesting": "Very strong-value titanium gravel frameset from a large established Chinese titanium manufacturer.",
+  "why_interesting": "A ¥6,500 titanium gravel frameset with an official 45 mm tire limit, six stock sizes and full geometry from a long-established Chinese manufacturer.",
   "missing": [
-    "Exact model specification and included package",
+    "Confirm the exact mainland frameset package beyond the frame and fork",
     "China purchase route and domestic warranty entity",
-    "Rights-cleared exact product image"
+    "Independent or official confirmation of the retailer-listed frame and fork weights"
   ],
   "status": "titanium-priority",
   "source_ids": [
-    "titanium-hi-light-g7-2-official"
+    "titanium-hi-light-g7-2-official",
+    "hi-light-g7-2-villain-retailer-2026-08-27"
   ],
   "official_price": {
     "amount_cny": 6500,
@@ -23,5 +24,17 @@
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html",
   "source_note": "Official page lists retail price ¥6,500.",
   "manufacturing": "titanium gravel frame",
-  "last_reviewed": "2026-08-08"
+  "facts": {
+    "frame": "Titanium gravel frame with carbon fork",
+    "frame_weight_g": 1850,
+    "frame_weight_basis": "Exact-model retailer claim for a size-M titanium frame; the 491 g carbon fork is listed separately",
+    "fork_weight_g": 491,
+    "tire_clearance_mm": 45,
+    "bottom_bracket": "BSA threaded",
+    "sizes": "S, M, L, XL, XXL and XXXL; other sizes may be customized",
+    "mounts": "Rack and fender mounts",
+    "axles": "12×100 mm front and 12×142 mm rear"
+  },
+  "source_note": "The official Chinese page supplies the exact G7.2 identity, ¥6,500 retail price, 700×45C maximum, BSA bottom bracket and six-size geometry. A separate exact-model retailer supplies the size-M frame and fork weights; those weights remain retailer claims.",
+  "last_reviewed": "2026-08-27"
 }
