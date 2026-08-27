@@ -7,8 +7,8 @@
       "platforms": 36,
       "variants": 38,
       "prices": 48,
-      "sources": 435,
-      "images": 172,
+      "sources": 436,
+      "images": 173,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
@@ -16,10 +16,10 @@
       "candidates": 202,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 402
+      "researchAttempts": 404
     },
     "image_accuracy": {
-      "exact-platform": 55,
+      "exact-platform": 56,
       "exact-variant": 78,
       "illustrative": 2,
       "same-model-different-color": 17,
@@ -28,7 +28,7 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 170
+      "remote": 171
     },
     "candidate_prices": {
       "official": 45,
@@ -392,6 +392,7 @@
       "public-xds-gt350-owner-2026-08-17",
       "public-xds-gt350-price-2026-08-17",
       "public-xds-gt600-overview-2026-08-17",
+      "public-xds-gt600-retailer-build-2026-08-27",
       "public-xlab-gt8-overview-2026-08-17",
       "quick-2026-one-series-launch",
       "quick-gr-one-china-official-2026-08-25",
@@ -819,6 +820,7 @@
       "xds-ad7-primary-image",
       "xds-gt350-primary-image",
       "xds-gt600-primary-image",
+      "xds-gt600-public-build-gallery",
       "xlab-gt8-primary-image",
       "xmcarbonspeed-cs-gr01-primary-image",
       "yoeleo-altera-g21-primary-image"
@@ -1320,6 +1322,8 @@
       "candidate-voicevelo-g-major-warranty-support-2026-08-17",
       "candidate-winspace-g3-mainland-price-2026-08-27",
       "candidate-winspace-g5-mainland-price-2026-08-27",
+      "candidate-xds-gt600-complete-weight-2026-08-27",
+      "candidate-xds-gt600-fitted-tire-2026-08-27",
       "candidate-xlab-gt8-price-2026-08-27",
       "candidate-xlab-gt8-purchase-route-2026-08-27",
       "platform-af01-frame-weight-2026-08-27",
@@ -6730,6 +6734,23 @@
         "accessed_at",
         "language",
         "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xds-gt600-retailer-build-2026-08-27": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "published_at",
         "publisher",
         "reliability.identity",
         "reliability.price",
@@ -12756,6 +12777,34 @@
         "source_id",
         "subject_accuracy"
       ],
+      "xds-gt600-public-build-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.mode",
+        "hosting.remote_url",
+        "hosting.variants",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "xlab-gt8-primary-image": [
         "alt",
         "candidate_id",
@@ -17708,6 +17757,7 @@
       ],
       "xds-gt600": [
         "category",
+        "facts.brakes",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
@@ -21173,6 +21223,34 @@
       "candidate-winspace-g5-mainland-price-2026-08-27": [
         "channels.public-post.status",
         "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-complete-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xds-gt600-fitted-tire-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
         "channels.web.status",
         "field",
         "notes",
@@ -24712,6 +24790,7 @@
       "public-xds-gt350-owner-2026-08-17": [],
       "public-xds-gt350-price-2026-08-17": [],
       "public-xds-gt600-overview-2026-08-17": [],
+      "public-xds-gt600-retailer-build-2026-08-27": [],
       "public-xlab-gt8-overview-2026-08-17": [],
       "quick-2026-one-series-launch": [],
       "quick-gr-one-china-official-2026-08-25": [],
@@ -25752,6 +25831,10 @@
       "xds-gt600-primary-image": [
         "candidate_id=xds-gt600",
         "source_id=xds-gt600-jd"
+      ],
+      "xds-gt600-public-build-gallery": [
+        "candidate_id=xds-gt600",
+        "source_id=public-xds-gt600-retailer-build-2026-08-27"
       ],
       "xlab-gt8-primary-image": [
         "candidate_id=missing-china-price-x-lab-xds-gt8",
@@ -26962,6 +27045,7 @@
         "model_id=xds-gt600",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-xds-gt600-overview-2026-08-17",
+        "source_ids=public-xds-gt600-retailer-build-2026-08-27",
         "source_ids=xds-manufacturing-government"
       ]
     },
@@ -27690,6 +27774,12 @@
       ],
       "candidate-winspace-g5-mainland-price-2026-08-27": [
         "target.record_id=missing-china-price-winspace-g5"
+      ],
+      "candidate-xds-gt600-complete-weight-2026-08-27": [
+        "target.record_id=xds-gt600"
+      ],
+      "candidate-xds-gt600-fitted-tire-2026-08-27": [
+        "target.record_id=xds-gt600"
       ],
       "candidate-xlab-gt8-price-2026-08-27": [
         "target.record_id=missing-china-price-x-lab-xds-gt8"
@@ -29784,6 +29874,14 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-xds-gt600-retailer-build-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "public-xlab-gt8-overview-2026-08-17": {
@@ -34810,6 +34908,30 @@
       ],
       "accepted_source_ids": []
     },
+    "candidate-xds-gt600-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 0
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"喜德盛 GT600 重量 胎宽\",\"canonical sequential XHS detail archive\",\"found\",\"2026-08-27\",\"An exact retailer post states 11.5 kg for the documented SRAM Apex 1×11 build.\",\"https://www.xiaohongshu.com/explore/6873301100000000130102e5\"]"
+      ],
+      "accepted_source_ids": [
+        "public-xds-gt600-retailer-build-2026-08-27"
+      ]
+    },
+    "candidate-xds-gt600-fitted-tire-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 0
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"喜德盛 GT600 重量 胎宽\",\"canonical sequential XHS detail archive\",\"found\",\"2026-08-27\",\"An exact retailer post documents fitted 700×40C tires on the pictured build.\",\"https://www.xiaohongshu.com/explore/6873301100000000130102e5\"]"
+      ],
+      "accepted_source_ids": [
+        "public-xds-gt600-retailer-build-2026-08-27"
+      ]
+    },
     "candidate-xlab-gt8-price-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 1,
@@ -38456,6 +38578,13 @@
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
+    },
+    "xds-gt600-public-build-gallery": {
+      "target": "candidates:xds-gt600",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": false
     },
     "xlab-gt8-primary-image": {
       "target": "candidates:missing-china-price-x-lab-xds-gt8",
