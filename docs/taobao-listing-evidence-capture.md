@@ -16,6 +16,8 @@ Open one exact listing and select every option that changes the product or packa
 - observation date and China time;
 - a screenshot or exported page image showing the selected options and price.
 
+The public URL must be canonical and identity-safe: use `https://item.taobao.com/item.htm?id=<public-item-id>` with no other query parameters. Strip share, referral, invite, tracking, session, and account parameters. If the listing cannot be represented by an identity-safe public URL, keep its original URL only in the local evidence archive and do not publish it.
+
 If any selected option or package boundary is missing, keep the record as research evidence instead of publishing one product price. Do not infer an exact price from the listing overview, crossed-out price, coupon, installment amount, deposit, accessory option, or another SKU in the same listing.
 
 ## Specification-image capture
@@ -42,6 +44,10 @@ Keep an immutable manifest row for every file:
 ```
 
 Do not transcode or overwrite the original. Derived crops and OCR may be stored separately and must point back to the original file hash. Remove account identifiers, order history, delivery addresses, chat messages, and other private state before archiving.
+
+## OCR extraction
+
+Use OCR selectively for images whose useful facts are not available as page text: geometry and size tables, tire-clearance diagrams, weight charts, package lists, compatibility matrices, and aero-profile labels. Record the source image SHA-256, OCR engine/version and language, extraction date, raw OCR output, and normalized claim candidates. Compare every retained value with the original pixels, including its row/column heading, unit, model, size, and package. OCR is discovery and transcription assistance, not standalone evidence for an ambiguous claim.
 
 ## Import boundary
 

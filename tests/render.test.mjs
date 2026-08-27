@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -560,6 +560,11 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(privacy, /youtube-nocookie\.com/);
   assert.match(privacy, /only after the visitor presses/);
   assert.match(privacy, /videos do not autoplay/);
+
+  const imagePolicy = renderImagePolicy(context);
+  assert.match(imagePolicy, /Selected XHS and Taobao images/);
+  assert.match(imagePolicy, /identity-safe canonical source URL/);
+  assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
 });
 
 

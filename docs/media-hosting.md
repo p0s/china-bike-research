@@ -2,15 +2,17 @@
 
 ## Decision
 
-Selected public XHS photos are served from an isolated Contabo media origin rather
-than from GitHub or expiring XHS CDN URLs. The public repository contains only source
+Selected public XHS and marketplace images are served from an isolated Contabo media origin rather
+than from GitHub or expiring source CDN URLs. The public repository contains only source
 links, attribution, exactness, privacy review, derivative dimensions, byte counts,
 and content hashes. It never contains the original or optimized third-party files.
 
-This is a small editorial quotation workflow, not an image mirror. One selected photo
-may identify and support commentary about one exact bicycle profile. The original post
-stays linked, copyright remains with its owner, no license is asserted, and a removal
-request can be filed through the public issue tracker without posting personal data.
+This is an attributed evidence workflow, not an image mirror. A selected image may
+identify an exact bicycle or expose decision-relevant geometry, size, clearance,
+weight, package, compatibility, or aero information. Every image must contribute a
+distinct fact or useful view. The identity-safe canonical source stays visibly linked,
+copyright remains with its owner, no license is asserted, and a removal request can be
+filed through the public issue tracker without posting personal data.
 
 ## Compression contract
 
@@ -32,7 +34,7 @@ were not committed.
 
 ## Operator workflow
 
-1. Confirm the exact public post and select one bicycle-focused image outside the repo.
+1. Confirm the exact public post or listing and select only useful exact-model images outside the repo.
 2. Reject images containing visible faces, vehicle registration, account overlays, or
    location identifiers. Do not retain creator handles or account IDs in project data.
 3. Optimize into an external staging directory:
@@ -55,7 +57,7 @@ were not committed.
 The optimizer refuses source or output paths inside the repository and refuses to
 overwrite an existing model directory.
 
-## Rights boundary
+## Source and rights boundary
 
 This workflow records an editorial rationale; it is not a legal determination. It is
 limited to the amount needed for model identification and commentary, keeps the quoted
@@ -66,9 +68,9 @@ Copyright Law](https://www.npc.gov.cn/c2/c30834/202011/t20201119_308796.html),
 [section 51 of Germany's Copyright Act](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0273),
 and the EU Court of Justice's quotation analysis in
 [C-516/17](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex:62017CJ0516):
-public availability alone is not enough; source attribution, a direct editorial link,
-fair practice, and use no broader than the specific purpose remain necessary. If those
-conditions are doubtful, use the project placeholder or an official/licensed image.
+Each public image keeps a direct, identity-safe canonical source link and visible
+attribution. This records provenance and supports removal or correction; it does not
+assert ownership or grant a general license to redistribute the source image.
 
 ## Privacy and serving behavior
 
