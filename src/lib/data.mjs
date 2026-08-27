@@ -66,6 +66,35 @@ export function supportsStandardFramesetBuild(category) {
   return ['road', 'gravel', 'triathlon'].includes(categoryFamily(category));
 }
 
+function publicSourceUrlPrivacyError(parsed) {
+  const hostname = parsed.hostname.toLowerCase();
+  if (hostname === 'xhslink.com' || hostname.endsWith('.xhslink.com') || hostname === 'm.tb.cn') {
+    return 'short share URL may contain referral or account context';
+  }
+  if (hostname === 'xiaohongshu.com' || hostname.endsWith('.xiaohongshu.com')) {
+    if (hostname !== 'www.xiaohongshu.com'
+      || parsed.protocol !== 'https:'
+      || !/^\/explore\/[a-f0-9]{24}$/.test(parsed.pathname)
+      || parsed.search
+      || parsed.hash) return 'XHS URL must be the identity-safe canonical post URL';
+  }
+  const isTaobao = hostname === 'taobao.com'
+    || hostname.endsWith('.taobao.com')
+    || hostname === 'tmall.com'
+    || hostname.endsWith('.tmall.com');
+  if (isTaobao) {
+    const keys = [...parsed.searchParams.keys()];
+    if (!['item.taobao.com', 'detail.tmall.com'].includes(hostname)
+      || parsed.protocol !== 'https:'
+      || parsed.pathname !== '/item.htm'
+      || !/^\d+$/.test(parsed.searchParams.get('id') ?? '')
+      || keys.length !== 1
+      || keys[0] !== 'id'
+      || parsed.hash) return 'Taobao URL must be the identity-safe canonical item URL with only its public item ID';
+  }
+  return '';
+}
+
 function categoryDetailLines(platform) {
   const details = platform.category_details ?? {};
   return [details.note, details.evidence ? `Evidence: ${evidenceLabel(details.evidence)}.` : ''].filter(Boolean);
@@ -450,7 +479,11 @@ export function validateDataset(data = loadDataset()) {
     requireFields('source', source, ['type', 'title', 'publisher', 'accessed_at', 'reliability', 'notes']);
     if (!isDate(source.accessed_at)) errors.push(`source ${source.id}: invalid accessed_at`);
     if (source.url) {
-      try { new URL(source.url); } catch { errors.push(`source ${source.id}: invalid URL`); }
+      try {
+        const parsed = new URL(source.url);
+        const privacyError = publicSourceUrlPrivacyError(parsed);
+        if (privacyError) errors.push(`source ${source.id}: ${privacyError}`);
+      } catch { errors.push(`source ${source.id}: invalid URL`); }
     }
     if (source.type === 'marketplace-screenshot') {
       if (!isDate(source.observed_at)) errors.push(`source ${source.id}: invalid observed_at`);
@@ -898,6 +931,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
+        identifiableModel: hasIdentifiableModel,
         defaultVisible: Boolean(
           officialPrice ||
           (observedPrice && hasIdentifiableModel) ||

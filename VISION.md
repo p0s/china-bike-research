@@ -37,7 +37,7 @@ Within minutes, a buyer should be able to:
 - A complete encyclopedia of every bicycle.
 - Paid placement, hidden affiliate ranking, or a universal quality score.
 - Automated scraping that bypasses platform controls.
-- Building a third-party image archive or using copied photography as decoration. A bounded public-post editorial quotation is allowed only when it supports direct model commentary and meets the source, scope, attribution, privacy, removal, and external-hosting contract in `SPEC.md`.
+- Building a bulk third-party image mirror or using copied photography as decoration. Selected XHS and marketplace images may support exact-model identification or decision-relevant specifications when they meet the source, attribution, privacy, removal, and external-hosting contract in `SPEC.md`.
 
 ## Change policy
 

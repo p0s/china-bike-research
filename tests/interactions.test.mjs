@@ -25,7 +25,7 @@ test('catalog previews enlarge the full hit target from a useful default size', 
   assert.match(styles, /\.catalog-row \.product-image-link:hover \{[\s\S]*?transform: scale\(var\(--catalog-preview-scale\)\)/);
   assert.doesNotMatch(styles, /\.product-image-link:hover > img/);
   assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-table \{ display: grid; grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /@media \(max-width: 780px\)[\s\S]*?\.filter-primary \{ grid-template-columns: 1fr; \}[\s\S]*?\.catalog-table \{ grid-template-columns: 1fr; \}/);
+  assert.match(styles, /@media \(max-width: 780px\)[\s\S]*?\.filter-primary \{ grid-template-columns: 1fr 1fr; \}[\s\S]*?\.catalog-table \{ grid-template-columns: 1fr; \}/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.product-image \{ width: 132px; \}/);
   assert.match(script, /\.catalog-row \.product-image-link'[\s\S]*?addEventListener\('mouseenter'[\s\S]*?closeTooltip\(\)/);
   assert.match(styles, /\.product-image:has\(\.product-image-link:hover\) \.image-info \{[\s\S]*?opacity: 0;[\s\S]*?pointer-events: none;/);
@@ -66,9 +66,26 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(script, /key === 'capability' \|\| key === 'tire'/);
   assert.match(script, /row\.dataset\.tireClearanceSort/);
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
-  assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: 144px;[\s\S]*?z-index: 34;/);
-  assert.match(styles, /@media \(max-width: 1220px\)[\s\S]*?\.catalog-head \{ top: 212px; \}/);
+  assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: var\(--catalog-head-top, 144px\);[\s\S]*?z-index: 34;/);
+  assert.match(script, /function syncCatalogHeadTop\(\)/);
+  assert.match(script, /new ResizeObserver\(syncCatalogHeadTop\)\.observe\(catalogFilterBar\)/);
   assert.match(styles, /@media \(max-width: 1120px\)[\s\S]*?\.catalog-head \{ display: none; \}/);
+});
+
+test('typed catalog filters are numeric where appropriate, URL-addressable, and removable', () => {
+  assert.match(script, /const tire = catalogRoot\.querySelector\('\[data-filter-tire\]'\)/);
+  assert.match(script, /const minTire = numericValue\(tire\)/);
+  assert.match(script, /!minTire \|\| tireValue >= minTire \|\| \(!tireValue && tireUnknown\?\.checked\)/);
+  assert.match(script, /function syncTireUnknownAvailability\(\)/);
+  assert.match(script, /tireUnknown\.disabled = !hasMinimum/);
+  assert.match(script, /setParam\(next, 'tire', tire\?\.value\)/);
+  assert.match(script, /setParam\(next, 'completeWeight', completeWeight\?\.value\)/);
+  assert.match(script, /setParam\(next, 'frameWeight', frameWeight\?\.value\)/);
+  assert.match(script, /setParam\(next, 'drivetrain', drivetrainFilter\?\.value\.trim\(\)\)/);
+  assert.match(script, /function typedFilterChips\(\)/);
+  assert.match(script, /button\.dataset\.clearFilter = key/);
+  assert.match(script, /clearTypedFilter\(key\)/);
+  assert.match(script, /filterHeadingButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
 });
 
 test('candidate discovery stays URL-addressable without repeated missing-data warnings', () => {
@@ -128,12 +145,18 @@ test('video embeds are created only after an explicit click and never autoplay',
 });
 
 test('bike builder persists shareable state and avoids package double counting', () => {
-  assert.match(script, /const storageKey = 'china-bike-builder-v1'/);
+  assert.match(script, /data\?\.schemaVersion !== 2/);
+  assert.match(script, /const storageKey = 'china-bike-builder-v2'/);
+  assert.match(script, /const bases = new Map\(data\.bases\.map/);
+  assert.match(script, /function ensureBaseOption\(base\)/);
+  assert.match(script, /group\.label = 'Selected research-stage item'/);
+  assert.match(script, /base\?\.kind === 'complete-bike' \? 'included' : sourcedDefaults\[slot\]/);
   assert.match(script, /function coveredSlots\(\)/);
   assert.match(script, /for \(const coveredSlot of part\.covers \|\| \[\]\)/);
   assert.match(script, /if \(!covered\.has\(coveredSlot\)\) covered\.set\(coveredSlot, part\)/);
   assert.match(script, /if \(coveringPart\) \{[\s\S]*?continue;/);
-  assert.match(script, /target\.searchParams\.set\('frame', state\.frameId\)/);
+  assert.match(script, /target\.searchParams\.set\('base', state\.baseId\)/);
+  assert.match(script, /target\.searchParams\.delete\('frame'\)/);
   assert.match(script, /target\.searchParams\.set\(`part-\$\{slot\}`, selection\)/);
   assert.match(script, /localStorage\.setItem\(storageKey, JSON\.stringify\(state\)\)/);
   assert.match(script, /const partPrice = recordedPrice \?\? buyerPrice/);
@@ -141,11 +164,23 @@ test('bike builder persists shareable state and avoids package double counting',
   assert.match(script, /recordedPrice === null && buyerPrice !== null \? 'Buyer-entered price'/);
   assert.match(script, /customPriceField\.hidden = !needsPriceInput/);
   assert.match(script, /customWeightField\.hidden = !needsWeightInput/);
+  assert.match(script, /removedWeightField\.hidden = !needsRemovedWeight/);
+  assert.match(script, /const delta = partWeight - removedPartWeight/);
+  assert.match(script, /missingWeights\.push\(`\$\{slot\} replacement delta`\)/);
   assert.match(script, /accepted_frame_shells/);
-  assert.match(script, /does not list \$\{frame\.bottomBracket\} frame compatibility/);
+  assert.match(script, /does not list \$\{base\.bottomBracket\} frame compatibility/);
   assert.match(script, /nominal_tire_width_mm/);
   assert.match(script, /tires exceed the frame's published/);
   assert.match(script, /the selected wheelset does not list it/);
   assert.match(styles, /\.builder-summary \{[\s\S]*?position: sticky;/);
   assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.builder-summary \{[\s\S]*?position: sticky;/);
+});
+
+test('one catalog selection opens Build while multiple selections open Compare', () => {
+  assert.match(script, /const openBuildLink = document\.querySelector\('\[data-open-build\]'\)/);
+  assert.match(script, /const item = selection\.length === 1 \? byId\.get\(selection\[0\]\) : null/);
+  assert.match(script, /openBuildLink\.hidden = !item\?\.builderEligible/);
+  assert.match(script, /target\.searchParams\.set\('base', item\.buildBaseId \|\| item\.id\)/);
+  assert.match(script, /item\.buildBaseKind === 'frameset' \? 'Build this frame' : 'Modify this bike'/);
+  assert.match(script, /openCompareButton\.hidden = selection\.length < 2/);
 });

@@ -20,6 +20,42 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('XHS and Taobao sources use identity-safe canonical public URLs', () => {
+  const xhs = structuredClone(data);
+  xhs.sources.push({
+    id: 'privacy-test-xhs-source',
+    type: 'community-post',
+    title: 'Exact public post',
+    publisher: 'Public source',
+    accessed_at: '2026-08-27',
+    url: 'https://www.xiaohongshu.com/explore/68ef9e81000000000503afd8',
+    reliability: { identity: 'medium', specification: 'low', price: 'low' },
+    notes: 'Synthetic validation fixture.'
+  });
+  assert.deepEqual(validateDataset(xhs), []);
+  xhs.sources.at(-1).url += '?xsec_token=private-share-context&xsec_source=pc_share';
+  assert.ok(validateDataset(xhs).some((error) => error.includes('identity-safe canonical post URL')));
+  xhs.sources.at(-1).url = 'https://edith.xiaohongshu.com/api/sns/web/v1/feed?xsec_token=private-share-context';
+  assert.ok(validateDataset(xhs).some((error) => error.includes('identity-safe canonical post URL')));
+
+  const taobao = structuredClone(data);
+  taobao.sources.push({
+    id: 'privacy-test-taobao-source',
+    type: 'retailer-listing',
+    title: 'Exact public listing',
+    publisher: 'Public seller',
+    accessed_at: '2026-08-27',
+    url: 'https://item.taobao.com/item.htm?id=1234567890',
+    reliability: { identity: 'high', specification: 'medium', price: 'medium' },
+    notes: 'Synthetic validation fixture.'
+  });
+  assert.deepEqual(validateDataset(taobao), []);
+  taobao.sources.at(-1).url += '&spm=private-referral-context';
+  assert.ok(validateDataset(taobao).some((error) => error.includes('identity-safe canonical item URL')));
+  taobao.sources.at(-1).url = 'https://s.taobao.com/search?q=bike&spm=private-referral-context';
+  assert.ok(validateDataset(taobao).some((error) => error.includes('identity-safe canonical item URL')));
+});
+
 test('publication gates reject incomplete builds and category-mismatched framesets', () => {
   const incompleteBuild = structuredClone(data);
   delete incompleteBuild.variants.find((item) => item.id === 'twitter-v3-wheeltop-eds').drivetrain;

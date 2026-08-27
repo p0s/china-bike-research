@@ -32,7 +32,7 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 
 - Before any XHS worker starts, preflight dedicated research Chrome once: signed in, the canonical `network-requests-extension` checkout enabled (not a copied worktree), duplicates disabled, and one usable tab.
 - Use one sequential XHS lane. Search cards are discovery only; opened exact posts may support visible claims, while comments remain `community report` evidence.
-- Keep only sanitized public URLs and privacy-safe summaries. Third-party media never enters Git. A selected public-post photo may use `public-post-quotation` on the approved external media origin only when its record has the exact source, owner credit, editorial purpose, no-license statement, removal route, content hashes, alt text, fallback, and completed privacy review. Otherwise use `public-post-embed` or the project placeholder.
+- Keep only identity-safe canonical public URLs and privacy-safe summaries. Strip share, referral, invite, tracking, session, and account parameters. Third-party media never enters Git. Selected XHS or marketplace images may use `public-post-quotation` on the approved external media origin when each contributes exact-model or decision-relevant evidence and its record has the exact source, owner or seller credit, no-license statement, removal route, content hashes, alt text, fallback, and completed privacy review.
 - Security Verification, HTTP 412, or rate limiting stops the lane. Close the tab, record the blocker, and retry only in a later turn after the user confirms normal access.
 
 ## Research delegation
@@ -58,7 +58,7 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 - **Recommendations:** update only when the underlying evidence changes the buying conclusion.
 - **Dates:** record the actual observation/access/review date. Do not refresh dates without rechecking the source.
 - **Framesets:** use the allowance in `data/meta.json` only when it is a credible complete-build estimate for that product.
-- **Images:** third-party binaries never enter Git. Direct remote references remain the default. The approved external media origin may serve a bounded public-post editorial quotation only under the complete `SPEC.md` media contract. Preserve exactness, source, credit, alt text, privacy review, immutable derivative metadata, and fallback.
+- **Images:** third-party binaries never enter Git. Preserve immutable originals and hash-linked OCR outside the repository. Direct remote references remain the default; the approved external media origin may serve selected attributed XHS or marketplace evidence images under `SPEC.md`. Preserve exactness, identity-safe canonical source, credit, alt text, privacy review, immutable derivative metadata, and fallback.
 
 Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in `platforms/`, exact builds in `variants/`, and dated market facts in `prices/`.
 
@@ -74,11 +74,9 @@ Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in 
 
 ## Public-post browser research
 
-- Use only the dedicated research Chrome and the local request-capture extension. Keep capture data local, and never expose cookies, tokens, or private request parameters in repository records.
-- Keep one active search or detail tab. Do not fan out concurrent tabs or use the extension's bulk auto-mode for evidence collection.
-- Stop the lane immediately on a verification or HTTP 412 challenge, record the field as blocked, and retry in a later research window. Do not solve or bypass the challenge and do not repeatedly probe it.
-- There is no verified numeric safe delay. A rapid tab fan-out was followed by a challenge, while a slower single-tab retry remained challenged, so use moderate variable pacing without treating it as a guarantee.
-- The canonical capture extension is `aeldmfnliicdpoggggpnbhpfbbkkkpmd`; keep duplicate extension `inepmoichhhgmpohidkjofleliiipccb` disabled. If the canonical window reaches Security Verification, close the tab after one sanitized blocked record and do not advance to another queue item in that same window.
+- Use only an explicitly authorized research browser. Keep raw capture data local, and never expose cookies, tokens, account data, or private request parameters in repository records.
+- Respect verification challenges, rate limits, and access controls. Stop the affected research route instead of solving, bypassing, or repeatedly probing a challenge.
+- Publish only sanitized public URLs and evidence-derived claims. Exact marketplace images may be published with an exact listing/model mapping, linked public source, seller or owner credit, observation date, alt text, fallback, and completed privacy review; attribution records provenance without asserting ownership or a general redistribution license. Keep raw page and network captures out of the repository.
 
 ## Validation and handoff
 
