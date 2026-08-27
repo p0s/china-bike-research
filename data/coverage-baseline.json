@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 48,
-      "sources": 425,
+      "sources": 427,
       "images": 169,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 200,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 372
+      "researchAttempts": 382
     },
     "image_accuracy": {
       "exact-platform": 55,
@@ -272,6 +272,7 @@
       "ican-gra04-alibaba-image",
       "ican-gra04-official",
       "ican-graro-official",
+      "ican-graro-official-2026-08-27",
       "ican-sn04-official-2026-08-08",
       "icanian-p9-official-2026-08-08",
       "incolor-services-official-2026-08-17",
@@ -626,6 +627,7 @@
       "xlab-gt8-official-2026-08-17",
       "xlab-gt8-smzdm-market-report-2026-08-27",
       "xmcarbonspeed-gr01-official",
+      "yoeleo-altera-g21-current-2026-08-27",
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16"
     ],
@@ -1287,13 +1289,23 @@
       "platform-bxt-055-geometry-2026-08-27",
       "platform-evolve-cima-gr-frame-weight-2026-08-27",
       "platform-evolve-cima-gr-geometry-2026-08-27",
+      "platform-ican-graro-frame-weight-2026-08-27",
       "platform-ican-graro-geometry-2026-08-27",
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
       "platform-pardus-super-sport-gen2-geometry-2026-08-27",
       "platform-sava-gelaro-bottom-bracket-2026-08-27",
       "platform-sava-gelaro-frame-weight-2026-08-27",
+      "platform-seka-exaero-gr-frame-weight-2026-08-27",
+      "platform-seka-exaero-gr-geometry-2026-08-27",
+      "platform-tavelo-grow-drivetrain-compatibility-2026-08-27",
+      "platform-tavelo-grow-frame-weight-2026-08-27",
+      "platform-tavelo-grow-geometry-2026-08-27",
       "platform-tfsa-jh37-geometry-2026-08-27",
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
+      "platform-winspace-g5-geometry-2026-08-27",
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
+      "platform-yoeleo-altera-g21-geometry-2026-08-27",
+      "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
       "variant-af01-frameset-price-2026-08-27",
       "variant-af01-frameset-purchase-route-2026-08-27",
       "variant-bianchi-oltre-race-bom-2026-08-17",
@@ -2210,6 +2222,8 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
         "frame.claimed_fork_weight_g_range.basis",
         "frame.claimed_fork_weight_g_range.high",
         "frame.claimed_fork_weight_g_range.low",
@@ -2595,6 +2609,11 @@
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2681,10 +2700,24 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_frame_weight_g_by_size.basis",
+        "frame.claimed_frame_weight_g_by_size.L",
+        "frame.claimed_frame_weight_g_by_size.M",
+        "frame.claimed_frame_weight_g_by_size.S",
+        "frame.claimed_frame_weight_g_by_size.XL",
+        "frame.claimed_frame_weight_g_by_size.XS",
+        "frame.claimed_frame_weight_g_by_size.XXL",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2921,6 +2954,11 @@
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "handlebar",
         "internal_storage",
@@ -2969,13 +3007,28 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.claimed_raw_frame_weight_basis",
+        "frame.claimed_raw_frame_weight_g",
+        "frame.claimed_seatpost_weight_basis",
+        "frame.claimed_seatpost_weight_g",
+        "frame.configuration_notes.chainring_limits",
+        "frame.configuration_notes.tire_clearance_condition",
         "frame.derailleur_hanger",
         "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
         "frame.material",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
         "frame.warranty_claim.note",
+        "frame.weight_conflict_note",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -5175,6 +5228,18 @@
         "url"
       ],
       "ican-graro-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "ican-graro-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -9483,6 +9548,18 @@
         "url"
       ],
       "xmcarbonspeed-gr01-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "yoeleo-altera-g21-current-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -20602,6 +20679,20 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-ican-graro-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-ican-graro-geometry-2026-08-27": [
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -20678,6 +20769,75 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-seka-exaero-gr-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-seka-exaero-gr-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tavelo-grow-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tavelo-grow-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-tfsa-jh37-geometry-2026-08-27": [
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -20707,6 +20867,63 @@
         "resolution.note",
         "resolution.resolved_at",
         "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-winspace-g5-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-yoeleo-altera-g21-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-yoeleo-altera-g21-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -23077,7 +23294,8 @@
       "ican-graro": [
         "brand_id=ican",
         "source_ids=ican-company-official",
-        "source_ids=ican-graro-official"
+        "source_ids=ican-graro-official",
+        "source_ids=ican-graro-official-2026-08-27"
       ],
       "incolor-voyager": [
         "brand_id=incolor",
@@ -23159,6 +23377,7 @@
       ],
       "seka-exaero-gr": [
         "brand_id=seka",
+        "frame.geometry.source_id=seka-exaero-gr-official-2026-08-27",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-seka-exaero-build-2026-08-17",
         "source_ids=seka-exaero-gr-official-2026-08-27",
@@ -23181,6 +23400,7 @@
       ],
       "tavelo-grow": [
         "brand_id=tavelo",
+        "frame.geometry.source_id=tavelo-grow-official-2026-08-27",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-tavelo-grow-build-2026-08-17",
         "source_ids=tavelo-grow-china-launch-2026",
@@ -23237,6 +23457,7 @@
       ],
       "winspace-g5": [
         "brand_id=winspace",
+        "frame.geometry.source_id=winspace-g5-official",
         "source_ids=winspace-g5-official",
         "source_ids=winspace-g5-weight-woods-cycles-2026-08-25"
       ],
@@ -23246,6 +23467,8 @@
       ],
       "yoeleo-altera-g21": [
         "brand_id=yoeleo",
+        "frame.geometry.source_id=yoeleo-altera-g21-current-2026-08-27",
+        "source_ids=yoeleo-altera-g21-current-2026-08-27",
         "source_ids=yoeleo-altera-g21-official",
         "source_ids=yoeleo-altera-g21-official-2026-08-16"
       ]
@@ -23311,7 +23534,8 @@
       "ican-graro-frameset": [
         "platform_id=ican-graro",
         "source_ids=ican-company-official",
-        "source_ids=ican-graro-official"
+        "source_ids=ican-graro-official",
+        "source_ids=ican-graro-official-2026-08-27"
       ],
       "incolor-voyager-frameset": [
         "platform_id=incolor-voyager",
@@ -23468,6 +23692,7 @@
       ],
       "yoeleo-altera-g21-frameset": [
         "platform_id=yoeleo-altera-g21",
+        "source_ids=yoeleo-altera-g21-current-2026-08-27",
         "source_ids=yoeleo-altera-g21-official",
         "source_ids=yoeleo-altera-g21-official-2026-08-16"
       ]
@@ -23759,6 +23984,7 @@
       "ican-gra04-alibaba-image": [],
       "ican-gra04-official": [],
       "ican-graro-official": [],
+      "ican-graro-official-2026-08-27": [],
       "ican-sn04-official-2026-08-08": [],
       "icanian-p9-official-2026-08-08": [],
       "incolor-services-official-2026-08-17": [],
@@ -24113,6 +24339,7 @@
       "xlab-gt8-official-2026-08-17": [],
       "xlab-gt8-smzdm-market-report-2026-08-27": [],
       "xmcarbonspeed-gr01-official": [],
+      "yoeleo-altera-g21-current-2026-08-27": [],
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": []
     },
@@ -26767,6 +26994,9 @@
       "platform-evolve-cima-gr-geometry-2026-08-27": [
         "target.record_id=evolve-cima-gr"
       ],
+      "platform-ican-graro-frame-weight-2026-08-27": [
+        "target.record_id=ican-graro"
+      ],
       "platform-ican-graro-geometry-2026-08-27": [
         "target.record_id=ican-graro"
       ],
@@ -26782,12 +27012,39 @@
       "platform-sava-gelaro-frame-weight-2026-08-27": [
         "target.record_id=sava-gelaro"
       ],
+      "platform-seka-exaero-gr-frame-weight-2026-08-27": [
+        "target.record_id=seka-exaero-gr"
+      ],
+      "platform-seka-exaero-gr-geometry-2026-08-27": [
+        "target.record_id=seka-exaero-gr"
+      ],
+      "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
+        "target.record_id=tavelo-grow"
+      ],
+      "platform-tavelo-grow-frame-weight-2026-08-27": [
+        "target.record_id=tavelo-grow"
+      ],
+      "platform-tavelo-grow-geometry-2026-08-27": [
+        "target.record_id=tavelo-grow"
+      ],
       "platform-tfsa-jh37-geometry-2026-08-27": [
         "target.record_id=tfsa-jh37"
       ],
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-gravel-v3-2024"
+      ],
+      "platform-winspace-g5-geometry-2026-08-27": [
+        "target.record_id=winspace-g5"
+      ],
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27": [
+        "target.record_id=yoeleo-altera-g21"
+      ],
+      "platform-yoeleo-altera-g21-geometry-2026-08-27": [
+        "target.record_id=yoeleo-altera-g21"
+      ],
+      "platform-yoeleo-altera-g21-tire-clearance-2026-08-27": [
+        "target.record_id=yoeleo-altera-g21"
       ],
       "variant-af01-frameset-price-2026-08-27": [
         "target.record_id=af01-frameset"
@@ -27829,6 +28086,14 @@
       }
     },
     "ican-graro-official": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "ican-graro-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -30677,6 +30942,14 @@
         "identity": 3,
         "price": 3,
         "specification": 2
+      }
+    },
+    "yoeleo-altera-g21-current-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "yoeleo-altera-g21-official": {
@@ -33578,6 +33851,20 @@
         "evolve-cima-gr-pandapodium-2026-08-27"
       ]
     },
+    "platform-ican-graro-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"ICAN Graro current frame weight\",\"manufacturer exact-model storefront\",\"found\",\"2026-08-26\",\"The retained storefront source records exact painted examples rather than a single universal frame weight.\",\"https://icanwheels.com/products/graro\"]",
+        "[\"web\",2,\"ICAN Graro YS955 YS2386-1 weight\",\"manufacturer current exact-model page\",\"found\",\"2026-08-27\",\"The current page confirms 1,073 ±20 g and 1,095 ±20 g for two named painted size-52 finishes and a 470 g painted fork.\",\"https://icancycling.com/products/gravel-bike-frame-graro\"]"
+      ],
+      "accepted_source_ids": [
+        "ican-graro-official",
+        "ican-graro-official-2026-08-27"
+      ]
+    },
     "platform-ican-graro-geometry-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -33639,6 +33926,66 @@
       ],
       "accepted_source_ids": []
     },
+    "platform-seka-exaero-gr-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA ExAero GR official frame weight\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Exact gravel model specifies 980 ±35 g for an unpainted size-54 frame excluding paint and hardware.\",\"https://www.sekabikes.com/en/exaero-gr-en/\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-gr-official-2026-08-27"
+      ]
+    },
+    "platform-seka-exaero-gr-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA ExAero GR geometry\",\"manufacturer exact-model geometry chart\",\"found\",\"2026-08-27\",\"The current page supplies the complete 49–61 geometry chart and describes 423 mm chainstays with size-dependent 70–74 mm BB drop.\",\"https://www.sekabikes.com/en/exaero-gr-en/\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-gr-official-2026-08-27"
+      ]
+    },
+    "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Tavelo Grow 1x 2x front derailleur\",\"manufacturer exact-model product page\",\"no-result\",\"2026-08-27\",\"The page says the BSA layout is optimized for large chainrings but does not state whether the frame supports 1× only or 2×.\",\"https://tavelo.cc/products/tavelo-grow\"]",
+        "[\"web\",2,\"site:tavelo.cc Tavelo Grow front derailleur 2x chainring\",\"manufacturer-site search\",\"no-result\",\"2026-08-27\",\"The manufacturer search repeats large-chainring and UDH language without an exact Grow front-derailleur statement.\",\"https://tavelo.cc/\"]",
+        "[\"web\",3,\"site:tavelo.cc Tavelo Grow front derailleur hanger\",\"manufacturer parts catalog\",\"rejected\",\"2026-08-27\",\"A generic front-derailleur hanger is sold, but its listing does not map it to Grow and therefore cannot prove 2× compatibility.\",\"https://tavelo.cc/collections/gear\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-tavelo-grow-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Tavelo Grow frame weight by size\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"The official table maps 830/845/860/880/895/960 g ±25 g raw weights to XS/S/M/L/XL/XXL and lists a 460 g raw fork.\",\"https://tavelo.cc/products/tavelo-grow\"]"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-official-2026-08-27"
+      ]
+    },
+    "platform-tavelo-grow-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Tavelo Grow official geometry\",\"manufacturer exact-model geometry chart\",\"found\",\"2026-08-27\",\"The current product page supplies the complete XS–XXL chart, including 423 mm chainstays and a size-M 1,025 mm wheelbase.\",\"https://tavelo.cc/products/tavelo-grow\"]"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-official-2026-08-27"
+      ]
+    },
     "platform-tfsa-jh37-geometry-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -33664,6 +34011,58 @@
       ],
       "accepted_source_ids": [
         "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
+    },
+    "platform-winspace-g5-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G5 gravel geometry\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"The current page and its geometry chart supply all six sizes; the manufacturer page still does not publish a frame-only weight.\",\"https://www.winspace.cc/products/g5-gravel\"]"
+      ],
+      "accepted_source_ids": [
+        "winspace-g5-official"
+      ]
+    },
+    "platform-yoeleo-altera-g21-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Yoeleo Altera G21 official weight\",\"older manufacturer platform guide\",\"conflict\",\"2026-08-16\",\"The guide lists 980 ±50 g for size 49.\",\"https://www.yoeleobike.com/blogs/frames/altera-g21-color-guide\"]",
+        "[\"web\",2,\"Yoeleo Altera G21 Panda Podium Purple frame weight\",\"current manufacturer exact-product page\",\"conflict\",\"2026-08-27\",\"The current named product lists 1,150 g raw and 1,170 g painted for size 56.\",\"https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-current-2026-08-27",
+        "yoeleo-altera-g21-official-2026-08-16"
+      ]
+    },
+    "platform-yoeleo-altera-g21-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Yoeleo Altera G21 current geometry\",\"manufacturer current exact-product table\",\"found\",\"2026-08-27\",\"The current page exposes the complete 45–60 geometry table, including 433 mm chainstays and 79 mm BB drop at every size.\",\"https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-current-2026-08-27"
+      ]
+    },
+    "platform-yoeleo-altera-g21-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Yoeleo Altera G21 53 mm tire clearance 1x\",\"older manufacturer platform guide\",\"found\",\"2026-08-16\",\"The older official guide records the 700x53 mm maximum as a 1× condition.\",\"https://www.yoeleobike.com/blogs/frames/altera-g21-color-guide\"]",
+        "[\"web\",2,\"Yoeleo Altera G21 current tire compatibility\",\"current manufacturer exact-product page\",\"found\",\"2026-08-27\",\"The current product independently repeats 700x53 mm only for a single-chainring setup and does not publish a 2× maximum.\",\"https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-current-2026-08-27",
+        "yoeleo-altera-g21-official-2026-08-16"
       ]
     },
     "variant-af01-frameset-price-2026-08-27": {

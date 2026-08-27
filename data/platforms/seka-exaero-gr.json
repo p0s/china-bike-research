@@ -10,12 +10,25 @@
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
-    "bottom_bracket": "T47",
+    "bottom_bracket": "T47 68",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 980,
-    "claimed_frame_weight_basis": "Official bare, unpainted size-54 frame claim.",
-    "claimed_fiber": "T1100/M46J-claimed"
+    "claimed_frame_weight_basis": "Unpainted size-54 frame, 980 ±35 g, excluding paint and hardware.",
+    "claimed_fiber": "T1100/M46J-claimed",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry chart",
+      "source_id": "seka-exaero-gr-official-2026-08-27",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "49", "stack_mm": 524, "reach_mm": 369, "head_tube_mm": 96.4, "head_angle_deg": 70.4, "seat_angle_deg": 75, "bb_drop_mm": 74, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 587, "seat_tube_mm": 460, "top_tube_mm": 509, "wheelbase_mm": 999, "standover_mm": 747, "trail_mm": 71 },
+        { "size": "52", "stack_mm": 540, "reach_mm": 375, "head_tube_mm": 111, "head_angle_deg": 71, "seat_angle_deg": 74.3, "bb_drop_mm": 74, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 593, "seat_tube_mm": 490, "top_tube_mm": 526, "wheelbase_mm": 1005, "standover_mm": 771, "trail_mm": 67 },
+        { "size": "54", "stack_mm": 559, "reach_mm": 381, "head_tube_mm": 132, "head_angle_deg": 71.3, "seat_angle_deg": 74, "bb_drop_mm": 72, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 603, "seat_tube_mm": 510, "top_tube_mm": 541, "wheelbase_mm": 1016, "standover_mm": 792, "trail_mm": 65.5 },
+        { "size": "56", "stack_mm": 579, "reach_mm": 389, "head_tube_mm": 152, "head_angle_deg": 71.6, "seat_angle_deg": 74, "bb_drop_mm": 72, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 615, "seat_tube_mm": 535, "top_tube_mm": 555, "wheelbase_mm": 1027, "standover_mm": 815, "trail_mm": 63.5 },
+        { "size": "58", "stack_mm": 602, "reach_mm": 399, "head_tube_mm": 176.5, "head_angle_deg": 72, "seat_angle_deg": 73.5, "bb_drop_mm": 70, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 628, "seat_tube_mm": 555, "top_tube_mm": 578, "wheelbase_mm": 1042, "standover_mm": 837, "trail_mm": 61 },
+        { "size": "61", "stack_mm": 620, "reach_mm": 408, "head_tube_mm": 195, "head_angle_deg": 72.2, "seat_angle_deg": 73, "bb_drop_mm": 70, "chainstay_mm": 423, "fork_offset_mm": 50, "fork_length_mm": 401, "front_center_mm": 641, "seat_tube_mm": 580, "top_tube_mm": 598, "wheelbase_mm": 1055, "standover_mm": 858, "trail_mm": 60 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",

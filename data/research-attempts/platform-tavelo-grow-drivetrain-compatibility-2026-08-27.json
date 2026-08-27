@@ -1,0 +1,21 @@
+{
+  "id": "platform-tavelo-grow-drivetrain-compatibility-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "tavelo-grow" },
+  "field": "drivetrain-compatibility",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Tavelo Grow 1x 2x front derailleur", "route": "manufacturer exact-model product page", "outcome": "no-result", "result_url": "https://tavelo.cc/products/tavelo-grow", "accessed_at": "2026-08-27", "note": "The page says the BSA layout is optimized for large chainrings but does not state whether the frame supports 1× only or 2×." },
+        { "attempt": 2, "query": "site:tavelo.cc Tavelo Grow front derailleur 2x chainring", "route": "manufacturer-site search", "outcome": "no-result", "result_url": "https://tavelo.cc/", "accessed_at": "2026-08-27", "note": "The manufacturer search repeats large-chainring and UDH language without an exact Grow front-derailleur statement." },
+        { "attempt": 3, "query": "site:tavelo.cc Tavelo Grow front derailleur hanger", "route": "manufacturer parts catalog", "outcome": "rejected", "result_url": "https://tavelo.cc/collections/gear", "accessed_at": "2026-08-27", "note": "A generic front-derailleur hanger is sold, but its listing does not map it to Grow and therefore cannot prove 2× compatibility." }
+      ]
+    }
+  },
+  "status": "open",
+  "notes": "The web route is temporarily exhausted, but the high-priority public-post channel remains unrun, so the atomic gap stays open. Exact 1×/2× support remains unknown and the prior 1×-only assertion is removed rather than replaced with another inference."
+}

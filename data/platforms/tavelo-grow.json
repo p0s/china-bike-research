@@ -15,7 +15,31 @@
     "cable_routing": "fully-internal",
     "claimed_fiber": "T800-claimed",
     "claimed_frame_weight_g": 830,
-    "claimed_frame_weight_basis": "Official size-specific frame range is 830–960 g ±25 g from XS through XXL; 830 g is the lightest listed size. Fork claim is 460 g."
+    "claimed_frame_weight_basis": "Official raw frame range is 830–960 g ±25 g from XS through XXL; 830 g is the lightest listed size.",
+    "claimed_frame_weight_g_by_size": {
+      "XS": 830,
+      "S": 845,
+      "M": 860,
+      "L": 880,
+      "XL": 895,
+      "XXL": 960,
+      "basis": "Raw finish; manufacturer tolerance ±25 g"
+    },
+    "claimed_fork_weight_g": 460,
+    "claimed_fork_weight_basis": "Raw finish",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry chart",
+      "source_id": "tavelo-grow-official-2026-08-27",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "XS/430", "stack_mm": 530, "reach_mm": 368, "head_tube_mm": 95, "head_angle_deg": 70.5, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 588, "seat_tube_mm": 430, "top_tube_mm": 520, "wheelbase_mm": 998, "standover_mm": 747, "trail_mm": 69.67 },
+        { "size": "S/460", "stack_mm": 540, "reach_mm": 375, "head_tube_mm": 106, "head_angle_deg": 71, "seat_angle_deg": 74, "bb_drop_mm": 80, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 598, "seat_tube_mm": 460, "top_tube_mm": 530, "wheelbase_mm": 1008, "standover_mm": 768, "trail_mm": 66.31 },
+        { "size": "M/490", "stack_mm": 558, "reach_mm": 385, "head_tube_mm": 127, "head_angle_deg": 71, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 614, "seat_tube_mm": 490, "top_tube_mm": 550, "wheelbase_mm": 1025, "standover_mm": 794, "trail_mm": 66.31 },
+        { "size": "L/515", "stack_mm": 579, "reach_mm": 395, "head_tube_mm": 146, "head_angle_deg": 71.3, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 622, "seat_tube_mm": 515, "top_tube_mm": 567, "wheelbase_mm": 1033, "standover_mm": 816, "trail_mm": 64.3 },
+        { "size": "XL/540", "stack_mm": 603, "reach_mm": 406, "head_tube_mm": 174, "head_angle_deg": 71.3, "seat_angle_deg": 73, "bb_drop_mm": 75, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 642, "seat_tube_mm": 540, "top_tube_mm": 586, "wheelbase_mm": 1054, "standover_mm": 843, "trail_mm": 64.3 },
+        { "size": "XXL/570", "stack_mm": 627, "reach_mm": 414, "head_tube_mm": 197, "head_angle_deg": 71.6, "seat_angle_deg": 73, "bb_drop_mm": 75, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 652, "seat_tube_mm": 570, "top_tube_mm": 606, "wheelbase_mm": 1064, "standover_mm": 869, "trail_mm": 62.29 }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",

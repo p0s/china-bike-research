@@ -13,18 +13,20 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 1085,
-    "claimed_frame_weight_basis": "Manufacturer nominal frame claim; exact painted storefront examples are listed separately",
+    "claimed_frame_weight_g": 1073,
+    "claimed_frame_weight_basis": "Exact glossy YS955 painted size-52 example, 1,073 ±20 g; other exact finishes are listed separately.",
     "claimed_frame_weight_g_by_size": {
       "52-glossy-ys955": 1073,
       "52-glossy-ys2386-1": 1095,
       "54-ice-crack-black-white": 1130,
       "basis": "Painted exact storefront examples; manufacturer tolerance ±20 g"
     },
+    "claimed_fork_weight_g": 470,
+    "claimed_fork_weight_basis": "Painted fork on the current exact-model page",
     "claimed_fork_weight_g_range": {
       "low": 470,
       "high": 525,
-      "basis": "Painted fork"
+      "basis": "Earlier manufacturer storefront painted-fork examples; the current exact-model page independently lists 470 g"
     },
     "claimed_fiber": "T700/T800/T1000-claimed",
     "configuration_notes": {
@@ -45,7 +47,8 @@
   "china_availability": "direct-factory",
   "source_ids": [
     "ican-graro-official",
+    "ican-graro-official-2026-08-27",
     "ican-company-official"
   ],
-  "last_reviewed": "2026-08-26"
+  "last_reviewed": "2026-08-27"
 }

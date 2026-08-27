@@ -13,7 +13,33 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 980,
+    "claimed_frame_weight_g": 1170,
+    "claimed_frame_weight_basis": "Current Panda Podium Purple painted size-56 product; the same page lists 1,150 g raw.",
+    "claimed_raw_frame_weight_g": 1150,
+    "claimed_raw_frame_weight_basis": "Current Panda Podium Purple raw size-56 product",
+    "weight_conflict_note": "An older official platform guide lists 980 ±50 g for size 49 without a bridge to the current size-56 product. Both official observations are retained until Yoeleo identifies the generation, layup, and finish relationship.",
+    "claimed_fork_weight_g": 480,
+    "claimed_fork_weight_basis": "Painted fork with size-56 product",
+    "claimed_seatpost_weight_g": 95.2,
+    "claimed_seatpost_weight_basis": "Without saddle clamp",
+    "configuration_notes": {
+      "chainring_limits": "1× up to 42T on a standard spindle or 44T on a wide spindle; 2× up to 50/34T with a BB-to-crank washer",
+      "tire_clearance_condition": "The published 700x53 mm maximum is expressly for a single-chainring setup; the 2× maximum is unknown."
+    },
+    "geometry": {
+      "basis": "manufacturer current exact-product geometry table",
+      "source_id": "yoeleo-altera-g21-current-2026-08-27",
+      "units": { "length": "mm", "angle": "degrees" },
+      "sizes": [
+        { "size": "45", "rider_height": "160–168 cm", "stack_mm": 512, "reach_mm": 373, "head_tube_mm": 79, "head_angle_deg": 69, "seat_angle_deg": 75, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 450, "top_tube_mm": 510 },
+        { "size": "49", "rider_height": "165–175 cm", "stack_mm": 531, "reach_mm": 373, "head_tube_mm": 98.5, "head_angle_deg": 69.5, "seat_angle_deg": 75, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 490, "top_tube_mm": 515 },
+        { "size": "52", "rider_height": "172–180 cm", "stack_mm": 549, "reach_mm": 379, "head_tube_mm": 107, "head_angle_deg": 70, "seat_angle_deg": 74, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 520, "top_tube_mm": 536.4 },
+        { "size": "54", "rider_height": "177–185 cm", "stack_mm": 566, "reach_mm": 383, "head_tube_mm": 134, "head_angle_deg": 70, "seat_angle_deg": 73.5, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 540, "top_tube_mm": 551 },
+        { "size": "56", "rider_height": "182–190 cm", "stack_mm": 586, "reach_mm": 387, "head_tube_mm": 145, "head_angle_deg": 71, "seat_angle_deg": 73, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 560, "top_tube_mm": 566 },
+        { "size": "58", "rider_height": "187–196 cm", "stack_mm": 611, "reach_mm": 390, "head_tube_mm": 171, "head_angle_deg": 71, "seat_angle_deg": 73, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 580, "top_tube_mm": 577 },
+        { "size": "60", "rider_height": "193–201 cm", "stack_mm": 640, "reach_mm": 396, "head_tube_mm": 200, "head_angle_deg": 71, "seat_angle_deg": 73, "bb_drop_mm": 79, "chainstay_mm": 433, "fork_offset_mm": 47, "fork_length_mm": 401.5, "seat_tube_mm": 610, "top_tube_mm": 592 }
+      ]
+    },
     "warranty_claim": {
       "duration_years": 6,
       "basis": "official platform guide",
@@ -35,7 +61,8 @@
   "china_availability": "direct-brand",
   "source_ids": [
     "yoeleo-altera-g21-official",
-    "yoeleo-altera-g21-official-2026-08-16"
+    "yoeleo-altera-g21-official-2026-08-16",
+    "yoeleo-altera-g21-current-2026-08-27"
   ],
-  "last_reviewed": "2026-08-16"
+  "last_reviewed": "2026-08-27"
 }
