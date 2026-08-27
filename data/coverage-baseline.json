@@ -7,20 +7,20 @@
       "platforms": 36,
       "variants": 38,
       "prices": 47,
-      "sources": 411,
-      "images": 168,
+      "sources": 420,
+      "images": 169,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 199,
+      "candidates": 200,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 333
+      "researchAttempts": 350
     },
     "image_accuracy": {
       "exact-platform": 55,
-      "exact-variant": 74,
+      "exact-variant": 75,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
@@ -28,11 +28,11 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 166
+      "remote": 167
     },
     "candidate_prices": {
-      "official": 44,
-      "observed": 129
+      "official": 45,
+      "observed": 130
     }
   },
   "records": {
@@ -257,6 +257,7 @@
       "giant-china-revolt-advanced-2-official-2026-08-17",
       "giant-china-tcr-advanced-3-gc-official-2026-08-17",
       "giant-china-warranty-2026-08-17",
+      "giant-china-warranty-2026-08-27",
       "giant-defy-advanced-0-official-image-2026-08-17",
       "giant-defy-advanced-sl1-official-global-2026-08-20",
       "giant-propel-gen4-bikerumor-2026-08-17",
@@ -285,6 +286,7 @@
       "lightcarbon-image-reference",
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
+      "lightcarbon-lcg071s-order-options-2026-08-27",
       "look-765-optimum-105-di2-official-2026-08-17",
       "ltwoo-disc-brake-fluid-official-2026-08-24",
       "ltwoo-egr-official-2026-08-24",
@@ -304,6 +306,8 @@
       "merida-warranty-official-2026-08-17",
       "pardus-2026-conference-wildto",
       "pardus-company-official",
+      "pardus-current-gravel-catalog-2026-08-27",
+      "pardus-dealer-locator-2026-08-27",
       "pardus-robin-evo-official-2026-08-17",
       "pardus-robin-evo-ultegra-di2-official-2026-08-20",
       "pardus-robin-sport-official-image-2026-08-17",
@@ -319,6 +323,7 @@
       "pardus-super-sport-launch",
       "pardus-super-sport-launch-wildto-2026-08-17",
       "pardus-super-sport-official-2026-08-08",
+      "pardus-uragano-evo-uae-seller-2026-08-27",
       "pardus-uragano-f-official-store-promo-2026-08",
       "pardus-uragano-jd-route-2026-08-17",
       "pardus-uragano-sport-official",
@@ -486,10 +491,13 @@
       "spcycle-g028-official-2026-08-25",
       "spcycle-gravel-catalog",
       "specialized-china-tarmac-sl8-comp-price-2026-08-17",
+      "specialized-china-warranty-faq-2026-08-27",
       "specialized-cn-crux-page",
       "specialized-cn-store-finder-2026",
       "specialized-crux-comp-china-2026-08-17",
       "specialized-crux-comp-grx-official-2026-08-17",
+      "specialized-roubaix-sl8-sport-105-china-2026-08-27",
+      "specialized-roubaix-sl8-sport-105-official-2026-08-27",
       "specialized-roubaix-sl8-tiagra-official-2026-08-17",
       "specialized-s-works-crux-cn-product-221367",
       "specialized-tarmac-sl8-comp-spec-2026-08-17",
@@ -610,6 +618,7 @@
       "xhs-winspace-slc3-200km-2026-08-10",
       "xhs-winspace-slc3-review-lead-2026-08-10",
       "xlab-gt8-official-2026-08-17",
+      "xlab-gt8-smzdm-market-report-2026-08-27",
       "xmcarbonspeed-gr01-official",
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16"
@@ -744,6 +753,7 @@
       "specialized-crux-primary-image",
       "specialized-roubaix-sl8-comp-105-primary-image",
       "specialized-roubaix-sl8-primary-image",
+      "specialized-roubaix-sl8-sport-105-primary-image",
       "specialized-s-works-crux-2024-primary-image",
       "specialized-s-works-crux-frameset-primary-image",
       "specialized-tarmac-sl8-comp-primary-image",
@@ -1000,6 +1010,7 @@
       "seka-spear-rdc",
       "specialized-crux-10r-frameset",
       "specialized-roubaix-sl8-comp-105",
+      "specialized-roubaix-sl8-sport-105",
       "specialized-s-works-crux-2024-sram-red-xplr",
       "specialized-s-works-crux-frameset",
       "spect-mira",
@@ -1091,9 +1102,11 @@
       "candidate-elves-mori-community-lead-purchase-route-2026-08-17",
       "candidate-elves-mori-community-lead-tire-clearance-2026-08-17",
       "candidate-elves-mori-community-lead-warranty-support-2026-08-17",
+      "candidate-giant-defy-advanced-complete-weight-2026-08-27",
       "candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17",
       "candidate-giant-defy-advanced-sl1-community-lead-purchase-route-2026-08-17",
       "candidate-giant-defy-advanced-sl1-community-lead-warranty-support-2026-08-17",
+      "candidate-giant-defy-advanced-warranty-support-2026-08-27",
       "candidate-giant-propel-gen4-community-lead-bom-2026-08-17",
       "candidate-giant-propel-gen4-community-lead-bottom-bracket-2026-08-17",
       "candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17",
@@ -1168,6 +1181,10 @@
       "candidate-pardus-uragano-evo-community-lead-price-2026-08-17",
       "candidate-pardus-uragano-evo-community-lead-purchase-route-2026-08-17",
       "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17",
+      "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-quick-gr-one-price-2026-08-27",
+      "candidate-quick-gr-one-purchase-route-2026-08-27",
       "candidate-quick-pro-tr-one-bom-2026-08-17",
       "candidate-quick-pro-tr-one-bottom-bracket-2026-08-17",
       "candidate-quick-pro-tr-one-frame-2026-08-17",
@@ -1191,6 +1208,11 @@
       "candidate-quick-pro-tt-one-purchase-route-2026-08-17",
       "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17",
+      "candidate-quick-xr-one-complete-weight-2026-08-27",
+      "candidate-roubaix-sl8-sport-bom-2026-08-27",
+      "candidate-roubaix-sl8-sport-complete-weight-2026-08-27",
+      "candidate-roubaix-sl8-sport-price-2026-08-27",
+      "candidate-roubaix-sl8-sport-purchase-route-2026-08-27",
       "candidate-sava-a4-bom-2026-08-17",
       "candidate-sava-a4-bottom-bracket-2026-08-17",
       "candidate-sava-a4-complete-weight-2026-08-17",
@@ -1250,6 +1272,10 @@
       "candidate-voicevelo-g-major-purchase-route-2026-08-17",
       "candidate-voicevelo-g-major-tire-clearance-2026-08-17",
       "candidate-voicevelo-g-major-warranty-support-2026-08-17",
+      "candidate-winspace-g3-mainland-price-2026-08-27",
+      "candidate-winspace-g5-mainland-price-2026-08-27",
+      "candidate-xlab-gt8-price-2026-08-27",
+      "candidate-xlab-gt8-purchase-route-2026-08-27",
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
       "variant-bianchi-oltre-race-bom-2026-08-17",
       "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
@@ -1291,6 +1317,8 @@
       "variant-elves-falath-r7170-warranty-support-2026-08-17",
       "variant-elves-falath-r7170-wheels-2026-08-17",
       "variant-elves-mori-aerox-frameset-price-2026-08-25",
+      "variant-lightcarbon-lcg071s-package-2026-08-27",
+      "variant-lightcarbon-lcg071s-price-2026-08-27",
       "variant-lightcarbon-speedz-complete-bom-2026-08-17",
       "variant-lightcarbon-speedz-complete-bottom-bracket-2026-08-17",
       "variant-lightcarbon-speedz-complete-cockpit-2026-08-17",
@@ -4907,6 +4935,19 @@
         "type",
         "url"
       ],
+      "giant-china-warranty-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
       "giant-defy-advanced-0-official-image-2026-08-17": [
         "accessed_at",
         "language",
@@ -5247,6 +5288,18 @@
         "type",
         "url"
       ],
+      "lightcarbon-lcg071s-order-options-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "look-765-optimum-105-di2-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -5481,6 +5534,31 @@
         "type",
         "url"
       ],
+      "pardus-current-gravel-catalog-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-dealer-locator-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-robin-evo-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -5653,6 +5731,18 @@
         "url"
       ],
       "pardus-super-sport-official-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-uragano-evo-uae-seller-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7629,6 +7719,19 @@
         "type",
         "url"
       ],
+      "specialized-china-warranty-faq-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
       "specialized-cn-crux-page": [
         "accessed_at",
         "language",
@@ -7667,6 +7770,30 @@
         "url"
       ],
       "specialized-crux-comp-grx-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-roubaix-sl8-sport-105-china-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-roubaix-sl8-sport-105-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -9191,6 +9318,18 @@
         "url"
       ],
       "xlab-gt8-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-gt8-smzdm-market-report-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -11432,6 +11571,22 @@
         "subject_accuracy"
       ],
       "specialized-roubaix-sl8-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "specialized-roubaix-sl8-sport-105-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -14841,11 +14996,17 @@
       "missing-china-price-quick-pro-gr-one": [
         "category",
         "existing_record_id",
+        "facts.bottom_bracket",
+        "facts.frame_weight_g",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
         "price_status",
         "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
         "status",
         "type",
         "why_interesting"
@@ -15304,6 +15465,11 @@
         "last_reviewed",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
         "official_price.amount_cny",
         "official_price.conversion_rate_cny_per_original_unit",
         "official_price.conversion_rate_date",
@@ -15575,6 +15741,8 @@
         "facts.bottom_bracket",
         "facts.brakes",
         "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
         "facts.mounts",
@@ -16240,6 +16408,40 @@
         "type",
         "why_interesting"
       ],
+      "specialized-roubaix-sl8-sport-105": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_g",
+        "facts.suspension",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "specialized-s-works-crux-2024-sram-red-xplr": [
         "category",
         "facts.drivetrain",
@@ -16337,6 +16539,7 @@
         "facts.frame_weight_g",
         "facts.sizes",
         "facts.tire_clearance_mm",
+        "facts.warranty",
         "last_reviewed",
         "name",
         "observed_price.currency",
@@ -17626,6 +17829,19 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-giant-defy-advanced-complete-weight-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17": [
         "channels.public-post.status",
         "channels.web.attempts",
@@ -17654,6 +17870,20 @@
         "target.record_type"
       ],
       "candidate-giant-defy-advanced-sl1-community-lead-warranty-support-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-giant-defy-advanced-warranty-support-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -18761,6 +18991,60 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-pardus-uragano-evo-complete-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-gr-one-price-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-gr-one-purchase-route-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-quick-pro-tr-one-bom-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -19093,6 +19377,74 @@
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-xr-one-complete-weight-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-roubaix-sl8-sport-bom-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-roubaix-sl8-sport-complete-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-roubaix-sl8-sport-price-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-roubaix-sl8-sport-purchase-route-2026-08-27": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -19979,6 +20331,61 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-winspace-g3-mainland-price-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-winspace-g5-mainland-price-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xlab-gt8-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xlab-gt8-purchase-route-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -20577,6 +20984,33 @@
       ],
       "variant-elves-mori-aerox-frameset-price-2026-08-25": [
         "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-lightcarbon-lcg071s-package-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-lightcarbon-lcg071s-price-2026-08-27": [
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -22181,7 +22615,8 @@
         "frame.geometry.source_id=lightcarbon-lcg071s-official-2026-08-16",
         "source_ids=lightcarbon-company-official",
         "source_ids=lightcarbon-lcg071s-official",
-        "source_ids=lightcarbon-lcg071s-official-2026-08-16"
+        "source_ids=lightcarbon-lcg071s-official-2026-08-16",
+        "source_ids=lightcarbon-lcg071s-order-options-2026-08-27"
       ],
       "lightcarbon-speedz": [
         "brand_id=lightcarbon",
@@ -22407,7 +22842,8 @@
       "lightcarbon-lcg071s-pro-frameset": [
         "platform_id=lightcarbon-lcg071s-pro",
         "source_ids=lightcarbon-company-official",
-        "source_ids=lightcarbon-lcg071s-official"
+        "source_ids=lightcarbon-lcg071s-official",
+        "source_ids=lightcarbon-lcg071s-order-options-2026-08-27"
       ],
       "lightcarbon-speedz-complete": [
         "platform_id=lightcarbon-speedz",
@@ -22822,6 +23258,7 @@
       "giant-china-revolt-advanced-2-official-2026-08-17": [],
       "giant-china-tcr-advanced-3-gc-official-2026-08-17": [],
       "giant-china-warranty-2026-08-17": [],
+      "giant-china-warranty-2026-08-27": [],
       "giant-defy-advanced-0-official-image-2026-08-17": [],
       "giant-defy-advanced-sl1-official-global-2026-08-20": [],
       "giant-propel-gen4-bikerumor-2026-08-17": [],
@@ -22850,6 +23287,7 @@
       "lightcarbon-image-reference": [],
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
+      "lightcarbon-lcg071s-order-options-2026-08-27": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
       "ltwoo-disc-brake-fluid-official-2026-08-24": [],
       "ltwoo-egr-official-2026-08-24": [],
@@ -22869,6 +23307,8 @@
       "merida-warranty-official-2026-08-17": [],
       "pardus-2026-conference-wildto": [],
       "pardus-company-official": [],
+      "pardus-current-gravel-catalog-2026-08-27": [],
+      "pardus-dealer-locator-2026-08-27": [],
       "pardus-robin-evo-official-2026-08-17": [],
       "pardus-robin-evo-ultegra-di2-official-2026-08-20": [],
       "pardus-robin-sport-official-image-2026-08-17": [],
@@ -22884,6 +23324,7 @@
       "pardus-super-sport-launch": [],
       "pardus-super-sport-launch-wildto-2026-08-17": [],
       "pardus-super-sport-official-2026-08-08": [],
+      "pardus-uragano-evo-uae-seller-2026-08-27": [],
       "pardus-uragano-f-official-store-promo-2026-08": [],
       "pardus-uragano-jd-route-2026-08-17": [],
       "pardus-uragano-sport-official": [],
@@ -23051,10 +23492,13 @@
       "spcycle-g028-official-2026-08-25": [],
       "spcycle-gravel-catalog": [],
       "specialized-china-tarmac-sl8-comp-price-2026-08-17": [],
+      "specialized-china-warranty-faq-2026-08-27": [],
       "specialized-cn-crux-page": [],
       "specialized-cn-store-finder-2026": [],
       "specialized-crux-comp-china-2026-08-17": [],
       "specialized-crux-comp-grx-official-2026-08-17": [],
+      "specialized-roubaix-sl8-sport-105-china-2026-08-27": [],
+      "specialized-roubaix-sl8-sport-105-official-2026-08-27": [],
       "specialized-roubaix-sl8-tiagra-official-2026-08-17": [],
       "specialized-s-works-crux-cn-product-221367": [],
       "specialized-tarmac-sl8-comp-spec-2026-08-17": [],
@@ -23175,6 +23619,7 @@
       "xhs-winspace-slc3-200km-2026-08-10": [],
       "xhs-winspace-slc3-review-lead-2026-08-10": [],
       "xlab-gt8-official-2026-08-17": [],
+      "xlab-gt8-smzdm-market-report-2026-08-27": [],
       "xmcarbonspeed-gr01-official": [],
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": []
@@ -23762,6 +24207,10 @@
       "specialized-roubaix-sl8-primary-image": [
         "candidate_id=missing-china-price-specialized-roubaix-sl8",
         "source_id=specialized-roubaix-sl8-tiagra-official-2026-08-17"
+      ],
+      "specialized-roubaix-sl8-sport-105-primary-image": [
+        "candidate_id=specialized-roubaix-sl8-sport-105",
+        "source_id=specialized-roubaix-sl8-sport-105-official-2026-08-27"
       ],
       "specialized-s-works-crux-2024-primary-image": [
         "candidate_id=specialized-s-works-crux-2024-sram-red-xplr",
@@ -24528,7 +24977,8 @@
       ],
       "missing-china-price-giant-defy-advanced": [
         "model_id=giant-defy-advanced",
-        "source_ids=giant-china-defy-advanced-2-official-2026-08-17"
+        "source_ids=giant-china-defy-advanced-2-official-2026-08-17",
+        "source_ids=giant-china-warranty-2026-08-27"
       ],
       "missing-china-price-giant-revolt-advanced": [
         "model_id=giant-revolt-advanced",
@@ -24559,7 +25009,9 @@
       ],
       "missing-china-price-quick-pro-gr-one": [
         "existing_record_id=quick-gr-one-frameset",
-        "model_id=quick-pro-gr-one"
+        "model_id=quick-pro-gr-one",
+        "source_ids=quick-gr-one-china-official-2026-08-25",
+        "source_ids=quick-pro-warranty-official-2026-08-17"
       ],
       "missing-china-price-quick-pro-xr-one": [
         "model_id=quick-pro-xr-one",
@@ -24686,7 +25138,8 @@
         "model_id=x-lab-xds-gt8",
         "source_ids=public-xlab-gt8-overview-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31",
-        "source_ids=xlab-gt8-official-2026-08-17"
+        "source_ids=xlab-gt8-official-2026-08-17",
+        "source_ids=xlab-gt8-smzdm-market-report-2026-08-27"
       ],
       "missing-china-price-yoeleo-altera-g21": [
         "existing_record_id=yoeleo-altera-g21-frameset",
@@ -24764,6 +25217,9 @@
       "pardus-uragano-evo-community-lead": [
         "brand_id=pardus",
         "source_ids=biketo-pardus-uragano-evo-review-2023",
+        "source_ids=pardus-current-gravel-catalog-2026-08-27",
+        "source_ids=pardus-dealer-locator-2026-08-27",
+        "source_ids=pardus-uragano-evo-uae-seller-2026-08-27",
         "source_ids=pardus-uragano-jd-route-2026-08-17",
         "source_ids=public-pardus-uragano-evo-build-2026-08-17"
       ],
@@ -24932,6 +25388,13 @@
         "model_id=specialized-roubaix-sl8-comp-105",
         "source_ids=specialized-cn-store-finder-2026"
       ],
+      "specialized-roubaix-sl8-sport-105": [
+        "model_id=specialized-roubaix-sl8-sport-105",
+        "source_ids=specialized-china-warranty-faq-2026-08-27",
+        "source_ids=specialized-roubaix-sl8-sport-105-china-2026-08-27",
+        "source_ids=specialized-roubaix-sl8-sport-105-official-2026-08-27",
+        "source_ids=usd-cny-central-parity-2026-07-31"
+      ],
       "specialized-s-works-crux-2024-sram-red-xplr": [
         "model_id=specialized-s-works-crux-2024",
         "source_ids=specialized-cn-crux-page",
@@ -24958,7 +25421,8 @@
         "source_ids=public-tavelo-arden-owner-2026-08-17",
         "source_ids=tavelo-arden-china-launch-2026-08-17",
         "source_ids=tavelo-arden-official-2026-08-17",
-        "source_ids=tavelo-warranty-official-2026-08-17"
+        "source_ids=tavelo-warranty-official-2026-08-17",
+        "source_ids=tavelo-warranty-official-2026-08-27"
       ],
       "tavelo-arow-sl-community-lead": [
         "source_ids=public-tavelo-arow-sl-build-2026-08-17",
@@ -25274,6 +25738,9 @@
       "candidate-elves-mori-community-lead-warranty-support-2026-08-17": [
         "target.record_id=elves-mori-community-lead"
       ],
+      "candidate-giant-defy-advanced-complete-weight-2026-08-27": [
+        "target.record_id=missing-china-price-giant-defy-advanced"
+      ],
       "candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17": [
         "target.record_id=giant-defy-advanced-sl1-community-lead"
       ],
@@ -25282,6 +25749,9 @@
       ],
       "candidate-giant-defy-advanced-sl1-community-lead-warranty-support-2026-08-17": [
         "target.record_id=giant-defy-advanced-sl1-community-lead"
+      ],
+      "candidate-giant-defy-advanced-warranty-support-2026-08-27": [
+        "target.record_id=missing-china-price-giant-defy-advanced"
       ],
       "candidate-giant-propel-gen4-community-lead-bom-2026-08-17": [
         "target.record_id=giant-propel-gen4-community-lead"
@@ -25505,6 +25975,18 @@
       "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17": [
         "target.record_id=pardus-uragano-evo-community-lead"
       ],
+      "candidate-pardus-uragano-evo-complete-weight-2026-08-27": [
+        "target.record_id=pardus-uragano-evo-community-lead"
+      ],
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
+        "target.record_id=pardus-uragano-evo-community-lead"
+      ],
+      "candidate-quick-gr-one-price-2026-08-27": [
+        "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
+      "candidate-quick-gr-one-purchase-route-2026-08-27": [
+        "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
       "candidate-quick-pro-tr-one-bom-2026-08-17": [
         "target.record_id=quick-pro-tr-one"
       ],
@@ -25573,6 +26055,21 @@
       ],
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17": [
         "target.record_id=quick-pro-tt-one"
+      ],
+      "candidate-quick-xr-one-complete-weight-2026-08-27": [
+        "target.record_id=missing-china-price-quick-pro-xr-one"
+      ],
+      "candidate-roubaix-sl8-sport-bom-2026-08-27": [
+        "target.record_id=specialized-roubaix-sl8-sport-105"
+      ],
+      "candidate-roubaix-sl8-sport-complete-weight-2026-08-27": [
+        "target.record_id=specialized-roubaix-sl8-sport-105"
+      ],
+      "candidate-roubaix-sl8-sport-price-2026-08-27": [
+        "target.record_id=specialized-roubaix-sl8-sport-105"
+      ],
+      "candidate-roubaix-sl8-sport-purchase-route-2026-08-27": [
+        "target.record_id=specialized-roubaix-sl8-sport-105"
       ],
       "candidate-sava-a4-bom-2026-08-17": [
         "target.record_id=sava-a4"
@@ -25751,6 +26248,18 @@
       "candidate-voicevelo-g-major-warranty-support-2026-08-17": [
         "target.record_id=voicevelo-g-major"
       ],
+      "candidate-winspace-g3-mainland-price-2026-08-27": [
+        "target.record_id=missing-china-price-winspace-g3"
+      ],
+      "candidate-winspace-g5-mainland-price-2026-08-27": [
+        "target.record_id=missing-china-price-winspace-g5"
+      ],
+      "candidate-xlab-gt8-price-2026-08-27": [
+        "target.record_id=missing-china-price-x-lab-xds-gt8"
+      ],
+      "candidate-xlab-gt8-purchase-route-2026-08-27": [
+        "target.record_id=missing-china-price-x-lab-xds-gt8"
+      ],
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-gravel-v3-2024"
@@ -25877,6 +26386,12 @@
       ],
       "variant-elves-mori-aerox-frameset-price-2026-08-25": [
         "target.record_id=elves-mori-aerox-frameset"
+      ],
+      "variant-lightcarbon-lcg071s-package-2026-08-27": [
+        "target.record_id=lightcarbon-lcg071s-pro-frameset"
+      ],
+      "variant-lightcarbon-lcg071s-price-2026-08-27": [
+        "target.record_id=lightcarbon-lcg071s-pro-frameset"
       ],
       "variant-lightcarbon-speedz-complete-bom-2026-08-17": [
         "target.record_id=lightcarbon-speedz-complete"
@@ -26646,6 +27161,15 @@
         "support": 3
       }
     },
+    "giant-china-warranty-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1,
+        "support": 3
+      }
+    },
     "giant-defy-advanced-0-official-image-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -26875,6 +27399,14 @@
         "specification": 3
       }
     },
+    "lightcarbon-lcg071s-order-options-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "look-765-optimum-105-di2-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -27034,6 +27566,23 @@
         "specification": 2
       }
     },
+    "pardus-current-gravel-catalog-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "pardus-dealer-locator-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1,
+        "support": 3
+      }
+    },
     "pardus-robin-evo-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -27151,6 +27700,14 @@
     },
     "pardus-super-sport-official-2026-08-08": {
       "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "pardus-uragano-evo-uae-seller-2026-08-27": {
+      "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
@@ -28475,6 +29032,15 @@
         "specification": 1
       }
     },
+    "specialized-china-warranty-faq-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": -1,
+        "support": 3
+      }
+    },
     "specialized-cn-crux-page": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -28505,6 +29071,22 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
+        "specification": 3
+      }
+    },
+    "specialized-roubaix-sl8-sport-105-china-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "specialized-roubaix-sl8-sport-105-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     },
@@ -29481,6 +30063,14 @@
         "specification": 3
       }
     },
+    "xlab-gt8-smzdm-market-report-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
     "xmcarbonspeed-gr01-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -29898,6 +30488,18 @@
       ],
       "accepted_source_ids": []
     },
+    "candidate-giant-defy-advanced-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Giant China Defy Advanced 2 weight\",\"official China product page\",\"no-result\",\"2026-08-27\",\"Exact mainland page publishes no weight.\",\"https://www.giant.com.cn/index.php/index/bike_view.html?id=1837\"]",
+        "[\"web\",2,\"Giant Defy Advanced 2 official weight\",\"official US product page\",\"no-result\",\"2026-08-27\",\"Page instructs buyers to ask a dealer to weigh the bike and gives no value.\",\"https://www.giant-bicycles.com/us/defy-advanced-2\"]",
+        "[\"web\",3,\"Giant Defy Advanced 2 frame weight\",\"official family catalog fallback\",\"no-result\",\"2026-08-27\",\"No attributable complete-bike or frame-only value for the exact trim.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -29932,6 +30534,18 @@
       ],
       "accepted_source_ids": [
         "giant-china-warranty-2026-08-17"
+      ]
+    },
+    "candidate-giant-defy-advanced-warranty-support-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Giant China warranty authorized store assembly\",\"official China warranty page\",\"found\",\"2026-08-27\",\"Authorized-store purchase, assembly and proof requirements are documented.\",\"https://www.giant.com.cn/index.php/index/custom/13\"]"
+      ],
+      "accepted_source_ids": [
+        "giant-china-warranty-2026-08-27"
       ]
     },
     "candidate-giant-propel-gen4-community-lead-bom-2026-08-17": {
@@ -30962,6 +31576,54 @@
         "round3-pardus-authorized-dealer-locator-ec9c2e79f6"
       ]
     },
+    "candidate-pardus-uragano-evo-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO Rival XPLR weight\",\"exact-model retailer page\",\"found\",\"2026-08-27\",\"Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-uae-seller-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-evo-current-configuration-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO official 2026\",\"official China catalog\",\"no-result\",\"2026-08-27\",\"Current catalog exposes RX600 and Sport, not EVO.\",\"https://parduscycle.com/Hightxq.aspx?color=6216&id=21402&pz=6215&t=27447\"]",
+        "[\"web\",2,\"PARDUS Uragano EVO JD\",\"official marketplace storefront\",\"no-result\",\"2026-08-27\",\"No exact current EVO configuration or stock was exposed.\",\"https://pardus.jd.com/\"]",
+        "[\"web\",3,\"PARDUS Uragano EVO Rival XPLR\",\"foreign exact-model retailer\",\"rejected\",\"2026-08-27\",\"Sold-out foreign configuration cannot establish the current domestic SKU.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-quick-gr-one-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick GR ONE 中国 官网 价格\",\"official China product page\",\"no-result\",\"2026-08-27\",\"Inventory and buy controls are visible, but the price field is blank.\",\"https://www.quick-bikes.com.cn/product/32.html\"]",
+        "[\"web\",2,\"Quick GR ONE official complete price\",\"official global product page\",\"rejected\",\"2026-08-27\",\"US$4,799 complete-bike price is not a mainland CNY observation.\",\"https://www.quickprousa.com/products/gr-one-shimano\"]",
+        "[\"web\",3,\"Quick GR ONE 国内 发布价\",\"dated launch report\",\"rejected\",\"2026-08-27\",\"Historical CNY 13,598 frame-and-handlebar package is not current checkout evidence.\",\"https://www.biketo.com/industry/54415.html\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-quick-gr-one-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick GR ONE 中国 官网 购买\",\"official China product page\",\"found\",\"2026-08-27\",\"Exact frame page exposes inventory and buy/cart controls, though price is blank.\",\"https://www.quick-bikes.com.cn/product/32.html\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-gr-one-china-official-2026-08-25"
+      ]
+    },
     "candidate-quick-pro-tr-one-bom-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 3,
@@ -31307,6 +31969,67 @@
       "accepted_source_ids": [
         "quick-pro-warranty-official-2026-08-17",
         "round3-quick-pro-tt-one-291572cff7"
+      ]
+    },
+    "candidate-quick-xr-one-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick XR ONE Shimano complete weight\",\"official complete-bike page\",\"no-result\",\"2026-08-27\",\"Page publishes component and frame weights but no complete-bike total.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]",
+        "[\"web\",2,\"Quick XR ONE weight painted frame\",\"industry launch report\",\"rejected\",\"2026-08-27\",\"Reported 990 g value is the painted M frame with hardware, not a complete-bike weight.\",\"https://www.biketo.com/industry/55626.html?all=1\"]",
+        "[\"web\",3,\"Quick XR ONE collection weight\",\"official collection fallback\",\"no-result\",\"2026-08-27\",\"No attributable complete-bike total was exposed.\",\"https://www.quickprousa.com/collections/complete-bikes\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-roubaix-sl8-sport-bom-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Roubaix SL8 Sport Shimano 105 Product ID 221827 specifications\",\"exact manufacturer product page\",\"found\",\"2026-08-27\",\"Exact drivetrain, brakes, wheels, tires, cockpit and bottom bracket are published.\",\"https://www.specialized.com/us/en/roubaix-sl8-sport-shimano-105/p/4221827\"]"
+      ],
+      "accepted_source_ids": [
+        "specialized-roubaix-sl8-sport-105-official-2026-08-27"
+      ]
+    },
+    "candidate-roubaix-sl8-sport-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Roubaix SL8 Sport 105 weight 9.07 kg\",\"exact manufacturer product page\",\"found\",\"2026-08-27\",\"Official page reports 9.07 kg for size 56 with painted-production-bike basis.\",\"https://www.specialized.com/us/en/roubaix-sl8-sport-shimano-105/p/4221827\"]"
+      ],
+      "accepted_source_ids": [
+        "specialized-roubaix-sl8-sport-105-official-2026-08-27"
+      ]
+    },
+    "candidate-roubaix-sl8-sport-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Roubaix SL8 Sport 105 中国 价格\",\"exact China product page\",\"no-result\",\"2026-08-27\",\"Exact product identity resolves without price or stock.\",\"https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827\"]",
+        "[\"web\",2,\"Specialized China Roubaix Sport 105 catalog\",\"official China catalog\",\"no-result\",\"2026-08-27\",\"Current catalog exposes Tiagra and Comp 105 prices, not Sport 105.\",\"https://www.specialized.com.cn/cn/en\"]",
+        "[\"web\",3,\"Roubaix SL8 Sport 105 Specialized China dealer\",\"official China store finder\",\"no-result\",\"2026-08-27\",\"Dealer route exists without an attributable Sport 105 amount.\",\"https://www.specialized.com.cn/cn/es/store-finder\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-roubaix-sl8-sport-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Specialized China Roubaix SL8 Sport 105\",\"exact China manufacturer page\",\"found\",\"2026-08-27\",\"Exact China product identity and domestic support route are live, but price and stock are absent.\",\"https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827\"]"
+      ],
+      "accepted_source_ids": [
+        "specialized-china-warranty-faq-2026-08-27",
+        "specialized-roubaix-sl8-sport-105-china-2026-08-27"
       ]
     },
     "candidate-sava-a4-bom-2026-08-17": {
@@ -32144,6 +32867,56 @@
         "voicevelo-warranty-official-2026-08-17"
       ]
     },
+    "candidate-winspace-g3-mainland-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G3 淘宝 12800\",\"Tmall listing mirror\",\"rejected\",\"2026-08-27\",\"CNY 12,800 listing does not identify the tracked Pro Di2 package.\",\"https://tao.hooos.com/goods_zDpmkGqouetae8DXGN0FvvXudt4-k5v00GfRbg3q7nGIk.html\"]",
+        "[\"web\",2,\"Winspace G3 Pro Di2 China price\",\"official global product page\",\"rejected\",\"2026-08-27\",\"US$4,099 and China warehouse wording do not expose a mainland CNY checkout.\",\"https://www.winspace.cc/products/g3-gravel-pro-di2\"]",
+        "[\"web\",3,\"Winspace G3 mainland warranty price\",\"official support fallback\",\"no-result\",\"2026-08-27\",\"Warranty policy contains no domestic package price.\",\"https://www.winspace.cc/pages/warranty\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-winspace-g5-mainland-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G5 淘宝 23700\",\"Tmall listing mirror\",\"rejected\",\"2026-08-27\",\"CNY 23,700 listing appears to be a complete bike and cannot price the tracked frameset.\",\"https://tao.hooos.com/goods_ANKbPYDJczt4WdZrGk9HmX3uvtn-OpRwwaF0r4A6yNDt9.html\"]",
+        "[\"web\",2,\"Winspace G5 frameset China price\",\"official global frameset page\",\"rejected\",\"2026-08-27\",\"US$2,200 global reference is not a mainland CNY checkout.\",\"https://www.winspace.cc/products/g5-gravel\"]",
+        "[\"web\",3,\"Winspace G5 mainland warranty price\",\"official support fallback\",\"no-result\",\"2026-08-27\",\"Warranty policy contains no exact domestic package price.\",\"https://www.winspace.cc/pages/warranty\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-xlab-gt8-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"X-LAB GT8 价格 21980\",\"exact XHS public post\",\"found\",\"2026-08-27\",\"Exact-model public overview reports a market price near CNY 22,000.\",\"https://www.xiaohongshu.com/explore/69e37e30000000001f007cdb\"]",
+        "[\"web\",1,\"X-LAB GT8 国内 21980\",\"mainland market report\",\"found\",\"2026-08-27\",\"Dated report gives CNY 21,980 for first complete-bike arrivals.\",\"https://post.smzdm.com/p/a3mder67/\"]"
+      ],
+      "accepted_source_ids": [
+        "public-xlab-gt8-overview-2026-08-17",
+        "xlab-gt8-smzdm-market-report-2026-08-27"
+      ]
+    },
+    "candidate-xlab-gt8-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB GT8 国内 到店 整车\",\"mainland market report\",\"found\",\"2026-08-27\",\"First domestic dealer arrivals and complete-bike-only availability reported.\",\"https://post.smzdm.com/p/a3mder67/\"]"
+      ],
+      "accepted_source_ids": [
+        "xlab-gt8-smzdm-market-report-2026-08-27"
+      ]
+    },
     "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": {
       "channel_attempt_counts": {
         "public-post": 1,
@@ -32718,6 +33491,30 @@
         "[\"web\",1,\"Elves Mori AeroX current price official technical page\",\"manufacturer technical page\",\"no-result\",\"2026-08-25\",\"The technical page provides specifications and a buy link but no mainland price.\",null]",
         "[\"web\",2,\"Elves Mori AeroX official store price\",\"official global exact-model checkout\",\"rejected\",\"2026-08-25\",\"The US$998 official-store amount is a foreign reference, not a mainland CNY observation.\",null]",
         "[\"web\",3,\"ELVES Mori AeroX 中国 车架 价格\",\"mainland marketplace or dealer\",\"no-result\",\"2026-08-25\",\"No attributable exact mainland package and dated CNY price was captured.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-lightcarbon-lcg071s-package-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LightCarbon LCG071S PRO T47 bottom bracket included\",\"official manufacturer page\",\"found\",\"2026-08-27\",\"T47 bottom bracket is explicitly a paid option and spindle diameter must be selected.\",\"https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html\"]"
+      ],
+      "accepted_source_ids": [
+        "lightcarbon-lcg071s-order-options-2026-08-27"
+      ]
+    },
+    "variant-lightcarbon-lcg071s-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LightCarbon LCG071S PRO price CNY\",\"official product inquiry page\",\"no-result\",\"2026-08-27\",\"No public amount; buyer must request a quote.\",\"https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html\"]",
+        "[\"web\",2,\"LightCarbon LCG071S PRO mainland price\",\"manufacturer contact route\",\"no-result\",\"2026-08-27\",\"Contact route exists but no public CNY package price was exposed.\",\"https://www.lightcarbon.com/contact-us_d2\"]",
+        "[\"web\",3,\"LCG071S PRO current checkout\",\"existing market-reference review\",\"rejected\",\"2026-08-27\",\"Existing CNY range is approximate and not a current exact quote.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -34993,6 +35790,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "specialized-roubaix-sl8-sport-105-primary-image": {
+      "target": "candidates:specialized-roubaix-sl8-sport-105",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "specialized-s-works-crux-2024-primary-image": {
       "target": "candidates:specialized-s-works-crux-2024-sram-red-xplr",
       "minimum_accuracy_rank": 1,
@@ -35676,6 +36480,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:specialized-roubaix-sl8-sport-105": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:specialized-s-works-crux-2024-sram-red-xplr": {
       "minimum_accuracy_rank": 1,
       "minimum_source_tier": 2,
@@ -36281,6 +37090,7 @@
         "official_price"
       ],
       "missing-china-price-x-lab-xds-gt8": [
+        "observed_price",
         "official_price"
       ],
       "muidler-ashius-s7": [
@@ -36398,6 +37208,9 @@
         "official_price"
       ],
       "specialized-roubaix-sl8-comp-105": [
+        "official_price"
+      ],
+      "specialized-roubaix-sl8-sport-105": [
         "official_price"
       ],
       "specialized-s-works-crux-2024-sram-red-xplr": [

@@ -1,0 +1,16 @@
+{
+  "id": "variant-lightcarbon-lcg071s-package-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "lightcarbon-lcg071s-pro-frameset" },
+  "field": "package",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "LightCarbon LCG071S PRO T47 bottom bracket included", "route": "official manufacturer page", "outcome": "found", "accessed_at": "2026-08-27", "note": "T47 bottom bracket is explicitly a paid option and spindle diameter must be selected.", "result_url": "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["lightcarbon-lcg071s-order-options-2026-08-27"],
+  "retry_after": null,
+  "notes": "Package boundary clarified without treating an optional bottom bracket as included."
+}

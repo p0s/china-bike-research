@@ -1,0 +1,49 @@
+{
+  "id": "specialized-roubaix-sl8-sport-105",
+  "name": "Specialized 2025 Roubaix SL8 Sport Shimano 105",
+  "model_id": "specialized-roubaix-sl8-sport-105",
+  "category": "road-endurance",
+  "type": "complete-bike",
+  "why_interesting": "A 40 mm-clearance endurance road bike with a complete 105 mechanical build and a source-backed 9.07 kg weight.",
+  "missing": [
+    "Current mainland-China price and stock",
+    "Confirmation that the available China-market package matches the global Product ID 221827 bill of materials",
+    "Final dealer checkout and exact warranty eligibility"
+  ],
+  "status": "official-mainland-identity-global-complete-bike",
+  "research_priority": "high",
+  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "official_price": {
+    "amount_cny": 23763,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-27",
+    "original_amount": 3499.99,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31"
+  },
+  "source_ids": [
+    "specialized-roubaix-sl8-sport-105-official-2026-08-27",
+    "specialized-roubaix-sl8-sport-105-china-2026-08-27",
+    "specialized-china-warranty-faq-2026-08-27",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "source_url": "https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827",
+  "source_note": "The exact China product identity is live but exposes no current mainland price, stock or stable local BOM. The specification and US$3,499.99 reference price come from the matching global Product ID 221827 page; the CNY figure is a dated reference conversion, not a China checkout quote.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7100/R7120 mechanical 2×12, 50/34T and 11–36T",
+    "brakes": "Shimano 105 hydraulic disc, 160 mm front and rear",
+    "frame": "FACT 10R carbon; 950 g exact-build page claim",
+    "frame_weight_g": 950,
+    "complete_weight_g": 9070,
+    "complete_weight_basis": "Official size 56 painted production bike; color, size and component variation apply",
+    "bottom_bracket": "Shimano BSA threaded",
+    "tire_clearance_mm": 40,
+    "wheels": "DT Swiss G540, 24 mm internal, tubeless ready",
+    "tires": "S-Works Mondo 2BR 700×32C",
+    "cockpit": "Future Stem Comp and Specialized Hover Comp alloy handlebar",
+    "suspension": "Future Shock 3.1, 20 mm"
+  },
+  "last_reviewed": "2026-08-27"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "candidate-quick-xr-one-complete-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-quick-pro-xr-one" },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Quick XR ONE Shimano complete weight", "route": "official complete-bike page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Page publishes component and frame weights but no complete-bike total.", "result_url": "https://www.quickprousa.com/products/xr-one-shimano" },
+      { "attempt": 2, "query": "Quick XR ONE weight painted frame", "route": "industry launch report", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Reported 990 g value is the painted M frame with hardware, not a complete-bike weight.", "result_url": "https://www.biketo.com/industry/55626.html?all=1" },
+      { "attempt": 3, "query": "Quick XR ONE collection weight", "route": "official collection fallback", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No attributable complete-bike total was exposed.", "result_url": "https://www.quickprousa.com/collections/complete-bikes" }
+    ] }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Complete weight remains unknown after three web routes; public owner evidence remains pending."
+}

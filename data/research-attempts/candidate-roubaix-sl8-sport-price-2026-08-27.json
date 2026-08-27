@@ -1,0 +1,20 @@
+{
+  "id": "candidate-roubaix-sl8-sport-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "specialized-roubaix-sl8-sport-105" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Roubaix SL8 Sport 105 中国 价格", "route": "exact China product page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Exact product identity resolves without price or stock.", "result_url": "https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827" },
+      { "attempt": 2, "query": "Specialized China Roubaix Sport 105 catalog", "route": "official China catalog", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Current catalog exposes Tiagra and Comp 105 prices, not Sport 105.", "result_url": "https://www.specialized.com.cn/cn/en" },
+      { "attempt": 3, "query": "Roubaix SL8 Sport 105 Specialized China dealer", "route": "official China store finder", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Dealer route exists without an attributable Sport 105 amount.", "result_url": "https://www.specialized.com.cn/cn/es/store-finder" }
+    ] }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Mainland price remains open; the displayed CNY value is only a foreign-price reference conversion."
+}

@@ -6,18 +6,26 @@
   "type": "complete-bike",
   "why_interesting": "A current 8.78 kg claimed gravel complete with GRX Di2, a dual-sided power meter, carbon wheels, storage and 55 mm clearance.",
   "missing": [
-    "Dated mainland-China RMB checkout observation and purchase route",
-    "Exact domestic configuration, stock, warranty and service route"
+    "Final mainland checkout and stock confirmation",
+    "Exact domestic included-accessory list, warranty and service terms"
   ],
-  "status": "official-global-complete-bike",
+  "status": "mainland-price-observed",
   "research_priority": "high",
-  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "price_status": "reported mainland complete-bike price; final checkout unverified",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and domestic configuration/warranty evidence",
   "source_ids": [
     "xlab-gt8-official-2026-08-17",
     "usd-cny-central-parity-2026-07-31",
-    "public-xlab-gt8-overview-2026-08-17"
+    "public-xlab-gt8-overview-2026-08-17",
+    "xlab-gt8-smzdm-market-report-2026-08-27"
   ],
+  "observed_price": {
+    "amount_cny": 21980,
+    "currency": "CNY",
+    "price_type": "dealer-market-report",
+    "observed_at": "2026-08-21",
+    "price_basis": "complete-bike"
+  },
   "official_price": {
     "amount_cny": 21700,
     "currency": "CNY",
@@ -29,7 +37,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://xds.co/en-intl/products/gt8",
-  "source_note": "Official international price US$3,199. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes actual FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "source_note": "A 2026-08-21 mainland market aggregation reports first dealer arrivals and a CNY 21,980 complete-bike price, closely matching an earlier public-post market lead near CNY 22,000. It is not an official list price or verified final checkout. Official international price remains US$3,199.",
   "facts": {
     "drivetrain": "Shimano GRX RX717 Di2 1×12",
     "complete_weight_g": 8780,
@@ -45,5 +53,5 @@
     "sizes": "XS, S, M, L, XL and XXL"
   },
   "support_note": "Official page states a 110 kg rider-plus-cargo limit, local-bike-shop general service, dealer support for warranty/customization, 1× and 2× drivetrain compatibility, 27.2 mm dropper compatibility, and tubeless-ready wheels/tires.",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-27"
 }

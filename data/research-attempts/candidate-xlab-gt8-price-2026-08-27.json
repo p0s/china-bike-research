@@ -1,0 +1,16 @@
+{
+  "id": "candidate-xlab-gt8-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-x-lab-xds-gt8" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "found", "attempts": [{ "attempt": 1, "query": "X-LAB GT8 价格 21980", "route": "exact XHS public post", "outcome": "found", "accessed_at": "2026-08-27", "note": "Exact-model public overview reports a market price near CNY 22,000.", "result_url": "https://www.xiaohongshu.com/explore/69e37e30000000001f007cdb" }] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "X-LAB GT8 国内 21980", "route": "mainland market report", "outcome": "found", "accessed_at": "2026-08-27", "note": "Dated report gives CNY 21,980 for first complete-bike arrivals.", "result_url": "https://post.smzdm.com/p/a3mder67/" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["public-xlab-gt8-overview-2026-08-17", "xlab-gt8-smzdm-market-report-2026-08-27"],
+  "retry_after": null,
+  "notes": "Two independent public routes converge near CNY 22,000; final dealer checkout remains unverified."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "variant-lightcarbon-lcg071s-price-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "lightcarbon-lcg071s-pro-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "LightCarbon LCG071S PRO price CNY", "route": "official product inquiry page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No public amount; buyer must request a quote.", "result_url": "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html" },
+      { "attempt": 2, "query": "LightCarbon LCG071S PRO mainland price", "route": "manufacturer contact route", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Contact route exists but no public CNY package price was exposed.", "result_url": "https://www.lightcarbon.com/contact-us_d2" },
+      { "attempt": 3, "query": "LCG071S PRO current checkout", "route": "existing market-reference review", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Existing CNY range is approximate and not a current exact quote." }
+    ] }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Current exact CNY quote remains open pending public-post evidence or a dated direct quote."
+}
