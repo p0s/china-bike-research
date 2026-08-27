@@ -1,0 +1,14 @@
+{
+  "id": "candidate-airwolf-yfr068-identity-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "airwolf-yfr068" },
+  "field": "exact-model-identity",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Airwolf YFR068 exact frameset", "route": "brand storefront exact-model page", "outcome": "found", "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/", "accessed_at": "2026-08-27", "note": "Exact model and specs found; legal manufacturer identity and mainland support remain unresolved." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["airwolf-yfr068-official-store-2026-08-27"],
+  "notes": "Exact storefront identity is found; candidate status remains needs-provenance because the legal manufacturer and mainland support entity are not established."
+}

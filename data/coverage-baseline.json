@@ -7,16 +7,16 @@
       "platforms": 36,
       "variants": 38,
       "prices": 48,
-      "sources": 427,
+      "sources": 433,
       "images": 169,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 200,
+      "candidates": 202,
       "exclusions": 13,
       "research": 1,
-      "researchAttempts": 382
+      "researchAttempts": 395
     },
     "image_accuracy": {
       "exact-platform": 55,
@@ -32,7 +32,7 @@
     },
     "candidate_prices": {
       "official": 45,
-      "observed": 130
+      "observed": 131
     }
   },
   "records": {
@@ -205,6 +205,8 @@
     "sources": [
       "af01-manual-2026-08-27",
       "af01-official",
+      "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
+      "airwolf-yfr068-official-store-2026-08-27",
       "bianchi-oltre-race-armenia-2026-08-17",
       "bianchi-oltre-race-dealer-2026-08-17",
       "bianchi-oltre-race-global-2026-08-17",
@@ -371,7 +373,9 @@
       "public-sava-a4-product-2026-08-17",
       "public-sava-hawkeye-price-2026-08-17",
       "public-seka-exaero-build-2026-08-17",
+      "public-seka-exaero-launch-price-2026-08-27",
       "public-seka-exaero-owner-2026-08-17",
+      "public-seka-exaero-rdc-owner-build-2026-08-27",
       "public-seka-spear-rdc-owner-2026-08-17",
       "public-tavelo-arden-owner-2026-08-17",
       "public-tavelo-arow-sl-build-2026-08-17",
@@ -407,6 +411,7 @@
       "quick-pro-xr-one-grx-di2-official-2026-08-17",
       "quick-pro-xr-one-official-2026-08-17",
       "rinasclta-gr025-official",
+      "rinasclta-q-aero-gr-official-2026-08-27",
       "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e",
       "round3-bigrock-catalog-panda-podium-6368556ec2",
       "round3-bigrock-sohtea-mybike-parts-3464906529",
@@ -471,6 +476,7 @@
       "seka-exaero-gr-official-store-2026-08-09",
       "seka-exaero-gr-rdc-collection-2026-08-17",
       "seka-exaero-gr-rdc-official-2026-08-17",
+      "seka-exaero-road-official-2026-08-27",
       "seka-official",
       "seka-spear-rdc-geometry-official-2026-08-17",
       "seka-spear-rdc-official-2026-08-17",
@@ -860,6 +866,7 @@
     ],
     "candidates": [
       "airwolf-current-gravel",
+      "airwolf-yfr068",
       "alums-da54",
       "basso-venta-disc",
       "bianchi-sprint-icr",
@@ -1002,6 +1009,7 @@
       "quick-pro-ur-one-frameset",
       "quick-pro-xr-one-frameset-aelous-gravel",
       "quick-t10",
+      "rinasclta-q-aero-gr",
       "rockbros-pegasus-road",
       "rolling-stone-comp",
       "sava-a4",
@@ -1015,6 +1023,7 @@
       "sava-r9",
       "sava-starship-r13",
       "scott-foil-rc-10",
+      "seka-exaero-road",
       "seka-spear-rdc",
       "specialized-crux-10r-frameset",
       "specialized-roubaix-sl8-comp-105",
@@ -1082,6 +1091,13 @@
       "candidate-airwolf-current-gravel-price-2026-08-17",
       "candidate-airwolf-current-gravel-purchase-route-2026-08-17",
       "candidate-airwolf-current-gravel-warranty-support-2026-08-17",
+      "candidate-airwolf-yfr068-frame-weight-2026-08-27",
+      "candidate-airwolf-yfr068-geometry-2026-08-27",
+      "candidate-airwolf-yfr068-identity-2026-08-27",
+      "candidate-airwolf-yfr068-price-2026-08-27",
+      "candidate-airwolf-yfr068-purchase-route-2026-08-27",
+      "candidate-airwolf-yfr068-tire-clearance-2026-08-27",
+      "candidate-airwolf-yfr068-warranty-support-2026-08-27",
       "candidate-bigrock-sohtea-bom-2026-08-17",
       "candidate-bigrock-sohtea-bottom-bracket-2026-08-17",
       "candidate-bigrock-sohtea-frame-2026-08-17",
@@ -1217,6 +1233,10 @@
       "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17",
       "candidate-quick-xr-one-complete-weight-2026-08-27",
+      "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
+      "candidate-rinasclta-q-aero-gr-geometry-2026-08-27",
+      "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
+      "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27",
       "candidate-roubaix-sl8-sport-bom-2026-08-27",
       "candidate-roubaix-sl8-sport-complete-weight-2026-08-27",
       "candidate-roubaix-sl8-sport-price-2026-08-27",
@@ -1232,6 +1252,11 @@
       "candidate-sava-a4-purchase-route-2026-08-17",
       "candidate-sava-a4-tire-clearance-2026-08-17",
       "candidate-sava-a4-warranty-support-2026-08-17",
+      "candidate-seka-exaero-road-frame-weight-2026-08-27",
+      "candidate-seka-exaero-road-identity-2026-08-27",
+      "candidate-seka-exaero-road-owner-build-weight-2026-08-27",
+      "candidate-seka-exaero-road-price-2026-08-27",
+      "candidate-seka-exaero-road-tire-clearance-2026-08-27",
       "candidate-seka-spear-rdc-bom-2026-08-17",
       "candidate-seka-spear-rdc-bottom-bracket-2026-08-17",
       "candidate-seka-spear-rdc-complete-weight-2026-08-17",
@@ -4418,6 +4443,30 @@
         "type",
         "url"
       ],
+      "airwolf-yfr068-geometry-bikeinsights-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "airwolf-yfr068-official-store-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bianchi-oltre-race-armenia-2026-08-17": [
         "accessed_at",
         "language",
@@ -6440,7 +6489,31 @@
         "type",
         "url"
       ],
+      "public-seka-exaero-launch-price-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-seka-exaero-owner-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-seka-exaero-rdc-owner-build-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -6870,6 +6943,18 @@
         "url"
       ],
       "rinasclta-gr025-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "rinasclta-q-aero-gr-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7588,6 +7673,18 @@
         "url"
       ],
       "seka-exaero-gr-rdc-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "seka-exaero-road-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -13505,6 +13602,24 @@
         "type",
         "why_interesting"
       ],
+      "airwolf-yfr068": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "name",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "alums-da54": [
         "category",
         "last_reviewed",
@@ -16275,6 +16390,27 @@
         "type",
         "why_interesting"
       ],
+      "rinasclta-q-aero-gr": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.derailleur_hanger",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.seatpost",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "rockbros-pegasus-road": [
         "category",
         "last_reviewed",
@@ -16561,6 +16697,31 @@
         "source_refs",
         "source_snapshot_id",
         "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "seka-exaero-road": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.cockpit",
+        "facts.derailleur_hanger",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "status",
         "type",
         "why_interesting"
@@ -17654,6 +17815,97 @@
         "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-geometry-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-identity-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-price-2026-08-27": [
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-purchase-route-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-warranty-support-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
@@ -19620,6 +19872,58 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-rinasclta-q-aero-gr-geometry-2026-08-27": [
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-rinasclta-q-aero-gr-identity-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-roubaix-sl8-sport-bom-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -19838,6 +20142,78 @@
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-exaero-road-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-exaero-road-identity-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-exaero-road-owner-build-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-exaero-road-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-seka-exaero-road-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -23917,6 +24293,8 @@
     "sources": {
       "af01-manual-2026-08-27": [],
       "af01-official": [],
+      "airwolf-yfr068-geometry-bikeinsights-2026-08-27": [],
+      "airwolf-yfr068-official-store-2026-08-27": [],
       "bianchi-oltre-race-armenia-2026-08-17": [],
       "bianchi-oltre-race-dealer-2026-08-17": [],
       "bianchi-oltre-race-global-2026-08-17": [],
@@ -24083,7 +24461,9 @@
       "public-sava-a4-product-2026-08-17": [],
       "public-sava-hawkeye-price-2026-08-17": [],
       "public-seka-exaero-build-2026-08-17": [],
+      "public-seka-exaero-launch-price-2026-08-27": [],
       "public-seka-exaero-owner-2026-08-17": [],
+      "public-seka-exaero-rdc-owner-build-2026-08-27": [],
       "public-seka-spear-rdc-owner-2026-08-17": [],
       "public-tavelo-arden-owner-2026-08-17": [],
       "public-tavelo-arow-sl-build-2026-08-17": [],
@@ -24119,6 +24499,7 @@
       "quick-pro-xr-one-grx-di2-official-2026-08-17": [],
       "quick-pro-xr-one-official-2026-08-17": [],
       "rinasclta-gr025-official": [],
+      "rinasclta-q-aero-gr-official-2026-08-27": [],
       "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e": [],
       "round3-bigrock-catalog-panda-podium-6368556ec2": [],
       "round3-bigrock-sohtea-mybike-parts-3464906529": [],
@@ -24183,6 +24564,7 @@
       "seka-exaero-gr-official-store-2026-08-09": [],
       "seka-exaero-gr-rdc-collection-2026-08-17": [],
       "seka-exaero-gr-rdc-official-2026-08-17": [],
+      "seka-exaero-road-official-2026-08-27": [],
       "seka-official": [],
       "seka-spear-rdc-geometry-official-2026-08-17": [],
       "seka-spear-rdc-official-2026-08-17": [],
@@ -25313,6 +25695,10 @@
     },
     "candidates": {
       "airwolf-current-gravel": [],
+      "airwolf-yfr068": [
+        "source_ids=airwolf-yfr068-geometry-bikeinsights-2026-08-27",
+        "source_ids=airwolf-yfr068-official-store-2026-08-27"
+      ],
       "alums-da54": [
         "model_id=alums-da54",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
@@ -25747,6 +26133,7 @@
         "model_id=seka-exaero-gr",
         "source_ids=public-seka-exaero-build-2026-08-17",
         "source_ids=public-seka-exaero-owner-2026-08-17",
+        "source_ids=seka-exaero-gr-official-2026-08-27",
         "source_ids=seka-exaero-gr-rdc-collection-2026-08-17",
         "source_ids=seka-exaero-gr-rdc-official-2026-08-17"
       ],
@@ -26025,6 +26412,9 @@
         "model_id=quick-t10",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
+      "rinasclta-q-aero-gr": [
+        "source_ids=rinasclta-q-aero-gr-official-2026-08-27"
+      ],
       "rockbros-pegasus-road": [
         "model_id=rockbros-pegasus-road",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
@@ -26090,6 +26480,13 @@
         "model_id=scott-foil-rc-10",
         "source_ids=scott-foil-rc-10-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
+      ],
+      "seka-exaero-road": [
+        "source_ids=public-seka-exaero-build-2026-08-17",
+        "source_ids=public-seka-exaero-launch-price-2026-08-27",
+        "source_ids=public-seka-exaero-owner-2026-08-17",
+        "source_ids=public-seka-exaero-rdc-owner-build-2026-08-27",
+        "source_ids=seka-exaero-road-official-2026-08-27"
       ],
       "seka-spear-rdc": [
         "source_ids=public-seka-spear-rdc-owner-2026-08-17",
@@ -26372,6 +26769,27 @@
       ],
       "candidate-airwolf-current-gravel-warranty-support-2026-08-17": [
         "target.record_id=airwolf-current-gravel"
+      ],
+      "candidate-airwolf-yfr068-frame-weight-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-geometry-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-identity-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-price-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-purchase-route-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-tire-clearance-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-warranty-support-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
       ],
       "candidate-bigrock-sohtea-bom-2026-08-17": [
         "target.record_id=bigrock-sohtea"
@@ -26778,6 +27196,18 @@
       "candidate-quick-xr-one-complete-weight-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-xr-one"
       ],
+      "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27": [
+        "target.record_id=rinasclta-q-aero-gr"
+      ],
+      "candidate-rinasclta-q-aero-gr-geometry-2026-08-27": [
+        "target.record_id=rinasclta-q-aero-gr"
+      ],
+      "candidate-rinasclta-q-aero-gr-identity-2026-08-27": [
+        "target.record_id=rinasclta-q-aero-gr"
+      ],
+      "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27": [
+        "target.record_id=rinasclta-q-aero-gr"
+      ],
       "candidate-roubaix-sl8-sport-bom-2026-08-27": [
         "target.record_id=specialized-roubaix-sl8-sport-105"
       ],
@@ -26822,6 +27252,21 @@
       ],
       "candidate-sava-a4-warranty-support-2026-08-17": [
         "target.record_id=sava-a4"
+      ],
+      "candidate-seka-exaero-road-frame-weight-2026-08-27": [
+        "target.record_id=seka-exaero-road"
+      ],
+      "candidate-seka-exaero-road-identity-2026-08-27": [
+        "target.record_id=seka-exaero-road"
+      ],
+      "candidate-seka-exaero-road-owner-build-weight-2026-08-27": [
+        "target.record_id=seka-exaero-road"
+      ],
+      "candidate-seka-exaero-road-price-2026-08-27": [
+        "target.record_id=seka-exaero-road"
+      ],
+      "candidate-seka-exaero-road-tire-clearance-2026-08-27": [
+        "target.record_id=seka-exaero-road"
       ],
       "candidate-seka-spear-rdc-bom-2026-08-17": [
         "target.record_id=seka-spear-rdc"
@@ -27536,6 +27981,22 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "airwolf-yfr068-geometry-bikeinsights-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": -1,
+        "specification": 1
+      }
+    },
+    "airwolf-yfr068-official-store-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 1
       }
     },
     "bianchi-oltre-race-armenia-2026-08-17": {
@@ -28893,11 +29354,19 @@
       }
     },
     "public-seka-exaero-build-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 2
+      }
+    },
+    "public-seka-exaero-launch-price-2026-08-27": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
-        "identity": 1,
-        "price": 0,
-        "specification": 0
+        "identity": 3,
+        "price": 1,
+        "specification": 1
       }
     },
     "public-seka-exaero-owner-2026-08-17": {
@@ -28906,6 +29375,14 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-seka-exaero-rdc-owner-build-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "public-seka-spear-rdc-owner-2026-08-17": {
@@ -29187,6 +29664,14 @@
         "identity": 3,
         "price": 1,
         "specification": 1
+      }
+    },
+    "rinasclta-q-aero-gr-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e": {
@@ -29672,6 +30157,14 @@
       }
     },
     "seka-exaero-gr-rdc-official-2026-08-17": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "seka-exaero-road-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -31007,6 +31500,81 @@
       ],
       "accepted_source_ids": [
         "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e"
+      ]
+    },
+    "candidate-airwolf-yfr068-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 frame weight size 54\",\"exact storefront page\",\"found\",\"2026-08-27\",\"Storefront specifies 1,061 g for size 54.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 geometry\",\"secondary exact-model database\",\"found\",\"2026-08-27\",\"Full secondary table found, but no matching official current chart.\",\"https://bikeinsights.com/bikes/633cbe1ce4468a0023a8f469-airwolf-yfr068\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-geometry-bikeinsights-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-identity-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 exact frameset\",\"brand storefront exact-model page\",\"found\",\"2026-08-27\",\"Exact model and specs found; legal manufacturer identity and mainland support remain unresolved.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 current mainland price\",\"exact brand storefront\",\"no-result\",\"2026-08-27\",\"No current CNY price was captured.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-airwolf-yfr068-purchase-route-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 exact purchase route\",\"exact brand storefront\",\"found\",\"2026-08-27\",\"A direct exact-model storefront exists; mainland stock, legal seller and checkout handling remain unresolved.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 700x40C clearance\",\"exact storefront page\",\"found\",\"2026-08-27\",\"Storefront maximum is 700×40C; larger owner reports are not adopted.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-warranty-support-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 warranty\",\"exact brand storefront\",\"found\",\"2026-08-27\",\"The page states two years, but the legal warrantor and mainland handling remain unresolved.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
       ]
     },
     "candidate-bigrock-sohtea-bom-2026-08-17": {
@@ -32856,6 +33424,48 @@
       ],
       "accepted_source_ids": []
     },
+    "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Rinasclta Q-AERO GR per-size frame weight\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Painted 49–58 size weights are 1,180–1,260 g, each ±20 g.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]"
+      ],
+      "accepted_source_ids": [
+        "rinasclta-q-aero-gr-official-2026-08-27"
+      ]
+    },
+    "candidate-rinasclta-q-aero-gr-geometry-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Rinasclta Q-AERO GR geometry chart\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Sizes are listed, but no numeric geometry table is exposed.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-rinasclta-q-aero-gr-identity-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Rinasclta Q-AERO GR\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Current exact SKU RF-QA-GR-27 and package found.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]"
+      ],
+      "accepted_source_ids": [
+        "rinasclta-q-aero-gr-official-2026-08-27"
+      ]
+    },
+    "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Rinasclta Q-AERO GR 50C\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Official nominal maximum is 700×50C.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]"
+      ],
+      "accepted_source_ids": [
+        "rinasclta-q-aero-gr-official-2026-08-27"
+      ]
+    },
     "candidate-roubaix-sl8-sport-bom-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -33072,6 +33682,69 @@
       ],
       "accepted_source_ids": [
         "sava-china-support-store-2026-08-17"
+      ]
+    },
+    "candidate-seka-exaero-road-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA ExAero 820g\",\"validated XHS exact-model post\",\"found\",\"2026-08-27\",\"Exact road-model post reports 820 g and the material/cockpit family.\",\"https://www.xiaohongshu.com/explore/6a7ee74d0000000006004fde\"]",
+        "[\"web\",1,\"SEKA ExAero official RDC standard weight\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"RDC 820 g and standard 935 g, size 54 unpainted, excluding paint and metal hardware, ±35 g.\",\"https://www.sekabikes.com/en/exaero-2/\"]"
+      ],
+      "accepted_source_ids": [
+        "public-seka-exaero-build-2026-08-17",
+        "seka-exaero-road-official-2026-08-27"
+      ]
+    },
+    "candidate-seka-exaero-road-identity-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA ExAero exact road model\",\"validated XHS detail archive\",\"found\",\"2026-08-27\",\"Public SEKA account post identifies the new ExAero road platform and seven-size/cockpit family.\",\"https://www.xiaohongshu.com/explore/6a7ee74d0000000006004fde\"]",
+        "[\"web\",1,\"SEKA ExAero official road frameset\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Official road-model page distinguishes ExAero from ExAero GR.\",\"https://www.sekabikes.com/en/exaero-2/\"]"
+      ],
+      "accepted_source_ids": [
+        "public-seka-exaero-build-2026-08-17",
+        "seka-exaero-road-official-2026-08-27"
+      ]
+    },
+    "candidate-seka-exaero-road-owner-build-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA ExAero RDC owner complete build weight\",\"validated XHS exact-model owner post\",\"found\",\"2026-08-27\",\"Size-52 RDC custom build reports 6.67 kg with a component list including 60 mm wheels and 2× gearing.\",\"https://www.xiaohongshu.com/explore/6a864f340000000005029ed3\"]"
+      ],
+      "accepted_source_ids": [
+        "public-seka-exaero-rdc-owner-build-2026-08-27"
+      ]
+    },
+    "candidate-seka-exaero-road-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA ExAero 11900 price\",\"validated XHS launch post\",\"found\",\"2026-08-27\",\"Headline reports ¥11,900 starting price; trim and included package are not mapped.\",\"https://www.xiaohongshu.com/explore/6a7ee5cd000000003300f6cb\"]",
+        "[\"web\",1,\"SEKA ExAero official mainland price\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Official global page does not expose a CNY package price.\",\"https://www.sekabikes.com/en/exaero-2/\"]"
+      ],
+      "accepted_source_ids": [
+        "public-seka-exaero-launch-price-2026-08-27"
+      ]
+    },
+    "candidate-seka-exaero-road-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA ExAero official tire clearance\",\"manufacturer product page and user manual\",\"found\",\"2026-08-27\",\"Official page and manual specify a measured maximum tire capacity of 700C×32 mm with at least 4 mm frame clearance per side.\",\"https://www.sekabikes.com/en/exaero-2/\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-road-official-2026-08-27"
       ]
     },
     "candidate-seka-spear-rdc-bom-2026-08-17": {
@@ -38470,6 +39143,9 @@
         "observed_price"
       ],
       "scott-foil-rc-10": [
+        "observed_price"
+      ],
+      "seka-exaero-road": [
         "observed_price"
       ],
       "seka-spear-rdc": [

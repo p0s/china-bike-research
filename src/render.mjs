@@ -867,6 +867,9 @@ function candidateFactRows(entry) {
     sizes: 'Sizes',
     storage: 'Storage',
     mounts: 'Mounts',
+    derailleur_hanger: 'Derailleur hanger',
+    frame_weight_basis: 'Frame weight basis',
+    seatpost: 'Seatpost',
     complete_weight_g: 'Complete weight',
     frame_weight_g: 'Frame weight',
     tire_clearance_mm: 'Tire clearance'

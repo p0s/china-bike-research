@@ -91,10 +91,13 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Price record and sources/);
   assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
 
-  const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
+  const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
   const sparseDetail = renderCandidateModel(context, sparse);
   assert.match(sparseDetail, /Price not verified/);
-  assert.match(sparseDetail, /No model-specific hardware facts are verified yet/);
+  assert.match(sparseDetail, /Airwolf YFR068 \/ A5/);
+  assert.match(sparseDetail, /40 mm/);
+  assert.match(sparseDetail, /Frame weight basis/);
+  assert.doesNotMatch(sparseDetail, /Frame_weight_basis/);
   assert.match(sparseDetail, /Identity not confirmed/);
 
   const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');

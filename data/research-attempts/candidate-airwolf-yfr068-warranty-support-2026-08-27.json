@@ -1,0 +1,14 @@
+{
+  "id": "candidate-airwolf-yfr068-warranty-support-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "airwolf-yfr068" },
+  "field": "warranty-support",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Airwolf YFR068 warranty", "route": "exact brand storefront", "outcome": "found", "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/", "accessed_at": "2026-08-27", "note": "The page states two years, but the legal warrantor and mainland handling remain unresolved." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["airwolf-yfr068-official-store-2026-08-27"],
+  "notes": "A storefront duration is recorded without presenting it as verified mainland after-sales coverage."
+}

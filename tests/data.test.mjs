@@ -59,10 +59,10 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 200);
+  assert.equal(data.candidates.length, 202);
   assert.equal(data.exclusions.length, 13);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 382);
+  assert.equal(data.researchAttempts.length, 395);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -183,8 +183,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 191);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 163);
+  assert.equal(catalogCandidates.length, 193);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 166);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
@@ -210,8 +210,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   ]);
   assert.ok(oldTwitterCarbon.galleryImages.every((image) => image.source.id === 'twitter-gravel-v3-2024-public-listing-image-2026-08-21'));
 
-  const earlyLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-current-gravel');
-  assert.equal(earlyLead.defaultVisible, false);
+  const exactAirwolfLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
+  assert.equal(exactAirwolfLead.defaultVisible, true);
   const unclearModel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-carbon-road-gravel-unknown');
   assert.equal(unclearModel.defaultVisible, false);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');

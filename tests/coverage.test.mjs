@@ -116,7 +116,7 @@ test('recorded research attempts cannot silently disappear or be rewritten', () 
 
 test('new information requires monotonic baseline acceptance', () => {
   const mutated = structuredClone(data);
-  mutated.candidates[0].facts = { newly_verified_weight_g: 9000 };
+  mutated.candidates[0].facts = { ...mutated.candidates[0].facts, newly_verified_weight_g: 9000 };
   const current = createCoverageSnapshot(mutated);
   assert.ok(validateCoverage(mutated, current, baseline, retirements, { requireCurrentBaseline: true })
     .some((error) => error.includes('coverage baseline is stale')));

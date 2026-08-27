@@ -1,0 +1,14 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "field": "exact-model-identity",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Rinasclta Q-AERO GR", "route": "manufacturer exact-model page", "outcome": "found", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-27", "note": "Current exact SKU RF-QA-GR-27 and package found." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["rinasclta-q-aero-gr-official-2026-08-27"],
+  "notes": "The exact current product and package are attributable to the manufacturer page."
+}
