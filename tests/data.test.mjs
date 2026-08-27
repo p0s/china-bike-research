@@ -101,15 +101,15 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 173);
+  assert.equal(data.images.length, 176);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 202);
-  assert.equal(data.exclusions.length, 13);
+  assert.equal(data.candidates.length, 204);
+  assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 417);
+  assert.equal(data.researchAttempts.length, 420);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -230,8 +230,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 193);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 166);
+  assert.equal(catalogCandidates.length, 195);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 169);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
 
@@ -505,8 +505,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 171);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 97);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 174);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 100);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -652,8 +652,23 @@ test('research ledger reconciles every bundle group and preserves backlog status
   assert.equal(ledger.titanium_additions.length, 13);
   assert.equal(ledger.missing_china_price_targets.length, 35);
   assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'published-variant').length, 15);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 109);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 9);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 108);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 10);
+});
+
+test('X-LAB model records keep one coherent reference trim and separate alternative builds', () => {
+  const ad8 = data.candidates.find((item) => item.id === 'xlab-ad8');
+  const ad9 = data.candidates.find((item) => item.id === 'xlab-ad9');
+  const rs9 = data.candidates.find((item) => item.id === 'xlab-rs9');
+  assert.equal(ad8.facts.complete_weight_g, 7600);
+  assert.equal(ad8.official_price.amount_cny, 26980);
+  assert.equal(ad8.alternative_builds.find((build) => build.id === 'taobao-standard-astana-105').price.amount_cny, 21980);
+  assert.equal(ad9.facts.drivetrain, 'Shimano Dura-Ace R9270 Di2 2×12');
+  assert.equal(ad9.facts.tire_clearance_mm, 32);
+  assert.equal(ad9.alternative_builds.find((build) => build.id === 'xhs-custom-hybrid-l').complete_weight_g, 7435);
+  assert.equal(rs9.observed_price.amount_cny, 49980);
+  assert.match(rs9.facts.tire_clearance_basis, /fitted 32C/i);
+  assert.equal(rs9.alternative_builds[0].complete_weight_g, 6800);
 });
 
 test('shared frame images do not masquerade as exact component builds', () => {

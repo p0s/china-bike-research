@@ -345,11 +345,14 @@ function publishedTireClearance(product) {
 }
 
 function candidateTireClearance(entry) {
-  const value = entry.candidate.facts?.tire_clearance_mm;
+  const facts = entry.candidate.facts ?? {};
+  const value = facts.tire_clearance_mm;
+  const basis = facts.tire_clearance_basis ?? '';
+  const fitted = /^documented fitted|^fitted/i.test(basis);
   return {
-    value: Number.isFinite(value) ? `${value} mm` : '—',
+    value: Number.isFinite(value) ? `${value} mm${fitted ? ' fitted' : ''}` : '—',
     sortValue: Number.isFinite(value) ? value : 0,
-    details: Number.isFinite(value) ? 'Recorded maximum tire clearance.' : ''
+    details: Number.isFinite(value) ? (basis || 'Recorded maximum tire clearance.') : ''
   };
 }
 
@@ -881,6 +884,8 @@ function candidateFactRows(entry) {
     mounts: 'Mounts',
     derailleur_hanger: 'Derailleur hanger',
     frame_weight_basis: 'Frame weight basis',
+    complete_weight_basis: 'Complete weight basis',
+    tire_clearance_basis: 'Tire clearance basis',
     seatpost: 'Seatpost',
     complete_weight_g: 'Complete weight',
     frame_weight_g: 'Frame weight',
@@ -896,6 +901,21 @@ function candidateFactRows(entry) {
           : value;
     return [labels[key] ?? sentenceLabel(key), String(formatted)];
   });
+}
+
+function candidateAlternativeBuilds(entry) {
+  const builds = entry.candidate.alternative_builds ?? [];
+  if (!builds.length) return '';
+  return `<section class="detail-section documented-builds" aria-labelledby="documented-builds-title"><h2 id="documented-builds-title">Other documented builds</h2><p>These are separate configurations. Their weight, drivetrain, and price are not mixed into the catalog reference row.</p><div class="source-list">${builds.map((build) => {
+    const details = [
+      build.drivetrain ? `Drivetrain: ${build.drivetrain}` : '',
+      Number.isFinite(build.complete_weight_g) ? `Weight: ${(build.complete_weight_g / 1000).toFixed(2).replace(/0$/, '')} kg${build.weight_basis ? ` — ${build.weight_basis}` : ''}` : '',
+      build.price ? `Price: ${formatPrice(build.price)}${build.price.observed_at ? ` on ${build.price.observed_at}` : ''}${build.price.price_basis ? ` — ${build.price.price_basis}` : ''}` : '',
+      build.wheels ? `Wheels: ${build.wheels}` : '',
+      build.tires ? `Tires: ${build.tires}` : ''
+    ].filter(Boolean);
+    return `<div class="source-item"><strong>${escapeHtml(build.label)}</strong>${details.map((detail) => `<span>${escapeHtml(detail)}</span>`).join('')}${build.notes ? `<p>${escapeHtml(candidatePublicText(build.notes))}</p>` : ''}</div>`;
+  }).join('')}</div></section>`;
 }
 
 function candidateSourceList(entry) {
@@ -1183,6 +1203,7 @@ export function renderCandidateModel(ctx, entry) {
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="candidate-brief-title"><h2 id="candidate-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(reason)}</p><p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${keyHardware ? `<p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p>` : ''}<p class="research-profile-note">This is a research-stage profile. Useful exact-model evidence is shown, but unresolved fields prevent it from being treated as a publication-ready recommendation.</p></section>
+    ${candidateAlternativeBuilds(entry)}
     <section class="decision-block"><div><h2>What is known</h2>${facts.length ? `<ul>${facts.map(([label, value]) => `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</li>`).join('')}</ul>` : '<p>No model-specific hardware facts are verified yet.</p>'}</div><div><h2>Trade-offs and unknowns</h2>${missing.length ? `<ul>${missing.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '<p>No additional evidence gaps are documented.</p>'}</div></section>
     <section class="detail-section" aria-labelledby="candidate-key-details-title"><h2 id="candidate-key-details-title">Key details</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>

@@ -537,6 +537,32 @@ export function validateDataset(data = loadDataset()) {
         }
       }
     }
+    if (candidate.alternative_builds !== undefined) {
+      if (!Array.isArray(candidate.alternative_builds) || candidate.alternative_builds.length === 0) {
+        errors.push(`candidate ${candidate.id}: alternative_builds must be a non-empty array`);
+      } else {
+        const buildIds = new Set();
+        for (const build of candidate.alternative_builds) {
+          if (!isObject(build) || typeof build.id !== 'string' || !build.id.trim() || typeof build.label !== 'string' || !build.label.trim()) {
+            errors.push(`candidate ${candidate.id}: alternative build needs an id and label`);
+            continue;
+          }
+          if (buildIds.has(build.id)) errors.push(`candidate ${candidate.id}: duplicate alternative build ${build.id}`);
+          buildIds.add(build.id);
+          if (!Array.isArray(build.source_ids) || build.source_ids.length === 0) errors.push(`candidate ${candidate.id}: alternative build ${build.id} needs source_ids`);
+          for (const sourceId of build.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: alternative build ${build.id} missing source ${sourceId}`);
+          for (const key of ['drivetrain', 'weight_basis', 'wheels', 'tires', 'notes']) {
+            if (build[key] !== undefined && (typeof build[key] !== 'string' || !build[key].trim())) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.${key}`);
+          }
+          if (build.complete_weight_g !== undefined && (typeof build.complete_weight_g !== 'number' || build.complete_weight_g <= 0)) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.complete_weight_g`);
+          if (build.price !== undefined) {
+            if (!isObject(build.price) || build.price.currency !== 'CNY' || !isDate(build.price.observed_at)) errors.push(`candidate ${candidate.id}: alternative build ${build.id} has invalid price identity`);
+            if (build.price.amount_cny === undefined && build.price.low_cny === undefined) errors.push(`candidate ${candidate.id}: alternative build ${build.id} price needs amount_cny or low_cny`);
+            for (const key of ['amount_cny', 'low_cny', 'high_cny']) if (build.price[key] !== undefined && (typeof build.price[key] !== 'number' || build.price[key] <= 0)) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.price.${key}`);
+          }
+        }
+      }
+    }
     for (const [priceKey, candidatePrice] of [['observed_price', candidate.observed_price], ['official_price', candidate.official_price]]) {
       if (candidatePrice === undefined) continue;
       if (!isObject(candidatePrice)) {

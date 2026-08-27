@@ -1,0 +1,60 @@
+{
+  "id": "candidate-xlab-rs9-tire-clearance-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "xlab-rs9" },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "X-LAB RS9",
+          "route": "XHS exact-model complete capture",
+          "outcome": "found",
+          "result_url": "https://www.xiaohongshu.com/explore/6996d72f000000000a02dac3",
+          "accessed_at": "2026-08-27",
+          "note": "Exact size-S owner build lists Maxxis High Road 32C; a public reply says the fit is easy. This proves a fitted observation, not a manufacturer maximum."
+        }
+      ]
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "The current official mainland specification omits a maximum, while a secondary 2025 database entry says 30 mm and a later exact owner build demonstrably fits 32C.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "X-LAB RS9 official maximum tire clearance",
+          "route": "manufacturer exact mainland product page",
+          "outcome": "no-result",
+          "result_url": "https://www.xidesheng.com/goods/1891777277617856514/detail",
+          "accessed_at": "2026-08-27",
+          "note": "The page specifies stock 700x28C tires but no manufacturer maximum."
+        },
+        {
+          "attempt": 2,
+          "query": "X-LAB RS9 maximum tire clearance",
+          "route": "secondary geometry database",
+          "outcome": "conflict",
+          "result_url": "https://bikeinsights.com/bikes/6781f45c35457a001ba2cf88-x-lab-rs9-road?build=base&version=2025",
+          "accessed_at": "2026-08-27",
+          "note": "The secondary 2025 record says 30 mm maximum, conflicting with the later fitted 32C build."
+        },
+        {
+          "attempt": 3,
+          "query": "site:xds.co X-LAB RS9 tire clearance",
+          "route": "manufacturer global site search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No current exact global RS9 product page with a maximum-clearance claim was found."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["public-xlab-rs9-build-2026-08-27", "xlab-rs9-official-cn-spec-2026-08-27", "xlab-rs9-bikeinsights-2026-08-27"],
+  "retry_after": null,
+  "notes": "Show 32 mm only as a fitted observation. Do not publish a manufacturer maximum until a current exact source resolves the conflict."
+}

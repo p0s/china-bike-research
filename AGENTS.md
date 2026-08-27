@@ -25,7 +25,7 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 
 - Start with `npm run --silent data:gaps` and select the bounded top batch. Never dump whole data directories, schemas, DOMs, or unchanged reports.
 - Research one exact model/source page at a time and extract all supported useful fields. Check linked sources, exact primary sources, mainland listings, then public community sources.
-- For an exact complete-bike trim, prioritize complete weight with its measurement basis, maximum tire clearance, drivetrain, selected-build price, and sources; never combine favorable values from different builds. For a frameset, prioritize frameset-package weight, clearance, price, and build-critical compatibility.
+- For every exact complete-bike trim, always seek complete weight with its measurement basis, maximum tire clearance, drivetrain, selected-build price, and sources; never combine favorable values from different builds. Prefer the most useful fully documented trim in the table and keep alternatives trim-specific on the model page. For a frameset, prioritize frameset-package weight, clearance, price, and build-critical compatibility.
 - Stop at decisive evidence. Use up to three distinct routes only for a still-unresolved, purchase-relevant claim; do not give every field three searches.
 - Research-only batches normally change data and dated evidence. One small task-blocking tooling, `SPEC.md`, rendering, or presentation fix may stay in the batch when it is cohesive and owned by the same writer; leave unrelated work for another task.
 

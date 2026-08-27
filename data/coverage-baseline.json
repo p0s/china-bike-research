@@ -7,20 +7,20 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 441,
-      "images": 173,
+      "sources": 456,
+      "images": 176,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 202,
-      "exclusions": 13,
+      "candidates": 204,
+      "exclusions": 14,
       "research": 1,
-      "researchAttempts": 417
+      "researchAttempts": 420
     },
     "image_accuracy": {
-      "exact-platform": 56,
-      "exact-variant": 78,
+      "exact-platform": 58,
+      "exact-variant": 79,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
@@ -28,10 +28,10 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 171
+      "remote": 174
     },
     "candidate_prices": {
-      "official": 45,
+      "official": 48,
       "observed": 131
     }
   },
@@ -396,7 +396,10 @@
       "public-xds-gt350-price-2026-08-17",
       "public-xds-gt600-overview-2026-08-17",
       "public-xds-gt600-retailer-build-2026-08-27",
+      "public-xlab-ad8-build-2026-08-27",
+      "public-xlab-ad9-build-2026-08-27",
       "public-xlab-gt8-overview-2026-08-17",
+      "public-xlab-rs9-build-2026-08-27",
       "quick-2026-one-series-launch",
       "quick-gr-one-china-official-2026-08-25",
       "quick-gr-one-official",
@@ -640,8 +643,20 @@
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
       "xhs-winspace-slc3-200km-2026-08-10",
       "xhs-winspace-slc3-review-lead-2026-08-10",
+      "xlab-ad8-official-cn-price-2026-08-27",
+      "xlab-ad8-official-cn-spec-2026-08-27",
+      "xlab-ad8-official-global-2026-08-27",
+      "xlab-ad8-taobao-2026-08-27",
+      "xlab-ad9-official-cn-price-2026-08-27",
+      "xlab-ad9-official-cn-spec-2026-08-27",
+      "xlab-ad9-official-global-2026-08-27",
+      "xlab-ad9-taobao-2026-08-27",
       "xlab-gt8-official-2026-08-17",
       "xlab-gt8-smzdm-market-report-2026-08-27",
+      "xlab-rs9-bikeinsights-2026-08-27",
+      "xlab-rs9-official-cn-price-2026-08-27",
+      "xlab-rs9-official-cn-spec-2026-08-27",
+      "xlab-rs9-taobao-2026-08-27",
       "xmcarbonspeed-gr01-official",
       "yoeleo-altera-g21-current-2026-08-27",
       "yoeleo-altera-g21-official",
@@ -828,7 +843,10 @@
       "xds-gt350-primary-image",
       "xds-gt600-primary-image",
       "xds-gt600-public-build-gallery",
+      "xlab-ad8-primary-image",
+      "xlab-ad9-primary-image",
       "xlab-gt8-primary-image",
+      "xlab-rs9-primary-image",
       "xmcarbonspeed-cs-gr01-primary-image",
       "yoeleo-altera-g21-primary-image"
     ],
@@ -1082,7 +1100,10 @@
       "xds-ad7",
       "xds-carbon-road-13980",
       "xds-gt350",
-      "xds-gt600"
+      "xds-gt600",
+      "xlab-ad8",
+      "xlab-ad9",
+      "xlab-rs9"
     ],
     "exclusions": [
       "avenger-ambiguous",
@@ -1097,7 +1118,8 @@
       "replica-pinarello-road-hydraulic",
       "suspicious-trek-madone-gen8",
       "triaero-x-gravel-2",
-      "velobuild-old-gravel"
+      "velobuild-old-gravel",
+      "xds-carbon-road-13980"
     ],
     "research": [
       "taobao-2026-08-08"
@@ -1334,8 +1356,11 @@
       "candidate-winspace-g5-mainland-price-2026-08-27",
       "candidate-xds-gt600-complete-weight-2026-08-27",
       "candidate-xds-gt600-fitted-tire-2026-08-27",
+      "candidate-xlab-ad8-price-2026-08-27",
+      "candidate-xlab-ad9-price-2026-08-27",
       "candidate-xlab-gt8-price-2026-08-27",
       "candidate-xlab-gt8-purchase-route-2026-08-27",
+      "candidate-xlab-rs9-tire-clearance-2026-08-27",
       "platform-af01-frame-weight-2026-08-27",
       "platform-af01-geometry-2026-08-27",
       "platform-bxt-055-geometry-2026-08-27",
@@ -6827,8 +6852,47 @@
         "type",
         "url"
       ],
+      "public-xlab-ad8-build-2026-08-27": [
+        "accessed_at",
+        "archive_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xlab-ad9-build-2026-08-27": [
+        "accessed_at",
+        "archive_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-xlab-gt8-overview-2026-08-17": [
         "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xlab-rs9-build-2026-08-27": [
+        "accessed_at",
+        "archive_sha256",
         "language",
         "notes",
         "publisher",
@@ -9800,6 +9864,108 @@
         "type",
         "url"
       ],
+      "xlab-ad8-official-cn-price-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad8-official-cn-spec-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad8-official-global-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad8-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "selected_sku_id",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad9-official-cn-price-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad9-official-cn-spec-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad9-official-global-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-ad9-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "selected_sku_id",
+        "title",
+        "type",
+        "url"
+      ],
       "xlab-gt8-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -9820,6 +9986,57 @@
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs9-bikeinsights-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs9-official-cn-price-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs9-official-cn-spec-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-rs9-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "selected_sku_id",
         "title",
         "type",
         "url"
@@ -12927,7 +13144,55 @@
         "source_id",
         "subject_accuracy"
       ],
+      "xlab-ad8-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "xlab-ad9-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "xlab-gt8-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "xlab-rs9-primary-image": [
         "alt",
         "candidate_id",
         "credit",
@@ -17901,6 +18166,110 @@
         "status",
         "type",
         "why_interesting"
+      ],
+      "xlab-ad8": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-ad9": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "xlab-rs9": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "observed_price.amount_cny",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
+        "official_price.amount_cny",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "source_url",
+        "status",
+        "type",
+        "why_interesting"
       ]
     },
     "exclusions": {
@@ -18068,6 +18437,22 @@
         "last_reviewed",
         "name",
         "reason"
+      ],
+      "xds-carbon-road-13980": [
+        "category",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "observed_at",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "reason",
+        "risk",
+        "source_refs",
+        "source_snapshot_id"
       ]
     },
     "research": {
@@ -21432,6 +21817,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-xlab-ad8-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xlab-ad9-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-xlab-gt8-price-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.attempts",
@@ -21451,6 +21864,22 @@
         "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-xlab-rs9-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
         "channels.web.status",
         "field",
         "notes",
@@ -25139,7 +25568,10 @@
       "public-xds-gt350-price-2026-08-17": [],
       "public-xds-gt600-overview-2026-08-17": [],
       "public-xds-gt600-retailer-build-2026-08-27": [],
+      "public-xlab-ad8-build-2026-08-27": [],
+      "public-xlab-ad9-build-2026-08-27": [],
       "public-xlab-gt8-overview-2026-08-17": [],
+      "public-xlab-rs9-build-2026-08-27": [],
       "quick-2026-one-series-launch": [],
       "quick-gr-one-china-official-2026-08-25": [],
       "quick-gr-one-official": [],
@@ -25383,8 +25815,20 @@
       "xhs-pardus-spark-sport-pes-review-lead-2026-08-10": [],
       "xhs-winspace-slc3-200km-2026-08-10": [],
       "xhs-winspace-slc3-review-lead-2026-08-10": [],
+      "xlab-ad8-official-cn-price-2026-08-27": [],
+      "xlab-ad8-official-cn-spec-2026-08-27": [],
+      "xlab-ad8-official-global-2026-08-27": [],
+      "xlab-ad8-taobao-2026-08-27": [],
+      "xlab-ad9-official-cn-price-2026-08-27": [],
+      "xlab-ad9-official-cn-spec-2026-08-27": [],
+      "xlab-ad9-official-global-2026-08-27": [],
+      "xlab-ad9-taobao-2026-08-27": [],
       "xlab-gt8-official-2026-08-17": [],
       "xlab-gt8-smzdm-market-report-2026-08-27": [],
+      "xlab-rs9-bikeinsights-2026-08-27": [],
+      "xlab-rs9-official-cn-price-2026-08-27": [],
+      "xlab-rs9-official-cn-spec-2026-08-27": [],
+      "xlab-rs9-taobao-2026-08-27": [],
       "xmcarbonspeed-gr01-official": [],
       "yoeleo-altera-g21-current-2026-08-27": [],
       "yoeleo-altera-g21-official": [],
@@ -26188,9 +26632,21 @@
         "candidate_id=xds-gt600",
         "source_id=public-xds-gt600-retailer-build-2026-08-27"
       ],
+      "xlab-ad8-primary-image": [
+        "candidate_id=xlab-ad8",
+        "source_id=xlab-ad8-official-cn-spec-2026-08-27"
+      ],
+      "xlab-ad9-primary-image": [
+        "candidate_id=xlab-ad9",
+        "source_id=xlab-ad9-official-cn-spec-2026-08-27"
+      ],
       "xlab-gt8-primary-image": [
         "candidate_id=missing-china-price-x-lab-xds-gt8",
         "source_id=xlab-gt8-official-2026-08-17"
+      ],
+      "xlab-rs9-primary-image": [
+        "candidate_id=xlab-rs9",
+        "source_id=xlab-rs9-official-cn-spec-2026-08-27"
       ],
       "xmcarbonspeed-cs-gr01-primary-image": [
         "platform_id=xmcarbonspeed-cs-gr01",
@@ -27400,6 +27856,30 @@
         "source_ids=public-xds-gt600-overview-2026-08-17",
         "source_ids=public-xds-gt600-retailer-build-2026-08-27",
         "source_ids=xds-manufacturing-government"
+      ],
+      "xlab-ad8": [
+        "model_id=xlab-ad8",
+        "source_ids=public-xlab-ad8-build-2026-08-27",
+        "source_ids=xlab-ad8-official-cn-price-2026-08-27",
+        "source_ids=xlab-ad8-official-cn-spec-2026-08-27",
+        "source_ids=xlab-ad8-official-global-2026-08-27",
+        "source_ids=xlab-ad8-taobao-2026-08-27"
+      ],
+      "xlab-ad9": [
+        "model_id=xlab-ad9",
+        "source_ids=public-xlab-ad9-build-2026-08-27",
+        "source_ids=xlab-ad9-official-cn-price-2026-08-27",
+        "source_ids=xlab-ad9-official-cn-spec-2026-08-27",
+        "source_ids=xlab-ad9-official-global-2026-08-27",
+        "source_ids=xlab-ad9-taobao-2026-08-27"
+      ],
+      "xlab-rs9": [
+        "model_id=xlab-rs9",
+        "source_ids=public-xlab-rs9-build-2026-08-27",
+        "source_ids=xlab-rs9-bikeinsights-2026-08-27",
+        "source_ids=xlab-rs9-official-cn-price-2026-08-27",
+        "source_ids=xlab-rs9-official-cn-spec-2026-08-27",
+        "source_ids=xlab-rs9-taobao-2026-08-27"
       ]
     },
     "exclusions": {
@@ -27442,7 +27922,11 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "triaero-x-gravel-2": [],
-      "velobuild-old-gravel": []
+      "velobuild-old-gravel": [],
+      "xds-carbon-road-13980": [
+        "model_id=xds-carbon-road-13980",
+        "source_snapshot_id=taobao-snapshot-2026-08-08"
+      ]
     },
     "research": {
       "taobao-2026-08-08": [
@@ -28143,11 +28627,20 @@
       "candidate-xds-gt600-fitted-tire-2026-08-27": [
         "target.record_id=xds-gt600"
       ],
+      "candidate-xlab-ad8-price-2026-08-27": [
+        "target.record_id=xlab-ad8"
+      ],
+      "candidate-xlab-ad9-price-2026-08-27": [
+        "target.record_id=xlab-ad9"
+      ],
       "candidate-xlab-gt8-price-2026-08-27": [
         "target.record_id=missing-china-price-x-lab-xds-gt8"
       ],
       "candidate-xlab-gt8-purchase-route-2026-08-27": [
         "target.record_id=missing-china-price-x-lab-xds-gt8"
+      ],
+      "candidate-xlab-rs9-tire-clearance-2026-08-27": [
+        "target.record_id=xlab-rs9"
       ],
       "platform-af01-frame-weight-2026-08-27": [
         "target.record_id=af01"
@@ -30287,12 +30780,36 @@
         "specification": 1
       }
     },
+    "public-xlab-ad8-build-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "public-xlab-ad9-build-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "public-xlab-gt8-overview-2026-08-17": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-xlab-rs9-build-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "quick-2026-one-series-launch": {
@@ -32235,6 +32752,70 @@
         "specification": 0
       }
     },
+    "xlab-ad8-official-cn-price-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-ad8-official-cn-spec-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-ad8-official-global-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-ad8-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
+    "xlab-ad9-official-cn-price-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-ad9-official-cn-spec-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-ad9-official-global-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-ad9-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
     "xlab-gt8-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -32249,6 +32830,38 @@
         "identity": 3,
         "price": 1,
         "specification": 1
+      }
+    },
+    "xlab-rs9-bikeinsights-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "xlab-rs9-official-cn-price-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "xlab-rs9-official-cn-spec-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "xlab-rs9-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "xmcarbonspeed-gr01-official": {
@@ -35417,6 +36030,32 @@
         "public-xds-gt600-retailer-build-2026-08-27"
       ]
     },
+    "candidate-xlab-ad8-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB AD8 official mainland complete-bike price\",\"manufacturer exact product purchase page\",\"found\",\"2026-08-27\",\"Official R7170 Di2 / Branta C50 TEAM reference is CNY 26,980.\",\"https://www.xidesheng.com/goods/1964968942063501313/buy\"]",
+        "[\"web\",2,\"喜德盛 X-LAB AD8\",\"Taobao exact listing and selected option\",\"conflict\",\"2026-08-27\",\"Selected standard Astana / steel-spoke carbon wheel / 105 electronic large-package / size-S option is CNY 21,980, but it is not the preferred C50 TEAM trim.\",\"https://item.taobao.com/item.htm?id=1076589036478\"]"
+      ],
+      "accepted_source_ids": [
+        "xlab-ad8-official-cn-price-2026-08-27",
+        "xlab-ad8-taobao-2026-08-27"
+      ]
+    },
+    "candidate-xlab-ad9-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB AD9 official mainland complete-bike price\",\"manufacturer exact product purchase page\",\"found\",\"2026-08-27\",\"Official Dura-Ace R9270 / Vision Metron 60 SL reference is CNY 53,980.\",\"https://www.xidesheng.com/goods/1964971806496309249/buy\"]",
+        "[\"web\",2,\"喜德盛 X-LAB AD9\",\"Tmall flagship exact listing and selected option\",\"conflict\",\"2026-08-27\",\"Selected black / size-M / 24-speed option is CNY 51,980, but its textual page omits the wheelset and exact drivetrain package.\",\"https://detail.tmall.com/item.htm?id=901124842430\"]"
+      ],
+      "accepted_source_ids": [
+        "xlab-ad9-official-cn-price-2026-08-27",
+        "xlab-ad9-taobao-2026-08-27"
+      ]
+    },
     "candidate-xlab-gt8-price-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 1,
@@ -35441,6 +36080,23 @@
       ],
       "accepted_source_ids": [
         "xlab-gt8-smzdm-market-report-2026-08-27"
+      ]
+    },
+    "candidate-xlab-rs9-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"X-LAB RS9\",\"XHS exact-model complete capture\",\"found\",\"2026-08-27\",\"Exact size-S owner build lists Maxxis High Road 32C; a public reply says the fit is easy. This proves a fitted observation, not a manufacturer maximum.\",\"https://www.xiaohongshu.com/explore/6996d72f000000000a02dac3\"]",
+        "[\"web\",1,\"X-LAB RS9 official maximum tire clearance\",\"manufacturer exact mainland product page\",\"no-result\",\"2026-08-27\",\"The page specifies stock 700x28C tires but no manufacturer maximum.\",\"https://www.xidesheng.com/goods/1891777277617856514/detail\"]",
+        "[\"web\",2,\"X-LAB RS9 maximum tire clearance\",\"secondary geometry database\",\"conflict\",\"2026-08-27\",\"The secondary 2025 record says 30 mm maximum, conflicting with the later fitted 32C build.\",\"https://bikeinsights.com/bikes/6781f45c35457a001ba2cf88-x-lab-rs9-road?build=base&version=2025\"]",
+        "[\"web\",3,\"site:xds.co X-LAB RS9 tire clearance\",\"manufacturer global site search\",\"no-result\",\"2026-08-27\",\"No current exact global RS9 product page with a maximum-clearance claim was found.\",null]"
+      ],
+      "accepted_source_ids": [
+        "public-xlab-rs9-build-2026-08-27",
+        "xlab-rs9-bikeinsights-2026-08-27",
+        "xlab-rs9-official-cn-spec-2026-08-27"
       ]
     },
     "platform-af01-frame-weight-2026-08-27": {
@@ -39226,8 +39882,29 @@
       "remote_required": true,
       "primary_required": false
     },
+    "xlab-ad8-primary-image": {
+      "target": "candidates:xlab-ad8",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "xlab-ad9-primary-image": {
+      "target": "candidates:xlab-ad9",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "xlab-gt8-primary-image": {
       "target": "candidates:missing-china-price-x-lab-xds-gt8",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "xlab-rs9-primary-image": {
+      "target": "candidates:xlab-rs9",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
@@ -39697,6 +40374,21 @@
     "candidates:xds-gt600": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
+      "remote_required": true
+    },
+    "candidates:xlab-ad8": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:xlab-ad9": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:xlab-rs9": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "platforms:af01": {
@@ -40443,6 +41135,16 @@
       ],
       "xds-gt600": [
         "observed_price"
+      ],
+      "xlab-ad8": [
+        "official_price"
+      ],
+      "xlab-ad9": [
+        "official_price"
+      ],
+      "xlab-rs9": [
+        "observed_price",
+        "official_price"
       ]
     }
   }

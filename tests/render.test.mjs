@@ -118,6 +118,23 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
 });
 
+test('candidate model pages keep alternative trims separate from the reference row', () => {
+  const xlab = joinCatalogCandidates(data).find((entry) => entry.candidate.id === 'xlab-ad8');
+  const detail = renderCandidateModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-27T00:00:00Z')
+  }, xlab);
+  assert.match(detail, /Other documented builds/);
+  assert.match(detail, /not mixed into the catalog reference row/);
+  assert.match(detail, /Taobao standard Astana 105 Di2 build/);
+  assert.match(detail, /¥21,980/);
+  assert.match(detail, /Custom size-L R7170 build/);
+});
+
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
   const entry = candidates.find((item) => item.candidate.id === 'pardus-spark-tourist');
   const detail = renderCandidateModel({

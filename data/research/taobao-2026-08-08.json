@@ -3536,19 +3536,19 @@
       "confidence_min": "low",
       "confidence_max": "low",
       "listing_risk": "ambiguous",
-      "dashboard_status": "research_queue",
+      "dashboard_status": "exclude",
       "price_range_interpretation": "Multiple observations/configurations; do not assume identical specification",
       "screenshots": "IMG_6871.png",
       "source_refs": "IMG_6871.png#L2",
-      "recommendation": "Identify the exact model/configuration before adding it to the dashboard.",
+      "recommendation": "Keep excluded until an exact model and at least one decision-relevant fact are documented.",
       "notes": "Exact model hidden in truncated title.",
       "site_relation": "new platform or configuration",
       "disposition": {
         "model_id": "xds-carbon-road-13980",
-        "dashboard_status": "research_queue",
-        "disposition": "candidate",
+        "dashboard_status": "exclude",
+        "disposition": "exclusion",
         "record_id": "xds-carbon-road-13980",
-        "evidence_scope": "Kept out of the main catalog until the exact SKU/BOM/purchase route is verified."
+        "evidence_scope": "Excluded because the card does not identify an exact model or provide a useful decision-relevant fact."
       }
     },
     {
