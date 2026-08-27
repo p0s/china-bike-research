@@ -7,10 +7,11 @@
       "platforms": 36,
       "variants": 38,
       "prices": 47,
-      "sources": 393,
+      "sources": 411,
       "images": 168,
       "videos": 12,
       "groupsets": 11,
+      "buildParts": 10,
       "recommendations": 6,
       "candidates": 199,
       "exclusions": 13,
@@ -19,11 +20,11 @@
     },
     "image_accuracy": {
       "exact-platform": 55,
-      "exact-variant": 73,
+      "exact-variant": 74,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
-      "same-platform": 13
+      "same-platform": 12
     },
     "image_hosting": {
       "local": 2,
@@ -31,7 +32,7 @@
     },
     "candidate_prices": {
       "official": 44,
-      "observed": 128
+      "observed": 129
     }
   },
   "records": {
@@ -228,10 +229,13 @@
       "colnago-china-storefront-2026-08-09",
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
+      "continental-gp5000-str-35-official-2026-08-27",
       "de-rosa-838-official-2026-08-17",
       "decathlon-china-bike-warranty-2026-08-17",
       "decathlon-china-rcrf-route-2026-08-17",
+      "deda-zero1-catalogue-2026-08-27",
       "dengfu-warranty-official-2026-08-17",
+      "elitewheels-marvel-g35-brochure-2026-08-27",
       "elves-falath-evo-frameset-official-2026-08-17",
       "elves-falath-evo-official-2026-08-17",
       "elves-falath-pro-105-sa-2026-08-17",
@@ -241,6 +245,7 @@
       "elves-mori-aerox-retailer",
       "elves-mori-aerox-technical-2026-08-25",
       "elves-vanyar-pro-disc-official-2026-08-17",
+      "elves-warranty-official-2026-08-27",
       "elves-warranty-registration-2026-08-17",
       "evolve-cima-gr-official-2026-08-17",
       "evolve-cima-gr-spectrum-2026-08-09",
@@ -318,6 +323,8 @@
       "pardus-uragano-jd-route-2026-08-17",
       "pardus-uragano-sport-official",
       "pinarello-f5-official-2026-08-08",
+      "pirelli-cinturato-velo-35-retailer-2026-08-27",
+      "pro-stealth-sport-official-2026-08-27",
       "project-image-placeholders",
       "public-elves-mori-family-build-2026-08-17",
       "public-elves-mori-frame-price-2026-08-17",
@@ -448,6 +455,7 @@
       "scott-addict-rc-40-retailer-2026-08-08",
       "scott-foil-rc-10-official-2026-08-17",
       "seka-exaero-gr-cyclingchina-2026",
+      "seka-exaero-gr-official-2026-08-27",
       "seka-exaero-gr-official-store-2026-08-09",
       "seka-exaero-gr-rdc-collection-2026-08-17",
       "seka-exaero-gr-rdc-official-2026-08-17",
@@ -456,15 +464,20 @@
       "seka-spear-rdc-official-2026-08-17",
       "seka-warranty-cn-official-2026-08-17",
       "seka-warranty-global-official-2026-08-17",
+      "seka-warranty-official-2026-08-27",
       "shimano-105-r7170-official-2026-08-24",
+      "shimano-bb-rs501-official-2026-08-27",
       "shimano-di2-bt-dn300-compatibility-2026-08-24",
       "shimano-dura-ace-r9250-official-2026-08-24",
       "shimano-grx-rx717-official-2026-08-24",
       "shimano-grx-rx825-official-2026-08-24",
       "shimano-grx-rx827-official-2026-08-24",
+      "shimano-pd-rs500-official-2026-08-27",
       "shimano-productinfo-rd-r7150-2026-08-25",
       "shimano-productinfo-rd-rx825-2026-08-25",
       "shimano-productinfo-rd-rx827-sgs-2026-08-25",
+      "shimano-sm-bb72-41b-official-2026-08-27",
+      "shimano-sm-rt70-official-2026-08-27",
       "shimano-ultegra-r8150-official-2026-08-24",
       "smzdm-shimano-di2-market-observations-2026-08-24",
       "spcycle-g026-geometry-bikeinsights-2026-08-25",
@@ -497,8 +510,10 @@
       "tavelo-attack-official-2026-08-17",
       "tavelo-grow-china-launch-2026",
       "tavelo-grow-official-2026-08-17",
+      "tavelo-grow-official-2026-08-27",
       "tavelo-official",
       "tavelo-warranty-official-2026-08-17",
+      "tavelo-warranty-official-2026-08-27",
       "tfsa-jh37-official",
       "titanium-hi-light-g0-official",
       "titanium-hi-light-g7-2-grx-gr1600-official",
@@ -513,6 +528,7 @@
       "titanium-laget-pioneer-official",
       "titanium-laget-pioneer-one-official",
       "titanium-tsb-titan-super-bond-pioneer-one-official",
+      "tmall-pd-rs500-price-2026-08-27",
       "trek-checkpoint-china-category-47071-2026-08-17",
       "trek-checkpoint-sl-gen3-official-2026-08-17",
       "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
@@ -555,6 +571,7 @@
       "usd-cny-central-parity-2026-07-31",
       "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
       "van-rysel-rcr-f-pro-official-global-2026-08-17",
+      "voicevelo-g-major-biketo-launch-2023-11-13",
       "voicevelo-g-major-panda-podium-2026-08-17",
       "voicevelo-warranty-official-2026-08-17",
       "vook-v8e-pro-official-2026-08-08",
@@ -566,6 +583,7 @@
       "winspace-g3-official-2026-08-16",
       "winspace-g3-official-2026-08-17",
       "winspace-g3-pro-di2-official-2026-08-17",
+      "winspace-g3-pro-di2-official-2026-08-27",
       "winspace-g5-gravel-official-2026-08-17",
       "winspace-g5-official",
       "winspace-g5-official-2026-08-17",
@@ -575,6 +593,7 @@
       "winspace-slc3-official-2026-08-17",
       "winspace-t1550-official-2026-08-17",
       "winspace-t1600-official-2026-08-08",
+      "winspace-warranty-official-2026-08-27",
       "xds-ad350-jd-2026-08-08",
       "xds-ad350-official-2026-08-08",
       "xds-ad500-official-2026-08-09",
@@ -758,6 +777,7 @@
       "vook-v8e-pro-primary-image",
       "winspace-agile-primary-image",
       "winspace-g3-primary-image",
+      "winspace-g3-pro-di2-exact-primary-image",
       "winspace-g3-pro-di2-primary-image",
       "winspace-g5-primary-image",
       "winspace-m6-primary-image",
@@ -799,6 +819,18 @@
       "sram-xplr-apex-d1-rival-e1",
       "wheeltop-eds-gex",
       "wheeltop-eds-tx"
+    ],
+    "buildParts": [
+      "continental-gp5000-str-700x35-pair",
+      "deda-zero1-handlebar-stem",
+      "elitewheels-marvel-g35-wheelset",
+      "pirelli-cinturato-velo-tlr-700x35-pair",
+      "pro-stealth-sport-142-saddle",
+      "shimano-105-r7170-large-package",
+      "shimano-bb-rs501-bsa",
+      "shimano-pd-rs500-pedals",
+      "shimano-sm-bb72-41b-bb86",
+      "shimano-sm-rt70-160-140-rotor-pair"
     ],
     "recommendations": [
       "best-budget-frame",
@@ -1459,6 +1491,7 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "source_ids",
         "website"
       ],
       "evolve": [
@@ -1652,6 +1685,7 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "source_ids",
         "website"
       ],
       "spcycle": [
@@ -1687,6 +1721,7 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "source_ids",
         "website"
       ],
       "tfsa": [
@@ -1757,6 +1792,7 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "source_ids",
         "website"
       ],
       "xds": [
@@ -2465,6 +2501,7 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
@@ -2554,6 +2591,8 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
@@ -4522,6 +4561,18 @@
         "title",
         "type"
       ],
+      "continental-gp5000-str-35-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "de-rosa-838-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -4561,6 +4612,18 @@
         "type",
         "url"
       ],
+      "deda-zero1-catalogue-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "dengfu-warranty-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -4570,6 +4633,18 @@
         "reliability.price",
         "reliability.specification",
         "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
+      "elitewheels-marvel-g35-brochure-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
         "title",
         "type",
         "url"
@@ -4680,6 +4755,19 @@
         "reliability.image",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "elves-warranty-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
         "title",
         "type",
         "url"
@@ -5614,6 +5702,30 @@
         "url"
       ],
       "pinarello-f5-official-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pirelli-cinturato-velo-35-retailer-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pro-stealth-sport-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7143,6 +7255,18 @@
         "type",
         "url"
       ],
+      "seka-exaero-gr-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "seka-exaero-gr-official-store-2026-08-09": [
         "accessed_at",
         "language",
@@ -7240,7 +7364,32 @@
         "type",
         "url"
       ],
+      "seka-warranty-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
       "shimano-105-r7170-official-2026-08-24": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-bb-rs501-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7312,6 +7461,18 @@
         "type",
         "url"
       ],
+      "shimano-pd-rs500-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "shimano-productinfo-rd-r7150-2026-08-25": [
         "accessed_at",
         "language",
@@ -7337,6 +7498,30 @@
         "url"
       ],
       "shimano-productinfo-rd-rx827-sgs-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-sm-bb72-41b-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "shimano-sm-rt70-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7799,6 +7984,18 @@
         "type",
         "url"
       ],
+      "tavelo-grow-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "tavelo-official": [
         "accessed_at",
         "language",
@@ -7812,6 +8009,19 @@
         "url"
       ],
       "tavelo-warranty-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
+      "tavelo-warranty-official-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7981,6 +8191,18 @@
         "url"
       ],
       "titanium-tsb-titan-super-bond-pioneer-one-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "tmall-pd-rs500-price-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -8501,6 +8723,18 @@
         "type",
         "url"
       ],
+      "voicevelo-g-major-biketo-launch-2023-11-13": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "voicevelo-g-major-panda-podium-2026-08-17": [
         "accessed_at",
         "language",
@@ -8634,6 +8868,18 @@
         "type",
         "url"
       ],
+      "winspace-g3-pro-di2-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "winspace-g5-gravel-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -8738,6 +8984,19 @@
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-warranty-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
         "title",
         "type",
         "url"
@@ -11731,6 +11990,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "winspace-g3-pro-di2-exact-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "winspace-g3-pro-di2-primary-image": [
         "alt",
         "candidate_id",
@@ -12600,6 +12875,202 @@
         "use_case",
         "variants",
         "weight.note",
+        "weight.status"
+      ]
+    },
+    "buildParts": {
+      "continental-gp5000-str-700x35-pair": [
+        "compatibility.nominal_tire_width_mm",
+        "compatibility.tubeless_ready",
+        "compatibility.wheel_size",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "deda-zero1-handlebar-stem": [
+        "compatibility.handlebar_clamp_mm",
+        "compatibility.steerer",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "elitewheels-marvel-g35-wheelset": [
+        "compatibility.axles",
+        "compatibility.freehubs",
+        "compatibility.internal_rim_width_mm",
+        "compatibility.rotor_mount",
+        "compatibility.tubeless_ready",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "pirelli-cinturato-velo-tlr-700x35-pair": [
+        "compatibility.nominal_tire_width_mm",
+        "compatibility.tubeless_ready",
+        "compatibility.wheel_size",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "pro-stealth-sport-142-saddle": [
+        "compatibility.rail_material",
+        "compatibility.rail_shape",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "shimano-105-r7170-large-package": [
+        "compatibility.brake_type",
+        "compatibility.frame_requirements",
+        "compatibility.maximum_large_cog_t",
+        "compatibility.required_freehub",
+        "covers",
+        "default",
+        "groupset_id",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "price_observation.amount_cny",
+        "price_observation.observed_at",
+        "price_observation.package_basis",
+        "price_observation.price_type",
+        "price_observation.source_id",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.status"
+      ],
+      "shimano-bb-rs501-bsa": [
+        "compatibility.accepted_frame_shells",
+        "compatibility.crank_spindle",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "shimano-pd-rs500-pedals": [
+        "compatibility.crank_thread",
+        "compatibility.pedal_system",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "price_observation.amount_cny",
+        "price_observation.observed_at",
+        "price_observation.package_basis",
+        "price_observation.price_type",
+        "price_observation.source_id",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "shimano-sm-bb72-41b-bb86": [
+        "compatibility.accepted_frame_shells",
+        "compatibility.crank_spindle",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
+        "weight.status"
+      ],
+      "shimano-sm-rt70-160-140-rotor-pair": [
+        "compatibility.brake_type",
+        "compatibility.rotor_mount",
+        "default",
+        "included_components",
+        "maker",
+        "name",
+        "note",
+        "reviewed_at",
+        "slot",
+        "source_ids",
+        "status",
+        "weight.basis",
+        "weight.claim_type",
+        "weight.grams",
+        "weight.source_id",
         "weight.status"
       ]
     },
@@ -14714,6 +15185,7 @@
         "existing_record_id",
         "facts.bottom_bracket",
         "facts.cockpit",
+        "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
         "facts.sizes",
@@ -14738,6 +15210,7 @@
         "source_url",
         "status",
         "type",
+        "weight_note",
         "why_interesting"
       ],
       "missing-china-price-winspace-g5": [
@@ -16317,6 +16790,11 @@
         "last_reviewed",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "research_priority",
         "source_ids",
         "source_note",
@@ -21589,7 +22067,9 @@
       "camp": [],
       "carbonda": [],
       "colnago": [],
-      "elves": [],
+      "elves": [
+        "source_ids=elves-warranty-official-2026-08-27"
+      ],
       "evolve": [],
       "felt": [],
       "huanyu": [],
@@ -21606,16 +22086,22 @@
       "rinasclta": [],
       "sava": [],
       "scott": [],
-      "seka": [],
+      "seka": [
+        "source_ids=seka-warranty-official-2026-08-27"
+      ],
       "spcycle": [],
       "sunpeed": [],
-      "tavelo": [],
+      "tavelo": [
+        "source_ids=tavelo-warranty-official-2026-08-27"
+      ],
       "tfsa": [],
       "trinx": [],
       "twitter": [],
       "viqi": [],
       "vook": [],
-      "winspace": [],
+      "winspace": [
+        "source_ids=winspace-warranty-official-2026-08-27"
+      ],
       "xds": [],
       "xmcarbonspeed": [],
       "yoeleo": []
@@ -21663,7 +22149,8 @@
         "source_ids=compiled-research-2026-08-06",
         "source_ids=elves-mori-aerox-official-2026-08-17",
         "source_ids=elves-mori-aerox-retailer",
-        "source_ids=elves-mori-aerox-technical-2026-08-25"
+        "source_ids=elves-mori-aerox-technical-2026-08-25",
+        "source_ids=elves-warranty-official-2026-08-27"
       ],
       "evolve-cima-gr": [
         "brand_id=evolve",
@@ -21760,7 +22247,9 @@
         "brand_id=seka",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-seka-exaero-build-2026-08-17",
-        "source_ids=seka-official"
+        "source_ids=seka-exaero-gr-official-2026-08-27",
+        "source_ids=seka-official",
+        "source_ids=seka-warranty-official-2026-08-27"
       ],
       "spcycle-g026": [
         "brand_id=spcycle",
@@ -21780,7 +22269,10 @@
         "brand_id=tavelo",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-tavelo-grow-build-2026-08-17",
-        "source_ids=tavelo-official"
+        "source_ids=tavelo-grow-china-launch-2026",
+        "source_ids=tavelo-grow-official-2026-08-27",
+        "source_ids=tavelo-official",
+        "source_ids=tavelo-warranty-official-2026-08-27"
       ],
       "tfsa-jh37": [
         "brand_id=tfsa",
@@ -21887,7 +22379,8 @@
         "source_ids=compiled-research-2026-08-06",
         "source_ids=elves-mori-aerox-official-2026-08-17",
         "source_ids=elves-mori-aerox-retailer",
-        "source_ids=elves-mori-aerox-technical-2026-08-25"
+        "source_ids=elves-mori-aerox-technical-2026-08-25",
+        "source_ids=elves-warranty-official-2026-08-27"
       ],
       "evolve-cima-gr-frameset": [
         "platform_id=evolve-cima-gr",
@@ -21981,7 +22474,9 @@
         "platform_id=seka-exaero-gr",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-seka-exaero-build-2026-08-17",
-        "source_ids=seka-official"
+        "source_ids=seka-exaero-gr-official-2026-08-27",
+        "source_ids=seka-official",
+        "source_ids=seka-warranty-official-2026-08-27"
       ],
       "spcycle-g026-frameset": [
         "platform_id=spcycle-g026",
@@ -21995,7 +22490,10 @@
         "platform_id=tavelo-grow",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-tavelo-grow-build-2026-08-17",
-        "source_ids=tavelo-official"
+        "source_ids=tavelo-grow-china-launch-2026",
+        "source_ids=tavelo-grow-official-2026-08-27",
+        "source_ids=tavelo-official",
+        "source_ids=tavelo-warranty-official-2026-08-27"
       ],
       "tfsa-jh37-frameset": [
         "platform_id=tfsa-jh37",
@@ -22296,10 +22794,13 @@
       "colnago-china-storefront-2026-08-09": [],
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
+      "continental-gp5000-str-35-official-2026-08-27": [],
       "de-rosa-838-official-2026-08-17": [],
       "decathlon-china-bike-warranty-2026-08-17": [],
       "decathlon-china-rcrf-route-2026-08-17": [],
+      "deda-zero1-catalogue-2026-08-27": [],
       "dengfu-warranty-official-2026-08-17": [],
+      "elitewheels-marvel-g35-brochure-2026-08-27": [],
       "elves-falath-evo-frameset-official-2026-08-17": [],
       "elves-falath-evo-official-2026-08-17": [],
       "elves-falath-pro-105-sa-2026-08-17": [],
@@ -22309,6 +22810,7 @@
       "elves-mori-aerox-retailer": [],
       "elves-mori-aerox-technical-2026-08-25": [],
       "elves-vanyar-pro-disc-official-2026-08-17": [],
+      "elves-warranty-official-2026-08-27": [],
       "elves-warranty-registration-2026-08-17": [],
       "evolve-cima-gr-official-2026-08-17": [],
       "evolve-cima-gr-spectrum-2026-08-09": [],
@@ -22386,6 +22888,8 @@
       "pardus-uragano-jd-route-2026-08-17": [],
       "pardus-uragano-sport-official": [],
       "pinarello-f5-official-2026-08-08": [],
+      "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
+      "pro-stealth-sport-official-2026-08-27": [],
       "project-image-placeholders": [],
       "public-elves-mori-family-build-2026-08-17": [],
       "public-elves-mori-frame-price-2026-08-17": [],
@@ -22516,6 +23020,7 @@
       "scott-addict-rc-40-retailer-2026-08-08": [],
       "scott-foil-rc-10-official-2026-08-17": [],
       "seka-exaero-gr-cyclingchina-2026": [],
+      "seka-exaero-gr-official-2026-08-27": [],
       "seka-exaero-gr-official-store-2026-08-09": [],
       "seka-exaero-gr-rdc-collection-2026-08-17": [],
       "seka-exaero-gr-rdc-official-2026-08-17": [],
@@ -22524,15 +23029,20 @@
       "seka-spear-rdc-official-2026-08-17": [],
       "seka-warranty-cn-official-2026-08-17": [],
       "seka-warranty-global-official-2026-08-17": [],
+      "seka-warranty-official-2026-08-27": [],
       "shimano-105-r7170-official-2026-08-24": [],
+      "shimano-bb-rs501-official-2026-08-27": [],
       "shimano-di2-bt-dn300-compatibility-2026-08-24": [],
       "shimano-dura-ace-r9250-official-2026-08-24": [],
       "shimano-grx-rx717-official-2026-08-24": [],
       "shimano-grx-rx825-official-2026-08-24": [],
       "shimano-grx-rx827-official-2026-08-24": [],
+      "shimano-pd-rs500-official-2026-08-27": [],
       "shimano-productinfo-rd-r7150-2026-08-25": [],
       "shimano-productinfo-rd-rx825-2026-08-25": [],
       "shimano-productinfo-rd-rx827-sgs-2026-08-25": [],
+      "shimano-sm-bb72-41b-official-2026-08-27": [],
+      "shimano-sm-rt70-official-2026-08-27": [],
       "shimano-ultegra-r8150-official-2026-08-24": [],
       "smzdm-shimano-di2-market-observations-2026-08-24": [],
       "spcycle-g026-geometry-bikeinsights-2026-08-25": [],
@@ -22565,8 +23075,10 @@
       "tavelo-attack-official-2026-08-17": [],
       "tavelo-grow-china-launch-2026": [],
       "tavelo-grow-official-2026-08-17": [],
+      "tavelo-grow-official-2026-08-27": [],
       "tavelo-official": [],
       "tavelo-warranty-official-2026-08-17": [],
+      "tavelo-warranty-official-2026-08-27": [],
       "tfsa-jh37-official": [],
       "titanium-hi-light-g0-official": [],
       "titanium-hi-light-g7-2-grx-gr1600-official": [],
@@ -22581,6 +23093,7 @@
       "titanium-laget-pioneer-official": [],
       "titanium-laget-pioneer-one-official": [],
       "titanium-tsb-titan-super-bond-pioneer-one-official": [],
+      "tmall-pd-rs500-price-2026-08-27": [],
       "trek-checkpoint-china-category-47071-2026-08-17": [],
       "trek-checkpoint-sl-gen3-official-2026-08-17": [],
       "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17": [],
@@ -22623,6 +23136,7 @@
       "usd-cny-central-parity-2026-07-31": [],
       "van-rysel-rcr-f-pro-china-trade-report-2026-08-17": [],
       "van-rysel-rcr-f-pro-official-global-2026-08-17": [],
+      "voicevelo-g-major-biketo-launch-2023-11-13": [],
       "voicevelo-g-major-panda-podium-2026-08-17": [],
       "voicevelo-warranty-official-2026-08-17": [],
       "vook-v8e-pro-official-2026-08-08": [],
@@ -22634,6 +23148,7 @@
       "winspace-g3-official-2026-08-16": [],
       "winspace-g3-official-2026-08-17": [],
       "winspace-g3-pro-di2-official-2026-08-17": [],
+      "winspace-g3-pro-di2-official-2026-08-27": [],
       "winspace-g5-gravel-official-2026-08-17": [],
       "winspace-g5-official": [],
       "winspace-g5-official-2026-08-17": [],
@@ -22643,6 +23158,7 @@
       "winspace-slc3-official-2026-08-17": [],
       "winspace-t1550-official-2026-08-17": [],
       "winspace-t1600-official-2026-08-08": [],
+      "winspace-warranty-official-2026-08-27": [],
       "xds-ad350-jd-2026-08-08": [],
       "xds-ad350-official-2026-08-08": [],
       "xds-ad500-official-2026-08-09": [],
@@ -23388,6 +23904,10 @@
         "source_id=winspace-g3-official",
         "variant_ids=winspace-g3-frameset"
       ],
+      "winspace-g3-pro-di2-exact-primary-image": [
+        "candidate_id=missing-china-price-winspace-g3",
+        "source_id=winspace-g3-pro-di2-official-2026-08-27"
+      ],
       "winspace-g3-pro-di2-primary-image": [
         "candidate_id=missing-china-price-winspace-g3",
         "source_id=winspace-g3-official"
@@ -23556,6 +24076,51 @@
         "image.source_id=wheeltop-eds-tx-official-2026-08-24",
         "source_ids=taobao-wheeltop-eds-tx-options-2026-08-24",
         "source_ids=wheeltop-eds-tx-official-2026-08-24"
+      ]
+    },
+    "buildParts": {
+      "continental-gp5000-str-700x35-pair": [
+        "source_ids=continental-gp5000-str-35-official-2026-08-27",
+        "weight.source_id=continental-gp5000-str-35-official-2026-08-27"
+      ],
+      "deda-zero1-handlebar-stem": [
+        "source_ids=deda-zero1-catalogue-2026-08-27",
+        "weight.source_id=deda-zero1-catalogue-2026-08-27"
+      ],
+      "elitewheels-marvel-g35-wheelset": [
+        "source_ids=elitewheels-marvel-g35-brochure-2026-08-27",
+        "weight.source_id=elitewheels-marvel-g35-brochure-2026-08-27"
+      ],
+      "pirelli-cinturato-velo-tlr-700x35-pair": [
+        "source_ids=pirelli-cinturato-velo-35-retailer-2026-08-27",
+        "weight.source_id=pirelli-cinturato-velo-35-retailer-2026-08-27"
+      ],
+      "pro-stealth-sport-142-saddle": [
+        "source_ids=pro-stealth-sport-official-2026-08-27",
+        "weight.source_id=pro-stealth-sport-official-2026-08-27"
+      ],
+      "shimano-105-r7170-large-package": [
+        "price_observation.source_id=smzdm-shimano-di2-market-observations-2026-08-24",
+        "source_ids=shimano-105-r7170-official-2026-08-24",
+        "source_ids=smzdm-shimano-di2-market-observations-2026-08-24"
+      ],
+      "shimano-bb-rs501-bsa": [
+        "source_ids=shimano-bb-rs501-official-2026-08-27",
+        "weight.source_id=shimano-bb-rs501-official-2026-08-27"
+      ],
+      "shimano-pd-rs500-pedals": [
+        "price_observation.source_id=tmall-pd-rs500-price-2026-08-27",
+        "source_ids=shimano-pd-rs500-official-2026-08-27",
+        "source_ids=tmall-pd-rs500-price-2026-08-27",
+        "weight.source_id=shimano-pd-rs500-official-2026-08-27"
+      ],
+      "shimano-sm-bb72-41b-bb86": [
+        "source_ids=shimano-sm-bb72-41b-official-2026-08-27",
+        "weight.source_id=shimano-sm-bb72-41b-official-2026-08-27"
+      ],
+      "shimano-sm-rt70-160-140-rotor-pair": [
+        "source_ids=shimano-sm-rt70-official-2026-08-27",
+        "weight.source_id=shimano-sm-rt70-official-2026-08-27"
       ]
     },
     "recommendations": {
@@ -24091,7 +24656,9 @@
         "model_id=winspace-g3",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "source_ids=winspace-g3-official-2026-08-17",
-        "source_ids=winspace-g3-pro-di2-official-2026-08-17"
+        "source_ids=winspace-g3-pro-di2-official-2026-08-17",
+        "source_ids=winspace-g3-pro-di2-official-2026-08-27",
+        "source_ids=winspace-warranty-official-2026-08-27"
       ],
       "missing-china-price-winspace-g5": [
         "existing_record_id=winspace-g5-frameset",
@@ -24498,6 +25065,7 @@
       ],
       "voicevelo-g-major": [
         "model_id=voicevelo-g-major",
+        "source_ids=voicevelo-g-major-biketo-launch-2023-11-13",
         "source_ids=voicevelo-g-major-panda-podium-2026-08-17",
         "source_ids=voicevelo-warranty-official-2026-08-17",
         "video_ids=china-cycling-voicevelo-g-major"
@@ -25844,6 +26412,14 @@
         "specification": 1
       }
     },
+    "continental-gp5000-str-35-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "de-rosa-838-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -25871,6 +26447,14 @@
         "specification": 1
       }
     },
+    "deda-zero1-catalogue-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "dengfu-warranty-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -25878,6 +26462,14 @@
         "price": -1,
         "specification": -1,
         "support": 3
+      }
+    },
+    "elitewheels-marvel-g35-brochure-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "elves-falath-evo-frameset-official-2026-08-17": {
@@ -25952,6 +26544,15 @@
         "image": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "elves-warranty-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1,
+        "support": 2
       }
     },
     "elves-warranty-registration-2026-08-17": {
@@ -26582,6 +27183,22 @@
       }
     },
     "pinarello-f5-official-2026-08-08": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "pirelli-cinturato-velo-35-retailer-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "pro-stealth-sport-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -27608,6 +28225,14 @@
         "specification": 3
       }
     },
+    "seka-exaero-gr-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "seka-exaero-gr-official-store-2026-08-09": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -27673,7 +28298,24 @@
         "specification": 3
       }
     },
+    "seka-warranty-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1,
+        "support": 3
+      }
+    },
     "shimano-105-r7170-official-2026-08-24": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-bb-rs501-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -27721,6 +28363,14 @@
         "specification": 3
       }
     },
+    "shimano-pd-rs500-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "shimano-productinfo-rd-r7150-2026-08-25": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -27738,6 +28388,22 @@
       }
     },
     "shimano-productinfo-rd-rx827-sgs-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-sm-bb72-41b-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "shimano-sm-rt70-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -28004,6 +28670,14 @@
         "specification": 3
       }
     },
+    "tavelo-grow-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "tavelo-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -28018,6 +28692,15 @@
         "identity": 3,
         "price": -1,
         "specification": -1,
+        "support": 3
+      }
+    },
+    "tavelo-warranty-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1,
         "support": 3
       }
     },
@@ -28131,6 +28814,14 @@
         "identity": 3,
         "price": 3,
         "specification": 1
+      }
+    },
+    "tmall-pd-rs500-price-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 0
       }
     },
     "trek-checkpoint-china-category-47071-2026-08-17": {
@@ -28471,6 +29162,14 @@
         "specification": 3
       }
     },
+    "voicevelo-g-major-biketo-launch-2023-11-13": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
+      }
+    },
     "voicevelo-g-major-panda-podium-2026-08-17": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -28560,6 +29259,14 @@
         "specification": 3
       }
     },
+    "winspace-g3-pro-di2-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "winspace-g5-gravel-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -28630,6 +29337,15 @@
         "identity": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "winspace-warranty-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1,
+        "support": 3
       }
     },
     "xds-ad350-jd-2026-08-08": {
@@ -34508,6 +35224,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "winspace-g3-pro-di2-exact-primary-image": {
+      "target": "candidates:missing-china-price-winspace-g3",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "winspace-g3-pro-di2-primary-image": {
       "target": "candidates:missing-china-price-winspace-g3",
       "minimum_accuracy_rank": 1,
@@ -34789,7 +35512,7 @@
       "remote_required": true
     },
     "candidates:missing-china-price-winspace-g3": {
-      "minimum_accuracy_rank": 1,
+      "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true
     },
@@ -35753,6 +36476,9 @@
         "observed_price"
       ],
       "viqi-r8000": [
+        "observed_price"
+      ],
+      "voicevelo-g-major": [
         "observed_price"
       ],
       "vook-v8e-pro": [

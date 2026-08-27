@@ -1,0 +1,32 @@
+{
+  "id": "shimano-105-r7170-large-package",
+  "maker": "Shimano",
+  "name": "105 Di2 R7170 large package",
+  "slot": "drivetrain",
+  "status": "dated-market-package",
+  "default": true,
+  "groupset_id": "shimano-105-r7170",
+  "covers": ["brakes", "crankset", "cassette", "chain"],
+  "included_components": ["left shifter", "right shifter", "front derailleur", "rear derailleur", "BT-DN300 battery", "SD300 wires", "charger", "front caliper", "rear caliper", "crankset", "cassette", "chain"],
+  "weight": {
+    "status": "unknown",
+    "basis": "Exact itemized package total not established; seller large-package contents are not standardized.",
+    "claim_type": "unknown"
+  },
+  "compatibility": {
+    "required_freehub": "hg-road",
+    "brake_type": "hydraulic-disc",
+    "maximum_large_cog_t": 36,
+    "frame_requirements": ["front-derailleur-mount", "internal-battery-space", "sd300-wire-routing"]
+  },
+  "price_observation": {
+    "amount_cny": 4150,
+    "observed_at": "2026-08-19",
+    "price_type": "dealer-market-observation",
+    "package_basis": "Large package described without bottom bracket or brake rotors; exact seller checkout and retail warranty remain unverified.",
+    "source_id": "smzdm-shimano-di2-market-observations-2026-08-24"
+  },
+  "note": "Add a compatible bottom bracket and rotor pair. Confirm every included component before purchase because 大套 is seller wording, not a standard package.",
+  "source_ids": ["shimano-105-r7170-official-2026-08-24", "smzdm-shimano-di2-market-observations-2026-08-24"],
+  "reviewed_at": "2026-08-27"
+}

@@ -56,6 +56,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.prices.length, 47);
   assert.equal(data.images.length, 168);
   assert.equal(data.groupsets.length, 11);
+  assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 199);
@@ -63,6 +64,48 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 333);
   assert.equal(products.length, data.variants.length);
+});
+
+test('build parts preserve package, weight, price and compatibility boundaries', () => {
+  const defaultsBySlot = new Map();
+  for (const part of data.buildParts.filter((item) => item.default)) {
+    defaultsBySlot.set(part.slot, (defaultsBySlot.get(part.slot) ?? 0) + 1);
+  }
+  assert.ok([...defaultsBySlot.values()].every((count) => count === 1));
+
+  const drivetrain = data.buildParts.find((item) => item.id === 'shimano-105-r7170-large-package');
+  assert.equal(drivetrain.groupset_id, 'shimano-105-r7170');
+  assert.deepEqual(drivetrain.covers, ['brakes', 'crankset', 'cassette', 'chain']);
+  assert.equal(drivetrain.price_observation.amount_cny, 4150);
+  assert.equal(drivetrain.weight.status, 'unknown');
+  assert.match(drivetrain.price_observation.package_basis, /without bottom bracket or brake rotors/);
+
+  const wheelset = data.buildParts.find((item) => item.id === 'elitewheels-marvel-g35-wheelset');
+  assert.equal(wheelset.weight.grams, 1460);
+  assert.deepEqual(wheelset.compatibility.freehubs, ['hg-road']);
+  const pedals = data.buildParts.find((item) => item.id === 'shimano-pd-rs500-pedals');
+  assert.equal(pedals.price_observation.amount_cny, 368);
+  assert.equal(pedals.weight.grams, 320);
+  assert.ok(data.buildParts.every((part) => part.source_ids.length > 0));
+});
+
+test('wide-clearance research records carry exact weight bases and current source reviews', () => {
+  const grow = data.platforms.find((item) => item.id === 'tavelo-grow');
+  assert.equal(grow.tire_clearance.published_front_max_mm, 55);
+  assert.equal(grow.tire_clearance.published_rear_max_mm, 50);
+  assert.equal(grow.frame.claimed_frame_weight_g, 830);
+  assert.match(grow.frame.claimed_frame_weight_basis, /830–960 g ±25 g/);
+
+  const g3 = data.candidates.find((item) => item.id === 'missing-china-price-winspace-g3');
+  assert.equal(g3.facts.complete_weight_g, 8750);
+  assert.equal(g3.facts.tire_clearance_mm, 50);
+  assert.equal(g3.official_price.original_amount, 4099);
+  const g3Image = data.images.find((item) => item.candidate_id === g3.id);
+  assert.equal(g3Image.subject_accuracy, 'exact-variant');
+
+  const voicevelo = data.candidates.find((item) => item.id === 'voicevelo-g-major');
+  assert.equal(voicevelo.observed_price.amount_cny, 12800);
+  assert.equal(voicevelo.observed_price.observed_at, '2023-11-13');
 });
 
 test('electronic groupset references preserve package and price boundaries', () => {
@@ -218,7 +261,7 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'xlab-gt8'), false);
   const winspaceComplete = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-winspace-g3');
   assert.equal(winspaceComplete.kind, 'complete-bike');
-  assert.equal(winspaceComplete.price.amount_cny, 26472);
+  assert.equal(winspaceComplete.price.amount_cny, 27830);
   assert.match(winspaceComplete.candidate.catalog_distinct_reason, /frameset-only/);
   const roubaix = catalogCandidates.find((entry) => entry.candidate.id === 'missing-china-price-specialized-roubaix-sl8');
   assert.equal(roubaix.price.amount_cny, 15990);

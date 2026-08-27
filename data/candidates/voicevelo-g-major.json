@@ -6,8 +6,7 @@
   "type": "frameset",
   "why_interesting": "A race-gravel frameset with a 790 g claim, external-bearing T47 and clearance for 700×47C or 650B×2.1 tires.",
   "missing": [
-    "Dated mainland-China RMB observation and purchase route",
-    "Manufacturer confirmation of production status and warranty",
+    "Current mainland-China RMB observation and purchase route",
     "Independent frame-weight and ride evidence"
   ],
   "status": "research-lead",
@@ -17,8 +16,16 @@
   ],
   "source_ids": [
     "voicevelo-g-major-panda-podium-2026-08-17",
-    "voicevelo-warranty-official-2026-08-17"
+    "voicevelo-warranty-official-2026-08-17",
+    "voicevelo-g-major-biketo-launch-2023-11-13"
   ],
+  "observed_price": {
+    "amount_cny": 12800,
+    "currency": "CNY",
+    "observed_at": "2023-11-13",
+    "price_basis": "historical manufacturer-authored mainland launch package",
+    "observation_count": 1
+  },
   "facts": {
     "frame": "VG1 carbon; 12×100 / 12×142 mm thru axles; flat-mount disc",
     "frame_weight_g": 790,
@@ -27,7 +34,7 @@
     "sizes": "48, 51, 54 and 57",
     "cockpit": "27.2 mm seatpost; compatible with 1× and 2× drivetrains"
   },
-  "source_note": "The frame claim is 790 g ±3% for a size-51 VG1, excluding accessories. The retailer lists US$2,099, which is not treated as a mainland-China RMB price.",
-  "support_note": "A direct exact-model retailer route and an official brand warranty page are available; exact mainland eligibility, proof, exclusions and handling still require confirmation.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The frame claim is 790 g ±3% for a size-51 VG1, excluding accessories. A manufacturer-authored 2023 article reported a ¥12,800 mainland package, but that historical launch observation is not a current checkout price.",
+  "support_note": "A direct exact-model retailer route and an official two-year brand warranty page are available; exact mainland eligibility, proof, exclusions and handling still require confirmation.",
+  "last_reviewed": "2026-08-27"
 }

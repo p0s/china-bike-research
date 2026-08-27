@@ -2,6 +2,7 @@ import {
   categoryLabel,
   categoryFamily,
   categoryMetric,
+  buildSlotIds,
   supportedCategories,
   clearanceLabel,
   clearanceLongLabel,
@@ -1097,7 +1098,7 @@ export function renderModel(ctx, product) {
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
-    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button>${variant.kind === 'frameset' ? `<a class="primary-button" href="${url(ctx.base, '/build/')}?frame=${encodeURIComponent(variant.id)}">Build this frame</a>` : ''}<a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
@@ -1189,6 +1190,119 @@ function prosePage(ctx, { title, desc, path, html, current = '', className = '' 
     path,
     description: desc,
     body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
+  });
+}
+
+const buildSlotCopy = {
+  drivetrain: ['Drivetrain package', 'Shifting, brakes and every explicitly included transmission part.'],
+  brakes: ['Brake system', 'Levers, calipers and hoses when they are not covered by the drivetrain package.'],
+  crankset: ['Crankset', 'Crank and chainrings when omitted from the selected drivetrain package.'],
+  cassette: ['Cassette', 'Must match the drivetrain speed count and wheel freehub.'],
+  chain: ['Chain', 'Must match the selected drivetrain speed count.'],
+  'bottom-bracket': ['Bottom bracket', 'Must match both the frameset shell and crank spindle.'],
+  rotors: ['Brake rotors', 'A front and rear pair unless the selected package explicitly includes them.'],
+  wheelset: ['Wheelset', 'Front and rear wheels; confirm axle, rotor mount and freehub.'],
+  tires: ['Tires', 'A pair whose installed width stays within the frame and rim limits.'],
+  'tubes-sealant': ['Tubes / tubeless kit', 'Two tubes or valves, sealant and tape for a tubeless setup.'],
+  cockpit: ['Cockpit', 'Handlebar and stem or an integrated cockpit.'],
+  saddle: ['Saddle', 'Seatpost is assumed to be in the recorded frameset package only when listed there.'],
+  pedals: ['Pedals', 'A pair; leave custom price and weight at zero only if intentionally excluded.'],
+  'bar-tape': ['Bar tape', 'One complete drop-bar wrapping kit.'],
+  assembly: ['Assembly', 'Labor and small consumables; weight may legitimately be zero.']
+};
+
+function builderBottomBracketKey(value) {
+  const text = String(value || '').toLowerCase();
+  if (text.includes('t47')) return 't47';
+  if (text.includes('bb86') || text.includes('pf86')) return 'bb86';
+  if (text.includes('bsa') || text.includes('english')) return 'bsa-68';
+  return text.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function builderFrames(ctx) {
+  return ctx.products
+    .filter((product) => product.variant.kind === 'frameset' && Number.isFinite(product.allInPrice.frameLow))
+    .map((product) => ({
+      id: product.variant.id,
+      name: `${product.brand.name} ${product.variant.name}`,
+      url: url(ctx.base, `/models/${product.variant.id}/`),
+      category: categoryFamily(product.platform.category),
+      priceLow: product.allInPrice.frameLow,
+      priceHigh: product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      frameWeightG: product.platform.frame.claimed_frame_weight_g ?? product.variant.claimed_frame_weight_g ?? null,
+      weightBasis: product.platform.frame.claimed_frame_weight_g || product.variant.claimed_frame_weight_g ? 'frame only; fork and package hardware may be additional unknown weight' : 'frameset package weight unknown',
+      bottomBracket: product.platform.frame.bottom_bracket,
+      bottomBracketKey: builderBottomBracketKey(product.platform.frame.bottom_bracket),
+      tireClearanceMm: maxClearance(product.platform) ?? null,
+      included: product.variant.included ?? [],
+    }))
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function builderParts(ctx) {
+  const sources = new Map(ctx.data.sources.map((source) => [source.id, source]));
+  return ctx.data.buildParts.map((part) => {
+    const primarySource = sources.get(part.price_observation?.source_id)
+      ?? sources.get(part.weight?.source_id)
+      ?? sources.get(part.source_ids?.[0]);
+    return {
+      id: part.id,
+      maker: part.maker,
+      name: part.name,
+      slot: part.slot,
+      covers: part.covers ?? [],
+      default: part.default === true,
+      priceCny: part.price_observation?.amount_cny ?? null,
+      priceDate: part.price_observation?.observed_at ?? null,
+      priceBasis: part.price_observation?.package_basis ?? '',
+      weightG: part.weight?.status === 'known' ? part.weight.grams : null,
+      weightBasis: part.weight?.basis ?? 'Weight unknown',
+      compatibility: part.compatibility ?? {},
+      includedComponents: part.included_components ?? [],
+      note: part.note ?? '',
+      source: primarySource ? { title: primarySource.title, url: primarySource.url ?? '' } : null,
+    };
+  });
+}
+
+function builderPartOptions(parts, slot) {
+  const matching = parts.filter((part) => part.slot === slot);
+  return [
+    '<option value="custom">Custom / enter values</option>',
+    ...matching.map((part) => `<option value="${escapeAttr(part.id)}"${part.default ? ' selected' : ''}>${escapeHtml(`${part.maker} ${part.name}`)}</option>`)
+  ].join('');
+}
+
+function builderSlotRow(ctx, parts, slot) {
+  const [label, help] = buildSlotCopy[slot];
+  return `<section class="builder-part-row" data-build-slot="${escapeAttr(slot)}">
+    <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
+    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select>${builderPartOptions(parts, slot)}</select></label><div class="builder-custom-values" data-build-custom-values hidden><label data-build-custom-price-field>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field>Weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label></div></div>
+    <div class="builder-part-facts"><strong data-build-part-price>—</strong><span data-build-part-weight>—</span><small data-build-part-basis></small><a href="${url(ctx.base, '/methodology/')}" data-build-part-source hidden rel="noreferrer">Source</a></div>
+    <p class="builder-covered-note" data-build-covered-note hidden></p>
+  </section>`;
+}
+
+export function renderBikeBuilder(ctx) {
+  const frames = builderFrames(ctx);
+  const parts = builderParts(ctx);
+  const initialFrame = frames[0];
+  const payload = { schemaVersion: 1, slots: buildSlotIds, frames, parts };
+  const body = `<section class="builder-intro"><div class="page"><span class="builder-kicker">Component planner</span><h1>Build a bike from a frame</h1><p>Choose an exact frameset and parts package. Totals count each package once and stay explicitly incomplete until every required price and weight is known.</p></div></section>
+  <section class="builder-page page" data-bike-builder>
+    <div class="builder-workbench">
+      <section class="builder-frame-row"><div><label for="builder-frame"><span>Frameset</span><select id="builder-frame" data-build-frame>${frames.map((frame) => `<option value="${escapeAttr(frame.id)}">${escapeHtml(frame.name)}</option>`).join('')}</select></label><p data-build-frame-facts>${initialFrame ? escapeHtml(`${initialFrame.bottomBracket} · ${initialFrame.tireClearanceMm ? `${initialFrame.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No published frameset is currently available.'}</p></div><a data-build-frame-link href="${initialFrame ? initialFrame.url : url(ctx.base, '/')}">Frame details</a></section>
+      <div class="builder-parts" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot)).join('')}</div>
+    </div>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker">Current build</span><h2 id="builder-summary-title" data-build-name>Build total</h2><dl><div><dt>Full price</dt><dd data-build-total-price>—</dd></div><div><dt>Known weight</dt><dd data-build-total-weight>—</dd></div></dl><p data-build-completeness aria-live="polite"></p><div data-build-compatibility aria-live="polite"></div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
+  </section>`;
+  return page(ctx, {
+    title: 'Bike build configurator',
+    description: 'Combine a China-market frameset and sourced components, with transparent price, weight, package and compatibility totals.',
+    path: '/build/',
+    current: 'builder',
+    body,
   });
 }
 
@@ -1350,12 +1464,12 @@ export function renderElectronicGroupsets(ctx) {
 
 export function renderMethodology(ctx) {
   const assumption = buildAssumption(ctx);
-  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact build selector offers one evidence-informed upgrade preset and a custom amount for a current quote or personal parts plan. These are planning estimates, not shopping carts or guaranteed package prices. Framesets remain candidates when the allowance would materially mislead buyers.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame or included-package price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
+  const html = `<h2>What is compared</h2><p>The main list combines complete bikes and frameset-based builds where total cost can be compared honestly. Products are identified by exact category, model, generation, and configuration.</p><h2>Frameset price estimate</h2><p>Each published frameset receives the selected total build allowance, with <strong>${formatCny(assumption.amount_cny)}</strong> retained as the reviewed default. The compact homepage selector is a quick planning estimate, not a shopping cart or guaranteed package price.</p><h2>Exact build configurator</h2><p>The separate <a href="${url(ctx.base, '/build/')}">Build page</a> selects a frameset and every required component slot. A package is counted once, and any explicitly included brake or drivetrain parts suppress duplicate rows. Price and weight remain known subtotals while one or more exact inputs are missing. Compatibility warnings cover only recorded standards and never replace seller or mechanic confirmation.</p><h2>Price details</h2><p>The visible price is the complete-bike price or the estimated complete-build price. The info button contains the underlying frame or included-package price, observation date, freshness, record status, conditions, and great-buy reference.</p><h2>Category-specific facts</h2><p>Gravel products expose tire clearance when the evidence supports it. MTB products use suspension travel, e-road products use motor and battery facts, folding products use fold or wheel data, and triathlon products use time-trial fit and storage facts. Unverified fields stay visibly unknown.</p><h2>Video context</h2><p>Selected model videos help buyers see a platform and hear build or ride context. They are secondary editorial material, not authority for a current price, exact BOM, specification, or recommendation. Commercial and product-supply relationships are labelled.</p><h2>Materials and manufacturing</h2><p>For carbon products, fiber labels such as T700, T800, or T1000 are not quality scores. Lay-up, compaction, curing, alignment, testing, traceability, and support matter more. Missing evidence increases uncertainty; it does not automatically mean a product is poor.</p><h2>Corrections</h2><p>Each change should identify the exact model or generation and include a source. <a href="${ctx.repositoryUrl}/issues">Submit a correction or price sighting on GitHub</a>.</p>`;
   return prosePage(ctx, { title: 'Methodology', desc: 'How prices, frameset estimates, specifications, and evidence are handled.', path: '/methodology/', current: 'methodology', html });
 }
 
 export function renderPrivacy(ctx) {
-  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike selections and the optional frameset allowance are stored only in the visitor’s browser.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected public-post quotations load from the project’s separate Contabo media origin. That service disables application access logs and serves only sanitized, metadata-free WebP derivatives, but the VPS and network providers still process a normal HTTPS request. Images use <code>referrerpolicy="no-referrer"</code>; when a source fails, the image is hidden and the product facts remain available.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, and location metadata before submitting screenshots or photos. A removal request may identify the model and source URL without publishing private contact details.</p>`;
+  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike comparisons, the optional frameset allowance and the Build-page configuration are stored only in the visitor’s browser and may also be encoded in the URL when a visitor chooses or copies a build.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected public-post quotations load from the project’s separate Contabo media origin. That service disables application access logs and serves only sanitized, metadata-free WebP derivatives, but the VPS and network providers still process a normal HTTPS request. Images use <code>referrerpolicy="no-referrer"</code>; when a source fails, the image is hidden and the product facts remain available.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, and location metadata before submitting screenshots or photos. A removal request may identify the model and source URL without publishing private contact details.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'No accounts or analytics; optional third-party media is disclosed.', path: '/privacy/', html });
 }
 

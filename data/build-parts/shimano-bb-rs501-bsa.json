@@ -1,0 +1,19 @@
+{
+  "id": "shimano-bb-rs501-bsa",
+  "maker": "Shimano",
+  "name": "BB-RS501 BSA bottom bracket",
+  "slot": "bottom-bracket",
+  "status": "current-specification-price-open",
+  "included_components": ["threaded bottom bracket cups"],
+  "weight": {
+    "status": "known",
+    "grams": 93,
+    "basis": "Official claimed component weight.",
+    "claim_type": "official",
+    "source_id": "shimano-bb-rs501-official-2026-08-27"
+  },
+  "compatibility": { "accepted_frame_shells": ["bsa-68"], "crank_spindle": "shimano-hollowtech-ii-24mm" },
+  "note": "Current mainland price remains open.",
+  "source_ids": ["shimano-bb-rs501-official-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

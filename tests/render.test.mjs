@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImageSources, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -363,6 +363,34 @@ test('primary navigation reflects catalog and exact model context', () => {
   assert.match(framesetDetail, /data-nav-framesets aria-current="page"/);
 });
 
+test('build configurator renders every required slot with sourced package data', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-27T00:00:00Z')
+  };
+  const builder = renderBikeBuilder(context);
+  assert.match(builder, /data-nav-builder aria-current="page"/);
+  assert.match(builder, /<h1>Build a bike from a frame<\/h1>/);
+  assert.equal((builder.match(/data-build-slot=/g) ?? []).length, 15);
+  assert.match(builder, /Shimano 105 Di2 R7170 large package/);
+  assert.match(builder, /Elitewheels Marvel G35 wheelset/);
+  assert.match(builder, /data-build-total-price/);
+  assert.match(builder, /data-build-total-weight/);
+  assert.match(builder, /data-build-custom-price-field/);
+  assert.match(builder, /data-build-custom-weight-field/);
+  assert.doesNotMatch(builder, /<a data-build-part-source/);
+  assert.match(builder, /href="\/china-bike-research\/methodology\/" data-build-part-source hidden/);
+  assert.match(builder, /"covers":\["brakes","crankset","cassette","chain"\]/);
+  assert.match(builder, /"priceCny":4150/);
+  assert.match(builder, /"weightG":1460/);
+  assert.match(builder, /https:\/\/www\.elite-wheels\.com\/wp-content\/uploads/);
+  assert.doesNotMatch(builder, /No attributable mainland price|No exact mainland package captured/);
+});
+
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
   assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="6500"/);
   assert.match(html, /Triathlon storage \/ boxes: Unknown\./);
@@ -554,8 +582,8 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 3);
-  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Groupsets<\/a>/);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 4);
+  assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Build<\/a>[\s\S]*>Groupsets<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);

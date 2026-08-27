@@ -1,0 +1,20 @@
+{
+  "id": "shimano-sm-rt70-160-140-rotor-pair",
+  "maker": "Shimano",
+  "name": "SM-RT70 160/140 mm rotor pair",
+  "slot": "rotors",
+  "status": "current-specification-price-open",
+  "default": true,
+  "included_components": ["one 160 mm rotor", "one 140 mm rotor"],
+  "weight": {
+    "status": "known",
+    "grams": 254,
+    "basis": "Derived rotor-only pair total: official 133 g 160 mm + 121 g 140 mm claims; lockrings excluded.",
+    "claim_type": "inferred",
+    "source_id": "shimano-sm-rt70-official-2026-08-27"
+  },
+  "compatibility": { "rotor_mount": "center-lock", "brake_type": "hydraulic-disc" },
+  "note": "Current mainland pair price and required lockring type remain open.",
+  "source_ids": ["shimano-sm-rt70-official-2026-08-27"],
+  "reviewed_at": "2026-08-27"
+}

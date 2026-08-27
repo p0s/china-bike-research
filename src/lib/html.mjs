@@ -39,6 +39,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
         <a href="${url(base,'/?type=frameset#catalog')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
+        <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
         <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
       </nav>
     </div>
@@ -50,6 +51,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
+        <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
         <a href="${url(base,'/privacy/')}">Privacy</a>
         <a href="${url(base,'/data/catalog.json')}">Data</a>

@@ -126,3 +126,26 @@ test('video embeds are created only after an explicit click and never autoplay',
   assert.match(script, /shell\.replaceChildren\(frame\)/);
   assert.doesNotMatch(script, /autoplay=1/);
 });
+
+test('bike builder persists shareable state and avoids package double counting', () => {
+  assert.match(script, /const storageKey = 'china-bike-builder-v1'/);
+  assert.match(script, /function coveredSlots\(\)/);
+  assert.match(script, /for \(const coveredSlot of part\.covers \|\| \[\]\)/);
+  assert.match(script, /if \(!covered\.has\(coveredSlot\)\) covered\.set\(coveredSlot, part\)/);
+  assert.match(script, /if \(coveringPart\) \{[\s\S]*?continue;/);
+  assert.match(script, /target\.searchParams\.set\('frame', state\.frameId\)/);
+  assert.match(script, /target\.searchParams\.set\(`part-\$\{slot\}`, selection\)/);
+  assert.match(script, /localStorage\.setItem\(storageKey, JSON\.stringify\(state\)\)/);
+  assert.match(script, /const partPrice = recordedPrice \?\? buyerPrice/);
+  assert.match(script, /const partWeight = recordedWeight \?\? buyerWeight/);
+  assert.match(script, /recordedPrice === null && buyerPrice !== null \? 'Buyer-entered price'/);
+  assert.match(script, /customPriceField\.hidden = !needsPriceInput/);
+  assert.match(script, /customWeightField\.hidden = !needsWeightInput/);
+  assert.match(script, /accepted_frame_shells/);
+  assert.match(script, /does not list \$\{frame\.bottomBracket\} frame compatibility/);
+  assert.match(script, /nominal_tire_width_mm/);
+  assert.match(script, /tires exceed the frame's published/);
+  assert.match(script, /the selected wheelset does not list it/);
+  assert.match(styles, /\.builder-summary \{[\s\S]*?position: sticky;/);
+  assert.match(styles, /@media \(max-width: 720px\)[\s\S]*?\.builder-summary \{[\s\S]*?position: sticky;/);
+});

@@ -13,7 +13,9 @@
     "bottom_bracket": "BSA",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_fiber": "T800-claimed"
+    "claimed_fiber": "T800-claimed",
+    "claimed_frame_weight_g": 830,
+    "claimed_frame_weight_basis": "Official size-specific frame range is 830–960 g ±25 g from XS through XXL; 830 g is the lightest listed size. Fork claim is 460 g."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -30,8 +32,11 @@
   "china_availability": "mainland-and-direct",
   "source_ids": [
     "tavelo-official",
+    "tavelo-grow-official-2026-08-27",
+    "tavelo-grow-china-launch-2026",
+    "tavelo-warranty-official-2026-08-27",
     "compiled-research-2026-08-06",
     "public-tavelo-grow-build-2026-08-17"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-27"
 }
