@@ -6,13 +6,17 @@
   "searched_at": "2026-08-27",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "public-post": { "status": "temporarily-exhausted", "blocker": "extension_reload_required", "attempts": [
+      { "attempt": 1, "query": "BXT-055 Gravel 车架", "route": "XHS exact-model discovery and ten opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 4.79 MB archive contained 10 posts, 106 comments and 38 media files; one BXT triathlon build was a different model and no BXT-055 geometry appeared." },
+      { "attempt": 2, "query": "BXT Gravel 055 几何", "route": "XHS geometry-focused discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 4.22 MB archive contained 5 posts, 76 comments and 18 media files; none identified the exact BXT-Gravel-055 geometry." },
+      { "attempt": 3, "query": "BXT-Gravel-055 尺码", "route": "XHS size-focused discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 7.03 MB archive contained 5 posts, 78 comments and 32 media files; results were generic sizing or unrelated Norda 055 content." }
+    ] },
     "web": { "status": "temporarily-exhausted", "attempts": [
     { "attempt": 1, "query": "BXT-055 official geometry", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "accessed_at": "2026-08-27", "note": "Current page exposes sizes and specifications but no numeric geometry table." },
     { "attempt": 2, "query": "BXT 055 geometry stack reach", "route": "public web search", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Unversioned secondary diagrams could not be tied safely to the current 2026 frame." },
     { "attempt": 3, "query": "BXT-055 manual PDF geometry", "route": "manual and catalog search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No current exact-model manual with geometry was found." }
   ] } },
-  "status": "blocked",
-  "retry_after": "2026-09-10",
-  "notes": "Geometry remains empty rather than mixing revisions."
+  "status": "temporarily-exhausted",
+  "retry_after": "2026-11-27",
+  "notes": "Geometry remains empty after three XHS and three protected web routes; the later exact Taobao item also exposed no usable numeric chart. Sibling and unversioned diagrams were not mixed into the current frame. Archive SHA-256 values: 9fefef4249f48fef8a01e47c8b514d60321a969bdf854a248bee330fc2d15835, 1c3faf0700b54d80c4aeaebca8bb5c66ebf0032136bf5d9a0f995874842c2d19 and 76044a7e79d6658c9ad47e49a6a9dab699fd0536f98d62417ad8c899c9e6a48c."
 }

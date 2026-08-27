@@ -1,0 +1,24 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Rinasclta Q-AERO GR", "route": "XHS exact-model discovery and ten opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact Q-AERO GR post or price appeared." },
+      { "attempt": 2, "query": "Q-AERO GR Gravel", "route": "XHS model-name discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact mainland price appeared." },
+      { "attempt": 3, "query": "Rinasclta Q-AERO 几何 价格", "route": "XHS geometry-and-price discovery with five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact price appeared." }
+    ] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Rinasclta Q-AERO GR current price", "route": "manufacturer exact-model page", "outcome": "rejected", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-27", "note": "The exact page shows US$639, not a mainland CNY selected-option observation." },
+      { "attempt": 2, "query": "Rinasclta Q-AERO GR 人民币 价格", "route": "indexed mainland marketplace search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact current mainland price was indexed." },
+      { "attempt": 3, "query": "Rinasclta Q-AERO GR", "route": "signed-in Taobao exact-model search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact selectable listing was found." }
+    ] }
+  },
+  "status": "temporarily-exhausted",
+  "retry_after": "2026-11-27",
+  "accepted_source_ids": [],
+  "notes": "The official US-dollar price remains a reference only; no exact mainland selected-option price was captured."
+}

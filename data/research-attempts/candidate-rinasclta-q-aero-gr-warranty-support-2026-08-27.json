@@ -1,0 +1,16 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-warranty-support-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "field": "warranty-support",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": {
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "Rinasclta Q-AERO GR warranty", "route": "manufacturer exact-model page and current policy page", "outcome": "found", "result_url": "https://rinascltabike.com/warranty-and-return/", "accessed_at": "2026-08-27", "note": "The exact product page states two years and the current policy defines the direct frame warranty and proof requirements." }
+    ] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["rinasclta-q-aero-gr-official-2026-08-27", "rinasclta-warranty-2026-08-27"],
+  "notes": "This resolves the global manufacturer-direct policy only; mainland seller handling remains an explicit unknown."
+}

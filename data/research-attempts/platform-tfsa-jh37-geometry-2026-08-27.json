@@ -12,7 +12,14 @@
     { "attempt": 2, "query": "TFSA JH37 geometry stack reach", "route": "public web search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact-model numeric table found." },
     { "attempt": 3, "query": "TFSA JH37 catalog PDF geometry", "route": "manual and catalog search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact-model table was published in accessible documentation." }
   ] } },
-  "status": "blocked",
+  "status": "found",
   "retry_after": "2026-09-10",
-  "notes": "Geometry remains empty."
+  "accepted_source_ids": ["tfsa-jh37-taobao-2026-08-27"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": ["tfsa-jh37-taobao-2026-08-27"],
+    "note": "The exact-model Taobao source captured later in this batch contains the seller geometry chart and resolves the field without erasing the protected earlier search history."
+  },
+  "notes": "Structured geometry is now stored from the exact-model seller chart; ambiguous letter-only columns remain untranscribed."
 }

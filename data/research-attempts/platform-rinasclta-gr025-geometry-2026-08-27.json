@@ -1,0 +1,23 @@
+{
+  "id": "platform-rinasclta-gr025-geometry-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "rinasclta-gr025" },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Rinasclta GR025 车架", "route": "XHS exact-model discovery and ten opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 18.04 MB archive contained 10 posts, 134 comments and 82 media files, but no exact GR025 post." },
+      { "attempt": 2, "query": "GR025 Gravel Rinasclta", "route": "XHS English-name discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 11.74 MB archive contained 5 posts, 84 comments and 52 media files; results concerned other gravel bikes." },
+      { "attempt": 3, "query": "Rinasclta GR025 几何 价格", "route": "XHS geometry-and-price discovery with five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated 8.86 MB archive contained 5 posts, 75 comments and 52 media files; no exact GR025 geometry appeared." }
+    ] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Rinasclta GR025 official geometry", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://rinascltabike.com/product/gr025-gravel-frame-700c-50mm/", "accessed_at": "2026-08-27", "note": "The current exact-model page lists sizes and specifications but no numeric geometry chart." },
+      { "attempt": 2, "query": "Rinasclta GR025 geometry stack reach", "route": "indexed public web search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact current numeric geometry table was found." },
+      { "attempt": 3, "query": "Rinasclta GR025", "route": "signed-in Taobao exact-model search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The search returned unrelated products and no exact GR025 listing or geometry image." }
+    ] }
+  },
+  "status": "temporarily-exhausted",
+  "retry_after": "2026-11-27",
+  "notes": "Geometry remains empty after three public-post and three official/marketplace routes. Archive SHA-256 values: 614995787814e4a4eb7a3a4b00e59ffca4de7a004d979719e0b2022fa94e40cc, f01bb76af3ebdfaa47587a54a7ffa378550e8de05c2581a6f80cd7bdfea6740b and 2a78de6b69c3bb0ad52318e6637526259af8f3e5975af1e1b7c08dbc3f99c077."
+}

@@ -95,12 +95,6 @@ function accuracyLabel(accuracy) {
   }[accuracy] ?? 'Image status unclassified';
 }
 
-function imageUsageLabel(image) {
-  return image?.rights?.status === 'public-post-quotation'
-    ? 'Compressed editorial quotation; no license asserted'
-    : '';
-}
-
 function imageElement(ctx, product, { hero = false, image = product.image, className = '', decorative = false, galleryHero = false } = {}) {
   const source = imageUrl(ctx, image);
   if (!source) return '';
@@ -137,15 +131,13 @@ function candidateGalleryFigure(ctx, entry) {
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = entry.imageSource;
   if (images.length < 2) {
-    const usage = imageUsageLabel(primary);
-    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
     image.credit ?? 'Product image',
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
-    imageUsageLabel(image),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
@@ -163,15 +155,13 @@ function productGalleryFigure(ctx, product) {
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = product.imageSource;
   if (images.length < 2) {
-    const usage = imageUsageLabel(primary);
-    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
     image.credit ?? 'Product image',
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
-    imageUsageLabel(image),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
@@ -1566,7 +1556,7 @@ export function renderPrivacy(ctx) {
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. Copyright remains with the original owner, the source stays visibly linked, and no license or universal right to reuse is implied.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before external hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. Copyright remains with the original owner and the source stays visibly linked.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before external hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
@@ -1600,7 +1590,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}${imageUsageLabel(image) ? ` · ${escapeHtml(imageUsageLabel(image))}` : ''}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 
