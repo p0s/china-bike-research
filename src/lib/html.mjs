@@ -64,7 +64,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
     <div class="selection-summary"><strong data-compare-count>0</strong><span data-selection-label> selected</span><span class="selection-names" data-selection-names></span></div>
     <div class="selection-actions">
       <button class="text-button" type="button" data-clear-selection>Clear</button>
-      <button class="primary-button" type="button" data-open-compare>Compare</button>
+      <a class="primary-button" href="${url(base,'/build/')}" data-open-build hidden>Build selected</a>
+      <button class="primary-button" type="button" data-open-compare hidden>Compare</button>
     </div>
   </aside>
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>

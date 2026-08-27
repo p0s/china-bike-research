@@ -898,6 +898,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
+        identifiableModel: hasIdentifiableModel,
         defaultVisible: Boolean(
           officialPrice ||
           (observedPrice && hasIdentifiableModel) ||

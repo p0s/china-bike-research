@@ -406,6 +406,20 @@ function weightLabel(product) {
   return frameWeight ? `${frameWeight} frame` : '—';
 }
 
+function publishedWeightFilter(product) {
+  if (product.variant.kind === 'complete-bike') {
+    return Number.isFinite(product.variant.claimed_complete_weight_g)
+      ? { kind: 'complete', grams: product.variant.claimed_complete_weight_g }
+      : { kind: 'complete', grams: null };
+  }
+  const values = [
+    product.variant.claimed_frame_weight_g,
+    product.platform.frame?.claimed_frame_weight_g,
+    ...Object.values(product.platform.frame?.claimed_frame_weight_g_by_size ?? {})
+  ].filter(Number.isFinite);
+  return { kind: 'frame', grams: values.length ? Math.max(...values) : null };
+}
+
 function frameStandard(product) {
   const frame = product.platform.frame;
   const parts = [];
@@ -758,6 +772,7 @@ function candidateRow(ctx, entry) {
 function comparisonSummary(ctx, product) {
   const metric = categoryMetric(product.platform);
   const tireClearance = publishedTireClearance(product);
+  const weightFilter = publishedWeightFilter(product);
   const image = imageUrl(ctx, product.image);
   return {
     id: product.variant.id,
@@ -770,6 +785,9 @@ function comparisonSummary(ctx, product) {
       ...comparisonImageFields(product.image)
     } : {}),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
+    buildBaseId: product.variant.id,
+    buildBaseKind: product.variant.kind,
+    builderEligible: true,
     price: publishedPriceLabel(product),
     estimated: product.allInPrice.estimated,
     frameLow: product.allInPrice.frameLow,
@@ -782,6 +800,7 @@ function comparisonSummary(ctx, product) {
     categoryMetricKind: metric.kind,
     categoryMetricDetails: metric.details.join(' '),
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
+    ...(Number.isFinite(weightFilter.grams) ? { weightGrams: weightFilter.grams, weightKind: weightFilter.kind } : {}),
     ...(product.variant.kind === 'complete-bike' ? { drivetrain: drivetrainLabel(ctx, product), drivetrainSubline: drivetrainSubline(ctx, product) } : {}),
     weight: weightLabel(product),
     frame: frameStandard(product),
@@ -809,6 +828,7 @@ function candidateComparisonSummary(ctx, entry) {
     : entry.kind === 'frameset' && Number.isFinite(facts.frame_weight_g)
       ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame`
       : '—';
+  const weightGrams = entry.kind === 'complete-bike' ? facts.complete_weight_g : entry.kind === 'frameset' ? facts.frame_weight_g : null;
   const priceDetails = entry.candidate.status === 'superseded'
     ? candidatePublicText(entry.candidate.availability_note)
     : estimated
@@ -825,6 +845,7 @@ function candidateComparisonSummary(ctx, entry) {
       ...comparisonImageFields(entry.image)
     } : {}),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
+    ...(entry.kind && entry.identifiableModel ? { buildBaseId: entry.id, buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
     estimated,
     frameLow: estimated ? frameLow : null,
@@ -835,6 +856,7 @@ function candidateComparisonSummary(ctx, entry) {
     categoryMetricLabel: metric.label,
     categoryMetricKind: metric.kind,
     ...(tireClearance.value !== '—' ? { tireClearance: tireClearance.value } : {}),
+    ...(Number.isFinite(weightGrams) ? { weightGrams, weightKind: entry.kind === 'complete-bike' ? 'complete' : 'frame' } : {}),
     ...(entry.kind === 'complete-bike' && facts.drivetrain ? { drivetrain: facts.drivetrain } : {}),
     ...(weight !== '—' ? { weight } : {}),
     ...(frame ? { frame } : {}),
@@ -995,17 +1017,8 @@ function categorySelectOptions(ctx, candidates) {
   return `${groups}${flatBar}`;
 }
 
-function capabilitySelectOptions(ctx, candidates) {
-  const kinds = new Set(ctx.products.map((product) => categoryMetric(product.platform).kind));
-  const options = [];
-  const hasTireClearance = ctx.products.some((product) => publishedTireClearance(product).sortValue > 0)
-    || candidates.some((entry) => candidateTireClearance(entry).sortValue > 0);
-  if (hasTireClearance) options.push('<option value="tire:36">Tire ≥36 mm</option><option value="tire:40">Tire ≥40 mm</option><option value="tire:45">Tire ≥45 mm</option><option value="tire:50">Tire ≥50 mm</option>');
-  if (kinds.has('suspension')) options.push('<option value="suspension:100">Suspension ≥100 mm</option><option value="suspension:150">Suspension ≥150 mm</option>');
-  if (kinds.has('motor')) options.push('<option value="kind:motor">Motor system</option>');
-  if (kinds.has('folding')) options.push('<option value="kind:folding">Folded-size data</option>');
-  if (kinds.has('triathlon')) options.push('<option value="kind:triathlon">Triathlon / TT</option>');
-  return options.join('');
+function catalogFilterShortcut(key, label) {
+  return `<button class="catalog-filter-button" type="button" data-filter-heading="${escapeAttr(key)}" aria-label="Filter ${escapeAttr(label)}" title="Filter ${escapeAttr(label)}"><span aria-hidden="true">+</span></button>`;
 }
 
 export function renderHome(ctx) {
@@ -1028,19 +1041,28 @@ export function renderHome(ctx) {
   ].sort((a, b) => a.price - b.price);
   const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div></section>
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
-    <div class="filter-bar filters-collapsed">
+    <div class="filter-bar">
       <div class="filter-primary">
         <div class="search-box"><label class="sr-only" for="catalog-search">Search bikes</label><span aria-hidden="true">⌕</span><input id="catalog-search" type="search" placeholder="Search model, use or drivetrain" autocomplete="off" data-filter-search></div>
         <label class="compact-select category-select"><span>Category</span><select name="category" data-filter-category><option value="">All categories</option>${categorySelectOptions(ctx, candidates)}</select></label>
+        <label class="compact-number tire-filter"><span>Min tire clearance</span><span class="number-with-unit"><input id="catalog-tire-min" name="min-tire-clearance" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="Any" data-filter-tire aria-label="Minimum tire clearance"><span>mm</span></span></label>
         <div class="segmented" role="group" aria-label="Product type" data-type-control><button type="button" data-type-value="" aria-pressed="true">All</button><button type="button" data-type-value="complete-bike" aria-pressed="false">Complete</button><button type="button" data-type-value="frameset" aria-pressed="false">Frame builds</button></div>
+        <button class="filter-panel-toggle" type="button" data-filter-panel-toggle aria-expanded="false" aria-controls="table-filters">+ Filter</button>
+        <div class="filter-actions"><label class="compact-select sort-select"><span>Sort</span><select name="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label><button class="reset-button" type="button" data-reset hidden>Clear</button></div>
       </div>
-      <button class="more-filters" type="button" data-more-filters aria-expanded="false" aria-controls="secondary-filters">More filters</button>
-      <div class="filter-secondary" id="secondary-filters">
-        <label class="compact-select"><span>Max price</span><select name="max-price" data-filter-price><option value="">Any</option><option value="6000">¥6,000</option><option value="8000">¥8,000</option><option value="10000">¥10,000</option><option value="15000">¥15,000</option><option value="20000">¥20,000</option></select></label>
-        <label class="compact-select"><span>Capability</span><select name="capability" data-filter-capability><option value="">Any</option>${capabilitySelectOptions(ctx, candidates)}</select></label>
-        <label class="compact-select"><span>Sort</span><select name="sort" data-sort><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Bike: A to Z</option><option value="name-desc">Bike: Z to A</option><option value="tire-desc">Tire clearance: high to low</option><option value="tire-asc">Tire clearance: low to high</option><option value="capability-desc" disabled>Category fact: high to low</option><option value="capability-asc" disabled>Category fact: low to high</option></select></label>
-        <div class="filter-actions"><button class="reset-button" type="button" data-reset hidden>Clear</button></div>
-      </div>
+      <div class="filter-chips" data-filter-chips aria-label="Active table filters" hidden></div>
+      <section class="filter-panel" id="table-filters" data-filter-panel aria-label="Table filters" hidden>
+        <div class="filter-panel-heading"><div><span>Table filters</span><small>Only rows with recorded values match numeric limits.</small></div><button class="text-button" type="button" data-filter-panel-close>Close</button></div>
+        <div class="filter-panel-grid">
+          <label class="compact-number"><span>Max full-bike price</span><span class="number-with-unit prefix"><span>¥</span><input name="max-price" type="number" min="0" max="1000000" step="100" inputmode="numeric" placeholder="Any" data-filter-price></span></label>
+          <label class="compact-number"><span>Max complete-bike weight</span><span class="number-with-unit"><input name="max-complete-weight" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Any" data-filter-complete-weight><span>kg</span></span></label>
+          <label class="compact-number"><span>Max frame weight</span><span class="number-with-unit"><input name="max-frame-weight" type="number" min="0" max="10000" step="10" inputmode="numeric" placeholder="Any" data-filter-frame-weight><span>g</span></span></label>
+          <label class="compact-text"><span>Drivetrain contains</span><input name="drivetrain" type="search" autocomplete="off" placeholder="Shimano, electronic…" data-filter-drivetrain></label>
+          <label class="compact-text"><span>Frame contains</span><input name="frame-fact" type="search" autocomplete="off" placeholder="T47, UDH, carbon…" data-filter-frame></label>
+          <label class="compact-number"><span data-category-min-label>Category minimum</span><span class="number-with-unit"><input name="category-min" type="number" min="0" max="2000" step="1" inputmode="decimal" placeholder="Choose a comparable category" data-filter-category-min disabled><span data-category-min-unit></span></span></label>
+          <label class="filter-check"><input type="checkbox" data-filter-tire-unknown disabled><span>Include unknown tire clearance when a minimum is set</span></label>
+        </div>
+      </section>
     </div>
 
     <section class="inline-compare" id="compare" data-inline-compare tabindex="-1" aria-labelledby="compare-title" hidden>
@@ -1050,7 +1072,7 @@ export function renderHome(ctx) {
 
     <div class="catalog-meta"><span data-result-summary aria-live="polite" hidden><strong data-result-count>${ctx.products.length + defaultCandidateCount}</strong> matches<span data-result-context></span><span data-filter-notice></span></span><div class="catalog-meta-actions"><span class="catalog-selection-hint">Select two to four bikes to compare</span><button class="text-button catalog-scope-button" type="button" data-show-all-models aria-pressed="false" aria-controls="catalog-rows">Show all models</button></div></div>
     <div class="catalog-table" id="catalog-rows" data-product-list role="table" aria-label="Bike comparison">
-      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button></span><span role="columnheader" aria-sort="ascending"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Full-bike price</span></button></span><span role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button></span><span role="columnheader" aria-sort="none"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tire clearance</span></button></span><span role="columnheader">Drivetrain</span><span role="columnheader">Weight</span><span role="columnheader">Frame</span><span role="columnheader" aria-label="Details"></span></div>
+      <div class="catalog-head" role="row"><span role="columnheader" aria-label="Select"></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="name"><span>Bike</span></button>${catalogFilterShortcut('search', 'bike')}</span></span><span role="columnheader" aria-sort="ascending"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="price"><span>Full-bike price</span></button>${catalogFilterShortcut('price', 'full-bike price')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="capability" disabled><span data-capability-heading-label>Category fact</span></button>${catalogFilterShortcut('category', 'category fact')}</span></span><span role="columnheader" aria-sort="none"><span class="catalog-heading-tools"><button class="catalog-sort-button" type="button" data-sort-heading="tire"><span>Tire clearance</span></button>${catalogFilterShortcut('tire', 'tire clearance')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Drivetrain</span>${catalogFilterShortcut('drivetrain', 'drivetrain')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Weight</span>${catalogFilterShortcut('weight', 'weight')}</span></span><span role="columnheader"><span class="catalog-heading-tools"><span>Frame</span>${catalogFilterShortcut('frame', 'frame')}</span></span><span role="columnheader" aria-label="Details"></span></div>
       ${rows.map((row) => row.html).join('')}
       <div class="empty-state" data-empty hidden>No bikes match these filters.</div>
     </div>
@@ -1101,7 +1123,7 @@ export function renderModel(ctx, product) {
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
-    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button>${variant.kind === 'frameset' ? `<a class="primary-button" href="${url(ctx.base, '/build/')}?frame=${encodeURIComponent(variant.id)}">Build this frame</a>` : ''}<a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
+    <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
@@ -1222,24 +1244,88 @@ function builderBottomBracketKey(value) {
   return text.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function builderFrames(ctx) {
-  return ctx.products
-    .filter((product) => product.variant.kind === 'frameset' && Number.isFinite(product.allInPrice.frameLow))
-    .map((product) => ({
+function builderPriceBounds(price) {
+  if (!price) return { low: null, high: null };
+  const low = price.amount_cny ?? price.low_cny ?? null;
+  const high = price.amount_cny ?? price.high_cny ?? low;
+  return { low, high };
+}
+
+function builderCandidatePrice(price) {
+  if (price?.price_type === 'reference-conversion') {
+    return {
+      low: null,
+      high: null,
+      note: 'Converted reference price excluded; enter the exact purchase price.'
+    };
+  }
+  if (price?.price_type === 'official-conflict') {
+    return {
+      low: null,
+      high: null,
+      note: 'Conflicting official prices excluded; enter the exact purchase price.'
+    };
+  }
+  const bounds = builderPriceBounds(price);
+  return {
+    ...bounds,
+    note: bounds.low === null ? 'Exact purchase price needed.' : ''
+  };
+}
+
+function builderBases(ctx) {
+  const published = ctx.products.map((product) => {
+    const isComplete = product.variant.kind === 'complete-bike';
+    const weight = publishedWeightFilter(product);
+    return {
       id: product.variant.id,
       name: `${product.brand.name} ${product.variant.name}`,
       url: url(ctx.base, `/models/${product.variant.id}/`),
+      kind: product.variant.kind,
+      stage: 'published',
       category: categoryFamily(product.platform.category),
-      priceLow: product.allInPrice.frameLow,
-      priceHigh: product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
-      frameWeightG: product.platform.frame.claimed_frame_weight_g ?? product.variant.claimed_frame_weight_g ?? null,
-      weightBasis: product.platform.frame.claimed_frame_weight_g || product.variant.claimed_frame_weight_g ? 'frame only; fork and package hardware may be additional unknown weight' : 'frameset package weight unknown',
+      priceLow: isComplete ? product.allInPrice.low : product.allInPrice.frameLow,
+      priceHigh: isComplete ? product.allInPrice.high : product.allInPrice.frameHigh ?? product.allInPrice.frameLow,
+      baseWeightG: weight.grams,
+      weightBasis: isComplete
+        ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
+        : weight.grams ? 'frame only; fork and package hardware may be additional unknown weight' : 'frameset package weight unknown',
       bottomBracket: product.platform.frame.bottom_bracket,
       bottomBracketKey: builderBottomBracketKey(product.platform.frame.bottom_bracket),
       tireClearanceMm: maxClearance(product.platform) ?? null,
-      included: product.variant.included ?? [],
-    }))
-    .sort((left, right) => left.name.localeCompare(right.name));
+      included: isComplete ? ['complete bike package'] : product.variant.included ?? [],
+      drivetrain: isComplete ? drivetrainLabel(ctx, product) : '',
+    };
+  });
+  const candidates = joinCatalogCandidates(ctx.data)
+    .filter((entry) => entry.kind && entry.identifiableModel)
+    .map((entry) => {
+      const facts = entry.candidate.facts ?? {};
+      const { low, high, note } = builderCandidatePrice(entry.price);
+      const isComplete = entry.kind === 'complete-bike';
+      return {
+        id: entry.id,
+        name: `${entry.candidate.name} · research stage`,
+        url: url(ctx.base, `/models/${entry.candidate.id}/`),
+        kind: entry.kind,
+        stage: 'candidate',
+        category: categoryFamily(entry.category),
+        priceLow: low,
+        priceHigh: high,
+        priceNote: note,
+        baseWeightG: isComplete ? facts.complete_weight_g ?? null : facts.frame_weight_g ?? null,
+        weightBasis: isComplete ? facts.complete_weight_basis ?? 'complete-bike weight basis not recorded' : facts.frame_weight_basis ?? 'frameset package weight unknown',
+        bottomBracket: facts.bottom_bracket ?? '',
+        bottomBracketKey: builderBottomBracketKey(facts.bottom_bracket),
+        tireClearanceMm: facts.tire_clearance_mm ?? null,
+        included: isComplete ? ['complete bike package'] : [],
+        drivetrain: isComplete ? facts.drivetrain ?? '' : '',
+      };
+    });
+  return [...published, ...candidates].sort((left, right) => {
+    if (left.stage !== right.stage) return left.stage === 'published' ? -1 : 1;
+    return left.name.localeCompare(right.name);
+  });
 }
 
 function builderParts(ctx) {
@@ -1271,6 +1357,7 @@ function builderParts(ctx) {
 function builderPartOptions(parts, slot) {
   const matching = parts.filter((part) => part.slot === slot);
   return [
+    '<option value="included" hidden disabled>Keep included bike part</option>',
     '<option value="custom">Custom / enter values</option>',
     ...matching.map((part) => `<option value="${escapeAttr(part.id)}"${part.default ? ' selected' : ''}>${escapeHtml(`${part.maker} ${part.name}`)}</option>`)
   ].join('');
@@ -1280,29 +1367,31 @@ function builderSlotRow(ctx, parts, slot) {
   const [label, help] = buildSlotCopy[slot];
   return `<section class="builder-part-row" data-build-slot="${escapeAttr(slot)}">
     <div class="builder-part-label"><h2>${escapeHtml(label)}</h2><p>${escapeHtml(help)}</p></div>
-    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select>${builderPartOptions(parts, slot)}</select></label><div class="builder-custom-values" data-build-custom-values hidden><label data-build-custom-price-field>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field>Weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label></div></div>
+    <div class="builder-part-control"><label><span class="sr-only">${escapeHtml(label)}</span><select data-build-part-select>${builderPartOptions(parts, slot)}</select></label><div class="builder-custom-values" data-build-custom-values hidden><label data-build-custom-price-field>Price ¥<input type="number" min="0" max="200000" step="1" inputmode="numeric" data-build-custom-price></label><label data-build-custom-weight-field>New weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-custom-weight></label><label data-build-removed-weight-field hidden>Removed weight g<input type="number" min="0" max="20000" step="1" inputmode="numeric" data-build-removed-weight></label></div></div>
     <div class="builder-part-facts"><strong data-build-part-price>—</strong><span data-build-part-weight>—</span><small data-build-part-basis></small><a href="${url(ctx.base, '/methodology/')}" data-build-part-source hidden rel="noreferrer">Source</a></div>
     <p class="builder-covered-note" data-build-covered-note hidden></p>
   </section>`;
 }
 
 export function renderBikeBuilder(ctx) {
-  const frames = builderFrames(ctx);
+  const bases = builderBases(ctx);
   const parts = builderParts(ctx);
-  const initialFrame = frames[0];
-  const payload = { schemaVersion: 1, slots: buildSlotIds, frames, parts };
-  const body = `<section class="builder-intro"><div class="page"><span class="builder-kicker">Component planner</span><h1>Build a bike from a frame</h1><p>Choose an exact frameset and parts package. Totals count each package once and stay explicitly incomplete until every required price and weight is known.</p></div></section>
+  const initialBase = bases[0];
+  const publishedBases = bases.filter((base) => base.stage === 'published');
+  const baseOptions = `<optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}">${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
+  const payload = { schemaVersion: 2, slots: buildSlotIds, bases, parts };
+  const body = `<section class="builder-intro"><div class="page"><span class="builder-kicker">Component planner</span><h1>Configure a bike</h1><p>Start from an exact frameset or complete bike. Totals count packages once and keep every unresolved price or weight visible.</p></div></section>
   <section class="builder-page page" data-bike-builder>
     <div class="builder-workbench">
-      <section class="builder-frame-row"><div><label for="builder-frame"><span>Frameset</span><select id="builder-frame" data-build-frame>${frames.map((frame) => `<option value="${escapeAttr(frame.id)}">${escapeHtml(frame.name)}</option>`).join('')}</select></label><p data-build-frame-facts>${initialFrame ? escapeHtml(`${initialFrame.bottomBracket} · ${initialFrame.tireClearanceMm ? `${initialFrame.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No published frameset is currently available.'}</p></div><a data-build-frame-link href="${initialFrame ? initialFrame.url : url(ctx.base, '/')}">Frame details</a></section>
+      <section class="builder-frame-row"><div class="builder-base-control"><label for="builder-base"><span>Starting point</span><select id="builder-base" data-build-base>${baseOptions}</select></label><p data-build-base-facts>${initialBase ? escapeHtml(`${initialBase.kind === 'complete-bike' ? 'Complete bike' : 'Frameset'} · ${initialBase.bottomBracket || 'bottom bracket unknown'} · ${initialBase.tireClearanceMm ? `${initialBase.tireClearanceMm} mm tire clearance` : 'tire clearance unknown'}`) : 'No catalog base is currently available.'}</p><div class="builder-base-custom" data-build-base-custom hidden><label data-build-base-price-field>Base price ¥<input type="number" min="0" max="1000000" step="1" inputmode="numeric" data-build-base-price></label><label data-build-base-weight-field>Base weight g<input type="number" min="0" max="30000" step="1" inputmode="numeric" data-build-base-weight></label></div></div><a data-build-base-link href="${initialBase ? initialBase.url : url(ctx.base, '/')}">Base details</a></section>
       <div class="builder-parts" aria-label="Required build parts">${buildSlotIds.map((slot) => builderSlotRow(ctx, parts, slot)).join('')}</div>
     </div>
-    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker">Current build</span><h2 id="builder-summary-title" data-build-name>Build total</h2><dl><div><dt>Full price</dt><dd data-build-total-price>—</dd></div><div><dt>Known weight</dt><dd data-build-total-weight>—</dd></div></dl><p data-build-completeness aria-live="polite"></p><div data-build-compatibility aria-live="polite"></div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
+    <aside class="builder-summary" aria-labelledby="builder-summary-title"><span class="builder-kicker" data-build-summary-kicker>Current build</span><h2 id="builder-summary-title" data-build-name>Build total</h2><dl><div><dt data-build-price-label>Full price</dt><dd data-build-total-price>—</dd></div><div><dt data-build-weight-label>Known weight</dt><dd data-build-total-weight>—</dd></div></dl><p data-build-completeness aria-live="polite"></p><div data-build-compatibility aria-live="polite"></div><button class="secondary-button" type="button" data-build-copy>Copy build link</button><button class="text-button" type="button" data-build-reset>Reset</button><small>Compatibility checks cover only recorded standards. Confirm every part, hose, axle, mount and included fastener with the seller or mechanic.</small></aside>
     <script type="application/json" id="build-configurator-data">${safeJson(payload)}</script>
   </section>`;
   return page(ctx, {
-    title: 'Bike build configurator',
-    description: 'Combine a China-market frameset and sourced components, with transparent price, weight, package and compatibility totals.',
+    title: 'Bike configurator',
+    description: 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.',
     path: '/build/',
     current: 'builder',
     body,

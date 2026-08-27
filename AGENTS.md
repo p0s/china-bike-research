@@ -74,11 +74,9 @@ Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in 
 
 ## Public-post browser research
 
-- Use only the dedicated research Chrome and the local request-capture extension. Keep capture data local, and never expose cookies, tokens, or private request parameters in repository records.
-- Keep one active search or detail tab. Do not fan out concurrent tabs or use the extension's bulk auto-mode for evidence collection.
-- Stop the lane immediately on a verification or HTTP 412 challenge, record the field as blocked, and retry in a later research window. Do not solve or bypass the challenge and do not repeatedly probe it.
-- There is no verified numeric safe delay. A rapid tab fan-out was followed by a challenge, while a slower single-tab retry remained challenged, so use moderate variable pacing without treating it as a guarantee.
-- The canonical capture extension is `aeldmfnliicdpoggggpnbhpfbbkkkpmd`; keep duplicate extension `inepmoichhhgmpohidkjofleliiipccb` disabled. If the canonical window reaches Security Verification, close the tab after one sanitized blocked record and do not advance to another queue item in that same window.
+- Use only an explicitly authorized research browser. Keep raw capture data local, and never expose cookies, tokens, account data, or private request parameters in repository records.
+- Respect verification challenges, rate limits, and access controls. Stop the affected research route instead of solving, bypassing, or repeatedly probing a challenge.
+- Publish only sanitized public URLs and evidence-derived claims. Exact marketplace images may be published with an exact listing/model mapping, linked public source, seller or owner credit, observation date, alt text, fallback, and completed privacy review; attribution records provenance without asserting ownership or a general redistribution license. Keep raw page and network captures out of the repository.
 
 ## Validation and handoff
 
