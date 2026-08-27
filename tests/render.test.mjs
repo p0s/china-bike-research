@@ -135,6 +135,18 @@ test('candidate model pages keep alternative trims separate from the reference r
   assert.match(detail, /Custom size-L R7170 build/);
 });
 
+test('candidate details expose frame material and stiffness evidence without inventing a score', () => {
+  const cloned = structuredClone(data);
+  const candidate = cloned.candidates.find((item) => item.id === 'xlab-ad8');
+  candidate.facts.frame_material = 'Toray T800 and M40X carbon';
+  candidate.facts.stiffness_evidence = 'Manufacturer comparison; test protocol not published.';
+  const entry = joinCatalogCandidates(cloned).find((item) => item.candidate.id === candidate.id);
+  const detail = renderCandidateModel({ data: cloned, products: joinProducts(cloned), base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-08-27T00:00:00Z') }, entry);
+  assert.match(detail, /Frame material:<\/strong> Toray T800 and M40X carbon/);
+  assert.match(detail, /Stiffness evidence:<\/strong> Manufacturer comparison; test protocol not published/);
+  assert.doesNotMatch(detail, /stiffness score/i);
+});
+
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
   const entry = candidates.find((item) => item.candidate.id === 'pardus-spark-tourist');
   const detail = renderCandidateModel({

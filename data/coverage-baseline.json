@@ -7,8 +7,8 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 456,
-      "images": 176,
+      "sources": 464,
+      "images": 180,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
@@ -16,10 +16,10 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 420
+      "researchAttempts": 442
     },
     "image_accuracy": {
-      "exact-platform": 58,
+      "exact-platform": 62,
       "exact-variant": 79,
       "illustrative": 2,
       "same-model-different-color": 17,
@@ -28,11 +28,11 @@
     },
     "image_hosting": {
       "local": 2,
-      "remote": 174
+      "remote": 178
     },
     "candidate_prices": {
-      "official": 48,
-      "observed": 131
+      "official": 49,
+      "observed": 134
     }
   },
   "records": {
@@ -273,6 +273,8 @@
       "giant-propel-gen4-official-2026-08-17",
       "giant-tcr-advanced-0-axs-official-image-2026-08-17",
       "gpt-pro-electronic-groupsets-input-2026-08-24",
+      "hi-light-g7-2-frameset-official-2026-08-27",
+      "hi-light-g7-2-taobao-selected-options-2026-08-27",
       "hi-light-g7-2-villain-retailer-2026-08-27",
       "ican-company-official",
       "ican-gra04-alibaba-image",
@@ -290,7 +292,11 @@
       "incolor-voyager-retailer",
       "irefox-current-catalog-2026-08-09",
       "java-fuoco-top-105-official-2026-08-09",
+      "laget-brand-story-2026-08-27",
       "laget-china-contact-2026-08-17",
+      "laget-discovery-one-flagship-taobao-2026-08-27",
+      "laget-discovery-one-pro-taobao-2026-08-27",
+      "laget-discovery-one-pro-tiparts-2026-08-27",
       "laget-pioneer-one-tiparts-2026-08-17",
       "legit-ac1-official-2026-08-09",
       "lightcarbon-company-official",
@@ -336,6 +342,8 @@
       "pardus-super-sport-launch",
       "pardus-super-sport-launch-wildto-2026-08-17",
       "pardus-super-sport-official-2026-08-08",
+      "pardus-uragano-evo-apex-tmall-2026-08-27",
+      "pardus-uragano-evo-biketo-2026-08-27",
       "pardus-uragano-evo-uae-seller-2026-08-27",
       "pardus-uragano-f-official-store-promo-2026-08",
       "pardus-uragano-jd-route-2026-08-17",
@@ -694,6 +702,7 @@
       "giant-propel-gen4-primary-image",
       "giant-revolt-advanced-2-primary-image",
       "giant-tcr-advanced-primary-image",
+      "hi-light-g7-2-official-primary-image",
       "ican-gra04-detail-03-gallery",
       "ican-gra04-detail-04-gallery",
       "ican-gra04-detail-06-gallery",
@@ -719,6 +728,8 @@
       "incolor-voyager-primary-image",
       "incolor-voyager-seatpost-gallery",
       "incolor-voyager-udh-gallery",
+      "laget-discovery-one-flagship-official-primary-image",
+      "laget-discovery-one-pro-official-primary-image",
       "lightcarbon-lcg071s-pro-primary-image",
       "lightcarbon-speedz-primary-image",
       "look-765-electronic-primary-image",
@@ -739,6 +750,7 @@
       "pardus-spark-sport-pes-primary-image",
       "pardus-super-sport-gen2-candidate-primary-image",
       "pardus-super-sport-gen2-primary-image",
+      "pardus-uragano-evo-main-public-primary-image",
       "pardus-uragano-evo-public-primary-image",
       "pardus-uragano-sport-cn-cockpit-gallery",
       "pardus-uragano-sport-cn-drivetrain-primary-image",
@@ -1180,6 +1192,12 @@
       "candidate-giant-propel-gen4-community-lead-tire-clearance-2026-08-17",
       "candidate-giant-propel-gen4-community-lead-warranty-support-2026-08-17",
       "candidate-hi-light-g7-2-frame-weight-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-frame-stiffness-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27",
+      "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27",
       "candidate-hi-light-g7-2-tire-clearance-2026-08-27",
       "candidate-hongfu-gravel-price-2026-08-17",
       "candidate-hongfu-gravel-purchase-route-2026-08-17",
@@ -1198,6 +1216,16 @@
       "candidate-irefox-profound-400-price-2026-08-17",
       "candidate-irefox-profound-400-purchase-route-2026-08-17",
       "candidate-irefox-profound-400-warranty-support-2026-08-17",
+      "candidate-laget-discovery-one-flagship-frame-material-2026-08-27",
+      "candidate-laget-discovery-one-flagship-frame-stiffness-2026-08-27",
+      "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27",
+      "candidate-laget-discovery-one-flagship-price-2026-08-27",
+      "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27",
+      "candidate-laget-discovery-one-pro-frame-material-2026-08-27",
+      "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27",
+      "candidate-laget-discovery-one-pro-frame-weight-2026-08-27",
+      "candidate-laget-discovery-one-pro-price-2026-08-27",
+      "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27",
       "candidate-laget-discovery-slr-frame-weight-2026-08-27",
       "candidate-laget-discovery-slr-image-2026-08-27",
       "candidate-laget-discovery-slr-tire-clearance-2026-08-27",
@@ -1249,6 +1277,12 @@
       "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17",
       "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-pardus-uragano-evo-drivetrain-2026-08-27",
+      "candidate-pardus-uragano-evo-frame-material-2026-08-27",
+      "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27",
+      "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27",
+      "candidate-pardus-uragano-evo-price-2026-08-27",
+      "candidate-pardus-uragano-evo-tire-clearance-2026-08-27",
       "candidate-pardus-uragano-sport-current-configuration-2026-08-27",
       "candidate-pardus-uragano-sport-tire-clearance-2026-08-27",
       "candidate-quick-gr-one-price-2026-08-27",
@@ -5350,6 +5384,32 @@
         "title",
         "type"
       ],
+      "hi-light-g7-2-frameset-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "hi-light-g7-2-taobao-selected-options-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_skus",
+        "title",
+        "type",
+        "url"
+      ],
       "hi-light-g7-2-villain-retailer-2026-08-27": [
         "accessed_at",
         "language",
@@ -5555,6 +5615,18 @@
         "type",
         "url"
       ],
+      "laget-brand-story-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "laget-china-contact-2026-08-17": [
         "accessed_at",
         "language",
@@ -5563,6 +5635,47 @@
         "reliability.identity",
         "reliability.price",
         "reliability.route",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "laget-discovery-one-flagship-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "selected_sku_id",
+        "title",
+        "type",
+        "url"
+      ],
+      "laget-discovery-one-pro-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "title",
+        "type",
+        "url"
+      ],
+      "laget-discovery-one-pro-tiparts-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -6111,6 +6224,34 @@
         "accessed_at",
         "language",
         "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-uragano-evo-apex-tmall-2026-08-27": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "selected_sku_id",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-uragano-evo-biketo-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "published_at",
         "publisher",
         "reliability.identity",
         "reliability.price",
@@ -10610,6 +10751,22 @@
         "source_id",
         "subject_accuracy"
       ],
+      "hi-light-g7-2-official-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "ican-gra04-detail-03-gallery": [
         "alt",
         "credit",
@@ -11046,6 +11203,38 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "laget-discovery-one-flagship-official-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "laget-discovery-one-pro-official-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "lightcarbon-lcg071s-pro-primary-image": [
         "alt",
         "credit",
@@ -11403,6 +11592,34 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "pardus-uragano-evo-main-public-primary-image": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.mode",
+        "hosting.remote_url",
+        "hosting.variants",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "pardus-uragano-evo-public-primary-image": [
         "alt",
@@ -14857,15 +15074,38 @@
         "why_interesting"
       ],
       "hi-light-g7-2-grx-gr1600": [
+        "alternative_builds",
+        "brand_id",
         "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "manufacturing",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "official_price.amount_cny",
         "official_price.currency",
         "official_price.observed_at",
+        "official_price.price_basis",
         "official_price.price_type",
+        "reference_price_kind",
         "source_ids",
         "source_note",
         "source_url",
@@ -15255,14 +15495,31 @@
         "why_interesting"
       ],
       "laget-discovery-one-flagship": [
+        "brand_id",
         "category",
+        "facts.bottom_bracket",
+        "facts.derailleur_hanger",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "official_price.amount_cny",
         "official_price.currency",
         "official_price.observed_at",
+        "official_price.price_basis",
         "official_price.price_type",
         "source_ids",
         "source_note",
@@ -15272,14 +15529,32 @@
         "why_interesting"
       ],
       "laget-discovery-one-pro": [
+        "brand_id",
         "category",
+        "facts.bottom_bracket",
+        "facts.derailleur_hanger",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "official_price.amount_cny",
         "official_price.currency",
         "official_price.observed_at",
+        "official_price.price_basis",
         "official_price.price_type",
         "source_ids",
         "source_note",
@@ -16611,7 +16886,23 @@
         "why_interesting"
       ],
       "pardus-uragano-evo": [
+        "alternative_builds",
+        "brand_id",
         "category",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.mounts",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
@@ -16621,6 +16912,14 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "reference_price_kind",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
         "status",
@@ -19246,6 +19545,90 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-hi-light-g7-2-tire-clearance-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -19491,6 +19874,139 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-flagship-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-pro-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-pro-frame-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-pro-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -20243,6 +20759,88 @@
       ],
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-drivetrain-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-evo-tire-clearance-2026-08-27": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -25445,6 +26043,8 @@
       "giant-propel-gen4-official-2026-08-17": [],
       "giant-tcr-advanced-0-axs-official-image-2026-08-17": [],
       "gpt-pro-electronic-groupsets-input-2026-08-24": [],
+      "hi-light-g7-2-frameset-official-2026-08-27": [],
+      "hi-light-g7-2-taobao-selected-options-2026-08-27": [],
       "hi-light-g7-2-villain-retailer-2026-08-27": [],
       "ican-company-official": [],
       "ican-gra04-alibaba-image": [],
@@ -25462,7 +26062,11 @@
       "incolor-voyager-retailer": [],
       "irefox-current-catalog-2026-08-09": [],
       "java-fuoco-top-105-official-2026-08-09": [],
+      "laget-brand-story-2026-08-27": [],
       "laget-china-contact-2026-08-17": [],
+      "laget-discovery-one-flagship-taobao-2026-08-27": [],
+      "laget-discovery-one-pro-taobao-2026-08-27": [],
+      "laget-discovery-one-pro-tiparts-2026-08-27": [],
       "laget-pioneer-one-tiparts-2026-08-17": [],
       "legit-ac1-official-2026-08-09": [],
       "lightcarbon-company-official": [],
@@ -25508,6 +26112,8 @@
       "pardus-super-sport-launch": [],
       "pardus-super-sport-launch-wildto-2026-08-17": [],
       "pardus-super-sport-official-2026-08-08": [],
+      "pardus-uragano-evo-apex-tmall-2026-08-27": [],
+      "pardus-uragano-evo-biketo-2026-08-27": [],
       "pardus-uragano-evo-uae-seller-2026-08-27": [],
       "pardus-uragano-f-official-store-promo-2026-08": [],
       "pardus-uragano-jd-route-2026-08-17": [],
@@ -25973,6 +26579,10 @@
         "candidate_id=missing-china-price-giant-tcr-advanced",
         "source_id=giant-tcr-advanced-0-axs-official-image-2026-08-17"
       ],
+      "hi-light-g7-2-official-primary-image": [
+        "candidate_id=hi-light-g7-2-grx-gr1600",
+        "source_id=titanium-hi-light-g7-2-grx-gr1600-official"
+      ],
       "ican-gra04-detail-03-gallery": [
         "platform_id=ican-gra04",
         "source_id=ican-gra04-official",
@@ -26095,6 +26705,14 @@
         "source_id=incolor-voyager-official-2026-08-25",
         "variant_ids=incolor-voyager-frameset"
       ],
+      "laget-discovery-one-flagship-official-primary-image": [
+        "candidate_id=laget-discovery-one-flagship",
+        "source_id=titanium-laget-discovery-one-flagship-official"
+      ],
+      "laget-discovery-one-pro-official-primary-image": [
+        "candidate_id=laget-discovery-one-pro",
+        "source_id=titanium-laget-discovery-one-pro-official"
+      ],
       "lightcarbon-lcg071s-pro-primary-image": [
         "platform_id=lightcarbon-lcg071s-pro",
         "source_id=lightcarbon-image-reference",
@@ -26178,6 +26796,10 @@
         "platform_id=pardus-super-sport-gen2",
         "source_id=pardus-super-sport-image-reference",
         "variant_ids=pardus-super-sport-gen2-egr"
+      ],
+      "pardus-uragano-evo-main-public-primary-image": [
+        "candidate_id=pardus-uragano-evo",
+        "source_id=public-pardus-uragano-evo-build-2026-08-17"
       ],
       "pardus-uragano-evo-public-primary-image": [
         "candidate_id=pardus-uragano-evo-community-lead",
@@ -27017,7 +27639,10 @@
         "source_ids=titanium-hi-light-g7-2-official"
       ],
       "hi-light-g7-2-grx-gr1600": [
+        "brand_id=hi-light",
         "model_id=hi-light-g7-2-grx-gr1600",
+        "source_ids=hi-light-g7-2-frameset-official-2026-08-27",
+        "source_ids=hi-light-g7-2-taobao-selected-options-2026-08-27",
         "source_ids=titanium-hi-light-g7-2-grx-gr1600-official"
       ],
       "hi-light-r6-105-al": [
@@ -27114,11 +27739,18 @@
         "source_ids=titanium-laget-aero-one-official"
       ],
       "laget-discovery-one-flagship": [
+        "brand_id=laget",
         "model_id=laget-discovery-one-flagship",
+        "source_ids=laget-brand-story-2026-08-27",
+        "source_ids=laget-discovery-one-flagship-taobao-2026-08-27",
         "source_ids=titanium-laget-discovery-one-flagship-official"
       ],
       "laget-discovery-one-pro": [
+        "brand_id=laget",
         "model_id=laget-discovery-one-pro",
+        "source_ids=laget-brand-story-2026-08-27",
+        "source_ids=laget-discovery-one-pro-taobao-2026-08-27",
+        "source_ids=laget-discovery-one-pro-tiparts-2026-08-27",
         "source_ids=titanium-laget-discovery-one-pro-official"
       ],
       "laget-discovery-slr": [
@@ -27459,7 +28091,11 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-uragano-evo": [
+        "brand_id=pardus",
         "model_id=pardus-uragano-evo",
+        "source_ids=pardus-uragano-evo-apex-tmall-2026-08-27",
+        "source_ids=pardus-uragano-evo-biketo-2026-08-27",
+        "source_ids=public-pardus-uragano-evo-build-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-uragano-evo-community-lead": [
@@ -28099,6 +28735,24 @@
       "candidate-hi-light-g7-2-frame-weight-2026-08-27": [
         "target.record_id=hi-light-g7-2"
       ],
+      "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-frame-stiffness-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
+      "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27": [
+        "target.record_id=hi-light-g7-2-grx-gr1600"
+      ],
       "candidate-hi-light-g7-2-tire-clearance-2026-08-27": [
         "target.record_id=hi-light-g7-2"
       ],
@@ -28152,6 +28806,36 @@
       ],
       "candidate-irefox-profound-400-warranty-support-2026-08-17": [
         "target.record_id=irefox-profound-400"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-material-2026-08-27": [
+        "target.record_id=laget-discovery-one-flagship"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-stiffness-2026-08-27": [
+        "target.record_id=laget-discovery-one-flagship"
+      ],
+      "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27": [
+        "target.record_id=laget-discovery-one-flagship"
+      ],
+      "candidate-laget-discovery-one-flagship-price-2026-08-27": [
+        "target.record_id=laget-discovery-one-flagship"
+      ],
+      "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27": [
+        "target.record_id=laget-discovery-one-flagship"
+      ],
+      "candidate-laget-discovery-one-pro-frame-material-2026-08-27": [
+        "target.record_id=laget-discovery-one-pro"
+      ],
+      "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27": [
+        "target.record_id=laget-discovery-one-pro"
+      ],
+      "candidate-laget-discovery-one-pro-frame-weight-2026-08-27": [
+        "target.record_id=laget-discovery-one-pro"
+      ],
+      "candidate-laget-discovery-one-pro-price-2026-08-27": [
+        "target.record_id=laget-discovery-one-pro"
+      ],
+      "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27": [
+        "target.record_id=laget-discovery-one-pro"
       ],
       "candidate-laget-discovery-slr-frame-weight-2026-08-27": [
         "target.record_id=laget-discovery-slr"
@@ -28305,6 +28989,24 @@
       ],
       "candidate-pardus-uragano-evo-current-configuration-2026-08-27": [
         "target.record_id=pardus-uragano-evo-community-lead"
+      ],
+      "candidate-pardus-uragano-evo-drivetrain-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
+      ],
+      "candidate-pardus-uragano-evo-frame-material-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
+      ],
+      "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
+      ],
+      "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
+      ],
+      "candidate-pardus-uragano-evo-price-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
+      ],
+      "candidate-pardus-uragano-evo-tire-clearance-2026-08-27": [
+        "target.record_id=pardus-uragano-evo"
       ],
       "candidate-pardus-uragano-sport-current-configuration-2026-08-27": [
         "target.record_id=pardus-uragano-sport"
@@ -29781,6 +30483,22 @@
         "specification": 1
       }
     },
+    "hi-light-g7-2-frameset-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "hi-light-g7-2-taobao-selected-options-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
     "hi-light-g7-2-villain-retailer-2026-08-27": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -29918,6 +30636,14 @@
         "specification": 3
       }
     },
+    "laget-brand-story-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "laget-china-contact-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -29925,6 +30651,30 @@
         "price": 0,
         "route": 3,
         "specification": -1
+      }
+    },
+    "laget-discovery-one-flagship-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
+    "laget-discovery-one-pro-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
+    "laget-discovery-one-pro-tiparts-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "laget-pioneer-one-tiparts-2026-08-17": {
@@ -30297,6 +31047,22 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "pardus-uragano-evo-apex-tmall-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 1
+      }
+    },
+    "pardus-uragano-evo-biketo-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "pardus-uragano-evo-uae-seller-2026-08-27": {
@@ -33607,6 +34373,82 @@
         "hi-light-g7-2-villain-retailer-2026-08-27"
       ]
     },
+    "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"海莱特 G7.2 GRX810 GR1600 重量\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"Hi-Light G7.2 GRX GR1600 complete weight\",\"manufacturer exact complete-bike page\",\"no-result\",\"2026-08-27\",\"Exact BOM and price are present, but the weight field is blank.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/176.html\"]",
+        "[\"web\",2,\"Hi-Light G7.2 GR1600 整车 重量\",\"manufacturer exact frameset fallback\",\"rejected\",\"2026-08-27\",\"Frameset page cannot establish complete-bike weight.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/119.html\"]",
+        "[\"web\",3,\"G7.2 钛合金 砾石 自行车\",\"Taobao exact listing with selected option and visually verified specification panel\",\"found\",\"2026-08-27\",\"Selected option 7 states an approximate 8.0 kg complete-bike weight; size, pedals and measurement method are not stated.\",\"https://item.taobao.com/item.htm?id=665657868481\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27"
+      ]
+    },
+    "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 GRX GR1600 drivetrain\",\"manufacturer exact complete-bike page\",\"found\",\"2026-08-27\",\"The official alternative build lists Shimano GRX RX810 2x11 with 48/31T and 11-32T gearing.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/176.html\"]",
+        "[\"web\",2,\"G7.2 钛合金 砾石 自行车\",\"Taobao exact listing with selected option and visually verified specification panel\",\"found\",\"2026-08-27\",\"Selected lightweight option 7 lists Shimano GRX810 1x11 with a 40T or 42T ring and 11-42T cassette.\",\"https://item.taobao.com/item.htm?id=665657868481\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27",
+        "titanium-hi-light-g7-2-grx-gr1600-official"
+      ]
+    },
+    "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 titanium tubing construction AL-6061-T6\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Exact page identifies a hydroformed variable-wall titanium frame, CNC dropouts and replaceable AL-6061-T6 dropout inserts.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/119.html\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-frameset-official-2026-08-27"
+      ]
+    },
+    "candidate-hi-light-g7-2-grx-gr1600-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"海莱特 G7.2 刚性 评测\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"Hi-Light G7.2 frame stiffness test\",\"manufacturer exact frameset page\",\"no-result\",\"2026-08-27\",\"Construction is documented, but no stiffness test or exact-model ride assessment is published.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/119.html\"]",
+        "[\"web\",2,\"Hi-Light G7.2 review stiffness\",\"manufacturer exact complete-bike page\",\"no-result\",\"2026-08-27\",\"Exact build page provides no stiffness basis.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/176.html\"]",
+        "[\"web\",3,\"海莱特 G7.2 刚性 评测\",\"indexed exact-model web search\",\"no-result\",\"2026-08-27\",\"No attributable measured or qualitative exact-model result surfaced.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 GRX GR1600 official price\",\"manufacturer exact complete-bike page\",\"found\",\"2026-08-27\",\"Manufacturer lists CNY 17,500 for the exact RX810 and GR1600 build.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/176.html\"]",
+        "[\"web\",2,\"G7.2 钛合金 砾石 自行车\",\"Taobao exact listing with selected option\",\"conflict\",\"2026-08-27\",\"Selected option 7 is CNY 14,999 but uses GRX810 1x11 and seller-custom carbon wheels, not the official GR1600 package.\",\"https://item.taobao.com/item.htm?id=665657868481\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27",
+        "titanium-hi-light-g7-2-grx-gr1600-official"
+      ]
+    },
+    "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Hi-Light G7.2 maximum tire 47-622 700x45C\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Manufacturer specifies maximum ETRTO 47-622 and labels it 700x45C.\",\"https://cn.tibicycle.com/BICYCLES_detail_1/119.html\"]"
+      ],
+      "accepted_source_ids": [
+        "hi-light-g7-2-frameset-official-2026-08-27"
+      ]
+    },
     "candidate-hi-light-g7-2-tire-clearance-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -33836,6 +34678,124 @@
         "[\"web\",3,\"IREFOX current marketplace support\",\"official/current marketplace\",\"no-result\",\"2026-08-17\",\"No evidence.\",\"https://www.jd.com/jiage/131810d11b5e44e5573b.html\"]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-laget-discovery-one-flagship-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE flagship full 3D printed titanium\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Exact page identifies full 3D-printed titanium construction with a carbon fork.\",\"https://lagetbike.com/productinfo/2337830.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-one-flagship-official"
+      ]
+    },
+    "candidate-laget-discovery-one-flagship-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"LAGET Discovery ONE 旗舰 刚性 评测\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"LAGET Discovery ONE flagship stiffness test\",\"manufacturer exact frameset page\",\"no-result\",\"2026-08-27\",\"Exact page documents construction but no measured stiffness or exact-model ride assessment.\",\"https://lagetbike.com/productinfo/2337830.html\"]",
+        "[\"web\",2,\"LAGET Discovery ONE 3D titanium rigidity\",\"manufacturer brand story\",\"rejected\",\"2026-08-27\",\"Brand-level rigidity language is not exact-model stiffness evidence.\",\"https://www.lagetbike.com/ppgs\"]",
+        "[\"web\",3,\"LAGET Discovery ONE 旗舰 刚性 评测\",\"indexed exact-model web search\",\"no-result\",\"2026-08-27\",\"No attributable exact-model measured or qualitative result surfaced.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE flagship frame weight size S\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Manufacturer states 1.45 kg for size S; this is frame weight.\",\"https://lagetbike.com/productinfo/2337830.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-one-flagship-official"
+      ]
+    },
+    "candidate-laget-discovery-one-flagship-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE flagship official price\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Manufacturer lists CNY 25,900 for the exact frameset.\",\"https://lagetbike.com/productinfo/2337830.html\"]",
+        "[\"web\",2,\"LAGET DISCOVERY ONE flagship 3D titanium\",\"Taobao exact listing with S-size option selected\",\"found\",\"2026-08-27\",\"Selected S-size anodized-gold frameset shows CNY 25,900 after the displayed CNY 100 coupon.\",\"https://item.taobao.com/item.htm?id=1051152113706\"]"
+      ],
+      "accepted_source_ids": [
+        "laget-discovery-one-flagship-taobao-2026-08-27",
+        "titanium-laget-discovery-one-flagship-official"
+      ]
+    },
+    "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE flagship maximum tire 700x50C\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Exact product page specifies a 700x50C maximum.\",\"https://lagetbike.com/productinfo/2337830.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-one-flagship-official"
+      ]
+    },
+    "candidate-laget-discovery-one-pro-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE PRO fully 3D printed titanium\",\"authorized retailer exact frameset page\",\"found\",\"2026-08-27\",\"Exact listing identifies fully 3D-printed titanium construction and a carbon fork.\",\"https://tipartstitanium.com/products/laget-discovery-one-pro-titanium-gravel-frameset-3d-printed-titanium-1-380g-s-700x45c\"]"
+      ],
+      "accepted_source_ids": [
+        "laget-discovery-one-pro-tiparts-2026-08-27",
+        "titanium-laget-discovery-one-pro-official"
+      ]
+    },
+    "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE PRO stiffness ride quality\",\"authorized retailer exact frameset page\",\"found\",\"2026-08-27\",\"Retailer gives a qualitative strength and long-distance ride claim; no measured deflection protocol or score is supplied.\",\"https://tipartstitanium.com/products/laget-discovery-one-pro-titanium-gravel-frameset-3d-printed-titanium-1-380g-s-700x45c\"]"
+      ],
+      "accepted_source_ids": [
+        "laget-discovery-one-pro-tiparts-2026-08-27"
+      ]
+    },
+    "candidate-laget-discovery-one-pro-frame-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE PRO frame weight size S\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Manufacturer states 1.38 kg for size S; this is frame weight, not a complete build.\",\"https://lagetbike.com/productinfo/3545905.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-one-pro-official"
+      ]
+    },
+    "candidate-laget-discovery-one-pro-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE PRO official price\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Manufacturer lists CNY 21,900 for the exact frameset.\",\"https://lagetbike.com/productinfo/3545905.html\"]",
+        "[\"web\",2,\"LAGET DISCOVERY ONE PRO\",\"Taobao exact listing without a cheaper option selector\",\"found\",\"2026-08-27\",\"Exact brushed-finish PRO frameset listing shows CNY 21,900 with no cheaper variant selector.\",\"https://item.taobao.com/item.htm?id=984904408137\"]"
+      ],
+      "accepted_source_ids": [
+        "laget-discovery-one-pro-taobao-2026-08-27",
+        "titanium-laget-discovery-one-pro-official"
+      ]
+    },
+    "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery ONE PRO maximum tire 700x45C\",\"manufacturer exact frameset page\",\"found\",\"2026-08-27\",\"Exact product page specifies a 700x45C maximum.\",\"https://lagetbike.com/productinfo/3545905.html\"]"
+      ],
+      "accepted_source_ids": [
+        "titanium-laget-discovery-one-pro-official"
+      ]
     },
     "candidate-laget-discovery-slr-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
@@ -34541,6 +35501,79 @@
         "[\"web\",3,\"PARDUS Uragano EVO Rival XPLR\",\"foreign exact-model retailer\",\"rejected\",\"2026-08-27\",\"Sold-out foreign configuration cannot establish the current domestic SKU.\",\"https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202\"]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-pardus-uragano-evo-drivetrain-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO Apex AXS X1 Eagle drivetrain\",\"exact-build editorial review\",\"found\",\"2026-08-27\",\"Review identifies Apex AXS controls, X1 Eagle AXS rear derailleur, 40T ring and 11-50T cassette.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-evo-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO HS carbon frame material\",\"exact-model editorial review\",\"found\",\"2026-08-27\",\"Review identifies PARDUS HS high-strength carbon and UDH; supplier, fiber grade and lay-up remain unpublished.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO stiffness ride review\",\"exact-build editorial review\",\"found\",\"2026-08-27\",\"Reviewer describes the frame tuning as on the stiff side on coarse gravel; no measured protocol or score is supplied.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"PARDUS URAGANO EVO 重量\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"PARDUS Uragano EVO 9.65kg review\",\"exact-build editorial review\",\"found\",\"2026-08-27\",\"Review reports 9.65 kg without clipless pedals; size and remaining conditions are not stated.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-evo-price-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO 2023 official retail price\",\"exact-build editorial review\",\"found\",\"2026-08-27\",\"Historic exact-build retail price is CNY 23,999.\",\"https://www.biketo.com/product/52352.html?all=1\"]",
+        "[\"web\",2,\"PARDUS Uragano EVO 2026 marketplace subsidy\",\"archived Taobao market snapshot\",\"conflict\",\"2026-08-27\",\"CNY 15,527.25 is preserved, but exact selected option and component package are unresolved.\",null]",
+        "[\"web\",3,\"PARDUS Uragano EVO APEX\",\"PARDUS official flagship-store exact Tmall listing and selected option\",\"found\",\"2026-08-27\",\"Selected APEX 12-speed, brown-green, size-S SKU 6023726818481 shows CNY 18,999. The listing does not publish a complete-bike weight or full component package.\",\"https://detail.tmall.com/item.htm?id=739901894991\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-apex-tmall-2026-08-27",
+        "pardus-uragano-evo-biketo-2026-08-27",
+        "taobao-snapshot-2026-08-08"
+      ]
+    },
+    "candidate-pardus-uragano-evo-tire-clearance-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano EVO maximum tire 700x45C\",\"exact-model editorial review\",\"found\",\"2026-08-27\",\"Review states a manufacturer maximum of 700x45C and distinguishes the fitted 700x40C tires.\",\"https://www.biketo.com/product/52352.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
     },
     "candidate-pardus-uragano-sport-current-configuration-2026-08-27": {
       "channel_attempt_counts": {
@@ -38839,6 +39872,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "hi-light-g7-2-official-primary-image": {
+      "target": "candidates:hi-light-g7-2-grx-gr1600",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "ican-gra04-detail-03-gallery": {
       "target": "platforms:ican-gra04",
       "minimum_accuracy_rank": 3,
@@ -39014,6 +40054,20 @@
       "remote_required": true,
       "primary_required": false
     },
+    "laget-discovery-one-flagship-official-primary-image": {
+      "target": "candidates:laget-discovery-one-flagship",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "laget-discovery-one-pro-official-primary-image": {
+      "target": "candidates:laget-discovery-one-pro",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "lightcarbon-lcg071s-pro-primary-image": {
       "target": "platforms:lightcarbon-lcg071s-pro",
       "minimum_accuracy_rank": 4,
@@ -39150,6 +40204,13 @@
     "pardus-super-sport-gen2-primary-image": {
       "target": "platforms:pardus-super-sport-gen2",
       "minimum_accuracy_rank": 1,
+      "minimum_source_tier": 1,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "pardus-uragano-evo-main-public-primary-image": {
+      "target": "candidates:pardus-uragano-evo",
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
@@ -39971,6 +41032,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:hi-light-g7-2-grx-gr1600": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:icanian-p9": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
@@ -39984,6 +41050,16 @@
     "candidates:incolor-ssr": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 1,
+      "remote_required": true
+    },
+    "candidates:laget-discovery-one-flagship": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:laget-discovery-one-pro": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "candidates:look-765-electronic": {
@@ -40153,6 +41229,11 @@
     },
     "candidates:pardus-super-sport-gen2": {
       "minimum_accuracy_rank": 2,
+      "minimum_source_tier": 1,
+      "remote_required": true
+    },
+    "candidates:pardus-uragano-evo": {
+      "minimum_accuracy_rank": 3,
       "minimum_source_tier": 1,
       "remote_required": true
     },
@@ -40718,6 +41799,7 @@
         "official_price"
       ],
       "hi-light-g7-2-grx-gr1600": [
+        "observed_price",
         "official_price"
       ],
       "hi-light-r6-105-al": [
@@ -40781,9 +41863,11 @@
         "official_price"
       ],
       "laget-discovery-one-flagship": [
+        "observed_price",
         "official_price"
       ],
       "laget-discovery-one-pro": [
+        "observed_price",
         "official_price"
       ],
       "laget-discovery-slr": [
@@ -40930,7 +42014,8 @@
         "observed_price"
       ],
       "pardus-uragano-evo": [
-        "observed_price"
+        "observed_price",
+        "official_price"
       ],
       "pardus-uragano-f": [
         "observed_price"

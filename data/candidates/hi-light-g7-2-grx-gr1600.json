@@ -1,27 +1,145 @@
 {
   "id": "hi-light-g7-2-grx-gr1600",
-  "name": "Hi-Light 航轮 G7.2 GRX GR1600",
+  "name": "Hi-Light 航轮 G7.2",
   "model_id": "hi-light-g7-2-grx-gr1600",
+  "brand_id": "hi-light",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Complete-bike price lets the site compare titanium frameset and finished-bike value directly.",
-  "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
-    "Rights-cleared exact product image"
-  ],
-  "status": "titanium-priority",
-  "source_ids": [
-    "titanium-hi-light-g7-2-grx-gr1600-official"
-  ],
+  "why_interesting": "A 45 mm-clearance titanium gravel bike with a selected 8.0 kg GRX810 marketplace build plus several exact mainland alternatives.",
+  "facts": {
+    "drivetrain": "Shimano GRX RX810 mechanical 1×11; 40T or 42T chainring and 11–42T cassette",
+    "complete_weight_g": 8000,
+    "complete_weight_basis": "Seller-listed approximate complete-bike weight for selected option 7; size, pedals and measurement method are not stated",
+    "frame": "Hi-Light G7.2 titanium frame with GFK70 carbon fork",
+    "frame_material": "Titanium frame with hydroformed shaped, variable-wall tubes; exact titanium grade is not published",
+    "frame_construction": "Hydroformed shaped and variable-wall tubes, CNC-formed dropouts and replaceable AL-6061-T6 dropout inserts",
+    "bottom_bracket": "BSA threaded",
+    "tire_clearance_mm": 45,
+    "tire_clearance_basis": "Manufacturer maximum: ETRTO 47-622 / 700×45C on the exact G7.2 frame",
+    "wheels": "Seller-custom GRAVEL carbon wheelset",
+    "tires": "Maxxis 700×35C folding tires with 32–45C TPU tubes",
+    "cockpit": "Panshi Ni third-generation carbon integrated cockpit and Asian carbon seatpost",
+    "brakes": "Shimano GRX hydraulic calipers with CL800 160 mm center-lock rotors",
+    "sizes": "S, M, L, XL, XXL and XXXL; custom sizing offered"
+  },
+  "reference_price_kind": "observed",
   "official_price": {
     "amount_cny": 17500,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-08-27",
+    "price_basis": "G7.2 GRX GR1600 complete bike with the official RX810 / GR1600 component list"
   },
+  "observed_price": {
+    "amount_cny": 14999,
+    "currency": "CNY",
+    "observed_at": "2026-08-27",
+    "price_basis": "Selected Taobao option 7: G7.2 lightweight race build with GRX810 1×11 and seller-custom carbon wheels",
+    "observation_count": 1
+  },
+  "alternative_builds": [
+    {
+      "id": "official-rx810-gr1600",
+      "label": "Official RX810 2×11 / GR1600 build",
+      "drivetrain": "Shimano GRX RX810 mechanical 2×11; 48/31T crank and 11–32T cassette",
+      "wheels": "DT Swiss GR1600",
+      "tires": "WTB Resolute 700×42C",
+      "price": {
+        "amount_cny": 17500,
+        "currency": "CNY",
+        "price_type": "official-retail",
+        "observed_at": "2026-08-27",
+        "price_basis": "Manufacturer RX810 / GR1600 complete-bike specification"
+      },
+      "source_ids": ["titanium-hi-light-g7-2-grx-gr1600-official"],
+      "notes": "Manufacturer publishes a complete BOM but leaves the complete-bike weight field blank."
+    },
+    {
+      "id": "taobao-config-4-grx600",
+      "label": "Taobao option 4 GRX600 build",
+      "drivetrain": "Shimano GRX600 large package offered as 1×11 or 2×11; exact sub-choice is not exposed by the option label",
+      "complete_weight_g": 9500,
+      "weight_basis": "Seller-listed approximate complete-bike weight; size, pedals and measurement method are not stated.",
+      "wheels": "DT Swiss G540 23 mm aluminum",
+      "tires": "Schwalbe G-One 700×40C",
+      "price": {
+        "amount_cny": 11999,
+        "currency": "CNY",
+        "price_type": "marketplace-selected-option",
+        "observed_at": "2026-08-27",
+        "price_basis": "Selected option 4, SKU 5656542530815"
+      },
+      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "notes": "The panel lists an optional GRX810 upgrade for CNY 1,080 or GRX820 upgrade for CNY 1,560; neither upgrade is included in the selected price."
+    },
+    {
+      "id": "taobao-config-5-grx810-g1800",
+      "label": "Taobao option 5 GRX810 / G1800 build",
+      "drivetrain": "Shimano GRX810 large package offered as 1×11 or 2×11; exact sub-choice is not exposed by the option label",
+      "complete_weight_g": 9500,
+      "weight_basis": "Seller-listed approximate complete-bike weight; size, pedals and measurement method are not stated.",
+      "wheels": "DT Swiss G1800 23 mm aluminum",
+      "tires": "Schwalbe G-One 700×40C",
+      "price": {
+        "amount_cny": 14899,
+        "currency": "CNY",
+        "price_type": "marketplace-selected-option",
+        "observed_at": "2026-08-27",
+        "price_basis": "Selected option 5, SKU 5656542530816"
+      },
+      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "notes": "The panel lists an optional GRX820 12-speed upgrade for CNY 480; it is not included in the selected price."
+    },
+    {
+      "id": "taobao-config-6-full-titanium-grx810",
+      "label": "Taobao option 6 full-titanium GRX810 build",
+      "drivetrain": "Shimano GRX810 large package offered as 1×11 or 2×11; exact sub-choice is not exposed by the option label",
+      "complete_weight_g": 9700,
+      "weight_basis": "Seller-listed approximate complete-bike weight; size, pedals and measurement method are not stated.",
+      "wheels": "DT Swiss A1800, P1800 or G1800 aluminum wheelset",
+      "tires": "Schwalbe G-One 700×40C",
+      "price": {
+        "amount_cny": 17999,
+        "currency": "CNY",
+        "price_type": "marketplace-selected-option",
+        "observed_at": "2026-08-27",
+        "price_basis": "Selected option 6, SKU 5656542530817"
+      },
+      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "notes": "Includes the seller's 3D titanium integrated fork and titanium integrated cockpit; 12-speed GRX upgrades are separately priced."
+    },
+    {
+      "id": "taobao-config-8-axs-xplr",
+      "label": "Taobao option 8 SRAM AXS XPLR build",
+      "drivetrain": "SRAM AXS XPLR wireless 1×12; 40T, 42T or 44T chainring and 10–44T cassette",
+      "complete_weight_g": 8700,
+      "weight_basis": "Seller-listed approximate complete-bike weight; size, pedals and measurement method are not stated.",
+      "wheels": "DT Swiss A1800 30 mm 2025 wheelset",
+      "tires": "Maxxis 700×35C folding tires",
+      "price": {
+        "amount_cny": 17199,
+        "currency": "CNY",
+        "price_type": "marketplace-selected-option",
+        "observed_at": "2026-08-27",
+        "price_basis": "Selected option 8, SKU 5656542530819"
+      },
+      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "notes": "The panel separately offers GRX825 Di2 and GRX827 wireless upgrade prices; they are not included in this selected AXS price."
+    }
+  ],
+  "missing": [
+    "Independent complete-bike weight measurement with size and pedal basis",
+    "Meaningful exact-model stiffness evidence",
+    "Mainland warranty issuer and invoice handling for the selected marketplace build"
+  ],
+  "status": "selected-marketplace-build-documented",
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/176.html",
-  "source_note": "Official page lists retail price ¥17,500.",
+  "source_note": "Official page lists the G7.2 GRX GR1600 complete bike at CNY 17,500; the selected Taobao option is stored separately.",
   "manufacturing": "titanium complete bike",
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "titanium-hi-light-g7-2-grx-gr1600-official",
+    "hi-light-g7-2-frameset-official-2026-08-27",
+    "hi-light-g7-2-taobao-selected-options-2026-08-27"
+  ],
+  "last_reviewed": "2026-08-27"
 }

@@ -101,7 +101,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 176);
+  assert.equal(data.images.length, 180);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -109,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 204);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 420);
+  assert.equal(data.researchAttempts.length, 442);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -505,8 +505,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 174);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 100);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 178);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 104);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -669,6 +669,16 @@ test('X-LAB model records keep one coherent reference trim and separate alternat
   assert.equal(rs9.observed_price.amount_cny, 49980);
   assert.match(rs9.facts.tire_clearance_basis, /fitted 32C/i);
   assert.equal(rs9.alternative_builds[0].complete_weight_g, 6800);
+});
+
+test('candidate reference price can keep an exact documented trim coherent', () => {
+  const cloned = structuredClone(data);
+  const candidate = cloned.candidates.find((item) => item.id === 'pardus-uragano-evo');
+  candidate.reference_price_kind = 'official';
+  candidate.official_price = { amount_cny: 23999, currency: 'CNY', price_type: 'historical-official-retail', observed_at: '2023-11-29' };
+  const entry = joinCatalogCandidates(cloned).find((item) => item.candidate.id === candidate.id);
+  assert.equal(entry.priceKind, 'official');
+  assert.equal(entry.price.amount_cny, 23999);
 });
 
 test('shared frame images do not masquerade as exact component builds', () => {

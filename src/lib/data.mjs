@@ -411,6 +411,9 @@ export function validateDataset(data = loadDataset()) {
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
+    for (const key of ['material', 'fork_material', 'material_grade', 'claimed_fiber', 'construction', 'stiffness_evidence']) {
+      if (platform.frame?.[key] !== undefined && (typeof platform.frame[key] !== 'string' || !platform.frame[key].trim())) errors.push(`platform ${platform.id}: invalid frame.${key}`);
+    }
     const requiresClearance = platform.category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(platform.category);
     if (requiresClearance && !isObject(platform.tire_clearance)) errors.push(`platform ${platform.id}: gravel-family platform needs tire_clearance`);
     if (platform.tire_clearance !== undefined) {
@@ -507,6 +510,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
     if (candidate.source_url !== undefined) {
       try {
         const sourceUrl = new URL(candidate.source_url);
@@ -525,7 +529,7 @@ export function validateDataset(data = loadDataset()) {
       if (!isObject(candidate.facts)) {
         errors.push(`candidate ${candidate.id}: facts must be an object`);
       } else {
-        for (const key of ['drivetrain', 'brakes', 'frame', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
+        for (const key of ['drivetrain', 'brakes', 'frame', 'frame_material', 'frame_construction', 'stiffness_evidence', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
           if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'string' || !candidate.facts[key].trim())) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
           }
@@ -926,7 +930,12 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const categories = categoryValues(candidate.category);
       const observedPrice = candidate.observed_price ?? null;
       const officialPrice = candidate.official_price ?? null;
-      const price = [observedPrice, officialPrice]
+      const preferredPrice = candidate.reference_price_kind === 'official'
+        ? officialPrice
+        : candidate.reference_price_kind === 'observed'
+          ? observedPrice
+          : null;
+      const price = preferredPrice ?? [observedPrice, officialPrice]
         .filter(Boolean)
         .sort((a, b) => String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? '')))[0] ?? null;
       const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';

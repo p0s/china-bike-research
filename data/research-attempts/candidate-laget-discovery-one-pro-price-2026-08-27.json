@@ -1,0 +1,16 @@
+{
+  "id": "candidate-laget-discovery-one-pro-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "laget-discovery-one-pro" },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "LAGET Discovery ONE PRO official price", "route": "manufacturer exact frameset page", "outcome": "found", "result_url": "https://lagetbike.com/productinfo/3545905.html", "accessed_at": "2026-08-27", "note": "Manufacturer lists CNY 21,900 for the exact frameset." },
+    { "attempt": 2, "query": "LAGET DISCOVERY ONE PRO", "route": "Taobao exact listing without a cheaper option selector", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=984904408137", "accessed_at": "2026-08-27", "note": "Exact brushed-finish PRO frameset listing shows CNY 21,900 with no cheaper variant selector." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["titanium-laget-discovery-one-pro-official", "laget-discovery-one-pro-taobao-2026-08-27"],
+  "retry_after": null,
+  "notes": "Official and exact Taobao observations independently show CNY 21,900 for the frameset."
+}

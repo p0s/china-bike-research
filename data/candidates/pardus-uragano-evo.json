@@ -2,24 +2,83 @@
   "id": "pardus-uragano-evo",
   "name": "PARDUS 瑞豹 Uragano EVO",
   "model_id": "pardus-uragano-evo",
+  "brand_id": "pardus",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Image says flagship all-terrain gravel platform.",
-  "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
-  ],
-  "status": "publication-gate-not-met",
-  "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "observed_at": "2026-08-08",
-  "observed_price": {
-    "amount_cny": 15527.25,
+  "why_interesting": "A documented 45 mm-clearance electronic 1× gravel build with a 9.65 kg review weight and extensive cargo mounts.",
+  "facts": {
+    "drivetrain": "SRAM Apex AXS 1×12 with X1 Eagle AXS rear derailleur; 40T chainring and 11–50T cassette",
+    "complete_weight_g": 9650,
+    "complete_weight_basis": "Biketo review bike without clipless pedals; size and other measurement conditions are not stated",
+    "frame": "PARDUS HS-grade carbon gravel frame with UDH",
+    "frame_material": "PARDUS HS high-strength carbon; exact fiber supplier, grade and lay-up are not published",
+    "frame_construction": "Internal brake/electronic-routing-capable carbon frame with conventional 27.2 mm seatpost and UDH",
+    "stiffness_evidence": "Biketo ride review describes the frame tuning as on the stiff side on coarse gravel; this is a qualitative ride observation, not a measured stiffness score",
+    "tire_clearance_mm": 45,
+    "tire_clearance_basis": "Exact-model review states a 700×45C manufacturer maximum",
+    "wheels": "PARDUS PW3 DB aluminum",
+    "tires": "Continental Terra Trail 700×40C",
+    "cockpit": "MVMT M-Bronze carbon gravel handlebar with separate stem",
+    "brakes": "SRAM Apex AXS hydraulic with 160 mm center-lock rotors",
+    "mounts": "Front and rear racks, fenders, three bottle positions and four mounts on each fork leg"
+  },
+  "reference_price_kind": "official",
+  "official_price": {
+    "amount_cny": 23999,
     "currency": "CNY",
-    "observed_at": "2026-08-08",
-    "price_basis": "subsidy",
+    "price_type": "historical-official-retail",
+    "observed_at": "2023-11-29",
+    "price_basis": "Reviewed Apex AXS / X1 Eagle AXS complete-bike trim",
+    "conditions": "Historical official retail price reported with the 2023 review; not a current checkout price"
+  },
+  "observed_price": {
+    "amount_cny": 18999,
+    "currency": "CNY",
+    "observed_at": "2026-08-27",
+    "price_basis": "PARDUS official flagship-store APEX 12-speed complete bike; brown-green, size S, selected SKU 6023726818481",
     "observation_count": 1
   },
+  "alternative_builds": [
+    {
+      "id": "marketplace-subsidy-option-unresolved",
+      "label": "2026 marketplace subsidy observation",
+      "price": {
+        "amount_cny": 15527.25,
+        "currency": "CNY",
+        "observed_at": "2026-08-08",
+        "price_basis": "Subsidy price; exact option and component package unresolved"
+      },
+      "notes": "The archived observation identifies Uragano EVO but does not expose enough option detail to equate it with the reviewed 2023 Apex AXS build.",
+      "source_ids": ["taobao-snapshot-2026-08-08"]
+    },
+    {
+      "id": "official-store-apex-12-speed-brown-green-s",
+      "label": "Current official-store APEX 12-speed offer",
+      "drivetrain": "SRAM APEX 12-speed; the listing does not expose enough component detail to equate it with the reviewed 2023 Apex AXS / X1 Eagle AXS build",
+      "price": {
+        "amount_cny": 18999,
+        "currency": "CNY",
+        "observed_at": "2026-08-27",
+        "price_basis": "Brown-green, size S, selected SKU 6023726818481"
+      },
+      "notes": "The exact option was selected in the PARDUS official flagship-store listing. The page identifies a carbon frame, aluminum rims, hydraulic disc brakes and 12 speeds, but provides no complete-bike weight or detailed bill of materials.",
+      "source_ids": ["pardus-uragano-evo-apex-tmall-2026-08-27"]
+    }
+  ],
+  "missing": [
+    "Mainland warranty handling for the selected current official-store offer",
+    "Complete-bike weight and detailed component package for the selected current official-store offer",
+    "Current-generation continuity from the reviewed 2023 frame and build",
+    "Independent measured stiffness or deflection result"
+  ],
+  "status": "historical-reviewed-build-current-offer-observed",
+  "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "observed_at": "2026-08-27",
   "source_refs": "IMG_6859.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "pardus-uragano-evo-biketo-2026-08-27",
+    "public-pardus-uragano-evo-build-2026-08-17",
+    "pardus-uragano-evo-apex-tmall-2026-08-27"
+  ],
+  "last_reviewed": "2026-08-27"
 }

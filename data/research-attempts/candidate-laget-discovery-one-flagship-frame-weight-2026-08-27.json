@@ -1,0 +1,15 @@
+{
+  "id": "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "laget-discovery-one-flagship" },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "LAGET Discovery ONE flagship frame weight size S", "route": "manufacturer exact frameset page", "outcome": "found", "result_url": "https://lagetbike.com/productinfo/2337830.html", "accessed_at": "2026-08-27", "note": "Manufacturer states 1.45 kg for size S; this is frame weight." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["titanium-laget-discovery-one-flagship-official"],
+  "retry_after": null,
+  "notes": "Weight basis and reference size are explicit."
+}

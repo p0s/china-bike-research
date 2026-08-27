@@ -93,3 +93,36 @@ test('gap report preserves weight and selected-price basis as separate research 
   assert.ok(codes.has('complete-weight-basis-missing'));
   assert.ok(codes.has('price-basis-missing'));
 });
+
+test('a coherent historic reference trim does not hide a current observed price from the gap ledger', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.id === 'pardus-uragano-evo');
+  candidate.reference_price_kind = 'official';
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  assert.ok(record);
+  assert.ok(!record.gaps.some((gap) => gap.code === 'price-not-observed'));
+  assert.ok(!record.gaps.some((gap) => gap.code === 'price-basis-missing'));
+});
+
+test('gap report always seeks exact frame material details and meaningful stiffness evidence', () => {
+  const data = structuredClone(loadDataset());
+  const platform = data.platforms.find((item) => item.frame?.material === 'carbon');
+  platform.frame.material = 'carbon';
+  delete platform.frame.claimed_fiber;
+  delete platform.frame.material_grade;
+  delete platform.frame.construction;
+  delete platform.frame.stiffness_evidence;
+  const records = buildGapReport(data, '2026-08-27').records.filter((item) => item.platform_id === platform.id);
+  assert.ok(records.length > 0);
+  assert.ok(records.every((record) => record.gaps.some((gap) => gap.code === 'frame-material-detail-missing')));
+  assert.ok(records.every((record) => record.gaps.some((gap) => gap.code === 'stiffness-evidence-missing')));
+});
+
+test('candidate frame construction and stiffness evidence close their separate gaps', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.type === 'complete-bike');
+  candidate.facts = { ...(candidate.facts ?? {}), frame_material: 'Toray T800 and M40X carbon', stiffness_evidence: 'Manufacturer comparative torsional test; exact protocol recorded in the linked source.' };
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  assert.ok(!record.gaps.some((gap) => gap.code === 'frame-material-detail-missing'));
+  assert.ok(!record.gaps.some((gap) => gap.code === 'stiffness-evidence-missing'));
+});

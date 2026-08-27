@@ -1,0 +1,19 @@
+{
+  "id": "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2-grx-gr1600" },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": {
+    "status": "conflicted",
+    "conflict": "CNY 17,500 is the official RX810 2x11 / GR1600 build, while CNY 14,999 is the selected seller lightweight GRX810 1x11 / carbon-wheel build; neither price belongs to the other's component package.",
+    "attempts": [
+    { "attempt": 1, "query": "Hi-Light G7.2 GRX GR1600 official price", "route": "manufacturer exact complete-bike page", "outcome": "found", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/176.html", "accessed_at": "2026-08-27", "note": "Manufacturer lists CNY 17,500 for the exact RX810 and GR1600 build." },
+    { "attempt": 2, "query": "G7.2 钛合金 砾石 自行车", "route": "Taobao exact listing with selected option", "outcome": "conflict", "result_url": "https://item.taobao.com/item.htm?id=665657868481", "accessed_at": "2026-08-27", "note": "Selected option 7 is CNY 14,999 but uses GRX810 1x11 and seller-custom carbon wheels, not the official GR1600 package." }
+  ] } },
+  "status": "conflicted",
+  "accepted_source_ids": ["titanium-hi-light-g7-2-grx-gr1600-official", "hi-light-g7-2-taobao-selected-options-2026-08-27"],
+  "retry_after": null,
+  "notes": "Both exact prices are retained on their own coherent builds; the table uses the selected lightweight marketplace reference."
+}
