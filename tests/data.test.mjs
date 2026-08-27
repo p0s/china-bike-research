@@ -109,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 204);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 442);
+  assert.equal(data.researchAttempts.length, 462);
   assert.equal(products.length, data.variants.length);
 });
 

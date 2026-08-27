@@ -6,24 +6,38 @@
   "type": "frameset",
   "why_interesting": "Premium Chinese monocoque gravel frame; domestic RMB price needed.",
   "missing": [
-    "Dated mainland-China RMB observation",
-    "Final stock, exact package contents and mainland warranty handling"
+    "Confirm exact included package beyond the listed frame, cockpit and accessories",
+    "Mainland warranty issuer, invoice handling and final checkout conditions"
   ],
-  "status": "official-mainland-route-price-missing",
+  "status": "selected-mainland-price-observed",
   "existing_record_id": "quick-gr-one-frameset",
   "research_priority": "high",
   "price_status": "official mainland route with blank price",
   "required_before_dashboard": "Dated RMB price, final stock, exact package contents and mainland warranty handling",
   "source_ids": [
     "quick-gr-one-china-official-2026-08-25",
-    "quick-pro-warranty-official-2026-08-17"
+    "quick-pro-warranty-official-2026-08-17",
+    "quick-pro-gr-one-frameset-taobao-2026-08-28",
+    "quick-pro-gr-one-ride-review-2026-08-27"
   ],
   "source_url": "https://www.quick-bikes.com.cn/product/32.html",
-  "source_note": "The current official China frame page showed inventory 140 and buy/cart controls when inspected, but its price field was blank and no size/color stock split or final package was exposed.",
+  "source_note": "The official China frame page showed inventory and buy/cart controls but no price. A separate exact Taobao listing was opened and the ice-crack silver size-M option selected: SKU 6032567658829 showed CNY 13,600, visible stock and 15-day presale dispatch. Final package and warranty handling remain unresolved.",
+  "observed_price": {
+    "amount_cny": 13600,
+    "currency": "CNY",
+    "observed_at": "2026-08-28",
+    "price_basis": "Selected ice-crack silver, size M GR:ONE frameset; SKU 6032567658829",
+    "observation_count": 1
+  },
   "facts": {
+    "frame": "Toray T1100 + M65 high-modulus carbon GR:ONE frameset",
+    "frame_material": "Toray T1100 + M65 high-strength and high-modulus carbon",
+    "frame_construction": "Monolith one-piece monocoque molding with fully internal routing",
+    "stiffness_evidence": "An exact-model review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; this is qualitative ride evidence, not a measured lateral-stiffness result",
     "frame_weight_g": 919,
+    "frame_weight_basis": "Current official mainland listing: size M including paint and frame accessories, ±5%; fork and seatpost are separate",
     "bottom_bracket": "T47-68 threaded",
     "tire_clearance_mm": 45
   },
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-08-28"
 }

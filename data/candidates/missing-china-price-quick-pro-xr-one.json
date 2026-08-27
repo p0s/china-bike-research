@@ -6,14 +6,13 @@
   "type": "complete-bike",
   "why_interesting": "A 50 mm-clearance adventure build with in-frame storage, extensive mounts, GRX Di2 and an official global list price.",
   "missing": [
-    "Dated mainland-China RMB checkout observation and purchase route",
     "Mainland delivery, duties, returns, and warranty-handling confirmation",
     "Official claimed complete-bike weight"
   ],
-  "status": "official-global-complete-bike",
+  "status": "selected-mainland-build-observed",
   "research_priority": "high",
-  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
-  "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and local warranty evidence",
+  "price_status": "exact selected mainland Tmall build observed",
+  "required_before_dashboard": "Mainland delivery, returns, invoice and local warranty evidence",
   "video_ids": [
     "china-cycling-quick-pro-xr-one"
   ],
@@ -23,8 +22,17 @@
     "usd-cny-central-parity-2026-07-31",
     "quick-pro-complete-collection-official-2026-08-17",
     "quick-pro-xr-one-frame-official-2026-08-17",
-    "quick-pro-warranty-official-2026-08-17"
+    "quick-pro-warranty-official-2026-08-17",
+    "quick-pro-xr-one-tmall-2026-08-28"
   ],
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 19398,
+    "currency": "CNY",
+    "observed_at": "2026-08-28",
+    "price_basis": "Glass-yellow configuration two, size M, Shimano GRX Di2 1×12 complete bike; SKU 6181047722909",
+    "observation_count": 1
+  },
   "official_price": {
     "amount_cny": 29900,
     "currency": "CNY",
@@ -36,11 +44,15 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.quickprousa.com/products/xr-one-shimano",
-  "source_note": "Official global-store price US$4,399. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "source_note": "The exact official flagship-store Tmall listing maps configuration two to the tracked Shimano GRX Di2 1×12 build. Glass-yellow, size M, SKU 6181047722909 was selected at CNY 19,398. The listing also documents a CNY 10,998 frameset package and five other complete configurations; those remain separate. Official global-store price is US$4,399.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
-    "frame": "High-modulus monocoque carbon",
+    "frame": "High-strength and high-modulus monocoque carbon",
+    "frame_material": "High-strength and high-modulus carbon; exact fiber supplier and grade are not published on the current complete-bike page",
+    "frame_construction": "One-piece monocoque construction with integrated in-frame storage and up to 26 frame and fork mounting points",
+    "stiffness_evidence": "No attributable exact-model measured stiffness result or sufficiently specific independent ride assessment was found; manufacturer efficiency and ride-feel language remains marketing only",
     "frame_weight_g": 839,
+    "frame_weight_basis": "Official size-M frame value, ±5%; fork is listed separately at 449 g",
     "bottom_bracket": "T47-85.5 threaded",
     "tire_clearance_mm": 50,
     "wheels": "RORE Terra 32 Adventure",
@@ -49,5 +61,5 @@
     "mounts": "Up to 26 mounting points"
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-28"
 }

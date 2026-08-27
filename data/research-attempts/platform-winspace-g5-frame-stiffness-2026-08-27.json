@@ -1,0 +1,65 @@
+{
+  "id": "platform-winspace-g5-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "platform",
+    "record_id": "winspace-g5"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "winspace-g5 stiffness owner report",
+          "route": "XHS runtime preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-27",
+          "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Winspace G5 stiffness test",
+          "route": "manufacturer global exact-model page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "High-stiffness language has no protocol or measurement and is rejected as marketing.",
+          "result_url": "https://www.winspace.cc/products/g5-gravel"
+        },
+        {
+          "attempt": 2,
+          "query": "Winspace G5 ride stiffness review",
+          "route": "manufacturer regional exact-model page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Construction and package details are present, but no stiffness result.",
+          "result_url": "https://winspace.com.au/products/winspace-g5-gravel-frameset"
+        },
+        {
+          "attempt": 3,
+          "query": "Winspace G5 independent stiffness assessment",
+          "route": "indexed exact-model review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No sufficiently specific independent G5 ride or measured result surfaced."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No exact stiffness value is inferred from material or construction. The remaining XHS owner/reviewer route is blocked for this job."
+}

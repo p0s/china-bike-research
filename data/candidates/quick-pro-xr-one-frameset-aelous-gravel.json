@@ -10,17 +10,17 @@
     "Mainland delivery, returns and warranty handling",
     "Independent frame-weight and fit verification"
   ],
-  "status": "mainland-price-observed",
+  "status": "selected-mainland-price-observed",
   "research_priority": "high",
-  "price_status": "dated mainland launch price for the frameset and cockpit package",
+  "price_status": "exact selected mainland Taobao frameset price",
   "observed_price": {
     "amount_cny": 10998,
     "currency": "CNY",
-    "observed_at": "2026-08-17",
-    "price_basis": "launch-report frameset and Aelous Gravel cockpit package",
+    "observed_at": "2026-08-28",
+    "price_basis": "Glass-yellow, size M XR:ONE frameset listing; SKU 6197664799748",
     "observation_count": 1
   },
-  "source_ids": ["quick-2026-one-series-launch", "quick-pro-xr-one-frame-official-2026-08-17"],
+  "source_ids": ["quick-2026-one-series-launch", "quick-pro-xr-one-frame-official-2026-08-17", "quick-pro-xr-one-frameset-taobao-2026-08-28"],
   "facts": {
     "frame": "High-modulus monocoque carbon",
     "frame_weight_g": 839,
@@ -30,6 +30,6 @@
     "storage": "Integrated in-frame toolbox",
     "mounts": "Up to 26 mounting points"
   },
-  "source_note": "The ¥10,998 launch figure is for the XR:ONE frameset and Aelous Gravel cockpit, not the separately tracked GRX Di2 complete bike.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The exact frameset listing was opened and glass-yellow size M selected: SKU 6197664799748 showed CNY 10,998, visible stock and 15-day presale dispatch. The price is for the XR:ONE frameset package, not the separately tracked GRX Di2 complete bike.",
+  "last_reviewed": "2026-08-28"
 }

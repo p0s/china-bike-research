@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 464,
+      "sources": 476,
       "images": 180,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 442
+      "researchAttempts": 462
     },
     "image_accuracy": {
       "exact-platform": 62,
@@ -32,7 +32,7 @@
     },
     "candidate_prices": {
       "official": 49,
-      "observed": 134
+      "observed": 136
     }
   },
   "records": {
@@ -207,6 +207,8 @@
     "sources": [
       "af01-manual-2026-08-27",
       "af01-official",
+      "airwolf-yfr068-chinertown-2026-08-27",
+      "airwolf-yfr068-complete-store-2026-08-27",
       "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
       "airwolf-yfr068-official-store-2026-08-27",
       "bianchi-oltre-race-armenia-2026-08-17",
@@ -297,6 +299,8 @@
       "laget-discovery-one-flagship-taobao-2026-08-27",
       "laget-discovery-one-pro-taobao-2026-08-27",
       "laget-discovery-one-pro-tiparts-2026-08-27",
+      "laget-discovery-slr-bilibili-2026-08-27",
+      "laget-discovery-slr-tiparts-2026-08-27",
       "laget-pioneer-one-tiparts-2026-08-17",
       "legit-ac1-official-2026-08-09",
       "lightcarbon-company-official",
@@ -417,7 +421,10 @@
       "quick-pro-global-support-2026-08-17",
       "quick-pro-gr-one-complete-official-2026-08-17",
       "quick-pro-gr-one-frame-official-2026-08-17",
+      "quick-pro-gr-one-frameset-taobao-2026-08-28",
       "quick-pro-gr-one-grx-di2-official-2026-08-17",
+      "quick-pro-gr-one-ride-review-2026-08-27",
+      "quick-pro-gr-one-taobao-2026-08-27",
       "quick-pro-tr-one-official-2026-08-17",
       "quick-pro-tt-one-china-2026-08-17",
       "quick-pro-tt-one-official-2026-08-17",
@@ -425,8 +432,10 @@
       "quick-pro-ur-one-official-2026-08-17",
       "quick-pro-warranty-official-2026-08-17",
       "quick-pro-xr-one-frame-official-2026-08-17",
+      "quick-pro-xr-one-frameset-taobao-2026-08-28",
       "quick-pro-xr-one-grx-di2-official-2026-08-17",
       "quick-pro-xr-one-official-2026-08-17",
+      "quick-pro-xr-one-tmall-2026-08-28",
       "rinasclta-gr025-official",
       "rinasclta-q-aero-gr-official-2026-08-27",
       "rinasclta-warranty-2026-08-27",
@@ -619,6 +628,7 @@
       "wheeltop-eds-tx-official-2026-08-24",
       "winspace-agile-official-2026-08-17",
       "winspace-complete-builds-2026-08-09",
+      "winspace-g3-carbonvelo-review-2026-08-27",
       "winspace-g3-official",
       "winspace-g3-official-2026-08-16",
       "winspace-g3-official-2026-08-17",
@@ -626,6 +636,7 @@
       "winspace-g3-pro-di2-official-2026-08-27",
       "winspace-g3-xhs-build-matrix-2026-08-27",
       "winspace-g3-xhs-launch-2026-08-27",
+      "winspace-g5-au-official-2026-08-27",
       "winspace-g5-gravel-official-2026-08-17",
       "winspace-g5-official",
       "winspace-g5-official-2026-08-17",
@@ -661,6 +672,7 @@
       "xlab-ad9-taobao-2026-08-27",
       "xlab-gt8-official-2026-08-17",
       "xlab-gt8-smzdm-market-report-2026-08-27",
+      "xlab-gt8-velo-review-2026-08-27",
       "xlab-rs9-bikeinsights-2026-08-27",
       "xlab-rs9-official-cn-price-2026-08-27",
       "xlab-rs9-official-cn-spec-2026-08-27",
@@ -1140,6 +1152,8 @@
       "candidate-airwolf-current-gravel-price-2026-08-17",
       "candidate-airwolf-current-gravel-purchase-route-2026-08-17",
       "candidate-airwolf-current-gravel-warranty-support-2026-08-17",
+      "candidate-airwolf-yfr068-frame-material-2026-08-27",
+      "candidate-airwolf-yfr068-frame-stiffness-2026-08-27",
       "candidate-airwolf-yfr068-frame-weight-2026-08-27",
       "candidate-airwolf-yfr068-geometry-2026-08-27",
       "candidate-airwolf-yfr068-identity-2026-08-27",
@@ -1226,6 +1240,8 @@
       "candidate-laget-discovery-one-pro-frame-weight-2026-08-27",
       "candidate-laget-discovery-one-pro-price-2026-08-27",
       "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27",
+      "candidate-laget-discovery-slr-frame-material-2026-08-27",
+      "candidate-laget-discovery-slr-frame-stiffness-2026-08-27",
       "candidate-laget-discovery-slr-frame-weight-2026-08-27",
       "candidate-laget-discovery-slr-image-2026-08-27",
       "candidate-laget-discovery-slr-tire-clearance-2026-08-27",
@@ -1260,12 +1276,21 @@
       "candidate-missing-china-price-merida-silex-price-2026-08-17",
       "candidate-missing-china-price-merida-silex-purchase-route-2026-08-17",
       "candidate-missing-china-price-merida-silex-warranty-support-2026-08-17",
+      "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28",
+      "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28",
+      "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27",
+      "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27",
+      "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28",
       "candidate-missing-china-price-specialized-crux-price-2026-08-17",
       "candidate-missing-china-price-specialized-crux-purchase-route-2026-08-17",
       "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17",
       "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17",
       "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17",
       "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17",
+      "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27",
+      "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27",
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27",
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27",
       "candidate-pardus-robin-evo-community-lead-price-2026-08-17",
       "candidate-pardus-robin-evo-community-lead-purchase-route-2026-08-17",
       "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17",
@@ -1284,9 +1309,13 @@
       "candidate-pardus-uragano-evo-price-2026-08-27",
       "candidate-pardus-uragano-evo-tire-clearance-2026-08-27",
       "candidate-pardus-uragano-sport-current-configuration-2026-08-27",
+      "candidate-pardus-uragano-sport-frame-material-2026-08-27",
+      "candidate-pardus-uragano-sport-frame-stiffness-2026-08-27",
       "candidate-pardus-uragano-sport-tire-clearance-2026-08-27",
       "candidate-quick-gr-one-price-2026-08-27",
       "candidate-quick-gr-one-purchase-route-2026-08-27",
+      "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27",
+      "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27",
       "candidate-quick-pro-tr-one-bom-2026-08-17",
       "candidate-quick-pro-tr-one-bottom-bracket-2026-08-17",
       "candidate-quick-pro-tr-one-frame-2026-08-17",
@@ -1310,6 +1339,7 @@
       "candidate-quick-pro-tt-one-purchase-route-2026-08-17",
       "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17",
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28",
       "candidate-quick-xr-one-complete-weight-2026-08-27",
       "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
       "candidate-rinasclta-q-aero-gr-geometry-2026-08-27",
@@ -1415,6 +1445,8 @@
       "platform-tfsa-jh37-geometry-2026-08-27",
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
       "platform-winspace-g3-geometry-2026-08-27",
+      "platform-winspace-g5-frame-material-2026-08-27",
+      "platform-winspace-g5-frame-stiffness-2026-08-27",
       "platform-winspace-g5-geometry-2026-08-27",
       "platform-xmcarbonspeed-cs-gr01-geometry-2026-08-27",
       "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
@@ -3078,6 +3110,7 @@
         "frame.cable_routing",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -3086,6 +3119,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -4572,6 +4607,30 @@
         "type",
         "url"
       ],
+      "airwolf-yfr068-chinertown-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "airwolf-yfr068-complete-store-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "airwolf-yfr068-geometry-bikeinsights-2026-08-27": [
         "accessed_at",
         "language",
@@ -5670,6 +5729,30 @@
         "url"
       ],
       "laget-discovery-one-pro-tiparts-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "laget-discovery-slr-bilibili-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "laget-discovery-slr-tiparts-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -7152,10 +7235,47 @@
         "type",
         "url"
       ],
+      "quick-pro-gr-one-frameset-taobao-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "quick-pro-gr-one-grx-di2-official-2026-08-17": [
         "accessed_at",
         "language",
         "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "quick-pro-gr-one-ride-review-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "quick-pro-gr-one-taobao-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "observations",
         "publisher",
         "reliability.identity",
         "reliability.price",
@@ -7249,6 +7369,18 @@
         "type",
         "url"
       ],
+      "quick-pro-xr-one-frameset-taobao-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "quick-pro-xr-one-grx-di2-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -7262,6 +7394,18 @@
         "url"
       ],
       "quick-pro-xr-one-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "quick-pro-xr-one-tmall-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -9609,6 +9753,18 @@
         "type",
         "url"
       ],
+      "winspace-g3-carbonvelo-review-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "winspace-g3-official": [
         "accessed_at",
         "language",
@@ -9685,6 +9841,18 @@
       "winspace-g3-xhs-launch-2026-08-27": [
         "accessed_at",
         "archive_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "winspace-g5-au-official-2026-08-27": [
+        "accessed_at",
         "language",
         "notes",
         "publisher",
@@ -10120,6 +10288,18 @@
         "url"
       ],
       "xlab-gt8-smzdm-market-report-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "xlab-gt8-velo-review-2026-08-27": [
         "accessed_at",
         "language",
         "notes",
@@ -14364,9 +14544,12 @@
         "facts.bottom_bracket",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.frame_weight_basis",
         "facts.frame_weight_g",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "name",
@@ -15569,11 +15752,14 @@
         "facts.bottom_bracket",
         "facts.drivetrain_compatibility",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.frame_weight_basis",
         "facts.frame_weight_g",
         "facts.hanger",
         "facts.seatpost",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "manufacturing",
@@ -16164,11 +16350,21 @@
         "category",
         "existing_record_id",
         "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
         "facts.frame_weight_g",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "price_status",
         "research_priority",
         "source_ids",
@@ -16184,14 +16380,23 @@
         "facts.cockpit",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
         "facts.frame_weight_g",
         "facts.mounts",
+        "facts.stiffness_evidence",
         "facts.storage",
         "facts.tire_clearance_mm",
         "facts.wheels",
         "last_reviewed",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "official_price.amount_cny",
         "official_price.conversion_rate_cny_per_original_unit",
         "official_price.conversion_rate_date",
@@ -16201,6 +16406,7 @@
         "official_price.original_currency",
         "official_price.price_type",
         "price_status",
+        "reference_price_kind",
         "research_priority",
         "source_ids",
         "source_note",
@@ -16513,10 +16719,14 @@
         "existing_record_id",
         "facts.bottom_bracket",
         "facts.cockpit",
+        "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "facts.tires",
         "facts.wheels",
@@ -16620,11 +16830,15 @@
         "facts.bottom_bracket",
         "facts.brakes",
         "facts.cockpit",
+        "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.mounts",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.storage",
         "facts.tire_clearance_mm",
         "facts.tires",
@@ -16971,9 +17185,12 @@
         "facts.cockpit",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.mounts",
         "facts.seatpost",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "facts.wheels",
         "last_reviewed",
@@ -17097,7 +17314,11 @@
         "facts.cockpit",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
         "facts.frame_weight_g",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "facts.wheels",
         "last_reviewed",
@@ -18817,6 +19038,33 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-airwolf-yfr068-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-airwolf-yfr068-frame-stiffness-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-airwolf-yfr068-frame-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -20012,6 +20260,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-laget-discovery-slr-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-laget-discovery-slr-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-laget-discovery-slr-frame-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -20027,6 +20303,8 @@
         "target.record_type"
       ],
       "candidate-laget-discovery-slr-image-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.blocker",
@@ -20531,6 +20809,75 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-missing-china-price-specialized-crux-price-2026-08-17": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -20603,6 +20950,60 @@
         "target.record_type"
       ],
       "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -20866,6 +21267,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-pardus-uragano-sport-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-pardus-uragano-sport-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -20881,6 +21310,25 @@
         "target.record_type"
       ],
       "candidate-quick-gr-one-price-2026-08-27": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-gr-one-purchase-route-2026-08-27": [
+        "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -20893,7 +21341,20 @@
         "target.record_id",
         "target.record_type"
       ],
-      "candidate-quick-gr-one-purchase-route-2026-08-27": [
+      "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -21251,7 +21712,23 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-quick-xr-one-complete-weight-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -22362,6 +22839,8 @@
         "target.record_type"
       ],
       "candidate-winspace-g3-mainland-price-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -22375,6 +22854,8 @@
         "target.record_type"
       ],
       "candidate-winspace-g5-mainland-price-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -22787,6 +23268,34 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-winspace-g5-frame-material-2026-08-27": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-winspace-g5-frame-stiffness-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -25506,6 +26015,7 @@
       "winspace-g5": [
         "brand_id=winspace",
         "frame.geometry.source_id=winspace-g5-official",
+        "source_ids=winspace-g5-au-official-2026-08-27",
         "source_ids=winspace-g5-official",
         "source_ids=winspace-g5-weight-woods-cycles-2026-08-25"
       ],
@@ -25977,6 +26487,8 @@
     "sources": {
       "af01-manual-2026-08-27": [],
       "af01-official": [],
+      "airwolf-yfr068-chinertown-2026-08-27": [],
+      "airwolf-yfr068-complete-store-2026-08-27": [],
       "airwolf-yfr068-geometry-bikeinsights-2026-08-27": [],
       "airwolf-yfr068-official-store-2026-08-27": [],
       "bianchi-oltre-race-armenia-2026-08-17": [],
@@ -26067,6 +26579,8 @@
       "laget-discovery-one-flagship-taobao-2026-08-27": [],
       "laget-discovery-one-pro-taobao-2026-08-27": [],
       "laget-discovery-one-pro-tiparts-2026-08-27": [],
+      "laget-discovery-slr-bilibili-2026-08-27": [],
+      "laget-discovery-slr-tiparts-2026-08-27": [],
       "laget-pioneer-one-tiparts-2026-08-17": [],
       "legit-ac1-official-2026-08-09": [],
       "lightcarbon-company-official": [],
@@ -26187,7 +26701,10 @@
       "quick-pro-global-support-2026-08-17": [],
       "quick-pro-gr-one-complete-official-2026-08-17": [],
       "quick-pro-gr-one-frame-official-2026-08-17": [],
+      "quick-pro-gr-one-frameset-taobao-2026-08-28": [],
       "quick-pro-gr-one-grx-di2-official-2026-08-17": [],
+      "quick-pro-gr-one-ride-review-2026-08-27": [],
+      "quick-pro-gr-one-taobao-2026-08-27": [],
       "quick-pro-tr-one-official-2026-08-17": [],
       "quick-pro-tt-one-china-2026-08-17": [],
       "quick-pro-tt-one-official-2026-08-17": [],
@@ -26195,8 +26712,10 @@
       "quick-pro-ur-one-official-2026-08-17": [],
       "quick-pro-warranty-official-2026-08-17": [],
       "quick-pro-xr-one-frame-official-2026-08-17": [],
+      "quick-pro-xr-one-frameset-taobao-2026-08-28": [],
       "quick-pro-xr-one-grx-di2-official-2026-08-17": [],
       "quick-pro-xr-one-official-2026-08-17": [],
+      "quick-pro-xr-one-tmall-2026-08-28": [],
       "rinasclta-gr025-official": [],
       "rinasclta-q-aero-gr-official-2026-08-27": [],
       "rinasclta-warranty-2026-08-27": [],
@@ -26389,6 +26908,7 @@
       "wheeltop-eds-tx-official-2026-08-24": [],
       "winspace-agile-official-2026-08-17": [],
       "winspace-complete-builds-2026-08-09": [],
+      "winspace-g3-carbonvelo-review-2026-08-27": [],
       "winspace-g3-official": [],
       "winspace-g3-official-2026-08-16": [],
       "winspace-g3-official-2026-08-17": [],
@@ -26396,6 +26916,7 @@
       "winspace-g3-pro-di2-official-2026-08-27": [],
       "winspace-g3-xhs-build-matrix-2026-08-27": [],
       "winspace-g3-xhs-launch-2026-08-27": [],
+      "winspace-g5-au-official-2026-08-27": [],
       "winspace-g5-gravel-official-2026-08-17": [],
       "winspace-g5-official": [],
       "winspace-g5-official-2026-08-17": [],
@@ -26431,6 +26952,7 @@
       "xlab-ad9-taobao-2026-08-27": [],
       "xlab-gt8-official-2026-08-17": [],
       "xlab-gt8-smzdm-market-report-2026-08-27": [],
+      "xlab-gt8-velo-review-2026-08-27": [],
       "xlab-rs9-bikeinsights-2026-08-27": [],
       "xlab-rs9-official-cn-price-2026-08-27": [],
       "xlab-rs9-official-cn-spec-2026-08-27": [],
@@ -27459,6 +27981,8 @@
     "candidates": {
       "airwolf-current-gravel": [],
       "airwolf-yfr068": [
+        "source_ids=airwolf-yfr068-chinertown-2026-08-27",
+        "source_ids=airwolf-yfr068-complete-store-2026-08-27",
         "source_ids=airwolf-yfr068-geometry-bikeinsights-2026-08-27",
         "source_ids=airwolf-yfr068-official-store-2026-08-27"
       ],
@@ -27755,6 +28279,8 @@
       ],
       "laget-discovery-slr": [
         "model_id=laget-discovery-slr",
+        "source_ids=laget-discovery-slr-bilibili-2026-08-27",
+        "source_ids=laget-discovery-slr-tiparts-2026-08-27",
         "source_ids=titanium-laget-discovery-slr-official"
       ],
       "laget-pioneer": [
@@ -27890,6 +28416,8 @@
         "existing_record_id=quick-gr-one-frameset",
         "model_id=quick-pro-gr-one",
         "source_ids=quick-gr-one-china-official-2026-08-25",
+        "source_ids=quick-pro-gr-one-frameset-taobao-2026-08-28",
+        "source_ids=quick-pro-gr-one-ride-review-2026-08-27",
         "source_ids=quick-pro-warranty-official-2026-08-17"
       ],
       "missing-china-price-quick-pro-xr-one": [
@@ -27899,6 +28427,7 @@
         "source_ids=quick-pro-warranty-official-2026-08-17",
         "source_ids=quick-pro-xr-one-frame-official-2026-08-17",
         "source_ids=quick-pro-xr-one-grx-di2-official-2026-08-17",
+        "source_ids=quick-pro-xr-one-tmall-2026-08-28",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "video_ids=china-cycling-quick-pro-xr-one"
       ],
@@ -27987,6 +28516,7 @@
         "existing_record_id=winspace-g3-frameset",
         "model_id=winspace-g3",
         "source_ids=usd-cny-central-parity-2026-07-31",
+        "source_ids=winspace-g3-carbonvelo-review-2026-08-27",
         "source_ids=winspace-g3-official-2026-08-17",
         "source_ids=winspace-g3-pro-di2-official-2026-08-17",
         "source_ids=winspace-g3-pro-di2-official-2026-08-27",
@@ -28019,7 +28549,8 @@
         "source_ids=public-xlab-gt8-overview-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "source_ids=xlab-gt8-official-2026-08-17",
-        "source_ids=xlab-gt8-smzdm-market-report-2026-08-27"
+        "source_ids=xlab-gt8-smzdm-market-report-2026-08-27",
+        "source_ids=xlab-gt8-velo-review-2026-08-27"
       ],
       "missing-china-price-yoeleo-altera-g21": [
         "existing_record_id=yoeleo-altera-g21-frameset",
@@ -28154,6 +28685,8 @@
         "source_ids=quick-pro-gr-one-complete-official-2026-08-17",
         "source_ids=quick-pro-gr-one-frame-official-2026-08-17",
         "source_ids=quick-pro-gr-one-grx-di2-official-2026-08-17",
+        "source_ids=quick-pro-gr-one-ride-review-2026-08-27",
+        "source_ids=quick-pro-gr-one-taobao-2026-08-27",
         "source_ids=quick-pro-warranty-official-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31"
       ],
@@ -28185,7 +28718,8 @@
       "quick-pro-xr-one-frameset-aelous-gravel": [
         "model_id=quick-pro-xr-one",
         "source_ids=quick-2026-one-series-launch",
-        "source_ids=quick-pro-xr-one-frame-official-2026-08-17"
+        "source_ids=quick-pro-xr-one-frame-official-2026-08-17",
+        "source_ids=quick-pro-xr-one-frameset-taobao-2026-08-28"
       ],
       "quick-t10": [
         "model_id=quick-t10",
@@ -28579,6 +29113,12 @@
       "candidate-airwolf-current-gravel-warranty-support-2026-08-17": [
         "target.record_id=airwolf-current-gravel"
       ],
+      "candidate-airwolf-yfr068-frame-material-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
+      "candidate-airwolf-yfr068-frame-stiffness-2026-08-27": [
+        "target.record_id=airwolf-yfr068"
+      ],
       "candidate-airwolf-yfr068-frame-weight-2026-08-27": [
         "target.record_id=airwolf-yfr068"
       ],
@@ -28837,6 +29377,12 @@
       "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27": [
         "target.record_id=laget-discovery-one-pro"
       ],
+      "candidate-laget-discovery-slr-frame-material-2026-08-27": [
+        "target.record_id=laget-discovery-slr"
+      ],
+      "candidate-laget-discovery-slr-frame-stiffness-2026-08-27": [
+        "target.record_id=laget-discovery-slr"
+      ],
       "candidate-laget-discovery-slr-frame-weight-2026-08-27": [
         "target.record_id=laget-discovery-slr"
       ],
@@ -28939,6 +29485,21 @@
       "candidate-missing-china-price-merida-silex-warranty-support-2026-08-17": [
         "target.record_id=missing-china-price-merida-silex"
       ],
+      "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28": [
+        "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
+      "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28": [
+        "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27": [
+        "target.record_id=missing-china-price-quick-pro-xr-one"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27": [
+        "target.record_id=missing-china-price-quick-pro-xr-one"
+      ],
+      "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28": [
+        "target.record_id=missing-china-price-quick-pro-xr-one"
+      ],
       "candidate-missing-china-price-specialized-crux-price-2026-08-17": [
         "target.record_id=missing-china-price-specialized-crux"
       ],
@@ -28956,6 +29517,18 @@
       ],
       "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17": [
         "target.record_id=missing-china-price-van-rysel-rcr"
+      ],
+      "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27": [
+        "target.record_id=missing-china-price-winspace-g3"
+      ],
+      "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27": [
+        "target.record_id=missing-china-price-winspace-g3"
+      ],
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27": [
+        "target.record_id=missing-china-price-x-lab-xds-gt8"
+      ],
+      "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27": [
+        "target.record_id=missing-china-price-x-lab-xds-gt8"
       ],
       "candidate-pardus-robin-evo-community-lead-price-2026-08-17": [
         "target.record_id=pardus-robin-evo-community-lead"
@@ -29011,14 +29584,27 @@
       "candidate-pardus-uragano-sport-current-configuration-2026-08-27": [
         "target.record_id=pardus-uragano-sport"
       ],
+      "candidate-pardus-uragano-sport-frame-material-2026-08-27": [
+        "target.record_id=pardus-uragano-sport"
+      ],
+      "candidate-pardus-uragano-sport-frame-stiffness-2026-08-27": [
+        "target.record_id=pardus-uragano-sport"
+      ],
       "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": [
         "target.record_id=pardus-uragano-sport"
       ],
       "candidate-quick-gr-one-price-2026-08-27": [
+        "resolution.source_ids=quick-pro-gr-one-frameset-taobao-2026-08-28",
         "target.record_id=missing-china-price-quick-pro-gr-one"
       ],
       "candidate-quick-gr-one-purchase-route-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
+      "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": [
+        "target.record_id=quick-pro-gr-one-grx-di2"
+      ],
+      "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27": [
+        "target.record_id=quick-pro-gr-one-grx-di2"
       ],
       "candidate-quick-pro-tr-one-bom-2026-08-17": [
         "target.record_id=quick-pro-tr-one"
@@ -29088,6 +29674,9 @@
       ],
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17": [
         "target.record_id=quick-pro-tt-one"
+      ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": [
+        "target.record_id=quick-pro-xr-one-frameset-aelous-gravel"
       ],
       "candidate-quick-xr-one-complete-weight-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-xr-one"
@@ -29405,6 +29994,12 @@
       ],
       "platform-winspace-g3-geometry-2026-08-27": [
         "target.record_id=winspace-g3"
+      ],
+      "platform-winspace-g5-frame-material-2026-08-27": [
+        "target.record_id=winspace-g5"
+      ],
+      "platform-winspace-g5-frame-stiffness-2026-08-27": [
+        "target.record_id=winspace-g5"
       ],
       "platform-winspace-g5-geometry-2026-08-27": [
         "target.record_id=winspace-g5"
@@ -29934,6 +30529,22 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "airwolf-yfr068-chinertown-2026-08-27": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": 0
+      }
+    },
+    "airwolf-yfr068-complete-store-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 1,
+        "specification": 1
       }
     },
     "airwolf-yfr068-geometry-bikeinsights-2026-08-27": {
@@ -30670,6 +31281,22 @@
       }
     },
     "laget-discovery-one-pro-tiparts-2026-08-27": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "laget-discovery-slr-bilibili-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "laget-discovery-slr-tiparts-2026-08-27": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 3,
@@ -31650,8 +32277,32 @@
         "specification": 3
       }
     },
+    "quick-pro-gr-one-frameset-taobao-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "quick-pro-gr-one-grx-di2-official-2026-08-17": {
       "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "quick-pro-gr-one-ride-review-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
+    "quick-pro-gr-one-taobao-2026-08-27": {
+      "minimum_type_tier": 1,
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
@@ -31715,6 +32366,14 @@
         "specification": 3
       }
     },
+    "quick-pro-xr-one-frameset-taobao-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "quick-pro-xr-one-grx-di2-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -31728,6 +32387,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "quick-pro-xr-one-tmall-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     },
@@ -33256,6 +33923,14 @@
         "specification": 3
       }
     },
+    "winspace-g3-carbonvelo-review-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
+      }
+    },
     "winspace-g3-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -33310,6 +33985,14 @@
         "identity": 2,
         "price": 0,
         "specification": 0
+      }
+    },
+    "winspace-g5-au-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
       }
     },
     "winspace-g5-gravel-official-2026-08-17": {
@@ -33598,6 +34281,14 @@
         "specification": 1
       }
     },
+    "xlab-gt8-velo-review-2026-08-27": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "xlab-rs9-bikeinsights-2026-08-27": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -33701,6 +34392,29 @@
       ],
       "accepted_source_ids": [
         "round3-airwolf-yfr003-gravel-frameset-92cf3f5d5e"
+      ]
+    },
+    "candidate-airwolf-yfr068-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 A5 T1100 material\",\"manufacturer storefront exact frameset page\",\"found\",\"2026-08-27\",\"Exact storefront specifies Toray T1100 UD carbon and BBright/internal-routing construction.\",\"https://airwolfcarbonbike.com/product/airwolf-yfr068-carbon-gravel-frame-thru-axle-disc-brake-road-frame-with-metallic-colors/\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27"
+      ]
+    },
+    "candidate-airwolf-yfr068-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Airwolf YFR068 stiffness owner comparison\",\"exact-model owner comparison\",\"found\",\"2026-08-27\",\"Owner reports less front-end stiffness than a Giant TCX, mainly attributed to supplied-stem torsional flex; qualitative build evidence only.\",\"https://chinertown.com/index.php?topic=4109.105\"]"
+      ],
+      "accepted_source_ids": [
+        "airwolf-yfr068-chinertown-2026-08-27"
       ]
     },
     "candidate-airwolf-yfr068-frame-weight-2026-08-27": {
@@ -34797,6 +35511,30 @@
         "titanium-laget-discovery-one-pro-official"
       ]
     },
+    "candidate-laget-discovery-slr-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LAGET Discovery SLR titanium construction\",\"manufacturer-hosted exact-model video\",\"found\",\"2026-08-27\",\"Video identifies a 3D-printed titanium front triangle and hand-welded rear triangle; alloy grade is not disclosed.\",\"https://www.bilibili.com/video/BV1cwbVzhEN3/\"]"
+      ],
+      "accepted_source_ids": [
+        "laget-discovery-slr-bilibili-2026-08-27"
+      ]
+    },
+    "candidate-laget-discovery-slr-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"laget-discovery-slr stiffness owner report\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"LAGET Discovery SLR stiffness test\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Construction and weight are documented, but no stiffness result.\",\"https://lagetbike.com/productinfo/3301187.html\"]",
+        "[\"web\",2,\"LAGET Discovery SLR ride stiffness\",\"authorized retailer exact-model page\",\"no-result\",\"2026-08-27\",\"Package and construction are documented, but no attributable ride or deflection result.\",\"https://tipartstitanium.com/products/laget-discovery-slr-titanium-gravel-frameset-semi-3d-printed-titanium-1550g-s-45mm-tyre-clearance\"]",
+        "[\"web\",3,\"LAGET Discovery SLR frame test\",\"manufacturer-hosted construction video\",\"no-result\",\"2026-08-27\",\"Video describes construction only; no stiffness measurement or comparison.\",\"https://www.bilibili.com/video/BV1cwbVzhEN3/\"]"
+      ],
+      "accepted_source_ids": []
+    },
     "candidate-laget-discovery-slr-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -34811,10 +35549,11 @@
     },
     "candidate-laget-discovery-slr-image-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 1
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"LAGET Discovery SLR exact product image\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
         "[\"web\",1,\"LAGET Discovery SLR official image\",\"official exact-model page\",\"rejected\",\"2026-08-27\",\"The apparent official asset rendered as a blank failed hero in the local site and was rejected rather than published.\",\"https://lagetbike.com/productinfo/3301187.html\"]"
       ],
       "accepted_source_ids": []
@@ -35274,6 +36013,65 @@
         "merida-warranty-official-2026-08-17"
       ]
     },
+    "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick GR ONE T1100 M65 Taobao frameset\",\"exact selected Taobao frameset listing\",\"found\",\"2026-08-28\",\"Exact listing identifies Toray T1100 + M65 carbon and one-piece construction.\",\"https://item.taobao.com/item.htm?id=950771838272\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-gr-one-frameset-taobao-2026-08-28"
+      ]
+    },
+    "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick Pro GR ONE stiffness ride review\",\"independent exact-model review summary\",\"found\",\"2026-08-27\",\"Review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; no measured stiffness score.\",\"https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-gr-one-ride-review-2026-08-27"
+      ]
+    },
+    "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick Pro XR ONE carbon material construction\",\"official complete-bike page\",\"found\",\"2026-08-27\",\"Exact page identifies high-strength/high-modulus carbon and one-piece monocoque construction; no fiber grade is disclosed.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-xr-one-grx-di2-official-2026-08-17"
+      ]
+    },
+    "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"missing-china-price-quick-pro-xr-one stiffness owner report\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"Quick XR ONE stiffness test\",\"official complete-bike page\",\"no-result\",\"2026-08-27\",\"Manufacturer efficiency and ride-feel language is marketing, not a stiffness result.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]",
+        "[\"web\",2,\"Quick XR ONE frame stiffness review\",\"official frameset page\",\"no-result\",\"2026-08-27\",\"No test protocol, deflection value or attributable independent ride evidence was exposed.\",null]",
+        "[\"web\",3,\"Quick XR ONE independent ride assessment\",\"indexed exact-model review search\",\"no-result\",\"2026-08-27\",\"No sufficiently exact attributable review surfaced.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"快客 XR ONE 瓜车\",\"exact official flagship-store Tmall listing with selected configuration and size\",\"found\",\"2026-08-28\",\"The configuration table maps configuration two to GRX Di2 1×12; glass-yellow size M SKU 6181047722909 showed CNY 19,398.\",\"https://detail.tmall.com/item.htm?id=1014176452648\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-xr-one-tmall-2026-08-28"
+      ]
+    },
     "candidate-missing-china-price-specialized-crux-price-2026-08-17": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -35353,6 +36151,52 @@
       ],
       "accepted_source_ids": [
         "decathlon-china-bike-warranty-2026-08-17"
+      ]
+    },
+    "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G3 Pro Di2 T700 T800 M40 carbon\",\"manufacturer exact complete-bike page\",\"found\",\"2026-08-27\",\"Official page identifies T700 + T800 + M40 carbon, a full-carbon fork and the exact Pro Di2 chassis components.\",\"https://www.winspace.cc/products/g3-gravel-pro-di2\"]"
+      ],
+      "accepted_source_ids": [
+        "winspace-g3-pro-di2-official-2026-08-27"
+      ]
+    },
+    "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G3 stiffness power transfer review\",\"three-month exact-platform owner review\",\"found\",\"2026-08-27\",\"Owner reports a solid rough-terrain feel and good power transfer; no measured stiffness value.\",\"https://carbonvelo.co.uk/blogs/news/g3-gravel-my-review-so-far\"]"
+      ],
+      "accepted_source_ids": [
+        "winspace-g3-carbonvelo-review-2026-08-27"
+      ]
+    },
+    "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB GT8 Toray T800 material construction\",\"manufacturer exact-model page\",\"found\",\"2026-08-27\",\"Official page identifies a Toray T800 carbon frame and fork with UDH, T47 and internal storage.\",\"https://xds.co/en-intl/products/gt8\"]"
+      ],
+      "accepted_source_ids": [
+        "xlab-gt8-official-2026-08-17"
+      ]
+    },
+    "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"X-LAB GT8 stiffness compliance review\",\"independent exact-model test\",\"found\",\"2026-08-27\",\"Review reports notable compliance and a muted ride with race-oriented handling; no measured stiffness value.\",\"https://velo.outsideonline.com/gravel/gravel-gear/xds-x-lab-gt8-review/\"]"
+      ],
+      "accepted_source_ids": [
+        "xlab-gt8-velo-review-2026-08-27"
       ]
     },
     "candidate-pardus-robin-evo-community-lead-price-2026-08-17": {
@@ -35587,6 +36431,30 @@
         "pardus-uragano-sport-cn-official-2026-08-27"
       ]
     },
+    "candidate-pardus-uragano-sport-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Uragano Sport HS-EPS HS-HPT material\",\"manufacturer exact current Chinese page\",\"found\",\"2026-08-27\",\"Exact page identifies HS-EPS+ frame carbon and HS-HPT fork carbon; supplier, grade and lay-up are not disclosed.\",\"https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27"
+      ]
+    },
+    "candidate-pardus-uragano-sport-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"pardus-uragano-sport stiffness owner report\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"PARDUS Uragano Sport current stiffness test\",\"manufacturer exact current Chinese page\",\"no-result\",\"2026-08-27\",\"Current page provides material labels and build details but no stiffness evidence.\",\"https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447\"]",
+        "[\"web\",2,\"PARDUS Uragano Sport current ride review\",\"current-generation exact-build indexed search\",\"no-result\",\"2026-08-27\",\"No attributable review of the current 105 R7000 generation surfaced.\",null]",
+        "[\"web\",3,\"PARDUS Uragano stiffness older review\",\"earlier-generation editorial review\",\"rejected\",\"2026-08-27\",\"Older Uragano ride commentary was rejected because it concerns a different frame generation and build.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "candidate-pardus-uragano-sport-tire-clearance-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -35609,7 +36477,12 @@
         "[\"web\",2,\"Quick GR ONE official complete price\",\"official global product page\",\"rejected\",\"2026-08-27\",\"US$4,799 complete-bike price is not a mainland CNY observation.\",\"https://www.quickprousa.com/products/gr-one-shimano\"]",
         "[\"web\",3,\"Quick GR ONE 国内 发布价\",\"dated launch report\",\"rejected\",\"2026-08-27\",\"Historical CNY 13,598 frame-and-handlebar package is not current checkout evidence.\",\"https://www.biketo.com/industry/54415.html\"]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"quick-pro-gr-one-frameset-taobao-2026-08-28\"],\"note\":\"A later exact Taobao frameset listing was opened and the selected size-M SKU recorded after the original three web routes were exhausted.\"}"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-gr-one-frameset-taobao-2026-08-28"
+      ]
     },
     "candidate-quick-gr-one-purchase-route-2026-08-27": {
       "channel_attempt_counts": {
@@ -35621,6 +36494,29 @@
       ],
       "accepted_source_ids": [
         "quick-gr-one-china-official-2026-08-25"
+      ]
+    },
+    "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick Pro GR ONE T1100 M65 material construction\",\"exact official-enterprise-store Taobao listing\",\"found\",\"2026-08-27\",\"Listing panels identify Toray T1100 + M65 carbon and Monolith one-piece construction.\",\"https://item.taobao.com/item.htm?id=998206973974\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-gr-one-taobao-2026-08-27"
+      ]
+    },
+    "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick Pro GR ONE stiffness ride review\",\"independent exact-model review summary\",\"found\",\"2026-08-27\",\"Review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; no measured stiffness score.\",\"https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-gr-one-ride-review-2026-08-27"
       ]
     },
     "candidate-quick-pro-tr-one-bom-2026-08-17": {
@@ -35970,12 +36866,25 @@
         "round3-quick-pro-tt-one-291572cff7"
       ]
     },
-    "candidate-quick-xr-one-complete-weight-2026-08-27": {
+    "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": {
       "channel_attempt_counts": {
         "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"快客 XR ONE 车架 淘宝\",\"exact Taobao frameset listing with selected color and size\",\"found\",\"2026-08-28\",\"Glass-yellow size M SKU 6197664799748 showed CNY 10,998, visible stock and 15-day presale dispatch.\",\"https://item.taobao.com/item.htm?id=1021496957303\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-xr-one-frameset-taobao-2026-08-28"
+      ]
+    },
+    "candidate-quick-xr-one-complete-weight-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"Quick XR ONE complete weight\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
         "[\"web\",1,\"Quick XR ONE Shimano complete weight\",\"official complete-bike page\",\"no-result\",\"2026-08-27\",\"Page publishes component and frame weights but no complete-bike total.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]",
         "[\"web\",2,\"Quick XR ONE weight painted frame\",\"industry launch report\",\"rejected\",\"2026-08-27\",\"Reported 990 g value is the painted M frame with hardware, not a complete-bike weight.\",\"https://www.biketo.com/industry/55626.html?all=1\"]",
         "[\"web\",3,\"Quick XR ONE collection weight\",\"official collection fallback\",\"no-result\",\"2026-08-27\",\"No attributable complete-bike total was exposed.\",\"https://www.quickprousa.com/collections/complete-bikes\"]"
@@ -37017,10 +37926,11 @@
     },
     "candidate-winspace-g3-mainland-price-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"Winspace G3 Pro Di2 mainland selected price\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
         "[\"web\",1,\"Winspace G3 淘宝 12800\",\"Tmall listing mirror\",\"rejected\",\"2026-08-27\",\"CNY 12,800 listing does not identify the tracked Pro Di2 package.\",\"https://tao.hooos.com/goods_zDpmkGqouetae8DXGN0FvvXudt4-k5v00GfRbg3q7nGIk.html\"]",
         "[\"web\",2,\"Winspace G3 Pro Di2 China price\",\"official global product page\",\"rejected\",\"2026-08-27\",\"US$4,099 and China warehouse wording do not expose a mainland CNY checkout.\",\"https://www.winspace.cc/products/g3-gravel-pro-di2\"]",
         "[\"web\",3,\"Winspace G3 mainland warranty price\",\"official support fallback\",\"no-result\",\"2026-08-27\",\"Warranty policy contains no domestic package price.\",\"https://www.winspace.cc/pages/warranty\"]"
@@ -37029,10 +37939,11 @@
     },
     "candidate-winspace-g5-mainland-price-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"Winspace G5 frameset mainland selected price\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
         "[\"web\",1,\"Winspace G5 淘宝 23700\",\"Tmall listing mirror\",\"rejected\",\"2026-08-27\",\"CNY 23,700 listing appears to be a complete bike and cannot price the tracked frameset.\",\"https://tao.hooos.com/goods_ANKbPYDJczt4WdZrGk9HmX3uvtn-OpRwwaF0r4A6yNDt9.html\"]",
         "[\"web\",2,\"Winspace G5 frameset China price\",\"official global frameset page\",\"rejected\",\"2026-08-27\",\"US$2,200 global reference is not a mainland CNY checkout.\",\"https://www.winspace.cc/products/g5-gravel\"]",
         "[\"web\",3,\"Winspace G5 mainland warranty price\",\"official support fallback\",\"no-result\",\"2026-08-27\",\"Warranty policy contains no exact domestic package price.\",\"https://www.winspace.cc/pages/warranty\"]"
@@ -37390,6 +38301,30 @@
         "[\"web\",1,\"Winspace G3 official geometry\",\"current manufacturer product page\",\"no-result\",\"2026-08-27\",\"The accessible exact-model page lists sizes and specifications but no numeric geometry table.\",\"https://www.winspace.cc/products/g3-gravel\"]",
         "[\"web\",2,\"Winspace G3 geometry chart\",\"alternate manufacturer exact-model route\",\"no-result\",\"2026-08-27\",\"No usable numeric geometry chart was exposed.\",\"https://www.winspace.cc/g3-gravel\"]",
         "[\"web\",3,\"银贝斯 G3 Gravel 车架\",\"signed-in Taobao exact-model search\",\"no-result\",\"2026-08-27\",\"No exact G3 item page with a geometry chart was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-winspace-g5-frame-material-2026-08-27": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Winspace G5 T700 T800 carbon construction\",\"manufacturer regional exact-model page\",\"found\",\"2026-08-27\",\"Official regional page identifies a Toray T700 + T800 blend, full-carbon fork, aero carbon seatpost, UDH and FIDLOCK storage.\",\"https://winspace.com.au/products/winspace-g5-gravel-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "winspace-g5-au-official-2026-08-27"
+      ]
+    },
+    "platform-winspace-g5-frame-stiffness-2026-08-27": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"winspace-g5 stiffness owner report\",\"XHS runtime preflight\",\"blocked\",\"2026-08-27\",\"Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened.\",null]",
+        "[\"web\",1,\"Winspace G5 stiffness test\",\"manufacturer global exact-model page\",\"no-result\",\"2026-08-27\",\"High-stiffness language has no protocol or measurement and is rejected as marketing.\",\"https://www.winspace.cc/products/g5-gravel\"]",
+        "[\"web\",2,\"Winspace G5 ride stiffness review\",\"manufacturer regional exact-model page\",\"no-result\",\"2026-08-27\",\"Construction and package details are present, but no stiffness result.\",\"https://winspace.com.au/products/winspace-g5-gravel-frameset\"]",
+        "[\"web\",3,\"Winspace G5 independent stiffness assessment\",\"indexed exact-model review search\",\"no-result\",\"2026-08-27\",\"No sufficiently specific independent G5 ride or measured result surfaced.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -41942,7 +42877,11 @@
       "missing-china-price-merida-scultura": [
         "official_price"
       ],
+      "missing-china-price-quick-pro-gr-one": [
+        "observed_price"
+      ],
       "missing-china-price-quick-pro-xr-one": [
+        "observed_price",
         "official_price"
       ],
       "missing-china-price-specialized-roubaix-sl8": [

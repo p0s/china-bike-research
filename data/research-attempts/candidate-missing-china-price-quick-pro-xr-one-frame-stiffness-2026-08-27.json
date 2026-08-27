@@ -1,0 +1,64 @@
+{
+  "id": "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-quick-pro-xr-one"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "missing-china-price-quick-pro-xr-one stiffness owner report",
+          "route": "XHS runtime preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-27",
+          "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick XR ONE stiffness test",
+          "route": "official complete-bike page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Manufacturer efficiency and ride-feel language is marketing, not a stiffness result.",
+          "result_url": "https://www.quickprousa.com/products/xr-one-shimano"
+        },
+        {
+          "attempt": 2,
+          "query": "Quick XR ONE frame stiffness review",
+          "route": "official frameset page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No test protocol, deflection value or attributable independent ride evidence was exposed."
+        },
+        {
+          "attempt": 3,
+          "query": "Quick XR ONE independent ride assessment",
+          "route": "indexed exact-model review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No sufficiently exact attributable review surfaced."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No exact stiffness value is inferred from material or construction. The remaining XHS owner/reviewer route is blocked for this job."
+}

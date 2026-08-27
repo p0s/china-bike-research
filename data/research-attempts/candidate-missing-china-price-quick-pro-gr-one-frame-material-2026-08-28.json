@@ -1,0 +1,17 @@
+{
+  "id": "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-quick-pro-gr-one" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "Quick GR ONE T1100 M65 Taobao frameset", "route": "exact selected Taobao frameset listing", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=950771838272", "accessed_at": "2026-08-28", "note": "Exact listing identifies Toray T1100 + M65 carbon and one-piece construction." }
+    ] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["quick-pro-gr-one-frameset-taobao-2026-08-28"],
+  "retry_after": null,
+  "notes": "Exact fiber grades and construction are recorded from the selected frameset listing."
+}
