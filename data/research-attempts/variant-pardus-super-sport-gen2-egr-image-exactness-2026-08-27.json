@@ -18,7 +18,14 @@
       ]
     }
   },
-  "status": "blocked",
+  "status": "found",
+  "accepted_source_ids": ["public-pardus-super-sport-gen2-launch-2026-08-28"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["public-pardus-super-sport-gen2-launch-2026-08-28"],
+    "note": "A later validated exact-post archive supplies an exact-build image without rewriting the earlier blocked attempt history."
+  },
   "retry_after": "2026-08-29",
-  "notes": "No image was copied. Platform and exact-build images exist, but publication still needs reusable rights or an accepted public-post embed."
+  "notes": "The validated public-post archive supplied one exact-build, privacy-reviewed source image; only bounded WebP derivatives are committed with source attribution."
 }

@@ -7,8 +7,8 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 508,
-      "images": 181,
+      "sources": 516,
+      "images": 187,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
@@ -19,15 +19,15 @@
       "researchAttempts": 549
     },
     "image_accuracy": {
-      "exact-platform": 63,
-      "exact-variant": 79,
+      "exact-platform": 66,
+      "exact-variant": 82,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
       "same-platform": 12
     },
     "image_hosting": {
-      "local": 3,
+      "local": 9,
       "remote": 178
     },
     "candidate_prices": {
@@ -229,6 +229,7 @@
       "camp-gx700-official",
       "camp-gx700-official-2026-08-17",
       "camp-gx700-official-2026-08-28",
+      "camp-gx700-tmall-2026-08-28",
       "canyon-aeroad-cfr-di2-official-2026-08-17",
       "canyon-china-warranty-2026-08-17",
       "canyon-grail-cf-7-official-2026-08-17",
@@ -354,6 +355,7 @@
       "pardus-super-sport-gen2-douyin-2026-08-27",
       "pardus-super-sport-gen2-official-2026-08-27",
       "pardus-super-sport-gen2-official-2026-08-28",
+      "pardus-super-sport-gen2-taobao-2026-08-28",
       "pardus-super-sport-gen2-uaecycle-2026-08-17",
       "pardus-super-sport-image-reference",
       "pardus-super-sport-launch",
@@ -370,6 +372,7 @@
       "pirelli-cinturato-velo-35-retailer-2026-08-27",
       "pro-stealth-sport-official-2026-08-27",
       "project-image-placeholders",
+      "public-camp-gx700-spec-post-2026-08-28",
       "public-elves-mori-family-build-2026-08-17",
       "public-elves-mori-frame-price-2026-08-17",
       "public-giant-defy-adv-sl-custom-build-2026-08-20",
@@ -391,6 +394,8 @@
       "public-pardus-spark-rs-build-2026-08-17",
       "public-pardus-spark-tourist-pes-2026-08-24",
       "public-pardus-super-sport-105-build-2026-08-17",
+      "public-pardus-super-sport-gen2-launch-2026-08-28",
+      "public-pardus-super-sport-gen2-owner-weight-2026-08-28",
       "public-pardus-super-sport-gen2-price-2026-08-17",
       "public-pardus-uragano-evo-build-2026-08-17",
       "public-quick-pro-er-one-build-2026-08-17",
@@ -415,6 +420,7 @@
       "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
       "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
       "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27",
+      "public-voicevelo-g-major-dealer-spec-2026-08-28",
       "public-winspace-g5-owner-image-2026-08-17",
       "public-winspace-slc3-build-2026-08-17",
       "public-xds-gt350-custom-build-2026-08-17",
@@ -424,6 +430,7 @@
       "public-xds-gt600-retailer-build-2026-08-27",
       "public-xlab-ad8-build-2026-08-27",
       "public-xlab-ad9-build-2026-08-27",
+      "public-xlab-gt8-muddy-build-2026-08-28",
       "public-xlab-gt8-overview-2026-08-17",
       "public-xlab-rs9-build-2026-08-27",
       "quick-2026-one-series-launch",
@@ -650,6 +657,7 @@
       "voicevelo-g-major-biketo-launch-2023-11-13",
       "voicevelo-g-major-biketo-review-2024-01-17",
       "voicevelo-g-major-panda-podium-2026-08-17",
+      "voicevelo-g-major-taobao-2026-08-28",
       "voicevelo-warranty-official-2026-08-17",
       "vook-v8e-pro-official-2026-08-08",
       "wheeltop-eds-gex-official-2026-08-24",
@@ -728,6 +736,7 @@
       "camp-gx700-gold-gallery",
       "camp-gx700-grey-gallery",
       "camp-gx700-primary-image",
+      "camp-gx700-xhs-complete-gallery",
       "canyon-aeroad-cfr-di2-primary-image",
       "canyon-grail-cf-7-primary-image",
       "canyon-ultimate-cfr-axs-primary-image",
@@ -794,6 +803,8 @@
       "pardus-spark-sport-pes-primary-image",
       "pardus-super-sport-gen2-candidate-primary-image",
       "pardus-super-sport-gen2-primary-image",
+      "pardus-super-sport-gen2-xhs-build-gallery",
+      "pardus-super-sport-gen2-xhs-frame-weight-gallery",
       "pardus-uragano-evo-main-public-primary-image",
       "pardus-uragano-evo-public-primary-image",
       "pardus-uragano-sport-cn-cockpit-gallery",
@@ -880,10 +891,12 @@
       "twitter-gravel-v3-2024-rs-carbon-wave-cockpit-gallery",
       "twitter-gravel-v3-2024-rs-carbon-wave-primary-image",
       "twitter-gravel-v3-primary-image",
+      "twitter-gravel-v3-xhs-r7170-gallery",
       "twitter-t10-pro-primary-image",
       "twitter-t3-tt-primary-image",
       "van-rysel-rcr-f-pro-primary-image",
       "voicevelo-g-major-primary-image",
+      "voicevelo-g-major-xhs-frameset-gallery",
       "vook-v8e-pro-primary-image",
       "winspace-agile-primary-image",
       "winspace-g3-primary-image",
@@ -903,6 +916,7 @@
       "xlab-ad8-primary-image",
       "xlab-ad9-primary-image",
       "xlab-gt8-primary-image",
+      "xlab-gt8-xhs-muddy-build-gallery",
       "xlab-rs9-primary-image",
       "xmcarbonspeed-cs-gr01-primary-image",
       "yoeleo-altera-g21-primary-image"
@@ -2636,6 +2650,10 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fork_weight_basis",
+        "frame.claimed_fork_weight_g",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
         "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
@@ -5053,6 +5071,18 @@
         "type",
         "url"
       ],
+      "camp-gx700-tmall-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "canyon-aeroad-cfr-di2-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -6589,6 +6619,18 @@
         "type",
         "url"
       ],
+      "pardus-super-sport-gen2-taobao-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-super-sport-gen2-uaecycle-2026-08-17": [
         "accessed_at",
         "language",
@@ -6784,6 +6826,22 @@
         "reliability.specification",
         "title",
         "type"
+      ],
+      "public-camp-gx700-spec-post-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
       ],
       "public-elves-mori-family-build-2026-08-17": [
         "accessed_at",
@@ -7027,6 +7085,38 @@
       ],
       "public-pardus-super-sport-105-build-2026-08-17": [
         "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-pardus-super-sport-gen2-launch-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-pardus-super-sport-gen2-owner-weight-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
         "language",
         "notes",
         "publisher",
@@ -7336,6 +7426,22 @@
         "type",
         "url"
       ],
+      "public-voicevelo-g-major-dealer-spec-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "public-winspace-g5-owner-image-2026-08-17": [
         "accessed_at",
         "language",
@@ -7441,6 +7547,22 @@
       "public-xlab-ad9-build-2026-08-27": [
         "accessed_at",
         "archive_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-xlab-gt8-muddy-build-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.extension_version",
+        "capture.scope",
         "language",
         "notes",
         "publisher",
@@ -10199,6 +10321,18 @@
         "type",
         "url"
       ],
+      "voicevelo-g-major-taobao-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "voicevelo-warranty-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -11189,6 +11323,36 @@
         "hosting.remote_url",
         "media_type",
         "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "camp-gx700-xhs-complete-gallery": [
+        "alt",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -12339,6 +12503,65 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "pardus-super-sport-gen2-xhs-build-gallery": [
+        "alt",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "pardus-super-sport-gen2-xhs-frame-weight-gallery": [
+        "alt",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "pardus-uragano-evo-main-public-primary-image": [
         "alt",
@@ -13805,6 +14028,35 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "twitter-gravel-v3-xhs-r7170-gallery": [
+        "alt",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "twitter-t10-pro-primary-image": [
         "alt",
         "candidate_id",
@@ -13860,6 +14112,35 @@
         "hosting.mode",
         "hosting.remote_url",
         "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "voicevelo-g-major-xhs-frameset-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -14176,6 +14457,35 @@
         "hosting.mode",
         "hosting.remote_url",
         "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "xlab-gt8-xhs-muddy-build-gallery": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.no_license_asserted",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -17730,8 +18040,11 @@
       ],
       "pardus-super-sport-gen2": [
         "category",
+        "existing_record_id",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
         "last_reviewed",
         "model_id",
         "name",
@@ -19121,10 +19434,12 @@
         "category",
         "facts.bottom_bracket",
         "facts.cockpit",
+        "facts.dealer_warranty",
         "facts.frame",
         "facts.frame_construction",
         "facts.frame_material",
         "facts.frame_weight_g",
+        "facts.frameset_package",
         "facts.sizes",
         "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
@@ -23915,6 +24230,7 @@
         "target.record_type"
       ],
       "candidate-voicevelo-g-major-bom-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -23922,6 +24238,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -24092,6 +24412,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -24325,6 +24649,7 @@
       ],
       "candidate-xlab-gt8-purchase-route-2026-08-27": [
         "accepted_source_ids",
+        "channels.public-post.attempts",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -26310,6 +26635,7 @@
         "target.record_type"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -26319,6 +26645,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -26356,6 +26686,7 @@
         "target.record_type"
       ],
       "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": [
+        "accepted_source_ids",
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -26365,6 +26696,10 @@
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -27757,7 +28092,9 @@
         "brand_id=camp",
         "source_ids=camp-gx700-official",
         "source_ids=camp-gx700-official-2026-08-17",
-        "source_ids=camp-gx700-official-2026-08-28"
+        "source_ids=camp-gx700-official-2026-08-28",
+        "source_ids=camp-gx700-tmall-2026-08-28",
+        "source_ids=public-camp-gx700-spec-post-2026-08-28"
       ],
       "carbonda-cfr696": [
         "brand_id=carbonda",
@@ -27829,8 +28166,11 @@
         "source_ids=pardus-super-sport-egr-888bike-2026-08-28",
         "source_ids=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-super-sport-gen2-official-2026-08-28",
+        "source_ids=pardus-super-sport-gen2-taobao-2026-08-28",
         "source_ids=pardus-super-sport-launch",
-        "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
+        "source_ids=pardus-super-sport-launch-wildto-2026-08-17",
+        "source_ids=public-pardus-super-sport-gen2-launch-2026-08-28",
+        "source_ids=public-pardus-super-sport-gen2-owner-weight-2026-08-28"
       ],
       "quick-gr-one": [
         "brand_id=quick",
@@ -28023,7 +28363,9 @@
         "platform_id=camp-gx700",
         "source_ids=camp-gx700-official",
         "source_ids=camp-gx700-official-2026-08-17",
-        "source_ids=camp-gx700-official-2026-08-28"
+        "source_ids=camp-gx700-official-2026-08-28",
+        "source_ids=camp-gx700-tmall-2026-08-28",
+        "source_ids=public-camp-gx700-spec-post-2026-08-28"
       ],
       "carbonda-cfr696-frameset": [
         "platform_id=carbonda-cfr696",
@@ -28091,8 +28433,11 @@
         "source_ids=pardus-super-sport-gen2-douyin-2026-08-27",
         "source_ids=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-super-sport-gen2-official-2026-08-28",
+        "source_ids=pardus-super-sport-gen2-taobao-2026-08-28",
         "source_ids=pardus-super-sport-launch",
-        "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
+        "source_ids=pardus-super-sport-launch-wildto-2026-08-17",
+        "source_ids=public-pardus-super-sport-gen2-launch-2026-08-28",
+        "source_ids=public-pardus-super-sport-gen2-owner-weight-2026-08-28"
       ],
       "quick-gr-one-frameset": [
         "platform_id=quick-gr-one",
@@ -28487,6 +28832,7 @@
       "camp-gx700-official": [],
       "camp-gx700-official-2026-08-17": [],
       "camp-gx700-official-2026-08-28": [],
+      "camp-gx700-tmall-2026-08-28": [],
       "canyon-aeroad-cfr-di2-official-2026-08-17": [],
       "canyon-china-warranty-2026-08-17": [],
       "canyon-grail-cf-7-official-2026-08-17": [],
@@ -28612,6 +28958,7 @@
       "pardus-super-sport-gen2-douyin-2026-08-27": [],
       "pardus-super-sport-gen2-official-2026-08-27": [],
       "pardus-super-sport-gen2-official-2026-08-28": [],
+      "pardus-super-sport-gen2-taobao-2026-08-28": [],
       "pardus-super-sport-gen2-uaecycle-2026-08-17": [],
       "pardus-super-sport-image-reference": [],
       "pardus-super-sport-launch": [],
@@ -28628,6 +28975,7 @@
       "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
       "pro-stealth-sport-official-2026-08-27": [],
       "project-image-placeholders": [],
+      "public-camp-gx700-spec-post-2026-08-28": [],
       "public-elves-mori-family-build-2026-08-17": [],
       "public-elves-mori-frame-price-2026-08-17": [],
       "public-giant-defy-adv-sl-custom-build-2026-08-20": [],
@@ -28649,6 +28997,8 @@
       "public-pardus-spark-rs-build-2026-08-17": [],
       "public-pardus-spark-tourist-pes-2026-08-24": [],
       "public-pardus-super-sport-105-build-2026-08-17": [],
+      "public-pardus-super-sport-gen2-launch-2026-08-28": [],
+      "public-pardus-super-sport-gen2-owner-weight-2026-08-28": [],
       "public-pardus-super-sport-gen2-price-2026-08-17": [],
       "public-pardus-uragano-evo-build-2026-08-17": [],
       "public-quick-pro-er-one-build-2026-08-17": [],
@@ -28673,6 +29023,7 @@
       "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24": [],
       "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27": [],
       "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27": [],
+      "public-voicevelo-g-major-dealer-spec-2026-08-28": [],
       "public-winspace-g5-owner-image-2026-08-17": [],
       "public-winspace-slc3-build-2026-08-17": [],
       "public-xds-gt350-custom-build-2026-08-17": [],
@@ -28682,6 +29033,7 @@
       "public-xds-gt600-retailer-build-2026-08-27": [],
       "public-xlab-ad8-build-2026-08-27": [],
       "public-xlab-ad9-build-2026-08-27": [],
+      "public-xlab-gt8-muddy-build-2026-08-28": [],
       "public-xlab-gt8-overview-2026-08-17": [],
       "public-xlab-rs9-build-2026-08-27": [],
       "quick-2026-one-series-launch": [],
@@ -28908,6 +29260,7 @@
       "voicevelo-g-major-biketo-launch-2023-11-13": [],
       "voicevelo-g-major-biketo-review-2024-01-17": [],
       "voicevelo-g-major-panda-podium-2026-08-17": [],
+      "voicevelo-g-major-taobao-2026-08-28": [],
       "voicevelo-warranty-official-2026-08-17": [],
       "vook-v8e-pro-official-2026-08-08": [],
       "wheeltop-eds-gex-official-2026-08-24": [],
@@ -29033,6 +29386,11 @@
       "camp-gx700-primary-image": [
         "platform_id=camp-gx700",
         "source_id=camp-gx700-official",
+        "variant_ids=camp-gx700-grx820"
+      ],
+      "camp-gx700-xhs-complete-gallery": [
+        "platform_id=camp-gx700",
+        "source_id=public-camp-gx700-spec-post-2026-08-28",
         "variant_ids=camp-gx700-grx820"
       ],
       "canyon-aeroad-cfr-di2-primary-image": [
@@ -29328,6 +29686,15 @@
         "platform_id=pardus-super-sport-gen2",
         "source_id=pardus-super-sport-image-reference",
         "variant_ids=pardus-super-sport-gen2-egr"
+      ],
+      "pardus-super-sport-gen2-xhs-build-gallery": [
+        "platform_id=pardus-super-sport-gen2",
+        "source_id=public-pardus-super-sport-gen2-launch-2026-08-28",
+        "variant_ids=pardus-super-sport-gen2-egr"
+      ],
+      "pardus-super-sport-gen2-xhs-frame-weight-gallery": [
+        "platform_id=pardus-super-sport-gen2",
+        "source_id=public-pardus-super-sport-gen2-owner-weight-2026-08-28"
       ],
       "pardus-uragano-evo-main-public-primary-image": [
         "candidate_id=pardus-uragano-evo",
@@ -29707,6 +30074,10 @@
         "source_id=twitter-v3-official",
         "variant_ids=twitter-v3-wheeltop-eds"
       ],
+      "twitter-gravel-v3-xhs-r7170-gallery": [
+        "platform_id=twitter-gravel-v3",
+        "source_id=public-twitter-gravel-v3-r7170-official-xhs-2026-08-27"
+      ],
       "twitter-t10-pro-primary-image": [
         "candidate_id=twitter-t10-pro",
         "source_id=twitter-t10-pro-official-2026-08-17"
@@ -29723,6 +30094,10 @@
       "voicevelo-g-major-primary-image": [
         "candidate_id=voicevelo-g-major",
         "source_id=voicevelo-g-major-panda-podium-2026-08-17"
+      ],
+      "voicevelo-g-major-xhs-frameset-gallery": [
+        "candidate_id=voicevelo-g-major",
+        "source_id=public-voicevelo-g-major-dealer-spec-2026-08-28"
       ],
       "vook-v8e-pro-primary-image": [
         "candidate_id=vook-v8e-pro",
@@ -29801,6 +30176,10 @@
       "xlab-gt8-primary-image": [
         "candidate_id=missing-china-price-x-lab-xds-gt8",
         "source_id=xlab-gt8-official-2026-08-17"
+      ],
+      "xlab-gt8-xhs-muddy-build-gallery": [
+        "candidate_id=missing-china-price-x-lab-xds-gt8",
+        "source_id=public-xlab-gt8-muddy-build-2026-08-28"
       ],
       "xlab-rs9-primary-image": [
         "candidate_id=xlab-rs9",
@@ -30576,6 +30955,7 @@
       ],
       "missing-china-price-x-lab-xds-gt8": [
         "model_id=x-lab-xds-gt8",
+        "source_ids=public-xlab-gt8-muddy-build-2026-08-28",
         "source_ids=public-xlab-gt8-overview-2026-08-17",
         "source_ids=usd-cny-central-parity-2026-07-31",
         "source_ids=xlab-gt8-official-2026-08-17",
@@ -30647,9 +31027,13 @@
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "pardus-super-sport-gen2": [
+        "existing_record_id=pardus-super-sport-gen2-egr",
         "model_id=pardus-super-sport-gen2",
+        "source_ids=pardus-super-sport-gen2-taobao-2026-08-28",
         "source_ids=pardus-super-sport-gen2-uaecycle-2026-08-17",
         "source_ids=public-pardus-super-sport-105-build-2026-08-17",
+        "source_ids=public-pardus-super-sport-gen2-launch-2026-08-28",
+        "source_ids=public-pardus-super-sport-gen2-owner-weight-2026-08-28",
         "source_ids=public-pardus-super-sport-gen2-price-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
@@ -30995,9 +31379,11 @@
       ],
       "voicevelo-g-major": [
         "model_id=voicevelo-g-major",
+        "source_ids=public-voicevelo-g-major-dealer-spec-2026-08-28",
         "source_ids=voicevelo-g-major-biketo-launch-2023-11-13",
         "source_ids=voicevelo-g-major-biketo-review-2024-01-17",
         "source_ids=voicevelo-g-major-panda-podium-2026-08-17",
+        "source_ids=voicevelo-g-major-taobao-2026-08-28",
         "source_ids=voicevelo-warranty-official-2026-08-17",
         "video_ids=china-cycling-voicevelo-g-major"
       ],
@@ -32027,6 +32413,7 @@
         "target.record_id=tsb-titan-super-bond-pioneer-one"
       ],
       "candidate-voicevelo-g-major-bom-2026-08-17": [
+        "resolution.source_ids=public-voicevelo-g-major-dealer-spec-2026-08-28",
         "target.record_id=voicevelo-g-major"
       ],
       "candidate-voicevelo-g-major-bottom-bracket-2026-08-17": [
@@ -32063,6 +32450,7 @@
         "target.record_id=voicevelo-g-major"
       ],
       "candidate-voicevelo-g-major-warranty-support-2026-08-17": [
+        "resolution.source_ids=public-voicevelo-g-major-dealer-spec-2026-08-28",
         "target.record_id=voicevelo-g-major"
       ],
       "candidate-winspace-g3-mainland-price-2026-08-27": [
@@ -32529,6 +32917,7 @@
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": [
+        "resolution.source_ids=public-pardus-super-sport-gen2-owner-weight-2026-08-28",
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17": [
@@ -32538,6 +32927,7 @@
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": [
+        "resolution.source_ids=public-pardus-super-sport-gen2-launch-2026-08-28",
         "target.record_id=pardus-super-sport-gen2-egr"
       ],
       "variant-pardus-super-sport-gen2-egr-price-2026-08-17": [
@@ -33015,6 +33405,14 @@
         "identity": 3,
         "price": 3,
         "specification": 3
+      }
+    },
+    "camp-gx700-tmall-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "canyon-aeroad-cfr-di2-official-2026-08-17": {
@@ -34049,6 +34447,14 @@
         "specification": 3
       }
     },
+    "pardus-super-sport-gen2-taobao-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 0,
+        "specification": 0
+      }
+    },
     "pardus-super-sport-gen2-uaecycle-2026-08-17": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -34176,6 +34582,14 @@
         "identity": 3,
         "price": -1,
         "specification": -1
+      }
+    },
+    "public-camp-gx700-spec-post-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "public-elves-mori-family-build-2026-08-17": {
@@ -34344,6 +34758,22 @@
         "identity": 1,
         "price": 0,
         "specification": 0
+      }
+    },
+    "public-pardus-super-sport-gen2-launch-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 1
+      }
+    },
+    "public-pardus-super-sport-gen2-owner-weight-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "public-pardus-super-sport-gen2-price-2026-08-17": {
@@ -34538,6 +34968,14 @@
         "specification": 1
       }
     },
+    "public-voicevelo-g-major-dealer-spec-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
     "public-winspace-g5-owner-image-2026-08-17": {
       "minimum_type_tier": 1,
       "minimum_reliability": {
@@ -34608,6 +35046,14 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "public-xlab-gt8-muddy-build-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
       }
     },
     "public-xlab-gt8-overview-2026-08-17": {
@@ -36405,6 +36851,14 @@
         "identity": 2,
         "price": 1,
         "specification": 2
+      }
+    },
+    "voicevelo-g-major-taobao-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 0,
+        "specification": 0
       }
     },
     "voicevelo-warranty-official-2026-08-17": {
@@ -40821,7 +41275,12 @@
         "[\"public-post\",2,\"Voicevelo G Major 砾石车架组 material, standards, clearance and BOM\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
         "[\"public-post\",3,\"Voicevelo G Major G Major 砾石车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"public-voicevelo-g-major-dealer-spec-2026-08-28\"],\"note\":\"A later validated exact-post archive supplies the frameset package without rewriting the earlier blocked attempt history.\"}"
+      ],
+      "accepted_source_ids": [
+        "public-voicevelo-g-major-dealer-spec-2026-08-28"
+      ]
     },
     "candidate-voicevelo-g-major-bottom-bracket-2026-08-17": {
       "channel_attempt_counts": {
@@ -40976,7 +41435,11 @@
         "[\"public-post\",3,\"Voicevelo G Major G Major 砾石车架组 2026 purchase and warranty route review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]",
         "[\"web\",1,\"Voicevelo G Major official warranty\",\"official manufacturer/support\",\"found\",\"2026-08-17\",\"China channel eligibility not shown.\",\"https://voicevelo.com/pages/warranty-items\"]"
       ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"public-voicevelo-g-major-dealer-spec-2026-08-28\"],\"note\":\"A later validated exact-post archive adds the authorized dealer's distinct warranty offer without rewriting the earlier blocked attempt history.\"}"
+      ],
       "accepted_source_ids": [
+        "public-voicevelo-g-major-dealer-spec-2026-08-28",
         "voicevelo-warranty-official-2026-08-17"
       ]
     },
@@ -41177,13 +41640,16 @@
     },
     "candidate-xlab-gt8-purchase-route-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
-        "web": 1
+        "public-post": 1,
+        "web": 2
       },
       "attempt_entries": [
-        "[\"web\",1,\"X-LAB GT8 国内 到店 整车\",\"mainland market report\",\"found\",\"2026-08-27\",\"First domestic dealer arrivals and complete-bike-only availability reported.\",\"https://post.smzdm.com/p/a3mder67/\"]"
+        "[\"public-post\",1,\"X-LAB GT8 价格 购买\",\"validated XHS exact-model overview archive\",\"found\",\"2026-08-28\",\"Opened exact-model overview reports a mainland market price near CNY 22,000 and confirms the current complete-bike identity.\",\"https://www.xiaohongshu.com/explore/69e37e30000000001f007cdb\"]",
+        "[\"web\",1,\"X-LAB GT8 国内 到店 整车\",\"mainland market report\",\"found\",\"2026-08-27\",\"First domestic dealer arrivals and complete-bike-only availability reported.\",\"https://post.smzdm.com/p/a3mder67/\"]",
+        "[\"web\",2,\"喜德盛 X-LAB GT8\",\"Taobao exact-model product search\",\"no-result\",\"2026-08-28\",\"Current search returned GT8 accessories and unrelated X-LAB bikes, but no decisive exact GT8 complete-bike listing.\",null]"
       ],
       "accepted_source_ids": [
+        "public-xlab-gt8-overview-2026-08-17",
         "xlab-gt8-smzdm-market-report-2026-08-27"
       ]
     },
@@ -42251,13 +42717,15 @@
     },
     "variant-camp-gx700-grx820-purchase-route-2026-08-17": {
       "channel_attempt_counts": {
-        "web": 1
+        "web": 2
       },
       "attempt_entries": [
-        "[\"web\",1,\"CAMP GX700 GRX820 current purchase route\",\"manufacturer exact page/manual/geometry chart\",\"found\",\"2026-08-17\",\"Official page has price, add-to-cart, delivery estimate and JD link.\",\"https://www.campbicycle.com/en/gravel_92368/gx700.html\"]"
+        "[\"web\",1,\"CAMP GX700 GRX820 current purchase route\",\"manufacturer exact page/manual/geometry chart\",\"found\",\"2026-08-17\",\"Official page has price, add-to-cart, delivery estimate and JD link.\",\"https://www.campbicycle.com/en/gravel_92368/gx700.html\"]",
+        "[\"web\",2,\"坎普 GX700 2026 旗舰店\",\"Tmall flagship exact-model listing\",\"found\",\"2026-08-28\",\"Current flagship listing exposes the GX700, its color and size choices, and a CNY 9,999 visible price; final option checkout was not read back.\",\"https://detail.tmall.com/item.htm?id=995839748675\"]"
       ],
       "accepted_source_ids": [
-        "camp-gx700-official-2026-08-17"
+        "camp-gx700-official-2026-08-17",
+        "camp-gx700-tmall-2026-08-28"
       ]
     },
     "variant-carbonda-cfr696-frameset-price-2026-08-25": {
@@ -43018,7 +43486,12 @@
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR frame weight catalog\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Older official page is Gen1 and does not document Gen2 EGR frame-only weight.\",\"https://www.parduscycle.com/Hightxq.aspx?cc=5176&color=5183&id=21398&pz=5175&t=1030\"]",
         "[\"web\",3,\"PARDUS SUPG2 SPORT EGR frame weight exact SKU\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"rejected\",\"2026-08-17\",\"Exact retailer provides complete-bike estimate only.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"public-pardus-super-sport-gen2-owner-weight-2026-08-28\"],\"note\":\"A later validated exact-post archive supplies the owner-scale frame and fork readings without rewriting the earlier blocked attempt history.\"}"
+      ],
+      "accepted_source_ids": [
+        "public-pardus-super-sport-gen2-owner-weight-2026-08-28"
+      ]
     },
     "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -43061,7 +43534,12 @@
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR authorized retailer photos\",\"authorized-retailer exact-SKU page\",\"rejected\",\"2026-08-27\",\"Exact option imagery has no documented redistribution permission.\",null]",
         "[\"web\",3,\"瑞豹 Super Sport 二代 蓝图 eGR 公开图片\",\"public image and post search\",\"rejected\",\"2026-08-27\",\"Attribution alone is not a reuse-rights basis; an embed is required.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"public-pardus-super-sport-gen2-launch-2026-08-28\"],\"note\":\"A later validated exact-post archive supplies an exact-build image without rewriting the earlier blocked attempt history.\"}"
+      ],
+      "accepted_source_ids": [
+        "public-pardus-super-sport-gen2-launch-2026-08-28"
+      ]
     },
     "variant-pardus-super-sport-gen2-egr-price-2026-08-17": {
       "channel_attempt_counts": {
@@ -44332,6 +44810,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "camp-gx700-xhs-complete-gallery": {
+      "target": "platforms:camp-gx700",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
     "canyon-aeroad-cfr-di2-primary-image": {
       "target": "candidates:missing-china-price-canyon-aeroad",
       "minimum_accuracy_rank": 4,
@@ -44793,6 +45278,20 @@
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
+    },
+    "pardus-super-sport-gen2-xhs-build-gallery": {
+      "target": "platforms:pardus-super-sport-gen2",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "pardus-super-sport-gen2-xhs-frame-weight-gallery": {
+      "target": "platforms:pardus-super-sport-gen2",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "pardus-uragano-evo-main-public-primary-image": {
       "target": "candidates:pardus-uragano-evo",
@@ -45396,6 +45895,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "twitter-gravel-v3-xhs-r7170-gallery": {
+      "target": "platforms:twitter-gravel-v3",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
     "twitter-t10-pro-primary-image": {
       "target": "candidates:twitter-t10-pro",
       "minimum_accuracy_rank": 4,
@@ -45423,6 +45929,13 @@
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
+    },
+    "voicevelo-g-major-xhs-frameset-gallery": {
+      "target": "candidates:voicevelo-g-major",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "vook-v8e-pro-primary-image": {
       "target": "candidates:vook-v8e-pro",
@@ -45556,6 +46069,13 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "xlab-gt8-xhs-muddy-build-gallery": {
+      "target": "candidates:missing-china-price-x-lab-xds-gt8",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "xlab-rs9-primary-image": {
       "target": "candidates:xlab-rs9",

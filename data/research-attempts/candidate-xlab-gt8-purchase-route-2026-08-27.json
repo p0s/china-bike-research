@@ -3,14 +3,19 @@
   "target": { "record_type": "candidate", "record_id": "missing-china-price-x-lab-xds-gt8" },
   "field": "purchase-route",
   "priority": "high",
-  "searched_at": "2026-08-27",
+  "searched_at": "2026-08-28",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "X-LAB GT8 国内 到店 整车", "route": "mainland market report", "outcome": "found", "accessed_at": "2026-08-27", "note": "First domestic dealer arrivals and complete-bike-only availability reported.", "result_url": "https://post.smzdm.com/p/a3mder67/" }] }
+    "public-post": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "X-LAB GT8 价格 购买", "route": "validated XHS exact-model overview archive", "outcome": "found", "accessed_at": "2026-08-28", "note": "Opened exact-model overview reports a mainland market price near CNY 22,000 and confirms the current complete-bike identity.", "result_url": "https://www.xiaohongshu.com/explore/69e37e30000000001f007cdb" }
+    ] },
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "X-LAB GT8 国内 到店 整车", "route": "mainland market report", "outcome": "found", "accessed_at": "2026-08-27", "note": "First domestic dealer arrivals and complete-bike-only availability reported.", "result_url": "https://post.smzdm.com/p/a3mder67/" },
+      { "attempt": 2, "query": "喜德盛 X-LAB GT8", "route": "Taobao exact-model product search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "Current search returned GT8 accessories and unrelated X-LAB bikes, but no decisive exact GT8 complete-bike listing." }
+    ] }
   },
   "status": "found",
-  "accepted_source_ids": ["xlab-gt8-smzdm-market-report-2026-08-27"],
+  "accepted_source_ids": ["public-xlab-gt8-overview-2026-08-17", "xlab-gt8-smzdm-market-report-2026-08-27"],
   "retry_after": null,
   "notes": "Domestic dealer route established; stock and exact included accessories remain order-specific."
 }

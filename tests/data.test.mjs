@@ -101,7 +101,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 181);
+  assert.equal(data.images.length, 187);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -253,8 +253,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 194);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 168);
+  assert.equal(catalogCandidates.length, 193);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 167);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -532,8 +532,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'lightcarbon-speedz'
   ];
   assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 178);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 104);
-  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 1);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 106);
+  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 7);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images

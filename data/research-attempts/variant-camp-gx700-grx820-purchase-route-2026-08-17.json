@@ -6,7 +6,7 @@
   },
   "field": "purchase-route",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "web"
   ],
@@ -22,14 +22,24 @@
           "accessed_at": "2026-08-17",
           "note": "Official page has price, add-to-cart, delivery estimate and JD link.",
           "result_url": "https://www.campbicycle.com/en/gravel_92368/gx700.html"
+        },
+        {
+          "attempt": 2,
+          "query": "坎普 GX700 2026 旗舰店",
+          "route": "Tmall flagship exact-model listing",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "note": "Current flagship listing exposes the GX700, its color and size choices, and a CNY 9,999 visible price; final option checkout was not read back.",
+          "result_url": "https://detail.tmall.com/item.htm?id=995839748675"
         }
       ]
     }
   },
   "status": "found",
   "accepted_source_ids": [
-    "camp-gx700-official-2026-08-17"
+    "camp-gx700-official-2026-08-17",
+    "camp-gx700-tmall-2026-08-28"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Manufacturer and current flagship-store routes are both available; the listing price is not promoted to a new exact-SKU price without selected-option checkout readback."
 }

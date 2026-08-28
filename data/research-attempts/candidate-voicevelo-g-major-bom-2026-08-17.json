@@ -6,7 +6,7 @@
   },
   "field": "bom",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "public-post"
   ],
@@ -42,8 +42,16 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "public-voicevelo-g-major-dealer-spec-2026-08-28"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["public-voicevelo-g-major-dealer-spec-2026-08-28"],
+    "note": "A later validated exact-post archive supplies the frameset package without rewriting the earlier blocked attempt history."
+  },
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The authorized-dealer package list is published as seller-supplied exact-model evidence; unlisted accessories are not inferred."
 }
