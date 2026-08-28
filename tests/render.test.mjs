@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
-import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderPrivacy } from '../src/render.mjs';
+import { renderHome, renderModel, renderCandidateModel, renderBikeBuilder, renderElectronicGroupsets, renderImagePolicy, renderImageSources, renderMethodology, renderPrivacy } from '../src/render.mjs';
 
 const data = loadDataset();
 const products = joinProducts(data);
@@ -13,6 +13,7 @@ const html = renderHome({
   base: '/china-bike-research',
   repositoryUrl: 'https://github.com/example/china-bike-research',
   siteUrl: 'https://example.github.io',
+  siteLastmod: '2026-08-28',
   now: new Date('2026-08-07T00:00:00Z')
 });
 
@@ -26,6 +27,14 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
   assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
   assert.doesNotMatch(html, /"itemListElement"/);
+});
+
+test('homepage exposes crawlable evidence-led discovery without duplicating the catalog', () => {
+  assert.match(html, /Dataset updated <time datetime="2026-08-28">2026-08-28<\/time>; catalog-wide review <time datetime="2026-08-08">2026-08-08<\/time>/);
+  assert.match(html, /href="\/china-bike-research\/brands\/">Brands<\/a>/);
+  assert.match(html, /href="\/china-bike-research\/complete-bikes\/">Complete bikes<\/a>/);
+  assert.match(html, /href="\/china-bike-research\/framesets\/">Framesets<\/a>/);
+  assert.match(html, /href="\/china-bike-research\/prices\/">Price ranges<\/a>/);
 });
 
 test('products without verified photos omit the image region and social placeholder', () => {
@@ -491,6 +500,43 @@ test('brand names expose an exact, base-safe catalog filter', () => {
   assert.match(detail, /data-catalog-back/);
   assert.match(detail, /data-add-to-comparison/);
   assert.match(detail, /data-model-compare-link/);
+});
+
+test('model pages pair visible breadcrumbs with source and freshness context', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-28T00:00:00Z')
+  };
+  const product = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
+  const detail = renderModel(context, product);
+  assert.match(detail, /<nav class="breadcrumbs" aria-label="Breadcrumb">[\s\S]*Complete bikes[\s\S]*aria-current="page"/);
+  assert.match(detail, /data-catalog-back/);
+  assert.match(detail, /Evidence reviewed through <time datetime="2026-08-28">/);
+  assert.match(detail, /href="#source-records">View sources<\/a>/);
+  assert.match(detail, /<details class="detail-panel" id="source-records">/);
+});
+
+test('methodology visibly supports its Dataset and DataDownload schema', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    siteLastmod: '2026-08-28',
+    now: new Date('2026-08-28T00:00:00Z')
+  };
+  const methodology = renderMethodology(context);
+  assert.match(methodology, /Dataset and freshness/);
+  assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.json">Catalog JSON<\/a>/);
+  assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.csv">Catalog CSV<\/a>/);
+  assert.match(methodology, /"@type":"Dataset"/);
+  assert.match(methodology, /"@type":"DataDownload"/);
+  assert.doesNotMatch(methodology, /"offers"|"@type":"Product"/);
 });
 
 test('frameset totals expose the reviewed default as a buyer-editable calculator', () => {

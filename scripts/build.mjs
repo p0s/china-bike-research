@@ -17,12 +17,14 @@ import {
   renderCandidateModel,
   renderBikeBuilder,
   renderElectronicGroupsets,
+  renderLandingPage,
   renderMethodology,
   renderPrivacy,
   renderImagePolicy,
   renderImageSources,
   render404
 } from '../src/render.mjs';
+import { buildLandingPages } from '../src/lib/landings.mjs';
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -68,7 +70,6 @@ if (errors.length) {
 }
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
-const ctx = { data, products, base, siteUrl, repositoryUrl, now: new Date() };
 const siteLastmod = latestDate([
   data.meta.snapshot_date,
   data.brands.map((item) => item.last_reviewed),
@@ -88,6 +89,25 @@ const candidateLastmod = (entry) => latestDate([
   entry.price?.observed_at,
   entry.sources.map((item) => item.accessed_at)
 ], data.meta.snapshot_date);
+const productEvidenceDates = new Map(products.map((product) => [product.variant.id, productLastmod(product)]));
+const candidateEvidenceDates = new Map(candidates.map((entry) => [entry.candidate.id, candidateLastmod(entry)]));
+const landings = buildLandingPages({ products });
+const ctx = {
+  data,
+  products,
+  base,
+  siteUrl,
+  repositoryUrl,
+  now: new Date(),
+  siteLastmod,
+  productEvidenceDates,
+  candidateEvidenceDates,
+  brandLandingIds: new Set(landings.brandPages.map((entry) => entry.id))
+};
+const landingLastmod = (landing) => latestDate([
+  landing.brand?.last_reviewed,
+  landing.products.map((product) => productEvidenceDates.get(product.variant.id))
+], siteLastmod);
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -102,6 +122,10 @@ function add(route, html, includeInSitemap = true, metadata = {}) {
 }
 
 add('/', renderHome(ctx), true, { lastmod: siteLastmod });
+for (const landing of landings.pages) {
+  const lastmod = landingLastmod(landing);
+  add(landing.route, renderLandingPage(ctx, { ...landing, lastmod }), true, { lastmod });
+}
 for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product), true, { lastmod: productLastmod(product) });
 for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible, { lastmod: candidateLastmod(candidate) });
 add('/methodology/', renderMethodology(ctx), true, { lastmod: siteLastmod });

@@ -22,14 +22,23 @@ function websiteId(siteUrl, base) {
   return `${absoluteUrl(siteUrl, base, '/')}#website`;
 }
 
-function breadcrumb({ siteUrl, base, path, name }) {
+function breadcrumb({ siteUrl, base, path, name, trail = [] }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
+  const parents = [
+    { name: 'China Bike Research', path: '/' },
+    ...trail
+  ];
   return {
     '@type': 'BreadcrumbList',
     '@id': `${pageUrl}#breadcrumb`,
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Bikes and framesets', item: absoluteUrl(siteUrl, base, '/') },
-      { '@type': 'ListItem', position: 2, name, item: pageUrl }
+      ...parents.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: absoluteUrl(siteUrl, base, item.path)
+      })),
+      { '@type': 'ListItem', position: parents.length + 1, name, item: pageUrl }
     ]
   };
 }
@@ -58,10 +67,11 @@ export function productPageStructuredData({
   category,
   image = '',
   properties = [],
-  includeProduct = true
+  includeProduct = true,
+  trail = []
 }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
-  const breadcrumbData = breadcrumb({ siteUrl, base, path, name });
+  const breadcrumbData = breadcrumb({ siteUrl, base, path, name, trail });
   const page = {
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
@@ -98,7 +108,7 @@ export function productPageStructuredData({
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
-export function collectionStructuredData({ siteUrl, base, path, name, description, items }) {
+export function collectionStructuredData({ siteUrl, base, path, name, description, items, trail = [] }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
   return {
     '@context': 'https://schema.org',
@@ -116,17 +126,18 @@ export function collectionStructuredData({ siteUrl, base, path, name, descriptio
           itemListElement: items.map((item, index) => ({
             '@type': 'ListItem',
             position: index + 1,
-            name: item.name
+            name: item.name,
+            ...(item.path ? { url: absoluteUrl(siteUrl, base, item.path) } : {})
           }))
         },
         inLanguage: 'en'
       },
-      breadcrumb({ siteUrl, base, path, name })
+      breadcrumb({ siteUrl, base, path, name, trail })
     ]
   };
 }
 
-export function webApplicationStructuredData({ siteUrl, base, path, name, description }) {
+export function webApplicationStructuredData({ siteUrl, base, path, name, description, trail = [] }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
   return {
     '@context': 'https://schema.org',
@@ -152,7 +163,56 @@ export function webApplicationStructuredData({ siteUrl, base, path, name, descri
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
         inLanguage: 'en'
       },
-      breadcrumb({ siteUrl, base, path, name })
+      breadcrumb({ siteUrl, base, path, name, trail })
+    ]
+  };
+}
+
+export function datasetStructuredData({
+  siteUrl,
+  base,
+  path,
+  name,
+  description,
+  dateModified,
+  license,
+  distributions
+}) {
+  const pageUrl = absoluteUrl(siteUrl, base, path);
+  const datasetId = `${pageUrl}#dataset`;
+  const breadcrumbData = breadcrumb({ siteUrl, base, path, name });
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Dataset',
+        '@id': datasetId,
+        name,
+        description,
+        url: pageUrl,
+        dateModified,
+        license,
+        isAccessibleForFree: true,
+        inLanguage: 'en',
+        distribution: distributions.map((distribution) => ({
+          '@type': 'DataDownload',
+          name: distribution.name,
+          encodingFormat: distribution.encodingFormat,
+          contentUrl: absoluteUrl(siteUrl, base, distribution.path)
+        }))
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name,
+        description,
+        isPartOf: { '@id': websiteId(siteUrl, base) },
+        mainEntity: { '@id': datasetId },
+        breadcrumb: { '@id': breadcrumbData['@id'] },
+        inLanguage: 'en'
+      },
+      breadcrumbData
     ]
   };
 }
