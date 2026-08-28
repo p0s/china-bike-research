@@ -6,7 +6,7 @@
   },
   "field": "purchase-route",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "web"
   ],
@@ -43,8 +43,14 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["twitter-v3-official-2026-08-28", "twitter-v3-rs-factory-store-2026-08-28"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["twitter-v3-official-2026-08-28", "twitter-v3-rs-factory-store-2026-08-28"],
+    "note": "Later official pages establish Shenzhen direct contact and an exact RS 24-speed factory-store purchase route."
+  },
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Foreign and direct-contact routes are recorded without implying current mainland stock, warranty or checkout total."
 }

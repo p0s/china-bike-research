@@ -1,0 +1,21 @@
+{
+  "id": "platform-sava-gelaro-frame-material-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "SAVA Gelaro S4 R21 GRX400 frame carbon grade construction", "route": "manufacturer current exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike", "note": "Current exact S4 page identifies a T800 carbon frame and fork, internal routing and manufacturer-described optimized reinforcement around the rear-stay/seat-tube junction; exact lay-up and molding details remain unpublished." },
+        { "attempt": 2, "query": "SAVA R21 Gelaro S4 S6 T700 T800 construction", "route": "independent long-term review", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://pmkd.ru/blog/obzor-karbonovogo-velosipeda-sava-r21-gelaro-s6-s4-evolyucziya-gravijnyh-tehnologij", "note": "The review says T700 UD and press-fit, conflicting with the current exact manufacturer page; it is retained as older or mismatched evidence rather than applied to the current S4." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-s4-official-2026-08-28", "sava-gelaro-s4-independent-review-2026-08-28"],
+  "retry_after": null,
+  "notes": "The current exact manufacturer specification controls the published value; the conflicting review remains visible in provenance metadata."
+}

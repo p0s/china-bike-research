@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-27",
+  "updated_at": "2026-08-28",
   "catalog_metrics": {
     "records": {
       "brands": 36,
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 481,
+      "sources": 489,
       "images": 180,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 479
+      "researchAttempts": 491
     },
     "image_accuracy": {
       "exact-platform": 62,
@@ -224,6 +224,7 @@
       "camp-ace-qed-official-2026-08-08",
       "camp-gx600-official",
       "camp-gx600-official-2026-08-17",
+      "camp-gx600-official-2026-08-28",
       "camp-gx700-official",
       "camp-gx700-official-2026-08-17",
       "camp-gx700-official-2026-08-28",
@@ -340,8 +341,10 @@
       "pardus-spark-sport-official-cn-2026-08-17",
       "pardus-spark-sport-official-global-2026-08-17",
       "pardus-super-sport-egr-888bike-2026-08-17",
+      "pardus-super-sport-egr-888bike-2026-08-28",
       "pardus-super-sport-gen2-douyin-2026-08-27",
       "pardus-super-sport-gen2-official-2026-08-27",
+      "pardus-super-sport-gen2-official-2026-08-28",
       "pardus-super-sport-gen2-uaecycle-2026-08-17",
       "pardus-super-sport-image-reference",
       "pardus-super-sport-launch",
@@ -479,9 +482,11 @@
       "sava-blade-r9-official-cn-2026-08-17",
       "sava-china-support-store-2026-08-17",
       "sava-dream-maker-official-image-2026-08-17",
+      "sava-gelaro-s4-independent-review-2026-08-28",
       "sava-gelaro-s4-official",
       "sava-gelaro-s4-official-2026-08-16",
       "sava-gelaro-s4-official-2026-08-25",
+      "sava-gelaro-s4-official-2026-08-28",
       "sava-gelaro-s4-official-image-2026-08-17",
       "sava-gelaro-s8-official-2026-08-08",
       "sava-gelaro-s8-official-2026-08-17",
@@ -617,6 +622,9 @@
       "twitter-v3-factory-store-2026-08-25",
       "twitter-v3-official",
       "twitter-v3-official-2026-08-16",
+      "twitter-v3-official-2026-08-28",
+      "twitter-v3-rs-factory-store-2026-08-28",
+      "twitter-v3-wheeltop-regional-2026-08-28",
       "twitter-v3-wireless-official-2026-08-25",
       "twitterbikefactory-warranty-2026-08-17",
       "twitterbikeusa-warranty-2026-08-17",
@@ -1442,6 +1450,7 @@
       "platform-af01-frame-weight-2026-08-27",
       "platform-af01-geometry-2026-08-27",
       "platform-bxt-055-geometry-2026-08-27",
+      "platform-camp-gx600-frame-stiffness-2026-08-28",
       "platform-camp-gx700-frame-material-2026-08-28",
       "platform-camp-gx700-frame-stiffness-2026-08-28",
       "platform-camp-gx700-tire-clearance-2026-08-28",
@@ -1450,9 +1459,13 @@
       "platform-ican-graro-frame-weight-2026-08-27",
       "platform-ican-graro-geometry-2026-08-27",
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
+      "platform-pardus-super-sport-gen2-frame-material-2026-08-28",
+      "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28",
       "platform-pardus-super-sport-gen2-geometry-2026-08-27",
       "platform-rinasclta-gr025-geometry-2026-08-27",
       "platform-sava-gelaro-bottom-bracket-2026-08-27",
+      "platform-sava-gelaro-frame-material-2026-08-28",
+      "platform-sava-gelaro-frame-stiffness-2026-08-28",
       "platform-sava-gelaro-frame-weight-2026-08-27",
       "platform-sava-gelaro-s8-frame-material-2026-08-28",
       "platform-sava-gelaro-s8-frame-stiffness-2026-08-28",
@@ -1465,6 +1478,8 @@
       "platform-tavelo-grow-geometry-2026-08-27",
       "platform-tfsa-jh37-geometry-2026-08-27",
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26",
+      "platform-twitter-gravel-v3-frame-material-2026-08-28",
+      "platform-twitter-gravel-v3-frame-stiffness-2026-08-28",
       "platform-winspace-g3-geometry-2026-08-27",
       "platform-winspace-g5-frame-material-2026-08-27",
       "platform-winspace-g5-frame-stiffness-2026-08-27",
@@ -1626,11 +1641,16 @@
       "variant-twitter-t3-tt-wheels-2026-08-17",
       "variant-twitter-v3-2024-rs-sensah-alloy-frame-weight-2026-08-25",
       "variant-twitter-v3-2024-rs-sensah-alloy-tire-clearance-2026-08-25",
+      "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28",
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17",
       "variant-twitter-v3-rs-sensah-geometry-2026-08-17",
+      "variant-twitter-v3-rs-sensah-price-2026-08-28",
       "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17",
       "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17",
+      "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28",
       "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25",
+      "variant-twitter-v3-wheeltop-eds-price-2026-08-28",
+      "variant-twitter-v3-wheeltop-eds-purchase-route-2026-08-28",
       "variant-winspace-g3-frameset-price-2026-08-27",
       "variant-winspace-g3-frameset-purchase-route-2026-08-27",
       "variant-winspace-g5-frameset-price-2026-08-25",
@@ -2171,9 +2191,12 @@
         "frame.claimed_fiber",
         "frame.configuration_notes.handlebar",
         "frame.configuration_notes.seatpost",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2527,6 +2550,7 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2535,6 +2559,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2649,6 +2675,7 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_fiber",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2657,6 +2684,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
         "frame.warranty_claim.note",
@@ -3011,6 +3040,7 @@
         "frame.configuration_notes.net_weight_claim_g",
         "frame.configuration_notes.observed_current_electronic_builds",
         "frame.configuration_notes.source_id",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -3019,6 +3049,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -3913,7 +3945,10 @@
       "twitter-v3-rs-sensah": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
+        "claimed_frame_weight_basis",
+        "claimed_frame_weight_g",
         "cockpit.integrated",
         "cockpit.material",
         "drivetrain.brand",
@@ -3932,6 +3967,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids",
         "tires",
         "wheels.rim_material"
@@ -3939,6 +3975,7 @@
       "twitter-v3-wheeltop-eds": [
         "brakes.actuation",
         "brakes.type",
+        "claimed_complete_weight_basis",
         "claimed_complete_weight_g",
         "cockpit.integrated",
         "cockpit.material",
@@ -4840,6 +4877,18 @@
         "url"
       ],
       "camp-gx600-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "camp-gx600-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -6279,6 +6328,18 @@
         "type",
         "url"
       ],
+      "pardus-super-sport-egr-888bike-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-super-sport-gen2-douyin-2026-08-27": [
         "accessed_at",
         "language",
@@ -6292,6 +6353,18 @@
         "url"
       ],
       "pardus-super-sport-gen2-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-super-sport-gen2-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -7914,6 +7987,18 @@
         "type",
         "url"
       ],
+      "sava-gelaro-s4-independent-review-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "sava-gelaro-s4-official": [
         "accessed_at",
         "language",
@@ -7939,6 +8024,18 @@
         "url"
       ],
       "sava-gelaro-s4-official-2026-08-25": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "sava-gelaro-s4-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -9645,6 +9742,42 @@
         "url"
       ],
       "twitter-v3-official-2026-08-16": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-v3-official-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-v3-rs-factory-store-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "twitter-v3-wheeltop-regional-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -23244,6 +23377,19 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-camp-gx600-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-camp-gx700-frame-material-2026-08-28": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -23359,6 +23505,33 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-pardus-super-sport-gen2-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-pardus-super-sport-gen2-geometry-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.blocker",
@@ -23404,7 +23577,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-sava-gelaro-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-sava-gelaro-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-sava-gelaro-frame-weight-2026-08-27": [
+        "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -23574,6 +23774,32 @@
         "resolution.note",
         "resolution.resolved_at",
         "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-twitter-gravel-v3-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-twitter-gravel-v3-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
         "searched_at",
         "status",
         "target.record_id",
@@ -24890,6 +25116,7 @@
         "target.record_type"
       ],
       "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": [
+        "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -25124,6 +25351,7 @@
         "target.record_type"
       ],
       "variant-sava-gelaro-s4-grx400-price-2026-08-27": [
+        "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -25932,13 +26160,32 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -25958,13 +26205,34 @@
         "target.record_id",
         "target.record_type"
       ],
-      "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17": [
+      "variant-twitter-v3-rs-sensah-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
         "priority",
         "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "retry_after",
         "searched_at",
         "status",
@@ -25984,10 +26252,52 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": [
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-twitter-v3-wheeltop-eds-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-twitter-v3-wheeltop-eds-purchase-route-2026-08-28": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -26139,7 +26449,8 @@
       "camp-gx600": [
         "brand_id=camp",
         "source_ids=camp-gx600-official",
-        "source_ids=camp-gx600-official-2026-08-17"
+        "source_ids=camp-gx600-official-2026-08-17",
+        "source_ids=camp-gx600-official-2026-08-28"
       ],
       "camp-gx700": [
         "brand_id=camp",
@@ -26213,7 +26524,9 @@
         "frame.geometry.source_id=pardus-super-sport-gen2-official-2026-08-27",
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
+        "source_ids=pardus-super-sport-egr-888bike-2026-08-28",
         "source_ids=pardus-super-sport-gen2-official-2026-08-27",
+        "source_ids=pardus-super-sport-gen2-official-2026-08-28",
         "source_ids=pardus-super-sport-launch",
         "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
       ],
@@ -26238,9 +26551,11 @@
       "sava-gelaro": [
         "brand_id=sava",
         "frame.geometry.source_id=sava-gelaro-s4-official-2026-08-16",
+        "source_ids=sava-gelaro-s4-independent-review-2026-08-28",
         "source_ids=sava-gelaro-s4-official",
         "source_ids=sava-gelaro-s4-official-2026-08-16",
         "source_ids=sava-gelaro-s4-official-2026-08-25",
+        "source_ids=sava-gelaro-s4-official-2026-08-28",
         "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "sava-gelaro-s8": [
@@ -26330,6 +26645,9 @@
         "source_ids=twitter-v3-factory-store-2026-08-25",
         "source_ids=twitter-v3-official",
         "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-official-2026-08-28",
+        "source_ids=twitter-v3-rs-factory-store-2026-08-28",
+        "source_ids=twitter-v3-wheeltop-regional-2026-08-28",
         "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "twitter-gravel-v3-2024": [
@@ -26392,7 +26710,8 @@
       "camp-gx600-pes": [
         "platform_id=camp-gx600",
         "source_ids=camp-gx600-official",
-        "source_ids=camp-gx600-official-2026-08-17"
+        "source_ids=camp-gx600-official-2026-08-17",
+        "source_ids=camp-gx600-official-2026-08-28"
       ],
       "camp-gx700-grx820": [
         "platform_id=camp-gx700",
@@ -26462,8 +26781,10 @@
         "platform_id=pardus-super-sport-gen2",
         "source_ids=pardus-company-official",
         "source_ids=pardus-super-sport-egr-888bike-2026-08-17",
+        "source_ids=pardus-super-sport-egr-888bike-2026-08-28",
         "source_ids=pardus-super-sport-gen2-douyin-2026-08-27",
         "source_ids=pardus-super-sport-gen2-official-2026-08-27",
+        "source_ids=pardus-super-sport-gen2-official-2026-08-28",
         "source_ids=pardus-super-sport-launch",
         "source_ids=pardus-super-sport-launch-wildto-2026-08-17"
       ],
@@ -26486,9 +26807,11 @@
       "sava-gelaro-s4-grx400": [
         "platform_id=sava-gelaro",
         "source_ids=compiled-research-2026-08-06",
+        "source_ids=sava-gelaro-s4-independent-review-2026-08-28",
         "source_ids=sava-gelaro-s4-official",
         "source_ids=sava-gelaro-s4-official-2026-08-16",
         "source_ids=sava-gelaro-s4-official-2026-08-25",
+        "source_ids=sava-gelaro-s4-official-2026-08-28",
         "source_ids=sava-jd-official-storefront-2026-08-26"
       ],
       "sava-gelaro-s8": [
@@ -26571,6 +26894,8 @@
         "source_ids=market-snapshot-2026-08-05",
         "source_ids=twitter-v3-official",
         "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-official-2026-08-28",
+        "source_ids=twitter-v3-rs-factory-store-2026-08-28",
         "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "twitter-v3-wheeltop-eds": [
@@ -26578,6 +26903,8 @@
         "source_ids=market-snapshot-2026-08-05",
         "source_ids=twitter-v3-official",
         "source_ids=twitter-v3-official-2026-08-16",
+        "source_ids=twitter-v3-official-2026-08-28",
+        "source_ids=twitter-v3-wheeltop-regional-2026-08-28",
         "source_ids=twitter-v3-wireless-official-2026-08-25"
       ],
       "winspace-g3-frameset": [
@@ -26847,6 +27174,7 @@
       "camp-ace-qed-official-2026-08-08": [],
       "camp-gx600-official": [],
       "camp-gx600-official-2026-08-17": [],
+      "camp-gx600-official-2026-08-28": [],
       "camp-gx700-official": [],
       "camp-gx700-official-2026-08-17": [],
       "camp-gx700-official-2026-08-28": [],
@@ -26963,8 +27291,10 @@
       "pardus-spark-sport-official-cn-2026-08-17": [],
       "pardus-spark-sport-official-global-2026-08-17": [],
       "pardus-super-sport-egr-888bike-2026-08-17": [],
+      "pardus-super-sport-egr-888bike-2026-08-28": [],
       "pardus-super-sport-gen2-douyin-2026-08-27": [],
       "pardus-super-sport-gen2-official-2026-08-27": [],
+      "pardus-super-sport-gen2-official-2026-08-28": [],
       "pardus-super-sport-gen2-uaecycle-2026-08-17": [],
       "pardus-super-sport-image-reference": [],
       "pardus-super-sport-launch": [],
@@ -27102,9 +27432,11 @@
       "sava-blade-r9-official-cn-2026-08-17": [],
       "sava-china-support-store-2026-08-17": [],
       "sava-dream-maker-official-image-2026-08-17": [],
+      "sava-gelaro-s4-independent-review-2026-08-28": [],
       "sava-gelaro-s4-official": [],
       "sava-gelaro-s4-official-2026-08-16": [],
       "sava-gelaro-s4-official-2026-08-25": [],
+      "sava-gelaro-s4-official-2026-08-28": [],
       "sava-gelaro-s4-official-image-2026-08-17": [],
       "sava-gelaro-s8-official-2026-08-08": [],
       "sava-gelaro-s8-official-2026-08-17": [],
@@ -27240,6 +27572,9 @@
       "twitter-v3-factory-store-2026-08-25": [],
       "twitter-v3-official": [],
       "twitter-v3-official-2026-08-16": [],
+      "twitter-v3-official-2026-08-28": [],
+      "twitter-v3-rs-factory-store-2026-08-28": [],
+      "twitter-v3-wheeltop-regional-2026-08-28": [],
       "twitter-v3-wireless-official-2026-08-25": [],
       "twitterbikefactory-warranty-2026-08-17": [],
       "twitterbikeusa-warranty-2026-08-17": [],
@@ -30319,6 +30654,9 @@
       "platform-bxt-055-geometry-2026-08-27": [
         "target.record_id=bxt-055"
       ],
+      "platform-camp-gx600-frame-stiffness-2026-08-28": [
+        "target.record_id=camp-gx600"
+      ],
       "platform-camp-gx700-frame-material-2026-08-28": [
         "target.record_id=camp-gx700"
       ],
@@ -30343,6 +30681,12 @@
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27": [
         "target.record_id=pardus-super-sport-gen2"
       ],
+      "platform-pardus-super-sport-gen2-frame-material-2026-08-28": [
+        "target.record_id=pardus-super-sport-gen2"
+      ],
+      "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28": [
+        "target.record_id=pardus-super-sport-gen2"
+      ],
       "platform-pardus-super-sport-gen2-geometry-2026-08-27": [
         "target.record_id=pardus-super-sport-gen2"
       ],
@@ -30350,6 +30694,12 @@
         "target.record_id=rinasclta-gr025"
       ],
       "platform-sava-gelaro-bottom-bracket-2026-08-27": [
+        "target.record_id=sava-gelaro"
+      ],
+      "platform-sava-gelaro-frame-material-2026-08-28": [
+        "target.record_id=sava-gelaro"
+      ],
+      "platform-sava-gelaro-frame-stiffness-2026-08-28": [
         "target.record_id=sava-gelaro"
       ],
       "platform-sava-gelaro-frame-weight-2026-08-27": [
@@ -30389,6 +30739,12 @@
       "platform-twitter-gravel-v3-2024-tire-clearance-2026-08-26": [
         "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-gravel-v3-2024"
+      ],
+      "platform-twitter-gravel-v3-frame-material-2026-08-28": [
+        "target.record_id=twitter-gravel-v3"
+      ],
+      "platform-twitter-gravel-v3-frame-stiffness-2026-08-28": [
+        "target.record_id=twitter-gravel-v3"
       ],
       "platform-winspace-g3-geometry-2026-08-27": [
         "target.record_id=winspace-g3"
@@ -30883,19 +31239,37 @@
         "resolution.source_ids=twitter-gravel-v3-2024-manual-mirror-2026-08-27",
         "target.record_id=twitter-v3-2024-rs-sensah-alloy"
       ],
+      "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28": [
+        "target.record_id=twitter-v3-rs-sensah"
+      ],
       "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": [
+        "resolution.source_ids=twitter-v3-rs-factory-store-2026-08-28",
         "target.record_id=twitter-v3-rs-sensah"
       ],
       "variant-twitter-v3-rs-sensah-geometry-2026-08-17": [
         "target.record_id=twitter-v3-rs-sensah"
       ],
+      "variant-twitter-v3-rs-sensah-price-2026-08-28": [
+        "target.record_id=twitter-v3-rs-sensah"
+      ],
       "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17": [
+        "resolution.source_ids=twitter-v3-official-2026-08-28",
+        "resolution.source_ids=twitter-v3-rs-factory-store-2026-08-28",
         "target.record_id=twitter-v3-rs-sensah"
       ],
       "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17": [
         "target.record_id=twitter-v3-rs-sensah"
       ],
+      "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28": [
+        "target.record_id=twitter-v3-wheeltop-eds"
+      ],
       "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": [
+        "target.record_id=twitter-v3-wheeltop-eds"
+      ],
+      "variant-twitter-v3-wheeltop-eds-price-2026-08-28": [
+        "target.record_id=twitter-v3-wheeltop-eds"
+      ],
+      "variant-twitter-v3-wheeltop-eds-purchase-route-2026-08-28": [
         "target.record_id=twitter-v3-wheeltop-eds"
       ],
       "variant-winspace-g3-frameset-price-2026-08-27": [
@@ -31066,6 +31440,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
+        "specification": 3
+      }
+    },
+    "camp-gx600-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
         "specification": 3
       }
     },
@@ -32029,6 +32411,14 @@
         "specification": 2
       }
     },
+    "pardus-super-sport-egr-888bike-2026-08-28": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 2,
+        "specification": 2
+      }
+    },
     "pardus-super-sport-gen2-douyin-2026-08-27": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -32038,6 +32428,14 @@
       }
     },
     "pardus-super-sport-gen2-official-2026-08-27": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "pardus-super-sport-gen2-official-2026-08-28": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -33117,6 +33515,14 @@
         "specification": 1
       }
     },
+    "sava-gelaro-s4-independent-review-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 1,
+        "price": 0,
+        "specification": -1
+      }
+    },
     "sava-gelaro-s4-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -33134,6 +33540,14 @@
       }
     },
     "sava-gelaro-s4-official-2026-08-25": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 2,
+        "specification": 3
+      }
+    },
+    "sava-gelaro-s4-official-2026-08-28": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
@@ -34233,6 +34647,30 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "twitter-v3-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
+    "twitter-v3-rs-factory-store-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 1,
+        "specification": 2
+      }
+    },
+    "twitter-v3-wheeltop-regional-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "twitter-v3-wireless-official-2026-08-25": {
@@ -38628,6 +39066,17 @@
       ],
       "accepted_source_ids": []
     },
+    "platform-camp-gx600-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"CAMP GX600 PES stiffness test frame flex\",\"manufacturer exact PES page\",\"rejected\",\"2026-08-28\",\"The exact page publishes material and complete-bike specifications but no stiffness or deflection evidence.\",\"https://www.campbicycle.com/en/gx600.html\"]",
+        "[\"web\",2,\"CAMP GX600 PES independent ride review stiffness\",\"independent exact-trim reviews\",\"no-result\",\"2026-08-28\",\"No attributable exact-PES ride assessment with meaningful flex or stiffness evidence was found.\",null]",
+        "[\"web\",3,\"CAMP GX600 PES bottom bracket stiffness measurement\",\"technical tests and owner measurements\",\"rejected\",\"2026-08-28\",\"Available qualitative reports concern custom or Shimano GX600 builds and were not transferred to the PES trim.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "platform-camp-gx700-frame-material-2026-08-28": {
       "channel_attempt_counts": {
         "web": 1
@@ -38726,6 +39175,30 @@
         "pardus-super-sport-gen2-official-2026-08-27"
       ]
     },
+    "platform-pardus-super-sport-gen2-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Super Sport Gen2 frame material HS-HPT\",\"manufacturer current platform page\",\"found\",\"2026-08-28\",\"Official page supports HS-HPT carbon construction, aero shaping, internal routing and hidden clamp, but no exact fiber grade.\",\"https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446\"]",
+        "[\"web\",2,\"PARDUS SUPG2 SPORT eGR T800 frame\",\"authorized-retailer exact-SKU page\",\"conflict\",\"2026-08-28\",\"Exact eGR retailer calls the frame T800; secondary public snippets call it T700, and neither is manufacturer-corroborated.\",\"https://www.888bike.net/en/product/11484\"]"
+      ],
+      "accepted_source_ids": [
+        "pardus-super-sport-egr-888bike-2026-08-28",
+        "pardus-super-sport-gen2-official-2026-08-28"
+      ]
+    },
+    "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"PARDUS Super Sport Gen2 stiffness test deflection\",\"manufacturer current platform page\",\"no-result\",\"2026-08-28\",\"Official page gives construction and geometry but no stiffness or deflection value.\",\"https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446\"]",
+        "[\"web\",2,\"PARDUS SUPG2 SPORT eGR ride review stiffness\",\"exact-model ride and challenge videos\",\"rejected\",\"2026-08-28\",\"Public text and accessible metadata do not expose a reproducible stiffness result.\",\"https://www.bilibili.com/video/BV14X9UBSEPq/\"]",
+        "[\"web\",3,\"PARDUS Super Sport 二代 刚性 测试\",\"independent technical reviews\",\"no-result\",\"2026-08-28\",\"No attributable exact-model deflection, bottom-bracket stiffness or comparable test was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "platform-pardus-super-sport-gen2-geometry-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -38765,12 +39238,37 @@
         "sava-gelaro-s4-official-2026-08-25"
       ]
     },
+    "platform-sava-gelaro-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA Gelaro S4 R21 GRX400 frame carbon grade construction\",\"manufacturer current exact-model page\",\"found\",\"2026-08-28\",\"Current exact S4 page identifies a T800 carbon frame and fork, internal routing and manufacturer-described optimized reinforcement around the rear-stay/seat-tube junction; exact lay-up and molding details remain unpublished.\",\"https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike\"]",
+        "[\"web\",2,\"SAVA R21 Gelaro S4 S6 T700 T800 construction\",\"independent long-term review\",\"conflict\",\"2026-08-28\",\"The review says T700 UD and press-fit, conflicting with the current exact manufacturer page; it is retained as older or mismatched evidence rather than applied to the current S4.\",\"https://pmkd.ru/blog/obzor-karbonovogo-velosipeda-sava-r21-gelaro-s6-s4-evolyucziya-gravijnyh-tehnologij\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s4-independent-review-2026-08-28",
+        "sava-gelaro-s4-official-2026-08-28"
+      ]
+    },
+    "platform-sava-gelaro-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SAVA R21 Gelaro S4 long term review bottom bracket flex compliance\",\"independent long-term exact-platform review\",\"found\",\"2026-08-28\",\"The author reports more than 1,800 km and describes no noticeable bottom-bracket-area flex while climbing, useful stay compliance over washboard and stable descending. This is qualitative ride evidence, not a measured stiffness test.\",\"https://pmkd.ru/blog/obzor-karbonovogo-velosipeda-sava-r21-gelaro-s6-s4-evolyucziya-gravijnyh-tehnologij\"]"
+      ],
+      "accepted_source_ids": [
+        "sava-gelaro-s4-independent-review-2026-08-28"
+      ]
+    },
     "platform-sava-gelaro-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"SAVA 越界 S4 GRX400 车架 重量 T800\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
         "[\"web\",1,\"SAVA Gelaro S4 frame weight R21\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Page publishes only approximate complete-bike weight.\",\"https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike\"]",
         "[\"web\",2,\"萨瓦 Gelaro 越界 S4 车架 重量\",\"manufacturer China page and indexed images\",\"no-result\",\"2026-08-27\",\"No frame-only weight was exposed.\",\"https://www.savabike.com/sys-pd/3364.html\"]",
         "[\"web\",3,\"SAVA Gelaro R21 frameset weight\",\"authorized retail and specification mirrors\",\"no-result\",\"2026-08-27\",\"Only the approximate complete-bike weight repeated.\",null]"
@@ -38912,6 +39410,30 @@
       "accepted_source_ids": [
         "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
       ]
+    },
+    "platform-twitter-gravel-v3-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TWITTER Gravel V3 25yr frame carbon construction\",\"manufacturer current platform page\",\"found\",\"2026-08-28\",\"Manufacturer identifies a high-modulus carbon frame and fork, internal routing, integrated carbon cockpit and current T47 platform; no exact fiber grade is published.\",\"https://www.twittercycles.com/products/gravel-v3-gravel-bike.html\"]",
+        "[\"web\",2,\"TWITTER Gravel V3 25yr RS monocoque frame\",\"official factory-store exact RS page\",\"found\",\"2026-08-28\",\"Factory storefront additionally describes monocoque construction; exact lay-up and molding protocol remain unpublished.\",\"https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-official-2026-08-28",
+        "twitter-v3-rs-factory-store-2026-08-28"
+      ]
+    },
+    "platform-twitter-gravel-v3-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TWITTER Gravel V3 stiffness test deflection\",\"manufacturer current platform page\",\"no-result\",\"2026-08-28\",\"Manufacturer page publishes materials and specifications but no stiffness or deflection measurement.\",\"https://www.twittercycles.com/products/gravel-v3-gravel-bike.html\"]",
+        "[\"web\",2,\"TWITTER Gravel V3 RS bottom bracket flex review\",\"official factory-store comparison\",\"rejected\",\"2026-08-28\",\"Seller descriptions of lively response and minimal bottom-bracket flex are editorial, not an independent test protocol.\",\"https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike\"]",
+        "[\"web\",3,\"TWITTER Gravel V3 independent frame stiffness measurement\",\"independent reviews and owner reports\",\"no-result\",\"2026-08-28\",\"No exact-current-platform reproducible stiffness or deflection result was found.\",null]"
+      ],
+      "accepted_source_ids": []
     },
     "platform-winspace-g3-geometry-2026-08-27": {
       "channel_attempt_counts": {
@@ -40124,11 +40646,12 @@
     },
     "variant-pardus-super-sport-gen2-egr-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 1,
+        "public-post": 2,
         "web": 3
       },
       "attempt_entries": [
         "[\"public-post\",1,\"PARDUS SUPG2 SPORT EGR frame weight\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-18\",\"Security Verification appeared before any search results; no challenge was solved per policy.\",\"https://www.xiaohongshu.com/search_result?keyword=PARDUS%20SUPG2%20SPORT%20EGR\"]",
+        "[\"public-post\",2,\"瑞豹 Super Sport 二代 eGR 车架 重量\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
         "[\"web\",1,\"PARDUS SUPG2 SPORT 2026 EGR frame weight official\",\"manufacturer exact page/manual/geometry chart\",\"no-result\",\"2026-08-17\",\"Official dealer locator provides no frame-only weight.\",\"https://parduscycle.com/find.aspx\"]",
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR frame weight catalog\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"Older official page is Gen1 and does not document Gen2 EGR frame-only weight.\",\"https://www.parduscycle.com/Hightxq.aspx?cc=5176&color=5183&id=21398&pz=5175&t=1030\"]",
         "[\"web\",3,\"PARDUS SUPG2 SPORT EGR frame weight exact SKU\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"rejected\",\"2026-08-17\",\"Exact retailer provides complete-bike estimate only.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
@@ -40167,10 +40690,11 @@
     },
     "variant-pardus-super-sport-gen2-egr-image-exactness-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"瑞豹 Super Sport 二代 eGR 图片 车重 T800\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
         "[\"web\",1,\"PARDUS Super Sport Gen2 eGR official image\",\"manufacturer exact-model page\",\"rejected\",\"2026-08-27\",\"Exact images are visible but no reusable-media rights basis was found.\",null]",
         "[\"web\",2,\"PARDUS SUPG2 SPORT EGR authorized retailer photos\",\"authorized-retailer exact-SKU page\",\"rejected\",\"2026-08-27\",\"Exact option imagery has no documented redistribution permission.\",null]",
         "[\"web\",3,\"瑞豹 Super Sport 二代 蓝图 eGR 公开图片\",\"public image and post search\",\"rejected\",\"2026-08-27\",\"Attribution alone is not a reuse-rights basis; an embed is required.\",null]"
@@ -40213,6 +40737,8 @@
         "[\"web\",3,\"PARDUS SUPG2 SPORT EGR SKU-11484 current purchase\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"found\",\"2026-08-17\",\"888BIKE has an order listing for SKU-11484 with EGR; Thailand route only.\",\"https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%อ%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr\"]"
       ],
       "accepted_source_ids": [
+        "pardus-super-sport-egr-888bike-2026-08-28",
+        "pardus-super-sport-launch-wildto-2026-08-17",
         "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777"
       ]
     },
@@ -40383,10 +40909,11 @@
     },
     "variant-sava-gelaro-s4-grx400-price-2026-08-27": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"SAVA 越界 S4 GRX400 价格 重量 T800\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
         "[\"web\",1,\"SAVA Gelaro S4 GRX400 current price\",\"manufacturer global checkout\",\"rejected\",\"2026-08-27\",\"US$1,799 is current but not a mainland CNY checkout.\",\"https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike\"]",
         "[\"web\",2,\"萨瓦 越界 S4 GRX400 京东 价格\",\"official China page and JD storefront\",\"no-result\",\"2026-08-27\",\"Purchase route exists but no stable exact-option CNY checkout was captured.\",\"https://www.savabike.com/sys-pd/3364.html\"]",
         "[\"web\",3,\"SAVA Gelaro S4 淘宝 大陆 到手价\",\"mainland marketplace search\",\"no-result\",\"2026-08-27\",\"No attributable exact-package CNY checkout was available.\",null]"
@@ -40402,6 +40929,7 @@
       ],
       "accepted_source_ids": [
         "sava-gelaro-s4-official-2026-08-25",
+        "sava-gelaro-s4-official-2026-08-28",
         "sava-jd-official-storefront-2026-08-26"
       ]
     },
@@ -41104,6 +41632,19 @@
         "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
       ]
     },
+    "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TWITTER Gravel V3 RS 24S weight size pedals\",\"official factory-store exact RS listing\",\"found\",\"2026-08-28\",\"Store claims 9.6 kg for size 50 cm without pedals.\",\"https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike\"]",
+        "[\"web\",2,\"TWITTER Gravel V3 Sensah RS complete weight\",\"manufacturer and regional exact-model pages\",\"conflict\",\"2026-08-28\",\"Manufacturer states 9.9 kg with basis unstated; a regional page states 9.7–9.9 kg with basis unstated.\",\"https://www.twittercycles.com/products/gravel-v3-gravel-bike.html\"]"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-official-2026-08-28",
+        "twitter-v3-rs-factory-store-2026-08-28"
+      ]
+    },
     "variant-twitter-v3-rs-sensah-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
         "web": 3
@@ -41113,7 +41654,12 @@
         "[\"web\",2,\"TWITTER Gravel V3 RS Sensah frame weight regional store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"USA listing is different wireless configuration and does not isolate frame weight.\",\"https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike\"]",
         "[\"web\",3,\"TWITTER Gravel V3 RS Sensah frame weight exact-SKU dealer\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"no-result\",\"2026-08-17\",\"No exact frame-only measurement located.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"twitter-v3-rs-factory-store-2026-08-28\"],\"note\":\"A later exact current-generation factory-store source published a size-M unpainted frame claim after the original three-route pass.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-rs-factory-store-2026-08-28"
+      ]
     },
     "variant-twitter-v3-rs-sensah-geometry-2026-08-17": {
       "channel_attempt_counts": {
@@ -41126,6 +41672,19 @@
       ],
       "accepted_source_ids": []
     },
+    "variant-twitter-v3-rs-sensah-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"骓特 Gravel V3 RS 24速 价格 重量\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
+        "[\"web\",1,\"TWITTER Gravel V3 RS Sensah mainland price evidence\",\"existing immutable mainland market observation\",\"found\",\"2026-08-28\",\"Source reuse confirms the dated CNY 3,991 exact-build observation from 2026-08-05; it is not represented as a fresh live checkout.\",null]"
+      ],
+      "accepted_source_ids": [
+        "market-snapshot-2026-08-05"
+      ]
+    },
     "variant-twitter-v3-rs-sensah-purchase-route-2026-08-17": {
       "channel_attempt_counts": {
         "web": 3
@@ -41135,7 +41694,13 @@
         "[\"web\",2,\"TWITTER Gravel V3 RS Sensah current regional store\",\"official regional catalog/PDF/store\",\"rejected\",\"2026-08-17\",\"USA add-to-bag listing is wireless EDS/GEX/SRAM, not Sensah RS.\",\"https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike\"]",
         "[\"web\",3,\"TWITTER Gravel V3 RS Sensah current mainland dealer route\",\"authorized exact-SKU dealer or credible launch/spec publication\",\"rejected\",\"2026-08-17\",\"Existing mainland observation is a purchase lead, but current exact-SKU stock/checkout was not re-established.\",null]"
       ],
-      "accepted_source_ids": []
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"twitter-v3-official-2026-08-28\",\"twitter-v3-rs-factory-store-2026-08-28\"],\"note\":\"Later official pages establish Shenzhen direct contact and an exact RS 24-speed factory-store purchase route.\"}"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-official-2026-08-28",
+        "twitter-v3-rs-factory-store-2026-08-28"
+      ]
     },
     "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17": {
       "channel_attempt_counts": {
@@ -41148,18 +41713,56 @@
       ],
       "accepted_source_ids": []
     },
+    "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TWITTER Gravel V3 WheelTop EDS TX exact weight basis\",\"official regional exact-build page\",\"found\",\"2026-08-28\",\"Exact listing states 9.9 kg; size, pedals, accessories and weighing method are not stated.\",\"https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-gravel-v3-wireless-wheeltop-eds-tx-2-12-speed-holographic-l-54cm\"]"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-wheeltop-regional-2026-08-28"
+      ]
+    },
     "variant-twitter-v3-wheeltop-eds-frame-weight-2026-08-25": {
       "channel_attempt_counts": {
-        "public-post": 1,
+        "public-post": 2,
         "web": 3
       },
       "attempt_entries": [
         "[\"public-post\",1,\"TWITTER Gravel V3 2024 2025 车重 胎容\",\"updated dedicated-XHS extension campaign\",\"blocked\",\"2026-08-25\",\"The only detailed export was a V1 post; the lane stopped before an exact T47 WheelTop build was captured.\",null]",
+        "[\"public-post\",2,\"骓特 Gravel V3 轮峰 EDS TX 车架 重量\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
         "[\"web\",1,\"TWITTER Gravel V3 T47 frame-only weight official\",\"main manufacturer exact-model page\",\"rejected\",\"2026-08-25\",\"The T47 manufacturer page gives complete configuration weights only.\",null]",
         "[\"web\",2,\"TWITTER Gravel V3 Wireless T47 frame weight\",\"official regional exact-build page\",\"rejected\",\"2026-08-25\",\"The exact WheelTop page confirms 9.9 kg complete weight but no frame-only value.\",null]",
         "[\"web\",3,\"TWITTER Gravel V3 T47 frameset weight current generation\",\"factory store or current dealer\",\"no-result\",\"2026-08-25\",\"The available frame-only number belongs to a press-fit listing rather than the current T47 platform.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "variant-twitter-v3-wheeltop-eds-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"骓特 Gravel V3 轮峰 EDS TX 价格 重量\",\"canonical XHS multi-tab campaign\",\"blocked\",\"2026-08-28\",\"Campaign journal records one worker_error and no artifact for this exact-model query.\",null]",
+        "[\"web\",1,\"TWITTER Gravel V3 WheelTop EDS mainland price evidence\",\"existing immutable mainland market observations\",\"found\",\"2026-08-28\",\"Source reuse confirms CNY 5,191 on 2026-08-05 and a CNY 4,951 coupon lead on 2026-08-08; neither is represented as a fresh live checkout.\",null]"
+      ],
+      "accepted_source_ids": [
+        "market-snapshot-2026-08-05",
+        "taobao-snapshot-2026-08-08"
+      ]
+    },
+    "variant-twitter-v3-wheeltop-eds-purchase-route-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"TWITTER Gravel V3 WheelTop EDS TX current purchase route\",\"official regional exact-build store\",\"found\",\"2026-08-28\",\"Exact Holographic / L (54 cm) WheelTop build is orderable at US$1,750 through the official regional store; the Shenzhen manufacturer also exposes a direct-contact route.\",\"https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-gravel-v3-wireless-wheeltop-eds-tx-2-12-speed-holographic-l-54cm\"]"
+      ],
+      "accepted_source_ids": [
+        "twitter-v3-official-2026-08-28",
+        "twitter-v3-wheeltop-regional-2026-08-28"
+      ]
     },
     "variant-winspace-g3-frameset-price-2026-08-27": {
       "channel_attempt_counts": {

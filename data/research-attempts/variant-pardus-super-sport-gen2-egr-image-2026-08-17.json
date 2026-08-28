@@ -6,7 +6,7 @@
   },
   "field": "image",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "public-post",
     "web"
@@ -14,7 +14,7 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "The latest canonical XHS campaign ended with worker_error for this query; earlier public routes also reached verification challenges, and no challenge or bypass was attempted.",
       "attempts": [
         {
           "attempt": 1,
@@ -44,7 +44,7 @@
     },
     "web": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "Current exact platform and eGR photos are visible, but no reusable-media rights or accepted public-post embed is available.",
       "attempts": [
         {
           "attempt": 1,
@@ -79,5 +79,5 @@
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; images: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "No image was copied. Platform and exact-build images exist, but publication still needs reusable rights or an accepted public-post embed."
 }

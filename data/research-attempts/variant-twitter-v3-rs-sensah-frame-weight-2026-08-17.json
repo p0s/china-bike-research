@@ -6,7 +6,7 @@
   },
   "field": "frame-weight",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "web"
   ],
@@ -43,8 +43,14 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["twitter-v3-rs-factory-store-2026-08-28"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["twitter-v3-rs-factory-store-2026-08-28"],
+    "note": "A later exact current-generation factory-store source published a size-M unpainted frame claim after the original three-route pass."
+  },
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The current size-M unpainted basis is recorded; a superseded press-fit generation's approximately 1,250 g claim is not merged."
 }

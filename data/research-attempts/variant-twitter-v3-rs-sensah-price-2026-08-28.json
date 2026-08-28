@@ -1,0 +1,27 @@
+{
+  "id": "variant-twitter-v3-rs-sensah-price-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "twitter-v3-rs-sensah" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical five-query XHS campaign ended with worker_error for every query and produced no archive; the shared sequential pool was then owned by another active job, so no same-turn retry or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "骓特 Gravel V3 RS 24速 价格 重量", "route": "canonical XHS multi-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "Campaign journal records one worker_error and no artifact for this exact-model query." }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 RS Sensah mainland price evidence", "route": "existing immutable mainland market observation", "outcome": "found", "accessed_at": "2026-08-28", "note": "Source reuse confirms the dated CNY 3,991 exact-build observation from 2026-08-05; it is not represented as a fresh live checkout." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["market-snapshot-2026-08-05"],
+  "retry_after": null,
+  "notes": "The dated exact-build price remains usable with its observation date and marketplace caveat; no current mainland checkout was captured."
+}

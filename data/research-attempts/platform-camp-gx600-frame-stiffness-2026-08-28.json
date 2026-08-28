@@ -1,0 +1,22 @@
+{
+  "id": "platform-camp-gx600-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "camp-gx600" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "CAMP GX600 PES stiffness test frame flex", "route": "manufacturer exact PES page", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.campbicycle.com/en/gx600.html", "note": "The exact page publishes material and complete-bike specifications but no stiffness or deflection evidence." },
+        { "attempt": 2, "query": "CAMP GX600 PES independent ride review stiffness", "route": "independent exact-trim reviews", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No attributable exact-PES ride assessment with meaningful flex or stiffness evidence was found." },
+        { "attempt": 3, "query": "CAMP GX600 PES bottom bracket stiffness measurement", "route": "technical tests and owner measurements", "outcome": "rejected", "accessed_at": "2026-08-28", "note": "Available qualitative reports concern custom or Shimano GX600 builds and were not transferred to the PES trim." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No meaningful exact-PES stiffness evidence was found after three distinct web routes; no generic score is inferred."
+}

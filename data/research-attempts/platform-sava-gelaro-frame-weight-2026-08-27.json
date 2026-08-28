@@ -3,10 +3,12 @@
   "target": { "record_type": "platform", "record_id": "sava-gelaro" },
   "field": "frame-weight",
   "priority": "high",
-  "searched_at": "2026-08-27",
+  "searched_at": "2026-08-28",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "public-post": { "status": "blocked", "blocker": "The canonical five-query XHS campaign ended with worker_error for every query and produced no archive; the shared sequential pool was then owned by another active job, so no same-turn retry or bypass was attempted.", "attempts": [
+      { "attempt": 1, "query": "SAVA 越界 S4 GRX400 车架 重量 T800", "route": "canonical XHS multi-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "Campaign journal records one worker_error and no artifact for this exact-model query." }
+    ] },
     "web": { "status": "temporarily-exhausted", "attempts": [
     { "attempt": 1, "query": "SAVA Gelaro S4 frame weight R21", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike", "accessed_at": "2026-08-27", "note": "Page publishes only approximate complete-bike weight." },
     { "attempt": 2, "query": "萨瓦 Gelaro 越界 S4 车架 重量", "route": "manufacturer China page and indexed images", "outcome": "no-result", "result_url": "https://www.savabike.com/sys-pd/3364.html", "accessed_at": "2026-08-27", "note": "No frame-only weight was exposed." },
@@ -14,5 +16,5 @@
   ] } },
   "status": "blocked",
   "retry_after": "2026-09-10",
-  "notes": "Complete-bike weight remains available; frame-only weight stays empty."
+  "notes": "Complete-bike weight remains available; frame-only weight stays empty after one blocked XHS campaign and three web routes."
 }

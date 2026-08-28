@@ -6,7 +6,7 @@
   },
   "field": "purchase-route",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "public-post",
     "web"
@@ -14,7 +14,7 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "The latest canonical XHS campaign ended with worker_error for this query; earlier public routes also reached verification challenges, and no challenge or bypass was attempted.",
       "attempts": [
         {
           "attempt": 1,
@@ -77,8 +77,10 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777"
+    "round3-pardus-supg2-sport-2026-carbon-aero-road-bike-shimano-105-pes-egr-electr-e7ce4e4777",
+    "pardus-super-sport-egr-888bike-2026-08-28",
+    "pardus-super-sport-launch-wildto-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "A dated mainland CNY 4,999 report and a current authorized Thailand order route are preserved separately; live mainland checkout remains unresolved."
 }

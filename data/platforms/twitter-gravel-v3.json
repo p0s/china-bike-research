@@ -9,7 +9,10 @@
   "summary": "Extremely aggressive complete-bike pricing with carbon frame, fork, and integrated cockpit. Best treated as a value platform with incomplete frame-provenance disclosure.",
   "frame": {
     "material": "carbon",
-    "fork_material": "carbon",
+    "material_grade": "High-modulus carbon fiber; exact fiber grade is not published",
+    "fork_material": "high-modulus carbon",
+    "construction": "Current T47 Gravel V3 carbon chassis with internal routing, integrated carbon cockpit and hidden seatpost clamp; the official factory storefront describes monocoque construction, but no lay-up schedule or molding protocol is published",
+    "stiffness_evidence": "No independent exact-current-platform stiffness or deflection result was found; seller response and bottom-bracket-flex descriptions are not treated as measured evidence",
     "bottom_bracket": "T47",
     "derailleur_hanger": "standard",
     "cable_routing": "fully-internal",
@@ -70,8 +73,11 @@
     "twitter-v3-official-2026-08-16",
     "twitter-v3-wireless-official-2026-08-25",
     "twitter-v3-factory-store-2026-08-25",
+    "twitter-v3-official-2026-08-28",
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-wheeltop-regional-2026-08-28",
     "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
     "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-08-28"
 }

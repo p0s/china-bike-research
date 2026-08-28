@@ -1,0 +1,22 @@
+{
+  "id": "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "twitter-v3-rs-sensah" },
+  "field": "complete-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "Exact current RS sources publish 9.6 kg, 9.7–9.9 kg and 9.9 kg with different or missing measurement bases.",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 RS 24S weight size pedals", "route": "official factory-store exact RS listing", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike", "note": "Store claims 9.6 kg for size 50 cm without pedals." },
+        { "attempt": 2, "query": "TWITTER Gravel V3 Sensah RS complete weight", "route": "manufacturer and regional exact-model pages", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html", "note": "Manufacturer states 9.9 kg with basis unstated; a regional page states 9.7–9.9 kg with basis unstated." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["twitter-v3-official-2026-08-28", "twitter-v3-rs-factory-store-2026-08-28"],
+  "retry_after": null,
+  "notes": "The table uses the best exact-build claim, 9.6 kg, with its size and pedal basis visible; all conflicting claims remain in source metadata."
+}
