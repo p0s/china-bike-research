@@ -1,0 +1,29 @@
+{
+  "id": "platform-seka-exaero-gr-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "seka-exaero-gr" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The exact-model multi-tab XHS campaign stopped with campaign_mismatch before a validated archive was produced.",
+      "attempts": [
+        { "attempt": 1, "query": "SEKA ExAero GR 刚性 碳布", "route": "canonical XHS three-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery." }
+      ]
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "SEKA publishes a rear-compliance value and says lateral stiffness is preserved, while an independent large-frame test reports material rear lateral flex under high power.",
+      "attempts": [
+        { "attempt": 1, "query": "SEKA ExAero GR rear compliance stiffness", "route": "manufacturer exact-model technical page", "outcome": "found", "result_url": "https://www.sekabikes.com/en/exaero-gr-en/", "accessed_at": "2026-08-28", "note": "SEKA publishes 106 N/mm rear vertical compliance and up to 16 mm seatpost movement while claiming no compromise to lateral stiffness." },
+        { "attempt": 2, "query": "Cycling Weekly SEKA ExAero GR lateral flex 360 W", "route": "independent exact-model ride test", "outcome": "conflict", "result_url": "https://www.cyclingweekly.com/reviews/frames/seka-exaero-gr-review-can-this-highly-in-demand-chinese-gravel-frame-compete-with-the-established-favourites", "accessed_at": "2026-08-28", "note": "The reviewer found no issue at 200–270 W but reports rear lateral flex disrupting shifting above about 360 W across four wheelsets." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["seka-exaero-gr-official-2026-08-27", "seka-exaero-gr-cyclingweekly-review-2026-08-17"],
+  "retry_after": null,
+  "notes": "Both axes and evidence bases are shown; no universal stiffness score or threshold is inferred."
+}

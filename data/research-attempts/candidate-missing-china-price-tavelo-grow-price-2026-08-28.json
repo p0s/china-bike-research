@@ -1,0 +1,22 @@
+{
+  "id": "candidate-missing-china-price-tavelo-grow-price-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-tavelo-grow" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "not-run", "attempts": [] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["tavelo-grow-china-launch-2026"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["tavelo-grow-china-launch-2026"],
+    "note": "The duplicate candidate reuses the dated ¥9,500 without-cockpit and ¥10,990 with-cockpit mainland launch packages already stored on its canonical variant."
+  },
+  "retry_after": null,
+  "notes": "No duplicate price observation was created; the candidate is merged into the exact canonical frameset."
+}

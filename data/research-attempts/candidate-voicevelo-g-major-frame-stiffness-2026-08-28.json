@@ -1,0 +1,27 @@
+{
+  "id": "candidate-voicevelo-g-major-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "voicevelo-g-major" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The exact-model multi-tab XHS campaign stopped with campaign_mismatch before a validated archive was produced.",
+      "attempts": [
+        { "attempt": 1, "query": "VOICEVELO G MAJOR 刚性 碳纤维", "route": "canonical XHS three-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery." }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Voice Gmajor frame lateral stiffness ride review", "route": "independent exact-retail-version review", "outcome": "found", "result_url": "https://www.biketo.com/product/52593.html", "accessed_at": "2026-08-28", "note": "BIKETO reports slightly weak lateral frame stiffness, normal vertical stiffness and soft rather than hard pedaling feedback on the size-51 test build." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["voicevelo-g-major-biketo-review-2024-01-17"],
+  "retry_after": null,
+  "notes": "The qualitative build-specific evidence is recorded without converting it into a numeric or cross-model score."
+}

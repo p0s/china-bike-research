@@ -6,15 +6,25 @@
   },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "public-post",
     "web"
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "快客 TT ONE 车架 价格",
+          "route": "canonical XHS pool availability preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-28",
+          "note": "No query was executed because the shared lane was already occupied."
+        }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,11 +59,11 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [
     "round3-tt-one-frame-listing-7c7380f9a6",
     "round3-quick-pro-tt-one-panda-podium-0b483e3fde"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The official mainland exact-model route remains active but price-free. Older CNY reports are complete-bike packages, not the frameset, so no amount is inferred."
 }

@@ -109,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 204);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 530);
+  assert.equal(data.researchAttempts.length, 548);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -142,6 +142,14 @@ test('wide-clearance research records carry exact weight bases and current sourc
   assert.equal(grow.tire_clearance.published_rear_max_mm, 50);
   assert.equal(grow.frame.claimed_frame_weight_g, 830);
   assert.match(grow.frame.claimed_frame_weight_basis, /830–960 g ±25 g/);
+  assert.equal(grow.frame.material_grade, 'Toray T800 carbon');
+  assert.match(grow.frame.construction, /Directional carbon lay-up/);
+  assert.match(grow.frame.stiffness_evidence, /manufacturer-authored/);
+
+  const seka = data.platforms.find((item) => item.id === 'seka-exaero-gr');
+  assert.equal(seka.frame.material_grade, 'Toray T1100G + M46J carbon fiber');
+  assert.match(seka.frame.construction, /True one-piece monocoque/);
+  assert.match(seka.frame.stiffness_evidence, /360 W/);
 
   const g3 = data.candidates.find((item) => item.id === 'missing-china-price-winspace-g3');
   assert.equal(g3.facts.complete_weight_g, 8750);
@@ -153,6 +161,21 @@ test('wide-clearance research records carry exact weight bases and current sourc
   const voicevelo = data.candidates.find((item) => item.id === 'voicevelo-g-major');
   assert.equal(voicevelo.observed_price.amount_cny, 12800);
   assert.equal(voicevelo.observed_price.observed_at, '2023-11-13');
+  assert.match(voicevelo.facts.frame_material, /VG1 is a paint designation/);
+  assert.match(voicevelo.facts.stiffness_evidence, /slightly weak lateral/);
+
+  const rinasclta = data.candidates.find((item) => item.id === 'rinasclta-q-aero-gr');
+  assert.match(rinasclta.facts.frame_material, /Toray T800 \+ T1000/);
+  assert.match(rinasclta.facts.stiffness_evidence, /no exact-model deflection protocol/);
+
+  const trek = data.candidates.find((item) => item.id === 'missing-china-price-trek-checkpoint');
+  assert.equal(trek.facts.complete_weight_g, 9500);
+  assert.equal(trek.facts.drivetrain, 'SRAM Apex XPLR AXS electronic 1×12, 40T crank and 11–44T cassette');
+
+  for (const id of ['missing-china-price-winspace-g5', 'missing-china-price-seka-exaero-gr', 'missing-china-price-tavelo-grow']) {
+    assert.equal(data.candidates.find((item) => item.id === id).status, 'merged-into-exact-record');
+    assert.equal(catalogCandidates.some((entry) => entry.candidate.id === id), false);
+  }
 });
 
 test('electronic groupset references preserve package and price boundaries', () => {

@@ -1,0 +1,20 @@
+{
+  "id": "platform-tavelo-grow-frame-material-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "tavelo-grow" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Tavelo Grow Toray T800 frame fork seatpost", "route": "manufacturer exact-model product page", "outcome": "found", "result_url": "https://tavelo.cc/products/tavelo-grow", "accessed_at": "2026-08-28", "note": "The exact page identifies Toray T800 carbon for the frame, fork and seatpost." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["tavelo-grow-official-2026-08-27"],
+  "retry_after": null,
+  "notes": "The exact fiber family is recorded; the resin system and ply schedule remain unpublished."
+}

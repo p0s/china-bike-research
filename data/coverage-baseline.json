@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 502,
+      "sources": 507,
       "images": 180,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 530
+      "researchAttempts": 548
     },
     "image_accuracy": {
       "exact-platform": 62,
@@ -32,7 +32,7 @@
     },
     "candidate_prices": {
       "official": 51,
-      "observed": 136
+      "observed": 137
     }
   },
   "records": {
@@ -516,6 +516,7 @@
       "scott-addict-rc-40-retailer-2026-08-08",
       "scott-foil-rc-10-official-2026-08-17",
       "seka-exaero-gr-cyclingchina-2026",
+      "seka-exaero-gr-cyclingweekly-review-2026-08-17",
       "seka-exaero-gr-official-2026-08-27",
       "seka-exaero-gr-official-store-2026-08-09",
       "seka-exaero-gr-rdc-collection-2026-08-17",
@@ -551,6 +552,7 @@
       "specialized-china-warranty-faq-2026-08-27",
       "specialized-cn-crux-page",
       "specialized-cn-store-finder-2026",
+      "specialized-crux-10r-frameset-official-2026-08-28",
       "specialized-crux-comp-china-2026-08-17",
       "specialized-crux-comp-grx-ciclonline-2026-08-28",
       "specialized-crux-comp-grx-official-2026-08-17",
@@ -600,6 +602,7 @@
       "trek-checkpoint-china-category-47071-2026-08-17",
       "trek-checkpoint-sl-gen3-official-2026-08-17",
       "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
+      "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
       "trek-china-checkpoint-category-2026-08-17",
       "trek-china-checkpoint-product-47071-2026-08-17",
       "trek-china-domane-category-2026-08-17",
@@ -642,7 +645,9 @@
       "usd-cny-central-parity-2026-07-31",
       "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
       "van-rysel-rcr-f-pro-official-global-2026-08-17",
+      "van-rysel-rcr-f-pro-smzdm-price-2026-08-28",
       "voicevelo-g-major-biketo-launch-2023-11-13",
+      "voicevelo-g-major-biketo-review-2024-01-17",
       "voicevelo-g-major-panda-podium-2026-08-17",
       "voicevelo-warranty-official-2026-08-17",
       "vook-v8e-pro-official-2026-08-08",
@@ -1323,11 +1328,17 @@
       "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27",
       "candidate-missing-china-price-quick-pro-xr-one-frame-stiffness-2026-08-27",
       "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28",
+      "candidate-missing-china-price-seka-exaero-gr-price-2026-08-28",
       "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28",
       "candidate-missing-china-price-specialized-crux-frame-stiffness-2026-08-28",
       "candidate-missing-china-price-specialized-crux-price-2026-08-17",
       "candidate-missing-china-price-specialized-crux-purchase-route-2026-08-17",
       "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17",
+      "candidate-missing-china-price-tavelo-grow-price-2026-08-28",
+      "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28",
+      "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28",
+      "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28",
+      "candidate-missing-china-price-trek-checkpoint-frame-stiffness-2026-08-28",
       "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17",
       "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17",
       "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17",
@@ -1387,8 +1398,12 @@
       "candidate-quick-pro-tt-one-purchase-route-2026-08-17",
       "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17",
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28",
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-stiffness-2026-08-28",
       "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28",
       "candidate-quick-xr-one-complete-weight-2026-08-27",
+      "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28",
+      "candidate-rinasclta-q-aero-gr-frame-stiffness-2026-08-28",
       "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
       "candidate-rinasclta-q-aero-gr-geometry-2026-08-27",
       "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
@@ -1427,6 +1442,8 @@
       "candidate-seka-spear-rdc-purchase-route-2026-08-17",
       "candidate-seka-spear-rdc-tire-clearance-2026-08-17",
       "candidate-seka-spear-rdc-warranty-support-2026-08-17",
+      "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28",
+      "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28",
       "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28",
       "candidate-tavelo-arden-bom-2026-08-17",
       "candidate-tavelo-arden-bottom-bracket-2026-08-17",
@@ -1457,6 +1474,8 @@
       "candidate-voicevelo-g-major-bom-2026-08-17",
       "candidate-voicevelo-g-major-bottom-bracket-2026-08-17",
       "candidate-voicevelo-g-major-frame-2026-08-17",
+      "candidate-voicevelo-g-major-frame-material-2026-08-28",
+      "candidate-voicevelo-g-major-frame-stiffness-2026-08-28",
       "candidate-voicevelo-g-major-frame-weight-2026-08-17",
       "candidate-voicevelo-g-major-geometry-2026-08-17",
       "candidate-voicevelo-g-major-identity-2026-08-17",
@@ -1514,11 +1533,15 @@
       "platform-sava-gelaro-s8-frame-stiffness-2026-08-28",
       "platform-sava-gelaro-sf-frame-material-2026-08-28",
       "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
+      "platform-seka-exaero-gr-frame-material-2026-08-28",
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28",
       "platform-seka-exaero-gr-frame-weight-2026-08-27",
       "platform-seka-exaero-gr-geometry-2026-08-27",
       "platform-spcycle-g028-frame-material-2026-08-28",
       "platform-spcycle-g028-frame-stiffness-2026-08-28",
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27",
+      "platform-tavelo-grow-frame-material-2026-08-28",
+      "platform-tavelo-grow-frame-stiffness-2026-08-28",
       "platform-tavelo-grow-frame-weight-2026-08-27",
       "platform-tavelo-grow-geometry-2026-08-27",
       "platform-tfsa-jh37-geometry-2026-08-27",
@@ -2882,6 +2905,7 @@
         "frame.claimed_fiber",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2890,6 +2914,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2989,6 +3015,7 @@
         "frame.claimed_frame_weight_g_by_size.XL",
         "frame.claimed_frame_weight_g_by_size.XS",
         "frame.claimed_frame_weight_g_by_size.XXL",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2997,6 +3024,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -8470,6 +8499,19 @@
         "type",
         "url"
       ],
+      "seka-exaero-gr-cyclingweekly-review-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "published_at",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "seka-exaero-gr-official-2026-08-27": [
         "accessed_at",
         "language",
@@ -8882,6 +8924,18 @@
         "url"
       ],
       "specialized-cn-store-finder-2026": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "specialized-crux-10r-frameset-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -9554,6 +9608,18 @@
         "type",
         "url"
       ],
+      "trek-checkpoint-sl5-gen3-bikemart-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "trek-china-checkpoint-category-2026-08-17": [
         "accessed_at",
         "language",
@@ -10063,10 +10129,35 @@
         "type",
         "url"
       ],
+      "van-rysel-rcr-f-pro-smzdm-price-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "voicevelo-g-major-biketo-launch-2023-11-13": [
         "accessed_at",
         "language",
         "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "voicevelo-g-major-biketo-review-2024-01-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "published_at",
         "publisher",
         "reliability.identity",
         "reliability.price",
@@ -17076,7 +17167,13 @@
       ],
       "missing-china-price-trek-checkpoint": [
         "category",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
@@ -17169,6 +17266,12 @@
         "last_reviewed",
         "model_id",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.observation_count",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
         "price_status",
         "research_priority",
         "source_ids",
@@ -17872,6 +17975,7 @@
         "facts.cockpit",
         "facts.frame",
         "facts.frame_weight_g",
+        "facts.purchase_route",
         "facts.sizes",
         "facts.tire_clearance_mm",
         "facts.warranty",
@@ -17942,8 +18046,11 @@
         "facts.bottom_bracket",
         "facts.cockpit",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.frame_weight_g",
         "facts.mounts",
+        "facts.stiffness_evidence",
         "facts.storage",
         "facts.tire_clearance_mm",
         "last_reviewed",
@@ -17985,11 +18092,14 @@
         "facts.derailleur_hanger",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.frame_weight_basis",
         "facts.frame_weight_g",
         "facts.purchase_route",
         "facts.seatpost",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "facts.warranty",
         "last_reviewed",
@@ -18343,6 +18453,9 @@
       "specialized-crux-10r-frameset": [
         "category",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
@@ -18960,8 +19073,11 @@
         "facts.bottom_bracket",
         "facts.cockpit",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
         "facts.frame_weight_g",
         "facts.sizes",
+        "facts.stiffness_evidence",
         "facts.tire_clearance_mm",
         "last_reviewed",
         "model_id",
@@ -21635,6 +21751,23 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-missing-china-price-seka-exaero-gr-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -21707,7 +21840,24 @@
         "target.record_id",
         "target.record_type"
       ],
-      "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17": [
+      "candidate-missing-china-price-tavelo-grow-price-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28": [
         "accepted_source_ids",
         "channels.public-post.status",
         "channels.web.attempts",
@@ -21716,6 +21866,68 @@
         "notes",
         "priority",
         "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-frame-stiffness-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
         "searched_at",
         "status",
         "target.record_id",
@@ -22507,6 +22719,8 @@
       ],
       "candidate-quick-pro-tt-one-price-2026-08-17": [
         "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -22565,6 +22779,34 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-stiffness-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -22580,6 +22822,34 @@
         "target.record_type"
       ],
       "candidate-quick-xr-one-complete-weight-2026-08-27": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-rinasclta-q-aero-gr-frame-stiffness-2026-08-28": [
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
@@ -23155,6 +23425,33 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -23583,6 +23880,35 @@
         "channels.public-post.attempts",
         "channels.public-post.blocker",
         "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-voicevelo-g-major-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-voicevelo-g-major-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
         "field",
         "notes",
         "priority",
@@ -24394,6 +24720,36 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-seka-exaero-gr-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-seka-exaero-gr-frame-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.status",
@@ -24449,6 +24805,35 @@
         "target.record_type"
       ],
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tavelo-grow-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-tavelo-grow-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
         "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
@@ -27441,6 +27826,7 @@
         "frame.geometry.source_id=seka-exaero-gr-official-2026-08-27",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=public-seka-exaero-build-2026-08-17",
+        "source_ids=seka-exaero-gr-cyclingweekly-review-2026-08-17",
         "source_ids=seka-exaero-gr-official-2026-08-27",
         "source_ids=seka-official",
         "source_ids=seka-warranty-official-2026-08-27"
@@ -28323,6 +28709,7 @@
       "scott-addict-rc-40-retailer-2026-08-08": [],
       "scott-foil-rc-10-official-2026-08-17": [],
       "seka-exaero-gr-cyclingchina-2026": [],
+      "seka-exaero-gr-cyclingweekly-review-2026-08-17": [],
       "seka-exaero-gr-official-2026-08-27": [],
       "seka-exaero-gr-official-store-2026-08-09": [],
       "seka-exaero-gr-rdc-collection-2026-08-17": [],
@@ -28358,6 +28745,7 @@
       "specialized-china-warranty-faq-2026-08-27": [],
       "specialized-cn-crux-page": [],
       "specialized-cn-store-finder-2026": [],
+      "specialized-crux-10r-frameset-official-2026-08-28": [],
       "specialized-crux-comp-china-2026-08-17": [],
       "specialized-crux-comp-grx-ciclonline-2026-08-28": [],
       "specialized-crux-comp-grx-official-2026-08-17": [],
@@ -28407,6 +28795,7 @@
       "trek-checkpoint-china-category-47071-2026-08-17": [],
       "trek-checkpoint-sl-gen3-official-2026-08-17": [],
       "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17": [],
+      "trek-checkpoint-sl5-gen3-bikemart-2026-08-28": [],
       "trek-china-checkpoint-category-2026-08-17": [],
       "trek-china-checkpoint-product-47071-2026-08-17": [],
       "trek-china-domane-category-2026-08-17": [],
@@ -28449,7 +28838,9 @@
       "usd-cny-central-parity-2026-07-31": [],
       "van-rysel-rcr-f-pro-china-trade-report-2026-08-17": [],
       "van-rysel-rcr-f-pro-official-global-2026-08-17": [],
+      "van-rysel-rcr-f-pro-smzdm-price-2026-08-28": [],
       "voicevelo-g-major-biketo-launch-2023-11-13": [],
+      "voicevelo-g-major-biketo-review-2024-01-17": [],
       "voicevelo-g-major-panda-podium-2026-08-17": [],
       "voicevelo-warranty-official-2026-08-17": [],
       "vook-v8e-pro-official-2026-08-08": [],
@@ -29999,6 +30390,8 @@
         "model_id=seka-exaero-gr",
         "source_ids=public-seka-exaero-build-2026-08-17",
         "source_ids=public-seka-exaero-owner-2026-08-17",
+        "source_ids=seka-exaero-gr-cyclingchina-2026",
+        "source_ids=seka-exaero-gr-cyclingweekly-review-2026-08-17",
         "source_ids=seka-exaero-gr-official-2026-08-27",
         "source_ids=seka-exaero-gr-rdc-collection-2026-08-17",
         "source_ids=seka-exaero-gr-rdc-official-2026-08-17"
@@ -30036,6 +30429,7 @@
         "existing_record_id=tavelo-grow-frameset",
         "model_id=tavelo-grow",
         "source_ids=public-tavelo-grow-build-2026-08-17",
+        "source_ids=tavelo-grow-china-launch-2026",
         "source_ids=tavelo-grow-official-2026-08-17"
       ],
       "missing-china-price-trek-checkpoint": [
@@ -30044,6 +30438,7 @@
         "source_ids=trek-checkpoint-china-category-47071-2026-08-17",
         "source_ids=trek-checkpoint-sl-gen3-official-2026-08-17",
         "source_ids=trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
+        "source_ids=trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
         "source_ids=trek-china-checkpoint-category-2026-08-17",
         "source_ids=trek-china-checkpoint-product-47071-2026-08-17"
       ],
@@ -30069,7 +30464,8 @@
         "source_ids=decathlon-china-bike-warranty-2026-08-17",
         "source_ids=decathlon-china-rcrf-route-2026-08-17",
         "source_ids=van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
-        "source_ids=van-rysel-rcr-f-pro-official-global-2026-08-17"
+        "source_ids=van-rysel-rcr-f-pro-official-global-2026-08-17",
+        "source_ids=van-rysel-rcr-f-pro-smzdm-price-2026-08-28"
       ],
       "missing-china-price-winspace-agile": [
         "model_id=winspace-agile",
@@ -30379,7 +30775,9 @@
       "specialized-crux-10r-frameset": [
         "model_id=specialized-crux-10r-frameset",
         "source_ids=specialized-cn-crux-page",
-        "source_ids=specialized-cn-store-finder-2026"
+        "source_ids=specialized-cn-store-finder-2026",
+        "source_ids=specialized-crux-10r-frameset-official-2026-08-28",
+        "source_ids=specialized-crux-comp-grx-ciclonline-2026-08-28"
       ],
       "specialized-roubaix-sl8-comp-105": [
         "model_id=specialized-roubaix-sl8-comp-105",
@@ -30528,6 +30926,7 @@
       "voicevelo-g-major": [
         "model_id=voicevelo-g-major",
         "source_ids=voicevelo-g-major-biketo-launch-2023-11-13",
+        "source_ids=voicevelo-g-major-biketo-review-2024-01-17",
         "source_ids=voicevelo-g-major-panda-podium-2026-08-17",
         "source_ids=voicevelo-warranty-official-2026-08-17",
         "video_ids=china-cycling-voicevelo-g-major"
@@ -31120,6 +31519,10 @@
       "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28": [
         "target.record_id=missing-china-price-quick-pro-xr-one"
       ],
+      "candidate-missing-china-price-seka-exaero-gr-price-2026-08-28": [
+        "resolution.source_ids=seka-exaero-gr-cyclingchina-2026",
+        "target.record_id=missing-china-price-seka-exaero-gr"
+      ],
       "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28": [
         "target.record_id=missing-china-price-specialized-crux"
       ],
@@ -31135,7 +31538,24 @@
       "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17": [
         "target.record_id=missing-china-price-specialized-crux"
       ],
+      "candidate-missing-china-price-tavelo-grow-price-2026-08-28": [
+        "resolution.source_ids=tavelo-grow-china-launch-2026",
+        "target.record_id=missing-china-price-tavelo-grow"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28": [
+        "target.record_id=missing-china-price-trek-checkpoint"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28": [
+        "target.record_id=missing-china-price-trek-checkpoint"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28": [
+        "target.record_id=missing-china-price-trek-checkpoint"
+      ],
+      "candidate-missing-china-price-trek-checkpoint-frame-stiffness-2026-08-28": [
+        "target.record_id=missing-china-price-trek-checkpoint"
+      ],
       "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17": [
+        "resolution.source_ids=van-rysel-rcr-f-pro-smzdm-price-2026-08-28",
         "target.record_id=missing-china-price-van-rysel-rcr"
       ],
       "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17": [
@@ -31314,11 +31734,23 @@
       "candidate-quick-pro-tt-one-warranty-support-2026-08-17": [
         "target.record_id=quick-pro-tt-one"
       ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28": [
+        "target.record_id=quick-pro-xr-one-frameset-aelous-gravel"
+      ],
+      "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-stiffness-2026-08-28": [
+        "target.record_id=quick-pro-xr-one-frameset-aelous-gravel"
+      ],
       "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": [
         "target.record_id=quick-pro-xr-one-frameset-aelous-gravel"
       ],
       "candidate-quick-xr-one-complete-weight-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-xr-one"
+      ],
+      "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28": [
+        "target.record_id=rinasclta-q-aero-gr"
+      ],
+      "candidate-rinasclta-q-aero-gr-frame-stiffness-2026-08-28": [
+        "target.record_id=rinasclta-q-aero-gr"
       ],
       "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27": [
         "target.record_id=rinasclta-q-aero-gr"
@@ -31434,6 +31866,12 @@
       "candidate-seka-spear-rdc-warranty-support-2026-08-17": [
         "target.record_id=seka-spear-rdc"
       ],
+      "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28": [
+        "target.record_id=specialized-crux-10r-frameset"
+      ],
+      "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28": [
+        "target.record_id=specialized-crux-10r-frameset"
+      ],
       "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28": [
         "target.record_id=specialized-roubaix-sl8-sport-105"
       ],
@@ -31522,6 +31960,12 @@
         "target.record_id=voicevelo-g-major"
       ],
       "candidate-voicevelo-g-major-frame-2026-08-17": [
+        "target.record_id=voicevelo-g-major"
+      ],
+      "candidate-voicevelo-g-major-frame-material-2026-08-28": [
+        "target.record_id=voicevelo-g-major"
+      ],
+      "candidate-voicevelo-g-major-frame-stiffness-2026-08-28": [
         "target.record_id=voicevelo-g-major"
       ],
       "candidate-voicevelo-g-major-frame-weight-2026-08-17": [
@@ -31695,6 +32139,12 @@
       "platform-sava-gelaro-sf-frame-stiffness-2026-08-28": [
         "target.record_id=sava-gelaro-sf"
       ],
+      "platform-seka-exaero-gr-frame-material-2026-08-28": [
+        "target.record_id=seka-exaero-gr"
+      ],
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28": [
+        "target.record_id=seka-exaero-gr"
+      ],
       "platform-seka-exaero-gr-frame-weight-2026-08-27": [
         "target.record_id=seka-exaero-gr"
       ],
@@ -31708,6 +32158,12 @@
         "target.record_id=spcycle-g028"
       ],
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
+        "target.record_id=tavelo-grow"
+      ],
+      "platform-tavelo-grow-frame-material-2026-08-28": [
+        "target.record_id=tavelo-grow"
+      ],
+      "platform-tavelo-grow-frame-stiffness-2026-08-28": [
         "target.record_id=tavelo-grow"
       ],
       "platform-tavelo-grow-frame-weight-2026-08-27": [
@@ -34796,6 +35252,14 @@
         "specification": 3
       }
     },
+    "seka-exaero-gr-cyclingweekly-review-2026-08-17": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 2
+      }
+    },
     "seka-exaero-gr-official-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -35076,6 +35540,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 3,
+        "specification": 3
+      }
+    },
+    "specialized-crux-10r-frameset-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
         "specification": 3
       }
     },
@@ -35476,6 +35948,14 @@
         "specification": 1
       }
     },
+    "trek-checkpoint-sl5-gen3-bikemart-2026-08-28": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "trek-china-checkpoint-category-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -35814,8 +36294,24 @@
         "specification": 3
       }
     },
+    "van-rysel-rcr-f-pro-smzdm-price-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 0
+      }
+    },
     "voicevelo-g-major-biketo-launch-2023-11-13": {
       "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
+      }
+    },
+    "voicevelo-g-major-biketo-review-2024-01-17": {
+      "minimum_type_tier": 0,
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
@@ -38270,6 +38766,19 @@
         "quick-pro-xr-one-tmall-2026-08-28"
       ]
     },
+    "candidate-missing-china-price-seka-exaero-gr-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 0
+      },
+      "attempt_entries": [],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"seka-exaero-gr-cyclingchina-2026\"],\"note\":\"The duplicate candidate reuses the dated ¥14,990 mainland frame, handlebar and seatpost launch package already stored on its canonical variant.\"}"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-gr-cyclingchina-2026"
+      ]
+    },
     "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28": {
       "channel_attempt_counts": {
         "web": 1
@@ -38335,19 +38844,85 @@
         "round3-specialized-china-warranty-8f335b54cd"
       ]
     },
-    "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17": {
+    "candidate-missing-china-price-tavelo-grow-price-2026-08-28": {
       "channel_attempt_counts": {
         "public-post": 0,
+        "web": 0
+      },
+      "attempt_entries": [],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"tavelo-grow-china-launch-2026\"],\"note\":\"The duplicate candidate reuses the dated ¥9,500 without-cockpit and ¥10,990 with-cockpit mainland launch packages already stored on its canonical variant.\"}"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-china-launch-2026"
+      ]
+    },
+    "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"2026 Trek Checkpoint SL 5 AXS Gen 3 exact weight size ML\",\"authorized-retailer exact-model specification\",\"found\",\"2026-08-28\",\"The exact 2026 trim is listed at 9.50 kg in size ML with TLR sealant and no tubes; pedals are not included.\",\"https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
+      ]
+    },
+    "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"2026 Trek Checkpoint SL 5 AXS Gen 3 drivetrain 40T 11-44\",\"authorized-retailer exact-model specification\",\"found\",\"2026-08-28\",\"The exact trim uses SRAM Apex XPLR AXS electronic 1×12 with a 40T crank and 11–44T cassette.\",\"https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
+      ]
+    },
+    "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Trek Checkpoint SL 5 Gen 3 500 Series OCLV IsoSpeed construction\",\"authorized-retailer exact-model specification\",\"found\",\"2026-08-28\",\"The exact trim identifies 500 Series OCLV carbon, a full-carbon fork, IsoSpeed, downtube storage, T47 and UDH; fiber grade and ply schedule are not published.\",\"https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike\"]"
+      ],
+      "accepted_source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
+      ]
+    },
+    "candidate-missing-china-price-trek-checkpoint-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"Trek Checkpoint SL 5 AXS Gen 3 frame stiffness owner report\",\"XHS campaign availability check\",\"blocked\",\"2026-08-28\",\"The canonical shared lane failed safely before this additional exact-model query could be scheduled.\",null]",
+        "[\"web\",1,\"Trek Checkpoint SL Gen 3 stiffness test\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-28\",\"IsoSpeed comfort language is not a measured frame-stiffness result.\",\"https://www.trekbikes.com/us/en_US/bikes/road-bikes/gravel-bikes/checkpoint/checkpoint-sl/checkpoint-sl-5-axs-gen-3/p/47071/\"]",
+        "[\"web\",2,\"2026 Checkpoint SL 5 AXS frame deflection\",\"authorized-retailer exact-build page\",\"no-result\",\"2026-08-28\",\"The page supplies construction and build facts but no stiffness protocol or result.\",\"https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike\"]",
+        "[\"web\",3,\"Checkpoint SL 5 AXS Gen 3 independent stiffness review\",\"indexed exact-model review search\",\"no-result\",\"2026-08-28\",\"No attributable exact-trim deflection measurement or sufficiently specific stiffness comparison surfaced.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-missing-china-price-van-rysel-rcr-price-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Van Rysel RCR-F Pro 105 Di2 价格\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
         "[\"web\",1,\"Van Rysel RCR-F Pro official global price\",\"official global manufacturer\",\"rejected\",\"2026-08-17\",\"Not China.\",\"https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505\"]",
         "[\"web\",2,\"Van Rysel RCR-F Pro China launch price\",\"China industry/launch report\",\"no-result\",\"2026-08-17\",\"Historical/current stock unverified.\",\"https://www.cyclingchina.net/site/html/2025/new_product_0331/9682.html\"]",
         "[\"web\",3,\"Decathlon China exact SKU price\",\"official China store\",\"no-result\",\"2026-08-17\",\"No amount.\",\"https://decathlon.jd.com/\"]"
       ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"van-rysel-rcr-f-pro-smzdm-price-2026-08-28\"],\"note\":\"A later current mainland market report supplies the exact RCR-F Pro 105 Di2 markdown observation without rewriting or extending the original bounded three-attempt web search.\"}"
+      ],
       "accepted_source_ids": [
         "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
-        "van-rysel-rcr-f-pro-official-global-2026-08-17"
+        "van-rysel-rcr-f-pro-official-global-2026-08-17",
+        "van-rysel-rcr-f-pro-smzdm-price-2026-08-28"
       ]
     },
     "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17": {
@@ -39083,10 +39658,11 @@
     },
     "candidate-quick-pro-tt-one-price-2026-08-17": {
       "channel_attempt_counts": {
-        "public-post": 0,
+        "public-post": 1,
         "web": 3
       },
       "attempt_entries": [
+        "[\"public-post\",1,\"快客 TT ONE 车架 价格\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
         "[\"web\",1,\"QUICKPRO TT:ONE China price\",\"official China manufacturer\",\"no-result\",\"2026-08-17\",\"No amount.\",\"https://www.quick-bikes.com.cn/product/30.html\"]",
         "[\"web\",2,\"Quick Pro TT:ONE marketplace price\",\"authorized/current marketplace\",\"rejected\",\"2026-08-17\",\"Foreign reference.\",\"https://shop.app/products/7690851975233/tt-one-frame\"]",
         "[\"web\",3,\"Quick Pro TT:ONE foreign dealer price\",\"credible/current marketplace\",\"rejected\",\"2026-08-17\",\"Foreign reference.\",\"https://www.pandapodium.cc/product/quick-pro-ttone-carbon-time-trial-bike-frameset/\"]"
@@ -39144,6 +39720,30 @@
         "round3-quick-pro-tt-one-291572cff7"
       ]
     },
+    "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Quick Pro XR ONE frameset carbon material monocoque\",\"manufacturer exact-frameset page\",\"found\",\"2026-08-28\",\"The exact frameset page identifies high-strength/high-modulus carbon and Monolith one-piece monocoque construction; supplier, grade and ply schedule are not published.\",\"https://www.quickprousa.com/products/xr-one-frame\"]"
+      ],
+      "accepted_source_ids": [
+        "quick-pro-xr-one-frame-official-2026-08-17"
+      ]
+    },
+    "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Quick Pro XR ONE frame stiffness owner review\",\"XHS campaign availability check\",\"blocked\",\"2026-08-28\",\"The canonical shared lane failed safely before this additional exact-model query could be scheduled.\",null]",
+        "[\"web\",1,\"Quick Pro XR ONE stiffness test\",\"manufacturer exact-complete-bike page\",\"no-result\",\"2026-08-28\",\"Efficiency and ride-feel language has no stiffness protocol or result.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]",
+        "[\"web\",2,\"Quick XR ONE frame stiffness review\",\"manufacturer exact-frameset page\",\"no-result\",\"2026-08-28\",\"Construction and weight are published, but no deflection measurement or independent ride assessment.\",\"https://www.quickprousa.com/products/xr-one-frame\"]",
+        "[\"web\",3,\"Quick XR ONE independent frame deflection assessment\",\"indexed exact-model review search\",\"no-result\",\"2026-08-28\",\"No sufficiently exact attributable stiffness comparison surfaced.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -39166,6 +39766,30 @@
         "[\"web\",1,\"Quick XR ONE Shimano complete weight\",\"official complete-bike page\",\"no-result\",\"2026-08-27\",\"Page publishes component and frame weights but no complete-bike total.\",\"https://www.quickprousa.com/products/xr-one-shimano\"]",
         "[\"web\",2,\"Quick XR ONE weight painted frame\",\"industry launch report\",\"rejected\",\"2026-08-27\",\"Reported 990 g value is the painted M frame with hardware, not a complete-bike weight.\",\"https://www.biketo.com/industry/55626.html?all=1\"]",
         "[\"web\",3,\"Quick XR ONE collection weight\",\"official collection fallback\",\"no-result\",\"2026-08-27\",\"No attributable complete-bike total was exposed.\",\"https://www.quickprousa.com/collections/complete-bikes\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Rinasclta Q-AERO GR T800 T1000 Wind Eye\",\"manufacturer exact-model product page\",\"found\",\"2026-08-28\",\"The exact page identifies Toray T800 + T1000 carbon and the Wind Eye aero seatstay design; resin system and ply schedule are not published.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]"
+      ],
+      "accepted_source_ids": [
+        "rinasclta-q-aero-gr-official-2026-08-27"
+      ]
+    },
+    "candidate-rinasclta-q-aero-gr-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Rinasclta Q-AERO GR 刚性\",\"canonical XHS three-tab campaign\",\"blocked\",\"2026-08-28\",\"No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery.\",null]",
+        "[\"web\",1,\"Rinasclta Q-AERO GR exact stiffness test\",\"manufacturer exact-model product page\",\"rejected\",\"2026-08-28\",\"Power-transfer, drivetrain-stability and front-end-stiffness wording has no test protocol or deflection value.\",\"https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD\"]",
+        "[\"web\",2,\"Rinasclta Q-AERO GR independent stiffness review\",\"indexed exact-model editorial search\",\"no-result\",\"2026-08-28\",\"No exact-model independent ride or laboratory stiffness assessment surfaced.\",null]",
+        "[\"web\",3,\"Rinasclta Q-AERO GR frame deflection comparison\",\"indexed exact-model technical search\",\"no-result\",\"2026-08-28\",\"No attributable lateral, torsional or vertical deflection result surfaced.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -39699,6 +40323,29 @@
         "seka-warranty-global-official-2026-08-17"
       ]
     },
+    "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Specialized Crux FACT 10r frameset Rider First carbon\",\"manufacturer exact-frameset page\",\"found\",\"2026-08-28\",\"The current exact frameset identifies a FACT 10r Rider First Engineered frame and S-Works FACT carbon fork; fiber grade and lay-up are not published.\",\"https://www.specialized.com/us/en/crux-10r-frameset/p/4221706\"]"
+      ],
+      "accepted_source_ids": [
+        "specialized-crux-10r-frameset-official-2026-08-28"
+      ]
+    },
+    "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 0,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Specialized Crux FACT 10r GRX rigidity reactive review\",\"independent exact-platform build review\",\"found\",\"2026-08-28\",\"The current FACT 10r GRX build is described as rigid and reactive with stable, precise handling; this is qualitative ride evidence, not a measured frameset value.\",\"https://www.ciclonline.com/10-biciclette/97-specialized/29046-specialized-crux-comp-shimano-grx-2025-prova-test-recensione-pregi-difetti-problemi-opinioni-pareri-tutto-quello-che-devi-sapere-realmente\"]"
+      ],
+      "accepted_source_ids": [
+        "specialized-crux-comp-grx-ciclonline-2026-08-28"
+      ]
+    },
     "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28": {
       "channel_attempt_counts": {
         "web": 2
@@ -40103,6 +40750,30 @@
         "[\"public-post\",3,\"Voicevelo G Major G Major 砾石车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-voicevelo-g-major-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Voicevelo G Major carbon construction VG1 SAS impact strength\",\"independent exact-retail-version review\",\"found\",\"2026-08-28\",\"The review documents the impact-strength-priority tube design, locally thicker walls and SAS compliance zone. No fiber grade is published, and VG1 is identified as a paint designation.\",\"https://www.biketo.com/product/52593.html\"]"
+      ],
+      "accepted_source_ids": [
+        "voicevelo-g-major-biketo-review-2024-01-17"
+      ]
+    },
+    "candidate-voicevelo-g-major-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"VOICEVELO G MAJOR 刚性 碳纤维\",\"canonical XHS three-tab campaign\",\"blocked\",\"2026-08-28\",\"No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery.\",null]",
+        "[\"web\",1,\"Voice Gmajor frame lateral stiffness ride review\",\"independent exact-retail-version review\",\"found\",\"2026-08-28\",\"BIKETO reports slightly weak lateral frame stiffness, normal vertical stiffness and soft rather than hard pedaling feedback on the size-51 test build.\",\"https://www.biketo.com/product/52593.html\"]"
+      ],
+      "accepted_source_ids": [
+        "voicevelo-g-major-biketo-review-2024-01-17"
+      ]
     },
     "candidate-voicevelo-g-major-frame-weight-2026-08-17": {
       "channel_attempt_counts": {
@@ -40809,6 +41480,32 @@
         "sava-gelaro-sf6-independent-review-2026-08-27"
       ]
     },
+    "platform-seka-exaero-gr-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SEKA ExAero GR M46J T1100 true one piece carbon\",\"manufacturer exact-model technical page\",\"found\",\"2026-08-28\",\"SEKA identifies Toray T1100G and M46J carbon with true one-piece molding, a continuous load path and no joined or bonded frame sections.\",\"https://www.sekabikes.com/en/exaero-gr-en/\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-gr-official-2026-08-27"
+      ]
+    },
+    "platform-seka-exaero-gr-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SEKA ExAero GR 刚性 碳布\",\"canonical XHS three-tab campaign\",\"blocked\",\"2026-08-28\",\"No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery.\",null]",
+        "[\"web\",1,\"SEKA ExAero GR rear compliance stiffness\",\"manufacturer exact-model technical page\",\"found\",\"2026-08-28\",\"SEKA publishes 106 N/mm rear vertical compliance and up to 16 mm seatpost movement while claiming no compromise to lateral stiffness.\",\"https://www.sekabikes.com/en/exaero-gr-en/\"]",
+        "[\"web\",2,\"Cycling Weekly SEKA ExAero GR lateral flex 360 W\",\"independent exact-model ride test\",\"conflict\",\"2026-08-28\",\"The reviewer found no issue at 200–270 W but reports rear lateral flex disrupting shifting above about 360 W across four wheelsets.\",\"https://www.cyclingweekly.com/reviews/frames/seka-exaero-gr-review-can-this-highly-in-demand-chinese-gravel-frame-compete-with-the-established-favourites\"]"
+      ],
+      "accepted_source_ids": [
+        "seka-exaero-gr-cyclingweekly-review-2026-08-17",
+        "seka-exaero-gr-official-2026-08-27"
+      ]
+    },
     "platform-seka-exaero-gr-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -40866,6 +41563,30 @@
         "[\"web\",3,\"site:tavelo.cc Tavelo Grow front derailleur hanger\",\"manufacturer parts catalog\",\"rejected\",\"2026-08-27\",\"A generic front-derailleur hanger is sold, but its listing does not map it to Grow and therefore cannot prove 2× compatibility.\",\"https://tavelo.cc/collections/gear\"]"
       ],
       "accepted_source_ids": []
+    },
+    "platform-tavelo-grow-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Tavelo Grow Toray T800 frame fork seatpost\",\"manufacturer exact-model product page\",\"found\",\"2026-08-28\",\"The exact page identifies Toray T800 carbon for the frame, fork and seatpost.\",\"https://tavelo.cc/products/tavelo-grow\"]"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-official-2026-08-27"
+      ]
+    },
+    "platform-tavelo-grow-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"TAVELO GROW 刚性 碳纤维\",\"canonical XHS three-tab campaign\",\"blocked\",\"2026-08-28\",\"No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery.\",null]",
+        "[\"web\",1,\"TAVELO Grow directional layup rear triangle lateral stiffness\",\"manufacturer-authored mainland technical launch\",\"found\",\"2026-08-28\",\"The article describes controlled vertical flex from directional lay-up and a flexible rear triangle while retaining lateral stiffness and pedaling response; no numeric protocol is published.\",\"https://www.wildto.com/index.php/news/58909.html\"]"
+      ],
+      "accepted_source_ids": [
+        "tavelo-grow-china-launch-2026"
+      ]
     },
     "platform-tavelo-grow-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
@@ -45747,6 +46468,9 @@
       ],
       "missing-china-price-trek-madone-gen-8": [
         "official_price"
+      ],
+      "missing-china-price-van-rysel-rcr": [
+        "observed_price"
       ],
       "missing-china-price-winspace-agile": [
         "official_price"

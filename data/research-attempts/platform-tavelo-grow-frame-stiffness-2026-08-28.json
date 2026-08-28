@@ -1,0 +1,27 @@
+{
+  "id": "platform-tavelo-grow-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "tavelo-grow" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The exact-model multi-tab XHS campaign stopped with campaign_mismatch before a validated archive was produced.",
+      "attempts": [
+        { "attempt": 1, "query": "TAVELO GROW 刚性 碳纤维", "route": "canonical XHS three-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery." }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "TAVELO Grow directional layup rear triangle lateral stiffness", "route": "manufacturer-authored mainland technical launch", "outcome": "found", "result_url": "https://www.wildto.com/index.php/news/58909.html", "accessed_at": "2026-08-28", "note": "The article describes controlled vertical flex from directional lay-up and a flexible rear triangle while retaining lateral stiffness and pedaling response; no numeric protocol is published." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["tavelo-grow-china-launch-2026"],
+  "retry_after": null,
+  "notes": "The exact manufacturer claim is shown as such; no numeric or cross-model stiffness ranking is inferred."
+}

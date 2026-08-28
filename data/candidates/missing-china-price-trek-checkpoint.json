@@ -6,21 +6,22 @@
   "type": "complete-bike",
   "why_interesting": "Exact official Trek China gravel model with a current CNY list price and product identifier.",
   "missing": [
-    "Exact current BOM, weight, geometry and bottom bracket",
+    "Confirm that the mainland SKU matches the documented 2026 global trim across the full BOM, geometry and bottom bracket",
     "Current dealer stock, checkout outcome and China warranty policy"
   ],
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Exact current BOM, weight, frame/geometry, BB and clearance; Direct image asset URL; Current dealer stock, checkout outcome and China warranty policy",
-  "last_reviewed": "2026-08-24",
+  "last_reviewed": "2026-08-28",
   "source_ids": [
     "trek-china-checkpoint-category-2026-08-17",
     "trek-china-checkpoint-product-47071-2026-08-17",
     "trek-checkpoint-china-category-47071-2026-08-17",
     "trek-checkpoint-sl-gen3-official-2026-08-17",
     "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
-    "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24"
+    "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
+    "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
   ],
   "official_price": {
     "amount_cny": 27800,
@@ -32,6 +33,12 @@
   "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/砾石自行车/c/B546/",
   "facts": {
     "frame": "500 Series OCLV carbon",
+    "frame_material": "500 Series OCLV carbon frame with full-carbon fork; Trek does not publish the exact fiber grade or ply schedule",
+    "frame_construction": "IsoSpeed carbon chassis with downtube storage, concealed routing, T47 shell, UDH, rack/fender/frame-bag mounts and removable front-derailleur hanger",
+    "stiffness_evidence": "IsoSpeed is documented as a vibration-isolating comfort feature; no measured exact-SL5 frame stiffness or attributable independent deflection result was found",
+    "complete_weight_g": 9500,
+    "complete_weight_basis": "Authorized-retailer exact 2026 trim, size ML, with TLR sealant and no tubes; pedals are not included",
+    "drivetrain": "SRAM Apex XPLR AXS electronic 1×12, 40T crank and 11–44T cassette",
     "tire_clearance_mm": 50
   }
 }

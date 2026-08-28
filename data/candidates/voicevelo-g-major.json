@@ -7,7 +7,8 @@
   "why_interesting": "A race-gravel frameset with a 790 g claim, external-bearing T47 and clearance for 700×47C or 650B×2.1 tires.",
   "missing": [
     "Current mainland-China RMB observation and purchase route",
-    "Independent frame-weight and ride evidence"
+    "Independent frame-weight verification",
+    "Published carbon fiber grade, resin system or ply schedule"
   ],
   "status": "research-lead",
   "research_priority": "medium",
@@ -17,7 +18,8 @@
   "source_ids": [
     "voicevelo-g-major-panda-podium-2026-08-17",
     "voicevelo-warranty-official-2026-08-17",
-    "voicevelo-g-major-biketo-launch-2023-11-13"
+    "voicevelo-g-major-biketo-launch-2023-11-13",
+    "voicevelo-g-major-biketo-review-2024-01-17"
   ],
   "observed_price": {
     "amount_cny": 12800,
@@ -27,14 +29,17 @@
     "observation_count": 1
   },
   "facts": {
-    "frame": "VG1 carbon; 12×100 / 12×142 mm thru axles; flat-mount disc",
+    "frame": "Carbon frame; 12×100 / 12×142 mm thru axles; flat-mount disc",
+    "frame_material": "Carbon fiber; the maker does not publish a fiber supplier, grade, resin system or ply schedule. VG1 is a paint designation, not a carbon grade.",
+    "frame_construction": "Impact-strength-priority tube shaping uses smaller profiles and locally thicker walls; an SAS compliance zone combines the flat top tube, seatstays and lower seat tube, with a pre-embedded T47 shell",
+    "stiffness_evidence": "BIKETO's size-51 test reported slightly weak lateral frame stiffness, normal vertical stiffness and soft rather than hard pedaling feedback; qualitative build-specific evidence, not a measured deflection result",
     "frame_weight_g": 790,
     "bottom_bracket": "T47 external-bearing",
     "tire_clearance_mm": 47,
     "sizes": "48, 51, 54 and 57",
     "cockpit": "27.2 mm seatpost; compatible with 1× and 2× drivetrains"
   },
-  "source_note": "The frame claim is 790 g ±3% for a size-51 VG1, excluding accessories. A manufacturer-authored 2023 article reported a ¥12,800 mainland package, but that historical launch observation is not a current checkout price.",
+  "source_note": "The frame claim is 790 g ±3% for a size-51 bike in the VG1 paint, excluding accessories; VG1 is not a carbon grade. A manufacturer-authored 2023 article reported a ¥12,800 mainland package, but that historical launch observation is not a current checkout price. A separate BIKETO exact-model test supplies the construction and ride-stiffness context.",
   "support_note": "A direct exact-model retailer route and an official two-year brand warranty page are available; exact mainland eligibility, proof, exclusions and handling still require confirmation.",
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-08-28"
 }
