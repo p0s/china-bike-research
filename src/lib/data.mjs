@@ -411,6 +411,7 @@ export function validateDataset(data = loadDataset()) {
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
+    if (platform.research_finalist !== undefined && typeof platform.research_finalist !== 'boolean') errors.push(`platform ${platform.id}: research_finalist must be boolean`);
     for (const key of ['material', 'fork_material', 'material_grade', 'claimed_fiber', 'construction', 'stiffness_evidence']) {
       if (platform.frame?.[key] !== undefined && (typeof platform.frame[key] !== 'string' || !platform.frame[key].trim())) errors.push(`platform ${platform.id}: invalid frame.${key}`);
     }
@@ -438,6 +439,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('variant', variant, ['platform_id', 'name', 'kind', 'editorial', 'source_ids']);
     if (!platformIds.has(variant.platform_id)) errors.push(`variant ${variant.id}: missing platform ${variant.platform_id}`);
     if (!['complete-bike', 'frameset'].includes(variant.kind)) errors.push(`variant ${variant.id}: invalid kind`);
+    if (variant.research_finalist !== undefined && typeof variant.research_finalist !== 'boolean') errors.push(`variant ${variant.id}: research_finalist must be boolean`);
     if (variant.kind === 'complete-bike') {
       if (!isObject(variant.drivetrain)) errors.push(`variant ${variant.id}: complete bike needs an exact drivetrain`);
       else {
@@ -510,6 +512,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.research_finalist !== undefined && typeof candidate.research_finalist !== 'boolean') errors.push(`candidate ${candidate.id}: research_finalist must be boolean`);
     if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
     if (candidate.source_url !== undefined) {
       try {
@@ -529,7 +532,7 @@ export function validateDataset(data = loadDataset()) {
       if (!isObject(candidate.facts)) {
         errors.push(`candidate ${candidate.id}: facts must be an object`);
       } else {
-        for (const key of ['drivetrain', 'brakes', 'frame', 'frame_material', 'frame_construction', 'stiffness_evidence', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
+        for (const key of ['drivetrain', 'brakes', 'frame', 'frame_material', 'frame_construction', 'stiffness_evidence', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts', 'purchase_route']) {
           if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'string' || !candidate.facts[key].trim())) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
           }

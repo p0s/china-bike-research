@@ -106,6 +106,8 @@ Never infer specifications across generations, sizes, or similarly named models 
 
 Research completion is tracked per exact target and missing field. High-priority gaps normally receive up to three distinct public-post attempts and three distinct web/official attempts. Stop early when exact attributable evidence is accepted. Mark a gap temporarily exhausted only after every required channel reaches its attempt limit; record queries, routes, rejection reasons, search date, and a retry date. A temporarily exhausted search remains an unknown, never negative evidence. See `docs/research-stopping-policy.md`.
 
+Default research planning is finite and decision-oriented. Its active scope is every published variant plus non-duplicate high- and medium-priority candidates. It exposes at most 25 decision-critical atomic gaps across at most 10 models, limited to unattempted or explicitly retry-due work. Research-evidence gaps, publication gates, and operational checks remain separate queues with separate counts; each default queue is independently capped at 10 models and 25 rows without hiding its full active-scope totals. `--all` preserves the complete candidate and published long tail, every gap state, and supplemental fields. Decision-ready and critical-field metrics disclose their selected-scope filters and candidate/published denominators. Their critical fields are exact configured price, applicable weight with its basis, maximum clearance, complete-bike drivetrain/BOM, material or construction detail, purchase route, and exact image. Stiffness coverage remains visible but is not critical unless a candidate, variant, or platform is explicitly marked `research_finalist: true`.
+
 ## 5. Price rules
 
 - Every price has a date, exact variant, market/channel, type, conditions, and source.
@@ -113,6 +115,7 @@ Research completion is tracked per exact target and missing field. High-priority
 - Add a new observation; do not overwrite price history.
 - Distinguish observed checkout, official list, reference range, historical promotion, and estimate.
 - A marketplace screenshot is an option-level listed-price observation, not a checkout total. Preserve the exact readable seller option label, package basis, and any truncation; never collapse materially different packages into one headline price or apply an unspecified bundle discount.
+- An already-authorized Taobao capture may be ingested only through the versioned immutable manual-packet contract. The v1 validator requires the exact public listing identity, seller, selected configuration, CNY amount, China-time timestamp, source-panel references, local byte counts and SHA-256 digests, and explicit human pixel verification for OCR-derived values. It rejects path/hash/schema/collision/privacy failures and writes only new conventional source and exact-variant price records. It never accesses Taobao, copies raw captures into Git, mutates existing evidence, or promotes a candidate.
 - Record coupons, subsidies, memberships, trade-ins, size/color limits, shipping, and other conditions when known.
 - `data/meta.json.snapshot_date` is the last catalog-wide review date, not the date of every small edit.
 - The reviewed default frameset allowance changes only with explicit maintainer approval and a dated rationale. A buyer-side calculator override is not an evidence or methodology change.

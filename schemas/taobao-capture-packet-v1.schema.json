@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://china-bikes.p0s.eu/schemas/taobao-capture-packet-v1.schema.json",
+  "title": "Immutable Taobao manual capture packet v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "packet_id",
+    "listing",
+    "target",
+    "price",
+    "observed_at",
+    "captures",
+    "evidence_refs",
+    "privacy_review",
+    "output"
+  ],
+  "properties": {
+    "schema": { "const": "china-bike-taobao-capture-packet/v1" },
+    "packet_id": { "$ref": "#/$defs/id" },
+    "listing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "canonical_url", "seller", "title", "selected_options"],
+      "properties": {
+        "item_id": { "type": "string", "pattern": "^[0-9]+$" },
+        "canonical_url": {
+          "type": "string",
+          "pattern": "^https://item\\.taobao\\.com/item\\.htm\\?id=[0-9]+$"
+        },
+        "seller": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "selected_options": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "selected_sku_id": { "type": "string", "pattern": "^[0-9]+$" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "record_id"],
+      "properties": {
+        "record_type": { "const": "variant" },
+        "record_id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amount_cny",
+        "currency",
+        "price_type",
+        "channel",
+        "status",
+        "price_basis",
+        "conditions",
+        "checkout_verified"
+      ],
+      "properties": {
+        "amount_cny": { "type": "number", "exclusiveMinimum": 0 },
+        "currency": { "const": "CNY" },
+        "price_type": { "const": "listing-option" },
+        "channel": { "const": "taobao-mainland" },
+        "status": { "enum": ["available", "in-stock", "preorder", "out-of-stock"] },
+        "price_basis": { "type": "string", "minLength": 1 },
+        "conditions": { "type": "string", "minLength": 1 },
+        "checkout_verified": { "const": false }
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?\\+08:00$"
+    },
+    "captures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "panel", "mime_type", "bytes", "sha256", "ocr"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "path": { "type": "string", "minLength": 1 },
+          "panel": {
+            "enum": [
+              "seller-identity",
+              "listing-identity",
+              "selected-configuration",
+              "selected-price",
+              "package-contents",
+              "specification-image"
+            ]
+          },
+          "mime_type": {
+            "enum": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/svg+xml",
+              "application/pdf",
+              "application/json",
+              "text/plain"
+            ]
+          },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "ocr": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["used"],
+                "properties": { "used": { "const": false } }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "used",
+                  "engine",
+                  "language",
+                  "derived_fields",
+                  "human_pixel_verified",
+                  "statement"
+                ],
+                "properties": {
+                  "used": { "const": true },
+                  "engine": { "type": "string", "minLength": 1 },
+                  "language": { "type": "string", "minLength": 1 },
+                  "derived_fields": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "$ref": "#/$defs/id" }
+                  },
+                  "human_pixel_verified": { "const": true },
+                  "statement": {
+                    "const": "I compared every OCR-derived value with the original capture pixels and verified its label, option, amount, currency, and model context."
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["seller", "configuration", "price"],
+      "properties": {
+        "seller": { "$ref": "#/$defs/captureRefs" },
+        "configuration": { "$ref": "#/$defs/captureRefs" },
+        "price": { "$ref": "#/$defs/captureRefs" }
+      }
+    },
+    "privacy_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed_by_human", "statement"],
+      "properties": {
+        "reviewed_by_human": { "const": true },
+        "statement": {
+          "const": "I verified that every referenced capture contains only public listing evidence and no cookies, credentials, account identifiers, personal browser state, private messages, delivery details, payment data, order data, or other private content."
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "price_id"],
+      "properties": {
+        "source_id": { "$ref": "#/$defs/id" },
+        "price_id": { "$ref": "#/$defs/id" }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "captureRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/id" }
+    }
+  }
+}

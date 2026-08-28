@@ -1,0 +1,70 @@
+{
+  "schema": "china-bike-taobao-capture-packet/v1",
+  "packet_id": "taobao-fixture-bxt-055-2026-08-28",
+  "listing": {
+    "item_id": "1065680679902",
+    "canonical_url": "https://item.taobao.com/item.htm?id=1065680679902",
+    "seller": "Fixture Bike Store",
+    "title": "Synthetic BXT 055 frameset listing fixture",
+    "selected_options": [
+      "black",
+      "54 cm frameset"
+    ],
+    "selected_sku_id": "6280274143650"
+  },
+  "target": {
+    "record_type": "variant",
+    "record_id": "bxt-055-frameset"
+  },
+  "price": {
+    "amount_cny": 4999,
+    "currency": "CNY",
+    "price_type": "listing-option",
+    "channel": "taobao-mainland",
+    "status": "available",
+    "price_basis": "selected black / 54 cm frameset option",
+    "conditions": "Synthetic fixture; shipping and final settlement are not verified.",
+    "checkout_verified": false
+  },
+  "observed_at": "2026-08-28T12:00:00+08:00",
+  "captures": [
+    {
+      "id": "selected-price-panel",
+      "path": "captures/selected-price.svg",
+      "panel": "selected-price",
+      "mime_type": "image/svg+xml",
+      "bytes": 376,
+      "sha256": "99bdae3ee1b720ba10be69197d509c0ba2aa8b2fa899ca4f9f6d0f3cfbbcfdf1",
+      "ocr": {
+        "used": true,
+        "engine": "fixture-ocr 1.0",
+        "language": "eng",
+        "derived_fields": [
+          "selected-options",
+          "price"
+        ],
+        "human_pixel_verified": true,
+        "statement": "I compared every OCR-derived value with the original capture pixels and verified its label, option, amount, currency, and model context."
+      }
+    }
+  ],
+  "evidence_refs": {
+    "seller": [
+      "selected-price-panel"
+    ],
+    "configuration": [
+      "selected-price-panel"
+    ],
+    "price": [
+      "selected-price-panel"
+    ]
+  },
+  "privacy_review": {
+    "reviewed_by_human": true,
+    "statement": "I verified that every referenced capture contains only public listing evidence and no cookies, credentials, account identifiers, personal browser state, private messages, delivery details, payment data, order data, or other private content."
+  },
+  "output": {
+    "source_id": "taobao-packet-fixture-source-2026-08-28",
+    "price_id": "taobao-packet-fixture-price-2026-08-28"
+  }
+}

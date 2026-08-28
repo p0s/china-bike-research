@@ -1,13 +1,18 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGapReport } from './data-gaps.mjs';
-import { loadDataset } from '../src/lib/data.mjs';
+import { joinCatalogCandidates, loadDataset } from '../src/lib/data.mjs';
 
 const nonAtomicCodes = new Set(['candidate-blockers', 'image-health-unverified']);
 const bucketNames = ['ready', 'evidence-found', 'deferred', 'blocked', 'conflicted'];
+const criticalAttemptFields = new Set([
+  'price', 'complete-weight', 'frame-weight', 'tire-clearance', 'drivetrain', 'bom',
+  'brakes', 'wheels', 'tires', 'cockpit', 'frame-material', 'purchase-route', 'image'
+]);
 
-export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISOString().slice(0, 10)) {
-  const report = buildGapReport(data, asOf);
+export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISOString().slice(0, 10), options = {}) {
+  const all = options.all === true;
+  const report = buildGapReport(data, asOf, { all });
   const representedAttemptIds = new Set();
   const buckets = {
     ready: [],
@@ -49,8 +54,20 @@ export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISO
     variant: new Map(data.variants.map((record) => [record.id, record.name]))
   };
   const priorityScores = { high: 100, medium: 60, low: 30 };
+  const activeCandidateIds = new Set(joinCatalogCandidates(data)
+    .filter((entry) => ['high', 'medium'].includes(entry.candidate.research_priority))
+    .map((entry) => entry.candidate.id));
+  const publishedVariantIds = new Set(data.variants.map((record) => record.id));
+  const publishedPlatformIds = new Set(data.variants.map((record) => record.platform_id));
+  const isActiveTarget = (attempt) => attempt.target.record_type === 'candidate'
+    ? activeCandidateIds.has(attempt.target.record_id)
+    : attempt.target.record_type === 'variant'
+      ? publishedVariantIds.has(attempt.target.record_id)
+      : publishedPlatformIds.has(attempt.target.record_id);
   for (const attempt of data.researchAttempts ?? []) {
     if (representedAttemptIds.has(attempt.id)) continue;
+    const retryDue = attempt.status !== 'found' && attempt.retry_after && attempt.retry_after <= asOf;
+    if (!all && (!isActiveTarget(attempt) || !criticalAttemptFields.has(attempt.field) || !retryDue)) continue;
     const item = {
       record_type: attempt.target.record_type,
       record_id: attempt.target.record_id,
@@ -68,6 +85,7 @@ export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISO
   for (const items of Object.values(buckets)) items.sort((a, b) => b.score - a.score || a.record_id.localeCompare(b.record_id) || a.gap.localeCompare(b.gap));
   return {
     as_of: asOf,
+    mode: all ? 'all' : 'active-shortlist',
     counts: Object.fromEntries(Object.entries(buckets).map(([key, items]) => [key, items.length])),
     ...buckets
   };
@@ -98,6 +116,7 @@ export function filterResearchQueue(queue, data, options = {}) {
   }
   return {
     as_of: queue.as_of,
+    mode: queue.mode,
     filters: {
       ...(channel ? { channel } : {}),
       ...(channelStatus ? { channel_status: channelStatus } : {}),
@@ -122,7 +141,7 @@ function main() {
   const channelStatus = argumentValue(process.argv.slice(2), '--channel-status');
   const limitValue = argumentValue(process.argv.slice(2), '--limit');
   const limit = limitValue == null ? null : Number(limitValue);
-  const queue = buildResearchQueue(data, asOf);
+  const queue = buildResearchQueue(data, asOf, { all: process.argv.includes('--all') });
   console.log(JSON.stringify(filterResearchQueue(queue, data, { channel, channelStatus, limit }), null, 2));
 }
 

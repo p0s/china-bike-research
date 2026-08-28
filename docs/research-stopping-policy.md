@@ -29,7 +29,17 @@ CAPTCHA, login, and Security Verification remain human-only. HTTP 412, 300013, o
 
 ## Durable ledger
 
-Each atomic result lives in `data/research-attempts/`. `npm run research:check` rejects duplicate target fields, repeated queries or route labels, incomplete exhaustion, invalid references, private access parameters, and found results without accepted source records. `npm run research:report` summarizes coverage and effort. `npm run research:queue` separates ready work, evidence awaiting integration, deferred exhaustion, blockers, and conflicts; fields without a coarse catalog gap code stay visible as ledger-only queue items. The attempt ledger is included in the monotonic coverage baseline so completed searches cannot silently disappear.
+Each atomic result lives in `data/research-attempts/`. `npm run research:check` rejects duplicate target fields, repeated queries or route labels, incomplete exhaustion, invalid references, private access parameters, and found results without accepted source records. `npm run research:report` summarizes coverage and effort. The attempt ledger is included in the monotonic coverage baseline so completed searches cannot silently disappear.
+
+`npm run data:gaps` is the finite planning view. It selects all published variants plus non-duplicate high- and medium-priority candidates, then emits at most 25 decision-critical, unattempted or explicitly retry-due fields across at most 10 models. Research evidence, publication gates, and operational checks have separate queues; each default queue is independently capped at 10 models and 25 rows, while its full active-scope totals remain disclosed. The metrics denominator is the entire selected scope, not a capped queue, and always distinguishes candidates from published variants. `npm run data:gaps:all` retains every long-tail gap and state without rewriting evidence.
+
+The decision-ready metric requires an exact configured price, applicable weight plus basis, maximum clearance, complete-bike drivetrain/BOM, material or construction detail, purchase route, and exact image. Stiffness remains visible as supporting coverage; it becomes decision-critical only when the candidate, variant, or platform is explicitly marked `research_finalist: true`. To record a bounded batch rate without inferring effort, supply both inputs:
+
+```bash
+npm run data:gaps -- --models-completed 3 --hours 1.5
+```
+
+`npm run research:queue` uses the same finite default. `npm run research:queue:all` exposes evidence awaiting integration, deferred exhaustion, blockers, conflicts, and ledger-only fields that have no coarse gap-code mapping.
 
 For a sequential browser pass, request only one unresolved channel item at a time:
 

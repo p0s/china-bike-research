@@ -56,3 +56,25 @@ An acquisition ZIP is evidence, not automatically publishable data. Validate arc
 Process at most 10 exact models or 25 atomic gaps in one import batch. Stop after three distinct routes fail to resolve one purchase-relevant claim and move to the next gap.
 
 An original Taobao listing image may be shown on the public site when its record identifies the exact listing and model, preserves the public source URL, seller or owner credit, observation date, descriptive alt text, and a failure fallback, and passes the privacy review. The visible image credit must link to the source. Attribution records provenance; it does not assert that the project owns the image or that the source granted a general redistribution license.
+
+## Immutable manual packet v1
+
+When normal Taobao access is blocked, do not automate around the block. An already-authorized human capture may enter through `china-bike-taobao-capture-packet/v1`. The packet is a local ingest artifact, not a browser tool: validation and import perform no network or browser access, and captures remain outside Git.
+
+Start from [`schemas/taobao-capture-packet-v1.schema.json`](../schemas/taobao-capture-packet-v1.schema.json) or the synthetic fixture under `tests/fixtures/taobao-packet-valid/`. A packet directory contains a manifest named `packet.json` plus its referenced capture files. The manifest must identify one existing exact variant, the public item ID and canonical URL, public seller and listing title, every selected option, exact CNY amount and basis, China-time observation timestamp, evidence-panel references, output record IDs, and every capture's relative path, byte count, MIME type, and SHA-256 digest.
+
+OCR-derived fields require the exact v1 human pixel-verification statement. Every packet also requires the exact v1 human privacy-review statement. Unknown fields, unsafe or symlinked paths, file/hash mismatches, duplicate capture identities/paths/hashes, non-canonical URLs, private-looking values, missing variants, and existing output IDs are rejected. Import creates only one normal `data/sources/` record and one normal `data/prices/` record; it never edits existing evidence, copies capture binaries, or overwrites a collision.
+
+Validate before review:
+
+```bash
+npm run taobao:packet:validate -- /absolute/path/to/packet.json
+```
+
+Import the same unchanged packet:
+
+```bash
+npm run taobao:packet:import -- /absolute/path/to/packet.json
+```
+
+After import, review the two generated records and run the normal repository gate. A candidate or ambiguous listing still needs a separate human-reviewed integration; the importer will not mutate a candidate or promote a model.
