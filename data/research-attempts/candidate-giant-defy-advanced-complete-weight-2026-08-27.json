@@ -6,15 +6,21 @@
   "searched_at": "2026-08-27",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "Giant Defy Advanced 2 整车 重量", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
     "web": { "status": "temporarily-exhausted", "attempts": [
       { "attempt": 1, "query": "Giant China Defy Advanced 2 weight", "route": "official China product page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Exact mainland page publishes no weight.", "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837" },
       { "attempt": 2, "query": "Giant Defy Advanced 2 official weight", "route": "official US product page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Page instructs buyers to ask a dealer to weigh the bike and gives no value.", "result_url": "https://www.giant-bicycles.com/us/defy-advanced-2" },
       { "attempt": 3, "query": "Giant Defy Advanced 2 frame weight", "route": "official family catalog fallback", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No attributable complete-bike or frame-only value for the exact trim." }
     ] }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Web sources are exhausted for this round; public measured-owner evidence remains pending."
+  "retry_after": "2026-09-10",
+  "notes": "Current exact mainland complete weight remains unavailable; historical 2024/2025 values lack a matching generation or measurement basis and are not transferred."
 }

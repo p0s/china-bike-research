@@ -2,26 +2,49 @@
   "id": "laget-discovery-one-flagship",
   "name": "LAGET DISCOVERY ONE flagship",
   "model_id": "laget-discovery-one-flagship",
+  "brand_id": "laget",
   "category": "gravel",
   "type": "frameset",
-  "why_interesting": "Flagship Chinese 3D-printed titanium gravel frame.",
-  "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
-    "Rights-cleared exact product image"
-  ],
-  "status": "titanium-priority",
-  "source_ids": [
-    "titanium-laget-discovery-one-flagship-official"
-  ],
+  "why_interesting": "Fully 3D-printed titanium gravel frameset with 50 mm clearance, a documented 1.45 kg size-S frame and UDH.",
+  "facts": {
+    "frame_weight_g": 1450,
+    "frame_weight_basis": "Official size-S frame weight; included carbon fork and hardware are not stated to be part of the 1.45 kg figure",
+    "frame": "Fully 3D-printed titanium frame with carbon fork and UDH",
+    "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published",
+    "frame_construction": "Fully 3D-printed gravel frame with sandblasted finish and anodized logo",
+    "bottom_bracket": "T47 × 85.5 mm",
+    "tire_clearance_mm": 50,
+    "tire_clearance_basis": "Manufacturer maximum 700×50C",
+    "derailleur_hanger": "UDH",
+    "sizes": "S, M and L"
+  },
   "official_price": {
     "amount_cny": 25900,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-08-27",
+    "price_basis": "DISCOVERY ONE flagship frameset"
   },
+  "observed_price": {
+    "amount_cny": 25900,
+    "currency": "CNY",
+    "observed_at": "2026-08-27",
+    "price_basis": "Selected S-size anodized-gold flagship frameset, SKU 6246437678731; CNY 26,000 before the displayed CNY 100 coupon",
+    "observation_count": 1
+  },
+  "missing": [
+    "Meaningful exact-model stiffness evidence",
+    "Mainland warranty issuer and invoice handling for the selected Taobao listing",
+    "Exact included-package weight beyond the stated frame weight"
+  ],
+  "status": "official-mainland-frameset-documented",
   "source_url": "https://lagetbike.com/productinfo/2337830.html",
-  "source_note": "Official page lists retail price ¥25,900.",
+  "source_note": "Official page lists the fully 3D-printed titanium frameset at CNY 25,900.",
   "manufacturing": "3D-printed titanium gravel frame",
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "titanium-laget-discovery-one-flagship-official",
+    "laget-brand-story-2026-08-27",
+    "laget-discovery-one-flagship-taobao-2026-08-27"
+  ],
+  "last_reviewed": "2026-08-27"
 }

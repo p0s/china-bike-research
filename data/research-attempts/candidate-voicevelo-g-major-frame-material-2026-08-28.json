@@ -1,0 +1,20 @@
+{
+  "id": "candidate-voicevelo-g-major-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "voicevelo-g-major" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Voicevelo G Major carbon construction VG1 SAS impact strength", "route": "independent exact-retail-version review", "outcome": "found", "result_url": "https://www.biketo.com/product/52593.html", "accessed_at": "2026-08-28", "note": "The review documents the impact-strength-priority tube design, locally thicker walls and SAS compliance zone. No fiber grade is published, and VG1 is identified as a paint designation." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["voicevelo-g-major-biketo-review-2024-01-17"],
+  "retry_after": null,
+  "notes": "The incorrect implication that VG1 names a carbon grade is removed; exact construction survives while the grade remains unknown."
+}

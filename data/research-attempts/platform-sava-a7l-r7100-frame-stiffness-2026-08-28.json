@@ -1,0 +1,17 @@
+{
+  "id": "platform-sava-a7l-r7100-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-a7l-r7100" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "SAVA A7L R7100 stiffness test", "route": "manufacturer exact-model page", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed", "note": "No stiffness, deflection or attributable ride result is published." },
+    { "attempt": 2, "query": "SAVA A7L 2026 independent review ride stiffness", "route": "exact-model editorial search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No meaningful independent exact-model review was found." },
+    { "attempt": 3, "query": "SAVA A7L R7100 owner review frame flex", "route": "owner and dealer search", "outcome": "rejected", "accessed_at": "2026-08-28", "note": "Generic seller marketing and sibling-model remarks are not exact-model stiffness evidence." }
+  ] } },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No stiffness value is inferred from full-carbon construction or component weight."
+}

@@ -9,10 +9,13 @@
   "summary": "The anonymized 2026-08-08 snapshot identifies SAVA Gelaro S8 GRX820 as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
   "frame": {
     "material": "carbon",
-    "fork_material": "unknown",
+    "material_grade": "T800 high-modulus carbon fiber",
+    "fork_material": "T800 carbon",
+    "construction": "R21 fully internally routed carbon chassis with additional carbon reinforcement at the head tube, bottom bracket and rear dropouts; exact lay-up schedule and molding process are not published",
+    "stiffness_evidence": "No meaningful independent exact-model stiffness or deflection evidence was found; manufacturer shock-absorption, comfort and stability language is not treated as stiffness evidence",
     "bottom_bracket": "unknown",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown",
+    "cable_routing": "fully-internal",
     "geometry": {
       "basis": "manufacturer exact-model geometry table",
       "source_id": "sava-gelaro-s8-official-2026-08-17",
@@ -37,8 +40,8 @@
   "category_details": {
     "discipline": "gravel",
     "geometry": "manufacturer exact-model table",
-    "evidence": "snapshot-classification",
-    "note": "GRX 820 double-chainring build shown."
+    "evidence": "manufacturer exact-model specification plus dated marketplace classification",
+    "note": "The current manufacturer build is GRX 1×12; the dated marketplace price remains unmapped to that exact trim."
   },
   "mounts": [],
   "internal_storage": false,
@@ -46,7 +49,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "sava-2026-carbon-lineup-2026-08-08",
-    "sava-gelaro-s8-official-2026-08-17"
+    "sava-gelaro-s8-official-2026-08-17",
+    "sava-gelaro-s8-official-2026-08-28"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-28"
 }

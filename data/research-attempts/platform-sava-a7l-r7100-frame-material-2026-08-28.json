@@ -1,0 +1,15 @@
+{
+  "id": "platform-sava-a7l-r7100-frame-material-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-a7l-r7100" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "SAVA A7L R7100 carbon construction", "route": "manufacturer exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed", "note": "Exact page describes a full-carbon road frame and integrated carbon cockpit; fiber grade, lay-up and molding process are not published." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["sava-a7l-official-global-2026-08-17"],
+  "retry_after": null,
+  "notes": "The coarse published material description is recorded without inventing a fiber grade."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "candidate-hi-light-g7-2-frame-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2" },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "Hi-Light G7.2 titanium frameset weight", "route": "exact-model retailer page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Retailer lists 1,850 g for a size-M frame and 491 g for the carbon fork.", "result_url": "https://villain.shop/products/hi-light-g7-2-titanium-frameset" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["hi-light-g7-2-villain-retailer-2026-08-27"],
+  "retry_after": null,
+  "notes": "Accepted as a retailer claim with exact size and separate fork basis; official or independent confirmation remains desirable."
+}

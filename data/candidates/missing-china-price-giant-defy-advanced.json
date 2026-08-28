@@ -17,10 +17,12 @@
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Complete-bike/frame weight; Full wheel, tire, cockpit and drivetrain detail; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy; Direct image asset URL",
-  "last_reviewed": "2026-08-27",
+  "last_reviewed": "2026-08-28",
   "source_ids": [
     "giant-china-defy-advanced-2-official-2026-08-17",
-    "giant-china-warranty-2026-08-27"
+    "giant-china-warranty-2026-08-27",
+    "giant-defy-advanced-2-official-global-2026-08-28",
+    "giant-defy-advanced-2-tour-review-2026-08-28"
   ],
   "official_price": {
     "amount_cny": 14800,
@@ -34,6 +36,9 @@
     "drivetrain": "Shimano 105 with RS520 50/34 crank",
     "brakes": "Shimano 105 HRD hydraulic disc",
     "frame": "Advanced-Grade Composite with full-composite OverDrive fork",
+    "frame_material": "China trim: Advanced-Grade Composite frame and full-composite OverDrive fork; Giant's global exact-model page separately describes High Performance Grade raw carbon, without a published cross-market grade mapping",
+    "frame_construction": "Manufacturer-described Modified Monocoque Construction with the front triangle molded as one continuous piece; exact ply schedule and molding protocol are not published",
+    "stiffness_evidence": "Giant claims OverDrive steering stiffness and D-Fuse vibration absorption; an independent 2024-generation test reports smooth rough-road comfort but an upright, relatively heavy feel. No current-China-build stiffness measurement is published",
     "tire_clearance_mm": 38
   }
 }

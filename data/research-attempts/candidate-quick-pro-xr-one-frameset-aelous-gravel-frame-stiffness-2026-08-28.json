@@ -1,0 +1,29 @@
+{
+  "id": "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "quick-pro-xr-one-frameset-aelous-gravel" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The bounded multi-tab XHS material/stiffness campaign stopped with campaign_mismatch before an archive was produced; no competing Quick XR:ONE job was started.",
+      "attempts": [
+        { "attempt": 1, "query": "Quick Pro XR ONE frame stiffness owner review", "route": "XHS campaign availability check", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "The canonical shared lane failed safely before this additional exact-model query could be scheduled." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Quick Pro XR ONE stiffness test", "route": "manufacturer exact-complete-bike page", "outcome": "no-result", "result_url": "https://www.quickprousa.com/products/xr-one-shimano", "accessed_at": "2026-08-28", "note": "Efficiency and ride-feel language has no stiffness protocol or result." },
+        { "attempt": 2, "query": "Quick XR ONE frame stiffness review", "route": "manufacturer exact-frameset page", "outcome": "no-result", "result_url": "https://www.quickprousa.com/products/xr-one-frame", "accessed_at": "2026-08-28", "note": "Construction and weight are published, but no deflection measurement or independent ride assessment." },
+        { "attempt": 3, "query": "Quick XR ONE independent frame deflection assessment", "route": "indexed exact-model review search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No sufficiently exact attributable stiffness comparison surfaced." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No stiffness value is inferred from carbon modulus or monocoque construction."
+}

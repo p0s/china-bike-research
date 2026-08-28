@@ -1,0 +1,22 @@
+{
+  "id": "candidate-xds-gt600-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "xds-gt600" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "XDS GT600 carbon Apex stiffness test", "route": "current official marketplace listing surface", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.jd.com/hprm/67281de7c78c4042c166.html", "note": "Current listings provide no stiffness evidence for the archived carbon/Apex build." },
+        { "attempt": 2, "query": "喜德盛 GT600 碳架 刚性 评测", "route": "independent exact-build reviews", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "Available commentary concerns conflicting aluminum or suspension-fork configurations." },
+        { "attempt": 3, "query": "XDS GT600 frame flex measured carbon", "route": "technical test and owner-measurement sources", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No measured exact-build result was found." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No meaningful exact-model stiffness evidence was found for the archived carbon/Apex build after three distinct routes."
+}

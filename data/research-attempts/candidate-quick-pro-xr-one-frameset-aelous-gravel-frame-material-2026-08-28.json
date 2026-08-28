@@ -1,0 +1,20 @@
+{
+  "id": "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "quick-pro-xr-one-frameset-aelous-gravel" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Quick Pro XR ONE frameset carbon material monocoque", "route": "manufacturer exact-frameset page", "outcome": "found", "result_url": "https://www.quickprousa.com/products/xr-one-frame", "accessed_at": "2026-08-28", "note": "The exact frameset page identifies high-strength/high-modulus carbon and Monolith one-piece monocoque construction; supplier, grade and ply schedule are not published." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["quick-pro-xr-one-frame-official-2026-08-17"],
+  "retry_after": null,
+  "notes": "The most specific attributable material and construction are recorded without inventing a carbon grade."
+}

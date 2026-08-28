@@ -9,7 +9,10 @@
   "summary": "Light carbon flat-bar all-road bike with a 9.1 kg small-size complete claim, but its published 35C stock tire does not establish the maximum clearance.",
   "frame": {
     "material": "carbon",
-    "fork_material": "carbon",
+    "material_grade": "Toray T800 carbon fiber",
+    "fork_material": "Toray T700 carbon",
+    "construction": "Internally routed thru-axle carbon all-road frame; exact lay-up schedule and molding process are not published",
+    "stiffness_evidence": "No meaningful independent exact-PES stiffness or deflection evidence was found; qualitative reports for custom or Shimano GX600 builds are not transferred to this PES configuration",
     "bottom_bracket": "unknown",
     "derailleur_hanger": "standard",
     "cable_routing": "internal",
@@ -31,7 +34,8 @@
   "china_availability": "mainland-domestic",
   "source_ids": [
     "camp-gx600-official",
-    "camp-gx600-official-2026-08-17"
+    "camp-gx600-official-2026-08-17",
+    "camp-gx600-official-2026-08-28"
   ],
-  "last_reviewed": "2026-08-26"
+  "last_reviewed": "2026-08-28"
 }

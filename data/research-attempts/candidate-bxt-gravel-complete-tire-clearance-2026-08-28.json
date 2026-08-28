@@ -1,0 +1,29 @@
+{
+  "id": "candidate-bxt-gravel-complete-tire-clearance-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT Gravel 整车 最大轮胎 宽度 型号", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "Identifiable BXT siblings expose different fitted or maximum tire sizes, but the archived complete-bike cards have no model identity.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT-135 tire size clearance", "route": "manufacturer exact BXT-135 complete-bike page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "BXT-135 is shown with 700x40C tires, but this is not proof that the archived candidate is BXT-135 or that 40 mm is a manufacturer maximum." },
+        { "attempt": 2, "query": "BXT-055 maximum tire clearance", "route": "manufacturer exact BXT-055 frameset page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "note": "BXT-055 publishes 700x50C, illustrating why a sibling value cannot be attached to the unnamed complete bike." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["bxt-135-official-2026-08-28", "bxt-055-official", "taobao-snapshot-2026-08-08"],
+  "retry_after": null,
+  "notes": "No tire-clearance value is attached until the candidate's exact model is identified."
+}

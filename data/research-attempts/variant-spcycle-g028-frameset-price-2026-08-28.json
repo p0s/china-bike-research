@@ -1,0 +1,29 @@
+{
+  "id": "variant-spcycle-g028-frameset-price-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "spcycle-g028-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "SPcycle G028 车架 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "SPcycle G028 price China", "route": "manufacturer exact-model storefront", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html", "note": "US$608 is a current direct price but not a mainland CNY selected-option checkout." },
+        { "attempt": 2, "query": "SPcycle G028 CNY RMB price", "route": "exact-model secondary listing", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://mybike.parts/bike_parts/1735-spcycle-g028-gravel", "note": "No current mainland CNY checkout was exposed." },
+        { "attempt": 3, "query": "SPcycle G028 国内 售价", "route": "indexed mainland dealer and marketplace search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No exact selected-option CNY observation with package and date was found." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": "2026-09-10",
+  "notes": "The direct US-dollar route is recorded, but current mainland CNY price stays empty."
+}

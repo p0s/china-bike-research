@@ -1,0 +1,16 @@
+{
+  "id": "variant-tfsa-jh37-frameset-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "tfsa-jh37-frameset" },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+  "public-post": { "status": "not-run", "attempts": [] },
+  "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "TFSA JH37 淘宝", "route": "signed-in exact-model Taobao item", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=670337545285", "accessed_at": "2026-08-27", "note": "TFSA企业1号店 lists the exact JH-37 with selectable colors and sizes, stock and 15-day preorder dispatch." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["tfsa-jh37-taobao-2026-08-27"],
+  "notes": "The identity-safe canonical Taobao item route is stored; checkout remains buyer-verified."
+}

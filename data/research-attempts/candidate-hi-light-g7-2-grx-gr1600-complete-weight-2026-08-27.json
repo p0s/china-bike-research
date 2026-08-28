@@ -1,0 +1,26 @@
+{
+  "id": "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2-grx-gr1600" },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.",
+      "attempts": [
+        { "attempt": 1, "query": "海莱特 G7.2 GRX810 GR1600 重量", "route": "XHS runtime preflight", "outcome": "blocked", "accessed_at": "2026-08-27", "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened." }
+      ]
+    },
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "Hi-Light G7.2 GRX GR1600 complete weight", "route": "manufacturer exact complete-bike page", "outcome": "no-result", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/176.html", "accessed_at": "2026-08-27", "note": "Exact BOM and price are present, but the weight field is blank." },
+      { "attempt": 2, "query": "Hi-Light G7.2 GR1600 整车 重量", "route": "manufacturer exact frameset fallback", "outcome": "rejected", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html", "accessed_at": "2026-08-27", "note": "Frameset page cannot establish complete-bike weight." },
+      { "attempt": 3, "query": "G7.2 钛合金 砾石 自行车", "route": "Taobao exact listing with selected option and visually verified specification panel", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=665657868481", "accessed_at": "2026-08-27", "note": "Selected option 7 states an approximate 8.0 kg complete-bike weight; size, pedals and measurement method are not stated." }
+    ] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+  "retry_after": null,
+  "notes": "A seller-claimed approximate total is now available for the selected marketplace reference build; an independent measurement remains unknown and XHS is blocked until the canonical extension is loaded."
+}

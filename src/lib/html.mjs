@@ -7,11 +7,15 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', ogType='website', structuredData=[]}) {
   const siteName='China Bike Research';
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,path)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
+  const jsonLd = (Array.isArray(structuredData) ? structuredData : [structuredData])
+    .filter(Boolean)
+    .map((entry) => `<script type="application/ld+json">${safeJson(entry)}</script>`)
+    .join('\n  ');
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -19,15 +23,20 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="${escapeAttr(description)}">
   <meta name="theme-color" content="#f7f7f4">
-  ${noindex?'<meta name="robots" content="noindex">':''}
+  <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
   <link rel="canonical" href="${escapeAttr(canonical)}">
+  <meta property="og:site_name" content="${siteName}">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeAttr(pageTitle)}">
   <meta property="og:description" content="${escapeAttr(description)}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="${escapeAttr(ogType)}">
   <meta property="og:url" content="${escapeAttr(canonical)}">
-  ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}"><meta name="twitter:card" content="summary_large_image">` : `<meta name="twitter:card" content="summary">`}
+  <meta name="twitter:title" content="${escapeAttr(pageTitle)}">
+  <meta name="twitter:description" content="${escapeAttr(description)}">
+  ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
+  ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
 <body data-base="${escapeAttr(base)}">

@@ -1,0 +1,23 @@
+{
+  "id": "platform-winspace-g3-geometry-2026-08-27",
+  "target": { "record_type": "platform", "record_id": "winspace-g3" },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "WINSPACE G3 车架", "route": "XHS exact-model discovery and ten opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "A validated 5.28 MB archive contained an exact launch post with seven G3 images, but no numeric geometry." },
+      { "attempt": 2, "query": "银贝斯 G3 Gravel", "route": "XHS Chinese-name discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "A validated 3.56 MB archive contained an exact four-build G3 matrix and 20 media files, but no geometry chart." },
+      { "attempt": 3, "query": "WINSPACE G3 几何 价格", "route": "XHS geometry-and-price discovery with five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "A validated 2.61 MB archive returned unrelated G3 products and no Winspace geometry." }
+    ] },
+    "web": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Winspace G3 official geometry", "route": "current manufacturer product page", "outcome": "no-result", "result_url": "https://www.winspace.cc/products/g3-gravel", "accessed_at": "2026-08-27", "note": "The accessible exact-model page lists sizes and specifications but no numeric geometry table." },
+      { "attempt": 2, "query": "Winspace G3 geometry chart", "route": "alternate manufacturer exact-model route", "outcome": "no-result", "result_url": "https://www.winspace.cc/g3-gravel", "accessed_at": "2026-08-27", "note": "No usable numeric geometry chart was exposed." },
+      { "attempt": 3, "query": "银贝斯 G3 Gravel 车架", "route": "signed-in Taobao exact-model search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact G3 item page with a geometry chart was found." }
+    ] }
+  },
+  "status": "temporarily-exhausted",
+  "retry_after": "2026-11-27",
+  "notes": "Geometry remains unknown after three public-post and three official/marketplace routes. Archive SHA-256 values: 82309727a836ca5598782284319bf436a2934ba793069c638156d1e20a232f3c, ac4351c5fd6f0814c5893594519b9c85d6a22cad5cfdfdad72d28c407bbfc998 and 5a0b7a7a8d24ce6b7c121390d677f2d3c37ff616bd0b971f3ada700f2a6454c1."
+}

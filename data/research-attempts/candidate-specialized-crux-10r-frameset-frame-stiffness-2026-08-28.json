@@ -1,0 +1,21 @@
+{
+  "id": "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "specialized-crux-10r-frameset" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Specialized Crux FACT 10r GRX rigidity reactive review", "route": "independent exact-platform build review", "outcome": "found", "result_url": "https://www.ciclonline.com/10-biciclette/97-specialized/29046-specialized-crux-comp-shimano-grx-2025-prova-test-recensione-pregi-difetti-problemi-opinioni-pareri-tutto-quello-che-devi-sapere-realmente", "accessed_at": "2026-08-28", "note": "The current FACT 10r GRX build is described as rigid and reactive with stable, precise handling; this is qualitative ride evidence, not a measured frameset value." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["specialized-crux-comp-grx-ciclonline-2026-08-28"],
+  "retry_after": null,
+  "notes": "The ride finding is attached to the exact current FACT 10r platform and is not generalized into a numeric ranking."
+}

@@ -3,10 +3,12 @@
   "target": { "record_type": "variant", "record_id": "pardus-super-sport-gen2-egr" },
   "field": "image-exactness",
   "priority": "medium",
-  "searched_at": "2026-08-27",
+  "searched_at": "2026-08-28",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "blocked", "blocker": "extension_reload_required", "attempts": [] },
+    "public-post": { "status": "blocked", "blocker": "The canonical five-query XHS campaign ended with worker_error for every query and produced no archive; the shared sequential pool was then owned by another active job, so no same-turn retry or bypass was attempted.", "attempts": [
+      { "attempt": 1, "query": "瑞豹 Super Sport 二代 eGR 图片 车重 T800", "route": "canonical XHS multi-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "Campaign journal records one worker_error and no artifact for this exact-model query." }
+    ] },
     "web": {
       "status": "temporarily-exhausted",
       "attempts": [
@@ -17,6 +19,6 @@
     }
   },
   "status": "blocked",
-  "retry_after": "2026-08-28",
-  "notes": "No image was copied. Retry XHS after the extension reload and use an embed unless reuse rights are documented."
+  "retry_after": "2026-08-29",
+  "notes": "No image was copied. Platform and exact-build images exist, but publication still needs reusable rights or an accepted public-post embed."
 }

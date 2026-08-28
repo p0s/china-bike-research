@@ -12,6 +12,25 @@ function addGap(gaps, code, label, score, details = {}) {
   gaps.push({ code, label, score, ...details });
 }
 
+function hasMaximumClearance(clearance) {
+  if (!clearance || clearance.eligibility !== 'pass') return false;
+  if (Number.isFinite(clearance.published_max_mm)) return true;
+  return Number.isFinite(clearance.published_front_max_mm) && Number.isFinite(clearance.published_rear_max_mm);
+}
+
+function hasFrameMaterialDetail(frame) {
+  if (!frame || unresolved(frame.material)) return false;
+  const coarse = /^(carbon|titanium|aluminum|aluminium|alloy|steel|magnesium|composite)$/i.test(String(frame.material).trim());
+  if (!coarse) return true;
+  return [frame.material_grade, frame.claimed_fiber, frame.construction].some((value) => !unresolved(value));
+}
+
+function hasCandidateFrameMaterialDetail(facts) {
+  const value = facts.frame_material ?? facts.frame;
+  if (unresolved(value)) return false;
+  return !/^(carbon|titanium|aluminum|aluminium|alloy|steel|magnesium|composite)( frame)?$/i.test(String(value).trim());
+}
+
 function latestPriceGap(gaps, product, asOf) {
   const price = product.latestPrice;
   if (!price) {
@@ -55,23 +74,25 @@ function productGaps(product, asOf) {
   }
   const hasVariantFrameWeight = Number.isFinite(variant.claimed_frame_weight_g) && variant.claimed_frame_weight_g > 0;
   if (unresolved(frame.claimed_frame_weight_g) && unresolved(frame.claimed_frame_weight_g_by_size) && !hasVariantFrameWeight) {
-    addGap(gaps, 'frame-weight-missing', 'No frame-weight claim', 14);
+    addGap(gaps, 'frame-weight-missing', 'No frame weight', variant.kind === 'frameset' ? 16 : 10);
   }
   if (variant.kind === 'complete-bike' && unresolved(variant.claimed_complete_weight_g)) {
-    addGap(gaps, 'complete-weight-missing', 'No complete-bike weight claim', 14);
+    addGap(gaps, 'complete-weight-missing', 'No complete-bike weight', 24);
+  } else if (variant.kind === 'complete-bike' && unresolved(variant.claimed_complete_weight_basis)) {
+    addGap(gaps, 'complete-weight-basis-missing', 'Complete-bike weight basis is missing', 8);
   }
-  if (platform.category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(platform.category)) {
-    if (!clearance || clearance.eligibility !== 'pass') {
-      addGap(gaps, 'clearance-unverified', 'Tire-clearance evidence is not a clean pass', 11, { eligibility: clearance?.eligibility ?? 'missing' });
-    }
+  if (!hasMaximumClearance(clearance)) {
+    addGap(gaps, 'clearance-unverified', 'Maximum tire clearance is not verified', 22, { eligibility: clearance?.eligibility ?? 'missing' });
   }
+  if (!hasFrameMaterialDetail(frame)) addGap(gaps, 'frame-material-detail-missing', 'Exact frame material or construction is not documented', 14);
+  if (unresolved(frame.stiffness_evidence)) addGap(gaps, 'stiffness-evidence-missing', 'No meaningful frame stiffness evidence', 6);
   if (unresolved(frame.bottom_bracket)) addGap(gaps, 'bottom-bracket-missing', 'Bottom-bracket standard is unknown', 9);
 
   if (variant.kind === 'complete-bike') {
     const exactDrivetrain = variant.drivetrain &&
       ['brand', 'model', 'speeds', 'shifting', 'layout'].every((key) => !unresolved(variant.drivetrain[key]));
+    if (!exactDrivetrain) addGap(gaps, 'drivetrain-missing', 'Exact complete-bike drivetrain is missing', 22);
     const missingBom = [
-      !exactDrivetrain && 'exact drivetrain',
       !variant.brakes && 'brakes',
       !variant.wheels && 'wheels',
       !variant.tires && 'tires',
@@ -119,6 +140,8 @@ function productGaps(product, asOf) {
 function candidateGaps(entry) {
   const candidate = entry.candidate;
   const gaps = [];
+  const facts = candidate.facts ?? {};
+  const isFrameset = entry.kind === 'frameset';
   const priorityScore = { high: 26, medium: 17, low: 9 }[candidate.research_priority] ?? 13;
   addGap(gaps, 'candidate-blockers', 'Candidate is not publication-ready', priorityScore, {
     status: candidate.status,
@@ -126,7 +149,19 @@ function candidateGaps(entry) {
     missing: candidate.missing
   });
   if (!entry.price) addGap(gaps, 'price-missing', 'No dated candidate price evidence', 20);
-  else if (entry.priceKind !== 'observed') addGap(gaps, 'price-not-observed', 'Candidate price is not a mainland observed checkout value', 12, { price_kind: entry.priceKind });
+  else if (!candidate.observed_price) addGap(gaps, 'price-not-observed', 'Candidate has no mainland observed checkout value', 12, { price_kind: entry.priceKind });
+  else if (unresolved(candidate.observed_price.price_basis)) addGap(gaps, 'price-basis-missing', 'Observed selected-build price basis is missing', 8);
+  if (isFrameset) {
+    if (!Number.isFinite(facts.frame_weight_g)) addGap(gaps, 'frame-weight-missing', 'No frameset weight', 16);
+    else if (unresolved(facts.frame_weight_basis)) addGap(gaps, 'frame-weight-basis-missing', 'Frameset weight basis is missing', 7);
+  } else {
+    if (!Number.isFinite(facts.complete_weight_g)) addGap(gaps, 'complete-weight-missing', 'No complete-bike weight', 24);
+    else if (unresolved(facts.complete_weight_basis)) addGap(gaps, 'complete-weight-basis-missing', 'Complete-bike weight basis is missing', 8);
+    if (unresolved(facts.drivetrain)) addGap(gaps, 'drivetrain-missing', 'Exact complete-bike drivetrain is missing', 22);
+  }
+  if (!Number.isFinite(facts.tire_clearance_mm)) addGap(gaps, 'clearance-unverified', 'Maximum tire clearance is not verified', 22);
+  if (!hasCandidateFrameMaterialDetail(facts)) addGap(gaps, 'frame-material-detail-missing', 'Exact frame material or construction is not documented', 14);
+  if (unresolved(facts.stiffness_evidence)) addGap(gaps, 'stiffness-evidence-missing', 'No meaningful frame stiffness evidence', 6);
   if ((candidate.source_ids ?? []).length === 0) addGap(gaps, 'source-missing', 'Candidate has no linked source record', 10);
   return {
     record_type: 'candidate',
@@ -154,9 +189,15 @@ const gapFieldIds = {
   'purchase-route': 'purchase-route',
   'geometry-missing': 'geometry',
   'frame-weight-missing': 'frame-weight',
+  'frame-weight-basis-missing': 'frame-weight',
   'complete-weight-missing': 'complete-weight',
+  'complete-weight-basis-missing': 'complete-weight',
+  'drivetrain-missing': 'drivetrain',
+  'price-basis-missing': 'price',
   'clearance-unverified': 'tire-clearance',
   'bottom-bracket-missing': 'bottom-bracket',
+  'frame-material-detail-missing': 'frame-material',
+  'stiffness-evidence-missing': 'frame-stiffness',
   'bom-incomplete': 'bom',
   'support-warranty': 'warranty-support'
 };

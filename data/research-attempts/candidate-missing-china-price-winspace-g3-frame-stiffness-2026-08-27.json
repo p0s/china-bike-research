@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-winspace-g3"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Winspace G3 stiffness power transfer review",
+          "route": "three-month exact-platform owner review",
+          "outcome": "found",
+          "result_url": "https://carbonvelo.co.uk/blogs/news/g3-gravel-my-review-so-far",
+          "accessed_at": "2026-08-27",
+          "note": "Owner reports a solid rough-terrain feel and good power transfer; no measured stiffness value."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "winspace-g3-carbonvelo-review-2026-08-27"
+  ],
+  "retry_after": null,
+  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking."
+}

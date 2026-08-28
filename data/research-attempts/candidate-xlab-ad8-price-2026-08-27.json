@@ -1,0 +1,38 @@
+{
+  "id": "candidate-xlab-ad8-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "xlab-ad8" },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "The CNY 26,980 official reference is for the preferred R7170 / C50 TEAM build, while the CNY 21,980 selected Taobao option is a different standard Astana build with steel-spoke carbon wheels.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "X-LAB AD8 official mainland complete-bike price",
+          "route": "manufacturer exact product purchase page",
+          "outcome": "found",
+          "result_url": "https://www.xidesheng.com/goods/1964968942063501313/buy",
+          "accessed_at": "2026-08-27",
+          "note": "Official R7170 Di2 / Branta C50 TEAM reference is CNY 26,980."
+        },
+        {
+          "attempt": 2,
+          "query": "喜德盛 X-LAB AD8",
+          "route": "Taobao exact listing and selected option",
+          "outcome": "conflict",
+          "result_url": "https://item.taobao.com/item.htm?id=1076589036478",
+          "accessed_at": "2026-08-27",
+          "note": "Selected standard Astana / steel-spoke carbon wheel / 105 electronic large-package / size-S option is CNY 21,980, but it is not the preferred C50 TEAM trim."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["xlab-ad8-official-cn-price-2026-08-27", "xlab-ad8-taobao-2026-08-27"],
+  "retry_after": null,
+  "notes": "Both exact prices are retained on their own configurations. A selected-marketplace price for the preferred C50 TEAM build remains unresolved."
+}

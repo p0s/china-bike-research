@@ -12,7 +12,14 @@
     { "attempt": 2, "query": "BXT 055 车架 人民币 价格", "route": "public web search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact current mainland package observation found." },
     { "attempt": 3, "query": "BXT-055 淘宝 京东 当前价格", "route": "mainland marketplace search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact current single-package CNY checkout found." }
   ] } },
-  "status": "blocked",
+  "status": "found",
   "retry_after": "2026-09-10",
-  "notes": "CNY price stays empty; direct USD context is retained only in the purchase route."
+  "accepted_source_ids": ["bxt-055-taobao-2026-08-27"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-27",
+    "source_ids": ["bxt-055-taobao-2026-08-27"],
+    "note": "The exact selected-option Taobao source captured later in this batch resolves price while preserving the earlier protected search history."
+  },
+  "notes": "An exact selected-option mainland listing price is now stored; checkout was not completed."
 }

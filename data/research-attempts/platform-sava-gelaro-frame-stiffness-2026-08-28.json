@@ -1,0 +1,20 @@
+{
+  "id": "platform-sava-gelaro-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "SAVA R21 Gelaro S4 long term review bottom bracket flex compliance", "route": "independent long-term exact-platform review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://pmkd.ru/blog/obzor-karbonovogo-velosipeda-sava-r21-gelaro-s6-s4-evolyucziya-gravijnyh-tehnologij", "note": "The author reports more than 1,800 km and describes no noticeable bottom-bracket-area flex while climbing, useful stay compliance over washboard and stable descending. This is qualitative ride evidence, not a measured stiffness test." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-s4-independent-review-2026-08-28"],
+  "retry_after": null,
+  "notes": "The site records the qualitative ride report with its source class and does not convert it into a stiffness score."
+}

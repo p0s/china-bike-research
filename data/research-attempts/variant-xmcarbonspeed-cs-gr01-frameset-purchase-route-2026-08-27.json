@@ -1,0 +1,16 @@
+{
+  "id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "xmcarbonspeed-cs-gr01-frameset" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": {
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "XMCarbonspeed CS-GR01 buy official", "route": "manufacturer exact-model direct page", "outcome": "found", "result_url": "https://www.xmcarbonspeed.cc/products/cs-gr01-gravel-frame", "accessed_at": "2026-08-27", "note": "The exact current product has a manufacturer-direct order route." }
+    ] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["xmcarbonspeed-gr01-official"],
+  "notes": "The direct route is current; exact mainland selected-option pricing remains unresolved."
+}

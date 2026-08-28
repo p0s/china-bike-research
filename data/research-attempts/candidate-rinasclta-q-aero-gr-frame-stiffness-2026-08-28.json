@@ -1,0 +1,29 @@
+{
+  "id": "candidate-rinasclta-q-aero-gr-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The exact-model multi-tab XHS campaign stopped with campaign_mismatch before a validated archive was produced.",
+      "attempts": [
+        { "attempt": 1, "query": "Rinasclta Q-AERO GR 刚性", "route": "canonical XHS three-tab campaign", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No XHS post was accepted because the campaign produced no validated artifact; its owned tabs were preserved for tooling recovery." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Rinasclta Q-AERO GR exact stiffness test", "route": "manufacturer exact-model product page", "outcome": "rejected", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-28", "note": "Power-transfer, drivetrain-stability and front-end-stiffness wording has no test protocol or deflection value." },
+        { "attempt": 2, "query": "Rinasclta Q-AERO GR independent stiffness review", "route": "indexed exact-model editorial search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No exact-model independent ride or laboratory stiffness assessment surfaced." },
+        { "attempt": 3, "query": "Rinasclta Q-AERO GR frame deflection comparison", "route": "indexed exact-model technical search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No attributable lateral, torsional or vertical deflection result surfaced." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The candidate records the maker's unmeasured stiffness language but no stiffness result; no value is inferred from T800/T1000 material."
+}

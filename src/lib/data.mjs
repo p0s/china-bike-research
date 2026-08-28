@@ -411,6 +411,9 @@ export function validateDataset(data = loadDataset()) {
     if (!categorySet.has(platform.category)) errors.push(`platform ${platform.id}: unsupported category ${platform.category}`);
     if (!['drop', 'flat'].includes(platform.handlebar)) errors.push(`platform ${platform.id}: handlebar must be drop or flat`);
     if (!isDate(platform.last_reviewed)) errors.push(`platform ${platform.id}: invalid last_reviewed`);
+    for (const key of ['material', 'fork_material', 'material_grade', 'claimed_fiber', 'construction', 'stiffness_evidence']) {
+      if (platform.frame?.[key] !== undefined && (typeof platform.frame[key] !== 'string' || !platform.frame[key].trim())) errors.push(`platform ${platform.id}: invalid frame.${key}`);
+    }
     const requiresClearance = platform.category.startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(platform.category);
     if (requiresClearance && !isObject(platform.tire_clearance)) errors.push(`platform ${platform.id}: gravel-family platform needs tire_clearance`);
     if (platform.tire_clearance !== undefined) {
@@ -507,6 +510,7 @@ export function validateDataset(data = loadDataset()) {
     requireFields('candidate', candidate, ['name', 'why_interesting', 'missing', 'status', 'last_reviewed']);
     if (!Array.isArray(candidate.missing) || candidate.missing.length === 0) errors.push(`candidate ${candidate.id}: missing must be a non-empty array`);
     if (!isDate(candidate.last_reviewed)) errors.push(`candidate ${candidate.id}: invalid last_reviewed`);
+    if (candidate.reference_price_kind !== undefined && !['official', 'observed'].includes(candidate.reference_price_kind)) errors.push(`candidate ${candidate.id}: invalid reference_price_kind`);
     if (candidate.source_url !== undefined) {
       try {
         const sourceUrl = new URL(candidate.source_url);
@@ -525,7 +529,7 @@ export function validateDataset(data = loadDataset()) {
       if (!isObject(candidate.facts)) {
         errors.push(`candidate ${candidate.id}: facts must be an object`);
       } else {
-        for (const key of ['drivetrain', 'brakes', 'frame', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
+        for (const key of ['drivetrain', 'brakes', 'frame', 'frame_material', 'frame_construction', 'stiffness_evidence', 'bottom_bracket', 'wheels', 'tires', 'cockpit', 'sizes', 'storage', 'mounts']) {
           if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'string' || !candidate.facts[key].trim())) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
           }
@@ -533,6 +537,32 @@ export function validateDataset(data = loadDataset()) {
         for (const key of ['complete_weight_g', 'frame_weight_g', 'tire_clearance_mm']) {
           if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'number' || candidate.facts[key] <= 0)) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
+          }
+        }
+      }
+    }
+    if (candidate.alternative_builds !== undefined) {
+      if (!Array.isArray(candidate.alternative_builds) || candidate.alternative_builds.length === 0) {
+        errors.push(`candidate ${candidate.id}: alternative_builds must be a non-empty array`);
+      } else {
+        const buildIds = new Set();
+        for (const build of candidate.alternative_builds) {
+          if (!isObject(build) || typeof build.id !== 'string' || !build.id.trim() || typeof build.label !== 'string' || !build.label.trim()) {
+            errors.push(`candidate ${candidate.id}: alternative build needs an id and label`);
+            continue;
+          }
+          if (buildIds.has(build.id)) errors.push(`candidate ${candidate.id}: duplicate alternative build ${build.id}`);
+          buildIds.add(build.id);
+          if (!Array.isArray(build.source_ids) || build.source_ids.length === 0) errors.push(`candidate ${candidate.id}: alternative build ${build.id} needs source_ids`);
+          for (const sourceId of build.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`candidate ${candidate.id}: alternative build ${build.id} missing source ${sourceId}`);
+          for (const key of ['drivetrain', 'weight_basis', 'wheels', 'tires', 'notes']) {
+            if (build[key] !== undefined && (typeof build[key] !== 'string' || !build[key].trim())) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.${key}`);
+          }
+          if (build.complete_weight_g !== undefined && (typeof build.complete_weight_g !== 'number' || build.complete_weight_g <= 0)) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.complete_weight_g`);
+          if (build.price !== undefined) {
+            if (!isObject(build.price) || build.price.currency !== 'CNY' || !isDate(build.price.observed_at)) errors.push(`candidate ${candidate.id}: alternative build ${build.id} has invalid price identity`);
+            if (build.price.amount_cny === undefined && build.price.low_cny === undefined) errors.push(`candidate ${candidate.id}: alternative build ${build.id} price needs amount_cny or low_cny`);
+            for (const key of ['amount_cny', 'low_cny', 'high_cny']) if (build.price[key] !== undefined && (typeof build.price[key] !== 'number' || build.price[key] <= 0)) errors.push(`candidate ${candidate.id}: invalid alternative build ${build.id}.price.${key}`);
           }
         }
       }
@@ -797,7 +827,7 @@ export function joinProducts(data = loadDataset()) {
     if (!brand) throw new Error(`Missing brand ${platform.brand_id}`);
     const prices = data.prices.filter((price) => price.variant_id === variant.id).sort((a, b) => b.observed_at.localeCompare(a.observed_at));
     const latestPrice = prices[0];
-    const platformImages = data.images.filter((image) => image.platform_id === platform.id);
+    const platformImages = data.images.filter((image) => image.platform_id === platform.id && image.buyer_visibility !== 'omit');
     const selectedImage = choosePrimaryImage(platformImages, variant.id);
     const image = selectedImage ? {
       ...selectedImage,
@@ -900,14 +930,19 @@ export function joinCatalogCandidates(data = loadDataset()) {
       const categories = categoryValues(candidate.category);
       const observedPrice = candidate.observed_price ?? null;
       const officialPrice = candidate.official_price ?? null;
-      const price = [observedPrice, officialPrice]
+      const preferredPrice = candidate.reference_price_kind === 'official'
+        ? officialPrice
+        : candidate.reference_price_kind === 'observed'
+          ? observedPrice
+          : null;
+      const price = preferredPrice ?? [observedPrice, officialPrice]
         .filter(Boolean)
         .sort((a, b) => String(b.observed_at ?? '').localeCompare(String(a.observed_at ?? '')))[0] ?? null;
       const priceKind = price === observedPrice ? 'observed' : price === officialPrice ? 'official' : '';
       const sourceIds = candidate.source_ids ?? [];
       const candidateSources = sourceIds.map((id) => sources.get(id)).filter(Boolean);
       const source = candidateSources.find((item) => item?.url) ?? null;
-      const candidateImages = data.images.filter((item) => item.candidate_id === candidate.id);
+      const candidateImages = data.images.filter((item) => item.candidate_id === candidate.id && item.buyer_visibility !== 'omit');
       const image = candidateImages.find((item) => item.role === 'primary') ?? null;
       const galleryImages = candidateImages
         .filter((item) => item.role === 'gallery')

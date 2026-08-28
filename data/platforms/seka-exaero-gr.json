@@ -9,7 +9,10 @@
   "summary": "Premium aero race frame with very large asymmetric clearance, storage, and high-end material claims.",
   "frame": {
     "material": "carbon",
+    "material_grade": "Toray T1100G + M46J carbon fiber",
     "fork_material": "carbon",
+    "construction": "True one-piece monocoque molding with a continuous load path and no joined or bonded frame sections; the rear uses SEKA's WindEye structure",
+    "stiffness_evidence": "SEKA publishes 106 N/mm rear vertical compliance and up to 16 mm of seatpost movement. Cycling Weekly's large-frame test found no issue at 200–270 W but reported rear lateral flex that could disrupt shifting above about 360 W; this is one rider/build test, not a universal threshold.",
     "bottom_bracket": "T47 68",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
@@ -46,9 +49,10 @@
   "source_ids": [
     "seka-official",
     "seka-exaero-gr-official-2026-08-27",
+    "seka-exaero-gr-cyclingweekly-review-2026-08-17",
     "seka-warranty-official-2026-08-27",
     "compiled-research-2026-08-06",
     "public-seka-exaero-build-2026-08-17"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-08-28"
 }

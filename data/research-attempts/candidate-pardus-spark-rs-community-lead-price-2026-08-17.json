@@ -13,8 +13,11 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "PARDUS Spark RS 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,10 +52,10 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [
     "round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8"
   ],
-  "retry_after": null,
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-10",
+  "notes": "Current exact-build mainland price remains unavailable after the preserved web search and an occupied XHS lane; historical or generation-mismatched amounts are not substituted."
 }

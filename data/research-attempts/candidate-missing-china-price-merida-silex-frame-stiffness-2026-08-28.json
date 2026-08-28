@@ -1,0 +1,16 @@
+{
+  "id": "candidate-missing-china-price-merida-silex-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-merida-silex" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Merida SILEX 7000 long term test 2025", "route": "current exact-model long-term review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.radfahren.de/test-teile/dauertest-merida-silex-7000/", "note": "Review reports nearly 1,000 km, relaxed long-distance handling and no mechanical issues; no stiffness measurement is published." },
+    { "attempt": 2, "query": "Merida SILEX 7000 stiffness first ride", "route": "older 7000-series editorial review", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.cyclingweekly.com/reviews/gravel-bikes/new-merida-silex-first-ride-review-was-this-mohorics-secret-weapon", "note": "The stiff bottom-bracket/head-tube impression comes from an outgoing non-stock 2023 GRX Di2 build and is retained only as generation-bounded context." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["merida-silex-7000-long-term-review-2026-08-28"],
+  "retry_after": null,
+  "notes": "Current ride evidence is qualitative; no numeric stiffness score is inferred."
+}

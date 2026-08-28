@@ -7,10 +7,13 @@
   "required_channels": ["public-post", "web"],
   "channels": {
     "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "PARDUS Uragano EVO Rival XPLR weight", "route": "exact-model retailer page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.", "result_url": "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202" }] }
+    "web": { "status": "found", "attempts": [
+      { "attempt": 1, "query": "PARDUS Uragano EVO Rival XPLR weight", "route": "exact-model retailer page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Sold-out foreign exact-model build is listed at approximately 9.0 kg in size M.", "result_url": "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202" },
+      { "attempt": 2, "query": "PARDUS Uragano EVO review weight tire clearance", "route": "dated independent exact-model review", "outcome": "found", "accessed_at": "2026-08-27", "note": "BIKETO reports 9.65 kg without pedals for its documented Apex AXS/X1 Eagle AXS review build.", "result_url": "https://www.biketo.com/product/52352.html?all=1" }
+    ] }
   },
   "status": "found",
-  "accepted_source_ids": ["pardus-uragano-evo-uae-seller-2026-08-27"],
+  "accepted_source_ids": ["biketo-pardus-uragano-evo-review-2023", "pardus-uragano-evo-uae-seller-2026-08-27"],
   "retry_after": null,
-  "notes": "Useful exact-build weight retained as a seller value without mapping it to a current China SKU."
+  "notes": "The reviewed 9.65 kg no-pedals build is the displayed value; the separate 9.0 kg seller value remains configuration-specific. Neither maps to a current mainland stock SKU."
 }

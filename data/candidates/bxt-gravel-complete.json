@@ -4,13 +4,16 @@
   "model_id": "bxt-gravel-complete",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Exact frame model/SKU not visible. | Second price observation.",
+  "why_interesting": "Two dated marketplace cards show a BXT gravel complete-bike price lead, but neither identifies an exact model or build.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year/SKU before any weight, drivetrain, clearance, material or ride evidence can be assigned",
+    "Complete BOM, seller/authenticity, final selected-option price and domestic warranty route"
   ],
-  "status": "verify-before-publish",
+  "status": "needs-exact-model",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {
     "low_cny": 11197.25,
@@ -21,5 +24,5 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6889.png#R1, IMG_6894.png#L2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-28"
 }

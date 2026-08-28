@@ -1,0 +1,64 @@
+{
+  "id": "candidate-pardus-uragano-sport-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-sport"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "pardus-uragano-sport stiffness owner report",
+          "route": "XHS runtime preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-27",
+          "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Uragano Sport current stiffness test",
+          "route": "manufacturer exact current Chinese page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Current page provides material labels and build details but no stiffness evidence.",
+          "result_url": "https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447"
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Uragano Sport current ride review",
+          "route": "current-generation exact-build indexed search",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No attributable review of the current 105 R7000 generation surfaced."
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS Uragano stiffness older review",
+          "route": "earlier-generation editorial review",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-27",
+          "note": "Older Uragano ride commentary was rejected because it concerns a different frame generation and build."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No exact stiffness value is inferred from material or construction. The remaining XHS owner/reviewer route is blocked for this job."
+}

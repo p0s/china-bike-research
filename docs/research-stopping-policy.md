@@ -25,6 +25,8 @@ When an already accepted source for the same exact target directly publishes ano
 
 Temporary exhaustion is not negative evidence. It means “not found through the recorded routes on this date.” Exhausted gaps receive a retry date and reopen when a new model year, source lead, restored page, tooling improvement, or conflicting catalog change appears.
 
+CAPTCHA, login, and Security Verification remain human-only. HTTP 412, 300013, or rate limiting stops the current job with no same-session retry or bypass; on a later turn, one content-free normal-access probe may clear the breaker when ordinary cards load, without requiring a particular user phrase.
+
 ## Durable ledger
 
 Each atomic result lives in `data/research-attempts/`. `npm run research:check` rejects duplicate target fields, repeated queries or route labels, incomplete exhaustion, invalid references, private access parameters, and found results without accepted source records. `npm run research:report` summarizes coverage and effort. `npm run research:queue` separates ready work, evidence awaiting integration, deferred exhaustion, blockers, and conflicts; fields without a coarse catalog gap code stay visible as ledger-only queue items. The attempt ledger is included in the monotonic coverage baseline so completed searches cannot silently disappear.

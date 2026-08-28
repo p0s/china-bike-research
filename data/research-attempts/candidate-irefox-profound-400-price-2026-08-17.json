@@ -44,10 +44,18 @@
       ]
     }
   },
-  "status": "temporarily-exhausted",
+  "status": "found",
   "accepted_source_ids": [
     "round3-irefox-profound-launch-review-84f8968e36"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": [
+      "round3-irefox-profound-launch-review-84f8968e36"
+    ],
+    "note": "The already-preserved launch source contains exact historical list, promotion and conditional-rebate amounts; these are now attached as historical price evidence without treating them as current checkout pricing."
+  },
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The original bounded current-price search remains preserved. Its existing launch source is now used only for the exact historical Profound 400 launch package."
 }

@@ -1,0 +1,15 @@
+{
+  "id": "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2-grx-gr1600" },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Hi-Light G7.2 maximum tire 47-622 700x45C", "route": "manufacturer exact frameset page", "outcome": "found", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html", "accessed_at": "2026-08-27", "note": "Manufacturer specifies maximum ETRTO 47-622 and labels it 700x45C." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["hi-light-g7-2-frameset-official-2026-08-27"],
+  "retry_after": null,
+  "notes": "Stored as a 45 mm nominal manufacturer maximum, distinct from fitted tire width."
+}

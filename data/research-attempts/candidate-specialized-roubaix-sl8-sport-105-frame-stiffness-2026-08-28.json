@@ -1,0 +1,16 @@
+{
+  "id": "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "specialized-roubaix-sl8-sport-105" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Roubaix SL8 Sport 105 Rider First Future Shock engineering", "route": "manufacturer exact regional product page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.specialized.com/tw/en/roubaix-sl8-sport-shimano-105/p/4221827", "note": "Exact product page documents FACT 10R/Rider First size-specific engineering, FreeFoil shaping, dropped stays and Future Shock 3.1; no independent stiffness measurement is published." },
+    { "attempt": 2, "query": "Roubaix SL8 Sport 105 Future Shock 3.0 3.1", "route": "manufacturer Japan exact-model page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://www.specialized.com/jp/ja/roubaix-sl8-sport-105/p/4221827", "note": "Japan copy says Future Shock 3.0, conflicting with the 3.1 wording on other exact regional pages; the component wording is not merged." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["specialized-roubaix-sl8-sport-105-taiwan-2026-08-28"],
+  "retry_after": null,
+  "notes": "Manufacturer engineering evidence is useful but remains distinct from a measured frame-stiffness result."
+}

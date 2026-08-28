@@ -13,8 +13,14 @@
       { "attempt": 3, "query": "Quick GR ONE 国内 发布价", "route": "dated launch report", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Historical CNY 13,598 frame-and-handlebar package is not current checkout evidence.", "result_url": "https://www.biketo.com/industry/54415.html" }
     ] }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["quick-pro-gr-one-frameset-taobao-2026-08-28"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["quick-pro-gr-one-frameset-taobao-2026-08-28"],
+    "note": "A later exact Taobao frameset listing was opened and the selected size-M SKU recorded after the original three web routes were exhausted."
+  },
   "retry_after": null,
-  "notes": "Web routes are exhausted for this round; the public-post/XHS channel remains pending."
+  "notes": "The exact selected mainland frameset price is resolved. Package and warranty handling remain separate fields."
 }

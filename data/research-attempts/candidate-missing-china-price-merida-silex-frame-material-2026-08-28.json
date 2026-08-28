@@ -1,0 +1,15 @@
+{
+  "id": "candidate-missing-china-price-merida-silex-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-merida-silex" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Merida SILEX 7000 25 CF2 II construction", "route": "manufacturer mainland exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.merida.cn/zh-tw/bikefinder/bike/98/%3Aslug.html", "note": "Exact page identifies a SILEX CF2 II full-carbon frame and CF2 fork, dropped stays, hidden routing and multiple mounts; exact fiber grade and lay-up are unpublished." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["merida-silex-7000-25-official-cny-reference-2026-08-17"],
+  "retry_after": null,
+  "notes": "Generic Nano-carbon and AWS technology panels are not treated as a disclosed exact-model ply schedule or measured result."
+}

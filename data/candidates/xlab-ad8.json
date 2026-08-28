@@ -1,0 +1,77 @@
+{
+  "id": "xlab-ad8",
+  "name": "X-LAB AD8",
+  "model_id": "xlab-ad8",
+  "category": "road-aero",
+  "type": "complete-bike",
+  "why_interesting": "A current aero complete bike with an official 7.6 kg Shimano 105 Di2 build, full mainland specification and a 32 mm manufacturer maximum tire clearance.",
+  "missing": [
+    "Final dealer stock, delivery total and mainland warranty issuer for the preferred official build",
+    "Independent complete-bike measurement for the preferred official C50 TEAM configuration"
+  ],
+  "status": "official-mainland-build-documented",
+  "research_priority": "medium",
+  "price_status": "official mainland complete-bike reference",
+  "source_ids": [
+    "xlab-ad8-official-cn-spec-2026-08-27",
+    "xlab-ad8-official-cn-price-2026-08-27",
+    "xlab-ad8-official-global-2026-08-27",
+    "xlab-ad8-taobao-2026-08-27",
+    "public-xlab-ad8-build-2026-08-27"
+  ],
+  "official_price": {
+    "amount_cny": 26980,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-08-27",
+    "price_basis": "R7170 Di2 12S / Branta C50 TEAM complete bike",
+    "conditions": "Official retail reference; final price varies by location and delivery method."
+  },
+  "source_url": "https://www.xidesheng.com/goods/1964968942063501313/detail",
+  "source_note": "The catalog row uses the coherent official mainland R7170 Di2 / Branta C50 TEAM build. A cheaper selected Taobao trim and a lighter custom owner build remain separate below rather than donating their price or weight to that row.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7170 Di2 2×12",
+    "complete_weight_g": 7600,
+    "complete_weight_basis": "Official size-M complete-bike weight without pedals; paint variation may change the result.",
+    "frame": "Toray T800 × M40X carbon, UDH compatible",
+    "bottom_bracket": "T47 86-24",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Manufacturer maximum tire clearance.",
+    "wheels": "Branta C50 TEAM carbon",
+    "tires": "Michelin Pro 5 700×28C",
+    "cockpit": "X-LAB carbon integrated cockpit; size-specific 360–400 mm width and 90–130 mm stem",
+    "brakes": "Shimano 105 R7170 hydraulic; 160/140 mm rotors",
+    "sizes": "XS, S, M, L and XL"
+  },
+  "alternative_builds": [
+    {
+      "id": "taobao-standard-astana-105",
+      "label": "Taobao standard Astana 105 Di2 build",
+      "drivetrain": "Shimano 105 electronic large package, 2×12",
+      "complete_weight_g": 8000,
+      "weight_basis": "Seller-listed net weight; size and pedal basis not stated.",
+      "wheels": "Steel-spoke carbon wheels",
+      "price": {
+        "amount_cny": 21980,
+        "currency": "CNY",
+        "price_type": "marketplace-selected-option",
+        "observed_at": "2026-08-27",
+        "price_basis": "Selected standard Astana / steel-spoke carbon wheel / 105 electronic large-package / size-S option"
+      },
+      "source_ids": ["xlab-ad8-taobao-2026-08-27"],
+      "notes": "The selected listing option was available with seven-day preorder dispatch and CNY 8 shipping; it is not treated as the official C50 TEAM trim."
+    },
+    {
+      "id": "xhs-custom-r7170-l",
+      "label": "Custom size-L R7170 build",
+      "drivetrain": "Shimano R7170 Di2 2×12",
+      "complete_weight_g": 7560,
+      "weight_basis": "Public build post states fully equipped weight; exact accessories and measurement method are not itemized.",
+      "wheels": "静藤惯性 wheelset",
+      "tires": "艾瑞森 tires",
+      "source_ids": ["public-xlab-ad8-build-2026-08-27"],
+      "notes": "Exact owner/custom build context only; no current sale price is attached."
+    }
+  ],
+  "last_reviewed": "2026-08-27"
+}

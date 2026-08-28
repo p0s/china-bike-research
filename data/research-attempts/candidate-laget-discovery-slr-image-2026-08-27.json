@@ -1,0 +1,18 @@
+{
+  "id": "candidate-laget-discovery-slr-image-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "laget-discovery-slr" },
+  "field": "image",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "blocked", "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.", "attempts": [
+      { "attempt": 1, "query": "LAGET Discovery SLR exact product image", "route": "XHS runtime preflight", "outcome": "blocked", "accessed_at": "2026-08-27", "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened." }
+    ] },
+    "web": { "status": "blocked", "blocker": "The official page exposes imagery, but its apparent direct asset URL did not render reliably in the site.", "attempts": [{ "attempt": 1, "query": "LAGET Discovery SLR official image", "route": "official exact-model page", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "The apparent official asset rendered as a blank failed hero in the local site and was rejected rather than published.", "result_url": "https://lagetbike.com/productinfo/3301187.html" }] }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Exact imagery exists on the official page, but no reliably embeddable image URL has passed rendered verification and the XHS route is blocked for this job."
+}

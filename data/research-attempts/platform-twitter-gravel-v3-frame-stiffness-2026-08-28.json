@@ -1,0 +1,22 @@
+{
+  "id": "platform-twitter-gravel-v3-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "twitter-gravel-v3" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 stiffness test deflection", "route": "manufacturer current platform page", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html", "note": "Manufacturer page publishes materials and specifications but no stiffness or deflection measurement." },
+        { "attempt": 2, "query": "TWITTER Gravel V3 RS bottom bracket flex review", "route": "official factory-store comparison", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike", "note": "Seller descriptions of lively response and minimal bottom-bracket flex are editorial, not an independent test protocol." },
+        { "attempt": 3, "query": "TWITTER Gravel V3 independent frame stiffness measurement", "route": "independent reviews and owner reports", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No exact-current-platform reproducible stiffness or deflection result was found." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No generic stiffness ranking is inferred from seller copy or trim-conflicted owner anecdotes."
+}

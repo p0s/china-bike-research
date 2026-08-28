@@ -1,0 +1,66 @@
+{
+  "id": "candidate-laget-discovery-slr-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "laget-discovery-slr"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The required XHS extension 1.5.0 runtime is not loaded in the dedicated research Chrome; loading it is human-only.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "laget-discovery-slr stiffness owner report",
+          "route": "XHS runtime preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-27",
+          "note": "Runtime doctor reached CDP but found no loaded XHS extension runtime, so no XHS page was opened."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LAGET Discovery SLR stiffness test",
+          "route": "manufacturer exact-model page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Construction and weight are documented, but no stiffness result.",
+          "result_url": "https://lagetbike.com/productinfo/3301187.html"
+        },
+        {
+          "attempt": 2,
+          "query": "LAGET Discovery SLR ride stiffness",
+          "route": "authorized retailer exact-model page",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Package and construction are documented, but no attributable ride or deflection result.",
+          "result_url": "https://tipartstitanium.com/products/laget-discovery-slr-titanium-gravel-frameset-semi-3d-printed-titanium-1550g-s-45mm-tyre-clearance"
+        },
+        {
+          "attempt": 3,
+          "query": "LAGET Discovery SLR frame test",
+          "route": "manufacturer-hosted construction video",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Video describes construction only; no stiffness measurement or comparison.",
+          "result_url": "https://www.bilibili.com/video/BV1cwbVzhEN3/"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No exact stiffness value is inferred from material or construction. The remaining XHS owner/reviewer route is blocked for this job."
+}

@@ -44,3 +44,85 @@ test('gap report recognizes an exact frame-weight claim stored on a complete-bik
   assert.ok(record);
   assert.doesNotMatch(JSON.stringify(record.gaps), /frame-weight-missing/);
 });
+
+test('gap report always exposes decision-critical trim gaps for complete-bike candidates', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.type === 'complete-bike');
+  candidate.facts = {};
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  const codes = new Set(record.gaps.map((gap) => gap.code));
+  assert.ok(codes.has('complete-weight-missing'));
+  assert.ok(codes.has('clearance-unverified'));
+  assert.ok(codes.has('drivetrain-missing'));
+});
+
+test('gap report asks frameset candidates for frame weight and clearance, not complete-bike fields', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.type === 'frameset');
+  candidate.facts = {};
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  const codes = new Set(record.gaps.map((gap) => gap.code));
+  assert.ok(codes.has('frame-weight-missing'));
+  assert.ok(codes.has('clearance-unverified'));
+  assert.ok(!codes.has('complete-weight-missing'));
+  assert.ok(!codes.has('drivetrain-missing'));
+});
+
+test('gap report distinguishes a fitted tire from verified maximum clearance', () => {
+  const data = structuredClone(loadDataset());
+  const platform = data.platforms.find((item) => item.id === 'camp-gx700');
+  platform.tire_clearance = {
+    eligibility: 'pass',
+    stock_nominal_mm: 45,
+    maximum_unverified: true,
+    evidence: 'official',
+    note: 'Fixture stock tire only.'
+  };
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.platform_id === platform.id);
+  assert.ok(record.gaps.some((gap) => gap.code === 'clearance-unverified'));
+});
+
+test('gap report preserves weight and selected-price basis as separate research targets', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.type === 'complete-bike' && item.observed_price);
+  candidate.facts = { ...(candidate.facts ?? {}), complete_weight_g: 8000, drivetrain: 'Shimano 105 Di2 2×12', tire_clearance_mm: 32 };
+  delete candidate.facts.complete_weight_basis;
+  delete candidate.observed_price.price_basis;
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  const codes = new Set(record.gaps.map((gap) => gap.code));
+  assert.ok(codes.has('complete-weight-basis-missing'));
+  assert.ok(codes.has('price-basis-missing'));
+});
+
+test('a coherent historic reference trim does not hide a current observed price from the gap ledger', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.id === 'pardus-uragano-evo');
+  candidate.reference_price_kind = 'official';
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  assert.ok(record);
+  assert.ok(!record.gaps.some((gap) => gap.code === 'price-not-observed'));
+  assert.ok(!record.gaps.some((gap) => gap.code === 'price-basis-missing'));
+});
+
+test('gap report always seeks exact frame material details and meaningful stiffness evidence', () => {
+  const data = structuredClone(loadDataset());
+  const platform = data.platforms.find((item) => item.frame?.material === 'carbon');
+  platform.frame.material = 'carbon';
+  delete platform.frame.claimed_fiber;
+  delete platform.frame.material_grade;
+  delete platform.frame.construction;
+  delete platform.frame.stiffness_evidence;
+  const records = buildGapReport(data, '2026-08-27').records.filter((item) => item.platform_id === platform.id);
+  assert.ok(records.length > 0);
+  assert.ok(records.every((record) => record.gaps.some((gap) => gap.code === 'frame-material-detail-missing')));
+  assert.ok(records.every((record) => record.gaps.some((gap) => gap.code === 'stiffness-evidence-missing')));
+});
+
+test('candidate frame construction and stiffness evidence close their separate gaps', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.type === 'complete-bike');
+  candidate.facts = { ...(candidate.facts ?? {}), frame_material: 'Toray T800 and M40X carbon', stiffness_evidence: 'Manufacturer comparative torsional test; exact protocol recorded in the linked source.' };
+  const record = buildGapReport(data, '2026-08-27').records.find((item) => item.id === candidate.id);
+  assert.ok(!record.gaps.some((gap) => gap.code === 'frame-material-detail-missing'));
+  assert.ok(!record.gaps.some((gap) => gap.code === 'stiffness-evidence-missing'));
+});

@@ -1,0 +1,22 @@
+{
+  "id": "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "pardus-super-sport-gen2" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "PARDUS Super Sport Gen2 stiffness test deflection", "route": "manufacturer current platform page", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446", "note": "Official page gives construction and geometry but no stiffness or deflection value." },
+        { "attempt": 2, "query": "PARDUS SUPG2 SPORT eGR ride review stiffness", "route": "exact-model ride and challenge videos", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.bilibili.com/video/BV14X9UBSEPq/", "note": "Public text and accessible metadata do not expose a reproducible stiffness result." },
+        { "attempt": 3, "query": "PARDUS Super Sport 二代 刚性 测试", "route": "independent technical reviews", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No attributable exact-model deflection, bottom-bracket stiffness or comparable test was found." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "Anecdotal or unsupported rigidity language is not converted into a stiffness claim."
+}

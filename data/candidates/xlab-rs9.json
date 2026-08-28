@@ -1,0 +1,67 @@
+{
+  "id": "xlab-rs9",
+  "name": "X-LAB RS9",
+  "model_id": "xlab-rs9",
+  "category": "road",
+  "type": "complete-bike",
+  "why_interesting": "A current 7.0 kg all-round race complete bike with Dura-Ace Di2, an exact mainland selected-option price and a documented 32C fitted owner build.",
+  "missing": [
+    "Current manufacturer maximum tire clearance; a secondary 30 mm figure conflicts with a documented 32C fitted build",
+    "Final checkout total and mainland warranty issuer for the selected flagship-store option"
+  ],
+  "status": "mainland-price-observed",
+  "research_priority": "medium",
+  "price_status": "selected mainland complete-bike option",
+  "source_ids": [
+    "xlab-rs9-official-cn-spec-2026-08-27",
+    "xlab-rs9-official-cn-price-2026-08-27",
+    "xlab-rs9-taobao-2026-08-27",
+    "public-xlab-rs9-build-2026-08-27",
+    "xlab-rs9-bikeinsights-2026-08-27"
+  ],
+  "observed_price": {
+    "amount_cny": 49980,
+    "currency": "CNY",
+    "price_type": "marketplace-selected-option",
+    "observed_at": "2026-08-27",
+    "price_basis": "Black / size-L / 24-speed complete bike, SKU 5925946143335",
+    "conditions": "Displayed after a CNY 20,019 reduction; shipping included and 48-hour dispatch shown; checkout not submitted."
+  },
+  "official_price": {
+    "amount_cny": 49980,
+    "currency": "CNY",
+    "price_type": "official-list",
+    "observed_at": "2026-08-27",
+    "price_basis": "Dura-Ace R9270 Di2 12S / Vision Metron 45 SL complete bike"
+  },
+  "source_url": "https://www.xidesheng.com/goods/1891777277617856514/detail",
+  "source_note": "The catalog row keeps the exact size-L Dura-Ace / Vision Metron 45 SL reference build together with its selected size-L flagship-store price and official size-L weight. Tire clearance is shown as a 32C fitted observation, not a manufacturer maximum.",
+  "facts": {
+    "drivetrain": "Shimano Dura-Ace R9270 Di2 2×12",
+    "complete_weight_g": 7000,
+    "complete_weight_basis": "Official size-L complete-bike weight without pedals; paint variation may change the result.",
+    "frame": "Toray T1100 carbon",
+    "bottom_bracket": "Shimano BB-R9100 / BSA 68 mm",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Documented fitted 32C owner build; manufacturer maximum unresolved.",
+    "wheels": "Vision Metron 45 SL carbon",
+    "tires": "Maxxis HYPR ZK 700×28C",
+    "cockpit": "X-LAB carbon integrated cockpit; size-specific 380–420 mm width and 80–120 mm stem",
+    "brakes": "Shimano Dura-Ace R9270 hydraulic; 160/140 mm rotors",
+    "sizes": "XS, S, M, L and XL"
+  },
+  "alternative_builds": [
+    {
+      "id": "xhs-custom-r8170-s",
+      "label": "Custom size-S Ultegra R8170 build",
+      "drivetrain": "Shimano Ultegra R8170 Di2 2×12, 50/34T and 11-34T",
+      "complete_weight_g": 6800,
+      "weight_basis": "Public build states weight including computer mount, bottle cages, pedals and speed/cadence sensor.",
+      "wheels": "45 mm custom DT350 wheelset",
+      "tires": "Maxxis High Road 32C",
+      "source_ids": ["public-xlab-rs9-build-2026-08-27"],
+      "notes": "Exact custom owner build; it supplies the documented 32C fit but no sale price or manufacturer maximum."
+    }
+  ],
+  "last_reviewed": "2026-08-27"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "specialized-crux-10r-frameset" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Specialized Crux FACT 10r frameset Rider First carbon", "route": "manufacturer exact-frameset page", "outcome": "found", "result_url": "https://www.specialized.com/us/en/crux-10r-frameset/p/4221706", "accessed_at": "2026-08-28", "note": "The current exact frameset identifies a FACT 10r Rider First Engineered frame and S-Works FACT carbon fork; fiber grade and lay-up are not published." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["specialized-crux-10r-frameset-official-2026-08-28"],
+  "retry_after": null,
+  "notes": "FACT 10r is preserved as Specialized's material-system name, not translated into an unsupported fiber grade."
+}

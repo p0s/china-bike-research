@@ -1,0 +1,15 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "giant-defy-advanced-sl1-community-lead" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Giant Defy Advanced SL 1 2026 frame construction", "route": "manufacturer exact-model page and specification", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.giant-bicycles.com/gb/defy-advanced-sl-1", "note": "Official 2026 trim identifies Advanced SL-grade Composite, an integrated seatpost and full-composite OverDrive Aero steerer; exact fiber and lay-up are unpublished." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["giant-defy-advanced-sl1-official-global-2026-08-20"],
+  "retry_after": null,
+  "notes": "The exact 2026 global frame construction is recorded, while mapping the community bike to this generation remains unresolved."
+}

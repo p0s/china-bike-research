@@ -20,6 +20,17 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('buyer-hidden images cannot mask an active replacement', () => {
+  const fixture = structuredClone(data);
+  const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
+  fixture.images.unshift({ ...visibleCandidateImage, id: 'hidden-candidate-primary', buyer_visibility: 'omit' });
+  assert.notEqual(joinCatalogCandidates(fixture).find((item) => item.candidate.id === 'pardus-uragano-sport').image.id, 'hidden-candidate-primary');
+
+  const visibleProductImage = fixture.images.find((item) => item.platform_id === 'twitter-gravel-v3' && item.role === 'primary' && item.buyer_visibility !== 'omit');
+  fixture.images.unshift({ ...visibleProductImage, id: 'hidden-product-primary', buyer_visibility: 'omit' });
+  assert.notEqual(joinProducts(fixture).find((item) => item.platform.id === 'twitter-gravel-v3').image.id, 'hidden-product-primary');
+});
+
 test('XHS and Taobao sources use identity-safe canonical public URLs', () => {
   const xhs = structuredClone(data);
   xhs.sources.push({
@@ -89,16 +100,16 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 36);
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
-  assert.equal(data.prices.length, 48);
-  assert.equal(data.images.length, 169);
+  assert.equal(data.prices.length, 50);
+  assert.equal(data.images.length, 180);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 202);
-  assert.equal(data.exclusions.length, 13);
+  assert.equal(data.candidates.length, 204);
+  assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 395);
+  assert.equal(data.researchAttempts.length, 548);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -131,6 +142,14 @@ test('wide-clearance research records carry exact weight bases and current sourc
   assert.equal(grow.tire_clearance.published_rear_max_mm, 50);
   assert.equal(grow.frame.claimed_frame_weight_g, 830);
   assert.match(grow.frame.claimed_frame_weight_basis, /830–960 g ±25 g/);
+  assert.equal(grow.frame.material_grade, 'Toray T800 carbon');
+  assert.match(grow.frame.construction, /Directional carbon lay-up/);
+  assert.match(grow.frame.stiffness_evidence, /manufacturer-authored/);
+
+  const seka = data.platforms.find((item) => item.id === 'seka-exaero-gr');
+  assert.equal(seka.frame.material_grade, 'Toray T1100G + M46J carbon fiber');
+  assert.match(seka.frame.construction, /True one-piece monocoque/);
+  assert.match(seka.frame.stiffness_evidence, /360 W/);
 
   const g3 = data.candidates.find((item) => item.id === 'missing-china-price-winspace-g3');
   assert.equal(g3.facts.complete_weight_g, 8750);
@@ -142,6 +161,21 @@ test('wide-clearance research records carry exact weight bases and current sourc
   const voicevelo = data.candidates.find((item) => item.id === 'voicevelo-g-major');
   assert.equal(voicevelo.observed_price.amount_cny, 12800);
   assert.equal(voicevelo.observed_price.observed_at, '2023-11-13');
+  assert.match(voicevelo.facts.frame_material, /VG1 is a paint designation/);
+  assert.match(voicevelo.facts.stiffness_evidence, /slightly weak lateral/);
+
+  const rinasclta = data.candidates.find((item) => item.id === 'rinasclta-q-aero-gr');
+  assert.match(rinasclta.facts.frame_material, /Toray T800 \+ T1000/);
+  assert.match(rinasclta.facts.stiffness_evidence, /no exact-model deflection protocol/);
+
+  const trek = data.candidates.find((item) => item.id === 'missing-china-price-trek-checkpoint');
+  assert.equal(trek.facts.complete_weight_g, 9500);
+  assert.equal(trek.facts.drivetrain, 'SRAM Apex XPLR AXS electronic 1×12, 40T crank and 11–44T cassette');
+
+  for (const id of ['missing-china-price-winspace-g5', 'missing-china-price-seka-exaero-gr', 'missing-china-price-tavelo-grow']) {
+    assert.equal(data.candidates.find((item) => item.id === id).status, 'merged-into-exact-record');
+    assert.equal(catalogCandidates.some((entry) => entry.candidate.id === id), false);
+  }
 });
 
 test('electronic groupset references preserve package and price boundaries', () => {
@@ -219,10 +253,11 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 193);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 166);
+  assert.equal(catalogCandidates.length, 194);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 168);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
+  assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
 
   const pardus = catalogCandidates.find((entry) => entry.candidate.id === 'pardus-spark-sport-pes');
   assert.equal(pardus.defaultVisible, true);
@@ -252,6 +287,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(unclearModel.defaultVisible, false);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
   assert.equal(genericBuild.defaultVisible, false);
+  const unidentifiedBxt = catalogCandidates.find((entry) => entry.candidate.id === 'bxt-gravel-complete');
+  assert.equal(unidentifiedBxt.defaultVisible, false);
 
   const basso = catalogCandidates.find((entry) => entry.candidate.id === 'basso-venta-disc');
   assert.deepEqual(basso.brand, { id: 'candidate-brand-basso', name: 'BASSO' });
@@ -494,8 +531,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 167);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 93);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 178);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 104);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
@@ -641,8 +678,33 @@ test('research ledger reconciles every bundle group and preserves backlog status
   assert.equal(ledger.titanium_additions.length, 13);
   assert.equal(ledger.missing_china_price_targets.length, 35);
   assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'published-variant').length, 15);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 109);
-  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 9);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'candidate').length, 108);
+  assert.equal(ledger.group_dispositions.filter((item) => item.disposition.disposition === 'exclusion').length, 10);
+});
+
+test('X-LAB model records keep one coherent reference trim and separate alternative builds', () => {
+  const ad8 = data.candidates.find((item) => item.id === 'xlab-ad8');
+  const ad9 = data.candidates.find((item) => item.id === 'xlab-ad9');
+  const rs9 = data.candidates.find((item) => item.id === 'xlab-rs9');
+  assert.equal(ad8.facts.complete_weight_g, 7600);
+  assert.equal(ad8.official_price.amount_cny, 26980);
+  assert.equal(ad8.alternative_builds.find((build) => build.id === 'taobao-standard-astana-105').price.amount_cny, 21980);
+  assert.equal(ad9.facts.drivetrain, 'Shimano Dura-Ace R9270 Di2 2×12');
+  assert.equal(ad9.facts.tire_clearance_mm, 32);
+  assert.equal(ad9.alternative_builds.find((build) => build.id === 'xhs-custom-hybrid-l').complete_weight_g, 7435);
+  assert.equal(rs9.observed_price.amount_cny, 49980);
+  assert.match(rs9.facts.tire_clearance_basis, /fitted 32C/i);
+  assert.equal(rs9.alternative_builds[0].complete_weight_g, 6800);
+});
+
+test('candidate reference price can keep an exact documented trim coherent', () => {
+  const cloned = structuredClone(data);
+  const candidate = cloned.candidates.find((item) => item.id === 'pardus-uragano-evo');
+  candidate.reference_price_kind = 'official';
+  candidate.official_price = { amount_cny: 23999, currency: 'CNY', price_type: 'historical-official-retail', observed_at: '2023-11-29' };
+  const entry = joinCatalogCandidates(cloned).find((item) => item.candidate.id === candidate.id);
+  assert.equal(entry.priceKind, 'official');
+  assert.equal(entry.price.amount_cny, 23999);
 });
 
 test('shared frame images do not masquerade as exact component builds', () => {

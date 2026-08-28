@@ -22,10 +22,16 @@ import {
   safeJson,
   url
 } from './lib/html.mjs';
+import {
+  collectionStructuredData,
+  productPageStructuredData,
+  websiteStructuredData,
+  webApplicationStructuredData
+} from './lib/seo.mjs';
 
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 
-function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '' }) {
+function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', ogType = 'website', structuredData = [] }) {
   return layout({
     base: ctx.base,
     repositoryUrl: ctx.repositoryUrl,
@@ -37,7 +43,9 @@ function page(ctx, { title = '', current = '', path = '/', description: desc = d
     body,
     noindex,
     image,
-    imageAlt
+    imageAlt,
+    ogType,
+    structuredData
   });
 }
 
@@ -95,12 +103,6 @@ function accuracyLabel(accuracy) {
   }[accuracy] ?? 'Image status unclassified';
 }
 
-function imageUsageLabel(image) {
-  return image?.rights?.status === 'public-post-quotation'
-    ? 'Compressed editorial quotation; no license asserted'
-    : '';
-}
-
 function imageElement(ctx, product, { hero = false, image = product.image, className = '', decorative = false, galleryHero = false } = {}) {
   const source = imageUrl(ctx, image);
   if (!source) return '';
@@ -137,15 +139,13 @@ function candidateGalleryFigure(ctx, entry) {
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = entry.imageSource;
   if (images.length < 2) {
-    const usage = imageUsageLabel(primary);
-    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${candidateImageElement(ctx, entry, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
     image.credit ?? 'Product image',
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
-    imageUsageLabel(image),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
@@ -163,15 +163,13 @@ function productGalleryFigure(ctx, product) {
   const primaryAccuracy = accuracyLabel(primary?.display_accuracy ?? primary?.subject_accuracy ?? 'illustrative');
   const primarySource = product.imageSource;
   if (images.length < 2) {
-    const usage = imageUsageLabel(primary);
-    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}${usage ? ` · ${escapeHtml(usage)}` : ''}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
+    return `<figure class="model-figure"><span class="product-image hero-image">${imageElement(ctx, product, { hero: true })}</span><figcaption><span data-image-caption-status>${escapeHtml(primary?.credit ?? 'Product image')} · ${escapeHtml(primaryAccuracy)}</span>${primarySource?.url ? ` · <a href="${escapeAttr(primarySource.url)}" rel="noreferrer">source</a>` : ''}</figcaption></figure>`;
   }
 
   const imageSource = (image) => image === primary ? primarySource : image.source;
   const caption = (image, index) => [
     image.credit ?? 'Product image',
     accuracyLabel(image.display_accuracy ?? image.subject_accuracy ?? 'illustrative'),
-    imageUsageLabel(image),
     `${image.label ?? `View ${index + 1}`} (${index + 1} of ${images.length})`
   ].filter(Boolean).join(' · ');
   const thumbs = images.map((image, index) => {
@@ -355,11 +353,14 @@ function publishedTireClearance(product) {
 }
 
 function candidateTireClearance(entry) {
-  const value = entry.candidate.facts?.tire_clearance_mm;
+  const facts = entry.candidate.facts ?? {};
+  const value = facts.tire_clearance_mm;
+  const basis = facts.tire_clearance_basis ?? '';
+  const fitted = /^documented fitted|^fitted/i.test(basis);
   return {
-    value: Number.isFinite(value) ? `${value} mm` : '—',
+    value: Number.isFinite(value) ? `${value} mm${fitted ? ' fitted' : ''}` : '—',
     sortValue: Number.isFinite(value) ? value : 0,
-    details: Number.isFinite(value) ? 'Recorded maximum tire clearance.' : ''
+    details: Number.isFinite(value) ? (basis || 'Recorded maximum tire clearance.') : ''
   };
 }
 
@@ -882,6 +883,9 @@ function candidateFactRows(entry) {
     drivetrain: 'Drivetrain',
     brakes: 'Brakes',
     frame: 'Frame',
+    frame_material: 'Frame material',
+    frame_construction: 'Frame construction',
+    stiffness_evidence: 'Stiffness evidence',
     bottom_bracket: 'Bottom bracket',
     wheels: 'Wheels',
     tires: 'Tires',
@@ -891,6 +895,8 @@ function candidateFactRows(entry) {
     mounts: 'Mounts',
     derailleur_hanger: 'Derailleur hanger',
     frame_weight_basis: 'Frame weight basis',
+    complete_weight_basis: 'Complete weight basis',
+    tire_clearance_basis: 'Tire clearance basis',
     seatpost: 'Seatpost',
     complete_weight_g: 'Complete weight',
     frame_weight_g: 'Frame weight',
@@ -906,6 +912,21 @@ function candidateFactRows(entry) {
           : value;
     return [labels[key] ?? sentenceLabel(key), String(formatted)];
   });
+}
+
+function candidateAlternativeBuilds(entry) {
+  const builds = entry.candidate.alternative_builds ?? [];
+  if (!builds.length) return '';
+  return `<section class="detail-section documented-builds" aria-labelledby="documented-builds-title"><h2 id="documented-builds-title">Other documented builds</h2><p>These are separate configurations. Their weight, drivetrain, and price are not mixed into the catalog reference row.</p><div class="source-list">${builds.map((build) => {
+    const details = [
+      build.drivetrain ? `Drivetrain: ${build.drivetrain}` : '',
+      Number.isFinite(build.complete_weight_g) ? `Weight: ${(build.complete_weight_g / 1000).toFixed(2).replace(/0$/, '')} kg${build.weight_basis ? ` — ${build.weight_basis}` : ''}` : '',
+      build.price ? `Price: ${formatPrice(build.price)}${build.price.observed_at ? ` on ${build.price.observed_at}` : ''}${build.price.price_basis ? ` — ${build.price.price_basis}` : ''}` : '',
+      build.wheels ? `Wheels: ${build.wheels}` : '',
+      build.tires ? `Tires: ${build.tires}` : ''
+    ].filter(Boolean);
+    return `<div class="source-item"><strong>${escapeHtml(build.label)}</strong>${details.map((detail) => `<span>${escapeHtml(detail)}</span>`).join('')}${build.notes ? `<p>${escapeHtml(candidatePublicText(build.notes))}</p>` : ''}</div>`;
+  }).join('')}</div></section>`;
 }
 
 function candidateSourceList(entry) {
@@ -1078,7 +1099,16 @@ export function renderHome(ctx) {
     </div>
     <script type="application/json" id="catalog-data">${safeJson(summaries)}</script>
   </div></section>`;
-  return page(ctx, { current: 'catalog', path: '/', body });
+  return page(ctx, {
+    current: 'catalog',
+    path: '/',
+    body,
+    structuredData: websiteStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      description
+    })
+  });
 }
 
 export function renderModel(ctx, product) {
@@ -1121,6 +1151,13 @@ export function renderModel(ctx, product) {
   const specificationRows = publishedSpecificationRows(product);
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
+  const seoProperties = [
+    ['Product type', variant.kind === 'frameset' ? 'Frameset' : 'Complete bike'],
+    ['Frame material', platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material],
+    ...(tireClearance.value !== '—' ? [['Maximum tire clearance', tireClearance.value]] : []),
+    ...(weight !== '—' ? [['Weight', weight]] : []),
+    ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product)]] : [])
+  ];
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
@@ -1129,7 +1166,7 @@ export function renderModel(ctx, product) {
     <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
     ${specificationRows.length ? `<section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specification snapshot</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="decision-block"><div><h2>Strengths</h2><ul>${variant.editorial.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h2>Trade-offs and unknowns</h2><ul>${variant.editorial.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></section>
-    <section class="detail-section" aria-labelledby="key-details-title"><h2 id="key-details-title">Key details</h2><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(relationshipLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></section>
+    <section class="detail-section" aria-labelledby="key-details-title"><h2 id="key-details-title">Key details</h2><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(relationshipLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></section>
     ${videoContext(videos)}
     <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
@@ -1140,6 +1177,19 @@ export function renderModel(ctx, product) {
     description: variant.editorial.verdict,
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
+    ogType: 'product',
+    structuredData: productPageStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: `/models/${variant.id}/`,
+      name: `${brand.name} ${variant.name}`,
+      model: variant.name,
+      brand: brand.name,
+      description: variant.editorial.verdict,
+      category: categoryLabel(platform.category),
+      image: heroImage,
+      properties: seoProperties
+    }),
     body
   });
 }
@@ -1179,6 +1229,7 @@ export function renderCandidateModel(ctx, entry) {
   const keyHardware = facts.slice(0, 5).map(([label, value]) => `${label.toLowerCase()} ${value}`).join('; ');
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
   const type = entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
+  const candidateSeoProduct = entry.identifiableModel && !['Identity not confirmed', 'Exact configuration not confirmed'].includes(maturity);
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
   const modelPriceAttributes = entry.kind === 'frameset' && Number.isFinite(frameLow)
     ? ` data-model-frame-price-low="${frameLow}" data-model-frame-price-high="${frameHigh}" data-model-default-allowance="${assumption.amount_cny}"`
@@ -1186,6 +1237,7 @@ export function renderCandidateModel(ctx, entry) {
   const pageTitle = brand?.name && candidate.name.toLowerCase().startsWith(brand.name.toLowerCase())
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
+  const candidateHeroImage = imageUrl(ctx, entry.image);
   const imageFigure = candidateGalleryFigure(ctx, entry);
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${imageFigure ? '' : ' has-no-image'}">
     ${imageFigure}
@@ -1193,6 +1245,7 @@ export function renderCandidateModel(ctx, entry) {
   </div>
   <div class="model-content">
     <section class="bike-brief" aria-labelledby="candidate-brief-title"><h2 id="candidate-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(reason)}</p><p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${keyHardware ? `<p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p>` : ''}<p class="research-profile-note">This is a research-stage profile. Useful exact-model evidence is shown, but unresolved fields prevent it from being treated as a publication-ready recommendation.</p></section>
+    ${candidateAlternativeBuilds(entry)}
     <section class="decision-block"><div><h2>What is known</h2>${facts.length ? `<ul>${facts.map(([label, value]) => `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</li>`).join('')}</ul>` : '<p>No model-specific hardware facts are verified yet.</p>'}</div><div><h2>Trade-offs and unknowns</h2>${missing.length ? `<ul>${missing.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '<p>No additional evidence gaps are documented.</p>'}</div></section>
     <section class="detail-section" aria-labelledby="candidate-key-details-title"><h2 id="candidate-key-details-title">Key details</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <details class="detail-panel"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
@@ -1202,18 +1255,33 @@ export function renderCandidateModel(ctx, entry) {
     current: 'catalog',
     path: `/models/${candidate.id}/`,
     description: reason,
-    image: imageUrl(ctx, entry.image),
+    image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
+    ogType: candidateSeoProduct ? 'product' : 'website',
+    structuredData: productPageStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: `/models/${candidate.id}/`,
+      name: pageTitle,
+      model: candidate.name,
+      brand: brand?.name ?? '',
+      description: reason,
+      category,
+      image: candidateHeroImage,
+      properties: facts,
+      includeProduct: candidateSeoProduct
+    }),
     body
   });
 }
 
-function prosePage(ctx, { title, desc, path, html, current = '', className = '' }) {
+function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [] }) {
   return page(ctx, {
     title,
     current,
     path,
     description: desc,
+    structuredData,
     body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
   });
 }
@@ -1376,6 +1444,7 @@ function builderSlotRow(ctx, parts, slot) {
 export function renderBikeBuilder(ctx) {
   const bases = builderBases(ctx);
   const parts = builderParts(ctx);
+  const builderDescription = 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.';
   const initialBase = bases[0];
   const publishedBases = bases.filter((base) => base.stage === 'published');
   const baseOptions = `<optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}">${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
@@ -1391,9 +1460,16 @@ export function renderBikeBuilder(ctx) {
   </section>`;
   return page(ctx, {
     title: 'Bike configurator',
-    description: 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.',
+    description: builderDescription,
     path: '/build/',
     current: 'builder',
+    structuredData: webApplicationStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/build/',
+      name: 'China bike configurator',
+      description: builderDescription
+    }),
     body,
   });
 }
@@ -1517,6 +1593,7 @@ function adjacentRows(source) {
 }
 
 export function renderElectronicGroupsets(ctx) {
+  const groupsetDescription = 'Road, gravel, MTB and TT electronic shifting compared in one place.';
   const groupsets = ctx.data.groupsets ?? [];
   const adjacentSources = ctx.data.sources.filter((source) => source.adjacent_system);
   const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
@@ -1546,10 +1623,21 @@ export function renderElectronicGroupsets(ctx) {
   <details class="reference-guide"><summary>How package labels and prices are normalized</summary><div><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 are retained as option text, never treated as standard packages. Taobao observations are option-level screenshots rather than verified checkout totals.</p></div></details>`;
   return prosePage(ctx, {
     title: 'Electronic groupsets in China',
-    desc: 'Road, gravel, MTB and TT electronic shifting compared in one place.',
+    desc: groupsetDescription,
     path: '/electronic-shifting/',
     current: 'groupsets',
     className: 'groupsets-prose',
+    structuredData: collectionStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/electronic-shifting/',
+      name: 'Electronic groupsets in China',
+      description: groupsetDescription,
+      items: [
+        ...ordered.map((groupset) => ({ name: groupset.name })),
+        ...adjacentSources.map((source) => ({ name: source.adjacent_system.name }))
+      ]
+    }),
     html
   });
 }
@@ -1566,7 +1654,7 @@ export function renderPrivacy(ctx) {
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. Copyright remains with the original owner, the source stays visibly linked, and no license or universal right to reuse is implied.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before external hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. Copyright remains with the original owner and the source stays visibly linked.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before external hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 
@@ -1600,7 +1688,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}${imageUsageLabel(image) ? ` · ${escapeHtml(imageUsageLabel(image))}` : ''}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 

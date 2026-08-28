@@ -1,0 +1,15 @@
+{
+  "id": "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2-grx-gr1600" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Hi-Light G7.2 titanium tubing construction AL-6061-T6", "route": "manufacturer exact frameset page", "outcome": "found", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html", "accessed_at": "2026-08-27", "note": "Exact page identifies a hydroformed variable-wall titanium frame, CNC dropouts and replaceable AL-6061-T6 dropout inserts." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["hi-light-g7-2-frameset-official-2026-08-27"],
+  "retry_after": null,
+  "notes": "Construction is recorded without inventing an unpublished titanium alloy grade."
+}

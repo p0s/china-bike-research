@@ -1,0 +1,29 @@
+{
+  "id": "candidate-missing-china-price-trek-checkpoint-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-trek-checkpoint" },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The bounded multi-tab XHS material/stiffness campaign stopped with campaign_mismatch before an archive was produced; no competing Trek job was started.",
+      "attempts": [
+        { "attempt": 1, "query": "Trek Checkpoint SL 5 AXS Gen 3 frame stiffness owner report", "route": "XHS campaign availability check", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "The canonical shared lane failed safely before this additional exact-model query could be scheduled." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "Trek Checkpoint SL Gen 3 stiffness test", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://www.trekbikes.com/us/en_US/bikes/road-bikes/gravel-bikes/checkpoint/checkpoint-sl/checkpoint-sl-5-axs-gen-3/p/47071/", "accessed_at": "2026-08-28", "note": "IsoSpeed comfort language is not a measured frame-stiffness result." },
+        { "attempt": 2, "query": "2026 Checkpoint SL 5 AXS frame deflection", "route": "authorized-retailer exact-build page", "outcome": "no-result", "result_url": "https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike", "accessed_at": "2026-08-28", "note": "The page supplies construction and build facts but no stiffness protocol or result." },
+        { "attempt": 3, "query": "Checkpoint SL 5 AXS Gen 3 independent stiffness review", "route": "indexed exact-model review search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No attributable exact-trim deflection measurement or sufficiently specific stiffness comparison surfaced." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "IsoSpeed is retained as construction and comfort context only; no exact stiffness value is inferred."
+}

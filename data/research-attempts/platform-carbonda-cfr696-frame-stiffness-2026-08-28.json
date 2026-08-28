@@ -1,0 +1,21 @@
+{
+  "id": "platform-carbonda-cfr696-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "carbonda-cfr696" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "Carbonda CFR696 stiffness response", "route": "manufacturer exact-model page", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.carbonda.com/road/cfr-696.html", "note": "Generic stiffness-response wording is marketing and no stiffness or deflection value is published." },
+        { "attempt": 2, "query": "Carbonda CFR696 long term owner flex descending braking", "route": "exact-model owner forum", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://forum.ridinggravel.com/post/chinese-carbon-gravel-build-carbonda-8254658?trail=5150", "note": "Owners report more than 10,000 miles, stable high-speed descending and hard braking without perceived frame flex, plus stable and comfortable race handling; qualitative evidence only." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["carbonda-cfr696-owner-forum-2026-08-28"],
+  "retry_after": null,
+  "notes": "Owner impressions are labeled as qualitative and do not become a numeric or comparative stiffness score."
+}

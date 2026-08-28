@@ -24,6 +24,8 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /Full-bike price/);
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
+  assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
+  assert.doesNotMatch(html, /"itemListElement"/);
 });
 
 test('products without verified photos omit the image region and social placeholder', () => {
@@ -89,6 +91,9 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
   assert.match(quickDetail, /Trade-offs and unknowns/);
   assert.match(quickDetail, /Price record and sources/);
+  assert.match(quickDetail, /property="og:type" content="product"/);
+  assert.match(quickDetail, /"@type":"Product"/);
+  assert.doesNotMatch(quickDetail, /"offers":/);
   assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
 
   const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
@@ -99,6 +104,8 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(sparseDetail, /Frame weight basis/);
   assert.doesNotMatch(sparseDetail, /Frame_weight_basis/);
   assert.match(sparseDetail, /Identity not confirmed/);
+  assert.match(sparseDetail, /property="og:type" content="website"/);
+  assert.doesNotMatch(sparseDetail, /"@type":"Product"/);
 
   const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   const oldTwitterCarbonDetail = renderCandidateModel(context, oldTwitterCarbon);
@@ -116,6 +123,35 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(oldTwitterCarbonDetail, /Hydraulic caliper detail/);
   assert.match(oldTwitterCarbonDetail, /TWITTER Gravel V3 public listing images/);
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
+});
+
+test('candidate model pages keep alternative trims separate from the reference row', () => {
+  const xlab = joinCatalogCandidates(data).find((entry) => entry.candidate.id === 'xlab-ad8');
+  const detail = renderCandidateModel({
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-27T00:00:00Z')
+  }, xlab);
+  assert.match(detail, /Other documented builds/);
+  assert.match(detail, /not mixed into the catalog reference row/);
+  assert.match(detail, /Taobao standard Astana 105 Di2 build/);
+  assert.match(detail, /¥21,980/);
+  assert.match(detail, /Custom size-L R7170 build/);
+});
+
+test('candidate details expose frame material and stiffness evidence without inventing a score', () => {
+  const cloned = structuredClone(data);
+  const candidate = cloned.candidates.find((item) => item.id === 'xlab-ad8');
+  candidate.facts.frame_material = 'Toray T800 and M40X carbon';
+  candidate.facts.stiffness_evidence = 'Manufacturer comparison; test protocol not published.';
+  const entry = joinCatalogCandidates(cloned).find((item) => item.candidate.id === candidate.id);
+  const detail = renderCandidateModel({ data: cloned, products: joinProducts(cloned), base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-08-27T00:00:00Z') }, entry);
+  assert.match(detail, /Frame material:<\/strong> Toray T800 and M40X carbon/);
+  assert.match(detail, /Stiffness evidence:<\/strong> Manufacturer comparison; test protocol not published/);
+  assert.doesNotMatch(detail, /stiffness score/i);
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
@@ -150,6 +186,9 @@ test('published frame pages show exact-model galleries and component weight cont
   assert.match(quickDetail, /<dt>Fork weight<\/dt><dd>459 g<\/dd>/);
   assert.match(quickDetail, /<dt>Seatpost weight<\/dt><dd>169 g<\/dd>/);
   assert.match(quickDetail, /5 sizes \(XS\/426–XL\/546\) · stack 524–599 mm · reach 370–405 mm/);
+  assert.match(quickDetail, /property="og:type" content="product"/);
+  assert.match(quickDetail, /"name":"Maximum tire clearance"/);
+  assert.doesNotMatch(quickDetail, /"offers":/);
 
   const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
   const incolorDetail = renderModel(context, incolor);

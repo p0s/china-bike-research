@@ -4,28 +4,36 @@
   "model_id": "van-rysel-rcr",
   "category": "road-race",
   "type": "complete-bike",
-  "why_interesting": "Exact official global performance-road complete bike with weight, frame and component evidence; current mainland price remains unverified.",
+  "why_interesting": "Exact performance-road complete bike with weight, frame and component evidence plus a recent mainland price report.",
   "missing": [
-    "Exact mainland SKU, stock and checkout result",
-    "Current mainland price confirmation",
+    "Exact mainland stock and checkout result for the reported RCR-F Pro 105 Di2 offer",
     "Exact RCR-F eligibility under the China warranty policy",
     "Numerical geometry, BB and tire-clearance specification",
     "Resolve the product-page comparison conflict over tires/powermeter"
   ],
-  "status": "official-global-reference",
+  "status": "mainland-price-reported",
   "research_priority": "medium",
-  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
-  "required_before_dashboard": "Current official mainland China product page, SKU, stock and checkout; Current mainland price confirmation; China warranty/service policy; Numerical geometry, BB and tire-clearance specification; Resolve the product-page comparison conflict over tires/powermeter",
-  "last_reviewed": "2026-08-17",
+  "price_status": "secondary report of an official mainland markdown; current stock and checkout unverified",
+  "required_before_dashboard": "Current official mainland stock and checkout for the exact 105 Di2 trim; China warranty/service policy; Numerical geometry, BB and tire-clearance specification; Resolve the product-page comparison conflict over tires/powermeter",
+  "last_reviewed": "2026-08-28",
   "source_ids": [
     "van-rysel-rcr-f-pro-official-global-2026-08-17",
     "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
     "decathlon-china-rcrf-route-2026-08-17",
-    "decathlon-china-bike-warranty-2026-08-17"
+    "decathlon-china-bike-warranty-2026-08-17",
+    "van-rysel-rcr-f-pro-smzdm-price-2026-08-28"
   ],
-  "support_note": "An official Decathlon China product route and adult-bicycle warranty document are available; exact RCR-F SKU stock, price and coverage remain unresolved.",
-  "source_note": "Official global page lists £5,000 and the exact build. A secondary China report gives a ¥39,999.90 lead, but no current official mainland checkout amount was verified, so no CNY catalog price is shown.",
+  "support_note": "An official Decathlon China product route and adult-bicycle warranty document are available; exact RCR-F stock, checkout and coverage remain unresolved.",
+  "source_note": "Official global page establishes the exact build. A current secondary market synthesis reports the RCR-F Pro 105 Di2 at ¥19,999 after a July official markdown from ¥29,999; direct stock and checkout were not reproduced.",
   "source_url": "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505",
+  "observed_price": {
+    "amount_cny": 19999,
+    "currency": "CNY",
+    "observed_at": "2026-08-20",
+    "price_basis": "Secondary market report of the July 2026 official mainland RCR-F Pro Shimano 105 Di2 markdown from CNY 29,999",
+    "observation_count": 1,
+    "conditions": "Current stock and checkout were not independently reproduced on 2026-08-28"
+  },
   "facts": {
     "drivetrain": "Shimano 105 Di2 R7170 2×12",
     "brakes": "Shimano 105 hydraulic disc",

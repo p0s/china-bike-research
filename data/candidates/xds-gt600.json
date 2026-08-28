@@ -6,15 +6,17 @@
   "type": "complete-bike",
   "why_interesting": "A mid-budget domestic gravel platform backed by unusually strong manufacturing and support evidence.",
   "missing": [
-    "One exact currently sold groupset and complete BOM",
-    "Exact clearance, wheel, cockpit, and size-specific configuration",
+    "Complete BOM and current sales status for the 11.5 kg SRAM Apex 1×11 build",
+    "Manufacturer maximum tire clearance, cockpit, and size-specific configuration",
     "Current public price and purchase route for that exact build"
   ],
   "status": "exact-build-unproven",
   "source_ids": [
     "xds-manufacturing-government",
     "compiled-research-2026-08-06",
-    "public-xds-gt600-overview-2026-08-17"
+    "public-xds-gt600-overview-2026-08-17",
+    "public-xds-gt600-retailer-build-2026-08-27",
+    "xds-gt600-current-listings-2026-08-28"
   ],
   "observed_at": "2026-06-18",
   "observed_price": {
@@ -25,12 +27,17 @@
     "price_basis": "reference-range"
   },
   "facts": {
-    "drivetrain": "SRAM Apex 1×11 reported",
+    "drivetrain": "SRAM Apex 1×11, 11–42T",
+    "brakes": "SRAM Apex HRD hydraulic disc",
     "frame": "Thru-axle carbon frame and carbon fork",
+    "frame_material": "Carbon frame, fork and seatpost for the archived SRAM Apex 1×11 build; fiber grade and construction process are not published",
+    "frame_construction": "Thru-axle carbon gravel chassis with carbon fork and seatpost; exact lay-up and molding process are not published",
+    "stiffness_evidence": "No meaningful measured stiffness result or sufficiently specific independent ride assessment was found for the archived carbon/Apex build",
     "wheels": "Branta alloy gravel wheels",
-    "tires": "700×40C",
-    "complete_weight_g": 11500
+    "tires": "700×40C fitted",
+    "complete_weight_g": 11500,
+    "complete_weight_basis": "Exact retailer-post claim for the archived SRAM Apex 1×11 build; size, pedals, accessories, tire pressure and weighing method are not stated"
   },
-  "source_note": "A public overview placed a build around ¥10,000 and comments reported about 11.5 kg. The older ¥6,840–7,600 reference range remains retained because exact generation and trim mapping are unresolved.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "An exact GT600 retailer post documents a carbon frame, fork and seatpost build at 11.5 kg with SRAM Apex 1×11, Apex HRD brakes and fitted 700×40C tires. The fitted tire does not establish maximum clearance. Current marketplace listings do not expose a selected-option price or complete specification and conflict with older aluminum/suspension-fork configurations. The older ¥6,840–7,600 reference range remains because exact generation and trim mapping are unresolved.",
+  "last_reviewed": "2026-08-28"
 }

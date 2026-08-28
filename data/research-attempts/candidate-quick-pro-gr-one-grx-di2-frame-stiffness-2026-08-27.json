@@ -1,0 +1,40 @@
+{
+  "id": "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-gr-one-grx-di2"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro GR ONE stiffness ride review",
+          "route": "independent exact-model review summary",
+          "outcome": "found",
+          "result_url": "https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride",
+          "accessed_at": "2026-08-27",
+          "note": "Review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; no measured stiffness score."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "quick-pro-gr-one-ride-review-2026-08-27"
+  ],
+  "retry_after": null,
+  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking."
+}

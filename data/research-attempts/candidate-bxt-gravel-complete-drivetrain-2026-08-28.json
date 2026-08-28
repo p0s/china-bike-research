@@ -1,0 +1,29 @@
+{
+  "id": "candidate-bxt-gravel-complete-drivetrain-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT Gravel 整车 套件 型号", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "BXT sells multiple gravel families and configurations, while the archived marketplace cards identify neither model nor selected drivetrain.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT gravel complete GRX drivetrain", "route": "manufacturer exact BXT-135 complete-bike page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "BXT-135 uses Shimano GRX 2x11, but the archived card cannot be identified as BXT-135." },
+        { "attempt": 2, "query": "BXT gravel complete drivetrain variants", "route": "manufacturer current product catalog", "outcome": "conflict", "accessed_at": "2026-08-28", "note": "Multiple frames and complete-bike configurations prevent a safe drivetrain assignment without a model code or selected option." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["bxt-135-official-2026-08-28", "taobao-snapshot-2026-08-08"],
+  "retry_after": null,
+  "notes": "The candidate stays hidden and unnormalized until its exact model and selected drivetrain are identified."
+}

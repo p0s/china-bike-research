@@ -1,0 +1,16 @@
+{
+  "id": "candidate-laget-discovery-slr-frame-weight-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "laget-discovery-slr" },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-08-27",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "not-run", "attempts": [] },
+    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "LAGET Discovery SLR official weight", "route": "official exact-model page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Official page lists 1.55 kg for size S; hardware inclusion is not stated.", "result_url": "https://lagetbike.com/productinfo/3301187.html" }] }
+  },
+  "status": "found",
+  "accepted_source_ids": ["titanium-laget-discovery-slr-official"],
+  "retry_after": null,
+  "notes": "Stored with the exact size basis and an explicit unresolved hardware basis."
+}

@@ -2,13 +2,23 @@
   "id": "candidate-rinasclta-q-aero-gr-geometry-2026-08-27",
   "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
   "field": "geometry",
-  "priority": "medium",
+  "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "blocked", "blocker": "The exact manufacturer page lists sizes but no numeric geometry chart.", "attempts": [
-    { "attempt": 1, "query": "Rinasclta Q-AERO GR geometry chart", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-27", "note": "Sizes are listed, but no numeric geometry table is exposed." }
-  ] } },
-  "status": "blocked",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "temporarily-exhausted", "attempts": [
+      { "attempt": 1, "query": "Rinasclta Q-AERO GR", "route": "XHS exact-model discovery and ten opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated archive contained 10 posts, 134 comments and 69 media files, but no exact Q-AERO GR post." },
+      { "attempt": 2, "query": "Q-AERO GR Gravel", "route": "XHS model-name discovery and five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated archive contained 5 posts, 60 comments and 20 media files; no exact model geometry appeared." },
+      { "attempt": 3, "query": "Rinasclta Q-AERO 几何 价格", "route": "XHS geometry-and-price discovery with five opened posts", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "The validated archive contained 5 posts, 73 comments and 13 media files; no exact Q-AERO geometry appeared." }
+    ] },
+    "web": { "status": "temporarily-exhausted", "blocker": "The exact manufacturer page lists sizes but no numeric geometry chart.", "attempts": [
+      { "attempt": 1, "query": "Rinasclta Q-AERO GR geometry chart", "route": "manufacturer exact-model page", "outcome": "no-result", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-27", "note": "Sizes are listed, but no numeric geometry table is exposed." },
+      { "attempt": 2, "query": "Rinasclta Q-AERO GR stack reach geometry", "route": "indexed public web search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact numeric geometry table was found." },
+      { "attempt": 3, "query": "Rinasclta Q-AERO GR", "route": "signed-in Taobao exact-model search", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact listing or geometry image was found." }
+    ] }
+  },
+  "status": "temporarily-exhausted",
+  "retry_after": "2026-11-27",
   "accepted_source_ids": [],
-  "notes": "Do not reuse a sibling Rinasclta geometry chart."
+  "notes": "Do not reuse a sibling Rinasclta geometry chart. Archive SHA-256 values: f21d3cd6b033aaee189a28163468596ad7b011c2db6c6f76cbc666b5998cf490, 1c675508c8ae8bf49b5cb69052a307ddc8bd9c76452d74d89e9128397c3c5067 and d7ff37fcc961ec93492691e0a0635b9dc6edf05d98a2514e2b9dabf8ace0d123."
 }

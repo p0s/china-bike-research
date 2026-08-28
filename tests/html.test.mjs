@@ -11,7 +11,7 @@ test('base-aware URLs work for GitHub project pages', () => {
   assert.equal(url('', '/'), '/');
 });
 
-test('layout emits base-aware social image metadata without repository identity', () => {
+test('layout emits base-aware social and structured metadata without repository identity', () => {
   const html = layout({
     base: '/guide',
     repositoryUrl: 'https://github.com/example/guide',
@@ -20,9 +20,29 @@ test('layout emits base-aware social image metadata without repository identity'
     description: 'A bike page',
     path: '/models/bike/',
     image: '/guide/assets/images/placeholders/complete-bike.svg',
+    ogType: 'product',
+    structuredData: { '@context': 'https://schema.org', '@type': 'Product', name: 'Bike <exact>' },
     body: '<p>Bike</p>'
   });
   assert.match(html, /property="og:image" content="https:\/\/example.github.io\/guide\/assets\/images\/placeholders\/complete-bike.svg"/);
+  assert.match(html, /property="og:type" content="product"/);
+  assert.match(html, /property="og:site_name" content="China Bike Research"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
+  assert.match(html, /name="twitter:image" content="https:\/\/example.github.io\/guide\/assets\/images\/placeholders\/complete-bike.svg"/);
+  assert.match(html, /name="robots" content="index,follow,max-image-preview:large"/);
+  assert.match(html, /type="application\/ld\+json">.*Bike \\u003cexact>/);
   assert.doesNotMatch(html, /github\.com\/private-owner|file:\/\/\//i);
+});
+
+test('noindex pages remain followable and do not emit an index directive', () => {
+  const html = layout({
+    repositoryUrl: 'https://github.com/example/guide',
+    title: 'Missing',
+    description: 'Not found',
+    path: '/404.html',
+    noindex: true,
+    body: '<p>Missing</p>'
+  });
+  assert.match(html, /name="robots" content="noindex,follow"/);
+  assert.doesNotMatch(html, /max-image-preview:large/);
 });

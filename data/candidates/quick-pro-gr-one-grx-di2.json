@@ -6,11 +6,11 @@
   "type": "complete-bike",
   "why_interesting": "A race-oriented 45 mm-clearance GRX Di2 complete build with an official global price, complementing the published GR:ONE frameset.",
   "missing": [
-    "Dated mainland-China RMB checkout observation and purchase route",
+    "Map the exact mainland Taobao configuration labels and selected prices to their component packages",
     "Mainland delivery, duties, returns, and warranty-handling confirmation",
     "Official claimed complete-bike weight"
   ],
-  "status": "official-global-complete-bike",
+  "status": "mainland-listing-config-mapping-unresolved",
   "research_priority": "high",
   "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and local warranty evidence",
@@ -22,6 +22,8 @@
     "quick-pro-gr-one-frame-official-2026-08-17",
     "quick-pro-gr-one-complete-official-2026-08-17",
     "quick-pro-warranty-official-2026-08-17",
+    "quick-pro-gr-one-taobao-2026-08-27",
+    "quick-pro-gr-one-ride-review-2026-08-27",
     "public-quick-pro-gr-one-build-2026-08-17",
     "public-quick-pro-gr-one-product-card-2026-08-24"
   ],
@@ -36,16 +38,20 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.quickprousa.com/products/gr-one-shimano",
-  "source_note": "Official global-store price US$4,799. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote. A separate public custom build uses GRX RX825 Di2 2×12 and 700×40C IRC Boken tires; it is not this exact 1×12 factory trim. A domestic exact-model product card also supports the 45 mm maximum but lists an M frame at 919 g versus 879 g on the current global official frameset page; generation and weighing scope remain unresolved, so the exact official-page value is retained.",
+  "source_note": "Official global-store price US$4,799. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote. The exact official Taobao listing exposes six selected complete-bike options from CNY 20,998 to CNY 39,998, but labels them only 配置一 through 配置六 and does not map those labels to a full bill of materials; none is promoted as this exact GRX Di2 build. A separate public custom build uses GRX RX825 Di2 2×12 and 700×40C IRC Boken tires; it is not this exact 1×12 factory trim.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
-    "frame": "High-modulus monocoque carbon",
-    "frame_weight_g": 879,
+    "frame": "Toray T1100 + M65 high-modulus carbon",
+    "frame_material": "Toray T1100 + M65 high-strength and high-modulus carbon",
+    "frame_construction": "Monolith one-piece monocoque molding with fully internal routing and a carbon seatpost",
+    "stiffness_evidence": "An exact-model review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; this is qualitative ride evidence, not a measured lateral-stiffness result",
+    "frame_weight_g": 919,
+    "frame_weight_basis": "Current official mainland listing: size M including paint and frame accessories, ±5%; fork 459 g and seatpost 169 g are separate",
     "bottom_bracket": "T47-68 threaded",
     "tire_clearance_mm": 45,
     "wheels": "RORE Terra 45 Race",
     "cockpit": "CANWIN AELOUS integrated cockpit"
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
-  "last_reviewed": "2026-08-24"
+  "last_reviewed": "2026-08-27"
 }

@@ -1,0 +1,20 @@
+{
+  "id": "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro-sf" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "SAVA Gelaro SF6 independent ride review compliance vibration", "route": "independent exact-model review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://thedailycarrylist.com/sava-gelaro-sf6-review/", "note": "Review reports noticeable vibration damping and compliance on washboard, chip-seal, hardpack and crushed limestone with stable endurance-gravel handling; qualitative only." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["sava-gelaro-sf6-independent-review-2026-08-27"],
+  "retry_after": null,
+  "notes": "Qualitative exact-model ride evidence is retained with its limited basis; no measured stiffness value is claimed."
+}

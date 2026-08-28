@@ -3,10 +3,10 @@
   "target": { "record_type": "variant", "record_id": "sava-gelaro-sf6-cues" },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-25",
+  "searched_at": "2026-08-28",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "blocked", "attempts": [], "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before SF6 could be searched." },
+    "public-post": { "status": "blocked", "attempts": [], "blocker": "The required XHS extension runtime is not loaded in the dedicated research Chrome for this session; no same-session retry was made." },
     "web": {
       "status": "temporarily-exhausted",
       "attempts": [
@@ -19,5 +19,5 @@
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "No attributable exact mainland package price was captured; the website should leave the China price blank."
+  "notes": "No attributable exact mainland package price was captured. Current official China and JD routes identify the U6000 11-speed product but expose no stable CNY checkout value; the global US$1,499/US$1,399 conflict is not a mainland price. The dedicated Taobao UI route was denied by browser safety policy and was not retried or bypassed."
 }

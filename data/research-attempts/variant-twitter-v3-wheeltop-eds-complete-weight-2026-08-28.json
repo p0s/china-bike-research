@@ -1,0 +1,20 @@
+{
+  "id": "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "twitter-v3-wheeltop-eds" },
+  "field": "complete-weight",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "TWITTER Gravel V3 WheelTop EDS TX exact weight basis", "route": "official regional exact-build page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-gravel-v3-wireless-wheeltop-eds-tx-2-12-speed-holographic-l-54cm", "note": "Exact listing states 9.9 kg; size, pedals, accessories and weighing method are not stated." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["twitter-v3-wheeltop-regional-2026-08-28"],
+  "retry_after": null,
+  "notes": "The value is shown neutrally with the incomplete basis preserved."
+}

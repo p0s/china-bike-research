@@ -1,0 +1,20 @@
+{
+  "id": "candidate-irefox-profound-400-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "irefox-profound-400" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "IREFOX Profound 400 ride review stiffness handling", "route": "independent exact-model ride review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.biketo.com/product/52110.html?all=1", "note": "The review reports relaxed, stable handling and a comfortable ride; it publishes no measured stiffness or deflection result." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["irefox-profound-400-biketo-review-2026-08-28"],
+  "retry_after": null,
+  "notes": "Qualitative exact-model ride evidence is shown as such and is not converted into a stiffness score."
+}

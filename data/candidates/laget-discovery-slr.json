@@ -4,15 +4,19 @@
   "model_id": "laget-discovery-slr",
   "category": "gravel",
   "type": "frameset",
-  "why_interesting": "Relatively affordable semi-3D titanium gravel frame with an official domestic price.",
+  "why_interesting": "A semi-3D-printed titanium gravel frameset with an official 1.55 kg size-S weight, 45 mm clearance, UDH and a ¥14,900 domestic price.",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
-    "Rights-cleared exact product image"
+    "Exact included mainland frameset package beyond the stated carbon fork",
+    "China checkout route and domestic warranty entity",
+    "Clarify whether the official 1.55 kg size-S value includes any frameset hardware",
+    "A reliably embeddable exact product image",
+    "Exact titanium alloy grade and an independent measured stiffness or deflection result"
   ],
   "status": "titanium-priority",
   "source_ids": [
-    "titanium-laget-discovery-slr-official"
+    "titanium-laget-discovery-slr-official",
+    "laget-discovery-slr-tiparts-2026-08-27",
+    "laget-discovery-slr-bilibili-2026-08-27"
   ],
   "official_price": {
     "amount_cny": 14900,
@@ -23,5 +27,21 @@
   "source_url": "https://lagetbike.com/productinfo/3301187.html",
   "source_note": "Official page lists retail price ¥14,900.",
   "manufacturing": "semi-3D-printed titanium frame",
-  "last_reviewed": "2026-08-08"
+  "facts": {
+    "frame": "Semi-3D-printed titanium gravel frame with carbon fork",
+    "frame_material": "Titanium frame with carbon fork; exact titanium alloy grade is not published",
+    "frame_construction": "Semi-3D-printed construction: a 3D-printed titanium front triangle joined to a hand-welded rear triangle",
+    "stiffness_evidence": "No exact-model measured stiffness or attributable independent ride assessment was found; the construction method is recorded without inferring a stiffness ranking",
+    "frame_weight_g": 1550,
+    "frame_weight_basis": "Official size-S product-page value; hardware inclusion is not stated",
+    "tire_clearance_mm": 45,
+    "bottom_bracket": "T47×85.5 mm",
+    "sizes": "S, M, L and XL",
+    "seatpost": "31.6 mm",
+    "hanger": "UDH",
+    "axles": "12×100 mm front and 12×142 mm rear",
+    "drivetrain_compatibility": "Mechanical or electronic shifting; official page states 42T maximum for 1×"
+  },
+  "source_note": "The official exact-model page supplies the size-S 1.55 kg value, 700×45C maximum, T47×85.5 mm bottom bracket, UDH, axle standards and ¥14,900 retail price. Hardware inclusion for the weight remains unstated.",
+  "last_reviewed": "2026-08-27"
 }

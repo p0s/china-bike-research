@@ -1,0 +1,20 @@
+{
+  "id": "candidate-pardus-uragano-evo-price-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "pardus-uragano-evo" },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": {
+    "status": "found",
+    "attempts": [
+      { "attempt": 1, "query": "PARDUS Uragano EVO 2023 official retail price", "route": "exact-build editorial review", "outcome": "found", "result_url": "https://www.biketo.com/product/52352.html?all=1", "accessed_at": "2026-08-27", "note": "Historic exact-build retail price is CNY 23,999." },
+      { "attempt": 2, "query": "PARDUS Uragano EVO 2026 marketplace subsidy", "route": "archived Taobao market snapshot", "outcome": "conflict", "accessed_at": "2026-08-27", "note": "CNY 15,527.25 is preserved, but exact selected option and component package are unresolved." },
+      { "attempt": 3, "query": "PARDUS Uragano EVO APEX", "route": "PARDUS official flagship-store exact Tmall listing and selected option", "outcome": "found", "result_url": "https://detail.tmall.com/item.htm?id=739901894991", "accessed_at": "2026-08-27", "note": "Selected APEX 12-speed, brown-green, size-S SKU 6023726818481 shows CNY 18,999. The listing does not publish a complete-bike weight or full component package." }
+    ]
+  } },
+  "status": "found",
+  "accepted_source_ids": ["pardus-uragano-evo-biketo-2026-08-27", "taobao-snapshot-2026-08-08", "pardus-uragano-evo-apex-tmall-2026-08-27"],
+  "retry_after": null,
+  "notes": "The current official-store selected-option price is now resolved. Historic and unresolved-subsidy observations remain attached to their distinct evidence bases and are not treated as the same trim."
+}

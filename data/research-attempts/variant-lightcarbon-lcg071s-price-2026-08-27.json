@@ -6,15 +6,21 @@
   "searched_at": "2026-08-27",
   "required_channels": ["public-post", "web"],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "LightCarbon LCG071S-PRO 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
     "web": { "status": "temporarily-exhausted", "attempts": [
       { "attempt": 1, "query": "LightCarbon LCG071S PRO price CNY", "route": "official product inquiry page", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No public amount; buyer must request a quote.", "result_url": "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html" },
       { "attempt": 2, "query": "LightCarbon LCG071S PRO mainland price", "route": "manufacturer contact route", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Contact route exists but no public CNY package price was exposed.", "result_url": "https://www.lightcarbon.com/contact-us_d2" },
       { "attempt": 3, "query": "LCG071S PRO current checkout", "route": "existing market-reference review", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Existing CNY range is approximate and not a current exact quote." }
     ] }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Current exact CNY quote remains open pending public-post evidence or a dated direct quote."
+  "retry_after": "2026-09-10",
+  "notes": "The exact selected-option CNY quote remains unavailable; approximate 071 Pro references and foreign owner prices are not mapped to LCG071S-PRO."
 }

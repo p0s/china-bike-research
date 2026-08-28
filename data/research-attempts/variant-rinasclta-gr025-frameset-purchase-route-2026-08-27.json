@@ -1,0 +1,14 @@
+{
+  "id": "variant-rinasclta-gr025-frameset-purchase-route-2026-08-27",
+  "target": { "record_type": "variant", "record_id": "rinasclta-gr025-frameset" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Rinasclta GR025 buy official", "route": "manufacturer exact-model direct page", "outcome": "found", "result_url": "https://rinascltabike.com/product/gr025-gravel-frame-700c-50mm/", "accessed_at": "2026-08-27", "note": "The exact GR025 has a current manufacturer-direct product route and package description." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["rinasclta-gr025-official"],
+  "notes": "The global direct route is current; mainland CNY option pricing remains unresolved."
+}

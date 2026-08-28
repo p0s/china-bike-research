@@ -4,31 +4,34 @@
   "model_id": "merida-silex",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Exact official SILEX 7000 build with full geometry and clearance; mainland SKU and checkout remain unresolved.",
+  "why_interesting": "Exact official mainland SILEX 7000 build with full geometry, 45 mm clearance and a CNY 20,800 suggested retail price.",
   "missing": [
-    "Mainland China SKU, exact dealer stock and current price",
+    "Exact dealer stock, selected checkout and fulfilment state for the mainland SKU",
     "Frame weight and exact conditions for the available complete-bike measurement",
-    "Exact-model mainland warranty eligibility",
-    "Whether the displayed CNY price is current mainland suggested retail"
+    "Exact-model mainland warranty eligibility"
   ],
-  "status": "official-global-reference",
+  "status": "official-mainland-list-documented",
   "research_priority": "high",
-  "price_status": "official foreign/reference evidence; mainland CNY price unverified",
-  "required_before_dashboard": "Mainland China SKU, dealer/checkout route and current stock; Frame weight and exact conditions for the available complete-bike measurement; Exact mainland warranty policy; Whether the displayed CNY price is current mainland suggested retail",
-  "last_reviewed": "2026-08-24",
+  "price_status": "official mainland suggested retail; dealer stock and checkout unverified",
+  "required_before_dashboard": "Exact dealer stock and checkout fulfilment; Frame weight and exact conditions for the available complete-bike measurement; Exact mainland warranty policy",
+  "last_reviewed": "2026-08-28",
   "source_ids": [
     "merida-silex-7000-25-official-cny-reference-2026-08-17",
     "merida-china-sales-channels-2026-08-17",
     "merida-warranty-official-2026-08-17",
-    "public-merida-silex-7000-25-weight-2026-08-24"
+    "public-merida-silex-7000-25-weight-2026-08-24",
+    "merida-silex-7000-long-term-review-2026-08-28"
   ],
-  "support_note": "Merida publishes official mainland sales channels and a designated-dealer warranty route, but the exact Silex SKU, stock and price remain unresolved.",
-  "source_note": "Official Merida zh-TW reference supports the exact build, geometry, 45 mm clearance and a displayed ¥20,800 reference. It is not evidence of a mainland-China checkout price. A separate exact-model community measurement puts a size-M complete bike at approximately 9.8 kg.",
+  "support_note": "Merida publishes the exact mainland SKU, CNY 20,800 suggested retail, dealer locator, official-mall route and designated-dealer warranty route; exact dealer stock and checkout fulfilment remain unresolved.",
+  "source_note": "Official Merida mainland page supports the exact build, geometry, 45 mm clearance and CNY 20,800 suggested retail. A separate exact-model community measurement puts a size-M complete bike at approximately 9.8 kg.",
   "source_url": "https://www.merida.cn/zh-tw/bikefinder/bike/98/%3Aslug.html",
   "facts": {
     "drivetrain": "Shimano GRX 820 2×12",
     "brakes": "Shimano GRX 820 with RT64 rotors",
     "frame": "SILEX CF2 II carbon with carbon fork",
+    "frame_material": "SILEX CF2 II full-carbon frame and SILEX II CF2 carbon fork; exact fiber grade and lay-up are not published",
+    "frame_construction": "Dropped-chainstay carbon chassis with hidden cable routing and multiple frame/fork mounts; the exact page also presents Merida Nano-carbon and AWS anti-wrinkle technologies without publishing a model-specific lay-up or test protocol",
+    "stiffness_evidence": "A current exact-model long-term review reports relaxed long-distance handling and no mechanical issues over nearly 1,000 km; an older non-stock 2023 build was described as very stiff at the bottom bracket/head tube. Rider impressions only, not a measured current-build result",
     "bottom_bracket": "Shimano SM-BBR60",
     "wheels": "Easton EA70AX",
     "tires": "Maxxis Rambler",
@@ -36,5 +39,13 @@
     "tire_clearance_mm": 45,
     "mounts": "Multiple frame and fork mounts",
     "sizes": "XXS, XS, S, M, L, XL"
+  },
+  "official_price": {
+    "amount_cny": 20800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-28",
+    "price_basis": "SILEX 7000 model year 2025 complete-bike suggested retail price",
+    "conditions": "Official mainland suggested retail; exact dealer stock, checkout total and fulfilment remain unverified"
   }
 }

@@ -6,7 +6,7 @@
   },
   "field": "frame-weight",
   "priority": "high",
-  "searched_at": "2026-08-25",
+  "searched_at": "2026-08-28",
   "required_channels": [
     "public-post",
     "web"
@@ -15,7 +15,7 @@
     "public-post": {
       "status": "blocked",
       "attempts": [],
-      "blocker": "The sequential XHS lane stopped on a malformed detail response during the preceding Twitter target, before Gelaro S8 could be searched."
+      "blocker": "The required XHS extension runtime is not loaded in the dedicated research Chrome for this session; no same-session retry was made."
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -51,5 +51,5 @@
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "The exact official page was rechecked on 2026-08-25 and still gives only complete-bike weight. The prior three web routes remain exhausted; frame-only weight stays unknown."
+  "notes": "The exact official page was rechecked on 2026-08-28 and still gives only complete-bike weight. The prior three web routes remain exhausted; frame-only weight stays unknown and the public-post lane is blocked for this session."
 }

@@ -1,13 +1,42 @@
 {
   "id": "irefox-profound-400",
   "name": "IREFOX Profound 400",
+  "model_id": "irefox-profound-400",
+  "brand_id": "irefox",
+  "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Older carbon 40C complete with 105/GRX-style parts.",
+  "why_interesting": "An exact historical T700-carbon all-road build with Shimano 105 R7000 2×11 and reviewed 40C tires at a low launch price.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7000 mechanical 2×11 with 50/34T crank and 11–34T cassette",
+    "brakes": "Cable-actuated hydraulic disc brakes with 160 mm rotors",
+    "frame": "IREFOX Profound 400 T700 carbon frame",
+    "frame_material": "T700 carbon (official exact-model catalog); fiber supplier, lay-up and molding process are not disclosed",
+    "stiffness_evidence": "Exact-model ride review describes relaxed, stable handling and a comfortable ride; no measured stiffness or deflection result was published",
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "The reviewed bike was fitted with Schwalbe 700×40C tires and the reviewer described 40C as the observed maximum; this is not a manufacturer maximum-clearance specification",
+    "wheels": "IREFOX aluminum wheelset",
+    "tires": "Schwalbe 700×40C"
+  },
+  "reference_price_kind": "official",
+  "official_price": {
+    "amount_cny": 7299,
+    "currency": "CNY",
+    "price_type": "historical-launch",
+    "observed_at": "2023-08-10",
+    "price_basis": "Exact Profound 400 launch complete-bike package",
+    "conditions": "Historical list price; launch promotion was ¥6,299 and a conditional share/review rebate reduced the effective amount to ¥5,999. No current checkout or stock is established."
+  },
   "missing": [
-    "Stable current SKU",
-    "Current stock",
-    "Warranty entity"
+    "Exact complete-bike weight and measurement basis",
+    "Manufacturer maximum tire clearance distinct from the reviewed 40C fitted/observed limit",
+    "Current stock, checkout price, purchase route and warranty entity",
+    "Published lay-up or molding details and measured stiffness evidence"
   ],
-  "status": "old-stock-only",
-  "last_reviewed": "2026-08-06"
+  "status": "historical-exact-build-documented",
+  "source_ids": [
+    "irefox-profound-400-official-2026-08-28",
+    "irefox-profound-400-biketo-review-2026-08-28",
+    "round3-irefox-profound-launch-review-84f8968e36"
+  ],
+  "last_reviewed": "2026-08-28"
 }

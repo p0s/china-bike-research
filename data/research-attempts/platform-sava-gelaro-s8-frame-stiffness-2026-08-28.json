@@ -1,0 +1,22 @@
+{
+  "id": "platform-sava-gelaro-s8-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "sava-gelaro-s8" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "SAVA Gelaro S8 stiffness test deflection", "route": "manufacturer current exact-model page", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s", "note": "Shock-absorption, comfort and stability language is marketing and no stiffness measurement is published." },
+        { "attempt": 2, "query": "SAVA Gelaro S8 independent review stiffness ride", "route": "independent exact-model road and gravel reviews", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No sufficiently specific exact-model review with attributable stiffness or flex evidence was located." },
+        { "attempt": 3, "query": "SAVA R21 Gelaro S8 frame flex laboratory test", "route": "technical test and owner-measurement sources", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No measured deflection, bottom-bracket stiffness or comparable exact-frame result was found." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No meaningful exact-model stiffness evidence was found after three distinct web routes; the site records that disposition rather than a generic score."
+}

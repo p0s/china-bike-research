@@ -1,0 +1,15 @@
+{
+  "id": "candidate-laget-discovery-one-pro-frame-material-2026-08-27",
+  "target": { "record_type": "candidate", "record_id": "laget-discovery-one-pro" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-27",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "LAGET Discovery ONE PRO fully 3D printed titanium", "route": "authorized retailer exact frameset page", "outcome": "found", "result_url": "https://tipartstitanium.com/products/laget-discovery-one-pro-titanium-gravel-frameset-3d-printed-titanium-1-380g-s-700x45c", "accessed_at": "2026-08-27", "note": "Exact listing identifies fully 3D-printed titanium construction and a carbon fork." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["laget-discovery-one-pro-tiparts-2026-08-27", "titanium-laget-discovery-one-pro-official"],
+  "retry_after": null,
+  "notes": "Exact construction is recorded; an unpublished titanium alloy designation is not inferred."
+}

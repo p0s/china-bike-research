@@ -13,8 +13,11 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "PARDUS Robin EVO 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,10 +52,10 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [
     "round3-pardus-road-bike-category-votre-service-course-29b9bf5cf5"
   ],
-  "retry_after": null,
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-10",
+  "notes": "The current exact competition-build mainland price remains unavailable; active official and JD routes do not expose an attributable amount."
 }

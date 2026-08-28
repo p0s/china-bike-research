@@ -1,0 +1,22 @@
+{
+  "id": "platform-af01-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "af01" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "AF01 Standard stiffness test deflection", "route": "manufacturer exact-model page", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://afbicycles.com/products/af01-standard-carbon-gravel-frame", "note": "Manufacturer supplies generic stiffness, power-transfer and handling language but no numeric test or protocol." },
+        { "attempt": 2, "query": "AF01 Standard independent ride stiffness review", "route": "secondary exact-model aggregation", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://mybike.parts/bike_parts/1191-assisting-force-af01-standard-carbon-gravel-bike-frame-versatile-performance", "note": "Aggregated stiff/reactive/precise impressions are anecdotal and do not expose an independent test basis." },
+        { "attempt": 3, "query": "Assisting Force AF01 frame stiffness measurement", "route": "independent measurement search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No exact-model independent stiffness or deflection measurement was found." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "The platform records the bounded absence and does not turn marketing adjectives into a stiffness ranking."
+}
