@@ -34,46 +34,16 @@ function breadcrumb({ siteUrl, base, path, name }) {
   };
 }
 
-export function catalogStructuredData({ siteUrl, base, description, products }) {
+export function websiteStructuredData({ siteUrl, base, description }) {
   const home = absoluteUrl(siteUrl, base, '/');
-  const itemList = products.map((product, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    item: {
-      '@type': 'Product',
-      name: `${product.brand.name} ${product.variant.name}`,
-      url: absoluteUrl(siteUrl, base, `/models/${product.variant.id}/`),
-      brand: { '@type': 'Brand', name: product.brand.name },
-      category: product.category ?? product.platform.category
-    }
-  }));
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        '@id': websiteId(siteUrl, base),
-        url: home,
-        name: 'China Bike Research',
-        description,
-        inLanguage: 'en'
-      },
-      {
-        '@type': 'CollectionPage',
-        '@id': `${home}#webpage`,
-        url: home,
-        name: 'Bikes and framesets available in China',
-        description,
-        isPartOf: { '@id': websiteId(siteUrl, base) },
-        mainEntity: {
-          '@type': 'ItemList',
-          name: 'Published bike and frameset comparisons',
-          numberOfItems: itemList.length,
-          itemListElement: itemList
-        },
-        inLanguage: 'en'
-      }
-    ]
+    '@type': 'WebSite',
+    '@id': websiteId(siteUrl, base),
+    url: home,
+    name: 'China Bike Research',
+    description,
+    inLanguage: 'en'
   };
 }
 

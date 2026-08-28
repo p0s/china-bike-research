@@ -25,7 +25,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
   assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
-  assert.match(html, /"@type":"CollectionPage"/);
+  assert.doesNotMatch(html, /"itemListElement"/);
 });
 
 test('products without verified photos omit the image region and social placeholder', () => {

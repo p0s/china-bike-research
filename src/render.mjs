@@ -23,9 +23,9 @@ import {
   url
 } from './lib/html.mjs';
 import {
-  catalogStructuredData,
   collectionStructuredData,
   productPageStructuredData,
+  websiteStructuredData,
   webApplicationStructuredData
 } from './lib/seo.mjs';
 
@@ -1103,14 +1103,10 @@ export function renderHome(ctx) {
     current: 'catalog',
     path: '/',
     body,
-    structuredData: catalogStructuredData({
+    structuredData: websiteStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,
-      description,
-      products: ctx.products.map((product) => ({
-        ...product,
-        category: categoryLabel(product.platform.category)
-      }))
+      description
     })
   });
 }

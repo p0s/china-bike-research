@@ -1,26 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  catalogStructuredData,
   latestDate,
   productPageStructuredData,
-  sitemapXml
+  sitemapXml,
+  websiteStructuredData
 } from '../src/lib/seo.mjs';
 
-test('catalog structured data exposes published products without inventing offers', () => {
-  const data = catalogStructuredData({
+test('homepage structured data identifies the site without duplicating the catalog payload', () => {
+  const data = websiteStructuredData({
     siteUrl: 'https://china-bikes.example',
     base: '',
-    description: 'Bike comparison',
-    products: [{
-      brand: { name: 'Example' },
-      platform: { category: 'gravel-race' },
-      variant: { id: 'example-gravel', name: 'Gravel', kind: 'complete-bike' }
-    }]
+    description: 'Bike comparison'
   });
-  const collection = data['@graph'].find((entry) => entry['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 1);
-  assert.equal(collection.mainEntity.itemListElement[0].item.url, 'https://china-bikes.example/models/example-gravel/');
+  assert.equal(data['@type'], 'WebSite');
+  assert.equal(data.url, 'https://china-bikes.example/');
+  assert.equal(JSON.stringify(data).includes('itemListElement'), false);
   assert.equal(JSON.stringify(data).includes('offers'), false);
 });
 
