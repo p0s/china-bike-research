@@ -11,6 +11,7 @@
     "Current checkout conditions and domestic warranty route"
   ],
   "status": "exact-trim-unproven",
+  "existing_record_id": "pardus-super-sport-gen2-egr",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -25,11 +26,16 @@
   "source_ids": [
     "public-pardus-super-sport-gen2-price-2026-08-17",
     "pardus-super-sport-gen2-uaecycle-2026-08-17",
-    "public-pardus-super-sport-105-build-2026-08-17"
+    "public-pardus-super-sport-105-build-2026-08-17",
+    "public-pardus-super-sport-gen2-launch-2026-08-28",
+    "public-pardus-super-sport-gen2-owner-weight-2026-08-28",
+    "pardus-super-sport-gen2-taobao-2026-08-28"
   ],
   "facts": {
     "drivetrain": "Single-chainring electronic shifting reported for the ¥4,999 configuration; exact system unconfirmed",
-    "frame": "Carbon frame reported"
+    "frame": "Carbon frame reported",
+    "frame_weight_g": 1147,
+    "frame_weight_basis": "Painted XS frame owner-scale reading; small-hardware inclusion and scale calibration unspecified"
   },
-  "source_note": "Public replies distinguish a ¥4,999 single-chainring electronic configuration from a ¥6,999 higher-spec option; the exact higher-trim BOM remains unresolved. A separate 105 hydraulic build was reported around 8.2 kg after a carbon-wheel upgrade, with a poorly scoped ¥9,000 landed reply retained only as context."
+  "source_note": "Public replies distinguish a ¥4,999 single-chainring electronic configuration from a ¥6,999 higher-spec option; the exact higher-trim BOM remains unresolved. A separate 105 hydraulic build was reported around 8.2 kg after a carbon-wheel upgrade, with a poorly scoped ¥9,000 landed reply retained only as context. A current exact-model Taobao listing supplies a purchase lead but not a selected-option checkout price."
 }

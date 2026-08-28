@@ -68,8 +68,16 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "public-pardus-super-sport-gen2-owner-weight-2026-08-28"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["public-pardus-super-sport-gen2-owner-weight-2026-08-28"],
+    "note": "A later validated exact-post archive supplies the owner-scale frame and fork readings without rewriting the earlier blocked attempt history."
+  },
   "retry_after": null,
-  "notes": "The exact retailer's 8.6 kg value is complete-bike weight and is not converted into frame-only weight."
+  "notes": "The owner-scale frame and fork values are now stored with their exact size and measurement caveats. The retailer's separate 8.6 kg complete-bike value is not converted into frame weight."
 }
