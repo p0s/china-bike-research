@@ -37,6 +37,18 @@ test('homepage exposes crawlable evidence-led discovery without duplicating the 
   assert.match(html, /href="\/china-bike-research\/prices\/">Price ranges<\/a>/);
 });
 
+test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {
+  const payload = JSON.parse(html.match(/<script type="application\/json" id="catalog-data">([^<]+)<\/script>/)?.[1] ?? '[]');
+  const frameset = payload.find((item) => item.estimated === true);
+  const complete = payload.find((item) => item.type === 'Complete bike');
+  assert.ok(frameset && Number.isFinite(frameset.frameLow) && Number.isFinite(frameset.frameHigh));
+  assert.ok(complete);
+  assert.equal('estimated' in complete, false);
+  assert.equal('frameLow' in complete, false);
+  assert.equal('frameHigh' in complete, false);
+  assert.ok(payload.every((item) => item.estimated === true || (!('frameLow' in item) && !('frameHigh' in item))));
+});
+
 test('products without verified photos omit the image region and social placeholder', () => {
   const context = {
     data,
