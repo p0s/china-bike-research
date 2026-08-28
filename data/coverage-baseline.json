@@ -7,8 +7,8 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 507,
-      "images": 180,
+      "sources": 508,
+      "images": 181,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
@@ -16,10 +16,10 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 548
+      "researchAttempts": 549
     },
     "image_accuracy": {
-      "exact-platform": 62,
+      "exact-platform": 63,
       "exact-variant": 79,
       "illustrative": 2,
       "same-model-different-color": 17,
@@ -27,7 +27,7 @@
       "same-platform": 12
     },
     "image_hosting": {
-      "local": 2,
+      "local": 3,
       "remote": 178
     },
     "candidate_prices": {
@@ -403,6 +403,7 @@
       "public-sava-a4-product-2026-08-17",
       "public-sava-hawkeye-price-2026-08-17",
       "public-seka-exaero-build-2026-08-17",
+      "public-seka-exaero-gr-road-wheel-build-2026-08-28",
       "public-seka-exaero-launch-price-2026-08-27",
       "public-seka-exaero-owner-2026-08-17",
       "public-seka-exaero-rdc-owner-build-2026-08-27",
@@ -844,6 +845,7 @@
       "scott-addict-rc-40-primary-image",
       "scott-foil-rc-10-primary-image",
       "seka-exaero-gr-primary-image",
+      "seka-exaero-gr-xhs-rear-profile-gallery",
       "seka-spear-rdc-primary-image",
       "spcycle-g026-primary-image",
       "spcycle-g028-primary-image",
@@ -1373,6 +1375,7 @@
       "candidate-pardus-uragano-sport-tire-clearance-2026-08-27",
       "candidate-quick-gr-one-price-2026-08-27",
       "candidate-quick-gr-one-purchase-route-2026-08-27",
+      "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-08-28",
       "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27",
       "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27",
       "candidate-quick-pro-tr-one-bom-2026-08-17",
@@ -3241,9 +3244,12 @@
         "frame.bottom_bracket",
         "frame.cable_routing",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -7165,6 +7171,21 @@
       ],
       "public-seka-exaero-build-2026-08-17": [
         "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "public-seka-exaero-gr-road-wheel-build-2026-08-28": [
+        "accessed_at",
+        "capture.archive_bytes",
+        "capture.archive_sha256",
+        "capture.scope",
         "language",
         "notes",
         "publisher",
@@ -13195,6 +13216,34 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "seka-exaero-gr-xhs-rear-profile-gallery": [
+        "alt",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "platform_id",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "seka-spear-rdc-primary-image": [
         "alt",
@@ -22406,6 +22455,21 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -27904,6 +27968,7 @@
       ],
       "winspace-g3": [
         "brand_id=winspace",
+        "source_ids=winspace-g3-carbonvelo-review-2026-08-27",
         "source_ids=winspace-g3-official",
         "source_ids=winspace-g3-official-2026-08-16",
         "source_ids=winspace-g3-xhs-build-matrix-2026-08-27",
@@ -28596,6 +28661,7 @@
       "public-sava-a4-product-2026-08-17": [],
       "public-sava-hawkeye-price-2026-08-17": [],
       "public-seka-exaero-build-2026-08-17": [],
+      "public-seka-exaero-gr-road-wheel-build-2026-08-28": [],
       "public-seka-exaero-launch-price-2026-08-27": [],
       "public-seka-exaero-owner-2026-08-17": [],
       "public-seka-exaero-rdc-owner-build-2026-08-27": [],
@@ -29491,6 +29557,10 @@
         "platform_id=seka-exaero-gr",
         "source_id=seka-exaero-gr-official-store-2026-08-09",
         "variant_ids=seka-exaero-gr-frameset"
+      ],
+      "seka-exaero-gr-xhs-rear-profile-gallery": [
+        "platform_id=seka-exaero-gr",
+        "source_id=public-seka-exaero-gr-road-wheel-build-2026-08-28"
       ],
       "seka-spear-rdc-primary-image": [
         "candidate_id=seka-spear-rdc",
@@ -31658,6 +31728,9 @@
       ],
       "candidate-quick-gr-one-purchase-route-2026-08-27": [
         "target.record_id=missing-china-price-quick-pro-gr-one"
+      ],
+      "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-08-28": [
+        "target.record_id=quick-pro-gr-one-grx-di2"
       ],
       "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": [
         "target.record_id=quick-pro-gr-one-grx-di2"
@@ -34367,6 +34440,14 @@
         "identity": 3,
         "price": 0,
         "specification": 2
+      }
+    },
+    "public-seka-exaero-gr-road-wheel-build-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
       }
     },
     "public-seka-exaero-launch-price-2026-08-27": {
@@ -39348,6 +39429,19 @@
       "accepted_source_ids": [
         "quick-gr-one-china-official-2026-08-25"
       ]
+    },
+    "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Quick GR ONE complete weight\",\"validated local XHS archive inventory\",\"blocked\",\"2026-08-28\",\"No exact GR:ONE complete-weight post was available offline, and no live XHS page was opened after the runtime preflight failed.\",null]",
+        "[\"web\",1,\"Quick GR ONE GRX Di2 complete weight official\",\"official exact complete-bike page\",\"no-result\",\"2026-08-28\",\"The official page distinguishes 1x12 and 2x12 builds but publishes no complete-bike total.\",\"https://www.quickprousa.com/products/gr-one-grx-di2-2x12s\"]",
+        "[\"web\",2,\"Quick GR ONE Taobao configuration weight\",\"exact selected-option Taobao listing\",\"no-result\",\"2026-08-28\",\"The exact listing exposes six selected prices plus frame, fork and seatpost weights, but no complete-bike weight or configuration-to-BOM mapping.\",\"https://item.taobao.com/item.htm?id=998206973974\"]",
+        "[\"web\",3,\"Quick GR ONE review total weight\",\"exact-model ride review\",\"no-result\",\"2026-08-28\",\"The exact-model review supplies ride evidence but no attributable complete-bike weight.\",\"https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride\"]"
+      ],
+      "accepted_source_ids": []
     },
     "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27": {
       "channel_attempt_counts": {
@@ -45056,6 +45150,13 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "seka-exaero-gr-xhs-rear-profile-gallery": {
+      "target": "platforms:seka-exaero-gr",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "seka-spear-rdc-primary-image": {
       "target": "candidates:seka-spear-rdc",

@@ -7,6 +7,16 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const findings = [];
+const referencedSourcedMedia = new Set();
+
+for (const entry of fs.readdirSync(path.join(root, 'data/images'))) {
+  if (!entry.endsWith('.json')) continue;
+  const image = JSON.parse(fs.readFileSync(path.join(root, 'data/images', entry), 'utf8'));
+  if (image.hosting?.mode !== 'local' || image.rights?.status !== 'source-attributed-rehost') continue;
+  for (const value of [image.hosting.local_path, ...(image.hosting.variants ?? []).map((variant) => variant.url)]) {
+    if (typeof value === 'string') referencedSourcedMedia.add(value.replace(/^\//, ''));
+  }
+}
 
 const patterns = [
   ['working-container path', /\/(?:mnt\/data|home\/oai)(?:\/[^\s"'<>]*)?/g],
@@ -29,7 +39,12 @@ function walk(directory) {
     if (entry.isDirectory()) walk(absolute);
     else {
       const extension = path.extname(entry.name).toLowerCase();
-      if (thirdPartyBinaryExtensions.has(extension)) findings.push(`${relative}: third-party media binary is forbidden in the public repository`);
+      if (thirdPartyBinaryExtensions.has(extension)) {
+        const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
+        if (!(extension === '.webp' && validSourcedPath && referencedSourcedMedia.has(relative))) {
+          findings.push(`${relative}: third-party media binary is outside the validated sourced-image contract`);
+        }
+      }
       else if (!ignoredFiles.has(relative) && (textExtensions.has(extension) || entry.name === 'LICENSE' || entry.name === 'LICENSE-DATA')) scan(absolute, relative);
     }
   }
@@ -55,4 +70,4 @@ if (findings.length) {
   for (const finding of findings) console.error(`- ${finding}`);
   process.exit(1);
 }
-console.log('Privacy scan passed: no common personal-data, local-path, credential, private-network, order-ID, chat-export, or third-party media-binary patterns found.');
+console.log('Privacy scan passed: no common personal-data, local-path, credential, private-network, order-ID, chat-export, or unvalidated media-binary patterns found.');

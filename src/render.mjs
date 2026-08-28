@@ -56,7 +56,7 @@ function imageUrl(ctx, image) {
     : url(ctx.base, image.hosting.local_path);
 }
 
-function responsiveImage(image, { hero = false, comparison = false } = {}) {
+function responsiveImage(ctx, image, { hero = false, comparison = false } = {}) {
   const variants = image?.hosting?.variants;
   if (!Array.isArray(variants) || variants.length === 0) return null;
   const sorted = [...variants].sort((a, b) => a.width - b.width);
@@ -64,7 +64,7 @@ function responsiveImage(image, { hero = false, comparison = false } = {}) {
   return {
     width: largest.width,
     height: largest.height,
-    srcset: sorted.map((variant) => `${variant.url} ${variant.width}w`).join(', '),
+    srcset: sorted.map((variant) => `${image.hosting.mode === 'local' ? url(ctx.base, variant.url) : variant.url} ${variant.width}w`).join(', '),
     sizes: comparison
       ? '120px'
       : hero
@@ -73,8 +73,8 @@ function responsiveImage(image, { hero = false, comparison = false } = {}) {
   };
 }
 
-function responsiveAttributes(image, options) {
-  const responsive = responsiveImage(image, options);
+function responsiveAttributes(ctx, image, options) {
+  const responsive = responsiveImage(ctx, image, options);
   if (!responsive) return { width: 1200, height: 800, attributes: '' };
   return {
     ...responsive,
@@ -82,8 +82,8 @@ function responsiveAttributes(image, options) {
   };
 }
 
-function comparisonImageFields(image) {
-  const responsive = responsiveImage(image, { comparison: true });
+function comparisonImageFields(ctx, image) {
+  const responsive = responsiveImage(ctx, image, { comparison: true });
   return responsive ? {
     imageSrcset: responsive.srcset,
     imageSizes: responsive.sizes,
@@ -108,7 +108,7 @@ function imageElement(ctx, product, { hero = false, image = product.image, class
   if (!source) return '';
   const alt = decorative ? '' : image?.alt ?? `${product.brand.name} ${product.variant.name}`;
   const remote = image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(image, { hero });
+  const responsive = responsiveAttributes(ctx, image, { hero });
   return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image>`;
 }
 
@@ -119,7 +119,7 @@ function candidateImageElement(ctx, entry, { hero = false, image = entry.image, 
     ? ''
     : image?.alt ?? `${entry.candidate.name} candidate image`;
   const remote = image?.hosting.mode === 'remote';
-  const responsive = responsiveAttributes(image, { hero });
+  const responsive = responsiveAttributes(ctx, image, { hero });
   return `<img${className ? ` class="${escapeAttr(className)}"` : ''} src="${escapeAttr(source)}"${responsive.attributes} alt="${escapeAttr(alt)}" width="${responsive.width}" height="${responsive.height}" ${hero ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${remote ? ' referrerpolicy="no-referrer"' : ''}${decorative ? ' aria-hidden="true"' : ''}${galleryHero ? ' data-gallery-hero' : ''} data-product-image>`;
 }
 
@@ -783,7 +783,7 @@ function comparisonSummary(ctx, product) {
     ...(image ? {
       image,
       imageRemote: product.image?.hosting.mode === 'remote',
-      ...comparisonImageFields(product.image)
+      ...comparisonImageFields(ctx, product.image)
     } : {}),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
     buildBaseId: product.variant.id,
@@ -843,7 +843,7 @@ function candidateComparisonSummary(ctx, entry) {
     ...(image ? {
       image,
       imageRemote: entry.image?.hosting.mode === 'remote',
-      ...comparisonImageFields(entry.image)
+      ...comparisonImageFields(ctx, entry.image)
     } : {}),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
     ...(entry.kind && entry.identifiableModel ? { buildBaseId: entry.id, buildBaseKind: entry.kind, builderEligible: true } : {}),
@@ -1649,12 +1649,12 @@ export function renderMethodology(ctx) {
 }
 
 export function renderPrivacy(ctx) {
-  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike comparisons, the optional frameset allowance and the Build-page configuration are stored only in the visitor’s browser and may also be encoded in the URL when a visitor chooses or copies a build.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected XHS and marketplace evidence images load from the project’s separate Contabo media origin. That service disables application access logs and serves only sanitized, metadata-free WebP derivatives, but the VPS and network providers still process a normal HTTPS request. Public source links are reduced to identity-safe canonical post or listing URLs. Images use <code>referrerpolicy="no-referrer"</code>; when a source fails, the image is hidden and the product facts remain available.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, location metadata, and share or referral parameters before submitting screenshots, photos, or source links. A removal request may identify the model and canonical source URL without publishing private contact details.</p>`;
+  const html = `<h2>Static site</h2><p>The site has no account, analytics, advertising tracker, newsletter, payment system, or backend. Bike comparisons, the optional frameset allowance and the Build-page configuration are stored only in the visitor’s browser and may also be encoded in the URL when a visitor chooses or copies a build.</p><h2>Product images</h2><p>Some product photos load from their credited manufacturer or retailer, which receives a normal image request. Selected XHS and marketplace evidence images may load from the project’s separate media origin or from the same GitHub Pages site as small sanitized WebP derivatives. Public source links are reduced to identity-safe canonical post or listing URLs. Remote images use <code>referrerpolicy="no-referrer"</code>; when a source fails, the image is hidden and the product facts remain available.</p><h2>Optional videos</h2><p>Model pages do not contact YouTube when they first load. A video request is made to YouTube’s privacy-enhanced <code>youtube-nocookie.com</code> embed only after the visitor presses “Load video”; videos do not autoplay. The separate “Watch on YouTube” link opens YouTube directly.</p><h2>Public contributions</h2><p>GitHub issues and pull requests are public. Remove names, account details, addresses, order IDs, payment information, faces, license plates, location metadata, and share or referral parameters before submitting screenshots, photos, or source links. A removal request may identify the model and canonical source URL without publishing private contact details.</p>`;
   return prosePage(ctx, { title: 'Privacy', desc: 'No accounts or analytics; optional third-party media is disclosed.', path: '/privacy/', html });
 }
 
 export function renderImagePolicy(ctx) {
-  const html = `<h2>Image use</h2><p>The public repository stores structured credits and remote URLs, never third-party image files. Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. Copyright remains with the original owner and the source stays visibly linked.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before external hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
+  const html = `<h2>Image use</h2><p>Manufacturer images are preferred. Selected XHS and Taobao images may be shown when they identify an exact bicycle or expose useful geometry, size, clearance, weight, package, compatibility, or aero information. They normally stay remote; a small optimized WebP derivative may be stored with the site when a stable remote display is unavailable. Copyright remains with the original owner and the source stays visibly linked.</p><h2>Source and privacy</h2><p>Every community or marketplace image needs an identity-safe canonical source URL, owner or seller credit, exact-model mapping, alt text, content hashes, and a completed privacy review. Share, referral, invite, tracking, session, and account parameters are removed. Images are stripped of metadata and visible personal identifiers before hosting.</p><h2>Accuracy</h2><p>An image can show the exact configuration, the exact frame platform, the same platform with different components, another color, or another regional build. When the image is not exact, the catalog shows an information marker.</p><h2>Failures and corrections</h2><p>Broken external images are hidden instead of being replaced by a generic bicycle drawing. Use <a href="${ctx.repositoryUrl}/issues">GitHub issues</a> to report a broken link, attribution concern, inaccurate image, removal request, or a better replacement. Do not publish private contact details in an issue.</p><p><a href="${url(ctx.base, '/image-sources/')}">See every image source and credit.</a></p>`;
   return prosePage(ctx, { title: 'Product images', desc: 'How product photos are sourced, labelled and replaced when unavailable.', path: '/image-policy/', html });
 }
 

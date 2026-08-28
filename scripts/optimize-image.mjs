@@ -5,6 +5,10 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = path.resolve(import.meta.dirname, '..');
+const repositorySourcedRoots = [
+  path.join(repositoryRoot, 'assets/images/sourced/xhs'),
+  path.join(repositoryRoot, 'assets/images/sourced/taobao')
+];
 
 export const DEFAULT_VARIANTS = Object.freeze([
   Object.freeze({ purpose: 'card', maxWidth: 480, minimumWidth: 360, maxBytes: 40_000 }),
@@ -53,18 +57,25 @@ export function parseArguments(argv) {
   if (argv.includes('--help')) return { help: true };
   const supported = new Set(['--input', '--output', '--slug']);
   const values = {};
-  for (let index = 0; index < argv.length; index += 2) {
+  let repositoryLocal = false;
+  for (let index = 0; index < argv.length;) {
     const flag = argv[index];
+    if (flag === '--repository-local') {
+      repositoryLocal = true;
+      index += 1;
+      continue;
+    }
     const value = argv[index + 1];
     if (!supported.has(flag) || !value || value.startsWith('--')) {
       throw new Error(`invalid argument near ${flag ?? '(end)'}`);
     }
     values[flag.slice(2)] = value;
+    index += 2;
   }
   for (const name of ['input', 'output', 'slug']) {
     if (!values[name]) throw new Error(`missing --${name}`);
   }
-  return { input: values.input, output: values.output, slug: validateSlug(values.slug) };
+  return { input: values.input, output: values.output, slug: validateSlug(values.slug), repositoryLocal };
 }
 
 function run(command, args, { allowFailure = false } = {}) {
@@ -136,13 +147,17 @@ function encodeVariant({ input, temporaryDirectory, specification, sourceWidth }
   throw new Error(`${specification.purpose} variant could not meet ${specification.maxBytes} bytes without dropping below ${specification.minimumWidth}px or quality 40`);
 }
 
-export function optimizeImage({ input, output, slug, variants = DEFAULT_VARIANTS, now = new Date() }) {
+export function optimizeImage({ input, output, slug, repositoryLocal = false, variants = DEFAULT_VARIANTS, now = new Date() }) {
   const inputPath = path.resolve(input);
   const outputRoot = path.resolve(output);
   validateSlug(slug);
-  if (isWithin(inputPath, repositoryRoot) || isWithin(outputRoot, repositoryRoot)) {
-    throw new Error('source and optimized media must stay outside the public repository');
+  if (isWithin(inputPath, repositoryRoot)) throw new Error('source media must stay outside the public repository');
+  const outputIsRepositoryLocal = isWithin(outputRoot, repositoryRoot);
+  const allowedRepositoryOutput = repositorySourcedRoots.some((allowed) => path.resolve(outputRoot) === allowed);
+  if (outputIsRepositoryLocal && (!repositoryLocal || !allowedRepositoryOutput)) {
+    throw new Error('repository-local output requires --repository-local and an approved sourced-image root');
   }
+  if (!outputIsRepositoryLocal && repositoryLocal) throw new Error('--repository-local requires an approved repository output root');
   if (!fs.statSync(inputPath, { throwIfNoEntry: false })?.isFile()) throw new Error(`input is not a file: ${inputPath}`);
   requireTool('cwebp', ['-version']);
   requireTool('ffprobe', ['-version']);
@@ -175,7 +190,7 @@ export function optimizeImage({ input, output, slug, variants = DEFAULT_VARIANTS
       source,
       variants: optimized
     };
-    fs.writeFileSync(path.join(temporaryDirectory, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' });
+    if (!repositoryLocal) fs.writeFileSync(path.join(temporaryDirectory, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' });
     fs.renameSync(temporaryDirectory, finalDirectory);
     return { directory: finalDirectory, manifest };
   } catch (error) {
@@ -187,10 +202,11 @@ export function optimizeImage({ input, output, slug, variants = DEFAULT_VARIANTS
 }
 
 function usage() {
-  return `Usage: npm run media:optimize -- --input /absolute/source --output /absolute/staging/media/xhs --slug model-slug
+  return `Usage: npm run media:optimize -- --input /absolute/source --output /absolute/staging/media/xhs --slug model-slug [--repository-local]
 
-The source and output must both be outside the repository. The command creates immutable,
-metadata-free WebP card and detail variants plus a machine-readable manifest.`;
+The source must be outside the repository. Repository-local output additionally requires
+--repository-local and must target assets/images/sourced/xhs or assets/images/sourced/taobao.
+The command creates immutable, metadata-free WebP card and detail variants plus a manifest.`;
 }
 
 async function main() {
