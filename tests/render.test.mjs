@@ -24,6 +24,8 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /Full-bike price/);
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
+  assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
+  assert.match(html, /"@type":"CollectionPage"/);
 });
 
 test('products without verified photos omit the image region and social placeholder', () => {
@@ -89,6 +91,9 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
   assert.match(quickDetail, /Trade-offs and unknowns/);
   assert.match(quickDetail, /Price record and sources/);
+  assert.match(quickDetail, /property="og:type" content="product"/);
+  assert.match(quickDetail, /"@type":"Product"/);
+  assert.doesNotMatch(quickDetail, /"offers":/);
   assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
 
   const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
@@ -99,6 +104,8 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(sparseDetail, /Frame weight basis/);
   assert.doesNotMatch(sparseDetail, /Frame_weight_basis/);
   assert.match(sparseDetail, /Identity not confirmed/);
+  assert.match(sparseDetail, /property="og:type" content="website"/);
+  assert.doesNotMatch(sparseDetail, /"@type":"Product"/);
 
   const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   const oldTwitterCarbonDetail = renderCandidateModel(context, oldTwitterCarbon);
@@ -179,6 +186,9 @@ test('published frame pages show exact-model galleries and component weight cont
   assert.match(quickDetail, /<dt>Fork weight<\/dt><dd>459 g<\/dd>/);
   assert.match(quickDetail, /<dt>Seatpost weight<\/dt><dd>169 g<\/dd>/);
   assert.match(quickDetail, /5 sizes \(XS\/426–XL\/546\) · stack 524–599 mm · reach 370–405 mm/);
+  assert.match(quickDetail, /property="og:type" content="product"/);
+  assert.match(quickDetail, /"name":"Maximum tire clearance"/);
+  assert.doesNotMatch(quickDetail, /"offers":/);
 
   const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
   const incolorDetail = renderModel(context, incolor);

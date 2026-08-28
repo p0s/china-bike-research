@@ -23,6 +23,7 @@ import {
   renderImageSources,
   render404
 } from '../src/render.mjs';
+import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
@@ -58,10 +59,6 @@ function csvCell(value) {
   const text = value === null || value === undefined ? '' : String(value);
   return /[",\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 }
-function xml(value) {
-  return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
-}
-
 const data = loadDataset();
 const errors = validateDataset(data);
 if (errors.length) {
@@ -72,6 +69,25 @@ if (errors.length) {
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
 const ctx = { data, products, base, siteUrl, repositoryUrl, now: new Date() };
+const siteLastmod = latestDate([
+  data.meta.snapshot_date,
+  data.brands.map((item) => item.last_reviewed),
+  data.platforms.map((item) => item.last_reviewed),
+  data.candidates.map((item) => item.last_reviewed),
+  data.prices.map((item) => item.observed_at),
+  data.sources.map((item) => item.accessed_at)
+], data.meta.snapshot_date);
+const productLastmod = (product) => latestDate([
+  product.brand.last_reviewed,
+  product.platform.last_reviewed,
+  product.prices.map((item) => item.observed_at),
+  product.sources.map((item) => item.accessed_at)
+], data.meta.snapshot_date);
+const candidateLastmod = (entry) => latestDate([
+  entry.candidate.last_reviewed,
+  entry.price?.observed_at,
+  entry.sources.map((item) => item.accessed_at)
+], data.meta.snapshot_date);
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -79,21 +95,21 @@ copyDir(path.join(root, 'assets'), path.join(dist, 'assets'));
 write('.nojekyll', '');
 
 const pages = new Map();
-function add(route, html, includeInSitemap = true) {
+function add(route, html, includeInSitemap = true, metadata = {}) {
   const file = routeFile(route);
   write(file, html);
-  pages.set(route, { file, includeInSitemap });
+  pages.set(route, { file, includeInSitemap, ...metadata });
 }
 
-add('/', renderHome(ctx));
-for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product));
-for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible);
-add('/methodology/', renderMethodology(ctx));
-add('/build/', renderBikeBuilder(ctx));
-add('/electronic-shifting/', renderElectronicGroupsets(ctx));
-add('/privacy/', renderPrivacy(ctx));
-add('/image-policy/', renderImagePolicy(ctx));
-add('/image-sources/', renderImageSources(ctx));
+add('/', renderHome(ctx), true, { lastmod: siteLastmod });
+for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product), true, { lastmod: productLastmod(product) });
+for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible, { lastmod: candidateLastmod(candidate) });
+add('/methodology/', renderMethodology(ctx), true, { lastmod: siteLastmod });
+add('/build/', renderBikeBuilder(ctx), true, { lastmod: siteLastmod });
+add('/electronic-shifting/', renderElectronicGroupsets(ctx), true, { lastmod: siteLastmod });
+add('/privacy/', renderPrivacy(ctx), true, { lastmod: siteLastmod });
+add('/image-policy/', renderImagePolicy(ctx), true, { lastmod: siteLastmod });
+add('/image-sources/', renderImageSources(ctx), true, { lastmod: siteLastmod });
 add('/404.html', render404(ctx), false);
 
 const catalog = {
@@ -151,8 +167,7 @@ const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, 
 });
 write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) => row.map(csvCell).join(',')).join('\n')}\n`);
 
-const sitemapRoutes = [...pages.entries()].filter(([, info]) => info.includeInSitemap).map(([route]) => route);
-write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map((route) => `  <url><loc>${xml(`${siteUrl}${base}${route}`)}</loc><lastmod>${data.meta.snapshot_date}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // The 239-row unified catalog with production project-base links, typed filters,

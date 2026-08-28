@@ -22,10 +22,16 @@ import {
   safeJson,
   url
 } from './lib/html.mjs';
+import {
+  catalogStructuredData,
+  collectionStructuredData,
+  productPageStructuredData,
+  webApplicationStructuredData
+} from './lib/seo.mjs';
 
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 
-function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '' }) {
+function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', ogType = 'website', structuredData = [] }) {
   return layout({
     base: ctx.base,
     repositoryUrl: ctx.repositoryUrl,
@@ -37,7 +43,9 @@ function page(ctx, { title = '', current = '', path = '/', description: desc = d
     body,
     noindex,
     image,
-    imageAlt
+    imageAlt,
+    ogType,
+    structuredData
   });
 }
 
@@ -1091,7 +1099,20 @@ export function renderHome(ctx) {
     </div>
     <script type="application/json" id="catalog-data">${safeJson(summaries)}</script>
   </div></section>`;
-  return page(ctx, { current: 'catalog', path: '/', body });
+  return page(ctx, {
+    current: 'catalog',
+    path: '/',
+    body,
+    structuredData: catalogStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      description,
+      products: ctx.products.map((product) => ({
+        ...product,
+        category: categoryLabel(product.platform.category)
+      }))
+    })
+  });
 }
 
 export function renderModel(ctx, product) {
@@ -1134,6 +1155,13 @@ export function renderModel(ctx, product) {
   const specificationRows = publishedSpecificationRows(product);
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
+  const seoProperties = [
+    ['Product type', variant.kind === 'frameset' ? 'Frameset' : 'Complete bike'],
+    ['Frame material', platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material],
+    ...(tireClearance.value !== '—' ? [['Maximum tire clearance', tireClearance.value]] : []),
+    ...(weight !== '—' ? [['Weight', weight]] : []),
+    ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product)]] : [])
+  ];
   const body = `<section class="model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
@@ -1153,6 +1181,19 @@ export function renderModel(ctx, product) {
     description: variant.editorial.verdict,
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
+    ogType: 'product',
+    structuredData: productPageStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: `/models/${variant.id}/`,
+      name: `${brand.name} ${variant.name}`,
+      model: variant.name,
+      brand: brand.name,
+      description: variant.editorial.verdict,
+      category: categoryLabel(platform.category),
+      image: heroImage,
+      properties: seoProperties
+    }),
     body
   });
 }
@@ -1192,6 +1233,7 @@ export function renderCandidateModel(ctx, entry) {
   const keyHardware = facts.slice(0, 5).map(([label, value]) => `${label.toLowerCase()} ${value}`).join('; ');
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
   const type = entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
+  const candidateSeoProduct = entry.identifiableModel && !['Identity not confirmed', 'Exact configuration not confirmed'].includes(maturity);
   const { low: frameLow, high: frameHigh } = candidatePriceBounds(entry);
   const modelPriceAttributes = entry.kind === 'frameset' && Number.isFinite(frameLow)
     ? ` data-model-frame-price-low="${frameLow}" data-model-frame-price-high="${frameHigh}" data-model-default-allowance="${assumption.amount_cny}"`
@@ -1199,6 +1241,7 @@ export function renderCandidateModel(ctx, entry) {
   const pageTitle = brand?.name && candidate.name.toLowerCase().startsWith(brand.name.toLowerCase())
     ? candidate.name
     : `${brand?.name ? `${brand.name} ` : ''}${candidate.name}`;
+  const candidateHeroImage = imageUrl(ctx, entry.image);
   const imageFigure = candidateGalleryFigure(ctx, entry);
   const body = `<section class="model-page candidate-model-page"><div class="page"><a class="back-link" href="${url(ctx.base, '/')}" data-catalog-back>← All bikes</a><div class="model-grid${imageFigure ? '' : ' has-no-image'}">
     ${imageFigure}
@@ -1216,18 +1259,33 @@ export function renderCandidateModel(ctx, entry) {
     current: 'catalog',
     path: `/models/${candidate.id}/`,
     description: reason,
-    image: imageUrl(ctx, entry.image),
+    image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
+    ogType: candidateSeoProduct ? 'product' : 'website',
+    structuredData: productPageStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: `/models/${candidate.id}/`,
+      name: pageTitle,
+      model: candidate.name,
+      brand: brand?.name ?? '',
+      description: reason,
+      category,
+      image: candidateHeroImage,
+      properties: facts,
+      includeProduct: candidateSeoProduct
+    }),
     body
   });
 }
 
-function prosePage(ctx, { title, desc, path, html, current = '', className = '' }) {
+function prosePage(ctx, { title, desc, path, html, current = '', className = '', structuredData = [] }) {
   return page(ctx, {
     title,
     current,
     path,
     description: desc,
+    structuredData,
     body: `<section class="simple-page"><article class="page prose${className ? ` ${escapeAttr(className)}` : ''}"><h1>${escapeHtml(title)}</h1><p class="page-lede">${escapeHtml(desc)}</p>${html}</article></section>`
   });
 }
@@ -1390,6 +1448,7 @@ function builderSlotRow(ctx, parts, slot) {
 export function renderBikeBuilder(ctx) {
   const bases = builderBases(ctx);
   const parts = builderParts(ctx);
+  const builderDescription = 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.';
   const initialBase = bases[0];
   const publishedBases = bases.filter((base) => base.stage === 'published');
   const baseOptions = `<optgroup label="Published catalog">${publishedBases.map((base) => `<option value="${escapeAttr(base.id)}">${escapeHtml(base.name)}</option>`).join('')}</optgroup>`;
@@ -1405,9 +1464,16 @@ export function renderBikeBuilder(ctx) {
   </section>`;
   return page(ctx, {
     title: 'Bike configurator',
-    description: 'Configure a China-market frameset or complete bike with sourced components and transparent price, weight, package and compatibility totals.',
+    description: builderDescription,
     path: '/build/',
     current: 'builder',
+    structuredData: webApplicationStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/build/',
+      name: 'China bike configurator',
+      description: builderDescription
+    }),
     body,
   });
 }
@@ -1531,6 +1597,7 @@ function adjacentRows(source) {
 }
 
 export function renderElectronicGroupsets(ctx) {
+  const groupsetDescription = 'Road, gravel, MTB and TT electronic shifting compared in one place.';
   const groupsets = ctx.data.groupsets ?? [];
   const adjacentSources = ctx.data.sources.filter((source) => source.adjacent_system);
   const sourcesById = new Map(ctx.data.sources.map((source) => [source.id, source]));
@@ -1560,10 +1627,21 @@ export function renderElectronicGroupsets(ctx) {
   <details class="reference-guide"><summary>How package labels and prices are normalized</summary><div><dl class="detail-list package-basis"><div><dt>Shift-only</dt><dd>Levers, derailleurs, battery, wires and charger.</dd></div><div><dt>Shift-brake</dt><dd>Shift-only plus calipers and hoses.</dd></div><div><dt>Partial groupset</dt><dd>Shift-brake plus only some of crank, cassette, chain or rotors.</dd></div><div><dt>Full groupset</dt><dd>An exact, itemized list of every included component.</dd></div><div><dt>OEM take-off</dt><dd>Removed or split from a complete bike; retail packaging and warranty may be absent.</dd></div></dl><p>Seller labels such as 小套, 中套 and 大套 are retained as option text, never treated as standard packages. Taobao observations are option-level screenshots rather than verified checkout totals.</p></div></details>`;
   return prosePage(ctx, {
     title: 'Electronic groupsets in China',
-    desc: 'Road, gravel, MTB and TT electronic shifting compared in one place.',
+    desc: groupsetDescription,
     path: '/electronic-shifting/',
     current: 'groupsets',
     className: 'groupsets-prose',
+    structuredData: collectionStructuredData({
+      siteUrl: ctx.siteUrl,
+      base: ctx.base,
+      path: '/electronic-shifting/',
+      name: 'Electronic groupsets in China',
+      description: groupsetDescription,
+      items: [
+        ...ordered.map((groupset) => ({ name: groupset.name })),
+        ...adjacentSources.map((source) => ({ name: source.adjacent_system.name }))
+      ]
+    }),
     html
   });
 }
