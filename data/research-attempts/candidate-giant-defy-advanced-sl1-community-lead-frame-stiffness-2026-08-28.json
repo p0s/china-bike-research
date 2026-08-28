@@ -1,0 +1,17 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "giant-defy-advanced-sl1-community-lead" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "temporarily-exhausted", "attempts": [
+    { "attempt": 1, "query": "Defy Advanced SL 1 2026 stiffness test", "route": "manufacturer exact-model page and specification", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.giant-bicycles.com/gb/defy-advanced-sl-1", "note": "No measured stiffness or deflection result is published." },
+    { "attempt": 2, "query": "Giant Defy Advanced SL 1 2026 independent review stiffness", "route": "exact-model editorial search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No generation-bound exact-trim result was located." },
+    { "attempt": 3, "query": "Defy Advanced SL 1 frame flex owner 2026", "route": "public owner and technical search", "outcome": "rejected", "accessed_at": "2026-08-28", "note": "Community impressions lack a reliable build/generation mapping and are not transferred." }
+  ] } },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No stiffness value is inferred from the Advanced SL material name or an unmapped community report."
+}

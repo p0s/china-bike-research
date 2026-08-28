@@ -1,0 +1,16 @@
+{
+  "id": "candidate-pardus-spark-rs-community-lead-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "pardus-spark-rs-community-lead" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "conflicted", "conflict": "The community lead reports T800, while the current official Spark RS classic generation uses HS-EPS+ carbon and an HS-HPT fork; the custom bike's generation/color is unresolved.", "attempts": [
+    { "attempt": 1, "query": "PARDUS Spark RS classic frame carbon construction", "route": "manufacturer current exact-platform page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=7248&color=7260&id=27456&pz=7255&t=27444", "note": "Official current classic page specifies HS-EPS+ frame, HS-HPT fork, hidden routing, integrated cockpit and asymmetric stays." },
+    { "attempt": 2, "query": "PARDUS Spark RS custom 105 T800", "route": "existing exact-post community evidence", "outcome": "conflict", "accessed_at": "2026-08-28", "note": "The custom lead reports T800 but does not establish current-classic generation or color continuity." }
+  ] } },
+  "status": "conflicted",
+  "accepted_source_ids": ["pardus-spark-rs-current-official-2026-08-28", "public-pardus-spark-rs-build-2026-08-17"],
+  "retry_after": null,
+  "notes": "Both published claims are preserved; no single exact material is assigned to the unresolved custom build."
+}

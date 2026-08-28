@@ -1,0 +1,16 @@
+{
+  "id": "candidate-pardus-robin-evo-community-lead-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "pardus-robin-evo-community-lead" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "conflicted", "conflict": "The community competition build is not mapped to the older approximately 750 g platform or the 2024 third-generation 710 g UHMS-EPS+ frame.", "attempts": [
+    { "attempt": 1, "query": "PARDUS Robin EVO third generation T1100 M40", "route": "manufacturer 2024 exact-platform page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://parduscycle.com/Hightxq.aspx?cc=20615&color=20617&id=43618&pz=20616&t=1030", "note": "Third-generation page specifies UHMS-EPS+, T1100/M40 reinforcement, approximately 710 g size M and hidden routing." },
+    { "attempt": 2, "query": "PARDUS Robin EVO 750 g frame generation", "route": "manufacturer older exact-platform page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030", "note": "Older official material reports an approximately 750 g size-M frame; the custom competition build lacks a generation mapping." }
+  ] } },
+  "status": "conflicted",
+  "accepted_source_ids": ["pardus-robin-evo-third-generation-official-2026-08-28", "pardus-robin-evo-official-2026-08-17", "public-pardus-robin-evo-build-2026-08-17"],
+  "retry_after": null,
+  "notes": "Generation-specific construction claims remain separate; no fiber grade or frame weight is transferred to the unresolved competition build."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-specialized-crux" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Specialized Crux Comp GRX FACT 10r construction", "route": "manufacturer exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.specialized.com/us/en/crux-comp-shimano-grx/p/4223483", "note": "Exact page specifies Rider First Engineered FACT 10r carbon, S-Works FACT carbon fork, threaded BSA, 12x142, flat mount and UDH; exact fiber lay-up is unpublished." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["specialized-crux-comp-grx-official-2026-08-17"],
+  "retry_after": null,
+  "notes": "The proprietary FACT designation is retained without inventing a standard fiber grade."
+}

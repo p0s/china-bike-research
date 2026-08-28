@@ -16,14 +16,18 @@
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
   "source_ids": [
     "specialized-crux-comp-grx-official-2026-08-17",
-    "specialized-crux-comp-china-2026-08-17"
+    "specialized-crux-comp-china-2026-08-17",
+    "specialized-crux-comp-grx-ciclonline-2026-08-28"
   ],
   "facts": {
     "drivetrain": "Shimano GRX 12-speed",
     "frame": "FACT 10r carbon",
+    "frame_material": "Crux FACT 10r carbon frame with S-Works FACT carbon fork; exact fiber grade and lay-up are not published",
+    "frame_construction": "Rider First Engineered FACT 10r frame with threaded BSA shell, 12×142 mm thru-axle, flat-mount disc and UDH",
+    "stiffness_evidence": "A 2025 exact-GRX review describes the frame as rigid and reactive with stable, precise handling; qualitative editorial ride evidence only, not a measured stiffness result",
     "bottom_bracket": "BSA threaded",
     "tire_clearance_mm": 47
   },
   "source_note": "The exact official mainland product route is now established. A reproducible current CNY amount, stock result and unambiguous warranty term remain unverified.",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-28"
 }

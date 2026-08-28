@@ -13,8 +13,11 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "Merida SILEX 7000 25 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -49,10 +52,16 @@
       ]
     }
   },
-  "status": "open",
+  "status": "found",
   "accepted_source_ids": [
     "merida-silex-7000-25-official-cny-reference-2026-08-17"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": ["merida-silex-7000-25-official-cny-reference-2026-08-17"],
+    "note": "A current read of the already-preserved official mainland exact-model page confirms CNY 20,800 suggested retail; exact dealer stock and checkout fulfilment remain unverified."
+  },
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "The exact official mainland suggested retail is now recorded without implying live dealer stock or checkout."
 }

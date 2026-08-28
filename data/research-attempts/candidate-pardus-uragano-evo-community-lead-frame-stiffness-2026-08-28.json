@@ -1,0 +1,15 @@
+{
+  "id": "candidate-pardus-uragano-evo-community-lead-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "pardus-uragano-evo-community-lead" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "PARDUS Uragano EVO ride review stiffness", "route": "exact-model editorial review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.biketo.com/product/52352.html?all=1", "note": "Review describes a relatively stiff frame, strong out-of-saddle road response and noticeable coarse-gravel vibration unless tire pressure is reduced; qualitative evidence only." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["pardus-uragano-evo-biketo-2026-08-27"],
+  "retry_after": null,
+  "notes": "The qualitative evidence lives on the exact Uragano EVO record; no measured stiffness score is claimed."
+}

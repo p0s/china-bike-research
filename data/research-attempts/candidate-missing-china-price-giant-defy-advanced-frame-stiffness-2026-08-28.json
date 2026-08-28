@@ -1,0 +1,16 @@
+{
+  "id": "candidate-missing-china-price-giant-defy-advanced-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-giant-defy-advanced" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Giant Defy Advanced 2 ride stiffness review", "route": "manufacturer mainland exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837", "note": "Manufacturer attributes steering stiffness to OverDrive and vibration absorption to D-Fuse; no numeric test is published." },
+    { "attempt": 2, "query": "Giant Defy Advanced 2 TOUR test comfort", "route": "independent 2024-generation exact-model review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.tour-magazin.de/en/marathon-bike-endurance-road-bike/road-bikes-with-shimano-105-the-giant-defy-advanced-2-on-test/", "note": "Review reports smooth rough-road comfort and an upright, relatively heavy feel; it is not a measured current-mainland stiffness result." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["giant-china-defy-advanced-2-official-2026-08-17", "giant-defy-advanced-2-tour-review-2026-08-28"],
+  "retry_after": null,
+  "notes": "Manufacturer claims and older independent ride impressions remain separately labeled."
+}

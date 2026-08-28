@@ -13,8 +13,11 @@
   ],
   "channels": {
     "public-post": {
-      "status": "not-run",
-      "attempts": []
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "attempts": [
+        { "attempt": 1, "query": "SAVA A7L R7100 车架 重量", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
     },
     "web": {
       "status": "temporarily-exhausted",
@@ -48,8 +51,8 @@
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "retry_after": "2026-09-10",
+  "notes": "Only the approximately 8.6 kg complete-bike claim is published; frame-only weight remains unavailable after the preserved web search and an occupied XHS lane."
 }

@@ -1,0 +1,15 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "missing-china-price-specialized-crux" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": { "web": { "status": "found", "attempts": [
+    { "attempt": 1, "query": "Specialized Crux Comp GRX 2025 stiffness review", "route": "exact-model editorial review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.ciclonline.com/10-biciclette/97-specialized/29046-specialized-crux-comp-shimano-grx-2025-prova-test-recensione-pregi-difetti-problemi-opinioni-pareri-tutto-quello-che-devi-sapere-realmente", "note": "Exact 2025 GRX review describes a rigid, reactive frame and stable, precise handling; no measurement protocol is given." }
+  ] } },
+  "status": "found",
+  "accepted_source_ids": ["specialized-crux-comp-grx-ciclonline-2026-08-28"],
+  "retry_after": null,
+  "notes": "The site labels this as qualitative editorial ride evidence, not a comparative stiffness score."
+}
