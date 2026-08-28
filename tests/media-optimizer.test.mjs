@@ -18,8 +18,15 @@ test('media optimizer accepts only explicit absolute-friendly arguments and safe
   ]), {
     input: '/private/tmp/source.webp',
     output: '/private/tmp/media/xhs',
-    slug: 'pardus-robin-evo'
+    slug: 'pardus-robin-evo',
+    repositoryLocal: false
   });
+  assert.equal(parseArguments([
+    '--input', '/private/tmp/source.webp',
+    '--output', 'assets/images/sourced/xhs',
+    '--slug', 'seka-exaero-gr',
+    '--repository-local'
+  ]).repositoryLocal, true);
   assert.throws(() => parseArguments(['--input', '/tmp/a']), /missing --output/);
   assert.throws(() => validateSlug('../bike'), /kebab-case/);
   assert.throws(() => validateSlug('Bike_Name'), /kebab-case/);

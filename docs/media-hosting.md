@@ -2,10 +2,10 @@
 
 ## Decision
 
-Selected public XHS and marketplace images are served from an isolated Contabo media origin rather
-than from GitHub or expiring source CDN URLs. The public repository contains only source
-links, attribution, exactness, privacy review, derivative dimensions, byte counts,
-and content hashes. It never contains the original or optimized third-party files.
+Selected public XHS and marketplace images normally use the isolated project media origin.
+When that route is unavailable or a durable specification quotation is materially useful,
+the same bounded derivatives may be stored under `assets/images/sourced/xhs/` or
+`assets/images/sourced/taobao/` and served by GitHub Pages. Raw captures stay outside Git.
 
 This is an attributed evidence workflow, not an image mirror. A selected image may
 identify an exact bicycle or expose decision-relevant geometry, size, clearance,
@@ -37,7 +37,7 @@ were not committed.
 1. Confirm the exact public post or listing and select only useful exact-model images outside the repo.
 2. Reject images containing visible faces, vehicle registration, account overlays, or
    location identifiers. Do not retain creator handles or account IDs in project data.
-3. Optimize into an external staging directory:
+3. Optimize into an external staging directory for the media origin:
 
    ```bash
    npm run media:optimize -- \
@@ -46,16 +46,25 @@ were not committed.
      --slug exact-model-slug
    ```
 
+   Or create the validated Git-hosted fallback directly:
+
+   ```bash
+   npm run media:optimize -- \
+     --input /private/tmp/source.webp \
+     --output assets/images/sourced/xhs \
+     --slug exact-model-slug \
+     --repository-local
+   ```
+
 4. Visually inspect both derivatives and confirm their manifest byte counts, hashes,
    dimensions, and metadata result.
-5. Deploy the staging copy with `codex-vps-copy`, validate the Compose model, then use
-   `codex-vps-ops` to start or update only the `china-bike-media` service.
-6. Read back HTTPS headers and bytes before changing the image record. Keep prior
-   content-addressed objects during rollback; catalog metadata determines the active
-   object.
+5. For external hosting, deploy the staging copy and read back HTTPS headers and bytes.
+   For Git hosting, add the generated immutable WebP files to the matching image record;
+   the privacy and data validators reject unreferenced or out-of-contract binaries.
 
-The optimizer refuses source or output paths inside the repository and refuses to
-overwrite an existing model directory.
+The optimizer always refuses repository-local sources. Repository-local output requires
+the explicit `--repository-local` flag and is limited to the two sourced-image roots. It
+refuses to overwrite an existing model directory.
 
 ## Source and rights boundary
 

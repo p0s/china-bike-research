@@ -101,7 +101,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 180);
+  assert.equal(data.images.length, 181);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -109,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 204);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 548);
+  assert.equal(data.researchAttempts.length, 549);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -518,7 +518,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   const allowedRights = new Set([
     'project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license',
     'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed',
-    'public-post-quotation'
+    'public-post-quotation', 'source-attributed-rehost'
   ]);
   for (const image of data.images) {
     assert.ok(image.alt.length >= 10, image.id);
@@ -533,9 +533,13 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
   ];
   assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 178);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 104);
+  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 1);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
-    data.images.filter((image) => image.hosting.mode === 'local').map((image) => image.platform_id).sort(),
+    data.images
+      .filter((image) => image.hosting.mode === 'local' && image.rights.status !== 'source-attributed-rehost')
+      .map((image) => image.platform_id)
+      .sort(),
     unresolvedImagePlatforms.sort()
   );
 
@@ -565,7 +569,7 @@ test('published products expose ordered exact-model gallery images', () => {
   assert.ok(quick.galleryImages.every((image) => image.source?.id === 'quick-gr-one-official'));
 });
 
-test('public-post images must remain credited remote embeds', () => {
+test('public-post embeds remain remote while sourced rehosts use the bounded local contract', () => {
   const remote = structuredClone(data);
   const image = remote.images.find((item) => item.id === 'quick-pro-er-one-primary-image');
   image.media_type = 'community-post-photo';
@@ -574,6 +578,11 @@ test('public-post images must remain credited remote embeds', () => {
 
   image.hosting = { mode: 'local', local_path: '/assets/images/placeholders/complete-bike.svg' };
   assert.ok(validateDataset(remote).some((error) => error.includes('third-party remote image cannot be stored locally')));
+
+  const rehosted = data.images.find((item) => item.rights.status === 'source-attributed-rehost');
+  assert.ok(rehosted, 'expected a sourced local image fixture');
+  assert.equal(rehosted.hosting.mode, 'local');
+  assert.match(rehosted.hosting.local_path, /^\/assets\/images\/sourced\/xhs\//);
 });
 
 test('public-post quotations require bounded immutable media and a completed privacy review', () => {

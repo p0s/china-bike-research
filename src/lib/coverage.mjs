@@ -117,7 +117,7 @@ function imageTarget(image) {
 function imageSourceTier(image) {
   if (image.subject_accuracy === 'illustrative') return 0;
   const status = image.rights?.status;
-  if (['retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(status)) return 1;
+  if (['retailer-page-embed', 'public-post-embed', 'public-post-quotation', 'source-attributed-rehost'].includes(status)) return 1;
   if (status === 'official-page-embed') return 2;
   if (['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain'].includes(status)) return 3;
   return 0;

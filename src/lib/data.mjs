@@ -627,7 +627,7 @@ export function validateDataset(data = loadDataset()) {
 
   const accuracyValues = new Set(['exact-variant', 'exact-platform', 'same-platform', 'same-model-different-color', 'same-model-different-market-build', 'illustrative']);
   const mediaValues = new Set(['official-product-photo', 'retailer-product-photo', 'community-post-photo', 'project-placeholder']);
-  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation']);
+  const rightsValues = new Set(['project-owned', 'contributor-owned', 'permission-granted', 'brand-media-license', 'cc-licensed', 'public-domain', 'official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation', 'source-attributed-rehost']);
   for (const image of data.images) {
     requireFields('image', image, ['role', 'subject_accuracy', 'media_type', 'hosting', 'source_id', 'rights', 'credit', 'alt', 'reviewed_at']);
     const targetKeys = ['platform_id', 'candidate_id'].filter((key) => image[key] !== undefined);
@@ -708,6 +708,58 @@ export function validateDataset(data = loadDataset()) {
       if (typeof localPath !== 'string' || !localPath.startsWith('/assets/images/')) errors.push(`image ${image.id}: invalid local_path`);
       else if (!fs.existsSync(path.join(root, localPath.replace(/^\//, '')))) errors.push(`image ${image.id}: missing local asset ${localPath}`);
       if (['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(image.rights?.status)) errors.push(`image ${image.id}: third-party remote image cannot be stored locally`);
+      if (image.rights?.status === 'source-attributed-rehost') {
+        const variants = image.hosting?.variants;
+        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+        if (!Array.isArray(variants) || variants.length !== 2) {
+          errors.push(`image ${image.id}: sourced rehost needs card and detail variants`);
+        } else {
+          const purposes = new Set();
+          for (const variant of variants) {
+            purposes.add(variant?.purpose);
+            const byteLimit = variant?.purpose === 'card' ? 40_000 : variant?.purpose === 'detail' ? 88_000 : 0;
+            const widthLimit = variant?.purpose === 'card' ? 480 : variant?.purpose === 'detail' ? 1200 : 0;
+            const match = localPattern.exec(variant?.url ?? '');
+            if (!byteLimit) errors.push(`image ${image.id}: invalid sourced variant purpose`);
+            if (!match || match[2] !== variant?.purpose) errors.push(`image ${image.id}: sourced variant path is not immutable`);
+            if (!Number.isInteger(variant?.bytes) || variant.bytes < 1 || variant.bytes > byteLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant exceeds its byte budget`);
+            if (!Number.isInteger(variant?.width) || variant.width < 1 || variant.width > widthLimit) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant has invalid width`);
+            if (!Number.isInteger(variant?.height) || variant.height < 1 || variant.height > 2400) errors.push(`image ${image.id}: ${variant?.purpose ?? 'unknown'} sourced variant has invalid height`);
+            if (variant?.format !== 'image/webp') errors.push(`image ${image.id}: sourced variants must be WebP`);
+            if (!/^[a-f0-9]{64}$/.test(variant?.sha256 ?? '')) errors.push(`image ${image.id}: sourced variant needs a SHA-256 digest`);
+            if (match && !fs.existsSync(path.join(root, variant.url.replace(/^\//, '')))) errors.push(`image ${image.id}: missing sourced variant ${variant.url}`);
+          }
+          if (purposes.size !== 2 || !purposes.has('card') || !purposes.has('detail')) errors.push(`image ${image.id}: sourced rehost needs one card and one detail variant`);
+          const detail = variants.find((variant) => variant.purpose === 'detail');
+          if (detail && localPath !== detail.url) errors.push(`image ${image.id}: local_path must be the detail variant`);
+          const source = sourcesById.get(image.source_id);
+          const sourceUrl = source?.url ?? '';
+          const channel = localPattern.exec(localPath ?? '')?.[1];
+          const sourceMatches = channel === 'xhs'
+            ? /^https:\/\/www\.xiaohongshu\.com\/explore\/[a-f0-9]{24}$/.test(sourceUrl)
+            : channel === 'taobao'
+              ? /^https:\/\/(?:item\.taobao\.com|detail\.tmall\.com)\/item\.htm\?id=\d+$/.test(sourceUrl)
+              : false;
+          if (!sourceMatches) errors.push(`image ${image.id}: sourced rehost needs a matching identity-safe public source`);
+        }
+        const quotation = image.editorial_quotation;
+        if (quotation?.purpose !== 'editorial-identification-and-commentary'
+          || quotation?.source_link_required !== true) errors.push(`image ${image.id}: incomplete sourced editorial record`);
+        try {
+          const route = new URL(quotation?.removal_route);
+          if (route.protocol !== 'https:') errors.push(`image ${image.id}: removal route must use HTTPS`);
+        } catch { errors.push(`image ${image.id}: invalid removal route`); }
+        const privacy = image.privacy_review;
+        if (!isDate(privacy?.reviewed_at)
+          || privacy?.embedded_metadata !== 'stripped'
+          || privacy?.faces !== 'none-visible'
+          || privacy?.vehicle_registration !== 'none-visible'
+          || privacy?.account_identifiers !== 'none-visible'
+          || privacy?.location_identifiers !== 'none-visible') errors.push(`image ${image.id}: incomplete privacy review`);
+        if (!['community-post-photo', 'retailer-product-photo'].includes(image.media_type)) errors.push(`image ${image.id}: sourced rehost needs a community or retailer photo`);
+      } else if (localPath?.startsWith('/assets/images/sourced/')) {
+        errors.push(`image ${image.id}: sourced local media needs source-attributed-rehost rights status`);
+      }
     } else errors.push(`image ${image.id}: hosting mode must be remote or local`);
   }
 
