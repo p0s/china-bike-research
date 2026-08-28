@@ -1,27 +1,34 @@
 {
   "id": "tavelo-arden",
   "name": "Tavelo ARDEN",
-  "category": "road-aero",
+  "category": "aero-wide-clearance",
   "type": "frameset",
   "why_interesting": "A light all-road race frameset with UDH, threaded BSA and unusually broad 34 mm dual-ring or 38 mm single-ring clearance.",
   "missing": [
-    "Current mainland frameset price, stock and purchase route",
-    "Numeric geometry and exact size-to-weight mapping"
+    "Current selected mainland checkout, stock and delivery terms",
+    "Exact mainland complete-build price, drivetrain and complete-bike weight"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-tavelo-arden-owner-2026-08-17",
     "tavelo-arden-official-2026-08-17",
+    "tavelo-arden-race-official-2026-08-29",
     "tavelo-arden-china-launch-2026-08-17",
     "tavelo-warranty-official-2026-08-17",
-    "tavelo-warranty-official-2026-08-27"
+    "tavelo-warranty-official-2026-08-27",
+    "usd-cny-central-parity-2026-07-31"
   ],
   "facts": {
-    "frame": "Toray Race carbon; UDH; 12×100 / 12×142 mm thru axles",
+    "frame": "Tavelo Arden Race carbon frameset with UDH and 12×100 / 12×142 mm thru axles",
+    "frame_material": "Tavelo Toray Race Carbon; the current product page does not publish an exact fiber grade",
+    "frame_construction": "Fully internal aero all-road chassis with 410 mm chainstays and conventional replaceable UDH",
+    "stiffness_evidence": "Tavelo describes the Race lay-up as balancing stiffness and compliance; no independent measured exact-model stiffness result is published in the accepted evidence",
     "frame_weight_g": 780,
+    "frame_weight_basis": "Official size-L unpainted frame weight, 780±25 g; fork is 355 g and seatpost 115 g, both excluding paint and accessories",
     "bottom_bracket": "BSA 68 threaded",
     "tire_clearance_mm": 38,
+    "tire_clearance_basis": "Official maximum with a 1× drivetrain; the 2× maximum is 34 mm",
     "sizes": "425, 450, 475, 500, 525, 550, 570 and 590; official frame-weight basis is size L",
     "warranty": "Lifetime first-owner frameset warranty; paint and decals one year, subject to policy conditions",
     "cockpit": "Frameset listing includes fork and seatpost; cockpit configuration varies"
@@ -31,10 +38,22 @@
     "high_cny": 12999,
     "currency": "CNY",
     "observed_at": "2026-08-17",
-    "price_basis": "domestic launch report range for ARDEN Race and SL framesets without cockpit"
+    "price_basis": "Domestic launch report range for Arden Race and SL framesets without cockpit"
   },
-  "price_status": "launch-report branch range; exact Race versus SL package must be selected",
+  "official_price": {
+    "amount_cny": 12893,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-29",
+    "original_amount": 1899,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current official global Arden Race pre-order price; excludes actual FX, shipping, tax and duties"
+  },
+  "reference_price_kind": "observed",
+  "price_status": "domestic Race/SL launch range; current mainland selected checkout unverified",
   "support_note": "Official policy states lifetime frameset coverage for the original purchaser through official or authorized channels; serial and receipt are required, and paint/decals are covered for one year.",
-  "source_note": "Official weights are 780±25 g frame, 355 g fork and 115 g seatpost, excluding paint and accessories. The 38 mm maximum requires 1×; 2× is limited to 34 mm. The ¥9,999–12,999 range spans Race and SL launch packages without cockpit, so it is not one interchangeable SKU. Tavelo's current mainland policy supports a lifetime first-owner frameset warranty; current package stock and dealer checkout remain unresolved.",
-  "last_reviewed": "2026-08-27"
+  "source_note": "The current official Race specification supplies weights of 780±25 g frame, 355 g fork and 115 g seatpost in size L, excluding paint and accessories. The 38 mm maximum requires 1×; 2× is limited to 34 mm. The domestic launch report spans CNY 9,999 Race and CNY 12,999 SL framesets without cockpit, while the current global Race pre-order is USD 1,899. Current mainland stock and selected checkout remain unresolved.",
+  "last_reviewed": "2026-08-29"
 }

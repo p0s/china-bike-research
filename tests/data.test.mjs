@@ -97,16 +97,16 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 36);
+  assert.equal(data.brands.length, 39);
   assert.equal(data.platforms.length, 36);
   assert.equal(data.variants.length, 38);
   assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 187);
+  assert.equal(data.images.length, 196);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 204);
+  assert.equal(data.candidates.length, 209);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 549);
@@ -253,8 +253,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 193);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 167);
+  assert.equal(catalogCandidates.length, 198);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 172);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -531,9 +531,9 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 178);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 106);
-  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 7);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 182);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 115);
+  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images

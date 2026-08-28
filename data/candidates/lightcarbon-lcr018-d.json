@@ -1,0 +1,65 @@
+{
+  "id": "lightcarbon-lcr018-d",
+  "name": "LightCarbon LCR018-D",
+  "model_id": "lightcarbon-lcr018-d",
+  "category": "aero-wide-clearance",
+  "type": "frameset",
+  "why_interesting": "A light aero-endurance carbon frameset with an official measured-width 38 mm limit and a documented 8.6 kg Shimano 105 owner build.",
+  "missing": [
+    "Current selected mainland checkout price, stock, delivery and warranty route",
+    "Exact current Taobao complete-build package and selected-option price"
+  ],
+  "status": "official-frameset-owner-build-documented",
+  "research_priority": "high",
+  "price_status": "owner-reported frameset reference converted to CNY; mainland checkout unverified",
+  "reference_price_kind": "observed",
+  "source_ids": [
+    "lightcarbon-lcr018-d-official-2026-08-29",
+    "cyclistshub-lcr018-d-owner-2026-08-29",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "observed_price": {
+    "amount_cny": 6450,
+    "currency": "CNY",
+    "price_type": "owner-reported-reference-conversion",
+    "observed_at": "2026-08-29",
+    "price_basis": "Owner-reported USD 950 custom-painted frameset converted at the dated central-parity reference",
+    "conditions": "Reference only; actual FX, shipping, tax, duties and current availability are not included"
+  },
+  "facts": {
+    "frame": "LightCarbon LCR018-D aero-endurance all-road carbon frameset with UDH",
+    "frame_material": "Toray T800, T1100 and M40J carbon",
+    "frame_construction": "3D latex-mandrel monocoque with full internal routing, optional down-tube storage and replaceable UDH",
+    "stiffness_evidence": "LightCarbon publishes qualitative stiffness and load-path claims for its Eagle Eye tube shaping; no independent measured exact-model stiffness result is included",
+    "frame_weight_g": 1100,
+    "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g",
+    "bottom_bracket": "T47×P1, 85.5 mm",
+    "tire_clearance_mm": 38,
+    "tire_clearance_basis": "Manufacturer maximum for tires measured at 38 mm actual width; larger owner fits are not treated as a universal limit",
+    "storage": "Optional integrated down-tube storage",
+    "sizes": "46, 49, 52, 55, 58 and 61"
+  },
+  "alternative_builds": [
+    {
+      "id": "owner-105-mechanical-size-58",
+      "label": "Owner Shimano 105 mechanical size-58 build",
+      "drivetrain": "Shimano 105 mechanical",
+      "complete_weight_g": 8600,
+      "weight_basis": "Owner measurement with pedals, storage and bottle cages; 8.35 kg was reported without pedals",
+      "price": {
+        "amount_cny": 12153,
+        "currency": "CNY",
+        "price_type": "owner-reported-reference-conversion",
+        "observed_at": "2026-08-29",
+        "price_basis": "Owner-reported discounted USD 1,790 complete build converted at the dated central-parity reference"
+      },
+      "source_ids": [
+        "cyclistshub-lcr018-d-owner-2026-08-29",
+        "usd-cny-central-parity-2026-07-31"
+      ],
+      "notes": "The documented owner fitted larger tires, but the catalog keeps the manufacturer's 38 mm measured-width maximum."
+    }
+  ],
+  "source_note": "The official manufacturer page supplies the exact materials, construction, size-specific weights and measured-width 38 mm maximum. The separate size-58 owner build supplies the 8.6 kg complete weight and price references; those observations are not treated as current mainland offers.",
+  "last_reviewed": "2026-08-29"
+}

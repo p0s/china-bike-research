@@ -1,0 +1,78 @@
+{
+  "id": "cervelo-aspero-5-current",
+  "name": "Cervélo Áspero-5",
+  "model_id": "cervelo-aspero-5-current",
+  "category": "aero-wide-clearance",
+  "type": "frameset",
+  "why_interesting": "An explicitly aerodynamic gravel-race platform with up to 45 mm clearance, a 1,023 g reported frame and current complete-build options.",
+  "missing": [
+    "Current mainland seller, selected checkout price, stock and warranty route",
+    "Current manufacturer frameset weight with full size, paint and hardware basis",
+    "Public test protocol behind the manufacturer's current aerodynamic claims"
+  ],
+  "status": "official-global-frameset-and-builds",
+  "research_priority": "high",
+  "price_status": "official global price converted to CNY; mainland checkout unverified",
+  "reference_price_kind": "official",
+  "source_ids": [
+    "cervelo-aspero5-official-2026-08-29",
+    "bikeradar-cervelo-aspero5-2026-08-29",
+    "cervelo-aspero5-omara-image-2026-08-29",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "official_price": {
+    "amount_cny": 37342,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-29",
+    "original_amount": 5500,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current official frameset price; excludes actual FX, shipping, tax and duties"
+  },
+  "facts": {
+    "frame": "Cervélo Áspero-5 aerodynamic gravel-race carbon frameset",
+    "frame_material": "Carbon frame and fork; exact fiber supplier, grades and lay-up are not published",
+    "frame_construction": "S5-influenced aerodynamic shaping, internal storage, threaded bottom bracket and UDH",
+    "stiffness_evidence": "The manufacturer publishes aerodynamic savings but no public stiffness value; one independent review noted cockpit flex rather than frame deflection",
+    "frame_weight_g": 1023,
+    "frame_weight_basis": "BikeRadar reports Cervélo's 1,023 g frame and 393 g fork figures for the current generation; size, paint and included hardware are not stated",
+    "bottom_bracket": "Threaded",
+    "tire_clearance_mm": 45,
+    "tire_clearance_basis": "Official maximum. Cervélo recommends 42/42 mm for balance or 40 mm front / 44 mm rear for a more aerodynamic setup",
+    "storage": "Integrated frame storage",
+    "sizes": "48, 51, 54, 56, 58 and 61"
+  },
+  "alternative_builds": [
+    {
+      "id": "official-grx-rx827-di2",
+      "label": "Official GRX RX827 Di2 build",
+      "drivetrain": "Shimano GRX RX827 Di2 1×12",
+      "price": {
+        "amount_cny": 60086,
+        "currency": "CNY",
+        "price_type": "reference-conversion",
+        "observed_at": "2026-08-29",
+        "price_basis": "Current official USD 8,850 complete-bike price converted at the dated central-parity reference"
+      },
+      "source_ids": [
+        "cervelo-aspero5-official-2026-08-29",
+        "usd-cny-central-parity-2026-07-31"
+      ],
+      "notes": "Official current build; a mainland selected-option price was not found in this pass."
+    },
+    {
+      "id": "bikeradar-size-58-test-bike",
+      "label": "BikeRadar size-58 test bike",
+      "complete_weight_g": 8260,
+      "weight_basis": "Independent complete test-bike measurement around 8.26 kg in size 58",
+      "source_ids": [
+        "bikeradar-cervelo-aspero5-2026-08-29"
+      ],
+      "notes": "Independent current-generation test configuration; its weight is not combined with the official GRX price."
+    }
+  ],
+  "source_note": "This model is kept in the new wide-clearance aero category because Cervélo explicitly designs it around aerodynamic gravel racing. Its gravel discipline remains visible in the title and notes rather than being relabeled as a conventional road bike.",
+  "last_reviewed": "2026-08-29"
+}

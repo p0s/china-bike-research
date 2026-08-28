@@ -7,13 +7,13 @@
   "why_interesting": "Exact official mainland SILEX 7000 build with full geometry, 45 mm clearance and a CNY 20,800 suggested retail price.",
   "missing": [
     "Exact dealer stock, selected checkout and fulfilment state for the mainland SKU",
-    "Frame weight and exact conditions for the available complete-bike measurement",
+    "Frame-only weight",
     "Exact-model mainland warranty eligibility"
   ],
   "status": "official-mainland-list-documented",
   "research_priority": "high",
   "price_status": "official mainland suggested retail; dealer stock and checkout unverified",
-  "required_before_dashboard": "Exact dealer stock and checkout fulfilment; Frame weight and exact conditions for the available complete-bike measurement; Exact mainland warranty policy",
+  "required_before_dashboard": "Exact dealer stock and checkout fulfilment; frame-only weight; exact mainland warranty policy",
   "last_reviewed": "2026-08-28",
   "source_ids": [
     "merida-silex-7000-25-official-cny-reference-2026-08-17",
@@ -36,6 +36,7 @@
     "wheels": "Easton EA70AX",
     "tires": "Maxxis Rambler",
     "complete_weight_g": 9800,
+    "complete_weight_basis": "Exact-model public-post measurement of an approximately 9.8 kg size-M complete bike; pedals, accessories and weighing method are not stated",
     "tire_clearance_mm": 45,
     "mounts": "Multiple frame and fork mounts",
     "sizes": "XXS, XS, S, M, L, XL"

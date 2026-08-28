@@ -1,0 +1,65 @@
+{
+  "id": "argon18-krypton-pro",
+  "name": "Argon 18 Krypton Pro",
+  "model_id": "argon18-krypton-pro",
+  "category": "aero-wide-clearance",
+  "type": "frameset",
+  "why_interesting": "A premium aero-influenced all-road platform with drivetrain-dependent clearance reaching 40C nominal and 43 mm actual width.",
+  "missing": [
+    "Current mainland seller, selected checkout price, stock and warranty route",
+    "Current frameset weight with size, paint and included-hardware basis",
+    "Independent measured aerodynamic and stiffness data for the current generation"
+  ],
+  "status": "official-global-frameset-and-builds",
+  "research_priority": "high",
+  "price_status": "official global price converted to CNY; mainland checkout unverified",
+  "reference_price_kind": "official",
+  "source_ids": [
+    "argon18-krypton-pro-official-2026-08-29",
+    "argon18-krypton-assembly-guide-2026-08-29",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "official_price": {
+    "amount_cny": 22914,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-08-29",
+    "original_amount": 3375,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current official Krypton Pro frameset price; excludes actual FX, shipping, tax and duties"
+  },
+  "facts": {
+    "frame": "Argon 18 Krypton Pro all-road carbon frameset",
+    "frame_material": "Argon 18 Pro Level carbon lay-up; exact fiber supplier and grades are not published",
+    "frame_construction": "3D fit system, Topological Compliance System, internal storage, T47 bottom bracket and 27.2 mm seatpost",
+    "stiffness_evidence": "Argon 18 describes tuned compliance and efficient power transfer; no independent measured exact-generation stiffness value is included",
+    "bottom_bracket": "T47 threaded",
+    "tire_clearance_mm": 43,
+    "tire_clearance_basis": "Maximum actual width for the official SRAM standard, 1×, GRX or wide configurations using up to 40C nominal tires. Shimano road Di2 configurations are generally limited to 35C nominal / 38 mm actual",
+    "storage": "Integrated frame storage",
+    "sizes": "XXS, XS, S, M, L and XL"
+  },
+  "alternative_builds": [
+    {
+      "id": "official-force-axs",
+      "label": "Official SRAM Force AXS build",
+      "drivetrain": "SRAM Force AXS",
+      "price": {
+        "amount_cny": 59407,
+        "currency": "CNY",
+        "price_type": "reference-conversion",
+        "observed_at": "2026-08-29",
+        "price_basis": "Current official USD 8,750 complete-bike price converted at the dated central-parity reference"
+      },
+      "source_ids": [
+        "argon18-krypton-pro-official-2026-08-29",
+        "usd-cny-central-parity-2026-07-31"
+      ],
+      "notes": "This exact drivetrain branch carries the 40C nominal / 43 mm actual clearance statement."
+    }
+  ],
+  "source_note": "The maximum is configuration-specific rather than a universal frameset promise. The official assembly guide distinguishes Shimano road Di2, SRAM standard, 1×, GRX and wide branches; the catalog keeps that condition next to the 43 mm value.",
+  "last_reviewed": "2026-08-29"
+}

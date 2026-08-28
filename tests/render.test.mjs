@@ -176,7 +176,7 @@ test('candidate details expose frame material and stiffness evidence without inv
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'pardus-spark-tourist');
+  const entry = candidates.find((item) => item.candidate.id === 'carbonda-cfr707');
   const detail = renderCandidateModel({
     data,
     products,

@@ -1,0 +1,44 @@
+{
+  "id": "longteng-ltk266-d-sl",
+  "name": "LongTeng LTK266-D--SL",
+  "model_id": "longteng-ltk266-d-sl",
+  "category": "road-climbing",
+  "type": "frameset",
+  "why_interesting": "A roughly 760 g super-light road frameset with UDH and T47, but its published 35 mm maximum does not support treating tight 41–43 mm owner fits as safe clearance.",
+  "missing": [
+    "Current selected mainland or Taobao frameset price, stock and warranty route",
+    "Manufacturer text specification for carbon grade, exact frame weight and measured tire-envelope conditions",
+    "Exact complete-build drivetrain, price and complete-bike weight"
+  ],
+  "status": "exact-model-secondary-specification",
+  "research_priority": "high",
+  "price_status": "owner-reported delivered range converted to CNY; current mainland checkout unverified",
+  "source_ids": [
+    "longteng-ltk266-d-sl-official-2026-08-29",
+    "mybike-ltk266-d-sl-2026-08-29",
+    "usd-cny-central-parity-2026-07-31"
+  ],
+  "observed_price": {
+    "low_cny": 5432,
+    "high_cny": 6450,
+    "currency": "CNY",
+    "price_type": "owner-reported-reference-conversion",
+    "observed_at": "2026-08-29",
+    "price_basis": "Secondary exact-model profile's USD 800–950 delivered owner reports, converted at the dated central-parity reference",
+    "conditions": "Reference only; current package, destination, duties and mainland after-sales are unverified"
+  },
+  "facts": {
+    "frame": "LongTeng LTK266-D--SL super-light integrated carbon road frameset with UDH",
+    "frame_material": "Exact-model secondary profile reports Toray T1100 carbon; the accessible manufacturer page does not expose the grade in text",
+    "frame_construction": "Fully internal lightweight road frame with replaceable UDH and 12×100 / 12×142 mm thru axles",
+    "stiffness_evidence": "No accepted measured exact-model stiffness result; the secondary profile characterizes it as a minimalist non-aero lightweight road frame",
+    "frame_weight_g": 760,
+    "frame_weight_basis": "Exact-model secondary profile reports approximately 760 g frame and 325 g fork; size, paint and included-hardware basis are not stated",
+    "bottom_bracket": "T47 threaded",
+    "tire_clearance_mm": 35,
+    "tire_clearance_basis": "Published maximum in the exact-model secondary profile. Reported 40.7–43 mm actual owner fits were described as tight or eventually insufficient and are not promoted as clearance",
+    "sizes": "Exact current size range unresolved"
+  },
+  "source_note": "The manufacturer establishes the exact current frame identity. The accepted detailed specification is secondary: it reports 760 g, T47, UDH and a 35 mm published maximum. Wider owner fits around 41–43 mm are retained only as cautionary context because they were tight, not as a verified safe maximum.",
+  "last_reviewed": "2026-08-29"
+}

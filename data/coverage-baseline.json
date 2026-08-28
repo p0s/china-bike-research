@@ -3,45 +3,47 @@
   "updated_at": "2026-08-28",
   "catalog_metrics": {
     "records": {
-      "brands": 36,
+      "brands": 39,
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 516,
-      "images": 187,
+      "sources": 531,
+      "images": 196,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 204,
+      "candidates": 209,
       "exclusions": 14,
       "research": 1,
       "researchAttempts": 549
     },
     "image_accuracy": {
-      "exact-platform": 66,
-      "exact-variant": 82,
+      "exact-platform": 68,
+      "exact-variant": 89,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
       "same-platform": 12
     },
     "image_hosting": {
-      "local": 9,
-      "remote": 178
+      "local": 14,
+      "remote": 182
     },
     "candidate_prices": {
-      "official": 51,
-      "observed": 137
+      "official": 54,
+      "observed": 141
     }
   },
   "records": {
     "brands": [
       "af-bicycles",
+      "argon18",
       "bianchi",
       "bxt",
       "camp",
       "carbonda",
+      "cervelo",
       "colnago",
       "elves",
       "evolve",
@@ -54,6 +56,7 @@
       "java",
       "legit",
       "lightcarbon",
+      "longteng",
       "pardus",
       "pinarello",
       "quick",
@@ -211,12 +214,15 @@
       "airwolf-yfr068-complete-store-2026-08-27",
       "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
       "airwolf-yfr068-official-store-2026-08-27",
+      "argon18-krypton-assembly-guide-2026-08-29",
+      "argon18-krypton-pro-official-2026-08-29",
       "bianchi-oltre-race-armenia-2026-08-17",
       "bianchi-oltre-race-dealer-2026-08-17",
       "bianchi-oltre-race-global-2026-08-17",
       "bianchi-oltre-race-official-2026-08-08",
       "bianchi-sprint-icr-official-2026-08-17",
       "bigrock-sohtea-panda-podium-2026-08-17",
+      "bikeradar-cervelo-aspero5-2026-08-29",
       "biketo-pardus-uragano-evo-review-2023",
       "biketo-quick-gr-one-launch-2025",
       "bxt-055-official",
@@ -240,10 +246,13 @@
       "carbonda-cfr696-official",
       "carbonda-cfr696-owner-forum-2026-08-28",
       "carbonda-cfr707-official-2026-08-17",
+      "cervelo-aspero5-official-2026-08-29",
+      "cervelo-aspero5-omara-image-2026-08-29",
       "colnago-china-storefront-2026-08-09",
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
       "continental-gp5000-str-35-official-2026-08-27",
+      "cyclistshub-lcr018-d-owner-2026-08-29",
       "de-rosa-838-official-2026-08-17",
       "decathlon-china-bike-warranty-2026-08-17",
       "decathlon-china-rcrf-route-2026-08-17",
@@ -317,6 +326,8 @@
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
       "lightcarbon-lcg071s-order-options-2026-08-27",
+      "lightcarbon-lcr018-d-official-2026-08-29",
+      "longteng-ltk266-d-sl-official-2026-08-29",
       "look-765-optimum-105-di2-official-2026-08-17",
       "ltwoo-disc-brake-fluid-official-2026-08-24",
       "ltwoo-egr-official-2026-08-24",
@@ -335,6 +346,7 @@
       "merida-silex-7000-25-official-cny-reference-2026-08-17",
       "merida-silex-7000-long-term-review-2026-08-28",
       "merida-warranty-official-2026-08-17",
+      "mybike-ltk266-d-sl-2026-08-29",
       "pardus-2026-conference-wildto",
       "pardus-company-official",
       "pardus-current-gravel-catalog-2026-08-27",
@@ -350,6 +362,8 @@
       "pardus-spark-sport-official-2026-08-09",
       "pardus-spark-sport-official-cn-2026-08-17",
       "pardus-spark-sport-official-global-2026-08-17",
+      "pardus-spark-tourist-pes-taobao-2026-08-29",
+      "pardus-spark-tourist-platform-official-2026-08-29",
       "pardus-super-sport-egr-888bike-2026-08-17",
       "pardus-super-sport-egr-888bike-2026-08-28",
       "pardus-super-sport-gen2-douyin-2026-08-27",
@@ -366,6 +380,7 @@
       "pardus-uragano-evo-uae-seller-2026-08-27",
       "pardus-uragano-f-official-store-promo-2026-08",
       "pardus-uragano-jd-route-2026-08-17",
+      "pardus-uragano-sport-105-cycle-omania-2026-08-29",
       "pardus-uragano-sport-cn-official-2026-08-27",
       "pardus-uragano-sport-official",
       "pinarello-f5-official-2026-08-08",
@@ -520,6 +535,8 @@
       "sava-r8-r8170-official-image-2026-08-17",
       "sava-starship-105-official-2026-08-17",
       "scott-addict-2026-manual-2026-08-17",
+      "scott-addict-40-official-2026-08-29",
+      "scott-addict-40-taobao-2026-08-29",
       "scott-addict-rc-40-poland-2026-08-17",
       "scott-addict-rc-40-retailer-2026-08-08",
       "scott-foil-rc-10-official-2026-08-17",
@@ -581,6 +598,7 @@
       "taobao-wheeltop-gex-options-2026-08-24",
       "tavelo-arden-china-launch-2026-08-17",
       "tavelo-arden-official-2026-08-17",
+      "tavelo-arden-race-official-2026-08-29",
       "tavelo-arow-2024-launch",
       "tavelo-arow-race-polestar-official-2026-08-17",
       "tavelo-arow-sl-official-2026-08-17",
@@ -724,6 +742,7 @@
     ],
     "images": [
       "af01-primary-image",
+      "argon18-krypton-pro-force-primary-image-2026-08-29",
       "bianchi-oltre-race-primary-image",
       "bianchi-sprint-icr-primary-image",
       "bigrock-sohtea-primary-image",
@@ -741,6 +760,7 @@
       "canyon-grail-cf-7-primary-image",
       "canyon-ultimate-cfr-axs-primary-image",
       "carbonda-cfr696-primary-image",
+      "cervelo-aspero5-force-primary-image-2026-08-29",
       "colnago-y1rs-primary-image",
       "de-rosa-new-838-primary-image",
       "elves-falath-evo-primary-image",
@@ -784,7 +804,9 @@
       "laget-discovery-one-flagship-official-primary-image",
       "laget-discovery-one-pro-official-primary-image",
       "lightcarbon-lcg071s-pro-primary-image",
+      "lightcarbon-lcr018-d-primary-image-2026-08-29",
       "lightcarbon-speedz-primary-image",
+      "longteng-ltk266-d-sl-primary-image-2026-08-29",
       "look-765-electronic-primary-image",
       "merida-reacto-6000-cn-27-primary-image",
       "merida-scultura-6000-25-primary-image",
@@ -801,6 +823,10 @@
       "pardus-spark-sport-pes-cn-color-primary-image",
       "pardus-spark-sport-pes-global-primary-image",
       "pardus-spark-sport-pes-primary-image",
+      "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29",
+      "pardus-spark-tourist-pes-taobao-material-gallery-2026-08-29",
+      "pardus-spark-tourist-pes-taobao-primary-2026-08-29",
+      "pardus-spark-tourist-pes-taobao-wheel-gallery-2026-08-29",
       "pardus-super-sport-gen2-candidate-primary-image",
       "pardus-super-sport-gen2-primary-image",
       "pardus-super-sport-gen2-xhs-build-gallery",
@@ -853,6 +879,7 @@
       "sava-r8-r8170-primary-image",
       "sava-r9-primary-image",
       "sava-starship-r13-primary-image",
+      "scott-addict-40-taobao-primary-2026-08-29",
       "scott-addict-rc-40-primary-image",
       "scott-foil-rc-10-primary-image",
       "seka-exaero-gr-primary-image",
@@ -972,6 +999,7 @@
       "airwolf-current-gravel",
       "airwolf-yfr068",
       "alums-da54",
+      "argon18-krypton-pro",
       "basso-venta-disc",
       "bianchi-sprint-icr",
       "bigrock-sohtea",
@@ -981,6 +1009,7 @@
       "camp-gx700",
       "camp-gx700-travel",
       "carbonda-cfr707",
+      "cervelo-aspero-5-current",
       "cinelli-pressure",
       "cinelli-pressure-adr",
       "colnago-y1rs",
@@ -1042,8 +1071,10 @@
       "legit-ac1",
       "leinax-leina-road",
       "leinax-youlong-2",
+      "lightcarbon-lcr018-d",
       "lightcarbon-speed7-complete",
       "lightcarbon-speed7-frameset",
+      "longteng-ltk266-d-sl",
       "look-765-electronic",
       "meihanda-phantom-p10",
       "meihanda-xtreme-gravel",
@@ -1126,6 +1157,7 @@
       "sava-r8-r8170",
       "sava-r9",
       "sava-starship-r13",
+      "scott-addict-40",
       "scott-foil-rc-10",
       "seka-exaero-road",
       "seka-spear-rdc",
@@ -1778,6 +1810,18 @@
         "name_zh",
         "website"
       ],
+      "argon18": [
+        "china_support.domestic_purchase",
+        "china_support.warranty",
+        "country",
+        "last_reviewed",
+        "manufacturing.confidence",
+        "manufacturing.relationship",
+        "manufacturing.summary",
+        "name",
+        "source_ids",
+        "website"
+      ],
       "bianchi": [
         "china_support.domestic_purchase",
         "china_support.warranty",
@@ -1823,6 +1867,18 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "website"
+      ],
+      "cervelo": [
+        "china_support.domestic_purchase",
+        "china_support.warranty",
+        "country",
+        "last_reviewed",
+        "manufacturing.confidence",
+        "manufacturing.relationship",
+        "manufacturing.summary",
+        "name",
+        "source_ids",
         "website"
       ],
       "colnago": [
@@ -1960,6 +2016,19 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "website"
+      ],
+      "longteng": [
+        "china_support.domestic_purchase",
+        "china_support.warranty",
+        "country",
+        "last_reviewed",
+        "manufacturing.confidence",
+        "manufacturing.relationship",
+        "manufacturing.summary",
+        "name",
+        "name_zh",
+        "source_ids",
         "website"
       ],
       "pardus": [
@@ -4851,6 +4920,30 @@
         "type",
         "url"
       ],
+      "argon18-krypton-assembly-guide-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "argon18-krypton-pro-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "bianchi-oltre-race-armenia-2026-08-17": [
         "accessed_at",
         "language",
@@ -4913,6 +5006,18 @@
         "url"
       ],
       "bigrock-sohtea-panda-podium-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "bikeradar-cervelo-aspero5-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -5208,6 +5313,30 @@
         "type",
         "url"
       ],
+      "cervelo-aspero5-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "cervelo-aspero5-omara-image-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "colnago-china-storefront-2026-08-09": [
         "accessed_at",
         "language",
@@ -5244,6 +5373,18 @@
         "type"
       ],
       "continental-gp5000-str-35-official-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "cyclistshub-lcr018-d-owner-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -6153,6 +6294,30 @@
         "type",
         "url"
       ],
+      "lightcarbon-lcr018-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "longteng-ltk266-d-sl-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "look-765-optimum-105-di2-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -6375,6 +6540,18 @@
         "type",
         "url"
       ],
+      "mybike-ltk266-d-sl-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "pardus-2026-conference-wildto": [
         "accessed_at",
         "language",
@@ -6548,6 +6725,32 @@
         "url"
       ],
       "pardus-spark-sport-official-global-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-spark-tourist-pes-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-spark-tourist-platform-official-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -6751,6 +6954,18 @@
         "reliability.identity",
         "reliability.price",
         "reliability.route",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pardus-uragano-sport-105-cycle-omania-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
         "reliability.specification",
         "title",
         "type",
@@ -8593,6 +8808,32 @@
         "type",
         "url"
       ],
+      "scott-addict-40-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "scott-addict-40-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "selected_options",
+        "title",
+        "type",
+        "url"
+      ],
       "scott-addict-rc-40-poland-2026-08-17": [
         "accessed_at",
         "language",
@@ -9384,6 +9625,18 @@
         "url"
       ],
       "tavelo-arden-official-2026-08-17": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "tavelo-arden-race-official-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -11129,6 +11382,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "argon18-krypton-pro-force-primary-image-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "bianchi-oltre-race-primary-image": [
         "alt",
         "credit",
@@ -11425,6 +11694,22 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "cervelo-aspero5-force-primary-image-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "colnago-y1rs-primary-image": [
         "alt",
@@ -12162,6 +12447,22 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "lightcarbon-lcr018-d-primary-image-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
       "lightcarbon-speedz-primary-image": [
         "alt",
         "credit",
@@ -12178,6 +12479,22 @@
         "source_id",
         "subject_accuracy",
         "variant_ids"
+      ],
+      "longteng-ltk266-d-sl-primary-image-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
       ],
       "look-765-electronic-primary-image": [
         "alt",
@@ -12464,6 +12781,118 @@
         "hosting.mode",
         "hosting.remote_url",
         "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-spark-tourist-pes-taobao-material-gallery-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-spark-tourist-pes-taobao-primary-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "pardus-spark-tourist-pes-taobao-wheel-gallery-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -13384,6 +13813,34 @@
         "hosting.mode",
         "hosting.remote_url",
         "media_type",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy"
+      ],
+      "scott-addict-40-taobao-primary-2026-08-29": [
+        "alt",
+        "candidate_id",
+        "credit",
+        "display_note",
+        "editorial_quotation.purpose",
+        "editorial_quotation.removal_route",
+        "editorial_quotation.scope",
+        "editorial_quotation.source_link_required",
+        "hosting.local_path",
+        "hosting.mode",
+        "hosting.variants",
+        "label",
+        "media_type",
+        "privacy_review.account_identifiers",
+        "privacy_review.embedded_metadata",
+        "privacy_review.faces",
+        "privacy_review.location_identifiers",
+        "privacy_review.reviewed_at",
+        "privacy_review.vehicle_registration",
         "reviewed_at",
         "rights.copyright_holder",
         "rights.status",
@@ -15482,6 +15939,39 @@
         "type",
         "why_interesting"
       ],
+      "argon18-krypton-pro": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.storage",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "reference_price_kind",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "basso-venta-disc": [
         "category",
         "last_reviewed",
@@ -15638,6 +16128,41 @@
       "carbonda-cfr707": [
         "last_reviewed",
         "name",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "cervelo-aspero-5-current": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.storage",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "official_price.amount_cny",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "price_status",
+        "reference_price_kind",
+        "research_priority",
         "source_ids",
         "source_note",
         "status",
@@ -16791,6 +17316,38 @@
         "type",
         "why_interesting"
       ],
+      "lightcarbon-lcr018-d": [
+        "alternative_builds",
+        "category",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.storage",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "observed_price.amount_cny",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
+        "price_status",
+        "reference_price_kind",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "lightcarbon-speed7-complete": [
         "category",
         "facts.drivetrain",
@@ -16832,6 +17389,36 @@
         "source_note",
         "source_refs",
         "source_snapshot_id",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "longteng-ltk266-d-sl": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.high_cny",
+        "observed_price.low_cny",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
         "status",
         "type",
         "why_interesting"
@@ -17257,6 +17844,7 @@
         "category",
         "facts.bottom_bracket",
         "facts.brakes",
+        "facts.complete_weight_basis",
         "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
@@ -18006,15 +18594,31 @@
         "why_interesting"
       ],
       "pardus-spark-tourist": [
+        "category",
+        "facts.bottom_bracket",
         "facts.drivetrain",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.wheels",
         "last_reviewed",
         "name",
+        "observed_price.amount_cny",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
         "official_price.amount_cny",
         "official_price.currency",
         "official_price.observed_at",
         "official_price.price_type",
         "price_status",
+        "research_priority",
         "source_ids",
         "source_note",
         "status",
@@ -18147,6 +18751,8 @@
         "facts.axles",
         "facts.brakes",
         "facts.cockpit",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
         "facts.drivetrain",
         "facts.frame",
         "facts.frame_construction",
@@ -18734,6 +19340,37 @@
         "type",
         "why_interesting"
       ],
+      "scott-addict-40": [
+        "category",
+        "facts.complete_weight_basis",
+        "facts.complete_weight_g",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "observed_price.amount_cny",
+        "observed_price.conditions",
+        "observed_price.currency",
+        "observed_price.observed_at",
+        "observed_price.price_basis",
+        "observed_price.price_type",
+        "price_status",
+        "reference_price_kind",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "scott-foil-rc-10": [
         "category",
         "facts.bottom_bracket",
@@ -18984,8 +19621,13 @@
         "facts.bottom_bracket",
         "facts.cockpit",
         "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
         "facts.frame_weight_g",
         "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
         "facts.tire_clearance_mm",
         "facts.warranty",
         "last_reviewed",
@@ -18995,7 +19637,17 @@
         "observed_price.low_cny",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "official_price.amount_cny",
+        "official_price.conversion_rate_cny_per_original_unit",
+        "official_price.conversion_rate_date",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.original_amount",
+        "official_price.original_currency",
+        "official_price.price_basis",
+        "official_price.price_type",
         "price_status",
+        "reference_price_kind",
         "research_priority",
         "source_ids",
         "source_note",
@@ -28020,10 +28672,16 @@
   "relationships": {
     "brands": {
       "af-bicycles": [],
+      "argon18": [
+        "source_ids=argon18-krypton-pro-official-2026-08-29"
+      ],
       "bianchi": [],
       "bxt": [],
       "camp": [],
       "carbonda": [],
+      "cervelo": [
+        "source_ids=cervelo-aspero5-official-2026-08-29"
+      ],
       "colnago": [],
       "elves": [
         "source_ids=elves-warranty-official-2026-08-27"
@@ -28038,6 +28696,9 @@
       "java": [],
       "legit": [],
       "lightcarbon": [],
+      "longteng": [
+        "source_ids=longteng-ltk266-d-sl-official-2026-08-29"
+      ],
       "pardus": [],
       "pinarello": [],
       "quick": [],
@@ -28814,12 +29475,15 @@
       "airwolf-yfr068-complete-store-2026-08-27": [],
       "airwolf-yfr068-geometry-bikeinsights-2026-08-27": [],
       "airwolf-yfr068-official-store-2026-08-27": [],
+      "argon18-krypton-assembly-guide-2026-08-29": [],
+      "argon18-krypton-pro-official-2026-08-29": [],
       "bianchi-oltre-race-armenia-2026-08-17": [],
       "bianchi-oltre-race-dealer-2026-08-17": [],
       "bianchi-oltre-race-global-2026-08-17": [],
       "bianchi-oltre-race-official-2026-08-08": [],
       "bianchi-sprint-icr-official-2026-08-17": [],
       "bigrock-sohtea-panda-podium-2026-08-17": [],
+      "bikeradar-cervelo-aspero5-2026-08-29": [],
       "biketo-pardus-uragano-evo-review-2023": [],
       "biketo-quick-gr-one-launch-2025": [],
       "bxt-055-official": [],
@@ -28843,10 +29507,13 @@
       "carbonda-cfr696-official": [],
       "carbonda-cfr696-owner-forum-2026-08-28": [],
       "carbonda-cfr707-official-2026-08-17": [],
+      "cervelo-aspero5-official-2026-08-29": [],
+      "cervelo-aspero5-omara-image-2026-08-29": [],
       "colnago-china-storefront-2026-08-09": [],
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
       "continental-gp5000-str-35-official-2026-08-27": [],
+      "cyclistshub-lcr018-d-owner-2026-08-29": [],
       "de-rosa-838-official-2026-08-17": [],
       "decathlon-china-bike-warranty-2026-08-17": [],
       "decathlon-china-rcrf-route-2026-08-17": [],
@@ -28920,6 +29587,8 @@
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
       "lightcarbon-lcg071s-order-options-2026-08-27": [],
+      "lightcarbon-lcr018-d-official-2026-08-29": [],
+      "longteng-ltk266-d-sl-official-2026-08-29": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
       "ltwoo-disc-brake-fluid-official-2026-08-24": [],
       "ltwoo-egr-official-2026-08-24": [],
@@ -28938,6 +29607,7 @@
       "merida-silex-7000-25-official-cny-reference-2026-08-17": [],
       "merida-silex-7000-long-term-review-2026-08-28": [],
       "merida-warranty-official-2026-08-17": [],
+      "mybike-ltk266-d-sl-2026-08-29": [],
       "pardus-2026-conference-wildto": [],
       "pardus-company-official": [],
       "pardus-current-gravel-catalog-2026-08-27": [],
@@ -28953,6 +29623,8 @@
       "pardus-spark-sport-official-2026-08-09": [],
       "pardus-spark-sport-official-cn-2026-08-17": [],
       "pardus-spark-sport-official-global-2026-08-17": [],
+      "pardus-spark-tourist-pes-taobao-2026-08-29": [],
+      "pardus-spark-tourist-platform-official-2026-08-29": [],
       "pardus-super-sport-egr-888bike-2026-08-17": [],
       "pardus-super-sport-egr-888bike-2026-08-28": [],
       "pardus-super-sport-gen2-douyin-2026-08-27": [],
@@ -28969,6 +29641,7 @@
       "pardus-uragano-evo-uae-seller-2026-08-27": [],
       "pardus-uragano-f-official-store-promo-2026-08": [],
       "pardus-uragano-jd-route-2026-08-17": [],
+      "pardus-uragano-sport-105-cycle-omania-2026-08-29": [],
       "pardus-uragano-sport-cn-official-2026-08-27": [],
       "pardus-uragano-sport-official": [],
       "pinarello-f5-official-2026-08-08": [],
@@ -29123,6 +29796,8 @@
       "sava-r8-r8170-official-image-2026-08-17": [],
       "sava-starship-105-official-2026-08-17": [],
       "scott-addict-2026-manual-2026-08-17": [],
+      "scott-addict-40-official-2026-08-29": [],
+      "scott-addict-40-taobao-2026-08-29": [],
       "scott-addict-rc-40-poland-2026-08-17": [],
       "scott-addict-rc-40-retailer-2026-08-08": [],
       "scott-foil-rc-10-official-2026-08-17": [],
@@ -29184,6 +29859,7 @@
       "taobao-wheeltop-gex-options-2026-08-24": [],
       "tavelo-arden-china-launch-2026-08-17": [],
       "tavelo-arden-official-2026-08-17": [],
+      "tavelo-arden-race-official-2026-08-29": [],
       "tavelo-arow-2024-launch": [],
       "tavelo-arow-race-polestar-official-2026-08-17": [],
       "tavelo-arow-sl-official-2026-08-17": [],
@@ -29331,6 +30007,10 @@
         "source_id=af01-official",
         "variant_ids=af01-frameset"
       ],
+      "argon18-krypton-pro-force-primary-image-2026-08-29": [
+        "candidate_id=argon18-krypton-pro",
+        "source_id=argon18-krypton-pro-official-2026-08-29"
+      ],
       "bianchi-oltre-race-primary-image": [
         "platform_id=bianchi-oltre-race",
         "source_id=bianchi-oltre-race-official-2026-08-08",
@@ -29409,6 +30089,10 @@
         "platform_id=carbonda-cfr696",
         "source_id=carbonda-cfr696-official",
         "variant_ids=carbonda-cfr696-frameset"
+      ],
+      "cervelo-aspero5-force-primary-image-2026-08-29": [
+        "candidate_id=cervelo-aspero-5-current",
+        "source_id=cervelo-aspero5-omara-image-2026-08-29"
       ],
       "colnago-y1rs-primary-image": [
         "candidate_id=colnago-y1rs",
@@ -29608,11 +30292,19 @@
         "source_id=lightcarbon-image-reference",
         "variant_ids=lightcarbon-lcg071s-pro-frameset"
       ],
+      "lightcarbon-lcr018-d-primary-image-2026-08-29": [
+        "candidate_id=lightcarbon-lcr018-d",
+        "source_id=lightcarbon-lcr018-d-official-2026-08-29"
+      ],
       "lightcarbon-speedz-primary-image": [
         "platform_id=lightcarbon-speedz",
         "source_id=project-image-placeholders",
         "variant_ids=lightcarbon-speedz-complete",
         "variant_ids=lightcarbon-speedz-frameset"
+      ],
+      "longteng-ltk266-d-sl-primary-image-2026-08-29": [
+        "candidate_id=longteng-ltk266-d-sl",
+        "source_id=mybike-ltk266-d-sl-2026-08-29"
       ],
       "look-765-electronic-primary-image": [
         "candidate_id=look-765-electronic",
@@ -29677,6 +30369,22 @@
       "pardus-spark-sport-pes-primary-image": [
         "candidate_id=pardus-spark-sport-pes",
         "source_id=pardus-spark-sport-official-cn-2026-08-17"
+      ],
+      "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": [
+        "candidate_id=pardus-spark-tourist",
+        "source_id=pardus-spark-tourist-pes-taobao-2026-08-29"
+      ],
+      "pardus-spark-tourist-pes-taobao-material-gallery-2026-08-29": [
+        "candidate_id=pardus-spark-tourist",
+        "source_id=pardus-spark-tourist-pes-taobao-2026-08-29"
+      ],
+      "pardus-spark-tourist-pes-taobao-primary-2026-08-29": [
+        "candidate_id=pardus-spark-tourist",
+        "source_id=pardus-spark-tourist-pes-taobao-2026-08-29"
+      ],
+      "pardus-spark-tourist-pes-taobao-wheel-gallery-2026-08-29": [
+        "candidate_id=pardus-spark-tourist",
+        "source_id=pardus-spark-tourist-pes-taobao-2026-08-29"
       ],
       "pardus-super-sport-gen2-candidate-primary-image": [
         "candidate_id=pardus-super-sport-gen2",
@@ -29910,6 +30618,10 @@
       "sava-starship-r13-primary-image": [
         "candidate_id=sava-starship-r13",
         "source_id=sava-starship-105-official-2026-08-17"
+      ],
+      "scott-addict-40-taobao-primary-2026-08-29": [
+        "candidate_id=scott-addict-40",
+        "source_id=scott-addict-40-taobao-2026-08-29"
       ],
       "scott-addict-rc-40-primary-image": [
         "platform_id=scott-addict-rc-40",
@@ -30383,6 +31095,12 @@
         "model_id=alums-da54",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
+      "argon18-krypton-pro": [
+        "model_id=argon18-krypton-pro",
+        "source_ids=argon18-krypton-assembly-guide-2026-08-29",
+        "source_ids=argon18-krypton-pro-official-2026-08-29",
+        "source_ids=usd-cny-central-parity-2026-07-31"
+      ],
       "basso-venta-disc": [
         "model_id=basso-venta-disc",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
@@ -30420,6 +31138,13 @@
       ],
       "carbonda-cfr707": [
         "source_ids=carbonda-cfr707-official-2026-08-17"
+      ],
+      "cervelo-aspero-5-current": [
+        "model_id=cervelo-aspero-5-current",
+        "source_ids=bikeradar-cervelo-aspero5-2026-08-29",
+        "source_ids=cervelo-aspero5-official-2026-08-29",
+        "source_ids=cervelo-aspero5-omara-image-2026-08-29",
+        "source_ids=usd-cny-central-parity-2026-07-31"
       ],
       "cinelli-pressure": [
         "model_id=cinelli-pressure",
@@ -30704,6 +31429,12 @@
         "model_id=leinax-youlong-2",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
+      "lightcarbon-lcr018-d": [
+        "model_id=lightcarbon-lcr018-d",
+        "source_ids=cyclistshub-lcr018-d-owner-2026-08-29",
+        "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
+        "source_ids=usd-cny-central-parity-2026-07-31"
+      ],
       "lightcarbon-speed7-complete": [
         "model_id=lightcarbon-speed7",
         "source_ids=public-lightcarbon-speed7-customer-return-2026-08-20",
@@ -30713,6 +31444,12 @@
       "lightcarbon-speed7-frameset": [
         "model_id=lightcarbon-speed7",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
+      ],
+      "longteng-ltk266-d-sl": [
+        "model_id=longteng-ltk266-d-sl",
+        "source_ids=longteng-ltk266-d-sl-official-2026-08-29",
+        "source_ids=mybike-ltk266-d-sl-2026-08-29",
+        "source_ids=usd-cny-central-parity-2026-07-31"
       ],
       "look-765-electronic": [
         "model_id=look-765-electronic",
@@ -31020,6 +31757,8 @@
       ],
       "pardus-spark-tourist": [
         "source_ids=pardus-2026-conference-wildto",
+        "source_ids=pardus-spark-tourist-pes-taobao-2026-08-29",
+        "source_ids=pardus-spark-tourist-platform-official-2026-08-29",
         "source_ids=public-pardus-spark-tourist-pes-2026-08-24"
       ],
       "pardus-super-sport": [
@@ -31062,6 +31801,7 @@
         "model_id=pardus-uragano-sport",
         "source_ids=compiled-research-2026-08-06",
         "source_ids=pardus-company-official",
+        "source_ids=pardus-uragano-sport-105-cycle-omania-2026-08-29",
         "source_ids=pardus-uragano-sport-cn-official-2026-08-27",
         "source_ids=pardus-uragano-sport-official"
       ],
@@ -31207,6 +31947,11 @@
         "source_ids=sava-starship-105-official-2026-08-17",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
+      "scott-addict-40": [
+        "model_id=scott-addict-40",
+        "source_ids=scott-addict-40-official-2026-08-29",
+        "source_ids=scott-addict-40-taobao-2026-08-29"
+      ],
       "scott-foil-rc-10": [
         "model_id=scott-foil-rc-10",
         "source_ids=scott-foil-rc-10-official-2026-08-17",
@@ -31271,8 +32016,10 @@
         "source_ids=public-tavelo-arden-owner-2026-08-17",
         "source_ids=tavelo-arden-china-launch-2026-08-17",
         "source_ids=tavelo-arden-official-2026-08-17",
+        "source_ids=tavelo-arden-race-official-2026-08-29",
         "source_ids=tavelo-warranty-official-2026-08-17",
-        "source_ids=tavelo-warranty-official-2026-08-27"
+        "source_ids=tavelo-warranty-official-2026-08-27",
+        "source_ids=usd-cny-central-parity-2026-07-31"
       ],
       "tavelo-arow-sl-community-lead": [
         "source_ids=public-tavelo-arow-sl-build-2026-08-17",
@@ -33262,6 +34009,22 @@
         "specification": 1
       }
     },
+    "argon18-krypton-assembly-guide-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "argon18-krypton-pro-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "bianchi-oltre-race-armenia-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -33308,6 +34071,14 @@
       "minimum_reliability": {
         "identity": 2,
         "price": 1,
+        "specification": 2
+      }
+    },
+    "bikeradar-cervelo-aspero5-2026-08-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
         "specification": 2
       }
     },
@@ -33500,6 +34271,22 @@
         "specification": 3
       }
     },
+    "cervelo-aspero5-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "cervelo-aspero5-omara-image-2026-08-29": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
+      }
+    },
     "colnago-china-storefront-2026-08-09": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -33530,6 +34317,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "cyclistshub-lcr018-d-owner-2026-08-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 2
       }
     },
     "de-rosa-838-official-2026-08-17": {
@@ -34132,6 +34927,22 @@
         "specification": 3
       }
     },
+    "lightcarbon-lcr018-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "longteng-ltk266-d-sl-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 0
+      }
+    },
     "look-765-optimum-105-di2-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -34283,6 +35094,14 @@
         "support": 3
       }
     },
+    "mybike-ltk266-d-sl-2026-08-29": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "pardus-2026-conference-wildto": {
       "minimum_type_tier": 0,
       "minimum_reliability": {
@@ -34405,6 +35224,22 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "pardus-spark-tourist-pes-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "pardus-spark-tourist-platform-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "pardus-super-sport-egr-888bike-2026-08-17": {
@@ -34534,6 +35369,14 @@
         "price": 0,
         "route": 3,
         "specification": 0
+      }
+    },
+    "pardus-uragano-sport-105-cycle-omania-2026-08-29": {
+      "minimum_type_tier": 2,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 2
       }
     },
     "pardus-uragano-sport-cn-official-2026-08-27": {
@@ -35746,6 +36589,22 @@
         "specification": 3
       }
     },
+    "scott-addict-40-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "scott-addict-40-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
     "scott-addict-rc-40-poland-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -36236,6 +37095,14 @@
       "minimum_reliability": {
         "identity": 3,
         "price": 0,
+        "specification": 3
+      }
+    },
+    "tavelo-arden-race-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
         "specification": 3
       }
     },
@@ -44726,6 +45593,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "argon18-krypton-pro-force-primary-image-2026-08-29": {
+      "target": "candidates:argon18-krypton-pro",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "bianchi-oltre-race-primary-image": {
       "target": "platforms:bianchi-oltre-race",
       "minimum_accuracy_rank": 2,
@@ -44842,6 +45716,13 @@
       "target": "platforms:carbonda-cfr696",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "cervelo-aspero5-force-primary-image-2026-08-29": {
+      "target": "candidates:cervelo-aspero-5-current",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
     },
@@ -45146,11 +46027,25 @@
       "remote_required": true,
       "primary_required": true
     },
+    "lightcarbon-lcr018-d-primary-image-2026-08-29": {
+      "target": "candidates:lightcarbon-lcr018-d",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "lightcarbon-speedz-primary-image": {
       "target": "platforms:lightcarbon-speedz",
       "minimum_accuracy_rank": 0,
       "minimum_source_tier": 0,
       "remote_required": false,
+      "primary_required": true
+    },
+    "longteng-ltk266-d-sl-primary-image-2026-08-29": {
+      "target": "candidates:longteng-ltk266-d-sl",
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
+      "remote_required": true,
       "primary_required": true
     },
     "look-765-electronic-primary-image": {
@@ -45264,6 +46159,34 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": true
+    },
+    "pardus-spark-tourist-pes-taobao-drivetrain-gallery-2026-08-29": {
+      "target": "candidates:pardus-spark-tourist",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "pardus-spark-tourist-pes-taobao-material-gallery-2026-08-29": {
+      "target": "candidates:pardus-spark-tourist",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
+    },
+    "pardus-spark-tourist-pes-taobao-primary-2026-08-29": {
+      "target": "candidates:pardus-spark-tourist",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": true
+    },
+    "pardus-spark-tourist-pes-taobao-wheel-gallery-2026-08-29": {
+      "target": "candidates:pardus-spark-tourist",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
+      "primary_required": false
     },
     "pardus-super-sport-gen2-candidate-primary-image": {
       "target": "candidates:pardus-super-sport-gen2",
@@ -45627,6 +46550,13 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true,
+      "primary_required": true
+    },
+    "scott-addict-40-taobao-primary-2026-08-29": {
+      "target": "candidates:scott-addict-40",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false,
       "primary_required": true
     },
     "scott-addict-rc-40-primary-image": {
@@ -46100,6 +47030,11 @@
     }
   },
   "image_targets": {
+    "candidates:argon18-krypton-pro": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "candidates:bianchi-sprint-icr": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
@@ -46113,6 +47048,11 @@
     "candidates:camp-ace-qed": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:cervelo-aspero-5-current": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
       "remote_required": true
     },
     "candidates:colnago-y1rs": {
@@ -46173,6 +47113,16 @@
     "candidates:laget-discovery-one-pro": {
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:lightcarbon-lcr018-d": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
+    "candidates:longteng-ltk266-d-sl": {
+      "minimum_accuracy_rank": 3,
+      "minimum_source_tier": 1,
       "remote_required": true
     },
     "candidates:look-765-electronic": {
@@ -46340,6 +47290,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "candidates:pardus-spark-tourist": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false
+    },
     "candidates:pardus-super-sport-gen2": {
       "minimum_accuracy_rank": 2,
       "minimum_source_tier": 1,
@@ -46444,6 +47399,11 @@
       "minimum_accuracy_rank": 3,
       "minimum_source_tier": 2,
       "remote_required": true
+    },
+    "candidates:scott-addict-40": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 1,
+      "remote_required": false
     },
     "candidates:scott-foil-rc-10": {
       "minimum_accuracy_rank": 4,
@@ -46811,6 +47771,9 @@
       "alums-da54": [
         "observed_price"
       ],
+      "argon18-krypton-pro": [
+        "official_price"
+      ],
       "basso-venta-disc": [
         "observed_price"
       ],
@@ -46831,6 +47794,9 @@
       ],
       "camp-gx700-travel": [
         "observed_price"
+      ],
+      "cervelo-aspero-5-current": [
+        "official_price"
       ],
       "cinelli-pressure": [
         "observed_price"
@@ -47004,10 +47970,16 @@
       "leinax-youlong-2": [
         "observed_price"
       ],
+      "lightcarbon-lcr018-d": [
+        "observed_price"
+      ],
       "lightcarbon-speed7-complete": [
         "observed_price"
       ],
       "lightcarbon-speed7-frameset": [
+        "observed_price"
+      ],
+      "longteng-ltk266-d-sl": [
         "observed_price"
       ],
       "look-765-electronic": [
@@ -47131,6 +48103,7 @@
         "observed_price"
       ],
       "pardus-spark-tourist": [
+        "observed_price",
         "official_price"
       ],
       "pardus-super-sport": [
@@ -47215,6 +48188,9 @@
       "sava-starship-r13": [
         "observed_price"
       ],
+      "scott-addict-40": [
+        "observed_price"
+      ],
       "scott-foil-rc-10": [
         "observed_price"
       ],
@@ -47249,7 +48225,8 @@
         "observed_price"
       ],
       "tavelo-arden": [
-        "observed_price"
+        "observed_price",
+        "official_price"
       ],
       "triaero-a9": [
         "observed_price"

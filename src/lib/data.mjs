@@ -5,7 +5,7 @@ import { validateResearchAttempts } from './research-attempts.mjs';
 const root = path.resolve(import.meta.dirname, '../..');
 
 export const supportedCategories = [
-  'road', 'road-race', 'road-aero', 'road-endurance', 'road-climbing',
+  'road', 'road-race', 'road-aero', 'aero-wide-clearance', 'road-endurance', 'road-climbing',
   'gravel', 'gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel', 'all-road',
   'mtb-xc', 'mtb-trail', 'mtb-enduro',
   'e-road', 'folding', 'triathlon'
@@ -21,6 +21,7 @@ const categoryLabels = {
   road: 'Road',
   'road-race': 'Road race',
   'road-aero': 'Aero road',
+  'aero-wide-clearance': 'Aero, wide clearance',
   'road-endurance': 'Endurance road',
   'road-climbing': 'Climbing road',
   gravel: 'Gravel',
@@ -43,6 +44,7 @@ export function categoryLabel(category) {
 }
 
 export function categoryFamily(category) {
+  if (category === 'aero-wide-clearance') return 'road';
   if (String(category).startsWith('road')) return 'road';
   if (String(category).startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(category)) return 'gravel';
   if (String(category).startsWith('mtb-')) return 'mtb';
