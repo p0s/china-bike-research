@@ -1,0 +1,29 @@
+{
+  "id": "candidate-bxt-gravel-complete-complete-weight-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT Gravel 整车 重量 型号", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The two archived marketplace cards do not expose an exact BXT model, so a sibling's complete weight cannot be transferred.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT gravel complete bike exact model weight", "route": "manufacturer complete-bike catalog", "outcome": "blocked", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "BXT-135 is an identifiable sibling, but the archived cards do not establish that identity and its facts cannot be assigned." },
+        { "attempt": 2, "query": "BXT gravel carbon complete bike 11197 11297", "route": "archived marketplace cards and indexed exact-price search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "The price cards expose no model code or weight basis that can bridge them to an official model." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": "2026-09-10",
+  "notes": "Exact identity is a prerequisite; no complete weight is inferred from a BXT sibling."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "platform-spcycle-g028-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "spcycle-g028" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "SPcycle G028 stiffness test deflection", "route": "manufacturer exact-model product page", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html", "note": "Material grades, ISO 4210 language and dimensions are published, but no stiffness or deflection result is given." },
+        { "attempt": 2, "query": "SPcycle G028 review frame flex ride", "route": "exact-model secondary specification and review search", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://mybike.parts/bike_parts/1735-spcycle-g028-gravel", "note": "The secondary record repeats specifications and weight claims but provides no attributable ride or stiffness result." },
+        { "attempt": 3, "query": "SPcycle G028 owner review bottom bracket flex", "route": "public owner and forum discussions", "outcome": "rejected", "accessed_at": "2026-08-28", "note": "Located discussions were prospective or speculative and did not establish exact-model stiffness in use." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "No stiffness value is inferred from T1000/T1100 fiber names."
+}

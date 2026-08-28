@@ -109,7 +109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 204);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 491);
+  assert.equal(data.researchAttempts.length, 515);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -263,6 +263,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(unclearModel.defaultVisible, false);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
   assert.equal(genericBuild.defaultVisible, false);
+  const unidentifiedBxt = catalogCandidates.find((entry) => entry.candidate.id === 'bxt-gravel-complete');
+  assert.equal(unidentifiedBxt.defaultVisible, false);
 
   const basso = catalogCandidates.find((entry) => entry.candidate.id === 'basso-venta-disc');
   assert.deepEqual(basso.brand, { id: 'candidate-brand-basso', name: 'BASSO' });

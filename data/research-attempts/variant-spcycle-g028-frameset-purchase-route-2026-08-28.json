@@ -1,0 +1,20 @@
+{
+  "id": "variant-spcycle-g028-frameset-purchase-route-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "spcycle-g028-frameset" },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "SPcycle G028 buy direct frameset", "route": "manufacturer exact-model storefront", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html", "note": "The direct storefront lists the exact frameset at US$608 and identifies its package; no mainland CNY checkout or China-specific delivery terms are exposed." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["spcycle-g028-official-2026-08-25"],
+  "retry_after": null,
+  "notes": "The route is recorded separately from the still-missing current mainland selected-option price."
+}

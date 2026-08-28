@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 489,
+      "sources": 495,
       "images": 180,
       "videos": 12,
       "groupsets": 11,
@@ -16,7 +16,7 @@
       "candidates": 204,
       "exclusions": 14,
       "research": 1,
-      "researchAttempts": 491
+      "researchAttempts": 515
     },
     "image_accuracy": {
       "exact-platform": 62,
@@ -31,7 +31,7 @@
       "remote": 178
     },
     "candidate_prices": {
-      "official": 49,
+      "official": 50,
       "observed": 136
     }
   },
@@ -221,6 +221,7 @@
       "biketo-quick-gr-one-launch-2025",
       "bxt-055-official",
       "bxt-055-taobao-2026-08-27",
+      "bxt-135-official-2026-08-28",
       "camp-ace-qed-official-2026-08-08",
       "camp-gx600-official",
       "camp-gx600-official-2026-08-17",
@@ -236,6 +237,7 @@
       "canyon-ultimate-cfr-axs-official-2026-08-17",
       "carbonda-cfr696-geometry-bikeinsights-2026-08-25",
       "carbonda-cfr696-official",
+      "carbonda-cfr696-owner-forum-2026-08-28",
       "carbonda-cfr707-official-2026-08-17",
       "colnago-china-storefront-2026-08-09",
       "colnago-y1rs-official-2026-08-08",
@@ -295,6 +297,8 @@
       "incolor-voyager-official-brochure-2026-08-25",
       "incolor-voyager-retailer",
       "irefox-current-catalog-2026-08-09",
+      "irefox-profound-400-biketo-review-2026-08-28",
+      "irefox-profound-400-official-2026-08-28",
       "java-fuoco-top-105-official-2026-08-09",
       "laget-brand-story-2026-08-27",
       "laget-china-contact-2026-08-17",
@@ -691,7 +695,9 @@
       "xlab-rs9-official-cn-spec-2026-08-27",
       "xlab-rs9-taobao-2026-08-27",
       "xmcarbonspeed-gr01-official",
+      "yoeleo-altera-g21-cn-2026-08-28",
       "yoeleo-altera-g21-current-2026-08-27",
+      "yoeleo-altera-g21-engineering-2026-08-28",
       "yoeleo-altera-g21-official",
       "yoeleo-altera-g21-official-2026-08-16"
     ],
@@ -1185,6 +1191,11 @@
       "candidate-bigrock-sohtea-purchase-route-2026-08-17",
       "candidate-bigrock-sohtea-tire-clearance-2026-08-17",
       "candidate-bigrock-sohtea-warranty-support-2026-08-17",
+      "candidate-bxt-gravel-complete-complete-weight-2026-08-28",
+      "candidate-bxt-gravel-complete-drivetrain-2026-08-28",
+      "candidate-bxt-gravel-complete-frame-material-2026-08-28",
+      "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28",
       "candidate-carbonda-cfr707-price-2026-08-17",
       "candidate-carbonda-cfr707-purchase-route-2026-08-17",
       "candidate-carbonda-cfr707-warranty-support-2026-08-17",
@@ -1240,8 +1251,13 @@
       "candidate-incolor-ssr-purchase-route-2026-08-17",
       "candidate-incolor-ssr-tire-clearance-2026-08-17",
       "candidate-incolor-ssr-warranty-support-2026-08-17",
+      "candidate-irefox-profound-400-complete-weight-2026-08-28",
+      "candidate-irefox-profound-400-drivetrain-2026-08-28",
+      "candidate-irefox-profound-400-frame-material-2026-08-28",
+      "candidate-irefox-profound-400-frame-stiffness-2026-08-28",
       "candidate-irefox-profound-400-price-2026-08-17",
       "candidate-irefox-profound-400-purchase-route-2026-08-17",
+      "candidate-irefox-profound-400-tire-clearance-2026-08-28",
       "candidate-irefox-profound-400-warranty-support-2026-08-17",
       "candidate-laget-discovery-one-flagship-frame-material-2026-08-27",
       "candidate-laget-discovery-one-flagship-frame-stiffness-2026-08-27",
@@ -1447,6 +1463,8 @@
       "candidate-xlab-gt8-price-2026-08-27",
       "candidate-xlab-gt8-purchase-route-2026-08-27",
       "candidate-xlab-rs9-tire-clearance-2026-08-27",
+      "platform-af01-frame-material-2026-08-28",
+      "platform-af01-frame-stiffness-2026-08-28",
       "platform-af01-frame-weight-2026-08-27",
       "platform-af01-geometry-2026-08-27",
       "platform-bxt-055-geometry-2026-08-27",
@@ -1454,10 +1472,13 @@
       "platform-camp-gx700-frame-material-2026-08-28",
       "platform-camp-gx700-frame-stiffness-2026-08-28",
       "platform-camp-gx700-tire-clearance-2026-08-28",
+      "platform-carbonda-cfr696-frame-material-2026-08-28",
+      "platform-carbonda-cfr696-frame-stiffness-2026-08-28",
       "platform-evolve-cima-gr-frame-weight-2026-08-27",
       "platform-evolve-cima-gr-geometry-2026-08-27",
       "platform-ican-graro-frame-weight-2026-08-27",
       "platform-ican-graro-geometry-2026-08-27",
+      "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28",
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
       "platform-pardus-super-sport-gen2-frame-material-2026-08-28",
       "platform-pardus-super-sport-gen2-frame-stiffness-2026-08-28",
@@ -1473,6 +1494,8 @@
       "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
       "platform-seka-exaero-gr-frame-weight-2026-08-27",
       "platform-seka-exaero-gr-geometry-2026-08-27",
+      "platform-spcycle-g028-frame-material-2026-08-28",
+      "platform-spcycle-g028-frame-stiffness-2026-08-28",
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27",
       "platform-tavelo-grow-frame-weight-2026-08-27",
       "platform-tavelo-grow-geometry-2026-08-27",
@@ -1485,6 +1508,8 @@
       "platform-winspace-g5-frame-stiffness-2026-08-27",
       "platform-winspace-g5-geometry-2026-08-27",
       "platform-xmcarbonspeed-cs-gr01-geometry-2026-08-27",
+      "platform-yoeleo-altera-g21-frame-material-2026-08-28",
+      "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28",
       "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
       "platform-yoeleo-altera-g21-geometry-2026-08-27",
       "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
@@ -1517,6 +1542,7 @@
       "variant-camp-gx700-grx820-geometry-2026-08-17",
       "variant-camp-gx700-grx820-purchase-route-2026-08-17",
       "variant-carbonda-cfr696-frameset-price-2026-08-25",
+      "variant-carbonda-cfr696-frameset-purchase-route-2026-08-28",
       "variant-elves-falath-r7170-bom-2026-08-17",
       "variant-elves-falath-r7170-bottom-bracket-2026-08-17",
       "variant-elves-falath-r7170-cockpit-2026-08-17",
@@ -1608,6 +1634,8 @@
       "variant-scott-addict-rc-40-purchase-route-2026-08-17",
       "variant-scott-addict-rc-40-tires-2026-08-17",
       "variant-scott-addict-rc-40-wheels-2026-08-17",
+      "variant-spcycle-g028-frameset-price-2026-08-28",
+      "variant-spcycle-g028-frameset-purchase-route-2026-08-28",
       "variant-tfsa-jh37-frameset-price-2026-08-27",
       "variant-tfsa-jh37-frameset-purchase-route-2026-08-27",
       "variant-twitter-cyclone-electronic-bom-2026-08-17",
@@ -1655,7 +1683,9 @@
       "variant-winspace-g3-frameset-purchase-route-2026-08-27",
       "variant-winspace-g5-frameset-price-2026-08-25",
       "variant-xmcarbonspeed-cs-gr01-frameset-price-2026-08-27",
-      "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-08-27"
+      "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-08-27",
+      "variant-yoeleo-altera-g21-frameset-price-2026-08-28",
+      "variant-yoeleo-altera-g21-frameset-purchase-route-2026-08-28"
     ]
   },
   "meta_fields": [
@@ -2102,10 +2132,12 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fiber",
         "frame.claimed_fork_weight_basis",
         "frame.claimed_fork_weight_g",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2114,6 +2146,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2247,8 +2280,10 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fiber",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2257,6 +2292,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -2496,6 +2532,7 @@
         "frame.claimed_frame_weight_g_by_size.550",
         "frame.claimed_frame_weight_g_by_size.580",
         "frame.claimed_frame_weight_g_by_size.basis",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2504,6 +2541,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.stiffness_evidence",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
         "frame.warranty_claim.note",
@@ -2881,8 +2919,10 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fiber",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2891,6 +2931,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -3231,6 +3272,7 @@
         "china_availability",
         "frame.bottom_bracket",
         "frame.cable_routing",
+        "frame.claimed_fiber",
         "frame.claimed_fork_weight_basis",
         "frame.claimed_fork_weight_g",
         "frame.claimed_frame_weight_basis",
@@ -3241,6 +3283,7 @@
         "frame.claimed_seatpost_weight_g",
         "frame.configuration_notes.chainring_limits",
         "frame.configuration_notes.tire_clearance_condition",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -3249,6 +3292,7 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.stiffness_evidence",
         "frame.warranty_claim.basis",
         "frame.warranty_claim.duration_years",
         "frame.warranty_claim.note",
@@ -3808,6 +3852,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ],
       "tavelo-grow-frameset": [
@@ -4060,6 +4105,7 @@
         "market",
         "name",
         "platform_id",
+        "purchase_route",
         "source_ids"
       ]
     },
@@ -4852,6 +4898,18 @@
         "type",
         "url"
       ],
+      "bxt-135-official-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "camp-ace-qed-official-2026-08-08": [
         "accessed_at",
         "language",
@@ -5025,6 +5083,18 @@
         "url"
       ],
       "carbonda-cfr696-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "carbonda-cfr696-owner-forum-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -5748,6 +5818,30 @@
         "url"
       ],
       "irefox-current-catalog-2026-08-09": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "irefox-profound-400-biketo-review-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "irefox-profound-400-official-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -10603,7 +10697,31 @@
         "type",
         "url"
       ],
+      "yoeleo-altera-g21-cn-2026-08-28": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "yoeleo-altera-g21-current-2026-08-27": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "yoeleo-altera-g21-engineering-2026-08-28": [
         "accessed_at",
         "language",
         "notes",
@@ -14885,6 +15003,7 @@
         "observed_price.observation_count",
         "observed_price.observed_at",
         "observed_price.price_basis",
+        "source_ids",
         "source_refs",
         "source_snapshot_id",
         "status",
@@ -15676,8 +15795,28 @@
         "why_interesting"
       ],
       "irefox-profound-400": [
+        "brand_id",
+        "category",
+        "facts.brakes",
+        "facts.drivetrain",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.tires",
+        "facts.wheels",
         "last_reviewed",
+        "model_id",
         "name",
+        "official_price.amount_cny",
+        "official_price.conditions",
+        "official_price.currency",
+        "official_price.observed_at",
+        "official_price.price_basis",
+        "official_price.price_type",
+        "reference_price_kind",
+        "source_ids",
         "status",
         "type",
         "why_interesting"
@@ -19550,6 +19689,85 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-bxt-gravel-complete-complete-weight-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-bxt-gravel-complete-drivetrain-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-bxt-gravel-complete-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-carbonda-cfr707-price-2026-08-17": [
         "accepted_source_ids",
         "channels.web.attempts",
@@ -20324,8 +20542,10 @@
         "target.record_id",
         "target.record_type"
       ],
-      "candidate-irefox-profound-400-price-2026-08-17": [
-        "accepted_source_ids",
+      "candidate-irefox-profound-400-complete-weight-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -20338,9 +20558,85 @@
         "target.record_id",
         "target.record_type"
       ],
+      "candidate-irefox-profound-400-drivetrain-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-irefox-profound-400-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-irefox-profound-400-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-irefox-profound-400-price-2026-08-17": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "resolution.kind",
+        "resolution.note",
+        "resolution.resolved_at",
+        "resolution.source_ids",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "candidate-irefox-profound-400-purchase-route-2026-08-17": [
         "channels.web.attempts",
         "channels.web.blocker",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "candidate-irefox-profound-400-tire-clearance-2026-08-28": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
         "channels.web.status",
         "field",
         "notes",
@@ -23331,6 +23627,32 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-af01-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-af01-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-af01-frame-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.blocker",
@@ -23430,6 +23752,32 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-carbonda-cfr696-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-carbonda-cfr696-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-evolve-cima-gr-frame-weight-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.blocker",
@@ -23477,6 +23825,19 @@
       "platform-ican-graro-geometry-2026-08-27": [
         "channels.public-post.blocker",
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": [
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -23699,6 +24060,32 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-spcycle-g028-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-spcycle-g028-frame-stiffness-2026-08-28": [
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
         "channels.public-post.status",
         "channels.web.attempts",
@@ -23872,6 +24259,32 @@
         "priority",
         "required_channels",
         "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-yoeleo-altera-g21-frame-material-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
         "searched_at",
         "status",
         "target.record_id",
@@ -24322,6 +24735,19 @@
       "variant-carbonda-cfr696-frameset-price-2026-08-25": [
         "channels.public-post.blocker",
         "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-carbonda-cfr696-frameset-purchase-route-2026-08-28": [
+        "accepted_source_ids",
         "channels.web.attempts",
         "channels.web.status",
         "field",
@@ -25683,6 +26109,35 @@
         "target.record_id",
         "target.record_type"
       ],
+      "variant-spcycle-g028-frameset-price-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-spcycle-g028-frameset-purchase-route-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "variant-tfsa-jh37-frameset-price-2026-08-27": [
         "accepted_source_ids",
         "channels.public-post.blocker",
@@ -26378,6 +26833,35 @@
         "status",
         "target.record_id",
         "target.record_type"
+      ],
+      "variant-yoeleo-altera-g21-frameset-price-2026-08-28": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "retry_after",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "variant-yoeleo-altera-g21-frameset-purchase-route-2026-08-28": [
+        "accepted_source_ids",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
       ]
     }
   },
@@ -26462,7 +26946,8 @@
         "brand_id=carbonda",
         "frame.geometry.source_id=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
         "source_ids=carbonda-cfr696-geometry-bikeinsights-2026-08-25",
-        "source_ids=carbonda-cfr696-official"
+        "source_ids=carbonda-cfr696-official",
+        "source_ids=carbonda-cfr696-owner-forum-2026-08-28"
       ],
       "elves-falath-r7170": [
         "brand_id=elves",
@@ -26684,7 +27169,9 @@
       "yoeleo-altera-g21": [
         "brand_id=yoeleo",
         "frame.geometry.source_id=yoeleo-altera-g21-current-2026-08-27",
+        "source_ids=yoeleo-altera-g21-cn-2026-08-28",
         "source_ids=yoeleo-altera-g21-current-2026-08-27",
+        "source_ids=yoeleo-altera-g21-engineering-2026-08-28",
         "source_ids=yoeleo-altera-g21-official",
         "source_ids=yoeleo-altera-g21-official-2026-08-16"
       ]
@@ -26852,6 +27339,7 @@
       ],
       "spcycle-g028-frameset": [
         "platform_id=spcycle-g028",
+        "source_ids=spcycle-g028-official-2026-08-25",
         "source_ids=spcycle-gravel-catalog"
       ],
       "tavelo-grow-frameset": [
@@ -26924,6 +27412,7 @@
       ],
       "yoeleo-altera-g21-frameset": [
         "platform_id=yoeleo-altera-g21",
+        "source_ids=yoeleo-altera-g21-cn-2026-08-28",
         "source_ids=yoeleo-altera-g21-current-2026-08-27",
         "source_ids=yoeleo-altera-g21-official",
         "source_ids=yoeleo-altera-g21-official-2026-08-16"
@@ -27171,6 +27660,7 @@
       "biketo-quick-gr-one-launch-2025": [],
       "bxt-055-official": [],
       "bxt-055-taobao-2026-08-27": [],
+      "bxt-135-official-2026-08-28": [],
       "camp-ace-qed-official-2026-08-08": [],
       "camp-gx600-official": [],
       "camp-gx600-official-2026-08-17": [],
@@ -27186,6 +27676,7 @@
       "canyon-ultimate-cfr-axs-official-2026-08-17": [],
       "carbonda-cfr696-geometry-bikeinsights-2026-08-25": [],
       "carbonda-cfr696-official": [],
+      "carbonda-cfr696-owner-forum-2026-08-28": [],
       "carbonda-cfr707-official-2026-08-17": [],
       "colnago-china-storefront-2026-08-09": [],
       "colnago-y1rs-official-2026-08-08": [],
@@ -27245,6 +27736,8 @@
       "incolor-voyager-official-brochure-2026-08-25": [],
       "incolor-voyager-retailer": [],
       "irefox-current-catalog-2026-08-09": [],
+      "irefox-profound-400-biketo-review-2026-08-28": [],
+      "irefox-profound-400-official-2026-08-28": [],
       "java-fuoco-top-105-official-2026-08-09": [],
       "laget-brand-story-2026-08-27": [],
       "laget-china-contact-2026-08-17": [],
@@ -27641,7 +28134,9 @@
       "xlab-rs9-official-cn-spec-2026-08-27": [],
       "xlab-rs9-taobao-2026-08-27": [],
       "xmcarbonspeed-gr01-official": [],
+      "yoeleo-altera-g21-cn-2026-08-28": [],
       "yoeleo-altera-g21-current-2026-08-27": [],
+      "yoeleo-altera-g21-engineering-2026-08-28": [],
       "yoeleo-altera-g21-official": [],
       "yoeleo-altera-g21-official-2026-08-16": []
     },
@@ -28689,6 +29184,7 @@
       ],
       "bxt-gravel-complete": [
         "model_id=bxt-gravel-complete",
+        "source_ids=taobao-snapshot-2026-08-08",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
       "camp-ace-gen3-105": [
@@ -28891,7 +29387,13 @@
         "source_ids=irefox-current-catalog-2026-08-09",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
-      "irefox-profound-400": [],
+      "irefox-profound-400": [
+        "brand_id=irefox",
+        "model_id=irefox-profound-400",
+        "source_ids=irefox-profound-400-biketo-review-2026-08-28",
+        "source_ids=irefox-profound-400-official-2026-08-28",
+        "source_ids=round3-irefox-profound-launch-review-84f8968e36"
+      ],
       "java-aluminum-24s": [
         "model_id=java-aluminum-24s",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
@@ -29858,6 +30360,21 @@
       "candidate-bigrock-sohtea-warranty-support-2026-08-17": [
         "target.record_id=bigrock-sohtea"
       ],
+      "candidate-bxt-gravel-complete-complete-weight-2026-08-28": [
+        "target.record_id=bxt-gravel-complete"
+      ],
+      "candidate-bxt-gravel-complete-drivetrain-2026-08-28": [
+        "target.record_id=bxt-gravel-complete"
+      ],
+      "candidate-bxt-gravel-complete-frame-material-2026-08-28": [
+        "target.record_id=bxt-gravel-complete"
+      ],
+      "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28": [
+        "target.record_id=bxt-gravel-complete"
+      ],
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28": [
+        "target.record_id=bxt-gravel-complete"
+      ],
       "candidate-carbonda-cfr707-price-2026-08-17": [
         "target.record_id=carbonda-cfr707"
       ],
@@ -30023,10 +30540,26 @@
       "candidate-incolor-ssr-warranty-support-2026-08-17": [
         "target.record_id=incolor-ssr"
       ],
+      "candidate-irefox-profound-400-complete-weight-2026-08-28": [
+        "target.record_id=irefox-profound-400"
+      ],
+      "candidate-irefox-profound-400-drivetrain-2026-08-28": [
+        "target.record_id=irefox-profound-400"
+      ],
+      "candidate-irefox-profound-400-frame-material-2026-08-28": [
+        "target.record_id=irefox-profound-400"
+      ],
+      "candidate-irefox-profound-400-frame-stiffness-2026-08-28": [
+        "target.record_id=irefox-profound-400"
+      ],
       "candidate-irefox-profound-400-price-2026-08-17": [
+        "resolution.source_ids=round3-irefox-profound-launch-review-84f8968e36",
         "target.record_id=irefox-profound-400"
       ],
       "candidate-irefox-profound-400-purchase-route-2026-08-17": [
+        "target.record_id=irefox-profound-400"
+      ],
+      "candidate-irefox-profound-400-tire-clearance-2026-08-28": [
         "target.record_id=irefox-profound-400"
       ],
       "candidate-irefox-profound-400-warranty-support-2026-08-17": [
@@ -30645,6 +31178,12 @@
       "candidate-xlab-rs9-tire-clearance-2026-08-27": [
         "target.record_id=xlab-rs9"
       ],
+      "platform-af01-frame-material-2026-08-28": [
+        "target.record_id=af01"
+      ],
+      "platform-af01-frame-stiffness-2026-08-28": [
+        "target.record_id=af01"
+      ],
       "platform-af01-frame-weight-2026-08-27": [
         "target.record_id=af01"
       ],
@@ -30666,6 +31205,12 @@
       "platform-camp-gx700-tire-clearance-2026-08-28": [
         "target.record_id=camp-gx700"
       ],
+      "platform-carbonda-cfr696-frame-material-2026-08-28": [
+        "target.record_id=carbonda-cfr696"
+      ],
+      "platform-carbonda-cfr696-frame-stiffness-2026-08-28": [
+        "target.record_id=carbonda-cfr696"
+      ],
       "platform-evolve-cima-gr-frame-weight-2026-08-27": [
         "target.record_id=evolve-cima-gr"
       ],
@@ -30677,6 +31222,9 @@
       ],
       "platform-ican-graro-geometry-2026-08-27": [
         "target.record_id=ican-graro"
+      ],
+      "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": [
+        "target.record_id=lightcarbon-lcg071s-pro"
       ],
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27": [
         "target.record_id=pardus-super-sport-gen2"
@@ -30723,6 +31271,12 @@
       "platform-seka-exaero-gr-geometry-2026-08-27": [
         "target.record_id=seka-exaero-gr"
       ],
+      "platform-spcycle-g028-frame-material-2026-08-28": [
+        "target.record_id=spcycle-g028"
+      ],
+      "platform-spcycle-g028-frame-stiffness-2026-08-28": [
+        "target.record_id=spcycle-g028"
+      ],
       "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": [
         "target.record_id=tavelo-grow"
       ],
@@ -30760,6 +31314,12 @@
       ],
       "platform-xmcarbonspeed-cs-gr01-geometry-2026-08-27": [
         "target.record_id=xmcarbonspeed-cs-gr01"
+      ],
+      "platform-yoeleo-altera-g21-frame-material-2026-08-28": [
+        "target.record_id=yoeleo-altera-g21"
+      ],
+      "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28": [
+        "target.record_id=yoeleo-altera-g21"
       ],
       "platform-yoeleo-altera-g21-frame-weight-2026-08-27": [
         "target.record_id=yoeleo-altera-g21"
@@ -30856,6 +31416,9 @@
         "target.record_id=camp-gx700-grx820"
       ],
       "variant-carbonda-cfr696-frameset-price-2026-08-25": [
+        "target.record_id=carbonda-cfr696-frameset"
+      ],
+      "variant-carbonda-cfr696-frameset-purchase-route-2026-08-28": [
         "target.record_id=carbonda-cfr696-frameset"
       ],
       "variant-elves-falath-r7170-bom-2026-08-17": [
@@ -31137,6 +31700,12 @@
       "variant-scott-addict-rc-40-wheels-2026-08-17": [
         "target.record_id=scott-addict-rc-40"
       ],
+      "variant-spcycle-g028-frameset-price-2026-08-28": [
+        "target.record_id=spcycle-g028-frameset"
+      ],
+      "variant-spcycle-g028-frameset-purchase-route-2026-08-28": [
+        "target.record_id=spcycle-g028-frameset"
+      ],
       "variant-tfsa-jh37-frameset-price-2026-08-27": [
         "resolution.source_ids=tfsa-jh37-taobao-2026-08-27",
         "target.record_id=tfsa-jh37-frameset"
@@ -31286,6 +31855,12 @@
       ],
       "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-08-27": [
         "target.record_id=xmcarbonspeed-cs-gr01-frameset"
+      ],
+      "variant-yoeleo-altera-g21-frameset-price-2026-08-28": [
+        "target.record_id=yoeleo-altera-g21-frameset"
+      ],
+      "variant-yoeleo-altera-g21-frameset-purchase-route-2026-08-28": [
+        "target.record_id=yoeleo-altera-g21-frameset"
       ]
     }
   },
@@ -31419,6 +31994,14 @@
         "specification": 2
       }
     },
+    "bxt-135-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "camp-ace-qed-official-2026-08-08": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -31541,6 +32124,14 @@
         "identity": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "carbonda-cfr696-owner-forum-2026-08-28": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": 0,
+        "specification": 0
       }
     },
     "carbonda-cfr707-official-2026-08-17": {
@@ -32028,6 +32619,22 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "irefox-profound-400-biketo-review-2026-08-28": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 2
+      }
+    },
+    "irefox-profound-400-official-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
       }
     },
     "java-fuoco-top-105-official-2026-08-09": {
@@ -35208,12 +35815,28 @@
         "specification": 2
       }
     },
+    "yoeleo-altera-g21-cn-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3
+      }
+    },
     "yoeleo-altera-g21-current-2026-08-27": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": 1,
         "specification": 3
+      }
+    },
+    "yoeleo-altera-g21-engineering-2026-08-28": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 1
       }
     },
     "yoeleo-altera-g21-official": {
@@ -35521,6 +36144,75 @@
       ],
       "accepted_source_ids": [
         "round3-bigrock-sohtea-team-edition-90464dd51d"
+      ]
+    },
+    "candidate-bxt-gravel-complete-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"BXT Gravel 整车 重量 型号\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"BXT gravel complete bike exact model weight\",\"manufacturer complete-bike catalog\",\"blocked\",\"2026-08-28\",\"BXT-135 is an identifiable sibling, but the archived cards do not establish that identity and its facts cannot be assigned.\",\"https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135\"]",
+        "[\"web\",2,\"BXT gravel carbon complete bike 11197 11297\",\"archived marketplace cards and indexed exact-price search\",\"no-result\",\"2026-08-28\",\"The price cards expose no model code or weight basis that can bridge them to an official model.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-bxt-gravel-complete-drivetrain-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"BXT Gravel 整车 套件 型号\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"BXT gravel complete GRX drivetrain\",\"manufacturer exact BXT-135 complete-bike page\",\"conflict\",\"2026-08-28\",\"BXT-135 uses Shimano GRX 2x11, but the archived card cannot be identified as BXT-135.\",\"https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135\"]",
+        "[\"web\",2,\"BXT gravel complete drivetrain variants\",\"manufacturer current product catalog\",\"conflict\",\"2026-08-28\",\"Multiple frames and complete-bike configurations prevent a safe drivetrain assignment without a model code or selected option.\",null]"
+      ],
+      "accepted_source_ids": [
+        "bxt-135-official-2026-08-28",
+        "taobao-snapshot-2026-08-08"
+      ]
+    },
+    "candidate-bxt-gravel-complete-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"BXT Gravel complete GRX carbon frame\",\"manufacturer exact BXT-135 complete-bike page\",\"conflict\",\"2026-08-28\",\"BXT-135 is a distinct T700/T800 complete-bike family and cannot be assigned to the unnamed archived card.\",\"https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135\"]",
+        "[\"web\",2,\"BXT Gravel complete T1000 UDH T47\",\"manufacturer exact BXT-055 frameset page\",\"conflict\",\"2026-08-28\",\"BXT-055 is a distinct T1000-claimed frameset family and likewise cannot identify the unnamed complete bike.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]"
+      ],
+      "accepted_source_ids": [
+        "bxt-055-official",
+        "bxt-135-official-2026-08-28"
+      ]
+    },
+    "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"BXT-135 stiffness ride review\",\"manufacturer exact complete-bike family\",\"conflict\",\"2026-08-28\",\"The BXT-135 identity is not established for the archived card and its seller descriptions cannot be transferred.\",\"https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135\"]",
+        "[\"web\",2,\"BXT-055 stiffness ride review\",\"manufacturer exact frameset family\",\"conflict\",\"2026-08-28\",\"The BXT-055 identity is also not established and no family-level statement is applied to the unnamed complete bike.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]"
+      ],
+      "accepted_source_ids": [
+        "bxt-055-official",
+        "bxt-135-official-2026-08-28"
+      ]
+    },
+    "candidate-bxt-gravel-complete-tire-clearance-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"BXT Gravel 整车 最大轮胎 宽度 型号\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"BXT-135 tire size clearance\",\"manufacturer exact BXT-135 complete-bike page\",\"conflict\",\"2026-08-28\",\"BXT-135 is shown with 700x40C tires, but this is not proof that the archived candidate is BXT-135 or that 40 mm is a manufacturer maximum.\",\"https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135\"]",
+        "[\"web\",2,\"BXT-055 maximum tire clearance\",\"manufacturer exact BXT-055 frameset page\",\"conflict\",\"2026-08-28\",\"BXT-055 publishes 700x50C, illustrating why a sibling value cannot be attached to the unnamed complete bike.\",\"https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC\"]"
+      ],
+      "accepted_source_ids": [
+        "bxt-055-official",
+        "bxt-135-official-2026-08-28",
+        "taobao-snapshot-2026-08-08"
       ]
     },
     "candidate-carbonda-cfr707-price-2026-08-17": {
@@ -36237,6 +36929,54 @@
         "incolor-services-official-2026-08-17"
       ]
     },
+    "candidate-irefox-profound-400-complete-weight-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"IREFOX Profound 400 整车 重量\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"IREFOX Profound 400 weight\",\"manufacturer exact-model catalog\",\"no-result\",\"2026-08-28\",\"The catalog identifies the exact model and frame material but publishes no complete-bike weight.\",\"https://irefox.net/bikes/175_1.html\"]",
+        "[\"web\",2,\"IREFOX Profound 400 105 R7000 review weight\",\"exact-model editorial review\",\"no-result\",\"2026-08-28\",\"The review documents the component package and fitted tires but no complete-bike weighing basis.\",\"https://www.biketo.com/product/52110.html?all=1\"]",
+        "[\"web\",3,\"锐狐 Profound 400 整车重量\",\"launch coverage and indexed product records\",\"no-result\",\"2026-08-28\",\"Launch coverage publishes pricing and configuration but no attributable weight.\",\"https://www.biketo.com/product/51881.html\"]"
+      ],
+      "accepted_source_ids": []
+    },
+    "candidate-irefox-profound-400-drivetrain-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"IREFOX Profound 400 配置 105 R7000\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"IREFOX Profound 400 drivetrain\",\"exact-model editorial review\",\"found\",\"2026-08-28\",\"Exact reviewed build uses Shimano 105 R7000 mechanical 2x11, a 50/34T crank and an 11-34T cassette.\",\"https://www.biketo.com/product/52110.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "irefox-profound-400-biketo-review-2026-08-28"
+      ]
+    },
+    "candidate-irefox-profound-400-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"IREFOX Profound 400 carbon grade construction\",\"manufacturer exact-model catalog\",\"found\",\"2026-08-28\",\"Official exact-model catalog identifies a T700-carbon frame; fiber supplier, lay-up and molding process are not disclosed.\",\"https://irefox.net/bikes/175_1.html\"]"
+      ],
+      "accepted_source_ids": [
+        "irefox-profound-400-official-2026-08-28"
+      ]
+    },
+    "candidate-irefox-profound-400-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"IREFOX Profound 400 ride review stiffness handling\",\"independent exact-model ride review\",\"found\",\"2026-08-28\",\"The review reports relaxed, stable handling and a comfortable ride; it publishes no measured stiffness or deflection result.\",\"https://www.biketo.com/product/52110.html?all=1\"]"
+      ],
+      "accepted_source_ids": [
+        "irefox-profound-400-biketo-review-2026-08-28"
+      ]
+    },
     "candidate-irefox-profound-400-price-2026-08-17": {
       "channel_attempt_counts": {
         "web": 3
@@ -36245,6 +36985,9 @@
         "[\"web\",1,\"IREFOX Profound 400 China launch price\",\"China product launch\",\"no-result\",\"2026-08-17\",\"Historical launch/promo conditions.\",\"https://www.biketo.com/product/51881.html\"]",
         "[\"web\",2,\"IREFOX current Profound catalog\",\"official China manufacturer\",\"no-result\",\"2026-08-17\",\"Old-stock/out-of-catalog.\",\"https://irefox.net/cn/\"]",
         "[\"web\",3,\"IREFOX current JD catalog\",\"official/current marketplace\",\"no-result\",\"2026-08-17\",\"No current exact 400.\",\"https://www.jd.com/jiage/131810d11b5e44e5573b.html\"]"
+      ],
+      "resolution_entries": [
+        "{\"kind\":\"source-reuse\",\"resolved_at\":\"2026-08-28\",\"source_ids\":[\"round3-irefox-profound-launch-review-84f8968e36\"],\"note\":\"The already-preserved launch source contains exact historical list, promotion and conditional-rebate amounts; these are now attached as historical price evidence without treating them as current checkout pricing.\"}"
       ],
       "accepted_source_ids": [
         "round3-irefox-profound-launch-review-84f8968e36"
@@ -36260,6 +37003,20 @@
         "[\"web\",3,\"IREFOX current marketplace route\",\"official/current marketplace\",\"blocked\",\"2026-08-17\",\"Blocked.\",\"https://www.jd.com/jiage/131810d11b5e44e5573b.html\"]"
       ],
       "accepted_source_ids": []
+    },
+    "candidate-irefox-profound-400-tire-clearance-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"IREFOX Profound 400 轮胎 宽度 40C\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"IREFOX Profound 400 tire clearance 40C\",\"exact-model editorial review\",\"found\",\"2026-08-28\",\"The reviewed bike was fitted with Schwalbe 700x40C tires and the reviewer described 40C as the observed maximum; this is not a manufacturer maximum-clearance specification.\",\"https://www.biketo.com/product/52110.html?all=1\"]",
+        "[\"web\",2,\"IREFOX Profound 400 maximum tire clearance\",\"manufacturer exact-model catalog\",\"no-result\",\"2026-08-28\",\"The exact official page does not publish a maximum clearance.\",\"https://irefox.net/bikes/175_1.html\"]"
+      ],
+      "accepted_source_ids": [
+        "irefox-profound-400-biketo-review-2026-08-28"
+      ]
     },
     "candidate-irefox-profound-400-warranty-support-2026-08-17": {
       "channel_attempt_counts": {
@@ -39027,6 +39784,28 @@
         "xlab-rs9-official-cn-spec-2026-08-27"
       ]
     },
+    "platform-af01-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 Standard carbon grade one piece molding\",\"manufacturer exact-model page\",\"found\",\"2026-08-28\",\"Manufacturer specifies T800 + M46 carbon and one-piece molding with embedded aluminum fork inserts; no ply schedule is published.\",\"https://afbicycles.com/products/af01-standard-carbon-gravel-frame\"]"
+      ],
+      "accepted_source_ids": [
+        "af01-official"
+      ]
+    },
+    "platform-af01-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"AF01 Standard stiffness test deflection\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-28\",\"Manufacturer supplies generic stiffness, power-transfer and handling language but no numeric test or protocol.\",\"https://afbicycles.com/products/af01-standard-carbon-gravel-frame\"]",
+        "[\"web\",2,\"AF01 Standard independent ride stiffness review\",\"secondary exact-model aggregation\",\"rejected\",\"2026-08-28\",\"Aggregated stiff/reactive/precise impressions are anecdotal and do not expose an independent test basis.\",\"https://mybike.parts/bike_parts/1191-assisting-force-af01-standard-carbon-gravel-bike-frame-versatile-performance\"]",
+        "[\"web\",3,\"Assisting Force AF01 frame stiffness measurement\",\"independent measurement search\",\"no-result\",\"2026-08-28\",\"No exact-model independent stiffness or deflection measurement was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "platform-af01-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -39111,6 +39890,29 @@
       ],
       "accepted_source_ids": []
     },
+    "platform-carbonda-cfr696-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Carbonda CFR696 Toray carbon EPS molding\",\"manufacturer exact-model page\",\"found\",\"2026-08-28\",\"Exact page states full Toray carbon, UD weave, EPS molding and in-house EN-standard testing; exact grade, ply schedule and test results are not published.\",\"https://www.carbonda.com/road/cfr-696.html\"]"
+      ],
+      "accepted_source_ids": [
+        "carbonda-cfr696-official"
+      ]
+    },
+    "platform-carbonda-cfr696-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Carbonda CFR696 stiffness response\",\"manufacturer exact-model page\",\"rejected\",\"2026-08-28\",\"Generic stiffness-response wording is marketing and no stiffness or deflection value is published.\",\"https://www.carbonda.com/road/cfr-696.html\"]",
+        "[\"web\",2,\"Carbonda CFR696 long term owner flex descending braking\",\"exact-model owner forum\",\"found\",\"2026-08-28\",\"Owners report more than 10,000 miles, stable high-speed descending and hard braking without perceived frame flex, plus stable and comfortable race handling; qualitative evidence only.\",\"https://forum.ridinggravel.com/post/chinese-carbon-gravel-build-carbonda-8254658?trail=5150\"]"
+      ],
+      "accepted_source_ids": [
+        "carbonda-cfr696-owner-forum-2026-08-28"
+      ]
+    },
     "platform-evolve-cima-gr-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -39159,6 +39961,17 @@
         "[\"web\",1,\"ICAN Graro current geometry\",\"manufacturer exact-model page\",\"no-result\",\"2026-08-27\",\"Current page supplies sizes and specifications but no numeric geometry table.\",\"https://icanwheels.com/collections/gravel-bike-frame/products/graro?variant=44628319469804\"]",
         "[\"web\",2,\"ICAN Graro geometry 2026 stack reach\",\"public web search\",\"rejected\",\"2026-08-27\",\"A 2024 geometry record was found but not applied to the current revision without a model-year bridge.\",null]",
         "[\"web\",3,\"ICAN Graro manual geometry PDF\",\"manual and catalog search\",\"no-result\",\"2026-08-27\",\"No current exact-revision numeric table was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"LightCarbon LCG071S-PRO stiffness test deflection\",\"manufacturer exact-model product page\",\"rejected\",\"2026-08-28\",\"The manufacturer claims a strength improvement from its molding process but publishes no protocol, deflection or stiffness result.\",\"https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html\"]",
+        "[\"web\",2,\"LCG071S-PRO owner review stiffness flex\",\"exact-model owner build report\",\"rejected\",\"2026-08-28\",\"Owner reports good overall riding and no frame build issues but does not describe or measure stiffness.\",\"https://www.reddit.com/r/ChineseCarbon/comments/1spzqgq/lightcarbon_lcg071spro_build/\"]",
+        "[\"web\",3,\"LCG071S-PRO bottom bracket flex ride test\",\"exact-model owner and technical search\",\"no-result\",\"2026-08-28\",\"No measured stiffness or sufficiently specific attributable flex assessment was found; similarly named LCG071-PRO evidence was excluded.\",null]"
       ],
       "accepted_source_ids": []
     },
@@ -39343,6 +40156,28 @@
         "seka-exaero-gr-official-2026-08-27"
       ]
     },
+    "platform-spcycle-g028-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SPcycle G028 T1000 T1100 carbon construction\",\"manufacturer exact-model product page\",\"found\",\"2026-08-28\",\"Exact page identifies T1000 plus T1100 carbon and full internal routing; it does not publish the lay-up schedule or molding process.\",\"https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html\"]"
+      ],
+      "accepted_source_ids": [
+        "spcycle-g028-official-2026-08-25"
+      ]
+    },
+    "platform-spcycle-g028-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SPcycle G028 stiffness test deflection\",\"manufacturer exact-model product page\",\"no-result\",\"2026-08-28\",\"Material grades, ISO 4210 language and dimensions are published, but no stiffness or deflection result is given.\",\"https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html\"]",
+        "[\"web\",2,\"SPcycle G028 review frame flex ride\",\"exact-model secondary specification and review search\",\"no-result\",\"2026-08-28\",\"The secondary record repeats specifications and weight claims but provides no attributable ride or stiffness result.\",\"https://mybike.parts/bike_parts/1735-spcycle-g028-gravel\"]",
+        "[\"web\",3,\"SPcycle G028 owner review bottom bracket flex\",\"public owner and forum discussions\",\"rejected\",\"2026-08-28\",\"Located discussions were prospective or speculative and did not establish exact-model stiffness in use.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
     "platform-tavelo-grow-drivetrain-compatibility-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -39500,6 +40335,29 @@
         "[\"web\",3,\"CS-GR01 碳纤维车架\",\"signed-in Taobao exact-model search\",\"no-result\",\"2026-08-27\",\"No exact listing or geometry image was found.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "platform-yoeleo-altera-g21-frame-material-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"YOELEO Altera G21 T800 ProMoldCore construction\",\"manufacturer Chinese exact-model product page\",\"found\",\"2026-08-28\",\"Exact page identifies high-modulus Toray T800 UD carbon, ProMoldCore latex internal molding and a bonded-aluminum T47 shell molded into the frame; the ply schedule is not published.\",\"https://www.yoeleo.com/zh/products/altera-g21-gravel-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-cn-2026-08-28"
+      ]
+    },
+    "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 2
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"YOELEO Altera G21 stiffness fatigue test\",\"manufacturer engineering article\",\"found\",\"2026-08-28\",\"Manufacturer describes targeted bottom-bracket and head-tube stiffness and reports fatigue testing at 100,000 cycles at 1,100 N plus 50,000 cycles at 1,200 N; no deflection value is published.\",\"https://www.yoeleobike.com/ru/blogs/guide/what-makes-a-gravel-bike-fast\"]",
+        "[\"web\",2,\"YOELEO Altera G21 independent review stiffness ride\",\"exact-model editorial feature\",\"rejected\",\"2026-08-28\",\"The feature discusses stability and comfort but is disclosed paid promotion and provides no comparative stiffness measurement.\",\"https://road.cc/content/feature/yoeleo-altera-g21-ultimate-carbon-gravel-bike-317495\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-engineering-2026-08-28"
+      ]
     },
     "platform-yoeleo-altera-g21-frame-weight-2026-08-27": {
       "channel_attempt_counts": {
@@ -39921,6 +40779,17 @@
         "[\"web\",3,\"CFR696 UDH frameset price mainland\",\"mainland marketplace or dealer\",\"rejected\",\"2026-08-25\",\"Only broad or older reference ranges were available, without exact current package mapping.\",null]"
       ],
       "accepted_source_ids": []
+    },
+    "variant-carbonda-cfr696-frameset-purchase-route-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"Carbonda CFR696 buy get a quote\",\"manufacturer exact-model page\",\"found\",\"2026-08-28\",\"Official page provides a direct-factory Get a quote route; exact generation, package, shipping, tax and warranty require quotation.\",\"https://www.carbonda.com/road/cfr-696.html\"]"
+      ],
+      "accepted_source_ids": [
+        "carbonda-cfr696-official"
+      ]
     },
     "variant-elves-falath-r7170-bom-2026-08-17": {
       "channel_attempt_counts": {
@@ -41192,6 +42061,30 @@
         "scott-addict-rc-40-poland-2026-08-17"
       ]
     },
+    "variant-spcycle-g028-frameset-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"SPcycle G028 车架 价格\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"SPcycle G028 price China\",\"manufacturer exact-model storefront\",\"rejected\",\"2026-08-28\",\"US$608 is a current direct price but not a mainland CNY selected-option checkout.\",\"https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html\"]",
+        "[\"web\",2,\"SPcycle G028 CNY RMB price\",\"exact-model secondary listing\",\"no-result\",\"2026-08-28\",\"No current mainland CNY checkout was exposed.\",\"https://mybike.parts/bike_parts/1735-spcycle-g028-gravel\"]",
+        "[\"web\",3,\"SPcycle G028 国内 售价\",\"indexed mainland dealer and marketplace search\",\"no-result\",\"2026-08-28\",\"No exact selected-option CNY observation with package and date was found.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-spcycle-g028-frameset-purchase-route-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"SPcycle G028 buy direct frameset\",\"manufacturer exact-model storefront\",\"found\",\"2026-08-28\",\"The direct storefront lists the exact frameset at US$608 and identifies its package; no mainland CNY checkout or China-specific delivery terms are exposed.\",\"https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html\"]"
+      ],
+      "accepted_source_ids": [
+        "spcycle-g028-official-2026-08-25"
+      ]
+    },
     "variant-tfsa-jh37-frameset-price-2026-08-27": {
       "channel_attempt_counts": {
         "public-post": 0,
@@ -41826,6 +42719,30 @@
       ],
       "accepted_source_ids": [
         "xmcarbonspeed-gr01-official"
+      ]
+    },
+    "variant-yoeleo-altera-g21-frameset-price-2026-08-28": {
+      "channel_attempt_counts": {
+        "public-post": 1,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"YOELEO Altera G21 车架 价格\",\"canonical XHS pool availability preflight\",\"blocked\",\"2026-08-28\",\"No query was executed because the shared lane was already occupied.\",null]",
+        "[\"web\",1,\"YOELEO Altera G21 China price\",\"manufacturer Chinese-language exact-model storefront\",\"no-result\",\"2026-08-28\",\"The Chinese page exposes product details and worldwide shipping but no CNY amount.\",\"https://www.yoeleo.com/zh/products/altera-g21-gravel-frameset\"]",
+        "[\"web\",2,\"YOELEO Altera G21 current price\",\"manufacturer global exact-model storefront\",\"rejected\",\"2026-08-28\",\"US$1,420 is current foreign-currency evidence, not a mainland CNY selected-option checkout.\",\"https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple\"]",
+        "[\"web\",3,\"YOELEO Altera G21 Asia price\",\"manufacturer regional storefront\",\"rejected\",\"2026-08-28\",\"A current Japan-store JPY amount is not mainland CNY evidence and is not converted.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "variant-yoeleo-altera-g21-frameset-purchase-route-2026-08-28": {
+      "channel_attempt_counts": {
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"web\",1,\"YOELEO Altera G21 Chinese store buy\",\"manufacturer Chinese-language exact-model storefront\",\"found\",\"2026-08-28\",\"Chinese-language direct storefront offers worldwide shipping; mainland checkout, delivery, return terms and a CNY amount are not exposed.\",\"https://www.yoeleo.com/zh/products/altera-g21-gravel-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "yoeleo-altera-g21-cn-2026-08-28"
       ]
     }
   },
@@ -43997,6 +44914,9 @@
       ],
       "irefox-by446": [
         "observed_price"
+      ],
+      "irefox-profound-400": [
+        "official_price"
       ],
       "java-aluminum-24s": [
         "observed_price"

@@ -1,0 +1,22 @@
+{
+  "id": "candidate-bxt-gravel-complete-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "The archived complete-bike cards omit the model identity, while current official BXT siblings use materially different T700/T800 and T1000 frame claims.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT Gravel complete GRX carbon frame", "route": "manufacturer exact BXT-135 complete-bike page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "BXT-135 is a distinct T700/T800 complete-bike family and cannot be assigned to the unnamed archived card." },
+        { "attempt": 2, "query": "BXT Gravel complete T1000 UDH T47", "route": "manufacturer exact BXT-055 frameset page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "note": "BXT-055 is a distinct T1000-claimed frameset family and likewise cannot identify the unnamed complete bike." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["bxt-135-official-2026-08-28", "bxt-055-official"],
+  "retry_after": null,
+  "notes": "No exact material is attached until the archived complete bike is identified."
+}

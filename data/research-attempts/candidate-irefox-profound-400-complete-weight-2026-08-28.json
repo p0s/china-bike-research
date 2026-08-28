@@ -1,0 +1,29 @@
+{
+  "id": "candidate-irefox-profound-400-complete-weight-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "irefox-profound-400" },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "IREFOX Profound 400 整车 重量", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "IREFOX Profound 400 weight", "route": "manufacturer exact-model catalog", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://irefox.net/bikes/175_1.html", "note": "The catalog identifies the exact model and frame material but publishes no complete-bike weight." },
+        { "attempt": 2, "query": "IREFOX Profound 400 105 R7000 review weight", "route": "exact-model editorial review", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.biketo.com/product/52110.html?all=1", "note": "The review documents the component package and fitted tires but no complete-bike weighing basis." },
+        { "attempt": 3, "query": "锐狐 Profound 400 整车重量", "route": "launch coverage and indexed product records", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.biketo.com/product/51881.html", "note": "Launch coverage publishes pricing and configuration but no attributable weight." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": "2026-09-10",
+  "notes": "The exact complete-bike weight and its size, pedals and accessory basis remain empty after three web routes and an occupied XHS lane."
+}

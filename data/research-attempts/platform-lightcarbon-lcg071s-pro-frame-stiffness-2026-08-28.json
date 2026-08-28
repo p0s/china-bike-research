@@ -1,0 +1,22 @@
+{
+  "id": "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "lightcarbon-lcg071s-pro" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "LightCarbon LCG071S-PRO stiffness test deflection", "route": "manufacturer exact-model product page", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html", "note": "The manufacturer claims a strength improvement from its molding process but publishes no protocol, deflection or stiffness result." },
+        { "attempt": 2, "query": "LCG071S-PRO owner review stiffness flex", "route": "exact-model owner build report", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1spzqgq/lightcarbon_lcg071spro_build/", "note": "Owner reports good overall riding and no frame build issues but does not describe or measure stiffness." },
+        { "attempt": 3, "query": "LCG071S-PRO bottom bracket flex ride test", "route": "exact-model owner and technical search", "outcome": "no-result", "accessed_at": "2026-08-28", "note": "No measured stiffness or sufficiently specific attributable flex assessment was found; similarly named LCG071-PRO evidence was excluded." }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-11-28",
+  "notes": "The exact-model material and molding process are recorded, while stiffness remains explicitly unknown."
+}

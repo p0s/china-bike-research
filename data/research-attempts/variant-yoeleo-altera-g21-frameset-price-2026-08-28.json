@@ -1,0 +1,29 @@
+{
+  "id": "variant-yoeleo-altera-g21-frameset-price-2026-08-28",
+  "target": { "record_type": "variant", "record_id": "yoeleo-altera-g21-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-08-28",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "attempts": [
+        { "attempt": 1, "query": "YOELEO Altera G21 车架 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        { "attempt": 1, "query": "YOELEO Altera G21 China price", "route": "manufacturer Chinese-language exact-model storefront", "outcome": "no-result", "accessed_at": "2026-08-28", "result_url": "https://www.yoeleo.com/zh/products/altera-g21-gravel-frameset", "note": "The Chinese page exposes product details and worldwide shipping but no CNY amount." },
+        { "attempt": 2, "query": "YOELEO Altera G21 current price", "route": "manufacturer global exact-model storefront", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://www.yoeleobike.com/products/altera-g21-db-gravel-frameset-panda-podium-purple", "note": "US$1,420 is current foreign-currency evidence, not a mainland CNY selected-option checkout." },
+        { "attempt": 3, "query": "YOELEO Altera G21 Asia price", "route": "manufacturer regional storefront", "outcome": "rejected", "accessed_at": "2026-08-28", "note": "A current Japan-store JPY amount is not mainland CNY evidence and is not converted." }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": "2026-09-10",
+  "notes": "Foreign official prices remain useful route context, while the current mainland selected-option CNY price stays empty."
+}

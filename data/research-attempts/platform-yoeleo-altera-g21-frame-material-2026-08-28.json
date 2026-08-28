@@ -1,0 +1,20 @@
+{
+  "id": "platform-yoeleo-altera-g21-frame-material-2026-08-28",
+  "target": { "record_type": "platform", "record_id": "yoeleo-altera-g21" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "YOELEO Altera G21 T800 ProMoldCore construction", "route": "manufacturer Chinese exact-model product page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.yoeleo.com/zh/products/altera-g21-gravel-frameset", "note": "Exact page identifies high-modulus Toray T800 UD carbon, ProMoldCore latex internal molding and a bonded-aluminum T47 shell molded into the frame; the ply schedule is not published." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["yoeleo-altera-g21-cn-2026-08-28"],
+  "retry_after": null,
+  "notes": "The frame construction is separated from cockpit-specific ProOne wording so the latter is not overgeneralized."
+}

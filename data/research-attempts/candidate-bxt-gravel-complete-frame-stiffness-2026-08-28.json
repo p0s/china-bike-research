@@ -1,0 +1,22 @@
+{
+  "id": "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "An exact-model stiffness or ride claim cannot be selected because the archived complete-bike model is unresolved between materially different BXT families.",
+      "attempts": [
+        { "attempt": 1, "query": "BXT-135 stiffness ride review", "route": "manufacturer exact complete-bike family", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "The BXT-135 identity is not established for the archived card and its seller descriptions cannot be transferred." },
+        { "attempt": 2, "query": "BXT-055 stiffness ride review", "route": "manufacturer exact frameset family", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "note": "The BXT-055 identity is also not established and no family-level statement is applied to the unnamed complete bike." }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": ["bxt-135-official-2026-08-28", "bxt-055-official"],
+  "retry_after": null,
+  "notes": "The candidate remains empty rather than displaying a sibling model's ride or stiffness language."
+}

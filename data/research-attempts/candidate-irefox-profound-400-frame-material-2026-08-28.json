@@ -1,0 +1,20 @@
+{
+  "id": "candidate-irefox-profound-400-frame-material-2026-08-28",
+  "target": { "record_type": "candidate", "record_id": "irefox-profound-400" },
+  "field": "frame-material",
+  "priority": "medium",
+  "searched_at": "2026-08-28",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        { "attempt": 1, "query": "IREFOX Profound 400 carbon grade construction", "route": "manufacturer exact-model catalog", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://irefox.net/bikes/175_1.html", "note": "Official exact-model catalog identifies a T700-carbon frame; fiber supplier, lay-up and molding process are not disclosed." }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["irefox-profound-400-official-2026-08-28"],
+  "retry_after": null,
+  "notes": "The exact published grade is retained without inferring execution quality or an undisclosed lay-up."
+}
