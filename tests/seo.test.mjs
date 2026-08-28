@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  datasetStructuredData,
   latestDate,
   productPageStructuredData,
   sitemapXml,
@@ -70,4 +71,26 @@ test('sitemap uses route-specific current dates and excludes non-indexed routes'
   assert.match(sitemap, /https:\/\/china-bikes\.example\/guide\/models\/example\/<\/loc><lastmod>2026-08-27/);
   assert.doesNotMatch(sitemap, /404\.html/);
   assert.equal(latestDate([['2026-08-08', '2026-08-28'], '2026-08-17'], '2026-01-01'), '2026-08-28');
+});
+
+test('dataset schema mirrors visible downloads without commercial claims', () => {
+  const data = datasetStructuredData({
+    siteUrl: 'https://china-bikes.example',
+    base: '',
+    path: '/methodology/',
+    name: 'China Bike Research dataset',
+    description: 'Source-linked bike records.',
+    dateModified: '2026-08-28',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    distributions: [
+      { name: 'Catalog JSON', encodingFormat: 'application/json', path: '/data/catalog.json' },
+      { name: 'Catalog CSV', encodingFormat: 'text/csv', path: '/data/catalog.csv' }
+    ]
+  });
+  const dataset = data['@graph'].find((entry) => entry['@type'] === 'Dataset');
+  assert.equal(dataset.dateModified, '2026-08-28');
+  assert.equal(dataset.distribution.length, 2);
+  assert.equal(dataset.distribution[0].contentUrl, 'https://china-bikes.example/data/catalog.json');
+  assert.equal(JSON.stringify(data).includes('offers'), false);
+  assert.equal(JSON.stringify(data).includes('Product'), false);
 });

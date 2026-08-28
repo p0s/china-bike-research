@@ -47,7 +47,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-        <a href="${url(base,'/?type=frameset#catalog')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
+        <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
         <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
         <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
       </nav>
@@ -59,6 +59,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
       <span>Independent comparison of bicycles available in China.</span>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
+        <a href="${url(base,'/brands/')}">Brands</a>
+        <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
         <a href="${url(base,'/build/')}">Build a bike</a>
         <a href="${url(base,'/image-sources/')}">Image credits</a>
