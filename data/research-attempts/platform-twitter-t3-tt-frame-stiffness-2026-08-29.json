@@ -1,0 +1,500 @@
+{
+  "id": "platform-twitter-t3-tt-frame-stiffness-2026-08-29",
+  "target": {
+    "record_type": "platform",
+    "record_id": "twitter-t3-tt"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-29",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "site:youtube.com \"Twitter T3\" \"TT\" TwitterBikeFactory official — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "TwitterBikeFactoryChina exact T3 TT video — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The brand channel publishes an exact T3 TT SRAM build video supporting platform construction and T47×24; its alternative trim is not combined with the current WheelTop BOM. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.youtube.com/watch?v=HbQ9yyli0Ng"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "site:youtube.com \"Twitter T3 TT\" review owner — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent YouTube exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independent exact T3 TT YouTube review with additional attributable specifications was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "site:bilibili.com 骓特 T3 TT 官方 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Brand Bilibili exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "Brand-wide carbon testing and other Twitter models were indexed, but no exact T3 TT brand video was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "site:bilibili.com 骓特 T3 TT 评测 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent Bilibili exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independent exact T3 TT Bilibili review was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "site:xiaohongshu.com 骓特 T3 TT 官方 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Public XHS brand-post index search only — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact brand post was publicly indexed; no new XHS capture was started under shared-runtime coordination. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "site:xiaohongshu.com 骓特 T3 TT 车主 装车 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Public XHS owner-post index search only — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact independent post was publicly indexed; no new XHS capture was started. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "site:douyin.com 骓特 T3 TT 官方 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Brand Douyin exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "Official brand results for other Twitter models were indexed, but no exact T3 TT post was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "site:douyin.com 骓特 T3 TT 评测 车主 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent Douyin exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independent exact T3 TT post with attributable technical evidence was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "site:weibo.com 骓特 T3 TT 官方 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Brand Weibo exact search — frame-stiffness",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "site:weibo.com 骓特 T3 TT 车主 骑行 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent Weibo exact search — frame-stiffness",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo access was blocked by robots policy; no alternate-access bypass was attempted. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "site:mp.weixin.qq.com 骓特 T3 TT 官方 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Brand WeChat public-article index — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed exact official WeChat article was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "site:mp.weixin.qq.com 骓特 T3 TT 评测 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent WeChat public-article index — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed independent exact T3 TT WeChat review was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Twitter T3 TT forum Chinertown owner — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Cycling-forum exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact T3 TT technical thread was found on a specialist cycling forum. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Twitter T3 TT owner build log WheelTop — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Reddit exact T3 TT owner report — frame-stiffness",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "A current exact-model owner reports generally positive use but a finicky WheelTop system/app, twitchier handling than other TT bikes used and easily chipped paint. This area was checked specifically for frame-stiffness; its exact-model evidence was accepted for this field.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1tmrz0l/twitter_t3_tt_bike/"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Twitter T3 TT community photo bike — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Community-photo exact-model search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "The exact owner post and official galleries recurred, but no distinct attributable community-photo source with additional technical evidence was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "site:twitterbikeusa.com \"Triathlon T3 (TT)\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Bikes exact current T3 TT page — frame-stiffness",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "The current exact manufacturer page publishes the WheelTop TX-TT7110 reference build, geometry, construction, bottom bracket, complete weight and purchase terms. This area was checked specifically for frame-stiffness; its exact-model evidence was accepted for this field.",
+          "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "site:twittercycles.com \"T3 (Iron Three TT)\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Cycles exact T3 TT family page — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer model-family page identifies the T3 TT platform and its official geometry/configuration imagery. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/T3%20(Iron%20Three%20TT)%203K%20flat%20carbon%20rim%20Bike.html"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "site:twittercycles.com products road bike \"T3 ( TT )\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Cycles current road-bike catalog — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current manufacturer road catalog lists T3 TT as a distinct triathlon/time-trial model. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/road-bike/"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Twitter T3 TT WheelTop EVO 24S archived official — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Legacy exact WheelTop EVO product page — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The retained legacy manufacturer page identifies the earlier WheelTop EVO 24-speed configuration; it is preserved as a dated predecessor build rather than combined silently with the current specification. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/T3%20(%20TT%20)%20WheelTop%20EVO%20-%2024S,hydr,carbon%20wheel(Wireless).html"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "site:twittercycles.com filetype:pdf \"T3 TT\" manual — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Manufacturer manual search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "The current page says an official manual and warranty card are supplied, but no public exact-model manual was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "site:twitterbikeusa.com/products/triathlon-t3-tt geometry — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Exact manufacturer geometry chart — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current exact page publishes a six-size geometry chart. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "site:twittercycles.com \"T3 TT\" stiffness test carbon — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Manufacturer technical-evidence search — frame-stiffness",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer publishes qualitative stiffness marketing but no exact-model frame mass, deflection, fatigue or wind-tunnel protocol. This area was checked specifically for frame-stiffness; its exact-model evidence was accepted for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "site:twittercycles.com warranty \"T3 TT\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Cycles warranty page — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Brand-wide warranty terms were found; their generic wording does not establish exact domestic seller coverage for the retained mainland observation. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/warranty.html"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "site:twitterbikeusa.com/blogs/news \"T3 TT\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Manufacturer newsroom search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model launch article with additional specifications or measured evidence was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "site:twittercycles.com/search-resultpro \"T3\" \"TT\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Cycles internal search index — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The live manufacturer search index exposes current T3 TT product pages. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/search-resultpro?page=2"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "site:twittercycles.com sitemap \"T3 ( TT )\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Cycles sitemap — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current manufacturer sitemap indexes the T3 TT product family. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/sitemap.html"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "site:twitterbikeusa.com/products/triathlon-t3-tt \"9.5 KG\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Bikes Shopify product metadata — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The official commerce page exposes exact product options, current price, weight and image metadata. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "site:twitterbikefactory.com \"Twitter T3 Iron Three TT\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Bikes factory regional product page — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A manufacturer-branded regional page publishes the exact platform and alternative WheelTop TT build details; wheel selections vary by configuration. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twitterbikefactory.com/ar-ru/products/twitter-t3-iron-three-tt-carbon-fiber-road-bike"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Twitter Bikes T3 TT distributor network — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Legacy global distributor network — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The brand network page identifies regional distribution, but it does not prove current exact-T3 inventory or selected-option terms. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twitter-bikes.com/twworld.html"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "site:twitterbike.com T3 TT find dealer — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Legacy official dealer locator — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The legacy dealer route did not establish current exact-T3 stock or support terms. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twitterbike.com/entwbike/2.html"
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "site:twitterbikeusa.com/products \"Triathlon T3 (TT)\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Twitter Bikes official exact T3 TT store — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The official store offers the exact current WheelTop TX-TT7110 reference build made to order. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Taobao 骓特 T3 TT 轮峰 EVO 24速 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Dated anonymized Taobao exact-configuration snapshot — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The retained 2026-08-08 privacy-safe snapshot contains an exact visible mainland WheelTop EVO 24-speed configuration and dated promotion lead. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "site:tmall.com 骓特 T3 TT 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Tmall exact-product search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable live exact T3 TT Tmall product page was publicly indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "site:jd.com 骓特 T3 TT 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "JD exact-product search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable live exact T3 TT JD product page was publicly indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "site:1688.com 骓特 T3 TT 铁三 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "1688 supplier search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "Brand wholesale routes were indexed, but no attributable exact T3 TT supplier offer with additional evidence was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "site:aliexpress.com Twitter T3 TT WheelTop — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "AliExpress exact-product search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable official exact T3 TT AliExpress product page was indexed. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "骓特 T3 TT 授权 经销商 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Mainland authorized-dealer search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "No current mainland dealer page independently established both authorization and exact T3 TT inventory. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Twitter T3 TT authorized dealer — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Regional authorized-dealer search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A current exact regional retailer was found, but its authorization status was not independently established. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://fusionbikes.com.ar/producto/bicicleta-twitter-t3-wheeltop-tx-electronico/"
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Twitter T3 TT WheelTop specialist retailer — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Fusion Bikes exact T3 listing — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A current specialist retailer lists an exact T3 WheelTop TX build and corroborates core construction, components and a 9.5 kg seller claim. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Twitter T3 TT review triathlon bike — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent cycling-industry review search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No professional exact-model editorial test with measured frame, aero or clearance data was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "骓特 T3 TT 评测 铁三 公路车 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Chinese cycling-media search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independent Chinese cycling publication with exact-model measured evidence was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Twitter T3 TT stiffness wind tunnel frame test — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Independent laboratory search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model deflection, fatigue, wind-tunnel, frame-mass or tire-clearance laboratory result was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Twitter T3 TT magazine review archive — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Cycling magazine archive search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model magazine test or archived specification was found; unrelated T3 magazine results were rejected. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Twitter T3 TT Eurobike China Cycle trade show — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Eurobike and China Cycle coverage search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact T3 TT trade-show report with additional specifications was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Twitter T3 TT triathlon race team equipment — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Race-team equipment search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable race-team equipment inventory for the exact T3 TT was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Twitter Bikes T3 exhibitor catalog bicycle — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Event exhibitor catalog search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exhibitor-catalog entry for the exact T3 TT configuration was found. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "site:bikeinsights.com \"Twitter Bikes\" \"T3 TT\" — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Bike Insights 2026 T3 TT geometry — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Bike Insights reproduces manufacturer-sourced 2026 T3 TT geometry for the 50 cm size; its 28 mm value is fitted tire width, not maximum clearance. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/6a63c71da083fc001ad3f7aa-twitter-bikes-t3?version=2026&build=tt"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "WheelTop TT7110 Twitter T3 compatibility specifications — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "WheelTop EDS TT compatibility catalog — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "WheelTop documents the TT7110 control family and system compatibility, but does not publish a separate exact-bike fit record or frame clearance. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.wheeltopgroup.com/Content/upload/pdf/2022689233/WHEELTOP-EDS-Electronic-Wireless-Shifting-System-Catalogue.pdf"
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Twitter T3 TT UCI approved frameset — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "UCI frameset approval search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer currently advertises newly approved framesets, but the search did not establish an exact T3 TT approval code in the authoritative list. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.uci.org/equipment/road-equipment-and-technology"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "archived Twitter T3 TT WheelTop EVO 2024 — check platform:twitter-t3-tt:frame-stiffness",
+          "route": "Legacy manufacturer exact T3 TT listing — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The legacy exact manufacturer listing preserves the earlier WheelTop EVO configuration and supports model continuity without making it the current reference build. This area was checked specifically for frame-stiffness; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-t3-tt-official-2026-08-29",
+    "public-twitter-t3-tt-owner-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t3-tt-50-area-sweep-2026-08-29.json. The manufacturer supplies only qualitative maximum-stiffness marketing, while one owner reports twitchier handling than other TT bikes used. No measured stiffness, deflection or independent comparative protocol was found."
+}

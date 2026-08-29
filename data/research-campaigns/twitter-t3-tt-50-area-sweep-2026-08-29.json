@@ -1,0 +1,450 @@
+{
+  "id": "twitter-t3-tt-50-area-sweep-2026-08-29",
+  "searched_at": "2026-08-29",
+  "target": {
+    "brand_id": "twitter",
+    "platform_id": "twitter-t3-tt",
+    "variant_ids": [
+      "twitter-t3-tt"
+    ],
+    "displayed_identity": "Twitter T3 TT / 骓特 T3 铁三 TT"
+  },
+  "method": "Fifty genuinely distinct registered source areas were checked once at model level, then each atomic field received a field-specific acceptance or rejection application. Public XHS was limited to search-engine indexes under shared-runtime coordination; no new XHS job, browser-profile bypass, login, CAPTCHA or security-verification action was attempted.",
+  "identity_result": "corroborated-current-model",
+  "identity_note": "The retained WheelTop EVO 24-speed mainland snapshot maps to the same T3 TT platform. The current reference configuration is now identified explicitly as WheelTop TX-TT7110 2×12 with RS 60 mm carbon rims; alternative tri-spoke/disc and SRAM builds remain separate configurations.",
+  "fields_checked": [
+    "variant:twitter-t3-tt:complete-weight",
+    "platform:twitter-t3-tt:tire-clearance",
+    "platform:twitter-t3-tt:geometry",
+    "platform:twitter-t3-tt:frame-material",
+    "platform:twitter-t3-tt:frame-weight",
+    "variant:twitter-t3-tt:bom",
+    "platform:twitter-t3-tt:bottom-bracket",
+    "variant:twitter-t3-tt:purchase-route",
+    "platform:twitter-t3-tt:frame-stiffness"
+  ],
+  "areas": [
+    {
+      "approach_area_id": "manufacturer-exact-product",
+      "channel": "web",
+      "query": "site:twitterbikeusa.com \"Triathlon T3 (TT)\"",
+      "route": "Twitter Bikes exact current T3 TT page",
+      "outcome": "found",
+      "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "note": "The current exact manufacturer page publishes the WheelTop TX-TT7110 reference build, geometry, construction, bottom bracket, complete weight and purchase terms."
+    },
+    {
+      "approach_area_id": "manufacturer-model-family",
+      "channel": "web",
+      "query": "site:twittercycles.com \"T3 (Iron Three TT)\"",
+      "route": "Twitter Cycles exact T3 TT family page",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/products/T3%20(Iron%20Three%20TT)%203K%20flat%20carbon%20rim%20Bike.html",
+      "note": "The manufacturer model-family page identifies the T3 TT platform and its official geometry/configuration imagery."
+    },
+    {
+      "approach_area_id": "manufacturer-current-catalog",
+      "channel": "web",
+      "query": "site:twittercycles.com products road bike \"T3 ( TT )\"",
+      "route": "Twitter Cycles current road-bike catalog",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/products/road-bike/",
+      "note": "The current manufacturer road catalog lists T3 TT as a distinct triathlon/time-trial model."
+    },
+    {
+      "approach_area_id": "manufacturer-archived-catalog",
+      "channel": "web",
+      "query": "Twitter T3 TT WheelTop EVO 24S archived official",
+      "route": "Legacy exact WheelTop EVO product page",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/products/T3%20(%20TT%20)%20WheelTop%20EVO%20-%2024S,hydr,carbon%20wheel(Wireless).html",
+      "note": "The retained legacy manufacturer page identifies the earlier WheelTop EVO 24-speed configuration; it is preserved as a dated predecessor build rather than combined silently with the current specification."
+    },
+    {
+      "approach_area_id": "manufacturer-product-manual",
+      "channel": "web",
+      "query": "site:twittercycles.com filetype:pdf \"T3 TT\" manual",
+      "route": "Manufacturer manual search",
+      "outcome": "no-result",
+      "note": "The current page says an official manual and warranty card are supplied, but no public exact-model manual was indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-geometry-document",
+      "channel": "web",
+      "query": "site:twitterbikeusa.com/products/triathlon-t3-tt geometry",
+      "route": "Exact manufacturer geometry chart",
+      "outcome": "found",
+      "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "note": "The current exact page publishes a six-size geometry chart."
+    },
+    {
+      "approach_area_id": "manufacturer-technical-whitepaper",
+      "channel": "web",
+      "query": "site:twittercycles.com \"T3 TT\" stiffness test carbon",
+      "route": "Manufacturer technical-evidence search",
+      "outcome": "rejected",
+      "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "note": "The manufacturer publishes qualitative stiffness marketing but no exact-model frame mass, deflection, fatigue or wind-tunnel protocol."
+    },
+    {
+      "approach_area_id": "manufacturer-support-warranty",
+      "channel": "web",
+      "query": "site:twittercycles.com warranty \"T3 TT\"",
+      "route": "Twitter Cycles warranty page",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/warranty.html",
+      "note": "Brand-wide warranty terms were found; their generic wording does not establish exact domestic seller coverage for the retained mainland observation."
+    },
+    {
+      "approach_area_id": "manufacturer-newsroom-launch",
+      "channel": "web",
+      "query": "site:twitterbikeusa.com/blogs/news \"T3 TT\"",
+      "route": "Manufacturer newsroom search",
+      "outcome": "no-result",
+      "note": "No exact-model launch article with additional specifications or measured evidence was indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-site-search",
+      "channel": "web",
+      "query": "site:twittercycles.com/search-resultpro \"T3\" \"TT\"",
+      "route": "Twitter Cycles internal search index",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/search-resultpro?page=2",
+      "note": "The live manufacturer search index exposes current T3 TT product pages."
+    },
+    {
+      "approach_area_id": "manufacturer-sitemap",
+      "channel": "web",
+      "query": "site:twittercycles.com sitemap \"T3 ( TT )\"",
+      "route": "Twitter Cycles sitemap",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/sitemap.html",
+      "note": "The current manufacturer sitemap indexes the T3 TT product family."
+    },
+    {
+      "approach_area_id": "manufacturer-structured-data",
+      "channel": "web",
+      "query": "site:twitterbikeusa.com/products/triathlon-t3-tt \"9.5 KG\"",
+      "route": "Twitter Bikes Shopify product metadata",
+      "outcome": "found",
+      "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "note": "The official commerce page exposes exact product options, current price, weight and image metadata."
+    },
+    {
+      "approach_area_id": "manufacturer-regional-site",
+      "channel": "web",
+      "query": "site:twitterbikefactory.com \"Twitter T3 Iron Three TT\"",
+      "route": "Twitter Bikes factory regional product page",
+      "outcome": "found",
+      "result_url": "https://www.twitterbikefactory.com/ar-ru/products/twitter-t3-iron-three-tt-carbon-fiber-road-bike",
+      "note": "A manufacturer-branded regional page publishes the exact platform and alternative WheelTop TT build details; wheel selections vary by configuration."
+    },
+    {
+      "approach_area_id": "manufacturer-distributor",
+      "channel": "web",
+      "query": "Twitter Bikes T3 TT distributor network",
+      "route": "Legacy global distributor network",
+      "outcome": "rejected",
+      "result_url": "https://www.twitter-bikes.com/twworld.html",
+      "note": "The brand network page identifies regional distribution, but it does not prove current exact-T3 inventory or selected-option terms."
+    },
+    {
+      "approach_area_id": "manufacturer-dealer-locator",
+      "channel": "web",
+      "query": "site:twitterbike.com T3 TT find dealer",
+      "route": "Legacy official dealer locator",
+      "outcome": "rejected",
+      "result_url": "https://www.twitterbike.com/entwbike/2.html",
+      "note": "The legacy dealer route did not establish current exact-T3 stock or support terms."
+    },
+    {
+      "approach_area_id": "manufacturer-official-store",
+      "channel": "web",
+      "query": "site:twitterbikeusa.com/products \"Triathlon T3 (TT)\"",
+      "route": "Twitter Bikes official exact T3 TT store",
+      "outcome": "found",
+      "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "note": "The official store offers the exact current WheelTop TX-TT7110 reference build made to order."
+    },
+    {
+      "approach_area_id": "taobao-official-store",
+      "channel": "web",
+      "query": "Taobao 骓特 T3 TT 轮峰 EVO 24速",
+      "route": "Dated anonymized Taobao exact-configuration snapshot",
+      "outcome": "found",
+      "note": "The retained 2026-08-08 privacy-safe snapshot contains an exact visible mainland WheelTop EVO 24-speed configuration and dated promotion lead."
+    },
+    {
+      "approach_area_id": "tmall-official-store",
+      "channel": "web",
+      "query": "site:tmall.com 骓特 T3 TT 铁三",
+      "route": "Tmall exact-product search",
+      "outcome": "no-result",
+      "note": "No attributable live exact T3 TT Tmall product page was publicly indexed."
+    },
+    {
+      "approach_area_id": "jd-official-store",
+      "channel": "web",
+      "query": "site:jd.com 骓特 T3 TT 铁三",
+      "route": "JD exact-product search",
+      "outcome": "no-result",
+      "note": "No attributable live exact T3 TT JD product page was publicly indexed."
+    },
+    {
+      "approach_area_id": "alibaba-1688-supplier",
+      "channel": "web",
+      "query": "site:1688.com 骓特 T3 TT 铁三",
+      "route": "1688 supplier search",
+      "outcome": "no-result",
+      "note": "Brand wholesale routes were indexed, but no attributable exact T3 TT supplier offer with additional evidence was found."
+    },
+    {
+      "approach_area_id": "aliexpress-official-store",
+      "channel": "web",
+      "query": "site:aliexpress.com Twitter T3 TT WheelTop",
+      "route": "AliExpress exact-product search",
+      "outcome": "no-result",
+      "note": "No attributable official exact T3 TT AliExpress product page was indexed."
+    },
+    {
+      "approach_area_id": "authorized-mainland-dealer",
+      "channel": "web",
+      "query": "骓特 T3 TT 授权 经销商",
+      "route": "Mainland authorized-dealer search",
+      "outcome": "rejected",
+      "note": "No current mainland dealer page independently established both authorization and exact T3 TT inventory."
+    },
+    {
+      "approach_area_id": "authorized-regional-dealer",
+      "channel": "web",
+      "query": "Twitter T3 TT authorized dealer",
+      "route": "Regional authorized-dealer search",
+      "outcome": "rejected",
+      "result_url": "https://fusionbikes.com.ar/producto/bicicleta-twitter-t3-wheeltop-tx-electronico/",
+      "note": "A current exact regional retailer was found, but its authorization status was not independently established."
+    },
+    {
+      "approach_area_id": "international-specialist-retailer",
+      "channel": "web",
+      "query": "Twitter T3 TT WheelTop specialist retailer",
+      "route": "Fusion Bikes exact T3 listing",
+      "outcome": "found",
+      "result_url": "https://fusionbikes.com.ar/producto/bicicleta-twitter-t3-wheeltop-tx-electronico/",
+      "note": "A current specialist retailer lists an exact T3 WheelTop TX build and corroborates core construction, components and a 9.5 kg seller claim."
+    },
+    {
+      "approach_area_id": "cycling-industry-review",
+      "channel": "web",
+      "query": "Twitter T3 TT review triathlon bike",
+      "route": "Independent cycling-industry review search",
+      "outcome": "no-result",
+      "note": "No professional exact-model editorial test with measured frame, aero or clearance data was found."
+    },
+    {
+      "approach_area_id": "chinese-cycling-media",
+      "channel": "web",
+      "query": "骓特 T3 TT 评测 铁三 公路车",
+      "route": "Chinese cycling-media search",
+      "outcome": "no-result",
+      "note": "No independent Chinese cycling publication with exact-model measured evidence was found."
+    },
+    {
+      "approach_area_id": "independent-lab-test",
+      "channel": "web",
+      "query": "Twitter T3 TT stiffness wind tunnel frame test",
+      "route": "Independent laboratory search",
+      "outcome": "no-result",
+      "note": "No exact-model deflection, fatigue, wind-tunnel, frame-mass or tire-clearance laboratory result was found."
+    },
+    {
+      "approach_area_id": "magazine-archive",
+      "channel": "web",
+      "query": "Twitter T3 TT magazine review archive",
+      "route": "Cycling magazine archive search",
+      "outcome": "no-result",
+      "note": "No exact-model magazine test or archived specification was found; unrelated T3 magazine results were rejected."
+    },
+    {
+      "approach_area_id": "trade-show-coverage",
+      "channel": "web",
+      "query": "Twitter T3 TT Eurobike China Cycle trade show",
+      "route": "Eurobike and China Cycle coverage search",
+      "outcome": "no-result",
+      "note": "No exact T3 TT trade-show report with additional specifications was found."
+    },
+    {
+      "approach_area_id": "race-team-equipment",
+      "channel": "web",
+      "query": "Twitter T3 TT triathlon race team equipment",
+      "route": "Race-team equipment search",
+      "outcome": "no-result",
+      "note": "No attributable race-team equipment inventory for the exact T3 TT was found."
+    },
+    {
+      "approach_area_id": "event-exhibitor-catalog",
+      "channel": "web",
+      "query": "Twitter Bikes T3 exhibitor catalog bicycle",
+      "route": "Event exhibitor catalog search",
+      "outcome": "no-result",
+      "note": "No exhibitor-catalog entry for the exact T3 TT configuration was found."
+    },
+    {
+      "approach_area_id": "geometry-database",
+      "channel": "web",
+      "query": "site:bikeinsights.com \"Twitter Bikes\" \"T3 TT\"",
+      "route": "Bike Insights 2026 T3 TT geometry",
+      "outcome": "found",
+      "result_url": "https://bikeinsights.com/bikes/6a63c71da083fc001ad3f7aa-twitter-bikes-t3?version=2026&build=tt",
+      "note": "Bike Insights reproduces manufacturer-sourced 2026 T3 TT geometry for the 50 cm size; its 28 mm value is fitted tire width, not maximum clearance."
+    },
+    {
+      "approach_area_id": "component-compatibility-database",
+      "channel": "web",
+      "query": "WheelTop TT7110 Twitter T3 compatibility specifications",
+      "route": "WheelTop EDS TT compatibility catalog",
+      "outcome": "found",
+      "result_url": "https://www.wheeltopgroup.com/Content/upload/pdf/2022689233/WHEELTOP-EDS-Electronic-Wireless-Shifting-System-Catalogue.pdf",
+      "note": "WheelTop documents the TT7110 control family and system compatibility, but does not publish a separate exact-bike fit record or frame clearance."
+    },
+    {
+      "approach_area_id": "product-certification-registry",
+      "channel": "web",
+      "query": "Twitter T3 TT UCI approved frameset",
+      "route": "UCI frameset approval search",
+      "outcome": "rejected",
+      "result_url": "https://www.uci.org/equipment/road-equipment-and-technology",
+      "note": "The manufacturer currently advertises newly approved framesets, but the search did not establish an exact T3 TT approval code in the authoritative list."
+    },
+    {
+      "approach_area_id": "web-archive",
+      "channel": "web",
+      "query": "archived Twitter T3 TT WheelTop EVO 2024",
+      "route": "Legacy manufacturer exact T3 TT listing",
+      "outcome": "found",
+      "result_url": "https://www.twittercycles.com/products/T3%20(%20TT%20)%20WheelTop%20EVO%20-%2024S,hydr,carbon%20wheel(Wireless).html",
+      "note": "The legacy exact manufacturer listing preserves the earlier WheelTop EVO configuration and supports model continuity without making it the current reference build."
+    },
+    {
+      "approach_area_id": "brand-youtube",
+      "channel": "public-post",
+      "query": "site:youtube.com \"Twitter T3\" \"TT\" TwitterBikeFactory official",
+      "route": "TwitterBikeFactoryChina exact T3 TT video",
+      "outcome": "found",
+      "result_url": "https://www.youtube.com/watch?v=HbQ9yyli0Ng",
+      "note": "The brand channel publishes an exact T3 TT SRAM build video supporting platform construction and T47×24; its alternative trim is not combined with the current WheelTop BOM."
+    },
+    {
+      "approach_area_id": "independent-youtube",
+      "channel": "public-post",
+      "query": "site:youtube.com \"Twitter T3 TT\" review owner",
+      "route": "Independent YouTube exact-model search",
+      "outcome": "no-result",
+      "note": "No independent exact T3 TT YouTube review with additional attributable specifications was indexed."
+    },
+    {
+      "approach_area_id": "brand-bilibili",
+      "channel": "public-post",
+      "query": "site:bilibili.com 骓特 T3 TT 官方",
+      "route": "Brand Bilibili exact-model search",
+      "outcome": "no-result",
+      "note": "Brand-wide carbon testing and other Twitter models were indexed, but no exact T3 TT brand video was found."
+    },
+    {
+      "approach_area_id": "independent-bilibili",
+      "channel": "public-post",
+      "query": "site:bilibili.com 骓特 T3 TT 评测",
+      "route": "Independent Bilibili exact-model search",
+      "outcome": "no-result",
+      "note": "No independent exact T3 TT Bilibili review was indexed."
+    },
+    {
+      "approach_area_id": "brand-xiaohongshu",
+      "channel": "public-post",
+      "query": "site:xiaohongshu.com 骓特 T3 TT 官方 铁三",
+      "route": "Public XHS brand-post index search only",
+      "outcome": "no-result",
+      "note": "No exact brand post was publicly indexed; no new XHS capture was started under shared-runtime coordination."
+    },
+    {
+      "approach_area_id": "independent-xiaohongshu",
+      "channel": "public-post",
+      "query": "site:xiaohongshu.com 骓特 T3 TT 车主 装车",
+      "route": "Public XHS owner-post index search only",
+      "outcome": "no-result",
+      "note": "No exact independent post was publicly indexed; no new XHS capture was started."
+    },
+    {
+      "approach_area_id": "brand-douyin",
+      "channel": "public-post",
+      "query": "site:douyin.com 骓特 T3 TT 官方 铁三",
+      "route": "Brand Douyin exact-model search",
+      "outcome": "no-result",
+      "note": "Official brand results for other Twitter models were indexed, but no exact T3 TT post was found."
+    },
+    {
+      "approach_area_id": "independent-douyin",
+      "channel": "public-post",
+      "query": "site:douyin.com 骓特 T3 TT 评测 车主",
+      "route": "Independent Douyin exact-model search",
+      "outcome": "no-result",
+      "note": "No independent exact T3 TT post with attributable technical evidence was indexed."
+    },
+    {
+      "approach_area_id": "brand-weibo",
+      "channel": "public-post",
+      "query": "site:weibo.com 骓特 T3 TT 官方 铁三",
+      "route": "Brand Weibo exact search",
+      "outcome": "blocked",
+      "note": "Weibo access was blocked by robots policy; no login, alternate profile or bypass was attempted."
+    },
+    {
+      "approach_area_id": "independent-weibo",
+      "channel": "public-post",
+      "query": "site:weibo.com 骓特 T3 TT 车主 骑行",
+      "route": "Independent Weibo exact search",
+      "outcome": "blocked",
+      "note": "Weibo access was blocked by robots policy; no alternate-access bypass was attempted."
+    },
+    {
+      "approach_area_id": "brand-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com 骓特 T3 TT 官方",
+      "route": "Brand WeChat public-article index",
+      "outcome": "no-result",
+      "note": "No indexed exact official WeChat article was found."
+    },
+    {
+      "approach_area_id": "independent-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com 骓特 T3 TT 评测",
+      "route": "Independent WeChat public-article index",
+      "outcome": "no-result",
+      "note": "No indexed independent exact T3 TT WeChat review was found."
+    },
+    {
+      "approach_area_id": "cycling-forum",
+      "channel": "public-post",
+      "query": "Twitter T3 TT forum Chinertown owner",
+      "route": "Cycling-forum exact-model search",
+      "outcome": "no-result",
+      "note": "No exact T3 TT technical thread was found on a specialist cycling forum."
+    },
+    {
+      "approach_area_id": "owner-build-log",
+      "channel": "public-post",
+      "query": "Twitter T3 TT owner build log WheelTop",
+      "route": "Reddit exact T3 TT owner report",
+      "outcome": "found",
+      "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1tmrz0l/twitter_t3_tt_bike/",
+      "note": "A current exact-model owner reports generally positive use but a finicky WheelTop system/app, twitchier handling than other TT bikes used and easily chipped paint."
+    },
+    {
+      "approach_area_id": "community-photo-post",
+      "channel": "public-post",
+      "query": "Twitter T3 TT community photo bike",
+      "route": "Community-photo exact-model search",
+      "outcome": "no-result",
+      "note": "The exact owner post and official galleries recurred, but no distinct attributable community-photo source with additional technical evidence was found."
+    }
+  ]
+}
