@@ -968,7 +968,7 @@ function candidateSourceList(entry) {
     ? `<p class="source-direct-link">Direct candidate link: <a href="${escapeAttr(directUrl)}" rel="noreferrer">open recorded source</a></p>`
     : '';
   if (!sources.size && !directLink) return '<p class="source-intro">No public source link is recorded yet.</p>';
-  return `<div class="source-list"><p class="source-intro">These sources support this research-stage profile; individual claims retain the confidence of their cited source.</p>${directLink}${[...sources.values()].map((source) => {
+  return `<div class="source-list"><p class="source-intro">These sources support this model page; individual claims retain the confidence of their cited source.</p>${directLink}${[...sources.values()].map((source) => {
     const confidence = ['identity', 'specification', 'price']
       .filter((key) => source.reliability?.[key])
       .map((key) => `${sentenceLabel(key)}: ${confidenceLabel(source.reliability[key])}`)
@@ -1187,6 +1187,7 @@ export function renderModel(ctx, product) {
     ['Availability', availabilityLabel(platform.china_availability), '']
   ];
   const specificationRows = publishedSpecificationRows(product);
+  const storyTitle = publishedStoryTitle(product, weight, tireClearance);
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const seoProperties = [
@@ -1201,10 +1202,10 @@ export function renderModel(ctx, product) {
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
-    <section class="bike-brief" aria-labelledby="bike-brief-title"><h2 id="bike-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
-    ${specificationRows.length ? `<section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specification snapshot</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></section>` : ''}
-    <section class="decision-block"><div><h2>Strengths</h2><ul>${variant.editorial.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h2>Trade-offs and unknowns</h2><ul>${variant.editorial.caveats.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></section>
-    <section class="detail-section" aria-labelledby="key-details-title"><h2 id="key-details-title">Key details</h2><dl class="detail-list"><div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>Manufacturing relationship</dt><dd>${escapeHtml(relationshipLabel(brand.manufacturing.relationship))}</dd></div><div><dt>Evidence confidence</dt><dd>${escapeHtml(confidenceLabel(brand.manufacturing.confidence))}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div><div><dt>Warranty</dt><dd>${escapeHtml(warrantyLabel(brand.china_support.warranty))}</dd></div></dl><p>${escapeHtml(brand.manufacturing.summary)}</p></section>
+    <section class="model-story" aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
+    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
+    <section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths))}</p><h3>What to verify</h3><p>${escapeHtml(sentenceList(variant.editorial.caveats))}</p></section>
+    ${brandStory(brand)}
     ${videoContext(videos)}
     <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body"><div class="price-records">${prices.map((price) => `<div><strong>${escapeHtml(formatPrice(price))}</strong><span>${escapeHtml(price.observed_at)} · ${escapeHtml(sentenceLabel(price.price_type))} · ${escapeHtml(priceStatusLabel(price.status))}</span>${price.conditions ? `<p>${escapeHtml(price.conditions)}</p>` : ''}</div>`).join('')}</div>${sourceList(ctx, product)}</div></details>
   </div></div></section>`;
@@ -1244,6 +1245,41 @@ function candidateMaturityLabel(status) {
   return 'Research profile';
 }
 
+function sentenceList(items = []) {
+  return items
+    .map((item) => String(item ?? '').trim().replace(/[.;]+$/, ''))
+    .filter(Boolean)
+    .map((item) => `${item}.`)
+    .join(' ');
+}
+
+function publishedStoryTitle(product, weight, tireClearance) {
+  const details = [
+    weight !== '—' ? `${weight} ${product.variant.kind === 'frameset' ? 'frame' : 'complete bike'}` : '',
+    tireClearance.value !== '—' ? `${tireClearance.value} tire clearance` : ''
+  ].filter(Boolean);
+  return details.length ? `${details.join(' with ')}` : `What defines the ${product.variant.name}`;
+}
+
+function candidateStoryTitle(ctx, entry) {
+  const facts = entry.candidate.facts ?? {};
+  const details = [
+    Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg complete bike` : '',
+    !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
+    Number.isFinite(facts.tire_clearance_mm) ? `${facts.tire_clearance_mm} mm tire clearance` : ''
+  ].filter(Boolean);
+  if (details.length) return details.join(' with ');
+  if (entry.price) return `${candidatePriceLabel(ctx, entry)} ${entry.kind === 'frameset' ? 'frameset' : 'complete-bike'} lead under review`;
+  return `What is verified about the ${entry.candidate.name}`;
+}
+
+function brandStory(brand) {
+  if (!brand) return '';
+  const profile = brand.profile ?? {};
+  const paragraph = profile.summary ?? brand.manufacturing?.summary ?? '';
+  return `<section class="brand-story" aria-labelledby="about-${escapeAttr(brand.id)}-title"><h2 id="about-${escapeAttr(brand.id)}-title">About ${escapeHtml(brand.name)}</h2><p>${escapeHtml(paragraph)}</p>${brand.website ? `<a href="${escapeAttr(brand.website)}" rel="noreferrer">Visit the official ${escapeHtml(brand.name)} website</a>` : ''}</section>`;
+}
+
 export function renderCandidateModel(ctx, entry) {
   const { candidate, brand } = entry;
   const facts = candidateFactRows(entry);
@@ -1259,13 +1295,12 @@ export function renderCandidateModel(ctx, entry) {
   const priceBrief = !entry.price
     ? isSuperseded
       ? candidatePublicText(candidate.availability_note) || `This version is no longer sold new and was superseded by the ${successorLabel(candidate)}.`
-      : 'No defensible price is recorded yet.'
+      : 'A current price is not recorded.'
     : entry.kind === 'frameset'
       ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
       : entry.price.price_type === 'reference-conversion'
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
-  const keyHardware = facts.slice(0, 5).map(([label, value]) => `${label.toLowerCase()} ${value}`).join('; ');
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
   const type = entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike lead';
   const candidateSeoProduct = entry.identifiableModel && !['Identity not confirmed', 'Exact configuration not confirmed'].includes(maturity);
@@ -1279,15 +1314,17 @@ export function renderCandidateModel(ctx, entry) {
   const reviewedThrough = candidateEvidenceDate(ctx, entry);
   const candidateHeroImage = imageUrl(ctx, entry.image);
   const imageFigure = candidateGalleryFigure(ctx, entry);
+  const storyTitle = candidateStoryTitle(ctx, entry);
   const body = `<section class="model-page candidate-model-page"><div class="page">${breadcrumbs(ctx, pageTitle, [], { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<div class="model-grid${imageFigure ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-brand">${brand ? `<a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>` : `<span>${escapeHtml(brandLabel)}</span>`}<span class="type-pill">${escapeHtml(type)}</span><span class="status-pill">${escapeHtml(maturity)}</span></div><h1>${escapeHtml(candidate.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${modelPriceAttributes ? ' data-model-calculated-price' : ''}>${escapeHtml(price)}</strong>${priceState ? `<span>${escapeHtml(priceState)}</span>` : ''}</div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(entry.id)}" data-product-name="${escapeAttr(candidate.name)}">Add to comparison</button><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts"><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Profile status</dt><dd>${escapeHtml(maturity)}</dd></div>${facts.slice(0, 4).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}</dl></div>
   </div>
   <div class="model-content">
-    <section class="bike-brief" aria-labelledby="candidate-brief-title"><h2 id="candidate-brief-title">The short version</h2><p class="bike-brief-lede">${escapeHtml(reason)}</p><p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p>${keyHardware ? `<p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p>` : ''}<p class="research-profile-note">This is a research-stage profile. Useful exact-model evidence is shown, but unresolved fields prevent it from being treated as a publication-ready recommendation.</p></section>
+    <section class="model-story" aria-labelledby="candidate-story-title"><h2 id="candidate-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(reason)}</p><p${modelPriceAttributes ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}</p></section>
     ${candidateAlternativeBuilds(entry)}
-    <section class="decision-block"><div><h2>What is known</h2>${facts.length ? `<ul>${facts.map(([label, value]) => `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</li>`).join('')}</ul>` : '<p>No model-specific hardware facts are verified yet.</p>'}</div><div><h2>Trade-offs and unknowns</h2>${missing.length ? `<ul>${missing.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '<p>No additional evidence gaps are documented.</p>'}</div></section>
-    <section class="detail-section" aria-labelledby="candidate-key-details-title"><h2 id="candidate-key-details-title">Key details</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
+    <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
+    <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2><p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p></section>
+    ${brandStory(brand)}
     <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {

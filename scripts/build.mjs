@@ -199,7 +199,7 @@ const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // These limits retain modest growth headroom while
 // keeping the full candidate set available without a second page or client-side
 // data fetch.
-const performanceBudget = { home_html_bytes: 895_000, home_elements: 6_850 };
+const performanceBudget = { home_html_bytes: 895_000, home_elements: 7_100 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

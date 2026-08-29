@@ -123,7 +123,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 209);
+  assert.equal(data.candidates.length, 218);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 549);
@@ -270,8 +270,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 198);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 172);
+  assert.equal(catalogCandidates.length, 207);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 181);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -383,6 +383,28 @@ test('candidate catalog keeps the focused view useful without losing discovery',
     brandLabels.set(entry.brand.id, labels);
   }
   assert.ok([...brandLabels.values()].every((labels) => labels.size === 1));
+});
+
+test('LightCarbon road-frame tranche preserves exact current and legacy model boundaries', () => {
+  const ids = [
+    'lightcarbon-lcr018-d',
+    'lightcarbon-lcr020-d',
+    'lightcarbon-lcr017-d',
+    'lightcarbon-lcr017s-d',
+    'lightcarbon-lcr0x-d',
+    'lightcarbon-lcr015-d',
+    'lightcarbon-lcr015s-d',
+    'lightcarbon-lcr0x-v',
+    'lightcarbon-lcr015-v',
+    'lightcarbon-lcr014-v'
+  ];
+  const records = ids.map((id) => data.candidates.find((candidate) => candidate.id === id));
+  assert.ok(records.every(Boolean));
+  assert.equal(records.length, 10);
+  assert.equal(records.find((record) => record.id === 'lightcarbon-lcr020-d').facts.tire_clearance_mm, 35);
+  assert.equal(records.find((record) => record.id === 'lightcarbon-lcr017-d').facts.frame_weight_g, 870);
+  assert.match(records.find((record) => record.id === 'lightcarbon-lcr0x-d').status, /legacy-or-order-inquiry/);
+  assert.ok(records.every((record) => record.source_ids.length >= 3));
 });
 
 test('candidate facts and foreign-price reference estimates reject malformed evidence', () => {

@@ -1,0 +1,30 @@
+{
+  "id": "lightcarbon-lcr020-d",
+  "name": "LightCarbon LCR020-D",
+  "model_id": "lightcarbon-lcr020-d",
+  "category": "road-aero",
+  "type": "frameset",
+  "why_interesting": "LightCarbon's current super-aero race frameset combines modern T47 and UDH standards with a 1,100 g size-54 frame and 35C tire limit.",
+  "missing": ["Current mainland quote, selected package, delivery and warranty route", "Independent aero and stiffness test data"],
+  "status": "official-global-current-catalog",
+  "research_priority": "high",
+  "price_status": "quote only; current mainland price unverified",
+  "source_ids": ["lightcarbon-road-catalog-2026-2027", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "facts": {
+    "frame": "LCR020-D super-aero carbon road disc frameset",
+    "frame_material": "Toray T800, T1100 and M40J carbon",
+    "frame_weight_g": 1100,
+    "frame_weight_basis": "Official size-54 UD-matte frame weight, ±4%",
+    "tire_clearance_mm": 35,
+    "tire_clearance_basis": "Official 700C×35C maximum",
+    "bottom_bracket": "T47×P1.0, 85.5 mm",
+    "hanger": "Light UDH",
+    "brakes": "Flat-mount disc, 160 mm front and rear",
+    "axles": "12×100 mm front; 12×142 mm rear",
+    "sizes": "49, 52, 54, 56 and 58",
+    "geometry": "Reach 375–400 mm; stack 511–589 mm; 410 mm chainstays; 70 mm BB drop; 57.4–68.1 mm trail",
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+  },
+  "source_note": "The 2026–2027 official catalog is the exact current source. It publishes the material, size-54 weight, 35C limit, standards and complete geometry table but no retail price.",
+  "last_reviewed": "2026-08-29"
+}

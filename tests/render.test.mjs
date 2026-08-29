@@ -107,10 +107,12 @@ test('candidate bikes have concise internal research profiles with visible facts
   const quickDetail = renderCandidateModel(context, quick);
   assert.match(quickDetail, /<h1>Quick Pro ER:ONE<\/h1>/);
   assert.match(quickDetail, /Official global model/);
-  assert.match(quickDetail, /<section class="bike-brief"[^>]*>[\s\S]*The short version/);
+  assert.match(quickDetail, /<section class="model-story"[^>]*>[\s\S]*Specifications and evidence/);
+  assert.doesNotMatch(quickDetail, /The short version/);
   assert.match(quickDetail, /Est\. ¥33,900 is a dated currency conversion/);
   assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
-  assert.match(quickDetail, /Trade-offs and unknowns/);
+  assert.match(quickDetail, /Buying context/);
+  assert.match(quickDetail, /About Quick/);
   assert.match(quickDetail, /Price record and sources/);
   assert.match(quickDetail, /property="og:type" content="product"/);
   assert.match(quickDetail, /"@type":"Product"/);
@@ -146,6 +148,24 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.doesNotMatch(oldTwitterCarbonDetail, /Price not verified/);
 });
 
+test('sparse candidate pages read as concise model articles without repeating empty-state copy', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-29T00:00:00Z')
+  };
+  const cyclone = candidates.find((entry) => entry.candidate.id === 'twitter-cyclone-sport');
+  const detail = renderCandidateModel(context, cyclone);
+  assert.match(detail, /¥3,387 complete-bike lead under review/);
+  assert.match(detail, /Specifications and evidence/);
+  assert.match(detail, /Buying context/);
+  assert.match(detail, /About Twitter/i);
+  assert.doesNotMatch(detail, /The short version|No model-specific hardware facts are verified yet|research-stage profile/i);
+});
+
 test('candidate model pages keep alternative trims separate from the reference row', () => {
   const xlab = joinCatalogCandidates(data).find((entry) => entry.candidate.id === 'xlab-ad8');
   const detail = renderCandidateModel({
@@ -170,8 +190,8 @@ test('candidate details expose frame material and stiffness evidence without inv
   candidate.facts.stiffness_evidence = 'Manufacturer comparison; test protocol not published.';
   const entry = joinCatalogCandidates(cloned).find((item) => item.candidate.id === candidate.id);
   const detail = renderCandidateModel({ data: cloned, products: joinProducts(cloned), base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-08-27T00:00:00Z') }, entry);
-  assert.match(detail, /Frame material:<\/strong> Toray T800 and M40X carbon/);
-  assert.match(detail, /Stiffness evidence:<\/strong> Manufacturer comparison; test protocol not published/);
+  assert.match(detail, /<dt>Frame material<\/dt><dd>Toray T800 and M40X carbon<\/dd>/);
+  assert.match(detail, /<dt>Stiffness evidence<\/dt><dd>Manufacturer comparison; test protocol not published\.<\/dd>/);
   assert.doesNotMatch(detail, /stiffness score/i);
 });
 
@@ -381,11 +401,13 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
   assert.match(detail, /Twitter Bikes · Manufacturer product page · Product facts · Image/);
   assert.match(detail, /Product facts: Medium–high · Image: High/);
   assert.match(detail, /Archived evidence; no public link/);
-  assert.match(detail, /<section class="bike-brief"[^>]*>[\s\S]*The short version/);
+  assert.match(detail, /<section class="model-story"[^>]*>[\s\S]*9\.9 kg complete bike/);
+  assert.doesNotMatch(detail, /The short version/);
   assert.match(detail, /The recorded complete-bike price is ¥4,951/);
   assert.match(detail, /Best suited to electronic shifting value, budget performance, drop-bar gravel/);
-  assert.match(detail, /<section class="detail-section"[^>]*>[\s\S]*Key details/);
-  assert.match(detail, /Trade-offs and unknowns/);
+  assert.match(detail, /<section class="detail-section specification-snapshot"[^>]*>[\s\S]*Specifications and evidence/);
+  assert.match(detail, /Ride and buying context/);
+  assert.match(detail, /About Twitter/i);
   assert.doesNotMatch(detail, /Ask the seller in Chinese|seller-message/);
   assert.doesNotMatch(detail, /<details class="detail-panel"><summary>Frame, category facts/);
 
@@ -627,7 +649,7 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   }, product);
   assert.match(detail, /marketplace listing classification/);
   assert.match(detail, /Promotion-conditional price/);
-  assert.match(detail, /Specification snapshot/);
+  assert.match(detail, /Specifications and evidence/);
   assert.match(detail, /700C carbon wheelset, 24H/);
   assert.match(detail, /5 sizes \(440–560\) · stack 509\.3–580\.5 mm · reach 358\.4–390\.3 mm/);
   assert.match(detail, /Official global-direct checkout at US\$1,699/);
