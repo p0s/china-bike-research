@@ -1,15 +1,25 @@
 {
   "id": "java-lampo-carbon-road",
-  "name": "JAVA / LAMPO 蓝波 Full-carbon road bike",
+  "name": "JAVA / LAMPO 蓝波 full-carbon road listing (exact model unresolved)",
   "model_id": "java-lampo-carbon-road",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "LAMPO is presented as a JAVA sub-brand; exact model not visible.",
+  "why_interesting": "The retained seller card presents LAMPO as a JAVA sub-brand and explicitly says carbon-fiber road bike. Attributable mainland launch coverage verifies a four-model LAMPO road range including a 22-speed full-carbon version, but the card exposes no exact model or selected build.",
+  "facts": {
+    "frame_material": "Seller-listed full-carbon LAMPO road bike; exact model, carbon grade, fork, cockpit and wheel materials remain unresolved",
+    "brand_relationship": "The retained seller graphic calls LAMPO a JAVA sub-brand; attributable mainland launch coverage independently verifies LAMPO as a bicycle brand and its China business channel",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model, model year/SKU, drivetrain, brakes, wheelset and complete-bike weight",
+    "Maximum tire clearance, exact carbon grade and fit-critical standards",
+    "Meaningful stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "brand-range-verified-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "lampo-mainland-launch-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6870.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.biketo.com/product/50138.html",
+  "source_note": "The seller card supplies the LAMPO/JAVA sub-brand presentation, full-carbon claim and CNY 3,999 coupon lead. The 2022 attributable mainland launch verifies a LAMPO road range from aluminum builds through a 22-speed full-carbon version, but none of the current searches maps this card to one model, drivetrain or weight.",
+  "last_reviewed": "2026-08-29"
 }

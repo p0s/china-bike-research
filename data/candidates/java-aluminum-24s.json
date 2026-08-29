@@ -1,16 +1,28 @@
 {
   "id": "java-aluminum-24s",
-  "name": "JAVA 佳沃 Aluminum 24-speed hydraulic road bike",
+  "name": "JAVA 佳沃 Vittoria ER7 2026 aluminum-frame duplicate observation",
   "model_id": "java-aluminum-24s",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Not carbon despite the search query; exact model unclear.",
+  "why_interesting": "The retained card image explicitly reads VITTORIA ER7 2026 and its title says aluminum, 24-speed and hydraulic disc. The official catalog separately confirms an aluminum-frame VITTORIA-ER7, so this observation is merged into the existing JAVA Vittoria ER7 2026 research record rather than shown as a duplicate bike.",
+  "facts": {
+    "frame_material": "Aluminum-frame VITTORIA-ER7 version; exact fork, cockpit and wheel materials remain unresolved",
+    "listing_identity": "2026 VITTORIA ER7 aluminum-frame 24-speed hydraulic-disc seller card; exact groupset and selected option are not exposed",
+    "stiffness_evidence": "No exact-build numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact selected option, drivetrain family, fork/cockpit/wheel materials and complete-bike weight",
+    "Maximum tire clearance and any fit-critical standards",
+    "Meaningful stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "merged-into-exact-record",
+  "existing_record_id": "java-vittoria-er7-2026",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "java-road-catalog-2026-08-29",
+    "java-vittoria-eurobike-2026-08-29",
+    "java-vittoria-jd-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +33,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6886.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.javabikes.com/Products/5.html",
+  "source_note": "The retained pixels and title identify VITTORIA ER7 2026, an aluminum frame, 24 speeds and hydraulic discs. The official catalog verifies the separate aluminum-frame ER7 family, while the current JD range shows incompatible ER7/7170, electronic, alloy-wheel and carbon-wheel options. No exact drivetrain or weight is inferred.",
+  "last_reviewed": "2026-08-29"
 }
