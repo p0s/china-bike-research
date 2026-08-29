@@ -185,3 +185,13 @@ test('one catalog selection opens Build while multiple selections open Compare',
   assert.match(script, /item\.buildBaseKind === 'frameset' \? 'Build this frame' : 'Modify this bike'/);
   assert.match(script, /openCompareButton\.hidden = selection\.length < 2/);
 });
+
+test('comparison selection accepts ten bikes and keeps the wide viewer usable', () => {
+  assert.match(script, /const comparisonSelectionLimit = 10/);
+  assert.equal((script.match(/slice\(0, comparisonSelectionLimit\)/g) ?? []).length, 4);
+  assert.match(script, /selection\.length >= comparisonSelectionLimit/);
+  assert.match(script, /scroll\.tabIndex = 0/);
+  assert.match(script, /Bike comparison table; scroll horizontally to see every selected bike/);
+  assert.match(styles, /\.compare-scroll \{[^}]*overflow-x: auto;[^}]*overscroll-behavior-inline: contain;[^}]*scrollbar-gutter: stable;/);
+  assert.match(styles, /\.compare-label \{[^}]*position: sticky;[^}]*left: 0;/);
+});

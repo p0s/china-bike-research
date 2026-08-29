@@ -1,17 +1,18 @@
 (() => {
   const base = document.body.dataset.base ?? '';
   const selectionStorageKey = 'china-bike-guide-selection-v2';
+  const comparisonSelectionLimit = 10;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
 
   function readStoredSelection() {
     try {
       const value = JSON.parse(localStorage.getItem(selectionStorageKey) ?? '[]');
-      return Array.isArray(value) ? [...new Set(value.filter((item) => typeof item === 'string'))].slice(0, 4) : [];
+      return Array.isArray(value) ? [...new Set(value.filter((item) => typeof item === 'string'))].slice(0, comparisonSelectionLimit) : [];
     } catch { return []; }
   }
 
   function writeStoredSelection(selection) {
-    try { localStorage.setItem(selectionStorageKey, JSON.stringify(selection.slice(0, 4))); } catch { /* selection remains usable for this page */ }
+    try { localStorage.setItem(selectionStorageKey, JSON.stringify(selection.slice(0, comparisonSelectionLimit))); } catch { /* selection remains usable for this page */ }
   }
 
   function readStoredBuildAllowance() {
@@ -1050,14 +1051,16 @@
     compareBoxes.forEach((box) => {
       const selected = selection.includes(box.dataset.compareId);
       box.checked = selected;
-      box.disabled = !selected && selection.length >= 4;
+      box.disabled = !selected && selection.length >= comparisonSelectionLimit;
     });
   }
 
   function renderTray() {
     writeStoredSelection(selection);
     if (compareCount) compareCount.textContent = String(selection.length);
-    if (selectionLabel) selectionLabel.textContent = ' selected';
+    if (selectionLabel) selectionLabel.textContent = selection.length >= comparisonSelectionLimit
+      ? ` selected · ${comparisonSelectionLimit}-bike limit reached`
+      : ' selected';
     if (selectionNames) selectionNames.textContent = selection.map((id) => byId.get(id)?.name).filter(Boolean).join(' · ');
     compareTray?.classList.toggle('is-visible', selection.length > 0);
     if (openCompareButton instanceof HTMLButtonElement) {
@@ -1081,7 +1084,7 @@
   }
 
   function setSelection(next) {
-    selection = [...new Set(next.filter((id) => byId.has(id)))].slice(0, 4);
+    selection = [...new Set(next.filter((id) => byId.has(id)))].slice(0, comparisonSelectionLimit);
     renderTray();
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
   }
@@ -1149,6 +1152,8 @@
 
   function comparisonGrid(items, fields, includeHeaders = false) {
     const scroll = element('div', 'compare-scroll');
+    scroll.tabIndex = 0;
+    scroll.setAttribute('aria-label', 'Bike comparison table; scroll horizontally to see every selected bike');
     const grid = element('div', 'compare-grid');
     grid.style.setProperty('--compare-count', String(items.length));
     if (includeHeaders) {
@@ -1236,7 +1241,7 @@
     }
   });
 
-  const querySelection = (initialParams.get('compare') ?? '').split(',').filter((id) => byId.has(id)).slice(0, 4);
+  const querySelection = (initialParams.get('compare') ?? '').split(',').filter((id) => byId.has(id)).slice(0, comparisonSelectionLimit);
   if (querySelection.length) selection = querySelection;
   renderTray();
   if (querySelection.length >= 2) openComparison({ scroll: false });

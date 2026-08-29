@@ -1,26 +1,32 @@
 {
   "id": "twitter-cyclone-electronic",
   "platform_id": "twitter-cyclone-electronic",
-  "name": "Cyclone electronic",
+  "name": "Cyclone 3rd ET electronic",
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
-    "verdict": "Dated China-market aero road lead for the exact visible Cyclone electronic configuration; use it as a comparison benchmark while confirming the final SKU and BOM.",
+    "verdict": "Current exact-model evidence now identifies the electronic build as Cyclone 3rd ET and supplies its core specification; treat the retained mainland coupon range as dated until final checkout is reconfirmed.",
     "best_for": [
       "aero road"
     ],
     "strengths": [
-      "Exact model/configuration is visible in the 2026-08-08 snapshot",
+      "Current exact CYCLONE-3rd ET manufacturer specification",
+      "WheelTop EDS TX 2×12 with a complete wheel, tire and cockpit description",
       "Dated mainland-China price observation"
     ],
     "caveats": [
+      "The historic snapshot's 8.7 kg claim conflicts with the current official 9.2 kg claim",
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
+      "Maximum tire clearance and frame-only weight remain unpublished",
       "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
     ]
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-bikes-gravel-catalog-2026-08-08"
+    "twitter-bikes-gravel-catalog-2026-08-08",
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-jd-2026-08-29",
+    "public-twitter-cyclone-et-owner-build-2026-08-29"
   ],
   "drivetrain": {
     "brand": "WheelTop",
@@ -33,5 +39,16 @@
     "actuation": "hydraulic",
     "type": "disc"
   },
-  "claimed_complete_weight_g": 8700
+  "wheels": "RS AL7005 double-wall alloy, W21×H38 mm",
+  "tires": "RS foldable reflective-edge 700×28C",
+  "cockpit": {
+    "material": "high-modulus carbon fiber",
+    "integrated": true,
+    "dimensions": "420×90 mm",
+    "routing": "fully internal"
+  },
+  "claimed_complete_weight_g": 8700,
+  "claimed_complete_weight_basis": "Dated anonymized mainland search-card claim; size, wheel selection, pedals, accessories and weighing method were not stated. The current exact-model manufacturer page claims 9.2 kg for both listed wheel configurations, and a current owner reports 9.2 kg equipped.",
+  "weight_conflict_note": "The historic 8.7 kg marketplace observation is retained as configuration- and time-bounded evidence. Current official and owner evidence converges at 9.2 kg; the records are not treated as interchangeable without the original selected-option details.",
+  "purchase_route": "Current official made-to-order international route from US$1,489 and current exact-model JD listings. Final mainland seller authorization, selected-option price, promotion, shipping, returns and warranty terms require checkout verification."
 }

@@ -1,0 +1,509 @@
+{
+  "id": "platform-twitter-cyclone-electronic-tire-clearance-2026-08-29",
+  "target": {
+    "record_type": "platform",
+    "record_id": "twitter-cyclone-electronic"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-08-29",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact searches were blocked by robots policy, and shared-runtime coordination prohibited a new XHS capture. Public indexes and all other registered public-post routes were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "site:youtube.com Twitter Bikes Cyclone 3rd ET official — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes official YouTube search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable official exact ET YouTube result was indexed. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "site:youtube.com Twitter Cyclone 3rd ET review — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent YouTube review search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independently attributable exact ET YouTube review was indexed. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "site:bilibili.com 骓特 龙卷风 三代 ET 官方 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Verified 骓特自行车 Bilibili video — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The brand account publishes an exact 龙卷风三代 ET full-carbon WheelTop wireless build video. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1ARKozeEVg/"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "site:bilibili.com 骓特 龙卷风 三代 ET 评测 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent Bilibili review search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No distinct independent exact-model Bilibili technical review was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "site:xiaohongshu.com 骓特 龙卷风 三代 ET 官方 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Public XHS index search only — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact brand post was publicly indexed; no new XHS capture was started under the shared runtime coordination. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "site:xiaohongshu.com 骓特 龙卷风 三代 ET 装车 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Public XHS owner-post index search only — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact independent post was publicly indexed; no new XHS capture was started. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "site:douyin.com 骓特 龙卷风 三代 ET 官方 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "骓特 official flagship Douyin index — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The verified flagship account indexes CYCLONE family content and WheelTop electronic builds. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.douyin.com/shipin/7374273373829892132"
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "site:douyin.com 骓特 龙卷风 三代 ET 评测 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent exact ET unboxing index — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An owner unboxing reports 9.21 kg for an alloy-wheel build without pedals and documents configuration/QC observations. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.douyin.com/shipin/7381262589403334656"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "site:weibo.com 骓特 龙卷风 三代 ET 官方 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Brand Weibo exact search — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "site:weibo.com 骓特 龙卷风 三代 ET 骑行 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent Weibo exact search — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo access was blocked by robots policy; no alternate-access bypass was attempted. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "site:mp.weixin.qq.com 骓特 龙卷风 三代 ET 官方 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Brand WeChat public-article index — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed exact official WeChat article was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "site:mp.weixin.qq.com 骓特 龙卷风 三代 ET 评测 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent WeChat public-article index — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed independent exact ET WeChat review was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Twitter Cyclone 3rd ET forum Chinertown — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Chinertown WheelTop/Twitter support thread — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A public cycling forum discusses a Twitter WheelTop EDS TX support case, but the exact CYCLONE trim is not certain. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://chinertown.com/index.php?topic=6032.0"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Twitter Cyclone 3rd ET owner build log — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Reddit exact ET owner report — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A current exact-model owner reports 9.2 kg equipped, stable handling and satisfactory initial frame response after a 70 km ride. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1vwv19h/twitter_cyclone_3rd_et_wheeltop_eds_tx/"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Twitter Cyclone 3rd ET community photo — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Public mirror of brand social posts — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A public social mirror shows current exact-model brand posts, but no image was copied and no reuse license was inferred. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.findglocal.com/CN/Shenzhen/566241009908679/Twitter-cycles"
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "site:twittercycles.com \"CYCLONE-3rd (ET)\" — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles exact CYCLONE-3rd ET page — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Exact manufacturer page identifies the third-generation ET WheelTop configuration and publishes specifications. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "site:twittercycles.com road bikes CYCLONE-3rd ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles road-bike model family — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer road-bike catalog includes CYCLONE-3rd (ET) as a distinct current family member. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/road-bike/"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "site:twittercycles.com products CYCLONE-3rd ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles current product catalog — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current manufacturer catalog indexes the exact ET product; no separate downloadable current PDF was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/products/"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "\"CYCLONE 2025\" \"EDS-TX\" — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes archived 2025 regional product page — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An older official regional page documents the third-generation WheelTop ET configuration and its period specification. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://twitterbikeusa.com/en-ca/collections/road-bikes/products/cyclone-3rd-gen-wheeltop-eds-tx-2-12-speed-carbon-road-bike"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "site:twittercycles.com filetype:pdf CYCLONE manual ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Manufacturer manual index search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "The exact product page says a manual is supplied, but no public exact-model manual was indexed. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "site:twitterbikeusa.com Cyclone 3rd ET geometry — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes exact-product geometry table — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The exact official ET page publishes a six-size geometry table. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-et"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "site:twittercycles.com CYCLONE ET carbon stiffness test — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles quality-control pages — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer describes generic quality control but publishes no exact-model stiffness protocol or frame-only mass. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/quality-control.html"
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "site:twittercycles.com Twitter Bikes warranty Cyclone — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles warranty terms — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Current manufacturer warranty terms were found, but they are brand-wide and retain ambiguous bracketed durations. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/warranty.html"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "site:twitterbikeusa.com blogs CYCLONE 3rd Gen WheelTop — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes current road-bike guide — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer newsroom identifies the CYCLONE 3rd Gen WheelTop configuration as a current range member. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://twitterbikeusa.com/blogs/news/the-top-3-road-bikes-from-twitter-bicycles-for-2024-ultimate-performance-meets-value"
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "site:twittercycles.com search CYCLONE-3rd ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles internal search — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The live manufacturer search index exposes the exact ET page. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/search-resultpro?page=2"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "site:twittercycles.com sitemap CYCLONE-3rd ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Cycles sitemap — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer sitemap, updated 2026-08-27, lists CYCLONE-3rd (ET). This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twittercycles.com/sitemap.html"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "site:twitterbikeusa.com/products/cyclone-3rd-et WheelTop 1489 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes Shopify product metadata — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The official commerce page exposes the exact product, option, price and image metadata. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Twitter CYCLONE-3rd regional product ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes Argentina CYCLONE page — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The official Argentina page corroborates the third-generation WheelTop configuration but describes a 3K carbon-wheel build. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://twitterbike.ar/cyclone"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Twitter Bikes Cyclone 3rd ET regional distributor — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes Argentina distributor network — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A regional official distributor network exists; inventory for the exact ET configuration must be confirmed locally. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://twitterbike.ar/distribuidores"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "site:twitterbike.com CYCLONE find dealer — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Legacy official dealer locator — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The legacy official site exposes dealer lookup but did not prove current exact-ET stock or terms. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twitterbike.com/entwbike/2.html"
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "site:twitterbikeusa.com/products \"Cyclone - 3rd (ET)\" — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Twitter Bikes USA exact ET store — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The official store offers the exact WheelTop EDS TX build made to order. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Taobao 骓特 龙卷风三代 ET 轮峰 TX 24速 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Dated anonymized Taobao exact-configuration snapshot — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The retained 2026-08-08 privacy-safe snapshot contains the exact China-market electronic configuration and promotion range. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "site:tmall.com 骓特 龙卷风三代 ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Indexed Tmall exact-product mirror — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A public index mirror attributes an exact CYCLONE third-generation ET item to Tmall, but no direct live checkout was accepted. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://tao.hooos.com/goods_QGM57oMFQtBxrO4OQ4cXXBhatQ-YA3ppxSB4kMAP4GtB.html"
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "site:jd.com 骓特 龙卷风三代 ET 轮峰 TX — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "JD exact-model catalog index — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "JD currently indexes exact 龙卷风三代 ET WheelTop 24-speed configurations with variant imagery. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.jd.com/hprm/1318cf0c0179015db691.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "site:1688.com 骓特 龙卷风三代 ET — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "1688 supplier search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable exact ET supplier page was indexed on 1688. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "site:aliexpress.com Twitter Cyclone 3rd ET EDS TX — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "AliExpress exact-product search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable official exact ET product page was indexed on AliExpress. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Twitter Cyclone 3rd ET authorized dealer China — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Mainland dealer search — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Exact mainland listings were indexed, but their authorization and final checkout conditions were not established. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.jd.com/brand/1318934bb416b6f4eaef.html"
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Twitter CYCLONE regional authorized dealer — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Argentina official distributor network — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The regional brand site publishes its distributor network and an exact CYCLONE product page. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Twitter Cyclone 2026 WheelTop specialist retailer — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Hanoi Bike exact WheelTop listing — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A specialist retailer lists a current full-carbon WheelTop CYCLONE build; regional components and terms may differ. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://hanoibike.net/products/xe-road-twitter-cyclone-2026-full-carbon-group-dien-wheel-top"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Twitter Cyclone 3rd ET review bicycle — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent cycling-review search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No independent professional exact-model editorial test with measured frame data was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "骓特 龙卷风 三代 ET 评测 公路车 — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Chinese deal/editorial index — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A Chinese consumer publication indexes the exact 24-speed ET product, but not a controlled technical test. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.smzdm.com/p/154218939/"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Twitter Cyclone 3rd stiffness test lab bicycle — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Independent laboratory search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model deflection, fatigue, wind-tunnel or frame-mass laboratory result was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Twitter Cyclone 3rd magazine review — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Cycling magazine archive search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model magazine test or archived specification was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Twitter Bikes Cyclone 3rd Eurobike China Cycle — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Eurobike and China Cycle coverage search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ET trade-show report with additional specifications was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Twitter Cyclone 3rd race team equipment — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Race-team equipment search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable team equipment inventory for the exact ET model was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Twitter Bikes exhibitor catalog Cyclone — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Event exhibitor catalog search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exhibitor catalog entry for the exact ET configuration was found. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "site:bikeinsights.com Twitter Cyclone bicycle geometry — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Bike Insights CYCLONE-Disc geometry — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Bike Insights reproduces a subset of matching CYCLONE geometry, but its Ozon-derived tire maximum is incomplete and not used as the official maximum. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/66053e4f7c86ae001ac36a1b-twitter-bikes-cyclone-disc?build=base&version=2024"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Twitter Cyclone 3rd T47 WheelTop compatibility database — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "WheelTop compatibility information — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "WheelTop describes broad EDS compatibility but does not provide a model-specific CYCLONE fit record. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://wheeltop.com/"
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Twitter Cyclone 3rd UCI approved frame list — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "UCI approved frameset list — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Searches did not establish a TWITTER CYCLONE-3rd entry; an unrelated ACCENT Cyclone result was rejected. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://assets.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/e3d70bb735817e9b7c713aeed3c6f696/Liste_des_Mod_les_homologu_s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "archived Twitter Cyclone 2025 WheelTop EDS TX — check platform:twitter-cyclone-electronic:tire-clearance",
+          "route": "Archived 2025 Twitter Bikes regional listing — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The older regional listing preserves a prior exact third-generation ET configuration and exposes component differences over time. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. Only fitted 700x28C tires and one incomplete third-party 30 mm entry were found; no exact official maximum tire clearance was published."
+}

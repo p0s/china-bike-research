@@ -363,11 +363,12 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .compare-heading h2 { font-size: 1.45rem; }
 .compare-context { margin: -5px 0 13px; color: var(--muted); font-size: .77rem; }
 .compare-context.is-warning { padding: 9px 11px; border-radius: 8px; background: var(--warning-soft); color: var(--warning); }
-.compare-scroll { overflow-x: auto; padding-bottom: 4px; }
+.compare-scroll { overflow-x: auto; padding-bottom: 4px; overscroll-behavior-inline: contain; scrollbar-gutter: stable; }
+.compare-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .compare-grid { display: grid; grid-template-columns: 112px repeat(var(--compare-count), minmax(190px, 1fr)); min-width: calc(112px + var(--compare-count) * 190px); border: 1px solid var(--line); border-radius: 11px; overflow: hidden; }
 .compare-grid > * { min-width: 0; padding: 10px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
 .compare-grid > *:nth-child(calc(var(--compare-count) + 1n)) { }
-.compare-label { background: var(--surface-soft); color: var(--muted); font-size: .68rem; font-weight: 720; letter-spacing: .04em; text-transform: uppercase; }
+.compare-label { position: sticky; left: 0; z-index: 2; background: var(--surface-soft); color: var(--muted); box-shadow: 1px 0 0 var(--line); font-size: .68rem; font-weight: 720; letter-spacing: .04em; text-transform: uppercase; }
 .compare-product-head { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 10px; align-items: center; position: relative; }
 .compare-product-head img { width: 72px; aspect-ratio: 3 / 2; padding: 4px; border: 1px solid var(--line); border-radius: 7px; object-fit: contain; background: #fff; }
 .compare-product-head.has-no-image { grid-template-columns: minmax(0, 1fr); }

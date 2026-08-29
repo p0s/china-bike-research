@@ -1,31 +1,88 @@
 {
   "id": "twitter-cyclone-electronic",
   "brand_id": "twitter",
-  "name": "Cyclone electronic",
-  "name_zh": "Cyclone electronic",
+  "name": "Cyclone 3rd ET electronic",
+  "name_zh": "龙卷风三代 ET",
   "category": "road-aero",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The anonymized 2026-08-08 snapshot identifies Twitter Cyclone electronic as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "summary": "Current manufacturer and mainland indexes identify the WheelTop electronic configuration as Cyclone 3rd ET / 龙卷风三代 ET. The dated China-market price remains a historical promotion lead, while current final mainland checkout terms still require verification.",
   "frame": {
     "material": "carbon",
-    "fork_material": "unknown",
-    "bottom_bracket": "unknown",
+    "material_grade": "high-modulus carbon fiber (manufacturer claim)",
+    "fork_material": "high-modulus carbon fiber",
+    "construction": "Aero-shaped high-modulus carbon frame and fork with 12×142/12×100 mm thru-axles, a matching aero carbon seatpost and fully internal routing; the lay-up schedule and molding process are not published",
+    "stiffness_evidence": "The current manufacturer page describes the exact ET frame as engineered for stiffness and efficient power transfer, and one current exact-model owner reports stable handling and a responsive feel during an initial 70 km ride. No measured stiffness, deflection or independent comparative protocol was found.",
+    "bottom_bracket": "Threaded T47×24",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown"
+    "cable_routing": "fully internal",
+    "geometry": {
+      "basis": "current manufacturer exact-model geometry table",
+      "source_id": "twitter-cyclone-et-official-2026-08-29",
+      "units": {
+        "length": "mm"
+      },
+      "sizes": [
+        {
+          "size": "435",
+          "reach_mm": 333,
+          "stack_mm": 506,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 951
+        },
+        {
+          "size": "460",
+          "reach_mm": 349,
+          "stack_mm": 515,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 971
+        },
+        {
+          "size": "480",
+          "reach_mm": 362,
+          "stack_mm": 536,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 991
+        },
+        {
+          "size": "500",
+          "reach_mm": 371,
+          "stack_mm": 547,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1004
+        },
+        {
+          "size": "520",
+          "reach_mm": 383,
+          "stack_mm": 548,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1017
+        },
+        {
+          "size": "540",
+          "reach_mm": 398,
+          "stack_mm": 554,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1030
+        }
+      ]
+    }
   },
   "category_details": {
     "discipline": "aero road",
-    "geometry": "unknown",
-    "evidence": "snapshot-classification",
-    "note": "WheelTop EDS TX 2×12; two coupon observations retained as an uncertainty range for the same visible configuration."
+    "geometry": "current manufacturer exact-model table",
+    "evidence": "manufacturer-current-plus-dated-mainland-snapshot",
+    "note": "WheelTop EDS TX 2×12. The manufacturer publishes fitted 700×28C tires but no exact maximum tire clearance; two dated coupon observations remain an uncertainty range."
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-bikes-gravel-catalog-2026-08-08"
+    "twitter-bikes-gravel-catalog-2026-08-08",
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-jd-2026-08-29",
+    "public-twitter-cyclone-et-owner-build-2026-08-29"
   ],
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-29"
 }
