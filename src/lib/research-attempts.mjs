@@ -1,3 +1,9 @@
+import {
+  EXTENDED_RESEARCH_APPROACH_REQUIREMENT,
+  RESEARCH_APPROACH_AREA_BY_ID,
+  RESEARCH_APPROACH_AREAS
+} from './research-approach-areas.mjs';
+
 export const RESEARCH_CHANNELS = ['public-post', 'web'];
 export const RESEARCH_ATTEMPT_LIMIT = 3;
 
@@ -27,6 +33,12 @@ function hasEvidenceResolution(record) {
   return isObject(record.resolution) && Array.isArray(record.resolution.source_ids) && record.resolution.source_ids.length > 0;
 }
 
+function extendedRequirement(record) {
+  return Number.isInteger(record.minimum_distinct_approaches)
+    ? record.minimum_distinct_approaches
+    : null;
+}
+
 function expectedRecordStatus(record) {
   const statuses = record.required_channels.map((channel) => record.channels?.[channel]?.status);
   if (statuses.includes('conflicted')) return 'conflicted';
@@ -39,10 +51,12 @@ function expectedRecordStatus(record) {
 function validateChannel(record, channelName, channel) {
   const prefix = `research attempt ${record.id}: channel ${channelName}`;
   const errors = [];
+  const requirement = extendedRequirement(record);
+  const attemptLimit = requirement ?? RESEARCH_ATTEMPT_LIMIT;
   if (!isObject(channel)) return [`${prefix} is missing`];
   if (!channelStatuses.has(channel.status)) errors.push(`${prefix} has invalid status ${String(channel.status)}`);
   if (!Array.isArray(channel.attempts)) return [...errors, `${prefix} attempts must be an array`];
-  if (channel.attempts.length > RESEARCH_ATTEMPT_LIMIT) errors.push(`${prefix} exceeds the ${RESEARCH_ATTEMPT_LIMIT}-attempt limit`);
+  if (channel.attempts.length > attemptLimit) errors.push(`${prefix} exceeds the ${attemptLimit}-attempt limit`);
 
   const queries = new Set();
   const routes = new Set();
@@ -90,7 +104,12 @@ function validateChannel(record, channelName, channel) {
     }
   }
   if (channel.status === 'temporarily-exhausted') {
-    if (channel.attempts.length !== RESEARCH_ATTEMPT_LIMIT) errors.push(`${prefix} must record exactly ${RESEARCH_ATTEMPT_LIMIT} attempts before temporary exhaustion`);
+    if (requirement === null && channel.attempts.length !== RESEARCH_ATTEMPT_LIMIT) {
+      errors.push(`${prefix} must record exactly ${RESEARCH_ATTEMPT_LIMIT} attempts before temporary exhaustion`);
+    }
+    if (requirement !== null && channel.attempts.length < RESEARCH_ATTEMPT_LIMIT) {
+      errors.push(`${prefix} must retain at least ${RESEARCH_ATTEMPT_LIMIT} attempts in every required channel before extended exhaustion`);
+    }
     if (channel.attempts.some((attempt) => !['no-result', 'rejected'].includes(attempt.outcome))) {
       errors.push(`${prefix} can be exhausted only after no-result or rejected attempts`);
     }
@@ -102,6 +121,46 @@ function validateChannel(record, channelName, channel) {
     errors.push(`${prefix} needs a conflict explanation`);
   }
   if (channel.status === 'not-run' && channel.attempts.length) errors.push(`${prefix} cannot be not-run with attempts`);
+  return errors;
+}
+
+function validateExtendedApproaches(record) {
+  if (record.minimum_distinct_approaches === undefined) return [];
+  const prefix = `research attempt ${record.id}`;
+  const errors = [];
+  const requirement = record.minimum_distinct_approaches;
+  if (!Number.isInteger(requirement) || requirement < RESEARCH_ATTEMPT_LIMIT || requirement > RESEARCH_APPROACH_AREAS.length) {
+    return [`${prefix}: minimum_distinct_approaches must be an integer from ${RESEARCH_ATTEMPT_LIMIT} to ${RESEARCH_APPROACH_AREAS.length}`];
+  }
+  const attempts = record.required_channels.flatMap((channelName) => (
+    (record.channels?.[channelName]?.attempts ?? []).map((attempt) => ({ channelName, attempt }))
+  ));
+  if (attempts.length < requirement) errors.push(`${prefix}: requires at least ${requirement} distinct approaches`);
+  if (attempts.length > requirement) errors.push(`${prefix}: exceeds its ${requirement}-approach campaign budget`);
+
+  const areas = new Set();
+  const queries = new Set();
+  const routes = new Set();
+  for (const { channelName, attempt } of attempts) {
+    const areaId = attempt?.approach_area_id;
+    const area = RESEARCH_APPROACH_AREA_BY_ID.get(areaId);
+    if (!area) {
+      errors.push(`${prefix}: attempt ${channelName}:${String(attempt?.attempt)} needs a recognized approach_area_id`);
+    } else {
+      if (area.channel !== channelName) errors.push(`${prefix}: approach area ${areaId} belongs to ${area.channel}, not ${channelName}`);
+      if (areas.has(areaId)) errors.push(`${prefix}: repeats approach area ${areaId}`);
+      areas.add(areaId);
+    }
+    const query = normalized(attempt?.query);
+    const route = normalized(attempt?.route);
+    if (query && queries.has(query)) errors.push(`${prefix}: repeats a query across channels`);
+    if (route && routes.has(route)) errors.push(`${prefix}: repeats a route across channels`);
+    queries.add(query);
+    routes.add(route);
+  }
+  if (requirement === EXTENDED_RESEARCH_APPROACH_REQUIREMENT && areas.size !== RESEARCH_APPROACH_AREAS.length) {
+    errors.push(`${prefix}: 50-approach campaigns must cover every registered approach area exactly once`);
+  }
   return errors;
 }
 
@@ -147,6 +206,7 @@ export function validateResearchAttempts(records, data) {
       }
       errors.push(...validateChannel(record, channelName, record.channels?.[channelName]));
     }
+    errors.push(...validateExtendedApproaches(record));
     if (record.resolution !== undefined) {
       if (!isObject(record.resolution)) {
         errors.push(`${label}: resolution must be an object`);
@@ -183,11 +243,18 @@ export function summarizeResearchAttempts(records) {
   const summary = {
     atomic_fields: records.length,
     statuses: { found: 0, 'temporarily-exhausted': 0, blocked: 0, conflicted: 0, open: 0 },
-    attempts: { 'public-post': 0, web: 0 }
+    attempts: { 'public-post': 0, web: 0 },
+    extended_approach_campaigns: { fields: 0, complete: 0, approach_applications: 0 }
   };
   for (const record of records) {
     summary.statuses[record.status] += 1;
     for (const channel of RESEARCH_CHANNELS) summary.attempts[channel] += record.channels?.[channel]?.attempts?.length ?? 0;
+    if (record.minimum_distinct_approaches !== undefined) {
+      const total = RESEARCH_CHANNELS.reduce((sum, channel) => sum + (record.channels?.[channel]?.attempts?.length ?? 0), 0);
+      summary.extended_approach_campaigns.fields += 1;
+      summary.extended_approach_campaigns.approach_applications += total;
+      if (total >= record.minimum_distinct_approaches) summary.extended_approach_campaigns.complete += 1;
+    }
   }
   return summary;
 }

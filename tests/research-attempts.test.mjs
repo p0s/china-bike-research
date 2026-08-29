@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { summarizeResearchAttempts, validateResearchAttempts } from '../src/lib/research-attempts.mjs';
+import { RESEARCH_APPROACH_AREAS } from '../src/lib/research-approach-areas.mjs';
 
 const data = {
   candidates: [{ id: 'example-bike' }],
@@ -42,12 +43,47 @@ function baseRecord() {
   };
 }
 
+function extendedRecord() {
+  const record = baseRecord();
+  record.minimum_distinct_approaches = 50;
+  for (const channelName of ['public-post', 'web']) {
+    const areas = RESEARCH_APPROACH_AREAS.filter((area) => area.channel === channelName);
+    record.channels[channelName] = {
+      status: 'temporarily-exhausted',
+      attempts: areas.map((area, index) => ({
+        attempt: index + 1,
+        query: `example bike image via ${area.id}`,
+        route: `${area.label} for example bike image`,
+        approach_area_id: area.id,
+        outcome: 'no-result',
+        accessed_at: '2026-08-17',
+        note: `The ${area.label.toLowerCase()} route did not expose an exact attributable image.`
+      }))
+    };
+  }
+  return record;
+}
+
 test('temporary exhaustion requires three distinct attempts in every required channel', () => {
   assert.deepEqual(validateResearchAttempts([baseRecord()], data), []);
   const invalid = baseRecord();
   invalid.channels.web.attempts.pop();
   assert.ok(validateResearchAttempts([invalid], data)
     .some((error) => error.includes('exactly 3 attempts before temporary exhaustion')));
+});
+
+test('an extended campaign requires all 50 registered approach areas exactly once', () => {
+  assert.deepEqual(validateResearchAttempts([extendedRecord()], data), []);
+
+  const incomplete = extendedRecord();
+  incomplete.channels.web.attempts.pop();
+  assert.ok(validateResearchAttempts([incomplete], data)
+    .some((error) => error.includes('requires at least 50 distinct approaches')));
+
+  const duplicate = extendedRecord();
+  duplicate.channels.web.attempts[0].approach_area_id = duplicate.channels.web.attempts[1].approach_area_id;
+  assert.ok(validateResearchAttempts([duplicate], data)
+    .some((error) => error.includes('repeats approach area')));
 });
 
 test('a successful exact source stops the search early and links accepted evidence', () => {
@@ -114,4 +150,5 @@ test('research summary counts atomic fields and channel effort', () => {
   assert.equal(summary.statuses['temporarily-exhausted'], 1);
   assert.equal(summary.attempts['public-post'], 3);
   assert.equal(summary.attempts.web, 3);
+  assert.equal(summary.extended_approach_campaigns.fields, 0);
 });
