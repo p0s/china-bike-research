@@ -135,16 +135,16 @@ test('publication gates reject incomplete builds and category-mismatched framese
 
 test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 39);
-  assert.equal(data.platforms.length, 36);
-  assert.equal(data.variants.length, 38);
-  assert.equal(data.prices.length, 50);
-  assert.equal(data.images.length, 196);
+  assert.equal(data.platforms.length, 37);
+  assert.equal(data.variants.length, 40);
+  assert.equal(data.prices.length, 52);
+  assert.equal(data.images.length, 198);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
   assert.equal(data.candidates.length, 232);
-  assert.equal(data.exclusions.length, 14);
+  assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 549);
   assert.equal(products.length, data.variants.length);
@@ -611,8 +611,8 @@ test('wide-clearance products preserve the narrower rear limit', () => {
 test('every platform and variant resolves a primary visual', () => {
   const platformImages = data.images.filter((image) => image.platform_id);
   const primaryPlatformImages = platformImages.filter((image) => image.role === 'primary');
-  assert.equal(primaryPlatformImages.length, data.platforms.length);
   const imagedPlatforms = new Set(platformImages.filter((image) => image.role === 'primary').map((image) => image.platform_id));
+  assert.equal(imagedPlatforms.size, data.platforms.length);
   assert.deepEqual([...imagedPlatforms].sort(), data.platforms.map((platform) => platform.id).sort());
   for (const product of products) {
     assert.ok(product.image, product.variant.id);
@@ -637,7 +637,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 182);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 184);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 115);
   assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);

@@ -238,6 +238,33 @@ test('published frame pages show exact-model galleries and component weight cont
   assert.match(incolorDetail, /5 sizes \(45–57\) · stack 515–580 mm · reach 358–397 mm/);
 });
 
+test('shared frameset platforms render variant-specific weight, basis, and carbon lay-up', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-08-29T00:00:00Z')
+  };
+  const sr = products.find((entry) => entry.variant.id === 'incolor-speedster-sr-frameset');
+  const srPlus = products.find((entry) => entry.variant.id === 'incolor-speedster-sr-plus-frameset');
+
+  assert.ok(sr);
+  assert.ok(srPlus);
+  const srDetail = renderModel(context, sr);
+  const srPlusDetail = renderModel(context, srPlus);
+  assert.match(srDetail, /<dt>Weight<\/dt><dd>785 g frame<\/dd>/);
+  assert.match(srDetail, /<dt>Weight basis<\/dt><dd>Size 54, unpainted, excluding paint and metal hardware<\/dd>/);
+  assert.match(srDetail, /<dt>Frame material<\/dt><dd>M60 \+ T800 carbon<\/dd>/);
+  assert.match(srPlusDetail, /<dt>Weight<\/dt><dd>720 g frame<\/dd>/);
+  assert.match(srPlusDetail, /<dt>Frame material<\/dt><dd>80T pitch-based \+ T1100 carbon<\/dd>/);
+  assert.match(srPlusDetail, />720 g frame with 38 mm tire clearance<\/h2>/);
+  assert.doesNotMatch(srPlusDetail, /frame frame/);
+  assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g frame/);
+  assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g frame/);
+});
+
 test('complete-bike pages expose researched build components and weight basis without another profile section', () => {
   const context = {
     data,

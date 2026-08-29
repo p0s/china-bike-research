@@ -4,23 +4,23 @@
   "catalog_metrics": {
     "records": {
       "brands": 39,
-      "platforms": 36,
-      "variants": 38,
-      "prices": 50,
-      "sources": 562,
-      "images": 196,
+      "platforms": 37,
+      "variants": 40,
+      "prices": 52,
+      "sources": 568,
+      "images": 198,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
       "candidates": 232,
-      "exclusions": 14,
+      "exclusions": 16,
       "research": 1,
       "researchAttempts": 549
     },
     "image_accuracy": {
       "exact-platform": 68,
-      "exact-variant": 89,
+      "exact-variant": 91,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
@@ -28,7 +28,7 @@
     },
     "image_hosting": {
       "local": 14,
-      "remote": 182
+      "remote": 184
     },
     "candidate_prices": {
       "official": 54,
@@ -89,6 +89,7 @@
       "evolve-cima-gr",
       "ican-gra04",
       "ican-graro",
+      "incolor-speedster",
       "incolor-voyager",
       "lightcarbon-lcg071s-pro",
       "lightcarbon-speedz",
@@ -127,6 +128,8 @@
       "evolve-cima-gr-frameset",
       "ican-gra04-frameset",
       "ican-graro-frameset",
+      "incolor-speedster-sr-frameset",
+      "incolor-speedster-sr-plus-frameset",
       "incolor-voyager-frameset",
       "lightcarbon-lcg071s-pro-frameset",
       "lightcarbon-speedz-complete",
@@ -172,6 +175,8 @@
       "evolve-cima-2026-08",
       "ican-gra04-2026-08",
       "ican-graro-2026-08",
+      "incolor-speedster-sr-plus-taobao-2026-08-29",
+      "incolor-speedster-sr-taobao-2026-08-29",
       "incolor-voyager-2026-08",
       "incolor-voyager-official-list-2026-08-25",
       "lightcarbon-2026-08",
@@ -305,6 +310,12 @@
       "incolor-brand-name-official-2026-08-29",
       "incolor-services-official-2026-08-17",
       "incolor-services-official-2026-08-26",
+      "incolor-services-official-2026-08-29",
+      "incolor-speedster-brochure-2026-08-29",
+      "incolor-speedster-official-2026-08-29",
+      "incolor-speedster-sr-plus-taobao-2026-08-29",
+      "incolor-speedster-sr-taobao-2026-08-29",
+      "incolor-speedster-ss-history-2025-05-05",
       "incolor-ssr-panda-podium-2026-08-17",
       "incolor-ssr-price-pdf-lead-2026-08-17",
       "incolor-voyager-official-2026-08-25",
@@ -825,6 +836,8 @@
       "ican-graro-torque-gallery",
       "icanian-p9-primary-image",
       "icanian-sn04-primary-image",
+      "incolor-speedster-sr-plus-primary-image",
+      "incolor-speedster-sr-primary-image",
       "incolor-ssr-primary-image",
       "incolor-voyager-clearance-gallery",
       "incolor-voyager-design-gallery",
@@ -1266,6 +1279,8 @@
       "avenger-ambiguous",
       "generic-marketplace-completes",
       "generic-replica-multibrand",
+      "incolor-speedster-ss",
+      "incolor-speedster-ss-plus",
       "pardus-unspecified-road",
       "replica-pinarello-dogma-f",
       "replica-pinarello-f-2026",
@@ -2684,6 +2699,41 @@
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
       ],
+      "incolor-speedster": [
+        "brand_id",
+        "category",
+        "category_details.discipline",
+        "category_details.evidence",
+        "category_details.note",
+        "china_availability",
+        "frame.bottom_bracket",
+        "frame.cable_routing",
+        "frame.construction",
+        "frame.derailleur_hanger",
+        "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
+        "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
+        "handlebar",
+        "internal_storage",
+        "last_reviewed",
+        "name",
+        "name_zh",
+        "rider_luggage_limit_kg",
+        "source_ids",
+        "status",
+        "summary",
+        "tire_clearance.eligibility",
+        "tire_clearance.evidence",
+        "tire_clearance.note",
+        "tire_clearance.published_max_mm",
+        "tire_clearance.wheel_size"
+      ],
       "incolor-voyager": [
         "brand_id",
         "category",
@@ -3748,6 +3798,38 @@
         "purchase_route",
         "source_ids"
       ],
+      "incolor-speedster-sr-frameset": [
+        "claimed_frame_weight_basis",
+        "claimed_frame_weight_g",
+        "editorial.best_for",
+        "editorial.caveats",
+        "editorial.strengths",
+        "editorial.verdict",
+        "frame_material_grade",
+        "included",
+        "kind",
+        "market",
+        "name",
+        "platform_id",
+        "purchase_route",
+        "source_ids"
+      ],
+      "incolor-speedster-sr-plus-frameset": [
+        "claimed_frame_weight_basis",
+        "claimed_frame_weight_g",
+        "editorial.best_for",
+        "editorial.caveats",
+        "editorial.strengths",
+        "editorial.verdict",
+        "frame_material_grade",
+        "included",
+        "kind",
+        "market",
+        "name",
+        "platform_id",
+        "purchase_route",
+        "source_ids"
+      ],
       "incolor-voyager-frameset": [
         "editorial.best_for",
         "editorial.caveats",
@@ -4501,6 +4583,30 @@
         "high_cny",
         "low_cny",
         "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "incolor-speedster-sr-plus-taobao-2026-08-29": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "incolor-speedster-sr-taobao-2026-08-29": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
         "price_type",
         "source_ids",
         "status",
@@ -6092,6 +6198,87 @@
         "language",
         "notes",
         "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-services-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "reliability.support",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-brochure-2026-08-29": [
+        "accessed_at",
+        "document_bytes",
+        "document_sha256",
+        "language",
+        "notes",
+        "publisher",
+        "relevant_pages",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-sr-plus-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-sr-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-speedster-ss-history-2025-05-05": [
+        "accessed_at",
+        "language",
+        "notes",
+        "published_at",
+        "publisher",
+        "reliability.generation",
         "reliability.identity",
         "reliability.price",
         "reliability.specification",
@@ -12713,6 +12900,40 @@
         "role",
         "source_id",
         "subject_accuracy"
+      ],
+      "incolor-speedster-sr-plus-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-speedster-sr-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
       ],
       "incolor-ssr-primary-image": [
         "alt",
@@ -21542,6 +21763,22 @@
         "source_refs",
         "source_snapshot_id"
       ],
+      "incolor-speedster-ss": [
+        "category",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "reason",
+        "source_ids"
+      ],
+      "incolor-speedster-ss-plus": [
+        "category",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "reason",
+        "source_ids"
+      ],
       "pardus-unspecified-road": [
         "category",
         "last_reviewed",
@@ -29773,7 +30010,8 @@
       "ican": [],
       "icanian": [],
       "incolor": [
-        "source_ids=incolor-brand-name-official-2026-08-29"
+        "source_ids=incolor-brand-name-official-2026-08-29",
+        "source_ids=incolor-services-official-2026-08-29"
       ],
       "irefox": [],
       "java": [],
@@ -29888,6 +30126,13 @@
         "source_ids=ican-company-official",
         "source_ids=ican-graro-official",
         "source_ids=ican-graro-official-2026-08-27"
+      ],
+      "incolor-speedster": [
+        "brand_id=incolor",
+        "frame.geometry.source_id=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-speedster-brochure-2026-08-29",
+        "source_ids=incolor-speedster-official-2026-08-29"
       ],
       "incolor-voyager": [
         "brand_id=incolor",
@@ -30155,6 +30400,20 @@
         "source_ids=ican-graro-official",
         "source_ids=ican-graro-official-2026-08-27"
       ],
+      "incolor-speedster-sr-frameset": [
+        "platform_id=incolor-speedster",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-speedster-brochure-2026-08-29",
+        "source_ids=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-speedster-sr-taobao-2026-08-29"
+      ],
+      "incolor-speedster-sr-plus-frameset": [
+        "platform_id=incolor-speedster",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-speedster-brochure-2026-08-29",
+        "source_ids=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-speedster-sr-plus-taobao-2026-08-29"
+      ],
       "incolor-voyager-frameset": [
         "platform_id=incolor-voyager",
         "source_ids=incolor-services-official-2026-08-26",
@@ -30406,6 +30665,16 @@
         "source_ids=ican-graro-official",
         "variant_id=ican-graro-frameset"
       ],
+      "incolor-speedster-sr-plus-taobao-2026-08-29": [
+        "source_ids=incolor-speedster-brochure-2026-08-29",
+        "source_ids=incolor-speedster-sr-plus-taobao-2026-08-29",
+        "variant_id=incolor-speedster-sr-plus-frameset"
+      ],
+      "incolor-speedster-sr-taobao-2026-08-29": [
+        "source_ids=incolor-speedster-brochure-2026-08-29",
+        "source_ids=incolor-speedster-sr-taobao-2026-08-29",
+        "variant_id=incolor-speedster-sr-frameset"
+      ],
       "incolor-voyager-2026-08": [
         "source_ids=compiled-research-2026-08-06",
         "source_ids=incolor-voyager-retailer",
@@ -30656,6 +30925,12 @@
       "incolor-brand-name-official-2026-08-29": [],
       "incolor-services-official-2026-08-17": [],
       "incolor-services-official-2026-08-26": [],
+      "incolor-services-official-2026-08-29": [],
+      "incolor-speedster-brochure-2026-08-29": [],
+      "incolor-speedster-official-2026-08-29": [],
+      "incolor-speedster-sr-plus-taobao-2026-08-29": [],
+      "incolor-speedster-sr-taobao-2026-08-29": [],
+      "incolor-speedster-ss-history-2025-05-05": [],
       "incolor-ssr-panda-podium-2026-08-17": [],
       "incolor-ssr-price-pdf-lead-2026-08-17": [],
       "incolor-voyager-official-2026-08-25": [],
@@ -31365,6 +31640,16 @@
       "icanian-sn04-primary-image": [
         "candidate_id=icanian-sn04",
         "source_id=ican-sn04-official-2026-08-08"
+      ],
+      "incolor-speedster-sr-plus-primary-image": [
+        "platform_id=incolor-speedster",
+        "source_id=incolor-speedster-official-2026-08-29",
+        "variant_ids=incolor-speedster-sr-plus-frameset"
+      ],
+      "incolor-speedster-sr-primary-image": [
+        "platform_id=incolor-speedster",
+        "source_id=incolor-speedster-official-2026-08-29",
+        "variant_ids=incolor-speedster-sr-frameset"
       ],
       "incolor-ssr-primary-image": [
         "candidate_id=incolor-ssr",
@@ -33491,6 +33776,18 @@
       "generic-replica-multibrand": [
         "model_id=generic-replica-multibrand",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
+      ],
+      "incolor-speedster-ss": [
+        "model_id=incolor-speedster-ss",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-speedster-ss-history-2025-05-05"
+      ],
+      "incolor-speedster-ss-plus": [
+        "model_id=incolor-speedster-ss-plus",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-speedster-official-2026-08-29",
+        "source_ids=incolor-speedster-ss-history-2025-05-05"
       ],
       "pardus-unspecified-road": [
         "model_id=pardus-unspecified-road",
@@ -36016,6 +36313,57 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "incolor-services-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 0,
+        "specification": 3,
+        "support": 3
+      }
+    },
+    "incolor-speedster-brochure-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 3
+      }
+    },
+    "incolor-speedster-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
+    "incolor-speedster-sr-plus-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "incolor-speedster-sr-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "incolor-speedster-ss-history-2025-05-05": {
+      "minimum_type_tier": 0,
+      "minimum_reliability": {
+        "generation": 2,
+        "identity": 2,
+        "price": 0,
+        "specification": 0
       }
     },
     "incolor-ssr-panda-podium-2026-08-17": {
@@ -47466,6 +47814,20 @@
       "remote_required": true,
       "primary_required": true
     },
+    "incolor-speedster-sr-plus-primary-image": {
+      "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "incolor-speedster-sr-primary-image": {
+      "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
     "incolor-ssr-primary-image": {
       "target": "candidates:incolor-ssr",
       "minimum_accuracy_rank": 4,
@@ -49109,6 +49471,11 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "platforms:incolor-speedster": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "platforms:incolor-voyager": {
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 1,
@@ -49274,7 +49641,9 @@
       "winspace-g5-frameset": true,
       "xmcarbonspeed-cs-gr01-frameset": true,
       "yoeleo-altera-g21-frameset": true,
-      "twitter-v3-2024-rs-sensah-alloy": true
+      "twitter-v3-2024-rs-sensah-alloy": true,
+      "incolor-speedster-sr-frameset": true,
+      "incolor-speedster-sr-plus-frameset": true
     },
     "candidates": {
       "alums-da54": [
