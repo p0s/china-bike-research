@@ -1,6 +1,7 @@
 {
   "id": "pinarello",
   "name": "PINARELLO",
+  "name_zh": "皮纳瑞罗",
   "country": "Unknown",
   "manufacturing": {
     "relationship": "brand-identity-only",
@@ -11,5 +12,8 @@
     "domestic_purchase": "observed-marketplace",
     "warranty": "verify-exact-seller-and-sku"
   },
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "pinarello-china-brand-name-2026-08-29"
+  ],
+  "last_reviewed": "2026-08-29"
 }
