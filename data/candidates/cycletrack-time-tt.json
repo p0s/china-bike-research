@@ -1,16 +1,31 @@
 {
   "id": "cycletrack-time-tt",
-  "name": "CYCLETRACK 骑迹 TIME electronic TT",
+  "name": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9",
   "model_id": "cycletrack-time-tt",
   "category": "triathlon",
   "type": "complete-bike",
-  "why_interesting": "24-speed electronic TT build.",
+  "why_interesting": "The current exact manufacturer page and mainland index establish a T800 carbon TIME / 时光 TT build with L-TWOO ER9 electronic 2x12 shifting and a closed rear wheel.",
+  "facts": {
+    "frame_material": "T800 carbon frame and carbon fork",
+    "frame_construction": "TT/triathlon frame with internal routing, T47 threaded bottom bracket, hydraulic disc brakes, carbon cockpit, carbon seatpost and closed rear wheel",
+    "bottom_bracket": "T47 threaded",
+    "drivetrain": "L-TWOO ER9 electronic TT 2x12 with hydraulic discs, SENICX PR1 50/34 crank, ATA 11-34 12-speed cassette and KMC 12-speed chain",
+    "complete_weight_g": 9600,
+    "complete_weight_basis": "Manufacturer approximate complete weight for the exact ER9/carbon-wheel reference build; listed size M option, pedal inclusion and measurement method are not stated",
+    "tires": "Continental Grand Sport 700x28C fitted; this is not a published maximum",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Maximum tire clearance and complete geometry/fit table",
+    "Complete-weight pedal basis and measurement method",
+    "Meaningful exact-model stiffness evidence, current domestic warranty issuer and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-build-partially-documented",
+  "source_ids": [
+    "cycletrack-time-tt-official-2026-08-29",
+    "cycletrack-time-tt-jd-2026-08-29",
+    "cycletrack-time-tt-owner-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +36,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6877.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike",
+  "source_note": "Manufacturer and current mainland index align on TIME / 时光, L-TWOO ER9-TT, carbon wheels and a closed rear wheel. The manufacturer's around-9.6 kg value is retained with its missing size/pedal/method caveat; fitted 28C tires are not treated as maximum clearance.",
+  "last_reviewed": "2026-08-29"
 }

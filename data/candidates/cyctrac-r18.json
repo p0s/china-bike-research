@@ -1,15 +1,33 @@
 {
   "id": "cyctrac-r18",
-  "name": "CYC?TRAC / Twitter-title mismatch R18 race electronic",
+  "name": "TWITTER 骓特 R18 (Racing ED) / Cyctrac",
   "model_id": "cyctrac-r18",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Image branding and listing title conflict; verify manufacturer.",
+  "brand_id": "twitter",
+  "why_interesting": "Official global and regional pages use TWITTER R18 (Racing ED), while the regional title retains Cyctrac; current mainland evidence identifies the retained electronic build as Shimano 105 Di2 R7170.",
+  "facts": {
+    "frame_material": "High-modulus T800/T1000 carbon frame with T800 carbon fork",
+    "frame_construction": "Aero road frame with full internal routing, T47x24 threaded bottom bracket, 12x100/12x142 thru axles, hydraulic discs and integrated carbon cockpit",
+    "bottom_bracket": "T47x24 threaded",
+    "drivetrain": "Shimano 105 Di2 R7170 electronic 2x12 / 24-speed with hydraulic disc brakes",
+    "complete_weight_g": 7700,
+    "complete_weight_basis": "Manufacturer and current JD listing weight for the R7170 build; size, pedals and measurement method are not stated",
+    "wheels": "RS T800/T1100 carbon wheels with 58 mm rims on the manufacturer's R7170 reference build",
+    "tires": "Maxxis Pursuer 700x28C fitted; this is not a published maximum",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Maximum tire clearance and complete geometry table",
+    "Complete-weight size, pedal basis and measurement method",
+    "Meaningful exact-model stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-build-partially-documented",
+  "source_ids": [
+    "twitter-r18-official-2026-08-29",
+    "twitter-r18-regional-2026-08-29",
+    "twitter-r18-jd-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +38,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6890.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.twittercycles.com/products/R18Racing%20EDBike.html",
+  "source_note": "TWITTER / 骓特 is the manufacturer identity. 'Cyctrac Carbon Road Bike' is retained by an official regional title, not treated as a separate maker. The exact current China index aligns the retained electronic lead with R7170 and 7.7 kg; fitted 28C tires do not establish maximum clearance.",
+  "last_reviewed": "2026-08-29"
 }

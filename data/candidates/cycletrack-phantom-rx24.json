@@ -1,15 +1,28 @@
 {
   "id": "cycletrack-phantom-rx24",
-  "name": "CYCLETRACK 骑迹 Phantom / RX 24-speed",
+  "name": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
   "model_id": "cycletrack-phantom-rx24",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Image says 魅影 and RX24-speed; exact English model name appears Phantom.",
+  "why_interesting": "Current manufacturer and mainland indexes establish Phantom / 魅影 as the model and L-TWOO RX 24-speed as the drivetrain; RX is not a model suffix.",
+  "facts": {
+    "frame_material": "Carbon frame and carbon fork; the exact current RX 24-speed page does not publish a fiber grade, and conflicting T700, T800 and T1000 claims from other Phantom generations or trims are not assigned",
+    "frame_construction": "Aero road frame with fully internal cable routing and hydraulic flat-mount disc brakes",
+    "drivetrain": "L-TWOO RX mechanical 2x12 / 24-speed with hydraulic disc brakes, SENICX PR1 50/34 crank, ATA cassette and KMC chain",
+    "reference_builds": "The exact official alloy-rim reference build is listed around 8.5 kg; a separate Shimano 105 alloy-wheel build was independently reported at 8.7 kg",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Selected wheel option and complete weight with size, pedals and measurement method",
+    "Maximum tire clearance and exact carbon grade for the retained RX option",
+    "Meaningful exact-model stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-platform-build-partially-documented",
+  "source_ids": [
+    "cycletrack-phantom-rx-official-2026-08-29",
+    "cycletrack-phantom-jd-2026-08-29",
+    "cycletrack-phantom-independent-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +33,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6861.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women",
+  "source_note": "The exact official RX 24-speed page lists an alloy-rim reference build around 8.5 kg, while current JD indexes expose both alloy- and carbon-wheel options. The retained price observation does not reveal its selected wheel option, so complete weight remains unassigned. Fitted 25C tires are not treated as maximum clearance.",
+  "last_reviewed": "2026-08-29"
 }
