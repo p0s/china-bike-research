@@ -2,15 +2,33 @@
   "id": "camp-ace-gen3-105",
   "name": "CAMP 坎普 ACE Gen 3 105",
   "model_id": "camp-ace-gen3-105",
+  "brand_id": "camp",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model/build visible.",
+  "why_interesting": "A current official aero-road complete with Shimano 105 Di2, a full manufacturer BOM and a size-qualified claimed weight.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2×12; ST-R7170 controls, FD-R7150 front derailleur, RD-R7150 rear derailleur, FC-R7100 crank, CS-R7100 cassette and Shimano 12-speed chain",
+    "complete_weight_g": 7100,
+    "complete_weight_basis": "Manufacturer-listed approximate weight for a small complete bike, excluding pedals and small accessories; color and size can vary",
+    "frame": "Toray T800 high-strength carbon thru-axle ACE third-generation frame and fork",
+    "frame_material": "Toray T800 high-strength carbon frame and fork",
+    "frame_construction": "Thru-axle aero-road carbon frame with T47 bottom bracket; exact lay-up and molding process are not published",
+    "bottom_bracket": "T47 threaded",
+    "wheels": "Novatec R5 50 mm carbon wheelset",
+    "tires": "Continental Grand Prix TR 700×30C fitted; maximum clearance is not published",
+    "cockpit": "Toray T800 integrated carbon handlebar and T800 aero carbon seatpost",
+    "brakes": "Shimano 105 R7170 hydraulic disc controls and brakes",
+    "sizes": "440, 460, 490, 520 and 540 mm"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Manufacturer-published maximum tire clearance",
+    "Independent exact-model stiffness or deflection measurement",
+    "Exact domestic warranty duration, invoice handling and final color-and-size checkout stock"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "camp-ace-gen3-105-official-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +39,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6891.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.campbicycle.com/en/bicycle/ace-iii-105.html",
+  "source_note": "The current exact manufacturer page publishes the full 105 Di2 build, approximately 7.1 kg small-size claim, fitted 30C tires, T800 frame/fork, CNY 12,999 price and official purchase route. It does not publish maximum clearance or a meaningful stiffness test.",
+  "last_reviewed": "2026-08-29"
 }
