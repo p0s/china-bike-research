@@ -1,16 +1,31 @@
 {
   "id": "alums-da54",
-  "name": "ALUMS 爱瓦士 DA54",
+  "name": "ALVAS 爱瓦士 DA54",
   "model_id": "alums-da54",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "why_interesting": "A dated mainland DA54 price lead now has exact manufacturer identity, construction and fit evidence; ALVAS is the correct brand spelling.",
+  "facts": {
+    "frame_material": "ALVAS X1 high-modulus carbon frame and carbon fork; the live global page does not publish a fiber supplier, grade or lay-up",
+    "frame_construction": "Aero-shaped endurance-road frame with fully internal routing, T47 bottom bracket, 12x142/12x100 thru axles, flat-mount brakes and SRAM UDH compatibility",
+    "bottom_bracket": "T47 threaded",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Bike Insights' exact 2025 DA54 record reports 32 mm and attributes its geometry data to alvas.bike; the live manufacturer text shows fitted 28C tires but does not state the maximum",
+    "reference_builds": "Current global Ultegra Di2/Vision SL60 and Australian 105 Di2/Helux R60 builds prove multiple regional trims; neither is assigned to the dated mainland listing",
+    "stiffness_evidence": "No exact-model numeric stiffness test or sufficiently specific independent frame-stiffness assessment was found; regional marketing and general responsiveness impressions are not treated as measurements"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Exact mainland drivetrain, wheels, cockpit and complete-bike weight for the selected listing option",
+    "Primary confirmation of the secondary 32 mm maximum-clearance value and meaningful frame-stiffness evidence",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-platform-trim-unverified",
+  "source_ids": [
+    "alvas-da54-official-2026-08-29",
+    "alvas-da54-australia-2026-08-29",
+    "alvas-da54-bikeinsights-2026-08-29",
+    "alvas-da54-independent-review-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +36,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6893.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.alvas.bike/da/da54.html",
+  "source_note": "The original ALUMS text was a transcription error; current manufacturer and regional records consistently use ALVAS / 爱瓦士. The global and Australian pages publish different complete builds, so the retained CNY 11,439 listing remains trim-ambiguous. A reviewed Australian Ultegra build weighed 8.4 kg with pedals, but that value is not transferred to the mainland listing.",
+  "last_reviewed": "2026-08-29"
 }

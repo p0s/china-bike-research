@@ -4,13 +4,27 @@
   "model_id": "cinelli-pressure",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "R7170 and 3T Discus wheels shown.",
+  "why_interesting": "The exact mainland listing combines the first-generation Pressure frame with Shimano 105 Di2 and 3T Discus carbon wheels; it is kept separate from Pressure 2.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 2x12 with R7170 controls and hydraulic brakes; exact chainring and cassette selection are not published in the China index",
+    "frame_material": "High-modulus T800 carbon monocoque frame with proprietary lay-up and carbon-monocoque fork",
+    "frame_construction": "First-generation Pressure aero platform with fully internal routing, integrated carbon seatpost, Press Fit 86.5 bottom bracket, flat-mount brakes and 12 mm thru axles",
+    "bottom_bracket": "Press Fit 86.5 x 41 mm",
+    "wheels": "3T Discus 50 I30 matte carbon wheel option shown in the mainland listing",
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Official 2023 first-generation Pressure catalog maximum of 700x30C",
+    "stiffness_evidence": "An independent exact-generation road.cc review describes a stiff, relatively light frameset with good ride quality; qualitative build-specific evidence, not a numeric stiffness result"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Exact complete-bike weight, tire model, cockpit, chainring and cassette for the selected mainland option",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-china-build-partially-documented",
+  "source_ids": [
+    "cinelli-pressure-catalog-2023-2026-08-29",
+    "cinelli-pressure-jd-2026-08-29",
+    "cinelli-pressure-roadcc-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +35,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6869.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/1318a5d0a7cb2eb41341.html",
+  "source_note": "The retained CNY 15,529 snapshot and current JD index consistently identify the first-generation Pressure with 105 Di2/R7170 and 3T carbon wheels. The official 2023 catalog supplies T800 construction and 30 mm maximum clearance. Pressure 2 specifications are not transferred to this record.",
+  "last_reviewed": "2026-08-29"
 }

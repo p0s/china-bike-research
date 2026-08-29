@@ -4,13 +4,26 @@
   "model_id": "cinelli-pressure-adr",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "why_interesting": "An exact Pressure ADR price lead now has current official frame, clearance and ride evidence, while its selected China-market build remains unresolved.",
+  "facts": {
+    "frame_material": "Carbon monocoque frame with Columbus carbon-monocoque fork; Cinelli describes a more compliant fiber mix and fine-tuned lay-up than the original Pressure but does not publish fiber grades",
+    "frame_construction": "Fully internal routing, standard 27.2 mm seatpost, Press Fit 86.5 bottom bracket, flat-mount brakes and 12 mm thru axles",
+    "bottom_bracket": "Press Fit 86.5 x 41 mm",
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Current manufacturer maximum up to 700x30 mm",
+    "reference_builds": "Current factory options include 105 mechanical, 105 Di2 and Ultegra Di2; the dated mainland listing does not identify its selected trim",
+    "stiffness_evidence": "BikeRadar's exact-model test describes a firm but deliberately more forgiving frame and fork than the original Pressure, with sharp, responsive handling; qualitative ride evidence, not a numeric stiffness result"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Exact selected mainland drivetrain, wheels, cockpit and complete-bike weight",
+    "Resolution of the current manufacturer page's conflicting 1,240/466 g and 990/420 g frame/fork weight pairs",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-platform-trim-unverified",
+  "source_ids": [
+    "cinelli-pressure-adr-official-2026-08-29",
+    "cinelli-pressure-adr-bikeradar-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +34,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6879.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://cinelli-milano.com/products/pressure-adr-2024-105-disc-di2",
+  "source_note": "The official current family includes multiple complete builds, while the retained CNY 12,599 observation shows only the model name. Exact frame and 30 mm clearance facts are shared at platform level; drivetrain, complete weight and China warranty are not inferred. The official page's internally conflicting frame/fork weights remain unresolved.",
+  "last_reviewed": "2026-08-29"
 }

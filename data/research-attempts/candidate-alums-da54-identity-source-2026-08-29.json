@@ -1,0 +1,496 @@
+{
+  "id": "candidate-alums-da54-identity-source-2026-08-29",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "alums-da54"
+  },
+  "field": "identity-source",
+  "priority": "high",
+  "searched_at": "2026-08-29",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact searches were blocked by robots policy, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered public-post route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "ALVAS 爱瓦士 DA54 — brand YouTube query — field candidate:alums-da54:identity-source",
+          "route": "brand YouTube channel index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "ALVAS 爱瓦士 DA54 — independent YouTube query — field candidate:alums-da54:identity-source",
+          "route": "independent YouTube search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.youtube.com/watch?v=ZbVdGmN96Dg"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "ALVAS 爱瓦士 DA54 — brand Bilibili query — field candidate:alums-da54:identity-source",
+          "route": "brand Bilibili index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "ALVAS 爱瓦士 DA54 — independent Bilibili query — field candidate:alums-da54:identity-source",
+          "route": "independent Bilibili index — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1EBHQesETP/"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ALVAS 爱瓦士 DA54 — brand XHS public index query — field candidate:alums-da54:identity-source",
+          "route": "public XHS brand-post index only — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "ALVAS 爱瓦士 DA54 — independent XHS public index query — field candidate:alums-da54:identity-source",
+          "route": "public XHS owner-post index only — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ALVAS 爱瓦士 DA54 — brand Douyin query — field candidate:alums-da54:identity-source",
+          "route": "brand and dealer Douyin index — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact ALVAS 爱瓦士 DA54 fact or acceptable evidence basis. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ALVAS 爱瓦士 DA54 — independent Douyin query — field candidate:alums-da54:identity-source",
+          "route": "independent Douyin index — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.douyin.com/video/7480120868811672890"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ALVAS 爱瓦士 DA54 — brand Weibo query — field candidate:alums-da54:identity-source",
+          "route": "brand Weibo exact search — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ALVAS 爱瓦士 DA54 — independent Weibo query — field candidate:alums-da54:identity-source",
+          "route": "independent Weibo exact search — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ALVAS 爱瓦士 DA54 — brand WeChat public query — field candidate:alums-da54:identity-source",
+          "route": "brand WeChat public-article index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ALVAS 爱瓦士 DA54 — independent WeChat public query — field candidate:alums-da54:identity-source",
+          "route": "independent WeChat public-article index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ALVAS 爱瓦士 DA54 — cycling forum query — field candidate:alums-da54:identity-source",
+          "route": "specialist cycling forums — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact-model owner query was found, but it supplies no attributable complete specification or measurement. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://tieba.baidu.com/p/9115726318"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ALVAS 爱瓦士 DA54 — owner build log query — field candidate:alums-da54:identity-source",
+          "route": "owner build and ride logs — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Owner and review posts cover modified and regional DA54 builds; their weights and components were not transferred to the mainland price lead. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ALVAS 爱瓦士 DA54 — community photo post query — field candidate:alums-da54:identity-source",
+          "route": "community photo and bike posts — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer exact-product query — field candidate:alums-da54:identity-source",
+          "route": "exact manufacturer product page — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "The exact live page establishes ALVAS DA54, X1 carbon construction, T47, UDH compatibility, a global Ultegra Di2/Vision SL60 reference build and fitted 28C tires; no complete weight or maximum clearance is stated. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://www.alvas.bike/da/da54.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer model-family query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer model-family catalog — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer current catalog query — field candidate:alums-da54:identity-source",
+          "route": "current manufacturer catalog — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://www.alvas.bike/bikes/road.html"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer archived catalog query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer archive and dated catalogs — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer product manual query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer manuals and service documents — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer geometry document query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer size and geometry documents — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer technical whitepaper query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer engineering and test documents — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer support and warranty query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer support and warranty pages — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact ALVAS 爱瓦士 DA54 fact or acceptable evidence basis. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer newsroom launch query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer newsroom and launch records — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer site search query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer-domain exact-model search — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer sitemap query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer indexes and sitemap routes — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer structured data query — field candidate:alums-da54:identity-source",
+          "route": "indexed manufacturer metadata and product snippets — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer regional site query — field candidate:alums-da54:identity-source",
+          "route": "official regional manufacturer site — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current Australian 105 Di2/Helux R60 build differs from the global Ultegra/Vision build and proves that a model-name-only China listing cannot inherit a foreign BOM. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://alvasbikes.com.au/da54-105/"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer distributor query — field candidate:alums-da54:identity-source",
+          "route": "official distributor catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer dealer locator query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer dealer and agent locator — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "ALVAS 爱瓦士 DA54 — manufacturer official store query — field candidate:alums-da54:identity-source",
+          "route": "manufacturer official commerce route — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "ALVAS 爱瓦士 DA54 — Taobao official store query — field candidate:alums-da54:identity-source",
+          "route": "Taobao official-store index and retained snapshot — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact ALVAS 爱瓦士 DA54 fact or acceptable evidence basis. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "ALVAS 爱瓦士 DA54 — Tmall official store query — field candidate:alums-da54:identity-source",
+          "route": "Tmall official-store index — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A public third-party index attributes an exact DA54 frameset listing to the ALVAS flagship store; it does not establish the observed complete-bike trim. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "ALVAS 爱瓦士 DA54 — JD official store query — field candidate:alums-da54:identity-source",
+          "route": "JD official-store and exact-model index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ALVAS 爱瓦士 DA54 — Alibaba and 1688 supplier query — field candidate:alums-da54:identity-source",
+          "route": "Alibaba and 1688 supplier index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ALVAS 爱瓦士 DA54 — AliExpress official store query — field candidate:alums-da54:identity-source",
+          "route": "AliExpress official-store index — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ALVAS 爱瓦士 DA54 — mainland authorized dealer query — field candidate:alums-da54:identity-source",
+          "route": "authorized mainland dealer search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact ALVAS 爱瓦士 DA54 fact or acceptable evidence basis. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "ALVAS 爱瓦士 DA54 — regional authorized dealer query — field candidate:alums-da54:identity-source",
+          "route": "authorized regional dealer search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://nextbikehq.com.au/alvas-bikes/"
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ALVAS 爱瓦士 DA54 — international specialist retailer query — field candidate:alums-da54:identity-source",
+          "route": "international specialist bicycle retailer — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://treadli.com.au/product/alvas-da54-eirmd9"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ALVAS 爱瓦士 DA54 — cycling industry review query — field candidate:alums-da54:identity-source",
+          "route": "cycling-industry editorial and review search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact Australian Ultegra/Helux review bike was indexed at 8.4 kg with pedals, but that regional configuration is not the mainland listing. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://mybike.parts/bike_parts/1249-alvas-da54"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ALVAS 爱瓦士 DA54 — Chinese cycling media query — field candidate:alums-da54:identity-source",
+          "route": "Chinese cycling-media search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable ALVAS 爱瓦士 DA54 result was checked in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://post.smzdm.com/talk/p/a24q8e37/"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ALVAS 爱瓦士 DA54 — independent lab test query — field candidate:alums-da54:identity-source",
+          "route": "independent laboratory and deflection-test search — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ALVAS 爱瓦士 DA54 — magazine archive query — field candidate:alums-da54:identity-source",
+          "route": "cycling magazine archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ALVAS 爱瓦士 DA54 — trade show coverage query — field candidate:alums-da54:identity-source",
+          "route": "bicycle trade-show coverage — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ALVAS 爱瓦士 DA54 — race team equipment query — field candidate:alums-da54:identity-source",
+          "route": "race-team equipment records — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A public NSVE team-edition DA54 post establishes a custom team build only, not a factory BOM or reusable product image. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ALVAS 爱瓦士 DA54 — event exhibitor catalog query — field candidate:alums-da54:identity-source",
+          "route": "event exhibitor catalogs — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ALVAS 爱瓦士 DA54 — geometry database query — field candidate:alums-da54:identity-source",
+          "route": "independent geometry databases — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Bike Insights reports 32 mm maximum tire width for the exact 2025 DA54 and attributes its geometry data to alvas.bike; the current manufacturer product text does not repeat that maximum. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/68ef6ac8ab478d001a5a74b0-alvas-da-series?build=da54&version=2025"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ALVAS 爱瓦士 DA54 — component compatibility database query — field candidate:alums-da54:identity-source",
+          "route": "component-maker compatibility databases — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact ALVAS 爱瓦士 DA54 fact or acceptable evidence basis. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ALVAS 爱瓦士 DA54 — product certification registry query — field candidate:alums-da54:identity-source",
+          "route": "cycle product certification registries — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ALVAS 爱瓦士 DA54 — web archive query — field candidate:alums-da54:identity-source",
+          "route": "web archives and cached exact-model pages — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ALVAS 爱瓦士 DA54 result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "alvas-da54-official-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/alums-da54-50-area-sweep-2026-08-29.json. The live exact manufacturer page establishes the platform and correct ALVAS / 爱瓦士 name."
+}
