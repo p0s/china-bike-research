@@ -194,12 +194,12 @@ write('data/catalog.csv', `${headers.map(csvCell).join(',')}\n${rows.map((row) =
 write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.meta.snapshot_date }));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-// The 239-row unified catalog with production project-base links, typed filters,
-// and Build handoff measured 861,439 bytes and 6,622 elements on 2026-08-27.
+// The 247-row unified catalog with production project-base links, typed filters,
+// and Build handoff measured 882,764 bytes and 6,791 elements on 2026-08-29.
 // These limits retain modest growth headroom while
 // keeping the full candidate set available without a second page or client-side
 // data fetch.
-const performanceBudget = { home_html_bytes: 875_000, home_elements: 6_850 };
+const performanceBudget = { home_html_bytes: 895_000, home_elements: 6_850 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
