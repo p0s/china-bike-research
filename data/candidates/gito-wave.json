@@ -1,16 +1,27 @@
 {
   "id": "gito-wave",
-  "name": "GITO Wave / 波浪",
+  "name": "GITO 捷拓 波浪 carbon-wheel listing (exact frame model unresolved)",
   "model_id": "gito-wave",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact Chinese model name visible.",
+  "why_interesting": "The retained seller title says 波浪, while the visible chainstay is not legible enough to distinguish G320, G325 or another GITO frame. Current GITO evidence uses wave terminology for carbon wheels, so 波浪 is preserved as a listing descriptor rather than promoted to a verified frame-model name.",
+  "facts": {
+    "frame_material": "Carbon GITO road-bike listing; exact GITO frame model and carbon grade remain unresolved",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact frame model, model year/SKU, drivetrain, brakes, wheel depth, remaining BOM and complete-bike weight",
+    "Maximum tire clearance and exact carbon grade",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "publication-gate-not-met",
+  "status": "listing-descriptor-verified-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "gito-g320-retailer-2026-08-29",
+    "gito-g530-retailer-2026-08-29",
+    "gito-g530-taobao-index-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +32,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6873.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://tao.hooos.com/category_50018687_58.html",
+  "source_note": "The retained seller title supplies 波浪 and carbon-frame context, but the chainstay marking remains unreadable. Current exact G530 evidence explicitly applies wave terminology to its carbon wheelset, and the indexed G525/530 listing also says 波浪碳轮; therefore the term is not treated as a verified frame-model identity.",
+  "last_reviewed": "2026-08-29"
 }

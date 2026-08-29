@@ -1,16 +1,30 @@
 {
   "id": "gito-gtv5-plus",
-  "name": "GITO GTV5+",
+  "name": "GITO 捷拓 G530 seller-listed 8.3 kg build",
   "model_id": "gito-gtv5-plus",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "105 mechanical, claimed 8.3 kg.",
+  "why_interesting": "The retained seller image clearly reads G530 rather than the previously unsupported GTV5+ label and states Shimano mechanical 105, a carbon wheelset and an approximate 8.3 kg complete-bike weight.",
+  "facts": {
+    "complete_weight_g": 8300,
+    "complete_weight_basis": "Seller-listed approximate complete-bike weight for the pictured G530 Shimano 105 mechanical / carbon-wheel build; size, pedals, accessories and weighing method are not stated",
+    "frame_material": "Carbon G530 aero-road platform; the current exact retailer build specifies a Toray T800 carbon frame and fork",
+    "drivetrain": "Shimano 105 2x12 mechanical shifting with hydraulic disc brakes on the pictured seller build",
+    "frame_construction": "Aero road frame with internal routing, a carbon wheelset and disc brakes",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact model year/SKU, wheel depth, remaining BOM and complete-weight size/equipment basis",
+    "Maximum tire clearance and retained-build carbon grade",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-model-seller-build-partially-documented",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "gito-g530-retailer-2026-08-29",
+    "gito-g530-taobao-index-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +35,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6880.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+  "source_note": "The retained pixels explicitly show G530, Shimano mechanical 105, carbon wheels and an approximate 8.3 kg claim. Current exact-model and mainland indexes corroborate the G530 carbon 105 platform and GITO / 捷拓 naming. The old GTV5+ label is rejected; size, weighing method, exact SKU, maximum clearance and remaining BOM stay unresolved.",
+  "last_reviewed": "2026-08-29"
 }

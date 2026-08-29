@@ -1,16 +1,27 @@
 {
   "id": "gito-carbon-road-high-unknown",
-  "name": "GITO Carbon aero road bike, high configuration",
+  "name": "GITO 捷拓 G530 high-configuration lead",
   "model_id": "gito-carbon-road-high-unknown",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model not visible.",
+  "why_interesting": "The retained seller image visibly carries a G530 chainstay mark and shows a high-configuration carbon road bike; a current exact-model retailer page and mainland index corroborate G530 with a Shimano 105 2x12 hydraulic-disc configuration.",
+  "facts": {
+    "frame_material": "Carbon G530 aero-road platform; the current exact retailer build specifies a Toray T800 carbon frame and fork",
+    "drivetrain": "Shimano 105 2x12 mechanical shifting with hydraulic disc brakes on the visually matched current G530 configuration",
+    "frame_construction": "Aero road frame with internal routing and disc-brake complete-build configurations",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact selected SKU, wheelset, remaining BOM and complete-bike weight",
+    "Maximum tire clearance and retained-build carbon grade",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "exact-model-build-evidence-found-publication-gate-not-met",
+  "source_ids": [
+    "gito-g530-retailer-2026-08-29",
+    "gito-g530-taobao-index-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +32,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6860.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+  "source_note": "The visible G530 chainstay marking is corroborated by current exact-model and mainland indexes. Only the matching G530 carbon-platform and Shimano 105 2x12 hydraulic-disc facts are accepted; the retailer's 8.8 kg size-460 value, wheelset and fitted tire are not transferred to this retained seller card.",
+  "last_reviewed": "2026-08-29"
 }
