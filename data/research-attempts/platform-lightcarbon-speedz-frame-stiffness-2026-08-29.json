@@ -1,0 +1,504 @@
+{
+  "id": "platform-lightcarbon-speedz-frame-stiffness-2026-08-29",
+  "target": {
+    "record_type": "platform",
+    "record_id": "lightcarbon-speedz"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-08-29",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact searches were blocked by robots policy. No login, CAPTCHA, security-verification, personal-profile, or alternate-access bypass was attempted.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "LightCarbon official YouTube SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon brand YouTube channel search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No official YouTube post identified SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "YouTube LightCarbon SPEEDZ review build — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent YouTube review and build search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Results covered LCR017-D or other LightCarbon models without a SPEEDZ alias statement. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Bilibili LC轻碳 SPEEDZ 官方 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LC轻碳 brand Bilibili account search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Brand results exposed promotions and other models, not an exact SPEEDZ post. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://search.bilibili.com/all?keyword=LC%E8%BD%BB%E7%A2%B3%20SPEEDZ"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Bilibili LightCarbon SPEED7 SPEEDZ 装车 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent Bilibili build search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An independent SPEED7 build was visible, but it did not map SPEED7 to the literal SPEEDZ label. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://search.bilibili.com/all?keyword=LightCarbon%20SPEED7"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Xiaohongshu LightCarbon SPEEDZ brand account — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon factory Xiaohongshu posts — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer post names LC-SPEED 7 and configuration weights, not SPEEDZ; the identity mapping remains unproven. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.xiaohongshu.com/explore/67875454000000001602a0ed"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Xiaohongshu LightCarbon SPEEDZ independent build — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Bounded exact-query XHS capture — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The validated capture found a 6.98 kg independent Speed7/LCR017 build, but no literal SPEEDZ mapping; public images were not copied without reuse rights. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.xiaohongshu.com/explore/69106e74000000000703880b"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Douyin LightCarbon轻碳 SPEEDZ 官方 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon brand Douyin search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable brand Douyin post for SPEEDZ was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Douyin LightCarbon SPEEDZ 装车 评测 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent Douyin review and build search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact independent SPEEDZ post was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Weibo LightCarbon轻碳 SPEEDZ 官方 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon brand Weibo search — frame-stiffness",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact search was blocked by robots policy; no login or alternate-profile bypass was attempted. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Weibo LightCarbon SPEEDZ 骑行 装车 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent Weibo post search — frame-stiffness",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact search was blocked by robots policy; unrelated SpeedX articles were rejected. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "site:mp.weixin.qq.com LightCarbon轻碳 SPEEDZ 官方 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Brand WeChat public-article index search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed official WeChat article names SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "site:mp.weixin.qq.com LightCarbon SPEEDZ 评测 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent WeChat public-article index search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed independent WeChat article names SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "LightCarbon SPEEDZ cycling forum Chinertown — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Cycling forums and Chinertown search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Forums contain discussions of numbered LightCarbon frames, but no exact SPEEDZ thread or alias proof. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "LightCarbon SPEEDZ owner build log — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Public owner-build logs — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Owner builds identify LCR017-D or Speed7, not the literal SPEEDZ marketplace label. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1ub6fum/lightcarbon_lcr017d_build/"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "LightCarbon SPEEDZ community photo Instagram Facebook Reddit — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Public community-photo search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No public photo post was attributable to an exact SPEEDZ product; project placeholders remain safer than misidentified or unlicensed images. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "site:lightcarbon.com \"SPEEDZ\" bicycle exact product — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon exact-product pages — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No official exact-product page names SPEEDZ; surfaced pages belong to numbered LCR models. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "site:lightcarbon.com road frames SPEEDZ model family — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon road-frame family catalog — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The road-frame family page lists numbered models and does not identify a SPEEDZ family or alias. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/road-frames_c5"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "LightCarbon 2026 2027 catalog SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon current frame and component catalog — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The current catalog documents LCR017-D and other numbered models but contains no literal SPEEDZ mapping. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://de.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V1.pdf"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "LightCarbon 2024 2025 archived catalog SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon archived frame and component catalog — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The archived catalog exposes numbered models, not the literal SPEEDZ marketplace label. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2024-2025%20LightCarbon%20Frame%2BComponent%20Catalog%20-V6.pdf"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "site:lightcarbon.com filetype:pdf SPEEDZ product manual — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon product-manual index search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact SPEEDZ manual or installation document was indexed. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "site:lightcarbon.com filetype:pdf SPEEDZ geometry — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon geometry-document search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact SPEEDZ geometry chart was found; charts for LCR017-D cannot be transferred without alias proof. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "site:lightcarbon.com SPEEDZ stiffness test technical paper — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon technical and frame-test pages — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer publishes general frame-test procedures but no exact SPEEDZ result or stiffness figure. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/carbon-frame-test_n16"
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "site:lightcarbon.com SPEEDZ warranty support — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon warranty and after-sale pages — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "General warranty contact information does not establish the exact SPEEDZ seller, SKU, or domestic route. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/warranty_d10"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "site:lightcarbon.com SPEEDZ launch news — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon newsroom and launch archive — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Launch coverage names LCR018-D and other numbered models, not SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-at-china-cycle-2025_n75"
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "site:lightcarbon.com \"SPEEDZ\" — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Exact manufacturer-domain search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed official page contains the exact label SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "LightCarbon sitemap SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon sitemap inventory — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The public sitemap exposes product categories and numbered product routes but no SPEEDZ entry. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/sitemap.html"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "site:lightcarbon.com \"SPEEDZ\" structured product metadata — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Indexed LightCarbon structured page metadata — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No indexed structured product record identifies SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "site:de.lightcarbon.com OR site:fr.lightcarbon.com OR site:es.lightcarbon.com SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon regional-language sites — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Regional sites mirror numbered LightCarbon products and catalogs; none maps SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://de.lightcarbon.com/"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "LightCarbon distributor SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Manufacturer-listed Europe distributor — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The listed Europe showroom route contains no exact SPEEDZ inventory or specification. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-europe-showroom-warehouse_n55"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "site:lightcarbon.com dealer locator SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon dealer-locator search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No dealer-locator entry or exact SPEEDZ dealer was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "site:lightcarbon.com/products SPEEDZ buy — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon manufacturer-operated product store — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The direct product inventory has inquiry routes for numbered models but no exact SPEEDZ offer. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/products"
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Taobao LightCarbon 轻碳 SPEEDZ exact current item — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Taobao official-store and exact-item search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The dated 2026-08-08 snapshot proves a literal SPEEDZ card, but no current public exact-item route or seller identity was accessible. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "site:tmall.com LightCarbon 轻碳 SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Tmall official-store search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact SPEEDZ Tmall item or official storefront result was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "site:jd.com LightCarbon 轻碳 SPEEDZ 自行车 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "JD official-store search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "JD results were unrelated SpeedX or generic bicycle pages, not LightCarbon SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "site:1688.com LightCarbon 轻碳 SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Alibaba and 1688 verified-supplier search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No verified supplier page for the exact SPEEDZ label was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "site:aliexpress.com LightCarbon SPEEDZ bike — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "AliExpress official-store search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact SPEEDZ AliExpress result was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "LightCarbon SPEEDZ authorized dealer China — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Authorized mainland dealer search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No attributable authorized mainland dealer published an exact SPEEDZ listing. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "LightCarbon SPEEDZ authorized regional dealer — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Authorized regional dealer search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The manufacturer-listed Europe showroom did not expose the exact model. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "LightCarbon SPEEDZ frameset international retailer — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "International specialist retailer search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The retailer sells another LightCarbon SL road frame and does not identify SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://underdogscycling.cc/product/lightcarbon-sl-road/"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "LightCarbon SPEEDZ review cycling — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Cycling-industry review publications — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Industry reviews cover LCR017-D and other exact codes, not the SPEEDZ label. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.hambini.com/review-lightcarbon-lcr-017d/"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "轻碳 SPEEDZ 评测 公路车 — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Chinese cycling-media search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No Chinese cycling-media article identifies the literal SPEEDZ model; SpeedX coverage was rejected as another brand. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "LightCarbon SPEEDZ independent stiffness laboratory test — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Independent laboratory and instrumented-test search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact-model independent stiffness, weight, or structural test was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "LightCarbon SPEEDZ cycling magazine archive — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Cycling magazine archive search — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Magazine results were for the unrelated SpeedX Leopard or other LightCarbon models. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "LightCarbon SPEEDZ Eurobike China Cycle — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "LightCarbon trade-show coverage — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Trade-show coverage names numbered exhibit models but not SPEEDZ. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://www.lightcarbon.com/international-bike-show_n14"
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "LightCarbon SPEEDZ race team equipment — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Race-team equipment search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No team equipment page identifies a SPEEDZ bike or build. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "LightCarbon SPEEDZ exhibitor catalog Eurobike — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Eurobike exhibitor guide — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The exhibitor guide confirms LightCarbon participation but supplies no SPEEDZ model facts. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://eurobike.com/content/dam/messefrankfurt-fairnamic/downloads/guide/2023/EUROBIKE-2023_Guide.pdf"
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "site:bikeinsights.com LightCarbon SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Bike Insights geometry database — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Bike Insights lists numbered LightCarbon models but no SPEEDZ geometry record. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://bikeinsights.com/brands/604f3809f34f3b00171bea9e-lightcarbon"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "site:bikepartpicker.net LightCarbon SPEEDZ — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "BikePartPicker component compatibility database — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The compatibility database exposes a generic LightCarbon road frameset, not an exact SPEEDZ record. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://bikepartpicker.net/part/new-road-disc-frameset/"
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "LightCarbon SPEEDZ UCI approved frame registry — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "UCI approved-frames registry — frame-stiffness",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The registry includes LightCarbon model codes but no literal SPEEDZ entry or alias proof. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted.",
+          "result_url": "https://downloads.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/05a588cd24da01d07633275753301586/20250512_Liste_des_Mod%C3%A8les_homologu%C3%A9s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "web archive LightCarbon SPEEDZ bicycle — check platform:lightcarbon-speedz:frame-stiffness",
+          "route": "Public web-archive index search — frame-stiffness",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No archived exact-product route indexed under the literal SPEEDZ label was found. This area was checked specifically for frame-stiffness; no exact literal-SPEEDZ evidence for that field was accepted."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-identity sweep recorded in data/research-campaigns/lightcarbon-speedz-50-area-sweep-2026-08-29.json. Official sources document Speed7/速7/LCR017-D, and public posts document Speed7 builds, but none maps the literal marketplace label SPEEDZ. The dated snapshot remains the only exact literal-SPEEDZ evidence; unknown frame-stiffness data and project-owned image fallbacks are preserved rather than borrowing sibling-model facts or unlicensed media."
+}
