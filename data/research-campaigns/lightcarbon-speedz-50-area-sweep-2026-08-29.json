@@ -1,0 +1,459 @@
+{
+  "id": "lightcarbon-speedz-50-area-sweep-2026-08-29",
+  "target": "LightCarbon SPEEDZ complete bike and frameset marketplace label",
+  "searched_at": "2026-08-29",
+  "method": "One exact-identity sweep across every registered research approach area. Each area was checked for all 12 frozen fields. A source about Speed7, 速7, LCR017-D, another LightCarbon model, or the unrelated SpeedX brand was rejected unless it explicitly mapped the literal SPEEDZ marketplace label.",
+  "fields_checked": [
+    "complete-weight",
+    "tire-clearance",
+    "geometry",
+    "complete-image",
+    "frame-material-detail",
+    "frame-weight",
+    "complete-bom",
+    "bottom-bracket",
+    "complete-purchase-route",
+    "frame-stiffness",
+    "frameset-image",
+    "frameset-purchase-route"
+  ],
+  "identity_result": "unresolved",
+  "identity_note": "Official catalogs map the Chinese name 速7 to LCR017-D and public posts expose Speed7 builds, but no checked source maps SPEEDZ to Speed7, 速7, or LCR017-D. The existing dated marketplace snapshot remains the only exact literal-SPEEDZ evidence.",
+  "xhs_archive": {
+    "bytes": 9973848,
+    "sha256": "5cad2839f667987d6327a5945dc1ad748523d2a6b5bba799624eb923ab20be48",
+    "runtime_id": "aeldmfnliicdpoggggpnbhpfbbkkkpmd",
+    "extension_version": "1.5.0",
+    "build": "p0s-campaign-engine-20260829.1",
+    "validation": "complete",
+    "detailed_posts": 10,
+    "comment_rows": 98,
+    "media_references": 56,
+    "rate_limited": false,
+    "note": "Private raw archive retained outside Git. The exact query found one independent Speed7/LCR017-D build and general LightCarbon posts, but no literal SPEEDZ mapping. Public post media was not copied because reuse rights were not established."
+  },
+  "areas": [
+    {
+      "approach_area_id": "manufacturer-exact-product",
+      "channel": "web",
+      "query": "site:lightcarbon.com \"SPEEDZ\" bicycle exact product",
+      "route": "LightCarbon exact-product pages",
+      "outcome": "no-result",
+      "note": "No official exact-product page names SPEEDZ; surfaced pages belong to numbered LCR models."
+    },
+    {
+      "approach_area_id": "manufacturer-model-family",
+      "channel": "web",
+      "query": "site:lightcarbon.com road frames SPEEDZ model family",
+      "route": "LightCarbon road-frame family catalog",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/road-frames_c5",
+      "note": "The road-frame family page lists numbered models and does not identify a SPEEDZ family or alias."
+    },
+    {
+      "approach_area_id": "manufacturer-current-catalog",
+      "channel": "web",
+      "query": "LightCarbon 2026 2027 catalog SPEEDZ",
+      "route": "LightCarbon current frame and component catalog",
+      "outcome": "rejected",
+      "result_url": "https://de.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V1.pdf",
+      "note": "The current catalog documents LCR017-D and other numbered models but contains no literal SPEEDZ mapping."
+    },
+    {
+      "approach_area_id": "manufacturer-archived-catalog",
+      "channel": "web",
+      "query": "LightCarbon 2024 2025 archived catalog SPEEDZ",
+      "route": "LightCarbon archived frame and component catalog",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2024-2025%20LightCarbon%20Frame%2BComponent%20Catalog%20-V6.pdf",
+      "note": "The archived catalog exposes numbered models, not the literal SPEEDZ marketplace label."
+    },
+    {
+      "approach_area_id": "manufacturer-product-manual",
+      "channel": "web",
+      "query": "site:lightcarbon.com filetype:pdf SPEEDZ product manual",
+      "route": "LightCarbon product-manual index search",
+      "outcome": "no-result",
+      "note": "No exact SPEEDZ manual or installation document was indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-geometry-document",
+      "channel": "web",
+      "query": "site:lightcarbon.com filetype:pdf SPEEDZ geometry",
+      "route": "LightCarbon geometry-document search",
+      "outcome": "no-result",
+      "note": "No exact SPEEDZ geometry chart was found; charts for LCR017-D cannot be transferred without alias proof."
+    },
+    {
+      "approach_area_id": "manufacturer-technical-whitepaper",
+      "channel": "web",
+      "query": "site:lightcarbon.com SPEEDZ stiffness test technical paper",
+      "route": "LightCarbon technical and frame-test pages",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/carbon-frame-test_n16",
+      "note": "The manufacturer publishes general frame-test procedures but no exact SPEEDZ result or stiffness figure."
+    },
+    {
+      "approach_area_id": "manufacturer-support-warranty",
+      "channel": "web",
+      "query": "site:lightcarbon.com SPEEDZ warranty support",
+      "route": "LightCarbon warranty and after-sale pages",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/warranty_d10",
+      "note": "General warranty contact information does not establish the exact SPEEDZ seller, SKU, or domestic route."
+    },
+    {
+      "approach_area_id": "manufacturer-newsroom-launch",
+      "channel": "web",
+      "query": "site:lightcarbon.com SPEEDZ launch news",
+      "route": "LightCarbon newsroom and launch archive",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/lightcarbon-at-china-cycle-2025_n75",
+      "note": "Launch coverage names LCR018-D and other numbered models, not SPEEDZ."
+    },
+    {
+      "approach_area_id": "manufacturer-site-search",
+      "channel": "web",
+      "query": "site:lightcarbon.com \"SPEEDZ\"",
+      "route": "Exact manufacturer-domain search",
+      "outcome": "no-result",
+      "note": "No indexed official page contains the exact label SPEEDZ."
+    },
+    {
+      "approach_area_id": "manufacturer-sitemap",
+      "channel": "web",
+      "query": "LightCarbon sitemap SPEEDZ",
+      "route": "LightCarbon sitemap inventory",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/sitemap.html",
+      "note": "The public sitemap exposes product categories and numbered product routes but no SPEEDZ entry."
+    },
+    {
+      "approach_area_id": "manufacturer-structured-data",
+      "channel": "web",
+      "query": "site:lightcarbon.com \"SPEEDZ\" structured product metadata",
+      "route": "Indexed LightCarbon structured page metadata",
+      "outcome": "no-result",
+      "note": "No indexed structured product record identifies SPEEDZ."
+    },
+    {
+      "approach_area_id": "manufacturer-regional-site",
+      "channel": "web",
+      "query": "site:de.lightcarbon.com OR site:fr.lightcarbon.com OR site:es.lightcarbon.com SPEEDZ",
+      "route": "LightCarbon regional-language sites",
+      "outcome": "rejected",
+      "result_url": "https://de.lightcarbon.com/",
+      "note": "Regional sites mirror numbered LightCarbon products and catalogs; none maps SPEEDZ."
+    },
+    {
+      "approach_area_id": "manufacturer-distributor",
+      "channel": "web",
+      "query": "LightCarbon distributor SPEEDZ",
+      "route": "Manufacturer-listed Europe distributor",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/lightcarbon-europe-showroom-warehouse_n55",
+      "note": "The listed Europe showroom route contains no exact SPEEDZ inventory or specification."
+    },
+    {
+      "approach_area_id": "manufacturer-dealer-locator",
+      "channel": "web",
+      "query": "site:lightcarbon.com dealer locator SPEEDZ",
+      "route": "LightCarbon dealer-locator search",
+      "outcome": "no-result",
+      "note": "No dealer-locator entry or exact SPEEDZ dealer was found."
+    },
+    {
+      "approach_area_id": "manufacturer-official-store",
+      "channel": "web",
+      "query": "site:lightcarbon.com/products SPEEDZ buy",
+      "route": "LightCarbon manufacturer-operated product store",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/products",
+      "note": "The direct product inventory has inquiry routes for numbered models but no exact SPEEDZ offer."
+    },
+    {
+      "approach_area_id": "taobao-official-store",
+      "channel": "web",
+      "query": "Taobao LightCarbon 轻碳 SPEEDZ exact current item",
+      "route": "Taobao official-store and exact-item search",
+      "outcome": "rejected",
+      "note": "The dated 2026-08-08 snapshot proves a literal SPEEDZ card, but no current public exact-item route or seller identity was accessible."
+    },
+    {
+      "approach_area_id": "tmall-official-store",
+      "channel": "web",
+      "query": "site:tmall.com LightCarbon 轻碳 SPEEDZ",
+      "route": "Tmall official-store search",
+      "outcome": "no-result",
+      "note": "No exact SPEEDZ Tmall item or official storefront result was found."
+    },
+    {
+      "approach_area_id": "jd-official-store",
+      "channel": "web",
+      "query": "site:jd.com LightCarbon 轻碳 SPEEDZ 自行车",
+      "route": "JD official-store search",
+      "outcome": "rejected",
+      "note": "JD results were unrelated SpeedX or generic bicycle pages, not LightCarbon SPEEDZ."
+    },
+    {
+      "approach_area_id": "alibaba-1688-supplier",
+      "channel": "web",
+      "query": "site:1688.com LightCarbon 轻碳 SPEEDZ",
+      "route": "Alibaba and 1688 verified-supplier search",
+      "outcome": "no-result",
+      "note": "No verified supplier page for the exact SPEEDZ label was found."
+    },
+    {
+      "approach_area_id": "aliexpress-official-store",
+      "channel": "web",
+      "query": "site:aliexpress.com LightCarbon SPEEDZ bike",
+      "route": "AliExpress official-store search",
+      "outcome": "no-result",
+      "note": "No exact SPEEDZ AliExpress result was found."
+    },
+    {
+      "approach_area_id": "authorized-mainland-dealer",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ authorized dealer China",
+      "route": "Authorized mainland dealer search",
+      "outcome": "no-result",
+      "note": "No attributable authorized mainland dealer published an exact SPEEDZ listing."
+    },
+    {
+      "approach_area_id": "authorized-regional-dealer",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ authorized regional dealer",
+      "route": "Authorized regional dealer search",
+      "outcome": "rejected",
+      "note": "The manufacturer-listed Europe showroom did not expose the exact model."
+    },
+    {
+      "approach_area_id": "international-specialist-retailer",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ frameset international retailer",
+      "route": "International specialist retailer search",
+      "outcome": "rejected",
+      "result_url": "https://underdogscycling.cc/product/lightcarbon-sl-road/",
+      "note": "The retailer sells another LightCarbon SL road frame and does not identify SPEEDZ."
+    },
+    {
+      "approach_area_id": "cycling-industry-review",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ review cycling",
+      "route": "Cycling-industry review publications",
+      "outcome": "rejected",
+      "result_url": "https://www.hambini.com/review-lightcarbon-lcr-017d/",
+      "note": "Industry reviews cover LCR017-D and other exact codes, not the SPEEDZ label."
+    },
+    {
+      "approach_area_id": "chinese-cycling-media",
+      "channel": "web",
+      "query": "轻碳 SPEEDZ 评测 公路车",
+      "route": "Chinese cycling-media search",
+      "outcome": "no-result",
+      "note": "No Chinese cycling-media article identifies the literal SPEEDZ model; SpeedX coverage was rejected as another brand."
+    },
+    {
+      "approach_area_id": "independent-lab-test",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ independent stiffness laboratory test",
+      "route": "Independent laboratory and instrumented-test search",
+      "outcome": "no-result",
+      "note": "No exact-model independent stiffness, weight, or structural test was found."
+    },
+    {
+      "approach_area_id": "magazine-archive",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ cycling magazine archive",
+      "route": "Cycling magazine archive search",
+      "outcome": "rejected",
+      "note": "Magazine results were for the unrelated SpeedX Leopard or other LightCarbon models."
+    },
+    {
+      "approach_area_id": "trade-show-coverage",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ Eurobike China Cycle",
+      "route": "LightCarbon trade-show coverage",
+      "outcome": "rejected",
+      "result_url": "https://www.lightcarbon.com/international-bike-show_n14",
+      "note": "Trade-show coverage names numbered exhibit models but not SPEEDZ."
+    },
+    {
+      "approach_area_id": "race-team-equipment",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ race team equipment",
+      "route": "Race-team equipment search",
+      "outcome": "no-result",
+      "note": "No team equipment page identifies a SPEEDZ bike or build."
+    },
+    {
+      "approach_area_id": "event-exhibitor-catalog",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ exhibitor catalog Eurobike",
+      "route": "Eurobike exhibitor guide",
+      "outcome": "rejected",
+      "result_url": "https://eurobike.com/content/dam/messefrankfurt-fairnamic/downloads/guide/2023/EUROBIKE-2023_Guide.pdf",
+      "note": "The exhibitor guide confirms LightCarbon participation but supplies no SPEEDZ model facts."
+    },
+    {
+      "approach_area_id": "geometry-database",
+      "channel": "web",
+      "query": "site:bikeinsights.com LightCarbon SPEEDZ",
+      "route": "Bike Insights geometry database",
+      "outcome": "rejected",
+      "result_url": "https://bikeinsights.com/brands/604f3809f34f3b00171bea9e-lightcarbon",
+      "note": "Bike Insights lists numbered LightCarbon models but no SPEEDZ geometry record."
+    },
+    {
+      "approach_area_id": "component-compatibility-database",
+      "channel": "web",
+      "query": "site:bikepartpicker.net LightCarbon SPEEDZ",
+      "route": "BikePartPicker component compatibility database",
+      "outcome": "rejected",
+      "result_url": "https://bikepartpicker.net/part/new-road-disc-frameset/",
+      "note": "The compatibility database exposes a generic LightCarbon road frameset, not an exact SPEEDZ record."
+    },
+    {
+      "approach_area_id": "product-certification-registry",
+      "channel": "web",
+      "query": "LightCarbon SPEEDZ UCI approved frame registry",
+      "route": "UCI approved-frames registry",
+      "outcome": "rejected",
+      "result_url": "https://downloads.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/05a588cd24da01d07633275753301586/20250512_Liste_des_Mod%C3%A8les_homologu%C3%A9s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf",
+      "note": "The registry includes LightCarbon model codes but no literal SPEEDZ entry or alias proof."
+    },
+    {
+      "approach_area_id": "web-archive",
+      "channel": "web",
+      "query": "web archive LightCarbon SPEEDZ bicycle",
+      "route": "Public web-archive index search",
+      "outcome": "no-result",
+      "note": "No archived exact-product route indexed under the literal SPEEDZ label was found."
+    },
+    {
+      "approach_area_id": "brand-youtube",
+      "channel": "public-post",
+      "query": "LightCarbon official YouTube SPEEDZ",
+      "route": "LightCarbon brand YouTube channel search",
+      "outcome": "no-result",
+      "note": "No official YouTube post identified SPEEDZ."
+    },
+    {
+      "approach_area_id": "independent-youtube",
+      "channel": "public-post",
+      "query": "YouTube LightCarbon SPEEDZ review build",
+      "route": "Independent YouTube review and build search",
+      "outcome": "rejected",
+      "note": "Results covered LCR017-D or other LightCarbon models without a SPEEDZ alias statement."
+    },
+    {
+      "approach_area_id": "brand-bilibili",
+      "channel": "public-post",
+      "query": "Bilibili LC轻碳 SPEEDZ 官方",
+      "route": "LC轻碳 brand Bilibili account search",
+      "outcome": "rejected",
+      "result_url": "https://search.bilibili.com/all?keyword=LC%E8%BD%BB%E7%A2%B3%20SPEEDZ",
+      "note": "Brand results exposed promotions and other models, not an exact SPEEDZ post."
+    },
+    {
+      "approach_area_id": "independent-bilibili",
+      "channel": "public-post",
+      "query": "Bilibili LightCarbon SPEED7 SPEEDZ 装车",
+      "route": "Independent Bilibili build search",
+      "outcome": "rejected",
+      "result_url": "https://search.bilibili.com/all?keyword=LightCarbon%20SPEED7",
+      "note": "An independent SPEED7 build was visible, but it did not map SPEED7 to the literal SPEEDZ label."
+    },
+    {
+      "approach_area_id": "brand-xiaohongshu",
+      "channel": "public-post",
+      "query": "Xiaohongshu LightCarbon SPEEDZ brand account",
+      "route": "LightCarbon factory Xiaohongshu posts",
+      "outcome": "rejected",
+      "result_url": "https://www.xiaohongshu.com/explore/67875454000000001602a0ed",
+      "note": "The manufacturer post names LC-SPEED 7 and configuration weights, not SPEEDZ; the identity mapping remains unproven."
+    },
+    {
+      "approach_area_id": "independent-xiaohongshu",
+      "channel": "public-post",
+      "query": "Xiaohongshu LightCarbon SPEEDZ independent build",
+      "route": "Bounded exact-query XHS capture",
+      "outcome": "rejected",
+      "result_url": "https://www.xiaohongshu.com/explore/69106e74000000000703880b",
+      "note": "The validated capture found a 6.98 kg independent Speed7/LCR017 build, but no literal SPEEDZ mapping; public images were not copied without reuse rights."
+    },
+    {
+      "approach_area_id": "brand-douyin",
+      "channel": "public-post",
+      "query": "Douyin LightCarbon轻碳 SPEEDZ 官方",
+      "route": "LightCarbon brand Douyin search",
+      "outcome": "no-result",
+      "note": "No attributable brand Douyin post for SPEEDZ was found."
+    },
+    {
+      "approach_area_id": "independent-douyin",
+      "channel": "public-post",
+      "query": "Douyin LightCarbon SPEEDZ 装车 评测",
+      "route": "Independent Douyin review and build search",
+      "outcome": "no-result",
+      "note": "No exact independent SPEEDZ post was found."
+    },
+    {
+      "approach_area_id": "brand-weibo",
+      "channel": "public-post",
+      "query": "Weibo LightCarbon轻碳 SPEEDZ 官方",
+      "route": "LightCarbon brand Weibo search",
+      "outcome": "blocked",
+      "note": "Weibo exact search was blocked by robots policy; no login or alternate-profile bypass was attempted."
+    },
+    {
+      "approach_area_id": "independent-weibo",
+      "channel": "public-post",
+      "query": "Weibo LightCarbon SPEEDZ 骑行 装车",
+      "route": "Independent Weibo post search",
+      "outcome": "blocked",
+      "note": "Weibo exact search was blocked by robots policy; unrelated SpeedX articles were rejected."
+    },
+    {
+      "approach_area_id": "brand-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com LightCarbon轻碳 SPEEDZ 官方",
+      "route": "Brand WeChat public-article index search",
+      "outcome": "no-result",
+      "note": "No indexed official WeChat article names SPEEDZ."
+    },
+    {
+      "approach_area_id": "independent-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com LightCarbon SPEEDZ 评测",
+      "route": "Independent WeChat public-article index search",
+      "outcome": "no-result",
+      "note": "No indexed independent WeChat article names SPEEDZ."
+    },
+    {
+      "approach_area_id": "cycling-forum",
+      "channel": "public-post",
+      "query": "LightCarbon SPEEDZ cycling forum Chinertown",
+      "route": "Cycling forums and Chinertown search",
+      "outcome": "rejected",
+      "note": "Forums contain discussions of numbered LightCarbon frames, but no exact SPEEDZ thread or alias proof."
+    },
+    {
+      "approach_area_id": "owner-build-log",
+      "channel": "public-post",
+      "query": "LightCarbon SPEEDZ owner build log",
+      "route": "Public owner-build logs",
+      "outcome": "rejected",
+      "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1ub6fum/lightcarbon_lcr017d_build/",
+      "note": "Owner builds identify LCR017-D or Speed7, not the literal SPEEDZ marketplace label."
+    },
+    {
+      "approach_area_id": "community-photo-post",
+      "channel": "public-post",
+      "query": "LightCarbon SPEEDZ community photo Instagram Facebook Reddit",
+      "route": "Public community-photo search",
+      "outcome": "no-result",
+      "note": "No public photo post was attributable to an exact SPEEDZ product; project placeholders remain safer than misidentified or unlicensed images."
+    }
+  ]
+}
