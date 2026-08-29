@@ -15,6 +15,12 @@ Stop early when exact, attributable evidence resolves the field. Preserve the or
 
 When an already accepted source for the same exact target directly publishes another atomic field, reuse it with a `resolution.kind: source-reuse` record instead of rewriting a historical attempt or repeating an identical search. The resolution must name the accepted source, date the reconciliation, state the exact claim and model/trim match, and preserve any unrun channel as `not-run`; source reuse is evidence reuse, not a fabricated search attempt.
 
+### Explicit 50-approach campaigns
+
+The normal six-attempt stopping rule remains the default. A user-requested extended campaign can freeze an exact set of information fields and set `minimum_distinct_approaches` to `50` on each field ledger. Extended records use the 50 registered areas in `src/lib/research-approach-areas.mjs` exactly once. The registry covers manufacturer documents and metadata, official and authorized commerce routes, specialist publications and databases, archives, public brand channels, independent public posts, forums, and owner build logs.
+
+An extended attempt must name its `approach_area_id`, field-specific query, exact route, access date, outcome, and concise result. Changing keywords, repeating a source family, or retrying the same inaccessible page is not a new area. A shared model-level sweep can be applied to several fields only when the operator checked every named field and records a separate field-specific result. Exact evidence is accepted immediately into the catalog, but the extended audit is not complete until that field covers all 50 areas. CAPTCHA, login, security challenges, and rate limits remain hard stops for the affected route and are never bypassed.
+
 ## Exhaustion states
 
 - `found`: exact evidence was accepted; later channels may remain unrun.
@@ -30,6 +36,8 @@ CAPTCHA, login, and Security Verification remain human-only. HTTP 412, 300013, o
 ## Durable ledger
 
 Each atomic result lives in `data/research-attempts/`. `npm run research:check` rejects duplicate target fields, repeated queries or route labels, incomplete exhaustion, invalid references, private access parameters, and found results without accepted source records. `npm run research:report` summarizes coverage and effort. `npm run research:queue` separates ready work, evidence awaiting integration, deferred exhaustion, blockers, and conflicts; fields without a coarse catalog gap code stay visible as ledger-only queue items. The attempt ledger is included in the monotonic coverage baseline so completed searches cannot silently disappear.
+
+`npm run research:50-audit` audits the frozen all-gaps campaign. Its strict mode fails while a frozen field has fewer than 50 registered areas or a new live information gap is not covered by the campaign.
 
 For a sequential browser pass, request only one unresolved channel item at a time:
 

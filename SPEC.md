@@ -112,6 +112,8 @@ Never infer specifications across generations, sizes, or similarly named models 
 
 Research completion is tracked per exact target and missing field. High-priority gaps normally receive up to three distinct public-post attempts and three distinct web/official attempts. Stop early when exact attributable evidence is accepted. Mark a gap temporarily exhausted only after every required channel reaches its attempt limit; record queries, routes, rejection reasons, search date, and a retry date. A temporarily exhausted search remains an unknown, never negative evidence. See `docs/research-stopping-policy.md`.
 
+An explicitly commissioned extended campaign may require 50 genuinely distinct source areas or research approaches for every frozen information field. Such a record sets `minimum_distinct_approaches` to `50`; each attempt names one registered `approach_area_id`, every registered area is used exactly once, and query and route identities remain distinct across channels. Finding evidence does not waive the campaign-wide approach requirement. One source-area sweep may inform several fields on the same exact target only when each field was actually checked and receives its own result note. Aggregate publication status and runtime image reachability are not information fields and stay outside this research count.
+
 ## 5. Price rules
 
 - Every price has a date, exact variant, market/channel, type, conditions, and source.
