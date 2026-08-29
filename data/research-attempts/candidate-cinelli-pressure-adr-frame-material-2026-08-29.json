@@ -1,0 +1,498 @@
+{
+  "id": "candidate-cinelli-pressure-adr-frame-material-2026-08-29",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cinelli-pressure-adr"
+  },
+  "field": "frame-material",
+  "priority": "high",
+  "searched_at": "2026-08-29",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact searches were blocked by robots policy, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered public-post route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "Cinelli 西耐力 Pressure ADR — brand YouTube query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "brand YouTube channel index — frame-material",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact CINELLI 西耐力 Pressure ADR result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "Cinelli 西耐力 Pressure ADR — independent YouTube query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent YouTube search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Cinelli 西耐力 Pressure ADR — brand Bilibili query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "brand Bilibili index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Cinelli 西耐力 Pressure ADR — independent Bilibili query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent Bilibili index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV15GRMBUEdm/"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Cinelli 西耐力 Pressure ADR — brand XHS public index query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "public XHS brand-post index only — frame-material",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact CINELLI 西耐力 Pressure ADR result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Cinelli 西耐力 Pressure ADR — independent XHS public index query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "public XHS owner-post index only — frame-material",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact CINELLI 西耐力 Pressure ADR result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Cinelli 西耐力 Pressure ADR — brand Douyin query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "brand and dealer Douyin index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Cinelli 西耐力 Pressure ADR — independent Douyin query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent Douyin index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Cinelli 西耐力 Pressure ADR — brand Weibo query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "brand Weibo exact search — frame-material",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Cinelli 西耐力 Pressure ADR — independent Weibo query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent Weibo exact search — frame-material",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-29",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile or bypass was attempted. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Cinelli 西耐力 Pressure ADR — brand WeChat public query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "brand WeChat public-article index — frame-material",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact CINELLI 西耐力 Pressure ADR result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Cinelli 西耐力 Pressure ADR — independent WeChat public query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent WeChat public-article index — frame-material",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-29",
+          "note": "No exact CINELLI 西耐力 Pressure ADR result with additional attributable evidence was publicly indexed in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Cinelli 西耐力 Pressure ADR — cycling forum query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "specialist cycling forums — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Cinelli 西耐力 Pressure ADR — owner build log query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "owner build and ride logs — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "Public owner builds use materially different drivetrains and wheels; none establishes the selected mainland configuration. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Cinelli 西耐力 Pressure ADR — community photo post query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "community photo and bike posts — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer exact-product query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "exact manufacturer product page — frame-material",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "The current exact page supports carbon-monocoque construction, 30 mm maximum clearance and a complete 105 Di2 reference build, but no complete-bike weight. This area was checked specifically for frame-material; its evidence was accepted for this field.",
+          "result_url": "https://cinelli-milano.com/products/pressure-adr-2024-105-disc-di2"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer model-family query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer model-family catalog — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://cinelli-milano.com/collections/pressure-adr"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer current catalog query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "current manufacturer catalog — frame-material",
+          "outcome": "found",
+          "accessed_at": "2026-08-29",
+          "note": "The current family offers 105 mechanical, 105 Di2 and Ultegra Di2 builds, so model name alone does not identify drivetrain. This area was checked specifically for frame-material; its evidence was accepted for this field.",
+          "result_url": "https://cinelli-milano.com/collections/road"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer archived catalog query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer archive and dated catalogs — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.fietsendewachter.be/wp-content/uploads/2022/06/Prijslijst-CINELLI-2024.pdf"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer product manual query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer manuals and service documents — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The general Cinelli technical guide was checked for service compatibility but does not resolve the listing trim or the product-page weight conflict. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://cinelli.it/wp-content/uploads/2021/06/01_tech_guide_EN.pdf"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer geometry document query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer size and geometry documents — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer technical whitepaper query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer engineering and test documents — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer support and warranty query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer support and warranty pages — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer newsroom launch query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer newsroom and launch records — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer site search query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer-domain exact-model search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer sitemap query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer indexes and sitemap routes — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer structured data query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "indexed manufacturer metadata and product snippets — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer regional site query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "official regional manufacturer site — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://usa.cinelli-milano.com/products/pressure-adr-2024-105-disc-di2"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer distributor query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "official distributor catalog — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer dealer locator query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer dealer and agent locator — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://cinellibicycles.co.uk/retailers"
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Cinelli 西耐力 Pressure ADR — manufacturer official store query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "manufacturer official commerce route — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Cinelli 西耐力 Pressure ADR — Taobao official store query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "Taobao official-store index and retained snapshot — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Cinelli 西耐力 Pressure ADR — Tmall official store query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "Tmall official-store index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Cinelli 西耐力 Pressure ADR — JD official store query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "JD official-store and exact-model index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.jd.com/jiage/131824dcdad33bc045d3.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Cinelli 西耐力 Pressure ADR — Alibaba and 1688 supplier query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "Alibaba and 1688 supplier index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Cinelli 西耐力 Pressure ADR — AliExpress official store query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "AliExpress official-store index — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "A related result was checked but did not establish an exact CINELLI 西耐力 Pressure ADR fact or acceptable evidence basis. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Cinelli 西耐力 Pressure ADR — mainland authorized dealer query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "authorized mainland dealer search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Cinelli 西耐力 Pressure ADR — regional authorized dealer query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "authorized regional dealer search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Cinelli 西耐力 Pressure ADR — international specialist retailer query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "international specialist bicycle retailer — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Cinelli 西耐力 Pressure ADR — cycling industry review query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "cycling-industry editorial and review search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "BikeRadar confirms 30 mm maximum and reports a firm but more forgiving ride than the original Pressure, with sharp and responsive handling. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bikeradar.com/reviews/bikes/road-bikes/cinelli-pressure-adr-105-review"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Cinelli 西耐力 Pressure ADR — Chinese cycling media query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "Chinese cycling-media search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://jingxuan.douyin.com/m/video/7538670238905257216"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Cinelli 西耐力 Pressure ADR — independent lab test query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent laboratory and deflection-test search — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "No exact ADR numeric deflection, torsion or stiffness laboratory result was found. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Cinelli 西耐力 Pressure ADR — magazine archive query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "cycling magazine archive — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Cinelli 西耐力 Pressure ADR — trade show coverage query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "bicycle trade-show coverage — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.velofollies.be/Media/ExhibitorGate/exhibitors/638688435635364196.pdf"
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Cinelli 西耐力 Pressure ADR — race team equipment query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "race-team equipment records — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://cinelli-milano.com/blogs/news/race-report-liv-at-policrit"
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Cinelli 西耐力 Pressure ADR — event exhibitor catalog query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "event exhibitor catalogs — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Cinelli 西耐力 Pressure ADR — geometry database query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "independent geometry databases — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Cinelli 西耐力 Pressure ADR — component compatibility database query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "component-maker compatibility databases — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Cinelli 西耐力 Pressure ADR — product certification registry query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "cycle product certification registries — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "The UCI registry identifies Pressure ADR as CINELLI-008 in XS-XL, dated 2023-06-09. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://downloads.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/07bc6362f18a7d6b8a4b52eef485b81f/20250208_Liste_des_Mod%C3%A8les_homologu%C3%A9s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Cinelli 西耐力 Pressure ADR — web archive query — field candidate:cinelli-pressure-adr:frame-material",
+          "route": "web archives and cached exact-model pages — frame-material",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-29",
+          "note": "An exact or directly attributable CINELLI 西耐力 Pressure ADR result was checked in this area. This area was checked specifically for frame-material; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "cinelli-pressure-adr-official-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cinelli-pressure-adr-50-area-sweep-2026-08-29.json. Current exact evidence establishes carbon-monocoque construction and a Columbus carbon-monocoque fork; no fiber grade is published."
+}
