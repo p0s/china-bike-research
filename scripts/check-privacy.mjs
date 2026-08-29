@@ -40,7 +40,7 @@ function walk(directory) {
     else {
       const extension = path.extname(entry.name).toLowerCase();
       if (thirdPartyBinaryExtensions.has(extension)) {
-        const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
+        const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao|xianyu)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
         if (!(extension === '.webp' && validSourcedPath && referencedSourcedMedia.has(relative))) {
           findings.push(`${relative}: third-party media binary is outside the validated sourced-image contract`);
         }

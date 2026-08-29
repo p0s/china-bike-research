@@ -31,7 +31,7 @@ test('buyer-hidden images cannot mask an active replacement', () => {
   assert.notEqual(joinProducts(fixture).find((item) => item.platform.id === 'twitter-gravel-v3').image.id, 'hidden-product-primary');
 });
 
-test('XHS and Taobao sources use identity-safe canonical public URLs', () => {
+test('XHS, Taobao, and Xianyu sources use identity-safe canonical public URLs', () => {
   const xhs = structuredClone(data);
   xhs.sources.push({
     id: 'privacy-test-xhs-source',
@@ -65,6 +65,23 @@ test('XHS and Taobao sources use identity-safe canonical public URLs', () => {
   assert.ok(validateDataset(taobao).some((error) => error.includes('identity-safe canonical item URL')));
   taobao.sources.at(-1).url = 'https://s.taobao.com/search?q=bike&spm=private-referral-context';
   assert.ok(validateDataset(taobao).some((error) => error.includes('identity-safe canonical item URL')));
+
+  const xianyu = structuredClone(data);
+  xianyu.sources.push({
+    id: 'privacy-test-xianyu-source',
+    type: 'marketplace-product-page',
+    title: 'Exact public listing',
+    publisher: 'Public seller',
+    accessed_at: '2026-08-29',
+    url: 'https://www.goofish.com/item?id=1075378619856',
+    reliability: { identity: 'high', specification: 'medium', price: 'none' },
+    notes: 'Synthetic validation fixture.'
+  });
+  assert.deepEqual(validateDataset(xianyu), []);
+  xianyu.sources.at(-1).url += '&spm=private-referral-context';
+  assert.ok(validateDataset(xianyu).some((error) => error.includes('Xianyu URL must be the identity-safe canonical item URL')));
+  xianyu.sources.at(-1).url = 'https://www.goofish.com/search?q=bike';
+  assert.ok(validateDataset(xianyu).some((error) => error.includes('Xianyu URL must be the identity-safe canonical item URL')));
 });
 
 test('publication gates reject incomplete builds and category-mismatched framesets', () => {

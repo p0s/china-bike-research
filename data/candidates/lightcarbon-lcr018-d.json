@@ -16,6 +16,7 @@
   "source_ids": [
     "lightcarbon-lcr018-d-official-2026-08-29",
     "cyclistshub-lcr018-d-owner-2026-08-29",
+    "lightcarbon-lcr018-d-xianyu-2026-08-29",
     "usd-cny-central-parity-2026-07-31"
   ],
   "observed_price": {
@@ -33,10 +34,15 @@
     "stiffness_evidence": "LightCarbon publishes qualitative stiffness and load-path claims for its Eagle Eye tube shaping; no independent measured exact-model stiffness result is included",
     "frame_weight_g": 1100,
     "frame_weight_basis": "Official size-52 frame weight, 1,100 g ±4%; the size range is 1,040–1,190 g, fork 430 g ±4% and seatpost 180 g ±10 g",
-    "bottom_bracket": "T47×P1, 85.5 mm",
+    "bottom_bracket": "T47×P1, 85.5 mm on the manufacturer page; the Xianyu listing says 86.5 mm, so the 1 mm conflict remains explicit",
     "tire_clearance_mm": 38,
-    "tire_clearance_basis": "Manufacturer maximum for tires measured at 38 mm actual width; larger owner fits are not treated as a universal limit",
+    "tire_clearance_basis": "Manufacturer measured-width 38 mm maximum, also repeated by the exact Xianyu listing; larger owner fits are not treated as a universal limit",
+    "brakes": "Flat-mount disc, compatible with 140 or 160 mm rotors according to the exact Xianyu listing",
+    "cockpit": "HBR17 integrated carbon cockpit, approximately 300 g according to the exact Xianyu listing",
     "storage": "Optional integrated down-tube storage",
+    "seatpost": "0 mm or 15 mm offset options according to the exact Xianyu listing",
+    "geometry": "Listing ranges: 61–68 mm trail, 74–78 mm bottom-bracket drop, 415 mm chainstays, 71–72.6° head angle and approximately 1.45–1.50 stack/reach",
+    "warranty": "Two-year quality warranty stated by both the manufacturer page and the exact Xianyu listing; claim route and mainland seller handling remain unverified",
     "sizes": "46, 49, 52, 55, 58 and 61"
   },
   "alternative_builds": [
@@ -60,6 +66,6 @@
       "notes": "The documented owner fitted larger tires, but the catalog keeps the manufacturer's 38 mm measured-width maximum."
     }
   ],
-  "source_note": "The official manufacturer page supplies the exact materials, construction, size-specific weights and measured-width 38 mm maximum. The separate size-58 owner build supplies the 8.6 kg complete weight and price references; those observations are not treated as current mainland offers.",
+  "source_note": "The official manufacturer page supplies the materials, construction, size-specific weights and measured-width 38 mm maximum. The exact Xianyu listing adds geometry ranges, brake, seatpost, cockpit-weight, storage and warranty detail and also repeats 38C, while its 86.5 mm bottom-bracket wording remains a recorded conflict with the official 85.5 mm figure. The separate size-58 owner build supplies the 8.6 kg complete weight and price references; those observations are not treated as current mainland offers.",
   "last_reviewed": "2026-08-29"
 }

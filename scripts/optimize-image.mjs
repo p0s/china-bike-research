@@ -7,7 +7,8 @@ import { fileURLToPath } from 'node:url';
 const repositoryRoot = path.resolve(import.meta.dirname, '..');
 const repositorySourcedRoots = [
   path.join(repositoryRoot, 'assets/images/sourced/xhs'),
-  path.join(repositoryRoot, 'assets/images/sourced/taobao')
+  path.join(repositoryRoot, 'assets/images/sourced/taobao'),
+  path.join(repositoryRoot, 'assets/images/sourced/xianyu')
 ];
 
 export const DEFAULT_VARIANTS = Object.freeze([
@@ -205,7 +206,8 @@ function usage() {
   return `Usage: npm run media:optimize -- --input /absolute/source --output /absolute/staging/media/xhs --slug model-slug [--repository-local]
 
 The source must be outside the repository. Repository-local output additionally requires
---repository-local and must target assets/images/sourced/xhs or assets/images/sourced/taobao.
+--repository-local and must target assets/images/sourced/xhs, assets/images/sourced/taobao,
+or assets/images/sourced/xianyu.
 The command creates immutable, metadata-free WebP card and detail variants plus a manifest.`;
 }
 

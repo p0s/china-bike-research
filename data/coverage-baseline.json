@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 531,
+      "sources": 532,
       "images": 196,
       "videos": 12,
       "groupsets": 11,
@@ -327,6 +327,7 @@
       "lightcarbon-lcg071s-official-2026-08-16",
       "lightcarbon-lcg071s-order-options-2026-08-27",
       "lightcarbon-lcr018-d-official-2026-08-29",
+      "lightcarbon-lcr018-d-xianyu-2026-08-29",
       "longteng-ltk266-d-sl-official-2026-08-29",
       "look-765-optimum-105-di2-official-2026-08-17",
       "ltwoo-disc-brake-fluid-official-2026-08-24",
@@ -6297,6 +6298,19 @@
       "lightcarbon-lcr018-d-official-2026-08-29": [
         "accessed_at",
         "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr018-d-xianyu-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
         "notes",
         "publisher",
         "reliability.identity",
@@ -17320,16 +17334,21 @@
         "alternative_builds",
         "category",
         "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
         "facts.frame",
         "facts.frame_construction",
         "facts.frame_material",
         "facts.frame_weight_basis",
         "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.seatpost",
         "facts.sizes",
         "facts.stiffness_evidence",
         "facts.storage",
         "facts.tire_clearance_basis",
         "facts.tire_clearance_mm",
+        "facts.warranty",
         "last_reviewed",
         "model_id",
         "name",
@@ -29588,6 +29607,7 @@
       "lightcarbon-lcg071s-official-2026-08-16": [],
       "lightcarbon-lcg071s-order-options-2026-08-27": [],
       "lightcarbon-lcr018-d-official-2026-08-29": [],
+      "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
       "longteng-ltk266-d-sl-official-2026-08-29": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
       "ltwoo-disc-brake-fluid-official-2026-08-24": [],
@@ -31433,6 +31453,7 @@
         "model_id=lightcarbon-lcr018-d",
         "source_ids=cyclistshub-lcr018-d-owner-2026-08-29",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
+        "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31"
       ],
       "lightcarbon-speed7-complete": [
@@ -34933,6 +34954,14 @@
         "identity": 3,
         "price": -1,
         "specification": 3
+      }
+    },
+    "lightcarbon-lcr018-d-xianyu-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "longteng-ltk266-d-sl-official-2026-08-29": {

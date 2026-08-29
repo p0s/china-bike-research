@@ -659,7 +659,7 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(privacy, /videos do not autoplay/);
 
   const imagePolicy = renderImagePolicy(context);
-  assert.match(imagePolicy, /Selected XHS and Taobao images/);
+  assert.match(imagePolicy, /Selected XHS, Taobao, and Xianyu images/);
   assert.match(imagePolicy, /identity-safe canonical source URL/);
   assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
 });
