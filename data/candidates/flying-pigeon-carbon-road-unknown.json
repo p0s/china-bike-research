@@ -1,16 +1,20 @@
 {
   "id": "flying-pigeon-carbon-road-unknown",
-  "name": "Flying Pigeon 飞鸽 Carbon road bike, model unclear",
+  "name": "Flying Pigeon 飞鸽 carbon-road listing (model unresolved; X900 unverified)",
   "model_id": "flying-pigeon-carbon-road-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Frame marking appears X900; exact model and specification need confirmation.",
+  "brand_id": "flying-pigeon",
+  "why_interesting": "The seller image appears to show X900, but neither official Flying Pigeon domain nor current retail indexes expose an exact carbon-road X900 product; indexed X900 results resolve to unrelated 征途900 steel mountain bikes.",
+  "facts": {
+    "stiffness_evidence": "No exact model is established and no attributable numeric stiffness evidence was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact model identity and attributable product source",
+    "Frame material/construction, complete BOM, weight and maximum tire clearance",
+    "Meaningful exact-model stiffness evidence, current China purchase route and warranty entity"
   ],
-  "status": "research-queue",
+  "status": "needs-exact-model",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +25,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6857.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.flyingpigeon1936.com/",
+  "source_note": "Flying Pigeon / 飞鸽 is verified, but X900 is not. The official catalog contains no exact carbon-road X900, and the current JD X900 index points to unrelated 征途900 steel mountain bikes. No generic Flying Pigeon specification is transferred to this listing.",
+  "last_reviewed": "2026-08-29"
 }

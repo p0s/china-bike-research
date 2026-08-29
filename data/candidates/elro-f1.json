@@ -1,15 +1,25 @@
 {
   "id": "elro-f1",
-  "name": "ELRO / 欧拜克 F1",
+  "name": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
   "model_id": "elro-f1",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Image says ELRO F1 while title uses 欧拜克; brand relationship needs confirmation.",
+  "brand_id": "obike",
+  "why_interesting": "An exact indexed product establishes OBIKE / 欧拜克 F1 as a carbon-fiber 24-speed road bike, while the seller image says ELRO F1; no source explains that marking.",
+  "facts": {
+    "frame_material": "Carbon fiber; exact grade and construction are not published",
+    "drivetrain": "24-speed in the exact product index; component maker, model, gearing and brakes are unresolved",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Explanation of the ELRO image marking and exact model year/SKU",
+    "Complete drivetrain/BOM, complete weight and maximum tire clearance",
+    "Carbon grade/construction, meaningful stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "retail-identity-verified-image-mark-conflicted",
+  "source_ids": [
+    "obike-f1-smzdm-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6879.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://wiki.smzdm.com/gongluche/b_65192/",
+  "source_note": "The exact indexed identity is OBIKE / 欧拜克 F1, described as carbon-fiber and 24-speed. ELRO is preserved only as an unresolved seller-image marking; it is not promoted as a verified brand or manufacturer relationship.",
+  "last_reviewed": "2026-08-29"
 }
