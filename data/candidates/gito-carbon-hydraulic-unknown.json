@@ -1,16 +1,27 @@
 {
   "id": "gito-carbon-hydraulic-unknown",
-  "name": "GITO Carbon hydraulic road bike, model unclear",
+  "name": "GITO 捷拓 G525 Shimano 105 hydraulic-disc lead",
   "model_id": "gito-carbon-hydraulic-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model absent.",
+  "why_interesting": "The retained image visibly carries a G525 chainstay mark and Shimano 105 equipment; current exact-model and mainland retail indexes corroborate GITO / 捷拓 G525 as a carbon aero road bike with a 24-speed Shimano 105 hydraulic-disc build.",
+  "facts": {
+    "frame_material": "Carbon G525 aero-road platform; exact carbon grade is not established",
+    "drivetrain": "Shimano 105 2x12 / 24-speed mechanical shifting with hydraulic disc brakes on the visually matched current G525 build",
+    "frame_construction": "Aero road frame with internal routing and disc-brake complete-build configurations",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact model year/SKU, wheelset, remaining BOM and complete-bike weight",
+    "Maximum tire clearance and exact carbon grade",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "exact-model-build-evidence-found-publication-gate-not-met",
+  "source_ids": [
+    "gito-g525-retailer-2026-08-29",
+    "gito-g525-taobao-index-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +32,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6895.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.888bike.net/en/product/tag/shimano-105",
+  "source_note": "The retained image's G525 and Shimano 105 markings align with the current exact G525 specialist listing and the mainland indexed G525/530 listing. Only the common G525 carbon-frame and 105 24-speed hydraulic-disc facts are accepted; weight, wheelset, carbon grade and clearance remain unknown.",
+  "last_reviewed": "2026-08-29"
 }

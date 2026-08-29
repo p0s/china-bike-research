@@ -1,15 +1,24 @@
 {
   "id": "gito-carbon-aero-entry",
-  "name": "GITO Carbon aero road bike, entry build",
+  "name": "GITO 捷拓 G325 entry-build lead",
   "model_id": "gito-carbon-aero-entry",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model absent; likely lowest-SKU price.",
+  "why_interesting": "The retained seller image appears to carry a G325 chainstay mark, and a current specialist catalog verifies GITO G325 as a carbon aero platform. Its Shimano 105 R7120 build is materially dearer than the retained CNY 2,999.10 row, so the selected entry drivetrain remains unresolved.",
+  "facts": {
+    "frame_material": "Carbon G325 aero-road platform; exact retained-build fork, cockpit and wheel materials remain unresolved",
+    "stiffness_evidence": "No exact-build numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact selected SKU/trim, drivetrain, brake system and complete-bike weight",
+    "Maximum tire clearance and exact fork/cockpit/wheel materials",
+    "Meaningful stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "model-family-verified-build-unresolved",
+  "source_ids": [
+    "gito-g325-retailer-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +29,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6863.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.888bike.net/en/product/tag/shimano-105-r7120",
+  "source_note": "The visible G325 marking is corroborated by a current exact-model specialist catalog, while regional retail indexing establishes the usual Chinese rendering 捷拓. The catalog's Shimano 105 R7120 build is not transferred to the much lower-priced retained row.",
+  "last_reviewed": "2026-08-29"
 }
