@@ -4,23 +4,23 @@
   "catalog_metrics": {
     "records": {
       "brands": 39,
-      "platforms": 37,
-      "variants": 40,
-      "prices": 52,
-      "sources": 568,
-      "images": 198,
+      "platforms": 38,
+      "variants": 41,
+      "prices": 54,
+      "sources": 572,
+      "images": 203,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 232,
+      "candidates": 231,
       "exclusions": 16,
       "research": 1,
       "researchAttempts": 549
     },
     "image_accuracy": {
       "exact-platform": 68,
-      "exact-variant": 91,
+      "exact-variant": 96,
       "illustrative": 2,
       "same-model-different-color": 17,
       "same-model-different-market-build": 8,
@@ -28,7 +28,7 @@
     },
     "image_hosting": {
       "local": 14,
-      "remote": 184
+      "remote": 189
     },
     "candidate_prices": {
       "official": 54,
@@ -90,6 +90,7 @@
       "ican-gra04",
       "ican-graro",
       "incolor-speedster",
+      "incolor-ssr",
       "incolor-voyager",
       "lightcarbon-lcg071s-pro",
       "lightcarbon-speedz",
@@ -130,6 +131,7 @@
       "ican-graro-frameset",
       "incolor-speedster-sr-frameset",
       "incolor-speedster-sr-plus-frameset",
+      "incolor-ssr-frameset",
       "incolor-voyager-frameset",
       "lightcarbon-lcg071s-pro-frameset",
       "lightcarbon-speedz-complete",
@@ -177,8 +179,10 @@
       "ican-graro-2026-08",
       "incolor-speedster-sr-plus-taobao-2026-08-29",
       "incolor-speedster-sr-taobao-2026-08-29",
+      "incolor-ssr-taobao-2026-08-29",
       "incolor-voyager-2026-08",
       "incolor-voyager-official-list-2026-08-25",
+      "incolor-voyager-taobao-2026-08-29",
       "lightcarbon-2026-08",
       "lightcarbon-speedz-complete-price-2026-08-08",
       "lightcarbon-speedz-frameset-price-2026-08-08",
@@ -316,11 +320,15 @@
       "incolor-speedster-sr-plus-taobao-2026-08-29",
       "incolor-speedster-sr-taobao-2026-08-29",
       "incolor-speedster-ss-history-2025-05-05",
+      "incolor-ssr-official-2026-08-29",
       "incolor-ssr-panda-podium-2026-08-17",
       "incolor-ssr-price-pdf-lead-2026-08-17",
+      "incolor-ssr-taobao-2026-08-29",
       "incolor-voyager-official-2026-08-25",
       "incolor-voyager-official-brochure-2026-08-25",
+      "incolor-voyager-product-document-2026-08-29",
       "incolor-voyager-retailer",
+      "incolor-voyager-taobao-2026-08-29",
       "irefox-current-catalog-2026-08-09",
       "irefox-profound-400-biketo-review-2026-08-28",
       "irefox-profound-400-official-2026-08-28",
@@ -836,12 +844,19 @@
       "ican-graro-torque-gallery",
       "icanian-p9-primary-image",
       "icanian-sn04-primary-image",
+      "incolor-speedster-sr-front-rear-gallery",
       "incolor-speedster-sr-plus-primary-image",
+      "incolor-speedster-sr-plus-side-gallery",
       "incolor-speedster-sr-primary-image",
+      "incolor-speedster-sr-side-gallery",
+      "incolor-ssr-front-rear-gallery",
+      "incolor-ssr-official-primary-image",
       "incolor-ssr-primary-image",
+      "incolor-ssr-side-gallery",
       "incolor-voyager-clearance-gallery",
       "incolor-voyager-design-gallery",
       "incolor-voyager-geometry-gallery",
+      "incolor-voyager-official-primary-image",
       "incolor-voyager-primary-image",
       "incolor-voyager-seatpost-gallery",
       "incolor-voyager-udh-gallery",
@@ -996,6 +1011,7 @@
       "bicidastrada-seka-exaero-gr-review",
       "china-cycling-bigrock-sohtea-long-term",
       "china-cycling-incolor-ssr",
+      "china-cycling-incolor-ssr-published",
       "china-cycling-quick-pro-er-one",
       "china-cycling-quick-pro-ur-one",
       "china-cycling-quick-pro-xr-one",
@@ -1635,6 +1651,17 @@
       "platform-evolve-cima-gr-geometry-2026-08-27",
       "platform-ican-graro-frame-weight-2026-08-27",
       "platform-ican-graro-geometry-2026-08-27",
+      "platform-incolor-ssr-bom-2026-08-17",
+      "platform-incolor-ssr-bottom-bracket-2026-08-17",
+      "platform-incolor-ssr-frame-2026-08-17",
+      "platform-incolor-ssr-frame-weight-2026-08-17",
+      "platform-incolor-ssr-geometry-2026-08-17",
+      "platform-incolor-ssr-identity-2026-08-17",
+      "platform-incolor-ssr-image-2026-08-17",
+      "platform-incolor-ssr-price-2026-08-17",
+      "platform-incolor-ssr-purchase-route-2026-08-17",
+      "platform-incolor-ssr-tire-clearance-2026-08-17",
+      "platform-incolor-ssr-warranty-support-2026-08-17",
       "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28",
       "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
       "platform-pardus-super-sport-gen2-frame-material-2026-08-28",
@@ -2734,6 +2761,40 @@
         "tire_clearance.published_max_mm",
         "tire_clearance.wheel_size"
       ],
+      "incolor-ssr": [
+        "brand_id",
+        "category",
+        "china_availability",
+        "frame.bottom_bracket",
+        "frame.cable_routing",
+        "frame.claimed_frame_weight_basis",
+        "frame.claimed_frame_weight_g",
+        "frame.claimed_frameset_package_weight_basis",
+        "frame.claimed_frameset_package_weight_g",
+        "frame.construction",
+        "frame.fork_material",
+        "frame.geometry.basis",
+        "frame.geometry.sizes",
+        "frame.geometry.source_id",
+        "frame.geometry.units.angle",
+        "frame.geometry.units.length",
+        "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
+        "handlebar",
+        "internal_storage",
+        "last_reviewed",
+        "name",
+        "name_zh",
+        "source_ids",
+        "status",
+        "summary",
+        "tire_clearance.eligibility",
+        "tire_clearance.evidence",
+        "tire_clearance.note",
+        "tire_clearance.published_max_mm",
+        "tire_clearance.wheel_size"
+      ],
       "incolor-voyager": [
         "brand_id",
         "category",
@@ -2742,6 +2803,7 @@
         "frame.cable_routing",
         "frame.claimed_frame_weight_basis",
         "frame.claimed_frame_weight_g",
+        "frame.construction",
         "frame.derailleur_hanger",
         "frame.fork_material",
         "frame.geometry.basis",
@@ -2750,6 +2812,8 @@
         "frame.geometry.units.angle",
         "frame.geometry.units.length",
         "frame.material",
+        "frame.material_grade",
+        "frame.stiffness_evidence",
         "handlebar",
         "internal_storage",
         "last_reviewed",
@@ -3830,6 +3894,25 @@
         "purchase_route",
         "source_ids"
       ],
+      "incolor-ssr-frameset": [
+        "claimed_frame_weight_basis",
+        "claimed_frame_weight_g",
+        "editorial.best_for",
+        "editorial.caveats",
+        "editorial.price_thresholds_cny.fair_buy_below",
+        "editorial.price_thresholds_cny.great_buy_below",
+        "editorial.price_thresholds_cny.not_compelling_above",
+        "editorial.strengths",
+        "editorial.verdict",
+        "frame_material_grade",
+        "included",
+        "kind",
+        "market",
+        "name",
+        "platform_id",
+        "purchase_route",
+        "source_ids"
+      ],
       "incolor-voyager-frameset": [
         "editorial.best_for",
         "editorial.caveats",
@@ -4612,6 +4695,18 @@
         "status",
         "variant_id"
       ],
+      "incolor-ssr-taobao-2026-08-29": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
       "incolor-voyager-2026-08": [
         "channel",
         "conditions",
@@ -4630,6 +4725,18 @@
         "conditions",
         "currency",
         "observed_at",
+        "price_type",
+        "source_ids",
+        "status",
+        "variant_id"
+      ],
+      "incolor-voyager-taobao-2026-08-29": [
+        "amount_cny",
+        "channel",
+        "conditions",
+        "currency",
+        "observed_at",
+        "price_basis",
         "price_type",
         "source_ids",
         "status",
@@ -6286,6 +6393,19 @@
         "type",
         "url"
       ],
+      "incolor-ssr-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.image",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "incolor-ssr-panda-podium-2026-08-17": [
         "accessed_at",
         "language",
@@ -6301,6 +6421,19 @@
       "incolor-ssr-price-pdf-lead-2026-08-17": [
         "accessed_at",
         "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-ssr-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
         "notes",
         "publisher",
         "reliability.identity",
@@ -6334,9 +6467,34 @@
         "type",
         "url"
       ],
+      "incolor-voyager-product-document-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "incolor-voyager-retailer": [
         "accessed_at",
         "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "incolor-voyager-taobao-2026-08-29": [
+        "accessed_at",
+        "language",
+        "listing_id",
         "notes",
         "publisher",
         "reliability.identity",
@@ -12901,6 +13059,24 @@
         "source_id",
         "subject_accuracy"
       ],
+      "incolor-speedster-sr-front-rear-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "incolor-speedster-sr-plus-primary-image": [
         "alt",
         "credit",
@@ -12918,7 +13094,78 @@
         "subject_accuracy",
         "variant_ids"
       ],
+      "incolor-speedster-sr-plus-side-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
       "incolor-speedster-sr-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-speedster-sr-side-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-ssr-front-rear-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-ssr-official-primary-image": [
         "alt",
         "credit",
         "display_note",
@@ -12950,6 +13197,24 @@
         "role",
         "source_id",
         "subject_accuracy"
+      ],
+      "incolor-ssr-side-gallery": [
+        "alt",
+        "credit",
+        "hosting.mode",
+        "hosting.remote_url",
+        "label",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
+        "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
       ],
       "incolor-voyager-clearance-gallery": [
         "alt",
@@ -13001,6 +13266,23 @@
         "rights.usage_note",
         "role",
         "sort_order",
+        "source_id",
+        "subject_accuracy",
+        "variant_ids"
+      ],
+      "incolor-voyager-official-primary-image": [
+        "alt",
+        "credit",
+        "display_note",
+        "hosting.mode",
+        "hosting.remote_url",
+        "media_type",
+        "platform_id",
+        "reviewed_at",
+        "rights.copyright_holder",
+        "rights.status",
+        "rights.usage_note",
+        "role",
         "source_id",
         "subject_accuracy",
         "variant_ids"
@@ -15709,6 +15991,24 @@
         "relationship",
         "summary",
         "target.candidate_id",
+        "title",
+        "url",
+        "youtube_video_id"
+      ],
+      "china-cycling-incolor-ssr-published": [
+        "accessed_at",
+        "channel_name",
+        "channel_url",
+        "disclosure",
+        "disclosure_url",
+        "format",
+        "language",
+        "match",
+        "provider",
+        "published_at",
+        "relationship",
+        "summary",
+        "target.platform_id",
         "title",
         "url",
         "youtube_video_id"
@@ -26857,6 +27157,161 @@
         "target.record_id",
         "target.record_type"
       ],
+      "platform-incolor-ssr-bom-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-bottom-bracket-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-frame-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-frame-weight-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-geometry-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-identity-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-image-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-price-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.conflict",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-purchase-route-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-tire-clearance-2026-08-17": [
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
+      "platform-incolor-ssr-warranty-support-2026-08-17": [
+        "accepted_source_ids",
+        "channels.public-post.attempts",
+        "channels.public-post.blocker",
+        "channels.public-post.status",
+        "channels.web.attempts",
+        "channels.web.status",
+        "field",
+        "notes",
+        "priority",
+        "required_channels",
+        "searched_at",
+        "status",
+        "target.record_id",
+        "target.record_type"
+      ],
       "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": [
         "channels.web.attempts",
         "channels.web.status",
@@ -30134,13 +30589,23 @@
         "source_ids=incolor-speedster-brochure-2026-08-29",
         "source_ids=incolor-speedster-official-2026-08-29"
       ],
+      "incolor-ssr": [
+        "brand_id=incolor",
+        "frame.geometry.source_id=incolor-ssr-official-2026-08-29",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-ssr-official-2026-08-29",
+        "source_ids=incolor-ssr-panda-podium-2026-08-17",
+        "source_ids=incolor-ssr-taobao-2026-08-29"
+      ],
       "incolor-voyager": [
         "brand_id=incolor",
         "frame.geometry.source_id=incolor-voyager-official-2026-08-25",
         "source_ids=incolor-services-official-2026-08-26",
         "source_ids=incolor-voyager-official-2026-08-25",
         "source_ids=incolor-voyager-official-brochure-2026-08-25",
-        "source_ids=incolor-voyager-retailer"
+        "source_ids=incolor-voyager-product-document-2026-08-29",
+        "source_ids=incolor-voyager-retailer",
+        "source_ids=incolor-voyager-taobao-2026-08-29"
       ],
       "lightcarbon-lcg071s-pro": [
         "brand_id=lightcarbon",
@@ -30414,12 +30879,21 @@
         "source_ids=incolor-speedster-official-2026-08-29",
         "source_ids=incolor-speedster-sr-plus-taobao-2026-08-29"
       ],
+      "incolor-ssr-frameset": [
+        "platform_id=incolor-ssr",
+        "source_ids=incolor-services-official-2026-08-29",
+        "source_ids=incolor-ssr-official-2026-08-29",
+        "source_ids=incolor-ssr-panda-podium-2026-08-17",
+        "source_ids=incolor-ssr-taobao-2026-08-29"
+      ],
       "incolor-voyager-frameset": [
         "platform_id=incolor-voyager",
         "source_ids=incolor-services-official-2026-08-26",
         "source_ids=incolor-voyager-official-2026-08-25",
         "source_ids=incolor-voyager-official-brochure-2026-08-25",
-        "source_ids=incolor-voyager-retailer"
+        "source_ids=incolor-voyager-product-document-2026-08-29",
+        "source_ids=incolor-voyager-retailer",
+        "source_ids=incolor-voyager-taobao-2026-08-29"
       ],
       "lightcarbon-lcg071s-pro-frameset": [
         "platform_id=lightcarbon-lcg071s-pro",
@@ -30675,6 +31149,11 @@
         "source_ids=incolor-speedster-sr-taobao-2026-08-29",
         "variant_id=incolor-speedster-sr-frameset"
       ],
+      "incolor-ssr-taobao-2026-08-29": [
+        "source_ids=incolor-ssr-official-2026-08-29",
+        "source_ids=incolor-ssr-taobao-2026-08-29",
+        "variant_id=incolor-ssr-frameset"
+      ],
       "incolor-voyager-2026-08": [
         "source_ids=compiled-research-2026-08-06",
         "source_ids=incolor-voyager-retailer",
@@ -30682,6 +31161,11 @@
       ],
       "incolor-voyager-official-list-2026-08-25": [
         "source_ids=incolor-voyager-official-brochure-2026-08-25",
+        "variant_id=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-taobao-2026-08-29": [
+        "source_ids=incolor-voyager-product-document-2026-08-29",
+        "source_ids=incolor-voyager-taobao-2026-08-29",
         "variant_id=incolor-voyager-frameset"
       ],
       "lightcarbon-2026-08": [
@@ -30931,11 +31415,15 @@
       "incolor-speedster-sr-plus-taobao-2026-08-29": [],
       "incolor-speedster-sr-taobao-2026-08-29": [],
       "incolor-speedster-ss-history-2025-05-05": [],
+      "incolor-ssr-official-2026-08-29": [],
       "incolor-ssr-panda-podium-2026-08-17": [],
       "incolor-ssr-price-pdf-lead-2026-08-17": [],
+      "incolor-ssr-taobao-2026-08-29": [],
       "incolor-voyager-official-2026-08-25": [],
       "incolor-voyager-official-brochure-2026-08-25": [],
+      "incolor-voyager-product-document-2026-08-29": [],
       "incolor-voyager-retailer": [],
+      "incolor-voyager-taobao-2026-08-29": [],
       "irefox-current-catalog-2026-08-09": [],
       "irefox-profound-400-biketo-review-2026-08-28": [],
       "irefox-profound-400-official-2026-08-28": [],
@@ -31641,7 +32129,17 @@
         "candidate_id=icanian-sn04",
         "source_id=ican-sn04-official-2026-08-08"
       ],
+      "incolor-speedster-sr-front-rear-gallery": [
+        "platform_id=incolor-speedster",
+        "source_id=incolor-speedster-official-2026-08-29",
+        "variant_ids=incolor-speedster-sr-frameset"
+      ],
       "incolor-speedster-sr-plus-primary-image": [
+        "platform_id=incolor-speedster",
+        "source_id=incolor-speedster-official-2026-08-29",
+        "variant_ids=incolor-speedster-sr-plus-frameset"
+      ],
+      "incolor-speedster-sr-plus-side-gallery": [
         "platform_id=incolor-speedster",
         "source_id=incolor-speedster-official-2026-08-29",
         "variant_ids=incolor-speedster-sr-plus-frameset"
@@ -31651,9 +32149,29 @@
         "source_id=incolor-speedster-official-2026-08-29",
         "variant_ids=incolor-speedster-sr-frameset"
       ],
+      "incolor-speedster-sr-side-gallery": [
+        "platform_id=incolor-speedster",
+        "source_id=incolor-speedster-official-2026-08-29",
+        "variant_ids=incolor-speedster-sr-frameset"
+      ],
+      "incolor-ssr-front-rear-gallery": [
+        "platform_id=incolor-ssr",
+        "source_id=incolor-ssr-official-2026-08-29",
+        "variant_ids=incolor-ssr-frameset"
+      ],
+      "incolor-ssr-official-primary-image": [
+        "platform_id=incolor-ssr",
+        "source_id=incolor-ssr-official-2026-08-29",
+        "variant_ids=incolor-ssr-frameset"
+      ],
       "incolor-ssr-primary-image": [
         "candidate_id=incolor-ssr",
         "source_id=incolor-ssr-panda-podium-2026-08-17"
+      ],
+      "incolor-ssr-side-gallery": [
+        "platform_id=incolor-ssr",
+        "source_id=incolor-ssr-official-2026-08-29",
+        "variant_ids=incolor-ssr-frameset"
       ],
       "incolor-voyager-clearance-gallery": [
         "platform_id=incolor-voyager",
@@ -31666,6 +32184,11 @@
         "variant_ids=incolor-voyager-frameset"
       ],
       "incolor-voyager-geometry-gallery": [
+        "platform_id=incolor-voyager",
+        "source_id=incolor-voyager-official-2026-08-25",
+        "variant_ids=incolor-voyager-frameset"
+      ],
+      "incolor-voyager-official-primary-image": [
         "platform_id=incolor-voyager",
         "source_id=incolor-voyager-official-2026-08-25",
         "variant_ids=incolor-voyager-frameset"
@@ -32323,6 +32846,9 @@
       ],
       "china-cycling-incolor-ssr": [
         "target.candidate_id=incolor-ssr"
+      ],
+      "china-cycling-incolor-ssr-published": [
+        "target.platform_id=incolor-ssr"
       ],
       "china-cycling-quick-pro-er-one": [
         "target.candidate_id=quick-pro-er-one"
@@ -34857,6 +35383,39 @@
       "platform-ican-graro-geometry-2026-08-27": [
         "target.record_id=ican-graro"
       ],
+      "platform-incolor-ssr-bom-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-bottom-bracket-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-frame-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-frame-weight-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-geometry-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-identity-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-image-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-price-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-purchase-route-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-tire-clearance-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
+      "platform-incolor-ssr-warranty-support-2026-08-17": [
+        "target.record_id=incolor-ssr"
+      ],
       "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": [
         "target.record_id=lightcarbon-lcg071s-pro"
       ],
@@ -36366,6 +36925,15 @@
         "specification": 0
       }
     },
+    "incolor-ssr-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "image": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "incolor-ssr-panda-podium-2026-08-17": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
@@ -36380,6 +36948,14 @@
         "identity": 3,
         "price": 0,
         "specification": 1
+      }
+    },
+    "incolor-ssr-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 3,
+        "specification": 2
       }
     },
     "incolor-voyager-official-2026-08-25": {
@@ -36398,10 +36974,26 @@
         "specification": 3
       }
     },
+    "incolor-voyager-product-document-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": 1,
+        "specification": 3
+      }
+    },
     "incolor-voyager-retailer": {
       "minimum_type_tier": 2,
       "minimum_reliability": {
         "identity": 2,
+        "price": 3,
+        "specification": 2
+      }
+    },
+    "incolor-voyager-taobao-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
         "price": 3,
         "specification": 2
       }
@@ -44574,6 +45166,151 @@
       ],
       "accepted_source_ids": []
     },
+    "platform-incolor-ssr-bom-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR material, standards, clearance and BOM community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 material, standards, clearance and BOM\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-bottom-bracket-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR material, standards, clearance and BOM community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 material, standards, clearance and BOM\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-frame-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR material, standards, clearance and BOM community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 material, standards, clearance and BOM\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-frame-weight-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR frame weight community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 frame weight\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 frame weight review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-geometry-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR geometry and sizes community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 geometry and sizes\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 geometry and sizes review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-identity-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR exact model/generation community\",\"YouTube public search\",\"found\",\"2026-08-17\",\"found\",\"https://www.youtube.com/watch?v=2-eSUUhRsaU\"]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 exact model/generation\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 exact model/generation review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": [
+        "round3-incolor-ssr-frameset-walkaround-2e712d1163"
+      ]
+    },
+    "platform-incolor-ssr-image-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR image community\",\"YouTube public search\",\"found\",\"2026-08-17\",\"found\",\"https://www.youtube.com/watch?v=2-eSUUhRsaU\"]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 image\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 image review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]",
+        "[\"web\",1,\"site:incolor.vip SSR official product image\",\"official INCOLOR manufacturer services/product route\",\"no-result\",\"2026-08-17\",\"The official service/product route identifies SSR documentation but did not expose a stable direct product image in the rendered page.\",\"https://incolor.vip/services\"]",
+        "[\"web\",2,\"site:incolor.vip SSR PRODUCT MANUAL 20250901\",\"official INCOLOR product manual PDF\",\"no-result\",\"2026-08-17\",\"The official manual confirms SSR, but it is not a stable standalone catalog image route.\",\"https://www.incolor.vip/uploadfiles/2025/10/SSR%20PRODUCT%20MANUAL%20250901.pdf\"]",
+        "[\"web\",3,\"Panda Podium INCOLOR SSR Carbon Disc Brake Road Bike Frameset\",\"exact retailer product page with SKU\",\"found\",\"2026-08-17\",\"The exact SSR frameset page lists SKU INCOLOR-01-SSR and exposes a stable 300x300 product image.\",\"https://www.pandapodium.cc/wp-content/uploads/2026/07/1-13-300x300.jpg\"]"
+      ],
+      "accepted_source_ids": [
+        "incolor-ssr-panda-podium-2026-08-17",
+        "round3-incolor-ssr-frameset-walkaround-2e712d1163"
+      ]
+    },
+    "platform-incolor-ssr-price-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3,
+        "web": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR current mainland frame/package price community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 current mainland frame/package price\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 current mainland frame/package price review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]",
+        "[\"web\",1,\"InColor SSR China price official PDF\",\"official China manufacturer\",\"conflict\",\"2026-08-17\",\"Discovery-only, low confidence.\",\"https://www.incolor.vip/uploadfiles/2025/10/SSR%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D250901.pdf\"]",
+        "[\"web\",2,\"InColor SSR exact marketplace price\",\"authorized/current marketplace\",\"conflict\",\"2026-08-17\",\"Foreign reference.\",\"https://www.pandapodium.cc/product/incolor-ssr-road-frameset/\"]",
+        "[\"web\",3,\"InColor SSR Hong Kong listing\",\"credible marketplace/archive\",\"rejected\",\"2026-08-17\",\"Sold-out foreign evidence.\",\"https://cyclegears.net/products/incolor-ssr-frameset\"]"
+      ],
+      "accepted_source_ids": [
+        "incolor-ssr-panda-podium-2026-08-17",
+        "incolor-ssr-price-pdf-lead-2026-08-17"
+      ]
+    },
+    "platform-incolor-ssr-purchase-route-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR purchase and warranty route community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 purchase and warranty route\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 purchase and warranty route review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]",
+        "[\"web\",1,\"InColor SSR official China purchase route\",\"official China manufacturer/store\",\"found\",\"2026-08-17\",\"Exact SSR is in the brand catalog; live dealer stock not shown.\",\"https://www.incolor.vip/services\"]"
+      ],
+      "accepted_source_ids": [
+        "incolor-services-official-2026-08-17"
+      ]
+    },
+    "platform-incolor-ssr-tire-clearance-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR material, standards, clearance and BOM community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 material, standards, clearance and BOM\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 material, standards, clearance and BOM review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]"
+      ],
+      "accepted_source_ids": []
+    },
+    "platform-incolor-ssr-warranty-support-2026-08-17": {
+      "channel_attempt_counts": {
+        "public-post": 3,
+        "web": 1
+      },
+      "attempt_entries": [
+        "[\"public-post\",1,\"Incolor SSR purchase and warranty route community\",\"YouTube public search\",\"no-result\",\"2026-08-17\",\"No opened exact-model public post accepted from this English query.\",null]",
+        "[\"public-post\",2,\"INcolor SSR 车架组 purchase and warranty route\",\"Xiaohongshu public search\",\"blocked\",\"2026-08-17\",\"CAPTCHA/verification was not solved per policy.\",null]",
+        "[\"public-post\",3,\"Incolor SSR SSR 车架组 2026 purchase and warranty route review build\",\"Bilibili public search\",\"blocked\",\"2026-08-17\",\"Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.\",null]",
+        "[\"web\",1,\"InColor SSR official warranty\",\"official China support\",\"found\",\"2026-08-17\",\"Purchase record and mainland conditions apply.\",\"https://www.incolor.vip/services\"]"
+      ],
+      "accepted_source_ids": [
+        "incolor-services-official-2026-08-17"
+      ]
+    },
     "platform-lightcarbon-lcg071s-pro-frame-stiffness-2026-08-28": {
       "channel_attempt_counts": {
         "web": 3
@@ -47814,6 +48551,13 @@
       "remote_required": true,
       "primary_required": true
     },
+    "incolor-speedster-sr-front-rear-gallery": {
+      "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "incolor-speedster-sr-plus-primary-image": {
       "target": "platforms:incolor-speedster",
       "minimum_accuracy_rank": 4,
@@ -47821,8 +48565,36 @@
       "remote_required": true,
       "primary_required": true
     },
+    "incolor-speedster-sr-plus-side-gallery": {
+      "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
     "incolor-speedster-sr-primary-image": {
       "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
+    },
+    "incolor-speedster-sr-side-gallery": {
+      "target": "platforms:incolor-speedster",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "incolor-ssr-front-rear-gallery": {
+      "target": "platforms:incolor-ssr",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
+    },
+    "incolor-ssr-official-primary-image": {
+      "target": "platforms:incolor-ssr",
       "minimum_accuracy_rank": 4,
       "minimum_source_tier": 2,
       "remote_required": true,
@@ -47834,6 +48606,13 @@
       "minimum_source_tier": 1,
       "remote_required": true,
       "primary_required": true
+    },
+    "incolor-ssr-side-gallery": {
+      "target": "platforms:incolor-ssr",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": false
     },
     "incolor-voyager-clearance-gallery": {
       "target": "platforms:incolor-voyager",
@@ -47855,6 +48634,13 @@
       "minimum_source_tier": 2,
       "remote_required": true,
       "primary_required": false
+    },
+    "incolor-voyager-official-primary-image": {
+      "target": "platforms:incolor-voyager",
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true,
+      "primary_required": true
     },
     "incolor-voyager-primary-image": {
       "target": "platforms:incolor-voyager",
@@ -49476,9 +50262,14 @@
       "minimum_source_tier": 2,
       "remote_required": true
     },
+    "platforms:incolor-ssr": {
+      "minimum_accuracy_rank": 4,
+      "minimum_source_tier": 2,
+      "remote_required": true
+    },
     "platforms:incolor-voyager": {
       "minimum_accuracy_rank": 4,
-      "minimum_source_tier": 1,
+      "minimum_source_tier": 2,
       "remote_required": true
     },
     "platforms:lightcarbon-lcg071s-pro": {
@@ -49643,7 +50434,8 @@
       "yoeleo-altera-g21-frameset": true,
       "twitter-v3-2024-rs-sensah-alloy": true,
       "incolor-speedster-sr-frameset": true,
-      "incolor-speedster-sr-plus-frameset": true
+      "incolor-speedster-sr-plus-frameset": true,
+      "incolor-ssr-frameset": true
     },
     "candidates": {
       "alums-da54": [

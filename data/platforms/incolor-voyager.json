@@ -6,10 +6,13 @@
   "category": "gravel-race",
   "handlebar": "drop",
   "status": "current",
-  "summary": "Very light 850 g size-54 frame with 45C clearance, UDH and a full five-size geometry table; the current Taobao checkout still needs confirmation.",
+  "summary": "T800 gravel/all-road frame with a manufacturer-reported 190 N/mm bottom-bracket result, 850 g size-54 claim, 45C clearance, UDH, five-size geometry and a current official-store route.",
   "frame": {
     "material": "carbon",
+    "material_grade": "T800 carbon",
     "fork_material": "carbon",
+    "construction": "Slim-profile T800 carbon tubes with thicker walls described by the manufacturer as reinforcement for gravel impact resistance",
+    "stiffness_evidence": "The current manufacturer product document reports 190 N/mm bottom-bracket stiffness under an XC mountain-bike test standard; the underlying protocol and independent confirmation are not published.",
     "bottom_bracket": "Asymmetric T47, 76.75 mm shell",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
@@ -117,12 +120,14 @@
     "top-tube"
   ],
   "internal_storage": false,
-  "china_availability": "mainland-and-direct",
+  "china_availability": "mainland-official-store",
   "source_ids": [
     "incolor-voyager-retailer",
     "incolor-voyager-official-2026-08-25",
     "incolor-voyager-official-brochure-2026-08-25",
-    "incolor-services-official-2026-08-26"
+    "incolor-services-official-2026-08-26",
+    "incolor-voyager-product-document-2026-08-29",
+    "incolor-voyager-taobao-2026-08-29"
   ],
-  "last_reviewed": "2026-08-26"
+  "last_reviewed": "2026-08-29"
 }

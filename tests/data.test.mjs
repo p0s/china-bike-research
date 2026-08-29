@@ -40,6 +40,31 @@ test('verified Chinese brand renderings remain source-faithful', () => {
   );
 });
 
+test('current Incolor framesets keep exact evidence and official frame galleries', () => {
+  assert.equal(data.candidates.some((candidate) => candidate.id === 'incolor-ssr'), false);
+
+  const ssr = products.find((product) => product.variant.id === 'incolor-ssr-frameset');
+  assert.equal(ssr.platform.frame.material_grade, '80T pitch-based + T1100 carbon');
+  assert.equal(ssr.latestPrice.amount_cny, 23800);
+  assert.equal(ssr.latestPrice.status, 'available');
+  assert.equal(ssr.image.id, 'incolor-ssr-official-primary-image');
+
+  const voyager = products.find((product) => product.variant.id === 'incolor-voyager-frameset');
+  assert.equal(voyager.platform.frame.material_grade, 'T800 carbon');
+  assert.match(voyager.platform.frame.stiffness_evidence, /190 N\/mm/);
+  assert.equal(voyager.latestPrice.id, 'incolor-voyager-taobao-2026-08-29');
+  assert.equal(voyager.image.id, 'incolor-voyager-official-primary-image');
+
+  const galleryIds = new Set(data.images.filter((image) => image.role === 'gallery').map((image) => image.id));
+  for (const id of [
+    'incolor-ssr-side-gallery',
+    'incolor-ssr-front-rear-gallery',
+    'incolor-speedster-sr-side-gallery',
+    'incolor-speedster-sr-front-rear-gallery',
+    'incolor-speedster-sr-plus-side-gallery'
+  ]) assert.equal(galleryIds.has(id), true, id);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -135,15 +160,15 @@ test('publication gates reject incomplete builds and category-mismatched framese
 
 test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 39);
-  assert.equal(data.platforms.length, 37);
-  assert.equal(data.variants.length, 40);
-  assert.equal(data.prices.length, 52);
-  assert.equal(data.images.length, 198);
+  assert.equal(data.platforms.length, 38);
+  assert.equal(data.variants.length, 41);
+  assert.equal(data.prices.length, 54);
+  assert.equal(data.images.length, 203);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 232);
+  assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 549);
@@ -290,8 +315,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 221);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 195);
+  assert.equal(catalogCandidates.length, 220);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 194);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -637,8 +662,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 184);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 115);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 189);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 114);
   assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
@@ -749,8 +774,8 @@ test('public-post quotations require bounded immutable media and a completed pri
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
   const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
   const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
-  assert.equal(publishedVideos.length, 4);
-  assert.equal(candidateVideos.length, 8);
+  assert.equal(publishedVideos.length, 5);
+  assert.equal(candidateVideos.length, 7);
   assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
   assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
   assert.ok(data.videos.every((video) => video.disclosure.length >= 20));
@@ -762,7 +787,7 @@ test('curated videos stay exact, disclosed, and separate from publication eviden
   assert.ok(validateDataset(malformed).some((error) => error.includes('URL must match its YouTube video ID')));
 
   const mismatchedTarget = structuredClone(data);
-  mismatchedTarget.candidates.find((candidate) => candidate.id === 'incolor-ssr').video_ids = ['china-cycling-quick-pro-er-one'];
+  mismatchedTarget.candidates.find((candidate) => candidate.id === 'quick-pro-er-one').video_ids = ['china-cycling-incolor-ssr-published'];
   assert.ok(validateDataset(mismatchedTarget).some((error) => error.includes('targets another record')));
 });
 
