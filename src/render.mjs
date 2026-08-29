@@ -1053,7 +1053,8 @@ function categorySelectOptions(ctx, candidates) {
     ['mtb', 'Mountain bikes'],
     ['e-road', 'E-road'],
     ['folding', 'Folding'],
-    ['triathlon', 'Triathlon / time trial']
+    ['triathlon', 'Triathlon / time trial'],
+    ['track', 'Track bikes']
   ];
   const groups = families.map(([family, label]) => {
     const live = categoryOrder.filter((category) => categoryFamily(category) === family && available.has(category));

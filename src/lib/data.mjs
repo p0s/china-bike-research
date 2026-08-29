@@ -8,7 +8,7 @@ export const supportedCategories = [
   'road', 'road-race', 'road-aero', 'aero-wide-clearance', 'road-endurance', 'road-climbing',
   'gravel', 'gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel', 'all-road',
   'mtb-xc', 'mtb-trail', 'mtb-enduro',
-  'e-road', 'folding', 'triathlon'
+  'e-road', 'folding', 'triathlon', 'track'
 ];
 
 export const buildSlotIds = [
@@ -36,7 +36,8 @@ const categoryLabels = {
   'mtb-enduro': 'Enduro MTB',
   'e-road': 'E-road',
   folding: 'Folding',
-  triathlon: 'Triathlon / time trial'
+  triathlon: 'Triathlon / time trial',
+  track: 'Track'
 };
 
 export function categoryLabel(category) {
