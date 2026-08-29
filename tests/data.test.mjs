@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 748);
+  assert.equal(data.researchAttempts.length, 772);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -353,6 +353,21 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const vittoriaEr7 = catalogCandidates.find((entry) => entry.candidate.id === 'java-vittoria-er7-2026');
   assert.equal(vittoriaEr7.candidate.observed_price.observation_count, 5);
   assert.match(vittoriaEr7.candidate.source_refs, /IMG_6886\.png#R1/);
+  assert.match(vittoriaEr7.candidate.facts.frame_material, /carbon-frame and aluminum-frame/);
+  assert.match(vittoriaEr7.candidate.facts.drivetrain, /2x12 or 1x12/);
+  assert.equal(vittoriaEr7.candidate.facts.complete_weight_g, undefined);
+  const suprema = catalogCandidates.find((entry) => entry.candidate.id === 'java-suprema-7120');
+  assert.equal(suprema.candidate.facts.complete_weight_g, 8500);
+  assert.match(suprema.candidate.facts.drivetrain, /Shimano 105 R7120 mechanical 2x12/);
+  assert.match(suprema.candidate.facts.tires, /not a published maximum/);
+  const vega = catalogCandidates.find((entry) => entry.candidate.id === 'java-vega-tt-24s');
+  assert.equal(vega.candidate.facts.complete_weight_g, 9800);
+  assert.match(vega.candidate.facts.frame_material, /T800 carbon/);
+  assert.match(vega.candidate.facts.drivetrain, /L-TWOO ER9 electronic 2x12/);
+  const vittoriaR7170 = catalogCandidates.find((entry) => entry.candidate.id === 'java-vittoria-7170');
+  assert.equal(vittoriaR7170.candidate.facts.complete_weight_g, 9200);
+  assert.match(vittoriaR7170.candidate.facts.drivetrain, /Shimano 105 Di2 R7170 electronic 2x12/);
+  assert.match(vittoriaR7170.candidate.facts.tires, /not a published maximum/);
   const lampo = catalogCandidates.find((entry) => entry.candidate.id === 'java-lampo-carbon-road');
   assert.equal(lampo.defaultVisible, true);
   assert.match(lampo.candidate.name, /exact model unresolved/);

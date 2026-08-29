@@ -4,7 +4,16 @@
   "model_id": "java-vittoria-er7-2026",
   "category": "road-aero",
   "type": "complete-bike",
+  "brand_id": "java",
   "why_interesting": "Exact model visible. | Additional observation. | Likely ER7; card image did not load.",
+  "facts": {
+    "frame_material": "The current official catalog separates carbon-frame and aluminum-frame VITTORIA ER7 versions; a North American reference build has a carbon frame and fork",
+    "frame_construction": "Current carbon reference build uses aero shaping, fully internal cable routing and an integrated carbon aero handlebar; construction details for the retained aluminum and carbon cards are unresolved",
+    "drivetrain": "Current carbon/alloy-wheel reference build offers L-TWOO ER7 electronic 2x12 or 1x12 with hydraulic disc brakes; the retained seller cards do not expose the selected option",
+    "reference_builds": "Current carbon-frame/alloy-wheel regional build uses 38 mm alloy clinchers and 700x28C fitted tires; official and marketplace sources also expose separate aluminum-frame, carbon-wheel and R7170 configurations",
+    "tires": "700x28C fitted on the documented carbon/alloy-wheel reference build; this is not a published maximum",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
     "Separate exact groupset, wheelset, year, and promotion identities",
     "A separate variant and price record for each proven trim",
@@ -25,10 +34,11 @@
     "taobao-snapshot-2026-08-08",
     "java-road-catalog-2026-08-29",
     "java-vittoria-eurobike-2026-08-29",
-    "java-vittoria-jd-2026-08-29"
+    "java-vittoria-jd-2026-08-29",
+    "java-vittoria-er7-north-america-2026-08-29"
   ],
   "source_refs": "IMG_6859.png#L1, IMG_6886.png#R1, IMG_6889.png#L2, IMG_6893.png#R2, IMG_6898.png#L2",
   "source_url": "https://www.javabikes.com/Products/5.html",
-  "source_note": "The official catalog verifies separate carbon-frame and aluminum-frame VITTORIA-ER7 versions, and current marketplace indexing exposes further electronic, 7170, alloy-wheel and carbon-wheel options. Five retained seller observations share the same CNY 7,997.25-7,999 range but remain split by exact trim before publication.",
+  "source_note": "The official catalog verifies separate carbon-frame and aluminum-frame VITTORIA-ER7 versions. A current regional carbon/alloy-wheel reference build documents ER7 electronic 2x12 or 1x12 options and fitted 28C tires, while marketplace indexing exposes additional R7170 and carbon-wheel variants. Five retained seller observations share the CNY 7,997.25-7,999 range but remain split by exact trim before publication; no weight or maximum clearance is inferred.",
   "last_reviewed": "2026-08-29"
 }

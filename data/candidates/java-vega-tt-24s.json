@@ -4,13 +4,30 @@
   "model_id": "java-vega-tt-24s",
   "category": "triathlon",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "brand_id": "java",
+  "why_interesting": "The exact mainland Vega TT 24S card now has current manufacturer, event and two regional reference-build anchors.",
+  "facts": {
+    "frame_material": "J-AIR T800 carbon frame, carbon fork and carbon seatpost on the current Chilean reference build; the Mexican build independently states a full-carbon Toray frame",
+    "frame_construction": "Aerodynamic UCI-claimed TT frame with fully internal cable routing, integrated seatpost adjustment, 100/142 mm thru axles and BB86",
+    "drivetrain": "L-TWOO ER9 electronic 2x12 / 24-speed, 50/34T crank and 11-32T cassette with L-TWOO hydraulic disc brakes",
+    "complete_weight_g": 9800,
+    "complete_weight_basis": "Current Chilean complete-bike reference-build claim; size, pedals, accessories and measurement method are not stated",
+    "wheels": "Current Chilean reference build: DECAF carbon 88 mm front wheel and carbon rear disc wheel",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Maximum tire clearance, fitted tire specification and a complete current geometry table",
+    "Complete-weight size, pedal basis, accessories and measurement method",
+    "Meaningful exact-model stiffness evidence, exact selected mainland trim, domestic warranty route and final checkout price"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-build-partially-documented",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "java-road-catalog-2026-08-29",
+    "java-vega-chile-2026-08-29",
+    "java-vega-mexico-2026-08-29",
+    "java-vega-eurobike-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +38,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6866.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.javabikes.cl/product/vega-tt-24s",
+  "source_note": "The retained card identifies Vega TT 24S at CNY 12,999. Current EUROBIKE and regional JAVA pages establish the ER9 2x12 carbon reference build and a 9.8 kg claim; components may vary and no source publishes maximum tire clearance or complete weight basis.",
+  "last_reviewed": "2026-08-29"
 }
