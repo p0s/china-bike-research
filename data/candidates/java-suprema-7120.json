@@ -4,13 +4,30 @@
   "model_id": "java-suprema-7120",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model and R7120 configuration shown.",
+  "brand_id": "java",
+  "why_interesting": "The exact mainland seller card is now anchored to current official and regional Suprema evidence; its selected domestic trim and checkout conditions remain unverified.",
+  "facts": {
+    "frame_material": "Current Colombian reference build: Toray T800 carbon frame, fork and seatpost; a current Uruguayan trim instead says 3K carbon",
+    "frame_construction": "Fully internally routed aero road frame with thru axles; exact lay-up, molding process and bottom-bracket standard are not published",
+    "drivetrain": "Current Colombian reference build: Shimano 105 R7120 mechanical 2x12, 52/36T crank and 11-34T cassette with R7170 hydraulic disc brakes",
+    "complete_weight_g": 8500,
+    "complete_weight_basis": "Current Colombian reference build claim; size, pedals, accessories and measurement method are not stated. A different size-52 Uruguayan trim claims approximately 8.4 kg",
+    "wheels": "Current Colombian reference build: 50 mm carbon wheels",
+    "tires": "Michelin Dynamic Sport 28-622 fitted on the Colombian reference build; this is not a published maximum",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Maximum tire clearance and a complete current geometry table",
+    "Complete-weight size, pedal basis, accessories and measurement method",
+    "Meaningful exact-model stiffness evidence, exact selected mainland trim, domestic warranty route and final checkout price"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-build-partially-documented",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "java-road-catalog-2026-08-29",
+    "java-suprema-colombia-2026-08-29",
+    "java-suprema-uruguay-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +38,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6863.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://bicicletasjavacolombia.com/producto/bike/suprema",
+  "source_note": "The retained card identifies Suprema 7120 at CNY 9,999. Current regional sources establish labeled R7120 mechanical reference trims, but their 8.5 and approximately 8.4 kg claims, carbon wording and tire options differ; none is assigned to the seller-selected mainland option. Fitted 28C tires do not establish maximum clearance.",
+  "last_reviewed": "2026-08-29"
 }
