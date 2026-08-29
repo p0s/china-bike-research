@@ -1,36 +1,56 @@
 {
   "id": "twitter-t3-tt",
   "platform_id": "twitter-t3-tt",
-  "name": "T3 TT",
+  "name": "T3 TT WheelTop TX-TT7110 2×12",
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
-    "verdict": "Dated China-market triathlon / time trial lead for the exact visible T3 TT configuration; use it as a comparison benchmark while confirming the final SKU and BOM.",
+    "verdict": "Current exact-model evidence now supplies the T3 TT's WheelTop TX-TT7110 2×12 build and 9.5 kg manufacturer claim; treat the retained mainland promotion as dated until final checkout is reconfirmed.",
     "best_for": [
       "triathlon / time trial"
     ],
     "strengths": [
-      "Exact model/configuration is visible in the 2026-08-08 snapshot",
+      "Current exact WheelTop TX-TT7110 2×12 manufacturer specification",
+      "High-modulus carbon frame, fork and integrated TT cockpit",
       "Dated mainland-China price observation"
     ],
     "caveats": [
+      "Maximum tire clearance and frame-only weight remain unpublished",
+      "The 9.5 kg claim does not state size, pedals, accessories or weighing method",
+      "One owner reports finicky WheelTop/app behavior, twitchier handling and easily chipped paint",
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
       "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
     ]
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-bikes-gravel-catalog-2026-08-08"
+    "twitter-bikes-gravel-catalog-2026-08-08",
+    "twitter-t3-tt-official-2026-08-08",
+    "twitter-t3-tt-official-2026-08-29",
+    "twitter-t3-tt-regional-retailer-2026-08-29",
+    "twitter-t3-tt-bikeinsights-2026-08-29",
+    "public-twitter-t3-tt-owner-2026-08-29"
   ],
   "drivetrain": {
     "brand": "WheelTop",
-    "model": "EVO",
+    "model": "TX-TT7110 / EDS TT",
     "speeds": "2x12",
-    "shifting": "electronic",
+    "shifting": "electronic-wireless",
     "layout": "double"
   },
   "brakes": {
     "actuation": "hydraulic",
     "type": "disc"
-  }
+  },
+  "wheels": "RS 3K carbon fiber, W28×H60 mm, 700C",
+  "tires": "Maxxis Pursuer foldable 700×28C (fitted tire; not maximum clearance)",
+  "cockpit": {
+    "material": "high-modulus carbon fiber",
+    "integrated": true,
+    "dimensions": "400×100 mm base bar/stem, 45° extensions, 260 mm support arms",
+    "routing": "fully internal"
+  },
+  "claimed_complete_weight_g": 9500,
+  "claimed_complete_weight_basis": "Current exact-model manufacturer claim for the RS 60 mm carbon-rim WheelTop TX-TT7110 build; size, pedals, accessories and weighing method were not stated",
+  "purchase_route": "Current official made-to-order international route from US$2,349 with stated free shipping and duties to 35+ countries, plus a dated 2026-08-08 mainland marketplace observation for the visible WheelTop EVO 24-speed configuration. Confirm current mainland SKU continuity, stock, selected-option checkout total, shipping, returns and domestic warranty before paying."
 }
