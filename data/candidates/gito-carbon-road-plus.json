@@ -1,16 +1,25 @@
 {
   "id": "gito-carbon-road-plus",
-  "name": "GITO Carbon road bike +",
+  "name": "GITO 捷拓 G320 build (exact trim unresolved)",
   "model_id": "gito-carbon-road-plus",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "No exact model.",
+  "why_interesting": "The retained seller image visibly carries a G320 chainstay mark. A current exact-model retailer page verifies the carbon G320 platform but also exposes multiple materially different drivetrains and wheel packages, so the retained CNY 4,999 trim remains unresolved.",
+  "facts": {
+    "frame_material": "Carbon G320 aero-road platform; the current exact retailer builds specify a Toray T800/T700 carbon frame and full-carbon fork",
+    "stiffness_evidence": "No exact-build numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact selected SKU/trim, drivetrain, brake system, wheelset and complete-bike weight",
+    "Maximum tire clearance and retained-build carbon grade",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "model-family-verified-build-unresolved",
+  "source_ids": [
+    "gito-g320-retailer-2026-08-29",
+    "gito-g320-regional-options-2026-08-29",
+    "gito-chinese-retail-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6870.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.888bike.net/en/product/7515/gito-g320-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-45mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike",
+  "source_note": "The visible G320 marking is corroborated by a current exact-model retailer page and the usual Chinese rendering 捷拓. Current G320 offers include LTWOO and Shimano 105 builds plus alloy- and carbon-wheel options, so no drivetrain, weight, wheel or fitted-tire value is transferred to the retained seller card.",
+  "last_reviewed": "2026-08-29"
 }
