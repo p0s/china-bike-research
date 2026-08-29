@@ -22,7 +22,7 @@ const context = {
 };
 
 test('landing generation is bounded, deterministic, and anti-thin', () => {
-  assert.equal(landings.pages.length, 15);
+  assert.equal(landings.pages.length, 16);
   assert.equal(new Set(landings.pages.map((entry) => entry.route)).size, landings.pages.length);
   assert.equal(new Set(landings.pages.map((entry) => entry.title)).size, landings.pages.length);
   assert.equal(new Set(landings.pages.map((entry) => entry.description)).size, landings.pages.length);
@@ -30,6 +30,7 @@ test('landing generation is bounded, deterministic, and anti-thin', () => {
   assert.ok(landings.pricePages.every((entry) => entry.products.length >= MIN_PRICE_PRODUCTS));
   assert.ok(landings.pages.every((entry) => entry.products.length > 0));
   assert.ok(landings.pages.flatMap((entry) => entry.products).every((product) => product.variant && !product.candidate));
+  assert.ok(landings.brandPages.some((entry) => entry.brand.id === 'incolor' && entry.products.length === 3));
 });
 
 test('price pages use full non-overlapping ranges and exclude boundary-crossing products', () => {

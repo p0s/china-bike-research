@@ -434,8 +434,19 @@ function weightLabel(product) {
     const platformFrameWeight = frameWeightValueLabel(product.platform.frame);
     return platformFrameWeight ? `${platformFrameWeight} frame` : '—';
   }
-  const frameWeight = frameWeightValueLabel(product.platform.frame);
+  const frameWeight = Number.isFinite(product.variant.claimed_frame_weight_g)
+    ? gramRangeLabel(product.variant.claimed_frame_weight_g, product.variant.claimed_frame_weight_g)
+    : frameWeightValueLabel(product.platform.frame);
   return frameWeight ? `${frameWeight} frame` : '—';
+}
+
+function frameMaterialLabel(product) {
+  return product.variant.frame_material_grade
+    ?? product.variant.frame_material
+    ?? product.platform.frame?.material_grade
+    ?? product.platform.frame?.claimed_fiber
+    ?? product.platform.frame?.material
+    ?? 'Not recorded';
 }
 
 function publishedWeightFilter(product) {
@@ -498,7 +509,8 @@ function brakeDescription(brakes) {
 
 function weightBasisDescription(product) {
   if (product.variant.kind === 'complete-bike') return product.variant.claimed_complete_weight_basis ?? '';
-  return product.platform.frame?.claimed_frame_weight_basis
+  return product.variant.claimed_frame_weight_basis
+    ?? product.platform.frame?.claimed_frame_weight_basis
     ?? product.platform.frame?.claimed_frame_weight_g_by_size?.basis
     ?? '';
 }
@@ -1156,7 +1168,7 @@ export function renderModel(ctx, product) {
   const bestFor = variant.editorial.best_for?.join(', ');
   const weight = weightLabel(product);
   const tireClearance = publishedTireClearance(product);
-  const frameMaterial = platform.frame.claimed_fiber ?? platform.frame.material;
+  const frameMaterial = frameMaterialLabel(product);
   const keyHardware = [
     `${frameMaterial} frame`,
     variant.kind === 'complete-bike' ? drivetrainLabel(ctx, product) : null,
@@ -1193,7 +1205,7 @@ export function renderModel(ctx, product) {
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
   const seoProperties = [
     ['Product type', variant.kind === 'frameset' ? 'Frameset' : 'Complete bike'],
-    ['Frame material', platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material],
+    ['Frame material', frameMaterialLabel(product)],
     ...(tireClearance.value !== '—' ? [['Maximum tire clearance', tireClearance.value]] : []),
     ...(weight !== '—' ? [['Weight', weight]] : []),
     ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product)]] : [])
@@ -1204,7 +1216,7 @@ export function renderModel(ctx, product) {
   </div>
   <div class="model-content">
     <section class="model-story" aria-labelledby="model-story-title"><h2 id="model-story-title">${escapeHtml(storyTitle)}</h2><p class="model-story-lede">${escapeHtml(variant.editorial.verdict)}</p><p${variant.kind === 'frameset' ? ' data-model-price-brief' : ''}>${escapeHtml(priceBrief)}${bestFor ? ` Best suited to ${escapeHtml(bestFor)}.` : ''}</p><p><strong>Key hardware:</strong> ${escapeHtml(keyHardware)}.</p></section>
-    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(platform.frame.material_grade ?? platform.frame.claimed_fiber ?? platform.frame.material)}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
+    <section class="detail-section specification-snapshot" aria-labelledby="specification-snapshot-title"><h2 id="specification-snapshot-title">Specifications and evidence</h2><dl class="detail-list">${specificationRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}<div><dt>Frame material</dt><dd>${escapeHtml(frameMaterialLabel(product))}</dd></div>${platform.frame.construction ? `<div><dt>Frame construction</dt><dd>${escapeHtml(platform.frame.construction)}</dd></div>` : ''}<div><dt>Stiffness evidence</dt><dd>${escapeHtml(platform.frame.stiffness_evidence ?? 'Not recorded')}</dd></div><div><dt>Cable routing</dt><dd>${escapeHtml(sentenceLabel(platform.frame.cable_routing ?? 'Not recorded'))}</dd></div><div><dt>${escapeHtml(metric.label)}</dt><dd>${escapeHtml(metric.value)}</dd></div><div><dt>Category evidence</dt><dd>${escapeHtml(metric.details.join(' ') || 'Not recorded')}</dd></div><div><dt>Internal frame storage</dt><dd>${platform.internal_storage ? 'Yes' : 'No'}</dd></div><div><dt>Mounts</dt><dd>${escapeHtml(platform.mounts?.join(', ') || 'None recorded')}</dd></div><div><dt>China purchase</dt><dd>${escapeHtml(availabilityLabel(platform.china_availability))}</dd></div></dl></section>
     <section class="model-reading" aria-labelledby="buying-context-title"><h2 id="buying-context-title">Ride and buying context</h2><p>${escapeHtml(sentenceList(variant.editorial.strengths))}</p><h3>What to verify</h3><p>${escapeHtml(sentenceList(variant.editorial.caveats))}</p></section>
     ${brandStory(brand)}
     ${videoContext(videos)}
@@ -1255,8 +1267,13 @@ function sentenceList(items = []) {
 }
 
 function publishedStoryTitle(product, weight, tireClearance) {
+  const weightDescription = weight === '—'
+    ? ''
+    : /\b(?:frame|complete bike)$/.test(weight)
+      ? weight
+      : `${weight} ${product.variant.kind === 'frameset' ? 'frame' : 'complete bike'}`;
   const details = [
-    weight !== '—' ? `${weight} ${product.variant.kind === 'frameset' ? 'frame' : 'complete bike'}` : '',
+    weightDescription,
     tireClearance.value !== '—' ? `${tireClearance.value} tire clearance` : ''
   ].filter(Boolean);
   return details.length ? `${details.join(' with ')}` : `What defines the ${product.variant.name}`;
