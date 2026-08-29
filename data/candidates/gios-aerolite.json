@@ -1,16 +1,26 @@
 {
   "id": "gios-aerolite",
-  "name": "GIOS Aerolite",
+  "name": "GIOS AERO LITE (generation and trim unresolved)",
   "model_id": "gios-aerolite",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "why_interesting": "The seller image identifies GIOS AERO LITE, and official regional sources verify a carbon AERO LITE family; the retained CNY 11,999 row does not distinguish the prior 480-580 platform from the 2026 GEN5 redesign or identify its complete-bike trim.",
+  "facts": {
+    "frame_material": "Carbon monocoque across the plausible official AERO LITE generations; exact layup and generation remain unresolved",
+    "frame_construction": "Aero road platform with generation-specific geometry and fully internal disc-brake configurations",
+    "stiffness_evidence": "No generation-safe numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact generation, selected SKU/trim, drivetrain, wheelset and complete-bike weight",
+    "Maximum tire clearance for the retained generation and meaningful stiffness evidence",
+    "Current domestic warranty route, seller authority and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "model-family-verified-generation-unresolved",
+  "source_ids": [
+    "gios-aero-lite-taiwan-2026-08-29",
+    "gios-aero-lite-apac-2026-08-29",
+    "gios-aero-lite-uci-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +31,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6877.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://en.giostw.com/aero-lite",
+  "source_note": "Official regional sources verify AERO LITE as a carbon platform, but the current APAC lineup has moved to AERO LITE GEN5 while the Taiwan page still documents the prior 480-580 platform with two Di2 trims. The retained listing is not assigned either generation's drivetrain, frame weight or fitted 25C tire.",
+  "last_reviewed": "2026-08-29"
 }

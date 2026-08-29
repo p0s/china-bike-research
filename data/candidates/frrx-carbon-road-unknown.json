@@ -1,16 +1,24 @@
 {
   "id": "frrx-carbon-road-unknown",
-  "name": "FRRX 法克斯 Carbon road bike, model unclear",
+  "name": "FRRX 法克斯 carbon road range (exact SKU unresolved)",
   "model_id": "frrx-carbon-road-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model and groupset not visible. | Same unclear platform as another FRRX listing.",
+  "why_interesting": "Current retail indexes verify FRRX / 法克斯 carbon-road products, but expose many 16- to 33-speed, cable- and hydraulic-disc, partial- and full-carbon configurations under generic titles; the two retained rows do not identify one exact SKU.",
+  "facts": {
+    "frame_material": "Carbon frame and seatpost are explicit across the current matching FRRX road range; exact fork, cockpit and wheel materials remain SKU-dependent",
+    "stiffness_evidence": "No exact-SKU numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact selected SKU/model, drivetrain, brake system and complete-bike weight",
+    "Maximum tire clearance and exact fork/cockpit/wheel materials",
+    "Meaningful stiffness evidence, attributable domestic warranty issuer, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "retail-product-family-verified-sku-unresolved",
+  "source_ids": [
+    "frrx-jd-range-2026-08-29",
+    "frrx-smzdm-brand-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -22,5 +30,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6861.png#R2, IMG_6863.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/13186163a47cd7873993.html",
+  "source_note": "The current JD index verifies FRRX / 法克斯 carbon-road products and carbon frames across a broad multi-SKU range, but it does not map either retained row to one build. No 8.6, 8.9 or 9.8 kg reference and no drivetrain option is transferred to the retained price range.",
+  "last_reviewed": "2026-08-29"
 }

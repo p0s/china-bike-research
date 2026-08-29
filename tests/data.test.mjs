@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 676);
+  assert.equal(data.researchAttempts.length, 700);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 220);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 196);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 199);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -348,7 +348,7 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   const unclearModel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-carbon-road-gravel-unknown');
   assert.equal(unclearModel.defaultVisible, false);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
-  assert.equal(genericBuild.defaultVisible, false);
+  assert.equal(genericBuild.defaultVisible, true);
   const unidentifiedBxt = catalogCandidates.find((entry) => entry.candidate.id === 'bxt-gravel-complete');
   assert.equal(unidentifiedBxt.defaultVisible, false);
 
