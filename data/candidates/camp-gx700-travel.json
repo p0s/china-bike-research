@@ -2,15 +2,28 @@
   "id": "camp-gx700-travel",
   "name": "CAMP 坎普 GX700 travel-loaded build",
   "model_id": "camp-gx700-travel",
+  "brand_id": "camp",
   "category": "gravel-touring",
   "type": "complete-bike",
-  "why_interesting": "Bikepacking bags/accessories shown; likely bundled configuration.",
+  "why_interesting": "A retained dated listing shows a GX700 with bikepacking bags, but the factory-bundle status and included accessory manifest remain unverified.",
+  "facts": {
+    "frame": "Underlying GX700 Toray T800 high-strength carbon thru-axle frame and fork",
+    "frame_material": "Underlying GX700 Toray T800 high-strength carbon frame and fork",
+    "frame_construction": "Base-family mapping only: the exact listing identifies GX700, while the current manufacturer page establishes the standard frame; it does not establish the travel bundle or exact trim"
+  },
   "missing": [
-    "Exact trim-to-existing-variant mapping",
-    "Exact groupset, wheels, and included accessories",
-    "Current checkout conditions and domestic warranty route"
+    "Whether the bags and accessories are included in a factory or seller bundle",
+    "Exact loaded-build drivetrain, wheels, tires and complete weight",
+    "Manufacturer-published maximum tire clearance and meaningful stiffness evidence",
+    "Current public checkout, returns, invoice handling and domestic warranty issuer"
   ],
-  "status": "exact-trim-unproven",
+  "status": "base-family-confirmed-bundle-unverified",
+  "existing_record_id": "camp-gx700-grx820",
+  "catalog_distinct_reason": "The dated listing may be a seller-loaded configuration of the published GX700, but the CNY 11,764 package and accessory inclusion are not established well enough to collapse it into the standard variant.",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "camp-gx700-official-2026-08-28"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +34,6 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6881.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_note": "The retained marketplace snapshot proves the dated listing identity and price only. The current official GX700 page establishes the underlying T800 frame family; no source proves the pictured bags are included, the exact travel trim, loaded weight or maximum clearance.",
+  "last_reviewed": "2026-08-29"
 }

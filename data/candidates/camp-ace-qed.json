@@ -2,15 +2,32 @@
   "id": "camp-ace-qed",
   "name": "CAMP 坎普 ACE QED electronic",
   "model_id": "camp-ace-qed",
+  "brand_id": "camp",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "A dated mainland-China listing identifies an electronic aero-road complete bike and a ¥8,999 price lead.",
+  "why_interesting": "A current official CNY 8,999 aero-road complete with Magene QED 2×12 electronic shifting and a full manufacturer BOM.",
+  "facts": {
+    "drivetrain": "Magene QED electronic 2×12 shifters, front derailleur and rear derailleur; 34/50T hollow alloy crank, Shimano 105 cassette and Shimano chain",
+    "complete_weight_g": 8700,
+    "complete_weight_basis": "Manufacturer-listed approximate weight for a small complete bike, excluding pedals and small accessories; color and size can vary",
+    "frame": "Toray T800 high-strength carbon thru-axle frame and fork",
+    "frame_material": "Toray T800 high-strength carbon frame and fork",
+    "frame_construction": "Thru-axle aero-road carbon frame; exact lay-up, molding process and bottom-bracket standard are not published",
+    "wheels": "50 mm carbon wheelset with two front and four rear hub bearings",
+    "tires": "Continental Ultra Sport 700×28C fitted; maximum clearance is not published",
+    "cockpit": "Toray T700 + T800 integrated carbon handlebar, aero carbon seatpost and SR saddle",
+    "brakes": "Magene QED integrated hydraulic disc brakes",
+    "sizes": "440, 460, 490, 520 and 540 mm"
+  },
   "missing": [
-    "Exact drivetrain brand, model, speed count, and layout",
-    "Exact frame, wheel, cockpit, and size-specific BOM",
-    "Public purchase route, checkout conditions, returns, and domestic warranty"
+    "Manufacturer-published maximum tire clearance",
+    "Independent exact-model stiffness or deflection measurement",
+    "Exact domestic warranty duration, invoice handling and final color-and-size checkout stock"
   ],
-  "status": "exact-build-unproven",
+  "status": "exact-official-specification-documented",
+  "source_ids": [
+    "camp-ace-qed-official-2026-08-08"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +37,7 @@
     "price_basis": "listed",
     "observation_count": 1
   },
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.campbicycle.com/en/road-bike/ace-qed.html",
+  "source_note": "The current exact manufacturer page publishes the Magene QED 2×12 build, approximately 8.7 kg small-size claim, fitted 28C tires, T800 frame/fork, CNY 8,999 price and official purchase route. It does not publish maximum clearance or meaningful stiffness evidence.",
+  "last_reviewed": "2026-08-29"
 }

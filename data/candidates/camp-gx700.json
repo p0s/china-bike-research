@@ -2,15 +2,36 @@
   "id": "camp-gx700",
   "name": "CAMP 坎普 GX700",
   "model_id": "camp-gx700",
+  "brand_id": "camp",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible. | Repeated price observation. | Repeated observation. | Special paint/bundled listing.",
+  "why_interesting": "Repeated mainland observations now map to the current official GX700 GRX 1×12 complete bike already published in the catalog.",
+  "facts": {
+    "drivetrain": "Shimano GRX mechanical 1×12; ST-RX820 controls, RD-RX822 rear derailleur, FC-RX610 36T crank and CS-M6100 10–51T cassette",
+    "complete_weight_g": 10200,
+    "complete_weight_basis": "Manufacturer-listed approximate weight for a small complete bike, excluding pedals and small accessories; color and size can vary",
+    "frame": "Toray T800 high-strength carbon thru-axle frame and fork",
+    "frame_material": "Toray T800 high-strength carbon frame and fork",
+    "frame_construction": "Fully internally routed thru-axle carbon gravel frame; exact lay-up, molding process and bottom-bracket standard are not published",
+    "wheels": "Aluminum wheelset with two front and four rear hub bearings",
+    "tires": "700×45C tanwall gravel tires fitted; maximum clearance is not published",
+    "cockpit": "Toray T700 + T800 integrated carbon handlebar and carbon seatpost",
+    "brakes": "Shimano GRX RX820 hydraulic disc brakes",
+    "sizes": "450, 480 and 510 mm"
+  },
   "missing": [
-    "Exact trim-to-existing-variant mapping",
-    "Exact groupset, wheels, and included accessories",
-    "Current checkout conditions and domestic warranty route"
+    "Manufacturer-published maximum tire clearance",
+    "Independent exact-model stiffness or deflection measurement",
+    "Exact domestic warranty duration, invoice handling and final color-and-size checkout stock"
   ],
-  "status": "exact-trim-unproven",
+  "status": "catalog-match-confirmed",
+  "existing_record_id": "camp-gx700-grx820",
+  "catalog_distinct_reason": "Retained candidate preserves the dated Taobao observation history; current evidence maps it to the already-published GX700 GRX 1×12 rather than a separate catalog product.",
+  "source_ids": [
+    "camp-gx700-official-2026-08-28",
+    "camp-gx700-tmall-2026-08-28",
+    "taobao-snapshot-2026-08-08"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +42,7 @@
     "observation_count": 5
   },
   "source_refs": "IMG_6871.png#R2, IMG_6878.png#R2, IMG_6887.png#L2, IMG_6894.png#R1, IMG_6898.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.campbicycle.com/en/gx700.html",
+  "source_note": "Current manufacturer and official-market records establish the standard GX700 GRX 1×12 build, approximately 10.2 kg small-size claim, 45C fitted tire and CNY 9,999 route. The fitted tire is not presented as a verified maximum.",
+  "last_reviewed": "2026-08-29"
 }
