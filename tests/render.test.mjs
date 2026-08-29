@@ -176,7 +176,7 @@ test('candidate details expose frame material and stiffness evidence without inv
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
-  const entry = candidates.find((item) => item.candidate.id === 'pardus-spark-tourist');
+  const entry = candidates.find((item) => item.candidate.id === 'carbonda-cfr707');
   const detail = renderCandidateModel({
     data,
     products,
@@ -659,7 +659,7 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(privacy, /videos do not autoplay/);
 
   const imagePolicy = renderImagePolicy(context);
-  assert.match(imagePolicy, /Selected XHS and Taobao images/);
+  assert.match(imagePolicy, /Selected XHS, Taobao, and Xianyu images/);
   assert.match(imagePolicy, /identity-safe canonical source URL/);
   assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
 });

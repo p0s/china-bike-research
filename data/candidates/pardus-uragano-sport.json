@@ -6,7 +6,6 @@
   "type": "complete-bike",
   "why_interesting": "A current domestic carbon gravel build with an official 45C limit, a complete Shimano 105 R7000 configuration and practical rack and fender mounts.",
   "missing": [
-    "Complete-bike weight for the current mainland 105 R7000 build",
     "Current public mainland price and checkout route for that exact build",
     "Domestic warranty duration and claim conditions"
   ],
@@ -15,7 +14,8 @@
     "pardus-uragano-sport-official",
     "pardus-uragano-sport-cn-official-2026-08-27",
     "pardus-company-official",
-    "compiled-research-2026-08-06"
+    "compiled-research-2026-08-06",
+    "pardus-uragano-sport-105-cycle-omania-2026-08-29"
   ],
   "observed_at": "2026-08-06",
   "observed_price": {
@@ -33,6 +33,8 @@
     "frame_construction": "Internally routed carbon gravel chassis with rack, fork and fender mounts and conventional 27.2 mm seatpost",
     "stiffness_evidence": "No measured or attributable current-generation exact-build stiffness evidence was found; ride reports for earlier Uragano generations are not transferred",
     "wheels": "PARDUS PW5 DB alloy",
+    "complete_weight_g": 9500,
+    "complete_weight_basis": "Exact matching 105 R7000 build listed at 9.5 kg in size M by a retailer; pedals, accessories, paint and weighing method are not stated",
     "cockpit": "MVMT M-BLACK AL6061 handlebar with 20-degree flare",
     "seatpost": "27.2×350 mm alloy, 15 mm offset",
     "tire_clearance_mm": 45,
@@ -40,6 +42,6 @@
     "axles": "12×100 mm front and 12×142 mm rear",
     "mounts": "Front and rear rack, fork and fender mounts"
   },
-  "source_note": "The current official Chinese page identifies a complete Uragano Sport—105 build and supplies its full drivetrain, brakes, wheels, cockpit, five sizes and 700×45C maximum. Its visible price field is blank, and it does not state complete-bike weight.",
-  "last_reviewed": "2026-08-27"
+  "source_note": "The current official Chinese page supplies the complete 105 R7000 build and 700×45C maximum. A separate exact-build retailer page matches the component package and lists 9.5 kg in size M. Current mainland checkout price and domestic warranty terms remain unresolved.",
+  "last_reviewed": "2026-08-29"
 }

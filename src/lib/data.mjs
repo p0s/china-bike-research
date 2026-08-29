@@ -5,7 +5,7 @@ import { validateResearchAttempts } from './research-attempts.mjs';
 const root = path.resolve(import.meta.dirname, '../..');
 
 export const supportedCategories = [
-  'road', 'road-race', 'road-aero', 'road-endurance', 'road-climbing',
+  'road', 'road-race', 'road-aero', 'aero-wide-clearance', 'road-endurance', 'road-climbing',
   'gravel', 'gravel-race', 'gravel-flatbar', 'gravel-touring', 'gravel-adventure', 'adventure-gravel', 'all-road',
   'mtb-xc', 'mtb-trail', 'mtb-enduro',
   'e-road', 'folding', 'triathlon'
@@ -21,6 +21,7 @@ const categoryLabels = {
   road: 'Road',
   'road-race': 'Road race',
   'road-aero': 'Aero road',
+  'aero-wide-clearance': 'Aero, wide clearance',
   'road-endurance': 'Endurance road',
   'road-climbing': 'Climbing road',
   gravel: 'Gravel',
@@ -43,6 +44,7 @@ export function categoryLabel(category) {
 }
 
 export function categoryFamily(category) {
+  if (category === 'aero-wide-clearance') return 'road';
   if (String(category).startsWith('road')) return 'road';
   if (String(category).startsWith('gravel') || ['adventure-gravel', 'all-road'].includes(category)) return 'gravel';
   if (String(category).startsWith('mtb-')) return 'mtb';
@@ -91,6 +93,17 @@ function publicSourceUrlPrivacyError(parsed) {
       || keys.length !== 1
       || keys[0] !== 'id'
       || parsed.hash) return 'Taobao URL must be the identity-safe canonical item URL with only its public item ID';
+  }
+  const isXianyu = hostname === 'goofish.com' || hostname.endsWith('.goofish.com');
+  if (isXianyu) {
+    const keys = [...parsed.searchParams.keys()];
+    if (hostname !== 'www.goofish.com'
+      || parsed.protocol !== 'https:'
+      || parsed.pathname !== '/item'
+      || !/^\d+$/.test(parsed.searchParams.get('id') ?? '')
+      || keys.length !== 1
+      || keys[0] !== 'id'
+      || parsed.hash) return 'Xianyu URL must be the identity-safe canonical item URL with only its public item ID';
   }
   return '';
 }
@@ -710,7 +723,7 @@ export function validateDataset(data = loadDataset()) {
       if (['official-page-embed', 'retailer-page-embed', 'public-post-embed', 'public-post-quotation'].includes(image.rights?.status)) errors.push(`image ${image.id}: third-party remote image cannot be stored locally`);
       if (image.rights?.status === 'source-attributed-rehost') {
         const variants = image.hosting?.variants;
-        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
+        const localPattern = /^\/assets\/images\/sourced\/(xhs|taobao|xianyu)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(card|detail)-w\d+\.webp$/;
         if (!Array.isArray(variants) || variants.length !== 2) {
           errors.push(`image ${image.id}: sourced rehost needs card and detail variants`);
         } else {
@@ -739,6 +752,8 @@ export function validateDataset(data = loadDataset()) {
             ? /^https:\/\/www\.xiaohongshu\.com\/explore\/[a-f0-9]{24}$/.test(sourceUrl)
             : channel === 'taobao'
               ? /^https:\/\/(?:item\.taobao\.com|detail\.tmall\.com)\/item\.htm\?id=\d+$/.test(sourceUrl)
+              : channel === 'xianyu'
+                ? /^https:\/\/www\.goofish\.com\/item\?id=\d+$/.test(sourceUrl)
               : false;
           if (!sourceMatches) errors.push(`image ${image.id}: sourced rehost needs a matching identity-safe public source`);
         }
