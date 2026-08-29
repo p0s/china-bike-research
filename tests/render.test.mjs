@@ -25,6 +25,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /Full-bike price/);
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
+  assert.match(html, /Select two to ten bikes to compare/);
   assert.match(html, /type="application\/ld\+json">[\s\S]*"@type":"WebSite"/);
   assert.doesNotMatch(html, /"itemListElement"/);
 });
@@ -540,7 +541,7 @@ test('buyer controls preserve strict budget, category evidence, and valid row se
 
 test('brand names expose an exact, base-safe catalog filter', () => {
   assert.match(html, /data-brand="twitter"/);
-  assert.match(html, /data-brand-filter="twitter" aria-pressed="false" aria-label="Twitter · 推特 — filter catalog to this brand"/);
+  assert.match(html, /data-brand-filter="twitter" aria-pressed="false" aria-label="Twitter · 骓特 — filter catalog to this brand"/);
   assert.match(html, /data-result-context/);
   assert.match(html, /class="product-image-link" href="\/china-bike-research\/models\/twitter-v3-wheeltop-eds\/" data-model-link aria-label="View Twitter Gravel V3 WheelTop EDS 2×12 details"/);
   assert.match(html, /select name="category" data-filter-category/);
@@ -557,7 +558,7 @@ test('brand names expose an exact, base-safe catalog filter', () => {
     now: new Date('2026-08-07T00:00:00Z')
   }, product);
   assert.match(detail, /href="\/china-bike-research\/?\?brand=twitter#catalog"/);
-  assert.match(detail, /aria-label="Twitter · 推特 — show this brand in the catalog"/);
+  assert.match(detail, /aria-label="Twitter · 骓特 — show this brand in the catalog"/);
   assert.match(detail, /data-catalog-back/);
   assert.match(detail, /data-add-to-comparison/);
   assert.match(detail, /data-model-compare-link/);
@@ -576,7 +577,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   const detail = renderModel(context, product);
   assert.match(detail, /<nav class="breadcrumbs" aria-label="Breadcrumb">[\s\S]*Complete bikes[\s\S]*aria-current="page"/);
   assert.match(detail, /data-catalog-back/);
-  assert.match(detail, /Evidence reviewed through <time datetime="2026-08-28">/);
+  assert.match(detail, /Evidence reviewed through <time datetime="2026-08-29">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
   assert.match(detail, /<details class="detail-panel" id="source-records">/);
 });
