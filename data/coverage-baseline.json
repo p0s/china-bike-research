@@ -7,7 +7,7 @@
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 557,
+      "sources": 562,
       "images": 196,
       "videos": 12,
       "groupsets": 11,
@@ -248,6 +248,7 @@
       "carbonda-cfr707-official-2026-08-17",
       "cervelo-aspero5-official-2026-08-29",
       "cervelo-aspero5-omara-image-2026-08-29",
+      "cervelo-china-brand-name-2026-08-29",
       "colnago-china-storefront-2026-08-09",
       "colnago-y1rs-official-2026-08-08",
       "compiled-research-2026-08-06",
@@ -301,6 +302,7 @@
       "ican-graro-official-2026-08-27",
       "ican-sn04-official-2026-08-08",
       "icanian-p9-official-2026-08-08",
+      "incolor-brand-name-official-2026-08-29",
       "incolor-services-official-2026-08-17",
       "incolor-services-official-2026-08-26",
       "incolor-ssr-panda-podium-2026-08-17",
@@ -322,6 +324,7 @@
       "laget-pioneer-one-tiparts-2026-08-17",
       "legit-ac1-official-2026-08-09",
       "lightcarbon-about-official-2026-08-29",
+      "lightcarbon-chinese-catalog-official-2026-08-29",
       "lightcarbon-company-official",
       "lightcarbon-image-reference",
       "lightcarbon-lcg071-pro-official-2026-08-29",
@@ -409,6 +412,7 @@
       "pardus-uragano-sport-105-cycle-omania-2026-08-29",
       "pardus-uragano-sport-cn-official-2026-08-27",
       "pardus-uragano-sport-official",
+      "pinarello-china-brand-name-2026-08-29",
       "pinarello-f5-official-2026-08-08",
       "pirelli-cinturato-velo-35-retailer-2026-08-27",
       "pro-stealth-sport-official-2026-08-27",
@@ -565,6 +569,7 @@
       "scott-addict-40-taobao-2026-08-29",
       "scott-addict-rc-40-poland-2026-08-17",
       "scott-addict-rc-40-retailer-2026-08-08",
+      "scott-china-brand-name-2026-08-29",
       "scott-foil-rc-10-official-2026-08-17",
       "seka-exaero-gr-cyclingchina-2026",
       "seka-exaero-gr-cyclingweekly-review-2026-08-17",
@@ -1927,6 +1932,7 @@
         "manufacturing.relationship",
         "manufacturing.summary",
         "name",
+        "name_zh",
         "source_ids",
         "website"
       ],
@@ -2020,6 +2026,7 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "source_ids",
         "website"
       ],
       "irefox": [
@@ -2104,7 +2111,9 @@
         "manufacturing.confidence",
         "manufacturing.relationship",
         "manufacturing.summary",
-        "name"
+        "name",
+        "name_zh",
+        "source_ids"
       ],
       "quick": [
         "china_support.domestic_purchase",
@@ -2150,7 +2159,9 @@
         "manufacturing.confidence",
         "manufacturing.relationship",
         "manufacturing.summary",
-        "name"
+        "name",
+        "name_zh",
+        "source_ids"
       ],
       "seka": [
         "china_support.domestic_purchase",
@@ -5390,6 +5401,18 @@
         "type",
         "url"
       ],
+      "cervelo-china-brand-name-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "colnago-china-storefront-2026-08-09": [
         "accessed_at",
         "language",
@@ -6039,6 +6062,18 @@
         "type",
         "url"
       ],
+      "incolor-brand-name-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "incolor-services-official-2026-08-17": [
         "accessed_at",
         "language",
@@ -6288,6 +6323,18 @@
         "url"
       ],
       "lightcarbon-about-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-chinese-catalog-official-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -7350,6 +7397,18 @@
         "url"
       ],
       "pardus-uragano-sport-official": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "pinarello-china-brand-name-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -9213,6 +9272,18 @@
         "url"
       ],
       "scott-addict-rc-40-retailer-2026-08-08": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "scott-china-brand-name-2026-08-29": [
         "accessed_at",
         "language",
         "notes",
@@ -29689,7 +29760,8 @@
       "camp": [],
       "carbonda": [],
       "cervelo": [
-        "source_ids=cervelo-aspero5-official-2026-08-29"
+        "source_ids=cervelo-aspero5-official-2026-08-29",
+        "source_ids=cervelo-china-brand-name-2026-08-29"
       ],
       "colnago": [],
       "elves": [
@@ -29700,22 +29772,29 @@
       "huanyu": [],
       "ican": [],
       "icanian": [],
-      "incolor": [],
+      "incolor": [
+        "source_ids=incolor-brand-name-official-2026-08-29"
+      ],
       "irefox": [],
       "java": [],
       "legit": [],
       "lightcarbon": [
-        "source_ids=lightcarbon-about-official-2026-08-29"
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-chinese-catalog-official-2026-08-29"
       ],
       "longteng": [
         "source_ids=longteng-ltk266-d-sl-official-2026-08-29"
       ],
       "pardus": [],
-      "pinarello": [],
+      "pinarello": [
+        "source_ids=pinarello-china-brand-name-2026-08-29"
+      ],
       "quick": [],
       "rinasclta": [],
       "sava": [],
-      "scott": [],
+      "scott": [
+        "source_ids=scott-china-brand-name-2026-08-29"
+      ],
       "seka": [
         "source_ids=seka-warranty-official-2026-08-27"
       ],
@@ -30520,6 +30599,7 @@
       "carbonda-cfr707-official-2026-08-17": [],
       "cervelo-aspero5-official-2026-08-29": [],
       "cervelo-aspero5-omara-image-2026-08-29": [],
+      "cervelo-china-brand-name-2026-08-29": [],
       "colnago-china-storefront-2026-08-09": [],
       "colnago-y1rs-official-2026-08-08": [],
       "compiled-research-2026-08-06": [],
@@ -30573,6 +30653,7 @@
       "ican-graro-official-2026-08-27": [],
       "ican-sn04-official-2026-08-08": [],
       "icanian-p9-official-2026-08-08": [],
+      "incolor-brand-name-official-2026-08-29": [],
       "incolor-services-official-2026-08-17": [],
       "incolor-services-official-2026-08-26": [],
       "incolor-ssr-panda-podium-2026-08-17": [],
@@ -30594,6 +30675,7 @@
       "laget-pioneer-one-tiparts-2026-08-17": [],
       "legit-ac1-official-2026-08-09": [],
       "lightcarbon-about-official-2026-08-29": [],
+      "lightcarbon-chinese-catalog-official-2026-08-29": [],
       "lightcarbon-company-official": [],
       "lightcarbon-image-reference": [],
       "lightcarbon-lcg071-pro-official-2026-08-29": [],
@@ -30681,6 +30763,7 @@
       "pardus-uragano-sport-105-cycle-omania-2026-08-29": [],
       "pardus-uragano-sport-cn-official-2026-08-27": [],
       "pardus-uragano-sport-official": [],
+      "pinarello-china-brand-name-2026-08-29": [],
       "pinarello-f5-official-2026-08-08": [],
       "pirelli-cinturato-velo-35-retailer-2026-08-27": [],
       "pro-stealth-sport-official-2026-08-27": [],
@@ -30837,6 +30920,7 @@
       "scott-addict-40-taobao-2026-08-29": [],
       "scott-addict-rc-40-poland-2026-08-17": [],
       "scott-addict-rc-40-retailer-2026-08-08": [],
+      "scott-china-brand-name-2026-08-29": [],
       "scott-foil-rc-10-official-2026-08-17": [],
       "seka-exaero-gr-cyclingchina-2026": [],
       "seka-exaero-gr-cyclingweekly-review-2026-08-17": [],
@@ -35464,6 +35548,14 @@
         "specification": 2
       }
     },
+    "cervelo-china-brand-name-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "colnago-china-storefront-2026-08-09": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -35901,6 +35993,14 @@
         "specification": 3
       }
     },
+    "incolor-brand-name-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "incolor-services-official-2026-08-17": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -36070,6 +36170,14 @@
         "identity": 3,
         "price": -1,
         "specification": 1
+      }
+    },
+    "lightcarbon-chinese-catalog-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
       }
     },
     "lightcarbon-company-official": {
@@ -36778,6 +36886,14 @@
         "identity": 3,
         "price": 0,
         "specification": 3
+      }
+    },
+    "pinarello-china-brand-name-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
       }
     },
     "pinarello-f5-official-2026-08-08": {
@@ -38004,6 +38120,14 @@
         "identity": 3,
         "price": 1,
         "specification": 2
+      }
+    },
+    "scott-china-brand-name-2026-08-29": {
+      "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 2,
+        "price": -1,
+        "specification": -1
       }
     },
     "scott-foil-rc-10-official-2026-08-17": {

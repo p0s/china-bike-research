@@ -20,6 +20,26 @@ test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
 
+test('verified Chinese brand renderings remain source-faithful', () => {
+  const names = Object.fromEntries(data.brands.map((brand) => [brand.id, brand.name_zh]));
+  assert.deepEqual(
+    {
+      cervelo: names.cervelo,
+      incolor: names.incolor,
+      lightcarbon: names.lightcarbon,
+      pinarello: names.pinarello,
+      scott: names.scott
+    },
+    {
+      cervelo: '赛沃洛',
+      incolor: '英凯路',
+      lightcarbon: '轻碳',
+      pinarello: '皮纳瑞罗',
+      scott: '斯科特'
+    }
+  );
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
