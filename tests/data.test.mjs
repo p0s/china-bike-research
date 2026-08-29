@@ -123,7 +123,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
   assert.ok(data.sources.length >= 304);
-  assert.equal(data.candidates.length, 227);
+  assert.equal(data.candidates.length, 232);
   assert.equal(data.exclusions.length, 14);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 549);
@@ -270,8 +270,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 216);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 190);
+  assert.equal(catalogCandidates.length, 221);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 195);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -383,6 +383,32 @@ test('candidate catalog keeps the focused view useful without losing discovery',
     brandLabels.set(entry.brand.id, labels);
   }
   assert.ok([...brandLabels.values()].every((labels) => labels.size === 1));
+});
+
+test('LightCarbon gravel cards preserve exact current item identities and package differences', () => {
+  const expected = [
+    ['lightcarbon-lcg071-pro', 'lightcarbon-lcg071-pro-official-2026-08-29', 1140, 50],
+    ['lightcarbon-lcg074-d', 'lightcarbon-lcg074-d-official-2026-08-29', 1230, 50],
+    ['lightcarbon-lcg074s-d', 'lightcarbon-lcg074s-d-official-2026-08-29', 1230, 50],
+    ['lightcarbon-lcg087-d', 'lightcarbon-lcg087-d-official-2026-08-29', 1480, 47],
+    ['lightcarbon-lcg087s-d', 'lightcarbon-lcg087s-d-official-2026-08-29', 1480, 47]
+  ];
+
+  for (const [candidateId, sourceId, weight, clearance] of expected) {
+    const candidate = data.candidates.find((item) => item.id === candidateId);
+    assert.ok(candidate);
+    assert.equal(candidate.facts.frame_weight_g, weight);
+    assert.equal(candidate.facts.tire_clearance_mm, clearance);
+    assert.ok(candidate.source_ids.includes(sourceId));
+    assert.ok(data.sources.some((source) => source.id === sourceId));
+  }
+
+  const existing = data.platforms.find((item) => item.id === 'lightcarbon-lcg071s-pro');
+  assert.ok(existing);
+  assert.equal(data.platforms.filter((item) => item.id === existing.id).length, 1);
+  assert.ok(existing.source_ids.includes('lightcarbon-lcg071s-official-2026-08-16'));
+  assert.equal(data.sources.find((source) => source.id === 'lightcarbon-lcg071s-official-2026-08-16').url, 'https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html');
+  assert.equal(data.candidates.some((item) => item.id === 'lightcarbon-lcg073-d' || item.id === 'lightcarbon-lcg073s-d'), false);
 });
 
 test('LightCarbon road-frame tranche preserves exact current and legacy model boundaries', () => {
