@@ -1,15 +1,27 @@
 {
   "id": "falco-t91-t912",
-  "name": "FALCO / 寰宇单车 FALCO T91/T912 triathlon build",
+  "name": "FALCO 三火 T912 / 寰宇单车 multi-configuration lead",
   "model_id": "falco-t91-t912",
   "category": "triathlon",
   "type": "complete-bike",
-  "why_interesting": "Image says FALCO/T912; visible title is truncated. | High-end build; exact T91/T912 designation unclear.",
+  "brand_id": "falco",
+  "why_interesting": "Official, mainland and public brand-account evidence consistently identifies T912 / 三火, removing the earlier T91 ambiguity; the retained price range spans frameset, mechanical, mixed and electronic builds.",
+  "facts": {
+    "frame_material": "Carbon-fiber T912 frameset; exact grade is not consistently established across primary and mainland sources",
+    "frame_construction": "Triathlon/time-trial platform with six sizes, integrated hydration/storage options and disc-brake complete-build configurations",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact selected configuration/SKU, drivetrain, wheelset and complete weight",
+    "Maximum tire clearance and consistently attributable carbon grade",
+    "Meaningful stiffness evidence, exact domestic warranty issuer, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-platform-multi-configuration-documented",
+  "source_ids": [
+    "falco-t912-official-2026-08-29",
+    "falco-t912-jd-2026-08-29",
+    "falco-t912-retailer-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +33,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6857.png#L1, IMG_6875.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.falcospeed.com/Falco-T912-Triathlon-bikes-p6710798.html",
+  "source_note": "Exact sources consistently use FALCO / 三火 T912. Current mainland indexes expose frameset, mechanical, mixed 105/BluePrint, R7170, R8170 and Dura-Ace-labeled choices, so no single drivetrain or 10.5 kg reference is assigned to the retained CNY 9,860–32,080 range.",
+  "last_reviewed": "2026-08-29"
 }

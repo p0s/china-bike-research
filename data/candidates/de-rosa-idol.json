@@ -4,12 +4,23 @@
   "model_id": "de-rosa-idol",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Seller is not official flagship; verify authenticity and exact build.",
+  "brand_id": "de-rosa",
+  "why_interesting": "Official sources verify Idol, but the seller is not an official flagship and the CNY 13,880 snapshot does not identify the redesigned 2025 generation, an older generation, or a unique complete-build trim.",
+  "facts": {
+    "frame_material": "Carbon frame; exact fiber recipe is generation-specific and unresolved for this listing",
+    "stiffness_evidence": "No generation-safe numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year/generation, complete-build trim and BOM",
+    "Complete weight, maximum tire clearance and frame grade for the selected generation",
+    "Meaningful generation-safe stiffness evidence, exact domestic warranty route, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "model-family-verified-generation-unresolved",
+  "source_ids": [
+    "derosa-idol-official-2026-08-29",
+    "derosa-idol-japan-2026-08-29",
+    "derosa-idol-archived-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +31,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6880.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://derosa.it/model/idol/",
+  "source_note": "Current and archived exact-model sources establish DE ROSA / 德罗萨 Idol and carbon construction, but they also document materially different generations and multiple complete-bike configurations. Current-generation weight, drivetrain and 34C-clearance facts are not transferred to the unresolved marketplace snapshot.",
+  "last_reviewed": "2026-08-29"
 }
