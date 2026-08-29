@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "catalog_metrics": {
     "records": {
       "brands": 39,
       "platforms": 36,
       "variants": 38,
       "prices": 50,
-      "sources": 532,
+      "sources": 543,
       "images": 196,
       "videos": 12,
       "groupsets": 11,
       "buildParts": 10,
       "recommendations": 6,
-      "candidates": 209,
+      "candidates": 218,
       "exclusions": 14,
       "research": 1,
       "researchAttempts": 549
@@ -321,13 +321,24 @@
       "laget-discovery-slr-tiparts-2026-08-27",
       "laget-pioneer-one-tiparts-2026-08-17",
       "legit-ac1-official-2026-08-09",
+      "lightcarbon-about-official-2026-08-29",
       "lightcarbon-company-official",
       "lightcarbon-image-reference",
       "lightcarbon-lcg071s-official",
       "lightcarbon-lcg071s-official-2026-08-16",
       "lightcarbon-lcg071s-order-options-2026-08-27",
+      "lightcarbon-lcr014-v-official-2026-08-29",
+      "lightcarbon-lcr015-d-official-2026-08-29",
+      "lightcarbon-lcr015-v-official-2026-08-29",
+      "lightcarbon-lcr015s-d-official-2026-08-29",
+      "lightcarbon-lcr017-d-official-2026-08-29",
+      "lightcarbon-lcr017s-d-official-2026-08-29",
       "lightcarbon-lcr018-d-official-2026-08-29",
       "lightcarbon-lcr018-d-xianyu-2026-08-29",
+      "lightcarbon-lcr0x-d-official-2026-08-29",
+      "lightcarbon-lcr0x-v-official-2026-08-29",
+      "lightcarbon-road-catalog-2026-2027",
+      "lightcarbon-road-frames-category-2026-08-29",
       "longteng-ltk266-d-sl-official-2026-08-29",
       "look-765-optimum-105-di2-official-2026-08-17",
       "ltwoo-disc-brake-fluid-official-2026-08-24",
@@ -1072,7 +1083,16 @@
       "legit-ac1",
       "leinax-leina-road",
       "leinax-youlong-2",
+      "lightcarbon-lcr014-v",
+      "lightcarbon-lcr015-d",
+      "lightcarbon-lcr015-v",
+      "lightcarbon-lcr015s-d",
+      "lightcarbon-lcr017-d",
+      "lightcarbon-lcr017s-d",
       "lightcarbon-lcr018-d",
+      "lightcarbon-lcr020-d",
+      "lightcarbon-lcr0x-d",
+      "lightcarbon-lcr0x-v",
       "lightcarbon-speed7-complete",
       "lightcarbon-speed7-frameset",
       "longteng-ltk266-d-sl",
@@ -2017,6 +2037,10 @@
         "manufacturing.summary",
         "name",
         "name_zh",
+        "profile.founded_year",
+        "profile.location",
+        "profile.summary",
+        "source_ids",
         "website"
       ],
       "longteng": [
@@ -6235,6 +6259,18 @@
         "type",
         "url"
       ],
+      "lightcarbon-about-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "lightcarbon-company-official": [
         "accessed_at",
         "language",
@@ -6295,6 +6331,78 @@
         "type",
         "url"
       ],
+      "lightcarbon-lcr014-v-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr015-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr015-v-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr015s-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr017-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr017s-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
       "lightcarbon-lcr018-d-official-2026-08-29": [
         "accessed_at",
         "language",
@@ -6311,6 +6419,54 @@
         "accessed_at",
         "language",
         "listing_id",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr0x-d-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-lcr0x-v-official-2026-08-29": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-road-catalog-2026-2027": [
+        "accessed_at",
+        "language",
+        "notes",
+        "publisher",
+        "reliability.identity",
+        "reliability.price",
+        "reliability.specification",
+        "title",
+        "type",
+        "url"
+      ],
+      "lightcarbon-road-frames-category-2026-08-29": [
+        "accessed_at",
+        "language",
         "notes",
         "publisher",
         "reliability.identity",
@@ -17330,6 +17486,170 @@
         "type",
         "why_interesting"
       ],
+      "lightcarbon-lcr014-v": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr015-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr015-v": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr015s-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr017-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.hanger",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr017s-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_construction",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.hanger",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
       "lightcarbon-lcr018-d": [
         "alternative_builds",
         "category",
@@ -17360,6 +17680,83 @@
         "observed_price.price_type",
         "price_status",
         "reference_price_kind",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr020-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.hanger",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr0x-d": [
+        "category",
+        "facts.axles",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "facts.warranty",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
+        "research_priority",
+        "source_ids",
+        "source_note",
+        "status",
+        "type",
+        "why_interesting"
+      ],
+      "lightcarbon-lcr0x-v": [
+        "category",
+        "facts.bottom_bracket",
+        "facts.brakes",
+        "facts.cockpit",
+        "facts.frame",
+        "facts.frame_material",
+        "facts.frame_weight_basis",
+        "facts.frame_weight_g",
+        "facts.geometry",
+        "facts.sizes",
+        "facts.stiffness_evidence",
+        "facts.tire_clearance_basis",
+        "facts.tire_clearance_mm",
+        "last_reviewed",
+        "model_id",
+        "name",
+        "price_status",
         "research_priority",
         "source_ids",
         "source_note",
@@ -28714,7 +29111,9 @@
       "irefox": [],
       "java": [],
       "legit": [],
-      "lightcarbon": [],
+      "lightcarbon": [
+        "source_ids=lightcarbon-about-official-2026-08-29"
+      ],
       "longteng": [
         "source_ids=longteng-ltk266-d-sl-official-2026-08-29"
       ],
@@ -29601,13 +30000,24 @@
       "laget-discovery-slr-tiparts-2026-08-27": [],
       "laget-pioneer-one-tiparts-2026-08-17": [],
       "legit-ac1-official-2026-08-09": [],
+      "lightcarbon-about-official-2026-08-29": [],
       "lightcarbon-company-official": [],
       "lightcarbon-image-reference": [],
       "lightcarbon-lcg071s-official": [],
       "lightcarbon-lcg071s-official-2026-08-16": [],
       "lightcarbon-lcg071s-order-options-2026-08-27": [],
+      "lightcarbon-lcr014-v-official-2026-08-29": [],
+      "lightcarbon-lcr015-d-official-2026-08-29": [],
+      "lightcarbon-lcr015-v-official-2026-08-29": [],
+      "lightcarbon-lcr015s-d-official-2026-08-29": [],
+      "lightcarbon-lcr017-d-official-2026-08-29": [],
+      "lightcarbon-lcr017s-d-official-2026-08-29": [],
       "lightcarbon-lcr018-d-official-2026-08-29": [],
       "lightcarbon-lcr018-d-xianyu-2026-08-29": [],
+      "lightcarbon-lcr0x-d-official-2026-08-29": [],
+      "lightcarbon-lcr0x-v-official-2026-08-29": [],
+      "lightcarbon-road-catalog-2026-2027": [],
+      "lightcarbon-road-frames-category-2026-08-29": [],
       "longteng-ltk266-d-sl-official-2026-08-29": [],
       "look-765-optimum-105-di2-official-2026-08-17": [],
       "ltwoo-disc-brake-fluid-official-2026-08-24": [],
@@ -31449,12 +31859,67 @@
         "model_id=leinax-youlong-2",
         "source_snapshot_id=taobao-snapshot-2026-08-08"
       ],
+      "lightcarbon-lcr014-v": [
+        "model_id=lightcarbon-lcr014-v",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr014-v-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr015-d": [
+        "model_id=lightcarbon-lcr015-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr015-d-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr015-v": [
+        "model_id=lightcarbon-lcr015-v",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr015-v-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr015s-d": [
+        "model_id=lightcarbon-lcr015s-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr015s-d-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr017-d": [
+        "model_id=lightcarbon-lcr017-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr017-d-official-2026-08-29",
+        "source_ids=lightcarbon-road-catalog-2026-2027",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr017s-d": [
+        "model_id=lightcarbon-lcr017s-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr017s-d-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
       "lightcarbon-lcr018-d": [
         "model_id=lightcarbon-lcr018-d",
         "source_ids=cyclistshub-lcr018-d-owner-2026-08-29",
         "source_ids=lightcarbon-lcr018-d-official-2026-08-29",
         "source_ids=lightcarbon-lcr018-d-xianyu-2026-08-29",
         "source_ids=usd-cny-central-parity-2026-07-31"
+      ],
+      "lightcarbon-lcr020-d": [
+        "model_id=lightcarbon-lcr020-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-road-catalog-2026-2027",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr0x-d": [
+        "model_id=lightcarbon-lcr0x-d",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr0x-d-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
+      ],
+      "lightcarbon-lcr0x-v": [
+        "model_id=lightcarbon-lcr0x-v",
+        "source_ids=lightcarbon-about-official-2026-08-29",
+        "source_ids=lightcarbon-lcr0x-v-official-2026-08-29",
+        "source_ids=lightcarbon-road-frames-category-2026-08-29"
       ],
       "lightcarbon-speed7-complete": [
         "model_id=lightcarbon-speed7",
@@ -34908,6 +35373,14 @@
         "specification": 3
       }
     },
+    "lightcarbon-about-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
     "lightcarbon-company-official": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -34948,6 +35421,54 @@
         "specification": 3
       }
     },
+    "lightcarbon-lcr014-v-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr015-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr015-v-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr015s-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr017-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr017s-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
     "lightcarbon-lcr018-d-official-2026-08-29": {
       "minimum_type_tier": 3,
       "minimum_reliability": {
@@ -34958,6 +35479,38 @@
     },
     "lightcarbon-lcr018-d-xianyu-2026-08-29": {
       "minimum_type_tier": 1,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 1
+      }
+    },
+    "lightcarbon-lcr0x-d-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-lcr0x-v-official-2026-08-29": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-road-catalog-2026-2027": {
+      "minimum_type_tier": 3,
+      "minimum_reliability": {
+        "identity": 3,
+        "price": -1,
+        "specification": 3
+      }
+    },
+    "lightcarbon-road-frames-category-2026-08-29": {
+      "minimum_type_tier": 3,
       "minimum_reliability": {
         "identity": 3,
         "price": -1,
