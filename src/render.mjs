@@ -879,7 +879,10 @@ function candidateComparisonSummary(ctx, entry) {
     ? candidatePublicText(entry.candidate.availability_note)
     : estimated
     ? `Frameset price: ${formatPrice(entry.price)}. Estimated complete adds ${formatCny(assumption.amount_cny)} for the selected ${assumption.label}.`
-    : entry.candidate.source_note ?? '';
+    : [
+        entry.price?.price_basis ? `Recorded basis: ${entry.price.price_basis}.` : '',
+        entry.price?.conditions ?? ''
+      ].filter(Boolean).join(' ');
   const frame = facts.frame ?? entry.candidate.manufacturing;
   return {
     id: entry.id,
