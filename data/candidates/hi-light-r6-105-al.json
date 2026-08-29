@@ -2,26 +2,45 @@
   "id": "hi-light-r6-105-al",
   "name": "Hi-Light 航轮 R6 105 AL",
   "model_id": "hi-light-r6-105-al",
+  "brand_id": "hi-light",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Unusually low-priced complete titanium road bike and an important value benchmark.",
+  "why_interesting": "An unusually low official-price titanium complete-bike lead whose exact China drivetrain and complete weight remain unpublished.",
+  "facts": {
+    "frame": "Hi-Light R6 3Al–2.5V titanium frame with carbon fork",
+    "frame_material": "3Al–2.5V titanium frame with carbon fork",
+    "frame_construction": "Conventional non-hydroformed titanium tubes; internal cable routing with the housing exposed below the bottom bracket on the current regional specification",
+    "stiffness_evidence": "The official regional distributor differentiates R6 by its simpler conventional-tube construction. No independent exact-model stiffness or deflection measurement was found across the 50-area sweep; this is qualitative construction context, not a measured result.",
+    "bottom_bracket": "BSA threaded",
+    "frame_weight_g": 1500,
+    "frame_weight_basis": "Official Japanese distributor approximate frame weight for size L; package contents and measurement method are not stated",
+    "tire_clearance_mm": 35,
+    "tire_clearance_basis": "Manufacturer maximum: ETRTO 35-622 / 700×35C on the exact R6 frame",
+    "sizes": "S, M, L, XL and XXL; custom sizing offered"
+  },
+  "reference_price_kind": "official",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Exact China R6 105 AL drivetrain and complete component package",
+    "Complete-bike weight with size, pedals and measurement method",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland checkout observation, domestic warranty issuer and invoice handling",
     "Rights-cleared exact product image"
   ],
-  "status": "titanium-priority",
+  "status": "exact-frame-evidence-documented",
   "source_ids": [
-    "titanium-hi-light-r6-105-al-official"
+    "titanium-hi-light-r6-105-al-official",
+    "hi-light-r6-frameset-official-2026-08-29",
+    "hi-light-r6-japan-distributor-2026-08-29"
   ],
   "official_price": {
     "amount_cny": 8300,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-08-29",
+    "price_basis": "Manufacturer-listed retail price for the exact R6 105 AL complete-bike record; no current mainland checkout was observed"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/165.html",
-  "source_note": "Official page lists retail price ¥8,300.",
+  "source_note": "The exact official China page lists CNY 8,300. Exact frame and current regional distributor pages establish R6 construction, interfaces, frame weight basis and clearance; they do not establish the China complete-build drivetrain or complete weight.",
   "manufacturing": "titanium complete bike",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-29"
 }

@@ -1,0 +1,440 @@
+{
+  "id": "hi-light-r9-force-pr1600-50-area-sweep-2026-08-29",
+  "searched_at": "2026-08-29",
+  "target": {
+    "brand_id": "hi-light",
+    "candidate_ids": [
+      "hi-light-r9-force-pr1600"
+    ],
+    "displayed_identity": "Hi-Light 航轮 R9 FORCE PR1600"
+  },
+  "method": "Fifty genuinely distinct registered source areas were checked once at exact-model level, then each atomic field received a field-specific acceptance or rejection application. Public XHS was limited to search-engine indexes under shared-runtime coordination; no new XHS job, browser-profile bypass, login, CAPTCHA or security-verification action was attempted.",
+  "identity_result": "corroborated-current-model",
+  "identity_note": "The exact official China complete-bike page and exact R9 frameset page establish model identity. Retailer and owner-selected builds were kept separate from Hi-Light 航轮 R9 FORCE PR1600.",
+  "fields_checked": [
+    "candidate:hi-light-r9-force-pr1600:complete-weight",
+    "candidate:hi-light-r9-force-pr1600:drivetrain",
+    "candidate:hi-light-r9-force-pr1600:tire-clearance",
+    "candidate:hi-light-r9-force-pr1600:frame-material",
+    "candidate:hi-light-r9-force-pr1600:price",
+    "candidate:hi-light-r9-force-pr1600:frame-stiffness"
+  ],
+  "areas": [
+    {
+      "approach_area_id": "manufacturer-exact-product",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com/BICYCLES_detail_1 \"Hi-Light 航轮 R9 FORCE PR1600\"",
+      "route": "Exact official China complete-bike page",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
+      "note": "The exact official page publishes the full Force PR1600 component table, 8.3 kg complete weight and CNY 22,900 retail."
+    },
+    {
+      "approach_area_id": "manufacturer-model-family",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com/BICYCLES_detail_1 R9 titanium frame",
+      "route": "Exact official frameset page",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/110.html",
+      "note": "The exact R9 frameset page publishes titanium construction, hydroformed and butted tubes, BB86.5, 27.2 mm seatpost, 12 mm thru-axles, 700×28C maximum and 1,730 g frame weight."
+    },
+    {
+      "approach_area_id": "manufacturer-current-catalog",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com/BICYCLES.html R9",
+      "route": "Hi-Light current bicycle catalog",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES.html",
+      "note": "The current manufacturer catalog indexes the exact R9 Force PR1600 as a distinct complete bike."
+    },
+    {
+      "approach_area_id": "manufacturer-archived-catalog",
+      "channel": "web",
+      "query": "Hi-Light 航轮 R9 FORCE PR1600 archived catalog PDF",
+      "route": "Manufacturer archive search",
+      "outcome": "no-result",
+      "note": "No dated manufacturer archive with a more complete exact-build specification was publicly indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-product-manual",
+      "channel": "web",
+      "query": "site:tibicycle.com filetype:pdf R9 manual",
+      "route": "Exact-model manual search",
+      "outcome": "no-result",
+      "note": "No public exact-model assembly, service or owner manual was indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-geometry-document",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com R9 geometry BB tire",
+      "route": "Geometry and interface table on exact frameset page",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/110.html",
+      "note": "The exact frameset page publishes its size range, interfaces and maximum tire size; this check did not establish unknown complete-bike configuration details."
+    },
+    {
+      "approach_area_id": "manufacturer-technical-whitepaper",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com R9 hydroformed stiffness",
+      "route": "Manufacturer production and stiffness-claim search",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/Production.html",
+      "note": "The production page says hydroformed titanium tubes improve overall and local stiffness; the exact R9 page confirms use of hydroformed tubes, but no test protocol or numeric result is published."
+    },
+    {
+      "approach_area_id": "manufacturer-support-warranty",
+      "channel": "web",
+      "query": "site:tibicycle.com warranty R9 China",
+      "route": "Manufacturer support and warranty search",
+      "outcome": "no-result",
+      "note": "No public exact-model domestic warranty issuer, invoice process or service route was found."
+    },
+    {
+      "approach_area_id": "manufacturer-newsroom-launch",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com R9",
+      "route": "Manufacturer and regional newsroom search",
+      "outcome": "no-result",
+      "note": "No exact R9 Force PR1600 launch article with additional measured evidence was indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-site-search",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com \"Hi-Light 航轮 R9 FORCE PR1600\"",
+      "route": "Manufacturer domain exact-model search",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
+      "note": "The official domain search resolves the exact complete-bike record and its product identity."
+    },
+    {
+      "approach_area_id": "manufacturer-sitemap",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com/BICYCLES_detail_1 168 110",
+      "route": "Manufacturer catalog index search",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES.html",
+      "note": "The public catalog index links the exact complete-bike and frameset records; no separate sitemap supplied additional evidence."
+    },
+    {
+      "approach_area_id": "manufacturer-structured-data",
+      "channel": "web",
+      "query": "site:cn.tibicycle.com/BICYCLES_detail_1/168 8.3KG 22900",
+      "route": "Official product metadata and indexed specification snippets",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
+      "note": "Indexed official metadata exposes the exact name, component table, weight and retail price."
+    },
+    {
+      "approach_area_id": "manufacturer-regional-site",
+      "channel": "web",
+      "query": "site:tibicycle.com R9 titanium road disc frame",
+      "route": "Hi-Light English exact R9 frameset page",
+      "outcome": "found",
+      "result_url": "https://www.tibicycle.com/BICYCLES_detail/48.html",
+      "note": "The manufacturer English page corroborates the exact R9 frameset construction and interfaces."
+    },
+    {
+      "approach_area_id": "manufacturer-distributor",
+      "channel": "web",
+      "query": "Hi-Light 航轮 R9 FORCE PR1600 official distributor",
+      "route": "Current regional distributor search",
+      "outcome": "no-result",
+      "note": "No separate current official distributor page for the exact Force PR1600 build was found."
+    },
+    {
+      "approach_area_id": "manufacturer-dealer-locator",
+      "channel": "web",
+      "query": "site:tibicycle.com dealer distributor R9",
+      "route": "Manufacturer dealer-locator search",
+      "outcome": "no-result",
+      "note": "No live dealer locator established current exact-build inventory and domestic support terms."
+    },
+    {
+      "approach_area_id": "manufacturer-official-store",
+      "channel": "web",
+      "query": "Hi-Light 航轮 R9 FORCE PR1600 official retail price",
+      "route": "Manufacturer exact official commerce record",
+      "outcome": "found",
+      "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
+      "note": "The official exact product record publishes CNY 22,900 retail; it is not a third-party checkout observation."
+    },
+    {
+      "approach_area_id": "taobao-official-store",
+      "channel": "web",
+      "query": "site:taobao.com 航轮 R9 FORCE PR1600",
+      "route": "Taobao exact-build search",
+      "outcome": "no-result",
+      "note": "No attributable current exact-build Taobao page was publicly indexed."
+    },
+    {
+      "approach_area_id": "tmall-official-store",
+      "channel": "web",
+      "query": "site:tmall.com 航轮 R9 公路车",
+      "route": "Tmall exact-build search",
+      "outcome": "no-result",
+      "note": "No attributable current exact-build Tmall page was publicly indexed."
+    },
+    {
+      "approach_area_id": "jd-official-store",
+      "channel": "web",
+      "query": "site:jd.com 航轮 R9 钛合金 公路车",
+      "route": "JD exact-build search",
+      "outcome": "no-result",
+      "note": "No attributable current exact-build JD page was publicly indexed."
+    },
+    {
+      "approach_area_id": "alibaba-1688-supplier",
+      "channel": "web",
+      "query": "site:1688.com 航轮 R9 钛合金",
+      "route": "1688 supplier search",
+      "outcome": "no-result",
+      "note": "No exact-build supplier offer with attributable specifications was found."
+    },
+    {
+      "approach_area_id": "aliexpress-official-store",
+      "channel": "web",
+      "query": "site:aliexpress.com Hi-Light R9 titanium bike",
+      "route": "AliExpress exact-build search",
+      "outcome": "no-result",
+      "note": "No attributable official exact-build AliExpress page was indexed."
+    },
+    {
+      "approach_area_id": "authorized-mainland-dealer",
+      "channel": "web",
+      "query": "航轮 R9 FORCE PR1600 授权 经销商",
+      "route": "Mainland authorized-dealer search",
+      "outcome": "no-result",
+      "note": "No current mainland dealer page independently established both authorization and exact-build inventory."
+    },
+    {
+      "approach_area_id": "authorized-regional-dealer",
+      "channel": "web",
+      "query": "Hi-Light R9 authorized dealer",
+      "route": "Regional dealer exact-model search",
+      "outcome": "rejected",
+      "result_url": "https://www.atelierolympia.com/products/hi-light-r9-titanium-road-disc-frame",
+      "note": "An exact R9 frameset retailer was found, but its authorization status and the complete Force PR1600 configuration were not established."
+    },
+    {
+      "approach_area_id": "international-specialist-retailer",
+      "channel": "web",
+      "query": "Hi-Light R9 titanium specialist retailer",
+      "route": "International specialist retailer exact-frame listing",
+      "outcome": "found",
+      "result_url": "https://www.atelierolympia.com/products/hi-light-r9-titanium-road-disc-frame",
+      "note": "Atelier Olympia corroborates the exact R9 frame construction, interfaces, 28C maximum and 1,730 g manufacturer claim; it is not the Force PR1600 complete bike."
+    },
+    {
+      "approach_area_id": "cycling-industry-review",
+      "channel": "web",
+      "query": "Hi-Light R9 review titanium road bike",
+      "route": "Independent cycling-industry review search",
+      "outcome": "no-result",
+      "note": "No professional exact-model editorial test with measured weight, stiffness or ride protocol was found."
+    },
+    {
+      "approach_area_id": "chinese-cycling-media",
+      "channel": "web",
+      "query": "航轮 R9 评测 钛合金 公路车",
+      "route": "Chinese cycling-media exact-model search",
+      "outcome": "found",
+      "result_url": "https://cycling-update.info/activity/new-arrival/3237-2019sh",
+      "note": "China Cycle coverage identifies R9 endurance geometry, a hollow cast titanium chainstay, thru-axle disc layout and internal routing, but no measured stiffness."
+    },
+    {
+      "approach_area_id": "independent-lab-test",
+      "channel": "web",
+      "query": "Hi-Light R9 frame stiffness deflection test",
+      "route": "Independent laboratory search",
+      "outcome": "no-result",
+      "note": "No exact-model stiffness, deflection, fatigue, frame-mass or clearance laboratory result was found."
+    },
+    {
+      "approach_area_id": "magazine-archive",
+      "channel": "web",
+      "query": "Hi-Light R9 titanium magazine archive",
+      "route": "Cycling magazine archive search",
+      "outcome": "no-result",
+      "note": "No exact-model magazine test or archived complete-build specification was found."
+    },
+    {
+      "approach_area_id": "trade-show-coverage",
+      "channel": "web",
+      "query": "Hi-Light R9 China Cycle exhibition",
+      "route": "China Cycle and trade-show coverage search",
+      "outcome": "found",
+      "result_url": "https://cycling-update.info/activity/new-arrival/3237-2019sh",
+      "note": "2019 China Cycle coverage documents the exact R9 frameset construction context but not the current Force PR1600 weight or an independent stiffness test."
+    },
+    {
+      "approach_area_id": "race-team-equipment",
+      "channel": "web",
+      "query": "Hi-Light R9 team race bike",
+      "route": "Race-team equipment search",
+      "outcome": "no-result",
+      "note": "No attributable race-team inventory for the exact complete-bike configuration was found."
+    },
+    {
+      "approach_area_id": "event-exhibitor-catalog",
+      "channel": "web",
+      "query": "Hi-Light R9 exhibitor catalog",
+      "route": "Event exhibitor-catalog search",
+      "outcome": "rejected",
+      "result_url": "https://cycling-update.info/activity/new-arrival/3237-2019sh",
+      "note": "Trade-show editorial coverage was found, but no distinct exhibitor catalog supplied exact Force PR1600 values."
+    },
+    {
+      "approach_area_id": "geometry-database",
+      "channel": "web",
+      "query": "site:bikeinsights.com OR site:geometrygeeks.bike Hi-Light R9",
+      "route": "Independent geometry-database search",
+      "outcome": "rejected",
+      "note": "A third-party R9 geometry entry returned internally implausible values and was rejected rather than copied into the catalog."
+    },
+    {
+      "approach_area_id": "component-compatibility-database",
+      "channel": "web",
+      "query": "Hi-Light 航轮 R9 FORCE PR1600 component compatibility SRAM Shimano DT Swiss",
+      "route": "Component compatibility search",
+      "outcome": "rejected",
+      "note": "Component-maker specifications explain Force 22 and PR1600 parts but do not independently map them to the exact bike beyond the manufacturer BOM."
+    },
+    {
+      "approach_area_id": "product-certification-registry",
+      "channel": "web",
+      "query": "Hi-Light R9 certification frame registry",
+      "route": "Product certification and standards search",
+      "outcome": "no-result",
+      "note": "No exact-model public certification record supplied additional product specifications."
+    },
+    {
+      "approach_area_id": "web-archive",
+      "channel": "web",
+      "query": "Hi-Light 航轮 R9 FORCE PR1600 cached archived product page",
+      "route": "Web-archive and cached-page search",
+      "outcome": "no-result",
+      "note": "No distinct archived exact-build page with additional attributable fields was found."
+    },
+    {
+      "approach_area_id": "brand-youtube",
+      "channel": "public-post",
+      "query": "site:youtube.com Hi-Light R9 official",
+      "route": "Brand YouTube exact-model search",
+      "outcome": "no-result",
+      "note": "No exact complete-build brand video with additional attributable specifications was indexed."
+    },
+    {
+      "approach_area_id": "independent-youtube",
+      "channel": "public-post",
+      "query": "site:youtube.com Hi-Light R9 review owner",
+      "route": "Independent YouTube exact-model search",
+      "outcome": "no-result",
+      "note": "No independent exact complete-build video with measured evidence was indexed."
+    },
+    {
+      "approach_area_id": "brand-bilibili",
+      "channel": "public-post",
+      "query": "site:bilibili.com 航轮 R9 官方",
+      "route": "Brand Bilibili exact-model search",
+      "outcome": "found",
+      "result_url": "https://www.bilibili.com/video/BV1S44y1c7qh/",
+      "note": "A Hi-Light-branded R9 video was indexed and supports model identity, but does not publish an independent weight or stiffness protocol."
+    },
+    {
+      "approach_area_id": "independent-bilibili",
+      "channel": "public-post",
+      "query": "site:bilibili.com 航轮 R9 自组 8kg 评测",
+      "route": "Independent Bilibili exact-model search",
+      "outcome": "rejected",
+      "note": "An independent self-built approximately 8 kg R9 video was indexed, but it is a custom build and cannot establish the Force PR1600 configuration or manufacturer weight."
+    },
+    {
+      "approach_area_id": "brand-xiaohongshu",
+      "channel": "public-post",
+      "query": "site:xiaohongshu.com 航轮 R9 官方",
+      "route": "Public XHS brand-post index search only",
+      "outcome": "no-result",
+      "note": "No exact brand post was publicly indexed; no new XHS capture was started under shared-runtime coordination."
+    },
+    {
+      "approach_area_id": "independent-xiaohongshu",
+      "channel": "public-post",
+      "query": "site:xiaohongshu.com 航轮 R9 车主 装车",
+      "route": "Public XHS owner-post index search only",
+      "outcome": "no-result",
+      "note": "No exact independent post was publicly indexed; no new XHS capture was started."
+    },
+    {
+      "approach_area_id": "brand-douyin",
+      "channel": "public-post",
+      "query": "site:douyin.com 航轮 R9 官方",
+      "route": "Brand Douyin exact-model search",
+      "outcome": "no-result",
+      "note": "No exact brand post with attributable technical evidence was publicly indexed."
+    },
+    {
+      "approach_area_id": "independent-douyin",
+      "channel": "public-post",
+      "query": "site:douyin.com 航轮 R9 评测 车主",
+      "route": "Independent Douyin exact-model search",
+      "outcome": "no-result",
+      "note": "No independent exact complete-build post with attributable measurements was indexed."
+    },
+    {
+      "approach_area_id": "brand-weibo",
+      "channel": "public-post",
+      "query": "site:weibo.com 航轮 R9 官方",
+      "route": "Brand Weibo exact search",
+      "outcome": "blocked",
+      "note": "Weibo access was blocked by robots policy; no login, alternate profile or bypass was attempted."
+    },
+    {
+      "approach_area_id": "independent-weibo",
+      "channel": "public-post",
+      "query": "site:weibo.com 航轮 R9 车主",
+      "route": "Independent Weibo exact search",
+      "outcome": "blocked",
+      "note": "Weibo access was blocked by robots policy; no alternate-access bypass was attempted."
+    },
+    {
+      "approach_area_id": "brand-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com 航轮 R9 官方",
+      "route": "Brand WeChat public-article index",
+      "outcome": "no-result",
+      "note": "No indexed exact official WeChat article with additional specifications was found."
+    },
+    {
+      "approach_area_id": "independent-wechat-public",
+      "channel": "public-post",
+      "query": "site:mp.weixin.qq.com 航轮 R9 评测",
+      "route": "Independent WeChat public-article index",
+      "outcome": "no-result",
+      "note": "No indexed independent exact-model WeChat review was found."
+    },
+    {
+      "approach_area_id": "cycling-forum",
+      "channel": "public-post",
+      "query": "Hi-Light R9 forum owner titanium",
+      "route": "Cycling-forum exact-model search",
+      "outcome": "no-result",
+      "note": "No exact complete-build technical thread with defensible measurements was found on a specialist cycling forum."
+    },
+    {
+      "approach_area_id": "owner-build-log",
+      "channel": "public-post",
+      "query": "Hi-Light R9 owner build log",
+      "route": "Owner-build exact-frame search",
+      "outcome": "rejected",
+      "note": "Custom R9 owner builds were indexed, but component selection and mass varied and none was the exact Force PR1600 factory build."
+    },
+    {
+      "approach_area_id": "community-photo-post",
+      "channel": "public-post",
+      "query": "Hi-Light R9 community photo bike",
+      "route": "Community-photo exact-model search",
+      "outcome": "rejected",
+      "note": "Community and custom-build images established that R9 frames are in use but supplied no reusable image rights or exact Force PR1600 facts."
+    }
+  ]
+}

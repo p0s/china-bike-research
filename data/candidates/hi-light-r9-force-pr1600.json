@@ -2,26 +2,52 @@
   "id": "hi-light-r9-force-pr1600",
   "name": "Hi-Light 航轮 R9 FORCE PR1600",
   "model_id": "hi-light-r9-force-pr1600",
+  "brand_id": "hi-light",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Premium complete titanium road-bike benchmark with an official China price.",
+  "why_interesting": "A premium titanium road-bike benchmark with a complete manufacturer BOM, claimed complete weight and official China reference price.",
+  "facts": {
+    "drivetrain": "SRAM Force 22 mechanical 2×11; Force front and rear derailleurs, Force 50/34T crank, Force 11–32T cassette and SRAM PC1130 chain",
+    "complete_weight_g": 8300,
+    "complete_weight_basis": "Manufacturer-listed complete-bike weight; size, pedals and measurement method are not stated",
+    "frame": "Hi-Light R9 titanium frame with R9 Carbon fork",
+    "frame_material": "Titanium frame with carbon fork; the CNC-integrated dropouts are specifically 3Al–2.5V titanium, while the main-tube grade is not published",
+    "frame_construction": "Hydroformed, shaped and butted titanium tubes with CNC-integrated dropouts, CNC head tube, 3D-integrated bottom-bracket shell and internal cable routing",
+    "stiffness_evidence": "The exact R9 page confirms hydroformed tubes, and the manufacturer says its hydroforming process improves overall and local stiffness. No independent exact-model deflection, torsion or laboratory comparison was found across the 50-area sweep, so this remains a source-qualified construction claim.",
+    "bottom_bracket": "Press-fit BB86.5",
+    "frame_weight_g": 1730,
+    "frame_weight_basis": "Manufacturer-listed R9 frame weight; size, hardware and measurement method are not stated",
+    "tire_clearance_mm": 28,
+    "tire_clearance_basis": "Manufacturer maximum: 700×28C on the exact R9 frame",
+    "wheels": "DT Swiss PR1600 Spline",
+    "tires": "Schwalbe Durano 700×28C",
+    "cockpit": "Controltech ACT 31.8 handlebar and stem with ACT 27.2 seatpost and ACT 41.8–52 headset",
+    "brakes": "SRAM Force hydraulic controls and brakes",
+    "saddle": "Selle Italia SLR Boost TM",
+    "sizes": "XS, S, M, L and XL; custom sizing offered"
+  },
+  "reference_price_kind": "official",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Independent complete-bike weight measurement with size and pedal basis",
+    "Independent exact-model stiffness or deflection measurement",
+    "Current mainland checkout observation, domestic warranty issuer and invoice handling",
     "Rights-cleared exact product image"
   ],
-  "status": "titanium-priority",
+  "status": "exact-official-specification-documented",
   "source_ids": [
-    "titanium-hi-light-r9-force-pr1600-official"
+    "titanium-hi-light-r9-force-pr1600-official",
+    "hi-light-r9-frameset-official-2026-08-29",
+    "hi-light-manufacturing-official-2026-08-29"
   ],
   "official_price": {
     "amount_cny": 22900,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-08-29",
+    "price_basis": "Manufacturer-listed retail price for the exact R9 Force PR1600 complete-bike record; no current mainland checkout was observed"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
-  "source_note": "Official page lists retail price ¥22,900.",
+  "source_note": "The exact official complete-bike page publishes the Force 22 / PR1600 BOM, 8.3 kg claim and CNY 22,900 reference price. Exact frame and manufacturing pages qualify construction, interfaces, clearance and the source of the stiffness claim.",
   "manufacturing": "titanium complete bike",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-29"
 }
