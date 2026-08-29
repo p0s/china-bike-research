@@ -1,15 +1,21 @@
 {
   "id": "cosmosworks-carbon-e-road",
-  "name": "COSMOSWORKS 宇宙自行车 Carbon e-bike road platform",
+  "name": "cosmosworks / 宇宙E-BIKE mixed NOMAD / Oi! lead",
   "model_id": "cosmosworks-carbon-e-road",
   "category": "e-road",
   "type": "complete-bike",
-  "why_interesting": "Imported carbon, UDH and 40 mm tire claims; motor/battery details absent.",
+  "why_interesting": "The CNY 14,999 cue aligns with NOMAD, while the retained UDH and 40 mm cues align with the distinct Oi! platform; the lead documents a cross-model marketplace conflation rather than an exact build.",
   "missing": [
-    "Motor model, battery capacity, assist controls, and exact SKU",
-    "Seller/authenticity and final checkout price"
+    "Exact model/SKU and evidence tying the selected listing to either NOMAD or Oi!",
+    "Exact drivetrain, complete weight, frame material and maximum tire clearance for the selected option",
+    "Meaningful exact-model stiffness evidence, domestic warranty issuer, seller authority and final checkout price"
   ],
-  "status": "verify-before-publish",
+  "status": "mixed-model-lead-documented",
+  "source_ids": [
+    "cosmosworks-nomad-official-2026-08-29",
+    "cosmosworks-nomad-launch-price-2026-08-29",
+    "cosmosworks-oi-official-2026-08-29"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +26,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6883.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://cosmosebike.com/products/nomad",
+  "source_note": "Current official sources use cosmosworks / 宇宙E-BIKE. A manufacturer NOMAD promotion used a CNY 14,999 starting price, while the official Oi! page owns the T800/T1000, UDH and 40 mm-clearance claims. No exact source joins those facts into one SKU, so no cross-model specification is assigned.",
+  "last_reviewed": "2026-08-29"
 }

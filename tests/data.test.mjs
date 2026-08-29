@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 628);
+  assert.equal(data.researchAttempts.length, 652);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 220);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 194);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 196);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);

@@ -42,8 +42,11 @@ test('homepage comparison payload keeps frameset pricing dynamic without seriali
   const payload = JSON.parse(html.match(/<script type="application\/json" id="catalog-data">([^<]+)<\/script>/)?.[1] ?? '[]');
   const frameset = payload.find((item) => item.estimated === true);
   const complete = payload.find((item) => item.type === 'Complete bike');
+  const cosmosworks = payload.find((item) => item.id === 'candidate-cosmosworks-carbon-e-road');
   assert.ok(frameset && Number.isFinite(frameset.frameLow) && Number.isFinite(frameset.frameHigh));
   assert.ok(complete);
+  assert.equal(cosmosworks.priceDetails, 'Recorded basis: coupon.');
+  assert.doesNotMatch(cosmosworks.priceDetails, /NOMAD|Oi!/);
   assert.equal('estimated' in complete, false);
   assert.equal('frameLow' in complete, false);
   assert.equal('frameHigh' in complete, false);
