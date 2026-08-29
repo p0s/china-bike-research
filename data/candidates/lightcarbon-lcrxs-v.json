@@ -1,0 +1,30 @@
+{
+  "id": "lightcarbon-lcrxs-v",
+  "name": "LightCarbon LCRXS-V",
+  "model_id": "lightcarbon-lcrxs-v",
+  "category": "road-aero",
+  "type": "frameset",
+  "why_interesting": "An older internally routed aero rim-brake frame that keeps a separate stem while documenting five frame weights and complete geometry.",
+  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote and exact HBR05/HBR07 cockpit package", "Independent exact-model stiffness result"],
+  "status": "official-legacy-or-order-inquiry",
+  "research_priority": "low",
+  "price_status": "current price unverified",
+  "source_ids": ["lightcarbon-lcrxs-v-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "facts": {
+    "frame": "LCRXS-V internally routed aero rim-brake frameset with separate stem",
+    "frame_material": "Toray T700 carbon",
+    "frame_weight_g": 1080,
+    "frame_weight_basis": "Official size-54 frame; 1,040–1,140 g across five sizes, ±40 g; fork 405 g ±10 g; seatpost 235 g ±10 g",
+    "tire_clearance_mm": 28,
+    "tire_clearance_basis": "Official 700C×28C maximum",
+    "bottom_bracket": "Press-fit BB86",
+    "brakes": "Direct-mount rim brake",
+    "cockpit": "Specific internally routed stem; the official table references HBR05 and HBR07 compatibility inconsistently",
+    "sizes": "48, 51, 54, 56 and 58",
+    "geometry": "Reach 371.1–404.9 mm; stack 506.1–574.4 mm; 408 mm chainstays; 69 mm BB drop",
+    "warranty": "Two years",
+    "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
+  },
+  "source_note": "The exact manufacturer page identifies LCRXS-V and supplies the material, size weights, clearance, standards and geometry. Its cockpit-compatibility rows disagree, so the exact included bar remains open.",
+  "last_reviewed": "2026-08-29"
+}
