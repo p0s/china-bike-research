@@ -4,13 +4,20 @@
   "model_id": "java-carbon-hydraulic-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "No exact model visible.",
+  "why_interesting": "The retained seller title says JAVA carbon and hydraulic, but the card image shows only a generic UCI-certification graphic. JAVA's current catalog contains many incompatible carbon road families, so no exact model or drivetrain can be attached.",
+  "facts": {
+    "frame_material": "Seller-listed carbon road bike; exact model, carbon grade, fork, cockpit and wheel materials remain unresolved",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Exact model, model year/SKU, drivetrain, brake package and complete-bike weight",
+    "Maximum tire clearance, exact carbon grade and fit-critical standards",
+    "Meaningful stiffness evidence, current China warranty issuer, seller authority and final checkout price"
   ],
-  "status": "research-queue",
+  "status": "material-only-seller-lead-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +28,6 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6882.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_note": "The retained seller card supports only a generic JAVA carbon-road and hydraulic-brake lead at CNY 12,089. The visible image is a UCI marketing graphic rather than an identifiable bicycle; current official, retail, media, event and certification results expose many incompatible JAVA carbon platforms and do not identify this row.",
+  "last_reviewed": "2026-08-29"
 }

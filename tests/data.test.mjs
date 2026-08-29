@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 724);
+  assert.equal(data.researchAttempts.length, 748);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -315,8 +315,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 220);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 201);
+  assert.equal(catalogCandidates.length, 219);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 202);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -349,6 +349,13 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(unclearModel.defaultVisible, false);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
   assert.equal(genericBuild.defaultVisible, true);
+  assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'java-aluminum-24s'), false);
+  const vittoriaEr7 = catalogCandidates.find((entry) => entry.candidate.id === 'java-vittoria-er7-2026');
+  assert.equal(vittoriaEr7.candidate.observed_price.observation_count, 5);
+  assert.match(vittoriaEr7.candidate.source_refs, /IMG_6886\.png#R1/);
+  const lampo = catalogCandidates.find((entry) => entry.candidate.id === 'java-lampo-carbon-road');
+  assert.equal(lampo.defaultVisible, true);
+  assert.match(lampo.candidate.name, /exact model unresolved/);
   const gitoG530SellerBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-gtv5-plus');
   assert.equal(gitoG530SellerBuild.defaultVisible, true);
   assert.match(gitoG530SellerBuild.candidate.name, /G530/);

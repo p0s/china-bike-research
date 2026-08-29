@@ -4,16 +4,24 @@
   "model_id": "huanyu-az-one",
   "category": "triathlon",
   "type": "complete-bike",
-  "why_interesting": "The exact model name and a dated listing price were visible, but no exact complete-bike configuration was established.",
+  "why_interesting": "The retained seller card visibly identifies 青龙·赤子 AZ ONE and describes an aerodynamic triathlon frame, but the 50-area sweep found no second exact-model source or attributable complete-bike specification.",
+  "facts": {
+    "listing_identity": "Seller-card identity: 青龙·赤子 AZ ONE triathlon bike",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
     "Exact drivetrain, cockpit, wheels, brakes, and storage package",
     "Exact trim-to-price mapping",
     "Current purchase route, warranty, and return terms"
   ],
-  "status": "exact-trim-unproven",
+  "status": "exact-model-seller-lead-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {"amount_cny": 26800, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "listed", "observation_count": 1},
   "source_refs": "IMG_6858.png#L1",
-  "last_reviewed": "2026-08-09"
+  "source_note": "The retained pixels establish the AZ ONE / 青龙·赤子 identity and CNY 26,800 listed-price lead. No exact current manufacturer, dealer, independent test, geometry, weight, drivetrain, clearance, carbon-construction, stiffness or warranty source was found; unrelated HUANYU companies and current 寰宇 listings are not transferred.",
+  "last_reviewed": "2026-08-29"
 }

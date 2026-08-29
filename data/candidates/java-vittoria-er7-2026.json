@@ -19,8 +19,16 @@
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "coupon | listed",
-    "observation_count": 4
+    "observation_count": 5
   },
-  "source_refs": "IMG_6859.png#L1, IMG_6889.png#L2, IMG_6893.png#R2, IMG_6898.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "java-road-catalog-2026-08-29",
+    "java-vittoria-eurobike-2026-08-29",
+    "java-vittoria-jd-2026-08-29"
+  ],
+  "source_refs": "IMG_6859.png#L1, IMG_6886.png#R1, IMG_6889.png#L2, IMG_6893.png#R2, IMG_6898.png#L2",
+  "source_url": "https://www.javabikes.com/Products/5.html",
+  "source_note": "The official catalog verifies separate carbon-frame and aluminum-frame VITTORIA-ER7 versions, and current marketplace indexing exposes further electronic, 7170, alloy-wheel and carbon-wheel options. Five retained seller observations share the same CNY 7,997.25-7,999 range but remain split by exact trim before publication.",
+  "last_reviewed": "2026-08-29"
 }
