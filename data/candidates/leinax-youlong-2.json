@@ -1,16 +1,28 @@
 {
   "id": "leinax-youlong-2",
-  "name": "LEINAX 雷纳克 游龙 2.0",
+  "name": "LEINAK 雷纳克 游龙 2.0",
   "model_id": "leinax-youlong-2",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "105 and carbon wheels shown.",
+  "why_interesting": "The exact seller card establishes 游龙 2.0, a full-carbon frame, a Shimano 105-family build and carbon wheels; generation and selected BOM remain unresolved.",
+  "facts": {
+    "frame_material": "Retained exact seller-card claim: full-carbon road-bike frame",
+    "listing_drivetrain": "Shimano 105 large groupset is shown; exact generation and mechanical versus electronic actuation are not visible",
+    "listing_wheels": "Carbon-fiber wheels are shown; brand, depth, hub and construction are not published",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact Shimano 105 generation and actuation, wheel specification, current SKU and complete BOM",
+    "Complete-bike weight, maximum tire clearance and current geometry",
+    "Meaningful stiffness evidence, current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-model-seller-lead-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "leinak-current-range-jd-2026-08-30",
+    "leinak-jd-store-2026-08-30",
+    "leinak-youlong-2-douyin-index-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +33,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6888.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://jingxuan.douyin.com/m/video/7610383491255594853",
+  "source_note": "The retained card supplies exact 游龙 2.0 identity, CNY 8,499 price, full-carbon wording, a 105-family large groupset and carbon-wheel imagery. A current public video index independently corroborates the model wording but supplies no specification. LEINAK is the current Latin rendering paired with 雷纳克; the stable leinax-* record ID is preserved for provenance.",
+  "last_reviewed": "2026-08-30"
 }

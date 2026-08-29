@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 772);
+  assert.equal(data.researchAttempts.length, 796);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -507,6 +507,33 @@ test('LightCarbon road-frame tranche preserves exact current and legacy model bo
   assert.equal(records.find((record) => record.id === 'lightcarbon-lcr017-d').facts.frame_weight_g, 870);
   assert.match(records.find((record) => record.id === 'lightcarbon-lcr0x-d').status, /legacy-or-order-inquiry/);
   assert.ok(records.every((record) => record.source_ids.length >= 3));
+});
+
+test('KUNG, LEINAK, and Meihanda leads preserve exact names and configuration boundaries', () => {
+  const kung = data.candidates.find((item) => item.id === 'kung-horizon');
+  const leina = data.candidates.find((item) => item.id === 'leinax-leina-road');
+  const youlong = data.candidates.find((item) => item.id === 'leinax-youlong-2');
+  const phantom = data.candidates.find((item) => item.id === 'meihanda-phantom-p10');
+
+  assert.match(kung.name, /KUNG 攻 HORIZON 天际/);
+  assert.match(kung.facts.drivetrain, /R7120 mechanical 2×12/);
+  assert.match(kung.source_note, /multiple distinct trims/);
+
+  assert.match(leina.name, /^LEINAK 雷纳克 雷娜/);
+  assert.match(leina.facts.frame_material, /Toray carbon/);
+  assert.deepEqual(leina.alternative_builds.map((build) => build.id), [
+    'jd-qiguang-niying-105-di2',
+    'jd-liujin-yuelin-105-mechanical'
+  ]);
+  assert.match(youlong.name, /^LEINAK 雷纳克 游龙 2\.0$/);
+  assert.equal(youlong.facts.drivetrain, undefined);
+  assert.match(youlong.facts.listing_drivetrain, /generation.*not visible/);
+
+  assert.equal(phantom.facts.tire_clearance_mm, 40);
+  assert.match(phantom.name, /Meihanda 美涵达.*Phantom \/ 幻影 P10/);
+  assert.match(phantom.facts.frame_material, /7005 aluminum.*T800 carbon fork/);
+  assert.match(phantom.facts.drivetrain, /U6000 10-speed/);
+  assert.match(phantom.source_note, /P10.*P12/);
 });
 
 test('remaining LightCarbon road, TT and track catalog entries retain exact identities', () => {

@@ -1,15 +1,49 @@
 {
   "id": "leinax-leina-road",
-  "name": "LEINAX 雷纳克 雷娜 carbon road",
+  "name": "LEINAK 雷纳克 雷娜 carbon road",
   "model_id": "leinax-leina-road",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact Latin model not visible.",
-  "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+  "why_interesting": "Current exact-model listings establish a Toray-carbon 雷娜 range with separate Shimano 105 mechanical and Di2 2×12 options; the retained CNY 7,999 selection remains unresolved.",
+  "facts": {
+    "frame_material": "Current exact 雷娜 listing: Toray carbon frame; a brand-associated post also calls the 雷娜·星耀 series full carbon",
+    "drivetrain": "Current exact 雷娜 range: Shimano 105 mechanical 2×12 or Shimano 105 Di2 2×12, both described as large groupsets; the retained option is not identified",
+    "brakes": "Hydraulic disc brakes in the current exact 雷娜 listing",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
+  "alternative_builds": [
+    {
+      "id": "jd-qiguang-niying-105-di2",
+      "label": "JD 栖光匿影 size-500 option",
+      "drivetrain": "Shimano 105 Di2 2×12 large groupset",
+      "source_ids": [
+        "leinak-leina-jd-2026-08-30"
+      ],
+      "notes": "Current branded option; no weight, maximum clearance or exact retained-card mapping is published in the checked index."
+    },
+    {
+      "id": "jd-liujin-yuelin-105-mechanical",
+      "label": "JD 鎏金跃麟 size-500 option",
+      "drivetrain": "Shimano 105 mechanical 2×12 large groupset",
+      "source_ids": [
+        "leinak-leina-jd-2026-08-30"
+      ],
+      "notes": "Current unbranded custom option; it is kept separate from the branded Di2 option and from the retained seller card."
+    }
   ],
-  "status": "verify-before-publish",
+  "missing": [
+    "Exact retained SKU, selected 105 branch, complete BOM and complete-bike weight with measurement basis",
+    "Maximum tire clearance, meaningful stiffness evidence and current geometry",
+    "Exact domestic warranty route, authenticity and final checkout conditions"
+  ],
+  "status": "exact-model-current-options-selected-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "leinak-current-range-jd-2026-08-30",
+    "leinak-jd-store-2026-08-30",
+    "leinak-leina-jd-2026-08-30",
+    "leinak-leina-bilibili-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +54,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6881.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default",
+  "source_note": "Current sources consistently render the Latin brand as LEINAK and the Chinese name as 雷纳克, correcting the older LEINAX transcription while retaining the stable record ID. The exact 雷娜 index documents Toray carbon, hydraulic discs and separate 105 mechanical/Di2 2×12 options; it does not identify which option produced the retained CNY 7,999 card.",
+  "last_reviewed": "2026-08-30"
 }

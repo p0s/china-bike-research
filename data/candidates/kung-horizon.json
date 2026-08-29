@@ -1,16 +1,37 @@
 {
   "id": "kung-horizon",
-  "name": "KUNG Horizon",
+  "name": "KUNG 攻 HORIZON 天际 complete bike",
   "model_id": "kung-horizon",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Full-carbon hydraulic disc complete.",
-  "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+  "why_interesting": "The retained card and current marketplace range establish a full-carbon HORIZON / 天际 complete bike, but the selected CNY 6,999 trim remains unresolved.",
+  "facts": {
+    "frame_material": "Current JD HORIZON reference builds and the retained seller card both describe a full-carbon complete bike",
+    "drivetrain": "Current JD HORIZON reference build: Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes; the retained CNY 6,999 seller option is not identified",
+    "stiffness_evidence": "No transferable current-generation numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
+  "alternative_builds": [
+    {
+      "id": "jd-horizon-r7120-reference",
+      "label": "Current JD HORIZON R7120 reference build",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "kung-horizon-jd-2026-08-30"
+      ],
+      "notes": "The indexed current full-carbon reference build is not assigned to the retained CNY 6,999 card, whose visible title omits the drivetrain generation."
+    }
   ],
-  "status": "publication-gate-not-met",
+  "missing": [
+    "Exact selected CNY 6,999 SKU, complete BOM and complete-bike weight with measurement basis",
+    "Maximum tire clearance and current complete geometry",
+    "Meaningful current-generation stiffness evidence, domestic warranty route and final checkout conditions"
+  ],
+  "status": "exact-model-current-range-selected-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "kung-horizon-jd-2026-08-30",
+    "kung-horizon-biketo-2018"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +42,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6885.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/1318d5556559cbbb311f.html",
+  "source_note": "The retained card supplies the CNY 6,999 complete-bike lead and the visible HORIZON frame. Current JD indexing establishes KUNG 攻 / HORIZON 天际, full-carbon construction and an R7120 mechanical reference build, but it exposes multiple distinct trims and does not identify the retained selection. The 2018 review covers an older generation and is not transferred as current weight, clearance or stiffness evidence.",
+  "last_reviewed": "2026-08-30"
 }

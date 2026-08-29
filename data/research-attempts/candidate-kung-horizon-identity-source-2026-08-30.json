@@ -1,0 +1,495 @@
+{
+  "id": "candidate-kung-horizon-identity-source-2026-08-30",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "kung-horizon"
+  },
+  "field": "identity-source",
+  "priority": "high",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand YouTube channel — field candidate:kung-horizon:identity-source",
+          "route": "Brand YouTube channel — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model YouTube result with additional build facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent YouTube review or build — field candidate:kung-horizon:identity-source",
+          "route": "Independent YouTube review or build — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent YouTube result with controlled build facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand Bilibili account — field candidate:kung-horizon:identity-source",
+          "route": "Brand Bilibili account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official KUNG exact-build Bilibili result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent Bilibili review or build — field candidate:kung-horizon:identity-source",
+          "route": "Independent Bilibili review or build — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "An exact custom HORIZON FEO size-L R7170 build reports 7.5 kg, but custom components make the weight non-transferable. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1Dh4y1D764/"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand Xiaohongshu account — field candidate:kung-horizon:identity-source",
+          "route": "Brand Xiaohongshu account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact official result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent Xiaohongshu post — field candidate:kung-horizon:identity-source",
+          "route": "Independent Xiaohongshu post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact independent result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand Douyin account — field candidate:kung-horizon:identity-source",
+          "route": "Brand Douyin account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model Douyin result with additional facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent Douyin post — field candidate:kung-horizon:identity-source",
+          "route": "Independent Douyin post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent Douyin result with controlled build facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand Weibo account — field candidate:kung-horizon:identity-source",
+          "route": "Brand Weibo account — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent Weibo post — field candidate:kung-horizon:identity-source",
+          "route": "Independent Weibo post — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Brand WeChat public article — field candidate:kung-horizon:identity-source",
+          "route": "Brand WeChat public article — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable official result with additional build facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent WeChat public article — field candidate:kung-horizon:identity-source",
+          "route": "Independent WeChat public article — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable independent result with additional build facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Cycling forum thread — field candidate:kung-horizon:identity-source",
+          "route": "Cycling forum thread — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact attributable forum record established controlled current-build facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Public owner build log — field candidate:kung-horizon:identity-source",
+          "route": "Public owner build log — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A separate custom HORIZON FEO R7020 build reports about 7.8 kg; it is not a retained complete-bike configuration. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1BG411S7d3/"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Public community photo or setup post — field candidate:kung-horizon:identity-source",
+          "route": "Public community photo or setup post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-build community photo set established specifications or documented reusable-image rights. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer exact-product page — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer exact-product page — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "An indexed official FEO Disc route was discoverable through a geometry source, but the manufacturer page could not be fetched and FEO is not proven to be the retained option. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.kungracing.com/HORIZON-FEO-DISC-New-Lightweight-Version-of-the-Sky-FEO-Carbon-Fiber-Disc-Brake-frame-full-internal-routing-scheme-p15865687.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer model-family or category page — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer model-family or category page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No live standalone manufacturer family page was retrievable. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer current catalog — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer current catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No live current manufacturer catalog was retrievable. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer archived catalog — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer archived catalog — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The 2018 original HORIZON review is generation-specific historical evidence, not a current manufacturer catalog. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.biketo.com/product/37729.html"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer product manual — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer product manual — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer manual was publicly indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer geometry document — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer geometry document — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer geometry document with a complete current table was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer technical paper or test note — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer technical paper or test note — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model stiffness, deflection, construction or aerodynamic test note was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer support or warranty page — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer support or warranty page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current mainland warranty route attributable to the retained option was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer newsroom or launch page — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer newsroom or launch page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact-model manufacturer launch article with transferable build facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer site search — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer site search — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A third-party geometry record cites an indexed official 2022 FEO Disc page, but it cannot establish the retained seller option. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bike-geometries/634b77e9675dd5002467c776-2022-kung-horizon-feo-disc-base-m"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer sitemap or indexed route inventory — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer sitemap or indexed route inventory — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No additional exact-model route was discovered through manufacturer sitemap and indexed-route searches. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer structured page metadata — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer structured page metadata — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No directly retrievable current manufacturer structured product data was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer regional site — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer regional site — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current regional KUNG product page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer-listed distributor — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer-listed distributor — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current distributor page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer dealer locator — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer dealer locator — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model mainland dealer-locator result was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Manufacturer-operated online store — field candidate:kung-horizon:identity-source",
+          "route": "Manufacturer-operated online store — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independently attributable exact manufacturer storefront was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Official Taobao store or exact item — field candidate:kung-horizon:identity-source",
+          "route": "Official Taobao store or exact item — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The retained dated seller card visibly identifies a KUNG full-carbon hydraulic-disc complete bike at CNY 6,999, but seller authority and selected drivetrain remain unresolved. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Official Tmall store or exact item — field candidate:kung-horizon:identity-source",
+          "route": "Official Tmall store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact public Tmall official-store result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Official JD store or exact item — field candidate:kung-horizon:identity-source",
+          "route": "Official JD store or exact item — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "Current JD indexing pairs KUNG 攻 with HORIZON 天际 and exposes a full-carbon Shimano 105 R7120 mechanical/hydraulic reference build among multiple distinct options. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://www.jd.com/jiage/1318d5556559cbbb311f.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Verified Alibaba or 1688 supplier route — field candidate:kung-horizon:identity-source",
+          "route": "Verified Alibaba or 1688 supplier route — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model 1688 supplier page with transferable facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Official AliExpress store or exact item — field candidate:kung-horizon:identity-source",
+          "route": "Official AliExpress store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model AliExpress official-store result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Authorized mainland dealer — field candidate:kung-horizon:identity-source",
+          "route": "Authorized mainland dealer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized mainland dealer page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Authorized regional dealer — field candidate:kung-horizon:identity-source",
+          "route": "Authorized regional dealer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized regional dealer page with additional facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — International specialist retailer — field candidate:kung-horizon:identity-source",
+          "route": "International specialist retailer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact international specialist-retailer page with transferable current facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Cycling-industry review publication — field candidate:kung-horizon:identity-source",
+          "route": "Cycling-industry review publication — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The exact 2018 original-generation review adds historical identity, construction, 28C fit and qualitative ride context that is not transferred to the current seller card. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Chinese cycling-media publication — field candidate:kung-horizon:identity-source",
+          "route": "Chinese cycling-media publication — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Historical Chinese-media coverage documents HORIZON Disc family development but predates the retained current card. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.biketo.com/product/42802.html"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent laboratory or instrumented test — field candidate:kung-horizon:identity-source",
+          "route": "Independent laboratory or instrumented test — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model controlled laboratory weight, stiffness or aerodynamic test was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Print or digital magazine archive — field candidate:kung-horizon:identity-source",
+          "route": "Print or digital magazine archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-build magazine archive test with transferable facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Trade-show coverage — field candidate:kung-horizon:identity-source",
+          "route": "Trade-show coverage — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-model trade-show report with additional controlled facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Race-team equipment page — field candidate:kung-horizon:identity-source",
+          "route": "Race-team equipment page — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The KUNG Cycling Team registry confirms brand activity but does not identify HORIZON or the retained build. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.uci.org/team-details/18393"
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Event or exhibitor catalog — field candidate:kung-horizon:identity-source",
+          "route": "Event or exhibitor catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No event or exhibitor catalog identified the exact retained model with additional facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Independent geometry database — field candidate:kung-horizon:identity-source",
+          "route": "Independent geometry database — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Bike Insights records a 2022 carbon HORIZON FEO Disc geometry attributed to the indexed manufacturer route; it is not the selected seller build. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/634b77e9675dd5002467c766-kung-horizon-feo-disc?build=base&version=2022"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Component compatibility database — field candidate:kung-horizon:identity-source",
+          "route": "Component compatibility database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No component database could identify the retained bicycle configuration, frame limits or maximum tire clearance. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Product certification or registration database — field candidate:kung-horizon:identity-source",
+          "route": "Product certification or registration database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model certification record supplied transferable build, weight, clearance or stiffness facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "KUNG 攻 HORIZON 天际 full carbon road bike 6999 — Public web archive — field candidate:kung-horizon:identity-source",
+          "route": "Public web archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived exact current-build page added reliable facts beyond the live and dated sources. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "kung-horizon-jd-2026-08-30",
+    "kung-horizon-biketo-2018"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/kung-horizon-50-area-sweep-2026-08-30.json. Seller pixels, current indexing and dated historical review establish KUNG 攻 / HORIZON 天际 while preserving generation and trim boundaries."
+}

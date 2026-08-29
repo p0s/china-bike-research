@@ -1,15 +1,41 @@
 {
   "id": "meihanda-phantom-p10",
-  "name": "X-TREME / 美涵达 Phantom P10 flat-bar gravel",
+  "name": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
   "model_id": "meihanda-phantom-p10",
   "category": "gravel-flatbar",
   "type": "complete-bike",
-  "why_interesting": "T800 carbon fork shown; frame material is not established.",
-  "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+  "why_interesting": "The exact manufacturer page now establishes a 7005 aluminum frame, T800 carbon fork, Shimano U6000 10-speed drivetrain and Phantom-series 40C maximum.",
+  "facts": {
+    "frame_material": "Manufacturer specification: 7005 aluminum frame with T800 carbon fork",
+    "drivetrain": "Shimano U6000 10-speed on the exact manufacturer P10 product card; cassette, crank and chainring details are not published in the checked text",
+    "brakes": "Hydraulic disc brakes",
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "Manufacturer-published Phantom-series maximum; rim width, measured tire width and mud-clearance conditions are not stated",
+    "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
+  },
+  "alternative_builds": [
+    {
+      "id": "manufacturer-u6000-10-speed",
+      "label": "Manufacturer P10 U6000 reference build",
+      "drivetrain": "Shimano U6000 10-speed",
+      "tires": "Up to 40C under the manufacturer Phantom-series statement",
+      "source_ids": [
+        "meihanda-phantom-p10-official-2026-08-30"
+      ],
+      "notes": "Exact P10 reference build; the manufacturer page does not publish complete-bike weight or full component details."
+    }
   ],
-  "status": "verify-before-publish",
+  "missing": [
+    "Exact selected China-market SKU, complete BOM and complete-bike weight with measurement basis",
+    "Current geometry and meaningful exact-model stiffness evidence",
+    "Exact domestic warranty route, seller authenticity and final checkout conditions"
+  ],
+  "status": "exact-model-manufacturer-documented-selected-china-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "meihanda-phantom-p10-official-2026-08-30",
+    "meihanda-phantom-p10-jd-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +46,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6891.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://meihanda.com/",
+  "source_note": "The manufacturer identifies the exact Meihanda Xtreme Phantom P10 and supplies its 7005 frame, T800 fork, U6000 10-speed, hydraulic-disc and series-level 40C facts. Current JD indexing corroborates 美涵达 / Xtreme and P10 10-speed identity but mixes P10 titles with P12 options, so no P12 fact or foreign-site price is assigned to the retained CNY 2,547 coupon card.",
+  "last_reviewed": "2026-08-30"
 }
