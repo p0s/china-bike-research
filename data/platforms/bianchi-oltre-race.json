@@ -6,27 +6,52 @@
   "category": "road-aero",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The anonymized 2026-08-08 snapshot identifies BIANCHI Oltre Race as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "summary": "Current manufacturer material now ties the exact Oltre Race YTB8D family to an eight-size geometry table, a 28 mm maximum tire width, and exact official imagery; the dated mainland price remains a checkout-unverified market observation.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
     "bottom_bracket": "PF86.5×41",
     "derailleur_hanger": "unknown",
-    "cable_routing": "fully-internal"
+    "cable_routing": "fully-internal",
+    "geometry": {
+      "basis": "manufacturer exact-model geometry table",
+      "source_id": "bianchi-oltre-race-current-official-2026-08-30",
+      "units": { "length": "mm", "angle": "degrees" },
+      "column_legend": "A seat tube; B effective top tube; C chainstay; D bottom-bracket drop; E head tube; F front centre; G seat angle; G1 head angle; H fork offset; I fork length; X reach; Y stack; WB wheelbase",
+      "sizes": [
+        { "size": "44", "seat_tube_mm": 420, "top_tube_mm": 505, "chainstay_mm": 410, "bb_drop_mm": 58, "head_tube_mm": 95, "front_center_mm": 575, "seat_angle_deg": 75, "head_angle_deg": 70.5, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 376, "stack_mm": 481, "wheelbase_mm": 977 },
+        { "size": "47", "seat_tube_mm": 440, "top_tube_mm": 515, "chainstay_mm": 410, "bb_drop_mm": 58, "head_tube_mm": 105, "front_center_mm": 581, "seat_angle_deg": 74.5, "head_angle_deg": 70.5, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 379, "stack_mm": 490, "wheelbase_mm": 982 },
+        { "size": "50", "seat_tube_mm": 470, "top_tube_mm": 525, "chainstay_mm": 410, "bb_drop_mm": 58, "head_tube_mm": 110, "front_center_mm": 582, "seat_angle_deg": 74.5, "head_angle_deg": 71.5, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 387, "stack_mm": 499, "wheelbase_mm": 983 },
+        { "size": "53", "seat_tube_mm": 500, "top_tube_mm": 535, "chainstay_mm": 410, "bb_drop_mm": 68, "head_tube_mm": 125, "front_center_mm": 583, "seat_angle_deg": 74, "head_angle_deg": 72, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 385, "stack_mm": 525, "wheelbase_mm": 984 },
+        { "size": "55", "seat_tube_mm": 520, "top_tube_mm": 550, "chainstay_mm": 410, "bb_drop_mm": 68, "head_tube_mm": 140, "front_center_mm": 588, "seat_angle_deg": 73.5, "head_angle_deg": 72.5, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 390, "stack_mm": 541, "wheelbase_mm": 988 },
+        { "size": "57", "seat_tube_mm": 540, "top_tube_mm": 560, "chainstay_mm": 410, "bb_drop_mm": 68, "head_tube_mm": 155, "front_center_mm": 593, "seat_angle_deg": 73.5, "head_angle_deg": 73, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 395, "stack_mm": 557, "wheelbase_mm": 994 },
+        { "size": "59", "seat_tube_mm": 560, "top_tube_mm": 575, "chainstay_mm": 412, "bb_drop_mm": 68, "head_tube_mm": 175, "front_center_mm": 603, "seat_angle_deg": 73, "head_angle_deg": 73, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 397, "stack_mm": 576, "wheelbase_mm": 1006 },
+        { "size": "61", "seat_tube_mm": 580, "top_tube_mm": 585, "chainstay_mm": 414, "bb_drop_mm": 68, "head_tube_mm": 195, "front_center_mm": 607, "seat_angle_deg": 72.5, "head_angle_deg": 73, "fork_offset_mm": 43, "fork_length_mm": 368, "reach_mm": 398, "stack_mm": 595, "wheelbase_mm": 1012 }
+      ]
+    }
   },
   "category_details": {
     "discipline": "aero road",
-    "geometry": "unknown",
-    "evidence": "snapshot-classification",
-    "note": "105 mechanical and a claimed 8.64 kg are shown."
+    "geometry": "manufacturer exact-model eight-size table",
+    "evidence": "manufacturer-product-page",
+    "note": "Current exact YTB8D manufacturer page supplies full geometry; the retained observation shows 105 mechanical and a claimed 8.64 kg."
   },
   "mounts": [],
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official-manual",
+    "eligibility": "pass",
+    "published_max_mm": 28,
+    "note": "Bianchi's Oltre Race Disc manual states a maximum tyre width of 28 mm. Secondary 30-32 mm fit reports are not represented as the manufacturer maximum."
+  },
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "bianchi-oltre-race-dealer-2026-08-17",
-    "bianchi-oltre-race-armenia-2026-08-17"
+    "bianchi-oltre-race-armenia-2026-08-17",
+    "bianchi-oltre-race-current-official-2026-08-30",
+    "bianchi-oltre-race-manual-2026-08-30"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-30"
 }

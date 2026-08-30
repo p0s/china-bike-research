@@ -4,13 +4,23 @@
   "model_id": "viqi-r8000",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "A dated mainland-China listing identifies a gravel complete bike and a ¥6,687.25 coupon-price lead.",
+  "brand_id": "viqi",
+  "why_interesting": "A dated mainland-China card and current exact-family indexes align on a VIQI / 微琦 R8000 mechanical 22-speed gravel-road complete bike at a ¥6,687.25 coupon-price lead.",
+  "facts": {
+    "listing_identity": "VIQI / 微琦 R8000 carbon gravel-road complete bike",
+    "drivetrain": "Shimano Ultegra R8000 mechanical 2x11 (22-speed)"
+  },
   "missing": [
-    "Exact groupset model, speed count, and drivetrain layout",
-    "Exact frame, wheel, cockpit, clearance, and size-specific BOM",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact frame, wheel, cockpit, brake, tire, and size-specific BOM",
     "Public purchase route, checkout conditions, returns, and domestic warranty"
   ],
-  "status": "exact-build-unproven",
+  "status": "exact-r8000-drivetrain-weight-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "viqi-r8000-current-jd-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +30,7 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/book/1318a62bdcf3128f2713.html",
+  "source_note": "Current exact-family indexing establishes Shimano Ultegra R8000 mechanical 2x11. No controlled complete weight or manufacturer maximum tire clearance was found after the full 50-area sweep; a listed 40 mm wheel option is rim depth, not tire clearance.",
+  "last_reviewed": "2026-08-30"
 }

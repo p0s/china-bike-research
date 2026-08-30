@@ -4,12 +4,22 @@
   "model_id": "west-biking-team-road",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Unusual high price for brand; exact build and provenance need verification.",
+  "why_interesting": "The high-price retained team-edition card maps to a current exact model family with Shimano 105 mechanical and Ultegra Di2 hydraulic-disc builds, but it does not expose which configuration was selected.",
+  "facts": {
+    "listing_identity": "WEST BIKING / 西骑者 competition team-edition T800 carbon road-bike family",
+    "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 or Shimano Ultegra R8170 Di2 electronic 2x12; both hydraulic-disc 24-speed builds"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Selected drivetrain, exact model year/SKU, and complete BOM",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Seller authority, exact domestic warranty route, and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-team-family-selected-option-weight-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "west-biking-team-road-current-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6870.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/xinghao/1318f839e4269a08e856.html",
+  "source_note": "Exact current mainland indexes publish both R7120 mechanical and R8170 Di2 team-edition builds. The retained card does not select one, and no controlled weight or manufacturer maximum clearance was found across 50 areas.",
+  "last_reviewed": "2026-08-30"
 }

@@ -4,13 +4,22 @@
   "model_id": "west-biking-sl-one",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Electronic race build shown.",
+  "why_interesting": "Current exact-model mainland indexes establish both mechanical and electronic Shimano 105 hydraulic-disc SL-ONE builds, but the retained ¥16,910 card does not expose its selected option.",
+  "facts": {
+    "listing_identity": "WEST BIKING / 西骑者 SL-ONE carbon aero road-bike family",
+    "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 or Shimano 105 R7170 Di2 electronic 2x12; both hydraulic-disc 24-speed builds"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Selected drivetrain, exact current SKU, and complete BOM",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-sl-one-family-selected-option-weight-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "west-biking-sl-one-current-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6871.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
+  "source_note": "Exact current mainland indexes publish both R7120 mechanical and R7170 Di2 SL-ONE builds. The retained card does not select one, and no controlled weight or manufacturer maximum clearance was found across 50 areas.",
+  "last_reviewed": "2026-08-30"
 }

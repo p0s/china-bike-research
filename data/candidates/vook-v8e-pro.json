@@ -4,13 +4,27 @@
   "model_id": "vook-v8e-pro",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "A dated mainland-China listing identifies a wireless-electronic road complete bike, a claimed 6.7 kg weight, and a ¥6,999 price lead.",
+  "brand_id": "vook",
+  "why_interesting": "Current exact-model sources establish a roughly 6.7 kg XS road build, fully wireless L-TWOO eGR 1x13 shifting, hydraulic brakes, and a 32C platform maximum alongside the dated ¥6,999 mainland lead.",
+  "facts": {
+    "listing_identity": "VOOK V8E Pro complete road bike",
+    "complete_weight_g": 6700,
+    "complete_weight_basis": "Approximately 6.7 kg for size XS, excluding pedals and bottle-cage bolts; retailer claim with paint, batch, and accessory variation caveat",
+    "drivetrain": "L-TWOO eGR fully wireless electronic 1x13 with hydraulic disc brakes",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Manufacturer maximum for the exact VOOK V8 platform used by V8E Pro"
+  },
   "missing": [
-    "Exact drivetrain brand, model, speed count, and layout",
-    "Weight conditions and exact frame, wheel, cockpit, and size-specific BOM",
+    "Exact wheel, cockpit, tire, paint, and size-specific production-batch BOM",
     "Public purchase route, checkout conditions, returns, and domestic warranty"
   ],
-  "status": "exact-build-unproven",
+  "status": "exact-v8e-pro-core-specs-domestic-route-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "vook-v8e-pro-current-2026-08-30",
+    "vook-v8-frame-current-2026-08-30",
+    "vook-v8e-pro-retailer-weight-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +34,7 @@
     "price_basis": "listed",
     "observation_count": 1
   },
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://vookbikes.ph/vook-v8e-pro",
+  "source_note": "The drivetrain and platform clearance are manufacturer-published. The 6.7 kg figure is an approximate exact-build retailer claim for XS with explicit exclusions and variation caveats.",
+  "last_reviewed": "2026-08-30"
 }

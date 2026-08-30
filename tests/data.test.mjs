@@ -65,6 +65,42 @@ test('current Incolor framesets keep exact evidence and official frame galleries
   ]) assert.equal(galleryIds.has(id), true, id);
 });
 
+test('batch 020 keeps exact findings separate from exhausted unknowns', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  assert.match(candidates.get('viqi-r8000').facts.drivetrain, /Ultegra R8000 mechanical 2x11/);
+  assert.equal(candidates.get('viqi-integrated-road-unknown').facts, undefined);
+
+  const vook = candidates.get('vook-v8e-pro');
+  assert.equal(vook.facts.complete_weight_g, 6700);
+  assert.match(vook.facts.complete_weight_basis, /size XS/);
+  assert.equal(vook.facts.tire_clearance_mm, 32);
+
+  assert.match(candidates.get('west-biking-sl-one').facts.drivetrain_options, /R7120.*R7170/);
+  assert.match(candidates.get('west-biking-team-road').facts.drivetrain_options, /R7120.*R8170/);
+
+  const bxt = candidates.get('bxt-gravel-complete');
+  assert.match(bxt.facts.listing_identity, /BXT-135/);
+  assert.equal(bxt.facts.complete_weight_g, 7850);
+  assert.match(bxt.facts.tire_clearance_conflict, /45C and 47C/);
+
+  const colnago = candidates.get('colnago-y1rs');
+  assert.equal(colnago.type, 'frameset');
+  assert.equal(colnago.facts.tire_clearance_mm, 32);
+  assert.equal(colnago.facts.complete_weight_g, undefined);
+  assert.equal(colnago.facts.drivetrain, undefined);
+
+  const bianchi = products.find((product) => product.variant.id === 'bianchi-oltre-race');
+  assert.equal(bianchi.platform.frame.geometry.sizes.length, 8);
+  assert.deepEqual(
+    bianchi.platform.frame.geometry.sizes.map(({ size, reach_mm, stack_mm }) => [size, reach_mm, stack_mm]),
+    [['44', 376, 481], ['47', 379, 490], ['50', 387, 499], ['53', 385, 525], ['55', 390, 541], ['57', 395, 557], ['59', 397, 576], ['61', 398, 595]]
+  );
+  assert.equal(bianchi.platform.tire_clearance.published_max_mm, 28);
+  assert.equal(bianchi.image.id, 'bianchi-oltre-race-ytb8d-primary-image-2026-08-30');
+  assert.equal(bianchi.image.subject_accuracy, 'exact-variant');
+  assert.match(bianchi.image.hosting.remote_url, /OltreRace-FQ_Ph-scaled\.jpg$/);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -163,7 +199,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 54);
-  assert.equal(data.images.length, 203);
+  assert.equal(data.images.length, 204);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -171,7 +207,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 940);
+  assert.equal(data.researchAttempts.length, 960);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +352,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 208);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 209);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -380,8 +416,9 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(gitoWave.defaultVisible, true);
   assert.match(gitoWave.candidate.name, /exact frame model unresolved/);
   assert.ok(!gitoWave.candidate.facts.drivetrain);
-  const unidentifiedBxt = catalogCandidates.find((entry) => entry.candidate.id === 'bxt-gravel-complete');
-  assert.equal(unidentifiedBxt.defaultVisible, false);
+  const identifiedBxt = catalogCandidates.find((entry) => entry.candidate.id === 'bxt-gravel-complete');
+  assert.equal(identifiedBxt.defaultVisible, true);
+  assert.match(identifiedBxt.candidate.facts.listing_identity, /BXT-135/);
 
   const basso = catalogCandidates.find((entry) => entry.candidate.id === 'basso-venta-disc');
   assert.deepEqual(basso.brand, { id: 'candidate-brand-basso', name: 'BASSO' });
@@ -798,7 +835,7 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 189);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 190);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 114);
   assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
