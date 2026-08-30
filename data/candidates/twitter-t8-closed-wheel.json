@@ -9,12 +9,16 @@
   "facts": {
     "listing_identity": "TWITTER / 骓特 T8 closed-wheel complete-bike family",
     "configuration_options": "WheelTop EVO 2x12 at approximately 9.2 kg, or Shimano 105 R7120 mechanical 2x12 at approximately 9.3 kg",
-    "weight_basis": "Manufacturer claims; retained selected configuration unresolved"
+    "weight_basis": "Manufacturer claims; retained selected configuration unresolved",
+    "frame_material": "High-modulus carbon frame, fork and aero seatpost with high-modulus-carbon tri-spoke/front and closed/rear wheelset",
+    "identity_source": "Current exact TWITTER manufacturer page explicitly identifies T8-封闭轮版 and its two 24-speed configuration/weight pairs",
+    "stiffness_evidence_status": "No model-specific frame-stiffness result or reproducible protocol found after 50-area exact-model sweep"
   },
   "missing": [
     "Selected WheelTop EVO versus Shimano 105 R7120 configuration",
     "Selected-build complete weight and complete BOM",
     "Manufacturer-confirmed maximum tire clearance",
+    "Model-specific frame-stiffness evidence and carbon grade/lay-up",
     "Exact size, included accessories and domestic warranty route"
   ],
   "status": "exact-t8-options-unresolved",
@@ -33,6 +37,6 @@
   },
   "source_refs": "IMG_6870.png#L2",
   "source_url": "https://www.twitter-bikes.com/twviewbike/12311.html",
-  "source_note": "The exact manufacturer page establishes the two configuration/weight pairs. Because the retained card does not select one, neither drivetrain nor weight is collapsed to a single value.",
+  "source_note": "The exact manufacturer page resolves identity, high-modulus-carbon construction and the two build/weight pairs. The retained card still does not select one build, and the page publishes neither a maximum tire width nor frame-stiffness protocol.",
   "last_reviewed": "2026-08-30"
 }

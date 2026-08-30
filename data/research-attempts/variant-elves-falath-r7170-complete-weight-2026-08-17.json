@@ -6,7 +6,8 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
     "web"
@@ -14,7 +15,7 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved. The later public-index sweep also left Weibo unavailable and started no new XHS capture.",
       "attempts": [
         {
           "attempt": 1,
@@ -22,7 +23,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -30,7 +32,8 @@
           "route": "Xiaohongshu public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "CAPTCHA/verification was not solved per policy."
+          "note": "CAPTCHA/verification was not solved per policy.",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -38,7 +41,117 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand YouTube channel — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand YouTube channel — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public brand-video indexing was checked for Falath Pro R7170; no controlled exact-build complete weight was established. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand Bilibili account — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand Bilibili account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand bilibili account exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand Xiaohongshu account — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand Xiaohongshu account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under the shared-runtime boundary; no exact additional result was indexed and no new capture was started. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand Douyin account — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand Douyin account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand douyin account exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Independent Douyin post — field variant:elves-falath-r7170:complete-weight",
+          "route": "Independent Douyin post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent douyin post exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand Weibo account — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand Weibo account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was unavailable under robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Independent Weibo post — field variant:elves-falath-r7170:complete-weight",
+          "route": "Independent Weibo post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded public check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Brand WeChat public article — field variant:elves-falath-r7170:complete-weight",
+          "route": "Brand WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public search indexing of brand WeChat articles yielded no additional exact-model evidence; no login or private content was used. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Independent WeChat public article — field variant:elves-falath-r7170:complete-weight",
+          "route": "Independent WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public search indexing of independent WeChat articles yielded no additional exact-model evidence; no login or private content was used. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Cycling forum thread — field variant:elves-falath-r7170:complete-weight",
+          "route": "Cycling forum thread — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "An 8.5 kg Falath Pro owner build uses different brakes, wheels and components and is rejected for the retained build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.reddit.com/r/bicycling/comments/17weurz/just_built_my_dream_bike/"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Public owner build log — field variant:elves-falath-r7170:complete-weight",
+          "route": "Public owner build log — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Public Falath Pro owner weight is configuration-specific and cannot establish the retained card. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Public community photo or setup post — field variant:elves-falath-r7170:complete-weight",
+          "route": "Public community photo or setup post — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact-family community build was checked for identity only; its image has no repository reuse grant and is not copied. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
         }
       ]
     },
@@ -52,7 +165,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Official page is Falath EVO, not the published Falath R7170 build.",
-          "result_url": "https://www.elvesbike.com/more.php?id=142"
+          "result_url": "https://www.elvesbike.com/more.php?id=142",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -61,7 +175,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Store page is a Falath EVO frameset; no R7170 mapping.",
-          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved"
+          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved",
+          "approach_area_id": "manufacturer-regional-site"
         },
         {
           "attempt": 3,
@@ -69,7 +184,301 @@
           "route": "authorized exact-SKU dealer or credible launch/spec publication",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No exact Falath R7170 build source with this field was located."
+          "note": "No exact Falath R7170 build source with this field was located.",
+          "approach_area_id": "authorized-regional-dealer"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer model-family or category page — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer model-family or category page — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current authorized complete-bike family page offers a 105 Di2 2x12 Falath Pro build but omits complete weight. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://elvesbikesaustralia.com.au/products/falath-pro-complete-bike"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer current catalog — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer current catalog — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current regional catalog retains Falath Pro complete builds. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer archived catalog — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer archived catalog — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Archived/current regional Falath Pro frame route was checked; frame-only weights are not whole-bike weights. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://yg.elvesbike.com/products/elves-falath-pro-disc-carbon-road-framesets"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer product manual — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer product manual — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer product manual exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer geometry document — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer geometry document — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact manufacturer frame page publishes sizes and frameset details but no complete-bike weight. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/more.php?id=91&lm=8"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer technical paper or test note — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer technical paper or test note — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer technical paper or test note exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer support or warranty page — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer support or warranty page — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current regional route and warranty context were checked; complete weight remains omitted. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer newsroom or launch page — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer newsroom or launch page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer newsroom or launch page exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer site search — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer site search — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer discovery resolves Falath Pro 2022, not EVO/EXP. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer sitemap or indexed route inventory — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer sitemap or indexed route inventory exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer structured page metadata — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer structured page metadata — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact regional product metadata identifies the R7170 complete bike but no weight. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer-listed distributor — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer-listed distributor — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Authorized Australian complete-bike page lists build families without weight. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer dealer locator — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer dealer locator — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer dealer locator exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Manufacturer-operated online store — field variant:elves-falath-r7170:complete-weight",
+          "route": "Manufacturer-operated online store — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer frame page was checked; its 1,160 g value is frame-only. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "taobao-official-store",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Official Taobao store or exact item — field variant:elves-falath-r7170:complete-weight",
+          "route": "Official Taobao store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official taobao store or exact item exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "tmall-official-store",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Official Tmall store or exact item — field variant:elves-falath-r7170:complete-weight",
+          "route": "Official Tmall store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official tmall store or exact item exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "jd-official-store",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Official JD store or exact item — field variant:elves-falath-r7170:complete-weight",
+          "route": "Official JD store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official jd store or exact item exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Verified Alibaba or 1688 supplier route — field variant:elves-falath-r7170:complete-weight",
+          "route": "Verified Alibaba or 1688 supplier route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The verified alibaba or 1688 supplier route exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Official AliExpress store or exact item — field variant:elves-falath-r7170:complete-weight",
+          "route": "Official AliExpress store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official aliexpress store or exact item exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Authorized mainland dealer — field variant:elves-falath-r7170:complete-weight",
+          "route": "Authorized mainland dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The authorized mainland dealer exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — International specialist retailer — field variant:elves-falath-r7170:complete-weight",
+          "route": "International specialist retailer — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current complete-bike retailer was checked; no controlled complete weight is published. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Cycling-industry review publication — field variant:elves-falath-r7170:complete-weight",
+          "route": "Cycling-industry review publication — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A 7.6 kg 105 Di2 build belongs to Falath EVO, not Falath Pro, and was rejected. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.trevscycleshop.co.nz/blogs/news/review-elves-falath-evo-frameset"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Chinese cycling-media publication — field variant:elves-falath-r7170:complete-weight",
+          "route": "Chinese cycling-media publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The chinese cycling-media publication exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Independent laboratory or instrumented test — field variant:elves-falath-r7170:complete-weight",
+          "route": "Independent laboratory or instrumented test — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent laboratory or instrumented test exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Print or digital magazine archive — field variant:elves-falath-r7170:complete-weight",
+          "route": "Print or digital magazine archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The print or digital magazine archive exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Trade-show coverage — field variant:elves-falath-r7170:complete-weight",
+          "route": "Trade-show coverage — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The trade-show coverage exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Race-team equipment page — field variant:elves-falath-r7170:complete-weight",
+          "route": "Race-team equipment page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The race-team equipment page exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Event or exhibitor catalog — field variant:elves-falath-r7170:complete-weight",
+          "route": "Event or exhibitor catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The event or exhibitor catalog exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Independent geometry database — field variant:elves-falath-r7170:complete-weight",
+          "route": "Independent geometry database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent geometry database exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Component compatibility database — field variant:elves-falath-r7170:complete-weight",
+          "route": "Component compatibility database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The component compatibility database exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Product certification or registration database — field variant:elves-falath-r7170:complete-weight",
+          "route": "Product certification or registration database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Current public certification and registration indexes yielded no selected-build complete weight for Falath Pro R7170. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ELVES Falath Pro 2022 Shimano 105 Di2 R7170 complete bike weight OROME GP5000 — Public web archive — field variant:elves-falath-r7170:complete-weight",
+          "route": "Public web archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public web archive exact-model area was checked; it yielded no additional attributable evidence for ELVES Falath Pro R7170 retained complete-bike build. This area was checked specifically for complete-weight; it did not establish an additional acceptable value for this field."
         }
       ]
     }
@@ -77,5 +486,5 @@
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-023-50-area-sweep-2026-08-30.json. The six original 2026-08-17 applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to the matching registered areas. No exact selected-build whole-bike weight with controlled size, wheels, accessories and weighing basis was established after all 50 areas; 1,160 g remains frame-only."
 }
