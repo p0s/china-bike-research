@@ -10,18 +10,24 @@
     "listing_identity": "UPLAND / 阿普兰 R70 complete-bike family",
     "complete_weight": "Approximately 8.3 kg bare, without pedals or computer mount; current manufacturer claim",
     "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 and Shimano 105 R7170/R7150 Di2 2x12 are both current",
-    "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished"
+    "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished",
+    "frame_material": "Toray T700 carbon main frame with T800 reinforcement at key areas and a T800 carbon fork",
+    "identity_source": "Current exact UPLAND product page and JD official-store index identify R70 and separate mechanical 105 and 105 Di2 builds",
+    "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published"
   },
   "missing": [
     "Selected mechanical versus Di2 drivetrain for each retained price",
     "Manufacturer-confirmed maximum tire clearance",
+    "Instrumented frame-stiffness magnitude and reproducible protocol",
     "Exact wheelset, size, complete BOM, seller authority and domestic warranty route for each retained card"
   ],
   "status": "exact-current-family-options-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "upland-r70-official-2026-08-30",
-    "upland-r70-jd-options-2026-08-30"
+    "upland-r70-jd-options-2026-08-30",
+    "upland-r70-race-engineering-2026-08-30",
+    "upland-r70-independent-review-2026-08-30"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -35,6 +41,6 @@
   },
   "source_refs": "IMG_6864.png#L1, IMG_6865.png#L2",
   "source_url": "https://www.upland.bike/zh/product/308.html",
-  "source_note": "The current exact manufacturer page supports an approximately 8.3 kg bare model claim. Current mechanical and Di2 options remain separate, and fitted 25C tires do not establish maximum clearance.",
+  "source_note": "Current exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. No lab protocol or single selected retained-card drivetrain is inferred.",
   "last_reviewed": "2026-08-30"
 }

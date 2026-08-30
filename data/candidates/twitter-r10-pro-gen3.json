@@ -9,18 +9,23 @@
   "facts": {
     "listing_identity": "TWITTER / 骓特 R10 Pro Gen 3 closed-wheel complete-bike family",
     "drivetrain_options": "WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 hydraulic-disc options are both current",
-    "configuration_note": "The retained card does not expose the selected drivetrain or a configuration-specific complete weight"
+    "configuration_note": "The retained card does not expose the selected drivetrain or a configuration-specific complete weight",
+    "frame_material": "R10pro manufacturer platform uses a high-modulus-carbon frame, fork and aero seatpost; exact closed-wheel Gen 3 grade and lay-up are unpublished",
+    "identity_source": "Current official-store and JD indexes explicitly identify the R10pro closed-wheel family and WheelTop EVO or Shimano 105 R7120 options",
+    "stiffness_evidence_status": "No generation-specific frame-stiffness evidence found after 50-area exact-model sweep"
   },
   "missing": [
     "Selected WheelTop EVO versus Shimano 105 R7120 drivetrain",
     "Exact selected-build complete weight and weighing basis",
     "Manufacturer-confirmed maximum tire clearance",
+    "Generation-specific carbon grade, lay-up and model-specific stiffness evidence",
     "Exact wheel, size, complete BOM, included accessories and domestic warranty route"
   ],
   "status": "exact-gen3-options-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-r10-pro-gen3-current-options-2026-08-30"
+    "twitter-r10-pro-gen3-current-options-2026-08-30",
+    "twitter-r10pro-frame-official-2026-08-30"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -33,6 +38,6 @@
   },
   "source_refs": "IMG_6886.png#L1",
   "source_url": "https://www.jd.com/brand/1318934bb416b6f4eaef.html",
-  "source_note": "Current exact-model indexes establish two closed-wheel drivetrain options but do not identify the retained card's selected configuration. No weight or maximum-clearance value is inferred.",
+  "source_note": "The retained listing is exact to the current R10pro closed-wheel family. Current manufacturer evidence establishes the high-modulus-carbon R10pro platform, but older trim weights and generation-specific material claims are not transferred.",
   "last_reviewed": "2026-08-30"
 }
