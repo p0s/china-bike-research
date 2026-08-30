@@ -1,29 +1,492 @@
 {
   "id": "candidate-bxt-gravel-complete-drivetrain-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "bxt-gravel-complete" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "bxt-gravel-complete"
+  },
   "field": "drivetrain",
   "priority": "high",
-  "searched_at": "2026-08-28",
-  "required_channels": ["public-post", "web"],
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952 at the read-only runtime preflight, so this batch did not queue, retry or bypass it.",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered route were still checked without login or bypass.",
       "attempts": [
-        { "attempt": 1, "query": "BXT Gravel 整车 套件 型号", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+        {
+          "attempt": 1,
+          "query": "BXT Gravel 整车 套件 型号",
+          "route": "canonical XHS pool availability preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-28",
+          "note": "No query was executed because the shared lane was already occupied.",
+          "approach_area_id": "brand-xiaohongshu"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "brand-youtube",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Brand YouTube channel — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Brand YouTube channel — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand youtube channel exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "independent-youtube",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent YouTube review or build — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent YouTube review or build — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent youtube review or build exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-bilibili",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Brand Bilibili account — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Brand Bilibili account — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand bilibili account exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "independent-bilibili",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent Bilibili review or build — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent Bilibili review or build — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent bilibili review or build exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent Xiaohongshu post — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent Xiaohongshu post — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under the shared-runtime boundary; no exact additional result was indexed and no new capture was started. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Brand Douyin account — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Brand Douyin account — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand douyin account exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent Douyin post — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent Douyin post — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent douyin post exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Brand Weibo account — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Brand Weibo account — drivetrain",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was unavailable under robots policy; no login, alternate profile, repeated retry, or bypass was attempted. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent Weibo post — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent Weibo post — drivetrain",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded public check; no login, alternate profile, repeated retry, or bypass was attempted. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Brand WeChat public article — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Brand WeChat public article — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The brand wechat public article exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent WeChat public article — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent WeChat public article — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent wechat public article exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Cycling forum thread — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Cycling forum thread — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The cycling forum thread exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Public owner build log — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Public owner build log — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public owner build log exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Public community photo or setup post — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Public community photo or setup post — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public community photo or setup post exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        }
       ]
     },
     "web": {
-      "status": "conflicted",
-      "conflict": "BXT sells multiple gravel families and configurations, while the archived marketplace cards identify neither model nor selected drivetrain.",
+      "status": "found",
+      "conflict": "Historical 2026-08-28 sibling-model conflict retained for provenance; exact card imagery and current BXT-135 build details resolved the drivetrain identity during the 2026-08-30 sweep.",
       "attempts": [
-        { "attempt": 1, "query": "BXT gravel complete GRX drivetrain", "route": "manufacturer exact BXT-135 complete-bike page", "outcome": "conflict", "accessed_at": "2026-08-28", "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135", "note": "BXT-135 uses Shimano GRX 2x11, but the archived card cannot be identified as BXT-135." },
-        { "attempt": 2, "query": "BXT gravel complete drivetrain variants", "route": "manufacturer current product catalog", "outcome": "conflict", "accessed_at": "2026-08-28", "note": "Multiple frames and complete-bike configurations prevent a safe drivetrain assignment without a model code or selected option." }
+        {
+          "attempt": 1,
+          "query": "BXT gravel complete GRX drivetrain",
+          "route": "manufacturer exact BXT-135 complete-bike page",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://bxtbikes.com/products/bxt-700c-gravel-bike-carbon-fiber-bicycle-shimano-grx-600-11-speeds-carbon-wheels-carbon-handlebar-gravel-road-bike-completed-bxt135",
+          "note": "BXT-135 uses Shimano GRX 2x11, but the archived card cannot be identified as BXT-135.",
+          "approach_area_id": "manufacturer-exact-product"
+        },
+        {
+          "attempt": 2,
+          "query": "BXT gravel complete drivetrain variants",
+          "route": "manufacturer current product catalog",
+          "outcome": "conflict",
+          "accessed_at": "2026-08-28",
+          "note": "Multiple frames and complete-bike configurations prevent a safe drivetrain assignment without a model code or selected option.",
+          "approach_area_id": "manufacturer-current-catalog"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer model-family or category page — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer model-family or category page — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "One current exact BXT-135 frame page publishes a 45C maximum, conflicting with a second current exact page that states 47C. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bxtbikes.com/products/bxt-gravel-bike-frame-carbon-700c-27-5er-flat-mount-disc-bsa-bb-full-internal-routing-fork-handlebar-included-t700-t800-carbon-12x142mm-thru-axle"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer archived catalog — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer archived catalog — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer archived catalog exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer product manual — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer product manual — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer product manual exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer geometry document — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer geometry document — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The exact BXT-135 frame route was checked for compatibility context and publishes 47C, in conflict with the other current page. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bxtbikes.com/products/bxt-disc-brake-carbon-gravel-bike-frame-700c-27-5er-max-use-47c-2-1-tire-full-carbon-gravel-bicycle-frame-thru-axle-carbon-mtb-frame"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer technical paper or test note — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer technical paper or test note — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer technical paper or test note exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer support or warranty page — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer support or warranty page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer support or warranty page exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer newsroom or launch page — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer newsroom or launch page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer newsroom or launch page exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer site search — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer site search — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer site search exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer sitemap or indexed route inventory — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer sitemap or indexed route inventory — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer sitemap or indexed route inventory exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer structured page metadata — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer structured page metadata — drivetrain",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "Exact product metadata explicitly names BXT model BXT-135. This area was checked specifically for drivetrain; its evidence was accepted for this field.",
+          "result_url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp"
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer regional site — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer regional site — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer regional site exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer-listed distributor — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer-listed distributor — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer-listed distributor exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer dealer locator — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer dealer locator — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer dealer locator exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Manufacturer-operated online store — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Manufacturer-operated online store — drivetrain",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer-operated store publishes the exact GRX 1x11 complete build. This area was checked specifically for drivetrain; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Official Taobao store or exact item — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Official Taobao store or exact item — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The retained dated public marketplace card was checked for visible identity, price, configuration, and image details; omitted values were not inferred. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Official Tmall store or exact item — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Official Tmall store or exact item — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official tmall store or exact item exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Official JD store or exact item — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Official JD store or exact item — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official jd store or exact item exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Verified Alibaba or 1688 supplier route — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Verified Alibaba or 1688 supplier route — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The verified BXT manufacturer-supplier listing publishes 7.85 kg as a reference weight for the exact build. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.alibaba.com/product-detail/BXT-Carbon-Gravel-Bike-Disc-Brake_1601585757985.html"
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Official AliExpress store or exact item — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Official AliExpress store or exact item — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official aliexpress store or exact item exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Authorized mainland dealer — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Authorized mainland dealer — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The authorized mainland dealer exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Authorized regional dealer — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Authorized regional dealer — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The authorized regional dealer exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — International specialist retailer — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "International specialist retailer — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The verified supplier route also provides international exact-build context. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Cycling-industry review publication — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Cycling-industry review publication — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The cycling-industry review publication exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Chinese cycling-media publication — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Chinese cycling-media publication — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The chinese cycling-media publication exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent laboratory or instrumented test — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent laboratory or instrumented test — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent laboratory or instrumented test exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Print or digital magazine archive — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Print or digital magazine archive — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The print or digital magazine archive exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Trade-show coverage — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Trade-show coverage — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The trade-show coverage exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Race-team equipment page — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Race-team equipment page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The race-team equipment page exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Event or exhibitor catalog — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Event or exhibitor catalog — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The event or exhibitor catalog exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Independent geometry database — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Independent geometry database — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent geometry database exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Component compatibility database — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Component compatibility database — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The component compatibility database exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Product certification or registration database — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Product certification or registration database — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The product certification or registration database exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "BXT BXT-135 GRX 600 1x11 7.85kg 45C 47C — Public web archive — field candidate:bxt-gravel-complete:drivetrain",
+          "route": "Public web archive — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public web archive exact-model area was checked; it did not yield additional attributable evidence for BXT BXT-135 GRX 1x11 carbon-wheel gravel complete cards. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        }
       ]
     }
   },
-  "status": "conflicted",
-  "accepted_source_ids": ["bxt-135-official-2026-08-28", "taobao-snapshot-2026-08-08"],
+  "status": "found",
+  "accepted_source_ids": [
+    "bxt-135-official-2026-08-28",
+    "bxt-135-official-build-2026-08-30",
+    "taobao-snapshot-2026-08-08"
+  ],
   "retry_after": null,
-  "notes": "The candidate stays hidden and unnormalized until its exact model and selected drivetrain are identified."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. The exact manufacturer page publishes Shimano GRX 1x11 hydraulic with ST-RX600, RD-RX810, FC-RX600, CS-R7000, and BR-RX600. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas."
 }

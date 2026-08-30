@@ -4,12 +4,18 @@
   "model_id": "viqi-integrated-road-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Likely related to R8000 platform; exact SKU not visible.",
+  "brand_id": "viqi",
+  "why_interesting": "The retained card is a real VIQI / 微琦 integrated carbon road-bike lead, but current catalog and marketplace families contain materially different builds and do not resolve its exact model or selected SKU.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year/SKU and complete component configuration",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Seller authority, final checkout conditions, and exact domestic warranty route"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-model-exhausted-after-50-areas",
+  "source_ids": [
+    "viqi-current-jd-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +26,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6895.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://mall.jd.com/introduction-12028042.html",
+  "source_note": "Fifty distinct current exact-model research areas did not bridge the retained card to one model or selected option. Current VIQI indexes contain several incompatible drivetrain families, so weight, drivetrain and maximum clearance remain unknown rather than inferred.",
+  "last_reviewed": "2026-08-30"
 }

@@ -4,15 +4,29 @@
   "model_id": "bxt-gravel-complete",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Two dated marketplace cards show a BXT gravel complete-bike price lead, but neither identifies an exact model or build.",
+  "brand_id": "bxt",
+  "why_interesting": "The two retained official-store cards now map to the BXT-135 GRX 1x11/carbon-wheel complete build, with a manufacturer-supplier reference weight of 7.85 kg; two current exact manufacturer pages conflict on maximum clearance.",
+  "facts": {
+    "listing_identity": "BXT-135 GRX 1x11 carbon gravel complete bike",
+    "complete_weight_g": 7850,
+    "complete_weight_basis": "Manufacturer-supplier reference weight for the exact GRX 1x11/carbon-wheel build; size, paint, and weighing exclusions unstated",
+    "drivetrain": "Shimano GRX 1x11 hydraulic: ST-RX600, RD-RX810, FC-RX600, CS-R7000, and BR-RX600",
+    "wheels": "TANDELL carbon wheels",
+    "tires": "Innova 700x40C installed; this is not treated as maximum clearance",
+    "tire_clearance_conflict": "Two current exact BXT-135 manufacturer pages publish incompatible 45C and 47C maxima"
+  },
   "missing": [
-    "Exact model year/SKU before any weight, drivetrain, clearance, material or ride evidence can be assigned",
-    "Complete BOM, seller/authenticity, final selected-option price and domestic warranty route"
+    "Manufacturer resolution of the conflicting 45C and 47C maximum-clearance claims for the archived-card revision",
+    "Exact size, paint, remaining component BOM, seller authority, final selected-option price, and domestic warranty route"
   ],
-  "status": "needs-exact-model",
+  "status": "exact-bxt-135-build-clearance-conflicted",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "bxt-135-official-build-2026-08-30",
+    "bxt-135-supplier-weight-2026-08-30",
+    "bxt-135-clearance-47c-2026-08-30",
+    "bxt-135-clearance-45c-2026-08-30"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -24,5 +38,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6889.png#R1, IMG_6894.png#L2",
-  "last_reviewed": "2026-08-28"
+  "source_url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
+  "source_note": "Card imagery, color system and build details align with BXT-135. Weight and drivetrain are exact-build evidence. Maximum clearance remains unknown because current exact manufacturer pages conflict and the archived cards expose no revision bridge.",
+  "last_reviewed": "2026-08-30"
 }
