@@ -1,27 +1,57 @@
 {
   "id": "meinier-superlight-2",
-  "name": "MEINIER Superlight carbon bike 2",
+  "name": "MEINIER full-carbon road bike, exact model unresolved",
   "model_id": "meinier-superlight-2",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model/specification not visible.",
-  "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+  "why_interesting": "The retained card shows a CNY 21,000 MEINIER carbon road bike, but neither a model code nor the selected drivetrain is visible.",
+  "facts": {
+    "frame_material": "The retained exact seller title describes a carbon-fiber road bike; the exact frame platform and carbon grade remain unidentified"
+  },
+  "alternative_builds": [
+    {
+      "id": "official-ds118-frameset-reference",
+      "label": "Current official DS-118 frameset reference",
+      "tires": "Manufacturer maximum 700C x 32C",
+      "source_ids": [
+        "meinier-ds118-official-2026-08-30"
+      ],
+      "notes": "Carbon road disc frameset with T47 86 mm, UDH and internal routing; it is not assigned to the retained seller card."
+    },
+    {
+      "id": "official-ds618-r7120-reference",
+      "label": "Current official DS618 complete-bike reference",
+      "drivetrain": "Shimano 105 R7120 mechanical 2×12 with hydraulic disc brakes",
+      "source_ids": [
+        "meinier-ds618-official-2026-08-30"
+      ],
+      "notes": "Uses the DS118 carbon frame and fork plus a carbon cockpit and wheels; no evidence maps it to the retained CNY 21,000 seller card."
+    }
   ],
-  "status": "research-queue",
+  "missing": [
+    "Exact model identity, selected drivetrain, complete BOM and complete-bike weight with measurement basis",
+    "Maximum tire clearance for the retained bike, current geometry and meaningful exact-model stiffness evidence",
+    "Current China purchase route, warranty entity and final checkout conditions"
+  ],
+  "status": "brand-and-carbon-listing-confirmed-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "meinier-current-road-range-official-2026-08-30",
+    "meinier-ds118-official-2026-08-30",
+    "meinier-ds618-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
-    "amount_cny": 2100,
+    "amount_cny": 21000,
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "listed",
     "observation_count": 1,
-    "correction_note": "Digit grouping rechecked against IMG_6884.png#R1; the visible amount is ¥2,100, not ¥21,000."
+    "correction_note": "Visual recheck of IMG_6884.png#R1 shows ¥21,000. The previous ¥2,100 transcription dropped one zero and is corrected here."
   },
-  "source_note": "The screenshot visibly shows ¥2,100. Exact model identity, complete bill of materials and final checkout still require live verification.",
+  "source_url": "https://www.meinierbikes.com/",
+  "source_note": "The retained screenshot visibly shows CNY 21,000 and a MEINIER carbon road bike, but no exact model code. The current official range establishes the brand and exposes distinct DS-118 and DS618 references; their 32C clearance and R7120 build are not transferred to the retained bike. No public Chinese brand rendering was established, and the manufacturer-associated legal spelling Menier remains separate from the MEINIER brand spelling.",
   "source_refs": "IMG_6884.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-30"
 }

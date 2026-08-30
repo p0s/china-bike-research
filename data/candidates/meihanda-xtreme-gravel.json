@@ -1,15 +1,23 @@
 {
   "id": "meihanda-xtreme-gravel",
-  "name": "X-TREME / 美涵达 Carbon gravel bike",
+  "name": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
   "model_id": "meihanda-xtreme-gravel",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Brand/model relationship needs verification.",
+  "why_interesting": "The retained seller card establishes a Meihanda-branded Xtreme carbon gravel bike, but no exact model code or selected build was visible or recoverable.",
+  "facts": {
+    "frame_material": "The retained exact seller title describes a carbon-fiber gravel bike; fiber grade, fork construction and layup are not visible"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model code, model year/SKU, drivetrain, complete BOM and complete-bike weight with measurement basis",
+    "Maximum tire clearance, geometry and meaningful exact-model stiffness evidence",
+    "Exact domestic warranty route, seller authenticity and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "brand-and-carbon-listing-confirmed-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "meihanda-phantom-p10-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +28,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6877.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://meihanda.com/",
+  "source_note": "The retained card visibly pairs 美涵达 with an Xtreme-marked carbon gravel bike at CNY 6,498.25. The current manufacturer range establishes Meihanda / Xtreme identity but its documented Phantom products use 7005-aluminum frames and T800-carbon forks; those current Phantom specifications, a foreign 12-speed Xtreme listing and every sibling build remain distinct from this unresolved retained bike.",
+  "last_reviewed": "2026-08-30"
 }
