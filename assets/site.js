@@ -5,6 +5,49 @@ import { moveSelectionId } from './compare-state.js';
   const selectionStorageKey = 'china-bike-guide-selection-v2';
   const comparisonSelectionLimit = 10;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
+  const themeStorageKey = 'china-bikes-theme-v1';
+  const themeModes = ['system', 'light', 'dark'];
+  const themeLabels = { system: 'System', light: 'Light', dark: 'Dark' };
+  const themeIcons = { system: '◐', light: '☀', dark: '☾' };
+  const systemDark = matchMedia('(prefers-color-scheme: dark)');
+  const themeControl = document.querySelector('[data-theme-control]');
+  const themeLabel = themeControl?.querySelector('[data-theme-label]');
+  const themeIcon = themeControl?.querySelector('[data-theme-icon]');
+
+  function readTheme() {
+    try {
+      const stored = localStorage.getItem(themeStorageKey);
+      return themeModes.includes(stored) ? stored : 'system';
+    } catch { return 'system'; }
+  }
+
+  function applyTheme(mode, { persist = false } = {}) {
+    const selected = themeModes.includes(mode) ? mode : 'system';
+    if (selected === 'system') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = selected;
+    if (persist) {
+      try { localStorage.setItem(themeStorageKey, selected); } catch { /* the selected theme remains active for this page */ }
+    }
+    const resolved = selected === 'system' ? (systemDark.matches ? 'dark' : 'light') : selected;
+    const next = themeModes[(themeModes.indexOf(selected) + 1) % themeModes.length];
+    if (themeLabel) themeLabel.textContent = themeLabels[selected];
+    if (themeIcon) themeIcon.textContent = themeIcons[selected];
+    if (themeControl instanceof HTMLButtonElement) {
+      themeControl.setAttribute('aria-label', `Theme: ${themeLabels[selected]}. Switch to ${themeLabels[next].toLowerCase()} theme`);
+      themeControl.title = `Theme: ${themeLabels[selected]}`;
+    }
+    const themeColor = document.querySelector('[data-theme-color]');
+    if (themeColor instanceof HTMLMetaElement) themeColor.content = resolved === 'dark' ? '#111512' : '#f7f7f4';
+  }
+
+  applyTheme(readTheme());
+  themeControl?.addEventListener('click', () => {
+    const current = readTheme();
+    applyTheme(themeModes[(themeModes.indexOf(current) + 1) % themeModes.length], { persist: true });
+  });
+  const syncSystemTheme = () => { if (readTheme() === 'system') applyTheme('system'); };
+  if (typeof systemDark.addEventListener === 'function') systemDark.addEventListener('change', syncSystemTheme);
+  else systemDark.addListener?.(syncSystemTheme);
 
   function readStoredSelection() {
     try {

@@ -40,6 +40,33 @@ test('homepage exposes crawlable evidence-led discovery without duplicating the 
   assert.match(html, /href="\/china-bike-research\/prices\/">Price ranges<\/a>/);
 });
 
+test('homepage social preview is project-owned, crop-sized, and fully described', () => {
+  assert.match(html, /property="og:image" content="https:\/\/example.github.io\/china-bike-research\/assets\/social-preview.png"/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:height" content="630"/);
+  assert.match(html, /property="og:image:type" content="image\/png"/);
+  assert.match(html, /og:image:alt" content="China Bikes wordmark with three project-owned technical bicycle and frameset silhouettes"/);
+  const preview = fs.readFileSync(new URL('../assets/social-preview.png', import.meta.url));
+  assert.equal(preview.subarray(1, 4).toString(), 'PNG');
+  assert.equal(preview.readUInt32BE(16), 1200);
+  assert.equal(preview.readUInt32BE(20), 630);
+  assert.ok(preview.byteLength < 500_000);
+  const source = fs.readFileSync(new URL('../assets/social-preview.svg', import.meta.url), 'utf8');
+  assert.doesNotMatch(source, /\b(?:href|src)=["']https?:|<image\b/i);
+});
+
+test('theme control supports system, light, and dark without delaying first paint', () => {
+  const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
+  const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
+  assert.match(html, /data-theme-control/);
+  assert.match(client, /const themeModes = \['system', 'light', 'dark'\]/);
+  assert.match(client, /localStorage\.setItem\(themeStorageKey, selected\)/);
+  assert.match(client, /delete document\.documentElement\.dataset\.theme/);
+  assert.match(styles, /:root\[data-theme="dark"\]/);
+  assert.match(styles, /@media \(prefers-color-scheme: dark\)[\s\S]*:root:not\(\[data-theme\]\)/);
+  assert.match(styles, /--image-surface: #e6eae4/);
+});
+
 test('homepage offers compact criteria-led comparison starting points', () => {
   assert.match(html, /Top bikes, with the criteria shown/);
   assert.match(html, /Three focused shortlists—not a universal score or a recommendation ranking/);

@@ -109,12 +109,12 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.match(script, /brandButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
   assert.match(script, /const buildPreset = document\.querySelector\('\[data-frameset-build-preset\]'\)/);
   assert.match(script, /function syncBuildPreset\(\)/);
-  assert.match(script, /function updateFramesetPrices\(value, \{ highlight = false \} = \{\}\)/);
+  assert.match(script, /function updateFramesetPrices\(value, \{ highlight = false, presetId \} = \{\}\)/);
   assert.match(script, /row\.dataset\.priceFilter = String\(high\)/);
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
   assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
   assert.match(script, /buildPreset\?\.addEventListener\('change'/);
-  assert.match(script, /buildCustom\.hidden = false/);
+  assert.match(script, /buildCustom\.hidden = !requiresInput/);
   assert.match(script, /buildAllowance\.focus\(\{ preventScroll: true \}\)/);
   assert.match(script, /buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1'/);
   assert.match(script, /const stored = localStorage\.getItem\(buildAllowanceStorageKey\);/);

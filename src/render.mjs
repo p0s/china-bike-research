@@ -34,7 +34,7 @@ import {
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
 const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', ogType = 'website', structuredData = [] }) {
+function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [] }) {
   return layout({
     base: ctx.base,
     repositoryUrl: ctx.repositoryUrl,
@@ -47,6 +47,9 @@ function page(ctx, { title = '', current = '', path = '/', description: desc = d
     noindex,
     image,
     imageAlt,
+    imageWidth,
+    imageHeight,
+    imageType,
     ogType,
     structuredData,
     datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
@@ -900,7 +903,6 @@ function candidateComparisonSummary(ctx, entry) {
   return {
     id: entry.id,
     stage: 'candidate',
-    ...(entry.brand?.name ? { brand: entry.brand.name } : {}),
     url: url(ctx.base, `/models/${entry.candidate.id}/`),
     name: entry.candidate.name,
     ...(image ? {
@@ -1202,6 +1204,11 @@ export function renderHome(ctx) {
     current: 'catalog',
     path: '/',
     body,
+    image: url(ctx.base, '/assets/social-preview.png'),
+    imageAlt: 'China Bikes wordmark with three project-owned technical bicycle and frameset silhouettes',
+    imageWidth: 1200,
+    imageHeight: 630,
+    imageType: 'image/png',
     structuredData: websiteStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,

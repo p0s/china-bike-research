@@ -7,7 +7,7 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription=''}) {
   const siteName='China Bikes';
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,path)}`;
@@ -22,7 +22,8 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="${escapeAttr(description)}">
-  <meta name="theme-color" content="#f7f7f4">
+  <meta name="theme-color" content="#f7f7f4" data-theme-color>
+  <script>(()=>{try{const k='china-bikes-theme-v1',t=localStorage.getItem(k);if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'}catch{}})()</script>
   <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
@@ -35,7 +36,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <meta property="og:url" content="${escapeAttr(canonical)}">
   <meta name="twitter:title" content="${escapeAttr(pageTitle)}">
   <meta name="twitter:description" content="${escapeAttr(description)}">
-  ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
+  ${socialImage ? `<meta property="og:image" content="${escapeAttr(socialImage)}"><meta property="og:image:alt" content="${escapeAttr(imageAlt || description)}">${imageWidth ? `<meta property="og:image:width" content="${escapeAttr(imageWidth)}">` : ''}${imageHeight ? `<meta property="og:image:height" content="${escapeAttr(imageHeight)}">` : ''}${imageType ? `<meta property="og:image:type" content="${escapeAttr(imageType)}">` : ''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${escapeAttr(socialImage)}"><meta name="twitter:image:alt" content="${escapeAttr(imageAlt || description)}">` : `<meta name="twitter:card" content="summary">`}
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
@@ -44,13 +45,16 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <header class="site-header">
     <div class="page header-inner">
       <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bikes</span></a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav" aria-label="Primary">
-        <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
-        <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
-        <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
-        <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
-      </nav>
+      <div class="header-actions">
+        <nav id="main-nav" class="main-nav" aria-label="Primary">
+          <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
+          <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
+          <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
+          <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
+        </nav>
+        <button class="theme-button" type="button" data-theme-control aria-label="Theme: System. Switch to light theme" title="Theme: System"><span aria-hidden="true" data-theme-icon>◐</span><span data-theme-label>System</span></button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      </div>
     </div>
   </header>
   <main id="content">${body}</main>
