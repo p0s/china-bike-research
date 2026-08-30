@@ -4,11 +4,12 @@
   "model_id": "xds-ad7",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model/color name visible.",
+  "why_interesting": "Current exact Green Demon regional listings resolve the Shimano 105 Di2 and T700+T800 carbon core while exposing configuration-specific weight and fitted-tire differences. The retained mainland coupon card remains option-sensitive.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Selected exact regional/mainland SKU, complete BOM and corresponding complete-bike weight basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Controlled exact-model frame-stiffness magnitude and reproducible protocol",
+    "Current domestic seller, warranty route and final checkout conditions"
   ],
   "status": "publication-gate-not-met",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
@@ -21,11 +22,23 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6865.png#R2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
     "xds-ad7-105-di2-official-image-2026-08-17",
-    "xds-ad7-jd-smzdm-search"
+    "xds-ad7-jd-smzdm-search",
+    "xds-ad7-green-demon-taiwan-2026-08-30",
+    "xds-ad7-green-demon-hk-2026-08-30",
+    "xds-ad7-green-demon-vbike-2026-08-30"
   ],
-  "source_note": "A public price index supports the retained ¥12,980 observation for an AD7 105 Di2 listing, but does not prove current stock, final checkout or the full bill of materials.",
-  "source_url": "https://www.xdsbicycles.com.au/collections/all"
+  "source_note": "Current exact Green Demon listings agree on 105 Di2 and carbon construction but differ at 8.2 versus approximately 8.5 kg and 25C versus 30C fitted tires. Fitted sizes are not promoted to a maximum.",
+  "source_url": "https://24h.pchome.com.tw/prod/DEAOP3-A900HRCVX",
+  "brand_id": "xds",
+  "facts": {
+    "listing_identity": "XDS / 喜德盛 AD7 Green Demon retained CNY 12,980 coupon card",
+    "complete_weight_references": "8.2 kg on the current Taiwan Green Demon listing and approximately 8.5 kg at 480 mm on the current Hong Kong Green Demon listing; retained delivery basis unresolved",
+    "drivetrain": "Shimano 105 Di2 electronic hydraulic 2x12 with 11-34T cassette and 50/34T crank",
+    "frame_material": "T700+T800 carbon aero frame with carbon fork; fiber proportions and lay-up are unpublished",
+    "fitted_tire_references": "Current regional Green Demon builds show 25C and 30C fitted tires; neither establishes the frame maximum",
+    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas"
+  }
 }

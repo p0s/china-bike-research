@@ -6,7 +6,8 @@
   },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
     "web"
@@ -14,7 +15,7 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes, prior repository evidence and every other registered route were still checked without login or bypass.",
       "attempts": [
         {
           "attempt": 1,
@@ -22,7 +23,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -30,7 +32,8 @@
           "route": "Xiaohongshu public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "CAPTCHA/verification was not solved per policy."
+          "note": "CAPTCHA/verification was not solved per policy.",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -38,12 +41,122 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand YouTube channel — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current Giant video indexing was checked for launch and testing context; no stronger mainland weight basis appeared. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand Bilibili account — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current Giant China video indexing was checked for exact trim context. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand Xiaohongshu account — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes and already-recorded repository evidence were checked under the shared-runtime boundary; no new capture was started. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand Douyin account — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current brand-account indexing was checked for the mainland launch and exact trim. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Independent Douyin post — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current dealer and reviewer indexes were checked; final checkout claims were not inferred. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand Weibo account — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was unavailable under robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Independent Weibo post — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded public check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Brand WeChat public article — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public search indexing of brand WeChat articles yielded no additional exact-model evidence; no login or private content was used. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Independent WeChat public article — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public search indexing of independent WeChat articles yielded no additional exact-model evidence; no login or private content was used. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Cycling forum thread — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current owner discussion was checked for build distinctions; qualitative claims did not override manufacturer testing. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Public owner build log — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Public owner build log — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current owner builds were checked; custom component weights were not transferred. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Public community photo or setup post — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Existing canonical public dealer-post evidence was re-used for identity corroboration only; no new capture or media copy occurred. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.xiaohongshu.com/explore/6a5e054f000000001c00e5c8"
         }
       ]
     },
     "web": {
-      "status": "temporarily-exhausted",
+      "status": "found",
       "attempts": [
         {
           "attempt": 1,
@@ -52,7 +165,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Generation/trim mismatch preserved.",
-          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -61,7 +175,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No exact candidate.",
-          "result_url": "https://giant.com.cn/index.php/index/bike_finder.html"
+          "result_url": "https://giant.com.cn/index.php/index/bike_finder.html",
+          "approach_area_id": "manufacturer-current-catalog"
         },
         {
           "attempt": 3,
@@ -70,13 +185,314 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "Route only.",
-          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant",
+          "approach_area_id": "manufacturer-dealer-locator"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer model-family or category page — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer family route identifies the fourth-generation platform. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant-bicycles.com/global/propel"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer archived catalog — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer product manual — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The generic Propel manual was checked for fit context but does not publish exact trim weight. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant-bicycles.com/_upload/manuals/01_Giant/Propel/Giant_Propel_EN.pdf"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer geometry document — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact regional page publishes geometry and a 32 mm maximum. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant-bicycles.com/au/propel-advanced-sl-1-2027"
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer technical paper or test note — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current official testing page publishes numeric frame and fork stiffness with protocol. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant-bicycles.com/global/propel-testing"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer support or warranty page — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current mainland warranty route was checked; final dealer handling remains purchase-specific. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant.com.cn/index.php/index/warranty.html"
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer newsroom or launch page — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer launch/testing context identifies the 2027 fourth generation. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer site search — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer discovery resolves the exact mainland trim. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer sitemap or indexed route inventory — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current mainland catalog inventory was checked and resolves the exact product route. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_finder.html"
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer structured page metadata — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact page metadata identifies Propel Advanced SL 1 and the suggested price. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer regional site — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Official Japan exact-trim page publishes the 6.8 kg size-S reference. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027?partnumber=9074049103"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer-listed distributor — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Official Australia exact-trim page corroborates the build and 32 mm maximum but explicitly omits weight. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Manufacturer-operated online store — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer-operated mainland product route publishes the exact CNY 54,800 suggested price. This area was checked specifically for price; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Official Taobao store or exact item — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Official Tmall store or exact item — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Official JD store or exact item — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Verified Alibaba or 1688 supplier route — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Official AliExpress store or exact item — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Authorized mainland dealer — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Previously recorded exact dealer-style public post matches the now-confirmed official trim and price; no new XHS capture was run. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.xiaohongshu.com/explore/6a5e054f000000001c00e5c8"
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Authorized regional dealer — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current Japanese launch coverage corroborates the exact SL 1 6.8 kg size-S reference. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://cyclejapan.club/?p=37022"
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — International specialist retailer — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Cycling-industry review publication — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact-generation industry coverage corroborates fourth-generation chronology but is not used for mainland price. This area was checked specifically for price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikerumor.com/4th-gen-giant-propel-aero-bike-launch-2026/"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Chinese cycling-media publication — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Independent laboratory or instrumented test — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independent exact-generation stiffness replication was found; Giant manufacturer values remain clearly labelled. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Print or digital magazine archive — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Trade-show coverage — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Race-team equipment page — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current race-equipment coverage was checked; race builds were not transferred to the stock SL 1. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Event or exhibitor catalog — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Independent geometry database — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Independent geometry database — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact-generation geometry indexes were checked against manufacturer values; no conflicting accepted geometry was found. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Component compatibility database — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Product certification or registration database — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Public registration indexes were checked for generation identity; they add no trim-specific weight or price. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Giant 捷安特 Propel Advanced SL 1 2027 fourth generation 54800 Ultegra Di2 6.8kg stiffness — Public web archive — field candidate:giant-propel-gen4-community-lead:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Giant Propel Advanced SL 1 2027 fourth generation mainland trim; it yielded no additional attributable evidence. This area was checked specifically for price; it did not establish an additional acceptable value for this field."
         }
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-propel-advanced-sl1-mainland-2026-08-30"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/giant-propel-gen4-community-lead-batch-025-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Current official mainland page publishes a CNY 54,800 suggested price. The six original 2026-08-17 applications remain intact."
 }

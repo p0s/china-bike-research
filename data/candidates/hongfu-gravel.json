@@ -2,12 +2,32 @@
   "id": "hongfu-gravel",
   "name": "Hongfu current gravel frame",
   "type": "frameset",
-  "why_interesting": "Long-established factory with potentially good direct pricing.",
+  "why_interesting": "The current official category proves that the generic lead can refer to at least FM188 internal-routing or FM279. Exact option facts are recorded without silently choosing one chassis.",
   "missing": [
-    "Exact model ID",
-    "Current geometry",
-    "Current standards and price"
+    "Exact selected Hongfu model ID and generation",
+    "Selected-model geometry, standards, frame weight, material stack, maximum tire clearance and price",
+    "Controlled exact-model frame-stiffness result and reproducible protocol",
+    "Current mainland purchase, shipping, tax, warranty and return terms"
   ],
   "status": "needs-exact-model",
-  "last_reviewed": "2026-08-06"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "current_model_options": "Official current gravel category lists FM188 internal-routing and HF-FM279; the retained generic lead does not identify one",
+    "tire_clearance_references": "FM188 internal-routing: 700x45 mm or 27.5x2.0; FM279: 700x42 mm; selected model unresolved",
+    "price_references": "FM188 public wholesale reference US$1,199; FM279 public wholesale references from €441.86 and roughly US$455-510 depending quantity; no selected mainland retail checkout",
+    "frame_weight_references": "FM188 New CX: 1,070-1,190±40 g by size; FM279: 1,070-1,190±40 g by size, including 1,110±40 g at size 54; selected model unresolved",
+    "frame_material": "FM188 internal page: T800/T1000; alternate FM188 page: Toray T800 UD; FM279: T800 UD; selected model unresolved",
+    "identity_source": "Current Hongfu manufacturer category and exact pages establish multiple live gravel chassis but do not map the original generic candidate to one model ID",
+    "frame_stiffness_status": "No credible controlled exact-model stiffness result found; incoherent generated Alibaba ratings and generic aggregator claims were rejected"
+  },
+  "source_url": "https://www.hongfu-bikes.com/products/gravelbike/",
+  "source_note": "Current manufacturer evidence exposes distinct FM188 and FM279 specifications. Wholesale price references remain model- and quantity-specific. No option is assigned to the generic candidate, and generated stiffness prose is rejected.",
+  "source_ids": [
+    "hongfu-current-gravel-category-2026-08-30",
+    "hongfu-fm188-internal-current-2026-08-30",
+    "hongfu-fm188-current-2026-08-30",
+    "hongfu-fm279-current-2026-08-30",
+    "hongfu-fm279-alibaba-current-2026-08-30",
+    "hongfu-fm188-alibaba-price-2026-08-30"
+  ]
 }

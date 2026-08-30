@@ -135,6 +135,41 @@ test('batch 024 preserves selected-trim, generation, and tire-maximum boundaries
   assert.match(candidates.get('west-biking-team-road').facts.frame_material, /T800-carbon/);
 });
 
+test('batch 025 preserves regional and option conflicts without inventing maxima', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const ad500 = candidates.get('xds-ad500-2025');
+  assert.match(ad500.facts.complete_weight_references, /8\.9 kg.*9\.23 kg.*10\.2 kg/);
+  assert.match(ad500.facts.drivetrain, /L-TWOO ER9 electronic hydraulic 2x12/);
+  assert.match(ad500.facts.frame_material, /X6 aluminum frame.*carbon and aluminum forks/);
+  assert.equal(ad500.facts.tire_clearance_mm, undefined);
+
+  const ad7 = candidates.get('xds-ad7');
+  assert.match(ad7.facts.complete_weight_references, /8\.2 kg.*8\.5 kg/);
+  assert.match(ad7.facts.drivetrain, /Shimano 105 Di2.*2x12/);
+  assert.match(ad7.facts.frame_material, /T700\+T800 carbon/);
+  assert.equal(ad7.facts.tire_clearance_mm, undefined);
+
+  const hongfu = candidates.get('hongfu-gravel');
+  assert.match(hongfu.facts.current_model_options, /FM188.*FM279/);
+  assert.match(hongfu.facts.tire_clearance_references, /700x45 mm.*700x42 mm/);
+  assert.match(hongfu.facts.frame_weight_references, /1,070-1,190±40 g/);
+  assert.equal(hongfu.facts.tire_clearance_mm, undefined);
+
+  const propel = candidates.get('giant-propel-gen4-community-lead');
+  assert.equal(propel.facts.mainland_suggested_price_cny, 54800);
+  assert.match(propel.facts.complete_weight_reference, /6\.8 kg.*size S.*Japan/);
+  assert.match(propel.facts.drivetrain, /Ultegra Di2.*2x12/);
+  assert.equal(propel.facts.frame_pedaling_stiffness_n_per_mm, 84);
+  assert.equal(propel.facts.frame_torsional_stiffness_n_per_degree, 124);
+  assert.equal(propel.facts.fork_stiffness_n_per_mm, 60);
+
+  const spark = candidates.get('pardus-spark-rs-community-lead');
+  assert.match(spark.facts.complete_weight_references, /8\.5 kg.*8\.0 kg.*7\.8 kg/);
+  assert.match(spark.facts.current_factory_price_reference, /CNY 11,999.*not the custom/);
+  assert.equal(spark.facts.tire_clearance_mm, undefined);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -241,7 +276,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1049);
+  assert.equal(data.researchAttempts.length, 1069);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -386,7 +421,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 217);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 207);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 208);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
