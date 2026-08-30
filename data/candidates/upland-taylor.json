@@ -4,13 +4,25 @@
   "model_id": "upland-taylor",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "brand_id": "upland",
+  "why_interesting": "The current exact manufacturer page matches the retained CNY 10,999 Taylor card and supplies its mechanical-105 build and bare-weight claim.",
+  "facts": {
+    "listing_identity": "UPLAND / 阿普兰 Taylor CNY 10,999 mechanical complete bike",
+    "complete_weight": "Approximately 8.5 kg bare, without pedals or computer mount; manufacturer claim",
+    "drivetrain": "Shimano 105 R7120 mechanical 2x12 with hydraulic BR-R7170 brakes",
+    "frame_and_fit": "T1100+T800 carbon aero frame and fork, T47 bottom bracket",
+    "stock_tire": "MAXXIS Pursuer 700x28C; maximum clearance unpublished"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact size, wheelset selection, included accessories, seller authority and domestic warranty route"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-mechanical-build-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "upland-taylor-official-2026-08-30",
+    "upland-taylor-marketplace-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +33,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6880.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.upland.bike/zh/product/304.html",
+  "source_note": "The manufacturer price, drivetrain and weight align with the retained card. Fitted 28C tires are documented but are not treated as a maximum-clearance claim.",
+  "last_reviewed": "2026-08-30"
 }

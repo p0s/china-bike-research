@@ -4,12 +4,23 @@
   "model_id": "twitter-storm-knight",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Visible title says 风暴骑士 白骑士; exact platform needs confirmation.",
+  "brand_id": "twitter",
+  "why_interesting": "The retained 风暴骑士 / 白骑士 card is now tied to the exact current listing, whose public marketplace and brand-video indexes consistently identify a Shuntai 22-speed build.",
+  "facts": {
+    "listing_identity": "TWITTER / 骓特 Storm Knight / White Knight complete bike",
+    "drivetrain": "Shuntai 2x11 (22-speed); exact component-level BOM remains unpublished"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact shifter, derailleur, crank, cassette and brake component models",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact model year, included accessories, seller authority and domestic warranty route"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-shuntai-22-speed-weight-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-storm-knight-current-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +31,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6867.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://tao.hooos.com/goods_564630170532.html",
+  "source_note": "Exact current public indexes consistently establish the Shuntai 22-speed drivetrain family. Weight, maximum clearance and the component-level BOM remain unknown.",
+  "last_reviewed": "2026-08-30"
 }

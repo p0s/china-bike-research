@@ -4,13 +4,24 @@
   "model_id": "twitter-t8-closed-wheel",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "105 mechanical, front tri-spoke/rear disc build.",
+  "brand_id": "twitter",
+  "why_interesting": "The exact manufacturer page confirms the T8 closed-wheel family and publishes two 24-speed builds with configuration-specific weights. The retained card does not expose enough selected-option detail to choose one.",
+  "facts": {
+    "listing_identity": "TWITTER / 骓特 T8 closed-wheel complete-bike family",
+    "configuration_options": "WheelTop EVO 2x12 at approximately 9.2 kg, or Shimano 105 R7120 mechanical 2x12 at approximately 9.3 kg",
+    "weight_basis": "Manufacturer claims; retained selected configuration unresolved"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Selected WheelTop EVO versus Shimano 105 R7120 configuration",
+    "Selected-build complete weight and complete BOM",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact size, included accessories and domestic warranty route"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-t8-options-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-t8-closed-wheel-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +32,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6870.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.twitter-bikes.com/twviewbike/12311.html",
+  "source_note": "The exact manufacturer page establishes the two configuration/weight pairs. Because the retained card does not select one, neither drivetrain nor weight is collapsed to a single value.",
+  "last_reviewed": "2026-08-30"
 }
