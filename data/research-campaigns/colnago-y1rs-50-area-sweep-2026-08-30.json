@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:colnago-y1rs:complete-weight",
     "candidate:colnago-y1rs:drivetrain",
-    "candidate:colnago-y1rs:tire-clearance"
+    "candidate:colnago-y1rs:tire-clearance",
+    "candidate:colnago-y1rs:frame-material",
+    "candidate:colnago-y1rs:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://www.colnago.com/en-co/premium-bikes/y1rs-road-bike",
-      "note": "The current exact manufacturer page distinguishes the Y1Rs platform and multiple complete-bike configurations."
+      "note": "Current exact page claims 3.5% greater frame-structure stiffness than the previous model for sprint power transfer."
     },
     {
       "approach_area_id": "manufacturer-model-family",
@@ -86,8 +88,9 @@
       "channel": "web",
       "query": "COLNAGO 梅花 Y1Rs UAE 59800 车架组 32mm — Manufacturer support or warranty page",
       "route": "Manufacturer support or warranty page",
-      "outcome": "no-result",
-      "note": "The manufacturer support or warranty page exact-model area was checked; it did not yield additional attributable evidence for COLNAGO 梅花 Y1Rs UAE team-edition CNY 59,800 frame kit."
+      "outcome": "found",
+      "note": "Current FAQ states that retail and race Y1Rs frames share the same model-specific area-tuned carbon lay-up and structural engineering.",
+      "result_url": "https://www.colnago.com/es-es/legal-area/faq"
     },
     {
       "approach_area_id": "manufacturer-newsroom-launch",

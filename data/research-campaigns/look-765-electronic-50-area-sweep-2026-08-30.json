@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:look-765-electronic:complete-weight",
     "candidate:look-765-electronic:drivetrain",
-    "candidate:look-765-electronic:tire-clearance"
+    "candidate:look-765-electronic:tire-clearance",
+    "candidate:look-765-electronic:frame-material",
+    "candidate:look-765-electronic:frame-stiffness"
   ],
   "areas": [
     {
@@ -78,8 +80,9 @@
       "channel": "web",
       "query": "LOOK 洛克 765 Optimum Grey Blue Satin R7170 105 Di2 R50D RS171 34mm — Manufacturer technical paper or test note",
       "route": "Manufacturer technical paper or test note",
-      "outcome": "no-result",
-      "note": "The manufacturer technical paper or test note exact-model area was checked; it yielded no additional attributable evidence for LOOK / 洛克 765 Optimum Grey Blue Satin electronic family card."
+      "outcome": "found",
+      "note": "Exact-platform release describes multi-fiber construction, 20% more compliance than the previous model and preserved lateral efficiency.",
+      "result_url": "https://www.lookcycle.com/download/press-room/new-765-optimum/press-release/press-release-765-optimum-en.pdf"
     },
     {
       "approach_area_id": "manufacturer-support-warranty",
@@ -95,8 +98,9 @@
       "channel": "web",
       "query": "LOOK 洛克 765 Optimum Grey Blue Satin R7170 105 Di2 R50D RS171 34mm — Manufacturer newsroom or launch page",
       "route": "Manufacturer newsroom or launch page",
-      "outcome": "no-result",
-      "note": "The manufacturer newsroom or launch page exact-model area was checked; it yielded no additional attributable evidence for LOOK / 洛克 765 Optimum Grey Blue Satin electronic family card."
+      "outcome": "found",
+      "note": "Manufacturer launch release supplies the construction and qualified compliance comparison.",
+      "result_url": "https://www.lookcycle.com/download/press-room/new-765-optimum/press-release/press-release-765-optimum-en.pdf"
     },
     {
       "approach_area_id": "manufacturer-site-search",

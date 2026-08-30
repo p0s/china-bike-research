@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:felt-ia-2:complete-weight",
     "candidate:felt-ia-2:drivetrain",
-    "candidate:felt-ia-2:tire-clearance"
+    "candidate:felt-ia-2:tire-clearance",
+    "candidate:felt-ia-2:frame-material",
+    "candidate:felt-ia-2:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://feltbicycles.com/collections/ia-2-0",
-      "note": "The current exact collection links FRD, PRO, EXPERT, and RACE complete builds with exact manufacturer weights and drivetrains."
+      "note": "Current exact FRD/PRO pages specify FRD 12K Carbon Light and a qualitative stiffness-to-weight claim; EXPERT/RACE specify UD Carbon Standard."
     },
     {
       "approach_area_id": "manufacturer-model-family",

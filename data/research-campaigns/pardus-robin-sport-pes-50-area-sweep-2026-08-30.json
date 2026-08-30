@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:pardus-robin-sport-pes:complete-weight",
     "candidate:pardus-robin-sport-pes:drivetrain",
-    "candidate:pardus-robin-sport-pes:tire-clearance"
+    "candidate:pardus-robin-sport-pes:tire-clearance",
+    "candidate:pardus-robin-sport-pes:frame-material",
+    "candidate:pardus-robin-sport-pes:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
-      "note": "The current exact manufacturer page publishes the PES 2x12 BOM and 700x40C frame-and-fork maximum."
+      "note": "Current exact PES page specifies HS-EPS+ frame, FLEX AIR construction and HS-HPT fork."
     },
     {
       "approach_area_id": "manufacturer-model-family",
@@ -36,7 +38,7 @@
       "route": "Manufacturer model-family or category page",
       "outcome": "found",
       "result_url": "https://pardusbicycle.com/bikes/robin-sport/",
-      "note": "The current global manufacturer page confirms Robin Sport platform identity."
+      "note": "Current global Robin Sport page describes a balance between vibration absorption and stiffness."
     },
     {
       "approach_area_id": "manufacturer-current-catalog",
