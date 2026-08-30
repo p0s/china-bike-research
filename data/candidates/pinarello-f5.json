@@ -4,13 +4,38 @@
   "model_id": "pinarello-f5",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "An official model reference and dated flagship-store price lead were found, but the price was not tied to an exact drivetrain and BOM.",
-  "missing": ["Exact China-market drivetrain, wheels, brakes, and cockpit", "Proof that the observed price maps to that exact trim", "Exact domestic warranty and return route"],
-  "status": "exact-trim-unproven",
+  "why_interesting": "The retained official-store card is an exact F5 family observation. Current MY26 F5 105 Di2 specifications are established, but the card does not expose enough option detail to assign the current 8.25 kg reference build.",
+  "missing": [
+    "Selected model year, wheel option, complete BOM, and controlled complete-bike weight for the retained card",
+    "Current mainland warranty route and final checkout conditions"
+  ],
+  "status": "exact-f5-family-selected-build-weight-and-checkout-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["pinarello-f5-official-2026-08-08"],
+  "source_ids": [
+    "pinarello-f5-official-2026-08-08",
+    "pinarello-f5-my26-current-2026-08-30",
+    "pinarello-f5-my26-reference-weight-2026-08-30",
+    "pinarello-f-series-white-paper-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 26800, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "listed", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 26800,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "listed",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6881.png#R2",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "PINARELLO F5 family; retained card model year and selected wheel option unresolved",
+    "current_reference_build": "MY26 F5 105 Di2 with MOST Ultrafast 45 wheels",
+    "complete_weight_reference": "8.25 kg current exact-build retailer claim; not assigned to the configuration-hidden retained card",
+    "drivetrain": "Shimano 105 Di2 electronic 2x12 on the current MY26 reference build",
+    "tire_clearance_mm": 32,
+    "frame_material": "Torayca T700 UD carbon",
+    "frame_stiffness": "Manufacturer qualitative head-tube and Aero Keel bottom-bracket stiffness claims; no numeric protocol"
+  },
+  "source_url": "https://pinarello.com/china/zh/bikes/%E5%85%AC%E8%B7%AF%E8%BD%A6/%E7%AB%9E%E8%B5%9B/new-pinarello-f/new-pinarello-f5-105-di2",
+  "source_note": "Current exact MY26 evidence resolves drivetrain, 32 mm maximum, T700 UD construction and qualitative stiffness claims. The 8.25 kg MY26 105 Di2/MOST Ultrafast 45 value remains a reference because the retained card does not select that build."
 }

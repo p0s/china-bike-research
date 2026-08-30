@@ -5,31 +5,42 @@
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
-    "verdict": "Dated China-market road lead for the exact visible A7L R7100 configuration; use it as a comparison benchmark while confirming the final SKU and BOM.",
+    "verdict": "Current exact 2026 A7L R08 build with a mixed SENSAH/Shimano 2x12 hydraulic drivetrain, T800-carbon chassis and two dated mainland price observations; confirm warranty and final checkout before purchase.",
     "best_for": [
       "road"
     ],
     "strengths": [
-      "Exact model/configuration is visible in the 2026-08-08 snapshot",
-      "Dated mainland-China price observation"
+      "Approximately 8.6 kg current manufacturer claim",
+      "Exact R08 T800 frame and conservative 25C manufacturer maximum",
+      "Two dated mainland-China price observations"
     ],
     "caveats": [
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
-      "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
+      "The mixed SENSAH/Shimano BOM is not a full Shimano 105 groupset",
+      "Confirm exact size, returns, domestic warranty and final checkout total before paying"
     ]
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "sava-a7l-official-2026-08-08",
     "sava-2026-carbon-lineup-2026-08-08",
-    "sava-a7l-official-global-2026-08-17"
+    "sava-a7l-official-global-2026-08-17",
+    "sava-a7l-r08-current-2026-08-30",
+    "sava-r08-tire-compatibility-2026-08-30",
+    "sava-a7l-mainland-current-2026-08-30"
   ],
   "drivetrain": {
-    "brand": "Shimano",
-    "model": "105 R7100",
+    "brand": "SENSAH / Shimano",
+    "model": "EMPIRE PRO / 105 R7100 mixed build",
     "speeds": "2x12",
     "shifting": "mechanical",
-    "layout": "double"
+    "layout": "double",
+    "shifters": "SENSAH EMPIRE PRO hydraulic 2x12",
+    "front_derailleur": "Shimano 105 FD-R7100",
+    "rear_derailleur": "Shimano 105 RD-R7100",
+    "crankset": "FC-PR6-B1 50/34T",
+    "cassette": "CS-R9012 11-34T",
+    "chain": "S-X12R"
   },
   "brakes": {
     "actuation": "hydraulic",
@@ -39,5 +50,6 @@
   "tires": "700×25C clincher",
   "cockpit": { "material": "carbon", "integrated": true, "dimensions": "400×100 mm" },
   "claimed_complete_weight_g": 8600,
+  "claimed_complete_weight_basis": "Current manufacturer approximate complete-bike weight; varies by size",
   "purchase_route": "Official global-direct checkout at US$1,699 on 2026-08-17; mainland-China checkout not established."
 }

@@ -4,13 +4,12 @@
   "model_id": "sava-dream-maker",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact Chinese model name visible.",
+  "why_interesting": "The retained seller and CNY 16,999 price now bridge to the exact Dream Maker R17-R7170 105 Di2 build. Current exact evidence resolves the build except for maximum tire clearance and mainland commercial terms.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Manufacturer-confirmed R17 maximum tire clearance",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-r17-r7170-clearance-and-domestic-route-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,9 +20,22 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6884.png#L2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "sava-dream-maker-official-image-2026-08-17"
+    "sava-dream-maker-official-image-2026-08-17",
+    "sava-dream-maker-r7170-current-2026-08-30",
+    "sava-dream-maker-engineering-2026-08-30",
+    "sava-dream-maker-mainland-r7170-index-2026-08-30",
+    "sava-r08-tire-compatibility-2026-08-30"
   ],
-  "source_url": "https://sava-official.com/20-sava-bike-dream-maker-road-carbon-fiber-bike.html"
+  "source_url": "https://savadeck-bike.com/collections/sava-carbon-road-bike/products/sava-dream-maker-di2-full-carbon-bike?variant=41531895873675",
+  "facts": {
+    "listing_identity": "SAVA / 萨瓦 Dream Maker R17-R7170-24S",
+    "complete_weight": "Approximately 7.8 kg manufacturer claim",
+    "drivetrain": "Shimano 105 Di2 2x12: RD/FD-R7150, ST/BR-R7170, FC-R7100 50/34, CS-R7100 11-34 and KMC X12",
+    "tire_clearance": "IRC 700x25C fitted; maximum unknown after 50-area exact-model sweep",
+    "frame_material": "R17 T1000 carbon frame, fork, seatpost and integrated handlebar",
+    "frame_stiffness": "Manufacturer qualitative double-layer front-end and T47 bottom-bracket rigidity claims plus fatigue/impact/rigidity testing; no numeric stiffness magnitude"
+  },
+  "source_note": "A current public marketplace index matches the retained seller and price and explicitly identifies 7170 electronic 24-speed. The exact manufacturer page resolves the build; fitted 25C tires do not establish maximum clearance, and the current compatibility guide omits R17."
 }

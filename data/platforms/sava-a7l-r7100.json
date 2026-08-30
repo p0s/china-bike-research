@@ -6,12 +6,13 @@
   "category": "road",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The anonymized 2026-08-08 snapshot identifies SAVA A7L R7100 as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "summary": "Current exact evidence identifies the 2026 SAVA A7L as an R08 T800-carbon road bike with a mixed SENSAH/Shimano 2x12 hydraulic-disc build, an approximately 8.6 kg claim and a conservative manufacturer-published 25C maximum. Two dated mainland price observations remain checkout leads rather than final totals.",
   "frame": {
     "material": "carbon",
-    "fork_material": "unknown",
-    "construction": "Manufacturer-described full-carbon road frame with integrated carbon cockpit; exact fiber grade, lay-up schedule and molding process are not published",
-    "stiffness_evidence": "No meaningful exact-model stiffness measurement or attributable ride assessment was found after bounded official, dealer and review searches",
+    "material_grade": "T800 carbon fiber",
+    "fork_material": "T800 carbon",
+    "construction": "R08 T800-carbon frame, fork and seatpost with an integrated carbon cockpit; the exact lay-up schedule and molding process are not published",
+    "stiffness_evidence": "The current manufacturer page describes the 2026 A7L as improving both rigidity and low weight, but publishes no deflection value, protocol or independent comparative result",
     "bottom_bracket": "BB86-24R",
     "derailleur_hanger": "unknown",
     "cable_routing": "unknown",
@@ -28,11 +29,19 @@
       ]
     }
   },
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official exact-frame compatibility guide",
+    "eligibility": "pass",
+    "note": "SAVA publishes 25C as the R08 maximum. Owner reports of fitting wider tires are not promoted over the conservative manufacturer value.",
+    "stock_nominal_mm": 25,
+    "published_max_mm": 25
+  },
   "category_details": {
     "discipline": "road",
     "geometry": "manufacturer exact-model table",
-    "evidence": "snapshot-classification",
-    "note": "Exact model/configuration shown. A second A7L card at ¥4,999 remains in the research ledger because its trim is not decisive."
+    "evidence": "current exact-model manufacturer evidence",
+    "note": "The retained ¥4,599 official-store card is consolidated into this exact record as a second dated observation rather than published as another bike."
   },
   "mounts": [],
   "internal_storage": false,
@@ -41,7 +50,10 @@
     "taobao-snapshot-2026-08-08",
     "sava-a7l-official-2026-08-08",
     "sava-2026-carbon-lineup-2026-08-08",
-    "sava-a7l-official-global-2026-08-17"
+    "sava-a7l-official-global-2026-08-17",
+    "sava-a7l-r08-current-2026-08-30",
+    "sava-r08-tire-compatibility-2026-08-30",
+    "sava-a7l-mainland-current-2026-08-30"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-08-30"
 }

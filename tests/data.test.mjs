@@ -198,7 +198,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 54);
+  assert.equal(data.prices.length, 56);
   assert.equal(data.images.length, 204);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -207,7 +207,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 984);
+  assert.equal(data.researchAttempts.length, 1009);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -351,8 +351,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 209);
+  assert.equal(catalogCandidates.length, 217);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 207);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);

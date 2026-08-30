@@ -4,13 +4,11 @@
   "model_id": "sava-r8-r8170",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Wireless electronic build.",
+  "why_interesting": "The retained non-2026 R8 R8170 card resolves to the still-sold Aurora R8 R08-R8170-24S. It is explicitly separated from newer R22 AeroX and R23 Blade R8 generations.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-r08-r8170-domestic-route-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,9 +19,22 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6897.png#R2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "sava-r8-r8170-official-image-2026-08-17"
+    "sava-r8-r8170-official-image-2026-08-17",
+    "sava-aurora-r8-r8170-current-2026-08-30",
+    "sava-r08-tire-compatibility-2026-08-30",
+    "sava-r8-mainland-generation-index-2026-08-30",
+    "sava-aurora-r8-regional-retailer-2026-08-30"
   ],
-  "source_url": "https://sava-official.com/57-sava-bike-r8-road-bike-carbon-fiber-ultegra-di2-r8170-24-speed.html"
+  "source_url": "https://savadeck-bike.com/products/aurora-r8-ultegra-di2-carbon-road-bike",
+  "facts": {
+    "listing_identity": "SAVA / 萨瓦 Aurora / 驭风 R8 R08-R8170-24S",
+    "complete_weight": "Approximately 8.8 kg; varies by size",
+    "drivetrain": "Shimano Ultegra Di2 2x12: RD/FD-R8150, ST/BR-R8170, FC-R8100 50/34, CS-R8101 11-30 and CN-M8100",
+    "tire_clearance": "25C manufacturer maximum for the exact R08 frame",
+    "frame_material": "R08 T800 carbon frame, fork and seatpost with carbon cockpit and wheels",
+    "frame_stiffness": "Manufacturer qualitative exceptional-stiffness and power-transfer claim; no numeric protocol"
+  },
+  "source_note": "Current exact manufacturer, regional and mainland-generation evidence resolves the retained non-2026 card to R08-R8170-24S. Newer R22/R23 R8 values are not transferred."
 }
