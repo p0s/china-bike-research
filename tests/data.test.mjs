@@ -167,11 +167,11 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
-  assert.ok(data.sources.length >= 304);
+  assert.ok(data.sources.length >= 313);
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 820);
+  assert.equal(data.researchAttempts.length, 844);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 204);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 205);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -565,6 +565,38 @@ test('Meihanda Xtreme, MEINIER, MISSILE, and MUIDLER leads preserve exact seller
   assert.equal(muidler.facts, undefined);
   assert.match(muidler.source_note, /truncated immediately after 全/);
   assert.match(muidler.source_note, /阿瑞斯 R7.*none is transferred/i);
+});
+
+test('NSCR, PARAGON JAZZ, original PARDUS Super Sport, and PHILLIPS SACHEM preserve exact evidence boundaries', () => {
+  const nscr = data.candidates.find((item) => item.id === 'nscr-carbon-gravel-storage');
+  const jazz = data.candidates.find((item) => item.id === 'paragon-jazz-2026');
+  const superSport = data.candidates.find((item) => item.id === 'pardus-super-sport');
+  const sachem = data.candidates.find((item) => item.id === 'phillips-carbon-road-unknown');
+
+  assert.equal(nscr.facts.complete_weight_g, 8500);
+  assert.match(nscr.facts.frame_material, /carbon-fiber gravel/i);
+  assert.equal(nscr.facts.drivetrain, undefined);
+  assert.match(nscr.source_note, /exact model.*legal entity/i);
+
+  assert.equal(jazz.name, 'PARAGON 鹏来格 JAZZ 2026');
+  assert.match(jazz.facts.drivetrain, /105 R7100 mechanical 2×12/);
+  assert.match(jazz.facts.frame_material, /carbon-fiber frame/i);
+  assert.match(jazz.source_note, /JAZZ Plus.*separate/i);
+
+  assert.match(superSport.name, /original generation/);
+  assert.match(superSport.facts.drivetrain, /R7000 mechanical 2×11/);
+  assert.match(superSport.facts.frame_material, /HS-EPS carbon frame.*HS-HPT carbon fork/);
+  assert.equal(superSport.facts.complete_weight_g, undefined);
+  assert.match(superSport.source_note, /9\.5 kg.*not transferred/i);
+  assert.ok(data.candidates.some((item) => item.id === 'pardus-super-sport-gen2'));
+
+  assert.equal(sachem.name, 'PHILLIPS 菲利普 SACHEM 24-speed');
+  assert.equal(sachem.facts.complete_weight_g, 8500);
+  assert.match(sachem.facts.drivetrain, /2×12/);
+  assert.match(sachem.facts.frame_material, /carbon frame.*carbon aero fork/i);
+  assert.equal(sachem.facts.tire_clearance_mm, undefined);
+  assert.match(sachem.facts.tires, /not a published maximum-clearance/i);
+  assert.match(sachem.source_note, /浙江菲利普车业有限公司/);
 });
 
 test('remaining LightCarbon road, TT and track catalog entries retain exact identities', () => {

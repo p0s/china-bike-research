@@ -1,16 +1,35 @@
 {
   "id": "phillips-carbon-road-unknown",
-  "name": "PHILLIPS 菲利普 Carbon disc road bike, model unclear",
+  "name": "PHILLIPS 菲利普 SACHEM 24-speed",
   "model_id": "phillips-carbon-road-unknown",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model not visible.",
+  "why_interesting": "The photographed gradient-green bike matches the current SACHEM 24-speed carbon road build, including its carbon cockpit and hydraulic discs.",
+  "facts": {
+    "complete_weight_g": 8500,
+    "complete_weight_basis": "Current regional-retailer claim for the 2025 SACHEM family; size, pedal basis and weighing method are not stated and the retailer allows production variation",
+    "frame_weight_g": 1100,
+    "frame_weight_basis": "Approximate retailer claim for the SACHEM carbon frame; size, hardware and paint basis are not stated",
+    "drivetrain": "Mechanical 2×12 (24-speed); current retailer specification lists ShunTai or SENSAH shifting, a SENICX crank and Rihui 12-speed cassette without fixed part numbers",
+    "brakes": "ShunTai full-hydraulic disc brakes on the 24-speed top configuration",
+    "frame_material": "Carbon frame, carbon aero fork and carbon aero seatpost; the 24-speed configuration also uses a carbon integrated cockpit",
+    "wheels": "Double-wall aluminum aero wheelset",
+    "tires": "CST 700×28C stock tires; this is not a published maximum-clearance value",
+    "cockpit": "Full-carbon integrated aero cockpit on the 24-speed top configuration"
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Maximum tire clearance and complete geometry",
+    "Meaningful exact-model numeric stiffness evidence",
+    "Fixed shift-component part numbers, exact selected SKU/complete BOM, China warranty applicability and final checkout conditions"
   ],
-  "status": "research-queue",
+  "status": "exact-model-and-core-build-confirmed-selected-sku-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "phillips-sachem-jd-2026-08-30",
+    "phillips-sachem-888bike-2026-08-30",
+    "phillips-sachem-ruten-2026-08-30",
+    "phillips-corporate-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +40,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6859.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+  "source_note": "The retained gradient-green PHILLIPS card, SACHEM down-tube marking, current JD gradient-green/24-speed options and regional listings establish SACHEM identity. The retailer's 8.5 kg figure remains a claim with unspecified size and weighing basis. Stock 700×28C tires are not converted into a maximum-clearance claim. The official company profile confirms PHILLIPS / 菲利普 and 浙江菲利普车业有限公司; it does not supply the SACHEM specification.",
+  "last_reviewed": "2026-08-30"
 }

@@ -4,12 +4,23 @@
   "model_id": "nscr-carbon-gravel-storage",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "EPS process, 400 ml storage and claimed 8.5 kg; exact model absent.",
+  "why_interesting": "The retained NSCR card advertises an EPS-process carbon gravel bike with 400 ml storage and a claimed 8.5 kg complete weight, but no exact model is exposed.",
+  "facts": {
+    "complete_weight_g": 8500,
+    "complete_weight_basis": "Retained exact seller card claim; size, pedals, accessories and weighing method are not stated",
+    "frame_material": "Carbon-fiber gravel complete bike as stated by the retained exact seller card; carbon grade and fork material remain unknown",
+    "frame_construction": "Seller card advertises an EPS process; no independent process verification was found",
+    "storage": "Advertised 400 ml integrated storage"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year/SKU, selected drivetrain and complete BOM",
+    "Maximum tire clearance and meaningful exact-model stiffness evidence",
+    "Manufacturer/legal identity, domestic warranty route, seller authenticity and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "brand-marked-carbon-listing-exact-model-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +31,6 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6874.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_note": "The retained exact card supplies the NSCR marking, carbon construction, EPS-process claim, 400 ml storage and advertised 8.5 kg. It does not expose an exact model, drivetrain, maximum tire clearance, measured stiffness, manufacturer legal entity or attributable warranty route; no adjacent open-mold or similarly styled bike is used to fill those gaps.",
+  "last_reviewed": "2026-08-30"
 }

@@ -1,16 +1,30 @@
 {
   "id": "pardus-super-sport",
-  "name": "PARDUS 瑞豹 Super Sport",
+  "name": "PARDUS 瑞豹 Super Sport (original generation)",
   "model_id": "pardus-super-sport",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "Exact platform visible.",
+  "why_interesting": "The retained fluorescent limited-color card is the original 22-speed carbon Shimano 105 Super Sport, not Super Sport Gen 2.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7000 mechanical 2×11 (22-speed), with 50/34T crank and 11–28T cassette on the official 105 HDB build",
+    "brakes": "Shimano 105 R7020 hydraulic disc brakes on the official 105 HDB build",
+    "frame_material": "HS-EPS carbon frame and HS-HPT carbon fork",
+    "cockpit": "MVMT M-M-BRONZE HB24 carbon cockpit with internal routing on the official 105 HDB build",
+    "sizes": "XXS, XS, S, M, L and XL"
+  },
   "missing": [
-    "Exact trim-to-existing-variant mapping",
-    "Exact groupset, wheels, and included accessories",
-    "Current checkout conditions and domestic warranty route"
+    "Complete-bike weight for the photographed fluorescent build with size, pedals, accessories and measurement basis",
+    "Maximum tire clearance and meaningful numeric exact-model stiffness evidence",
+    "Exact current wheelset/accessory package, checkout conditions and domestic warranty applicability"
   ],
-  "status": "exact-trim-unproven",
+  "status": "original-generation-105-hdb-identity-confirmed-current-package-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "pardus-super-sport-original-official-2026-08-30",
+    "pardus-super-sport-fluorescent-index-2026-08-30",
+    "pardus-super-sport-launch-biketo-2026-08-30",
+    "pardus-super-sport-review-biketo-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +35,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6869.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://parduscycle.com/Hightxq.aspx?cc=16548&color=16542&id=21398&pz=16539&t=27446",
+  "source_note": "The current marketplace index names the fluorescent limited-color original SUPER SPORT as a 22-speed carbon Shimano 105 bike, matching the retained orange seller card. The still-live manufacturer page supplies the original 105 HDB frame and build specification. A reviewed 2021 bike weighed 9.5 kg and was described subjectively as not lacking stiffness, but that build-specific weight and non-numeric impression are not transferred to the photographed current package. Super Sport Gen 2 remains a separate candidate and published platform.",
+  "last_reviewed": "2026-08-30"
 }
