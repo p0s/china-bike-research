@@ -4,13 +4,30 @@
   "model_id": "trinx-gtr-c6",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "brand_id": "trinx",
+  "why_interesting": "The retained matte-black/green card matches the China-market carbon GTR C6 and its LTWOO 1x12 exact-model configuration. Complete weight, maximum clearance and meaningful stiffness evidence remain unpublished.",
+  "facts": {
+    "drivetrain": "LTWOO / 蓝图 GR7010 mechanical 1x12 with 42T crank and 11-46T cassette",
+    "frame": "China-market GTR C6 carbon frame with carbon 700C fork",
+    "frame_material": "Carbon frame and carbon fork for the China-market GTR C6; exact fiber grade, lay-up and molding process are not published",
+    "tires": "CST 700x40C on the documented exact-model 1x12 build; fitted width is not treated as maximum clearance",
+    "brakes": "LTWOO hydraulic disc brakes on the documented exact-model 1x12 build"
+  },
   "missing": [
-    "Exact trim identity and evidence for a new publishable variant record",
-    "Exact groupset, wheels, and included accessories",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Meaningful exact-frame stiffness evidence",
+    "Exact production-batch wheels, cockpit, included accessories and substitutions",
     "Current checkout conditions and domestic warranty route"
   ],
-  "status": "exact-trim-unproven",
+  "status": "exact-carbon-1x12-core-specs-verified",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "trinx-gtr-c6-jd-2026-08-30",
+    "trinx-gtr-c6-catalog-2024",
+    "trinx-gtr-c6-smzdm-2026-08-30",
+    "trinx-design-competition-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +38,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6897.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/brand/1318063de872c7288489.html",
+  "source_note": "The current China listing establishes carbon construction and 12-speed identity; the official regional catalog supplies the matching green/brown LTWOO GR7010 1x12 build. Aluminum regional GTR C6 variants and an internally inconsistent 11-speed index token are not transferred.",
+  "last_reviewed": "2026-08-30"
 }

@@ -4,13 +4,32 @@
   "model_id": "trinx-tornado-900",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "brand_id": "trinx",
+  "why_interesting": "The blue-white card resolves to the current TRINX TDO / Tornado 900 Shimano 105 R7120 2x12 carbon build. A current specialist retailer claims approximately 8.1 kg, but maximum tire clearance and meaningful stiffness evidence remain unknown.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 mechanical 2x12 with hydraulic BR-R7170 disc brakes",
+    "frame": "TRINX TDO 900 T800 carbon aero road frame and carbon fork",
+    "frame_material": "T800 carbon frame with carbon fork, integrated cockpit and seatpost",
+    "complete_weight_g": 8100,
+    "complete_weight_basis": "Current exact-model specialist-retailer approximate claim for the matching Factory Team / Shimano 105 / carbon-wheel build; size, pedals, accessories and weighing method are not stated and the value is not independently measured",
+    "wheels": "TRINX carbon 700C wheelset on the documented manufacturer build",
+    "tires": "Grand Sport Race 700x28C fitted on the manufacturer build; no maximum is published"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Controlled or sufficiently specific independent frame-stiffness evidence",
+    "Selected size, exact wheel depth, cassette range, pedals/accessories and measured weight",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-tornado-900-core-specs-verified",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "trinx-tornado-900-official-2026-08-30",
+    "trinx-tornado-900-biketo-2026-08-30",
+    "trinx-tornado-900-jd-2026-08-30",
+    "trinx-tornado-900-gulf-2026-08-30",
+    "trinx-tornado-900-design-competition-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +40,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6893.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.trinx.com/index.php?ac=article&at=read&did=2190",
+  "source_note": "Manufacturer and mainland indexes align on the blue-white Shimano 105 R7120 2x12 carbon build. The 8.1 kg value is retained only as an approximate retailer claim with its missing basis, and fitted 28C tires are not inferred to be the maximum.",
+  "last_reviewed": "2026-08-30"
 }
