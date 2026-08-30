@@ -4,13 +4,11 @@
   "model_id": "sava-gelaro-s4",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "GRX configuration.",
+  "why_interesting": "The retained official-store Gelaro S4 GRX card is a second dated observation of the published SAVA Gelaro S4 GRX400 R21 build.",
   "missing": [
-    "Exact trim-to-existing-variant mapping",
-    "Exact groupset, wheels, and included accessories",
-    "Current checkout conditions and domestic warranty route"
+    "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "exact-trim-unproven",
+  "status": "merged-into-exact-record",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,9 +19,22 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6879.png#R2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "sava-gelaro-s4-official-image-2026-08-17"
+    "sava-gelaro-s4-official-image-2026-08-17",
+    "sava-gelaro-s4-official-2026-08-28",
+    "sava-gelaro-s4-independent-review-2026-08-28",
+    "sava-gelaro-s4-mainland-current-2026-08-30"
   ],
-  "source_url": "https://sava-official.com/1-sava-bike-2025-r21-gelaro-s6s4-gravel-bike.html"
+  "source_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike",
+  "facts": {
+    "listing_identity": "SAVA / 萨瓦 Gelaro S4 R21-GRX400-20S",
+    "complete_weight": "Approximately 10.2 kg; varies by size",
+    "drivetrain": "Shimano GRX400 mechanical 2x10 hydraulic disc",
+    "tire_clearance": "700x40C fitted; 45C manufacturer maximum",
+    "frame_material": "R21 T800 carbon frame and fork",
+    "frame_stiffness": "Manufacturer qualitative lateral-stiffness claim plus independent no-noticeable-BB-flex report; no measured stiffness magnitude"
+  },
+  "existing_record_id": "sava-gelaro-s4-grx400",
+  "source_note": "Merged into the canonical Gelaro S4 GRX400 record. The retained CNY 7,999 official-store observation is stored separately; current exact evidence resolves the R21 T800 build, GRX400 2x10, 10.2 kg reference and 45C maximum."
 }

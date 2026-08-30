@@ -4,12 +4,11 @@
   "model_id": "sava-a7l-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Image says 2026 A7L; title is abbreviated A7.",
+  "why_interesting": "The retained official-store 2026 A7L card is a second dated observation of the published SAVA A7L R7100, now bridged to the current R08 T800 and mixed SENSAH/Shimano specification.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Current mainland warranty route and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "merged-into-exact-record",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,9 +19,22 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6862.png#L1",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "sava-a7l-official-image-2026-08-17"
+    "sava-a7l-official-image-2026-08-17",
+    "sava-a7l-r08-current-2026-08-30",
+    "sava-r08-tire-compatibility-2026-08-30",
+    "sava-a7l-mainland-current-2026-08-30"
   ],
-  "source_url": "https://sava-official.com/34-sava-bike-a7l-carbon-fiber-road-bike.html"
+  "source_url": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed",
+  "facts": {
+    "listing_identity": "2026 SAVA / 萨瓦 A7L R08 24-speed",
+    "complete_weight": "Approximately 8.6 kg; varies by size",
+    "drivetrain": "SENSAH/EMPIRE PRO 2x12 hydraulic controls and brakes with Shimano 105 R7100 derailleurs, FC-PR6-B1 50/34 crank, CS-R9012 11-34 cassette and S-X12R chain",
+    "tire_clearance": "25C manufacturer maximum for the exact R08 frame",
+    "frame_material": "T800 carbon frame, fork and seatpost",
+    "frame_stiffness": "Manufacturer qualitative rigidity/lightweight improvement claim; no numeric protocol"
+  },
+  "existing_record_id": "sava-a7l-r7100",
+  "source_note": "Merged into the canonical A7L R7100 record. The retained CNY 4,599 observation is stored separately; current exact evidence corrects the drivetrain to a mixed SENSAH/Shimano 2x12 build and establishes R08 T800 construction and a 25C maximum."
 }

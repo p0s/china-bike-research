@@ -532,7 +532,7 @@ test('build configurator renders every required slot with sourced package data',
 });
 
 test('buyer controls preserve strict budget, category evidence, and valid row semantics', () => {
-  assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="6500"/);
+  assert.match(html, /data-id="sava-gelaro-s4-grx400"[^>]*data-price-filter="7999"/);
   assert.match(html, /Triathlon storage \/ boxes: Unknown\./);
   assert.match(html, /"internalFrameStorage":"No"/);
   assert.doesNotMatch(html, /<article class="catalog-row" role="row"/);
@@ -678,7 +678,7 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, product);
-  assert.match(detail, /marketplace listing classification/);
+  assert.match(detail, /current exact model manufacturer evidence/);
   assert.match(detail, /Promotion-conditional price/);
   assert.match(detail, /Specifications and evidence/);
   assert.match(detail, /700C carbon wheelset, 24H/);
