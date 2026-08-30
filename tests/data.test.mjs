@@ -159,7 +159,7 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 39);
+  assert.equal(data.brands.length, 40);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 54);
@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 868);
+  assert.equal(data.researchAttempts.length, 892);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -446,6 +446,21 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(quickXrFrame.kind, 'frameset');
   assert.equal(quickXrFrame.price.amount_cny, 10998);
   assert.equal(quickXrFrame.image.subject_accuracy, 'same-platform');
+  const gelaroSf = catalogCandidates.find((entry) => entry.candidate.id === 'sava-gelaro-sf');
+  assert.equal(gelaroSf.candidate.facts.complete_weight_g, 10400);
+  assert.equal(gelaroSf.candidate.facts.tire_clearance_mm, 45);
+  assert.equal(gelaroSf.candidate.facts.drivetrain, undefined);
+  const spectMira = catalogCandidates.find((entry) => entry.candidate.id === 'spect-mira');
+  assert.equal(spectMira.kind, 'frameset');
+  assert.equal(spectMira.brand.name_zh, '空力公式');
+  assert.equal(spectMira.candidate.facts.frame_weight_g, 940);
+  assert.equal(spectMira.candidate.facts.tire_clearance_mm, undefined);
+  const victoryExpert = catalogCandidates.find((entry) => entry.candidate.id === 'sunpeed-victory-e-2026');
+  assert.equal(victoryExpert.candidate.facts.complete_weight_g, 8100);
+  assert.match(victoryExpert.candidate.facts.drivetrain, /105 Di2/);
+  const invincibleSport = catalogCandidates.find((entry) => entry.candidate.id === 'sunpeed-wudi-e-2026');
+  assert.equal(invincibleSport.candidate.facts.complete_weight_g, 8600);
+  assert.match(invincibleSport.candidate.facts.drivetrain, /R7120 mechanical/);
   const speed7Complete = catalogCandidates.find((entry) => entry.candidate.id === 'lightcarbon-speed7-complete');
   const speed7Frame = catalogCandidates.find((entry) => entry.candidate.id === 'lightcarbon-speed7-frameset');
   assert.equal(speed7Complete.price.amount_cny, 11399);

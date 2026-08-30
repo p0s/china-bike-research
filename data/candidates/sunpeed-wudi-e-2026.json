@@ -1,16 +1,34 @@
 {
   "id": "sunpeed-wudi-e-2026",
-  "name": "SUNPEED 速比特 无敌 E 2026",
+  "name": "SUNPEED 速比特 2026 Invincible Sport / 无敌 R7120 alloy-wheel option",
   "model_id": "sunpeed-wudi-e-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "A dated mainland-China listing identifies a wireless-electronic road complete bike and a ¥6,999 price lead.",
+  "brand_id": "sunpeed",
+  "why_interesting": "The retained CNY 6,999 observation maps to the 2026 Invincible Sport star-grey Shimano 105 R7120 mechanical, alloy-wheel option—not to the separately listed R7170 electronic builds.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7120 mechanical 2×12 complete groupset",
+    "frame": "SUNPEED 2026 Invincible carbon road frame and carbon fork",
+    "frame_material": "Carbon frame and fork; exact fiber supplier, grade and lay-up are not published for the selected Sport option",
+    "complete_weight_g": 8600,
+    "complete_weight_basis": "Current public exact-family observation for an XL mechanical-shifting, alloy-wheel complete bike with pedals; scale method and other accessory inclusion are not stated",
+    "wheels": "Alloy-wheel option; exact rim model and dimensions remain unverified",
+    "stiffness_evidence": "A current exact-family review describes quick, direct initial response but also attributes material differences to the wheels; the confounded ride impression is not accepted as frame-stiffness evidence, and no controlled exact-frame result was found"
+  },
   "missing": [
-    "Exact drivetrain brand, model, speed count, and layout",
-    "Exact frame, wheel, cockpit, and size-specific BOM",
-    "Public purchase route, checkout conditions, returns, and domestic warranty"
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact frame grade, wheel model, cockpit and selected-size BOM",
+    "Controlled exact-frame stiffness evidence",
+    "Current stock, checkout conditions, returns, and domestic warranty"
   ],
-  "status": "exact-build-unproven",
+  "status": "exact-sport-option-core-specs-verified",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "sunpeed-invincible-2026-official-2026-08-30",
+    "sunpeed-invincible-2026-jd-2026-08-30",
+    "sunpeed-invincible-2026-smzdm-2026-08-30",
+    "sunpeed-invincible-2026-review-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +38,7 @@
     "price_basis": "listed",
     "observation_count": 1
   },
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/131839548897f3d043e9.html",
+  "source_note": "The generic indexed listing title mentions electronic shifting, but the exact star-grey R7120 alloy-wheel option is mechanical and is separately identified as Invincible Sport. R7170 electronic options are not mixed into this catalog row.",
+  "last_reviewed": "2026-08-30"
 }

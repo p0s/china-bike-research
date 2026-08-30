@@ -1,16 +1,36 @@
 {
   "id": "spect-mira",
-  "name": "Spect Mira",
+  "name": "SPECT 空力公式 Mira frameset",
   "model_id": "spect-mira",
   "category": "road-aero",
-  "type": "complete-bike",
-  "why_interesting": "Exact model visible. | Repeated observation.",
+  "type": "frameset",
+  "brand_id": "spect",
+  "why_interesting": "The retained CNY 6,999 observation matches the China Cycle launch price for the Mira frame, fork and integrated-cockpit package; the pictured show build is not treated as a standard complete bike.",
+  "facts": {
+    "frame": "SPECT Mira T1100 + M90 carbon aero road frameset",
+    "frame_material": "T1100 + M90 carbon lay-up",
+    "frame_construction": "Aero carbon frame with T47×86 bottom bracket, UDH and electronic-only shifting compatibility",
+    "frame_weight_g": 940,
+    "frame_weight_basis": "Upper end of the 900–940 g quoted launch range; size, finish, hardware inclusion and weighing method are not stated, and no delivered production frame has been independently weighed",
+    "bottom_bracket": "T47×86 threaded",
+    "cockpit": "Matching integrated cockpit included in the reported launch package",
+    "drivetrain_compatibility": "Electronic shifting only; no drivetrain is included with the frameset package",
+    "stiffness_evidence": "Independent launch reporting says SPECT judged the development Mira frame too stiff and was softening the lay-up before delivery; this is exact development-state evidence, not a numeric or delivered-production-frame test"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Production-revision maximum tire clearance: current exact sources conflict between 32C and 35 mm rear / 38 mm front claims",
+    "Delivered-frame weight and stiffness verification for a frozen production revision",
+    "Current mainland stock, final checkout conditions and domestic warranty route"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-frameset-clearance-conflicted",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "spect-mira-wildto-2026-08-30",
+    "spect-mira-cyclegears-2026-08-30",
+    "spect-mira-speedingeasy-2026-08-30",
+    "spect-mira-cyclistshub-2026-08-30",
+    "spect-mira-bikeinsights-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +41,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6891.png#R3, IMG_6893.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.wildto.com/news/59020.html",
+  "source_note": "The CNY 6,999 evidence is for the frame, fork and matching-handlebar package. The show bike is illustrative. The 32C current-retailer limit conflicts with independent launch reporting of 35 mm rear / 38 mm front fit, so the catalog preserves maximum clearance as unknown rather than selecting one claim.",
+  "last_reviewed": "2026-08-30"
 }
