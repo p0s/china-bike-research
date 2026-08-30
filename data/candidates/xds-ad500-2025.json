@@ -4,13 +4,42 @@
   "model_id": "xds-ad500-2025",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "The exact model name and dated price lead were visible, but the listing did not establish one exact complete-bike trim.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Exact trim-to-price mapping", "Current seller, warranty, and return route"],
+  "why_interesting": "Current exact-2025 evidence resolves the consistent X6 aluminum and L-TWOO ER9 2x12 core while exposing real regional weight, fork and wheel differences. The dated mainland card still does not select one delivery BOM.",
+  "missing": [
+    "Selected delivery-region BOM and corresponding complete-bike weight basis for the retained card",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Controlled exact-model frame-stiffness magnitude and reproducible protocol",
+    "Current mainland seller, warranty, return route and final checkout conditions"
+  ],
   "status": "exact-trim-unproven",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["xds-ad500-official-2026-08-09", "xds-ad500-retailer-2026-08-08"],
+  "source_ids": [
+    "xds-ad500-official-2026-08-09",
+    "xds-ad500-retailer-2026-08-08",
+    "xds-ad500-2025-mainland-spec-2026-08-30",
+    "xds-ad500-2025-mainland-weight-2026-08-30",
+    "xds-ad500-2025-dealer-video-2026-08-30",
+    "xds-ad500-vietnam-current-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 4499, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "listed", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 4499,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "listed",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6861.png#L2",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "brand_id": "xds",
+  "facts": {
+    "listing_identity": "XDS / 喜德盛 AD500 2025 retained CNY 4,499 listing-image card",
+    "complete_weight_references": "Approximately 8.9 kg at 450 mm in Hong Kong, 9.23 kg without pedals in a mainland public report and 10.2 kg on the Vietnam regional page; retained delivery build unresolved",
+    "drivetrain": "L-TWOO ER9 electronic hydraulic 2x12 with 11-32T cassette and 50/34T Branta power-meter crank",
+    "frame_material": "X6 aluminum frame; exact current sources conflict between carbon and aluminum forks by market or batch",
+    "fitted_tire": "700x28C on current exact builds; fitted size is not a manufacturer maximum",
+    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas"
+  },
+  "source_url": "https://post.smzdm.com/p/al9k369g/",
+  "source_note": "Current exact sources agree on the X6 aluminum and ER9 2x12 core but publish conflicting 8.9, 9.23 and 10.2 kg references plus carbon-versus-aluminum fork differences. No maximum clearance or controlled stiffness result is inferred."
 }
