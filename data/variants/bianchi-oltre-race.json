@@ -17,7 +17,8 @@
     "caveats": [
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
       "Exact regional pages show different wheelsets, so the visible China configuration remains the build reference",
-      "Confirm exact size, components, compatibility, returns, and domestic warranty before paying"
+      "Confirm exact size, components, compatibility, returns, and domestic warranty before paying",
+      "Exact current YTB8D listings conflict at 8.4 kg (size 57), 8.70 kg (size 53), and the retained 8.64 kg card claim; weighing bases are unpublished"
     ]
   },
   "source_ids": [
@@ -25,7 +26,9 @@
     "bianchi-oltre-race-dealer-2026-08-17",
     "bianchi-oltre-race-armenia-2026-08-17",
     "bianchi-oltre-race-global-2026-08-17",
-    "bianchi-oltre-race-current-official-2026-08-30"
+    "bianchi-oltre-race-current-official-2026-08-30",
+    "bianchi-oltre-race-speed-cycles-weight-2026-08-30",
+    "bianchi-oltre-race-allegro-weight-2026-08-30"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -39,8 +42,16 @@
     "type": "disc"
   },
   "claimed_complete_weight_g": 8640,
-  "wheels": { "rim_material": "aluminum", "description": "Velomann V30R, 23 mm internal width, 30 mm profile, tubeless-ready" },
+  "wheels": {
+    "rim_material": "aluminum",
+    "description": "Velomann V30R, 23 mm internal width, 30 mm profile, tubeless-ready"
+  },
   "tires": "Vittoria Rubino G2.0 700×28C",
-  "cockpit": { "material": "aluminum", "integrated": false, "description": "Velomann Aero Compact handlebar and stem" },
-  "purchase_route": "Current exact YTB8D manufacturer page plus an exact 2025 dealer listing at 1,249,990 HUF; mainland-China price remains the dated marketplace observation."
+  "cockpit": {
+    "material": "aluminum",
+    "integrated": false,
+    "description": "Velomann Aero Compact handlebar and stem"
+  },
+  "purchase_route": "Current exact Bianchi YTB8D manufacturer page plus an exact authorized Hungary dealer route; a current Allegro size-57 listing also exposes one unit and add-to-cart, while mainland-China checkout remains the dated unverified marketplace observation.",
+  "claimed_complete_weight_basis": "The retained 8.64 kg is a dated marketplace-card claim with size, pedals, accessories and weighing method unpublished; current exact YTB8D listings conflict at 8.70 kg in size 53 and 8.4 kg in size 57, so no value is generalized across sizes or regional builds"
 }

@@ -1,7 +1,7 @@
 {
   "id": "elves-falath-r7170",
   "platform_id": "elves-falath-r7170",
-  "name": "Falath R7170 build",
+  "name": "Falath Pro Disc R7170 build",
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
@@ -12,19 +12,22 @@
     "strengths": [
       "Exact model/configuration is visible in the 2026-08-08 snapshot",
       "Dated mainland-China price observation",
-      "Exact Falath Pro references support the frame standard, cockpit, and 28C setup"
+      "Exact Falath Pro references support the frame standard, cockpit, and 28C setup",
+      "Current exact Falath Pro Disc manufacturer evidence resolves the seven-size geometry and correct 1,080 g size-46 frame-only reference"
     ],
     "caveats": [
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
       "Confirm exact size, components, compatibility, returns, and domestic warranty before paying",
-      "No exact selected-build complete weight was established after a 50-area sweep; 1,160 g is frame-only and must not be presented as whole-bike weight"
+      "No exact selected-build complete weight was established after a 50-area sweep; 1,080 g is the current exact Disc frame-only size-46 claim and must not be presented as whole-bike weight",
+      "Exact current regional 105 Di2 builds use different wheel and tire packages; the retained mainland wheel package remains unknown"
     ]
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "elves-falath-pro-official-2026-08-17",
     "elves-falath-pro-105-sa-2026-08-17",
-    "elves-warranty-registration-2026-08-17"
+    "elves-warranty-registration-2026-08-17",
+    "elves-falath-pro-official-2026-08-17",
+    "elves-falath-pro-complete-au-2026-08-17"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -37,11 +40,13 @@
     "actuation": "hydraulic",
     "type": "disc"
   },
-  "claimed_frame_weight_g": 1160,
+  "claimed_frame_weight_g": 1080,
   "tires": "Continental GP5000 700×28C",
   "cockpit": {
     "material": "carbon",
     "integrated": true,
     "description": "OROME AERO PRO compact integrated cockpit"
-  }
+  },
+  "claimed_frame_weight_basis": "Current exact Falath Pro Disc 2022 manufacturer claim for size 46; finish and hardware inclusion are unpublished, and ELVES says all-black can be about 110 g lighter than another colorway",
+  "purchase_route": "Current exact authorized South Africa R7170 build offers quick checkout/add-to-basket at R99,000 plus R500 delivery with an 8-12 week lead time; Australia publishes a separate exact 105 Di2 package at AUD 6,490. Mainland seller authority, checkout and warranty handling remain unverified."
 }

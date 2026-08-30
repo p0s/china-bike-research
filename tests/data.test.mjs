@@ -170,6 +170,39 @@ test('batch 025 preserves regional and option conflicts without inventing maxima
   assert.equal(spark.facts.tire_clearance_mm, undefined);
 });
 
+test('batch 026 preserves exact disc-frame evidence and unresolved build boundaries', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  for (const id of [
+    'upland-r80',
+    'upland-taylor',
+    'viqi-integrated-road-unknown',
+    'viqi-r8000',
+    'vook-v8e-pro',
+    'west-biking-sl-one',
+    'west-biking-team-road'
+  ]) assert.equal(candidates.get(id).facts?.stiffness_evidence, undefined, id);
+
+  const bianchi = products.find((product) => product.variant.id === 'bianchi-oltre-race');
+  assert.match(bianchi.platform.frame.stiffness_evidence, /No controlled numeric exact Oltre Race/);
+  assert.match(bianchi.variant.claimed_complete_weight_basis, /8\.70 kg in size 53 and 8\.4 kg in size 57/);
+
+  const elves = products.find((product) => product.variant.id === 'elves-falath-r7170');
+  assert.equal(elves.platform.name, 'Falath Pro Disc R7170 build');
+  assert.match(elves.platform.frame.material_grade, /Toray T800.*T1000 reinforcement/);
+  assert.equal(elves.platform.frame.geometry.sizes.length, 7);
+  assert.deepEqual(
+    elves.platform.frame.geometry.sizes.map(({ size, reach_mm, stack_mm }) => [size, reach_mm, stack_mm]),
+    [['44', 359, 491], ['46', 367.8, 500.6], ['49', 369.1, 523.2], ['52', 377.2, 530.6], ['54', 380.8, 536.6], ['56', 382, 556.9], ['59', 388.8, 576.1]]
+  );
+  assert.equal(elves.variant.claimed_frame_weight_g, 1080);
+  assert.match(elves.variant.claimed_frame_weight_basis, /size 46/);
+  assert.equal(elves.variant.wheels, undefined);
+  assert.equal(elves.image.subject_accuracy, 'illustrative');
+  assert.equal(elves.image.reviewed_at, '2026-08-30');
+  assert.equal(elves.variant.source_ids.includes('elves-falath-pro-official-2026-08-17'), true);
+  assert.equal(data.sources.find((source) => source.id === 'elves-falath-pro-official-2026-08-17').url, 'https://www.elvesbike.com/more.php?id=93&lm=8');
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -276,7 +309,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1069);
+  assert.equal(data.researchAttempts.length, 1088);
   assert.equal(products.length, data.variants.length);
 });
 

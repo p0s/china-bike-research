@@ -1,18 +1,139 @@
 {
   "id": "elves-falath-r7170",
   "brand_id": "elves",
-  "name": "Falath R7170 build",
+  "name": "Falath Pro Disc R7170 build",
   "name_zh": "Falath R7170",
   "category": "road-aero",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The dated China snapshot identifies a Falath build with Shimano 105 Di2 R7170. Exact Falath Pro manufacturer and regional pages support the frame standard, 28C maximum, and principal build parts; current mainland price and seller warranty still need confirmation.",
+  "summary": "Current exact Falath Pro Disc 2022 manufacturer and authorized regional evidence now resolves the seven-size geometry, T800/T1000 EPS construction, 1,080 g size-46 frame reference, 28C maximum and the Shimano 105 Di2 R7170 build family. The retained mainland wheel package, current checkout and reusable exact-build image remain unproven.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
     "bottom_bracket": "BB86",
     "derailleur_hanger": "unknown",
-    "cable_routing": "fully-internal"
+    "cable_routing": "fully-internal",
+    "material_grade": "Toray T800 carbon with T1000 reinforcement at the head tube and bottom bracket",
+    "construction": "Full-carbon EPS-molded Falath Pro Disc 2022 frame with localized T1000 reinforcement, integrated seat clamp, flat-mount discs and thru-axles",
+    "geometry": {
+      "basis": "current exact manufacturer geometry graphic, corroborated by a manufacturer-sourced seven-size transcription",
+      "source_ids": [
+        "elves-falath-pro-official-2026-08-17",
+        "elves-falath-pro-disc-bikeinsights-2026-08-30"
+      ],
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "44",
+          "seat_tube_mm": 440,
+          "top_tube_mm": 495.4,
+          "reach_mm": 359,
+          "stack_mm": 491,
+          "chainstay_mm": 410,
+          "front_center_mm": 572.7,
+          "seat_angle_deg": 75.5,
+          "head_angle_deg": 69.1,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 98,
+          "wheelbase_mm": 972.7,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "46",
+          "seat_tube_mm": 460,
+          "top_tube_mm": 502,
+          "reach_mm": 367.8,
+          "stack_mm": 500.6,
+          "chainstay_mm": 410,
+          "front_center_mm": 568.3,
+          "seat_angle_deg": 74.5,
+          "head_angle_deg": 71,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 100,
+          "wheelbase_mm": 968.3,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "49",
+          "seat_tube_mm": 480,
+          "top_tube_mm": 514,
+          "reach_mm": 369.1,
+          "stack_mm": 523.2,
+          "chainstay_mm": 410,
+          "front_center_mm": 572.7,
+          "seat_angle_deg": 75,
+          "head_angle_deg": 71.5,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 123,
+          "wheelbase_mm": 972.7,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "52",
+          "seat_tube_mm": 500,
+          "top_tube_mm": 529,
+          "reach_mm": 377.2,
+          "stack_mm": 530.6,
+          "chainstay_mm": 410,
+          "front_center_mm": 578.4,
+          "seat_angle_deg": 75,
+          "head_angle_deg": 72,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 129,
+          "wheelbase_mm": 978.4,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "54",
+          "seat_tube_mm": 520,
+          "top_tube_mm": 535,
+          "reach_mm": 380.8,
+          "stack_mm": 536.6,
+          "chainstay_mm": 410,
+          "front_center_mm": 579.5,
+          "seat_angle_deg": 75,
+          "head_angle_deg": 72.5,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 137,
+          "wheelbase_mm": 979.5,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "56",
+          "seat_tube_mm": 540,
+          "top_tube_mm": 545,
+          "reach_mm": 382,
+          "stack_mm": 556.9,
+          "chainstay_mm": 410,
+          "front_center_mm": 580.3,
+          "seat_angle_deg": 73.5,
+          "head_angle_deg": 73,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 153,
+          "wheelbase_mm": 980.3,
+          "fork_offset_mm": 45
+        },
+        {
+          "size": "59",
+          "seat_tube_mm": 560,
+          "top_tube_mm": 559,
+          "reach_mm": 388.8,
+          "stack_mm": 576.1,
+          "chainstay_mm": 410,
+          "front_center_mm": 595,
+          "seat_angle_deg": 73.5,
+          "head_angle_deg": 73,
+          "bb_drop_mm": 69,
+          "head_tube_mm": 173,
+          "wheelbase_mm": 995.1,
+          "fork_offset_mm": 45
+        }
+      ]
+    },
+    "stiffness_evidence": "ELVES says T1000 reinforcement at the head tube and bottom bracket plus its lay-up increases overall stiffness; this is exact-model qualitative manufacturer evidence, not a numeric magnitude, reproducible protocol or independent comparison"
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -23,17 +144,18 @@
   },
   "category_details": {
     "discipline": "aero road",
-    "geometry": "unknown",
-    "evidence": "snapshot-classification",
-    "note": "The seller title says 精灵法拉斯717 and the visible R7170 build aligns with exact Falath Pro 105 Di2 references."
+    "geometry": "manufacturer exact-model seven-size Falath Pro Disc table",
+    "evidence": "manufacturer-geometry-document",
+    "note": "The retained R7170 card aligns with current exact Falath Pro Disc 105 Di2 regional builds; newer Falath EVO and EXP geometry is not transferred."
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
+    "elves-falath-pro-105-sa-2026-08-17",
     "elves-falath-pro-official-2026-08-17",
-    "elves-falath-pro-105-sa-2026-08-17"
+    "elves-falath-pro-disc-bikeinsights-2026-08-30"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-08-30"
 }
