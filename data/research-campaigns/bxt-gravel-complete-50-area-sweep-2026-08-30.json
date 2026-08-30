@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:bxt-gravel-complete:complete-weight",
     "candidate:bxt-gravel-complete:drivetrain",
-    "candidate:bxt-gravel-complete:tire-clearance"
+    "candidate:bxt-gravel-complete:tire-clearance",
+    "candidate:bxt-gravel-complete:frame-material",
+    "candidate:bxt-gravel-complete:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
-      "note": "The current exact manufacturer page identifies BXT-135 and the complete GRX 1x11/carbon-wheel build."
+      "note": "The current exact BXT-135 complete page specifies a T700+T800 frame and T700 fork as well as the exact GRX 1x11 build."
     },
     {
       "approach_area_id": "manufacturer-model-family",
@@ -36,7 +38,7 @@
       "route": "Manufacturer model-family or category page",
       "outcome": "found",
       "result_url": "https://bxtbikes.com/products/bxt-gravel-bike-frame-carbon-700c-27-5er-flat-mount-disc-bsa-bb-full-internal-routing-fork-handlebar-included-t700-t800-carbon-12x142mm-thru-axle",
-      "note": "One current exact BXT-135 frame page publishes a 45C maximum, conflicting with a second current exact page that states 47C."
+      "note": "The exact frameset-family page was checked but contains internally inconsistent carbon-grade marketing; it was not used to override the complete-bike page."
     },
     {
       "approach_area_id": "manufacturer-current-catalog",

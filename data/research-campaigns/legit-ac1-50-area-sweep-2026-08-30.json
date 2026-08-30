@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:legit-ac1:complete-weight",
     "candidate:legit-ac1:drivetrain",
-    "candidate:legit-ac1:tire-clearance"
+    "candidate:legit-ac1:tire-clearance",
+    "candidate:legit-ac1:frame-material",
+    "candidate:legit-ac1:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://winspace.jp/products/legit-ac1",
-      "note": "The current exact manufacturer platform page publishes a 700x32C maximum."
+      "note": "Current exact page specifies T700 carbon, approximately 1,050 g for a size-M unpainted frame, 430 g fork and 130 g seatpost."
     },
     {
       "approach_area_id": "manufacturer-model-family",

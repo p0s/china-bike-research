@@ -14,7 +14,9 @@
     "fork_weight_g": 450,
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Current manufacturer nominal maximum tire size",
-    "configuration_note": "Complete-bike weight and drivetrain are non-applicable to the tracked ¥59,800 frame kit; Colnago sells multiple complete configurations separately"
+    "configuration_note": "Complete-bike weight and drivetrain are non-applicable to the tracked ¥59,800 frame kit; Colnago sells multiple complete configurations separately",
+    "frame_material": "Carbon-fiber frame with a model-specific, area-tuned lay-up; exact fiber grades, proportions, and ply schedule are unpublished",
+    "stiffness_evidence": "Colnago claims the Y1Rs frame structure is 3.5% stiffer than the previous model for sprint power transfer; this is a manufacturer-relative claim without a public structural-test protocol or independent exact-frame measurement"
   },
   "missing": [
     "Current exact mainland seller authority, checkout conditions, stock, size, and paint selection",
@@ -27,10 +29,17 @@
     "colnago-y1rs-official-2026-08-08",
     "colnago-china-storefront-2026-08-09",
     "colnago-y1rs-china-launch-2026-08-30",
-    "colnago-y1rs-current-specs-2026-08-30"
+    "colnago-y1rs-current-specs-2026-08-30",
+    "colnago-y1rs-layup-faq-2026-08-30"
   ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 59800, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 59800,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6894.png#L1",
   "source_url": "https://www.biketo.com/product/53896.html?all=1",
   "source_note": "Exact China launch coverage and current mainland indexes identify ¥59,800 as the frame-kit package. Promotional complete-bike photography does not turn the priced frameset into a complete bike; no complete weight or drivetrain is assigned.",

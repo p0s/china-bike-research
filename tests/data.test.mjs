@@ -203,6 +203,52 @@ test('batch 026 preserves exact disc-frame evidence and unresolved build boundar
   assert.equal(data.sources.find((source) => source.id === 'elves-falath-pro-official-2026-08-17').url, 'https://www.elvesbike.com/more.php?id=93&lm=8');
 });
 
+test('batch 027 records exact construction evidence and preserves exhausted stiffness unknowns', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const bxt = candidates.get('bxt-gravel-complete');
+  assert.match(bxt.facts.frame_material, /T700\+T800 carbon frame.*T700 carbon fork/);
+  assert.equal(bxt.facts.stiffness_evidence, undefined);
+
+  const colnago = candidates.get('colnago-y1rs');
+  assert.match(colnago.facts.frame_material, /model-specific, area-tuned lay-up/);
+  assert.match(colnago.facts.stiffness_evidence, /3\.5% stiffer.*manufacturer-relative/);
+
+  const deRosa = candidates.get('de-rosa-new-838');
+  assert.match(deRosa.facts.frame_material, /High-module carbon frame and fork/);
+  assert.match(deRosa.facts.stiffness_evidence, /elliptical bottom-bracket area.*qualitative manufacturer evidence/);
+
+  const felt = candidates.get('felt-ia-2');
+  assert.match(felt.facts.frame_material, /FRD 12K Carbon Light.*UD Carbon Standard/);
+  assert.match(felt.facts.stiffness_evidence, /FRD and PRO 12K construction.*retained trim is unresolved/);
+
+  const irefox = candidates.get('irefox-by446');
+  assert.match(irefox.facts.frame_material, /retained exact seller card.*carbon-frame IREFOX BY446/);
+  assert.equal(irefox.facts.stiffness_evidence, undefined);
+
+  const java = candidates.get('java-fuoco-2025');
+  assert.match(java.facts.frame_material, /Toray T700 carbon frame and fork/);
+  assert.equal(java.facts.stiffness_evidence, undefined);
+
+  const legit = candidates.get('legit-ac1');
+  assert.match(legit.facts.frame_material, /T700 carbon frame/);
+  assert.equal(legit.facts.stiffness_evidence, undefined);
+
+  const look = candidates.get('look-765-electronic');
+  assert.match(look.facts.frame_material, /multi-fiber lay-up.*carbon and glass-fiber/);
+  assert.match(look.facts.stiffness_evidence, /20% more compliance.*lateral efficiency/);
+
+  const canyon = candidates.get('missing-china-price-canyon-grail');
+  assert.equal(canyon.facts.complete_weight_g, 9260);
+  assert.match(canyon.facts.drivetrain, /GRX mechanical 2×12.*RX610.*RD-RX820.*11–34/);
+  assert.equal(canyon.facts.tire_clearance_mm, 42);
+  assert.equal(canyon.facts.stiffness_evidence, undefined);
+
+  const pardus = candidates.get('pardus-robin-sport-pes');
+  assert.match(pardus.facts.frame_material, /HS-EPS\+.*FLEX AIR.*HS-HPT/);
+  assert.match(pardus.facts.stiffness_evidence, /vibration absorption and stiffness.*qualitative manufacturer evidence/);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -309,7 +355,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1088);
+  assert.equal(data.researchAttempts.length, 1108);
   assert.equal(products.length, data.variants.length);
 });
 

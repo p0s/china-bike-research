@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:de-rosa-new-838:complete-weight",
     "candidate:de-rosa-new-838:drivetrain",
-    "candidate:de-rosa-new-838:tire-clearance"
+    "candidate:de-rosa-new-838:tire-clearance",
+    "candidate:de-rosa-new-838:frame-material",
+    "candidate:de-rosa-new-838:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://derosa.it/model/838/",
-      "note": "The current exact manufacturer page publishes a Shimano 105 Di2 2x12 build and a 32 mm tire maximum."
+      "note": "Current exact page identifies the carbon frame and an elliptical bottom-bracket area described as giving greater stiffness."
     },
     {
       "approach_area_id": "manufacturer-model-family",
@@ -93,8 +95,9 @@
       "channel": "web",
       "query": "De Rosa 德罗萨 New 838 105 Di2 Chorus 30mm 32mm 9999 — Manufacturer newsroom or launch page",
       "route": "Manufacturer newsroom or launch page",
-      "outcome": "no-result",
-      "note": "The manufacturer newsroom or launch page exact-model area was checked; it yielded no additional attributable evidence for De Rosa / 德罗萨 New 838 CNY 9,999 family card."
+      "outcome": "found",
+      "note": "Exact launch article identifies high-module carbon frame/fork and tube, bottom-bracket and stay features intended to increase rigidity.",
+      "result_url": "https://derosa.it/new-838-luxury-without-compromise/"
     },
     {
       "approach_area_id": "manufacturer-site-search",
