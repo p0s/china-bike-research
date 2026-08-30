@@ -1,0 +1,491 @@
+{
+  "id": "candidate-muidler-ashius-s7-identity-source-2026-08-30",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "muidler-ashius-s7"
+  },
+  "field": "identity-source",
+  "priority": "high",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand YouTube channel — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand YouTube channel — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model YouTube result with additional facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent YouTube review or build — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent YouTube review or build — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent YouTube result with controlled build facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand Bilibili account — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand Bilibili account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact S7 Bilibili result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent Bilibili review or build — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent Bilibili review or build — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent S7 Bilibili test was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand Xiaohongshu account — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand Xiaohongshu account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact official result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent Xiaohongshu post — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent Xiaohongshu post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact independent result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand Douyin account — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand Douyin account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model Douyin result with additional facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent Douyin post — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent Douyin post — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A public owner post covers MUIDLER 媚影 阿瑞斯 R7, not 阿修斯 S7. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.douyin.com/shipin/7306943801233278986"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand Weibo account — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand Weibo account — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent Weibo post — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent Weibo post — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Brand WeChat public article — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Brand WeChat public article — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable official result with additional build facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent WeChat public article — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent WeChat public article — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable independent result with additional build facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Cycling forum thread — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Cycling forum thread — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact attributable cycling-forum record for 阿修斯 S7 was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Public owner build log — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Public owner build log — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact attributable S7 owner build log established controlled facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Public community photo or setup post — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Public community photo or setup post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact community photo set added specifications or documented reusable-image rights. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer exact-product page — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer exact-product page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No manufacturer exact-product page for 阿修斯 S7 was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer model-family or category page — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer model-family or category page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable manufacturer S7 family page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer current catalog — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer current catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable manufacturer catalog containing 阿修斯 S7 was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer archived catalog — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer archived catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived attributable manufacturer catalog identified 阿修斯 S7. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer product manual — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer product manual — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer manual was publicly indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer geometry document — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer geometry document — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer geometry document with a complete current table was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer technical paper or test note — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer technical paper or test note — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model controlled stiffness, deflection, construction or aerodynamic test note was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer support or warranty page — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer support or warranty page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable manufacturer warranty route for the retained S7 was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer newsroom or launch page — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer newsroom or launch page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model manufacturer launch article with transferable facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer site search — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer site search — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independently attributable manufacturer domain was identified for exact-site search. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer sitemap or indexed route inventory — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer sitemap or indexed route inventory — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer sitemap and indexed-route searches exposed no additional exact-model page. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer structured page metadata — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer structured page metadata — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No manufacturer-hosted exact S7 structured product data was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer regional site — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer regional site — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No regional manufacturer S7 page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer-listed distributor — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer-listed distributor — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable distributor page identified 阿修斯 S7. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer dealer locator — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer dealer locator — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model mainland dealer-locator result was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Manufacturer-operated online store — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Manufacturer-operated online store — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independently attributable manufacturer storefront was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Official Taobao store or exact item — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Official Taobao store or exact item — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The retained exact card visibly reads 媚影阿修斯S7, shows MUIDLER branding and a CNY 6,998 listed price; the title truncates immediately after 全. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Official Tmall store or exact item — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Official Tmall store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact public Tmall official-store result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Official JD store or exact item — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Official JD store or exact item — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current JD indexing exposes distinct MUIDLER 阿瑞斯 R7 and 哈得斯 builds, not 阿修斯 S7. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.jd.com/jiage/1318735f9a97b2980cd3.html?electedExtAttrSet=3883%2C&extAttrValue=expand_name%2C%40278934%3A%3A3883&sort_type=sort_default"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Verified Alibaba or 1688 supplier route — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Verified Alibaba or 1688 supplier route — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact S7 supplier page with transferable facts was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Official AliExpress store or exact item — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Official AliExpress store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model AliExpress official-store result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Authorized mainland dealer — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Authorized mainland dealer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized mainland dealer page was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Authorized regional dealer — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Authorized regional dealer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized regional dealer page with additional facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — International specialist retailer — field candidate:muidler-ashius-s7:identity-source",
+          "route": "International specialist retailer — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A current foreign retailer documents MUIDLER R7, a distinct model whose construction and drivetrain are not transferred. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.888bike.net/en/product/8741/muidler-r7-carbon-road-bike-2026-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-toray-t700-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-50mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81%E0%B9%84%E0%B8%AE%E0%B8%94%E0%B8%A3%E0%B8%AD%E0%B8%A5%E0%B8%B4%E0%B8%81"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Cycling-industry review publication — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Cycling-industry review publication — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent 阿修斯 S7 review with controlled facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Chinese cycling-media publication — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Chinese cycling-media publication — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The current public range index corroborates MUIDLER 媚影 but lists distinct 阿瑞斯 R7, 哈得斯500 and other builds rather than 阿修斯 S7. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://wiki.smzdm.com/gongluche/b_378036/"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent laboratory or instrumented test — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent laboratory or instrumented test — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model controlled laboratory weight, stiffness or aerodynamic test was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Print or digital magazine archive — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Print or digital magazine archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-build magazine test with transferable facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Trade-show coverage — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Trade-show coverage — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-model trade-show report with additional controlled facts was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Race-team equipment page — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Race-team equipment page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No race-team equipment record identified the retained model and build. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Event or exhibitor catalog — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Event or exhibitor catalog — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No event or exhibitor catalog identified the exact retained model with additional facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Independent geometry database — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Independent geometry database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No trustworthy exact 阿修斯 S7 geometry-database record was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Component compatibility database — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Component compatibility database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No component database identified the retained configuration, frame limits or maximum tire clearance. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Product certification or registration database — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Product certification or registration database — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "A bicycle-class trademark index pairs 媚影 with MUIDLER; it supports spelling only, not S7 specification or manufacturer identity. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://tm.aliyun.com/detail/d65d_76777339_12"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "MUIDLER 媚影 阿修斯 S7 road bike 6998 — Public web archive — field candidate:muidler-ashius-s7:identity-source",
+          "route": "Public web archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived exact-build page added reliable facts beyond live and dated sources. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "muidler-trademark-index-2026-08-30",
+    "muidler-current-range-smzdm-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/muidler-ashius-s7-50-area-sweep-2026-08-30.json. The retained exact card establishes 阿修斯 S7, while current registry and range indexes corroborate the MUIDLER 媚影 spelling without supplying S7 specifications."
+}

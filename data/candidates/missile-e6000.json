@@ -1,15 +1,29 @@
 {
   "id": "missile-e6000",
-  "name": "MISSILE 米赛尔 E-6000",
+  "name": "MISSILE 米赛尔 水星6000",
   "model_id": "missile-e6000",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Image model appears E-6000; Sensah 2x12 hydraulic.",
+  "why_interesting": "The retained product card and current exact-model index align on 水星6000, a full-carbon SENSAH 2×12 hydraulic-disc build.",
+  "facts": {
+    "complete_weight_g": 9300,
+    "complete_weight_basis": "Retained exact seller image states approximately 9.3 kg; size, pedals, accessories and measurement method are not published",
+    "drivetrain": "SENSAH 2×12 (24-speed) with hydraulic disc brakes",
+    "brakes": "Hydraulic disc brakes",
+    "frame_material": "Full-carbon complete bike as described by the retained exact seller image and current exact-model JD index"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact selected 2025 SKU and complete BOM; the retained approximate weight lacks size, pedals and measurement basis",
+    "Maximum tire clearance, current complete geometry and meaningful exact-model stiffness evidence",
+    "Seller authority under the manufacturer warranty route and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-model-and-core-build-confirmed-selected-sku-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "missile-current-range-official-2026-08-30",
+    "missile-warranty-official-2026-08-30",
+    "missile-mercury-6000-jd-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +34,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6880.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/hotitem/131882d86ae6672951f1.html",
+  "source_note": "The retained card explicitly reads MISSILE E米赛尔 水星-6000, approximately 9.3 kg, SENSAH 2×12, hydraulic discs and full carbon. Current JD indexing independently names MISSILE 米赛尔 水星6000 and the same carbon/SENSAH 24-speed hydraulic configuration. Distinct 水星7120/MAX/Ultra/PRO/X12 products and the aluminum 破风6000 are not merged. The manufacturer warranty exists, but seller eligibility is not verified.",
+  "last_reviewed": "2026-08-30"
 }

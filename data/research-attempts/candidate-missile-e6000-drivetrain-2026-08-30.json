@@ -1,0 +1,495 @@
+{
+  "id": "candidate-missile-e6000-drivetrain-2026-08-30",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missile-e6000"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand YouTube channel — field candidate:missile-e6000:drivetrain",
+          "route": "Brand YouTube channel — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model YouTube result with additional facts was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent YouTube review or build — field candidate:missile-e6000:drivetrain",
+          "route": "Independent YouTube review or build — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent YouTube result with controlled build facts was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand Bilibili account — field candidate:missile-e6000:drivetrain",
+          "route": "Brand Bilibili account — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-build 水星6000 Bilibili result was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent Bilibili review or build — field candidate:missile-e6000:drivetrain",
+          "route": "Independent Bilibili review or build — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A 水星-family review does not identify the retained 6000 configuration. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1uwjwzmEom/"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand Xiaohongshu account — field candidate:missile-e6000:drivetrain",
+          "route": "Brand Xiaohongshu account — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact official result was indexed and no new capture was started. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent Xiaohongshu post — field candidate:missile-e6000:drivetrain",
+          "route": "Independent Xiaohongshu post — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact independent result was indexed and no new capture was started. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand Douyin account — field candidate:missile-e6000:drivetrain",
+          "route": "Brand Douyin account — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact-model Douyin result with additional facts was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent Douyin post — field candidate:missile-e6000:drivetrain",
+          "route": "Independent Douyin post — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A public 破风6000 video index describes a distinct older configuration. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://jingxuan.douyin.com/m/video/7365765132955290890"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand Weibo account — field candidate:missile-e6000:drivetrain",
+          "route": "Brand Weibo account — drivetrain",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent Weibo post — field candidate:missile-e6000:drivetrain",
+          "route": "Independent Weibo post — drivetrain",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Brand WeChat public article — field candidate:missile-e6000:drivetrain",
+          "route": "Brand WeChat public article — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable official result with additional build facts. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent WeChat public article — field candidate:missile-e6000:drivetrain",
+          "route": "Independent WeChat public article — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Exact public WeChat indexing returned no attributable independent result with additional build facts. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Cycling forum thread — field candidate:missile-e6000:drivetrain",
+          "route": "Cycling forum thread — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Community 水星 reports do not establish the exact 6000 trim or controlled specifications. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://tieba.baidu.com/p/8829976578"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Public owner build log — field candidate:missile-e6000:drivetrain",
+          "route": "Public owner build log — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact attributable owner build log established controlled facts for the retained build. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Public community photo or setup post — field candidate:missile-e6000:drivetrain",
+          "route": "Public community photo or setup post — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-build community photo set established specifications or documented reusable-image rights. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer exact-product page — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer exact-product page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No live manufacturer exact-product page for 水星6000 was retrievable. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer model-family or category page — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer model-family or category page — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer road range establishes the 水星 family but current detailed pages cover newer separate variants. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.missilebike.com/bk_27666474.html"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer current catalog — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer current catalog — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The current manufacturer catalog establishes MISSILE 米赛尔 and its road range. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.missilebike.com/"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer archived catalog — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer archived catalog — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived exact 水星6000 manufacturer page added reliable build facts. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer product manual — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer product manual — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer manual was publicly indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer geometry document — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer geometry document — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model manufacturer geometry document with a complete current table was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer technical paper or test note — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer technical paper or test note — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model controlled stiffness, deflection, construction or aerodynamic test note was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer support or warranty page — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer support or warranty page — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer publishes a five-year frame warranty, but retained-seller eligibility is not verified. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.missilebike.com/bk_27713715.html"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer newsroom or launch page — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer newsroom or launch page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model manufacturer launch article with transferable facts was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer site search — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer site search — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer site search establishes the brand and separate current 水星 variants, not a live exact 6000 page. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer sitemap or indexed route inventory — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer sitemap or indexed route inventory — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer sitemap and indexed-route searches exposed no additional exact-model page. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer structured page metadata — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer structured page metadata — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current structured product text covers a newer 水星 variant and is not transferred to 水星6000. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.missilebike.com/pro_57446843.html"
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer regional site — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer regional site — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No separate regional exact 水星6000 page was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer-listed distributor — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer-listed distributor — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact attributable distributor page added controlled facts. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer dealer locator — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer dealer locator — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model mainland dealer-locator result was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Manufacturer-operated online store — field candidate:missile-e6000:drivetrain",
+          "route": "Manufacturer-operated online store — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer storefront establishes current brand identity but not the retained seller authority. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Official Taobao store or exact item — field candidate:missile-e6000:drivetrain",
+          "route": "Official Taobao store or exact item — drivetrain",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The retained exact product card reads MISSILE E米赛尔 水星-6000, approximately 9.3 kg, SENSAH 2x12, hydraulic discs and full carbon at CNY 4,796.25. This area was checked specifically for drivetrain; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Official Tmall store or exact item — field candidate:missile-e6000:drivetrain",
+          "route": "Official Tmall store or exact item — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact public Tmall official-store result was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Official JD store or exact item — field candidate:missile-e6000:drivetrain",
+          "route": "Official JD store or exact item — drivetrain",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact JD indexing names 水星6000 and describes a carbon-fiber SENSAH 24-speed hydraulic-disc complete bike with 2025 options. This area was checked specifically for drivetrain; its evidence was accepted for this field.",
+          "result_url": "https://www.jd.com/hotitem/131882d86ae6672951f1.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Verified Alibaba or 1688 supplier route — field candidate:missile-e6000:drivetrain",
+          "route": "Verified Alibaba or 1688 supplier route — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model supplier page with additional facts was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Official AliExpress store or exact item — field candidate:missile-e6000:drivetrain",
+          "route": "Official AliExpress store or exact item — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact-model AliExpress official-store result was indexed. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Authorized mainland dealer — field candidate:missile-e6000:drivetrain",
+          "route": "Authorized mainland dealer — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized mainland dealer page was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Authorized regional dealer — field candidate:missile-e6000:drivetrain",
+          "route": "Authorized regional dealer — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact authorized regional dealer page with additional facts was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — International specialist retailer — field candidate:missile-e6000:drivetrain",
+          "route": "International specialist retailer — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact international specialist-retailer page with transferable current facts was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Cycling-industry review publication — field candidate:missile-e6000:drivetrain",
+          "route": "Cycling-industry review publication — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "An overview reports a heavier 破风6000/SENSAH trim; its 10.7 kg figure is configuration-specific and not transferred. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.zhihu.com/tardis/bd/art/699067069"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Chinese cycling-media publication — field candidate:missile-e6000:drivetrain",
+          "route": "Chinese cycling-media publication — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The article covers a distinct alloy-wheel configuration and cannot establish retained-build weight or stiffness. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent laboratory or instrumented test — field candidate:missile-e6000:drivetrain",
+          "route": "Independent laboratory or instrumented test — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact-model controlled laboratory weight, stiffness or aerodynamic test was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Print or digital magazine archive — field candidate:missile-e6000:drivetrain",
+          "route": "Print or digital magazine archive — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-build magazine test with transferable facts was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Trade-show coverage — field candidate:missile-e6000:drivetrain",
+          "route": "Trade-show coverage — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact current-model trade-show report with additional controlled facts was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Race-team equipment page — field candidate:missile-e6000:drivetrain",
+          "route": "Race-team equipment page — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No race-team equipment record identified the retained model and build. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Event or exhibitor catalog — field candidate:missile-e6000:drivetrain",
+          "route": "Event or exhibitor catalog — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No event or exhibitor catalog identified the exact retained model with additional facts. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Independent geometry database — field candidate:missile-e6000:drivetrain",
+          "route": "Independent geometry database — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No trustworthy exact 水星6000 geometry-database record was found. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Component compatibility database — field candidate:missile-e6000:drivetrain",
+          "route": "Component compatibility database — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No component database identified the retained configuration, frame limits or maximum tire clearance. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Product certification or registration database — field candidate:missile-e6000:drivetrain",
+          "route": "Product certification or registration database — drivetrain",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The registry result covers 水星8000 rather than 水星6000 and is not transferred. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.samrdprc.org.cn/xfpzh/xfpgnzh/202309/P020230928571718914967.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "MISSILE 米赛尔 水星6000 SENSAH 24速 全碳 9.3kg — Public web archive — field candidate:missile-e6000:drivetrain",
+          "route": "Public web archive — drivetrain",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived exact-build page added reliable facts beyond live and dated sources. This area was checked specifically for drivetrain; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "missile-mercury-6000-jd-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. The retained card and current exact-model index align on SENSAH 2×12/24-speed hydraulic equipment."
+}

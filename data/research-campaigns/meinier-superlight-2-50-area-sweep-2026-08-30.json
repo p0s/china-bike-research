@@ -1,0 +1,434 @@
+{
+  "id": "meinier-superlight-2-50-area-sweep-2026-08-30",
+  "searched_at": "2026-08-30",
+  "target": {
+    "brand_id": "meinier",
+    "candidate_ids": [
+      "meinier-superlight-2"
+    ],
+    "displayed_identity": "MEINIER full-carbon road bike, exact model unresolved"
+  },
+  "method": "Fifty genuinely distinct registered source areas were checked at exact-model level, then each atomic field received its own acceptance or rejection application. Public XHS was limited to search-engine indexes under shared-runtime coordination; no new XHS capture, login, CAPTCHA, Security Verification action or bypass was attempted.",
+  "identity_result": "brand-and-carbon-listing-confirmed-exact-model-unresolved",
+  "identity_note": "The retained CNY 21,000 seller card establishes a MEINIER carbon road bike but exposes no model code. Current DS-118 and DS618 manufacturer pages are explicit reference products and are not assigned to it.",
+  "fields_checked": [
+    "candidate:meinier-superlight-2:complete-weight",
+    "candidate:meinier-superlight-2:drivetrain",
+    "candidate:meinier-superlight-2:tire-clearance",
+    "candidate:meinier-superlight-2:frame-material",
+    "candidate:meinier-superlight-2:identity-source",
+    "candidate:meinier-superlight-2:frame-stiffness"
+  ],
+  "areas": [
+    {
+      "approach_area_id": "manufacturer-exact-product",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer exact-product page",
+      "route": "Manufacturer exact-product page",
+      "outcome": "rejected",
+      "result_url": "https://www.meinierbikes.com/products/carbon-road-bike-2x12-speed-aerodynamic-design",
+      "note": "The official DS618 complete-bike page is exact for DS618 but no evidence maps that model to the retained seller card."
+    },
+    {
+      "approach_area_id": "manufacturer-model-family",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer model-family or category page",
+      "route": "Manufacturer model-family or category page",
+      "outcome": "found",
+      "result_url": "https://www.meinierbikes.com/collections/road-bike-full-carbon-road-bike-from-meinier",
+      "note": "The official carbon-road collection establishes the current MEINIER range, not the retained model."
+    },
+    {
+      "approach_area_id": "manufacturer-current-catalog",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer current catalog",
+      "route": "Manufacturer current catalog",
+      "outcome": "found",
+      "result_url": "https://www.meinierbikes.com/",
+      "note": "The official current catalog establishes MEINIER and separates road bikes from road frames."
+    },
+    {
+      "approach_area_id": "manufacturer-archived-catalog",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer archived catalog",
+      "route": "Manufacturer archived catalog",
+      "outcome": "no-result",
+      "note": "No archived manufacturer catalog identified the retained seller-card model."
+    },
+    {
+      "approach_area_id": "manufacturer-product-manual",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer product manual",
+      "route": "Manufacturer product manual",
+      "outcome": "no-result",
+      "note": "No exact-model manufacturer manual was publicly indexed."
+    },
+    {
+      "approach_area_id": "manufacturer-geometry-document",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer geometry document",
+      "route": "Manufacturer geometry document",
+      "outcome": "rejected",
+      "result_url": "https://www.meinierbikes.com/products/upgraded-ds-118-lightweight-carbon-fiber-road-bike-frame-udh-hanger",
+      "note": "The DS-118 page publishes its own geometry and 32C maximum, but retained-bike identity is unbridged."
+    },
+    {
+      "approach_area_id": "manufacturer-technical-whitepaper",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer technical paper or test note",
+      "route": "Manufacturer technical paper or test note",
+      "outcome": "no-result",
+      "note": "Manufacturer performance language is marketing copy rather than a controlled exact-model stiffness test."
+    },
+    {
+      "approach_area_id": "manufacturer-support-warranty",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer support or warranty page",
+      "route": "Manufacturer support or warranty page",
+      "outcome": "no-result",
+      "note": "No exact current China warranty route attributable to the retained seller option was found."
+    },
+    {
+      "approach_area_id": "manufacturer-newsroom-launch",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer newsroom or launch page",
+      "route": "Manufacturer newsroom or launch page",
+      "outcome": "no-result",
+      "note": "No attributable exact-model manufacturer launch article with transferable facts was found."
+    },
+    {
+      "approach_area_id": "manufacturer-site-search",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer site search",
+      "route": "Manufacturer site search",
+      "outcome": "found",
+      "result_url": "https://www.meinierbikes.com/",
+      "note": "Official site search exposes multiple incompatible road frames and complete bikes without identifying the retained card."
+    },
+    {
+      "approach_area_id": "manufacturer-sitemap",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer sitemap or indexed route inventory",
+      "route": "Manufacturer sitemap or indexed route inventory",
+      "outcome": "no-result",
+      "note": "Manufacturer sitemap and indexed-route searches exposed no additional exact-model page."
+    },
+    {
+      "approach_area_id": "manufacturer-structured-data",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer structured page metadata",
+      "route": "Manufacturer structured page metadata",
+      "outcome": "found",
+      "result_url": "https://www.meinierbikes.com/products/upgraded-ds-118-lightweight-carbon-fiber-road-bike-frame-udh-hanger",
+      "note": "Official product metadata identifies DS-118 as a separate current frameset."
+    },
+    {
+      "approach_area_id": "manufacturer-regional-site",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer regional site",
+      "route": "Manufacturer regional site",
+      "outcome": "no-result",
+      "note": "No regional manufacturer page identified the retained seller-card model."
+    },
+    {
+      "approach_area_id": "manufacturer-distributor",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer-listed distributor",
+      "route": "Manufacturer-listed distributor",
+      "outcome": "no-result",
+      "note": "No attributable distributor page identified the retained exact model."
+    },
+    {
+      "approach_area_id": "manufacturer-dealer-locator",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer dealer locator",
+      "route": "Manufacturer dealer locator",
+      "outcome": "no-result",
+      "note": "No exact-model mainland dealer-locator result was found."
+    },
+    {
+      "approach_area_id": "manufacturer-official-store",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Manufacturer-operated online store",
+      "route": "Manufacturer-operated online store",
+      "outcome": "found",
+      "result_url": "https://www.meinierbikes.com/",
+      "note": "The manufacturer storefront establishes current brand and range identity but not the retained China SKU."
+    },
+    {
+      "approach_area_id": "taobao-official-store",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Official Taobao store or exact item",
+      "route": "Official Taobao store or exact item",
+      "outcome": "found",
+      "note": "The retained exact card identifies a MEINIER carbon road bike and visibly shows CNY 21,000; seller authority, model and selected build remain unresolved."
+    },
+    {
+      "approach_area_id": "tmall-official-store",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Official Tmall store or exact item",
+      "route": "Official Tmall store or exact item",
+      "outcome": "no-result",
+      "note": "No exact public Tmall official-store result was indexed."
+    },
+    {
+      "approach_area_id": "jd-official-store",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Official JD store or exact item",
+      "route": "Official JD store or exact item",
+      "outcome": "no-result",
+      "note": "No exact current JD result identified the retained seller-card model."
+    },
+    {
+      "approach_area_id": "alibaba-1688-supplier",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Verified Alibaba or 1688 supplier route",
+      "route": "Verified Alibaba or 1688 supplier route",
+      "outcome": "rejected",
+      "result_url": "https://www.alibaba.com/countrysearch/CN/meinier-bikes.html",
+      "note": "The supplier index establishes Shenzhen Menier Sports Goods Co., Ltd. and multiple MEINIER builds, but not the retained model or Chinese brand rendering."
+    },
+    {
+      "approach_area_id": "aliexpress-official-store",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Official AliExpress store or exact item",
+      "route": "Official AliExpress store or exact item",
+      "outcome": "no-result",
+      "note": "No attributable exact-model AliExpress official-store result was indexed."
+    },
+    {
+      "approach_area_id": "authorized-mainland-dealer",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Authorized mainland dealer",
+      "route": "Authorized mainland dealer",
+      "outcome": "no-result",
+      "note": "No exact authorized mainland dealer page was found."
+    },
+    {
+      "approach_area_id": "authorized-regional-dealer",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Authorized regional dealer",
+      "route": "Authorized regional dealer",
+      "outcome": "no-result",
+      "note": "No exact authorized regional dealer page with additional facts was found."
+    },
+    {
+      "approach_area_id": "international-specialist-retailer",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — International specialist retailer",
+      "route": "International specialist retailer",
+      "outcome": "rejected",
+      "result_url": "https://www.ebay.de/itm/358571726841",
+      "note": "A foreign DS618 R7120 listing is a distinct reference build and is not assigned to the retained card."
+    },
+    {
+      "approach_area_id": "cycling-industry-review",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Cycling-industry review publication",
+      "route": "Cycling-industry review publication",
+      "outcome": "no-result",
+      "note": "No exact independent review of the retained bike was found."
+    },
+    {
+      "approach_area_id": "chinese-cycling-media",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Chinese cycling-media publication",
+      "route": "Chinese cycling-media publication",
+      "outcome": "no-result",
+      "note": "No exact Chinese-media test identified the retained bike."
+    },
+    {
+      "approach_area_id": "independent-lab-test",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent laboratory or instrumented test",
+      "route": "Independent laboratory or instrumented test",
+      "outcome": "no-result",
+      "note": "No exact-model controlled laboratory weight, stiffness or aerodynamic test was found."
+    },
+    {
+      "approach_area_id": "magazine-archive",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Print or digital magazine archive",
+      "route": "Print or digital magazine archive",
+      "outcome": "no-result",
+      "note": "No exact current-build magazine test with transferable facts was found."
+    },
+    {
+      "approach_area_id": "trade-show-coverage",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Trade-show coverage",
+      "route": "Trade-show coverage",
+      "outcome": "no-result",
+      "note": "No exact current-model trade-show report with additional controlled facts was found."
+    },
+    {
+      "approach_area_id": "race-team-equipment",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Race-team equipment page",
+      "route": "Race-team equipment page",
+      "outcome": "no-result",
+      "note": "No race-team equipment record identified the retained model and build."
+    },
+    {
+      "approach_area_id": "event-exhibitor-catalog",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Event or exhibitor catalog",
+      "route": "Event or exhibitor catalog",
+      "outcome": "no-result",
+      "note": "No event or exhibitor catalog identified the exact retained model with additional facts."
+    },
+    {
+      "approach_area_id": "geometry-database",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent geometry database",
+      "route": "Independent geometry database",
+      "outcome": "rejected",
+      "result_url": "https://bikeinsights.com/bikes/69d430e7e5f059001b84f775-meinier-ds-118?build=carbon-fiber-aero-road-frame&version=2026",
+      "note": "The geometry record covers DS-118, which is not proven to be the retained bike."
+    },
+    {
+      "approach_area_id": "component-compatibility-database",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Component compatibility database",
+      "route": "Component compatibility database",
+      "outcome": "no-result",
+      "note": "No component database identified the retained configuration, frame limits or maximum tire clearance."
+    },
+    {
+      "approach_area_id": "product-certification-registry",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Product certification or registration database",
+      "route": "Product certification or registration database",
+      "outcome": "no-result",
+      "note": "No exact-model product registration supplied transferable facts."
+    },
+    {
+      "approach_area_id": "web-archive",
+      "channel": "web",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Public web archive",
+      "route": "Public web archive",
+      "outcome": "no-result",
+      "note": "No archived exact-build page added reliable facts beyond live and dated sources."
+    },
+    {
+      "approach_area_id": "brand-youtube",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand YouTube channel",
+      "route": "Brand YouTube channel",
+      "outcome": "no-result",
+      "note": "No attributable official exact-model YouTube result with additional facts was indexed."
+    },
+    {
+      "approach_area_id": "independent-youtube",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent YouTube review or build",
+      "route": "Independent YouTube review or build",
+      "outcome": "no-result",
+      "note": "No exact independent YouTube result with controlled build facts was indexed."
+    },
+    {
+      "approach_area_id": "brand-bilibili",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand Bilibili account",
+      "route": "Brand Bilibili account",
+      "outcome": "no-result",
+      "note": "No attributable exact retained-model Bilibili result was indexed."
+    },
+    {
+      "approach_area_id": "independent-bilibili",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent Bilibili review or build",
+      "route": "Independent Bilibili review or build",
+      "outcome": "no-result",
+      "note": "No exact independent retained-model Bilibili test was found."
+    },
+    {
+      "approach_area_id": "brand-xiaohongshu",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand Xiaohongshu account",
+      "route": "Brand Xiaohongshu account",
+      "outcome": "no-result",
+      "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact official result was indexed and no new capture was started."
+    },
+    {
+      "approach_area_id": "independent-xiaohongshu",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent Xiaohongshu post",
+      "route": "Independent Xiaohongshu post",
+      "outcome": "no-result",
+      "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact independent result was indexed and no new capture was started."
+    },
+    {
+      "approach_area_id": "brand-douyin",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand Douyin account",
+      "route": "Brand Douyin account",
+      "outcome": "no-result",
+      "note": "No attributable official exact-model Douyin result with additional facts was indexed."
+    },
+    {
+      "approach_area_id": "independent-douyin",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent Douyin post",
+      "route": "Independent Douyin post",
+      "outcome": "no-result",
+      "note": "No exact independent Douyin result with controlled build facts was indexed."
+    },
+    {
+      "approach_area_id": "brand-weibo",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand Weibo account",
+      "route": "Brand Weibo account",
+      "outcome": "blocked",
+      "note": "Weibo exact access was blocked by robots policy; no login, alternate profile, repeated retry or bypass was attempted."
+    },
+    {
+      "approach_area_id": "independent-weibo",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent Weibo post",
+      "route": "Independent Weibo post",
+      "outcome": "blocked",
+      "note": "The independent Weibo exact route remained unavailable in the bounded check; no login, alternate profile, repeated retry or bypass was attempted."
+    },
+    {
+      "approach_area_id": "brand-wechat-public",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Brand WeChat public article",
+      "route": "Brand WeChat public article",
+      "outcome": "no-result",
+      "note": "Exact public WeChat indexing returned no attributable official result with additional build facts."
+    },
+    {
+      "approach_area_id": "independent-wechat-public",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Independent WeChat public article",
+      "route": "Independent WeChat public article",
+      "outcome": "no-result",
+      "note": "Exact public WeChat indexing returned no attributable independent result with additional build facts."
+    },
+    {
+      "approach_area_id": "cycling-forum",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Cycling forum thread",
+      "route": "Cycling forum thread",
+      "outcome": "no-result",
+      "note": "No exact attributable forum record established controlled current-build facts."
+    },
+    {
+      "approach_area_id": "owner-build-log",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Public owner build log",
+      "route": "Public owner build log",
+      "outcome": "no-result",
+      "note": "No exact attributable owner build log established controlled facts for the retained build."
+    },
+    {
+      "approach_area_id": "community-photo-post",
+      "channel": "public-post",
+      "query": "MEINIER 超轻碳纤维自行车 21000 exact road bike — Public community photo or setup post",
+      "route": "Public community photo or setup post",
+      "outcome": "no-result",
+      "note": "No exact-build community photo set established specifications or documented reusable-image rights."
+    }
+  ]
+}

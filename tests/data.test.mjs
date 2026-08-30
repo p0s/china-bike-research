@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 796);
+  assert.equal(data.researchAttempts.length, 820);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 202);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 204);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -536,6 +536,37 @@ test('KUNG, LEINAK, and Meihanda leads preserve exact names and configuration bo
   assert.match(phantom.source_note, /P10.*P12/);
 });
 
+test('Meihanda Xtreme, MEINIER, MISSILE, and MUIDLER leads preserve exact seller evidence and sibling boundaries', () => {
+  const xtreme = data.candidates.find((item) => item.id === 'meihanda-xtreme-gravel');
+  const meinier = data.candidates.find((item) => item.id === 'meinier-superlight-2');
+  const missile = data.candidates.find((item) => item.id === 'missile-e6000');
+  const muidler = data.candidates.find((item) => item.id === 'muidler-ashius-s7');
+
+  assert.match(xtreme.name, /^Meihanda 美涵达 \/ Xtreme/);
+  assert.match(xtreme.facts.frame_material, /carbon-fiber gravel bike/);
+  assert.equal(xtreme.facts.drivetrain, undefined);
+  assert.match(xtreme.source_note, /Phantom.*distinct/);
+
+  assert.equal(meinier.observed_price.amount_cny, 21000);
+  assert.match(meinier.observed_price.correction_note, /dropped one zero/);
+  assert.equal(meinier.facts.drivetrain, undefined);
+  assert.deepEqual(meinier.alternative_builds.map((build) => build.id), [
+    'official-ds118-frameset-reference',
+    'official-ds618-r7120-reference'
+  ]);
+  assert.match(meinier.source_note, /not transferred/);
+
+  assert.equal(missile.name, 'MISSILE 米赛尔 水星6000');
+  assert.equal(missile.facts.complete_weight_g, 9300);
+  assert.match(missile.facts.drivetrain, /SENSAH 2×12/);
+  assert.match(missile.source_note, /破风6000.*not merged/);
+
+  assert.equal(muidler.name, 'MUIDLER 媚影 阿修斯 S7');
+  assert.equal(muidler.facts, undefined);
+  assert.match(muidler.source_note, /truncated immediately after 全/);
+  assert.match(muidler.source_note, /阿瑞斯 R7.*none is transferred/i);
+});
+
 test('remaining LightCarbon road, TT and track catalog entries retain exact identities', () => {
   const ids = [
     'lightcarbon-lcrxs-v',
@@ -582,9 +613,9 @@ test('candidate facts and foreign-price reference estimates reject malformed evi
 test('rechecked screenshot prices preserve their corrected digit grouping', () => {
   const meinier = data.candidates.find((item) => item.id === 'meinier-superlight-2');
   const rollingStone = data.candidates.find((item) => item.id === 'rolling-stone-comp');
-  assert.equal(meinier.observed_price.amount_cny, 2100);
+  assert.equal(meinier.observed_price.amount_cny, 21000);
   assert.equal(rollingStone.observed_price.amount_cny, 1500);
-  assert.match(meinier.observed_price.correction_note, /not ¥21,000/);
+  assert.match(meinier.observed_price.correction_note, /shows ¥21,000.*dropped one zero/);
   assert.match(rollingStone.observed_price.correction_note, /not ¥15,000/);
 });
 

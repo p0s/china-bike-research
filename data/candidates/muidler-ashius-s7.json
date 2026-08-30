@@ -1,15 +1,21 @@
 {
   "id": "muidler-ashius-s7",
-  "name": "Muidler 媚影 阿修斯 S7",
+  "name": "MUIDLER 媚影 阿修斯 S7",
   "model_id": "muidler-ashius-s7",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact English spelling/model needs confirmation.",
+  "why_interesting": "The retained card establishes the displayed Chinese S7 identity, while the exact English model rendering and every technical specification remain unresolved.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact English model rendering, model year/SKU, drivetrain, complete BOM and complete-bike weight with measurement basis",
+    "Frame and fork material, maximum tire clearance, geometry and meaningful exact-model stiffness evidence",
+    "Manufacturer identity, exact domestic warranty route, seller authenticity and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "seller-card-identity-only-technical-specifications-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "muidler-trademark-index-2026-08-30",
+    "muidler-current-range-smzdm-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +26,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6886.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://wiki.smzdm.com/gongluche/b_378036/",
+  "source_note": "The retained card visibly reads 媚影阿修斯S7 and shows MUIDLER branding at CNY 6,998. The title is truncated immediately after 全, so neither full-carbon construction nor any drivetrain is claimed. Current indexes corroborate the 媚影 / MUIDLER pairing but resolve distinct 阿瑞斯 R7, 哈得斯500, 帕修斯600 and other models; none is transferred to 阿修斯 S7.",
+  "last_reviewed": "2026-08-30"
 }
