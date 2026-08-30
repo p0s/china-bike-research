@@ -7,8 +7,8 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', ogType='website', structuredData=[]}) {
-  const siteName='China Bike Research';
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription=''}) {
+  const siteName='China Bikes';
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
   const canonical = `${siteUrl}${url(base,path)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
@@ -43,7 +43,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="page header-inner">
-      <a class="brand" href="${url(base,'/')}" aria-label="China Bike Research home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bike Research</span></a>
+      <a class="brand" href="${url(base,'/')}" aria-label="China Bikes home"><img src="${url(base,'/assets/logo.svg')}" alt="" width="30" height="30"><span>China Bikes</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="${url(base,'/')}" data-nav-catalog${current==='catalog'?' aria-current="page"':''}>Bikes</a>
@@ -56,7 +56,10 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <main id="content">${body}</main>
   <footer class="site-footer">
     <div class="page footer-inner">
-      <span>Independent comparison of bicycles available in China.</span>
+      <div class="footer-copy">
+        ${footerDescription ? `<p>${escapeHtml(footerDescription)}</p>` : '<p>Independent comparison of bicycles available in China.</p>'}
+        ${datasetUpdated && catalogReviewed ? `<p class="footer-freshness">Dataset updated <time datetime="${escapeAttr(datasetUpdated)}">${escapeHtml(datasetUpdated)}</time>; catalog-wide review <time datetime="${escapeAttr(catalogReviewed)}">${escapeHtml(catalogReviewed)}</time>. Each price keeps its observation date and conditions.</p>` : ''}
+      </div>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
         <a href="${url(base,'/brands/')}">Brands</a>
@@ -81,7 +84,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   </aside>
   <div class="tooltip-content" role="tooltip" id="shared-tooltip" hidden></div>
   <div class="sr-only" role="status" aria-live="polite" id="copy-status"></div>
-  <script src="${url(base,'/assets/site.js')}" defer></script>
+  <script type="module" src="${url(base,'/assets/site.js')}"></script>
 </body>
 </html>`;
 }

@@ -1,3 +1,5 @@
+import { moveSelectionId } from './compare-state.js';
+
 (() => {
   const base = document.body.dataset.base ?? '';
   const selectionStorageKey = 'china-bike-guide-selection-v2';
@@ -492,7 +494,9 @@
   let activeBrand = '';
   let allModelsVisible = false;
   const defaultBuildAllowance = Number(buildAllowance?.dataset.defaultValue || 0);
+  const defaultBuildPreset = buildPreset instanceof HTMLSelectElement ? buildPreset.value : '';
   let currentBuildAllowance = defaultBuildAllowance;
+  let currentBuildPreset = defaultBuildPreset;
   let buildHighlightTimer = 0;
   const defaultPriceDetails = new Map(products.map((item) => [item.id, item.priceDetails ?? '']));
 
@@ -535,10 +539,20 @@
   function syncBuildPreset() {
     if (!(buildPreset instanceof HTMLSelectElement)) return;
     const options = [...buildPreset.options];
-    const fixed = options.find((option) => Number(option.dataset.buildAmount) === currentBuildAllowance);
+    const current = options.find((option) => option.value === currentBuildPreset);
+    const fixed = options.find((option) => option.dataset.buildAmount !== undefined && Number(option.dataset.buildAmount) === currentBuildAllowance);
     const custom = options.find((option) => option.value === 'custom');
-    buildPreset.value = (fixed ?? custom)?.value ?? '';
-    if (buildCustom instanceof HTMLElement) buildCustom.hidden = Boolean(fixed);
+    const selected = current && (current.dataset.buildManual === 'true' || current.value === 'custom')
+      ? current
+      : fixed ?? custom;
+    buildPreset.value = selected?.value ?? '';
+    currentBuildPreset = buildPreset.value;
+    const requiresInput = selected?.dataset.buildManual === 'true' || selected?.value === 'custom';
+    if (buildCustom instanceof HTMLElement) buildCustom.hidden = !requiresInput;
+    if (buildAllowance instanceof HTMLInputElement) {
+      const planLabel = selected?.textContent?.replace(/\s+·.*$/, '').trim() || 'Custom';
+      buildAllowance.setAttribute('aria-label', `${planLabel} total remaining-build allowance in yuan`);
+    }
   }
 
   function highlightBuildPrices() {
@@ -548,7 +562,8 @@
     buildHighlightTimer = window.setTimeout(() => catalogRoot.classList.remove('is-build-updating'), 220);
   }
 
-  function updateFramesetPrices(value, { highlight = false } = {}) {
+  function updateFramesetPrices(value, { highlight = false, presetId } = {}) {
+    if (presetId !== undefined) currentBuildPreset = presetId;
     currentBuildAllowance = normalizedBuildAllowance(value);
     if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(currentBuildAllowance);
     syncBuildPreset();
@@ -615,6 +630,7 @@
     setParam(next, 'category', category?.value);
     setParam(next, 'sort', sort?.value, 'price-asc');
     setParam(next, 'scope', allModelsVisible ? 'all' : '');
+    setParam(next, 'buildPreset', currentBuildPreset, defaultBuildPreset);
     setParam(next, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
     const target = `${next.pathname}${next.search}${next.hash}`;
     try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', target); } catch { /* normal navigation origin required */ }
@@ -647,7 +663,7 @@
   }
 
   function hasFilters() {
-    return Boolean(activeType || activeBrand || allModelsVisible || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
+    return Boolean(activeType || activeBrand || allModelsVisible || currentBuildPreset !== defaultBuildPreset || currentBuildAllowance !== defaultBuildAllowance || search?.value.trim() || price?.value || tire?.value || (tire?.value && tireUnknown?.checked) || completeWeight?.value || frameWeight?.value || drivetrainFilter?.value.trim() || frameFilter?.value.trim() || categoryMinimum?.value || category?.value || (sort?.value && sort.value !== 'price-asc'));
   }
 
   function numericValue(input, multiplier = 1) {
@@ -937,6 +953,7 @@
     const requestedType = params.get('type') ?? '';
     const requestedSort = params.get('sort') ?? 'price-asc';
     const requestedBuildAllowance = params.get('build') ?? String(readStoredBuildAllowance() ?? defaultBuildAllowance);
+    const requestedBuildPreset = validSelectValue(buildPreset, params.get('buildPreset') ?? '', '');
     allModelsVisible = params.get('scope') === 'all';
     if (search) search.value = requestedSearch;
     if (price) price.value = requestedPrice;
@@ -947,7 +964,7 @@
     if (drivetrainFilter) drivetrainFilter.value = params.get('drivetrain') ?? '';
     if (frameFilter) frameFilter.value = params.get('frameFact') ?? '';
     if (category) category.value = validSelectValue(category, requestedCategory);
-    updateFramesetPrices(requestedBuildAllowance);
+    updateFramesetPrices(requestedBuildAllowance, { presetId: requestedBuildPreset });
     setBrand(requestedBrand, { update: false });
     setType(requestedType, { update: false });
     updateCategoryMinimumAvailability();
@@ -966,6 +983,7 @@
       requestedBrand !== activeBrand ||
       requestedType !== activeType ||
       requestedBuildAllowance !== String(currentBuildAllowance) ||
+      (params.get('buildPreset') ?? defaultBuildPreset) !== currentBuildPreset ||
       (params.get('scope') ?? '') !== (allModelsVisible ? 'all' : '') ||
       Boolean(legacyCapability) ||
       requestedSort !== (sort?.value ?? 'price');
@@ -997,7 +1015,7 @@
     ['price', 'tire', 'tire-unknown', 'complete-weight', 'frame-weight', 'drivetrain', 'frame', 'category'].forEach(clearTypedFilter);
     if (category) category.value = '';
     if (sort) sort.value = 'price-asc';
-    updateFramesetPrices(defaultBuildAllowance, { highlight: true });
+    updateFramesetPrices(defaultBuildAllowance, { highlight: true, presetId: defaultBuildPreset });
     allModelsVisible = false;
     setBrand('', { update: false });
     setType('', { update: false });
@@ -1105,7 +1123,18 @@
     return node;
   }
 
-  function productHeader(item) {
+  function moveComparison(item, offset, direction) {
+    const next = moveSelectionId(selection, item.id, offset);
+    if (next.every((id, index) => id === selection[index])) return;
+    setSelection(next);
+    requestAnimationFrame(() => {
+      const control = compareContent?.querySelector(`[data-move-compare="${CSS.escape(item.id)}"][data-direction="${direction}"]`);
+      if (control instanceof HTMLButtonElement && !control.disabled) control.focus({ preventScroll: true });
+      else compareContent?.querySelector(`[data-move-compare="${CSS.escape(item.id)}"]:not(:disabled)`)?.focus({ preventScroll: true });
+    });
+  }
+
+  function productHeader(item, index, total) {
     const head = element('div', 'compare-product-head');
     const label = [item.brand, item.name].filter(Boolean).join(' ');
     const copy = element('div');
@@ -1116,7 +1145,27 @@
       title.href = `${target.pathname}${target.search}`;
     }
     const type = element('span', '', item.type);
-    copy.append(title, type);
+    const orderControls = element('div', 'compare-order-controls');
+    orderControls.setAttribute('role', 'group');
+    orderControls.setAttribute('aria-label', `Reorder ${label}`);
+    const moveLeft = element('button', 'compare-move', '←');
+    moveLeft.type = 'button';
+    moveLeft.disabled = index === 0;
+    moveLeft.dataset.moveCompare = item.id;
+    moveLeft.dataset.direction = 'left';
+    moveLeft.setAttribute('aria-label', `Move ${label} left`);
+    moveLeft.title = 'Move left';
+    moveLeft.addEventListener('click', () => moveComparison(item, -1, 'left'));
+    const moveRight = element('button', 'compare-move', '→');
+    moveRight.type = 'button';
+    moveRight.disabled = index === total - 1;
+    moveRight.dataset.moveCompare = item.id;
+    moveRight.dataset.direction = 'right';
+    moveRight.setAttribute('aria-label', `Move ${label} right`);
+    moveRight.title = 'Move right';
+    moveRight.addEventListener('click', () => moveComparison(item, 1, 'right'));
+    orderControls.append(moveLeft, moveRight);
+    copy.append(title, type, orderControls);
     const remove = element('button', 'remove-compare', '×');
     remove.type = 'button';
     remove.setAttribute('aria-label', `Remove ${label}`);
@@ -1158,7 +1207,7 @@
     grid.style.setProperty('--compare-count', String(items.length));
     if (includeHeaders) {
       grid.append(element('div', 'compare-label', 'Bike'));
-      items.forEach((item) => grid.append(productHeader(item)));
+      items.forEach((item, index) => grid.append(productHeader(item, index, items.length)));
     }
     fields.forEach(([label, render]) => {
       grid.append(element('div', 'compare-label', label));
@@ -1201,7 +1250,8 @@
     const context = element('p', `compare-context${mixedCategories ? ' is-warning' : ''}`, mixedCategories
       ? 'These bikes serve different categories. Category-specific facts are separated below and should not be ranked against one another.'
       : `Category-specific facts are comparable across these ${items.length} selections.`);
-    compareContent.replaceChildren(context, comparisonGrid(items, coreFields, true));
+    const orderHint = element('p', 'compare-order-hint', 'Use the arrow controls to reorder columns. The comparison link keeps this order.');
+    compareContent.replaceChildren(context, orderHint, comparisonGrid(items, coreFields, true));
     if (secondaryFields.length) {
       const more = element('details', 'compare-more');
       more.append(element('summary', '', 'More details'), comparisonGrid(items, secondaryFields));
@@ -1264,10 +1314,16 @@
   buildPreset?.addEventListener('change', () => {
     if (!(buildPreset instanceof HTMLSelectElement)) return;
     const selected = buildPreset.selectedOptions[0];
-    const amount = Number(selected?.dataset.buildAmount);
-    if (!Number.isFinite(amount)) {
-      if (buildCustom instanceof HTMLElement) buildCustom.hidden = false;
-      if (buildAllowance instanceof HTMLInputElement) buildAllowance.focus({ preventScroll: true });
+    currentBuildPreset = selected?.value ?? defaultBuildPreset;
+    const hasFixedAmount = selected?.dataset.buildAmount !== undefined;
+    const amount = hasFixedAmount ? Number(selected.dataset.buildAmount) : Number.NaN;
+    if (!hasFixedAmount || !Number.isFinite(amount)) {
+      syncBuildPreset();
+      updateCatalog({ historyMode: 'push' });
+      if (buildAllowance instanceof HTMLInputElement) {
+        buildAllowance.focus({ preventScroll: true });
+        buildAllowance.select();
+      }
       return;
     }
     if (buildAllowance instanceof HTMLInputElement) buildAllowance.value = String(amount);

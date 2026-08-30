@@ -22,11 +22,17 @@ test('layout emits base-aware social and structured metadata without repository 
     image: '/guide/assets/images/placeholders/complete-bike.svg',
     ogType: 'product',
     structuredData: { '@context': 'https://schema.org', '@type': 'Product', name: 'Bike <exact>' },
+    datasetUpdated: '2026-08-30',
+    catalogReviewed: '2026-08-08',
+    footerDescription: 'Evidence-led China bike comparison.',
     body: '<p>Bike</p>'
   });
   assert.match(html, /property="og:image" content="https:\/\/example.github.io\/guide\/assets\/images\/placeholders\/complete-bike.svg"/);
   assert.match(html, /property="og:type" content="product"/);
-  assert.match(html, /property="og:site_name" content="China Bike Research"/);
+  assert.match(html, /property="og:site_name" content="China Bikes"/);
+  assert.match(html, /aria-label="China Bikes home"/);
+  assert.match(html, /<script type="module" src="\/guide\/assets\/site\.js"><\/script>/);
+  assert.match(html, /Evidence-led China bike comparison\.[\s\S]*Dataset updated <time datetime="2026-08-30">2026-08-30<\/time>; catalog-wide review <time datetime="2026-08-08">2026-08-08<\/time>/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /name="twitter:image" content="https:\/\/example.github.io\/guide\/assets\/images\/placeholders\/complete-bike.svg"/);
   assert.match(html, /name="robots" content="index,follow,max-image-preview:large"/);

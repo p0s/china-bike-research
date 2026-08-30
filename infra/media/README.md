@@ -1,4 +1,4 @@
-# China Bike Research media origin
+# China Bikes media origin
 
 This directory defines the isolated static media service deployed at
 `china-bike-media.161-97-123-19.sslip.io` on the project's Contabo VPS.
