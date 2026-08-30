@@ -1,16 +1,28 @@
 {
   "id": "qingsha-carbon-folding",
-  "name": "轻鲨 QingSha Carbon folding bike",
+  "name": "轻鲨 QingSha QS91-20 blue / blue-carbon-wheel",
   "model_id": "qingsha-carbon-folding",
   "category": "folding",
   "type": "complete-bike",
-  "why_interesting": "Exact model and wheel size not visible.",
+  "why_interesting": "The retained blue bike with blue carbon wheels matches the current QS91-20 option matrix. The exact component brands, weight and fold measurements remain unpublished.",
+  "facts": {
+    "drivetrain": "7-speed external drivetrain; component maker, model and gearing range are not published.",
+    "frame": "Carbon-fiber frame and fork",
+    "frame_material": "QS91 supplier evidence identifies a carbon-fiber frame and carbon-fiber fork; fiber grade and lay-up are not published.",
+    "wheels": "Selected listing option: 20-inch blue carbon wheels"
+  },
   "missing": [
-    "Exact model, wheel size, folded dimensions, hinge hardware, and BOM",
+    "Complete-bike weight, folded dimensions, hinge hardware, and exact component identities",
+    "Maximum tire clearance and meaningful stiffness evidence",
     "Seller/authenticity and final checkout price"
   ],
   "status": "verify-before-publish",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "source_ids": [
+    "qingsha-qs91-jd-2026-08-30",
+    "qingsha-qs91-supplier-index-2026-08-30",
+    "qingsha-corporate-exhibitor-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {
     "amount_cny": 3599,
@@ -20,5 +32,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6861.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/131850e26d18727f9207.html",
+  "source_note": "Current JD indexing names QS91-20 and separately lists the blue-frame / blue-carbon-wheel option visible in the retained card. Supplier indexing describes the exact QS91 as a 20-inch carbon-frame and carbon-fork folding bike with 7-speed shifting. 江西轻鲨科技有限公司 is corroborated as a carbon-bicycle exhibitor; no complete weight, controlled clearance or stiffness result is transferred.",
+  "last_reviewed": "2026-08-30"
 }

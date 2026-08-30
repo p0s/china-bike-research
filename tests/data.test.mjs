@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 844);
+  assert.equal(data.researchAttempts.length, 868);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 205);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 207);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -646,9 +646,9 @@ test('rechecked screenshot prices preserve their corrected digit grouping', () =
   const meinier = data.candidates.find((item) => item.id === 'meinier-superlight-2');
   const rollingStone = data.candidates.find((item) => item.id === 'rolling-stone-comp');
   assert.equal(meinier.observed_price.amount_cny, 21000);
-  assert.equal(rollingStone.observed_price.amount_cny, 1500);
+  assert.equal(rollingStone.observed_price.amount_cny, 15000);
   assert.match(meinier.observed_price.correction_note, /shows ¥21,000.*dropped one zero/);
-  assert.match(rollingStone.observed_price.correction_note, /not ¥15,000/);
+  assert.match(rollingStone.observed_price.correction_note, /show ¥15,000.*¥1,500 transcription was incorrect/);
 });
 
 test('Twitter Gravel V3 generations and configurations remain separate', () => {

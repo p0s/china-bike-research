@@ -1,27 +1,42 @@
 {
   "id": "rolling-stone-comp",
-  "name": "ROLLING STONE 滚石 Comp",
+  "name": "ROLLING STONE 滚石 COMPASS",
   "model_id": "rolling-stone-comp",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact provenance/configuration unclear; seller photo looks used or shop-built.",
+  "why_interesting": "The retained title and distinctive horizontal aero frame identify the legacy COMPASS. The listing title says road frameset while its photo shows an assembled bike, so the sold package and complete-bike build remain unresolved.",
+  "facts": {
+    "frame": "Full-carbon monocoque COMPASS aero-road frame and carbon fork",
+    "frame_material": "Japanese Toray UD carbon-fiber frame; exact fiber grade is not published consistently enough to record.",
+    "frame_construction": "EPS-process horizontal aero frame with BB86, tapered head tube, internal routing, direct-mount front derailleur and compatibility for mechanical, Shimano Di2 and Campagnolo EPS shifting.",
+    "frame_weight_g": 1060,
+    "frame_weight_basis": "Exact-model independent review measured the frame at 1,060 g and fork at 385 g; a manufacturer-origin product article lists the same frame at 1,060 g and fork at 380 g. This is not a complete-bike weight.",
+    "stiffness_evidence": "An exact-model independent race-use review described the COMPASS as noticeably harsh with below-average comfort while finding its strength sufficient for competition; no controlled numeric stiffness result was published."
+  },
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Whether the ¥15,000 listing covers the photographed complete bike, a frameset package, or another seller-defined option",
+    "Exact complete-bike drivetrain, weight, maximum tire clearance and complete BOM",
+    "Current China purchase route and seller-specific warranty handling"
   ],
-  "status": "research-queue",
+  "status": "exact-model-listing-package-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "source_ids": [
+    "rolling-stone-compass-biketo-2026-08-30",
+    "rolling-stone-compass-review-2026-08-30",
+    "rolling-stone-compass-dragonbike-2026-08-30",
+    "rolling-stone-corporate-official-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {
-    "amount_cny": 1500,
+    "amount_cny": 15000,
     "currency": "CNY",
     "observed_at": "2026-08-08",
     "price_basis": "listed",
     "observation_count": 1,
-    "correction_note": "Digit grouping rechecked against IMG_6867.png#R2; the visible amount is ¥1,500, not ¥15,000."
+    "correction_note": "IMG_6867.png#R2 and the immutable source export both show ¥15,000; an earlier ¥1,500 transcription was incorrect."
   },
-  "source_note": "The screenshot visibly shows ¥1,500, but whether that figure covers a complete bike or a parts/package option remains unresolved.",
+  "source_url": "https://www.biketo.com/product/20228.html",
+  "source_note": "The screenshot visibly shows ¥15,000. Its title describes a road frameset but its image shows an assembled bike. Exact COMPASS sources establish the legacy frame identity and frame facts only; no pictured drivetrain or complete-bike weight is inferred, and the current seller package remains unresolved.",
   "source_refs": "IMG_6867.png#R2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-30"
 }
