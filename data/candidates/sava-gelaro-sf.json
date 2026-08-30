@@ -4,12 +4,54 @@
   "model_id": "sava-gelaro-sf",
   "category": "gravel-flatbar",
   "type": "complete-bike",
-  "why_interesting": "Likely SF6 family; exact suffix needs confirmation.",
-  "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+  "brand_id": "sava",
+  "why_interesting": "The retained mainland card resolves to the current Gelaro SF6 flat-bar family, but it does not expose whether the selected bike is the 10-speed R21-U6020 or 11-speed R21-U6000 build.",
+  "facts": {
+    "frame": "Toray T800 carbon frame and full-carbon fork",
+    "frame_material": "Toray T800 carbon frame and fork",
+    "frame_construction": "Internally routed carbon flat-bar gravel chassis",
+    "complete_weight_g": 10400,
+    "complete_weight_basis": "Official approximate complete-bike weight shared by the documented R21-U6020 10-speed and R21-U6000 11-speed builds; size, pedals, accessories and weighing method are not stated",
+    "tires": "700×40C fitted on the documented current build",
+    "tire_clearance_mm": 45,
+    "tire_clearance_basis": "Current exact-model manufacturer maximum; the documented complete bike is fitted with 40C tires",
+    "stiffness_evidence": "An independent exact-model review describes the carbon chassis as damping road vibration while remaining responsive; qualitative ride evidence, not a controlled numeric stiffness measurement"
+  },
+  "alternative_builds": [
+    {
+      "id": "r21-u6020-10s",
+      "label": "R21-U6020 10-speed build",
+      "drivetrain": "Shimano CUES 1×10 (bike code R21-U6020)",
+      "complete_weight_g": 10400,
+      "weight_basis": "Official approximate complete-bike weight; size, pedals, accessories and weighing method are not stated",
+      "source_ids": [
+        "sava-gelaro-sf6-specifications-2026-08-25"
+      ]
+    },
+    {
+      "id": "r21-u6000-11s",
+      "label": "R21-U6000 11-speed build",
+      "drivetrain": "Shimano CUES 1×11 (bike code R21-U6000)",
+      "complete_weight_g": 10400,
+      "weight_basis": "Official approximate complete-bike weight; size, pedals, accessories and weighing method are not stated",
+      "source_ids": [
+        "sava-gelaro-sf6-specifications-2026-08-25",
+        "sava-gelaro-sf6-official-2026-08-28"
+      ]
+    }
   ],
-  "status": "verify-before-publish",
+  "missing": [
+    "Selected R21-U6020 10-speed versus R21-U6000 11-speed drivetrain and exact complete BOM",
+    "Seller authority, final checkout conditions and exact domestic warranty route"
+  ],
+  "status": "exact-model-family-selected-build-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "sava-gelaro-sf6-specifications-2026-08-25",
+    "sava-gelaro-sf6-official-2026-08-28",
+    "sava-gelaro-sf6-independent-review-2026-08-27",
+    "sava-jd-official-storefront-2026-08-26"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +62,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6871.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike",
+  "source_note": "The retained card proves the Gelaro SF family only. Current manufacturer evidence documents two approximately 10.4 kg SF6 builds with the same T800 chassis and 45 mm maximum clearance, but the card does not expose the selected 10-speed or 11-speed drivetrain, so no drivetrain is assigned to the catalog row.",
+  "last_reviewed": "2026-08-30"
 }

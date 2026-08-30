@@ -1,16 +1,34 @@
 {
   "id": "sunpeed-victory-e-2026",
-  "name": "SUNPEED 速比特 Victory E / 胜利E 2026",
+  "name": "SUNPEED 速比特 Victory Expert / 胜利 E 105 Di2 (2026 listing)",
   "model_id": "sunpeed-victory-e-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Electronic build. | Repeated observation.",
+  "brand_id": "sunpeed",
+  "why_interesting": "The retained official-store card maps to the current Victory Expert 105 Di2 build and exposes a CNY 12,999 mainland listing.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7150/R7170 2×12",
+    "frame": "Toray carbon aero road frame and carbon fork",
+    "frame_material": "Toray T800 carbon with T1000 reinforcement in the tested exact-model frame",
+    "complete_weight_g": 8100,
+    "complete_weight_basis": "Independent measured weight for the tested size-L complete bike; pedal and accessory inclusion were not stated. A regional official specification separately claims 7.5 kg without stating size or method",
+    "wheels": "50 mm ANV carbon rims on the documented regional build",
+    "tires": "700×30C fitted; no manufacturer-confirmed maximum was found",
+    "stiffness_evidence": "An independent exact-model test reports responsive standing and sprint behavior, solid bottom-bracket and headset feel, a stiff cockpit and smooth comfort; qualitative ride evidence, not a numeric frame-stiffness measurement"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact selected mainland size, complete BOM and checkout conditions",
+    "Current domestic returns and warranty route"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-build-core-specs-verified-checkout-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "sunpeed-victory-expert-official-2026-08-30",
+    "sunpeed-victory-expert-brasil-2026-08-30",
+    "sunpeed-victory-expert-bikewhat-2026-08-30",
+    "sunpeed-victory-expert-jd-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +39,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6896.png#R2, IMG_6897.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.sunpeed.com/page75?_l=en&product_id=330",
+  "source_note": "The 8.1 kg catalog value is an independent size-L measurement. The separate 7.5 kg regional claim lacks size and weighing basis and is retained as a conflict, not substituted. The fitted 30C tire is not inferred to be the maximum clearance.",
+  "last_reviewed": "2026-08-30"
 }
