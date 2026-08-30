@@ -461,8 +461,13 @@ test('electronic groupset references preserve package and price boundaries', () 
   assert.ok(imagedGroupsets.every((item) => item.image.rights.status === 'official-page-embed'));
   assert.ok(imagedGroupsets.every((item) => item.source_ids.includes(item.image.source_id)));
   assert.equal(r8170.image, undefined);
-  assert.deepEqual(data.meta.frameset_build_assumption.presets.map((preset) => preset.amount_cny ?? null), [6000, 7900, null]);
+  assert.deepEqual(data.meta.frameset_build_assumption.presets.map((preset) => preset.amount_cny ?? null), [6000, 7900, null, null, null]);
   assert.equal(data.meta.frameset_build_assumption.presets.find((preset) => preset.default).id, 'shimano-105-r7170');
+  assert.deepEqual(
+    data.meta.frameset_build_assumption.presets.filter((preset) => preset.manual_allowance).map((preset) => preset.groupset_id),
+    ['magene-qed-pes', 'wheeltop-eds-tx']
+  );
+  assert.ok(data.meta.frameset_build_assumption.presets.filter((preset) => preset.manual_allowance).every((preset) => !Number.isFinite(preset.amount_cny) && preset.source_id));
 });
 
 test('groupset images require exact official-source and rights metadata', () => {

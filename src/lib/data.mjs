@@ -290,7 +290,14 @@ export function validateDataset(data = loadDataset()) {
         if (!isId(preset.id) || presetIds.has(preset.id)) errors.push('meta: invalid or duplicate frameset build preset id');
         presetIds.add(preset.id);
         if (typeof preset.label !== 'string' || !preset.label.trim()) errors.push(`meta: frameset build preset ${preset.id} needs a label`);
-        if (preset.custom !== true && (!Number.isFinite(preset.amount_cny) || preset.amount_cny < 0)) errors.push(`meta: frameset build preset ${preset.id} needs a non-negative amount_cny`);
+        if (preset.custom === true && preset.manual_allowance === true) errors.push(`meta: frameset build preset ${preset.id} cannot be custom and manual`);
+        if (preset.custom !== true && preset.manual_allowance !== true && (!Number.isFinite(preset.amount_cny) || preset.amount_cny < 0)) errors.push(`meta: frameset build preset ${preset.id} needs a non-negative amount_cny`);
+        if (preset.manual_allowance === true) {
+          if (Number.isFinite(preset.amount_cny)) errors.push(`meta: manual frameset build preset ${preset.id} must not set amount_cny`);
+          if (!isId(preset.groupset_id)) errors.push(`meta: manual frameset build preset ${preset.id} needs a groupset_id`);
+          if (typeof preset.basis !== 'string' || !preset.basis.trim()) errors.push(`meta: manual frameset build preset ${preset.id} needs a basis`);
+          if (!isId(preset.source_id)) errors.push(`meta: manual frameset build preset ${preset.id} needs a source_id`);
+        }
       }
       if (buildAssumption.presets.filter((preset) => preset.default === true).length !== 1) errors.push('meta: frameset build presets need exactly one default');
       if (buildAssumption.presets.filter((preset) => preset.custom === true).length !== 1) errors.push('meta: frameset build presets need exactly one custom option');
@@ -305,12 +312,14 @@ export function validateDataset(data = loadDataset()) {
   const platformsById = new Map(data.platforms.map((x) => [x.id, x]));
   const variantIds = new Set(data.variants.map((x) => x.id));
   const sourceIds = new Set(data.sources.map((x) => x.id));
+  const groupsetIds = new Set(data.groupsets.map((x) => x.id));
   const sourcesById = new Map(data.sources.map((x) => [x.id, x]));
   const variantsById = new Map(data.variants.map((x) => [x.id, x]));
   const candidateIds = new Set(data.candidates.map((x) => x.id));
 
   for (const preset of buildAssumption?.presets ?? []) {
     if (preset.source_id && !sourceIds.has(preset.source_id)) errors.push(`meta: frameset build preset ${preset.id} is missing source ${preset.source_id}`);
+    if (preset.groupset_id && !groupsetIds.has(preset.groupset_id)) errors.push(`meta: frameset build preset ${preset.id} is missing groupset ${preset.groupset_id}`);
     if (preset.observed_at && !isDate(preset.observed_at)) errors.push(`meta: frameset build preset ${preset.id} has an invalid observed_at`);
   }
 
