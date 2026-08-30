@@ -6,7 +6,8 @@
   },
   "field": "purchase-route",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
     "web"
@@ -22,7 +23,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -30,7 +32,8 @@
           "route": "Xiaohongshu public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "CAPTCHA/verification was not solved per policy."
+          "note": "CAPTCHA/verification was not solved per policy.",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -38,12 +41,124 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand YouTube channel — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand YouTube channel — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "ELVES video indexing was checked for exact frame and build material; no reusable-rights grant or controlled stiffness result appeared. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand Bilibili account — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand Bilibili account — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact brand Bilibili result added selected-package evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand Xiaohongshu account — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand Xiaohongshu account — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "No new XHS capture was started under shared-runtime coordination; public indexes supplied no decisive exact-package evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand Douyin account — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand Douyin account — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Brand/dealer Douyin indexing supplied no stronger exact retained-package evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Independent Douyin post — field variant:elves-falath-r7170:purchase-route",
+          "route": "Independent Douyin post — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Independent Douyin indexing supplied no stronger exact retained-package evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand Weibo account — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand Weibo account — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo public routing was robots-blocked; no login, verification or bypass was attempted. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Independent Weibo post — field variant:elves-falath-r7170:purchase-route",
+          "route": "Independent Weibo post — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo public routing was robots-blocked; no login, verification or bypass was attempted. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Brand WeChat public article — field variant:elves-falath-r7170:purchase-route",
+          "route": "Brand WeChat public article — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed brand WeChat articles added no exact selected-package or rights evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Independent WeChat public article — field variant:elves-falath-r7170:purchase-route",
+          "route": "Independent WeChat public article — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed independent WeChat articles added no exact selected-package or rights evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Cycling forum thread — field variant:elves-falath-r7170:purchase-route",
+          "route": "Cycling forum thread — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Forum material was checked for build and generation context; modified or sibling builds were not transferred. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://chinertown.com/index.php?topic=4032.150"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Public owner build log — field variant:elves-falath-r7170:purchase-route",
+          "route": "Public owner build log — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Owner builds confirm configuration variability and cannot establish the retained mainland wheelset or image. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.reddit.com/r/bicycling/comments/17weurz"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Public community photo or setup post — field variant:elves-falath-r7170:purchase-route",
+          "route": "Public community photo or setup post — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Public photo posts show custom Falath Pro builds, but no media was copied and none proves the retained package or reusable rights. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.reddit.com/r/Bikeporn/comments/y4fjc8"
         }
       ]
     },
     "web": {
-      "status": "temporarily-exhausted",
+      "status": "found",
       "attempts": [
         {
           "attempt": 1,
@@ -52,7 +167,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Official page is Falath EVO, not the published Falath R7170 build.",
-          "result_url": "https://www.elvesbike.com/more.php?id=142"
+          "result_url": "https://www.elvesbike.com/more.php?id=142",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -61,7 +177,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Store page is a Falath EVO frameset; no R7170 mapping.",
-          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved"
+          "result_url": "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved",
+          "approach_area_id": "manufacturer-official-store"
         },
         {
           "attempt": 3,
@@ -69,13 +186,320 @@
           "route": "authorized exact-SKU dealer or credible launch/spec publication",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No exact Falath R7170 build source with this field was located."
+          "note": "No exact Falath R7170 build source with this field was located.",
+          "approach_area_id": "authorized-regional-dealer"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer model-family or category page — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer model-family or category page — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current road inventory distinguishes Falath Pro Disc from EVO and EXP siblings. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/products.php?lm=8"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer current catalog — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer current catalog — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer stock catalog retains Falath Pro Disc frames but no exact R7170 mainland complete-bike package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://dg.elvesbike.com/u_file/2604/22/file/ElvesFramesinStockList-20260413.pdf"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer archived catalog — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer archived catalog — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Archived/regional exact frame routes corroborate the generation but not the retained complete-bike package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://yg.elvesbike.com/products/elves-falath-pro-disc-carbon-road-framesets"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer product manual — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer product manual — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No public exact Falath Pro Disc assembly manual supplied additional selected-build or numeric stiffness evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer geometry document — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer geometry document — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The current exact manufacturer page links the seven-size Falath Pro Disc geometry graphic. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/attach/202207/1657823779497260976.png"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer technical paper or test note — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer technical paper or test note — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No manufacturer technical paper publishes a numeric Falath Pro Disc stiffness magnitude or reproducible protocol. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer support or warranty page — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer support or warranty page — purchase-route",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer registration states the conditional frame-kit warranty route for an original owner. This area was checked specifically for purchase-route; its evidence was accepted for this field.",
+          "result_url": "https://elvesbike.com/ProductRegistration.php"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer newsroom or launch page — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer newsroom or launch page — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact launch-era page explains the 2022 head-tube and cable-routing revision but gives only qualitative stiffness language. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/more.php?id=93&lm=8"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer site search — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer site search — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer search resolves exact Disc, Rim, EVO and EXP routes and preserves the generation boundary. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/"
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer sitemap or indexed route inventory — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer sitemap or indexed route inventory — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed manufacturer inventory was checked for exact frame and complete-bike routes. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer structured page metadata — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer structured page metadata — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact product metadata identifies Falath Pro Disc 2022 and its technical page. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer regional site — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer regional site — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact regional Falath Pro Disc Shimano 105 R7170 build is available with quick checkout. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105"
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer-listed distributor — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer-listed distributor — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer distributor inventory identifies official regional routes including Australia and South Africa. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.elvesbike.com/dis.php"
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Manufacturer dealer locator — field variant:elves-falath-r7170:purchase-route",
+          "route": "Manufacturer dealer locator — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer-listed worldwide routes were checked for exact purchase and support context. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "taobao-official-store",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Official Taobao store or exact item — field variant:elves-falath-r7170:purchase-route",
+          "route": "Official Taobao store or exact item — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The retained dated marketplace card identifies the Falath/105 R7170 lead but does not expose the wheelset, exact image rights or current checkout. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "tmall-official-store",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Official Tmall store or exact item — field variant:elves-falath-r7170:purchase-route",
+          "route": "Official Tmall store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact official Tmall route established the retained selected package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "jd-official-store",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Official JD store or exact item — field variant:elves-falath-r7170:purchase-route",
+          "route": "Official JD store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact official JD route established the retained selected package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Verified Alibaba or 1688 supplier route — field variant:elves-falath-r7170:purchase-route",
+          "route": "Verified Alibaba or 1688 supplier route — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Supplier routes did not expose a defensible exact Falath Pro Disc R7170 retail package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Official AliExpress store or exact item — field variant:elves-falath-r7170:purchase-route",
+          "route": "Official AliExpress store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No defensible manufacturer-operated exact R7170 package was found on AliExpress. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Authorized mainland dealer — field variant:elves-falath-r7170:purchase-route",
+          "route": "Authorized mainland dealer — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current authorized mainland dealer route exposed the exact retained package, rights-safe image and wheelset. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — International specialist retailer — field variant:elves-falath-r7170:purchase-route",
+          "route": "International specialist retailer — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current specialist retailer confirms exact Disc frame construction and sizes, not the retained R7170 package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.atelierolympia.com/products/falath-pro-disc"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Cycling-industry review publication — field variant:elves-falath-r7170:purchase-route",
+          "route": "Cycling-industry review publication — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current review separates rim and disc generations; owner ride claims and modified builds were not transferred to the exact retained package. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.cyclistshub.com/elves-falath-pro-review/"
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Chinese cycling-media publication — field variant:elves-falath-r7170:purchase-route",
+          "route": "Chinese cycling-media publication — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Chinese cycling-media indexes supplied no stronger exact R7170 mainland BOM, image rights or numeric stiffness result. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Independent laboratory or instrumented test — field variant:elves-falath-r7170:purchase-route",
+          "route": "Independent laboratory or instrumented test — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independent structural stiffness or deflection test for exact Falath Pro Disc 2022 was found. Falath EXP aero testing is a different generation. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Print or digital magazine archive — field variant:elves-falath-r7170:purchase-route",
+          "route": "Print or digital magazine archive — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Magazine archives covered other Falath generations or qualitative brand context only. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Trade-show coverage — field variant:elves-falath-r7170:purchase-route",
+          "route": "Trade-show coverage — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Trade-show coverage focused newer EVO, EXP or V8 products and supplied no missing exact-package evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Race-team equipment page — field variant:elves-falath-r7170:purchase-route",
+          "route": "Race-team equipment page — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer team-use claims contain no exact R7170 mainland configuration or controlled stiffness result. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Event or exhibitor catalog — field variant:elves-falath-r7170:purchase-route",
+          "route": "Event or exhibitor catalog — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Event catalogs supplied no exact retained package or reusable-rights image. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Independent geometry database — field variant:elves-falath-r7170:purchase-route",
+          "route": "Independent geometry database — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer-sourced seven-size geometry transcription corroborates the current 2022 chart; exact 2022 size-54/56 rows match. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/607c0939ff600600297d524e-elves-falath-pro-disc?build=carbon&version=2021"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Component compatibility database — field variant:elves-falath-r7170:purchase-route",
+          "route": "Component compatibility database — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Shimano compatibility material confirms the R7170 component family but cannot identify the retained wheel package or frame image. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://productinfo.shimano.com/pdfs/product/archive/2024-2025_Compatibility_v032_ch.pdf"
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Product certification or registration database — field variant:elves-falath-r7170:purchase-route",
+          "route": "Product certification or registration database — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Current UCI registry lists Falath EVO and Eglath Pro but does not supply a Falath Pro Disc R7170 package or stiffness result. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://downloads.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/07bc6362f18a7d6b8a4b52eef485b81f/20250208_Liste_des_Mod%C3%A8les_homologu%C3%A9s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ELVES Falath Pro Disc 2022 105 R7170 geometry T800 T1000 stiffness wheels image purchase — Public web archive — field variant:elves-falath-r7170:purchase-route",
+          "route": "Public web archive — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Public archive and older official routes corroborate frame chronology but no current retained-package checkout or rights grant. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
         }
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "elves-falath-pro-105-sa-2026-08-17",
+    "elves-falath-pro-complete-au-2026-08-17",
+    "elves-warranty-registration-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Current exact regional checkout routes and the manufacturer registration route are documented; mainland seller authority, final checkout and warranty handling remain unverified."
 }

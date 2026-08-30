@@ -462,8 +462,8 @@ test('model evidence labels claims, source roles, confidence, and inaccessible s
     siteUrl: 'https://example.github.io',
     now: new Date('2026-08-09T00:00:00Z')
   }, falath);
-  assert.match(falathDetail, /<dt>Weight<\/dt><dd>1,160 g frame<\/dd>/);
-  assert.match(falathDetail, /<dt>Frame weight<\/dt><dd>1,160 g<\/dd>/);
+  assert.match(falathDetail, /<dt>Weight<\/dt><dd>1,080 g frame<\/dd>/);
+  assert.match(falathDetail, /<dt>Frame weight<\/dt><dd>1,080 g<\/dd>/);
 });
 
 test('primary navigation reflects catalog and exact model context', () => {

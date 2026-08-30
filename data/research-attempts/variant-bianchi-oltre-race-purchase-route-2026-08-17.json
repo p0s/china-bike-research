@@ -6,7 +6,8 @@
   },
   "field": "purchase-route",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
     "web"
@@ -22,7 +23,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -30,7 +32,8 @@
           "route": "Xiaohongshu public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "CAPTCHA/verification was not solved per policy."
+          "note": "CAPTCHA/verification was not solved per policy.",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -38,7 +41,117 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand YouTube channel — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand YouTube channel — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Bianchi video indexing was checked for exact Oltre Race material; no accepted numeric stiffness or weight basis appeared. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand Bilibili account — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand Bilibili account — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact Bianchi brand video added a missing measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand Xiaohongshu account — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand Xiaohongshu account — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "No new XHS capture was started under shared-runtime coordination; public indexes exposed no decisive exact-model measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand Douyin account — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand Douyin account — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Brand/dealer Douyin indexing supplied no controlled stiffness or attributable exact weight basis. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Independent Douyin post — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Independent Douyin post — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Independent Douyin indexing supplied no stronger exact YTB8D evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand Weibo account — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand Weibo account — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo public routing was robots-blocked; no login, verification or bypass was attempted. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Independent Weibo post — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Independent Weibo post — purchase-route",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo public routing was robots-blocked; no login, verification or bypass was attempted. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Brand WeChat public article — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Brand WeChat public article — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed brand WeChat articles added no exact current measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Independent WeChat public article — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Independent WeChat public article — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed independent WeChat articles added no exact current measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Cycling forum thread — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Cycling forum thread — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Forum claims for Oltre weights were unsourced, contradictory or generation-ambiguous and were rejected. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.reddit.com/r/bianchi/comments/1ap0bhi"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Public owner build log — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Public owner build log — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Owner builds were checked, but modified components and unknown weighing bases prevent transfer. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Public community photo or setup post — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Public community photo or setup post — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Public setup posts were checked for identity and configuration only; no media was copied and no controlled measurement was accepted. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
         }
       ]
     },
@@ -52,7 +165,8 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Official page identifies Oltre Race but no visible checkout in accessible content.",
-          "result_url": "https://www.bianchi.com/bikes/bikes/road/aero-road/oltre/oltre-race/"
+          "result_url": "https://www.bianchi.com/bikes/bikes/road/aero-road/oltre/oltre-race/",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -61,15 +175,325 @@
           "outcome": "found",
           "accessed_at": "2026-08-17",
           "note": "Authorized Hungarian retailer has current product detail and price; stock and China route not established.",
-          "result_url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611"
+          "result_url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611",
+          "approach_area_id": "authorized-regional-dealer"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer model-family or category page — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer model-family or category page — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current Oltre family route distinguishes Race from higher Oltre tiers; sibling RC measurements were not transferred. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/oltre-aerovolution/"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer current catalog — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer current catalog — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current mainland catalog material identifies exact YTB8D and its BOM but publishes wheel weight rather than complete-bike or frame-only weight. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bikework.cn/uploads/20241127/e5c835adc3f9ce7c2e2e8eacb5da6ed1.pdf"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer archived catalog — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer archived catalog — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Archived catalog indexes added chronology but no attributable current exact-model frame-only weight or controlled stiffness result. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer product manual — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer product manual — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The exact-family technical manual supports fit and 28 mm maximum context but no frame-only or complete-bike weight. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/wp-content/uploads/2023/07/LIBRETTO_sprint_v2.pdf"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer geometry document — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer geometry document — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The current exact eight-size geometry table was checked for size context; it does not publish weight. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/shop/bikes/road/aero/oltre/oltre-race-3/?v=90c0481dbc33"
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer technical paper or test note — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer technical paper or test note — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current Bianchi technical paper publishes exact Oltre Race structural stiffness; aerodynamic work for Oltre RC is a different tier. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer support or warranty page — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer support or warranty page — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current manufacturer manuals and support routing were checked; no additional weight or stiffness evidence appeared. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/manuali/?v=90c0481dbc33"
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer newsroom or launch page — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer newsroom or launch page — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current launch and family material supplies qualitative aero and responsiveness claims only. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer site search — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer site search — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Manufacturer search resolves current exact YTB8D and higher-tier sibling routes. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer sitemap or indexed route inventory — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer sitemap or indexed route inventory — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed manufacturer inventory confirms the current exact product route and model-family boundary. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer structured page metadata — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer structured page metadata — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact product metadata identifies YTB8D and the current model route but contains no accepted weight basis. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer regional site — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer regional site — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact regional page corroborates the 105 mechanical build and regional route. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.am/am/oltre-race-105-12sp"
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer-listed distributor — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer-listed distributor — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact Hungary route provides a regional dealer purchase reference. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer dealer locator — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer dealer locator — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current dealer routing was checked for a supported purchase path. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bianchi.com/dealer-locator/"
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Manufacturer-operated online store — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Manufacturer-operated online store — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer storefront presents the current exact YTB8D route and reference price. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "taobao-official-store",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Official Taobao store or exact item — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Official Taobao store or exact item — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The retained dated marketplace card supplies the 8.64 kg claim, but no selected size, weighing basis or current checkout proof. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "tmall-official-store",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Official Tmall store or exact item — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Official Tmall store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact official-store route supplied stronger YTB8D weight or stiffness evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "jd-official-store",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Official JD store or exact item — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Official JD store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact JD route supplied stronger YTB8D weight or stiffness evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Verified Alibaba or 1688 supplier route — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Verified Alibaba or 1688 supplier route — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Supplier routes did not expose attributable exact Bianchi Oltre Race evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Official AliExpress store or exact item — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Official AliExpress store or exact item — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No defensible exact manufacturer-operated AliExpress route was found. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Authorized mainland dealer — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Authorized mainland dealer — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Mainland catalog evidence confirms the exact build but not a current checkout or bike/frame weight basis. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — International specialist retailer — field variant:bianchi-oltre-race:purchase-route",
+          "route": "International specialist retailer — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact listings conflict at 8.70 kg size 53 and 8.4 kg size 57, with no shared weighing basis. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://speed-cycles.com/velos/bianchi/velo-carbone-oltre-race-105-disc-12v-gris-noir-mat-zl-bianchi-2025.html"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Cycling-industry review publication — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Cycling-industry review publication — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact-model reviews were checked; they added qualitative ride context but no controlled frame stiffness or universal exact-build weight. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Chinese cycling-media publication — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Chinese cycling-media publication — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Chinese cycling-media indexing added no stronger exact YTB8D frame-only weight or stiffness result. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Independent laboratory or instrumented test — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Independent laboratory or instrumented test — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No independent structural stiffness or deflection test for exact Oltre Race was found; higher Oltre tiers were rejected. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Print or digital magazine archive — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Print or digital magazine archive — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Magazine archives added family context but no acceptable exact-model frame-only weight or controlled stiffness evidence. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Trade-show coverage — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Trade-show coverage — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Trade-show coverage did not publish the missing exact-model measurements. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Race-team equipment page — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Race-team equipment page — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Race-team equipment primarily covers higher Oltre tiers and was not transferred to Oltre Race. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Event or exhibitor catalog — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Event or exhibitor catalog — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Event and exhibitor catalogs supplied no stronger exact YTB8D measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Independent geometry database — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Independent geometry database — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Independent geometry indexes corroborate size context but do not establish frame-only or complete-bike weighing basis. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Component compatibility database — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Component compatibility database — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Component compatibility material confirms the Shimano 105 family but cannot resolve complete-bike mass or frame stiffness. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Product certification or registration database — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Product certification or registration database — purchase-route",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "UCI registry identifies OLTRE RACE as an approved frameset but publishes no weight or stiffness measurement. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://downloads.ctfassets.net/761l7gh5x5an/7jA9krKzzy3lRXPzlm4uyn/b90050c412f46b392152d30b48564fd5/20250207_Liste_des_Mod%C3%A8les_homologu%C3%A9s_de_kits_cadre__-_List_of_Approved_Models_of_framesets.pdf"
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Bianchi Oltre Race YTB8D YTB8DI 105 mechanical frame weight complete weight stiffness purchase — Public web archive — field variant:bianchi-oltre-race:purchase-route",
+          "route": "Public web archive — purchase-route",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public archive routes added historical product context but no stronger current exact-model value. This area was checked specifically for purchase-route; it did not establish an additional acceptable value for this field."
         }
       ]
     }
   },
   "status": "found",
   "accepted_source_ids": [
-    "bianchi-oltre-race-dealer-2026-08-17"
+    "bianchi-oltre-race-dealer-2026-08-17",
+    "bianchi-oltre-race-current-official-2026-08-30",
+    "bianchi-oltre-race-allegro-weight-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bianchi-oltre-race-batch-026-50-area-sweep-2026-08-30.json. The 5 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Current exact manufacturer and regional dealer routes remain available; the mainland amount remains the dated checkout-unverified card."
 }
