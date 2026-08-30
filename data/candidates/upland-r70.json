@@ -4,13 +4,25 @@
   "model_id": "upland-r70",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible. | Second seller/price observation.",
+  "brand_id": "upland",
+  "why_interesting": "The current exact R70 page supplies a manufacturer weight claim and full Di2 build, while current official-store indexes also expose mechanical 105 builds. The retained cards do not select one drivetrain.",
+  "facts": {
+    "listing_identity": "UPLAND / 阿普兰 R70 complete-bike family",
+    "complete_weight": "Approximately 8.3 kg bare, without pedals or computer mount; current manufacturer claim",
+    "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 and Shimano 105 R7170/R7150 Di2 2x12 are both current",
+    "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Selected mechanical versus Di2 drivetrain for each retained price",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact wheelset, size, complete BOM, seller authority and domestic warranty route for each retained card"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-current-family-options-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "upland-r70-official-2026-08-30",
+    "upland-r70-jd-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -22,5 +34,7 @@
     "observation_count": 2
   },
   "source_refs": "IMG_6864.png#L1, IMG_6865.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.upland.bike/zh/product/308.html",
+  "source_note": "The current exact manufacturer page supports an approximately 8.3 kg bare model claim. Current mechanical and Di2 options remain separate, and fitted 25C tires do not establish maximum clearance.",
+  "last_reviewed": "2026-08-30"
 }

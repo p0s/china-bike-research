@@ -4,13 +4,25 @@
   "model_id": "twitter-x7",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "T1000/T1100 claim, R7120/R7170 options. | Substantially lower than another X7 listing; exact configuration differs. | Another lower-spec/price observation.",
+  "brand_id": "twitter",
+  "why_interesting": "The exact current X7 page establishes a weight from approximately 7.6 kg and four materially different drivetrain configurations. The three retained prices must remain split until their selected builds are proven.",
+  "facts": {
+    "listing_identity": "TWITTER / 骓特 X7 carbon aero road-bike family",
+    "complete_weight": "From approximately 7.6 kg; manufacturer claim, size/configuration and weighing basis not stated",
+    "drivetrain_options": "Sensah ES7000 1x14 wireless; Shimano 105 R7120 2x12; Shimano 105 R7170 Di2 2x12; WheelTop EDS TX 2x12 wireless",
+    "frame_and_fit": "T1000/T1100/T1K carbon, sizes 46/49/51/53/56, T47x24 bottom bracket",
+    "stock_tire": "INNOVA 700x30C; maximum clearance unpublished"
+  },
   "missing": [
     "Separate exact groupset, wheelset, year, and promotion identities",
     "A separate variant and price record for each proven trim",
     "Current checkout conditions and domestic warranty route"
   ],
-  "status": "split-variant-before-publish",
+  "status": "exact-family-split-configuration-needed",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-x7-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -22,5 +34,7 @@
     "observation_count": 3
   },
   "source_refs": "IMG_6887.png#L1, IMG_6895.png#L1, IMG_6898.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike",
+  "source_note": "The manufacturer claim supports a neutral from-7.6-kg family value. It does not select one drivetrain for any retained price, and fitted 30C tires are not treated as maximum clearance.",
+  "last_reviewed": "2026-08-30"
 }

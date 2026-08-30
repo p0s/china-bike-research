@@ -1,15 +1,30 @@
 {
   "id": "twitter-little-white-rabbit",
-  "name": "TWITTER 骓特 Little White Rabbit custom",
+  "name": "TWITTER 骓特 Little White Rabbit / 小白兔 custom",
   "model_id": "twitter-little-white-rabbit",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Custom paint/build; platform not identified.",
+  "brand_id": "twitter",
+  "why_interesting": "The retained pink-white card is now tied to the current Little White Rabbit custom listing family. The public option matrix includes mechanical and Wheeltop wireless-electronic 24-speed builds, so the selected drivetrain remains unresolved; no exact complete weight or maximum tire clearance was found.",
+  "facts": {
+    "listing_identity": "TWITTER / 骓特 Little White Rabbit / 小白兔 custom full-carbon road-bike listing family",
+    "drivetrain_options": "24-speed mechanical and Wheeltop wireless electronic options are both indexed with hydraulic disc brakes; the retained card does not expose its selected option",
+    "wheel_options": "Alloy-wheel and wave-carbon-wheel options are indexed across pink-white and blue-white paint",
+    "documented_sizes": "Indexed size options span 44, 47, 50, 53 and 56 cm; geometry values were not published"
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Selected 24-speed mechanical versus Wheeltop wireless-electronic drivetrain and exact component models",
+    "Exact complete-bike weight and weighing basis",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Underlying chassis/platform, exact size, complete BOM and included accessories",
+    "Selected seller authority, domestic warranty route and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-custom-listing-options-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-little-white-rabbit-tmall-mirror-2026-08-30",
+    "twitter-little-white-rabbit-jd-options-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +35,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6873.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://tao.hooos.com/goods_ezZ6dg9SDtdemn4PNVT88Jczt0-A7AqqefKMGpkeZZFZ.html",
+  "source_note": "The retained pink-white thumbnail matches the exact Little White Rabbit custom listing family, but its CNY 6,951 search-card observation does not identify one option. Mechanical and wireless-electronic configurations remain separate; no weight or maximum-clearance value is inferred.",
+  "last_reviewed": "2026-08-30"
 }

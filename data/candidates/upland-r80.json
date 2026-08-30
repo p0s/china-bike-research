@@ -4,13 +4,25 @@
   "model_id": "upland-r80",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "brand_id": "upland",
+  "why_interesting": "A current exact-model public video index matches the retained CNY 8,999 observation and identifies the Magene PES wireless-electronic 24-speed build. Published weights belong to other R80 configurations and are not transferred.",
+  "facts": {
+    "listing_identity": "UPLAND / 阿普兰 R80 CNY 8,999 complete bike",
+    "drivetrain": "Magene PES wireless electronic 2x12 (24-speed) with hydraulic disc brakes",
+    "configuration_bridge": "Exact model and CNY 8,999 current public listing match the retained card",
+    "stock_tire_family": "Current manufacturer R80 configurations are fitted with 700x28C tires; maximum clearance unpublished"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact complete-bike weight and weighing basis for the CNY 8,999 Magene build",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact Magene component models, wheelset, size, included accessories and domestic warranty route"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-cny-8999-magene-build-weight-clearance-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "upland-r80-douyin-2026-08-30",
+    "upland-r80-official-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +33,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6872.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://jingxuan.douyin.com/m/video/7648721057440624805",
+  "source_note": "The exact current CNY 8,999 index establishes Magene PES wireless 2x12. The 8.1-8.4 kg claims on other R80 builds are not transferred, and fitted 28C tires are not treated as maximum clearance.",
+  "last_reviewed": "2026-08-30"
 }
