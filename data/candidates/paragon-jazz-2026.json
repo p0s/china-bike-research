@@ -4,13 +4,22 @@
   "model_id": "paragon-jazz-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "105 R7100 24-speed and carbon wheels shown.",
+  "why_interesting": "The retained seller card and current JD index align on the PARAGON 鹏来格 JAZZ carbon-frame, Shimano 105 R7100 2×12, carbon-wheel build.",
+  "facts": {
+    "drivetrain": "Shimano 105 R7100 mechanical 2×12 (24-speed); the separately listed JAZZ Plus Di2 option is not merged",
+    "frame_material": "Carbon-fiber frame; exact fiber grade and fork construction are not published",
+    "wheels": "Carbon wheelset on the retained JAZZ configuration"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Complete-bike weight with size, pedals, accessories and measurement basis",
+    "Maximum tire clearance, complete geometry and meaningful exact-model stiffness evidence",
+    "Exact current SKU/complete BOM, domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-model-and-core-build-confirmed-selected-sku-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "paragon-jazz-jd-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6879.png#L2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/book/13180e57736baf601a8e.html",
+  "source_note": "The exact retained card states 2026 JAZZ, carbon frame, Shimano 105 R7100 24-speed and carbon race wheels. Current JD indexing independently pairs PARAGON with 鹏来格 and exposes JAZZ carbon-frame/105/carbon-wheel 24-speed options while naming JAZZ Plus as the separate Di2 build. No complete weight, maximum tire clearance or controlled stiffness result was found.",
+  "last_reviewed": "2026-08-30"
 }
