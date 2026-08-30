@@ -4,12 +4,14 @@
   "model_id": "pardus-spark",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Exact Spark variant not visible. | Exact Spark trim not visible.",
+  "why_interesting": "The three retained Spark cards aggregate multiple prior-platform and 2026 Gen3 Spark Sport branches, so their materially different drivetrains and weights cannot be assigned to one selected SKU.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year, generation, selected SKU, complete BOM, and card-to-option mapping",
+    "Controlled complete-bike weight for each retained selected card",
+    "Manufacturer-confirmed maximum tire clearance for the selected platform",
+    "Current seller authority, warranty route, and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "spark-family-aggregate-generation-trim-weight-and-clearance-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -22,9 +24,20 @@
   },
   "source_ids": [
     "pardus-spark-family-official-2026-08-17",
-    "pardus-spark-sport-official-cn-2026-08-17"
+    "pardus-spark-sport-official-cn-2026-08-17",
+    "pardus-spark-sport-qed-current-2026-08-30",
+    "pardus-spark-sport-105-current-2026-08-30",
+    "pardus-spark-gen3-current-index-2026-08-30",
+    "pardus-spark-gen3-owner-2026-08-30"
   ],
-  "source_note": "The official family page distinguishes Spark Sport, EVO and RS. The observed price range cannot be assigned to one branch without an exact SKU.",
+  "source_note": "Current evidence exposes incompatible prior-platform and 2026 Gen3 branches. Installed 25C/28C tires and the different Super Sport platform do not establish a maximum for these generic cards.",
   "source_refs": "IMG_6875.png#R2, IMG_6876.png#R2, IMG_6886.png#R2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "PARDUS / 瑞豹 Spark family aggregate; three retained cards, selected generations and trims unresolved",
+    "complete_weight_options": "Different builds report 9.06 kg (2024 Spark Sport 105), about 8.5 kg (2026 Spark Sport 3 PES, XS), and about 8.8 kg (2026 Gen3 dealer/launch claim)",
+    "drivetrain_options": "Prior-platform Shimano 105 mechanical 2x11/2x12 and QED/PES 2x12; 2026 Gen3 PES or L-TWOO eGR 1x12",
+    "configuration_note": "The exact pardus-spark-sport-pes candidate remains separate; no facts are transferred from Super Sport or a selected Gen3 build"
+  },
+  "source_url": "https://www.pardusbicycle.com/spark/"
 }

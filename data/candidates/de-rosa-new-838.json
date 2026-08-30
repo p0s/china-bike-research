@@ -4,12 +4,13 @@
   "model_id": "de-rosa-new-838",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Official-looking listing; exact groupset/size price must be verified.",
+  "why_interesting": "The current New 838 family is verified with Shimano 105 Di2 and Campagnolo Chorus builds, but the retained mainland card does not select one and current manufacturer clearance claims conflict.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Selected exact build, complete BOM, and controlled complete-bike weight",
+    "One reconciled manufacturer maximum tire-clearance value",
+    "Current mainland seller authority, warranty route, and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-new-838-family-selected-build-weight-and-clearance-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,9 +21,19 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6868.png#R2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "de-rosa-838-official-2026-08-17"
+    "de-rosa-838-official-2026-08-17",
+    "de-rosa-new-838-current-specs-2026-08-30",
+    "de-rosa-838-white-paper-2026-08-30",
+    "de-rosa-new-838-regional-options-2026-08-30",
+    "de-rosa-new-838-mainland-option-2026-08-30"
   ],
-  "source_url": "https://derosa.it/model/838/"
+  "source_url": "https://derosa.it/model/838/",
+  "facts": {
+    "listing_identity": "De Rosa / 德罗萨 New 838 complete-bike family",
+    "drivetrain_options": "Shimano 105 Di2 2x12 or Campagnolo Chorus; a current mainland index separately exposes a configuration-hidden Shimano 105 HDB option",
+    "tire_clearance_conflict": "Current exact product page: 32 mm maximum; current exact-platform manufacturer white paper: 30 mm maximum"
+  },
+  "source_note": "Current exact-family evidence establishes drivetrain options. The retained card does not select one, no controlled complete weight was found, and De Rosa currently publishes incompatible 30 mm and 32 mm clearance maxima."
 }
