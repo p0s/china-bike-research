@@ -101,6 +101,40 @@ test('batch 020 keeps exact findings separate from exhausted unknowns', () => {
   assert.match(bianchi.image.hosting.remote_url, /OltreRace-FQ_Ph-scaled\.jpg$/);
 });
 
+test('batch 024 preserves selected-trim, generation, and tire-maximum boundaries', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const m6 = candidates.get('winspace-m6');
+  assert.match(m6.facts.complete_weight_references, /8\.6 kg.*8\.1 kg.*7\.8 kg/);
+  assert.match(m6.facts.drivetrain_options, /105 R7120.*105 R7170.*Ultegra R8170/);
+  assert.equal(m6.facts.complete_weight_g, undefined);
+  assert.equal(m6.facts.drivetrain, undefined);
+  assert.equal(m6.facts.tire_clearance_mm, 32);
+
+  const t1600 = candidates.get('winspace-t1600');
+  assert.match(t1600.facts.complete_weight_references, /8\.0 kg.*7\.6 kg.*7\.2 kg/);
+  assert.match(t1600.facts.drivetrain_options, /105 R7170.*Ultegra R8170.*Dura-Ace R9270/);
+  assert.equal(t1600.facts.complete_weight_g, undefined);
+  assert.equal(t1600.facts.drivetrain, undefined);
+  assert.equal(t1600.facts.tire_clearance_mm, 32);
+  assert.match(t1600.source_note, /T1600 Ultra data is excluded/);
+
+  const ad350 = candidates.get('xds-ad350-2026');
+  assert.equal(ad350.facts.complete_weight_g, 9280);
+  assert.match(ad350.facts.complete_weight_basis, /does not expose size, pedals, accessories or measurement protocol/);
+  assert.match(ad350.facts.drivetrain, /L-TWOO RX hydraulic 2x12/);
+  assert.equal(ad350.facts.tire_clearance_mm, undefined);
+  assert.match(ad350.source_note, /2025 1x12 generation is excluded/);
+
+  assert.match(candidates.get('upland-r80').facts.frame_material, /T700\+T800.*T800 carbon fork/);
+  assert.match(candidates.get('upland-taylor').facts.frame_material, /T1100\+T800/);
+  assert.equal(candidates.get('viqi-integrated-road-unknown').facts, undefined);
+  assert.match(candidates.get('viqi-r8000').facts.frame_material, /carbon-fiber gravel-road frame/);
+  assert.match(candidates.get('vook-v8e-pro').facts.frame_material, /690 g.*345 g.*EPS molding/);
+  assert.match(candidates.get('west-biking-sl-one').facts.frame_material, /full-carbon/);
+  assert.match(candidates.get('west-biking-team-road').facts.frame_material, /T800-carbon/);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -207,7 +241,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1033);
+  assert.equal(data.researchAttempts.length, 1049);
   assert.equal(products.length, data.variants.length);
 });
 

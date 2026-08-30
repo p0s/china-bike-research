@@ -4,13 +4,40 @@
   "model_id": "xds-ad350-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "The model and a dated marketplace-card price were visible, but the card did not establish the exact drivetrain and BOM sold at that price.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Proof that the listing-image price maps to that exact trim", "Current seller, warranty, and return route"],
-  "status": "exact-trim-unproven",
+  "why_interesting": "Current exact 2026 evidence resolves the 9.28 kg official-account claim and L-TWOO RX 2x12 hydraulic build while preserving the maximum tire clearance as unknown. The 2025 1x12 generation is not transferred.",
+  "missing": [
+    "Manufacturer-confirmed maximum tire clearance",
+    "Exact wheel, tire model, cockpit, size-specific BOM and official weight protocol",
+    "Proof that the retained listing-image price maps to the exact current seller option",
+    "Current seller, warranty, and return route"
+  ],
+  "status": "exact-2026-weight-drivetrain-found-maximum-clearance-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["xds-ad350-jd-2026-08-08", "xds-ad350-official-2026-08-08"],
+  "source_ids": [
+    "xds-ad350-jd-2026-08-08",
+    "xds-ad350-official-2026-08-08",
+    "xds-ad350-2026-official-weight-2026-08-30",
+    "xds-ad350-2026-hk-spec-2026-08-30",
+    "xds-ad350-2026-current-options-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 3998, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "listing-image", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 3998,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "listing-image",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6885.png#L1",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "XDS / 喜德盛 AD350 2026 complete bike at retained CNY 3,998 listing-image price",
+    "complete_weight_g": 9280,
+    "complete_weight_basis": "Manufacturer official-account model claim; indexed title does not expose size, pedals, accessories or measurement protocol",
+    "drivetrain": "L-TWOO RX hydraulic 2x12 with Branta 50/34T spider power-meter crank and 12-speed cassette",
+    "fitted_tire": "Current exact-model dealer indexes consistently list 700x30C; fitted size is not a maximum",
+    "tire_clearance_status": "Manufacturer maximum remains unknown after 50 registered exact-generation areas"
+  },
+  "source_url": "https://www.bilibili.com/video/BV1AWReBTEeT/",
+  "source_note": "The official-account title supplies the 9.28 kg model claim, and current exact 2026 dealer evidence supplies the L-TWOO RX 2x12 hydraulic build. The 2025 1x12 generation is excluded. Fitted 30C is not promoted to maximum clearance."
 }
