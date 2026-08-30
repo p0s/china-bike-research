@@ -1,16 +1,27 @@
 {
   "id": "phoenix-700c-carbon-e-road",
-  "name": "Phoenix 凤凰 700C carbon electric-assist road bike",
+  "name": "Phoenix 凤凰 799 700C carbon electric-assist road bike",
   "model_id": "phoenix-700c-carbon-e-road",
   "category": "e-road",
   "type": "complete-bike",
-  "why_interesting": "Search card appears factory listing; exact motor, battery and SKU are not visible.",
+  "why_interesting": "The retained 700C card bridges to the Phoenix 799 carbon electric-assist family. Its 6 Ah and 10 Ah battery options remain unresolved at the selected-card level.",
+  "facts": {
+    "complete_weight_g": 20000,
+    "complete_weight_basis": "Current exact-family retailer specification lists vehicle quality as 20 kg; size, selected 6 Ah or 10 Ah battery, pedals, accessories and measurement method are not stated.",
+    "drivetrain": "9-speed transmission; component maker, model and gearing range are not published.",
+    "frame": "T700 carbon-fiber frame",
+    "frame_material": "Retailer-described T700 carbon-fiber frame; fork material and lay-up details are not published."
+  },
   "missing": [
-    "Motor model, battery capacity, assist controls, and exact SKU",
+    "Selected 6 Ah or 10 Ah battery option, exact motor model, assist controls, and complete component identities",
+    "Maximum tire clearance and meaningful stiffness evidence",
     "Seller/authenticity and final checkout price"
   ],
   "status": "verify-before-publish",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "source_ids": [
+    "phoenix-799-ebuy7-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {
     "amount_cny": 6977.25,
@@ -20,5 +31,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6857.png#R2",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html",
+  "source_note": "The current exact-family retailer page identifies Phoenix model 799 with a carbon frame, 9-speed transmission, 20 kg listed vehicle weight and separate 36 V 6 Ah / 10 Ah choices. The retained card establishes the 700C China-market presentation but does not expose which battery option was selected.",
+  "last_reviewed": "2026-08-30"
 }

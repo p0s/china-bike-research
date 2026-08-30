@@ -1,0 +1,500 @@
+{
+  "id": "candidate-rolling-stone-comp-identity-source-2026-08-30",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "rolling-stone-comp"
+  },
+  "field": "identity-source",
+  "priority": "high",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "Weibo exact routes were unavailable, and shared-runtime coordination prohibited a new XHS capture. Public indexes and every other registered route were still checked without login or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand YouTube channel — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand YouTube channel — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact COMPASS YouTube result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent YouTube review or build — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent YouTube review or build — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent COMPASS YouTube test was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand Bilibili account — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand Bilibili account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Current brand-related Bilibili results cover newer Rolling Stone frames rather than COMPASS. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent Bilibili review or build — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent Bilibili review or build — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent COMPASS Bilibili test was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand Xiaohongshu account — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand Xiaohongshu account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact official result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent Xiaohongshu post — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent Xiaohongshu post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine XHS indexes were checked under shared-runtime coordination; no exact independent result was indexed and no new capture was started. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand Douyin account — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand Douyin account — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable official exact COMPASS Douyin result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent Douyin post — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent Douyin post — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent COMPASS Douyin result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand Weibo account — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand Weibo account — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "Weibo exact access was blocked by robots policy; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent Weibo post — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent Weibo post — identity-source",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The independent Weibo exact route remained unavailable in the bounded check; no login, alternate profile, repeated retry or bypass was attempted. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Brand WeChat public article — field candidate:rolling-stone-comp:identity-source",
+          "route": "Brand WeChat public article — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Search indexes surfaced launch-era product syndication but no additional current official public-account facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.biketo.com/product/20228.html"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent WeChat public article — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent WeChat public article — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact independent WeChat article added controlled COMPASS facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Cycling forum thread — field candidate:rolling-stone-comp:identity-source",
+          "route": "Cycling forum thread — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No attributable exact COMPASS forum record supplied controlled measurements or package identity. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Public owner build log — field candidate:rolling-stone-comp:identity-source",
+          "route": "Public owner build log — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact owner build log established the retained seller photo’s drivetrain, complete weight or package. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Public community photo or setup post — field candidate:rolling-stone-comp:identity-source",
+          "route": "Public community photo or setup post — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A public photo index corroborates the frame silhouette only; it adds no controlled facts and supplies no reusable-image rights. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://in.pinterest.com/pin/rolling-stone-compass-road-carbon-frame-whandle-bar-stem-seat-post-for-aeroclimbing-47-50cm--693132198872133203/"
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer exact-product page — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer exact-product page — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "A manufacturer-origin 2014 product article identifies the exact COMPASS frameset and publishes frame construction and package details. This area was checked specifically for identity-source; its evidence was accepted for this field.",
+          "result_url": "https://www.biketo.com/product/20228.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer model-family or category page — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer model-family or category page — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The exact product article establishes the legacy COMPASS identity; the current family has since moved to other model names. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer current catalog — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer current catalog — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The current official catalog lists PROBING, SHANG, Hider and FINDER but not COMPASS, so no current-model values are transferred. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.rollingstonebikes.com/en/product-1.html"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer archived catalog — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer archived catalog — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The dated legacy product article preserves exact COMPASS facts and historical package context. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer product manual — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer product manual — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The current Rolling Stone manual covers newer models and brand information, not legacy COMPASS; no product values were transferred. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://ae01.alicdn.com/kf/S46fc3e29892442e2923ec376e506d224v.pdf"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer geometry document — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer geometry document — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The exact review contains a frame-data image and fit discussion but no safely readable structured geometry values. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.sohu.com/a/55329237_233857"
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer technical paper or test note — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer technical paper or test note — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No controlled COMPASS stiffness, deflection or aerodynamic paper was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer support or warranty page — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer support or warranty page — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The current contact route does not establish warranty coverage for the legacy COMPASS or retained seller. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.rollingstonebikes.com/en/contact.html"
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer newsroom or launch page — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer newsroom or launch page — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The 2014 manufacturer-origin product article establishes launch-era identity and technical context. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer site search — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer site search — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Current official-site search does not return COMPASS. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.rollingstonebikes.com/"
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer sitemap or indexed route inventory — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer sitemap or indexed route inventory — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Indexed current product routes omit COMPASS and add no hidden legacy specification. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer structured page metadata — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer structured page metadata — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No manufacturer-hosted COMPASS structured product data remains current. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer regional site — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer regional site — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No official regional manufacturer site retained an exact COMPASS page. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer-listed distributor — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer-listed distributor — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No manufacturer-listed distributor established the retained seller package. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer dealer locator — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer dealer locator — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current dealer locator identified legacy COMPASS stock or the retained seller. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Manufacturer-operated online store — field candidate:rolling-stone-comp:identity-source",
+          "route": "Manufacturer-operated online store — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current official COMPASS storefront was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Official Taobao store or exact item — field candidate:rolling-stone-comp:identity-source",
+          "route": "Official Taobao store or exact item — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The retained card shows ROLLING STONE / 滚石 Comp, a distinctive assembled COMPASS frame and CNY 15,000. Its title says road frameset; official-store authority and sold package remain unresolved. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Official Tmall store or exact item — field candidate:rolling-stone-comp:identity-source",
+          "route": "Official Tmall store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No stable current exact COMPASS Tmall result was indexed. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Official JD store or exact item — field candidate:rolling-stone-comp:identity-source",
+          "route": "Official JD store or exact item — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The current Rolling Stone JD store exposes newer models only and does not identify COMPASS. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://mall.jd.com/view_search-6668401-37338587-99-1-24-1.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Verified Alibaba or 1688 supplier route — field candidate:rolling-stone-comp:identity-source",
+          "route": "Verified Alibaba or 1688 supplier route — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current exact COMPASS 1688 supplier listing established the retained package. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Official AliExpress store or exact item — field candidate:rolling-stone-comp:identity-source",
+          "route": "Official AliExpress store or exact item — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "An AliExpress-hosted current manual is brand-level and does not cover COMPASS. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Authorized mainland dealer — field candidate:rolling-stone-comp:identity-source",
+          "route": "Authorized mainland dealer — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No current authorized mainland dealer page established legacy COMPASS stock or the retained package. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Authorized regional dealer — field candidate:rolling-stone-comp:identity-source",
+          "route": "Authorized regional dealer — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A regional out-of-stock page identifies COMPASS as a frameset and publishes a separate retailer specification. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://dragonbike.net/collections/bike/products/rolling-stone-compass-carbon-road-frameset-rolling-stone-compass-%E3%82%AB%E3%83%BC%E3%83%9C%E3%83%B3%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%82%BB%E3%83%83%E3%83%88"
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — International specialist retailer — field candidate:rolling-stone-comp:identity-source",
+          "route": "International specialist retailer — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "The specialist retailer corroborates exact frame identity, carbon construction, BB86 and frameset-package status but no maximum clearance. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Cycling-industry review publication — field candidate:rolling-stone-comp:identity-source",
+          "route": "Cycling-industry review publication — identity-source",
+          "outcome": "found",
+          "accessed_at": "2026-08-30",
+          "note": "An exact independent race-use review publishes measured frame/fork weights and a specific ride/strength assessment. This area was checked specifically for identity-source; its evidence was accepted for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Chinese cycling-media publication — field candidate:rolling-stone-comp:identity-source",
+          "route": "Chinese cycling-media publication — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Chinese cycling media preserves the manufacturer-origin exact COMPASS specification. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent laboratory or instrumented test — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent laboratory or instrumented test — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No controlled numeric COMPASS stiffness, deflection or aerodynamic test was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Print or digital magazine archive — field candidate:rolling-stone-comp:identity-source",
+          "route": "Print or digital magazine archive — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The archived exact-model review preserves race-use impressions and measured frame/fork weights. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Trade-show coverage — field candidate:rolling-stone-comp:identity-source",
+          "route": "Trade-show coverage — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "2015 cycling-show coverage identifies the Rolling Stone COMPASS low-drag road-carbon frameset but adds no controlled missing value. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.cyclingchina.net/site/html/2015/brand_0715/568.html"
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Race-team equipment page — field candidate:rolling-stone-comp:identity-source",
+          "route": "Race-team equipment page — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "The reviewer reports using the exact COMPASS at the China Bicycle League final and Shanghai league postseason, but the pictured review build is not transferred to the seller card. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Event or exhibitor catalog — field candidate:rolling-stone-comp:identity-source",
+          "route": "Event or exhibitor catalog — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "A 2015 product-show article identifies COMPASS, EPS construction, BB86 and frame/fork weights, but no complete-bike build or clearance maximum. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.wildto.com/news/30313.html"
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Independent geometry database — field candidate:rolling-stone-comp:identity-source",
+          "route": "Independent geometry database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No trustworthy structured COMPASS geometry database record was found. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Component compatibility database — field candidate:rolling-stone-comp:identity-source",
+          "route": "Component compatibility database — identity-source",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Exact product material establishes BB86, direct-mount front derailleur and mechanical/electronic routing compatibility, not the seller photo’s installed drivetrain. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Product certification or registration database — field candidate:rolling-stone-comp:identity-source",
+          "route": "Product certification or registration database — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No exact COMPASS certification or UCI registration supplied transferable facts. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ROLLING STONE 滚石 COMPASS carbon road frameset complete bike — Public web archive — field candidate:rolling-stone-comp:identity-source",
+          "route": "Public web archive — identity-source",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "No archived manufacturer-hosted COMPASS page added reliable facts beyond the dated product and review records. This area was checked specifically for identity-source; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "rolling-stone-compass-biketo-2026-08-30",
+    "rolling-stone-compass-review-2026-08-30",
+    "rolling-stone-compass-dragonbike-2026-08-30",
+    "rolling-stone-corporate-official-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/rolling-stone-comp-50-area-sweep-2026-08-30.json. The retained title prefix and distinctive horizontal aero frame bridge to legacy COMPASS; the current official company page confirms Rolling Stone / 滚石 and 上海唯德自行车有限公司."
+}

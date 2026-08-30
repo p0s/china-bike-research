@@ -4,13 +4,23 @@
   "model_id": "rockbros-pegasus-road",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Series name visible; exact build not specified.",
+  "why_interesting": "The Pegasus / 飞马 series identity is confirmed, but the retained card does not distinguish PGZ 1.0, 1.5, 2.0, 3.0, 4.0 or their materially different builds.",
+  "facts": {
+    "frame": "Carbon-fiber Pegasus / PGZ aero-road frame",
+    "frame_material": "The retained card identifies carbon construction. Current official named PGZ builds use Toray T700 carbon with T800 reinforcement, but that fiber-grade claim is not assigned to the unresolved seller option."
+  },
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
+    "Exact PGZ model/trim, complete weight, drivetrain, tire clearance and complete BOM",
+    "Controlled or sufficiently specific independent stiffness evidence and exact domestic warranty route",
     "Seller/authenticity and final checkout price"
   ],
   "status": "verify-before-publish",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
+  "source_ids": [
+    "rockbros-pegasus-official-2026-08-30",
+    "rockbros-pegasus-jd-2026-08-30",
+    "rockbros-corporate-official-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
   "observed_price": {
     "amount_cny": 16800,
@@ -20,5 +30,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6865.png#L1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://rockbrosusa.com/collections/rockbros-pegasus-road-bike",
+  "source_note": "Official and current marketplace indexes establish ROCKBROS / 洛克兄弟 Pegasus / 飞马 as the PGZ family and expose distinct PGZ builds. Their weights, drivetrains and 28-versus-32 mm clearance claims are not mixed into this unresolved seller option. The Chinese brand page names 浙江洛克兄弟体育用品有限公司 while its footer names 义乌洛克体育用品有限公司; both exact attributions are preserved without treating them as interchangeable legal entities.",
+  "last_reviewed": "2026-08-30"
 }
