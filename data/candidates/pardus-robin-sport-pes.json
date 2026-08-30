@@ -4,13 +4,12 @@
   "model_id": "pardus-robin-sport-pes",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "Exact model visible.",
+  "why_interesting": "The retained card is the current Robin Sport PES: the exact manufacturer BOM establishes Magene PES electronic 2x12 and a 700x40C frame-and-fork maximum.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Controlled stock complete-bike weight and weighing basis",
+    "Current seller authority, warranty route, and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-robin-sport-pes-weight-and-checkout-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,9 +20,18 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6891.png#R1",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "pardus-robin-sport-official-image-2026-08-17"
+    "pardus-robin-sport-official-image-2026-08-17",
+    "pardus-robin-sport-pes-current-2026-08-30",
+    "pardus-robin-sport-pes-mainland-index-2026-08-30"
   ],
-  "source_url": "https://pardusbicycle.com/bikes/robin-sport/"
+  "source_url": "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
+  "facts": {
+    "listing_identity": "PARDUS / 瑞豹 Robin Sport PES electronic 2x12 carbon-wheel build",
+    "drivetrain": "Magene PES electronic 2x12: ST-PES controls and hydraulic brakes, FD-PES, RD-PES, SENICX PR5 50/34T, SUGEK CS-9012 11-34T, and KMC X12",
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "Current exact-build manufacturer maximum for both frame and fork; stock tire is 700x28C"
+  },
+  "source_note": "The exact current manufacturer page resolves the PES 2x12 BOM and 40C maximum. A questionable 8.2 kg reseller page and modified owner builds are not treated as a controlled stock weight."
 }

@@ -1,15 +1,15 @@
 {
   "id": "look-765-electronic",
-  "name": "LOOK 765 electronic",
+  "name": "LOOK 洛克 765 electronic",
   "model_id": "look-765-electronic",
   "category": "road-endurance",
   "type": "complete-bike",
-  "why_interesting": "Image also displays ¥29,999; search-card price may be a lower variant.",
+  "why_interesting": "The retained Grey Blue Satin card is the current 765 Optimum electronic family: all exposed wheel variants use Shimano 105 Di2 2x12 and the platform has a manufacturer-stated 34 mm maximum.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Selected wheel option and controlled complete-bike weight for the retained card",
+    "Exact current mainland seller authority, stock, warranty, and checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-765-electronic-family-wheel-option-and-weight-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,9 +20,21 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6891.png#L1",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "look-765-optimum-105-di2-official-2026-08-17"
+    "look-765-optimum-105-di2-official-2026-08-17",
+    "look-765-optimum-current-105-di2-2026-08-30",
+    "look-765-optimum-r50d-current-2026-08-30",
+    "look-765-optimum-mainland-options-2026-08-30",
+    "look-765-optimum-tour-test-2026-08-30"
   ],
-  "source_url": "https://www.lookcycle.com/by-en/products/outlet/bikes/765-optimum-105-di2-2x12"
+  "source_url": "https://www.lookcycle.com/ee-en/products/bikes/road-bikes/endurance/765-optimum-105-di2-2x12",
+  "facts": {
+    "listing_identity": "LOOK / 洛克 765 Optimum Grey Blue Satin electronic-shifting family",
+    "complete_weight_options": "7.9 kg size M for current 105 Di2/R50D; 8.8 kg measured for an earlier 105 Di2/R38D build; wheel-ambiguous retained card remains unassigned",
+    "drivetrain": "Shimano 105 Di2 electronic 2x12 hydraulic disc across the exact mainland electronic variants",
+    "tire_clearance_mm": 34,
+    "tire_clearance_basis": "Current exact-model manufacturer maximum"
+  },
+  "source_note": "Current manufacturer and mainland evidence resolves Shimano 105 Di2 2x12 and a 34 mm maximum. Published weights belong to different exact wheel builds, and the retained card does not select one."
 }

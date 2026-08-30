@@ -4,13 +4,36 @@
   "model_id": "legit-ac1",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "A 2026 model listing and dated price lead were visible, but no exact complete-bike configuration was established.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Exact trim-to-price mapping", "Current purchase route, warranty, and return terms"],
-  "status": "exact-trim-unproven",
+  "why_interesting": "The retained Silver White Graffiti AC1 is bridged to a current Shimano 105 mechanical 2x12, integrated-cockpit, UNAAS HARD SE carbon-wheel build with a manufacturer-stated 32C maximum.",
+  "missing": [
+    "Controlled complete-bike weight for the selected mechanical carbon-wheel build",
+    "Exact production-batch wheel, cockpit, tire, and paint BOM",
+    "Current domestic warranty route and final checkout conditions"
+  ],
+  "status": "exact-ac1-mechanical-build-weight-and-checkout-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["legit-ac1-official-2026-08-09"],
+  "source_ids": [
+    "legit-ac1-official-2026-08-09",
+    "legit-ac1-current-specs-2026-08-30",
+    "legit-ac1-mainland-build-2026-08-30",
+    "legit-ac1-mechanical-bom-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 8599, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 8599,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6857.png#R1",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "2026 LEGIT / 陆极客 AC1 Silver White Graffiti mechanical-105 carbon-wheel build",
+    "drivetrain": "Shimano 105 mechanical 2x12 hydraulic disc; mainland selected option specifies the R7120 full groupset",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current exact-platform manufacturer maximum of 700x32C"
+  },
+  "source_url": "https://www.jd.com/xinghao/131864bf491c70e9ba7e.html?catID=13806&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_totalsales15_desc",
+  "source_note": "Current mainland and exact-model regional evidence resolves Shimano 105 mechanical 2x12. The manufacturer publishes a 32C maximum. An approximately 8 kg Di2 trim is not transferred to this mechanical build."
 }

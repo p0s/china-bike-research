@@ -4,13 +4,37 @@
   "model_id": "java-fuoco-2025",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "The exact model name and dated price lead were visible, but the listing did not establish one exact complete-bike trim.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Exact trim-to-price mapping", "Current purchase route, warranty, and return terms"],
-  "status": "exact-trim-unproven",
+  "why_interesting": "Current mainland and exact-trim sources bridge the retained ¥6,999 card to the 2025 FUOCO TOP Shimano 105 2x12 carbon-wheel build; published complete-weight claims vary materially.",
+  "missing": [
+    "One controlled complete-bike weight for the selected production build",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Current seller authority, warranty route, and final checkout conditions"
+  ],
+  "status": "exact-fuoco-top-105-weight-conflicted-clearance-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["java-fuoco-top-105-official-2026-08-09"],
+  "source_ids": [
+    "java-fuoco-top-105-official-2026-08-09",
+    "java-fuoco-top-105-mainland-index-2026-08-30",
+    "java-fuoco-top-105-current-regional-2026-08-30",
+    "java-fuoco-top-105-retailer-weight-2026-08-30",
+    "java-fuoco-top-105-owner-weight-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 6999, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 6999,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6878.png#R1",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "2025 JAVA / 佳沃 FUOCO TOP 105 full-groupset carbon-wheel build",
+    "complete_weight_claims": "Approximately 8.6-8.9 kg in current manufacturer/seller material; one current public owner or shop measurement reports 9.445 kg",
+    "complete_weight_basis": "Conflicting exact-trim claims with differing or unstated size, pedal, accessory, and measurement conditions",
+    "drivetrain": "Shimano 105 mechanical 2x12 with R7120 controls, R7100 derailleurs/crank family, 11-34T 12-speed cassette, and R7170 hydraulic disc brakes"
+  },
+  "source_url": "https://www.javabikes.com/goodDetail/20",
+  "source_note": "The 2025 FUOCO TOP 105 carbon-wheel trim and Shimano 105 mechanical 2x12 drivetrain are resolved. Exact-trim weight claims span approximately 8.6 to 9.445 kg, while fitted 25C/28C tires do not establish maximum clearance."
 }

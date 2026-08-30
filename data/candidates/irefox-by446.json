@@ -4,13 +4,32 @@
   "model_id": "irefox-by446",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "The exact model name and dated price lead were visible, but the listing did not establish one exact complete-bike trim.",
-  "missing": ["Exact drivetrain, wheels, brakes, and included accessories", "Exact trim-to-price mapping", "Current purchase route, warranty, and return terms"],
-  "status": "exact-trim-unproven",
+  "why_interesting": "The retained card identifies an IREFOX / 火之狐 BY446 all-terrain carbon build, but the model is absent from the current official catalog and no current exact-brand-plus-model specification bridge was found.",
+  "missing": [
+    "Current exact IREFOX BY446 complete-bike weight and weighing basis",
+    "Exact drivetrain, wheels, brakes, and included accessories",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Current purchase route, warranty, and return terms"
+  ],
+  "status": "exact-retained-by446-current-specification-bridge-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["irefox-current-catalog-2026-08-09"],
+  "source_ids": [
+    "irefox-current-catalog-2026-08-09"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 12777.25, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 12777.25,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6866.png#R2",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "IREFOX / 火之狐 BY446 all-terrain carbon-frameset complete-bike lead",
+    "configuration_note": "Current generic IREFOX and differently branded BY446 supplier indexes were rejected as specification bridges"
+  },
+  "source_url": "https://www.irefox.net/cn/bikes/",
+  "source_note": "The current official catalog omits BY446. Generic IREFOX 22-speed/700C*40C and differently branded BY446 supplier results do not establish this exact build, complete weight, drivetrain, or maximum clearance."
 }

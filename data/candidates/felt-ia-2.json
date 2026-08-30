@@ -4,17 +4,39 @@
   "model_id": "felt-ia-2",
   "category": "triathlon",
   "type": "complete-bike",
-  "why_interesting": "A premium triathlon model and dated China-market price lead were found, but the exact China configuration was not identified.",
+  "why_interesting": "The current IA 2.0 family has four exact complete-bike trims with documented weights and electronic 2x12 drivetrains, but the retained mainland card does not identify one trim and tire guidance conflicts.",
   "missing": [
-    "Exact China-market drivetrain, cockpit, wheels, and storage package",
-    "Proof that the observed listing price maps to that exact trim",
+    "Exact mainland selected trim, cockpit, wheels, storage package, and trim-to-price bridge",
+    "One reconciled manufacturer maximum tire-clearance value",
     "Current domestic purchase and warranty route"
   ],
-  "status": "exact-trim-unproven",
+  "status": "exact-ia-2-family-selected-trim-and-clearance-unresolved",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
-  "source_ids": ["felt-ia-2-official-2026-08-08"],
+  "source_ids": [
+    "felt-ia-2-official-2026-08-08",
+    "felt-ia-2-frd-current-2026-08-30",
+    "felt-ia-2-pro-current-2026-08-30",
+    "felt-ia-2-expert-current-2026-08-30",
+    "felt-ia-2-race-current-2026-08-30",
+    "felt-ia-2-platform-guide-2026-08-30",
+    "felt-ia-2-regional-clearance-2026-08-30"
+  ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 88998.25, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 1},
+  "observed_price": {
+    "amount_cny": 88998.25,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 1
+  },
   "source_refs": "IMG_6894.png#R2",
-  "last_reviewed": "2026-08-09"
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "listing_identity": "Felt IA 2.0 complete-bike family; retained card trim unresolved",
+    "complete_weight_options": "Size M: FRD 9.37 kg; PRO 9.5 kg; EXPERT 10.3 kg; RACE 10.44 kg",
+    "drivetrain_options": "FRD: Dura-Ace Di2 2x12; PRO and EXPERT: Ultegra Di2 2x12; RACE: Shimano 105 Di2 2x12",
+    "tire_clearance_conflict": "Exact-platform guide: 28 mm maximum with 4 mm clearance; current authorized regional page recommends 25-32 mm tires"
+  },
+  "source_url": "https://feltbicycles.com/collections/ia-2-0",
+  "source_note": "All four current complete trims have exact manufacturer weight and drivetrain evidence, but none can be assigned to the configuration-hidden retained card. Current clearance evidence conflicts."
 }
