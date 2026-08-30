@@ -1,16 +1,64 @@
 {
   "id": "twitter-carbon-road-gravel-unknown",
-  "name": "TWITTER 骓特 Carbon road/gravel bike, model unclear",
+  "name": "TWITTER 骓特 Gravel V3 RS 24-speed alloy-wheel listing",
   "model_id": "twitter-carbon-road-gravel-unknown",
   "category": "gravel",
   "type": "complete-bike",
-  "why_interesting": "Exact model not visible; SRAM crank shown.",
-  "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+  "brand_id": "twitter",
+  "why_interesting": "The cropped card title now resolves to a Gravel V3 RS mechanical 2x12 hydraulic-disc alloy-wheel listing. The selected card still does not establish whether it is the superseded 2024 press-fit frame or the current T47 generation, so generation-specific weight and clearance remain conflicted.",
+  "existing_record_id": "twitter-v3-rs-sensah",
+  "catalog_distinct_reason": "This retained price observation is kept separate until its 2024 press-fit versus current T47 generation can be proven; it is not a second published model.",
+  "facts": {
+    "listing_identity": "TWITTER / 骓特 GRAVEL V3 RS hydraulic 24-speed alloy-wheel option",
+    "drivetrain": "RS / Sensah mechanical 2x12 with hydraulic disc brakes; exact production-batch component models remain unverified",
+    "frame": "Carbon Gravel V3 frame and carbon fork; exact T47 versus superseded press-fit generation is unresolved",
+    "frame_material": "Carbon Gravel V3 frame and fork; exact carbon grade, lay-up and molding process are unpublished for the retained option",
+    "wheels": "Alloy-wheel option; exact rim model and dimensions remain unverified"
+  },
+  "alternative_builds": [
+    {
+      "id": "2024-press-fit-alloy-wheel",
+      "label": "2024 press-fit alloy-wheel build",
+      "generation": "2024 press-fit",
+      "complete_weight_g": 9900,
+      "weight_basis": "Seller claim for an exact alloy-wheel selection; size, pedals and accessories unstated",
+      "tire_clearance_mm": 40,
+      "source_ids": [
+        "twitter-gravel-v3-2024-taobao-2026-08-21",
+        "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+      ]
+    },
+    {
+      "id": "current-25yr-t47-alloy-wheel",
+      "label": "Current 25yr T47 alloy-wheel build",
+      "generation": "current 25yr T47",
+      "complete_weight_g": 9600,
+      "weight_basis": "Official factory-store claim for size 50 without pedals; weighing method and accessories unstated",
+      "tire_clearance_mm": 45,
+      "source_ids": [
+        "twitter-v3-rs-factory-store-2026-08-28",
+        "twitter-v3-factory-store-2026-08-25"
+      ]
+    }
   ],
-  "status": "research-queue",
+  "missing": [
+    "Exact 2024 press-fit versus current T47 generation bridge for the retained card",
+    "Selected complete-bike weight: documented generation-specific claims conflict at 9.9 versus 9.6 kg",
+    "Maximum tire clearance: documented generation-specific maxima conflict at 40 versus 45 mm",
+    "Meaningful exact-generation frame-stiffness evidence",
+    "Exact production-batch BOM, current checkout conditions and warranty entity"
+  ],
+  "status": "exact-v3-rs-option-generation-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-v3-full-title-mirror-2026-08-30",
+    "twitter-v3-rs-jd-2026-08-30",
+    "twitter-v3-official-2026-08-28",
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-factory-store-2026-08-25",
+    "twitter-gravel-v3-2024-taobao-2026-08-21",
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +69,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6862.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://www.jd.com/jiage/13180d9965c99140e888.html",
+  "source_note": "The full-title mirror and current JD option matrix resolve the card to Gravel V3 RS 24-speed alloy-wheel. The SRAM crank visible in a promotional tile is not treated as the selected drivetrain. Current T47 and superseded 2024 facts remain separate until the retained card's generation is proven.",
+  "last_reviewed": "2026-08-30"
 }

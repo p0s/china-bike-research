@@ -159,7 +159,7 @@ test('publication gates reject incomplete builds and category-mismatched framese
 });
 
 test('public dataset has the expected coverage', () => {
-  assert.equal(data.brands.length, 40);
+  assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 54);
@@ -171,7 +171,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 892);
+  assert.equal(data.researchAttempts.length, 916);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -316,7 +316,7 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 219);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 207);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 208);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -345,8 +345,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
 
   const exactAirwolfLead = catalogCandidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
   assert.equal(exactAirwolfLead.defaultVisible, true);
-  const unclearModel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-carbon-road-gravel-unknown');
-  assert.equal(unclearModel.defaultVisible, false);
+  const generationUnresolvedV3 = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-carbon-road-gravel-unknown');
+  assert.equal(generationUnresolvedV3.defaultVisible, true);
   const genericBuild = catalogCandidates.find((entry) => entry.candidate.id === 'gito-carbon-aero-entry');
   assert.equal(genericBuild.defaultVisible, true);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'java-aluminum-24s'), false);
@@ -1000,6 +1000,7 @@ test('published images stay credited while incomplete builds remain candidates',
   assert.equal(ican.image.hosting.mode, 'remote');
   assert.equal(ican.image.display_accuracy, 'exact-variant');
   assert.equal(ican.image.rights.status, 'official-page-embed');
-  assert.equal(trinx.status, 'exact-trim-unproven');
-  assert.ok(trinx.missing.some((item) => /new publishable variant record/i.test(item)));
+  assert.equal(trinx.status, 'exact-carbon-1x12-core-specs-verified');
+  assert.ok(trinx.missing.some((item) => /complete-bike weight/i.test(item)));
+  assert.ok(trinx.missing.some((item) => /maximum tire clearance/i.test(item)));
 });

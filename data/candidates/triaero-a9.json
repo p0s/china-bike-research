@@ -1,16 +1,34 @@
 {
   "id": "triaero-a9",
-  "name": "TRIAERO A9 custom",
+  "name": "TRIAERO 冠捷 A9 Pikachu / 105 Di2 R7170",
   "model_id": "triaero-a9",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "Full-internal custom paint build.",
+  "brand_id": "triaero",
+  "why_interesting": "The retained custom-painted A9 card maps to the indexed hand-painted Pikachu Shimano 105 Di2 R7170 option. The frame is well documented, but no exact complete-bike weight or full selected-option BOM was found.",
+  "facts": {
+    "drivetrain": "Shimano 105 Di2 R7170 2x12; exact component-level BOM for the retained option is not exposed",
+    "frame": "TRIAERO A9 Toray T700 + T800 carbon aero road frame and carbon fork",
+    "frame_material": "Toray T700 + T800 carbon frame with carbon fork and seatpost",
+    "frame_construction": "Fully internally routed aero carbon chassis with BB86, 12x100 / 12x142 mm thru-axles and an integrated-cockpit frame package",
+    "tire_clearance_mm": 28,
+    "tire_clearance_basis": "Current exact A9 painted-frame and complete-bike pages specify 700x28C / fits 28 mm; a conflicting 45 mm collection-page template was rejected as incompatible with the exact product routes",
+    "stiffness_evidence": "An independent exact-frame review describes the A9 as normally stiff rather than excessively stiff, with no lateral-wallow sensation and smooth delay-free acceleration; qualitative whole-bike evidence, not a controlled numeric frame test"
+  },
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Exact complete-bike weight for the retained Pikachu / R7170 option",
+    "Selected size, wheels, cockpit dimensions, cassette, accessories and final component-level BOM",
+    "Seller authority, current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-a9-r7170-core-specs-verified-weight-unresolved",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "triaero-a9-official-2026-08-30",
+    "triaero-a9-jd-2026-08-30",
+    "triaero-a9-plover-2026-08-30",
+    "triaero-a9-uci-2026-08-30",
+    "triaero-company-ican-2026-08-30"
+  ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +39,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6869.png#R1",
-  "last_reviewed": "2026-08-08"
+  "source_url": "https://triaero.com/products/disc-road-frame-a9",
+  "source_note": "The retained card and current JD index establish the hand-painted Pikachu R7170 option. A9 frame facts transfer across the exact chassis, but 7.98 kg older Ultegra and SRAM complete-bike claims and owner-build weights are not transferred to this selected build.",
+  "last_reviewed": "2026-08-30"
 }
