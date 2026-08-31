@@ -45,14 +45,17 @@ test('homepage social preview is project-owned, crop-sized, and fully described'
   assert.match(html, /property="og:image:width" content="1200"/);
   assert.match(html, /property="og:image:height" content="630"/);
   assert.match(html, /property="og:image:type" content="image\/png"/);
-  assert.match(html, /og:image:alt" content="China Bikes wordmark with three project-owned technical bicycle and frameset silhouettes"/);
+  assert.match(html, /og:image:alt" content="AI-generated wind-tunnel editorial scene with one iridescent aero bike on a test rig and six unbranded bikes behind glass; not exact-model photography"/);
   const preview = fs.readFileSync(new URL('../assets/social-preview.png', import.meta.url));
   assert.equal(preview.subarray(1, 4).toString(), 'PNG');
   assert.equal(preview.readUInt32BE(16), 1200);
   assert.equal(preview.readUInt32BE(20), 630);
-  assert.ok(preview.byteLength < 500_000);
-  const source = fs.readFileSync(new URL('../assets/social-preview.svg', import.meta.url), 'utf8');
-  assert.doesNotMatch(source, /\b(?:href|src)=["']https?:|<image\b/i);
+  assert.ok(preview.byteLength < 1_250_000);
+  const provenance = JSON.parse(fs.readFileSync(new URL('../assets/social-preview.provenance.json', import.meta.url), 'utf8'));
+  assert.equal(provenance.generation.input_images, 'none');
+  assert.equal(provenance.composition.bike_count, 7);
+  assert.equal(provenance.output.sha256, '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87');
+  assert.deepEqual(provenance.output.dimensions, { width: 1200, height: 630 });
 });
 
 test('theme control supports system, light, and dark without delaying first paint', () => {
