@@ -8,10 +8,17 @@
     "Corporate manufacturing relationship",
     "Current package contents"
   ],
-  "status": "needs-provenance-and-price",
+  "status": "exact-current-specifications-found-price-and-package-unresolved",
   "source_ids": [
     "carbonda-cfr707-official-2026-08-17"
   ],
-  "source_note": "An official exact-model inquiry route is established; a current direct quote, package and manufacturing relationship remain open.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The current exact manufacturer page resolves construction, size-M frame reference weight and 700C maximum clearance. Current price remains quote-only; owner package quotes were not generalized.",
+  "last_reviewed": "2026-08-30",
+  "facts": {
+    "frame_material": "T700+T800 mixed-carbon one-piece monolith frame with EPS molding and full-Toray-carbon EPS fork",
+    "frame_weight_g": 1300,
+    "frame_weight_basis": "Manufacturer claim for size M, ±50 g, including alloy parts; paint and finish basis unpublished",
+    "tire_clearance_mm": 50,
+    "tire_clearance_basis": "Manufacturer maximum for 700C x 50 mm; 650B x 2.1 in is separately supported"
+  }
 }

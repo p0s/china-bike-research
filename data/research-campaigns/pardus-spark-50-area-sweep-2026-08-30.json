@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:pardus-spark:complete-weight",
     "candidate:pardus-spark:drivetrain",
-    "candidate:pardus-spark:tire-clearance"
+    "candidate:pardus-spark:tire-clearance",
+    "candidate:pardus-spark:frame-material",
+    "candidate:pardus-spark:frame-stiffness"
   ],
   "areas": [
     {
@@ -26,8 +28,8 @@
       "query": "PARDUS 瑞豹 Spark Sport 105 QED PES Gen3 eGR 2026 weight clearance — Manufacturer exact-product page",
       "route": "Manufacturer exact-product page",
       "outcome": "found",
-      "result_url": "https://parduscycle.com/Hightxq.aspx?cc=20596&color=20806&id=43608&pz=20801&t=27444",
-      "note": "A current manufacturer China page documents the prior Spark Sport QED 2x12 branch and fitted 700x28C tires."
+      "result_url": "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444",
+      "note": "Current exact Spark Sport page specifies HS-EPS+ frame and HS-HPT fork construction and claims 20% greater pedaling stiffness than the previous model."
     },
     {
       "approach_area_id": "manufacturer-model-family",

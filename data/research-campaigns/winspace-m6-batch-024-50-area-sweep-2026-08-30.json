@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:winspace-m6:complete-weight",
     "candidate:winspace-m6:drivetrain",
-    "candidate:winspace-m6:tire-clearance"
+    "candidate:winspace-m6:tire-clearance",
+    "candidate:winspace-m6:frame-material",
+    "candidate:winspace-m6:frame-stiffness"
   ],
   "areas": [
     {
@@ -26,8 +28,8 @@
       "query": "WINSPACE 银贝斯 M6 13599.20 105 R7120 R7170 Ultegra R8170 32C — Manufacturer exact-product page",
       "route": "Manufacturer exact-product page",
       "outcome": "found",
-      "result_url": "https://www.winspace.cc/products/m6-105-mechanic",
-      "note": "Current exact 105 mechanical page publishes the 8.6 kg size-M pedal-excluded reference and full groupset."
+      "result_url": "https://www.winspace.cc/products/m6-105-di2",
+      "note": "Current exact 105 Di2 page specifies T700+T800+M40+M60 carbon construction and a full-carbon fork."
     },
     {
       "approach_area_id": "manufacturer-model-family",
@@ -35,8 +37,8 @@
       "query": "WINSPACE 银贝斯 M6 13599.20 105 R7120 R7170 Ultegra R8170 32C — Manufacturer model-family or category page",
       "route": "Manufacturer model-family or category page",
       "outcome": "found",
-      "result_url": "https://www.winspace.cc/products/m6-105-di2",
-      "note": "Current exact 105 Di2 page publishes the 8.1 kg size-M pedal-excluded reference and full groupset."
+      "result_url": "https://www.winspace.cc/products/m6-105-mechanic",
+      "note": "Current exact 105 mechanical page corroborates the shared M6 frame construction."
     },
     {
       "approach_area_id": "manufacturer-current-catalog",

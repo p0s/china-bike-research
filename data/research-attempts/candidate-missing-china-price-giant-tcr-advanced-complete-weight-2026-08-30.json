@@ -1,0 +1,484 @@
+{
+  "id": "candidate-missing-china-price-giant-tcr-advanced-complete-weight-2026-08-30",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-tcr-advanced"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-08-30",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more exact public routes were blocked and no login, verification challenge, retry loop or bypass was attempted; every other registered area was still checked.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand YouTube channel — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand YouTube channel — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public brand youtube channel indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent YouTube review or build — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent YouTube review or build — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public independent youtube review or build indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand Bilibili account — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand Bilibili account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public brand bilibili account indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent Bilibili review or build — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent Bilibili review or build — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current exact-trim dealer video index corroborates the 2025 TCR Advanced 3-GC components without a controlled weight or maximum-clearance claim. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.bilibili.com/video/BV1TS411N7fA/"
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand Xiaohongshu account — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand Xiaohongshu account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine Xiaohongshu indexes were checked; no additional exact attributable result was indexed and no new XHS capture was started. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent Xiaohongshu post — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent Xiaohongshu post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Only public search-engine Xiaohongshu indexes were checked; no additional exact attributable result was indexed and no new XHS capture was started. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand Douyin account — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand Douyin account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public brand douyin account indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent Douyin post — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent Douyin post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public independent douyin post indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand Weibo account — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand Weibo account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent Weibo post — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent Weibo post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-30",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Brand WeChat public article — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Brand WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public WeChat indexing was checked for exact-model evidence; no login, private content or unpublished material was used. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent WeChat public article — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public WeChat indexing was checked for exact-model evidence; no login, private content or unpublished material was used. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Cycling forum thread — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Cycling forum thread — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public cycling forum thread indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Public owner build log — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Public owner build log — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public public owner build log indexes were checked for Giant TCR Advanced 3-GC mainland rim-brake complete bike; they yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Public community photo or setup post — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Public community photo or setup post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "Public exact-model image indexes were checked for specification context, but no media was copied and visual inference was not used as a specification or rights basis. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer exact-product page — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer exact-product page — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-30",
+          "note": "Current mainland manufacturer page identifies the exact TCR Advanced 3-GC, Tiagra rim brakes and fitted 700x25C tires but omits weight and maximum clearance. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer model-family or category page — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer model-family or category page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer model-family or category page area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer current catalog — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer current catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer current catalog area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer archived catalog — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer archived catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer archived catalog area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer product manual — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer product manual — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer product manual area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer geometry document — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer geometry document — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer geometry document area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer technical paper or test note — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer technical paper or test note — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer technical paper or test note area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer support or warranty page — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer support or warranty page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer support or warranty page area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer newsroom or launch page — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer newsroom or launch page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer newsroom or launch page area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer site search — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer site search — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer site search area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer sitemap or indexed route inventory — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer sitemap or indexed route inventory area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer structured page metadata — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer structured page metadata — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer structured page metadata area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer regional site — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer regional site — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer regional site area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer-listed distributor — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer-listed distributor — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer-listed distributor area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer dealer locator — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer dealer locator — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer dealer locator area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Manufacturer-operated online store — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Manufacturer-operated online store — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The manufacturer-operated online store area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Official Taobao store or exact item — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Official Taobao store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official taobao store or exact item area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Official Tmall store or exact item — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Official Tmall store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official tmall store or exact item area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Official JD store or exact item — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Official JD store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official jd store or exact item area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Verified Alibaba or 1688 supplier route — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Verified Alibaba or 1688 supplier route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The verified alibaba or 1688 supplier route area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Official AliExpress store or exact item — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Official AliExpress store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The official aliexpress store or exact item area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Authorized mainland dealer — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Authorized mainland dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The authorized mainland dealer area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Authorized regional dealer — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Authorized regional dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The authorized regional dealer area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — International specialist retailer — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "International specialist retailer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The international specialist retailer area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Cycling-industry review publication — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Cycling-industry review publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The cycling-industry review publication area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Chinese cycling-media publication — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Chinese cycling-media publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The chinese cycling-media publication area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent laboratory or instrumented test — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent laboratory or instrumented test — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent laboratory or instrumented test area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Print or digital magazine archive — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Print or digital magazine archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The print or digital magazine archive area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Trade-show coverage — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Trade-show coverage — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The trade-show coverage area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Race-team equipment page — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Race-team equipment page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The race-team equipment page area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Event or exhibitor catalog — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Event or exhibitor catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The event or exhibitor catalog area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Independent geometry database — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Independent geometry database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The independent geometry database area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Component compatibility database — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Component compatibility database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The component compatibility database area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Product certification or registration database — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Product certification or registration database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The product certification or registration database area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Giant TCR Advanced 3-GC 25款 Tiagra rim brake 700x25 weight maximum tire clearance — Public web archive — field candidate:missing-china-price-giant-tcr-advanced:complete-weight",
+          "route": "Public web archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-30",
+          "note": "The public web archive area was searched for current exact-model evidence on Giant TCR Advanced 3-GC mainland rim-brake complete bike; it yielded no additional attributable value for the frozen fields. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-giant-tcr-advanced-50-area-sweep-2026-08-30.json. No controlled stock TCR Advanced 3-GC complete-bike weight was established after all 50 areas; weights from other generations and disc builds were rejected."
+}

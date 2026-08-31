@@ -8,16 +8,16 @@
   "missing": [
     "Complete-bike/frame weight",
     "Bottom-bracket standard",
-    "Tire clearance",
     "Current stock/checkout and exact warranty policy"
   ],
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
-  "required_before_dashboard": "Complete-bike/frame weight; Bottom-bracket standard; Tire clearance; Current stock/checkout and exact warranty policy",
-  "last_reviewed": "2026-08-17",
+  "required_before_dashboard": "Complete-bike/frame weight; Bottom-bracket standard; Current stock/checkout and exact warranty policy",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "merida-china-reacto-6000-cn-27-official-2026-08-17"
+    "merida-china-reacto-6000-cn-27-official-2026-08-17",
+    "merida-reacto-v-platform-clearance-2026-08-30"
   ],
   "official_price": {
     "amount_cny": 23800,
@@ -25,8 +25,8 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland-China page lists Merida REACTO 6000 CN 27 at ¥23,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
-  "source_url": "https://www.merida.cn/index/bikefinder/detail/id/126.html",
+  "source_note": "Current exact mainland page identifies the fifth-generation CF3 trim, and the manufacturer platform technical page supplies its 32 mm maximum. No exact CN-build weight is published, so other regional configurations were not transferred.",
+  "source_url": "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug.html",
   "facts": {
     "drivetrain": "Shimano 105 Di2 2×12",
     "brakes": "Shimano 105 hydraulic disc",
@@ -34,6 +34,8 @@
     "wheels": "Novatec R6 carbon integrated wheelset",
     "tires": "Continental GP TR 700×28",
     "cockpit": "Carbon integrated cockpit",
-    "sizes": "3XS, XXS, XS, S, M, L"
+    "sizes": "3XS, XXS, XS, S, M, L",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current fifth-generation manufacturer maximum for the shared CF3/CF5 platform; exact CN trim page identifies latest-generation CF3 and a 410 mm chainstay"
   }
 }

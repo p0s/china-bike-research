@@ -17,7 +17,9 @@
   "fields_checked": [
     "candidate:winspace-t1600:complete-weight",
     "candidate:winspace-t1600:drivetrain",
-    "candidate:winspace-t1600:tire-clearance"
+    "candidate:winspace-t1600:tire-clearance",
+    "candidate:winspace-t1600:frame-material",
+    "candidate:winspace-t1600:frame-stiffness"
   ],
   "areas": [
     {
@@ -27,7 +29,7 @@
       "route": "Manufacturer exact-product page",
       "outcome": "found",
       "result_url": "https://www.winspace.cc/products/t1600-105-di2",
-      "note": "Current exact original-T1600 105 Di2 page publishes the 8.0 kg size-M pedal-excluded reference and full groupset."
+      "note": "Current exact original-T1600 page specifies Toray T1000+T1100 carbon with Kevlar and describes the advanced lay-up as engineered for stiffness and power transfer."
     },
     {
       "approach_area_id": "manufacturer-model-family",
