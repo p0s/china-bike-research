@@ -97,6 +97,7 @@ test('homepage comparison payload keeps frameset pricing dynamic without seriali
   assert.equal('frameLow' in complete, false);
   assert.equal('frameHigh' in complete, false);
   assert.ok(payload.every((item) => item.estimated === true || (!('frameLow' in item) && !('frameHigh' in item))));
+  assert.ok(payload.every((item) => !('buildBaseId' in item)));
 });
 
 test('comparison client renders accessible move controls and persists their order in the URL', () => {

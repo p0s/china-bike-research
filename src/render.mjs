@@ -845,7 +845,6 @@ function comparisonSummary(ctx, product) {
       ...comparisonImageFields(ctx, product.image)
     } : {}),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
-    buildBaseId: product.variant.id,
     buildBaseKind: product.variant.kind,
     builderEligible: true,
     price: publishedPriceLabel(product),
@@ -911,7 +910,7 @@ function candidateComparisonSummary(ctx, entry) {
       ...comparisonImageFields(ctx, entry.image)
     } : {}),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
-    ...(entry.kind && entry.identifiableModel ? { buildBaseId: entry.id, buildBaseKind: entry.kind, builderEligible: true } : {}),
+    ...(entry.kind && entry.identifiableModel ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
