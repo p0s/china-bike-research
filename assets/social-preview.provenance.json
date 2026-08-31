@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "asset": "assets/social-preview.png",
+  "purpose": "General China Bikes social preview",
+  "generation": {
+    "tool": "OpenAI ImageGen",
+    "input_images": "none",
+    "prompt_basis": "Text-only catalog cues for a seven-bike editorial lineup inspired by Chinese carbon aero-bike forms",
+    "depiction": "Editorial illustration, not exact-model photography"
+  },
+  "source": {
+    "sha256": "34f10781fef9ceca31554c76ecf6ab6d879b268b1b11fbd303a6884e28437e11",
+    "dimensions": {
+      "width": 1731,
+      "height": 909
+    }
+  },
+  "transform": {
+    "method": "Metadata-stripped Lanczos resize",
+    "dimensions": {
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "output": {
+    "sha256": "eb9c524159dc1965a5c2d39426a7ae208a6cb84cb8480dee5f7f7ea752af6d8c",
+    "bytes": 1087274,
+    "dimensions": {
+      "width": 1200,
+      "height": 630
+    }
+  }
+}

@@ -8,7 +8,7 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
-  ['assets/social-preview.png', 'c9fb21d1a4c5476c60e3b3471816d621783e5161704c95958ef94a241e3c7604']
+  ['assets/social-preview.png', 'eb9c524159dc1965a5c2d39426a7ae208a6cb84cb8480dee5f7f7ea752af6d8c']
 ]);
 const findings = [];
 const referencedSourcedMedia = new Set();

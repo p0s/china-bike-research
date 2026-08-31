@@ -1204,7 +1204,7 @@ export function renderHome(ctx) {
     path: '/',
     body,
     image: url(ctx.base, '/assets/social-preview.png'),
-    imageAlt: 'China Bikes wordmark with three project-owned technical bicycle and frameset silhouettes',
+    imageAlt: 'AI-generated editorial lineup of seven bicycles inspired by Chinese carbon aero-bike forms; not exact-model photography',
     imageWidth: 1200,
     imageHeight: 630,
     imageType: 'image/png',
