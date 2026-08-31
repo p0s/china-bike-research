@@ -32,8 +32,9 @@ import {
 } from './lib/seo.mjs';
 
 const description = 'A concise comparison of bicycles and frame builds available to riders in China.';
+const footerDescription = 'China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices, documented specifications, and transparent frameset-build estimates.';
 
-function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', ogType = 'website', structuredData = [] }) {
+function page(ctx, { title = '', current = '', path = '/', description: desc = description, body, noindex = false, image = '', imageAlt = '', imageWidth = '', imageHeight = '', imageType = '', ogType = 'website', structuredData = [] }) {
   return layout({
     base: ctx.base,
     repositoryUrl: ctx.repositoryUrl,
@@ -46,8 +47,14 @@ function page(ctx, { title = '', current = '', path = '/', description: desc = d
     noindex,
     image,
     imageAlt,
+    imageWidth,
+    imageHeight,
+    imageType,
     ogType,
-    structuredData
+    structuredData,
+    datasetUpdated: ctx.siteLastmod ?? ctx.data.meta.snapshot_date,
+    catalogReviewed: ctx.data.meta.snapshot_date,
+    footerDescription
   });
 }
 
@@ -224,7 +231,14 @@ function buildAssumption(ctx) {
 }
 
 function buildPresetOptions(ctx) {
-  return buildAssumption(ctx).presets.map((preset) => `<option value="${escapeAttr(preset.id)}"${preset.default ? ' selected' : ''}${Number.isFinite(preset.amount_cny) ? ` data-build-amount="${preset.amount_cny}"` : ''}>${escapeHtml(preset.custom ? preset.label : `${preset.label} · +${formatCny(preset.amount_cny)}`)}</option>`).join('');
+  return buildAssumption(ctx).presets.map((preset) => {
+    const label = preset.custom
+      ? preset.label
+      : preset.manual_allowance
+        ? `${preset.label} · enter allowance`
+        : `${preset.label} · +${formatCny(preset.amount_cny)}`;
+    return `<option value="${escapeAttr(preset.id)}"${preset.default ? ' selected' : ''}${Number.isFinite(preset.amount_cny) ? ` data-build-amount="${preset.amount_cny}"` : ''}${preset.manual_allowance ? ' data-build-manual="true"' : ''}${preset.groupset_id ? ` data-groupset-id="${escapeAttr(preset.groupset_id)}"` : ''}>${escapeHtml(label)}</option>`;
+  }).join('');
 }
 
 function buildPresetNotes(ctx) {
@@ -232,6 +246,7 @@ function buildPresetNotes(ctx) {
   return [
     assumption.summary,
     ...assumption.presets.filter((preset) => Number.isFinite(preset.amount_cny)).map((preset) => `${preset.label}: ${formatCny(preset.amount_cny)} total build allowance. ${preset.basis}.`),
+    ...assumption.presets.filter((preset) => preset.manual_allowance).map((preset) => `${preset.label}: enter the total remaining-build allowance. ${preset.basis}.`),
     'Choose Custom allowance to enter a current Taobao quote or your own parts budget.'
   ];
 }
@@ -820,6 +835,7 @@ function comparisonSummary(ctx, product) {
   const image = imageUrl(ctx, product.image);
   return {
     id: product.variant.id,
+    stage: 'published',
     brand: product.brand.name,
     name: product.variant.name,
     url: url(ctx.base, `/models/${product.variant.id}/`),
@@ -829,7 +845,6 @@ function comparisonSummary(ctx, product) {
       ...comparisonImageFields(ctx, product.image)
     } : {}),
     type: product.variant.kind === 'frameset' ? 'Frame estimate' : 'Complete bike',
-    buildBaseId: product.variant.id,
     buildBaseKind: product.variant.kind,
     builderEligible: true,
     price: publishedPriceLabel(product),
@@ -886,6 +901,7 @@ function candidateComparisonSummary(ctx, entry) {
   const frame = facts.frame ?? entry.candidate.manufacturing;
   return {
     id: entry.id,
+    stage: 'candidate',
     url: url(ctx.base, `/models/${entry.candidate.id}/`),
     name: entry.candidate.name,
     ...(image ? {
@@ -894,7 +910,7 @@ function candidateComparisonSummary(ctx, entry) {
       ...comparisonImageFields(ctx, entry.image)
     } : {}),
     type: entry.kind === 'frameset' ? 'Frame estimate' : entry.kind === 'complete-bike' ? 'Complete bike' : 'Bike',
-    ...(entry.kind && entry.identifiableModel ? { buildBaseId: entry.id, buildBaseKind: entry.kind, builderEligible: true } : {}),
+    ...(entry.kind && entry.identifiableModel ? { buildBaseKind: entry.kind, builderEligible: true } : {}),
     price: candidatePriceLabel(ctx, entry),
     ...(estimated ? { estimated: true, frameLow, frameHigh } : {}),
     priceState: candidatePriceState(entry),
@@ -1089,9 +1105,44 @@ function catalogFilterShortcut(key, label) {
   return `<button class="catalog-filter-button" type="button" data-filter-heading="${escapeAttr(key)}" aria-label="Filter ${escapeAttr(label)}" title="Filter ${escapeAttr(label)}"><span aria-hidden="true">+</span></button>`;
 }
 
+const curatedComparisonGroups = [
+  {
+    id: 'affordable-carbon-aero',
+    title: 'Affordable carbon aero',
+    criteria: 'Dated complete-bike prices, named builds, and documented carbon aero platforms across three Chinese brands; research-stage status stays visible.',
+    ids: ['candidate-cycletrack-phantom-rx24', 'twitter-cyclone-gen3-et', 'candidate-camp-ace-qed']
+  },
+  {
+    id: 'electronic-gravel',
+    title: 'Electronic gravel',
+    criteria: 'Distinct electronic complete or frameset-build routes with dated pricing, recorded weight, and at least 40 mm documented tire capacity.',
+    ids: ['twitter-v3-wheeltop-eds', 'pardus-super-sport-gen2-egr', 'incolor-voyager-frameset']
+  },
+  {
+    id: 'wide-tire-aero',
+    title: 'Wide-tire aero',
+    criteria: 'Aerodynamically shaped road frames with documented 38 mm clearance and a dated frame or complete-build price.',
+    ids: ['incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden']
+  }
+];
+
+function curatedStartingPoints(ctx, summaries) {
+  const byId = new Map(summaries.map((item) => [item.id, item]));
+  const groups = curatedComparisonGroups.map((group) => {
+    const items = group.ids.map((id) => byId.get(id)).filter(Boolean);
+    if (items.length !== group.ids.length) throw new Error(`Curated comparison group ${group.id} has an unresolved catalog id`);
+    const params = new URLSearchParams({ compare: group.ids.join(',') });
+    return `<article class="curated-group" data-curated-group="${escapeAttr(group.id)}"><div class="curated-group-heading"><h3>${escapeHtml(group.title)}</h3><a href="${url(ctx.base, '/')}?${escapeAttr(params.toString())}#compare" aria-label="Compare the three ${escapeAttr(group.title.toLowerCase())} choices">Compare three <span aria-hidden="true">→</span></a></div><p><strong>Criteria:</strong> ${escapeHtml(group.criteria)}</p><ol>${items.map((item) => {
+      const itemName = item.brand && !item.name.toLowerCase().startsWith(item.brand.toLowerCase()) ? `${item.brand} ${item.name}` : item.name;
+      const facts = [item.price, item.tireClearance, item.stage === 'candidate' ? 'Research' : ''].filter(Boolean);
+      return `<li><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span></li>`;
+    }).join('')}</ol></article>`;
+  }).join('');
+  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div><p>Three focused shortlists—not a universal score or a recommendation ranking.</p></div><div class="curated-groups">${groups}</div></section>`;
+}
+
 export function renderHome(ctx) {
   const assumption = buildAssumption(ctx);
-  const homeEvidenceDate = ctx.siteLastmod ?? ctx.data.meta.snapshot_date;
   const candidates = joinCatalogCandidates(ctx.data);
   const defaultCandidateCount = candidates.filter((entry) => entry.defaultVisible).length;
   const summaries = [
@@ -1108,7 +1159,8 @@ export function renderHome(ctx) {
       html: candidateRow(ctx, entry)
     }))
   ].sort((a, b) => a.price - b.price);
-  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div><div class="page catalog-context"><p>Dataset updated <time datetime="${escapeAttr(homeEvidenceDate)}">${escapeHtml(homeEvidenceDate)}</time>; catalog-wide review <time datetime="${escapeAttr(ctx.data.meta.snapshot_date)}">${escapeHtml(ctx.data.meta.snapshot_date)}</time>. Each price keeps its observation date and conditions.</p><nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav></div></section>
+  const body = `<section class="catalog-intro"><div class="page intro-row"><div><h1>Bikes in China</h1><p>Compare China-market bikes and frame builds by price, category, and known specifications.</p></div><div class="build-creator" role="group" aria-label="Frameset build creator"><label class="build-preset-control" for="frameset-build-preset"><span>Frameset build</span><select id="frameset-build-preset" data-frameset-build-preset>${buildPresetOptions(ctx)}</select></label><label class="build-custom-control" for="frameset-build-allowance" data-build-custom hidden><span>Total allowance</span><span class="build-custom-input"><span>+ ¥</span><input id="frameset-build-allowance" type="number" min="0" max="100000" step="500" inputmode="numeric" value="${assumption.amount_cny}" data-frameset-build-allowance data-default-value="${assumption.amount_cny}" aria-label="Custom frameset build allowance in yuan"></span></label>${infoTip('Frameset build assumption', buildPresetNotes(ctx))}</div></div><div class="page catalog-context"><nav class="catalog-discovery" aria-label="Browse the catalog"><a href="${url(ctx.base, '/brands/')}">Brands</a><a href="${url(ctx.base, '/complete-bikes/')}">Complete bikes</a><a href="${url(ctx.base, '/framesets/')}">Framesets</a><a href="${url(ctx.base, '/prices/')}">Price ranges</a><a href="${url(ctx.base, '/methodology/')}">Sources and dataset</a></nav></div></section>
+  ${curatedStartingPoints(ctx, summaries)}
   <section class="catalog-section" id="catalog"><div class="page" data-catalog-root>
     <div class="filter-bar">
       <div class="filter-primary">
@@ -1151,6 +1203,11 @@ export function renderHome(ctx) {
     current: 'catalog',
     path: '/',
     body,
+    image: url(ctx.base, '/assets/social-preview.png'),
+    imageAlt: 'China Bikes wordmark with three project-owned technical bicycle and frameset silhouettes',
+    imageWidth: 1200,
+    imageHeight: 630,
+    imageType: 'image/png',
     structuredData: websiteStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,
@@ -1829,7 +1886,7 @@ export function renderMethodology(ctx) {
       siteUrl: ctx.siteUrl,
       base: ctx.base,
       path: '/methodology/',
-      name: 'China Bike Research dataset',
+      name: 'China Bikes dataset',
       description: `${ctx.data.meta.scope} ${methodologyDescription}`,
       dateModified: datasetDate,
       license,

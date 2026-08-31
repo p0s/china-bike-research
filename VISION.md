@@ -1,6 +1,6 @@
 # Vision
 
-China Bike Research should be the fastest trustworthy way for a rider in China to find and compare worthwhile bicycles.
+China Bikes should be the fastest trustworthy way for a rider in China to find and compare worthwhile bicycles.
 
 ## User
 
