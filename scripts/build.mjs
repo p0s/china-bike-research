@@ -195,11 +195,11 @@ write('sitemap.xml', sitemapXml({ siteUrl, base, pages, fallbackLastmod: data.me
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap.xml\n`);
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // The 261-row unified catalog with production project-base links, typed filters,
-// Build handoff, and the published Incolor SR / SR+ rows measured 967,643 bytes
-// and 7,427 elements on 2026-08-29. These limits retain comparable modest growth headroom while
-// keeping the full candidate set available without a second page or client-side
-// data fetch.
-const performanceBudget = { home_html_bytes: 981_000, home_elements: 7_535 };
+// Build handoff, curated comparison starts, and the published Incolor SR / SR+
+// rows measured 988,959 bytes and 7,433 elements on 2026-08-31. These limits
+// retain modest growth headroom while keeping the full candidate set available
+// without a second page or client-side data fetch.
+const performanceBudget = { home_html_bytes: 998_000, home_elements: 7_535 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length
