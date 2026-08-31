@@ -1,5 +1,5 @@
 {
-  "project": "China Bike Research",
+  "project": "China Bikes",
   "scope": "Bicycles and framesets relevant to riders in mainland China, with emphasis on useful China-market comparisons, strong value, and well-sourced technical data.",
   "snapshot_date": "2026-08-08",
   "currency": "CNY",
@@ -25,6 +25,23 @@
         "basis": "Reviewed default plus the upper ¥1,900 R8170-versus-R7170 dealer-market premium in the supplied August 2026 synthesis",
         "source_id": "smzdm-shimano-di2-market-observations-2026-08-24",
         "observed_at": "2026-08-20"
+      },
+      {
+        "id": "magene-qed",
+        "label": "Magene QED plan",
+        "manual_allowance": true,
+        "groupset_id": "magene-qed-pes",
+        "basis": "No attributable mainland consumer price is recorded, so enter a complete remaining-build allowance rather than inferring one from the catalog package",
+        "source_id": "magene-qed-pes-catalog-2026-08-24"
+      },
+      {
+        "id": "wheeltop-eds-tx-2x",
+        "label": "WheelTop EDS TX 2× plan",
+        "manual_allowance": true,
+        "groupset_id": "wheeltop-eds-tx",
+        "basis": "The dated mainland observations cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part, so enter the full remaining-build allowance",
+        "source_id": "taobao-wheeltop-eds-tx-options-2026-08-24",
+        "observed_at": "2026-08-24"
       },
       {
         "id": "custom",

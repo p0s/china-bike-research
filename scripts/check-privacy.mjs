@@ -1,11 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const root = path.resolve(import.meta.dirname, '..');
 const textExtensions = new Set(['.md','.json','.mjs','.js','.css','.svg','.yml','.yaml','.cff','.txt','.html','.xml','.example']);
 const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg','.mov','.mp4','.png','.webp']);
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
+const projectOwnedBinaries = new Map([
+  ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87']
+]);
 const findings = [];
 const referencedSourcedMedia = new Set();
 
@@ -40,8 +44,12 @@ function walk(directory) {
     else {
       const extension = path.extname(entry.name).toLowerCase();
       if (thirdPartyBinaryExtensions.has(extension)) {
+        const expectedProjectHash = projectOwnedBinaries.get(relative);
+        const isExactProjectAsset = expectedProjectHash
+          ? crypto.createHash('sha256').update(fs.readFileSync(absolute)).digest('hex') === expectedProjectHash
+          : false;
         const validSourcedPath = /^assets\/images\/sourced\/(?:xhs|taobao|xianyu)\/[a-z0-9][a-z0-9-]*\/[a-f0-9]{16}-(?:card|detail)-w\d+\.webp$/.test(relative);
-        if (!(extension === '.webp' && validSourcedPath && referencedSourcedMedia.has(relative))) {
+        if (!isExactProjectAsset && !(extension === '.webp' && validSourcedPath && referencedSourcedMedia.has(relative))) {
           findings.push(`${relative}: third-party media binary is outside the validated sourced-image contract`);
         }
       }

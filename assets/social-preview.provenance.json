@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "asset": "assets/social-preview.png",
+  "purpose": "General China Bikes social preview",
+  "generation": {
+    "tool": "OpenAI ImageGen",
+    "input_images": "none",
+    "prompt_basis": "Text-only cues from the catalog shortlists for affordable carbon aero, electronic gravel, and wide-tire aero bikes",
+    "depiction": "Unbranded editorial illustration, not exact-model photography"
+  },
+  "composition": {
+    "bike_count": 7,
+    "hero": "One iridescent wide-tire aero bike on a wind-tunnel force-balance rig",
+    "background": "Six complete bikes staged behind the test-section glass",
+    "environment": "Honeycomb intake, collector fan, and left-to-right tracer flow around the hero"
+  },
+  "source": {
+    "sha256": "32c841f45f159e4fffd8f9833b6fce7323e66813989bbbd6efc1974e0dc870eb",
+    "dimensions": {
+      "width": 1731,
+      "height": 909
+    }
+  },
+  "transform": {
+    "method": "Metadata-stripped Lanczos resize",
+    "dimensions": {
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "output": {
+    "sha256": "6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87",
+    "bytes": 1036241,
+    "dimensions": {
+      "width": 1200,
+      "height": 630
+    }
+  }
+}

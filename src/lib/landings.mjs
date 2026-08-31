@@ -69,7 +69,7 @@ export function buildLandingPages({ products }) {
     kind: 'brand-hub',
     route: '/brands/',
     title: 'Bike brands with comparable models',
-    description: 'Brands with multiple publication-ready configurations and visible model-level evidence in the China Bike Research catalog.',
+    description: 'Brands with multiple publication-ready configurations and visible model-level evidence in the China Bikes catalog.',
     brands: brandPages,
     products: brandPages.flatMap((entry) => entry.products)
   };

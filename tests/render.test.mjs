@@ -32,10 +32,59 @@ test('homepage is the unified bike and frame-build comparison', () => {
 
 test('homepage exposes crawlable evidence-led discovery without duplicating the catalog', () => {
   assert.match(html, /Dataset updated <time datetime="2026-08-28">2026-08-28<\/time>; catalog-wide review <time datetime="2026-08-08">2026-08-08<\/time>/);
+  assert.doesNotMatch(html.match(/<section class="catalog-intro">[\s\S]*?<\/section>/)?.[0] ?? '', /Dataset updated/);
+  assert.match(html, /China Bikes compares Chinese road, gravel, and carbon-bike options using dated China-market prices/);
   assert.match(html, /href="\/china-bike-research\/brands\/">Brands<\/a>/);
   assert.match(html, /href="\/china-bike-research\/complete-bikes\/">Complete bikes<\/a>/);
   assert.match(html, /href="\/china-bike-research\/framesets\/">Framesets<\/a>/);
   assert.match(html, /href="\/china-bike-research\/prices\/">Price ranges<\/a>/);
+});
+
+test('homepage social preview is project-owned, crop-sized, and fully described', () => {
+  assert.match(html, /property="og:image" content="https:\/\/example.github.io\/china-bike-research\/assets\/social-preview.png"/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:height" content="630"/);
+  assert.match(html, /property="og:image:type" content="image\/png"/);
+  assert.match(html, /og:image:alt" content="AI-generated wind-tunnel editorial scene with one iridescent aero bike on a test rig and six unbranded bikes behind glass; not exact-model photography"/);
+  const preview = fs.readFileSync(new URL('../assets/social-preview.png', import.meta.url));
+  assert.equal(preview.subarray(1, 4).toString(), 'PNG');
+  assert.equal(preview.readUInt32BE(16), 1200);
+  assert.equal(preview.readUInt32BE(20), 630);
+  assert.ok(preview.byteLength < 1_250_000);
+  const provenance = JSON.parse(fs.readFileSync(new URL('../assets/social-preview.provenance.json', import.meta.url), 'utf8'));
+  assert.equal(provenance.generation.input_images, 'none');
+  assert.equal(provenance.composition.bike_count, 7);
+  assert.equal(provenance.output.sha256, '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87');
+  assert.deepEqual(provenance.output.dimensions, { width: 1200, height: 630 });
+});
+
+test('theme control supports system, light, and dark without delaying first paint', () => {
+  const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
+  const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
+  assert.match(html, /data-theme-control/);
+  assert.match(client, /const themeModes = \['system', 'light', 'dark'\]/);
+  assert.match(client, /localStorage\.setItem\(themeStorageKey, selected\)/);
+  assert.match(client, /delete document\.documentElement\.dataset\.theme/);
+  assert.match(styles, /:root\[data-theme="dark"\]/);
+  assert.match(styles, /@media \(prefers-color-scheme: dark\)[\s\S]*:root:not\(\[data-theme\]\)/);
+  assert.match(styles, /--image-surface: #e6eae4/);
+});
+
+test('homepage offers compact criteria-led comparison starting points', () => {
+  assert.match(html, /Top bikes, with the criteria shown/);
+  assert.match(html, /Three focused shortlists—not a universal score or a recommendation ranking/);
+  for (const group of ['affordable-carbon-aero', 'electronic-gravel', 'wide-tire-aero']) {
+    assert.match(html, new RegExp(`data-curated-group="${group}"`));
+  }
+  for (const id of [
+    'candidate-cycletrack-phantom-rx24', 'twitter-cyclone-gen3-et', 'candidate-camp-ace-qed',
+    'twitter-v3-wheeltop-eds', 'pardus-super-sport-gen2-egr', 'incolor-voyager-frameset',
+    'incolor-speedster-sr-frameset', 'candidate-lightcarbon-lcr018-d', 'candidate-tavelo-arden'
+  ]) {
+    assert.match(html, new RegExp(`(?:models\\/${id}\\/|compare=[^"#]*${id})`));
+  }
+  assert.match(html, /compare=incolor-speedster-sr-frameset%2Ccandidate-lightcarbon-lcr018-d%2Ccandidate-tavelo-arden#compare/);
+  assert.match(html, /Research<\/span>/);
 });
 
 test('homepage comparison payload keeps frameset pricing dynamic without serializing inactive fields', () => {
@@ -51,6 +100,17 @@ test('homepage comparison payload keeps frameset pricing dynamic without seriali
   assert.equal('frameLow' in complete, false);
   assert.equal('frameHigh' in complete, false);
   assert.ok(payload.every((item) => item.estimated === true || (!('frameLow' in item) && !('frameHigh' in item))));
+  assert.ok(payload.every((item) => !('buildBaseId' in item)));
+});
+
+test('comparison client renders accessible move controls and persists their order in the URL', () => {
+  const client = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
+  assert.match(client, /import \{ moveSelectionId \} from '\.\/compare-state\.js'/);
+  assert.match(client, /Move \$\{label\} left/);
+  assert.match(client, /Move \$\{label\} right/);
+  assert.equal((client.match(/dataset\.moveCompare = item\.id/g) ?? []).length, 2);
+  assert.match(client, /searchParams\.set\('compare', selection\.join\(','\)\)/);
+  assert.match(client, /The comparison link keeps this order/);
 });
 
 test('products without verified photos omit the image region and social placeholder', () => {
@@ -608,10 +668,14 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /id="frameset-build-preset" data-frameset-build-preset/);
   assert.match(html, /105 Di2 plan · \+¥6,000/);
   assert.match(html, /Ultegra Di2 plan · \+¥7,900/);
+  assert.match(html, /value="magene-qed" data-build-manual="true" data-groupset-id="magene-qed-pes">Magene QED plan · enter allowance/);
+  assert.match(html, /value="wheeltop-eds-tx-2x" data-build-manual="true" data-groupset-id="wheeltop-eds-tx">WheelTop EDS TX 2× plan · enter allowance/);
   assert.match(html, /Custom allowance/);
   assert.match(html, /data-build-custom hidden/);
   assert.match(html, /id="frameset-build-allowance" type="number" min="0" max="100000" step="500"[^>]*value="6000"[^>]*data-frameset-build-allowance/);
   assert.match(html, /parts already included in that package remain in the frame price/);
+  assert.match(html, /No attributable mainland consumer price is recorded/);
+  assert.match(html, /cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part/);
   assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
   assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);

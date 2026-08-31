@@ -25,7 +25,7 @@ function websiteId(siteUrl, base) {
 function breadcrumb({ siteUrl, base, path, name, trail = [] }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
   const parents = [
-    { name: 'China Bike Research', path: '/' },
+    { name: 'China Bikes', path: '/' },
     ...trail
   ];
   return {
@@ -50,7 +50,7 @@ export function websiteStructuredData({ siteUrl, base, description }) {
     '@type': 'WebSite',
     '@id': websiteId(siteUrl, base),
     url: home,
-    name: 'China Bike Research',
+    name: 'China Bikes',
     description,
     inLanguage: 'en'
   };
