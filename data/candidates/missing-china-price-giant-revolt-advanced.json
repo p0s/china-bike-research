@@ -7,7 +7,7 @@
   "why_interesting": "Official mainland-China gravel complete bike with an exact GRX trim and suggested retail price.",
   "missing": [
     "Complete-bike/frame weight",
-    "Exact wheel/tire build and numeric clearance",
+    "Exact wheel/tire build",
     "Bottom-bracket standard",
     "Numerical geometry and sizes",
     "Current stock/checkout and warranty policy"
@@ -15,10 +15,11 @@
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
-  "required_before_dashboard": "Complete-bike/frame weight; Exact wheel/tire build and numeric clearance; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy",
-  "last_reviewed": "2026-08-17",
+  "required_before_dashboard": "Complete-bike/frame weight; Exact wheel/tire build; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy",
+  "last_reviewed": "2026-08-30",
   "source_ids": [
-    "giant-china-revolt-advanced-2-official-2026-08-17"
+    "giant-china-revolt-advanced-2-official-2026-08-17",
+    "giant-revolt-advanced-2-global-clearance-2026-08-30"
   ],
   "official_price": {
     "amount_cny": 15800,
@@ -26,11 +27,13 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland-China page lists Giant Revolt Advanced 2 at ¥15,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_note": "Current exact mainland and global manufacturer pages establish the trim and a 45 mm maximum for its 2x setup. Giant publishes no standard complete-bike weight and recommends dealer weighing; no unsupported regional weight was transferred.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852",
   "facts": {
     "drivetrain": "Shimano GRX RX-820 2×12 with FSA Omega 48/32 crank",
     "brakes": "Shimano GRX RX-610 hydraulic disc",
-    "frame": "Advanced-Grade Composite with full-composite OverDrive fork"
+    "frame": "Advanced-Grade Composite with full-composite OverDrive fork",
+    "tire_clearance_mm": 45,
+    "tire_clearance_basis": "Current exact-model manufacturer maximum for the stock 2x drivetrain in the long flip-chip position; 53 mm applies only to a 1x setup"
   }
 }

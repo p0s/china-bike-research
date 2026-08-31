@@ -249,6 +249,91 @@ test('batch 027 records exact construction evidence and preserves exhausted stif
   assert.match(pardus.facts.stiffness_evidence, /vibration absorption and stiffness.*qualitative manufacturer evidence/);
 });
 
+test('batch 028 resolves exact facts and gives every frozen unknown fifty distinct approaches', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  assert.match(candidates.get('pardus-spark').facts.frame_material, /HS-EPS\+.*HS-HPT/);
+  assert.match(candidates.get('pardus-spark').facts.stiffness_evidence, /20% greater pedaling stiffness.*manufacturer-relative/);
+  assert.match(candidates.get('winspace-m6').facts.frame_material, /T700\+T800\+M40\+M60/);
+  assert.equal(candidates.get('winspace-m6').facts.stiffness_evidence, undefined);
+  assert.match(candidates.get('winspace-t1600').facts.frame_material, /T1000\+T1100.*Kevlar/);
+  assert.match(candidates.get('winspace-t1600').facts.stiffness_evidence, /engineered for stiffness and power transfer/);
+  assert.match(candidates.get('xds-ad350-2026').facts.frame_material, /X6 ultra-light aluminum.*carbon-fiber fork/);
+  assert.equal(candidates.get('xds-ad350-2026').facts.stiffness_evidence, undefined);
+
+  const revolt = candidates.get('missing-china-price-giant-revolt-advanced');
+  assert.equal(revolt.facts.complete_weight_g, undefined);
+  assert.equal(revolt.facts.tire_clearance_mm, 45);
+  assert.match(revolt.facts.tire_clearance_basis, /2x drivetrain.*53 mm applies only to a 1x/);
+  assert.doesNotMatch(revolt.required_before_dashboard, /numeric clearance/);
+
+  const tcr = candidates.get('missing-china-price-giant-tcr-advanced');
+  assert.equal(tcr.facts.complete_weight_g, undefined);
+  assert.equal(tcr.facts.tire_clearance_mm, undefined);
+  assert.match(tcr.source_note, /disc-generation and historic sibling values are excluded/);
+
+  const reacto = candidates.get('missing-china-price-merida-reacto');
+  assert.equal(reacto.facts.complete_weight_g, undefined);
+  assert.equal(reacto.facts.tire_clearance_mm, 32);
+  assert.match(reacto.facts.tire_clearance_basis, /fifth-generation.*CF3\/CF5/);
+  assert.doesNotMatch(reacto.required_before_dashboard, /Tire clearance/);
+
+  const carbonda = candidates.get('carbonda-cfr707');
+  assert.equal(carbonda.facts.frame_weight_g, 1300);
+  assert.match(carbonda.facts.frame_weight_basis, /size M.*±50 g.*including alloy parts/);
+  assert.equal(carbonda.facts.tire_clearance_mm, 50);
+  assert.match(carbonda.facts.frame_material, /T700\+T800.*EPS molding/);
+  assert.equal(carbonda.observed_price, undefined);
+
+  const dengfu = candidates.get('dengfu-gravel');
+  assert.equal(dengfu.model_id, 'dengfu-r20');
+  assert.equal(dengfu.name, 'Dengfu R20 Disc Gravel Bike Frame');
+  assert.equal(dengfu.facts.frame_weight_g, undefined);
+  assert.equal(dengfu.facts.tire_clearance_mm, undefined);
+  assert.equal(dengfu.facts.frame_material, undefined);
+  assert.match(dengfu.support_note, /exact R20 coverage and terms remain unconfirmed/);
+
+  const twitter = candidates.get('twitter-t10-pro');
+  assert.match(twitter.facts.drivetrain, /SENSAH HRD6900.*WheelTop EDS TX.*Shimano 105 R7120.*2x12/);
+  assert.equal(twitter.facts.tire_clearance_mm, undefined);
+
+  const foundFields = new Set([
+    'candidate:pardus-spark:frame-material',
+    'candidate:pardus-spark:frame-stiffness',
+    'candidate:winspace-m6:frame-material',
+    'candidate:winspace-t1600:frame-material',
+    'candidate:winspace-t1600:frame-stiffness',
+    'candidate:xds-ad350-2026:frame-material',
+    'candidate:missing-china-price-giant-revolt-advanced:tire-clearance',
+    'candidate:missing-china-price-merida-reacto:tire-clearance',
+    'candidate:carbonda-cfr707:frame-weight',
+    'candidate:carbonda-cfr707:tire-clearance',
+    'candidate:carbonda-cfr707:frame-material',
+    'candidate:twitter-t10-pro:drivetrain'
+  ]);
+  const frozenFields = [
+    ['pardus-spark', 'frame-material'], ['pardus-spark', 'frame-stiffness'],
+    ['winspace-m6', 'frame-material'], ['winspace-m6', 'frame-stiffness'],
+    ['winspace-t1600', 'frame-material'], ['winspace-t1600', 'frame-stiffness'],
+    ['xds-ad350-2026', 'frame-material'], ['xds-ad350-2026', 'frame-stiffness'],
+    ['missing-china-price-giant-revolt-advanced', 'complete-weight'], ['missing-china-price-giant-revolt-advanced', 'tire-clearance'],
+    ['missing-china-price-giant-tcr-advanced', 'complete-weight'], ['missing-china-price-giant-tcr-advanced', 'tire-clearance'],
+    ['missing-china-price-merida-reacto', 'complete-weight'], ['missing-china-price-merida-reacto', 'tire-clearance'],
+    ['carbonda-cfr707', 'price'], ['carbonda-cfr707', 'frame-weight'], ['carbonda-cfr707', 'tire-clearance'], ['carbonda-cfr707', 'frame-material'],
+    ['dengfu-gravel', 'price'], ['dengfu-gravel', 'frame-weight'], ['dengfu-gravel', 'tire-clearance'], ['dengfu-gravel', 'frame-material'],
+    ['twitter-t10-pro', 'drivetrain'], ['twitter-t10-pro', 'tire-clearance']
+  ];
+  for (const [recordId, field] of frozenFields) {
+    const key = 'candidate:' + recordId + ':' + field;
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+    assert.ok(attempt, key);
+    const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+    assert.equal(applications.length, 50, key);
+    assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+    assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -355,7 +440,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1108);
+  assert.equal(data.researchAttempts.length, 1130);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -500,10 +585,11 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 217);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 208);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 209);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
+  assert.equal(catalogCandidates.find((entry) => entry.candidate.id === 'dengfu-gravel').defaultVisible, true);
 
   const pardus = catalogCandidates.find((entry) => entry.candidate.id === 'pardus-spark-sport-pes');
   assert.equal(pardus.defaultVisible, true);

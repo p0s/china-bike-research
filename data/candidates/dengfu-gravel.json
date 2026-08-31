@@ -1,18 +1,25 @@
 {
   "id": "dengfu-gravel",
-  "name": "Dengfu current gravel frame",
+  "name": "Dengfu R20 Disc Gravel Bike Frame",
   "type": "frameset",
-  "why_interesting": "Long-established carbon factory; exact current gravel mold may be competitive.",
+  "why_interesting": "The current official gravel frameset identity is now established, but publication-critical construction, weight, clearance and quote evidence remain absent.",
   "missing": [
-    "Exact model ID",
-    "Current geometry",
-    "Current standards and price"
+    "Current price or exact quote",
+    "Frame construction and size/finish-specific weight",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Current geometry, standards, package contents and support terms"
   ],
-  "status": "needs-exact-model",
+  "status": "exact-current-identity-specifications-unpublished",
   "source_ids": [
-    "dengfu-warranty-official-2026-08-17"
+    "dengfu-warranty-official-2026-08-17",
+    "dengfu-r20-current-official-2026-08-30"
   ],
-  "support_note": "Dengfu publishes a brand warranty route, but this candidate still lacks an exact model, so no model-specific coverage is inferred.",
-  "source_note": "The warranty source is brand-level only; identity, geometry, standards and price remain unresolved.",
-  "last_reviewed": "2026-08-17"
+  "support_note": "Dengfu publishes a brand warranty route, but exact R20 coverage and terms remain unconfirmed; no model-specific coverage is inferred.",
+  "source_note": "The current official R20 page resolves exact identity only. Its illustration and customization wording do not support a numeric price, material grade, frame weight or maximum tire clearance, so all four frozen specification fields remain unknown after the 50-area sweep.",
+  "last_reviewed": "2026-08-30",
+  "model_id": "dengfu-r20",
+  "category": "gravel",
+  "facts": {
+    "listing_identity": "Current official R20 Disc Gravel Bike Frame; textual price, material, weight and maximum-clearance specifications are unpublished"
+  }
 }
