@@ -4,15 +4,13 @@
   "model_id": "bianchi-sprint-icr",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "Exact official global all-round road build with component and size evidence; mainland availability remains unresolved.",
+  "why_interesting": "The current official YTBR6 platform now has a manufacturer-confirmed 32C maximum; exact-build weight remains dealer-conflicted.",
   "missing": [
-    "Mainland China SKU, dealer route, CNY price and stock",
-    "China warranty policy",
-    "Complete-bike/frame weight",
-    "Numerical geometry and tire-clearance limit",
-    "Direct image asset URL"
+    "Mainland dealer authority, stock, final CNY checkout and China warranty policy",
+    "Controlled exact-current-frame stiffness evidence",
+    "Direct rights-cleared image asset URL"
   ],
-  "status": "official-global-reference",
+  "status": "official-global-reference-clearance-found-weight-conflicted",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -23,15 +21,18 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6897.png#L2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "research_priority": "high",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Mainland China SKU, dealer route, CNY price and stock; China warranty policy; Complete-bike/frame weight; Numerical geometry and tire-clearance limit; Direct image asset URL",
   "source_ids": [
-    "bianchi-sprint-icr-official-2026-08-17"
+    "bianchi-sprint-icr-official-2026-08-17",
+    "bianchi-sprint-icr-uk-clearance-2026-09-01",
+    "bianchi-sprint-icr-probike-weight-2026-09-01",
+    "bianchi-sprint-icr-allegro-weight-2026-09-01"
   ],
-  "source_note": "Official Bianchi listing supports code YTBR6, the component build and €3,650 reference price. No mainland CNY price, dealer route or weight was verified.",
-  "source_url": "https://www.bianchi.com/en/shop/bikes/road/all-rounder/sprint/sprint-2/sprint-sprint-sprint-icr/",
+  "source_note": "Current official evidence establishes YTBR6 and 32C. Exact dealer claims of 8.5 kg without pedals and 9.0 kg are retained separately because size and weighing bases are not aligned.",
+  "source_url": "https://www.bianchi.com/shop/bikes/road/all-rounder/sprint/sprint/sprint-icr/?v=90c0481dbc33",
   "facts": {
     "drivetrain": "Shimano 105 Di2 2×12",
     "brakes": "Shimano BR-R7170 hydraulic disc",
@@ -40,6 +41,10 @@
     "wheels": "Velomann alloy 30 mm",
     "tires": "Vittoria Rubino IV 700×25",
     "cockpit": "Velomann",
-    "sizes": "47, 50, 53, 55, 57, 59, 61"
+    "sizes": "47, 50, 53, 55, 57, 59, 61",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current official regional Sprint ICR platform maximum",
+    "complete_weight_references": "8.5 kg without pedals for a current exact size-53 dealer listing and 9.0 kg on another current exact YTBR6-family dealer page; basis conflict unresolved",
+    "frame_stiffness_status": "No controlled numeric exact-current-model stiffness result found after 50 registered source areas"
   }
 }

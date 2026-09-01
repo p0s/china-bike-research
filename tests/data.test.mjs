@@ -458,6 +458,92 @@ test('batch 030 resolves exact frameset facts without transferring sibling or co
   }
 });
 
+test('batch 031 resolves current platform facts while preserving build and generation conflicts', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const sava = candidates.get('sava-r9');
+  assert.equal(sava.facts.tire_clearance_mm, 32);
+  assert.match(sava.facts.frame, /T800.*T1000/);
+  assert.match(sava.facts.complete_weight_references, /7\.27 kg.*7\.39 kg/);
+  assert.equal(sava.facts.complete_weight_g, undefined);
+
+  const bianchi = candidates.get('bianchi-sprint-icr');
+  assert.equal(bianchi.facts.tire_clearance_mm, 32);
+  assert.match(bianchi.facts.complete_weight_references, /8\.5 kg.*9\.0 kg/);
+  assert.equal(bianchi.facts.complete_weight_g, undefined);
+
+  const speed7Complete = candidates.get('lightcarbon-speed7-complete');
+  const speed7Frameset = candidates.get('lightcarbon-speed7-frameset');
+  assert.match(speed7Complete.facts.frame, /LCR017-D/);
+  assert.equal(speed7Complete.facts.tire_clearance_mm, 32);
+  assert.equal(speed7Complete.facts.complete_weight_g, undefined);
+  assert.match(speed7Frameset.facts.listing_identity, /Speed7\/速7.*LCR017-D/);
+  assert.equal(speed7Frameset.facts.frame_weight_g, 870);
+  assert.match(speed7Frameset.facts.frame_weight_basis, /size 52.*±30 g/);
+  assert.equal(speed7Frameset.facts.tire_clearance_mm, 32);
+
+  assert.equal(candidates.get('missing-china-price-giant-revolt-advanced').official_price.observed_at, '2026-09-01');
+  assert.equal(candidates.get('missing-china-price-giant-tcr-advanced').official_price.observed_at, '2026-09-01');
+  const reacto = candidates.get('missing-china-price-merida-reacto');
+  assert.equal(reacto.official_price.observed_at, '2026-09-01');
+  assert.match(reacto.facts.stiffness_evidence, /same molds.*same stiffness targets/);
+
+  const hiLight = candidates.get('hi-light-g0');
+  assert.match(hiLight.facts.frame_material, /Titanium.*carbon fork/);
+  assert.equal(hiLight.facts.frame_weight_g, undefined);
+  assert.match(hiLight.facts.stiffness_evidence, /3D-printed head section.*increased rigidity/);
+  assert.match(candidates.get('carbonda-cfr707').facts.frame_stiffness_status, /No controlled numeric/);
+
+  const foundFields = new Set([
+    'candidate:sava-r9:tire-clearance',
+    'candidate:sava-r9:frame-material',
+    'candidate:bianchi-sprint-icr:tire-clearance',
+    'candidate:lightcarbon-speed7-complete:tire-clearance',
+    'candidate:lightcarbon-speed7-frameset:tire-clearance',
+    'candidate:lightcarbon-speed7-frameset:frame-weight',
+    'candidate:lightcarbon-speed7-frameset:identity-source',
+    'candidate:missing-china-price-giant-revolt-advanced:price',
+    'candidate:missing-china-price-giant-tcr-advanced:price',
+    'candidate:missing-china-price-merida-reacto:price',
+    'candidate:missing-china-price-merida-reacto:frame-stiffness',
+    'candidate:hi-light-g0:frame-material',
+    'candidate:hi-light-g0:price',
+    'candidate:hi-light-g0:frame-stiffness'
+  ]);
+  const conflictedFields = new Set([
+    'candidate:sava-r9:complete-weight',
+    'candidate:bianchi-sprint-icr:complete-weight'
+  ]);
+  const targetFields = new Map([
+    ['sava-r9', ['complete-weight', 'tire-clearance', 'frame-material', 'frame-stiffness']],
+    ['bianchi-sprint-icr', ['complete-weight', 'tire-clearance', 'frame-stiffness']],
+    ['lightcarbon-speed7-complete', ['complete-weight', 'tire-clearance', 'frame-stiffness']],
+    ['lightcarbon-speed7-frameset', ['tire-clearance', 'frame-weight', 'identity-source', 'frame-stiffness']],
+    ['missing-china-price-giant-revolt-advanced', ['price', 'frame-stiffness']],
+    ['missing-china-price-giant-tcr-advanced', ['price', 'frame-stiffness']],
+    ['missing-china-price-merida-reacto', ['price', 'frame-stiffness']],
+    ['hi-light-g0', ['frame-weight', 'frame-material', 'price', 'frame-stiffness']],
+    ['carbonda-cfr707', ['frame-stiffness']]
+  ]);
+  for (const [recordId, fields] of targetFields) {
+    for (const field of fields) {
+      const key = `candidate:${recordId}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      const expected = foundFields.has(key) ? 'found' : conflictedFields.has(key) ? 'conflicted' : 'blocked';
+      assert.equal(attempt.status, expected, key);
+    }
+  }
+
+  const legacySpeed7 = data.researchAttempts.find((record) => record.id === 'candidate-lightcarbon-speed7-complete-complete-weight-2026-08-17');
+  const preservedQueries = new Set(legacySpeed7.required_channels.flatMap((channel) => legacySpeed7.channels[channel].attempts).map((attempt) => attempt.query));
+  assert.ok(preservedQueries.has('LightCarbon Speed7 105 mechanical complete bike complete-build weight community'));
+  assert.ok(preservedQueries.has('"LightCarbon Speed7" complete weight official'));
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -564,7 +650,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1167);
+  assert.equal(data.researchAttempts.length, 1188);
   assert.equal(products.length, data.variants.length);
 });
 
