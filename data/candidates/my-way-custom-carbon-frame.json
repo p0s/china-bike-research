@@ -4,12 +4,14 @@
   "model_id": "my-way-custom-carbon-frame",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Custom/open-mold style frameset; exact mold and test evidence needed.",
+  "why_interesting": "A low-price custom/open-mold-style carbon frameset lead whose manufacturer, mold and evidence basis remain unidentified.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Attributable manufacturer, mold number, model year and exact SKU",
+    "Frame construction, size/finish-specific weight and maximum clearance",
+    "Controlled stiffness or safety-test evidence",
+    "Seller authority, package, warranty and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "manufacturer-mold-and-specifications-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +22,9 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6869.png#L2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
+  "source_note": "The retained marketplace pixels remain the only exact lead. Unrelated Pinarello MyWay and generic custom-frame results were rejected; no technical value is inferred from appearance or category wording."
 }

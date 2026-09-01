@@ -4,13 +4,14 @@
   "model_id": "quick-t10",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Exact model visible.",
+  "why_interesting": "A retained QUICK T10 integrated aero-frameset card with no current manufacturer-model bridge.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Current or archived exact T10 manufacturer page, generation and complete package",
+    "Frame construction, size/finish-specific weight and maximum tire clearance",
+    "Controlled stiffness evidence",
+    "Domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-t10-current-product-bridge-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +22,12 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6890.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "quick-current-road-catalog-2026-09-01",
+    "quick-tt-one-official-2026-09-01"
+  ],
+  "source_url": "https://www.quick-bikes.com.cn/products/4.html",
+  "source_note": "The current official catalog contains no T10. TT:ONE is a distinct named product, so its 1,089 g frame and other specifications are not transferred to the retained T10 card."
 }

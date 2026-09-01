@@ -4,12 +4,14 @@
   "model_id": "java-tt-frame-hydraulic",
   "category": "triathlon",
   "type": "frameset",
-  "why_interesting": "Exact frame model and included parts unclear.",
+  "why_interesting": "A retained carbon hydraulic-brake triathlon-frameset card whose exact JAVA model and included package remain unresolved.",
   "missing": [
-    "Exact model year/SKU, complete BOM, and exact domestic warranty route",
-    "Seller/authenticity and final checkout price"
+    "Exact model year, generation, SKU and included frameset parts",
+    "Manufacturer-confirmed maximum tire clearance, frame weight and carbon construction",
+    "Controlled exact-frame stiffness evidence",
+    "Seller authority, domestic warranty route and final checkout conditions"
   ],
-  "status": "verify-before-publish",
+  "status": "exact-java-tt-frame-generation-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -20,5 +22,11 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6884.png#L1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "java-current-tt-products-2026-09-01"
+  ],
+  "source_url": "https://www.javabikes.com/Products/5.html",
+  "source_note": "The retained card remains the only exact visual record. Current JAVA evidence exposes multiple plausible TT products, so no newer model identity or sibling specification is transferred."
 }
