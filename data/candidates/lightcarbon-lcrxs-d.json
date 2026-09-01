@@ -5,11 +5,19 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "A separate-stem disc-road sibling of the older integrated platform, with five official size weights and full geometry.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, selected cockpit package and warranty route", "Independent exact-model stiffness result"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, selected cockpit package and warranty route",
+    "Independent exact-model stiffness result"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "low",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcrxs-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "No attributable exact current price or mainland checkout after 50 registered areas; secondary 2023 £500 snapshot rejected",
+  "source_ids": [
+    "lightcarbon-lcrxs-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29"
+  ],
   "facts": {
     "frame": "LCRXS-D aero road disc frameset with integrated-routing stem",
     "frame_material": "Toray T700 carbon",
@@ -26,6 +34,6 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page identifies LCRXS-D and supplies the size weights, standards and geometry. Current production and price remain unresolved.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page remains quote-only. A secondary £500 2023 record was rejected because it is historical and incorrectly labels the disc model as rim brake, weakening package attribution.",
+  "last_reviewed": "2026-09-01"
 }
