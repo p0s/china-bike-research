@@ -19,17 +19,28 @@
     "xhs-pardus-spark-sport-pes-1200km-2026-08-10",
     "xhs-pardus-spark-sport-pes-review-lead-2026-08-10",
     "pardus-spark-sport-official-cn-2026-08-17",
-    "pardus-spark-family-official-2026-08-17"
+    "pardus-spark-family-official-2026-08-17",
+    "pardus-spark-gen3-owner-2026-08-30"
   ],
   "observed_at": "2026-08-08",
-  "observed_price": {"amount_cny": 8597.25, "currency": "CNY", "observed_at": "2026-08-08", "price_basis": "coupon", "observation_count": 2},
+  "observed_price": {
+    "amount_cny": 8597.25,
+    "currency": "CNY",
+    "observed_at": "2026-08-08",
+    "price_basis": "coupon",
+    "observation_count": 2
+  },
   "facts": {
     "drivetrain": "Official Spark Sport reference: Magene QED electronic 2×12 with hydraulic discs; exact PES mapping remains unconfirmed",
     "complete_weight_g": 8500,
     "frame": "HS-EPS+ carbon",
-    "wheels": "Official Spark Sport reference: PW5 alloy"
+    "wheels": "Official Spark Sport reference: PW5 alloy",
+    "complete_weight_basis": "Current exact 2026 Spark Sport 3 PES size-XS owner-build report; pedals, scale protocol and stock-component continuity unpublished",
+    "tires": "Official current platform shows fitted 700×28C; exact PES maximum unresolved",
+    "tire_clearance_status": "No generation-safe manufacturer maximum attributable to the exact PES build after 50 registered source areas",
+    "stiffness_evidence": "Manufacturer claims the exact Spark Sport platform has 20% higher pedaling stiffness than its predecessor from revised tube shapes and HS-grade carbon; public protocol unpublished"
   },
-  "source_note": "The owner reports about ¥5,999 and roughly 8.5 kg for an XS stock bike without pedals, plus heavier stock wheels and one slow brake-lever return. The retained ¥8,597.25 marketplace record may represent another trim or channel.",
+  "source_note": "A current exact 2026 Spark Sport 3 PES size-XS owner build reports about 8.5 kg, while the official Spark Sport platform claims 20% higher pedaling stiffness than its predecessor. Fitted 28C tires and older Spark-family maximum language do not establish the exact PES maximum.",
   "source_refs": "IMG_6882.png#L2, IMG_6888.png#L1",
-  "last_reviewed": "2026-08-10"
+  "last_reviewed": "2026-09-01"
 }

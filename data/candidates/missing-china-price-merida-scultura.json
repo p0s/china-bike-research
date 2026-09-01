@@ -24,7 +24,7 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "The exact mainland page identifies SCULTURA CF3 V; the current-generation manufacturer technical page publishes a 30 mm maximum for the shared CF3/CF5 platform.",
+  "source_note": "The current exact mainland page lists CNY 16,800, an 8.2 kg size-M reference and qualitative AWS/NACA stiffness claims. The current-generation manufacturer technical page publishes a 30 mm maximum for the shared CF3/CF5 platform.",
   "source_url": "https://www.merida.cn/index/bikefinder/detail/id/23.html",
   "facts": {
     "drivetrain": "Shimano 105 Di2 2×12",
@@ -37,6 +37,8 @@
     "sizes": "3XS, XXS, XS, S, M, L, XL",
     "complete_weight_g": 8200,
     "tire_clearance_mm": 30,
-    "tire_clearance_basis": "Current-generation manufacturer maximum for SCULTURA V CF3/CF5; exact mainland build identifies CF3 V"
+    "tire_clearance_basis": "Current-generation manufacturer maximum for SCULTURA V CF3/CF5; exact mainland build identifies CF3 V",
+    "complete_weight_basis": "Current exact mainland manufacturer reference for size M; weight can vary by size, paint and supply-chain component substitutions",
+    "stiffness_evidence": "Manufacturer says the exact model page’s AWS anti-wrinkle process increases stiffness and its NACA tube shapes balance aerodynamic and stiffness performance; qualitative claim without a public protocol"
   }
 }

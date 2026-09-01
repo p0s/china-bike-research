@@ -19,15 +19,23 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
-  "source_ids": ["twitter-cyclone-r7120-official-2026-08-17"],
+  "source_ids": [
+    "twitter-cyclone-r7120-official-2026-08-17",
+    "twitter-cyclone-r7120-global-current-2026-09-01"
+  ],
   "facts": {
     "drivetrain": "Shimano 105 R7120 hydraulic 2×12",
     "complete_weight_g": 8700,
     "bottom_bracket": "T47×24",
-    "tires": "Maxxis 700×28",
-    "sizes": "43.5, 46, 48, 50, 52 and 54"
+    "tires": "Maxxis 700×28C fitted; manufacturer maximum unresolved",
+    "sizes": "43.5, 46, 48, 50, 52 and 54",
+    "complete_weight_status": "Current manufacturer conflict: 8.7 kg regional configurable page versus 9.3 kg global specification; size, accessories and weighing protocol do not reconcile the values",
+    "complete_weight_basis": "Regional exact-page base estimate retained for the catalog row; treat as conflicted with the current 9.3 kg global specification",
+    "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 28C tire is not treated as clearance",
+    "frame_material": "High-modulus carbon frame with full-carbon fork; exact fiber grade and lay-up unpublished",
+    "stiffness_evidence": "Manufacturer describes the exact Cyclone 3rd chassis as engineered for aerodynamic stability and efficient power delivery; qualitative claim without a numeric protocol"
   },
-  "source_note": "The official global storefront lists this exact build at US$1,589. That foreign price is reference-only; the retained ¥7,769 record is the separate China-market observation.",
+  "source_note": "Current exact manufacturer pages agree on the high-modulus carbon platform and qualitative power-delivery claim but conflict on complete weight: 8.7 kg regionally versus 9.3 kg globally. Both show fitted 700x28C tires without a manufacturer maximum.",
   "source_refs": "IMG_6896.png#L2",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }
