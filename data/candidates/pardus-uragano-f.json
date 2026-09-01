@@ -17,11 +17,16 @@
     "price_basis": "official-store-promotion",
     "observation_count": 1
   },
-  "source_ids": ["pardus-uragano-f-official-store-promo-2026-08"],
+  "source_ids": [
+    "pardus-uragano-f-official-store-promo-2026-08"
+  ],
   "facts": {
     "drivetrain": "12-speed flat-bar gravel configuration",
-    "frame": "PARDUS Uragano F platform"
+    "frame": "PARDUS Uragano F platform",
+    "complete_weight_status": "No exact-build complete weight or measurement basis found after 50 registered source areas",
+    "tire_clearance_status": "No manufacturer maximum attributable to the exact Uragano F build found after 50 registered source areas",
+    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
   },
-  "source_note": "The public official-store mirror showed ¥4,849 against ¥7,099 during a promotion ending 2026-08-19. It is a time-bounded observation, not an evergreen list price, and checkout was not tested.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The public official-store mirror showed ¥4,849 against ¥7,099 during a promotion ending 2026-08-19. It is a time-bounded observation, not an evergreen list price, and checkout was not tested. Exact complete weight, maximum clearance and stiffness remain unresolved after 50 areas.",
+  "last_reviewed": "2026-09-01"
 }

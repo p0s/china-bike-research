@@ -827,6 +827,90 @@ test('batch 034 resolves exact current build facts and exhausts every remaining 
   }
 });
 
+test('batch 035 records exact weights and configurations while preserving mainland and technical unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+
+  assert.match(candidates.get('laget-pioneer-one').facts.frame_stiffness_status, /No exact-model numeric.*50 registered source areas/);
+  assert.match(candidates.get('laget-pioneer').facts.frame_stiffness_status, /No exact-model numeric.*50 registered source areas/);
+
+  const vanyar = candidates.get('missing-china-price-elves-vanyar');
+  assert.equal(vanyar.facts.frame_weight_g, 870);
+  assert.match(vanyar.facts.frame_weight_basis, /size 47.*unpainted without metal parts.*1,050 g in size 62/);
+  assert.match(vanyar.facts.price_status, /US\$1,100.*no attributable mainland CNY/);
+  assert.match(vanyar.facts.stiffness_evidence, /race-sprinting stiffness and power-transfer intent/);
+
+  const attack = candidates.get('missing-china-price-tavelo-attack');
+  assert.equal(attack.facts.frame_weight_g, 860);
+  assert.match(attack.facts.frame_weight_basis, /size XS \(430\)/);
+  assert.match(attack.facts.price_status, /US\$1,500.*no attributable mainland CNY/);
+  assert.match(attack.facts.stiffness_evidence, /stiff enough to win a sprint/);
+
+  const uraganoF = candidates.get('pardus-uragano-f');
+  assert.equal(uraganoF.facts.complete_weight_g, undefined);
+  assert.match(uraganoF.facts.complete_weight_status, /No exact-build complete weight/);
+  assert.match(uraganoF.facts.tire_clearance_status, /No manufacturer maximum attributable to the exact Uragano F/);
+  assert.match(uraganoF.facts.frame_stiffness_status, /No exact-model numeric/);
+
+  const roubaix = candidates.get('missing-china-price-specialized-roubaix-sl8');
+  assert.match(roubaix.facts.drivetrain, /Tiagra hydraulic 2x10.*105 R7000.*11-34T.*50\/34T/);
+  assert.equal(roubaix.official_price.amount_cny, 15990);
+  assert.equal(roubaix.facts.complete_weight_g, 9460);
+  assert.match(roubaix.facts.complete_weight_basis, /size 56.*production-painted/);
+  assert.match(roubaix.facts.frame_stiffness_status, /compliance evidence is kept separate/);
+
+  const sava = candidates.get('sava-f20-hawkeye');
+  assert.equal(sava.facts.complete_weight_g, 8700);
+  assert.match(sava.facts.complete_weight_basis, /varies by size/);
+  assert.match(sava.facts.tire_clearance_status, /fitted 25C tire is not treated as clearance/);
+  assert.match(sava.facts.price_status, /US\$1,899.*no attributable mainland CNY/);
+  assert.match(sava.facts.frame_stiffness_status, /No exact-model numeric/);
+
+  const camp = platforms.get('camp-gx600');
+  assert.equal(camp.tire_clearance.stock_nominal_mm, 35);
+  assert.match(camp.tire_clearance.note, /fitted 700x35C tire but no manufacturer maximum/);
+  assert.match(camp.frame.geometry_status, /No attributable numeric geometry table/);
+  assert.match(camp.frame.frame_weight_status, /No frame-only/);
+  assert.equal(camp.frame.bottom_bracket, 'unknown');
+  assert.match(camp.frame.bottom_bracket_status, /No attributable shell standard/);
+
+  const foundFields = new Set([
+    'candidate:missing-china-price-elves-vanyar:frame-weight',
+    'candidate:missing-china-price-elves-vanyar:frame-stiffness',
+    'candidate:missing-china-price-tavelo-attack:frame-weight',
+    'candidate:missing-china-price-tavelo-attack:frame-stiffness',
+    'candidate:missing-china-price-specialized-roubaix-sl8:drivetrain',
+    'candidate:missing-china-price-specialized-roubaix-sl8:price',
+    'candidate:missing-china-price-specialized-roubaix-sl8:complete-weight',
+    'candidate:sava-f20-hawkeye:complete-weight'
+  ]);
+  const targetFields = new Map([
+    ['candidate:laget-pioneer-one', ['frame-stiffness']],
+    ['candidate:laget-pioneer', ['frame-stiffness']],
+    ['candidate:missing-china-price-elves-vanyar', ['frame-weight', 'price', 'frame-stiffness']],
+    ['candidate:missing-china-price-tavelo-attack', ['frame-weight', 'price', 'frame-stiffness']],
+    ['candidate:pardus-uragano-f', ['complete-weight', 'tire-clearance', 'frame-stiffness']],
+    ['candidate:missing-china-price-specialized-roubaix-sl8', ['drivetrain', 'price', 'complete-weight', 'frame-stiffness']],
+    ['candidate:sava-f20-hawkeye', ['tire-clearance', 'price', 'complete-weight', 'frame-stiffness']],
+    ['platform:camp-gx600', ['tire-clearance', 'geometry', 'frame-weight', 'bottom-bracket']]
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+  assert.equal(fieldCount, 23);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -933,7 +1017,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1252);
+  assert.equal(data.researchAttempts.length, 1275);
   assert.equal(products.length, data.variants.length);
 });
 
