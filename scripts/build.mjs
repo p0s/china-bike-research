@@ -196,10 +196,10 @@ write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // The 258-row unified catalog with production project-base links, typed filters,
 // Build handoff, curated comparison starts, exact-image metadata, and current
-// reference prices measured 990,852 bytes on 2026-09-01. These limits retain
-// modest growth headroom while keeping the full candidate set available without
-// a second page or client-side data fetch.
-const performanceBudget = { home_html_bytes: 994_000, home_elements: 7_535 };
+// reference prices measured 994,022 bytes with the production project base on
+// 2026-09-01. These limits retain modest growth headroom while keeping the full
+// candidate set available without a second page or client-side data fetch.
+const performanceBudget = { home_html_bytes: 998_000, home_elements: 7_535 };
 const performance = {
   home_html_bytes: Buffer.byteLength(homeHtml),
   home_elements: (homeHtml.match(/<[a-z][^>]*>/gi) ?? []).length

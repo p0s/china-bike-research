@@ -1,0 +1,485 @@
+{
+  "id": "candidate-hi-light-g7-2-price-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-g7-2"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand YouTube channel — field candidate:hi-light-g7-2:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent YouTube review or build — field candidate:hi-light-g7-2:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand Bilibili account — field candidate:hi-light-g7-2:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent Bilibili review or build — field candidate:hi-light-g7-2:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand Xiaohongshu account — field candidate:hi-light-g7-2:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent Xiaohongshu post — field candidate:hi-light-g7-2:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand Douyin account — field candidate:hi-light-g7-2:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent Douyin post — field candidate:hi-light-g7-2:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand Weibo account — field candidate:hi-light-g7-2:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent Weibo post — field candidate:hi-light-g7-2:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Brand WeChat public article — field candidate:hi-light-g7-2:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent WeChat public article — field candidate:hi-light-g7-2:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Cycling forum thread — field candidate:hi-light-g7-2:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Public owner build log — field candidate:hi-light-g7-2:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Public community photo or setup post — field candidate:hi-light-g7-2:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer exact-product page — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer exact-product page — price",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact-model official CNY 6,500 retail price found.",
+          "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer model-family or category page — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer current catalog — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer archived catalog — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer product manual — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer geometry document — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer technical paper or test note — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer support or warranty page — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer newsroom or launch page — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer site search — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer sitemap or indexed route inventory — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer structured page metadata — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer regional site — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer-listed distributor — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer dealer locator — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Manufacturer-operated online store — field candidate:hi-light-g7-2:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Official Taobao store or exact item — field candidate:hi-light-g7-2:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Official Tmall store or exact item — field candidate:hi-light-g7-2:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Official JD store or exact item — field candidate:hi-light-g7-2:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Verified Alibaba or 1688 supplier route — field candidate:hi-light-g7-2:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Official AliExpress store or exact item — field candidate:hi-light-g7-2:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Authorized mainland dealer — field candidate:hi-light-g7-2:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Authorized regional dealer — field candidate:hi-light-g7-2:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — International specialist retailer — field candidate:hi-light-g7-2:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Cycling-industry review publication — field candidate:hi-light-g7-2:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Chinese cycling-media publication — field candidate:hi-light-g7-2:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent laboratory or instrumented test — field candidate:hi-light-g7-2:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Print or digital magazine archive — field candidate:hi-light-g7-2:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Trade-show coverage — field candidate:hi-light-g7-2:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Race-team equipment page — field candidate:hi-light-g7-2:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Event or exhibitor catalog — field candidate:hi-light-g7-2:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Independent geometry database — field candidate:hi-light-g7-2:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Component compatibility database — field candidate:hi-light-g7-2:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Product certification or registration database — field candidate:hi-light-g7-2:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Hi-Light G7.2 titanium frameset — price, frame-stiffness — Public web archive — field candidate:hi-light-g7-2:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Hi-Light G7.2 titanium frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "hi-light-g7-2-official-current-2026-09-01"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-hi-light-g7-2-batch-046-50-area-sweep-2026-09-01.json. Current exact-model official CNY 6,500 retail price found."
+}

@@ -1677,6 +1677,69 @@ test('batch 045 resolves fifteen exact fields and exhausts one unknown across fi
   assert.equal(fieldCount, 16);
 });
 
+test('batch 046 resolves fifteen exact fields and exhausts seven unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+  const prices = new Map(data.prices.map((price) => [price.id, price]));
+
+  assert.equal(prices.get('elves-mori-aerox-global-official-2026-09-01').amount_cny, 6706);
+  assert.equal(prices.get('evolve-cima-gr-global-official-2026-09-01').amount_cny, 13433);
+  assert.equal(prices.get('quick-gr-one-global-official-2026-09-01').amount_cny, 14105);
+  assert.equal(prices.get('sava-gelaro-s8-global-official-2026-09-01').amount_cny, 14777);
+  assert.equal(candidates.get('hi-light-g7-2').observed_price.amount_cny, 6500);
+  assert.match(candidates.get('quick-pro-xr-one-frameset-aelous-gravel').facts.frame_weight_basis, /839 g size-M.*5%/i);
+  assert.match(platforms.get('elves-mori-aerox').frame.stiffness_evidence, /18,000 km.*not instrumented/i);
+  assert.match(platforms.get('evolve-cima-gr').frame.stiffness_evidence, /1.2%.*7.5%.*protocol/i);
+  assert.match(platforms.get('ican-gra04').frame.stiffness_evidence, /manufacturer-hosted.*not an independent/i);
+  assert.match(platforms.get('quick-gr-one').frame.stiffness_evidence, /manufacturer-hosted.*not an independent/i);
+  assert.match(platforms.get('twitter-gravel-v3-2024').frame.stiffness_evidence, /No exact-2024-generation.*50-area/i);
+  assert.match(variants.get('sava-gelaro-s8').purchase_route, /US\$2,199.*factory-direct/i);
+
+  const targetFields = new Map([
+    ['platform:sava-gelaro', ['frame-weight']],
+    ['variant:elves-mori-aerox-frameset', ['price', 'purchase-route']],
+    ['platform:elves-mori-aerox', ['frame-stiffness']],
+    ['variant:evolve-cima-gr-frameset', ['price', 'purchase-route']],
+    ['platform:evolve-cima-gr', ['frame-stiffness']],
+    ['variant:ican-gra04-frameset', ['price', 'purchase-route']],
+    ['platform:ican-gra04', ['frame-stiffness']],
+    ['variant:quick-gr-one-frameset', ['price', 'purchase-route']],
+    ['platform:quick-gr-one', ['frame-stiffness']],
+    ['platform:sava-gelaro-sf', ['bottom-bracket']],
+    ['variant:twitter-v3-2024-rs-sensah-alloy', ['purchase-route']],
+    ['platform:twitter-gravel-v3-2024', ['frame-stiffness']],
+    ['candidate:hi-light-g7-2', ['price', 'frame-stiffness']],
+    ['platform:sava-gelaro-s8', ['frame-weight', 'bottom-bracket']],
+    ['variant:sava-gelaro-s8', ['purchase-route']],
+    ['candidate:quick-pro-xr-one-frameset-aelous-gravel', ['frame-weight']]
+  ]);
+  const blocked = new Set([
+    'platform:sava-gelaro:frame-weight',
+    'variant:ican-gra04-frameset:price',
+    'platform:sava-gelaro-sf:bottom-bracket',
+    'platform:twitter-gravel-v3-2024:frame-stiffness',
+    'candidate:hi-light-g7-2:frame-stiffness',
+    'platform:sava-gelaro-s8:frame-weight',
+    'platform:sava-gelaro-s8:bottom-bracket'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((entry) => entry.target.record_type === recordType && entry.target.record_id === recordId && entry.field === field && entry.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = Object.values(attempt.channels).flatMap((channel) => channel.attempts ?? []);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 22);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1774,7 +1837,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 63);
+  assert.equal(data.prices.length, 67);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -1783,7 +1846,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1408);
+  assert.equal(data.researchAttempts.length, 1425);
   assert.equal(products.length, data.variants.length);
 });
 
