@@ -1,0 +1,485 @@
+{
+  "id": "candidate-twitter-t10-pro-complete-weight-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-t10-pro"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand YouTube channel — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand YouTube channel — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent YouTube review or build — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent YouTube review or build — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand Bilibili account — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand Bilibili account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent Bilibili review or build — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent Bilibili review or build — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand Xiaohongshu account — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand Xiaohongshu account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent Xiaohongshu post — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent Xiaohongshu post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand Douyin account — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand Douyin account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent Douyin post — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent Douyin post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand Weibo account — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand Weibo account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent Weibo post — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent Weibo post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Brand WeChat public article — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Brand WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent WeChat public article — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Cycling forum thread — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Cycling forum thread — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Public owner build log — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Public owner build log — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Public community photo or setup post — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Public community photo or setup post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer exact-product page — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer exact-product page — complete-weight",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact storefront publishes the base estimate and qualitative stiffness language. This area was applied specifically to complete-weight; its evidence was accepted for this field.",
+          "result_url": "https://twitterbikeusa.com/products/t10-pro-2rd-twitter-carbon-road-bike"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer model-family or category page — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer model-family or category page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer current catalog — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer current catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer archived catalog — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer archived catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer product manual — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer product manual — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer geometry document — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer geometry document — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer technical paper or test note — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer technical paper or test note — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer support or warranty page — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer support or warranty page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer newsroom or launch page — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer newsroom or launch page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer site search — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer site search — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer sitemap or indexed route inventory — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer structured page metadata — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer structured page metadata — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer regional site — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer regional site — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer-listed distributor — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer-listed distributor — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer dealer locator — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer dealer locator — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Manufacturer-operated online store — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Manufacturer-operated online store — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Official Taobao store or exact item — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Official Taobao store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Official Tmall store or exact item — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Official Tmall store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Official JD store or exact item — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Official JD store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Verified Alibaba or 1688 supplier route — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Verified Alibaba or 1688 supplier route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Official AliExpress store or exact item — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Official AliExpress store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Authorized mainland dealer — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Authorized mainland dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Authorized regional dealer — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Authorized regional dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — International specialist retailer — field candidate:twitter-t10-pro:complete-weight",
+          "route": "International specialist retailer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Cycling-industry review publication — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Cycling-industry review publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Chinese cycling-media publication — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Chinese cycling-media publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent laboratory or instrumented test — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent laboratory or instrumented test — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Print or digital magazine archive — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Print or digital magazine archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Trade-show coverage — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Trade-show coverage — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Race-team equipment page — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Race-team equipment page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Event or exhibitor catalog — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Event or exhibitor catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Independent geometry database — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Independent geometry database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Component compatibility database — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Component compatibility database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Product certification or registration database — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Product certification or registration database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "TWITTER T10 Pro 2rd 8.8kg stiffness carbon aero — Public web archive — field candidate:twitter-t10-pro:complete-weight",
+          "route": "Public web archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for TWITTER T10 Pro - 2rd complete bike; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-t10-pro-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-t10-pro-batch-033-50-area-sweep-2026-09-01.json. The current exact page publishes an 8.8 kg base estimate across three selectable drivetrain builds; size and weighing protocol are unpublished."
+}

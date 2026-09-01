@@ -6,7 +6,7 @@
   },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-01",
   "required_channels": [
     "public-post",
     "web"
@@ -16,7 +16,141 @@
       "status": "blocked",
       "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
       "attempts": [
-        { "attempt": 1, "query": "Giant Defy Advanced SL 1 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced SL 1 价格",
+          "route": "canonical XHS pool availability preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-28",
+          "note": "No query was executed because the shared lane was already occupied.",
+          "approach_area_id": "independent-xiaohongshu"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "brand-youtube",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand YouTube channel — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "independent-youtube",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent YouTube review or build — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-bilibili",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand Bilibili account — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "independent-bilibili",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent Bilibili review or build — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand Xiaohongshu account — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand Douyin account — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent Douyin post — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand Weibo account — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent Weibo post — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Brand WeChat public article — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent WeChat public article — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Cycling forum thread — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Public owner build log — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Public community photo or setup post — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
       ]
     },
     "web": {
@@ -29,7 +163,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "Wrong trim.",
-          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1790"
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1790",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -38,7 +173,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No exact candidate.",
-          "result_url": "https://giant.com.cn/index.php/index/bike_finder.html"
+          "result_url": "https://giant.com.cn/index.php/index/bike_finder.html",
+          "approach_area_id": "manufacturer-current-catalog"
         },
         {
           "attempt": 3,
@@ -47,7 +183,296 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "Route only.",
-          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant",
+          "approach_area_id": "manufacturer-dealer-locator"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer model-family or category page — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer archived catalog — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer product manual — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer geometry document — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer technical paper or test note — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer support or warranty page — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer newsroom or launch page — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer site search — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer sitemap or indexed route inventory — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer structured page metadata — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer regional site — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer-listed distributor — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Manufacturer-operated online store — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Official Taobao store or exact item — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Official Tmall store or exact item — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Official JD store or exact item — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Verified Alibaba or 1688 supplier route — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Official AliExpress store or exact item — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Authorized mainland dealer — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Authorized regional dealer — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — International specialist retailer — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Cycling-industry review publication — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Chinese cycling-media publication — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent laboratory or instrumented test — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Print or digital magazine archive — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Trade-show coverage — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Race-team equipment page — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Event or exhibitor catalog — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Independent geometry database — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Component compatibility database — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Product certification or registration database — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Giant Defy Advanced SL 1 2026 mainland price complete weight 7.4kg — Public web archive — field candidate:giant-defy-advanced-sl1-community-lead:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Giant Defy Advanced SL 1 retained community lead; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
         }
       ]
     }
@@ -55,5 +480,6 @@
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": "2026-09-10",
-  "notes": "The 2026 SL1 is absent from the current mainland catalog and no exact dealer price or stock was exposed; absence is not treated as non-availability."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/candidate-giant-defy-advanced-sl1-community-lead-batch-033-50-area-sweep-2026-09-01.json. The 4 original 2026-08-17 applications retain their original queries, routes, outcomes, dates, URLs and notes and are assigned to matching registered areas. Current official regional prices do not establish a mainland CNY amount, and the exact 2026 SL 1 was not found with an attributable mainland checkout price.",
+  "minimum_distinct_approaches": 50
 }

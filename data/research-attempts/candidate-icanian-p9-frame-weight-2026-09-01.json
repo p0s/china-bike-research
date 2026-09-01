@@ -1,0 +1,488 @@
+{
+  "id": "candidate-icanian-p9-frame-weight-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "icanian-p9"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand YouTube channel — field candidate:icanian-p9:frame-weight",
+          "route": "Brand YouTube channel — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent YouTube review or build — field candidate:icanian-p9:frame-weight",
+          "route": "Independent YouTube review or build — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand Bilibili account — field candidate:icanian-p9:frame-weight",
+          "route": "Brand Bilibili account — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent Bilibili review or build — field candidate:icanian-p9:frame-weight",
+          "route": "Independent Bilibili review or build — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand Xiaohongshu account — field candidate:icanian-p9:frame-weight",
+          "route": "Brand Xiaohongshu account — frame-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent Xiaohongshu post — field candidate:icanian-p9:frame-weight",
+          "route": "Independent Xiaohongshu post — frame-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand Douyin account — field candidate:icanian-p9:frame-weight",
+          "route": "Brand Douyin account — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent Douyin post — field candidate:icanian-p9:frame-weight",
+          "route": "Independent Douyin post — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand Weibo account — field candidate:icanian-p9:frame-weight",
+          "route": "Brand Weibo account — frame-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent Weibo post — field candidate:icanian-p9:frame-weight",
+          "route": "Independent Weibo post — frame-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Brand WeChat public article — field candidate:icanian-p9:frame-weight",
+          "route": "Brand WeChat public article — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent WeChat public article — field candidate:icanian-p9:frame-weight",
+          "route": "Independent WeChat public article — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Cycling forum thread — field candidate:icanian-p9:frame-weight",
+          "route": "Cycling forum thread — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Public owner build log — field candidate:icanian-p9:frame-weight",
+          "route": "Public owner build log — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Public community photo or setup post — field candidate:icanian-p9:frame-weight",
+          "route": "Public community photo or setup post — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "Current exact manufacturer pages conflict: the frame page lists 2,570 +/- 40 g through M and 2,620 +/- 40 g in L, while the complete-bike page claims 2,400 +/- 20 g.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer exact-product page — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer exact-product page — frame-weight",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact frame page publishes compatibility, construction, qualitative stiffness and size-specific weights. This area was applied specifically to frame-weight; its evidence was accepted for this field.",
+          "result_url": "https://www.icanian.com/product/carbon-enduro-frame-carbon-mtb-bike-frame-icanian/"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer model-family or category page — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer model-family or category page — frame-weight",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact P9 complete-bike page provides a conflicting frame-weight claim. This area was applied specifically to frame-weight; its evidence was accepted for this field.",
+          "result_url": "https://www.icanian.com/product/full-carbon-enduro-full-suspension-mtb-bike-icanian-p9/"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer current catalog — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer current catalog — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer archived catalog — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer archived catalog — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer product manual — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer product manual — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer geometry document — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer geometry document — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer technical paper or test note — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer technical paper or test note — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer support or warranty page — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer support or warranty page — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer newsroom or launch page — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer newsroom or launch page — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer site search — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer site search — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer sitemap or indexed route inventory — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer structured page metadata — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer structured page metadata — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer regional site — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer regional site — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer-listed distributor — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer-listed distributor — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer dealer locator — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer dealer locator — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Manufacturer-operated online store — field candidate:icanian-p9:frame-weight",
+          "route": "Manufacturer-operated online store — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Official Taobao store or exact item — field candidate:icanian-p9:frame-weight",
+          "route": "Official Taobao store or exact item — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Official Tmall store or exact item — field candidate:icanian-p9:frame-weight",
+          "route": "Official Tmall store or exact item — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Official JD store or exact item — field candidate:icanian-p9:frame-weight",
+          "route": "Official JD store or exact item — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Verified Alibaba or 1688 supplier route — field candidate:icanian-p9:frame-weight",
+          "route": "Verified Alibaba or 1688 supplier route — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Official AliExpress store or exact item — field candidate:icanian-p9:frame-weight",
+          "route": "Official AliExpress store or exact item — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Authorized mainland dealer — field candidate:icanian-p9:frame-weight",
+          "route": "Authorized mainland dealer — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Authorized regional dealer — field candidate:icanian-p9:frame-weight",
+          "route": "Authorized regional dealer — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — International specialist retailer — field candidate:icanian-p9:frame-weight",
+          "route": "International specialist retailer — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Cycling-industry review publication — field candidate:icanian-p9:frame-weight",
+          "route": "Cycling-industry review publication — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Chinese cycling-media publication — field candidate:icanian-p9:frame-weight",
+          "route": "Chinese cycling-media publication — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent laboratory or instrumented test — field candidate:icanian-p9:frame-weight",
+          "route": "Independent laboratory or instrumented test — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Print or digital magazine archive — field candidate:icanian-p9:frame-weight",
+          "route": "Print or digital magazine archive — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Trade-show coverage — field candidate:icanian-p9:frame-weight",
+          "route": "Trade-show coverage — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Race-team equipment page — field candidate:icanian-p9:frame-weight",
+          "route": "Race-team equipment page — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Event or exhibitor catalog — field candidate:icanian-p9:frame-weight",
+          "route": "Event or exhibitor catalog — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Independent geometry database — field candidate:icanian-p9:frame-weight",
+          "route": "Independent geometry database — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Component compatibility database — field candidate:icanian-p9:frame-weight",
+          "route": "Component compatibility database — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Product certification or registration database — field candidate:icanian-p9:frame-weight",
+          "route": "Product certification or registration database — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ICANIAN P9 frame 27.5x3.0 29x2.3 2570 2400 T700 T800 stiffness — Public web archive — field candidate:icanian-p9:frame-weight",
+          "route": "Public web archive — frame-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for ICANIAN P9 enduro frameset; it yielded no additional attributable evidence. This area was applied specifically to frame-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "icanian-p9-official-2026-08-08",
+    "icanian-p9-complete-bike-current-2026-09-01"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-p9-batch-033-50-area-sweep-2026-09-01.json. Current exact manufacturer pages conflict: the frame page lists 2,570 +/- 40 g through M and 2,620 +/- 40 g in L, while the complete-bike page claims 2,400 +/- 20 g."
+}
