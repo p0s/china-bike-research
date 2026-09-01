@@ -22,21 +22,31 @@
     "taobao-snapshot-2026-08-08",
     "twitter-bikes-gravel-catalog-2026-08-08",
     "twitter-cyclone-gen3-et-usa-2026-08-17",
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-et-official-2026-08-29"
   ],
   "drivetrain": {
     "brand": "WheelTop",
-    "model": "EDS",
+    "model": "EDS TX",
     "speeds": "2x12",
     "shifting": "electronic-wireless",
     "layout": "double"
   },
   "brakes": {
     "actuation": "hydraulic",
-    "type": "disc"
+    "type": "disc",
+    "rotors": "160 mm front and rear"
   },
-  "tires": "700×28C",
-  "cockpit": { "material": "carbon", "integrated": true, "dimensions": "420×90 mm" },
+  "tires": "RS foldable reflective-edge 700×28C",
+  "cockpit": {
+    "material": "high-modulus carbon fiber",
+    "integrated": true,
+    "dimensions": "420×90 mm",
+    "routing": "fully internal"
+  },
   "claimed_complete_weight_g": 9200,
-  "purchase_route": "Official US made-to-order route at US$1,489; the mainland product page verifies identity but did not expose a current CNY checkout amount."
+  "purchase_route": "Current official made-to-order international route from US$1,489; the exact mainland product route verifies identity but does not expose a current CNY checkout amount.",
+  "wheels": "RS AL7005 double-wall alloy, W21×H38 mm",
+  "claimed_complete_weight_basis": "Current exact manufacturer base estimate; size, pedals, accessories and weighing protocol were not stated",
+  "last_reviewed": "2026-09-01"
 }
