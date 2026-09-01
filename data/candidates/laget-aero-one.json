@@ -4,13 +4,13 @@
   "model_id": "laget-aero-one",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Rare fully 3D-printed Chinese titanium aero-road frame; major technology showcase.",
+  "why_interesting": "A current fully 3D-printed titanium road frameset with a titanium fork and exact size-M frame reference.",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Exact included package and weight inclusions",
+    "China checkout, domestic warranty entity and after-sales terms",
     "Rights-cleared exact product image"
   ],
-  "status": "titanium-priority",
+  "status": "exact-current-weight-material-and-price-confirmed",
   "source_ids": [
     "titanium-laget-aero-one-official"
   ],
@@ -18,14 +18,17 @@
     "amount_cny": 58800,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-09-01"
   },
   "source_url": "https://lagetbike.com/productinfo/134815.html",
-  "source_note": "The current exact manufacturer page lists CNY 58,800, a 1.63 kg size-M frame reference and a 700x30C maximum.",
+  "source_note": "The current exact manufacturer page lists CNY 58,800, a 1.63 kg size-M full-3D-printed titanium frame reference, titanium fork and a 700x30C maximum.",
   "manufacturing": "full 3D-printed titanium frame",
   "last_reviewed": "2026-09-01",
   "facts": {
     "tire_clearance_mm": 30,
-    "tire_clearance_basis": "Current exact manufacturer maximum"
+    "tire_clearance_basis": "Current exact manufacturer maximum",
+    "frame_weight_g": 1630,
+    "frame_weight_basis": "Manufacturer claim for size M; finish is sandblasted with anodized logo and included-hardware basis is unpublished",
+    "frame_material": "Fully 3D-printed titanium road frame with titanium fork"
   }
 }

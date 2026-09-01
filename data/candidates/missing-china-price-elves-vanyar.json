@@ -13,10 +13,11 @@
   "research_priority": "medium",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "elves-vanyar-pro-disc-official-2026-08-17",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "elves-vanyar-pro-disc-uk-clearance-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 7468,
@@ -29,8 +30,10 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame",
-  "source_note": "The official regional page supports the 2024 Vanyar Pro Disc identity, image and US$1,100 global reference price. The approximate CNY conversion excludes card FX, shipping, tax and duties; mainland price, stock and warranty handling remain unverified.",
+  "source_note": "Current exact regional manufacturer evidence publishes a 700C x 30 mm maximum for Vanyar Pro Disc 2024. Mainland price, stock and warranty handling remain unverified.",
   "facts": {
-    "frame": "ELVES Vanyar Pro Disc full-carbon frameset"
+    "frame": "ELVES Vanyar Pro Disc Toray T800/T1000 full-carbon frameset",
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Current exact regional manufacturer maximum for the 2024 disc frameset"
   }
 }

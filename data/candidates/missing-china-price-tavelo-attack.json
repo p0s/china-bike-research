@@ -13,11 +13,12 @@
   "research_priority": "medium",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "tavelo-attack-official-2026-08-17",
     "public-tavelo-attack-build-2026-08-17",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "tavelo-attack-japan-clearance-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 10184,
@@ -30,8 +31,10 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.tavelo.cc/products/tavelo-attack",
-  "source_note": "Official global manufacturer page lists the Attack frameset at US$1,500 and supports the exact image. The approximate CNY reference excludes card FX, shipping, tax and duties. One public custom Dura-Ace R9270 build with 52/58 wheels and 28 mm tubeless tires was reported at 6.84 kg excluding pedals and bar tape.",
+  "source_note": "Current exact Japan product evidence publishes Toray T800 construction and a 700C x 32 mm maximum. Mainland price, stock and warranty handling remain unresolved.",
   "facts": {
-    "frame": "Tavelo Attack carbon frameset"
+    "frame": "Tavelo Attack Toray T800 carbon frameset",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current exact regional product maximum"
   }
 }

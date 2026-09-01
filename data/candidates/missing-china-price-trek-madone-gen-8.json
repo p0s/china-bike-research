@@ -15,7 +15,8 @@
   "required_before_dashboard": "Current stock, dealer/checkout conditions, and exact China warranty handling",
   "source_ids": [
     "trek-china-madone-sl-range-2026-08-17",
-    "trek-madone-sl5-gen8-official-spec-2026-08-17"
+    "trek-madone-sl5-gen8-official-spec-2026-08-17",
+    "trek-madone-gen8-faq-clearance-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 21800,
@@ -24,7 +25,7 @@
     "observed_at": "2026-08-17"
   },
   "source_url": "https://www.trekbikes.com/cn/zh_CN/%E8%87%AA%E8%A1%8C%E8%BD%A6/%E5%85%AC%E8%B7%AF%E8%87%AA%E8%A1%8C%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%AC%E8%B7%AF%E8%BD%A6/madone/madone-sl/c/B213-2/",
-  "source_note": "Official Trek China range page lists product 57653 Madone SL 5 Gen 8 at ¥21,800. It is a mainland official list price, not a dealer stock or final checkout confirmation.",
+  "source_note": "Official Trek China identifies product 57653 as Madone SL 5 Gen 8; the current manufacturer Gen 8 FAQ publishes a 32 mm measured-width maximum.",
   "facts": {
     "drivetrain": "Shimano 105 mechanical 2×12",
     "complete_weight_g": 8700,
@@ -32,7 +33,9 @@
     "bottom_bracket": "T47 threaded",
     "wheels": "Bontrager Paradigm SL tubeless-ready alloy",
     "cockpit": "Bontrager alloy bar with Trek RCS Pro stem",
-    "brakes": "Shimano 105 hydraulic disc"
+    "brakes": "Shimano 105 hydraulic disc",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Manufacturer Gen 8 maximum at measured tire width"
   },
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }

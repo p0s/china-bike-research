@@ -1,0 +1,486 @@
+{
+  "id": "candidate-missing-china-price-winspace-slc3-tire-clearance-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-winspace-slc3"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were still checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand YouTube channel — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand YouTube channel — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent YouTube review or build — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent YouTube review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand Bilibili account — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand Bilibili account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent Bilibili review or build — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent Bilibili review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand Xiaohongshu account — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand Xiaohongshu account — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent Xiaohongshu post — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent Xiaohongshu post — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand Douyin account — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand Douyin account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent Douyin post — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent Douyin post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand Weibo account — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand Weibo account — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent Weibo post — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent Weibo post — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Brand WeChat public article — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Brand WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent WeChat public article — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Cycling forum thread — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Cycling forum thread — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Public owner build log — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Public owner build log — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Public community photo or setup post — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Public community photo or setup post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer exact-product page — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer exact-product page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer exact-product page area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer model-family or category page — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer model-family or category page — tire-clearance",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area yielded attributable evidence accepted for at least one frozen field. This area was applied specifically to tire-clearance; its evidence was accepted for this field.",
+          "result_url": "https://www.winspace.cc/products/slc3-frameset"
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer current catalog — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer current catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer archived catalog — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer archived catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer product manual — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer product manual — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer geometry document — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer geometry document — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer technical paper or test note — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer technical paper or test note — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer support or warranty page — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer support or warranty page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer newsroom or launch page — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer newsroom or launch page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer site search — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer site search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer sitemap or indexed route inventory — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer sitemap or indexed route inventory — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer structured page metadata — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer structured page metadata — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer regional site — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer regional site — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer-listed distributor — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer-listed distributor — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer dealer locator — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer dealer locator — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Manufacturer-operated online store — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Manufacturer-operated online store — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Official Taobao store or exact item — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Official Taobao store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Official Tmall store or exact item — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Official Tmall store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Official JD store or exact item — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Official JD store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Verified Alibaba or 1688 supplier route — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Verified Alibaba or 1688 supplier route — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Official AliExpress store or exact item — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Official AliExpress store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Authorized mainland dealer — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Authorized mainland dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Authorized regional dealer — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Authorized regional dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — International specialist retailer — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "International specialist retailer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Cycling-industry review publication — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Cycling-industry review publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Chinese cycling-media publication — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Chinese cycling-media publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent laboratory or instrumented test — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent laboratory or instrumented test — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Print or digital magazine archive — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Print or digital magazine archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Trade-show coverage — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Trade-show coverage — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Race-team equipment page — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Race-team equipment page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Event or exhibitor catalog — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Event or exhibitor catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Independent geometry database — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Independent geometry database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Component compatibility database — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Component compatibility database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Product certification or registration database — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Product certification or registration database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Winspace SLC3.0 maximum tire clearance 32 measured width — Public web archive — field candidate:missing-china-price-winspace-slc3:tire-clearance",
+          "route": "Public web archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Winspace SLC3.0 frameset; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "winspace-slc3-official-2026-08-17",
+    "winspace-road-frame-clearance-faq-2026-09-01"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-winspace-slc3-batch-032-50-area-sweep-2026-09-01.json. The current manufacturer collection FAQ says SLC3.0 generally supports measured-width tires up to 32 mm depending on rim internal width."
+}

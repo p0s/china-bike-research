@@ -11,13 +11,19 @@
   ],
   "status": "needs-exact-model",
   "research_priority": "medium",
-  "source_ids": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+  "source_ids": [
+    "public-elves-mori-family-build-2026-08-17",
+    "public-elves-mori-frame-price-2026-08-17"
+  ],
   "observed_price": {
     "low_cny": 6000,
     "currency": "CNY",
     "observed_at": "2026-08-17",
     "price_basis": "public Mori-family frame-price floor"
   },
-  "source_note": "Both public reports place a Mori-family frameset above ¥6,000, but neither proves the AeroX subtrim.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "Both public reports place a Mori-family frameset above CNY 6,000, but neither proves the AeroX subtrim. Fifty areas did not establish an exact product bridge or safe maximum-clearance value.",
+  "last_reviewed": "2026-09-01",
+  "facts": {
+    "tire_clearance_status": "Exact Mori subtrim and manufacturer maximum unresolved after 50 registered source areas"
+  }
 }

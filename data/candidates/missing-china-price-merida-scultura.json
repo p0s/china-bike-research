@@ -13,9 +13,10 @@
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Tire clearance; Current stock/checkout and exact warranty policy",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
-    "merida-china-scultura-6000-25-official-2026-08-17"
+    "merida-china-scultura-6000-25-official-2026-08-17",
+    "merida-scultura-v-platform-clearance-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 16800,
@@ -23,7 +24,7 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland-China page lists Merida SCULTURA 6000 25 at ¥16,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_note": "The exact mainland page identifies SCULTURA CF3 V; the current-generation manufacturer technical page publishes a 30 mm maximum for the shared CF3/CF5 platform.",
   "source_url": "https://www.merida.cn/index/bikefinder/detail/id/23.html",
   "facts": {
     "drivetrain": "Shimano 105 Di2 2×12",
@@ -34,6 +35,8 @@
     "tires": "Maxxis Highroad 700×28 tubeless-ready",
     "cockpit": "MERIDA EXPERT SLII",
     "sizes": "3XS, XXS, XS, S, M, L, XL",
-    "complete_weight_g": 8200
+    "complete_weight_g": 8200,
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Current-generation manufacturer maximum for SCULTURA V CF3/CF5; exact mainland build identifies CF3 V"
   }
 }

@@ -4,13 +4,13 @@
   "model_id": "laget-pioneer-one",
   "category": "road",
   "type": "frameset",
-  "why_interesting": "Lower-priced 3D-printed titanium road option from a specialist Chinese brand.",
+  "why_interesting": "A current 3D-printed titanium road frameset with carbon fork and exact size-S frame reference.",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Exact included package and weight inclusions",
+    "China checkout, domestic warranty entity and after-sales terms",
     "Rights-cleared exact product image"
   ],
-  "status": "titanium-priority",
+  "status": "exact-current-weight-material-and-price-confirmed",
   "source_ids": [
     "titanium-laget-pioneer-one-official"
   ],
@@ -18,14 +18,17 @@
     "amount_cny": 21900,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-09-01"
   },
   "source_url": "https://lagetbike.com/productinfo/2955225.html",
-  "source_note": "The current exact manufacturer page lists CNY 21,900, a 1.35 kg size-S frame reference and a 700x32C maximum. A regional retailer states 33C; the manufacturer maximum controls.",
+  "source_note": "The current exact manufacturer page lists CNY 21,900, a 1.35 kg size-S 3D-printed titanium frame reference and a 700x32C maximum. A regional retailer states 33C; the manufacturer maximum controls.",
   "manufacturing": "3D-printed titanium frame platform",
   "last_reviewed": "2026-09-01",
   "facts": {
     "tire_clearance_mm": 32,
-    "tire_clearance_basis": "Current exact manufacturer maximum; a regional retailer states 33C and is retained as a conflict"
+    "tire_clearance_basis": "Current exact manufacturer maximum; a regional retailer states 33C and is retained as a conflict",
+    "frame_weight_g": 1350,
+    "frame_weight_basis": "Manufacturer claim for size S; brushed finish and included-hardware basis unpublished",
+    "frame_material": "3D-printed titanium road frame with carbon fork"
   }
 }
