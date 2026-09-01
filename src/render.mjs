@@ -720,11 +720,15 @@ function candidateFramePriceTerm(entry) {
   return /package|cockpit|accessor/i.test(entry.price?.price_basis ?? '') ? 'Frame package' : 'Frame';
 }
 
+function isReferenceConversionPrice(price) {
+  return ['reference-conversion', 'official-global-store-reference-conversion'].includes(price?.price_type);
+}
+
 function candidatePriceLabel(ctx, entry) {
   if (!entry.price) return entry.candidate.status === 'superseded' ? 'Not sold new' : '—';
   if (entry.kind !== 'frameset') {
     const price = formatPrice(entry.price);
-    return entry.price.price_type === 'reference-conversion' ? `Est. ${price}` : price;
+    return isReferenceConversionPrice(entry.price) ? `Est. ${price}` : price;
   }
   const { low, high } = candidatePriceBounds(entry);
   if (!Number.isFinite(low)) return '—';
@@ -739,7 +743,7 @@ function candidatePriceState(entry) {
       : '';
   }
   const priceType = entry.price.price_type ?? '';
-  const basis = priceType === 'reference-conversion'
+  const basis = isReferenceConversionPrice(entry.price)
     ? 'Official FX estimate'
     : priceType === 'official-conflict'
       ? 'Official price conflict'
@@ -750,7 +754,7 @@ function candidatePriceState(entry) {
 
 function candidatePriceRecordLabel(entry) {
   const priceType = entry.price?.price_type ?? '';
-  if (priceType === 'reference-conversion') return 'Official FX estimate';
+  if (isReferenceConversionPrice(entry.price)) return 'Official FX estimate';
   if (priceType === 'official-conflict') return 'Official price conflict';
   if (entry.priceKind === 'official' || priceType.startsWith('official-')) return 'Official reference';
   return 'Observed market record';
@@ -1376,7 +1380,7 @@ export function renderCandidateModel(ctx, entry) {
       : 'A current price is not recorded.'
     : entry.kind === 'frameset'
       ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
-      : entry.price.price_type === 'reference-conversion'
+      : isReferenceConversionPrice(entry.price)
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
   const sourceNote = candidate.source_note ? candidatePublicText(candidate.source_note) : '';
@@ -1544,7 +1548,7 @@ function builderPriceBounds(price) {
 }
 
 function builderCandidatePrice(price) {
-  if (price?.price_type === 'reference-conversion') {
+  if (isReferenceConversionPrice(price)) {
     return {
       low: null,
       high: null,

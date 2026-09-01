@@ -21,7 +21,8 @@
     "public-quick-pro-er-one-preorder-2026-08-17",
     "public-quick-pro-er-one-build-2026-08-17",
     "quick-pro-complete-collection-official-2026-08-17",
-    "quick-pro-warranty-official-2026-08-17"
+    "quick-pro-warranty-official-2026-08-17",
+    "quick-pro-er-one-cyclistshub-review-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 33900,
@@ -34,7 +35,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.quickprousa.com/products/er-one-ultegra",
-  "source_note": "Official global-store price US$4,999. Approximate CNY reference uses the 2026-07-31 CFETS central parity rate; it excludes card FX, shipping, tax and duties and is not a mainland checkout quote.",
+  "source_note": "The current official global storefront lists US$4,999 and a 7.1 kg ±5% carbon-spoke build. The converted CNY amount is not a mainland checkout, and exact wheel selection remains buyer-configurable.",
   "facts": {
     "drivetrain": "Shimano Ultegra R8170 Di2 2×12",
     "complete_weight_g": 7100,
@@ -43,8 +44,24 @@
     "bottom_bracket": "T47-68 threaded",
     "tire_clearance_mm": 32,
     "cockpit": "Integrated carbon cockpit",
-    "wheels": "Selectable RORE wheel configuration"
+    "wheels": "Selectable RORE wheel configuration",
+    "complete_weight_basis": "Current exact manufacturer claim for the ER:ONE Ultegra Di2 complete build with carbon-spoke wheels: 7.1 kg ±5%; size and selected RORE wheel model are unspecified",
+    "stiffness_evidence": "An independent exact-model owner review reports immediate power response and very high perceived stiffness, while noting that carbon-spoke wheels contribute to the setup. Qualitative ride evidence only, not an instrumented frame-isolation protocol."
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "price_status": "Current official global US$4,999 Ultegra Di2 checkout converted to CNY; mainland checkout, selected wheels, shipping and tax unverified",
+  "observed_price": {
+    "amount_cny": 33940,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 4999,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current exact ER:ONE Ultegra Di2 official global-store amount converted at the dated central-parity reference",
+    "conditions": "Reference only; selected wheel option, size, finish, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

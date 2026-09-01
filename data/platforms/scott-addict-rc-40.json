@@ -8,25 +8,81 @@
   "status": "snapshot-published",
   "summary": "The anonymized 2026-08-08 snapshot identifies SCOTT Addict RC 40 as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
   "frame": {
-    "material": "carbon",
-    "fork_material": "unknown",
+    "material": "HMX carbon",
+    "fork_material": "HMX carbon",
     "bottom_bracket": "Shimano BB-RS500-PB",
     "derailleur_hanger": "unknown",
     "cable_routing": "unknown",
     "geometry": {
       "basis": "official 2026 Addict manual",
       "source_id": "scott-addict-2026-manual-2026-08-17",
-      "units": { "length": "mm", "angle": "degrees" },
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
       "sizes": [
-        { "size": "47", "head_angle_deg": 71.3, "seat_angle_deg": 75, "reach_mm": 372, "stack_mm": 522, "wheelbase_mm": 984 },
-        { "size": "49", "head_angle_deg": 71.8, "seat_angle_deg": 75, "reach_mm": 378, "stack_mm": 534, "wheelbase_mm": 991 },
-        { "size": "52", "head_angle_deg": 72, "seat_angle_deg": 74.5, "reach_mm": 382, "stack_mm": 557, "wheelbase_mm": 1000 },
-        { "size": "54", "head_angle_deg": 72.2, "seat_angle_deg": 74, "reach_mm": 386, "stack_mm": 578, "wheelbase_mm": 1009 },
-        { "size": "56", "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "reach_mm": 389, "stack_mm": 599, "wheelbase_mm": 1016 },
-        { "size": "58", "head_angle_deg": 73, "seat_angle_deg": 73.1, "reach_mm": 394, "stack_mm": 619, "wheelbase_mm": 1022 },
-        { "size": "61", "head_angle_deg": 73, "seat_angle_deg": 73, "reach_mm": 402, "stack_mm": 638, "wheelbase_mm": 1036 }
+        {
+          "size": "47",
+          "head_angle_deg": 71.3,
+          "seat_angle_deg": 75,
+          "reach_mm": 372,
+          "stack_mm": 522,
+          "wheelbase_mm": 984
+        },
+        {
+          "size": "49",
+          "head_angle_deg": 71.8,
+          "seat_angle_deg": 75,
+          "reach_mm": 378,
+          "stack_mm": 534,
+          "wheelbase_mm": 991
+        },
+        {
+          "size": "52",
+          "head_angle_deg": 72,
+          "seat_angle_deg": 74.5,
+          "reach_mm": 382,
+          "stack_mm": 557,
+          "wheelbase_mm": 1000
+        },
+        {
+          "size": "54",
+          "head_angle_deg": 72.2,
+          "seat_angle_deg": 74,
+          "reach_mm": 386,
+          "stack_mm": 578,
+          "wheelbase_mm": 1009
+        },
+        {
+          "size": "56",
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 389,
+          "stack_mm": 599,
+          "wheelbase_mm": 1016
+        },
+        {
+          "size": "58",
+          "head_angle_deg": 73,
+          "seat_angle_deg": 73.1,
+          "reach_mm": 394,
+          "stack_mm": 619,
+          "wheelbase_mm": 1022
+        },
+        {
+          "size": "61",
+          "head_angle_deg": 73,
+          "seat_angle_deg": 73,
+          "reach_mm": 402,
+          "stack_mm": 638,
+          "wheelbase_mm": 1036
+        }
       ]
-    }
+    },
+    "claimed_frame_weight_g": 850,
+    "claimed_frame_weight_basis": "Scott claim reported by the exact-model BikeRadar review; approximately 850 g, size unspecified",
+    "claimed_fork_weight_g": 340,
+    "stiffness_evidence": "BikeRadar’s exact-model road test describes the RC 40 frameset as stiff and agile with balanced compliance, sharp steering and responsive ride qualities. Qualitative independent ride evidence, not a numeric deflection protocol."
   },
   "category_details": {
     "discipline": "road",
@@ -47,7 +103,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "scott-addict-2026-manual-2026-08-17",
-    "scott-addict-rc-40-poland-2026-08-17"
+    "scott-addict-rc-40-poland-2026-08-17",
+    "scott-addict-rc-40-bikeradar-review-2026-09-01"
   ],
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }

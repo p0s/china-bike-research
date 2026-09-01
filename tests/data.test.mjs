@@ -1290,6 +1290,80 @@ test('batch 040 records four exact LightCarbon supplier listings and exhausts si
   }
 });
 
+test('batch 041 resolves sixteen exact fields and explicitly exhausts three LightCarbon prices across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  for (const id of ['lightcarbon-lctr003', 'lightcarbon-lctt001', 'lightcarbon-lctt004']) {
+    assert.equal(candidates.get(id).observed_price, undefined, id);
+    assert.match(candidates.get(id).price_status, /50 registered areas/, id);
+  }
+
+  assert.ok(variants.get('lightcarbon-lcg071s-pro-frameset').source_ids.includes('lightcarbon-faq-official-2026-09-01'));
+
+  const tt = candidates.get('quick-pro-tt-one');
+  assert.match(tt.facts.frame_weight_basis, /1,089 g ±5%.*fork 399 g ±5%/);
+  assert.match(tt.facts.stiffness_evidence, /qualitative manufacturer evidence/);
+
+  const sava = candidates.get('sava-a4');
+  assert.match(sava.facts.stiffness_evidence, /independent exact-model Bilibili ride review/);
+
+  const er = candidates.get('quick-pro-er-one');
+  assert.equal(er.observed_price.amount_cny, 33940);
+  assert.match(er.facts.complete_weight_basis, /carbon-spoke.*7\.1 kg ±5%/);
+  assert.match(er.facts.stiffness_evidence, /independent exact-model owner review/);
+
+  const scott = platforms.get('scott-addict-rc-40');
+  assert.equal(scott.frame.material, 'HMX carbon');
+  assert.equal(scott.frame.claimed_frame_weight_g, 850);
+  assert.match(scott.frame.stiffness_evidence, /exact-model road test/);
+
+  const elves = candidates.get('missing-china-price-elves-falath-evo');
+  assert.equal(elves.observed_price.amount_cny, 7468);
+  assert.match(elves.facts.frame_weight_basis, /1,050 g.*size 46.*unpainted/);
+  assert.match(elves.facts.stiffness_evidence, /Exact-model qualitative manufacturer evidence/);
+
+  const winspace = candidates.get('missing-china-price-winspace-t1550');
+  assert.equal(winspace.observed_price.amount_cny, 12900);
+  assert.match(winspace.observed_price.conditions, /embedded copy still says US\$1,780/);
+  assert.match(winspace.facts.frame_weight_basis, /828 ±35 g.*size-M/);
+  assert.match(winspace.facts.stiffness_evidence, /same wheels, parts and tires/);
+
+  const targetFields = new Map([
+    ['candidate:lightcarbon-lctr003', ['price']],
+    ['candidate:lightcarbon-lctt001', ['price']],
+    ['candidate:lightcarbon-lctt004', ['price']],
+    ['variant:lightcarbon-lcg071s-pro-frameset', ['purchase-route']],
+    ['candidate:quick-pro-tt-one', ['frame-weight', 'frame-stiffness']],
+    ['candidate:sava-a4', ['frame-stiffness']],
+    ['candidate:quick-pro-er-one', ['price', 'complete-weight', 'frame-stiffness']],
+    ['platform:scott-addict-rc-40', ['frame-material', 'frame-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-elves-falath-evo', ['price', 'frame-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-winspace-t1550', ['price', 'frame-weight', 'frame-stiffness']]
+  ]);
+  const blocked = new Set([
+    'candidate:lightcarbon-lctr003:price',
+    'candidate:lightcarbon-lctt001:price',
+    'candidate:lightcarbon-lctt004:price'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 19);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1396,7 +1470,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1359);
+  assert.equal(data.researchAttempts.length, 1378);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -1621,8 +1695,8 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.deepEqual(vanRysel.brand, { id: 'candidate-brand-van-rysel', name: 'Van Rysel' });
   const quickEr = catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-er-one');
   assert.equal(quickEr.kind, 'complete-bike');
-  assert.equal(quickEr.price.amount_cny, 33900);
-  assert.equal(quickEr.price.price_type, 'reference-conversion');
+  assert.equal(quickEr.price.amount_cny, 33940);
+  assert.equal(quickEr.price.price_type, 'official-global-store-reference-conversion');
   assert.equal(quickEr.candidate.facts.drivetrain, 'Shimano Ultegra R8170 Di2 2×12');
   assert.equal(quickEr.candidate.facts.complete_weight_g, 7100);
   assert.equal(quickEr.image.subject_accuracy, 'exact-variant');
