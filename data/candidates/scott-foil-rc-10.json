@@ -21,14 +21,15 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6872.png#L1",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "research_priority": "high",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Mainland China product page, dealer route and CNY price; Current China stock/checkout and warranty policy; Numerical geometry and tire-clearance limit",
   "source_ids": [
-    "scott-foil-rc-10-official-2026-08-17"
+    "scott-foil-rc-10-official-2026-08-17",
+    "scott-foil-rc-platform-official-2026-09-01"
   ],
-  "source_note": "Official SCOTT page supports model 425337, the full build, approximate 7.9 kg weight and US$5,899.99 reference. Mainland price, stock and warranty route remain unverified.",
+  "source_note": "Current exact model 425337 publishes 7.9 kg. The same-generation official Foil RC technical page and manual publish a 30 mm maximum and say the lighter carbon lay-up did not sacrifice stiffness.",
   "source_url": "https://www.scott-sports.com/us/en/product/scott-foil-rc-10-bike",
   "facts": {
     "drivetrain": "Shimano Ultegra Di2 R8170 2×12",
@@ -38,6 +39,10 @@
     "wheels": "Syncros Capital 1.0 60",
     "tires": "Schwalbe Pro One Aero TL-Easy 700×28",
     "cockpit": "Syncros Creston 1.0 Aero",
-    "complete_weight_g": 7900
+    "complete_weight_g": 7900,
+    "complete_weight_basis": "Current exact manufacturer approximate claim for model 425337; size, pedals, accessories and weighing protocol unpublished",
+    "tire_clearance_mm": 30,
+    "tire_clearance_basis": "Current-generation official Foil RC platform maximum, corroborated by the manufacturer manual",
+    "stiffness_evidence": "Manufacturer says the current Foil RC carbon lay-up and reduced joint count saved weight without sacrificing stiffness; qualitative claim without a public frame-stiffness protocol"
   }
 }

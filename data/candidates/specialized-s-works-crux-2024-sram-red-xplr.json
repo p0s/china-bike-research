@@ -19,12 +19,19 @@
     "price_type": "official-list",
     "observed_at": "2026-08-17"
   },
-  "source_ids": ["specialized-s-works-crux-cn-product-221367", "specialized-cn-crux-page"],
+  "source_ids": [
+    "specialized-s-works-crux-cn-product-221367",
+    "specialized-cn-crux-page",
+    "specialized-s-works-crux-global-spec-2026-09-01"
+  ],
   "facts": {
     "drivetrain": "SRAM Red XPLR eTap AXS",
-    "frame": "S-Works Crux carbon platform",
-    "tire_clearance_mm": 47
+    "frame": "S-Works Crux FACT 12r carbon platform",
+    "tire_clearance_mm": 47,
+    "complete_weight_g": 7280,
+    "complete_weight_basis": "Current exact manufacturer claim for a production-painted size-56 build; actual weight varies by color, size and component variation",
+    "stiffness_evidence": "Manufacturer describes the exact Crux build as nimble, reactive and responsive at the pedals; qualitative claim without a public frame-stiffness protocol"
   },
-  "source_note": "The official China product page lists the exact 2024 S-Works build at ¥84,990. The 47 mm clearance comes from the current Crux family page; current stock and final dealer checkout were not tested.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "Current exact product 221367 evidence retains CNY 84,990, publishes 7.28 kg in size 56 and describes the build as reactive and responsive at the pedals. Stock, final checkout and a numeric stiffness protocol remain unpublished.",
+  "last_reviewed": "2026-09-01"
 }

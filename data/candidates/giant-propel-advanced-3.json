@@ -24,7 +24,7 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6878.png#L2",
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Complete-bike weight and frame weight; Bottom-bracket standard; Numerical geometry and size availability; Current stock and checkout outcome; Exact Giant China warranty policy text; Direct image asset URL",
@@ -37,7 +37,7 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland-China page lists GIANT 捷安特 Propel Advanced 3 at ¥10,800. Dealer stock, checkout outcome and exact local warranty handling were not tested.",
+  "source_note": "Current exact mainland product 3416 publishes CNY 10,800 and says the new Propel frame has significantly increased stiffness and a higher stiffness-to-weight ratio. No complete-bike weight was found after 50 areas.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3416",
   "facts": {
     "drivetrain": "Shimano Tiagra R4720 2×10",
@@ -47,6 +47,8 @@
     "wheels": "Giant P-A2",
     "tires": "Giant Gavia Course 1 tubeless",
     "cockpit": "Giant Contact SL Aero",
-    "tire_clearance_mm": 30
+    "tire_clearance_mm": 30,
+    "complete_weight_status": "No exact complete-bike weight, size or weighing protocol found after 50 registered source areas",
+    "stiffness_evidence": "Manufacturer says the exact Propel Advanced 3 generation significantly increases frame stiffness and improves stiffness-to-weight ratio; qualitative claim without a public protocol"
   }
 }
