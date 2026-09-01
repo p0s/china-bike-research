@@ -19,9 +19,17 @@
     "claimed_fiber": "high-modulus",
     "configuration_notes": {
       "source_id": "twitter-v3-official-2026-08-16",
-      "frame_heights_cm": [45, 48, 51, 54],
+      "frame_heights_cm": [
+        45,
+        48,
+        51,
+        54
+      ],
       "net_weight_claim_g": 9900,
-      "bottom_bracket_variants": ["T47 24 mm", "T47 29 mm"],
+      "bottom_bracket_variants": [
+        "T47 24 mm",
+        "T47 29 mm"
+      ],
       "observed_current_electronic_builds": [
         {
           "groupset": "Shimano 105 Di2 R7170",
@@ -47,12 +55,69 @@
         "angle": "degrees"
       },
       "sizes": [
-        { "size": "45", "rider_height": "150-165 cm", "seat_tube_mm": 450, "top_tube_mm": 510, "head_tube_mm": 100, "head_angle_deg": 70, "seat_angle_deg": 74.3, "bb_drop_mm": 74, "chainstay_mm": 425, "front_center_mm": 589, "fork_offset_mm": 55, "reach_mm": 365, "stack_mm": 516 },
-        { "size": "48", "rider_height": "165-175 cm", "seat_tube_mm": 480, "top_tube_mm": 525, "head_tube_mm": 114, "head_angle_deg": 71, "seat_angle_deg": 74.3, "bb_drop_mm": 74, "chainstay_mm": 425, "front_center_mm": 596, "fork_offset_mm": 55, "reach_mm": 375, "stack_mm": 534 },
-        { "size": "51", "rider_height": "175-185 cm", "seat_tube_mm": 510, "top_tube_mm": 540, "head_tube_mm": 130, "head_angle_deg": 71.5, "seat_angle_deg": 74.3, "bb_drop_mm": 74, "chainstay_mm": 425, "front_center_mm": 607, "fork_offset_mm": 55, "reach_mm": 385, "stack_mm": 550 },
-        { "size": "54", "rider_height": "185-195 cm", "seat_tube_mm": 540, "top_tube_mm": 555, "head_tube_mm": 150, "head_angle_deg": 72, "seat_angle_deg": 74.3, "bb_drop_mm": 74, "chainstay_mm": 425, "front_center_mm": 618, "fork_offset_mm": 55, "reach_mm": 395, "stack_mm": 572 }
+        {
+          "size": "45",
+          "rider_height": "150-165 cm",
+          "seat_tube_mm": 450,
+          "top_tube_mm": 510,
+          "head_tube_mm": 100,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 589,
+          "fork_offset_mm": 55,
+          "reach_mm": 365,
+          "stack_mm": 516
+        },
+        {
+          "size": "48",
+          "rider_height": "165-175 cm",
+          "seat_tube_mm": 480,
+          "top_tube_mm": 525,
+          "head_tube_mm": 114,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 596,
+          "fork_offset_mm": 55,
+          "reach_mm": 375,
+          "stack_mm": 534
+        },
+        {
+          "size": "51",
+          "rider_height": "175-185 cm",
+          "seat_tube_mm": 510,
+          "top_tube_mm": 540,
+          "head_tube_mm": 130,
+          "head_angle_deg": 71.5,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 607,
+          "fork_offset_mm": 55,
+          "reach_mm": 385,
+          "stack_mm": 550
+        },
+        {
+          "size": "54",
+          "rider_height": "185-195 cm",
+          "seat_tube_mm": 540,
+          "top_tube_mm": 555,
+          "head_tube_mm": 150,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 74,
+          "chainstay_mm": 425,
+          "front_center_mm": 618,
+          "fork_offset_mm": 55,
+          "reach_mm": 395,
+          "stack_mm": 572
+        }
       ]
-    }
+    },
+    "claimed_frame_weight_status": "No exact current T47 frame-only mass found after 50 registered source areas; complete-bike claims and the superseded 2024 press-fit frame claim are not substitutes"
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -79,5 +144,5 @@
     "public-twitter-gravel-v3-r7170-official-xhs-2026-08-27",
     "public-twitter-gravel-v3-sentyeh-official-xhs-2026-08-27"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-01"
 }

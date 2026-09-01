@@ -1548,6 +1548,81 @@ test('batch 043 resolves eighteen exact fields, exhausts five unknowns, and corr
   assert.equal(fieldCount, 23);
 });
 
+test('batch 044 resolves eleven exact fields and exhausts six unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  const crux = candidates.get('specialized-s-works-crux-frameset');
+  assert.match(crux.facts.stiffness_evidence, /stiff frame.*qualitative ride evidence/i);
+  assert.ok(crux.source_ids.includes('specialized-s-works-crux-granfondo-review-2026-09-01'));
+
+  assert.match(candidates.get('xds-gt350').facts.tire_clearance_status, /50 registered source areas.*700×40C/);
+  assert.match(candidates.get('xds-gt600').facts.tire_clearance_status, /50 registered source areas.*700×40C/);
+
+  const agile = candidates.get('missing-china-price-winspace-agile');
+  assert.equal(agile.observed_price.amount_cny, 8400);
+  assert.equal(agile.facts.frame_weight_g, 850);
+  assert.match(agile.facts.frame_weight_basis, /850 ±35 g/);
+  assert.match(agile.facts.stiffness_evidence, /less stiff than the T1600.*10,000 km/i);
+
+  assert.equal(variants.get('twitter-v3-2024-rs-sensah-alloy').last_reviewed, '2026-09-01');
+  assert.match(platforms.get('twitter-gravel-v3').frame.claimed_frame_weight_status, /current T47 frame-only mass.*50 registered source areas/i);
+  assert.match(variants.get('twitter-v3-wheeltop-eds').purchase_route, /US\$1,750.*Shenzhen manufacturer contact/);
+  assert.match(variants.get('twitter-v3-rs-sensah').purchase_route, /official factory-store.*Shenzhen manufacturer contact/i);
+
+  assert.match(variants.get('winspace-g3-frameset').purchase_route, /US\$1,550.*10–15 business-day/);
+  assert.equal(candidates.get('missing-china-price-winspace-g3').observed_price.amount_cny, 27544);
+
+  const camp = platforms.get('camp-gx700');
+  assert.match(camp.frame.claimed_frame_weight_status, /No frame-only mass.*50 registered source areas/);
+  assert.match(camp.frame.bottom_bracket_status, /No exact shell.*50 registered source areas/);
+  assert.match(platforms.get('spcycle-g026').frame.stiffness_evidence, /No meaningful exact-model stiffness evidence.*50 registered source areas/);
+
+  assert.equal(candidates.get('cervelo-aspero-5-current').observed_price.amount_cny, 36959);
+  assert.equal(candidates.get('missing-china-price-merida-silex').reference_price_kind, 'official');
+
+  const targetFields = new Map([
+    ['candidate:specialized-s-works-crux-frameset', ['frame-stiffness']],
+    ['candidate:xds-gt350', ['tire-clearance']],
+    ['candidate:xds-gt600', ['tire-clearance']],
+    ['candidate:missing-china-price-winspace-agile', ['price', 'frame-weight', 'frame-stiffness']],
+    ['variant:twitter-v3-2024-rs-sensah-alloy', ['image']],
+    ['platform:twitter-gravel-v3', ['frame-weight']],
+    ['variant:twitter-v3-wheeltop-eds', ['purchase-route']],
+    ['variant:twitter-v3-rs-sensah', ['purchase-route']],
+    ['variant:winspace-g3-frameset', ['purchase-route']],
+    ['candidate:missing-china-price-winspace-g3', ['price']],
+    ['platform:camp-gx700', ['frame-weight', 'bottom-bracket']],
+    ['platform:spcycle-g026', ['frame-stiffness']],
+    ['candidate:cervelo-aspero-5-current', ['price']],
+    ['candidate:missing-china-price-merida-silex', ['price']]
+  ]);
+  const blocked = new Set([
+    'candidate:xds-gt350:tire-clearance',
+    'candidate:xds-gt600:tire-clearance',
+    'platform:twitter-gravel-v3:frame-weight',
+    'platform:camp-gx700:frame-weight',
+    'platform:camp-gx700:bottom-bracket',
+    'platform:spcycle-g026:frame-stiffness'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((entry) => entry.target.record_type === recordType && entry.target.record_id === recordId && entry.field === field && entry.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = Object.values(attempt.channels).flatMap((channel) => channel.attempts ?? []);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 17);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1654,7 +1729,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1391);
+  assert.equal(data.researchAttempts.length, 1402);
   assert.equal(products.length, data.variants.length);
 });
 
