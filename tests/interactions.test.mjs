@@ -126,6 +126,12 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.doesNotMatch(script, /data-copy-catalog-view|copyCatalogView/);
 });
 
+test('bare catalog URLs use the reviewed default build without serializing stored overrides', () => {
+  assert.match(script, /const requestedBuildAllowance = params\.get\('build'\) \?\? String\(defaultBuildAllowance\)/);
+  assert.match(script, /params\.get\('buildPreset'\) \?\? defaultBuildPreset/);
+  assert.doesNotMatch(script, /params\.get\('build'\) \?\? String\(readStoredBuildAllowance\(\) \?\? defaultBuildAllowance\)/);
+});
+
 test('shared disclosures and copy feedback have complete dismissal and failure states', () => {
   assert.match(script, /function closeMenu\(\{ restoreFocus = false \} = \{\}\)/);
   assert.match(script, /if \(event\.key !== 'Escape'\) return/);
