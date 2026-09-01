@@ -5,11 +5,19 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "An older internally routed aero rim-brake frame that keeps a separate stem while documenting five frame weights and complete geometry.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote and exact HBR05/HBR07 cockpit package", "Independent exact-model stiffness result"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote and exact HBR05/HBR07 cockpit package",
+    "Independent exact-model stiffness result"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "low",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcrxs-v-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "No attributable exact current selected-package price or mainland checkout after 50 registered areas",
+  "source_ids": [
+    "lightcarbon-lcrxs-v-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29"
+  ],
   "facts": {
     "frame": "LCRXS-V internally routed aero rim-brake frameset with separate stem",
     "frame_material": "Toray T700 carbon",
@@ -25,6 +33,6 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page identifies LCRXS-V and supplies the material, size weights, clearance, standards and geometry. Its cockpit-compatibility rows disagree, so the exact included bar remains open.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page remains quote-only and conflicts on HBR05/HBR07 cockpit compatibility. No numeric offer with an exact selected package was found, and sibling prices were not transferred.",
+  "last_reviewed": "2026-09-01"
 }

@@ -1236,6 +1236,60 @@ test('batch 039 records three exact LightCarbon owner quotations and exhausts se
   }
 });
 
+test('batch 040 records four exact LightCarbon supplier listings and exhausts six price unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const lcr015d = candidates.get('lightcarbon-lcr015-d');
+  assert.equal(lcr015d.observed_price.low_cny, 3259);
+  assert.equal(lcr015d.observed_price.high_cny, 3734);
+  assert.equal(lcr015d.observed_price.original_low, 480);
+  assert.equal(lcr015d.observed_price.original_high, 550);
+  assert.match(lcr015d.price_status, /manufacturer-supplier.*MOQ-1 reference/);
+
+  const lcr015v = candidates.get('lightcarbon-lcr015-v');
+  assert.equal(lcr015v.observed_price.low_cny, 3388);
+  assert.equal(lcr015v.observed_price.high_cny, 3870);
+  assert.match(lcr015v.source_note, /in-stock US\$499–570/);
+
+  const lcr015sd = candidates.get('lightcarbon-lcr015s-d');
+  assert.equal(lcr015sd.observed_price.low_cny, 3157);
+  assert.equal(lcr015sd.observed_price.high_cny, 3497);
+  assert.match(lcr015sd.observed_price.conditions, /selected cockpit/);
+
+  const lcr014d = candidates.get('lightcarbon-lcr014-d');
+  assert.equal(lcr014d.observed_price.amount_cny, 2376);
+  assert.equal(lcr014d.observed_price.original_amount, 350);
+  assert.match(lcr014d.observed_price.conditions, /minimum order 10 sets/);
+
+  const blockedIds = [
+    'lightcarbon-lcr0x-d',
+    'lightcarbon-lcr0x-v',
+    'lightcarbon-lctt05-d',
+    'lightcarbon-lcr015s-v',
+    'lightcarbon-lcrxs-d',
+    'lightcarbon-lcrxs-v'
+  ];
+  for (const id of blockedIds) {
+    assert.equal(candidates.get(id).observed_price, undefined, id);
+    assert.match(candidates.get(id).price_status, /50 registered areas/, id);
+  }
+  assert.match(candidates.get('lightcarbon-lcr0x-d').source_note, /used LCR0X-D Ultegra Di2 complete-bike listing/);
+  assert.match(candidates.get('lightcarbon-lctt05-d').source_note, /indicative US\$1,150–1,450 range was rejected/);
+  assert.match(candidates.get('lightcarbon-lcrxs-d').source_note, /incorrectly labels the disc model as rim brake/);
+  assert.match(candidates.get('lightcarbon-lcrxs-v').source_note, /conflicts on HBR05\/HBR07/);
+
+  const foundIds = new Set(['lightcarbon-lcr015-d', 'lightcarbon-lcr015-v', 'lightcarbon-lcr015s-d', 'lightcarbon-lcr014-d']);
+  const allIds = [...foundIds, ...blockedIds];
+  for (const recordId of allIds) {
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === 'price');
+    assert.ok(attempt, recordId);
+    const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+    assert.equal(applications.length, 50, recordId);
+    assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, recordId);
+    assert.equal(attempt.status, foundIds.has(recordId) ? 'found' : 'blocked', recordId);
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1342,7 +1396,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1349);
+  assert.equal(data.researchAttempts.length, 1359);
   assert.equal(products.length, data.variants.length);
 });
 

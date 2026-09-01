@@ -5,11 +5,21 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "The disc-brake sibling of LCR014-V, retaining a compact three-size aero platform and complete official geometry.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, package and warranty route", "Independent exact-model stiffness result"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, package and warranty route",
+    "Independent exact-model stiffness result"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "low",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcr014-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Current manufacturer-supplier US$350 bulk reference converted to CNY; MOQ 10 and no single-unit mainland consumer checkout",
+  "source_ids": [
+    "lightcarbon-lcr014-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr014-d-alibaba-supplier-2026-09-01",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR014-D aero road disc frameset",
     "frame_material": "Toray T700 carbon",
@@ -25,6 +35,19 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page identifies LCR014-D and supplies its material, component weights, standards and three-size geometry.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact Alibaba supplier page identifies LightCarbon LCR014-D, US$350 and MOQ 10 sets, with frame, fork, seatpost and clamp. The CNY value is a bulk supplier reference conversion, not a single-unit mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 2376,
+    "currency": "CNY",
+    "price_type": "manufacturer-supplier-marketplace-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 350,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current exact LCR014-D manufacturer-supplier USD 350 bulk price converted at the dated central-parity reference",
+    "conditions": "Reference only; minimum order 10 sets; selected finish, customization, shipping, tax, duties, actual FX, stock and final checkout are unverified"
+  }
 }

@@ -5,11 +5,20 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "An integrated direct-mount rim-brake frameset with exact official size-54 frame and fork weights.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, package and warranty route"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, package and warranty route"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "medium",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcr015-v-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Current manufacturer-supplier US$499–570 MOQ-1 reference converted to CNY; selected package and mainland consumer checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcr015-v-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr015-v-alibaba-supplier-2026-09-01",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR015-V integrated rim-brake road frame",
     "frame_material": "Toray T700 carbon",
@@ -26,6 +35,21 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page supplies the model facts. Current-production and price status remain open.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page is quote-only. Alibaba’s current index attributes an in-stock US$499–570, MOQ-1 exact LCR015-V supplier listing to Xiamen Lightcarbon; the CNY range is a reference conversion, not a mainland consumer checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "low_cny": 3388,
+    "high_cny": 3870,
+    "currency": "CNY",
+    "price_type": "manufacturer-supplier-marketplace-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_low": 499,
+    "original_high": 570,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current exact LCR015-V manufacturer-supplier USD 499–570 range converted at the dated central-parity reference",
+    "conditions": "Reference only; selected size, finish, included cockpit, shipping, tax, duties, actual FX, stock and final checkout are unverified"
+  }
 }

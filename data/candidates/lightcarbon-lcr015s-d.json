@@ -5,11 +5,20 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "A separate-cockpit version of the older LCR015 disc platform with exact official weight, fit and compatibility records.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, selected cockpit package and warranty route"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, selected cockpit package and warranty route"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "medium",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcr015s-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Current manufacturer-supplier US$465–515 MOQ-1 reference converted to CNY; selected cockpit and mainland consumer checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcr015s-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr015s-d-alibaba-supplier-2026-09-01",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR015S-D road disc frameset",
     "frame_material": "Toray T700 carbon",
@@ -26,6 +35,21 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page distinguishes this cockpit version and supplies the model facts. Current-production and price status remain open.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page is quote-only. A current Alibaba index attributes a US$465–515, MOQ-1 exact LCR015S-D supplier listing to Xiamen Lightcarbon; the CNY range is a reference conversion, not a mainland consumer checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "low_cny": 3157,
+    "high_cny": 3497,
+    "currency": "CNY",
+    "price_type": "manufacturer-supplier-marketplace-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_low": 465,
+    "original_high": 515,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current exact LCR015S-D manufacturer-supplier USD 465–515 range converted at the dated central-parity reference",
+    "conditions": "Reference only; selected cockpit, size, finish, shipping, tax, duties, actual FX, stock and final checkout are unverified"
+  }
 }

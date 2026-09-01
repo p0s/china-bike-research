@@ -5,11 +5,18 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "An older fully integrated disc-road design retained in LightCarbon's online road-frame catalog, with complete size-specific weight and geometry data.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, package and warranty route"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, package and warranty route"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "medium",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcr0x-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "No attributable exact current frameset price or mainland checkout after 50 registered areas; used complete-bike amount rejected",
+  "source_ids": [
+    "lightcarbon-lcr0x-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29"
+  ],
   "facts": {
     "frame": "LCR0X-D integrated road disc frame",
     "frame_material": "Toray T700 carbon",
@@ -25,6 +32,6 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact page provides useful engineering facts, while absence from the current PDF catalog makes present production continuity and price questions rather than assumptions.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page remains quote-only. A used LCR0X-D Ultegra Di2 complete-bike listing was rejected because it does not isolate the frameset package, original sale terms or current manufacturer availability.",
+  "last_reviewed": "2026-09-01"
 }

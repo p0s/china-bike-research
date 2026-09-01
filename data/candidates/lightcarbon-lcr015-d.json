@@ -5,11 +5,20 @@
   "category": "road-aero",
   "type": "frameset",
   "why_interesting": "A documented earlier-generation aero disc frameset that remains listed by LightCarbon and preserves exact frame, fork and geometry figures.",
-  "missing": ["Whether the model is made to order or remaining stock", "Current mainland quote, package and warranty route"],
+  "missing": [
+    "Whether the model is made to order or remaining stock",
+    "Current mainland quote, package and warranty route"
+  ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "medium",
-  "price_status": "current price unverified",
-  "source_ids": ["lightcarbon-lcr015-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Current manufacturer-supplier US$480–550 MOQ-1 reference converted to CNY; selected package and mainland consumer checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcr015-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr015-d-alibaba-supplier-2026-09-01",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR015-D aero road disc frame",
     "frame_material": "Toray T700 carbon",
@@ -25,6 +34,21 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page supplies the model facts. Current-production and price status remain open because this model is not presented in the current PDF catalog.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The exact manufacturer page is quote-only. A current Alibaba index attributes a US$480–550, MOQ-1 exact LCR015-D supplier listing to Xiamen Lightcarbon; the CNY range is a reference conversion, not a mainland consumer checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "low_cny": 3259,
+    "high_cny": 3734,
+    "currency": "CNY",
+    "price_type": "manufacturer-supplier-marketplace-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_low": 480,
+    "original_high": 550,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Current exact LCR015-D manufacturer-supplier USD 480–550 range converted at the dated central-parity reference",
+    "conditions": "Reference only; Alibaba indexes vary, and selected size, finish, cockpit, shipping, tax, duties, actual FX, stock and final checkout are unverified"
+  }
 }
