@@ -166,7 +166,7 @@ function candidateImage(ctx, entry) {
   const accuracy = entry.image.subject_accuracy ?? 'illustrative';
   const needsNote = !['exact-variant', 'exact-platform'].includes(accuracy);
   const detailUrl = url(ctx.base, `/models/${entry.candidate.id}/`);
-  const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} research profile">${candidateImageElement(ctx, entry)}</a>`;
+  const visual = `<a class="product-image-link" href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(entry.candidate.name)} details">${candidateImageElement(ctx, entry)}</a>`;
   return `<span class="product-image">${visual}${needsNote ? `<span class="image-info">${infoTip('About this image', [accuracyLabel(accuracy), entry.image.display_note ?? 'The image identifies the model but may not show the exact listed components.'])}</span>` : ''}</span>`;
 }
 
@@ -824,7 +824,7 @@ function candidateRow(ctx, entry) {
     <div class="catalog-cell drivetrain-cell" role="cell" data-label="Drivetrain">${entry.kind === 'frameset' ? '' : escapeHtml(facts.drivetrain ?? '—')}</div>
     <div class="catalog-cell weight-cell" role="cell" data-label="Weight">${escapeHtml(weight)}</div>
     <div class="catalog-cell frame-cell" role="cell" data-label="Frame">${escapeHtml(frame)}</div>
-    <div class="row-link-cell" role="cell"><a href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(candidate.name)} research profile">→</a></div>
+    <div class="row-link-cell" role="cell"><a href="${detailUrl}" data-model-link aria-label="View ${escapeAttr(candidate.name)} details">→</a></div>
   </div>`;
 }
 
