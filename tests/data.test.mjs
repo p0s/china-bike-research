@@ -2107,6 +2107,21 @@ test('candidate catalog keeps the focused view useful without losing discovery',
   assert.equal(gt350.image.subject_accuracy, 'exact-platform');
   assert.equal(gt350.imageSource.id, 'xds-gt350-retailer-2026-08-08');
 
+  const stormKnight = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-storm-knight');
+  const r10ClosedWheel = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-r10-pro-gen3');
+  assert.match(stormKnight.candidate.name, /R10 Pro Storm Knight \/ White Knight \(Shuntai 2×11\)/);
+  assert.match(r10ClosedWheel.candidate.name, /R10 Pro Gen 3 closed-wheel \(WheelTop \/ Shimano 105 options\)/);
+  assert.equal(stormKnight.candidate.facts.platform_family, r10ClosedWheel.candidate.facts.platform_family);
+  assert.match(stormKnight.candidate.facts.configuration_relationship, /not the same complete-bike configuration/);
+  assert.match(r10ClosedWheel.candidate.facts.configuration_relationship, /retained separately/);
+  assert.ok(stormKnight.candidate.source_ids.includes('twitter-r10-pro-configuration-index-2026-09-02'));
+  assert.ok(r10ClosedWheel.candidate.source_ids.includes('twitter-r10-pro-configuration-index-2026-09-02'));
+  assert.match(stormKnight.image.alt, /R10 Pro Storm Knight/);
+  assert.match(stormKnight.image.display_note, /R10PRO label is consistent/);
+  const r10ConfigurationIndex = data.sources.find((source) => source.id === 'twitter-r10-pro-configuration-index-2026-09-02');
+  assert.equal(r10ConfigurationIndex.url, 'https://tao.hooos.com/tag_%E9%AA%93%E7%89%B9r10pro%E5%85%AC%E8%B7%AF%E8%BD%A6_1.html');
+  assert.match(r10ConfigurationIndex.notes, /configuration name rather than a separate platform/);
+
   const oldTwitterCarbon = catalogCandidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   assert.equal(oldTwitterCarbon.candidate.status, 'superseded');
   assert.equal(oldTwitterCarbon.image.subject_accuracy, 'exact-platform');

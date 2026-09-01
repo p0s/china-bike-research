@@ -1,13 +1,16 @@
 {
   "id": "twitter-r10-pro-gen3",
-  "name": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel",
+  "name": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel (WheelTop / Shimano 105 options)",
   "model_id": "twitter-r10-pro-gen3",
   "category": "road-aero",
   "type": "complete-bike",
   "brand_id": "twitter",
-  "why_interesting": "The retained closed-wheel card is now tied to the exact R10 Pro Gen 3 listing family. Current exact indexes expose WheelTop EVO and Shimano 105 R7120 24-speed builds, but the retained card does not select one, so configuration-sensitive facts remain unresolved.",
+  "why_interesting": "The retained closed-wheel card is a higher-priced R10 Pro family configuration, distinct from the Storm Knight / White Knight Shuntai build. Current exact indexes expose WheelTop EVO and Shimano 105 R7120 24-speed options, but the retained card does not select one, so configuration-sensitive facts remain unresolved.",
   "facts": {
+    "platform_family": "TWITTER / 骓特 R10 Pro / R10-Disc",
     "listing_identity": "TWITTER / 骓特 R10 Pro Gen 3 closed-wheel complete-bike family",
+    "configuration_identity": "Gen 3 closed-wheel configuration with unresolved WheelTop EVO versus Shimano 105 R7120 selection",
+    "configuration_relationship": "Same R10 Pro family as the Storm Knight / White Knight candidate; retained separately because drivetrain, wheels and dated price differ materially",
     "drivetrain_options": "WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 hydraulic-disc options are both current",
     "configuration_note": "The retained card does not expose the selected drivetrain or a configuration-specific complete weight",
     "frame_material": "R10pro manufacturer platform uses a high-modulus-carbon frame, fork and aero seatpost; exact closed-wheel Gen 3 grade and lay-up are unpublished",
@@ -25,7 +28,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "twitter-r10-pro-gen3-current-options-2026-08-30",
-    "twitter-r10pro-frame-official-2026-08-30"
+    "twitter-r10pro-frame-official-2026-08-30",
+    "twitter-r10-pro-configuration-index-2026-09-02"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -38,6 +42,6 @@
   },
   "source_refs": "IMG_6886.png#L1",
   "source_url": "https://www.jd.com/brand/1318934bb416b6f4eaef.html",
-  "source_note": "The retained listing is exact to the current R10pro closed-wheel family. Current manufacturer evidence establishes the high-modulus-carbon R10pro platform, but older trim weights and generation-specific material claims are not transferred.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The retained listing is a closed-wheel configuration in the R10 Pro family, not a duplicate of the lower-priced Storm Knight Shuntai build. Current manufacturer evidence establishes the R10pro platform, but older trim weights and generation-specific material claims are not transferred.",
+  "last_reviewed": "2026-09-02"
 }
