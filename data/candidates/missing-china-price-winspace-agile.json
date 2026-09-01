@@ -11,9 +11,14 @@
   ],
   "status": "official-global-frameset",
   "research_priority": "medium",
-  "price_status": "official global USD price with dated CNY reference conversion; mainland checkout unverified",
+  "price_status": "Current exact official US$1,250 sale reference converted to CNY; no attributable mainland selected checkout",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, landed cost, and domestic warranty handling",
-  "source_ids": ["winspace-agile-official-2026-08-17", "usd-cny-central-parity-2026-07-31"],
+  "source_ids": [
+    "winspace-agile-official-2026-08-17",
+    "usd-cny-central-parity-2026-07-31",
+    "winspace-agile-cyclistshub-long-term-review-2026-09-01",
+    "ecb-reference-rates-2026-08-31"
+  ],
   "official_price": {
     "amount_cny": 13400,
     "currency": "CNY",
@@ -24,15 +29,30 @@
     "conversion_rate_cny_per_original_unit": 6.7894,
     "conversion_rate_date": "2026-07-31"
   },
-  "source_url": "https://www.winspace.cc/products/agile-bundle",
-  "source_note": "Official US$1,980 frame price. CNY reference excludes actual FX, shipping, tax and duties; the catalog adds the adjustable standard build allowance for the displayed full-bike estimate.",
+  "source_url": "https://www.winspace.cc/products/agile",
+  "source_note": "Current exact page lists US$1,250 sale / US$1,980 regular and an 850 ±35 g unpainted size-M frame. Independent long-term evidence is qualitative; the CNY amount is only a reference conversion.",
   "facts": {
     "frame": "T800+T1000 carbon",
     "frame_weight_g": 850,
     "bottom_bracket": "T47-85.5",
     "tire_clearance_mm": 32,
-    "sizes": "410, 440, 470, 510 and 550 mm"
+    "sizes": "410, 440, 470, 510 and 550 mm",
+    "frame_weight_basis": "Current exact manufacturer claim for an unpainted size-M frame: 850 ±35 g",
+    "stiffness_evidence": "Exact-model long-term review describes the Agile as comfortable, initially stiff and less stiff than the T1600 after more than 10,000 km; qualitative ride evidence, not an instrumented frame-deflection test"
   },
   "support_note": "Official page states a limited three-year frameset warranty and includes frame, fork, seatpost, headset, cable stoppers and direct-mount hanger.",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "observed_price": {
+    "amount_cny": 8400,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 1250,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact Agile sale amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size and finish, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

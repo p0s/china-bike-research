@@ -13,16 +13,17 @@
   "existing_record_id": "winspace-g3-frameset",
   "catalog_distinct_reason": "This is an exact complete-bike build; the referenced published record is the frameset-only configuration.",
   "research_priority": "high",
-  "price_status": "official global reference only; mainland CNY price unverified",
+  "price_status": "Current exact official US$4,099 reference converted to CNY; no attributable mainland selected checkout",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; current mainland stock, checkout conditions and warranty handling",
-  "last_reviewed": "2026-08-27",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "winspace-g3-pro-di2-official-2026-08-17",
     "winspace-g3-pro-di2-official-2026-08-27",
     "winspace-g3-official-2026-08-17",
     "winspace-warranty-official-2026-08-27",
     "winspace-g3-carbonvelo-review-2026-08-27",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "ecb-reference-rates-2026-08-31"
   ],
   "official_price": {
     "amount_cny": 27830,
@@ -35,7 +36,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.winspace.cc/collections/complete-bike/products/g3-gravel-pro-di2",
-  "source_note": "The official product page currently shows US$4,099 and identifies a China warehouse route, but no exact mainland CNY checkout, stock handling or domestic delivery total was exposed. The displayed CNY figure is only a dated reference conversion and excludes card FX, shipping, tax and duties.",
+  "source_note": "Current exact manufacturer page lists US$4,099, add-to-cart and China warehouse routing. The CNY amount is a dated reference conversion, not an exact mainland checkout or delivered total.",
   "facts": {
     "drivetrain": "Shimano GRX 1×12: ST-RX825 controls, RD-RX827 rear derailleur, 42T crank and 10–51T cassette",
     "frame": "Winspace G3 T700 + T800 + M40 carbon gravel frame",
@@ -51,5 +52,18 @@
     "tire_clearance_mm": 50,
     "sizes": "XS, S, M, L and XL"
   },
-  "weight_note": "Official approximate complete-bike weight for size M without pedals."
+  "weight_note": "Official approximate complete-bike weight for size M without pedals.",
+  "reference_price_kind": "official",
+  "observed_price": {
+    "amount_cny": 27544,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 4099,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact G3 Pro Di2 amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size, finish, shipping, tax, actual FX, stock, assembly and mainland checkout are unverified"
+  }
 }

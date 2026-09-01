@@ -642,7 +642,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   const detail = renderModel(context, product);
   assert.match(detail, /<nav class="breadcrumbs" aria-label="Breadcrumb">[\s\S]*Complete bikes[\s\S]*aria-current="page"/);
   assert.match(detail, /data-catalog-back/);
-  assert.match(detail, /Evidence reviewed through <time datetime="2026-08-29">/);
+  assert.match(detail, /Evidence reviewed through <time datetime="2026-09-01">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
   assert.match(detail, /<details class="detail-panel" id="source-records">/);
 });

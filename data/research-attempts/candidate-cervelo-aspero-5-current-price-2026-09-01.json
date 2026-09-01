@@ -1,0 +1,486 @@
+{
+  "id": "candidate-cervelo-aspero-5-current-price-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cervelo-aspero-5-current"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand YouTube channel — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent YouTube review or build — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand Bilibili account — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent Bilibili review or build — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand Xiaohongshu account — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent Xiaohongshu post — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand Douyin account — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent Douyin post — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand Weibo account — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent Weibo post — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Cervélo Áspero-5 exact current frameset price — Brand WeChat public article — field candidate:cervelo-aspero-5-current:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent WeChat public article — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Cervélo Áspero-5 exact current frameset price — Cycling forum thread — field candidate:cervelo-aspero-5-current:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Cervélo Áspero-5 exact current frameset price — Public owner build log — field candidate:cervelo-aspero-5-current:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Cervélo Áspero-5 exact current frameset price — Public community photo or setup post — field candidate:cervelo-aspero-5-current:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer exact-product page — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer exact-product page — price",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact page lists the frameset at US$5,500. This area was applied specifically to price; its evidence was accepted for this field.",
+          "result_url": "https://www.cervelo.com/en-US/bikes/aspero-5"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer model-family or category page — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer current catalog — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer archived catalog — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer product manual — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer geometry document — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer technical paper or test note — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer support or warranty page — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer newsroom or launch page — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer site search — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer sitemap or indexed route inventory — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer structured page metadata — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer regional site — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer-listed distributor — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer dealer locator — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Cervélo Áspero-5 exact current frameset price — Manufacturer-operated online store — field candidate:cervelo-aspero-5-current:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Cervélo Áspero-5 exact current frameset price — Official Taobao store or exact item — field candidate:cervelo-aspero-5-current:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Cervélo Áspero-5 exact current frameset price — Official Tmall store or exact item — field candidate:cervelo-aspero-5-current:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Cervélo Áspero-5 exact current frameset price — Official JD store or exact item — field candidate:cervelo-aspero-5-current:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Cervélo Áspero-5 exact current frameset price — Verified Alibaba or 1688 supplier route — field candidate:cervelo-aspero-5-current:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Cervélo Áspero-5 exact current frameset price — Official AliExpress store or exact item — field candidate:cervelo-aspero-5-current:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Cervélo Áspero-5 exact current frameset price — Authorized mainland dealer — field candidate:cervelo-aspero-5-current:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Cervélo Áspero-5 exact current frameset price — Authorized regional dealer — field candidate:cervelo-aspero-5-current:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Cervélo Áspero-5 exact current frameset price — International specialist retailer — field candidate:cervelo-aspero-5-current:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Cervélo Áspero-5 exact current frameset price — Cycling-industry review publication — field candidate:cervelo-aspero-5-current:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Cervélo Áspero-5 exact current frameset price — Chinese cycling-media publication — field candidate:cervelo-aspero-5-current:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent laboratory or instrumented test — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Cervélo Áspero-5 exact current frameset price — Print or digital magazine archive — field candidate:cervelo-aspero-5-current:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Cervélo Áspero-5 exact current frameset price — Trade-show coverage — field candidate:cervelo-aspero-5-current:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Cervélo Áspero-5 exact current frameset price — Race-team equipment page — field candidate:cervelo-aspero-5-current:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Cervélo Áspero-5 exact current frameset price — Event or exhibitor catalog — field candidate:cervelo-aspero-5-current:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Cervélo Áspero-5 exact current frameset price — Independent geometry database — field candidate:cervelo-aspero-5-current:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Cervélo Áspero-5 exact current frameset price — Component compatibility database — field candidate:cervelo-aspero-5-current:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Cervélo Áspero-5 exact current frameset price — Product certification or registration database — field candidate:cervelo-aspero-5-current:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Cervélo Áspero-5 exact current frameset price — Public web archive — field candidate:cervelo-aspero-5-current:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Cervélo Áspero-5 frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "cervelo-aspero5-official-2026-08-29",
+    "ecb-reference-rates-2026-08-31"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-cervelo-aspero-5-current-batch-044-50-area-sweep-2026-09-01.json. Current exact manufacturer page lists US$5,500; the CNY figure is a dated official-rate reference conversion."
+}
