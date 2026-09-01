@@ -1285,7 +1285,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
   assert.equal(data.prices.length, 56);
-  assert.equal(data.images.length, 204);
+  assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
   assert.equal(data.videos.length, 12);
@@ -1927,8 +1927,8 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 190);
-  assert.equal(data.images.filter((image) => image.candidate_id).length, 114);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 198);
+  assert.equal(data.images.filter((image) => image.candidate_id).length, 122);
   assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(

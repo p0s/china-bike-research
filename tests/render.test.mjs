@@ -72,7 +72,7 @@ test('theme control supports system, light, and dark without delaying first pain
 
 test('homepage offers compact criteria-led comparison starting points', () => {
   assert.match(html, /Top bikes, with the criteria shown/);
-  assert.match(html, /Three focused shortlists—not a universal score or a recommendation ranking/);
+  assert.doesNotMatch(html, /Three focused shortlists—not a universal score or a recommendation ranking/);
   for (const group of ['affordable-carbon-aero', 'electronic-gravel', 'wide-tire-aero']) {
     assert.match(html, new RegExp(`data-curated-group="${group}"`));
   }
