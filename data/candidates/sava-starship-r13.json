@@ -21,14 +21,17 @@
     "price_basis": "coupon",
     "observation_count": 2
   },
-  "source_ids": ["sava-starship-105-official-2026-08-17"],
+  "source_ids": [
+    "sava-starship-105-official-2026-08-17"
+  ],
   "facts": {
     "drivetrain": "Official global build: Shimano 105 R7100/R7120 hydraulic 2×12",
     "complete_weight_g": 8500,
     "frame": "T800 carbon frame, fork, handlebar and seatpost",
-    "sizes": "49, 52, 54, 56 and 58"
+    "sizes": "49, 52, 54, 56 and 58",
+    "tire_clearance_status": "No exact maximum compatible tire width or clearance protocol found after 50 registered source areas; fitted 700×25C tires are not a maximum"
   },
-  "source_note": "The official 105 build is approximately 8.5 kg. A separate regional 7.9 kg claim and the wide local price range remain unassigned to exact trims.",
+  "source_note": "The exact official R13 105 build publishes fitted 700×25C tires but no maximum compatible tire width. No maximum is inferred after the 50-area sweep.",
   "source_refs": "IMG_6867.png#R1, IMG_6877.png#L2",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }

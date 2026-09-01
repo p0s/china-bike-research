@@ -1109,6 +1109,84 @@ test('batch 037 records exact current race and endurance facts while preserving 
   assert.equal(fieldCount, 24);
 });
 
+test('batch 038 records exact materials, weights and prices while preserving model and generation boundaries across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+
+  const xmcs = platforms.get('xmcarbonspeed-cs-gr01');
+  assert.equal(xmcs.frame.material, 'T800 carbon fiber');
+  assert.match(xmcs.frame.stiffness_evidence_status, /No attributable exact-model stiffness.*50 registered source areas/);
+
+  const vanRysel = candidates.get('missing-china-price-van-rysel-rcr');
+  assert.equal(vanRysel.facts.tire_clearance_mm, 32);
+  assert.equal(vanRysel.facts.complete_weight_g, 8000);
+  assert.match(vanRysel.facts.complete_weight_basis, /separate Decathlon regional catalog says 8\.2 kg/);
+  assert.match(vanRysel.facts.stiffness_evidence, /7% stiffer than RCR Pro/);
+
+  assert.match(candidates.get('missing-china-price-giant-defy-advanced').price_status, /CNY 14,800/);
+  assert.match(candidates.get('pardus-spark-tourist').facts.complete_weight_status, /similarly named Spark AL and Spark Sport values are not transferable/);
+  assert.match(candidates.get('quick-pro-gr-one-grx-di2').price_status, /no exact mapped mainland CNY checkout/);
+  assert.match(candidates.get('sava-starship-r13').facts.tire_clearance_status, /fitted 700×25C tires are not a maximum/);
+
+  const argon = candidates.get('argon18-krypton-pro');
+  assert.match(argon.facts.frame_weight_status, /current-generation.*870 g prior-generation value is excluded/);
+  assert.match(argon.price_status, /US\$3,375.*no attributable mainland CNY/);
+
+  assert.match(candidates.get('seka-spear-rdc').facts.stiffness_evidence, /14\.5% stiffness-to-weight improvement/);
+
+  const crux = candidates.get('specialized-s-works-crux-frameset');
+  assert.equal(crux.facts.frame_weight_g, 725);
+  assert.match(crux.facts.frame_weight_basis, /product 223486/);
+  assert.match(crux.price_status, /CNY 33,990.*prior-generation/);
+
+  const tarmac = candidates.get('missing-china-price-specialized-tarmac-sl8');
+  assert.equal(tarmac.facts.complete_weight_g, 7680);
+  assert.match(tarmac.facts.complete_weight_basis, /production-painted size-56/);
+  assert.match(tarmac.facts.stiffness_evidence, /33% stiffness-to-weight improvement/);
+  assert.match(tarmac.price_status, /CNY 30,990/);
+
+  const foundFields = new Set([
+    'platform:xmcarbonspeed-cs-gr01:frame-material',
+    'candidate:missing-china-price-van-rysel-rcr:tire-clearance',
+    'candidate:missing-china-price-van-rysel-rcr:complete-weight',
+    'candidate:missing-china-price-van-rysel-rcr:frame-stiffness',
+    'candidate:missing-china-price-giant-defy-advanced:price',
+    'candidate:seka-spear-rdc:frame-stiffness',
+    'candidate:specialized-s-works-crux-frameset:frame-weight',
+    'candidate:specialized-s-works-crux-frameset:price',
+    'candidate:missing-china-price-specialized-tarmac-sl8:price',
+    'candidate:missing-china-price-specialized-tarmac-sl8:complete-weight',
+    'candidate:missing-china-price-specialized-tarmac-sl8:frame-stiffness'
+  ]);
+  const targetFields = new Map([
+    ['platform:xmcarbonspeed-cs-gr01', ['frame-material', 'frame-stiffness']],
+    ['candidate:missing-china-price-van-rysel-rcr', ['tire-clearance', 'complete-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-giant-defy-advanced', ['price']],
+    ['candidate:pardus-spark-tourist', ['complete-weight']],
+    ['candidate:quick-pro-gr-one-grx-di2', ['price']],
+    ['candidate:sava-starship-r13', ['tire-clearance']],
+    ['candidate:argon18-krypton-pro', ['frame-weight', 'price']],
+    ['candidate:seka-spear-rdc', ['frame-stiffness']],
+    ['candidate:specialized-s-works-crux-frameset', ['frame-weight', 'price']],
+    ['candidate:missing-china-price-specialized-tarmac-sl8', ['price', 'complete-weight', 'frame-stiffness']]
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+  assert.equal(fieldCount, 17);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1215,7 +1293,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1322);
+  assert.equal(data.researchAttempts.length, 1339);
   assert.equal(products.length, data.variants.length);
 });
 

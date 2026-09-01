@@ -15,16 +15,18 @@
   "research_priority": "medium",
   "price_status": "secondary report of an official mainland markdown; current stock and checkout unverified",
   "required_before_dashboard": "Current official mainland stock and checkout for the exact 105 Di2 trim; China warranty/service policy; Numerical geometry, BB and tire-clearance specification; Resolve the product-page comparison conflict over tires/powermeter",
-  "last_reviewed": "2026-08-28",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "van-rysel-rcr-f-pro-official-global-2026-08-17",
     "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
     "decathlon-china-rcrf-route-2026-08-17",
     "decathlon-china-bike-warranty-2026-08-17",
-    "van-rysel-rcr-f-pro-smzdm-price-2026-08-28"
+    "van-rysel-rcr-f-pro-smzdm-price-2026-08-28",
+    "van-rysel-rcr-f-pro-decathlon-2026-09-01",
+    "van-rysel-rcr-f-family-official-2026-09-01"
   ],
   "support_note": "An official Decathlon China product route and adult-bicycle warranty document are available; exact RCR-F stock, checkout and coverage remain unresolved.",
-  "source_note": "Official global page establishes the exact build. A current secondary market synthesis reports the RCR-F Pro 105 Di2 at ¥19,999 after a July official markdown from ¥29,999; direct stock and checkout were not reproduced.",
+  "source_note": "Current exact manufacturer evidence supports 8.0 kg, a 32 mm maximum and a 7% head-tube-stiffness increase versus RCR Pro. The separate Decathlon 8.2 kg field remains a weight conflict and is not substituted.",
   "source_url": "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505",
   "observed_price": {
     "amount_cny": 19999,
@@ -41,6 +43,10 @@
     "frame_weight_g": 830,
     "complete_weight_g": 8000,
     "wheels": "Swiss Side Hadron Classic 470",
-    "tires": "Continental GP5000 S TLR"
+    "tires": "Continental GP5000 S TLR",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Exact Decathlon product specification; compatible maximum, not fitted nominal width",
+    "complete_weight_basis": "Current exact Van Rysel manufacturer claim; size, pedals, accessories and weighing protocol unpublished; a separate Decathlon regional catalog says 8.2 kg",
+    "stiffness_evidence": "Manufacturer reports the RCR-F head tube is 7% stiffer than RCR Pro to improve sprint performance; relative manufacturer claim without a public absolute protocol"
   }
 }
