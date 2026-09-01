@@ -8,12 +8,13 @@
   "status": "current",
   "summary": "Clear direct-sale modern frame with 50C, T47, UDH, and a three-year warranty claim.",
   "frame": {
-    "material": "carbon",
+    "material": "T800 carbon fiber",
     "fork_material": "carbon",
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 1234
+    "claimed_frame_weight_g": 1234,
+    "stiffness_evidence_status": "No attributable exact-model stiffness measurement or meaningful qualitative claim found after 50 registered source areas"
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -29,7 +30,8 @@
   "internal_storage": false,
   "china_availability": "direct-factory",
   "source_ids": [
-    "xmcarbonspeed-gr01-official"
+    "xmcarbonspeed-gr01-official",
+    "xmcarbonspeed-cs-gr01-official-2026-09-01"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }

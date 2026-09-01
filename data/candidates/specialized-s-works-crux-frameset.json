@@ -12,18 +12,24 @@
   ],
   "status": "mainland-price-observed",
   "research_priority": "medium",
-  "price_status": "official mainland catalog price",
+  "price_status": "Official mainland CNY 33,990 catalog observation for the represented prior-generation FACT 12r frameset; stock and final checkout untested",
   "official_price": {
     "amount_cny": 33990,
     "currency": "CNY",
     "price_type": "official-list",
     "observed_at": "2026-08-17"
   },
-  "source_ids": ["specialized-cn-store-finder-2026", "specialized-cn-crux-page"],
+  "source_ids": [
+    "specialized-cn-store-finder-2026",
+    "specialized-cn-crux-page",
+    "specialized-s-works-crux-frameset-global-2026-09-01"
+  ],
   "facts": {
-    "frame": "S-Works Crux carbon frameset",
-    "tire_clearance_mm": 47
+    "frame": "S-Works Crux FACT 12r carbon, threaded bottom bracket, UDH",
+    "tire_clearance_mm": 47,
+    "frame_weight_g": 725,
+    "frame_weight_basis": "Exact manufacturer frame-only claim for FACT 12r product 223486; a separate size-56 painted frameset-system value is 1.46 kg and actual weights vary by color, size and components"
   },
-  "source_note": "The China catalog lists the S-Works Crux frameset at ¥33,990. Family specifications remain separate from exact-generation confirmation; stock and final dealer checkout were not tested.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "Exact product 223486 supports a 725 g FACT 12r frame claim and a 1.46 kg size-56 painted frameset-system weight. The official China catalog observation is CNY 33,990; the newer Crux 5 is a different product.",
+  "last_reviewed": "2026-09-01"
 }
