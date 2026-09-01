@@ -1,0 +1,485 @@
+{
+  "id": "candidate-lightcarbon-lcr014-v-price-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcr014-v"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand YouTube channel — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent YouTube review or build — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand Bilibili account — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent Bilibili review or build — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand Xiaohongshu account — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent Xiaohongshu post — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand Douyin account — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent Douyin post — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand Weibo account — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent Weibo post — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Brand WeChat public article — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent WeChat public article — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Cycling forum thread — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Public owner build log — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Public community photo or setup post — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer exact-product page — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer exact-product page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact product page publishes no price. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-new-road-frame-with-direct-mount-brakes_p135.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer model-family or category page — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer current catalog — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer archived catalog — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer product manual — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer geometry document — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer technical paper or test note — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer support or warranty page — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer newsroom or launch page — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer site search — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer sitemap or indexed route inventory — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer structured page metadata — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer regional site — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer-listed distributor — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer dealer locator — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Manufacturer-operated online store — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Official Taobao store or exact item — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Official Tmall store or exact item — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Official JD store or exact item — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Verified Alibaba or 1688 supplier route — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Official AliExpress store or exact item — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Authorized mainland dealer — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Authorized regional dealer — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Brazilian Black Edition seller entry does not establish current exact LightCarbon package identity or mainland conditions. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.lojagtsm1.com.br/loja/busca.php?avancada=1&categoria=30-engrenagem-e-coroa&loja=394779&max=205&min=4"
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — International specialist retailer — field candidate:lightcarbon-lcr014-v:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Cycling-industry review publication — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Chinese cycling-media publication — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent laboratory or instrumented test — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Print or digital magazine archive — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Trade-show coverage — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Race-team equipment page — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Event or exhibitor catalog — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Independent geometry database — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Independent geometry database — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Secondary £500 entry describes a 2018 model snapshot and does not prove a current offer. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikkerr.com/frame/lightcarbon-new-road-frame-with-direct-mount-brakes-lcr014-v/"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Component compatibility database — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Product certification or registration database — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "LightCarbon LCR014-V exact direct mount frameset price — Public web archive — field candidate:lightcarbon-lcr014-v:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for LightCarbon LCR014-V frameset; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr014-v-batch-039-50-area-sweep-2026-09-01.json. No attributable exact current LightCarbon package price or mainland checkout was found. A secondary 2018 £500 snapshot and a Brazilian Black Edition LCR014-V seller price do not establish a current exact manufacturer package or domestic route."
+}

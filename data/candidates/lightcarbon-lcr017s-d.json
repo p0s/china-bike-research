@@ -5,11 +5,20 @@
   "category": "road-climbing",
   "type": "frameset",
   "why_interesting": "The stem-based version of LightCarbon's super-light LCR017 platform keeps the same 870 g size-52 frame while allowing a replaceable 10-degree stem.",
-  "missing": ["Current mainland quote, selected package, delivery and warranty route", "Independent exact-model stiffness result"],
+  "missing": [
+    "Current mainland quote, selected package, delivery and warranty route",
+    "Independent exact-model stiffness result"
+  ],
   "status": "official-global-current",
   "research_priority": "high",
-  "price_status": "quote only; current mainland price unverified",
-  "source_ids": ["lightcarbon-lcr017s-d-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Owner-reported US$555 manufacturer frame quotation converted to CNY; current mainland checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcr017s-d-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr017s-d-owner-quote-2025-04-09",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR017S-D super-light road disc frameset with separate stem",
     "frame_material": "Toray T700, T800 and T1000 carbon",
@@ -28,6 +37,19 @@
     "warranty": "Two years",
     "stiffness_evidence": "Manufacturer process claim only; no independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page distinguishes the LCR017S-D stem package from the integrated-cockpit LCR017-D while documenting the same frame weights and geometry family.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The current official page remains quote-only. A dated exact-model forum report isolates a US$555 LightCarbon frame quotation and separately states US$167 duty-free shipping to Italy; the CNY value is a reference conversion, not a mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 3768,
+    "currency": "CNY",
+    "price_type": "owner-reported-reference-conversion",
+    "observed_at": "2025-04-09",
+    "original_amount": 555,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Owner-reported US$555 LightCarbon LCR017S-D frame quotation converted at the dated central-parity reference",
+    "conditions": "Reference only; US$167 Italy shipping, tax treatment, duties, actual FX, package changes and current availability are excluded"
+  }
 }

@@ -5,11 +5,20 @@
   "category": "gravel-adventure",
   "type": "frameset",
   "why_interesting": "A 50C-clearance gravel frameset with a 1,140 g size-52 frame, integrated cockpit, downtube storage, T47 and UDH.",
-  "missing": ["Current mainland quote, exact included package and delivery route", "Independent exact-model stiffness or ride-compliance result"],
+  "missing": [
+    "Current mainland quote, exact included package and delivery route",
+    "Independent exact-model stiffness or ride-compliance result"
+  ],
   "status": "official-global-current",
   "research_priority": "high",
-  "price_status": "quote only; current mainland price unverified",
-  "source_ids": ["lightcarbon-lcg071-pro-official-2026-08-29", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Owner-reported US$629 exact frameset-package reference converted to CNY; current mainland checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcg071-pro-official-2026-08-29",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCG071-PRO gravel frameset with integrated HBR08 cockpit and downtube storage",
     "frame_material": "Toray T700 and T800 carbon",
@@ -29,6 +38,19 @@
     "warranty": "Two years",
     "stiffness_evidence": "Manufacturer attributes a 30% strength improvement to its molding process, without an independent protocol or exact-model stiffness result"
   },
-  "source_note": "The exact manufacturer page identifies LCG071-PRO and supplies its material, size-specific frame weights, multi-wheel clearance, standards, storage, geometry and warranty. No public retail price is shown.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "Current official specifications remain quote-only. A dated exact owner itemization isolates US$629 for the frame, fork, seatpost, clamp, headset spacers, thru-axles, HBR08 cockpit, Wahoo mount and storage bag; the CNY value is only a reference conversion, not a mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 4271,
+    "currency": "CNY",
+    "price_type": "owner-reported-reference-conversion",
+    "observed_at": "2025-11-30",
+    "original_amount": 629,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Owner-reported US$629 exact LCG071-PRO frameset package converted at the dated central-parity reference",
+    "conditions": "Reference only; custom paint, wheelset, accessories, shipping, tax, duties, bank fees, actual FX and current availability are excluded"
+  }
 }

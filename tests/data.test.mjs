@@ -1187,6 +1187,55 @@ test('batch 038 records exact materials, weights and prices while preserving mod
   assert.equal(fieldCount, 17);
 });
 
+test('batch 039 records three exact LightCarbon owner quotations and exhausts seven price unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const lcg071 = candidates.get('lightcarbon-lcg071-pro');
+  assert.equal(lcg071.observed_price.amount_cny, 4271);
+  assert.equal(lcg071.observed_price.original_amount, 629);
+  assert.match(lcg071.observed_price.price_basis, /exact LCG071-PRO frameset package/);
+  assert.match(lcg071.observed_price.conditions, /paint, wheelset, accessories, shipping/);
+
+  const lcr017 = candidates.get('lightcarbon-lcr017-d');
+  assert.equal(lcr017.observed_price.amount_cny, 4067);
+  assert.equal(lcr017.observed_price.original_amount, 599);
+  assert.match(lcr017.price_status, /package details and current mainland checkout unverified/);
+
+  const lcr017s = candidates.get('lightcarbon-lcr017s-d');
+  assert.equal(lcr017s.observed_price.amount_cny, 3768);
+  assert.equal(lcr017s.observed_price.original_amount, 555);
+  assert.match(lcr017s.observed_price.conditions, /US\$167 Italy shipping/);
+
+  const blockedIds = [
+    'lightcarbon-lcg074-d',
+    'lightcarbon-lcg074s-d',
+    'lightcarbon-lcg087-d',
+    'lightcarbon-lcg087s-d',
+    'lightcarbon-lcr020-d',
+    'lightcarbon-lcr007-v',
+    'lightcarbon-lcr014-v'
+  ];
+  for (const id of blockedIds) {
+    assert.equal(candidates.get(id).observed_price, undefined, id);
+    assert.match(candidates.get(id).price_status, /50 registered areas/, id);
+  }
+  assert.match(candidates.get('lightcarbon-lcg074-d').source_note, /bundles wheels, paint, accessories and DDP delivery/);
+  assert.match(candidates.get('lightcarbon-lcg087-d').source_note, /secondary £500 database record/);
+  assert.match(candidates.get('lightcarbon-lcr007-v').source_note, /2018 snapshot/);
+  assert.match(candidates.get('lightcarbon-lcr014-v').source_note, /Brazilian Black Edition listing/);
+
+  const foundIds = new Set(['lightcarbon-lcg071-pro', 'lightcarbon-lcr017-d', 'lightcarbon-lcr017s-d']);
+  const allIds = [...foundIds, ...blockedIds];
+  for (const recordId of allIds) {
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === 'price');
+    assert.ok(attempt, recordId);
+    const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+    assert.equal(applications.length, 50, recordId);
+    assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, recordId);
+    assert.equal(attempt.status, foundIds.has(recordId) ? 'found' : 'blocked', recordId);
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1293,7 +1342,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1339);
+  assert.equal(data.researchAttempts.length, 1349);
   assert.equal(products.length, data.variants.length);
 });
 

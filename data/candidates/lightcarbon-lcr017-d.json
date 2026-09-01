@@ -5,11 +5,21 @@
   "category": "road-climbing",
   "type": "frameset",
   "why_interesting": "A current super-light road frameset with an 870 g size-52 frame, modern T47 and UDH standards, and an included integrated cockpit.",
-  "missing": ["Current mainland quote, selected package, delivery and warranty route", "Independent exact-model stiffness result"],
+  "missing": [
+    "Current mainland quote, selected package, delivery and warranty route",
+    "Independent exact-model stiffness result"
+  ],
   "status": "official-global-current",
   "research_priority": "high",
-  "price_status": "quote only; current mainland price unverified",
-  "source_ids": ["lightcarbon-lcr017-d-official-2026-08-29", "lightcarbon-road-catalog-2026-2027", "lightcarbon-road-frames-category-2026-08-29", "lightcarbon-about-official-2026-08-29"],
+  "price_status": "Owner-reported US$599 manufacturer frame quotation converted to CNY; package details and current mainland checkout unverified",
+  "source_ids": [
+    "lightcarbon-lcr017-d-official-2026-08-29",
+    "lightcarbon-road-catalog-2026-2027",
+    "lightcarbon-road-frames-category-2026-08-29",
+    "lightcarbon-about-official-2026-08-29",
+    "lightcarbon-lcr017-d-owner-quote-2026-05-23",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "facts": {
     "frame": "LCR017-D super-light road disc frameset with HBR17 integrated cockpit",
     "frame_material": "Toray T700, T800 and T1000 carbon",
@@ -28,6 +38,19 @@
     "warranty": "Two years",
     "stiffness_evidence": "Manufacturer says its 3D latex process improves strength by 30%; no independent protocol or exact-model stiffness result is published"
   },
-  "source_note": "The exact manufacturer page and current catalog agree on the core material, weight, 32C limit and frame standards. The process-strength statement remains a manufacturer claim, not an independent stiffness measurement.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The current official page remains quote-only. A dated exact-model owner report isolates a US$599 manufacturer frame quotation while separately listing optional paint, US shipping and PayPal charge; the CNY value is a reference conversion, not a mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "observed",
+  "observed_price": {
+    "amount_cny": 4067,
+    "currency": "CNY",
+    "price_type": "owner-reported-reference-conversion",
+    "observed_at": "2026-05-23",
+    "original_amount": 599,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.7894,
+    "conversion_rate_date": "2026-07-31",
+    "price_basis": "Owner-reported US$599 LightCarbon LCR017-D frame quotation converted at the dated central-parity reference",
+    "conditions": "Reference only; exact included hardware, optional paint, shipping, PayPal charge, tax, duties, actual FX and current availability are excluded"
+  }
 }
