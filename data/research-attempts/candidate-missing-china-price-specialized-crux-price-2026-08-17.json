@@ -6,7 +6,7 @@
   },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-01",
   "required_channels": [
     "public-post",
     "web"
@@ -16,7 +16,141 @@
       "status": "blocked",
       "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
       "attempts": [
-        { "attempt": 1, "query": "Specialized Crux Comp GRX 中国 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+        {
+          "attempt": 1,
+          "query": "Specialized Crux Comp GRX 中国 价格",
+          "route": "canonical XHS pool availability preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-28",
+          "note": "No query was executed because the shared lane was already occupied.",
+          "approach_area_id": "independent-xiaohongshu"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "brand-youtube",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand YouTube channel — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "independent-youtube",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent YouTube review or build — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-bilibili",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand Bilibili account — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "independent-bilibili",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent Bilibili review or build — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand Xiaohongshu account — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand Douyin account — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent Douyin post — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand Weibo account — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent Weibo post — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Brand WeChat public article — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent WeChat public article — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Cycling forum thread — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Public owner build log — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Public community photo or setup post — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
       ]
     },
     "web": {
@@ -29,7 +163,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No price.",
-          "result_url": "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+          "result_url": "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -38,7 +173,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No price.",
-          "result_url": "https://www.specialized.com.cn/cn/zh"
+          "result_url": "https://www.specialized.com.cn/cn/zh",
+          "approach_area_id": "manufacturer-official-store"
         },
         {
           "attempt": 3,
@@ -47,7 +183,296 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Do not convert.",
-          "result_url": "https://www.specialized.com/jp/ja/crux-comp/p/4223483"
+          "result_url": "https://www.specialized.com/jp/ja/crux-comp/p/4223483",
+          "approach_area_id": "manufacturer-regional-site"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer model-family or category page — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer current catalog — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer archived catalog — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer product manual — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer geometry document — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer technical paper or test note — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer support or warranty page — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer newsroom or launch page — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer site search — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer sitemap or indexed route inventory — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer structured page metadata — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer-listed distributor — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Manufacturer dealer locator — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Official Taobao store or exact item — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Official Tmall store or exact item — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Official JD store or exact item — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Verified Alibaba or 1688 supplier route — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Official AliExpress store or exact item — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Authorized mainland dealer — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Authorized regional dealer — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — International specialist retailer — field candidate:missing-china-price-specialized-crux:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Cycling-industry review publication — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Chinese cycling-media publication — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent laboratory or instrumented test — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Print or digital magazine archive — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Trade-show coverage — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Race-team equipment page — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Event or exhibitor catalog — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Independent geometry database — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Component compatibility database — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Product certification or registration database — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Specialized Crux Comp GRX 223483 8.55kg China price — Public web archive — field candidate:missing-china-price-specialized-crux:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Specialized Crux Comp GRX product 223483; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
         }
       ]
     }
@@ -57,5 +482,6 @@
     "round3-crux-comp-specialized-japan-7e315e3e21"
   ],
   "retry_after": "2026-09-10",
-  "notes": "The exact mainland product route remains live but exposes no attributable current amount or stock; foreign prices are not converted."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/candidate-missing-china-price-specialized-crux-batch-033-50-area-sweep-2026-09-01.json. The 4 original 2026-08-17 applications retain their original queries, routes, outcomes, dates, URLs and notes and are assigned to matching registered areas. The exact mainland product route remains live but exposes no attributable current CNY amount; foreign prices were not converted.",
+  "minimum_distinct_approaches": 50
 }

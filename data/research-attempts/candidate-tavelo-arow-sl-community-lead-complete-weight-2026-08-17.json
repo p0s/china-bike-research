@@ -6,9 +6,10 @@
   },
   "field": "complete-weight",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-01",
   "required_channels": [
-    "public-post"
+    "public-post",
+    "web"
   ],
   "channels": {
     "public-post": {
@@ -20,7 +21,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -29,7 +31,8 @@
           "outcome": "found",
           "accessed_at": "2026-08-17",
           "note": "Exact public-post URL retained; no account or token recorded.",
-          "result_url": "https://www.xiaohongshu.com/explore/6a6c772b000000002c0018af"
+          "result_url": "https://www.xiaohongshu.com/explore/6a6c772b000000002c0018af",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -37,7 +40,438 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand YouTube channel — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand YouTube channel — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand Bilibili account — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand Bilibili account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand Xiaohongshu account — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand Xiaohongshu account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing sanitized repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand Douyin account — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand Douyin account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Independent Douyin post — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Independent Douyin post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand Weibo account — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand Weibo account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Independent Weibo post — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Independent Weibo post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Brand WeChat public article — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Brand WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Independent WeChat public article — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Independent WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Cycling forum thread — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Cycling forum thread — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Public owner build log — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Public owner build log — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Public community photo or setup post — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Public community photo or setup post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer exact-product page — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer exact-product page — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact frameset page publishes construction and stiffness claims but not the community build price. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.tavelo.cc/products/tavelo-arow-sl-neo-black"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer model-family or category page — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer model-family or category page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer current catalog — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer current catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer archived catalog — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer archived catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer product manual — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer product manual — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer geometry document — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer geometry document — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer technical paper or test note — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer technical paper or test note — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer support or warranty page — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer support or warranty page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer newsroom or launch page — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer newsroom or launch page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer site search — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer site search — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer sitemap or indexed route inventory — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer structured page metadata — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer structured page metadata — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer regional site — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer regional site — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer-listed distributor — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer-listed distributor — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer dealer locator — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer dealer locator — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Manufacturer-operated online store — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Manufacturer-operated online store — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Official Taobao store or exact item — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Official Taobao store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Official Tmall store or exact item — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Official Tmall store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Official JD store or exact item — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Official JD store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Verified Alibaba or 1688 supplier route — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Verified Alibaba or 1688 supplier route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Official AliExpress store or exact item — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Official AliExpress store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Authorized mainland dealer — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Authorized mainland dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Authorized regional dealer — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Authorized regional dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — International specialist retailer — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "International specialist retailer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Cycling-industry review publication — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Cycling-industry review publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Chinese cycling-media publication — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Chinese cycling-media publication — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Historical China launch prices were checked but are not treated as current. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.wildto.com/news/56799.html"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Independent laboratory or instrumented test — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Independent laboratory or instrumented test — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Print or digital magazine archive — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Print or digital magazine archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Trade-show coverage — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Trade-show coverage — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Race-team equipment page — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Race-team equipment page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Event or exhibitor catalog — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Event or exhibitor catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Independent geometry database — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Independent geometry database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Component compatibility database — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Component compatibility database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Product certification or registration database — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Product certification or registration database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "Tavelo Arow SL 6.2kg current mainland price stiffness — Public web archive — field candidate:tavelo-arow-sl-community-lead:complete-weight",
+          "route": "Public web archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for Tavelo Arow SL retained custom-build report; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
         }
       ]
     }
@@ -47,5 +481,6 @@
     "public-tavelo-arow-sl-build-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/candidate-tavelo-arow-sl-community-lead-batch-033-50-area-sweep-2026-09-01.json. The 3 original 2026-08-17 applications retain their original queries, routes, outcomes, dates, URLs and notes and are assigned to matching registered areas. The retained exact public post reports 6.2 kg; no BOM, size or independent scale protocol was established, so the basis remains a single community report.",
+  "minimum_distinct_approaches": 50
 }

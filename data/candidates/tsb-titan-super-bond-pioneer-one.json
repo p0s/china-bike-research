@@ -8,6 +8,7 @@
   "missing": [
     "Exact included package and current dealer stock",
     "Confirm distributor warranty terms for a mainland purchase",
+    "Exact-model stiffness evidence",
     "Rights-cleared exact product image"
   ],
   "status": "titanium-priority",
@@ -26,7 +27,15 @@
     "price_basis": "official Laget mainland retail price for the exact Pioneer One frameset"
   },
   "support_note": "The official Laget route lists a Beijing authorized dealer. A foreign authorized distributor states lifetime titanium-frame, three-year titanium-component and one-year carbon-component coverage; mainland applicability requires confirmation.",
-  "source_note": "The official product page lists ¥21,900 retail. The catalog displays that frameset price plus the adjustable build allowance as an estimated full-bike total.",
+  "source_note": "The TSB page lists PIONEER ONE under its LAGET bike section and identifies a Ti 3Al-2.5V 3D-printed frame. The exact current LAGET page publishes 1.35 kg in size S, 700x32C maximum and a carbon fork. No exact stiffness result was found.",
   "manufacturing": "3D-printed titanium-joint frame",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01",
+  "facts": {
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current exact LAGET manufacturer maximum",
+    "frame_weight_g": 1350,
+    "frame_weight_basis": "Manufacturer claim for size S; included-hardware basis unpublished",
+    "frame_material": "3D-printed Ti 3Al-2.5V titanium frame with carbon fork",
+    "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
+  }
 }

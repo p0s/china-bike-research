@@ -638,6 +638,98 @@ test('batch 032 resolves exact frame facts and preserves seven exhausted unknown
   assert.ok(preservedQueries.has('精灵 Mori 砾石车架组 material, standards, clearance and BOM'));
 });
 
+test('batch 033 records exact MTB and road facts while preserving conflicts and mainland unknowns', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  assert.match(candidates.get('giant-defy-advanced-sl1-community-lead').facts.complete_weight_status, /unverified and unmapped/);
+  assert.equal(candidates.get('missing-china-price-specialized-crux').facts.complete_weight_g, 8550);
+  assert.match(candidates.get('missing-china-price-specialized-crux').facts.complete_weight_basis, /product 223483.*size 56/i);
+
+  const p9 = candidates.get('icanian-p9');
+  assert.match(p9.facts.tire_clearance, /27\.5×3\.0 or 29×2\.3/);
+  assert.match(p9.facts.frame_weight_status, /2,570.*2,620.*2,400/);
+  assert.match(p9.facts.frame_material, /T700\/T800/);
+  assert.match(p9.facts.stiffness_evidence, /stiff in key zones/);
+
+  const sn04 = candidates.get('icanian-sn04');
+  assert.match(sn04.facts.tire_clearance, /26×4\.8.*26×4\.0/);
+  assert.match(sn04.facts.frame_weight_status, /2,560.*2,507.*2,057/);
+  assert.match(sn04.facts.frame_material_status, /T700 versus T700\/T800/);
+  assert.match(sn04.facts.stiffness_evidence, /front-end stiffness/);
+
+  assert.equal(candidates.get('specialized-roubaix-sl8-comp-105').official_price.amount_cny, 27990);
+  assert.match(candidates.get('specialized-roubaix-sl8-comp-105').facts.stiffness_evidence, /rigid rear triangle/);
+  assert.match(candidates.get('tavelo-arow-sl-community-lead').facts.complete_weight_basis, /Single exact public custom-build report/);
+  assert.match(candidates.get('tavelo-arow-sl-community-lead').facts.price_status, /No attributable current mainland CNY/);
+  assert.equal(candidates.get('tsb-titan-super-bond-pioneer-one').facts.frame_weight_g, 1350);
+  assert.equal(candidates.get('tsb-titan-super-bond-pioneer-one').facts.tire_clearance_mm, 32);
+  assert.match(candidates.get('twitter-t10-pro').facts.complete_weight_basis, /three selectable drivetrain builds/);
+
+  const sava = data.platforms.find((platform) => platform.id === 'sava-a7l-r7100');
+  assert.equal(sava.tire_clearance.published_max_mm, 25);
+  assert.match(sava.frame.frame_weight_status, /No frame-only/);
+
+  const foundFields = new Set([
+    'candidate:missing-china-price-specialized-crux:complete-weight',
+    'candidate:icanian-p9:tire-clearance',
+    'candidate:icanian-p9:frame-material',
+    'candidate:icanian-p9:frame-stiffness',
+    'candidate:icanian-sn04:tire-clearance',
+    'candidate:icanian-sn04:frame-stiffness',
+    'candidate:specialized-roubaix-sl8-comp-105:price',
+    'candidate:specialized-roubaix-sl8-comp-105:frame-stiffness',
+    'candidate:tavelo-arow-sl-community-lead:complete-weight',
+    'candidate:tavelo-arow-sl-community-lead:frame-stiffness',
+    'candidate:tsb-titan-super-bond-pioneer-one:tire-clearance',
+    'candidate:tsb-titan-super-bond-pioneer-one:frame-weight',
+    'candidate:tsb-titan-super-bond-pioneer-one:frame-material',
+    'candidate:twitter-t10-pro:complete-weight',
+    'candidate:twitter-t10-pro:frame-stiffness',
+    'platform:sava-a7l-r7100:tire-clearance'
+  ]);
+  const conflictedFields = new Set([
+    'candidate:icanian-p9:frame-weight',
+    'candidate:icanian-sn04:frame-weight',
+    'candidate:icanian-sn04:frame-material'
+  ]);
+  const targetFields = new Map([
+    ['candidate:giant-defy-advanced-sl1-community-lead', ['complete-weight', 'price']],
+    ['candidate:missing-china-price-specialized-crux', ['complete-weight', 'price']],
+    ['candidate:icanian-p9', ['tire-clearance', 'frame-weight', 'frame-material', 'frame-stiffness']],
+    ['candidate:icanian-sn04', ['tire-clearance', 'frame-weight', 'frame-material', 'frame-stiffness']],
+    ['candidate:specialized-roubaix-sl8-comp-105', ['price', 'frame-stiffness']],
+    ['candidate:tavelo-arow-sl-community-lead', ['price', 'complete-weight', 'frame-stiffness']],
+    ['candidate:tsb-titan-super-bond-pioneer-one', ['tire-clearance', 'frame-weight', 'frame-material', 'frame-stiffness']],
+    ['candidate:twitter-t10-pro', ['complete-weight', 'frame-stiffness']],
+    ['platform:sava-a7l-r7100', ['tire-clearance', 'frame-weight']]
+  ]);
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      const expected = foundFields.has(key) ? 'found' : conflictedFields.has(key) ? 'conflicted' : 'blocked';
+      assert.equal(attempt.status, expected, key);
+    }
+  }
+
+  const preservedLegacy = new Map([
+    ['candidate-giant-defy-advanced-sl1-community-lead-price-2026-08-17', 'Giant China Defy Advanced SL 1 price'],
+    ['candidate-missing-china-price-specialized-crux-price-2026-08-17', 'Specialized China Crux Comp GRX price'],
+    ['candidate-tavelo-arow-sl-community-lead-price-2026-08-17', 'Tavelo Arow SL official price'],
+    ['candidate-tavelo-arow-sl-community-lead-complete-weight-2026-08-17', '踏为乐 Arow SL 6.2kg complete-build weight']
+  ]);
+  for (const [id, query] of preservedLegacy) {
+    const attempt = data.researchAttempts.find((record) => record.id === id);
+    const queries = new Set(attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts).map((entry) => entry.query));
+    assert.ok(queries.has(query), id);
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -744,7 +836,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1212);
+  assert.equal(data.researchAttempts.length, 1233);
   assert.equal(products.length, data.variants.length);
 });
 

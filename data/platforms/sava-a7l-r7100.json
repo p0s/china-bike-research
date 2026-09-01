@@ -19,15 +19,74 @@
     "geometry": {
       "basis": "manufacturer exact-model geometry table",
       "source_id": "sava-a7l-official-global-2026-08-17",
-      "units": { "length": "mm", "angle": "degrees" },
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
       "sizes": [
-        { "size": "440", "seat_tube_mm": 443.3, "top_tube_mm": 505, "bb_drop_mm": 70, "chainstay_mm": 410, "head_angle_deg": 71.2, "seat_angle_deg": 73.5, "reach_mm": 358.4, "stack_mm": 509.3, "wheelbase_mm": 966.6 },
-        { "size": "470", "seat_tube_mm": 471.5, "top_tube_mm": 520, "bb_drop_mm": 70, "chainstay_mm": 410, "head_angle_deg": 71.2, "seat_angle_deg": 73.5, "reach_mm": 370, "stack_mm": 516.6, "wheelbase_mm": 969.9 },
-        { "size": "510", "seat_tube_mm": 511.5, "top_tube_mm": 535, "bb_drop_mm": 70, "chainstay_mm": 410, "head_angle_deg": 71.4, "seat_angle_deg": 73.5, "reach_mm": 378, "stack_mm": 534, "wheelbase_mm": 984.8 },
-        { "size": "540", "seat_tube_mm": 541.5, "top_tube_mm": 550, "bb_drop_mm": 70, "chainstay_mm": 410, "head_angle_deg": 72, "seat_angle_deg": 73.5, "reach_mm": 387, "stack_mm": 554.5, "wheelbase_mm": 994.3 },
-        { "size": "560", "seat_tube_mm": 562, "top_tube_mm": 559, "bb_drop_mm": 70, "chainstay_mm": 410, "head_angle_deg": 72, "seat_angle_deg": 73.5, "reach_mm": 390.3, "stack_mm": 580.5, "wheelbase_mm": 1004 }
+        {
+          "size": "440",
+          "seat_tube_mm": 443.3,
+          "top_tube_mm": 505,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "head_angle_deg": 71.2,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 358.4,
+          "stack_mm": 509.3,
+          "wheelbase_mm": 966.6
+        },
+        {
+          "size": "470",
+          "seat_tube_mm": 471.5,
+          "top_tube_mm": 520,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "head_angle_deg": 71.2,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 370,
+          "stack_mm": 516.6,
+          "wheelbase_mm": 969.9
+        },
+        {
+          "size": "510",
+          "seat_tube_mm": 511.5,
+          "top_tube_mm": 535,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "head_angle_deg": 71.4,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 378,
+          "stack_mm": 534,
+          "wheelbase_mm": 984.8
+        },
+        {
+          "size": "540",
+          "seat_tube_mm": 541.5,
+          "top_tube_mm": 550,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 387,
+          "stack_mm": 554.5,
+          "wheelbase_mm": 994.3
+        },
+        {
+          "size": "560",
+          "seat_tube_mm": 562,
+          "top_tube_mm": 559,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 73.5,
+          "reach_mm": 390.3,
+          "stack_mm": 580.5,
+          "wheelbase_mm": 1004
+        }
       ]
-    }
+    },
+    "frame_weight_status": "No frame-only size, finish or included-hardware weight found after 50 registered source areas"
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -55,5 +114,6 @@
     "sava-r08-tire-compatibility-2026-08-30",
     "sava-a7l-mainland-current-2026-08-30"
   ],
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-09-01",
+  "source_note": "Current exact manufacturer evidence confirms the conservative R08 25C maximum. The A7L page publishes only an approximately 8.6 kg complete-bike reference varying by size, not a frame-only weight."
 }
