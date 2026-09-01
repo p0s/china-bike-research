@@ -1061,16 +1061,21 @@ function videoRelationshipLabel(value) {
   }[value] ?? sentenceLabel(value);
 }
 
-function videoContext(videos) {
+function videoTimestampHref(video, timestamp) {
+  const separator = video.url.includes('?') ? '&' : '?';
+  return `${video.url}${separator}t=${Math.max(0, Math.floor(timestamp.at_seconds))}`;
+}
+
+function videoContext(videos, heading = 'Watch this platform') {
   if (!videos?.length) return '';
   return `<section class="video-context" aria-labelledby="video-context-title">
-    <div class="video-intro"><span>Selected video context</span><h2 id="video-context-title">Watch this platform</h2><p>Useful for seeing the bike and hearing ride or build context. The shown build may differ, and video commentary does not verify the current China price, exact BOM, or published specifications.</p></div>
+    <div class="video-intro"><span>Selected video context</span><h2 id="video-context-title">${escapeHtml(heading)}</h2><p>Useful for seeing the bike and hearing ride or build context. The shown build may differ, and video commentary does not verify the current China price, exact BOM, or published specifications.</p></div>
     <div class="video-list">${videos.map((video) => `<article class="video-entry">
       <div class="video-shell" data-video-shell data-youtube-id="${escapeAttr(video.youtube_video_id)}" data-video-title="${escapeAttr(video.title)}">
         <button class="video-load" type="button" data-load-video aria-label="Load ${escapeAttr(video.title)} from YouTube"><span class="video-play" aria-hidden="true">▶</span><span><strong>Load video</strong><small>No YouTube request until you choose</small></span></button>
         <noscript><p>JavaScript is off. <a href="${escapeAttr(video.url)}" rel="noreferrer">Watch on YouTube</a>.</p></noscript>
       </div>
-      <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p><small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. ${escapeHtml(video.disclosure)} <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
+      <div class="video-copy"><div class="video-meta"><span>${escapeHtml(videoFormatLabel(video.format))}</span><span>${escapeHtml(videoRelationshipLabel(video.relationship))}</span></div><h3><a href="${escapeAttr(video.url)}" rel="noreferrer">${escapeHtml(video.title)}</a></h3><p>${escapeHtml(video.summary)}</p>${video.timestamps?.length ? `<div class="video-timestamps" aria-label="Video sections">${video.timestamps.map((timestamp) => `<a href="${escapeAttr(videoTimestampHref(video, timestamp))}" rel="noreferrer">${escapeHtml(timestamp.label)} · ${Math.floor(timestamp.at_seconds / 60)}:${String(Math.floor(timestamp.at_seconds % 60)).padStart(2, '0')}</a>`).join('')}</div>` : ''}<small>${escapeHtml(video.channel_name)}${video.published_at ? ` · ${escapeHtml(video.published_at)}` : ''}. ${escapeHtml(video.disclosure)} <a href="${escapeAttr(video.disclosure_url)}" rel="noreferrer">Disclosure basis</a>.</small></div>
     </article>`).join('')}</div>
   </section>`;
 }
@@ -1407,6 +1412,7 @@ export function renderCandidateModel(ctx, entry) {
     <section class="detail-section" aria-labelledby="candidate-specifications-title"><h2 id="candidate-specifications-title">Specifications and evidence</h2><dl class="detail-list"><div><dt>Product type</dt><dd>${escapeHtml(type)}</dd></div><div><dt>Category</dt><dd>${escapeHtml(category)}</dd></div><div><dt>Evidence maturity</dt><dd>${escapeHtml(maturity)}</dd></div><div><dt>Price basis</dt><dd>${escapeHtml(priceState || 'Not recorded')}</dd></div>${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}</dd></div>`).join('')}${candidate.manufacturing ? `<div><dt>Manufacturing note</dt><dd>${escapeHtml(candidatePublicText(candidate.manufacturing))}</dd></div>` : ''}</dl>${sourceNote ? `<p>${escapeHtml(sourceNote)}</p>` : ''}</section>
     <section class="model-reading" aria-labelledby="candidate-buying-context-title"><h2 id="candidate-buying-context-title">Buying context</h2><p>${missing.length ? escapeHtml(`Before buying, verify ${missing.map((item) => String(item).trim().replace(/[.;]+$/, '')).join('; ')}.`) : 'No additional evidence gaps are documented.'}</p></section>
     ${brandStory(brand)}
+    ${videoContext(entry.videos, 'Watch this model')}
     <details class="detail-panel" id="source-records"><summary>Price record and sources</summary><div class="detail-panel-body">${entry.price ? `<div class="price-records"><div><strong>${escapeHtml(formatPrice(entry.price))}</strong><span>${escapeHtml(entry.price.observed_at ?? 'Date not recorded')} · ${escapeHtml(candidatePriceRecordLabel(entry))}</span></div></div>` : ''}${candidateSourceList(entry)}</div></details>
   </div></div></section>`;
   return page(ctx, {

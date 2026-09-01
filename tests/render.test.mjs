@@ -783,6 +783,26 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
 });
 
+test('candidate videos render as disclosed context with timestamp links', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'quick-pro-ur-one');
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-09-02T00:00:00Z')
+  };
+  const detail = renderCandidateModel(context, entry);
+  assert.match(detail, /Quick Pro UR One Full Review in Beijing, China/);
+  assert.match(detail, /Watch this model/);
+  assert.match(detail, /Publication review/);
+  assert.match(detail, /Specifications · 1:06/);
+  assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
+  assert.match(detail, /No YouTube request until you choose/);
+  assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
+});
+
 
 test('generic project copy is category-neutral', () => {
   assert.match(html, /<h1>Bikes in China<\/h1>/);

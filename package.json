@@ -23,6 +23,9 @@
     "media:optimize": "node scripts/optimize-image.mjs",
     "image:report": "node scripts/image-health-report.mjs",
     "stale:report": "node scripts/stale-report.mjs",
+    "video:validate": "node scripts/video-research.mjs validate",
+    "video:normalize": "node scripts/video-research.mjs normalize",
+    "video:match": "node scripts/video-research.mjs match",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run privacy && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build"
   }

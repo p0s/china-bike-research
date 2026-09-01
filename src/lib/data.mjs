@@ -815,6 +815,14 @@ export function validateDataset(data = loadDataset()) {
     if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);
     if (!videoFormats.has(video.format)) errors.push(`video ${video.id}: invalid format`);
     if (!videoRelationships.has(video.relationship)) errors.push(`video ${video.id}: invalid relationship`);
+    if (video.timestamps !== undefined) {
+      if (!Array.isArray(video.timestamps)) errors.push(`video ${video.id}: timestamps must be an array`);
+      else for (const timestamp of video.timestamps) {
+        if (!isObject(timestamp) || typeof timestamp.label !== 'string' || !timestamp.label.trim() || typeof timestamp.at_seconds !== 'number' || timestamp.at_seconds < 0) {
+          errors.push(`video ${video.id}: invalid timestamp`);
+        }
+      }
+    }
     if (typeof video.summary !== 'string' || video.summary.trim().length < 30) errors.push(`video ${video.id}: summary is too short`);
     if (typeof video.disclosure !== 'string' || video.disclosure.trim().length < 20) errors.push(`video ${video.id}: disclosure is too short`);
     try {
@@ -837,6 +845,8 @@ export function validateDataset(data = loadDataset()) {
     if (target.candidate_id !== undefined) {
       if (!candidateIds.has(target.candidate_id)) errors.push(`video ${video.id}: missing candidate ${target.candidate_id}`);
       if (video.match !== 'exact-model-lead') errors.push(`video ${video.id}: candidate target must use exact-model-lead match`);
+      const candidate = data.candidates.find((item) => item.id === target.candidate_id);
+      if (candidate && !(candidate.video_ids ?? []).includes(video.id)) errors.push(`video ${video.id}: candidate ${target.candidate_id} does not link this video`);
     }
   }
   for (const [platformId, count] of platformVideoCounts) {
@@ -1002,6 +1012,7 @@ function candidateBrand(candidate, brands) {
  */
 export function joinCatalogCandidates(data = loadDataset()) {
   const sources = new Map(data.sources.map((item) => [item.id, item]));
+  const videosById = new Map(data.videos.map((item) => [item.id, item]));
   return data.candidates
     .filter((candidate) => !candidate.existing_record_id || candidate.catalog_distinct_reason)
     .map((candidate) => {
@@ -1026,6 +1037,10 @@ export function joinCatalogCandidates(data = loadDataset()) {
         .filter((item) => item.role === 'gallery')
         .sort((a, b) => (a.sort_order ?? Number.POSITIVE_INFINITY) - (b.sort_order ?? Number.POSITIVE_INFINITY) || a.id.localeCompare(b.id))
         .map((item) => ({ ...item, source: sources.get(item.source_id) ?? null }));
+      const videos = (candidate.video_ids ?? [])
+        .map((id) => videosById.get(id))
+        .filter(Boolean)
+        .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -1044,6 +1059,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
+        videos,
         identifiableModel: hasIdentifiableModel,
         defaultVisible: Boolean(
           officialPrice ||

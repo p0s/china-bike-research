@@ -1936,7 +1936,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
-  assert.equal(data.videos.length, 12);
+  assert.equal(data.videos.length, 16);
   assert.ok(data.sources.length >= 313);
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
@@ -2687,13 +2687,15 @@ test('public-post quotations require bounded immutable media and a completed pri
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
   const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
   const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
-  assert.equal(publishedVideos.length, 5);
-  assert.equal(candidateVideos.length, 7);
+  assert.equal(publishedVideos.length, 6);
+  assert.equal(candidateVideos.length, 10);
   assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
   assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
   assert.ok(data.videos.every((video) => video.disclosure.length >= 20));
+  assert.ok(data.videos.flatMap((video) => video.timestamps ?? []).every((timestamp) => timestamp.at_seconds >= 0));
   assert.equal(products.find((product) => product.platform.id === 'yoeleo-altera-g21').videos[0].channel_name, 'China Cycling');
   assert.equal(products.find((product) => product.platform.id === 'winspace-g3').videos.length, 0);
+  assert.ok(catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-ur-one').videos.some((video) => video.id === 'china-rides-quick-pro-ur-one'));
 
   const malformed = structuredClone(data);
   malformed.videos[0].url = 'https://www.youtube.com/watch?v=wrong-id';
@@ -2702,6 +2704,10 @@ test('curated videos stay exact, disclosed, and separate from publication eviden
   const mismatchedTarget = structuredClone(data);
   mismatchedTarget.candidates.find((candidate) => candidate.id === 'quick-pro-er-one').video_ids = ['china-cycling-incolor-ssr-published'];
   assert.ok(validateDataset(mismatchedTarget).some((error) => error.includes('targets another record')));
+
+  const unlinkedTarget = structuredClone(data);
+  unlinkedTarget.candidates.find((candidate) => candidate.id === 'xlab-ad8').video_ids = [];
+  assert.ok(validateDataset(unlinkedTarget).some((error) => error.includes('does not link this video')));
 });
 
 test('category-specific facts stay scoped to the categories that use them', () => {

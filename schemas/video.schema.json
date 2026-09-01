@@ -50,6 +50,18 @@
     "match": { "enum": ["exact-platform", "exact-variant", "exact-model-lead"] },
     "format": { "enum": ["hands-on-review", "long-term-review", "model-overview", "build-and-ride"] },
     "relationship": { "enum": ["retailer-linked", "product-supplied", "publication-review", "owner-review"] },
+    "timestamps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "at_seconds"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "at_seconds": { "type": "number", "minimum": 0 }
+        }
+      }
+    },
     "disclosure": { "type": "string", "minLength": 20 },
     "disclosure_url": { "type": "string", "format": "uri" },
     "summary": { "type": "string", "minLength": 30 }
