@@ -6,7 +6,8 @@
   },
   "field": "price",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
     "web"
@@ -14,9 +15,143 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "The canonical sequential XHS pool remained owned by active job campaign-1787875913952, so no query, retry, interruption or bypass was attempted.",
+      "blocker": "One or more exact public routes were blocked and no login, verification challenge, retry loop or bypass was attempted; every other registered area was still checked.",
       "attempts": [
-        { "attempt": 1, "query": "PARDUS Robin EVO 价格", "route": "canonical XHS pool availability preflight", "outcome": "blocked", "accessed_at": "2026-08-28", "note": "No query was executed because the shared lane was already occupied." }
+        {
+          "attempt": 1,
+          "query": "PARDUS Robin EVO 价格",
+          "route": "canonical XHS pool availability preflight",
+          "outcome": "blocked",
+          "accessed_at": "2026-08-28",
+          "note": "No query was executed because the shared lane was already occupied.",
+          "approach_area_id": "brand-xiaohongshu"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "brand-youtube",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Brand YouTube channel — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand youtube channel indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "independent-youtube",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent YouTube review or build — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent youtube review or build indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-bilibili",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Brand Bilibili account — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand bilibili account indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "independent-bilibili",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent Bilibili review or build — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent bilibili review or build indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent Xiaohongshu post — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Only public search-engine Xiaohongshu indexes were checked under the shared-runtime boundary; no new XHS capture was started. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Brand Douyin account — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand douyin account indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent Douyin post — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent douyin post indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Brand Weibo account — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent Weibo post — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Brand WeChat public article — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent WeChat public article — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Cycling forum thread — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public cycling forum thread indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Public owner build log — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public public owner build log indexes were checked for pardus-robin-evo-community-lead; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Public community photo or setup post — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public exact-model image indexes were checked, but no media was copied and visual inference was not used as a specification or rights basis. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
       ]
     },
     "web": {
@@ -29,7 +164,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No amount.",
-          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030"
+          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -38,7 +174,8 @@
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
           "note": "No amount.",
-          "result_url": "https://pardus.jd.com/"
+          "result_url": "https://pardus.jd.com/",
+          "approach_area_id": "jd-official-store"
         },
         {
           "attempt": 3,
@@ -47,7 +184,300 @@
           "outcome": "rejected",
           "accessed_at": "2026-08-17",
           "note": "Foreign reference only.",
-          "result_url": "https://www.votreservicecourse.fr/shop/category/velos-9"
+          "result_url": "https://www.votreservicecourse.fr/shop/category/velos-9",
+          "approach_area_id": "international-specialist-retailer"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer model-family or category page — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer current catalog — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Current manufacturer road catalog was checked for the active Robin EVO family. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.parduscycle.com/highway.aspx?t=1030"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer archived catalog — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer product manual — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer geometry document — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer technical paper or test note — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer support or warranty page — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer newsroom or launch page — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer site search — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer sitemap or indexed route inventory — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer structured page metadata — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer regional site — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer-listed distributor — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer dealer locator — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Manufacturer-operated online store — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "taobao-official-store",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Official Taobao store or exact item — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Public marketplace indexing exposes a Robin EVO frameset option but not the exact competition build price. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://tao.hooos.com/search?w=Robin"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "tmall-official-store",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Official Tmall store or exact item — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Verified Alibaba or 1688 supplier route — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Official AliExpress store or exact item — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Authorized mainland dealer — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Authorized regional dealer — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Current foreign 6.7 kg Ultegra build is a different configuration and its EUR price was rejected for the retained build. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://leservicecourse.fr/robin-evo/"
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Cycling-industry review publication — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Chinese cycling-media publication — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Older-generation review reports a fitted 32 mm tire, not a manufacturer maximum. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.biketo.com/product/47194_3.html"
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent laboratory or instrumented test — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Print or digital magazine archive — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Trade-show coverage — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Race-team equipment page — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Event or exhibitor catalog — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Independent geometry database — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Component compatibility database — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Product certification or registration database — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "PARDUS Robin EVO 6.2kg Dura-Ace R9270 competition build China price maximum tire clearance generation — Public web archive — field candidate:pardus-robin-evo-community-lead:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was searched for current exact-model evidence on pardus-robin-evo-community-lead; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
         }
       ]
     }
@@ -57,5 +487,5 @@
     "round3-pardus-road-bike-category-votre-service-course-29b9bf5cf5"
   ],
   "retry_after": "2026-09-10",
-  "notes": "The current exact competition-build mainland price remains unavailable; active official and JD routes do not expose an attributable amount."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/pardus-robin-evo-community-lead-50-area-sweep-2026-09-01.json. The original four applications are preserved and assigned to matching registered areas; the remaining areas extend rather than replace that provenance. No current mainland amount maps to the exact 6.2 kg Dura-Ace competition build; historical, foreign and other-trim prices were rejected."
 }

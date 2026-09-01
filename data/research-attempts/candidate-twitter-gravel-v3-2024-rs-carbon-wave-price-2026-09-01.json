@@ -1,0 +1,487 @@
+{
+  "id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-price-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-gravel-v3-2024-rs-carbon-wave"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more exact public routes were blocked and no login, verification challenge, retry loop or bypass was attempted; every other registered area was still checked.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand YouTube channel — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand youtube channel indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent YouTube review or build — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent youtube review or build indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand Bilibili account — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand bilibili account indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent Bilibili review or build — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent bilibili review or build indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand Xiaohongshu account — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Only public search-engine Xiaohongshu indexes were checked under the shared-runtime boundary; no new XHS capture was started. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent Xiaohongshu post — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Only public search-engine Xiaohongshu indexes were checked under the shared-runtime boundary; no new XHS capture was started. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand Douyin account — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand douyin account indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent Douyin post — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent douyin post indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand Weibo account — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent Weibo post — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Brand WeChat public article — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent WeChat public article — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Cycling forum thread — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Exact-model owner-build discussion was checked without treating fitted tires or photos as a manufacturer maximum. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://chinertown.com/index.php?topic=5365.0"
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Public owner build log — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public public owner build log indexes were checked for twitter-gravel-v3-2024-rs-carbon-wave; they yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Public community photo or setup post — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public exact-model image indexes were checked, but no media was copied and visual inference was not used as a specification or rights basis. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer exact-product page — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer exact-product page — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Archived manufacturer route preserves the matching Gravel V3 family identity. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.twitter-bikes.com/entwviewbike/804.html"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer model-family or category page — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer current catalog — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer archived catalog — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer product manual — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Exact-model 2024 manual mirror publishes a 700x40C maximum for the matching press-fit generation. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://manuals.plus/ae/1005003697488669"
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer geometry document — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer technical paper or test note — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer support or warranty page — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer newsroom or launch page — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer site search — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer sitemap or indexed route inventory — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer structured page metadata — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer regional site — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer-listed distributor — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer dealer locator — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Manufacturer-operated online store — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Official Taobao store or exact item — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Public listing mirror preserves the option matrix but does not tie photos or price to one carbon-wheel selection. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://tao.hooos.com/goods_jqVJ2MpS0tJNazVpjatBBOTJte-KaykkBHjRBabOZxFp.html"
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Official Tmall store or exact item — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Official JD store or exact item — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Verified Alibaba or 1688 supplier route — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Official AliExpress store or exact item — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Authorized mainland dealer — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Authorized regional dealer — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — International specialist retailer — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Cycling-industry review publication — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Chinese cycling-media publication — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent laboratory or instrumented test — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Print or digital magazine archive — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Trade-show coverage — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Race-team equipment page — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Event or exhibitor catalog — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Independent geometry database — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Independent geometry database — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Independent 2024 exact-model geometry index was checked. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/bikes/66c5e0d3278fcc001a88e2fa-twitter-bikes-gravel-v3?build=base&version=2024"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Component compatibility database — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Product certification or registration database — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 carbon wave press-fit 40C original price — Public web archive — field candidate:twitter-gravel-v3-2024-rs-carbon-wave:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was searched for current exact-model evidence on twitter-gravel-v3-2024-rs-carbon-wave; it yielded no additional attributable value for the frozen fields. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/twitter-gravel-v3-2024-rs-carbon-wave-50-area-sweep-2026-09-01.json. The original exact carbon-wheel/photo-led selection price remains unavailable; alloy-wheel, current T47 and foreign prices were rejected."
+}

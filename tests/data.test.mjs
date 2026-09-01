@@ -334,6 +334,77 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
   }
 });
 
+test('batch 029 resolves exact clearances and preserves exhausted unknowns across fifty distinct areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+
+  assert.equal(candidates.get('hi-light-g0').facts.tire_clearance_mm, 50);
+  assert.equal(candidates.get('hi-light-r9-2025').facts.tire_clearance_mm, 28);
+  assert.equal(candidates.get('laget-aero-one').facts.tire_clearance_mm, 30);
+  assert.equal(candidates.get('laget-pioneer').facts.tire_clearance_mm, 32);
+  assert.equal(candidates.get('laget-pioneer-one').facts.tire_clearance_mm, 32);
+
+  const roubaix = candidates.get('specialized-roubaix-sl8-comp-105');
+  assert.equal(roubaix.facts.complete_weight_g, 8970);
+  assert.match(roubaix.facts.complete_weight_basis, /size 56.*vary by size, color and component variation/);
+  assert.equal(roubaix.facts.tire_clearance_mm, 40);
+  assert.match(roubaix.facts.drivetrain, /105 Di2 2x12 electronic/);
+
+  const pardus = candidates.get('pardus-robin-evo-community-lead');
+  assert.equal(pardus.facts.tire_clearance_mm, undefined);
+  assert.match(pardus.source_note, /no exact-build mainland price or manufacturer maximum tire clearance/);
+
+  const gravel = candidates.get('twitter-gravel-v3-2024-rs-carbon-wave');
+  assert.equal(gravel.facts.tire_clearance_mm, 40);
+  assert.equal(gravel.observed_price, undefined);
+  assert.match(gravel.source_note, /CNY 3,991 alloy-wheel option.*not transferred/);
+
+  assert.equal(platforms.get('twitter-cyclone-gen3-et').tire_clearance, undefined);
+  assert.equal(candidates.get('generic-custom-carbon-road').facts?.tire_clearance_mm, undefined);
+
+  const foundFields = new Set([
+    'candidate:hi-light-g0:tire-clearance',
+    'candidate:hi-light-r9-2025:tire-clearance',
+    'candidate:laget-aero-one:tire-clearance',
+    'candidate:laget-pioneer:tire-clearance',
+    'candidate:laget-pioneer-one:tire-clearance',
+    'candidate:specialized-roubaix-sl8-comp-105:complete-weight',
+    'candidate:specialized-roubaix-sl8-comp-105:tire-clearance',
+    'candidate:twitter-gravel-v3-2024-rs-carbon-wave:tire-clearance'
+  ]);
+  const frozenFields = [
+    ['candidate', 'hi-light-g0', 'tire-clearance'],
+    ['candidate', 'hi-light-r9-2025', 'tire-clearance'],
+    ['candidate', 'laget-aero-one', 'tire-clearance'],
+    ['candidate', 'laget-pioneer', 'tire-clearance'],
+    ['candidate', 'laget-pioneer-one', 'tire-clearance'],
+    ['candidate', 'specialized-roubaix-sl8-comp-105', 'complete-weight'],
+    ['candidate', 'specialized-roubaix-sl8-comp-105', 'tire-clearance'],
+    ['candidate', 'pardus-robin-evo-community-lead', 'price'],
+    ['candidate', 'pardus-robin-evo-community-lead', 'tire-clearance'],
+    ['candidate', 'twitter-gravel-v3-2024-rs-carbon-wave', 'tire-clearance'],
+    ['candidate', 'twitter-gravel-v3-2024-rs-carbon-wave', 'price'],
+    ['platform', 'twitter-cyclone-gen3-et', 'tire-clearance'],
+    ['candidate', 'generic-custom-carbon-road', 'tire-clearance']
+  ];
+  for (const [recordType, recordId, field] of frozenFields) {
+    const key = `${recordType}:${recordId}:${field}`;
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+    assert.ok(attempt, key);
+    const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+    assert.equal(applications.length, 50, key);
+    assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+    assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+  }
+
+  const legacyPrice = data.researchAttempts.find((record) => record.id === 'candidate-pardus-robin-evo-community-lead-price-2026-08-17');
+  const preservedQueries = new Set(legacyPrice.required_channels.flatMap((channel) => legacyPrice.channels[channel].attempts).map((attempt) => attempt.query));
+  assert.ok(preservedQueries.has('PARDUS Robin EVO 价格'));
+  assert.ok(preservedQueries.has('Pardus Robin EVO China price'));
+  assert.ok(preservedQueries.has('Pardus Robin EVO JD price'));
+  assert.ok(preservedQueries.has('Pardus Robin EVO foreign price'));
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -440,7 +511,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1130);
+  assert.equal(data.researchAttempts.length, 1142);
   assert.equal(products.length, data.variants.length);
 });
 

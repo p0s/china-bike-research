@@ -21,7 +21,11 @@
     "observed_at": "2026-08-08"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/172.html",
-  "source_note": "Official page lists retail price ¥15,900.",
+  "source_note": "The current exact manufacturer page lists CNY 15,900 and a 700x50C maximum. A current independent retailer lists 700x45C; the conflict is preserved and the exact manufacturer maximum controls.",
   "manufacturing": "titanium frame with 3D-printed/integrated details",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "facts": {
+    "tire_clearance_mm": 50,
+    "tire_clearance_basis": "Current exact manufacturer maximum; an independent current retailer lists 45C, so the manufacturer value controls"
+  }
 }

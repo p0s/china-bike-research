@@ -6,8 +6,7 @@
   "type": "complete-bike",
   "why_interesting": "This exact 105 build gives the Roubaix SL8 a verified mid-range mainland price point between the Tiagra bike and higher electronic builds.",
   "missing": [
-    "Exact complete bill of materials and measured weight",
-    "Current mainland stock and final dealer checkout",
+    "Full China-market bill of materials and current stock/final dealer checkout",
     "Local warranty and service route"
   ],
   "status": "mainland-price-observed",
@@ -19,11 +18,19 @@
     "price_type": "official-list",
     "observed_at": "2026-08-17"
   },
-  "source_ids": ["specialized-cn-store-finder-2026"],
+  "source_ids": [
+    "specialized-cn-store-finder-2026",
+    "specialized-roubaix-sl8-comp-105-china-2026-09-01",
+    "specialized-roubaix-sl8-comp-105-global-2026-09-01"
+  ],
   "facts": {
-    "drivetrain": "Shimano 105",
-    "frame": "Roubaix SL8 carbon platform"
+    "drivetrain": "Shimano 105 Di2 2x12 electronic",
+    "frame": "Roubaix SL8 carbon platform",
+    "complete_weight_g": 8970,
+    "complete_weight_basis": "Manufacturer reference for size 56 production build; actual weight can vary by size, color and component variation",
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "Manufacturer maximum for exact product 218669; stock tires are 700x32C"
   },
-  "source_note": "The official China catalog displayed the Roubaix SL8 Comp Shimano 105 at ¥27,990. Stock, final dealer checkout and the complete China-market bill of materials were not independently verified.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The exact China route maps the retained CNY 27,990 card to product 218669. The same exact product number on a current manufacturer regional page publishes an 8.97 kg size-56 reference and 40 mm maximum; actual weight varies by size, color and component variation.",
+  "last_reviewed": "2026-09-01"
 }
