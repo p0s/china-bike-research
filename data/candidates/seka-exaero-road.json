@@ -16,7 +16,8 @@
     "public-seka-exaero-build-2026-08-17",
     "public-seka-exaero-launch-price-2026-08-27",
     "public-seka-exaero-rdc-owner-build-2026-08-27",
-    "public-seka-exaero-owner-2026-08-17"
+    "public-seka-exaero-owner-2026-08-17",
+    "seka-exaero-road-stiffness-current-2026-09-01"
   ],
   "facts": {
     "frame": "T1100/M46J-claimed carbon with one-piece molding, fully internal routing and UDH",
@@ -27,7 +28,8 @@
     "tire_clearance_mm": 32,
     "sizes": "44, 49, 52, 54, 56, 58 and 61; official chainstays are 408 mm across the range",
     "drivetrain": "Shimano Di2 and SRAM AXS routing documented; removable front-derailleur mount",
-    "cockpit": "Gladius standard or ALTA +25 mm, each offered in 19 combinations; MAG aero bottles are sold separately"
+    "cockpit": "Gladius standard or ALTA +25 mm, each offered in 19 combinations; MAG aero bottles are sold separately",
+    "stiffness_evidence": "Manufacturer comparative structural claims reproduced by a current specialist retailer: versus SEKA Spear, front lateral stiffness +21.2%, rear lateral stiffness +7.6%, and overall torsional stiffness +13.4% (367 to 416). Test protocol and units are undisclosed; not independent lab evidence."
   },
   "observed_price": {
     "amount_cny": 11900,
@@ -36,6 +38,6 @@
     "price_basis": "Public exact-model launch post headline, starting frameset price; trim and included-package mapping unresolved"
   },
   "price_status": "Public starting price; do not assume it is the 820 g RDC package.",
-  "source_note": "This is the 32 mm road ExAero generation, not the published 56/52 mm ExAero GR gravel platform. The official product page supports 820 g RDC and 935 g standard size-54 frame claims, 32 mm measured maximum tire capacity, BSA 68, UDH, seven race-oriented sizes and manufacturer wind-tunnel/CFD claims. A public RDC owner documented a 6.67 kg custom build with a 2× drivetrain and 60 mm wheels; that is useful build evidence, not a normalized factory-bike weight.",
-  "last_reviewed": "2026-08-27"
+  "source_note": "This is the 32 mm road ExAero generation, not ExAero GR. Current exact-model evidence supports 820 g RDC and 935 g standard size-54 frame claims, BSA 68, UDH and seven sizes. Manufacturer comparative claims report +21.2% front lateral, +7.6% rear lateral and +13.4% overall torsional stiffness versus Spear, without a disclosed protocol.",
+  "last_reviewed": "2026-09-01"
 }

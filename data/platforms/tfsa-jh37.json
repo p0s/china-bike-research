@@ -24,12 +24,61 @@
         "angle": "degrees"
       },
       "sizes": [
-        { "size": "470", "seat_angle_deg": 73.5, "head_angle_deg": 70, "front_center_mm": 583, "chainstay_mm": 430, "bb_drop_mm": 67, "fork_offset_mm": 50, "fork_length_mm": 386, "wheelbase_mm": 1004, "reach_mm": 363, "stack_mm": 515 },
-        { "size": "500", "seat_angle_deg": 73, "head_angle_deg": 70.5, "front_center_mm": 591, "chainstay_mm": 430, "bb_drop_mm": 67, "fork_offset_mm": 50, "fork_length_mm": 386, "wheelbase_mm": 1012, "reach_mm": 371, "stack_mm": 527 },
-        { "size": "530", "seat_angle_deg": 72.5, "head_angle_deg": 71, "front_center_mm": 598, "chainstay_mm": 430, "bb_drop_mm": 67, "fork_offset_mm": 50, "fork_length_mm": 386, "wheelbase_mm": 1019, "reach_mm": 378, "stack_mm": 543 },
-        { "size": "560", "seat_angle_deg": 72, "head_angle_deg": 72, "front_center_mm": 610, "chainstay_mm": 430, "bb_drop_mm": 67, "fork_offset_mm": 50, "fork_length_mm": 386, "wheelbase_mm": 1031, "reach_mm": 390, "stack_mm": 570 }
+        {
+          "size": "470",
+          "seat_angle_deg": 73.5,
+          "head_angle_deg": 70,
+          "front_center_mm": 583,
+          "chainstay_mm": 430,
+          "bb_drop_mm": 67,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 386,
+          "wheelbase_mm": 1004,
+          "reach_mm": 363,
+          "stack_mm": 515
+        },
+        {
+          "size": "500",
+          "seat_angle_deg": 73,
+          "head_angle_deg": 70.5,
+          "front_center_mm": 591,
+          "chainstay_mm": 430,
+          "bb_drop_mm": 67,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 386,
+          "wheelbase_mm": 1012,
+          "reach_mm": 371,
+          "stack_mm": 527
+        },
+        {
+          "size": "530",
+          "seat_angle_deg": 72.5,
+          "head_angle_deg": 71,
+          "front_center_mm": 598,
+          "chainstay_mm": 430,
+          "bb_drop_mm": 67,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 386,
+          "wheelbase_mm": 1019,
+          "reach_mm": 378,
+          "stack_mm": 543
+        },
+        {
+          "size": "560",
+          "seat_angle_deg": 72,
+          "head_angle_deg": 72,
+          "front_center_mm": 610,
+          "chainstay_mm": 430,
+          "bb_drop_mm": 67,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 386,
+          "wheelbase_mm": 1031,
+          "reach_mm": 390,
+          "stack_mm": 570
+        }
       ]
-    }
+    },
+    "stiffness_evidence": "No exact-model instrumented stiffness result or attributable JH37 owner ride assessment was found after the 50-area sweep. A forum reply about a different TFSA road frame was rejected as sibling-model evidence."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -47,5 +96,5 @@
     "tfsa-jh37-official",
     "tfsa-jh37-taobao-2026-08-27"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }
