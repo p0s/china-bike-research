@@ -405,6 +405,59 @@ test('batch 029 resolves exact clearances and preserves exhausted unknowns acros
   assert.ok(preservedQueries.has('Pardus Robin EVO foreign price'));
 });
 
+test('batch 030 resolves exact frameset facts without transferring sibling or conflicted values', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const kontax = candidates.get('kontax-power-evo');
+  assert.equal(kontax.name, 'KONTAX 超探 RS80 POWER EVO');
+  assert.match(kontax.facts.listing_identity, /RS80 POWER EVO/);
+  assert.equal(kontax.facts.frame_weight_g, undefined);
+  assert.equal(kontax.facts.tire_clearance_mm, undefined);
+
+  const koseea = candidates.get('koseea-pioneer-slr-plus');
+  assert.match(koseea.facts.frame_material, /Toray T1000 reinforcement/);
+  assert.equal(koseea.facts.frame_weight_g, 985);
+  assert.match(koseea.facts.frame_weight_basis, /excluding hardware and paint/);
+  assert.equal(koseea.facts.tire_clearance_mm, undefined);
+  assert.match(koseea.source_note, /Conflicting 30C and 32 mm/);
+
+  const java = candidates.get('java-tt-frame-hydraulic');
+  const myWay = candidates.get('my-way-custom-carbon-frame');
+  const quick = candidates.get('quick-t10');
+  assert.equal(java.facts, undefined);
+  assert.equal(myWay.facts, undefined);
+  assert.equal(quick.facts, undefined);
+  assert.match(java.source_note, /multiple plausible TT products/);
+  assert.match(myWay.source_note, /no technical value is inferred/);
+  assert.match(quick.source_note, /TT:ONE is a distinct named product/);
+
+  const foundFields = new Set([
+    'candidate:kontax-power-evo:identity-source',
+    'candidate:koseea-pioneer-slr-plus:frame-weight',
+    'candidate:koseea-pioneer-slr-plus:frame-material',
+    'candidate:koseea-pioneer-slr-plus:identity-source'
+  ]);
+  const targetIds = [
+    'java-tt-frame-hydraulic',
+    'kontax-power-evo',
+    'koseea-pioneer-slr-plus',
+    'my-way-custom-carbon-frame',
+    'quick-t10'
+  ];
+  const fields = ['tire-clearance', 'frame-weight', 'frame-material', 'identity-source', 'frame-stiffness'];
+  for (const recordId of targetIds) {
+    for (const field of fields) {
+      const key = `candidate:${recordId}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -511,7 +564,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1142);
+  assert.equal(data.researchAttempts.length, 1167);
   assert.equal(products.length, data.variants.length);
 });
 

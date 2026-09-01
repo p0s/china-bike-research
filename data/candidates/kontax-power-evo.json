@@ -1,16 +1,17 @@
 {
   "id": "kontax-power-evo",
-  "name": "KONTAX 超探骑行 Power Evo",
+  "name": "KONTAX 超探 RS80 POWER EVO",
   "model_id": "kontax-power-evo",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Frameset listing.",
+  "why_interesting": "The current official page resolves this retained frameset as RS80 POWER EVO, while comparison-critical technical values remain unpublished.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Frame-only weight with size, finish and hardware basis",
+    "Carbon grade, lay-up, fork construction and molding process",
+    "Manufacturer-confirmed maximum tire clearance",
+    "Controlled stiffness evidence, complete package, domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-rs80-power-evo-identity-confirmed-specifications-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +22,14 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6884.png#R2",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "kontax-rs80-power-evo-official-2026-09-01"
+  ],
+  "source_url": "https://www.kontaxbike.cn/pd161433538.html",
+  "source_note": "The current official exact page establishes RS80 POWER EVO and size/color options only. No weight, construction, maximum-clearance, or controlled-stiffness value is inferred from imagery or sibling models.",
+  "facts": {
+    "listing_identity": "Current official KONTAX RS80 POWER EVO frameset page"
+  }
 }

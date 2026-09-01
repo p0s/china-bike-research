@@ -4,13 +4,13 @@
   "model_id": "koseea-pioneer-slr-plus",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "Frameset listing, five-year warranty stated.",
+  "why_interesting": "A current exact SLR+ listing supplies useful frame construction and frame-only weight evidence, while fit-critical clearance remains generation-ambiguous.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
-    "Current domestic warranty route and final checkout conditions"
+    "Manufacturer-confirmed maximum tire clearance for the retained SLR+ generation",
+    "Controlled stiffness evidence with a reproducible basis",
+    "Exact complete frameset package, geometry, domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-slr-plus-material-weight-confirmed-clearance-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,5 +21,20 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6868.png#R1",
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "koseea-current-products-official-2026-09-01",
+    "koseea-pioneer-slr-plus-uaecycle-2026-09-01",
+    "koseea-pioneer-slr-geometrygeeks-2026-09-01",
+    "koseea-pioneer-slr-poseidon-2026-09-01"
+  ],
+  "source_url": "https://www.uaecycle.com/collections/kossea/products/koseea-pioneer-slr-105-di2-carbon-road-bike",
+  "source_note": "The exact SLR+ retailer record supports material and approximate bare-frame weight. Conflicting 30C and 32 mm SLR-family claims are not promoted to a maximum, and marketing stiffness prose is not treated as a measurement.",
+  "facts": {
+    "listing_identity": "KOSEEA PIONEER SLR+ current regional listing",
+    "frame_material": "Full-carbon frame with Toray T1000 reinforcement at high-stress sections; exact full lay-up and molding process are unpublished",
+    "frame_weight_g": 985,
+    "frame_weight_basis": "Approximate size-dependent exact-listing claim, excluding hardware and paint"
+  }
 }
