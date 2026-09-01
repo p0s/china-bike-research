@@ -16,11 +16,12 @@
   "video_ids": [
     "china-cycling-tavelo-arow-2026-build"
   ],
-  "last_reviewed": "2026-08-17",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "tavelo-arow-race-polestar-official-2026-08-17",
     "tavelo-arow-2024-launch",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "tavelo-arow-polestar-panda-podium-2026-09-01"
   ],
   "observed_price": {
     "low_cny": 9800,
@@ -41,8 +42,13 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.tavelo.cc/products/tavelo-arow-race-polestar",
-  "source_note": "A 2024 mainland launch table lists the Arow Race frameset at ¥9,800 without its cockpit and ¥11,500 with it; the SL trim remains separate. The current global page lists US$1,650. Current mainland stock, price and warranty handling remain unverified.",
+  "source_note": "Current Arow manufacturer material and the exact Race Polestar specialist table support 32 mm maximum clearance, a 950 ±40 g painted size-XS frame including accessories, and qualitative enhanced headtube/downtube stiffness.",
   "facts": {
-    "frame": "Tavelo Arow Race carbon frameset"
+    "frame": "Tavelo Arow Race carbon frameset",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current Arow manufacturer maximum, corroborated by the exact Race Polestar specialist listing",
+    "frame_weight_g": 950,
+    "frame_weight_basis": "Exact Race Polestar painted size-XS frame including accessories; specialist table tolerance ±40 g and higher values by size",
+    "stiffness_evidence": "Manufacturer says the Arow platform enhances headtube and downtube stiffness while optimizing rear-frame comfort and control; qualitative claim without a public protocol"
   }
 }

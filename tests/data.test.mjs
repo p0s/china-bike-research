@@ -1003,6 +1003,112 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
   assert.equal(fieldCount, 23);
 });
 
+test('batch 037 records exact current race and endurance facts while preserving mainland and complete-weight unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+
+  const scott = candidates.get('scott-foil-rc-10');
+  assert.equal(scott.facts.tire_clearance_mm, 30);
+  assert.match(scott.facts.tire_clearance_basis, /Foil RC platform maximum.*manufacturer manual/);
+  assert.equal(scott.facts.complete_weight_g, 7900);
+  assert.match(scott.facts.complete_weight_basis, /model 425337/);
+  assert.match(scott.facts.stiffness_evidence, /without sacrificing stiffness/);
+
+  const aeroad = candidates.get('missing-china-price-canyon-aeroad');
+  assert.equal(aeroad.facts.complete_weight_g, 7120);
+  assert.match(aeroad.facts.complete_weight_basis, /size-M standard specification/);
+  assert.match(aeroad.facts.price_status, /US\$10,499.*no attributable mainland CNY/);
+  assert.match(aeroad.facts.stiffness_evidence, /benchmark stiffness-to-weight/);
+
+  const ultimate = candidates.get('missing-china-price-canyon-ultimate');
+  assert.equal(ultimate.facts.complete_weight_g, 6780);
+  assert.match(ultimate.facts.price_status, /US\$10,499.*no attributable mainland CNY/);
+  assert.match(ultimate.facts.stiffness_evidence, /pinnacle of stiffness-to-weight/);
+
+  const arow = candidates.get('missing-china-price-tavelo-arow');
+  assert.equal(arow.facts.tire_clearance_mm, 32);
+  assert.equal(arow.facts.frame_weight_g, 950);
+  assert.match(arow.facts.frame_weight_basis, /Race Polestar painted size-XS.*±40 g/);
+  assert.match(arow.facts.stiffness_evidence, /headtube and downtube stiffness/);
+
+  const domane = candidates.get('missing-china-price-trek-domane');
+  assert.equal(domane.official_price.amount_cny, 20800);
+  assert.equal(domane.facts.complete_weight_g, 9090);
+  assert.match(domane.facts.complete_weight_basis, /2026 Gen 4.*size 56.*tubeless sealant/);
+  assert.match(domane.facts.stiffness_evidence, /light weight, strength and stiffness/);
+
+  const crux = candidates.get('specialized-s-works-crux-2024-sram-red-xplr');
+  assert.equal(crux.official_price.amount_cny, 84990);
+  assert.equal(crux.facts.complete_weight_g, 7280);
+  assert.match(crux.facts.complete_weight_basis, /production-painted size-56/);
+  assert.match(crux.facts.stiffness_evidence, /responsive at the pedals/);
+
+  const propel = candidates.get('giant-propel-advanced-3');
+  assert.equal(propel.facts.complete_weight_g, undefined);
+  assert.match(propel.facts.complete_weight_status, /No exact complete-bike weight.*50 registered source areas/);
+  assert.match(propel.facts.stiffness_evidence, /significantly increases frame stiffness/);
+
+  const merida = candidates.get('merida-scultura-endurance-4000-community-lead');
+  assert.equal(merida.facts.complete_weight_g, 9030);
+  assert.match(merida.facts.complete_weight_basis, /earlier-generation independent test-bike review/);
+  assert.match(merida.facts.stiffness_evidence, /no detectable flex.*efficient power transfer/);
+
+  const gr025 = platforms.get('rinasclta-gr025');
+  assert.equal(gr025.frame.material, 'Full Torayca T800 and T1000 carbon fiber');
+  assert.match(gr025.frame.stiffness_evidence, /high stiffness-to-weight ratio/);
+  assert.match(gr025.frame.weight_conflict_note, /1,250 g/);
+
+  const foundFields = new Set([
+    'candidate:scott-foil-rc-10:tire-clearance',
+    'candidate:scott-foil-rc-10:complete-weight',
+    'candidate:scott-foil-rc-10:frame-stiffness',
+    'candidate:missing-china-price-canyon-aeroad:complete-weight',
+    'candidate:missing-china-price-canyon-aeroad:frame-stiffness',
+    'candidate:missing-china-price-canyon-ultimate:complete-weight',
+    'candidate:missing-china-price-canyon-ultimate:frame-stiffness',
+    'candidate:missing-china-price-tavelo-arow:tire-clearance',
+    'candidate:missing-china-price-tavelo-arow:frame-weight',
+    'candidate:missing-china-price-tavelo-arow:frame-stiffness',
+    'candidate:missing-china-price-trek-domane:complete-weight',
+    'candidate:missing-china-price-trek-domane:price',
+    'candidate:missing-china-price-trek-domane:frame-stiffness',
+    'candidate:specialized-s-works-crux-2024-sram-red-xplr:complete-weight',
+    'candidate:specialized-s-works-crux-2024-sram-red-xplr:price',
+    'candidate:specialized-s-works-crux-2024-sram-red-xplr:frame-stiffness',
+    'candidate:giant-propel-advanced-3:frame-stiffness',
+    'candidate:merida-scultura-endurance-4000-community-lead:complete-weight',
+    'candidate:merida-scultura-endurance-4000-community-lead:frame-stiffness',
+    'platform:rinasclta-gr025:frame-material',
+    'platform:rinasclta-gr025:frame-stiffness'
+  ]);
+  const targetFields = new Map([
+    ['candidate:scott-foil-rc-10', ['tire-clearance', 'complete-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-canyon-aeroad', ['complete-weight', 'price', 'frame-stiffness']],
+    ['candidate:missing-china-price-canyon-ultimate', ['complete-weight', 'price', 'frame-stiffness']],
+    ['candidate:missing-china-price-tavelo-arow', ['tire-clearance', 'frame-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-trek-domane', ['complete-weight', 'price', 'frame-stiffness']],
+    ['candidate:specialized-s-works-crux-2024-sram-red-xplr', ['complete-weight', 'price', 'frame-stiffness']],
+    ['candidate:giant-propel-advanced-3', ['complete-weight', 'frame-stiffness']],
+    ['candidate:merida-scultura-endurance-4000-community-lead', ['complete-weight', 'frame-stiffness']],
+    ['platform:rinasclta-gr025', ['frame-material', 'frame-stiffness']]
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+  assert.equal(fieldCount, 24);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1109,7 +1215,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1298);
+  assert.equal(data.researchAttempts.length, 1322);
   assert.equal(products.length, data.variants.length);
 });
 
