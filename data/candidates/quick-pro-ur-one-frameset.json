@@ -8,7 +8,7 @@
   "missing": [
     "Exact launch-package contents and current stock",
     "Final mainland checkout and warranty route",
-    "Independent frame-weight and fit verification"
+    "Independent scale verification of the painted production frame"
   ],
   "status": "mainland-price-observed",
   "research_priority": "high",
@@ -20,13 +20,19 @@
     "price_basis": "launch-report starting frameset price",
     "observation_count": 1
   },
-  "source_ids": ["quick-2026-one-series-launch", "quick-pro-ur-one-dura-ace-official-2026-08-17"],
+  "source_ids": [
+    "quick-2026-one-series-launch",
+    "quick-pro-ur-one-dura-ace-official-2026-08-17",
+    "quick-pro-ur-one-rbs-review-2026-09-01"
+  ],
   "facts": {
     "frame": "High-modulus monocoque carbon",
     "frame_weight_g": 629,
     "bottom_bracket": "BSA-68 threaded",
-    "tire_clearance_mm": 32
+    "tire_clearance_mm": 32,
+    "frame_weight_basis": "Current exact manufacturer claim for size M; independent review repeats the official 629 g basis, while painted-frame figures remain unverified",
+    "stiffness_evidence": "Exact-model independent review describes distinctly high bottom-bracket stiffness, sharp reactions and limited compliance relative to a Specialized SL8; qualitative ride evidence, not an instrumented deflection test"
   },
-  "source_note": "The ¥18,600 launch figure is a starting frameset price. It is distinct from the separately tracked US$6,899 Dura-Ace Di2 complete bike.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The CNY 18,600 launch figure remains a dated starting frameset price. The current official page supports the 629 g size-M claim, and an independent exact-model review supplies qualitative stiffness and ride evidence.",
+  "last_reviewed": "2026-09-01"
 }

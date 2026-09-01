@@ -1,0 +1,487 @@
+{
+  "id": "variant-sava-gelaro-s4-grx400-price-2026-09-01",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s4-grx400"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand YouTube channel — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand YouTube channel — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent YouTube review or build — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent YouTube review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand Bilibili account — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand Bilibili account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent Bilibili review or build — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent Bilibili review or build — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand Xiaohongshu account — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand Xiaohongshu account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent Xiaohongshu post — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent Xiaohongshu post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand Douyin account — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand Douyin account — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent Douyin post — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent Douyin post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand Weibo account — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand Weibo account — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent Weibo post — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent Weibo post — price",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Brand WeChat public article — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Brand WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent WeChat public article — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent WeChat public article — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Cycling forum thread — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Cycling forum thread — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Public owner build log — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Public owner build log — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Public community photo or setup post — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Public community photo or setup post — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer exact-product page — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer exact-product page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer exact-product page area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer model-family or category page — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer model-family or category page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer current catalog — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer current catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer archived catalog — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer archived catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer product manual — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer product manual — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer geometry document — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer geometry document — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer technical paper or test note — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer technical paper or test note — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer support or warranty page — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer support or warranty page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer newsroom or launch page — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer newsroom or launch page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer site search — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer site search — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer sitemap or indexed route inventory — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer sitemap or indexed route inventory — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer structured page metadata — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer structured page metadata — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer regional site — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer regional site — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer-listed distributor — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer-listed distributor — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer dealer locator — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer dealer locator — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Manufacturer-operated online store — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Manufacturer-operated online store — price",
+          "outcome": "found",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact page lists US$1,799, selectable sizes/colors and add-to-cart. This area was applied specifically to price; its evidence was accepted for this field.",
+          "result_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike"
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Official Taobao store or exact item — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Official Taobao store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Official Tmall store or exact item — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Official Tmall store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Official JD store or exact item — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Official JD store or exact item — price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "SAVA official JD storefront is attributable; no exact selected Gelaro S4 checkout total was captured. This area was applied specifically to price; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://mall.jd.com/index-10083974.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Verified Alibaba or 1688 supplier route — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Verified Alibaba or 1688 supplier route — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Official AliExpress store or exact item — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Official AliExpress store or exact item — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Authorized mainland dealer — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Authorized mainland dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Authorized regional dealer — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Authorized regional dealer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — International specialist retailer — field variant:sava-gelaro-s4-grx400:price",
+          "route": "International specialist retailer — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Cycling-industry review publication — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Cycling-industry review publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Chinese cycling-media publication — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Chinese cycling-media publication — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent laboratory or instrumented test — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent laboratory or instrumented test — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Print or digital magazine archive — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Print or digital magazine archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Trade-show coverage — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Trade-show coverage — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Race-team equipment page — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Race-team equipment page — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Event or exhibitor catalog — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Event or exhibitor catalog — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Independent geometry database — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Independent geometry database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Component compatibility database — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Component compatibility database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Product certification or registration database — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Product certification or registration database — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "SAVA Gelaro S4 GRX400 exact current price and purchase route — Public web archive — field variant:sava-gelaro-s4-grx400:price",
+          "route": "Public web archive — price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for SAVA Gelaro S4 GRX400; it yielded no additional attributable evidence. This area was applied specifically to price; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-gelaro-s4-official-2026-08-28",
+    "ecb-reference-rates-2026-08-31"
+  ],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-gelaro-s4-grx400-batch-045-50-area-sweep-2026-09-01.json. Current exact direct page lists US$1,799; the CNY figure is a dated reference conversion."
+}

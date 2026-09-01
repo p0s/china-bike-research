@@ -1623,6 +1623,60 @@ test('batch 044 resolves eleven exact fields and exhausts six unknowns across fi
   assert.equal(fieldCount, 17);
 });
 
+test('batch 045 resolves fifteen exact fields and exhausts one unknown across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  assert.equal(candidates.get('missing-china-price-trek-checkpoint').reference_price_kind, 'official');
+  assert.equal(candidates.get('specialized-roubaix-sl8-sport-105').official_price.amount_cny, 23519);
+  assert.equal(platforms.get('bxt-055').frame.geometry.sizes.length, 6);
+  assert.equal(platforms.get('bxt-055').frame.geometry.sizes.find((size) => size.size === '54').stack_mm, 555.5);
+  assert.match(variants.get('sava-gelaro-s4-grx400').purchase_route, /US\$1,799.*official JD storefront/);
+  assert.match(variants.get('sava-gelaro-sf6-cues').purchase_route, /US\$1,499.*official JD storefront/);
+  assert.equal(data.prices.find((price) => price.id === 'sava-gelaro-s4-grx400-global-official-2026-09-01').amount_cny, 12089);
+  assert.equal(data.prices.find((price) => price.id === 'sava-gelaro-sf6-cues-global-official-2026-09-01').amount_cny, 10073);
+
+  const pardus = products.find((product) => product.variant.id === 'pardus-super-sport-gen2-egr');
+  assert.equal(pardus.image.id, 'pardus-super-sport-gen2-xhs-build-gallery');
+  assert.equal(pardus.image.display_accuracy, 'exact-variant');
+  assert.equal(pardus.image.hosting.mode, 'local');
+  assert.match(candidates.get('xlab-ad8').facts.stiffness_evidence, /strong power transfer.*qualitative ride evidence/i);
+  assert.match(candidates.get('xlab-ad9').facts.stiffness_evidence, /1,200 W.*qualitative wattage-context/i);
+  assert.match(candidates.get('quick-pro-tr-one').facts.frame_weight_basis, /1,219 g.*5 percent tolerance/i);
+  assert.match(candidates.get('quick-pro-tr-one').facts.stiffness_evidence_status, /No meaningful exact-model stiffness result.*50 registered source areas/i);
+  assert.match(candidates.get('quick-pro-ur-one-frameset').facts.stiffness_evidence, /high bottom-bracket stiffness.*Specialized SL8/i);
+
+  const targetFields = new Map([
+    ['candidate:missing-china-price-trek-checkpoint', ['price']],
+    ['candidate:specialized-roubaix-sl8-sport-105', ['price']],
+    ['platform:bxt-055', ['geometry']],
+    ['variant:sava-gelaro-s4-grx400', ['price', 'purchase-route']],
+    ['variant:sava-gelaro-sf6-cues', ['price', 'purchase-route']],
+    ['variant:pardus-super-sport-gen2-egr', ['image']],
+    ['candidate:xlab-ad8', ['price', 'frame-stiffness']],
+    ['candidate:xlab-ad9', ['price', 'frame-stiffness']],
+    ['candidate:quick-pro-tr-one', ['frame-weight', 'frame-stiffness']],
+    ['candidate:quick-pro-ur-one-frameset', ['frame-weight', 'frame-stiffness']]
+  ]);
+  const blocked = new Set(['candidate:quick-pro-tr-one:frame-stiffness']);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((entry) => entry.target.record_type === recordType && entry.target.record_id === recordId && entry.field === field && entry.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = Object.values(attempt.channels).flatMap((channel) => channel.attempts ?? []);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 16);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1720,7 +1774,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 61);
+  assert.equal(data.prices.length, 63);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -1729,7 +1783,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1402);
+  assert.equal(data.researchAttempts.length, 1408);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -2556,7 +2610,7 @@ test('shared frame images do not masquerade as exact component builds', () => {
   assert.equal(eds.image.display_accuracy, 'exact-variant');
   assert.equal(rs.image.display_accuracy, 'same-platform');
   assert.equal(oldRs.image.display_accuracy, 'same-model-different-market-build');
-  assert.equal(pardus.image.display_accuracy, 'same-platform');
+  assert.equal(pardus.image.display_accuracy, 'exact-variant');
 });
 
 test('published images stay credited while incomplete builds remain candidates', () => {

@@ -17,7 +17,8 @@
     "xlab-ad8-official-cn-price-2026-08-27",
     "xlab-ad8-official-global-2026-08-27",
     "xlab-ad8-taobao-2026-08-27",
-    "public-xlab-ad8-build-2026-08-27"
+    "public-xlab-ad8-build-2026-08-27",
+    "xlab-ad8-bicycling-review-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 26980,
@@ -41,7 +42,8 @@
     "tires": "Michelin Pro 5 700×28C",
     "cockpit": "X-LAB carbon integrated cockpit; size-specific 360–400 mm width and 90–130 mm stem",
     "brakes": "Shimano 105 R7170 hydraulic; 160/140 mm rotors",
-    "sizes": "XS, S, M, L and XL"
+    "sizes": "XS, S, M, L and XL",
+    "stiffness_evidence": "Exact-model independent review describes the AD8 as stiff through the chassis with strong power transfer and an immediate response under hard efforts; qualitative ride evidence, not an instrumented deflection test"
   },
   "alternative_builds": [
     {
@@ -58,7 +60,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected standard Astana / steel-spoke carbon wheel / 105 electronic large-package / size-S option"
       },
-      "source_ids": ["xlab-ad8-taobao-2026-08-27"],
+      "source_ids": [
+        "xlab-ad8-taobao-2026-08-27"
+      ],
       "notes": "The selected listing option was available with seven-day preorder dispatch and CNY 8 shipping; it is not treated as the official C50 TEAM trim."
     },
     {
@@ -69,9 +73,12 @@
       "weight_basis": "Public build post states fully equipped weight; exact accessories and measurement method are not itemized.",
       "wheels": "静藤惯性 wheelset",
       "tires": "艾瑞森 tires",
-      "source_ids": ["public-xlab-ad8-build-2026-08-27"],
+      "source_ids": [
+        "public-xlab-ad8-build-2026-08-27"
+      ],
       "notes": "Exact owner/custom build context only; no current sale price is attached."
     }
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official"
 }
