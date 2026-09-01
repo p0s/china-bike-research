@@ -16,7 +16,97 @@
     "bottom_bracket": "T47",
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
-    "claimed_frame_weight_g": 950
+    "claimed_frame_weight_g": 950,
+    "geometry": {
+      "basis": "Exact-model Bike Insights table attributed to manufacturer-provided geometry",
+      "source_id": "winspace-g3-bikeinsights-geometry-2026-09-01",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "XS/440",
+          "seat_tube_mm": 440,
+          "top_tube_mm": 523,
+          "head_tube_mm": 120,
+          "head_angle_deg": 69.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "wheelbase_mm": 1018,
+          "fork_offset_mm": 54,
+          "stack_mm": 539,
+          "reach_mm": 363,
+          "standover_mm": 756,
+          "rider_height_cm": "155–163"
+        },
+        {
+          "size": "S/460",
+          "seat_tube_mm": 460,
+          "top_tube_mm": 533,
+          "head_tube_mm": 130,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "wheelbase_mm": 1024,
+          "fork_offset_mm": 54,
+          "stack_mm": 551,
+          "reach_mm": 370,
+          "standover_mm": 773,
+          "rider_height_cm": "163–171"
+        },
+        {
+          "size": "M/480",
+          "seat_tube_mm": 480,
+          "top_tube_mm": 545,
+          "head_tube_mm": 145,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "wheelbase_mm": 1029,
+          "fork_offset_mm": 51,
+          "stack_mm": 568,
+          "reach_mm": 377,
+          "standover_mm": 790,
+          "rider_height_cm": "171–179"
+        },
+        {
+          "size": "L/510",
+          "seat_tube_mm": 510,
+          "top_tube_mm": 560,
+          "head_tube_mm": 160,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "wheelbase_mm": 1045,
+          "fork_offset_mm": 51,
+          "stack_mm": 582,
+          "reach_mm": 388,
+          "standover_mm": 815,
+          "rider_height_cm": "179–186"
+        },
+        {
+          "size": "XL/540",
+          "seat_tube_mm": 540,
+          "top_tube_mm": 577,
+          "head_tube_mm": 180,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "wheelbase_mm": 1063,
+          "fork_offset_mm": 51,
+          "stack_mm": 601,
+          "reach_mm": 399,
+          "standover_mm": 838,
+          "rider_height_cm": "186–193"
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -35,7 +125,8 @@
     "winspace-g3-official-2026-08-16",
     "winspace-g3-xhs-launch-2026-08-27",
     "winspace-g3-xhs-build-matrix-2026-08-27",
-    "winspace-g3-carbonvelo-review-2026-08-27"
+    "winspace-g3-carbonvelo-review-2026-08-27",
+    "winspace-g3-bikeinsights-geometry-2026-09-01"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-01"
 }

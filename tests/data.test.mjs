@@ -1454,6 +1454,100 @@ test('batch 042 resolves thirteen exact fields and explicitly exhausts six unkno
   assert.equal(fieldCount, 19);
 });
 
+test('batch 043 resolves eighteen exact fields, exhausts five unknowns, and corrects Addict RC generation data', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  const ican = platforms.get('ican-graro');
+  assert.match(ican.frame.geometry_status, /50 registered source areas/);
+  assert.match(ican.frame.stiffness_evidence_status, /50 registered source areas/);
+  assert.match(variants.get('ican-graro-frameset').purchase_route, /US\$899.*add-to-cart/);
+  assert.equal(data.prices.find((price) => price.id === 'ican-graro-official-2026-09-01').amount_cny, 6041);
+
+  const bigrock = candidates.get('bigrock-sohtea');
+  assert.equal(bigrock.observed_price.amount_cny, 8057);
+  assert.match(bigrock.facts.frame_weight_basis, /XXS 730 g.*XL 860 g.*±5%/);
+  assert.match(bigrock.facts.stiffness_evidence, /qualitative ride evidence.*not an instrumented/i);
+  assert.ok(data.sources.some((source) => source.id === 'china-cycling-bigrock-sohtea-long-term'));
+
+  assert.equal(candidates.get('airwolf-yfr068').observed_price.amount_cny, 4025);
+  assert.equal(candidates.get('rinasclta-q-aero-gr').observed_price.amount_cny, 4294);
+
+  const g3 = platforms.get('winspace-g3');
+  assert.deepEqual(g3.frame.geometry.sizes.map((size) => size.size), ['XS/440', 'S/460', 'M/480', 'L/510', 'XL/540']);
+  assert.deepEqual(g3.frame.geometry.sizes.map((size) => [size.stack_mm, size.reach_mm]), [[539, 363], [551, 370], [568, 377], [582, 388], [601, 399]]);
+  assert.equal(data.prices.find((price) => price.id === 'winspace-g3-official-2026-09-01').amount_cny, 10416);
+
+  assert.match(platforms.get('camp-gx700').frame.geometry_status, /50 registered source areas/);
+
+  const crux = candidates.get('specialized-crux-10r-frameset');
+  assert.equal(crux.facts.frame_weight_g, 825);
+  assert.match(crux.facts.frame_weight_basis, /product 223491.*1\.4 kg.*complete frameset package/);
+  assert.equal(crux.observed_price.amount_cny, 20159);
+
+  const g026 = platforms.get('spcycle-g026');
+  assert.equal(g026.frame.material_grade, 'High-modulus T1000 full carbon fibre');
+  assert.match(variants.get('spcycle-g026-frameset').purchase_route, /US\$998 regular \/ US\$718 sale.*add-to-cart/);
+  assert.equal(data.prices.find((price) => price.id === 'spcycle-g026-official-2026-09-01').amount_cny, 4825);
+
+  const scott = platforms.get('scott-addict-rc-40');
+  assert.equal(scott.frame.geometry.source_id, 'scott-addict-rc-40-bikeradar-review-2026-09-01');
+  assert.deepEqual(scott.frame.geometry.sizes.map((size) => [size.size, size.stack_mm, size.reach_mm]), [
+    ['XXS/47', 504, 380], ['XS/49', 511, 388], ['S/52', 526.5, 389], ['M/54', 548, 390], ['L/56', 568.5, 395], ['XL/58', 588, 400], ['XXL/61', 606, 410]
+  ]);
+  assert.equal(scott.tire_clearance.eligibility, 'unverified');
+  assert.equal(scott.tire_clearance.published_max_mm, undefined);
+  assert.ok(!scott.source_ids.includes('scott-addict-2026-manual-2026-08-17'));
+  const scottVariant = variants.get('scott-addict-rc-40');
+  assert.match(scottVariant.claimed_complete_weight_basis, /model 290362: 7\.9 kg/);
+  assert.match(scottVariant.purchase_route, /dealer inquiry.*size-availability/i);
+  assert.ok(!scottVariant.source_ids.includes('scott-addict-2026-manual-2026-08-17'));
+
+  const starship = candidates.get('sava-starship-r13');
+  assert.match(starship.facts.complete_weight_basis, /approximately 8\.5 kg/);
+  assert.match(starship.facts.frame_stiffness_status, /50 registered source areas/);
+
+  const targetFields = new Map([
+    ['platform:ican-graro', ['geometry', 'frame-stiffness']],
+    ['variant:ican-graro-frameset', ['price', 'purchase-route']],
+    ['candidate:bigrock-sohtea', ['price', 'frame-weight', 'frame-stiffness']],
+    ['candidate:airwolf-yfr068', ['price']],
+    ['candidate:rinasclta-q-aero-gr', ['price']],
+    ['platform:winspace-g3', ['geometry']],
+    ['variant:winspace-g3-frameset', ['price']],
+    ['platform:camp-gx700', ['geometry']],
+    ['candidate:specialized-crux-10r-frameset', ['price', 'frame-weight']],
+    ['platform:spcycle-g026', ['frame-material']],
+    ['variant:spcycle-g026-frameset', ['price', 'purchase-route']],
+    ['platform:scott-addict-rc-40', ['geometry', 'tire-clearance']],
+    ['variant:scott-addict-rc-40', ['complete-weight', 'purchase-route']],
+    ['candidate:sava-starship-r13', ['complete-weight', 'frame-stiffness']]
+  ]);
+  const blocked = new Set([
+    'platform:ican-graro:geometry',
+    'platform:ican-graro:frame-stiffness',
+    'platform:camp-gx700:geometry',
+    'platform:scott-addict-rc-40:tire-clearance',
+    'candidate:sava-starship-r13:frame-stiffness'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 23);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1551,7 +1645,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 58);
+  assert.equal(data.prices.length, 61);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -1560,7 +1654,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1378);
+  assert.equal(data.researchAttempts.length, 1391);
   assert.equal(products.length, data.variants.length);
 });
 

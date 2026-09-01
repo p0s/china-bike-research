@@ -1,0 +1,10 @@
+{
+  "id": "retire-scott-addict-rc-40-wrong-geometry-source-2026-09-01",
+  "record_type": "platforms",
+  "record_id": "scott-addict-rc-40",
+  "action": "retire",
+  "reason": "The protected geometry source relationship pointed to the later endurance Addict manual; exact 2023-generation RC 40 geometry now replaces that non-transferable relationship.",
+  "evidence_source_ids": ["scott-addict-rc-40-bikeradar-review-2026-09-01"],
+  "protected_item": { "kind": "relationship", "value": "frame.geometry.source_id=scott-addict-2026-manual-2026-08-17" },
+  "reviewed_at": "2026-09-01"
+}

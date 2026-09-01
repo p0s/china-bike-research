@@ -185,7 +185,8 @@ test('candidate bikes have concise internal research profiles with visible facts
 
   const sparse = candidates.find((entry) => entry.candidate.id === 'airwolf-yfr068');
   const sparseDetail = renderCandidateModel(context, sparse);
-  assert.match(sparseDetail, /Price not verified/);
+  assert.match(sparseDetail, /Frame ¥4,025 · Official FX estimate · 2026-09-01/);
+  assert.match(sparseDetail, /Est\. ¥10,025 estimate adds the adjustable ¥6,000 build allowance/);
   assert.match(sparseDetail, /Airwolf YFR068 \/ A5/);
   assert.match(sparseDetail, /40 mm/);
   assert.match(sparseDetail, /Frame weight basis/);
@@ -472,7 +473,8 @@ test('category-specific details stay accessible while price state is visible', (
   assert.match(html, /<option value="capability-desc" disabled>Category fact: high to low<\/option>/);
   assert.doesNotMatch(html, /data-filter-style/);
   assert.doesNotMatch(html, /class="metric-sub">Claimed<\/span>/);
-  assert.match(html, /data-id="scott-addict-rc-40"[^>]*data-family="road"[^>]*data-tire-clearance-sort="38"/);
+  assert.match(html, /data-id="scott-addict-rc-40"[^>]*data-family="road"/);
+  assert.doesNotMatch(html, /data-id="scott-addict-rc-40"[^>]*data-tire-clearance-sort=/);
   assert.match(html, /Why Best value/);
   assert.match(html, /Wireless electronic hydraulic 2×12, carbon frame\/fork\/cockpit, and T47/);
 });

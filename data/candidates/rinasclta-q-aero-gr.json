@@ -15,7 +15,8 @@
   "research_priority": "high",
   "source_ids": [
     "rinasclta-q-aero-gr-official-2026-08-27",
-    "rinasclta-warranty-2026-08-27"
+    "rinasclta-warranty-2026-08-27",
+    "ecb-reference-rates-2026-08-31"
   ],
   "facts": {
     "frame": "T800/T1000-claimed carbon with manufacturer Q-AERO/Wind Eye marketing",
@@ -33,7 +34,20 @@
     "purchase_route": "Current manufacturer-direct product page",
     "warranty": "Two-year manufacturer-direct frame warranty against manufacturing defects; proof of purchase and product/order identification required"
   },
-  "price_status": "Official direct page showed US$639 on 2026-08-27; no mainland-CNY checkout observation is attached.",
+  "price_status": "Current exact official-store US$639 reference converted to CNY; no attributable mainland selected checkout",
   "source_note": "Official painted frame weights are 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58, each ±20 g. The package includes frame, fork, seatpost, headset, clamp, thru axles and hanger. Manufacturer aero language is retained as marketing evidence, not an independent drag result.",
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "observed_price": {
+    "amount_cny": 4294,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 639,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact Q-AERO GR sale amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size, finish, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }
