@@ -1,16 +1,19 @@
 {
   "id": "twitter-storm-knight",
-  "name": "TWITTER 骓特 Storm Knight / White Knight",
+  "name": "TWITTER 骓特 R10 Pro Storm Knight / White Knight (Shuntai 2×11)",
   "model_id": "twitter-storm-knight",
   "category": "road",
   "type": "complete-bike",
   "brand_id": "twitter",
-  "why_interesting": "The retained 风暴骑士 / 白骑士 card is now tied to the exact current listing, whose public marketplace and brand-video indexes consistently identify a Shuntai 22-speed build.",
+  "why_interesting": "The retained 风暴骑士 / 白骑士 card is a lower-priced Shuntai 22-speed configuration in the R10 Pro family, not a separate frame identity. It remains distinct from the closed-wheel card because the drivetrain, wheel package and dated price differ materially.",
   "facts": {
-    "listing_identity": "TWITTER / 骓特 Storm Knight / White Knight complete bike",
+    "platform_family": "TWITTER / 骓特 R10 Pro / R10-Disc",
+    "listing_identity": "TWITTER / 骓特 R10 Pro Storm Knight / White Knight complete bike",
+    "configuration_identity": "Storm Knight / White Knight Shuntai 2×11 lower-priced configuration",
+    "configuration_relationship": "Same R10 Pro family as the separately retained closed-wheel candidate; not the same complete-bike configuration",
     "drivetrain": "Shuntai 2x11 (22-speed); exact component-level BOM remains unpublished",
     "frame_material": "Exact current listing and brand-video claim: carbon-fiber road-bike frame; fiber grade, lay-up and fork construction are unpublished",
-    "identity_source": "Current listing mirror, JD index and brand video consistently identify 风暴骑士 / 白骑士 with Shuntai 22-speed",
+    "identity_source": "Current flagship-store listing and R10 Pro index explicitly identify 风暴骑士 / 白骑士 as an R10pro Shuntai 22-speed configuration",
     "stiffness_evidence_status": "No model-specific frame-stiffness evidence found after 50-area exact-model sweep"
   },
   "missing": [
@@ -24,7 +27,8 @@
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "twitter-storm-knight-current-options-2026-08-30",
-    "twitter-storm-knight-carbon-community-2026-08-30"
+    "twitter-storm-knight-carbon-community-2026-08-30",
+    "twitter-r10-pro-configuration-index-2026-09-02"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -37,6 +41,6 @@
   },
   "source_refs": "IMG_6867.png#L1",
   "source_url": "https://tao.hooos.com/goods_564630170532.html",
-  "source_note": "Current marketplace and brand-attributable public indexes establish the exact model, Shuntai 22-speed identity and carbon-frame claim. They do not publish a fiber grade, lay-up or stiffness protocol.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The current marketplace title explicitly combines R10pro with 风暴骑士, so this is retained as a configuration of the R10 Pro family rather than a standalone model. The source does not establish a generation number, full BOM, fiber grade, lay-up or stiffness protocol.",
+  "last_reviewed": "2026-09-02"
 }
