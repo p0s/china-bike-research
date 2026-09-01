@@ -173,7 +173,7 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /Official global model/);
   assert.match(quickDetail, /<section class="model-story"[^>]*>[\s\S]*Specifications and evidence/);
   assert.doesNotMatch(quickDetail, /The short version/);
-  assert.match(quickDetail, /Est\. ¥33,900 is a dated currency conversion/);
+  assert.match(quickDetail, /Est\. ¥33,940 is a dated currency conversion/);
   assert.match(quickDetail, /Shimano Ultegra R8170 Di2 2×12/);
   assert.match(quickDetail, /Buying context/);
   assert.match(quickDetail, /About Quick/);
@@ -369,8 +369,8 @@ test('superseded published bikes show availability instead of a historical price
 });
 
 test('candidate rows expose verified complete-bike facts and honest FX estimates', () => {
-  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33900"[^>]*data-price-filter="33900"/);
-  assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,900[\s\S]*?Official FX estimate · 2026-08-17[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
+  assert.match(html, /data-id="candidate-quick-pro-er-one"[^>]*data-type="complete-bike"[^>]*data-price-sort="33940"[^>]*data-price-filter="33940"/);
+  assert.match(html, /Quick Pro ER:ONE[\s\S]*?Est\. ¥33,940[\s\S]*?Official FX estimate · 2026-09-01[\s\S]*?Shimano Ultegra R8170 Di2 2×12[\s\S]*?7\.1 kg[\s\S]*?T1100\/M65 monocoque carbon/);
   assert.match(html, /data-id="candidate-missing-china-price-quick-pro-xr-one"[^>]*data-tire-clearance-sort="50"/);
   assert.match(html, /Quick Pro XR:ONE GRX Di2 1×12[\s\S]*?<div class="catalog-cell tire-clearance-cell" role="cell">50 mm<\/div>/);
   assert.match(html, /data-id="candidate-missing-china-price-x-lab-xds-gt8"[^>]*data-price-sort="21980"[^>]*data-tire-clearance-sort="55"/);
