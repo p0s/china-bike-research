@@ -6,13 +6,13 @@
   "category": "road-aero",
   "handlebar": "drop",
   "status": "snapshot-published",
-  "summary": "The anonymized 2026-08-08 snapshot identifies Twitter Cyclone Gen 3 ET electronic as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
+  "summary": "Current exact manufacturer evidence identifies the WheelTop Cyclone 3rd ET build, high-modulus carbon platform and qualitative stiffness/power-transfer claim. It publishes no frame-only weight.",
   "frame": {
     "material": "high-modulus carbon",
     "fork_material": "full carbon",
     "bottom_bracket": "T47×24",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown",
+    "cable_routing": "fully internal",
     "geometry": {
       "basis": "manufacturer exact-model geometry table",
       "source_id": "twitter-cyclone-gen3-et-usa-2026-08-17",
@@ -64,7 +64,9 @@
         }
       ]
     },
-    "material_grade": "Model-specific grade unpublished; brand-level T800/T1000 wording is not transferred"
+    "material_grade": "Model-specific grade unpublished; brand-level T800/T1000 wording is not transferred",
+    "frame_weight_status": "No frame-only size, finish or included-hardware weight found after 50 registered source areas",
+    "stiffness_evidence": "Manufacturer says the exact Cyclone 3rd full-carbon frame and fork are engineered for stiffness and efficient power transfer; qualitative claim without a numeric protocol"
   },
   "category_details": {
     "discipline": "aero road",
@@ -80,7 +82,8 @@
     "twitter-bikes-gravel-catalog-2026-08-08",
     "twitter-cyclone-gen3-et-usa-2026-08-17",
     "twitter-cyclone-gen3-et-china-2026-08-17",
-    "twitter-carbon-frame-faq-2026-09-01"
+    "twitter-carbon-frame-faq-2026-09-01",
+    "twitter-cyclone-et-official-2026-08-29"
   ],
   "last_reviewed": "2026-09-01"
 }

@@ -730,6 +730,103 @@ test('batch 033 records exact MTB and road facts while preserving conflicts and 
   }
 });
 
+test('batch 034 resolves exact current build facts and exhausts every remaining frozen field across fifty distinct areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  const quick = candidates.get('quick-pro-ur-one');
+  assert.equal(quick.facts.complete_weight_g, undefined);
+  assert.match(quick.facts.complete_weight_status, /No official complete-bike weight.*50 registered source areas/);
+  assert.match(quick.facts.price_status, /US\$6,899.*no attributable mainland CNY/);
+  assert.match(quick.facts.stiffness_evidence, /preserves stiffness and control.*Silverstone/);
+
+  const cyclonePlatform = platforms.get('twitter-cyclone-gen3-et');
+  assert.match(cyclonePlatform.frame.frame_weight_status, /No frame-only.*50 registered source areas/);
+  assert.match(cyclonePlatform.frame.stiffness_evidence, /engineered for stiffness and efficient power transfer/);
+
+  const cycloneVariant = variants.get('twitter-cyclone-gen3-et');
+  assert.equal(cycloneVariant.drivetrain.model, 'EDS TX');
+  assert.equal(cycloneVariant.claimed_complete_weight_g, 9200);
+  assert.match(cycloneVariant.claimed_complete_weight_basis, /size, pedals, accessories and weighing protocol/);
+  assert.match(cycloneVariant.purchase_route, /made-to-order international route from US\$1,489/);
+
+  const mori = candidates.get('elves-mori-community-lead');
+  assert.match(mori.facts.frame_weight_status, /Exact subtrim.*unresolved/);
+  assert.match(mori.facts.frame_material_status, /carbon grade.*unresolved/);
+  assert.match(mori.facts.frame_stiffness_status, /No exact-subtrim/);
+
+  const generic = candidates.get('generic-custom-carbon-road');
+  assert.match(generic.facts.identity_source_status, /No attributable manufacturer, mold, model year or exact SKU/);
+  assert.match(generic.facts.frame_stiffness_status, /No attributable exact-model stiffness result/);
+
+  const pardus = candidates.get('pardus-robin-evo-community-lead');
+  assert.equal(pardus.facts.complete_weight_g, 6200);
+  assert.match(pardus.facts.complete_weight_basis, /Exact public XS competition-build report/);
+  assert.match(pardus.facts.frame_stiffness_status, /No generation-safe/);
+  assert.match(pardus.source_note, /no exact-build mainland price or manufacturer maximum tire clearance/);
+
+  const cycloneR7120 = candidates.get('twitter-cyclone-gen3-7170');
+  assert.equal(cycloneR7120.facts.complete_weight_g, 8700);
+  assert.match(cycloneR7120.facts.frame_material, /High-modulus carbon frame with full-carbon fork/);
+  assert.match(cycloneR7120.facts.stiffness_evidence, /aerodynamic stability and efficient power delivery/);
+
+  const gravel = candidates.get('twitter-gravel-v3-2024-rs-carbon-wave');
+  assert.equal(gravel.facts.complete_weight_g, 9500);
+  assert.match(gravel.facts.complete_weight_basis, /Historical seller claim.*pictured wheel selection/);
+  assert.match(gravel.facts.frame_stiffness_status, /No exact historical-selection/);
+  assert.match(candidates.get('hi-light-r9-2025').facts.frame_stiffness_status, /No exact-model numeric/);
+  assert.match(candidates.get('laget-aero-one').facts.frame_stiffness_status, /No exact-model numeric/);
+
+  const foundFields = new Set([
+    'candidate:quick-pro-ur-one:frame-stiffness',
+    'platform:twitter-cyclone-gen3-et:frame-stiffness',
+    'variant:twitter-cyclone-gen3-et:bom',
+    'variant:twitter-cyclone-gen3-et:complete-weight',
+    'variant:twitter-cyclone-gen3-et:purchase-route',
+    'candidate:pardus-robin-evo-community-lead:complete-weight',
+    'candidate:twitter-cyclone-gen3-7170:frame-material',
+    'candidate:twitter-cyclone-gen3-7170:complete-weight',
+    'candidate:twitter-cyclone-gen3-7170:frame-stiffness',
+    'candidate:twitter-gravel-v3-2024-rs-carbon-wave:complete-weight'
+  ]);
+  const targetFields = new Map([
+    ['candidate:quick-pro-ur-one', ['complete-weight', 'price', 'frame-stiffness']],
+    ['platform:twitter-cyclone-gen3-et', ['frame-weight', 'frame-stiffness']],
+    ['variant:twitter-cyclone-gen3-et', ['bom', 'complete-weight', 'purchase-route']],
+    ['candidate:elves-mori-community-lead', ['frame-weight', 'frame-material', 'frame-stiffness']],
+    ['candidate:generic-custom-carbon-road', ['identity-source', 'frame-stiffness']],
+    ['candidate:pardus-robin-evo-community-lead', ['complete-weight', 'frame-stiffness']],
+    ['candidate:twitter-cyclone-gen3-7170', ['frame-material', 'complete-weight', 'frame-stiffness']],
+    ['candidate:twitter-gravel-v3-2024-rs-carbon-wave', ['complete-weight', 'frame-stiffness']],
+    ['candidate:hi-light-r9-2025', ['frame-stiffness']],
+    ['candidate:laget-aero-one', ['frame-stiffness']]
+  ]);
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+
+  const preservedLegacy = new Map([
+    ['variant-twitter-cyclone-gen3-et-complete-weight-2026-08-17', 'TWITTER Cyclone Third Generation ET complete weight official'],
+    ['variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17', 'TWITTER Cyclone 3rd ET current purchase route'],
+    ['candidate-elves-mori-community-lead-frame-weight-2026-08-17', 'ELVES Mori gravel frameset (subtrim unconfirmed) frame weight community']
+  ]);
+  for (const [id, query] of preservedLegacy) {
+    const attempt = data.researchAttempts.find((record) => record.id === id);
+    const queries = new Set(attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts).map((entry) => entry.query));
+    assert.ok(queries.has(query), id);
+  }
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -836,7 +933,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1233);
+  assert.equal(data.researchAttempts.length, 1252);
   assert.equal(products.length, data.variants.length);
 });
 
