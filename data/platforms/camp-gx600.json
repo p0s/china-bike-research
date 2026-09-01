@@ -6,7 +6,7 @@
   "category": "all-road",
   "handlebar": "flat",
   "status": "current",
-  "summary": "Light carbon flat-bar all-road bike with a 9.1 kg small-size complete claim, but its published 35C stock tire does not establish the maximum clearance.",
+  "summary": "Light carbon flat-bar all-road bike with a 9.1 kg small-size complete claim. The current page still does not establish maximum clearance, attributable numeric geometry, frame-only weight or bottom-bracket standard after 50 registered areas.",
   "frame": {
     "material": "carbon",
     "material_grade": "Toray T800 carbon fiber",
@@ -20,13 +20,16 @@
     "configuration_notes": {
       "seatpost": "T700 carbon",
       "handlebar": "aluminum"
-    }
+    },
+    "bottom_bracket_status": "No attributable shell standard found after 50 registered source areas",
+    "frame_weight_status": "No frame-only size, finish or included-hardware weight found after 50 registered source areas",
+    "geometry_status": "No attributable numeric geometry table found after 50 registered source areas; only 450/480/500 size choices and a visual chart are published"
   },
   "tire_clearance": {
     "wheel_size": "700c",
     "evidence": "official",
     "eligibility": "unverified",
-    "note": "Do not include in a >38 mm shortlist until the seller confirms the exact maximum and clearance.",
+    "note": "Current exact page publishes a fitted 700x35C tire but no manufacturer maximum after 50 registered source areas.",
     "stock_nominal_mm": 35
   },
   "mounts": [],
@@ -37,5 +40,5 @@
     "camp-gx600-official-2026-08-17",
     "camp-gx600-official-2026-08-28"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-01"
 }

@@ -14,7 +14,11 @@
   "research_priority": "medium",
   "price_status": "official China catalog offer observed; final dealer checkout unverified",
   "required_before_dashboard": "Exact current SKU, China purchase route, dated RMB price, and source",
-  "source_ids": ["specialized-roubaix-sl8-tiagra-official-2026-08-17", "specialized-cn-store-finder-2026"],
+  "source_ids": [
+    "specialized-roubaix-sl8-tiagra-official-2026-08-17",
+    "specialized-cn-store-finder-2026",
+    "specialized-roubaix-sl8-tiagra-current-2026-09-01"
+  ],
   "official_price": {
     "amount_cny": 15990,
     "currency": "CNY",
@@ -22,12 +26,15 @@
     "observed_at": "2026-08-17"
   },
   "facts": {
-    "frame": "Roubaix SL8 carbon, 950 g claimed frame",
+    "frame": "Roubaix SL8 FACT 10r carbon, 950 g claimed frame",
     "frame_weight_g": 950,
     "complete_weight_g": 9460,
     "bottom_bracket": "BSA threaded",
-    "tire_clearance_mm": 40
+    "tire_clearance_mm": 40,
+    "complete_weight_basis": "Current exact manufacturer claim for size 56, production-painted configuration as pictured; actual weight varies by color, size and component variation",
+    "drivetrain": "Shimano Tiagra hydraulic 2x10: 4720 levers, Tiagra 10-speed rear derailleur, Shimano 105 R7000 front derailleur, 11-34T cassette and 50/34T crank",
+    "frame_stiffness_status": "No numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas; Future Shock impact/compliance evidence is kept separate"
   },
-  "source_note": "The exact official Tiagra build is supported by the product page. The China catalog displayed ¥15,990 from ¥17,990 on 2026-08-17; stock, offer duration, final checkout and local warranty handling remain unverified.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The current exact Tiagra page publishes the complete 2x10 drivetrain and a 9.46 kg size-56 production-painted weight basis. The dated China catalog price remains CNY 15,990 from CNY 17,990; stock and offer duration remain unverified. No frame-stiffness result was inferred from compliance evidence.",
+  "last_reviewed": "2026-09-01"
 }
