@@ -6,7 +6,7 @@
   "category": "gravel",
   "handlebar": "drop",
   "status": "current",
-  "summary": "Low-cost direct frame with T47, UDH, and 50C clearance. The modern feature list is stronger than the public QC documentation.",
+  "summary": "Low-cost direct frame with T47, UDH and 50C clearance. The modern feature list is stronger than the public QC documentation; multiple exact-model community reports describe premature cracking, without independent failure analysis or a known failure rate.",
   "frame": {
     "material": "carbon",
     "fork_material": "carbon",
@@ -125,7 +125,8 @@
           "standover_mm": 881
         }
       ]
-    }
+    },
+    "stiffness_evidence": "A current exact-model owner who also rode the BXT-135 describes the BXT-055 as stiffer than the BXT-135. This is qualitative comparative testimony, not an independent instrumented result."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -142,7 +143,9 @@
   "source_ids": [
     "bxt-055-official",
     "bxt-055-taobao-2026-08-27",
-    "bxt-055-bikeinsights-geometry-2026-09-01"
+    "bxt-055-bikeinsights-geometry-2026-09-01",
+    "bxt-055-owner-stiffness-2026-09-01",
+    "bxt-055-owner-crack-reports-2026-09-01"
   ],
   "last_reviewed": "2026-09-01"
 }

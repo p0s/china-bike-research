@@ -1740,6 +1740,54 @@ test('batch 046 resolves fifteen exact fields and exhausts seven unknowns across
   assert.equal(fieldCount, 22);
 });
 
+test('batch 047 resolves fourteen exact fields and exhausts one unknown across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+  const prices = new Map(data.prices.map((price) => [price.id, price]));
+
+  assert.equal(prices.get('af01-global-official-2026-09-01').amount_cny, 7385);
+  assert.equal(prices.get('lightcarbon-lcg071s-pro-owner-report-2026-09-01').amount_cny, 3998);
+  assert.equal(prices.get('spcycle-g028-hb068-official-2026-09-01').amount_cny, 4959);
+  assert.equal(prices.get('winspace-g5-global-official-2026-09-01').amount_cny, 14783);
+  assert.equal(prices.get('yoeleo-altera-g21-global-official-2026-09-01').amount_cny, 9542);
+  assert.equal(candidates.get('laget-discovery-slr').observed_price.amount_cny, 14900);
+  assert.match(candidates.get('voicevelo-g-major').facts.frame_weight_basis, /790 g.*size 51.*excluding accessories/i);
+  assert.match(platforms.get('bxt-055').frame.stiffness_evidence, /stiffer than the BXT-135.*not an independent instrumented/i);
+  assert.match(platforms.get('bxt-055').summary, /premature cracking.*without independent failure analysis/i);
+  assert.match(variants.get('carbonda-cfr696-frameset').purchase_route, /Get a quote.*no public fixed price/i);
+  assert.match(variants.get('pardus-super-sport-gen2-egr').purchase_route, /CNY 4,999.*official-flagship Taobao/i);
+
+  const targetFields = new Map([
+    ['variant:af01-frameset', ['price', 'purchase-route']],
+    ['variant:carbonda-cfr696-frameset', ['price', 'purchase-route']],
+    ['variant:lightcarbon-lcg071s-pro-frameset', ['price']],
+    ['variant:spcycle-g028-frameset', ['price', 'purchase-route']],
+    ['variant:winspace-g5-frameset', ['price', 'purchase-route']],
+    ['variant:yoeleo-altera-g21-frameset', ['price', 'purchase-route']],
+    ['variant:pardus-super-sport-gen2-egr', ['purchase-route']],
+    ['candidate:laget-discovery-slr', ['price']],
+    ['platform:bxt-055', ['frame-stiffness']],
+    ['candidate:voicevelo-g-major', ['frame-weight']]
+  ]);
+  const blocked = new Set(['variant:carbonda-cfr696-frameset:price']);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((entry) => entry.target.record_type === recordType && entry.target.record_id === recordId && entry.field === field && entry.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = Object.values(attempt.channels).flatMap((channel) => channel.attempts ?? []);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 15);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1837,7 +1885,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 67);
+  assert.equal(data.prices.length, 69);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -1846,7 +1894,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1425);
+  assert.equal(data.researchAttempts.length, 1428);
   assert.equal(products.length, data.variants.length);
 });
 
@@ -2434,7 +2482,7 @@ test('all framesets use one transparent full-bike build allowance', () => {
   assert.equal(supportsStandardFramesetBuild('triathlon'), true);
   assert.equal(data.meta.frameset_build_assumption.amount_cny, 6000);
   const frame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
-  assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9200, 10900]);
+  assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9998, 9998]);
   assert.equal(frame.allInPrice.estimated, true);
   const complete = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
   assert.deepEqual([complete.allInPrice.low, complete.allInPrice.high], [4951, 4951]);
