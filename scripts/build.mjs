@@ -196,7 +196,7 @@ write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${siteUrl}${base}/sitemap
 const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 // The 258-row unified catalog with production project-base links, typed filters,
 // Build handoff, curated comparison starts, and eight attributed price-leading
-// candidate images measured 986,101 bytes and 7,477 elements on 2026-09-01.
+// candidate images measured 986,630 bytes and 7,477 elements on 2026-09-01.
 // These limits retain modest growth headroom while keeping the full candidate set
 // available without a second page or client-side data fetch.
 const performanceBudget = { home_html_bytes: 990_000, home_elements: 7_535 };
