@@ -911,6 +911,98 @@ test('batch 035 records exact weights and configurations while preserving mainla
   assert.equal(fieldCount, 23);
 });
 
+test('batch 036 records exact current road-bike facts and preserves clearance, price, stiffness and weight conflicts across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const merida = candidates.get('missing-china-price-merida-scultura');
+  assert.equal(merida.official_price.amount_cny, 16800);
+  assert.equal(merida.facts.complete_weight_g, 8200);
+  assert.match(merida.facts.complete_weight_basis, /size M.*paint.*supply-chain/i);
+  assert.match(merida.facts.stiffness_evidence, /AWS.*increases stiffness.*NACA/i);
+
+  const trek = candidates.get('missing-china-price-trek-madone-gen-8');
+  assert.equal(trek.official_price.amount_cny, 21800);
+  assert.equal(trek.facts.complete_weight_g, 8700);
+  assert.match(trek.facts.complete_weight_basis, /stock Madone SL 5 Gen 8/);
+  assert.match(trek.facts.frame_stiffness_status, /No exact SL 5 numeric.*50 registered source areas/);
+
+  const winspace = candidates.get('missing-china-price-winspace-slc3');
+  assert.equal(winspace.facts.frame_weight_g, 699);
+  assert.match(winspace.facts.frame_weight_basis, /unpainted size-M/);
+  assert.match(winspace.facts.price_status, /US\$1,450.*no attributable mainland CNY/);
+  assert.match(winspace.facts.stiffness_evidence, /significantly improves stiffness in key areas/);
+
+  const cyclone = candidates.get('twitter-cyclone-r7120');
+  assert.match(cyclone.facts.tire_clearance_status, /fitted 28C tire is not treated as clearance/);
+  assert.match(cyclone.facts.frame_material, /High-modulus carbon frame.*full-carbon fork/);
+  assert.equal(cyclone.facts.complete_weight_g, 8700);
+  assert.match(cyclone.facts.complete_weight_status, /8\.7 kg.*9\.3 kg/);
+  assert.match(cyclone.facts.complete_weight_basis, /catalog row.*conflicted/);
+  assert.match(cyclone.facts.stiffness_evidence, /aerodynamic stability and efficient power delivery/);
+
+  const gravel = candidates.get('twitter-gravel-v3-105');
+  assert.equal(gravel.facts.complete_weight_g, 9900);
+  assert.match(gravel.facts.complete_weight_basis, /9\.7-9\.9 kg.*selectable builds/);
+  assert.match(gravel.facts.frame_material, /High-modulus carbon frame and carbon fork/);
+  assert.match(gravel.facts.tire_clearance_status, /fitted 40C tire is not treated as clearance/);
+  assert.match(gravel.facts.frame_stiffness_status, /No numeric.*50 registered source areas/);
+
+  const pardus = candidates.get('pardus-spark-sport-pes');
+  assert.equal(pardus.facts.complete_weight_g, 8500);
+  assert.match(pardus.facts.complete_weight_basis, /2026 Spark Sport 3 PES size-XS owner-build report/);
+  assert.match(pardus.facts.stiffness_evidence, /20% higher pedaling stiffness/);
+  assert.match(pardus.facts.tire_clearance_status, /No generation-safe manufacturer maximum/);
+
+  const sava = candidates.get('sava-a7l-pro-2026');
+  assert.equal(sava.facts.complete_weight_g, 8800);
+  assert.match(sava.facts.complete_weight_basis, /varies by size/);
+  assert.match(sava.facts.tire_clearance_status, /fitted 25C tire is not treated as clearance/);
+  assert.match(sava.facts.frame_stiffness_status, /No exact-model numeric.*50 registered source areas/);
+
+  const foundFields = new Set([
+    'candidate:missing-china-price-merida-scultura:price',
+    'candidate:missing-china-price-merida-scultura:complete-weight',
+    'candidate:missing-china-price-merida-scultura:frame-stiffness',
+    'candidate:missing-china-price-trek-madone-gen-8:price',
+    'candidate:missing-china-price-trek-madone-gen-8:complete-weight',
+    'candidate:missing-china-price-winspace-slc3:frame-weight',
+    'candidate:missing-china-price-winspace-slc3:frame-stiffness',
+    'candidate:twitter-cyclone-r7120:frame-material',
+    'candidate:twitter-cyclone-r7120:frame-stiffness',
+    'candidate:twitter-gravel-v3-105:frame-material',
+    'candidate:twitter-gravel-v3-105:complete-weight',
+    'candidate:pardus-spark-sport-pes:complete-weight',
+    'candidate:pardus-spark-sport-pes:frame-stiffness',
+    'candidate:sava-a7l-pro-2026:complete-weight'
+  ]);
+  const conflictedFields = new Set(['candidate:twitter-cyclone-r7120:complete-weight']);
+  const targetFields = new Map([
+    ['candidate:missing-china-price-merida-scultura', ['price', 'complete-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-trek-madone-gen-8', ['price', 'complete-weight', 'frame-stiffness']],
+    ['candidate:missing-china-price-winspace-slc3', ['price', 'frame-weight', 'frame-stiffness']],
+    ['candidate:twitter-cyclone-r7120', ['tire-clearance', 'frame-material', 'complete-weight', 'frame-stiffness']],
+    ['candidate:twitter-gravel-v3-105', ['tire-clearance', 'frame-material', 'complete-weight', 'frame-stiffness']],
+    ['candidate:pardus-spark-sport-pes', ['tire-clearance', 'complete-weight', 'frame-stiffness']],
+    ['candidate:sava-a7l-pro-2026', ['tire-clearance', 'complete-weight', 'frame-stiffness']]
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      const expected = foundFields.has(key) ? 'found' : conflictedFields.has(key) ? 'conflicted' : 'blocked';
+      assert.equal(attempt.status, expected, key);
+    }
+  }
+  assert.equal(fieldCount, 23);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1017,7 +1109,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1275);
+  assert.equal(data.researchAttempts.length, 1298);
   assert.equal(products.length, data.variants.length);
 });
 

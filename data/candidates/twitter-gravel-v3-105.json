@@ -20,14 +20,20 @@
     "price_basis": "coupon",
     "observation_count": 1
   },
-  "source_ids": ["twitter-gravel-v3-official-2026-08-17"],
+  "source_ids": [
+    "twitter-gravel-v3-official-2026-08-17"
+  ],
   "facts": {
     "drivetrain": "Official option: Shimano 105 R7120 2×12; storefront lists other builds",
     "complete_weight_g": 9900,
     "bottom_bracket": "T47×24",
-    "tires": "700×40 tanwall"
+    "tires": "700×40C tanwall fitted; manufacturer maximum unresolved",
+    "complete_weight_basis": "Current exact manufacturer range of 9.7-9.9 kg across selectable builds; exact Shimano 105 wheel selection, size, pedals, accessories and weighing protocol unpublished",
+    "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 40C tire is not treated as clearance",
+    "frame_material": "High-modulus carbon frame and carbon fork with thru-axles and full internal routing; exact fiber grade and lay-up unpublished",
+    "frame_stiffness_status": "No numeric or sufficiently specific independent exact-build frame-stiffness result found after 50 registered source areas"
   },
-  "source_note": "The official page lists multiple build choices, so its platform facts are retained while exact wheels and accessories for the ¥4,567.25 observation remain unverified.",
+  "source_note": "The current exact configurable page lists the Shimano 105 R7120 option, high-modulus carbon frame/fork and a 9.7-9.9 kg build range. Fitted 700x40C tires do not establish a manufacturer maximum, and no frame-stiffness result was found after 50 areas.",
   "source_refs": "IMG_6860.png#L1",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }
