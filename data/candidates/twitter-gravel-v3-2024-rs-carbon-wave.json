@@ -12,11 +12,11 @@
     "label": "2025 Gravel V3"
   },
   "missing": [
-    "The original historical retail price tied specifically to this exact RS 2×12 configuration",
+    "The original historical retail price tied specifically to this exact RS 2x12 carbon-wheel/photo-led configuration",
     "An original order-detail SKU or equivalent evidence tying the listing photographs to an exact wheel selection",
     "Resolution of the listing's 50-versus-51 size-grid and BB86-versus-BB92 wording conflicts",
     "Readable component markings confirming the exact production-batch shifters, derailleurs, crank, cassette, and brakes",
-    "A verified maximum tire clearance and dependable provenance for any used example or claimed remaining stock"
+    "Dependable provenance for any used example or claimed remaining stock"
   ],
   "status": "superseded",
   "research_priority": "high",
@@ -26,7 +26,8 @@
   "observed_at": "2026-08-21",
   "source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21",
-    "twitter-gravel-v3-2024-public-listing-image-2026-08-21"
+    "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
   ],
   "facts": {
     "listing_identity": "Taobao item GRAVEL-V3顺泰; listed launch Summer 2024; the wheel-and-color selection matrix includes six colors and separate alloy- and carbon-wheel options",
@@ -44,8 +45,10 @@
     "cockpit": "Carbon integrated handlebar/stem, nominally 420×90 mm, plus proprietary aero carbon seatpost",
     "sizes": "Older materials and the described size-51 configuration indicate 45 / 48 / 51 / 54, but the visible Taobao selector transcription says 45 / 48 / 50 / 54",
     "geometry_size_51": "Supplied listing transcription: 550 mm stack, 385 mm reach, 540 mm effective top tube, 130 mm head tube and 1,021 mm wheelbase; verify against the exact archived product graphic",
-    "complete_weight_g": 9500
+    "complete_weight_g": 9500,
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "Exact-model 2024 instruction-manual mirror maximum for the matching press-fit generation"
   },
-  "source_note": "The 2024 Taobao material supports the SKU matrix and component table as purchase-source claims. The persistent page reuses later-generation graphics, so conflicting size and bottom-bracket descriptions remain explicit. The ¥3,991 option belongs to the pink-white alloy-wheel trim and is intentionally not attached to this image-led profile. The listing photographs do not establish a standard wheel package. This generation is retained as a discontinued research profile after being superseded by the 2025 Gravel V3. No private seller, order, or transaction data is retained.",
-  "last_reviewed": "2026-08-21"
+  "source_note": "The matching press-fit 2024 platform has a published 700x40C maximum. The exact carbon-wheel/photo-led selection remains unresolved, so the CNY 3,991 alloy-wheel option and newer T47 prices are not transferred.",
+  "last_reviewed": "2026-09-01"
 }

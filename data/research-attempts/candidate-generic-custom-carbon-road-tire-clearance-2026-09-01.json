@@ -1,0 +1,483 @@
+{
+  "id": "candidate-generic-custom-carbon-road-tire-clearance-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "generic-custom-carbon-road"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more exact public routes were blocked and no login, verification challenge, retry loop or bypass was attempted; every other registered area was still checked.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand YouTube channel — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand YouTube channel — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand youtube channel indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent YouTube review or build — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent YouTube review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent youtube review or build indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand Bilibili account — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand Bilibili account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand bilibili account indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent Bilibili review or build — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent Bilibili review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent bilibili review or build indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand Xiaohongshu account — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand Xiaohongshu account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Only public search-engine Xiaohongshu indexes were checked under the shared-runtime boundary; no new XHS capture was started. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent Xiaohongshu post — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent Xiaohongshu post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Only public search-engine Xiaohongshu indexes were checked under the shared-runtime boundary; no new XHS capture was started. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand Douyin account — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand Douyin account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public brand douyin account indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent Douyin post — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent Douyin post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public independent douyin post indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand Weibo account — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand Weibo account — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent Weibo post — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent Weibo post — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "The exact Weibo public route was unavailable under robots policy; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Brand WeChat public article — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Brand WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent WeChat public article — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public WeChat indexing was checked; no login, private content or unpublished material was used. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Cycling forum thread — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Cycling forum thread — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public cycling forum thread indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Public owner build log — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Public owner build log — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Public public owner build log indexes were checked for generic-custom-carbon-road; they yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Public community photo or setup post — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Public community photo or setup post — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "The retained screenshot was visually inspected only for identity text. No media was copied and no clearance was inferred from pixels. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer exact-product page — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer exact-product page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer exact-product page area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer model-family or category page — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer model-family or category page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer current catalog — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer current catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer archived catalog — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer archived catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer product manual — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer product manual — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer geometry document — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer geometry document — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer technical paper or test note — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer technical paper or test note — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer support or warranty page — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer support or warranty page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer newsroom or launch page — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer newsroom or launch page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer site search — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer site search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer sitemap or indexed route inventory — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer sitemap or indexed route inventory — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer structured page metadata — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer structured page metadata — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer regional site — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer regional site — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer-listed distributor — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer-listed distributor — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer dealer locator — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer dealer locator — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Manufacturer-operated online store — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Manufacturer-operated online store — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Official Taobao store or exact item — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Official Taobao store or exact item — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "The retained public marketplace screenshot was re-read for title, seller label and price, but it exposes no canonical item URL or exact model. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Official Tmall store or exact item — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Official Tmall store or exact item — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Public marketplace indexes were searched for the exact title, seller label and coupon amount; no exact item was recovered. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Official JD store or exact item — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Official JD store or exact item — tire-clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Generic carbon-road-frame index was checked; unrelated frames were rejected. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.jd.com/jiage/13180bb177c6c66d9ccb.html"
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Verified Alibaba or 1688 supplier route — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Verified Alibaba or 1688 supplier route — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Official AliExpress store or exact item — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Official AliExpress store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Authorized mainland dealer — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Authorized mainland dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Authorized regional dealer — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Authorized regional dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — International specialist retailer — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "International specialist retailer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Cycling-industry review publication — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Cycling-industry review publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Chinese cycling-media publication — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Chinese cycling-media publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent laboratory or instrumented test — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent laboratory or instrumented test — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Print or digital magazine archive — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Print or digital magazine archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Trade-show coverage — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Trade-show coverage — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Race-team equipment page — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Race-team equipment page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Event or exhibitor catalog — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Event or exhibitor catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Independent geometry database — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Independent geometry database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Component compatibility database — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Component compatibility database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Product certification or registration database — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Product certification or registration database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "风行碳纤维 碳纤维公路车车架定制 CNY 4498.25 exact model maximum tire clearance — Public web archive — field candidate:generic-custom-carbon-road:tire-clearance",
+          "route": "Public web archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was searched for current exact-model evidence on generic-custom-carbon-road; it yielded no additional attributable value for the frozen fields. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/generic-custom-carbon-road-50-area-sweep-2026-09-01.json. The listing remains anonymous at model level, so no exact manufacturer maximum can be attached after all 50 areas."
+}
