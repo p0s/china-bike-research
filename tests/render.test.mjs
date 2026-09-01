@@ -21,7 +21,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /data-catalog-root/);
   assert.match(html, /data-inline-compare/);
   assert.match(html, /Frame estimate/);
-  assert.match(html, /Est\. ¥9,200–10,900/);
+  assert.match(html, /Est\. ¥9,998/);
   assert.match(html, /Full-bike price/);
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
@@ -678,8 +678,8 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /No attributable mainland consumer price is recorded/);
   assert.match(html, /cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part/);
-  assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3200" data-frame-price-high="4900"/);
-  assert.match(html, /<span data-calculated-price>Est\. ¥9,200–10,900<\/span>/);
+  assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3998" data-frame-price-high="3998"/);
+  assert.match(html, /<span data-calculated-price>Est\. ¥9,998<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
   assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
   assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">Frame ¥/);
@@ -695,8 +695,8 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   };
   const publishedFrame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
   const publishedDetail = renderModel(context, publishedFrame);
-  assert.match(publishedDetail, /data-model-frame-price-low="3200" data-model-frame-price-high="4900" data-model-default-allowance="6000"/);
-  assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,200–10,900/);
+  assert.match(publishedDetail, /data-model-frame-price-low="3998" data-model-frame-price-high="3998" data-model-default-allowance="6000"/);
+  assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,998/);
   assert.match(publishedDetail, /data-model-price-brief/);
   assert.match(publishedDetail, /Included package/);
   assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);
