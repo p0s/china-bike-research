@@ -14,7 +14,8 @@
     "sava-a4-official-global-2026-08-17",
     "sava-a4-specifications-official-2026-08-17",
     "sava-china-support-store-2026-08-17",
-    "sava-a4-bilibili-review-2026-09-01"
+    "sava-a4-bilibili-review-2026-09-01",
+    "ecb-reference-rates-2026-08-31"
   ],
   "facts": {
     "drivetrain": "Shimano Tiagra R4700 2×10; Prowheel 50/34 and 11–34 cassette",
@@ -27,9 +28,24 @@
     "sizes": "44, 47, 51, 54 and 56",
     "complete_weight_g": 9500,
     "tire_clearance_mm": 28,
-    "stiffness_evidence": "An independent exact-model Bilibili ride review reports good perceived frame rigidity and direct acceleration with race-oriented geometry. This is qualitative rider evidence, not a measured deflection result or reproducible stiffness protocol."
+    "stiffness_evidence": "An independent exact-model Bilibili ride review reports good perceived frame rigidity and direct acceleration with race-oriented geometry. This is qualitative rider evidence, not a measured deflection result or reproducible stiffness protocol.",
+    "complete_weight_basis": "Current exact manufacturer approximate complete-bike weight; varies by size, while pedals, accessories and weighing protocol are unpublished"
   },
   "support_note": "SAVA publishes a mainland shopping and after-sales route, but exact A4 stock, price and warranty conditions remain unresolved.",
-  "source_note": "The exact global model RO8 CR-A4-R4700-20S is verified. Its claimed weight varies by size; the mainland brand route is known, but exact price and availability remain open.",
-  "last_reviewed": "2026-09-01"
+  "source_note": "Current exact storefront lists US$1,399, add-to-cart and approximately 9.5 kg. The converted CNY amount is not a mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "price_status": "Current official global US$1,399 reference converted to CNY; no attributable mainland selected checkout",
+  "observed_price": {
+    "amount_cny": 9401,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 1399,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact A4 official global-store sale amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

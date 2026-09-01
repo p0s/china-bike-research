@@ -1364,6 +1364,96 @@ test('batch 041 resolves sixteen exact fields and explicitly exhausts three Ligh
   assert.equal(fieldCount, 19);
 });
 
+test('batch 042 resolves thirteen exact fields and explicitly exhausts six unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  const savaVariant = variants.get('sava-a7l-r7100');
+  assert.equal(savaVariant.claimed_complete_weight_g, 8600);
+  assert.match(savaVariant.purchase_route, /US\$1,699.*add-to-cart/);
+  const savaImage = data.images.find((image) => image.id === 'sava-a7l-r08-2026-exact-primary-image');
+  assert.equal(savaImage.subject_accuracy, 'exact-variant');
+  assert.equal(savaImage.source_id, 'sava-a7l-r08-current-2026-08-30');
+  assert.match(savaImage.hosting.remote_url, /savadeck-bike\.com\/cdn\/shop\/files\/sava-a7l-2026/);
+
+  assert.match(candidates.get('missing-china-price-giant-defy-advanced').facts.complete_weight_status, /50 registered source areas/);
+  assert.match(candidates.get('quick-pro-gr-one-grx-di2').facts.complete_weight_status, /50 registered source areas/);
+  assert.match(candidates.get('missing-china-price-quick-pro-xr-one').facts.complete_weight_status, /50 registered source areas/);
+
+  const rinas = platforms.get('rinasclta-gr025');
+  assert.match(rinas.frame.geometry_status, /50 registered source areas/);
+  assert.match(variants.get('rinasclta-gr025-frameset').purchase_route, /€561.*add-to-cart/);
+  const rinasPrice = data.prices.find((price) => price.id === 'rinasclta-gr025-official-2026-09-01');
+  assert.equal(rinasPrice.amount_cny, 4371);
+  assert.equal(rinasPrice.price_type, 'official-global-store-reference-conversion');
+
+  const xm = platforms.get('xmcarbonspeed-cs-gr01');
+  assert.equal(xm.frame.geometry.sizes.length, 6);
+  assert.deepEqual(xm.frame.geometry.sizes.map((size) => size.size), ['XS', 'S', 'M', 'L', 'XL', 'XXL']);
+  assert.deepEqual(xm.frame.geometry.sizes.map((size) => [size.stack_mm, size.reach_mm]), [[538, 360], [554, 368], [574, 375], [588, 382], [602, 390], [636, 398]]);
+  assert.match(variants.get('xmcarbonspeed-cs-gr01-frameset').purchase_route, /US\$669.*add-to-cart/);
+  const xmPrice = data.prices.find((price) => price.id === 'xmcarbonspeed-cs-gr01-official-2026-09-01');
+  assert.equal(xmPrice.amount_cny, 4496);
+  assert.equal(xmPrice.price_type, 'official-global-store-reference-conversion');
+
+  const seka = candidates.get('seka-spear-rdc');
+  assert.equal(seka.facts.tire_clearance_mm, 32);
+  assert.match(seka.facts.complete_weight_basis, /approximately 7\.1 kg.*before pedals.*not a factory complete-bike SKU/);
+
+  const sava = candidates.get('sava-a4');
+  assert.equal(sava.observed_price.amount_cny, 9401);
+  assert.equal(sava.observed_price.price_type, 'official-global-store-reference-conversion');
+  assert.match(sava.facts.complete_weight_basis, /approximate.*varies by size/);
+
+  const tt = candidates.get('quick-pro-tt-one');
+  assert.equal(tt.observed_price.amount_cny, 20152);
+  assert.equal(tt.observed_price.price_type, 'official-global-store-reference-conversion');
+
+  const irefox = candidates.get('irefox-profound-400');
+  assert.match(irefox.facts.complete_weight_status, /50 registered source areas/);
+  assert.match(irefox.price_status, /No current exact-model stock or price after 50 registered source areas/);
+  assert.equal(irefox.observed_price, undefined);
+
+  const targetFields = new Map([
+    ['variant:sava-a7l-r7100', ['image', 'complete-weight', 'purchase-route']],
+    ['candidate:missing-china-price-giant-defy-advanced', ['complete-weight']],
+    ['candidate:quick-pro-gr-one-grx-di2', ['complete-weight']],
+    ['platform:rinasclta-gr025', ['geometry']],
+    ['variant:rinasclta-gr025-frameset', ['price', 'purchase-route']],
+    ['platform:xmcarbonspeed-cs-gr01', ['geometry']],
+    ['variant:xmcarbonspeed-cs-gr01-frameset', ['price', 'purchase-route']],
+    ['candidate:seka-spear-rdc', ['tire-clearance', 'complete-weight']],
+    ['candidate:sava-a4', ['price', 'complete-weight']],
+    ['candidate:quick-pro-tt-one', ['price']],
+    ['candidate:missing-china-price-quick-pro-xr-one', ['complete-weight']],
+    ['candidate:irefox-profound-400', ['complete-weight', 'price']]
+  ]);
+  const blocked = new Set([
+    'candidate:missing-china-price-giant-defy-advanced:complete-weight',
+    'candidate:quick-pro-gr-one-grx-di2:complete-weight',
+    'platform:rinasclta-gr025:geometry',
+    'candidate:missing-china-price-quick-pro-xr-one:complete-weight',
+    'candidate:irefox-profound-400:complete-weight',
+    'candidate:irefox-profound-400:price'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 19);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1461,7 +1551,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 56);
+  assert.equal(data.prices.length, 58);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);

@@ -46,10 +46,19 @@
     "actuation": "hydraulic",
     "type": "disc"
   },
-  "wheels": { "rim_material": "carbon", "depth_mm": 50, "description": "700C carbon wheelset, 24H" },
+  "wheels": {
+    "rim_material": "carbon",
+    "depth_mm": 50,
+    "description": "700C carbon wheelset, 24H"
+  },
   "tires": "700×25C clincher",
-  "cockpit": { "material": "carbon", "integrated": true, "dimensions": "400×100 mm" },
+  "cockpit": {
+    "material": "carbon",
+    "integrated": true,
+    "dimensions": "400×100 mm"
+  },
   "claimed_complete_weight_g": 8600,
-  "claimed_complete_weight_basis": "Current manufacturer approximate complete-bike weight; varies by size",
-  "purchase_route": "Official global-direct checkout at US$1,699 on 2026-08-17; mainland-China checkout not established."
+  "claimed_complete_weight_basis": "Current exact manufacturer approximate complete-bike weight; varies by size, while pedals, accessories and weighing protocol are unpublished",
+  "purchase_route": "Current exact SAVA global-direct storefront lists US$1,699, stock status and add-to-cart for R08-R7120-24S; mainland shipping, tax, warranty and final checkout remain unverified.",
+  "last_reviewed": "2026-09-01"
 }

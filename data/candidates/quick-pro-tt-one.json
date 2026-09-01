@@ -15,7 +15,8 @@
     "public-quick-pro-tt-one-owner-2026-08-17",
     "quick-pro-tt-one-official-2026-08-17",
     "quick-pro-tt-one-china-2026-08-17",
-    "quick-pro-warranty-official-2026-08-17"
+    "quick-pro-warranty-official-2026-08-17",
+    "ecb-reference-rates-2026-08-31"
   ],
   "facts": {
     "frame": "High-strength, high-modulus carbon; 12×100 / 12×142 mm thru axles",
@@ -30,6 +31,20 @@
     "stiffness_evidence": "The current manufacturer page says the high-modulus TT:ONE frame balances stiffness and lightweight performance for direct power transfer. This is exact-model qualitative manufacturer evidence, not a numeric deflection result or independent protocol."
   },
   "support_note": "An exact official mainland product route is established. Quick Pro's global policy states five-year frameset coverage for qualifying original purchasers; exact mainland handling must be confirmed.",
-  "source_note": "The official global page verifies the exact frameset and fit data, and the China page verifies the product route. No reproducible current mainland frame or complete-bike price was established.",
-  "last_reviewed": "2026-09-01"
+  "source_note": "Current exact storefront lists US$2,999, selectable finishes and add-to-cart. The converted CNY amount is not a mainland checkout.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "price_status": "Current official global US$2,999 reference converted to CNY; no attributable mainland selected checkout",
+  "observed_price": {
+    "amount_cny": 20152,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 2999,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact TT:ONE official global-store amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected finish, size, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

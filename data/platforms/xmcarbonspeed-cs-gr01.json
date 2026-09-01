@@ -14,7 +14,107 @@
     "derailleur_hanger": "UDH",
     "cable_routing": "fully-internal",
     "claimed_frame_weight_g": 1234,
-    "stiffness_evidence_status": "No attributable exact-model stiffness measurement or meaningful qualitative claim found after 50 registered source areas"
+    "stiffness_evidence_status": "No attributable exact-model stiffness measurement or meaningful qualitative claim found after 50 registered source areas",
+    "geometry": {
+      "basis": "Bike Insights table attributed to manufacturer-provided geometry",
+      "source_id": "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "XS",
+          "stack_mm": 538,
+          "reach_mm": 360,
+          "seat_tube_mm": 410,
+          "top_tube_mm": 509,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 74.5,
+          "head_tube_mm": 120,
+          "front_center_mm": 592,
+          "wheelbase_mm": 1007,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        },
+        {
+          "size": "S",
+          "stack_mm": 554,
+          "reach_mm": 368,
+          "seat_tube_mm": 445,
+          "top_tube_mm": 527,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 74,
+          "head_tube_mm": 135,
+          "front_center_mm": 601,
+          "wheelbase_mm": 1016,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        },
+        {
+          "size": "M",
+          "stack_mm": 574,
+          "reach_mm": 375,
+          "seat_tube_mm": 475,
+          "top_tube_mm": 542,
+          "head_angle_deg": 70.75,
+          "seat_angle_deg": 73.75,
+          "head_tube_mm": 155,
+          "front_center_mm": 613,
+          "wheelbase_mm": 1027,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        },
+        {
+          "size": "L",
+          "stack_mm": 588,
+          "reach_mm": 382,
+          "seat_tube_mm": 500,
+          "top_tube_mm": 556,
+          "head_angle_deg": 71.75,
+          "seat_angle_deg": 73.5,
+          "head_tube_mm": 165,
+          "front_center_mm": 614,
+          "wheelbase_mm": 1029,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        },
+        {
+          "size": "XL",
+          "stack_mm": 602,
+          "reach_mm": 390,
+          "seat_tube_mm": 520,
+          "top_tube_mm": 574,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 73,
+          "head_tube_mm": 180,
+          "front_center_mm": 624,
+          "wheelbase_mm": 1039,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        },
+        {
+          "size": "XXL",
+          "stack_mm": 636,
+          "reach_mm": 398,
+          "seat_tube_mm": 550,
+          "top_tube_mm": 588,
+          "head_angle_deg": 72.25,
+          "seat_angle_deg": 73,
+          "head_tube_mm": 200,
+          "front_center_mm": 636,
+          "wheelbase_mm": 1051,
+          "fork_offset_mm": 55,
+          "chainstay_mm": 425,
+          "fork_length_mm": 395
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -31,7 +131,8 @@
   "china_availability": "direct-factory",
   "source_ids": [
     "xmcarbonspeed-gr01-official",
-    "xmcarbonspeed-cs-gr01-official-2026-09-01"
+    "xmcarbonspeed-cs-gr01-official-2026-09-01",
+    "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01"
   ],
   "last_reviewed": "2026-09-01"
 }
