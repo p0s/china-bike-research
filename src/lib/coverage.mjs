@@ -556,6 +556,7 @@ function retirementKey(recordType, recordId) {
 function validateRetirements(data, baseline, retirements) {
   const errors = [];
   const byKey = new Map();
+  const protectedItems = new Set();
   const ids = new Set();
   const currentSources = new Set(data.sources.map((source) => source.id));
 
@@ -579,6 +580,12 @@ function validateRetirements(data, baseline, retirements) {
         if (!currentSources.has(sourceId)) errors.push(`retirement ${retirement.id}: evidence source ${sourceId} is not active`);
       }
     }
+    const scopedItem = retirement.protected_item;
+    if (scopedItem !== undefined) {
+      if (!isObject(scopedItem) || !['field', 'relationship'].includes(scopedItem.kind) || typeof scopedItem.value !== 'string' || !scopedItem.value) {
+        errors.push(`retirement ${retirement.id}: protected_item must identify one field or relationship`);
+      }
+    }
     if (retirement.action === 'replace' && !retirement.replacement) errors.push(`retirement ${retirement.id}: replacement is required`);
     if (retirement.replacement) {
       const { record_type: replacementType, record_id: replacementId } = retirement.replacement;
@@ -589,18 +596,36 @@ function validateRetirements(data, baseline, retirements) {
     }
 
     const key = retirementKey(retirement.record_type, retirement.record_id);
-    if (byKey.has(key)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${key}`);
-    byKey.set(key, retirement);
-
     if (!baseline?.records?.[retirement.record_type]?.includes(retirement.record_id)) {
       errors.push(`retirement ${retirement.id}: ${key} is not protected by the baseline`);
     }
-    if (recordMap(data, retirement.record_type).has(retirement.record_id)) {
-      errors.push(`retirement ${retirement.id}: ${key} is still active`);
+    if (scopedItem && isObject(scopedItem) && ['field', 'relationship'].includes(scopedItem.kind) && typeof scopedItem.value === 'string' && scopedItem.value) {
+      const itemKey = `${key}#${scopedItem.kind}:${scopedItem.value}`;
+      if (protectedItems.has(itemKey)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${itemKey}`);
+      protectedItems.add(itemKey);
+      const protectedValues = scopedItem.kind === 'field'
+        ? baseline?.fields?.[retirement.record_type]?.[retirement.record_id]
+        : baseline?.relationships?.[retirement.record_type]?.[retirement.record_id];
+      if (!protectedValues?.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is not protected by the baseline`);
+      const activeRecord = recordMap(data, retirement.record_type).get(retirement.record_id);
+      if (!activeRecord) {
+        errors.push(`retirement ${retirement.id}: scoped retirement requires active record ${key}`);
+      } else {
+        const activeValues = scopedItem.kind === 'field'
+          ? collectFieldPaths(activeRecord, '', unprotectedFieldRoots[retirement.record_type] ?? new Set())
+          : collectRelationships(activeRecord);
+        if (activeValues.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is still active`);
+      }
+    } else {
+      if (byKey.has(key)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${key}`);
+      byKey.set(key, retirement);
+      if (recordMap(data, retirement.record_type).has(retirement.record_id)) {
+        errors.push(`retirement ${retirement.id}: ${key} is still active`);
+      }
     }
   }
 
-  return { errors, byKey };
+  return { errors, byKey, protectedItems };
 }
 
 function missingItems(required = [], current = []) {
@@ -621,6 +646,7 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
   const retirementValidation = validateRetirements(data, baseline, retirements);
   errors.push(...retirementValidation.errors);
   const retirementsByKey = retirementValidation.byKey;
+  const retiredProtectedItems = retirementValidation.protectedItems;
 
   for (const field of missingItems(baseline.meta_fields, current.meta_fields)) errors.push(`meta lost protected field ${field}`);
 
@@ -634,13 +660,17 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     for (const [id, requiredFields] of Object.entries(baseline.fields?.[collection] ?? {})) {
       if (!currentRecords.has(id)) continue;
       const lost = missingItems(requiredFields, current.fields[collection]?.[id]);
-      for (const field of lost) errors.push(`${collection}:${id} lost protected field ${field}`);
+      for (const field of lost) {
+        if (!retiredProtectedItems.has(`${collection}:${id}#field:${field}`)) errors.push(`${collection}:${id} lost protected field ${field}`);
+      }
     }
 
     for (const [id, requiredRelationships] of Object.entries(baseline.relationships?.[collection] ?? {})) {
       if (!currentRecords.has(id)) continue;
       const lost = missingItems(requiredRelationships, current.relationships[collection]?.[id]);
-      for (const relationship of lost) errors.push(`${collection}:${id} lost protected relationship ${relationship}`);
+      for (const relationship of lost) {
+        if (!retiredProtectedItems.has(`${collection}:${id}#relationship:${relationship}`)) errors.push(`${collection}:${id} lost protected relationship ${relationship}`);
+      }
     }
   }
 

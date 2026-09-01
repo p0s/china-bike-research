@@ -12,7 +12,7 @@
   ],
   "status": "mainland-price-observed",
   "research_priority": "medium",
-  "price_status": "official mainland catalog price",
+  "price_status": "Current exact official US$2,999.99 reference converted to CNY; dated China CNY20,990 catalog amount retained separately",
   "official_price": {
     "amount_cny": 20990,
     "currency": "CNY",
@@ -23,15 +23,31 @@
     "specialized-cn-store-finder-2026",
     "specialized-cn-crux-page",
     "specialized-crux-10r-frameset-official-2026-08-28",
-    "specialized-crux-comp-grx-ciclonline-2026-08-28"
+    "specialized-crux-comp-grx-ciclonline-2026-08-28",
+    "ecb-reference-rates-2026-08-31"
   ],
   "facts": {
     "frame": "Crux FACT 10r carbon frameset",
     "frame_material": "FACT 10r carbon frame with S-Works FACT carbon fork; exact fiber grade and lay-up are not published",
     "frame_construction": "Rider First Engineered carbon frame with threaded bottom bracket, 12×142 mm thru-axle, flat-mount disc and UDH",
     "stiffness_evidence": "A current exact-FACT-10r GRX build review describes the frame as rigid and reactive with stable, precise handling; qualitative editorial ride evidence only, not a measured frameset result",
-    "tire_clearance_mm": 47
+    "tire_clearance_mm": 47,
+    "frame_weight_g": 825,
+    "frame_weight_basis": "Current exact product 223491 manufacturer claim for the FACT 10r frame; frame size and paint basis are not stated. Separate 1.4 kg figure is the painted size-56 complete frameset package."
   },
-  "source_note": "The China catalog lists the Crux 10r frameset at ¥20,990. Family specifications remain separate from exact-generation confirmation; stock and final dealer checkout were not tested.",
-  "last_reviewed": "2026-08-28"
+  "source_note": "Current exact product 223491 publishes an 825 g FACT 10r frame claim and a separate 1.4 kg painted size-56 complete frameset package. The CNY amount is a reference conversion; dated mainland list evidence remains distinct.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "observed_price": {
+    "amount_cny": 20159,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 2999.99,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact product 223491 US-store amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

@@ -1,0 +1,484 @@
+{
+  "id": "platform-ican-graro-geometry-2026-09-01",
+  "target": {
+    "record_type": "platform",
+    "record_id": "ican-graro"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand YouTube channel — field platform:ican-graro:geometry",
+          "route": "Brand YouTube channel — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent YouTube review or build — field platform:ican-graro:geometry",
+          "route": "Independent YouTube review or build — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand Bilibili account — field platform:ican-graro:geometry",
+          "route": "Brand Bilibili account — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent Bilibili review or build — field platform:ican-graro:geometry",
+          "route": "Independent Bilibili review or build — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand Xiaohongshu account — field platform:ican-graro:geometry",
+          "route": "Brand Xiaohongshu account — geometry",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent Xiaohongshu post — field platform:ican-graro:geometry",
+          "route": "Independent Xiaohongshu post — geometry",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public indexes and existing sanitized evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand Douyin account — field platform:ican-graro:geometry",
+          "route": "Brand Douyin account — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent Douyin post — field platform:ican-graro:geometry",
+          "route": "Independent Douyin post — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand Weibo account — field platform:ican-graro:geometry",
+          "route": "Brand Weibo account — geometry",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent Weibo post — field platform:ican-graro:geometry",
+          "route": "Independent Weibo post — geometry",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Brand WeChat public article — field platform:ican-graro:geometry",
+          "route": "Brand WeChat public article — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent WeChat public article — field platform:ican-graro:geometry",
+          "route": "Independent WeChat public article — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Cycling forum thread — field platform:ican-graro:geometry",
+          "route": "Cycling forum thread — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Public owner build log — field platform:ican-graro:geometry",
+          "route": "Public owner build log — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Public community photo or setup post — field platform:ican-graro:geometry",
+          "route": "Public community photo or setup post — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer exact-product page — field platform:ican-graro:geometry",
+          "route": "Manufacturer exact-product page — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "Current exact page exposes sizes and marketing language but no numeric geometry or meaningful stiffness protocol. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://icancycling.com/products/gravel-bike-frame-graro"
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer model-family or category page — field platform:ican-graro:geometry",
+          "route": "Manufacturer model-family or category page — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer current catalog — field platform:ican-graro:geometry",
+          "route": "Manufacturer current catalog — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer archived catalog — field platform:ican-graro:geometry",
+          "route": "Manufacturer archived catalog — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer product manual — field platform:ican-graro:geometry",
+          "route": "Manufacturer product manual — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer geometry document — field platform:ican-graro:geometry",
+          "route": "Manufacturer geometry document — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer technical paper or test note — field platform:ican-graro:geometry",
+          "route": "Manufacturer technical paper or test note — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer support or warranty page — field platform:ican-graro:geometry",
+          "route": "Manufacturer support or warranty page — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer newsroom or launch page — field platform:ican-graro:geometry",
+          "route": "Manufacturer newsroom or launch page — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer site search — field platform:ican-graro:geometry",
+          "route": "Manufacturer site search — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer sitemap or indexed route inventory — field platform:ican-graro:geometry",
+          "route": "Manufacturer sitemap or indexed route inventory — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer structured page metadata — field platform:ican-graro:geometry",
+          "route": "Manufacturer structured page metadata — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer regional site — field platform:ican-graro:geometry",
+          "route": "Manufacturer regional site — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer-listed distributor — field platform:ican-graro:geometry",
+          "route": "Manufacturer-listed distributor — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer dealer locator — field platform:ican-graro:geometry",
+          "route": "Manufacturer dealer locator — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Manufacturer-operated online store — field platform:ican-graro:geometry",
+          "route": "Manufacturer-operated online store — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Official Taobao store or exact item — field platform:ican-graro:geometry",
+          "route": "Official Taobao store or exact item — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Official Tmall store or exact item — field platform:ican-graro:geometry",
+          "route": "Official Tmall store or exact item — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Official JD store or exact item — field platform:ican-graro:geometry",
+          "route": "Official JD store or exact item — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Verified Alibaba or 1688 supplier route — field platform:ican-graro:geometry",
+          "route": "Verified Alibaba or 1688 supplier route — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Official AliExpress store or exact item — field platform:ican-graro:geometry",
+          "route": "Official AliExpress store or exact item — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Authorized mainland dealer — field platform:ican-graro:geometry",
+          "route": "Authorized mainland dealer — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Authorized regional dealer — field platform:ican-graro:geometry",
+          "route": "Authorized regional dealer — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — International specialist retailer — field platform:ican-graro:geometry",
+          "route": "International specialist retailer — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Cycling-industry review publication — field platform:ican-graro:geometry",
+          "route": "Cycling-industry review publication — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Chinese cycling-media publication — field platform:ican-graro:geometry",
+          "route": "Chinese cycling-media publication — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent laboratory or instrumented test — field platform:ican-graro:geometry",
+          "route": "Independent laboratory or instrumented test — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Print or digital magazine archive — field platform:ican-graro:geometry",
+          "route": "Print or digital magazine archive — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Trade-show coverage — field platform:ican-graro:geometry",
+          "route": "Trade-show coverage — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Race-team equipment page — field platform:ican-graro:geometry",
+          "route": "Race-team equipment page — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Event or exhibitor catalog — field platform:ican-graro:geometry",
+          "route": "Event or exhibitor catalog — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Independent geometry database — field platform:ican-graro:geometry",
+          "route": "Independent geometry database — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "No exact Graro geometry entry was found. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://bikeinsights.com/search?query=ICAN%20Graro"
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Component compatibility database — field platform:ican-graro:geometry",
+          "route": "Component compatibility database — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Product certification or registration database — field platform:ican-graro:geometry",
+          "route": "Product certification or registration database — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "ICAN Graro exact numeric geometry and meaningful frame stiffness evidence — Public web archive — field platform:ican-graro:geometry",
+          "route": "Public web archive — geometry",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for ICAN Graro; it yielded no additional attributable evidence. This area was applied specifically to geometry; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-ican-graro-batch-043-50-area-sweep-2026-09-01.json. No attributable numeric exact-model geometry table was found; size selectors and gravel-specific geometry wording do not establish fit coordinates."
+}

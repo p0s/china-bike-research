@@ -55,7 +55,7 @@
     "owner-build-log",
     "community-photo-post"
   ],
-  "field_count": 989,
+  "field_count": 990,
   "fields": [
     {
       "key": "variant:lightcarbon-speedz-complete:complete-weight",
@@ -15886,6 +15886,22 @@
         "stiffness-evidence-missing"
       ],
       "priority_score": 16
+    },
+    {
+      "key": "platform:scott-addict-rc-40:tire-clearance",
+      "target": {
+        "record_type": "platform",
+        "record_id": "scott-addict-rc-40"
+      },
+      "field": "tire-clearance",
+      "name": "Addict RC 40",
+      "record_ids": [
+        "scott-addict-rc-40"
+      ],
+      "initial_gap_codes": [
+        "clearance-unverified"
+      ],
+      "priority_score": 56
     }
   ]
 }

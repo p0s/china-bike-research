@@ -16,7 +16,9 @@
     "china-cycling-bigrock-sohtea-long-term"
   ],
   "source_ids": [
-    "bigrock-sohtea-panda-podium-2026-08-17"
+    "bigrock-sohtea-panda-podium-2026-08-17",
+    "china-cycling-bigrock-sohtea-long-term",
+    "ecb-reference-rates-2026-08-31"
   ],
   "facts": {
     "frame": "T800-claimed carbon; 12×100 / 12×142 mm thru axles",
@@ -24,9 +26,25 @@
     "bottom_bracket": "T47 threaded, 85.5 mm shell",
     "tire_clearance_mm": 30,
     "sizes": "XXS–XXL",
-    "cockpit": "Frame, fork, seatpost and headset package"
+    "cockpit": "Frame, fork, seatpost and headset package",
+    "frame_weight_basis": "Frame only, excluding alloy parts and accessories; XXS 730 g, XS 750 g, S 780 g, M 810 g, L 830 g and XL 860 g, each ±5%; XXL unpublished",
+    "stiffness_evidence": "Independent exact-model long-term review describes lateral stiffness and responsive out-of-saddle handling after building three Sohtea bikes; qualitative ride evidence, not an instrumented frame-deflection test"
   },
   "support_note": "The specialist retailer states a three-year warranty; manufacturer terms and mainland handling are unverified.",
-  "source_note": "An exact-SKU international retailer order route is available, but the evidence remains below first-party authority and no current RMB checkout was accepted.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "Current exact specialist-retailer offer and per-size weights are attributable. The CNY amount is a reference conversion, and stiffness evidence remains qualitative.",
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official",
+  "price_status": "Current exact specialist-retailer US$1,199 reference converted to CNY; no attributable mainland selected checkout",
+  "observed_price": {
+    "amount_cny": 8057,
+    "currency": "CNY",
+    "price_type": "official-global-store-reference-conversion",
+    "observed_at": "2026-09-01",
+    "original_amount": 1199,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.719730941704037,
+    "conversion_rate_date": "2026-08-31",
+    "price_basis": "Current exact Sohtea regular frameset retailer amount converted at the dated ECB reference cross-rate",
+    "conditions": "Reference only; selected size, finish, shipping, tax, duties, actual FX, stock and mainland checkout are unverified"
+  }
 }

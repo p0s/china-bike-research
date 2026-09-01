@@ -1,0 +1,10 @@
+{
+  "id": "retire-scott-addict-rc-40-wrong-clearance-2026-09-01",
+  "record_type": "platforms",
+  "record_id": "scott-addict-rc-40",
+  "action": "retire",
+  "reason": "Exact model 290362 evidence does not publish a maximum tire width; the protected 38 mm field came from the later endurance Addict family and is removed rather than transferred.",
+  "evidence_source_ids": ["scott-addict-rc-40-poland-2026-08-17", "scott-addict-rc-40-bikeradar-review-2026-09-01"],
+  "protected_item": { "kind": "field", "value": "tire_clearance.published_max_mm" },
+  "reviewed_at": "2026-09-01"
+}

@@ -20,7 +20,6 @@
   },
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "scott-addict-2026-manual-2026-08-17",
     "scott-addict-rc-40-poland-2026-08-17"
   ],
   "drivetrain": {
@@ -34,9 +33,18 @@
     "actuation": "hydraulic",
     "type": "disc"
   },
-  "wheels": { "rim_material": "aluminum", "description": "Syncros RP2.0" },
+  "wheels": {
+    "rim_material": "aluminum",
+    "description": "Syncros RP2.0"
+  },
   "tires": "Schwalbe One Race-Guard Fold 700×28C",
-  "cockpit": { "material": "aluminum", "integrated": false, "description": "Syncros alloy stem and handlebar" },
+  "cockpit": {
+    "material": "aluminum",
+    "integrated": false,
+    "description": "Syncros alloy stem and handlebar"
+  },
   "claimed_complete_weight_g": 7900,
-  "purchase_route": "SCOTT regional dealer route; current mainland stock and final price remain tied to the dated marketplace record."
+  "purchase_route": "Current exact SCOTT regional page provides dealer inquiry and size-availability checking for model 290362. Mainland stock, service terms and final checkout remain tied to local dealer confirmation.",
+  "claimed_complete_weight_basis": "Current exact regional manufacturer claim for model 290362: 7.9 kg; size, pedals, accessories and weighing protocol are unpublished",
+  "last_reviewed": "2026-09-01"
 }

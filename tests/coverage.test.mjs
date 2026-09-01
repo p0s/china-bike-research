@@ -179,3 +179,24 @@ test('documented replacements authorize record retirement but not target-quality
   assert.ok(errorsFor(mutated, baseline, retirement, { requireCurrentBaseline: false })
     .some((error) => error.includes('no longer has a primary image at its protected quality')));
 });
+
+test('scoped retirements authorize disproven protected facts without retiring the active record', () => {
+  const mutated = structuredClone(data);
+  const candidate = mutated.candidates.find((item) => item.id === 'quick-pro-er-one');
+  delete candidate.facts.complete_weight_g;
+  const scopedRetirements = [...retirements, {
+    id: 'retire-quick-pro-er-one-test-weight-2026-09-01',
+    record_type: 'candidates',
+    record_id: 'quick-pro-er-one',
+    action: 'retire',
+    reason: 'Synthetic exact evidence disproves only the protected complete-weight field while preserving the candidate record.',
+    evidence_source_ids: ['quick-pro-er-one-ultegra-official-2026-08-17'],
+    protected_item: { kind: 'field', value: 'facts.complete_weight_g' },
+    reviewed_at: '2026-09-01'
+  }];
+  assert.deepEqual(errorsFor(mutated, baseline, scopedRetirements, { requireCurrentBaseline: false }), []);
+
+  const stillActive = structuredClone(data);
+  assert.ok(errorsFor(stillActive, baseline, scopedRetirements, { requireCurrentBaseline: false })
+    .some((error) => error.includes('facts.complete_weight_g is still active')));
+});

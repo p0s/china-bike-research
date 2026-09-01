@@ -14,68 +14,103 @@
     "derailleur_hanger": "unknown",
     "cable_routing": "unknown",
     "geometry": {
-      "basis": "official 2026 Addict manual",
-      "source_id": "scott-addict-2026-manual-2026-08-17",
+      "basis": "Exact 2023-generation Addict RC 40 geometry published by BikeRadar",
+      "source_id": "scott-addict-rc-40-bikeradar-review-2026-09-01",
       "units": {
         "length": "mm",
         "angle": "degrees"
       },
       "sizes": [
         {
-          "size": "47",
-          "head_angle_deg": 71.3,
-          "seat_angle_deg": 75,
-          "reach_mm": 372,
-          "stack_mm": 522,
-          "wheelbase_mm": 984
-        },
-        {
-          "size": "49",
-          "head_angle_deg": 71.8,
-          "seat_angle_deg": 75,
-          "reach_mm": 378,
-          "stack_mm": 534,
-          "wheelbase_mm": 991
-        },
-        {
-          "size": "52",
-          "head_angle_deg": 72,
+          "size": "XXS/47",
+          "top_tube_mm": 520,
+          "head_tube_mm": 97,
+          "head_angle_deg": 70.5,
           "seat_angle_deg": 74.5,
-          "reach_mm": 382,
-          "stack_mm": 557,
-          "wheelbase_mm": 1000
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 987.5,
+          "stack_mm": 504,
+          "reach_mm": 380,
+          "standover_mm": 720
         },
         {
-          "size": "54",
-          "head_angle_deg": 72.2,
+          "size": "XS/49",
+          "top_tube_mm": 530,
+          "head_tube_mm": 102,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74.5,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 994,
+          "stack_mm": 511,
+          "reach_mm": 388,
+          "standover_mm": 740
+        },
+        {
+          "size": "S/52",
+          "top_tube_mm": 540,
+          "head_tube_mm": 115,
+          "head_angle_deg": 72,
           "seat_angle_deg": 74,
-          "reach_mm": 386,
-          "stack_mm": 578,
-          "wheelbase_mm": 1009
-        },
-        {
-          "size": "56",
-          "head_angle_deg": 72.5,
-          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 991,
+          "stack_mm": 526.5,
           "reach_mm": 389,
-          "stack_mm": 599,
-          "wheelbase_mm": 1016
+          "standover_mm": 755
         },
         {
-          "size": "58",
-          "head_angle_deg": 73,
-          "seat_angle_deg": 73.1,
-          "reach_mm": 394,
-          "stack_mm": 619,
-          "wheelbase_mm": 1022
+          "size": "M/54",
+          "top_tube_mm": 550,
+          "head_tube_mm": 135,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.6,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 992,
+          "stack_mm": 548,
+          "reach_mm": 390,
+          "standover_mm": 778
         },
         {
-          "size": "61",
+          "size": "L/56",
+          "top_tube_mm": 565,
+          "head_tube_mm": 155,
           "head_angle_deg": 73,
+          "seat_angle_deg": 73.2,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1000,
+          "stack_mm": 568.5,
+          "reach_mm": 395,
+          "standover_mm": 798
+        },
+        {
+          "size": "XL/58",
+          "top_tube_mm": 580,
+          "head_tube_mm": 175,
+          "head_angle_deg": 73.3,
           "seat_angle_deg": 73,
-          "reach_mm": 402,
-          "stack_mm": 638,
-          "wheelbase_mm": 1036
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1008,
+          "stack_mm": 588,
+          "reach_mm": 400,
+          "standover_mm": 818
+        },
+        {
+          "size": "XXL/61",
+          "top_tube_mm": 600,
+          "head_tube_mm": 193,
+          "head_angle_deg": 73.3,
+          "seat_angle_deg": 72.5,
+          "bb_drop_mm": 70,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1023,
+          "stack_mm": 606,
+          "reach_mm": 410,
+          "standover_mm": 838
         }
       ]
     },
@@ -85,24 +120,22 @@
     "stiffness_evidence": "BikeRadar’s exact-model road test describes the RC 40 frameset as stiff and agile with balanced compliance, sharp steering and responsive ride qualities. Qualitative independent ride evidence, not a numeric deflection protocol."
   },
   "category_details": {
-    "discipline": "road",
-    "geometry": "official 2026 Addict table",
-    "evidence": "snapshot-classification",
-    "note": "Official flagship-looking listing; Shimano 105 Di2 shown."
+    "discipline": "road-race",
+    "geometry": "exact 2023-generation Addict RC 40 table",
+    "evidence": "exact-model-independent-review",
+    "note": "Model 290362 is the HMX Addict RC 40; later endurance Addict geometry is not transferred."
   },
   "mounts": [],
   "tire_clearance": {
     "wheel_size": "700c",
-    "evidence": "official-manual",
-    "eligibility": "pass",
-    "published_max_mm": 38,
-    "note": "Official 2026 Addict manual states a 38 mm maximum tire width."
+    "evidence": "exact-model-50-area-sweep",
+    "eligibility": "unverified",
+    "note": "No manufacturer-confirmed maximum found after 50 registered areas; fitted 28C tires are not treated as a maximum, and the prior later-generation endurance Addict 38 mm value was removed."
   },
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "scott-addict-2026-manual-2026-08-17",
     "scott-addict-rc-40-poland-2026-08-17",
     "scott-addict-rc-40-bikeradar-review-2026-09-01"
   ],
