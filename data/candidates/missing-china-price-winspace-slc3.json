@@ -18,7 +18,8 @@
     "usd-cny-central-parity-2026-07-31",
     "xhs-winspace-slc3-200km-2026-08-10",
     "xhs-winspace-slc3-review-lead-2026-08-10",
-    "public-winspace-slc3-build-2026-08-17"
+    "public-winspace-slc3-build-2026-08-17",
+    "winspace-road-frame-clearance-faq-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 9800,
@@ -31,11 +32,13 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.winspace.cc/products/slc3-frameset",
-  "source_note": "Official page showed a US$1,450 sale price from US$1,780. CNY reference excludes actual FX, shipping, tax and duties; the catalog adds the adjustable standard build allowance for the displayed full-bike estimate. One Magene QED and Komcas EVO MAX custom build was reported at 7.3 kg.",
+  "source_note": "Current manufacturer evidence says SLC3.0 is optimized for 28 mm and generally supports measured-width tires up to 32 mm depending on rim internal width. Mainland checkout and warranty handling remain unresolved.",
   "facts": {
     "frame": "Ultralight carbon road frameset",
     "frame_weight_g": 699,
-    "sizes": "460, 480, 500, 530 and 550 mm"
+    "sizes": "460, 480, 500, 530 and 550 mm",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current manufacturer collection FAQ; measured width, dependent on rim internal width"
   },
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01"
 }

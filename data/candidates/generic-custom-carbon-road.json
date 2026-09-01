@@ -6,11 +6,11 @@
   "type": "frameset",
   "why_interesting": "Title says custom frameset while image shows a complete; exact included parts unclear.",
   "missing": [
-    "Exact model identity",
-    "Complete BOM and category-specific specifications",
-    "Current China purchase route and warranty entity"
+    "Attributable manufacturer, mold, model year and exact SKU",
+    "Frame construction and size/finish-specific weight",
+    "Complete package, maximum clearance, stiffness/safety evidence, warranty and checkout"
   ],
-  "status": "research-queue",
+  "status": "generic-card-identity-and-frame-specifications-exhausted-after-50-areas",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -22,7 +22,9 @@
   },
   "source_refs": "IMG_6875.png#L1",
   "last_reviewed": "2026-09-01",
-  "source_note": "The retained Taobao screenshot shows only the generic title 碳纤维公路车车架定制, seller label 风行碳纤维 and CNY 4,498.25 coupon amount. No exact model or manufacturer maximum tire clearance could be mapped; similarly named products were rejected.",
+  "source_note": "The retained Taobao screenshot names only a generic custom carbon road frame and seller label. Fifty areas did not establish an attributable model; no weight or construction detail is inferred from appearance.",
   "facts": {},
-  "source_ids": []
+  "source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ]
 }

@@ -4,13 +4,13 @@
   "model_id": "hi-light-r9-2025",
   "category": "road",
   "type": "frameset",
-  "why_interesting": "Modern titanium road-frame price benchmark.",
+  "why_interesting": "Current exact titanium road frameset with hydroformed variable-wall tubes, CNC/3D-formed details and a current mainland list price.",
   "missing": [
-    "Exact model specification and included package",
-    "China purchase route and domestic warranty entity",
+    "Frame-only weight with size, finish and included-hardware basis",
+    "China checkout, domestic warranty entity and after-sales terms",
     "Rights-cleared exact product image"
   ],
-  "status": "titanium-priority",
+  "status": "exact-current-material-and-price-found-frame-weight-unpublished",
   "source_ids": [
     "titanium-hi-light-r9-2025-official"
   ],
@@ -18,14 +18,16 @@
     "amount_cny": 8900,
     "currency": "CNY",
     "price_type": "official-retail",
-    "observed_at": "2026-08-08"
+    "observed_at": "2026-09-01"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/174.html",
-  "source_note": "The current exact manufacturer page lists CNY 8,900 and a 700x28C maximum.",
+  "source_note": "The current exact manufacturer page lists CNY 8,900 and identifies hydroformed variable-wall titanium construction with 3Al/2.5V CNC dropouts. It publishes no frame-only weight.",
   "manufacturing": "titanium road frame",
   "last_reviewed": "2026-09-01",
   "facts": {
     "tire_clearance_mm": 28,
-    "tire_clearance_basis": "Current exact manufacturer maximum"
+    "tire_clearance_basis": "Current exact manufacturer maximum",
+    "frame_material": "Hydroformed variable-wall titanium frame with 3Al/2.5V CNC dropouts, CNC head tube and 3D-formed bottom-bracket section",
+    "frame_weight_status": "No exact frame-only weight basis found after 50 registered source areas"
   }
 }

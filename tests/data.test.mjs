@@ -544,6 +544,100 @@ test('batch 031 resolves current platform facts while preserving build and gener
   assert.ok(preservedQueries.has('"LightCarbon Speed7" complete weight official'));
 });
 
+test('batch 032 resolves exact frame facts and preserves seven exhausted unknowns', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+
+  const hiLight = candidates.get('hi-light-r9-2025');
+  assert.equal(hiLight.facts.frame_weight_g, undefined);
+  assert.match(hiLight.facts.frame_material, /titanium.*3Al\/2\.5V/i);
+  assert.equal(hiLight.official_price.amount_cny, 8900);
+  assert.equal(hiLight.official_price.observed_at, '2026-09-01');
+
+  const lagetAero = candidates.get('laget-aero-one');
+  const lagetPioneer = candidates.get('laget-pioneer');
+  const lagetPioneerOne = candidates.get('laget-pioneer-one');
+  assert.equal(lagetAero.facts.frame_weight_g, 1630);
+  assert.match(lagetAero.facts.frame_material, /3D-printed titanium.*titanium fork/i);
+  assert.equal(lagetPioneer.facts.frame_weight_g, 1550);
+  assert.match(lagetPioneer.facts.frame_material, /hand-welded titanium.*carbon fork/i);
+  assert.equal(lagetPioneerOne.facts.frame_weight_g, 1350);
+  assert.match(lagetPioneerOne.facts.frame_material, /3D-printed titanium.*carbon fork/i);
+
+  assert.match(candidates.get('twitter-t10-pro').facts.frame_material, /high-modulus carbon.*full-carbon fork/i);
+  assert.equal(candidates.get('twitter-cyclone-gen3-7170').facts.tire_clearance_mm, undefined);
+  assert.match(candidates.get('dengfu-gravel').facts.frame_stiffness_status, /No controlled numeric/);
+  assert.equal(candidates.get('elves-mori-community-lead').facts.tire_clearance_mm, undefined);
+  assert.equal(candidates.get('generic-custom-carbon-road').facts.frame_weight_g, undefined);
+  assert.equal(candidates.get('generic-custom-carbon-road').facts.frame_material, undefined);
+  assert.equal(candidates.get('missing-china-price-merida-scultura').facts.tire_clearance_mm, 30);
+  assert.equal(candidates.get('missing-china-price-trek-madone-gen-8').facts.tire_clearance_mm, 32);
+  assert.equal(candidates.get('missing-china-price-elves-vanyar').facts.tire_clearance_mm, 30);
+  assert.equal(candidates.get('missing-china-price-tavelo-attack').facts.tire_clearance_mm, 32);
+  assert.equal(candidates.get('missing-china-price-winspace-slc3').facts.tire_clearance_mm, 32);
+  assert.equal(candidates.get('tavelo-arow-sl-community-lead').facts.drivetrain, undefined);
+  assert.match(candidates.get('tavelo-arow-sl-community-lead').facts.drivetrain_status, /No complete attributable/);
+
+  const twitterPlatform = data.platforms.find((platform) => platform.id === 'twitter-cyclone-gen3-et');
+  assert.equal(twitterPlatform.frame.material, 'high-modulus carbon');
+  assert.equal(twitterPlatform.frame.fork_material, 'full carbon');
+
+  const foundFields = new Set([
+    'candidate:hi-light-r9-2025:frame-material',
+    'candidate:hi-light-r9-2025:price',
+    'candidate:laget-aero-one:frame-weight',
+    'candidate:laget-aero-one:frame-material',
+    'candidate:laget-aero-one:price',
+    'candidate:laget-pioneer:frame-weight',
+    'candidate:laget-pioneer:frame-material',
+    'candidate:laget-pioneer:price',
+    'candidate:laget-pioneer-one:frame-weight',
+    'candidate:laget-pioneer-one:frame-material',
+    'candidate:laget-pioneer-one:price',
+    'candidate:twitter-t10-pro:frame-material',
+    'candidate:missing-china-price-merida-scultura:tire-clearance',
+    'candidate:missing-china-price-trek-madone-gen-8:tire-clearance',
+    'platform:twitter-cyclone-gen3-et:frame-material',
+    'candidate:missing-china-price-elves-vanyar:tire-clearance',
+    'candidate:missing-china-price-tavelo-attack:tire-clearance',
+    'candidate:missing-china-price-winspace-slc3:tire-clearance'
+  ]);
+  const targetFields = new Map([
+    ['candidate:hi-light-r9-2025', ['frame-weight', 'frame-material', 'price']],
+    ['candidate:laget-aero-one', ['frame-weight', 'frame-material', 'price']],
+    ['candidate:laget-pioneer', ['frame-weight', 'frame-material', 'price']],
+    ['candidate:laget-pioneer-one', ['frame-weight', 'frame-material', 'price']],
+    ['candidate:twitter-t10-pro', ['frame-material']],
+    ['candidate:twitter-cyclone-gen3-7170', ['tire-clearance']],
+    ['candidate:dengfu-gravel', ['frame-stiffness']],
+    ['candidate:elves-mori-community-lead', ['tire-clearance']],
+    ['candidate:generic-custom-carbon-road', ['frame-weight', 'frame-material']],
+    ['candidate:missing-china-price-merida-scultura', ['tire-clearance']],
+    ['candidate:missing-china-price-trek-madone-gen-8', ['tire-clearance']],
+    ['platform:twitter-cyclone-gen3-et', ['frame-material']],
+    ['candidate:missing-china-price-elves-vanyar', ['tire-clearance']],
+    ['candidate:missing-china-price-tavelo-attack', ['tire-clearance']],
+    ['candidate:missing-china-price-winspace-slc3', ['tire-clearance']],
+    ['candidate:tavelo-arow-sl-community-lead', ['drivetrain']]
+  ]);
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      assert.ok(attempt, key);
+      const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, foundFields.has(key) ? 'found' : 'blocked', key);
+    }
+  }
+
+  const legacyMori = data.researchAttempts.find((record) => record.id === 'candidate-elves-mori-community-lead-tire-clearance-2026-08-17');
+  const preservedQueries = new Set(legacyMori.required_channels.flatMap((channel) => legacyMori.channels[channel].attempts).map((attempt) => attempt.query));
+  assert.ok(preservedQueries.has('ELVES Mori gravel frameset (subtrim unconfirmed) material, standards, clearance and BOM community'));
+  assert.ok(preservedQueries.has('精灵 Mori 砾石车架组 material, standards, clearance and BOM'));
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -650,7 +744,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1188);
+  assert.equal(data.researchAttempts.length, 1212);
   assert.equal(products.length, data.variants.length);
 });
 

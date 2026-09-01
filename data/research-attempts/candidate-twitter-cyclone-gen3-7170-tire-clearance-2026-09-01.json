@@ -1,0 +1,482 @@
+{
+  "id": "candidate-twitter-cyclone-gen3-7170-tire-clearance-2026-09-01",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-cyclone-gen3-7170"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-01",
+  "minimum_distinct_approaches": 50,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "blocked",
+      "blocker": "One or more public routes were unavailable or excluded by shared-runtime coordination; all other registered areas were still checked without login, challenge handling, retry loop or bypass.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "brand-youtube",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand YouTube channel — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand YouTube channel — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "independent-youtube",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent YouTube review or build — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent YouTube review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent youtube review or build area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "brand-bilibili",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand Bilibili account — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand Bilibili account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "independent-bilibili",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent Bilibili review or build — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent Bilibili review or build — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent bilibili review or build area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand Xiaohongshu account — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand Xiaohongshu account — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "independent-xiaohongshu",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent Xiaohongshu post — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent Xiaohongshu post — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started; only public search indexes and existing repository evidence were checked without login, challenge handling, retry loop or bypass. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand Douyin account — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand Douyin account — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent Douyin post — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent Douyin post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand Weibo account — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand Weibo account — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent Weibo post — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent Weibo post — tire-clearance",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing yielded no usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Brand WeChat public article — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Brand WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand wechat public article area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent WeChat public article — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent WeChat public article — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Cycling forum thread — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Cycling forum thread — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Public owner build log — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Public owner build log — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Public community photo or setup post — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Public community photo or setup post — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-exact-product",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer exact-product page — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer exact-product page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer exact-product page area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 2,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer model-family or category page — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer model-family or category page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 3,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer current catalog — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer current catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer current catalog area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer archived catalog — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer archived catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-product-manual",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer product manual — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer product manual — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer product manual area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer geometry document — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer geometry document — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer technical paper or test note — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer technical paper or test note — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer support or warranty page — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer support or warranty page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer newsroom or launch page — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer newsroom or launch page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer site search — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer site search — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer sitemap or indexed route inventory — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer sitemap or indexed route inventory — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer structured page metadata — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer structured page metadata — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-regional-site",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer regional site — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer regional site — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer regional site area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer-listed distributor — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer-listed distributor — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer dealer locator — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer dealer locator — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Manufacturer-operated online store — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Manufacturer-operated online store — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Official Taobao store or exact item — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Official Taobao store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Official Tmall store or exact item — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Official Tmall store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Official JD store or exact item — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Official JD store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Verified Alibaba or 1688 supplier route — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Verified Alibaba or 1688 supplier route — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Official AliExpress store or exact item — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Official AliExpress store or exact item — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Authorized mainland dealer — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Authorized mainland dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Authorized regional dealer — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Authorized regional dealer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — International specialist retailer — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "International specialist retailer — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Cycling-industry review publication — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Cycling-industry review publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Chinese cycling-media publication — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Chinese cycling-media publication — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent laboratory or instrumented test — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent laboratory or instrumented test — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Print or digital magazine archive — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Print or digital magazine archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Trade-show coverage — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Trade-show coverage — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Race-team equipment page — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Race-team equipment page — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Event or exhibitor catalog — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Event or exhibitor catalog — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Independent geometry database — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Independent geometry database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Component compatibility database — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Component compatibility database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Product certification or registration database — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Product certification or registration database — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "TWITTER Cyclone 3rd R7120 maximum tire clearance — Public web archive — field candidate:twitter-cyclone-gen3-7170:tire-clearance",
+          "route": "Public web archive — tire-clearance",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for TWITTER Cyclone 3rd Shimano 105 R7120 exact build; it yielded no additional attributable evidence. This area was applied specifically to tire-clearance; it did not establish an additional acceptable value for this field."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-gen3-7170-batch-032-50-area-sweep-2026-09-01.json. Current exact manufacturer pages publish fitted 700x28C tires but no maximum. Owner-fit and sibling claims were not promoted to a manufacturer maximum."
+}

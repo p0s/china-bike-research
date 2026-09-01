@@ -8,24 +8,63 @@
   "status": "snapshot-published",
   "summary": "The anonymized 2026-08-08 snapshot identifies Twitter Cyclone Gen 3 ET electronic as an exact visible model/configuration. It provides a dated China-market price lead; verify the final SKU, BOM, and warranty route before purchase.",
   "frame": {
-    "material": "carbon",
-    "fork_material": "unknown",
+    "material": "high-modulus carbon",
+    "fork_material": "full carbon",
     "bottom_bracket": "T47×24",
     "derailleur_hanger": "unknown",
     "cable_routing": "unknown",
     "geometry": {
       "basis": "manufacturer exact-model geometry table",
       "source_id": "twitter-cyclone-gen3-et-usa-2026-08-17",
-      "units": { "length": "mm" },
+      "units": {
+        "length": "mm"
+      },
       "sizes": [
-        { "size": "435", "reach_mm": 333, "stack_mm": 506, "chainstay_mm": 410, "wheelbase_mm": 951 },
-        { "size": "460", "reach_mm": 349, "stack_mm": 515, "chainstay_mm": 410, "wheelbase_mm": 971 },
-        { "size": "480", "reach_mm": 362, "stack_mm": 536, "chainstay_mm": 410, "wheelbase_mm": 991 },
-        { "size": "500", "reach_mm": 371, "stack_mm": 547, "chainstay_mm": 410, "wheelbase_mm": 1004 },
-        { "size": "520", "reach_mm": 383, "stack_mm": 548, "chainstay_mm": 410, "wheelbase_mm": 1017 },
-        { "size": "540", "reach_mm": 398, "stack_mm": 554, "chainstay_mm": 410, "wheelbase_mm": 1030 }
+        {
+          "size": "435",
+          "reach_mm": 333,
+          "stack_mm": 506,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 951
+        },
+        {
+          "size": "460",
+          "reach_mm": 349,
+          "stack_mm": 515,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 971
+        },
+        {
+          "size": "480",
+          "reach_mm": 362,
+          "stack_mm": 536,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 991
+        },
+        {
+          "size": "500",
+          "reach_mm": 371,
+          "stack_mm": 547,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1004
+        },
+        {
+          "size": "520",
+          "reach_mm": 383,
+          "stack_mm": 548,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1017
+        },
+        {
+          "size": "540",
+          "reach_mm": 398,
+          "stack_mm": 554,
+          "chainstay_mm": 410,
+          "wheelbase_mm": 1030
+        }
       ]
-    }
+    },
+    "material_grade": "Model-specific grade unpublished; brand-level T800/T1000 wording is not transferred"
   },
   "category_details": {
     "discipline": "aero road",
@@ -40,7 +79,8 @@
     "taobao-snapshot-2026-08-08",
     "twitter-bikes-gravel-catalog-2026-08-08",
     "twitter-cyclone-gen3-et-usa-2026-08-17",
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-carbon-frame-faq-2026-09-01"
   ],
   "last_reviewed": "2026-09-01"
 }
