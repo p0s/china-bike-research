@@ -1138,7 +1138,7 @@ function curatedStartingPoints(ctx, summaries) {
       return `<li><a href="${escapeAttr(item.url)}">${escapeHtml(itemName)}</a><span>${escapeHtml(facts.join(' · '))}</span></li>`;
     }).join('')}</ol></article>`;
   }).join('');
-  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div><p>Three focused shortlists—not a universal score or a recommendation ranking.</p></div><div class="curated-groups">${groups}</div></section>`;
+  return `<section class="curated-picks page" aria-labelledby="curated-picks-title"><div class="curated-picks-heading"><div><span class="section-label">Comparison starting points</span><h2 id="curated-picks-title">Top bikes, with the criteria shown</h2></div></div><div class="curated-groups">${groups}</div></section>`;
 }
 
 export function renderHome(ctx) {
