@@ -11,9 +11,9 @@
   ],
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "price_status": "Current exact official mainland CNY 27,800 list; dealer stock and checkout unverified",
   "required_before_dashboard": "Exact current BOM, weight, frame/geometry, BB and clearance; Direct image asset URL; Current dealer stock, checkout outcome and China warranty policy",
-  "last_reviewed": "2026-08-28",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "trek-china-checkpoint-category-2026-08-17",
     "trek-china-checkpoint-product-47071-2026-08-17",
@@ -29,7 +29,7 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland-China page lists Trek Checkpoint SL 5 AXS Gen 3 at ¥27,800. Dealer stock, checkout outcome and exact local warranty handling were not tested. An exact-model public shop post shows a size-M bike fitted with 29 x 2.2 tires and supports the recorded 50 mm official maximum through a visible shop exchange.",
+  "source_note": "Official mainland product 47071 lists Checkpoint SL 5 AXS Gen 3 at CNY 27,800. Dealer stock, checkout outcome and exact local warranty handling remain unverified.",
   "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/砾石自行车/c/B546/",
   "facts": {
     "frame": "500 Series OCLV carbon",
@@ -40,5 +40,6 @@
     "complete_weight_basis": "Authorized-retailer exact 2026 trim, size ML, with TLR sealant and no tubes; pedals are not included",
     "drivetrain": "SRAM Apex XPLR AXS electronic 1×12, 40T crank and 11–44T cassette",
     "tire_clearance_mm": 50
-  }
+  },
+  "reference_price_kind": "official"
 }

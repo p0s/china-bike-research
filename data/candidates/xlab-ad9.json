@@ -17,7 +17,8 @@
     "xlab-ad9-official-cn-price-2026-08-27",
     "xlab-ad9-official-global-2026-08-27",
     "xlab-ad9-taobao-2026-08-27",
-    "public-xlab-ad9-build-2026-08-27"
+    "public-xlab-ad9-build-2026-08-27",
+    "xlab-ad9-cyclingnews-review-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 53980,
@@ -41,7 +42,8 @@
     "tires": "Michelin Pro 5 700×28C",
     "cockpit": "X-LAB carbon integrated cockpit; size-specific 360–400 mm width and 90–130 mm stem",
     "brakes": "Shimano Dura-Ace R9270 hydraulic; 160/140 mm rotors",
-    "sizes": "XS, S, M, L and XL"
+    "sizes": "XS, S, M, L and XL",
+    "stiffness_evidence": "Exact-model month-long review reports that the bottom bracket and chainstays handled approximately 1,200 W sprint efforts without obvious power-transfer loss; qualitative wattage-context evidence, not an instrumented deflection test"
   },
   "alternative_builds": [
     {
@@ -54,7 +56,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected black / size-M / 24-speed option"
       },
-      "source_ids": ["xlab-ad9-taobao-2026-08-27"],
+      "source_ids": [
+        "xlab-ad9-taobao-2026-08-27"
+      ],
       "notes": "The listing did not expose enough textual component detail to equate this SKU with the official Vision Metron 60 SL build; other colors and size S were disabled."
     },
     {
@@ -65,9 +69,12 @@
       "weight_basis": "Approximate bare complete weight stated by the public build post.",
       "wheels": "UNAAS wheelset",
       "tires": "Continental Ultra Sport 28C clinchers",
-      "source_ids": ["public-xlab-ad9-build-2026-08-27"],
+      "source_ids": [
+        "public-xlab-ad9-build-2026-08-27"
+      ],
       "notes": "Exact custom build context only; it is not the official Dura-Ace catalog trim."
     }
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01",
+  "reference_price_kind": "official"
 }

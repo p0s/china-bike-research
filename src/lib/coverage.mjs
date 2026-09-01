@@ -133,6 +133,22 @@ function imageProtection(image) {
   };
 }
 
+function preferredImageTargetProtection(previous, protection) {
+  const candidate = {
+    minimum_accuracy_rank: protection.minimum_accuracy_rank,
+    minimum_source_tier: protection.minimum_source_tier,
+    remote_required: protection.remote_required
+  };
+  if (!previous) return candidate;
+  const previousScore = [previous.minimum_source_tier, Number(previous.remote_required), previous.minimum_accuracy_rank];
+  const candidateScore = [candidate.minimum_source_tier, Number(candidate.remote_required), candidate.minimum_accuracy_rank];
+  for (let index = 0; index < previousScore.length; index += 1) {
+    if (candidateScore[index] > previousScore[index]) return candidate;
+    if (candidateScore[index] < previousScore[index]) return previous;
+  }
+  return previous;
+}
+
 function sourceTypeTier(type) {
   if (/^(?:manufacturer-|official-|government-)/.test(type)) return 3;
   if (type === 'authorized-retailer-page') return 2;
@@ -229,12 +245,7 @@ export function createCoverageSnapshot(data) {
     const protection = imageProtection(image);
     images[image.id] = protection;
     if (!protection.target || !protection.primary_required) continue;
-    const previous = imageTargets[protection.target];
-    imageTargets[protection.target] = {
-      minimum_accuracy_rank: Math.max(previous?.minimum_accuracy_rank ?? -1, protection.minimum_accuracy_rank),
-      minimum_source_tier: Math.max(previous?.minimum_source_tier ?? -1, protection.minimum_source_tier),
-      remote_required: Boolean(previous?.remote_required || protection.remote_required)
-    };
+    imageTargets[protection.target] = preferredImageTargetProtection(imageTargets[protection.target], protection);
   }
 
   const pricesByVariant = new Map();
@@ -362,11 +373,7 @@ export function mergeCoverageBaseline(previous, current, updatedAt) {
     if (!before) imageTargets[target] = now;
     else if (!now) imageTargets[target] = before;
     else {
-      imageTargets[target] = {
-        minimum_accuracy_rank: Math.max(before.minimum_accuracy_rank, now.minimum_accuracy_rank),
-        minimum_source_tier: Math.max(before.minimum_source_tier, now.minimum_source_tier),
-        remote_required: Boolean(before.remote_required || now.remote_required)
-      };
+      imageTargets[target] = preferredImageTargetProtection(before, now);
     }
   }
 

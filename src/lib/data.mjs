@@ -849,7 +849,8 @@ export function validateDataset(data = loadDataset()) {
 }
 
 function choosePrimaryImage(images, variantId) {
-  return images.find((image) => image.role === 'primary' && image.variant_ids?.includes(variantId))
+  return images.find((image) => image.role === 'primary' && image.variant_ids?.includes(variantId) && image.subject_accuracy === 'exact-variant')
+    ?? images.find((image) => image.role === 'primary' && image.variant_ids?.includes(variantId))
     ?? images.find((image) => image.role === 'primary' && !(image.variant_ids?.length))
     ?? images.find((image) => image.role === 'primary')
     ?? null;

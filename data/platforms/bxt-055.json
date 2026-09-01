@@ -19,7 +19,113 @@
     "claimed_fork_weight_basis": "Manufacturer tolerance ±20 g",
     "claimed_seatpost_weight_g": 110,
     "claimed_seatpost_weight_basis": "Manufacturer tolerance ±10 g",
-    "claimed_fiber": "T1000-claimed"
+    "claimed_fiber": "T1000-claimed",
+    "geometry": {
+      "basis": "Exact 2026 independent geometry transcription attributed to bxtbikes.com",
+      "source_id": "bxt-055-bikeinsights-geometry-2026-09-01",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "48",
+          "seat_tube_mm": 458,
+          "top_tube_mm": 512,
+          "head_tube_mm": 90,
+          "head_angle_deg": 70,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 426,
+          "front_center_mm": 592,
+          "wheelbase_mm": 1008,
+          "fork_offset_mm": 55,
+          "reach_mm": 368,
+          "stack_mm": 511.5,
+          "standover_mm": 760
+        },
+        {
+          "size": "51",
+          "seat_tube_mm": 488,
+          "top_tube_mm": 522.5,
+          "head_tube_mm": 108,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 74.3,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 426,
+          "front_center_mm": 595,
+          "wheelbase_mm": 1011,
+          "fork_offset_mm": 55,
+          "reach_mm": 373,
+          "stack_mm": 532.5,
+          "standover_mm": 786.5
+        },
+        {
+          "size": "54",
+          "seat_tube_mm": 523,
+          "top_tube_mm": 540,
+          "head_tube_mm": 132.5,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 73.7,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 426,
+          "front_center_mm": 607.5,
+          "wheelbase_mm": 1024,
+          "fork_offset_mm": 55,
+          "reach_mm": 378,
+          "stack_mm": 555.5,
+          "standover_mm": 819
+        },
+        {
+          "size": "56",
+          "seat_tube_mm": 546,
+          "top_tube_mm": 557.5,
+          "head_tube_mm": 153,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 73.3,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 426,
+          "front_center_mm": 621.5,
+          "wheelbase_mm": 1038,
+          "fork_offset_mm": 55,
+          "reach_mm": 385,
+          "stack_mm": 575,
+          "standover_mm": 839.5
+        },
+        {
+          "size": "58",
+          "seat_tube_mm": 566,
+          "top_tube_mm": 576,
+          "head_tube_mm": 177,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 72.9,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 428,
+          "front_center_mm": 636,
+          "wheelbase_mm": 1054.5,
+          "fork_offset_mm": 55,
+          "reach_mm": 392,
+          "stack_mm": 597.5,
+          "standover_mm": 861
+        },
+        {
+          "size": "61",
+          "seat_tube_mm": 589,
+          "top_tube_mm": 595,
+          "head_tube_mm": 198,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 72.3,
+          "bb_drop_mm": 69,
+          "chainstay_mm": 428,
+          "front_center_mm": 648.5,
+          "wheelbase_mm": 1067.5,
+          "fork_offset_mm": 55,
+          "reach_mm": 398,
+          "stack_mm": 617.5,
+          "standover_mm": 881
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -35,7 +141,8 @@
   "china_availability": "direct-factory",
   "source_ids": [
     "bxt-055-official",
-    "bxt-055-taobao-2026-08-27"
+    "bxt-055-taobao-2026-08-27",
+    "bxt-055-bikeinsights-geometry-2026-09-01"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }
