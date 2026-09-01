@@ -4,13 +4,13 @@
   "model_id": "lightcarbon-speed7",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "A separate exact visible Speed7 card provides a lower-priced route into the same apparent aero-road platform, but the included parts are not yet clear.",
+  "why_interesting": "The official Chinese catalog resolves Speed7/速7 as LCR017-D, supplying exact current frame construction, weight, clearance and geometry.",
   "missing": [
-    "Live exact-model page and proof that Speed7 is distinct from the published SpeedZ platform",
-    "Exact frame/accessory package contents, material, weight and geometry",
-    "Current checkout, warranty entity and after-sales route"
+    "Exact retained CNY 5,599 included package and current checkout",
+    "Domestic warranty/after-sales entity for the retained seller route",
+    "Controlled independent exact-frame stiffness evidence"
   ],
-  "status": "publication-gate-not-met",
+  "status": "speed7-alias-and-current-platform-specifications-confirmed",
   "research_priority": "high",
   "price_status": "dated screenshot observation; package basis and live checkout unverified",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
@@ -23,9 +23,23 @@
     "observation_count": 1
   },
   "facts": {
-    "frame": "Speed7 carbon road frameset listing",
-    "wheels": "Not included unless live package evidence says otherwise"
+    "frame": "Speed7/速7 is the official Chinese-market alias for the LCR017-D Toray T700+T800+T1000 frameset",
+    "wheels": "Not included unless live retained-package evidence says otherwise",
+    "frame_material": "Toray T700+T800+T1000 carbon frame and full-carbon fork using EPS and 3D latex molding",
+    "frame_weight_g": 870,
+    "frame_weight_basis": "Manufacturer claim for matte size 52, ±30 g; included hardware basis not expanded beyond the catalog",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Official Chinese catalog maximum for Speed7/速7 (LCR017-D)",
+    "listing_identity": "Official Chinese catalog maps Speed7/速7 to LCR017-D",
+    "frame_stiffness_status": "No independent numeric exact-platform stiffness result found after 50 registered source areas"
   },
-  "source_note": "The screenshot identifies a ¥5,599 Speed7 frame/accessory offer. It is kept separate from the ¥11,399 complete-bike package and from the published SpeedZ platform until live identity and package proof are found.",
-  "last_reviewed": "2026-08-17"
+  "source_note": "The official Chinese catalog maps 速7 to LCR017-D and publishes 870±30 g for a matte size-52 frame and a 32C maximum. The retained CNY 5,599 package contents and checkout remain unresolved.",
+  "last_reviewed": "2026-09-01",
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "lightcarbon-chinese-catalog-official-2026-08-29",
+    "lightcarbon-lcr017-d-official-2026-08-29",
+    "lightcarbon-road-catalog-2026-2027"
+  ],
+  "source_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
 }

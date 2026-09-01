@@ -17,7 +17,7 @@
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Complete-bike and frame weight; Bottom-bracket standard; Numerical geometry and exact size list; Tire clearance; Current stock/checkout and warranty policy; Direct image asset URL",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-09-01",
   "source_ids": [
     "giant-china-tcr-advanced-3-gc-official-2026-08-17"
   ],
@@ -25,9 +25,9 @@
     "amount_cny": 6998,
     "currency": "CNY",
     "price_type": "official-mainland-list",
-    "observed_at": "2026-08-17"
+    "observed_at": "2026-09-01"
   },
-  "source_note": "Current exact mainland manufacturer and dealer indexes confirm the TCR Advanced 3-GC Tiagra rim-brake build and fitted 25C tires. Neither a controlled complete-bike weight nor a maximum tire clearance is published; disc-generation and historic sibling values are excluded.",
+  "source_note": "Current exact mainland manufacturer evidence confirms the TCR Advanced 3-GC Tiagra rim-brake build and CNY 6,998 list price; disc-generation and historic sibling values are excluded, including current disc-generation numeric stiffness tests.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
   "facts": {
     "drivetrain": "Shimano Tiagra 2×10",
@@ -35,6 +35,7 @@
     "frame": "Giant carbon frame with full-carbon OverDrive fork",
     "wheels": "Giant aluminum rims and hubs",
     "tires": "Giant S-R4 700×25C",
-    "cockpit": "Giant Contact alloy"
+    "cockpit": "Giant Contact alloy",
+    "frame_stiffness_status": "No controlled exact-generation stiffness result found after 50 registered source areas; current disc-generation results excluded"
   }
 }

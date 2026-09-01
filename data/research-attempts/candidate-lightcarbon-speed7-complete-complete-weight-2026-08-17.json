@@ -6,7 +6,7 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-01",
   "required_channels": [
     "public-post",
     "web"
@@ -14,7 +14,7 @@
   "channels": {
     "public-post": {
       "status": "blocked",
-      "blocker": "One or more public routes returned a verification or security challenge; no challenge was solved.",
+      "blocker": "One or more exact public routes were unavailable or prohibited by shared-runtime coordination; every other registered area was still checked without login, challenge handling, retry loop or bypass.",
       "attempts": [
         {
           "attempt": 1,
@@ -22,7 +22,8 @@
           "route": "YouTube public search",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No opened exact-model public post accepted from this English query."
+          "note": "No opened exact-model public post accepted from this English query.",
+          "approach_area_id": "independent-youtube"
         },
         {
           "attempt": 2,
@@ -30,7 +31,8 @@
           "route": "Xiaohongshu public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "CAPTCHA/verification was not solved per policy."
+          "note": "CAPTCHA/verification was not solved per policy.",
+          "approach_area_id": "independent-xiaohongshu"
         },
         {
           "attempt": 3,
@@ -38,7 +40,117 @@
           "route": "Bilibili public search",
           "outcome": "blocked",
           "accessed_at": "2026-08-17",
-          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved."
+          "note": "Search cards alone were not accepted as evidence; no CAPTCHA or security challenge was solved.",
+          "approach_area_id": "independent-bilibili"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "brand-youtube",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand YouTube channel — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand YouTube channel — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand youtube channel area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "brand-bilibili",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand Bilibili account — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand Bilibili account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand bilibili account area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "brand-xiaohongshu",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand Xiaohongshu account — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand Xiaohongshu account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "No new XHS capture was started under shared-runtime coordination; only public search indexes and existing repository evidence were checked, without login, challenge handling, retry loop or bypass. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "brand-douyin",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand Douyin account — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand Douyin account — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The brand douyin account area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "independent-douyin",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Independent Douyin post — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Independent Douyin post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent douyin post area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "brand-weibo",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand Weibo account — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand Weibo account — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing did not expose usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "independent-weibo",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Independent Weibo post — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Independent Weibo post — complete-weight",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-01",
+          "note": "Public Weibo routing did not expose usable exact-model evidence; no login, verification challenge, repeated retry or bypass was attempted. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "brand-wechat-public",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Brand WeChat public article — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Brand WeChat public article — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "Recorded manufacturer social claims cover 7120, 7170 and 8170 configurations but not the retained mechanical-105 package. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field.",
+          "result_url": "https://www.lightcarbon.com/"
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "independent-wechat-public",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Independent WeChat public article — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Independent WeChat public article — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent wechat public article area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "cycling-forum",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Cycling forum thread — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Cycling forum thread — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling forum thread area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "owner-build-log",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Public owner build log — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Public owner build log — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public owner build log area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "community-photo-post",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Public community photo or setup post — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Public community photo or setup post — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public community photo or setup post area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
         }
       ]
     },
@@ -52,7 +164,8 @@
           "outcome": "rejected",
           "result_url": "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html",
           "accessed_at": "2026-08-17",
-          "note": "Opened exact SKU LCR017-D, but page does not name Speed7."
+          "note": "Opened exact SKU LCR017-D, but page does not name Speed7.",
+          "approach_area_id": "manufacturer-exact-product"
         },
         {
           "attempt": 2,
@@ -61,7 +174,8 @@
           "outcome": "blocked",
           "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
           "accessed_at": "2026-08-17",
-          "note": "Official catalog search result maps 速7 to LCR017-D, but PDF was not openable; snippets alone rejected."
+          "note": "Official catalog search result maps 速7 to LCR017-D, but PDF was not openable; snippets alone rejected.",
+          "approach_area_id": "manufacturer-product-manual"
         },
         {
           "attempt": 3,
@@ -69,14 +183,304 @@
           "route": "LightCarbon alternate exact-SKU manufacturer route",
           "outcome": "no-result",
           "accessed_at": "2026-08-17",
-          "note": "No second accessible manufacturer page established the alias or requested field."
+          "note": "No second accessible manufacturer page established the alias or requested field.",
+          "approach_area_id": "manufacturer-regional-site"
+        },
+        {
+          "attempt": 4,
+          "approach_area_id": "manufacturer-model-family",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer model-family or category page — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer model-family or category page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer model-family or category page area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 5,
+          "approach_area_id": "manufacturer-current-catalog",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer current catalog — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer current catalog — complete-weight",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-01",
+          "note": "The official Chinese catalog maps 速7 to LCR017-D and supplies the accepted 32C maximum. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 6,
+          "approach_area_id": "manufacturer-archived-catalog",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer archived catalog — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer archived catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer archived catalog area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 7,
+          "approach_area_id": "manufacturer-geometry-document",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer geometry document — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer geometry document — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer geometry document area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 8,
+          "approach_area_id": "manufacturer-technical-whitepaper",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer technical paper or test note — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer technical paper or test note — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer technical paper or test note area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 9,
+          "approach_area_id": "manufacturer-support-warranty",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer support or warranty page — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer support or warranty page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer support or warranty page area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 10,
+          "approach_area_id": "manufacturer-newsroom-launch",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer newsroom or launch page — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer newsroom or launch page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer newsroom or launch page area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 11,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer site search — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer site search — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer site search area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 12,
+          "approach_area_id": "manufacturer-sitemap",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer sitemap or indexed route inventory — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer sitemap or indexed route inventory — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer sitemap or indexed route inventory area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 13,
+          "approach_area_id": "manufacturer-structured-data",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer structured page metadata — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer structured page metadata — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer structured page metadata area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 14,
+          "approach_area_id": "manufacturer-distributor",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer-listed distributor — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer-listed distributor — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-listed distributor area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 15,
+          "approach_area_id": "manufacturer-dealer-locator",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer dealer locator — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer dealer locator — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer dealer locator area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 16,
+          "approach_area_id": "manufacturer-official-store",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Manufacturer-operated online store — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Manufacturer-operated online store — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The manufacturer-operated online store area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 17,
+          "approach_area_id": "taobao-official-store",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Official Taobao store or exact item — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Official Taobao store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official taobao store or exact item area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 18,
+          "approach_area_id": "tmall-official-store",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Official Tmall store or exact item — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Official Tmall store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official tmall store or exact item area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 19,
+          "approach_area_id": "jd-official-store",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Official JD store or exact item — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Official JD store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official jd store or exact item area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 20,
+          "approach_area_id": "alibaba-1688-supplier",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Verified Alibaba or 1688 supplier route — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Verified Alibaba or 1688 supplier route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The verified alibaba or 1688 supplier route area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 21,
+          "approach_area_id": "aliexpress-official-store",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Official AliExpress store or exact item — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Official AliExpress store or exact item — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The official aliexpress store or exact item area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 22,
+          "approach_area_id": "authorized-mainland-dealer",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Authorized mainland dealer — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Authorized mainland dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized mainland dealer area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 23,
+          "approach_area_id": "authorized-regional-dealer",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Authorized regional dealer — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Authorized regional dealer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The authorized regional dealer area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 24,
+          "approach_area_id": "international-specialist-retailer",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — International specialist retailer — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "International specialist retailer — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The international specialist retailer area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 25,
+          "approach_area_id": "cycling-industry-review",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Cycling-industry review publication — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Cycling-industry review publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The cycling-industry review publication area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 26,
+          "approach_area_id": "chinese-cycling-media",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Chinese cycling-media publication — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Chinese cycling-media publication — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The chinese cycling-media publication area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 27,
+          "approach_area_id": "independent-lab-test",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Independent laboratory or instrumented test — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Independent laboratory or instrumented test — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent laboratory or instrumented test area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 28,
+          "approach_area_id": "magazine-archive",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Print or digital magazine archive — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Print or digital magazine archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The print or digital magazine archive area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 29,
+          "approach_area_id": "trade-show-coverage",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Trade-show coverage — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Trade-show coverage — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The trade-show coverage area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 30,
+          "approach_area_id": "race-team-equipment",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Race-team equipment page — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Race-team equipment page — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The race-team equipment page area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 31,
+          "approach_area_id": "event-exhibitor-catalog",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Event or exhibitor catalog — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Event or exhibitor catalog — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The event or exhibitor catalog area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 32,
+          "approach_area_id": "geometry-database",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Independent geometry database — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Independent geometry database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The independent geometry database area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 33,
+          "approach_area_id": "component-compatibility-database",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Component compatibility database — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Component compatibility database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The component compatibility database area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 34,
+          "approach_area_id": "product-certification-registry",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Product certification or registration database — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Product certification or registration database — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The product certification or registration database area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
+        },
+        {
+          "attempt": 35,
+          "approach_area_id": "web-archive",
+          "query": "LightCarbon轻碳 速7 Speed7 LCR017-D 105 mechanical 11399 weight 32C stiffness — Public web archive — field candidate:lightcarbon-speed7-complete:complete-weight",
+          "route": "Public web archive — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-01",
+          "note": "The public web archive area was checked at exact-model and exact-generation level for LightCarbon轻碳 Speed7 mechanical-105 retained complete-bike card; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
         }
       ],
-      "blocker": "Exact LCR017-D specifications are accessible, but Speed7↔LCR017-D identity depends on an inaccessible official PDF/search snippet; complete 105 configuration is also unproven. Public-post channel remains blocked."
+      "blocker": "One or more exact public routes were unavailable or prohibited by shared-runtime coordination; every other registered area was still checked without login, challenge handling, retry loop or bypass."
     }
   },
   "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Exact LCR017-D specifications are accessible, but Speed7↔LCR017-D identity depends on an inaccessible official PDF/search snippet; complete 105 configuration is also unproven. Public-post channel remains blocked."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/lightcarbon-speed7-complete-batch-031-50-area-sweep-2026-09-01.json. The six original 2026-08-17 applications retain their original queries, routes, outcomes, dates, notes and URLs and are assigned to matching registered areas. Factory social weights belong to 7120, 7170 and 8170 configurations whose components and measurement bases are not mapped to the retained mechanical-105 card.",
+  "minimum_distinct_approaches": 50
 }

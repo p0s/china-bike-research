@@ -4,13 +4,13 @@
   "model_id": "sava-r9",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "The official mainland Blade R9 page confirms the exact platform and a displayed Dura-Ace carbon-wheel build, alongside two dated marketplace price observations.",
+  "why_interesting": "Current exact manufacturer evidence resolves the Blade/天刺 R9 platform, 32 mm maximum clearance and T800/T1000 construction; complete-bike weight remains build-specific.",
   "missing": [
-    "Exact current SKU and complete BOM from a primary or authorized China-market source",
-    "Category-specific fit/compatibility facts needed for comparison",
+    "Exact retained marketplace option and full BOM",
+    "Controlled exact-current-frame stiffness evidence",
     "Current domestic warranty route and final checkout conditions"
   ],
-  "status": "publication-gate-not-met",
+  "status": "exact-current-platform-specifications-found-weight-conflicted",
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -21,13 +21,24 @@
     "price_basis": "coupon",
     "observation_count": 2
   },
-  "source_ids": ["sava-blade-r9-official-cn-2026-08-17"],
+  "source_ids": [
+    "sava-blade-r9-official-cn-2026-08-17",
+    "sava-blade-r9-global-current-2026-09-01",
+    "sava-blade-r9-canada-clearance-2026-09-01",
+    "sava-blade-r9-cyclopro-weight-2026-09-01",
+    "sava-blade-r9-99spokes-weight-2026-09-01"
+  ],
   "facts": {
-    "drivetrain": "Shimano Dura-Ace build shown; exact marketplace trim mapping unconfirmed",
-    "frame": "Carbon frame",
-    "wheels": "Deep-section carbon wheelset shown"
+    "drivetrain": "Shimano Dura-Ace R9270 2×12 shown on the current exact global build; retained marketplace option mapping remains unconfirmed",
+    "frame": "Toray T800 carbon frame and fork with T1000 reinforcement on the current exact 2026 build",
+    "wheels": "Deep-section carbon wheelset shown; exact retained marketplace wheel option remains unconfirmed",
+    "tire_clearance_mm": 32,
+    "tire_clearance_basis": "Current exact regional manufacturer maximum for Blade R9",
+    "complete_weight_references": "7.27 kg on a current exact Dura-Ace specialist-retailer build and 16.3 lb (about 7.39 kg) in a 2025 exact-model index; generation, size and weighing bases differ",
+    "frame_stiffness_status": "No controlled numeric exact-current-model stiffness result found after 50 registered source areas"
   },
-  "source_note": "The official image and component presentation establish a Blade R9 reference build, but do not prove that both marketplace prices use that same specification.",
+  "source_note": "Current exact manufacturer pages establish identity, 32 mm clearance and T800/T1000 construction. The 7.27 kg current-retailer and approximately 7.39 kg 2025-index claims are retained separately because generation, size, pedals and weighing protocol are not aligned.",
   "source_refs": "IMG_6883.png#L1, IMG_6887.png#R1",
-  "last_reviewed": "2026-08-17"
+  "last_reviewed": "2026-09-01",
+  "source_url": "https://www.savabike.com/sys-pd/3422.html"
 }
