@@ -747,7 +747,7 @@ test('buyer-facing copy does not expose internal evidence or status enums', () =
   assert.match(detail, /Specifications and evidence/);
   assert.match(detail, /700C carbon wheelset, 24H/);
   assert.match(detail, /5 sizes \(440–560\) · stack 509\.3–580\.5 mm · reach 358\.4–390\.3 mm/);
-  assert.match(detail, /Official global-direct checkout at US\$1,699/);
+  assert.match(detail, /Current exact SAVA global-direct storefront lists US\$1,699.*add-to-cart/);
   assert.doesNotMatch(detail, /snapshot-classification|from_image|medium-low|promotion-conditional/);
 });
 
