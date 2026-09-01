@@ -20,7 +20,8 @@
     "tires": "Maxxis 700×35C folding tires with 32–45C TPU tubes",
     "cockpit": "Panshi Ni third-generation carbon integrated cockpit and Asian carbon seatpost",
     "brakes": "Shimano GRX hydraulic calipers with CL800 160 mm center-lock rotors",
-    "sizes": "S, M, L, XL, XXL and XXXL; custom sizing offered"
+    "sizes": "S, M, L, XL, XXL and XXXL; custom sizing offered",
+    "stiffness_evidence": "No exact-build or exact-frame instrumented stiffness result or sufficiently specific independent G7.2 ride assessment was found after the 50-area sweep; titanium tube-shape and strength language was not treated as stiffness evidence."
   },
   "reference_price_kind": "observed",
   "official_price": {
@@ -51,7 +52,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Manufacturer RX810 / GR1600 complete-bike specification"
       },
-      "source_ids": ["titanium-hi-light-g7-2-grx-gr1600-official"],
+      "source_ids": [
+        "titanium-hi-light-g7-2-grx-gr1600-official"
+      ],
       "notes": "Manufacturer publishes a complete BOM but leaves the complete-bike weight field blank."
     },
     {
@@ -69,7 +72,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected option 4, SKU 5656542530815"
       },
-      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27"
+      ],
       "notes": "The panel lists an optional GRX810 upgrade for CNY 1,080 or GRX820 upgrade for CNY 1,560; neither upgrade is included in the selected price."
     },
     {
@@ -87,7 +92,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected option 5, SKU 5656542530816"
       },
-      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27"
+      ],
       "notes": "The panel lists an optional GRX820 12-speed upgrade for CNY 480; it is not included in the selected price."
     },
     {
@@ -105,7 +112,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected option 6, SKU 5656542530817"
       },
-      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27"
+      ],
       "notes": "Includes the seller's 3D titanium integrated fork and titanium integrated cockpit; 12-speed GRX upgrades are separately priced."
     },
     {
@@ -123,7 +132,9 @@
         "observed_at": "2026-08-27",
         "price_basis": "Selected option 8, SKU 5656542530819"
       },
-      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "source_ids": [
+        "hi-light-g7-2-taobao-selected-options-2026-08-27"
+      ],
       "notes": "The panel separately offers GRX825 Di2 and GRX827 wireless upgrade prices; they are not included in this selected AXS price."
     }
   ],
@@ -141,5 +152,5 @@
     "hi-light-g7-2-frameset-official-2026-08-27",
     "hi-light-g7-2-taobao-selected-options-2026-08-27"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }

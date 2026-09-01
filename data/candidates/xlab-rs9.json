@@ -17,7 +17,8 @@
     "xlab-rs9-official-cn-price-2026-08-27",
     "xlab-rs9-taobao-2026-08-27",
     "public-xlab-rs9-build-2026-08-27",
-    "xlab-rs9-bikeinsights-2026-08-27"
+    "xlab-rs9-bikeinsights-2026-08-27",
+    "xlab-rs9-owner-ride-review-2026-09-01"
   ],
   "observed_price": {
     "amount_cny": 49980,
@@ -48,7 +49,8 @@
     "tires": "Maxxis HYPR ZK 700×28C",
     "cockpit": "X-LAB carbon integrated cockpit; size-specific 380–420 mm width and 80–120 mm stem",
     "brakes": "Shimano Dura-Ace R9270 hydraulic; 160/140 mm rotors",
-    "sizes": "XS, S, M, L and XL"
+    "sizes": "XS, S, M, L and XL",
+    "stiffness_evidence": "An exact-model short owner ride report describes the complete RS9 as firm with efficient pedaling and harsher impacts over rough surfaces after 22 km. Qualitative build-level testimony, not an instrumented frame-only result."
   },
   "alternative_builds": [
     {
@@ -59,9 +61,11 @@
       "weight_basis": "Public build states weight including computer mount, bottle cages, pedals and speed/cadence sensor.",
       "wheels": "45 mm custom DT350 wheelset",
       "tires": "Maxxis High Road 32C",
-      "source_ids": ["public-xlab-rs9-build-2026-08-27"],
+      "source_ids": [
+        "public-xlab-rs9-build-2026-08-27"
+      ],
       "notes": "Exact custom owner build; it supplies the documented 32C fit but no sale price or manufacturer maximum."
     }
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }

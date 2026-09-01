@@ -1788,6 +1788,53 @@ test('batch 047 resolves fourteen exact fields and exhausts one unknown across f
   assert.equal(fieldCount, 15);
 });
 
+test('batch 048 resolves four exact fields and exhausts four unknowns across fifty areas', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const platforms = new Map(data.platforms.map((platform) => [platform.id, platform]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+
+  assert.match(candidates.get('seka-exaero-road').facts.stiffness_evidence, /front lateral stiffness \+21\.2%.*torsional stiffness \+13\.4%.*not independent/i);
+  assert.match(candidates.get('xlab-rs9').facts.stiffness_evidence, /firm with efficient pedaling.*not an instrumented frame-only/i);
+  assert.match(candidates.get('hi-light-g7-2').facts.stiffness_evidence, /two full 50-area sweeps/i);
+  assert.match(candidates.get('hi-light-g7-2-grx-gr1600').facts.stiffness_evidence, /No exact-build or exact-frame instrumented.*50-area sweep/i);
+  assert.match(candidates.get('laget-discovery-one-flagship').facts.stiffness_evidence, /No exact-model instrumented.*50-area sweep/i);
+  assert.match(platforms.get('tfsa-jh37').frame.stiffness_evidence, /No exact-model instrumented.*sibling-model evidence/i);
+  assert.match(variants.get('seka-exaero-gr-frameset').purchase_route, /official online store.*US\$3,299.*US and Canada/i);
+  assert.match(variants.get('tavelo-grow-frameset').purchase_route, /manufacturer store.*US\$1,650.*retailer finder/i);
+
+  const targetFields = new Map([
+    ['candidate:seka-exaero-road', ['frame-stiffness']],
+    ['candidate:xlab-rs9', ['frame-stiffness']],
+    ['candidate:hi-light-g7-2', ['frame-stiffness']],
+    ['candidate:hi-light-g7-2-grx-gr1600', ['frame-stiffness']],
+    ['candidate:laget-discovery-one-flagship', ['frame-stiffness']],
+    ['variant:seka-exaero-gr-frameset', ['purchase-route']],
+    ['variant:tavelo-grow-frameset', ['purchase-route']],
+    ['platform:tfsa-jh37', ['frame-stiffness']]
+  ]);
+  const blocked = new Set([
+    'candidate:hi-light-g7-2:frame-stiffness',
+    'candidate:hi-light-g7-2-grx-gr1600:frame-stiffness',
+    'candidate:laget-discovery-one-flagship:frame-stiffness',
+    'platform:tfsa-jh37:frame-stiffness'
+  ]);
+  let fieldCount = 0;
+  for (const [target, fields] of targetFields) {
+    const [recordType, recordId] = target.split(':');
+    for (const field of fields) {
+      fieldCount += 1;
+      const key = `${target}:${field}`;
+      const attempt = data.researchAttempts.find((entry) => entry.target.record_type === recordType && entry.target.record_id === recordId && entry.field === field && entry.searched_at === '2026-09-01');
+      assert.ok(attempt, key);
+      const applications = Object.values(attempt.channels).flatMap((channel) => channel.attempts ?? []);
+      assert.equal(applications.length, 50, key);
+      assert.equal(new Set(applications.map((application) => application.approach_area_id)).size, 50, key);
+      assert.equal(attempt.status, blocked.has(key) ? 'blocked' : 'found', key);
+    }
+  }
+  assert.equal(fieldCount, 8);
+});
+
 test('buyer-hidden images cannot mask an active replacement', () => {
   const fixture = structuredClone(data);
   const visibleCandidateImage = fixture.images.find((item) => item.candidate_id === 'pardus-uragano-sport' && item.role === 'primary' && item.buyer_visibility !== 'omit');
@@ -1894,7 +1941,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 231);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1428);
+  assert.equal(data.researchAttempts.length, 1433);
   assert.equal(products.length, data.variants.length);
 });
 
