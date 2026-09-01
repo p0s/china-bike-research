@@ -13,7 +13,8 @@
   "status": "titanium-priority",
   "source_ids": [
     "titanium-hi-light-g7-2-official",
-    "hi-light-g7-2-villain-retailer-2026-08-27"
+    "hi-light-g7-2-villain-retailer-2026-08-27",
+    "hi-light-g7-2-official-current-2026-09-01"
   ],
   "official_price": {
     "amount_cny": 6500,
@@ -22,7 +23,7 @@
     "observed_at": "2026-08-08"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html",
-  "source_note": "Official page lists retail price ¥6,500.",
+  "source_note": "The current official Chinese exact-model page lists CNY 6,500 retail, 700x45C maximum, BSA bottom bracket and six-size geometry. A separate retailer supplies size-M frame and fork weights. No meaningful stiffness result was found.",
   "manufacturing": "titanium gravel frame",
   "facts": {
     "frame": "Titanium gravel frame with carbon fork",
@@ -33,8 +34,16 @@
     "bottom_bracket": "BSA threaded",
     "sizes": "S, M, L, XL, XXL and XXXL; other sizes may be customized",
     "mounts": "Rack and fender mounts",
-    "axles": "12×100 mm front and 12×142 mm rear"
+    "axles": "12×100 mm front and 12×142 mm rear",
+    "stiffness_evidence": "No exact-model instrumented stiffness result or sufficiently specific independent ride assessment was found after the 50-area sweep; titanium tube-shape and strength language was not treated as stiffness evidence."
   },
-  "source_note": "The official Chinese page supplies the exact G7.2 identity, ¥6,500 retail price, 700×45C maximum, BSA bottom bracket and six-size geometry. A separate exact-model retailer supplies the size-M frame and fork weights; those weights remain retailer claims.",
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01",
+  "observed_price": {
+    "amount_cny": 6500,
+    "currency": "CNY",
+    "observed_at": "2026-09-01",
+    "price_basis": "Current exact-model manufacturer retail price for the G7.2 frameset; package, stock, shipping and checkout total require confirmation.",
+    "observation_count": 1
+  },
+  "price_status": "current exact manufacturer retail price"
 }

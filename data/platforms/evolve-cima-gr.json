@@ -31,16 +31,122 @@
     "geometry": {
       "basis": "exact-model authorized-retailer geometry table",
       "source_id": "evolve-cima-gr-pandapodium-2026-08-27",
-      "units": { "length": "mm", "angle": "degrees" },
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
       "sizes": [
-        { "size": "XS", "rider_height": "<163 cm", "stack_mm": 515, "reach_mm": 365, "head_tube_mm": 82, "head_angle_deg": 70.5, "bb_drop_mm": 82, "fork_length_mm": 395, "fork_offset_mm": 54, "front_center_mm": 581, "chainstay_mm": 425, "seat_tube_mm": 415, "seat_angle_deg": 75, "wheelbase_mm": 993, "top_tube_mm": 503, "standover_mm": 727 },
-        { "size": "S", "rider_height": "161–170 cm", "stack_mm": 535, "reach_mm": 375, "head_tube_mm": 103, "head_angle_deg": 70.75, "bb_drop_mm": 82, "fork_length_mm": 395, "fork_offset_mm": 54, "front_center_mm": 596, "chainstay_mm": 425, "seat_tube_mm": 450, "seat_angle_deg": 75, "wheelbase_mm": 1007, "top_tube_mm": 518, "standover_mm": 755 },
-        { "size": "M", "rider_height": "168–177 cm", "stack_mm": 556, "reach_mm": 384, "head_tube_mm": 126, "head_angle_deg": 71, "bb_drop_mm": 80, "fork_length_mm": 395, "fork_offset_mm": 54, "front_center_mm": 610, "chainstay_mm": 425, "seat_tube_mm": 480, "seat_angle_deg": 74, "wheelbase_mm": 1022, "top_tube_mm": 543, "standover_mm": 782 },
-        { "size": "ML", "rider_height": "175–184 cm", "stack_mm": 580, "reach_mm": 393, "head_tube_mm": 147, "head_angle_deg": 71.75, "bb_drop_mm": 80, "fork_length_mm": 395, "fork_offset_mm": 50, "front_center_mm": 616, "chainstay_mm": 425, "seat_tube_mm": 505, "seat_angle_deg": 74, "wheelbase_mm": 1028, "top_tube_mm": 559, "standover_mm": 806 },
-        { "size": "L", "rider_height": "182–192 cm", "stack_mm": 605, "reach_mm": 402, "head_tube_mm": 174, "head_angle_deg": 72, "bb_drop_mm": 78, "fork_length_mm": 395, "fork_offset_mm": 50, "front_center_mm": 631, "chainstay_mm": 425, "seat_tube_mm": 535, "seat_angle_deg": 73.5, "wheelbase_mm": 1044, "top_tube_mm": 581, "standover_mm": 833 },
-        { "size": "XL", "rider_height": ">190 cm", "stack_mm": 630, "reach_mm": 410, "head_tube_mm": 201, "head_angle_deg": 72, "bb_drop_mm": 78, "fork_length_mm": 395, "fork_offset_mm": 50, "front_center_mm": 647, "chainstay_mm": 425, "seat_tube_mm": 570, "seat_angle_deg": 73.5, "wheelbase_mm": 1060, "top_tube_mm": 597, "standover_mm": 863 }
+        {
+          "size": "XS",
+          "rider_height": "<163 cm",
+          "stack_mm": 515,
+          "reach_mm": 365,
+          "head_tube_mm": 82,
+          "head_angle_deg": 70.5,
+          "bb_drop_mm": 82,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 54,
+          "front_center_mm": 581,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 415,
+          "seat_angle_deg": 75,
+          "wheelbase_mm": 993,
+          "top_tube_mm": 503,
+          "standover_mm": 727
+        },
+        {
+          "size": "S",
+          "rider_height": "161–170 cm",
+          "stack_mm": 535,
+          "reach_mm": 375,
+          "head_tube_mm": 103,
+          "head_angle_deg": 70.75,
+          "bb_drop_mm": 82,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 54,
+          "front_center_mm": 596,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 450,
+          "seat_angle_deg": 75,
+          "wheelbase_mm": 1007,
+          "top_tube_mm": 518,
+          "standover_mm": 755
+        },
+        {
+          "size": "M",
+          "rider_height": "168–177 cm",
+          "stack_mm": 556,
+          "reach_mm": 384,
+          "head_tube_mm": 126,
+          "head_angle_deg": 71,
+          "bb_drop_mm": 80,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 54,
+          "front_center_mm": 610,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 480,
+          "seat_angle_deg": 74,
+          "wheelbase_mm": 1022,
+          "top_tube_mm": 543,
+          "standover_mm": 782
+        },
+        {
+          "size": "ML",
+          "rider_height": "175–184 cm",
+          "stack_mm": 580,
+          "reach_mm": 393,
+          "head_tube_mm": 147,
+          "head_angle_deg": 71.75,
+          "bb_drop_mm": 80,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 50,
+          "front_center_mm": 616,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 505,
+          "seat_angle_deg": 74,
+          "wheelbase_mm": 1028,
+          "top_tube_mm": 559,
+          "standover_mm": 806
+        },
+        {
+          "size": "L",
+          "rider_height": "182–192 cm",
+          "stack_mm": 605,
+          "reach_mm": 402,
+          "head_tube_mm": 174,
+          "head_angle_deg": 72,
+          "bb_drop_mm": 78,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 50,
+          "front_center_mm": 631,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 535,
+          "seat_angle_deg": 73.5,
+          "wheelbase_mm": 1044,
+          "top_tube_mm": 581,
+          "standover_mm": 833
+        },
+        {
+          "size": "XL",
+          "rider_height": ">190 cm",
+          "stack_mm": 630,
+          "reach_mm": 410,
+          "head_tube_mm": 201,
+          "head_angle_deg": 72,
+          "bb_drop_mm": 78,
+          "fork_length_mm": 395,
+          "fork_offset_mm": 50,
+          "front_center_mm": 647,
+          "chainstay_mm": 425,
+          "seat_tube_mm": 570,
+          "seat_angle_deg": 73.5,
+          "wheelbase_mm": 1060,
+          "top_tube_mm": 597,
+          "standover_mm": 863
+        }
       ]
-    }
+    },
+    "stiffness_evidence": "Manufacturer in-house testing reports 1.2% higher head-tube stiffness and 7.5% higher bottom-bracket rigidity than an unnamed top-tier gravel model. The result is exact-model and numeric, but the benchmark and protocol are undisclosed and it is not independent."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -58,7 +164,9 @@
     "evolve-cima-official",
     "compiled-research-2026-08-06",
     "evolve-cima-gr-pandapodium-2026-08-27",
-    "evolve-gravel-faq-2026-08-27"
+    "evolve-gravel-faq-2026-08-27",
+    "evolve-cima-gr-official-store-2026-09-01",
+    "evolve-cima-gr-launch-stiffness-2026-09-01"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-01"
 }

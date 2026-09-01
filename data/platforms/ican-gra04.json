@@ -24,15 +24,79 @@
     "geometry": {
       "basis": "Manufacturer exact-model geometry diagram; only unambiguous numeric columns are transcribed. The diagram's older BB86/1,050 g annotation is not used for current frame standards or weight.",
       "source_id": "ican-gra04-official",
-      "units": {"length": "mm", "angle": "degrees"},
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
       "sizes": [
-        {"size": "XS", "top_tube_mm": 526, "head_angle_deg": 71, "seat_angle_deg": 75, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 597, "fork_offset_mm": 48, "reach_mm": 380, "stack_mm": 545, "wheelbase_mm": 1020},
-        {"size": "S", "top_tube_mm": 540, "head_angle_deg": 71.5, "seat_angle_deg": 74.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 602, "fork_offset_mm": 48, "reach_mm": 385, "stack_mm": 560, "wheelbase_mm": 1025},
-        {"size": "M", "top_tube_mm": 561, "head_angle_deg": 72, "seat_angle_deg": 74, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 614, "fork_offset_mm": 48, "reach_mm": 395, "stack_mm": 580, "wheelbase_mm": 1037},
-        {"size": "L", "top_tube_mm": 583, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 625, "fork_offset_mm": 48, "reach_mm": 405, "stack_mm": 600, "wheelbase_mm": 1048},
-        {"size": "XL", "top_tube_mm": 600, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "bb_drop_mm": 78, "chainstay_mm": 435, "front_center_mm": 643, "fork_offset_mm": 48, "reach_mm": 415, "stack_mm": 625, "wheelbase_mm": 1066}
+        {
+          "size": "XS",
+          "top_tube_mm": 526,
+          "head_angle_deg": 71,
+          "seat_angle_deg": 75,
+          "bb_drop_mm": 78,
+          "chainstay_mm": 435,
+          "front_center_mm": 597,
+          "fork_offset_mm": 48,
+          "reach_mm": 380,
+          "stack_mm": 545,
+          "wheelbase_mm": 1020
+        },
+        {
+          "size": "S",
+          "top_tube_mm": 540,
+          "head_angle_deg": 71.5,
+          "seat_angle_deg": 74.5,
+          "bb_drop_mm": 78,
+          "chainstay_mm": 435,
+          "front_center_mm": 602,
+          "fork_offset_mm": 48,
+          "reach_mm": 385,
+          "stack_mm": 560,
+          "wheelbase_mm": 1025
+        },
+        {
+          "size": "M",
+          "top_tube_mm": 561,
+          "head_angle_deg": 72,
+          "seat_angle_deg": 74,
+          "bb_drop_mm": 78,
+          "chainstay_mm": 435,
+          "front_center_mm": 614,
+          "fork_offset_mm": 48,
+          "reach_mm": 395,
+          "stack_mm": 580,
+          "wheelbase_mm": 1037
+        },
+        {
+          "size": "L",
+          "top_tube_mm": 583,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 78,
+          "chainstay_mm": 435,
+          "front_center_mm": 625,
+          "fork_offset_mm": 48,
+          "reach_mm": 405,
+          "stack_mm": 600,
+          "wheelbase_mm": 1048
+        },
+        {
+          "size": "XL",
+          "top_tube_mm": 600,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "bb_drop_mm": 78,
+          "chainstay_mm": 435,
+          "front_center_mm": 643,
+          "fork_offset_mm": 48,
+          "reach_mm": 415,
+          "stack_mm": 625,
+          "wheelbase_mm": 1066
+        }
       ]
-    }
+    },
+    "stiffness_evidence": "A manufacturer-hosted exact-model owner review from a gravel race reports strong pedal response and lateral stiffness during the final sprint. This is qualitative hosted testimony, not an independent review or instrumented deflection test."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -49,7 +113,8 @@
   "china_availability": "direct-factory",
   "source_ids": [
     "ican-gra04-official",
-    "ican-company-official"
+    "ican-company-official",
+    "ican-gra04-official-current-2026-09-01"
   ],
-  "last_reviewed": "2026-08-26"
+  "last_reviewed": "2026-09-01"
 }
