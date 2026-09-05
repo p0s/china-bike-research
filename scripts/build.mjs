@@ -124,7 +124,9 @@ function add(route, html, includeInSitemap = true, metadata = {}) {
   pages.set(route, { file, includeInSitemap, ...metadata });
 }
 
-add('/', renderHome(ctx), true, { lastmod: siteLastmod });
+// Preserve newlines (including inline-element spacing), but omit indentation
+// before tags. This does not remove elements or alter JSON/script contents.
+add('/', renderHome(ctx).replace(/\n[ \t]+(?=<)/g, '\n'), true, { lastmod: siteLastmod });
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
   add(landing.route, renderLandingPage(ctx, { ...landing, lastmod }), true, { lastmod });

@@ -28,3 +28,5 @@ Catalog, comparison and model labels now use `x/y mm (1×/2×)`. Platform sortin
 No third-party image binaries, transcripts, personal identifiers or browser state were published. Source dates and unresolved evidence remain distinct from implementation dates.
 
 Local final gate: `npm run check` passed with 188 tests and 287 generated pages. Focused capture, clearance, rendering and interaction regressions passed. The first gate attempts caught a private local path in the task checkpoint and stale count expectations; those were corrected before the green final gate. No image records changed.
+
+Hosted validation also passed all 188 tests, but its repository-prefixed paths exposed a homepage byte-budget overrun. Removing indentation before HTML tags (preserving newlines and all elements) fixed it without raising the cap. `GITHUB_ACTIONS=true GITHUB_REPOSITORY=p0s/china-bike-research npm run build` then passed locally with the exact hosted base path.
