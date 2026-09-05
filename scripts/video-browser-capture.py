@@ -8,6 +8,7 @@ Bilibili block. Normalization and matching remain separate offline steps.
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -25,6 +26,8 @@ def write_record(spec, state, status, caption_source="none", caption=None, note=
     channel = spec.get("channel_id", "unknown")
     title = (state.get("title") if isinstance(state, dict) else None) or spec.get("title") or video_id
     directory = corpus_root / platform / channel / video_id
+    if directory.exists():
+        raise FileExistsError("Existing capture is immutable; use a fresh VIDEO_CORPUS_ROOT for another run.")
     directory.mkdir(parents=True, exist_ok=True)
     record = {
         "platform": platform,
@@ -51,9 +54,17 @@ def write_record(spec, state, status, caption_source="none", caption=None, note=
 
 
 manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+for spec in manifest:
+    if spec.get("platform") not in ("youtube", "bilibili") or not all(
+        re.fullmatch(r"[A-Za-z0-9_-]+", str(spec.get(key, "")))
+        for key in ("channel_id", "video_id")
+    ):
+        raise ValueError("Invalid capture path identity")
 new_tab("about:blank")
 results = []
 for spec in manifest:
+    if (corpus_root / spec["platform"] / spec.get("channel_id", "unknown") / spec["video_id"]).exists():
+        raise FileExistsError("Use a fresh VIDEO_CORPUS_ROOT; existing captures must not be overwritten.")
     try:
         goto_url(spec["url"])
         if spec["platform"] == "youtube":
@@ -63,11 +74,16 @@ for spec in manifest:
               const tracks=p?.captions?.playerCaptionsTracklistRenderer?.captionTracks||[];
               const t=tracks.find(x=>x.languageCode==='en') || tracks[0] || null;
               return {title:document.title.replace(/\\s+- YouTube$/, ''), channelId:vd.channelId||null,
+                videoId:vd.videoId||null, pageVideoId:new URL(location.href).searchParams.get('v'),
                 language:t?.languageCode||null, kind:t?.kind||'standard', baseUrl:t?.baseUrl||null,
                 caption_control:[...document.querySelectorAll('button')].map(x=>x.getAttribute('aria-label')||'').find(x=>/caption|subtitle/i.test(x))||null};
             })()""")
             if isinstance(state, str):
                 state = json.loads(state)
+            if (state.get("videoId") != spec["video_id"] or state.get("pageVideoId") != spec["video_id"]
+                    or state.get("channelId") != spec.get("channel_id")):
+                results.append(write_record(spec, {}, "failed", "none", None, "Player video/channel identity did not match the requested source; no captions fetched."))
+                continue
             unavailable = "unavailable" in (state.get("caption_control") or "").lower()
             caption = None
             if state.get("baseUrl") and not unavailable:
@@ -76,7 +92,9 @@ for spec in manifest:
                 if not isinstance(caption, str) or not caption.lstrip().startswith("WEBVTT"):
                     caption = None
             source = "automatic" if caption and state.get("kind") == "asr" else ("creator" if caption else "none")
-            note = "Player reported captions unavailable; no transcript captured." if unavailable else "No usable public caption body was returned."
+            note = ("Public caption body captured from the identity-checked player; automatic captions require verification."
+                    if caption else "Player reported captions unavailable; no transcript captured."
+                    if unavailable else "No usable public caption body was returned.")
             results.append(write_record(spec, state, "captured" if caption else "no-captions", source, caption, note))
         else:
             state = js("""(() => ({title:document.title, body:(document.body?.innerText||'').slice(0,900)}))()""")

@@ -11,9 +11,9 @@ Status: bounded pilot complete; no transcript, media, thumbnail, cookie, comment
 
 ## Retrieval result
 
-All eight selected YouTube pages exposed an automatic-track hint, but the visible player reported captions unavailable and returned no usable timed-text body. The ignored records therefore remain `no-captions`; no transcript-derived claim was accepted.
+The eight saved YouTube records are marked `no-captions`, with no usable transcript. Some legacy notes incorrectly say a track was captured. The original helper did not verify the loaded player identity, so these records do not establish that captions are unavailable for the intended videos. No transcript-derived claim was accepted. A future capture must use the identity-checked helper and a fresh corpus directory.
 
-The three Bilibili IDs came from public search results. The first direct video-page probe returned a security block before subtitle state could be observed. The lane stopped there, so the remaining two direct pages were not retried or opened during that run. No API fallback or bypass was attempted.
+The three Bilibili IDs came from public search results. All three saved records say `blocked` and mention both direct-page and public-API attempts. These artifacts do not substantiate the earlier report's claim that only the first page was opened or that no API fallback was attempted. The precise historical request sequence is not verified. No subtitles were captured or accepted. The corrected helper stops the lane at its first block; no Bilibili access was retried in the September 5 review.
 
 ## Discovery result
 

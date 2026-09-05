@@ -1532,10 +1532,17 @@ import { moveSelectionId } from './compare-state.js';
     }
     const tires = covered.has('tires') ? null : selectedPart('tires');
     const tireWidth = Number(tires?.compatibility?.nominal_tire_width_mm ?? tires?.compatibility?.tire_width_mm);
-    if (tires && Number.isFinite(tireWidth) && Number.isFinite(base.tireClearanceMm) && tireWidth > base.tireClearanceMm) {
-      messages.push(`${tireWidth} mm tires exceed the frame's published ${base.tireClearanceMm} mm limit.`);
-    }
     const drivetrain = selectedPart('drivetrain');
+    const layout = drivetrain?.compatibility?.drivetrain_layout
+      || (state.selections.drivetrain === 'included' ? base.drivetrainLayout : null);
+    const limits = base.tireClearanceByDrivetrain;
+    const clearanceLimit = limits
+      ? limits[layout] ?? Math.min(limits.single, limits.double)
+      : base.tireClearanceMm;
+    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single}/${limits.double} mm (1×/2×); using the smaller limit until the layout is known.`);
+    if (tires && Number.isFinite(tireWidth) && Number.isFinite(clearanceLimit) && tireWidth > clearanceLimit) {
+      messages.push(`${tireWidth} mm tires exceed the frame's published ${clearanceLimit} mm limit${layout ? ` for ${layout === 'single' ? '1×' : '2×'}` : ''}.`);
+    }
     const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
     const requiredFreehub = drivetrain?.compatibility?.required_freehub;
     const availableFreehubs = wheelset?.compatibility?.freehubs || [];
@@ -1589,7 +1596,7 @@ import { moveSelectionId } from './compare-state.js';
     if (baseFacts) baseFacts.textContent = [
       `${isComplete ? 'Complete bike' : 'Frameset'}${base.stage === 'candidate' ? ' · research stage' : ''}`,
       base.bottomBracket || 'bottom bracket unknown',
-      base.tireClearanceMm ? `${base.tireClearanceMm} mm tire clearance` : 'tire clearance unknown',
+      base.tireClearanceLabel ? `${base.tireClearanceLabel} tire clearance` : base.tireClearanceMm ? `${base.tireClearanceMm} mm tire clearance` : 'tire clearance unknown',
       base.included.length ? base.included.join(', ') : 'package contents incomplete',
       base.priceNote || ''
     ].filter(Boolean).join(' · ');

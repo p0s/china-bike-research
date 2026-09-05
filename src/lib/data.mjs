@@ -441,6 +441,14 @@ export function validateDataset(data = loadDataset()) {
     if (requiresClearance && !isObject(platform.tire_clearance)) errors.push(`platform ${platform.id}: gravel-family platform needs tire_clearance`);
     if (platform.tire_clearance !== undefined) {
       const clearance = platform.tire_clearance;
+      if (clearance?.drivetrain_limits_mm !== undefined) {
+        const limits = clearance.drivetrain_limits_mm;
+        if (!isObject(limits) || Object.keys(limits).some((key) => !['single', 'double'].includes(key)) ||
+          !['single', 'double'].every((key) => Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100) ||
+          Math.max(limits.single, limits.double) !== clearance.published_max_mm) {
+          errors.push(`platform ${platform.id}: invalid drivetrain clearance limits`);
+        }
+      }
       if (!isObject(clearance) || !['pass', 'conditional', 'fail', 'unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
       const anyClearance = clearance.stock_nominal_mm ?? clearance.published_max_mm ?? clearance.published_front_max_mm ?? clearance.published_rear_max_mm;
       if (clearance.eligibility === 'pass' && anyClearance === undefined) errors.push(`platform ${platform.id}: pass without a clearance number`);
@@ -1103,6 +1111,7 @@ export function maxClearance(platform) {
 export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not applicable';
+  if (c.drivetrain_limits_mm) return `${c.drivetrain_limits_mm.single}/${c.drivetrain_limits_mm.double} mm (1×/2×)`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
@@ -1112,6 +1121,7 @@ export function clearanceLabel(platform) {
 export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not recorded for this category';
+  if (c.drivetrain_limits_mm) return `Up to ${c.drivetrain_limits_mm.single} mm with 1× / ${c.drivetrain_limits_mm.double} mm with 2×`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock fit; maximum unverified`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;

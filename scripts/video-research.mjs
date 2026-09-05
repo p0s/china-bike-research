@@ -157,6 +157,10 @@ export function validateMetadata(metadata, location = 'metadata.json') {
       const parsed = new URL(metadata.url);
       if (parsed.protocol !== 'https:' || !allowedHosts.has(parsed.hostname)) errors.push(`${location}: URL host/protocol is not an allowed public video host`);
       if (parsed.username || parsed.password) errors.push(`${location}: URL must not contain credentials`);
+      if (metadata.platform === 'youtube') {
+        const id = parsed.hostname === 'youtu.be' ? parsed.pathname.slice(1) : parsed.searchParams.get('v');
+        if (id !== metadata.video_id) errors.push(`${location}: URL video identity mismatch`);
+      }
     } catch {
       errors.push(`${location}: invalid URL`);
     }
@@ -194,12 +198,15 @@ export function validateCorpus(corpusRoot = defaultCorpusRoot) {
     if (metadata.video_id !== item.video) errors.push(`${relative}: video_id does not match corpus path`);
     const captions = fs.readdirSync(item.dir).filter((name) => /^captions-original\.(?:vtt|srt|json)$/i.test(name));
     if (metadata.status === 'captured' && captions.length === 0) errors.push(`${path.relative(corpusRoot, item.dir)}: captured video has no captions-original file`);
+    if (metadata.status !== 'captured' && captions.length) errors.push(`${relative}: non-captured record contains stale captions`);
     if (captions.length > 1) errors.push(`${path.relative(corpusRoot, item.dir)}: multiple original caption files; keep one language per record`);
   }
   return errors;
 }
 
 export function normalizeCorpus(corpusRoot = defaultCorpusRoot) {
+  const errors = validateCorpus(corpusRoot);
+  if (errors.length) throw new Error(errors.join('\n'));
   const videos = [];
   for (const item of videoDirectories(corpusRoot)) {
     const metadataFile = path.join(item.dir, 'metadata.json');
@@ -299,6 +306,8 @@ function classification(type) {
 }
 
 export function buildCoverageReport(data, corpusRoot = defaultCorpusRoot, limits = { maxModels: 10, maxGaps: 25 }) {
+  const errors = validateCorpus(corpusRoot);
+  if (errors.length) throw new Error(errors.join('\n'));
   const videos = [];
   const unmatched = [];
   const discoveryLeads = new Set();
@@ -307,11 +316,11 @@ export function buildCoverageReport(data, corpusRoot = defaultCorpusRoot, limits
     const segmentsFile = path.join(item.dir, 'segments.json');
     if (!fs.existsSync(metadataFile) || !fs.existsSync(segmentsFile)) continue;
     const metadata = readJson(metadataFile);
-    const captionMentions = matchTranscript(readJson(segmentsFile), data).map((mention) => ({ ...mention, evidence: 'caption', classification: classification(mention.type) }));
+    const captionMentions = matchTranscript(metadata.status === 'captured' ? readJson(segmentsFile) : [], data).map((mention) => ({ ...mention, evidence: 'caption', classification: classification(mention.type) }));
     const discoveryMatches = [];
     for (const discovery of metadata.discovery_mentions ?? []) {
       discoveryLeads.add(normalizeText(discovery.name));
-      const matches = matchTranscript([{ start: discovery.at_seconds, end: discovery.at_seconds, text: discovery.name }], data, { allowSubset: true })
+      const matches = matchTranscript([{ start: discovery.at_seconds, end: discovery.at_seconds, text: discovery.name }], data)
         .map((mention) => ({ ...mention, evidence: 'metadata', classification: classification(mention.type) }));
       discoveryMatches.push(...matches);
       if (!matches.some((mention) => modelTypes.has(mention.type))) {
@@ -345,7 +354,9 @@ export function buildCoverageReport(data, corpusRoot = defaultCorpusRoot, limits
   }
   const modelMentions = new Set(videos.flatMap((video) => video.mentions.filter((mention) => modelTypes.has(mention.type)).map((mention) => `${mention.type}:${mention.id}`)));
   const metadataOnly = new Set(videos.flatMap((video) => video.mentions.filter((mention) => modelTypes.has(mention.type) && mention.evidence === 'metadata').map((mention) => `${mention.type}:${mention.id}`)));
-  const boundedLeads = discoveryLeads.size;
+  // Record count is intentionally conservative: ambiguous platform/trim matches
+  // must be reviewed, not silently collapsed into a smaller model count.
+  const boundedLeads = Math.max(discoveryLeads.size, modelMentions.size);
   return {
     generated_at: new Date().toISOString(),
     corpus_root: path.relative(projectRoot, corpusRoot),
@@ -358,7 +369,8 @@ export function buildCoverageReport(data, corpusRoot = defaultCorpusRoot, limits
       videos_attempted: videos.length,
       unique_model_records_mentioned: modelMentions.size,
       metadata_only_model_records: metadataOnly.size,
-      unique_discovery_leads: boundedLeads,
+      unique_discovery_leads: discoveryLeads.size,
+      bounded_review_targets: boundedLeads,
       unmatched_discovery_leads: new Set(unmatched.map((item) => normalizeText(item.name))).size,
       cap_status: boundedLeads <= limits.maxModels ? 'within-model-cap' : 'exceeds-model-cap-review-before-expanding',
       atomic_gap_cap: limits.maxGaps
@@ -408,6 +420,7 @@ async function main(argv = process.argv.slice(2)) {
     const output = path.resolve(projectRoot, args.output ?? defaultReportPath);
     writeJson(output, report);
     console.log(`Matched ${report.summary.videos_attempted} video record(s); wrote ${path.relative(projectRoot, output)}.`);
+    if (report.summary.cap_status !== 'within-model-cap') process.exitCode = 1;
     return;
   }
   console.error(`Unknown command: ${command}`);

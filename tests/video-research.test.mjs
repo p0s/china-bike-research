@@ -78,4 +78,10 @@ test('corpus validation rejects media, comment dumps, and path identity drift', 
   const errors = validateCorpus(root);
   assert.ok(errors.some((error) => /forbidden raw\/media file/.test(error)));
   assert.ok(errors.some((error) => /video_id does not match corpus path/.test(error)));
+  fs.writeFileSync(path.join(dir, 'captions-original.vtt'), 'WEBVTT\n');
+  assert.throws(() => normalizeCorpus(root), /stale captions/);
+});
+
+test('metadata binds its URL to the video identity', () => {
+  assert.ok(validateMetadata({ platform: 'youtube', video_id: 'wanted', url: 'https://www.youtube.com/watch?v=other' }).some((error) => /identity mismatch/.test(error)));
 });

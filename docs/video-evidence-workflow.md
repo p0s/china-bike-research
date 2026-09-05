@@ -18,6 +18,8 @@ npm run video:match
 
 These commands are offline. Public acquisition must use the dedicated isolated research browser. Never bypass a CAPTCHA, login, security verification, HTTP 412/300013, or rate limit. A Bilibili block ends that capture run without retrying later entries.
 
+Captures are immutable: set `VIDEO_CORPUS_ROOT` to a fresh ignored directory for each new acquisition, and pass that directory with `--corpus` to the offline commands. The helper checks the YouTube page, player video ID and channel before fetching captions. Normalization rejects inconsistent status/original-caption records. Matching uses exact aliases rather than subset inference; the conservative review cap counts both explicit leads and matched model records, and the command exits nonzero if that cap is exceeded.
+
 ## Evidence rules
 
 - Creator captions are preferred; automatic captions are fallible and labelled.

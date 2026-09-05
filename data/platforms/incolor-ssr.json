@@ -154,7 +154,8 @@
     "evidence": "exact-model-specialist-retailer",
     "eligibility": "pass",
     "note": "The exact-model retailer states a 36C maximum with a 1× drivetrain and 32C with 2×; actual measured width still depends on rim and tire.",
-    "published_max_mm": 36
+    "published_max_mm": 36,
+    "drivetrain_limits_mm": { "single": 36, "double": 32 }
   },
   "mounts": [],
   "internal_storage": false,

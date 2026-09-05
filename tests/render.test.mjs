@@ -324,7 +324,7 @@ test('shared frameset platforms render variant-specific weight, basis, and carbo
   assert.match(srDetail, /<dt>Frame material<\/dt><dd>M60 \+ T800 carbon<\/dd>/);
   assert.match(srPlusDetail, /<dt>Weight<\/dt><dd>720 g frame<\/dd>/);
   assert.match(srPlusDetail, /<dt>Frame material<\/dt><dd>80T pitch-based \+ T1100 carbon<\/dd>/);
-  assert.match(srPlusDetail, />720 g frame with 38 mm tire clearance<\/h2>/);
+  assert.match(srPlusDetail, />720 g frame with 38\/32 mm \(1×\/2×\) tire clearance<\/h2>/);
   assert.doesNotMatch(srPlusDetail, /frame frame/);
   assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g frame/);
   assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g frame/);
