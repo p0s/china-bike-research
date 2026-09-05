@@ -324,7 +324,7 @@ test('shared frameset platforms render variant-specific weight, basis, and carbo
   assert.match(srDetail, /<dt>Frame material<\/dt><dd>M60 \+ T800 carbon<\/dd>/);
   assert.match(srPlusDetail, /<dt>Weight<\/dt><dd>720 g frame<\/dd>/);
   assert.match(srPlusDetail, /<dt>Frame material<\/dt><dd>80T pitch-based \+ T1100 carbon<\/dd>/);
-  assert.match(srPlusDetail, />720 g frame with 38 mm tire clearance<\/h2>/);
+  assert.match(srPlusDetail, />720 g frame with 38\/32 mm \(1×\/2×\) tire clearance<\/h2>/);
   assert.doesNotMatch(srPlusDetail, /frame frame/);
   assert.match(html, /data-id="incolor-speedster-sr-frameset"[\s\S]*?785 g frame/);
   assert.match(html, /data-id="incolor-speedster-sr-plus-frameset"[\s\S]*?720 g frame/);
@@ -781,6 +781,26 @@ test('model videos are exact, disclosed, and privacy-preserving before interacti
   assert.match(imagePolicy, /Selected XHS, Taobao, and Xianyu images/);
   assert.match(imagePolicy, /identity-safe canonical source URL/);
   assert.match(imagePolicy, /Share, referral, invite, tracking, session, and account parameters are removed/);
+});
+
+test('candidate videos render as disclosed context with timestamp links', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'quick-pro-ur-one');
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-09-02T00:00:00Z')
+  };
+  const detail = renderCandidateModel(context, entry);
+  assert.match(detail, /Quick Pro UR One Full Review in Beijing, China/);
+  assert.match(detail, /Watch this model/);
+  assert.match(detail, /Publication review/);
+  assert.match(detail, /Specifications · 1:06/);
+  assert.match(detail, /watch\?v=rRZ6zr4hfow&amp;t=66/);
+  assert.match(detail, /No YouTube request until you choose/);
+  assert.doesNotMatch(detail, /<iframe|youtube-nocookie\.com\/embed/);
 });
 
 

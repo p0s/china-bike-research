@@ -1,9 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import vm from 'node:vm';
 
 const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
 const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
+
+test('builder applies 1x/2x clearance and fails conservatively for unknown layouts', () => {
+  const source = script.slice(script.indexOf('  function compatibilityMessages('), script.indexOf('  function updateUrl(', script.indexOf('  function compatibilityMessages(')));
+  const run = (layout, selections = {}) => vm.runInNewContext(`(${source.trim()})(base, new Map())`, {
+    base: { tireClearanceMm: 38, tireClearanceByDrivetrain: { single: 38, double: 32 }, drivetrainLayout: 'double' },
+    state: { selections },
+    selectedPart: (slot) => slot === 'tires' ? { compatibility: { nominal_tire_width_mm: 35 } } : slot === 'drivetrain' && layout ? { compatibility: { drivetrain_layout: layout } } : null
+  });
+  assert.equal(run('single').length, 0);
+  assert.match(run('double').join(' '), /32 mm limit for 2×/);
+  assert.match(run(null).join(' '), /Confirm drivetrain.*32 mm limit/);
+  assert.match(run(null, { drivetrain: 'included' }).join(' '), /32 mm limit for 2×/);
+});
 
 test('shared tooltips distinguish hover from pinned click state', () => {
   assert.match(script, /let tooltipPinned = false/);

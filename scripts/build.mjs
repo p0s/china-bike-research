@@ -76,18 +76,21 @@ const siteLastmod = latestDate([
   data.platforms.map((item) => item.last_reviewed),
   data.candidates.map((item) => item.last_reviewed),
   data.prices.map((item) => item.observed_at),
-  data.sources.map((item) => item.accessed_at)
+  data.sources.map((item) => item.accessed_at),
+  data.videos.flatMap((item) => [item.published_at, item.accessed_at])
 ], data.meta.snapshot_date);
 const productLastmod = (product) => latestDate([
   product.brand.last_reviewed,
   product.platform.last_reviewed,
   product.prices.map((item) => item.observed_at),
-  product.sources.map((item) => item.accessed_at)
+  product.sources.map((item) => item.accessed_at),
+  product.videos.flatMap((item) => [item.published_at, item.accessed_at])
 ], data.meta.snapshot_date);
 const candidateLastmod = (entry) => latestDate([
   entry.candidate.last_reviewed,
   entry.price?.observed_at,
-  entry.sources.map((item) => item.accessed_at)
+  entry.sources.map((item) => item.accessed_at),
+  entry.videos.flatMap((item) => [item.published_at, item.accessed_at])
 ], data.meta.snapshot_date);
 const productEvidenceDates = new Map(products.map((product) => [product.variant.id, productLastmod(product)]));
 const candidateEvidenceDates = new Map(candidates.map((entry) => [entry.candidate.id, candidateLastmod(entry)]));
@@ -121,7 +124,9 @@ function add(route, html, includeInSitemap = true, metadata = {}) {
   pages.set(route, { file, includeInSitemap, ...metadata });
 }
 
-add('/', renderHome(ctx), true, { lastmod: siteLastmod });
+// Preserve newlines (including inline-element spacing), but omit indentation
+// before tags. This does not remove elements or alter JSON/script contents.
+add('/', renderHome(ctx).replace(/\n[ \t]+(?=<)/g, '\n'), true, { lastmod: siteLastmod });
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
   add(landing.route, renderLandingPage(ctx, { ...landing, lastmod }), true, { lastmod });

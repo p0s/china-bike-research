@@ -16,6 +16,30 @@ const data = loadDataset();
 const products = joinProducts(data);
 const catalogCandidates = joinCatalogCandidates(data);
 
+test('drivetrain-specific clearance is qualified and validated', () => {
+  const sr = data.platforms.find((p) => p.id === 'incolor-speedster');
+  const ssr = data.platforms.find((p) => p.id === 'incolor-ssr');
+  assert.equal(clearanceLabel(sr), '38/32 mm (1×/2×)');
+  assert.equal(clearanceLabel(ssr), '36/32 mm (1×/2×)');
+  assert.equal(clearanceLongLabel(sr), 'Up to 38 mm with 1× / 32 mm with 2×');
+  assert.equal(maxClearance(sr), 38);
+  for (const limits of [{ single: 38 }, { single: -1, double: 32 }, { single: 40, double: 32 }, null]) {
+    const copy = structuredClone(data);
+    copy.platforms.find((p) => p.id === sr.id).tire_clearance.drivetrain_limits_mm = limits;
+    assert.ok(validateDataset(copy).some((error) => /invalid drivetrain clearance limits/.test(error)));
+  }
+});
+
+test('Reddit discoveries stay distinct research-stage models with evidence', () => {
+  for (const id of ['evolve-cima-road', 'mondince-fm316', 'velobuild-cx-002-2023', 'seraph-tt-x68-new-udh', 'airwolf-yf-r003']) {
+    const candidate = data.candidates.find((item) => item.id === id);
+    assert.ok(candidate?.source_ids.length >= 2);
+    assert.ok(candidate.missing.length);
+    assert.ok(catalogCandidates.some((entry) => entry.candidate.id === id && entry.defaultVisible));
+    assert.ok(!data.platforms.some((item) => item.id === id));
+  }
+});
+
 test('dataset validates without errors', () => {
   assert.deepEqual(validateDataset(data), []);
 });
@@ -1936,9 +1960,9 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
-  assert.equal(data.videos.length, 12);
+  assert.equal(data.videos.length, 16);
   assert.ok(data.sources.length >= 313);
-  assert.equal(data.candidates.length, 231);
+  assert.equal(data.candidates.length, 236);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
   assert.equal(data.researchAttempts.length, 1433);
@@ -2090,8 +2114,8 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 });
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
-  assert.equal(catalogCandidates.length, 217);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 209);
+  assert.equal(catalogCandidates.length, 222);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 214);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
@@ -2702,13 +2726,15 @@ test('public-post quotations require bounded immutable media and a completed pri
 test('curated videos stay exact, disclosed, and separate from publication evidence', () => {
   const publishedVideos = data.videos.filter((video) => video.target.platform_id || video.target.variant_id);
   const candidateVideos = data.videos.filter((video) => video.target.candidate_id);
-  assert.equal(publishedVideos.length, 5);
-  assert.equal(candidateVideos.length, 7);
+  assert.equal(publishedVideos.length, 6);
+  assert.equal(candidateVideos.length, 10);
   assert.ok(publishedVideos.every((video) => video.match === 'exact-platform'));
   assert.ok(candidateVideos.every((video) => video.match === 'exact-model-lead'));
   assert.ok(data.videos.every((video) => video.disclosure.length >= 20));
+  assert.ok(data.videos.flatMap((video) => video.timestamps ?? []).every((timestamp) => timestamp.at_seconds >= 0));
   assert.equal(products.find((product) => product.platform.id === 'yoeleo-altera-g21').videos[0].channel_name, 'China Cycling');
   assert.equal(products.find((product) => product.platform.id === 'winspace-g3').videos.length, 0);
+  assert.ok(catalogCandidates.find((entry) => entry.candidate.id === 'quick-pro-ur-one').videos.some((video) => video.id === 'china-rides-quick-pro-ur-one'));
 
   const malformed = structuredClone(data);
   malformed.videos[0].url = 'https://www.youtube.com/watch?v=wrong-id';
@@ -2717,6 +2743,10 @@ test('curated videos stay exact, disclosed, and separate from publication eviden
   const mismatchedTarget = structuredClone(data);
   mismatchedTarget.candidates.find((candidate) => candidate.id === 'quick-pro-er-one').video_ids = ['china-cycling-incolor-ssr-published'];
   assert.ok(validateDataset(mismatchedTarget).some((error) => error.includes('targets another record')));
+
+  const unlinkedTarget = structuredClone(data);
+  unlinkedTarget.candidates.find((candidate) => candidate.id === 'xlab-ad8').video_ids = [];
+  assert.ok(validateDataset(unlinkedTarget).some((error) => error.includes('does not link this video')));
 });
 
 test('category-specific facts stay scoped to the categories that use them', () => {

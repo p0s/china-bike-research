@@ -441,6 +441,14 @@ export function validateDataset(data = loadDataset()) {
     if (requiresClearance && !isObject(platform.tire_clearance)) errors.push(`platform ${platform.id}: gravel-family platform needs tire_clearance`);
     if (platform.tire_clearance !== undefined) {
       const clearance = platform.tire_clearance;
+      if (clearance?.drivetrain_limits_mm !== undefined) {
+        const limits = clearance.drivetrain_limits_mm;
+        if (!isObject(limits) || Object.keys(limits).some((key) => !['single', 'double'].includes(key)) ||
+          !['single', 'double'].every((key) => Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100) ||
+          Math.max(limits.single, limits.double) !== clearance.published_max_mm) {
+          errors.push(`platform ${platform.id}: invalid drivetrain clearance limits`);
+        }
+      }
       if (!isObject(clearance) || !['pass', 'conditional', 'fail', 'unverified'].includes(clearance.eligibility)) errors.push(`platform ${platform.id}: invalid clearance eligibility`);
       const anyClearance = clearance.stock_nominal_mm ?? clearance.published_max_mm ?? clearance.published_front_max_mm ?? clearance.published_rear_max_mm;
       if (clearance.eligibility === 'pass' && anyClearance === undefined) errors.push(`platform ${platform.id}: pass without a clearance number`);
@@ -815,6 +823,14 @@ export function validateDataset(data = loadDataset()) {
     if (video.published_at !== undefined && !isDate(video.published_at)) errors.push(`video ${video.id}: invalid published_at`);
     if (!videoFormats.has(video.format)) errors.push(`video ${video.id}: invalid format`);
     if (!videoRelationships.has(video.relationship)) errors.push(`video ${video.id}: invalid relationship`);
+    if (video.timestamps !== undefined) {
+      if (!Array.isArray(video.timestamps)) errors.push(`video ${video.id}: timestamps must be an array`);
+      else for (const timestamp of video.timestamps) {
+        if (!isObject(timestamp) || typeof timestamp.label !== 'string' || !timestamp.label.trim() || typeof timestamp.at_seconds !== 'number' || timestamp.at_seconds < 0) {
+          errors.push(`video ${video.id}: invalid timestamp`);
+        }
+      }
+    }
     if (typeof video.summary !== 'string' || video.summary.trim().length < 30) errors.push(`video ${video.id}: summary is too short`);
     if (typeof video.disclosure !== 'string' || video.disclosure.trim().length < 20) errors.push(`video ${video.id}: disclosure is too short`);
     try {
@@ -837,6 +853,8 @@ export function validateDataset(data = loadDataset()) {
     if (target.candidate_id !== undefined) {
       if (!candidateIds.has(target.candidate_id)) errors.push(`video ${video.id}: missing candidate ${target.candidate_id}`);
       if (video.match !== 'exact-model-lead') errors.push(`video ${video.id}: candidate target must use exact-model-lead match`);
+      const candidate = data.candidates.find((item) => item.id === target.candidate_id);
+      if (candidate && !(candidate.video_ids ?? []).includes(video.id)) errors.push(`video ${video.id}: candidate ${target.candidate_id} does not link this video`);
     }
   }
   for (const [platformId, count] of platformVideoCounts) {
@@ -1002,6 +1020,7 @@ function candidateBrand(candidate, brands) {
  */
 export function joinCatalogCandidates(data = loadDataset()) {
   const sources = new Map(data.sources.map((item) => [item.id, item]));
+  const videosById = new Map(data.videos.map((item) => [item.id, item]));
   return data.candidates
     .filter((candidate) => !candidate.existing_record_id || candidate.catalog_distinct_reason)
     .map((candidate) => {
@@ -1026,6 +1045,10 @@ export function joinCatalogCandidates(data = loadDataset()) {
         .filter((item) => item.role === 'gallery')
         .sort((a, b) => (a.sort_order ?? Number.POSITIVE_INFINITY) - (b.sort_order ?? Number.POSITIVE_INFINITY) || a.id.localeCompare(b.id))
         .map((item) => ({ ...item, source: sources.get(item.source_id) ?? null }));
+      const videos = (candidate.video_ids ?? [])
+        .map((id) => videosById.get(id))
+        .filter(Boolean)
+        .sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? '') || a.title.localeCompare(b.title));
       const priority = candidate.research_priority;
       const hasIdentifiableModel = !['research-queue', 'needs-exact-model'].includes(candidate.status) &&
         !/model unclear|title mismatch|generic custom seller|current gravel frame|carbon .*bike|custom carbon|road platform/i.test(candidate.name);
@@ -1044,6 +1067,7 @@ export function joinCatalogCandidates(data = loadDataset()) {
         image,
         imageSource: image ? sources.get(image.source_id) ?? null : null,
         galleryImages,
+        videos,
         identifiableModel: hasIdentifiableModel,
         defaultVisible: Boolean(
           officialPrice ||
@@ -1087,6 +1111,7 @@ export function maxClearance(platform) {
 export function clearanceLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not applicable';
+  if (c.drivetrain_limits_mm) return `${c.drivetrain_limits_mm.single}/${c.drivetrain_limits_mm.double} mm (1×/2×)`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm}/${c.published_rear_max_mm} mm`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock`;
   if (c.published_max_mm) return `${c.published_max_mm} mm`;
@@ -1096,6 +1121,7 @@ export function clearanceLabel(platform) {
 export function clearanceLongLabel(platform) {
   const c = platform.tire_clearance;
   if (!c) return 'Not recorded for this category';
+  if (c.drivetrain_limits_mm) return `Up to ${c.drivetrain_limits_mm.single} mm with 1× / ${c.drivetrain_limits_mm.double} mm with 2×`;
   if (c.published_front_max_mm && c.published_rear_max_mm) return `${c.published_front_max_mm} mm front / ${c.published_rear_max_mm} mm rear`;
   if (c.maximum_unverified && c.stock_nominal_mm) return `${c.stock_nominal_mm} mm stock fit; maximum unverified`;
   if (c.published_max_mm) return `Up to ${c.published_max_mm} mm`;
