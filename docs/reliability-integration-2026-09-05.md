@@ -1,0 +1,23 @@
+# Reliability integration — 2026-09-05
+
+- Input: `china-bike-research-improved-2026-09-05.zip` from GPT Pro.
+- Archive SHA-256: `01db8830ade6f040a0ce432a15d90740972a8f52c18d786132809433628bb0c0`.
+- Baseline: current remote `main`, `c99204e68172150504c130c85e18df58a7f03757`.
+- Branch: `codex/gpt-pro-reliability-2026-09-05`, isolated task worktree.
+- Original Local checkout, local-only commit, and dirty files preserved.
+- Scope: source patch and two SPEC edits; no bundled generated site or installer copied.
+- Changes: catalog sorting/comparison/history, planner state/weight accounting, theme/gallery/clipboard recovery, safe build promotion, preview serving, CSV exports.
+- Source paths: `assets/site.js`, `assets/site.css`, `assets/state-utils.js`, `scripts/build.mjs`, `scripts/serve.mjs`, `src/lib/build-output.mjs`, `src/lib/csv.mjs`.
+- Tests: five `tests/reliability-*.test.mjs` files, `tests/reliability-browser.py`, updated `tests/interactions.test.mjs`.
+- Integration correction: Back to a URL without comparison IDs clears later selections; added browser regression.
+- Existing source-shape tests adapted to shared helpers; numeric sorting now checked behaviorally in both directions.
+- `npm run check`: PASS, 265 tests; privacy, dataset, research ledger and monotonic coverage checks passed; 287 pages built for 41 published products.
+- Focused preview tests: 8 passed with loopback access; sandbox-only EPERM failures are not application failures.
+- Data, media, source records, recommendations, observation dates, dependencies and coverage baseline unchanged.
+- Browser QA: PASS in a user-approved temporary Chrome profile. All 29 supplied cases passed; the added comparison-history case passed on focused rerun after correcting the test to read an intentionally hidden count. No application changes were needed after the complete gate.
+- `tests/reliability-live-browser.py`: 10 checks passed at 1440×1000 and 390×844 against actual loopback HTTP routes, real JavaScript modules and browser Back/Forward, with remote media blocked.
+- `PUBLIC_BASE_PATH=/china-bike-research npm run build`: PASS, 287 pages. Live checks covered this deployment base, catalog filters/comparison, planner history, keyboard popovers and model routes, with no JavaScript errors.
+- Inspected desktop/mobile catalog and builder screenshots. No page-wide overflow in the checked mobile flows. Gallery failure/recovery and blocked-storage/clipboard cases passed in the fixture suite.
+- Browser fixture suite uses generated HTML and explicit navigation/storage/image fixtures; live checks cover local HTTP navigation. Neither establishes remote-source availability, Safari/Firefox behavior, or assistive-technology certification.
+- Authority: local implementation and validation; no commit, push, PR, merge or deployment performed.
+- Result: DELIVERED locally. No known regressions in the tested scope; temporary browser and preview-server processes closed after QA.

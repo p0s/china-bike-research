@@ -2,6 +2,8 @@
 
 This is the canonical product and data contract. Intentional behavior changes must update this file in the same pull request.
 
+The interaction and build-safety rules in [the reliability contract](docs/reliability-contract.md) are part of this specification. Explicit build URLs do not inherit local drafts; browser history restores displayed state; frameset package remainder and buyer-confirmed included parts are explicit; missing values remain unknown; gallery, theme, and clipboard controls remain usable after recoverable failures; builds preserve the last good output until checks pass.
+
 ## 1. Rider experience
 
 - The homepage is the unified catalog and inline comparison.
@@ -41,7 +43,7 @@ Every indexable route has one absolute canonical URL, a unique title and descrip
 
 Every non-home content route exposes a visible breadcrumb back to a crawlable parent. The homepage, model profiles, methodology, and deterministic browse pages show an attributable review-through date while preserving the distinct observation date and conditions of each price. The methodology page visibly links the generated catalog and source downloads and may expose matching `Dataset` and `DataDownload` schema; schema must not claim authorship, live pricing, offers, or freshness beyond the rendered content.
 
-Selecting exactly one catalog row exposes a direct Build action; selecting two to four rows exposes comparison. The Build action preserves the exact catalog identity and does not silently substitute a sibling model or configuration.
+Selecting exactly one catalog row exposes a direct Build action; selecting two to ten rows exposes comparison. The Build action preserves the exact catalog identity and does not silently substitute a sibling model or configuration.
 
 The build configurator is a separate planning surface. It accepts one exact catalog base plus source-backed component packages and buyer-entered custom parts. A frameset base creates a complete build from the recorded frame-package price and weight. A complete-bike base creates a purchase-plus-upgrades plan: the recorded whole-bike price is counted once, included parts cost nothing again, and replacement prices are additions rather than invented deductions from the package price. A replacement changes total weight only when its removed-part weight is known; otherwise the delta remains explicitly unresolved. Research-stage bases remain labelled as such and require buyer-entered base values where price or weight is missing. The configurator must count a package once when it covers several required slots, show known subtotals plus unresolved price or weight inputs instead of treating unknowns as zero, preserve every package basis and source, and surface decisive bottom-bracket, freehub, brake, and tire-clearance conflicts without claiming universal fit. Selections stay in the visitor's browser and URL. The configurator does not replace the homepage's reviewed fixed frameset allowance.
 Catalog thumbnails link to model details and must be large enough to identify a bicycle's silhouette at rest. On fine-pointer devices, the whole thumbnail link enlarges on hover so the preview remains stable as the pointer moves across it, without moving the table layout; touch layouts keep the larger stable thumbnail size.
