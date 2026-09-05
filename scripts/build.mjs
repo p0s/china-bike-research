@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { csvCell, booleanCell } from '../src/lib/csv.mjs';
+import { createBuildOutput, internalRouteTarget } from '../src/lib/build-output.mjs';
 import {
   loadDataset,
   joinProducts,
@@ -28,7 +30,9 @@ import { buildLandingPages } from '../src/lib/landings.mjs';
 import { latestDate, sitemapXml } from '../src/lib/seo.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const dist = path.join(root, 'dist');
+const output = createBuildOutput(root);
+const dist = output.directory;
+process.once('exit', () => output.discard());
 const githubRepository = process.env.GITHUB_REPOSITORY ?? '';
 const [owner = '', repository = ''] = githubRepository.split('/');
 const projectBase = repository && !repository.endsWith('.github.io') ? `/${repository}` : '';
@@ -56,10 +60,6 @@ function routeFile(route) {
   if (route === '/') return 'index.html';
   if (route.endsWith('.html')) return route.slice(1);
   return `${route.replace(/^\//, '').replace(/\/$/, '')}/index.html`;
-}
-function csvCell(value) {
-  const text = value === null || value === undefined ? '' : String(value);
-  return /[",\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 }
 const data = loadDataset();
 const errors = validateDataset(data);
@@ -112,8 +112,6 @@ const landingLastmod = (landing) => latestDate([
   landing.products.map((product) => productEvidenceDates.get(product.variant.id))
 ], siteLastmod);
 
-fs.rmSync(dist, { recursive: true, force: true });
-fs.mkdirSync(dist, { recursive: true });
 copyDir(path.join(root, 'assets'), path.join(dist, 'assets'));
 write('.nojekyll', '');
 
@@ -186,7 +184,7 @@ const rows = products.map(({ brand, platform, variant, latestPrice, allInPrice, 
   allInPrice.low ?? '', allInPrice.high ?? '', formatAllInPrice({ allInPrice }), allInPrice.estimated ? 'yes' : 'no', variant.kind === 'frameset' ? formatPrice(latestPrice) : '', latestPrice?.observed_at ?? '', latestPrice?.status ?? '',
   maxClearance(platform) ?? '', clearanceLongLabel(platform), clearance.note ?? '', clearance.evidence ?? '', clearance.eligibility ?? '',
   metric.label, metric.value, metric.details.join(' '),
-  platform.frame.bottom_bracket, platform.frame.derailleur_hanger, platform.internal_storage ? 'yes' : 'no',
+  platform.frame.bottom_bracket, platform.frame.derailleur_hanger, booleanCell(platform.internal_storage),
   platform.frame.claimed_frame_weight_g ?? '', variant.claimed_complete_weight_g ?? '',
   variant.drivetrain ? `${variant.drivetrain.brand} ${variant.drivetrain.model} ${variant.drivetrain.speeds}` : '',
   brand.manufacturing.relationship, brand.manufacturing.confidence, platform.china_availability, variant.editorial.verdict,
@@ -236,16 +234,6 @@ write('build-manifest.json', `${JSON.stringify({
   performance_budget: performanceBudget
 }, null, 2)}\n`);
 
-function routeToExistingPath(pathname) {
-  let local = decodeURIComponent(pathname);
-  if (base && local.startsWith(base)) local = local.slice(base.length) || '/';
-  if (!local.startsWith('/')) local = `/${local}`;
-  if (local === '/') return path.join(dist, 'index.html');
-  const withoutSlash = local.replace(/^\//, '');
-  if (local.endsWith('/')) return path.join(dist, withoutSlash, 'index.html');
-  return path.join(dist, withoutSlash);
-}
-
 const linkErrors = [];
 for (const [, info] of pages) {
   const file = path.join(dist, info.file);
@@ -257,7 +245,8 @@ for (const [, info] of pages) {
     let resolved;
     try { resolved = new URL(value, pageUrl); } catch { linkErrors.push(`${info.file}: invalid link ${value}`); continue; }
     if (resolved.origin !== 'https://local.invalid') continue;
-    const target = routeToExistingPath(resolved.pathname);
+    const target = internalRouteTarget(dist, base, resolved.pathname);
+    if (!target) { linkErrors.push(`${info.file}: invalid or outside-base internal target ${value}`); continue; }
     if (!fs.existsSync(target)) linkErrors.push(`${info.file}: missing internal target ${value} -> ${path.relative(dist, target)}`);
   }
 }
@@ -267,6 +256,7 @@ if (linkErrors.length) {
   process.exit(1);
 }
 
+output.publish();
 console.log(`Built ${pages.size} pages for ${products.length} products.`);
 console.log(`Base path: ${base || '/'}`);
-console.log(`Output: ${dist}`);
+console.log(`Output: ${output.destination}`);

@@ -979,3 +979,16 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
   .footer-inner { grid-template-columns: 1fr; gap: 20px; }
   .footer-inner nav { justify-content: flex-start; }
 }
+
+/* A failed hero must not take the remaining gallery controls with it. */
+.model-gallery.is-unavailable:has(.gallery-thumb:not([hidden])) { display: block; }
+.model-gallery.is-unavailable .hero-image,
+.gallery-hero-image[hidden] { display: none; }
+[data-build-package-weight] { width: 100%; }
+
+/* Respect hidden controls even when component styles use display:grid. */
+[hidden] { display: none !important; }
+.builder-base-custom .builder-package-weight { grid-column: 1 / -1; }
+.builder-base-custom .builder-package-weight > span { font-size: .68rem; text-transform: none; letter-spacing: 0; }
+.builder-package-weight input { max-width: 260px; }
+.builder-package-weight small { max-width: 58ch; font-size: .68rem; line-height: 1.4; font-weight: 400; }

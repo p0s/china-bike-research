@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { numberOrNull, compareNumbers, COMPARISON_SELECTION_LIMIT, normalizeSelection } from '../assets/state-utils.js';
 
 const script = fs.readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
 const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8');
@@ -9,6 +10,7 @@ const styles = fs.readFileSync(new URL('../assets/site.css', import.meta.url), '
 test('builder applies 1x/2x clearance and fails conservatively for unknown layouts', () => {
   const source = script.slice(script.indexOf('  function compatibilityMessages('), script.indexOf('  function updateUrl(', script.indexOf('  function compatibilityMessages(')));
   const run = (layout, selections = {}) => vm.runInNewContext(`(${source.trim()})(base, new Map())`, {
+    numberOrNull,
     base: { tireClearanceMm: 38, tireClearanceByDrivetrain: { single: 38, double: 32 }, drivetrainLayout: 'double' },
     state: { selections },
     selectedPart: (slot) => slot === 'tires' ? { compatibility: { nominal_tire_width_mm: 35 } } : slot === 'drivetrain' && layout ? { compatibility: { drivetrain_layout: layout } } : null
@@ -77,9 +79,13 @@ test('catalog headings and compact control share directional sorting', () => {
   assert.match(script, /function updateSortHeadings\(\)/);
   assert.match(script, /heading\?\.setAttribute\('aria-sort'/);
   assert.match(script, /sortHeadingButtons\.forEach\(\(button\) => button\.addEventListener\('click'/);
-  assert.match(script, /Boolean\(aValue\) !== Boolean\(bValue\)/);
-  assert.match(script, /key === 'capability' \|\| key === 'tire'/);
-  assert.match(script, /row\.dataset\.tireClearanceSort/);
+  const source = script.slice(script.indexOf('  function sortRows('), script.indexOf('  function openFilterPanel('));
+  for (const key of ['price', 'tire', 'capability']) for (const direction of ['asc', 'desc']) {
+    const field = key === 'price' ? 'priceSort' : key === 'tire' ? 'tireClearanceSort' : 'capabilitySort';
+    const items = ['', '20', '10'].map((value) => ({ dataset: { [field]: value, name: value } }));
+    const ordered = vm.runInNewContext(`(${source.trim()})(items)`, { items, compareNumbers, sortModeParts: () => ({ key, direction }) });
+    assert.deepEqual(Array.from(ordered, (row) => row.dataset[field]), direction === 'asc' ? ['10', '20', ''] : ['20', '10', '']);
+  }
   assert.match(styles, /\[role="columnheader"\]\[aria-sort="ascending"\] \.catalog-sort-button/);
   assert.match(styles, /\.catalog-head \{[\s\S]*?position: sticky;[\s\S]*?top: var\(--catalog-head-top, 144px\);[\s\S]*?z-index: 34;/);
   assert.match(script, /function syncCatalogHeadTop\(\)/);
@@ -126,13 +132,12 @@ test('brand filtering covers candidate-only brands and frameset overrides stay s
   assert.match(script, /function updateFramesetPrices\(value, \{ highlight = false, presetId \} = \{\}\)/);
   assert.match(script, /row\.dataset\.priceFilter = String\(high\)/);
   assert.match(script, /setParam\(next, 'build', String\(currentBuildAllowance\), String\(defaultBuildAllowance\)\)/);
-  assert.match(script, /buildAllowance\?\.addEventListener\('input'/);
+  assert.match(script, /bindHistoryInput\(buildAllowance/);
   assert.match(script, /buildPreset\?\.addEventListener\('change'/);
   assert.match(script, /buildCustom\.hidden = !requiresInput/);
   assert.match(script, /buildAllowance\.focus\(\{ preventScroll: true \}\)/);
   assert.match(script, /buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1'/);
-  assert.match(script, /const stored = localStorage\.getItem\(buildAllowanceStorageKey\);/);
-  assert.match(script, /if \(stored === null\) return null;/);
+  assert.doesNotMatch(script, /readStoredBuildAllowance/);
   assert.match(script, /writeStoredBuildAllowance\(currentBuildAllowance\)/);
   assert.match(script, /document\.querySelector\('\[data-model-frame-price-low\]'\)/);
   assert.match(script, /target\.searchParams\.set\('from', from\)[\s\S]*?setParam\(target, 'build'/);
@@ -207,8 +212,9 @@ test('one catalog selection opens Build while multiple selections open Compare',
 });
 
 test('comparison selection accepts ten bikes and keeps the wide viewer usable', () => {
-  assert.match(script, /const comparisonSelectionLimit = 10/);
-  assert.equal((script.match(/slice\(0, comparisonSelectionLimit\)/g) ?? []).length, 4);
+  assert.equal(COMPARISON_SELECTION_LIMIT, 10);
+  assert.equal(normalizeSelection(Array.from({ length: 12 }, (_, index) => `bike-${index}`)).length, 10);
+  assert.match(script, /const comparisonSelectionLimit = COMPARISON_SELECTION_LIMIT/);
   assert.match(script, /selection\.length >= comparisonSelectionLimit/);
   assert.match(script, /scroll\.tabIndex = 0/);
   assert.match(script, /Bike comparison table; scroll horizontally to see every selected bike/);

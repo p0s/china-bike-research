@@ -1,9 +1,10 @@
 import { moveSelectionId } from './compare-state.js';
+import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
 
 (() => {
   const base = document.body.dataset.base ?? '';
   const selectionStorageKey = 'china-bike-guide-selection-v2';
-  const comparisonSelectionLimit = 10;
+  const comparisonSelectionLimit = COMPARISON_SELECTION_LIMIT;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';
   const themeStorageKey = 'china-bikes-theme-v1';
   const themeModes = ['system', 'light', 'dark'];
@@ -21,8 +22,11 @@ import { moveSelectionId } from './compare-state.js';
     } catch { return 'system'; }
   }
 
+  let activeTheme = readTheme();
+
   function applyTheme(mode, { persist = false } = {}) {
     const selected = themeModes.includes(mode) ? mode : 'system';
+    activeTheme = selected;
     if (selected === 'system') delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = selected;
     if (persist) {
@@ -40,33 +44,27 @@ import { moveSelectionId } from './compare-state.js';
     if (themeColor instanceof HTMLMetaElement) themeColor.content = resolved === 'dark' ? '#111512' : '#f7f7f4';
   }
 
-  applyTheme(readTheme());
+  applyTheme(activeTheme);
   themeControl?.addEventListener('click', () => {
-    const current = readTheme();
+    const current = activeTheme;
     applyTheme(themeModes[(themeModes.indexOf(current) + 1) % themeModes.length], { persist: true });
   });
-  const syncSystemTheme = () => { if (readTheme() === 'system') applyTheme('system'); };
+  const syncSystemTheme = () => { if (activeTheme === 'system') applyTheme('system'); };
   if (typeof systemDark.addEventListener === 'function') systemDark.addEventListener('change', syncSystemTheme);
   else systemDark.addListener?.(syncSystemTheme);
+  addEventListener('storage', (event) => {
+    if (event.key === themeStorageKey || event.key === null) applyTheme(readTheme());
+  });
 
   function readStoredSelection() {
     try {
       const value = JSON.parse(localStorage.getItem(selectionStorageKey) ?? '[]');
-      return Array.isArray(value) ? [...new Set(value.filter((item) => typeof item === 'string'))].slice(0, comparisonSelectionLimit) : [];
+      return normalizeSelection(value);
     } catch { return []; }
   }
 
   function writeStoredSelection(selection) {
     try { localStorage.setItem(selectionStorageKey, JSON.stringify(selection.slice(0, comparisonSelectionLimit))); } catch { /* selection remains usable for this page */ }
-  }
-
-  function readStoredBuildAllowance() {
-    try {
-      const stored = localStorage.getItem(buildAllowanceStorageKey);
-      if (stored === null) return null;
-      const value = Number(stored);
-      return Number.isFinite(value) ? value : null;
-    } catch { return null; }
   }
 
   function writeStoredBuildAllowance(value) {
@@ -77,6 +75,13 @@ import { moveSelectionId } from './compare-state.js';
     if (!(image instanceof HTMLImageElement) || image.dataset.imageFailureReady === 'true') return;
     image.dataset.imageFailureReady = 'true';
     const hideUnavailable = () => {
+      if (image.hasAttribute('data-gallery-hero')) {
+        image.hidden = true;
+        image.closest('.model-figure')?.classList.add('is-unavailable');
+        const caption = image.closest('[data-image-gallery]')?.querySelector('[data-image-caption-status][data-gallery-caption]');
+        if (caption) caption.textContent = 'Source image unavailable. Choose another view or open the source.';
+        return;
+      }
       if (image.dataset.imageFailureHandled === 'true') return;
       image.dataset.imageFailureHandled = 'true';
       image.removeAttribute('srcset');
@@ -86,7 +91,11 @@ import { moveSelectionId } from './compare-state.js';
         : image.closest('.model-figure')?.querySelector('[data-image-caption-status]');
       if (captionStatus instanceof HTMLElement) captionStatus.textContent = 'Source image unavailable';
       const thumb = image.closest('.gallery-thumb');
-      if (thumb instanceof HTMLElement) thumb.hidden = true;
+      if (thumb instanceof HTMLElement) {
+        thumb.hidden = true;
+        image.remove();
+        return; // One failed thumbnail must not hide an otherwise usable gallery.
+      }
       const figure = image.closest('.model-figure');
       if (figure instanceof HTMLElement) {
         figure.classList.add('is-unavailable');
@@ -102,7 +111,17 @@ import { moveSelectionId } from './compare-state.js';
       image.remove();
     };
     image.addEventListener('error', hideUnavailable);
-    if (image.complete && image.naturalWidth === 0) hideUnavailable();
+    if (image.hasAttribute('data-gallery-hero')) image.addEventListener('load', () => {
+      if (!image.naturalWidth) return;
+      image.hidden = false;
+      image.closest('.model-figure')?.classList.remove('is-unavailable');
+      image.closest('.model-grid')?.classList.remove('has-no-image');
+      const gallery = image.closest('[data-image-gallery]');
+      const selected = gallery?.querySelector('[data-gallery-thumb][aria-pressed="true"]');
+      const caption = gallery?.querySelector('[data-image-caption-status][data-gallery-caption]');
+      if (caption && selected) caption.textContent = selected.dataset.galleryCaption ?? '';
+    });
+    if (image.complete && image.currentSrc && image.naturalWidth === 0) hideUnavailable();
   }
   document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
 
@@ -114,35 +133,41 @@ import { moveSelectionId } from './compare-state.js';
     if (!(hero instanceof HTMLImageElement) || !buttons.length) return;
 
     const selectImage = (button) => {
-      if (!(button instanceof HTMLButtonElement) || button.getAttribute('aria-pressed') === 'true') return;
-      hero.classList.add('is-switching');
-      window.setTimeout(() => {
-        hero.src = button.dataset.gallerySrc ?? hero.src;
-        hero.alt = button.dataset.galleryAlt ?? hero.alt;
-        if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
-        else hero.removeAttribute('referrerpolicy');
-        if (caption instanceof HTMLElement) caption.textContent = button.dataset.galleryCaption ?? '';
-        if (sourceLink instanceof HTMLAnchorElement) {
-          const href = button.dataset.gallerySource;
-          sourceLink.hidden = !href;
-          if (href) sourceLink.href = href;
-        }
-        buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-        requestAnimationFrame(() => hero.classList.remove('is-switching'));
-      }, 80);
+      if (!(button instanceof HTMLButtonElement) || button.hidden) return;
+      if (button.getAttribute('aria-pressed') === 'true' && !hero.hidden) return;
+      const nextSrc = button.dataset.gallerySrc;
+      if (!nextSrc) return;
+      // One synchronous selection: rapid clicks cannot enqueue stale images.
+      hero.removeAttribute('srcset');
+      hero.removeAttribute('sizes');
+      hero.alt = button.dataset.galleryAlt ?? '';
+      if (button.dataset.galleryRemote === 'true') hero.referrerPolicy = 'no-referrer';
+      else hero.removeAttribute('referrerpolicy');
+      if (caption instanceof HTMLElement) caption.textContent = button.dataset.galleryCaption ?? '';
+      if (sourceLink instanceof HTMLAnchorElement) {
+        const href = button.dataset.gallerySource;
+        sourceLink.hidden = !href;
+        if (href) sourceLink.href = href;
+      }
+      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      hero.src = nextSrc;
     };
 
-    buttons.forEach((button, index) => {
+    buttons.forEach((button) => {
       button.addEventListener('click', () => selectImage(button));
       button.addEventListener('keydown', (event) => {
+        const visible = buttons.filter((item) => !item.hidden && !item.disabled);
+        const index = visible.indexOf(button);
+        if (index < 0 || !visible.length) return;
         const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
-        let nextIndex = offsets[event.key] === undefined ? index : (index + offsets[event.key] + buttons.length) % buttons.length;
+        let nextIndex;
         if (event.key === 'Home') nextIndex = 0;
-        else if (event.key === 'End') nextIndex = buttons.length - 1;
-        else if (offsets[event.key] === undefined) return;
+        else if (event.key === 'End') nextIndex = visible.length - 1;
+        else if (offsets[event.key] !== undefined) nextIndex = (index + offsets[event.key] + visible.length) % visible.length;
+        else return;
         event.preventDefault();
-        buttons[nextIndex].focus();
-        selectImage(buttons[nextIndex]);
+        visible[nextIndex].focus();
+        selectImage(visible[nextIndex]);
       });
     });
   });
@@ -309,23 +334,6 @@ import { moveSelectionId } from './compare-state.js';
     });
   });
 
-  async function copyText(text) {
-    if (navigator.clipboard?.writeText) {
-      try { await navigator.clipboard.writeText(text); return true; } catch { /* fallback below */ }
-    }
-    const field = document.createElement('textarea');
-    field.value = text;
-    field.setAttribute('readonly', '');
-    field.style.position = 'fixed';
-    field.style.opacity = '0';
-    document.body.append(field);
-    field.select();
-    let copied = false;
-    try { copied = document.execCommand('copy'); } catch { copied = false; }
-    field.remove();
-    return copied;
-  }
-
   const copyStatus = document.querySelector('#copy-status');
   const copyFeedbackTimers = new WeakMap();
 
@@ -416,17 +424,19 @@ import { moveSelectionId } from './compare-state.js';
   if (modelCompareButton instanceof HTMLButtonElement) {
     const productId = modelCompareButton.dataset.productId ?? '';
     const productName = modelCompareButton.dataset.productName ?? 'this bike';
-    let modelSelection = readStoredSelection();
+    const returnSelection = validatedReturnTarget?.searchParams.get('compare');
+    let modelSelection = returnSelection !== undefined && returnSelection !== null
+      ? normalizeSelection(returnSelection) : readStoredSelection();
     const renderModelCompare = () => {
       const selected = modelSelection.includes(productId);
       modelCompareButton.setAttribute('aria-pressed', String(selected));
-      modelCompareButton.textContent = selected ? 'Added to comparison' : modelSelection.length >= 4 ? 'Comparison is full' : 'Add to comparison';
-      modelCompareButton.disabled = !selected && modelSelection.length >= 4;
+      modelCompareButton.textContent = selected ? 'Added to comparison' : modelSelection.length >= comparisonSelectionLimit ? 'Comparison is full' : 'Add to comparison';
+      modelCompareButton.disabled = !selected && modelSelection.length >= comparisonSelectionLimit;
       modelCompareButton.setAttribute('aria-label', selected ? `Remove ${productName} from comparison` : `Add ${productName} to comparison`);
       if (modelCompareLink instanceof HTMLAnchorElement) {
         const target = validatedReturnTarget ? new URL(validatedReturnTarget.href) : new URL(`${base}/`, location.origin);
         target.searchParams.delete('compare');
-        if (modelSelection.length >= 2) target.searchParams.set('compare', modelSelection.join(','));
+        if (modelSelection.length) target.searchParams.set('compare', modelSelection.join(','));
         target.hash = modelSelection.length >= 2 ? 'compare' : 'catalog';
         modelCompareLink.href = `${target.pathname}${target.search}${target.hash}`;
         modelCompareLink.textContent = modelSelection.length >= 2 ? 'Compare selected bikes' : 'Choose another bike';
@@ -435,7 +445,7 @@ import { moveSelectionId } from './compare-state.js';
     modelCompareButton.addEventListener('click', () => {
       modelSelection = modelSelection.includes(productId)
         ? modelSelection.filter((id) => id !== productId)
-        : [...modelSelection, productId].slice(0, 4);
+        : [...modelSelection, productId].slice(0, comparisonSelectionLimit);
       writeStoredSelection(modelSelection);
       renderModelCompare();
     });
@@ -465,8 +475,7 @@ import { moveSelectionId } from './compare-state.js';
   if (modelFramePrice instanceof HTMLElement) {
     const defaultAllowance = Number(modelFramePrice.dataset.modelDefaultAllowance || 0);
     const requested = new URLSearchParams(location.search).get('build');
-    const stored = readStoredBuildAllowance();
-    const raw = requested === null ? stored ?? defaultAllowance : Number(requested);
+    const raw = numberOrNull(requested) ?? defaultAllowance;
     const allowance = Number.isFinite(raw) ? Math.min(100000, Math.max(0, Math.round(raw))) : defaultAllowance;
     const frameLow = Number(modelFramePrice.dataset.modelFramePriceLow);
     const frameHigh = Number(modelFramePrice.dataset.modelFramePriceHigh || frameLow);
@@ -574,8 +583,8 @@ import { moveSelectionId } from './compare-state.js';
   }
 
   function normalizedBuildAllowance(value) {
-    const number = Number(value);
-    if (!Number.isFinite(number)) return defaultBuildAllowance;
+    const number = numberOrNull(value);
+    if (number === null) return defaultBuildAllowance;
     return Math.min(100000, Math.max(0, Math.round(number)));
   }
 
@@ -847,17 +856,14 @@ import { moveSelectionId } from './compare-state.js';
 
   function sortRows(items) {
     const { key, direction } = sortModeParts();
-    const multiplier = direction === 'desc' ? -1 : 1;
+    const byName = (a, b) => (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
     return [...items].sort((a, b) => {
-      if (key === 'capability' || key === 'tire') {
-        const datasetKey = key === 'tire' ? 'tireClearanceSort' : 'capabilitySort';
-        const aValue = Number(a.dataset[datasetKey] || 0);
-        const bValue = Number(b.dataset[datasetKey] || 0);
-        if (Boolean(aValue) !== Boolean(bValue)) return aValue ? -1 : 1;
-        return (aValue - bValue) * multiplier || Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity);
-      }
-      if (key === 'name') return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '') * multiplier;
-      return (Number(a.dataset.priceSort || Infinity) - Number(b.dataset.priceSort || Infinity)) * multiplier;
+      if (key === 'name') return byName(a, b) * (direction === 'desc' ? -1 : 1);
+      const field = key === 'tire' ? 'tireClearanceSort' : key === 'capability' ? 'capabilitySort' : 'priceSort';
+      const value = (row) => key === 'price' || Number(row.dataset[field]) > 0 ? row.dataset[field] : null;
+      return compareNumbers(value(a), value(b), direction)
+        || (key === 'price' ? 0 : compareNumbers(a.dataset.priceSort, b.dataset.priceSort))
+        || byName(a, b);
     });
   }
 
@@ -955,12 +961,15 @@ import { moveSelectionId } from './compare-state.js';
     renderFilterChips();
     syncCatalogHeadTop();
     const ordered = sortRows(rows);
+    const matchingSet = new Set(matching);
+    const existingOrder = [...(productList?.querySelectorAll(':scope > [data-product-row]') ?? [])];
+    const alreadyOrdered = ordered.every((row, index) => existingOrder[index] === row);
     let visible = 0;
     ordered.forEach((row) => {
-      const matches = rowMatches(row);
+      const matches = matchingSet.has(row);
       row.hidden = !matches;
       if (matches) visible += 1;
-      productList?.insertBefore(row, empty);
+      if (!alreadyOrdered) productList?.insertBefore(row, empty);
     });
     const filtered = hasFilters();
     if (resultCount) resultCount.textContent = String(visible);
@@ -1034,8 +1043,7 @@ import { moveSelectionId } from './compare-state.js';
   }
 
   const typedInputs = [search, price, tire, completeWeight, frameWeight, drivetrainFilter, frameFilter, categoryMinimum];
-  typedInputs.forEach((element) => element?.addEventListener('input', () => updateCatalog({ historyMode: 'replace' })));
-  typedInputs.forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
+  typedInputs.forEach((element) => bindHistoryInput(element, (historyMode) => updateCatalog({ historyMode })));
   [category, sort, tireUnknown].forEach((element) => element?.addEventListener('change', () => updateCatalog({ historyMode: 'push' })));
   sortHeadingButtons.forEach((button) => button.addEventListener('click', () => {
     if (!(button instanceof HTMLButtonElement) || button.disabled) return;
@@ -1091,7 +1099,14 @@ import { moveSelectionId } from './compare-state.js';
   });
   addEventListener('popstate', () => {
     restoreFromParams(new URLSearchParams(location.search));
-    if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
+    const params = new URLSearchParams(location.search);
+    const ids = normalizeSelection(params.get('compare'), { validIds: byId });
+    selection = ids;
+    if (comparePanel) comparePanel.hidden = ids.length < 2;
+    compareTray?.classList.toggle('is-comparing', ids.length >= 2);
+    renderTray();
+    if (ids.length >= 2) renderComparison();
+    updateModelLinks();
   });
 
   const initialParams = new URLSearchParams(location.search);
@@ -1145,7 +1160,7 @@ import { moveSelectionId } from './compare-state.js';
   }
 
   function setSelection(next) {
-    selection = [...new Set(next.filter((id) => byId.has(id)))].slice(0, comparisonSelectionLimit);
+    selection = normalizeSelection(next, { validIds: byId });
     renderTray();
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
   }
@@ -1185,6 +1200,7 @@ import { moveSelectionId } from './compare-state.js';
     if (item.url) {
       const target = new URL(item.url, location.origin);
       target.searchParams.set('from', `${location.pathname}${location.search}#catalog`);
+      setParam(target, 'build', String(currentBuildAllowance), String(defaultBuildAllowance));
       title.href = `${target.pathname}${target.search}`;
     }
     const type = element('span', '', item.type);
@@ -1312,7 +1328,7 @@ import { moveSelectionId } from './compare-state.js';
     compareTray?.classList.add('is-comparing');
     renderComparison();
     if (focus && comparePanel instanceof HTMLElement) comparePanel.focus({ preventScroll: true });
-    if (scroll) comparePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) comparePanel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
 
   function closeComparison({ restoreFocus = false } = {}) {
@@ -1334,25 +1350,24 @@ import { moveSelectionId } from './compare-state.js';
     }
   });
 
-  const querySelection = (initialParams.get('compare') ?? '').split(',').filter((id) => byId.has(id)).slice(0, comparisonSelectionLimit);
-  if (querySelection.length) selection = querySelection;
+  const querySelection = normalizeSelection(initialParams.get('compare'), { validIds: byId });
+  if (initialParams.has('compare')) selection = querySelection;
   renderTray();
   if (querySelection.length >= 2) openComparison({ scroll: false });
 
   function applyBuildAllowance({ historyMode }) {
-    if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return;
+    if (!(buildAllowance instanceof HTMLInputElement) || !buildAllowance.value.trim()) return false;
     updateFramesetPrices(buildAllowance.value, { highlight: true });
     writeStoredBuildAllowance(currentBuildAllowance);
     updateCatalog({ historyMode });
     if (comparePanel && !comparePanel.hidden && selection.length >= 2) renderComparison();
   }
 
-  buildAllowance?.addEventListener('input', () => applyBuildAllowance({ historyMode: 'replace' }));
-  buildAllowance?.addEventListener('change', () => {
-    if (buildAllowance instanceof HTMLInputElement && !buildAllowance.value.trim()) {
+  bindHistoryInput(buildAllowance, (historyMode, event) => {
+    if (event.type === 'change' && buildAllowance instanceof HTMLInputElement && !buildAllowance.value.trim()) {
       buildAllowance.value = String(defaultBuildAllowance);
     }
-    applyBuildAllowance({ historyMode: 'push' });
+    return applyBuildAllowance({ historyMode });
   });
   buildPreset?.addEventListener('change', () => {
     if (!(buildPreset instanceof HTMLSelectElement)) return;
@@ -1395,6 +1410,22 @@ import { moveSelectionId } from './compare-state.js';
   const baseWeight = root.querySelector('[data-build-base-weight]');
   const basePriceField = root.querySelector('[data-build-base-price-field]');
   const baseWeightField = root.querySelector('[data-build-base-weight-field]');
+  const packageWeightField = document.createElement('label');
+  packageWeightField.className = 'builder-package-weight';
+  const packageLabel = document.createElement('span');
+  packageLabel.textContent = 'Fork + remaining frame-package weight (g)';
+  const packageWeight = document.createElement('input');
+  packageWeight.type = 'number';
+  packageWeight.min = '0';
+  packageWeight.step = 'any';
+  packageWeight.placeholder = 'Unknown';
+  packageWeight.dataset.buildPackageWeight = '';
+  packageWeight.setAttribute('aria-label', 'Fork and remaining frame-package weight in grams');
+  const packageNote = document.createElement('small');
+  packageNote.textContent = 'Enter the fork, seatpost and frame hardware not included in the recorded frame weight. Do not count parts already weighed below.';
+  packageWeightField.append(packageLabel, packageWeight, packageNote);
+  baseCustom?.append(packageWeightField);
+
   const totalPrice = root.querySelector('[data-build-total-price]');
   const totalWeight = root.querySelector('[data-build-total-weight]');
   const completeness = root.querySelector('[data-build-completeness]');
@@ -1435,42 +1466,8 @@ import { moveSelectionId } from './compare-state.js';
     } catch { return {}; }
   }
 
-  const stored = readStoredState();
-  const initialParams = new URLSearchParams(location.search);
   const firstBaseId = data.bases[0]?.id || '';
-  const requestedBase = initialParams.get('base') || initialParams.get('frame') || stored.baseId || stored.frameId;
-  const selectedBaseId = bases.has(requestedBase) ? requestedBase : firstBaseId;
-  const selectedBase = bases.get(selectedBaseId);
-  const baseDefaults = defaultSelections(selectedBase);
-  const state = {
-    baseId: selectedBaseId,
-    selections: {},
-    custom: {},
-    baseCustom: {
-      price: initialParams.get('basePrice') ?? (stored.baseId === selectedBaseId ? stored.baseCustom?.price : '') ?? '',
-      weight: initialParams.get('baseWeight') ?? (stored.baseId === selectedBaseId ? stored.baseCustom?.weight : '') ?? '',
-    },
-  };
-
-  for (const slot of slots) {
-    const storedPart = stored.baseId === selectedBaseId ? stored.selections?.[slot] : '';
-    const requestedPart = initialParams.get(`part-${slot}`) || storedPart || baseDefaults[slot];
-    state.selections[slot] = requestedPart === 'custom' || (requestedPart === 'included' && selectedBase?.kind === 'complete-bike') || (parts.has(requestedPart) && parts.get(requestedPart).slot === slot)
-      ? requestedPart
-      : baseDefaults[slot];
-    const storedCustom = stored.baseId === selectedBaseId ? stored.custom?.[slot] || {} : {};
-    state.custom[slot] = {
-      price: initialParams.get(`price-${slot}`) ?? storedCustom.price ?? '',
-      weight: initialParams.get(`weight-${slot}`) ?? storedCustom.weight ?? '',
-      removedWeight: initialParams.get(`removed-${slot}`) ?? storedCustom.removedWeight ?? '',
-    };
-  }
-
-  function numberOrNull(value) {
-    if (value === '' || value === null || value === undefined) return null;
-    const numeric = Number(value);
-    return Number.isFinite(numeric) && numeric >= 0 ? numeric : null;
-  }
+  let state = restoreBuildState(data, new URLSearchParams(location.search), readStoredState());
 
   function formatYuan(value) {
     return `¥${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(value))}`;
@@ -1486,7 +1483,7 @@ import { moveSelectionId } from './compare-state.js';
 
   function selectedPart(slot) {
     const id = state.selections[slot];
-    return id && !['custom', 'included'].includes(id) ? parts.get(id) || null : null;
+    return id && !['custom', 'included', 'in-base'].includes(id) ? parts.get(id) || null : null;
   }
 
   function coveredSlots() {
@@ -1536,14 +1533,22 @@ import { moveSelectionId } from './compare-state.js';
     const layout = drivetrain?.compatibility?.drivetrain_layout
       || (state.selections.drivetrain === 'included' ? base.drivetrainLayout : null);
     const limits = base.tireClearanceByDrivetrain;
+    const recordedLimits = limits ? [limits.single, limits.double].filter((value) => numberOrNull(value) !== null) : [];
     const clearanceLimit = limits
-      ? limits[layout] ?? Math.min(limits.single, limits.double)
-      : base.tireClearanceMm;
-    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single}/${limits.double} mm (1×/2×); using the smaller limit until the layout is known.`);
+      ? (layout ? numberOrNull(limits[layout]) : recordedLimits.length ? Math.min(...recordedLimits) : null)
+      : numberOrNull(base.tireClearanceMm);
+    if (limits && !layout) messages.push(`Confirm drivetrain: tire limits are ${limits.single ?? 'unknown'}/${limits.double ?? 'unknown'} mm (1×/2×). The smallest recorded limit is a warning threshold, not proof of fit for an unknown layout.`);
+    if (tires && clearanceLimit === null) messages.push('Tire clearance for the selected frame and drivetrain is not recorded; confirm it before buying.');
     if (tires && Number.isFinite(tireWidth) && Number.isFinite(clearanceLimit) && tireWidth > clearanceLimit) {
       messages.push(`${tireWidth} mm tires exceed the frame's published ${clearanceLimit} mm limit${layout ? ` for ${layout === 'single' ? '1×' : '2×'}` : ''}.`);
     }
     const wheelset = covered.has('wheelset') ? null : selectedPart('wheelset');
+    const rotors = covered.has('rotors') ? null : selectedPart('rotors');
+    const rotorMount = rotors?.compatibility?.rotor_mount;
+    const hubMount = wheelset?.compatibility?.rotor_mount;
+    if (rotorMount && hubMount && rotorMount !== hubMount) {
+      messages.push(`Rotors use ${rotorMount}, but the wheelset lists ${hubMount}; confirm a compatible rotor or explicitly supported adapter.`);
+    }
     const requiredFreehub = drivetrain?.compatibility?.required_freehub;
     const availableFreehubs = wheelset?.compatibility?.freehubs || [];
     if (requiredFreehub && availableFreehubs.length && !availableFreehubs.includes(requiredFreehub)) {
@@ -1560,7 +1565,8 @@ import { moveSelectionId } from './compare-state.js';
     target.searchParams.delete('frame');
     for (const [field, value, recorded] of [
       ['basePrice', state.baseCustom.price, numberOrNull(base?.priceLow)],
-      ['baseWeight', state.baseCustom.weight, numberOrNull(base?.baseWeightG)]
+      ['baseWeight', state.baseCustom.weight, numberOrNull(base?.baseWeightG)],
+      ['packageWeight', state.baseCustom.packageWeight, base?.kind === 'complete-bike' ? 0 : null]
     ]) {
       if (recorded === null && value !== '') target.searchParams.set(field, value);
       else target.searchParams.delete(field);
@@ -1574,12 +1580,12 @@ import { moveSelectionId } from './compare-state.js';
       for (const [field, value] of [['price', custom.price], ['weight', custom.weight], ['removed', custom.removedWeight]]) {
         const key = `${field}-${slot}`;
         const recordedValue = field === 'price' ? numberOrNull(part?.priceCny) : field === 'weight' ? numberOrNull(part?.weightG) : null;
-        const relevant = field === 'removed' ? base?.kind === 'complete-bike' && selection !== 'included' : selection === 'custom' || recordedValue === null;
+        const relevant = !['included', 'in-base'].includes(selection) && (field === 'removed' ? base?.kind === 'complete-bike' : selection === 'custom' || recordedValue === null);
         if (relevant && value !== '') target.searchParams.set(key, value);
         else target.searchParams.delete(key);
       }
     }
-    try { history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', `${target.pathname}${target.search}`); } catch { /* normal navigation origin required */ }
+    try { history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', `${target.pathname}${target.search}${target.hash}`); } catch { /* normal navigation origin required */ }
   }
 
   function persist() {
@@ -1598,7 +1604,8 @@ import { moveSelectionId } from './compare-state.js';
       base.bottomBracket || 'bottom bracket unknown',
       base.tireClearanceLabel ? `${base.tireClearanceLabel} tire clearance` : base.tireClearanceMm ? `${base.tireClearanceMm} mm tire clearance` : 'tire clearance unknown',
       base.included.length ? base.included.join(', ') : 'package contents incomplete',
-      base.priceNote || ''
+      base.priceNote || '',
+      base.weightBasis || ''
     ].filter(Boolean).join(' · ');
     if (buildName) buildName.textContent = base.name.replace(/ · research stage$/, '');
     if (summaryKicker) summaryKicker.textContent = isComplete ? 'Purchase + upgrades' : 'Current build';
@@ -1615,9 +1622,12 @@ import { moveSelectionId } from './compare-state.js';
     const baseWeightValue = recordedBaseWeight ?? buyerBaseWeight;
     if (basePrice instanceof HTMLInputElement) basePrice.value = state.baseCustom.price;
     if (baseWeight instanceof HTMLInputElement) baseWeight.value = state.baseCustom.weight;
+    if (baseWeightField?.firstChild?.nodeType === Node.TEXT_NODE) baseWeightField.firstChild.textContent = isComplete ? 'Base bike weight g' : 'Frame-only weight g';
     if (basePriceField instanceof HTMLElement) basePriceField.hidden = recordedBasePriceLow !== null;
     if (baseWeightField instanceof HTMLElement) baseWeightField.hidden = recordedBaseWeight !== null;
-    if (baseCustom instanceof HTMLElement) baseCustom.hidden = recordedBasePriceLow !== null && recordedBaseWeight !== null;
+    packageWeightField.hidden = isComplete;
+    packageWeight.value = state.baseCustom.packageWeight;
+    if (baseCustom instanceof HTMLElement) baseCustom.hidden = isComplete && recordedBasePriceLow !== null && recordedBaseWeight !== null;
 
     let priceLow = basePriceLow ?? 0;
     let priceHigh = basePriceHigh ?? priceLow;
@@ -1626,7 +1636,12 @@ import { moveSelectionId } from './compare-state.js';
     const missingWeights = [];
     if (basePriceLow === null) missingPrices.push(isComplete ? 'base bike' : 'frameset');
     if (baseWeightValue === null) missingWeights.push(isComplete ? 'base bike' : 'frameset');
-    else if (!isComplete) missingWeights.push('fork / frame package remainder');
+    if (!isComplete) {
+      const remainder = numberOrNull(state.baseCustom.packageWeight);
+      if (remainder === null) missingWeights.push('fork / frame package remainder');
+      else knownWeight += remainder;
+    }
+    let removedWeightTotal = 0;
     const covered = coveredSlots();
 
     for (const slot of slots) {
@@ -1649,6 +1664,15 @@ import { moveSelectionId } from './compare-state.js';
           includedOption.hidden = !isComplete;
           includedOption.disabled = !isComplete;
         }
+        let inBaseOption = select.querySelector('option[value="in-base"]');
+        if (!inBaseOption) {
+          inBaseOption = document.createElement('option');
+          inBaseOption.value = 'in-base';
+          inBaseOption.textContent = 'In frameset package · buyer confirmed';
+          select.append(inBaseOption);
+        }
+        inBaseOption.hidden = isComplete;
+        inBaseOption.disabled = isComplete;
         select.value = state.selections[slot];
         select.disabled = Boolean(coveringPart);
       }
@@ -1662,11 +1686,13 @@ import { moveSelectionId } from './compare-state.js';
         continue;
       }
 
-      const isIncluded = isComplete && state.selections[slot] === 'included';
+      const isIncluded = isComplete ? state.selections[slot] === 'included' : state.selections[slot] === 'in-base';
       row.classList.toggle('is-included', isIncluded);
       if (isIncluded) {
         if (customValues instanceof HTMLElement) customValues.hidden = true;
-        setPartFacts(row, { price: 'Included', weight: 'In base weight', basis: 'Included in the complete-bike package' });
+        setPartFacts(row, isComplete
+          ? { price: 'Included', weight: 'In base weight', basis: 'Included in the complete-bike package' }
+          : { price: 'In base price', weight: 'In frame-package weight', basis: 'Buyer confirmed this part is included. Include its weight in the frame-package remainder above, not twice here.' });
         continue;
       }
 
@@ -1697,6 +1723,7 @@ import { moveSelectionId } from './compare-state.js';
           missingWeights.push(`${slot} replacement delta`);
           if (partWeight !== null) weightDisplay = `${formatWeight(partWeight)} new · delta unknown`;
         } else {
+          removedWeightTotal += removedPartWeight;
           const delta = partWeight - removedPartWeight;
           knownWeight += delta;
           weightDisplay = `${formatWeight(partWeight)} new · ${delta >= 0 ? '+' : '−'}${formatWeight(Math.abs(delta))}`;
@@ -1710,6 +1737,8 @@ import { moveSelectionId } from './compare-state.js';
             recordedPrice === null && buyerPrice !== null ? 'Buyer-entered price' : part.priceBasis,
             recordedWeight === null && buyerWeight !== null ? 'Buyer-entered weight' : part.weightBasis,
             isComplete && removedPartWeight === null ? 'Removed-part weight required for final weight' : '',
+            isComplete && part.covers?.length ? `Removed weight must include the entire replaced package: ${[slot, ...part.covers].join(', ')}` : '',
+            part.note || '',
           ].filter(Boolean).join(' · ');
       setPartFacts(row, {
         price: partPrice === null ? '—' : formatYuan(partPrice),
@@ -1719,10 +1748,12 @@ import { moveSelectionId } from './compare-state.js';
       });
     }
 
+    const impossibleWeight = isComplete && baseWeightValue !== null && removedWeightTotal > baseWeightValue;
+    if (impossibleWeight) missingWeights.push('inconsistent removed-part weights');
     if (totalPrice) totalPrice.textContent = missingPrices.length
       ? `${formatPriceRange(priceLow, priceHigh)} known + ${missingPrices.length} unknown`
       : formatPriceRange(priceLow, priceHigh);
-    if (totalWeight) totalWeight.textContent = missingWeights.length
+    if (totalWeight) totalWeight.textContent = impossibleWeight ? 'Check removed-part weights' : missingWeights.length
       ? `${formatWeight(knownWeight)} ${isComplete ? 'base / known deltas' : 'known'} + ${missingWeights.length} unknown`
       : formatWeight(knownWeight);
     if (completeness) completeness.textContent = missingPrices.length || missingWeights.length
@@ -1730,12 +1761,13 @@ import { moveSelectionId } from './compare-state.js';
       : isComplete ? 'Purchase price and every replacement weight delta are resolved.' : 'Every required slot has a price and weight.';
 
     const conflicts = compatibilityMessages(base, covered);
+    if (impossibleWeight && completeness) completeness.textContent += ' Removed parts exceed the whole-bike weight; check units and avoid counting removed components twice.';
     if (compatibility instanceof HTMLElement) {
       compatibility.classList.toggle('has-conflicts', conflicts.length > 0);
       compatibility.replaceChildren();
       if (conflicts.length) {
         const heading = document.createElement('strong');
-        heading.textContent = 'Compatibility conflict';
+        heading.textContent = 'Check compatibility';
         const list = document.createElement('ul');
         conflicts.forEach((message) => {
           const item = document.createElement('li');
@@ -1758,20 +1790,25 @@ import { moveSelectionId } from './compare-state.js';
     const previous = bases.get(state.baseId);
     const next = bases.get(baseSelect.value);
     state.baseId = baseSelect.value;
-    state.baseCustom = { price: '', weight: '' };
+    state.baseCustom = { price: '', weight: '', packageWeight: '' };
+    for (const custom of Object.values(state.custom)) custom.removedWeight = '';
     if (previous?.kind !== next?.kind) {
       state.selections = defaultSelections(next);
       state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
     }
     render({ historyMode: 'push' });
   });
-  basePrice?.addEventListener('input', () => {
-    if (basePrice instanceof HTMLInputElement) state.baseCustom.price = basePrice.value;
-    render();
+  bindHistoryInput(packageWeight, (historyMode) => {
+    state.baseCustom.packageWeight = packageWeight.value;
+    render({ historyMode });
   });
-  baseWeight?.addEventListener('input', () => {
+  bindHistoryInput(basePrice, (historyMode) => {
+    if (basePrice instanceof HTMLInputElement) state.baseCustom.price = basePrice.value;
+    render({ historyMode });
+  });
+  bindHistoryInput(baseWeight, (historyMode) => {
     if (baseWeight instanceof HTMLInputElement) state.baseCustom.weight = baseWeight.value;
-    render();
+    render({ historyMode });
   });
 
   rows.forEach((row, slot) => {
@@ -1786,42 +1823,45 @@ import { moveSelectionId } from './compare-state.js';
       }
       render({ historyMode: 'push' });
     });
-    customPrice?.addEventListener('input', () => {
+    bindHistoryInput(customPrice, (historyMode) => {
       if (customPrice instanceof HTMLInputElement) state.custom[slot].price = customPrice.value;
-      render();
+      render({ historyMode });
     });
-    customWeight?.addEventListener('input', () => {
+    bindHistoryInput(customWeight, (historyMode) => {
       if (customWeight instanceof HTMLInputElement) state.custom[slot].weight = customWeight.value;
-      render();
+      render({ historyMode });
     });
-    removedWeight?.addEventListener('input', () => {
+    bindHistoryInput(removedWeight, (historyMode) => {
       if (removedWeight instanceof HTMLInputElement) state.custom[slot].removedWeight = removedWeight.value;
-      render();
+      render({ historyMode });
     });
   });
 
   root.querySelector('[data-build-copy]')?.addEventListener('click', async (event) => {
     const button = event.currentTarget;
-    let copied = false;
-    if (navigator.clipboard?.writeText) {
-      try {
-        await navigator.clipboard.writeText(location.href);
-        copied = true;
-      } catch { /* HTTPS or clipboard permission may be unavailable. */ }
-    }
+    const copied = await copyText(location.href);
+    const status = document.querySelector('#copy-status');
+    if (status) status.textContent = copied ? 'Build link copied.' : 'Copy failed. Copy the address bar link manually.';
     if (button instanceof HTMLButtonElement) {
-      const original = button.textContent;
+      const original = button.dataset.copyIdleLabel ?? button.textContent;
+      button.dataset.copyIdleLabel = original;
+      clearTimeout(Number(button.dataset.copyTimer));
       button.textContent = copied ? 'Copied' : 'Copy failed';
-      setTimeout(() => { button.textContent = original; }, 1200);
+      button.dataset.copyTimer = String(setTimeout(() => { button.textContent = original; }, 1200));
     }
   });
   root.querySelector('[data-build-reset]')?.addEventListener('click', () => {
     state.baseId = firstBaseId;
     state.selections = defaultSelections(bases.get(firstBaseId));
     state.custom = Object.fromEntries(slots.map((slot) => [slot, { price: '', weight: '', removedWeight: '' }]));
-    state.baseCustom = { price: '', weight: '' };
+    state.baseCustom = { price: '', weight: '', packageWeight: '' };
     try { localStorage.removeItem(storageKey); } catch { /* URL still resets */ }
     render({ historyMode: 'push' });
+  });
+
+  addEventListener('popstate', () => {
+    state = restoreBuildState(data, new URLSearchParams(location.search), {}, { allowStored: false });
+    render();
   });
 
   render();
