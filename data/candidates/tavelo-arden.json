@@ -31,7 +31,11 @@
     "tire_clearance_basis": "Official maximum with a 1× drivetrain; the 2× maximum is 34 mm",
     "sizes": "425, 450, 475, 500, 525, 550, 570 and 590; official frame-weight basis is size L",
     "warranty": "Lifetime first-owner frameset warranty; paint and decals one year, subject to policy conditions",
-    "cockpit": "Frameset listing includes fork and seatpost; cockpit configuration varies"
+    "cockpit": "Frameset listing includes fork and seatpost; cockpit configuration varies",
+    "tire_clearance_drivetrain_limits_mm": {
+      "single": 38,
+      "double": 34
+    }
   },
   "observed_price": {
     "low_cny": 9999,

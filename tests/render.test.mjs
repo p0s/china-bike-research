@@ -856,3 +856,20 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.match(referenceNav, /data-nav-groupsets aria-current="page"/);
 });
+
+test('Arden candidate keeps drivetrain clearance in catalog, profile and planner', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'tavelo-arden');
+  const context = { data, products, base: '/china-bike-research', repositoryUrl: 'https://github.com/p0s/china-bike-research' };
+  const row = html.match(/<div class="catalog-row is-candidate"[^>]*data-id="candidate-tavelo-arden"[\s\S]*?(?=<div class="catalog-row|<\/div>\s*<\/div>\s*<\/section>)/)?.[0];
+  assert.ok(row);
+  assert.match(row, /38\/34 mm \(1×\/2×\)/);
+  assert.match(row, /data-tire-clearance-sort="38"/);
+  const profile = renderCandidateModel(context, entry);
+  assert.match(profile, /38\/34 mm \(1×\/2×\)/);
+  assert.doesNotMatch(profile, /\[object Object\]|38 mm tire clearance/);
+  const builder = renderBikeBuilder(context);
+  const payload = JSON.parse(builder.match(/id="build-configurator-data">([\s\S]*?)<\/script>/)[1]);
+  const base = payload.bases.find((item) => item.id === entry.id);
+  assert.deepEqual(base.tireClearanceByDrivetrain, { single: 38, double: 34 });
+  assert.equal(base.tireClearanceLabel, '38/34 mm (1×/2×)');
+});

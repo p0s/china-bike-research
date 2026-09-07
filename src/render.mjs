@@ -404,7 +404,9 @@ function candidateTireClearance(entry) {
   const basis = facts.tire_clearance_basis ?? '';
   const fitted = /^documented fitted|^fitted/i.test(basis);
   return {
-    value: Number.isFinite(value) ? `${value} mm${fitted ? ' fitted' : ''}` : '—',
+    value: facts.tire_clearance_drivetrain_limits_mm
+      ? clearanceLabel({ tire_clearance: { drivetrain_limits_mm: facts.tire_clearance_drivetrain_limits_mm } })
+      : Number.isFinite(value) ? `${value} mm${fitted ? ' fitted' : ''}` : '—',
     sortValue: Number.isFinite(value) ? value : 0,
     details: Number.isFinite(value) ? (basis || 'Recorded maximum tire clearance.') : ''
   };
@@ -968,13 +970,13 @@ function candidateFactRows(entry) {
     frame_weight_g: 'Frame weight',
     tire_clearance_mm: 'Tire clearance'
   };
-  return Object.entries(entry.candidate.facts ?? {}).filter(([key]) => entry.kind !== 'frameset' || key !== 'drivetrain').map(([key, value]) => {
+  return Object.entries(entry.candidate.facts ?? {}).filter(([key]) => key !== 'tire_clearance_drivetrain_limits_mm' && (entry.kind !== 'frameset' || key !== 'drivetrain')).map(([key, value]) => {
     const formatted = key === 'complete_weight_g'
       ? `${(value / 1000).toFixed(1)} kg`
       : key === 'frame_weight_g'
         ? `${new Intl.NumberFormat('en-US').format(value)} g`
         : key === 'tire_clearance_mm'
-          ? `${value} mm`
+          ? candidateTireClearance(entry).value
           : value;
     return [labels[key] ?? sentenceLabel(key), String(formatted)];
   });
@@ -1353,7 +1355,7 @@ function candidateStoryTitle(ctx, entry) {
   const details = [
     Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg complete bike` : '',
     !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
-    Number.isFinite(facts.tire_clearance_mm) ? `${facts.tire_clearance_mm} mm tire clearance` : ''
+    Number.isFinite(facts.tire_clearance_mm) ? `${candidateTireClearance(entry).value} tire clearance` : ''
   ].filter(Boolean);
   if (details.length) return details.join(' with ');
   if (entry.price) return `${candidatePriceLabel(ctx, entry)} ${entry.kind === 'frameset' ? 'frameset' : 'complete-bike'} lead under review`;
@@ -1623,6 +1625,8 @@ function builderBases(ctx) {
         bottomBracket: facts.bottom_bracket ?? '',
         bottomBracketKey: builderBottomBracketKey(facts.bottom_bracket),
         tireClearanceMm: facts.tire_clearance_mm ?? null,
+        tireClearanceLabel: candidateTireClearance(entry).value === '—' ? null : candidateTireClearance(entry).value,
+        tireClearanceByDrivetrain: facts.tire_clearance_drivetrain_limits_mm ?? null,
         included: isComplete ? ['complete bike package'] : [],
         drivetrain: isComplete ? facts.drivetrain ?? '' : '',
       };

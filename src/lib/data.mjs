@@ -565,6 +565,14 @@ export function validateDataset(data = loadDataset()) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);
           }
         }
+        if (candidate.facts.tire_clearance_drivetrain_limits_mm !== undefined) {
+          const limits = candidate.facts.tire_clearance_drivetrain_limits_mm;
+          if (!isObject(limits) || Object.keys(limits).some((key) => !['single', 'double'].includes(key)) ||
+            !['single', 'double'].every((key) => Number.isFinite(limits[key]) && limits[key] > 0 && limits[key] <= 100) ||
+            Math.max(limits.single, limits.double) !== candidate.facts.tire_clearance_mm) {
+            errors.push(`candidate ${candidate.id}: invalid drivetrain clearance limits`);
+          }
+        }
         for (const key of ['complete_weight_g', 'frame_weight_g', 'tire_clearance_mm']) {
           if (candidate.facts[key] !== undefined && (typeof candidate.facts[key] !== 'number' || candidate.facts[key] <= 0)) {
             errors.push(`candidate ${candidate.id}: invalid facts.${key}`);

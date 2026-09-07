@@ -2826,3 +2826,11 @@ test('published images stay credited while incomplete builds remain candidates',
   assert.ok(trinx.missing.some((item) => /complete-bike weight/i.test(item)));
   assert.ok(trinx.missing.some((item) => /maximum tire clearance/i.test(item)));
 });
+
+test('candidate drivetrain limits reject incomplete or inconsistent maxima', () => {
+  for (const limits of [null, { single: 38 }, { single: 38, double: -1 }, { single: 40, double: 34 }, { single: 38, double: 34, other: 35 }]) {
+    const copy = structuredClone(data);
+    copy.candidates.find((item) => item.id === 'tavelo-arden').facts.tire_clearance_drivetrain_limits_mm = limits;
+    assert.ok(validateDataset(copy).some((error) => /candidate tavelo-arden: invalid drivetrain clearance limits/.test(error)));
+  }
+});
