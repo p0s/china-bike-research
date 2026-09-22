@@ -1,0 +1,86 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Existing record reconciliation; original source dates unchanged, no new source visit.",
+  "targets": 10,
+  "fields": 11,
+  "integrated_fields": 0,
+  "results": [
+    {
+      "target": "missing-china-price-trek-madone-gen-8",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-trek-madone-gen-8-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already recorded with its original date; exact selected-option checkout and stock are not established."
+    },
+    {
+      "target": "twitter-cyclone-electronic",
+      "gap": "purchase-route",
+      "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29",
+      "disposition": "retained-unknown",
+      "reason": "A manufacturer, foreign/regional or index route is documented; this does not verify selected mainland SKU stock, checkout conditions or domestic fulfilment."
+    },
+    {
+      "target": "twitter-cyclone-gen3-et",
+      "gap": "purchase-route",
+      "attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+      "disposition": "retained-unknown",
+      "reason": "A manufacturer, foreign/regional or index route is documented; this does not verify selected mainland SKU stock, checkout conditions or domestic fulfilment."
+    },
+    {
+      "target": "twitter-t3-tt",
+      "gap": "purchase-route",
+      "attempt_id": "variant-twitter-t3-tt-purchase-route-2026-08-29",
+      "disposition": "retained-unknown",
+      "reason": "A manufacturer, foreign/regional or index route is documented; this does not verify selected mainland SKU stock, checkout conditions or domestic fulfilment."
+    },
+    {
+      "target": "pinarello-f5",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "The documented MY26 reference wheel build is not matched to the configuration-hidden retained mainland card."
+    },
+    {
+      "target": "pinarello-f5",
+      "gap": "stiffness-evidence-missing",
+      "attempt_id": "candidate-pinarello-f5-frame-stiffness-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Manufacturer qualitative MY26 structural claims do not resolve the retained card model year or provide a controlled stiffness result."
+    },
+    {
+      "target": "hi-light-g0",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-hi-light-g0-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already recorded with its original date; exact selected-option checkout and stock are not established."
+    },
+    {
+      "target": "ican-graro-frameset",
+      "gap": "purchase-route",
+      "attempt_id": "variant-ican-graro-frameset-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "A manufacturer, foreign/regional or index route is documented; this does not verify selected mainland SKU stock, checkout conditions or domestic fulfilment."
+    },
+    {
+      "target": "missing-china-price-merida-scultura",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-merida-scultura-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already recorded with its original date; exact selected-option checkout and stock are not established."
+    },
+    {
+      "target": "missing-china-price-merida-silex",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-merida-silex-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already recorded with its original date; exact selected-option checkout and stock are not established."
+    },
+    {
+      "target": "missing-china-price-specialized-tarmac-sl8",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already recorded with its original date; exact selected-option checkout and stock are not established."
+    }
+  ]
+}
