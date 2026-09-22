@@ -1,0 +1,169 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-17-2026-09-22",
+  "status": "completed-with-one-qualified-stiffness-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 10,
+  "full_field_closures": 1,
+  "catalog_changes": 1,
+  "coarse_gap_count_before": 717,
+  "coarse_gap_count_after": 716,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-sport-pes",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current exact PARDUS ROBIN SPORT—PES page publishes the Magene PES 2x12 BOM, T800 carbon frame and fork, and 700x40C maximum, but no complete-bike weight. The current mainland index identifies the retained PES carbon-wheel build without exposing a controlled mass.",
+      "sources": [
+        "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030",
+        "https://www.jd.com/jiage/13181bb2acc6f133e92d.html?brand=PARDUS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default"
+      ],
+      "proof": "Current official page read on 2026-09-22; technical-parameter and geometry sections contain no weight claim. JD discovery confirms exact identity but no selected-bike weighing basis.",
+      "next_trigger": "Exact controlled stock weight for the retained PES carbon-wheel build with size, pedals and measurement basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "triaero-a9",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current A9 complete-bike page reports 7.98 kg for an R8020 Ultegra build, while the retained candidate is the hand-painted Pikachu Shimano 105 Di2 R7170 option. The current JD index confirms the R7170 identity but exposes no complete weight, so the R8020 value is not transferred.",
+      "sources": [
+        "https://triaero.de/products/carbon-full-bike-road-bike-disc-brake-bicycle-a9",
+        "https://www.jd.com/xinkuan/1318949842a88a3ac1cc.html",
+        "https://triaero.com/products/disc-road-frame-a9"
+      ],
+      "proof": "Current exact A9 page and mainland index were read; the complete-weight claim is tied to a different R8020 BOM and selected R7170 components are not shown.",
+      "next_trigger": "Exact retained Pikachu/R7170 selected-build weight with size and equipment basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-time-tt",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current exact Cycletrack TIME/时光 TT page documents a T800 frame, ER9 TT drivetrain and fitted 28C tires but publishes no maximum tire-clearance value. Current JD listings identify the same TIME TT family without a maximum.",
+      "sources": [
+        "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike",
+        "https://www.jd.com/jiage/131875898b5fa060fdc8.html"
+      ],
+      "proof": "Current official and mainland listing reads distinguish fitted 28C from a maximum; neither page supplies an attributable maximum.",
+      "next_trigger": "Exact manufacturer or build document stating the maximum compatible tire for the retained TIME TT chassis.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cyctrac-r18",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current TWITTER R18 (Racing ED) page lists the R7170 build and fitted Maxxis Pursuer 700x28C tires, but no maximum tire clearance. The regional Cyctrac naming does not add a separate clearance claim.",
+      "sources": [
+        "https://www.twittercycles.com/products/R18Racing%20EDBike.html"
+      ],
+      "proof": "Current exact manufacturer page read on 2026-09-22; its tire row is fitted specification only and has no maximum-clearance statement.",
+      "next_trigger": "Exact R18 frame/fork clearance statement or documented measurement tied to the same generation.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-gtv5-plus",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Retained seller image resolves to GITO G530 rather than the unsupported GTV5+ label. Current GITO 530 retailer page lists fitted 700x28C tires but no maximum; G530 evidence cannot transfer to a different GTV5+ identity.",
+      "sources": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B์%E0%B8%9อ%E0%B8%น-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%อ%E0%B8%คาร์%E0%B8%บ%E0%B8%อน%E0%B8%94%E0%B8%B4%E0%B8%ส%E0%B8%ก%E0%B9%8C%E0%B9%80%E0%B8%บ%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "proof": "Current exact G530 retailer read and retained 2026-08-08 card identity were kept separate; fitted 28C is not a maximum and no exact GTV5+ page was found.",
+      "next_trigger": "Exact GITO G530/GTV5 model page or frame document stating maximum clearance and resolving the retained SKU.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-suprema-7120",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current JAVA Suprema regional reference pages list 28C fitted tires/build details but do not publish a maximum clearance, and regional carbon/BOM variants do not prove the retained mainland trim.",
+      "sources": [
+        "https://bicicletasjavacolombia.com/producto/bike/suprema",
+        "https://javabikes.com.uy/product/suprema"
+      ],
+      "proof": "Current exact-model regional reads distinguish fitted 28C from maximum clearance and preserve the selected mainland trim as unresolved.",
+      "next_trigger": "Exact Suprema 7120 frame or current mainland build document with maximum-clearance statement.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vega-tt-24s",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current JAVA Vega TT 24S regional pages document the carbon TT build and 9.8 kg Chilean reference weight, but publish no maximum tire clearance or exact selected mainland tire specification.",
+      "sources": [
+        "https://www.javabikes.cl/product/vega-tt-24s",
+        "https://javabicycles.com.mx/products/vega",
+        "https://www.jd.com/jiage/131868419e336463de7f.html"
+      ],
+      "proof": "Current regional and mainland-index reads establish model family and build variants but contain no attributable maximum-clearance value.",
+      "next_trigger": "Exact Vega TT 24S frame/fork clearance document or selected-build measurement.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-7170",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current JAVA Vittoria Air R7170 page documents the matching 105 Di2/88 mm-front/rear-disc-wheel reference build and fitted Continental 700x28C tires, but 28C is not presented as a maximum and mainland price cards remain separate variants.",
+      "sources": [
+        "https://www.javabikes.cl/product/vittoria-air-r7170",
+        "https://www.jd.com/jiage/1318ef33768c430b38e7.html"
+      ],
+      "proof": "Current exact-model page read on 2026-09-22; its tire row is fitted equipment only and does not establish maximum clearance or merge separate mainland SKUs.",
+      "next_trigger": "Exact Vittoria 7170 frame/fork maximum-clearance statement tied to retained mainland variant.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-roubaix-sl8",
+      "outcome": "qualified-stiffness-accepted",
+      "finding": "BikeRadar's current Roubaix SL8 Expert review describes a plush Future Shock front and a stiffer-feeling rear, noting the contrast can feel unbalanced on smooth roads. This is meaningful qualitative operating evidence for the Roubaix SL8 platform, not a numeric frame test or proof every Tiagra component build feels identical.",
+      "sources": [
+        "https://www.bikeradar.com/specialized-roubaix-sl8-expert-review",
+        "https://www.specialized.com/us/en/roubaix-sl8-shimano-tiagra/p/4221830"
+      ],
+      "proof": "Independent exact-platform review read on 2026-09-22 and reconciled against current Tiagra page. Expert-build caveat is recorded explicitly.",
+      "next_trigger": "Numeric test or exact Tiagra build review if component-level stiffness evidence is required.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-gelaro-sf",
+      "outcome": "drivetrain-unresolved",
+      "finding": "Current exact SAVA Gelaro SF6 page offers both CUES U6000 11S and U6020 10S options and documents the U6000 build separately. Retained mainland card says only Gelaro SF/越界 SF and its screenshot does not expose the selected suffix, so neither drivetrain is assigned.",
+      "sources": [
+        "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike",
+        "taobao-snapshot-2026-08-08"
+      ],
+      "proof": "Current manufacturer page read on 2026-09-22; archived seller snapshot remains variant-mismatch and only identifies the SF6 family. No selection inference was made.",
+      "next_trigger": "Seller SKU/order option or image explicitly mapping retained CNY 3,847.25 card to U6000 11S or U6020 10S.",
+      "fields": [
+        "drivetrain"
+      ]
+    }
+  ],
+  "validation": {
+    "validate": "Passed in npm run check: 41 brands, 38 platforms, 41 variants, 69 prices, 959 sources, 212 primary images, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1461 atomic research records.",
+    "coverage_accept": "Passed in npm run check: 212 images, 69 price observations, 959 sources, and 236 candidates protected.",
+    "full_gate": "Passed in npm run check: privacy, validate, research:check, coverage:check, 304 tests, build (584 pages), and SEO (456 indexable / 128 noindex)."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

@@ -17,7 +17,8 @@
   "source_ids": [
     "specialized-roubaix-sl8-tiagra-official-2026-08-17",
     "specialized-cn-store-finder-2026",
-    "specialized-roubaix-sl8-tiagra-current-2026-09-01"
+    "specialized-roubaix-sl8-tiagra-current-2026-09-01",
+    "specialized-roubaix-sl8-stiffness-bikeradar-2026-09-22"
   ],
   "official_price": {
     "amount_cny": 15990,
@@ -33,8 +34,9 @@
     "tire_clearance_mm": 40,
     "complete_weight_basis": "Current exact manufacturer claim for size 56, production-painted configuration as pictured; actual weight varies by color, size and component variation",
     "drivetrain": "Shimano Tiagra hydraulic 2x10: 4720 levers, Tiagra 10-speed rear derailleur, Shimano 105 R7000 front derailleur, 11-34T cassette and 50/34T crank",
-    "frame_stiffness_status": "No numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas; Future Shock impact/compliance evidence is kept separate"
+    "stiffness_evidence": "BikeRadar describes the Roubaix SL8 Expert as having a plush Future Shock front and a stiffer-feeling rear. This is qualified qualitative operating evidence for the Roubaix SL8 platform, not a numeric frame test or proof that every Tiagra component build feels identical.",
+    "frame_stiffness_status": "Qualified qualitative platform evidence: BikeRadar describes the Roubaix SL8 Expert as having a plush Future Shock front and a stiffer-feeling rear. This supports an operating stiffness/compliance distinction for the Roubaix SL8 platform, not a numeric frame test or proof that every Tiagra component build feels identical; compliance evidence is kept separate from any numeric frame-stiffness claim."
   },
-  "source_note": "The current exact Tiagra page publishes the complete 2x10 drivetrain and a 9.46 kg size-56 production-painted weight basis. The dated China catalog price remains CNY 15,990 from CNY 17,990; stock and offer duration remain unverified. No frame-stiffness result was inferred from compliance evidence.",
-  "last_reviewed": "2026-09-01"
+  "source_note": "The current exact Tiagra page publishes the complete 2x10 drivetrain and a 9.46 kg size-56 production-painted weight basis. The dated China catalog price remains CNY 15,990 from CNY 17,990; stock and offer duration remain unverified. BikeRadar adds qualified qualitative Roubaix SL8 platform evidence: plush Future Shock front with a stiffer-feeling rear; this is not a numeric frame test and is not silently treated as an exact Tiagra build measurement.",
+  "last_reviewed": "2026-09-22"
 }
