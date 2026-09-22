@@ -102,7 +102,7 @@ export function renderPost(ctx, post, allPosts) {
     author: { '@type': 'Organization', name: 'China Bikes', url: `${ctx.siteUrl}${url(ctx.base, '/methodology/')}` },
     publisher: { '@type': 'Organization', name: 'China Bikes', url: `${ctx.siteUrl}${url(ctx.base, '/')}` },
     isAccessibleForFree: true,
-    image: editorialImageMeta(ctx, post.image_id).image,
+    image: `${ctx.siteUrl}${editorialImageMeta(ctx, post.image_id).image}`,
     citation: post.model_ids.map((id) => `${ctx.siteUrl}${url(ctx.base, `/models/${id}/`)}#source-records`)
   };
   const breadcrumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
