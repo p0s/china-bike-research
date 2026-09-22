@@ -1,0 +1,170 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-09-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 9,
+  "reviewed_fields": 23,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 724,
+  "coarse_gap_count_after": 724,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "outcome": "mainland-price-and-exact-build-unresolved",
+      "finding": "Current 2026 UK SL1 price is not a mainland CNY observation. The 7.4 kg road.cc test describes a different 2025 build. Manufacturer directs weight enquiries to dealers.",
+      "sources": [
+        "https://www.giant-bicycles.com/gb/defy-advanced-sl-1",
+        "https://giant.com.cn/index.php/index/bike_finder.html?surface=4",
+        "https://road.cc/content/review/giant-defy-advanced-sl-1-315547"
+      ],
+      "proof": "Worker current manufacturer and independent review reads; UK price and 2025 mass excluded.",
+      "next_trigger": "Exact mainland SL1 listing or measured matching 2026 build with size and component basis.",
+      "fields": [
+        "price",
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-revolt-advanced",
+      "outcome": "regional-measured-reference-only",
+      "finding": "Cycling Weekly measured 2026 M/L at 9.6 kg with P-X2 wheels and 45C Crosscut tires. Review prose says FSA 48/32 but its table says Shimano FC-RX610 46/30. China manufacturer confirms FSA Omega 48/32 and GRX RX-820/RX-610 but gives no wheel/tire mapping. Exact mainland build equivalence remains unestablished; retain 9.6 kg only in this regional research reference. Stiffness descriptions are qualitative.",
+      "sources": [
+        "https://www.cyclingweekly.com/reviews/gravel-bikes/giant-revolt-advanced-2-review-a-good-value-all-round-gravel-bike",
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852"
+      ],
+      "proof": "Worker current China manufacturer and review reads; parent independently read review mass and component prose. Review's internally conflicting crank specification and absent mainland wheel/tire mapping prevent scalar adoption.",
+      "next_trigger": "Exact mainland wheel/tire/year specification and controlled frame stiffness test.",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-fuoco-2025",
+      "outcome": "unresolved",
+      "finding": "Regional manufacturer specifies fitted Michelin 25C, not maximum clearance. Rigidity wording concerns wheels rather than a measured frame result.",
+      "sources": [
+        "https://www.javabikes.cl/product/fuoco-top-105-2"
+      ],
+      "proof": "Worker current exact regional manufacturer page read.",
+      "next_trigger": "Exact-trim maximum clearance statement or controlled frame test.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "paragon-jazz-2026",
+      "outcome": "durable-exact-item-unresolved",
+      "finding": "JD indexes expose JAZZ/105/carbon-wheel options but no durable exact build specifications for weight, maximum clearance or measured stiffness; current dynamic page did not return PARAGON.",
+      "sources": [
+        "https://www.jd.com/book/13180e57736baf601a8e.html",
+        "https://www.jd.com/zuozhe/1318f8f947af595cfaeb.html?electedExtAttrSet=2617%2C&extAttrValue=expand_name%2C%4034697%3A%3A2617&sort_type=sort_commentcount_desc"
+      ],
+      "proof": "Worker current marketplace discovery reads only; no exact accepted scalar.",
+      "next_trigger": "Durable manufacturer or exact retailer specification.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-super-sport",
+      "outcome": "unresolved-different-build-excluded",
+      "finding": "Official 105 HDB route gives no complete weight or maximum. Reported 9.01 kg mechanical-brake Super Sport Disc is a different configuration. Fitted 23–25C and generic rigidity claims do not close the other fields.",
+      "sources": [
+        "https://parduscycle.com/Hightxq.aspx?cc=16548&color=16542&id=21398&pz=16539&t=27446",
+        "https://www.autohome.com.cn/ask/22376950.html"
+      ],
+      "proof": "Worker current official and secondary report reads; mechanical-brake mass excluded.",
+      "next_trigger": "Original-generation 105 HDB specifications or exact-build test.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-f",
+      "outcome": "regional-compatibility-lead-only",
+      "finding": "Current Thai retailer's flat-bar S-RIDE 1x12 Uragano F supports 700x38C, without identifying a maximum or complete mass. Older GRX 2x11 9.5–9.7 kg report cannot transfer. HFS-EPS marketing is not a controlled stiffness result.",
+      "sources": [
+        "https://www.888bike.net/cn/product/11525/pardus-uragano-f-gravel-bike-%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-12-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B9%81%E0%B8%AE%E0%B8%99%E0%B8%94%E0%B8%95%E0%B8%A3%E0%B8%87-flat-bar-%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B8%E0%B8%A2-%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%9A-%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%88%E0%B8%9A%E0%B8%84%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7",
+        "https://wap.zol.com.cn/ask/x_35730081.html"
+      ],
+      "proof": "Worker current retailer and older report reads; 38C retained in dated research only because maximum and exact mainland SKU are unestablished.",
+      "next_trigger": "Exact retained mainland SKU and manufacturer maximum or weighed current build.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "qingsha-carbon-folding",
+      "outcome": "unresolved",
+      "finding": "Current QS91 listings establish 20-inch carbon folding identity but leave size/weight in unspecified product details. The 7 kg QS81 is a different model. No maximum or stiffness test found.",
+      "sources": [
+        "https://item.gmarket.co.kr/Item?goodsCode=4799975147",
+        "https://www.jd.com/xinghao/1318c8feaa0a1a155fdd.html",
+        "https://www.alibaba.com/wholesale/folding-bike-stand-20.html"
+      ],
+      "proof": "Worker current retail/index reads; QS81 value explicitly excluded.",
+      "next_trigger": "Exact QS91 technical sheet or measured matching wheel/build.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "trinx-gtr-c6",
+      "outcome": "china-carbon-build-unresolved",
+      "finding": "China JD index identifies carbon 12-speed options, but direct items timed out. International aluminum GTR C6 with fitted 40C differs from the retained China carbon model and does not establish maximum clearance. No stiffness test found.",
+      "sources": [
+        "https://www.jd.com/brand/1318063de872c7288489.html",
+        "https://item.jd.com/10219131109781.html",
+        "https://item.jd.com/10223331242160.html",
+        "https://derman.cl/ciclismo/8118-bicicleta-gravel-trinx-gtr-c6-ltwoo-1x12.html"
+      ],
+      "proof": "Worker current index and international retailer reads; exact China item access failed, so no missing value inferred.",
+      "next_trigger": "Readable exact China carbon SKU specification or independent test.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-cyclone-sport",
+      "outcome": "unresolved",
+      "finding": "Current manufacturer RS24 page specifies fitted 28C for both wheels, not maximum clearance; stiffness and wider-clearance statements are qualitative.",
+      "sources": [
+        "https://www.twittercycles.com/products/CYCLONE-3rd%20(RS24)-road-bike.html",
+        "https://twitterbikeusa.com/blogs/news/the-top-3-road-bikes-from-twitter-bicycles-for-2024-ultimate-performance-meets-value"
+      ],
+      "proof": "Worker current manufacturer and regional marketing reads. Old lowercase URL returned 404; current exact route reached via manufacturer collection.",
+      "next_trigger": "Exact RS24 maximum-clearance specification or reproducible stiffness test.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Dated evidence only; no catalog or code changes. Regional mass and fitted-tire references remain in this report, not adopted as exact mainland scalars.",
+    "reused_gate": "300 tests, 584 pages and SEO passed at 7b9c4bb."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

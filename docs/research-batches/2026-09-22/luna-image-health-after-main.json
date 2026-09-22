@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-09-22",
+  "source_commit": "7b9c4bb3fbcdb7542f479c7f9caa15bed74d9046",
+  "command": "npm run --silent image:report",
+  "exit_code": 0,
+  "remote_resources": 198,
+  "healthy": 188,
+  "host_blocked": 0,
+  "wrong_content_type": 2,
+  "broken": 1,
+  "unreachable": 7,
+  "scope": "Current URLs after merging main's reviewed media changes. Local asset/data validation is covered by the 300-test full gate at this commit.",
+  "limitations": "The report is non-strict: exit zero does not mean every image works. Third-party failures retain the site's existing fallback. The earlier sandbox run could not reach any remote URL and is not source-health evidence. The host retry above completed successfully. Individual result output was truncated, so this artifact preserves the complete summary counts without inventing the missing per-resource details."
+}
