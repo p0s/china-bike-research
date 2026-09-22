@@ -850,7 +850,8 @@ test('groupsets are one image-led comparison and a primary destination', () => {
   assert.match(detail, /href="\/china-bike-research\/electronic-shifting\/">system reference<\/a>/);
   assert.match(html, /<footer[\s\S]*?href="\/china-bike-research\/electronic-shifting\/">Groupsets<\/a>/);
   const primaryNav = html.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 4);
+  assert.equal((primaryNav.match(/<a\b/g) ?? []).length, 5);
+  assert.match(primaryNav, />Blog<\/a>/);
   assert.match(primaryNav, />Bikes<\/a>[\s\S]*>Framesets<\/a>[\s\S]*>Build<\/a>[\s\S]*>Groupsets<\/a>/);
   assert.doesNotMatch(primaryNav, /Methodology|GitHub/);
   const referenceNav = reference.match(/<nav id="main-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';

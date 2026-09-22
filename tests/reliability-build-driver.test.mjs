@@ -25,6 +25,9 @@ function fixture(t,mode='',base='') {
  export const formatAllInPrice=()=> '¥100–200';export const formatPrice=()=> '¥100';
  export const maxClearance=()=>null;export const clearanceLongLabel=()=>'';
  `);
+ fs.writeFileSync(path.join(root,'src/lib/posts.mjs'),"export const loadPosts=()=>[];export const validatePostReferences=()=>{};export const renderBlogIndex=()=>'<html>Blog</html>';export const renderPost=()=>'<html>Post</html>';export const postLastmod=()=> '2026-09-18';");
+ fs.writeFileSync(path.join(root,'src/lib/i18n.mjs'),"export const LOCALES=['en','zh-Hans'];export const localePath=(route,locale)=>locale==='zh-Hans'?'/zh'+route:route;");
+ fs.writeFileSync(path.join(root,'src/lib/indexing.mjs'),"export const candidateIndexable=()=>false;");
  fs.writeFileSync(path.join(root,'src/lib/landings.mjs'),'export const buildLandingPages=()=>({pages:[],brandPages:[]});');
  fs.writeFileSync(path.join(root,'src/lib/seo.mjs'),'export const latestDate=()=>"2026-09-01";export const sitemapXml=()=>"<urlset/>";');
  fs.writeFileSync(path.join(root,'src/render.mjs'),`
