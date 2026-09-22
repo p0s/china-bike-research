@@ -1,0 +1,175 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-11-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 10,
+  "reviewed_fields": 20,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 723,
+  "coarse_gap_count_after": 723,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "alums-da54",
+      "outcome": "unresolved",
+      "finding": "Global DA54 reference is Ultegra Di2 R8170/R8150 2x12 (the page mislabels R8150 as 105), but retained mainland selection remains unknown. Manufacturer gives no complete mass; historical Australian 8.4 kg includes pedals and a different build. Existing regional references are retained.",
+      "sources": [
+        "https://www.alvas.bike/da/da54.html"
+      ],
+      "proof": "Worker current full manufacturer read; Australian review reused with its historical date.",
+      "next_trigger": "Exact retained mainland SKU/BOM and complete mass with size/wheels/pedals.",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure-adr",
+      "outcome": "unresolved",
+      "finding": "Official 105 Di2 R7170/R7150 2x12 is a known reference trim. Current JD index shows a 24-speed 105 Di2/3T carbon option but does not map retained card. Official frame/fork masses do not establish complete-bike mass.",
+      "sources": [
+        "https://cinelli-milano.com/products/pressure-adr-2024-105-disc-di2",
+        "https://www.jd.com/jiage/1318a5d0a7cb2eb41341.html"
+      ],
+      "proof": "Worker current full manufacturer and mainland-index reads; existing factory-option reference already records this trim.",
+      "next_trigger": "Selected mainland SKU/BOM and complete weight.",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-phantom-rx24",
+      "outcome": "unresolved",
+      "finding": "Official approximately8.5kg RX reference and fitted25C are already recorded. JD exposes alloy/carbon wheels without retained-option mapping; no maximum is established.",
+      "sources": [
+        "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women",
+        "https://www.jd.com/brand/13182a78cbb1709aaa6e.html"
+      ],
+      "proof": "Manufacturer full source reused from2026-08-29; current search snippet rediscovered it and current JD index confirmed options. No fresh full manufacturer read claimed.",
+      "next_trigger": "Exact retained wheel option and mass basis or maximum-width statement.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elro-f1",
+      "outcome": "identity-gated-unresolved",
+      "finding": "Retained ELRO F1 image remains unbridged to indexed OBIKE F1. Exact SMZDM route timed out; JD snippets show multiple24-speed variants but neither selected weight nor maximum.",
+      "sources": [
+        "https://wiki.smzdm.com/gongluche/b_65192/"
+      ],
+      "proof": "Worker current exact-page access failure and discovery snippets only.",
+      "next_trigger": "Durable SKU/image bridge resolving ELRO versus OBIKE, then exact facts.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "outcome": "retailer-model-conflict",
+      "finding": "Current retailer title/SKU says G525, while description and tags say G530. Approximately9.5kg remains conflicted evidence; fitted28C is not a maximum. No catalog scalar adopted.",
+      "sources": [
+        "https://www.888bike.net/en/product/tag/shimano-105",
+        "https://www.888bike.net/en/product/tag/shimano-105"
+      ],
+      "proof": "Worker reached a direct item from current retailer tag and reported internal model contradiction; parent resolves the historical exact G525 URL from its source record, not a fresh independent read.",
+      "next_trigger": "Corrected exact G525 item/SKU, complete mass and explicit maximum.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-high-unknown",
+      "outcome": "unresolved",
+      "finding": "Existing G530 retailer source already records approximately8.8kg size460 with T800/105 hydraulic/carbon-wave wheels. Retained mainland card mapping is absent; fitted28C remains distinct from maximum.",
+      "sources": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "proof": "Historical2026-08-29 exact retailer source reused; current search snippet rediscovered listing, but worker did not reopen full direct page.",
+      "next_trigger": "Retained mainland G530 SKU/wheels and exact maximum.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-er7-2026",
+      "outcome": "unresolved",
+      "finding": "Current exact regional ER7 carbon/alloy-wheel page gives no complete mass or maximum; fitted28C is not maximum. Chile9.2kg belongs to Vittoria Air R7170 and is excluded.",
+      "sources": [
+        "https://javabikenorthamerica.com/products/vittoria-er7",
+        "https://www.javabikes.com/Products/5.html"
+      ],
+      "proof": "Worker current regional exact-model full read and manufacturer catalog.",
+      "next_trigger": "Exact retained ER7 mass/basis and explicit maximum.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kung-horizon",
+      "outcome": "unresolved",
+      "finding": "Current JD index mixes complete entry/FEO/custom builds and framesets. No complete mass tied to retained CNY6999 option or maximum; sibling MACH values not transferred.",
+      "sources": [
+        "https://www.jd.com/jiage/1318d5556559cbbb311f.html"
+      ],
+      "proof": "Worker current mainland index full read.",
+      "next_trigger": "Exact retained HORIZON item/SKU specification.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-leina-road",
+      "outcome": "unresolved",
+      "finding": "Exact JD route redirected to generic Toray-carbon results. Historical sources show105Di2/mechanical options with no mapping to CNY7999 card, mass or maximum.",
+      "sources": [
+        "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default",
+        "https://www.bilibili.com/video/BV15SYVzAEbR/"
+      ],
+      "proof": "Current route misdirected; historical JD and brand-associated Bilibili evidence reused without refreshing their dates.",
+      "next_trigger": "Accessible exact Leina SKU/BOM with mass and maximum.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tavelo-arow-sl-community-lead",
+      "outcome": "unresolved",
+      "finding": "Current USD2150 global SL frameset, EUR2799 German SL frameset and EUR2950 Belgian frame/cockpit/fit package excluding VAT do not price the retained6.2kg custom complete bike. German Arow105Di2 complete reference is not bridged to that SL custom BOM.",
+      "sources": [
+        "https://www.tavelo.cc/products/tavelo-arow-sl-neo-black",
+        "https://www.tavelo-bikes.de/arow/",
+        "https://www.tavelobike.be/product-page/tavelo-arow-sl-plaid"
+      ],
+      "proof": "Worker current full manufacturer and regional dealer reads. Different markets/packages remain dated research references only.",
+      "next_trigger": "Exact mainland custom-build quote/purchase record and complete BOM.",
+      "fields": [
+        "price",
+        "drivetrain"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only batch; supported regional references already exist or do not identify the retained product/package. No data/code changes.",
+    "reused_gate": "304 tests,584pages and SEO passed for d3e6f97; relevant inputs unchanged, no broad rerun."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
