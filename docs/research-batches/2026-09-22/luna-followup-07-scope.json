@@ -1,0 +1,116 @@
+{
+  "batch_id": "luna-followup-07-2026-09-22",
+  "base_commit": "c7ec5db3836b859289e6aaea715083b4a4394187",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 9,
+  "atomic_fields": 24,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "gito-wave",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-carbon-hydraulic-unknown",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-lampo-carbon-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-youlong-2",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "rolling-stone-comp",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hongfu-gravel",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elves-mori-community-lead",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

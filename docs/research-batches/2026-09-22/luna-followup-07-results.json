@@ -1,0 +1,172 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-07-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 9,
+  "reviewed_fields": 24,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 722,
+  "coarse_gap_count_after": 724,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "gito-wave",
+      "outcome": "identity-unresolved",
+      "finding": "Wave carbon wheel wording does not identify one GITO frame or selected build. Current listing title mentions Shimano105 24-speed and hydraulic brakes, but no exact model bridge, mass or maximum clearance.",
+      "sources": [
+        "https://shopee.tw/GITO%E5%85%A8%E7%A2%B3%E7%B4%96%E7%B6%AD%E7%A0%B4%E9%A2%A8%E7%AB%B6%E9%80%9F%E5%85%AC%E8%B7%AF%E8%BB%8A24%E9%80%9F%E7%A6%A7%E7%91%AA%E8%AB%BE105%E5%A4%A7%E5%A5%97%E6%B2%B9%E7%A2%9F%E5%89%8E%E6%B3%A2%E6%B5%AA%E7%A2%B3%E8%BC%AA%E7%B5%84%EF%BC%88%E9%81%8B%E8%B2%BB%E5%92%A8%E8%A9%A2%E5%AE%A2%E6%9C%8D5.7-i.987806625.52810110736"
+      ],
+      "next_trigger": "Exact retained frame/SKU and build.",
+      "proof": "Worker current listing discovery plus GITO/888Bike/Alibaba searches; existing G320/G530/G525 facts not transferred.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-carbon-hydraulic-unknown",
+      "outcome": "identity-unresolved",
+      "finding": "Current dealer range contains incompatible Siluro, Fuoco, Veloce, Volata and TT builds. The retained generic JAVA card cannot identify one model; dependent fields stop.",
+      "sources": [
+        "https://www.bykindia.com/collections/java-bikes-premium-road-tt-performance-bicycles",
+        "https://www.javabikes.com/"
+      ],
+      "next_trigger": "Exact retained JAVA model/SKU and selected BOM.",
+      "proof": "Dealer collection read; manufacturer home redirected to an anti-bot page and was not bypassed.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-lampo-carbon-road",
+      "outcome": "identity-unresolved",
+      "finding": "Historical mainland launch article establishes several LAMPO road models and a22-speed carbon version without mapping this retained card. No exact weight, drivetrain or maximum accepted.",
+      "sources": [
+        "https://www.biketo.com/product/50138.html",
+        "https://www.lampobike.com/News/117.html"
+      ],
+      "next_trigger": "Exact LAMPO model/SKU and selected variant.",
+      "proof": "Worker current read of historical article; official J-AIR route timed out.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-youlong-2",
+      "outcome": "specifications-unresolved",
+      "finding": "Exact name searches located the retained public video index without a readable specification sheet. No weight, selected drivetrain or maximum clearance accepted.",
+      "sources": [
+        "https://jingxuan.douyin.com/m/video/7610383491255594853"
+      ],
+      "next_trigger": "Accessible exact-model/SKU specification.",
+      "proof": "Discovery index and current exact-name searches only, not a new full video/specification read.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark",
+      "outcome": "generation-unresolved",
+      "finding": "Current Sport105 R7000 2x11 and RS classic105 R7120 2x12 are different branches; the retained Spark card aggregates branches. Sport fitted28C and historical2018 compatibility cannot establish a maximum for the unresolved generation. No complete weight found.",
+      "sources": [
+        "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444",
+        "https://www.parduscycle.com/Hightxq.aspx?cc=7248&color=17540&id=27456&pz=17539&t=27444",
+        "https://www.parduscycle.com/newsxq.aspx?id=1201&t=27"
+      ],
+      "next_trigger": "Selected generation/SKU bridge.",
+      "proof": "Worker manufacturer page and historical manufacturer article reads.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "rolling-stone-comp",
+      "outcome": "build-unresolved",
+      "finding": "Exact COMPASS2015 article supplies frame/fork masses and electronic-shifting compatibility, not selected complete weight/drivetrain. No tire maximum. Parts were not summed into an invented complete mass.",
+      "sources": [
+        "https://www.wildto.com/news/30313.html",
+        "https://www.sohu.com/a/55329237_233857"
+      ],
+      "next_trigger": "Exact complete package/BOM and clearance source.",
+      "proof": "Worker historical product article read; Sohu discovered in search but direct fetch timed out.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "outcome": "maximum-unresolved",
+      "finding": "Manufacturer search snippet lists fitted25C; it is not a maximum clearance specification. No new numeric maximum accepted.",
+      "sources": [
+        "https://www.upland.bike/zh/product/308.html"
+      ],
+      "next_trigger": "Manufacturer maximum-tire statement or documented exact R70 clearance measurement.",
+      "proof": "Search snippet only; direct manufacturer page timed out.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hongfu-gravel",
+      "outcome": "identity-and-test-unresolved",
+      "finding": "Current catalog includes FM188, New CX and FM279 possibilities without a bridge to the retained frame. Material grades and generic stiffness language do not establish controlled stiffness.",
+      "sources": [
+        "https://www.hongfu-bikes.com/products/gravelbike/",
+        "https://www.hongfu-bikes.com/products/4.html",
+        "https://www.hongfu-bikes.com/products/72.html",
+        "https://www.hongfu-bikes.com/products/17.html",
+        "https://www.mtb-news.de/forum/t/carbonda-gravel-carbonrahmen-aus-china.893336/page-18",
+        "https://forum.ridinggravel.com/post/chinese-carbon-gravel-build-chinese-carbon-gravel-build-8254658?trail=2200"
+      ],
+      "next_trigger": "Exact retained Hongfu platform and attributable test/review basis.",
+      "proof": "Worker manufacturer and forum routes checked; no controlled result found.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elves-mori-community-lead",
+      "outcome": "subtrim-unresolved",
+      "finding": "Current AeroX and GTX have different frame-mass ranges and maxima: AeroX960–1080g with45C/650Bx50C; GTX922–1040g with700x50C. Claims exclude paint/metal parts and vary by size. Both current subtrims cite T800/T1000, but retained community frame identity is unmapped. No controlled stiffness result.",
+      "sources": [
+        "https://elvesbikesaustralia.com.au/products/mori-aerox",
+        "https://usa.elvesbike.com/products/elves-mori-gtx-endurance-race-carbon-gravel-disc-frame-all-road-carbon-gravel-bike",
+        "https://usa.elvesbike.com/products/elves-mori-aerox",
+        "https://elvesbike.com/more.php?id=188&lm=47"
+      ],
+      "next_trigger": "Retained Mori subtrim, generation and size/package bridge.",
+      "proof": "Worker current regional official subtrim reads; conditional references not assigned to retained candidate.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only batch; no catalog/code changes. Concurrent separately delivered V3 correction04b raised overall gaps from722 to724.",
+    "reused_gate": "290 tests,584 pages and SEO passed at efd492c. No additional broad gate for this report."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
