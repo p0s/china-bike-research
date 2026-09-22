@@ -95,8 +95,8 @@ test('a real low-evidence profile is noindex while useful model and original rec
   assert.match(productHtml, /index,follow,max-image-preview:large/);
   assert.match(productHtml, /尚未逐条翻译/);
 });
-test('four bilingual articles have valid stable identities and only known evidence references', () => {
-  assert.equal(posts.length, 4);
+test('bilingual articles and scheduled drafts have valid stable identities and only known evidence references', () => {
+  assert.equal(posts.length, 24);
   assert.doesNotThrow(() => validatePostReferences(posts, data, products));
   for (const post of posts) {
     assert.match(post.translations['zh-Hans'].title, /[\u3400-\u9fff]/);
@@ -131,7 +131,7 @@ test('gravel evidence table derives the exact recorded price and date, never tod
 });
 
 test('article comparisons use topic-specific facts and keep unknown drivetrain limits unknown', () => {
-  const clearance = posts.find((post) => post.comparison.kind === 'clearance');
+  const clearance = posts.find((post) => post.comparison?.kind === 'clearance');
   const table = renderEvidenceTable(ctx, clearance);
   const rows = [...table.matchAll(/<tr>(.*?)<\/tr>/g)].map((match) => match[1]);
   const incolor = rows.find((row) => row.includes('/models/incolor-speedster-sr-frameset/'));
@@ -142,7 +142,7 @@ test('article comparisons use topic-specific facts and keep unknown drivetrain l
   assert.ok(lightcarbon.includes('<td>—</td><td>—</td>'));
   assert.ok(lightcarbon.includes('<strong>38 mm</strong>'));
   assert.ok(!table.includes('Recorded price'));
-  const gravel = renderEvidenceTable(ctx, posts.find((post) => post.comparison.kind === 'gravel'));
+  const gravel = renderEvidenceTable(ctx, posts.find((post) => post.comparison?.kind === 'gravel'));
   assert.ok(gravel.includes('2×12') && gravel.includes('1×12'));
   assert.ok(gravel.includes('different measurement conditions'));
   assert.ok(!/remaining-build allowance|observed-search-card|public-market-observation/.test(gravel));
@@ -171,15 +171,15 @@ for (const locale of ['en', 'zh-Hans']) test(`article photos stay beside their a
     }
     assert.ok(html.indexOf('class="page-lede"') < html.indexOf('article-cover'));
   }
-  const importer = posts.find((post) => post.comparison.kind === 'price-basis');
+  const importer = posts.find((post) => post.comparison?.kind === 'price-basis');
   const html = renderPost({...ctx, locale}, importer, posts);
   const worksheet = html.split('class="article-table article-table-worksheet"')[1].split('</table>')[0];
   assert.ok(!/¥0|>0<|Total|总计/.test(worksheet));
 });
 
 test('mascot cutouts and illustrated headers have provenance and immutable optimized files', () => {
-  assert.equal(editorialImages.length, 5);
-  assert.equal(new Set(editorialImages.map((image) => image.id)).size, 5);
+  assert.equal(editorialImages.length, 7);
+  assert.equal(new Set(editorialImages.map((image) => image.id)).size, 7);
   for (const image of editorialImages) {
     assert.equal(image.source.kind, 'project-generated');
     assert.ok(image.alt.en && image.alt['zh-Hans'] && image.prompt);
@@ -220,7 +220,7 @@ test('every referenced model has an attributable remote photo and shared trims a
 for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`illustrated headers and real inline model photos stay distinct: ${base || '/'} ${locale}`, () => {
   const options = { ...ctx, base, locale };
   const index = renderBlogIndex(options, posts);
-  assert.equal((index.match(/data-blog-header-image/g) || []).length, 5);
+  assert.equal((index.match(/data-blog-header-image/g) || []).length, posts.length + 1);
   assert.equal((index.match(/data-blog-bike-image/g) || []).length, 0);
   assert.equal((index.match(/data-blog-mascot/g) || []).length, 0);
   assert.ok(index.includes('class="editorial-figure illustrated-header blog-banner"'));
