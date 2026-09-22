@@ -279,7 +279,7 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
   assert.match(candidates.get('pardus-spark').facts.frame_material, /HS-EPS\+.*HS-HPT/);
   assert.match(candidates.get('pardus-spark').facts.stiffness_evidence, /20% greater pedaling stiffness.*manufacturer-relative/);
   assert.match(candidates.get('winspace-m6').facts.frame_material, /T700\+T800\+M40\+M60/);
-  assert.equal(candidates.get('winspace-m6').facts.stiffness_evidence, undefined);
+  assert.match(candidates.get('winspace-m6').facts.stiffness_evidence, /mixed, build-specific qualitative comparisons, not controlled frame-only measurements/);
   assert.match(candidates.get('winspace-t1600').facts.frame_material, /T1000\+T1100.*Kevlar/);
   assert.match(candidates.get('winspace-t1600').facts.stiffness_evidence, /engineered for stiffness and power transfer/);
   assert.match(candidates.get('xds-ad350-2026').facts.frame_material, /X6 ultra-light aluminum.*carbon-fiber fork/);
@@ -325,6 +325,7 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
     'candidate:pardus-spark:frame-material',
     'candidate:pardus-spark:frame-stiffness',
     'candidate:winspace-m6:frame-material',
+    'candidate:winspace-m6:frame-stiffness',
     'candidate:winspace-t1600:frame-material',
     'candidate:winspace-t1600:frame-stiffness',
     'candidate:xds-ad350-2026:frame-material',

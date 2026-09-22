@@ -39,7 +39,7 @@ export const zh = {
   'Key hardware:':'关键配置：', 'Frame material':'车架材料', 'Frame construction':'车架成型工艺', 'Stiffness evidence':'刚性证据', 'Cable routing':'走线方式', 'Category evidence':'类别证据',
   'Internal frame storage':'车架内储物', 'Mounts':'安装孔位', 'China purchase':'国内购买', 'Not recorded':'暂无记录', 'Not confirmed':'尚未确认', 'Unknown':'未知', 'unknown':'未知', 'None recorded':'暂无记录', 'Yes':'有', 'No':'无',
   'Profile status':'资料状态', 'Evidence maturity':'证据成熟度', 'Price basis':'价格依据', 'Manufacturing note':'制造信息', 'Frame weight basis':'车架重量口径', 'Complete weight basis':'整车重量口径',
-  'Tire clearance basis':'轮胎空间依据', 'Seatpost':'座管', 'Wheels':'轮组', 'Tires':'轮胎', 'Sizes':'尺码', 'Storage':'储物', 'Brakes':'刹车', 'Bottom bracket':'中轴', 'Derailleur hanger':'尾钩', 'Complete weight':'整车重量', 'Frame weight':'车架重量',
+  'Tire clearance basis':'轮胎空间依据', 'Tire clearance conflict':'轮胎空间证据冲突', 'Marketplace material reference':'电商材料参考', 'Marketplace drivetrain reference':'电商传动系统参考', 'Marketplace reference basis':'电商参考依据', 'Seatpost':'座管', 'Wheels':'轮组', 'Tires':'轮胎', 'Sizes':'尺码', 'Storage':'储物', 'Brakes':'刹车', 'Bottom bracket':'中轴', 'Derailleur hanger':'尾钩', 'Complete weight':'整车重量', 'Frame weight':'车架重量',
   'Brand not confirmed':'品牌尚未确认', 'Category not confirmed':'类别尚未确认', 'Price not verified':'价格尚未核实', 'A current price is not recorded.':'暂无当前价格记录。',
   'This bike is tracked while its exact configuration and market evidence are completed.':'此车型仍在收集具体配置与市场证据。', 'No additional evidence gaps are documented.':'暂无额外列出的证据缺口。',
   'Brand context':'品牌背景', 'Manufacturing relationship':'制造关系', 'Warranty':'保修', 'Evidence-led catalog':'附证据的车型目录', 'Open the full catalog and filters →':'打开完整目录与筛选 →',

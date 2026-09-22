@@ -482,8 +482,20 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "winspace-m6-cyclingnews-review-2026-09-22",
+    "winspace-m6-cyclistshub-review-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. No controlled numeric exact M6 frame result or sufficiently specific independent exact-frame assessment was established after all 50 areas; subjective customer wording was rejected."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. No controlled numeric exact M6 frame result or sufficiently specific independent exact-frame assessment was established after all 50 areas; subjective customer wording was rejected. Follow-up batch10 now records two exact-model independent comparative ride reviews; this closes meaningful stiffness evidence without a numeric stiffness value.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "winspace-m6-cyclingnews-review-2026-09-22",
+      "winspace-m6-cyclistshub-review-2026-09-22"
+    ],
+    "note": "Reuse the newly recorded exact M6 review sources from bounded follow-up batch10. Accept specific qualitative comparative evidence under SPEC; original 50-area attempt history remains unchanged."
+  }
 }

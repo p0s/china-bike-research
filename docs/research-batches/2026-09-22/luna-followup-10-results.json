@@ -1,0 +1,192 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-10-2026-09-22",
+  "status": "completed-one-field-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 20,
+  "full_field_closures": 1,
+  "catalog_changes": 3,
+  "coarse_gap_count_before": 724,
+  "coarse_gap_count_after": 723,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-storm-knight",
+      "outcome": "unresolved",
+      "finding": "R10pro-disc Sport weights 9.3/9.2 kg do not map to retained Storm Knight wheels/SKU. Fitted 28C is not a maximum; material marketing gives no meaningful stiffness comparison.",
+      "sources": [
+        "https://tao.hooos.com/goods_564630170532.html",
+        "https://www.twittercycles.com/products/r10-disc-road-bike.html"
+      ],
+      "proof": "Worker current exact marketplace and related manufacturer reads; related build mass excluded.",
+      "next_trigger": "Exact Storm Knight BOM and maximum width or frame-specific comparative assessment.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r80",
+      "outcome": "retained-magene-build-unresolved",
+      "finding": "Official R80 approximate 8.3 kg bare applies to 105 Di2, not retained Magene PES. Fitted 28C is not maximum; no meaningful frame comparison found.",
+      "sources": [
+        "https://www.upland.bike/zh/product/302.html",
+        "https://www.upland.bike/en/product/350.html",
+        "https://jingxuan.douyin.com/m/video/7648721057440624805"
+      ],
+      "proof": "Worker current official R80/R80-3 reads; retained video index reused with original date.",
+      "next_trigger": "Exact Magene PES BOM/weight/maximum or frame-specific comparative assessment.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "viqi-r8000",
+      "outcome": "unresolved",
+      "finding": "JD index identifies R8000/22-speed but no complete mass. The 40 mm item is a wheel depth/upgrade reference, not tire clearance. No meaningful stiffness evidence.",
+      "sources": [
+        "https://www.jd.com/book/1318a62bdcf3128f2713.html"
+      ],
+      "proof": "Worker current index read; direct exact item unavailable.",
+      "next_trigger": "Durable exact item or manufacturer sheet/test.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "winspace-m6",
+      "outcome": "accepted-qualitative-stiffness",
+      "finding": "Two exact M6 reviews describe effective power transfer with mixed ride impressions: Cyclingnews wanted a more direct response in hard standing climbs; CyclistsHub described greater vibration fatigue than T1600. Added as build-specific qualitative evidence, not a numeric frame-only ranking.",
+      "sources": [
+        "https://www.cyclingnews.com/bikes/winspace-m6-review/",
+        "https://www.cyclistshub.com/winspace-m6-review/",
+        "https://www.winspace.cc/products/m6"
+      ],
+      "proof": "Worker current full reviews; parent independently read both relevant comparative passages. Original research attempts preserved and dated source-reuse resolution added.",
+      "next_trigger": "Reopen if exact frame generation differs or a controlled test adds material evidence.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "nscr-carbon-gravel-storage",
+      "outcome": "identity-gated-unresolved",
+      "finding": "Retained generic seller card has no attributable SKU/BOM/manufacturer. All three dependent fields remain unknown.",
+      "sources": [
+        "https://china-bikes.p0s.eu/models/nscr-carbon-gravel-storage/?from=%2F%23catalog"
+      ],
+      "proof": "Fresh search found only project-catalog context; explicitly excluded as external evidence.",
+      "next_trigger": "Exact NSCR SKU and durable public original source.",
+      "fields": [
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "outcome": "mainland-weight-unresolved",
+      "finding": "Japan 2026 Defy Advanced 2 claims 8.5 kg size S with regional P-R1 wheel package. Mainland exact build mapping does not justify transferring it.",
+      "sources": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837",
+        "https://giant.com.cn/index.php/index/bike_finder.html",
+        "https://www.giant-bicycles.com/jp/defy-advanced-2"
+      ],
+      "proof": "Worker current Japan exact-model read and China model/finder context; mainland mass not published.",
+      "next_trigger": "Mainland size, wheels, tires and complete weight.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-merida-reacto",
+      "outcome": "regional-weight-not-transferable",
+      "finding": "Benelux 2026 Reacto 6000 claims 8.5 kg size M with Vision SC60; retained mainland CN27 uses Novatec R6. Regional mass is not transferred.",
+      "sources": [
+        "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug.html",
+        "https://en.merida.nl/road%2Bbike/reacto-6000-dark-race-red-gunmetal-grey/2026",
+        "https://www.cyclingweekly.com/products/it-corners-like-its-on-rails-for-gbp2-400-and-with-all-the-aero-youll-need-at-the-entry-level-merida-reacto"
+      ],
+      "proof": "Worker current regional sources; existing mainland mapping reused with its date.",
+      "next_trigger": "Exact mainland CN27 weight with selected wheel/tire basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "outcome": "regional-alternative-build-added",
+      "finding": "CycleNet Spec 1 GRX 827 Di2 1x12 lists 8.2 kg ±5%, RORE Terra Carbon Gravel 45 mm and CANWIN AELOUS. Added as separate regional alternative, without assigning it to retained RX825 reference or mainland options. USD4799 and NZD9000 do not establish CNY checkout.",
+      "sources": [
+        "https://www.quickprousa.com/products/gr-one-shimano",
+        "https://cyclenet.co.nz/products/quick-pro-gr-one-complete-bike-build-to-order",
+        "https://www.quickprokorea.com/products/gr-one-grx-di2-2x12s"
+      ],
+      "proof": "Worker current full USA/NZ reads; Korea 2x12 excluded. Size, pedals and weighing method unpublished. Existing price dates unchanged.",
+      "next_trigger": "Exact mainland selected 1x12 SKU/BOM, price and measured or attributable weight.",
+      "fields": [
+        "price",
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-ur-one",
+      "outcome": "regional-alternative-build-added",
+      "finding": "RaceIt Dura-Ace Di2 with stock RORE steel-spoke wheels claims 6.5 kg ±5%; added separately. USA USD6899 and RaceIt EUR6899 are regional references, not a mainland price. Official component masses and anecdotal 5.9 kg customer bike are not summed or transferred.",
+      "sources": [
+        "https://www.quickprousa.com/products/ur-one-dura-ace-di2",
+        "https://raceit.cc/en/products/quick-pro-ur-one-shimano-dura-ace-di2"
+      ],
+      "proof": "Worker current full manufacturer and retailer reads. Size, pedals and method unpublished. Existing price dates unchanged.",
+      "next_trigger": "Exact selected mainland/global wheel option and weight or mainland checkout.",
+      "fields": [
+        "price",
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "elves-falath-r7170",
+      "outcome": "image-identity-and-rights-unresolved",
+      "finding": "Official photos show framesets rather than retained mainland R7170 complete wheel/paint package; no reusable-rights grant found. Project-owned placeholder retained.",
+      "sources": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8",
+        "https://store.elvesbike.com/products/elves-falath-pro-disc-carbon-road-framesets",
+        "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105"
+      ],
+      "proof": "Worker current official frame/store full reads; South Africa exact105 page reused from prior read. No image copied.",
+      "next_trigger": "Exact complete-build image with documented reuse rights or lawful matching public-post embed.",
+      "fields": [
+        "image"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Three candidate changes, four sources, preserved original ledger history and readable English/Chinese labels for new fields.",
+    "browser": "S7 EN desktop/Chinese390px and Basso labels EN390px/Chinese desktop checked in dedicated research Chrome; no horizontal overflow. Basso evidence disclosure opened for row inspection.",
+    "commands": [
+      "npm run --silent validate",
+      "npm run --silent coverage:accept",
+      "npm run --silent data:gaps",
+      "node --test --test-name-pattern=batch 028 tests/data.test.mjs",
+      "codex-pnpm-check check",
+      "git diff --check"
+    ],
+    "full_gate": "Passed: 304 tests, 584 pages, SEO 456 indexable/128 noindex. Two stale M6 assertions updated after failures; focused affected test then full gate passed. Includes main dc4528b buying-guide changes.",
+    "image_report": "Image inputs unchanged; reuse current198-resource report, no repeat."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

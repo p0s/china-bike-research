@@ -25,7 +25,8 @@
     "quick-pro-gr-one-taobao-2026-08-27",
     "quick-pro-gr-one-ride-review-2026-08-27",
     "public-quick-pro-gr-one-build-2026-08-17",
-    "public-quick-pro-gr-one-product-card-2026-08-24"
+    "public-quick-pro-gr-one-product-card-2026-08-24",
+    "quick-pro-gr-one-cyclenet-build-2026-09-22"
   ],
   "official_price": {
     "amount_cny": 32600,
@@ -38,7 +39,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.quickprousa.com/products/gr-one-shimano",
-  "source_note": "Current exact global price remains US$4,799. The official mainland listing’s numbered options remain unmapped to the exact GRX Di2 1×12 bill of materials, so no CNY amount is promoted after 50 areas.",
+  "source_note": "Current exact global price remains US$4,799. The official mainland listing’s numbered options remain unmapped to the exact GRX Di2 1×12 bill of materials, so no CNY amount is promoted after 50 areas. September 22 adds a separately attributed regional retailer build weight below; it does not select a mainland checkout option.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
     "frame": "Toray T1100 + M65 high-modulus carbon",
@@ -54,5 +55,19 @@
     "complete_weight_status": "No exact complete-bike weight, size or weighing protocol found after 50 registered source areas; published frame, fork and seatpost weights are not summed"
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-22",
+  "alternative_builds": [
+    {
+      "id": "cyclenet-spec-one-grx827",
+      "label": "CycleNet New Zealand Spec 1 GRX 827 Di2",
+      "drivetrain": "Shimano GRX RX827 Di2 1x12",
+      "complete_weight_g": 8200,
+      "weight_basis": "Regional specialist-retailer approximate claim, ±5%; size, pedals, accessories and weighing method unstated",
+      "wheels": "RORE Terra Carbon Gravel 45 mm",
+      "source_ids": [
+        "quick-pro-gr-one-cyclenet-build-2026-09-22"
+      ],
+      "notes": "CANWIN AELOUS cockpit. Separate documented regional build; weight is not combined with the historical global FX reference or unresolved mainland options."
+    }
+  ]
 }
