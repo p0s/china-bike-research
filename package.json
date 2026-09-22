@@ -10,6 +10,9 @@
   "scripts": {
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "deploy:cloudflare": "npm run check && npx wrangler deploy",
+    "dev:cloudflare": "npm run build:cloudflare && npx wrangler dev",
     "validate": "node scripts/validate-data.mjs",
     "privacy": "node scripts/check-privacy.mjs",
     "coverage:check": "node scripts/coverage.mjs",

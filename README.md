@@ -8,6 +8,8 @@ The catalog combines complete bikes and suitable frameset builds in one comparis
 
 Prices are dated observations, not live quotes. Unknown facts remain unknown rather than being treated as bad.
 
+The production site is served by a Cloudflare Worker with Static Assets. The edge keeps document routes available for privacy-limited page analytics while CDN assets remain cacheable. See [docs/cloudflare-deployment.md](docs/cloudflare-deployment.md) for the checked-in build, secret, and smoke-test contract.
+
 ## Contribute
 
 Use the structured GitHub issue forms to add a model, submit a price, correct a specification, report owner experience, or fix an image. Pull requests are welcome.
