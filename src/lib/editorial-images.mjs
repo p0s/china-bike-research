@@ -58,9 +58,10 @@ export function renderEditorialImage(ctx, id, { card = false, banner = false, hr
   return `<figure class="editorial-figure illustrated-header ${card ? 'article-card-image' : banner ? 'blog-banner' : 'article-cover'}">${href ? `<a href="${escapeAttr(href)}" tabindex="-1" aria-hidden="true">${img}</a>` : img}</figure>`;
 }
 
-export function renderPostPhotos(ctx, post) {
+export function renderPostPhotos(ctx, post, photoIds = postPhotos(post).map((photo) => photo.id)) {
   const image = editorialImage(post.image_id);
-  return `<div class="blog-model-photos">${postPhotos(post).map((photo) => renderPhoto(ctx, resolveBlogPhoto(ctx, photo.id), image, photo.model_ids.filter((id) => post.model_ids.includes(id)))).join('')}</div>`;
+  const photos = postPhotos(post).filter((photo) => photoIds.includes(photo.id));
+  return `<div class="blog-model-photos">${photos.map((photo) => renderPhoto(ctx, resolveBlogPhoto(ctx, photo.id), image, photo.model_ids.filter((id) => post.model_ids.includes(id)))).join('')}</div>`;
 }
 
 export function renderEditorialCredits(ctx) {

@@ -16,32 +16,36 @@
   ],
   "translations": {
     "en": {
-      "title": "38 mm tires on an aero road bike: check the drivetrain, not just the headline",
-      "description": "Compare Incolor Speedster SR, LightCarbon LCR018-D and Tavelo Arden clearance records, including 1×/2× limits and unresolved build details.",
-      "intro": "“Fits 38 mm” is not a complete specification. The useful question is whether your exact frame generation, drivetrain and mounted tire fit together under the documented conditions. Three records in this catalog show why the distinction matters.",
+      "title": "38 mm tires on aero road bikes: 1× and 2× limits",
+      "description": "Compare Incolor Speedster SR, Tavelo Arden and LightCarbon LCR018-D tire limits. See why drivetrain, tread and measured width change the answer.",
+      "intro": "A 38 mm headline does not mean 38 mm fits every build. Incolor Speedster SR and Tavelo Arden have narrower limits with a front derailleur. LightCarbon LCR018-D states a measured-width limit. Check the drivetrain and the tire’s actual width before choosing the frame.",
       "sections": [
         {
           "id": "the-three-records",
-          "heading": "Three frames, three different qualifications",
+          "heading": "Three frames, three different answers",
           "paragraphs": [
-            "The Incolor Speedster SR record separates its 1× and 2× tire limits. Tavelo Arden also has drivetrain-dependent limits, but they are not the same as Incolor’s. LightCarbon LCR018-D has a manufacturer measured-width maximum; that wording should not be replaced with a more generous figure from a single owner’s build.",
-            "The comparison table pulls the current retained limits from those exact records. Incolor is a published configuration; the LightCarbon and Tavelo profiles remain research-stage records. Their inclusion here is useful for comparing documented constraints, not a claim that every buying question has been resolved."
+            "Use this table to eliminate a configuration before comparing its price. Incolor is a published configuration; LightCarbon and Tavelo remain research-stage profiles with documented clearance facts. The table compares those facts without treating the unfinished buying research as complete."
           ]
         },
         {
           "id": "why-drivetrain-matters",
-          "heading": "Do not carry a 1× limit into a 2× build",
+          "heading": "Want 38 mm tires and two chainrings? Read this first",
           "paragraphs": [
-            "When a manufacturer gives separate single- and double-chainring limits, use the one that applies to your drivetrain. A wider limit listed for the single-chainring setup does not establish compatibility with a front derailleur. Nor should it be copied to another frame from the same brand.",
+            "For a proposed 2× build with 38 mm tires, the recorded Incolor and Tavelo limits both rule that setup out. Moving to 1× changes the documented limit, but it also changes the drivetrain you are planning. Decide on that trade-off before ordering parts. A wider 1× limit cannot be transferred to a front-derailleur build or another frame from the same brand.",
             "Start with the [Incolor Speedster SR model page](/models/incolor-speedster-sr-frameset/#source-records), then compare the [Tavelo Arden evidence](/models/tavelo-arden/#source-records). Retain the manufacturer’s qualification in the seller conversation rather than reducing either to one maximum number."
           ]
         },
         {
           "id": "measured-width",
-          "heading": "Ask for the actual wheel-and-tire combination",
+          "heading": "The tire label is only the starting point",
           "paragraphs": [
-            "Record the exact tire model, nominal size and intended wheelset before asking about fit. Ask the manufacturer or seller which measurement basis its limit uses and whether any stated condition changes with frame size or drivetrain. Then confirm the intended setup against that documentation.",
+            "A nominal tire size and a measured width describe different things. LightCarbon’s retained limit is explicitly a measured-width maximum. Ask about the exact tire and wheel you intend to use; leave the “but somebody fitted one” argument out of the shopping basket.",
             "An owner photo can show that a particular build exists. It cannot, by itself, establish a supported maximum for every size, rim, tire or riding condition. For the LCR018-D, the retained record explicitly keeps larger owner fits separate from the manufacturer maximum."
+          ],
+          "bullets": [
+            "Write down the frame generation and size, drivetrain layout, tire model and wheelset.",
+            "Ask which width measurement the published limit uses, and whether tread or frame size changes it.",
+            "Confirm the intended combination against that documentation; an owner photograph does not establish a new maximum."
           ]
         },
         {
@@ -54,41 +58,56 @@
         },
         {
           "id": "decision",
-          "heading": "A practical purchase gate",
+          "heading": "A short checklist before choosing the frame",
           "paragraphs": [
-            "Proceed only when the seller can identify the exact generation and size, confirm the drivetrain-specific tire limit, and document the included package. Ask for a written answer tied to the actual wheel and tire you plan to use. An unresolved answer should remain unresolved in your shortlist.",
-            "This article does not certify a build as safe, report a test ride or validate an oversized tire conversion. It explains how to use the catalog evidence without stripping away the conditions that make it meaningful."
+            "Keep a frame on the shortlist only when the intended generation, size, drivetrain and tire setup agree with its documentation. Then check fit, package contents and the unresolved interfaces on the model page.",
+            "Open the [three-frame comparison](/?compare=incolor-speedster-sr-frameset%2Clightcarbon-lcr018-d%2Ctavelo-arden#compare), or [start an Incolor Speedster build](/build/?base=incolor-speedster-sr-frameset) to see how the drivetrain choice affects planning."
+          ],
+          "bullets": [
+            "The clearance row matches your 1× or 2× plan.",
+            "The stated tread and width conditions match your tire.",
+            "The geometry and cockpit adjustment suit your intended position.",
+            "The seller confirms the exact package and any unresolved specification."
           ]
         }
-      ]
+      ],
+      "table_notes": {
+        "incolor-speedster-sr-frameset": "1×: up to 38C slick or 36C small-knob tires. 2×: up to 32C slick. Rim and tire affect actual width.",
+        "lightcarbon-lcr018-d": "Manufacturer measured-width maximum. No separate 1×/2× limits are retained in the record; an owner’s larger tire fit does not establish a new limit.",
+        "tavelo-arden": "The 38 mm maximum is for 1×; the 2× limit is 34 mm. Confirm the exact generation and intended tire setup."
+      }
     },
     "zh-Hans": {
-      "title": "气动公路车装 38 mm 轮胎：先确认单盘、双盘和实际胎宽",
-      "description": "比较 Incolor Speedster SR、LightCarbon LCR018-D 与 Tavelo Arden 的轮胎空间记录，保留单／双盘限制和待确认细节。",
-      "intro": "“能装 38 mm”不是完整规格。真正的问题是：你选的车架代际、变速布局和实际轮胎，是否符合记录中的适用条件。目录中的三个例子说明了为什么不能只看一个最大数字。",
+      "title": "气动公路车装 38 mm 轮胎：单盘与双盘上限",
+      "description": "比较 Incolor Speedster SR、Tavelo Arden 和 LightCarbon LCR018-D 的轮胎上限，分清单双盘、胎纹与实际胎宽。",
+      "intro": "写着“最大 38 mm”，不代表每种配置都能装。Incolor Speedster SR 和 Tavelo Arden 在双盘配置下都有更小的上限；LightCarbon LCR018-D 则明确采用实测宽度。挑车架前，先把变速系统和实际胎宽对上。",
       "sections": [
         {
           "id": "the-three-records",
-          "heading": "三个车架，三种不同限定",
+          "heading": "三个车架，三种适用条件",
           "paragraphs": [
-            "Incolor Speedster SR 的记录区分单盘和双盘上限。Tavelo Arden 也区分，但具体限制与 Incolor 并不相同。LightCarbon LCR018-D 则记录厂家按实测胎宽给出的最大值，不能用个别车主装过的更大轮胎替换这个标准。",
-            "下表读取这些具体记录中保留的限制。Incolor 属于已发布配置；LightCarbon 与 Tavelo 仍是研究阶段资料。把它们放在一起，是为了比较已有约束，不代表所有购买问题都已解决。"
+            "先用上限排除不合适的配置，再比价格。Incolor 是已发布配置；LightCarbon 与 Tavelo 仍为研究阶段资料，但已有可比较的轮胎空间记录。表格只比较这些事实，不代表购车信息已经完整。"
           ]
         },
         {
           "id": "why-drivetrain-matters",
-          "heading": "不要把单盘上限套到双盘方案",
+          "heading": "既想用 38 mm 胎，又想保留双盘？",
           "paragraphs": [
-            "厂家分别规定单盘和双盘上限时，应采用与你的装车方案对应的那一个。单盘允许更宽，不等于装前拨也一样适用，更不能直接推广到同品牌的另一款车架。",
+            "如果计划是双盘配 38 mm 轮胎，现有 Incolor 和 Tavelo 上限都排除了这个组合。改成单盘会改变记录中的允许上限，也会改变整套传动方案，应在买配件前作出取舍。单盘的较大上限，不能直接套到带前拨的配置或同品牌另一款车架上。",
             "先看 [Incolor Speedster SR 车型页](/models/incolor-speedster-sr-frameset/#source-records)，再比较 [Tavelo Arden 的证据](/models/tavelo-arden/#source-records)。向卖家询问时，应保留厂家的限定语，不要只报一个最大数字。"
           ]
         },
         {
           "id": "measured-width",
-          "heading": "询问具体轮组与轮胎组合",
+          "heading": "胎壁标注，只是起点",
           "paragraphs": [
-            "询问兼容性前，先确定轮胎型号、标称尺寸和预期轮组。请厂家或卖家说明上限的测量口径，以及尺码或变速布局是否改变适用条件，然后再将计划中的搭配与资料核对。",
+            "标称尺寸和装车实测宽度是两回事。LightCarbon 的上限明确采用实测宽度，因此应询问准备使用的具体轮胎和轮组。“别人装上了”可以成为线索，不能直接变成你的下单依据。",
             "车主照片能证明某个装车实例存在，却不能单独证明所有尺码、车圈、轮胎和路况都获得同样支持。LCR018-D 的保留记录就明确区分了较大轮胎的车主实例与厂家最大值。"
+          ],
+          "bullets": [
+            "写清车架代际、尺码、单双盘、轮胎型号和轮组。",
+            "确认厂家采用哪种宽度口径，以及胎纹或尺码是否改变上限。",
+            "按厂家资料核对目标组合，不能凭一张车主照片提高最大值。"
           ]
         },
         {
@@ -101,13 +120,43 @@
         },
         {
           "id": "decision",
-          "heading": "实际下单的确认门槛",
+          "heading": "选车架前，用这份清单收尾",
           "paragraphs": [
-            "下单前，让卖家明确车架代际与尺码、对应变速布局的轮胎上限，以及套餐内含部件。最好针对你实际要用的轮组和轮胎取得书面回复。答不清的问题，就继续作为待确认项保留。",
-            "本文不是装车安全认证，不是实际骑行测试，也不为超规格轮胎改装背书。它说明如何使用目录证据，并保留让这些信息有意义的条件。"
+            "只有当车架代际、尺码、变速与轮胎方案都符合记录条件时，才保留在备选名单。接着核对骑姿、套餐和车型页尚未解决的接口问题。",
+            "打开[三车架对比](/?compare=incolor-speedster-sr-frameset%2Clightcarbon-lcr018-d%2Ctavelo-arden#compare)，或[从 Incolor Speedster 开始装车规划](/build/?base=incolor-speedster-sr-frameset)，查看变速选择对方案的影响。"
+          ],
+          "bullets": [
+            "使用与你的单盘或双盘方案对应的上限。",
+            "胎纹和宽度口径与准备使用的轮胎一致。",
+            "几何和把组调节范围适合目标骑姿。",
+            "卖家确认具体套餐，以及仍有分歧的规格。"
           ]
         }
+      ],
+      "table_notes": {
+        "incolor-speedster-sr-frameset": "单盘：最高 38C 光头胎或 36C 小颗粒胎。双盘：最高 32C 光头胎。实际宽度还受轮圈与轮胎影响。",
+        "lightcarbon-lcr018-d": "厂家采用实测宽度上限。现有记录未分别列出单双盘数值，不能从车主装过更宽轮胎推导出新上限。",
+        "tavelo-arden": "38 mm 对应单盘，双盘上限为 34 mm。仍需确认具体代际与准备使用的轮胎组合。"
+      }
+    }
+  },
+  "comparison": {
+    "kind": "clearance",
+    "section_id": "the-three-records"
+  },
+  "photo_sections": [
+    {
+      "section_id": "why-drivetrain-matters",
+      "ids": [
+        "incolor-speedster-sr",
+        "tavelo-arden"
+      ]
+    },
+    {
+      "section_id": "measured-width",
+      "ids": [
+        "lightcarbon-lcr018-d"
       ]
     }
-  }
+  ]
 }

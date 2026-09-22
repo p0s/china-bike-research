@@ -102,10 +102,12 @@ with sync_playwright() as p:
                             assert photos.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
                         assert page.locator('.article-card .section-label, .buyer-article header .section-label').count() == 0
                         image_name=f'{locale}-{mode}-{route.strip("/").replace("/","-")}.png'
-                        page.evaluate('window.scrollTo(0,0); document.activeElement?.blur()')
+                        page.evaluate('document.documentElement.style.scrollBehavior="auto"; window.scrollTo({top:0,behavior:"instant"}); document.activeElement?.blur()')
+                        page.wait_for_function('window.scrollY === 0')
                         page.screenshot(path=str(REPORTS/image_name), full_page=True)
                         if route != '/blog/':
-                            page.locator('.blog-model-photos').screenshot(path=str(REPORTS/image_name.replace('.png','-models.png')))
+                            for index, gallery in enumerate(page.locator('.blog-model-photos').all()):
+                                gallery.screenshot(path=str(REPORTS/image_name.replace('.png',f'-models-{index+1}.png')))
                 record(f'{locale} {mode} {route}',visual)
         def image_failure(prefix=prefix):
             go(prefix+'/blog/gravel-bikes-around-5000-yuan/')

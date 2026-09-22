@@ -9,6 +9,7 @@ import { layout, escapeAttr, escapeHtml } from '../src/lib/html.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts, validatePostReferences, renderPost, renderBlogIndex, renderEvidenceTable } from '../src/lib/posts.mjs';
+import { renderBuildExample } from '../src/lib/post-comparisons.mjs';
 import { renderCandidateModel, renderModel } from '../src/render.mjs';
 const data = loadDataset();
 const products = joinProducts(data);
@@ -114,7 +115,7 @@ for (const locale of ['en', 'zh-Hans']) test(`articles render genuine byline, da
     assert.equal(schema.author['@type'], 'Organization');
     assert.equal(schema.datePublished, post.datePublished);
     assert.ok(!('aggregateRating' in schema)); assert.ok(!('offers' in schema));
-    assert.match(html, /data-original-language/);
+    if (post.comparison.kind !== 'clearance') assert.match(html, /data-original-language/);
     for (const id of post.model_ids) assert.ok(html.includes(`${localePath(`/models/${id}/`, locale)}#source-records`));
   }
   const index = renderBlogIndex({ ...ctx, locale }, posts);
@@ -127,6 +128,53 @@ test('gravel evidence table derives the exact recorded price and date, never tod
   assert.ok(table.includes('¥3,991')); assert.ok(table.includes('2026-08-05'));
   assert.ok(table.includes('¥4,999')); assert.ok(table.includes('2026-08-25'));
   assert.ok(!table.includes('2026-09-18'));
+});
+
+test('article comparisons use topic-specific facts and keep unknown drivetrain limits unknown', () => {
+  const clearance = posts.find((post) => post.comparison.kind === 'clearance');
+  const table = renderEvidenceTable(ctx, clearance);
+  const rows = [...table.matchAll(/<tr>(.*?)<\/tr>/g)].map((match) => match[1]);
+  const incolor = rows.find((row) => row.includes('/models/incolor-speedster-sr-frameset/'));
+  const tavelo = rows.find((row) => row.includes('/models/tavelo-arden/'));
+  const lightcarbon = rows.find((row) => row.includes('/models/lightcarbon-lcr018-d/'));
+  assert.ok(incolor.includes('<td>38 mm</td><td>32 mm</td>'));
+  assert.ok(tavelo.includes('<td>38 mm</td><td>34 mm</td>'));
+  assert.ok(lightcarbon.includes('<td>—</td><td>—</td>'));
+  assert.ok(lightcarbon.includes('<strong>38 mm</strong>'));
+  assert.ok(!table.includes('Recorded price'));
+  const gravel = renderEvidenceTable(ctx, posts.find((post) => post.comparison.kind === 'gravel'));
+  assert.ok(gravel.includes('2×12') && gravel.includes('1×12'));
+  assert.ok(gravel.includes('Weighing basis'));
+  assert.ok(!/remaining-build allowance|observed-search-card|public-market-observation/.test(gravel));
+});
+
+test('worked budget derives its subtotal and preserves missing costs instead of inventing a complete total', () => {
+  const html = renderBuildExample(ctx);
+  assert.ok(html.includes('¥11,950'));
+  assert.ok(html.includes('¥1,850'));
+  assert.ok(html.includes('Still to quote'));
+  const changed = structuredClone(data);
+  changed.buildParts.find((part) => part.id === 'shimano-105-r7170-large-package').price_observation.amount_cny = 5000;
+  assert.ok(renderBuildExample({...ctx, data:changed}).includes('¥12,800'));
+  delete changed.buildParts.find((part) => part.id === 'shimano-105-r7170-large-package').price_observation;
+  const missing = renderBuildExample({...ctx, data:changed});
+  assert.ok(missing.includes('no complete subtotal can be calculated'));
+  assert.ok(!missing.includes('¥11,950'));
+});
+
+for (const locale of ['en', 'zh-Hans']) test(`article photos stay beside their assigned discussion and worksheets do not imply zero costs: ${locale}`, () => {
+  for (const post of posts) {
+    const html = renderPost({...ctx, locale}, post, posts);
+    for (const placement of post.photo_sections) {
+      const section = html.split(`<section id="${placement.section_id}">`)[1].split('</section>')[0];
+      for (const id of placement.ids) assert.ok(section.includes(`data-blog-photo="${id}"`));
+    }
+    assert.ok(html.indexOf('class="page-lede"') < html.indexOf('article-cover'));
+  }
+  const importer = posts.find((post) => post.comparison.kind === 'price-basis');
+  const html = renderPost({...ctx, locale}, importer, posts);
+  const worksheet = html.split('class="article-table article-table-worksheet"')[1].split('</table>')[0];
+  assert.ok(!/¥0|>0<|Total|总计/.test(worksheet));
 });
 
 test('mascot cutouts and illustrated headers have provenance and immutable optimized files', () => {
