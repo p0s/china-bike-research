@@ -8,27 +8,33 @@
     "incolor-voyager-frameset",
     "twitter-v3-wheeltop-eds"
   ],
-  "source_ids": [],
+  "source_ids": [
+    "lightcarbon-lcg071s-pro-owner-price-2026-09-01",
+    "incolor-voyager-taobao-2026-08-29",
+    "smzdm-shimano-di2-market-observations-2026-08-24",
+    "taobao-snapshot-2026-08-08"
+  ],
   "translations": {
     "en": {
-      "title": "Frameset or complete bike in China? Compare the cost of a rideable build",
-      "description": "Use dated frame-package prices, the catalog’s explicit allowance and an itemized build worksheet without counting included parts twice.",
-      "intro": "A frame price and a complete-bike price answer different questions. A useful budget starts with what is actually included, then adds what is still missing. The China Bikes catalog offers a quick estimate and a separate itemized builder; they should not be mistaken for the same kind of quote.",
+      "title": "Frameset vs complete bike: what does a build really cost?",
+      "description": "Compare complete-bike prices with frame-plus-parts budgets. A worked INCOLOR Voyager example shows included parts, a known subtotal and costs still to quote.",
+      "intro": "Compare the cost of a bike you can ride: the frame package, every missing part, assembly and delivery. A frameset can make sense when you want a specific fit or build, but its sticker price cannot tell you whether it saves money. Start with an allowance, then replace it with an itemized budget.",
       "sections": [
         {
           "id": "two-tools",
-          "heading": "Use the estimate to shortlist, not to place an order",
+          "heading": "Compare rideable totals first",
           "paragraphs": [
-            "The catalog’s frame-build price is the recorded frame-package price plus the selected remaining-build allowance. The table below shows that assumption explicitly. It is a planning convention, not a claim that a shop will deliver every shown configuration for that sum.",
+            "A bargain frame has a talent for inviting expensive friends. The catalog adds a reviewed remaining-build allowance to each recorded frame price, so a bare frame does not appear cheaper simply because it is missing most of a bicycle. The total is a shortlist estimate, not a shop quote.",
             "The [itemized builder](/build/) serves a different purpose: choose an exact base and component slots, then inspect what is known and what is missing. A known subtotal is not a complete budget while required slots, prices or compatibility information are unresolved."
           ]
         },
         {
           "id": "included-parts",
-          "heading": "Write down the package before adding components",
+          "heading": "A worked budget: frame, groupset… and the rest",
           "paragraphs": [
             "Begin with the seller’s exact option name. Does it include the fork, headset, through-axles, seatpost, cockpit, hanger and small hardware? Are brakes included with a shifting package? Mark included parts once; do not add the same component again in another slot.",
-            "Then list the remaining drivetrain, brakes and rotors, wheels, tires, tubes or tubeless supplies, contact points, pedals and assembly work as applicable. Confirm what the mechanic’s quote includes. The objective is not to assume every build needs the same shopping list, but to make each omission explicit."
+            "Then list the remaining drivetrain, brakes and rotors, wheels, tires, tubes or tubeless supplies, contact points, pedals and assembly work as applicable. Confirm what the mechanic’s quote includes. The objective is not to assume every build needs the same shopping list, but to make each omission explicit.",
+            "Here is a cost sketch using the INCOLOR Voyager starting price and a recorded Shimano 105 Di2 large package. The package already covers several parts; counting its brakes, crankset, cassette or chain again would inflate the total. The unpriced rows are where the budget still needs work."
           ]
         },
         {
@@ -41,41 +47,52 @@
         },
         {
           "id": "compare-like-for-like",
-          "heading": "Compare the same outcome",
+          "heading": "When does a self-build make sense?",
           "paragraphs": [
             "Put the completed worksheet beside a specific complete-bike configuration. Keep the fit, tire requirement, drivetrain layout and wheel choice visible. A lighter or more expensive wheelset in the self-build means the two budgets no longer describe the same outcome.",
             "Also separate one-time build cost from support. Ask who handles a frame problem, a drivetrain problem and an assembly problem, and how shipping or workshop labor is treated. Do not assume that buying all components separately produces one unified warranty."
+          ],
+          "bullets": [
+            "Choose a complete bike when its actual configuration meets your needs and its delivered quote beats your finished build budget.",
+            "Choose a frameset when the fit, frame features or component choices justify the complete cost and the assembly work.",
+            "If you already own usable parts, list them explicitly and check compatibility; only then remove their purchase cost from the budget."
           ]
         },
         {
           "id": "keep-the-history",
-          "heading": "Keep the original dates",
+          "heading": "Turn the sketch into your own build",
           "paragraphs": [
-            "Save the quotation date and conditions for each large purchase. The comparison below retains the dates from the underlying catalog instead of presenting every figure as a new observation. A later editorial update does not turn an older price into a current offer.",
-            "For a quick start, compare one of the linked framesets with the specific Twitter complete build, adjust the allowance, and move to the builder only when the shortlist is useful. The result should be an understandable budget with visible gaps—not an artificially precise total."
+            "Save the date and conditions with each quote so you can return to the same configuration when it is time to order.",
+            "Open a [Voyager build plan](/build/?base=incolor-voyager-frameset) or an [LCG071S-PRO build plan](/build/?base=lightcarbon-lcg071s-pro-frameset), replace the missing prices with quotes, and compare the result with the [Twitter complete bike](/models/twitter-v3-wheeltop-eds/). Keep unknown costs blank until you have an answer. The total should help you decide, not merely look finished."
           ]
         }
-      ]
+      ],
+      "table_notes": {
+        "lightcarbon-lcg071s-pro-frameset": "Owner-reported base-frame price converted to yuan; extras excluded.",
+        "incolor-voyager-frameset": "Official starting price; cockpit options differ.",
+        "twitter-v3-wheeltop-eds": "Complete-bike coupon observation; confirm the exact option."
+      }
     },
     "zh-Hans": {
-      "title": "在中国买车架组还是整车？比较真正能骑走的装车成本",
-      "description": "先核对车架套餐，再结合有日期的价格、明确预算和逐项配置，避免重复计算内含配件。",
-      "intro": "车架价格与整车价格回答的是不同问题。有效预算应先明确包含什么，再补上缺少的部分。China Bikes 提供快速估算和独立的逐项装车工具，两者不是同一种报价。",
+      "title": "买车架还是整车？算清一辆能骑的车要多少钱",
+      "description": "用车架、配件和装配费用比较整车价格。以 INCOLOR Voyager 为例，列出已包含配件、已知小计与仍待报价的项目。",
+      "intro": "比较的应是一辆能骑的车：车架套餐、缺少的配件、装配和运费都要算进去。想要特定几何或配置时，自组车很有吸引力，但车架标价本身不能说明是否省钱。先用装车预算筛选，再用逐项报价替换。",
       "sections": [
         {
           "id": "two-tools",
-          "heading": "估算适合筛选，不适合直接下单",
+          "heading": "先比一辆能骑的车，总共要多少",
           "paragraphs": [
-            "目录中的车架装车价，是记录中的车架套餐价格加上所选的剩余装车预算。下表会明确展示这个假设。这是规划方法，不代表某家车店保证按该数字交付指定配置。",
+            "便宜车架很会“交朋友”：轮组、套件和小配件很快就来报到了。目录在车架价格上加一笔已复核的装车预算，避免一套缺了大半辆车的车架只因标价低而显得便宜。这个总额适合筛选，不是车店报价。",
             "[逐项装车工具](/build/)用于选择具体基础车型与各部件，再检查已知和缺失信息。只要必需槽位、价格或兼容性仍未确定，“已知小计”就不是完整预算。"
           ]
         },
         {
           "id": "included-parts",
-          "heading": "添加配件前，先写清套餐内容",
+          "heading": "算一遍：车架、大套，以及剩下的项目",
           "paragraphs": [
             "从卖家的准确选项名称开始：是否包含前叉、碗组、桶轴、座管、把组、尾钩及小配件？变速套餐是否已包含刹车？内含部件只计算一次，不能又在其他槽位重复加价。",
-            "然后按实际需要列出剩余变速、刹车与碟片、轮组、轮胎、内胎或真空胎耗材、接触部件、脚踏及装配费用，并确认车店报价的范围。目的不是假设每辆车都需要同一份购物清单，而是把遗漏写出来。"
+            "然后按实际需要列出剩余变速、刹车与碟片、轮组、轮胎、内胎或真空胎耗材、接触部件、脚踏及装配费用，并确认车店报价的范围。目的不是假设每辆车都需要同一份购物清单，而是把遗漏写出来。",
+            "下面用 INCOLOR Voyager 起价和已记录的 Shimano 105 Di2 大套做费用示例。大套已经覆盖若干项目，再单独加一次刹车、牙盘、飞轮或链条，就重复计费了。尚未报价的行，才是接下来要补齐的预算。"
           ]
         },
         {
@@ -88,21 +105,59 @@
         },
         {
           "id": "compare-like-for-like",
-          "heading": "比较同样的使用结果",
+          "heading": "什么情况下，自组车更值得？",
           "paragraphs": [
             "把完整清单与一个具体整车配置并排比较，保留合身、轮胎、单双盘和轮组选择。自组方案用了更轻或更贵的轮组，两份预算就不再对应同样的结果。",
             "还要把一次性装车成本与售后分开。问清车架、变速与装配问题分别由谁负责，运费和工时如何处理。分别购买所有部件，不代表最终会得到统一保修。"
+          ],
+          "bullets": [
+            "整车实际配置符合需求，且含运费报价低于完成后的自组预算，可以优先考虑整车。",
+            "车架的几何、功能或配件选择足以支持完整预算与装配投入时，再考虑自组。",
+            "已有可用配件时，先逐项列出并确认兼容，再从购买预算中扣除对应成本。"
           ]
         },
         {
           "id": "keep-the-history",
-          "heading": "保留价格原本的日期",
+          "heading": "把示例变成自己的装车单",
           "paragraphs": [
-            "保存每笔主要报价的日期和条件。下表保留底层目录的观察日期，不把每个数字包装成新报价。文章更新日期更晚，也不会让旧价格自动变成当前售价。",
-            "可以先选一个下方车架组与具体的骓特整车比较，调整装车预算；形成有用的短名单后，再进入配置器。目标是得到有清晰缺口的可理解预算，而不是看似精确的总数。"
+            "把日期和条件与每份报价一起保存，准备下单时，才能找到当时确认的同一配置。",
+            "打开 [Voyager 装车方案](/build/?base=incolor-voyager-frameset)或 [LCG071S-PRO 装车方案](/build/?base=lightcarbon-lcg071s-pro-frameset)，用实际报价补齐缺少的价格，再与[骓特整车](/models/twitter-v3-wheeltop-eds/)比较。未确认费用先留空；总价应当帮助作决定，而不是看起来已经算完。"
           ]
         }
+      ],
+      "table_notes": {
+        "lightcarbon-lcg071s-pro-frameset": "车主报告的基础车架价格换算，未含额外费用。",
+        "incolor-voyager-frameset": "官方起价；把组是否包含取决于选项。",
+        "twitter-v3-wheeltop-eds": "整车券后价观察，需确认具体选项。"
+      }
+    }
+  },
+  "comparison": {
+    "kind": "build",
+    "section_id": "two-tools"
+  },
+  "photo_sections": [
+    {
+      "section_id": "two-tools",
+      "ids": [
+        "lightcarbon-lcg071s-pro"
+      ]
+    },
+    {
+      "section_id": "included-parts",
+      "ids": [
+        "incolor-voyager"
+      ]
+    },
+    {
+      "section_id": "compare-like-for-like",
+      "ids": [
+        "twitter-gravel-v3"
       ]
     }
+  ],
+  "example": {
+    "kind": "build-budget",
+    "section_id": "included-parts"
   }
 }
