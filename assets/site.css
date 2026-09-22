@@ -992,3 +992,17 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .builder-base-custom .builder-package-weight > span { font-size: .68rem; text-transform: none; letter-spacing: 0; }
 .builder-package-weight input { max-width: 260px; }
 .builder-package-weight small { max-width: 58ch; font-size: .68rem; line-height: 1.4; font-weight: 400; }
+
+/* Bilingual navigation and evidence-led articles. */
+.language-switch{white-space:nowrap;font-size:.85rem;padding:.45rem .4rem;text-decoration:none;border-radius:.3rem}
+.language-switch:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.article-index{max-width:1120px}.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:2rem}
+.article-card{padding:1.4rem;border:1px solid var(--line,#ddd);border-radius:.5rem}.article-card h2{font-size:1.25rem;line-height:1.4;margin:.4rem 0}.article-card time,.article-note,.article-byline{font-size:.85rem;opacity:.82}
+.buyer-article{max-width:960px}.buyer-article>header h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.18}.buyer-article section{scroll-margin-top:6rem;margin-top:2.2rem}.buyer-article p{line-height:1.85}.buyer-article h2{line-height:1.4}
+.article-toc{padding:1rem 1.3rem;border-inline-start:3px solid currentColor;margin:2rem 0}.article-toc ol{padding-inline-start:1.3rem}.article-toc li{margin:.45rem 0}
+.article-table-wrap{overflow-x:auto;max-width:100%;margin:1.4rem 0;border:1px solid var(--line,#ddd);border-radius:.35rem}.article-table-wrap:focus-visible{outline:2px solid currentColor}
+.article-table{border-collapse:collapse;width:100%;min-width:760px;font-size:.85rem}.article-table caption{text-align:left;padding:.8rem;font-weight:600}.article-table th,.article-table td{padding:.85rem;vertical-align:top;text-align:left;border-top:1px solid var(--line,#ddd)}.article-table th[scope=row]{min-width:175px}.article-table small{display:block;font-weight:400;margin-top:.4rem}.price-conditions{min-width:150px}.price-conditions summary{cursor:pointer}.price-conditions p{max-width:270px}
+.article-sources,.model-related-reading{padding:1.3rem;border:1px solid var(--line,#ddd);border-radius:.4rem}.article-sources a{overflow-wrap:anywhere}.model-related-reading{margin:1.5rem 0}.model-related-reading h2{font-size:1.1rem}
+html[lang="zh-Hans"]{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}html[lang="zh-Hans"] .page-lede{line-height:1.8}
+.locale-evidence-note{font-size:.85rem;line-height:1.7;opacity:.85}.original-evidence-label{font-size:.78rem;opacity:.75}
+@media(max-width:760px){.article-grid{grid-template-columns:1fr}.language-switch{font-size:.8rem;padding:.4rem .25rem}.buyer-article>header h1{font-size:1.9rem}.article-card{padding:1rem}}

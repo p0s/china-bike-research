@@ -1,8 +1,47 @@
+import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
 
 (() => {
   const base = document.body.dataset.base ?? '';
+  const locale = document.documentElement.lang;
+  // A language change retains the current filter/comparison/builder state in the URL.
+  document.querySelectorAll('[data-language-switch]').forEach((link) => {
+    const syncLanguageLink = () => {
+      const target = new URL(link.href, location.href);
+      target.search = location.search;
+      target.hash = location.hash;
+      link.href = target.href;
+    };
+    link.addEventListener('pointerdown', syncLanguageLink);
+    link.addEventListener('focus', syncLanguageLink);
+    link.addEventListener('click', syncLanguageLink);
+  });
+  // Static HTML is already localized. This only handles text created by interactions.
+  if (locale === 'zh-Hans') {
+    const translateNode = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        if (node.parentElement?.closest('script,style,code,textarea,[data-original-language]')) return;
+        const translated = translate(node.nodeValue, locale);
+        if (translated !== node.nodeValue) node.nodeValue = translated;
+        return;
+      }
+      if (!(node instanceof Element) || node.matches('script,style,code,textarea,[data-original-language]')) return;
+      for (const attribute of ['aria-label', 'title', 'placeholder', 'alt']) {
+        if (!node.hasAttribute(attribute)) continue;
+        const value = node.getAttribute(attribute);
+        const translated = translate(value, locale);
+        if (translated !== value) node.setAttribute(attribute, translated);
+      }
+      node.childNodes.forEach(translateNode);
+    };
+    new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList') mutation.addedNodes.forEach(translateNode);
+        else translateNode(mutation.target);
+      }
+    }).observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'title', 'placeholder', 'alt'] });
+  }
   const selectionStorageKey = 'china-bike-guide-selection-v2';
   const comparisonSelectionLimit = COMPARISON_SELECTION_LIMIT;
   const buildAllowanceStorageKey = 'china-bike-guide-build-allowance-v1';

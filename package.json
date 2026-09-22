@@ -27,6 +27,7 @@
     "video:normalize": "node scripts/video-research.mjs normalize",
     "video:match": "node scripts/video-research.mjs match",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run privacy && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build"
+    "check": "npm run privacy && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build && npm run seo:check",
+    "seo:check": "node scripts/audit-seo.mjs"
   }
 }

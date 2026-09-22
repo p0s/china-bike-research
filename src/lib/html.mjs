@@ -1,3 +1,5 @@
+import { localePath, localizeHtml } from './i18n.mjs';
+import { translate } from '../../assets/i18n.js';
 export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 }
@@ -7,29 +9,38 @@ export function url(base, pathname='/') {
   const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `${base}${p}` || '/';
 }
-export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription=''}) {
+export function layout({base='', repositoryUrl, title='', description, current='', body, noindex=false, siteUrl='https://example.invalid', path='/', image='', imageAlt='', imageWidth='', imageHeight='', imageType='', ogType='website', structuredData=[], datasetUpdated='', catalogReviewed='', footerDescription='', locale='en', googleSiteVerification=''}) {
   const siteName='China Bikes';
+  const t = (value) => translate(value, locale);
+  title = t(title);
+  description = t(description);
+  const localizedPath = localePath(path, locale);
+  const languageHref = url(base, localePath(path, locale === 'en' ? 'zh-Hans' : 'en'));
+  const languageLinks = noindex ? '' : ['en', 'zh-Hans', 'x-default'].map((lang) => `<link rel="alternate" hreflang="${lang}" href="${escapeAttr(`${siteUrl}${url(base, localePath(path, lang === 'zh-Hans' ? lang : 'en'))}`)}">`).join('\n  ');
   const pageTitle=title ? `${title} · ${siteName}` : siteName;
-  const canonical = `${siteUrl}${url(base,path)}`;
+  const canonical = `${siteUrl}${url(base,localizedPath)}`;
   const socialImage = image ? (image.startsWith('https://') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`) : '';
   const jsonLd = (Array.isArray(structuredData) ? structuredData : [structuredData])
     .filter(Boolean)
     .map((entry) => `<script type="application/ld+json">${safeJson(entry)}</script>`)
     .join('\n  ');
-  return `<!doctype html>
-<html lang="en">
+  const html = `<!doctype html>
+<html lang="${locale}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="${escapeAttr(description)}">
+  ${googleSiteVerification ? `<meta name="google-site-verification" content="${escapeAttr(googleSiteVerification)}">` : ''}
   <meta name="theme-color" content="#f7f7f4" data-theme-color>
   <script>(()=>{try{const k='china-bikes-theme-v1',t=localStorage.getItem(k);if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;const d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.querySelector('[data-theme-color]').content=d?'#111512':'#f7f7f4'}catch{}})()</script>
   <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="icon" type="image/svg+xml" href="${url(base,'/assets/logo.svg')}">
   <link rel="stylesheet" href="${url(base,'/assets/site.css')}">
   <link rel="canonical" href="${escapeAttr(canonical)}">
+  ${languageLinks}
   <meta property="og:site_name" content="${siteName}">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="${locale === 'zh-Hans' ? 'zh_CN' : 'en_US'}">
+  <meta property="og:locale:alternate" content="${locale === 'zh-Hans' ? 'en_US' : 'zh_CN'}">
   <meta property="og:title" content="${escapeAttr(pageTitle)}">
   <meta property="og:description" content="${escapeAttr(description)}">
   <meta property="og:type" content="${escapeAttr(ogType)}">
@@ -40,7 +51,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
   ${jsonLd}
   <title>${escapeHtml(pageTitle)}</title>
 </head>
-<body data-base="${escapeAttr(base)}">
+<body data-base="${escapeAttr(base + (locale === 'zh-Hans' ? '/zh' : ''))}" data-locale="${locale}">
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="page header-inner">
@@ -51,7 +62,9 @@ export function layout({base='', repositoryUrl, title='', description, current='
           <a href="${url(base,'/framesets/')}" data-nav-framesets${current==='framesets'?' aria-current="page"':''}>Framesets</a>
           <a href="${url(base,'/build/')}" data-nav-builder${current==='builder'?' aria-current="page"':''}>Build</a>
           <a href="${url(base,'/electronic-shifting/')}" data-nav-groupsets${current==='groupsets'?' aria-current="page"':''}>Groupsets</a>
+          <a href="${url(base,'/blog/')}"${current==='blog'?' aria-current="page"':''}>Blog</a>
         </nav>
+        <a class="language-switch" data-language-switch href="${languageHref}" lang="${locale === 'en' ? 'zh-Hans' : 'en'}" hreflang="${locale === 'en' ? 'zh-Hans' : 'en'}" aria-label="${locale === 'en' ? '阅读此页面的中文版本' : 'Read this page in English'}">${locale === 'en' ? '中文' : 'English'}</a>
         <button class="theme-button" type="button" data-theme-control aria-label="Theme: System. Switch to light theme" title="Theme: System"><span aria-hidden="true" data-theme-icon>◐</span><span data-theme-label>System</span></button>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       </div>
@@ -66,6 +79,7 @@ export function layout({base='', repositoryUrl, title='', description, current='
       </div>
       <nav aria-label="Footer">
         <a href="${url(base,'/methodology/')}">Methodology</a>
+        <a href="${url(base,'/blog/')}">Buying guides</a>
         <a href="${url(base,'/brands/')}">Brands</a>
         <a href="${url(base,'/prices/')}">Price ranges</a>
         <a href="${url(base,'/electronic-shifting/')}">Groupsets</a>
@@ -91,4 +105,5 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
 </body>
 </html>`;
+  return localizeHtml(html, { base, locale, siteUrl });
 }
