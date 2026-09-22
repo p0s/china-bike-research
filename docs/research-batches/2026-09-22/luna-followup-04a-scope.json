@@ -1,0 +1,18 @@
+{
+  "batch_id": "luna-followup-04a-v3-weight-correction-2026-09-22",
+  "base_commit": "696912f84a85dca2293ddaf7e85646ae7609f93f",
+  "model_limit": 1,
+  "atomic_fields": 2,
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-rs-sensah",
+      "fields": [
+        "frame-weight",
+        "complete-weight"
+      ]
+    }
+  ],
+  "done_criteria": "Correct published weight attributions using current primary T47 RS24 table; retire unsupported frame-weight scalar and preserve conflicting storefront claims with their BB86 revision basis.",
+  "evidence": "Reuses direct current-session manufacturer and storefront reads from batch04; no new independent source check claimed."
+}
