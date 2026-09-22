@@ -65,18 +65,32 @@ function validIPv4(value) {
 
 function validIPv6(value) {
   if (!value.includes(':') || value.includes(':::')) return false;
-  const compressionCount = (value.match(/::/g) ?? []).length;
-  if (compressionCount > 1) return false;
-  const [left, right] = value.split('::');
-  const groups = `${left ?? ''}:${right ?? ''}`.split(':').filter(Boolean);
-  const normalizedGroups = groups.flatMap((group, index) => {
-    if (!group.includes('.')) return [group];
-    if (index !== groups.length - 1 || !validIPv4(group)) return [];
-    return ['0', '0xffff', ...group.split('.').map((part) => Number(part).toString(16))];
-  });
-  if (normalizedGroups.length !== groups.length + (groups.some((group) => group.includes('.')) ? 3 : 0)) return false;
-  if (!normalizedGroups.every((group) => /^[0-9a-f]{1,4}$/i.test(group))) return false;
-  return compressionCount === 1 ? normalizedGroups.length < 8 : normalizedGroups.length === 8;
+  const compressionIndex = value.indexOf('::');
+  const hasCompression = compressionIndex !== -1;
+  if (hasCompression && compressionIndex !== value.lastIndexOf('::')) return false;
+
+  const left = hasCompression ? value.slice(0, compressionIndex) : value;
+  const right = hasCompression ? value.slice(compressionIndex + 2) : '';
+  const leftGroups = left ? left.split(':') : [];
+  const rightGroups = right ? right.split(':') : [];
+  if (leftGroups.some((group) => !group) || rightGroups.some((group) => !group)) return false;
+
+  const groups = [...leftGroups, ...rightGroups];
+  const dottedGroups = groups.filter((group) => group.includes('.'));
+  if (dottedGroups.length > 1) return false;
+  if (dottedGroups.length === 1) {
+    const dottedGroup = dottedGroups[0];
+    // A dotted IPv4 tail expands to two 16-bit groups and must remain last.
+    if (groups.at(-1) !== dottedGroup || (hasCompression && rightGroups.length === 0)) return false;
+    if (!validIPv4(dottedGroup)) return false;
+  }
+
+  const groupCount = groups.reduce((count, group) => {
+    if (group.includes('.')) return count + 2;
+    return /^[0-9a-f]{1,4}$/i.test(group) ? count + 1 : Number.NaN;
+  }, 0);
+  if (!Number.isFinite(groupCount)) return false;
+  return hasCompression ? groupCount < 8 : groupCount === 8;
 }
 
 function validClientIp(value) {
@@ -162,7 +176,7 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 1500);
   try {
-    await fetchImpl(endpoint, {
+    const response = await fetchImpl(endpoint, {
       method: 'POST',
       headers: {
         authorization: `Bearer ${token}`,
@@ -171,7 +185,7 @@ export async function ingestAnalytics(payload, env, fetchImpl = globalThis.fetch
       body: JSON.stringify(payload),
       signal: controller.signal
     });
-    return true;
+    return response.ok;
   } catch {
     return false;
   } finally {

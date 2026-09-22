@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsPayload, handleRequest, hasOptOutCookie, isEligibleDocumentPath } from '../worker/index.mjs';
+import { analyticsPayload, handleRequest, hasOptOutCookie, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
   const request = new Request(`https://china-bikes.p0s.eu${path}`, init);
@@ -53,6 +53,16 @@ test('analytics accepts compressed IPv6 addresses from Cloudflare', () => {
     }
   });
   assert.equal(analyticsPayload(request, new URL(request.url)).ip, '2001:db8::10');
+});
+
+test('analytics accepts IPv4-mapped IPv6 addresses from Cloudflare', () => {
+  const request = makeRequest('/', {
+    headers: {
+      'cf-connecting-ip': '::ffff:192.0.2.1',
+      'user-agent': 'Mozilla/5.0'
+    }
+  });
+  assert.equal(analyticsPayload(request, new URL(request.url)).ip, '::ffff:192.0.2.1');
 });
 
 test('analytics eligibility honors DNT, GPC, opt-out, prefetch, bots, and private paths', () => {
@@ -135,6 +145,23 @@ test('collector failure never changes the document response', async () => {
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test('collector HTTP failures are reported as rejected ingestion', async () => {
+  const payload = {
+    hostname: 'china-bikes.p0s.eu',
+    path: '/',
+    ip: '203.0.113.10',
+    userAgent: 'Mozilla/5.0'
+  };
+  const env = {
+    ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+    ANALYTICS_INGEST_TOKEN: 'test-token'
+  };
+  const responseFor = (status) => ingestAnalytics(payload, env, async () => new Response(null, { status }));
+  assert.equal(await responseFor(204), true);
+  assert.equal(await responseFor(401), false);
+  assert.equal(await responseFor(500), false);
 });
 
 test('preference routes require same-origin POST and set host-only cookies', async () => {
