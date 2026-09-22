@@ -1,0 +1,186 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-15-2026-09-22",
+  "status": "completed-with-one-maximum-clearance-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 19,
+  "full_field_closures": 1,
+  "catalog_changes": 1,
+  "coarse_gap_count_before": 719,
+  "coarse_gap_count_after": 718,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "koseea-pioneer-slr-plus",
+      "outcome": "unresolved",
+      "finding": "Exact SLR+ retailer gives fitted28C and generic stiffness marketing. Discovery30/32C claims belong to sibling or ambiguous SLR pages, so neither target field resolved.",
+      "sources": [
+        "https://www.uaecycle.com/en-sa/collections/roadbike/products/koseea-pioneer-slr-105-di2-carbon-road-bike",
+        "https://www.koseea.com/",
+        "https://geometrygeeks.bike/bike/koseea-pioneer-slr-2026/",
+        "https://poseidonbogota.com/products/frameset-de-carbono-kossea-pioneer-slr?variant=46931988152493"
+      ],
+      "proof": "Worker current full exact retailer read; manufacturer timeout; sibling discovery excluded.",
+      "next_trigger": "Exact SLR+ maximum or meaningful frame-specific comparison.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missile-e6000",
+      "outcome": "unresolved",
+      "finding": "JD index identifies2025 水星6000 carbon/SENSAH24-speed hydraulic; no maximum or meaningful stiffness. Direct item placeholder and manufacturer502.",
+      "sources": [
+        "https://www.missilebike.com/",
+        "https://www.jd.com/hotitem/131882d86ae6672951f1.html",
+        "https://item.jd.com/10166817946644.html",
+        "https://wiki.smzdm.com/p/xzqox64/"
+      ],
+      "proof": "Worker current index/full placeholder and failure reads; SMZDM identity only.",
+      "next_trigger": "Accessible exact 水星6000 specification or comparative ride/test.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "phillips-carbon-road-unknown",
+      "outcome": "unresolved",
+      "finding": "Existing Sachem24-speed reference fits28C. Current JD/Ruten/corporate routes expose neither maximum nor frame behavior.",
+      "sources": [
+        "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://www.ruten.com.tw/item/22634420046542/",
+        "https://www.zj-phillips.com/index.php?ac=article&at=list&tid=56"
+      ],
+      "proof": "Worker reports exact888Bike access failure; existing retailer evidence reused. Current listed routes checked, not new maximum evidence.",
+      "next_trigger": "Accessible exact Sachem maximum or meaningful comparative ride/test.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "phoenix-700c-carbon-e-road",
+      "outcome": "unresolved",
+      "finding": "Exact Model799 Ebuy7 body gives carbon/e-bike configuration but rim size Other. Retained700C card context does not establish maximum or stiffness.",
+      "sources": [
+        "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html"
+      ],
+      "proof": "Worker current full exact retail read.",
+      "next_trigger": "Exact Model799700C technical maximum and meaningful ride/test evidence.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-dream-maker",
+      "outcome": "unresolved",
+      "finding": "R17 product fits25C; manufacturer guide names R08/R13 but not R17. Engineering rigidity discussion does not establish maximum.",
+      "sources": [
+        "https://savadeck-bike.com/collections/sava-carbon-road-bike/products/sava-dream-maker-di2-full-carbon-bike?variant=41531895873675",
+        "https://savadeck-bike.com/blogs/sava-bike-blog/sava-dream-maker-officially-released",
+        "https://savadeck-bike.com/blogs/sava-bike-blog/whats-the-maximum-tire-width-on-sava-bikes"
+      ],
+      "proof": "Worker current product/guide/engineering reads; sibling guide values excluded.",
+      "next_trigger": "Exact R17/DreamMaker maximum.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-starship-r13",
+      "outcome": "maximum-accepted-stiffness-unresolved",
+      "finding": "Current guide explicitly maps R13/Falcon/Starship to28C maximum. Parent current product read identifies R13 and fitted28C, with Sensh HRD/R7100 mixed build. Older25C and global-build observations remain historical; mainland trim mapping unresolved. No meaningful stiffness result.",
+      "sources": [
+        "https://savadeck-bike.com/products/sava-starship-105-r7120-24-speed-carbon-road-bike",
+        "https://savadeck-bike.com/blogs/sava-bike-blog/whats-the-maximum-tire-width-on-sava-bikes"
+      ],
+      "proof": "Worker and parent current guide reads. Worker reported product fitted25C; parent current full technical table shows28C, so final data/report use the current table and preserve older source dates. Nominal maximum only, no measured rim/clearance protocol.",
+      "next_trigger": "Meaningful exact Starship stiffness comparison; mainland card/BOM mapping remains separate.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "trinx-tornado-900",
+      "outcome": "unresolved",
+      "finding": "Official page fits28C; Gulf retailer fits25/28C. Neither gives maximum. Elite racing rigidity wording is generic marketing.",
+      "sources": [
+        "https://www.trinx.com/index.php?ac=article&at=read&did=2190",
+        "https://gulfbicycles.com/product/trinx-tdo-900-factory-team-carbon-road-bike/"
+      ],
+      "proof": "Worker current exact manufacturer/retailer reads.",
+      "next_trigger": "Exact TDO900 maximum and meaningful comparative stiffness evidence.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-gravel-v3-105",
+      "outcome": "revision-gated-unresolved",
+      "finding": "Manufacturer T47 V3 fits40C without maximum. Store45C/weight claims remain entangled with BB86/T47 revisions; no selected R7120 maximum or meaningful stiffness evidence. Earlier V3 corrections preserved.",
+      "sources": [
+        "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html",
+        "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike"
+      ],
+      "proof": "Worker current source reads plus already verified2026-09-22 revision-conflict sources; no transfer of45C.",
+      "next_trigger": "Exact R7120/T47 maximum with revision bridge and meaningful frame-behavior comparison.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-taylor",
+      "outcome": "unresolved",
+      "finding": "Canonical Chinese page timed out. Indexed exact Taylor snippets show material/T47/fitted28C, no maximum or stiffness.",
+      "sources": [
+        "https://www.upland.bike/zh/product/304.html",
+        "https://www.upland.bike/cs/product/486.html"
+      ],
+      "proof": "Worker current access failure and indexed snippets only.",
+      "next_trigger": "Accessible exact Taylor technical maximum or comparative ride/test.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-ad350-2026",
+      "outcome": "unresolved",
+      "finding": "Current JD confirms26款; official route dynamic/empty, exact HK dealer inaccessible. Historical indexed fitted30C is not maximum. Search-only32/35C claims are self-published or older1x12/16-speed builds. Exact26款 video did not provide sufficiently specific stiffness comparison.",
+      "sources": [
+        "https://www.xidesheng.com/goods/2056272417912729602/buy",
+        "https://www.jd.com/jiage/131869d74bfaea983bec.html",
+        "https://bicycleshophk.com/zh-mo/products/xds-2026-ad350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A24%E9%80%9F%E5%85%AC%E8%B7%AF%E8%BB%8A",
+        "https://www.douyin.com/shipin/7280737901640566784",
+        "https://www.douyin.com/video/7641604700349730277"
+      ],
+      "proof": "Worker current index/video review, empty/failed direct routes and reused dealer evidence; discovery-only sibling fit claims excluded.",
+      "next_trigger": "Current26款2x12 technical maximum or meaningful frame-specific comparison.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "validate": "passed",
+    "coverage_accept": "passed",
+    "full_gate": "Passed:304tests,584pages,SEO456indexable/128noindex; includes main af6f8fb."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

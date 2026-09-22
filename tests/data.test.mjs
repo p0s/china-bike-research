@@ -1154,7 +1154,8 @@ test('batch 038 records exact materials, weights and prices while preserving mod
   assert.match(candidates.get('missing-china-price-giant-defy-advanced').price_status, /CNY 14,800/);
   assert.match(candidates.get('pardus-spark-tourist').facts.complete_weight_status, /similarly named Spark AL and Spark Sport values are not transferable/);
   assert.match(candidates.get('quick-pro-gr-one-grx-di2').price_status, /no exact mapped mainland CNY checkout/);
-  assert.match(candidates.get('sava-starship-r13').facts.tire_clearance_status, /fitted 700×25C tires are not a maximum/);
+  assert.equal(candidates.get('sava-starship-r13').facts.tire_clearance_mm, 28);
+  assert.match(candidates.get('sava-starship-r13').facts.tire_clearance_basis, /Manufacturer R13\/Falcon\/Starship.*no rim-width/);
 
   const argon = candidates.get('argon18-krypton-pro');
   assert.match(argon.facts.frame_weight_status, /current-generation.*870 g prior-generation value is excluded/);
@@ -1180,6 +1181,7 @@ test('batch 038 records exact materials, weights and prices while preserving mod
     'candidate:missing-china-price-van-rysel-rcr:frame-stiffness',
     'candidate:missing-china-price-giant-defy-advanced:price',
     'candidate:seka-spear-rdc:frame-stiffness',
+    'candidate:sava-starship-r13:tire-clearance',
     'candidate:specialized-s-works-crux-frameset:frame-weight',
     'candidate:specialized-s-works-crux-frameset:price',
     'candidate:missing-china-price-specialized-tarmac-sl8:price',

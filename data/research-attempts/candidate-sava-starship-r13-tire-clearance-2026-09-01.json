@@ -477,8 +477,20 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-r13-starship-tire-guide-2026-09-22",
+    "sava-starship-r13-current-build-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-starship-r13-batch-038-50-area-sweep-2026-09-01.json. The exact official product publishes fitted 700×25C tires and R13 geometry but no maximum compatible width; a fitted tire is not treated as a clearance limit."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-starship-r13-batch-038-50-area-sweep-2026-09-01.json. The exact official product publishes fitted 700×25C tires and R13 geometry but no maximum compatible width; a fitted tire is not treated as a clearance limit.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "sava-r13-starship-tire-guide-2026-09-22",
+      "sava-starship-r13-current-build-2026-09-22"
+    ],
+    "note": "Current manufacturer guide supplies explicit R13/Starship28C maximum and current product page corroborates exact frame identity and fitted28C. Keep nominal-width protocol limitation and unresolved retained mainland trims explicit. Original50-area attempts preserved."
+  }
 }
