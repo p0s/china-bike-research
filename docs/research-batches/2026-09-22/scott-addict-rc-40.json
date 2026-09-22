@@ -1,0 +1,19 @@
+{
+  "model": "scott-addict-rc-40",
+  "date": "2026-09-22",
+  "field": "tire-clearance",
+  "result": "Manufacturer-confirmed maximum remains unknown for retained model 290362.",
+  "sources_read": [
+    {
+      "url": "https://www.scott.pl/produkt/1635/12093/Rower-Addict-RC-40",
+      "result": "Exact regional page read; fitted 28C tires are not a published maximum."
+    },
+    {
+      "url": "https://www.reddit.com/r/bicycling/comments/1gq9rp5/scott_addict_rc_tire_clearance/",
+      "result": "Owner discussion reports larger fitted tires across several RC trims and uncertain years. No exact manufacturer maximum; subjective fit is not transferred."
+    }
+  ],
+  "discovery": "Current official 34 mm claims concern the new RC generation; 38 mm concerns endurance Addict. Both rejected for this target.",
+  "next": "Exact 2023/2024 RC 40 manual or manufacturer statement matching 290362 and defining maximum measured tire width.",
+  "historical_ledgers": "Retained unchanged; no new maximum or synthetic 50-area completion."
+}

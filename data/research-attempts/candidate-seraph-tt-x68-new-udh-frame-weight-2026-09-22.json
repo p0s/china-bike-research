@@ -1,0 +1,51 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TT-X68-new UDH frame weight conflict",
+          "route": "Seraph current exact product",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-22",
+          "note": "983±50 g at 54 cm UD matte conflicts with TanTan.",
+          "result_url": "https://www.seraphbikes.com/tt-x68-new-udh-hanger-superlight-disc-road-bike-frame-t47-bottom-bracket-max-tire-70032c-available-size-495254565861cm-p7181862.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TT-X68-new UDH alternate frame weight",
+          "route": "TanTan current exact product",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-22",
+          "note": "953±50 g at the same nominal basis; reason unknown.",
+          "result_url": "https://www.tantanbikes.com/TT-X68-New-UDH-hanger-Superlight-Disc-Road-Bike-Frame-T47-Bottom-Bracket-Max-Tire-70032C-Available-Size-495254565861cm-p7192663.html"
+        }
+      ],
+      "conflict": "983±50 g versus 953±50 g at 54 cm UD matte."
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "seraph-tt-x68-new-storefront-2026-09-22",
+    "tantan-tt-x68-new-storefront-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Numeric comparison field removed with scoped retirement; both source claims preserved. Next: corrected manufacturer revision/basis documentation."
+}

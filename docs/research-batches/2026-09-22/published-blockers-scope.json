@@ -1,0 +1,69 @@
+{
+  "id": "published-blockers-2026-09-22",
+  "date": "2026-09-22",
+  "base_commit": "527854a",
+  "limits": {
+    "exact_records": 7,
+    "atomic_fields": 15
+  },
+  "targets": [
+    {
+      "id": "lightcarbon-speedz",
+      "type": "platform",
+      "fields": [
+        "identity",
+        "tire-clearance",
+        "frame-material",
+        "bottom-bracket",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "id": "lightcarbon-speedz-complete",
+      "type": "variant",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ]
+    },
+    {
+      "id": "lightcarbon-speedz-frameset",
+      "type": "variant",
+      "fields": [
+        "package",
+        "frame-weight"
+      ]
+    },
+    {
+      "id": "elves-falath-r7170",
+      "type": "variant",
+      "fields": [
+        "complete-weight",
+        "wheels"
+      ]
+    },
+    {
+      "id": "scott-addict-rc-40",
+      "type": "platform",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "id": "tavelo-grow",
+      "type": "platform",
+      "fields": [
+        "drivetrain-compatibility"
+      ]
+    },
+    {
+      "id": "seraph-tt-x68-new-udh",
+      "type": "candidate",
+      "fields": [
+        "frame-weight",
+        "frame-revision"
+      ]
+    }
+  ],
+  "done": "Accept exact attributable evidence or record unresolved cause and next trigger. Stop identity-dependent SPEEDZ fields if identity cannot be resolved. Preserve historical ledgers; correction metadata may retire only a disproven protected field."
+}
