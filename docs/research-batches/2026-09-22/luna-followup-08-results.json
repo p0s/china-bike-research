@@ -1,0 +1,141 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-08-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 7,
+  "reviewed_fields": 25,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 724,
+  "coarse_gap_count_after": 724,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-evo-community-lead",
+      "outcome": "generation-and-build-unresolved",
+      "finding": "Official factory build and European review prices do not price the retained6.2kg custom bike in China. Community fitted25/28C is not a maximum; older/newer Robin generations remain unmapped and stiffness claims are qualitative.",
+      "sources": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030",
+        "https://road.cc/tech-news/chinas-pardus-makes-european-push-with-sub-4500-6-7kg-carbon-road-bike",
+        "https://www.parduscycle.com/find.aspx"
+      ],
+      "next_trigger": "Exact custom-build generation, selected BOM and attributable price/maximum/test.",
+      "proof": "Worker current official and European coverage reads; earlier source IDs retained as context, dealer availability establishes support only.",
+      "fields": [
+        "price",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "generic-custom-carbon-road",
+      "outcome": "identity-unresolved",
+      "finding": "Current OEM range contains several distinct molds with different masses/materials/clearances. No manufacturer/model bridge to the retained generic seller image; no range value transferred.",
+      "sources": [
+        "https://www.cwcarbonworld.com/carbon-fiber-bike-frame/carbon-road-bike-frame/"
+      ],
+      "next_trigger": "Attributable manufacturer/model/SKU or matching geometry and image.",
+      "proof": "Worker current OEM category read; discovery only for this unresolved retained frame.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r6-105-al",
+      "outcome": "selected-build-unresolved",
+      "finding": "Exact China R6 105 AL page lacks complete mass. Japan page supplies frame mass only; a configurable Japanese R7120 example does not establish China105AL stock drivetrain.",
+      "sources": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/165.html",
+        "https://hilight.jp/r6",
+        "https://hilight.jp/news/PrzMcVCT"
+      ],
+      "next_trigger": "Exact China105AL complete BOM and weight basis.",
+      "proof": "Worker current China page, regional distributor page and configurable-build article reads.",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-tt-frame-hydraulic",
+      "outcome": "identity-unresolved",
+      "finding": "Current JAVA inventory identifies VEGA TT but does not map the retained generic hydraulic frameset card. Complete-build search snippets cannot establish frame-package mass or selected model properties.",
+      "sources": [
+        "https://www.javabikes.com/Products/5.html"
+      ],
+      "next_trigger": "Exact retained JAVA TT model/SKU and frame package.",
+      "proof": "Worker manufacturer inventory read; additional 888Bike VEGA2026 discovery timed out on direct access and was not accepted.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kontax-power-evo",
+      "outcome": "source-unavailable",
+      "finding": "Known RS80 Power EVO identity remains, but current exact official source returned unavailable403. Readable RS5 data belongs to a distinct model and was not transferred.",
+      "sources": [
+        "https://www.kontaxbike.cn/pd161433538.html",
+        "https://www.kontaxbike.cn/pd585586598.html"
+      ],
+      "next_trigger": "Readable RS80 technical sheet or exact independent review/test.",
+      "proof": "Existing identity source reused with original date; current exact page unavailable, sibling RS5 read only to reject transfer.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "my-way-custom-carbon-frame",
+      "outcome": "identity-unresolved",
+      "finding": "Exact-title searches returned unrelated Pinarello MyWay and generic OEM/marketplace results without a manufacturer, mold, SKU or geometry bridge. Pinarello equivalence rejected.",
+      "sources": [
+        "https://pinarello.com/china/zh/myway"
+      ],
+      "next_trigger": "Attributable retained seller/manufacturer model bridge.",
+      "proof": "Worker current discovery searches and unrelated official route; no exact product evidence.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-t10",
+      "outcome": "identity-unresolved",
+      "finding": "Current QUICK catalog lacks a T10 identity. Quick Pro TT:ONE and TWITTER T10 Pro are distinct products/brands; their masses, materials and maxima were not transferred.",
+      "sources": [
+        "https://www.quick-bikes.com.cn/products/4.html",
+        "https://www.quickprokorea.com/en/products/tt-one-frame",
+        "https://twitterbikeusa.com/en-ca/products/twitter-t10-pro-2nd-carbon-road-frame-set-high-modulus-carbon-700c-aero-racing-udh-integrated-handlebar-included"
+      ],
+      "next_trigger": "Exact QUICK T10 manufacturer or archived product bridge.",
+      "proof": "Worker current catalog and distinct-model reads; historical QUICK source IDs retained as context.",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only batch; data/code unchanged.",
+    "reused_gate": "290tests,584pages and SEO passed at efd492c; no broad rerun."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
