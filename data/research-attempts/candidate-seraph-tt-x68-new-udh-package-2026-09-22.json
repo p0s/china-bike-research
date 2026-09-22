@@ -1,0 +1,41 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-package-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "package",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TT-X68-new UDH full package",
+          "route": "exact Seraph package table",
+          "outcome": "found",
+          "accessed_at": "2026-09-22",
+          "note": "Named full bundle found; distinguish TanTan no-handlebar option.",
+          "result_url": "https://www.seraphbikes.com/tt-x68-new-udh-hanger-superlight-disc-road-bike-frame-t47-bottom-bracket-max-tire-70032c-available-size-495254565861cm-p7181862.html"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "seraph-tt-x68-new-storefront-2026-09-22",
+    "tantan-tt-x68-new-storefront-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Selected-option contents must be confirmed; table is the named full bundle."
+}

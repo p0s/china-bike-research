@@ -1,0 +1,52 @@
+{
+  "id": "candidate-mondince-fm316-availability-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "availability",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 individual MOQ availability",
+          "route": "current official ordering and FAQ comparison",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-22",
+          "note": "Single-unit FAQ conflicts with bulk-only/MOQ 30 text.",
+          "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        }
+      ],
+      "conflict": "Same official page advertises single-unit private orders, bulk-only orders and MOQ 30 without consistent scope."
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 single order owner",
+          "route": "opened exact owner ordering discussion",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Historical small order is not current mainland fulfilment proof.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "mondince-fm316-current-specification-2026-09-22",
+    "mondince-fm316-owner-followup-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Current single-unit fulfilment remains unverified. Next: consistent exact ordering terms or an attributable current individual offer."
+}

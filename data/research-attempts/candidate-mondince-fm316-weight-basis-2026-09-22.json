@@ -1,0 +1,40 @@
+{
+  "id": "candidate-mondince-fm316-weight-basis-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "weight-basis",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 1150g 1030g size basis",
+          "route": "current manufacturer specification and data sheet",
+          "outcome": "found",
+          "accessed_at": "2026-09-22",
+          "note": "M versus XS raw basis now explicitly distinguishes the figures.",
+          "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "mondince-fm316-current-specification-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Size explains the headline/detailed difference; do not add storage-cover mass without a defined total basis."
+}

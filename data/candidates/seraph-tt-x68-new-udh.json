@@ -11,20 +11,27 @@
     "tire_clearance_basis": "Exact T47/UDH storefront lists 700×32C; confirm measured fit",
     "bottom_bracket": "T47 threaded",
     "frame": "UDH hanger; electronic shifting only",
-    "sizes": "49, 52, 54, 56, 58, 61 cm"
+    "sizes": "49, 52, 54, 56, 58, 61 cm",
+    "included_package": "Seraph named bundle: frame, fork, seatpost, handlebar, spacers, headset and thru-axles; TanTan also offers a no-handlebar selection, so confirm the chosen option.",
+    "international_price_reference": "Seraph US$629 and TanTan US$579 displayed on 2026-09-22; options differ and no mainland delivered CNY quote is established."
   },
   "missing": [
     "Exact China delivered quote and selected package availability",
-    "Confirm bottom-bracket shell width and selected crank compatibility"
+    "Confirm bottom-bracket shell width and selected crank compatibility",
+    "Resolve storefront frame-weight disagreement and 32C versus separately named 35C revision identity",
+    "Exact-revision stiffness measurement or attributable ride comparison"
   ],
-  "source_note": "USD 629 storefront reference on 2026-09-05, with size/paint-dependent lead times. Not a verified mainland total or evidence for the older BSA version.",
+  "source_note": "Current 32C T47/UDH listing retained separately from older BSA and separately titled 35C New-Version pages. Seraph now states 983±50 g while TanTan states 953±50 g at the same nominal basis; this is unresolved. Prices are foreign storefront references, not mainland totals. Public discussion links the 35C page but does not establish equivalence.",
   "model_id": "seraph-tt-x68-new-udh",
   "type": "frameset",
   "status": "exact-model-research-stage",
   "research_priority": "medium",
   "source_ids": [
     "seraph-tt-x68-new-udh-source-2026-09-05",
-    "chinesecarbon-top-discovery-2026-09-05"
+    "chinesecarbon-top-discovery-2026-09-05",
+    "seraph-tt-x68-new-storefront-2026-09-22",
+    "tantan-tt-x68-new-storefront-2026-09-22",
+    "tantan-tt-x68-new-version-35c-2026-09-22"
   ],
-  "last_reviewed": "2026-09-05"
+  "last_reviewed": "2026-09-22"
 }

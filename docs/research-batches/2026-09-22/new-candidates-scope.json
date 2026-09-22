@@ -1,0 +1,14 @@
+{
+  "id": "new-candidates-2026-09-22",
+  "base_commit": "e3961e9",
+  "date": "2026-09-22",
+  "limits": { "models": 5, "atomic_fields": 25 },
+  "targets": [
+    { "id": "evolve-cima-road", "fields": ["price", "frame-stiffness", "package", "warranty-support"] },
+    { "id": "seraph-tt-x68-new-udh", "fields": ["price", "frame-stiffness", "package", "bottom-bracket"] },
+    { "id": "mondince-fm316", "fields": ["price", "frame-stiffness", "weight-basis", "package", "availability"] },
+    { "id": "airwolf-yf-r003", "fields": ["price", "frame-stiffness", "frame-material", "frame-revision", "package"] },
+    { "id": "velobuild-cx-002-2023", "fields": ["price", "frame-stiffness", "frame-weight", "tire-clearance", "geometry", "category", "package"] }
+  ],
+  "done": "Each field has accepted exact-source evidence or an honest unresolved disposition, recorded attempts and next trigger. No invented mainland conversion, selected price, measurement or cross-model specification."
+}

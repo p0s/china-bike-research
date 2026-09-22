@@ -7,7 +7,7 @@ import {
 export const RESEARCH_CHANNELS = ['public-post', 'web'];
 export const RESEARCH_ATTEMPT_LIMIT = 3;
 
-const channelStatuses = new Set(['found', 'temporarily-exhausted', 'blocked', 'conflicted', 'not-run']);
+const channelStatuses = new Set(['found', 'temporarily-exhausted', 'blocked', 'conflicted', 'not-run', 'open']);
 const recordStatuses = new Set(['found', 'temporarily-exhausted', 'blocked', 'conflicted', 'open']);
 const attemptOutcomes = new Set(['found', 'no-result', 'rejected', 'blocked', 'conflict']);
 const priorities = new Set(['high', 'medium', 'low']);
@@ -101,6 +101,14 @@ function validateChannel(record, channelName, channel) {
   if (channel.status === 'found') {
     if (!channel.attempts.length || !channel.attempts.some((attempt) => attempt.outcome === 'found')) {
       errors.push(`${prefix} is found without a successful attempt`);
+    }
+  }
+  if (channel.status === 'open') {
+    if (channel.attempts.length < 1 || channel.attempts.length >= attemptLimit) {
+      errors.push(`${prefix} open status requires an incomplete nonempty attempt budget`);
+    }
+    if (channel.attempts.some((attempt) => !['no-result', 'rejected'].includes(attempt.outcome))) {
+      errors.push(`${prefix} open status cannot hide found, blocked or conflicted evidence`);
     }
   }
   if (channel.status === 'temporarily-exhausted') {

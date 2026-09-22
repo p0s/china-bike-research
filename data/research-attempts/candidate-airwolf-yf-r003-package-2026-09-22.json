@@ -1,0 +1,51 @@
+{
+  "id": "candidate-airwolf-yf-r003-package-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yf-r003"
+  },
+  "field": "package",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YFR003 current official package",
+          "route": "exact official storefront access",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-22",
+          "note": "Request-verification interstitial; current product content unavailable.",
+          "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        }
+      ],
+      "blocker": "Found as a historical owner package only; current selected seller package remains unverified."
+    },
+    "public-post": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YF-R003 owner package HB009",
+          "route": "opened exact owner build",
+          "outcome": "found",
+          "accessed_at": "2026-09-22",
+          "note": "Owner explicitly identifies fork, headset, HB009 cockpit and post with the frame.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "airwolf-yf-r003-owner-recheck-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Found as a historical owner package only; current selected seller package remains unverified."
+}

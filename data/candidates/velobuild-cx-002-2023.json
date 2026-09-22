@@ -7,21 +7,32 @@
     "frame": "Cyclocross disc frame with full internal routing",
     "bottom_bracket": "BB86",
     "sizes": "XS, S, M, L, XL",
-    "cockpit": "Separate bar/stem and integrated bar options listed"
+    "cockpit": "Separate bar/stem and integrated bar options listed",
+    "frame_weight_g": 1000,
+    "frame_weight_basis": "Manufacturer sheet: size M, clear coat, without metal parts. A separate owner reports about 1250 g size 56 with hardware and no rear axle; different basis.",
+    "tire_clearance_mm": 42,
+    "tire_clearance_basis": "Exact 2023 manufacturer sheet states 700×42C for frame and fork; mounted tire/rim combination and mud clearance require verification.",
+    "geometry": "Manufacturer XS/S/M/L/XL stack 517/540/563/585/605 mm; reach 372/375/383/392/406 mm. Fork offset conflicts: spec 45 mm versus geometry 55 mm; resolve before fit/handling decisions.",
+    "included_package": "Frame, fork, seatpost, separate or integrated cockpit, seat cover, headset, thru-axles and seat clamp; choose exact cockpit/finish options.",
+    "intended_category": "Manufacturer identifies this exact 2023 model as cyclocross, with 42C maximum; kept as a research candidate pending category support."
   },
   "missing": [
-    "Exact selected package and mainland delivered price",
-    "Maximum tire clearance and frame/package weight",
-    "Geometry and intended category mapping before full publication"
+    "Exact selected package mainland delivered price and availability",
+    "Resolve 45 mm versus 55 mm fork-offset sheets before final geometry acceptance",
+    "Add accurate cyclocross category support before full publication",
+    "Meaningful exact-model stiffness evidence"
   ],
-  "source_note": "Current listing shows USD 499 on 2026-09-05 before option and delivery confirmation; not a China-market observation. The owner's exact revision has not been established.",
+  "source_note": "Exact 2023 linked specification and packing images now read. Base display remains US$499, not a mainland offer. Cyclocross intent is established; no forced road/gravel category assignment. Fork-offset disagreement remains visible.",
   "model_id": "velobuild-cx-002-2023",
   "type": "frameset",
   "status": "exact-model-research-stage",
   "research_priority": "medium",
   "source_ids": [
     "velobuild-cx-002-2023-source-2026-09-05",
-    "chinesecarbon-top-discovery-2026-09-05"
+    "chinesecarbon-top-discovery-2026-09-05",
+    "velobuild-cx002-spec-sheets-2026-09-22",
+    "velobuild-cx002-owner-thread-2026-09-22",
+    "velobuild-cx002-geometry-sheet-2026-09-22"
   ],
-  "last_reviewed": "2026-09-05"
+  "last_reviewed": "2026-09-22"
 }

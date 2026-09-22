@@ -1,0 +1,49 @@
+{
+  "id": "candidate-airwolf-yf-r003-price-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yf-r003"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YFR003 current official price",
+          "route": "exact official storefront access",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-22",
+          "note": "Request-verification interstitial; current product content unavailable.",
+          "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        }
+      ],
+      "blocker": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YF-R003 owner price",
+          "route": "opened exact owner build and relevant replies",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Foreign historical build price and brief ride impressions do not establish this field for current mainland framesets.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
+}

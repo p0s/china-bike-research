@@ -1,0 +1,38 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-category-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "category",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "velobuild-cx002-spec-sheets-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Exact manufacturer title and geometry sheet identify cyclocross; category support is a publication prerequisite.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "velobuild-cx002-spec-sheets-2026-09-22"
+    ],
+    "note": "Exact manufacturer title and geometry sheet identify cyclocross; category support is a publication prerequisite."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "candidate-mondince-fm316-package-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "package",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "mondince-fm316-current-specification-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Exact source already accepted for weight basis also names the package and 395 mm fork. Selected order must match.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "mondince-fm316-current-specification-2026-09-22"
+    ],
+    "note": "Exact source already accepted for weight basis also names the package and 395 mm fork. Selected order must match."
+  }
+}
