@@ -87,7 +87,7 @@ function postLayout(ctx, options) {
 }
 export function renderBlogIndex(ctx, posts) {
   const title = bilingual(ctx, 'Buying guides for bikes in China', '中国市场自行车购车指南');
-  const description = bilingual(ctx, 'Practical, source-linked articles on Chinese bikes, exact builds, tire clearance and real purchase costs. Domestic buying first, international caveats included.', '围绕具体车型、轮胎空间和真实购车成本的实用文章，链接原始证据；优先服务国内购车，也说明海外购买的限制。');
+  const description = bilingual(ctx, 'Practical, source-linked articles on Chinese bikes, exact builds, tire clearance and real purchase costs.', '围绕具体车型、轮胎空间和真实购车成本的实用文章，链接原始证据。');
   return postLayout(ctx, { title, description, path: '/blog/', ...editorialImageMeta(ctx, 'cycling-guides-banner'), structuredData: collectionStructuredData({ siteUrl: ctx.siteUrl, base: ctx.base, path: '/blog/', name: title, description, items: posts.map((p) => ({ name: copyFor(p, ctx).title, path: `/blog/${p.slug}/` })) }), body: `<section class="simple-page"><div class="page article-index"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a></nav><h1>${title}</h1><p class="page-lede">${description}</p>${renderEditorialImage(ctx, 'cycling-guides-banner', { banner: true })}<div class="article-grid">${posts.map((post) => articleCard(ctx, post)).join('')}</div></div></section>` });
 }
 export function renderPost(ctx, post, allPosts) {
