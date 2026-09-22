@@ -8,9 +8,9 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
-  ['assets/blog/cycling-guides-banner-scene-640.webp', '1cfbf70f3634bdec33fa1e8e09ad435c9fe48753ba8c51ef2eb86659b9dc2b10'],
-  ['assets/blog/cycling-guides-banner-scene-1600.webp', '0a2fba7c84bc6701f69ad5afd281bd3adf43b5e735379e69a505313224051aa7'],
-  ['assets/blog/cycling-guides-banner-scene-1200.jpg', '02c861660f523d795ced2c61bd0b06b81774e8f7f8013396e550310c2108ac55'],
+  ['assets/blog/cycling-guides-banner-scene-v2-640.webp', 'eb8f02e079677678a0c49589f7f15654a549b3e3e7dfbcb79ccc5fbff4e59eff'],
+  ['assets/blog/cycling-guides-banner-scene-v2-1600.webp', '01a3fbcf0274e387bded7f6fe8621df50ca29a2fc90d77b29ee5899aa89c849d'],
+  ['assets/blog/cycling-guides-banner-scene-v2-1200.jpg', 'f60e4c63aaa44f9f7a3f9461e74da7b3d5c13415f52ab7d8a424d9f76c3b9783'],
   ['assets/blog/gravel-bikes-around-5000-yuan-scene-640.webp', '91bfbf59e430f8690f0179da882e6ab71e7715da4bafbbeecac1f53fb3e413ce'],
   ['assets/blog/gravel-bikes-around-5000-yuan-scene-1600.webp', 'b52f4900595d0017647c04278ac0b25315e61fa9ebf3d3eb545d89515e86af29'],
   ['assets/blog/gravel-bikes-around-5000-yuan-scene-1200.jpg', '0aa9a88fff82f1177df7dbdd0b9fe3f2564654bbd9856629d07a1ee673e27176'],

@@ -148,14 +148,14 @@
           "en": "A red panda cycling guide welcomes riders beside two bikes in a sunlit karst landscape.",
           "zh-Hans": "小熊猫骑行向导站在两辆自行车旁，在阳光下的喀斯特山景中欢迎骑友。"
         },
-        "prompt": "Use case: compositing. Edit the supplied first image, an existing project-created blog illustration. The second image is the exact recurring red panda mascot identity reference. Keep the beautiful karst-hill landscape, quiet lane, gravel path and two bicycles. Integrate ONE red panda mascot naturally at the bikes in the foreground, standing beside the left bicycle with one paw resting on its handlebar and the other pointing cheerfully toward the winding route. It is a welcoming guide about to set out. Keep the scenery expansive, bikes recognizable and the mascot large enough to see its face in a blog banner.\nPreserve the first image's subject, muted sage/olive palette, warm natural light and photographic environment, while incorporating the tactile 3D storybook mascot with matching perspective, realistic contact shadows and scene lighting. It must inhabit and interact with the scene, never look like a pasted corner sticker or separate inset. Preserve the mascot's rust-orange fur, cream cheeks/eyebrows/ear rims, dark paws, kind dark eyes, large ringed tail, matte deep-teal cycling helmet with strap, cream jersey, charcoal shorts and mustard tool pouch. Change its pose and any handheld prop to the activity described. ONE mascot only, no humans. Wide 16:9 landscape, full-bleed opaque scene, main action comfortably inside a centered crop-safe area, generous margins, visually polished editorial header. No text, logos, watermark, labels or borders. Bikes are unbranded conceptual illustrations; avoid exact-brand or exact-specification claims.",
+        "prompt": "Edit this exact wide cycling blog banner to correct the red panda's tail intersecting the bicycle spokes. Preserve the beautiful sunlit karst landscape, winding country road, two realistic unbranded bicycles, warm cinematic lighting, and same charming tactile 3D red panda mascot with teal helmet, cream jersey, charcoal shorts and mustard tool pouch. Recompose the mascot FULLY TO THE LEFT of the olive green bicycle's rear wheel. The mascot should stand naturally with both feet on the road, wave toward the bikes with a paw, and its single fluffy striped tail should curve leftwards away from the bikes. CRITICAL PHYSICAL CORRECTION: the ENTIRE mascot's body, legs and entire tail silhouette must sit outside both bicycles and all wheel disks. There must be an obvious open patch of visible road/landscape between the rightmost fur of the tail/body and the leftmost edge of the nearest bicycle tire. No tail hidden by spokes, no tail crossing any wheel, tire, frame, chain or pedal. Move the green bicycle slightly right if needed to create this clear visual separation. Both bicycles retain physically coherent frames, distinct circular wheels and plausible components. One mascot only. Keep wide approximately 16:9 composition and same landscape. No words, labels, logos or watermarks.",
         "source": {
           "kind": "project-generated",
           "tool": "OpenAI built-in image generation",
           "created_at": "2026-09-22",
           "credit": "China Bikes",
           "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
-          "sha256": "163d077a0b0278f8535d35cffe62d7ad437be3b2f6492b3459735b36241262b4",
+          "sha256": "17e0caaa21b616944c6038e063ed4ea0d0cb1ea4527a89161e787b3132e58e68",
           "width": 1672,
           "height": 941,
           "scene_reference": {
@@ -163,35 +163,41 @@
             "path": "/assets/blog/cycling-guides-banner-1600.webp",
             "sha256": "fc8847cd5b41abff29c2adcc9077446c596d8271cd270e78513e5213079304b1"
           },
-          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a",
+          "edit_reference": {
+            "git_commit": "76201fa88c461290954502df32cf23e857cff722",
+            "path": "/assets/blog/cycling-guides-banner-scene-1600.webp",
+            "sha256": "0a2fba7c84bc6701f69ad5afd281bd3adf43b5e735379e69a505313224051aa7",
+            "original_sha256": "163d077a0b0278f8535d35cffe62d7ad437be3b2f6492b3459735b36241262b4"
+          }
         },
         "files": [
           {
             "purpose": "card",
-            "path": "/assets/blog/cycling-guides-banner-scene-640.webp",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-640.webp",
             "width": 640,
             "height": 361,
             "type": "image/webp",
-            "bytes": 44014,
-            "sha256": "1cfbf70f3634bdec33fa1e8e09ad435c9fe48753ba8c51ef2eb86659b9dc2b10"
+            "bytes": 45532,
+            "sha256": "eb8f02e079677678a0c49589f7f15654a549b3e3e7dfbcb79ccc5fbff4e59eff"
           },
           {
             "purpose": "hero",
-            "path": "/assets/blog/cycling-guides-banner-scene-1600.webp",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-1600.webp",
             "width": 1600,
             "height": 901,
             "type": "image/webp",
-            "bytes": 210348,
-            "sha256": "0a2fba7c84bc6701f69ad5afd281bd3adf43b5e735379e69a505313224051aa7"
+            "bytes": 211424,
+            "sha256": "01a3fbcf0274e387bded7f6fe8621df50ca29a2fc90d77b29ee5899aa89c849d"
           },
           {
             "purpose": "social",
-            "path": "/assets/blog/cycling-guides-banner-scene-1200.jpg",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-1200.jpg",
             "width": 1200,
             "height": 676,
             "type": "image/jpeg",
-            "bytes": 208765,
-            "sha256": "02c861660f523d795ced2c61bd0b06b81774e8f7f8013396e550310c2108ac55"
+            "bytes": 221473,
+            "sha256": "f60e4c63aaa44f9f7a3f9461e74da7b3d5c13415f52ab7d8a424d9f76c3b9783"
           }
         ]
       }
