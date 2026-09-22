@@ -1,0 +1,31 @@
+{
+  "batch_id": "luna-followup-22-2026-09-22",
+  "base_commit": "b894d5be81bc20b90aab709da46966ac0946c8c3",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 2,
+  "atomic_fields": 2,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-f20-hawkeye",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a7l-pro-2026",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

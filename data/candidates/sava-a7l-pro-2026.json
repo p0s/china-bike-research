@@ -22,11 +22,12 @@
   },
   "source_ids": [
     "sava-a7l-pro-2026-official-2026-08-17",
+    "sava-road-tire-compatibility-guide-2026-09-22",
     "taobao-snapshot-2026-08-08",
     "sava-a7l-pro-bikelabhq-review-2026-09-22"
   ],
   "source_url": "https://savadeck-bike.com/products/2026-sava-a7l-pro-105-r7120-full-carbon-road-bike-24sp",
-  "source_note": "Current exact manufacturer evidence lists the 2026 A7L PRO R08-R7120-24S at approximately 8.8 kg varying by size. Fitted 700x25C tires do not establish maximum clearance, and no exact-model stiffness result was found after 50 areas. September22 follow-up adds attributed qualitative ride evidence with its build and source caveats; it does not supply an exact complete weight or maximum clearance.",
+  "source_note": "Current exact manufacturer evidence lists the 2026 A7L PRO R08-R7120-24S at approximately 8.8 kg varying by size. The current manufacturer compatibility guide maps the exact R08 frame, including A7L PRO, to a nominal 25C maximum. September22 follow-up adds attributed qualitative ride evidence with its build and source caveats; no exact-model numeric stiffness result was found after 50 areas.",
   "facts": {
     "drivetrain": "Shimano 105 R7100/R7120 mechanical 2×12",
     "complete_weight_g": 8800,
@@ -38,7 +39,9 @@
     "tires": "700×25C fitted; manufacturer maximum unresolved",
     "sizes": "44, 47, 51, 54 and 56 cm",
     "complete_weight_basis": "Current exact manufacturer approximate claim; weight varies by size, while pedals, accessories and weighing protocol are unpublished",
-    "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 25C tire is not treated as clearance",
+    "tire_clearance_status": "Manufacturer R08 maximum 25C recorded; fitted 25C tire is not treated as clearance",
+    "tire_clearance_mm": 25,
+    "tire_clearance_basis": "Current SAVA manufacturer compatibility guide maps the R08 frame, including A7L PRO, to up to 25C; nominal tire designation with no rim-width or measured-clearance protocol",
     "frame_stiffness_status": "Qualitative ride evidence is available; no numeric frame-only measurement is recorded.",
     "stiffness_evidence": "An exact A7L Pro review reports responsive behavior under power and a firmer ride than a Trek Domane with IsoSpeed after a reported500km. These are subjective whole-bike impressions from an affiliate-supported review, not an isolated-frame measurement or stiffness ranking."
   },

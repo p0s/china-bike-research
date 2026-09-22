@@ -1,0 +1,50 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-22-2026-09-22",
+  "status": "completed-with-two-closures",
+  "reviewed_models": 2,
+  "reviewed_fields": 2,
+  "full_field_closures": 2,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 715,
+  "coarse_gap_count_after": 713,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-f20-hawkeye",
+      "outcome": "tire-clearance-closed",
+      "finding": "The current SAVA compatibility guide maps the exact R16 frame family, explicitly including Hawkeye F20, to a maximum nominal tire width of 28C.",
+      "sources": [
+        "https://savadeck-bike.com/blogs/sava-bike-blog/whats-the-maximum-tire-width-on-sava-bikes",
+        "https://savadeck-bike.com/products/2023-sava-hawkeye-7-2-full-carbon-road-bike-24-speed"
+      ],
+      "proof": "The guide names both R16 and Hawkeye F20 and states compatibility up to 28C. The exact F20 product route identifies the retained bike as an R16 frame and separately records a fitted 25C tire. The adopted 28C value is a nominal manufacturer compatibility claim without rim-width or measured-clearance protocol.",
+      "next_trigger": "None for the retained field unless SAVA revises the R16/F20 compatibility guidance or an exact conflicting specification appears.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a7l-pro-2026",
+      "outcome": "tire-clearance-closed",
+      "finding": "The current SAVA compatibility guide maps the exact R08 frame family, explicitly including A7L PRO, to a maximum nominal tire width of 25C.",
+      "sources": [
+        "https://savadeck-bike.com/blogs/sava-bike-blog/whats-the-maximum-tire-width-on-sava-bikes",
+        "https://savadeck-bike.com/products/2026-sava-a7l-pro-105-r7120-full-carbon-road-bike-24sp"
+      ],
+      "proof": "The guide names R08 and A7L PRO and states compatibility up to 25C. The exact 2026 product route identifies the retained build as R08 and separately records fitted 700×25C tires. The adopted 25C value is a nominal manufacturer compatibility claim without rim-width or measured-clearance protocol.",
+      "next_trigger": "None for the retained field unless SAVA revises the R08/A7L PRO compatibility guidance or an exact conflicting specification appears.",
+      "fields": [
+        "tire-clearance"
+      ]
+    }
+  ],
+  "validation": [
+    "Frozen correction scope contains 2 targets and 2 atomic fields.",
+    "Both fields were reconciled against the current exact manufacturer guide and exact product routes on 2026-09-22.",
+    "Two tire-clearance fields closed; no sibling or generation values were propagated beyond the explicitly named R16/F20 and R08/A7L PRO mappings.",
+    "The new compatibility source and two candidate facts require the repository gate before local delivery."
+  ],
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
