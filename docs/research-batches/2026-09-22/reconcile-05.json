@@ -1,0 +1,79 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Existing record reconciliation; source dates unchanged.",
+  "targets": 10,
+  "fields": 10,
+  "integrated_fields": 0,
+  "results": [
+    {
+      "target": "missing-china-price-trek-domane",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-trek-domane-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "specialized-roubaix-sl8-comp-105",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "specialized-s-works-crux-2024-sram-red-xplr",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "specialized-s-works-crux-frameset",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-specialized-s-works-crux-frameset-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "xlab-ad8",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-xlab-ad8-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "xlab-ad9",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-xlab-ad9-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "carbonda-cfr696-frameset",
+      "gap": "purchase-route",
+      "attempt_id": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Manufacturer quote form establishes contact routing, not an accepted quote, public fixed price or delivered availability. Contacting the manufacturer is outside this public-research scope."
+    },
+    {
+      "target": "ican-gra04-frameset",
+      "gap": "purchase-route",
+      "attempt_id": "variant-ican-gra04-frameset-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Manufacturer quote form establishes contact routing, not an accepted quote, public fixed price or delivered availability. Contacting the manufacturer is outside this public-research scope."
+    },
+    {
+      "target": "hi-light-r9-force-pr1600",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29",
+      "disposition": "retained-unknown",
+      "reason": "Exact official/reference price already integrated with its original observation date and conditions; it does not establish a mainland selected-option checkout."
+    },
+    {
+      "target": "bianchi-oltre-race",
+      "gap": "purchase-route",
+      "attempt_id": "variant-bianchi-oltre-race-purchase-route-2026-08-17",
+      "disposition": "retained-unknown",
+      "reason": "Current regional routes do not establish mainland selected-SKU stock, price and fulfilment; the historical conditional mainland price remains distinct."
+    }
+  ]
+}
