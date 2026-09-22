@@ -1,0 +1,111 @@
+{
+  "batch_id": "luna-followup-19-2026-09-22",
+  "base_commit": "319fbe32882e2dd6c38ac211e3a95e95f1f9275d",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 10,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer-one",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr015s-v",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcrxs-d",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcrxs-v",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctr003",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt001",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt004",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-aeroad",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-ultimate",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}
