@@ -71,7 +71,7 @@ with sync_playwright() as p:
     for locale in ('en', 'zh-Hans'):
         prefix = '/zh' if locale == 'zh-Hans' else ''
         for width, height, mode in [(1440,1000,'desktop'),(390,844,'mobile')]:
-            for route in ['/blog/', '/blog/gravel-bikes-around-5000-yuan/', '/']:
+            for route in ['/blog/'] + ['/blog/'+post['slug']+'/' for post in (json.loads(file.read_text()) for file in sorted((Path(__file__).resolve().parents[1]/'content/posts').glob('*.json')))] + ['/']:
                 def visual(route=route,width=width,height=height,mode=mode,locale=locale,prefix=prefix):
                     page.set_viewport_size({'width':width,'height':height})
                     go(prefix+route)
@@ -81,9 +81,25 @@ with sync_playwright() as p:
                     assert not overflow, 'Document overflow; the table must scroll inside its own wrapper'
                     if route != '/':
                         assert page.locator('main a[href*="/blog/"]').count() >= 1
+                        images = page.locator('[data-editorial-image]')
+                        assert images.count() == (5 if route == '/blog/' else 1)
+                        images.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
+                        assert images.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
+                        assert page.locator('.article-card .section-label, .buyer-article header .section-label').count() == 0
                         image_name=f'{locale}-{mode}-{route.strip("/").replace("/","-")}.png'
-                        page.screenshot(path=str(REPORTS/image_name), full_page=False)
+                        page.screenshot(path=str(REPORTS/image_name), full_page=route == '/blog/')
                 record(f'{locale} {mode} {route}',visual)
+        def image_failure(prefix=prefix):
+            go(prefix+'/blog/gravel-bikes-around-5000-yuan/')
+            page.locator('[data-editorial-image]').dispatch_event('error')
+            assert page.locator('.article-cover').is_hidden()
+            assert page.locator('h1').is_visible()
+            assert page.locator('table tbody tr').count() == 3
+            go(prefix+'/blog/')
+            page.locator('.article-card img').first.dispatch_event('error')
+            assert page.locator('.article-card-image').first.is_hidden()
+            assert page.locator('.article-card h2 a').first.is_visible()
+        record(f'{locale} /blog/ image failure preserves article and navigation', image_failure)
         def interaction(prefix=prefix,locale=locale):
             page.set_viewport_size({'width':1440,'height':1000});go(prefix+'/?q=incolor')
             search=page.locator('[data-filter-search]')

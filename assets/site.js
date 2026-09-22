@@ -164,6 +164,15 @@ import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNu
   }
   document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
 
+  document.querySelectorAll('[data-editorial-image]').forEach((image) => {
+    const hideUnavailable = () => {
+      const visual = image.closest('.editorial-figure, .article-card-image');
+      if (visual) visual.hidden = true;
+    };
+    image.addEventListener('error', hideUnavailable);
+    if (image.complete && image.currentSrc && !image.naturalWidth) hideUnavailable();
+  });
+
   document.querySelectorAll('[data-image-gallery]').forEach((gallery) => {
     const hero = gallery.querySelector('[data-gallery-hero]');
     const caption = gallery.querySelector('[data-image-caption-status][data-gallery-caption]');

@@ -8,6 +8,21 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/cycling-guides-banner-640.webp', 'a838a080060871f79a3c398655606fdac66881f5bf8485510807e9bedc3a9c70'],
+  ['assets/blog/cycling-guides-banner-1600.webp', 'fc8847cd5b41abff29c2adcc9077446c596d8271cd270e78513e5213079304b1'],
+  ['assets/blog/cycling-guides-banner-1200.jpg', '847b37f011164b2a43bf81ee0f93a01ba422bbd894b7c518cf98e1ffbd155d87'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-640.webp', 'ca914bd271dee0c99e3e16a0fc5aa5f7cb8d58cf2217ab4f78528ea3f2d6e8ac'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-1600.webp', '0b785f03a9538e89ddbd08c8b551c7c4eda89bac5d4331a6fdbd72efcb944e67'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-1200.jpg', '5cf2b281f7b86a0faeb6a0485b52492a592d303d07432a2a8f6b53074f82f314'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-640.webp', 'da3b69710d8e681b427c7d923b44b3a2c389a52f7734700ff95aa3ebaffcccbf'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-1600.webp', '41f613bf72801d389f6051638dc73522d049c38825c1460236e236a03d21dc2b'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-1200.jpg', 'bbe8af0717db0f5805be378cb21d62bf92a917bc7da49c297933c1f45698fefa'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-640.webp', '7590b35d848b7a2b553a656bc174ca3fa5293cb3ce29d3853cb0a54827810ec0'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-1600.webp', 'bfe93a934bc379af463c096a6b83454feac5eaa10e73227f5c76911314713d5d'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-1200.jpg', 'f0e29a9cc4f4d7a60628818ee62413ddec474194819b422a01a163250474e2ae'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-640.webp', 'b45ed33483a8770374f5a23cf9f1e2596f36d3a9668de39d648117726e97e5c8'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-1600.webp', 'cec14417ab9f4904b7e3f11cbe0590cafbf6d8a658a690df3b22300c932174c4'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-1200.jpg', 'bb372f132abb4d72b5db821f0407937579f4da13eae0af676266f132973df3c6'],
   ['assets/social-preview.png', '6fd7276fc98792a925df1dc4ef5a2efa151608267b7ac80cb55b079828d7ad87']
 ]);
 const findings = [];

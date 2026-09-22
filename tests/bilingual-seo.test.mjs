@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import { editorialImages } from '../src/lib/editorial-images.mjs';
 import { translate, zh } from '../assets/i18n.js';
 import { localePath, localizedHref, localizeHtml, localizeJson } from '../src/lib/i18n.mjs';
 import { layout } from '../src/lib/html.mjs';
@@ -124,4 +127,46 @@ test('gravel evidence table derives the exact recorded price and date, never tod
   assert.ok(table.includes('¥3,991')); assert.ok(table.includes('2026-08-05'));
   assert.ok(table.includes('¥4,999')); assert.ok(table.includes('2026-08-25'));
   assert.ok(!table.includes('2026-09-18'));
+});
+
+test('editorial assets have original provenance and immutable optimized local files', () => {
+  assert.equal(editorialImages.length, 5);
+  assert.equal(new Set(editorialImages.map((image) => image.id)).size, 5);
+  for (const image of editorialImages) {
+    assert.equal(image.source.kind, 'project-generated');
+    assert.ok(image.alt.en && image.alt['zh-Hans']);
+    assert.deepEqual(image.files.map((file) => file.purpose), ['card', 'hero', 'social']);
+    for (const file of image.files) {
+      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+\.(?:webp|jpg)$/);
+      const bytes = fs.readFileSync(new URL('..' + file.path, import.meta.url));
+      assert.equal(bytes.length, file.bytes);
+      assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), file.sha256);
+      assert.ok(file.bytes < (file.purpose === 'card' ? 60000 : 300000));
+      assert.ok(file.width >= 640 && file.height > 0);
+    }
+  }
+});
+for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`blog images and social metadata keep local asset paths: ${base || '/'} ${locale}`, () => {
+  const options = { ...ctx, base, locale };
+  const index = renderBlogIndex(options, posts);
+  assert.equal((index.match(/data-editorial-image/g) || []).length, 5);
+  assert.ok(index.includes('class="editorial-figure blog-banner"'));
+  assert.ok(!index.includes('/zh/assets/'));
+  for (const post of posts) {
+    const html = renderPost(options, post, posts);
+    const image = editorialImages.find((item) => item.id === post.image_id);
+    const social = image.files.find((file) => file.purpose === 'social');
+    const hero = image.files.find((file) => file.purpose === 'hero');
+    const expected = siteUrl + base + social.path;
+    const schema = schemas(html).find((item) => item['@type'] === 'BlogPosting');
+    assert.equal(schema.image, expected);
+    assert.ok(html.includes(`property="og:image" content="${expected}"`));
+    assert.ok(html.includes(`name="twitter:image" content="${expected}"`));
+    assert.ok(html.includes(`src="${base}${hero.path}"`));
+    assert.ok(html.includes(`alt="${image.alt[locale]}"`));
+    assert.ok(html.includes('fetchpriority="high"'));
+    assert.ok(html.includes(locale === 'en' ? 'AI-generated illustration' : 'AI 生成插图'));
+    assert.ok(!html.includes('/zh/assets/'));
+    assert.ok(!html.includes('class="section-label"'));
+  }
 });

@@ -5,6 +5,7 @@ import { escapeHtml, escapeAttr, url, layout } from './html.mjs';
 import { formatPrice, formatAllInPrice, clearanceLongLabel, joinCatalogCandidates } from './data.mjs';
 import { translate } from '../../assets/i18n.js';
 import { collectionStructuredData, latestDate } from './seo.mjs';
+import { editorialImage, editorialImageMeta, renderEditorialImage } from './editorial-images.mjs';
 
 export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url))) {
   const directory = path.join(root, 'content/posts');
@@ -13,6 +14,7 @@ export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url)
   for (const post of posts) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug) || slugs.has(post.slug)) throw new Error(`Invalid or duplicate article slug: ${post.slug}`);
     slugs.add(post.slug);
+    editorialImage(post.image_id);
     for (const key of ['datePublished', 'dateModified']) if (!/^\d{4}-\d{2}-\d{2}$/.test(post[key])) throw new Error(`Invalid ${key}: ${post.slug}`);
     if (post.dateModified < post.datePublished) throw new Error(`Article modification precedes publication: ${post.slug}`);
     for (const locale of ['en', 'zh-Hans']) {
@@ -77,7 +79,7 @@ function sourceList(ctx, post) {
 }
 function articleCard(ctx, post) {
   const copy = copyFor(post, ctx);
-  return `<article class="article-card"><h2><a href="${url(ctx.base, `/blog/${post.slug}/`)}">${escapeHtml(copy.title)}</a></h2><p>${escapeHtml(copy.description)}</p><time datetime="${post.dateModified}">${post.dateModified}</time></article>`;
+  return `<article class="article-card"><a class="article-cover-link" href="${url(ctx.base, `/blog/${post.slug}/`)}" tabindex="-1" aria-hidden="true">${renderEditorialImage(ctx, post.image_id, { card: true })}</a><h2><a href="${url(ctx.base, `/blog/${post.slug}/`)}">${escapeHtml(copy.title)}</a></h2><p>${escapeHtml(copy.description)}</p><time datetime="${post.dateModified}">${post.dateModified}</time></article>`;
 }
 function postLayout(ctx, options) {
   return layout({ base: ctx.base, siteUrl: ctx.siteUrl, repositoryUrl: ctx.repositoryUrl, locale: ctx.locale ?? 'en', googleSiteVerification: ctx.googleSiteVerification, current: 'blog', datasetUpdated: ctx.siteLastmod, catalogReviewed: ctx.data.meta.snapshot_date, ...options });
@@ -85,7 +87,7 @@ function postLayout(ctx, options) {
 export function renderBlogIndex(ctx, posts) {
   const title = bilingual(ctx, 'Buying guides for bikes in China', '中国市场自行车购车指南');
   const description = bilingual(ctx, 'Practical, source-linked articles on Chinese bikes, exact builds, tire clearance and real purchase costs. Domestic buying first, international caveats included.', '围绕具体车型、轮胎空间和真实购车成本的实用文章，链接原始证据；优先服务国内购车，也说明海外购买的限制。');
-  return postLayout(ctx, { title, description, path: '/blog/', structuredData: collectionStructuredData({ siteUrl: ctx.siteUrl, base: ctx.base, path: '/blog/', name: title, description, items: posts.map((p) => ({ name: copyFor(p, ctx).title, path: `/blog/${p.slug}/` })) }), body: `<section class="simple-page"><div class="page article-index"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a></nav><h1>${title}</h1><p class="page-lede">${description}</p><p>${bilingual(ctx, 'These articles explain how to use the evidence—not which bike wins for everyone. Prices keep their own dates, and missing specifications remain unknown.', '这些文章解释如何使用证据，不宣称某辆车适合所有人。价格保留各自的日期，缺失规格继续标为未知。')}</p><div class="article-grid">${posts.map((post) => articleCard(ctx, post)).join('')}</div></div></section>` });
+  return postLayout(ctx, { title, description, path: '/blog/', ...editorialImageMeta(ctx, 'cycling-guides-banner'), structuredData: collectionStructuredData({ siteUrl: ctx.siteUrl, base: ctx.base, path: '/blog/', name: title, description, items: posts.map((p) => ({ name: copyFor(p, ctx).title, path: `/blog/${p.slug}/` })) }), body: `<section class="simple-page"><div class="page article-index"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a></nav><h1>${title}</h1><p class="page-lede">${description}</p><p>${bilingual(ctx, 'These articles explain how to use the evidence—not which bike wins for everyone. Prices keep their own dates, and missing specifications remain unknown.', '这些文章解释如何使用证据，不宣称某辆车适合所有人。价格保留各自的日期，缺失规格继续标为未知。')}</p>${renderEditorialImage(ctx, 'cycling-guides-banner', { banner: true })}<div class="article-grid">${posts.map((post) => articleCard(ctx, post)).join('')}</div></div></section>` });
 }
 export function renderPost(ctx, post, allPosts) {
   const copy = copyFor(post, ctx);
@@ -99,6 +101,7 @@ export function renderPost(ctx, post, allPosts) {
     author: { '@type': 'Organization', name: 'China Bikes', url: `${ctx.siteUrl}${url(ctx.base, '/methodology/')}` },
     publisher: { '@type': 'Organization', name: 'China Bikes', url: `${ctx.siteUrl}${url(ctx.base, '/')}` },
     isAccessibleForFree: true,
+    image: `${ctx.siteUrl}${editorialImageMeta(ctx, post.image_id).image}`,
     citation: post.model_ids.map((id) => `${ctx.siteUrl}${url(ctx.base, `/models/${id}/`)}#source-records`)
   };
   const breadcrumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -106,8 +109,8 @@ export function renderPost(ctx, post, allPosts) {
     { '@type': 'ListItem', position: 2, name: bilingual(ctx, 'Buying guides', '购车指南'), item: `${ctx.siteUrl}${url(ctx.base, '/blog/')}` },
     { '@type': 'ListItem', position: 3, name: copy.title, item: absolute }
   ] };
-  const body = `<section class="simple-page"><article class="page prose buyer-article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a><span aria-hidden="true"> / </span><a href="${url(ctx.base, '/blog/')}">Buying guides</a></nav><header><h1>${escapeHtml(copy.title)}</h1><p class="page-lede">${escapeHtml(copy.intro)}</p><p class="article-byline">Written by <a href="${url(ctx.base, '/methodology/')}">China Bikes</a> · ${bilingual(ctx, 'Editorial date', '文章日期')} <time datetime="${post.datePublished}">${post.datePublished}</time>${modified !== post.datePublished ? ` · ${bilingual(ctx, 'Updated', '更新')} <time datetime="${modified}">${modified}</time>` : ''}</p></header><nav class="article-toc" aria-label="On this page"><strong>On this page</strong><ol>${copy.sections.map((s) => `<li><a href="#${s.id}">${escapeHtml(s.heading)}</a></li>`).join('')}</ol></nav>${copy.sections.map((s, index) => `<section id="${s.id}"><h2>${escapeHtml(s.heading)}</h2>${s.paragraphs.map((p) => `<p>${inline(p, ctx)}</p>`).join('')}${index === 0 ? renderEvidenceTable(ctx, post) : ''}</section>`).join('')}${sourceList(ctx, post)}<section class="related-articles"><h2>Related reading</h2><ul>${allPosts.filter((p) => p.slug !== post.slug).map((p) => `<li><a href="${url(ctx.base, `/blog/${p.slug}/`)}">${escapeHtml(copyFor(p, ctx).title)}</a></li>`).join('')}</ul></section></article></section>`;
-  return postLayout(ctx, { title: copy.title, description: copy.description, path: route, ogType: 'article', structuredData: [schema, breadcrumbs], body });
+  const body = `<section class="simple-page"><article class="page prose buyer-article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a><span aria-hidden="true"> / </span><a href="${url(ctx.base, '/blog/')}">Buying guides</a></nav><header><h1>${escapeHtml(copy.title)}</h1><p class="page-lede">${escapeHtml(copy.intro)}</p><p class="article-byline">Written by <a href="${url(ctx.base, '/methodology/')}">China Bikes</a> · ${bilingual(ctx, 'Editorial date', '文章日期')} <time datetime="${post.datePublished}">${post.datePublished}</time>${modified !== post.datePublished ? ` · ${bilingual(ctx, 'Updated', '更新')} <time datetime="${modified}">${modified}</time>` : ''}</p></header>${renderEditorialImage(ctx, post.image_id)}<nav class="article-toc" aria-label="On this page"><strong>On this page</strong><ol>${copy.sections.map((s) => `<li><a href="#${s.id}">${escapeHtml(s.heading)}</a></li>`).join('')}</ol></nav>${copy.sections.map((s, index) => `<section id="${s.id}"><h2>${escapeHtml(s.heading)}</h2>${s.paragraphs.map((p) => `<p>${inline(p, ctx)}</p>`).join('')}${index === 0 ? renderEvidenceTable(ctx, post) : ''}</section>`).join('')}${sourceList(ctx, post)}<section class="related-articles"><h2>Related reading</h2><ul>${allPosts.filter((p) => p.slug !== post.slug).map((p) => `<li><a href="${url(ctx.base, `/blog/${p.slug}/`)}">${escapeHtml(copyFor(p, ctx).title)}</a></li>`).join('')}</ul></section></article></section>`;
+  return postLayout(ctx, { title: copy.title, description: copy.description, path: route, ...editorialImageMeta(ctx, post.image_id), ogType: 'article', structuredData: [schema, breadcrumbs], body });
 }
 export function relatedArticleLinks(ctx, id) {
   const posts = (ctx.posts ?? []).filter((post) => post.model_ids.includes(id));
