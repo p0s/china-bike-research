@@ -1,0 +1,209 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-01-2026-09-22",
+  "status": "completed-with-unresolved-evidence",
+  "completed_fields": [
+    {
+      "candidate_id": "de-rosa-new-838",
+      "field": "tire-clearance",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://derosa.it/model/838/",
+          "source_class": "manufacturer product page",
+          "finding": "Fork accommodates tires up to 32 mm."
+        },
+        {
+          "url": "https://derosa.it/app/uploads/2026/06/De-Rosa-838-white-paper-ITA.pdf",
+          "source_class": "manufacturer technical white paper",
+          "finding": "Technical specifications on page 9 state Tyre clearance 30."
+        }
+      ],
+      "decision": "No supported generation or configuration distinction reconciles the two current primary claims. Keep the numeric maximum unknown; do not select either claim.",
+      "next_trigger": "Manufacturer correction or an exact revision-specific clearance declaration that explains both claims."
+    },
+    {
+      "candidate_id": "felt-ia-2",
+      "field": "tire-clearance",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://feltrussia.ru/upload/uf/d2d/hl4gi4icxl4ggvdv0y2m3axoeyfkgzje/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%28IA%20Disc%202.0%29.pdf",
+          "finding": "Worker reports the exact technical guide still gives 28 mm maximum with 4 mm clearance."
+        }
+      ],
+      "decision": "The proposed 28 mm value was already present in the existing conflict evidence. The authorized regional 25–32 mm recommendation remains unexplained. Parent could not retrieve the PDF through its web reader. No new revision or measurement-basis evidence resolves the disagreement, so no scalar is accepted.",
+      "next_trigger": "Manufacturer clarification mapping the technical limit and regional recommendation to exact revision and measurement conditions."
+    },
+    {
+      "candidate_id": "bxt-gravel-complete",
+      "field": "tire-clearance",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
+          "finding": "Exact complete build has 40C fitted tires; that does not establish maximum clearance."
+        },
+        {
+          "url": "https://bxtbikes.com/products/bxt-disc-brake-carbon-gravel-bike-frame-700c-27-5er-max-use-47c-2-1-tire-full-carbon-gravel-bicycle-frame-thru-axle-carbon-mtb-frame",
+          "finding": "A separately specified BXT-135 frameset package states 47C."
+        },
+        {
+          "url": "https://eu.bxtbikes.com/en/products/bxt-model-135-gravel-bike-frame-udh-47c-carbon-t1000-flat-mount-disc-brake?variant=49321173090547",
+          "finding": "The EU listing retains 45C detail alongside 47C labeling."
+        }
+      ],
+      "decision": "The 47C package value cannot be transferred to the archived complete-build revision while exact listings conflict.",
+      "next_trigger": "Exact archived-build revision bridge and manufacturer resolution of the 45C/47C claims."
+    },
+    {
+      "candidate_id": "spect-mira",
+      "field": "tire-clearance",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://cyclegears.net/products/spect-mira-road-frameset",
+          "finding": "Current retailer technical table supports tires from 25C to 32C."
+        },
+        {
+          "url": "https://www.cyclistshub.com/meet-spect-strada-and-mira/",
+          "finding": "Launch reporting describes wider rear/front tire fit and an evolving development frame."
+        }
+      ],
+      "decision": "The worker proposed a qualified 32 mm value. Parent verified the retailer wording, but it does not establish a reconciled production-revision maximum. Existing wider fit reports and revision uncertainty remain; no numeric maximum is accepted.",
+      "next_trigger": "Production-revision maximum-clearance declaration and explanation of the launch-frame claims."
+    },
+    {
+      "candidate_id": "icanian-p9",
+      "field": "frame-weight",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://www.icanian.com/product/carbon-enduro-frame-carbon-mtb-bike-frame-icanian/",
+          "finding": "Frameset page gives 2570±40 g for XS/S/M and 2620±40 g for L."
+        },
+        {
+          "url": "https://www.icanian.com/product/full-carbon-enduro-full-suspension-mtb-bike-icanian-p9/",
+          "finding": "Complete-bike page gives 2400±20 g for XS."
+        }
+      ],
+      "decision": "Exact frame size alone does not explain the different package or hardware bases. No single weight selected.",
+      "next_trigger": "Manufacturer package/hardware and revision mapping, or a controlled exact-frame measurement."
+    },
+    {
+      "candidate_id": "icanian-sn04",
+      "field": "frame-weight",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://www.icanbikes.com/Products-list/full-suspension-fat-bike-carbon-frame-sn04/",
+          "finding": "Same page differs between 2507 g prose and a 2057±40 g table entry."
+        },
+        {
+          "url": "https://icanwheels.co.uk/products/fat-bike-frame-sn04",
+          "finding": "Regional listing gives 2560 g."
+        }
+      ],
+      "decision": "Neither the same-page discrepancy nor the regional weight basis is resolved.",
+      "next_trigger": "Corrected manufacturer table with exact size and included-hardware basis."
+    },
+    {
+      "candidate_id": "icanian-sn04",
+      "field": "frame-material",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://www.icanbikes.com/Products-list/full-suspension-fat-bike-carbon-frame-sn04/",
+          "finding": "Lists Toray T700/T800."
+        },
+        {
+          "url": "https://icanwheels.co.uk/products/fat-bike-frame-sn04",
+          "finding": "Lists T700."
+        },
+        {
+          "url": "https://icancycling.com/products/carbon-full-suspension-fat-bike-frame-sn04",
+          "finding": "Lists T700."
+        }
+      ],
+      "decision": "No evidence maps the differing fiber claims to a known revision or specific frame/fork distinction.",
+      "next_trigger": "Revision-specific manufacturer material specification."
+    },
+    {
+      "candidate_id": "sava-r9",
+      "field": "complete-weight",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://savadeck-bike.com/products/sava-blade-slr9-dura-ace-di2-full-carbon-road-bike-24sp",
+          "finding": "Page mixes 7.29 kg marketing, 6.96 kg technical text and a blank general-weight field."
+        },
+        {
+          "url": "https://cyclopro.ca/fr/products/sava-blade-r9-carbon-road-bike-new",
+          "finding": "Retailer gives 7.27 kg; build and measurement conditions are not harmonized."
+        }
+      ],
+      "decision": "No common selected-build, size, wheel and pedal basis establishes one value for the retained record.",
+      "next_trigger": "Exact selected-build specification and controlled weighing basis."
+    },
+    {
+      "candidate_id": "bianchi-sprint-icr",
+      "field": "complete-weight",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://www.idealo.de/preisvergleich/OffersOfProduct/209117650_-sprint-icr-105-di2-2026-bianchi.html",
+          "finding": "Aggregator lists 8.4 kg without pedals."
+        },
+        {
+          "url": "https://allegro.pl/oferta/rower-szosowy-bianchi-sprint-icr-shimano-105-di2-celeste-metalic-53-18332072423",
+          "finding": "Size-53 seller listing states 8.5 kg."
+        },
+        {
+          "url": "https://www.probike.at/de/produkte/rennraeder/items/bianchi_sprint_icr_bianco_blu_viola.php",
+          "finding": "Dealer listing states 9 kg."
+        }
+      ],
+      "decision": "Official routes did not establish a weight and the public listings do not share a verified exact-build/measurement basis.",
+      "next_trigger": "Exact retained build and size identification followed by a documented weight."
+    },
+    {
+      "candidate_id": "java-fuoco-2025",
+      "field": "complete-weight",
+      "outcome": "conflict-retained",
+      "sources_checked": [
+        {
+          "url": "https://www.javabikes.cl/product/fuoco-top-105-2",
+          "finding": "Regional page gives approximately 8.7 kg."
+        },
+        {
+          "url": "https://www.jirapanichbike.com/product/1527/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A-java-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-fuoco-top-105-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%9F%E0%B8%B9%E0%B8%A5%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99-shimano105-r7120-%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81-8-9%E0%B8%81%E0%B8%81",
+          "finding": "Parent search readback confirms the exact retailer title states 8.9 kg for a FUOCO TOP 105 R7120 24-speed build; the search result does not establish the retained 2025 build or weighing basis."
+        }
+      ],
+      "decision": "The regional values do not reconcile the existing 8.6–8.9 kg claims and 9.445 kg owner/shop measurement for the retained build.",
+      "next_trigger": "Common build, size, pedal and equipment basis for an attributable exact measurement."
+    },
+    {
+      "candidate_id": "flying-pigeon-carbon-road-unknown",
+      "field": "identity-source-mapping",
+      "outcome": "identity-unresolved",
+      "sources_checked": [
+        {
+          "url": "https://www.flyingpigeon1936.com/portfolio-details/92.html",
+          "finding": "Official catalogue result is a generic 700C aluminum 2x7 road model, not a carbon X900 mapping."
+        },
+        {
+          "url": "https://www.jd.com/jiage/1318f43d1ee57f6cb29c.html",
+          "finding": "X900 discovery results lead to unrelated steel Zhengtu 900 mountain bikes."
+        }
+      ],
+      "decision": "No source is added to the candidate merely to remove source-missing; neither discovered product identifies the retained carbon-road lead.",
+      "next_trigger": "Original public seller/model URL or exact model markings linking the retained lead to an attributable specification."
+    }
+  ],
+  "accepted_field_closures": 0,
+  "remaining_scoped_fields": 0,
+  "source_review": "Luna Max reported the scoped source checks. Parent reviewed existing conflict records and directly checked the SPECT retailer claim before rejecting the two proposed scalar closures. No original source records or observation dates were rewritten.",
+  "catalog_gap_count_before": 721,
+  "catalog_gap_count_after": 721
+}

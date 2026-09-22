@@ -1,0 +1,22 @@
+{
+  "batch_id": "luna-followup-01-2026-09-22",
+  "base_commit": "884a563cfe0a4c2907ff98bd3daf50da424d4d74",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "integration": "one parent writer; source and scope validation before acceptance",
+  "model_limit": 10,
+  "atomic_fields": 11,
+  "targets": [
+    { "candidate_id": "de-rosa-new-838", "fields": ["tire-clearance"] },
+    { "candidate_id": "felt-ia-2", "fields": ["tire-clearance"] },
+    { "candidate_id": "bxt-gravel-complete", "fields": ["tire-clearance"] },
+    { "candidate_id": "spect-mira", "fields": ["tire-clearance"] },
+    { "candidate_id": "icanian-p9", "fields": ["frame-weight"] },
+    { "candidate_id": "icanian-sn04", "fields": ["frame-weight", "frame-material"] },
+    { "candidate_id": "sava-r9", "fields": ["complete-weight"] },
+    { "candidate_id": "bianchi-sprint-icr", "fields": ["complete-weight"] },
+    { "candidate_id": "java-fuoco-2025", "fields": ["complete-weight"] },
+    { "candidate_id": "flying-pigeon-carbon-road-unknown", "fields": ["identity-source-mapping"] }
+  ],
+  "done_criteria": "Each field receives exact attributable evidence that resolves its existing ambiguity, or an explicit unresolved disposition with actual routes checked and a concrete next trigger. A conflicting source is not silently selected. Stop at decisive evidence.",
+  "boundaries": "No seller messages, purchases, private data, access bypass, guessed model equivalence or inferred specifications. Researcher does not write or control XHS."
+}
