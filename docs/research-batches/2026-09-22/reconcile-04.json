@@ -1,0 +1,86 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Existing record reconciliation; source access dates unchanged.",
+  "targets": 10,
+  "fields": 11,
+  "integrated_fields": 0,
+  "results": [
+    {
+      "target": "missing-china-price-trek-checkpoint",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-trek-checkpoint-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "specialized-roubaix-sl8-sport-105",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "look-765-electronic",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Current R50D and earlier R38D weights belong to distinct wheel builds; the retained card has no selected wheel identity."
+    },
+    {
+      "target": "missing-china-price-specialized-roubaix-sl8",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "scott-addict-rc-40",
+      "gap": "purchase-route",
+      "attempt_id": "variant-scott-addict-rc-40-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Regional/dealer or direct-factory ordering is documented, but exact mainland availability, delivered amount and fulfilment remain unverified."
+    },
+    {
+      "target": "rinasclta-gr025-frameset",
+      "gap": "purchase-route",
+      "attempt_id": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Regional/dealer or direct-factory ordering is documented, but exact mainland availability, delivered amount and fulfilment remain unverified."
+    },
+    {
+      "target": "laget-aero-one",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-laget-aero-one-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "laget-pioneer",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-laget-pioneer-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "laget-pioneer-one",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-laget-pioneer-one-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official/reference price already present; it is not an observed mainland selected-option checkout. Original currency/conversion and promotion caveats remain."
+    },
+    {
+      "target": "twitter-v3-2024-rs-sensah-alloy",
+      "gap": "image-exactness",
+      "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Retained retailer photography identifies model/component family, not exact production year, drivetrain batch or selected build. Exact-variant status is unsupported."
+    },
+    {
+      "target": "twitter-v3-2024-rs-sensah-alloy",
+      "gap": "purchase-route",
+      "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "The official current offer is a different 2025 generation; the 2024 record remains historical and must not inherit that route."
+    }
+  ]
+}
