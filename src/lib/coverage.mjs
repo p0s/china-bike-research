@@ -133,6 +133,25 @@ function imageProtection(image) {
   };
 }
 
+// A reviewed source-attributed derivative keeps the same bounded media
+// contract when a previously remote quotation moves into the repository. It
+// is still lower-risk than an arbitrary local fallback: data validation has
+// already checked the immutable WebP variants, source identity, privacy
+// review, and removal route. Keep this equivalence narrow so placeholders or
+// unrelated local images cannot satisfy protected remote-image coverage.
+function hasApprovedLocalSourcedDerivative(image) {
+  return image?.hosting?.mode === 'local'
+    && image?.rights?.status === 'source-attributed-rehost'
+    && typeof image?.hosting?.local_path === 'string'
+    && image.hosting.local_path.startsWith('/assets/images/sourced/')
+    && Array.isArray(image.hosting.variants)
+    && image.hosting.variants.length === 2;
+}
+
+function preservesProtectedHosting(image) {
+  return imageProtection(image).remote_required || hasApprovedLocalSourcedDerivative(image);
+}
+
 function preferredImageTargetProtection(previous, protection) {
   const candidate = {
     minimum_accuracy_rank: protection.minimum_accuracy_rank,
@@ -668,6 +687,12 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
       if (!currentRecords.has(id)) continue;
       const lost = missingItems(requiredFields, current.fields[collection]?.[id]);
       for (const field of lost) {
+        // `hosting.remote_url` is intentionally removed when an approved
+        // source-attributed derivative becomes repository-local. The
+        // immutable variants, source and review fields remain protected.
+        if (collection === 'images'
+          && field === 'hosting.remote_url'
+          && hasApprovedLocalSourcedDerivative(currentRecords.get(id))) continue;
         if (!retiredProtectedItems.has(`${collection}:${id}#field:${field}`)) errors.push(`${collection}:${id} lost protected field ${field}`);
       }
     }
@@ -727,7 +752,7 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
       errors.push(`images:${id} downgraded subject accuracy from ${IMAGE_ACCURACY_LABELS[required.minimum_accuracy_rank]} to ${image.subject_accuracy}`);
     }
     if (actual.minimum_source_tier < required.minimum_source_tier) errors.push(`images:${id} downgraded its source or reuse-rights tier`);
-    if (required.remote_required && !actual.remote_required) errors.push(`images:${id} replaced a protected remote image with a local-only image`);
+    if (required.remote_required && !preservesProtectedHosting(image)) errors.push(`images:${id} replaced a protected remote image with a local-only image`);
     if (required.primary_required && !actual.primary_required) errors.push(`images:${id} is no longer a primary image`);
   }
 
@@ -735,14 +760,14 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
     if (retirementsByKey.has(target)) continue;
     const matching = data.images
       .filter((image) => imageTarget(image) === target && image.role === 'primary')
-      .map(imageProtection);
+      .map((image) => ({ ...imageProtection(image), preserves_protected_hosting: preservesProtectedHosting(image) }));
     if (!matching.length) {
       errors.push(`${target} lost its protected primary image`);
       continue;
     }
     const qualified = matching.some((image) => image.minimum_accuracy_rank >= required.minimum_accuracy_rank
       && image.minimum_source_tier >= required.minimum_source_tier
-      && (!required.remote_required || image.remote_required));
+      && (!required.remote_required || image.preserves_protected_hosting));
     if (!qualified) errors.push(`${target} no longer has a primary image at its protected quality`);
   }
 

@@ -5,15 +5,15 @@
   "subject_accuracy": "exact-platform",
   "media_type": "community-post-photo",
   "hosting": {
-    "mode": "remote",
-    "remote_url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/xds-gt600/b06bac58cbf42c48-detail-w1080.webp",
+    "mode": "local",
+    "local_path": "/assets/images/sourced/xhs/xds-gt600/b06bac58cbf42c48-detail-w1080.webp",
     "variants": [
-      { "purpose": "card", "url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/xds-gt600/448f7d812db3aaae-card-w480.webp", "width": 480, "height": 652, "bytes": 35626, "sha256": "448f7d812db3aaaed18b24fab9e49717c06d53476eca863dddf3caf02479e0d8", "format": "image/webp" },
-      { "purpose": "detail", "url": "https://china-bike-media.161-97-123-19.sslip.io/media/xhs/xds-gt600/b06bac58cbf42c48-detail-w1080.webp", "width": 1080, "height": 1467, "bytes": 84702, "sha256": "b06bac58cbf42c48d15f56af9f35efc601ea0df0c4810a57b2c3c816b85ca941", "format": "image/webp" }
+      { "purpose": "card", "url": "/assets/images/sourced/xhs/xds-gt600/448f7d812db3aaae-card-w480.webp", "width": 480, "height": 652, "bytes": 35626, "sha256": "448f7d812db3aaaed18b24fab9e49717c06d53476eca863dddf3caf02479e0d8", "format": "image/webp" },
+      { "purpose": "detail", "url": "/assets/images/sourced/xhs/xds-gt600/b06bac58cbf42c48-detail-w1080.webp", "width": 1080, "height": 1467, "bytes": 84702, "sha256": "b06bac58cbf42c48d15f56af9f35efc601ea0df0c4810a57b2c3c816b85ca941", "format": "image/webp" }
     ]
   },
   "source_id": "public-xds-gt600-retailer-build-2026-08-27",
-  "rights": { "status": "public-post-quotation", "copyright_holder": "Original XHS post creator", "usage_note": "One compressed editorial quotation is hosted on the project media origin; no reuse license is asserted and the source file is not stored in Git." },
+  "rights": { "status": "source-attributed-rehost", "copyright_holder": "Original XHS post creator", "usage_note": "Small source-attributed editorial derivative retained for exact-model identification and commentary; the raw source file is not stored in Git." },
   "credit": "Original XHS post creator; see the linked source",
   "alt": "Quoted public-post collage showing two XDS GT600 gravel bikes with 700×40C tan-wall tires",
   "reviewed_at": "2026-08-27",

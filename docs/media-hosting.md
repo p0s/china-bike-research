@@ -5,7 +5,8 @@
 Selected public XHS and marketplace images normally use the isolated project media origin.
 When that route is unavailable or a durable specification quotation is materially useful,
 the same bounded derivatives may be stored under `assets/images/sourced/xhs/` or
-`assets/images/sourced/taobao/` and served by GitHub Pages. Raw captures stay outside Git.
+`assets/images/sourced/taobao/` and served by the Cloudflare Static Assets deployment.
+Raw captures stay outside Git.
 
 This is an attributed evidence workflow, not an image mirror. A selected image may
 identify an exact bicycle or expose decision-relevant geometry, size, clearance,
