@@ -8,40 +8,90 @@
     "incolor-speedster-sr-frameset",
     "lightcarbon-lcr018-d"
   ],
-  "source_ids": [],
+  "source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "incolor-speedster-sr-taobao-2026-08-29",
+    "cyclistshub-lcr018-d-owner-2026-08-29",
+    "usd-cny-central-parity-2026-07-31"
+  ],
   "translations": {
     "en": {
-      "title": "Using Chinese bike prices from abroad: what a yuan figure does not include",
-      "description": "Separate domestic observations, currency-converted references and export quotes before comparing Chinese bikes or framesets internationally.",
-      "intro": "China Bikes primarily documents purchases in mainland China. International readers can use it to discover models and inspect specifications, but a yuan price is not automatically an export offer, a landed cost or a worldwide warranty.",
+      "title": "Buying a bike from China: price, shipping and support",
+      "description": "Turn a Chinese bike price into a useful purchase budget: identify the exact build, collect shipping and import quotes, and compare support with a local option.",
+      "intro": "Use a yuan price to shortlist a bike, then compare a written delivered quote with your local alternative. The exact build, shipping, destination charges and warranty route can change the result. A simple worksheet makes those costs visible before the excitement of a low sticker price takes over.",
       "sections": [
         {
           "id": "price-types",
-          "heading": "First identify what kind of number you are reading",
+          "heading": "What does the yuan price actually buy?",
           "paragraphs": [
-            "An observed domestic price, a coupon-linked search card, an official list price and a foreign-currency reference conversion are different evidence types. The model page preserves the observation date and conditions so you can tell them apart. A converted reference may describe an overseas purchase rather than a mainland-China offer.",
+            "A marketplace observation, a coupon, an official list price and a currency conversion answer different questions. Keep the date and price basis with the number. The three examples below show why a neat column of yuan amounts is not yet a shopping comparison.",
             "The LCR018-D record is an example: its displayed frame reference comes from an owner-reported foreign-currency purchase converted at a dated rate. That does not make it an independently observed Chinese checkout price. The table below labels the basis instead of hiding it behind the currency symbol."
           ]
         },
         {
           "id": "exact-build",
-          "heading": "Confirm that the export quote describes the same bike",
+          "heading": "Make sure the quote and photo describe the same bike",
           "paragraphs": [
             "Send the seller the model generation, size, color and exact component package you are comparing. Ask whether the quote is for a bare frame, a frame package, a partially assembled bike or a complete build. Regional versions and similarly named configurations must not silently share one price or weight.",
-            "Use the linked model pages to identify the questions, not to assume that every regional option matches. A photograph of a desirable wheelset does not establish that the quoted package includes it."
+            "Use the linked model pages to check the configuration. The Twitter example is a complete bike; the Incolor example is a frame package. Even a genuine model photo may show different wheels or shifting from your selected option, so ask the seller to confirm those items in writing."
           ]
         },
         {
           "id": "landed-cost",
-          "heading": "Create a landed-cost worksheet without guessing",
+          "heading": "Build a delivered-cost worksheet",
           "paragraphs": [
             "Use separate lines for the product quote, packing or handling, transport, insurance where selected, payment or currency-conversion charges, any destination-specific import costs, and local assembly or inspection. Obtain current amounts and applicability from the seller, carrier and relevant destination authorities. This article supplies no universal tax rate or duty estimate.",
             "Leave unquoted items blank rather than entering zero. Keep the currency and quotation date beside each amount. Only then compare the total with an option available locally. A low domestic starting price can still be useful information without being the cheapest delivered result."
-          ]
+          ],
+          "worksheet": {
+            "caption": "Copy this checklist into your purchase budget",
+            "columns": [
+              "Cost line",
+              "Amount in one currency",
+              "Where to confirm it"
+            ],
+            "rows": [
+              [
+                "Exact bike or frame package",
+                "Not quoted",
+                "Seller: model, size and included components"
+              ],
+              [
+                "Packing and delivery",
+                "Not quoted",
+                "Seller or carrier: destination and service"
+              ],
+              [
+                "Insurance, if selected",
+                "Not quoted",
+                "Seller or carrier: coverage and exclusions"
+              ],
+              [
+                "Payment / exchange fees",
+                "Not quoted",
+                "Your actual payment provider"
+              ],
+              [
+                "Applicable import charges",
+                "Not quoted",
+                "Destination authority and carrier"
+              ],
+              [
+                "Assembly or inspection",
+                "Not quoted",
+                "Local workshop"
+              ],
+              [
+                "Comparable local bike",
+                "Not quoted",
+                "Local seller: matching configuration and support"
+              ]
+            ]
+          }
         },
         {
           "id": "support",
-          "heading": "Treat support as part of the decision",
+          "heading": "Give the warranty a return address",
           "paragraphs": [
             "Ask who accepts a warranty claim in your destination, which documents are required, and who pays transport or labor for a claim. Confirm how returns work before paying and whether a replacement hanger, seatpost, cockpit or other model-specific part can be shipped separately.",
             "Do not interpret a domestic warranty statement as a promise that an overseas distributor or workshop will handle the product. Get the applicable policy for the exact seller, product and destination."
@@ -49,46 +99,96 @@
         },
         {
           "id": "use-the-catalog",
-          "heading": "The catalog is most useful as a research starting point",
+          "heading": "Is the saving still worthwhile?",
           "paragraphs": [
-            "Use it to shortlist exact models, compare documented standards and find original sources. The [methodology](/methodology/) explains the distinction between recorded facts, estimates and unresolved questions. For frame purchases, also read [how to budget a complete build](/blog/frameset-vs-complete-bike-cost-in-china/).",
-            "No shipping coverage, stock or foreign checkout price was reverified for this article. The domestic priority remains deliberate: overseas readers gain the most when they preserve the local-market context rather than treating the data as a global store."
+            "Compare the completed worksheet with a local quote for a comparable configuration. If a cost or support route is still unknown, keep it visible and decide whether the possible saving is worth that uncertainty. Leave room in the budget for the box as well as the bike.",
+            "Start with the [model comparison](/?compare=twitter-v3-wheeltop-eds%2Cincolor-speedster-sr-frameset%2Clightcarbon-lcr018-d#compare) to check what each recorded price covers. If you are ordering a frame, use the [frameset budget example](/blog/frameset-vs-complete-bike-cost-in-china/#included-parts) before treating a frame quote as the cost of a bicycle."
           ]
         }
-      ]
+      ],
+      "table_notes": {
+        "twitter-v3-wheeltop-eds": "A domestic coupon observation, not an export quote or confirmed current checkout price.",
+        "incolor-speedster-sr-frameset": "An official-store frameset price. It does not include the parts needed for a complete bicycle.",
+        "lightcarbon-lcr018-d": "An owner’s foreign-currency purchase converted to yuan. Useful context, not a Chinese checkout observation."
+      }
     },
     "zh-Hans": {
-      "title": "海外买家如何使用中国自行车价格：人民币数字没有包含什么",
-      "description": "区分国内观察价、汇率换算参考与出口报价，再核对具体配置、到货成本和售后。",
-      "intro": "China Bikes 主要记录中国大陆市场的购买信息。海外读者可以用它发现车型、核对规格，但人民币价格并不自动等于出口报价、到货总成本或全球保修。",
+      "title": "从中国买自行车：价格、运费与售后怎么算",
+      "description": "从具体配置出发，把人民币车价、运输、适用进口费用和售后条件列入预算，再与当地同类配置比较。",
+      "intro": "先用人民币价格筛选车型，再拿书面的含运费报价与当地选择比较。具体配置、运输、目的地费用和保修路径，都可能改变结果。把这些项目列成清单，避免看到一个漂亮标价，就以为预算已经算完。",
       "sections": [
         {
           "id": "price-types",
-          "heading": "先辨认这是哪一种价格",
+          "heading": "这个人民币数字，究竟买到了什么？",
           "paragraphs": [
-            "国内实际观察价、带优惠券的搜索卡片、官方标价和外币换算参考，属于不同证据。车型页保留观察日期与适用条件，帮助读者区分。某个换算数字也可能来自海外购买，而不是国内报价。",
+            "市场观察、优惠券价、官方标价和汇率换算，各自回答不同的问题。数字旁边要保留日期和口径。下面三个例子说明：把价格都写成人民币，还不等于已经可以直接比着买。",
             "LCR018-D 就是例子：其车架参考价来自车主报告的外币购买金额，再按有日期的汇率换算。这不能变成独立观察到的国内结算价格。下表会保留价格依据，不把区别藏在人民币符号后面。"
           ]
         },
         {
           "id": "exact-build",
-          "heading": "确认出口报价对应同一辆车",
+          "heading": "让报价、照片和具体配置对上",
           "paragraphs": [
             "把比较中的车型代际、尺码、颜色和具体配件套餐发给卖家。问清报价针对裸车架、车架组、部分装配车辆，还是完整整车。地区版本与相似名称的配置，不能悄悄共用一个价格或重量。",
-            "使用车型页是为了明确问题，不是默认所有地区选项相同。图片里出现喜欢的轮组，不代表报价套餐一定包含它。"
+            "利用车型页核对配置。这里的骓特例子是整车，Incolor 例子是车架套餐。即使照片确实属于这款车，也可能展示与所选选项不同的轮组或变速，应请卖家书面确认。"
           ]
         },
         {
           "id": "landed-cost",
-          "heading": "建立到货成本清单，不要猜数",
+          "heading": "列一张完整到手成本清单",
           "paragraphs": [
             "分别列出商品报价、包装或处理费、运输、按需选择的保险、支付或换汇费用、目的地适用的进口费用，以及本地装配或检查费。向卖家、承运方和目的地相关机构取得当前金额及适用条件。本文不提供统一税率或关税估算。",
             "未报价的项目保持空缺，不填零。每笔金额都标明币种与报价日期，再与本地可购买选项比较。国内起点价格很低，仍然不等于最终到货成本最低。"
-          ]
+          ],
+          "worksheet": {
+            "caption": "把这张清单加入自己的购车预算",
+            "columns": [
+              "费用项目",
+              "统一币种金额",
+              "向谁确认"
+            ],
+            "rows": [
+              [
+                "具体整车或车架套餐",
+                "待报价",
+                "卖家：型号、尺码与包含配件"
+              ],
+              [
+                "包装与运输",
+                "待报价",
+                "卖家或承运人：目的地与服务"
+              ],
+              [
+                "保险（如选择）",
+                "待报价",
+                "卖家或承运人：范围与除外项目"
+              ],
+              [
+                "支付及换汇费用",
+                "待报价",
+                "实际使用的支付服务商"
+              ],
+              [
+                "适用进口费用",
+                "待报价",
+                "目的地主管机构与承运人"
+              ],
+              [
+                "装配或检查",
+                "待报价",
+                "当地车店"
+              ],
+              [
+                "可比较的当地整车",
+                "待报价",
+                "当地卖家：匹配配置与售后条件"
+              ]
+            ]
+          }
         },
         {
           "id": "support",
-          "heading": "把售后也纳入决定",
+          "heading": "保修，需要找得到接手的人",
           "paragraphs": [
             "问清在目的地由谁受理保修、需要哪些凭证，以及运输和工时由谁承担。付款前确认退货流程，并询问尾钩、座管、把组等型号专用部件能否单独发货。",
             "不要把国内保修声明理解成海外代理或车店必然提供支持。应取得适用于具体卖家、产品和目的地的政策。"
@@ -96,13 +196,37 @@
         },
         {
           "id": "use-the-catalog",
-          "heading": "把目录当作研究起点最有用",
+          "heading": "加总以后，这笔节省还值得吗？",
           "paragraphs": [
-            "用它筛选明确车型、比较已记录接口并找到原始来源。[研究方法](/methodology/)解释记录事实、估算和待确认问题的区别。购买车架时，也可阅读[如何核算完整装车成本](/blog/frameset-vs-complete-bike-cost-in-china/)。",
-            "本文没有重新核实各目的地运输覆盖、库存或海外结算价。我们有意优先服务国内购买场景；海外读者保留这一市场背景，会比把数据当作全球商店更有收获。"
+            "把完成后的清单，与当地相近配置的报价并列。费用或售后路径仍不确定时，就把问题保留下来，再判断可能节省的金额是否值得承担这些不确定性。预算除了车，也要留出把它送到手里的那一部分。",
+            "先打开[车型对比](/?compare=twitter-v3-wheeltop-eds%2Cincolor-speedster-sr-frameset%2Clightcarbon-lcr018-d#compare)，核对每条价格记录包含什么。购买车架时，再参考[装车预算示例](/blog/frameset-vs-complete-bike-cost-in-china/#included-parts)，把一辆完整自行车的费用算齐。"
           ]
         }
+      ],
+      "table_notes": {
+        "twitter-v3-wheeltop-eds": "国内券后价观察，不是出口报价，也不代表当前已确认的结算价。",
+        "incolor-speedster-sr-frameset": "官方店的车架套餐价格，不包含组成整车所需的其他配件。",
+        "lightcarbon-lcr018-d": "车主外币购买价格的人民币换算，可作参考，不是国内结算观察。"
+      }
+    }
+  },
+  "comparison": {
+    "kind": "price-basis",
+    "section_id": "price-types"
+  },
+  "photo_sections": [
+    {
+      "section_id": "price-types",
+      "ids": [
+        "lightcarbon-lcr018-d"
+      ]
+    },
+    {
+      "section_id": "exact-build",
+      "ids": [
+        "twitter-gravel-v3",
+        "incolor-speedster-sr"
       ]
     }
-  }
+  ]
 }
