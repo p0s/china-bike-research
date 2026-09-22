@@ -115,7 +115,7 @@ for (const locale of ['en', 'zh-Hans']) test(`articles render genuine byline, da
     assert.equal(schema.author['@type'], 'Organization');
     assert.equal(schema.datePublished, post.datePublished);
     assert.ok(!('aggregateRating' in schema)); assert.ok(!('offers' in schema));
-    if (post.comparison.kind !== 'clearance') assert.match(html, /data-original-language/);
+    assert.doesNotMatch(html, /<details\b/);
     for (const id of post.model_ids) assert.ok(html.includes(`${localePath(`/models/${id}/`, locale)}#source-records`));
   }
   const index = renderBlogIndex({ ...ctx, locale }, posts);
@@ -144,7 +144,7 @@ test('article comparisons use topic-specific facts and keep unknown drivetrain l
   assert.ok(!table.includes('Recorded price'));
   const gravel = renderEvidenceTable(ctx, posts.find((post) => post.comparison.kind === 'gravel'));
   assert.ok(gravel.includes('2×12') && gravel.includes('1×12'));
-  assert.ok(gravel.includes('Weighing basis'));
+  assert.ok(gravel.includes('different measurement conditions'));
   assert.ok(!/remaining-build allowance|observed-search-card|public-market-observation/.test(gravel));
 });
 
