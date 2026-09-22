@@ -74,7 +74,7 @@ export const zh = {
   'Dataset and freshness':'数据集与时效', 'What is compared':'比较范围', 'Frameset price estimate':'车架装车估价', 'Exact build configurator':'具体装车配置器', 'Category-specific facts':'各类别特有信息',
   'Video context':'视频说明', 'Materials and manufacturing':'材料与制造', 'Corrections':'纠正资料', 'Catalog JSON':'车型目录 JSON', 'Catalog CSV':'车型目录 CSV', 'Source records JSON':'来源记录 JSON',
   'Submit a correction or price sighting on GitHub':'在 GitHub 提交纠错或价格记录',
-  'Buying in China':'在中国购车', 'International readers':'海外读者', 'Related reading':'相关购车文章', 'Read the guide':'阅读文章', 'On this page':'本文内容', 'Evidence and limitations':'证据与局限',
+  'Related reading':'相关购车文章', 'Read the guide':'阅读文章', 'On this page':'本文内容', 'Evidence and limitations':'证据与局限',
   'Written by':'撰写：', 'Updated':'更新：', 'Editorial date':'文章日期', 'Evidence-led buying guides':'附证据的购车指南', 'Back to all articles':'返回全部文章'
 };
 
