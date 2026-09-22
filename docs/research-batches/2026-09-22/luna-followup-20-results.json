@@ -1,0 +1,166 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-20-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 10,
+  "reviewed_fields": 11,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 716,
+  "coarse_gap_count_after": 716,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-elves-vanyar",
+      "outcome": "mainland-price-unresolved",
+      "finding": "The exact ELVES Vanyar Pro Disc remains represented by a regional manufacturer offer and converted reference, but no current mainland-China CNY checkout or attributable domestic delivery route was found.",
+      "sources": [
+        "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame"
+      ],
+      "proof": "The exact current product route supports the regional offer and frame identity; a currency conversion is only a reference and does not establish a mainland transaction. No exact current mainland CNY offer was found.",
+      "next_trigger": "Exact Vanyar Pro Disc mainland-China checkout or quote with currency, package contents and delivery basis.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-tavelo-attack",
+      "outcome": "mainland-price-unresolved",
+      "finding": "The exact Tavelo Attack remains supported by a current global manufacturer offer and converted reference, but no attributable mainland-China CNY checkout or domestic delivery route was found.",
+      "sources": [
+        "https://www.tavelo.cc/products/tavelo-attack"
+      ],
+      "proof": "The current exact product route identifies the Attack and its global offer; conversion and foreign clearance observations do not establish a mainland transaction. No exact current mainland CNY offer was found.",
+      "next_trigger": "Exact Tavelo Attack mainland-China checkout or quote with currency, package contents and delivery basis.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "carbonda-cfr696-frameset",
+      "outcome": "price-unresolved",
+      "finding": "The current Carbonda CFR696 page publishes exact frame specifications, including the current frame-weight range, but no public exact frameset amount or checkout is attributable.",
+      "sources": [
+        "https://www.carbonda.com/road/cfr-696.html"
+      ],
+      "proof": "The current manufacturer page is exact-model evidence for identity and specifications. Historical community amounts are stale and do not establish a current selected package or price.",
+      "next_trigger": "Current exact CFR696 frameset checkout or quote that identifies currency and included frame, fork and finishing parts.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "ican-gra04-frameset",
+      "outcome": "price-unresolved",
+      "finding": "The current ICAN GRA04 manufacturer route identifies the exact gravel frame and its technical package, but no public exact frameset amount or checkout is exposed.",
+      "sources": [
+        "https://www.icanbikes.com/Products-list/full-carbon-racing-gravel-frame-gra04/"
+      ],
+      "proof": "The current exact manufacturer route supports identity and specifications; no attributable numeric offer for the selected frameset was visible, so sibling or directory prices are not transferred.",
+      "next_trigger": "Current exact GRA04 frameset checkout or quote with currency and package contents.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-grail",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "Current Grail coverage provides product and market evidence, but the retained exact CF 7 build has no published reproducible frame-stiffness result that can be used for this field.",
+      "sources": [
+        "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html",
+        "https://www.canyon.com.cn/zh-cn/%E7%A0%BE%E7%9F%B3-%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD/grail/cf/grail-cf-7/4149.html",
+        "https://www.bikeradar.com/reviews/bikes/gravel-bikes/canyon-grail-cf-slx-7-di2"
+      ],
+      "proof": "The official routes identify the retained product and current Chinese market context. Available independent reviews cover different Grail trims or generations, so their ride impressions or test results are not transferred to this exact CF 7 field.",
+      "next_trigger": "Exact retained Grail CF 7 independent review or numeric stiffness test with model, generation and protocol identified.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s8",
+      "outcome": "frame-weight-and-bottom-bracket-unresolved",
+      "finding": "The current SAVA Gelaro S8 evidence gives complete-bike weight and fitted tire information, but no frame-only mass or bottom-bracket standard attributable to this exact build.",
+      "sources": [
+        "https://savadeck-bike.com/collections/t800-carbon-fiber-frame-bikes/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s?variant=47076042899595"
+      ],
+      "proof": "The exact current page describes an approximately 10.2 kg complete bike and a 45C maximum tire claim, not a frame-only weight or BB shell standard. Complete-bike mass cannot be converted into frame mass, and standards from other SAVA models are not transferred.",
+      "next_trigger": "Exact Gelaro S8 specification naming the BB shell standard and frame-only weight, or an attributable scale report with build details.",
+      "fields": [
+        "frame-weight",
+        "bottom-bracket"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-a7l-r7100",
+      "outcome": "frame-weight-unresolved",
+      "finding": "Current SAVA A7L evidence supports complete-bike weight for related 2026 builds, but no frame-only weight is published for the exact R7100 variant.",
+      "sources": [
+        "https://www.jd.com/jiage/131868f60775472966f2.html",
+        "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed"
+      ],
+      "proof": "The current mainland and manufacturer routes identify complete-bike specifications, including an approximately 8.6 kg R08 build, but do not establish frame-only mass for the R7100 variant. Related-build weights are not transferred.",
+      "next_trigger": "Exact A7L R7100 frame-only weight from a manufacturer specification or attributable scale report with build details.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "outcome": "frame-weight-unresolved",
+      "finding": "Current SAVA Gelaro platform listings identify complete-bike offers but do not publish a platform-level frame-only weight that is safe to apply across variants.",
+      "sources": [
+        "https://www.jd.com/brand/131805075aba1d3aea22.html"
+      ],
+      "proof": "The current mainland platform route is variant and complete-bike oriented; no common frame-only mass is published, and variant-specific values cannot be generalized to the platform.",
+      "next_trigger": "Manufacturer platform specification explicitly defining a frame-only weight and the covered Gelaro variants.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "outcome": "frame-weight-unresolved",
+      "finding": "Current TWITTER V3 WheelTop EDS pages identify a complete-bike offer and complete-bike weight, but no frame-only mass for the exact selected build.",
+      "sources": [
+        "https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-gravel-v3-wireless-wheeltop-eds-tx-2-12-speed-holographic-l-54cm",
+        "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html"
+      ],
+      "proof": "The current regional and manufacturer pages publish complete-bike details, including approximately 9.9 kg variants and T47 information, but do not publish a frame-only weight. Complete-bike weight is not converted into frame mass.",
+      "next_trigger": "Exact V3 WheelTop EDS frame-only weight from a manufacturer specification or attributable scale report with build details.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tsb-titan-super-bond-pioneer-one",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "The exact TSB / Titan Super Bond Pioneer One evidence provides frame identity, weight and clearance, but no exact-model stiffness result or reproducible comparative ride test.",
+      "sources": [
+        "https://www.tsbcycles.com/productinfo/1340984.html",
+        "https://tipartstitanium.com/blogs/products/lets-talk-about-the-laget-aero-one-an-interview-with-bob-from-laget"
+      ],
+      "proof": "The exact TSB page supplies model specifications. The Ti-Parts interview discusses stiffness testing for the separate LAGET Aero One, so that evidence is not transferred to Pioneer One.",
+      "next_trigger": "Exact Pioneer One independent review or public numeric stiffness comparison with model identity and protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": [
+    "Frozen batch scope contains 10 targets and 11 atomic fields.",
+    "All 11 fields were reviewed against current exact-model or exact-variant routes on 2026-09-22.",
+    "No exact-model evidence met the closure threshold; no data records or image assets were changed.",
+    "The complete repository gate remains valid from the unchanged batch-17 data/code boundary; this evidence-only batch requires no gate rerun."
+  ],
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
