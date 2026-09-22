@@ -1,240 +1,526 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
+  "model_photos": [
+    {
+      "id": "twitter-gravel-v3",
+      "model_ids": [
+        "twitter-v3-rs-sensah",
+        "twitter-v3-wheeltop-eds"
+      ],
+      "image_id": "twitter-gravel-v3-primary-image",
+      "name": "Twitter Gravel V3",
+      "alt": {
+        "en": "Twitter Gravel V3 carbon gravel bike in black and grey",
+        "zh-Hans": "黑灰色 Twitter Gravel V3 碳纤维砾石整车"
+      },
+      "note": {
+        "en": "Same V3 frame platform; pictured components differ from the RS and WheelTop builds discussed.",
+        "zh-Hans": "同款 V3 车架平台；照片配置与文中的 RS 和 WheelTop 版本不同。"
+      }
+    },
+    {
+      "id": "pardus-super-sport-gen2",
+      "model_ids": [
+        "pardus-super-sport-gen2-egr"
+      ],
+      "image_id": "pardus-super-sport-gen2-primary-image",
+      "name": "PARDUS Super Sport Gen2",
+      "alt": {
+        "en": "PARDUS Super Sport Gen2 with a Shimano 105 build",
+        "zh-Hans": "搭配 Shimano 105 的 PARDUS Super Sport Gen2 整车"
+      },
+      "note": {
+        "en": "Shimano 105 build pictured; the article compares the eGR configuration.",
+        "zh-Hans": "照片为 Shimano 105 配置；文中对比的是 eGR 配置。"
+      }
+    },
+    {
+      "id": "incolor-speedster-sr",
+      "model_ids": [
+        "incolor-speedster-sr-frameset"
+      ],
+      "image_id": "incolor-speedster-sr-primary-image",
+      "name": "INCOLOR Speedster SR",
+      "alt": {
+        "en": "Silver iridescent INCOLOR Speedster SR aero road frameset",
+        "zh-Hans": "银色幻彩 INCOLOR Speedster SR 气动公路车架组"
+      },
+      "note": {
+        "en": "Frameset shown; wheels and drivetrain are separate build costs.",
+        "zh-Hans": "图为车架组；轮组及传动系统需另外计入装车成本。"
+      }
+    },
+    {
+      "id": "lightcarbon-lcr018-d",
+      "model_ids": [
+        "lightcarbon-lcr018-d"
+      ],
+      "image_id": "lightcarbon-lcr018-d-primary-image-2026-08-29",
+      "name": "LightCarbon LCR018-D",
+      "alt": {
+        "en": "Complete example bike built with the LightCarbon LCR018-D frameset",
+        "zh-Hans": "使用 LightCarbon LCR018-D 车架组装的整车示例"
+      },
+      "note": {
+        "en": "Manufacturer’s example build on the LCR018-D frameset; pictured parts are not a confirmed sale package.",
+        "zh-Hans": "厂家以 LCR018-D 车架组装的示例整车；图中零件不代表已确认的销售套餐。"
+      }
+    },
+    {
+      "id": "tavelo-arden",
+      "model_ids": [
+        "tavelo-arden"
+      ],
+      "image_id": "tavelo-arden-primary-image",
+      "name": "Tavelo ARDEN Race",
+      "alt": {
+        "en": "Tavelo ARDEN Race carbon frameset",
+        "zh-Hans": "Tavelo ARDEN Race 碳纤维车架组"
+      },
+      "note": {
+        "en": "Frameset shown; see the research profile for unresolved purchase details.",
+        "zh-Hans": "图为车架组；待核实的购买信息见研究阶段资料。"
+      }
+    },
+    {
+      "id": "lightcarbon-lcg071s-pro",
+      "model_ids": [
+        "lightcarbon-lcg071s-pro-frameset"
+      ],
+      "image_id": "lightcarbon-lcg071s-pro-primary-image",
+      "name": "LightCarbon LCG071S-PRO",
+      "alt": {
+        "en": "LightCarbon LCG071S-PRO carbon gravel frameset",
+        "zh-Hans": "LightCarbon LCG071S-PRO 碳纤维砾石车架组"
+      },
+      "note": {
+        "en": "Frameset reference photo; a complete build needs additional components.",
+        "zh-Hans": "车架组参考照片；组装整车还需要其他零件。"
+      }
+    },
+    {
+      "id": "incolor-voyager",
+      "model_ids": [
+        "incolor-voyager-frameset"
+      ],
+      "image_id": "incolor-voyager-official-primary-image",
+      "name": "INCOLOR Voyager",
+      "alt": {
+        "en": "Blue INCOLOR Voyager carbon gravel frameset",
+        "zh-Hans": "蓝色 INCOLOR Voyager 碳纤维砾石车架组"
+      },
+      "note": {
+        "en": "Frameset shown; the article separates its price from the complete-build budget.",
+        "zh-Hans": "图为车架组；文中将车架售价与整车装配预算分别计算。"
+      }
+    }
+  ],
   "images": [
     {
       "id": "cycling-guides-banner",
       "alt": {
-        "en": "Two bicycles beside a quiet lane and gravel path among green karst hills.",
-        "zh-Hans": "两辆自行车停在绿色喀斯特山峦间的公路与碎石小径旁。"
+        "en": "Red panda cycling mechanic holding a hex key",
+        "zh-Hans": "手拿内六角扳手的小熊猫自行车技师"
       },
-      "prompt": "Use case: photorealistic-natural. Asset type: wide landscape editorial banner for the China Bikes cycling blog, original AI editorial illustration. Primary request: two unbranded contemporary drop-bar bicycles, one muted olive gravel bicycle and one charcoal road bicycle, resting beside a quiet rural paved lane meeting a gravel path in southern Chinese karst countryside. Scene: soft green layered hills, weathered limestone, early morning haze, natural low sunlight. Composition: premium cycling magazine landscape photograph, 16:9, bicycles fully visible in the central horizontal band, clean geometry and plenty of surrounding landscape, designed to retain both bicycles in a shallow wide crop. Calm, grounded, tactile, restrained muted greens and warm stone. Realistic wheels, frames and drivetrains. No people, no written text, no logos, no watermarks, no flags, no advertising, no UI or collage. This is atmospheric editorial artwork, not an image of any named real bicycle model.",
+      "prompt": "Use case: stylized-concept. Asset type: original cycling blog mascot reference illustration. Create a single adorable original red panda bicycle mechanic and cyclist, with a recognizable round head, rust-orange fur, cream cheek patches and eyebrows, small rounded ears edged cream, dark chocolate paws and lower legs, tiny dark triangular nose, kind dark eyes, and one big plush tail with exactly alternating rust and cream rings. Wear a matte deep-teal cycling helmet with three pale ventilation slots and fastened dark chin strap, a simple cream short-sleeved cycling jersey, dark charcoal shorts and a small mustard-yellow tool pouch on the waist. Standing upright in an inviting three-quarter pose holding a small hex key in one paw. Charming, competent, curious, not babyish. Full body and whole tail fully visible, no other characters. Premium tactile 3D storybook illustration with soft clay-like materials and subtly furry edges, calm natural daylight, warm ivory plain background and soft ground shadow. Clean, memorable silhouette; expressive face, compact rounded proportions, plausible paws. This exact character will recur in bicycle riding, fixing, building and packing scenes. No text, letters, logos, numbers, watermark, panels or collage. Landscape composition with room around the character. Output on a genuinely transparent background (alpha channel), with no opaque backdrop. Do not include a bicycle: the character will sit alongside unmodified real bicycle photographs.",
+      "edit_prompt": null,
       "source": {
         "kind": "project-generated",
         "tool": "OpenAI built-in image generation",
         "created_at": "2026-09-22",
         "credit": "China Bikes",
-        "subject": "conceptual editorial illustration; no exact model identity or specification claim",
-        "sha256": "f4c6c20cd6f48c0d2dcb57212cea87c524df73e6726e711518e181030424bc9e",
-        "width": 1672,
-        "height": 941
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
       },
       "files": [
         {
-          "purpose": "card",
-          "path": "/assets/blog/cycling-guides-banner-640.webp",
-          "width": 640,
-          "height": 361,
+          "purpose": "mascot",
+          "path": "/assets/blog/cycling-guides-banner-mascot-480.webp",
+          "width": 480,
+          "height": 320,
           "type": "image/webp",
-          "bytes": 49258,
-          "sha256": "a838a080060871f79a3c398655606fdac66881f5bf8485510807e9bedc3a9c70"
-        },
-        {
-          "purpose": "hero",
-          "path": "/assets/blog/cycling-guides-banner-1600.webp",
-          "width": 1600,
-          "height": 901,
-          "type": "image/webp",
-          "bytes": 219922,
-          "sha256": "fc8847cd5b41abff29c2adcc9077446c596d8271cd270e78513e5213079304b1"
-        },
-        {
-          "purpose": "social",
-          "path": "/assets/blog/cycling-guides-banner-1200.jpg",
-          "width": 1200,
-          "height": 676,
-          "type": "image/jpeg",
-          "bytes": 244154,
-          "sha256": "847b37f011164b2a43bf81ee0f93a01ba422bbd894b7c518cf98e1ffbd155d87"
+          "bytes": 20794,
+          "sha256": "6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5"
         }
-      ]
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda cycling guide welcomes riders beside two bikes in a sunlit karst landscape.",
+          "zh-Hans": "小熊猫骑行向导站在两辆自行车旁，在阳光下的喀斯特山景中欢迎骑友。"
+        },
+        "prompt": "Edit this exact wide cycling blog banner to correct the red panda's tail intersecting the bicycle spokes. Preserve the beautiful sunlit karst landscape, winding country road, two realistic unbranded bicycles, warm cinematic lighting, and same charming tactile 3D red panda mascot with teal helmet, cream jersey, charcoal shorts and mustard tool pouch. Recompose the mascot FULLY TO THE LEFT of the olive green bicycle's rear wheel. The mascot should stand naturally with both feet on the road, wave toward the bikes with a paw, and its single fluffy striped tail should curve leftwards away from the bikes. CRITICAL PHYSICAL CORRECTION: the ENTIRE mascot's body, legs and entire tail silhouette must sit outside both bicycles and all wheel disks. There must be an obvious open patch of visible road/landscape between the rightmost fur of the tail/body and the leftmost edge of the nearest bicycle tire. No tail hidden by spokes, no tail crossing any wheel, tire, frame, chain or pedal. Move the green bicycle slightly right if needed to create this clear visual separation. Both bicycles retain physically coherent frames, distinct circular wheels and plausible components. One mascot only. Keep wide approximately 16:9 composition and same landscape. No words, labels, logos or watermarks.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-09-22",
+          "credit": "China Bikes",
+          "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
+          "sha256": "17e0caaa21b616944c6038e063ed4ea0d0cb1ea4527a89161e787b3132e58e68",
+          "width": 1672,
+          "height": 941,
+          "scene_reference": {
+            "git_commit": "76a680fc9d85a581c61b4343b369130627cb138c",
+            "path": "/assets/blog/cycling-guides-banner-1600.webp",
+            "sha256": "fc8847cd5b41abff29c2adcc9077446c596d8271cd270e78513e5213079304b1"
+          },
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a",
+          "edit_reference": {
+            "git_commit": "76201fa88c461290954502df32cf23e857cff722",
+            "path": "/assets/blog/cycling-guides-banner-scene-1600.webp",
+            "sha256": "0a2fba7c84bc6701f69ad5afd281bd3adf43b5e735379e69a505313224051aa7",
+            "original_sha256": "163d077a0b0278f8535d35cffe62d7ad437be3b2f6492b3459735b36241262b4"
+          }
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 45532,
+            "sha256": "eb8f02e079677678a0c49589f7f15654a549b3e3e7dfbcb79ccc5fbff4e59eff"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 211424,
+            "sha256": "01a3fbcf0274e387bded7f6fe8621df50ca29a2fc90d77b29ee5899aa89c849d"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/cycling-guides-banner-scene-v2-1200.jpg",
+            "width": 1200,
+            "height": 676,
+            "type": "image/jpeg",
+            "bytes": 221473,
+            "sha256": "f60e4c63aaa44f9f7a3f9461e74da7b3d5c13415f52ab7d8a424d9f76c3b9783"
+          }
+        ]
+      }
     },
     {
       "id": "gravel-bikes-around-5000-yuan",
       "alt": {
-        "en": "An olive gravel bicycle on a stony trail with misty hills behind it.",
-        "zh-Hans": "橄榄绿色 Gravel 自行车停在碎石小径上，远处是雾中的山峦。"
+        "en": "Red panda preparing a ride with a floor pump",
+        "zh-Hans": "用打气筒准备出发的小熊猫"
       },
-      "prompt": "Use case: photorealistic-natural. Asset type: landscape cover illustration for an article comparing budget gravel bicycles. Primary request: an unbranded muted olive drop-bar gravel bicycle with tan-wall gravel tires, photographed in profile on a quiet compacted gravel trail. Scene: low grassy banks and misty green hills in southern China, warm overcast early morning light. Composition: premium cycling editorial photography, 16:9, bicycle completely visible with natural proportions in the central band, frame and wheels unobstructed, generous space around it, texture in gravel and matte paint, restrained sage, charcoal and warm stone palette. Realistic mechanically coherent bicycle. No people, no text or logos, no brand marks, no numbers or invented specification labels, no watermark, no UI. Original atmospheric illustration of the topic, not a photograph of Twitter or PARDUS or any exact model.",
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is preparing for a gravel ride, leaning happily on a compact bicycle floor pump, one paw on the pump handle and one giving a small thumbs-up. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
       "source": {
         "kind": "project-generated",
         "tool": "OpenAI built-in image generation",
         "created_at": "2026-09-22",
         "credit": "China Bikes",
-        "subject": "conceptual editorial illustration; no exact model identity or specification claim",
-        "sha256": "f1490c5dd92ec6a187183a4c08ec5b24adf36f6cf9ff31af583511e54121d8d8",
-        "width": 1672,
-        "height": 941
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "c3a53156105d1bfcb296a12afe0c7f1a8a87e54ba97d7a7ab7e459c7c8ae66b3"
       },
       "files": [
         {
-          "purpose": "card",
-          "path": "/assets/blog/gravel-bikes-around-5000-yuan-640.webp",
-          "width": 640,
-          "height": 361,
+          "purpose": "mascot",
+          "path": "/assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp",
+          "width": 480,
+          "height": 475,
           "type": "image/webp",
-          "bytes": 50378,
-          "sha256": "ca914bd271dee0c99e3e16a0fc5aa5f7cb8d58cf2217ab4f78528ea3f2d6e8ac"
-        },
-        {
-          "purpose": "hero",
-          "path": "/assets/blog/gravel-bikes-around-5000-yuan-1600.webp",
-          "width": 1600,
-          "height": 901,
-          "type": "image/webp",
-          "bytes": 186276,
-          "sha256": "0b785f03a9538e89ddbd08c8b551c7c4eda89bac5d4331a6fdbd72efcb944e67"
-        },
-        {
-          "purpose": "social",
-          "path": "/assets/blog/gravel-bikes-around-5000-yuan-1200.jpg",
-          "width": 1200,
-          "height": 676,
-          "type": "image/jpeg",
-          "bytes": 225258,
-          "sha256": "5cf2b281f7b86a0faeb6a0485b52492a592d303d07432a2a8f6b53074f82f314"
+          "bytes": 37246,
+          "sha256": "98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775"
         }
-      ]
+      ],
+      "header": {
+        "alt": {
+          "en": "A helmeted red panda rides an olive gravel bike along a stony trail above misty hills.",
+          "zh-Hans": "戴头盔的小熊猫骑着橄榄绿色砾石车，行进在雾山旁的碎石小径上。"
+        },
+        "prompt": "Use case: compositing. Edit the supplied first image, an existing project-created blog illustration. The second image is the exact recurring red panda mascot identity reference. Keep the misty green karst hills, olive gravel bicycle, stony trail and soft light. Recompose the foreground into the same red panda mascot actively riding the olive gravel bike along this trail. Its paws naturally grip the drop-bar hoods, feet sit on pedals, tail curves safely clear of the wheels. Keep both wheels fully in frame. Make its happy focused face and helmet clearly readable at card size.\nPreserve the first image's subject, muted sage/olive palette, warm natural light and photographic environment, while incorporating the tactile 3D storybook mascot with matching perspective, realistic contact shadows and scene lighting. It must inhabit and interact with the scene, never look like a pasted corner sticker or separate inset. Preserve the mascot's rust-orange fur, cream cheeks/eyebrows/ear rims, dark paws, kind dark eyes, large ringed tail, matte deep-teal cycling helmet with strap, cream jersey, charcoal shorts and mustard tool pouch. Change its pose and any handheld prop to the activity described. ONE mascot only, no humans. Wide 16:9 landscape, full-bleed opaque scene, main action comfortably inside a centered crop-safe area, generous margins, visually polished editorial header. No text, logos, watermark, labels or borders. Bikes are unbranded conceptual illustrations; avoid exact-brand or exact-specification claims.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-09-22",
+          "credit": "China Bikes",
+          "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
+          "sha256": "6a34c5296f1c20a4274ec2d2efe82d86f73058a8daeb2979deae619eb534bf50",
+          "width": 1672,
+          "height": 941,
+          "scene_reference": {
+            "git_commit": "76a680fc9d85a581c61b4343b369130627cb138c",
+            "path": "/assets/blog/gravel-bikes-around-5000-yuan-1600.webp",
+            "sha256": "0b785f03a9538e89ddbd08c8b551c7c4eda89bac5d4331a6fdbd72efcb944e67"
+          },
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/gravel-bikes-around-5000-yuan-scene-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 44354,
+            "sha256": "91bfbf59e430f8690f0179da882e6ab71e7715da4bafbbeecac1f53fb3e413ce"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/gravel-bikes-around-5000-yuan-scene-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 183718,
+            "sha256": "b52f4900595d0017647c04278ac0b25315e61fa9ebf3d3eb545d89515e86af29"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/gravel-bikes-around-5000-yuan-scene-1200.jpg",
+            "width": 1200,
+            "height": 676,
+            "type": "image/jpeg",
+            "bytes": 189005,
+            "sha256": "0aa9a88fff82f1177df7dbdd0b9fe3f2564654bbd9856629d07a1ee673e27176"
+          }
+        ]
+      }
     },
     {
       "id": "38mm-tires-on-aero-road-bikes",
       "alt": {
-        "en": "Close-up of the space between a bicycle tire and the fork blades.",
-        "zh-Hans": "自行车轮胎与前叉叉腿之间间隙的近景。"
+        "en": "Red panda checking a measurement with calipers",
+        "zh-Hans": "用卡尺检查尺寸的小熊猫"
       },
-      "prompt": "Use case: photorealistic-natural. Asset type: landscape cycling editorial cover about tire clearance on aero road bicycles. Primary request: a clean close-up three-quarter view of a wide lightly treaded road bicycle tire passing between the blades of a matte charcoal unbranded carbon-style fork. Focus on the visible air space between the tire and each fork blade, realistic centered wheel, spokes and rubber texture. Scene: quiet bicycle workshop with softly blurred neutral sage and warm grey background. Composition: premium macro editorial photograph in 16:9, wheel/fork centered, enough surrounding space for a wide crop. Soft window light, accurate plausible bicycle geometry, calm restrained materials. No dimensions or ruler, no text, numbers, logos, watermark, UI or diagram arrows. No claim of specific clearance or a named model; this is an original conceptual editorial illustration.",
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot crouches with a small vernier caliper held carefully in both paws, looking closely at the caliper with a curious focused expression, as if checking a bicycle tire gap. Caliper has no readable numbers. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
       "source": {
         "kind": "project-generated",
         "tool": "OpenAI built-in image generation",
         "created_at": "2026-09-22",
         "credit": "China Bikes",
-        "subject": "conceptual editorial illustration; no exact model identity or specification claim",
-        "sha256": "91bc9d89861fac65a96d372befb6953e6bea58086cac5f27c7fdeffd5f0ba7a2",
-        "width": 1672,
-        "height": 941
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "6621505c3bf3ab1eca3b55c96c0039b7be526fb871158783d34455b659de257e"
       },
       "files": [
         {
-          "purpose": "card",
-          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-640.webp",
-          "width": 640,
-          "height": 361,
+          "purpose": "mascot",
+          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp",
+          "width": 480,
+          "height": 320,
           "type": "image/webp",
-          "bytes": 16730,
-          "sha256": "da3b69710d8e681b427c7d923b44b3a2c389a52f7734700ff95aa3ebaffcccbf"
-        },
-        {
-          "purpose": "hero",
-          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-1600.webp",
-          "width": 1600,
-          "height": 901,
-          "type": "image/webp",
-          "bytes": 52166,
-          "sha256": "41f613bf72801d389f6051638dc73522d049c38825c1460236e236a03d21dc2b"
-        },
-        {
-          "purpose": "social",
-          "path": "/assets/blog/38mm-tires-on-aero-road-bikes-1200.jpg",
-          "width": 1200,
-          "height": 676,
-          "type": "image/jpeg",
-          "bytes": 75913,
-          "sha256": "bbe8af0717db0f5805be378cb21d62bf92a917bc7da49c297933c1f45698fefa"
+          "bytes": 24674,
+          "sha256": "32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0"
         }
-      ]
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda mechanic uses calipers beside a bicycle’s front tire and fork in a workshop.",
+          "zh-Hans": "小熊猫技师在车间里用卡尺检查自行车前轮胎与前叉附近的空间。"
+        },
+        "prompt": "Use case: compositing. Edit the supplied first image, an existing project-created blog illustration. The second image is the exact recurring red panda mascot identity reference. Keep the softly lit workshop and prominent front bicycle tire and fork, as a conceptual editorial scene about tire clearance. Widen the view enough to integrate ONE red panda mechanic crouching beside the front wheel, carefully using a small vernier caliper at the tire near the fork. Show its focused friendly face clearly, with the wheel and fork still a principal subject. No numbers, measurements, labels, or invented specification diagram.\nPreserve the first image's subject, muted sage/olive palette, warm natural light and photographic environment, while incorporating the tactile 3D storybook mascot with matching perspective, realistic contact shadows and scene lighting. It must inhabit and interact with the scene, never look like a pasted corner sticker or separate inset. Preserve the mascot's rust-orange fur, cream cheeks/eyebrows/ear rims, dark paws, kind dark eyes, large ringed tail, matte deep-teal cycling helmet with strap, cream jersey, charcoal shorts and mustard tool pouch. Change its pose and any handheld prop to the activity described. ONE mascot only, no humans. Wide 16:9 landscape, full-bleed opaque scene, main action comfortably inside a centered crop-safe area, generous margins, visually polished editorial header. No text, logos, watermark, labels or borders. Bikes are unbranded conceptual illustrations; avoid exact-brand or exact-specification claims.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-09-22",
+          "credit": "China Bikes",
+          "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
+          "sha256": "bc9fd859304ef204753c4d567ce8cb8a832ea93cc87dde4ea51ea764b008647f",
+          "width": 1672,
+          "height": 941,
+          "scene_reference": {
+            "git_commit": "76a680fc9d85a581c61b4343b369130627cb138c",
+            "path": "/assets/blog/38mm-tires-on-aero-road-bikes-1600.webp",
+            "sha256": "41f613bf72801d389f6051638dc73522d049c38825c1460236e236a03d21dc2b"
+          },
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/38mm-tires-on-aero-road-bikes-scene-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 26314,
+            "sha256": "8722fdf1d4baa26e1693af66465f87d9c513e6d24c2ad9d2b209836ff87e9bc5"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/38mm-tires-on-aero-road-bikes-scene-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 108116,
+            "sha256": "f313ad78096683a8df98adf7cf52479950acf79483a66ec67a8ff1474924849d"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/38mm-tires-on-aero-road-bikes-scene-1200.jpg",
+            "width": 1200,
+            "height": 676,
+            "type": "image/jpeg",
+            "bytes": 118524,
+            "sha256": "c4bace0a3779dcfdcb786491f0399a363b54a89efc409fd79991f1a4d5b51584"
+          }
+        ]
+      }
     },
     {
       "id": "frameset-vs-complete-bike-cost-in-china",
       "alt": {
-        "en": "A bicycle frame, separate fork, wheels and components arranged in a workshop.",
-        "zh-Hans": "车架、独立前叉、轮组与配件摆放在自行车工作室内。"
+        "en": "Red panda assembling a bicycle stem",
+        "zh-Hans": "组装自行车把立的小熊猫"
       },
-      "prompt": "Use case: photorealistic-natural. Asset type: landscape cycling editorial cover about budgeting a frameset build. Primary request: an unbranded matte sage bicycle frameset and separate fork on a warm wood workshop bench, with a neatly arranged wheelset, drop handlebar, saddle and compact set of assembly tools nearby. The separate parts should clearly communicate a bicycle build in progress. Scene: understated tidy real bicycle workshop, warm natural window light, pale plaster wall. Composition: premium cycling magazine still-life photograph, 16:9, objects arranged as one coherent scene in the central band, generous margins, shallow natural depth, authentic wood, rubber and metal materials, restrained sage, charcoal and cream palette. No people, no text, logos, money, prices or specification labels, no watermark, no split panels or collage. Generic illustrative components, no named real product or exact bill of materials.",
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot sits on a tiny workshop stool, using a hex key on a small loose bicycle stem resting on a low work block. Focused happy mechanic expression. One small accessory only, no complete bike, no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
       "source": {
         "kind": "project-generated",
         "tool": "OpenAI built-in image generation",
         "created_at": "2026-09-22",
         "credit": "China Bikes",
-        "subject": "conceptual editorial illustration; no exact model identity or specification claim",
-        "sha256": "385292a60e566c758079bd0aabaae750f638b6c31cd66fcb4173ca34b5ccdb6e",
-        "width": 1672,
-        "height": 941
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "17a6cd1bdd5703a6e2f5f49670ca1bd5ae735cc3468674397cb08f6060e141cc"
       },
       "files": [
         {
-          "purpose": "card",
-          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-640.webp",
-          "width": 640,
-          "height": 361,
+          "purpose": "mascot",
+          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-mascot-480.webp",
+          "width": 480,
+          "height": 408,
           "type": "image/webp",
-          "bytes": 31938,
-          "sha256": "7590b35d848b7a2b553a656bc174ca3fa5293cb3ce29d3853cb0a54827810ec0"
-        },
-        {
-          "purpose": "hero",
-          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-1600.webp",
-          "width": 1600,
-          "height": 901,
-          "type": "image/webp",
-          "bytes": 97428,
-          "sha256": "bfe93a934bc379af463c096a6b83454feac5eaa10e73227f5c76911314713d5d"
-        },
-        {
-          "purpose": "social",
-          "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-1200.jpg",
-          "width": 1200,
-          "height": 676,
-          "type": "image/jpeg",
-          "bytes": 146430,
-          "sha256": "f0e29a9cc4f4d7a60628818ee62413ddec474194819b422a01a163250474e2ae"
+          "bytes": 37764,
+          "sha256": "53ec362199ca5d86dee53a12affd13f912c39eb36b7360df5370fb6ef37fdf56"
         }
-      ]
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda mechanic assembles an olive bicycle frame at a workbench with wheels and components.",
+          "zh-Hans": "小熊猫技师在摆放着轮组和零件的工作台上组装橄榄绿色自行车架。"
+        },
+        "prompt": "Use case: compositing. Edit the supplied first image, an existing project-created blog illustration. The second image is the exact recurring red panda mascot identity reference. Keep the warm sunlit workshop, olive frame, separate fork, wheels and orderly bicycle components on the bench. Integrate ONE red panda mechanic standing on a small workshop step behind the bench, carefully tightening a loose bicycle stem with a hex key. It is visibly assembling a bicycle from parts. Show its focused cheerful face and paws clearly. Keep the frame triangle and other parts visible; avoid extra duplicated components.\nPreserve the first image's subject, muted sage/olive palette, warm natural light and photographic environment, while incorporating the tactile 3D storybook mascot with matching perspective, realistic contact shadows and scene lighting. It must inhabit and interact with the scene, never look like a pasted corner sticker or separate inset. Preserve the mascot's rust-orange fur, cream cheeks/eyebrows/ear rims, dark paws, kind dark eyes, large ringed tail, matte deep-teal cycling helmet with strap, cream jersey, charcoal shorts and mustard tool pouch. Change its pose and any handheld prop to the activity described. ONE mascot only, no humans. Wide 16:9 landscape, full-bleed opaque scene, main action comfortably inside a centered crop-safe area, generous margins, visually polished editorial header. No text, logos, watermark, labels or borders. Bikes are unbranded conceptual illustrations; avoid exact-brand or exact-specification claims.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-09-22",
+          "credit": "China Bikes",
+          "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
+          "sha256": "33bc2b253598cb3eb22c5cd523d1f4219372397cb91def00b6f5508627df3dfb",
+          "width": 1672,
+          "height": 941,
+          "scene_reference": {
+            "git_commit": "76a680fc9d85a581c61b4343b369130627cb138c",
+            "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-1600.webp",
+            "sha256": "bfe93a934bc379af463c096a6b83454feac5eaa10e73227f5c76911314713d5d"
+          },
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-scene-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 30310,
+            "sha256": "5ed59eede7170f7d045e246fb61a688d2020b13a34772f8e0d9ffb4b2104f70d"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-scene-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 116478,
+            "sha256": "76b2bd2098609b2c4c17d7a7644c6c7a450e4c57a75e98d1d8b6f4668c7e9d9c"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/frameset-vs-complete-bike-cost-in-china-scene-1200.jpg",
+            "width": 1200,
+            "height": 676,
+            "type": "image/jpeg",
+            "bytes": 145135,
+            "sha256": "432af6140625c22619ae9d244cf831a2406f431ef45aa65f396b9aaf6234e5b6"
+          }
+        ]
+      }
     },
     {
       "id": "chinese-bike-prices-for-international-buyers",
       "alt": {
-        "en": "A bicycle with its front wheel removed beside a plain shipping box and parcel scale.",
-        "zh-Hans": "拆下前轮的自行车、无印字运输纸箱和包裹秤。"
+        "en": "Red panda packing a bicycle parts parcel",
+        "zh-Hans": "打包自行车零件的小熊猫"
       },
-      "prompt": "Use case: photorealistic-natural. Asset type: landscape cycling editorial cover about international purchase and shipping costs. Primary request: an unbranded charcoal drop-bar bicycle beside a plain unprinted cardboard bicycle shipping carton in a bright tidy bicycle workshop, a detached front wheel leaning nearby and a small unmarked parcel scale in the scene. It should suggest packing and shipping a bike, without showing any price quote. Composition: premium editorial still-life photograph, 16:9, bike and carton in one coherent natural scene centered for wide cropping, soft window light, restrained sage, cardboard tan and charcoal palette, realistic mechanical bicycle geometry and packing materials. No people, no text, labels, addresses, logos, flags, maps, currencies, numbers, watermark, UI or collage. Original conceptual illustration, not documentary evidence of a seller or exact bicycle model.",
+      "prompt": "Use case: identity-preserve. Input image: identity and material reference for our original red-panda cycling mascot. Keep exactly the same red panda face, cream eyebrow/cheek markings, rust-orange fur, dark paws, ringed plush tail, deep-teal helmet with chin strap, cream jersey, charcoal shorts and mustard tool pouch. Generate a new full-body pose: The mascot is packing a small plain cardboard parcel, kneeling beside it and using a tape dispenser to close it. Cheerful competent expression. Unprinted box with no labels or text. No bicycle and no background scene. Same premium tactile 3D storybook style, warm soft light. Keep all paws, ears, helmet and tail inside the image. Single character, centered with modest transparent margins. Genuinely transparent background and no backdrop, no glow cloud, no floor rectangle, no text, logos, watermark or extra characters. This will be a small character accent placed alongside unmodified real bicycle photos.",
+      "edit_prompt": null,
       "source": {
         "kind": "project-generated",
         "tool": "OpenAI built-in image generation",
         "created_at": "2026-09-22",
         "credit": "China Bikes",
-        "subject": "conceptual editorial illustration; no exact model identity or specification claim",
-        "sha256": "eaa0cced5f71a5e64c0e2e9f6263f19691c339c0e7ceef659ec3f648eccf78dd",
-        "width": 1672,
-        "height": 941
+        "subject": "Fictional red panda mascot; separate from unmodified remote model photography",
+        "sha256": "5e7d345dec565f7168665259bd95e4ad84a2ca8ee5ec736de725dd2dc80ce3b4"
       },
       "files": [
         {
-          "purpose": "card",
-          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-640.webp",
-          "width": 640,
-          "height": 361,
+          "purpose": "mascot",
+          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-mascot-480.webp",
+          "width": 480,
+          "height": 320,
           "type": "image/webp",
-          "bytes": 39188,
-          "sha256": "b45ed33483a8770374f5a23cf9f1e2596f36d3a9668de39d648117726e97e5c8"
-        },
-        {
-          "purpose": "hero",
-          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-1600.webp",
-          "width": 1600,
-          "height": 901,
-          "type": "image/webp",
-          "bytes": 130488,
-          "sha256": "cec14417ab9f4904b7e3f11cbe0590cafbf6d8a658a690df3b22300c932174c4"
-        },
-        {
-          "purpose": "social",
-          "path": "/assets/blog/chinese-bike-prices-for-international-buyers-1200.jpg",
-          "width": 1200,
-          "height": 676,
-          "type": "image/jpeg",
-          "bytes": 182329,
-          "sha256": "bb372f132abb4d72b5db821f0407937579f4da13eae0af676266f132973df3c6"
+          "bytes": 23606,
+          "sha256": "d6938593bb2e80fad4982fb375f44491bdeef2ae6160390f5c37ca629f83d390"
         }
-      ]
+      ],
+      "header": {
+        "alt": {
+          "en": "A red panda carefully wraps a bicycle component beside a bike shipping box and parcel scale.",
+          "zh-Hans": "小熊猫在自行车运输箱和包裹秤旁仔细包裹自行车零件。"
+        },
+        "prompt": "Use case: compositing. Edit the supplied first image, an existing project-created blog illustration. The second image is the exact recurring red panda mascot identity reference. Keep the bicycle with detached front wheel, plain large shipping box, parcel scale and airy workshop. Integrate ONE red panda mascot in the foreground next to the box, crouching and folding protective packing material around a bicycle component, with a tape dispenser nearby. Make its face and paws clearly readable. The mascot must be actively packing for shipment, situated naturally on the floor in the scene.\nPreserve the first image's subject, muted sage/olive palette, warm natural light and photographic environment, while incorporating the tactile 3D storybook mascot with matching perspective, realistic contact shadows and scene lighting. It must inhabit and interact with the scene, never look like a pasted corner sticker or separate inset. Preserve the mascot's rust-orange fur, cream cheeks/eyebrows/ear rims, dark paws, kind dark eyes, large ringed tail, matte deep-teal cycling helmet with strap, cream jersey, charcoal shorts and mustard tool pouch. Change its pose and any handheld prop to the activity described. ONE mascot only, no humans. Wide 16:9 landscape, full-bleed opaque scene, main action comfortably inside a centered crop-safe area, generous margins, visually polished editorial header. No text, logos, watermark, labels or borders. Bikes are unbranded conceptual illustrations; avoid exact-brand or exact-specification claims.",
+        "source": {
+          "kind": "project-generated",
+          "tool": "OpenAI built-in image generation",
+          "created_at": "2026-09-22",
+          "credit": "China Bikes",
+          "subject": "Conceptual cycling scene with the recurring red panda mascot; no exact-model identity or specification claim",
+          "sha256": "83b3b2a3927039669b531d2d4b4a08f5724077296ba2cb664b4b1f600e3ced96",
+          "width": 1672,
+          "height": 941,
+          "scene_reference": {
+            "git_commit": "76a680fc9d85a581c61b4343b369130627cb138c",
+            "path": "/assets/blog/chinese-bike-prices-for-international-buyers-1600.webp",
+            "sha256": "cec14417ab9f4904b7e3f11cbe0590cafbf6d8a658a690df3b22300c932174c4"
+          },
+          "mascot_reference_sha256": "18fe125d3330ea890b9b62d978e1bf0b0d6208a6664a6c8974bbb8cabbcbcf6a"
+        },
+        "files": [
+          {
+            "purpose": "card",
+            "path": "/assets/blog/chinese-bike-prices-for-international-buyers-scene-640.webp",
+            "width": 640,
+            "height": 361,
+            "type": "image/webp",
+            "bytes": 34608,
+            "sha256": "f15622ecaaa47e50fac9f6bfaa824b09ab719092f73eb74e22a56f9ad7d06ea7"
+          },
+          {
+            "purpose": "hero",
+            "path": "/assets/blog/chinese-bike-prices-for-international-buyers-scene-1600.webp",
+            "width": 1600,
+            "height": 901,
+            "type": "image/webp",
+            "bytes": 138010,
+            "sha256": "413774abc63ffda58c5af9a5587eb46990cccfe43a04099089008d6d38c94e24"
+          },
+          {
+            "purpose": "social",
+            "path": "/assets/blog/chinese-bike-prices-for-international-buyers-scene-1200.jpg",
+            "width": 1200,
+            "height": 676,
+            "type": "image/jpeg",
+            "bytes": 159715,
+            "sha256": "4a865774b5710f21b6328ec3cf4892f7512d2a43f02fb2fe8964e515b3a2e4dd"
+          }
+        ]
+      }
     }
   ]
 }

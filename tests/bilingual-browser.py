@@ -1,4 +1,4 @@
-"""Local generated-site checks using an isolated browser; no live source requests.
+"""Local generated-site checks using an isolated browser; optional exact blog photo requests.
 Requires the existing optional Playwright development environment and Chromium.
 """
 from pathlib import Path
@@ -11,12 +11,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--site', type=Path, default=Path(__file__).resolve().parents[1] / 'dist')
 parser.add_argument('--base', default='')
 parser.add_argument('--case', default='')
+parser.add_argument('--live-blog-images', action='store_true')
 parser.add_argument('--reports', type=Path, default=Path(__file__).resolve().parents[1] / '.research/seo-browser')
 args = parser.parse_args()
 SITE, BASE, REPORTS = args.site.resolve(), args.base.rstrip('/'), args.reports
 REPORTS.mkdir(parents=True, exist_ok=True)
 ORIGIN = 'https://preview.invalid'
 results = []
+REPO = Path(__file__).resolve().parents[1]
+photo_ids = {photo['image_id'] for photo in json.loads((REPO/'content/blog-images.json').read_text())['model_photos']}
+photo_urls = {image['hosting']['remote_url'] for image in (json.loads(file.read_text()) for file in (REPO/'data/images').glob('*.json')) if image['id'] in photo_ids}
 
 def load(page, path, script=True):
     pathname = urlsplit(path).path
@@ -36,7 +40,8 @@ def load(page, path, script=True):
         local = SITE / media_path.lstrip('/')
         if not src.startswith(('https:', 'http:')) and local.is_file():
             image['src'] = 'data:' + str(mimetypes.guess_type(str(local))[0]) + ';base64,' + base64.b64encode(local.read_bytes()).decode()
-        else: image['src'] = 'data:image/png;base64,INVALID'
+        elif not (args.live_blog_images and image.has_attr('data-blog-bike-image') and src in photo_urls):
+            image['src'] = 'data:image/png;base64,INVALID'
     page.set_content(str(soup), wait_until='domcontentloaded')
     if not script: return
     page.evaluate("""url => {
@@ -61,7 +66,7 @@ def record(name, fn):
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or shutil.which('google-chrome'), args=['--no-sandbox'])
     ctx = browser.new_context()
-    ctx.route('**/*', lambda route: route.abort())
+    ctx.route('**/*', lambda route: route.continue_() if args.live_blog_images and route.request.url in photo_urls else route.abort())
     page = ctx.new_page()
     page.set_default_timeout(6000)
     errors=[]
@@ -81,18 +86,38 @@ with sync_playwright() as p:
                     assert not overflow, 'Document overflow; the table must scroll inside its own wrapper'
                     if route != '/':
                         assert page.locator('main a[href*="/blog/"]').count() >= 1
-                        images = page.locator('[data-editorial-image]')
-                        assert images.count() == (5 if route == '/blog/' else 1)
+                        images = page.locator('[data-blog-mascot]')
+                        photos = page.locator('[data-blog-bike-image]')
+                        headers = page.locator('[data-blog-header-image]')
+                        assert headers.count() == (5 if route == '/blog/' else 1)
+                        headers.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
+                        assert headers.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
+                        expected = 0 if route == '/blog/' else 2 if 'gravel-bikes-around' in route else 3
+                        assert images.count() == expected
+                        assert photos.count() == expected
                         images.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
                         assert images.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
+                        if args.live_blog_images:
+                            photos.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
+                            assert photos.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
                         assert page.locator('.article-card .section-label, .buyer-article header .section-label').count() == 0
                         image_name=f'{locale}-{mode}-{route.strip("/").replace("/","-")}.png'
-                        page.screenshot(path=str(REPORTS/image_name), full_page=route == '/blog/')
+                        page.evaluate('window.scrollTo(0,0); document.activeElement?.blur()')
+                        page.screenshot(path=str(REPORTS/image_name), full_page=True)
+                        if route != '/blog/':
+                            page.locator('.blog-model-photos').screenshot(path=str(REPORTS/image_name.replace('.png','-models.png')))
                 record(f'{locale} {mode} {route}',visual)
         def image_failure(prefix=prefix):
             go(prefix+'/blog/gravel-bikes-around-5000-yuan/')
-            page.locator('[data-editorial-image]').dispatch_event('error')
+            page.locator('[data-blog-header-image]').dispatch_event('error')
             assert page.locator('.article-cover').is_hidden()
+            assert page.locator('.blog-model-photo figcaption').first.is_visible()
+            page.locator('[data-blog-mascot]').first.dispatch_event('error')
+            assert page.locator('[data-blog-mascot]').first.is_hidden()
+            assert page.locator('.blog-model-photo figcaption').first.is_visible()
+            page.locator('[data-blog-bike-image]').first.dispatch_event('error')
+            assert page.locator('.blog-model-photo .blog-photo-scene').first.is_hidden()
+            assert page.locator('.blog-model-photo [data-blog-photo-status]').first.is_visible()
             assert page.locator('h1').is_visible()
             assert page.locator('table tbody tr').count() == 3
             go(prefix+'/blog/')
@@ -130,7 +155,7 @@ with sync_playwright() as p:
             assert page.locator('h1').inner_text() == ('配置自行车' if locale=='zh-Hans' else 'Configure a bike')
         record(f'{locale} builder initial state',builder)
     def no_errors(): assert errors == [], errors
-    record('No runtime JavaScript errors across all routes', no_errors)
+    record('/blog/ no runtime JavaScript errors across inspected routes', no_errors)
     ctx.close()
     nojs=browser.new_context(java_script_enabled=False)
     nojs.route('**/*', lambda route: route.abort())
@@ -141,9 +166,9 @@ with sync_playwright() as p:
         assert static.locator('table tbody tr').count() == 3
         assert static.locator('a[hreflang="en"]').count() == 1
         assert static.locator('main').inner_text().count('2026-08') >= 3
-    record('Chinese article, evidence and language link readable without JavaScript',nojs_native)
+    record('/blog/ Chinese article, evidence and language link readable without JavaScript',nojs_native)
     nojs.close();browser.close()
-report={'mode':'Offline isolated Chromium DOM checks against generated HTML/CSS/JavaScript; URL, storage and history use fixtures; external media and navigation blocked', 'base':BASE, 'passed':sum(x['status']=='passed' for x in results), 'failed':sum(x['status']=='failed' for x in results),'tests':results}
+report={'mode':'Isolated Chromium checks against generated HTML/CSS/JavaScript; URL, storage and history use fixtures', 'remote_images':'Only the seven manifest-selected blog images loaded live' if args.live_blog_images else 'All remote requests blocked', 'base':BASE, 'passed':sum(x['status']=='passed' for x in results), 'failed':sum(x['status']=='failed' for x in results),'tests':results}
 (REPORTS/'browser-results.json').write_text(json.dumps(report,indent=2))
 print(report['passed'],'passed;',report['failed'],'failed',flush=True)
 raise SystemExit(bool(report['failed']))

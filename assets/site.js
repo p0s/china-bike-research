@@ -164,10 +164,18 @@ import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNu
   }
   document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
 
-  document.querySelectorAll('[data-editorial-image]').forEach((image) => {
+  document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {
-      const visual = image.closest('.editorial-figure, .article-card-image');
-      if (visual) visual.hidden = true;
+      image.hidden = true;
+      if (image.hasAttribute('data-blog-header-image')) {
+        const header = image.closest('.illustrated-header');
+        if (header) header.hidden = true;
+      }
+      if (image.hasAttribute('data-blog-bike-image')) {
+        image.closest('.blog-photo-scene')?.classList.add('is-unavailable');
+        const status = image.closest('[data-blog-photo]')?.querySelector('[data-blog-photo-status]');
+        if (status) status.hidden = false;
+      }
     };
     image.addEventListener('error', hideUnavailable);
     if (image.complete && image.currentSrc && !image.naturalWidth) hideUnavailable();
