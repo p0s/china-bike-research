@@ -1,0 +1,43 @@
+{
+  "model": "evolve-cima-road",
+  "review_date": "2026-09-22",
+  "fields": [
+    {
+      "field": "package",
+      "status": "found",
+      "source_ids": [
+        "evolve-cima-road-official-2026-09-22"
+      ],
+      "note": "Named frame/fork/seatpost package and optional cockpit established; unspecified hardware remains confirm-before-order."
+    },
+    {
+      "field": "warranty-support",
+      "status": "found",
+      "source_ids": [
+        "evolve-china-warranty-2026-09-22"
+      ],
+      "note": "Official first-owner warranty conditions and claim route established; exact seller eligibility remains separate."
+    },
+    {
+      "field": "frame-stiffness",
+      "status": "found",
+      "source_ids": [
+        "evolve-cima-road-ride-review-2026-09-22"
+      ],
+      "note": "Accepted attributed subjective comparison with review-sample disclosure; no numeric stiffness ranking."
+    },
+    {
+      "field": "price",
+      "status": "open",
+      "note": "International reference retained; no mainland selected-package quote. One of three public-post searches used; next trigger is an exact road-CIMA price lead."
+    }
+  ],
+  "raw_capture": {
+    "sha256": "50df37bdc4684c9af810bb827874aa2697aa12c44231330cb148d92738b50bdf",
+    "bytes": 2170973,
+    "posts": 3,
+    "comments": 24,
+    "comment_coverage": "one ready, two partial",
+    "publication": "No raw captures, comments, identities or images added to Git."
+  }
+}

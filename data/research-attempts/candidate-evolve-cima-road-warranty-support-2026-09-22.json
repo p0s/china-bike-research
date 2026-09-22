@@ -1,0 +1,40 @@
+{
+  "id": "candidate-evolve-cima-road-warranty-support-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "evolve-cima-road"
+  },
+  "field": "warranty-support",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Evolve CIMA road warranty-support",
+          "route": "exact attributed source page",
+          "outcome": "found",
+          "result_url": "https://www.evolvebicycles.cn/warranty-policy/",
+          "accessed_at": "2026-09-22",
+          "note": "Official first-owner warranty conditions and claim route established; exact seller eligibility remains separate."
+        }
+      ]
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "evolve-china-warranty-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Official first-owner warranty conditions and claim route established; exact seller eligibility remains separate."
+}

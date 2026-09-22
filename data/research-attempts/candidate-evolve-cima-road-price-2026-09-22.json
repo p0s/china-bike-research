@@ -1,0 +1,64 @@
+{
+  "id": "candidate-evolve-cima-road-price-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "evolve-cima-road"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Evolve CIMA Navy White mainland delivered price",
+          "route": "exact international product storefront",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "US$2,299 is an international reference; no mainland delivered CNY amount.",
+          "result_url": "https://www.evolvebicycles.com/product/evolve-cima-speed-navy-white-performance-road-frame/"
+        },
+        {
+          "attempt": 2,
+          "query": "Evolve CIMA China official retail price",
+          "route": "official mainland-language site",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "The public China site establishes brand/product context but no selected-package delivered CNY quote.",
+          "result_url": "https://www.evolvebicycles.cn/"
+        },
+        {
+          "attempt": 3,
+          "query": "极也 CIMA 元 车架",
+          "route": "targeted exact-model mainland price discovery",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Indexed prize-value and foreign-price results do not establish a current exact mainland package quote."
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "极也 CIMA 车架 价格",
+          "route": "dedicated XHS exact-query detailed-post capture",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Validated three detailed posts: one CIMA road build lacks price in its body and captured price-relevant comments; two describe CIMA GR and are rejected for road pricing. Comments are partial on two posts."
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Mainland selected-package price remains unknown. Next: a distinct exact road-CIMA seller/owner price lead or remaining public-post attempts. Private XHS archive SHA-256 50df37bdc4684c9af810bb827874aa2697aa12c44231330cb148d92738b50bdf; 3 detailed posts, 24 comments, 18 media references, target reached without rate limit. Archive validity does not establish price sufficiency."
+}

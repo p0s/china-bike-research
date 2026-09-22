@@ -1,0 +1,48 @@
+{
+  "id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 stiffness measurement",
+          "route": "exact manufacturer specification and hosted review",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Generic stiffness adjectives and test claims lack a measured result or named comparator.",
+          "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 firsthand stiffness comparison",
+          "route": "opened owner race follow-up",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Comfort compared with an unnamed prior frame does not establish a frame-stiffness comparison.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Next: measured exact-model test or attributable named comparative ride evidence. Partial channels remain open."
+}

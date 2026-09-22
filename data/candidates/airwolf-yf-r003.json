@@ -10,14 +10,16 @@
     "tire_clearance_mm": 50,
     "tire_clearance_basis": "Indexed exact storefront maximum 700×50C, also reported by owner; not an independently measured limit",
     "bottom_bracket": "T47 threaded; shell width unresolved",
-    "sizes": "XS, S, M, L, XL"
+    "sizes": "XS, S, M, L, XL",
+    "included_package": "Owner-reported YF-R003 build package: frame, fork, headset, HB009 integrated cockpit and seatpost. Historical individual package; current storefront/revision equivalence remains unverified."
   },
   "missing": [
-    "Current exact mainland price and package",
+    "Current exact mainland price and selected package availability",
     "Reconcile carbon grade and frame revision",
-    "Verify current official source access and measured clearance"
+    "Restore ordinary official-source access before verifying current specifications",
+    "Measured or useful comparative stiffness evidence"
   ],
-  "source_note": "Indexed storefront shows USD 609–629; direct page returned 403 on review. Owner's European build cost and 8.5 kg total are not transferred to this frameset.",
+  "source_note": "Owner package was rechecked on 2026-09-22. Official product access remains verification-gated; no bypass or current price/grade assertion. Existing indexed 1100 g and 50C claims retain their original evidence limitations.",
   "model_id": "airwolf-yf-r003",
   "type": "frameset",
   "status": "exact-model-research-stage",
@@ -25,7 +27,9 @@
   "source_ids": [
     "airwolf-yf-r003-owner-2026-09-05",
     "airwolf-yf-r003-source-2026-09-05",
-    "chinesecarbon-top-discovery-2026-09-05"
+    "chinesecarbon-top-discovery-2026-09-05",
+    "airwolf-yf-r003-owner-recheck-2026-09-22",
+    "airwolf-yf-r003-access-check-2026-09-22"
   ],
-  "last_reviewed": "2026-09-05"
+  "last_reviewed": "2026-09-22"
 }

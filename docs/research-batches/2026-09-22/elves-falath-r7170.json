@@ -1,0 +1,26 @@
+{
+  "model": "elves-falath-r7170",
+  "date": "2026-09-22",
+  "fields": [
+    "complete-weight",
+    "wheels"
+  ],
+  "result": "Both retained-mainland-build fields remain unresolved.",
+  "sources_read": [
+    {
+      "url": "https://elvesbikesouthafrica.co.za/shop/bikes/road-bikes/aero/falath-pro-105",
+      "result": "Exact regional R7170 build still omits wheel identity and complete weight."
+    },
+    {
+      "url": "https://elvesbikesaustralia.com.au/products/falath-pro-complete-bike",
+      "result": "Exact regional 105 Di2 column names HB56D wheels and Pirelli 28C tires; no whole-bike weight. This is not the retained mainland package."
+    }
+  ],
+  "queries": [
+    "精灵 FALATH PRO R7170 重量 轮组",
+    "ELVES Falath R7170 complete weight"
+  ],
+  "rejected": "EVO/EVO+ owner and seller builds are different models; this catalog is not independent evidence.",
+  "next": "Exact retained seller SKU/BOM and a size/equipment-qualified whole-bike measurement.",
+  "historical_ledgers": "Preserved without re-dating or overwriting their 50-area attempt tuples."
+}

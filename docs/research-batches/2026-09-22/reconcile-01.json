@@ -1,0 +1,100 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Read existing candidate, source and research-ledger records; no fresh external observation.",
+  "targets": 10,
+  "fields": 13,
+  "integrated_fields": 2,
+  "results": [
+    {
+      "target": "missing-china-price-giant-tcr-advanced",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official price is already present; this does not establish selected-option checkout or stock."
+    },
+    {
+      "target": "twitter-x7",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Weight is a family minimum, another selectable trim, or a reference build not matched to the retained mainland price."
+    },
+    {
+      "target": "west-biking-sl-one",
+      "gap": "drivetrain-missing",
+      "attempt_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Source records configuration alternatives; retained marketplace price does not select an exact trim."
+    },
+    {
+      "target": "west-biking-team-road",
+      "gap": "drivetrain-missing",
+      "attempt_id": "candidate-west-biking-team-road-drivetrain-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Source records configuration alternatives; retained marketplace price does not select an exact trim."
+    },
+    {
+      "target": "de-rosa-new-838",
+      "gap": "drivetrain-missing",
+      "attempt_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Source records configuration alternatives; retained marketplace price does not select an exact trim."
+    },
+    {
+      "target": "felt-ia-2",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Weight is a family minimum, another selectable trim, or a reference build not matched to the retained mainland price."
+    },
+    {
+      "target": "felt-ia-2",
+      "gap": "drivetrain-missing",
+      "attempt_id": "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Source records configuration alternatives; retained marketplace price does not select an exact trim."
+    },
+    {
+      "target": "upland-r70",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Weight is a family minimum, another selectable trim, or a reference build not matched to the retained mainland price."
+    },
+    {
+      "target": "giant-propel-gen4-community-lead",
+      "gap": "price-missing",
+      "attempt_id": "candidate-giant-propel-gen4-community-lead-price-2026-08-17",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Existing dated manufacturer evidence normalized into the catalog field; original source dates and candidate status preserved."
+    },
+    {
+      "target": "giant-propel-gen4-community-lead",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17",
+      "disposition": "retained-unknown",
+      "reason": "Official Japan same-named trim weight stays a regional reference; mainland build weight is not established."
+    },
+    {
+      "target": "giant-propel-gen4-community-lead",
+      "gap": "stiffness-evidence-missing",
+      "attempt_id": "candidate-giant-propel-gen4-community-lead-frame-stiffness-2026-08-30",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Existing dated manufacturer evidence normalized into the catalog field; original source dates and candidate status preserved."
+    },
+    {
+      "target": "hi-light-r6-105-al",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-hi-light-r6-105-al-price-2026-08-29",
+      "disposition": "retained-unknown",
+      "reason": "Dated official price is already present; this does not establish selected-option checkout or stock."
+    },
+    {
+      "target": "missing-china-price-giant-revolt-advanced",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-giant-revolt-advanced-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Dated official price is already present; this does not establish selected-option checkout or stock."
+    }
+  ]
+}

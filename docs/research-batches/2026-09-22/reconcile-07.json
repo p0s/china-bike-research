@@ -1,0 +1,23 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Existing record reconciliation; source dates unchanged.",
+  "targets": 2,
+  "fields": 2,
+  "integrated_fields": 0,
+  "results": [
+    {
+      "target": "winspace-g3-frameset",
+      "gap": "purchase-route",
+      "attempt_id": "variant-winspace-g3-frameset-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Build-to-order international storefront price and lead time do not establish mainland delivered checkout or selected availability."
+    },
+    {
+      "target": "pardus-super-sport-gen2-egr",
+      "gap": "purchase-route",
+      "attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "An indexed flagship coupon lead does not establish the selected complete build, stock, coupon eligibility or final checkout total."
+    }
+  ]
+}

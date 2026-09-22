@@ -1,0 +1,38 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-tire-clearance-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "velobuild-cx002-spec-sheets-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Exact frame and fork sheets state 700×42C maximum; not proof for every measured tire/rim fit.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "velobuild-cx002-spec-sheets-2026-09-22"
+    ],
+    "note": "Exact frame and fork sheets state 700×42C maximum; not proof for every measured tire/rim fit."
+  }
+}

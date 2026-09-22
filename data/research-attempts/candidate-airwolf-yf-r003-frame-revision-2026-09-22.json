@@ -1,0 +1,53 @@
+{
+  "id": "candidate-airwolf-yf-r003-frame-revision-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yf-r003"
+  },
+  "field": "frame-revision",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YFR003 current official frame-revision",
+          "route": "exact official storefront access",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-22",
+          "note": "Request-verification interstitial; current product content unavailable.",
+          "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        }
+      ],
+      "blocker": "Next: accessible exact manufacturer revision/layup documentation; do not select a carbon grade."
+    },
+    "public-post": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "YF-R003 frame-revision owner",
+          "route": "opened exact owner identification",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-22",
+          "note": "Owner T1000 description conflicts with retained indexed T1200 storefront claim; no revision mapping.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/"
+        }
+      ],
+      "conflict": "T1000 owner description versus T1200 indexed storefront; exact revision equivalence is unknown."
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "airwolf-yf-r003-source-2026-09-05",
+    "airwolf-yf-r003-owner-recheck-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Next: accessible exact manufacturer revision/layup documentation; do not select a carbon grade."
+}

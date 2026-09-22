@@ -36,10 +36,18 @@
     "frame_pedaling_stiffness_n_per_mm": 84,
     "frame_torsional_stiffness_n_per_degree": 124,
     "fork_stiffness_n_per_mm": 60,
-    "frame_stiffness_evidence": "Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results"
+    "frame_stiffness_evidence": "Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results",
+    "stiffness_evidence": "Manufacturer testing for fourth-generation 2027 Propel: frame pedaling stiffness 84 N/mm, frame torsional stiffness 124 N/degree and fork stiffness 60 N/mm. Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results"
   },
   "support_note": "Giant provides an official mainland dealer locator and warranty policy; neither establishes current fourth-generation Propel trim stock or price.",
   "last_reviewed": "2026-08-30",
   "source_note": "Current official mainland evidence resolves the exact trim, CNY 54,800 suggested price and Ultegra Di2 BOM. Official Japan supplies a 6.8 kg size-S reference, and Giant publishes protocol-backed manufacturer stiffness values. Regional weight caveat remains explicit.",
-  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+  "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798",
+  "official_price": {
+    "amount_cny": 54800,
+    "currency": "CNY",
+    "price_type": "official-mainland-list",
+    "observed_at": "2026-08-30",
+    "price_basis": "Exact Giant China Propel Advanced SL 1 suggested retail price; current stock, selected size/color and final checkout remain unverified"
+  }
 }

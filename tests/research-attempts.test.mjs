@@ -72,6 +72,30 @@ test('temporary exhaustion requires three distinct attempts in every required ch
     .some((error) => error.includes('exactly 3 attempts before temporary exhaustion')));
 });
 
+test('partial channel work stays open without inventing exhaustion or an access blocker', () => {
+  const record = baseRecord();
+  record.channels.web = { status: 'open', attempts: [attempt(1)] };
+  record.channels['public-post'] = { status: 'not-run', attempts: [] };
+  record.status = 'open';
+  record.retry_after = null;
+  assert.deepEqual(validateResearchAttempts([record], data), []);
+  for (const attempts of [[], [attempt(1), attempt(2), attempt(3)]]) {
+    const invalid = structuredClone(record);
+    invalid.channels.web.attempts = attempts;
+    assert.ok(validateResearchAttempts([invalid], data).some((error) =>
+      error.includes('incomplete nonempty attempt budget')));
+  }
+  for (const outcome of ['found', 'blocked', 'conflict']) {
+    const invalid = structuredClone(record);
+    invalid.channels.web.attempts = [attempt(1, outcome)];
+    assert.ok(validateResearchAttempts([invalid], data).some((error) =>
+      error.includes('cannot hide found, blocked or conflicted evidence')));
+  }
+  const falseCompletion = structuredClone(record);
+  falseCompletion.status = 'temporarily-exhausted';
+  assert.notDeepEqual(validateResearchAttempts([falseCompletion], data), []);
+});
+
 test('an extended campaign requires all 50 registered approach areas exactly once', () => {
   assert.deepEqual(validateResearchAttempts([extendedRecord()], data), []);
 

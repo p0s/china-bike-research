@@ -6,26 +6,31 @@
   "facts": {
     "frame_material": "Manufacturer describes Toray T800/T1000 carbon",
     "frame_weight_g": 1030,
-    "frame_weight_basis": "Detailed manufacturer table: XS raw finish, ±30 g; separate raw storage cover 42 g. Page headline also says 1150 g without matching basis.",
+    "frame_weight_basis": "Manufacturer: 1030±30 g XS raw; current summary table separately specifies 1150 g M raw. Raw storage cover 42 g is separately listed; hardware inclusion remains unspecified.",
     "tire_clearance_mm": 50,
     "tire_clearance_basis": "Manufacturer 700C × 50 mm maximum; confirm actual fit and fork option",
     "bottom_bracket": "T47 85.5 mm",
     "storage": "Downtube storage",
-    "sizes": "XS, S, M, L, XL"
+    "sizes": "XS, S, M, L, XL",
+    "included_package": "Frame, fork, seatpost, axles, headset and bag; exact FM316 sheet identifies 395 mm A-C fork with 45/50 mm flip chip. Confirm this fork in the selected order.",
+    "availability_evidence": "FAQ permits one standard-color set for private customers; bulk-only banner and MOQ 30 text remain. Historical owner purchase does not confirm current stock."
   },
   "missing": [
-    "Exact individual-order delivered quote and availability",
-    "Resolve headline versus detailed frame-weight basis",
-    "Confirm selected fork and package"
+    "Exact individual-order mainland delivered quote and selected stock",
+    "Reconcile current single-unit FAQ with bulk-only/MOQ wording",
+    "Exact-frame stiffness measurement or named comparative ride evidence"
   ],
-  "source_note": "Quote-only. The page inconsistently describes bulk-only orders and single samples; individual availability remains unresolved.",
+  "source_note": "Weight headline now has an M-size basis and can coexist with the XS detailed value. Package is specified. Individual fulfilment remains conflicted; foreign guide and historical owner prices are not mainland observations.",
   "model_id": "mondince-fm316",
   "type": "frameset",
   "status": "exact-model-research-stage",
   "research_priority": "medium",
   "source_ids": [
     "mondince-fm316-source-2026-09-05",
-    "chinesecarbon-top-discovery-2026-09-05"
+    "chinesecarbon-top-discovery-2026-09-05",
+    "mondince-fm316-current-specification-2026-09-22",
+    "mondince-fm316-owner-followup-2026-09-22",
+    "mondince-fm316-guide-price-2026-09-22"
   ],
-  "last_reviewed": "2026-09-05"
+  "last_reviewed": "2026-09-22"
 }

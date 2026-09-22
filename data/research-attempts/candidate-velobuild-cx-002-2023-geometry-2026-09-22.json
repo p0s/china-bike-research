@@ -1,0 +1,42 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-geometry-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "geometry",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2023 CX-002 fork geometry",
+          "route": "visual comparison of exact linked geometry and specification sheets",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-22",
+          "note": "Readable stack/reach accepted, but fork offset is 45 mm in specs and 55 mm in geometry.",
+          "result_url": "https://www.velobuild.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing"
+        }
+      ],
+      "conflict": "Two current product-linked sheets disagree on fork offset (45 versus 55 mm)."
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "velobuild-cx002-spec-sheets-2026-09-22",
+    "velobuild-cx002-geometry-sheet-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Next: corrected manufacturer drawing or exact delivered-fork measurement. Do not choose a fork offset."
+}

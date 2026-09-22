@@ -46,7 +46,7 @@
       "type": "object",
       "required": ["status", "attempts"],
       "properties": {
-        "status": { "enum": ["found", "temporarily-exhausted", "blocked", "conflicted", "not-run"] },
+        "status": { "enum": ["found", "temporarily-exhausted", "blocked", "conflicted", "not-run", "open"] },
         "blocker": { "type": "string" },
         "conflict": { "type": "string" },
         "attempts": {

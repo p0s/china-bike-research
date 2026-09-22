@@ -1,0 +1,48 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-price-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2023 CX-002 current selected price",
+          "route": "exact manufacturer storefront",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "US$499 base; no selected mainland delivered CNY total.",
+          "result_url": "https://www.velobuild.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2023 CX-002 owner cost",
+          "route": "opened exact historical owner build thread",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Historical overseas frameset discussion is not current mainland quote.",
+          "result_url": "https://chinertown.com/index.php?topic=3965.15"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Next: dated exact selected mainland offer; partial channel budgets remain open."
+}

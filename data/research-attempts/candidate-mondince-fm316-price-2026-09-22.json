@@ -1,0 +1,57 @@
+{
+  "id": "candidate-mondince-fm316-price-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 mainland quote",
+          "route": "exact manufacturer quote-only page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "No selected price is displayed.",
+          "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        },
+        {
+          "attempt": 2,
+          "query": "FM316 official reference price",
+          "route": "manufacturer comparison guide",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "US$1,050 lacks selected package and mainland delivery basis.",
+          "result_url": "https://www.mondincecycle.com/guides/best-gravel-bike-frames-2026"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FM316 owner price",
+          "route": "opened exact owner transaction discussion",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Historical foreign-currency owner report is not current mainland price.",
+          "result_url": "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Next: current exact individual CNY offer including fork, finish, freight and stock. Partial channels remain open."
+}

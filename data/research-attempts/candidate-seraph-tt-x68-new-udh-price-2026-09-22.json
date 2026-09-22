@@ -1,0 +1,57 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TT-X68-new UDH price",
+          "route": "exact Seraph current product",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "No selected mainland delivered CNY price; differing foreign options are not equivalent quotes.",
+          "result_url": "https://www.seraphbikes.com/tt-x68-new-udh-hanger-superlight-disc-road-bike-frame-t47-bottom-bracket-max-tire-70032c-available-size-495254565861cm-p7181862.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TT-X68-New alternate official price",
+          "route": "separate New-Version manufacturer listing",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "35C page identity differs; no accepted price evidence for the frozen 32C model.",
+          "result_url": "https://tantanbicycles.com/tt-x68-new-version-t47-light-disc-road-bicycle-carbon-frame-bike-70035c-full-toray-t1000-flat-mount-brake-frameset-p7192636.html"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TT-X68-NEW-T47 owner price",
+          "route": "opened current public buyer discussion",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "Prospective buyer links the 35C listing; does not resolve the frozen model’s price.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1w4ldod/best_tantanseraph_complete_bike_x42_x71_r18_or/"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No selected mainland delivered CNY price; differing foreign options are not equivalent quotes. Next: exact selected SKU/revision documentation or an attributable owner/build record; partial channel budgets remain open."
+}

@@ -42,7 +42,9 @@
         { "size": "XL/540", "stack_mm": 603, "reach_mm": 406, "head_tube_mm": 174, "head_angle_deg": 71.3, "seat_angle_deg": 73, "bb_drop_mm": 75, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 642, "seat_tube_mm": 540, "top_tube_mm": 586, "wheelbase_mm": 1054, "standover_mm": 843, "trail_mm": 64.3 },
         { "size": "XXL/570", "stack_mm": 627, "reach_mm": 414, "head_tube_mm": 197, "head_angle_deg": 71.6, "seat_angle_deg": 73, "bb_drop_mm": 75, "chainstay_mm": 423, "fork_offset_mm": 55, "fork_length_mm": 400, "front_center_mm": 652, "seat_tube_mm": 570, "top_tube_mm": 606, "wheelbase_mm": 1064, "standover_mm": 869, "trail_mm": 62.29 }
       ]
-    }
+    },
+    "drivetrain_compatibility": "1x-only",
+    "drivetrain_compatibility_basis": "Two exact retailer listings specify single-ring only; BikeStudio explicitly states no front-derailleur mount. Retailer corroboration, not a new manufacturer declaration; verify selected-frame compatibility before assembly."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -63,7 +65,9 @@
     "tavelo-grow-china-launch-2026",
     "tavelo-warranty-official-2026-08-27",
     "compiled-research-2026-08-06",
-    "public-tavelo-grow-build-2026-08-17"
+    "public-tavelo-grow-build-2026-08-17",
+    "tavelo-grow-bikestudio-compatibility-2026-09-22",
+    "tavelo-grow-underdogs-compatibility-2026-09-22"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-22"
 }

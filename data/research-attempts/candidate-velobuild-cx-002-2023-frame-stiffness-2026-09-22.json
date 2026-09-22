@@ -1,0 +1,48 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2023 CX-002 measured stiffness",
+          "route": "exact specification sheets",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "No measured stiffness or useful comparator supplied.",
+          "result_url": "https://www.velobuild.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing"
+        }
+      ]
+    },
+    "public-post": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2023 CX-002 comparative ride stiffness",
+          "route": "opened exact owner and supplied-reviewer thread",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-22",
+          "note": "General ride and comfort discussion is insufficient for a cross-model frame-stiffness claim.",
+          "result_url": "https://chinertown.com/index.php?topic=3965.15"
+        }
+      ]
+    }
+  },
+  "status": "open",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Next: measured result or useful attributable comparative ride; partial channels remain open."
+}

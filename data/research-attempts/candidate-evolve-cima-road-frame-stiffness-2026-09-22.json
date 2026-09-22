@@ -1,0 +1,40 @@
+{
+  "id": "candidate-evolve-cima-road-frame-stiffness-2026-09-22",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "evolve-cima-road"
+  },
+  "field": "frame-stiffness",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Evolve CIMA road frame-stiffness",
+          "route": "exact attributed source page",
+          "outcome": "found",
+          "result_url": "https://www.cyclistshub.com/evolve-cima-review/",
+          "accessed_at": "2026-09-22",
+          "note": "Accepted attributed subjective comparison with review-sample disclosure; no numeric stiffness ranking."
+        }
+      ]
+    },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "evolve-cima-road-ride-review-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Accepted attributed subjective comparison with review-sample disclosure; no numeric stiffness ranking."
+}

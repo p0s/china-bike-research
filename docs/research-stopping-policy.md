@@ -29,6 +29,8 @@ An extended attempt must name its `approach_area_id`, field-specific query, exac
 - `conflicted`: exact-looking sources disagree and the difference cannot yet be explained by market, trim, size, date, or condition.
 - `open`: the attempt budget is incomplete.
 
+A channel may also be `open` after at least one unsuccessful attempt while its attempt budget remains incomplete. `not-run` always means zero attempts. An open channel cannot conceal a found result, conflict or external blocker; those retain their specific states. Partial work must not be labelled exhausted or assigned a fabricated access blocker.
+
 Temporary exhaustion is not negative evidence. It means “not found through the recorded routes on this date.” Exhausted gaps receive a retry date and reopen when a new model year, source lead, restored page, tooling improvement, or conflicting catalog change appears.
 
 CAPTCHA, login, and Security Verification remain human-only. HTTP 412, 300013, or rate limiting stops the current job with no same-session retry or bypass; on a later turn, one content-free normal-access probe may clear the breaker when ordinary cards load, without requiring a particular user phrase.
