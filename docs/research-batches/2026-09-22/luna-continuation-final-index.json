@@ -1,0 +1,4220 @@
+{
+  "review_date": "2026-09-22",
+  "status": "frozen-target-review-complete",
+  "meaning": "Every frozen target has a recorded disposition. This does not mean every underlying fact was found or every catalog gap closed.",
+  "baseline_commit": "3ff61ac404953b6dedc6fd495b13e6b07d45e5a4",
+  "reviewed_target_count": 460,
+  "disposition_counts": {
+    "current-identity-gate-unresolved": 20,
+    "fresh-research-complete-unresolved": 48,
+    "fresh-review-complete-unresolved": 49,
+    "prior-session-reconciliation-complete": 65,
+    "review-complete-see-disposition": 265,
+    "prior-session-fresh-research-complete": 13
+  },
+  "catalog_coarse_gap_instances_at_finish": 713,
+  "excluded_aggregate_candidate_states": 222,
+  "excluded_runtime_image_flags": 37,
+  "newly_exposed_fields": [
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-rs-sensah"
+      },
+      "field": "frame-weight",
+      "continuation_state": "fresh-correction-complete-unresolved",
+      "review_record": "docs/research-batches/2026-09-22/luna-followup-04a-results.json",
+      "reason": "Unsupported 1150 g T47 scalar retired; excluded from original frozen 460-target inventory."
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-rs-sensah"
+      },
+      "field": "tire-clearance",
+      "continuation_state": "fresh-correction-complete-unresolved",
+      "review_record": "docs/research-batches/2026-09-22/luna-followup-04b-results.json",
+      "reason": "Shared T47 platform maximum45C retired after exact original storefront URL recheck foundBB86."
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-wheeltop-eds"
+      },
+      "field": "tire-clearance",
+      "continuation_state": "fresh-correction-complete-unresolved",
+      "review_record": "docs/research-batches/2026-09-22/luna-followup-04b-results.json",
+      "reason": "Shared T47 platform maximum45C retired after exact original storefront URL recheck foundBB86."
+    }
+  ],
+  "followup_full_field_closures": 11,
+  "followup_reports": [
+    "docs/research-batches/2026-09-22/luna-followup-01-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-02-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-03-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-04-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-04a-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-04b-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-05-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-06-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-07-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-08-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-09-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-10-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-11-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-12-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-13-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-14-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-15-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-16-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-17-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-18-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-19-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-20-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-21-results.json",
+    "docs/research-batches/2026-09-22/luna-followup-22-results.json"
+  ],
+  "targets": [
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "complete-weight",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "tire-clearance",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "geometry",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "image",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "lightcarbon-speedz"
+      },
+      "field": "frame-material",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "bom",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "frame-weight",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "bottom-bracket",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-complete"
+      },
+      "field": "purchase-route",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "lightcarbon-speedz"
+      },
+      "field": "frame-stiffness",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "tire-clearance",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "geometry",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "image",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "frame-weight",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "bottom-bracket",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-speedz-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/lightcarbon-speedz.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "flying-pigeon-carbon-road-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "flying-pigeon-carbon-road-unknown"
+      },
+      "field": "drivetrain",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "flying-pigeon-carbon-road-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "flying-pigeon-carbon-road-unknown"
+      },
+      "field": "frame-material",
+      "disposition": "current-identity-gate-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "flying-pigeon-carbon-road-unknown"
+      },
+      "field": "source-missing",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cosmosworks-carbon-e-road"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cosmosworks-carbon-e-road"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cosmosworks-carbon-e-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cosmosworks-carbon-e-road"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cosmosworks-carbon-e-road"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-integrated-road-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-integrated-road-unknown"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-integrated-road-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-integrated-road-unknown"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-integrated-road-unknown"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-rs-community-lead"
+      },
+      "field": "price",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-rs-community-lead"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-rs-community-lead"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-rs-community-lead"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "huanyu-az-one"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "huanyu-az-one"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "huanyu-az-one"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "huanyu-az-one"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "dengfu-gravel"
+      },
+      "field": "price",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "dengfu-gravel"
+      },
+      "field": "frame-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "dengfu-gravel"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "dengfu-gravel"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "dengfu-gravel"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-03-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-tcr-advanced"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-tcr-advanced"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-tcr-advanced"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-tcr-advanced"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-by446"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-by446"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-by446"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-by446"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meihanda-xtreme-gravel"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meihanda-xtreme-gravel"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meihanda-xtreme-gravel"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meihanda-xtreme-gravel"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meinier-superlight-2"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meinier-superlight-2"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meinier-superlight-2"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meinier-superlight-2"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rockbros-pegasus-road"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rockbros-pegasus-road"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rockbros-pegasus-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rockbros-pegasus-road"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-little-white-rabbit"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-little-white-rabbit"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-little-white-rabbit"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-little-white-rabbit"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-r10-pro-gen3"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-r10-pro-gen3"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-r10-pro-gen3"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-r10-pro-gen3"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-x7"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-x7"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-x7"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-x7"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-sl-one"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-sl-one"
+      },
+      "field": "drivetrain",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-sl-one"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-sl-one"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-05-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-team-road"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-team-road"
+      },
+      "field": "drivetrain",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-team-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "west-biking-team-road"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "basso-venta-disc"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "basso-venta-disc"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "basso-venta-disc"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-idol"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-idol"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-idol"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-new-838"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-new-838"
+      },
+      "field": "drivetrain",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "de-rosa-new-838"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "falco-t91-t912"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "falco-t91-t912"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "falco-t91-t912"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "felt-ia-2"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "felt-ia-2"
+      },
+      "field": "drivetrain",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "felt-ia-2"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "frrx-carbon-road-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "frrx-carbon-road-unknown"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "frrx-carbon-road-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gios-aerolite"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gios-aerolite"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gios-aerolite"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-aero-entry"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-aero-entry"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-aero-entry"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-road-plus"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-road-plus"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-road-plus"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-06-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-wave"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-wave"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-wave"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-carbon-hydraulic-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-carbon-hydraulic-unknown"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-carbon-hydraulic-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-lampo-carbon-road"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-lampo-carbon-road"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-lampo-carbon-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "leinax-youlong-2"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "leinax-youlong-2"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "leinax-youlong-2"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rolling-stone-comp"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rolling-stone-comp"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "rolling-stone-comp"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r70"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r70"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r70"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hongfu-gravel"
+      },
+      "field": "price",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hongfu-gravel"
+      },
+      "field": "frame-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hongfu-gravel"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hongfu-gravel"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elves-mori-community-lead"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elves-mori-community-lead"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elves-mori-community-lead"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elves-mori-community-lead"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-07-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-robin-evo-community-lead"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-robin-evo-community-lead"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-robin-evo-community-lead"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "generic-custom-carbon-road"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "generic-custom-carbon-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "generic-custom-carbon-road"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "generic-custom-carbon-road"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r6-105-al"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r6-105-al"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r6-105-al"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-tt-frame-hydraulic"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-tt-frame-hydraulic"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-tt-frame-hydraulic"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-tt-frame-hydraulic"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kontax-power-evo"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kontax-power-evo"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kontax-power-evo"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kontax-power-evo"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "my-way-custom-carbon-frame"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "my-way-custom-carbon-frame"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "my-way-custom-carbon-frame"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "my-way-custom-carbon-frame"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-t10"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-t10"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-t10"
+      },
+      "field": "frame-material",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-t10"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-08-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "giant-defy-advanced-sl1-community-lead"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "giant-defy-advanced-sl1-community-lead"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-revolt-advanced"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-revolt-advanced"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-revolt-advanced"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx600-pes"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx600-pes"
+      },
+      "field": "geometry",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx600-pes"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx600-pes"
+      },
+      "field": "bottom-bracket",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "icanian-sn04"
+      },
+      "field": "frame-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "icanian-sn04"
+      },
+      "field": "tire-clearance",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "icanian-sn04"
+      },
+      "field": "frame-material",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-fuoco-2025"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-fuoco-2025"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-fuoco-2025"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "paragon-jazz-2026"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "paragon-jazz-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "paragon-jazz-2026"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-super-sport"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-super-sport"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-super-sport"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-uragano-f"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-uragano-f"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-uragano-f"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "qingsha-carbon-folding"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "qingsha-carbon-folding"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "qingsha-carbon-folding"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "trinx-gtr-c6"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "trinx-gtr-c6"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "trinx-gtr-c6"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-carbon-road-gravel-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-carbon-road-gravel-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-carbon-road-gravel-unknown"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-cyclone-sport"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-cyclone-sport"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-cyclone-sport"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-09-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-storm-knight"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-storm-knight"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-storm-knight"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r80"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r80"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-r80"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-r8000"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-r8000"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "viqi-r8000"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "winspace-m6"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "winspace-m6"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-02-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "winspace-m6"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad500-2025"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad500-2025"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad500-2025"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad7"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad7"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad7"
+      },
+      "field": "frame-stiffness",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "nscr-carbon-gravel-storage"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "nscr-carbon-gravel-storage"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "nscr-carbon-gravel-storage"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "giant-propel-gen4-community-lead"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "giant-propel-gen4-community-lead"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-01.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-defy-advanced"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-defy-advanced"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-reacto"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-reacto"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-pro-gr-one-grx-di2"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-pro-gr-one-grx-di2"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-pro-ur-one"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-pro-ur-one"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "elves-falath-r7170"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/elves-falath-r7170.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "elves-falath-r7170"
+      },
+      "field": "image",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-10-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "elves-falath-r7170"
+      },
+      "field": "bom",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/elves-falath-r7170.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "elves-falath-r7170"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "alums-da54"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "alums-da54"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cinelli-pressure-adr"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cinelli-pressure-adr"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cycletrack-phantom-rx24"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cycletrack-phantom-rx24"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elro-f1"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "elro-f1"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-hydraulic-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-hydraulic-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-road-high-unknown"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-carbon-road-high-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-vittoria-er7-2026"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-vittoria-er7-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kung-horizon"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "kung-horizon"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "leinax-leina-road"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "leinax-leina-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "seraph-tt-x68-new-udh"
+      },
+      "field": "price",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/seraph-tt-x68-new-udh.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "seraph-tt-x68-new-udh"
+      },
+      "field": "frame-weight",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/seraph-weight-correction.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "seraph-tt-x68-new-udh"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/seraph-tt-x68-new-udh.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "tavelo-arow-sl-community-lead"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "tavelo-arow-sl-community-lead"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-11-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "winspace-t1600"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "winspace-t1600"
+      },
+      "field": "drivetrain",
+      "disposition": "fresh-review-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-04-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-f20-hawkeye"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-f20-hawkeye"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-22-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-f20-hawkeye"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "bianchi-sprint-icr"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "bianchi-sprint-icr"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-speed7-complete"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-speed7-complete"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "argon18-krypton-pro"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "argon18-krypton-pro"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-a7l-pro-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-22-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-a7l-pro-2026"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-gravel-v3-2024-rs-carbon-wave"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-gravel-v3-2024-rs-carbon-wave"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "icanian-p9"
+      },
+      "field": "frame-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "icanian-p9"
+      },
+      "field": "tire-clearance",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "giant-propel-advanced-3"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-quick-pro-xr-one"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-tourist"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-profound-400"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "irefox-profound-400"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-12-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-spark-sport-pes"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-cyclone-gen3-7170"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcg074-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcg074s-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcg087-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcg087s-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr020-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-crux"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-trek-madone-gen-8"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-trek-madone-gen-8"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-13-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-electronic"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-electronic"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-electronic"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "twitter-cyclone-gen3-et"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-gen3-et"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-gen3-et"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "twitter-t3-tt"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-t3-tt"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-t3-tt"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "airwolf-yf-r003"
+      },
+      "field": "price",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/airwolf-yf-r003.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "airwolf-yf-r003"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/airwolf-yf-r003.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx700-grx820"
+      },
+      "field": "geometry",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx700-grx820"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "camp-gx700-grx820"
+      },
+      "field": "bottom-bracket",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "legit-ac1"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "legit-ac1"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "mondince-fm316"
+      },
+      "field": "price",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/mondince-fm316.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "mondince-fm316"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/mondince-fm316.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pinarello-f5"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pinarello-f5"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-r9"
+      },
+      "field": "complete-weight",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-r9"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "velobuild-cx-002-2023"
+      },
+      "field": "price",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/velobuild-cx-002-2023.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "velobuild-cx-002-2023"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/velobuild-cx-002-2023.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "bxt-gravel-complete"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "bxt-gravel-complete"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-ace-gen3-105"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-ace-gen3-105"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-ace-qed"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-ace-qed"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "camp-gx700"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-g0"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-g0"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-14-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "koseea-pioneer-slr-plus"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "koseea-pioneer-slr-plus"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missile-e6000"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missile-e6000"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "phillips-carbon-road-unknown"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "phillips-carbon-road-unknown"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "phoenix-700c-carbon-e-road"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "phoenix-700c-carbon-e-road"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-dream-maker"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-dream-maker"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-starship-r13"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-starship-r13"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "trinx-tornado-900"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "trinx-tornado-900"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-gravel-v3-105"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-gravel-v3-105"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-taylor"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "upland-taylor"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad350-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-ad350-2026"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-15-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "carbonda-cfr707"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "carbonda-cfr707"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "ican-graro"
+      },
+      "field": "geometry",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "ican-graro-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "ican-graro"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-scultura"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-silex"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-tarmac-sl8"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-03.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-trek-checkpoint"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-winspace-slc3"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "specialized-roubaix-sl8-sport-105"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cinelli-pressure"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "evolve-cima-road"
+      },
+      "field": "price",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/evolve-cima-road.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr007-v"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr014-v"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr0x-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr0x-v"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lctt05-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "look-765-electronic"
+      },
+      "field": "complete-weight",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "meihanda-phantom-p10"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-16-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "pardus-robin-sport-pes"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "triaero-a9"
+      },
+      "field": "complete-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cycletrack-time-tt"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "cyctrac-r18"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "gito-gtv5-plus"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-suprema-7120"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-vega-tt-24s"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "java-vittoria-7170"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-roubaix-sl8"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-roubaix-sl8"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-gelaro-sf"
+      },
+      "field": "drivetrain",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-17-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "spect-mira"
+      },
+      "field": "tire-clearance",
+      "disposition": "fresh-research-complete-unresolved",
+      "report": "docs/research-batches/2026-09-22/luna-followup-01-scope.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sunpeed-victory-e-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sunpeed-wudi-e-2026"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-cyclone-r7120"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "twitter-t10-pro"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-gt350"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xds-gt600"
+      },
+      "field": "tire-clearance",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "scott-addict-rc-40"
+      },
+      "field": "tire-clearance",
+      "disposition": "prior-session-fresh-research-complete",
+      "report": "docs/research-batches/2026-09-22/scott-addict-rc-40.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "scott-addict-rc-40"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-speed7-frameset"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "quick-pro-tr-one"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "rinasclta-gr025"
+      },
+      "field": "geometry",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "rinasclta-gr025-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-aero-one"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-aero-one"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-18-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-pioneer"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-pioneer"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-pioneer-one"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "laget-pioneer-one"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-2024-rs-sensah-alloy"
+      },
+      "field": "image",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-2024-rs-sensah-alloy"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-04.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcr015s-v"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcrxs-d"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lcrxs-v"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lctr003"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lctt001"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-lctt004"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-canyon-aeroad"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-canyon-ultimate"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-19-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-elves-vanyar"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-tavelo-attack"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-trek-domane"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "specialized-roubaix-sl8-comp-105"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "specialized-s-works-crux-2024-sram-red-xplr"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "specialized-s-works-crux-frameset"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xlab-ad8"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "xlab-ad9"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "carbonda-cfr696-frameset"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "carbonda-cfr696-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "ican-gra04-frameset"
+      },
+      "field": "price",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "ican-gra04-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-force-pr1600"
+      },
+      "field": "price",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-canyon-grail"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-s8"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-s8"
+      },
+      "field": "bottom-bracket",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "bianchi-oltre-race"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "bianchi-oltre-race"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-05.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-a7l-r7100"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-a7l-r7100"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "sava-gelaro"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-s4-grx400"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-wheeltop-eds"
+      },
+      "field": "frame-weight",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-wheeltop-eds"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-sf6-cues"
+      },
+      "field": "bottom-bracket",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-sf6-cues"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "sava-r8-r8170"
+      },
+      "field": "frame-stiffness",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-02.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "tsb-titan-super-bond-pioneer-one"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-20-results.json"
+    },
+    {
+      "target": {
+        "record_type": "candidate",
+        "record_id": "vook-v8e-pro"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "xmcarbonspeed-cs-gr01-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "platform",
+        "record_id": "xmcarbonspeed-cs-gr01"
+      },
+      "field": "frame-stiffness",
+      "disposition": "review-complete-see-disposition",
+      "report": "docs/research-batches/2026-09-22/luna-followup-21-results.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "lightcarbon-lcg071s-pro-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "seka-exaero-gr-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "spcycle-g026-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "tavelo-grow-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "twitter-v3-rs-sensah"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-06.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "winspace-g3-frameset"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-07.json"
+    },
+    {
+      "target": {
+        "record_type": "variant",
+        "record_id": "pardus-super-sport-gen2-egr"
+      },
+      "field": "purchase-route",
+      "disposition": "prior-session-reconciliation-complete",
+      "report": "docs/research-batches/2026-09-22/reconcile-07.json"
+    }
+  ],
+  "evidence_limits": "Reports distinguish current page reads, discovery indexes, failed access, and reused earlier evidence. Unknowns and unresolved exact-build mappings remain unknown. Historical search attempts and observation dates are preserved."
+}
