@@ -77,10 +77,9 @@
       "outcome": "retailer-model-conflict",
       "finding": "Current retailer title/SKU says G525, while description and tags say G530. Approximately9.5kg remains conflicted evidence; fitted28C is not a maximum. No catalog scalar adopted.",
       "sources": [
-        "https://www.888bike.net/en/product/tag/shimano-105",
         "https://www.888bike.net/en/product/tag/shimano-105"
       ],
-      "proof": "Worker reached a direct item from current retailer tag and reported internal model contradiction; parent resolves the historical exact G525 URL from its source record, not a fresh independent read.",
+      "proof": "Worker reports a current direct item reached through this retailer tag, with internal model contradiction. The direct item URL was not returned; the retained source record also contains only the tag index. This evidence is provisional discovery and no catalog value is changed. Worker subsequently confirmed the direct URL was not retained and must not be reconstructed.",
       "next_trigger": "Corrected exact G525 item/SKU, complete mass and explicit maximum.",
       "fields": [
         "complete-weight",

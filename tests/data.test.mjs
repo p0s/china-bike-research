@@ -524,6 +524,7 @@ test('batch 031 resolves current platform facts while preserving build and gener
     'candidate:sava-r9:frame-material',
     'candidate:bianchi-sprint-icr:tire-clearance',
     'candidate:lightcarbon-speed7-complete:tire-clearance',
+    'candidate:lightcarbon-speed7-complete:frame-stiffness',
     'candidate:lightcarbon-speed7-frameset:tire-clearance',
     'candidate:lightcarbon-speed7-frameset:frame-weight',
     'candidate:lightcarbon-speed7-frameset:identity-source',
@@ -982,7 +983,7 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
   assert.equal(sava.facts.complete_weight_g, 8800);
   assert.match(sava.facts.complete_weight_basis, /varies by size/);
   assert.match(sava.facts.tire_clearance_status, /fitted 25C tire is not treated as clearance/);
-  assert.match(sava.facts.frame_stiffness_status, /No exact-model numeric.*50 registered source areas/);
+  assert.match(sava.facts.frame_stiffness_status, /Qualitative ride evidence.*no numeric frame-only measurement is recorded/);
 
   const foundFields = new Set([
     'candidate:missing-china-price-merida-scultura:price',
@@ -998,7 +999,8 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
     'candidate:twitter-gravel-v3-105:complete-weight',
     'candidate:pardus-spark-sport-pes:complete-weight',
     'candidate:pardus-spark-sport-pes:frame-stiffness',
-    'candidate:sava-a7l-pro-2026:complete-weight'
+    'candidate:sava-a7l-pro-2026:complete-weight',
+    'candidate:sava-a7l-pro-2026:frame-stiffness'
   ]);
   const conflictedFields = new Set(['candidate:twitter-cyclone-r7120:complete-weight']);
   const targetFields = new Map([

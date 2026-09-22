@@ -1,0 +1,181 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-12-2026-09-22",
+  "status": "completed-two-qualified-field-closures",
+  "reviewed_models": 10,
+  "reviewed_fields": 17,
+  "full_field_closures": 2,
+  "catalog_changes": 2,
+  "coarse_gap_count_before": 723,
+  "coarse_gap_count_after": 721,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-f20-hawkeye",
+      "outcome": "unresolved-mainland-price-and-fit",
+      "finding": "Current global USD1899 reference does not establish mainland price. Exact F20/R7120 page specifies fitted25C, not maximum; stiffness language remains generic.",
+      "sources": [
+        "https://savadeck-bike.com/products/2023-sava-hawkeye-7-2-full-carbon-road-bike-24-speed"
+      ],
+      "proof": "Worker current full manufacturer read; no existing price observation date refreshed.",
+      "next_trigger": "Mainland exact checkout price, manufacturer maximum or meaningful exact-model stiffness evidence.",
+      "fields": [
+        "price",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bianchi-sprint-icr",
+      "outcome": "stiffness-unresolved",
+      "finding": "Current exact YTBR6 manufacturer page supplies no meaningful measured or comparative stiffness evidence.",
+      "sources": [
+        "https://www.bianchi.com/en/shop/bikes/road/all-rounder/sprint-sprint-sprint-icr/"
+      ],
+      "proof": "Worker current official page/search result identifies YTBR6; prior candidate URL was stale/invalid.",
+      "next_trigger": "Exact-current YTBR6 independent comparison or test.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-complete",
+      "outcome": "qualitative-stiffness-accepted-weight-unresolved",
+      "finding": "Official catalog maps Speed7 to LCR017-D. Exact2024 review describes solid behavior under load for a custom quality/build configuration. Author comment dated2025-05-12 attributes higher stiffness to box downtube; that claim remains community-report evidence. Author comment dated2025-01-21 reports8.2kg fully loaded with lights/pedals/Garmin, not a selected mechanical105 mass. Added qualitative stiffness with custom-build caveat; no weight scalar.",
+      "sources": [
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+        "https://www.hambini.com/review-lightcarbon-lcr-017d/"
+      ],
+      "proof": "Worker catalog search evidence and review read; existing official alias mapping reused. Parent independently read article body and dated comment sections and corrected their source classes. Original50-area history preserved.",
+      "next_trigger": "Exact retained mechanical105 mass/BOM or frame-only measured evidence.",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "argon18-krypton-pro",
+      "outcome": "regional-price-references-only",
+      "finding": "Current Force AXS USD8750 complete build and EUR2745 regional frameset are different packages/markets, not mainland CNY price. Current exact frameset lacks frame-only mass/basis; older870g is not transferred.",
+      "sources": [
+        "https://www.argon18.com/en-us/bikes/all-road/krypton-pro/sram-force-axs",
+        "https://www.argon18.com/en-dk/bikes/all-road/krypton-pro/frameset"
+      ],
+      "proof": "Worker current full regional manufacturer reads.",
+      "next_trigger": "Mainland exact package price or current-generation frame-only weight.",
+      "fields": [
+        "price",
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a7l-pro-2026",
+      "outcome": "qualitative-stiffness-accepted-maximum-unresolved",
+      "finding": "Named exact-model reviewer describes responsive feel under power and a firmer ride than a Trek Domane with IsoSpeed after a reported500km. Added as subjective whole-bike evidence with affiliate/source caveat, not isolated-frame ranking. Manufacturer fitted25C and conflicting third-party25/28C claims do not establish maximum.",
+      "sources": [
+        "https://savadeck-bike.com/products/2026-sava-a7l-pro-105-r7120-full-carbon-road-bike-24sp",
+        "https://www.bikelabhq.com/review/sava-a7l-pro-review-best--1-500-carbon-bike"
+      ],
+      "proof": "Worker current full manufacturer/review reads; parent read named-reviewer, stated purchase/mileage, affiliate disclosure and relevant ride passages. Purchase/mileage not independently verified.",
+      "next_trigger": "Manufacturer maximum or controlled exact-model fit evidence; stronger stiffness evidence if available.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+      "outcome": "revision-and-build-unresolved",
+      "finding": "Current T47 RS24 alloy9.9kg manufacturer page has no price; BB86 storefront9.6kg and45C are a distinct unresolved revision. These claims cannot select the retained2024carbon-wave build, price or stiffness.",
+      "sources": [
+        "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html",
+        "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike"
+      ],
+      "proof": "Worker current exact routes; earlier04/04a/04b revision separation retained.",
+      "next_trigger": "Priced exact retained mainland RS24carbon-wheel SKU and meaningful stiffness evidence.",
+      "fields": [
+        "price",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-advanced-3",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current mainland Propel Advanced3/R4720 hydraulic2x10 page has no complete weight, size or weighing basis.",
+      "sources": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=3416"
+      ],
+      "proof": "Worker current mainland official full read; existing price left at its original observation date.",
+      "next_trigger": "Exact mainland complete mass with size/build basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current global page gives frame839g±5% and fork449g±5% only. Existing selected mainland glass-yellow M SKU has no complete weight; component masses are not summed.",
+      "sources": [
+        "https://www.quickprousa.com/products/xr-one-shimano",
+        "https://detail.tmall.com/item.htm?id=1014176452648"
+      ],
+      "proof": "Worker current global full read; earlier exact mainland Tmall record reused, not a fresh checkout.",
+      "next_trigger": "Selected mainland SKU or exact official complete-build mass.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-tourist",
+      "outcome": "source-unavailable-weight-unresolved",
+      "finding": "Retained exact2026PES build has no complete mass. Current official route404; earlier exact Taobao record preserved. Older Spark AL/Sport siblings excluded.",
+      "sources": [
+        "https://www.pardusbicycle.com/tourist/spark-tourist-105.html",
+        "https://item.taobao.com/item.htm?id=1032421202263"
+      ],
+      "proof": "Worker current official access failure and sibling exclusions; Taobao source reused with its date.",
+      "next_trigger": "Current exact PES manufacturer/flagship weight and basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "outcome": "historical-price-only",
+      "finding": "Current catalog identifies Profound400 but no current price or complete mass. Historical CNY7299 dated2023-08-10 remains historical only.",
+      "sources": [
+        "https://irefox.net/bikes/175_1.html",
+        "https://irefox.net/cn/bikes/",
+        "https://www.biketo.com/product/52110.html?all=1",
+        "https://www.biketo.com/product/51881.html"
+      ],
+      "proof": "Worker current catalog/index reads; historical review source records reused without refreshing observation dates.",
+      "next_trigger": "Current exact checkout price and complete mass/basis.",
+      "fields": [
+        "price",
+        "complete-weight"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Two candidate qualitative stiffness fields, three sources and preserved original attempt ledgers. Complete-weight/maximum/price unknowns unchanged. Also correct batch11 G525 provenance to provisional because no direct URL was retained.",
+    "commands": [
+      "npm run --silent validate",
+      "npm run --silent coverage:accept",
+      "npm run --silent data:gaps",
+      "codex-pnpm-check check",
+      "git diff --check"
+    ],
+    "full_gate": "Passed304tests,584pages,SEO456indexable/128noindex. Existing historical assertions updated for the two found fields before the full pass. No UI code or image inputs changed."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
