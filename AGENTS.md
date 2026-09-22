@@ -12,7 +12,7 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 
 - `p0s/china-bike-research` is a public GitHub repository. Do not assume private visibility or use tooling restricted to private repositories.
 - Never push directly to `origin/main`; direct pushes to remote `main` are prohibited even if the active credentials technically permit them.
-- Put changes on a feature branch, push that branch, open a pull request to `main`, wait for required checks, and merge through the pull request. GitHub Pages deploys from `main` after the merge.
+- Put changes on a feature branch, push that branch, open a pull request to `main`, wait for required checks, and merge through the pull request. Cloudflare Workers Static Assets deploys from `main` after the merge; production secrets and the custom-domain route stay in Cloudflare.
 
 ## Task boundaries
 
@@ -71,7 +71,7 @@ Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in 
 - Move secondary details to accessible popovers or model pages.
 - Remove repetition rather than adding another explanation or page.
 - Keep generic project copy broad; keep model-specific category descriptions accurate.
-- Keep the design minimalist, responsive, keyboard-accessible, and base-path safe for GitHub Pages.
+- Keep the design minimalist, responsive, keyboard-accessible, and safe for the production root at `https://china-bikes.p0s.eu/`; the build may still accept a project base path for local compatibility tests.
 
 ## Public-post browser research
 

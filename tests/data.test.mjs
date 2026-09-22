@@ -2614,9 +2614,9 @@ test('image records preserve exactness, source, rights, and fallback-safe hostin
     'elves-falath-r7170',
     'lightcarbon-speedz'
   ];
-  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 198);
+  assert.equal(data.images.filter((image) => image.hosting.mode === 'remote').length, 191);
   assert.equal(data.images.filter((image) => image.candidate_id).length, 122);
-  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 12);
+  assert.equal(data.images.filter((image) => image.rights.status === 'source-attributed-rehost').length, 19);
   assert.equal(data.images.filter((image) => image.subject_accuracy === 'illustrative').length, unresolvedImagePlatforms.length);
   assert.deepEqual(
     data.images
