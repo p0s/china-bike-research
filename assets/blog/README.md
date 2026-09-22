@@ -1,9 +1,11 @@
-# Blog photos and mascot
+# Blog illustrations, model photos and mascot
 
-Real model images stay on their original manufacturer or retailer hosts. The photo mappings in [the manifest](../../content/blog-images.json) select existing catalog image/source records; captions name the model, credit the owner and explain any different build. The same photos appear in headers and within the relevant articles. Social previews use the real cover image.
+Blog banners, cards and article headers use five full-scene illustrations featuring the recurring red panda: welcoming riders in a karst landscape, riding a gravel bike, checking tire clearance, assembling a bike and packing components. The mascot inhabits each scene. The illustrations are conceptual, not exact-model evidence.
 
-The five local WebP files are the original China Bikes red panda mascot: a general mechanic plus pumping, measuring, assembling and packing poses. They were created with OpenAI's built-in image-generation tool on 2026-09-22. Final generation and edit prompts, source hashes, localized descriptions, dimensions, byte counts and derivative hashes are recorded in the manifest.
+The built-in OpenAI image generator edited the original project-created scenes on 2026-09-22 using the same mascot identity reference. Each image's `header` entry in [the manifest](../../content/blog-images.json) records the final prompt, input hashes, original scene commit/path, output hash, localized alt text and optimized file metadata. The original mascot cutouts retain their own provenance and are still used beside inline photos.
 
-The mascot is a separate decorative image beside each unmodified product image. It never covers a bicycle or represents a specification. No third-party photo is downloaded or combined into a new bitmap. Public captions focus on the pictured bike and its source; generation provenance remains in the source manifest.
+Header derivatives use 640- and 1600-pixel WebP for cards and covers and 1200-pixel JPEG for sharing previews. Optimization strips embedded metadata. The privacy checker pins every approved binary hash. Public headers have no AI-image caption.
 
-Mascot files are optimized with `cwebp -q 80 -resize 480 0 -metadata none`, preserving alpha. The privacy checker pins the approved file hashes. A failed mascot hides independently; a failed photo hides its visual area while preserving model/source links, captions and article content.
+Real model images remain inside each article and stay on their original manufacturer or retailer hosts. The manifest's photo mappings select existing catalog image/source records; captions name the model, credit the owner and explain any different build. No third-party photo is modified or rehosted.
+
+A failed header hides independently without losing article navigation. A failed inline mascot hides independently. A failed real photo retains its model/source links, build note and article content.
