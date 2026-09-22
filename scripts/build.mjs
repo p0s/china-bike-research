@@ -1,4 +1,5 @@
 import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLastmod } from '../src/lib/posts.mjs';
+import { loadSchedule, publishedPosts } from '../src/lib/post-publication.mjs';
 import { LOCALES, localePath } from '../src/lib/i18n.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import fs from 'node:fs';
@@ -73,8 +74,9 @@ if (errors.length) {
 }
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
-const posts = loadPosts(root);
-validatePostReferences(posts, data, products);
+const allPosts = loadPosts(root);
+validatePostReferences(allPosts, data, products);
+const posts = publishedPosts(allPosts, loadSchedule(root, allPosts));
 const siteLastmod = latestDate([
   data.meta.snapshot_date,
   data.brands.map((item) => item.last_reviewed),

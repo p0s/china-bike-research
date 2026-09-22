@@ -13,8 +13,8 @@ export function editorialImage(id) {
 
 export function resolveBlogPhoto(ctx, id) {
   const photo = blogPhotos.find((item) => item.id === id);
-  const image = ctx.data.images.find((item) => item.id === photo?.image_id);
-  const source = ctx.data.sources.find((item) => item.id === image?.source_id);
+  const image = photo?.external?.image ?? ctx.data.images.find((item) => item.id === photo?.image_id);
+  const source = photo?.external?.source ?? ctx.data.sources.find((item) => item.id === image?.source_id);
   if (!photo || image?.hosting.mode !== 'remote' || image.buyer_visibility === 'omit'
     || !['official-page-embed', 'retailer-page-embed'].includes(image.rights?.status)
     || !image.hosting.remote_url?.startsWith('https://') || !source?.url?.startsWith('https://')) {
@@ -24,7 +24,8 @@ export function resolveBlogPhoto(ctx, id) {
 }
 
 export function postPhotos(post) {
-  const selected = blogPhotos.filter((photo) => photo.model_ids.some((id) => post.model_ids.includes(id)));
+  const selected = blogPhotos.filter((photo) => photo.model_ids.some((id) => post.model_ids.includes(id)) || post.photo_ids?.includes(photo.id));
+  for (const id of post.photo_ids ?? []) if (!selected.some((photo) => photo.id === id)) throw new Error(`Unknown article photo: ${id}`);
   for (const id of post.model_ids) {
     if (!selected.some((photo) => photo.model_ids.includes(id))) throw new Error(`Missing blog photo for ${id}`);
   }
