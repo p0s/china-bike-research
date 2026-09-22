@@ -88,7 +88,11 @@ with sync_playwright() as p:
                         assert page.locator('main a[href*="/blog/"]').count() >= 1
                         images = page.locator('[data-blog-mascot]')
                         photos = page.locator('[data-blog-bike-image]')
-                        expected = 5 if route == '/blog/' else 3 if 'gravel-bikes-around' in route else 4
+                        headers = page.locator('[data-blog-header-image]')
+                        assert headers.count() == (5 if route == '/blog/' else 1)
+                        headers.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
+                        assert headers.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
+                        expected = 0 if route == '/blog/' else 2 if 'gravel-bikes-around' in route else 3
                         assert images.count() == expected
                         assert photos.count() == expected
                         images.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
@@ -98,24 +102,27 @@ with sync_playwright() as p:
                             assert photos.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
                         assert page.locator('.article-card .section-label, .buyer-article header .section-label').count() == 0
                         image_name=f'{locale}-{mode}-{route.strip("/").replace("/","-")}.png'
+                        page.evaluate('window.scrollTo(0,0); document.activeElement?.blur()')
                         page.screenshot(path=str(REPORTS/image_name), full_page=True)
                         if route != '/blog/':
                             page.locator('.blog-model-photos').screenshot(path=str(REPORTS/image_name.replace('.png','-models.png')))
                 record(f'{locale} {mode} {route}',visual)
         def image_failure(prefix=prefix):
             go(prefix+'/blog/gravel-bikes-around-5000-yuan/')
+            page.locator('[data-blog-header-image]').dispatch_event('error')
+            assert page.locator('.article-cover').is_hidden()
+            assert page.locator('.blog-model-photo figcaption').first.is_visible()
             page.locator('[data-blog-mascot]').first.dispatch_event('error')
             assert page.locator('[data-blog-mascot]').first.is_hidden()
-            assert page.locator('.article-cover figcaption').is_visible()
+            assert page.locator('.blog-model-photo figcaption').first.is_visible()
             page.locator('[data-blog-bike-image]').first.dispatch_event('error')
-            assert page.locator('.article-cover .blog-photo-scene').is_hidden()
-            assert page.locator('.article-cover [data-blog-photo-status]').is_visible()
+            assert page.locator('.blog-model-photo .blog-photo-scene').first.is_hidden()
+            assert page.locator('.blog-model-photo [data-blog-photo-status]').first.is_visible()
             assert page.locator('h1').is_visible()
             assert page.locator('table tbody tr').count() == 3
             go(prefix+'/blog/')
             page.locator('.article-card img').first.dispatch_event('error')
-            assert page.locator('.article-card-image .blog-photo-scene').first.is_hidden()
-            assert page.locator('.article-card-image figcaption a').first.is_visible()
+            assert page.locator('.article-card-image').first.is_hidden()
             assert page.locator('.article-card h2 a').first.is_visible()
         record(f'{locale} /blog/ image failure preserves article and navigation', image_failure)
         def interaction(prefix=prefix,locale=locale):

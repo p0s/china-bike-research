@@ -8,6 +8,21 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/cycling-guides-banner-scene-v2-640.webp', 'eb8f02e079677678a0c49589f7f15654a549b3e3e7dfbcb79ccc5fbff4e59eff'],
+  ['assets/blog/cycling-guides-banner-scene-v2-1600.webp', '01a3fbcf0274e387bded7f6fe8621df50ca29a2fc90d77b29ee5899aa89c849d'],
+  ['assets/blog/cycling-guides-banner-scene-v2-1200.jpg', 'f60e4c63aaa44f9f7a3f9461e74da7b3d5c13415f52ab7d8a424d9f76c3b9783'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-scene-640.webp', '91bfbf59e430f8690f0179da882e6ab71e7715da4bafbbeecac1f53fb3e413ce'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-scene-1600.webp', 'b52f4900595d0017647c04278ac0b25315e61fa9ebf3d3eb545d89515e86af29'],
+  ['assets/blog/gravel-bikes-around-5000-yuan-scene-1200.jpg', '0aa9a88fff82f1177df7dbdd0b9fe3f2564654bbd9856629d07a1ee673e27176'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-scene-640.webp', '8722fdf1d4baa26e1693af66465f87d9c513e6d24c2ad9d2b209836ff87e9bc5'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-scene-1600.webp', 'f313ad78096683a8df98adf7cf52479950acf79483a66ec67a8ff1474924849d'],
+  ['assets/blog/38mm-tires-on-aero-road-bikes-scene-1200.jpg', 'c4bace0a3779dcfdcb786491f0399a363b54a89efc409fd79991f1a4d5b51584'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-scene-640.webp', '5ed59eede7170f7d045e246fb61a688d2020b13a34772f8e0d9ffb4b2104f70d'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-scene-1600.webp', '76b2bd2098609b2c4c17d7a7644c6c7a450e4c57a75e98d1d8b6f4668c7e9d9c'],
+  ['assets/blog/frameset-vs-complete-bike-cost-in-china-scene-1200.jpg', '432af6140625c22619ae9d244cf831a2406f431ef45aa65f396b9aaf6234e5b6'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-scene-640.webp', 'f15622ecaaa47e50fac9f6bfaa824b09ab719092f73eb74e22a56f9ad7d06ea7'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-scene-1600.webp', '413774abc63ffda58c5af9a5587eb46990cccfe43a04099089008d6d38c94e24'],
+  ['assets/blog/chinese-bike-prices-for-international-buyers-scene-1200.jpg', '4a865774b5710f21b6328ec3cf4892f7512d2a43f02fb2fe8964e515b3a2e4dd'],
   ['assets/blog/cycling-guides-banner-mascot-480.webp', '6ab144689a81927aded163005cf15a8b0e681b797b92646cc86221b67bbe1fc5'],
   ['assets/blog/gravel-bikes-around-5000-yuan-mascot-480.webp', '98d260e0d522d27a8d6a530568dcc5e6ee6585122a13944dcdc5378fccc4f775'],
   ['assets/blog/38mm-tires-on-aero-road-bikes-mascot-480.webp', '32b34047da4f152d3082fde3ecebdcee85a516ac2408cd124f8e3b4e328612d0'],
