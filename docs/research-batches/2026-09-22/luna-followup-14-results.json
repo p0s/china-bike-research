@@ -1,0 +1,179 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-14-2026-09-22",
+  "status": "completed-with-one-qualitative-field-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 15,
+  "full_field_closures": 1,
+  "catalog_changes": 2,
+  "coarse_gap_count_before": 720,
+  "coarse_gap_count_after": 719,
+  "results": [
+    {
+      "record_type": "variant",
+      "record_id": "twitter-cyclone-electronic",
+      "outcome": "unresolved",
+      "finding": "Exact pages list fitted 28C and complete weights (9.2 kg alloy wheels, 9.0 kg carbon); neither is maximum clearance or frame-only mass.",
+      "sources": [
+        "https://www.twittercycles.com/products/CYCLONE-3rd%20(ET)-road-bike.html",
+        "https://twitterbikeusa.com/products/cyclone-3rd-et"
+      ],
+      "proof": "Worker current full manufacturer/distributor reads.",
+      "next_trigger": "Exact maximum and frame-only mass with size/finish/hardware.",
+      "fields": [
+        "tire-clearance",
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "twitter-cyclone-gen3-et",
+      "outcome": "unresolved",
+      "finding": "Canonical ET page lists fitted 28C without a maximum.",
+      "sources": [
+        "https://www.twittercycles.com/products/CYCLONE-3rd%20(ET)-road-bike.html",
+        "https://www.twittercycles.com/sitemap.html"
+      ],
+      "proof": "Worker current full manufacturer and sitemap reads.",
+      "next_trigger": "Explicit exact-platform maximum.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "twitter-t3-tt",
+      "outcome": "unresolved",
+      "finding": "Exact T3 TT page lists fitted Maxxis Pursuer 28C and complete weights; no maximum.",
+      "sources": [
+        "https://www.twittercycles.com/products/t3--tt.html"
+      ],
+      "proof": "Worker current full manufacturer read.",
+      "next_trigger": "Explicit exact T3 TT maximum.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "legit-ac1",
+      "outcome": "qualitative-compliance-accepted-weight-unresolved",
+      "finding": "Exact AC1 size-M mechanical105 trial reports greater rear vibration absorption than M6; slower front response is attributed mainly to alloy bar/mechanical shifters. Accepted only as subjective build-specific compliance evidence, with different retained cockpit explicit. Component masses do not establish selected complete mass.",
+      "sources": [
+        "https://winspace.jp/products/legit-ac1",
+        "https://legitbikes.cc/products/asset-pack-22238920706-example-product-3",
+        "https://105hillclimb.com/post-54462",
+        "https://www.dogoodco.in/products/legit-ac1-aero-bike-blue-mist-alloy-wheels-and-handlebar-copy"
+      ],
+      "proof": "Worker current full manufacturer/retailer/blog reads; parent read AC1 section and photos/captions. Affiliate blog, not isolated numeric stiffness. SPEC permits qualified comparative evidence without instrumented frame isolation.",
+      "next_trigger": "Selected complete build mass; controlled comparison only if numeric frame ranking later required.",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-r9",
+      "outcome": "unresolved",
+      "finding": "Exact manufacturer/global pages provide generic stiffness-to-weight marketing, without meaningful frame-specific comparative evidence.",
+      "sources": [
+        "https://www.savabike.com/sys-pd/3422.html",
+        "https://savadeck-bike.com/products/sava-blade-slr9-dura-ace-di2-full-carbon-road-bike-24sp",
+        "https://www.mobile01.com/topicdetail.php?f=316&t=7125866"
+      ],
+      "proof": "Worker current full product reads and community discovery routes.",
+      "next_trigger": "Exact-model meaningful ride comparison or deflection evidence.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bxt-gravel-complete",
+      "outcome": "non-comparable-community-reports",
+      "finding": "One unverified BXT135 owner reports excessive frame movement; a separate GRX2x11/CSC custom-build owner reports a firmer front attributed to the handlebar and rear comfort attributed to the seatpost. These differ in axis/components/build and are not directly contradictory measurements. Added qualified unresolved metadata and sources; no frame defect or stiffness ranking adopted.",
+      "sources": [
+        "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
+        "https://www.reddit.com/r/ChineseCarbon/comments/1vg8erk/gravelroad_frame/",
+        "https://roweroweporady.pl/f/topic/12066-chi%C5%84ski-gravel-bxt-135-85-kg-za-oko%C5%82o-6000z%C5%82/"
+      ],
+      "proof": "Worker current full manufacturer/community reads; parent read exact Reddit comments and Polish owner post. Ownership/revisions unverified, retained complete build differs.",
+      "next_trigger": "Comparable exact-frame evidence resolving build/assembly/component ambiguity.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-gen3-105",
+      "outcome": "provisional-community-reference",
+      "finding": "Sohu self-published post claims solid BB/lateral behavior, 32 mm compatibility and 8.2 kg with pedals/mount for a 460 mm Di2 bike, comparing a purported 2026 revision with an older ACEIII. Retained official bike has a 7.1 kg small-size claim and fitted 30C; exact revision/BOM bridge remains uncertain. No mass, maximum or stiffness field adopted from this post.",
+      "sources": [
+        "https://www.campbicycle.com/en/bicycle/ace-iii-105.html",
+        "https://m.sohu.com/a/1057477263_122645100/"
+      ],
+      "proof": "Worker current official/post reads; parent read full Sohu article under account 热练计划, dated2026-08-01. Self-reported ownership/performance, no independent verification; classified as public-community post rather than verified independent test.",
+      "next_trigger": "Exact build/revision mapping and credible corroboration of the community claim; manufacturer maximum for clearance.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-qed",
+      "outcome": "unresolved",
+      "finding": "Old exact route inaccessible; secondary CAMP ACE page mixes variants and unbridged 28C maximum. No meaningful exact-QED stiffness found.",
+      "sources": [
+        "https://www.campbicycle.com/en/road-bike/ace-qed.html",
+        "https://www.campbicycle.com/en/products",
+        "https://mybike.parts/bike_parts/2484-camp-ace",
+        "https://www.bilibili.com/video/BV1eW3S6FEmA"
+      ],
+      "proof": "Worker failed exact access, current catalog mismatch and secondary/discovery reads.",
+      "next_trigger": "Current exact QED specification or attributable meaningful ride report.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700",
+      "outcome": "unresolved",
+      "finding": "Official page lists fitted 45C, no maximum. Exact listing/video discovery did not establish meaningful frame-specific stiffness evidence.",
+      "sources": [
+        "https://www.campbicycle.com/en/gx700.html",
+        "https://www.carousell.sg/p/camp-gravel-gx700-shimano-full-grx-disc-1412949800/"
+      ],
+      "proof": "Worker current full official and secondary/discovery reads.",
+      "next_trigger": "Exact maximum or meaningful attributable stiffness comparison.",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g0",
+      "outcome": "unresolved",
+      "finding": "Official direct route returned403; indexed result identifies G0 but no mass. Exact retailer lists sizes/hardware/construction without frame-only weight.",
+      "sources": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/172.html",
+        "https://villain.shop/collections/hi-light/products/hi-light-g0-titanium-gravel-frameset"
+      ],
+      "proof": "Worker current manufacturer failure/snippet and full retailer read.",
+      "next_trigger": "Exact frame-only mass with size/finish/hardware basis.",
+      "fields": [
+        "frame-weight"
+      ]
+    }
+  ],
+  "validation": {
+    "validate": "passed",
+    "coverage_accept": "passed",
+    "full_gate": "Passed:304tests,584pages,SEO456indexable/128noindex."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

@@ -256,7 +256,7 @@ test('batch 027 records exact construction evidence and preserves exhausted stif
 
   const legit = candidates.get('legit-ac1');
   assert.match(legit.facts.frame_material, /T700 carbon frame/);
-  assert.equal(legit.facts.stiffness_evidence, undefined);
+  assert.match(legit.facts.stiffness_evidence, /rear vibration absorption.*Subjective build-specific compliance comparison/s);
 
   const look = candidates.get('look-765-electronic');
   assert.match(look.facts.frame_material, /multi-fiber lay-up.*carbon and glass-fiber/);

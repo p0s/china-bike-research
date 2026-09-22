@@ -1,0 +1,117 @@
+{
+  "batch_id": "luna-followup-14-2026-09-22",
+  "base_commit": "d5e2ed634526c2f18b925e822e8014ca892835c7",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 15,
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "twitter-cyclone-electronic",
+      "fields": [
+        "tire-clearance",
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked",
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "twitter-cyclone-gen3-et",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "twitter-t3-tt",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "legit-ac1",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-r9",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bxt-gravel-complete",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-gen3-105",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-qed",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g0",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}
