@@ -164,9 +164,13 @@ import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNu
   }
   document.querySelectorAll('[data-product-image]').forEach(enableImageFailureHandling);
 
-  document.querySelectorAll('[data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
+  document.querySelectorAll('[data-blog-header-image], [data-blog-bike-image], [data-blog-mascot]').forEach((image) => {
     const hideUnavailable = () => {
       image.hidden = true;
+      if (image.hasAttribute('data-blog-header-image')) {
+        const header = image.closest('.illustrated-header');
+        if (header) header.hidden = true;
+      }
       if (image.hasAttribute('data-blog-bike-image')) {
         image.closest('.blog-photo-scene')?.classList.add('is-unavailable');
         const status = image.closest('[data-blog-photo]')?.querySelector('[data-blog-photo-status]');
