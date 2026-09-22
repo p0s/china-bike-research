@@ -8,6 +8,12 @@ const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
 const projectOwnedBinaries = new Map([
+  ['assets/blog/europe-bike-delivery-640.webp', '2e6fcadf7f506c4ffdff4a4e7aa1ab3440ef6586a8a67d0ce45f5f4bc4a17e22'],
+  ['assets/blog/europe-bike-delivery-1600.webp', '4ec87a888ab899abd5acf2fe861510d87ee441ab16c7232bb9f3047fbfaf4e92'],
+  ['assets/blog/europe-bike-delivery-1200.jpg', 'a4a2a0512b51059054320666a11bc19b382c907d60e81637ed11a9a4c8680502'],
+  ['assets/blog/north-america-bike-delivery-640.webp', '77d5e00913d8ed283de62050e8c193771f32d27c914c7ff5676fb3b94b7357ac'],
+  ['assets/blog/north-america-bike-delivery-1600.webp', '675e9ac5c2f47c3000005f5431ebfb1063240485b894dd023aa1353849015849'],
+  ['assets/blog/north-america-bike-delivery-1200.jpg', 'ac41f8ccbeb2b54d3fc4f3a24880dc6ef1ec20fec05c4633a2f57664085acd67'],
   ['assets/blog/cycling-guides-banner-scene-v2-640.webp', 'eb8f02e079677678a0c49589f7f15654a549b3e3e7dfbcb79ccc5fbff4e59eff'],
   ['assets/blog/cycling-guides-banner-scene-v2-1600.webp', '01a3fbcf0274e387bded7f6fe8621df50ca29a2fc90d77b29ee5899aa89c849d'],
   ['assets/blog/cycling-guides-banner-scene-v2-1200.jpg', 'f60e4c63aaa44f9f7a3f9461e74da7b3d5c13415f52ab7d8a424d9f76c3b9783'],
