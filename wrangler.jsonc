@@ -6,6 +6,9 @@
   "account_id": "0317b000520a8e6b237de500c592d67a",
   "workers_dev": false,
   "preview_urls": false,
+  "routes": [
+    { "pattern": "china-bikes.p0s.eu", "custom_domain": true }
+  ],
   "build": {
     "command": "npm run build:cloudflare"
   },
