@@ -10,6 +10,7 @@ Improve useful existing explanations; do not replace them merely to make an arti
 - Use short descriptive headings, readable paragraphs and lists for actual steps or parallel choices.
 - Keep a little personality when it makes a point memorable. Do not invent riding experience, test results, failures or expertise.
 - Keep material qualifications beside the relevant claim. Consolidate general methodology and link to the full source records.
+- Keep articles free of fold-out source, price and weight panels. Use concise visible context and links to model records for the full detail.
 - Distinguish complete totals, planning allowances and partial subtotals. Missing costs never become zero.
 - Give readers a useful next step with a descriptive link to the exact model, comparison or build.
 - Edit English and Chinese for natural reading while preserving equivalent facts and section anchors.
