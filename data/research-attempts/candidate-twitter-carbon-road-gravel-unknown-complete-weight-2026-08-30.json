@@ -488,8 +488,10 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21",
-    "twitter-v3-rs-factory-store-2026-08-28"
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. The superseded 2024 alloy selection is claimed at 9.9 kg while the current T47 size-50 no-pedal build is claimed at 9.6 kg. The retained generation is unresolved, so no value is selected."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. The superseded 2024 alloy selection is claimed at 9.9 kg while the current T47 size-50 no-pedal build is claimed at 9.6 kg. The retained generation is unresolved, so no value is selected. Supplemental 2026-09-22 review: current 25yr manufacturer table gives T47 and 9.9 kg, while the storefront gives BB86, 9.6 kg and 45C. The former T47 attribution for the storefront reference is corrected. See docs/research-batches/2026-09-22/luna-followup-04-results.json; all historical attempts and dates are preserved."
 }

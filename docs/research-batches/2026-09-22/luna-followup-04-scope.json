@@ -1,0 +1,110 @@
+{
+  "batch_id": "luna-followup-04-2026-09-22",
+  "base_commit": "96dabd57ece6c2788fea4c6935c030f6f66d6b69",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 8,
+  "atomic_fields": 24,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-carbon-road-gravel-unknown",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked",
+        "conflicted"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-ad500-2025",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked",
+        "conflicted"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-ad7",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked",
+        "conflicted"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "winspace-t1600",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "historical_states": [
+        "conflicted"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-rs-community-lead",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-by446",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each field has attributable exact-model evidence or a precise unresolved disposition with actual routes checked and next trigger. Stop model-dependent fields when identity remains unresolved. Current exact-build references may be retained separately from an unidentified historical price; do not silently merge them.",
+  "boundaries": "No writes by researcher, children, XHS, seller messages, purchases, private data or access bypass. Existing current-session checks may be reused explicitly; no fabricated fresh reads or repeated fifty-area sweep."
+}

@@ -1,0 +1,158 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-04-2026-09-22",
+  "status": "completed-with-qualified-correction",
+  "reviewed_models": 8,
+  "reviewed_fields": 24,
+  "full_field_closures": 0,
+  "partial_fields_updated": 2,
+  "coarse_gap_count_before": 721,
+  "coarse_gap_count_after": 721,
+  "method": "Current exact-model routes and existing ledger context, preserving old attempts and dates. No new fifty-approach campaign. References remain separate from unidentified historical priced builds.",
+  "results": [
+    {
+      "candidate_id": "twitter-carbon-road-gravel-unknown",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "qualified-reference-conflict-corrected",
+      "finding": "Manufacturer 25yr RS24 alloy-wheel table gives 9.9 kg, T47 and fitted 40C. The self-described factory store gives 9.6 kg for size 50 without pedals, BB86 and a conditional 45C maximum. Both references are now attributed separately; neither identifies the retained CNY 3751 card. No controlled stiffness evidence.",
+      "sources": [
+        "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html",
+        "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike"
+      ],
+      "next_trigger": "Exact retained SKU and revision mapping; controlled stiffness result.",
+      "proof": "Worker reads plus parent direct verification of both current tables.",
+      "accepted_source_ids": [
+        "twitter-v3-25yr-manufacturer-2026-09-22",
+        "twitter-v3-25yr-store-conflict-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "xds-ad500-2025",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "Regional official AD500 page confirms 10.2 kg, X6 aluminum, ER9 hydraulic 2x12 and fitted 28C. Existing 8.9 kg and 9.23 kg reports have other bases; the CNY 4499 card remains unmapped. Fitted tires and qualitative rigidity do not establish maximum clearance or controlled stiffness.",
+      "sources": [
+        "https://xdsbicycles.com.vn/xds-ad500/",
+        "https://post.smzdm.com/p/al9k369g/",
+        "https://post.smzdm.com/zz/p/ako4o449/"
+      ],
+      "next_trigger": "Retained listing build mapping or exact measurement.",
+      "proof": "Current regional page read; first SMZDM route timed out and second supplied no readable lines. Historical reports retain original dates."
+    },
+    {
+      "candidate_id": "xds-ad7",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "Current regional AD7 listings give 8.2 kg with 25C tires or 8.5 kg at 480 mm with 30C tires, with 105 Di2 builds. None maps the retained CNY 12980 card. No exact maximum clearance or controlled stiffness measurement.",
+      "sources": [
+        "https://24h.pchome.com.tw/prod/DEAOP3-A900HRCVX",
+        "https://www.vbike.hk/index.php?product_id=1636&route=product%2Fproduct"
+      ],
+      "next_trigger": "Retained mainland build mapping and measurements.",
+      "proof": "Worker current regional listing reads; existing alternatives retained."
+    },
+    {
+      "candidate_id": "winspace-t1600",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "Current original T1600 105 Di2 page confirms R7170 hydraulic 2x12 and 8.0 kg in M without pedals. Existing Ultegra and Dura-Ace alternatives remain separate. The retained CNY 22400 observation does not select one build.",
+      "sources": [
+        "https://www.winspace.cc/products/t1600-105-di2",
+        "https://winspace.jp/collections/winspace/products/winspace-t1600"
+      ],
+      "next_trigger": "Exact priced build selection.",
+      "proof": "Worker current manufacturer and regional manufacturer reads; existing alternatives confirmed, not newly discovered."
+    },
+    {
+      "candidate_id": "pardus-spark-rs-community-lead",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "generation-unresolved",
+      "finding": "Factory Spark pages provide fitted 25C or 28C and qualitative stiffness claims, with no exact maximum clearance or controlled stiffness result. The community custom-build generation remains unmapped.",
+      "sources": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=7248&color=17540&id=27456&pz=17539&t=27444",
+        "https://www.parduscycle.com/Hightxq.aspx?cc=17548&color=17545&id=39567&pz=17542&t=27444"
+      ],
+      "next_trigger": "Owner build generation and exact clearance or controlled test.",
+      "proof": "Worker current manufacturer page reads."
+    },
+    {
+      "candidate_id": "missing-china-price-giant-tcr-advanced",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "generation-unresolved",
+      "finding": "Retained China TCR Advanced 3-GC rim-brake generation cannot inherit the 33 mm maximum in a different Taiwan disc-generation PDF. Exact weight, maximum clearance and controlled stiffness remain unavailable.",
+      "sources": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
+        "https://static.giant-bicycles.com/pdf/giant-tcr-advanced-3-zh-tw-4163.pdf",
+        "https://www.whgiant.com/article/n6iyfc01"
+      ],
+      "next_trigger": "Exact China rim-brake generation specification.",
+      "proof": "China page yielded no text; worker read different-generation PDF and comparison page. Original China-page evidence retains its old date."
+    },
+    {
+      "candidate_id": "camp-gx700-travel",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "bundle-unresolved",
+      "finding": "Base GX700 currently specifies 10.2 kg in small without pedals or small accessories, GRX RX820/RX822/RX610 1x12 hydraulic, T800 and fitted 45C. Travel bag bundle weight and selected BOM cannot be equated with the base bike. No maximum clearance or controlled stiffness result.",
+      "sources": [
+        "https://www.campbicycle.com/en/gx700.html",
+        "https://www.campbicycle.com/zh/gx700.html"
+      ],
+      "next_trigger": "Exact retained travel-bundle BOM, weighing basis and clearance specification.",
+      "proof": "Worker current manufacturer base-model reads."
+    },
+    {
+      "candidate_id": "irefox-by446",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Current IREFOX catalog does not identify BY446. Profound 2023 specifications belong to another model and were not transferred. Dependent fields stop at this identity gate.",
+      "sources": [
+        "https://irefox.net/cn/",
+        "https://www.biketo.com/product/52110.html?all=1",
+        "https://www.irefox.cn/"
+      ],
+      "next_trigger": "Exact BY446 manufacturer or listing identity.",
+      "proof": "Worker current catalog and other-model article reads; irefox.cn timed out."
+    }
+  ],
+  "continuation": "All-remaining request remains active. A separate two-field correction addresses the same V3 source conflict in the published variant.",
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128
+  }
+}
