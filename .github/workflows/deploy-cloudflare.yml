@@ -14,6 +14,9 @@ concurrency:
 
 jobs:
   deploy:
+    # Enable only after the dedicated deployment credential is configured.
+    # Local Wrangler remains the documented deployment path until then.
+    if: vars.CLOUDFLARE_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -30,4 +33,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: REDACTED_CLOUDFLARE_ACCOUNT_ID
+          wranglerVersion: '4.135.0'
           command: deploy

@@ -11,8 +11,12 @@ The build used by Wrangler is `npm run build:cloudflare`; it clears the
 GitHub-project base path and sets `https://china-bikes.p0s.eu` as the canonical
 origin. Use `npm run check` before a deployment, or `npm run deploy:cloudflare`
 with an authenticated Wrangler session. The repository workflow uses the
-`CLOUDFLARE_API_TOKEN` GitHub secret and the account ID in `wrangler.jsonc`;
-neither value is embedded in browser assets.
+`CLOUDFLARE_API_TOKEN` GitHub secret and the account ID in `wrangler.jsonc`.
+Its deployment job stays explicitly skipped until the repository variable
+`CLOUDFLARE_DEPLOY_ENABLED=true` is set after the dedicated token is installed.
+Until then, deploy through the existing authenticated local Wrangler session.
+The workflow pins Wrangler 4.135.0. The token never enters browser assets.
+The checked-in custom-domain route binds only `china-bikes.p0s.eu`.
 
 Configure these Worker secrets in Cloudflare after the backend is ready:
 

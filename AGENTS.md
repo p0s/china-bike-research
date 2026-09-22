@@ -12,7 +12,7 @@ User instructions override this file. `SPEC.md` overrides incidental existing be
 
 - `p0s/china-bike-research` is a public GitHub repository. Do not assume private visibility or use tooling restricted to private repositories.
 - Never push directly to `origin/main`; direct pushes to remote `main` are prohibited even if the active credentials technically permit them.
-- Put changes on a feature branch, push that branch, open a pull request to `main`, wait for required checks, and merge through the pull request. Cloudflare Workers Static Assets deploys from `main` after the merge; production secrets and the custom-domain route stay in Cloudflare.
+- Put changes on a feature branch, push that branch, open a pull request to `main`, wait for required checks, and merge through the pull request. Deploy the merged source to Cloudflare Workers Static Assets. Production secrets stay in Cloudflare; the canonical custom-domain route is checked in. GitHub deployment stays disabled until its dedicated token and enable variable are configured; authenticated local Wrangler is the initial deployment path.
 
 ## Task boundaries
 
