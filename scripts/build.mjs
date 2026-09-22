@@ -1,3 +1,6 @@
+import { loadPosts, validatePostReferences, renderBlogIndex, renderPost, postLastmod } from '../src/lib/posts.mjs';
+import { LOCALES, localePath } from '../src/lib/i18n.mjs';
+import { candidateIndexable } from '../src/lib/indexing.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { csvCell, booleanCell } from '../src/lib/csv.mjs';
@@ -70,6 +73,8 @@ if (errors.length) {
 }
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
+const posts = loadPosts(root);
+validatePostReferences(posts, data, products);
 const siteLastmod = latestDate([
   data.meta.snapshot_date,
   data.brands.map((item) => item.last_reviewed),
@@ -98,6 +103,9 @@ const landings = buildLandingPages({ products });
 const ctx = {
   data,
   products,
+  catalogCandidates: candidates,
+  posts,
+  googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION ?? '',
   base,
   siteUrl,
   repositoryUrl,
@@ -122,22 +130,30 @@ function add(route, html, includeInSitemap = true, metadata = {}) {
   pages.set(route, { file, includeInSitemap, ...metadata });
 }
 
-// Preserve newlines (including inline-element spacing), but omit indentation
-// before tags. This does not remove elements or alter JSON/script contents.
-add('/', renderHome(ctx).replace(/\n[ \t]+(?=<)/g, '\n'), true, { lastmod: siteLastmod });
+// English routes stay unchanged. Chinese is rendered at build time, not translated
+// after load; navigation and assets remain valid under a GitHub project base path.
+function addLocalized(route, render, includeInSitemap = true, metadata = {}) {
+  for (const locale of LOCALES) {
+    const localized = { ...ctx, locale };
+    let html = render(localized);
+    if (route === '/') html = html.replace(/\n[ \t]+(?=<)/g, '\n');
+    add(localePath(route, locale), html, includeInSitemap, { ...metadata, ...(locale === 'zh-Hans' && includeInSitemap ? { lastmod: latestDate([metadata.lastmod, '2026-09-22'], '2026-09-22') } : {}), locale, translationOf: route });
+  }
+}
+addLocalized('/', renderHome, true, { lastmod: latestDate([siteLastmod, '2026-09-22'], siteLastmod) });
 for (const landing of landings.pages) {
   const lastmod = landingLastmod(landing);
-  add(landing.route, renderLandingPage(ctx, { ...landing, lastmod }), true, { lastmod });
+  addLocalized(landing.route, (localized) => renderLandingPage(localized, { ...landing, lastmod }), true, { lastmod });
 }
-for (const product of products) add(`/models/${product.variant.id}/`, renderModel(ctx, product), true, { lastmod: productLastmod(product) });
-for (const candidate of candidates) add(`/models/${candidate.candidate.id}/`, renderCandidateModel(ctx, candidate), candidate.defaultVisible, { lastmod: candidateLastmod(candidate) });
-add('/methodology/', renderMethodology(ctx), true, { lastmod: siteLastmod });
-add('/build/', renderBikeBuilder(ctx), true, { lastmod: siteLastmod });
-add('/electronic-shifting/', renderElectronicGroupsets(ctx), true, { lastmod: siteLastmod });
-add('/privacy/', renderPrivacy(ctx), true, { lastmod: siteLastmod });
-add('/image-policy/', renderImagePolicy(ctx), true, { lastmod: siteLastmod });
-add('/image-sources/', renderImageSources(ctx), true, { lastmod: siteLastmod });
-add('/404.html', render404(ctx), false);
+for (const product of products) addLocalized(`/models/${product.variant.id}/`, (localized) => renderModel(localized, product), true, { lastmod: productLastmod(product) });
+for (const candidate of candidates) addLocalized(`/models/${candidate.candidate.id}/`, (localized) => renderCandidateModel(localized, candidate), candidateIndexable(candidate), { lastmod: candidateLastmod(candidate) });
+for (const [route, render] of [
+  ['/methodology/', renderMethodology], ['/build/', renderBikeBuilder], ['/electronic-shifting/', renderElectronicGroupsets],
+  ['/privacy/', renderPrivacy], ['/image-policy/', renderImagePolicy], ['/image-sources/', renderImageSources]
+]) addLocalized(route, render, true, { lastmod: siteLastmod });
+addLocalized('/blog/', (localized) => renderBlogIndex(localized, posts), true, { lastmod: latestDate(posts.map((post) => postLastmod(ctx, post)), siteLastmod) });
+for (const post of posts) addLocalized(`/blog/${post.slug}/`, (localized) => renderPost(localized, post, posts), true, { lastmod: postLastmod(ctx, post) });
+addLocalized('/404.html', render404, false);
 
 const catalog = {
   generated_at: new Date().toISOString(),
@@ -228,7 +244,11 @@ write('build-manifest.json', `${JSON.stringify({
     videos: data.videos.length,
     groupsets: data.groupsets.length,
     build_parts: data.buildParts.length,
-    pages: pages.size
+    pages: pages.size,
+    locales: LOCALES.length,
+    articles: posts.length,
+    indexable_pages: [...pages.values()].filter((page) => page.includeInSitemap).length,
+    noindex_pages: [...pages.values()].filter((page) => !page.includeInSitemap).length
   },
   performance,
   performance_budget: performanceBudget

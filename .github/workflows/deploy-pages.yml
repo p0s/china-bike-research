@@ -27,6 +27,7 @@ jobs:
         uses: actions/configure-pages@v6
       - name: Validate and build
         env:
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
           PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}
         run: npm run check
