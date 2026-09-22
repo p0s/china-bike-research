@@ -1002,12 +1002,14 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .article-card h2{margin:1rem 0 .5rem}
 .editorial-figure{margin:2rem 0}
 .article-card-image{margin:0}
+.illustrated-header a{display:block}
+.illustrated-header img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+.illustrated-header[hidden]{display:none}
 .blog-photo-scene{display:grid;grid-template-columns:minmax(0,1fr) 18%;align-items:end;gap:1%;padding:1rem;background:#fff;border:1px solid var(--line,#ddd);border-radius:4px;aspect-ratio:16/9;overflow:hidden}
 .blog-photo-scene .blog-bike-photo{display:block;width:100%;height:100%;min-height:0;object-fit:contain;align-self:center}
 .blog-photo-scene .blog-mascot{display:block;width:100%;height:auto;max-height:72%;object-fit:contain}
 .blog-photo-scene img[hidden]{display:none}
 .blog-photo-scene.is-unavailable{display:none}
-.blog-banner .blog-photo-scene{aspect-ratio:21/9;grid-template-columns:minmax(0,1fr) 15%}
 .editorial-figure figcaption{margin-top:.65rem;color:var(--muted);font-size:.75rem;line-height:1.55}
 .editorial-figure figcaption strong{color:var(--text);font-weight:600}
 .editorial-figure figcaption a{color:inherit;text-decoration-thickness:1px}
@@ -1015,7 +1017,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .blog-model-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin:1.8rem 0}
 .blog-model-photo{margin:0;min-width:0}
 .blog-model-photo .blog-photo-scene{aspect-ratio:4/3;grid-template-columns:minmax(0,1fr) 14%;padding:.6rem}
-@media(max-width:760px){.blog-model-photos{grid-template-columns:1fr}.blog-photo-scene{padding:.5rem}.blog-banner .blog-photo-scene{aspect-ratio:16/9}}
+@media(max-width:760px){.blog-model-photos{grid-template-columns:1fr}.blog-photo-scene{padding:.5rem}}
 .buyer-article{max-width:960px}.buyer-article>header h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.18}.buyer-article section{scroll-margin-top:6rem;margin-top:2.2rem}.buyer-article p{line-height:1.85}.buyer-article h2{line-height:1.4}
 .article-toc{padding:1rem 1.3rem;border-inline-start:3px solid currentColor;margin:2rem 0}.article-toc ol{padding-inline-start:1.3rem}.article-toc li{margin:.45rem 0}
 .article-table-wrap{overflow-x:auto;max-width:100%;margin:1.4rem 0;border:1px solid var(--line,#ddd);border-radius:.35rem}.article-table-wrap:focus-visible{outline:2px solid currentColor}

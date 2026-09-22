@@ -129,21 +129,24 @@ test('gravel evidence table derives the exact recorded price and date, never tod
   assert.ok(!table.includes('2026-09-18'));
 });
 
-test('mascot assets have generation provenance and immutable optimized local files', () => {
+test('mascot cutouts and illustrated headers have provenance and immutable optimized files', () => {
   assert.equal(editorialImages.length, 5);
   assert.equal(new Set(editorialImages.map((image) => image.id)).size, 5);
   for (const image of editorialImages) {
     assert.equal(image.source.kind, 'project-generated');
     assert.ok(image.alt.en && image.alt['zh-Hans'] && image.prompt);
     assert.deepEqual(image.files.map((file) => file.purpose), ['mascot']);
-    resolveBlogPhoto(ctx, image.photo_id);
-    for (const file of image.files) {
-      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+-mascot-480\.webp$/);
+    assert.equal(image.header.source.kind, 'project-generated');
+    assert.ok(image.header.prompt && image.header.alt.en && image.header.alt['zh-Hans']);
+    assert.match(image.header.alt.en, /red panda/);
+    assert.deepEqual(image.header.files.map((file) => file.purpose), ['card', 'hero', 'social']);
+    for (const file of [...image.files, ...image.header.files]) {
+      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+\.(webp|jpg)$/);
       const bytes = fs.readFileSync(new URL('..' + file.path, import.meta.url));
       assert.equal(bytes.length, file.bytes);
       assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), file.sha256);
-      assert.ok(file.bytes < 70000);
-      assert.equal(file.width, 480);
+      assert.ok(file.bytes < (['mascot', 'card'].includes(file.purpose) ? 70000 : 300000));
+      assert.equal(file.width, {mascot:480,card:640,hero:1600,social:1200}[file.purpose]);
       assert.ok(file.height > 0);
     }
   }
@@ -166,29 +169,35 @@ test('every referenced model has an attributable remote photo and shared trims a
   assert.throws(() => postPhotos({model_ids:['unmapped-model']}));
   assert.throws(() => resolveBlogPhoto({...ctx,data:{...data,images:[]}}, blogPhotos[0].id));
 });
-for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`blog real photos, inline figures and mascot paths: ${base || '/'} ${locale}`, () => {
+for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`illustrated headers and real inline model photos stay distinct: ${base || '/'} ${locale}`, () => {
   const options = { ...ctx, base, locale };
   const index = renderBlogIndex(options, posts);
-  assert.equal((index.match(/data-blog-bike-image/g) || []).length, 5);
-  assert.equal((index.match(/data-blog-mascot/g) || []).length, 5);
-  assert.ok(index.includes('class="editorial-figure blog-banner"'));
+  assert.equal((index.match(/data-blog-header-image/g) || []).length, 5);
+  assert.equal((index.match(/data-blog-bike-image/g) || []).length, 0);
+  assert.equal((index.match(/data-blog-mascot/g) || []).length, 0);
+  assert.ok(index.includes('class="editorial-figure illustrated-header blog-banner"'));
   assert.ok(!index.includes('/zh/assets/'));
   for (const post of posts) {
     const html = renderPost(options, post, posts);
     const image = editorialImages.find((item) => item.id === post.image_id);
-    const photo = resolveBlogPhoto(options, image.photo_id);
-    const expected = photo.image.hosting.remote_url;
+    const hero = image.header.files.find((file) => file.purpose === 'hero');
+    const social = image.header.files.find((file) => file.purpose === 'social');
+    const expected = siteUrl + base + social.path;
     const schema = schemas(html).find((item) => item['@type'] === 'BlogPosting');
     assert.equal(schema.image, expected);
     assert.ok(html.includes(`property="og:image" content="${escapeAttr(expected)}"`));
     assert.ok(html.includes(`name="twitter:image" content="${escapeAttr(expected)}"`));
     assert.ok(html.includes(`src="${base}${image.files[0].path}"`));
-    assert.ok(html.includes(`alt="${escapeAttr(photo.alt[locale])}"`));
+    assert.ok(html.includes(`src="${base}${hero.path}"`));
+    assert.ok(html.includes(`alt="${escapeAttr(image.header.alt[locale])}"`));
     assert.ok(html.includes('fetchpriority="high"'));
     assert.ok(!/AI-generated illustration|AI 生成插图/.test(html));
     assert.ok(!html.includes('/zh/assets/'));
     assert.ok(!html.includes('class="section-label"'));
-    assert.equal((html.match(/data-blog-bike-image/g) || []).length, 1 + postPhotos(post).length);
+    assert.equal((html.match(/data-blog-header-image/g) || []).length, 1);
+    assert.equal((html.match(/data-blog-bike-image/g) || []).length, postPhotos(post).length);
+    const cover = html.match(/<figure class="editorial-figure illustrated-header article-cover">([\s\S]*?)<\/figure>/)?.[1];
+    assert.ok(cover && !/data-blog-bike-image|data-blog-mascot|figcaption/.test(cover));
     const body = html.slice(html.indexOf('class="blog-model-photos"'));
     for (const item of postPhotos(post)) {
       const resolved = resolveBlogPhoto(options, item.id);
