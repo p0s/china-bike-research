@@ -1,0 +1,117 @@
+{
+  "batch_id": "luna-followup-06-2026-09-22",
+  "base_commit": "7e0f45e64186b99dc9155b5c2bfb78c5d97bf379",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 9,
+  "atomic_fields": 25,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-team-road",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "basso-venta-disc",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-idol",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "falco-t91-t912",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "frrx-carbon-road-unknown",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gios-aerolite",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-aero-entry",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-plus",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field gets attributable evidence or a precise unresolved disposition with actual checked routes and next trigger. Stop dependent fields at unresolved identity and stop at decisive evidence.",
+  "boundaries": "No worker writes, children, XHS, messages, purchases, private data or access bypass. Preserve old source/price dates; state reused evidence explicitly."
+}

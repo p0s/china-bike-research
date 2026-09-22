@@ -156,7 +156,7 @@
       ]
     },
     "web": {
-      "status": "temporarily-exhausted",
+      "status": "conflicted",
       "attempts": [
         {
           "attempt": 1,
@@ -483,11 +483,16 @@
           "accessed_at": "2026-08-29",
           "note": "An exact or directly attributable BASSO Venta Disc result was checked in this area. This area was checked specifically for tire-clearance; it did not establish an additional acceptable value for this field."
         }
-      ]
+      ],
+      "conflict": "Current supplemental evidence conflicts: exact review 32 mm, reported manufacturer reply 28 mm, specialist support maximum unpublished and 32 mm theoretical."
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "basso-venta-disc-review-clearance-2026-09-22",
+    "basso-venta-disc-owner-clearance-conflict-2026-09-22",
+    "basso-venta-disc-retailer-clearance-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. Exact references show fitted 28 mm tires and one owner reports a 28 mm manufacturer answer, but no directly attributable primary maximum statement was found."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. Exact references show fitted 28 mm tires and one owner reports a 28 mm manufacturer answer, but no directly attributable primary maximum statement was found. Supplemental September 22 review, recorded in luna-followup-06-results.json, preserves all original attempts and dates; the gap is now explicitly conflicted. No safe numeric maximum inferred."
 }
