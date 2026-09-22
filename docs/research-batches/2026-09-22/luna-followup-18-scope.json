@@ -1,0 +1,111 @@
+{
+  "batch_id": "luna-followup-18-2026-09-22",
+  "base_commit": "cb4eceefb557682ee5468501dfc82262f1e438d4",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 10,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "sunpeed-victory-e-2026",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sunpeed-wudi-e-2026",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-cyclone-r7120",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t10-pro",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt350",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt600",
+      "fields": [
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-frameset",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-tr-one",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "rinasclta-gr025",
+      "fields": [
+        "geometry"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-aero-one",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}
