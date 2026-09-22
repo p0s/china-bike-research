@@ -950,7 +950,7 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
   assert.equal(trek.official_price.amount_cny, 21800);
   assert.equal(trek.facts.complete_weight_g, 8700);
   assert.match(trek.facts.complete_weight_basis, /stock Madone SL 5 Gen 8/);
-  assert.match(trek.facts.frame_stiffness_status, /No exact SL 5 numeric.*50 registered source areas/);
+  assert.match(trek.facts.frame_stiffness_status, /Qualitative ride evidence.*no numeric frame-only measurement is recorded/);
 
   const winspace = candidates.get('missing-china-price-winspace-slc3');
   assert.equal(winspace.facts.frame_weight_g, 699);
@@ -991,6 +991,7 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
     'candidate:missing-china-price-merida-scultura:frame-stiffness',
     'candidate:missing-china-price-trek-madone-gen-8:price',
     'candidate:missing-china-price-trek-madone-gen-8:complete-weight',
+    'candidate:missing-china-price-trek-madone-gen-8:frame-stiffness',
     'candidate:missing-china-price-winspace-slc3:frame-weight',
     'candidate:missing-china-price-winspace-slc3:frame-stiffness',
     'candidate:twitter-cyclone-r7120:frame-material',

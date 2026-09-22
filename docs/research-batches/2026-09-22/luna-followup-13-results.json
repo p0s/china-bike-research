@@ -1,0 +1,170 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-13-2026-09-22",
+  "status": "completed-with-one-qualitative-field-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 11,
+  "full_field_closures": 1,
+  "catalog_changes": 1,
+  "coarse_gap_count_before": 721,
+  "coarse_gap_count_after": 720,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-sport-pes",
+      "outcome": "community-clearance-reference-unconfirmed",
+      "finding": "Public shop video claims40C front/32C rear for SparkSport3PES. This fit claim lacks independent corroboration and manufacturer confirmation; no scalar adopted. Official105 page lists fitted28C only.",
+      "sources": [
+        "https://www.douyin.com/shipin/7369966433402406963",
+        "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444",
+        "https://post.smzdm.com/p/ae6nz3ez/"
+      ],
+      "proof": "Worker current public transcript and platform/owner reads; platform105 build differs from target PES. Community claim remains dated research reference.",
+      "next_trigger": "Exact-generation manufacturer maximum or corroborated controlled exact-PES fit evidence.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-cyclone-gen3-7170",
+      "outcome": "maximum-unresolved-different-trim",
+      "finding": "Regional distributor R7120 page lists fitted28C, no maximum. It is not the retained R7170 trim; no exact specification transferred.",
+      "sources": [
+        "https://twitterbikeusa.com/products/cyclone-3rd-r7120-small"
+      ],
+      "proof": "Worker full current regional page read; parent corrected manufacturer classification to distributor and noted R7120/R7170 mismatch.",
+      "next_trigger": "Exact R7170 maximum-width statement or controlled fit evidence.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r9-2025",
+      "outcome": "generation-gated-weight-and-stiffness",
+      "finding": "Historical R9 page110 states1730g with size/finish/hardware unspecified; current2025 page174 does not expose mass. Generation bridge unproven, so no scalar added. Construction claims do not establish meaningful stiffness evidence.",
+      "sources": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/110.html",
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "proof": "Reused2026-08-29 manufacturer source; current174 search read only, direct403. Parent inspected both retained records and declined cross-generation transfer.",
+      "next_trigger": "Source bridging page110 frame to2025 page174; meaningful exact-model stiffness evidence.",
+      "fields": [
+        "frame-weight",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcg074-d",
+      "outcome": "stale-regional-price-reference",
+      "finding": "MyBike listsEUR650 for integrated-cockpit LCG074-D with a five-month-old price check; current package/shipping/checkout unestablished. Official page quote-only. No China price added.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-gravel-frameset-micro-suspension-pivot-design-with-integrated-handlebar_p254.html",
+        "https://mybike.parts/bike_parts/995-lightcarbon-lcg074-d-gravel-micro-suspension"
+      ],
+      "proof": "Worker current official/aggregator reads; aggregator freshness label retained, not converted to a fabricated observation date.",
+      "next_trigger": "Dated exact direct quote or mainland checkout with package/shipping basis.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcg074s-d",
+      "outcome": "stale-regional-price-reference",
+      "finding": "MyBike showsEUR650 plusEUR173 shipping for separate-stem reference with five-month-old check. Exact current package/mainland checkout unresolved; official page quote-only.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-gravel-frameset-micro-suspension-pivot-design-with-stem_p255.html",
+        "https://mybike.parts/bike_parts/995-lightcarbon-lcg074-d-gravel-micro-suspension"
+      ],
+      "proof": "Worker current exact manufacturer and shared aggregator reads; no dated direct transaction established.",
+      "next_trigger": "Dated exact stem-package quote or mainland checkout.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcg087-d",
+      "outcome": "indicative-catalog-price-only",
+      "finding": "Bikkerr exact LCG087-D catalog showsGBP500 and model2024. It is not a seller checkout; official page quote-only. No current China price scalar adopted.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-gravel-frameset-with-micro-suspension-downtube-storage-plus-handlebar_p243.html",
+        "https://bikkerr.com/frame/lightcarbon-gravel-frameset-with-downtube-storage-lcg087-d/"
+      ],
+      "proof": "Worker current full manufacturer and catalog reads.",
+      "next_trigger": "Dated direct quote or exact seller checkout with package/shipping.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcg087s-d",
+      "outcome": "price-unresolved",
+      "finding": "Exact stem-package official page remains quote-only. Other LightCarbon package prices not transferred.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-gravel-frameset-with-micro-suspension-downtube-storage-plus-stem_p245.html"
+      ],
+      "proof": "Worker current full/search manufacturer read; no attributable exact price.",
+      "next_trigger": "Exact dated LCG087S-D quote or checkout.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr020-d",
+      "outcome": "public-quote-reference-conflicted",
+      "finding": "Aggregator reproducesUSD869 black-matte,USD1069 standard andUSD1169 custom-finish quotes, alongside earlierUSD799/HBR17 andUSD869/HBR20 package discussion. Quote/revision/preorder context unsettled; no selected current China price.",
+      "sources": [
+        "https://de.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V1.pdf",
+        "https://www.lightcarbon.com/lightcarbon-super-aero-road-frame-lcr020-d_p257.html",
+        "https://mybike.parts/bike_parts/1719-lightcarbon-lcr020-super-aero-race"
+      ],
+      "proof": "Worker current manufacturer/catalog and aggregator reads; representative forum quotes are secondary reproductions, not direct checkout evidence.",
+      "next_trigger": "Dated direct quote for one exact package/finish and availability.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-crux",
+      "outcome": "regional-price-only",
+      "finding": "Japan exact CruxComp page listsJPY495000; corresponding China route exposes no CNY amount. Regional price remains research reference; no China price added.",
+      "sources": [
+        "https://www.specialized.com/jp/ja/crux-comp/p/4223483",
+        "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+      ],
+      "proof": "Worker exact regional full read and title-only China page.",
+      "next_trigger": "Current mainland price/stock/checkout for exact linked product.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "outcome": "qualitative-stiffness-accepted",
+      "finding": "Named editorial reviewer reports responsive climbing and efficient sprint power transfer after a stated month on SL5Gen8. Qualified subjective whole-bike evidence accepted; no controlled numeric result. Affiliate disclosure and manufacturer images noted; riding duration not independently verified.",
+      "sources": [
+        "https://mh.co.za/tried-tested-trek-madone-sl-5-gen-8-the-fastest-road-bike-yet/",
+        "https://www.trekbikes.com/cn/zh_CN/%E8%87%AA%E8%A1%8C%E8%BD%A6/%E5%85%AC%E8%B7%AF%E8%87%AA%E8%A1%8C%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%AC%E8%B7%AF%E8%BD%A6/madone/madone-sl/madone-sl-5-gen-8/p/57653/"
+      ],
+      "proof": "Worker and parent current full editorial body read; official route redirects to family. Historical price/spec dates retained; original50-area history preserved through source-reuse resolution.",
+      "next_trigger": "Numeric controlled testing only if later needed; current qualitative field resolved.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "validate": "passed",
+    "coverage_accept": "passed",
+    "full_gate": "Passed:304tests,584pages,SEO456indexable/128noindex."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
