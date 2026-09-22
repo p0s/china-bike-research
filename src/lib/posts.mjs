@@ -2,10 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { escapeHtml, escapeAttr, url, layout } from './html.mjs';
-import { formatPrice, formatAllInPrice, clearanceLongLabel, joinCatalogCandidates } from './data.mjs';
-import { translate } from '../../assets/i18n.js';
+import { renderEvidenceTable, renderBuildExample } from './post-comparisons.mjs';
 import { collectionStructuredData, latestDate } from './seo.mjs';
 import { editorialImage, editorialImageMeta, renderEditorialImage, renderPostPhotos, postPhotos } from './editorial-images.mjs';
+export { renderEvidenceTable } from './post-comparisons.mjs';
 
 export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url))) {
   const directory = path.join(root, 'content/posts');
@@ -23,8 +23,20 @@ export function loadPosts(root = fileURLToPath(new URL('../..', import.meta.url)
       if (!copy?.title || !copy.description || !copy.intro || copy.sections?.length < 3) throw new Error(`Incomplete ${locale} article: ${post.slug}`);
       if (new Set(copy.sections.map((section) => section.id)).size !== copy.sections.length) throw new Error(`Duplicate section ID: ${post.slug}`);
       if (!copy.sections.every((section) => /^[a-z0-9-]+$/.test(section.id) && section.heading && section.paragraphs?.length)) throw new Error(`Invalid section: ${post.slug}`);
+      if (!post.model_ids.every((id) => typeof copy.table_notes?.[id] === 'string' && copy.table_notes[id])) throw new Error(`Missing comparison context: ${post.slug}`);
+      for (const section of copy.sections) {
+        if (section.bullets && (!Array.isArray(section.bullets) || !section.bullets.every((item) => typeof item === 'string' && item))) throw new Error(`Invalid article list: ${post.slug}`);
+        if (section.worksheet && (!section.worksheet.caption || !Array.isArray(section.worksheet.columns) || !section.worksheet.columns.every((cell) => typeof cell === 'string' && cell) || !section.worksheet.rows?.length || !section.worksheet.rows.every((row) => row.length === section.worksheet.columns.length && row.every((cell) => typeof cell === 'string')))) throw new Error(`Invalid worksheet: ${post.slug}`);
+      }
     }
     if (post.translations.en.sections.map((s) => s.id).join() !== post.translations['zh-Hans'].sections.map((s) => s.id).join()) throw new Error(`Unpaired sections: ${post.slug}`);
+    const sections = new Set(post.translations.en.sections.map((section) => section.id));
+    if (!['gravel', 'clearance', 'build', 'price-basis'].includes(post.comparison?.kind) || !sections.has(post.comparison.section_id)) throw new Error(`Invalid comparison placement: ${post.slug}`);
+    const placements = post.photo_sections ?? [];
+    const placed = placements.flatMap((placement) => placement.ids);
+    const expected = postPhotos(post).map((photo) => photo.id);
+    if (placements.some((placement) => !sections.has(placement.section_id)) || new Set(placed).size !== placed.length || placed.length !== expected.length || placed.some((id) => !expected.includes(id))) throw new Error(`Invalid photo placement: ${post.slug}`);
+    if (post.example && (post.example.kind !== 'build-budget' || !sections.has(post.example.section_id) || !post.model_ids.includes('incolor-voyager-frameset'))) throw new Error(`Invalid worked example: ${post.slug}`);
   }
   return posts;
 }
@@ -51,32 +63,15 @@ function inline(value, ctx) {
 }
 function copyFor(post, ctx) { return post.translations[ctx.locale ?? 'en']; }
 function bilingual(ctx, en, zh) { return ctx.locale === 'zh-Hans' ? zh : en; }
-function getModel(ctx, id) {
-  const product = ctx.products.find((p) => p.variant.id === id);
-  if (product) return { product, name: `${product.brand.name} ${product.variant.name}`, kind: product.variant.kind, price: product.latestPrice, clearance: clearanceLongLabel(product.platform), sources: product.sources };
-  const candidate = (ctx.catalogCandidates ?? joinCatalogCandidates(ctx.data)).find((c) => c.candidate.id === id);
-  if (!candidate) throw new Error(`Unresolved article model ${id}`);
-  const facts = candidate.candidate.facts ?? {};
-  const limits = facts.tire_clearance_drivetrain_limits_mm;
-  const clearance = limits ? `${limits.single ?? '—'}/${limits.double ?? '—'} mm (1×/2×)` : facts.tire_clearance_mm ? `${facts.tire_clearance_mm} mm` : '—';
-  return { candidate, name: candidate.candidate.name, kind: candidate.kind, price: candidate.price, clearance, sources: candidate.sources };
-}
-export function renderEvidenceTable(ctx, post) {
-  const t = (en, zh) => bilingual(ctx, en, zh);
-  const rows = post.model_ids.map((id) => {
-    const model = getModel(ctx, id);
-    const price = model.price;
-    const basis = price?.price_type ?? price?.price_basis ?? 'Not recorded';
-    const frameEstimate = model.kind === 'frameset' && model.product ? formatAllInPrice(model.product) : '';
-    const condition = price?.conditions || price?.price_basis || '';
-    return `<tr><th scope="row"><a href="${url(ctx.base, `/models/${id}/`)}">${escapeHtml(model.name)}</a>${model.candidate ? `<small>${t('Research-stage profile', '研究阶段资料')}</small>` : ''}</th><td>${model.kind === 'frameset' ? t('Frame package', '车架套餐') : t('Complete bike', '整车')}</td><td>${escapeHtml(formatPrice(price))}${frameEstimate ? `<small>${t('Build estimate:', '装车估算：')} ${escapeHtml(frameEstimate)}</small>` : ''}</td><td>${price?.observed_at ? `<time datetime="${escapeAttr(price.observed_at)}">${escapeHtml(price.observed_at)}</time>` : t('Not recorded', '暂无记录')}</td><td>${escapeHtml(translate(basis, ctx.locale))}${condition ? `<details class="price-conditions"><summary>${t('Original price conditions', '原始价格条件')}</summary><p lang="en" data-original-language>${escapeHtml(condition)}</p></details>` : ''}</td><td>${escapeHtml(model.clearance)}</td><td><a href="${url(ctx.base, `/models/${id}/`)}#source-records">${t('Evidence', '证据')}</a></td></tr>`;
-  }).join('');
-  return `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${t('Dated model comparison', '有日期的车型对比')}"><table class="article-table"><caption>${t('Catalog evidence; prices are not live offers', '目录证据；价格不是实时报价')}</caption><thead><tr>${[t('Exact model', '具体车型'), t('Package', '价格对象'), t('Recorded CNY price', '人民币价格记录'), t('Observed', '观察日期'), t('Basis / conditions', '依据／条件'), t('Recorded clearance', '轮胎空间记录'), t('Sources', '来源')].map((label) => `<th scope="col">${label}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div><p class="article-note">${t(`Frame-build estimates use the catalog’s reviewed ¥${ctx.data.meta.frameset_build_assumption.amount_cny.toLocaleString('en-US')} remaining-build allowance. A frame price is not a complete-bike price.`, `车架装车估算使用目录已复核的 ${ctx.data.meta.frameset_build_assumption.amount_cny.toLocaleString('en-US')} 元剩余装车预算。车架价不是整车价。`)}</p>`;
-}
 function sourceList(ctx, post) {
   const t = (en, zh) => bilingual(ctx, en, zh);
   const sources = post.source_ids.map((id) => ctx.data.sources.find((s) => s.id === id));
-  return `<section class="article-sources" id="article-sources"><h2>${t('Sources and research limits', '来源与研究边界')}</h2><p>${t('The linked model records are the evidence trail for the comparison table. Original sources below retain their recorded access dates; they were not all revisited for this article. Archived observations without public URLs are identified rather than replaced with invented links.', '表格中的车型记录构成证据链。下方原始来源保留记录中的访问日期；撰写本文时并未全部重新访问。没有公开网址的归档观察会明确说明，不虚构链接。')}</p>${sources.length ? `<ul>${sources.map((source) => `<li>${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<span>${escapeHtml(source.title)} (${t('archived observation; no public URL', '归档观察；无公开网址')})</span>`} · <time datetime="${escapeAttr(source.accessed_at)}">${escapeHtml(source.accessed_at)}</time></li>`).join('')}</ul>` : ''}<p>${t('Source-led desk research and AI-assisted synthesis/translation by China Bikes; not a hands-on product review. No new manufacturer testing, stock check or checkout verification is claimed. Corrections should identify the exact model and a source.', 'China Bikes 基于已有证据整理资料，并使用 AI 辅助归纳与翻译；这不是实物测评，也没有声称新做了厂家测试、库存检查或结算核实。纠错请注明具体车型及来源。')} <a href="${url(ctx.base, '/methodology/')}">${t('Research methodology', '研究方法')}</a>.</p></section>`;
+  return `<section class="article-sources" id="article-sources"><h2>${t('Sources and method', '来源与方法')}</h2><p>${t('China Bikes compiled this guide from linked model records and sources, with AI-assisted editing and translation. It is desk research, not a hands-on test. Prices and specifications retain their own evidence dates; this edit did not recheck stock or checkout prices.', 'China Bikes 根据车型记录与来源整理本文，并使用 AI 辅助编辑和翻译。这是资料研究，不是实物测试。价格和规格保留各自的证据日期，本次编辑未重新核实库存或结算价。')} <a href="${url(ctx.base, '/methodology/')}">${t('Research methodology', '研究方法')}</a>.</p>${sources.length ? `<details class="article-source-list"><summary>${t('Original sources and access dates', '原始来源与访问日期（标题保留原文）')}</summary><ul>${sources.map((source) => `<li>${source.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">${escapeHtml(source.title)}</a>` : `<span>${escapeHtml(source.title)} (${t('archived observation; no public URL', '归档观察；无公开网址')})</span>`} · <time datetime="${escapeAttr(source.accessed_at)}">${escapeHtml(source.accessed_at)}</time></li>`).join('')}</ul></details>` : ''}</section>`;
+}
+function renderSection(ctx, post, section) {
+  const worksheet = section.worksheet;
+  const photos = post.photo_sections.filter((placement) => placement.section_id === section.id).flatMap((placement) => placement.ids);
+  return `<section id="${section.id}"><h2>${escapeHtml(section.heading)}</h2>${section.paragraphs.map((paragraph) => `<p>${inline(paragraph, ctx)}</p>`).join('')}${section.bullets?.length ? `<ul class="article-checklist">${section.bullets.map((item) => `<li>${inline(item, ctx)}</li>`).join('')}</ul>` : ''}${post.comparison.section_id === section.id ? renderEvidenceTable(ctx, post) : ''}${post.example?.section_id === section.id ? renderBuildExample(ctx) : ''}${worksheet ? `<div class="article-table-wrap" role="region" tabindex="0" aria-label="${escapeAttr(worksheet.caption)}"><table class="article-table article-table-worksheet"><caption>${escapeHtml(worksheet.caption)}</caption><thead><tr>${worksheet.columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${worksheet.rows.map((row) => `<tr><th scope="row">${escapeHtml(row[0])}</th>${row.slice(1).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${photos.length ? renderPostPhotos(ctx, post, photos) : ''}</section>`;
 }
 function articleCard(ctx, post) {
   const copy = copyFor(post, ctx);
@@ -110,7 +105,7 @@ export function renderPost(ctx, post, allPosts) {
     { '@type': 'ListItem', position: 2, name: bilingual(ctx, 'Buying guides', '购车指南'), item: `${ctx.siteUrl}${url(ctx.base, '/blog/')}` },
     { '@type': 'ListItem', position: 3, name: copy.title, item: absolute }
   ] };
-  const body = `<section class="simple-page"><article class="page prose buyer-article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a><span aria-hidden="true"> / </span><a href="${url(ctx.base, '/blog/')}">Buying guides</a></nav><header><h1>${escapeHtml(copy.title)}</h1><p class="page-lede">${escapeHtml(copy.intro)}</p><p class="article-byline">Written by <a href="${url(ctx.base, '/methodology/')}">China Bikes</a> · ${bilingual(ctx, 'Editorial date', '文章日期')} <time datetime="${post.datePublished}">${post.datePublished}</time>${modified !== post.datePublished ? ` · ${bilingual(ctx, 'Updated', '更新')} <time datetime="${modified}">${modified}</time>` : ''}</p></header>${renderEditorialImage(ctx, post.image_id)}<nav class="article-toc" aria-label="On this page"><strong>On this page</strong><ol>${copy.sections.map((s) => `<li><a href="#${s.id}">${escapeHtml(s.heading)}</a></li>`).join('')}</ol></nav>${copy.sections.map((s, index) => `<section id="${s.id}"><h2>${escapeHtml(s.heading)}</h2>${s.paragraphs.map((p) => `<p>${inline(p, ctx)}</p>`).join('')}${index === 0 ? renderPostPhotos(ctx, post) + renderEvidenceTable(ctx, post) : ''}</section>`).join('')}${sourceList(ctx, post)}<section class="related-articles"><h2>Related reading</h2><ul>${allPosts.filter((p) => p.slug !== post.slug).map((p) => `<li><a href="${url(ctx.base, `/blog/${p.slug}/`)}">${escapeHtml(copyFor(p, ctx).title)}</a></li>`).join('')}</ul></section></article></section>`;
+  const body = `<section class="simple-page"><article class="page prose buyer-article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${url(ctx.base, '/')}">Home</a><span aria-hidden="true"> / </span><a href="${url(ctx.base, '/blog/')}">Buying guides</a></nav><header><h1>${escapeHtml(copy.title)}</h1><p class="page-lede">${escapeHtml(copy.intro)}</p><p class="article-byline">Written by <a href="${url(ctx.base, '/methodology/')}">China Bikes</a> · ${bilingual(ctx, 'Editorial date', '文章日期')} <time datetime="${post.datePublished}">${post.datePublished}</time>${modified !== post.datePublished ? ` · ${bilingual(ctx, 'Updated', '更新')} <time datetime="${modified}">${modified}</time>` : ''}</p></header>${renderEditorialImage(ctx, post.image_id)}<nav class="article-toc" aria-label="On this page"><strong>On this page</strong><ol>${copy.sections.map((s) => `<li><a href="#${s.id}">${escapeHtml(s.heading)}</a></li>`).join('')}</ol></nav>${copy.sections.map((section) => renderSection(ctx, post, section)).join('')}${sourceList(ctx, post)}<section class="related-articles"><h2>Related reading</h2><ul>${allPosts.filter((p) => p.slug !== post.slug).map((p) => `<li><a href="${url(ctx.base, `/blog/${p.slug}/`)}">${escapeHtml(copyFor(p, ctx).title)}</a></li>`).join('')}</ul></section></article></section>`;
   return postLayout(ctx, { title: copy.title, description: copy.description, path: route, ...editorialImageMeta(ctx, post.image_id), ogType: 'article', structuredData: [schema, breadcrumbs], body });
 }
 export function relatedArticleLinks(ctx, id) {
