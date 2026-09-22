@@ -1,0 +1,694 @@
+{
+  "base_sha": "cfe5df27a9372e37673efb439d40b9f3685e432b",
+  "review_date": "2026-09-22",
+  "source_access_dates_unchanged": true,
+  "batches": [
+    {
+      "id": "reconcile-01",
+      "targets": [
+        {
+          "id": "missing-china-price-giant-tcr-advanced",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "twitter-x7",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-twitter-x7-complete-weight-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "west-biking-sl-one",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "drivetrain-missing",
+              "attempt_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "west-biking-team-road",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "drivetrain-missing",
+              "attempt_id": "candidate-west-biking-team-road-drivetrain-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "de-rosa-new-838",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "drivetrain-missing",
+              "attempt_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "felt-ia-2",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-felt-ia-2-complete-weight-2026-08-30"
+            },
+            {
+              "gap": "drivetrain-missing",
+              "attempt_id": "candidate-felt-ia-2-drivetrain-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "upland-r70",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-upland-r70-complete-weight-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "giant-propel-gen4-community-lead",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-missing",
+              "attempt_id": "candidate-giant-propel-gen4-community-lead-price-2026-08-17"
+            },
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17"
+            },
+            {
+              "gap": "stiffness-evidence-missing",
+              "attempt_id": "candidate-giant-propel-gen4-community-lead-frame-stiffness-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "hi-light-r6-105-al",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-hi-light-r6-105-al-price-2026-08-29"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-giant-revolt-advanced",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-giant-revolt-advanced-price-2026-09-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-02",
+      "targets": [
+        {
+          "id": "icanian-sn04",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "clearance-unverified",
+              "attempt_id": "candidate-icanian-sn04-tire-clearance-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "sava-dream-maker",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-sava-dream-maker-complete-weight-2026-08-30"
+            },
+            {
+              "gap": "stiffness-evidence-missing",
+              "attempt_id": "candidate-sava-dream-maker-frame-stiffness-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "sava-r8-r8170",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-sava-r8-r8170-complete-weight-2026-08-30"
+            },
+            {
+              "gap": "clearance-unverified",
+              "attempt_id": "candidate-sava-r8-r8170-tire-clearance-2026-08-30"
+            },
+            {
+              "gap": "stiffness-evidence-missing",
+              "attempt_id": "candidate-sava-r8-r8170-frame-stiffness-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "twitter-cyclone-sport",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "upland-taylor",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-upland-taylor-complete-weight-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-giant-defy-advanced",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-giant-defy-advanced-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-merida-reacto",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-merida-reacto-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "elves-falath-r7170",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17"
+            }
+          ]
+        },
+        {
+          "id": "icanian-p9",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "clearance-unverified",
+              "attempt_id": "candidate-icanian-p9-tire-clearance-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "hi-light-r9-2025",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-hi-light-r9-2025-price-2026-09-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-03",
+      "targets": [
+        {
+          "id": "missing-china-price-trek-madone-gen-8",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-trek-madone-gen-8-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "twitter-cyclone-electronic",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29"
+            }
+          ]
+        },
+        {
+          "id": "twitter-cyclone-gen3-et",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17"
+            }
+          ]
+        },
+        {
+          "id": "twitter-t3-tt",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-t3-tt-purchase-route-2026-08-29"
+            }
+          ]
+        },
+        {
+          "id": "pinarello-f5",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30"
+            },
+            {
+              "gap": "stiffness-evidence-missing",
+              "attempt_id": "candidate-pinarello-f5-frame-stiffness-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "hi-light-g0",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-hi-light-g0-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "ican-graro-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-ican-graro-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-merida-scultura",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-merida-scultura-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-merida-silex",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-merida-silex-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-specialized-tarmac-sl8",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-price-2026-09-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-04",
+      "targets": [
+        {
+          "id": "missing-china-price-trek-checkpoint",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-trek-checkpoint-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "specialized-roubaix-sl8-sport-105",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "look-765-electronic",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "complete-weight-missing",
+              "attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30"
+            }
+          ]
+        },
+        {
+          "id": "missing-china-price-specialized-roubaix-sl8",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "scott-addict-rc-40",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-scott-addict-rc-40-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "rinasclta-gr025-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "laget-aero-one",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-laget-aero-one-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "laget-pioneer",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-laget-pioneer-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "laget-pioneer-one",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-laget-pioneer-one-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "twitter-v3-2024-rs-sensah-alloy",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "image-exactness",
+              "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01"
+            },
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-05",
+      "targets": [
+        {
+          "id": "missing-china-price-trek-domane",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-missing-china-price-trek-domane-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "specialized-roubaix-sl8-comp-105",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "specialized-s-works-crux-2024-sram-red-xplr",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "specialized-s-works-crux-frameset",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-specialized-s-works-crux-frameset-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "xlab-ad8",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-xlab-ad8-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "xlab-ad9",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-xlab-ad9-price-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "carbonda-cfr696-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "ican-gra04-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-ican-gra04-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "hi-light-r9-force-pr1600",
+          "record_type": "candidate",
+          "fields": [
+            {
+              "gap": "price-not-observed",
+              "attempt_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29"
+            }
+          ]
+        },
+        {
+          "id": "bianchi-oltre-race",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-bianchi-oltre-race-purchase-route-2026-08-17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-06",
+      "targets": [
+        {
+          "id": "sava-a7l-r7100",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-sava-a7l-r7100-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "sava-gelaro-s4-grx400",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "twitter-v3-wheeltop-eds",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "sava-gelaro-sf6-cues",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "xmcarbonspeed-cs-gr01-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "lightcarbon-lcg071s-pro-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "seka-exaero-gr-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-seka-exaero-gr-frameset-purchase-route-batch-048-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "spcycle-g026-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-spcycle-g026-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "tavelo-grow-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-tavelo-grow-frameset-purchase-route-batch-048-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "twitter-v3-rs-sensah",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconcile-07",
+      "targets": [
+        {
+          "id": "winspace-g3-frameset",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-winspace-g3-frameset-purchase-route-2026-09-01"
+            }
+          ]
+        },
+        {
+          "id": "pardus-super-sport-gen2-egr",
+          "record_type": "published-variant",
+          "fields": [
+            {
+              "gap": "purchase-route",
+              "attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
