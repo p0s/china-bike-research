@@ -1000,15 +1000,22 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .article-card{padding:1.4rem;border:1px solid var(--line,#ddd);border-radius:.5rem}.article-card h2{font-size:1.25rem;line-height:1.4;margin:.4rem 0}.article-card time,.article-note,.article-byline{font-size:.85rem;opacity:.82}
 .article-card{padding:0;border:0;border-radius:0}
 .article-card h2{margin:1rem 0 .5rem}
-.article-cover-link,.article-card-image{display:block;overflow:hidden;border-radius:4px}
-.article-card-image img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .editorial-figure{margin:2rem 0}
-.editorial-figure>img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
-.blog-banner>img{aspect-ratio:21/9}
-.editorial-figure figcaption{margin-top:.55rem;color:var(--muted);font-size:.75rem}
+.article-card-image{margin:0}
+.blog-photo-scene{display:grid;grid-template-columns:minmax(0,1fr) 18%;align-items:end;gap:1%;padding:1rem;background:#fff;border:1px solid var(--line,#ddd);border-radius:4px;aspect-ratio:16/9;overflow:hidden}
+.blog-photo-scene .blog-bike-photo{display:block;width:100%;height:100%;min-height:0;object-fit:contain;align-self:center}
+.blog-photo-scene .blog-mascot{display:block;width:100%;height:auto;max-height:72%;object-fit:contain}
+.blog-photo-scene img[hidden]{display:none}
+.blog-photo-scene.is-unavailable{display:none}
+.blog-banner .blog-photo-scene{aspect-ratio:21/9;grid-template-columns:minmax(0,1fr) 15%}
+.editorial-figure figcaption{margin-top:.65rem;color:var(--muted);font-size:.75rem;line-height:1.55}
+.editorial-figure figcaption strong{color:var(--text);font-weight:600}
 .editorial-figure figcaption a{color:inherit;text-decoration-thickness:1px}
-@media(prefers-reduced-motion:no-preference){.editorial-figure>img{animation:editorial-appear .35s ease-out}.article-card-image img{transition:transform .22s ease}.article-card:hover img,.article-card:focus-within img{transform:scale(1.025)}}
-@keyframes editorial-appear{from{opacity:.6}to{opacity:1}}
+.blog-photo-note,.blog-photo-status:not([hidden]){display:block;margin:.2rem 0}
+.blog-model-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin:1.8rem 0}
+.blog-model-photo{margin:0;min-width:0}
+.blog-model-photo .blog-photo-scene{aspect-ratio:4/3;grid-template-columns:minmax(0,1fr) 14%;padding:.6rem}
+@media(max-width:760px){.blog-model-photos{grid-template-columns:1fr}.blog-photo-scene{padding:.5rem}.blog-banner .blog-photo-scene{aspect-ratio:16/9}}
 .buyer-article{max-width:960px}.buyer-article>header h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.18}.buyer-article section{scroll-margin-top:6rem;margin-top:2.2rem}.buyer-article p{line-height:1.85}.buyer-article h2{line-height:1.4}
 .article-toc{padding:1rem 1.3rem;border-inline-start:3px solid currentColor;margin:2rem 0}.article-toc ol{padding-inline-start:1.3rem}.article-toc li{margin:.45rem 0}
 .article-table-wrap{overflow-x:auto;max-width:100%;margin:1.4rem 0;border:1px solid var(--line,#ddd);border-radius:.35rem}.article-table-wrap:focus-visible{outline:2px solid currentColor}
@@ -1016,4 +1023,4 @@ h1, h2, h3 { margin: 0; line-height: 1.12; letter-spacing: -.027em; }
 .article-sources,.model-related-reading{padding:1.3rem;border:1px solid var(--line,#ddd);border-radius:.4rem}.article-sources a{overflow-wrap:anywhere}.model-related-reading{margin:1.5rem 0}.model-related-reading h2{font-size:1.1rem}
 html[lang="zh-Hans"]{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}html[lang="zh-Hans"] .page-lede{line-height:1.8}
 .locale-evidence-note{font-size:.85rem;line-height:1.7;opacity:.85}.original-evidence-label{font-size:.78rem;opacity:.75}
-@media(max-width:760px){.article-grid{grid-template-columns:1fr}.language-switch{font-size:.8rem;padding:.4rem .25rem}.buyer-article>header h1{font-size:1.9rem}.blog-banner>img{aspect-ratio:16/9}}
+@media(max-width:760px){.article-grid{grid-template-columns:1fr}.language-switch{font-size:.8rem;padding:.4rem .25rem}.buyer-article>header h1{font-size:1.9rem}}
