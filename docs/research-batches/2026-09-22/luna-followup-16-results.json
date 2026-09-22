@@ -1,0 +1,183 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-16-2026-09-22",
+  "status": "completed-with-one-geometry-closure",
+  "reviewed_models": 10,
+  "reviewed_fields": 12,
+  "full_field_closures": 1,
+  "catalog_changes": 1,
+  "coarse_gap_count_before": 718,
+  "coarse_gap_count_after": 717,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "carbonda-cfr707",
+      "outcome": "unresolved",
+      "finding": "Exact owner describes stiff/comfortable feel and handling stability, but supplies no meaningful comparative stiffness basis. Manufacturer direct access403 and quote-only discovery; expired EUR620 affiliate deal is not current mainland price.",
+      "sources": [
+        "https://www.reddit.com/r/gravelcycling/comments/191ylbi/nbd_carbonda_cfr_707/",
+        "https://carbonda.com/road/cfr-707.html",
+        "https://veloot.de/product/carbonda-cfr-707-allroad-carbon-frameset"
+      ],
+      "proof": "Worker current community/affiliate reads and manufacturer snippet/failure; parent source read. Generic stiffness adjectives not adopted as resolved evidence.",
+      "next_trigger": "Exact current mainland quote/checkout and meaningful stiffness comparison.",
+      "fields": [
+        "price",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "ican-graro",
+      "outcome": "numeric-geometry-accepted-stiffness-unresolved",
+      "finding": "Manufacturer page embeds Graro-labeled geometry diagram/table with six sizes46/49/52/54/56/58. Parent visually transcribed all published columns; reach365/374/378/387/398/406 and stack505/519/544/565/590/610 mm. Storefront current size recommendation49–58 does not invalidate nominal46 chart or prove46 stock. Vendor-republished rider review says responsive/precise/stiff but lacks meaningful comparative stiffness basis.",
+      "sources": [
+        "https://icancycling.com/products/gravel-bike-frame-graro",
+        "https://cdn.shopify.com/s/files/1/0111/7470/7264/files/Graro_2048x2048.jpg?v=1706769017",
+        "https://cdn.shopify.com/s/files/1/0111/7470/7264/files/GJ02_b5e02b9f-421b-4d9b-bde6-e4c9e927e2a7_2048x2048.jpg?v=1706688627",
+        "https://icanjp.com/en/blogs/reviews/ican-graro-frame-review"
+      ],
+      "proof": "Worker current text reads missed image table; parent opened exact linked manufacturer chart and size-guide images and inspected visually. No image published into Git. Review is manufacturer republication attributed to Lorenzo Del Santo, not independently verified self-funding. Original YouTube embed fetch throttled; no retry.",
+      "next_trigger": "Meaningful comparative stiffness evidence; current size46 availability is a separate question.",
+      "fields": [
+        "geometry",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-slc3",
+      "outcome": "china-price-unresolved",
+      "finding": "Exact manufacturer page shows global USD1450 sale/USD1780 crossed price and US/China warehouses, but no mainland CNY amount. Existing regional reference remains distinct.",
+      "sources": [
+        "https://www.winspace.cc/products/slc3-frameset"
+      ],
+      "proof": "Worker current full manufacturer read; no old observation date refreshed.",
+      "next_trigger": "Exact selected SLC3 mainland CNY checkout/listing.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current JD index identifies first-generation Pressure105Di2/3T wheels without complete mass.2023 catalog frame990g/fork390g do not establish complete weight. ADR is different generation.",
+      "sources": [
+        "https://www.jd.com/jiage/1318a5d0a7cb2eb41341.html",
+        "https://cinelli.it/wp-content/uploads/2023/02/Cinelli-Quaderni-Road-Bikes-2023.pdf",
+        "https://cinelli-milano.com/products/pressure-adr-2024-105-disc-di2"
+      ],
+      "proof": "Worker current JD/catalog full reads; ADR current read/search excluded.",
+      "next_trigger": "Exact retained first-generation105Di2/3T complete mass/basis.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr007-v",
+      "outcome": "price-unresolved",
+      "finding": "Official exact page quote-only. Alibaba discovery shows USD380–420 or500–550 but no inspectable canonical selected package/conditions. GBP500 catalog reference is2018.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-super-light-carbon-road-frameset-lcr007-v_p145.html",
+        "https://www.alibaba.com/countrysearch/CN/light-carbon-frame.html",
+        "https://autopart.alibaba.com/product/aegis-bicycles",
+        "https://bikkerr.com/frame/lightcarbon-super-light-carbon-frameset-lcr007-v/"
+      ],
+      "proof": "Worker current manufacturer full read, aggregate search-card discovery/direct timeout and historical catalog read.",
+      "next_trigger": "Canonical current exact LCR007-V listing or quote with package/market/date.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr014-v",
+      "outcome": "price-unresolved",
+      "finding": "Official exact page quote-only. Alibaba aggregate identifies LCR014-V USD300–380/MOQ1/XiamenLightcarbon, but lacks canonical selected-product checkout. GBP500 Bikkerr reference is2018.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-new-road-frame-with-direct-mount-brakes_p135.html",
+        "https://www.alibaba.com/countrysearch/CN/aero-bike-frame.html",
+        "https://www.amoybrand.cn/lightcarbon-new-road-frame-with-direct-mount-brakes_c5174.html",
+        "https://bikkerr.com/frame/lightcarbon-new-road-frame-with-direct-mount-brakes-lcr014-v/"
+      ],
+      "proof": "Worker current manufacturer full read, Alibaba/Amoybrand discovery and historical catalog.",
+      "next_trigger": "Exact current dated package listing/quote.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr0x-d",
+      "outcome": "price-unresolved",
+      "finding": "Current official page quote-only. Public2023 manufacturer quote USD540/set includes frame/fork/seatpost/hardware/HBR07, but is historical. Used-bike/catalog prices do not identify current mainland package.",
+      "sources": [
+        "https://www.lightcarbon.com/new-integrated-road-disc-brake-frame_p136.html",
+        "https://chinertown.com/index.php?topic=4254.0",
+        "https://bikkerr.com/frame/lightcarbon-integrated-road-disc-brake-frame-lcr0x-d/",
+        "https://buycycle.com/en-us/product/lightcarbon-lcr0x-d-ultegra-di2-12-speed-20216a42240d24e03-42932"
+      ],
+      "proof": "Worker current manufacturer read; historical quote from readable search result, not fresh seller transaction; used/catalog discovery only.",
+      "next_trigger": "Current exact dated quote/checkout with selected package.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr0x-v",
+      "outcome": "price-unresolved",
+      "finding": "Current official exact page quote-only; GBP500 third-party index refers to2023, not selected current mainland package.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-new-integrated-caliper-brake-road-bike-frame_p131.html",
+        "https://bikkerr.com/frames/page/4/"
+      ],
+      "proof": "Worker current official full read and historical index discovery.",
+      "next_trigger": "Current exact LCR0X-V package quote/listing.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt05-d",
+      "outcome": "price-and-availability-unresolved",
+      "finding": "Official page/catalog still describe frame without amount; prospective buyer public post reports customer service said no longer sold. This unverified availability report is distinct from a manufacturer withdrawal notice. No price or catalog availability scalar changed.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-ultra-aero-triathlon-carbon-frame-disc-brake-700c-carbon-fiber-tt-bike-frameset_p267.html",
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf",
+        "https://www.reddit.com/r/ChineseCarbon/comments/1ump0ne/tt_frame_suggestion/"
+      ],
+      "proof": "Worker current full manufacturer/catalog and public-community reads; reported private support exchange not independently verified.",
+      "next_trigger": "Public current exact listing with amount/availability or manufacturer update.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-phantom-p10",
+      "outcome": "build-gated-weight-unresolved",
+      "finding": "Series page names P10/U6000 but readable configuration sheets mix Phantom variants and class list omits P10. Generic9.5lb entry is not mapped to target and is not silently converted to9.5kg. Direct P10 timed out; JD mixes P10/P12.",
+      "sources": [
+        "https://meihanda.com/shop/meihanda-xtreme-phantom-series/",
+        "https://meihanda.com/shop/meihanda-xtreme-phantom-p10/",
+        "https://www.jd.com/brand/65279f308de27d2d3a8.html?electedExtAttrSet=4900%2C&extAttrValue=expand_name%2C%40109025%3A%3A4900&sort_type=sort_default",
+        "https://www.jd.com/hotitem/65274e2b233a2c2f4cd.html?electedExtAttrSet=3883%2C&extAttrValue=expand_name%2C%40278933%3A%3A3883&sort_type=sort_default"
+      ],
+      "proof": "Worker current full series read, direct timeout and mixed index discovery.",
+      "next_trigger": "Exact P10/U6000 complete mass with size/equipment/pedals.",
+      "fields": [
+        "complete-weight"
+      ]
+    }
+  ],
+  "validation": {
+    "validate": "passed",
+    "coverage_accept": "passed",
+    "full_gate": "Passed:304tests,584pages,SEO456indexable/128noindex."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

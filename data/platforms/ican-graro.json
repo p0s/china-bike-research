@@ -32,8 +32,120 @@
     "configuration_notes": {
       "chainring_limits": "2× up to 48/31T or 1× up to 42T"
     },
-    "geometry_status": "No attributable numeric exact-model geometry table found after 50 registered source areas; sizes 49/52/54/56/58 do not establish fit coordinates",
-    "stiffness_evidence_status": "No meaningful exact-model stiffness evidence found after 50 registered source areas; generic durability and versatility language is not treated as a result"
+    "geometry_status": "Manufacturer numeric geometry chart recorded for six nominal sizes46/49/52/54/56/58; storefront size availability is separate.",
+    "stiffness_evidence_status": "No meaningful exact-model stiffness evidence found after 50 registered source areas; generic durability and versatility language is not treated as a result",
+    "geometry": {
+      "basis": "Manufacturer Graro diagram and table transcribed visually; nominal chart sizes, no stock or personalized fit inference. Seat tube follows the chart total-length row; front center follows BB To Front Wheel.",
+      "source_id": "ican-graro-manufacturer-geometry-chart-2026-09-22",
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
+      "sizes": [
+        {
+          "size": "46",
+          "top_tube_mm": 505,
+          "head_tube_mm": 79,
+          "seat_angle_deg": 74.5,
+          "head_angle_deg": 70,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 995,
+          "front_center_mm": 580,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 460,
+          "reach_mm": 365,
+          "stack_mm": 505,
+          "bb_height_mm": 288.5
+        },
+        {
+          "size": "49",
+          "top_tube_mm": 518,
+          "head_tube_mm": 94,
+          "seat_angle_deg": 74.5,
+          "head_angle_deg": 70,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 1009,
+          "front_center_mm": 595,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 475,
+          "reach_mm": 374,
+          "stack_mm": 519,
+          "bb_height_mm": 288.5
+        },
+        {
+          "size": "52",
+          "top_tube_mm": 534.5,
+          "head_tube_mm": 121,
+          "seat_angle_deg": 74,
+          "head_angle_deg": 70,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 1023,
+          "front_center_mm": 608,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 490,
+          "reach_mm": 378,
+          "stack_mm": 544,
+          "bb_height_mm": 288.5
+        },
+        {
+          "size": "54",
+          "top_tube_mm": 554.5,
+          "head_tube_mm": 139,
+          "seat_angle_deg": 73.5,
+          "head_angle_deg": 71,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 1029,
+          "front_center_mm": 614,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 505,
+          "reach_mm": 387,
+          "stack_mm": 565,
+          "bb_height_mm": 288.5
+        },
+        {
+          "size": "56",
+          "top_tube_mm": 578.5,
+          "head_tube_mm": 165,
+          "seat_angle_deg": 73,
+          "head_angle_deg": 71,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 1049,
+          "front_center_mm": 634,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 523,
+          "reach_mm": 398,
+          "stack_mm": 590,
+          "bb_height_mm": 288.5
+        },
+        {
+          "size": "58",
+          "top_tube_mm": 592.5,
+          "head_tube_mm": 186,
+          "seat_angle_deg": 73,
+          "head_angle_deg": 71,
+          "bb_drop_mm": 71,
+          "chainstay_mm": 425,
+          "wheelbase_mm": 1064,
+          "front_center_mm": 648,
+          "fork_length_mm": 400,
+          "fork_offset_mm": 50,
+          "seat_tube_mm": 543,
+          "reach_mm": 406,
+          "stack_mm": 610,
+          "bb_height_mm": 288.5
+        }
+      ]
+    }
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -50,7 +162,8 @@
   "source_ids": [
     "ican-graro-official",
     "ican-graro-official-2026-08-27",
-    "ican-company-official"
+    "ican-company-official",
+    "ican-graro-manufacturer-geometry-chart-2026-09-22"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-22"
 }

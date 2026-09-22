@@ -477,8 +477,18 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "ican-graro-manufacturer-geometry-chart-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-ican-graro-batch-043-50-area-sweep-2026-09-01.json. No attributable numeric exact-model geometry table was found; size selectors and gravel-specific geometry wording do not establish fit coordinates."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-ican-graro-batch-043-50-area-sweep-2026-09-01.json. No attributable numeric exact-model geometry table was found; size selectors and gravel-specific geometry wording do not establish fit coordinates.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "ican-graro-manufacturer-geometry-chart-2026-09-22"
+    ],
+    "note": "The exact current manufacturer product page links a Graro-labeled numeric chart image. Parent visually transcribed its six size columns; original50-area attempt history remains unchanged."
+  }
 }

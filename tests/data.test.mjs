@@ -1490,7 +1490,7 @@ test('batch 043 resolves eighteen exact fields, exhausts five unknowns, and corr
   const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
 
   const ican = platforms.get('ican-graro');
-  assert.match(ican.frame.geometry_status, /50 registered source areas/);
+  assert.deepEqual(ican.frame.geometry.sizes.map(({ size, reach_mm, stack_mm }) => [size, reach_mm, stack_mm]), [['46', 365, 505], ['49', 374, 519], ['52', 378, 544], ['54', 387, 565], ['56', 398, 590], ['58', 406, 610]]);
   assert.match(ican.frame.stiffness_evidence_status, /50 registered source areas/);
   assert.match(variants.get('ican-graro-frameset').purchase_route, /US\$899.*add-to-cart/);
   assert.equal(data.prices.find((price) => price.id === 'ican-graro-official-2026-09-01').amount_cny, 6041);
@@ -1555,7 +1555,6 @@ test('batch 043 resolves eighteen exact fields, exhausts five unknowns, and corr
     ['candidate:sava-starship-r13', ['complete-weight', 'frame-stiffness']]
   ]);
   const blocked = new Set([
-    'platform:ican-graro:geometry',
     'platform:ican-graro:frame-stiffness',
     'platform:camp-gx700:geometry',
     'platform:scott-addict-rc-40:tire-clearance',
