@@ -2393,7 +2393,10 @@ test('Meihanda Xtreme, MEINIER, MISSILE, and MUIDLER leads preserve exact seller
   assert.match(missile.source_note, /破风6000.*not merged/);
 
   assert.equal(muidler.name, 'MUIDLER 媚影 阿修斯 S7');
-  assert.equal(muidler.facts, undefined);
+  assert.equal(muidler.facts.drivetrain, undefined);
+  assert.equal(muidler.facts.frame_material, undefined);
+  assert.equal(muidler.facts.complete_weight_g, undefined);
+  assert.match(muidler.facts.marketplace_reference_basis, /no mapping to the retained August price/);
   assert.match(muidler.source_note, /truncated immediately after 全/);
   assert.match(muidler.source_note, /阿瑞斯 R7.*none is transferred/i);
 });

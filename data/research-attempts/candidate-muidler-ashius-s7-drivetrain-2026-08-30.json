@@ -481,7 +481,9 @@
     }
   },
   "status": "blocked",
-  "accepted_source_ids": [],
+  "accepted_source_ids": [
+    "muidler-s7-jd-index-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/muidler-ashius-s7-50-area-sweep-2026-08-30.json. No selected S7 drivetrain is visible or published; 24-speed sibling listings are not transferable."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/muidler-ashius-s7-50-area-sweep-2026-08-30.json. No selected S7 drivetrain is visible or published; 24-speed sibling listings are not transferable. Supplemental 2026-09-22 review found an exact S7 marketplace title, retained only as a qualified reference because the old price and selected build remain unmapped. See docs/research-batches/2026-09-22/luna-followup-03-results.json. Original fifty-area attempts and dates are unchanged."
 }

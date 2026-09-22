@@ -1,0 +1,61 @@
+{
+  "batch_id": "luna-followup-03-2026-09-22",
+  "status": "active",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 5,
+  "atomic_fields": 24,
+  "targets": [
+    {
+      "candidate_id": "cosmosworks-carbon-e-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "candidate_id": "muidler-ashius-s7",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "candidate_id": "viqi-integrated-road-unknown",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "candidate_id": "huanyu-az-one",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material"
+      ]
+    },
+    {
+      "candidate_id": "dengfu-gravel",
+      "fields": [
+        "price",
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "done_criteria": "Check exact model identity before dependent specifications; stop dependent fields if identity remains unresolved. Accept a current attributable exact-model fact or record actual routes checked, the unresolved dependency and its next trigger. Distinguish a newly documented exact reference build from an unidentified historical marketplace option. Do not combine their prices or specifications.",
+  "boundaries": "Researcher does not write, spawn children, use XHS, message sellers, purchase, access private data, or bypass access controls. No new model promotion or model substitution.",
+  "base_commit": "91ca1bf2b44d063921006f71d62275b8b2be5b78"
+}
