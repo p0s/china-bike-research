@@ -436,7 +436,7 @@ test('local builds use the live repository for public contribution links', () =>
 test('category-specific details stay accessible while price state is visible', () => {
   assert.match(html, /aria-label="Price details"/);
   assert.doesNotMatch(html, /data-capability-kind="tire"/);
-  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="45"/);
+  assert.match(html, /data-id="twitter-v3-wheeltop-eds"[^>]*data-capability-kind="discipline"[^>]*data-tire-clearance-sort="40"/);
   assert.match(html, /aria-label="Format details"/);
   assert.match(html, /type="number"[^>]*data-filter-tire/);
   assert.match(html, /data-filter-tire-unknown/);
@@ -642,7 +642,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   const detail = renderModel(context, product);
   assert.match(detail, /<nav class="breadcrumbs" aria-label="Breadcrumb">[\s\S]*Complete bikes[\s\S]*aria-current="page"/);
   assert.match(detail, /data-catalog-back/);
-  assert.match(detail, /Evidence reviewed through <time datetime="2026-09-01">/);
+  assert.match(detail, /Evidence reviewed through <time datetime="2026-09-22">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
   assert.match(detail, /<details class="detail-panel" id="source-records">/);
 });

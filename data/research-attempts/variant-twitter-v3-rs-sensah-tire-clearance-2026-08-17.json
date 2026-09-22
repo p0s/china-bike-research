@@ -12,7 +12,7 @@
   ],
   "channels": {
     "web": {
-      "status": "temporarily-exhausted",
+      "status": "conflicted",
       "attempts": [
         {
           "attempt": 1,
@@ -40,11 +40,16 @@
           "accessed_at": "2026-08-17",
           "note": "No exact-Sensah measured maximum located."
         }
-      ]
+      ],
+      "conflict": "Inherited45C maximum comes from current BB86 storefront; manufacturer T47 source lists only fitted40C."
     }
   },
-  "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22",
+    "twitter-v3-original-store-path-recheck-2026-09-22"
+  ],
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence. Supplemental September22 correction retires the inherited platform45C maximum without changing historical attempts or dates. See luna-followup-04b-results.json."
 }
