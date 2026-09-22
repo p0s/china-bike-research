@@ -1,5 +1,6 @@
 import { translate } from '../assets/i18n.js';
 import { relatedArticleLinks } from './lib/posts.mjs';
+import { renderEditorialCredits } from './lib/editorial-images.mjs';
 import { candidateIndexable } from './lib/indexing.mjs';
 import {
   categoryLabel,
@@ -1973,7 +1974,7 @@ export function renderImageSources(ctx) {
       visual: imageElement(ctx, { ...product, image })
     };
   }).sort((a, b) => a.label.localeCompare(b.label));
-  const html = `<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
+  const html = `${renderEditorialCredits(ctx)}<div class="credit-list">${entries.map(({ image, source, label, href, visual }) => `<article><a class="credit-image" href="${escapeAttr(href)}">${visual}</a><div><h2>${escapeHtml(label)}</h2><p>${escapeHtml(image.credit)} · ${escapeHtml(accuracyLabel(image.subject_accuracy))}</p>${source?.url ? `<a href="${escapeAttr(source.url)}" rel="noreferrer">Original source</a>` : ''}</div></article>`).join('')}</div>`;
   return prosePage(ctx, { title: 'Image credits', desc: 'Source and exactness for every product visual used by the catalog.', path: '/image-sources/', html });
 }
 
