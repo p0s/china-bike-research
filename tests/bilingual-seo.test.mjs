@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
-import { editorialImages } from '../src/lib/editorial-images.mjs';
+import { editorialImages, blogPhotos, postPhotos, resolveBlogPhoto } from '../src/lib/editorial-images.mjs';
 import { translate, zh } from '../assets/i18n.js';
 import { localePath, localizedHref, localizeHtml, localizeJson } from '../src/lib/i18n.mjs';
-import { layout } from '../src/lib/html.mjs';
+import { layout, escapeAttr, escapeHtml } from '../src/lib/html.mjs';
 import { candidateIndexable } from '../src/lib/indexing.mjs';
 import { loadDataset, joinProducts, joinCatalogCandidates } from '../src/lib/data.mjs';
 import { loadPosts, validatePostReferences, renderPost, renderBlogIndex, renderEvidenceTable } from '../src/lib/posts.mjs';
@@ -129,44 +129,74 @@ test('gravel evidence table derives the exact recorded price and date, never tod
   assert.ok(!table.includes('2026-09-18'));
 });
 
-test('editorial assets have original provenance and immutable optimized local files', () => {
+test('mascot assets have generation provenance and immutable optimized local files', () => {
   assert.equal(editorialImages.length, 5);
   assert.equal(new Set(editorialImages.map((image) => image.id)).size, 5);
   for (const image of editorialImages) {
     assert.equal(image.source.kind, 'project-generated');
-    assert.ok(image.alt.en && image.alt['zh-Hans']);
-    assert.deepEqual(image.files.map((file) => file.purpose), ['card', 'hero', 'social']);
+    assert.ok(image.alt.en && image.alt['zh-Hans'] && image.prompt);
+    assert.deepEqual(image.files.map((file) => file.purpose), ['mascot']);
+    resolveBlogPhoto(ctx, image.photo_id);
     for (const file of image.files) {
-      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+\.(?:webp|jpg)$/);
+      assert.match(file.path, /^\/assets\/blog\/[a-z0-9-]+-mascot-480\.webp$/);
       const bytes = fs.readFileSync(new URL('..' + file.path, import.meta.url));
       assert.equal(bytes.length, file.bytes);
       assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), file.sha256);
-      assert.ok(file.bytes < (file.purpose === 'card' ? 60000 : 300000));
-      assert.ok(file.width >= 640 && file.height > 0);
+      assert.ok(file.bytes < 70000);
+      assert.equal(file.width, 480);
+      assert.ok(file.height > 0);
     }
   }
 });
-for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`blog images and social metadata keep local asset paths: ${base || '/'} ${locale}`, () => {
+test('every referenced model has an attributable remote photo and shared trims are explicit', () => {
+  for (const post of posts) {
+    for (const photo of postPhotos(post)) {
+      const resolved = resolveBlogPhoto(ctx, photo.id);
+      assert.ok(photo.alt.en && photo.alt['zh-Hans'] && photo.note.en && photo.note['zh-Hans']);
+      assert.equal(resolved.image.hosting.mode, 'remote');
+      const targetIds = resolved.image.candidate_id ? [resolved.image.candidate_id]
+        : data.variants.filter((variant) => variant.platform_id === resolved.image.platform_id).map((variant) => variant.id);
+      for (const id of photo.model_ids) assert.ok(targetIds.includes(id), 'Photo must match the actual model platform');
+    }
+  }
+  const gravel = posts.find((post) => post.slug === 'gravel-bikes-around-5000-yuan');
+  assert.equal(postPhotos(gravel).length, 2, 'One platform photo can identify both Twitter builds');
+  assert.match(blogPhotos.find((photo) => photo.id === 'twitter-gravel-v3').note.en, /pictured components differ/);
+  assert.match(blogPhotos.find((photo) => photo.id === 'pardus-super-sport-gen2').note.en, /Shimano 105.*eGR/);
+  assert.throws(() => postPhotos({model_ids:['unmapped-model']}));
+  assert.throws(() => resolveBlogPhoto({...ctx,data:{...data,images:[]}}, blogPhotos[0].id));
+});
+for (const base of ['', '/china-bike-research']) for (const locale of ['en', 'zh-Hans']) test(`blog real photos, inline figures and mascot paths: ${base || '/'} ${locale}`, () => {
   const options = { ...ctx, base, locale };
   const index = renderBlogIndex(options, posts);
-  assert.equal((index.match(/data-editorial-image/g) || []).length, 5);
+  assert.equal((index.match(/data-blog-bike-image/g) || []).length, 5);
+  assert.equal((index.match(/data-blog-mascot/g) || []).length, 5);
   assert.ok(index.includes('class="editorial-figure blog-banner"'));
   assert.ok(!index.includes('/zh/assets/'));
   for (const post of posts) {
     const html = renderPost(options, post, posts);
     const image = editorialImages.find((item) => item.id === post.image_id);
-    const social = image.files.find((file) => file.purpose === 'social');
-    const hero = image.files.find((file) => file.purpose === 'hero');
-    const expected = siteUrl + base + social.path;
+    const photo = resolveBlogPhoto(options, image.photo_id);
+    const expected = photo.image.hosting.remote_url;
     const schema = schemas(html).find((item) => item['@type'] === 'BlogPosting');
     assert.equal(schema.image, expected);
-    assert.ok(html.includes(`property="og:image" content="${expected}"`));
-    assert.ok(html.includes(`name="twitter:image" content="${expected}"`));
-    assert.ok(html.includes(`src="${base}${hero.path}"`));
-    assert.ok(html.includes(`alt="${image.alt[locale]}"`));
+    assert.ok(html.includes(`property="og:image" content="${escapeAttr(expected)}"`));
+    assert.ok(html.includes(`name="twitter:image" content="${escapeAttr(expected)}"`));
+    assert.ok(html.includes(`src="${base}${image.files[0].path}"`));
+    assert.ok(html.includes(`alt="${escapeAttr(photo.alt[locale])}"`));
     assert.ok(html.includes('fetchpriority="high"'));
-    assert.ok(html.includes(locale === 'en' ? 'AI-generated illustration' : 'AI 生成插图'));
+    assert.ok(!/AI-generated illustration|AI 生成插图/.test(html));
     assert.ok(!html.includes('/zh/assets/'));
     assert.ok(!html.includes('class="section-label"'));
+    assert.equal((html.match(/data-blog-bike-image/g) || []).length, 1 + postPhotos(post).length);
+    const body = html.slice(html.indexOf('class="blog-model-photos"'));
+    for (const item of postPhotos(post)) {
+      const resolved = resolveBlogPhoto(options, item.id);
+      assert.ok(body.includes(`data-blog-photo="${item.id}"`));
+      assert.ok(body.includes(escapeAttr(resolved.source.url)));
+      assert.ok(body.includes(escapeHtml(item.note[locale])));
+      for (const id of item.model_ids.filter((id) => post.model_ids.includes(id)))
+        assert.ok(body.includes(base + localePath(`/models/${id}/`, locale)));
+    }
   }
 });
