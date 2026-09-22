@@ -1,0 +1,108 @@
+{
+  "batch_id": "luna-followup-05-2026-09-22",
+  "base_commit": "696912f84a85dca2293ddaf7e85646ae7609f93f",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 8,
+  "atomic_fields": 25,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-xtreme-gravel",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meinier-superlight-2",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "rockbros-pegasus-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-little-white-rabbit",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-r10-pro-gen3",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t8-closed-wheel",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-x7",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-sl-one",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each field has exact attributable evidence or a precise unresolved disposition with actual checked routes and next trigger. Stop dependent fields at unresolved model identity. One model/source at a time; stop at decisive evidence.",
+  "boundaries": "Evidence only; no writes, children, XHS, messages, purchases, private data or access bypass. No invented fresh reads. Keep unchanged historical dates and attempts."
+}
