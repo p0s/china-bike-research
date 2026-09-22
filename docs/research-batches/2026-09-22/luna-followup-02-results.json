@@ -1,0 +1,233 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-02-2026-09-22",
+  "status": "completed-with-partial-evidence-updates",
+  "reviewed_models": 10,
+  "reviewed_fields": 17,
+  "full_field_closures": 0,
+  "partial_fields_updated": 4,
+  "coarse_gap_count_before": 721,
+  "coarse_gap_count_after": 721,
+  "source_date_rule": "Access dates belong to the sources actually checked. Explicit historical reuse is not a fresh visit. Existing fifty-area ledgers retain their original attempts and dates.",
+  "results": [
+    {
+      "candidate_id": "pardus-robin-evo-community-lead",
+      "fields": [
+        "warranty-support"
+      ],
+      "outcome": "partial-support-route-integrated",
+      "finding": "Manufacturer contact and dealer routes are available; exact-generation warranty terms remain unknown.",
+      "sources": [
+        "https://parduscycle.com/contact.aspx",
+        "https://parduscycle.com/skill.aspx",
+        "https://parduscycle.com/find.aspx"
+      ],
+      "next_trigger": "Exact-generation warranty terms or applicable warranty card.",
+      "proof": "worker research; parent read contact, technical-support and dealer pages",
+      "accepted_source_ids": [
+        "pardus-china-support-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "pardus-spark-rs-community-lead",
+      "fields": [
+        "warranty-support"
+      ],
+      "outcome": "partial-support-route-integrated",
+      "finding": "Manufacturer contact and dealer routes are available; exact-generation warranty terms remain unknown.",
+      "sources": [
+        "https://parduscycle.com/contact.aspx",
+        "https://parduscycle.com/skill.aspx",
+        "https://parduscycle.com/find.aspx"
+      ],
+      "next_trigger": "Exact-generation warranty terms or applicable warranty card.",
+      "proof": "worker research; parent read contact, technical-support and dealer pages",
+      "accepted_source_ids": [
+        "pardus-china-support-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "pardus-uragano-evo-community-lead",
+      "fields": [
+        "warranty-support"
+      ],
+      "outcome": "partial-support-route-integrated",
+      "finding": "Manufacturer contact and dealer routes are available; exact-generation warranty terms remain unknown.",
+      "sources": [
+        "https://parduscycle.com/contact.aspx",
+        "https://parduscycle.com/skill.aspx",
+        "https://parduscycle.com/find.aspx"
+      ],
+      "next_trigger": "Exact-generation warranty terms or applicable warranty card.",
+      "proof": "worker research; parent read contact, technical-support and dealer pages",
+      "accepted_source_ids": [
+        "pardus-china-support-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "pardus-spark-rs-community-lead",
+      "fields": [
+        "complete-weight"
+      ],
+      "outcome": "historical-qualified-evidence-retained",
+      "finding": "Existing factory weight references cannot describe the custom owner build. No fresh read of those regional weight sources is claimed.",
+      "sources": [
+        "https://www.ridegearups.com/product/pardus-spark-rs-carbon-road-bike-105-di2-xxs-matt-black-regular-alloy-wheels/",
+        "https://bicicletasparduscolombia.com/product/bicycle/spark-rs"
+      ],
+      "next_trigger": "Exact custom build and weighing record.",
+      "proof": "existing 2026-08-30 source records reused"
+    },
+    {
+      "candidate_id": "pardus-spark-rs-community-lead",
+      "fields": [
+        "price"
+      ],
+      "outcome": "historical-qualified-evidence-retained",
+      "finding": "Existing CNY 11,999 factory-build reference does not price the custom owner build. No fresh price observation is made.",
+      "sources": [
+        "https://shopping.baidu.com/spu/item?fr=video&spu_id=shv2_000f7430e834c5c69496f288433982a4"
+      ],
+      "next_trigger": "Exact custom-build dated price and included package.",
+      "proof": "existing 2026-08-30 source record reused"
+    },
+    {
+      "candidate_id": "pardus-uragano-evo-community-lead",
+      "fields": [
+        "current-configuration"
+      ],
+      "outcome": "unresolved",
+      "finding": "Checked current RX600/Sport catalog references do not identify a current EVO SKU. The dated custom EVO review remains separate.",
+      "sources": [
+        "https://parduscycle.com/Hightxq.aspx?color=6216&id=21402&pz=6215&t=27447"
+      ],
+      "next_trigger": "Current exact mainland EVO SKU and build specification.",
+      "proof": "worker current public-source read"
+    },
+    {
+      "candidate_id": "twitter-little-white-rabbit",
+      "fields": [
+        "drivetrain"
+      ],
+      "outcome": "selection-unresolved",
+      "finding": "Current indexed listings expose different mechanical and electronic options; the retained card does not select one.",
+      "sources": [
+        "https://tao.hooos.com/goods_ezZ6dg9SDtdemn4PNVT88Jczt0-A7AqqefKMGpkeZZFZ.html",
+        "https://www.jd.com/xinkuan/13183502931ce9450271.html"
+      ],
+      "next_trigger": "Exact retained variant or SKU.",
+      "proof": "worker current public-source read"
+    },
+    {
+      "candidate_id": "twitter-r10-pro-gen3",
+      "fields": [
+        "drivetrain"
+      ],
+      "outcome": "selection-unresolved",
+      "finding": "Closed-wheel marketplace options remain separate from the manufacturer EDS TX build with different wheels. No exact selected drivetrain accepted.",
+      "sources": [
+        "https://www.jd.com/hprm/67288310c65304dadb4e.html",
+        "https://www.jd.com/brand/131891c0dea592d33cde.html",
+        "https://www.jd.com/brand/1318934bb416b6f4eaef.html",
+        "https://www.twittercycles.com/products/r10-et-road-bike.html"
+      ],
+      "next_trigger": "Exact retained closed-wheel variant or SKU.",
+      "proof": "worker current public-source read"
+    },
+    {
+      "candidate_id": "twitter-t8-closed-wheel",
+      "fields": [
+        "drivetrain",
+        "complete-weight"
+      ],
+      "outcome": "selection-unresolved",
+      "finding": "Both named build and weight pairs are already recorded. The retained price selects neither; no new scalar or price association accepted.",
+      "sources": [
+        "https://www.twittercycles.com/products/",
+        "https://www.twittercycles.com/products/twitter-T8%20tri-spoke%20wheel%2Bdisc%20wheel%20Road%20Bike.html",
+        "https://www.twitter-bikes.com/twviewbike/12311.html"
+      ],
+      "next_trigger": "Exact retained variant; preserve any unpublished weighing conditions as unknown.",
+      "proof": "worker current product/index reads; Chinese detail refresh timed out for worker and parent; current index evidence only for that page"
+    },
+    {
+      "candidate_id": "twitter-x7",
+      "fields": [
+        "drivetrain"
+      ],
+      "outcome": "regional-option-update-integrated",
+      "finding": "A fifth regional option and the ES7000 brand spelling were integrated. The site identifies itself as a US distributor; retained mainland price selections remain unresolved.",
+      "sources": [
+        "https://twitterbikeusa.com/products/x7-twitter-carbon-aero-road-bike",
+        "https://twitterbikeusa.com/pages/about-us"
+      ],
+      "next_trigger": "Exact mainland price-to-build mapping.",
+      "proof": "worker research; parent directly verified product and About pages",
+      "accepted_source_ids": [
+        "twitter-x7-regional-options-2026-09-22",
+        "twitter-usa-distributor-provenance-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "upland-r70",
+      "fields": [
+        "drivetrain"
+      ],
+      "outcome": "selection-unresolved",
+      "finding": "Manufacturer/index evidence supports mechanical and electronic branches, already retained as options. It does not select the retained card.",
+      "sources": [
+        "https://www.upland.bike/zh/product/308.html",
+        "https://www.upland.bike/zh/617.html",
+        "https://mall.jd.com/view_search-3477575-25223334-1-0-20-1.html"
+      ],
+      "next_trigger": "Exact retained variant or SKU.",
+      "proof": "worker current indexed manufacturer evidence; direct manufacturer refresh timed out; dealer matrix includes historical evidence"
+    },
+    {
+      "candidate_id": "hongfu-gravel",
+      "fields": [
+        "tire-clearance",
+        "price",
+        "frame-weight"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Current category and product routes distinguish FM188 variants and FM279. Their specifications and foreign wholesale quantity prices cannot fill a generic unidentified lead.",
+      "sources": [
+        "https://www.hongfu-bikes.com/products/gravelbike/",
+        "https://www.hongfu-bikes.com/products/4.html",
+        "https://www.hongfu-bikes.com/products/17.html",
+        "https://www.hongfu-bikes.com/products/72.html",
+        "https://www.alibaba.com/product-introduction/Hongfu-new-full-internal-cable-routing_1601253598341.html",
+        "https://www.alibaba.com/product-detail/FM279-disc-brake-700c-carbon-gravel_1600258084645.html"
+      ],
+      "next_trigger": "Original lead exact model, generation and package.",
+      "proof": "worker current public-source read"
+    },
+    {
+      "candidate_id": "winspace-m6",
+      "fields": [
+        "drivetrain",
+        "complete-weight"
+      ],
+      "outcome": "selection-unresolved",
+      "finding": "Current exact manufacturer pages confirm the three build/weight pairs already recorded, including size M without pedals. No retained mainland price-to-build mapping was found.",
+      "sources": [
+        "https://www.winspace.cc/products/m6-105-mechanic",
+        "https://www.winspace.cc/products/m6-105-di2",
+        "https://www.winspace.cc/products/m6-ultegra-di2"
+      ],
+      "next_trigger": "Exact mainland card-to-trim mapping.",
+      "proof": "worker current public-source read"
+    }
+  ],
+  "continuation": "This local batch delivery does not complete the user request. Continue with separately bounded remaining-field batches recorded in the task checkpoint.",
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128,
+    "note": "Monotonic coverage baseline accepted for the three new sources and added evidence relationships. Preview-server tests required one host-access retry after sandbox EPERM."
+  }
+}

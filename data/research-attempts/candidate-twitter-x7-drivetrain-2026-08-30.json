@@ -488,8 +488,10 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-x7-official-2026-08-30"
+    "twitter-x7-official-2026-08-30",
+    "twitter-x7-regional-options-2026-09-22",
+    "twitter-usa-distributor-provenance-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-x7-50-area-sweep-2026-08-30.json. Four exact current drivetrain configurations exist, and the retained price observations do not identify one each."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-x7-50-area-sweep-2026-08-30.json. That sweep found four configurations without retained price-to-build mapping. Supplemental regional-store review on 2026-09-22 adds a fifth option; see docs/research-batches/2026-09-22/luna-followup-02-results.json. Selected mainland builds remain unresolved. Original approach records and dates are unchanged."
 }

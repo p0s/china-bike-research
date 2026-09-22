@@ -5,15 +5,15 @@
   "category": "road",
   "type": "complete-bike",
   "brand_id": "twitter",
-  "why_interesting": "The exact current X7 page establishes a weight from approximately 7.6 kg and four materially different drivetrain configurations. The three retained prices must remain split until their selected builds are proven.",
+  "why_interesting": "The regional X7 store lists five drivetrain configurations. The three retained mainland prices remain separate until their selected builds are proven.",
   "facts": {
     "listing_identity": "TWITTER / 骓特 X7 carbon aero road-bike family",
     "complete_weight": "From approximately 7.6 kg; manufacturer claim, size/configuration and weighing basis not stated",
-    "drivetrain_options": "Sensah ES7000 1x14 wireless; Shimano 105 R7120 2x12; Shimano 105 R7170 Di2 2x12; WheelTop EDS TX 2x12 wireless",
+    "drivetrain_options": "Regional options: SENTYEH ES7000 1x14 wireless; Shimano 105 R7120 2x12; Shimano 105 R7170 Di2 2x12; WheelTop EDS TX 2x12 wireless; WheelTop EVO TX 2x12 wireless",
     "frame_and_fit": "T1000/T1100/T1K carbon, sizes 46/49/51/53/56, T47x24 bottom bracket",
     "stock_tire": "INNOVA 700x30C; maximum clearance unpublished",
     "frame_material": "High-modulus T1000/T1100/T1K carbon frame with T1K carbon fork, cockpit, seatpost and wheels",
-    "identity_source": "Current exact TWITTER regional manufacturer store identifies X7, four drivetrain options, five sizes and from-7.6-kg family weight",
+    "identity_source": "Exact X7 product page from Twitter Bikes USA, which identifies itself as the US distributor; current five-option drivetrain list checked on 2026-09-22",
     "stiffness_evidence_status": "No exact X7 frame-stiffness magnitude or reproducible test protocol found after 50-area exact-model sweep"
   },
   "missing": [
@@ -26,7 +26,9 @@
   "status": "exact-family-split-configuration-needed",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-x7-official-2026-08-30"
+    "twitter-x7-official-2026-08-30",
+    "twitter-x7-regional-options-2026-09-22",
+    "twitter-usa-distributor-provenance-2026-09-22"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -40,6 +42,6 @@
   },
   "source_refs": "IMG_6887.png#L1, IMG_6895.png#L1, IMG_6898.png#R1",
   "source_url": "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike",
-  "source_note": "The current exact manufacturer store resolves the X7 material stack and family identity. It does not select one retained price configuration, publish a tire maximum or provide a reproducible frame-stiffness result.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The regional distributor's current drivetrain list adds WheelTop EVO TX and uses SENTYEH for ES7000. It does not map the retained mainland prices to selected builds. Other facts retain their dated sources; no new clearance, stiffness, price or weight conclusion is made by this drivetrain review.",
+  "last_reviewed": "2026-09-22"
 }

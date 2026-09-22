@@ -1,0 +1,22 @@
+{
+  "batch_id": "luna-followup-02-2026-09-22",
+  "base_commit": "3ff61ac404953b6dedc6fd495b13e6b07d45e5a4",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "integration": "one parent writer; source and scope validation before acceptance",
+  "model_limit": 10,
+  "atomic_fields": 17,
+  "targets": [
+    { "candidate_id": "pardus-robin-evo-community-lead", "fields": ["warranty-support"] },
+    { "candidate_id": "pardus-spark-rs-community-lead", "fields": ["warranty-support", "complete-weight", "price"] },
+    { "candidate_id": "pardus-uragano-evo-community-lead", "fields": ["warranty-support", "current-configuration"] },
+    { "candidate_id": "twitter-little-white-rabbit", "fields": ["drivetrain"] },
+    { "candidate_id": "twitter-r10-pro-gen3", "fields": ["drivetrain"] },
+    { "candidate_id": "twitter-t8-closed-wheel", "fields": ["drivetrain", "complete-weight"] },
+    { "candidate_id": "twitter-x7", "fields": ["drivetrain"] },
+    { "candidate_id": "upland-r70", "fields": ["drivetrain"] },
+    { "candidate_id": "hongfu-gravel", "fields": ["tire-clearance", "price", "frame-weight"] },
+    { "candidate_id": "winspace-m6", "fields": ["drivetrain", "complete-weight"] }
+  ],
+  "done_criteria": "Each field receives exact attributable evidence that resolves its existing ambiguity, or an explicit unresolved disposition with actual routes checked and a concrete next trigger. Distinguish fresh research from existing evidence. A conflicting source is not silently selected. Stop at decisive evidence.",
+  "boundaries": "No seller messages, purchases, private data, access bypass, guessed model equivalence or inferred specifications. Researcher does not write or control XHS. This batch ends at local delivery; the user's remaining-backlog request continues through separately bounded batches."
+}

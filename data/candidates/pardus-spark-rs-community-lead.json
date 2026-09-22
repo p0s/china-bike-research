@@ -10,7 +10,7 @@
     "Exact custom-build complete weight, transaction price and selected factory-versus-owner BOM",
     "Manufacturer-confirmed maximum tire clearance",
     "Controlled exact-generation frame-stiffness magnitude and reproducible protocol",
-    "Current mainland dealer stock, warranty and service route"
+    "Current mainland dealer stock and exact-generation warranty terms"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
@@ -23,7 +23,8 @@
     "pardus-spark-rs-r7120-current-2026-08-30",
     "pardus-spark-rs-tmall-price-2026-08-30",
     "pardus-spark-rs-regional-weight-2026-08-30",
-    "pardus-spark-rs-rival-weight-2026-08-30"
+    "pardus-spark-rs-rival-weight-2026-08-30",
+    "pardus-china-support-2026-09-22"
   ],
   "facts": {
     "drivetrain": "Custom build: Shimano 105 mechanical with R8170 crank/chain upgrade",
@@ -37,9 +38,10 @@
     "current_factory_price_reference": "CNY 11,999 official-store index for a Spark RS Shimano 105 Di2 24-speed factory build; not the custom owner-build transaction price",
     "complete_weight_references": "Approximately 8.5 kg size M with alloy wheels, 8.0 kg size M with carbon wheels and 7.8 kg for a regional Rival/carbon build; custom build weight unresolved",
     "fitted_tire_references": "Current official Spark RS factory builds show 25C or 28C fitted tires; no manufacturer maximum was found",
-    "frame_stiffness_status": "Manufacturer supplies only qualitative pedaling-stiffness and wind-tunnel context; no numeric reproducible exact-generation protocol was found and the custom generation remains unresolved"
+    "frame_stiffness_status": "Manufacturer supplies only qualitative pedaling-stiffness and wind-tunnel context; no numeric reproducible exact-generation protocol was found and the custom generation remains unresolved",
+    "support_route": "PARDUS China customer-service contact page and dealer locator; exact-generation warranty duration and claim eligibility remain unverified"
   },
-  "source_note": "Current exact factory and regional references are preserved as option-specific context. None is assigned to the unresolved owner build; fitted tire sizes are not treated as maximum clearance, and qualitative stiffness marketing is not converted into a measured result.",
-  "last_reviewed": "2026-08-30",
+  "source_note": "Current exact factory and regional references are preserved as option-specific context. None is assigned to the unresolved owner build; fitted tire sizes are not treated as maximum clearance, and qualitative stiffness marketing is not converted into a measured result. Support-route review on 2026-09-22 confirms the manufacturer contact and dealer route only; it does not extend the dated build evidence or establish warranty coverage.",
+  "last_reviewed": "2026-09-22",
   "source_url": "https://parduscycle.com/Hightxq.aspx?color=17540&id=27456&pz=17539&t=27444"
 }
