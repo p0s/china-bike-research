@@ -1,0 +1,100 @@
+{
+  "review_date": "2026-09-22",
+  "method": "Read existing candidate, source and research-ledger records; no fresh external observation.",
+  "targets": 10,
+  "fields": 13,
+  "integrated_fields": 4,
+  "results": [
+    {
+      "target": "icanian-sn04",
+      "gap": "clearance-unverified",
+      "attempt_id": "candidate-icanian-sn04-tire-clearance-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Wheel diameter, frame size or drivetrain changes the permitted nominal tire size; do not collapse these conditions into one unqualified millimeter maximum."
+    },
+    {
+      "target": "sava-dream-maker",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-sava-dream-maker-complete-weight-2026-08-30",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Normalized exact-build manufacturer evidence already linked in the candidate; approximate weight and unreported measurement details stay explicit. Original source dates preserved."
+    },
+    {
+      "target": "sava-dream-maker",
+      "gap": "stiffness-evidence-missing",
+      "attempt_id": "candidate-sava-dream-maker-frame-stiffness-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Qualitative engineering or marketing context remains visible; it does not establish measured or controlled comparative frame stiffness."
+    },
+    {
+      "target": "sava-r8-r8170",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-sava-r8-r8170-complete-weight-2026-08-30",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Normalized exact-build manufacturer evidence already linked in the candidate; approximate weight and unreported measurement details stay explicit. Original source dates preserved."
+    },
+    {
+      "target": "sava-r8-r8170",
+      "gap": "clearance-unverified",
+      "attempt_id": "candidate-sava-r8-r8170-tire-clearance-2026-08-30",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Normalized exact-build manufacturer evidence already linked in the candidate; approximate weight and unreported measurement details stay explicit. Original source dates preserved."
+    },
+    {
+      "target": "sava-r8-r8170",
+      "gap": "stiffness-evidence-missing",
+      "attempt_id": "candidate-sava-r8-r8170-frame-stiffness-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Qualitative engineering or marketing context remains visible; it does not establish measured or controlled comparative frame stiffness."
+    },
+    {
+      "target": "twitter-cyclone-sport",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30",
+      "disposition": "retained-unknown",
+      "reason": "Wheel option is unresolved; separate alloy/carbon build weights cannot select the retained marketplace trim."
+    },
+    {
+      "target": "upland-taylor",
+      "gap": "complete-weight-missing",
+      "attempt_id": "candidate-upland-taylor-complete-weight-2026-08-30",
+      "disposition": "integrated-existing-evidence",
+      "reason": "Normalized exact-build manufacturer evidence already linked in the candidate; approximate weight and unreported measurement details stay explicit. Original source dates preserved."
+    },
+    {
+      "target": "missing-china-price-giant-defy-advanced",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-giant-defy-advanced-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already present; selected-option mainland checkout and stock remain unobserved."
+    },
+    {
+      "target": "missing-china-price-merida-reacto",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-missing-china-price-merida-reacto-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already present; selected-option mainland checkout and stock remain unobserved."
+    },
+    {
+      "target": "elves-falath-r7170",
+      "gap": "purchase-route",
+      "attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17",
+      "disposition": "retained-unknown",
+      "reason": "Regional listings and registration exist, but mainland selected-SKU availability, seller authority and warranty handling remain unverified."
+    },
+    {
+      "target": "icanian-p9",
+      "gap": "clearance-unverified",
+      "attempt_id": "candidate-icanian-p9-tire-clearance-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Wheel diameter, frame size or drivetrain changes the permitted nominal tire size; do not collapse these conditions into one unqualified millimeter maximum."
+    },
+    {
+      "target": "hi-light-r9-2025",
+      "gap": "price-not-observed",
+      "attempt_id": "candidate-hi-light-r9-2025-price-2026-09-01",
+      "disposition": "retained-unknown",
+      "reason": "Official price already present; selected-option mainland checkout and stock remain unobserved."
+    }
+  ]
+}
