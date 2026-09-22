@@ -1,0 +1,140 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-21-2026-09-22",
+  "status": "completed-with-one-closure",
+  "reviewed_models": 8,
+  "reviewed_fields": 13,
+  "full_field_closures": 1,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 716,
+  "coarse_gap_count_after": 715,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "vook-v8e-pro",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "The current exact VOOK V8E Pro page publishes a 690 g carbon frame and engineering claims, but no measured frame-stiffness result or reproducible comparison.",
+      "sources": [
+        "https://vookbikes.ph/vook-v8e-pro"
+      ],
+      "proof": "The exact current page identifies the V8E Pro and its 690 g frame, BSA bottom bracket and build details. Marketing language about lightweight engineering does not establish a stiffness value or test protocol.",
+      "next_trigger": "Exact V8E Pro independent review or public numeric stiffness test with model identity and protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "xmcarbonspeed-cs-gr01",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "Current CS-GR01 manufacturer and geometry routes identify the frame, but no exact-model stiffness measurement or controlled ride comparison is published.",
+      "sources": [
+        "https://www.xmcarbonspeed.com/Productinfo.asp?f=1639",
+        "https://bikeinsights.com/bikes/66be45ea9dffc9001a6b5e77-xiamen-carbon-speed-cs-gr01?build=base&version=2024"
+      ],
+      "proof": "The current exact manufacturer route and BikeInsights geometry page support identity and geometry only. Community discussion is exploratory and does not provide a reproducible stiffness result for the exact frame.",
+      "next_trigger": "Exact CS-GR01 independent review or public numeric stiffness comparison with protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "outcome": "tire-clearance-geometry-frame-weight-bottom-bracket-unresolved",
+      "finding": "The current exact CAMP GX600 PES page publishes fitted 700×35C tires and size choices, but no maximum clearance, numeric geometry table, frame-only weight or bottom-bracket standard.",
+      "sources": [
+        "https://www.campbicycle.com/en/gx600.html",
+        "https://china-bikes.p0s.eu/models/camp-gx600-pes/"
+      ],
+      "proof": "The exact manufacturer and current catalog routes identify the PES build and its complete-bike context. Fitted tire size and complete-bike information do not establish maximum clearance, frame-only mass, geometry values or BB standard.",
+      "next_trigger": "Exact GX600 PES specification or attributable technical report naming each requested field and the covered build.",
+      "fields": [
+        "tire-clearance",
+        "geometry",
+        "frame-weight",
+        "bottom-bracket"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-cyclone-gen3-et",
+      "outcome": "frame-weight-unresolved",
+      "finding": "The current exact TWITTER Cyclone 3rd ET page publishes an estimated complete-bike weight, but no frame-only mass for the selected build.",
+      "sources": [
+        "https://twitterbikeusa.com/products/cyclone-3rd-et",
+        "https://www.twittercycles.com/products/cyclone-3rd-7170-road-bike.html"
+      ],
+      "proof": "The current regional page estimates the complete build at 9.2 kg and the manufacturer route provides a different complete-bike configuration. Neither establishes frame-only weight, so complete-bike values are not converted.",
+      "next_trigger": "Exact Cyclone 3rd ET frame-only weight from a manufacturer specification or attributable scale report with build details.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-t3-tt",
+      "outcome": "frame-weight-closed",
+      "finding": "The current exact TWITTER T3 TT frameset route publishes an approximately 1.35 kg frame weight for the T3 TT model.",
+      "sources": [
+        "https://twitterbikeusa.com/en-ca/products/twitter-t3-tt-carbon-triathlon-frame-set-high-modulus-carbon-700c-disc-thru-axle-full-tt-handlebar-set-storage-box"
+      ],
+      "proof": "The current exact-model manufacturer frameset page identifies the T3 TT and separately lists frame, fork, seatpost and handlebar masses. The 1.35 kg value is retained as a manufacturer claim with finish, hardware and weighing method caveats; it is not the complete-bike 9.5 kg claim.",
+      "next_trigger": "None for the retained field unless the manufacturer revises the exact T3 TT frameset specification or a conflicting exact-model measurement appears.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "outcome": "geometry-frame-weight-bottom-bracket-unresolved",
+      "finding": "The current exact CAMP GX700 page publishes 450/480/510 mm size choices, fitted 700×45C tires and approximately 10.2 kg complete-bike weight, but no numeric geometry table, frame-only mass or bottom-bracket standard.",
+      "sources": [
+        "https://www.campbicycle.com/en/gx700.html"
+      ],
+      "proof": "The exact manufacturer page identifies the GRX820 build and states complete-bike weight and fitted tires. Those values do not establish geometry values, frame-only weight or BB standard.",
+      "next_trigger": "Exact GX700 GRX820 specification or attributable technical report naming geometry, frame-only mass and BB standard for this build.",
+      "fields": [
+        "geometry",
+        "frame-weight",
+        "bottom-bracket"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "bianchi-oltre-race",
+      "outcome": "frame-weight-unresolved",
+      "finding": "The current exact Bianchi Oltre Race page identifies the carbon aero frame and complete component package, but does not publish an exact frame-only weight.",
+      "sources": [
+        "https://www.bianchi.com/shop/bikes/road/aero/oltre/oltre-race-3/?v=90c0481dbc33"
+      ],
+      "proof": "The current official route supplies exact model identity, sizes and component specifications, including the press-fit BB standard, but no frame-only mass. Dealer and complete-bike weights are not transferred to the frame field.",
+      "next_trigger": "Exact Oltre Race frame-only weight from Bianchi or an attributable scale report with size and finish.",
+      "fields": [
+        "frame-weight"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-sf6-cues",
+      "outcome": "bottom-bracket-unresolved",
+      "finding": "The current SAVA Gelaro SF6 CUES page publishes exact geometry, fitted 40C tires and complete-bike weight, but no bottom-bracket shell standard.",
+      "sources": [
+        "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike"
+      ],
+      "proof": "The exact current page identifies the R21 frame and provides geometry and tire compatibility. It does not name the BB shell standard, and other SAVA model standards are not transferred.",
+      "next_trigger": "Exact Gelaro SF6 CUES specification or manufacturer confirmation naming the BB shell standard.",
+      "fields": [
+        "bottom-bracket"
+      ]
+    }
+  ],
+  "validation": [
+    "Frozen batch scope contains 8 targets and 13 atomic fields.",
+    "All 13 fields were reviewed against current exact-model or exact-variant routes on 2026-09-22.",
+    "One frame-weight field closed with a current exact-model manufacturer frameset claim; no catalog or image assets changed.",
+    "The new T3 TT source and claimed frame-weight fact require the repository gate before local delivery."
+  ],
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}
