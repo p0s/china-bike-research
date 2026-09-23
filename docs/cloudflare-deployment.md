@@ -2,7 +2,7 @@
 
 China Bikes builds to `dist/` and deploys as a Cloudflare Worker with Static
 Assets. The checked-in [`wrangler.jsonc`](../wrangler.jsonc) pins the Worker
-name, the tightness account, the production site URL used for canonical tags,
+name, the production site URL used for canonical tags,
 and the asset-first route split. `assets/*`, generated data, `sitemap.xml`,
 `robots.txt`, and other static files stay on the CDN asset path. The Worker
 runs first only for document route families and the two privacy-choice routes.
@@ -11,10 +11,24 @@ The build used by Wrangler is `npm run build:cloudflare`; it clears the
 GitHub-project base path and sets `https://china-bikes.p0s.eu` as the canonical
 origin. Use `npm run check` before a deployment, or `npm run deploy:cloudflare`
 with an authenticated Wrangler session. The repository workflow uses the
-`CLOUDFLARE_API_TOKEN` GitHub secret and the account ID in `wrangler.jsonc`.
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets. The
+account ID is supplied through the environment, not the public config.
 Its deployment job stays explicitly skipped until the repository variable
 `CLOUDFLARE_DEPLOY_ENABLED=true` is set after the dedicated token is installed.
-Until then, deploy through the existing authenticated local Wrangler session.
+Until then, deploy through the existing authenticated local Wrangler session
+with `CLOUDFLARE_ACCOUNT_ID` set in the process environment for the intended
+account. Keep its value in ignored local configuration; never include it in
+terminal history, pull requests, logs, or deployment docs.
+Before pushing, run `npm run privacy:outgoing -- origin/main` for a new feature
+branch. The repository also provides `.githooks/pre-push`; enable it in each
+checkout with `git config --worktree core.hooksPath .githooks` where worktree
+config is supported. CI runs the same outgoing-commit check against the PR base.
+GitHub's standard secret scanning is enabled, but this repository currently
+cannot configure a custom push-protection pattern for account IDs, so the local
+hook and CI check are the available enforcement layers. The separate
+`Account ID guard` pull-request check runs scanner code from the protected
+base branch and reads proposed commits as data, so changing a scanner within a
+pull request cannot disable that check.
 The workflow pins Wrangler 4.135.0. The token never enters browser assets.
 The checked-in custom-domain route binds only `china-bikes.p0s.eu`.
 

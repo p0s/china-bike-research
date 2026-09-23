@@ -15,6 +15,7 @@
     "dev:cloudflare": "npm run build:cloudflare && npx wrangler dev",
     "validate": "node scripts/validate-data.mjs",
     "privacy": "node scripts/check-privacy.mjs",
+    "privacy:outgoing": "node scripts/check-outgoing-privacy.mjs",
     "coverage:check": "node scripts/coverage.mjs",
     "coverage:accept": "node scripts/coverage.mjs --accept",
     "coverage:report": "node scripts/coverage.mjs --report",
@@ -30,7 +31,7 @@
     "video:normalize": "node scripts/video-research.mjs normalize",
     "video:match": "node scripts/video-research.mjs match",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run privacy && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build && npm run seo:check",
+    "check": "npm run privacy && npm run privacy:outgoing && npm run validate && npm run research:check && npm run coverage:check && npm test && npm run build && npm run seo:check",
     "seo:check": "node scripts/audit-seo.mjs"
   }
 }
