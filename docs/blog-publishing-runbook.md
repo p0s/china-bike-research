@@ -29,7 +29,18 @@ The twenty new articles are scheduled drafts in `content/posts/`. They are delib
 
 ## Deploy and prove the one release
 1. Fetch and fast-forward to the exact merged main commit in this owned checkout. Check it contains the intended queue change and no additional queued release. Inspect current deployment configuration; this site uses Cloudflare Worker Static Assets. Historical GitHub Pages wording does not authorize switching hosts.
-2. Use the existing authenticated local Wrangler and existing project/account to deploy. The established command is `env WRANGLER_LOG_PATH=/private/tmp/china-bikes-blog-publish npx --no-install wrangler deploy`; its configured build command performs the production build. Do not install a new CLI, change accounts or create credentials automatically.
+2. Use the existing authenticated local Wrangler and existing project/account to deploy. Require the owner-only, ignored `.research/cloudflare-account-id.env` file in this checkout; it contains the exact `CLOUDFLARE_ACCOUNT_ID` for the existing account. Load it without printing the value, then deploy in that same shell:
+
+   ```sh
+   set -eu
+   set -a
+   . .research/cloudflare-account-id.env
+   set +a
+   : "${CLOUDFLARE_ACCOUNT_ID:?missing Cloudflare account ID}"
+   env WRANGLER_LOG_PATH=/private/tmp/china-bikes-blog-publish npx --no-install wrangler deploy
+   ```
+
+   The configured build command performs the production build. If the file is missing or the account cannot be verified, stop rather than selecting another account. Do not install a new CLI, change accounts or create credentials automatically.
 3. Record the returned Cloudflare deployment version. Run `node scripts/blog-publication.mjs confirm EXACT-SLUG CLOUDFLARE-VERSION-UUID`. It requires both live language pages to match local production HTML, and requires the live sitemap and blog index to contain the article. The command stores the receipt only after all checks pass.
 4. Verify the next pending slug still returns 404 and is absent from the live sitemap/index. Confirm the due article's canonical, hreflang, cover and real-bike photo behavior. A deployed version alone is not proof of these public results.
 5. Update the <=25-line checkpoint with the exact merge SHA, deployment version, slug, live verification and next due time. Keep one current baseline plus the latest delta.
