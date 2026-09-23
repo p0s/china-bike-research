@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { findCloudflareAccountIds } from './cloudflare-account-privacy.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const textExtensions = new Set(['.md','.json','.mjs','.js','.css','.svg','.yml','.yaml','.cff','.txt','.html','.xml','.example']);
+const textExtensions = new Set(['.md','.json','.jsonc','.mjs','.js','.css','.svg','.yml','.yaml','.toml','.cff','.txt','.html','.xml','.example']);
 const thirdPartyBinaryExtensions = new Set(['.avif','.gif','.heic','.jpeg','.jpg','.mov','.mp4','.png','.webp']);
 const ignoredDirectories = new Set(['.git','.research','node_modules','dist','.cache']);
 const ignoredFiles = new Set(['scripts/check-privacy.mjs']);
@@ -85,6 +86,13 @@ function walk(directory) {
 }
 function scan(file, relative) {
   const text = fs.readFileSync(file, 'utf8');
+  scanText(text, relative);
+}
+function scanText(text, relative) {
+  for (const index of findCloudflareAccountIds(text)) {
+    const line = text.slice(0, index).split('\n').length;
+    findings.push(`${relative}:${line}: Cloudflare account ID`);
+  }
   for (const [label, pattern] of patterns) {
     pattern.lastIndex = 0;
     for (const match of text.matchAll(pattern)) {
@@ -98,10 +106,11 @@ function scan(file, relative) {
   }
 }
 
-walk(root);
+if (process.argv.includes('--stdin')) scanText(fs.readFileSync(0, 'utf8'), '<stdin>');
+else walk(root);
 if (findings.length) {
   console.error(`Privacy scan found ${findings.length} possible issue(s):`);
   for (const finding of findings) console.error(`- ${finding}`);
   process.exit(1);
 }
-console.log('Privacy scan passed: no common personal-data, local-path, credential, private-network, order-ID, chat-export, or unvalidated media-binary patterns found.');
+console.log('Privacy scan passed: no common personal-data, local-path, credential, Cloudflare account-ID, private-network, order-ID, chat-export, or unvalidated media-binary patterns found.');
