@@ -18,7 +18,7 @@ parser.add_argument('--reports',type=Path,default=PROJECT/'validation' if (PROJE
 args=parser.parse_args()
 SITE=args.site.resolve();ASSETS=args.assets.resolve();REPORTS=args.reports.resolve()
 (REPORTS/'screenshots').mkdir(parents=True,exist_ok=True)
-ORIGIN='https://china-bikes.p0s.eu'
+ORIGIN='https://chinesebikes.xyz'
 def load(page,path='/',stored=None,blocked=False,images=False):
  f=SITE/urlsplit(path).path.lstrip('/')
  if f.is_dir(): f=f/'index.html'

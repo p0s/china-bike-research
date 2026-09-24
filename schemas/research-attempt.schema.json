@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://china-bikes.p0s.eu/schemas/research-attempt.schema.json",
+  "$id": "https://chinesebikes.xyz/schemas/research-attempt.schema.json",
   "title": "Atomic research attempt ledger record",
   "type": "object",
   "required": ["id", "target", "field", "priority", "searched_at", "required_channels", "channels", "status", "notes"],

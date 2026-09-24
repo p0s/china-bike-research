@@ -1,5 +1,7 @@
 # Codex handoff: bilingual China Bikes SEO release
 
+Historical handoff. Its domain instruction was superseded on 2026-09-24 by the migration to `https://chinesebikes.xyz`.
+
 ## Task
 Integrate the supplied SEO patch into the current `p0s/china-bike-research` checkout on a feature branch, validate it, and prepare a pull request. Preserve newer work; do not replace the current repository wholesale with the supplied source snapshot. Do not push directly to `main`, force-push, or automatically merge/deploy without the user's approval.
 

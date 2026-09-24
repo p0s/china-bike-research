@@ -6,7 +6,7 @@ The user authorized writing and automatically publishing exactly twenty addition
 The twenty new articles are scheduled drafts in `content/posts/`. They are deliberately visible in this public source repository, but absent from the website until explicitly released. Existing articles remain published. Never publish multiple queued articles to catch up, rerandomize intervals, change the first date, or add articles to this authorization.
 
 ## Ownership and durable state
-- Repository: p0s/china-bike-research; production: https://china-bikes.p0s.eu.
+- Repository: p0s/china-bike-research; production: https://chinesebikes.xyz.
 - Use this task's existing owned checkout, recorded in its local checkpoint and automation prompt. Do not edit the unrelated canonical checkout.
 - One same-thread heartbeat: `publish-china-bikes-editorial-series`. Keep this task and checkout available until the series ends.
 - Git records which articles were prepared for release. `.research/blog-publication-state.json` records actual successful live verification and deployment IDs. Preserve it across branch changes; do not add private machine state to the public repository.

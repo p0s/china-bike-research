@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sendComparisonOpenedEvent } from '../assets/analytics-event.js';
 
-const origin = 'https://china-bikes.p0s.eu';
+const origin = 'https://chinesebikes.xyz';
 
 test('comparison event sends a bodyless same-origin request with only the public pathname', () => {
   const requests = [];

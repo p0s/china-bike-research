@@ -71,7 +71,7 @@ Use lowercase kebab-case IDs and existing schemas. Keep shared product facts in 
 - Move secondary details to accessible popovers or model pages.
 - Remove repetition rather than adding another explanation or page.
 - Keep generic project copy broad; keep model-specific category descriptions accurate.
-- Keep the design minimalist, responsive, keyboard-accessible, and safe for the production root at `https://china-bikes.p0s.eu/`; the build may still accept a project base path for local compatibility tests.
+- Keep the design minimalist, responsive, keyboard-accessible, and safe for the production root at `https://chinesebikes.xyz/`; the build may still accept a project base path for local compatibility tests.
 
 ## Public-post browser research
 

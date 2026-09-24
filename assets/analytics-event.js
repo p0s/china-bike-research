@@ -1,4 +1,4 @@
-const PRODUCTION_HOSTNAME = 'china-bikes.p0s.eu';
+const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 
 function doNotTrackEnabled(value) {
   return ['1', 'yes'].includes(String(value ?? '').trim().toLowerCase());

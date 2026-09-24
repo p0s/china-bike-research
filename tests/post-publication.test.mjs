@@ -8,7 +8,7 @@ const root=path.resolve(import.meta.dirname,'..');
 const posts=loadPosts(root),queue=loadSchedule(root,posts);
 const start=new Date(queue.entries[0].scheduled_at);
 const data=loadDataset();
-const ctx={data,products:joinProducts(data),catalogCandidates:joinCatalogCandidates(data),base:'',siteUrl:'https://china-bikes.p0s.eu',siteLastmod:data.meta.snapshot_date};
+const ctx={data,products:joinProducts(data),catalogCandidates:joinCatalogCandidates(data),base:'',siteUrl:'https://chinesebikes.xyz',siteLastmod:data.meta.snapshot_date};
 test('the fixed twenty-entry calendar starts three days after the request and preserves every random gap',()=>{
  assert.equal(queue.entries.length,20);
  assert.equal(start.toISOString(),'2026-09-25T12:20:00.000Z');

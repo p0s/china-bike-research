@@ -1,5 +1,7 @@
 # SEO implementation results — 2026-09-18
 
+Historical result. The domain decision below was superseded on 2026-09-24 by the migration to `https://chinesebikes.xyz`.
+
 ## Delivery status
 Implemented and validated locally against the uploaded repository snapshot. **Not deployed, not pushed, not connected to Search Console.** No ranking, traffic or indexing improvement has yet been measured. The source package and focused patch are for integration into the current checkout, not replacement of newer remote work.
 

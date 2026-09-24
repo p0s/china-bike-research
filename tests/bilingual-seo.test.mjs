@@ -15,7 +15,7 @@ const data = loadDataset();
 const products = joinProducts(data);
 const candidates = joinCatalogCandidates(data);
 const posts = loadPosts();
-const siteUrl = 'https://china-bikes.p0s.eu';
+const siteUrl = 'https://chinesebikes.xyz';
 const ctx = { data, products, catalogCandidates: candidates, posts, base: '', siteUrl, repositoryUrl: 'https://github.com/p0s/china-bike-research', siteLastmod: '2026-09-05' };
 const schemas = (html) => [...html.matchAll(/<script type="application\/ld\+json">([^<]+)<\/script>/g)].map((m) => JSON.parse(m[1]));
 
