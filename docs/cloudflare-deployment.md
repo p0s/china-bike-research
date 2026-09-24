@@ -30,13 +30,15 @@ hook and CI check are the available enforcement layers. The separate
 base branch and reads proposed commits as data, so changing a scanner within a
 pull request cannot disable that check.
 The workflow pins Wrangler 4.135.0. The token never enters browser assets.
-The checked-in custom-domain routes bind `chinesebikes.xyz` and the legacy
-`china-bikes.p0s.eu` hostname to the same Worker during migration. In the
-`p0s.eu` Cloudflare zone, deploy a Single Redirect with wildcard request URL
+The checked-in custom-domain route binds only `chinesebikes.xyz`. The legacy
+`china-bikes.p0s.eu` hostname already has a proxied DNS record and is GitHub
+Pages' current custom domain, so it should not also be added as a Worker Custom
+Domain. After the new domain serves correctly, deploy a Single Redirect in the
+`p0s.eu` Cloudflare zone with wildcard request URL
 `http*://china-bikes.p0s.eu/*`, target
 `https://chinesebikes.xyz/${2}`, status `301`, and **Preserve query string**
-enabled. Deploy it only after the new hostname serves correctly. The zone rule
-must redirect every path, including static assets, before the Worker runs.
+enabled. The zone rule must redirect every path, including static assets,
+before the existing GitHub Pages origin is reached.
 In the `chinesebikes.xyz` zone, proxy `www` and redirect
 `http*://www.chinesebikes.xyz/*` to `https://chinesebikes.xyz/${2}` with the
 same settings. The apex custom domain is created by Wrangler.
