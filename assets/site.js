@@ -1,6 +1,7 @@
 import { translate } from './i18n.js';
 import { moveSelectionId } from './compare-state.js';
 import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNumbers, restoreBuildState, copyText, bindHistoryInput } from './state-utils.js';
+import { sendComparisonOpenedEvent } from './analytics-event.js';
 
 (() => {
   const base = document.body.dataset.base ?? '';
@@ -1380,9 +1381,11 @@ import { COMPARISON_SELECTION_LIMIT, normalizeSelection, numberOrNull, compareNu
 
   function openComparison({ scroll = true, focus = scroll } = {}) {
     if (!comparePanel || selection.length < 2) return;
+    const wasOpen = !comparePanel.hidden;
     comparePanel.hidden = false;
     compareTray?.classList.add('is-comparing');
     renderComparison();
+    if (!wasOpen) sendComparisonOpenedEvent();
     if (focus && comparePanel instanceof HTMLElement) comparePanel.focus({ preventScroll: true });
     if (scroll) comparePanel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
