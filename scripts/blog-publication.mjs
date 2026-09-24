@@ -25,15 +25,15 @@ if(command==='status') {
  for(const prefix of ['', '/zh']) {
   const route=prefix+'/blog/'+slug+'/';
   const local=fs.readFileSync(path.join(root,'dist',route,'index.html'),'utf8');
-  const response=await fetch('https://china-bikes.p0s.eu'+route,{redirect:'error',signal:AbortSignal.timeout(30000)});
+  const response=await fetch('https://chinesebikes.xyz'+route,{redirect:'error',signal:AbortSignal.timeout(30000)});
   const remote=await response.text();
   if(response.status!==200 || digest(local)!==digest(remote)) throw new Error('Live article does not match local production output: '+route);
   proof.push({route,sha256:digest(remote)});
  }
- const sitemapResponse=await fetch('https://china-bikes.p0s.eu/sitemap.xml',{redirect:'error',signal:AbortSignal.timeout(30000)});
+ const sitemapResponse=await fetch('https://chinesebikes.xyz/sitemap.xml',{redirect:'error',signal:AbortSignal.timeout(30000)});
  const sitemap=await sitemapResponse.text();
- if(sitemapResponse.status!==200||!proof.every(p=>sitemap.includes('https://china-bikes.p0s.eu'+p.route))) throw new Error('Live sitemap is missing the released article.');
- const indexResponse=await fetch('https://china-bikes.p0s.eu/blog/',{redirect:'error',signal:AbortSignal.timeout(30000)});
+ if(sitemapResponse.status!==200||!proof.every(p=>sitemap.includes('https://chinesebikes.xyz'+p.route))) throw new Error('Live sitemap is missing the released article.');
+ const indexResponse=await fetch('https://chinesebikes.xyz/blog/',{redirect:'error',signal:AbortSignal.timeout(30000)});
  const index=await indexResponse.text();
  if(indexResponse.status!==200||!index.includes('/blog/'+slug+'/')) throw new Error('Live blog index is missing the released article.');
  state.receipts[slug]={published_at:next.entry.published_at,verified_at:new Date().toISOString(),deployment_id:deployment,proof};

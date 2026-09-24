@@ -1,4 +1,4 @@
-const PRODUCTION_HOSTNAME = 'china-bikes.p0s.eu';
+const PRODUCTION_HOSTNAME = 'chinesebikes.xyz';
 const OPT_OUT_COOKIE = 'p0s_analytics_optout';
 const OPT_OUT_MAX_AGE = 31_536_000;
 // Umami's current ingestion field is capped at 500 characters; keep the edge

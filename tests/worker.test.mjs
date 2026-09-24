@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
-  const request = new Request(`https://china-bikes.p0s.eu${path}`, init);
+  const request = new Request(`https://chinesebikes.xyz${path}`, init);
   Object.defineProperty(request, 'cf', { value: cf });
   return request;
 }
@@ -32,7 +32,7 @@ test('analytics payload is minimized to the frozen ingestion fields', () => {
   });
   const payload = analyticsPayload(request, new URL(request.url));
   assert.deepEqual(payload, {
-    hostname: 'china-bikes.p0s.eu',
+    hostname: 'chinesebikes.xyz',
     path: '/models/example-bike/',
     referrer: 'https://referrer.example',
     ip: '203.0.113.10',
@@ -89,14 +89,14 @@ test('comparison event payload contains only the fixed event and validated publi
   const request = makeRequest('/analytics/event', {
     method: 'POST',
     headers: {
-      origin: 'https://china-bikes.p0s.eu',
+      origin: 'https://chinesebikes.xyz',
       'x-analytics-path': '/zh/',
       'cf-connecting-ip': '203.0.113.10',
       'user-agent': 'Mozilla/5.0'
     }
   });
   assert.deepEqual(analyticsEventPayload(request, new URL(request.url)), {
-    hostname: 'china-bikes.p0s.eu',
+    hostname: 'chinesebikes.xyz',
     path: '/zh/',
     ip: '203.0.113.10',
     userAgent: 'Mozilla/5.0',
@@ -109,7 +109,7 @@ test('comparison event payload contains only the fixed event and validated publi
     const invalid = makeRequest('/analytics/event', {
       method: 'POST',
       headers: {
-        origin: 'https://china-bikes.p0s.eu',
+        origin: 'https://chinesebikes.xyz',
         'x-analytics-path': path,
         'cf-connecting-ip': '203.0.113.10',
         'user-agent': 'Mozilla/5.0'
@@ -120,7 +120,7 @@ test('comparison event payload contains only the fixed event and validated publi
 });
 
 test('same-origin comparison event reaches the gateway without browser-only fields', async () => {
-  const origin = 'https://china-bikes.p0s.eu';
+  const origin = 'https://chinesebikes.xyz';
   const request = makeRequest('/analytics/event', {
     method: 'POST',
     headers: {
@@ -151,7 +151,7 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
     assert.equal(sent[0].init.headers.authorization, 'Bearer test-token');
     assert.equal(Object.hasOwn(sent[0].init.headers, 'origin'), false);
     assert.deepEqual(JSON.parse(sent[0].init.body), {
-      hostname: 'china-bikes.p0s.eu',
+      hostname: 'chinesebikes.xyz',
       path: '/',
       ip: '203.0.113.10',
       userAgent: 'Mozilla/5.0',
@@ -165,7 +165,7 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
 
 test('an empty POST stream is accepted but a stream with bytes is rejected', async () => {
   const headers = {
-    origin: 'https://china-bikes.p0s.eu',
+    origin: 'https://chinesebikes.xyz',
     'x-analytics-path': '/',
     'cf-connecting-ip': '203.0.113.10',
     'user-agent': 'Mozilla/5.0'
@@ -201,7 +201,7 @@ test('an empty POST stream is accepted but a stream with bytes is rejected', asy
 });
 
 test('comparison events require same-origin bodyless POST and honor analytics exclusions', async () => {
-  const origin = 'https://china-bikes.p0s.eu';
+  const origin = 'https://chinesebikes.xyz';
   const common = {
     origin,
     'x-analytics-path': '/',
@@ -303,7 +303,7 @@ test('document responses preserve cache behavior and schedule bounded ingestion'
     assert.equal(sent[0].url, 'https://stats.p0s.eu/ingest/v1');
     assert.equal(sent[0].init.headers.authorization, 'Bearer test-token');
     assert.deepEqual(JSON.parse(sent[0].init.body), {
-      hostname: 'china-bikes.p0s.eu',
+      hostname: 'chinesebikes.xyz',
       path: '/models/example-bike/',
       referrer: 'https://example.org',
       ip: '203.0.113.10',
@@ -336,7 +336,7 @@ test('collector failure never changes the document response', async () => {
 
 test('collector HTTP failures are reported as rejected ingestion', async () => {
   const payload = {
-    hostname: 'china-bikes.p0s.eu',
+    hostname: 'chinesebikes.xyz',
     path: '/',
     ip: '203.0.113.10',
     userAgent: 'Mozilla/5.0'
@@ -352,7 +352,7 @@ test('collector HTTP failures are reported as rejected ingestion', async () => {
 });
 
 test('preference routes require same-origin POST and set host-only cookies', async () => {
-  const origin = 'https://china-bikes.p0s.eu';
+  const origin = 'https://chinesebikes.xyz';
   const optOut = await handleRequest(new Request(`${origin}/analytics/opt-out`, {
     method: 'POST',
     headers: { origin }
@@ -379,11 +379,11 @@ test('preference routes require same-origin POST and set host-only cookies', asy
 
 test('document paths redirect to trailing slash while static assets remain asset-first', async () => {
   const assets = assetsBinding(new Response('asset', { status: 200, headers: { 'content-type': 'image/svg+xml', etag: '"asset"' } }));
-  const redirect = await handleRequest(new Request('https://china-bikes.p0s.eu/models/example-bike?build=1'), { ASSETS: assets });
+  const redirect = await handleRequest(new Request('https://chinesebikes.xyz/models/example-bike?build=1'), { ASSETS: assets });
   assert.equal(redirect.status, 308);
-  assert.equal(redirect.headers.get('location'), 'https://china-bikes.p0s.eu/models/example-bike/?build=1');
+  assert.equal(redirect.headers.get('location'), 'https://chinesebikes.xyz/models/example-bike/?build=1');
   assert.equal(assets.calls.length, 0);
-  const assetResponse = await handleRequest(new Request('https://china-bikes.p0s.eu/assets/logo.svg'), { ASSETS: assets });
+  const assetResponse = await handleRequest(new Request('https://chinesebikes.xyz/assets/logo.svg'), { ASSETS: assets });
   assert.equal(assetResponse.status, 200);
   assert.equal(assetResponse.headers.get('etag'), '"asset"');
   assert.equal(assets.calls.length, 1);
