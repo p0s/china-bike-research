@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyticsPayload, handleRequest, hasOptOutCookie, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
+import { analyticsEventPayload, analyticsPayload, handleRequest, hasOptOutCookie, ingestAnalytics, isEligibleDocumentPath } from '../worker/index.mjs';
 
 function makeRequest(path, init = {}, cf = { country: 'SG' }) {
   const request = new Request(`https://china-bikes.p0s.eu${path}`, init);
@@ -83,6 +83,156 @@ test('analytics eligibility honors DNT, GPC, opt-out, prefetch, bots, and privat
   assert.equal(hasOptOutCookie('foo=1; p0s_analytics_optout=1; bar=2'), true);
   const privateRequest = makeRequest('/account/profile/', { headers: base });
   assert.equal(analyticsPayload(privateRequest, new URL(privateRequest.url)), null);
+});
+
+test('comparison event payload contains only the fixed event and validated public path', () => {
+  const request = makeRequest('/analytics/event', {
+    method: 'POST',
+    headers: {
+      origin: 'https://china-bikes.p0s.eu',
+      'x-analytics-path': '/zh/',
+      'cf-connecting-ip': '203.0.113.10',
+      'user-agent': 'Mozilla/5.0'
+    }
+  });
+  assert.deepEqual(analyticsEventPayload(request, new URL(request.url)), {
+    hostname: 'china-bikes.p0s.eu',
+    path: '/zh/',
+    ip: '203.0.113.10',
+    userAgent: 'Mozilla/5.0',
+    country: 'SG',
+    eventName: 'compare_open'
+  });
+  assert.equal(analyticsPayload(request, new URL(request.url)), null);
+
+  for (const path of ['/private/', '/analytics/event', '/models/example-bike/', '/?compare=bike-a,bike-b', '/models/example/?search=private']) {
+    const invalid = makeRequest('/analytics/event', {
+      method: 'POST',
+      headers: {
+        origin: 'https://china-bikes.p0s.eu',
+        'x-analytics-path': path,
+        'cf-connecting-ip': '203.0.113.10',
+        'user-agent': 'Mozilla/5.0'
+      }
+    });
+    assert.equal(analyticsEventPayload(invalid, new URL(invalid.url)), null, path);
+  }
+});
+
+test('same-origin comparison event reaches the gateway without browser-only fields', async () => {
+  const origin = 'https://china-bikes.p0s.eu';
+  const request = makeRequest('/analytics/event', {
+    method: 'POST',
+    headers: {
+      origin,
+      'x-analytics-path': '/',
+      'cf-connecting-ip': '203.0.113.10',
+      'user-agent': 'Mozilla/5.0'
+    }
+  });
+  const waits = [];
+  const sent = [];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    sent.push({ url, init });
+    return new Response(null, { status: 204 });
+  };
+  try {
+    const response = await handleRequest(request, {
+      ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+      ANALYTICS_INGEST_TOKEN: 'test-token'
+    }, { waitUntil: (promise) => waits.push(promise) });
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get('cache-control'), 'no-store');
+    assert.equal(waits.length, 1);
+    await Promise.all(waits);
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, 'https://stats.p0s.eu/ingest/v1');
+    assert.equal(sent[0].init.headers.authorization, 'Bearer test-token');
+    assert.equal(Object.hasOwn(sent[0].init.headers, 'origin'), false);
+    assert.deepEqual(JSON.parse(sent[0].init.body), {
+      hostname: 'china-bikes.p0s.eu',
+      path: '/',
+      ip: '203.0.113.10',
+      userAgent: 'Mozilla/5.0',
+      country: 'SG',
+      eventName: 'compare_open'
+    });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('comparison events require same-origin bodyless POST and honor analytics exclusions', async () => {
+  const origin = 'https://china-bikes.p0s.eu';
+  const common = {
+    origin,
+    'x-analytics-path': '/',
+    'cf-connecting-ip': '203.0.113.10',
+    'user-agent': 'Mozilla/5.0'
+  };
+  const env = {
+    ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+    ANALYTICS_INGEST_TOKEN: 'test-token'
+  };
+  const sent = [];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (...args) => {
+    sent.push(args);
+    return new Response(null, { status: 204 });
+  };
+  try {
+    for (const blocked of [
+      { dnt: '1' },
+      { 'sec-gpc': '1' },
+      { cookie: 'p0s_analytics_optout=1' },
+      { purpose: 'prefetch' },
+      { 'user-agent': 'ExampleBot/1.0' }
+    ]) {
+      const request = makeRequest('/analytics/event', { method: 'POST', headers: { ...common, ...blocked } });
+      const waits = [];
+      const response = await handleRequest(request, env, { waitUntil: (promise) => waits.push(promise) });
+      assert.equal(response.status, 204);
+      assert.equal(waits.length, 0);
+    }
+
+    const crossOrigin = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: { ...common, origin: 'https://attacker.example' }
+    }), env);
+    assert.equal(crossOrigin.status, 403);
+    const missingOrigin = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: { 'x-analytics-path': '/', 'cf-connecting-ip': '203.0.113.10', 'user-agent': 'Mozilla/5.0' }
+    }), env);
+    assert.equal(missingOrigin.status, 403);
+    const refererWaits = [];
+    const sameOriginReferer = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: { ...common, origin: '', referer: `${origin}/` }
+    }), env, { waitUntil: (promise) => refererWaits.push(promise) });
+    assert.equal(sameOriginReferer.status, 204);
+    await Promise.all(refererWaits);
+    const opaqueOrigin = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: { ...common, origin: 'null', referer: `${origin}/` }
+    }), env);
+    assert.equal(opaqueOrigin.status, 403);
+
+    const body = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: common, body: 'unexpected'
+    }), env);
+    assert.equal(body.status, 400);
+    const contentType = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers: { ...common, 'content-type': 'application/json' }
+    }), env);
+    assert.equal(contentType.status, 400);
+    const query = await handleRequest(makeRequest('/analytics/event?compare=bike-a,bike-b', {
+      method: 'POST', headers: common
+    }), env);
+    assert.equal(query.status, 400);
+    const get = await handleRequest(makeRequest('/analytics/event', { headers: common }), env);
+    assert.equal(get.status, 405);
+    assert.equal(sent.length, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test('document responses preserve cache behavior and schedule bounded ingestion', async () => {
