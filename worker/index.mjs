@@ -224,7 +224,7 @@ function validEventPagePath(path) {
 
 export function analyticsEventPayload(request, url) {
   if (request.method !== 'POST' || url.hostname !== PRODUCTION_HOSTNAME || url.pathname !== ANALYTICS_EVENT_ROUTE) return null;
-  if (url.search || url.hash || request.body !== null || request.headers.has('content-type') || !sameOriginPost(request, url)) return null;
+  if (url.search || url.hash || request.headers.has('content-type') || !sameOriginPost(request, url)) return null;
 
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path) || isExcludedAnalyticsRequest(request)) return null;
@@ -243,10 +243,29 @@ function noContentResponse(status = 204) {
   return responseWithHeaders(new Response(null, { status }), { 'cache-control': 'no-store' });
 }
 
+async function hasEventBodyBytes(request) {
+  if (!request.body) return false;
+  const reader = request.body.getReader();
+  try {
+    // Cloudflare can expose an empty POST as a readable stream. Inspect only
+    // enough to distinguish an empty request from a submitted payload.
+    for (let i = 0; i < 4; i += 1) {
+      const { done, value } = await reader.read();
+      if (done) return false;
+      if (value?.byteLength) return true;
+    }
+    return true;
+  } catch {
+    return true;
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 async function comparisonEventResponse(request, url, env, ctx) {
   if (request.method !== 'POST') return plainResponse('Method not allowed', 405, { allow: 'POST' });
   if (!sameOriginPost(request, url)) return plainResponse('Origin check failed', 403);
-  if (url.search || request.body !== null || request.headers.has('content-type')) return plainResponse('Invalid event request', 400);
+  if (url.search || request.headers.has('content-type') || await hasEventBodyBytes(request)) return plainResponse('Invalid event request', 400);
 
   const path = request.headers.get('x-analytics-path') ?? '';
   if (!validEventPagePath(path)) return plainResponse('Invalid event request', 400);

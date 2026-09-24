@@ -163,6 +163,43 @@ test('same-origin comparison event reaches the gateway without browser-only fiel
   }
 });
 
+test('an empty POST stream is accepted but a stream with bytes is rejected', async () => {
+  const headers = {
+    origin: 'https://china-bikes.p0s.eu',
+    'x-analytics-path': '/',
+    'cf-connecting-ip': '203.0.113.10',
+    'user-agent': 'Mozilla/5.0'
+  };
+  const emptyBody = new ReadableStream({ start(controller) { controller.close(); } });
+  const emptyRequest = makeRequest('/analytics/event', {
+    method: 'POST', headers, body: emptyBody, duplex: 'half'
+  });
+  assert.notEqual(emptyRequest.body, null);
+  const waits = [];
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 204 });
+  try {
+    const accepted = await handleRequest(emptyRequest, {
+      ANALYTICS_INGEST_URL: 'https://stats.p0s.eu/ingest/v1',
+      ANALYTICS_INGEST_TOKEN: 'test-token'
+    }, { waitUntil: (promise) => waits.push(promise) });
+    assert.equal(accepted.status, 204);
+    assert.equal(waits.length, 1);
+    await Promise.all(waits);
+
+    const submittedBody = new ReadableStream({ start(controller) {
+      controller.enqueue(new TextEncoder().encode('unexpected'));
+      controller.close();
+    } });
+    const rejected = await handleRequest(makeRequest('/analytics/event', {
+      method: 'POST', headers, body: submittedBody, duplex: 'half'
+    }), {});
+    assert.equal(rejected.status, 400);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test('comparison events require same-origin bodyless POST and honor analytics exclusions', async () => {
   const origin = 'https://china-bikes.p0s.eu';
   const common = {
