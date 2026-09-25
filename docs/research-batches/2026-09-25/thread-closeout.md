@@ -36,4 +36,11 @@ A future research task should select a small set of purchase-relevant questions 
 
 ## Validation and delivery
 
-Final verification and pull-request identifiers are recorded with the delivery commit and task completion. The earlier goal completion label does not certify research completeness or live website delivery.
+- `npm run coverage:accept` and `npm run validate` passed after the Scott correction.
+- `npm run check` passed after current main was merged: 349 tests, 584 pages, 458 indexable and 126 noindex. The sandbox-only loopback bind failures were resolved by the permitted host run.
+- `npm run privacy:outgoing -- origin/main` passed for the accumulated signed commit history.
+- Isolated desktop/mobile browser checks verified SAVA S8 clearance, Airwolf foreign-price labeling and checkout caveat, Scott unknown clearance, and no document overflow at 390 px. Existing SAVA photography loaded successfully.
+- Goal image records remain at 212. Existing dated image-health reports are retained; this closeout changes no image URLs.
+- Signed research commit: `573d50a`; signed reconciliation with main: `c688a7a`. The pull request is linked in the task completion.
+
+The earlier goal completion label does not certify research completeness or live website delivery. Source integration and production deployment are separate proof levels.
