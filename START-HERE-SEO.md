@@ -9,7 +9,7 @@ This release keeps existing English routes, adds native Chinese pages under `/zh
 Preview with the Node version in `.nvmrc`:
 
 ```sh
-PUBLIC_BASE_PATH='' PUBLIC_SITE_URL='https://china-bikes.p0s.eu' npm run dev
+PUBLIC_BASE_PATH='' PUBLIC_SITE_URL='https://chinesebikes.xyz' npm run dev
 ```
 
 Open the address printed by the existing preview server. `/blog/` and `/zh/blog/` contain the starter posts. No new npm production dependency is needed.

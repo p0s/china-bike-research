@@ -1,7 +1,7 @@
 # SEO implementation — 2026-09-18
 
 ## Authorized decisions
-- Keep https://china-bikes.p0s.eu; do not migrate the domain.
+- Historical plan: keep https://china-bikes.p0s.eu. Superseded by the 2026-09-24 migration to https://chinesebikes.xyz.
 - Editorial priority: 70% buyers in mainland China, 30% international researchers.
 - English and Simplified Chinese. Retain current English URLs and add /zh/ equivalents.
 - Add substantive starter articles grounded in the existing catalog.

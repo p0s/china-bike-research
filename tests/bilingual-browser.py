@@ -19,8 +19,13 @@ REPORTS.mkdir(parents=True, exist_ok=True)
 ORIGIN = 'https://preview.invalid'
 results = []
 REPO = Path(__file__).resolve().parents[1]
-photo_ids = {photo['image_id'] for photo in json.loads((REPO/'content/blog-images.json').read_text())['model_photos']}
+manifest_photos = json.loads((REPO/'content/blog-images.json').read_text())['model_photos']
+photo_ids = {photo['image_id'] for photo in manifest_photos if 'image_id' in photo}
+posts = [json.loads(file.read_text()) for file in sorted((REPO/'content/posts').glob('*.json'))]
+visible_posts = [post for post in posts if (SITE/'blog'/post['slug']/'index.html').is_file()]
 photo_urls = {image['hosting']['remote_url'] for image in (json.loads(file.read_text()) for file in (REPO/'data/images').glob('*.json')) if image['id'] in photo_ids}
+
+photo_urls.update(photo['external']['image']['hosting']['remote_url'] for photo in manifest_photos if 'external' in photo)
 
 def load(page, path, script=True):
     pathname = urlsplit(path).path
@@ -76,7 +81,7 @@ with sync_playwright() as p:
     for locale in ('en', 'zh-Hans'):
         prefix = '/zh' if locale == 'zh-Hans' else ''
         for width, height, mode in [(1440,1000,'desktop'),(390,844,'mobile')]:
-            for route in ['/blog/'] + ['/blog/'+post['slug']+'/' for post in (json.loads(file.read_text()) for file in sorted((Path(__file__).resolve().parents[1]/'content/posts').glob('*.json')))] + ['/']:
+            for route in ['/blog/'] + ['/blog/'+post['slug']+'/' for post in visible_posts] + ['/']:
                 def visual(route=route,width=width,height=height,mode=mode,locale=locale,prefix=prefix):
                     page.set_viewport_size({'width':width,'height':height})
                     go(prefix+route)
@@ -89,10 +94,11 @@ with sync_playwright() as p:
                         images = page.locator('[data-blog-mascot]')
                         photos = page.locator('[data-blog-bike-image]')
                         headers = page.locator('[data-blog-header-image]')
-                        assert headers.count() == (5 if route == '/blog/' else 1)
+                        assert headers.count() == (len(visible_posts) + 1 if route == '/blog/' else 1)
                         headers.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
                         assert headers.evaluate_all('(images)=>images.every(img=>img.naturalWidth>0)')
-                        expected = 0 if route == '/blog/' else 2 if 'gravel-bikes-around' in route else 3
+                        post = next((p for p in visible_posts if route == '/blog/'+p['slug']+'/'), None)
+                        expected = sum(len(placement['ids']) for placement in post['photo_sections']) if post else 0
                         assert images.count() == expected
                         assert photos.count() == expected
                         images.evaluate_all('(images)=>Promise.all(images.map(img=>{img.loading="eager";return img.decode()}))')
