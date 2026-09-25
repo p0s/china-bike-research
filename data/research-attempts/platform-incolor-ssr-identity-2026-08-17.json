@@ -44,8 +44,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "round3-incolor-ssr-frameset-walkaround-2e712d1163"
+    "round3-incolor-ssr-frameset-walkaround-2e712d1163",
+    "incolor-ssr-product-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "incolor-ssr-product-current-2026-09-23"
+    ],
+    "note": "Current exact product page confirms identity and links to the official Tmall listing. The image asset timed out; preserve the existing remote image and do not rehost without documented rights. No historical search-channel attempts were rewritten."
+  }
 }

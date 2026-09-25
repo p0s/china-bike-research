@@ -1,0 +1,230 @@
+{
+  "batch_id": "gap-fill-batch-33-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 385,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "queue_filter_matches": {
+      "source_reuse_resolutions_already_in_ledger": 495,
+      "known_duplicate_java_aluminum_24s": 2,
+      "completed_all_gaps_50_area_campaign": 201,
+      "other_rows_with_50_or_more_approach_areas": 266,
+      "excluded_union": 266,
+      "eligible_unswept_fields": 119,
+      "selected_fields": 24,
+      "selected_exact_targets": 10
+    }
+  },
+  "selection_basis": "First queue-ordered evidence-found rows after excluding the known java-aluminum-24s duplicate, all fields covered by the completed all-gaps 50-area campaign, and every other row with at least 50 distinct recorded approach areas. Source-reuse-resolved attempts are already omitted by the queue. Stop at 10 distinct exact targets; this yields 24 fields because the next eligible row would exceed the target cap.",
+  "exact_model_count": 10,
+  "atomic_field_count": 24,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 24,
+  "exact_models": [
+    "twitter-cyclone-electronic",
+    "twitter-v3-rs-sensah",
+    "twitter-v3-wheeltop-eds",
+    "voicevelo-g-major",
+    "winspace-g5",
+    "xds-gt350",
+    "xds-gt600",
+    "yoeleo-altera-g21",
+    "seraph-tt-x68-new-udh",
+    "af01"
+  ],
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "twitter-cyclone-electronic",
+      "exact_identity": "Cyclone 3rd ET electronic",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "variant-twitter-cyclone-electronic-frame-2026-08-17",
+        "variant-twitter-cyclone-electronic-warranty-support-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-rs-sensah",
+      "exact_identity": "Gravel V3 RS / Sensah 2×12",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "variant-twitter-v3-rs-sensah-price-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "exact_identity": "Gravel V3 WheelTop EDS 2×12",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "price",
+        "complete-weight"
+      ],
+      "attempt_ids": [
+        "variant-twitter-v3-wheeltop-eds-price-2026-08-28",
+        "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "voicevelo-g-major",
+      "exact_identity": "Voicevelo G Major",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-stiffness",
+        "purchase-route",
+        "frame-material",
+        "identity",
+        "image"
+      ],
+      "attempt_ids": [
+        "candidate-voicevelo-g-major-frame-stiffness-2026-08-28",
+        "candidate-voicevelo-g-major-purchase-route-2026-08-17",
+        "candidate-voicevelo-g-major-frame-material-2026-08-28",
+        "candidate-voicevelo-g-major-identity-2026-08-17",
+        "candidate-voicevelo-g-major-image-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "winspace-g5",
+      "exact_identity": "G5",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "geometry",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-winspace-g5-geometry-2026-08-27",
+        "platform-winspace-g5-frame-material-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt350",
+      "exact_identity": "XDS 喜德盛 GT350",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "complete-weight",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-xds-gt350-complete-weight-2026-08-28",
+        "candidate-xds-gt350-frame-material-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt600",
+      "exact_identity": "XDS / X-LAB 喜德盛 GT600",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "complete-weight",
+        "fitted-tire",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-xds-gt600-complete-weight-2026-08-27",
+        "candidate-xds-gt600-fitted-tire-2026-08-27",
+        "candidate-xds-gt600-frame-material-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "yoeleo-altera-g21",
+      "exact_identity": "Altera G21",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "geometry",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-yoeleo-altera-g21-geometry-2026-08-27",
+        "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
+        "platform-yoeleo-altera-g21-frame-material-2026-08-28",
+        "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new UDH",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "price-not-observed",
+        "package"
+      ],
+      "attempt_ids": [
+        "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+        "candidate-seraph-tt-x68-new-udh-package-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "af01",
+      "exact_identity": "AF01",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-af01-frame-material-2026-08-28"
+      ]
+    }
+  ],
+  "acceptance_rules": [
+    "Research only these 24 frozen fields, sequentially one exact target and source at a time; stop at decisive evidence.",
+    "For every finding, distinguish exact model/generation, complete bike versus frameset, market, selected option, price/checkout conditions, size and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior observations without refreshing access dates unless actually rechecked.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with a concrete reason and reopen trigger; never infer.",
+    "Keep third-party images remote unless reusable rights are documented; preserve exactness, credit, alt text and fallback metadata.",
+    "Luna is evidence-only: no repository edits, no XHS, no seller contact, no recursive delegation and no out-of-scope research. Root integrates and writes.",
+    "Return one disposition for every frozen attempt id with exact source URL/id, source class/publisher, actual access date, supported claim, caveat and reopen trigger."
+  ]
+}

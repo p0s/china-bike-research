@@ -1,0 +1,429 @@
+{
+  "batch_id": "gap-fill-batch-28-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-28-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 25,
+    "root_fields": 0,
+    "luna_evidence_fields": 25
+  },
+  "new_source_records": [
+    "xlab-gt8-official-current-2026-09-23",
+    "xlab-dealer-locator-current-2026-09-23",
+    "muidler-s7-jd-index-recheck-2026-09-23",
+    "paragon-jazz-jd-index-recheck-2026-09-23",
+    "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23",
+    "pardus-spark-sport-105-current-recheck-2026-09-23",
+    "pardus-spark-rs-rival-current-recheck-2026-09-23",
+    "pardus-spark-sport-pes-owner-post-current-recheck-2026-09-23",
+    "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "missing-china-price-x-lab-xds-gt8",
+    "muidler-ashius-s7",
+    "nscr-carbon-gravel-storage",
+    "paragon-jazz-2026",
+    "pardus-robin-evo-community-lead",
+    "pardus-robin-sport-pes",
+    "pardus-spark",
+    "pardus-spark-rs-community-lead",
+    "pardus-spark-sport-pes",
+    "pardus-super-sport"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "missing-china-price-x-lab-xds-gt8",
+      "model": "X-LAB GT8 GRX Di2",
+      "field": "frame-stiffness",
+      "status": "qualitative-only-no-stiffness-measurement",
+      "attempt_record_id": "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27",
+      "source_ids": [
+        "xlab-gt8-official-current-2026-09-23",
+        "xlab-gt8-velo-review-2026-08-27"
+      ],
+      "sources_checked": [
+        "https://xds.co/en-intl/products/gt8",
+        "https://velo.outsideonline.com/gravel/gravel-gear/xds-x-lab-gt8-review/"
+      ],
+      "note": "The manufacturer gives only qualitative strength/compliance wording. Velo reports compliance and a muted ride with race-oriented handling; neither supplies an objective stiffness method or value.",
+      "next_trigger": "Reopen for an exact-model stiffness test with a stated method or measured result."
+    },
+    {
+      "record_id": "missing-china-price-x-lab-xds-gt8",
+      "model": "X-LAB GT8 GRX Di2",
+      "field": "price",
+      "status": "global-list-current-mainland-market-report-not-checkout",
+      "attempt_record_id": "candidate-xlab-gt8-price-2026-08-27",
+      "source_ids": [
+        "xlab-gt8-official-current-2026-09-23",
+        "xlab-gt8-smzdm-market-report-2026-08-27"
+      ],
+      "sources_checked": [
+        "https://xds.co/en-intl/products/gt8",
+        "https://post.smzdm.com/p/a3mder67/"
+      ],
+      "note": "Current international listing is US$3,199. The CNY 21,980 mainland amount is an Aug 21 aggregated dealer-market report, not a current seller checkout. Markets and evidence classes remain separate.",
+      "next_trigger": "Reopen for a current mainland listing or verified checkout for the selected build."
+    },
+    {
+      "record_id": "missing-china-price-x-lab-xds-gt8",
+      "model": "X-LAB GT8 GRX Di2",
+      "field": "purchase-route",
+      "status": "sold-out-global-page-no-confirmed-mainland-route",
+      "attempt_record_id": "candidate-xlab-gt8-purchase-route-2026-08-27",
+      "source_ids": [
+        "xlab-gt8-official-current-2026-09-23",
+        "xlab-dealer-locator-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://xds.co/en-intl/products/gt8",
+        "https://xds.co/en-intl/pages/dealer-locator"
+      ],
+      "note": "The global page shows sold-out/notify status. The locator offers a China selector but no result without city input, so mainland dealer, stock and checkout remain unresolved.",
+      "next_trigger": "Reopen when the locator returns a named mainland dealer or a current order page."
+    },
+    {
+      "record_id": "missing-china-price-x-lab-xds-gt8",
+      "model": "X-LAB GT8 GRX Di2",
+      "field": "frame-material",
+      "status": "manufacturer-material-supported-for-listed-gt8-build",
+      "attempt_record_id": "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27",
+      "source_ids": [
+        "xlab-gt8-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://xds.co/en-intl/products/gt8"
+      ],
+      "note": "The current GT8 page specifies an XDS Toray T-800 carbon frame and fork; no more detailed layup is stated.",
+      "next_trigger": "Reopen if the manufacturer revises the material specification or distinguishes a trim."
+    },
+    {
+      "record_id": "muidler-ashius-s7",
+      "model": "MUIDLER 媚影 阿修斯 S7",
+      "field": "identity-source",
+      "status": "historical-card-identity-current-index-no-s7-official-identity-unresolved",
+      "attempt_record_id": "candidate-muidler-ashius-s7-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "muidler-trademark-index-2026-08-30",
+        "muidler-s7-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://tm.aliyun.com/detail/d65d_76777339_12",
+        "https://www.jd.com/tupian/131885ef8cfd087d3edb.html"
+      ],
+      "note": "The anonymized Aug 8 card reads 媚影阿修斯S7 and shows MUIDLER branding; the trademark index links MUIDLER with 媚影 but not S7. The current JD image index no longer shows S7. Official manufacturer identity and English model rendering remain unknown.",
+      "next_trigger": "Reopen with a current manufacturer or seller item page naming S7 and its official identity."
+    },
+    {
+      "record_id": "nscr-carbon-gravel-storage",
+      "model": "NSCR Carbon gravel bike with storage",
+      "field": "complete-weight",
+      "status": "seller-advertised-weight-basis-unstated",
+      "attempt_record_id": "candidate-nscr-carbon-gravel-storage-complete-weight-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "The anonymized Aug 8 exact seller card advertises 8.5 kg. Size, pedals, accessories and weighing method are absent; focused current search found no external exact-model primary page.",
+      "next_trigger": "Reopen with a current exact-build weight and stated size/equipment basis."
+    },
+    {
+      "record_id": "nscr-carbon-gravel-storage",
+      "model": "NSCR Carbon gravel bike with storage",
+      "field": "frame-material",
+      "status": "seller-carbon-and-eps-claims-only",
+      "attempt_record_id": "candidate-nscr-carbon-gravel-storage-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "The retained card describes carbon-fiber construction and advertises an EPS process. Carbon grade, fork material and the process claim are not independently verified; no current exact-model manufacturer specification surfaced.",
+      "next_trigger": "Reopen with an exact-model manufacturer construction specification."
+    },
+    {
+      "record_id": "nscr-carbon-gravel-storage",
+      "model": "NSCR Carbon gravel bike with storage",
+      "field": "identity-source",
+      "status": "brand-marked-card-formal-model-identity-unresolved",
+      "attempt_record_id": "candidate-nscr-carbon-gravel-storage-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "The anonymized card shows NSCR branding, storage and advertised attributes but no exact model/SKU or legal manufacturer. Focused current search found no external exact-model primary listing.",
+      "next_trigger": "Reopen with a manufacturer/legal-entity page identifying the exact model or SKU."
+    },
+    {
+      "record_id": "paragon-jazz-2026",
+      "model": "PARAGON 鹏来格 JAZZ 2026",
+      "field": "drivetrain",
+      "status": "listing-title-option-conflict-selected-drivetrain-unresolved",
+      "attempt_record_id": "candidate-paragon-jazz-2026-drivetrain-2026-08-30",
+      "source_ids": [
+        "paragon-jazz-jd-2026-08-30",
+        "paragon-jazz-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318ea2e736b36cc5caf.html",
+        "https://item.jd.com/10212109414829.html"
+      ],
+      "note": "The current title says 105Di2 while the JAZZ option label says 105 kit / 24-speed; the exact item page is blank. Earlier index evidence says R7100 mechanical 2×12. Keep this as a qualified seller-index report; JAZZ Plus Di2 is a separate option.",
+      "next_trigger": "Reopen when a readable selected SKU page names the exact drivetrain."
+    },
+    {
+      "record_id": "paragon-jazz-2026",
+      "model": "PARAGON 鹏来格 JAZZ 2026",
+      "field": "frame-material",
+      "status": "seller-carbon-frame-claim-grade-unknown",
+      "attempt_record_id": "candidate-paragon-jazz-2026-frame-material-2026-08-30",
+      "source_ids": [
+        "paragon-jazz-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318ea2e736b36cc5caf.html",
+        "https://item.jd.com/10212109414829.html"
+      ],
+      "note": "Current JD listing title and option label describe a carbon frame. Grade and fork construction are unstated; direct item detail returned blank.",
+      "next_trigger": "Reopen with manufacturer specification or readable selected-item details."
+    },
+    {
+      "record_id": "paragon-jazz-2026",
+      "model": "PARAGON 鹏来格 JAZZ 2026",
+      "field": "identity-source",
+      "status": "brand-and-jazz-identity-supported-model-year-unresolved",
+      "attempt_record_id": "candidate-paragon-jazz-2026-identity-source-2026-08-30",
+      "source_ids": [
+        "paragon-jazz-jd-index-recheck-2026-09-23",
+        "paragon-jazz-jd-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318ea2e736b36cc5caf.html"
+      ],
+      "note": "Current JD index identifies PARAGON 鹏来格 JAZZ and keeps JAZZ Plus separate, but does not state 2026. Year remains based on the retained dated card, not this page.",
+      "next_trigger": "Reopen with a dated manufacturer catalog or current exact item page."
+    },
+    {
+      "record_id": "pardus-robin-evo-community-lead",
+      "model": "PARDUS Robin EVO competition build",
+      "field": "complete-weight",
+      "status": "custom-build-weight-unresolved-generation-and-basis",
+      "attempt_record_id": "candidate-pardus-robin-evo-community-lead-complete-weight-2026-09-01",
+      "source_ids": [
+        "public-pardus-robin-evo-build-2026-08-17",
+        "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030"
+      ],
+      "note": "The stored exact XS competition-build lead reports 6.2 kg but is not generation-mapped. Today’s official page gives frame, fork and cockpit weights only; it does not give complete-bike weight or match the custom build.",
+      "next_trigger": "Reopen with non-XHS exact-build evidence identifying generation, components, size and weighing basis."
+    },
+    {
+      "record_id": "pardus-robin-evo-community-lead",
+      "model": "PARDUS Robin EVO competition build",
+      "field": "purchase-route",
+      "status": "standard-ultegra-route-does-not-map-custom-build",
+      "attempt_record_id": "candidate-pardus-robin-evo-community-lead-purchase-route-2026-08-17",
+      "source_ids": [
+        "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030"
+      ],
+      "note": "PARDUS exposes buy/store-search links for the standard Ultegra Di2 build. No source maps the retained custom competition build to that SKU, seller or stock.",
+      "next_trigger": "Reopen with a current seller/order source matching the exact custom build."
+    },
+    {
+      "record_id": "pardus-robin-sport-pes",
+      "model": "PARDUS 瑞豹 Robin Sport PES",
+      "field": "drivetrain",
+      "status": "previous-exact-manufacturer-support-current-refresh-timeout",
+      "attempt_record_id": "candidate-pardus-robin-sport-pes-drivetrain-2026-08-30",
+      "source_ids": [
+        "pardus-robin-sport-pes-current-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030"
+      ],
+      "note": "The accepted Aug 30 exact PES page specifies a Magene electronic 2×12 BOM. The Sep 23 refresh timed out; selected exact PES build remains the dated source basis.",
+      "next_trigger": "Reopen when the exact PES page or a current selected seller specification is readable."
+    },
+    {
+      "record_id": "pardus-robin-sport-pes",
+      "model": "PARDUS 瑞豹 Robin Sport PES",
+      "field": "frame-material",
+      "status": "previous-exact-manufacturer-support-current-refresh-timeout",
+      "attempt_record_id": "candidate-pardus-robin-sport-pes-frame-material-2026-08-30",
+      "source_ids": [
+        "pardus-robin-sport-pes-current-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030"
+      ],
+      "note": "The accepted Aug 30 exact PES page specifies HS-EPS+ carbon frame and HS-HPT carbon fork; grade is not stated. The Sep 23 page refresh timed out.",
+      "next_trigger": "Reopen when PARDUS provides a readable current PES-specific specification."
+    },
+    {
+      "record_id": "pardus-robin-sport-pes",
+      "model": "PARDUS 瑞豹 Robin Sport PES",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-claims-no-test-protocol",
+      "attempt_record_id": "candidate-pardus-robin-sport-pes-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "pardus-robin-sport-pes-current-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030"
+      ],
+      "note": "PARDUS describes FLEX AIR/FLEX PIVOT and qualitative rigidity/comfort; no numeric stiffness or reproducible test protocol is available. Current page refresh timed out.",
+      "next_trigger": "Reopen for a numerical exact-frame test or readable revised manufacturer evidence."
+    },
+    {
+      "record_id": "pardus-robin-sport-pes",
+      "model": "PARDUS 瑞豹 Robin Sport PES",
+      "field": "tire-clearance",
+      "status": "40c-compatibility-claim-maximum-versus-fitted-basis-unclear",
+      "attempt_record_id": "candidate-pardus-robin-sport-pes-tire-clearance-2026-08-30",
+      "source_ids": [
+        "pardus-robin-sport-pes-current-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20838&id=43697&pz=20829&t=1030"
+      ],
+      "note": "Retained manufacturer wording says 700×40C frame/fork compatibility, but the stored note does not establish maximum versus fitted-width basis. Sep 23 refresh timed out; keep the basis qualified.",
+      "next_trigger": "Reopen when the exact PES page states maximum clearance and whether width is fitted or measured."
+    },
+    {
+      "record_id": "pardus-spark",
+      "model": "PARDUS 瑞豹 Spark",
+      "field": "frame-material",
+      "status": "carbon-construction-supported-for-spark-sport-105-branch",
+      "attempt_record_id": "candidate-pardus-spark-frame-material-2026-08-30",
+      "source_ids": [
+        "pardus-spark-sport-105-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444"
+      ],
+      "note": "Current Spark Sport—105 page states an HS-EPS+ carbon frame and HS-HPT carbon fork. This is branch-specific; carbon grade is not given.",
+      "next_trigger": "Reopen for a different Spark generation or trim’s own specification."
+    },
+    {
+      "record_id": "pardus-spark",
+      "model": "PARDUS 瑞豹 Spark",
+      "field": "frame-stiffness",
+      "status": "relative-manufacturer-claim-no-published-protocol",
+      "attempt_record_id": "candidate-pardus-spark-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "pardus-spark-sport-105-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444"
+      ],
+      "note": "PARDUS claims 20% higher pedaling stiffness than the previous model for this Spark Sport—105 branch; no protocol or absolute value is published.",
+      "next_trigger": "Reopen for a measured exact-frame test or a trim-specific claim."
+    },
+    {
+      "record_id": "pardus-spark-rs-community-lead",
+      "model": "PARDUS Spark RS custom build",
+      "field": "purchase-route",
+      "status": "standard-rival-route-not-custom-build",
+      "attempt_record_id": "candidate-pardus-spark-rs-community-lead-purchase-route-2026-08-17",
+      "source_ids": [
+        "pardus-spark-rs-rival-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=17548&color=17545&id=39567&pz=17542&t=27444"
+      ],
+      "note": "The standard Spark RS Rival eTap AXS page has buy/store-search links. It does not establish a route, stock or checkout for the separately retained custom build.",
+      "next_trigger": "Reopen when a current seller/order page matches the custom build."
+    },
+    {
+      "record_id": "pardus-spark-sport-pes",
+      "model": "PARDUS 瑞豹 Spark Sport PES",
+      "field": "complete-weight",
+      "status": "prior-owner-weight-not-reproducible-in-current-post",
+      "attempt_record_id": "candidate-pardus-spark-sport-pes-complete-weight-2026-09-01",
+      "source_ids": [
+        "pardus-spark-gen3-owner-2026-08-30",
+        "pardus-spark-sport-pes-owner-post-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.reddit.com/r/bicycling/comments/1u6epd0/my_first_road_bike/"
+      ],
+      "note": "The stored owner report says about 8.5 kg for an XS 2026 Spark Sport PES build. Current visible text does not show the weight, size or PES trim, so the value remains an unverified lead rather than a current comparable weight.",
+      "next_trigger": "Reopen when owner evidence visibly supports the exact trim, size, weight and equipment basis."
+    },
+    {
+      "record_id": "pardus-spark-sport-pes",
+      "model": "PARDUS 瑞豹 Spark Sport PES",
+      "field": "frame-stiffness",
+      "status": "platform-claim-not-pes-specific-measurement",
+      "attempt_record_id": "candidate-pardus-spark-sport-pes-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "pardus-spark-sport-105-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20635&id=43608&pz=20619&t=27444"
+      ],
+      "note": "The manufacturer’s 20% prior-model pedaling-stiffness claim is for the Spark Sport—105 branch, not a PES-specific measured result.",
+      "next_trigger": "Reopen with PES-specific test data or specification."
+    },
+    {
+      "record_id": "pardus-super-sport",
+      "model": "PARDUS 瑞豹 Super Sport (original generation)",
+      "field": "drivetrain",
+      "status": "official-super-sport-105-hdb-build-11-speed-supported",
+      "attempt_record_id": "candidate-pardus-super-sport-drivetrain-2026-08-30",
+      "source_ids": [
+        "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=16548&color=16542&id=21398&pz=16539&t=27446"
+      ],
+      "note": "Current SUPER SPORT—105 HDB page lists Shimano 105 R7000 2×11 with 50/34T and 11–28T gearing, and R7020 hydraulic controls/brakes. Keep it distinct from newer generations and other trims.",
+      "next_trigger": "Reopen if PARDUS changes or separates this exact 11-speed build."
+    },
+    {
+      "record_id": "pardus-super-sport",
+      "model": "PARDUS 瑞豹 Super Sport (original generation)",
+      "field": "frame-material",
+      "status": "official-hs-eps-carbon-frame-hs-hpt-fork-supported",
+      "attempt_record_id": "candidate-pardus-super-sport-frame-material-2026-08-30",
+      "source_ids": [
+        "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=16548&color=16542&id=21398&pz=16539&t=27446"
+      ],
+      "note": "The same exact HDB page specifies an HS-EPS carbon frame and HS-HPT carbon fork; no carbon grade is given.",
+      "next_trigger": "Reopen if the exact model specification changes."
+    },
+    {
+      "record_id": "pardus-super-sport",
+      "model": "PARDUS 瑞豹 Super Sport (original generation)",
+      "field": "identity-source",
+      "status": "exact-title-and-configuration-supported-generation-label-qualified",
+      "attempt_record_id": "candidate-pardus-super-sport-identity-source-2026-08-30",
+      "source_ids": [
+        "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.parduscycle.com/Hightxq.aspx?cc=16548&color=16542&id=21398&pz=16539&t=27446"
+      ],
+      "note": "Manufacturer title is SUPER SPORT—105 HDB and footer names 山东泰山瑞豹复合材料有限公司. “Original generation” is not literal page text; it is qualified by the 11-speed R7000/R7020 build.",
+      "next_trigger": "Reopen if PARDUS publishes a generation-specific catalog entry or a conflicting successor mapping."
+    }
+  ],
+  "integration_notes": [
+    "Luna performed evidence-only research, made no repository edits, did not contact sellers, did not use XHS and did not repeat any completed 50-area sweep.",
+    "Focused current checks are represented in dated source records and source-reuse resolutions; historical 50-area attempt entries remain unchanged.",
+    "No mainland checkout, exact custom-build route, exact selected drivetrain or unsupported stiffness/clearance/weight value was inferred.",
+    "No new price or image records were added."
+  ]
+}

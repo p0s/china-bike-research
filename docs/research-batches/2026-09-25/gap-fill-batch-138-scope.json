@@ -1,0 +1,87 @@
+{
+  "batch": 138,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "selection_note": "Select ten candidate identities with blocked exact-model specifications and no future retry date. Exclude fields already found or conflicted unless the inventory marks them as blocked; exclude current or recent B136-B137 targets and future-dated retries."
+  },
+  "scope": {
+    "exact_target_models": [
+      { "id": "muidler-ashius-s7", "name": "MUIDLER 媚影 阿修斯 S7" },
+      { "id": "dengfu-gravel", "name": "Dengfu R20 Disc Gravel Bike Frame" },
+      { "id": "irefox-by446", "name": "IREFOX 火之狐 BY446 all-terrain" },
+      { "id": "twitter-r10-pro-gen3", "name": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel" },
+      { "id": "twitter-x7", "name": "TWITTER 骓特 X7 high configuration" },
+      { "id": "west-biking-sl-one", "name": "WEST BIKING 西骑者 SL-ONE" },
+      { "id": "gito-carbon-aero-entry", "name": "GITO 捷拓 G325 entry-build lead" },
+      { "id": "de-rosa-idol", "name": "DE ROSA 德罗萨 Idol" },
+      { "id": "de-rosa-new-838", "name": "DE ROSA 德罗萨 New 838" },
+      { "id": "basso-venta-disc", "name": "BASSO Venta Disc" }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 17,
+    "selected_fields": [
+      { "record_type": "candidate", "record_id": "muidler-ashius-s7", "model": "MUIDLER 媚影 阿修斯 S7", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-muidler-ashius-s7-complete-weight-2026-08-30", "campaign_extension_id": "b138-muidler-s7-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "muidler-ashius-s7", "model": "MUIDLER 媚影 阿修斯 S7", "field": "drivetrain", "gap_code": "drivetrain-missing", "attempt_id": "candidate-muidler-ashius-s7-drivetrain-2026-08-30", "campaign_extension_id": "b138-muidler-s7-drivetrain", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "dengfu-gravel", "model": "Dengfu R20 Disc Gravel Bike Frame", "field": "frame-weight", "gap_code": "frame-weight-missing", "attempt_id": "candidate-dengfu-gravel-frame-weight-2026-08-30", "campaign_extension_id": "b138-dengfu-r20-frame-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "dengfu-gravel", "model": "Dengfu R20 Disc Gravel Bike Frame", "field": "tire-clearance", "gap_code": "clearance-unverified", "attempt_id": "candidate-dengfu-gravel-tire-clearance-2026-08-30", "campaign_extension_id": "b138-dengfu-r20-clearance", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "irefox-by446", "model": "IREFOX 火之狐 BY446 all-terrain", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-irefox-by446-complete-weight-2026-08-30", "campaign_extension_id": "b138-irefox-by446-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "irefox-by446", "model": "IREFOX 火之狐 BY446 all-terrain", "field": "drivetrain", "gap_code": "drivetrain-missing", "attempt_id": "candidate-irefox-by446-drivetrain-2026-08-30", "campaign_extension_id": "b138-irefox-by446-drivetrain", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "twitter-r10-pro-gen3", "model": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-twitter-r10-pro-gen3-complete-weight-2026-08-30", "campaign_extension_id": "b138-twitter-r10-pro-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "twitter-r10-pro-gen3", "model": "TWITTER 骓特 R10 Pro Gen 3 closed-wheel", "field": "tire-clearance", "gap_code": "clearance-unverified", "attempt_id": "candidate-twitter-r10-pro-gen3-tire-clearance-2026-08-30", "campaign_extension_id": "b138-twitter-r10-pro-clearance", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "twitter-x7", "model": "TWITTER 骓特 X7 high configuration", "field": "tire-clearance", "gap_code": "clearance-unverified", "attempt_id": "candidate-twitter-x7-tire-clearance-2026-08-30", "campaign_extension_id": "b138-twitter-x7-clearance", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "west-biking-sl-one", "model": "WEST BIKING 西骑者 SL-ONE", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-west-biking-sl-one-complete-weight-2026-08-30", "campaign_extension_id": "b138-west-biking-sl-one-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "west-biking-sl-one", "model": "WEST BIKING 西骑者 SL-ONE", "field": "tire-clearance", "gap_code": "clearance-unverified", "attempt_id": "candidate-west-biking-sl-one-tire-clearance-2026-08-30", "campaign_extension_id": "b138-west-biking-sl-one-clearance", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "gito-carbon-aero-entry", "model": "GITO 捷拓 G325 entry-build lead", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-gito-carbon-aero-entry-complete-weight-2026-08-29", "campaign_extension_id": "b138-gito-g325-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "gito-carbon-aero-entry", "model": "GITO 捷拓 G325 entry-build lead", "field": "drivetrain", "gap_code": "drivetrain-missing", "attempt_id": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29", "campaign_extension_id": "b138-gito-g325-drivetrain", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "de-rosa-idol", "model": "DE ROSA 德罗萨 Idol", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-de-rosa-idol-complete-weight-2026-08-29", "campaign_extension_id": "b138-de-rosa-idol-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "de-rosa-idol", "model": "DE ROSA 德罗萨 Idol", "field": "drivetrain", "gap_code": "drivetrain-missing", "attempt_id": "candidate-de-rosa-idol-drivetrain-2026-08-29", "campaign_extension_id": "b138-de-rosa-idol-drivetrain", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "de-rosa-new-838", "model": "DE ROSA 德罗萨 New 838", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-de-rosa-new-838-complete-weight-2026-08-30", "campaign_extension_id": "b138-de-rosa-838-complete-weight", "max_new_attempts": 1 },
+      { "record_type": "candidate", "record_id": "basso-venta-disc", "model": "BASSO Venta Disc", "field": "complete-weight", "gap_code": "complete-weight-missing", "attempt_id": "candidate-basso-venta-disc-complete-weight-2026-08-29", "campaign_extension_id": "b138-basso-venta-complete-weight", "max_new_attempts": 1 }
+    ],
+    "campaign_extensions": [
+      { "attempt_id": "candidate-muidler-ashius-s7-complete-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-muidler-ashius-s7-drivetrain-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-dengfu-gravel-frame-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-dengfu-gravel-tire-clearance-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-irefox-by446-complete-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-irefox-by446-drivetrain-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-twitter-r10-pro-gen3-complete-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-twitter-r10-pro-gen3-tire-clearance-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-twitter-x7-tire-clearance-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-west-biking-sl-one-complete-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-west-biking-sl-one-tire-clearance-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-gito-carbon-aero-entry-complete-weight-2026-08-29", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-de-rosa-idol-complete-weight-2026-08-29", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-de-rosa-idol-drivetrain-2026-08-29", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-de-rosa-new-838-complete-weight-2026-08-30", "allowed_channels": ["web"], "max_new_attempts": 1 },
+      { "attempt_id": "candidate-basso-venta-disc-complete-weight-2026-08-29", "allowed_channels": ["web"], "max_new_attempts": 1 }
+    ],
+    "research_boundary": "One Luna Max evidence-only agent; root is the sole writer. Research the ten exact candidate products sequentially, one model/source at a time. Inspect the complete predecessor attempts and their recorded result URLs before searching; do not repeat a URL, query, or route. Allow at most one new search and one newly surfaced exact-model official or authorized retailer page per model; a shared page may support multiple scoped fields. Return source title, publisher/class, exact URL, access date, exact fact, build/size basis, caveat, and qualification decision for each field. No file writes by the agent.",
+    "claim_rules": [
+      "Complete-bike mass must apply to a named exact configuration and state size/equipment basis when given; do not transfer frame or sibling-build mass.",
+      "Drivetrain evidence must distinguish exact model options and must not map an option to an unselected price card.",
+      "A frame weight must be frame-only and name size, finish, and included hardware basis when given.",
+      "Tire clearance must be a stated maximum for the exact frame; a fitted tire or tire width is not a maximum.",
+      "Preserve conflicting trims, non-mainland markets, inaccessible pages, missing measurement basis, and unknown values; do not infer.",
+      "Only sources directly attributable to the exact target identity qualify; secondary sources are supporting context, not an automatic substitute for a model identity mismatch."
+    ],
+    "excluded": [
+      "No XHS, Weibo, login, CAPTCHA, challenge handling, personal profile, seller contact, quote request, cart, purchase, external message, image download/rehosting, source write, or catalog write.",
+      "Do not reopen any URL recorded by a predecessor attempt. Avoid sibling models and pages where identity or configuration is ambiguous.",
+      "Stop at one newly surfaced exact-model page or immediately on inaccessible or mismatched evidence; leave the field unresolved when the scoped source does not answer it."
+    ]
+  }
+}

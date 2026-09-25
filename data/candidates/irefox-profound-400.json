@@ -7,7 +7,7 @@
   "type": "complete-bike",
   "why_interesting": "An exact historical T700-carbon all-road build with Shimano 105 R7000 2×11 and reviewed 40C tires at a low launch price.",
   "facts": {
-    "drivetrain": "Shimano 105 R7000 mechanical 2×11 with 50/34T crank and 11–34T cassette",
+    "drivetrain": "2023 review sample: Shimano 105 R7000 mechanical 2×11 with 50/34T crank and a reported SunRace 34T cassette cog; cassette small cog and full range are unstated",
     "brakes": "Cable-actuated hydraulic disc brakes with 160 mm rotors",
     "frame": "IREFOX Profound 400 T700 carbon frame",
     "frame_material": "T700 carbon (official exact-model catalog); fiber supplier, lay-up and molding process are not disclosed",
@@ -29,6 +29,7 @@
   },
   "missing": [
     "Exact complete-bike weight and measurement basis",
+    "Cassette small cog and full range for the 2023 reviewed build",
     "Manufacturer maximum tire clearance distinct from the reviewed 40C fitted/observed limit",
     "Current stock, checkout price, purchase route and warranty entity",
     "Published lay-up or molding details and measured stiffness evidence"
@@ -36,10 +37,13 @@
   "status": "historical-exact-build-documented",
   "source_ids": [
     "irefox-profound-400-official-2026-08-28",
+    "irefox-profound-400-official-current-2026-09-23",
     "irefox-profound-400-biketo-review-2026-08-28",
-    "round3-irefox-profound-launch-review-84f8968e36"
+    "irefox-profound-400-biketo-review-current-2026-09-23",
+    "round3-irefox-profound-launch-review-84f8968e36",
+    "irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24"
   ],
-  "last_reviewed": "2026-09-01",
-  "price_status": "No current exact-model stock or price after 50 registered source areas; historical 2023 CNY 7,299 list, CNY 6,299 promotion and conditional CNY 5,999 amount are retained only as dated context",
-  "source_note": "The exact model is documented in the archived official catalog and review. No current commercial offer or complete-bike weight was found; historical 2023 prices are not promoted as current."
+  "last_reviewed": "2026-09-24",
+  "price_status": "The current indexed IREFOX China catalog still names Profound 400 but shows no price or purchase route; the only surfaced price remains the 2023 launch reference. No current exact-model mainland listing or checkout was found.",
+  "source_note": "The archived official catalog and 2023 review document the exact model. The review's 34T cassette cog does not establish the cassette's small cog or full range; this build is not generalized to all seller options. No current commercial offer or complete-bike weight was found, and historical 2023 prices are not promoted as current."
 }

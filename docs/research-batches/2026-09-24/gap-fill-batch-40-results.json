@@ -1,0 +1,117 @@
+{
+  "batch": 40,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-40-scope.json",
+  "writer_limit": {
+    "exact_targets": 5,
+    "atomic_fields": 5
+  },
+  "dispositions": [
+    {
+      "attempt_id": "variant-lightcarbon-speedz-complete-geometry-2026-08-17",
+      "target": "platform:lightcarbon-speedz; variant:lightcarbon-speedz-complete",
+      "field": "geometry",
+      "status": "unresolved",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The official 2025–26 catalog download timed out. Exact-model search found no SPEEDZ chart; indexed charts were for LCROX-D and LCR015-D. Those charts do not identify SPEEDZ and were not transferred."
+    },
+    {
+      "attempt_id": "variant-lightcarbon-speedz-frameset-geometry-2026-08-17",
+      "target": "platform:lightcarbon-speedz; variant:lightcarbon-speedz-frameset",
+      "field": "geometry",
+      "status": "unresolved",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The same official catalog/search limitation applies to the frameset record. No SPEEDZ-specific geometry values are supported; a separate chart may still exist."
+    },
+    {
+      "attempt_id": "variant-camp-gx600-pes-geometry-2026-08-17",
+      "target": "platform:camp-gx600; variant:camp-gx600-pes",
+      "field": "geometry",
+      "status": "unresolved",
+      "source_ids": ["camp-gx600-geometry-recheck-2026-09-24"],
+      "result": "The current mainland manufacturer page lists 700C×450/480/500 mm sizes only. No numeric geometry is present in accessible text, and the linked generic size.avif chart returned 403 Forbidden."
+    },
+    {
+      "attempt_id": "variant-camp-gx700-grx820-geometry-2026-08-17",
+      "target": "platform:camp-gx700; variant:camp-gx700-grx820",
+      "field": "geometry",
+      "status": "unresolved",
+      "source_ids": ["camp-gx700-geometry-recheck-2026-09-24"],
+      "result": "The current mainland manufacturer page lists 700C×450/480/510 mm sizes only. No numeric geometry is present in accessible text, and the linked generic size.avif chart returned 403 Forbidden. The page's crank row also conflicts with the target 1×12 build, so no values are inferred."
+    },
+    {
+      "attempt_id": "platform-rinasclta-gr025-geometry-2026-09-01",
+      "target": "platform:rinasclta-gr025; variant:rinasclta-gr025-frameset",
+      "field": "geometry",
+      "status": "unresolved",
+      "source_ids": [
+        "rinasclta-gr025-product-recheck-2026-09-24",
+        "rinasclta-gr025-geometry-comparison-recheck-2026-09-24"
+      ],
+      "result": "The official product page offers XS–XL selectors but no coordinates. The linked geometry comparison page returned only a heading with no chart or values. The existing 50-area campaign was not repeated."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "lightcarbon-speedz-catalog-recheck-2026-09-24",
+      "camp-gx600-geometry-recheck-2026-09-24",
+      "camp-gx700-geometry-recheck-2026-09-24",
+      "rinasclta-gr025-product-recheck-2026-09-24",
+      "rinasclta-gr025-geometry-comparison-recheck-2026-09-24"
+    ],
+    "research_attempts_updated": [
+      "variant-lightcarbon-speedz-complete-geometry-2026-08-17",
+      "variant-lightcarbon-speedz-frameset-geometry-2026-08-17",
+      "variant-camp-gx600-pes-geometry-2026-08-17",
+      "variant-camp-gx700-grx820-geometry-2026-08-17",
+      "platform-rinasclta-gr025-geometry-2026-09-01"
+    ],
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 70,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "repository_gate": "passed: npm run check; privacy, data, research ledger, coverage, 310/310 tests, build and SEO audit",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not run; no image records changed"
+  },
+  "delivery": "Local batch complete. No push, pull request, merge, publication, or production action."
+}

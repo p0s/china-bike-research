@@ -1,0 +1,542 @@
+{
+  "batch": 158,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 2,
+      "price-missing": 26,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 73
+    },
+    "research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "research_queue_command": "npm run --silent research:queue",
+    "research_queue_counts": {
+      "ready": 74,
+      "evidence-found": 8,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "scope": {
+    "exact_record_count": 10,
+    "atomic_gap_entries": 10,
+    "source_reuse_targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-speed7-frameset",
+        "name": "LightCarbon Speed7 frameset lead",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-b154-2026-09-25",
+        "attempt_status": "found",
+        "accepted_source_ids": [
+          "lightcarbon-lcr017d-hambini-review-2026-09-22"
+        ],
+        "source_to_reuse": [
+          {
+            "id": "lightcarbon-lcr017d-hambini-review-2026-09-22",
+            "title": "LightCarbon LCR017D review: custom review build",
+            "url": "https://www.hambini.com/review-lightcarbon-lcr-017d/",
+            "publisher": "Hambini Engineering",
+            "accessed_at": "2026-09-22"
+          }
+        ],
+        "already_integrated_basis": "The caveated qualitative exact-chassis ride assessment is already integrated in candidate facts and cites this source.",
+        "work": "Add resolution.kind=source-reuse to this ledger-only attempt only if the exact caveated fact is still present in the candidate and the cited source is linked; otherwise leave unresolved."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "pardus-super-sport",
+        "name": "PARDUS 瑞豹 Super Sport (original generation)",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-pardus-super-sport-frame-stiffness-b151-2026-09-25",
+        "attempt_status": "found",
+        "accepted_source_ids": [
+          "pardus-super-sport-review-biketo-2026-08-30"
+        ],
+        "source_to_reuse": [
+          {
+            "id": "pardus-super-sport-review-biketo-2026-08-30",
+            "title": "Original PARDUS Super Sport independent review",
+            "url": "https://www.biketo.com/product/48105.html?all=1",
+            "publisher": "Biketo",
+            "accessed_at": "2026-08-30"
+          }
+        ],
+        "already_integrated_basis": "The subjective original-generation review observation and its review-build caveat are already integrated in candidate facts and cite this source.",
+        "work": "Add resolution.kind=source-reuse to this ledger-only attempt only if the exact caveated fact is still present in the candidate and the cited source is linked; otherwise leave unresolved."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-gravel-v3-105",
+        "name": "TWITTER 骓特 Gravel V3 105 24-speed",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-twitter-gravel-v3-105-tire-clearance-b154-2026-09-25",
+        "attempt_status": "found",
+        "accepted_source_ids": [
+          "twitter-gravel-v3-t900-clearance-official-2026-09-25"
+        ],
+        "source_to_reuse": [
+          {
+            "id": "twitter-gravel-v3-t900-clearance-official-2026-09-25",
+            "title": "GRAVEL V3 Disc Carbon Road Frame Set – T900, 700C, Endurance & Gravel Racing",
+            "url": "https://twitterbikeusa.com/en-ca/products/twitter-gravel-v3-disc-carbon-road-frame-set-t900-700c-endurance-gravel-racing",
+            "publisher": "Twitter Bike USA",
+            "accessed_at": "2026-09-25"
+          }
+        ],
+        "already_integrated_basis": "The 700×40C platform maximum and limitation that the separate 105 complete-bike page does not link the trim are already integrated in candidate facts and cite this source.",
+        "work": "Add resolution.kind=source-reuse to this ledger-only attempt only if the exact caveated fact is still present in the candidate and the cited source is linked; otherwise leave unresolved."
+      }
+    ],
+    "query_targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "airwolf-yf-r003",
+        "name": "Airwolf YF-R003",
+        "field": "frame-stiffness",
+        "catalog_gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-24",
+        "attempt_status": "blocked",
+        "searched_at": "2026-09-24",
+        "retry_after": null,
+        "query": "Airwolf YF-R003 exact frame stiffness test flex measured independent review 2026",
+        "current_source_ids_and_urls": [
+          {
+            "id": "airwolf-yf-r003-owner-2026-09-05",
+            "title": "Airwolf YF-R003 custom gravel build",
+            "url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+            "publisher": "Reddit / ChineseCarbon",
+            "accessed_at": "2026-09-05"
+          },
+          {
+            "id": "airwolf-yf-r003-source-2026-09-05",
+            "title": "Airwolf YF-R003 exact product listing",
+            "url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/",
+            "publisher": "Airwolf Carbon Bicycle Goods",
+            "accessed_at": "2026-09-05"
+          },
+          {
+            "id": "chinesecarbon-top-discovery-2026-09-05",
+            "title": "ChineseCarbon all-time top posts: bounded model discovery",
+            "url": "https://www.reddit.com/r/ChineseCarbon/top/?t=all",
+            "publisher": "Reddit / ChineseCarbon",
+            "accessed_at": "2026-09-05"
+          },
+          {
+            "id": "airwolf-yf-r003-owner-recheck-2026-09-22",
+            "title": "Airwolf YF-R003 owner package recheck",
+            "url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+            "publisher": "Reddit public owner post",
+            "accessed_at": "2026-09-22"
+          },
+          {
+            "id": "airwolf-yf-r003-access-check-2026-09-22",
+            "title": "Airwolf exact storefront access limitation",
+            "url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/",
+            "publisher": "Airwolf storefront",
+            "accessed_at": "2026-09-22"
+          },
+          {
+            "id": "airwolf-yf-r003-access-check-2026-09-24",
+            "title": "Airwolf YF-R003 exact storefront access recheck",
+            "url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/",
+            "publisher": "Airwolf storefront",
+            "accessed_at": "2026-09-24"
+          },
+          {
+            "id": "airwolf-yf-r003-global-catalog-index-recheck-2026-09-24",
+            "title": "Airwolf YFR003 global catalog index search result",
+            "url": "https://airwolfcarbonbike.com/shop/page/13/",
+            "publisher": "Airwolf Carbon Bicycle Goods",
+            "accessed_at": "2026-09-24"
+          },
+          {
+            "id": "airwolf-yf-r003-official-access-recheck-2026-09-25",
+            "title": "Airwolf YF-R003 official storefront access recheck",
+            "url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/",
+            "publisher": "Airwolf Carbon Bike",
+            "accessed_at": "2026-09-25"
+          },
+          {
+            "id": "airwolf-yf-r003-owner-recheck-2026-09-25",
+            "title": "Airwolf YF-R003 owner build report recheck",
+            "url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+            "publisher": "Reddit r/ChineseCarbon owner report",
+            "accessed_at": "2026-09-25"
+          },
+          {
+            "id": "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+            "title": "Airwolf YF-R003 gravel-frame seller listing",
+            "url": "https://www.ebay.com/itm/800534168051",
+            "publisher": "eBay seller Road Stride",
+            "accessed_at": "2026-09-25"
+          },
+          {
+            "id": "ecb-reference-rates-2026-09-23",
+            "title": "Euro foreign exchange reference rates, 23 September 2026",
+            "url": "https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?d94b1a292702d4d582b243b911a63b93=",
+            "publisher": "European Central Bank",
+            "accessed_at": "2026-09-25"
+          }
+        ],
+        "campaign_history_files": [],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "alums-da54",
+        "name": "ALVAS 爱瓦士 DA54",
+        "field": "frame-stiffness",
+        "catalog_gap_code": null,
+        "attempt_id": "candidate-alums-da54-frame-stiffness-2026-08-29",
+        "attempt_status": "blocked",
+        "searched_at": "2026-08-29",
+        "retry_after": null,
+        "query": "ALVAS DA54 exact model independent frame stiffness test measured review 2026",
+        "current_source_ids_and_urls": [
+          {
+            "id": "alvas-da54-official-2026-08-29",
+            "title": "ALVAS DA54",
+            "url": "https://www.alvas.bike/da/da54.html",
+            "publisher": "ALVAS Bike",
+            "accessed_at": "2026-08-29"
+          },
+          {
+            "id": "alvas-da54-australia-2026-08-29",
+            "title": "ALVAS DA54 105",
+            "url": "https://alvasbikes.com.au/da54-105/",
+            "publisher": "ALVAS Bikes Australia",
+            "accessed_at": "2026-08-29"
+          },
+          {
+            "id": "alvas-da54-bikeinsights-2026-08-29",
+            "title": "2025 ALVAS DA Series DA54",
+            "url": "https://bikeinsights.com/bikes/68ef6ac8ab478d001a5a74b0-alvas-da-series?build=da54&version=2025",
+            "publisher": "Bike Insights",
+            "accessed_at": "2026-08-29"
+          },
+          {
+            "id": "alvas-da54-independent-review-2026-08-29",
+            "title": "ALVAS DA54 review summary",
+            "url": "https://mybike.parts/bike_parts/1249-alvas-da54",
+            "publisher": "MyBike.parts",
+            "accessed_at": "2026-08-29"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/alums-da54-50-area-sweep-2026-08-29.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "argon18-krypton-pro",
+        "name": "Argon 18 Krypton Pro",
+        "field": "price",
+        "catalog_gap_code": null,
+        "attempt_id": "candidate-argon18-krypton-pro-price-2026-09-01",
+        "attempt_status": "blocked",
+        "searched_at": "2026-09-01",
+        "retry_after": null,
+        "query": "Argon 18 Krypton Pro exact current mainland China CNY price selected build 2026",
+        "current_source_ids_and_urls": [
+          {
+            "id": "argon18-krypton-pro-official-2026-08-29",
+            "title": "Argon 18 Krypton Pro current all-road family and configurations",
+            "url": "https://www.argon18.com/en-us/bikes/all-road/krypton-pro/sram-force-axs",
+            "publisher": "Argon 18",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "argon18-krypton-assembly-guide-2026-08-29",
+            "title": "Argon 18 Krypton and Krypton Pro assembly guide",
+            "url": "https://storage.googleapis.com/argon18craft/files/Assembly-Guides/2023/KRYPTON_365A-B_Assembly-Guide-2023.pdf",
+            "publisher": "Argon 18",
+            "accessed_at": "2026-08-29"
+          },
+          {
+            "id": "usd-cny-central-parity-2026-07-31",
+            "title": "RMB central parity rate announcement, 31 July 2026",
+            "url": "https://fec.mofcom.gov.cn/article/zyfw/jrfw/jrfwywzn/jrfwwh/hlfxglzy/202607/7208.html",
+            "publisher": "China Foreign Exchange Trade System / People's Bank of China",
+            "accessed_at": "2026-08-17"
+          },
+          {
+            "id": "argon18-krypton-pro-current-global-price-recheck-2026-09-24",
+            "title": "Argon 18 Krypton Pro current frameset price and dealer route",
+            "url": "https://www.argon18.com/en/bikes/all-road/krypton-pro",
+            "publisher": "Argon 18",
+            "accessed_at": "2026-09-24"
+          },
+          {
+            "id": "argon18-authorized-dealer-pricing-policy-recheck-2026-09-24",
+            "title": "Argon 18 dealer and public pricing policy",
+            "url": "https://www.argon18.com/en-us/support/faq",
+            "publisher": "Argon 18",
+            "accessed_at": "2026-09-24"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/candidate-argon18-krypton-pro-batch-038-50-area-sweep-2026-09-01.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "bianchi-sprint-icr",
+        "name": "Bianchi Sprint ICR 105 Di2 (YTBR6)",
+        "field": "frame-stiffness",
+        "catalog_gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-bianchi-sprint-icr-frame-stiffness-2026-09-01",
+        "attempt_status": "blocked",
+        "searched_at": "2026-09-01",
+        "retry_after": null,
+        "query": "Bianchi Sprint ICR 105 Di2 YTBR6 frame stiffness independent measurement test",
+        "current_source_ids_and_urls": [
+          {
+            "id": "bianchi-sprint-icr-official-2026-08-17",
+            "title": "Bianchi Sprint ICR official product page",
+            "url": "https://www.bianchi.com/en/shop/bikes/road/all-rounder/sprint/sprint-2/sprint-sprint-sprint-icr/",
+            "publisher": "Bianchi",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "bianchi-sprint-icr-uk-clearance-2026-09-01",
+            "title": "Bianchi Sprint ICR current UK product page",
+            "url": "https://bianchi.co.uk/bianchi-sprint/",
+            "publisher": "Bianchi UK",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "bianchi-sprint-icr-probike-weight-2026-09-01",
+            "title": "Bianchi Sprint ICR YTBR6 current dealer specification",
+            "url": "https://www.probike.at/de/produkte/rennraeder/items/bianchi_sprint_icr_bianco_blu_viola.php",
+            "publisher": "Probike",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "bianchi-sprint-icr-allegro-weight-2026-09-01",
+            "title": "Bianchi Sprint ICR YTBR6I size-53 current dealer listing",
+            "url": "https://allegro.pl/oferta/rower-szosowy-bianchi-sprint-icr-shimano-105-di2-celeste-metalic-53-18332072423",
+            "publisher": "Bianchi authorized Allegro dealer",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25",
+            "title": "Probike Bianchi Sprint ICR Di2 105 current listing recheck",
+            "url": "https://www.probike.at/de/produkte/rennraeder/items/bianchi_sprint_icr_bianco_blu_viola.php",
+            "publisher": "Probike",
+            "accessed_at": "2026-09-25"
+          },
+          {
+            "id": "bianchi-sprint-icr-allegro-current-weight-recheck-2026-09-25",
+            "title": "Allegro Bianchi Sprint ICR 105 Di2 size-53 current listing recheck",
+            "url": "https://allegro.pl/oferta/rower-szosowy-bianchi-sprint-icr-shimano-105-di2-celeste-metalic-53-18332072423",
+            "publisher": "Allegro dealer listing",
+            "accessed_at": "2026-09-25"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/bianchi-sprint-icr-batch-031-50-area-sweep-2026-09-01.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "bigrock-sohtea",
+        "name": "BIGROCK Sohtea",
+        "field": "warranty-support",
+        "catalog_gap_code": null,
+        "attempt_id": "candidate-bigrock-sohtea-warranty-support-2026-08-17",
+        "attempt_status": "blocked",
+        "searched_at": "2026-08-17",
+        "retry_after": null,
+        "query": "BIGROCK Sohtea exact model manufacturer China warranty after sales official current 2026",
+        "current_source_ids_and_urls": [
+          {
+            "id": "bigrock-sohtea-panda-podium-2026-08-17",
+            "title": "BIGROCK Sohtea Superlight carbon road frameset",
+            "url": "https://www.pandapodium.cc/product/bigrock-sohtea-superlight-carbon-road-bike-frameset/",
+            "publisher": "Panda Podium",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "china-cycling-bigrock-sohtea-long-term",
+            "title": "BIGROCK Sohtea: The Chinese Aethos half a year later",
+            "url": "https://www.youtube.com/watch?v=gu-g7HQo56A",
+            "publisher": "China Cycling",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "ecb-reference-rates-2026-08-31",
+            "title": "Euro foreign exchange reference rates, 31 August 2026",
+            "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+            "publisher": "European Central Bank",
+            "accessed_at": "2026-09-01"
+          },
+          {
+            "id": "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+            "title": "BIGROCK Sohtea frameset retailer listing recheck",
+            "url": "https://www.pandapodium.cc/product/bigrock-sohtea-superlight-carbon-road-bike-frameset/",
+            "publisher": "Panda Podium",
+            "accessed_at": "2026-09-23"
+          },
+          {
+            "id": "bigrock-japan-products-recheck-2026-09-23",
+            "title": "BIGROCK Japan manufacturer product list recheck",
+            "url": "https://www.bigrock-bike.jp/products.php",
+            "publisher": "BIGROCK Japan",
+            "accessed_at": "2026-09-23"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/candidate-bigrock-sohtea-batch-043-50-area-sweep-2026-09-01.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "bxt-gravel-complete",
+        "name": "BXT Gravel complete",
+        "field": "frame-stiffness",
+        "catalog_gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+        "attempt_status": "blocked",
+        "searched_at": "2026-08-30",
+        "retry_after": null,
+        "query": "BXT Gravel complete exact frame stiffness independent measured test review",
+        "current_source_ids_and_urls": [
+          {
+            "id": "taobao-snapshot-2026-08-08",
+            "title": "Anonymized Taobao search-card snapshot — 2026-08-08",
+            "url": null,
+            "publisher": "China Bikes",
+            "accessed_at": "2026-08-08"
+          },
+          {
+            "id": "bxt-135-official-build-2026-08-30",
+            "title": "BXT-135 GRX 1x11 carbon gravel complete bike",
+            "url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
+            "publisher": "BXT",
+            "accessed_at": "2026-08-30"
+          },
+          {
+            "id": "bxt-135-supplier-weight-2026-08-30",
+            "title": "BXT-135 GRX 1x11 reference weight",
+            "url": "https://www.alibaba.com/product-detail/BXT-Carbon-Gravel-Bike-Disc-Brake_1601585757985.html",
+            "publisher": "BXT / Alibaba.com",
+            "accessed_at": "2026-08-30"
+          },
+          {
+            "id": "bxt-135-clearance-47c-2026-08-30",
+            "title": "BXT-135 frame maximum 47C claim",
+            "url": "https://bxtbikes.com/products/bxt-disc-brake-carbon-gravel-bike-frame-700c-27-5er-max-use-47c-2-1-tire-full-carbon-gravel-bicycle-frame-thru-axle-carbon-mtb-frame",
+            "publisher": "BXT",
+            "accessed_at": "2026-08-30"
+          },
+          {
+            "id": "bxt-135-clearance-45c-2026-08-30",
+            "title": "BXT-135 frame maximum 45C claim",
+            "url": "https://bxtbikes.com/products/bxt-gravel-bike-frame-carbon-700c-27-5er-flat-mount-disc-bsa-bb-full-internal-routing-fork-handlebar-included-t700-t800-carbon-12x142mm-thru-axle",
+            "publisher": "BXT",
+            "accessed_at": "2026-08-30"
+          },
+          {
+            "id": "bxt-135-reddit-owner-report-2026-09-22",
+            "title": "BXT-135 owner stiffness comment",
+            "url": "https://www.reddit.com/r/ChineseCarbon/comments/1vg8erk/gravelroad_frame/",
+            "publisher": "Reddit / r/ChineseCarbon",
+            "accessed_at": "2026-09-22"
+          },
+          {
+            "id": "bxt-135-polish-owner-build-2026-09-22",
+            "title": "BXT-135 custom GRX2x11 owner build and ride report",
+            "url": "https://roweroweporady.pl/f/topic/12066-chi%C5%84ski-gravel-bxt-135-85-kg-za-oko%C5%82o-6000z%C5%82/",
+            "publisher": "Rowerowe Porady forum",
+            "accessed_at": "2026-09-22"
+          },
+          {
+            "id": "bxt-135-clearance-45c-recheck-2026-09-25",
+            "title": "BXT-GRAVEL-135 clearance listing recheck",
+            "url": "https://bxtbikes.com/products/bxt-gravel-bike-frame-carbon-700c-27-5er-flat-mount-disc-bsa-bb-full-internal-routing-fork-handlebar-included-t700-t800-carbon-12x142mm-thru-axle",
+            "publisher": "BXT Bikes",
+            "accessed_at": "2026-09-25"
+          },
+          {
+            "id": "bxt-135-clearance-47c-recheck-2026-09-25",
+            "title": "BXT-135 47C frame page recheck",
+            "url": "https://bxtbikes.com/products/bxt-disc-brake-carbon-gravel-bike-frame-700c-27-5er-max-use-47c-2-1-tire-full-carbon-gravel-bicycle-frame-thru-axle-carbon-mtb-frame",
+            "publisher": "BXT Bikes",
+            "accessed_at": "2026-09-25"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "camp-ace-gen3-105",
+        "name": "CAMP 坎普 ACE Gen 3 105",
+        "field": "frame-stiffness",
+        "catalog_gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-camp-ace-gen3-105-frame-stiffness-2026-08-29",
+        "attempt_status": "blocked",
+        "searched_at": "2026-08-29",
+        "retry_after": null,
+        "query": "CAMP ACE III 105 third generation exact frame stiffness independent measured test",
+        "current_source_ids_and_urls": [
+          {
+            "id": "camp-ace-gen3-105-official-2026-08-29",
+            "title": "CAMP ACE III 105",
+            "url": "https://www.campbicycle.com/en/bicycle/ace-iii-105.html",
+            "publisher": "CAMP Bicycle",
+            "accessed_at": "2026-08-29"
+          }
+        ],
+        "campaign_history_files": [
+          "data/research-campaigns/camp-ace-gen3-105-50-area-sweep-2026-08-29.json"
+        ],
+        "research_constraints": "Audit this latest predecessor and all listed campaign files before searching. Use one genuinely distinct current web query; open at most one new relevant exact-model page after confirming its literal URL is absent from data/ and docs/. Do not repeat known URLs, retry a failed open, or transfer another generation/build."
+      }
+    ],
+    "research_boundary": "One existing Luna evidence-only researcher handles only the seven frozen query targets, sequentially; root is sole writer. Three ledger-only fields are source-reuse integrations from already linked evidence and require no query or page open. Stop after these ten exact records and ten fields.",
+    "field_rules": [
+      "Use exact model and configuration evidence only; preserve generation, selected build, and market boundaries.",
+      "A source-reuse resolution is permitted only for the three listed ledger-only fields whose exact caveated fact is already integrated and cites the accepted source.",
+      "For new searches, use one query per exact model; one genuinely new relevant page maximum per model after a literal URL absence check.",
+      "Add campaign_extension only when the audited latest predecessor is covered by a completed 50-area campaign; ordinary retries must not carry a campaign extension.",
+      "Preserve unresolved, inaccessible, conflicting, subjective, or market-limited evidence with an explicit reason."
+    ],
+    "excluded": [
+      "No XHS, CAPTCHA, login, seller contact, quote request, cart, checkout, or purchase.",
+      "No images, unrelated code/UI edits, commit, push, PR, merge, publish, or production change."
+    ]
+  }
+}

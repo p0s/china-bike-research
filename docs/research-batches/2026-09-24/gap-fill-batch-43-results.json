@@ -1,0 +1,121 @@
+{
+  "batch": 43,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-43-scope.json",
+  "writer_limit": {
+    "exact_targets": 4,
+    "atomic_fields": 4
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-giant-revolt-advanced",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "giant-revolt-advanced-2-mainland-price-route-recheck-2026-09-24"
+      ],
+      "result": "Current Giant China page still lists CNY 15,800 suggested retail; the official JD flagship timed out and Tmall redirected to a browser-blocked international host. The current exact-model checkout gap remains; a 2024 promotion was not reused."
+    },
+    {
+      "attempt_id": "candidate-giant-propel-gen4-community-lead-mainland-observed-price-2026-09-24",
+      "target": "candidate:giant-propel-gen4-community-lead",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24"
+      ],
+      "result": "Current Giant China page still lists CNY 54,800 suggested retail and links direct purchase. The official store view has no readable product listing, and the official JD category search exposed no exact item or checkout amount."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-giant-defy-advanced",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "giant-defy-advanced-2-mainland-price-route-recheck-2026-09-24"
+      ],
+      "result": "Current Giant China page still lists CNY 14,800 suggested retail and links direct purchase. The official store view returned no readable SKU or checkout details; stock and final price remain unknown."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-merida-reacto",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "merida-reacto-6000-cn27-mainland-price-route-recheck-2026-09-24"
+      ],
+      "result": "Current Merida China page identifies the exact REACTO 6000 CN 27 and lists CNY 23,800 suggested retail. The official mall route rendered only an unpopulated dynamic template; no exact observed listing or checkout amount was verified."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "giant-revolt-advanced-2-mainland-price-route-recheck-2026-09-24",
+      "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24",
+      "giant-defy-advanced-2-mainland-price-route-recheck-2026-09-24",
+      "merida-reacto-6000-cn27-mainland-price-route-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24",
+      "candidate-giant-propel-gen4-community-lead-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24"
+    ],
+    "official_list_price_observation_dates_refreshed": 4,
+    "mainland_checkout_observations_added": 0,
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 341,
+      "conflicted": 35,
+      "found": 65,
+      "temporarily-exhausted": 11
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 247,
+      "deferred": 42,
+      "blocked": 505,
+      "conflicted": 61
+    },
+    "atomic_research_status_counts": {
+      "as_of": "2026-09-24",
+      "atomic_fields": 1465,
+      "found": 859,
+      "temporarily_exhausted": 42,
+      "blocked": 503,
+      "conflicted": 61,
+      "open": 0
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "repository_gate": "passed: npm run check on 2026-09-24; 313/313 tests, 584 pages built, SEO passed (458 indexable; 126 noindex)",
+    "image_report": "not needed; no image records changed"
+  },
+  "delivery": "Local batch; no push, pull request, merge, publication, or production action."
+}

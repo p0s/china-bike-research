@@ -482,5 +482,11 @@
     "titanium-laget-pioneer-one-official"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. The exact current LAGET manufacturer page publishes 1.35 kg for size S."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. The exact LAGET manufacturer page publishes 1.35 kg for size S; included-hardware basis is not stated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["titanium-laget-pioneer-one-official"],
+    "note": "Retain 1,350 g as the manufacturer's size S frame-weight claim. The included-hardware basis is unpublished and this is not an independent weighing."
+  }
 }

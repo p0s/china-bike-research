@@ -25,8 +25,16 @@
     "taobao-snapshot-2026-08-08",
     "twitter-bikes-gravel-catalog-2026-08-08",
     "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-usa-store-current-2026-09-24",
     "twitter-cyclone-et-jd-2026-08-29",
-    "public-twitter-cyclone-et-owner-build-2026-08-29"
+    "public-twitter-cyclone-et-owner-build-2026-08-29",
+    "twitter-cyclone-et-official-recheck-2026-09-23",
+    "twitter-cycles-warranty-recheck-2026-09-23",
+    "twitterbikeusa-warranty-recheck-2026-09-23",
+    "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+    "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+    "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "drivetrain": {
     "brand": "WheelTop",
@@ -36,19 +44,26 @@
     "layout": "double"
   },
   "brakes": {
+    "brand": "WheelTop",
     "actuation": "hydraulic",
-    "type": "disc"
+    "type": "disc",
+    "rotors": "160 mm front and rear"
   },
   "wheels": "RS AL7005 double-wall alloy, W21×H38 mm",
   "tires": "RS foldable reflective-edge 700×28C",
   "cockpit": {
     "material": "high-modulus carbon fiber",
     "integrated": true,
-    "dimensions": "420×90 mm",
+    "dimensions": "420x90 mm",
     "routing": "fully internal"
   },
-  "claimed_complete_weight_g": 8700,
-  "claimed_complete_weight_basis": "Dated anonymized mainland search-card claim; size, wheel selection, pedals, accessories and weighing method were not stated. The current exact-model manufacturer page claims 9.2 kg for both listed wheel configurations, and a current owner reports 9.2 kg equipped.",
-  "weight_conflict_note": "The historic 8.7 kg marketplace observation is retained as configuration- and time-bounded evidence. Current official and owner evidence converges at 9.2 kg; the records are not treated as interchangeable without the original selected-option details.",
-  "purchase_route": "Current official made-to-order international route from US$1,489 and current exact-model JD listings. Final mainland seller authorization, selected-option price, promotion, shipping, returns and warranty terms require checkout verification."
+  "claimed_complete_weight_g": 9200,
+  "claimed_complete_weight_basis": "Current exact Cyclone 3rd ET manufacturer page lists 9.2 kg net and an exact-build owner reports 9.2 kg equipped; size, accessories and weighing method are not fully stated. The historic 8.7 kg mainland search-card claim is retained separately.",
+  "weight_conflict_note": "A historic anonymized mainland search card reported 8.7 kg with selected wheel option and weighing basis unstated. Current exact-model manufacturer and owner evidence converges at 9.2 kg, but the observations are not interchangeable until SKU and measurement bases are reconciled.",
+  "purchase_route": "Current Tmall-indexed TWITTER flagship listing names Cyclone 3rd ET with WheelTop 24-speed electronic shifting and shows a promotion through 2026-09-27 with Shenzhen dispatch. The listing does not identify the retained wheel/size option or final checkout; the official JD store route currently opens a verification page. The official US store separately lists the exact WheelTop EDS TX 2x12 build at US$1,489, made to order in 10-25 business days; this is a US route, not proof of mainland China ordering or fulfillment. Confirm the selected mainland SKU, inventory, price, shipping, returns and domestic warranty before paying.",
+  "last_reviewed": "2026-09-25",
+  "crankset": "SENICX PRF 34/50",
+  "cassette": "Sunshine 11-34T",
+  "chain": "SUMC",
+  "cockpit_status": "Conflict on the exact official page: the displayed/default WheelTop build lists a 420×90 mm high-modulus-carbon cockpit, while a later section says every build has a 400×90 mm alloy cockpit. No selected-option mapping resolves the contradiction."
 }

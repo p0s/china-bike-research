@@ -1,0 +1,46 @@
+{
+  "id": "candidate-hi-light-g0-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-g0"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact mainland manufacturer page returned 403, and the current independent retailer page is a Philippine listing marked sold out rather than a mainland checkout.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light 航轮 G0 current mainland checkout price",
+          "route": "Exact Hi-Light mainland manufacturer product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact official page returned 403. Its search-index text, crawled about two months earlier, repeats CNY 15,900 retail price and a contact-us control; it does not prove current checkout, stock, or order completion.",
+          "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/172.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Hi-Light G0 current exact mainland retailer checkout or order route",
+          "route": "Current Hi-Light G0 specialist retailer listing",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The live Villain page shows a Philippine-peso price, marks the G0 sold out, and directs buyers to message for shipping or pre-order. It provides no mainland checkout amount.",
+          "result_url": "https://villain.shop/products/hi-light-g0-titanium-gravel-frameset"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "hi-light-g0-manufacturer-checkout-recheck-2026-09-24",
+    "hi-light-g0-villain-ph-current-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep CNY 15,900 as the existing dated official retail reference. Do not add it as an observed mainland checkout value; current exact mainland price remains unknown.",
+  "searched_at": "2026-09-24"
+}

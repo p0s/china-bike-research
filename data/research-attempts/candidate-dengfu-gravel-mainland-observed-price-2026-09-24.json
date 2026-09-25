@@ -1,0 +1,53 @@
+{
+  "id": "candidate-dengfu-gravel-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "dengfu-gravel"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact R20 manufacturer route and current catalog surfaced no mainland seller item or CNY amount; the marketplace route did not expose an exact offer.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Dengfu R20 Disc Gravel Bike Frame current price or exact quote",
+          "route": "Current manufacturer R20 product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The current exact page identifies R20 and says it can be customized, but publishes no price or quote. No amount was visible in the current page content.",
+          "result_url": "https://www.dengfubikes.com/Road-Frame/R20.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Dengfu R20 exact gravel frame current public storefront price listing",
+          "route": "Current Dengfu catalog and exact-model marketplace search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Current indexed catalog and exact-model search results surfaced manufacturer listings for other Dengfu models but no attributable R20 price or mainland CNY listing. No seller contact or account-only route was used."
+        },
+        {
+          "attempt": 3,
+          "query": "Dengfu R20 Disc Gravel Bike Frame Dengfu R20 碟刹 砾石 车架组 价格 中国",
+          "route": "Current Dengfu manufacturer homepage and mainland exact-model search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The current manufacturer homepage surfaced an R20 product tile without a price or direct item URL. A frame collection showed USD amounts for other models only. No exact mainland seller item or CNY amount was found.",
+          "result_url": "https://www.dengfubikes.com/"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "dengfu-r20-current-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The exact model is verified, but current public price evidence remains unavailable. Do not infer R20 price from other Dengfu frame models."
+}

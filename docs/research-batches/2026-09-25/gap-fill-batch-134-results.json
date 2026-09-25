@@ -1,0 +1,91 @@
+{
+  "batch": 134,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-134-scope.json",
+  "result": {
+    "exact_target_models": 7,
+    "atomic_fields": 8,
+    "disposition": "All eight frozen fields were rechecked against current exact-model pages or the exact accepted source set. One already-recorded complete-bike weight was confirmed for the T47 configuration; seven fields retain documented grade, generation, revision, fit, or source conflicts without selecting unsupported values.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_queue_before": 9,
+    "conflicted_queue_after": 1,
+    "research_attempts_dispositioned": 8,
+    "source_reuse_found": 1,
+    "conflicts_reconfirmed": 7,
+    "catalog_records_updated": 7,
+    "source_records_added": 9,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:pardus-spark-rs-community-lead:frame-material",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["pardus-spark-rs-current-official-recheck-2026-09-25", "public-pardus-spark-rs-build-2026-08-17"],
+      "caveat": "The current classic Rival manufacturer page states HS-EPS+ carbon frame and HS-HPT carbon fork. The saved custom-build report says T800, but the custom build is not mapped to that generation; no grade is assigned."
+    },
+    {
+      "field": "platform:pardus-super-sport-gen2:frame-material",
+      "disposition": "conflict reconfirmed; fiber grade unknown",
+      "source_ids": ["pardus-super-sport-gen2-official-material-recheck-2026-09-25", "pardus-super-sport-egr-888bike-2026-08-28"],
+      "caveat": "The current manufacturer SPORT—105 page says HS-HPT carbon for frame and fork but no T700/T800 grade. The saved exact eGR retailer page says T800 and was inaccessible on today's direct check."
+    },
+    {
+      "field": "candidate:seraph-tt-x68-new-udh:frame-revision",
+      "disposition": "conflict reconfirmed; revision relationship unknown",
+      "source_ids": ["seraph-tt-x68-new-weight-recheck-2026-09-25", "tantan-tt-x68-new-version-35c-recheck-2026-09-25"],
+      "caveat": "Seraph's UDH listing states 32C; the separately named TanTan New-Version listing states 35C. No shared SKU or revision cross-reference was found, and the public-post channel remains not run."
+    },
+    {
+      "field": "variant:twitter-cyclone-gen3-et:cockpit",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["twitter-cyclone-et-official-live-recheck-2026-09-25", "twitter-cyclone-gen3-et-mainland-page-access-recheck-2026-09-25"],
+      "caveat": "The current USA page states 420×90 mm carbon in its overview/table and 400×90 mm alloy in its every-build text. The mainland manufacturer page returned 404; no option mapping selects a cockpit."
+    },
+    {
+      "field": "variant:twitter-v3-rs-sensah:complete-weight",
+      "disposition": "source-reuse found for the exact T47 RS-24S configuration",
+      "source_ids": ["twitter-v3-25yr-manufacturer-recheck-2026-09-25"],
+      "caveat": "The manufacturer states 9.9 kg for the T47 RS-24S hydraulic alloy-wheel build, with size and pedal basis unstated. The catalog already stores that build-specific value. The store's 9.6 kg at size 50 without pedals is on a BB86 listing and remains separate."
+    },
+    {
+      "field": "variant:twitter-v3-rs-sensah:frame-weight",
+      "disposition": "conflict reconfirmed; T47 frame-only weight unknown",
+      "source_ids": ["twitter-v3-25yr-manufacturer-recheck-2026-09-25", "twitter-v3-25yr-store-recheck-2026-09-25"],
+      "caveat": "The T47 manufacturer table publishes no bare-frame mass. The store's approximately 1,150 g unpainted size-M value belongs to its BB86 listing and is not transferred."
+    },
+    {
+      "field": "candidate:velobuild-cx-002-2023:geometry",
+      "disposition": "conflict reconfirmed; fork offset unresolved",
+      "source_ids": ["velobuild-cx002-spec-sheets-2026-09-22", "velobuild-cx002-geometry-sheet-2026-09-22", "velobuild-cx002-official-product-recheck-2026-09-25"],
+      "caveat": "The current exact 2023 CX-002 product page exposes no geometry in text. Saved manufacturer-linked sheets disagree on 45 mm versus 55 mm fork offset; the public-post channel remains not run."
+    },
+    {
+      "field": "candidate:spect-mira:tire-clearance",
+      "disposition": "conflict reconfirmed; production maximum unknown",
+      "source_ids": ["spect-mira-cyclegears-clearance-recheck-2026-09-25", "spect-mira-cyclistshub-clearance-recheck-2026-09-25"],
+      "caveat": "CycleGears lists 25C–32C; Cyclists Hub reports 35 mm rear and up to 38 mm front while saying no frames had shipped and specifications were changing. The public-post channel remains blocked; no XHS capture occurred."
+    }
+  ],
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1414 sources, 212 images, 1544 atomic research records",
+    "research_check": "pass: 1503 atomic fields, 15450 public-post and 35611 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "pass: codex-pnpm-check check; privacy, validate, research check, coverage check, 328/328 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "diff_check": "pass before results/checkpoint documentation",
+    "image_report": "not run; no image records changed"
+  }
+}

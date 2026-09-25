@@ -1,0 +1,149 @@
+{
+  "batch": 148,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-148-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 10,
+    "price_missing_references_filled": 1,
+    "atomic_gap_entries_left_open": 9,
+    "remaining_airwolf_gap": "price-not-observed; no mainland CNY listing or checkout is evidenced",
+    "research_queries_run": 10,
+    "research_attempt_records_added": 10,
+    "campaign_extensions_added": 8,
+    "research_attempts_before": 1657,
+    "research_attempts_after": 1667,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 387,
+      "conflicted": 35,
+      "found": 10,
+      "open": 10,
+      "temporarily-exhausted": 4
+    },
+    "price_gap_counts_after": {
+      "price-missing": 26,
+      "price-not-observed": 37,
+      "price-reference-range": 2
+    },
+    "source_records_added": 1,
+    "source_records_after": 1421,
+    "price_records_changed": 0,
+    "candidate_price_fields_changed": 1,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 1,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 1,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 1,
+    "page_opens_returning_no_content_or_timeout": 0,
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "Only the Airwolf eBay listing was newly opened, after its exact URL was found absent from data/ and docs/. All other targets relied on discovery or already-recorded exact source histories; no known URL was reopened and no search snippet was treated as evidence."
+  },
+  "model_results": [
+    {
+      "model_id": "lightcarbon-lcg074s-d",
+      "gap": "price-missing",
+      "new_query": "LightCarbon LCG074S-D separate stem micro suspension frame price CNY China 2026",
+      "result": "The exact official stem page is already recorded and quote-only; no public numeric price surfaced. No page opened.",
+      "disposition": "unresolved-no-dated-exact-model-price"
+    },
+    {
+      "model_id": "lightcarbon-lcg087-d",
+      "gap": "price-missing",
+      "new_query": "LightCarbon LCG087-D integrated cockpit gravel frameset current price CNY China 2026",
+      "result": "The exact official page is already recorded without a price; catalog/search evidence contained specifications only. No page opened.",
+      "disposition": "unresolved-no-dated-exact-model-price"
+    },
+    {
+      "model_id": "lightcarbon-lcg087s-d",
+      "gap": "price-missing",
+      "new_query": "LightCarbon LCG087S-D gravel frameset with stem price CNY 2026 China",
+      "result": "The exact official stem page is already recorded without a public amount; no attributable seller price surfaced. No page opened.",
+      "disposition": "unresolved-no-dated-exact-model-price"
+    },
+    {
+      "model_id": "lightcarbon-lcr020-d",
+      "gap": "price-missing",
+      "new_query": "LightCarbon LCR020-D frame set price 2026 2027 China CNY",
+      "result": "The recorded 2026–27 manufacturer catalog supplies specifications but no price. No page opened.",
+      "disposition": "unresolved-no-dated-exact-model-price"
+    },
+    {
+      "model_id": "missing-china-price-specialized-crux",
+      "gap": "price-missing",
+      "new_query": "Specialized Crux Comp GRX 2026 product 223483 exact model public price China CNY",
+      "result": "The recorded exact mainland page has no current CNY amount or checkout evidence; foreign and different-build listings were excluded. No page opened.",
+      "disposition": "unresolved-current-exact-model-price-not-published"
+    },
+    {
+      "model_id": "airwolf-yf-r003",
+      "gap": "price-missing",
+      "new_query": "Airwolf YF-R003 current 2026 mainland China public price CNY frame set",
+      "result": "A newly opened item-specific eBay listing names YFR003 Carbon Gravel Frame and displays a US$1,437.79 seller ask. It was recorded as CNY 9,644 reference conversion using the 2026-09-23 ECB cross-rate. This clears the missing dated reference only; the new price-not-observed gap remains because seller, currency, unselected size/color, delivery and final price do not evidence a mainland offer. The listing calls the frame T1000; revision equivalence to the older T1200 claim remains unresolved.",
+      "source_ids": ["airwolf-yf-r003-ebay-seller-listing-price-2026-09-25", "ecb-reference-rates-2026-09-23"],
+      "disposition": "foreign-seller-reference-recorded-mainland-price-unresolved"
+    },
+    {
+      "model_id": "hi-light-g0",
+      "gap": "price-not-observed",
+      "new_query": "Hi-Light 航轮 G0 车架组 现货 官方店 人民币 价格 2026 mainland",
+      "result": "Official CNY 15,900 remains manufacturer suggested retail and the recorded mainland mall route showed placeholders. Japanese official dealer amounts in JPY were excluded; no new page opened.",
+      "disposition": "msrp-retained-mainland-observed-price-unresolved"
+    },
+    {
+      "model_id": "missing-china-price-merida-scultura",
+      "gap": "price-not-observed",
+      "new_query": "美利达 SCULTURA 6000 25款 CF3 V 现货 门店 实际成交 CNY 2026",
+      "result": "Official CNY 16,800 remains suggested retail and the recorded mall route has placeholders. Foreign Taiwan routes and stale or other-generation discounts did not qualify; no new page opened.",
+      "disposition": "msrp-retained-current-mainland-listing-unresolved"
+    },
+    {
+      "model_id": "missing-china-price-merida-silex",
+      "gap": "price-not-observed",
+      "new_query": "美利达 SILEX 7000 25款 整车 现货 GRX820 2026 门店实售价",
+      "result": "Official CNY 20,800 remains suggested retail; the recorded mainland mall route is placeholder-only. Japan and Taiwan results were foreign-market evidence and excluded; no new page opened.",
+      "disposition": "msrp-retained-current-mainland-listing-unresolved"
+    },
+    {
+      "model_id": "missing-china-price-specialized-tarmac-sl8",
+      "gap": "price-not-observed",
+      "new_query": "Specialized Tarmac SL8 Comp 105 Di2 4221578 mainland China current seller stock actual price CNY",
+      "result": "Official CNY 30,990 remains a list-price reference; the recorded exact mainland product route has no current amount, stock or checkout evidence. No new page opened.",
+      "disposition": "list-price-retained-current-mainland-listing-unresolved"
+    }
+  ],
+  "validation": {
+    "focused_tests": "passed: tests/data.test.mjs and tests/render.test.mjs; 117/117",
+    "research_validation": "passed: 1503 atomic fields; 15450 public-post and 35734 web attempts",
+    "coverage_acceptance": "passed: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1421 sources, 212 image records, 236 candidates, 1667 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35734 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1421 sources, 236 candidates",
+      "tests": "331/331 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "sandbox_note": "The normal gate first stopped on the stale monotonic coverage baseline. After coverage acceptance it reached seven preview-server tests that could not bind 127.0.0.1 (EPERM) in the sandbox; the exact gate passed with narrowly scoped loopback access.",
+    "git_diff_check": "passed"
+  },
+  "image_report": "not run; no image records changed",
+  "external_delivery": "none"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "candidate-irefox-profound-400-current-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "irefox-profound-400"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-irefox-profound-400-current-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current exact-model Profound 400 CNY price or stock evidence was found.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX Profound 400 玄狐 105 R7000 现货售价 中国 2026",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The official Chinese catalog route is already recorded and yielded no exact current Profound 400 offer. ¥7,299 list, ¥6,299 promotion and conditional ¥5,999 effective amounts are historical 2023 launch prices only; no exact page was opened."
+        }
+      ]
+    }
+  },
+  "notes": "The official Chinese catalog route is already recorded and yielded no exact current Profound 400 offer. ¥7,299 list, ¥6,299 promotion and conditional ¥5,999 effective amounts are historical 2023 launch prices only; no exact page was opened."
+}

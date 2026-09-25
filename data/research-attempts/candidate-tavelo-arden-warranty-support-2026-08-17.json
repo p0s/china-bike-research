@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-warranty-official-2026-08-17"
+    "tavelo-warranty-official-2026-08-17",
+    "tavelo-warranty-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "tavelo-warranty-official-recheck-2026-09-23"
+    ],
+    "note": "Policy covers qualifying first-owner official/authorized frameset purchases for life and paint/decals for one year; mainland claim and shipping terms are not specified. Reopen trigger: Reopen on written mainland claim, shipping and dealer-eligibility terms."
+  }
 }

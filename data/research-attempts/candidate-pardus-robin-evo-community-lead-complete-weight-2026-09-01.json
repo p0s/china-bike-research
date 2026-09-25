@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "public-pardus-robin-evo-build-2026-08-17"
+    "public-pardus-robin-evo-build-2026-08-17",
+    "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-robin-evo-community-lead-batch-034-50-area-sweep-2026-09-01.json. The exact public competition-build report supports 6.2 kg in XS; generation, scale protocol and complete configuration remain caveated."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-robin-evo-community-lead-batch-034-50-area-sweep-2026-09-01.json. The exact public competition-build report supports 6.2 kg in XS; generation, scale protocol and complete configuration remain caveated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "public-pardus-robin-evo-build-2026-08-17",
+      "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23"
+    ],
+    "note": "custom-build-weight-unresolved-generation-and-basis: The stored exact XS competition-build lead reports 6.2 kg but is not generation-mapped. Today’s official page gives frame, fork and cockpit weights only; it does not give complete-bike weight or match the custom build. Reopen trigger: Reopen with non-XHS exact-build evidence identifying generation, components, size and weighing basis."
+  }
 }

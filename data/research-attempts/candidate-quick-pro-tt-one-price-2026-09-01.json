@@ -482,5 +482,11 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront lists US$2,999; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront lists US$2,999; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-pro-tt-one-official-2026-08-17", "ecb-reference-rates-2026-08-31"],
+    "note": "Disposition: global-store price evidence reused for the exact TT:ONE frameset at US$2,999 and the dated CNY 20,152 reference conversion. The conversion is not a mainland checkout; size, finish, stock, shipping, and taxes/duties remain unverified."
+  }
 }

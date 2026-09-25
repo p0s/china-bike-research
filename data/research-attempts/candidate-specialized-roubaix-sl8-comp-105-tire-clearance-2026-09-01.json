@@ -484,5 +484,13 @@
     "specialized-roubaix-sl8-comp-105-global-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/specialized-roubaix-sl8-comp-105-50-area-sweep-2026-09-01.json. The same exact product number publishes a 40 mm maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/specialized-roubaix-sl8-comp-105-50-area-sweep-2026-09-01.json. The same exact product number publishes a 40 mm maximum.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "specialized-roubaix-sl8-comp-105-global-2026-09-01"
+    ],
+    "note": "Exact product 218669 states a 40 mm maximum and stock 700×32C tires. The 40 mm figure is a nominal maximum-size specification, not a measured casing-width or frame/fork clearance test."
+  }
 }

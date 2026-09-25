@@ -11,9 +11,9 @@
   ],
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "Current exact official mainland CNY 27,800 list; dealer stock and checkout unverified",
+  "price_status": "Official mainland CNY 27,800 list-price reference last observed 2026-09-01; current exact page price, stock, and checkout are unverified",
   "required_before_dashboard": "Exact current BOM, weight, frame/geometry, BB and clearance; Direct image asset URL; Current dealer stock, checkout outcome and China warranty policy",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
     "trek-china-checkpoint-category-2026-08-17",
     "trek-china-checkpoint-product-47071-2026-08-17",
@@ -21,7 +21,11 @@
     "trek-checkpoint-sl-gen3-official-2026-08-17",
     "trek-checkpoint-sl5-gen3-bikecellar-2026-08-17",
     "public-trek-checkpoint-sl5-axs-gen3-clearance-2026-08-24",
-    "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
+    "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
+    "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23",
+    "trek-checkpoint-sl5-axs-gen3-official-2026-09-23",
+    "trek-checkpoint-gen3-current-official-recheck-2026-09-23",
+    "trek-checkpoint-sl5-axs-gen3-china-current-price-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 27800,
@@ -29,11 +33,11 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-08-17"
   },
-  "source_note": "Official mainland product 47071 lists Checkpoint SL 5 AXS Gen 3 at CNY 27,800. Dealer stock, checkout outcome and exact local warranty handling remain unverified.",
+  "source_note": "The earlier Trek China product 47071 route recorded CNY 27,800; the 2026-09-24 recheck found that the latest available web extract of the exact mainland URL, crawled two weeks earlier, contains only a category shell without price or stock data. Dealer checkout and exact local warranty handling remain unverified. Focused exact-model recheck on 2026-09-23: see the batch 26 result for regional-build qualifiers and current route/page access outcomes.\n\nBatch 36 recheck: the exact manufacturer 2027 U.S. SL 5 AXS Gen 3 listing rendered only a shell; indexed exact listing text states 500 Series OCLV Carbon, and the accessible current Gen 3 family page confirms Checkpoint SL uses OCLV 500. Preserve U.S./2027 trim boundaries.",
   "source_url": "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/砾石自行车/c/B546/",
   "facts": {
     "frame": "500 Series OCLV carbon",
-    "frame_material": "500 Series OCLV carbon frame with full-carbon fork; Trek does not publish the exact fiber grade or ply schedule",
+    "frame_material": "500 Series OCLV carbon for the 2027 U.S. Checkpoint SL 5 AXS Gen 3: the exact listing was only a shell on direct open and the exact-trim detail came from an indexed snippet; Trek's accessible current Gen 3 family page confirms Checkpoint SL uses OCLV 500.",
     "frame_construction": "IsoSpeed carbon chassis with downtube storage, concealed routing, T47 shell, UDH, rack/fender/frame-bag mounts and removable front-derailleur hanger",
     "stiffness_evidence": "IsoSpeed is documented as a vibration-isolating comfort feature; no measured exact-SL5 frame stiffness or attributable independent deflection result was found",
     "complete_weight_g": 9500,

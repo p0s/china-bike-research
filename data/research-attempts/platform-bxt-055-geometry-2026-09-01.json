@@ -482,5 +482,11 @@
     "bxt-055-bikeinsights-geometry-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-bxt-055-batch-045-50-area-sweep-2026-09-01.json. The exact 2026 geometry record provides a six-size table attributed to bxtbikes.com."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-bxt-055-batch-045-50-area-sweep-2026-09-01.json. The exact 2026 geometry record provides a six-size table attributed to bxtbikes.com.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bxt-055-bikeinsights-geometry-2026-09-01"],
+    "note": "The platform already contains the exact six-size 2026 geometry table from the Bike Insights record attributed to bxtbikes.com; it remains an independent transcription rather than primary evidence."
+  }
 }

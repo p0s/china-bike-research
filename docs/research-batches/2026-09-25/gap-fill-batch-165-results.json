@@ -1,0 +1,349 @@
+{
+  "batch": 165,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-165-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "exact_records": 7,
+    "atomic_fields": 25,
+    "read_only_evidence_audit": "Existing source and campaign records were reviewed by the Luna evidence agent. None of the 25 fields is supported for its retained exact candidate; all B150 latest attempts were preserved and closed as blocked with field-specific reasons and accepted links to already-existing evidence.",
+    "research_attempts_added": 0,
+    "research_attempts_updated_in_place": 25,
+    "new_queries": 0,
+    "page_opens": 0,
+    "new_sources": 0,
+    "candidate_fact_changes": 0,
+    "catalog_gap_entries_reduced": 0,
+    "images_added": 0,
+    "image_records_changed": 0,
+    "attempts": [
+      {
+        "record_id": "huanyu-az-one",
+        "field": "complete-weight",
+        "attempt_id": "candidate-huanyu-az-one-complete-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "huanyu-azone-jd-index-2026-09-23"
+        ],
+        "unresolved_reason": "The retained seller-card AZ ONE build has no size/equipment-qualified complete-bike weight; unrelated QUICK AR:ONE or other listing builds are excluded."
+      },
+      {
+        "record_id": "huanyu-az-one",
+        "field": "drivetrain",
+        "attempt_id": "candidate-huanyu-az-one-drivetrain-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "huanyu-azone-jd-index-2026-09-23"
+        ],
+        "unresolved_reason": "The retained AZ ONE seller card does not identify its selected drivetrain; a different seller option or sibling listing cannot be transferred."
+      },
+      {
+        "record_id": "huanyu-az-one",
+        "field": "frame-material",
+        "attempt_id": "candidate-huanyu-az-one-frame-material-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "huanyu-azone-jd-index-2026-09-23"
+        ],
+        "unresolved_reason": "The AZ ONE candidate identifies a seller-card lead only; no exact selected-build frame grade or construction source surfaced."
+      },
+      {
+        "record_id": "huanyu-az-one",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-huanyu-az-one-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "huanyu-azone-jd-index-2026-09-23"
+        ],
+        "unresolved_reason": "No exact selected AZ ONE maximum is documented; an unknown fitted tire or another build is not a maximum."
+      },
+      {
+        "record_id": "kontax-power-evo",
+        "field": "frame-material",
+        "attempt_id": "candidate-kontax-power-evo-frame-material-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kontax-rs80-power-evo-official-2026-09-01",
+          "kontax-power-evo-page-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "The official page identifies the model but supplies no exact carbon grade, lay-up, fork construction, or molding process."
+      },
+      {
+        "record_id": "kontax-power-evo",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-kontax-power-evo-frame-stiffness-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kontax-rs80-power-evo-official-2026-09-01",
+          "kontax-power-evo-page-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "No controlled exact-model stiffness evidence surfaced."
+      },
+      {
+        "record_id": "kontax-power-evo",
+        "field": "frame-weight",
+        "attempt_id": "candidate-kontax-power-evo-frame-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kontax-rs80-power-evo-official-2026-09-01",
+          "kontax-power-evo-page-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "No size/finish/hardware-qualified RS80 POWER EVO frame-only weight surfaced."
+      },
+      {
+        "record_id": "kontax-power-evo",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-kontax-power-evo-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kontax-rs80-power-evo-official-2026-09-01",
+          "kontax-power-evo-page-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "No manufacturer-confirmed RS80 POWER EVO maximum tire clearance surfaced."
+      },
+      {
+        "record_id": "leinax-youlong-2",
+        "field": "complete-weight",
+        "attempt_id": "candidate-leinax-youlong-2-complete-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "leinak-youlong-2-douyin-index-current-2026-09-23"
+        ],
+        "unresolved_reason": "No size/equipment-qualified weight for 游龙 2.0 surfaced; a different 雷娜 family option is not transferable."
+      },
+      {
+        "record_id": "leinax-youlong-2",
+        "field": "drivetrain",
+        "attempt_id": "candidate-leinax-youlong-2-drivetrain-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "leinak-youlong-2-douyin-index-current-2026-09-23"
+        ],
+        "unresolved_reason": "The existing seller card shows a large Shimano 105 groupset without exact generation or actuation; the new query did not identify 游龙 2.0 equipment."
+      },
+      {
+        "record_id": "leinax-youlong-2",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-leinax-youlong-2-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "leinak-youlong-2-douyin-index-current-2026-09-23"
+        ],
+        "unresolved_reason": "No exact 游龙 2.0 maximum tire clearance surfaced; fitted width and another family page are insufficient."
+      },
+      {
+        "record_id": "pardus-spark",
+        "field": "complete-weight",
+        "attempt_id": "candidate-pardus-spark-complete-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "pardus-spark-gen3-current-index-2026-08-30",
+          "pardus-spark-gen3-owner-2026-08-30"
+        ],
+        "unresolved_reason": "The search result referred to fourth-generation Spark Evo, while the candidate retains several unresolved Spark cards; no selected-build weight is supported."
+      },
+      {
+        "record_id": "pardus-spark",
+        "field": "drivetrain",
+        "attempt_id": "candidate-pardus-spark-drivetrain-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "pardus-spark-sport-qed-current-2026-08-30",
+          "pardus-spark-sport-105-current-2026-08-30",
+          "pardus-spark-gen3-current-index-2026-08-30"
+        ],
+        "unresolved_reason": "Existing options belong to different Spark Sport/Gen3/PES/QED branches and do not establish the drivetrain of the selected cards."
+      },
+      {
+        "record_id": "pardus-spark",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-pardus-spark-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "pardus-spark-sport-qed-current-2026-08-30",
+          "pardus-spark-sport-105-current-2026-08-30"
+        ],
+        "unresolved_reason": "No maximum for the selected Spark platform/cards surfaced; fitted 700×28C on a specific branch is not the family maximum."
+      },
+      {
+        "record_id": "quick-t10",
+        "field": "frame-material",
+        "attempt_id": "candidate-quick-t10-frame-material-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "quick-current-road-catalog-2026-09-01",
+          "quick-tt-one-official-2026-09-01"
+        ],
+        "unresolved_reason": "No exact T10 carbon grade, lay-up, or frame construction evidence surfaced."
+      },
+      {
+        "record_id": "quick-t10",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-quick-t10-frame-stiffness-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "quick-current-road-catalog-2026-09-01",
+          "quick-tt-one-official-2026-09-01"
+        ],
+        "unresolved_reason": "No controlled exact-T10 stiffness evidence surfaced."
+      },
+      {
+        "record_id": "quick-t10",
+        "field": "frame-weight",
+        "attempt_id": "candidate-quick-t10-frame-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "quick-current-road-catalog-2026-09-01",
+          "quick-tt-one-official-2026-09-01"
+        ],
+        "unresolved_reason": "No exact QUICK T10 frame-only weight with size/finish/hardware basis surfaced."
+      },
+      {
+        "record_id": "quick-t10",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-quick-t10-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "quick-current-road-catalog-2026-09-01",
+          "quick-tt-one-official-2026-09-01"
+        ],
+        "unresolved_reason": "No exact QUICK T10 maximum clearance surfaced; TT:ONE values are a sibling model."
+      },
+      {
+        "record_id": "rockbros-pegasus-road",
+        "field": "complete-weight",
+        "attempt_id": "candidate-rockbros-pegasus-road-complete-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rockbros-pegasus-official-2026-08-30",
+          "rockbros-pegasus-jd-2026-08-30"
+        ],
+        "unresolved_reason": "The official 8.55 kg size-M Pegasus 7120 Kit is a separately named build and is not mapped to the retained generic seller option.",
+        "rejected_result_url": "https://rockbrosusa.com/pages/pegasus-7120-kit"
+      },
+      {
+        "record_id": "rockbros-pegasus-road",
+        "field": "drivetrain",
+        "attempt_id": "candidate-rockbros-pegasus-road-drivetrain-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rockbros-pegasus-official-2026-08-30",
+          "rockbros-pegasus-jd-2026-08-30"
+        ],
+        "unresolved_reason": "Official 105 R7120/R7100/R7170 equipment is for the separately named Pegasus 7120 Kit; do not transfer it to the retained generic seller option.",
+        "rejected_result_url": "https://rockbrosusa.com/pages/pegasus-7120-kit"
+      },
+      {
+        "record_id": "rockbros-pegasus-road",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-rockbros-pegasus-road-frame-stiffness-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rockbros-pegasus-official-2026-08-30",
+          "rockbros-pegasus-jd-2026-08-30"
+        ],
+        "unresolved_reason": "The named product page gives no controlled stiffness measurement, and its build does not map to the retained seller option.",
+        "rejected_result_url": "https://rockbrosusa.com/pages/pegasus-7120-kit"
+      },
+      {
+        "record_id": "rockbros-pegasus-road",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-rockbros-pegasus-road-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rockbros-pegasus-official-2026-08-30",
+          "rockbros-pegasus-jd-2026-08-30"
+        ],
+        "unresolved_reason": "The page’s 28 mm maximum belongs to its named Pegasus 7120 Kit, not the retained generic seller option.",
+        "rejected_result_url": "https://rockbrosusa.com/pages/pegasus-7120-kit"
+      },
+      {
+        "record_id": "rolling-stone-comp",
+        "field": "complete-weight",
+        "attempt_id": "candidate-rolling-stone-comp-complete-weight-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rolling-stone-compass-biketo-2026-08-30",
+          "rolling-stone-compass-review-2026-08-30",
+          "rolling-stone-compass-dragonbike-2026-08-30"
+        ],
+        "unresolved_reason": "The seller package remains frameset-versus-complete-bike ambiguous; recorded frame and fork measurements cannot be treated as assembled-bike weight."
+      },
+      {
+        "record_id": "rolling-stone-comp",
+        "field": "drivetrain",
+        "attempt_id": "candidate-rolling-stone-comp-drivetrain-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rolling-stone-compass-biketo-2026-08-30",
+          "rolling-stone-compass-review-2026-08-30"
+        ],
+        "unresolved_reason": "Recorded shifting compatibility does not identify an installed drivetrain for the ambiguous seller package."
+      },
+      {
+        "record_id": "rolling-stone-comp",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-rolling-stone-comp-tire-clearance-b150-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "rolling-stone-compass-biketo-2026-08-30",
+          "rolling-stone-compass-review-2026-08-30",
+          "rolling-stone-compass-dragonbike-2026-08-30"
+        ],
+        "unresolved_reason": "No exact COMPASS maximum surfaced in the new query; the already-recorded sources do not state one."
+      }
+    ]
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public_post": 15450,
+      "web": 35890
+    },
+    "research_status_counts": {
+      "blocked": 345,
+      "conflicted": 35,
+      "found": 15,
+      "open": 44,
+      "temporarily-exhausted": 4
+    },
+    "queue": {
+      "ready": 44,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 523,
+      "conflicted": 1
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_acceptance": "accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "developer-storage-cache run -- codex-pnpm-check check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation": "1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+      "tests": "333/333 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "git_diff_check": "passed",
+    "image_report": "not run; no image records changed"
+  }
+}

@@ -482,5 +482,6 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-rinasclta-q-aero-gr-batch-043-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$639; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-rinasclta-q-aero-gr-batch-043-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$639; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["rinasclta-q-aero-gr-official-2026-08-27","ecb-reference-rates-2026-08-31"],"note":"Disposition: exact Q-AERO GR global-store US$639 sale and dated CNY 4,294 reference conversion reused. This is not a mainland checkout; selected size/finish total, shipping, tax, stock, and final checkout remain unverified."}
 }

@@ -1,0 +1,52 @@
+{
+  "id": "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xlab-rs9"
+  },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "conflicted",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "The known secondary 30 mm figure conflicts with a documented fitted 32C build; today's exact manufacturer-page recheck returned no extractable specifications, so the maximum remains unknown.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "X-LAB RS9 current manufacturer maximum tire clearance specification",
+          "route": "manufacturer exact mainland product page current access recheck",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.xidesheng.com/goods/1891777277617856514/detail",
+          "note": "The exact manufacturer URL returned only the generic title 喜德盛自行车 and no extractable product text. No manufacturer-linked manual or spec sheet was visible. This access failure yields no maximum-clearance statement and does not resolve the existing 30 mm secondary versus fitted 32C conflict."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [
+    "public-xlab-rs9-build-2026-08-27",
+    "xlab-rs9-official-cn-spec-2026-08-27",
+    "xlab-rs9-bikeinsights-2026-08-27",
+    "xlab-rs9-official-clearance-page-recheck-2026-09-25",
+    "xlab-rs9-bikeinsights-clearance-recheck-2026-09-25"
+  ],
+  "retry_of": "candidate-xlab-rs9-tire-clearance-2026-08-27",
+  "retry_reason": "Rechecked the exact manufacturer product page at a new current access date; its current response was not readable and does not settle the existing conflict.",
+  "retry_after": null,
+  "notes": "Rechecked the exact manufacturer product URL once on 2026-09-24; only a generic title was readable and no linked manual was exposed. Keep 32 mm as a fitted observation, retain the conflicting 30 mm secondary claim, and leave manufacturer maximum unknown until accessible exact manufacturer evidence resolves it.",
+  "recommended_resolution": null,
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xlab-rs9-official-clearance-page-recheck-2026-09-25",
+      "xlab-rs9-bikeinsights-clearance-recheck-2026-09-25"
+    ],
+    "note": "The current exact XDS URL returned only a generic page title and no product content. Bike Insights still lists 30 mm; a saved owner report says a 32C tire fitted, which does not establish maximum clearance."
+  }
+}

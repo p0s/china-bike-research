@@ -1,0 +1,47 @@
+{
+  "batch": 95,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 188,
+  "scope": [
+    {"record_type":"candidate","record_id":"sava-a4","attempt_id":"candidate-sava-a4-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"sava-a4","attempt_id":"candidate-sava-a4-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"sava-a4","attempt_id":"candidate-sava-a4-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"candidate","record_id":"sava-a7l-pro-2026","attempt_id":"candidate-sava-a7l-pro-2026-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"variant","record_id":"sava-a7l-r7100","attempt_id":"variant-sava-a7l-r7100-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"variant","record_id":"sava-a7l-r7100","attempt_id":"variant-sava-a7l-r7100-image-2026-09-01","atomic_gap":"image"},
+    {"record_type":"platform","record_id":"sava-a7l-r7100","attempt_id":"platform-sava-a7l-r7100-tire-clearance-2026-09-01","atomic_gap":"tire-clearance"},
+    {"record_type":"variant","record_id":"sava-a7l-r7100","attempt_id":"variant-sava-a7l-r7100-purchase-route-2026-09-01","atomic_gap":"purchase-route"},
+    {"record_type":"candidate","record_id":"sava-dream-maker","attempt_id":"candidate-sava-dream-maker-complete-weight-2026-08-30","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"sava-dream-maker","attempt_id":"candidate-sava-dream-maker-drivetrain-2026-08-30","atomic_gap":"drivetrain"},
+    {"record_type":"candidate","record_id":"sava-dream-maker","attempt_id":"candidate-sava-dream-maker-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sava-f20-hawkeye","attempt_id":"candidate-sava-f20-hawkeye-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"variant","record_id":"sava-gelaro-s4-grx400","attempt_id":"variant-sava-gelaro-s4-grx400-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"variant","record_id":"sava-gelaro-s8","attempt_id":"variant-sava-gelaro-s8-purchase-route-2026-09-01","atomic_gap":"purchase-route"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-complete-weight-2026-08-30","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-frame-stiffness-2026-08-30","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-identity-source-2026-08-30","atomic_gap":"identity-source"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-tire-clearance-2026-08-30","atomic_gap":"tire-clearance"},
+    {"record_type":"variant","record_id":"sava-gelaro-sf6-cues","attempt_id":"variant-sava-gelaro-sf6-cues-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"variant","record_id":"sava-gelaro-sf6-cues","attempt_id":"variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01","atomic_gap":"purchase-route"},
+    {"record_type":"candidate","record_id":"sava-r8-r8170","attempt_id":"candidate-sava-r8-r8170-complete-weight-2026-08-30","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"sava-r8-r8170","attempt_id":"candidate-sava-r8-r8170-drivetrain-2026-08-30","atomic_gap":"drivetrain"},
+    {"record_type":"candidate","record_id":"sava-r8-r8170","attempt_id":"candidate-sava-r8-r8170-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sava-r8-r8170","attempt_id":"candidate-sava-r8-r8170-tire-clearance-2026-08-30","atomic_gap":"tire-clearance"}
+  ],
+  "allowed_work": "One evidence-only worker may read, sequentially and only for the 10 exact models and 25 attempts listed here, the attempt files' accepted sources, target records, and local relevant product/source records. No web access, external route access, new models, recursion, or edits by the evidence-only worker. The primary writer may add a dated source-reuse resolution only when the stored field, exact target, accepted source, and all material caveats align; otherwise leave the attempt unchanged and record the reason in batch results.",
+  "stop_conditions": [
+    "Stop on any missing or contradictory source, variant/market/model mismatch, unsupported numeric claim, or unclear target association.",
+    "Do not rewrite or broaden the 50-area campaigns, change catalog fields, prices, image records, or application code in this batch.",
+    "Do not infer that an open route proves live stock or final checkout."
+  ],
+  "done_criteria": [
+    "Audit no more than the 25 attempts and 10 exact models listed in this frozen scope.",
+    "Resolve only source-supported attempts while preserving unknown, size/build, market, price, route, and protocol caveats.",
+    "Fresh data:gaps and research:queue report the post-batch buyer-impact and evidence-found counts.",
+    "Run focused data, research, coverage, and diff validation; run the full gate only if catalog, source, code, or UI behavior changes."
+  ]
+}

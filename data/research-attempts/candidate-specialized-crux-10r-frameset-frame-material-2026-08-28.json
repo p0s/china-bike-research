@@ -1,20 +1,44 @@
 {
   "id": "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "specialized-crux-10r-frameset" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "specialized-crux-10r-frameset"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "Specialized Crux FACT 10r frameset Rider First carbon", "route": "manufacturer exact-frameset page", "outcome": "found", "result_url": "https://www.specialized.com/us/en/crux-10r-frameset/p/4221706", "accessed_at": "2026-08-28", "note": "The current exact frameset identifies a FACT 10r Rider First Engineered frame and S-Works FACT carbon fork; fiber grade and lay-up are not published." }
+        {
+          "attempt": 1,
+          "query": "Specialized Crux FACT 10r frameset Rider First carbon",
+          "route": "manufacturer exact-frameset page",
+          "outcome": "found",
+          "result_url": "https://www.specialized.com/us/en/crux-10r-frameset/p/4221706",
+          "accessed_at": "2026-08-28",
+          "note": "The current exact frameset identifies a FACT 10r Rider First Engineered frame and S-Works FACT carbon fork; fiber grade and lay-up are not published."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["specialized-crux-10r-frameset-official-2026-08-28"],
+  "accepted_source_ids": [
+    "specialized-crux-10r-frameset-official-2026-08-28",
+    "specialized-crux-10r-frameset-official-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "FACT 10r is preserved as Specialized's material-system name, not translated into an unsupported fiber grade."
+  "notes": "Disposition: supported. Current exact U.S. Product ID 223491 page confirms FACT 10r Carbon; no further fiber grade or layup is supplied. Reopen trigger: Reopen if another generation or regional product has different material.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "specialized-crux-10r-frameset-official-recheck-2026-09-24"
+    ],
+    "note": "Disposition: supported. Current exact U.S. Product ID 223491 page confirms FACT 10r Carbon; no further fiber grade or layup is supplied. Reopen trigger: Reopen if another generation or regional product has different material."
+  }
 }

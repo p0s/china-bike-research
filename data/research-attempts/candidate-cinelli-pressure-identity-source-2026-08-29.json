@@ -492,5 +492,11 @@
     "cinelli-pressure-jd-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cinelli-pressure-50-area-sweep-2026-08-29.json. The dated snapshot, official catalog and current mainland index jointly establish first-generation platform and partial exact-build identity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cinelli-pressure-50-area-sweep-2026-08-29.json. The dated snapshot, official catalog and current mainland index jointly establish first-generation platform and partial exact-build identity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["cinelli-pressure-catalog-2023-2026-08-29", "cinelli-pressure-jd-2026-08-29"],
+    "note": "The official catalog establishes first-generation Pressure lineage and the current mainland index identifies its 105 Di2/3T-wheel option; exact selected-SKU checkout terms and full BOM remain unknown."
+  }
 }

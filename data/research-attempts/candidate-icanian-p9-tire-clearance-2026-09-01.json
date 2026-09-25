@@ -479,8 +479,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "icanian-p9-official-2026-08-08"
+    "icanian-p9-official-2026-08-08",
+    "icanian-p9-frame-page-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-p9-batch-033-50-area-sweep-2026-09-01.json. The current exact frame page accepts 27.5x3.0 or 29x2.3; an XD drivetrain narrows the 27.5 option to 2.5."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-p9-batch-033-50-area-sweep-2026-09-01.json. The current exact frame page accepts 27.5x3.0 or 29x2.3; an XD drivetrain narrows the 27.5 option to 2.5.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "icanian-p9-frame-page-current-2026-09-23"
+    ],
+    "note": "The current exact frame page lists nominal 27.5x3.0 or 29x2.3 fit; the XD configuration narrows 27.5 to 2.5. Do not treat these nominal sizes as measured casing widths."
+  }
 }

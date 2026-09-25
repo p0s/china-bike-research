@@ -1,0 +1,25 @@
+{
+  "batch": 104,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 125,
+  "scope_method": "First six evidence-found attempts after skipping the eight B100 unresolved entries, covering two exact target records; audit the targets sequentially.",
+  "scope": [
+    {"record_type":"candidate","record_id":"tavelo-arow-sl-community-lead","attempt_id":"candidate-tavelo-arow-sl-community-lead-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"triaero-a9","attempt_id":"candidate-triaero-a9-drivetrain-2026-08-30","atomic_gap":"drivetrain"},
+    {"record_type":"candidate","record_id":"triaero-a9","attempt_id":"candidate-triaero-a9-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"triaero-a9","attempt_id":"candidate-triaero-a9-frame-stiffness-2026-08-30","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"triaero-a9","attempt_id":"candidate-triaero-a9-identity-source-2026-08-30","atomic_gap":"identity-source"},
+    {"record_type":"candidate","record_id":"triaero-a9","attempt_id":"candidate-triaero-a9-tire-clearance-2026-08-30","atomic_gap":"tire-clearance"}
+  ],
+  "allowed_work": "One evidence-only Luna worker may audit the two targets sequentially, inspecting only each scoped attempt, its accepted source records, and the exact candidate before moving to the next target. Report source-to-target fit and all generation/build/date/measurement caveats. Recommend source reuse only where the candidate already represents supported claims. Do not inspect sibling models or out-of-scope files. No browsing, edits, candidate value changes, image rights assumptions, or clearance inference from fitted tire widths.",
+  "done_criteria": [
+    "All six attempts receive exact-source-backed source-reuse or unresolved recommendations.",
+    "Primary writer integrates only defensible ledger resolutions and leaves missing numeric values or current-route claims unchanged.",
+    "Fresh data:gaps and research:queue quantify post-batch status.",
+    "Run validate, research:check, monotonic coverage acceptance/check and git diff --check; no full gate or image report unless product/source/image records change."
+  ]
+}

@@ -54,8 +54,22 @@
   "accepted_source_ids": [
     "round3-specialized-china-warranty-8f335b54cd",
     "round3-specialized-china-terms-78ff9e5eba",
-    "round3-specialized-china-faq-63941cf802"
+    "round3-specialized-china-faq-63941cf802",
+    "specialized-china-warranty-current-recheck-2026-09-25",
+    "specialized-china-terms-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: conflicted. Unknowns and blocks are not negative evidence."
+  "notes": "The current China warranty page states lifetime cover for registered frames/forks for the original owner (or two years if unregistered, with registration within 90 days), while current China sale terms state a limited warranty up to one year with proof of purchase. The China warranty PDF is unreadable and the retained Crux purchase/registration history is unknown; exact eligibility remains conflicted.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "round3-specialized-china-warranty-8f335b54cd",
+      "round3-specialized-china-terms-78ff9e5eba",
+      "round3-specialized-china-faq-63941cf802",
+      "specialized-china-warranty-current-recheck-2026-09-25",
+      "specialized-china-terms-current-recheck-2026-09-25"
+    ],
+    "note": "The current China warranty page states lifetime cover for registered frames/forks for the original owner (or two years if unregistered, with registration within 90 days), while current China sale terms state a limited warranty up to one year with proof of purchase. The China warranty PDF is unreadable and the retained Crux purchase/registration history is unknown; exact eligibility remains conflicted."
+  }
 }

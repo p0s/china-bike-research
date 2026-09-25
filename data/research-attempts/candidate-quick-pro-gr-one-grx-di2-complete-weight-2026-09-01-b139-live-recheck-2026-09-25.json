@@ -1,0 +1,52 @@
+{
+  "id": "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-09-01-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-gr-one-grx-di2"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-09-01",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish complete-weight for the exact retained target build. Official collection gives no weight. A RaceIt result snippet described a different wheel BOM and lacked verified authorization; it was not opened or accepted. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Quick Pro GR:ONE GRX Di2 1x12\" 快客 中国 官方 现车 重量 价格",
+          "route": "Opened official QuickPro Gravel - All collection: https://www.quickprousa.com/collections/gravel-all. Exact GR:ONE GRX Di2 1×12s is Build from US$4,799 under Global/USD and North America dealer context; no weight.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Official collection gives no weight. A RaceIt result snippet described a different wheel BOM and lacked verified authorization; it was not opened or accepted. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish complete-weight for the exact retained target build. Official collection gives no weight. A RaceIt result snippet described a different wheel BOM and lacked verified authorization; it was not opened or accepted. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries.",
+  "campaign_extension": {
+    "id": "b139-quick-pro-gr-one-grx-di2-complete-weight",
+    "extends_attempt_id": "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

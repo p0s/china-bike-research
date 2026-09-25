@@ -1,0 +1,55 @@
+{
+  "id": "candidate-rolling-stone-comp-drivetrain-b150-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "rolling-stone-comp"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-rolling-stone-comp-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ROLLING STONE COMPASS legacy exact assembled bike weight drivetrain maximum tire clearance",
+          "route": "One bounded current exact-model web query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Recorded shifting compatibility does not identify an installed drivetrain for the ambiguous seller package."
+        }
+      ],
+      "blocker": "Recorded shifting compatibility does not identify an installed drivetrain for the ambiguous seller package."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "rolling-stone-compass-biketo-2026-08-30",
+    "rolling-stone-compass-review-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "B165 local source audit: no linked source supports the retained exact drivetrain field; B150 found no qualifying evidence for this frozen field; preserve it as unknown pending a distinct exact source or material state change.",
+  "retry_of": "candidate-rolling-stone-comp-drivetrain-2026-08-30",
+  "retry_reason": "One distinct model-level web query on 2026-09-25 followed the earlier search/campaign history to test for new direct evidence.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-150-rolling-stone-comp-drivetrain",
+    "extends_attempt_id": "candidate-rolling-stone-comp-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-150-scope.json",
+    "reason": "The frozen B150 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

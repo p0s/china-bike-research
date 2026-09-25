@@ -482,5 +482,14 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g026-frameset-batch-043-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$718 sale pricing; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g026-frameset-batch-043-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$718 sale pricing; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "spcycle-g026-official-2026-08-25",
+      "ecb-reference-rates-2026-08-31"
+    ],
+    "note": "The target's CNY 4,825 figure is a dated reference conversion of the exact G026 page's US$718 sale amount at the 2026-08-31 ECB cross-rate. It is not a CNY checkout price; selected package, shipping, tax, stock and mainland checkout remain unverified."
+  }
 }

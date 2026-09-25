@@ -1,0 +1,52 @@
+{
+  "id": "candidate-de-rosa-idol-tire-clearance-2026-08-29-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-idol"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-de-rosa-idol-tire-clearance-2026-08-29",
+  "retry_reason": "The frozen B157 scope authorizes one bounded current exact-model web query after review of the latest predecessor attempt, linked sources, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-de-rosa-idol-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "De Rosa Idol exact current model maximum tire clearance frame stiffness independent test official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The retained mainland listing generation is unresolved. Current fifth-generation New Idol sources do not establish maximum clearance for that unidentified build; no value was transferred."
+        }
+      ],
+      "blocker": "The retained mainland listing generation is unresolved. Current fifth-generation New Idol sources do not establish maximum clearance for that unidentified build; no value was transferred."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The retained mainland listing generation is unresolved. Current fifth-generation New Idol sources do not establish maximum clearance for that unidentified build; no value was transferred.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-157-de-rosa-idol-tire-clearance",
+    "extends_attempt_id": "candidate-de-rosa-idol-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+    "reason": "The frozen B157 scope authorizes one dated exact-record query after reviewing the latest predecessor source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

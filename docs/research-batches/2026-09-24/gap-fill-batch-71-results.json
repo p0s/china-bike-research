@@ -1,0 +1,32 @@
+{
+  "batch": 71,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-71-scope.json",
+  "outcome": "The exact official China product card repeats a CNY catalog offer, but the opened detail page exposes no selected package or checkout context; the observed-price gap remains unresolved.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "query": "Specialized Roubaix SL8 Tiagra 闪电 中国 价格 旗舰店",
+    "result": "The public result for the official China homepage (marked crawled last week) showed the exact Roubaix SL8 - Shimano Tiagra card, ¥15,990.00 with ¥17,990.00 also displayed, and ‘Buy Now’. The exact official detail page was opened once; extraction showed the matching title and blank inputs only.",
+    "disposition": "Recorded the current official catalog-offer lead with explicit provenance, but kept observed_price absent because product package, offer conditions, stock and final checkout were not exposed. No U.S. amount or other trim was transferred."
+  },
+  "integration": {
+    "candidate": "data/candidates/missing-china-price-specialized-roubaix-sl8.json",
+    "change": "Added the official-homepage search-index source, cited its limitations in the candidate note, and refreshed last_reviewed; did not change official_price or observed_price.",
+    "source": "data/sources/specialized-roubaix-tiagra-cn-homepage-search-index-2026-09-24.json",
+    "research_attempt": "data/research-attempts/candidate-missing-china-price-specialized-roubaix-sl8-mainland-observed-price-2026-09-24.json",
+    "attempt_status": "blocked"
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "price_not_observed": "36 -> 36",
+    "disposition": "No gap closed; the latest official catalog card is documented without representing it as an observed transaction."
+  },
+  "validation": {
+    "focused": "Passed `npm run --silent research:check` (1502 atomic research fields; 15450 public-post and 35578 web attempts) and `npm run --silent validate` (1304 sources, 1525 atomic research records).",
+    "coverage": "`npm run --silent coverage:accept` accepted the monotonic update for 212 images and 277 catalog targets; `coverage:check` passed.",
+    "full_gate": "`npm run check` passed: privacy scan, data validation, research validation, coverage, 323/323 tests, 584-page build, and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B71 batch only; no push, pull request, merge, publication or production action."
+}

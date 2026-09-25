@@ -1,0 +1,127 @@
+{
+  "batch": 41,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-41-scope.json",
+  "writer_limit": {
+    "exact_targets": 6,
+    "atomic_fields": 7
+  },
+  "dispositions": [
+    {
+      "attempt_id": "variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:lightcarbon-speedz-complete",
+      "field": "bottom-bracket",
+      "status": "unresolved",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The official catalog fetch timed out and exact-model search found no SPEEDZ page or chart. No bottom-bracket label or shell dimensions were verified; retain unknown."
+    },
+    {
+      "attempt_id": "variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:lightcarbon-speedz-frameset",
+      "field": "bottom-bracket",
+      "status": "unresolved",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The official catalog fetch timed out and exact-model search found no SPEEDZ page or chart. No bottom-bracket label or shell dimensions were verified; retain unknown."
+    },
+    {
+      "attempt_id": "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:camp-gx600-pes",
+      "field": "bottom-bracket",
+      "status": "unresolved-open",
+      "source_ids": ["camp-gx600-geometry-recheck-2026-09-24"],
+      "result": "The current exact GX600 PES manufacturer page identifies the build but omits the bottom-bracket standard and shell dimensions. No sibling-trim value was transferred."
+    },
+    {
+      "attempt_id": "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:camp-gx700-grx820",
+      "field": "bottom-bracket",
+      "status": "unresolved-open",
+      "source_ids": ["camp-gx700-geometry-recheck-2026-09-24"],
+      "result": "The current exact GX700 page omits the bottom-bracket standard and shell dimensions. Its separate crank-row build conflict was not used to infer a value."
+    },
+    {
+      "attempt_id": "platform-sava-gelaro-bottom-bracket-2026-08-27",
+      "target": "platform:sava-gelaro; exact variant:sava-gelaro-s4-grx400 (R21-GRX400-20S)",
+      "field": "bottom-bracket",
+      "status": "resolved-exact-variant; shared-platform-unresolved",
+      "source_ids": ["sava-gelaro-s4-bottom-bracket-recheck-2026-09-23"],
+      "result": "The exact S4 option page explicitly labels the bottom bracket BBT47. The value is stored on this exact variant only; the shared SAVA Gelaro platform stays unknown."
+    },
+    {
+      "attempt_id": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:sava-gelaro-s8 (R21-GRX820-12S)",
+      "field": "bottom-bracket",
+      "status": "unresolved-open",
+      "source_ids": ["sava-gelaro-s8-official-recheck-2026-09-24"],
+      "result": "The exact current page omits the bottom-bracket standard and shell dimensions. BB Drop is geometry only and was not treated as a shell specification."
+    },
+    {
+      "attempt_id": "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:sava-gelaro-sf6-cues (R21-U6000-11S)",
+      "field": "bottom-bracket",
+      "status": "unresolved-open",
+      "source_ids": ["sava-gelaro-sf6-official-recheck-2026-09-24"],
+      "result": "The exact SF6 current manufacturer page omits the bottom-bracket standard and shell dimensions. Sibling Gelaro evidence was not transferred."
+    }
+  ],
+  "changes": {
+    "new_sources": ["sava-gelaro-s4-bottom-bracket-recheck-2026-09-23"],
+    "research_attempts_added": [
+      "variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24",
+      "variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24",
+      "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24",
+      "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+      "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24"
+    ],
+    "variant_bottom_bracket_override": "Added exact-build bottom_bracket support so S4 can record BBT47 without assigning it to the shared family platform. Updated SPEC, schema, gap detection, rendering, catalog export, and focused tests.",
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 333,
+      "conflicted": 35,
+      "found": 69,
+      "open": 4,
+      "temporarily-exhausted": 11
+    },
+    "research_queue_counts": {
+      "ready": 4,
+      "evidence-found": 251,
+      "deferred": 42,
+      "blocked": 497,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "repository_gate": "passed: npm run check; privacy, data, research ledger, coverage, 312/312 tests, build and SEO audit",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not run; no image records changed"
+  },
+  "delivery": "Local batch complete. No push, pull request, merge, publication, or production action."
+}

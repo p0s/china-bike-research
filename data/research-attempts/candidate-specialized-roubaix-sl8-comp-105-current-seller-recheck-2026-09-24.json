@@ -1,0 +1,38 @@
+{
+  "id": "candidate-specialized-roubaix-sl8-comp-105-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "specialized-roubaix-sl8-comp-105" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01",
+  "retry_reason": "The extended search retained the official CNY 27,990 reference but no current seller option. One focused exact-item recheck tests the mainland seller route for product 218669 and its 105 package.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-specialized-roubaix-price",
+    "extends_attempt_id": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland seller-item search checks exact China product 218669 after the earlier campaign established only official list price.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "The opened Tmall Hooos item identifies a Roubaix SL8 Comp but does not establish Shimano 105, product 218669, or an exact selected option; its displayed low price cannot be assigned to this candidate package.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "Specialized Roubaix SL8 Comp 105 218669 中国 价格 京东 天猫 淘宝",
+        "route": "One focused public mainland seller-item search for Specialized China product 218669",
+        "outcome": "rejected",
+        "accessed_at": "2026-09-24",
+        "result_url": "https://tao.hooos.com/goods_V9mZ0x8F6twGBxW3Rgf27VuvtV-yz622os6a44xZrGi7.html",
+        "note": "Opened a Tmall item for seller SPECIALIZED旗舰店 in Shanghai. It identifies ROUBAIX SL8 COMP / a carbon electronic endurance bike and displays CNY 27,990 with a coin deduction and free shipping, but no 105 or 105 Di2 build, product 218669, or selectable matching option is shown. The amount is not attributable to the retained candidate package and is not a checkout total."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Keep the official CNY 27,990 reference; no candidate observed price is recorded because the opened seller item does not prove the exact 105 trim or product 218669."
+}

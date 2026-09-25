@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcr017s-d-owner-quote-2025-04-09"
+    "lightcarbon-lcr017s-d-owner-quote-2025-04-09",
+    "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr017s-d-batch-039-50-area-sweep-2026-09-01.json. An exact-model prospective owner reports a LightCarbon quotation of US$555 for the LCR017S-D frame plus separately stated US$167 duty-free Italy shipping."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr017s-d-batch-039-50-area-sweep-2026-09-01.json. An exact-model prospective owner reports a LightCarbon quotation of US$555 for the LCR017S-D frame plus separately stated US$167 duty-free Italy shipping.\n\nBatch 23 current recheck: The exact manufacturer page remains inquiry-only with no public price on 2026-09-23. Preserve the 2025 US$555 owner quote and Italy-shipping report as historical; current mainland quote remains unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23"
+    ],
+    "note": "The exact manufacturer page remains inquiry-only with no public price on 2026-09-23. Preserve the 2025 US$555 owner quote and Italy-shipping report as historical; current mainland quote remains unknown."
+  }
 }

@@ -484,5 +484,11 @@
     "sava-gelaro-sf6-independent-review-2026-08-27"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The exact-model review describes vibration damping and responsiveness; this is qualitative ride evidence, not a controlled numeric stiffness result."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The exact-model review describes vibration damping and responsiveness; this is qualitative ride evidence, not a controlled numeric stiffness result.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-gelaro-sf6-independent-review-2026-08-27"],
+    "note": "The independent exact-model review describes vibration damping and responsiveness on the Gelaro SF6. This is subjective whole-bike ride evidence, not a controlled frame-only stiffness measurement or numeric result."
+  }
 }

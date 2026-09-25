@@ -1,0 +1,60 @@
+{
+  "id": "variant-ican-graro-frameset-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "ican-graro-frameset"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "found",
+  "accepted_source_ids": [
+    "ican-graro-ready-to-ship-route-2026-09-25"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": ["ican-graro-ready-to-ship-route-2026-09-25"],
+    "note": "The exact current manufacturer frameset page says Ready to ship, lists US$899 and sizes 49/52/54/56/58, offers China Warehouse and Add to Cart. Selected size/color stock, mainland delivery eligibility and cost, CNY total, tax, returns and final checkout remain unverified."
+  },
+  "retry_after": null,
+  "retry_of": "variant-ican-graro-frameset-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-ican-graro-frameset-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ICAN Graro carbon gravel frameset mainland China current price authorized 2026",
+          "route": "One distinct B146 exact-model web search; one new page open",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "The new exact official page says Ready to ship, lists US$899 and sizes 49/52/54/56/58, offers China Warehouse and Add to Cart, and identifies the frameset package. Selected size/color stock, mainland delivery, CNY total and final checkout remain unverified.",
+          "result_url": "https://icanwheels.com/products/ready-to-ship-graro-frame"
+        }
+      ]
+    }
+  },
+  "notes": "The new exact official page says Ready to ship, lists US$899 and sizes 49/52/54/56/58, offers China Warehouse and Add to Cart, and identifies the frameset package. Selected size/color stock, mainland delivery, CNY total and final checkout remain unverified.",
+  "campaign_extension": {
+    "id": "b146-ican-graro-frameset-purchase-route",
+    "extends_attempt_id": "variant-ican-graro-frameset-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -11,22 +11,86 @@
     "material": "carbon",
     "material_grade": "T800 high-modulus carbon fiber",
     "fork_material": "T800 carbon",
-    "construction": "R21 fully internally routed carbon chassis with additional carbon reinforcement at the head tube, bottom bracket and rear dropouts; exact lay-up schedule and molding process are not published",
+    "construction": "Exact 2026 R21-GRX820-12S page specifies a T800-carbon frame and fork; the lay-up schedule and molding process are not published.",
     "stiffness_evidence": "No meaningful independent exact-model stiffness or deflection evidence was found; manufacturer shock-absorption, comfort and stability language is not treated as stiffness evidence",
     "bottom_bracket": "unknown",
+    "bottom_bracket_status": "The exact R21-GRX820-12S manufacturer page rechecked on 2026-09-24 publishes no bottom-bracket standard or shell dimensions; its BB Drop geometry value is not a shell specification.",
     "derailleur_hanger": "unknown",
     "cable_routing": "fully-internal",
     "geometry": {
       "basis": "manufacturer exact-model geometry table",
       "source_id": "sava-gelaro-s8-official-2026-08-17",
-      "units": { "length": "mm", "angle": "degrees" },
+      "units": {
+        "length": "mm",
+        "angle": "degrees"
+      },
       "sizes": [
-        { "size": "470", "seat_tube_mm": 470, "top_tube_mm": 512.4, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 360, "stack_mm": 533.6, "wheelbase_mm": 1000.7 },
-        { "size": "490", "seat_tube_mm": 480, "top_tube_mm": 530.1, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 369, "stack_mm": 561.8, "wheelbase_mm": 1019.8 },
-        { "size": "510", "seat_tube_mm": 510, "top_tube_mm": 557.6, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 380, "stack_mm": 580.6, "wheelbase_mm": 1037.6 },
-        { "size": "535", "seat_tube_mm": 550, "top_tube_mm": 576.2, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 390, "stack_mm": 608.9, "wheelbase_mm": 1057.7 },
-        { "size": "550", "seat_tube_mm": 580, "top_tube_mm": 591.9, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 400, "stack_mm": 627.7, "wheelbase_mm": 1074.4 },
-        { "size": "580", "seat_tube_mm": 580, "top_tube_mm": 604.8, "bb_drop_mm": 75, "chainstay_mm": 430, "head_angle_deg": 70.3, "reach_mm": 410, "stack_mm": 637.1, "wheelbase_mm": 1087.8 }
+        {
+          "size": "470",
+          "seat_tube_mm": 470,
+          "top_tube_mm": 512.4,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 360,
+          "stack_mm": 533.6,
+          "wheelbase_mm": 1000.7
+        },
+        {
+          "size": "490",
+          "seat_tube_mm": 480,
+          "top_tube_mm": 530.1,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 369,
+          "stack_mm": 561.8,
+          "wheelbase_mm": 1019.8
+        },
+        {
+          "size": "510",
+          "seat_tube_mm": 510,
+          "top_tube_mm": 557.6,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 380,
+          "stack_mm": 580.6,
+          "wheelbase_mm": 1037.6
+        },
+        {
+          "size": "535",
+          "seat_tube_mm": 550,
+          "top_tube_mm": 576.2,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 390,
+          "stack_mm": 608.9,
+          "wheelbase_mm": 1057.7
+        },
+        {
+          "size": "550",
+          "seat_tube_mm": 580,
+          "top_tube_mm": 591.9,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 400,
+          "stack_mm": 627.7,
+          "wheelbase_mm": 1074.4
+        },
+        {
+          "size": "580",
+          "seat_tube_mm": 580,
+          "top_tube_mm": 604.8,
+          "bb_drop_mm": 75,
+          "chainstay_mm": 430,
+          "head_angle_deg": 70.3,
+          "reach_mm": 410,
+          "stack_mm": 637.1,
+          "wheelbase_mm": 1087.8
+        }
       ]
     }
   },
@@ -50,7 +114,8 @@
     "taobao-snapshot-2026-08-08",
     "sava-2026-carbon-lineup-2026-08-08",
     "sava-gelaro-s8-official-2026-08-17",
-    "sava-gelaro-s8-official-2026-08-28"
+    "sava-gelaro-s8-official-2026-08-28",
+    "sava-gelaro-s8-official-recheck-2026-09-24"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-24"
 }

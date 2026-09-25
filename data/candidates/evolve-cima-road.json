@@ -12,16 +12,29 @@
     "bottom_bracket": "BSA 68 mm threaded",
     "sizes": "XS, S, M, ML, L, XL",
     "frame": "Electronic shifting only; Shimano/SRAM electronic and Campagnolo WRL listed, EPS excluded",
-    "included_package": "Frame, fork and seatpost; Kreuza Apex integrated handlebar is an optional bundle addition. Confirm remaining hardware and selected finish.",
+    "included_package": "Frame, fork and seatpost; bottle cages and bar tape are excluded unless separately purchased. Kreuza Apex integrated handlebar is optional. Confirm other hardware and selected finish.",
     "international_price_reference": "US$2,299 for Navy White; optional handlebar bundle addition US$200, observed 2026-09-22. This is not a mainland delivered CNY quote.",
-    "warranty": "Limited lifetime structural-defect warranty for the original buyer from the official site or listed authorized dealer; invoice/receipt and online registration required. Wear, crashes and improper installation are excluded.",
-    "stiffness_evidence": "Firsthand review describes firmer out-of-saddle response than Winspace SLC5 with seatpost comfort retained; subjective comparison on a manufacturer-supplied review sample, without instrumented stiffness measurement."
+    "warranty": "Current Evolve policy: lifetime frame/fork coverage for the first owner; two years for seatpost and KREUZA handlebar, subject to stated conditions and exclusions. Confirm eligibility for the exact purchase channel.",
+    "stiffness_evidence": "Cyclists Hub subjectively describes the CIMA as stiffer than a Winspace SLC5, especially out of the saddle/under acceleration. The reviewer discloses a manufacturer-supplied frame and handlebar. No instrumented whole-frame stiffness result was published."
   },
+  "official_price": {
+    "amount_cny": 15403,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-09-22",
+    "original_amount": 2299,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.70007851,
+    "conversion_rate_date": "2026-09-22",
+    "price_basis": "Exact official Evolve CIMA Navy White frame, fork and seatpost package at US$2,299 converted using the ECB reference cross-rate; optional US$200 cockpit bundle is excluded.",
+    "conditions": "Foreign reference only; selected finish/stock, mainland price, shipping, tax, duties and actual transaction rate are unverified."
+  },
+  "reference_price_kind": "observed",
   "missing": [
-    "Exact mainland delivered CNY quote, current stock and selected finish/cockpit total",
-    "Selected mainland seller authorization and local warranty handling"
+    "Final delivered amount after shipping/checkout and selected-size stock remain unverified; the CNY 14,800 listing is for the CIMA Artist – Wilderness frameset, with optional Kreuza integrated handlebar extra.",
+    "Current local warranty claim handling for the selected purchase route remains unverified."
   ],
-  "source_note": "Official Navy White page lists USD 2,299 on 2026-09-05, excluding optional cockpit. This is not a China price or complete-bike total.",
+  "source_note": "Official Navy White page lists USD 2,299 on 2026-09-05, excluding optional cockpit. This is not a China price or complete-bike total.\n\nBatch 35 recheck: the exact CIMA review sample is manufacturer-supplied. The review's stiffness comparison is subjective and uninstrumented; it also confirms bottle cages and bar tape are extra. Current warranty policy describes lifetime frame/fork coverage for the first owner and two years for the seatpost and KREUZA handlebar, subject to policy conditions; verify the transaction channel and exclusions.\n\nBatch 52 mainland price (2026-09-24): official Evolve China product page lists CIMA Artist – Wilderness at CNY 14,800, including frame, fork, seatpost and essential parts, with the integrated Kreuza handlebar optional. The core frame specification matches this candidate; the named finish differs from the global CIMA Speed Navy White reference. Shipping, checkout amount and selected-size stock remain unverified.",
   "model_id": "evolve-cima-road",
   "type": "frameset",
   "status": "exact-model-research-stage",
@@ -31,7 +44,23 @@
     "chinesecarbon-top-discovery-2026-09-05",
     "evolve-cima-road-official-2026-09-22",
     "evolve-china-warranty-2026-09-22",
-    "evolve-cima-road-ride-review-2026-09-22"
+    "evolve-cima-road-ride-review-2026-09-22",
+    "ecb-reference-rates-2026-09-22",
+    "evolve-cima-road-official-recheck-2026-09-23",
+    "evolve-cima-road-review-recheck-2026-09-23",
+    "evolve-warranty-policy-recheck-2026-09-23",
+    "evolve-cima-artist-wilderness-mainland-price-2026-09-24"
   ],
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-09-24",
+  "observed_price": {
+    "amount_cny": 14800,
+    "currency": "CNY",
+    "observed_at": "2026-09-24",
+    "price_type": "official-mainland-listing",
+    "market": "mainland-china",
+    "channel": "manufacturer-direct",
+    "price_basis": "CIMA Artist – Wilderness frameset listing; includes frame, fork, seatpost and essential parts; optional Kreuza integrated handlebar is extra",
+    "conditions": "Shipping, selected-size stock and final checkout amount were not displayed or verified.",
+    "observation_count": 1
+  }
 }

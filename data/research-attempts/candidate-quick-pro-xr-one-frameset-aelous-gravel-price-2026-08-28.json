@@ -1,18 +1,48 @@
 {
   "id": "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "quick-pro-xr-one-frameset-aelous-gravel" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-xr-one-frameset-aelous-gravel"
+  },
   "field": "price",
   "priority": "high",
   "searched_at": "2026-08-28",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [
-      { "attempt": 1, "query": "快客 XR ONE 车架 淘宝", "route": "exact Taobao frameset listing with selected color and size", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=1021496957303", "accessed_at": "2026-08-28", "note": "Glass-yellow size M SKU 6197664799748 showed CNY 10,998, visible stock and 15-day presale dispatch." }
-    ] }
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "快客 XR ONE 车架 淘宝",
+          "route": "exact Taobao frameset listing with selected color and size",
+          "outcome": "found",
+          "result_url": "https://item.taobao.com/item.htm?id=1021496957303",
+          "accessed_at": "2026-08-28",
+          "note": "Glass-yellow size M SKU 6197664799748 showed CNY 10,998, visible stock and 15-day presale dispatch."
+        }
+      ]
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["quick-pro-xr-one-frameset-taobao-2026-08-28"],
+  "accepted_source_ids": [
+    "quick-pro-xr-one-frameset-taobao-2026-08-28"
+  ],
   "retry_after": null,
-  "notes": "The exact selected mainland frameset price is resolved; final package and warranty handling remain separate fields."
+  "notes": "The exact selected mainland frameset price is resolved; final package and warranty handling remain separate fields.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-pro-xr-one-frameset-taobao-2026-08-28"
+    ],
+    "note": "Retained 2026-08-28 observation for glass-yellow size M, SKU 6197664799748: CNY 10,998, visible stock and 15-day presale dispatch. Direct current page check on 2026-09-23 could not open; preserve the historical date and do not imply current price/stock/checkout or cockpit package inclusion."
+  }
 }

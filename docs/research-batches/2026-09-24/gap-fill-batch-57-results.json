@@ -1,0 +1,48 @@
+{
+  "batch": 57,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-57-scope.json",
+  "scope": {
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1
+  },
+  "outcomes": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "gap": "price-not-observed",
+      "status": "open",
+      "disposition": "A public Chinertown forum reply reports a pre-release US$629 quote for a black-matte TT-X68-NEW-T47 package, excluding shipping. Thread context identifies the new X68 replacement as T47/UDH/32C, but does not establish that the quoted package is the finalized 32C variant, and it gives no size, purchase confirmation, current availability, delivery destination, taxes, or mainland CNY total. Record as low-confidence community quote evidence; leave the catalog price null.",
+      "sources_added": [
+        "seraph-tt-x68-new-udh-chinertown-quote-recheck-2026-09-24"
+      ],
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+      "catalog_price_added": false
+    }
+  ],
+  "gaps_resolved": 0,
+  "gaps_unresolved": 1,
+  "changes": {
+    "sources_added": 1,
+    "research_attempt_records_extended": 1,
+    "candidate_records_updated": 1,
+    "mainland_prices_added": 0,
+    "specification_values_added": 0,
+    "images_added": 0
+  },
+  "researcher": "One Luna Max evidence-only agent; root independently checked the public thread, integrated provenance, and wrote repository files.",
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via codex-pnpm-check check",
+    "privacy": "passed",
+    "data_validation": "passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1300 sources, 212 primary image records, 236 candidates, and 1514 atomic research records",
+    "research_validation": "passed: 1499 atomic fields; 15449 public-post and 35564 web attempts",
+    "coverage": "passed: 212 images, 73 price observations, 1300 sources, and 236 candidates protected; baseline acceptance retained 277 catalog targets",
+    "tests": "321 passed, 0 failed",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not required; no image records changed"
+  },
+  "delivery": "Local B57 batch only; no push, pull request, merge, publication, or production action."
+}

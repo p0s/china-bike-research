@@ -481,8 +481,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-gelaro-sf6-official-2026-08-28"
+    "sava-gelaro-sf6-official-2026-08-28",
+    "sava-gelaro-sf6-clearance-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The current exact-model manufacturer page states a 45C maximum and documents 40C fitted tires."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The exact-model manufacturer FAQ states 40C fitted and compatibility up to 45C; the latter is nominal tire-size compatibility, not measured physical clearance. Both 10-speed and 11-speed options are listed.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-gelaro-sf6-clearance-recheck-2026-09-24"
+    ],
+    "note": "The dated exact-model manufacturer FAQ supports 700×45C nominal tire-size compatibility and 700×40C fitted. It does not establish measured casing width or physical frame/fork clearance; the offered R21-U6020 and R21-U6000 builds leave the exact candidate build unresolved."
+  }
 }

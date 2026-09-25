@@ -480,8 +480,19 @@
   "status": "found",
   "accepted_source_ids": [
     "specialized-roubaix-sl8-sport-105-official-2026-08-27",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "specialized-roubaix-sl8-sport-105-price-recheck-2026-09-24",
+    "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-specialized-roubaix-sl8-sport-105-batch-045-50-area-sweep-2026-09-01.json. Current exact global page lists US$3,499.99; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-specialized-roubaix-sl8-sport-105-batch-045-50-area-sweep-2026-09-01.json. Current exact global page lists US$3,499.99; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "specialized-roubaix-sl8-sport-105-price-recheck-2026-09-24",
+      "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24"
+    ],
+    "note": "Current U.S. page confirms US$3,499.99; the exact China page shows no CNY amount, stock or checkout. Keep observed_price null: CNY 23,519 is only a dated ECB reference conversion, not a mainland price."
+  }
 }

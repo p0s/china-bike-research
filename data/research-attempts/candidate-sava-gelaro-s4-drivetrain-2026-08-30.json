@@ -482,8 +482,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-gelaro-s4-official-2026-08-28"
+    "sava-gelaro-s4-official-2026-08-28",
+    "sava-gelaro-s4-current-spec-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-s4-50-area-sweep-2026-08-30.json. Current exact build uses Shimano GRX400 mechanical 2x10 hydraulic disc."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-s4-50-area-sweep-2026-08-30.json. Current exact build uses Shimano GRX400 mechanical 2x10 hydraulic disc.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-gelaro-s4-current-spec-recheck-2026-09-24"
+    ],
+    "note": "Current exact R21 page confirms mechanical Shimano GRX400 2x10 with hydraulic disc brakes and the listed RX400/46-30/11-34 package."
+  }
 }

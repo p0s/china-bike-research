@@ -1,0 +1,32 @@
+{
+  "batch": 70,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-70-scope.json",
+  "outcome": "No exact current mainland transaction price was established for the Hi-Light 航轮 R9 (2025) titanium frameset; observed_price remains unknown.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "query": "Hi-Light 航轮 R9 2025 钛合金 车架组 车架 价格",
+    "route": "Focused public web search",
+    "result": "No exact current mainland seller detail page surfaced. Results included a model profile carrying the separate official retail reference, foreign marketplace offers, and an aggregator mixing Hi-Light and Hanglun R9 listings. No exact package, current CNY checkout, seller conditions, promotion, stock or purchase context was established.",
+    "disposition": "No price assigned. Keep the existing dated CNY 8,900 official retail reference separate from a current transaction price."
+  },
+  "integration": {
+    "candidate": "data/candidates/hi-light-r9-2025.json",
+    "change": "No product value changed; observed_price remains absent.",
+    "research_attempt": "data/research-attempts/candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24.json",
+    "attempt_status": "blocked"
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "price_not_observed": "36 -> 36",
+    "disposition": "No gap closed; the current no-result is documented while preserving the official reference-price distinction."
+  },
+  "validation": {
+    "focused": "Passed `npm run --silent research:check` (1501 atomic research fields; 15450 public-post and 35577 web attempts) and `npm run --silent validate` (1303 sources, 1524 atomic research records).",
+    "coverage": "`npm run --silent coverage:accept` accepted the monotonic research-ledger update for 212 images and 277 catalog targets; `coverage:check` passed.",
+    "full_gate": "`npm run check` passed: privacy scan, data validation, research validation, coverage, 323/323 tests, 584-page build, and SEO audit (458 indexable, 126 noindex). Build reported it could not remove a previous-output backup; the gate completed successfully.",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B70 batch only; no push, pull request, merge, publication or production action."
+}

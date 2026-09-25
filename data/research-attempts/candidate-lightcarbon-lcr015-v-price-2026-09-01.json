@@ -479,8 +479,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcr015-v-alibaba-supplier-2026-09-01"
+    "lightcarbon-lcr015-v-alibaba-supplier-2026-09-01",
+    "lightcarbon-lcr015-v-supplier-current-2026-09-23",
+    "ecb-reference-rates-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr015-v-batch-040-50-area-sweep-2026-09-01.json. Alibaba’s current supplier index attributes the exact in-stock US$499–570, MOQ-1 listing to Xiamen Lightcarbon."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr015-v-batch-040-50-area-sweep-2026-09-01.json. Alibaba’s current supplier index attributes the exact in-stock US$499–570, MOQ-1 listing to Xiamen Lightcarbon.\n\nBatch 23 current recheck: The exact supplier card lists US$499–570/MOQ 1 and says 'IN STOCK'; convert as CNY 3,343–3,819 using ECB's 2026-09-22 cross-rate. Live inventory and checkout are unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcr015-v-supplier-current-2026-09-23",
+      "ecb-reference-rates-2026-09-22"
+    ],
+    "note": "The exact supplier card lists US$499–570/MOQ 1 and says 'IN STOCK'; convert as CNY 3,343–3,819 using ECB's 2026-09-22 cross-rate. Live inventory and checkout are unverified."
+  }
 }

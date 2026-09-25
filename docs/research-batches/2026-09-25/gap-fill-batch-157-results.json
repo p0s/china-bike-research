@@ -1,0 +1,190 @@
+{
+  "batch": 157,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 667,
+    "catalog_gap_entries_after": 667,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 22,
+    "atomic_gap_entries_resolved_by_exact_existing_evidence": 3,
+    "atomic_gap_entries_left_unresolved": 19,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 22,
+    "campaign_extensions_added": 10,
+    "ordinary_retries_added": 12,
+    "research_attempts_before": 1794,
+    "research_attempts_after": 1816,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35883,
+    "research_status_counts_after": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_modified": 1,
+    "source_records_after": 1424,
+    "candidate_facts_changed": 1,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none",
+    "source_reuse_ledger_fields_closed": 3,
+    "research_queue_counts_before": {
+      "ready": 74,
+      "evidence-found": 8,
+      "deferred": 43,
+      "blocked": 501,
+      "conflicted": 4
+    },
+    "research_queue_counts_after": {
+      "ready": 74,
+      "evidence-found": 8,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "model_results": [
+    {
+      "model_id": "pardus-super-sport-gen2-egr",
+      "gaps": [
+        "bottom-bracket",
+        "geometry",
+        "warranty-support"
+      ],
+      "new_query": "PARDUS Super Sport Gen2 EGR exact geometry bottom bracket shell warranty official 2026",
+      "result": "No exact eGR bottom-bracket standard or geometry was established. The opened Pardus Europe warranty page limits frame-kit coverage to European countries and dealer registration, so it does not establish China warranty coverage or support.",
+      "disposition": "all-three-unresolved"
+    },
+    {
+      "model_id": "sava-gelaro-s8",
+      "gaps": [
+        "bottom-bracket",
+        "frame-weight"
+      ],
+      "new_query": "SAVA Gelaro S8 exact frame weight bottom bracket standard official 2026",
+      "result": "Existing exact product and manual sources provide neither the BB shell standard nor frame-only mass; the manual text is not extractable. No known URL was reopened.",
+      "disposition": "both-unresolved"
+    },
+    {
+      "model_id": "tavelo-arden",
+      "gaps": [
+        "current-mainland-complete-or-frameset-price",
+        "geometry"
+      ],
+      "new_query": "Tavelo Arden exact current mainland China CNY price geometry official 2026",
+      "result": "No current mainland CNY price was established; the launch range is dated and the current global frameset offer is USD. The one new Bike Insights comparison is for Arden Base size 590, not the retained Arden Race frameset, so none of its geometry transfers.",
+      "disposition": "both-unresolved"
+    },
+    {
+      "model_id": "bianchi-oltre-race",
+      "gaps": [
+        "frame-stiffness",
+        "geometry",
+        "price",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "new_query": "Bianchi Oltre Race exact model geometry tire clearance current price warranty frame stiffness official 2026",
+      "result": "Reused the recorded exact YTB8D manufacturer geometry table and Bianchi manual’s 28 mm maximum tire width. Current mainland price, independent stiffness evidence, and China warranty handling remain unsupported.",
+      "disposition": "geometry-and-clearance-supported; three-unresolved"
+    },
+    {
+      "model_id": "giant-propel-gen4-community-lead",
+      "gaps": [
+        "bom",
+        "bottom-bracket"
+      ],
+      "new_query": "Giant Propel Advanced Gen 4 exact retained build bill of materials bottom bracket official 2026",
+      "result": "Reused the exact mainland Advanced SL 1 page for its listed Ultegra Di2 2×12 build, 11–34 cassette, 52/36 Power Pro crank, SLR 0 50 wheels, and CADEX Aero 700×28 tires. Bottom-bracket standard remains unpublished in the recorded sources.",
+      "disposition": "bom-supported; bottom-bracket-unresolved"
+    },
+    {
+      "model_id": "de-rosa-idol",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "De Rosa Idol exact current model maximum tire clearance frame stiffness independent test official 2026",
+      "result": "The retained listing generation remains unidentified. Current fifth-generation clearance and promotional stiffness language do not transfer; no exact-generation independent stiffness result was found.",
+      "disposition": "both-unresolved"
+    },
+    {
+      "model_id": "basso-venta-disc",
+      "gaps": [
+        "drivetrain"
+      ],
+      "new_query": "Basso Venta Disc exact model drivetrain build specification official 2026",
+      "result": "The retained mainland trim is unverified. Existing and newly surfaced 105/MCT build listings do not identify this selected configuration, so no drivetrain was transferred.",
+      "disposition": "unresolved-trim-identity"
+    },
+    {
+      "model_id": "irefox-by446",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "IREFOX BY446 exact road frame maximum tire clearance official 2026",
+      "result": "The current official catalog has no BY446 entry. An installed generic 700C×40C tire is not a maximum, and the surfaced generic support page did not identify the model.",
+      "disposition": "unresolved-no-exact-source"
+    },
+    {
+      "model_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+      "gaps": [
+        "price",
+        "frame-stiffness"
+      ],
+      "new_query": "TWITTER 骓特 Gravel V3 2024 RS Carbon Wave exact selection current mainland CNY price and independent frame stiffness assessment",
+      "result": "The recorded Taobao amount ¥3,991 applies only to the alloy-wheel selection; the selected Carbon Wave price is unknown. Current 25yr regional/manufacturer pages are successor-generation evidence, and no exact-selection stiffness test was found.",
+      "disposition": "both-unresolved"
+    },
+    {
+      "model_id": "elro-f1",
+      "gaps": [
+        "drivetrain",
+        "frame-stiffness"
+      ],
+      "new_query": "ELRO F1 exact model drivetrain build specification frame stiffness test 2026",
+      "result": "The search produced no exact OBIKE F1 build source; the recorded indexed page establishes only a carbon road bike and 24 speeds. The ELRO marking remains an identity conflict, with components and stiffness unknown.",
+      "disposition": "both-unresolved-identity-conflict"
+    }
+  ],
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 2,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 2,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 2,
+    "page_open_failures": [],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "opened_pages": [
+      {
+        "url": "https://pardusbicycle.com/warranty/",
+        "finding": "European-country frame-kit coverage only; not proof of China warranty/support for the eGR."
+      },
+      {
+        "url": "https://bikeinsights.com/compare?geometries=6683e909b59776001b17c50f%2C69f10a0ce0e05b001b77305f",
+        "finding": "2026 Arden Base size 590 comparison, not Arden Race; geometry excluded from target."
+      }
+    ],
+    "note": "Two opened pages were identity/market mismatches and did not support a target field. No third-party image or source record was added."
+  },
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35883 web attempts",
+    "coverage_baseline": "monotonic baseline accepted; follow-up coverage check passed for 212 images, 76 prices, 1424 sources, and 236 candidates",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 332/332 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed after results and checkpoint updates",
+    "image_report": "not run: no image record changed"
+  }
+}

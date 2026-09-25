@@ -1,0 +1,129 @@
+{
+  "batch": 41,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 70,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "Freeze all seven bottom-bracket-missing rows from the fresh inventory. Six exact builds are represented; the two SPEEDZ records share one exact platform. The S4 value appears in accepted exact-model evidence but has not been integrated into the variant record. No new external source research has been done for this batch before scope creation.",
+    "selected_atomic_fields": 7,
+    "selected_exact_targets": 6
+  },
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-complete",
+      "exact_identity": "LightCarbon SPEEDZ complete build on the SPEEDZ platform",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-lightcarbon-speedz-complete-bottom-bracket-2026-08-17"],
+      "attempt_status": "blocked",
+      "existing_source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-frameset",
+      "exact_identity": "LightCarbon SPEEDZ frameset on the SPEEDZ platform",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-lightcarbon-speedz-frameset-bottom-bracket-2026-08-17"],
+      "attempt_status": "blocked",
+      "existing_source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "exact_identity": "CAMP GX600 PES",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-camp-gx600-pes-bottom-bracket-2026-08-17"],
+      "attempt_status": "temporarily-exhausted",
+      "existing_source_ids": ["camp-gx600-official", "camp-gx600-official-2026-08-17", "camp-gx600-official-2026-08-28", "camp-gx600-official-recheck-2026-09-23", "camp-gx600-geometry-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "exact_identity": "CAMP GX700 GRX 1×12 build",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-camp-gx700-grx820-bottom-bracket-2026-08-17"],
+      "attempt_status": "temporarily-exhausted",
+      "existing_source_ids": ["camp-gx700-official", "camp-gx700-official-2026-08-17", "camp-gx700-official-2026-08-28", "public-camp-gx700-spec-post-2026-08-28", "camp-gx700-tmall-2026-08-28", "camp-gx700-cn-official-recheck-2026-09-23", "camp-gx700-geometry-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s4-grx400",
+      "exact_identity": "SAVA Gelaro S4 R21-GRX400-20S",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["platform-sava-gelaro-bottom-bracket-2026-08-27"],
+      "attempt_status": "found-source-reuse; family-level assignment unresolved",
+      "existing_source_ids": ["sava-gelaro-s4-official-2026-08-25", "sava-gelaro-s4-official-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s8",
+      "exact_identity": "SAVA Gelaro S8 R21-GRX820-12S",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-sava-gelaro-s8-bottom-bracket-2026-08-17"],
+      "attempt_status": "blocked",
+      "existing_source_ids": ["sava-gelaro-s8-official-2026-08-17", "sava-gelaro-s8-official-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-sf6-cues",
+      "exact_identity": "SAVA Gelaro SF6 R21-U6000-11S",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-sava-gelaro-sf6-cues-bottom-bracket-2026-08-17"],
+      "attempt_status": "temporarily-exhausted",
+      "existing_source_ids": ["sava-gelaro-sf6-specifications-2026-08-25", "sava-gelaro-sf6-official-recheck-2026-09-24"]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "Current exact-model manufacturer product page, technical sheet, or manual; use the exact build code where available.",
+    "recording": "Return the manufacturer’s exact bottom-bracket label, shell type and dimensions only if explicitly published. Do not normalize away the original label or infer thread standard from crankset or frame family.",
+    "shared_platform": "A platform value may be used for both SPEEDZ rows only if a source explicitly identifies the shared SPEEDZ platform and no build-specific difference is stated. SAVA family facts must not be inferred from a sibling model.",
+    "no_sweep_repetition": "Do not repeat any registered 50-area campaign. For each exact build, inspect one current primary source and stop at decisive evidence or a concrete limitation. A newer, materially changed primary source may be checked for the temporarily exhausted CAMP/SF6 attempts; do not bypass access controls or retry blocked routes.",
+    "evidence_only": "The Luna agent must not edit repository files, change Git state, or exceed the six exact models and seven frozen fields.",
+    "preserve_unknowns": true
+  },
+  "stop_criteria": "For each exact build, stop after one current exact-model primary source is checked. If the source does not explicitly identify its bottom-bracket standard, record the limitation and leave the field unresolved. Never transfer a sibling configuration’s value."
+}

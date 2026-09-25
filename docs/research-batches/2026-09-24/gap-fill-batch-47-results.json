@@ -1,0 +1,154 @@
+{
+  "batch": 47,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-47-scope.json",
+  "writer_limit": {
+    "exact_targets": 6,
+    "atomic_fields": 6
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-giant-tcr-advanced",
+      "field": "mainland-observed-price",
+      "status": "found",
+      "source_ids": [
+        "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+        "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24"
+      ],
+      "result": "Added a CNY 5,998 marketplace-listed low for the exact TCR Advanced 3-GC candidate, reported by Baidu Shopping for JD Giant official flagship. The indexed comparison was crawled about two weeks before access; it reports a size-L listing and other size options, while live seller price, selected-size stock, shipping, coupons, and checkout remain unverified. The official CNY 6,998 suggested retail stays separate."
+    },
+    {
+      "attempt_id": "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:hi-light-r6-105-al",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["hi-light-r6-105-al-official-price-route-recheck-2026-09-24"],
+      "result": "The exact manufacturer product route was unreadable and the indexed catalog exposed no current amount. The CNY 8,300 official reference remains dated 2026-08-29; no current mainland observed price was added."
+    },
+    {
+      "attempt_id": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:quick-pro-gr-one-grx-di2",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "quick-pro-gr-one-taobao-current-price-route-recheck-2026-09-24",
+        "quick-pro-gr-one-jd-2x12-option-recheck-2026-09-24"
+      ],
+      "result": "The exact official Taobao route was unreadable. The current JD result identifies a 2×12 option, not the candidate's 1×12 build, so no price was attached."
+    },
+    {
+      "attempt_id": "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:argon18-krypton-pro",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "argon18-krypton-pro-current-global-price-recheck-2026-09-24",
+        "argon18-authorized-dealer-pricing-policy-recheck-2026-09-24"
+      ],
+      "result": "The current official global frameset reference is US$3,375 and Argon 18 directs buyers to authorized dealers for full pricing. No mainland CNY listing or checkout was identified; no currency conversion was represented as an observed price."
+    },
+    {
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:seraph-tt-x68-new-udh",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "seraph-tt-x68-new-global-price-recheck-2026-09-24",
+        "tantan-tt-x68-new-global-price-recheck-2026-09-24"
+      ],
+      "result": "Current Seraph and TanTan global pages list different US-dollar package prices. Neither is a mainland CNY listing, and variant/package differences were not converted or merged into this candidate's mainland price."
+    },
+    {
+      "attempt_id": "candidate-irefox-profound-400-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:irefox-profound-400",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24"],
+      "result": "The current indexed Chinese manufacturer catalog names Profound 400 but exposes no price, stock, or purchase route; the only located amount is historical. No current observed price was added."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+      "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24",
+      "hi-light-r6-105-al-official-price-route-recheck-2026-09-24",
+      "quick-pro-gr-one-taobao-current-price-route-recheck-2026-09-24",
+      "quick-pro-gr-one-jd-2x12-option-recheck-2026-09-24",
+      "argon18-krypton-pro-current-global-price-recheck-2026-09-24",
+      "argon18-authorized-dealer-pricing-policy-recheck-2026-09-24",
+      "seraph-tt-x68-new-global-price-recheck-2026-09-24",
+      "tantan-tt-x68-new-global-price-recheck-2026-09-24",
+      "irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-missing-china-price-giant-tcr-advanced-current-mainland-observed-price-2026-09-24",
+      "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24",
+      "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24",
+      "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24",
+      "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24",
+      "candidate-irefox-profound-400-current-mainland-observed-price-2026-09-24"
+    ],
+    "candidate_observed_prices_added": 1,
+    "standalone_price_records_added": 0,
+    "candidate_reviews_refreshed": 6,
+    "image_records_added": 0,
+    "third_party_images_rehosted": 0,
+    "images_added_to_website": 0,
+    "tooling": [
+      "src/lib/research-attempts.mjs recognizes identity-mismatch as a nonaccepted research outcome",
+      "Distinct query and route validation now permits the same result URL to surface in multiple attempts while continuing to validate HTTPS and sensitive URL parameters",
+      "tests/data.test.mjs current batch assertions and research-ledger totals updated"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 67,
+      "temporarily-exhausted": 11
+    },
+    "atomic_research_fields": 1487,
+    "research_attempt_records": 1497,
+    "research_queue_counts": {
+      "as_of": "2026-09-23",
+      "ready": 0,
+      "evidence-found": 253,
+      "deferred": 42,
+      "blocked": 519,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed",
+    "focused_tests": "passed: 11 research-attempt tests and 73 data tests",
+    "full_tests": "passed: 317 tests",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable and 126 noindex",
+    "image_report": "not run: no image records changed",
+    "git_diff_check": "passed"
+  },
+  "delivery": "Local B47 batch only; no push, pull request, merge, publication, or production action."
+}

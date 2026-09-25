@@ -1,0 +1,31 @@
+{
+  "batch": 110,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 119,
+    "selected_target": "variant:lightcarbon-speedz-complete:complete-weight",
+    "record_priority_score": 141,
+    "selected_gap_score": 24,
+    "existing_attempt_status": "blocked"
+  },
+  "scope": {
+    "exact_target_records": ["variant:lightcarbon-speedz-complete"],
+    "atomic_gap": "Complete-bike weight for the exact visible LightCarbon SPEEDZ complete configuration",
+    "known_identity_limit": "The dated marketplace snapshot identifies the literal SPEEDZ configuration, but the manufacturer catalog recheck found no exact SPEEDZ page or chart; official Speed7/LCR017-D facts do not map to this visible configuration.",
+    "research_boundary": "One new web attempt via the LightCarbon official exact-model/site-search route. This is a one-attempt formal extension of the blocked 50-approach field. Do not retry the timed-out catalog PDF, transfer another model's weight, or continue to another route; add a value only if an exact page ties the weight to this SPEEDZ build.",
+    "campaign_extension": {
+      "extends_attempt_id": "variant-lightcarbon-speedz-complete-complete-weight-2026-08-29",
+      "allowed_channels": ["web"],
+      "max_new_attempts": 1,
+      "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-110-scope.json"
+    },
+    "excluded": [
+      "No sibling LightCarbon model or other SPEEDZ field changes.",
+      "No public-post/XHS requests, images, or image-rights evaluation.",
+      "No candidate promotion, price, or purchase-route change.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

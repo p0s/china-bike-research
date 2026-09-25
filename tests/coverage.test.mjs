@@ -200,3 +200,38 @@ test('scoped retirements authorize disproven protected facts without retiring th
   assert.ok(errorsFor(stillActive, baseline, scopedRetirements, { requireCurrentBaseline: false })
     .some((error) => error.includes('facts.complete_weight_g is still active')));
 });
+
+test('scoped candidate-price retirement requires evidence and the exact price to be absent', () => {
+  const mutated = structuredClone(data);
+  const candidate = mutated.candidates.find((item) => item.id === 'quick-pro-er-one');
+  delete candidate.observed_price;
+  const priceFields = (baseline.fields.candidates['quick-pro-er-one'] ?? [])
+    .filter((field) => field.startsWith('observed_price.'))
+    .map((field) => ({
+    id: `retire-quick-pro-er-one-${field.replaceAll('.', '-').replaceAll('_', '-')}-test-2026-09-24`,
+    record_type: 'candidates',
+    record_id: 'quick-pro-er-one',
+    action: 'retire',
+    reason: `Synthetic exact evidence withdraws only the protected ${field} field.`,
+    evidence_source_ids: ['quick-pro-er-one-ultegra-official-2026-08-17'],
+    protected_item: { kind: 'field', value: field },
+    reviewed_at: '2026-09-24'
+  }));
+  const candidatePriceRetirement = {
+    id: 'retire-quick-pro-er-one-observed-price-test-2026-09-24',
+    record_type: 'candidates',
+    record_id: 'quick-pro-er-one',
+    action: 'retire',
+    reason: 'Synthetic exact evidence withdraws the protected observed-price classification for this active candidate.',
+    evidence_source_ids: ['quick-pro-er-one-ultegra-official-2026-08-17'],
+    protected_item: { kind: 'candidate-price', value: 'observed_price' },
+    reviewed_at: '2026-09-24'
+  };
+  const scopedRetirements = [...retirements, ...priceFields, candidatePriceRetirement];
+  assert.deepEqual(errorsFor(mutated, baseline, scopedRetirements, { requireCurrentBaseline: false }), []);
+
+  assert.ok(errorsFor(mutated, baseline, [...retirements, ...priceFields], { requireCurrentBaseline: false })
+    .some((error) => error.includes('lost protected observed_price')));
+  assert.ok(errorsFor(data, baseline, scopedRetirements, { requireCurrentBaseline: false })
+    .some((error) => error.includes('candidate-price:observed_price is still active')));
+});

@@ -28,12 +28,108 @@
         "angle": "degrees"
       },
       "sizes": [
-        { "size": "XXS", "reach_mm": 351.5, "stack_mm": 515.6, "standover_mm": 728.3, "top_tube_mm": 494.5, "head_angle_deg": 69.5, "seat_angle_deg": 74.5, "wheelbase_mm": 963.7, "chainstay_mm": 420, "front_center_mm": 581, "bb_drop_mm": 70, "seat_tube_mm": 430, "head_tube_mm": 113.3, "fork_offset_mm": 55, "fork_length_mm": 382 },
-        { "size": "XS", "reach_mm": 365.3, "stack_mm": 537.6, "standover_mm": 743.8, "top_tube_mm": 519.5, "head_angle_deg": 70.5, "seat_angle_deg": 74, "wheelbase_mm": 1000.7, "chainstay_mm": 420, "front_center_mm": 592.3, "bb_drop_mm": 75, "seat_tube_mm": 420, "head_tube_mm": 127.2, "fork_offset_mm": 55, "fork_length_mm": 382 },
-        { "size": "S", "reach_mm": 376.2, "stack_mm": 557.2, "standover_mm": 773, "top_tube_mm": 536, "head_angle_deg": 72.5, "seat_angle_deg": 74, "wheelbase_mm": 1003.6, "chainstay_mm": 420, "front_center_mm": 584, "bb_drop_mm": 75, "seat_tube_mm": 455, "head_tube_mm": 142.5, "fork_offset_mm": 50, "fork_length_mm": 382 },
-        { "size": "M", "reach_mm": 386, "stack_mm": 575.6, "standover_mm": 798.8, "top_tube_mm": 556, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1014.6, "chainstay_mm": 425, "front_center_mm": 600.9, "bb_drop_mm": 75, "seat_tube_mm": 486, "head_tube_mm": 157.6, "fork_offset_mm": 50, "fork_length_mm": 382 },
-        { "size": "L", "reach_mm": 395, "stack_mm": 590.46, "standover_mm": 822.5, "top_tube_mm": 570, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1029.8, "chainstay_mm": 425, "front_center_mm": 615, "bb_drop_mm": 72, "seat_tube_mm": 510, "head_tube_mm": 176.4, "fork_offset_mm": 50, "fork_length_mm": 382 },
-        { "size": "XL", "reach_mm": 408, "stack_mm": 620.46, "standover_mm": 855.4, "top_tube_mm": 591.8, "head_angle_deg": 72.5, "seat_angle_deg": 73.5, "wheelbase_mm": 1052.2, "chainstay_mm": 425, "front_center_mm": 637.4, "bb_drop_mm": 72, "seat_tube_mm": 645, "head_tube_mm": 207.8, "fork_offset_mm": 50, "fork_length_mm": 382 }
+        {
+          "size": "XXS",
+          "reach_mm": 351.5,
+          "stack_mm": 515.6,
+          "standover_mm": 728.3,
+          "top_tube_mm": 494.5,
+          "head_angle_deg": 69.5,
+          "seat_angle_deg": 74.5,
+          "wheelbase_mm": 963.7,
+          "chainstay_mm": 420,
+          "front_center_mm": 581,
+          "bb_drop_mm": 70,
+          "seat_tube_mm": 430,
+          "head_tube_mm": 113.3,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 382
+        },
+        {
+          "size": "XS",
+          "reach_mm": 365.3,
+          "stack_mm": 537.6,
+          "standover_mm": 743.8,
+          "top_tube_mm": 519.5,
+          "head_angle_deg": 70.5,
+          "seat_angle_deg": 74,
+          "wheelbase_mm": 1000.7,
+          "chainstay_mm": 420,
+          "front_center_mm": 592.3,
+          "bb_drop_mm": 75,
+          "seat_tube_mm": 420,
+          "head_tube_mm": 127.2,
+          "fork_offset_mm": 55,
+          "fork_length_mm": 382
+        },
+        {
+          "size": "S",
+          "reach_mm": 376.2,
+          "stack_mm": 557.2,
+          "standover_mm": 773,
+          "top_tube_mm": 536,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 74,
+          "wheelbase_mm": 1003.6,
+          "chainstay_mm": 420,
+          "front_center_mm": 584,
+          "bb_drop_mm": 75,
+          "seat_tube_mm": 455,
+          "head_tube_mm": 142.5,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 382
+        },
+        {
+          "size": "M",
+          "reach_mm": 386,
+          "stack_mm": 575.6,
+          "standover_mm": 798.8,
+          "top_tube_mm": 556,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "wheelbase_mm": 1014.6,
+          "chainstay_mm": 425,
+          "front_center_mm": 600.9,
+          "bb_drop_mm": 75,
+          "seat_tube_mm": 486,
+          "head_tube_mm": 157.6,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 382
+        },
+        {
+          "size": "L",
+          "reach_mm": 395,
+          "stack_mm": 590.46,
+          "standover_mm": 822.5,
+          "top_tube_mm": 570,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "wheelbase_mm": 1029.8,
+          "chainstay_mm": 425,
+          "front_center_mm": 615,
+          "bb_drop_mm": 72,
+          "seat_tube_mm": 510,
+          "head_tube_mm": 176.4,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 382
+        },
+        {
+          "size": "XL",
+          "reach_mm": 408,
+          "stack_mm": 620.46,
+          "standover_mm": 855.4,
+          "top_tube_mm": 591.8,
+          "head_angle_deg": 72.5,
+          "seat_angle_deg": 73.5,
+          "wheelbase_mm": 1052.2,
+          "chainstay_mm": 425,
+          "front_center_mm": 637.4,
+          "bb_drop_mm": 72,
+          "seat_tube_mm": 645,
+          "head_tube_mm": 207.8,
+          "fork_offset_mm": 50,
+          "fork_length_mm": 382
+        }
       ]
     }
   },
@@ -57,7 +153,9 @@
     "pardus-super-sport-egr-888bike-2026-08-28",
     "public-pardus-super-sport-gen2-launch-2026-08-28",
     "public-pardus-super-sport-gen2-owner-weight-2026-08-28",
-    "pardus-super-sport-gen2-taobao-2026-08-28"
+    "pardus-super-sport-gen2-taobao-2026-08-28",
+    "pardus-super-sport-gen2-official-current-2026-09-23",
+    "pardus-super-sport-gen2-official-material-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-25"
 }

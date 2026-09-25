@@ -1,0 +1,46 @@
+{
+  "id": "candidate-giant-propel-gen4-community-lead-complete-weight-retained-build-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead"
+  },
+  "field": "complete-weight-retained-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current mainland manufacturer page publishes no weight. The 6.8 kg manufacturer value is for a Japan-market size-S reference with a specified accessory package, not the retained mainland build.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Propel Advanced SL 1 current mainland exact-build complete weight",
+          "route": "Current Giant China exact-model manufacturer page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The page identifies Propel Advanced SL 1 and lists its suggested price and components, but the fetched text contains no complete-bike weight or explicit model year.",
+          "result_url": "https://giant.com.cn/index.php/index/gear_view.html?id=3798"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant Propel Advanced SL 1 2027 Japan size-S manufacturer weight",
+          "route": "Current Giant Japan exact-model manufacturer page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Giant Japan claims 6.8 kg in size S for a specified 2027 Ultegra Di2/SLR 0 50/CADEX 28c reference with accessories; pedals are N/A and individual weight may vary. Exact mainland build equivalence is not established.",
+          "result_url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "giant-propel-sl1-china-weight-recheck-2026-09-24",
+    "giant-propel-sl1-japan-weight-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Retain 6.8 kg only as a Japan-market size-S reference; leave the retained mainland complete-bike weight unknown unless the exact market build and weighing basis are matched.",
+  "searched_at": "2026-09-24"
+}

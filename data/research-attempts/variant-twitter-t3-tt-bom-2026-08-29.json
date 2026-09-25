@@ -493,8 +493,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-t3-tt-official-2026-08-29"
+    "twitter-t3-tt-official-2026-08-29",
+    "twitter-t3-tt-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t3-tt-50-area-sweep-2026-08-29.json. The exact current manufacturer table supports the WheelTop TX-TT7110, Shimano 105 R7100 crank/cassette, HG6100 chain, RS 60 mm carbon wheel, 700×28C Maxxis tire and carbon TT-cockpit build."
+  "notes": "B121 live recheck supports the exact WheelTop TX-TT7110 2x12 build and listed components. Keep the separate SRAM AXS configuration distinct.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-t3-tt-official-recheck-2026-09-24"
+    ],
+    "note": "B121 live recheck supports the exact WheelTop TX-TT7110 2x12 build and listed components. Keep the separate SRAM AXS configuration distinct."
+  }
 }

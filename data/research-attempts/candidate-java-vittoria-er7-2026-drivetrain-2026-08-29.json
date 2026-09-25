@@ -488,8 +488,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "java-vittoria-er7-north-america-2026-08-29"
+    "java-vittoria-er7-north-america-2026-08-29",
+    "java-vittoria-er7-north-america-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. The current carbon/alloy-wheel reference build documents L-TWOO ER7 electronic 2x12 or 1x12 options; the retained seller selection remains unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. The current carbon/alloy-wheel reference build documents L-TWOO ER7 electronic 2x12 or 1x12 options; the retained seller selection remains unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vittoria-er7-north-america-recheck-2026-09-23",
+      "java-vittoria-er7-north-america-2026-08-29"
+    ],
+    "note": "Earlier detailed North American reference evidence lists L-TWOO ER7 electronic 2x12 or 1x12 options; the 2026-09-23 page shell does not expose the option table. The selected mainland seller-card configuration remains unresolved."
+  }
 }

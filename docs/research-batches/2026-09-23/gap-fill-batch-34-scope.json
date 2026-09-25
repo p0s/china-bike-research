@@ -1,0 +1,224 @@
+{
+  "batch_id": "gap-fill-batch-34-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 362,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "queue_filter_matches": {
+      "source_reuse_resolved_rows": 20,
+      "known_duplicate_java_aluminum_24s": 2,
+      "completed_50_area_campaign_rows": 199,
+      "other_rows_with_50_or_more_approach_areas": 50,
+      "excluded_union": 271,
+      "eligible_unswept_fields": 91,
+      "selected_fields": 21,
+      "selected_exact_targets": 10
+    }
+  },
+  "selection_basis": "First queue-ordered evidence-found rows after excluding source-reuse-resolved rows, the known java-aluminum-24s duplicate, fields included in the completed all-gaps 50-area campaign, and other rows with at least 50 distinct recorded approach areas. Stop at 10 exact targets or 25 fields; this selection yields 21 fields across 10 targets.",
+  "exact_model_count": 10,
+  "atomic_field_count": 21,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 21,
+  "exact_models": [
+    "airwolf-yf-r003",
+    "airwolf-yfr068",
+    "bianchi-oltre-race",
+    "bigrock-sohtea",
+    "bxt-055-frameset",
+    "camp-gx600-pes",
+    "camp-gx700",
+    "camp-gx700-grx820",
+    "carbonda-cfr696",
+    "carbonda-cfr707"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "package"
+      ],
+      "attempt_ids": [
+        "candidate-airwolf-yf-r003-package-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yfr068",
+      "exact_identity": "Airwolf YFR068 / A5",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "exact-model-identity",
+        "frame-material",
+        "frame-weight",
+        "geometry",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-airwolf-yfr068-identity-2026-08-27",
+        "candidate-airwolf-yfr068-frame-material-2026-08-27",
+        "candidate-airwolf-yfr068-frame-weight-2026-08-27",
+        "candidate-airwolf-yfr068-geometry-2026-08-27",
+        "candidate-airwolf-yfr068-purchase-route-2026-08-27",
+        "candidate-airwolf-yfr068-tire-clearance-2026-08-27",
+        "candidate-airwolf-yfr068-warranty-support-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "bianchi-oltre-race",
+      "exact_identity": "Oltre Race",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "cockpit",
+        "tires",
+        "wheels"
+      ],
+      "attempt_ids": [
+        "variant-bianchi-oltre-race-cockpit-2026-08-17",
+        "variant-bianchi-oltre-race-tires-2026-08-17",
+        "variant-bianchi-oltre-race-wheels-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bigrock-sohtea",
+      "exact_identity": "BIGROCK Sohtea",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "identity",
+        "image"
+      ],
+      "attempt_ids": [
+        "candidate-bigrock-sohtea-identity-2026-08-17",
+        "candidate-bigrock-sohtea-image-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "bxt-055-frameset",
+      "exact_identity": "BXT-055 frameset",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-bxt-055-frameset-purchase-route-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "exact_identity": "GX600 PES",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-camp-gx600-pes-purchase-route-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "camp-gx700",
+      "exact_identity": "GX700",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-camp-gx700-frame-material-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "exact_identity": "GX700 GRX 1×12",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "complete-weight",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-camp-gx700-grx820-complete-weight-2026-08-17",
+        "variant-camp-gx700-grx820-purchase-route-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "carbonda-cfr696",
+      "exact_identity": "CFR696",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-carbonda-cfr696-frame-material-2026-08-28",
+        "platform-carbonda-cfr696-frame-stiffness-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "carbonda-cfr707",
+      "exact_identity": "Carbonda CFR707",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-carbonda-cfr707-purchase-route-2026-08-17"
+      ]
+    }
+  ],
+  "acceptance_rules": [
+    "Research only the frozen fields sequentially, one exact target and source at a time; stop at decisive evidence.",
+    "Distinguish exact model/generation, complete bike versus frameset, market, selected option, price/checkout conditions, size and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior observations without refreshing access dates unless actually rechecked.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with a concrete reason and reopen trigger; never infer.",
+    "Keep third-party images remote unless reusable rights are documented; preserve exactness, credit, alt text and fallback metadata.",
+    "Evidence agent is read-only: no repository edits, no XHS, no seller contact, no recursive delegation and no out-of-scope research. Root is sole writer.",
+    "Return one disposition for every frozen attempt id with exact source URL/id, source class/publisher, actual access date, supported claim, caveat and reopen trigger."
+  ]
+}

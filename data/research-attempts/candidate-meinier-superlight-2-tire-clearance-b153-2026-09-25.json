@@ -1,0 +1,52 @@
+{
+  "id": "candidate-meinier-superlight-2-tire-clearance-b153-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "meinier-superlight-2"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-meinier-superlight-2-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B153 exact-record web query on 2026-09-25 followed the earlier field-specific campaign history.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-153-meinier-superlight-2-tire-clearance",
+    "extends_attempt_id": "candidate-meinier-superlight-2-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-153-scope.json",
+    "reason": "The frozen B153 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-meinier-superlight-2-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The retained MEINIER card has no exact model code/SKU mapping. Previously recorded product and collection pages were not reopened, and no sibling configuration is transferred.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "MEINIER 21000 carbon road bike exact model code drivetrain weight clearance 2026",
+          "route": "One bounded current web query for this exact candidate record; results screened against existing source history and the retained product/build identity.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The query surfaced previously recorded DS618, DS-118, and generic MEINIER road-range routes, but none maps to the retained CNY 21,000 listing. The DS618 R7120 build and DS-118 frameset 32C reference remain distinct products; neither is assigned to this unidentified card."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The query surfaced previously recorded DS618, DS-118, and generic MEINIER road-range routes, but none maps to the retained CNY 21,000 listing. The DS618 R7120 build and DS-118 frameset 32C reference remain distinct products; neither is assigned to this unidentified card.",
+  "searched_at": "2026-09-25"
+}

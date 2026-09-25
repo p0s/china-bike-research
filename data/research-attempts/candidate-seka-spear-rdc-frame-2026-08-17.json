@@ -49,8 +49,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "public-seka-spear-rdc-owner-2026-08-17"
+    "public-seka-spear-rdc-owner-2026-08-17",
+    "seka-spear-rdc-official-page-recheck-2026-09-23",
+    "seka-spear-rdc-frameset-store-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seka-spear-rdc-official-page-recheck-2026-09-23",
+      "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+    ],
+    "note": "SEKA describes TeXtreme/ultra-high-modulus carbon and one-piece molding. The store lists a 685 +/- 35 g bare-frame claim; a separate 729 +/- 35 g M Shadow Black figure has a different/unclear basis and is not assigned to the candidate's MR frame. Reopen trigger: Reopen when SEKA clarifies weight basis by size, paint and inclusions or an independent MR measurement is available."
+  }
 }

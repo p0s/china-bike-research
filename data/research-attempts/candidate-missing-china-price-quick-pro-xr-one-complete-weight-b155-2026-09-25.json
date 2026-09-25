@@ -1,0 +1,52 @@
+{
+  "id": "candidate-missing-china-price-quick-pro-xr-one-complete-weight-b155-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-quick-pro-xr-one"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missing-china-price-quick-pro-xr-one-complete-weight-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests the remaining field after reviewing current linked sources and prior attempt/campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-quick-pro-xr-one-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact-field value meeting the frozen acceptance rule was found; the current source set does not establish the retained build value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro XR:ONE GRX Di2 1x12 complete bike weight size M manufacturer",
+          "route": "One bounded current web query screened against existing exact-model source history",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The already recorded official sources identify an 839 g size-M frame and 449 g fork, not complete-bike weight. The surfaced Quick Pro XR:ONE page and Korea page were already recorded; neither was reopened, and frame/fork weights are not added."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The already recorded official sources identify an 839 g size-M frame and 449 g fork, not complete-bike weight. The surfaced Quick Pro XR:ONE page and Korea page were already recorded; neither was reopened, and frame/fork weights are not added.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-155-missing-china-price-quick-pro-xr-one-complete-weight",
+    "extends_attempt_id": "candidate-missing-china-price-quick-pro-xr-one-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-155-scope.json",
+    "reason": "The frozen B155 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -481,5 +481,13 @@
     "xlab-rs9-owner-ride-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-xlab-rs9-batch-048-50-area-sweep-2026-09-01.json. Exact-model owner describes a firm bike with efficient pedaling and rough-surface harshness."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-xlab-rs9-batch-048-50-area-sweep-2026-09-01.json. Exact-model owner describes a firm bike with efficient pedaling and rough-surface harshness.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xlab-rs9-owner-ride-review-2026-09-01"
+    ],
+    "note": "Reuse only the exact-model owner's subjective complete-bike ride report: firm pedaling and harsher rough-surface impacts after 22 km. It does not establish measured or frame-only stiffness, so keep this limitation visible."
+  }
 }

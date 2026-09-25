@@ -1,0 +1,142 @@
+{
+  "batch": 147,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-147-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 10,
+    "atomic_gap_entries_resolved": 0,
+    "atomic_gap_entries_left_open": 10,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 10,
+    "research_attempts_before": 1647,
+    "research_attempts_after": 1657,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 397,
+      "conflicted": 35,
+      "found": 9,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1420,
+    "price_records_changed": 0,
+    "candidate_price_fields_changed": 0,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 0,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 0,
+    "known_source_urls_reopened": 0,
+    "search_result_urls_skipped_as_known_or_nonmatching": 1,
+    "page_fetches_with_content": 0,
+    "page_opens_returning_no_content_or_timeout": 0,
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "No page was opened, so no new URL was eligible for a pre-open audit. Known exact product routes were reviewed from their existing source histories without reopening. The Chinagoods URL surfaced for the TWITTER query was already present in B145 history and identified a different electronic build; it was skipped. Search snippets were discovery only, not price evidence."
+  },
+  "model_results": [
+    {
+      "model_id": "pardus-spark-rs-community-lead",
+      "gaps": ["price-missing"],
+      "new_query": "PARDUS Spark RS 白色 105机械 R8170升级 Airwolf碳轮 自组价格 2026",
+      "existing_evidence": "The exact candidate product page, other Spark RS manufacturer routes, official-store index and JD risk-handler route were already in predecessor histories. New search surfaced a historical 2022 report and factory-trim snippets, not a price for the retained white mechanical-105/R8170/Airwolf-wheel custom build. Generation and selected package remain unmapped.",
+      "disposition": "unresolved-exact-custom-build-price-not-established"
+    },
+    {
+      "model_id": "dengfu-gravel",
+      "gaps": ["price-missing"],
+      "new_query": "Dengfu R20 Disc Gravel Bike Frame CNY price China mainland current 2026",
+      "existing_evidence": "The exact official R20 route is already recorded and provides customization/contact rather than a public numeric price. Search results showed no new exact priced offer; existing URLs were not reopened.",
+      "disposition": "unresolved-current-exact-price-not-published"
+    },
+    {
+      "model_id": "pardus-robin-evo-community-lead",
+      "gaps": ["price-missing"],
+      "new_query": "PARDUS Robin EVO Dura-Ace R9270 XS 6.2kg custom complete bike CNY mainland listing",
+      "existing_evidence": "The recorded current official 2024-generation page and older official route were not reopened. The older route had timed out and was not retried. Search returned older, non-mainland or different factory-generation listings; standard Ultegra evidence does not price or map the XS R9270 competition build.",
+      "disposition": "unresolved-generation-and-custom-price-not-established"
+    },
+    {
+      "model_id": "hi-light-r6-105-al",
+      "gaps": ["price-not-observed"],
+      "new_query": "Hi-Light 航轮 R6 105 AL 2026 latest exact mainland CNY price 8300 current listing",
+      "existing_evidence": "The exact official China product page was already recorded; its 2026-09-24 recheck was unreadable and was not retried. Existing ¥8,300 is a dated 2026-08-29 official retail reference, not a newly observed current sale price. The query produced no new bicycle-price result.",
+      "disposition": "dated-official-retail-reference-retained-current-observation-unresolved"
+    },
+    {
+      "model_id": "missing-china-price-giant-revolt-advanced",
+      "gaps": ["price-not-observed"],
+      "new_query": "Giant Revolt Advanced 2 2026 GRX RX-820 2x12 mainland China current JD Tmall price stock",
+      "existing_evidence": "The exact Giant China page was already recorded and not reopened. Its ¥15,800 is suggested retail for the mainland GRX RX-820 2×12 build, not an observed transaction price. The JD route previously timed out and was not retried.",
+      "disposition": "official-msrp-retained-current-transaction-price-unresolved"
+    },
+    {
+      "model_id": "tavelo-arow-sl-community-lead",
+      "gaps": ["price-missing"],
+      "new_query": "Tavelo Arow SL Neo Black frameset current mainland China CNY price 2026 custom complete bike",
+      "existing_evidence": "Search returned the recorded global USD frameset reference and foreign-market frameset offers, not a mainland CNY price for the community custom complete build. Historical 2024 launch prices do not establish its current price.",
+      "disposition": "unresolved-mainland-custom-build-price-not-established"
+    },
+    {
+      "model_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+      "gaps": ["price-missing"],
+      "new_query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 碳轮 2026 大陆 现价 在售",
+      "skipped_recorded_url": "https://www.chinagoods.com/store/goodsdetail/1989244552660185089",
+      "existing_evidence": "The Chinagoods URL was recorded in prior research and identifies a WheelTop wireless electronic build, not the retained 2024 mechanical RS carbon-wheel configuration. Other results were later or different builds. The ¥3,991 historical price applies only to the alloy-wheel selection.",
+      "disposition": "unresolved-carbon-wheel-selection-price-and-current-stock"
+    },
+    {
+      "model_id": "seraph-tt-x68-new-udh",
+      "gaps": ["price-not-observed"],
+      "new_query": "Seraph TT-X68-new UDH 32C 中国大陆 车架组 CNY 现货 2026",
+      "existing_evidence": "Exact Seraph and TanTan product pages were already recorded and were not reopened. Search reiterated global USD amounts, not mainland delivered CNY pricing; the separately titled 35C revision remains distinct.",
+      "disposition": "global-reference-retained-mainland-delivered-price-unresolved"
+    },
+    {
+      "model_id": "irefox-profound-400",
+      "gaps": ["price-not-observed"],
+      "new_query": "IREFOX Profound 400 玄狐 105 R7000 现货售价 中国 2026",
+      "existing_evidence": "The official Chinese catalog route is already recorded and did not provide an exact current Profound 400 offer. ¥7,299 list, ¥6,299 promotion and conditional ¥5,999 effective amounts are historical 2023 launch references only.",
+      "disposition": "historical-launch-prices-retained-current-price-and-stock-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcg074-d",
+      "gaps": ["price-missing"],
+      "new_query": "LightCarbon LCG074-D 集成把立砾石车架组 中国大陆 价格 CNY 2026",
+      "existing_evidence": "The exact official product page was already recorded and rechecked on 2026-09-24; it identifies a frameset package but directs buyers to contact the manufacturer without a numeric price. A surfaced official catalog PDF snippet contained specifications, not price, and was not opened.",
+      "disposition": "unresolved-official-inquiry-route-has-no-public-price"
+    }
+  ],
+  "validation": {
+    "coverage_acceptance": "passed: 212 image records and 277 catalog targets protected; 10 attempt records added monotonically",
+    "research_validation": "passed: 1503 atomic fields; 15450 public-post and 35724 web attempts",
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1420 sources, 212 image records, 236 candidates, 1657 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35724 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1420 sources, 236 candidates",
+      "tests": "330/330 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "sandbox_note": "The normal sandbox full-gate run failed only because seven reliability-preview-server tests could not bind 127.0.0.1 (EPERM). The exact full gate passed when retried with the narrowly scoped loopback exception.",
+    "git_diff_check": "passed after result and checkpoint docs"
+  },
+  "image_report": "not run; no image records changed",
+  "external_delivery": "none"
+}

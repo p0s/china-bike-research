@@ -1,0 +1,82 @@
+{
+  "batch_id": "gap-fill-batch-02-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-02-scope.json",
+  "reviewed_at": "2026-09-23",
+  "status": "partial-supported-update",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "dengfu-gravel",
+    "model_id": "dengfu-r20",
+    "exact_identity": "Dengfu R20 Disc Gravel Bike Frame"
+  },
+  "accepted_source": {
+    "id": "dengfu-r20-official-geometry-2026-09-23",
+    "url": "https://dengfubikes.com/Road-Frame/R20.html",
+    "direct_chart_url": "https://dengfubikes.com/static/upload/image/20260502/1777696457547181.jpg",
+    "publisher": "Dengfu",
+    "finding": "The exact R20 product page links the R20 Gravel Geometry R7 chart. It supplies four frame sizes and these printed columns: SIZE, ST, TT, HT, HA, CA, BB drop, RC, FC, FL, OFFSET, WB, STACK, REACH, STR. 47/XS: 450, 514, 105, 70°, 74.5°, 80, 436, 595.5, 399, 55, 1018.5, 535, 366, 1.46; 51/S: 470, 531, 120, 70.5°, 74°, 80, 436, 603.5, 399, 55, 1027, 551, 373, 1.48; 54/M: 490, 552, 140, 71.25°, 73.5°, 80, 436, 612.5, 399, 55, 1036, 573, 382, 1.50; 57/L: 520, 572, 165, 71.75°, 73.5°, 80, 436, 629, 399, 55, 1052.5, 598.5, 395, 1.51. The chart does not label linear units, so the values remain verbatim and unnormalized. An exact-string follow-up search found no independent corroborating geometry source."
+  },
+  "field_results": [
+    {
+      "field": "current-public-price-or-exact-quote",
+      "status": "unresolved",
+      "finding": "The public product page says the frame can be customized but shows no price or exact quote. No contact form or private inquiry was submitted.",
+      "reopen_when": "A dated public exact-R20 listing or an authorized public price schedule appears."
+    },
+    {
+      "field": "frame-material-and-construction",
+      "status": "unresolved",
+      "finding": "The exact product page does not publish R20-specific material grade, layup, or construction. Generic Dengfu company copy was not treated as model-specific material evidence.",
+      "reopen_when": "An exact R20 product specification or manual identifies material and construction."
+    },
+    {
+      "field": "size-and-finish-specific-frame-weight",
+      "status": "unresolved",
+      "finding": "The official R7 geometry image does not include frame weights, and the exact product page publishes no size/finish weight.",
+      "reopen_when": "A dated exact-R20 manufacturer weight schedule or transparent exact-frame measurement is available."
+    },
+    {
+      "field": "manufacturer-maximum-tire-clearance",
+      "status": "unresolved",
+      "finding": "The product page and R7 chart do not publish a tire maximum. No value was transferred from another Dengfu gravel model.",
+      "reopen_when": "An R20-specific manufacturer maximum or a documented exact-frame fit measurement appears."
+    },
+    {
+      "field": "numerical-frame-geometry",
+      "status": "found-with-units-caveat",
+      "finding": "Added all four official R7 geometry rows to the candidate detail as a verbatim table transcription. The chart does not label linear units; no conversion or unit normalization was made. Independent exact-model corroboration was not found in this pass.",
+      "reopen_when": "Dengfu confirms the linear units or a separate exact-R20 geometry source corroborates the table."
+    },
+    {
+      "field": "bottom-bracket-and-frame-standards",
+      "status": "unresolved",
+      "finding": "The chart's BB drop is a geometry measurement, not a bottom-bracket shell standard. The page gives no shell, axle, headset, or seatpost standards.",
+      "reopen_when": "An exact R20 specification lists the component interfaces and standards."
+    },
+    {
+      "field": "package-contents-and-mainland-support-terms",
+      "status": "unresolved",
+      "finding": "The official page exposes a customization route but does not enumerate included parts or R20-specific warranty/support coverage. The general brand warranty is not assumed to cover this exact model or China-market seller.",
+      "reopen_when": "A public exact-R20 package list and model/market-specific support terms are published."
+    }
+  ],
+  "integration": {
+    "candidate_facts_added": ["geometry"],
+    "source_ids_added": ["dengfu-r20-official-geometry-2026-09-23"],
+    "images_added": 0,
+    "files_changed": [
+      "data/candidates/dengfu-gravel.json",
+      "data/sources/dengfu-r20-official-geometry-2026-09-23.json",
+      "data/coverage-baseline.json"
+    ]
+  },
+  "validation": {
+    "coverage_baseline": "npm run --silent coverage:accept passed",
+    "full_gate": "codex-pnpm-check check passed",
+    "tests_passed": 304,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128
+  },
+  "delivery_boundary": "Local only; no push, pull request, merge, publication, or seller/manufacturer contact."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "variant-ican-gra04-frameset-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "ican-gra04-frameset"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-ican-gra04-frameset-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-ican-gra04-frameset-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No new exact GRA04 mainland offer surfaced. Recorded manufacturer evidence remains a quote form without public fixed price or selected-package mainland checkout.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ICAN GRA04 T47 UDH carbon gravel frameset mainland factory store current purchase",
+          "route": "One distinct B146 exact-model web search; no new page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The current official GRA04 route and older USD quote were already recorded; no new exact public offer was found or page opened."
+        }
+      ]
+    }
+  },
+  "notes": "The current official GRA04 route and older USD quote were already recorded; no new exact public offer was found or page opened.",
+  "campaign_extension": {
+    "id": "b146-ican-gra04-frameset-purchase-route",
+    "extends_attempt_id": "variant-ican-gra04-frameset-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

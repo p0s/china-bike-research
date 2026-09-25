@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "kontax-rs80-power-evo-official-2026-09-01"
+    "kontax-rs80-power-evo-official-2026-09-01",
+    "kontax-power-evo-page-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/kontax-power-evo-batch-030-50-area-sweep-2026-09-01.json. The current exact manufacturer page resolves the full RS80 POWER EVO identity."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/kontax-power-evo-batch-030-50-area-sweep-2026-09-01.json. The current exact manufacturer page resolves the full RS80 POWER EVO identity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "kontax-power-evo-page-recheck-2026-09-23",
+      "kontax-rs80-power-evo-official-2026-09-01"
+    ],
+    "note": "The official exact page read 2026-09-01 supports RS80 POWER EVO identity and size/color options. The 2026-09-23 direct recheck was inaccessible and found no new exact result; keep only the dated identity evidence, without claiming current availability."
+  }
 }

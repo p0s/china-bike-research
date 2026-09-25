@@ -483,8 +483,19 @@
   "status": "found",
   "accepted_source_ids": [
     "sava-gelaro-s4-official-2026-08-28",
-    "sava-gelaro-s4-independent-review-2026-08-28"
+    "sava-gelaro-s4-independent-review-2026-08-28",
+    "sava-gelaro-s4-current-spec-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-s4-50-area-sweep-2026-08-30.json. Manufacturer publishes a qualitative lateral-stiffness claim, while an independent long-term review reports no noticeable bottom-bracket flex; neither is a measured stiffness result."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-s4-50-area-sweep-2026-08-30.json. Manufacturer publishes a qualitative lateral-stiffness claim, while an independent long-term review reports no noticeable bottom-bracket flex; neither is a measured stiffness result.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-gelaro-s4-official-2026-08-28",
+      "sava-gelaro-s4-independent-review-2026-08-28",
+      "sava-gelaro-s4-current-spec-recheck-2026-09-24"
+    ],
+    "note": "The earlier manufacturer claim is qualitative; the independent 1,800 km review describes ride impressions and no noticeable BB-area flex, not a measured frame test. The current page is silent on stiffness. Conflicting T700/press-fit review details are not used as exact specifications."
+  }
 }

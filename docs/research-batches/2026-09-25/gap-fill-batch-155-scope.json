@@ -1,0 +1,157 @@
+{
+  "batch": 155,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Fresh post-B154 inventory. Four exact-product leads were selected from older high-priority unresolved facts after excluding all model IDs scoped in B138-B154 and every record or field touched on 2026-09-25. The deferred Carbonda CFR707 price was excluded because its retry date is 2026-11-17."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "twitter-little-white-rabbit",
+        "name": "TWITTER 骓特 Little White Rabbit / 小白兔 custom",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-twitter-little-white-rabbit-complete-weight-2026-08-30",
+            "field": "complete-weight",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-twitter-little-white-rabbit-drivetrain-2026-08-30",
+            "field": "drivetrain",
+            "status": "conflicted",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-twitter-little-white-rabbit-tire-clearance-2026-08-30",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-twitter-little-white-rabbit-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "missing-china-price-quick-pro-xr-one",
+        "name": "Quick Pro XR:ONE GRX Di2 1×12",
+        "record_type": "candidate",
+        "priority_score": 50,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-missing-china-price-quick-pro-xr-one-complete-weight-2026-09-01",
+            "field": "complete-weight",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "phoenix-700c-carbon-e-road",
+        "name": "Phoenix 凤凰 799 700C carbon electric-assist road bike",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-phoenix-700c-carbon-e-road-tire-clearance-2026-08-30",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-phoenix-700c-carbon-e-road-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "giant-defy-advanced-sl1-community-lead",
+        "name": "Giant Defy Advanced SL 1",
+        "record_type": "candidate",
+        "priority_score": 70,
+        "last_reviewed": "2026-09-24",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-complete-weight-2026-09-01",
+            "field": "complete-weight",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 4,
+    "atomic_gap_entries": 8,
+    "research_boundary": "One Luna evidence-only researcher; root remains the sole writer. Inspect each selected candidate, linked sources, exact predecessor attempts, and campaign history before one bounded web query per exact product. For each model, inspect at most one genuinely new manufacturer or technical page after a literal URL search across data/ and docs/; skip any existing or uncertain URL, and never reopen known pages or retry failed pages. Stop after these four candidates.",
+    "query_targets": [
+      {
+        "model_id": "twitter-little-white-rabbit",
+        "query": "TWITTER 骓特 Little White Rabbit 小白兔 定制款 Shimano 24-speed Wheeltop electronic complete weight maximum tire clearance frame stiffness"
+      },
+      {
+        "model_id": "missing-china-price-quick-pro-xr-one",
+        "query": "Quick Pro XR:ONE GRX Di2 1x12 complete bike weight size M manufacturer"
+      },
+      {
+        "model_id": "phoenix-700c-carbon-e-road",
+        "query": "Phoenix 凤凰 799 carbon 700C electric road bike maximum tire width frame stiffness test"
+      },
+      {
+        "model_id": "giant-defy-advanced-sl1-community-lead",
+        "query": "Giant Defy Advanced SL 1 2026 complete bike weight 7.4 kg measured size official"
+      }
+    ],
+    "field_rules": [
+      "Drivetrain must identify the selected exact custom listing option; a menu of available builds does not resolve the retained card.",
+      "Complete-bike weight must map to the exact complete build and state size/configuration or preserve missing protocol details; do not add frame and fork weights.",
+      "Maximum tire clearance must be a stated model/frame maximum; fitted tire size is insufficient.",
+      "Frame stiffness requires an exact-model numeric result or sufficiently specific independent assessment; identify build-specific evidence and protocol limitations."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No prices or images. Only frozen fields and directly supporting source/attempt records, coverage baseline if required, attempt-count expectation if stale, and dated batch documentation may change.",
+      "No commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "external_delivery": "none"
+}

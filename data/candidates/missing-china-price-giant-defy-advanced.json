@@ -17,29 +17,34 @@
   "research_priority": "high",
   "price_status": "Current official mainland CNY 14,800 suggested retail; dealer stock and final checkout untested",
   "required_before_dashboard": "Complete-bike/frame weight; Full wheel, tire, cockpit and drivetrain detail; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy; Direct image asset URL",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
     "giant-china-defy-advanced-2-official-2026-08-17",
     "giant-china-warranty-2026-08-27",
     "giant-defy-advanced-2-official-global-2026-08-28",
     "giant-defy-advanced-2-tour-review-2026-08-28",
-    "giant-defy-advanced-2-japan-weight-2026-09-01"
+    "giant-defy-advanced-2-japan-weight-2026-09-01",
+    "giant-china-warranty-current-2026-09-23",
+    "giant-china-defy-advanced-2-official-recheck-2026-09-23",
+    "giant-overdrive-technology-recheck-2026-09-23",
+    "giant-defy-advanced-2-tour-review-recheck-2026-09-23",
+    "giant-defy-advanced-2-mainland-price-route-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 14800,
     "currency": "CNY",
     "price_type": "official-mainland-list",
-    "observed_at": "2026-08-17"
+    "observed_at": "2026-09-24"
   },
-  "source_note": "Current exact China page publishes CNY 14,800 and official routes but no weight. Regional 8.5 kg and 9.0 kg values are preserved as non-transferable context.",
+  "source_note": "Current exact China page publishes CNY 14,800 and official routes but no weight. Regional 8.5 kg and 9.0 kg values are preserved as non-transferable context.\n\nBatch 25 adds current Giant China brand warranty terms: mainland purchase/use, authorized-store purchase and assembly, proof and ownership/use conditions apply. This policy does not verify eligibility for a particular Defy or serial number.\n\nBatch 35 recheck confirms Advanced-Grade Composite and a full-composite OverDrive One steerer on the current mainland Defy Advanced 2 page. The generic OverDrive technology page and a 2024-generation TOUR review do not establish stiffness for this exact China build; no model-specific measurement was found.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837",
   "facts": {
     "drivetrain": "Shimano 105 with RS520 50/34 crank",
     "brakes": "Shimano 105 HRD hydraulic disc",
     "frame": "Advanced-Grade Composite with full-composite OverDrive fork",
-    "frame_material": "China trim: Advanced-Grade Composite frame and full-composite OverDrive fork; Giant's global exact-model page separately describes High Performance Grade raw carbon, without a published cross-market grade mapping",
+    "frame_material": "Current China trim: Advanced-Grade Composite frame and full-composite OverDrive One steerer; fiber supplier and lay-up are unpublished. Do not transfer the separate global page's High Performance Grade label without a published cross-market mapping.",
     "frame_construction": "Manufacturer-described Modified Monocoque Construction with the front triangle molded as one continuous piece; exact ply schedule and molding protocol are not published",
-    "stiffness_evidence": "Giant claims OverDrive steering stiffness and D-Fuse vibration absorption; an independent 2024-generation test reports smooth rough-road comfort but an upright, relatively heavy feel. No current-China-build stiffness measurement is published",
+    "stiffness_evidence": "No current mainland exact-build stiffness measurement or generation-matched quantitative result found. Generic OverDrive technology claims and a 2024-generation ride review are not treated as exact-build stiffness evidence.",
     "tire_clearance_mm": 38,
     "complete_weight_status": "No exact mainland-China build weight, size or weighing basis found after 50 registered source areas; 8.5 kg Japan and 9.0 kg review values are regional or basis-mismatched"
   }

@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "trek-domane-sl5-gen4-official-2026-08-17"
+    "trek-domane-sl5-gen4-official-2026-08-17",
+    "trek-domane-sl5-gen4-us-page-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-domane-batch-037-50-area-sweep-2026-09-01.json. Trek describes the exact product’s 500 Series OCLV construction as balancing light weight, strength and stiffness; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-domane-batch-037-50-area-sweep-2026-09-01.json. Trek describes the exact product’s 500 Series OCLV construction as balancing light weight, strength and stiffness; qualitative manufacturer evidence only. Current focused recheck 2026-09-23: The 2026-09-01 manufacturer observation described 500 Series OCLV as balancing light weight, strength and stiffness. Current page rendered only a title shell; no quantitative method is published.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "trek-domane-sl5-gen4-official-2026-08-17",
+      "trek-domane-sl5-gen4-us-page-recheck-2026-09-23"
+    ],
+    "note": "The 2026-09-01 manufacturer observation described 500 Series OCLV as balancing light weight, strength and stiffness. Current page rendered only a title shell; no quantitative method is published."
+  }
 }

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-sava-f20-hawkeye-price-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-f20-hawkeye"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact public JD item identifies the seller and a matching R7120 build, but its opened price field was blank and it showed no stock or date context; the indexed item was stale.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Hawkeye F20 105 24速 萨瓦 旗舰店; 萨瓦 Hawkeye F20 105 24速 价格",
+          "route": "Fresh public JD exact-item search, followed by opening the item and linked flagship-store page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://item.jd.com/10075200963450.html",
+          "note": "The item title identifies a SAVA Hawkeye F20 carbon 24-speed R7120 hydraulic-disc build; the linked seller is 萨瓦官方旗舰店 (https://mall.jd.com/introduction-10533492.html). The opened price field is blank, no current stock or listing-date context is shown, and the search index reports the item was crawled about 1.3 years ago. It does not support a current mainland price observation."
+        }
+      ]
+    },
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sava-f20-hawkeye-price-2026-09-01",
+      "attempts": []
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The fresh exact-item lead strengthens attribution of a mainland JD seller route but does not provide current price or availability. Keep price null. Reopen only if the exact item or a new seller route exposes a dated/current CNY amount and package context.",
+  "retry_of": "candidate-sava-f20-hawkeye-price-2026-09-01",
+  "retry_reason": "A fresh public exact-model query surfaced a specific JD item and linked flagship-store route after the prior 50-area campaign; B59 froze one item-level follow-up route and carried earlier public-post work forward.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-59-sava-f20-price",
+    "extends_attempt_id": "candidate-sava-f20-hawkeye-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-59-scope.json",
+    "reason": "A newly surfaced exact public JD item made one additional seller-listing route worth checking.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

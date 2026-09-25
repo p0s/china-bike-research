@@ -16,6 +16,14 @@
     }
   },
   "status": "found",
-  "accepted_source_ids": ["ican-graro-official", "ican-graro-official-2026-08-27"],
-  "notes": "Two sources support finish-specific alternatives for one field. The former inferred 1,085 g average is removed; the primary display uses the lighter exact named example with its basis."
+  "accepted_source_ids": ["ican-graro-official", "ican-graro-official-2026-08-27", "ican-graro-official-current-2026-09-23"],
+  "notes": "Two sources support finish-specific alternatives for one field. The former inferred 1,085 g average is removed; the primary display uses the lighter exact named example with its basis.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "ican-graro-official-current-2026-09-23"
+    ],
+    "note": "The current exact manufacturer page confirms separate painted-finish examples: 1,073±20 g and 1,095±20 g at size 52, and 1,130±20 g at size 54. The fork is listed separately; no cross-finish average is inferred."
+  }
 }

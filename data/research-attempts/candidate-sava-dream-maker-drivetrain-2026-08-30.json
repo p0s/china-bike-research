@@ -486,5 +486,11 @@
     "sava-dream-maker-mainland-r7170-index-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact selected build uses Shimano 105 Di2 electronic 2x12 with a detailed R7150/R7170/R7100 BOM. The marketplace index is accepted only as the card-to-option bridge, not as component or dealer-authority evidence."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact selected build uses Shimano 105 Di2 electronic 2x12 with a detailed R7150/R7170/R7100 BOM. The marketplace index is accepted only as the card-to-option bridge, not as component or dealer-authority evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-dream-maker-r7170-current-2026-08-30", "sava-dream-maker-mainland-r7170-index-2026-08-30"],
+    "note": "The manufacturer page supports the Shimano 105 Di2 2×12 BOM for exact R17-R7170-24S; the marketplace index only connects the retained card to that build option. The marketplace index is not component or seller-authority evidence."
+  }
 }

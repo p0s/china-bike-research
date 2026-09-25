@@ -1,0 +1,70 @@
+{
+  "batch": 58,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    }
+  },
+  "selection": {
+    "basis": "Continue with a high-priority exact mainland observed-price gap whose current official China catalog and locator routes were rechecked today, and test one separate public mainland marketplace route.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one existing Luna evidence-only agent; no repository writes",
+    "root_writer": "integrate only admissible evidence, update the one frozen ledger, and record batch results"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "giant-defy-advanced-sl1-community-lead",
+      "model": "Giant Defy Advanced SL 1",
+      "gap_code": "price-missing",
+      "research_field": "mainland-observed-price",
+      "priority_score": 70,
+      "attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+      "current_state": "candidate price is null; latest ledger has two web attempts and no exact mainland listing, stock, or checkout price",
+      "new_route_scope": "One distinct public web search of mainland e-commerce listings/flagship pages for a current exact Giant Defy Advanced SL 1 trim, with attributable seller, CNY amount, and visible listing date/package or stock context. Do not use foreign-market prices, generic Defy series pages, used/custom builds, other trims, or infer an exact mainland price.",
+      "already_checked_sources": [
+        "giant-china-defy-current-series-price-route-recheck-2026-09-24",
+        "giant-china-dealer-locator-current-2026-09-23",
+        "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23"
+      ],
+      "excluded_routes": [
+        "current Giant China Defy series catalog route",
+        "current official China dealer locator and indexed exact-model results",
+        "foreign market prices or specifications",
+        "login, private message, checkout, or verification-gated sources",
+        "Xiaohongshu because dedicated Chrome preflight has not been performed"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use one distinct public mainland marketplace search route and stop if an exact current listing with CNY evidence is found.",
+    "If no exact result, append precisely attempt 3 with a concise no-result, rejected, or blocked disposition; preserve the prior two attempts.",
+    "Add no price observation unless the exact model/trim, CNY amount, seller, and date or current listing context are supported.",
+    "Run focused validation, accept monotonic source coverage if sources are added, then run the full repository gate once for this batch.",
+    "No image record changes; no image report is needed."
+  ],
+  "delivery": "Local B58 batch only; no push, pull request, merge, publication, or production action."
+}

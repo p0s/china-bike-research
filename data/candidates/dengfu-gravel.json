@@ -2,25 +2,31 @@
   "id": "dengfu-gravel",
   "name": "Dengfu R20 Disc Gravel Bike Frame",
   "type": "frameset",
-  "why_interesting": "The current official gravel frameset identity is now established, but publication-critical construction, weight, clearance and quote evidence remain absent.",
+  "why_interesting": "The current official gravel frameset identity and an R7 geometry table are established, but publication-critical construction, weight, clearance and quote evidence remain absent.",
   "missing": [
     "Current price or exact quote",
     "Frame construction and size/finish-specific weight",
     "Manufacturer-confirmed maximum tire clearance",
-    "Current geometry, standards, package contents and support terms"
+    "Verify the geometry chart's linear units; bottom bracket, axle and seatpost standards; package contents; model-specific support terms"
   ],
-  "status": "exact-current-identity-specifications-unpublished",
+  "status": "exact-current-identity-and-geometry-chart; other specifications-unpublished",
   "source_ids": [
     "dengfu-warranty-official-2026-08-17",
-    "dengfu-r20-current-official-2026-08-30"
+    "dengfu-r20-current-official-2026-08-30",
+    "dengfu-r20-official-geometry-2026-09-23",
+    "dengfu-r20-warranty-recheck-2026-09-23",
+    "dengfu-r20-current-price-route-recheck-2026-09-24"
   ],
   "support_note": "Dengfu publishes a brand warranty route, but exact R20 coverage and terms remain unconfirmed; no model-specific coverage is inferred.",
-  "source_note": "The current official R20 page resolves exact identity only. Fifty stiffness-specific areas found no controlled numeric result or sufficiently specific independent exact-frame assessment.",
-  "last_reviewed": "2026-09-01",
+  "source_note": "The current official R20 page identifies the model and publishes an R7 numerical geometry drawing. The drawing does not state linear units. Its current page offers customization and a contact route but no price or exact quote; current indexed catalog results expose prices for other Dengfu models only. Construction, weight, maximum clearance, other standards and package contents remain unverified. Fifty stiffness-specific areas found no controlled numeric result or sufficiently specific independent exact-frame assessment.\n\nBatch 35 recheck: Dengfu's current policy provides two years for carbon-frame defects to original purchasers buying directly from Dengfu Sports Equipment Co Ltd; buyer-paid shipping and exclusions apply. This brand policy does not establish eligibility for any specific R20 order or third-party purchase.",
+  "last_reviewed": "2026-09-24",
+  "price_status": "The current exact R20 manufacturer page offers customization but no price or quote; current catalog search found prices for other models only. No current R20 price record was added.",
   "model_id": "dengfu-r20",
   "category": "gravel",
   "facts": {
     "listing_identity": "Current official R20 Disc Gravel Bike Frame; textual price, material, weight and maximum-clearance specifications are unpublished",
-    "frame_stiffness_status": "No controlled numeric or sufficiently specific independent exact-frame stiffness result found after 50 registered source areas"
+    "geometry": "Official R7 chart; columns in printed order SIZE / ST / TT / HT / HA / CA / BB drop / RC / FC / FL / OFFSET / WB / STACK / REACH / STR. 47/XS: 450 / 514 / 105 / 70° / 74.5° / 80 / 436 / 595.5 / 399 / 55 / 1018.5 / 535 / 366 / 1.46; 51/S: 470 / 531 / 120 / 70.5° / 74° / 80 / 436 / 603.5 / 399 / 55 / 1027 / 551 / 373 / 1.48; 54/M: 490 / 552 / 140 / 71.25° / 73.5° / 80 / 436 / 612.5 / 399 / 55 / 1036 / 573 / 382 / 1.50; 57/L: 520 / 572 / 165 / 71.75° / 73.5° / 80 / 436 / 629 / 399 / 55 / 1052.5 / 598.5 / 395 / 1.51. Linear units are not stated in the drawing.",
+    "frame_stiffness_status": "No controlled numeric or sufficiently specific independent exact-frame stiffness result found after 50 registered source areas",
+    "warranty": "Current brand policy: two years for carbon-frame defects for original purchasers who buy from Dengfu Sports Equipment Co Ltd; shipping is buyer-paid and crash, misuse, neglect and unauthorized modification are excluded. R20 order-specific eligibility remains unverified."
   }
 }

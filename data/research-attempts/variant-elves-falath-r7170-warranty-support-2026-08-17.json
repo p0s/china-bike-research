@@ -68,8 +68,21 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "elves-warranty-registration-2026-08-17"
+    "elves-warranty-registration-2026-08-17",
+    "elves-falath-pro-disc-product-current-2026-09-23",
+    "elves-falath-warranty-terms-current-2026-09-23",
+    "elves-registration-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. This is a conditional frame-kit warranty, not a complete-bike/component warranty. Confirm purchase-market eligibility and registration timing."
+  "notes": "The current official frame-family terms and registration rule were rechecked. Coverage is limited to the original owner and Falath Pro Disc frame kit; mainland purchase eligibility and complete-bike components remain unconfirmed.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "elves-falath-pro-disc-product-current-2026-09-23",
+      "elves-falath-warranty-terms-current-2026-09-23",
+      "elves-registration-current-2026-09-23"
+    ],
+    "note": "The official Falath Pro Disc product page identifies the frame family; current terms give the original owner 5-year frame-kit cover and 1-year parts cover, and registration within 30 days is required for the limited 5-year warranty. This does not establish eligibility for the mainland R7170 seller or warranty for Shimano components."
+  }
 }

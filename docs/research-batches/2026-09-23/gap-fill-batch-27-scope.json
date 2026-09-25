@@ -1,0 +1,185 @@
+{
+  "batch_id": "gap-fill-batch-27-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh data:gaps: 41 published variants, 222 candidates; gap counts {\"bom-incomplete\":2,\"bottom-bracket-missing\":6,\"candidate-blockers\":222,\"clearance-unverified\":103,\"complete-weight-missing\":82,\"drivetrain-missing\":39,\"frame-material-detail-missing\":15,\"frame-weight-missing\":26,\"geometry-missing\":5,\"image-exactness\":4,\"image-health-unverified\":37,\"price-missing\":26,\"price-not-observed\":39,\"price-reference-range\":2,\"purchase-route\":25,\"stiffness-evidence-missing\":78}; field states {\"blocked\":335,\"conflicted\":35,\"found\":68,\"temporarily-exhausted\":14}. Fresh research:queue: {\"ready\":0,\"evidence-found\":521,\"deferred\":45,\"blocked\":498,\"conflicted\":60}; excluded the known java-aluminum-24s duplicate.",
+  "selection_basis": "The next unresolved evidence-found exact model groups in the post-B26 research:queue order, excluding java-aluminum-24s; capped at 10 models and 25 fields. Include all currently queued fields for the selected groups while under the cap.",
+  "exact_model_count": 10,
+  "atomic_field_count": 19,
+  "unresolved_evidence_found_fields_after_resolution_filter": 519,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 19,
+  "exact_models": [
+    "twitter-x7",
+    "west-biking-sl-one",
+    "felt-ia-2",
+    "upland-r70",
+    "de-rosa-new-838",
+    "missing-china-price-giant-tcr-advanced",
+    "missing-china-price-winspace-agile",
+    "missing-china-price-winspace-g3",
+    "missing-china-price-winspace-slc3",
+    "missing-china-price-winspace-t1550"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-x7",
+      "exact_identity": "TWITTER 骓特 X7 high configuration",
+      "model_group": "twitter-x7",
+      "fields": [
+        "complete-weight"
+      ],
+      "attempt_ids": [
+        "candidate-twitter-x7-complete-weight-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-sl-one",
+      "exact_identity": "WEST BIKING 西骑者 SL-ONE",
+      "model_group": "west-biking-sl-one",
+      "fields": [
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-west-biking-sl-one-drivetrain-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "felt-ia-2",
+      "exact_identity": "FELT IA 2.0",
+      "model_group": "felt-ia-2",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-felt-ia-2-complete-weight-2026-08-30",
+        "candidate-felt-ia-2-drivetrain-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "exact_identity": "UPLAND 阿普兰 R70",
+      "model_group": "upland-r70",
+      "fields": [
+        "complete-weight"
+      ],
+      "attempt_ids": [
+        "candidate-upland-r70-complete-weight-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "exact_identity": "DE ROSA 德罗萨 New 838",
+      "model_group": "de-rosa-new-838",
+      "fields": [
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-de-rosa-new-838-drivetrain-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "exact_identity": "Giant TCR Advanced 3-GC",
+      "model_group": "missing-china-price-giant-tcr-advanced",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-agile",
+      "exact_identity": "Winspace Agile frameset",
+      "model_group": "missing-china-price-winspace-agile",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-winspace-agile-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-winspace-agile-frame-weight-2026-09-01",
+        "candidate-missing-china-price-winspace-agile-price-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-g3",
+      "exact_identity": "Winspace G3 Pro Di2 complete bike",
+      "model_group": "missing-china-price-winspace-g3",
+      "fields": [
+        "frame-stiffness",
+        "price",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27",
+        "candidate-missing-china-price-winspace-g3-price-2026-09-01",
+        "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-slc3",
+      "exact_identity": "Winspace SLC3.0 frameset",
+      "model_group": "missing-china-price-winspace-slc3",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-winspace-slc3-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-winspace-slc3-frame-weight-2026-09-01",
+        "candidate-missing-china-price-winspace-slc3-tire-clearance-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-t1550",
+      "exact_identity": "Winspace T1550 Gen 2 frameset",
+      "model_group": "missing-china-price-winspace-t1550",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-winspace-t1550-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-winspace-t1550-frame-weight-2026-09-01",
+        "candidate-missing-china-price-winspace-t1550-price-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research the frozen scope sequentially, one exact model and one source at a time; use current exact-model sources and stop at decisive evidence.",
+    "Do not repeat a completed 50-area sweep. Reuse accepted exact-model evidence when valid, and make only focused current checks needed to disposition the frozen field.",
+    "Distinguish selected build, model family, generation, market, seller card, checkout, freight, tax, stock and technical measurement basis; do not transfer sibling or regional build facts.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with source-backed caveats; never infer exact values or treat absence as negative evidence.",
+    "Luna is evidence-only: do not edit repository files, contact sellers, use XHS, recurse or research out-of-scope fields. Root is the sole writer and integrates the report.",
+    "Return each field with source URL/class/publisher, actual access date, supported claim, configuration match, limitations, disposition and a concrete reopen trigger."
+  ]
+}

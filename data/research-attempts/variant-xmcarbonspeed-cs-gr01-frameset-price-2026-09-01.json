@@ -479,8 +479,19 @@
   "status": "found",
   "accepted_source_ids": [
     "xmcarbonspeed-cs-gr01-store-2026-09-01",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-xmcarbonspeed-cs-gr01-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$669; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-xmcarbonspeed-cs-gr01-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact direct storefront lists US$669; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xmcarbonspeed-cs-gr01-store-2026-09-01",
+      "ecb-reference-rates-2026-08-31",
+      "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"
+    ],
+    "note": "Keep the existing US$669/CNY 4,496 reference as a dated official observation, not a current checkout price. The 2026-09-25 retrieved page was labeled Crawled: 4 weeks ago; today's price, stock, selected options and mainland total remain unverified. No new price observation is added."
+  }
 }

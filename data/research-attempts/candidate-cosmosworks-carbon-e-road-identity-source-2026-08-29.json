@@ -487,8 +487,21 @@
   "accepted_source_ids": [
     "cosmosworks-nomad-official-2026-08-29",
     "cosmosworks-nomad-launch-price-2026-08-29",
-    "cosmosworks-oi-official-2026-08-29"
+    "cosmosworks-oi-official-2026-08-29",
+    "cosmosworks-nomad-current-2026-09-23",
+    "cosmosworks-nomad-promotion-current-2026-09-23",
+    "cosmosworks-oi-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cosmosworks-carbon-e-road-50-area-sweep-2026-08-29.json. Official sources establish the correct brand styling and document the exact cross-model conflation without inventing a SKU."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cosmosworks-carbon-e-road-50-area-sweep-2026-08-29.json. Official sources establish the correct brand styling and document the exact cross-model conflation without inventing a SKU.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "cosmosworks-nomad-current-2026-09-23",
+      "cosmosworks-nomad-promotion-current-2026-09-23",
+      "cosmosworks-oi-current-2026-09-23"
+    ],
+    "note": "Current official sources distinguish NOMAD from Oi! and place the retained price cue and frame/clearance cues on different models; the mixed lead cannot be assigned to one SKU."
+  }
 }

@@ -1,0 +1,448 @@
+{
+  "batch_id": "gap-fill-batch-24-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-24-scope.json",
+  "scope_count": {
+    "exact_models": 9,
+    "atomic_fields": 25,
+    "root_fields": 0,
+    "luna_evidence_fields": 25
+  },
+  "new_source_records": [
+    "look-765-optimum-current-recheck-2026-09-23",
+    "look-765-optimum-platform-release-recheck-2026-09-23",
+    "meinier-current-road-range-official-recheck-2026-09-23",
+    "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23",
+    "missile-mercury-6000-jd-recheck-2026-09-23",
+    "missile-mercury-6000-jd-item-recheck-2026-09-23",
+    "canyon-aeroad-cfr-di2-official-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "lightcarbon-speed7-complete",
+    "lightcarbon-speed7-frameset",
+    "look-765-electronic",
+    "meihanda-phantom-p10",
+    "meihanda-xtreme-gravel",
+    "meinier-superlight-2",
+    "merida-scultura-endurance-4000-community-lead",
+    "missile-e6000",
+    "missing-china-price-canyon-aeroad"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "lightcarbon-speed7-complete",
+      "model": "LightCarbon Speed7 105 mechanical complete bike",
+      "field": "tire-clearance",
+      "status": "qualified-platform-maximum",
+      "attempt_record_id": "candidate-lightcarbon-speed7-complete-tire-clearance-2026-08-17",
+      "source_ids": [
+        "lightcarbon-chinese-catalog-official-2026-08-29",
+        "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+      ],
+      "note": "Speed7/速7 to LCR017-D alias remains supported by the 2026-09-01 official Chinese catalog read. Current LCR017-D manufacturer page gives a 700×32C maximum; the catalog retry timed out today, and this is not a mounted-tire measurement.",
+      "next_trigger": "Official catalog revises the alias, or LightCarbon publishes a size/rim-specific clearance condition."
+    },
+    {
+      "record_id": "lightcarbon-speed7-frameset",
+      "model": "LightCarbon Speed7 frameset lead",
+      "field": "frame-weight",
+      "status": "qualified-manufacturer-claim",
+      "attempt_record_id": "candidate-lightcarbon-speed7-frameset-frame-weight-2026-08-17",
+      "source_ids": [
+        "lightcarbon-chinese-catalog-official-2026-08-29",
+        "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+      ],
+      "note": "Accepted catalog maps Speed7 to LCR017-D; current exact manufacturer page gives 870 g at size 52, ±30 g. Accessory inclusion and measurement method are not fully stated.",
+      "next_trigger": "Manufacturer publishes an inclusion basis, another size, or a measured exact Speed7 frameset."
+    },
+    {
+      "record_id": "lightcarbon-speed7-frameset",
+      "model": "LightCarbon Speed7 frameset lead",
+      "field": "identity-source",
+      "status": "official-alias-mapping-retained",
+      "attempt_record_id": "candidate-lightcarbon-speed7-frameset-identity-source-2026-09-01",
+      "source_ids": [
+        "lightcarbon-chinese-catalog-official-2026-08-29",
+        "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+      ],
+      "note": "The accepted official Chinese catalog names 速7 as LCR017-D; the current product page confirms the exact LCR017-D item but does not independently say Speed7. Catalog retry timed out on 2026-09-23.",
+      "next_trigger": "A later official catalog changes or clarifies the Speed7/LCR017-D mapping."
+    },
+    {
+      "record_id": "lightcarbon-speed7-frameset",
+      "model": "LightCarbon Speed7 frameset lead",
+      "field": "tire-clearance",
+      "status": "qualified-platform-maximum",
+      "attempt_record_id": "candidate-lightcarbon-speed7-frameset-tire-clearance-2026-08-17",
+      "source_ids": [
+        "lightcarbon-chinese-catalog-official-2026-08-29",
+        "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+      ],
+      "note": "Accepted catalog alias plus current LCR017-D manufacturer page support a 700×32C frame maximum, not an actual mounted tire measurement. The catalog retry timed out today.",
+      "next_trigger": "Official alias mapping changes, or LightCarbon publishes a measured setup/fit condition."
+    },
+    {
+      "record_id": "look-765-electronic",
+      "model": "LOOK 洛克 765 electronic",
+      "field": "drivetrain",
+      "status": "manufacturer-and-mainland-family-support-wheel-option-open",
+      "attempt_record_id": "candidate-look-765-electronic-drivetrain-2026-08-30",
+      "source_ids": [
+        "look-765-optimum-current-recheck-2026-09-23",
+        "look-765-optimum-mainland-options-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.lookcycle.com/ee-en/products/bikes/road-bikes/endurance/765-optimum-105-di2-2x12",
+        "https://www.jd.com/jiage/131815da09d43762b977.html?electedExtAttrSet=2617%2C&extAttrValue=expand_name%2C%4034697%3A%3A2617&sort_type=sort_default"
+      ],
+      "note": "Current LOOK page confirms Shimano 105 Di2 12-speed on an EU RS171-wheel SKU; accepted JD evidence identifies mainland R7170 electronic variants. Retained card wheel selection remains unresolved.",
+      "next_trigger": "A selected mainland SKU/BOM establishes a different drivetrain."
+    },
+    {
+      "record_id": "look-765-electronic",
+      "model": "LOOK 洛克 765 electronic",
+      "field": "frame-material",
+      "status": "qualified-manufacturer-construction",
+      "attempt_record_id": "candidate-look-765-electronic-frame-material-2026-08-30",
+      "source_ids": [
+        "look-765-optimum-current-recheck-2026-09-23",
+        "look-765-optimum-platform-release-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lookcycle.com/ee-en/products/bikes/road-bikes/endurance/765-optimum-105-di2-2x12",
+        "https://www.lookcycle.com/download/press-room/new-765-optimum/press-release/press-release-765-optimum-en.pdf"
+      ],
+      "note": "LOOK describes a full-carbon 765 Optimum frame/fork with mixed carbon/glass elements and an ultra-high-strength carbon compound. Fiber grades, proportions and schedule are unpublished.",
+      "next_trigger": "A technical sheet publishes exact fiber grades, proportions or a variant-specific construction."
+    },
+    {
+      "record_id": "look-765-electronic",
+      "model": "LOOK 洛克 765 electronic",
+      "field": "frame-stiffness",
+      "status": "qualitative-relative-manufacturer-claim",
+      "attempt_record_id": "candidate-look-765-electronic-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "look-765-optimum-platform-release-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lookcycle.com/download/press-room/new-765-optimum/press-release/press-release-765-optimum-en.pdf"
+      ],
+      "note": "LOOK claims 20% more compliance than the previous model while preserving lateral efficiency; it is relative manufacturer evidence, not an independent or protocol-backed stiffness result.",
+      "next_trigger": "An instrumented exact-platform test or quantified stiffness protocol is published."
+    },
+    {
+      "record_id": "look-765-electronic",
+      "model": "LOOK 洛克 765 electronic",
+      "field": "tire-clearance",
+      "status": "manufacturer-maximum-34mm",
+      "attempt_record_id": "candidate-look-765-electronic-tire-clearance-2026-08-30",
+      "source_ids": [
+        "look-765-optimum-current-recheck-2026-09-23",
+        "look-765-optimum-platform-release-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lookcycle.com/ee-en/products/bikes/road-bikes/endurance/765-optimum-105-di2-2x12",
+        "https://www.lookcycle.com/download/press-room/new-765-optimum/press-release/press-release-765-optimum-en.pdf"
+      ],
+      "note": "LOOK states up to 34 mm for the 765 Optimum. Tire/rim measured width and mud-clearance conditions are unspecified.",
+      "next_trigger": "A later generation or explicit tire/rim compatibility condition changes the maximum."
+    },
+    {
+      "record_id": "meihanda-phantom-p10",
+      "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "field": "drivetrain",
+      "status": "accepted-exact-model-current-recheck-unavailable",
+      "attempt_record_id": "candidate-meihanda-phantom-p10-drivetrain-2026-08-30",
+      "source_ids": [
+        "meihanda-phantom-p10-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://meihanda.com/"
+      ],
+      "note": "Accepted exact manufacturer P10 page identifies Shimano U6000 10-speed; the P10 page timed out on the 2026-09-23 recheck. Subcomponent details remain unpublished.",
+      "next_trigger": "Exact P10 manufacturer page becomes accessible or publishes a revised specification."
+    },
+    {
+      "record_id": "meihanda-phantom-p10",
+      "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "field": "frame-material",
+      "status": "accepted-exact-model-current-recheck-unavailable",
+      "attempt_record_id": "candidate-meihanda-phantom-p10-frame-material-2026-08-30",
+      "source_ids": [
+        "meihanda-phantom-p10-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://meihanda.com/"
+      ],
+      "note": "Accepted exact P10 manufacturer page specifies a 7005 aluminum frame and T800 carbon fork; the current recheck timed out. No layup detail is published.",
+      "next_trigger": "Accessible revised exact P10 specification or a contradictory exact-model source."
+    },
+    {
+      "record_id": "meihanda-phantom-p10",
+      "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "field": "identity-source",
+      "status": "p10-identity-separated-from-p12",
+      "attempt_record_id": "candidate-meihanda-phantom-p10-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "meihanda-phantom-p10-official-2026-08-30",
+        "meihanda-phantom-p10-jd-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://meihanda.com/",
+        "https://www.jd.com/brand/65279f308de27d2d3a8.html?electedExtAttrSet=4900%2C&extAttrValue=expand_name%2C%40109025%3A%3A4900&sort_type=sort_redissale_desc"
+      ],
+      "note": "Accepted manufacturer/JD evidence identifies Phantom P10; JD distinguishes its 10-speed P10 from P12. Manufacturer recheck timed out today; conflicting JD options are not transferred.",
+      "next_trigger": "Official SKU mapping changes or the selected retained variant is identified as P12."
+    },
+    {
+      "record_id": "meihanda-phantom-p10",
+      "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "field": "tire-clearance",
+      "status": "qualified-series-maximum",
+      "attempt_record_id": "candidate-meihanda-phantom-p10-tire-clearance-2026-08-30",
+      "source_ids": [
+        "meihanda-phantom-p10-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://meihanda.com/"
+      ],
+      "note": "Accepted manufacturer series page states up to 40C and includes the exact P10; current page recheck timed out. Rim width and measured tire width are unspecified.",
+      "next_trigger": "P10-specific compatibility table or defined mounted-tire test."
+    },
+    {
+      "record_id": "meihanda-xtreme-gravel",
+      "model": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
+      "field": "frame-material",
+      "status": "seller-title-only-exact-platform-unresolved",
+      "attempt_record_id": "candidate-meihanda-xtreme-gravel-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "Retained anonymized seller title calls the bike carbon-fiber gravel; frame/fork construction, grade and exact model remain unknown. The Meihanda site recheck timed out.",
+      "next_trigger": "Exact official/seller SKU or BOM identifies frame and fork materials."
+    },
+    {
+      "record_id": "meihanda-xtreme-gravel",
+      "model": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
+      "field": "identity-source",
+      "status": "exact-model-unresolved-p10-not-substitute",
+      "attempt_record_id": "candidate-meihanda-xtreme-gravel-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "meihanda-phantom-p10-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://meihanda.com/"
+      ],
+      "note": "Seller capture links the lead to Meihanda/Xtreme naming, but has no public URL and no exact model. Official site timed out today; P10 remains a separate product.",
+      "next_trigger": "Official page or public listing links an exact name/SKU to this retained capture."
+    },
+    {
+      "record_id": "meinier-superlight-2",
+      "model": "MEINIER full-carbon road bike, exact model unresolved",
+      "field": "frame-material",
+      "status": "seller-title-carbon-claim-exact-platform-unresolved",
+      "attempt_record_id": "candidate-meinier-superlight-2-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "Retained seller title describes a carbon-fiber road bike; it does not establish platform, frame/fork split or grade. Current MEINIER range page does not identify this exact bike.",
+      "next_trigger": "Seller SKU maps to an official frame/platform or exact BOM."
+    },
+    {
+      "record_id": "meinier-superlight-2",
+      "model": "MEINIER full-carbon road bike, exact model unresolved",
+      "field": "identity-source",
+      "status": "exact-model-unresolved",
+      "attempt_record_id": "candidate-meinier-superlight-2-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "meinier-current-road-range-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.meinierbikes.com/"
+      ],
+      "note": "Current official site identifies MEINIER and its carbon road-bike range, but does not map Superlight 2 to DS-118, DS618 or another exact frame.",
+      "next_trigger": "Manufacturer cross-reference or seller SKU ties the retained card to an exact model."
+    },
+    {
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "model": "Merida Scultura Endurance 4000",
+      "field": "complete-weight",
+      "status": "current-page-corrected-8970g-qualified-test-build",
+      "attempt_record_id": "candidate-merida-scultura-endurance-4000-community-lead-complete-weight-2026-09-01",
+      "source_ids": [
+        "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://road.cc/content/review/merida-scultura-endurance-4000-303739"
+      ],
+      "note": "Current direct page read reports 8,970 g for its 2023 size-L/568 mm test bike. This corrects the prior 9.03 kg transcription; test build and weighing basis do not prove the custom community build.",
+      "next_trigger": "Exact target build is weighed with size and inclusions, or the review page changes."
+    },
+    {
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "model": "Merida Scultura Endurance 4000",
+      "field": "frame-stiffness",
+      "status": "qualitative-independent-review-only",
+      "attempt_record_id": "candidate-merida-scultura-endurance-4000-community-lead-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://road.cc/content/review/merida-scultura-endurance-4000-303739"
+      ],
+      "note": "Reviewer reports sufficient frame/fork stiffness, no felt flex and efficient power transfer. Subjective ride assessment, not an instrumented protocol.",
+      "next_trigger": "Instrumented stiffness test of the exact generation/build."
+    },
+    {
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "model": "Merida Scultura Endurance 4000",
+      "field": "price",
+      "status": "current-2025-china-msrp-older-build-price-unresolved",
+      "attempt_record_id": "candidate-merida-scultura-endurance-4000-community-lead-price-2026-08-17",
+      "source_ids": [
+        "merida-scultura-endurance-4000-current-2026-09-23",
+        "merida-scultura-endurance-4000-china-2026-08-17"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/index/bikefinder/detail/id/70/color/%E5%B9%B3%E9%95%9C%E4%B8%80%E7%81%B0%E9%93%B6.html"
+      ],
+      "note": "Current China page supports CNY 14,800 suggested retail for the 25′ R7100/12-speed build. This is not a transaction or price for the older R7000 community/review build.",
+      "next_trigger": "Dated mainland seller/checkout evidence for the exact older configuration."
+    },
+    {
+      "record_id": "missile-e6000",
+      "model": "MISSILE 米赛尔 水星6000",
+      "field": "complete-weight",
+      "status": "historical-seller-card-only-current-listing-weight-blank",
+      "attempt_record_id": "candidate-missile-e6000-complete-weight-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "missile-mercury-6000-jd-recheck-2026-09-23",
+        "missile-mercury-6000-jd-item-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/hotitem/131882d86ae6672951f1.html",
+        "https://item.jd.com/10166817946645.html"
+      ],
+      "note": "Retained exact seller card advertises approximately 9.3 kg without size or measurement basis. Current JD exact item has a blank weight field; no current measured/verified weight is established.",
+      "next_trigger": "Current exact listing exposes weight or a measured build lists size and inclusions."
+    },
+    {
+      "record_id": "missile-e6000",
+      "model": "MISSILE 米赛尔 水星6000",
+      "field": "drivetrain",
+      "status": "seller-card-2x12-current-jd-24speed-arrangement-unspecified",
+      "attempt_record_id": "candidate-missile-e6000-drivetrain-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "missile-mercury-6000-jd-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/hotitem/131882d86ae6672951f1.html"
+      ],
+      "note": "Retained exact seller card claims SENSAH 2×12. Current JD title says 顺泰 24-speed with hydraulic discs but does not independently establish a 2×12 arrangement or component models.",
+      "next_trigger": "Exact current SKU BOM identifies shifters, derailleurs, chainrings and cassette."
+    },
+    {
+      "record_id": "missile-e6000",
+      "model": "MISSILE 米赛尔 水星6000",
+      "field": "frame-material",
+      "status": "qualified-carbon-complete-bike-claim",
+      "attempt_record_id": "candidate-missile-e6000-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "missile-mercury-6000-jd-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/hotitem/131882d86ae6672951f1.html"
+      ],
+      "note": "Retained exact card says full carbon; current JD exact listing describes a carbon-fiber complete bike. Neither states frame/fork split or carbon grade.",
+      "next_trigger": "Manufacturer specification identifies frame and fork construction/grade."
+    },
+    {
+      "record_id": "missile-e6000",
+      "model": "MISSILE 米赛尔 水星6000",
+      "field": "identity-source",
+      "status": "current-exact-jd-identity-weight-and-price-unverified",
+      "attempt_record_id": "candidate-missile-e6000-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "missile-current-range-official-2026-08-30",
+        "missile-mercury-6000-jd-recheck-2026-09-23",
+        "missile-mercury-6000-jd-item-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.missilebike.com/",
+        "https://www.jd.com/hotitem/131882d86ae6672951f1.html",
+        "https://item.jd.com/10166817946645.html"
+      ],
+      "note": "Current JD exact listing identifies MISSILE 米赛尔 水星6000 / 2025 variant. Its retrieved weight/price are blank; stock and checkout are unverified.",
+      "next_trigger": "Official listing changes identity or exposes selected SKU, stock and buyer price."
+    },
+    {
+      "record_id": "missing-china-price-canyon-aeroad",
+      "model": "Canyon Aeroad CFR Di2",
+      "field": "complete-weight",
+      "status": "qualified-current-us-manufacturer-size-m-weight",
+      "attempt_record_id": "candidate-missing-china-price-canyon-aeroad-complete-weight-2026-09-01",
+      "source_ids": [
+        "canyon-aeroad-cfr-di2-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-us/road-bikes/aero-bikes/aeroad/cfr/aeroad-cfr-di2/4480.html"
+      ],
+      "note": "Current US manufacturer page claims 15.7 lb (about 7.12 kg) for standard size M; no measurement method or mainland-specific configuration is given.",
+      "next_trigger": "Mainland-specific build or revised standard size-M specification."
+    },
+    {
+      "record_id": "missing-china-price-canyon-aeroad",
+      "model": "Canyon Aeroad CFR Di2",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-marketing-claim",
+      "attempt_record_id": "candidate-missing-china-price-canyon-aeroad-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "canyon-aeroad-cfr-di2-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-us/road-bikes/aero-bikes/aeroad/cfr/aeroad-cfr-di2/4480.html"
+      ],
+      "note": "Canyon calls the CFR lay-up benchmark stiffness-to-weight; marketing statement without a public test protocol or independent measurement.",
+      "next_trigger": "Quantified or independent exact-frame stiffness evidence."
+    }
+  ],
+  "validation": {
+    "focused_tests": "node --test tests/data.test.mjs passed (69 tests)",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "developer-storage-cache run -- npm run check passed",
+    "privacy": "passed",
+    "data_validation": "41 brands, 38 platforms, 41 variants, 73 prices, 1,073 sources, 212 primary images, 236 candidates, 1,465 research records",
+    "research_validation": "1,461 atomic fields; 15,448 public-post and 35,469 web attempts",
+    "tests": "307 passed",
+    "build": "584 pages",
+    "seo": "584 pages; 456 indexable; 128 noindex"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-west-biking-team-road-frame-stiffness-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "west-biking-team-road"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-west-biking-team-road-frame-stiffness-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-west-biking-team-road-frame-stiffness",
+    "extends_attempt_id": "candidate-west-biking-team-road-frame-stiffness-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-west-biking-team-road-frame-stiffness-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "WEST BIKING 西骑者 competition team edition R7120 complete bike weight maximum tire clearance stiffness test",
+          "route": "One bounded current exact-model web query",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.chinagoods.com/store/goodsdetail/1989245684121120769",
+          "note": "The one page-open attempt timed out without page content. Existing JD XS R7120 and separate R8170 options are not mapped to the retained listing; no exact complete weight, maximum clearance, or stiffness result is established."
+        }
+      ],
+      "blocker": "The single page-open attempt timed out; no retry was performed. The frozen batch allowed only one genuinely new page per model."
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The one page-open attempt timed out without page content. Existing JD XS R7120 and separate R8170 options are not mapped to the retained listing; no exact complete weight, maximum clearance, or stiffness result is established.",
+  "searched_at": "2026-09-25"
+}

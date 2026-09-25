@@ -1,0 +1,46 @@
+{
+  "batch": 170,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-170-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "image_records_checked": 2,
+    "command":"npm run --silent image:report -- --ids evolve-cima-gr-primary-image,tfsa-jh37-primary-image --json",
+    "checked_at":"2026-09-25",
+    "results":[
+      {"image_id":"evolve-cima-gr-primary-image","url":"https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg","classification":"unreachable","http_response":"none returned by the checker"},
+      {"image_id":"tfsa-jh37-primary-image","url":"https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif","classification":"unreachable","http_response":"none returned by the checker"}
+    ],
+    "image_record_updates":2,
+    "image_update_detail":"Updated only each record's health_check to the latest unreachable result, removing the previous 202 text/html response as the current check. URLs, rights, image assets, subject accuracy, and buyer-facing entries are unchanged.",
+    "image_health_gaps_remaining":2,
+    "images_added":0,
+    "image_assets_downloaded_or_replaced":0,
+    "new_sources":0,
+    "retry_after_this_check":false,
+    "disposition":"Neither endpoint returned an HTTP response. This does not prove the image is broken and does not meet SPEC.md's healthy-resource requirement. Both health gaps remain explicitly open."
+  },
+  "inventory_after": {
+    "catalog_gap_entries":667,
+    "catalog_records":263,
+    "research_status_counts":{"blocked":389,"conflicted":35,"found":15,"open":0,"temporarily-exhausted":4},
+    "queue":{"ready":0,"evidence-found":0,"deferred":43,"blocked":567,"conflicted":1},
+    "image_gaps":{"image-exactness":4,"image-health-unverified":2},
+    "images":212
+  },
+  "validation": {
+    "coverage_acceptance":"accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command":"developer-storage-cache run -- codex-pnpm-check check",
+      "outcome":"passed",
+      "privacy":"passed",
+      "data_validation":"41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation":"1,503 atomic fields; 15,450 public-post and 35,890 formal web attempts",
+      "tests":"333/333 passed",
+      "build":"584 pages",
+      "seo":"458 indexable; 126 noindex"
+    },
+    "image_report":"passed for exactly two IDs; both unreachable with no HTTP response; no second retry",
+    "git_diff_check":"passed"
+  }
+}

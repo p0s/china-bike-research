@@ -1,0 +1,397 @@
+{
+  "batch_id": "gap-fill-batch-27-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-27-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 19,
+    "root_fields": 0,
+    "luna_evidence_fields": 19
+  },
+  "new_source_records": [
+    "west-biking-sl-one-jd-index-recheck-2026-09-23",
+    "giant-china-tcr-advanced-3-gc-recheck-2026-09-23",
+    "winspace-agile-current-recheck-2026-09-23",
+    "winspace-agile-cyclistshub-review-recheck-2026-09-23",
+    "winspace-g3-pro-di2-current-recheck-2026-09-23",
+    "winspace-slc3-current-recheck-2026-09-23",
+    "winspace-road-frame-clearance-faq-recheck-2026-09-23",
+    "winspace-t1550-gen2-current-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "twitter-x7",
+    "west-biking-sl-one",
+    "felt-ia-2",
+    "upland-r70",
+    "de-rosa-new-838",
+    "missing-china-price-giant-tcr-advanced",
+    "missing-china-price-winspace-agile",
+    "missing-china-price-winspace-g3",
+    "missing-china-price-winspace-slc3",
+    "missing-china-price-winspace-t1550"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "twitter-x7",
+      "model": "TWITTER 骓特 X7 high configuration",
+      "field": "complete-weight",
+      "status": "high-build-weight-unresolved-builder-default-is-separate-build",
+      "attempt_record_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "source_ids": [
+        "twitter-x7-official-2026-08-30",
+        "twitter-x7-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike"
+      ],
+      "note": "The current global/Canada builder default lists 7.6 kg with ES7000 wireless 1×14 at XS/46 cm; separate generic starting-weight claims are not tied to the retained high configuration.",
+      "next_trigger": "Reopen when the selected high-build components, size and weighing basis are stated."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "model": "WEST BIKING 西骑者 SL-ONE",
+      "field": "drivetrain",
+      "status": "two-current-mainland-options-no-selected-sku",
+      "attempt_record_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "source_ids": [
+        "west-biking-sl-one-current-options-2026-08-30",
+        "west-biking-sl-one-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc"
+      ],
+      "note": "Current JD seller index shows distinct 24-speed Shimano 7120 mechanical and 7170 electronic listings, both 2×12; it does not select a SKU for the retained candidate.",
+      "next_trigger": "Reopen with a selected listing/SKU or order page naming the build."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "model": "FELT IA 2.0",
+      "field": "complete-weight",
+      "status": "four-global-trim-weights-supported-size-m",
+      "attempt_record_id": "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-expert-current-2026-08-30",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-race-current-2026-08-30",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Felt lists size-M complete-bike weights by trim: FRD 9.37 kg, PRO 9.5 kg, EXPERT 10.3 kg, RACE 10.44 kg. Weight method is unstated; the family also includes a framekit, which is not a complete bike.",
+      "next_trigger": "Reopen when a specific China trim is identified or the manufacturer changes a weight."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "model": "FELT IA 2.0",
+      "field": "drivetrain",
+      "status": "four-trim-drivetrain-options-supported-mainland-selection-open",
+      "attempt_record_id": "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-expert-current-2026-08-30",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-race-current-2026-08-30",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Felt lists FRD Dura-Ace Di2 2×12, PRO and EXPERT Ultegra Di2 2×12, and RACE 105 Di2 2×12. The retained mainland card does not identify a trim.",
+      "next_trigger": "Reopen when the target market/build is identified or the manufacturer changes its options."
+    },
+    {
+      "record_id": "upland-r70",
+      "model": "UPLAND 阿普兰 R70",
+      "field": "complete-weight",
+      "status": "accepted-approximate-size-unspecified-weight-current-page-timeout",
+      "attempt_record_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "source_ids": [
+        "upland-r70-official-2026-08-30",
+        "upland-r70-indexed-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/product/308.html",
+        "https://www.upland.bike/zh/product/308.html"
+      ],
+      "note": "Accepted exact page observation reports approximately 8.3 kg bare for the displayed 105 Di2 build, excluding pedals and computer mount. The 2026-09-23 direct refresh timed out; retained seller cards do not select this build, and size/method are unstated.",
+      "next_trigger": "Reopen when the exact product page is readable and confirms the build and weighing basis."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "model": "DE ROSA 德罗萨 New 838",
+      "field": "drivetrain",
+      "status": "regional-build-options-supported-mainland-sku-unresolved",
+      "attempt_record_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "source_ids": [
+        "de-rosa-japan-new-838-options-current-2026-09-23",
+        "de-rosa-new-838-current-specs-2026-08-30",
+        "de-rosa-new-838-mainland-option-2026-08-30",
+        "de-rosa-new-838-regional-options-2026-08-30",
+        "de-rosa-838-model-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.derosa.jp/archives/4959",
+        "https://derosa.it/model/838/"
+      ],
+      "note": "De Rosa Japan material lists 105 Di2 and Campagnolo Chorus complete-build options; De Rosa’s exact model page confirms 838 identity but gives no drivetrain. The Japan page did not map either option to the mainland CNY 9,999 card and timed out on direct refresh.",
+      "next_trigger": "Reopen when a mainland SKU or current seller detail selects one drivetrain."
+    },
+    {
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "model": "Giant TCR Advanced 3-GC",
+      "field": "price",
+      "status": "dated-mainland-list-price-current-page-unreadable",
+      "attempt_record_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "source_ids": [
+        "giant-china-tcr-advanced-3-gc-official-2026-08-17",
+        "giant-china-tcr-advanced-3-gc-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398"
+      ],
+      "note": "The accepted exact China page observation lists CNY 6,998 suggested/list price as of 2026-09-01. Today the exact URL rendered a prompt/title only; no current checkout or transaction price was established.",
+      "next_trigger": "Reopen when the exact Giant China page again shows the model and current price."
+    },
+    {
+      "record_id": "missing-china-price-winspace-agile",
+      "model": "Winspace Agile frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-and-subjective-review-no-measurement",
+      "attempt_record_id": "candidate-missing-china-price-winspace-agile-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "winspace-agile-cyclistshub-long-term-review-2026-09-01",
+        "winspace-agile-current-recheck-2026-09-23",
+        "winspace-agile-cyclistshub-review-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/agile",
+        "https://www.cyclistshub.com/winspace-agile-review/"
+      ],
+      "note": "Manufacturer rigidity wording is qualitative. Cyclists Hub reports subjective long-term ride impressions and says Agile feels less stiff than the race-oriented T1600; reviewer disclosed receiving frame, handlebar and wheels. No instrumented method is given.",
+      "next_trigger": "Reopen for an exact-model test with a stated method or deflection result."
+    },
+    {
+      "record_id": "missing-china-price-winspace-agile",
+      "model": "Winspace Agile frameset",
+      "field": "frame-weight",
+      "status": "supported-850-plus-minus-35g-unpainted-size-m",
+      "attempt_record_id": "candidate-missing-china-price-winspace-agile-frame-weight-2026-09-01",
+      "source_ids": [
+        "winspace-agile-official-2026-08-17",
+        "winspace-agile-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/agile"
+      ],
+      "note": "Winspace lists 850 ±35 g for an unpainted size-M/470 frame. This is not complete-bike weight.",
+      "next_trigger": "Reopen if the manufacturer revises the figure or a different size/finish is needed."
+    },
+    {
+      "record_id": "missing-china-price-winspace-agile",
+      "model": "Winspace Agile frameset",
+      "field": "price",
+      "status": "current-global-sale-and-retail-price-mainland-checkout-unobserved",
+      "attempt_record_id": "candidate-missing-china-price-winspace-agile-price-2026-09-01",
+      "source_ids": [
+        "winspace-agile-official-2026-08-17",
+        "ecb-reference-rates-2026-08-31",
+        "winspace-agile-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/agile"
+      ],
+      "note": "Current global storefront displays US$1,250 sale / US$1,980 retail; shipping and taxes are calculated at checkout. No mainland CNY checkout or landed amount was observed.",
+      "next_trigger": "Reopen with a current China-localized listing or checkout amount and shipping/tax basis."
+    },
+    {
+      "record_id": "missing-china-price-winspace-g3",
+      "model": "Winspace G3 Pro Di2 complete bike",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-claim-no-protocol",
+      "attempt_record_id": "candidate-missing-china-price-winspace-g3-frame-stiffness-2026-08-27",
+      "source_ids": [
+        "winspace-g3-carbonvelo-review-2026-08-27",
+        "winspace-g3-pro-di2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/g3-gravel-pro-di2"
+      ],
+      "note": "Exact G3 Pro Di2 page describes pro-level stiffness and racing precision, with no measured value or test protocol.",
+      "next_trigger": "Reopen for an exact-model test with a stated method."
+    },
+    {
+      "record_id": "missing-china-price-winspace-g3",
+      "model": "Winspace G3 Pro Di2 complete bike",
+      "field": "price",
+      "status": "current-global-complete-bike-price-mainland-cny-unobserved",
+      "attempt_record_id": "candidate-missing-china-price-winspace-g3-price-2026-09-01",
+      "source_ids": [
+        "winspace-g3-pro-di2-official-2026-08-17",
+        "ecb-reference-rates-2026-08-31",
+        "winspace-g3-pro-di2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/g3-gravel-pro-di2"
+      ],
+      "note": "Exact G3 Pro Di2 global complete-bike listing shows US$4,099; shipping/taxes are at checkout. The page mentions China warehouses but no mainland CNY amount.",
+      "next_trigger": "Reopen with a current mainland quote or checkout for this exact build."
+    },
+    {
+      "record_id": "missing-china-price-winspace-g3",
+      "model": "Winspace G3 Pro Di2 complete bike",
+      "field": "frame-material",
+      "status": "supported-exact-g3-pro-di2-build-material",
+      "attempt_record_id": "candidate-missing-china-price-winspace-g3-frame-material-2026-08-27",
+      "source_ids": [
+        "winspace-g3-pro-di2-official-2026-08-27",
+        "winspace-g3-pro-di2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/g3-gravel-pro-di2"
+      ],
+      "note": "Exact build specifies T700 + T800 + M40 carbon frame and full-carbon fork; the page identifies the GRX RX825 1×12 complete-bike build.",
+      "next_trigger": "Reopen if the manufacturer changes the material specification."
+    },
+    {
+      "record_id": "missing-china-price-winspace-slc3",
+      "model": "Winspace SLC3.0 frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-claim-no-measurement",
+      "attempt_record_id": "candidate-missing-china-price-winspace-slc3-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "winspace-slc3-official-2026-08-17",
+        "winspace-slc3-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/slc3-frameset"
+      ],
+      "note": "Manufacturer says stiffness was significantly improved in key areas; no measurement or protocol is published.",
+      "next_trigger": "Reopen for an exact-model measured stiffness result with method."
+    },
+    {
+      "record_id": "missing-china-price-winspace-slc3",
+      "model": "Winspace SLC3.0 frameset",
+      "field": "frame-weight",
+      "status": "supported-699g-unpainted-size-m",
+      "attempt_record_id": "candidate-missing-china-price-winspace-slc3-frame-weight-2026-09-01",
+      "source_ids": [
+        "winspace-slc3-official-2026-08-17",
+        "winspace-slc3-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/slc3-frameset"
+      ],
+      "note": "Current exact page lists 699 g for an unpainted size-M frame; separate weighing protocol is unstated.",
+      "next_trigger": "Reopen if the figure changes or a protocol-specific value is needed."
+    },
+    {
+      "record_id": "missing-china-price-winspace-slc3",
+      "model": "Winspace SLC3.0 frameset",
+      "field": "tire-clearance",
+      "status": "supported-32mm-measured-width-rim-dependent",
+      "attempt_record_id": "candidate-missing-china-price-winspace-slc3-tire-clearance-2026-09-01",
+      "source_ids": [
+        "winspace-slc3-official-2026-08-17",
+        "winspace-road-frame-clearance-faq-2026-09-01",
+        "winspace-road-frame-clearance-faq-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/collections/frames"
+      ],
+      "note": "Winspace FAQ names SLC3.0 as optimized for 28 mm and generally supports up to 32 mm measured width depending on rim internal width; not a measurement across every rim.",
+      "next_trigger": "Reopen for a specific rim/tire combination or revised manufacturer specification."
+    },
+    {
+      "record_id": "missing-china-price-winspace-t1550",
+      "model": "Winspace T1550 Gen 2 frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-series-and-model-claims-no-protocol",
+      "attempt_record_id": "candidate-missing-china-price-winspace-t1550-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "winspace-t1550-gen2-owner-review-2026-09-01",
+        "winspace-t1550-gen2-current-recheck-2026-09-23",
+        "winspace-road-frame-clearance-faq-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/t15502ndgen",
+        "https://www.winspace.cc/collections/frames"
+      ],
+      "note": "T1550 Gen 2 product and Winspace frames FAQ use qualitative force-transfer, structure and series bottom-bracket stiffness claims; no test or measurement protocol is published.",
+      "next_trigger": "Reopen for an exact-model test with a stated method."
+    },
+    {
+      "record_id": "missing-china-price-winspace-t1550",
+      "model": "Winspace T1550 Gen 2 frameset",
+      "field": "frame-weight",
+      "status": "supported-828-plus-minus-35g-unpainted-size-m",
+      "attempt_record_id": "candidate-missing-china-price-winspace-t1550-frame-weight-2026-09-01",
+      "source_ids": [
+        "winspace-t1550-official-2026-08-17",
+        "winspace-t1550-gen2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/t15502ndgen"
+      ],
+      "note": "Manufacturer claims 828 ±35 g for an unpainted size-M/490 frame.",
+      "next_trigger": "Reopen if the figure changes or another size/finish is needed."
+    },
+    {
+      "record_id": "missing-china-price-winspace-t1550",
+      "model": "Winspace T1550 Gen 2 frameset",
+      "field": "price",
+      "status": "conflicting-global-1900-vs-1780-mainland-cny-unobserved",
+      "attempt_record_id": "candidate-missing-china-price-winspace-t1550-price-2026-09-01",
+      "source_ids": [
+        "winspace-t1550-official-2026-08-17",
+        "winspace-t1550-gen2-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.winspace.cc/products/t15502ndgen"
+      ],
+      "note": "Current page displays US$1,900 while embedded specification copy states US$1,780; add-to-cart is available, but shipping/tax terms apply and no mainland CNY checkout was observed. Preserve the global-price conflict.",
+      "next_trigger": "Reopen when the manufacturer resolves the displayed-price discrepancy and a mainland quote/checkout is available."
+    }
+  ],
+  "recheck_limitations": [
+    "Several exact manufacturer/retailer prices are global or regional references and do not establish mainland CNY checkout.",
+    "Twitter X7 and WestBiking retained records do not identify a single target build/SKU.",
+    "Upland and Giant exact current page refreshes timed out or rendered only prompt/title shells; prior dated evidence is retained.",
+    "De Rosa drivetrain options are regional and are not mapped to the mainland CNY 9,999 listing.",
+    "No B27 source established reusable rights for a new image."
+  ],
+  "validation": {
+    "focused_data_tests": "PASS: node --test tests/data.test.mjs (69/69)",
+    "coverage_accept": "PASS: monotonic baseline accepted; 212 images and 277 catalog targets protected",
+    "full_gate": "PASS: privacy scan; 41 brands, 38 platforms, 41 variants, 73 prices, 1107 sources, 212 primary images, 236 candidates, 1465 research records; 307 tests; 584-page build; SEO 456 indexable/128 noindex",
+    "image_report": "not-run: no image records changed"
+  },
+  "preexisting_resolutions_preserved": [
+    "candidate-twitter-x7-complete-weight-2026-08-30",
+    "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+    "candidate-felt-ia-2-complete-weight-2026-08-30",
+    "candidate-felt-ia-2-drivetrain-2026-08-30",
+    "candidate-upland-r70-complete-weight-2026-08-30",
+    "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+    "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"
+  ],
+  "selection_note": "Seven candidate gap rows surfaced in the queue despite already having protected source-reuse resolutions. Their original resolution records were restored intact; current checks are supplemental. Subsequent batch selection filters any attempt already holding a source-reuse resolution."
+}

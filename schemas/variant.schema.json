@@ -36,6 +36,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "bottom_bracket": {
+      "type": "string",
+      "description": "An exact-variant bottom-bracket label when manufacturer evidence cannot be generalized to the shared platform."
     }
   }
 }

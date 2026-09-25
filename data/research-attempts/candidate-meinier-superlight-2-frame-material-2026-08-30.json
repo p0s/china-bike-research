@@ -487,5 +487,13 @@
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/meinier-superlight-2-50-area-sweep-2026-08-30.json. The retained exact seller title explicitly identifies a carbon-fiber road bike; platform and carbon grade remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/meinier-superlight-2-50-area-sweep-2026-08-30.json. The retained exact seller title explicitly identifies a carbon-fiber road bike; platform and carbon grade remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08"
+    ],
+    "note": "Retained seller title describes a carbon-fiber road bike; it does not establish platform, frame/fork split or grade. Current MEINIER range page does not identify this exact bike."
+  }
 }

@@ -1,0 +1,58 @@
+{
+  "batch": 60,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "image_health_gaps": 37
+  },
+  "selection": {
+    "basis": "Target the 25 highest-priority unique remote image records currently generating image-health-unverified gaps, ordered by the freshest gap inventory priority. Use the repository image-health reporter against only these exact IDs.",
+    "target_images": 25,
+    "atomic_image_health_records": 25,
+    "writer": "single local writer; no delegated researcher required because this batch is a deterministic URL health check, not product-claim research"
+  },
+  "targets": [
+    {"record_id":"camp-gx600-pes","image_id":"camp-gx600-primary-image"},
+    {"record_id":"twitter-cyclone-electronic","image_id":"twitter-cyclone-electronic-official-et-primary-image"},
+    {"record_id":"twitter-cyclone-gen3-et","image_id":"twitter-cyclone-gen3-et-primary-image"},
+    {"record_id":"twitter-v3-wheeltop-eds","image_id":"twitter-gravel-v3-primary-image"},
+    {"record_id":"camp-gx700-grx820","image_id":"camp-gx700-primary-image"},
+    {"record_id":"twitter-t3-tt","image_id":"twitter-t3-tt-primary-image"},
+    {"record_id":"rinasclta-gr025-frameset","image_id":"rinasclta-gr025-primary-image"},
+    {"record_id":"twitter-v3-2024-rs-sensah-alloy","image_id":"twitter-gravel-v3-2024-listing-primary-image"},
+    {"record_id":"carbonda-cfr696-frameset","image_id":"carbonda-cfr696-primary-image"},
+    {"record_id":"ican-gra04-frameset","image_id":"ican-gra04-official-primary-image"},
+    {"record_id":"sava-gelaro-s8","image_id":"sava-gelaro-s8-primary-image"},
+    {"record_id":"bianchi-oltre-race","image_id":"bianchi-oltre-race-ytb8d-primary-image-2026-08-30"},
+    {"record_id":"sava-a7l-r7100","image_id":"sava-a7l-r08-2026-exact-primary-image"},
+    {"record_id":"sava-gelaro-s4-grx400","image_id":"sava-gelaro-primary-image"},
+    {"record_id":"sava-gelaro-sf6-cues","image_id":"sava-gelaro-sf-primary-image"},
+    {"record_id":"ican-graro-frameset","image_id":"ican-graro-primary-image"},
+    {"record_id":"xmcarbonspeed-cs-gr01-frameset","image_id":"xmcarbonspeed-cs-gr01-primary-image"},
+    {"record_id":"lightcarbon-lcg071s-pro-frameset","image_id":"lightcarbon-lcg071s-pro-primary-image"},
+    {"record_id":"scott-addict-rc-40","image_id":"scott-addict-rc-40-primary-image"},
+    {"record_id":"seka-exaero-gr-frameset","image_id":"seka-exaero-gr-primary-image"},
+    {"record_id":"spcycle-g026-frameset","image_id":"spcycle-g026-primary-image"},
+    {"record_id":"tavelo-grow-frameset","image_id":"tavelo-grow-primary-image"},
+    {"record_id":"winspace-g3-frameset","image_id":"winspace-g3-primary-image"},
+    {"record_id":"af01-frameset","image_id":"af01-primary-image"},
+    {"record_id":"bxt-055-frameset","image_id":"bxt-055-primary-image"}
+  ],
+  "procedure": {
+    "report_command": "npm run --silent image:report -- --ids=<comma-separated frozen image IDs> --json",
+    "integrate": "Persist the report date and every current resource URL/classification/status/content type to each matching data/images record. Only all-current-resource healthy checks remove image-health gaps; blocked, broken, wrong-content-type, or unreachable results remain explicit and preserve their gaps.",
+    "limits": "Do not change image URLs, files, rights, credits, alt text, or buyer visibility. Do not inspect out-of-scope image IDs."
+  },
+  "done_criteria": [
+    "Run the targeted image-health report once and retain its exact JSON output in the dated batch results record.",
+    "Persist only URL-bound health-check metadata supported by the report, preserving nonhealthy and incomplete results as unresolved.",
+    "Run focused validation and the full npm run check gate once; do not rerun image:report after this batch's image health metadata edits.",
+    "Re-run the gap inventory and record exactly which image-health gaps were removed and which remain.",
+    "Local B60 batch only; no push, pull request, merge, publication, or production action."
+  ],
+  "delivery": "Local B60 batch only; no push, pull request, merge, publication, or production action."
+}

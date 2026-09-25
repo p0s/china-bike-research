@@ -484,5 +484,11 @@
     "carbonda-cfr707-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/carbonda-cfr707-50-area-sweep-2026-08-30.json. The exact current manufacturer page resolves T700+T800 mixed-carbon EPS monolith construction and the full-Toray-carbon fork."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/carbonda-cfr707-50-area-sweep-2026-08-30.json. The exact current manufacturer page resolves T700+T800 mixed-carbon EPS monolith construction and the full-Toray-carbon fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["carbonda-cfr707-official-2026-08-17"],
+    "note": "The candidate already records the exact CFR707 manufacturer's T700+T800 EPS monolith frame and full-Toray-carbon EPS fork specification."
+  }
 }

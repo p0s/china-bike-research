@@ -1,0 +1,33 @@
+{
+  "batch": 100,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 145,
+  "scope_method": "Top of the fresh evidence-found queue, limited to 14 atomic attempts across 10 exact target records/models. Local source-reuse audit only; no new web research or image/price mutation.",
+  "scope": [
+    {"record_type":"candidate","record_id":"missing-china-price-specialized-roubaix-sl8","attempt_id":"candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"variant","record_id":"sava-a7l-r7100","attempt_id":"variant-sava-a7l-r7100-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"variant","record_id":"sava-a7l-r7100","attempt_id":"variant-sava-a7l-r7100-image-2026-09-01","atomic_gap":"image"},
+    {"record_type":"candidate","record_id":"sava-gelaro-sf","attempt_id":"candidate-sava-gelaro-sf-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sava-r9","attempt_id":"candidate-sava-r9-frame-material-2026-09-01","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sava-r9","attempt_id":"candidate-sava-r9-tire-clearance-2026-09-01","atomic_gap":"tire-clearance"},
+    {"record_type":"candidate","record_id":"sava-starship-r13","attempt_id":"candidate-sava-starship-r13-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"platform","record_id":"scott-addict-rc-40","attempt_id":"platform-scott-addict-rc-40-geometry-2026-09-01","atomic_gap":"geometry"},
+    {"record_type":"variant","record_id":"spcycle-g028-frameset","attempt_id":"variant-spcycle-g028-frameset-purchase-route-2026-09-01","atomic_gap":"purchase-route"},
+    {"record_type":"candidate","record_id":"specialized-roubaix-sl8-sport-105","attempt_id":"candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"candidate","record_id":"specialized-s-works-crux-2024-sram-red-xplr","attempt_id":"candidate-specialized-s-works-crux-2024-sram-red-xplr-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"specialized-s-works-crux-2024-sram-red-xplr","attempt_id":"candidate-specialized-s-works-crux-2024-sram-red-xplr-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"specialized-s-works-crux-frameset","attempt_id":"candidate-specialized-s-works-crux-frameset-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"specialized-s-works-crux-frameset","attempt_id":"candidate-specialized-s-works-crux-frameset-frame-weight-2026-09-01","atomic_gap":"frame-weight"}
+  ],
+  "allowed_work": "One evidence-only Luna worker may inspect only the exact scoped attempt JSON, its accepted source records and its exact target record. Report whether every material source fact is already represented on the exact target with matching generation/build and caveats. Recommend source-reuse resolution only when the direct record correspondence is clear; preserve open status when source/target mismatch, stale current-state claims, image identity/rights, prices, generation, options or material caveats remain. No browsing, no filesystem edits, no checking sibling models, and no further areas outside this scope.",
+  "done_criteria": [
+    "All 14 scoped attempts receive a per-attempt source-reuse or unresolved recommendation with evidence paths and caveats.",
+    "Primary writer integrates only defensible resolutions into attempt metadata; no catalog values change in this metadata-only batch.",
+    "Fresh data:gaps and research:queue report the post-batch state.",
+    "Run validate, research:check, monotonic coverage acceptance/check and git diff --check; no full gate or image report unless source/catalog/image records change."
+  ]
+}

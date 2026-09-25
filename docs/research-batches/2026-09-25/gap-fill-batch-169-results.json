@@ -1,0 +1,96 @@
+{
+  "batch": 169,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-169-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "exact_records": 5,
+    "atomic_fields": 5,
+    "evidence_researcher": "Luna read-only evidence agent; root integrated all changes",
+    "distinct_current_queries_run": 5,
+    "new_page_open_attempts": 2,
+    "new_pages_returning_content": 1,
+    "retries_after_open_failure": 0,
+    "new_source_records": 0,
+    "candidate_price_changes": 0,
+    "catalog_gap_entries_reduced": 0,
+    "images_added": 0,
+    "image_records_changed": 0,
+    "formal_research_attempt_records_added": 0,
+    "existing_open_attempts_updated_in_place": 5,
+    "results": [
+      {
+        "record_id":"lightcarbon-lcg074s-d",
+        "field":"price-missing",
+        "query":"LCG074S-D 套装 价格 LightCarbon 官方 2026",
+        "result":"No public price surfaced; a similar LCG074-D catalog item is a different model.",
+        "source_ids":["lightcarbon-lcg074s-d-official-2026-08-29"],
+        "disposition":"blocked-no-public-exact-model-price"
+      },
+      {
+        "record_id":"lightcarbon-lcg087-d",
+        "field":"price-missing",
+        "query":"LightCarbon LCG087-D 车架组 含把组 公开售价 2026",
+        "result":"Specification results had no amount. The exact manufacturer page is quote-only; the historical GBP reference does not establish a current exact package or mainland offer.",
+        "source_ids":["lightcarbon-lcg087-d-official-2026-08-29"],
+        "disposition":"blocked-no-public-exact-model-price"
+      },
+      {
+        "record_id":"lightcarbon-lcg087s-d",
+        "field":"price-missing",
+        "query":"LightCarbon LCG087S-D 车架组 含独立把立 公开价格 2026",
+        "result":"The exact model surfaced but no public amount did. The exact manufacturer page is quote-only; no sibling price was transferred.",
+        "source_ids":["lightcarbon-lcg087s-d-official-2026-08-29"],
+        "disposition":"blocked-no-public-exact-model-price"
+      },
+      {
+        "record_id":"lightcarbon-lcr020-d",
+        "field":"price-missing",
+        "query":"LightCarbon LCR020-D 2026-2027 车架组 零售价 人民币",
+        "result":"A Chinertown search snippet mentioned US$1,169 for a customized painted 56 cm set (US$869 frame plus US$300 paint); this was discovery only. One open of the encoded URL was normalized by the web tool to a decoded comma URL and returned inaccessible. The normalized URL had not been pre-audited; no retry followed. The official 2026–27 catalog lists no retail amount.",
+        "result_url":"https://chinertown.com/index.php/topic%2C7237.195.html",
+        "source_ids":["lightcarbon-road-catalog-2026-2027"],
+        "disposition":"blocked-inaccessible-page-and-no-qualifying-price",
+        "scope_deviation":"The encoded URL passed exact-literal absence search; the tool normalized it to a decoded comma URL that was not checked before the open attempt. The error and no-retry decision are preserved in the existing B148 attempt notes."
+      },
+      {
+        "record_id":"missing-china-price-specialized-crux",
+        "field":"price-missing",
+        "query":"Specialized Crux Comp Shimano GRX 4223483 中国 官方售价 2026",
+        "result":"The verified-new Specialized Japan page identifies Crux Comp / Shimano GRX product 223483 and shows ¥495,000, but does not state model year or price type. This foreign-market price is excluded by B169's mainland Crux rule; no stock or checkout was checked. The China source provides no current CNY amount.",
+        "result_url":"https://www.specialized.com/jp/ja/crux-comp/p/4223483?color=5381938-4223483",
+        "source_ids":["specialized-crux-comp-china-2026-08-17","specialized-crux-comp-grx-official-2026-08-17"],
+        "disposition":"blocked-foreign-market-price-does-not-fill-mainland-gap"
+      }
+    ],
+    "ledger_date_constraint": "The five B148 predecessor attempts and B169 queries share 2026-09-25. The validator in src/lib/research-attempts.mjs requires retry.searched_at to be strictly later than the predecessor, while the ledger stores dates only. To avoid inventing a future date or rewriting prior campaign authorization, root left the original B148 channel-attempt entries intact, updated those five open records to blocked in place, and preserved the exact B169 queries and findings in these results and their attempt notes. The formal attempt counters therefore do not include the five same-day supplemental queries.",
+    "unresolved_reason": "No result met the frozen price criteria for its retained exact candidate. The visible Japanese Crux amount is excluded by scope, and the LCR020 forum snippet and inaccessible page are not price evidence."
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "formal_research_attempts": {"public_post":15450,"web":35890},
+    "research_status_counts": {"blocked":389,"conflicted":35,"found":15,"open":0,"temporarily-exhausted":4},
+    "queue": {"ready":0,"evidence-found":0,"deferred":43,"blocked":567,"conflicted":1},
+    "image_gaps": {"image-exactness":4,"image-health-unverified":2},
+    "images": 212
+  },
+  "validation": {
+    "research_check":"passed: 1,503 atomic fields; 15,450 public-post and 35,890 formal web attempts",
+    "coverage_acceptance":"accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command":"developer-storage-cache run -- codex-pnpm-check check",
+      "outcome":"passed",
+      "privacy":"passed",
+      "data_validation":"41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation":"1,503 atomic fields; 15,450 public-post and 35,890 formal web attempts",
+      "tests":"333/333 passed",
+      "build":"584 pages",
+      "seo":"458 indexable; 126 noindex"
+    },
+    "git_diff_check":"passed",
+    "image_report":"not run; no image records changed"
+  }
+}

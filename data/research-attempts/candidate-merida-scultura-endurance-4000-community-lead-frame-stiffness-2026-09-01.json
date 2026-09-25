@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "merida-scultura-endurance-4000-roadcc-2026-09-01"
+    "merida-scultura-endurance-4000-roadcc-2026-09-01",
+    "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-merida-scultura-endurance-4000-community-lead-batch-037-50-area-sweep-2026-09-01.json. The exact independent review says the frame and fork have more than enough stiffness without detectable flex and transfer power efficiently; qualitative ride assessment."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-merida-scultura-endurance-4000-community-lead-batch-037-50-area-sweep-2026-09-01.json. The exact independent review says the frame and fork have more than enough stiffness without detectable flex and transfer power efficiently; qualitative ride assessment.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23"
+    ],
+    "note": "Reviewer reports sufficient frame/fork stiffness, no felt flex and efficient power transfer. Subjective ride assessment, not an instrumented protocol."
+  }
 }

@@ -1,18 +1,50 @@
 {
   "id": "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "missing-china-price-quick-pro-gr-one" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-quick-pro-gr-one"
+  },
   "field": "frame-stiffness",
   "priority": "high",
   "searched_at": "2026-08-28",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [
-      { "attempt": 1, "query": "Quick Pro GR ONE stiffness ride review", "route": "independent exact-model review summary", "outcome": "found", "result_url": "https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride", "accessed_at": "2026-08-27", "note": "Review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; no measured stiffness score." }
-    ] }
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro GR ONE stiffness ride review",
+          "route": "independent exact-model review summary",
+          "outcome": "found",
+          "result_url": "https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride",
+          "accessed_at": "2026-08-27",
+          "note": "Review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; no measured stiffness score."
+        }
+      ]
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["quick-pro-gr-one-ride-review-2026-08-27"],
+  "accepted_source_ids": [
+    "quick-pro-gr-one-ride-review-2026-08-27",
+    "quick-gr-one-review-summary-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "Qualitative evidence is exposed with its basis and is not converted into a stiffness score."
+  "notes": "Qualitative evidence is exposed with its basis and is not converted into a stiffness score.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-pro-gr-one-ride-review-2026-08-27",
+      "quick-gr-one-review-summary-recheck-2026-09-23"
+    ],
+    "note": "Review summary describes noticeable designed flex at the seatpost cutout and a comfortable, fast rear ride for an exact GR:ONE custom build. It is secondary summary evidence, not an instrumented stiffness result."
+  }
 }

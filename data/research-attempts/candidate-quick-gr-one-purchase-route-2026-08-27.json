@@ -1,16 +1,50 @@
 {
   "id": "candidate-quick-gr-one-purchase-route-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "missing-china-price-quick-pro-gr-one" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-quick-pro-gr-one"
+  },
   "field": "purchase-route",
   "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "Quick GR ONE 中国 官网 购买", "route": "official China product page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Exact frame page exposes inventory and buy/cart controls, though price is blank.", "result_url": "https://www.quick-bikes.com.cn/product/32.html" }] }
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick GR ONE 中国 官网 购买",
+          "route": "official China product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-27",
+          "note": "Exact frame page exposes inventory and buy/cart controls, though price is blank.",
+          "result_url": "https://www.quick-bikes.com.cn/product/32.html"
+        }
+      ]
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["quick-gr-one-china-official-2026-08-25"],
+  "accepted_source_ids": [
+    "quick-gr-one-china-official-2026-08-25",
+    "quick-pro-gr-one-frameset-taobao-2026-08-28"
+  ],
   "retry_after": null,
-  "notes": "Official mainland route found without a usable CNY price or size/color stock split."
+  "notes": "Official mainland route found without a usable CNY price or size/color stock split.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-gr-one-china-official-2026-08-25",
+      "quick-pro-gr-one-frameset-taobao-2026-08-28"
+    ],
+    "note": "Official China page returned 403 today; its accepted 2026-08-25 access showed inventory and buy/cart controls but no price. Exact Taobao listing on 2026-08-28 showed ice-crack silver, size M, SKU 6032567658829, CNY 13,600, visible stock and 15-day presale dispatch. This is a dated frameset offer, not a current complete-bike checkout."
+  }
 }

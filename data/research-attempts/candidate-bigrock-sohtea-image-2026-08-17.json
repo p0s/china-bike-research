@@ -69,8 +69,19 @@
   "status": "found",
   "accepted_source_ids": [
     "round3-bigrock-sohtea-the-chinese-aethos-half-a-year-later-22e55cb19e",
-    "bigrock-sohtea-panda-podium-2026-08-17"
+    "bigrock-sohtea-panda-podium-2026-08-17",
+    "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+    "bigrock-japan-products-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+      "bigrock-japan-products-recheck-2026-09-23"
+    ],
+    "note": "Retailer gallery is mapped to the exact Sohtea listing, but reusable rights are not documented and no manufacturer Sohtea asset was found in the checked list. Keep image remote/unrehosted. Reopen with documented rights or an authorized manufacturer asset."
+  }
 }

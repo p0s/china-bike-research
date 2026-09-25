@@ -1,0 +1,55 @@
+{
+  "batch_id": "gap-fill-batch-03-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-03-scope.json",
+  "reviewed_at": "2026-09-23",
+  "status": "source-linked; model-unresolved",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "flying-pigeon-carbon-road-unknown",
+    "exact_identity": "Unresolved Flying Pigeon carbon-road marketplace listing from the 2026-08-08 anonymized Taobao snapshot"
+  },
+  "accepted_source": {
+    "id": "taobao-snapshot-2026-08-08",
+    "url": null,
+    "publisher": "China Bikes",
+    "finding": "The candidate now links the registered anonymized marketplace snapshot already identified by source_snapshot_id and source_refs. This documents where the ambiguous listing lead came from; it does not confirm the exact model, the apparent X900 marking, the component specification, or a current price."
+  },
+  "field_results": [
+    {
+      "field": "source-record-linkage",
+      "status": "resolved",
+      "finding": "Added taobao-snapshot-2026-08-08 to candidate source_ids. The data:gaps source-missing item cleared. Exact model identity and every unsupported product specification remain unresolved.",
+      "reopen_when": "The captured listing is superseded, its source mapping is corrected, or a new exact-model source becomes available."
+    }
+  ],
+  "integration": {
+    "candidate_facts_added": [],
+    "source_ids_added": ["taobao-snapshot-2026-08-08"],
+    "sources_added": 0,
+    "images_added": 0,
+    "files_changed": [
+      "data/candidates/flying-pigeon-carbon-road-unknown.json",
+      "data/coverage-baseline.json",
+      "docs/research-batches/2026-09-23/gap-fill-batch-03-scope.json",
+      "docs/research-batches/2026-09-23/gap-fill-batch-03-results.json"
+    ],
+    "validation_doc_privacy_cleanup": "Removed an absolute local tool path from the prior batch results record after the privacy gate identified it."
+  },
+  "validation": {
+    "coverage_baseline": "npm run --silent coverage:accept passed",
+    "full_gate": "codex-pnpm-check check passed",
+    "tests_passed": 304,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128,
+    "gaps_report_as_of": "2026-09-22",
+    "remaining_coarse_gaps": {
+      "source-missing": 0,
+      "candidate-blockers": 222,
+      "image-health-unverified": 37,
+      "image-exactness": 4
+    },
+    "diff_check": "git diff --check passed"
+  },
+  "delivery_boundary": "Local only; no push, pull request, merge, publication, seller contact, or image added."
+}

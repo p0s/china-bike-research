@@ -1,0 +1,91 @@
+{
+  "batch": 76,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 365,
+      "conflicted": 34,
+      "found": 45,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "These four exact candidates have unresolved mainland-price gaps from 2026-09-01 searches. Later exact-model official or seller route pages appeared on 2026-09-22 through 2026-09-24; one separate current mainland seller-item check per exact model can test whether those routes expose a dated CNY offer.",
+    "exact_models": 4,
+    "atomic_gaps": 4,
+    "targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "quick-pro-ur-one",
+        "model": "Quick Pro UR:ONE Shimano Dura-Ace R9270 Di2 2×12 complete bike",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-quick-pro-ur-one-price-2026-09-01",
+        "new_lead": "Exact manufacturer Dura-Ace page and current product-route recheck; no mainland Dura-Ace amount. Exclude MyBike.parts ¥27,998 105 Di2 build and the US$6,899 global offer."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-trek-domane",
+        "model": "Trek Domane SL 5 Gen 4, exact China product 57629",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-missing-china-price-trek-domane-price-2026-09-01",
+        "new_lead": "A current mainland Bikemart seller page was rechecked 2026-09-23. The official CNY 20,800 catalog list price is not checkout evidence."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-elves-vanyar",
+        "model": "ELVES Vanyar Pro Disc 2024 frameset",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-missing-china-price-elves-vanyar-price-2026-09-01",
+        "new_lead": "Current exact 2024 manufacturer page rechecked 2026-09-23. Exclude the US$1,100 global price and other Vanyar years/builds."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-tavelo-attack",
+        "model": "Tavelo Attack frameset",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-missing-china-price-tavelo-attack-price-2026-09-01",
+        "new_lead": "Exact manufacturer product route rechecked 2026-09-23. Exclude the US$1,500 global price, Japanese clearance and other Tavelo models."
+      }
+    ],
+    "campaign_extension": {
+      "allowed_channels": [
+        "web"
+      ],
+      "max_new_attempts_per_model": 1
+    }
+  },
+  "research_route": {
+    "source_class": "mainland-marketplace-product-page",
+    "action": "Use one focused public web search per model for a current exact mainland JD/Tmall or attributable China seller item. Search and evaluate the four models sequentially; open at most one exact item per model. Verify exact identity/package, visible CNY amount, date or current order context, and stated conditions.",
+    "stop_rule": "At most four new web attempts total, one per exact model. Stop each model after one exact item page or no result. Do not log in, enter account-only checkout, contact sellers, use XHS, convert foreign prices, treat official list prices as checkout, or transfer neighboring years/builds."
+  },
+  "done_criteria": [
+    "When a public exact mainland seller item establishes a current CNY amount and matching package, add a dated observed_price and source metadata only to that candidate, preserving all official/foreign references.",
+    "For each model with no exact public price and package, add one blocked/no-result retry and leave observed_price absent.",
+    "Run focused validation, coverage acceptance/check, and `npm run check` once for the coherent batch. No image report unless image records change.",
+    "Local B76 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

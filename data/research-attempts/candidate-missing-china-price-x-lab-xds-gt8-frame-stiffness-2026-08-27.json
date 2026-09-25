@@ -33,8 +33,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xlab-gt8-velo-review-2026-08-27"
+    "xlab-gt8-velo-review-2026-08-27",
+    "xlab-gt8-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking."
+  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "xlab-gt8-official-current-2026-09-23",
+      "xlab-gt8-velo-review-2026-08-27"
+    ],
+    "note": "qualitative-only-no-stiffness-measurement: The manufacturer gives only qualitative strength/compliance wording. Velo reports compliance and a muted ride with race-oriented handling; neither supplies an objective stiffness method or value. Reopen trigger: Reopen for an exact-model stiffness test with a stated method or measured result."
+  }
 }

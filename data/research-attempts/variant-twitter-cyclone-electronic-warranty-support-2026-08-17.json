@@ -78,8 +78,21 @@
   "status": "found",
   "accepted_source_ids": [
     "twitterbikefactory-warranty-2026-08-17",
-    "twitterbikeusa-warranty-2026-08-17"
+    "twitterbikeusa-warranty-2026-08-17",
+    "twitter-cycles-warranty-recheck-2026-09-23",
+    "twitterbikeusa-warranty-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Warranty is market/seller-specific. The manufacturer page's bracket placeholders were rejected; verify which authorized seller route applies to the China snapshot."
+  "notes": "Round-four official/web completion. Warranty is market/seller-specific. The manufacturer page's bracket placeholders were rejected; verify which authorized seller route applies to the China snapshot.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "twitter-cycles-warranty-recheck-2026-09-23",
+      "twitterbikeusa-warranty-recheck-2026-09-23",
+      "twitterbikeusa-warranty-2026-08-17",
+      "twitterbikefactory-warranty-2026-08-17"
+    ],
+    "note": "The China policy still has placeholders; USA direct-site terms now say two years versus the previously accepted one-year text, and HK distributor terms are regional. Mainland coverage remains unresolved. Reopen with a usable current China policy or exact mainland order terms."
+  }
 }

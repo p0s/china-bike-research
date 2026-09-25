@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "quick-gr-one-global-store-2026-09-01"
+    "quick-gr-one-global-store-2026-09-01",
+    "quick-gr-one-global-store-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-gr-one-global-store-2026-09-01",
+      "quick-gr-one-global-store-recheck-2026-09-23"
+    ],
+    "note": "Current exact-frame page still contains manufacturer-hosted owner comments describing stiffness. This is qualitative testimony, not an independent or instrumented stiffness result."
+  },
   "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-quick-gr-one-frameset-batch-046-50-area-sweep-2026-09-01.json. Two manufacturer-hosted exact-model owner stiffness statements found, with provenance caveat."
 }

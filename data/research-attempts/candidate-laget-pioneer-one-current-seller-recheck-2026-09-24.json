@@ -1,0 +1,37 @@
+{
+  "id": "candidate-laget-pioneer-one-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "laget-pioneer-one" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-laget-pioneer-one-price-2026-09-01",
+  "retry_reason": "The exact manufacturer page confirms CNY 21,900 official retail but no current mainland seller option. One focused seller-item search tests for a separately observable price and order route.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-laget-pioneer-one-price",
+    "extends_attempt_id": "candidate-laget-pioneer-one-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland marketplace/dealer item search tests the exact PIONEER ONE frameset after the earlier campaign found only official retail evidence.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-laget-pioneer-one-price-2026-09-01", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "No current exact mainland marketplace or dealer item for the LAGET PIONEER ONE frameset surfaced.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "LAGET PIONEER ONE 钛合金车架组 钛合金 价格 淘宝 天猫",
+        "route": "One focused public mainland seller-item search for the exact LAGET PIONEER ONE frameset",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "Search surfaced the exact LAGET official product page/index at CNY 21,900 and foreign USD/SGD retailer pages, but no current mainland seller item with a CNY option amount and order context. Official retail remains a reference, and foreign prices were excluded without conversion."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "No current seller option was found; preserve official retail CNY 21,900 and leave candidate observed_price absent."
+}

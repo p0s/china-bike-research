@@ -1,21 +1,50 @@
 {
   "id": "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "missing-china-price-trek-checkpoint" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-trek-checkpoint"
+  },
   "field": "drivetrain",
   "priority": "high",
   "searched_at": "2026-08-28",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "2026 Trek Checkpoint SL 5 AXS Gen 3 drivetrain 40T 11-44", "route": "authorized-retailer exact-model specification", "outcome": "found", "result_url": "https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike", "accessed_at": "2026-08-28", "note": "The exact trim uses SRAM Apex XPLR AXS electronic 1×12 with a 40T crank and 11–44T cassette." }
+        {
+          "attempt": 1,
+          "query": "2026 Trek Checkpoint SL 5 AXS Gen 3 drivetrain 40T 11-44",
+          "route": "authorized-retailer exact-model specification",
+          "outcome": "found",
+          "result_url": "https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike",
+          "accessed_at": "2026-08-28",
+          "note": "The exact trim uses SRAM Apex XPLR AXS electronic 1×12 with a 40T crank and 11–44T cassette."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["trek-checkpoint-sl5-gen3-bikemart-2026-08-28"],
+  "accepted_source_ids": [
+    "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
+    "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The drivetrain belongs to the same 9.50 kg reference trim."
+  "notes": "The drivetrain belongs to the same 9.50 kg reference trim. Current focused recheck 2026-09-23: Bike Mart lists the exact 2026 US build as SRAM Apex AXS 12-speed XPLR, 40T crank and 11–44 cassette. Availability at that retailer was unavailable when checked.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
+      "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23"
+    ],
+    "note": "Bike Mart lists the exact 2026 US build as SRAM Apex AXS 12-speed XPLR, 40T crank and 11–44 cassette. Availability at that retailer was unavailable when checked."
+  }
 }

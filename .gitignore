@@ -14,3 +14,7 @@ infra/media/public/media/
 # Local repo helper paths
 _gitdir/
 .write_probe
+
+# Interrupted atomic build staging/backup output.
+.dist-stage-*/
+.dist-previous-*/

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arow-sl-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The public mainland Tavelo homepage exposed no current priced custom complete-bike item; surfaced product prices were foreign or for other builds.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arow SL Neo Black current official frameset price",
+          "route": "Current official Tavelo product page",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-24",
+          "note": "The manufacturer lists the selected XS Arow SL Neo Black frameset at USD 2,080 sale / USD 2,150 list. This current global frameset amount is useful as a separate reference but does not price the custom complete-bike build or establish a mainland CNY amount; no mainland price was assigned.",
+          "result_url": "https://www.tavelo.cc/products/tavelo-arow-sl-neo-black"
+        },
+        {
+          "attempt": 2,
+          "query": "Tavelo Arow SL current mainland China CNY complete bike price custom build",
+          "route": "Current official product catalog and mainland purchase-route search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The public official catalog exposed the USD frameset page but no mainland CNY checkout or priced complete-bike configuration tied to the reported custom build. No currency conversion or component estimate was added."
+        },
+        {
+          "attempt": 3,
+          "query": "Tavelo Arow SL custom complete build Dura-Ace R9270 车 天猫 京东 中国 价格",
+          "route": "Current Tavelo China catalog and mainland seller search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The China homepage exposed no exact seller item or price. Surfaced global USD frameset and Japan Arow Race SL pages were foreign or different builds. No mainland CNY custom complete-bike price was established.",
+          "result_url": "https://www.tavelo.com.cn/"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "tavelo-arow-sl-current-frameset-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Preserve the sourced USD frameset reference separately from the unresolved mainland custom complete-bike price."
+}

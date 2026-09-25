@@ -488,5 +488,14 @@
     "trinx-gtr-c6-smzdm-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-gtr-c6-50-area-sweep-2026-08-30.json. Current exact China-market sources identify a carbon frame; exact grade, lay-up and molding process remain unpublished."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-gtr-c6-50-area-sweep-2026-08-30.json. Exact China-market sources identify a carbon frame but do not establish fork material; exact frame grade, lay-up and molding process remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "trinx-gtr-c6-jd-2026-08-30",
+      "trinx-gtr-c6-smzdm-2026-08-30"
+    ],
+    "note": "The source-backed candidate value now states carbon frame only. Fork material, frame fiber grade, lay-up and molding process remain unverified and are listed as missing; no source was used to infer them."
+  }
 }

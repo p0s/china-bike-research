@@ -1,0 +1,51 @@
+{
+  "id": "candidate-mondince-fm316-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "mondince-fm316"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Distinct public mainland searches surfaced no exact FM316 seller item with a current CNY amount and selected package. The only exact product-price lead was a German-language foreign route in USD.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Mondince FM316 exact product page current mainland CNY price",
+          "route": "Exact current manufacturer product page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The page now states a typical US$500–650 single-frame range and welcomes single orders, but still requires a quote and gives no mainland CNY amount; it conflicts with the separate US$1,050 official guide reference.",
+          "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        },
+        {
+          "attempt": 2,
+          "query": "Mondince FM316 车架 国内 淘宝 价格 人民币",
+          "route": "Public mainland product and retailer search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://mybike.parts/de/bike_parts/1183-mondince-fm316-2026-aero-design-gravel-bike-frame",
+          "note": "Results included the already-reviewed quote-only manufacturer page and an overseas retailer; no mainland seller item or CNY amount was surfaced. The German-language MyBike.parts lead displayed USD $509 and routed to Mondince's foreign store."
+        },
+        {
+          "attempt": 3,
+          "query": "Mondince FM316 site:taobao.com OR site:jd.com OR site:pinduoduo.com",
+          "route": "Public mainland marketplace search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The indexed JD results were unrelated automobile tires with the FM316 label; no exact bicycle frame item was found."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["mondince-fm316-mybikeparts-foreign-lead-2026-09-24"],
+  "retry_after": null,
+  "notes": "Disposition: unresolved. The official quote-only USD range and the foreign retailer result do not establish a mainland amount. Distinct public mainland retailer searches found no exact FM316 item. Reopen on an accessible exact mainland listing with selected package, current CNY amount and purchase conditions."
+}

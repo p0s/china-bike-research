@@ -482,5 +482,11 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront lists US$1,399; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront lists US$1,399; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-a4-official-global-2026-08-17", "ecb-reference-rates-2026-08-31"],
+    "note": "The exact A4 global storefront lists US$1,399, and the dated ECB reference rates support only a CNY equivalent conversion. This is a non-mainland reference, not a China-market price, selected mainland seller listing, or checkout observation; the candidate's mainland-price blocker remains."
+  }
 }

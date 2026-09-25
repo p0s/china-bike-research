@@ -489,5 +489,11 @@
     "colnago-y1rs-current-specs-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The tracked CNY 59,800 product is a frame kit, so complete-bike weight is non-applicable. A 7.2 kg official complete-build reference is not assigned to it."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The tracked CNY 59,800 product is a frame kit, so complete-bike weight is non-applicable. A 7.2 kg official complete-build reference is not assigned to it.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["colnago-y1rs-china-launch-2026-08-30"],
+    "note": "The exact mainland offer is a frame kit, not a complete bike; the candidate already records its 965 g unpainted frame and 450 g fork. No complete-bike weight applies to this selected package."
+  }
 }

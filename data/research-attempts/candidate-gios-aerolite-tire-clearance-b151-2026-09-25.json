@@ -1,0 +1,54 @@
+{
+  "id": "candidate-gios-aerolite-tire-clearance-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "gios-aerolite"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-gios-aerolite-tire-clearance-2026-08-29",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-gios-aerolite-tire-clearance",
+    "extends_attempt_id": "candidate-gios-aerolite-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-gios-aerolite-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "GIOS AERO LITE 2026 China CNY 11999 complete bike drivetrain weight max tire width",
+          "route": "One bounded current exact-model web query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search results distinguished the older 30T AERO LITE from GEN5 sources; neither is mapped to the retained CNY 11,999 listing. Search snippets were not accepted. Existing frame/fork weights are not complete-bike weight; the generation/trim-specific drivetrain and maximum clearance remain unresolved."
+        }
+      ],
+      "blocker": "GEN5 compatibility with 32C is not a maximum and does not map to the unresolved listing generation."
+    }
+  },
+  "accepted_source_ids": [
+    "gios-apac-aero-lite-gen5-current-2026-09-23"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact tire-clearance field. Search results distinguished the older 30T AERO LITE from GEN5 sources; neither is mapped to the retained CNY 11,999 listing. Search snippets were not accepted. Existing frame/fork weights are not complete-bike weight; the generation/trim-specific drivetrain and maximum clearance remain unresolved.",
+  "searched_at": "2026-09-25"
+}

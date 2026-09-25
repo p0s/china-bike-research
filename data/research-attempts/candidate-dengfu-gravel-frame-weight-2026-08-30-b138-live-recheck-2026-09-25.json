@@ -1,0 +1,52 @@
+{
+  "id": "candidate-dengfu-gravel-frame-weight-2026-08-30-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "dengfu-gravel"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-dengfu-gravel-frame-weight-2026-08-30",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-dengfu-r20-frame-weight",
+    "extends_attempt_id": "candidate-dengfu-gravel-frame-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One fresh exact-model search checked frame-weight; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-dengfu-gravel-frame-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "Search snippets did not state frame-only weight or a maximum tire clearance. No new exact-model page was opened and neither field qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Dengfu R20 Disc Gravel frame official specifications frame weight maximum tire clearance",
+          "route": "The manufacturer R20 page resurfaced but was already recorded in the predecessor history; it was not reopened.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search snippets did not state frame-only weight or a maximum tire clearance. No new exact-model page was opened and neither field qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Search snippets did not state frame-only weight or a maximum tire clearance. No new exact-model page was opened and neither field qualifies."
+}

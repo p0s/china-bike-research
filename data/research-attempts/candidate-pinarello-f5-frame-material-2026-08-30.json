@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pinarello-f5-my26-current-2026-08-30"
+    "pinarello-f5-my26-current-2026-08-30",
+    "pinarello-f5-my26-current-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pinarello-f5-my26-current-2026-08-30",
+      "pinarello-f5-my26-current-recheck-2026-09-23"
+    ],
+    "note": "Retain the accepted MY26 105 Di2 Torayca T700 UD specification. Current visible page extract did not expose the material text; do not generalize it to the configuration-hidden F5 card."
+  },
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pinarello-f5-50-area-sweep-2026-08-30.json. Current exact MY26 F5 frame is Torayca T700 UD carbon."
 }

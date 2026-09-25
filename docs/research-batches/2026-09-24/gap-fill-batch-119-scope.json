@@ -1,0 +1,51 @@
+{
+  "batch": 119,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 94,
+    "selected_queue_targets": [
+      "candidate:twitter-little-white-rabbit:frame-material",
+      "candidate:twitter-little-white-rabbit:identity-source",
+      "candidate:twitter-r10-pro-gen3:frame-material",
+      "candidate:twitter-r10-pro-gen3:identity-source",
+      "candidate:twitter-storm-knight:drivetrain",
+      "candidate:twitter-storm-knight:frame-material",
+      "candidate:twitter-storm-knight:identity-source",
+      "candidate:twitter-t10-pro:complete-weight",
+      "candidate:twitter-t10-pro:drivetrain",
+      "candidate:twitter-t8-closed-wheel:complete-weight"
+    ],
+    "selected_queue_priority_each": 100,
+    "selection_note": "Skip the three adjacent B118 fields already found to have insufficient or conflicting source evidence; review the next ten exact fields in the fresh queue."
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:twitter-little-white-rabbit",
+      "candidate:twitter-r10-pro-gen3",
+      "candidate:twitter-storm-knight",
+      "candidate:twitter-t10-pro",
+      "candidate:twitter-t8-closed-wheel"
+    ],
+    "atomic_gaps": [
+      "candidate:twitter-little-white-rabbit:frame-material",
+      "candidate:twitter-little-white-rabbit:identity-source",
+      "candidate:twitter-r10-pro-gen3:frame-material",
+      "candidate:twitter-r10-pro-gen3:identity-source",
+      "candidate:twitter-storm-knight:drivetrain",
+      "candidate:twitter-storm-knight:frame-material",
+      "candidate:twitter-storm-knight:identity-source",
+      "candidate:twitter-t10-pro:complete-weight",
+      "candidate:twitter-t10-pro:drivetrain",
+      "candidate:twitter-t8-closed-wheel:complete-weight"
+    ],
+    "research_boundary": "Audit only each frozen candidate, its current queue attempt and accepted source records, one exact source at a time. Add source-reuse resolutions only when the accepted source directly supports the exact candidate claim. Keep seller-source class, generation, configuration, measurement, market and identity caveats. Leave unsupported or mismatched facts open; do not broaden an uncertain lead into a model spec. No external requests.",
+    "excluded": [
+      "No other models or atomic fields.",
+      "No new web/public-post/seller requests or source files.",
+      "No catalog, price or image changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

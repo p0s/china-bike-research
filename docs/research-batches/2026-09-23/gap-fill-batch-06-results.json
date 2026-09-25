@@ -1,0 +1,163 @@
+{
+  "batch_id": "gap-fill-batch-06-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-06-scope.json",
+  "scope_count": {
+    "exact_models": 9,
+    "atomic_fields": 15
+  },
+  "completed_at": "2026-09-23",
+  "external_limits": {
+    "xhs_preflight": {
+      "status": "unavailable",
+      "failure_class": "cdp_unavailable",
+      "error": "fetch failed",
+      "queries_dispatched": 0,
+      "note": "The canonical XHS extension doctor could not reach its CDP endpoint. No XHS tab was opened and no query was sent; public-post channels remain not-run or carried-forward as recorded."
+    }
+  },
+  "results": [
+    {
+      "record_id": "lightcarbon-speedz-complete",
+      "field": "wheels",
+      "status": "temporarily-exhausted",
+      "note": "The 2026-2027 LightCarbon catalog and exact marketplace routes did not map a wheelset to this SPEEDZ 105 mechanical 2x12 build. SPEEDZ, 速7 and LCR017-D references remain distinct; no wheel fact was inferred.",
+      "sources_checked": ["https://www.lightcarbon.com/uploadfile/downloads/2026-2027%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"]
+    },
+    {
+      "record_id": "pardus-robin-evo-community-lead",
+      "field": "warranty-support",
+      "status": "partially-resolved",
+      "note": "The China customer-service page and dealer locator establish a general support route. The source does not establish warranty duration, exclusions, eligibility, or coverage of this generation-unresolved competition build.",
+      "source_ids": ["pardus-china-support-2026-09-22"],
+      "retry_record_id": "candidate-pardus-robin-evo-community-lead-warranty-support-2026-09-23"
+    },
+    {
+      "record_id": "pardus-spark-rs-community-lead",
+      "field": "warranty-support",
+      "status": "partially-resolved",
+      "note": "The China customer-service page and dealer locator establish a general support route. Exact warranty coverage for the custom build and its unresolved generation remains unknown.",
+      "source_ids": ["pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "current-configuration",
+      "status": "unresolved",
+      "note": "The current official catalog page is Uragano GRX RX600, not this EVO build. The dated Tmall APEX listing is historical, its direct page was unavailable on recheck, and it does not map to the reviewed APEX AXS/X1 Eagle build. Current SKU, stock, and BOM remain unknown.",
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=6216&id=21402&pz=6215&t=27447",
+        "https://detail.tmall.com/item.htm?id=739901894991"
+      ]
+    },
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "warranty-support",
+      "status": "partially-resolved",
+      "note": "The China customer-service page and dealer locator establish a general support route. Exact EVO warranty duration, eligibility, and coverage of the reviewed build remain unknown.",
+      "source_ids": ["pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "bottom-bracket",
+      "status": "partially-resolved",
+      "note": "The exact 32C/UDH listing explicitly states T47 thread. It does not state shell width or crank compatibility; the 35C New-Version page remains a separate revision.",
+      "source_ids": ["seraph-tt-x68-new-storefront-2026-09-23"]
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "price",
+      "status": "partially-resolved",
+      "note": "The exact page displays US$629. Applying the ECB 2026-09-22 USD/CNY cross-rate yields a CNY 4,214 reference for the listed package; selected options and mainland delivered price are not established.",
+      "source_ids": ["seraph-tt-x68-new-storefront-2026-09-23", "ecb-reference-rates-2026-09-22"]
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No controlled or measured stiffness result was found for the exact 32C/UDH revision. Older BSA or 35C references do not transfer."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "status": "unresolved",
+      "note": "Exact official and marketplace searches found no current mainland amount. The official page showed a verification interstitial; it was not bypassed or retried. Historical overseas owner material is not a current quote."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No measured exact-model stiffness result was found. The owner's subjective ride comments are not a stiffness test."
+    },
+    {
+      "record_id": "mondince-fm316",
+      "field": "price",
+      "status": "partially-resolved",
+      "note": "Mondince's 2026 guide lists the FM316 frameset at US$1,050, converted to a CNY 7,035 reference. The product page is quote-on-request and availability/MOQ wording conflicts; this is not a mainland quote or selected order total.",
+      "source_ids": ["mondince-fm316-guide-price-2026-09-22", "ecb-reference-rates-2026-09-22"]
+    },
+    {
+      "record_id": "mondince-fm316",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "A manufacturer article identifies the FM316 and mentions ISO testing/report availability, but no report or stiffness measurement was provided."
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "price",
+      "status": "partially-resolved",
+      "note": "The exact 2023 listing displays US$499, reduced from US$599, before selectable options. This converts to a CNY 3,343 reference; selected package and mainland delivery cost remain unknown.",
+      "source_ids": ["velobuild-cx-002-2023-storefront-price-2026-09-23", "ecb-reference-rates-2026-09-22"]
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No measured or controlled stiffness evidence was found for the exact 2023 internal-routing version."
+    },
+    {
+      "record_id": "evolve-cima-road",
+      "field": "price",
+      "status": "partially-resolved",
+      "note": "The official Navy White frame/fork/seatpost package is listed at US$2,299, converted to a CNY 15,403 reference. The optional US$200 cockpit is excluded and there is no mainland delivered quote or selected total.",
+      "source_ids": ["evolve-cima-road-official-2026-09-22", "ecb-reference-rates-2026-09-22"]
+    }
+  ],
+  "integrated_changes": {
+    "candidate_official_price_references": [
+      {"record_id": "seraph-tt-x68-new-udh", "amount_cny": 4214, "original": "USD 629"},
+      {"record_id": "mondince-fm316", "amount_cny": 7035, "original": "USD 1050"},
+      {"record_id": "velobuild-cx-002-2023", "amount_cny": 3343, "original": "USD 499"},
+      {"record_id": "evolve-cima-road", "amount_cny": 15403, "original": "USD 2299"}
+    ],
+    "reference_rate": "ECB 2026-09-22: EUR 1 = USD 1.1463 and CNY 7.6803; USD/CNY cross-rate 6.70007851.",
+    "images_added": 0,
+    "source_records_added": [
+      "ecb-reference-rates-2026-09-22",
+      "seraph-tt-x68-new-storefront-2026-09-23",
+      "velobuild-cx-002-2023-storefront-price-2026-09-23"
+    ]
+  },
+  "post_batch_queue": {
+    "as_of": "2026-09-23",
+    "ready": 6,
+    "evidence_found_waiting_for_integration": 860,
+    "deferred": 41,
+    "blocked": 496,
+    "conflicted": 60,
+    "images_in_dataset": 212
+  },
+  "reopening_triggers": [
+    "A dated exact SPEEDZ build sheet naming the wheelset.",
+    "A current exact Uragano EVO SKU/BOM or explicit mapping to the reviewed build.",
+    "PARDUS warranty terms identifying the relevant generation and claimant eligibility.",
+    "Seraph shell width or exact crank-compatibility statement.",
+    "Current mainland price, selected package, or delivery quote for the four foreign-reference framesets and Airwolf YF-R003.",
+    "A reproducible exact-frame stiffness test or instrumented measurement."
+  ],
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline now protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via codex-pnpm-check; privacy, data validation, research ledger, coverage, 306 tests, 584-page build and SEO audit passed",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

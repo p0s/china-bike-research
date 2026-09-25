@@ -59,8 +59,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "giant-china-dealer-locator-2026-08-17"
+    "giant-china-dealer-locator-2026-08-17",
+    "giant-propel-advanced-sl1-mainland-current-2026-09-23",
+    "giant-china-dealer-locator-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-propel-advanced-sl1-mainland-current-2026-09-23",
+      "giant-china-dealer-locator-current-2026-09-23"
+    ],
+    "note": "Giant China's exact product page links a dealer locator and direct online-buy route, and the current locator is live. The store click-through showed no exact Propel SL 1 SKU; size/color stock, final checkout and transaction-specific warranty remain unknown."
+  }
 }

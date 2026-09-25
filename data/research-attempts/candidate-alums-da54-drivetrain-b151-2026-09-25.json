@@ -1,0 +1,56 @@
+{
+  "id": "candidate-alums-da54-drivetrain-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "alums-da54"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-alums-da54-drivetrain-2026-08-29",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-alums-da54-drivetrain",
+    "extends_attempt_id": "candidate-alums-da54-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-alums-da54-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ALVAS 爱瓦士 DA54 mainland CNY complete bike selected drivetrain build weight",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.kou8.com/wenzhang/c911a410-25d4-11f1-a6c1-01d429d18fb4",
+          "note": "The 2026-03-22 KOU8 user-content article, accessed 2026-09-25, lines 58-59 and 87 identifies DA54 and claims Shimano 7120 24-speed hydraulic disc plus 8.9 kg. It gives no size, included equipment, or weighing basis and does not map that build to the retained CNY 11,439 mainland listing; both frozen fields remain unresolved for that selected option."
+        }
+      ],
+      "blocker": "The global Ultegra Di2 and Australian 105 Di2 builds do not identify the drivetrain of the retained mainland option; the KOU8 7120 claim is unmapped."
+    }
+  },
+  "accepted_source_ids": [
+    "alvas-da54-official-2026-08-29",
+    "alvas-da54-australia-2026-08-29"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact drivetrain field. The 2026-03-22 KOU8 user-content article, accessed 2026-09-25, lines 58-59 and 87 identifies DA54 and claims Shimano 7120 24-speed hydraulic disc plus 8.9 kg. It gives no size, included equipment, or weighing basis and does not map that build to the retained CNY 11,439 mainland listing; both frozen fields remain unresolved for that selected option.",
+  "searched_at": "2026-09-25"
+}

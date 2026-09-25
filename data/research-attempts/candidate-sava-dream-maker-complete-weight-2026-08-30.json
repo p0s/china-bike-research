@@ -485,5 +485,11 @@
     "sava-dream-maker-r7170-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact manufacturer claim is approximately 7.8 kg."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact manufacturer claim is approximately 7.8 kg.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-dream-maker-r7170-current-2026-08-30"],
+    "note": "The exact R17-R7170-24S manufacturer page supports approximately 7.8 kg, matching the 7,800 g candidate value. Size, pedals, accessories, and weighing method are unspecified; the value remains an approximate manufacturer claim."
+  }
 }

@@ -6,7 +6,7 @@
   },
   "field": "geometry",
   "priority": "medium",
-  "searched_at": "2026-09-22",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "web",
     "public-post"
@@ -35,8 +35,17 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "velobuild-cx002-spec-sheets-2026-09-22",
-    "velobuild-cx002-geometry-sheet-2026-09-22"
+    "velobuild-cx002-geometry-sheet-2026-09-22",
+    "velobuild-cx002-official-product-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Next: corrected manufacturer drawing or exact delivered-fork measurement. Do not choose a fork offset."
+  "notes": "The current exact 2023 CX-002 product page confirms identity but exposes no geometry. Saved manufacturer-linked sheets still conflict on fork offset (45 mm versus 55 mm); the public-post channel remains not run, and no value is selected for fit or handling decisions.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "velobuild-cx002-official-product-recheck-2026-09-25"
+    ],
+    "note": "The current exact 2023 CX-002 product page confirms identity but exposes no geometry. Saved manufacturer-linked sheets still conflict on fork offset (45 mm versus 55 mm); the public-post channel remains not run, and no value is selected for fit or handling decisions."
+  }
 }

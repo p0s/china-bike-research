@@ -19,7 +19,8 @@
     "xds-ad500-2025-mainland-spec-2026-08-30",
     "xds-ad500-2025-mainland-weight-2026-08-30",
     "xds-ad500-2025-dealer-video-2026-08-30",
-    "xds-ad500-vietnam-current-2026-08-30"
+    "xds-ad500-vietnam-current-2026-08-30",
+    "xds-ad500-vietnam-current-recheck-2026-09-25"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -30,15 +31,17 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6861.png#L2",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-09-25",
   "brand_id": "xds",
   "facts": {
     "listing_identity": "XDS / 喜德盛 AD500 2025 retained CNY 4,499 listing-image card",
-    "complete_weight_references": "Approximately 8.9 kg at 450 mm in Hong Kong, 9.23 kg without pedals in a mainland public report and 10.2 kg on the Vietnam regional page; retained delivery build unresolved",
+    "complete_weight_references": "Hong Kong: approximately 8.9 kg at 450 mm; mainland 2025 public report: 9.23 kg without pedals; Vietnam: 10.2 kg with alloy fork. Region, fork and selected delivery build differ; the retained card build remains unresolved.",
     "drivetrain": "L-TWOO ER9 electronic hydraulic 2x12 with 11-32T cassette and 50/34T Branta power-meter crank",
     "frame_material": "X6 aluminum frame; exact current sources conflict between carbon and aluminum forks by market or batch",
     "fitted_tire": "700x28C on current exact builds; fitted size is not a manufacturer maximum",
-    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas"
+    "frame_stiffness_status": "No controlled exact-model stiffness magnitude or reproducible protocol found after 50 registered source areas",
+    "complete_weight_g": 9230,
+    "complete_weight_basis": "Exact-2025 mainland public report measured 9.23 kg without pedals; frame size and measurement protocol are unstated. The retained CNY 4,499 card does not identify the same selected delivery build, so use this only as a mainland reference; Hong Kong and Vietnam weights remain regional references."
   },
   "source_url": "https://post.smzdm.com/p/al9k369g/",
   "source_note": "Current exact sources agree on the X6 aluminum and ER9 2x12 core but publish conflicting 8.9, 9.23 and 10.2 kg references plus carbon-versus-aluminum fork differences. No maximum clearance or controlled stiffness result is inferred."

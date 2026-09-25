@@ -1,0 +1,52 @@
+{
+  "id": "candidate-pardus-uragano-f-complete-weight-2026-09-01-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-f"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-pardus-uragano-f-complete-weight-2026-09-01",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pardus-uragano-f-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish complete-weight for the exact retained target build. No exact official/authorized page surfaced; official source was for sibling URAGANO GRX RX600 11-speed, and Thai exact listing had unverified seller authorization. Reviewed both scoped predecessor attempts (100 unique queries/routes total); available history had no result URLs. New query checked against predecessor query text.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"PARDUS Uragano F\" 瑞豹 整车重量 轮胎最大宽度 官方",
+          "route": "No newly surfaced exact official/authorized product page. Results included sibling URAGANO trims and an exact Thai listing with unverified seller authorization; neither was opened or accepted.",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "No exact official/authorized page surfaced; official source was for sibling URAGANO GRX RX600 11-speed, and Thai exact listing had unverified seller authorization. Reviewed both scoped predecessor attempts (100 unique queries/routes total); available history had no result URLs. New query checked against predecessor query text."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish complete-weight for the exact retained target build. No exact official/authorized page surfaced; official source was for sibling URAGANO GRX RX600 11-speed, and Thai exact listing had unverified seller authorization. Reviewed both scoped predecessor attempts (100 unique queries/routes total); available history had no result URLs. New query checked against predecessor query text.",
+  "campaign_extension": {
+    "id": "b139-pardus-uragano-f-complete-weight",
+    "extends_attempt_id": "candidate-pardus-uragano-f-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "batch": 62,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    }
+  },
+  "selection": {
+    "basis": "Choose one exact mainland observed-price gap with an existing current manufacturer MSRP anchor. The public official page was rechecked on 2026-09-23 and still lists CNY 7,900; one fresh public retail-item search tests whether a buyer-visible current checkout exists.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one existing Luna Max agent; read-only source research, no repository writes",
+    "root_writer": "integrate only an exact mainland checkout source and observation, or record a one-route blocked disposition"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "laget-pioneer",
+      "model": "LAGET PIONEER titanium road frameset",
+      "gap_code": "price-not-observed",
+      "research_field": "price",
+      "gap_semantics": "mainland-observed-checkout",
+      "priority_score": 31,
+      "attempt_id": "candidate-laget-pioneer-price-2026-09-01",
+      "official_price_anchor": {
+        "amount_cny": 7900,
+        "currency": "CNY",
+        "price_type": "official-retail",
+        "observed_at": "2026-09-01",
+        "current_source_id": "laget-pioneer-official-recheck-2026-09-23"
+      },
+      "current_state": "Candidate is an exact LAGET PIONEER frameset with an official CNY 7,900 MSRP and no observed_price. The manufacturer page rechecked 2026-09-23 repeats the MSRP but does not establish buyer checkout, seller stock, or the actual included package.",
+      "new_route_scope": "One fresh public web search for a current mainland seller or marketplace item for the exact LAGET PIONEER frameset. Open at most one exact item reached from that query. Stop at the first decisive exact listing; do not repeat the prior 50-area sweep.",
+      "acceptance_requirements": [
+        "The listing must identify LAGET PIONEER specifically, not PIONEER ONE, PIONEER SLR, or another LAGET titanium model.",
+        "The seller and mainland marketplace/store must be identifiable, and the item must offer the exact frameset/package rather than an assembled bike or accessory bundle.",
+        "A numeric CNY amount must be publicly visible with current stock, purchasable state, dated listing, or equivalent current context. Record seller, package, URL and access date.",
+        "Do not treat the CNY 7,900 manufacturer MSRP as a buyer checkout price; do not infer an observed price from search snippets or an official product page alone.",
+        "Reject login/private-message/quote-only pages, stale indexes, unclear included components, and seller/model ambiguity."
+      ],
+      "already_checked_sources": [
+        "titanium-laget-pioneer-official",
+        "laget-pioneer-official-recheck-2026-09-23"
+      ],
+      "excluded_routes": [
+        "repeating the prior 50-area campaign",
+        "manufacturer MSRP without buyer checkout evidence",
+        "PIONEER ONE, PIONEER SLR, or other LAGET models",
+        "assembled-bike price or ambiguous component bundle",
+        "foreign-market amount, unconverted currency, owner recollection, or inaccessible quote"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use one fresh public item-search route and inspect at most one exact seller listing.",
+    "If accepted, add a dated source and candidate observed_price with the exact frameset package and visible current CNY amount; preserve official_price separately.",
+    "If no accepted checkout is found, add one concise retry attempt with a formal one-route campaign_extension pointing to this scope; preserve the prior official-price evidence and all earlier attempts.",
+    "Do not publish or create a marketplace account/order; no login, checkout, private message or purchase is in scope.",
+    "Run focused validation and the full repository gate once for any data or research-attempt changes; no images are in scope.",
+    "Local B62 batch only; no push, pull request, merge, publication, or production action."
+  ],
+  "delivery": "Local B62 batch only; no push, pull request, merge, publication, or production action."
+}

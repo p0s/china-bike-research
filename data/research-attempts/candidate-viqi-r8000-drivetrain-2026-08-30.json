@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "viqi-r8000-current-jd-2026-08-30"
+    "viqi-r8000-current-jd-2026-08-30",
+    "viqi-r8000-current-jd-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/viqi-r8000-50-area-sweep-2026-08-30.json. Current exact-family mainland indexes identify Shimano Ultegra R8000 mechanical 2x11, or 22-speed."
+  "notes": "B122 reused accepted JD listing-family evidence for the marketplace-listed Ultegra R8000 mechanical 22-speed option, with a current exact VIQI R8000 22-speed JD index recheck. This remains a marketplace claim, not manufacturer verification or a complete BOM.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "viqi-r8000-current-jd-2026-08-30",
+      "viqi-r8000-current-jd-recheck-2026-09-24"
+    ],
+    "note": "B122 reused accepted JD listing-family evidence for the marketplace-listed Ultegra R8000 mechanical 22-speed option, with a current exact VIQI R8000 22-speed JD index recheck. This remains a marketplace claim, not manufacturer verification or a complete BOM."
+  }
 }

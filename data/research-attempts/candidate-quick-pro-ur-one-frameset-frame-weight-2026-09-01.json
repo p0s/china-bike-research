@@ -483,5 +483,6 @@
     "quick-pro-ur-one-rbs-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-frameset-batch-045-50-area-sweep-2026-09-01.json. The exact manufacturer claim is 629 g for size M; the independent review repeats the official basis without converting third-party painted-frame reports into a verified measurement."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-frameset-batch-045-50-area-sweep-2026-09-01.json. The exact manufacturer claim is 629 g for size M; the independent review repeats the official basis without converting third-party painted-frame reports into a verified measurement.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["quick-pro-ur-one-dura-ace-official-2026-08-17","quick-pro-ur-one-rbs-review-2026-09-01"],"note":"Disposition: reused the exact-model manufacturer claim of a 629 g size-M frame, repeated by the review. This is a manufacturer claim, not independent painted-frame weighing; retain size M and frame-only basis."}
 }

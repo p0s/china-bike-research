@@ -480,8 +480,19 @@
   "status": "found",
   "accepted_source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21",
-    "twitter-gravel-v3-2025-official-current-2026-09-01"
+    "twitter-gravel-v3-2025-official-current-2026-09-01",
+    "twitter-gravel-v3-2025-successor-route-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-twitter-v3-2024-rs-sensah-alloy-batch-046-50-area-sweep-2026-09-01.json. Current official offer is a distinct 2025 generation, confirming the retained 2024 build is legacy-only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-twitter-v3-2024-rs-sensah-alloy-batch-046-50-area-sweep-2026-09-01.json. Current official offer is a distinct 2025 generation, confirming the retained 2024 build is legacy-only.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-gravel-v3-2024-taobao-2026-08-21",
+      "twitter-gravel-v3-2025-official-current-2026-09-01",
+      "twitter-gravel-v3-2025-successor-route-recheck-2026-09-25"
+    ],
+    "note": "Leave a current route for the 2024 alloy build open. The live official page is the 2025 V3 25yr successor; the dated Taobao page is legacy evidence. Do not transfer successor availability or price."
+  }
 }

@@ -1,0 +1,82 @@
+{
+  "batch": 130,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 51
+    },
+    "selection_note": "Select the ten highest-scored remaining conflicted attempts after B129 dispositions. No ready or evidence-found items exist; deferred retries remain future-dated. Scope spans eight exact records and ten atomic fields."
+  },
+  "scope": {
+    "exact_target_models": [
+      "bianchi-oltre-race",
+      "hongfu-gravel",
+      "incolor-ssr",
+      "missing-china-price-canyon-grail",
+      "missing-china-price-specialized-crux",
+      "pardus-spark-rs-community-lead",
+      "seka-exaero-gr",
+      "tavelo-arden"
+    ],
+    "exact_record_count": 8,
+    "selected_fields": [
+      "variant:bianchi-oltre-race:bom",
+      "variant:bianchi-oltre-race:complete-weight",
+      "candidate:hongfu-gravel:frame-material",
+      "candidate:hongfu-gravel:identity-source",
+      "platform:incolor-ssr:price",
+      "candidate:missing-china-price-canyon-grail:price",
+      "candidate:missing-china-price-specialized-crux:warranty-support",
+      "candidate:pardus-spark-rs-community-lead:price",
+      "platform:seka-exaero-gr:frame-stiffness",
+      "candidate:tavelo-arden:price"
+    ],
+    "attempt_ids": [
+      "variant-bianchi-oltre-race-bom-2026-08-17",
+      "variant-bianchi-oltre-race-complete-weight-2026-08-17",
+      "candidate-hongfu-gravel-frame-material-2026-08-30",
+      "candidate-hongfu-gravel-identity-source-2026-08-30",
+      "platform-incolor-ssr-price-2026-08-17",
+      "candidate-missing-china-price-canyon-grail-price-2026-08-17",
+      "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17",
+      "candidate-pardus-spark-rs-community-lead-price-2026-08-17",
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28",
+      "candidate-tavelo-arden-price-2026-08-17"
+    ],
+    "accepted_source_ids_by_attempt": {
+      "variant-bianchi-oltre-race-bom-2026-08-17": ["bianchi-oltre-race-armenia-2026-08-17", "bianchi-oltre-race-dealer-2026-08-17"],
+      "variant-bianchi-oltre-race-complete-weight-2026-08-17": ["taobao-snapshot-2026-08-08", "bianchi-oltre-race-speed-cycles-weight-2026-08-30", "bianchi-oltre-race-allegro-weight-2026-08-30"],
+      "candidate-hongfu-gravel-frame-material-2026-08-30": ["hongfu-fm188-internal-current-2026-08-30", "hongfu-fm188-current-2026-08-30", "hongfu-fm279-current-2026-08-30"],
+      "candidate-hongfu-gravel-identity-source-2026-08-30": ["hongfu-current-gravel-category-2026-08-30", "hongfu-fm188-internal-current-2026-08-30", "hongfu-fm279-current-2026-08-30"],
+      "platform-incolor-ssr-price-2026-08-17": ["incolor-ssr-price-pdf-lead-2026-08-17", "incolor-ssr-panda-podium-2026-08-17"],
+      "candidate-missing-china-price-canyon-grail-price-2026-08-17": ["canyon-grail-cf7-china-2026-08-17", "canyon-grail-cf7-promotional-crawl-2026-08-17"],
+      "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17": ["round3-specialized-china-warranty-8f335b54cd", "round3-specialized-china-terms-78ff9e5eba", "round3-specialized-china-faq-63941cf802"],
+      "candidate-pardus-spark-rs-community-lead-price-2026-08-17": ["round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8", "pardus-spark-rs-tmall-price-2026-08-30", "public-pardus-spark-rs-build-2026-08-17"],
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28": ["seka-exaero-gr-official-2026-08-27", "seka-exaero-gr-cyclingweekly-review-2026-08-17"],
+      "candidate-tavelo-arden-price-2026-08-17": ["tavelo-arden-china-launch-2026-08-17", "tavelo-arden-official-2026-08-17"]
+    },
+    "research_boundary": "One existing Luna Max evidence-only reviewer. Inspect only these exact records, listed attempt histories, and accepted source records first. Work sequentially one exact model/source at a time and stop at decisive evidence. For every field return direct URL, actual access date, title, source class, supported claim, conflicts, market/build caveat and either a sourced resolution recommendation or evidence-backed unresolved disposition. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these ten frozen entries.",
+      "Do not transfer claims across model generations, trims, markets, sizes, builds or product types.",
+      "Do not convert advertised/wholesale prices into mainland checkout observations; no quotes, cart, purchase, or seller contact.",
+      "No new XHS capture, login, CAPTCHA, challenge handling or bypass.",
+      "No image files, downloads, redistribution, public posting, or external delivery.",
+      "Preserve conflicting and missing facts; do not infer exact configuration, warranty eligibility, price, weight or stiffness."
+    ],
+    "not_selected_from_remaining_queue": [
+      "variant-twitter-cyclone-electronic-complete-weight-2026-08-29",
+      "candidate-twitter-cyclone-r7120-complete-weight-2026-09-01",
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
+      "candidate-hongfu-gravel-tire-clearance-2026-08-30"
+    ]
+  }
+}

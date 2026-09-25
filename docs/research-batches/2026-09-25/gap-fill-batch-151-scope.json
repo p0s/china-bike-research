@@ -1,0 +1,148 @@
+{
+  "batch": 151,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 351,
+      "conflicted": 35,
+      "found": 10,
+      "open": 46,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Nine high-priority candidate records with specification fields not searched or reviewed on 2026-09-25, excluding all exact targets in B145-B150. Exactly 25 complete-weight, drivetrain, maximum-clearance, and frame-stiffness fields are frozen from the fresh data:gaps inventory."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "paragon-jazz-2026",
+        "name": "PARAGON 鹏来格 JAZZ 2026",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-paragon-jazz-2026-complete-weight-2026-08-30", "field": "complete-weight"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-paragon-jazz-2026-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-paragon-jazz-2026-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "pardus-super-sport",
+        "name": "PARDUS 瑞豹 Super Sport (original generation)",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-pardus-super-sport-complete-weight-2026-08-30", "field": "complete-weight"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-pardus-super-sport-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-pardus-super-sport-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "qingsha-carbon-folding",
+        "name": "轻鲨 QingSha QS91-20 blue / blue-carbon-wheel",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-qingsha-carbon-folding-complete-weight-2026-08-30", "field": "complete-weight"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-qingsha-carbon-folding-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-qingsha-carbon-folding-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "west-biking-team-road",
+        "name": "WEST BIKING 西骑者 Team edition carbon road",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-west-biking-team-road-complete-weight-2026-08-30", "field": "complete-weight"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-west-biking-team-road-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-west-biking-team-road-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "nscr-carbon-gravel-storage",
+        "name": "NSCR Carbon gravel bike with storage",
+        "record_type": "candidate",
+        "priority_score": 63,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "drivetrain-missing", "attempt_id": "candidate-nscr-carbon-gravel-storage-drivetrain-2026-08-30", "field": "drivetrain"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-nscr-carbon-gravel-storage-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-nscr-carbon-gravel-storage-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "alums-da54",
+        "name": "ALVAS 爱瓦士 DA54",
+        "record_type": "candidate",
+        "priority_score": 59,
+        "last_reviewed": "2026-08-29",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-alums-da54-complete-weight-2026-08-29", "field": "complete-weight"},
+          {"code": "drivetrain-missing", "attempt_id": "candidate-alums-da54-drivetrain-2026-08-29", "field": "drivetrain"}
+        ]
+      },
+      {
+        "id": "kung-horizon",
+        "name": "KUNG 攻 HORIZON 天际 complete bike",
+        "record_type": "candidate",
+        "priority_score": 59,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-kung-horizon-complete-weight-2026-08-30", "field": "complete-weight"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-kung-horizon-tire-clearance-2026-08-30", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "falco-t91-t912",
+        "name": "FALCO 三火 T912 / 寰宇单车 multi-configuration lead",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-falco-t91-t912-complete-weight-2026-08-29", "field": "complete-weight"},
+          {"code": "drivetrain-missing", "attempt_id": "candidate-falco-t91-t912-drivetrain-2026-08-29", "field": "drivetrain"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-falco-t91-t912-tire-clearance-2026-08-29", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "gios-aerolite",
+        "name": "GIOS AERO LITE (generation and trim unresolved)",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-gios-aerolite-complete-weight-2026-08-29", "field": "complete-weight"},
+          {"code": "drivetrain-missing", "attempt_id": "candidate-gios-aerolite-drivetrain-2026-08-29", "field": "drivetrain"},
+          {"code": "clearance-unverified", "attempt_id": "candidate-gios-aerolite-tire-clearance-2026-08-29", "field": "tire-clearance"}
+        ]
+      }
+    ],
+    "exact_record_count": 9,
+    "atomic_gap_entries": 25,
+    "research_boundary": "Reuse the same user-authorized Luna Max evidence-only agent; root remains the sole writer. For each exact candidate, inspect its record, linked source records, relevant attempts, and registered campaigns before one distinct web query. Open at most one genuinely new product/technical page per exact candidate. Before opening any page, literal-search the final URL across data/ and docs/; skip it if recorded or absence is uncertain. Do not repeat blocked routes or extend access beyond one scoped query per candidate.",
+    "field_rules": [
+      "Complete-bike weight must match the retained exact build and preserve size, included equipment/accessories, approximation, and weighing basis; frame or review-bike weights do not transfer.",
+      "Drivetrain claims need the exact model, speeds, layout, actuation, and selected build; unresolved marketplace options do not establish the retained configuration.",
+      "Tire clearance requires an explicit exact-model maximum; fitted tire width or nominal compatibility is not a maximum.",
+      "Frame stiffness requires a meaningful exact-model result or sufficiently specific independent assessment; marketing adjectives alone do not qualify.",
+      "Keep original-generation PARDUS Super Sport separate from later Super Sport/PES variants.",
+      "Keep QingSha QS91-20's selected blue/blue-carbon-wheel option separate from sibling builds.",
+      "FALCO T912 and GIOS AERO LITE remain configuration/generation ambiguous; do not transfer sibling facts."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No image changes, price records, unrelated specifications, or candidate facts without exact supporting evidence. Only the frozen fields, supporting sources and attempt records, coverage baseline if required, test attempt-count expectation if stale, and dated batch documentation may change.",
+      "No GitHub mutation, commit, push, PR, merge, publish, or production write."
+    ]
+  },
+  "external_delivery": "none"
+}

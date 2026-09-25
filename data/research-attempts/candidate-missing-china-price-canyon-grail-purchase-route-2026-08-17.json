@@ -33,8 +33,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "canyon-grail-cf7-china-2026-08-17"
+    "canyon-grail-cf7-china-2026-08-17",
+    "canyon-grail-cf7-china-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "canyon-grail-cf7-china-current-2026-09-23"
+    ],
+    "note": "The exact current China product page establishes a direct member-only order route with size selection, but selected-size inventory and landed checkout remain unknown. It currently shows CNY 13,700 with CNY 749 estimated delivery/packaging excluding VAT and customs; no order was submitted."
+  }
 }

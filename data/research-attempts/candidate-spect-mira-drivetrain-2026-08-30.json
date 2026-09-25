@@ -487,5 +487,6 @@
     "spect-mira-speedingeasy-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. No drivetrain is included with the frameset. Current exact pages state electronic-only shifting compatibility."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. No drivetrain is included with the frameset. Current exact pages state electronic-only shifting compatibility.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["spect-mira-cyclegears-2026-08-30","spect-mira-speedingeasy-2026-08-30"],"note":"Exact SPECT Mira pages already support electronic-only shifting compatibility and the frameset package with no drivetrain. This does not establish the delivered production revision."}
 }

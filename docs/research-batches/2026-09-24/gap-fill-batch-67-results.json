@@ -1,0 +1,53 @@
+{
+  "batch": 67,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-67-scope.json",
+  "outcome": "No exact-model specification found; all five fields remain explicitly unknown.",
+  "identity_caveat": "This batch follows the repository's literal SPEEDZ record label. The prior identity sweep did not establish that SPEEDZ is an alias for a named LightCarbon factory model, and this search did not establish such an alias either.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "query": "LightCarbon SPEEDZ frame carbon weight tire clearance geometry bottom bracket frameset",
+    "route": "One current official manufacturer-domain search restricted to lightcarbon.com; the previously timed-out 2025-26 Catalog V2 PDF was excluded.",
+    "accessed_at": "2026-09-24",
+    "opened_results": 0,
+    "exact_speedz_page": null,
+    "direct_support": [],
+    "excluded": "Hits for other LightCarbon product names were not treated as SPEEDZ aliases and their values were not transferred. No images were inspected or copied."
+  },
+  "fields": [
+    {
+      "field": "frame-material",
+      "result": "blocked-no-exact-page",
+      "attempt_file": "data/research-attempts/platform-lightcarbon-speedz-frame-material-official-search-2026-09-24.json"
+    },
+    {
+      "field": "frame-weight",
+      "result": "blocked-no-exact-page",
+      "attempt_file": "data/research-attempts/platform-lightcarbon-speedz-frame-weight-official-search-2026-09-24.json"
+    },
+    {
+      "field": "tire-clearance",
+      "result": "blocked-no-exact-page",
+      "attempt_file": "data/research-attempts/platform-lightcarbon-speedz-tire-clearance-official-search-2026-09-24.json"
+    },
+    {
+      "field": "geometry",
+      "result": "blocked-no-exact-page",
+      "attempt_file": "data/research-attempts/platform-lightcarbon-speedz-geometry-official-search-2026-09-24.json"
+    },
+    {
+      "field": "bottom-bracket",
+      "result": "blocked-no-exact-page",
+      "attempt_file": "data/research-attempts/variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24.json",
+      "integration_note": "Added this second distinct web attempt to the existing same-day B66 record; did not create a duplicate dated target-field record."
+    }
+  ],
+  "validation": {
+    "focused": "npm run --silent research:check passed: 1500 atomic fields, 15450 public-post attempts, and 35574 web attempts.",
+    "coverage": "npm run --silent coverage:accept accepted the monotonic baseline update for 212 images and 277 catalog targets.",
+    "full_gate": "codex-pnpm-check check passed after updating the expected research-attempt count; privacy, data validation, research validation, coverage, 323/323 tests, 584-page build, and SEO audit all passed.",
+    "build_note": "Build reported that it could not remove a previous-output backup directory; build itself completed and SEO passed.",
+    "image_report": "Not run; no image records changed."
+  },
+  "delivery": "Local B67 batch only; no push, pull request, merge, publication or production action."
+}

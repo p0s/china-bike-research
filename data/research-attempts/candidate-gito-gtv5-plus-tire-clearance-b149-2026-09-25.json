@@ -1,0 +1,54 @@
+{
+  "id": "candidate-gito-gtv5-plus-tire-clearance-b149-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "gito-gtv5-plus"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-gito-gtv5-plus-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "GITO G530 maximum tire clearance official tire width",
+          "route": "One bounded current exact-model web query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Results were unrelated Giti truck-tire documents; no exact GITO G530 maximum-clearance source surfaced. The previously recorded exact 888Bike route was not retried or reopened; its indexed 700×28C is fitted width only."
+        }
+      ],
+      "blocker": "The retailer source describes configuration-specific fitted 700×28C only; the previously timed-out route was not retried and no exact maximum surfaced."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "gito-g530-retailer-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "B167 local source audit: no linked source supports the retained exact tire-clearance field. No qualifying exact-model evidence was found for this field in B149; preserve the value as unknown pending a future distinct source or state change.",
+  "retry_of": "candidate-gito-gtv5-plus-tire-clearance-2026-08-29",
+  "retry_reason": "A distinct dated exact-model query on 2026-09-25 followed the earlier extended campaign and checked for new direct evidence without reopening recorded URLs.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-149-gito-gtv5-plus-tire-clearance",
+    "extends_attempt_id": "candidate-gito-gtv5-plus-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+    "reason": "The B149 frozen scope authorizes one distinct dated exact-model web query to test for new weight or maximum-clearance evidence after the earlier 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

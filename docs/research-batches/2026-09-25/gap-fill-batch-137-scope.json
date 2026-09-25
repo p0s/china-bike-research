@@ -1,0 +1,72 @@
+{
+  "batch": 137,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "selection_note": "Skip the just-reviewed SPEEDZ and CAMP work, and skip unresolved-identity candidate clusters for this pass. Select the next exact published-build fields with a specific target and plausible direct manufacturer, retailer, or mainland price route."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id":"elves-falath-r7170","name":"Falath Pro Disc R7170 build"},
+      {"id":"twitter-t3-tt","name":"T3 TT WheelTop TX-TT7110 2×12"},
+      {"id":"sava-a7l-r7100","name":"SAVA A7L R7100"},
+      {"id":"twitter-v3-wheeltop-eds","name":"Gravel V3 WheelTop EDS 2×12"},
+      {"id":"rinasclta-gr025-frameset","name":"Rinasclta GR025 frameset"},
+      {"id":"carbonda-cfr696-frameset","name":"Carbonda CFR696 frameset"},
+      {"id":"ican-gra04-frameset","name":"ICAN GRA04 frameset"},
+      {"id":"sava-gelaro-s8","name":"SAVA Gelaro S8 GRX820"},
+      {"id":"bianchi-oltre-race","name":"Bianchi Oltre Race"},
+      {"id":"sava-gelaro-s4-grx400","name":"SAVA Gelaro S4 GRX400"}
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 11,
+    "selected_fields": [
+      {"record_type":"variant","record_id":"elves-falath-r7170","model":"Falath Pro Disc R7170 build","field":"complete-weight","gap_code":"complete-weight-missing","attempt_id":"variant-elves-falath-r7170-complete-weight-2026-08-17","campaign_extension_id":"b137-elves-falath-r7170-complete-weight","max_new_attempts":1},
+      {"record_type":"platform","record_id":"twitter-t3-tt","model":"T3 TT WheelTop TX-TT7110 2×12","field":"tire-clearance","gap_code":"clearance-unverified","attempt_id":"platform-twitter-t3-tt-tire-clearance-2026-08-29","campaign_extension_id":"b137-twitter-t3-tt-clearance","max_new_attempts":1},
+      {"record_type":"platform","record_id":"sava-a7l-r7100","model":"SAVA A7L R7100","field":"frame-weight","gap_code":"frame-weight-missing","attempt_id":"platform-sava-a7l-r7100-frame-weight-2026-09-01","campaign_extension_id":"b137-sava-a7l-frame-weight","max_new_attempts":1},
+      {"record_type":"platform","record_id":"twitter-gravel-v3","model":"Gravel V3 WheelTop EDS 2×12","field":"frame-weight","gap_code":"frame-weight-missing","attempt_id":"platform-twitter-gravel-v3-frame-weight-2026-09-01","campaign_extension_id":"b137-twitter-v3-frame-weight","max_new_attempts":1},
+      {"record_type":"platform","record_id":"rinasclta-gr025","model":"Rinasclta GR025 frameset","field":"geometry","gap_code":"geometry-missing","attempt_id":"platform-rinasclta-gr025-geometry-2026-09-01","campaign_extension_id":"b137-rinasclta-gr025-geometry","max_new_attempts":1},
+      {"record_type":"variant","record_id":"carbonda-cfr696-frameset","model":"Carbonda CFR696 frameset","field":"mainland-observed-price","gap_code":"price-reference-range","attempt_id":"variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24","max_new_attempts":1},
+      {"record_type":"variant","record_id":"ican-gra04-frameset","model":"ICAN GRA04 frameset","field":"mainland-observed-price","gap_code":"price-reference-range","attempt_id":"variant-ican-gra04-frameset-mainland-observed-price-2026-09-24","max_new_attempts":1},
+      {"record_type":"platform","record_id":"sava-gelaro-s8","model":"SAVA Gelaro S8 GRX820","field":"frame-weight","gap_code":"frame-weight-missing","attempt_id":"platform-sava-gelaro-s8-frame-weight-2026-09-01","campaign_extension_id":"b137-sava-gelaro-s8-frame-weight","max_new_attempts":1},
+      {"record_type":"variant","record_id":"sava-gelaro-s8","model":"SAVA Gelaro S8 GRX820","field":"bottom-bracket","gap_code":"bottom-bracket-missing","attempt_id":"variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24","max_new_attempts":1},
+      {"record_type":"platform","record_id":"bianchi-oltre-race","model":"Bianchi Oltre Race","field":"frame-weight","gap_code":"frame-weight-missing","attempt_id":"platform-bianchi-oltre-race-frame-weight-2026-08-30","campaign_extension_id":"b137-bianchi-oltre-race-frame-weight","max_new_attempts":1},
+      {"record_type":"variant","record_id":"sava-gelaro-s4-grx400","model":"SAVA Gelaro S4 GRX400","field":"purchase-route","gap_code":"purchase-route","attempt_id":"variant-sava-gelaro-s4-grx400-purchase-route-2026-09-24","max_new_attempts":1}
+    ],
+    "campaign_extensions": [
+      {"attempt_id":"variant-elves-falath-r7170-complete-weight-2026-08-17","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-twitter-t3-tt-tire-clearance-2026-08-29","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-sava-a7l-r7100-frame-weight-2026-09-01","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-twitter-gravel-v3-frame-weight-2026-09-01","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-rinasclta-gr025-geometry-2026-09-01","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-sava-gelaro-s8-frame-weight-2026-09-01","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-bianchi-oltre-race-frame-weight-2026-08-30","allowed_channels":["web"],"max_new_attempts":1}
+    ],
+    "research_boundary": "One Luna Max evidence-only reviewer; root is sole writer. Work sequentially, one exact model and source at a time. For each field allow one newly discovered direct exact-model source/page, then stop. Inspect each predecessor research-attempt file and do not repeat any URL, query, or route already recorded there. The agent reports source title, publisher/class, exact URL, access date, supported fact, exact size/build/market basis, caveat, and whether it qualifies. No agent file writes.",
+    "claim_rules": [
+      "Complete weight must apply to the exact Falath R7170 build and state size/equipment basis when the source gives one; a frameset mass is not a complete-bike weight.",
+      "Tire clearance must be a maximum for the exact model/build; fitted tire size alone does not establish the maximum.",
+      "Frame weights must be frame-only, with stated size/paint/accessory basis; do not use complete-bike mass or transfer neighboring trims.",
+      "Geometry must be readable numeric exact-frame data with size mapping; do not infer coordinates from sizing labels or images that cannot be read reliably.",
+      "Mainland price evidence must identify the exact frameset option and observation date, preserve price conditions, and be a mainland-market listing or checkout basis; reject export, wholesale, or unrelated complete-bike prices.",
+      "Bottom-bracket evidence must name the S8 shell standard or dimensions for the exact platform/build; crank family does not establish the frame shell.",
+      "A purchase route must be current, public, exact-build, and directly actionable; a search card without a usable exact item route or blocked risk page does not qualify."
+    ],
+    "excluded": [
+      "No XHS, Weibo, login, CAPTCHA, challenge handling, account access, seller contact, purchase, cart, quote, external message, image download/rehosting, source write, or catalog write.",
+      "Do not open any result_url already recorded in the scoped predecessor attempts. Avoid duplicate or sibling-model pages even if a search result ranks them highly.",
+      "Stop on an inaccessible page, identity ambiguity, wrong market, non-exact build, or missing decision-critical measurement basis; preserve the field as unknown/conflicted rather than searching another source."
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "batch": 78,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 373,
+      "conflicted": 34,
+      "found": 37,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "This is the remaining image-exactness gap whose current remote image already maps to the exact Gravel V3 RS family but may show another market build. A single exact-model listing-image check can determine whether a more faithful remote image is publicly attributable without repeating the previous 50-area campaign.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "targets": [
+      {
+        "record_type": "variant",
+        "record_id": "twitter-v3-2024-rs-sensah-alloy",
+        "model": "TWITTER Gravel V3 2024 RS / Sensah 2×12 alloy",
+        "gap_code": "image-exactness",
+        "image_id": "twitter-gravel-v3-2024-listing-primary-image",
+        "prior_attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01"
+      }
+    ],
+    "campaign_extension": {
+      "allowed_channels": [
+        "web"
+      ],
+      "max_new_attempts_per_model": 1
+    }
+  },
+  "research_route": {
+    "source_class": "exact-mainland-product-listing-image",
+    "action": "Run one focused public search for a current or retained exact Gravel V3 2024 RS / Sensah 2×12 alloy seller listing with a directly attributable product image. Open at most one exact item page. Verify visible model/year/build cues, image owner or seller credit, source URL, whether the image can remain a remote embed under the existing rights contract, useful neutral alt text, and fallback behavior.",
+    "stop_rule": "At most one web attempt and one exact item page. Do not download or rehost the third-party image, contact sellers, use XHS, log in, bypass a platform control, or reuse an image if the exact model/build or privacy is unclear. If the source does not improve exactness or cannot be safely attributed, add one unresolved attempt and keep the existing image record unchanged."
+  },
+  "done_criteria": [
+    "If an exact attributable public listing image improves the retained photo, add a dated source record and update the existing remote image metadata only: exactness, identity-safe source, seller credit, rights status without asserting a license, descriptive alt text, review date and fallback. Do not store image bytes locally.",
+    "Otherwise add one bounded retry attempt with the strongest supported status and preserve the existing remote image and gap.",
+    "Run `npm run image:report` once only if the image record changes; run focused validation, coverage acceptance/check, and `npm run check` once for the coherent batch.",
+    "Local B78 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

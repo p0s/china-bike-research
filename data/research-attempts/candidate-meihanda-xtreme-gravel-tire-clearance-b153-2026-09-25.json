@@ -1,0 +1,52 @@
+{
+  "id": "candidate-meihanda-xtreme-gravel-tire-clearance-b153-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "meihanda-xtreme-gravel"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-meihanda-xtreme-gravel-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B153 exact-record web query on 2026-09-25 followed the earlier field-specific campaign history.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-153-meihanda-xtreme-gravel-tire-clearance",
+    "extends_attempt_id": "candidate-meihanda-xtreme-gravel-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-153-scope.json",
+    "reason": "The frozen B153 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-meihanda-xtreme-gravel-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The retained listing has no exact model code or selected build mapping. Existing Phantom P10 references and an unopened sibling-series result cannot establish its weight, drivetrain, clearance, or stiffness.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Meihanda 美涵达 Xtreme 6498.25 carbon gravel model exact drivetrain weight clearance 2026",
+          "route": "One bounded current web query for this exact candidate record; results screened against existing source history and the retained product/build identity.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The search reconfirmed the recorded Meihanda / Xtreme range and separate Phantom P10 documentation. The new Phantom-series listing surfaced in search but was not opened; the known Phantom P10 aluminum-frame/T800-fork and series-level 40C claims do not identify the retained CNY 6,498.25 carbon-gravel bike. No build specification transfers."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The search reconfirmed the recorded Meihanda / Xtreme range and separate Phantom P10 documentation. The new Phantom-series listing surfaced in search but was not opened; the known Phantom P10 aluminum-frame/T800-fork and series-level 40C claims do not identify the retained CNY 6,498.25 carbon-gravel bike. No build specification transfers.",
+  "searched_at": "2026-09-25"
+}

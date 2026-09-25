@@ -1,0 +1,191 @@
+{
+  "batch": 144,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 671,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 373,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 104,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 2,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 75
+    },
+    "selection": "Ten highest-priority exact candidate identities with at least one research status of found; 11 atomic fields total."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "twitter-x7",
+        "name": "TWITTER 骓特 X7 high configuration",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-twitter-x7-complete-weight-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "west-biking-sl-one",
+        "name": "WEST BIKING 西骑者 SL-ONE",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "gaps": [
+          {
+            "code": "drivetrain-missing",
+            "label": "Exact complete-bike drivetrain is missing",
+            "attempt_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "de-rosa-new-838",
+        "name": "DE ROSA 德罗萨 New 838",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "gaps": [
+          {
+            "code": "drivetrain-missing",
+            "label": "Exact complete-bike drivetrain is missing",
+            "attempt_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "felt-ia-2",
+        "name": "FELT IA 2.0",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-felt-ia-2-complete-weight-2026-08-30"
+          },
+          {
+            "code": "drivetrain-missing",
+            "label": "Exact complete-bike drivetrain is missing",
+            "attempt_id": "candidate-felt-ia-2-drivetrain-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "upland-r70",
+        "name": "UPLAND 阿普兰 R70",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-upland-r70-complete-weight-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "icanian-sn04",
+        "name": "ICAN / ICANIAN SN04 full-suspension fat-bike frameset",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "label": "Maximum tire clearance is not verified",
+            "attempt_id": "candidate-icanian-sn04-tire-clearance-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "twitter-cyclone-sport",
+        "name": "TWITTER 骓特 Cyclone sport",
+        "record_type": "candidate",
+        "priority_score": 65,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "triaero-a9",
+        "name": "TRIAERO 冠捷 A9 Pikachu / 105 Di2 R7170",
+        "record_type": "candidate",
+        "priority_score": 59,
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "label": "Maximum tire clearance is not verified",
+            "attempt_id": "candidate-triaero-a9-tire-clearance-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "look-765-electronic",
+        "name": "LOOK 洛克 765 electronic",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30"
+          }
+        ]
+      },
+      {
+        "id": "pinarello-f5",
+        "name": "PINARELLO F5",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "label": "No complete-bike weight",
+            "attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 11,
+    "research_boundary": "One Luna Max evidence-only researcher reviews the exact candidate record, every linked predecessor query/attempt, and source records before new research. Reuse current, exact evidence where sufficient. Per model, use at most one distinct new web query and open at most one newly surfaced exact-model primary or manufacturer source page; do not repeat prior queries or reopen URLs already recorded. Return claim-level evidence, exact URLs, source class, access date, exact model/trim/build/size match, and unresolved reason. Root is sole writer.",
+    "claim_rules": [
+      "Complete-bike weight requires an exact configuration and any stated frame size, wheelset, pedals, and weighing method; do not substitute component or frameset weight or another trim.",
+      "Drivetrain must identify the exact model/build components; do not turn regional or optional configurations into a standard build.",
+      "Tire clearance must distinguish an exact maximum verified tire size from nominal tire fit or another frame generation.",
+      "One credible exact-model primary source normally suffices. Preserve model identity, regional variation, uncertainty, dates, and source provenance.",
+      "Search snippets alone do not support numeric specifications. Stop at decisive evidence and preserve unknowns instead of guessing."
+    ],
+    "excluded": [
+      "No agent edits, image download/rehosting, seller contact, quote/cart/purchase, external message, personal browser, XHS, Weibo, CAPTCHA/login, or delivery action.",
+      "No edits to unrelated models or fields."
+    ]
+  },
+  "external_delivery": "none"
+}

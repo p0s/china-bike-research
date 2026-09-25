@@ -485,5 +485,6 @@
     "sunpeed-victory-expert-brasil-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sunpeed-victory-e-2026-50-area-sweep-2026-08-30.json. The independent exact-model test identifies Toray T800 with T1000 reinforcement; the regional specification corroborates a Toray carbon frame and fork."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sunpeed-victory-e-2026-50-area-sweep-2026-08-30.json. The independent exact-model test identifies Toray T800 with T1000 reinforcement; the regional specification corroborates a Toray carbon frame and fork.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["sunpeed-victory-expert-bikewhat-2026-08-30","sunpeed-victory-expert-brasil-2026-08-30"],"note":"The exact-model test identifies Toray T800 with T1000 reinforcement on the tested frame; the regional specification independently describes the frame and fork as Toray carbon. Do not generalize beyond the documented tested build."}
 }

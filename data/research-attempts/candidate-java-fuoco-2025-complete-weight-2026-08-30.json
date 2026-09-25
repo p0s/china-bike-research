@@ -487,8 +487,19 @@
   "accepted_source_ids": [
     "java-fuoco-top-105-current-regional-2026-08-30",
     "java-fuoco-top-105-retailer-weight-2026-08-30",
-    "java-fuoco-top-105-owner-weight-2026-08-30"
+    "java-fuoco-top-105-owner-weight-2026-08-30",
+    "java-fuoco-top-105-current-regional-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-fuoco-2025-50-area-sweep-2026-08-30.json. Current exact-trim claims conflict across approximately 8.6 to 8.9 kg manufacturer/seller material and a 9.445 kg public owner or shop measurement with differing or unstated bases."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-fuoco-2025-50-area-sweep-2026-08-30.json. Current exact-trim claims conflict across approximately 8.6 to 8.9 kg manufacturer/seller material and a 9.445 kg public owner or shop measurement with differing or unstated bases.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "java-fuoco-top-105-current-regional-recheck-2026-09-25",
+      "java-fuoco-top-105-retailer-weight-2026-08-30",
+      "java-fuoco-top-105-owner-weight-2026-08-30"
+    ],
+    "note": "The regional 105-2 page lists about 8.7 kg net; the retailer range is about 8.6–8.9 kg and an owner/shop report is 9.445 kg. Size, accessories, measurement methods and 2025 mainland build mapping are incomplete; no single retained-build weight is assigned."
+  }
 }

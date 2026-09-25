@@ -1,0 +1,51 @@
+{
+  "batch": 118,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 101,
+    "selected_queue_targets": [
+      "platform:twitter-cyclone-gen3-et:frame-material",
+      "platform:twitter-cyclone-gen3-et:frame-stiffness",
+      "candidate:twitter-cyclone-r7120:frame-material",
+      "candidate:twitter-cyclone-r7120:frame-stiffness",
+      "candidate:twitter-cyclone-sport:drivetrain",
+      "candidate:twitter-cyclone-sport:frame-material",
+      "candidate:twitter-gravel-v3-105:complete-weight",
+      "candidate:twitter-gravel-v3-105:frame-material",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave:complete-weight",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave:tire-clearance"
+    ],
+    "selected_queue_priority_each": 100,
+    "selection_note": "These are the next ten fields after the four highest queue entries rechecked in B115 and the B116/B117 fields already reconciled."
+  },
+  "scope": {
+    "exact_target_records": [
+      "platform:twitter-cyclone-gen3-et",
+      "candidate:twitter-cyclone-r7120",
+      "candidate:twitter-cyclone-sport",
+      "candidate:twitter-gravel-v3-105",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave"
+    ],
+    "atomic_gaps": [
+      "platform:twitter-cyclone-gen3-et:frame-material",
+      "platform:twitter-cyclone-gen3-et:frame-stiffness",
+      "candidate:twitter-cyclone-r7120:frame-material",
+      "candidate:twitter-cyclone-r7120:frame-stiffness",
+      "candidate:twitter-cyclone-sport:drivetrain",
+      "candidate:twitter-cyclone-sport:frame-material",
+      "candidate:twitter-gravel-v3-105:complete-weight",
+      "candidate:twitter-gravel-v3-105:frame-material",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave:complete-weight",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave:tire-clearance"
+    ],
+    "research_boundary": "Audit only each frozen exact target, its current queue attempt, and accepted source records. Review one exact source at a time. Add source-reuse resolutions only where the source directly supports the populated exact model/field; retain measurement, generation, market, option, source-class and missing-method caveats. Leave unsupported, conflicting, or incomplete claims open. No new external requests.",
+    "excluded": [
+      "No other models or atomic fields.",
+      "No new web/public-post/seller requests or source files.",
+      "No catalog, price or image changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

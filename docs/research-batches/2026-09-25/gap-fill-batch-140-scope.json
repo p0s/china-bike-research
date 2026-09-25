@@ -1,0 +1,391 @@
+{
+  "batch": 140,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "image_health_gaps": 36,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "selection_note": "Check the first 25 distinct remote image records currently marked image-health-unverified; this is a bounded runtime reachability batch. No image URL, visual identity, rights status, or hosted bytes are changed.",
+    "image_health_gap_entries": 37,
+    "image_health_unique_image_ids": 36
+  },
+  "scope": {
+    "exact_target_models": [],
+    "image_records": 25,
+    "atomic_gap_entries": 25,
+    "selected_fields": [
+      {
+        "image_id": "camp-gx600-primary-image",
+        "record_ids": [
+          "camp-gx600-pes"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/camp-gx600.json",
+        "resources": [
+          {
+            "id": "camp-gx600-primary-image",
+            "url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260520/GX600-%E9%97%AA%E9%93%B6%E9%BB%91.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "sava-a7l-r08-2026-exact-primary-image",
+        "record_ids": [
+          "sava-a7l-r7100"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/sava-a7l-r08-2026-exact-primary-image.json",
+        "resources": [
+          {
+            "id": "sava-a7l-r08-2026-exact-primary-image",
+            "url": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-01-2026-sava-a7l-carbon-road-bike-silver-front-45-degree-main.jpg?v=1783501707&width=1080"
+          }
+        ]
+      },
+      {
+        "image_id": "twitter-cyclone-electronic-official-et-primary-image",
+        "record_ids": [
+          "twitter-cyclone-electronic"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/twitter-cyclone-electronic-official-et-primary-image.json",
+        "resources": [
+          {
+            "id": "twitter-cyclone-electronic-official-et-primary-image",
+            "url": "https://twitterbikeusa.com/cdn/shop/files/cyclone-3rd-et-matte-black-gray_ac30abe9-52ef-437f-a31b-6a63720eaac1.jpg?v=1783124937&width=867"
+          }
+        ]
+      },
+      {
+        "image_id": "twitter-cyclone-gen3-et-primary-image",
+        "record_ids": [
+          "twitter-cyclone-gen3-et"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/twitter-cyclone-gen3-et-primary-image.json",
+        "resources": [
+          {
+            "id": "twitter-cyclone-gen3-et-primary-image",
+            "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E8%89%B2.webp"
+          }
+        ]
+      },
+      {
+        "image_id": "twitter-gravel-v3-primary-image",
+        "record_ids": [
+          "twitter-v3-rs-sensah",
+          "twitter-v3-wheeltop-eds"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/twitter-gravel-v3.json",
+        "resources": [
+          {
+            "id": "twitter-gravel-v3-primary-image",
+            "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E6%B7%B1%E7%81%B0_1757147129.webp"
+          }
+        ]
+      },
+      {
+        "image_id": "camp-gx700-primary-image",
+        "record_ids": [
+          "camp-gx700-grx820"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/camp-gx700.json",
+        "resources": [
+          {
+            "id": "camp-gx700-primary-image",
+            "url": "https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260519/GX700-%E5%BD%A9%E5%A2%A8%E9%9D%92.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "twitter-t3-tt-primary-image",
+        "record_ids": [
+          "twitter-t3-tt"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/twitter-t3-tt-primary-image.json",
+        "resources": [
+          {
+            "id": "twitter-t3-tt-primary-image",
+            "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E7%BA%A2_1767937369.webp"
+          }
+        ]
+      },
+      {
+        "image_id": "rinasclta-gr025-primary-image",
+        "record_ids": [
+          "rinasclta-gr025-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/rinasclta-gr025.json",
+        "resources": [
+          {
+            "id": "rinasclta-gr025-primary-image",
+            "url": "https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "twitter-gravel-v3-2024-listing-primary-image",
+        "record_ids": [
+          "twitter-v3-2024-rs-sensah-alloy"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/twitter-gravel-v3-2024-listing-primary-image.json",
+        "resources": [
+          {
+            "id": "twitter-gravel-v3-2024-listing-primary-image",
+            "url": "https://img.alicdn.com/bao/uploaded/i1/3021506430/O1CN017OYwnS1xMzrJi7mmi_%21%214611686018427381630-2-item_pic.png"
+          }
+        ]
+      },
+      {
+        "image_id": "carbonda-cfr696-primary-image",
+        "record_ids": [
+          "carbonda-cfr696-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/carbonda-cfr696.json",
+        "resources": [
+          {
+            "id": "carbonda-cfr696-primary-image",
+            "url": "https://carbonda.com/upload/allimg/240910/cfr-696-01.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "ican-gra04-official-primary-image",
+        "record_ids": [
+          "ican-gra04-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/ican-gra04-official-primary.json",
+        "resources": [
+          {
+            "id": "ican-gra04-official-primary-image",
+            "url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-01.avif"
+          }
+        ]
+      },
+      {
+        "image_id": "sava-gelaro-s8-primary-image",
+        "record_ids": [
+          "sava-gelaro-s8"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/sava-gelaro-s8-primary-image.json",
+        "resources": [
+          {
+            "id": "sava-gelaro-s8-primary-image",
+            "url": "https://savadeck-bike.com/cdn/shop/files/GelaroS8-ClassicBlack.png?v=1779789542&width=1080"
+          }
+        ]
+      },
+      {
+        "image_id": "bianchi-oltre-race-ytb8d-primary-image-2026-08-30",
+        "record_ids": [
+          "bianchi-oltre-race"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/bianchi-oltre-race-ytb8d-primary-image-2026-08-30.json",
+        "resources": [
+          {
+            "id": "bianchi-oltre-race-ytb8d-primary-image-2026-08-30",
+            "url": "https://www.bianchi.com/wp-content/uploads/2026/07/OltreRace-FQ_Ph-scaled.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "sava-gelaro-primary-image",
+        "record_ids": [
+          "sava-gelaro-s4-grx400"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/sava-gelaro.json",
+        "resources": [
+          {
+            "id": "sava-gelaro-primary-image",
+            "url": "https://savadeck-bike.com/cdn/shop/files/DSC_2049.jpg?v=1746492698&width=1080"
+          }
+        ]
+      },
+      {
+        "image_id": "sava-gelaro-sf-primary-image",
+        "record_ids": [
+          "sava-gelaro-sf6-cues"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/sava-gelaro-sf.json",
+        "resources": [
+          {
+            "id": "sava-gelaro-sf-primary-image",
+            "url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6020-Black.jpg?v=1755591722&width=1080"
+          }
+        ]
+      },
+      {
+        "image_id": "ican-graro-primary-image",
+        "record_ids": [
+          "ican-graro-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/ican-graro.json",
+        "resources": [
+          {
+            "id": "ican-graro-primary-image",
+            "url": "https://icancycling.com/cdn/shop/files/ICAN_Graro_gravel_bike_frame.jpg?v=1775792859"
+          }
+        ]
+      },
+      {
+        "image_id": "xmcarbonspeed-cs-gr01-primary-image",
+        "record_ids": [
+          "xmcarbonspeed-cs-gr01-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/xmcarbonspeed-cs-gr01.json",
+        "resources": [
+          {
+            "id": "xmcarbonspeed-cs-gr01-primary-image",
+            "url": "https://ueeshop.ly200-cdn.com/u_file/UPBC/UPBC678/2407/30/products/27066bdad4.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+          }
+        ]
+      },
+      {
+        "image_id": "lightcarbon-lcg071s-pro-primary-image",
+        "record_ids": [
+          "lightcarbon-lcg071s-pro-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/lightcarbon-lcg071s-pro.json",
+        "resources": [
+          {
+            "id": "lightcarbon-lcg071s-pro-primary-image",
+            "url": "https://mybike.parts/bike_parts/672.png?1781036385="
+          }
+        ]
+      },
+      {
+        "image_id": "scott-addict-rc-40-primary-image",
+        "record_ids": [
+          "scott-addict-rc-40"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/scott-addict-rc-40-primary-image.json",
+        "resources": [
+          {
+            "id": "scott-addict-rc-40-primary-image",
+            "url": "https://www.diliecicli.it/cdn/shop/files/ADDICTRC40.webp?v=1691319669"
+          }
+        ]
+      },
+      {
+        "image_id": "seka-exaero-gr-primary-image",
+        "record_ids": [
+          "seka-exaero-gr-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/seka-exaero-gr.json",
+        "resources": [
+          {
+            "id": "seka-exaero-gr-primary-image",
+            "url": "https://www.shopsekabikes.com/cdn/shop/files/ExAero_GR_2_f5e2e83e-85f0-4194-be15-3789b5451b3b.jpg?v=1764062711&width=3840"
+          }
+        ]
+      },
+      {
+        "image_id": "spcycle-g026-primary-image",
+        "record_ids": [
+          "spcycle-g026-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/spcycle-g026.json",
+        "resources": [
+          {
+            "id": "spcycle-g026-primary-image",
+            "url": "https://ae01.alicdn.com/kf/S6b96720d40ad4252817e85d0010d2066H.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "tavelo-grow-primary-image",
+        "record_ids": [
+          "tavelo-grow-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/tavelo-grow.json",
+        "resources": [
+          {
+            "id": "tavelo-grow-primary-image",
+            "url": "https://ueeshop.ly200-cdn.com/u_file/UPBB/UPBB237/2603/31/products/zi1-175729c3d6.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+          }
+        ]
+      },
+      {
+        "image_id": "yoeleo-altera-g21-primary-image",
+        "record_ids": [
+          "yoeleo-altera-g21-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/yoeleo-altera-g21.json",
+        "resources": [
+          {
+            "id": "yoeleo-altera-g21-primary-image",
+            "url": "https://cdn.shopify.com/s/files/1/0094/1142/8410/files/yoeleo-altera-g21-black-atisan-frame.webp?v=1773386351"
+          }
+        ]
+      },
+      {
+        "image_id": "af01-primary-image",
+        "record_ids": [
+          "af01-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/af01.json",
+        "resources": [
+          {
+            "id": "af01-primary-image",
+            "url": "https://afbicycles.com/cdn/shop/files/DSC7959_1_1.jpg?v=1781773388&width=3840"
+          }
+        ]
+      },
+      {
+        "image_id": "bxt-055-primary-image",
+        "record_ids": [
+          "bxt-055-frameset"
+        ],
+        "record_type": "published-variant",
+        "file": "data/images/bxt-055.json",
+        "resources": [
+          {
+            "id": "bxt-055-primary-image",
+            "url": "https://www.bxtcycle.com/js/htmledit/kindeditor/attached/20260410/20260410183312_28184.jpg"
+          }
+        ]
+      }
+    ],
+    "research_boundary": "Root writer runs the repository image-health report only for the frozen image IDs. The script sends HEAD and, where needed, a small Range GET; it cancels response bodies and writes no downloaded image files. Store dated status and content-type evidence only on each exact existing image record. Do not change remote URLs, rehost assets, or infer reusable rights.",
+    "excluded": [
+      "No image download or repository binary creation.",
+      "Do not change exactness, credit, license/reuse basis, alt text, fallback URL, or buyer visibility.",
+      "Classify blocked/unreachable resources honestly; never call them healthy."
+    ],
+    "schema_amendment": {
+      "amended_at": "2026-09-25",
+      "reason": "Resolved physical JSON paths by image_id and recorded every catalog reference for shared images; the 25 frozen image IDs and remote resource URLs did not change. Twenty-five image records cover 26 gap entries because twitter-gravel-v3-primary-image is shared by two variants."
+    },
+    "selected_gap_entries": 26
+  }
+}

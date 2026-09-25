@@ -1,0 +1,21 @@
+{
+  "batch": 106,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 121
+  },
+  "scope": {
+    "exact_target_records": ["candidate:xlab-rs9"],
+    "atomic_gap": "manufacturer maximum tire clearance",
+    "known_conflict": "The candidate records a documented fitted 32C owner build; an existing secondary source reports a conflicting 30 mm value. Neither is sufficient to assert the manufacturer's maximum.",
+    "research_boundary": "Recheck the current exact manufacturer RS9 specification page and at most one exact manufacturer-linked manual or spec sheet. Stop at a decisive exact-model statement; otherwise preserve the conflict and unknown.",
+    "excluded": [
+      "No transfer from other X-LAB models or generations.",
+      "No inference from a fitted tire, frame appearance, or secondary listing.",
+      "No price, image, other candidate, or published-variant changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "batch_id": "gap-fill-batch-06-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 05. Selected all 15 currently ready high-priority fields shown in the first 15 queue positions, across nine exact records; within the 10-record and 25-field batch limit.",
+  "model_count": 9,
+  "atomic_field_count": 15,
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-complete",
+      "exact_identity": "LightCarbon SPEEDZ complete build recorded as Shimano 105 mechanical 2x12",
+      "fields": ["wheels"],
+      "prior_attempt_ids": ["variant-lightcarbon-speedz-complete-wheels-2026-08-17"],
+      "existing_source_ids": ["taobao-snapshot-2026-08-08"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-evo-community-lead",
+      "exact_identity": "PARDUS Robin EVO competition build community lead",
+      "fields": ["warranty-support"],
+      "prior_attempt_ids": ["candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17"],
+      "existing_source_ids": ["public-pardus-robin-evo-build-2026-08-17", "pardus-robin-evo-third-generation-official-2026-08-28", "pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-rs-community-lead",
+      "exact_identity": "PARDUS Spark RS custom build community lead",
+      "fields": ["warranty-support"],
+      "prior_attempt_ids": ["candidate-pardus-spark-rs-community-lead-warranty-support-2026-08-17"],
+      "existing_source_ids": ["public-pardus-spark-rs-build-2026-08-17", "pardus-spark-rs-current-official-2026-08-28", "pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build community lead",
+      "fields": ["current-configuration", "warranty-support"],
+      "prior_attempt_ids": ["candidate-pardus-uragano-evo-current-configuration-2026-08-27", "candidate-pardus-uragano-evo-community-lead-warranty-support-2026-08-17"],
+      "existing_source_ids": ["public-pardus-uragano-evo-build-2026-08-17", "pardus-current-gravel-catalog-2026-08-27", "pardus-uragano-evo-uae-seller-2026-08-27", "pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new with UDH",
+      "fields": ["bottom-bracket", "price-missing", "frame-stiffness"],
+      "prior_attempt_ids": ["candidate-seraph-tt-x68-new-udh-bottom-bracket-2026-09-22", "candidate-seraph-tt-x68-new-udh-price-2026-09-22", "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["seraph-tt-x68-new-udh-source-2026-09-05", "seraph-tt-x68-new-storefront-2026-09-22", "tantan-tt-x68-new-storefront-2026-09-22", "tantan-tt-x68-new-version-35c-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["price-missing", "frame-stiffness"],
+      "prior_attempt_ids": ["candidate-airwolf-yf-r003-price-2026-09-22", "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["airwolf-yf-r003-owner-2026-09-05", "airwolf-yf-r003-source-2026-09-05", "airwolf-yf-r003-owner-recheck-2026-09-22", "airwolf-yf-r003-access-check-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316 gravel-race frame/build lead",
+      "fields": ["price-missing", "frame-stiffness"],
+      "prior_attempt_ids": ["candidate-mondince-fm316-price-2026-09-22", "candidate-mondince-fm316-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["mondince-fm316-source-2026-09-05", "mondince-fm316-current-specification-2026-09-22", "mondince-fm316-owner-followup-2026-09-22", "mondince-fm316-guide-price-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "velobuild-cx-002-2023",
+      "exact_identity": "VeloBuild CX-002 2023 internal-routing version",
+      "fields": ["price-missing", "frame-stiffness"],
+      "prior_attempt_ids": ["candidate-velobuild-cx-002-2023-price-2026-09-22", "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["velobuild-cx-002-2023-source-2026-09-05", "velobuild-cx002-spec-sheets-2026-09-22", "velobuild-cx002-owner-thread-2026-09-22", "velobuild-cx002-geometry-sheet-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "evolve-cima-road",
+      "exact_identity": "Evolve CIMA road lead",
+      "fields": ["price-missing"],
+      "prior_attempt_ids": ["candidate-evolve-cima-road-price-2026-09-22"],
+      "existing_source_ids": ["evolve-cima-road-source-2026-09-05", "evolve-cima-road-official-2026-09-22", "evolve-china-warranty-2026-09-22", "evolve-cima-road-ride-review-2026-09-22"]
+    }
+  ],
+  "boundaries": [
+    "Research one exact record and source at a time; a page about a family, sibling SKU, or other generation does not resolve a lead without an explicit identity bridge.",
+    "For PARDUS support, separate a general contact/dealer route from warranty duration, eligibility, generation, seller, and build coverage; do not contact the manufacturer or seller.",
+    "For the Uragano EVO, current Sport catalog specifications do not transfer to the older EVO/custom lead without an exact mapping.",
+    "For LightCarbon, Speed7/速7, LCR017-D, customer-post components, and SPEEDZ complete-build equipment remain separate until an exact build bridge is documented.",
+    "For each candidate price, record a dated public observation only when the exact product and purchasable package/channel are attributable; keep frame-only offers and custom builds distinct.",
+    "Treat stiffness evidence as a field measurement or a credible, controlled exact-frame test; seller language, frame category, or rider impression alone is not a stiffness result.",
+    "Do not send messages, access private content, bypass authentication or challenges, infer exact specifications, or make images part of this batch."
+  ],
+  "done_criteria": "For each of the 15 frozen fields, reuse same-field accepted sources if they suffice, otherwise collect current public evidence. Integrate only facts that the source attributes to the exact record; preserve unresolved values with the existing unknowns and a concrete reopening trigger. Carry forward unchanged prior public-post channels where appropriate. Run npm run check once after batch integration; no image report is needed unless image records change.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, publication, seller contact, purchase, or production change."
+}

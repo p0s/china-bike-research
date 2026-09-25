@@ -1,0 +1,241 @@
+{
+  "batch": 154,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 669,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 322,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Fresh post-B153 data:gaps inventory; ten high-priority exact-product candidates selected from the technical-gap queue after excluding models already scoped in B138-B153, records reviewed or target fields searched on 2026-09-25, and fields recently queried on 2026-09-24. Fourteen older drivetrain, clearance, and stiffness gaps fit within the 25-field cap."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "sava-f20-hawkeye",
+        "name": "SAVA Hawkeye F20 105 24-speed",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-09-22",
+        "gaps": [
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-sava-f20-hawkeye-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "sava-gelaro-sf",
+        "name": "SAVA 萨瓦 Gelaro SF / 越界 SF flat-bar",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-09-24",
+        "gaps": [
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-sava-gelaro-sf-drivetrain-2026-08-30",
+            "field": "drivetrain",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "missile-e6000",
+        "name": "MISSILE 米赛尔 水星6000",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-missile-e6000-tire-clearance-2026-08-30",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-missile-e6000-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "camp-gx700",
+        "name": "CAMP 坎普 GX700",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-08-29",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-camp-gx700-tire-clearance-2026-08-29",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-camp-gx700-frame-stiffness-2026-08-29",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "koseea-pioneer-slr-plus",
+        "name": "KOSEEA 科西亚 Pioneer SLR+",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-koseea-pioneer-slr-plus-tire-clearance-2026-09-01",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-koseea-pioneer-slr-plus-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "twitter-gravel-v3-105",
+        "name": "TWITTER 骓特 Gravel V3 105 24-speed",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-twitter-gravel-v3-105-tire-clearance-2026-09-01",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-twitter-gravel-v3-105-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-speed7-frameset",
+        "name": "LightCarbon Speed7 frameset lead",
+        "record_type": "candidate",
+        "priority_score": 32,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "quick-pro-tr-one",
+        "name": "Quick Pro TR:ONE",
+        "record_type": "candidate",
+        "priority_score": 32,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-quick-pro-tr-one-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "laget-aero-one",
+        "name": "LAGET AERO ONE",
+        "record_type": "candidate",
+        "priority_score": 31,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-laget-aero-one-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "laget-pioneer",
+        "name": "LAGET PIONEER",
+        "record_type": "candidate",
+        "priority_score": 31,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-laget-pioneer-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 14,
+    "research_boundary": "Reuse the user-authorized Luna Max evidence-only agent; root remains the sole writer. For each selected exact product record, inspect its current candidate, source links, exact predecessor attempts and campaign history before one new web query. Open at most one genuinely new manufacturer or technical page per product. Before opening a URL, literal-search the exact URL across data/ and docs/; skip if already present or absence is uncertain. Do not reopen known pages or retry a failed page. Stop after these ten candidates; no additional models or fields.",
+    "field_rules": [
+      "Drivetrain must match the retained exact model/build and state groupset series, speed, layout, and actuation; no generic family menu inference.",
+      "Maximum tire clearance requires a stated exact-model maximum; fitted or recommended tire width is insufficient.",
+      "Frame stiffness requires an exact-model numeric result or sufficiently specific independent assessment; identify subjective and build-specific evidence and preserve protocol limitations.",
+      "A frameset-specific stiffness claim must be attributable to the exact chassis and source; do not infer from complete-bike weight or sibling model results."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No prices, images, or unrelated fields. Only frozen fields and directly supporting source/attempt records, coverage baseline if required, attempt-count expectation if stale, and dated batch documentation may change.",
+      "No commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "external_delivery": "none"
+}

@@ -487,5 +487,11 @@
     "sava-jd-official-storefront-2026-08-26"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The retained card and current official routes establish Gelaro SF6 family identity while preserving the unresolved 10- versus 11-speed option."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The retained card and current official routes establish Gelaro SF6 family identity while preserving the unresolved 10- versus 11-speed option.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["taobao-snapshot-2026-08-08", "sava-gelaro-sf6-specifications-2026-08-25", "sava-gelaro-sf6-official-2026-08-28", "sava-jd-official-storefront-2026-08-26"],
+    "note": "The retained seller card and SAVA SF6 specification, official product, and JD storefront sources support the Gelaro SF6 family identity. The card's exact 10-speed versus 11-speed build remains unselected; do not transfer a build-specific specification across that ambiguity."
+  }
 }

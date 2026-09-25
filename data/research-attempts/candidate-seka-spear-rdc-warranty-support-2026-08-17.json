@@ -69,8 +69,19 @@
   "status": "found",
   "accepted_source_ids": [
     "seka-warranty-cn-official-2026-08-17",
-    "seka-warranty-global-official-2026-08-17"
+    "seka-warranty-global-official-2026-08-17",
+    "seka-warranty-cn-recheck-2026-09-23",
+    "seka-warranty-global-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Exact official China support accepted."
+  "notes": "Round-four official/web completion. Exact official China support accepted.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seka-warranty-cn-recheck-2026-09-23",
+      "seka-warranty-global-recheck-2026-09-23"
+    ],
+    "note": "Policy supports lifetime SEKA frameset, five-year SEKA carbon parts and two-year SEKA spares with mainland claim channels; it does not establish coverage for non-SEKA components in the custom build. Reopen trigger: Reopen on written warranty terms for the exact complete build and its third-party components."
+  }
 }

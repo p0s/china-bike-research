@@ -14,7 +14,7 @@
     "complete_weight_basis": "Official approximate complete-bike weight shared by the documented R21-U6020 10-speed and R21-U6000 11-speed builds; size, pedals, accessories and weighing method are not stated",
     "tires": "700×40C fitted on the documented current build",
     "tire_clearance_mm": 45,
-    "tire_clearance_basis": "Current exact-model manufacturer maximum; the documented complete bike is fitted with 40C tires",
+    "tire_clearance_basis": "Manufacturer FAQ says compatible with tires up to 45C; nominal tire-size compatibility claim, not measured casing width or physical frame/fork clearance. Page offers both R21-U6020 and R21-U6000 builds; exact candidate build remains unresolved",
     "stiffness_evidence": "An independent exact-model review describes the carbon chassis as damping road vibration while remaining responsive; qualitative ride evidence, not a controlled numeric stiffness measurement"
   },
   "alternative_builds": [
@@ -50,7 +50,8 @@
     "sava-gelaro-sf6-specifications-2026-08-25",
     "sava-gelaro-sf6-official-2026-08-28",
     "sava-gelaro-sf6-independent-review-2026-08-27",
-    "sava-jd-official-storefront-2026-08-26"
+    "sava-jd-official-storefront-2026-08-26",
+    "sava-gelaro-sf6-clearance-recheck-2026-09-24"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -64,5 +65,5 @@
   "source_refs": "IMG_6871.png#R1",
   "source_url": "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike",
   "source_note": "The retained card proves the Gelaro SF family only. Current manufacturer evidence documents two approximately 10.4 kg SF6 builds with the same T800 chassis and 45 mm maximum clearance, but the card does not expose the selected 10-speed or 11-speed drivetrain, so no drivetrain is assigned to the catalog row.",
-  "last_reviewed": "2026-08-30"
+  "last_reviewed": "2026-09-24"
 }

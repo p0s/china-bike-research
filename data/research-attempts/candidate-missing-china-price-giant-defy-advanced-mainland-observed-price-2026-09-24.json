@@ -1,0 +1,54 @@
+{
+  "id": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-defy-advanced"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "An exact JD flagship item lead was found but it exposed no CNY amount or stock confirmation; the listed product launch is from autumn 2024. The manufacturer page exposes ¥14,800 suggested retail only.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced 2 current mainland exact checkout price",
+          "route": "Current exact Giant China product page and direct online-purchase link",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact mainland page lists CNY 14,800 as suggested retail and links to direct online purchase. The linked official e.giant.com.cn storefront returned zero readable text, so no SKU, stock, or checkout price could be checked.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1837"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant Defy Advanced 2 current official online shop checkout",
+          "route": "Manufacturer-linked official Giant online store",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The direct online-purchase link opened the official e.giant.com.cn domain, but the browser view contained no inspectable listing or price.",
+          "result_url": "https://e.giant.com.cn/"
+        },
+        {
+          "attempt": 3,
+          "query": "Giant Defy Advanced 2 2026 捷安特 中国大陆 京东 天猫 价格 现货",
+          "route": "Exact current mainland JD seller item and official Giant China product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://item.jd.com/10118131704555.html",
+          "note": "The JD item identifies a GIANT Defy ADV 2 complete bike, Mars Dust red, size L (535 mm), 24-speed hydraulic disc, product 10118131704555 / C050005, sold by Giant official flagship. Search-result details included size/color selectors and Add to cart, but the opened item page exposed almost no readable content, no CNY price, and no stock confirmation; its launch time is autumn 2024. The official Giant China Defy Advanced 2 page lists ¥14,800 suggested retail and direct online purchase, not a seller-item amount. No observed price was assigned."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "giant-defy-advanced-2-mainland-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the official CNY 14,800 suggested retail price separate from a checkout observation. Mainland stock and final selected-option price remain unknown.",
+  "searched_at": "2026-09-24"
+}

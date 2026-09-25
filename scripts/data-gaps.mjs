@@ -1,5 +1,6 @@
 import { freshness, joinCatalogCandidates, joinProducts, loadDataset } from '../src/lib/data.mjs';
 import { latestResearchAttemptIndex } from '../src/lib/research-attempts.mjs';
+import { imageHealthIsFreshAndHealthy } from '../src/lib/image-health.mjs';
 
 const DEFAULT_AS_OF = new Date().toISOString().slice(0, 10);
 
@@ -64,7 +65,7 @@ function productGaps(product, asOf) {
     if (image.subject_accuracy !== 'exact-variant') {
       addGap(gaps, 'image-exactness', `Primary image is ${image.subject_accuracy}`, 18, { image_id: image.id });
     }
-    if (image.hosting?.mode === 'remote') {
+    if (image.hosting?.mode === 'remote' && !imageHealthIsFreshAndHealthy(image, asOf)) {
       addGap(gaps, 'image-health-unverified', 'Remote image reachability needs runtime verification', 4, { image_id: image.id });
     }
   }
@@ -86,7 +87,7 @@ function productGaps(product, asOf) {
   }
   if (!hasFrameMaterialDetail(frame)) addGap(gaps, 'frame-material-detail-missing', 'Exact frame material or construction is not documented', 14);
   if (unresolved(frame.stiffness_evidence)) addGap(gaps, 'stiffness-evidence-missing', 'No meaningful frame stiffness evidence', 6);
-  if (unresolved(frame.bottom_bracket)) addGap(gaps, 'bottom-bracket-missing', 'Bottom-bracket standard is unknown', 9);
+  if (unresolved(variant.bottom_bracket ?? frame.bottom_bracket)) addGap(gaps, 'bottom-bracket-missing', 'Bottom-bracket standard is unknown', 9);
 
   if (variant.kind === 'complete-bike') {
     const exactDrivetrain = variant.drivetrain &&
@@ -159,7 +160,8 @@ function candidateGaps(entry) {
     else if (unresolved(facts.complete_weight_basis)) addGap(gaps, 'complete-weight-basis-missing', 'Complete-bike weight basis is missing', 8);
     if (unresolved(facts.drivetrain)) addGap(gaps, 'drivetrain-missing', 'Exact complete-bike drivetrain is missing', 22);
   }
-  if (!Number.isFinite(facts.tire_clearance_mm)) addGap(gaps, 'clearance-unverified', 'Maximum tire clearance is not verified', 22);
+  const fittedOnlyClearance = /^(?:documented )?fitted/i.test(facts.tire_clearance_basis ?? '');
+  if (!Number.isFinite(facts.tire_clearance_mm) || fittedOnlyClearance) addGap(gaps, 'clearance-unverified', 'Maximum tire clearance is not verified', 22);
   if (!hasCandidateFrameMaterialDetail(facts)) addGap(gaps, 'frame-material-detail-missing', 'Exact frame material or construction is not documented', 14);
   if (unresolved(facts.stiffness_evidence)) addGap(gaps, 'stiffness-evidence-missing', 'No meaningful frame stiffness evidence', 6);
   if ((candidate.source_ids ?? []).length === 0) addGap(gaps, 'source-missing', 'Candidate has no linked source record', 10);
@@ -210,9 +212,27 @@ function attachResearchState(records, attempts) {
       const field = gapFieldIds[gap.code];
       if (!field) return gap;
       const keys = record.record_type === 'candidate'
-        ? [`candidate:${record.id}:${field}`]
+        ? field === 'price'
+          ? [
+              `candidate:${record.id}:mainland-observed-price`,
+              `candidate:${record.id}:current-mainland-frameset-price`,
+              `candidate:${record.id}:current-mainland-complete-or-frameset-price`,
+              `candidate:${record.id}:mainland-price`,
+              `candidate:${record.id}:price`
+            ]
+          : [`candidate:${record.id}:${field}`]
+        : field === 'price'
+          ? [
+              `variant:${record.id}:mainland-observed-price`,
+              `variant:${record.id}:current-mainland-observed-price`,
+              `variant:${record.id}:price`,
+              `platform:${record.platform_id}:price`
+            ]
         : [`variant:${record.id}:${field}`, `platform:${record.platform_id}:${field}`];
-      const attempt = keys.map((key) => index.get(key)).find(Boolean);
+      const attempt = keys
+        .map((key, order) => ({ attempt: index.get(key), order }))
+        .filter((entry) => entry.attempt)
+        .sort((left, right) => right.attempt.searched_at.localeCompare(left.attempt.searched_at) || left.order - right.order)[0]?.attempt;
       if (!attempt) return gap;
       return {
         ...gap,
@@ -220,7 +240,8 @@ function attachResearchState(records, attempts) {
           attempt_id: attempt.id,
           status: attempt.status,
           searched_at: attempt.searched_at,
-          retry_after: attempt.retry_after ?? null
+          retry_after: attempt.retry_after ?? null,
+          resolution_kind: attempt.resolution?.kind ?? null
         }
       };
     })

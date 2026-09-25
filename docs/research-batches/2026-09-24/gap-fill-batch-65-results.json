@@ -1,0 +1,49 @@
+{
+  "batch": 65,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-65-scope.json",
+  "report_command": "npm run --silent image:report -- --ids=<10 frozen image IDs> --json",
+  "report": {
+    "checked_at": "2026-09-24",
+    "resources_checked": 10,
+    "results": [
+      {"id":"elves-mori-aerox-primary-image","classification":"unreachable"},
+      {"id":"evolve-cima-gr-primary-image","classification":"unreachable"},
+      {"id":"incolor-speedster-sr-plus-primary-image","classification":"unreachable"},
+      {"id":"incolor-speedster-sr-primary-image","classification":"unreachable"},
+      {"id":"incolor-ssr-official-primary-image","classification":"unreachable"},
+      {"id":"incolor-voyager-official-primary-image","classification":"unreachable"},
+      {"id":"quick-gr-one-primary-image","classification":"unreachable"},
+      {"id":"spcycle-g028-primary-image","classification":"unreachable"},
+      {"id":"tfsa-jh37-primary-image","classification":"unreachable"},
+      {"id":"winspace-g5-primary-image","classification":"unreachable"}
+    ],
+    "http_status_observed": 0,
+    "content_type_observed": 0,
+    "image_records_changed": 0,
+    "image_health_gaps_resolved": 0,
+    "disposition": "No endpoint returned an HTTP status or content type. The result does not distinguish a local network restriction from remote host unavailability, so it does not establish that any image is broken. Preserve all image URLs and records."
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "image_health_unverified": 37,
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "changed_files": [],
+  "validation": {
+    "status": "report completed; no image or catalog records changed",
+    "full_check": "not run; result and scope are documentation only and no data, image record, or code changed",
+    "image_report": "one bounded image-health report completed"
+  },
+  "next_unchecked_image": "yoeleo-altera-g21-primary-image",
+  "delivery": "Local B65 batch only; no push, pull request, merge, publication or production action."
+}

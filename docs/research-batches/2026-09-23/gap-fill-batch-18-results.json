@@ -1,0 +1,375 @@
+{
+  "batch_id": "gap-fill-batch-18-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-18-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 24,
+    "root_fields": 10,
+    "luna_evidence_fields": 14
+  },
+  "new_images_added": 0,
+  "results": [
+    {
+      "record_id": "falco-t91-t912",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-falco-t91-t912-identity-source-2026-08-29",
+      "source_ids": [
+        "falco-t912-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.falcospeed.com/Falco-T912-Triathlon-bikes-p6710798.html"
+      ],
+      "note": "The current manufacturer page identifies an exact T912 DA9280 reference build and reports 10.5 kg, but the retained China listing configuration, drivetrain, wheelset and price range are not mapped to it.",
+      "next_trigger": "An exact mainland seller SKU or manufacturer cross-reference to the retained China listing."
+    },
+    {
+      "record_id": "frrx-carbon-road-unknown",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-frrx-carbon-road-unknown-identity-source-2026-08-29",
+      "source_ids": [
+        "frrx-jd-range-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/13186163a47cd7873993.html"
+      ],
+      "note": "The current JD index confirms a broad FRRX/法克斯 carbon-road range but includes multiple SKUs and configurations; it does not resolve the retained price rows to one exact model.",
+      "next_trigger": "A current exact SKU or seller row identifying the retained FRRX bicycle."
+    },
+    {
+      "record_id": "giant-propel-gen4-community-lead",
+      "field": "drivetrain",
+      "status": "integrated-current-official",
+      "attempt_record_id": "candidate-giant-propel-gen4-community-lead-drivetrain-2026-08-30",
+      "source_ids": [
+        "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+      ],
+      "note": "Giant China’s exact Propel Advanced SL 1 page lists Ultegra Di2 electronic hydraulic 2x12, 11-34T cassette and 52/36T power-meter crank.",
+      "next_trigger": "A manufacturer BOM revision or evidence that the retained exact model is a different trim."
+    },
+    {
+      "record_id": "giant-propel-gen4-community-lead",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-giant-propel-gen4-community-lead-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "giant-propel-gen4-testing-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant-bicycles.com/global/propel-testing"
+      ],
+      "note": "Current manufacturer testing page reports fourth-generation frame pedaling stiffness 84 N/mm, torsional stiffness 124 N/degree and fork stiffness 60 N/mm; values are manufacturer results under its stated protocol, not independent measurements.",
+      "next_trigger": "A protocol-matched independent exact-generation test or a manufacturer methodology/value change."
+    },
+    {
+      "record_id": "giant-propel-gen4-community-lead",
+      "field": "identity",
+      "status": "integrated-current-official",
+      "attempt_record_id": "candidate-giant-propel-gen4-community-lead-identity-2026-08-17",
+      "source_ids": [
+        "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+      ],
+      "note": "The mainland manufacturer page identifies the exact Propel Advanced SL 1 trim and Advanced SL grade; the product name is not inferred from a range-level source.",
+      "next_trigger": "A model-year page or serial/model evidence contradicting the current fourth-generation identification."
+    },
+    {
+      "record_id": "gios-aerolite",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gios-aerolite-frame-material-2026-08-29",
+      "source_ids": [
+        "gios-aero-lite-taiwan-current-2026-09-23",
+        "gios-apac-aero-lite-gen5-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://en.giostw.com/aero-lite",
+        "https://www.gios-apac.com/bikes/detail1.php?24="
+      ],
+      "note": "Both official regional AERO LITE sources describe carbon monocoque construction, including the prior Taiwan 30T page and current APAC GEN5; exact generation/layup for the retained China listing remains unknown.",
+      "next_trigger": "A China SKU or label that identifies generation and carbon layup."
+    },
+    {
+      "record_id": "gios-aerolite",
+      "field": "identity-source",
+      "status": "evidence-backed-unresolved-generation",
+      "attempt_record_id": "candidate-gios-aerolite-identity-source-2026-08-29",
+      "source_ids": [
+        "gios-aero-lite-taiwan-current-2026-09-23",
+        "gios-apac-aero-lite-gen5-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://en.giostw.com/aero-lite",
+        "https://www.gios-apac.com/bikes/detail1.php?24="
+      ],
+      "note": "Official pages establish at least two generation-specific AERO LITE identities, while the retained China seller listing cannot be assigned to the prior platform or current GEN5.",
+      "next_trigger": "A readable retained seller SKU, model-year label or official China generation cross-reference."
+    },
+    {
+      "record_id": "hi-light-g0",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-hi-light-g0-frame-material-2026-09-01",
+      "source_ids": [
+        "hi-light-g0-171works-current-2026-09-23",
+        "hi-light-g0-villain-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://171works.official.ec/blog/2026/07/28/103039",
+        "https://villain.shop/products/hi-light-g0-titanium-gravel-frameset"
+      ],
+      "note": "Current exact G0 review/listing support a titanium frame and carbon fork; materials are not treated as evidence for a particular titanium grade.",
+      "next_trigger": "A manufacturer specification that changes frame or fork material."
+    },
+    {
+      "record_id": "hi-light-g0",
+      "field": "frame-stiffness",
+      "status": "evidence-backed-unresolved-qualitative-only",
+      "attempt_record_id": "candidate-hi-light-g0-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "hi-light-g0-171works-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://171works.official.ec/blog/2026/07/28/103039"
+      ],
+      "note": "The exact G0 review attributes increased rigidity to the 3D-printed head section but provides no measurement, controlled comparison or quantitative stiffness result.",
+      "next_trigger": "A size- and protocol-specific G0 stiffness measurement or credible controlled exact-model comparison."
+    },
+    {
+      "record_id": "hi-light-g0",
+      "field": "tire-clearance",
+      "status": "evidence-backed-unresolved-conflict",
+      "attempt_record_id": "candidate-hi-light-g0-tire-clearance-2026-09-01",
+      "source_ids": [
+        "titanium-hi-light-g0-official",
+        "hi-light-g0-171works-current-2026-09-23",
+        "hi-light-g0-villain-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/172.html",
+        "https://171works.official.ec/blog/2026/07/28/103039",
+        "https://villain.shop/products/hi-light-g0-titanium-gravel-frameset"
+      ],
+      "note": "The official record last accessed 2026-09-01 and 171WORKS review cite 50C, while the exact retailer page opened 2026-09-23 gives a 45C maximum. The current official page returned 403; retain 50C only as a source-reported value with an explicit conflict, not a settled universal maximum.",
+      "next_trigger": "A currently accessible manufacturer maximum with rim/tire measurement basis, or a manufacturer explanation reconciling 45C and 50C."
+    },
+    {
+      "record_id": "gito-carbon-aero-entry",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-aero-entry-frame-material-2026-08-29",
+      "source_ids": [
+        "gito-g325-888bike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/10139/gito-g325-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike"
+      ],
+      "note": "The exact G325 listing claims a Toray T800+T700 carbon frame; exact fork grade and the retained China entry-row layup are not confirmed.",
+      "next_trigger": "A source tying the retained China entry SKU to the same frame option and grade."
+    },
+    {
+      "record_id": "gito-carbon-aero-entry",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-aero-entry-identity-source-2026-08-29",
+      "source_ids": [
+        "gito-g325-888bike-current-2026-09-23",
+        "gito-chinese-retail-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/10139/gito-g325-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike",
+        "https://www.ruten.com.tw/item/22614417383708/"
+      ],
+      "note": "Retailer title/SKU identify GITO G325 and the retained label is G325; this establishes platform identity but not the retained card’s trim or BOM.",
+      "next_trigger": "A readable exact seller configuration that conflicts with the G325 marking or maps its trim."
+    },
+    {
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "field": "drivetrain",
+      "status": "evidence-backed-unresolved-listing-conflict",
+      "attempt_record_id": "candidate-gito-carbon-hydraulic-unknown-drivetrain-2026-08-29",
+      "source_ids": [
+        "gito-g525-888bike-current-2026-09-23",
+        "gito-g525-taobao-index-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/11926/gito-g525-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero",
+        "https://tao.hooos.com/category_50018687_58.html"
+      ],
+      "note": "Title claims 105 24-speed hydraulic-disc, but product body/tags mix G530 and R7120/R7170. The retained pixels show G525 and Shimano 105; no exact shifting layout or component series is assigned.",
+      "next_trigger": "A clean G525-specific BOM that does not reuse G530 copy."
+    },
+    {
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-hydraulic-unknown-frame-material-2026-08-29",
+      "source_ids": [
+        "gito-g525-888bike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/11926/gito-g525-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero"
+      ],
+      "note": "Retailer title/SKU calls this a carbon G525, while the body mixes G530 details; carbon material is accepted as the title-level seller claim and grade remains unknown.",
+      "next_trigger": "A clean manufacturer or retailer G525 frame specification."
+    },
+    {
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "field": "identity-source",
+      "status": "evidence-backed-unresolved-listing-conflict",
+      "attempt_record_id": "candidate-gito-carbon-hydraulic-unknown-identity-source-2026-08-29",
+      "source_ids": [
+        "gito-g525-888bike-current-2026-09-23",
+        "gito-g525-taobao-index-2026-08-29",
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/11926/gito-g525-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero",
+        "https://tao.hooos.com/category_50018687_58.html"
+      ],
+      "note": "Title/SKU and archived image summary identify G525, but retailer copy is contaminated by G530. Retained model year and relation to the G530 family remain unclear.",
+      "next_trigger": "Manufacturer model-year documentation or a clean seller page distinguishing G525 from G530."
+    },
+    {
+      "record_id": "gito-carbon-road-high-unknown",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-road-high-unknown-drivetrain-2026-08-29",
+      "source_ids": [
+        "gito-g530-888bike-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "note": "The indexed G530 retailer result claims a 105 2x12 mechanical/hydraulic build, but the direct product page timed out and the retained China seller BOM is not mapped to it.",
+      "next_trigger": "A readable exact retained seller SKU/BOM or stable manufacturer configuration page."
+    },
+    {
+      "record_id": "gito-carbon-road-high-unknown",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-road-high-unknown-frame-material-2026-08-29",
+      "source_ids": [
+        "gito-g530-888bike-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "note": "The retailer-indexed G530 result claims a Toray T800 carbon frame; direct page access timed out, and it does not confirm the retained build’s fork grade or exact frame layup.",
+      "next_trigger": "Direct access to the current product page or an exact manufacturer G530 frame specification."
+    },
+    {
+      "record_id": "gito-carbon-road-high-unknown",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-road-high-unknown-identity-source-2026-08-29",
+      "source_ids": [
+        "gito-g530-888bike-index-current-2026-09-23",
+        "gito-chinese-retail-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
+        "https://www.ruten.com.tw/item/22614417383708/"
+      ],
+      "note": "Retailer index title identifies GITO 530 and the retained marking is G530; direct page access timed out, and exact generation/trim remains unresolved.",
+      "next_trigger": "A readable exact product page or primary GITO model-year catalog."
+    },
+    {
+      "record_id": "gito-carbon-road-plus",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-road-plus-frame-material-2026-08-29",
+      "source_ids": [
+        "gito-g320-888bike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/7515/gito-g320-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-45mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike"
+      ],
+      "note": "Current exact G320 listing claims a Toray T800/T700 carbon frame; its fork grade, seller-card trim and build parts remain unresolved.",
+      "next_trigger": "An exact retained seller SKU and frame/fork specification."
+    },
+    {
+      "record_id": "gito-carbon-road-plus",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-carbon-road-plus-identity-source-2026-08-29",
+      "source_ids": [
+        "gito-g320-888bike-current-2026-09-23",
+        "gito-chinese-retail-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/7515/gito-g320-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-45mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike",
+        "https://www.ruten.com.tw/item/22614417383708/"
+      ],
+      "note": "Retailer title/SKU identify GITO G320 and the retained seller marking identifies G320; the current page offers several builds and does not map the retained card to one option.",
+      "next_trigger": "A readable retained seller option label or exact SKU cross-reference."
+    },
+    {
+      "record_id": "gito-gtv5-plus",
+      "field": "complete-weight",
+      "status": "preserved-dated-seller-claim-unresolved-basis",
+      "attempt_record_id": "candidate-gito-gtv5-plus-complete-weight-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "Keep approximately 8.3 kg only as an anonymized seller-stated claim from 2026-08-08. Size, pedals/accessories and weighing method are absent; no comparable or current weight is established.",
+      "next_trigger": "A dated measurement of the exact build with frame size, included equipment and weighing method."
+    },
+    {
+      "record_id": "gito-gtv5-plus",
+      "field": "drivetrain",
+      "status": "evidence-backed-unresolved-exact-build",
+      "attempt_record_id": "candidate-gito-gtv5-plus-drivetrain-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "gito-g530-888bike-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "note": "Archived seller evidence says mechanical Shimano 105, but exact series, gear count and brake system are unknown; the current retailer-indexed G530 build is a separate configuration and direct access timed out.",
+      "next_trigger": "A current BOM matching the archived seller configuration."
+    },
+    {
+      "record_id": "gito-gtv5-plus",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-gtv5-plus-frame-material-2026-08-29",
+      "source_ids": [
+        "gito-g530-888bike-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "note": "Current indexed G530 source claims a Toray T800 carbon frame, but its page is inaccessible and does not verify the archived seller build’s exact grade.",
+      "next_trigger": "A manufacturer specification or current readable exact G530 seller frame listing."
+    },
+    {
+      "record_id": "gito-gtv5-plus",
+      "field": "identity-source",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-gito-gtv5-plus-identity-source-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "gito-g530-888bike-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike"
+      ],
+      "note": "Archived pixels identify G530 and reject the GTV5+ label; current indexed retailer title independently identifies GITO 530, though direct page access timed out.",
+      "next_trigger": "A source demonstrating that GTV5+ is a distinct model matching the archived seller image."
+    }
+  ],
+  "validation": {
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy, data validation, research validation, coverage, 307/307 tests, 584-page build, and SEO audit all passed. Coverage baseline accepted monotonically for 212 images and 277 catalog targets before the passing rerun.",
+    "image_report": "Not required; no image records changed."
+  }
+}

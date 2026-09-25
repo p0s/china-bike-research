@@ -1,0 +1,53 @@
+{
+  "id": "variant-twitter-v3-rs-sensah-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-rs-sensah"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The surfaced marketplace page is a carbon-rim package, while the retained target variant specifies aluminum rims; it does not identify the exact build route.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 RS SENSAH 2x12 机械 现货 整车 购买 大陆店铺",
+          "route": "One distinct B145 exact-model web search; one newly surfaced result-page open attempt",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "The opened listing names Gravel V3 and Sensah 2x12 but its visible selected wheel package is carbon, not the retained alloy-rim build. Do not apply its route to this exact variant.",
+          "result_url": "https://www.xb2bx.com/2025-twitter-gravel-v3-carbon-fiber-gravel-bike-700-40c-sensah-rs-2-12s-hydraulic-brake-bicycle-with-carbon-wheels-for-men-women-12000050987768258"
+        }
+      ]
+    }
+  },
+  "notes": "The opened listing names Gravel V3 and Sensah 2x12 but its visible selected wheel package is carbon, not the retained alloy-rim build. Do not apply its route to this exact variant.",
+  "campaign_extension": {
+    "id": "b145-twitter-v3-rs-sensah-purchase-route",
+    "extends_attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

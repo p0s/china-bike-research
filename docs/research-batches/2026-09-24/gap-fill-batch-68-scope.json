@@ -1,0 +1,65 @@
+{
+  "batch": 68,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 708,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The evidence-found queue has an exact Giant Propel Advanced SL 1 complete-weight result. Candidate facts currently retain the official Japan size-S claim only as prose, while the mapped complete-weight gap requires a structured value. A current same-trim manufacturer-page recheck may support integrating that already-found regional reference without implying a mainland build weight.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "giant-propel-gen4-community-lead",
+    "gap_code": "complete-weight-missing",
+    "prior_attempt_id": "candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17",
+    "existing_current_source_id": "giant-propel-sl1-japan-weight-recheck-2026-09-24"
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead",
+    "model": "2027 fourth-generation Giant Propel Advanced SL 1",
+    "field": "complete_weight_g",
+    "expected_basis": "Giant Japan size-S manufacturer reference, not a verified mainland-build weight; retain Giant's individual-weight-variation caveat and the published reference-build context."
+  },
+  "research_route": {
+    "source_class": "manufacturer-primary",
+    "url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027",
+    "action": "Open this exact official Japan product page once and verify the 2027 Propel Advanced SL 1 identity and size-S weight claim.",
+    "stop_rule": "Stop after confirming or failing to confirm the exact trim and size-S weight; no sibling models, other regional pages, or price/stock research in this batch."
+  },
+  "done_criteria": [
+    "If the exact page currently confirms 6.8 kg for size S, represent it as 6800 g and write a neutral explicit basis with Japan-region, size, build-reference and individual-variation caveats.",
+    "Reuse the existing accepted exact-model source evidence in the research ledger; do not create a duplicate search record or imply that the Japanese build is the mainland stock build.",
+    "If the page is unavailable or no longer confirms the claim, preserve the existing prose and record only the bounded result; do not guess or remove the caveat.",
+    "If candidate data changes, run focused validation and the full repository gate once; no image report because image records are out of scope.",
+    "Local B68 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B68 batch only; no push, pull request, merge, publication or production action."
+}

@@ -28,8 +28,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "dengfu-warranty-official-2026-08-17"
+    "dengfu-warranty-official-2026-08-17",
+    "dengfu-r20-warranty-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "dengfu-r20-warranty-recheck-2026-09-23"
+    ],
+    "note": "Current Dengfu warranty policy supplies the brand-level terms, but does not prove R20 order eligibility or third-party coverage. No historical search-channel attempts were rewritten."
+  }
 }

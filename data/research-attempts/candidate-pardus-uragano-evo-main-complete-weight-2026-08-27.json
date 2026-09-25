@@ -18,7 +18,19 @@
     ] }
   },
   "status": "found",
-  "accepted_source_ids": ["pardus-uragano-evo-biketo-2026-08-27"],
+  "accepted_source_ids": [
+    "pardus-uragano-evo-biketo-2026-08-27",
+    "pardus-uragano-evo-biketo-recheck-2026-09-23"
+  ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-uragano-evo-biketo-2026-08-27",
+      "pardus-uragano-evo-biketo-recheck-2026-09-23"
+    ],
+    "note": "BIKETO still reports 9.65 kg without clipless pedals for its 2023 Apex AXS/X1 Eagle AXS reviewed build; size and weighing method are absent. Keep this as an attributed historical reviewed-build claim, not a universal or current SKU weight."
+  },
   "notes": "Weight is tied only to the reviewed 2023 Apex AXS build and its stated basis; the XHS route was blocked at runtime preflight."
 }

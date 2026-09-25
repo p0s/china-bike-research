@@ -1,0 +1,147 @@
+{
+  "batch": 45,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-45-scope.json",
+  "writer_limit": {
+    "exact_targets": 5,
+    "atomic_fields": 5
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-hi-light-g0-mainland-observed-price-2026-09-24",
+      "target": "candidate:hi-light-g0",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "hi-light-g0-manufacturer-checkout-recheck-2026-09-24",
+        "hi-light-g0-villain-ph-current-recheck-2026-09-24"
+      ],
+      "result": "The exact mainland manufacturer page returned 403; cached search text repeats the existing CNY 15,900 official retail reference but is about two months old. A current Philippine retailer page marks the exact G0 sold out and offers no mainland checkout. No observed-price value was added."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-current-mainland-2026-09-24",
+      "target": "variant:twitter-cyclone-electronic",
+      "field": "purchase-route-current-selected-build",
+      "status": "route-found-option-unverified",
+      "source_ids": [
+        "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+        "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+        "twitter-cyclone-et-jd-flagship-recheck-2026-09-24"
+      ],
+      "result": "A current Tmall-indexed TWITTER flagship listing names Cyclone 3rd ET with WheelTop 24-speed electronic shifting, shows a promotion through 2026-09-27, and identifies Shenzhen dispatch. The retained wheel/size option and final checkout remain unverified; JD's official store route stopped at verification. No price record was changed."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-current-mainland-2026-09-24",
+      "target": "variant:twitter-cyclone-gen3-et",
+      "field": "purchase-route-current-selected-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-mainland-page-recheck-2026-09-24",
+        "twitter-cyclone-7170-official-route-reference-2026-09-24",
+        "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+        "twitter-cyclone-et-jd-flagship-recheck-2026-09-24"
+      ],
+      "result": "The exact manufacturer ET endpoint returned 404 and the JD official flagship route stopped at verification. Public listings and the current R7170 dealer-quote page do not verify the retained WheelTop EDS TX alloy-wheel SKU, stock, or checkout."
+    },
+    {
+      "attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-current-mainland-2026-09-24",
+      "target": "variant:twitter-v3-rs-sensah",
+      "field": "purchase-route-current-selected-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "twitter-v3-tmall-family-current-recheck-2026-09-24",
+        "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+      ],
+      "result": "The current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller but does not show an RS/Sensah 2x12 option. The current mainland manufacturer page index shows WheelTop configurations rather than this trim, and direct access timed out. The exact mainland RS/Sensah selection and availability remain unknown."
+    },
+    {
+      "attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-current-mainland-2026-09-24",
+      "target": "variant:twitter-v3-wheeltop-eds",
+      "field": "purchase-route-current-selected-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "twitter-v3-tmall-family-current-recheck-2026-09-24",
+        "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+      ],
+      "result": "The current Tmall-indexed Gravel V3 family listing identifies the TWITTER flagship seller but does not show a WheelTop EDS TX option. The current mainland manufacturer page index lists EDS TX but direct access timed out and the excerpt has no purchase action. The separate US$1,750 regional order page does not establish mainland stock or checkout."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "hi-light-g0-manufacturer-checkout-recheck-2026-09-24",
+      "hi-light-g0-villain-ph-current-recheck-2026-09-24",
+      "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+      "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+      "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+      "twitter-cyclone-gen3-et-mainland-page-recheck-2026-09-24",
+      "twitter-cyclone-7170-official-route-reference-2026-09-24",
+      "twitter-v3-tmall-family-current-recheck-2026-09-24",
+      "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-hi-light-g0-mainland-observed-price-2026-09-24",
+      "variant-twitter-cyclone-electronic-purchase-route-current-mainland-2026-09-24",
+      "variant-twitter-cyclone-gen3-et-purchase-route-current-mainland-2026-09-24",
+      "variant-twitter-v3-rs-sensah-purchase-route-current-mainland-2026-09-24",
+      "variant-twitter-v3-wheeltop-eds-purchase-route-current-mainland-2026-09-24"
+    ],
+    "candidate_review_dates_refreshed": 1,
+    "variant_purchase_routes_reviewed": 4,
+    "new_observed_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    },
+    "atomic_research_status_counts": {
+      "atomic_fields": 1475,
+      "found": 860,
+      "temporarily-exhausted": 42,
+      "blocked": 512,
+      "conflicted": 61,
+      "open": 0
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 252,
+      "deferred": 42,
+      "blocked": 514,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "catalog_validation": "passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1258 sources, 212 primary images, 16 videos, 11 groupsets, 10 build parts, 236 candidates, 1485 research attempts",
+    "research_validation": "passed: 1475 atomic fields; 15448 public-post and 35507 web attempts",
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_tests": "passed: expected dataset coverage and Batch 45 price/route-boundary tests",
+    "repository_gate": "passed: npm run check completed after the ordinary sandbox run exposed stale historical route assertions and loopback listen EPERM; the two assertions were updated to preserve the historical overseas route evidence alongside the new mainland boundary, and one reviewed escalated retry passed 315 tests, built 584 pages, and passed SEO with 458 indexable and 126 noindex pages.",
+    "image_report": "not needed; no image records changed"
+  },
+  "delivery": "Local batch; no push, pull request, merge, publication, or production action."
+}

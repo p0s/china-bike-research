@@ -1,0 +1,98 @@
+{
+  "batch": 129,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-129-scope.json",
+  "result": {
+    "exact_target_models": 9,
+    "atomic_fields": 10,
+    "disposition": "All ten frozen conflicted attempts were rechecked and received conflict-reconfirmed dispositions. No exact custom-build weight, selected mainland drivetrain, or maximum clearance could be supported. The batch preserves the existing option-level evidence and clearance conflicts, corrects current dates for direct official-page rechecks, and records timeouts or stale indexed snapshots without treating them as product specifications.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_before": 61,
+    "conflicted_after": 51,
+    "conflicts_reconfirmed": 10,
+    "research_fields_left_open": 10,
+    "catalog_records_updated": 4,
+    "source_records_added": 4,
+    "price_observations_added": 0,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "queue_after": { "ready": 0, "evidence_found": 0, "deferred": 43, "blocked": 551, "conflicted": 51 },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1354 sources, 212 primary images, 236 candidates, 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_tests": "pass: 21/21 research-attempt and research-queue tests",
+    "full_gate": "pass: codex-pnpm-check check; 328/328 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  },
+  "field_results": [
+    {
+      "field": "candidate:pardus-spark-rs-community-lead:complete-weight-missing",
+      "disposition": "left open: owner build weight not published",
+      "source_ids": ["public-pardus-spark-rs-build-2026-08-17", "pardus-spark-rs-regional-weight-2026-08-30", "pardus-spark-rs-rival-weight-2026-08-30"],
+      "caveat": "The public owner build supplies no complete weight. Regional 8.5 kg alloy, 8.0 kg carbon and 7.8 kg Rival/carbon references describe different builds; none can be transferred to the custom bike."
+    },
+    {
+      "field": "candidate:twitter-t8-closed-wheel:complete-weight-missing",
+      "disposition": "left open: competing manufacturer build weights",
+      "source_ids": ["twitter-t8-closed-wheel-official-2026-08-30", "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"],
+      "caveat": "The historical manufacturer page assigns approximately 9.2 kg to WheelTop EVO and 9.3 kg to Shimano 105 R7120; the retained selection, size and wheel spec are unknown. The exact page timed out on 2026-09-25."
+    },
+    {
+      "field": "candidate:twitter-little-white-rabbit:drivetrain-missing",
+      "disposition": "left open: retained option not selected",
+      "source_ids": ["twitter-little-white-rabbit-tmall-mirror-2026-08-30", "twitter-little-white-rabbit-jd-options-2026-08-30"],
+      "caveat": "The exact listings expose mechanical, WheelTop wireless-electronic and Shuntai 24-speed options. The 2026-09-25 JD recheck was based on a snapshot crawled two days earlier and does not identify the retained bike's build."
+    },
+    {
+      "field": "candidate:twitter-r10-pro-gen3:drivetrain-missing",
+      "disposition": "left open: retained option not selected",
+      "source_ids": ["twitter-r10-pro-gen3-current-options-2026-08-30", "twitter-r10-pro-configuration-index-2026-09-02"],
+      "caveat": "WheelTop EVO and Shimano 105 R7120 mechanical builds are both listed. The 2026-09-25 JD recheck's crawl was about a month old and does not resolve the retained Gen 3 selection."
+    },
+    {
+      "field": "candidate:twitter-t8-closed-wheel:drivetrain-missing",
+      "disposition": "left open: competing manufacturer options",
+      "source_ids": ["twitter-t8-closed-wheel-official-2026-08-30", "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"],
+      "caveat": "The exact historical manufacturer capture lists WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12. The page timed out on 2026-09-25, and neither option is mapped to the retained card."
+    },
+    {
+      "field": "candidate:twitter-x7:drivetrain-missing",
+      "disposition": "regional option list recorded; mainland build unresolved",
+      "source_ids": ["twitter-x7-regional-options-2026-09-22", "twitter-x7-regional-options-recheck-2026-09-25", "twitter-usa-distributor-provenance-2026-09-22"],
+      "caveat": "The current U.S.-distributor page lists SENTYEH ES7000 1x14, Shimano 105 R7120 mechanical, 105 R7170 Di2, WheelTop EDS TX and WheelTop EVO TX. It is regional evidence and does not select a mainland build."
+    },
+    {
+      "field": "candidate:basso-venta-disc:clearance-unverified",
+      "disposition": "left open: conflicting non-primary reports; exact maximum unknown",
+      "source_ids": ["basso-venta-disc-review-clearance-2026-09-22", "basso-venta-disc-owner-clearance-conflict-2026-09-22", "basso-venta-disc-retailer-clearance-2026-09-22"],
+      "caveat": "Review, owner and retailer claims differ. The 2026-09-24 B99 exact-maker search note is only a restricted search-result snippet with no stored URL or title, and no successor page was opened; a Venta R successor claim cannot establish Venta Disc clearance."
+    },
+    {
+      "field": "candidate:de-rosa-new-838:clearance-unverified",
+      "disposition": "left open: current manufacturer sources conflict on value and unit",
+      "source_ids": ["de-rosa-new-838-current-specs-2026-08-30", "de-rosa-838-model-current-2026-09-23", "de-rosa-838-white-paper-recheck-2026-09-24", "de-rosa-838-white-paper-eng-recheck-2026-09-25"],
+      "caveat": "The 2026-09-25 exact product page says up to 32 mm; the English white paper says ‘Tyre clearance 30’ with no unit, tire qualifier or measurement condition. No reconciled maximum is assigned."
+    },
+    {
+      "field": "candidate:felt-ia-2:clearance-unverified",
+      "disposition": "left open: exact-platform clearance sources conflict",
+      "source_ids": ["felt-ia-2-platform-guide-2026-08-30", "felt-ia-2-regional-clearance-2026-08-30"],
+      "caveat": "The platform guide specifies 28 mm maximum with 4 mm clearance, while the regional page recommends 25–32 mm; this does not establish one manufacturer maximum for the retained configuration."
+    },
+    {
+      "field": "candidate:upland-r70:drivetrain-missing",
+      "disposition": "left open: retained option not selected",
+      "source_ids": ["upland-r70-official-2026-08-30", "upland-r70-indexed-current-2026-09-23", "upland-r70-jd-options-2026-08-30", "upland-r70-official-timeout-recheck-2026-09-25"],
+      "caveat": "R7120 mechanical and R7170/R7150 Di2 builds are listed. The exact manufacturer page timed out on 2026-09-25, and neither the stale search-index excerpt nor seller options select the retained build."
+    }
+  ]
+}

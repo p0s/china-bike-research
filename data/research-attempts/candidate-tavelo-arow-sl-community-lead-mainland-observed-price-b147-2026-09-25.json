@@ -1,0 +1,34 @@
+{
+  "id": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arow-sl-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current mainland CNY price identifies the exact Tavelo Arow SL custom complete-bike configuration.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arow SL Neo Black frameset current mainland China CNY price 2026 custom complete bike",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search returned the already-recorded global USD frameset reference and foreign-market frameset offers, not a mainland CNY offer for the community custom complete build. Historical 2024 launch prices do not establish current price for that build. Recorded URLs were not reopened."
+        }
+      ]
+    }
+  },
+  "notes": "Search returned the already-recorded global USD frameset reference and foreign-market frameset offers, not a mainland CNY offer for the community custom complete build. Historical 2024 launch prices do not establish current price for that build. Recorded URLs were not reopened."
+}

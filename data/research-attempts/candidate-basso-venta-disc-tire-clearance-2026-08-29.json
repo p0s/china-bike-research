@@ -494,5 +494,15 @@
     "basso-venta-disc-retailer-clearance-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. Exact references show fitted 28 mm tires and one owner reports a 28 mm manufacturer answer, but no directly attributable primary maximum statement was found. Supplemental September 22 review, recorded in luna-followup-06-results.json, preserves all original attempts and dates; the gap is now explicitly conflicted. No safe numeric maximum inferred."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. Exact references show fitted 28 mm tires and one owner reports a 28 mm manufacturer answer, but no directly attributable primary maximum statement was found. Supplemental September 22 review, recorded in luna-followup-06-results.json, preserves all original attempts and dates; the gap is now explicitly conflicted. Supplemental B99 exact-maker search on 2026-09-24 for `site:bassobikes.com Basso Venta Disc maximum tire clearance` returned the current Venta R page/snippet only; its 35 mm successor claim does not apply to Venta Disc, and no page was opened. The existing conflict remains; no safe numeric maximum inferred.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "basso-venta-disc-review-clearance-2026-09-22",
+      "basso-venta-disc-owner-clearance-conflict-2026-09-22",
+      "basso-venta-disc-retailer-clearance-2026-09-22"
+    ],
+    "note": "Review, owner and retailer claims conflict. The 2026-09-24 B99 note is only a restricted search snippet with no URL or title and no opened successor page; Venta R evidence cannot establish Venta Disc maximum clearance."
+  }
 }

@@ -481,5 +481,11 @@
     "sava-hawkeye-f20-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-f20-hawkeye-batch-035-50-area-sweep-2026-09-01.json. The current exact page publishes approximately 8.7 kg and explicitly says weight varies by size; pedals, accessories and weighing protocol remain unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-f20-hawkeye-batch-035-50-area-sweep-2026-09-01.json. The current exact page publishes approximately 8.7 kg and explicitly says weight varies by size; pedals, accessories and weighing protocol remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-hawkeye-f20-official-2026-08-17"],
+    "note": "The exact Hawkeye F20 105 24-speed manufacturer page supports approximately 8.7 kg, matching the 8,700 g candidate value. The claim varies by size, and pedals, accessories, and weighing method are not stated. It is global product evidence, not mainland-price evidence."
+  }
 }

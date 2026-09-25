@@ -1,0 +1,183 @@
+{
+  "batch": 167,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-167-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "exact_records": 10,
+    "atomic_fields": 11,
+    "read_only_evidence_audit": "The Luna evidence agent reviewed the linked sources, B149 search notes, and ten applicable 50-area histories. None of the 11 fields had evidence sufficient to promote a value for the retained exact candidate. Existing source records were linked to field-specific blocked dispositions; earlier attempts and campaign histories were preserved.",
+    "research_attempts_added": 0,
+    "research_attempts_updated_in_place": 11,
+    "new_queries": 0,
+    "page_opens": 0,
+    "new_sources": 0,
+    "candidate_fact_changes": 0,
+    "catalog_gap_entries_reduced": 0,
+    "images_added": 0,
+    "image_records_changed": 0,
+    "attempts": [
+      {
+        "record_id": "camp-ace-gen3-105",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-camp-ace-gen3-105-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "camp-ace-gen3-105-official-2026-08-29"
+        ],
+        "unresolved_reason": "The official ACE Gen 3 source lists fitted 700×30C only; the indirect MyBike Q&A conflicts and is not an authoritative exact-model maximum.",
+        "result_url": "https://mybike.parts/bike_parts/2483-camp-ace-iii"
+      },
+      {
+        "record_id": "camp-ace-qed",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-camp-ace-qed-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "camp-ace-qed-official-2026-08-08"
+        ],
+        "unresolved_reason": "The official QED source lists fitted 700×28C only; the surfaced Q&A is unanswered and ACE III is a different build."
+      },
+      {
+        "record_id": "cyctrac-r18",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-cyctrac-r18-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "twitter-r18-official-current-2026-09-23"
+        ],
+        "unresolved_reason": "The official R18 source lists fitted 700×28C, not a maximum; the opened USA page is a WheelTop GEX regional build, not the retained R7170 build.",
+        "result_url": "https://twitterbikeusa.com/products/r18-racing-ed-cyctrac-carbon-road-bike"
+      },
+      {
+        "record_id": "gito-gtv5-plus",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-gito-gtv5-plus-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "gito-g530-retailer-2026-08-29"
+        ],
+        "unresolved_reason": "The retailer source describes configuration-specific fitted 700×28C only; the previously timed-out route was not retried and no exact maximum surfaced."
+      },
+      {
+        "record_id": "java-suprema-7120",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-java-suprema-7120-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "java-suprema-colombia-2026-08-29",
+          "java-suprema-uruguay-2026-08-29"
+        ],
+        "unresolved_reason": "Regional builds show fitted tire options, not a maximum for the retained mainland option; unsupported conflicting maxima remain unverified."
+      },
+      {
+        "record_id": "java-vega-tt-24s",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-java-vega-tt-24s-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "java-vega-chile-current-2026-09-23",
+          "java-vega-eurobike-current-2026-09-23"
+        ],
+        "unresolved_reason": "Regional/reference pages do not map to the mainland 24S selection or state a maximum; the surfaced 28 mm geometry row is not maximum-clearance evidence."
+      },
+      {
+        "record_id": "missing-china-price-giant-tcr-advanced",
+        "field": "complete-weight",
+        "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-complete-weight-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+        ],
+        "unresolved_reason": "The exact mainland Tiagra 2×10 rim-brake source publishes no complete-bike weight; disc-generation and regional builds do not match."
+      },
+      {
+        "record_id": "missing-china-price-giant-tcr-advanced",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+        ],
+        "unresolved_reason": "The exact mainland source lists fitted 700×25C but no maximum; the 33 mm disc-generation claim does not apply."
+      },
+      {
+        "record_id": "trinx-tornado-900",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-trinx-tornado-900-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "trinx-tornado-900-official-2026-08-30"
+        ],
+        "unresolved_reason": "The exact-model official and B4Bike pages show fitted 700×28C but state no maximum clearance.",
+        "result_url": "https://www.b4bike.com/road-bikes/trinx/tdo/tdo-900/"
+      },
+      {
+        "record_id": "xds-gt350",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-xds-gt350-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "xds-gt350-retailer-2026-08-28",
+          "xds-gt350-bikecity-hk-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "The Hong Kong 1×10 trim lists fitted 700×40C only; no maximum or mainland generation/trim mapping is established."
+      },
+      {
+        "record_id": "xds-gt600",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-xds-gt600-tire-clearance-b149-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "public-xds-gt600-retailer-build-2026-08-27"
+        ],
+        "unresolved_reason": "The archived build lists fitted 700×40C, not a maximum; 55 mm belongs to the different X-LAB GT8 and the official recheck is unreadable."
+      }
+    ]
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public_post": 15450,
+      "web": 35890
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 35,
+      "found": 15,
+      "open": 15,
+      "temporarily-exhausted": 4
+    },
+    "queue": {
+      "ready": 15,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 552,
+      "conflicted": 1
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_acceptance": "accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "developer-storage-cache run -- codex-pnpm-check check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation": "1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+      "tests": "333/333 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "git_diff_check": "passed",
+    "image_report": "not run; no image records changed"
+  }
+}

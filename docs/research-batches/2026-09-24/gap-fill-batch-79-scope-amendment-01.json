@@ -1,0 +1,30 @@
+{
+  "batch": 79,
+  "amendment": 1,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-79-scope.json",
+  "reason": "After freezing the initial candidate selection, inspection of current ledger state showed that Giant Defy Advanced SL 1 had already used its full three-attempt web budget on 2026-09-24. A separate same-day retry would violate the research validator's strictly later retry-date rule; delaying or rewriting the observed date would misrepresent the research. Replace it with another priority-62 price gap whose latest web attempt is blocked and has budget remaining.",
+  "excluded_target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead",
+    "prior_attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+    "disposition": "deferred-within-goal",
+    "reason": "Same-day attempt budget is exhausted. Revisit in a later dated batch if the scope and retry date permit."
+  },
+  "replacement_target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-ur-one",
+    "model": "Quick Pro UR:ONE",
+    "gap_code": "price-not-observed",
+    "prior_attempt_id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+    "priority_score": 62,
+    "eligibility": "latest web attempt is blocked with one of three attempts used on 2026-09-24"
+  },
+  "preserved_limits": {
+    "exact_models": 10,
+    "atomic_gaps": 10,
+    "one_new_web_attempt_per_model": true,
+    "research_order": "Keep all original targets except the excluded item; perform the replacement in that target's position.",
+    "no_repository_edits_by_research_agent": true
+  }
+}

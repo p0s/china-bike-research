@@ -1,0 +1,34 @@
+{
+  "batch": 121,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-121-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:twitter-t10-pro",
+      "variant:twitter-t3-tt",
+      "platform:twitter-t3-tt",
+      "candidate:twitter-t8-closed-wheel"
+    ],
+    "disposition": "Nine evidence-found fields were resolved with the live-rechecked exact T10 Pro or T3 TT manufacturer sources, retaining option, weight-method, geometry, material-grade and qualitative-claim limits. The T8 closed-wheel identity/options field reused its historical exact manufacturer record with the current-page timeout noted. Its assigned material source did not support frame, fork, seatpost or wheel materials; the unsupported candidate claim was removed and the materials remain unknown.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "evidence_found_before": 83,
+    "evidence_found_after": 74,
+    "research_attempts_resolved": 9,
+    "research_fields_left_open": 1,
+    "source_records_added": 2,
+    "catalog_records_updated": 4,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1320 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "pass: npm run check; 326/326 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "sandbox_note": "The sandboxed gate's seven preview-server tests failed to bind 127.0.0.1 with EPERM; the identical gate passed on the single approved host-path retry.",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

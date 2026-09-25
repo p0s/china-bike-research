@@ -1,0 +1,54 @@
+{
+  "id": "platform-camp-gx700-geometry-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "platform",
+    "record_id": "camp-gx700"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "platform-camp-gx700-geometry-2026-09-01",
+  "retry_reason": "A distinct current Chinese manufacturer product page surfaced after the 50-area campaign; one bounded page review checks whether it gives the missing geometry.",
+  "campaign_extension": {
+    "id": "b136-camp-gx700-geometry",
+    "extends_attempt_id": "platform-camp-gx700-geometry-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-136-scope.json",
+    "reason": "One new current manufacturer product page is scoped for this field after the earlier exact GX700 page omitted geometry.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-camp-gx700-geometry-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact Chinese manufacturer page lists only size choices and has no geometry coordinates in text.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX700 exact numeric geometry — newly surfaced current Chinese official page",
+          "route": "Newly surfaced current CAMP GX700 Chinese product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.campbicycle.com/zh/gx700.html",
+          "note": "The page lists 450/480/510 mm sizes but no coordinates. It links a size-chart image; the separate official generic chart returned 403 on 2026-09-24 and was not reopened."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "camp-gx700-official-live-recheck-2026-09-25"
+  ],
+  "notes": "The page lists 450/480/510 mm sizes but no coordinates. It links a size-chart image; the separate official generic chart returned 403 on 2026-09-24 and was not reopened."
+}

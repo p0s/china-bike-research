@@ -477,7 +477,10 @@
     }
   },
   "status": "blocked",
-  "accepted_source_ids": [],
+  "accepted_source_ids": [
+    "quick-pro-ur-one-dura-ace-official-recheck-2026-09-24",
+    "quick-pro-ur-one-mybikeparts-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-batch-034-50-area-sweep-2026-09-01.json. The current US$6,899 official global price and CNY reference conversion do not establish a dated mainland CNY checkout amount or route."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-batch-034-50-area-sweep-2026-09-01.json. Batch 39 recheck (2026-09-24): the exact Dura-Ace manufacturer page shows US$6,899 with Global/USD selected and Add to cart, not a mainland checkout. MyBike.parts' ¥27,998 result is for a 105 Di2 build; its Dura-Ace comparison is in USD. No exact mainland Dura-Ace CNY checkout was found, so this field remains blocked and unresolved."
 }

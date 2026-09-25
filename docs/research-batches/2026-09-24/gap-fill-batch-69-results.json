@@ -1,0 +1,41 @@
+{
+  "batch": 69,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-69-scope.json",
+  "outcome": "The De Rosa 838 maximum tire clearance remains unknown; the current primary-source recheck did not reconcile the conflict.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "sources": [
+      {
+        "url": "https://derosa.it/model/838/",
+        "result": "Blocked: exact product page timed out with a 400 response; prior 32 mm claim could not be reread."
+      },
+      {
+        "source_id": "de-rosa-838-white-paper-recheck-2026-09-24",
+        "url": "https://derosa.it/app/uploads/2026/06/De-Rosa-838-white-paper-ITA.pdf",
+        "result": "Page 9 states ‘Tyre clearance 30’ without a unit or measurement qualifier; identifies the De Rosa 838 and a 2026 five-color update but no numbered generation."
+      }
+    ],
+    "disposition": "No numeric value assigned: the live page could not be rechecked, and the PDF's unitless 30 cannot be silently interpreted as millimeters."
+  },
+  "integration": {
+    "record": "data/candidates/de-rosa-new-838.json",
+    "field": "facts.tire_clearance_conflict",
+    "change": "Added the current unitless white-paper claim and product-page timeout caveat while retaining no structured numeric maximum.",
+    "research_attempt": "data/research-attempts/candidate-de-rosa-new-838-tire-clearance-recheck-2026-09-24.json",
+    "attempt_status": "conflicted"
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "clearance_unverified": "102 -> 102",
+    "disposition": "No gap closed; the unresolved evidence state is now documented with a current primary-source recheck."
+  },
+  "validation": {
+    "focused": "Passed `npm run --silent research:check` (1500 atomic fields; 15450 public-post and 35576 web attempts) and `npm run --silent validate` (1303 sources, 1523 atomic research records).",
+    "coverage": "`npm run --silent coverage:accept` accepted the monotonic update for 212 images and 277 catalog targets; `coverage:check` passed.",
+    "full_gate": "The first full-gate run found one stale research-record-count assertion (322/323 tests passed). After updating the expected count from 1522 to 1523, the full `npm run check` gate passed: 323/323 tests, 584-page build, and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B69 batch only; no push, pull request, merge, publication or production action."
+}

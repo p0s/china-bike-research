@@ -6,7 +6,7 @@
   },
   "field": "bom",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -499,8 +499,21 @@
   "accepted_source_ids": [
     "elves-falath-pro-105-sa-2026-08-17",
     "elves-falath-pro-official-2026-08-17",
-    "elves-falath-pro-complete-au-2026-08-17"
+    "elves-falath-pro-complete-au-2026-08-17",
+    "elves-falath-pro-official-current-2026-09-23",
+    "elves-falath-pro-105-sa-bom-recheck-2026-09-25",
+    "elves-falath-pro-complete-au-bom-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The 5 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Drivetrain, brakes and cockpit remain exact; the mainland wheel package is preserved as unknown rather than borrowed from another regional build."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The 5 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Drivetrain, brakes and cockpit remain exact; the mainland wheel package is preserved as unknown rather than borrowed from another regional build.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "elves-falath-pro-official-current-2026-09-23",
+      "elves-falath-pro-105-sa-bom-recheck-2026-09-25",
+      "elves-falath-pro-complete-au-bom-recheck-2026-09-25"
+    ],
+    "note": "The SA 105 R7170 page lists gearing, tires and cockpit but no wheelset. The AU 105 Di2 option lists HB56D 56 mm wheels but is a regional build without a mainland mapping. Mainland wheel package remains unknown."
+  }
 }

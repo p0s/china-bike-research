@@ -503,8 +503,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-et-official-2026-08-29"
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact manufacturer ET table supports the current WheelTop, RS alloy-wheel, 700x28C tire and 420x90 carbon-cockpit build."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact manufacturer ET table supports the current WheelTop, RS alloy-wheel, 700x28C tire and 420x90 carbon-cockpit build.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-2026-08-29",
+      "twitter-cyclone-et-official-live-recheck-2026-09-25"
+    ],
+    "note": "The exact current ET page supports WheelTop EDS TX wireless 2x12; SENICX PRF 34/50 crank; Sunshine 11-34 cassette; SUMC chain; WheelTop hydraulic disc brakes; RS AL7005 W21xH38 mm wheels; RS 700x28C tires; and a 420x90 carbon cockpit. This is the listed ET build and may change by production. The displayed/default cockpit claim is 420x90 mm high-modulus carbon, but the same page later says every build has a 400x90 mm alloy cockpit; keep that option mapping conflicted."
+  }
 }

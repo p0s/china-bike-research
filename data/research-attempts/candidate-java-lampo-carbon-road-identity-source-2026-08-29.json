@@ -488,9 +488,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "taobao-snapshot-2026-08-08",
-    "lampo-mainland-launch-2026-08-29"
+    "lampo-mainland-launch-2026-08-29",
+    "lampo-official-home-index-2026-09-23",
+    "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-lampo-carbon-road-50-area-sweep-2026-08-29.json. The seller card and attributable launch establish LAMPO/JAVA presentation and the mainland road range while preserving exact-model ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-lampo-carbon-road-50-area-sweep-2026-08-29.json. The seller card and attributable launch establish LAMPO/JAVA presentation and the mainland road range while preserving exact-model ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "lampo-mainland-launch-2026-08-29",
+      "lampo-official-home-index-2026-09-23"
+    ],
+    "note": "The retained seller card supports the LAMPO/JAVA and 蓝波 presentation; launch coverage and the current official homepage support a LAMPO bicycle brand and mainland presence. The official index uses 蓝豹 and does not state the Java relationship; no exact model or seller authorization is established."
+  }
 }

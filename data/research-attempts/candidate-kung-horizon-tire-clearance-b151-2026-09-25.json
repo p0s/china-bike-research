@@ -1,0 +1,56 @@
+{
+  "id": "candidate-kung-horizon-tire-clearance-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "kung-horizon"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-kung-horizon-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-kung-horizon-tire-clearance",
+    "extends_attempt_id": "candidate-kung-horizon-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-kung-horizon-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "KUNG HORIZON 天际 exact complete bike weight maximum tire width 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.jd.com/xinghao/13182df9fbe0567b03bf.html",
+          "note": "The JD model index, accessed 2026-09-25, lines 92-94 lists a 7170 electric-shift HORIZON; lines 139-141 list a separate 7120 mechanical/hydraulic HORIZON; lines 126-127 name HORIZON FEO. It provides no weight or maximum clearance and does not map the variants to the retained CNY 6,999 option."
+        }
+      ],
+      "blocker": "Biketo’s 28C statement is for an older frame and is not a maximum; the current JD trims do not state clearance or map to the retained option."
+    }
+  },
+  "accepted_source_ids": [
+    "kung-horizon-jd-2026-08-30",
+    "kung-horizon-biketo-2018"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact tire-clearance field. The JD model index, accessed 2026-09-25, lines 92-94 lists a 7170 electric-shift HORIZON; lines 139-141 list a separate 7120 mechanical/hydraulic HORIZON; lines 126-127 name HORIZON FEO. It provides no weight or maximum clearance and does not map the variants to the retained CNY 6,999 option.",
+  "searched_at": "2026-09-25"
+}

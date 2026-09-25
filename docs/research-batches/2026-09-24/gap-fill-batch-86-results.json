@@ -1,0 +1,39 @@
+{
+  "batch": 86,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-86-scope.json"
+  ],
+  "result": {
+    "exact_models_checked": 7,
+    "atomic_gaps_checked": 10,
+    "research_ledger_fields_resolved": 10,
+    "source_reuse_resolutions_added": 10,
+    "unresolved_fields": 0,
+    "catalog_fact_changes": 0,
+    "source_records_added": 0,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-missing-china-price-specialized-tarmac-sl8-price-2026-09-01","disposition":"Reused exact mainland Tarmac SL8 Comp 105 Di2 CNY 30,990 listing accessed 2026-09-01; current stock and final checkout remain untested."},
+      {"attempt_id":"candidate-missing-china-price-trek-checkpoint-price-2026-09-01","disposition":"Reused exact Checkpoint SL 5 AXS Gen 3 product 47071 CNY 27,800 indexed listing; dynamic page did not expose price or stock and checkout remains unverified."},
+      {"attempt_id":"candidate-missing-china-price-trek-madone-gen-8-price-2026-09-01","disposition":"Reused Trek China category-page CNY 21,800 for exact Madone SL 5 Gen 8 product 57653; source accessed 2026-09-01 and dealer stock/checkout remain unverified."},
+      {"attempt_id":"variant-quick-gr-one-frameset-price-2026-09-01","disposition":"Reused exact GR:ONE global-store US$2,099 price and dated CNY reference conversion; not a mainland price, and variant catalog price remains unset."},
+      {"attempt_id":"variant-quick-gr-one-frameset-purchase-route-2026-09-01","disposition":"Reused global Add to Cart route and general delivery guidance; China orderability, stock, shipping, tax, customization, and warranty handling remain unverified."},
+      {"attempt_id":"candidate-quick-pro-tr-one-frame-weight-2026-09-01","disposition":"Reused exact TR:ONE frame-only 1,219 g with retailer-stated ±5% tolerance; size and hardware basis are unspecified."},
+      {"attempt_id":"candidate-quick-pro-tt-one-frame-stiffness-2026-09-01","disposition":"Reused qualitative manufacturer stiffness/low-weight claim only; no numeric result or public measurement protocol."},
+      {"attempt_id":"candidate-quick-pro-tt-one-frame-weight-2026-09-01","disposition":"Reused TT:ONE frame 1,089 g and fork 399 g, each ±5%; these are separate frame/fork weights, not complete-bike weight, with size/finish/hardware basis unspecified."},
+      {"attempt_id":"candidate-quick-pro-tt-one-price-2026-09-01","disposition":"Reused global US$2,999 and dated CNY 20,152 reference conversion; conversion is not a mainland checkout and stock, shipping, size, finish, and taxes/duties remain unverified."},
+      {"attempt_id":"candidate-quick-pro-ur-one-frame-stiffness-2026-09-01","disposition":"Reused qualitative manufacturer stiffness/control-at-low-weight claim and Silverstone validation reference; no numeric stiffness result or public instrumented protocol."}
+    ],
+    "data_outcome": "Ten evidence-found ledger entries now have explicit source-to-fact resolutions. Some limitations remain buyer-facing research questions, including mainland checkout/stock and quantitative stiffness. No catalog gap was closed; inventory remains 707 atomic gaps."
+  },
+  "validation": {
+    "read_only_audit": "pass: one Luna Max local audit, no browsing or edits",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "research_queue": "evidence-found decreased from 233 to 223; catalog inventory remains 707",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets after coverage:check reported new protected resolution metadata",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates",
+    "git_diff_check": "pass",
+    "full_gate": "not rerun: B86 changed only research-resolution metadata; prior full gate remains applicable to unchanged code"
+  }
+}

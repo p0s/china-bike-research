@@ -479,8 +479,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "elves-vanyar-pro-disc-uk-clearance-2026-09-01"
+    "elves-vanyar-pro-disc-uk-clearance-2026-09-01",
+    "elves-vanyar-pro-disc-official-2026-08-17",
+    "elves-vanyar-pro-disc-2024-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-elves-vanyar-batch-035-50-area-sweep-2026-09-01.json. The current exact regional manufacturer page publishes 870 g in size 47 through 1,050 g in size 62, unpainted without metal parts, plus or minus 30 g."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-elves-vanyar-batch-035-50-area-sweep-2026-09-01.json. The current exact regional manufacturer page publishes 870 g in size 47 through 1,050 g in size 62, unpainted without metal parts, plus or minus 30 g.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "elves-vanyar-pro-disc-official-2026-08-17",
+      "elves-vanyar-pro-disc-2024-recheck-2026-09-23"
+    ],
+    "note": "Accepted manufacturer evidence lists 870 g for size 47, unpainted without metal parts, ±30 g; size 62 is listed at 1,050 g. The weight table did not surface on today’s page opening."
+  }
 }

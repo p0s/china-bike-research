@@ -480,8 +480,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "elves-falath-evo-official-2026-08-17"
+    "elves-falath-evo-official-2026-08-17",
+    "elves-falath-evo-spec-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-elves-falath-evo-batch-041-50-area-sweep-2026-09-01.json. Current exact manufacturer specification lists 1,050 g for the size-46 unpainted frame."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-elves-falath-evo-batch-041-50-area-sweep-2026-09-01.json. Current exact manufacturer specification lists 1,050 g for the size-46 unpainted frame.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "elves-falath-evo-spec-recheck-2026-09-23"
+    ],
+    "note": "Exact Falath EVO page lists 1,050 g for size 46 unpainted; fork and seatpost are listed separately."
+  }
 }

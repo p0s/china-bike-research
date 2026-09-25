@@ -1,0 +1,52 @@
+{
+  "id": "variant-twitter-v3-2024-rs-sensah-alloy-image-exact-listing-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-2024-rs-sensah-alloy"
+  },
+  "field": "image",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01",
+  "retry_reason": "The earlier broad campaign retained a remotely embedded Gravel V3 RS image with a market-build caveat. One focused exact-listing-image check tests whether a more exact and safely attributable image is available.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-78-twitter-v3-rs-image",
+    "extends_attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-78-scope.json",
+    "reason": "One bounded exact-model public listing-image check tests whether source-page photos can be mapped to the 2024 RS Sensah 2×12 alloy build and safely retained under the existing remote-embed contract.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The opened listing does not map its photos to the exact RS Sensah 2×12 alloy option, and image ownership, privacy safety, and reuse terms are not established.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 2024 RS Sensah 2x12 alloy wheels listing image 淘宝 骓特",
+          "route": "One focused public search for an exact Gravel V3 2024 RS Sensah 2×12 alloy listing image, followed by at most one exact item page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.dcfever.com/trading/view.php?id=10642932",
+          "note": "The Hong Kong classified titled `2024 TWITTER GRAVEL V3 11s/22s/24s` describes an RS 24-speed option with Sensah HRC6900 2×12, Sensah RD8500 12-speed, RS G100 hydraulic brakes, 38 mm aluminum rims, and a carbon bar. It lists three build options and five photos without mapping a photo to this option; no photo was visually verified. The page also lists BB86 and 700×38C, which do not fully match the retained target. The photographer is unidentified and the page states no image reuse license. It was listed 2024-08-17 and updated 2024-11-01, so current availability is unverified. Do not retain seller identity or use its photos."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Keep the existing remote image, its same-model-different-market-build classification, and its caveats unchanged. The listing text is insufficient to resolve the image-exactness gap."
+}

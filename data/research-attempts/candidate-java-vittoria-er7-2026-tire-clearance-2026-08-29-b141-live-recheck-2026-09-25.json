@@ -1,0 +1,53 @@
+{
+  "id": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "java-vittoria-er7-2026"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "JAVA 佳沃 Vittoria ER7 2026 complete bicycle weight 700x28 maximum tire width China specification",
+          "route": "Fresh B141 exact-model web search; only a frameset result surfaced and was not opened",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search surfaced an ER7 frame result without a maximum-clearance figure for the retained complete build. Page not opened.",
+          "result_url": "https://javabikes.com/goodDetail/77"
+        }
+      ],
+      "blocker": "Search surfaced an ER7 frame result without a maximum-clearance figure for the retained complete build. Page not opened."
+    }
+  },
+  "notes": "Search surfaced an ER7 frame result without a maximum-clearance figure for the retained complete build. Page not opened.",
+  "campaign_extension": {
+    "id": "b141-java-vittoria-er7-2026-tire-clearance",
+    "extends_attempt_id": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

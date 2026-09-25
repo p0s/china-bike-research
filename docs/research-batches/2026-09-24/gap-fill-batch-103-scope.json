@@ -1,0 +1,23 @@
+{
+  "batch": 103,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 129,
+  "scope_method": "Fresh research queue's next exact candidate after unresolved B100 cases; four evidence-found fields on one 2026 SUNPEED option.",
+  "scope": [
+    {"record_type":"candidate","record_id":"sunpeed-wudi-e-2026","attempt_id":"candidate-sunpeed-wudi-e-2026-complete-weight-2026-08-30","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"sunpeed-wudi-e-2026","attempt_id":"candidate-sunpeed-wudi-e-2026-drivetrain-2026-08-30","atomic_gap":"drivetrain"},
+    {"record_type":"candidate","record_id":"sunpeed-wudi-e-2026","attempt_id":"candidate-sunpeed-wudi-e-2026-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"sunpeed-wudi-e-2026","attempt_id":"candidate-sunpeed-wudi-e-2026-identity-source-2026-08-30","atomic_gap":"identity-source"}
+  ],
+  "allowed_work": "One evidence-only Luna worker may inspect only the four attempts, their accepted source records, and the exact candidate. Confirm exact 2026 Invincible Sport option mapping and caveats. Recommend source-reuse only for claims that are already fully represented. Keep 8.6 kg measurement basis and lack of grade, complete BOM, tire maximum, stiffness, current stock/checkout and warranty limits explicit. No browsing, edits, sibling models, or out-of-scope files.",
+  "done_criteria": [
+    "All four attempts receive evidence-file-backed source-reuse or unresolved recommendations.",
+    "Primary writer integrates only exact supported resolutions; no unsupported manufacturer grade or additional build fact is added.",
+    "Fresh data:gaps and research:queue quantify post-batch status.",
+    "Run validate, research:check, monotonic coverage acceptance/check and git diff --check; no full gate or image report unless product/source/image records change."
+  ]
+}

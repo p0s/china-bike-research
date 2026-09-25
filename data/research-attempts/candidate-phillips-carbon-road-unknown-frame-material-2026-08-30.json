@@ -486,8 +486,20 @@
     "taobao-snapshot-2026-08-08",
     "phillips-sachem-jd-2026-08-30",
     "phillips-sachem-888bike-2026-08-30",
-    "phillips-sachem-ruten-2026-08-30"
+    "phillips-sachem-ruten-2026-08-30",
+    "phillips-sachem-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "phillips-sachem-888bike-2026-08-30",
+      "phillips-sachem-ruten-2026-08-30",
+      "phillips-sachem-jd-index-recheck-2026-09-23"
+    ],
+    "note": "Carbon frame/fork and top-option parts remain retailer/seller claims. The current JD index identifies the carbon SACHEM family but does not publish selected 24-speed construction details; no manufacturer frame specification was established."
+  },
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/phillips-carbon-road-unknown-50-area-sweep-2026-08-30.json. Exact listings consistently identify a carbon frame and carbon fork; the 24-speed reference adds carbon seatpost and cockpit."
 }

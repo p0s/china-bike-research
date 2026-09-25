@@ -49,8 +49,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "public-giant-propel-gen4-2026-08-17"
+    "public-giant-propel-gen4-2026-08-17",
+    "giant-propel-advanced-sl1-mainland-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+    ],
+    "note": "Current Giant China product page directly identifies Propel Advanced SL 1 and its Advanced SL-grade composite frame/fork."
+  }
 }

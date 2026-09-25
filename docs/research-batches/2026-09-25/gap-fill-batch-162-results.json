@@ -1,0 +1,68 @@
+{
+  "batch": 162,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-162-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    }
+  },
+  "work": {
+    "exact_records": 2,
+    "atomic_fields": 2,
+    "command": "npm run --silent image:report -- --ids evolve-cima-gr-primary-image,tfsa-jh37-primary-image --json",
+    "results": [
+      {
+        "image_id": "evolve-cima-gr-primary-image",
+        "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+        "classification": "unreachable",
+        "http_response": "none returned by the checker",
+        "prior_direct_response": "202 text/html on 2026-09-25"
+      },
+      {
+        "image_id": "tfsa-jh37-primary-image",
+        "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+        "classification": "unreachable",
+        "http_response": "none returned by the checker",
+        "prior_direct_response": "202 text/html on 2026-09-25"
+      }
+    ],
+    "image_records_changed": 0,
+    "image_assets_added_or_replaced": 0,
+    "new_sources": 0,
+    "images_added": 0,
+    "disposition": "The scoped checker did not obtain an HTTP response for either URL. This does not prove that the images are broken. Existing 202 text/html checks remain the latest direct responses, and both image-health gaps remain open. No second attempt was made."
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "image_report": "completed for exactly two IDs; both unreachable, no response; no image records changed",
+    "git_diff_check": "passed",
+    "full_gate": "not run: no catalog or image-record changes; scope/results documentation only"
+  }
+}

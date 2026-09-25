@@ -1,0 +1,479 @@
+{
+  "batch_id": "gap-fill-batch-29-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-29-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 25,
+    "root_fields": 0,
+    "luna_evidence_fields": 25
+  },
+  "new_source_records": [
+    "pardus-super-sport-gen2-official-current-2026-09-23",
+    "pardus-uragano-evo-biketo-recheck-2026-09-23",
+    "pardus-uragano-sport-official-current-2026-09-23",
+    "phillips-sachem-jd-index-recheck-2026-09-23",
+    "phillips-corporate-profile-recheck-2026-09-23",
+    "phoenix-799-ebuy7-current-recheck-2026-09-23",
+    "pinarello-f5-my26-current-recheck-2026-09-23",
+    "qingsha-qs91-accio-index-recheck-2026-09-23",
+    "qingsha-qs91-jd-index-recheck-2026-09-23",
+    "quick-gr-one-global-store-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "pardus-uragano-evo",
+    "pardus-uragano-evo-community-lead",
+    "pardus-uragano-sport",
+    "phillips-carbon-road-unknown",
+    "pinarello-f5",
+    "qingsha-carbon-folding"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "pardus-super-sport-gen2",
+      "model": "PARDUS Super Sport Gen2",
+      "field": "geometry",
+      "status": "platform-geometry-currently-rechecked",
+      "attempt_record_id": "platform-pardus-super-sport-gen2-geometry-2026-08-27",
+      "source_ids": [
+        "pardus-super-sport-gen2-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446"
+      ],
+      "note": "Current manufacturer SPORT—105 page publishes geometry for XXS–XL. This is platform-level geometry and does not provide a separate eGR geometry table.",
+      "next_trigger": "Reopen if the geometry table changes or PARDUS publishes eGR-specific geometry."
+    },
+    {
+      "record_id": "pardus-super-sport-gen2-egr",
+      "model": "PARDUS Super Sport Gen2 eGR",
+      "field": "frame",
+      "status": "exact-egr-frame-grade-unresolved-current-refreshes-failed",
+      "attempt_record_id": "variant-pardus-super-sport-gen2-egr-frame-2026-08-17",
+      "source_ids": [
+        "pardus-super-sport-egr-888bike-2026-08-17",
+        "pardus-super-sport-launch-wildto-2026-08-17",
+        "pardus-super-sport-gen2-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.wildto.com/news/58865.html",
+        "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446",
+        "https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr"
+      ],
+      "note": "Exact eGR retailer and launch sources remain the basis; both current refreshes failed. The current official page covers the 105 branch only, so its HS-HPT construction cannot be transferred to eGR and the T700/T800 conflict remains unresolved.",
+      "next_trigger": "Reopen when a readable current exact-eGR manufacturer or attributable product source resolves construction and grade."
+    },
+    {
+      "record_id": "pardus-super-sport-gen2-egr",
+      "model": "PARDUS Super Sport Gen2 eGR",
+      "field": "image",
+      "status": "existing-rights-reviewed-exact-variant-image-retained",
+      "attempt_record_id": "variant-pardus-super-sport-gen2-egr-image-2026-09-01",
+      "source_ids": [
+        "public-pardus-super-sport-gen2-launch-2026-08-28"
+      ],
+      "sources_checked": [
+        "https://www.xiaohongshu.com/explore/69ba72b0000000001d01a1ae"
+      ],
+      "note": "Retain the existing sanitized, rights-reviewed exact-eGR image promoted as primary. No image file or image record changed in this batch.",
+      "next_trigger": "Reopen if provenance, rights review or exact-variant match changes."
+    },
+    {
+      "record_id": "pardus-super-sport-gen2-egr",
+      "model": "PARDUS Super Sport Gen2 eGR",
+      "field": "tire-clearance",
+      "status": "40c-platform-and-exact-egr-evidence-qualified",
+      "attempt_record_id": "variant-pardus-super-sport-gen2-egr-tire-clearance-2026-08-17",
+      "source_ids": [
+        "pardus-super-sport-egr-888bike-2026-08-17",
+        "pardus-super-sport-launch-wildto-2026-08-17",
+        "pardus-super-sport-gen2-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.wildto.com/news/58865.html",
+        "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446",
+        "https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr"
+      ],
+      "note": "Retained exact-eGR sources agree on 40C and current PARDUS 105-branch page also states 700×40C maximum. The two exact-source refreshes failed; retain the value as qualified platform/exact-variant evidence, not a new eGR-specific manufacturer claim.",
+      "next_trigger": "Reopen if PARDUS publishes an eGR-specific clearance figure or an exact-source conflict appears."
+    },
+    {
+      "record_id": "pardus-uragano-evo",
+      "model": "PARDUS Uragano EVO",
+      "field": "complete-weight",
+      "status": "historical-reviewed-build-9650g-without-clipless-pedals",
+      "attempt_record_id": "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27",
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.biketo.com/product/52352.html?all=1"
+      ],
+      "note": "BIKETO reports 9.65 kg without clipless pedals for its 2023 SRAM Apex AXS/X1 Eagle AXS build. Size and weighing method are unstated; retain only as a historical reviewed-build claim.",
+      "next_trigger": "Reopen for a current exact SKU/build weight with size, equipment and weighing basis."
+    },
+    {
+      "record_id": "pardus-uragano-evo",
+      "model": "PARDUS Uragano EVO",
+      "field": "frame-stiffness",
+      "status": "qualitative-review-only-no-measurement",
+      "attempt_record_id": "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27",
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.biketo.com/product/52352.html?all=1"
+      ],
+      "note": "The review describes the frame as stiff on rough gravel, without a numeric result or method. Keep this as qualitative ride evidence only.",
+      "next_trigger": "Reopen for an exact-frame test with a stated method or measured value."
+    },
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "model": "PARDUS Uragano EVO gravel community build",
+      "field": "complete-weight",
+      "status": "custom-build-weight-unresolved",
+      "attempt_record_id": "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
+      "source_ids": [
+        "biketo-pardus-uragano-evo-review-2023",
+        "pardus-uragano-evo-uae-seller-2026-08-27",
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.biketo.com/product/52352.html?all=1",
+        "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202"
+      ],
+      "note": "The 9.65 kg BIKETO review and approximately 9.0 kg size-M UAEcycle Rival XPLR listing are distinct builds; neither maps to this current custom/community lead. The candidate retains the BIKETO number only as an explicitly reference-only claim; its own complete weight remains unresolved.",
+      "next_trigger": "Reopen when an exact community build has a visible weight, size, components and measurement basis."
+    },
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "model": "PARDUS Uragano EVO gravel community build",
+      "field": "purchase-route",
+      "status": "family-route-only-current-page-timeout",
+      "attempt_record_id": "candidate-pardus-uragano-evo-community-lead-purchase-route-2026-08-17",
+      "source_ids": [
+        "pardus-uragano-jd-route-2026-08-17"
+      ],
+      "sources_checked": [
+        "https://pardus.jd.com/view_search-2595878-25171610-99-1-20-1.html"
+      ],
+      "note": "Existing evidence supports only a PARDUS Uragano-family storefront route. Current page refresh timed out; no exact EVO SKU, current stock, price or checkout is established.",
+      "next_trigger": "Reopen when a current official order page identifies the exact EVO SKU and order/stock state."
+    },
+    {
+      "record_id": "pardus-uragano-sport",
+      "model": "PARDUS Uragano Sport—105",
+      "field": "current-configuration",
+      "status": "current-105-branch-configuration-confirmed",
+      "attempt_record_id": "candidate-pardus-uragano-sport-current-configuration-2026-08-27",
+      "source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27",
+        "pardus-uragano-sport-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447"
+      ],
+      "note": "Current exact page lists Shimano 105 R7000 2×11, 46/30 Prowheel crank, 11–30 cassette, PW5 DB alloy wheels, Tektro R510, HS-EPS+ frame and HS-HPT fork. Applies to Sport—105 only.",
+      "next_trigger": "Reopen if the manufacturer revises the exact branch or a different trim is selected."
+    },
+    {
+      "record_id": "pardus-uragano-sport",
+      "model": "PARDUS Uragano Sport—105",
+      "field": "tire-clearance",
+      "status": "manufacturer-maximum-700x45c",
+      "attempt_record_id": "candidate-pardus-uragano-sport-tire-clearance-2026-08-27",
+      "source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27",
+        "pardus-uragano-sport-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://parduscycle.com/Hightxq.aspx?color=14522&id=35545&pz=14518&t=27447"
+      ],
+      "note": "The current exact Sport—105 manufacturer page states a 700×45C maximum; this is not a fitted-tire observation.",
+      "next_trigger": "Reopen if the exact-model manufacturer maximum changes."
+    },
+    {
+      "record_id": "phillips-carbon-road-unknown",
+      "model": "PHILLIPS SACHEM 24-speed",
+      "field": "complete-weight",
+      "status": "seller-advertised-weight-not-currently-refreshed",
+      "attempt_record_id": "candidate-phillips-carbon-road-unknown-complete-weight-2026-08-30",
+      "source_ids": [
+        "phillips-sachem-888bike-2026-08-30",
+        "phillips-sachem-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://www.888bike.net/en/product/12279/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-phillips-sachem-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-700x28c-2025"
+      ],
+      "note": "The dated 2025 retailer claim is 8.5 kg, with size and weighing method unstated. Current JD index shows both 16- and 24-speed options but does not refresh the weight or map it to a selected 24-speed option.",
+      "next_trigger": "Reopen with a current selected 24-speed listing that states size and weighing basis."
+    },
+    {
+      "record_id": "phillips-carbon-road-unknown",
+      "model": "PHILLIPS SACHEM 24-speed",
+      "field": "drivetrain",
+      "status": "seller-listed-24-speed-current-selected-bom-unresolved",
+      "attempt_record_id": "candidate-phillips-carbon-road-unknown-drivetrain-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "phillips-sachem-jd-2026-08-30",
+        "phillips-sachem-888bike-2026-08-30",
+        "phillips-sachem-ruten-2026-08-30",
+        "phillips-sachem-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://www.888bike.net/en/product/12279/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-phillips-sachem-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-700x28c-2025"
+      ],
+      "note": "Retain seller-listed 2×12/24-speed claim. Current JD index separates 16- and 24-speed options but the linked title defaults to 16-speed and does not expose the selected 24-speed parts list.",
+      "next_trigger": "Reopen when a readable selected 24-speed page gives fixed component models."
+    },
+    {
+      "record_id": "phillips-carbon-road-unknown",
+      "model": "PHILLIPS SACHEM 24-speed",
+      "field": "frame-material",
+      "status": "seller-carbon-claim-current-configuration-unresolved",
+      "attempt_record_id": "candidate-phillips-carbon-road-unknown-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "phillips-sachem-888bike-2026-08-30",
+        "phillips-sachem-ruten-2026-08-30",
+        "phillips-sachem-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://www.888bike.net/en/product/12279/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-phillips-sachem-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-700x28c-2025"
+      ],
+      "note": "Carbon frame/fork and the top-option carbon parts remain retailer/seller claims. Current JD index identifies the carbon SACHEM family but does not confirm the selected 24-speed construction; no manufacturer frame specification was found.",
+      "next_trigger": "Reopen with a current exact 24-speed manufacturer or seller construction specification."
+    },
+    {
+      "record_id": "phillips-carbon-road-unknown",
+      "model": "PHILLIPS SACHEM 24-speed",
+      "field": "identity-source",
+      "status": "brand-and-model-family-supported-exact-selected-sku-unresolved",
+      "attempt_record_id": "candidate-phillips-carbon-road-unknown-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "phillips-sachem-jd-2026-08-30",
+        "phillips-sachem-888bike-2026-08-30",
+        "phillips-sachem-ruten-2026-08-30",
+        "phillips-corporate-official-2026-08-30",
+        "phillips-sachem-jd-index-recheck-2026-09-23",
+        "phillips-corporate-profile-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.zj-phillips.com/index.php?ac=article&at=list&tid=56",
+        "https://www.jd.com/jiage/13187ace9e4c75d2cb78.html?brand=PHILLIPS&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://www.888bike.net/en/product/12279/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-phillips-sachem-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-700x28c-2025"
+      ],
+      "note": "Company profile links PHILLIPS/菲利普 with Zhejiang Phillips; JD identifies SACHEM and separate speed options. Exact gradient-green selected 24-speed SKU remains unresolved.",
+      "next_trigger": "Reopen with a current official or seller page that identifies the selected 24-speed color/configuration."
+    },
+    {
+      "record_id": "phoenix-700c-carbon-e-road",
+      "model": "Phoenix 799 700C carbon e-road",
+      "field": "complete-weight",
+      "status": "seller-weight-battery-and-700c-match-unresolved",
+      "attempt_record_id": "candidate-phoenix-700c-carbon-e-road-complete-weight-2026-08-30",
+      "source_ids": [
+        "phoenix-799-ebuy7-2026-08-30",
+        "phoenix-799-ebuy7-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html"
+      ],
+      "note": "Current seller page calls vehicle quality 20 kg but does not identify the selected 6 Ah/10 Ah battery or measurement method; rim-size field is Other and does not confirm the retained 700C option.",
+      "next_trigger": "Reopen when an exact 700C selection ties weight to battery, size and measurement basis."
+    },
+    {
+      "record_id": "phoenix-700c-carbon-e-road",
+      "model": "Phoenix 799 700C carbon e-road",
+      "field": "drivetrain",
+      "status": "generic-seller-listed-nine-speed",
+      "attempt_record_id": "candidate-phoenix-700c-carbon-e-road-drivetrain-2026-08-30",
+      "source_ids": [
+        "phoenix-799-ebuy7-2026-08-30",
+        "phoenix-799-ebuy7-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html"
+      ],
+      "note": "Current seller page lists a generic 9-speed transmission; component maker, models, gearing and relation to a 700C selection are unspecified.",
+      "next_trigger": "Reopen with a selected exact-variant drivetrain specification."
+    },
+    {
+      "record_id": "phoenix-700c-carbon-e-road",
+      "model": "Phoenix 799 700C carbon e-road",
+      "field": "frame-material",
+      "status": "seller-carbon-t700-frame-claim-fork-unknown",
+      "attempt_record_id": "candidate-phoenix-700c-carbon-e-road-frame-material-2026-08-30",
+      "source_ids": [
+        "phoenix-799-ebuy7-2026-08-30",
+        "phoenix-799-ebuy7-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html"
+      ],
+      "note": "Retailer describes a carbon frame and its Q&A calls it T700. Fork material and frame lay-up are not specified; keep attribution to the seller.",
+      "next_trigger": "Reopen with manufacturer construction details for the exact 799 option."
+    },
+    {
+      "record_id": "phoenix-700c-carbon-e-road",
+      "model": "Phoenix 799 700C carbon e-road",
+      "field": "identity-source",
+      "status": "phoenix-799-family-identity-exact-700c-option-unresolved",
+      "attempt_record_id": "candidate-phoenix-700c-carbon-e-road-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "phoenix-799-ebuy7-2026-08-30",
+        "phoenix-799-ebuy7-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.ebuy7.com/phoenix-carbon-fiber-electric-bicycle-power-assisted-battery-bike-for-men-and-women-adults-torque-sensing-off-road-motorcycle.html"
+      ],
+      "note": "Current page identifies Phoenix item 799. The retained card identifies a 700C presentation, but current page says rim size Other and does not establish a 700C selection.",
+      "next_trigger": "Reopen when an exact model-799 variant page identifies 700C."
+    },
+    {
+      "record_id": "pinarello-f5",
+      "model": "PINARELLO F5",
+      "field": "drivetrain",
+      "status": "my26-105-di2-reference-trim-only",
+      "attempt_record_id": "candidate-pinarello-f5-drivetrain-2026-08-30",
+      "source_ids": [
+        "pinarello-f5-my26-current-2026-08-30",
+        "pinarello-f5-my26-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://pinarello.com/global/en/bikes/road/competition/new-pinarello-f/new-pinarello-f5-105-di2"
+      ],
+      "note": "Current manufacturer page title identifies MY26 F5 105 Di2; the component tab timed out today. Reuse accepted exact-page Shimano 105 Di2 2×12 spec for this trim only, not the generic retained card.",
+      "next_trigger": "Reopen if the exact MY26 trim or selected mainland SKU changes."
+    },
+    {
+      "record_id": "pinarello-f5",
+      "model": "PINARELLO F5",
+      "field": "frame-material",
+      "status": "my26-t700-ud-reference-trim-retained",
+      "attempt_record_id": "candidate-pinarello-f5-frame-material-2026-08-30",
+      "source_ids": [
+        "pinarello-f5-my26-current-2026-08-30",
+        "pinarello-f5-my26-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://pinarello.com/global/en/bikes/road/competition/new-pinarello-f/new-pinarello-f5-105-di2"
+      ],
+      "note": "Retain accepted Torayca T700 UD for the MY26 F5 105 Di2 reference trim. Today’s readable extract did not show the material text; do not generalize to the configuration-hidden card.",
+      "next_trigger": "Reopen if Pinarello changes the exact reference trim or publishes a different selected build."
+    },
+    {
+      "record_id": "pinarello-f5",
+      "model": "PINARELLO F5",
+      "field": "tire-clearance",
+      "status": "my26-f5-105-di2-maximum-32mm",
+      "attempt_record_id": "candidate-pinarello-f5-tire-clearance-2026-08-30",
+      "source_ids": [
+        "pinarello-f5-my26-current-2026-08-30",
+        "pinarello-f5-my26-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://pinarello.com/global/en/bikes/road/competition/new-pinarello-f/new-pinarello-f5-105-di2"
+      ],
+      "note": "Current manufacturer page explicitly lists 32 mm maximum tire width for MY26 F5 105 Di2; this is trim-specific.",
+      "next_trigger": "Reopen if the exact manufacturer specification changes or size-specific limits are published."
+    },
+    {
+      "record_id": "qingsha-carbon-folding",
+      "model": "QingSha QS91-20 blue / blue-carbon-wheel",
+      "field": "drivetrain",
+      "status": "supplier-listed-seven-speed-component-models-unknown",
+      "attempt_record_id": "candidate-qingsha-carbon-folding-drivetrain-2026-08-30",
+      "source_ids": [
+        "qingsha-qs91-supplier-index-2026-08-30",
+        "qingsha-qs91-accio-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.accio.com/plp/shark-bike-price"
+      ],
+      "note": "Current supplier index repeats a 7-speed QS91 family claim, but is not manufacturer evidence and does not identify components or the selected JD option BOM.",
+      "next_trigger": "Reopen with manufacturer or exact-option components."
+    },
+    {
+      "record_id": "qingsha-carbon-folding",
+      "model": "QingSha QS91-20 blue / blue-carbon-wheel",
+      "field": "frame-material",
+      "status": "supplier-carbon-frame-fork-claim-grade-unknown",
+      "attempt_record_id": "candidate-qingsha-carbon-folding-frame-material-2026-08-30",
+      "source_ids": [
+        "qingsha-qs91-supplier-index-2026-08-30",
+        "qingsha-qs91-accio-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.accio.com/plp/shark-bike-price"
+      ],
+      "note": "Supplier index describes a carbon-fiber frame and fork. Grade, lay-up and manufacturer confirmation remain unavailable.",
+      "next_trigger": "Reopen with an exact-model manufacturer construction specification."
+    },
+    {
+      "record_id": "qingsha-carbon-folding",
+      "model": "QingSha QS91-20 blue / blue-carbon-wheel",
+      "field": "identity-source",
+      "status": "jd-selected-option-supported-legal-manufacturer-link-qualified",
+      "attempt_record_id": "candidate-qingsha-carbon-folding-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "qingsha-qs91-jd-2026-08-30",
+        "qingsha-qs91-supplier-index-2026-08-30",
+        "qingsha-corporate-exhibitor-2026-08-30",
+        "qingsha-qs91-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/131850e26d18727f9207.html",
+        "https://apr.rxhuabo.com.cn/list.html?page=166"
+      ],
+      "note": "Current JD index matches QS91-20 and distinguishes the blue and blue-carbon-wheel options. The exhibitor directory’s legal-company link does not prove it manufactures this exact listing.",
+      "next_trigger": "Reopen with an official company product page tying QS91-20 to the legal manufacturer."
+    },
+    {
+      "record_id": "quick-gr-one",
+      "model": "QUICK GR:ONE",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-hosted-owner-reports-only",
+      "attempt_record_id": "platform-quick-gr-one-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "quick-gr-one-global-store-2026-09-01",
+        "quick-gr-one-global-store-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/gr-one-frame"
+      ],
+      "note": "Current exact frame page still hosts owner comments describing the frame as stiff. This is qualitative testimony, not independent or instrumented stiffness evidence.",
+      "next_trigger": "Reopen for an exact-frame test with a stated method or measured result."
+    }
+  ],
+  "integration_notes": [
+    "Added ten dated source rechecks; no new price or image record was created.",
+    "Added current source provenance to the relevant platform, variant and candidate records.",
+    "Qualified PHILLIPS weight, drivetrain and frame facts as historical seller claims; the current JD index does not expose the selected 24-speed BOM or weight.",
+    "Preserved exact-trim and seller/source limitations for Phoenix 799, Pinarello F5, QingSha QS91 and PARDUS current pages.",
+    "The existing Gen2 eGR primary image remains unchanged; primary image record count remains 212.",
+    "No XHS, seller contact, image download, GitHub mutation, PR, merge or publication occurred.",
+    "Qualified the BIKETO weight on the Uragano EVO community lead as a reference-only build claim; it does not resolve the custom build weight.",
+    "The Phoenix 799 current-page recheck stays linked to the exact research attempt but is not attached to the candidate source list because the page does not confirm 700C; a scoped relationship retirement preserves the candidate visibility boundary."
+  ],
+  "validation": {
+    "coverage_accept": "PASS: npm run --silent coverage:accept; monotonic baseline accepted for 212 images and 277 catalog targets.",
+    "focused_tests": "PASS: node --test tests/data.test.mjs; 69 passed, 0 failed.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy scan, dataset validation, research:check, coverage:check, 307 tests, 584-page build and SEO audit passed.",
+    "counts": "41 brands, 38 platforms, 41 variants, 73 prices, 1,126 sources, 212 primary images, 236 candidates, 1,465 atomic research records.",
+    "image_report": "Not run; no image records changed.",
+    "build_note": "Build reported it could not remove a previous-output backup; the artifact was left untouched."
+  }
+}

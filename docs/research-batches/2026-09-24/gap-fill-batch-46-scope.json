@@ -1,0 +1,140 @@
+{
+  "batch": 46,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    },
+    "queue_counts": {
+      "ready": 0,
+      "evidence-found": 252,
+      "deferred": 42,
+      "blocked": 514,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "Select the next six highest-ranked unhandled non-ledger mainland observed-price gaps after excluding the exact targets handled in B43–B45. Each is an exact candidate with prior evidence-found MSRP/listing leads; only a current exact China CNY listing amount or checkout value can close the observed-price field.",
+    "selected_atomic_fields": 6,
+    "selected_exact_targets": 6
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-merida-scultura",
+      "exact_identity": "Merida SCULTURA 6000 25 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-missing-china-price-merida-scultura-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "merida-china-scultura-6000-25-official-2026-08-17",
+        "merida-scultura-v-platform-clearance-2026-09-01",
+        "merida-scultura-6000-25-current-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-merida-silex",
+      "exact_identity": "Merida SILEX 7000 25 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-missing-china-price-merida-silex-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "merida-silex-7000-25-official-cny-reference-2026-08-17",
+        "merida-china-sales-channels-current-2026-09-23",
+        "merida-silex-7000-25-official-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-tarmac-sl8",
+      "exact_identity": "Specialized Tarmac SL8 Comp 105 Di2 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "specialized-china-tarmac-sl8-comp-price-2026-08-17",
+        "specialized-tarmac-sl8-comp-spec-2026-08-17",
+        "specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-checkpoint",
+      "exact_identity": "Trek Checkpoint SL 5 AXS Gen 3 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-missing-china-price-trek-checkpoint-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "trek-checkpoint-sl-gen3-official-2026-08-17",
+        "trek-checkpoint-sl5-gen3-bikemart-recheck-2026-09-23",
+        "trek-checkpoint-sl5-axs-gen3-official-2026-09-23",
+        "trek-checkpoint-gen3-current-official-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "exact_identity": "Trek Madone SL 5 Gen 8 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-missing-china-price-trek-madone-gen-8-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "trek-china-madone-sl-range-2026-08-17",
+        "trek-madone-sl5-gen8-china-page-recheck-2026-09-23",
+        "trek-madone-gen8-faq-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "specialized-roubaix-sl8-sport-105",
+      "exact_identity": "Specialized 2025 Roubaix SL8 Sport Shimano 105 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "specialized-roubaix-sl8-sport-105-china-recheck-2026-09-23",
+        "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24"
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "Check the exact China manufacturer page first, then a current exact SKU/order listing from the manufacturer storefront or clearly attributable seller.",
+    "price_acceptance": "Record only a directly visible CNY listing or checkout amount mapped to the exact model/build. Keep `official_price` separate; preserve coupon, search-card, stock, size, color and seller conditions. Do not infer final checkout or convert a foreign price.",
+    "recording": "Add dated source provenance and one field-specific attempt per target. Add a dated observed-price record only when exact identity and CNY amount are directly visible; otherwise preserve the existing official/MSRP reference and record the concrete blocker.",
+    "stop_criteria": "Process the six models sequentially. Stop each model at decisive exact price evidence or one concrete access/identity/option limitation. Do not enter account login, challenge handling or bypass routes."
+  }
+}

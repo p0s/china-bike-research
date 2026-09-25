@@ -8,11 +8,11 @@
   "why_interesting": "The current exact R70 page supplies a manufacturer weight claim and full Di2 build, while current official-store indexes also expose mechanical 105 builds. The retained cards do not select one drivetrain.",
   "facts": {
     "listing_identity": "UPLAND / 阿普兰 R70 complete-bike family",
-    "complete_weight": "Approximately 8.3 kg bare, without pedals or computer mount; current manufacturer claim",
+    "complete_weight": "The exact manufacturer page search-index excerpt returned 2026-09-23 claims approximately 8.3 kg bare, excluding pedals and computer mount, for the displayed 105 Di2 build. Direct opening timed out; retained cards do not select this build, and size/weighing method are unstated.",
     "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 and Shimano 105 R7170/R7150 Di2 2x12 are both current",
     "stock_tire": "Michelin Dynamic Sport 700x25C on the displayed manufacturer build; maximum clearance unpublished",
     "frame_material": "Toray T700 carbon main frame with T800 reinforcement at key areas and a T800 carbon fork",
-    "identity_source": "Current exact UPLAND product page and JD official-store index identify R70 and separate mechanical 105 and 105 Di2 builds",
+    "identity_source": "Exact UPLAND product page and race article identify the R70; the current product page was available only as a search-index excerpt because direct opening timed out. The pages do not map retained seller cards to one drivetrain option.",
     "stiffness_evidence": "Independent exact-model review reports strong pedaling stiffness; current manufacturer engineering notes describe T800 reinforcement for structural strength, but no instrumented frame-stiffness protocol is published"
   },
   "missing": [
@@ -27,7 +27,9 @@
     "upland-r70-official-2026-08-30",
     "upland-r70-jd-options-2026-08-30",
     "upland-r70-race-engineering-2026-08-30",
-    "upland-r70-independent-review-2026-08-30"
+    "upland-r70-independent-review-2026-08-30",
+    "upland-r70-indexed-current-2026-09-23",
+    "upland-r70-official-timeout-recheck-2026-09-25"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -41,6 +43,6 @@
   },
   "source_refs": "IMG_6864.png#L1, IMG_6865.png#L2",
   "source_url": "https://www.upland.bike/zh/product/308.html",
-  "source_note": "Current exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. No lab protocol or single selected retained-card drivetrain is inferred.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The accepted exact manufacturer, official-store and independent evidence resolves the T700/T800 construction and supplies bounded qualitative stiffness context. The exact manufacturer page timed out on 2026-09-25; no current exact weight method or retained-price configuration mapping was obtained. Retain model/trim and mainland-market limits in the research record.",
+  "last_reviewed": "2026-09-25"
 }

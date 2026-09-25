@@ -1,0 +1,29 @@
+{
+  "batch": 105,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-105-scope.json",
+  "result": {
+    "exact_target_records": ["candidate:triaero-a9", "candidate:xlab-rs9"],
+    "catalog_gap_instances_before": 704,
+    "catalog_gap_instances_after": 706,
+    "clearance_unverified_before": 102,
+    "clearance_unverified_after": 104,
+    "evidence_found_before": 121,
+    "evidence_found_after": 121,
+    "catalog_fact_changes": [
+      {
+        "candidate": "triaero-a9",
+        "change": "Clarified 28 mm as a fitted-tire observation, stated no manufacturer maximum is published in the retained evidence, and listed the maximum as missing."
+      }
+    ],
+    "gap_semantics": "Fitted-only candidate tire observations no longer satisfy the maximum-clearance check; both A9 and X-LAB RS9 now retain a maximum-clearance gap.",
+    "image_changes": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "focused_tests": "pass: 58 tests across gaps, rendering, and 50-approach audit suites",
+    "full_gate": "pass: npm run check; privacy, validate, research:check, coverage:check, 326 tests, 584-page build, SEO audit 458 indexable / 126 noindex",
+    "diff_check": "pass",
+    "image_report": "not run; no image record changed"
+  }
+}

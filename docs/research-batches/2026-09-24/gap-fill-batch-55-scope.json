@@ -1,0 +1,100 @@
+{
+  "batch": 55,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 359,
+      "conflicted": 34,
+      "found": 51,
+      "open": 2,
+      "temporarily-exhausted": 3
+    }
+  },
+  "selection": {
+    "basis": "Both price-not-observed fields remain open after one dated exact manufacturer-page recheck; the existing ledgers identify distinct public mainland seller/item routes as the next permissible evidence channel.",
+    "exact_models": 2,
+    "target_records": 2,
+    "atomic_gap_instances": 2,
+    "evidence_only_writer": "one Luna Max agent, sequentially; no repository writes",
+    "root_writer": "integrate only exact, attributable current mainland CNY evidence"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "mondince-fm316",
+      "model": "Mondince FM316",
+      "gap": "price-not-observed",
+      "research_field": "mainland-observed-price",
+      "prior_attempt_id": "candidate-mondince-fm316-mainland-observed-price-2026-09-24",
+      "prior_attempt_status": "open",
+      "existing_evidence_boundary": "The exact current manufacturer page gives a US$500–650 single-frame reference but requires a quote and conflicts with a separate US$1,050 guide amount. Neither is a mainland CNY offer. A 2022 public Reddit owner thread is historical foreign-market evidence.",
+      "already_checked_routes": [
+        "Exact Mondince FM316 manufacturer product page (2026-09-24)",
+        "Mondince comparative guide and exact owner Reddit thread (2026-09-22)"
+      ],
+      "new_route_scope": "Distinct accessible public mainland retailer or exact marketplace item routes for FM316 only. Preserve whether fork, finish, seatpost, headset, freight, stock and options are included.",
+      "guardrails": [
+        "Do not record USD references or quote-only amounts as mainland observed CNY price.",
+        "No seller contact, login, quote form, checkout, private message, or challenge bypass.",
+        "One credible exact public seller item can resolve the price only if current amount, package and conditions are visible."
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "velobuild-cx-002-2023",
+      "model": "VeloBuild CX-002, 2023 full-internal-routing generation",
+      "gap": "price-not-observed",
+      "research_field": "mainland-observed-price",
+      "prior_attempt_id": "candidate-velobuild-cx-002-2023-mainland-observed-price-2026-09-24",
+      "prior_attempt_status": "open",
+      "existing_evidence_boundary": "The exact 2023 manufacturer listing displays US$499 before configuration and delivery selections; it is a foreign direct-sale listing, not mainland CNY. The prior public owner thread is historical overseas evidence.",
+      "already_checked_routes": [
+        "Exact 2023 VeloBuild manufacturer listing and foreign base price (2026-09-23 and 2026-09-24)",
+        "Exact historical owner build thread (2026-09-22)"
+      ],
+      "new_route_scope": "Distinct accessible public mainland retailer or exact marketplace item routes identifying the 2023 full-internal-routing CX-002 specifically. Preserve selected frame, fork, BB, finish, cockpit, seatpost, paint and delivery package boundaries.",
+      "guardrails": [
+        "Do not transfer a price from other CX-002 generations, a generic frameset, or a foreign storefront.",
+        "No seller contact, login, quote form, checkout, private message, or challenge bypass.",
+        "One credible exact public seller item can resolve the price only if current amount, package and conditions are visible."
+      ]
+    }
+  ],
+  "prior_command_deviation": {
+    "command": "npm run --silent image:report -- --help",
+    "effect": "The script has no help mode; the invocation unexpectedly ran its default report across all 198 remote image resources, including same-day B51/B53 resources (aggregate: 198 unreachable). The script is read-only and no repository files were changed.",
+    "handling": "Excluded from B55 scope and decisions. After B55 scope freeze, no further image routes were checked or these results persisted."
+  },
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "sequential_source_lane": true,
+    "no_same_day_source_retries": true,
+    "no_external_mutations": true,
+    "no_image_research": true
+  },
+  "delivery": "Local B55 batch only; no push, pull request, merge, publication, or production action."
+}

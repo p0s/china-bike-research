@@ -1,0 +1,51 @@
+{
+  "id": "variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-frameset"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "retry_of": "variant-lightcarbon-speedz-frameset-bottom-bracket-2026-08-17",
+  "retry_reason": "The current official 2025-26 catalog was checked again and exact-model search was repeated for the unresolved SPEEDZ specification.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-lightcarbon-speedz-frameset-bottom-bracket-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+        "blocker": "The official catalog request timed out, and the distinct exact-name official-domain search surfaced no SPEEDZ specification page.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ frameset bottom bracket current official catalog",
+          "route": "manufacturer 2025–26 catalog V2",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The catalog fetch timed out. Exact-model search did not locate a SPEEDZ page or chart; no SPEEDZ bottom-bracket label or shell dimensions could be verified.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"
+        },
+        {
+          "attempt": 2,
+          "query": "LightCarbon SPEEDZ frame carbon weight tire clearance geometry bottom bracket frameset",
+          "route": "One current LightCarbon manufacturer-domain exact-name web search, excluding the timed-out V2 PDF",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The official-domain search surfaced no exact SPEEDZ product or catalog page. Different LightCarbon model results were excluded; no bottom-bracket standard or shell dimensions were established."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "lightcarbon-speedz-catalog-recheck-2026-09-24"
+  ],
+  "notes": "The 2026-09-24 official-domain search also surfaced no exact SPEEDZ bottom-bracket label or shell dimensions. Keep both complete-build and frameset fields unknown until an accessible exact specification is available.",
+  "searched_at": "2026-09-24"
+}

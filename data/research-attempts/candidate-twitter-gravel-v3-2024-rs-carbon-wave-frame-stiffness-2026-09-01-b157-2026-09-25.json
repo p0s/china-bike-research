@@ -1,0 +1,52 @@
+{
+  "id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness-2026-09-01-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-gravel-v3-2024-rs-carbon-wave"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness-2026-09-01",
+  "retry_reason": "The frozen B157 scope authorizes one bounded current exact-model web query after review of the latest predecessor attempt, linked sources, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 Gravel V3 2024 RS Carbon Wave exact selection current mainland CNY price and independent frame stiffness assessment",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "No independent stiffness assessment for the exact 2024 RS Carbon Wave selection was established in this bounded query or its predecessor campaigns."
+        }
+      ],
+      "blocker": "No independent stiffness assessment for the exact 2024 RS Carbon Wave selection was established in this bounded query or its predecessor campaigns."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No independent stiffness assessment for the exact 2024 RS Carbon Wave selection was established in this bounded query or its predecessor campaigns.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-157-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness",
+    "extends_attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+    "reason": "The frozen B157 scope authorizes one dated exact-record query after reviewing the latest predecessor source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

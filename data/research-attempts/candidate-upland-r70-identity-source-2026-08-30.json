@@ -485,9 +485,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
+    "upland-r70-indexed-current-2026-09-23",
+    "upland-r70-jd-options-2026-08-30",
     "upland-r70-official-2026-08-30",
-    "upland-r70-jd-options-2026-08-30"
+    "upland-r70-race-engineering-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-batch-023-50-area-sweep-2026-08-30.json. Current exact manufacturer and official-store routes establish R70 and its option conflict."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-batch-023-50-area-sweep-2026-08-30.json. Current exact manufacturer and official-store routes establish R70 and its option conflict.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "upland-r70-indexed-current-2026-09-23",
+      "upland-r70-race-engineering-2026-08-30"
+    ],
+    "note": "The exact UPLAND manufacturer product page and its race article identify R70; the product page was available only through a live search-index excerpt because direct opening timed out. This does not map each retained seller card to one R70 drivetrain option."
+  }
 }

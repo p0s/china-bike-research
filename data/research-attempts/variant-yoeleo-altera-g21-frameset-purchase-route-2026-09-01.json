@@ -479,8 +479,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "yoeleo-altera-g21-collection-current-2026-09-01"
+    "yoeleo-altera-g21-collection-current-2026-09-01",
+    "yoeleo-altera-g21-collection-current-2026-09-25",
+    "yoeleo-altera-g21-artisan-black-current-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-yoeleo-altera-g21-frameset-batch-047-50-area-sweep-2026-09-01.json. Current official cart route found for each named stock color."
+  "notes": "B125 recheck: the official product route still exists, but the checked Artisan Black page displays sold-out status and a notify-me action rather than an active checkout. Availability of the other named colors and a current Mainland delivery route are unverified; keep this field open.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "yoeleo-altera-g21-collection-current-2026-09-25",
+      "yoeleo-altera-g21-artisan-black-current-2026-09-25"
+    ],
+    "note": "The official storefront and exact Artisan Black product route were rechecked. The checked color was sold out with notify-me, so the active route for an available frameset remains unconfirmed. Availability for other colors, selected-size checkout and Mainland delivery are unknown; retain the caveat and leave the actionable purchase-route gap open."
+  }
 }

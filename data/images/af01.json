@@ -19,5 +19,17 @@
   },
   "credit": "Product image © AF Bicycles",
   "alt": "AF01 carbon gravel frameset",
-  "reviewed_at": "2026-08-07"
+  "reviewed_at": "2026-08-07",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "af01-primary-image",
+        "url": "https://afbicycles.com/cdn/shop/files/DSC7959_1_1.jpg?v=1781773388&width=3840",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/jpeg"
+      }
+    ]
+  }
 }

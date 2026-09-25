@@ -1,0 +1,56 @@
+{
+  "id": "candidate-rockbros-pegasus-road-drivetrain-b150-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "rockbros-pegasus-road"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-rockbros-pegasus-road-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ROCKBROS Pegasus PGZ exact build complete bike weight drivetrain max tire clearance stiffness",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://rockbrosusa.com/pages/pegasus-7120-kit",
+          "note": "Official 105 R7120/R7100/R7170 equipment is for the separately named Pegasus 7120 Kit; do not transfer it to the retained generic seller option."
+        }
+      ],
+      "blocker": "Official 105 R7120/R7100/R7170 equipment is for the separately named Pegasus 7120 Kit; do not transfer it to the retained generic seller option."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "rockbros-pegasus-official-2026-08-30",
+    "rockbros-pegasus-jd-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "B165 local source audit: no linked source supports the retained exact drivetrain field; B150 found no qualifying evidence for this frozen field; preserve it as unknown pending a distinct exact source or material state change.",
+  "retry_of": "candidate-rockbros-pegasus-road-drivetrain-2026-08-30",
+  "retry_reason": "One distinct model-level web query on 2026-09-25 followed the earlier search/campaign history to test for new direct evidence.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-150-rockbros-pegasus-road-drivetrain",
+    "extends_attempt_id": "candidate-rockbros-pegasus-road-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-150-scope.json",
+    "reason": "The frozen B150 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

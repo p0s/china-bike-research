@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xlab-ad8-official-cn-price-2026-08-27"
+    "xlab-ad8-official-cn-price-2026-08-27",
+    "xlab-ad8-official-cn-price-unreadable-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-xlab-ad8-batch-045-50-area-sweep-2026-09-01.json. Current exact official mainland purchase page retains the CNY 26,980 reference for the preferred build."
+  "notes": "B125 recheck: the official exact AD8 page still has a dated CNY 26,980 source claim for the R7170 Di2 / Branta C50 TEAM build, but reopening the page on 2026-09-25 returned no readable text. Keep the amount dated to the 2026-09-01 access; current price, stock and checkout remain unconfirmed.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xlab-ad8-official-cn-price-2026-08-27",
+      "xlab-ad8-official-cn-price-unreadable-recheck-2026-09-25"
+    ],
+    "note": "Retain the dated ¥26,980 claim only for the exact R7170 Di2 / Branta C50 TEAM build, tied to the 2026-09-01 readable access. The 2026-09-25 official-page recheck returned no readable text, so current price, stock and checkout remain unconfirmed; leave current mainland price open."
+  }
 }

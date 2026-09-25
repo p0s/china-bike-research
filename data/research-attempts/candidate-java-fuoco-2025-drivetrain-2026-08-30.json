@@ -484,10 +484,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "java-fuoco-top-105-official-2026-08-09",
+    "java-fuoco-top-105-current-regional-2026-08-30",
+    "java-fuoco-top-105-current-regional-2026-09-23",
     "java-fuoco-top-105-mainland-index-2026-08-30",
-    "java-fuoco-top-105-current-regional-2026-08-30"
+    "java-fuoco-top-105-official-2026-08-09"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-fuoco-2025-50-area-sweep-2026-08-30.json. The selected trim is Shimano 105 mechanical 2x12 with R7120/R7100 family components and R7170 hydraulic disc brakes."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-fuoco-2025-50-area-sweep-2026-08-30.json. The selected trim is Shimano 105 mechanical 2x12 with R7120/R7100 family components and R7170 hydraulic disc brakes.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-fuoco-top-105-current-regional-2026-09-23",
+      "java-fuoco-top-105-mainland-index-2026-08-30"
+    ],
+    "note": "The current exact FUOCO TOP 105-2 regional page and the mainland index support Shimano 105 R7120 controls and 2x12 mechanical shifting with R7100 derailleurs/crank; hydraulic 105 disc brakes are listed. The page warns that some components may vary, so this does not prove every seller-held unit matches."
+  }
 }

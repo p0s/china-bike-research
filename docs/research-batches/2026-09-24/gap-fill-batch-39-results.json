@@ -1,0 +1,91 @@
+{
+  "batch": 39,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-39-scope.json",
+  "writer_limit": {
+    "exact_targets": 1,
+    "atomic_fields": 2
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-quick-pro-ur-one-price-2026-09-01",
+      "target": "candidate:quick-pro-ur-one",
+      "field": "mainland-price",
+      "status": "unresolved",
+      "source_ids": [
+        "quick-pro-ur-one-dura-ace-official-recheck-2026-09-24",
+        "quick-pro-ur-one-mybikeparts-recheck-2026-09-24"
+      ],
+      "result": "The official exact Dura-Ace page currently shows US$6,899 with Global/USD selected and Add to cart, but no CNY checkout. MyBike.parts' ¥27,998 price is for a separate 105 Di2 build. No exact mainland Dura-Ace checkout value was found; the reference conversion remains separate from an observed price."
+    },
+    {
+      "attempt_id": "candidate-quick-pro-ur-one-complete-weight-2026-09-01",
+      "target": "candidate:quick-pro-ur-one",
+      "field": "complete-weight",
+      "status": "unresolved",
+      "source_ids": [
+        "quick-pro-ur-one-dura-ace-official-recheck-2026-09-24"
+      ],
+      "result": "The manufacturer lists frame 629 g ±5%, fork 339 g ±5%, and seatpost 115 g ±5%, but no complete-bike weight. Its anonymous 5.9 kg review is not a manufacturer specification; the 105 Di2 listing and 6.5 kg regional build describe different configurations."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "quick-pro-ur-one-dura-ace-official-recheck-2026-09-24",
+      "quick-pro-ur-one-mybikeparts-recheck-2026-09-24"
+    ],
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "image_records_rechecked": 0,
+    "third_party_images_rehosted": 0,
+    "research_attempts_updated": [
+      "candidate-quick-pro-ur-one-price-2026-09-01",
+      "candidate-quick-pro-ur-one-complete-weight-2026-09-01"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 70,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_test": "passed: node --test tests/data.test.mjs; 70/70",
+    "repository_gate": "passed: npm run check; privacy, validation, research ledger, coverage, 310/310 tests, build and SEO audit",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not run; no image records changed"
+  },
+  "delivery": "Local batch complete. No push, pull request, merge, publication, or production action."
+}

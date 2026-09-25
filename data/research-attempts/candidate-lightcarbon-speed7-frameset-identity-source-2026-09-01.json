@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-chinese-catalog-official-2026-08-29"
+    "lightcarbon-chinese-catalog-official-2026-08-29",
+    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/lightcarbon-speed7-frameset-batch-031-50-area-sweep-2026-09-01.json. The official Chinese catalog explicitly labels 速7 as LCR017-D."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/lightcarbon-speed7-frameset-batch-031-50-area-sweep-2026-09-01.json. The official Chinese catalog explicitly labels 速7 as LCR017-D.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-chinese-catalog-official-2026-08-29",
+      "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+    ],
+    "note": "The accepted official Chinese catalog names 速7 as LCR017-D; the current product page confirms the exact LCR017-D item but does not independently say Speed7. Catalog retry timed out on 2026-09-23."
+  }
 }

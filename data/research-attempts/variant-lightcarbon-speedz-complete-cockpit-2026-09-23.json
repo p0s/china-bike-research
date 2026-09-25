@@ -1,0 +1,58 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-cockpit-2026-09-23",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "cockpit",
+  "priority": "high",
+  "searched_at": "2026-09-23",
+  "retry_of": "variant-lightcarbon-speedz-complete-cockpit-2026-08-17",
+  "retry_reason": "The previous retry date passed, and newly surfaced current manufacturer material for LCR017-D and 速7 justified rechecking whether it identifies the cockpit on the exact SPEEDZ Shimano 105 mechanical 2x12 complete build.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-lightcarbon-speedz-complete-cockpit-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:lightcarbon.com SPEEDZ cockpit HBR17 105 mechanical",
+          "route": "Current LightCarbon LCR017-D manufacturer product page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "The current official LCR017-D page identifies the frameset and includes HBR17 in that package, but it does not connect LCR017-D to the catalogued SPEEDZ complete build or its Shimano 105 mechanical 2x12 configuration.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+        },
+        {
+          "attempt": 2,
+          "query": "site:lightcarbon.com 速7 LCR017-D cockpit HBR14 HBR17 2025-2026 catalog",
+          "route": "Official LightCarbon Chinese Frame and Component Catalog 2025-2026",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "The catalog maps 速7 to LCR017-D but lists HBR14 sizing for that frameset. It does not connect SPEEDZ to 速7 or to the exact 105 complete build, and its cockpit package differs from the current LCR017-D product page's HBR17 package.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
+        },
+        {
+          "attempt": 3,
+          "query": "LightCarbon SPEEDZ complete Shimano 105 mechanical 2x12 cockpit handlebar; 速7 整车 105 机械 2x12 车把 exact listing",
+          "route": "Public web search and indexed marketplace results",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Search results surfaced the official frameset catalog and a third-party site page summarizing the project's separate Speed7 lead, but no opened independent exact listing or source ties the SPEEDZ complete record to 速7/LCR017-D or names its fitted cockpit. Search snippets and the project's own catalog are not independent evidence."
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-10-23",
+  "notes": "Fresh official sources describe HBR17 and HBR14 in different LCR017-D package/version contexts, but no source establishes that the published SPEEDZ complete build is that frameset or identifies its configured cockpit. The exact build remains unknown; do not transfer either frameset package value."
+}

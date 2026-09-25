@@ -1,0 +1,53 @@
+{
+  "id": "variant-carbonda-cfr696-frameset-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "carbonda-cfr696-frameset"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced Veloot page identifies a Carbonda frameset but labels its €580 deal expired and does not establish the retained UDH package or current direct/mainland availability.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Carbonda CFR696 UDH gravel frameset current stock CNY direct seller checkout",
+          "route": "One distinct B146 exact-model web search; one new page open",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "One distinct query was run. The new Veloot page passed exact-URL pre-open audit but shows an expired deal and affiliate path; it does not resolve the current exact package route.",
+          "result_url": "https://veloot.de/product/carbonda-cfr-696-gravel-carbon-frameset"
+        }
+      ]
+    }
+  },
+  "notes": "One distinct query was run. The new Veloot page passed exact-URL pre-open audit but shows an expired deal and affiliate path; it does not resolve the current exact package route.",
+  "campaign_extension": {
+    "id": "b146-carbonda-cfr696-frameset-purchase-route",
+    "extends_attempt_id": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

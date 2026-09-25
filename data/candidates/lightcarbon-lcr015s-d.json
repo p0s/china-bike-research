@@ -11,13 +11,14 @@
   ],
   "status": "official-legacy-or-order-inquiry",
   "research_priority": "medium",
-  "price_status": "Current manufacturer-supplier US$465–515 MOQ-1 reference converted to CNY; selected cockpit and mainland consumer checkout unverified",
+  "price_status": "Historical 2026-09-01 manufacturer-supplier US$465–515 MOQ-1 reference converted to CNY; no exact current listing or price was found on 2026-09-23",
   "source_ids": [
     "lightcarbon-lcr015s-d-official-2026-08-29",
     "lightcarbon-road-frames-category-2026-08-29",
     "lightcarbon-about-official-2026-08-29",
     "lightcarbon-lcr015s-d-alibaba-supplier-2026-09-01",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "lightcarbon-lcr015s-d-supplier-recheck-2026-09-23"
   ],
   "facts": {
     "frame": "LCR015S-D road disc frameset",
@@ -35,8 +36,8 @@
     "warranty": "Two years",
     "stiffness_evidence": "No independent exact-model stiffness measurement recorded"
   },
-  "source_note": "The exact manufacturer page is quote-only. A current Alibaba index attributes a US$465–515, MOQ-1 exact LCR015S-D supplier listing to Xiamen Lightcarbon; the CNY range is a reference conversion, not a mainland consumer checkout.",
-  "last_reviewed": "2026-09-01",
+  "source_note": "The current Alibaba category index shows the LCR015-D sibling but not LCR015S-D; targeted exact-model search found only the earlier indexed listing. Retain the older US$465–515/MOQ-1 amount as historical evidence, not a current offer.",
+  "last_reviewed": "2026-09-23",
   "reference_price_kind": "observed",
   "observed_price": {
     "low_cny": 3157,

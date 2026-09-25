@@ -486,8 +486,19 @@
   "status": "found",
   "accepted_source_ids": [
     "look-765-optimum-current-105-di2-2026-08-30",
-    "look-765-optimum-platform-material-stiffness-2026-08-30"
+    "look-765-optimum-platform-material-stiffness-2026-08-30",
+    "look-765-optimum-current-recheck-2026-09-23",
+    "look-765-optimum-platform-release-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Current product and platform release resolve the qualified material construction."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Current product and platform release resolve the qualified material construction.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "look-765-optimum-current-recheck-2026-09-23",
+      "look-765-optimum-platform-release-recheck-2026-09-23"
+    ],
+    "note": "LOOK describes a full-carbon 765 Optimum frame/fork with mixed carbon/glass elements and an ultra-high-strength carbon compound. Fiber grades, proportions and schedule are unpublished."
+  }
 }

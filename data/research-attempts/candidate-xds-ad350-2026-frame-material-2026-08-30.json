@@ -486,8 +486,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xds-ad350-launch-material-2026-08-30"
+    "xds-ad350-launch-material-2026-08-30",
+    "xds-ad350-2026-hk-spec-2026-08-30",
+    "xds-ad350-2026-current-options-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/xds-ad350-2026-batch-024-50-area-sweep-2026-08-30.json. Attributable exact-model launch coverage resolves the qualified X6 aluminum and carbon-fork construction."
+  "notes": "B123 reassessment: the accepted QLE source covers the 2025 launch, while the 2026 Hong Kong dealer source describes a regional build. Neither establishes material for the retained 2026 mainland build. Keep exact 2026 mainland frame/fork material open; do not transfer a regional or prior-launch value.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xds-ad350-launch-material-2026-08-30",
+      "xds-ad350-2026-hk-spec-2026-08-30",
+      "xds-ad350-2026-current-options-2026-08-30"
+    ],
+    "note": "Leave the retained 2026 mainland frame/fork material unverified. Accepted evidence describes a prior 2025 launch, a Hong Kong regional build, or marketplace options that state no frame material; none maps a material value to the target mainland build."
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "id": "candidate-muidler-ashius-s7-drivetrain-2026-08-30-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "muidler-ashius-s7"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-muidler-ashius-s7-drivetrain-2026-08-30",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-muidler-s7-drivetrain",
+    "extends_attempt_id": "candidate-muidler-ashius-s7-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One fresh exact-model search checked drivetrain; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-muidler-ashius-s7-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "Results were Audi, Honda and LUXEED vehicle S7 pages; no exact MUIDLER bicycle page was found or opened. No complete-bike weight or exact drivetrain qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "MUIDLER 媚影 阿修斯 S7 官方完整车型规格页 产品名称型号配置整车重量传动系统 2026-09-25",
+          "route": "Search results; no exact MUIDLER bicycle product page surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Results were Audi, Honda and LUXEED vehicle S7 pages; no exact MUIDLER bicycle page was found or opened. No complete-bike weight or exact drivetrain qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Results were Audi, Honda and LUXEED vehicle S7 pages; no exact MUIDLER bicycle page was found or opened. No complete-bike weight or exact drivetrain qualifies."
+}

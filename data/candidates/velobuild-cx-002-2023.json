@@ -9,20 +9,33 @@
     "sizes": "XS, S, M, L, XL",
     "cockpit": "Separate bar/stem and integrated bar options listed",
     "frame_weight_g": 1000,
-    "frame_weight_basis": "Manufacturer sheet: size M, clear coat, without metal parts. A separate owner reports about 1250 g size 56 with hardware and no rear axle; different basis.",
+    "frame_weight_basis": "Manufacturer product-linked sheet: 1000 g, size M, clear coat, without metal parts. No tolerance or weighing protocol is stated. A separate size-56 owner measurement of about 1250 g includes different hardware and excludes the rear axle; it is not directly comparable.",
     "tire_clearance_mm": 42,
     "tire_clearance_basis": "Exact 2023 manufacturer sheet states 700×42C for frame and fork; mounted tire/rim combination and mud clearance require verification.",
     "geometry": "Manufacturer XS/S/M/L/XL stack 517/540/563/585/605 mm; reach 372/375/383/392/406 mm. Fork offset conflicts: spec 45 mm versus geometry 55 mm; resolve before fit/handling decisions.",
     "included_package": "Frame, fork, seatpost, separate or integrated cockpit, seat cover, headset, thru-axles and seat clamp; choose exact cockpit/finish options.",
     "intended_category": "Manufacturer identifies this exact 2023 model as cyclocross, with 42C maximum; kept as a research candidate pending category support."
   },
+  "official_price": {
+    "amount_cny": 3343,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-09-23",
+    "original_amount": 499,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.70007851,
+    "conversion_rate_date": "2026-09-22",
+    "price_basis": "Exact 2023 CX-002 listing displays US$499, reduced from US$599, converted using the ECB reference cross-rate; the page has selectable options.",
+    "conditions": "Displayed base reference only; selected frame/cockpit/paint package, promotion eligibility, mainland price, shipping, tax, duties, stock and actual transaction rate are unverified."
+  },
+  "reference_price_kind": "official",
   "missing": [
     "Exact selected package mainland delivered price and availability",
     "Resolve 45 mm versus 55 mm fork-offset sheets before final geometry acceptance",
     "Add accurate cyclocross category support before full publication",
     "Meaningful exact-model stiffness evidence"
   ],
-  "source_note": "Exact 2023 linked specification and packing images now read. Base display remains US$499, not a mainland offer. Cyclocross intent is established; no forced road/gravel category assignment. Fork-offset disagreement remains visible.",
+  "source_note": "Exact 2023 linked specification and packing images now read. Base display remains US$499, not a mainland offer. Cyclocross intent is established; no forced road/gravel category assignment. Fork-offset disagreement remains visible.\n\nBatch 52 price recheck (2026-09-24): the exact 2023 manufacturer listing remains US$499 before selectable package options. This is a foreign reference, not an observed mainland price or delivered total.\n\nBatch 55 recheck (2026-09-24): distinct public mainland marketplace searches found no exact 2023 CX-002 mainland item. VeloBuildMall surfaced the same USD $499 foreign base listing before options; it is not a domestic CNY offer or selected delivered total.",
   "model_id": "velobuild-cx-002-2023",
   "type": "frameset",
   "status": "exact-model-research-stage",
@@ -32,7 +45,12 @@
     "chinesecarbon-top-discovery-2026-09-05",
     "velobuild-cx002-spec-sheets-2026-09-22",
     "velobuild-cx002-owner-thread-2026-09-22",
-    "velobuild-cx002-geometry-sheet-2026-09-22"
+    "velobuild-cx002-geometry-sheet-2026-09-22",
+    "velobuild-cx-002-2023-storefront-price-2026-09-23",
+    "ecb-reference-rates-2026-09-22",
+    "velobuild-cx002-official-listing-recheck-2026-09-24",
+    "velobuild-cx-002-2023-velobuildmall-foreign-storefront-2026-09-24",
+    "velobuild-cx002-official-product-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-09-25"
 }

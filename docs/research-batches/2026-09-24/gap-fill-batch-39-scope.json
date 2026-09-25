@@ -1,0 +1,74 @@
+{
+  "batch": 39,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-ur-one",
+      "exact_identity": "Quick Pro UR:ONE, Shimano Dura-Ace R9270 Di2 2×12 complete build",
+      "owner": "root-writer; luna-evidence-only research",
+      "fields": [
+        "price",
+        "complete-weight"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-ur-one-price-2026-09-01",
+        "candidate-quick-pro-ur-one-complete-weight-2026-09-01"
+      ],
+      "gap_codes": [
+        "price-not-observed",
+        "complete-weight-missing"
+      ],
+      "current_attempt_status": "blocked",
+      "approach_areas": 50,
+      "existing_source_ids": [
+        "quick-pro-ur-one-dura-ace-official-2026-08-17",
+        "quick-pro-global-support-2026-08-17",
+        "usd-cny-central-parity-2026-07-31",
+        "public-quick-pro-ur-one-owner-2026-08-17",
+        "quick-pro-ur-one-raceit-build-2026-09-22"
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_and_source_at_a_time": true,
+    "current_mainland_checkout_required_for_observed_price": true,
+    "do_not_treat_global_usd_conversion_as_mainland_checkout": true,
+    "do_not_transfer_owner_build_weight_to_manufacturer_complete_weight": true,
+    "preserve_unknowns_and_conflicts": true,
+    "no_repository_edits_by_evidence_agent": true
+  },
+  "stop_criteria": "Use current exact-model manufacturer and attributable mainland-market evidence; stop each field at decisive evidence. If no exact mainland checkout or official complete-bike weight is available, record the actual access and search limitations and leave that gap explicitly unresolved. Do not expand beyond the two frozen fields."
+}

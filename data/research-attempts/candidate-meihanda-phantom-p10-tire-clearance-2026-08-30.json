@@ -485,5 +485,13 @@
     "meihanda-phantom-p10-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/meihanda-phantom-p10-50-area-sweep-2026-08-30.json. The manufacturer publishes up to 40C for the Phantom series containing the exact P10; rim and measured-width conditions remain unstated."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/meihanda-phantom-p10-50-area-sweep-2026-08-30.json. The manufacturer publishes up to 40C for the Phantom series containing the exact P10; rim and measured-width conditions remain unstated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "meihanda-phantom-p10-official-2026-08-30"
+    ],
+    "note": "Accepted manufacturer series page states up to 40C and includes the exact P10; current page recheck timed out. Rim width and measured tire width are unspecified."
+  }
 }

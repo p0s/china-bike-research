@@ -1,0 +1,55 @@
+{
+  "id": "candidate-sunpeed-victory-e-2026-tire-clearance-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sunpeed-victory-e-2026"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-sunpeed-victory-e-2026-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-sunpeed-victory-e-2026-tire-clearance",
+    "extends_attempt_id": "candidate-sunpeed-victory-e-2026-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sunpeed-victory-e-2026-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SUNPEED Victory Expert 105 Di2 2026 maximum tire width clearance",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The recorded Brazil specification gives fitted 700×30C, and the independent size-L test gives no maximum. Search surfaced a generic Victory 105 Di2 retailer listing without establishing the exact Victory Expert 2026 build or a maximum tire width; no page was opened."
+        }
+      ],
+      "blocker": "The Brazil source lists fitted 700×30C and the official source identifies the family, but neither states an exact-build maximum."
+    }
+  },
+  "accepted_source_ids": [
+    "sunpeed-victory-expert-brasil-2026-08-30",
+    "sunpeed-victory-expert-official-2026-08-30"
+  ],
+  "notes": "B168 local source audit: no linked source supports the retained exact tire-clearance field. The recorded Brazil specification gives fitted 700×30C, and the independent size-L test gives no maximum. Search surfaced a generic Victory 105 Di2 retailer listing without establishing the exact Victory Expert 2026 build or a maximum tire width; no page was opened.",
+  "searched_at": "2026-09-25"
+}

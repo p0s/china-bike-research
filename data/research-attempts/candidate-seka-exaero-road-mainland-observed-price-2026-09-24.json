@@ -1,0 +1,48 @@
+{
+  "id": "candidate-seka-exaero-road-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seka-exaero-road"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Distinct public mainland searches found no exact retailer item or current checkout that maps price to the ExAero RDC or Standard frameset package. The only new mainland lead was secondary launch coverage whose direct page timed out.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SEKA ExAero RDC Standard frameset current mainland seller listing",
+          "route": "Public JD, Tmall, and exact-item search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact public mainland product item was surfaced. Account-only, seller-contact, and quote routes were not used."
+        },
+        {
+          "attempt": 2,
+          "query": "SEKA ExAero RDC 车架组 价格 淘宝 天猫",
+          "route": "Public search for exact mainland RDC frameset item",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://post.smzdm.com/p/az83ol2p/",
+          "note": "Search-index text surfaced a secondary launch article with Standard starting-price and RDC maximum-price references. The article page timed out; the indexed claims do not establish a selected package or current checkout price."
+        },
+        {
+          "attempt": 3,
+          "query": "SEKA ExAero road frameset current mainland price public retailer",
+          "route": "Public mainland marketplace and retailer search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Broader exact-model results contained no admissible current mainland road-frameset item; overseas listings and ExAero GR results were excluded."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["seka-exaero-road-smzdm-price-lead-2026-09-24"],
+  "retry_after": null,
+  "notes": "Disposition: unresolved. Do not assign search-index launch figures to RDC or Standard. Reopen when an accessible exact mainland seller item identifies the trim, frameset package, current amount, date, and purchase conditions."
+}

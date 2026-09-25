@@ -1,21 +1,54 @@
 {
   "id": "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28",
-  "target": { "record_type": "platform", "record_id": "yoeleo-altera-g21" },
+  "target": {
+    "record_type": "platform",
+    "record_id": "yoeleo-altera-g21"
+  },
   "field": "frame-stiffness",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "YOELEO Altera G21 stiffness fatigue test", "route": "manufacturer engineering article", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.yoeleobike.com/ru/blogs/guide/what-makes-a-gravel-bike-fast", "note": "Manufacturer describes targeted bottom-bracket and head-tube stiffness and reports fatigue testing at 100,000 cycles at 1,100 N plus 50,000 cycles at 1,200 N; no deflection value is published." },
-        { "attempt": 2, "query": "YOELEO Altera G21 independent review stiffness ride", "route": "exact-model editorial feature", "outcome": "rejected", "accessed_at": "2026-08-28", "result_url": "https://road.cc/content/feature/yoeleo-altera-g21-ultimate-carbon-gravel-bike-317495", "note": "The feature discusses stability and comfort but is disclosed paid promotion and provides no comparative stiffness measurement." }
+        {
+          "attempt": 1,
+          "query": "YOELEO Altera G21 stiffness fatigue test",
+          "route": "manufacturer engineering article",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.yoeleobike.com/ru/blogs/guide/what-makes-a-gravel-bike-fast",
+          "note": "Manufacturer describes targeted bottom-bracket and head-tube stiffness and reports fatigue testing at 100,000 cycles at 1,100 N plus 50,000 cycles at 1,200 N; no deflection value is published."
+        },
+        {
+          "attempt": 2,
+          "query": "YOELEO Altera G21 independent review stiffness ride",
+          "route": "exact-model editorial feature",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://road.cc/content/feature/yoeleo-altera-g21-ultimate-carbon-gravel-bike-317495",
+          "note": "The feature discusses stability and comfort but is disclosed paid promotion and provides no comparative stiffness measurement."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["yoeleo-altera-g21-engineering-2026-08-28"],
+  "accepted_source_ids": [
+    "yoeleo-altera-g21-engineering-2026-08-28",
+    "yoeleo-altera-g21-engineering-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The fatigue protocol is useful manufacturer evidence but is not presented as an independent stiffness score."
+  "notes": "The fatigue protocol is useful manufacturer evidence but is not presented as an independent stiffness score.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "yoeleo-altera-g21-engineering-2026-08-28",
+      "yoeleo-altera-g21-engineering-recheck-2026-09-23"
+    ],
+    "note": "Manufacturer reports design targets and fatigue/impact protocols (100,000 cycles at 1,100 N; 50,000 vertical cycles at 1,200 N; 22.5 kg impact drop), not numeric deflection or comparative stiffness. Reopen on measured rigidity/deflection or independent comparison."
+  }
 }

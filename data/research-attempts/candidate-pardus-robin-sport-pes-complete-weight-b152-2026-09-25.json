@@ -1,0 +1,55 @@
+{
+  "id": "candidate-pardus-robin-sport-pes-complete-weight-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-robin-sport-pes"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-pardus-robin-sport-pes-complete-weight-2026-08-30",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-pardus-robin-sport-pes-complete-weight",
+    "extends_attempt_id": "candidate-pardus-robin-sport-pes-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pardus-robin-sport-pes-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Robin Sport PES Magene electronic 2x12 complete build measured weight 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The recorded exact PES manufacturer page identifies a Magene electronic 2×12 build without complete-bike weight. Search also surfaced a Shimano 105 Robin Sport review, which does not match the selected PES build; neither known page was reopened and no weight is transferred."
+        }
+      ],
+      "blocker": "The selected Magene PES build is identified, but the linked sources provide no complete-bike weight; the surfaced Shimano 105 review is a different build."
+    }
+  },
+  "accepted_source_ids": [
+    "pardus-robin-sport-pes-current-2026-08-30",
+    "pardus-robin-sport-pes-mainland-index-2026-08-30"
+  ],
+  "notes": "B168 local source audit: no linked source supports the retained exact complete-weight field. The recorded exact PES manufacturer page identifies a Magene electronic 2×12 build without complete-bike weight. Search also surfaced a Shimano 105 Robin Sport review, which does not match the selected PES build; neither known page was reopened and no weight is transferred.",
+  "searched_at": "2026-09-25"
+}

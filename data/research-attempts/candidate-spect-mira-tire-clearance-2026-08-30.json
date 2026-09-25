@@ -6,7 +6,7 @@
   },
   "field": "tire-clearance",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -485,8 +485,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "spect-mira-cyclegears-2026-08-30",
-    "spect-mira-cyclistshub-2026-08-30"
+    "spect-mira-cyclistshub-2026-08-30",
+    "spect-mira-cyclegears-clearance-recheck-2026-09-25",
+    "spect-mira-cyclistshub-clearance-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. A current exact retailer states 25C–32C while independent launch reporting states 35 mm rear / 38 mm front fit. The production revision is unsettled, so no maximum is selected."
+  "notes": "Current CycleGears listing says 25C–32C; the independent launch report says 35 mm rear and up to 38 mm front, while noting no frames had shipped and specifications were changing. Production maximum remains unknown; the public-post channel remains blocked and no XHS capture was performed.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "spect-mira-cyclegears-clearance-recheck-2026-09-25",
+      "spect-mira-cyclistshub-clearance-recheck-2026-09-25"
+    ],
+    "note": "Current CycleGears listing says 25C–32C; the independent launch report says 35 mm rear and up to 38 mm front, while noting no frames had shipped and specifications were changing. Production maximum remains unknown; the public-post channel remains blocked and no XHS capture was performed."
+  }
 }

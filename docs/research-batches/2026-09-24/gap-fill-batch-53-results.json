@@ -1,0 +1,136 @@
+{
+  "batch": 53,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-53-scope.json",
+  "scope": {
+    "exact_models": 10,
+    "target_records": 10,
+    "atomic_gap_instances": 10
+  },
+  "dispositions": [
+    {
+      "image_id": "bianchi-oltre-race-ytb8d-primary-image-2026-08-30",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "bianchi-oltre-race"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "ican-gra04-official-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "ican-gra04-frameset"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "ican-graro-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "ican-graro-frameset"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "lightcarbon-lcg071s-pro-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "lightcarbon-lcg071s-pro-frameset"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "sava-a7l-r08-2026-exact-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "sava-a7l-r7100"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "sava-gelaro-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "sava-gelaro-s4-grx400"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "sava-gelaro-s8-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "sava-gelaro-s8"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "sava-gelaro-sf-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "sava-gelaro-sf6-cues"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "scott-addict-rc-40-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "scott-addict-rc-40"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    },
+    {
+      "image_id": "xmcarbonspeed-cs-gr01-primary-image",
+      "classification": "unreachable",
+      "http_status": null,
+      "content_type": null,
+      "affected_variants": [
+        "xmcarbonspeed-cs-gr01-frameset"
+      ],
+      "status": "unresolved-unreachable-from-check-runner"
+    }
+  ],
+  "gaps_resolved": 0,
+  "gaps_unresolved": 10,
+  "changes": {
+    "health_checks_recorded": 10,
+    "image_assets_added": 0,
+    "image_assets_copied_or_rehosted": 0,
+    "image_sources_added": 0,
+    "exactness_or_rights_claims_changed": 0
+  },
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via the approved pnpm-check route",
+    "privacy": "passed",
+    "data_validation": "41 brands, 38 platforms, 41 variants, 73 published price records, 1293 sources, 212 primary images, 236 candidates, 1513 atomic research records",
+    "research_validation": "1498 atomic research fields",
+    "coverage": "passed; 212 images and 277 catalog targets protected",
+    "tests": "321 passed, 0 failed",
+    "build": "584 pages for 41 products",
+    "seo": "passed; 584 pages, 458 indexable, 126 noindex",
+    "image_report": "10 frozen URLs; two identical bounded executions were recorded as a scope deviation, all returned unreachable without HTTP status or content type",
+    "git_diff_check": "passed"
+  },
+  "delivery": "Local B53 batch only; no push, pull request, merge, publication, or production action.",
+  "scope_deviation": "The exact frozen image:report command was inadvertently run twice while capturing its JSON for persistence. Both bounded runs returned the same ten unreachable results; no targets or URLs were added."
+}

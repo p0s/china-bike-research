@@ -482,5 +482,11 @@
     "china-cycling-bigrock-sohtea-long-term"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-bigrock-sohtea-batch-043-50-area-sweep-2026-09-01.json. Exact retailer supplies per-size frame-only claims, while the independent build review corroborates roughly 780 g for a regular XS frame."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-bigrock-sohtea-batch-043-50-area-sweep-2026-09-01.json. Exact retailer supplies per-size frame-only claims, while the independent build review corroborates roughly 780 g for a regular XS frame.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bigrock-sohtea-panda-podium-2026-08-17", "china-cycling-bigrock-sohtea-long-term"],
+    "note": "The candidate already records the regular Sohtea retailer's XXS–XL frame-only weights with ±5% tolerance and the independent approximately 780 g regular-XS build corroboration; the XXL weight remains unpublished."
+  }
 }

@@ -482,8 +482,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "koseea-pioneer-slr-plus-uaecycle-2026-09-01"
+    "koseea-pioneer-slr-plus-uaecycle-2026-09-01",
+    "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/koseea-pioneer-slr-plus-batch-030-50-area-sweep-2026-09-01.json. The exact current SLR+ listing claims an approximately 985 g size-dependent frame excluding hardware and paint."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/koseea-pioneer-slr-plus-batch-030-50-area-sweep-2026-09-01.json. The exact current SLR+ listing claims an approximately 985 g size-dependent frame excluding hardware and paint.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23"
+    ],
+    "note": "The exact product listing claims approximately 985 g, size dependent, excluding hardware and paint. This is a listing claim rather than an independently measured weight; the page's size-M complete-bike weight is not substituted for frame weight."
+  }
 }

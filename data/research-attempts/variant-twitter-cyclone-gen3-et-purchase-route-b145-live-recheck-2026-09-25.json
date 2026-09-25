@@ -1,0 +1,52 @@
+{
+  "id": "variant-twitter-cyclone-gen3-et-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-cyclone-gen3-et"
+  },
+  "field": "purchase-route",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No credible current mainland route was established. The known official USA URL was already recorded and skipped; the surfaced .shop page was not established as credible and was not opened.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Twitter Bikes Cyclone Gen 3 ET WheelTop EDS-TX complete bike buy mainland China",
+          "route": "One distinct B145 exact-model web search; no new exact-model page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The distinct query did not establish a mainland route. The previously recorded USA route is overseas-only for this purpose; an unverified shop result was not used."
+        }
+      ]
+    }
+  },
+  "notes": "The distinct query did not establish a mainland route. The previously recorded USA route is overseas-only for this purpose; an unverified shop result was not used.",
+  "campaign_extension": {
+    "id": "b145-twitter-cyclone-gen3-et-purchase-route",
+    "extends_attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

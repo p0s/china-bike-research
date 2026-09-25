@@ -1,0 +1,70 @@
+{
+  "batch": 128,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 11,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selection_note": "Freeze all 11 remaining evidence-found atomic fields from the fresh queue. The 9 exact target records remain within the 10-model limit; same-record SAVA and XM Carbon Speed fields stay in their frozen scope and must be reviewed one source at a time."
+  },
+  "scope": {
+    "exact_target_models": [
+      "sava-a7l-r7100",
+      "xds-ad350-2026",
+      "xlab-rs9",
+      "xmcarbonspeed-cs-gr01-frameset",
+      "triaero-a9",
+      "twitter-t3-tt",
+      "twitter-v3-2024-rs-sensah-alloy",
+      "ican-graro-frameset",
+      "scott-addict-rc-40"
+    ],
+    "exact_model_count": 9,
+    "selected_fields": [
+      "variant:sava-a7l-r7100:image",
+      "candidate:xds-ad350-2026:frame-material",
+      "candidate:xlab-rs9:frame-stiffness",
+      "variant:xmcarbonspeed-cs-gr01-frameset:price",
+      "candidate:triaero-a9:clearance-unverified",
+      "variant:sava-a7l-r7100:purchase-route",
+      "variant:twitter-t3-tt:purchase-route",
+      "variant:twitter-v3-2024-rs-sensah-alloy:purchase-route",
+      "variant:ican-graro-frameset:purchase-route",
+      "variant:xmcarbonspeed-cs-gr01-frameset:purchase-route",
+      "variant:scott-addict-rc-40:purchase-route"
+    ],
+    "attempt_ids": [
+      "variant-sava-a7l-r7100-image-2026-09-01",
+      "candidate-xds-ad350-2026-frame-material-2026-08-30",
+      "candidate-xlab-rs9-frame-stiffness-batch-048-2026-09-01",
+      "variant-xmcarbonspeed-cs-gr01-frameset-price-2026-09-01",
+      "candidate-triaero-a9-tire-clearance-2026-08-30",
+      "variant-sava-a7l-r7100-purchase-route-2026-09-01",
+      "variant-twitter-t3-tt-purchase-route-2026-08-29",
+      "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01",
+      "variant-ican-graro-frameset-purchase-route-2026-09-01",
+      "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01",
+      "variant-scott-addict-rc-40-purchase-route-2026-09-01"
+    ],
+    "research_boundary": "One existing Luna Max evidence-only reviewer. Inspect only these exact records, their listed attempt histories and accepted sources first. Research one exact model/source at a time and stop at decisive evidence. Return direct URLs, actual access dates, source class, exact supported claims, conflicts, options/market/size caveats, and either source-reuse recommendations or evidence-backed open reasons. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these 11 frozen entries.",
+      "Do not repeat any field source-reuse-resolved in a prior batch.",
+      "Do not transfer facts across model year, trim, market, size, or product type.",
+      "No new image files, downloads, third-party hosting, or image-rights assumptions; keep image assets remote and rights-limited unless documented permission already exists.",
+      "No XHS capture, login, CAPTCHA, challenge handling or bypass; use no XHS sources in this batch.",
+      "For route checks, inspect public pages only; do not submit quote/order forms, add items to cart, make purchases, or contact sellers.",
+      "For price, record current listing package/stock/date and price class; add no exchange-converted CNY figure unless the dated official rate record is verified.",
+      "No GitHub or production delivery."
+    ],
+    "not_selected_from_remaining_queue": []
+  }
+}

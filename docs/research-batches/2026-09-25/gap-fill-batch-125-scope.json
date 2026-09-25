@@ -1,0 +1,62 @@
+{
+  "batch": 125,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_gap_entry_method": "Sum all .records[].gaps[] entries from a fresh npm run --silent data:gaps report.",
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 49,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selection_note": "Next high-priority evidence-found fields across distinct exact targets after excluding models audited in B108-B124 and their immediately adjacent models."
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:voicevelo-g-major",
+      "candidate:west-biking-team-road",
+      "candidate:xlab-ad8",
+      "candidate:xlab-ad9",
+      "platform:xmcarbonspeed-cs-gr01",
+      "variant:yoeleo-altera-g21-frameset"
+    ],
+    "selected_fields": [
+      "candidate:voicevelo-g-major:frame-weight",
+      "candidate:west-biking-team-road:frame-material",
+      "candidate:west-biking-team-road:identity-source",
+      "candidate:xlab-ad8:frame-stiffness",
+      "candidate:xlab-ad8:price",
+      "candidate:xlab-ad9:frame-stiffness",
+      "platform:xmcarbonspeed-cs-gr01:frame-material",
+      "platform:xmcarbonspeed-cs-gr01:geometry",
+      "variant:yoeleo-altera-g21-frameset:price",
+      "variant:yoeleo-altera-g21-frameset:purchase-route"
+    ],
+    "attempt_ids": [
+      "candidate-voicevelo-g-major-frame-weight-2026-09-01",
+      "candidate-west-biking-team-road-frame-material-2026-08-30",
+      "candidate-west-biking-team-road-identity-source-2026-08-30",
+      "candidate-xlab-ad8-frame-stiffness-2026-09-01",
+      "candidate-xlab-ad8-price-2026-09-01",
+      "candidate-xlab-ad9-frame-stiffness-2026-09-01",
+      "platform-xmcarbonspeed-cs-gr01-frame-material-2026-09-01",
+      "platform-xmcarbonspeed-cs-gr01-geometry-2026-09-01",
+      "variant-yoeleo-altera-g21-frameset-price-2026-09-01",
+      "variant-yoeleo-altera-g21-frameset-purchase-route-2026-09-01"
+    ],
+    "research_boundary": "Evidence-only Luna Max review. Inspect only these exact records, the listed attempt histories and accepted sources first. Work one exact model/source at a time. Recheck current sources only where needed; return direct URLs, actual access dates, source class, exact supported claims, conflicts, market/build caveats, and recommended resolution or evidence-backed open reason. Do not edit files. Primary writer integrates supported results.",
+    "excluded": [
+      "No fields outside the ten frozen targets.",
+      "Do not reopen B108-B124 targets or immediately adjacent models.",
+      "Do not transfer values across model year, trim, market, size or product type.",
+      "No third-party image hosting or rights assumptions.",
+      "No new XHS capture, login, challenge handling or bypass.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

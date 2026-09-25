@@ -1,0 +1,176 @@
+{
+  "batch": 146,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 390,
+      "conflicted": 35,
+      "found": 16,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 2,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 75
+    },
+    "selection": "Ten highest-priority remaining found-status purchase-route gaps in fresh inventory order, excluding Felt IA 2.0 drivetrain reviewed in B144 and all B145 targets; 10 exact variants and 10 atomic gaps."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "carbonda-cfr696-frameset",
+        "name": "CFR696 frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "approximate-current",
+            "attempt_id": "variant-carbonda-cfr696-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "ican-gra04-frameset",
+        "name": "GRA04 frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "approximate-current",
+            "attempt_id": "variant-ican-gra04-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "bianchi-oltre-race",
+        "name": "Oltre Race",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "promotion-conditional",
+            "attempt_id": "variant-bianchi-oltre-race-purchase-route-2026-08-17"
+          }
+        ]
+      },
+      {
+        "id": "sava-gelaro-s4-grx400",
+        "name": "Gelaro S4 GRX400",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "current-reference",
+            "attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-global-recheck-2026-09-25"
+          }
+        ]
+      },
+      {
+        "id": "sava-gelaro-sf6-cues",
+        "name": "Gelaro SF6 CUES U6000 1×11",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "current-reference",
+            "attempt_id": "variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "ican-graro-frameset",
+        "name": "Graro frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "current-reference",
+            "attempt_id": "variant-ican-graro-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "xmcarbonspeed-cs-gr01-frameset",
+        "name": "CS-GR01 frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "current-reference",
+            "attempt_id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcg071s-pro-frameset",
+        "name": "LCG071S-PRO frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "reported-current",
+            "attempt_id": "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "pardus-super-sport-gen2-egr",
+        "name": "Super Sport Gen2 eGR",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "current-market-report",
+            "attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "scott-addict-rc-40",
+        "name": "Addict RC 40",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "status": "promotion-conditional",
+            "attempt_id": "variant-scott-addict-rc-40-purchase-route-2026-09-01"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 10,
+    "research_boundary": "One Luna Max evidence-only researcher; root remains sole writer. Before any page open, inspect every linked source, attempt, campaign/history URL and target/platform source_url, then exact-literal search the proposed final URL across repository data and docs. If present or the exact pre-open audit cannot be proven, skip without reopening. Per target: one distinct new exact-model web query and at most one genuinely new exact product or seller page. No shared URL opened twice.",
+    "claim_rules": [
+      "A purchase route must be current and identify the exact retained variant or frameset package. A generic family route or a different size, year, package, wheelset, drivetrain or market does not resolve it.",
+      "Record a China price only when the current public evidence gives the exact selected build and CNY terms. Do not turn a USD reference, quote form, conditional promotion or inaccessible search snippet into an available mainland price.",
+      "Do not claim seller authorization, stock, mainland delivery, warranty, taxes or final checkout unless directly supported. Do not submit a quote, contact a seller, log in, add to cart, purchase, or probe hidden checkout state.",
+      "Prefer current exact manufacturer or credible seller evidence. Reuse recorded sources without reopening; preserve unresolved or conflicting status with the specific reason."
+    ],
+    "excluded": [
+      "No agent edits; no personal browser, XHS, Weibo, login/CAPTCHA, external message, seller outreach, quote/cart/purchase, image download/rehosting, or delivery action.",
+      "No change to unrelated models or fields."
+    ]
+  },
+  "external_delivery": "none"
+}

@@ -481,5 +481,6 @@
     "xmcarbonspeed-cs-gr01-official-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-xmcarbonspeed-cs-gr01-batch-038-50-area-sweep-2026-09-01.json. The current exact manufacturer page explicitly publishes Carbon Fiber T800 construction."
+  "notes": "B125 source reuse: the exact manufacturer CS-GR01 page publishes T800 carbon-fiber construction. Resin, ply schedule and fork material remain unpublished.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["xmcarbonspeed-cs-gr01-official-2026-09-01"], "note": "The exact manufacturer model page supports the T800 frame-material statement; do not infer resin, lay-up or fork construction."}
 }

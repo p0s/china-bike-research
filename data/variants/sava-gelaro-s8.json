@@ -23,7 +23,10 @@
     "sava-2026-carbon-lineup-2026-08-08",
     "sava-gelaro-s8-official-2026-08-17",
     "sava-gelaro-s8-official-2026-08-28",
-    "sava-gelaro-s8-global-official-2026-09-01"
+    "sava-gelaro-s8-global-official-2026-09-01",
+    "sava-gelaro-s8-official-recheck-2026-09-23",
+    "sava-gelaro-s8-official-recheck-2026-09-24",
+    "sava-bicycle-instructions-manual-2026-09-24"
   ],
   "drivetrain": {
     "brand": "Shimano",
@@ -41,16 +44,25 @@
     "type": "disc"
   },
   "wheels": {
-    "rim_material": "aluminum"
+    "rim_material": "aluminum",
+    "description": "700C aluminum, 24H; exact GRX820 wheelset model not established"
   },
   "tires": "700×40C",
   "cockpit": {
     "material": "aluminum",
-    "integrated": true,
-    "flare": true
+    "flare": true,
+    "dimensions": "400x480 mm"
   },
   "claimed_complete_weight_g": 10200,
-  "claimed_complete_weight_basis": "Official approximate complete-bike weight excluding pedals; size, other accessories and weighing method are not stated",
+  "claimed_complete_weight_basis": "Manufacturer claims approximately 10.2 kg for the named GRX820 build; size, accessory and pedal inclusion and weighing method are unclear because the page duplicates a differently labeled RX810 specification block.",
   "purchase_route": "Current exact R21-GRX820-12S manufacturer page showed US$2,199, low stock, Add to cart and factory-direct global shipping on 2026-09-01. Confirm mainland checkout, exact color/size stock, tax, returns and domestic warranty before payment.",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-24",
+  "tire_clearance": {
+    "wheel_size": "700c",
+    "evidence": "official",
+    "eligibility": "pass",
+    "note": "Manufacturer states compatibility up to 45C; measured tire width depends on rim and tire.",
+    "stock_nominal_mm": 40,
+    "published_max_mm": 45
+  }
 }

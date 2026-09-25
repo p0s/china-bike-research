@@ -481,5 +481,11 @@
     "sava-a7l-pro-2026-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a7l-pro-2026-batch-036-50-area-sweep-2026-09-01.json. The current exact page publishes approximately 8.8 kg and explicitly says weight varies by size; pedals, accessories and weighing protocol remain unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a7l-pro-2026-batch-036-50-area-sweep-2026-09-01.json. The current exact page publishes approximately 8.8 kg and explicitly says weight varies by size; pedals, accessories and weighing protocol remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-a7l-pro-2026-official-2026-08-17"],
+    "note": "The source is the exact 2026 A7L Pro R08-R7120-24S manufacturer page and supports approximately 8.8 kg. The stored candidate claim preserves size variation and leaves reference size, accessories, pedals, and weighing method unspecified."
+  }
 }

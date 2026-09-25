@@ -489,5 +489,11 @@
     "colnago-y1rs-layup-faq-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The manufacturer FAQ establishes exact retail-frame lay-up equivalence and area-specific structural tuning."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The manufacturer FAQ establishes exact retail-frame lay-up equivalence and area-specific structural tuning.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["colnago-y1rs-layup-faq-2026-08-30"],
+    "note": "The candidate already records the retail Y1Rs frame's model-specific area-tuned carbon lay-up. The manufacturer does not publish fiber grades, proportions, or ply schedule."
+  }
 }

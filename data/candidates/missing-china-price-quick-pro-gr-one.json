@@ -12,16 +12,20 @@
   "status": "selected-mainland-price-observed",
   "existing_record_id": "quick-gr-one-frameset",
   "research_priority": "high",
-  "price_status": "official mainland route with blank price",
+  "price_status": "Dated mainland Taobao frameset offer: CNY 13,600 for SKU 6032567658829 on 2026-08-28; official mainland page has no published price, and current stock/checkout are unverified.",
   "required_before_dashboard": "Dated RMB price, final stock, exact package contents and mainland warranty handling",
   "source_ids": [
     "quick-gr-one-china-official-2026-08-25",
     "quick-pro-warranty-official-2026-08-17",
     "quick-pro-gr-one-frameset-taobao-2026-08-28",
-    "quick-pro-gr-one-ride-review-2026-08-27"
+    "quick-pro-gr-one-ride-review-2026-08-27",
+    "quick-gr-one-review-summary-recheck-2026-09-23",
+    "quick-pro-gr-one-china-page-recheck-2026-09-23",
+    "quick-pro-gr-one-taobao-access-recheck-2026-09-23",
+    "quick-pro-gr-one-benelux-current-2026-09-23"
   ],
   "source_url": "https://www.quick-bikes.com.cn/product/32.html",
-  "source_note": "The official China frame page showed inventory and buy/cart controls but no price. A separate exact Taobao listing was opened and the ice-crack silver size-M option selected: SKU 6032567658829 showed CNY 13,600, visible stock and 15-day presale dispatch. Final package and warranty handling remain unresolved.",
+  "source_note": "The official China frame page showed inventory and buy/cart controls but no price. A separate exact Taobao listing was opened and the ice-crack silver size-M option selected: SKU 6032567658829 showed CNY 13,600, visible stock and 15-day presale dispatch. Final package and warranty handling remain unresolved.\n\nBatch 25 recheck: the official China product page returned 403 on 2026-09-23, so its earlier inventory/order controls do not establish current stock. The Taobao item is a separately observed, dated frameset offer, not a complete-bike checkout.\n\nBatch 35 recheck: the official mainland page returned 403 and the exact Taobao listing was unavailable on 2026-09-23. A current authorized Benelux GR:ONE page describes T1100+M65 carbon and monocoque construction, but that regional revision is not proven equivalent to the China candidate. Its 879 g size-M figure must not replace the separately dated mainland 919 g size-M listing.",
   "observed_price": {
     "amount_cny": 13600,
     "currency": "CNY",
@@ -39,5 +43,5 @@
     "bottom_bracket": "T47-68 threaded",
     "tire_clearance_mm": 45
   },
-  "last_reviewed": "2026-08-28"
+  "last_reviewed": "2026-09-23"
 }

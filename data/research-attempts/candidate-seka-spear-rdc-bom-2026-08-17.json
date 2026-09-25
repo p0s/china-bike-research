@@ -49,8 +49,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "public-seka-spear-rdc-owner-2026-08-17"
+    "public-seka-spear-rdc-owner-2026-08-17",
+    "seka-spear-rdc-frameset-store-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+    ],
+    "note": "The official package lists the frame, fork, seatpost, Rapier integrated bar, frameset/Rapier accessories and SPEAR aero bottle-cage set. This is frameset-package evidence, not the custom complete-bike BOM. Reopen trigger: Reopen with an exact complete-bike SKU or attributable full custom-build specification."
+  }
 }

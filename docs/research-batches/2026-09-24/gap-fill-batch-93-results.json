@@ -1,0 +1,23 @@
+{
+  "batch": 93,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-93-scope.json"],
+  "result": {
+    "exact_models_checked": 10,
+    "atomic_gaps_checked": 11,
+    "source_reuse_resolutions_already_present": 11,
+    "new_sources_added": 0,
+    "new_resolutions_added": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 191,
+    "evidence_found_after": 191,
+    "disposition": "Every scoped attempt already had a source-reuse resolution with the named sources present. Luna's bounded read-only check confirmed all 11 resolutions are source-reuse. No catalog field or research record needed an update."
+  },
+  "validation": {
+    "scope_source_presence": "pass: all 11 attempts and every named source record exist",
+    "resolution_state": "pass: 11/11 already source-reuse-resolved",
+    "full_gate": "not run because no repository data changed",
+    "diff_check": "pass"
+  }
+}

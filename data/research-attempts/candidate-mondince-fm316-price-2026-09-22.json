@@ -50,8 +50,14 @@
       ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["mondince-fm316-guide-price-2026-09-22", "ecb-reference-rates-2026-09-22"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["mondince-fm316-guide-price-2026-09-22", "ecb-reference-rates-2026-09-22"],
+    "note": "Mondince's 2026 guide gives an FM316 frameset reference of US$1,050; ECB conversion gives CNY 7,035 as a foreign reference only. The product page remains quote-on-request and no mainland delivered price is established."
+  },
   "retry_after": null,
   "notes": "Next: current exact individual CNY offer including fork, finish, freight and stock. Partial channels remain open."
 }

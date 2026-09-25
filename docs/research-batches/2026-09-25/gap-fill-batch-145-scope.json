@@ -1,0 +1,170 @@
+{
+  "batch": 145,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 382,
+      "conflicted": 34,
+      "found": 26,
+      "temporarily-exhausted": 4
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 2,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 75
+    },
+    "selection": "Ten highest-priority remaining exact identities with found-status gaps, excluding Felt IA 2.0 drivetrain because it was reviewed in B144; 11 atomic fields total."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "elves-falath-r7170",
+        "name": "Falath Pro Disc R7170 build",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17"
+          }
+        ]
+      },
+      {
+        "id": "icanian-p9",
+        "name": "ICANIAN 冠捷 P9 enduro frameset",
+        "record_type": "candidate",
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-icanian-p9-tire-clearance-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "sava-a7l-r7100",
+        "name": "A7L R7100",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "variant-sava-a7l-r7100-complete-weight-2026-09-01"
+          },
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-sava-a7l-r7100-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "twitter-cyclone-electronic",
+        "name": "Cyclone 3rd ET electronic",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29"
+          }
+        ]
+      },
+      {
+        "id": "twitter-cyclone-gen3-et",
+        "name": "Cyclone Gen 3 ET electronic",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17"
+          }
+        ]
+      },
+      {
+        "id": "twitter-v3-rs-sensah",
+        "name": "Gravel V3 RS / Sensah 2×12",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "twitter-v3-wheeltop-eds",
+        "name": "Gravel V3 WheelTop EDS 2×12",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "twitter-t3-tt",
+        "name": "T3 TT WheelTop TX-TT7110 2×12",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-t3-tt-purchase-route-2026-08-29"
+          }
+        ]
+      },
+      {
+        "id": "rinasclta-gr025-frameset",
+        "name": "GR025 frameset",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01"
+          }
+        ]
+      },
+      {
+        "id": "twitter-v3-2024-rs-sensah-alloy",
+        "name": "Gravel V3 2024 RS / Sensah 2×12 alloy",
+        "record_type": "published-variant",
+        "gaps": [
+          {
+            "code": "purchase-route",
+            "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 11,
+    "research_boundary": "One Luna Max evidence-only researcher. Before any page open, audit every source URL and candidate/variant/platform source_url plus every predecessor attempt result_url and linked campaign/history URL for the exact target. Verify a proposed URL is absent from all recorded data and documents with an exact literal search before opening it; if present, do not reopen. Check predecessor query strings before searching. Per exact target, use at most one new distinct web query and open at most one genuinely new exact-model manufacturer or seller page. Root remains sole writer.",
+    "claim_rules": [
+      "A purchase route must identify the exact build and a current public route. Do not claim seller authorization, domestic shipping, warranty, stock, or final checkout unless directly supported.",
+      "Do not login, add to cart, request a quote, purchase, contact a seller, or probe hidden checkout state.",
+      "Complete-bike weight requires an exact configuration and any available size/equipment/method basis; never transfer another trim's weight.",
+      "Tire clearance must distinguish a manufacturer maximum from a fitted-tire or nominal-size observation and preserve model-size caveats.",
+      "Use primary, current, exact-model evidence; snippets alone do not prove a value. Preserve unknowns and regional differences."
+    ],
+    "excluded": [
+      "No agent edits, personal browser, XHS, Weibo, login/CAPTCHA, external message, seller outreach, quote/cart/purchase, image download/rehosting, or delivery action.",
+      "No changes to unrelated models or fields."
+    ]
+  },
+  "external_delivery": "none"
+}

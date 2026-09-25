@@ -1,0 +1,52 @@
+{
+  "batch": 149,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 387,
+      "conflicted": 35,
+      "found": 10,
+      "open": 10,
+      "temporarily-exhausted": 4
+    },
+    "price_gap_counts": {
+      "price-missing": 26,
+      "price-not-observed": 37,
+      "price-reference-range": 2
+    },
+    "selection": "Ten highest-priority older exact-model candidate specification gaps for complete-bike weight and manufacturer maximum tire clearance, excluding models reviewed in batches 145–148 and all targets researched on 2026-09-25. Ten models and eleven atomic fields are frozen. Identity-ambiguous trim results cannot be propagated across builds."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id":"missing-china-price-giant-tcr-advanced","name":"Giant TCR Advanced 3-GC","record_type":"candidate","priority_score":78,"gaps":[{"code":"complete-weight-missing","attempt_id":"candidate-missing-china-price-giant-tcr-advanced-complete-weight-2026-08-30"},{"code":"clearance-unverified","attempt_id":"candidate-missing-china-price-giant-tcr-advanced-tire-clearance-2026-08-30"}]},
+      {"id":"camp-ace-gen3-105","name":"CAMP 坎普 ACE Gen 3 105","record_type":"candidate","priority_score":41,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-camp-ace-gen3-105-tire-clearance-2026-08-29"}]},
+      {"id":"camp-ace-qed","name":"CAMP 坎普 ACE QED electronic","record_type":"candidate","priority_score":41,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-camp-ace-qed-tire-clearance-2026-08-29"}]},
+      {"id":"trinx-tornado-900","name":"TRINX 千里达 Tornado 900 / 龙卷风900","record_type":"candidate","priority_score":41,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-trinx-tornado-900-tire-clearance-2026-08-30"}]},
+      {"id":"java-suprema-7120","name":"JAVA 佳沃 Suprema 7120 / 终结者","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-java-suprema-7120-tire-clearance-2026-08-29"}]},
+      {"id":"java-vega-tt-24s","name":"JAVA 佳沃 Vega TT 24S","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-java-vega-tt-24s-tire-clearance-2026-08-29"}]},
+      {"id":"gito-gtv5-plus","name":"GITO 捷拓 G530 seller-listed 8.3 kg build","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-gito-gtv5-plus-tire-clearance-2026-08-29"}]},
+      {"id":"cyctrac-r18","name":"TWITTER 骓特 R18 (Racing ED) / Cyctrac","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-cyctrac-r18-tire-clearance-2026-08-29"}]},
+      {"id":"xds-gt350","name":"XDS 喜德盛 GT350","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-xds-gt350-tire-clearance-2026-09-01"}]},
+      {"id":"xds-gt600","name":"XDS / X-LAB 喜德盛 GT600","record_type":"candidate","priority_score":35,"gaps":[{"code":"clearance-unverified","attempt_id":"candidate-xds-gt600-tire-clearance-2026-09-01"}]}
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 11,
+    "research_boundary": "Use the same user-authorized evidence-only Luna agent; root remains sole writer. For each exact model, inspect all candidate/platform/source records plus relevant research attempts and extended-campaign history before lookup. Use one distinct web query per model and open at most one genuinely new product or technical source page. Before any page open, literal-search its final URL across repository data/ and docs/; if it is present or absence cannot be proven, do not open it.",
+    "field_rules": [
+      "Complete weight must be attributable to the exact complete-bike build and retain size, included equipment and weighing basis; do not transfer regional or sibling-build weights.",
+      "Tire clearance requires an exact-model manufacturer maximum or another credible source that directly states maximum clearance; fitted-tire width alone is not a maximum.",
+      "For XDS GT350 and GT600, preserve exact model-year/trim ambiguity and do not infer a shared frame maximum without source evidence."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout or purchase.",
+      "No image download, rehosting or change; no data changes outside the eleven frozen weight/clearance fields, supporting source and research-attempt records, and dated batch documentation."
+    ]
+  },
+  "external_delivery": "none"
+}

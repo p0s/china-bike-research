@@ -6,7 +6,7 @@
   },
   "field": "frame-material",
   "priority": "medium",
-  "searched_at": "2026-09-22",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "web",
     "public-post"
@@ -46,8 +46,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "airwolf-yf-r003-source-2026-09-05",
-    "airwolf-yf-r003-owner-recheck-2026-09-22"
+    "airwolf-yf-r003-owner-recheck-2026-09-22",
+    "airwolf-yf-r003-official-access-recheck-2026-09-25",
+    "airwolf-yf-r003-owner-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Next: accessible exact manufacturer revision/layup documentation; do not select a carbon grade."
+  "notes": "Next: accessible exact manufacturer revision/layup documentation; do not select a carbon grade.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "airwolf-yf-r003-official-access-recheck-2026-09-25",
+      "airwolf-yf-r003-owner-recheck-2026-09-25"
+    ],
+    "note": "The official product URL returned 403 today; a public owner report identifies YF-R003 and says T1000, while the saved indexed storefront source says T1200. No grade is selected."
+  }
 }

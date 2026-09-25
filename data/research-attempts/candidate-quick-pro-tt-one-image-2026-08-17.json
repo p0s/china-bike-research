@@ -60,8 +60,17 @@
   "status": "found",
   "accepted_source_ids": [
     "round3-quick-pro-tt-one-291572cff7",
-    "quick-pro-tt-one-official-2026-08-17"
+    "quick-pro-tt-one-official-2026-08-17",
+    "quick-pro-tt-one-official-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-pro-tt-one-official-current-recheck-2026-09-23"
+    ],
+    "note": "Official gallery is model-level; exact color/SKU match and rehosting rights were not established. No asset was added."
+  }
 }

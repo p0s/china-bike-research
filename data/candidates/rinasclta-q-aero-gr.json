@@ -16,7 +16,9 @@
   "source_ids": [
     "rinasclta-q-aero-gr-official-2026-08-27",
     "rinasclta-warranty-2026-08-27",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "rinasclta-q-aero-gr-official-recheck-2026-09-23",
+    "rinasclta-warranty-recheck-2026-09-23"
   ],
   "facts": {
     "frame": "T800/T1000-claimed carbon with manufacturer Q-AERO/Wind Eye marketing",
@@ -24,19 +26,19 @@
     "frame_construction": "Aerodynamic gravel frame with Wind Eye seatstay opening, 1.5-inch straight head tube, T47 86.5 mm shell, UDH and 27.2 mm round seatpost",
     "stiffness_evidence": "The manufacturer describes efficient power transfer, drivetrain stability and front-end stiffness, but publishes no exact-model deflection protocol or independent stiffness result",
     "frame_weight_g": 1200,
-    "frame_weight_basis": "Size 52/S, UD black painted, ±20 g; official per-size range is 1,180–1,260 g",
+    "frame_weight_basis": "Size 52/S, UD black paint, 1,200 g ±20 g; exact manufacturer size table lists 1,180/1,200/1,220/1,240/1,260 g for 49/52/54/56/58. A separate generic “Weight 5 kg” field is unlabeled and is not treated as frame weight.",
     "bottom_bracket": "T47 86.5 mm",
     "derailleur_hanger": "UDH",
     "tire_clearance_mm": 50,
     "sizes": "49, 52, 54, 56 and 58",
     "drivetrain": "Mechanical and Di2 compatible",
     "seatpost": "27.2 mm round",
-    "purchase_route": "Current manufacturer-direct product page",
-    "warranty": "Two-year manufacturer-direct frame warranty against manufacturing defects; proof of purchase and product/order identification required"
+    "purchase_route": "Current global manufacturer-direct product page with size/finish options and add-to-cart; no mainland-China checkout, landed cost or local purchase route verified.",
+    "warranty": "Manufacturer policy states two-year frame/manufacturing-defect coverage with proof of purchase, frame identification and warranty form; man-made damage is excluded. Shipping language conflicts: opening terms say manufacturer-paid return shipping for manufacturing defects, later terms say buyer pays shipping for a quality issue. Confirm terms before relying on shipping coverage."
   },
   "price_status": "Current exact official-store US$639 reference converted to CNY; no attributable mainland selected checkout",
-  "source_note": "Official painted frame weights are 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58, each ±20 g. The package includes frame, fork, seatpost, headset, clamp, thru axles and hanger. Manufacturer aero language is retained as marketing evidence, not an independent drag result.",
-  "last_reviewed": "2026-09-01",
+  "source_note": "Official painted frame weights are 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58, each ±20 g. The package includes frame, fork, seatpost, headset, clamp, thru axles and hanger. Manufacturer aero language is retained as marketing evidence, not an independent drag result.\n\nBatch 36 recheck: current manufacturer page confirms SKU RF-QA-GR-27, Toray T800+T1000 claim, 700×50C limit, global direct-store options, and size/finish weights. Size 52/S UD black is 1,200 g ±20 g; the page also shows 1,180/1,200/1,220/1,240/1,260 g for sizes 49/52/54/56/58. A separate unlabeled “Weight 5 kg” field is not treated as frame weight. Warranty says two years but its shipping provisions conflict internally.",
+  "last_reviewed": "2026-09-23",
   "reference_price_kind": "official",
   "observed_price": {
     "amount_cny": 4294,

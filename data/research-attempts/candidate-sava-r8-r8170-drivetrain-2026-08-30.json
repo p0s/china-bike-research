@@ -485,5 +485,11 @@
     "sava-aurora-r8-r8170-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact build uses full Shimano Ultegra Di2 electronic 2x12 with detailed R8150/R8170/R8100 BOM."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact build uses full Shimano Ultegra Di2 electronic 2x12 with detailed R8150/R8170/R8100 BOM.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-aurora-r8-r8170-current-2026-08-30"],
+    "note": "The exact R08-R8170-24S manufacturer page supports the stored full Shimano Ultegra Di2 2×12 R8150/R8170/R8100 build. Do not transfer this BOM to sibling SAVA builds."
+  }
 }

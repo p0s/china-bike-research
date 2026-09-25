@@ -1,6 +1,6 @@
 {
   "id": "tavelo-arden",
-  "name": "Tavelo ARDEN",
+  "name": "Tavelo Arden Race Frameset",
   "category": "aero-wide-clearance",
   "type": "frameset",
   "why_interesting": "A light all-road race frameset with UDH, threaded BSA and unusually broad 34 mm dual-ring or 38 mm single-ring clearance.",
@@ -17,7 +17,10 @@
     "tavelo-arden-china-launch-2026-08-17",
     "tavelo-warranty-official-2026-08-17",
     "tavelo-warranty-official-2026-08-27",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "tavelo-arden-race-official-recheck-2026-09-23",
+    "tavelo-warranty-official-recheck-2026-09-23",
+    "tavelo-arden-race-price-current-recheck-2026-09-25"
   ],
   "facts": {
     "frame": "Tavelo Arden Race carbon frameset with UDH and 12×100 / 12×142 mm thru axles",
@@ -35,7 +38,18 @@
     "tire_clearance_drivetrain_limits_mm": {
       "single": 38,
       "double": 34
-    }
+    },
+    "model_identity": "Current official product is titled Arden Race Frameset; current product selector options are 425, 450, 475, 500, 530, 560 and 590. The previously accepted geometry chart uses a different size-label set; source-specific labels are retained without mapping.",
+    "product_page_size_options_2026_09_23": [
+      "425",
+      "450",
+      "475",
+      "500",
+      "530",
+      "560",
+      "590"
+    ],
+    "bom": "Manufacturer frameset listing includes Arden Race frame, fork, seatpost, headset bearing and front/rear thru-axles. It does not establish a complete-bike build, wheels or a complete drivetrain; BSA 68 mm describes the frame shell, not an included bottom-bracket component."
   },
   "observed_price": {
     "low_cny": 9999,
@@ -59,5 +73,7 @@
   "price_status": "domestic Race/SL launch range; current mainland selected checkout unverified",
   "support_note": "Official policy states lifetime frameset coverage for the original purchaser through official or authorized channels; serial and receipt are required, and paint/decals are covered for one year.",
   "source_note": "The current official Race specification supplies weights of 780±25 g frame, 355 g fork and 115 g seatpost in size L, excluding paint and accessories. The 38 mm maximum requires 1×; 2× is limited to 34 mm. The domestic launch report spans CNY 9,999 Race and CNY 12,999 SL framesets without cockpit, while the current global Race pre-order is USD 1,899. Current mainland stock and selected checkout remain unresolved.",
-  "last_reviewed": "2026-08-29"
+  "last_reviewed": "2026-09-25",
+  "purchase_route": "Current global Tavelo Arden Race frameset page lists USD 1,899 with size selection and Add to Cart/Buy Now. Mainland checkout, stock and delivery are not shown; this route is for the frameset, not a complete bike.",
+  "warranty": "Global first-owner lifetime frameset warranty for purchases from Tavelo or authorized dealers; paint and decals are covered for one year. Mainland claim handling/shipping terms are not specified, and third-party complete-bike parts are not covered by this frameset policy."
 }

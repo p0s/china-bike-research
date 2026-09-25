@@ -1,0 +1,101 @@
+{
+  "batch": 57,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 51,
+      "temporarily-exhausted": 3
+    }
+  },
+  "campaign_audit": {
+    "command": "npm run --silent research:50-audit",
+    "campaign_id": "all-gaps-50-approaches-2026-08-29",
+    "fields": 990,
+    "complete": 990,
+    "incomplete": 0,
+    "current_gaps": 430,
+    "uncovered_current_fields": 11
+  },
+  "queue_snapshot": {
+    "command": "npm run --silent research:queue",
+    "ready": 0,
+    "evidence-found": 254,
+    "deferred": 42,
+    "blocked": 538,
+    "conflicted": 61
+  },
+  "selection": {
+    "basis": "Continue the open public-post lane for one high-priority exact price field after B56; B56 exhausted the web lane but left one public-post approach available.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "the existing Luna Max agent, one exact model/source at a time; no repository writes",
+    "root_writer": "integrate any admissible evidence and append the single new public-post attempt to the frozen price ledger"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "model": "Seraph / TanTan TT-X68-new UDH 32C T47 frameset",
+      "gap_code": "price-not-observed",
+      "research_field": "price",
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+      "prior_record_status": "found with a foreign-store CNY reference; mainland price remains unobserved",
+      "public_post_channel": {
+        "status": "open",
+        "attempts_used": 1,
+        "attempt_limit": 3
+      },
+      "web_channel": {
+        "status": "temporarily-exhausted",
+        "attempts_used": 3,
+        "attempt_limit": 3
+      },
+      "new_route_scope": "One distinct public-post search for an attributable owner/build post that identifies the exact TT-X68-new UDH 32C package and a paid or quoted price with date, currency and visible package/conditions. A visible exact route may be recorded as community-report evidence; do not infer a mainland CNY quote.",
+      "already_checked_sources": [
+        "https://www.reddit.com/r/ChineseCarbon/comments/1w4ldod/best_tantanseraph_complete_bike_x42_x71_r18_or/",
+        "seraph-tt-x68-new-global-price-recheck-2026-09-24",
+        "tantan-tt-x68-new-global-price-recheck-2026-09-24"
+      ],
+      "excluded_routes": [
+        "B56 exact 1688/JD/Tmall searches",
+        "B56 Seraph/TanTan manufacturer storefront pages",
+        "Xiaohongshu, because its required dedicated Chrome preflight has not been performed",
+        "private messages, login/challenge-gated sources, non-attributable quotes, other product revisions"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use one distinct public-post query/route and stop if a qualifying exact price source is found.",
+    "If no result, append exactly attempt 2 with a concise no-result or rejected disposition; do not mark the gap exhausted.",
+    "Add no catalog price unless exact model/package, currency, date and conditions are supported.",
+    "If a new source is found, root registers its provenance and links it to the candidate and any dated price observation.",
+    "Run validation proportional to changed records; run the full gate once for the coherent batch.",
+    "No image record changes; no image report is needed."
+  ],
+  "delivery": "Local B57 batch only; no push, pull request, merge, publication, or production action."
+}

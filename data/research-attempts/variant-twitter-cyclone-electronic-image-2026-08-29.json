@@ -504,8 +504,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-et-official-2026-08-29"
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact current official ET gallery supplies a remote manufacturer image with an official-page-embed rights basis."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact current official ET gallery supplies a remote manufacturer image with an official-page-embed rights basis.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-2026-08-29",
+      "twitter-cyclone-et-official-live-recheck-2026-09-25"
+    ],
+    "note": "Reuse the exact ET gallery provenance only. The stored remote image URL was marked unreachable on 2026-09-24, and the current page recheck did not verify that asset URL or add redistribution rights. Preserve the remote embed and existing rights metadata; image availability remains open."
+  }
 }

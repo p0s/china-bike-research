@@ -1,0 +1,41 @@
+{
+  "id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-ur-one"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. No new exact official/authorized mainland item page surfaced. Prior MyBike.parts CNY report was not reopened; Thailand THB result has unverified authority and is not mainland. Reviewed both scoped predecessor attempts (51 unique queries/routes total); prior MyBike.parts and QuickPro Dura-Ace pages were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Quick Pro UR:ONE\" Dura Ace Di2 快客 中国大陆 官方店 现车 CNY 重量",
+          "route": "No newly surfaced exact official/authorized mainland product page. The previously recorded MyBike.parts CNY report was not reopened; foreign THB result has unverified authority and is not a mainland price.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No new exact official/authorized mainland item page surfaced. Prior MyBike.parts CNY report was not reopened; Thailand THB result has unverified authority and is not mainland. Reviewed both scoped predecessor attempts (51 unique queries/routes total); prior MyBike.parts and QuickPro Dura-Ace pages were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. No new exact official/authorized mainland item page surfaced. Prior MyBike.parts CNY report was not reopened; Thailand THB result has unverified authority and is not mainland. Reviewed both scoped predecessor attempts (51 unique queries/routes total); prior MyBike.parts and QuickPro Dura-Ace pages were not reopened. New query checked against predecessor queries."
+}

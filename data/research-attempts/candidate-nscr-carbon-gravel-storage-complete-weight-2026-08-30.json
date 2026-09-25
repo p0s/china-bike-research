@@ -480,5 +480,13 @@
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/nscr-carbon-gravel-storage-50-area-sweep-2026-08-30.json. The retained exact seller card advertises 8.5 kg; size, pedals, accessories and measurement method remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/nscr-carbon-gravel-storage-50-area-sweep-2026-08-30.json. The retained exact seller card advertises 8.5 kg; size, pedals, accessories and measurement method remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08"
+    ],
+    "note": "seller-advertised-weight-basis-unstated: The anonymized Aug 8 exact seller card advertises 8.5 kg. Size, pedals, accessories and weighing method are absent; focused current search found no external exact-model primary page. Reopen trigger: Reopen with a current exact-build weight and stated size/equipment basis."
+  }
 }

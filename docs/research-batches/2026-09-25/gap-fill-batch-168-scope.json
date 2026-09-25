@@ -1,0 +1,52 @@
+{
+  "batch": 168,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 35,
+      "found": 15,
+      "open": 15,
+      "temporarily-exhausted": 4
+    },
+    "research_queue_counts": {
+      "ready": 15,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 552,
+      "conflicted": 1
+    }
+  },
+  "scope": {
+    "exact_record_count": 8,
+    "atomic_gap_entries": 10,
+    "targets": [
+      { "record_id": "cinelli-pressure-adr", "fields": ["complete-weight", "drivetrain"] },
+      { "record_id": "pardus-spark-tourist", "fields": ["complete-weight"] },
+      { "record_id": "upland-taylor", "fields": ["frame-stiffness", "tire-clearance"] },
+      { "record_id": "legit-ac1", "fields": ["complete-weight"] },
+      { "record_id": "pardus-robin-sport-pes", "fields": ["complete-weight"] },
+      { "record_id": "java-vittoria-7170", "fields": ["tire-clearance"] },
+      { "record_id": "sunpeed-victory-e-2026", "fields": ["tire-clearance"] },
+      { "record_id": "sunpeed-wudi-e-2026", "fields": ["tire-clearance"] }
+    ],
+    "research_attempt_suffix": "-b152-2026-09-25",
+    "research_boundary": "Audit only the already-linked candidate files, source records, research-attempt files, B152 scope/results, and applicable campaign histories. These are the 10 B152 fields still in the fresh ready queue. Determine whether existing exact evidence supports any retained candidate value. No new web/public-post query, page open, URL retry, source creation, or external contact is in scope. Root is the sole writer. Promote a field only where an already-linked exact source supports it; otherwise convert its latest open B152 attempt to blocked with a concise exact-model reason and accepted references to existing evidence, preserving all earlier attempts and campaigns.",
+    "field_rules": [
+      "Complete-bike weight must match the retained exact build and preserve size, included equipment, approximation, and weighing basis; frame weight cannot substitute.",
+      "Drivetrain evidence must map the exact selected retained build, not just a model family or another option.",
+      "Tire clearance requires an exact-model maximum; fitted tire size alone does not establish the maximum.",
+      "Stiffness evidence must apply to the exact target and be meaningful; distinguish qualitative impressions from controlled results."
+    ],
+    "excluded": [
+      "No image, price, warranty, purchase-route, UI, or unrelated catalog changes.",
+      "No external delivery, GitHub mutation, commit, push, PR, merge, publish, or production write."
+    ]
+  }
+}

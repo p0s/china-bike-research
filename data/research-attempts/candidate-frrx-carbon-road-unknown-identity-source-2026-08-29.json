@@ -484,8 +484,17 @@
   "status": "found",
   "accepted_source_ids": [
     "frrx-jd-range-2026-08-29",
-    "frrx-smzdm-brand-2026-08-29"
+    "frrx-smzdm-brand-2026-08-29",
+    "frrx-jd-range-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/frrx-carbon-road-unknown-50-area-sweep-2026-08-29.json. Current indexed products verify FRRX / 法克斯 and the generic carbon-road range while preserving exact-SKU ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/frrx-carbon-road-unknown-50-area-sweep-2026-08-29.json. Current indexed products verify FRRX / 法克斯 and the generic carbon-road range while preserving exact-SKU ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "frrx-jd-range-current-2026-09-23"
+    ],
+    "note": "Current JD index confirms an FRRX/法克斯 carbon-road range, but the retained price rows still lack an exact SKU mapping."
+  }
 }

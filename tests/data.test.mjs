@@ -105,7 +105,7 @@ test('batch 020 keeps exact findings separate from exhausted unknowns', () => {
   const bxt = candidates.get('bxt-gravel-complete');
   assert.match(bxt.facts.listing_identity, /BXT-135/);
   assert.equal(bxt.facts.complete_weight_g, 7850);
-  assert.match(bxt.facts.tire_clearance_conflict, /45C and 47C/);
+  assert.match(bxt.facts.tire_clearance_conflict, /45C while its table says 47C/);
 
   const colnago = candidates.get('colnago-y1rs');
   assert.equal(colnago.type, 'frameset');
@@ -153,7 +153,9 @@ test('batch 024 preserves selected-trim, generation, and tire-maximum boundaries
   assert.match(candidates.get('upland-r80').facts.frame_material, /T700\+T800.*T800 carbon fork/);
   assert.match(candidates.get('upland-taylor').facts.frame_material, /T1100\+T800/);
   assert.equal(candidates.get('viqi-integrated-road-unknown').facts, undefined);
-  assert.match(candidates.get('viqi-r8000').facts.frame_material, /carbon-fiber gravel-road frame/);
+  assert.match(candidates.get('viqi-r8000').facts.frame_material, /unverified/);
+  assert.match(candidates.get('viqi-r8000').facts.frame_material, /does not identify the frame material/);
+  assert.ok(candidates.get('viqi-r8000').missing.some((item) => /Frame-specific material confirmation/.test(item)));
   assert.match(candidates.get('vook-v8e-pro').facts.frame_material, /690 g.*345 g.*EPS molding/);
   assert.match(candidates.get('west-biking-sl-one').facts.frame_material, /full-carbon/);
   assert.match(candidates.get('west-biking-team-road').facts.frame_material, /T800-carbon/);
@@ -190,7 +192,7 @@ test('batch 025 preserves regional and option conflicts without inventing maxima
 
   const spark = candidates.get('pardus-spark-rs-community-lead');
   assert.match(spark.facts.complete_weight_references, /8\.5 kg.*8\.0 kg.*7\.8 kg/);
-  assert.match(spark.facts.current_factory_price_reference, /CNY 11,999.*not the custom/);
+  assert.match(spark.facts.current_factory_price_reference, /CNY 11,999.*CNY 11,499.*Neither observation establishes the custom owner-build price/);
   assert.equal(spark.facts.tire_clearance_mm, undefined);
 });
 
@@ -222,7 +224,11 @@ test('batch 026 preserves exact disc-frame evidence and unresolved build boundar
   assert.match(elves.variant.claimed_frame_weight_basis, /size 46/);
   assert.equal(elves.variant.wheels, undefined);
   assert.equal(elves.image.subject_accuracy, 'illustrative');
-  assert.equal(elves.image.reviewed_at, '2026-08-30');
+  assert.equal(elves.image.reviewed_at, '2026-09-24');
+  assert.deepEqual(elves.image.review_evidence.source_ids, [
+    'elves-falath-pro-image-exactness-current-2026-09-24',
+    'elves-image-use-terms-current-2026-09-24'
+  ]);
   assert.equal(elves.variant.source_ids.includes('elves-falath-pro-official-2026-08-17'), true);
   assert.equal(data.sources.find((source) => source.id === 'elves-falath-pro-official-2026-08-17').url, 'https://www.elvesbike.com/more.php?id=93&lm=8');
 });
@@ -282,7 +288,9 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
   assert.match(candidates.get('winspace-m6').facts.stiffness_evidence, /mixed, build-specific qualitative comparisons, not controlled frame-only measurements/);
   assert.match(candidates.get('winspace-t1600').facts.frame_material, /T1000\+T1100.*Kevlar/);
   assert.match(candidates.get('winspace-t1600').facts.stiffness_evidence, /engineered for stiffness and power transfer/);
-  assert.match(candidates.get('xds-ad350-2026').facts.frame_material, /X6 ultra-light aluminum.*carbon-fiber fork/);
+  assert.match(candidates.get('xds-ad350-2026').facts.frame_material, /Unverified for the retained 2026 mainland build/);
+  assert.match(candidates.get('xds-ad350-2026').facts.frame_material, /2025 launch coverage.*carbon fork\/seatpost/);
+  assert.ok(candidates.get('xds-ad350-2026').missing.some((item) => /Frame and fork material confirmation/.test(item)));
   assert.equal(candidates.get('xds-ad350-2026').facts.stiffness_evidence, undefined);
 
   const revolt = candidates.get('missing-china-price-giant-revolt-advanced');
@@ -294,7 +302,7 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
   const tcr = candidates.get('missing-china-price-giant-tcr-advanced');
   assert.equal(tcr.facts.complete_weight_g, undefined);
   assert.equal(tcr.facts.tire_clearance_mm, undefined);
-  assert.match(tcr.source_note, /disc-generation and historic sibling values are excluded/);
+  assert.match(tcr.source_note, /different disc-generation build; that and historic sibling values are excluded/);
 
   const reacto = candidates.get('missing-china-price-merida-reacto');
   assert.equal(reacto.facts.complete_weight_g, undefined);
@@ -350,7 +358,7 @@ test('batch 028 resolves exact facts and gives every frozen unknown fifty distin
   ];
   for (const [recordId, field] of frozenFields) {
     const key = 'candidate:' + recordId + ':' + field;
-    const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
     assert.ok(attempt, key);
     const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
     assert.equal(applications.length, 50, key);
@@ -414,7 +422,7 @@ test('batch 029 resolves exact clearances and preserves exhausted unknowns acros
   ];
   for (const [recordType, recordId, field] of frozenFields) {
     const key = `${recordType}:${recordId}:${field}`;
-    const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+    const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
     assert.ok(attempt, key);
     const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
     assert.equal(applications.length, 50, key);
@@ -473,7 +481,7 @@ test('batch 030 resolves exact frameset facts without transferring sibling or co
   for (const recordId of targetIds) {
     for (const field of fields) {
       const key = `candidate:${recordId}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -506,11 +514,13 @@ test('batch 031 resolves current platform facts while preserving build and gener
   assert.equal(speed7Frameset.facts.frame_weight_g, 870);
   assert.match(speed7Frameset.facts.frame_weight_basis, /size 52.*±30 g/);
   assert.equal(speed7Frameset.facts.tire_clearance_mm, 32);
+  assert.match(speed7Frameset.facts.stiffness_evidence, /solid behavior under load/);
+  assert.match(speed7Frameset.facts.frame_stiffness_status, /qualitative.*numeric or controlled frame-only stiffness/i);
 
-  assert.equal(candidates.get('missing-china-price-giant-revolt-advanced').official_price.observed_at, '2026-09-01');
+  assert.equal(candidates.get('missing-china-price-giant-revolt-advanced').official_price.observed_at, '2026-09-24');
   assert.equal(candidates.get('missing-china-price-giant-tcr-advanced').official_price.observed_at, '2026-09-01');
   const reacto = candidates.get('missing-china-price-merida-reacto');
-  assert.equal(reacto.official_price.observed_at, '2026-09-01');
+  assert.equal(reacto.official_price.observed_at, '2026-09-24');
   assert.match(reacto.facts.stiffness_evidence, /same molds.*same stiffness targets/);
 
   const hiLight = candidates.get('hi-light-g0');
@@ -554,7 +564,7 @@ test('batch 031 resolves current platform facts while preserving build and gener
   for (const [recordId, fields] of targetFields) {
     for (const field of fields) {
       const key = `candidate:${recordId}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === 'candidate' && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -649,7 +659,7 @@ test('batch 032 resolves exact frame facts and preserves seven exhausted unknown
     const [recordType, recordId] = target.split(':');
     for (const field of fields) {
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -667,7 +677,10 @@ test('batch 032 resolves exact frame facts and preserves seven exhausted unknown
 test('batch 033 records exact MTB and road facts while preserving conflicts and mainland unknowns', () => {
   const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
 
-  assert.match(candidates.get('giant-defy-advanced-sl1-community-lead').facts.complete_weight_status, /unverified and unmapped/);
+  const giantDefySL1 = candidates.get('giant-defy-advanced-sl1-community-lead');
+  assert.match(giantDefySL1.facts.complete_weight_status, /dealer-weighed because weight varies with size, finish, hardware and accessories/);
+  assert.match(giantDefySL1.facts.complete_weight_status, /publishes no numeric complete-bike weight/);
+  assert.ok(giantDefySL1.source_ids.includes('giant-defy-advanced-sl1-australia-official-weight-recheck-2026-09-25'));
   assert.equal(candidates.get('missing-china-price-specialized-crux').facts.complete_weight_g, 8550);
   assert.match(candidates.get('missing-china-price-specialized-crux').facts.complete_weight_basis, /product 223483.*size 56/i);
 
@@ -733,7 +746,7 @@ test('batch 033 records exact MTB and road facts while preserving conflicts and 
     const [recordType, recordId] = target.split(':');
     for (const field of fields) {
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -832,7 +845,7 @@ test('batch 034 resolves exact current build facts and exhausts every remaining 
     const [recordType, recordId] = target.split(':');
     for (const field of fields) {
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -926,7 +939,7 @@ test('batch 035 records exact weights and configurations while preserving mainla
     for (const field of fields) {
       fieldCount += 1;
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -970,7 +983,10 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
   assert.equal(gravel.facts.complete_weight_g, 9900);
   assert.match(gravel.facts.complete_weight_basis, /9\.7-9\.9 kg.*selectable builds/);
   assert.match(gravel.facts.frame_material, /High-modulus carbon frame and carbon fork/);
-  assert.match(gravel.facts.tire_clearance_status, /fitted 40C tire is not treated as clearance/);
+  assert.equal(gravel.facts.tire_clearance_mm, 40);
+  assert.match(gravel.facts.tire_clearance_status, /T900 frameset page states a 700×40C maximum/);
+  assert.match(gravel.facts.tire_clearance_basis, /platform\/frame limit rather than a trim-specific wheel-fit claim/);
+  assert.ok(gravel.source_ids.includes('twitter-gravel-v3-t900-clearance-official-2026-09-25'));
   assert.match(gravel.facts.frame_stiffness_status, /No numeric.*50 registered source areas/);
 
   const pardus = candidates.get('pardus-spark-sport-pes');
@@ -1019,7 +1035,7 @@ test('batch 036 records exact current road-bike facts and preserves clearance, p
     for (const field of fields) {
       fieldCount += 1;
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -1077,7 +1093,7 @@ test('batch 037 records exact current race and endurance facts while preserving 
   assert.match(propel.facts.stiffness_evidence, /significantly increases frame stiffness/);
 
   const merida = candidates.get('merida-scultura-endurance-4000-community-lead');
-  assert.equal(merida.facts.complete_weight_g, 9030);
+  assert.equal(merida.facts.complete_weight_g, 8970);
   assert.match(merida.facts.complete_weight_basis, /earlier-generation independent test-bike review/);
   assert.match(merida.facts.stiffness_evidence, /no detectable flex.*efficient power transfer/);
 
@@ -1126,7 +1142,7 @@ test('batch 037 records exact current race and endurance facts while preserving 
     for (const field of fields) {
       fieldCount += 1;
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -1153,13 +1169,13 @@ test('batch 038 records exact materials, weights and prices while preserving mod
 
   assert.match(candidates.get('missing-china-price-giant-defy-advanced').price_status, /CNY 14,800/);
   assert.match(candidates.get('pardus-spark-tourist').facts.complete_weight_status, /similarly named Spark AL and Spark Sport values are not transferable/);
-  assert.match(candidates.get('quick-pro-gr-one-grx-di2').price_status, /no exact mapped mainland CNY checkout/);
+  assert.match(candidates.get('quick-pro-gr-one-grx-di2').price_status, /No current mainland CNY amount is mapped to the exact GRX Di2 1×12 build.*different GRX Di2 2×12 option/);
   assert.equal(candidates.get('sava-starship-r13').facts.tire_clearance_mm, 28);
   assert.match(candidates.get('sava-starship-r13').facts.tire_clearance_basis, /Manufacturer R13\/Falcon\/Starship.*no rim-width/);
 
   const argon = candidates.get('argon18-krypton-pro');
   assert.match(argon.facts.frame_weight_status, /current-generation.*870 g prior-generation value is excluded/);
-  assert.match(argon.price_status, /US\$3,375.*no attributable mainland CNY/);
+  assert.match(argon.price_status, /US\$3,375.*No current mainland CNY listing or checkout was identified/);
 
   assert.match(candidates.get('seka-spear-rdc').facts.stiffness_evidence, /14\.5% stiffness-to-weight improvement/);
 
@@ -1206,7 +1222,7 @@ test('batch 038 records exact materials, weights and prices while preserving mod
     for (const field of fields) {
       fieldCount += 1;
       const key = `${target}:${field}`;
-      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field);
+      const attempt = data.researchAttempts.find((record) => record.target.record_type === recordType && record.target.record_id === recordId && record.field === field && record.minimum_distinct_approaches === 50);
       assert.ok(attempt, key);
       const applications = attempt.required_channels.flatMap((channel) => attempt.channels[channel].attempts);
       assert.equal(applications.length, 50, key);
@@ -1229,7 +1245,7 @@ test('batch 039 records three exact LightCarbon owner quotations and exhausts se
   const lcr017 = candidates.get('lightcarbon-lcr017-d');
   assert.equal(lcr017.observed_price.amount_cny, 4067);
   assert.equal(lcr017.observed_price.original_amount, 599);
-  assert.match(lcr017.price_status, /package details and current mainland checkout unverified/);
+  assert.match(lcr017.price_status, /package details and current mainland checkout (?:are )?unverified/);
 
   const lcr017s = candidates.get('lightcarbon-lcr017s-d');
   assert.equal(lcr017s.observed_price.amount_cny, 3768);
@@ -1266,20 +1282,20 @@ test('batch 039 records three exact LightCarbon owner quotations and exhausts se
   }
 });
 
-test('batch 040 records four exact LightCarbon supplier listings and exhausts six price unknowns across fifty areas', () => {
+test('LightCarbon supplier-price rechecks retain dated ranges and current unknowns', () => {
   const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
 
   const lcr015d = candidates.get('lightcarbon-lcr015-d');
-  assert.equal(lcr015d.observed_price.low_cny, 3259);
-  assert.equal(lcr015d.observed_price.high_cny, 3734);
-  assert.equal(lcr015d.observed_price.original_low, 480);
-  assert.equal(lcr015d.observed_price.original_high, 550);
-  assert.match(lcr015d.price_status, /manufacturer-supplier.*MOQ-1 reference/);
+  assert.equal(lcr015d.observed_price.low_cny, 3350);
+  assert.equal(lcr015d.observed_price.high_cny, 3953);
+  assert.equal(lcr015d.observed_price.original_low, 500);
+  assert.equal(lcr015d.observed_price.original_high, 590);
+  assert.match(lcr015d.price_status, /supplier-card.*US\$500–590.*MOQ-1 reference/);
 
   const lcr015v = candidates.get('lightcarbon-lcr015-v');
-  assert.equal(lcr015v.observed_price.low_cny, 3388);
-  assert.equal(lcr015v.observed_price.high_cny, 3870);
-  assert.match(lcr015v.source_note, /in-stock US\$499–570/);
+  assert.equal(lcr015v.observed_price.low_cny, 3343);
+  assert.equal(lcr015v.observed_price.high_cny, 3819);
+  assert.match(lcr015v.source_note, /US\$499–570.*'IN STOCK'/);
 
   const lcr015sd = candidates.get('lightcarbon-lcr015s-d');
   assert.equal(lcr015sd.observed_price.low_cny, 3157);
@@ -1400,7 +1416,9 @@ test('batch 042 resolves thirteen exact fields and explicitly exhausts six unkno
   const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
 
   const savaVariant = variants.get('sava-a7l-r7100');
-  assert.equal(savaVariant.claimed_complete_weight_g, 8600);
+  assert.equal(savaVariant.claimed_complete_weight_g, undefined);
+  assert.equal(savaVariant.claimed_complete_weight_basis, undefined);
+  assert.match(savaVariant.editorial.caveats.join(' '), /Complete-bike weight.*unverified/);
   assert.match(savaVariant.purchase_route, /US\$1,699.*add-to-cart/);
   const savaImage = data.images.find((image) => image.id === 'sava-a7l-r08-2026-exact-primary-image');
   assert.equal(savaImage.subject_accuracy, 'exact-variant');
@@ -1413,7 +1431,7 @@ test('batch 042 resolves thirteen exact fields and explicitly exhausts six unkno
 
   const rinas = platforms.get('rinasclta-gr025');
   assert.match(rinas.frame.geometry_status, /50 registered source areas/);
-  assert.match(variants.get('rinasclta-gr025-frameset').purchase_route, /€561.*add-to-cart/);
+  assert.match(variants.get('rinasclta-gr025-frameset').purchase_route, /€561.*Add to cart.*timed out on 2026-09-25/i);
   const rinasPrice = data.prices.find((price) => price.id === 'rinasclta-gr025-official-2026-09-01');
   assert.equal(rinasPrice.amount_cny, 4371);
   assert.equal(rinasPrice.price_type, 'official-global-store-reference-conversion');
@@ -1442,7 +1460,7 @@ test('batch 042 resolves thirteen exact fields and explicitly exhausts six unkno
 
   const irefox = candidates.get('irefox-profound-400');
   assert.match(irefox.facts.complete_weight_status, /50 registered source areas/);
-  assert.match(irefox.price_status, /No current exact-model stock or price after 50 registered source areas/);
+  assert.match(irefox.price_status, /No current exact-model mainland listing or checkout was found/);
   assert.equal(irefox.observed_price, undefined);
 
   const targetFields = new Map([
@@ -1523,16 +1541,18 @@ test('batch 043 resolves eighteen exact fields, exhausts five unknowns, and corr
 
   const scott = platforms.get('scott-addict-rc-40');
   assert.equal(scott.frame.geometry.source_id, 'scott-addict-rc-40-bikeradar-review-2026-09-01');
-  assert.deepEqual(scott.frame.geometry.sizes.map((size) => [size.size, size.stack_mm, size.reach_mm]), [
-    ['XXS/47', 504, 380], ['XS/49', 511, 388], ['S/52', 526.5, 389], ['M/54', 548, 390], ['L/56', 568.5, 395], ['XL/58', 588, 400], ['XXL/61', 606, 410]
-  ]);
+  assert.equal(scott.frame.geometry.sizes[0].stack_mm, 504);
+  assert.equal(scott.frame.geometry.sizes[0].chainstay_mm, 410);
+  assert.equal(scott.frame.bottom_bracket, 'Shimano BB-RS500-PB');
   assert.equal(scott.tire_clearance.eligibility, 'unverified');
   assert.equal(scott.tire_clearance.published_max_mm, undefined);
-  assert.ok(!scott.source_ids.includes('scott-addict-2026-manual-2026-08-17'));
   const scottVariant = variants.get('scott-addict-rc-40');
   assert.match(scottVariant.claimed_complete_weight_basis, /model 290362: 7\.9 kg/);
   assert.match(scottVariant.purchase_route, /dealer inquiry.*size-availability/i);
-  assert.ok(!scottVariant.source_ids.includes('scott-addict-2026-manual-2026-08-17'));
+  assert.equal(scottVariant.bottom_bracket, 'Shimano BB-RS500-PB');
+  assert.match(scottVariant.cockpit.description, /RR 1\.5 stem.*Creston 2\.0 Compact alloy handlebar/);
+  assert.match(scottVariant.tires, /700×28C.*maximum clearance is unverified/);
+  assert.ok(scottVariant.source_ids.includes('scott-addict-rc-40-identity-review-2026-09-25'));
 
   const starship = candidates.get('sava-starship-r13');
   assert.match(starship.facts.complete_weight_basis, /approximately 8\.5 kg/);
@@ -1595,12 +1615,12 @@ test('batch 044 resolves eleven exact fields and exhausts six unknowns across fi
   assert.match(agile.facts.frame_weight_basis, /850 ±35 g/);
   assert.match(agile.facts.stiffness_evidence, /less stiff than the T1600.*10,000 km/i);
 
-  assert.equal(variants.get('twitter-v3-2024-rs-sensah-alloy').last_reviewed, '2026-09-01');
+  assert.equal(variants.get('twitter-v3-2024-rs-sensah-alloy').last_reviewed, '2026-09-25');
   assert.match(platforms.get('twitter-gravel-v3').frame.claimed_frame_weight_status, /current T47 frame-only mass.*50 registered source areas/i);
   assert.match(variants.get('twitter-v3-wheeltop-eds').purchase_route, /US\$1,750.*Shenzhen manufacturer contact/);
   assert.match(variants.get('twitter-v3-rs-sensah').purchase_route, /official factory-store.*Shenzhen manufacturer contact/i);
 
-  assert.match(variants.get('winspace-g3-frameset').purchase_route, /US\$1,550.*10–15 business-day/);
+  assert.match(variants.get('winspace-g3-frameset').purchase_route, /US\$1,550.*10–15-business-day build-to-order/);
   assert.equal(candidates.get('missing-china-price-winspace-g3').observed_price.amount_cny, 27544);
 
   const camp = platforms.get('camp-gx700');
@@ -1777,6 +1797,7 @@ test('batch 047 resolves fourteen exact fields and exhausts one unknown across f
 
   assert.equal(prices.get('af01-global-official-2026-09-01').amount_cny, 7385);
   assert.equal(prices.get('lightcarbon-lcg071s-pro-owner-report-2026-09-01').amount_cny, 3998);
+  assert.equal(prices.get('lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23').amount_cny, 3987);
   assert.equal(prices.get('spcycle-g028-hb068-official-2026-09-01').amount_cny, 4959);
   assert.equal(prices.get('winspace-g5-global-official-2026-09-01').amount_cny, 14783);
   assert.equal(prices.get('yoeleo-altera-g21-global-official-2026-09-01').amount_cny, 9542);
@@ -1828,7 +1849,7 @@ test('batch 048 resolves four exact fields and exhausts four unknowns across fif
   assert.match(candidates.get('hi-light-g7-2-grx-gr1600').facts.stiffness_evidence, /No exact-build or exact-frame instrumented.*50-area sweep/i);
   assert.match(candidates.get('laget-discovery-one-flagship').facts.stiffness_evidence, /No exact-model instrumented.*50-area sweep/i);
   assert.match(platforms.get('tfsa-jh37').frame.stiffness_evidence, /No exact-model instrumented.*sibling-model evidence/i);
-  assert.match(variants.get('seka-exaero-gr-frameset').purchase_route, /official online store.*US\$3,299.*US and Canada/i);
+  assert.match(variants.get('seka-exaero-gr-frameset').purchase_route, /standard ExAero GR at US\$3,299.*Shop Now.*ExAero GR RDC.*sold out/i);
   assert.match(variants.get('tavelo-grow-frameset').purchase_route, /manufacturer store.*US\$1,650.*retailer finder/i);
 
   const targetFields = new Map([
@@ -1961,7 +1982,7 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.brands.length, 41);
   assert.equal(data.platforms.length, 38);
   assert.equal(data.variants.length, 41);
-  assert.equal(data.prices.length, 69);
+  assert.equal(data.prices.length, 76);
   assert.equal(data.images.length, 212);
   assert.equal(data.groupsets.length, 11);
   assert.equal(data.buildParts.length, 10);
@@ -1970,8 +1991,161 @@ test('public dataset has the expected coverage', () => {
   assert.equal(data.candidates.length, 236);
   assert.equal(data.exclusions.length, 16);
   assert.equal(data.research.length, 1);
-  assert.equal(data.researchAttempts.length, 1461);
+  assert.equal(data.researchAttempts.length, 1823);
+  assert.equal(new Set(data.researchAttempts.map((attempt) =>
+    `${attempt.target.record_type}:${attempt.target.record_id}:${attempt.field}`
+  )).size, 1503);
   assert.equal(products.length, data.variants.length);
+});
+
+test('batch 156 preserves exact LightCarbon prices as unknown when pages are quote-only or nonmatching', () => {
+  const attempts = new Map(data.researchAttempts.map((attempt) => [attempt.id, attempt]));
+  const candidate = data.candidates.find((item) => item.id === 'lightcarbon-lcr015s-v');
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const batchAttempts = [
+    'candidate-lightcarbon-lcr007-v-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcr014-v-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcr0x-d-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcr0x-v-price-b156-2026-09-25',
+    'candidate-lightcarbon-lctt05-d-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcr015s-v-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcrxs-d-price-b156-2026-09-25',
+    'candidate-lightcarbon-lcrxs-v-price-b156-2026-09-25',
+    'candidate-lightcarbon-lctr003-price-b156-2026-09-25',
+    'candidate-lightcarbon-lctt001-price-b156-2026-09-25'
+  ];
+
+  assert.equal(batchAttempts.length, 10);
+  for (const id of batchAttempts) {
+    const attempt = attempts.get(id);
+    assert.equal(attempt.status, 'blocked', id);
+    assert.equal(attempt.channels.web.attempts.length, 1, id);
+    assert.equal(attempt.campaign_extension.max_new_attempts, 1, id);
+  }
+
+  const lcr007 = attempts.get(batchAttempts[0]);
+  assert.equal(lcr007.channels.web.attempts[0].outcome, 'blocked');
+  assert.match(lcr007.channels.web.attempts[0].note, /Redirect detected|redirect loop/i);
+  assert.equal(candidate.observed_price, undefined);
+  assert.ok(candidate.source_ids.includes('lightcarbon-lcr015s-v-amoybrand-no-price-2026-09-25'));
+  assert.equal(sources.get('lightcarbon-lcr015s-v-amoybrand-no-price-2026-09-25').url, 'https://www.amoybrand.cn/lightcarbon-full-internal-cable-routing-rim-brake-road-frame_c5173.html');
+  assert.match(candidate.price_status, /contact-only/i);
+});
+
+test('batch 146 records exact manufacturer purchase routes with unresolved mainland terms', () => {
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const graro = variants.get('ican-graro-frameset');
+  const lightcarbon = variants.get('lightcarbon-lcg071s-pro-frameset');
+
+  assert.ok(graro.source_ids.includes('ican-graro-ready-to-ship-route-2026-09-25'));
+  assert.equal(sources.get('ican-graro-ready-to-ship-route-2026-09-25').url, 'https://icanwheels.com/products/ready-to-ship-graro-frame');
+  assert.match(graro.purchase_route, /Ready to ship.*US\$899/s);
+  assert.match(graro.purchase_route, /mainland delivery eligibility or cost, CNY total.*remain unverified/i);
+
+  assert.ok(lightcarbon.source_ids.includes('lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25'));
+  assert.equal(sources.get('lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25').url, 'https://de.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html');
+  assert.match(lightcarbon.purchase_route, /no public price, live stock, mainland checkout/i);
+});
+
+test('batch 147 logs bounded price searches without converting references into observed offers', () => {
+  const attempts = new Map(data.researchAttempts.map((attempt) => [attempt.id, attempt]));
+  const targets = [
+    ['candidate-pardus-spark-rs-community-lead-mainland-observed-price-b147-2026-09-25', 'PARDUS Spark RS 白色 105机械 R8170升级 Airwolf碳轮 自组价格 2026'],
+    ['candidate-dengfu-gravel-mainland-observed-price-b147-2026-09-25', 'Dengfu R20 Disc Gravel Bike Frame CNY price China mainland current 2026'],
+    ['candidate-pardus-robin-evo-community-lead-mainland-observed-price-b147-2026-09-25', 'PARDUS Robin EVO Dura-Ace R9270 XS 6.2kg custom complete bike CNY mainland listing'],
+    ['candidate-hi-light-r6-105-al-current-mainland-observed-price-b147-2026-09-25', 'Hi-Light 航轮 R6 105 AL 2026 latest exact mainland CNY price 8300 current listing'],
+    ['candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-b147-2026-09-25', 'Giant Revolt Advanced 2 2026 GRX RX-820 2x12 mainland China current JD Tmall price stock'],
+    ['candidate-tavelo-arow-sl-community-lead-mainland-observed-price-b147-2026-09-25', 'Tavelo Arow SL Neo Black frameset current mainland China CNY price 2026 custom complete bike'],
+    ['candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-b147-2026-09-25', 'TWITTER 骓特 Gravel V3 2024 RS 2x12 碳轮 2026 大陆 现价 在售'],
+    ['candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-b147-2026-09-25', 'Seraph TT-X68-new UDH 32C 中国大陆 车架组 CNY 现货 2026'],
+    ['candidate-irefox-profound-400-current-mainland-observed-price-b147-2026-09-25', 'IREFOX Profound 400 玄狐 105 R7000 现货售价 中国 2026'],
+    ['candidate-lightcarbon-lcg074-d-price-b147-2026-09-25', 'LightCarbon LCG074-D 集成把立砾石车架组 中国大陆 价格 CNY 2026']
+  ];
+
+  assert.equal(targets.length, 10);
+  for (const [id, query] of targets) {
+    const attempt = attempts.get(id);
+    assert.equal(attempt.status, 'blocked', id);
+    assert.equal(attempt.channels.web.attempts.length, 1, id);
+    assert.equal(attempt.channels.web.attempts[0].query, query, id);
+    assert.match(attempt.channels.web.attempts[0].route, /no page opened/i, id);
+  }
+});
+
+test('batch 148 records a foreign seller FX reference without implying a mainland observed price', () => {
+  const candidate = data.candidates.find((item) => item.id === 'airwolf-yf-r003');
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const attempts = new Map(data.researchAttempts.map((attempt) => [attempt.id, attempt]));
+  const reference = candidate.official_price;
+  assert.equal(reference.price_type, 'seller-listing-reference-conversion');
+  assert.equal(reference.original_amount, 1437.79);
+  assert.equal(reference.original_currency, 'USD');
+  assert.equal(reference.amount_cny, 9644);
+  assert.equal(reference.conversion_rate_date, '2026-09-23');
+  assert.equal(candidate.observed_price, undefined);
+  assert.ok(candidate.source_ids.includes('airwolf-yf-r003-ebay-seller-listing-price-2026-09-25'));
+  assert.equal(sources.get('airwolf-yf-r003-ebay-seller-listing-price-2026-09-25').url, 'https://www.ebay.com/itm/800534168051');
+  assert.ok(candidate.source_ids.includes('ecb-reference-rates-2026-09-23'));
+
+  const airwolf = attempts.get('candidate-airwolf-yf-r003-price-b148-2026-09-25');
+  assert.equal(airwolf.status, 'found');
+  assert.equal(airwolf.channels.web.attempts.length, 1);
+  assert.equal(airwolf.channels.web.attempts[0].outcome, 'found');
+  assert.match(airwolf.channels.web.attempts[0].note, /not a mainland CNY offer/);
+  assert.equal(data.researchAttempts.filter((attempt) => attempt.id.includes('-b148-2026-09-25') && attempt.campaign_extension).length, 8);
+  assert.equal(data.images.length, 212);
+});
+
+test('batch 044 keeps unmatched weights and Japan-market references separate from mainland builds', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  for (const id of [
+    'twitter-cyclone-sport',
+    'pinarello-f5',
+    'look-765-electronic'
+  ]) {
+    const candidate = candidates.get(id);
+    assert.equal(candidate.facts.complete_weight_g, undefined, id);
+    assert.ok(candidate.facts.complete_weight_reference || candidate.facts.complete_weight_options, id);
+  }
+  const propel = candidates.get('giant-propel-gen4-community-lead');
+  assert.equal(propel.facts.complete_weight_g, 6800);
+  assert.match(propel.facts.complete_weight_basis, /Japan.*size S.*not verified as the mainland stock build/);
+  assert.match(propel.facts.complete_weight_reference, /6\.8 kg.*size S.*Japan/);
+  const elves = data.variants.find((variant) => variant.id === 'elves-falath-r7170');
+  assert.match(elves.purchase_route, /2026-09-24 official route recheck found no listed mainland-China store/);
+});
+
+test('batch 045 records an exact mainland route without promoting unresolved checkout or trim details', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  const variants = new Map(data.variants.map((variant) => [variant.id, variant]));
+  const attempts = new Map(data.researchAttempts.map((attempt) => [attempt.id, attempt]));
+
+  const hiLight = candidates.get('hi-light-g0');
+  assert.equal(hiLight.official_price.amount_cny, 15900);
+  assert.equal(hiLight.official_price.observed_at, '2026-09-01');
+  assert.equal(hiLight.observed_price, undefined);
+  assert.equal(attempts.get('candidate-hi-light-g0-mainland-observed-price-2026-09-24').status, 'blocked');
+
+  assert.equal(attempts.get('variant-twitter-cyclone-electronic-purchase-route-current-mainland-2026-09-24').status, 'found');
+  assert.match(variants.get('twitter-cyclone-electronic').purchase_route, /does not identify the retained wheel\/size option/i);
+  assert.equal(attempts.get('variant-twitter-cyclone-gen3-et-purchase-route-current-mainland-2026-09-24').status, 'blocked');
+  assert.equal(attempts.get('variant-twitter-v3-rs-sensah-purchase-route-current-mainland-2026-09-24').status, 'blocked');
+  assert.equal(attempts.get('variant-twitter-v3-wheeltop-eds-purchase-route-current-mainland-2026-09-24').status, 'blocked');
+  assert.match(variants.get('twitter-v3-rs-sensah').purchase_route, /does not expose the retained RS\/Sensah 2×12 option/i);
+  assert.match(variants.get('twitter-v3-wheeltop-eds').purchase_route, /does not expose the retained WheelTop EDS TX 2×12 option/i);
+});
+
+test('batch 043 refreshes exact candidate MSRP observations without asserting checkout prices', () => {
+  const candidates = new Map(data.candidates.map((candidate) => [candidate.id, candidate]));
+  for (const id of [
+    'missing-china-price-giant-revolt-advanced',
+    'giant-propel-gen4-community-lead',
+    'missing-china-price-giant-defy-advanced',
+    'missing-china-price-merida-reacto'
+  ]) {
+    assert.equal(candidates.get(id)?.official_price?.observed_at, '2026-09-24', id);
+  }
 });
 
 test('build parts preserve package, weight, price and compatibility boundaries', () => {
@@ -2120,11 +2294,12 @@ test('Taobao groupset snapshots preserve readable option prices without implying
 
 test('candidate catalog keeps the focused view useful without losing discovery', () => {
   assert.equal(catalogCandidates.length, 222);
-  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 214);
+  assert.equal(catalogCandidates.filter((entry) => entry.defaultVisible).length, 215);
   assert.ok(catalogCandidates.every((entry) => !entry.candidate.existing_record_id || entry.candidate.catalog_distinct_reason));
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'missing-china-price-elves-mori-aerox'), false);
   assert.equal(catalogCandidates.some((entry) => entry.candidate.id === 'pardus-uragano-evo-community-lead'), false);
   assert.equal(catalogCandidates.find((entry) => entry.candidate.id === 'dengfu-gravel').defaultVisible, true);
+  assert.equal(catalogCandidates.find((entry) => entry.candidate.id === 'carbonda-cfr707').defaultVisible, true);
 
   const pardus = catalogCandidates.find((entry) => entry.candidate.id === 'pardus-spark-sport-pes');
   assert.equal(pardus.defaultVisible, true);
@@ -2426,6 +2601,7 @@ test('NSCR, PARAGON JAZZ, original PARDUS Super Sport, and PHILLIPS SACHEM prese
   assert.match(superSport.facts.drivetrain, /R7000 mechanical 2×11/);
   assert.match(superSport.facts.frame_material, /HS-EPS carbon frame.*HS-HPT carbon fork/);
   assert.equal(superSport.facts.complete_weight_g, undefined);
+  assert.match(superSport.facts.stiffness_evidence, /subjective rider impression.*not a numeric or controlled frame-only result/);
   assert.match(superSport.source_note, /9\.5 kg.*not transferred/i);
   assert.ok(data.candidates.some((item) => item.id === 'pardus-super-sport-gen2'));
 
@@ -2467,6 +2643,10 @@ test('candidate facts and foreign-price reference estimates reject malformed evi
   const invalidRate = structuredClone(data);
   invalidRate.candidates.find((item) => item.id === 'quick-pro-er-one').official_price.conversion_rate_date = 'today';
   assert.ok(validateDataset(invalidRate).some((error) => error.includes('reference conversion needs conversion_rate_date')));
+
+  const invalidSellerRate = structuredClone(data);
+  invalidSellerRate.candidates.find((item) => item.id === 'airwolf-yf-r003').official_price.conversion_rate_cny_per_original_unit = 0;
+  assert.ok(validateDataset(invalidSellerRate).some((error) => error.includes('reference conversion needs a positive rate')));
 
   const invalidSourceUrl = structuredClone(data);
   invalidSourceUrl.candidates.find((item) => item.id === 'quick-pro-er-one').source_url = 'http://example.com/not-https';
@@ -2576,7 +2756,7 @@ test('all framesets use one transparent full-bike build allowance', () => {
   assert.equal(supportsStandardFramesetBuild('triathlon'), true);
   assert.equal(data.meta.frameset_build_assumption.amount_cny, 6000);
   const frame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
-  assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9998, 9998]);
+  assert.deepEqual([frame.allInPrice.low, frame.allInPrice.high], [9987, 9987]);
   assert.equal(frame.allInPrice.estimated, true);
   const complete = products.find((item) => item.variant.id === 'twitter-v3-wheeltop-eds');
   assert.deepEqual([complete.allInPrice.low, complete.allInPrice.high], [4951, 4951]);
@@ -2841,4 +3021,10 @@ test('candidate drivetrain limits reject incomplete or inconsistent maxima', () 
     copy.candidates.find((item) => item.id === 'tavelo-arden').facts.tire_clearance_drivetrain_limits_mm = limits;
     assert.ok(validateDataset(copy).some((error) => /candidate tavelo-arden: invalid drivetrain clearance limits/.test(error)));
   }
+});
+
+test('Cyclone ET retains only cockpit facts consistent across the exact current page', () => {
+  const cyclone = data.variants.find((variant) => variant.id === 'twitter-cyclone-gen3-et');
+  assert.deepEqual(cyclone.cockpit, { integrated: true, routing: 'fully internal' });
+  assert.match(cyclone.cockpit_status, /420×90 mm.*then later says.*alloy 400×90 mm/i);
 });

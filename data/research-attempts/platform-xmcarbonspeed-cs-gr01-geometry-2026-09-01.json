@@ -482,5 +482,6 @@
     "xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-xmcarbonspeed-cs-gr01-batch-042-50-area-sweep-2026-09-01.json. Source-linked exact-model geometry provides six real sizes; duplicate alternate display rows and ambiguous bottom-bracket-drop cells are excluded."
+  "notes": "B125 source reuse: source-linked CS-GR01 geometry provides six real sizes attributed to manufacturer data. Preserve only published cells; duplicate alternate display rows and ambiguous bottom-bracket-drop cells remain excluded.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01"], "note": "The exact-model secondary geometry source supports the published six-size table with duplicate and ambiguous rows excluded."}
 }

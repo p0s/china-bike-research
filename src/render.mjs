@@ -413,7 +413,8 @@ function candidateTireClearance(entry) {
     value: facts.tire_clearance_drivetrain_limits_mm
       ? clearanceLabel({ tire_clearance: { drivetrain_limits_mm: facts.tire_clearance_drivetrain_limits_mm } })
       : Number.isFinite(value) ? `${value} mm${fitted ? ' fitted' : ''}` : '—',
-    sortValue: Number.isFinite(value) ? value : 0,
+    sortValue: Number.isFinite(value) && !fitted ? value : 0,
+    fitted,
     details: Number.isFinite(value) ? (basis || 'Recorded maximum tire clearance.') : ''
   };
 }
@@ -486,10 +487,15 @@ function publishedWeightFilter(product) {
   return { kind: 'frame', grams: values.length ? Math.max(...values) : null };
 }
 
+function bottomBracket(product) {
+  return product.variant.bottom_bracket ?? product.platform.frame?.bottom_bracket ?? 'unknown';
+}
+
 function frameStandard(product) {
   const frame = product.platform.frame;
   const parts = [];
-  if (frame.bottom_bracket && frame.bottom_bracket !== 'unknown') parts.push(frame.bottom_bracket);
+  const bracket = bottomBracket(product);
+  if (bracket && bracket !== 'unknown') parts.push(bracket);
   if (frame.derailleur_hanger === 'UDH') parts.push('UDH');
   return parts.join(' · ') || '—';
 }
@@ -558,7 +564,7 @@ function publishedSpecificationRows(product) {
   const forkWeight = componentWeightValueLabel(product.platform.frame, 'fork');
   const seatpostWeight = componentWeightValueLabel(product.platform.frame, 'seatpost');
   const rows = [
-    ['Bottom bracket', product.platform.frame?.bottom_bracket === 'unknown' ? '' : product.platform.frame?.bottom_bracket],
+    ['Bottom bracket', bottomBracket(product) === 'unknown' ? '' : bottomBracket(product)],
     ['Frame weight', frameWeight],
     ['Fork weight', forkWeight],
     ['Seatpost weight', seatpostWeight],
@@ -578,7 +584,7 @@ function publishedSpecificationRows(product) {
 function frameTooltipLines(product) {
   const { frame } = product.platform;
   const lines = [
-    `Bottom bracket: ${frame.bottom_bracket ?? 'unknown'}.`,
+    `Bottom bracket: ${bottomBracket(product)}.`,
     `Derailleur hanger: ${frame.derailleur_hanger ?? 'unknown'}.`,
     frame.claimed_fiber ? `Carbon claim: ${frame.claimed_fiber}.` : '',
     frame.cable_routing ? `Cable routing: ${frame.cable_routing.replaceAll('-', ' ')}.` : '',
@@ -649,7 +655,7 @@ function productRow(ctx, product) {
     categoryLabel(platform.category),
     platform.handlebar,
     drivetrainLabel(ctx, product),
-    platform.frame.bottom_bracket,
+    bottomBracket(product),
     platform.frame.derailleur_hanger,
     metric.value,
     tireClearance.value,
@@ -729,7 +735,7 @@ function candidateFramePriceTerm(entry) {
 }
 
 function isReferenceConversionPrice(price) {
-  return ['reference-conversion', 'official-global-store-reference-conversion'].includes(price?.price_type);
+  return ['reference-conversion', 'official-global-store-reference-conversion', 'seller-listing-reference-conversion'].includes(price?.price_type);
 }
 
 function candidatePriceLabel(ctx, entry) {
@@ -751,17 +757,20 @@ function candidatePriceState(entry) {
       : '';
   }
   const priceType = entry.price.price_type ?? '';
-  const basis = isReferenceConversionPrice(entry.price)
-    ? 'Official FX estimate'
-    : priceType === 'official-conflict'
-      ? 'Official price conflict'
-      : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
+  const basis = priceType === 'seller-listing-reference-conversion'
+    ? 'Foreign seller FX estimate'
+    : isReferenceConversionPrice(entry.price)
+      ? 'Official FX estimate'
+      : priceType === 'official-conflict'
+        ? 'Official price conflict'
+        : entry.priceKind === 'official' || priceType.startsWith('official-') ? 'Official' : 'Observed';
   const framePrice = entry.kind === 'frameset' ? `${candidateFramePriceTerm(entry)} ${formatPrice(entry.price)}` : '';
   return [framePrice, basis, entry.price.observed_at].filter(Boolean).join(' · ');
 }
 
 function candidatePriceRecordLabel(entry) {
   const priceType = entry.price?.price_type ?? '';
+  if (priceType === 'seller-listing-reference-conversion') return 'Foreign seller FX estimate';
   if (isReferenceConversionPrice(entry.price)) return 'Official FX estimate';
   if (priceType === 'official-conflict') return 'Official price conflict';
   if (entry.priceKind === 'official' || priceType.startsWith('official-')) return 'Official reference';
@@ -1369,7 +1378,7 @@ function candidateStoryTitle(ctx, entry) {
   const details = [
     Number.isFinite(facts.complete_weight_g) ? `${(facts.complete_weight_g / 1000).toFixed(1)} kg complete bike` : '',
     !Number.isFinite(facts.complete_weight_g) && Number.isFinite(facts.frame_weight_g) ? `${new Intl.NumberFormat('en-US').format(facts.frame_weight_g)} g frame` : '',
-    Number.isFinite(facts.tire_clearance_mm) ? `${candidateTireClearance(entry).value} tire clearance` : ''
+    Number.isFinite(facts.tire_clearance_mm) ? (candidateTireClearance(entry).fitted ? `${candidateTireClearance(entry).value} tire` : `${candidateTireClearance(entry).value} tire clearance`) : ''
   ].filter(Boolean);
   if (details.length) return details.join(' with ');
   if (entry.price) return `${candidatePriceLabel(ctx, entry)} ${entry.kind === 'frameset' ? 'frameset' : 'complete-bike'} lead under review`;
@@ -1402,13 +1411,14 @@ export function renderCandidateModel(ctx, entry) {
   const isSuperseded = candidate.status === 'superseded';
   const price = entry.price || isSuperseded ? candidatePriceLabel(ctx, entry) : 'Price not verified';
   const priceState = candidatePriceState(entry);
+  const sellerListingFxReference = entry.price?.price_type === 'seller-listing-reference-conversion';
   const assumption = buildAssumption(ctx);
   const priceBrief = !entry.price
     ? isSuperseded
       ? candidatePublicText(candidate.availability_note) || `This version is no longer sold new and was superseded by the ${successorLabel(candidate)}.`
       : 'A current price is not recorded.'
     : entry.kind === 'frameset'
-      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
+      ? `The displayed ${candidatePriceLabel(ctx, entry)} estimate adds the adjustable ${formatCny(assumption.amount_cny)} build allowance to the recorded ${formatPrice(entry.price)} ${candidateFramePriceTerm(entry).toLowerCase()} price.${sellerListingFxReference ? ' The base is a dated currency conversion of a foreign seller listing, not a confirmed mainland checkout price.' : ''}${candidatePackageOverlapNote(entry) ? ` ${candidatePackageOverlapNote(entry)}` : ''}`
       : isReferenceConversionPrice(entry.price)
         ? `${candidatePriceLabel(ctx, entry)} is a dated currency conversion of an official non-mainland price, not a confirmed China checkout price.`
         : `The recorded complete-bike price is ${candidatePriceLabel(ctx, entry)}; its date and basis remain visible below.`;
@@ -1619,8 +1629,8 @@ function builderBases(ctx) {
       weightBasis: isComplete
         ? product.variant.claimed_complete_weight_basis ?? 'complete-bike weight basis not recorded'
         : weight.grams ? 'frame only; fork and package hardware may be additional unknown weight' : 'frameset package weight unknown',
-      bottomBracket: product.platform.frame.bottom_bracket,
-      bottomBracketKey: builderBottomBracketKey(product.platform.frame.bottom_bracket),
+      bottomBracket: bottomBracket(product),
+      bottomBracketKey: builderBottomBracketKey(bottomBracket(product)),
       tireClearanceMm: maxClearance(product.platform) ?? null,
       tireClearanceLabel: clearanceLabel(product.platform),
       tireClearanceByDrivetrain: product.platform.tire_clearance?.drivetrain_limits_mm ?? null,

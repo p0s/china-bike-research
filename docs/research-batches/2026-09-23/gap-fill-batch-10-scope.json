@@ -1,0 +1,41 @@
+{
+  "batch_id": "gap-fill-batch-10-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 09 is recorded locally with its passing full gate. Its refresh leaves two ready fields: Mondince FM316 stiffness and VeloBuild CX-002 2023 stiffness.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 09. These are the only two remaining ready fields; each has one unused web-channel attempt before its third distinct web attempt.",
+  "exact_model_count": 2,
+  "atomic_field_count": 2,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316 gravel-race frameset",
+      "field": "frame-stiffness",
+      "attempt_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "channel": "web",
+      "next_attempt_number": 3,
+      "planned_route": "CyclingTips independent review-publication search"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "velobuild-cx-002-2023",
+      "exact_identity": "VeloBuild CX-002 2023 full-internal-routing cyclocross frameset",
+      "field": "frame-stiffness",
+      "attempt_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "channel": "web",
+      "next_attempt_number": 3,
+      "planned_route": "CyclingWeekly independent review-publication search"
+    }
+  ],
+  "research_instructions": [
+    "Search one exact model/source at a time and use only the one listed remaining web attempt per field.",
+    "Accept stiffness only from an instrumented measurement or credible controlled comparison that identifies the exact model revision.",
+    "Keep generic marketing, unrelated sibling models, and qualitative impressions out of the stiffness field.",
+    "If no qualifying result appears, mark both web channels temporarily exhausted with a concrete reopening trigger; do not imply no results means a zero value.",
+    "No XHS, seller contact, private content, purchase, image download, image-rights inference, external GitHub mutation, or publication."
+  ],
+  "done_criteria": "Complete the two frozen exact-model checks, accept only exact measurement/comparison evidence, update each ledger within its three-attempt channel limit, write a dated result matrix, accept monotonic coverage if ledger changes require it, run npm run check once for this coherent batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

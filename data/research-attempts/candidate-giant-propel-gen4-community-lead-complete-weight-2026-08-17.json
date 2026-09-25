@@ -491,8 +491,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "giant-propel-advanced-sl1-japan-2026-08-30"
+    "giant-propel-advanced-sl1-japan-2026-08-30",
+    "giant-propel-sl1-japan-weight-recheck-2026-09-24"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "giant-propel-sl1-japan-weight-recheck-2026-09-24"
+    ],
+    "note": "The exact current Giant Japan recheck is linked to the candidate and the size-S 6.8 kg reference is structured as 6800 g with its Japan-market, listed-build and unit-variation caveats; mainland stock-build weight remains unknown."
+  },
   "retry_after": null,
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/giant-propel-gen4-community-lead-batch-025-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Official Japan publishes 6.8 kg in size S for the same named 2027 trim; the regional basis and mainland omission remain explicit. The six original 2026-08-17 applications remain intact."
 }

@@ -33,8 +33,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "winspace-g3-carbonvelo-review-2026-08-27"
+    "winspace-g3-carbonvelo-review-2026-08-27",
+    "winspace-g3-pro-di2-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking."
+  "notes": "The site exposes this as qualitative evidence with its basis and does not convert it into a stiffness score or ranking. Focused exact-model review on 2026-09-23: Exact G3 Pro Di2 page describes pro-level stiffness and racing precision, with no measured value or test protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "winspace-g3-carbonvelo-review-2026-08-27",
+      "winspace-g3-pro-di2-current-recheck-2026-09-23"
+    ],
+    "note": "Exact G3 Pro Di2 page describes pro-level stiffness and racing precision, with no measured value or test protocol."
+  }
 }

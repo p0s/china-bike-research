@@ -1,0 +1,59 @@
+{
+  "id": "variant-twitter-t3-tt-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-t3-tt"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-t3-tt-official-route-recheck-2026-09-25"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": ["twitter-t3-tt-official-route-recheck-2026-09-25"],
+    "note": "The exact current official route is already integrated in the variant: made-to-order WheelTop TX-TT7110 or SRAM Rival AXS builds, six WheelTop sizes, US$2,349 and China country selection. Mainland delivery quote and checkout terms remain unverified."
+  },
+  "retry_after": null,
+  "retry_of": "variant-twitter-t3-tt-purchase-route-2026-08-29",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "骓特 T3 TT TX-TT7110 轮峰 2x12 大陆 现货 购买 整车",
+          "route": "One distinct B145 exact-model web search; one newly surfaced result-page open attempt",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "Search matched the already-recorded current Twitter Bike USA T3 TT page; its exact WheelTop TX-TT7110 build, six sizes, US$2,349, and China country selector establish a public international route. The page was not reopened; mainland delivery price and final checkout remain unverified.",
+          "result_url": "https://twitterbikeusa.com/products/triathlon-t3-tt"
+        }
+      ]
+    }
+  },
+  "notes": "This B145 record contains only the authorized web query; public-post was not run. The matched current exact official page is already recorded and supports the public international route; mainland delivery price and final checkout remain unverified.",
+  "campaign_extension": {
+    "id": "b145-twitter-t3-tt-purchase-route",
+    "extends_attempt_id": "variant-twitter-t3-tt-purchase-route-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

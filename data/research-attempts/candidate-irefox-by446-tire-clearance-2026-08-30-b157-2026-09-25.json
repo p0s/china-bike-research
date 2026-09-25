@@ -1,0 +1,52 @@
+{
+  "id": "candidate-irefox-by446-tire-clearance-2026-08-30-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "irefox-by446"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-irefox-by446-tire-clearance-2026-08-30",
+  "retry_reason": "The frozen B157 scope authorizes one bounded current exact-model web query after review of the latest predecessor attempt, linked sources, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-irefox-by446-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX BY446 exact road frame maximum tire clearance official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The current exact official catalog has no BY446 entry. A fitted generic 700C×40C tire does not establish maximum clearance, and the surfaced generic support page did not identify BY446."
+        }
+      ],
+      "blocker": "The current exact official catalog has no BY446 entry. A fitted generic 700C×40C tire does not establish maximum clearance, and the surfaced generic support page did not identify BY446."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The current exact official catalog has no BY446 entry. A fitted generic 700C×40C tire does not establish maximum clearance, and the surfaced generic support page did not identify BY446.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-157-irefox-by446-tire-clearance",
+    "extends_attempt_id": "candidate-irefox-by446-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+    "reason": "The frozen B157 scope authorizes one dated exact-record query after reviewing the latest predecessor source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

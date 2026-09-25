@@ -21,7 +21,15 @@
     }
   },
   "status": "found",
-  "accepted_source_ids": ["irefox-profound-400-biketo-review-2026-08-28"],
+  "accepted_source_ids": ["irefox-profound-400-biketo-review-2026-08-28", "irefox-profound-400-biketo-review-current-2026-09-23"],
   "retry_after": null,
-  "notes": "The exact reviewed configuration is recorded neutrally; it is not generalized to every possible seller build."
+  "notes": "The exact reviewed configuration is recorded neutrally; it is not generalized to every possible seller build.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "irefox-profound-400-biketo-review-current-2026-09-23"
+    ],
+    "note": "The 2023 review sample uses Shimano 105 R7000 mechanical 2×11, a 50/34T crank and a SunRace 34T cog. It does not state the cassette's small cog or full range, so the prior 11–34T catalog precision was corrected; this sample is not generalized to all seller builds."
+  }
 }

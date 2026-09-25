@@ -1,0 +1,69 @@
+{
+  "batch": 81,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "Seventeen remote primary-image records have image-health-unverified gaps and no health_check record. A first bounded runtime check can close only those whose exact current remote URLs respond with a successful status and image content type. Previously checked unreachable URLs are excluded from this same-day batch.",
+    "exact_models": 17,
+    "atomic_gaps": 17,
+    "targets": [
+      { "record_type": "image", "record_id": "seka-exaero-gr-primary-image", "product_id": "seka-exaero-gr-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "spcycle-g026-primary-image", "product_id": "spcycle-g026-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "tavelo-grow-primary-image", "product_id": "tavelo-grow-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "winspace-g3-primary-image", "product_id": "winspace-g3-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "af01-primary-image", "product_id": "af01-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "bxt-055-primary-image", "product_id": "bxt-055-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "elves-mori-aerox-primary-image", "product_id": "elves-mori-aerox-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "evolve-cima-gr-primary-image", "product_id": "evolve-cima-gr-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "incolor-speedster-sr-primary-image", "product_id": "incolor-speedster-sr-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "incolor-speedster-sr-plus-primary-image", "product_id": "incolor-speedster-sr-plus-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "incolor-ssr-official-primary-image", "product_id": "incolor-ssr-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "incolor-voyager-official-primary-image", "product_id": "incolor-voyager-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "quick-gr-one-primary-image", "product_id": "quick-gr-one-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "spcycle-g028-primary-image", "product_id": "spcycle-g028-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "tfsa-jh37-primary-image", "product_id": "tfsa-jh37-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "winspace-g5-primary-image", "product_id": "winspace-g5-frameset", "gap_code": "image-health-unverified" },
+      { "record_type": "image", "record_id": "yoeleo-altera-g21-primary-image", "product_id": "yoeleo-altera-g21-frameset", "gap_code": "image-health-unverified" }
+    ]
+  },
+  "verification": {
+    "command": "npm run image:report -- --ids seka-exaero-gr-primary-image,spcycle-g026-primary-image,tavelo-grow-primary-image,winspace-g3-primary-image,af01-primary-image,bxt-055-primary-image,elves-mori-aerox-primary-image,evolve-cima-gr-primary-image,incolor-speedster-sr-primary-image,incolor-speedster-sr-plus-primary-image,incolor-ssr-official-primary-image,incolor-voyager-official-primary-image,quick-gr-one-primary-image,spcycle-g028-primary-image,tfsa-jh37-primary-image,winspace-g5-primary-image,yoeleo-altera-g21-primary-image --json",
+    "acceptance_rule": "Record each returned result only against its exact current image URL. A gap closes only when the response is 2xx–3xx with image/* content type; host-blocked, wrong-content-type, broken, unreachable, or partial states stay explicit and unresolved. Do not change image identity, rights, credit, alt text, or URL on the basis of a health check.",
+    "stop_rule": "Run the scoped report once. The existing script performs at most one HEAD per URL and one small ranged GET only when the response is inconclusive. Do not retry same-day unreachable URLs, download files, inspect unrelated images, or change image metadata except the dated health_check result for these exact targets."
+  },
+  "done_criteria": [
+    "Run the single frozen image-health report and integrate exact URL, response status/content type, classification, and check date for each target.",
+    "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "Local B81 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

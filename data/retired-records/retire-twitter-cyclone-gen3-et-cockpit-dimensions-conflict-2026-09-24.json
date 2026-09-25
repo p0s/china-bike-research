@@ -1,0 +1,15 @@
+{
+  "id": "retire-twitter-cyclone-gen3-et-cockpit-dimensions-conflict-2026-09-24",
+  "record_type": "variants",
+  "record_id": "twitter-cyclone-gen3-et",
+  "action": "retire",
+  "reason": "The current exact ET page gives conflicting cockpit dimensions: one section lists 420×90 mm and another says every build has a 400×90 mm alloy cockpit. No exact selector or build mapping resolves which dimensions apply, so the dimension claim is removed while the page's consistent integrated and fully internal routing claims remain.",
+  "evidence_source_ids": [
+    "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+  ],
+  "protected_item": {
+    "kind": "field",
+    "value": "cockpit.dimensions"
+  },
+  "reviewed_at": "2026-09-24"
+}

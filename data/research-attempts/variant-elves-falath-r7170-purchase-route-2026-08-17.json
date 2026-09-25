@@ -498,8 +498,20 @@
   "accepted_source_ids": [
     "elves-falath-pro-105-sa-2026-08-17",
     "elves-falath-pro-complete-au-2026-08-17",
-    "elves-warranty-registration-2026-08-17"
+    "elves-warranty-registration-2026-08-17",
+    "elves-falath-pro-105-sa-route-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Current exact regional checkout routes and the manufacturer registration route are documented; mainland seller authority, final checkout and warranty handling remain unverified."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. Current exact regional checkout routes and the manufacturer registration route are documented; mainland seller authority, final checkout and warranty handling remain unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "elves-falath-pro-105-sa-2026-08-17",
+      "elves-falath-pro-complete-au-2026-08-17",
+      "elves-warranty-registration-2026-08-17",
+      "elves-falath-pro-105-sa-route-recheck-2026-09-24"
+    ],
+    "note": "Current exact regional routes are documented, including South African checkout and delivery terms; they do not establish a current mainland seller, mainland checkout, or warranty handling."
+  }
 }

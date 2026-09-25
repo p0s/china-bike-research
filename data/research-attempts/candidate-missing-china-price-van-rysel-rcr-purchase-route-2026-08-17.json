@@ -33,8 +33,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "decathlon-china-rcrf-route-2026-08-17"
+    "decathlon-china-rcrf-route-2026-08-17",
+    "decathlon-china-rcrf-route-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence. Current focused recheck 2026-09-23: The prior route mapping connects Decathlon China code 365199 to the RCR-F family. Today it rendered navigation/footer only, with no exact SKU, price, stock or checkout.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "decathlon-china-rcrf-route-2026-08-17",
+      "decathlon-china-rcrf-route-recheck-2026-09-23"
+    ],
+    "note": "The prior route mapping connects Decathlon China code 365199 to the RCR-F family. Today it rendered navigation/footer only, with no exact SKU, price, stock or checkout."
+  }
 }

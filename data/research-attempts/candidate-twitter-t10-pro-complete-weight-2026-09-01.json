@@ -481,5 +481,11 @@
     "twitter-t10-pro-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-t10-pro-batch-033-50-area-sweep-2026-09-01.json. The current exact page publishes an 8.8 kg base estimate across three selectable drivetrain builds; size and weighing protocol are unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-t10-pro-batch-033-50-area-sweep-2026-09-01.json. The current exact page publishes an 8.8 kg base estimate across three selectable drivetrain builds; size and weighing protocol are unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-t10-pro-official-2026-08-17"],
+    "note": "The exact manufacturer page gives an 8.8 kg base estimate across three selectable builds. Size, selected build, accessories and weighing protocol are unspecified, so this is not a measured retained-card weight."
+  }
 }

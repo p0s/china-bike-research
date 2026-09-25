@@ -1,0 +1,119 @@
+{
+  "batch": 131,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 41
+    },
+    "selection_note": "Select the ten highest-scored remaining conflicted attempts after B130 disposition. The scope spans eight exact records, with three distinct fields on one Hongfu candidate."
+  },
+  "scope": {
+    "exact_target_models": [
+      "twitter-cyclone-electronic",
+      "twitter-cyclone-r7120",
+      "yoeleo-altera-g21",
+      "hongfu-gravel",
+      "java-fuoco-2025",
+      "twitter-carbon-road-gravel-unknown",
+      "xds-ad500-2025",
+      "xds-ad7"
+    ],
+    "exact_record_count": 8,
+    "selected_fields": [
+      "variant:twitter-cyclone-electronic:complete-weight",
+      "candidate:twitter-cyclone-r7120:complete-weight",
+      "platform:yoeleo-altera-g21:frame-weight",
+      "candidate:hongfu-gravel:tire-clearance",
+      "candidate:hongfu-gravel:price",
+      "candidate:hongfu-gravel:frame-weight",
+      "candidate:java-fuoco-2025:complete-weight",
+      "candidate:twitter-carbon-road-gravel-unknown:complete-weight",
+      "candidate:xds-ad500-2025:complete-weight",
+      "candidate:xds-ad7:complete-weight"
+    ],
+    "attempt_ids": [
+      "variant-twitter-cyclone-electronic-complete-weight-2026-08-29",
+      "candidate-twitter-cyclone-r7120-complete-weight-2026-09-01",
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
+      "candidate-hongfu-gravel-tire-clearance-2026-08-30",
+      "candidate-hongfu-gravel-price-current-mainland-seller-recheck-2026-09-24",
+      "candidate-hongfu-gravel-frame-weight-2026-08-30",
+      "candidate-java-fuoco-2025-complete-weight-2026-08-30",
+      "candidate-twitter-carbon-road-gravel-unknown-complete-weight-2026-08-30",
+      "candidate-xds-ad500-2025-complete-weight-2026-08-30",
+      "candidate-xds-ad7-complete-weight-2026-08-30"
+    ],
+    "accepted_source_ids_by_attempt": {
+      "variant-twitter-cyclone-electronic-complete-weight-2026-08-29": [
+        "taobao-snapshot-2026-08-08",
+        "twitter-cyclone-et-official-2026-08-29",
+        "public-twitter-cyclone-et-owner-build-2026-08-29"
+      ],
+      "candidate-twitter-cyclone-r7120-complete-weight-2026-09-01": [
+        "twitter-cyclone-r7120-official-2026-08-17",
+        "twitter-cyclone-r7120-global-current-2026-09-01"
+      ],
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27": [
+        "yoeleo-altera-g21-official-2026-08-16",
+        "yoeleo-altera-g21-current-2026-08-27"
+      ],
+      "candidate-hongfu-gravel-tire-clearance-2026-08-30": [
+        "hongfu-fm188-internal-current-2026-08-30",
+        "hongfu-fm279-current-2026-08-30"
+      ],
+      "candidate-hongfu-gravel-price-current-mainland-seller-recheck-2026-09-24": [
+        "round3-hongfu-gravel-frame-marketplace-d0992a43ae",
+        "round3-hongfu-fm279-gravel-frame-fa3ede485c",
+        "hongfu-fm188-alibaba-price-2026-08-30",
+        "hongfu-fm279-alibaba-current-2026-08-30"
+      ],
+      "candidate-hongfu-gravel-frame-weight-2026-08-30": [
+        "hongfu-fm188-current-2026-08-30",
+        "hongfu-fm279-current-2026-08-30"
+      ],
+      "candidate-java-fuoco-2025-complete-weight-2026-08-30": [
+        "java-fuoco-top-105-current-regional-2026-08-30",
+        "java-fuoco-top-105-retailer-weight-2026-08-30",
+        "java-fuoco-top-105-owner-weight-2026-08-30"
+      ],
+      "candidate-twitter-carbon-road-gravel-unknown-complete-weight-2026-08-30": [
+        "twitter-gravel-v3-2024-taobao-2026-08-21",
+        "twitter-v3-rs-factory-store-2026-08-28",
+        "twitter-v3-25yr-manufacturer-2026-09-22",
+        "twitter-v3-25yr-store-conflict-2026-09-22"
+      ],
+      "candidate-xds-ad500-2025-complete-weight-2026-08-30": [
+        "xds-ad500-retailer-2026-08-08",
+        "xds-ad500-2025-mainland-weight-2026-08-30",
+        "xds-ad500-vietnam-current-2026-08-30"
+      ],
+      "candidate-xds-ad7-complete-weight-2026-08-30": [
+        "xds-ad7-green-demon-taiwan-2026-08-30",
+        "xds-ad7-green-demon-vbike-2026-08-30"
+      ]
+    },
+    "research_boundary": "One existing Luna evidence-only reviewer. Re-open only these exact records and accepted sources first. Work sequentially one exact model/source at a time; for weight, preserve exact frame size, build, market, inclusion basis and measurement status. For Hongfu, do not map FM188/FM279 facts to the generic candidate without identity evidence. Return direct URL, actual access date, title, source class, exact supported claim, conflicts/caveat and a resolution recommendation per field. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these ten frozen entries.",
+      "Do not transfer claims across models, generations, markets, sizes, builds or product types.",
+      "Do not convert wholesale or indexed prices into a current mainland checkout observation; no quotes, cart, purchase or seller contact.",
+      "No new XHS capture, login, CAPTCHA, challenge handling or bypass.",
+      "No images, image downloads, redistribution or external delivery.",
+      "Preserve unknowns, conflicts and source access limits; do not infer weight, maximum clearance, identity or price."
+    ],
+    "not_selected_from_remaining_queue": [
+      "candidate-twitter-carbon-road-gravel-unknown-tire-clearance-2026-08-30",
+      "candidate-winspace-m6-complete-weight-2026-08-30",
+      "candidate-winspace-t1600-complete-weight-2026-08-30",
+      "candidate-icanian-sn04-frame-weight-2026-09-01"
+    ]
+  }
+}

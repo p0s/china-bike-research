@@ -1,0 +1,41 @@
+{
+  "id": "variant-sava-gelaro-s8-frame-weight-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s8"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-sava-gelaro-s8-frame-weight-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-s8-frame-weight-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S8 exact frame weight bottom bracket standard official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The recorded exact S8 product page does not publish frame-only mass. Complete-bike build weight is not substituted for frame weight."
+        }
+      ],
+      "blocker": "The recorded exact S8 product page does not publish frame-only mass. Complete-bike build weight is not substituted for frame weight."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The recorded exact S8 product page does not publish frame-only mass. Complete-bike build weight is not substituted for frame weight."
+}

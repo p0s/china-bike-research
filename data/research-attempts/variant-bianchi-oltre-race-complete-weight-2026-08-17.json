@@ -491,8 +491,21 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "bianchi-oltre-race-speed-cycles-weight-2026-08-30",
-    "bianchi-oltre-race-allegro-weight-2026-08-30"
+    "bianchi-oltre-race-allegro-weight-2026-08-30",
+    "bianchi-oltre-race-speed-cycles-weight-current-recheck-2026-09-25",
+    "bianchi-oltre-race-allegro-weight-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bianchi-oltre-race-batch-026-50-area-sweep-2026-08-30.json. The 6 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. All three exact-build claims are retained as configuration-specific references rather than collapsed into a universal weight."
+  "notes": "Reopened seller listings on 2026-09-25. Speed Cycles lists 8.70 kg in size 53; the Allegro URL now presents a 2026 YTB8DI57ZK size-57 listing and lists 8.4 kg, not the retained YTB8D 2025 build. Both are seller claims without a weighing method or accessory basis, so no universal or exact target complete weight is assigned.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bianchi-oltre-race-speed-cycles-weight-2026-08-30",
+      "bianchi-oltre-race-allegro-weight-2026-08-30",
+      "bianchi-oltre-race-speed-cycles-weight-current-recheck-2026-09-25",
+      "bianchi-oltre-race-allegro-weight-current-recheck-2026-09-25"
+    ],
+    "note": "Reopened seller listings on 2026-09-25. Speed Cycles lists 8.70 kg in size 53; the Allegro URL now presents a 2026 YTB8DI57ZK size-57 listing and lists 8.4 kg, not the retained YTB8D 2025 build. Both are seller claims without a weighing method or accessory basis, so no universal or exact target complete weight is assigned."
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "id": "candidate-lightcarbon-lcr014-v-price-b156-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcr014-v"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-lightcarbon-lcr014-v-price-2026-09-01",
+  "retry_reason": "The frozen B156 scope authorizes one bounded current exact-MPN query after review of the prior source, attempt, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcr014-v-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No qualifying exact current CNY amount was established by this bounded query.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCR014-V current China manufacturer frameset price CNY exact package 2026",
+          "route": "One bounded current exact-MPN web query; no new page opened",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The current official LCR014-V page publishes no price. Search results identified only recorded, sibling-model, or regional pages; none supplied an attributable current CNY amount for this exact frameset package, and no page was opened."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The current official LCR014-V page publishes no price. Search results identified only recorded, sibling-model, or regional pages; none supplied an attributable current CNY amount for this exact frameset package, and no page was opened.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-156-lightcarbon-lcr014-v-price",
+    "extends_attempt_id": "candidate-lightcarbon-lcr014-v-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-156-scope.json",
+    "reason": "The frozen B156 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

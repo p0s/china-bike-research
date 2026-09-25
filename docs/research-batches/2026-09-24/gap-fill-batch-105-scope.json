@@ -1,0 +1,28 @@
+{
+  "batch": 105,
+  "date": "2026-09-24",
+  "type": "catalog-gap-semantics-correction",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 704,
+    "research_queue_evidence_found": 121
+  },
+  "scope": {
+    "exact_target_records": ["candidate:triaero-a9", "candidate:xlab-rs9"],
+    "atomic_gap": "maximum tire clearance where the only numeric record is a fitted-tire observation",
+    "evidence_basis": "Existing exact A9 records state 700x28C / fits 28 mm, and the X-LAB RS9 candidate records a fitted 32C owner build; neither basis states the manufacturer's maximum.",
+    "changes": [
+      "Keep 28 mm as a fitted/compatible tire observation and make that basis explicit.",
+      "Keep manufacturer maximum clearance unresolved in candidate.missing.",
+      "Make the data-gap inventory treat fitted-only candidate tire observations as unresolved maximum clearance for both exact candidates.",
+      "Make the catalog display label the 28 mm value as fitted rather than a maximum.",
+      "Add focused tests for the candidate gap and display semantics."
+    ],
+    "excluded": [
+      "No new source research or manufacturer-maximum inference.",
+      "No other candidate or published-variant data changes.",
+      "No image or source-record changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

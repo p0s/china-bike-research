@@ -482,8 +482,18 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-t8-closed-wheel-official-2026-08-30"
+    "twitter-t8-closed-wheel-official-2026-08-30",
+    "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-50-area-sweep-2026-08-30.json. The exact manufacturer page claims 9.2 kg for WheelTop EVO and 9.3 kg for Shimano 105 R7120; retained selection is unresolved."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-50-area-sweep-2026-08-30.json. The exact manufacturer page claims 9.2 kg for WheelTop EVO and 9.3 kg for Shimano 105 R7120; retained selection is unresolved.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-t8-closed-wheel-official-2026-08-30",
+      "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"
+    ],
+    "note": "The saved manufacturer claim is approximately 9.2 kg for WheelTop EVO and 9.3 kg for Shimano 105 R7120. Selected build, size and wheel spec remain unknown; the exact page timed out on 2026-09-25."
+  }
 }

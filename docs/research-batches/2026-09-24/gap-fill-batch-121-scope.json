@@ -1,0 +1,58 @@
+{
+  "batch": 121,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_entries": 707,
+    "gap_count_method": "Count all entries in `.records[].gaps[]` from a fresh `npm run --silent data:gaps` report.",
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 83,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selected_queue_priority_each": 100,
+    "selection_note": "Next ten evidence-found fields after excluding B119/B120 targets and adjacent recently audited fields that remained open.",
+    "selected_fields": [
+      "candidate:twitter-t10-pro:frame-material",
+      "candidate:twitter-t10-pro:frame-stiffness",
+      "variant:twitter-t3-tt:bom",
+      "platform:twitter-t3-tt:bottom-bracket",
+      "variant:twitter-t3-tt:complete-weight",
+      "platform:twitter-t3-tt:frame-material",
+      "platform:twitter-t3-tt:frame-stiffness",
+      "platform:twitter-t3-tt:geometry",
+      "candidate:twitter-t8-closed-wheel:frame-material",
+      "candidate:twitter-t8-closed-wheel:identity-source"
+    ]
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:twitter-t10-pro",
+      "variant:twitter-t3-tt",
+      "platform:twitter-t3-tt",
+      "candidate:twitter-t8-closed-wheel"
+    ],
+    "attempt_ids": [
+      "candidate-twitter-t10-pro-frame-material-2026-09-01",
+      "candidate-twitter-t10-pro-frame-stiffness-2026-09-01",
+      "variant-twitter-t3-tt-bom-2026-08-29",
+      "platform-twitter-t3-tt-bottom-bracket-2026-08-29",
+      "variant-twitter-t3-tt-complete-weight-2026-08-29",
+      "platform-twitter-t3-tt-frame-material-2026-08-29",
+      "platform-twitter-t3-tt-frame-stiffness-2026-08-29",
+      "platform-twitter-t3-tt-geometry-2026-08-29",
+      "candidate-twitter-t8-closed-wheel-frame-material-2026-08-30",
+      "candidate-twitter-t8-closed-wheel-identity-source-2026-08-30"
+    ],
+    "research_boundary": "Inspect only the frozen records, attempts and their accepted sources first, one exact model/source at a time. Check one current primary exact-model source only where needed to resolve an existing uncertainty. Record source URL and access date; preserve generation, market, option, size, measurement and methodology limits. Evidence-only Luna Max review; primary writer integrates any supported result.",
+    "excluded": [
+      "No fields outside the ten frozen targets.",
+      "Do not repeat recent B119/B120 audits or reopen recently audited unresolved fields without new source evidence.",
+      "Do not transfer claims across model generations, build options or adjacent TWITTER models.",
+      "No new image records, third-party image hosting, or rights assumptions.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

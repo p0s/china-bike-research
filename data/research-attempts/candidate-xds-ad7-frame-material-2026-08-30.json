@@ -482,8 +482,10 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xds-ad7-green-demon-taiwan-2026-08-30"
+    "xds-ad7-green-demon-taiwan-2026-08-30",
+    "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad7-batch-025-50-area-sweep-2026-08-30.json. Current exact Green Demon evidence establishes a T700+T800 carbon frame and carbon fork; proportions and lay-up remain unpublished."
+  "notes": "B124 current-source recheck: the Taiwan AD7 product detail still specifies a T700/T800 carbon aero frame and carbon fork among its listed configurations. Its equipment options and regional market do not identify the retained mainland SKU.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["xds-ad7-green-demon-taiwan-current-recheck-2026-09-25"], "note": "Current Taiwan AD7 product detail supports the qualified frame/fork material statement, but its multiple equipment options do not establish the retained mainland complete-bike configuration."}
 }

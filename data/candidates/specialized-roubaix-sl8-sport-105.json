@@ -31,17 +31,22 @@
     "specialized-roubaix-sl8-sport-105-taiwan-2026-08-28",
     "specialized-china-warranty-faq-2026-08-27",
     "usd-cny-central-parity-2026-07-31",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-23",
+    "specialized-roubaix-sl8-sport-105-china-recheck-2026-09-23",
+    "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24",
+    "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24",
+    "specialized-roubaix-sl8-sport-105-price-recheck-2026-09-24"
   ],
   "source_url": "https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827",
-  "source_note": "The exact China product identity remains live without a mainland price. The matching global Product ID 221827 page lists US$3,499.99; CNY 23,519 is a dated ECB cross-rate reference, not a China checkout quote.",
+  "source_note": "The exact China product identity remains live without a mainland price. Product ID 221827 was rechecked on 2026-09-24 at US$3,499.99 on the U.S. page; CNY 23,519 is a dated ECB cross-rate reference, not a China checkout quote. The China page shows no local amount, stock or checkout.",
   "facts": {
     "drivetrain": "Shimano 105 R7100/R7120 mechanical 2×12, 50/34T and 11–36T",
     "brakes": "Shimano 105 hydraulic disc, 160 mm front and rear",
     "frame": "FACT 10R carbon; 950 g exact-build page claim",
     "frame_material": "FACT 10R carbon with Rider First Engineering; exact fiber grade and lay-up are not published",
     "frame_construction": "FreeFoil tube shaping, dropped stays and Future Shock front suspension on the exact product family",
-    "stiffness_evidence": "Manufacturer engineering emphasizes Rider First size-specific tuning and Future Shock impact isolation; no independent exact-current-build stiffness measurement was found. Regional pages conflict between Future Shock 3.0 and 3.1 wording",
+    "stiffness_evidence": "Exact Sport 105 manufacturer page calls the rear triangle rigid and describes Future Shock/AfterShock compliance; this is qualitative marketing language with no frame-stiffness measurement or protocol. The same page says Future Shock 3.0 in overview copy and 3.1 in technical specifications.",
     "frame_weight_g": 950,
     "complete_weight_g": 9070,
     "complete_weight_basis": "Official size 56 painted production bike; color, size and component variation apply",
@@ -50,8 +55,10 @@
     "wheels": "DT Swiss G540, 24 mm internal, tubeless ready",
     "tires": "S-Works Mondo 2BR 700×32C",
     "cockpit": "Future Stem Comp and Specialized Hover Comp alloy handlebar",
-    "suspension": "Future Shock 3.1, 20 mm"
+    "suspension": "Future Shock 3.1, 20 mm in the technical specification; the same US page's overview narrative says 3.0. Preserve this unresolved page conflict.",
+    "bom": "2025 manufacturer-listed Product ID 221827 complete bike: FACT 10R frame/fork, Future Shock, Shimano 105 mechanical 2×12 (50/34T, 11–36T), hydraulic 105 brakes, DT Swiss G540 wheels, 700×32C S-Works Mondo 2BR tires and Future Stem Comp/Hover Comp alloy cockpit. The overview calls Future Shock 3.0 while the technical specification calls it 3.1; China-page equipment match is not established."
   },
-  "last_reviewed": "2026-09-01",
-  "reference_price_kind": "official"
+  "last_reviewed": "2026-09-24",
+  "reference_price_kind": "official",
+  "purchase_route": "The exact US Product ID 221827 page lists the 2025 model and a Find a Store route; ship-to-home was unavailable for the displayed selection. The exact China product URL currently exposes no readable local price, stock or checkout, so mainland purchase is unconfirmed."
 }

@@ -1,0 +1,51 @@
+{
+  "id": "variant-bianchi-oltre-race-geometry-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-bianchi-oltre-race-geometry-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-bianchi-oltre-race-geometry-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race exact model geometry tire clearance current price warranty frame stiffness official 2026",
+          "route": "One frozen B157 exact-model web query; see result URL and field-specific evidence disposition.",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "Reuse the already-recorded exact YTB8D manufacturer page, which publishes the eight-size geometry table. Its URL was not reopened during B157.",
+          "result_url": "https://www.bianchi.com/shop/bikes/road/aero/oltre/oltre-race-3/?v=90c0481dbc33"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "bianchi-oltre-race-current-official-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "Reuse the already-recorded exact YTB8D manufacturer page, which publishes the eight-size geometry table. Its URL was not reopened during B157.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bianchi-oltre-race-current-official-2026-08-30"
+    ],
+    "note": "The exact eight-size YTB8D geometry table is already integrated in the Bianchi Oltre Race platform record; this ledger-only field is closed by reusing that source."
+  }
+}

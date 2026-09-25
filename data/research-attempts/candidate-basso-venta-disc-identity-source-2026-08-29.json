@@ -492,5 +492,11 @@
     "basso-venta-disc-retailer-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. The dated snapshot and multiple exact old-generation sources establish Venta Disc identity while keeping current Venta R separate."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/basso-venta-disc-50-area-sweep-2026-08-29.json. The dated snapshot and multiple exact old-generation sources establish Venta Disc identity while keeping current Venta R separate.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["basso-venta-disc-retailer-2026-08-29"],
+    "note": "The accepted older-generation retailer page identifies the Basso Venta Disc 105/Microtech model; it does not merge that model with the current Venta R or identify the trim on the unrelated mainland price lead."
+  }
 }

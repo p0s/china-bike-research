@@ -13,7 +13,7 @@
   ],
   "channels": {
     "web": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -23,11 +23,27 @@
           "accessed_at": "2026-09-22",
           "note": "No measured stiffness or useful comparator supplied.",
           "result_url": "https://www.velobuild.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing"
+        },
+        {
+          "attempt": 2,
+          "query": "site:road.cc \"VeloBuild CX-002\" stiffness flex test review",
+          "route": "road.cc independent test-publication search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model road.cc test or measured stiffness report surfaced."
+        },
+        {
+          "attempt": 3,
+          "query": "site:cyclingweekly.com \"VeloBuild CX-002\" stiffness flex test review",
+          "route": "CyclingWeekly independent review-publication search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model independent test or stiffness report surfaced."
         }
       ]
     },
     "public-post": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -37,12 +53,29 @@
           "accessed_at": "2026-09-22",
           "note": "General ride and comfort discussion is insufficient for a cross-model frame-stiffness claim.",
           "result_url": "https://chinertown.com/index.php?topic=3965.15"
+        },
+        {
+          "attempt": 2,
+          "query": "site:mtbr.com \"VeloBuild CX-002\" frame stiffness test",
+          "route": "MTBR exact-model test-review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact 2023 CX-002 measured stiffness test or controlled comparator surfaced."
+        },
+        {
+          "attempt": 3,
+          "query": "site:reddit.com \"VeloBuild CX-002\" frame stiffness flex test",
+          "route": "Reddit exact-owner CX-002 build and follow-up",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "The owner says the bike rides well and reports no complaints after about 500 km, but provides no stiffness measurement or controlled comparator and does not tie the build to the frozen 2023 revision.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1r5i9x2/nbd_velobuild_cx002/"
         }
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Next: measured result or useful attributable comparative ride; partial channels remain open."
+  "retry_after": "2026-10-23",
+  "notes": "No exact 2023 internal-routing stiffness result found. The MTBR route returned no exact-model test; the prior owner thread contains general ride comments only. Partial channels remain open. Public-post channel reached its three-attempt limit; the web channel remains open. A separate road.cc test-publication search returned no exact CX-002 result; the web channel remains open. No exact 2023 CX-002 measurement or controlled comparison was found across the three web attempts; no value is inferred."
 }

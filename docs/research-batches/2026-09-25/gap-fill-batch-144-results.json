@@ -1,0 +1,197 @@
+{
+  "batch": 144,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 671,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 1,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 11,
+    "atomic_gap_entries_resolved": 1,
+    "atomic_gap_entries_left_open": 10,
+    "research_queries_run": 9,
+    "research_attempt_records_added": 9,
+    "research_attempts_before": 1618,
+    "research_attempts_after": 1627,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 382,
+      "conflicted": 34,
+      "found": 26,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1418,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 9,
+    "unique_page_urls_opened": 5,
+    "previously_recorded_urls_opened_in_error": 2,
+    "newly_surfaced_page_urls_opened": 3,
+    "newly_surfaced_page_fetches_succeeded": 1,
+    "newly_surfaced_page_open_failures": 2,
+    "previous_query_strings_repeated": 0,
+    "previous_source_urls_reopened_as_authorized": 0,
+    "note": "Two opened URLs (De Rosa 838 Giro and Pinarello F5 China) were already recorded in predecessor histories, contrary to B144's no-reopen boundary. Their page contents are excluded from new evidence and no source/candidate update uses them. The other new page opens were one Triaero page that confirmed fitted 28 mm only, one UPLAND page that timed out, and one Twitter page that returned 404. No retries were made."
+  },
+  "model_results": [
+    {
+      "model_id": "twitter-x7",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing"],
+      "new_query": "TWITTER 骓特 X7 high configuration complete weight 轮组 2x12 105",
+      "predecessor_query_dedup": "Exact query absent from the audited 150-query history. No new exact X7 primary page was opened.",
+      "existing_evidence": "The recorded TWITTER Bike USA page gives a generic from-7.6-kg claim for its ES7000 1×14 selector/default at XS/46 cm. It does not bind the figure to the retained high configuration or establish wheelset, size basis, or weighing method.",
+      "disposition": "unresolved-retained-build-weight-not-established",
+      "reason": "The current family claim is not a complete-weight specification for the retained configuration; do not assign it to that card."
+    },
+    {
+      "model_id": "west-biking-sl-one",
+      "record_type": "candidate",
+      "gaps": ["drivetrain-missing"],
+      "new_query": "WEST BIKING SL-ONE 16910 exact build drivetrain R7120 R7170",
+      "predecessor_query_dedup": "Exact query absent from the audited 100-query history. No new exact seller SKU page was opened.",
+      "existing_evidence": "Recorded JD/Taobao indexes show distinct mechanical R7120 and Di2 R7170 listings, including distinct 24-speed variants, but do not map either configuration to the retained CNY 16,910 card.",
+      "disposition": "unresolved-selected-sku-not-mapped",
+      "reason": "The listing options remain alternatives; the exact current SKU and selected drivetrain are not identified."
+    },
+    {
+      "model_id": "de-rosa-new-838",
+      "record_type": "candidate",
+      "gaps": ["drivetrain-missing"],
+      "new_query": "DE ROSA New 838 9999 mainland exact bike drivetrain 105 HDB",
+      "predecessor_query_dedup": "The query string was absent from the audited predecessor query set. Search surfaced https://derosa.it/product/838-giro/, which was already present in five predecessor research-attempt records and was opened in error.",
+      "existing_evidence": "Existing candidate sources describe Shimano 105 Di2, Campagnolo Chorus, and a configuration-hidden mainland 105 HDB option. No source maps a selected drivetrain to the retained CNY 9,999 card.",
+      "disposition": "unresolved-scope-deviation-url-content-excluded",
+      "reason": "The page open violated the frozen no-reopen boundary. Its contents are excluded from B144 evidence; no new source record or candidate claim was added."
+    },
+    {
+      "model_id": "felt-ia-2",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing", "drivetrain-missing"],
+      "new_query": "FELT IA 2.0 88998 China retained complete bike trim drivetrain weight",
+      "predecessor_query_dedup": "The exact query was absent from the two selected attempt histories and their linked campaign. One model-level search addressed both selected fields; no new eligible page was opened.",
+      "existing_evidence": "Manufacturer sources distinguish four size-M trims: FRD 9.37 kg / Dura-Ace Di2; PRO 9.5 kg / Ultegra Di2; EXPERT 10.3 kg / Ultegra Di2; RACE 10.44 kg / 105 Di2. No trim is bridged to the retained CNY 88,998 card.",
+      "disposition": "unresolved-retained-trim-not-mapped",
+      "reason": "The exact weights and drivetrains remain trim-specific alternatives and cannot be assigned to the retained listing."
+    },
+    {
+      "model_id": "upland-r70",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing"],
+      "new_query": "UPLAND R70 8999 9597 complete weight 105 Di2 size",
+      "predecessor_query_dedup": "Exact query absent from the audited 150-query history.",
+      "new_page_open": {
+        "url": "https://upland-web.bikedd.com/product/307.html",
+        "outcome": "timed-out",
+        "retry": false,
+        "search-snippet": "Approximately 8.4 kg mechanical-105 build; not accepted as evidence."
+      },
+      "existing_evidence": "Recorded manufacturer evidence states approximately 8.3 kg bare, excluding pedals and computer mount, for its displayed 105 Di2 build; size and method are unstated and the build is not mapped to the retained CNY 8,999–9,597 cards.",
+      "disposition": "unresolved-card-weight-not-established",
+      "reason": "The only new listing page timed out; its snippet cannot support a weight. The existing manufacturer build claim remains configuration-specific."
+    },
+    {
+      "model_id": "icanian-sn04",
+      "record_type": "candidate",
+      "gaps": ["clearance-unverified"],
+      "new_query": null,
+      "reused_sources": [
+        "ican-sn04-current-product-page-2026-09-23",
+        "ican-sn04-current-collection-2026-09-23"
+      ],
+      "source_evidence": "The exact ICAN manufacturer product page lists 26×3.8–4.8 for sizes 18/20 plus 29×2.25–3.0 and 27.5×3.0–3.25 options; the exact collection page limits size 16 to 26×4.0 even though its displayed build uses 26×4.8.",
+      "catalog_update": {
+        "field": "facts.tire_clearance_mm",
+        "value": 122,
+        "basis": "4.8 inches × 25.4 = 121.92 mm, rounded to 122 mm nominal for sizes 18/20. Size 16 is limited to 26×4.0 (101.6 mm nominal); other wheel/tire pairings remain explicit. Actual casing width varies with tire and rim; 122 mm is not a measured frame gap or universal fit for every size."
+      },
+      "disposition": "resolved-size-specific-manufacturer-maximum"
+    },
+    {
+      "model_id": "twitter-cyclone-sport",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing"],
+      "new_query": "TWITTER 骓特 Cyclone third generation Sport RS-24S 3387.25 complete weight alloy carbon wheel",
+      "predecessor_query_dedup": "Exact query absent from the audited 100-query history.",
+      "new_page_open": {
+        "url": "https://www.twitterbikefactory.com/hu-am/products/twitter-cyclone-3rd-rs24-carbon-fiber-road-bike",
+        "outcome": "404",
+        "retry": false,
+        "search-snippet": "9.2/9.0 kg options; not accepted as evidence."
+      },
+      "existing_evidence": "Recorded exact-model sources describe 9.1 kg with 38 mm alloy rims and 8.9 kg with 50 mm wave-carbon rims; rechecks of the recorded product URL returned 404. Neither wheel option is selected for the retained CNY 3,387 card.",
+      "disposition": "unresolved-wheel-option-not-selected",
+      "reason": "The new page returned 404, its snippet is not evidence, and neither existing weight option is mapped to the retained listing."
+    },
+    {
+      "model_id": "triaero-a9",
+      "record_type": "candidate",
+      "gaps": ["clearance-unverified"],
+      "new_query": "TRIAERO 冠捷 A9 105 Di2 700x28 maximum tire clearance mm official",
+      "predecessor_query_dedup": "Exact query absent from the audited 100-query history.",
+      "new_page": {
+        "title": "A9 Discoloration",
+        "publisher": "Triaero",
+        "source_class": "manufacturer product page",
+        "url": "https://triaero.com/products/carbon-full-bike-a9-discoloration",
+        "accessed_at": "2026-09-25",
+        "evidence": "An A9 52 cm Force eTap build says it fits 28 mm and uses 700×28C tires; it states no maximum."
+      },
+      "disposition": "unresolved-fitted-size-is-not-maximum",
+      "reason": "The new page confirms only a fitted 28 mm tire on another build; the retained Pikachu 105 Di2 build's maximum remains unverified. Existing exact A9 sources already support the fitted-size observation, so no redundant source record was added."
+    },
+    {
+      "model_id": "look-765-electronic",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing"],
+      "new_query": "LOOK 765 electronic 17999 2025 R7170 wheels complete bicycle weight",
+      "predecessor_query_dedup": "Exact query absent from the audited 100-query history. No new exact non-electric R7170 build page was opened.",
+      "existing_evidence": "Recorded sources support 7.9 kg size M for 105 Di2/R50D carbon wheels and 8.8 kg for an earlier R38D build. The retained CNY 17,999 card exposes both wheel options without selecting one.",
+      "disposition": "unresolved-wheel-option-not-selected",
+      "reason": "The two weights belong to different builds; neither can be assigned to the retained card."
+    },
+    {
+      "model_id": "pinarello-f5",
+      "record_type": "candidate",
+      "gaps": ["complete-weight-missing"],
+      "new_query": "PINARELLO F5 26800 China complete bike wheelset weight model year",
+      "predecessor_query_dedup": "The query string was absent from the audited predecessor query set. The surfaced China product URL was already present in the candidate source_url, source registry, and five predecessor attempts and was opened in error.",
+      "existing_evidence": "The retained candidate already records an 8.25 kg MY26/105 Di2/MOST Ultrafast 45 retailer reference but explicitly does not assign it to the CNY 26,800 card; model year and wheel option remain unresolved.",
+      "disposition": "unresolved-scope-deviation-url-content-excluded",
+      "reason": "The page open violated the frozen no-reopen boundary. Its contents are excluded from B144 evidence; no new source record or candidate claim was added."
+    }
+  ],
+  "scope_deviations": [
+    {
+      "model_id": "de-rosa-new-838",
+      "url": "https://derosa.it/product/838-giro/",
+      "prior_record": "The URL appeared as result_url in five predecessor research-attempt files.",
+      "handling": "Page content excluded from new evidence; no source record or candidate update based on this open."
+    },
+    {
+      "model_id": "pinarello-f5",
+      "url": "https://pinarello.com/china/zh/bikes/%E5%85%AC%E8%B7%AF%E8%BD%A6/%E7%AB%9E%E8%B5%9B/new-pinarello-f/new-pinarello-f5-105-di2",
+      "prior_record": "The URL appeared in the candidate source_url, its official source record, and five predecessor research-attempt files.",
+      "handling": "Page content excluded from new evidence; no source record or candidate update based on this open."
+    }
+  ],
+  "validation": {
+    "research_boundary": "The nine exact query strings were absent from their selected predecessor histories. Two previously recorded page URLs were inadvertently opened; both are logged above and excluded from B144 evidence. No additional query, URL open, or retry was made.",
+    "catalog_update": "Only ICAN SN04's existing size-specific manufacturer evidence was normalized into the candidate's millimeter comparison field. The basis retains nominal-width conversion, size 16 limit, alternate tire pairings, and casing-width caveat.",
+    "source_updates": "None. A new Triaero page only repeated an already documented fitted-size observation and did not establish the maximum; the De Rosa and Pinarello duplicate opens were excluded.",
+    "image_report": "Not run because no image record or URL changed.",
+    "coverage_accept": "passed; monotonically accepted for 212 images and 277 catalog targets.",
+    "full_gate": "Passed via developer-storage-cache plus codex-pnpm-check check: privacy scan; validation (1418 sources, 212 images, 1627 research attempts); research ledger (1503 fields, 15450 public-post and 35694 web attempts); coverage protection; 328/328 tests; 584-page build; SEO 458 indexable / 126 noindex.",
+    "git_diff_check": "Passed after B144 integration and final result/checkpoint review."
+  },
+  "external_delivery": "none"
+}

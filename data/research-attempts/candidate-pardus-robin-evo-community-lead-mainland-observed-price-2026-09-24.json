@@ -1,0 +1,53 @@
+{
+  "id": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-robin-evo-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Current JD results exposed an XS Robin EVO frameset, not the retained Dura-Ace complete competition build; the numeric deal lead was stale and mismatched.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Robin EVO current China Ultegra Di2 price",
+          "route": "Current official China product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact manufacturer page shows a price label but no numeric amount for the current standard Ultegra Di2 trim. It does not identify the public XS Dura-Ace competition build.",
+          "result_url": "https://www.parduscycle.com/Hightxq.aspx?cc=5172&color=10352&id=17338&pz=10348&t=1030"
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Robin EVO current China official store price exact model",
+          "route": "Current indexed manufacturer-store results",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-24",
+          "note": "Search results with numeric amounts identified an older 2022 rim-brake 105 trim or non-China material, not the current factory trim or the unmapped XS Dura-Ace competition build. No current mainland amount was assigned."
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS Robin EVO XS Dura-Ace R9270 竞赛 公路车 天猫 京东 价格",
+          "route": "Current JD marketplace model and build search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "A JD result identified an XS Asia Champion frameset with a 48-hour shipping label, not the custom complete Dura-Ace build, and no price was visible. A 2024 Force AXS deal was stale and the wrong build. No candidate price was assigned.",
+          "result_url": "https://www.jd.com/jiage/13186f58ad33b82b20e7.html?electedExtAttrSet=4896%2C&extAttrValue=expand_name%2C%4073593%3A%3A4896&sort_type=sort_default"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "pardus-robin-evo-current-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep current mainland price unresolved until an exact generation/build and numeric public or attributable current price are available. Do not transfer historical trim or foreign-market prices."
+}

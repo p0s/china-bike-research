@@ -1,0 +1,28 @@
+{
+  "batch": 115,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-115-scope.json",
+  "result": {
+    "exact_target_records": [
+      "variant:sava-a7l-r7100",
+      "platform:scott-addict-rc-40",
+      "variant:spcycle-g028-frameset",
+      "candidate:specialized-roubaix-sl8-sport-105"
+    ],
+    "disposition": "All four current source rechecks were insufficient to close their selected fields. SAVA image/trim mapping and reuse rights remain unresolved; Scott's old geometry is 2023-generation and the current regional page has no geometry; SPcycle's exact current page has no current checkout controls; the Roubaix China page exposes no mainland price, stock or checkout amount.",
+    "catalog_gap_instances_before": 706,
+    "catalog_gap_instances_after": 706,
+    "evidence_found_before": 108,
+    "evidence_found_after": 108,
+    "catalog_values_changed": 0,
+    "research_attempts_resolved": 0,
+    "source_records_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "data_validation": "not run; evidence-only read of existing source and attempt records",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

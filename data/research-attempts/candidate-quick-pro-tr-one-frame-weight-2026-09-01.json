@@ -483,5 +483,11 @@
     "quick-pro-tr-one-raceit-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tr-one-batch-045-50-area-sweep-2026-09-01.json. The exact manufacturer claim is 1,219 g and the specialist listing supplies a plus or minus 5 percent tolerance."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tr-one-batch-045-50-area-sweep-2026-09-01.json. The exact manufacturer claim is 1,219 g and the specialist listing supplies a plus or minus 5 percent tolerance.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-pro-tr-one-official-2026-08-17", "quick-pro-tr-one-raceit-2026-09-01"],
+    "note": "Disposition: exact TR:ONE frameset frame-weight evidence reused at 1,219 g with retailer-stated ±5% tolerance. This is frame-only, not complete-bike weight; size and hardware basis are unspecified."
+  }
 }

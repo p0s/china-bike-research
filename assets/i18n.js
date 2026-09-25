@@ -264,7 +264,7 @@ Object.assign(zh, {
   "An aero-styled direct gravel frame with exact finish-specific weights, but 45 mm clearance and missing numeric geometry make it a near-miss rather than a strict road-like wide-clearance answer.": "厂家直售、气动造型的 Gravel 车架，具有对应涂装的重量记录；但 45 mm 空间及缺失的数值几何，使其尚非严格的公路几何宽胎答案。",
   "Dated China-market aero road lead for the exact visible Falath R7170 build configuration; use it as a comparison benchmark while confirming the final SKU and BOM.": "这是一条有日期的国内气动公路车线索，对应已识别的 Falath R7170 配置；比较时仍须确认最终型号和完整配件清单。",
   "Interesting flat-bar complete, but excluded from the >38 mm recommendation until clearance is confirmed.": "值得关注的平把整车；在轮胎空间确认前，不列入大于 38 mm 的推荐范围。",
-  "Current exact 2026 A7L R08 build with a mixed SENSAH/Shimano 2x12 hydraulic drivetrain, T800-carbon chassis and two dated mainland price observations; confirm warranty and final checkout before purchase.": "对应 2026 A7L R08 的明确配置，采用 SENSAH／Shimano 混搭 2×12 液压变速制动、T800 碳纤维车架，并有两条国内价格记录；付款前确认保修与最终结算价。",
+  "Mainland-indexed A7L R7100 build with T800-carbon chassis and two dated mainland price observations; confirm exact components, warranty and final checkout before purchase.": "A7L R7100 有中国大陆市场索引记录，配备 T800 碳纤维车架，并有两条国内价格观察；购买前请确认具体配置、保修与最终结算价。",
   "Cheapest credible strict manufacturer option for a light 40C race-gravel build, with a wide uncertainty interval.": "在本目录严格厂家选项中，是用于轻量 40C 竞赛 Gravel 装车的低价选择；不确定范围仍较大。"
 });
 

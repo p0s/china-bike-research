@@ -493,8 +493,22 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "java-road-catalog-2026-08-29",
-    "java-suprema-colombia-2026-08-29"
+    "java-suprema-colombia-2026-08-29",
+    "java-suprema-colombia-index-recheck-2026-09-23",
+    "java-suprema-uruguay-index-recheck-2026-09-23",
+    "java-suprema-uruguay-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Seller pixels, official catalog and a current exact regional page establish Suprema / 终结者 identity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Seller pixels, official catalog and a current exact regional page establish Suprema / 终结者 identity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-suprema-colombia-index-recheck-2026-09-23",
+      "java-suprema-uruguay-index-recheck-2026-09-23",
+      "java-suprema-colombia-2026-08-29",
+      "java-suprema-uruguay-2026-08-29"
+    ],
+    "note": "Regional JAVA pages/indexes use the Suprema name, but no evidence links them to the retained mainland Suprema 7120 card or its 终结者 alias. Preserve the cross-market identity mapping as unresolved."
+  }
 }

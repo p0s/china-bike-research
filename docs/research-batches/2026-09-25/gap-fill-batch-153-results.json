@@ -1,0 +1,132 @@
+{
+  "batch": 153,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-153-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 669,
+    "catalog_gap_entries_after": 669,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 5,
+    "atomic_gap_entries_reviewed": 22,
+    "complete_weight_fields_filled": 0,
+    "drivetrain_fields_filled": 0,
+    "maximum_clearance_fields_filled": 0,
+    "frame_material_fields_filled": 0,
+    "frame_stiffness_fields_filled": 0,
+    "atomic_gap_entries_left_unresolved": 22,
+    "research_queries_run": 5,
+    "research_attempt_records_added": 22,
+    "campaign_extensions_added": 22,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1740,
+    "research_attempts_after": 1762,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35829,
+    "research_status_counts_after": {
+      "blocked": 322,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1421,
+    "candidate_facts_changed": 0,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 5,
+    "page_urls_opened": 0,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 0,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 0,
+    "page_open_failures": [],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "prior_history_reviewed": {
+      "target_associated_attempt_records": 30,
+      "registered_50_area_campaign_histories": 5
+    },
+    "note": "All five queries surfaced only previously recorded manufacturer/catalog routes or sibling/ambiguous model results. No exact-page identity bridge justified an open; search snippets were not accepted as evidence and no new product pages were opened."
+  },
+  "model_results": [
+    {
+      "model_id": "cosmosworks-carbon-e-road",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "new_query": "cosmosworks 宇宙E-BIKE NOMAD Oi CNY 14999 UDH 40mm exact listing 2026",
+      "result": "Current history separates the CNY 14,999 NOMAD promotion and its 13.8 kg starting weight from Oi! T800/T1000, UDH, and 40 mm claims. No source joins these into one SKU matching the retained mixed listing.",
+      "disposition": "all-five-fields-unresolved-cross-model-conflation"
+    },
+    {
+      "model_id": "viqi-integrated-road-unknown",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "new_query": "VIQI 微琦 6587.25 集成碳纤维公路车 型号 参数 2026",
+      "result": "The known storefront and indexes show materially different VIQI models/options, including G63 and generic R7020 leads, without identifying the retained CNY 6,587.25 model/SKU.",
+      "disposition": "all-five-fields-unresolved-exact-model-unknown"
+    },
+    {
+      "model_id": "flying-pigeon-carbon-road-unknown",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material"
+      ],
+      "new_query": "Flying Pigeon 飞鸽 X900 carbon road bike 4291 listing exact model 2026",
+      "result": "Search returned generic Flying Pigeon road listings; X900 references resolved to unrelated steel 征途900 mountain bikes. No exact carbon-road X900 product page or mapping to the retained CNY 4,291 card was found.",
+      "disposition": "all-four-fields-unresolved-model-identity"
+    },
+    {
+      "model_id": "meihanda-xtreme-gravel",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "Meihanda 美涵达 Xtreme 6498.25 carbon gravel model exact drivetrain weight clearance 2026",
+      "result": "Existing sources document the distinct Phantom P10 and series. A new Phantom-series listing surfaced but was not opened; P10 frame/fork and 40C claims do not identify the retained CNY 6,498.25 carbon-gravel bike.",
+      "disposition": "all-four-fields-unresolved-identity-mismatch"
+    },
+    {
+      "model_id": "meinier-superlight-2",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "MEINIER 21000 carbon road bike exact model code drivetrain weight clearance 2026",
+      "result": "Recorded DS618, DS-118, and generic MEINIER road-range routes do not map to the retained CNY 21,000 listing; DS618 R7120 and DS-118 32C references are not transferred.",
+      "disposition": "all-four-fields-unresolved-model-build-mismatch"
+    }
+  ],
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35829 web attempts",
+    "coverage_baseline": "accepted monotonic coverage for 212 images / 277 catalog targets after the 22 new protected attempt records",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 331/331 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed on the accumulated worktree after final B153 records and checkpoint",
+    "image_report": "not run: no image record changed"
+  }
+}

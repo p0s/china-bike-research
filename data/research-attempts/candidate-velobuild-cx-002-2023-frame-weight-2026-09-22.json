@@ -34,8 +34,18 @@
   "status": "found",
   "accepted_source_ids": [
     "velobuild-cx002-spec-sheets-2026-09-22",
-    "velobuild-cx002-owner-thread-2026-09-22"
+    "velobuild-cx002-owner-thread-2026-09-22",
+    "velobuild-cx002-official-listing-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Manufacturer value and owner measurement retain separate size/hardware bases."
+  "notes": "Qualified manufacturer claim: the product-linked 2023 sheet states 1000 g for size M, clear coat, without metal parts; tolerance and weighing protocol are unstated. Current listing recheck did not expose the weight in page text. The distinct size-56 owner weight is not a direct contradiction.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "velobuild-cx002-spec-sheets-2026-09-22",
+      "velobuild-cx002-official-listing-recheck-2026-09-24"
+    ],
+    "note": "Qualified manufacturer claim: the product-linked 2023 sheet states 1000 g for size M, clear coat, without metal parts; tolerance and weighing protocol are unstated. Current listing recheck did not expose the weight in page text. The distinct size-56 owner weight is not a direct contradiction."
+  }
 }

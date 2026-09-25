@@ -1,0 +1,105 @@
+{
+  "batch": 79,
+  "date": "2026-09-24",
+  "scope_files": [
+    "gap-fill-batch-79-scope.json",
+    "gap-fill-batch-79-scope-amendment-01.json",
+    "gap-fill-batch-79-scope-amendment-02.json"
+  ],
+  "result": {
+    "exact_models_checked": 10,
+    "atomic_gaps_closed": 0,
+    "attempts_added": 10,
+    "research_records_added": 1,
+    "source_records_added": 0,
+    "price_records_added": 0,
+    "candidate_changes": 0,
+    "image_changes": 0,
+    "dispositions": [
+      {
+        "candidate_id": "pardus-spark-rs-community-lead",
+        "status": "blocked",
+        "reason": "A JD result showed an R7120 mechanical aluminum-wheel XL option without a price or seller details; the linked item triggered risk handling. It did not map the retained custom build or confirm ordering."
+      },
+      {
+        "candidate_id": "dengfu-gravel",
+        "status": "no-result",
+        "reason": "The current manufacturer homepage surfaced an R20 tile without a price; a frame collection showed USD amounts for other models only. No exact mainland seller item or CNY amount surfaced."
+      },
+      {
+        "candidate_id": "hongfu-gravel",
+        "status": "rejected",
+        "reason": "Alibaba showed a 2019 FM279 export offer at US$425–510, MOQ 1, not a current mainland price for the generic candidate. The earlier FM188/FM279 conflict remains unresolved."
+      },
+      {
+        "candidate_id": "pardus-robin-evo-community-lead",
+        "status": "rejected",
+        "reason": "JD surfaced an XS Robin EVO frameset, not the Dura-Ace complete competition build; a 2024 Force AXS deal was stale and mismatched."
+      },
+      {
+        "candidate_id": "hi-light-r6-105-al",
+        "status": "blocked",
+        "reason": "The exact official product page returned 403 and exposed no current amount or availability. The CNY 8,300 official retail reference remains dated 2026-08-29."
+      },
+      {
+        "candidate_id": "missing-china-price-giant-defy-advanced",
+        "status": "blocked",
+        "reason": "An exact Giant Defy ADV 2 JD flagship item identified a complete bike, color and size, but exposed no CNY amount or confirmed stock. The official ¥14,800 suggested retail remains distinct."
+      },
+      {
+        "candidate_id": "missing-china-price-giant-revolt-advanced",
+        "status": "rejected",
+        "reason": "The official Giant China page confirms ¥15,800 suggested retail and store lookup, but no orderable seller item or checkout terms. No observed price was assigned."
+      },
+      {
+        "candidate_id": "quick-pro-gr-one-grx-di2",
+        "status": "rejected",
+        "reason": "The exact Quick Pro USA page exposed US$4,799; the old JD result did not show the mainland 1×12 item. Foreign and stale prices were excluded."
+      },
+      {
+        "candidate_id": "missing-china-price-merida-reacto",
+        "status": "rejected",
+        "reason": "The exact REACTO 6000 page was Taiwan-region and listed NT$23,800; JD exposed no exact mainland listing. No CNY seller amount was assigned."
+      },
+      {
+        "candidate_id": "tavelo-arow-sl-community-lead",
+        "status": "no-result",
+        "reason": "The China homepage exposed no priced mainland custom complete-bike item. Surfaced USD frameset and Japan offers were foreign or different builds."
+      }
+    ],
+    "out_of_scope_checks": [
+      {
+        "candidate_id": "giant-defy-advanced-sl1-community-lead",
+        "reason": "A search ran before scope amendment 01 excluded this same-day exhausted field; results were Japan-market or different mainland Defy trims, with no exact seller offer. No item page was opened and no ledger record was added."
+      },
+      {
+        "candidate_id": "quick-pro-ur-one",
+        "reason": "A search ran under amendment 01, then amendment 02 excluded it because the earlier B76 extension had already consumed its single-attempt budget. The surfaced Chinese page was AR:ONE, JD had no UR:ONE item, and the other offer was foreign. No ledger record was added."
+      }
+    ],
+    "data_outcome": "All ten in-scope seller-price checks were unresolved or inadmissible. Candidate observed_price values remain absent; existing official suggested-retail and foreign references remain distinct. No source, price, candidate, or image data changed. Nine attempts were appended to same-day simple records within their budgets; Hongfu received one formal extension of its earlier 50-area campaign."
+  },
+  "post_batch_inventory": {
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "price_not_observed": 36,
+    "price_missing": 27,
+    "image_exactness": 4,
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "validation": {
+    "research_check": "pass: 1503 atomic fields; 15450 public-post attempts; 35603 web attempts",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1541 atomic research records",
+    "focused_data_tests": "pass: 73/73",
+    "image_report": "not run because image records did not change",
+    "coverage_accept": "pass: 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates",
+    "full_gate": "pass: npm run check; 324/324 tests; 584 pages built; SEO audit 458 indexable and 126 noindex"
+  }
+}

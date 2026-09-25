@@ -486,8 +486,18 @@
   "status": "found",
   "accepted_source_ids": [
     "hi-light-r9-frameset-official-2026-08-29",
-    "hi-light-manufacturing-official-2026-08-29"
+    "hi-light-manufacturing-official-2026-08-29",
+    "hi-light-r9-frame-indexed-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r9-force-pr1600-50-area-sweep-2026-08-29.json. The exact R9 page confirms hydroformed tubes, and the manufacturer says its hydroforming process improves overall and local stiffness. No independent exact-model deflection, torsion or laboratory comparison was found, so this remains a source-qualified construction claim."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r9-force-pr1600-50-area-sweep-2026-08-29.json. The exact R9 page confirms hydroformed tubes, and the manufacturer says its hydroforming process improves overall and local stiffness. No independent exact-model deflection, torsion or laboratory comparison was found, so this remains a source-qualified construction claim.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "hi-light-r9-frame-indexed-2026-09-23",
+      "hi-light-manufacturing-official-2026-08-29"
+    ],
+    "note": "The exact R9 page supports hydroformed tubing and the manufacturer describes hydroforming as improving stiffness. This remains construction/process context only: no R9-specific measurement or protocol is available. Current index crawl is about two months old and direct opening returned 403."
+  }
 }

@@ -21,5 +21,17 @@
   "credit": "Product image via public marketplace listing mirror",
   "alt": "White TWITTER Gravel V3 RS 24-speed complete bike with alloy wheels, shown from the drive side outdoors",
   "display_note": "The listing graphic identifies a Gravel V3 RS 24-speed hydraulic build with standard-depth wheels. The persistent page mixes generations, so color, exact production year, and component batch may differ from the documented 2024 alloy configuration. If the remote image fails, the image region is omitted.",
-  "reviewed_at": "2026-08-24"
+  "reviewed_at": "2026-08-24",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "twitter-gravel-v3-2024-listing-primary-image",
+        "url": "https://img.alicdn.com/bao/uploaded/i1/3021506430/O1CN017OYwnS1xMzrJi7mmi_%21%214611686018427381630-2-item_pic.png",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/jpeg"
+      }
+    ]
+  }
 }

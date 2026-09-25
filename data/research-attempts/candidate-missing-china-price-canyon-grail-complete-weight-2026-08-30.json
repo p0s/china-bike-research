@@ -487,8 +487,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "canyon-grail-cf-7-official-2026-08-17"
+    "canyon-grail-cf-7-official-2026-08-17",
+    "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-canyon-grail-50-area-sweep-2026-08-30.json. Current exact product 4149 manufacturer evidence resolves the size-M standard-specification weight."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-canyon-grail-50-area-sweep-2026-08-30.json. Current exact product 4149 manufacturer evidence resolves the size-M standard-specification weight.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "canyon-grail-cf-7-official-2026-08-17",
+      "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
+    ],
+    "note": "Canyon France page 4149 claims 9.26 kg for size M standard spec without pedals; accepted detailed read is 2026-08-30. The current landing page loaded but detailed fetch timed out, so the current check did not refresh the specification or establish a mainland build."
+  }
 }

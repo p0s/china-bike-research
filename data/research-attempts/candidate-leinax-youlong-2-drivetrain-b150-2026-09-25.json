@@ -1,0 +1,55 @@
+{
+  "id": "candidate-leinax-youlong-2-drivetrain-b150-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "leinax-youlong-2"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-leinax-youlong-2-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LEINAK 雷纳克 游龙 2.0 整车重量 105 套件 最大胎宽 车架规格",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The existing seller card shows a large Shimano 105 groupset without exact generation or actuation; the new query did not identify 游龙 2.0 equipment."
+        }
+      ],
+      "blocker": "The existing seller card shows a large Shimano 105 groupset without exact generation or actuation; the new query did not identify 游龙 2.0 equipment."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "leinak-youlong-2-douyin-index-current-2026-09-23"
+  ],
+  "retry_after": null,
+  "notes": "B165 local source audit: no linked source supports the retained exact drivetrain field; B150 found no qualifying evidence for this frozen field; preserve it as unknown pending a distinct exact source or material state change.",
+  "retry_of": "candidate-leinax-youlong-2-drivetrain-2026-08-30",
+  "retry_reason": "One distinct model-level web query on 2026-09-25 followed the earlier search/campaign history to test for new direct evidence.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-150-leinax-youlong-2-drivetrain",
+    "extends_attempt_id": "candidate-leinax-youlong-2-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-150-scope.json",
+    "reason": "The frozen B150 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

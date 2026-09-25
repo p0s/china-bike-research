@@ -1,0 +1,105 @@
+{
+  "batch": 128,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-128-scope.json",
+  "result": {
+    "exact_target_models": 9,
+    "atomic_fields": 11,
+    "disposition": "All 11 frozen evidence-found attempts received source-reuse dispositions. Three official routes were established at their supported market scope (Twitter T3 global-direct, ICAN Graro global-direct, and SCOTT Poland dealer inquiry). Eight field values remain substantively open or limited to qualitative/datable evidence; no unsupported exactness, mainland checkout, current price, clearance maximum, frame stiffness measurement, or image rights were inferred.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "evidence_found_before": 11,
+    "evidence_found_after": 0,
+    "deferred_after": 43,
+    "blocked_after": 551,
+    "conflicted_after": 61,
+    "research_attempts_resolved": 11,
+    "research_fields_left_open": 8,
+    "catalog_records_updated": 9,
+    "source_records_added": 7,
+    "price_observations_added": 0,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1350 sources, 212 primary images, 236 candidates, 1544 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_tests": "pass: batch 028 XDS material contract, batch 042 SAVA weight retirement, batch 044 review-date contract, SAVA rendering and bilingual verdict checks",
+    "full_gate": "pass: codex-pnpm-check check; 326/326 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  },
+  "field_results": [
+    {
+      "field": "variant:sava-a7l-r7100:image",
+      "disposition": "left open: wrong build and rights-limited image",
+      "source_ids": ["sava-a7l-r08-current-2026-08-30"],
+      "caveat": "The official photo identifies R08-R7120-24S, not the R7100 target; the stored remote URL was unreachable on 2026-09-24 and redistribution rights are undocumented. No image was added."
+    },
+    {
+      "field": "candidate:xds-ad350-2026:frame-material",
+      "disposition": "left open: retained mainland build unverified",
+      "source_ids": ["xds-ad350-launch-material-2026-08-30", "xds-ad350-2026-hk-spec-2026-08-30", "xds-ad350-2026-current-options-2026-08-30"],
+      "caveat": "The launch source describes 2025, the 2026 Hong Kong listing is regional, and the mainland options index states no frame material. Candidate wording now attributes the launch claim and explicitly marks 2026 mainland retention unverified."
+    },
+    {
+      "field": "candidate:xlab-rs9:frame-stiffness",
+      "disposition": "qualitative owner testimony only",
+      "source_ids": ["xlab-rs9-owner-ride-review-2026-09-01"],
+      "caveat": "An exact-model 22 km owner report describes firm pedaling and harsher rough-surface impacts. This is a subjective complete-bike impression, not a measured or frame-only stiffness result."
+    },
+    {
+      "field": "variant:xmcarbonspeed-cs-gr01-frameset:price",
+      "disposition": "dated reference retained; current price left open",
+      "source_ids": ["xmcarbonspeed-cs-gr01-store-2026-09-01", "ecb-reference-rates-2026-08-31", "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"],
+      "caveat": "US$669 and the converted CNY 4,496 remain dated references, not checkout prices. The retrieved page says Crawled: 4 weeks ago; no new price observation was added."
+    },
+    {
+      "field": "candidate:triaero-a9:clearance-unverified",
+      "disposition": "fitted tire size only; maximum left open",
+      "source_ids": ["triaero-a9-official-2026-08-30", "triaero-a9-official-stale-recheck-2026-09-25"],
+      "caveat": "Exact A9 evidence supports 700x28C / fits 28 mm only. The stale page states no maximum; a conflicting 45 mm collection template was rejected."
+    },
+    {
+      "field": "variant:sava-a7l-r7100:purchase-route",
+      "disposition": "left open: storefront is a different build",
+      "source_ids": ["sava-a7l-r08-current-2026-08-30", "sava-a7l-r08-storefront-live-recheck-2026-09-25"],
+      "caveat": "The live official listing shows US$1,699 and in-stock status for R08-R7120-24S, not the R7100 mechanical target; mainland shipping, warranty, tax and checkout are unverified."
+    },
+    {
+      "field": "variant:twitter-t3-tt:purchase-route",
+      "disposition": "global official route recorded; mainland checkout unverified",
+      "source_ids": ["twitter-t3-tt-official-2026-08-29", "twitter-t3-tt-official-route-recheck-2026-09-25"],
+      "caveat": "The exact T3 TT page offers WheelTop TX-TT7110 or SRAM Rival AXS builds, six WheelTop sizes and a displayed US$2,349 price. China appears in the country selector, but delivery quote and final checkout were not verified."
+    },
+    {
+      "field": "variant:twitter-v3-2024-rs-sensah-alloy:purchase-route",
+      "disposition": "left open: current route is a successor model",
+      "source_ids": ["twitter-gravel-v3-2024-taobao-2026-08-21", "twitter-gravel-v3-2025-official-current-2026-09-01", "twitter-gravel-v3-2025-successor-route-recheck-2026-09-25"],
+      "caveat": "The live official page is for the 2025 V3 25yr successor, while the 2024 Taobao evidence is historical. No current route for the 2024 alloy build was established."
+    },
+    {
+      "field": "variant:ican-graro-frameset:purchase-route",
+      "disposition": "global direct route recorded; destination terms unverified",
+      "source_ids": ["ican-graro-official-2026-08-27", "ican-graro-official-current-recheck-2026-09-25"],
+      "caveat": "The current page lists US$899, sizes 49/52/54/56/58, colors, free shipping and add-to-cart. Back-in-stock messaging appears; selected-size stock and mainland delivery, tax and returns remain unverified."
+    },
+    {
+      "field": "variant:xmcarbonspeed-cs-gr01-frameset:purchase-route",
+      "disposition": "dated official route only; current availability left open",
+      "source_ids": ["xmcarbonspeed-cs-gr01-store-2026-09-01", "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"],
+      "caveat": "The stale returned page shows US$669 and add-to-cart. Its description says XS-XXL while the visible selector begins at S; current availability and checkout were not tested."
+    },
+    {
+      "field": "variant:scott-addict-rc-40:purchase-route",
+      "disposition": "Poland regional dealer inquiry route recorded",
+      "source_ids": ["scott-addict-rc-40-poland-2026-08-17", "scott-addict-rc-40-poland-recheck-2026-09-24", "scott-addict-rc-40-poland-route-recheck-2026-09-25"],
+      "caveat": "Current page identifies model 290362 and offers dealer inquiry for size availability, with price by dealer. No mainland stock, service, price or direct checkout is established."
+    }
+  ]
+}

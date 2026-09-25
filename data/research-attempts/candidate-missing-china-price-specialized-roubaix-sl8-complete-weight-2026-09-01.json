@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "specialized-roubaix-sl8-tiagra-current-2026-09-01"
+    "specialized-roubaix-sl8-tiagra-current-2026-09-01",
+    "specialized-roubaix-sl8-tiagra-us-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-roubaix-sl8-batch-035-50-area-sweep-2026-09-01.json. The current exact page publishes 9.46 kg in size 56 for the production-painted configuration shown, with variation by color, size and components."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-roubaix-sl8-batch-035-50-area-sweep-2026-09-01.json. The current exact page publishes 9.46 kg in size 56 for the production-painted configuration shown, with variation by color, size and components. Current focused recheck 2026-09-23: Specialized US lists 9.46 kg for the exact Roubaix SL8 Tiagra build in size 56; weight varies by color, size and components.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "specialized-roubaix-sl8-tiagra-current-2026-09-01",
+      "specialized-roubaix-sl8-tiagra-us-recheck-2026-09-23"
+    ],
+    "note": "Specialized US lists 9.46 kg for the exact Roubaix SL8 Tiagra build in size 56; weight varies by color, size and components."
+  }
 }

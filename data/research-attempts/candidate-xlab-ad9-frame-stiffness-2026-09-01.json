@@ -482,5 +482,6 @@
     "xlab-ad9-cyclingnews-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-xlab-ad9-batch-045-50-area-sweep-2026-09-01.json. An exact-model month-long review reports effective power transfer under approximately 1,200 W sprint efforts; qualitative wattage-context evidence only."
+  "notes": "B125 source reuse: the exact AD9 month-long review reports the bottom bracket and chainstays handled approximately 1,200 W sprint efforts without obvious power-transfer loss. Preserve this as qualitative wattage-context evidence, not a measured stiffness result.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["xlab-ad9-cyclingnews-review-2026-09-01"], "note": "Exact-model riding evidence supports only a qualitative sprint/power-transfer observation; no measured deflection protocol is provided."}
 }

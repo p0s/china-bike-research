@@ -488,8 +488,21 @@
     "taobao-snapshot-2026-08-08",
     "qingsha-qs91-jd-2026-08-30",
     "qingsha-qs91-supplier-index-2026-08-30",
-    "qingsha-corporate-exhibitor-2026-08-30"
+    "qingsha-corporate-exhibitor-2026-08-30",
+    "qingsha-qs91-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "qingsha-qs91-jd-2026-08-30",
+      "qingsha-qs91-supplier-index-2026-08-30",
+      "qingsha-corporate-exhibitor-2026-08-30",
+      "qingsha-qs91-jd-index-recheck-2026-09-23"
+    ],
+    "note": "Current JD index matches QS91-20 and distinguishes the blue and blue-carbon-wheel options. The exhibitor/company listing does not prove that the named legal entity manufactures this exact model."
+  },
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/qingsha-carbon-folding-50-area-sweep-2026-08-30.json. The retained pixels and current option matrix establish QS91-20 blue / blue-carbon-wheel; the exhibitor directory supports 江西轻鲨科技有限公司 attribution."
 }

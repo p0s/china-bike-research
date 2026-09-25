@@ -482,5 +482,14 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-specialized-crux-10r-frameset-batch-043-50-area-sweep-2026-09-01.json. Current exact US storefront lists US$2,999.99; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-specialized-crux-10r-frameset-batch-043-50-area-sweep-2026-09-01.json. Current exact US storefront lists US$2,999.99; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "specialized-crux-10r-frameset-official-2026-08-28",
+      "ecb-reference-rates-2026-08-31"
+    ],
+    "note": "The target's CNY 20,159 is a dated reference conversion of US$2,999.99 for exact product 223491 using the 2026-08-31 ECB rate. It is not a mainland checkout; size, shipping, tax, duties, stock and actual FX remain unverified."
+  }
 }

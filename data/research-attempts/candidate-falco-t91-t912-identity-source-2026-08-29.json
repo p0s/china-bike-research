@@ -492,8 +492,17 @@
   "status": "found",
   "accepted_source_ids": [
     "falco-t912-official-2026-08-29",
-    "falco-t912-jd-2026-08-29"
+    "falco-t912-jd-2026-08-29",
+    "falco-t912-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/falco-t91-t912-50-area-sweep-2026-08-29.json. Exact sources consistently establish FALCO 三火 T912 and remove the earlier T91 ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/falco-t91-t912-50-area-sweep-2026-08-29.json. Exact sources consistently establish FALCO 三火 T912 and remove the earlier T91 ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "falco-t912-official-current-2026-09-23"
+    ],
+    "note": "Current manufacturer page identifies the exact T912 and a DA9280 2x12 reference build, but does not map that specification or 10.5 kg reference to the retained mainland seller configuration."
+  }
 }

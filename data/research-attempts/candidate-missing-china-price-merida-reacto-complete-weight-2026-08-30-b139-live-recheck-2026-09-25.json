@@ -1,0 +1,52 @@
+{
+  "id": "candidate-missing-china-price-merida-reacto-complete-weight-2026-08-30-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-merida-reacto"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missing-china-price-merida-reacto-complete-weight-2026-08-30",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-merida-reacto-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish complete-weight for the exact retained target build. New official China finder confirms exact model/configuration but gives no weight; Taiwan suggested price is not a mainland transaction observation. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Merida REACTO 6000 CN 27\" 美利达 大陆官方 销售 配置 价格 重量",
+          "route": "Opened official MERIDA China model finder: https://www.merida.cn/index/bikefinder/index.html (车款查找 - MERIDA BIKES). Exact CN 27 entry is visible; no price or weight is published.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "New official China finder confirms exact model/configuration but gives no weight; Taiwan suggested price is not a mainland transaction observation. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish complete-weight for the exact retained target build. New official China finder confirms exact model/configuration but gives no weight; Taiwan suggested price is not a mainland transaction observation. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries.",
+  "campaign_extension": {
+    "id": "b139-missing-china-price-merida-reacto-complete-weight",
+    "extends_attempt_id": "candidate-missing-china-price-merida-reacto-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

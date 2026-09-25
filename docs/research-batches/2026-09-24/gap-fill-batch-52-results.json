@@ -1,0 +1,130 @@
+{
+  "batch": 52,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-52-scope.json",
+  "evidence_writer": "one Luna Max evidence-only pass; root integrated repository changes",
+  "scope": {
+    "exact_models": 6,
+    "target_records": 7,
+    "atomic_gap_instances": 8
+  },
+  "outcomes": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "gap": "frame-weight-missing",
+      "status": "conflicted",
+      "disposition": "Still unresolved: Seraph 983±50 g and TanTan 953±50 g at the same nominal 54 cm UD-matte basis; no explanation or common protocol; no scalar selected.",
+      "sources": [
+        "seraph-tt-x68-new-weight-recheck-2026-09-24",
+        "tantan-tt-x68-new-weight-recheck-2026-09-24"
+      ]
+    },
+    {
+      "record_type": "published-variant",
+      "id": "twitter-v3-rs-sensah",
+      "gap": "frame-weight-missing",
+      "status": "conflicted",
+      "disposition": "Still unresolved: exact T47 manufacturer table supplies 9.9 kg complete-bike claim but no frame-only mass; approximately 1,150 g claim accompanies conflicting BB86 listing.",
+      "sources": [
+        "twitter-v3-rs-sensah-frame-weight-recheck-2026-09-24",
+        "twitter-v3-25yr-store-conflict-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "published-variant",
+      "id": "twitter-v3-wheeltop-eds",
+      "gap": "clearance-unverified",
+      "status": "conflicted",
+      "disposition": "Still unresolved: exact T47 WheelTop pages show 700×40C fitted but no maximum; 45C belongs to a conflicting BB86 listing; mainland direct page timed out.",
+      "sources": [
+        "twitter-v3-wheeltop-clearance-recheck-2026-09-24",
+        "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "gap": "price-missing",
+      "status": "blocked",
+      "disposition": "Still unresolved: exact official page returned request-verification interstitial; no mainland CNY price read; no challenge bypass.",
+      "sources": [
+        "airwolf-yf-r003-access-check-2026-09-24"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "gap": "stiffness-evidence-missing",
+      "status": "blocked",
+      "disposition": "Still unresolved: same official access gate; owner impressions are subjective and no measured or controlled exact-frame stiffness source was found.",
+      "sources": [
+        "airwolf-yf-r003-access-check-2026-09-24",
+        "airwolf-yf-r003-owner-recheck-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "mondince-fm316",
+      "gap": "price-not-observed",
+      "status": "open",
+      "disposition": "Still unresolved: exact current product page says typical single frameset US$500–650 and accepts MOQ 1, while a separate bulk section says MOQ 30; this conflicts with the US$1,050 guide. All are foreign amounts/quote routes, not mainland CNY.",
+      "sources": [
+        "mondince-fm316-price-page-recheck-2026-09-24",
+        "mondince-fm316-guide-price-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "velobuild-cx-002-2023",
+      "gap": "price-not-observed",
+      "status": "open",
+      "disposition": "Still unresolved: exact 2023 listing displays US$499 before option selections; it does not establish a mainland CNY price or delivery total.",
+      "sources": [
+        "velobuild-cx002-official-listing-recheck-2026-09-24"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "evolve-cima-road",
+      "gap": "price-not-observed",
+      "status": "found",
+      "disposition": "Resolved as an observed official mainland listed price: CNY 14,800 for the named CIMA Artist – Wilderness frame/fork/seatpost/essential-parts package; optional Kreuza bar extra. Shipping, final checkout amount and selected-size stock remain unverified.",
+      "sources": [
+        "evolve-cima-artist-wilderness-mainland-price-2026-09-24"
+      ]
+    }
+  ],
+  "gaps_resolved": 1,
+  "gaps_unresolved": 7,
+  "catalog_changes": {
+    "new_sources": 7,
+    "updated_current_source_records": 1,
+    "new_research_attempts": 8,
+    "image_records_changed": 0,
+    "third_party_assets_added": 0,
+    "price_observations_added": 1,
+    "standalone_variant_price_files_added": 0
+  },
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via the approved pnpm-check route",
+    "privacy": "passed",
+    "data_validation": "41 brands, 38 platforms, 41 variants, 73 published price records, 1293 sources, 212 images, 236 candidates, 1513 atomic research records",
+    "research_validation": "1498 atomic research fields",
+    "coverage": "passed; 212 images and 277 catalog targets protected",
+    "tests": "321 passed, 0 failed",
+    "build": "584 pages for 41 products",
+    "seo": "passed; 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not run; no image records changed",
+    "diff_check": "passed",
+    "notes": [
+      "Initial direct check exposed a pre-existing machine-specific path in the B51 results document; that path was removed. The direct sandbox run also denied loopback binds, and the approved check route passed the full gate.",
+      "Focused research-50 audit test was updated to reflect the now-resolved Evolve CIMA mainland price gap; all 50-approach campaign fields remain complete."
+    ]
+  },
+  "delivery": "Local B52 batch only; no push, pull request, merge, publication or production action.",
+  "ancillary_corrections": [
+    "Removed a local macOS path from the B51 results record after the privacy scan identified it."
+  ]
+}

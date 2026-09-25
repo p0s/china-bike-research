@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "viqi-r8000-current-jd-2026-08-30"
+    "viqi-r8000-current-jd-2026-08-30",
+    "viqi-r8000-current-jd-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/viqi-r8000-50-area-sweep-2026-08-30.json. Current exact-family indexing identifies the VIQI R8000 carbon gravel-road bike with Shimano Ultegra R8000 mechanical 2x11."
+  "notes": "B122 reused exact VIQI R8000 JD marketplace identity evidence and the current listing-index recheck; neither connects this listing to the retained Taobao coupon price or establishes current checkout, seller authority or warranty.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "viqi-r8000-current-jd-2026-08-30",
+      "viqi-r8000-current-jd-recheck-2026-09-24"
+    ],
+    "note": "B122 reused exact VIQI R8000 JD marketplace identity evidence and the current listing-index recheck; neither connects this listing to the retained Taobao coupon price or establishes current checkout, seller authority or warranty."
+  }
 }

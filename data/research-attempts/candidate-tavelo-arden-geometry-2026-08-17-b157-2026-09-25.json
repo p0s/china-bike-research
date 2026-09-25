@@ -1,0 +1,42 @@
+{
+  "id": "candidate-tavelo-arden-geometry-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-tavelo-arden-geometry-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-tavelo-arden-geometry-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arden exact current mainland China CNY price geometry official 2026",
+          "route": "One frozen B157 exact-model web query; see result URL and field-specific evidence disposition.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The newly opened Bike Insights comparison is for the 2026 Arden Base, size 590, not the retained Arden Race frameset. Its geometry is not transferable to this exact model.",
+          "result_url": "https://bikeinsights.com/compare?geometries=6683e909b59776001b17c50f%2C69f10a0ce0e05b001b77305f"
+        }
+      ],
+      "blocker": "The newly opened Bike Insights comparison is for the 2026 Arden Base, size 590, not the retained Arden Race frameset. Its geometry is not transferable to this exact model."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The newly opened Bike Insights comparison is for the 2026 Arden Base, size 590, not the retained Arden Race frameset. Its geometry is not transferable to this exact model."
+}

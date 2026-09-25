@@ -19,7 +19,7 @@
     "Restore ordinary official-source access before verifying current specifications",
     "Measured or useful comparative stiffness evidence"
   ],
-  "source_note": "Owner package was rechecked on 2026-09-22. Official product access remains verification-gated; no bypass or current price/grade assertion. Existing indexed 1100 g and 50C claims retain their original evidence limitations.",
+  "source_note": "Owner package was rechecked on 2026-09-22. Official product access remains verification-gated; no bypass or current price/grade assertion. Existing indexed 1100 g and 50C claims retain their original evidence limitations.\n\nBatch 52 recheck (2026-09-24): the exact official product route still returns a request-verification interstitial. No current mainland price or model-specific stiffness value is inferred.\n\nBatch 65 recheck (2026-09-25): the official route returned 403. The public owner report says T1000 and names the YF-R003 frame package, but does not map grade or revision to the current storefront.",
   "model_id": "airwolf-yf-r003",
   "type": "frameset",
   "status": "exact-model-research-stage",
@@ -29,7 +29,25 @@
     "airwolf-yf-r003-source-2026-09-05",
     "chinesecarbon-top-discovery-2026-09-05",
     "airwolf-yf-r003-owner-recheck-2026-09-22",
-    "airwolf-yf-r003-access-check-2026-09-22"
+    "airwolf-yf-r003-access-check-2026-09-22",
+    "airwolf-yf-r003-access-check-2026-09-24",
+    "airwolf-yf-r003-global-catalog-index-recheck-2026-09-24",
+    "airwolf-yf-r003-official-access-recheck-2026-09-25",
+    "airwolf-yf-r003-owner-recheck-2026-09-25",
+    "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+    "ecb-reference-rates-2026-09-23"
   ],
-  "last_reviewed": "2026-09-22"
+  "official_price": {
+    "amount_cny": 9644,
+    "currency": "CNY",
+    "price_type": "seller-listing-reference-conversion",
+    "observed_at": "2026-09-25",
+    "original_amount": 1437.79,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.70738761,
+    "conversion_rate_date": "2026-09-23",
+    "price_basis": "Foreign eBay seller-listing package reference for the item-specific YFR003 Carbon Gravel Frame; the seller lists frame, fork, seatpost, handlebar and aluminum parts",
+    "conditions": "Reference conversion only, using the recorded European Central Bank USD/CNY cross-rate. The US$1,437.79 ask is not a mainland CNY price or final checkout amount. Size and color are unselected; no shipping destination, delivery eligibility, taxes or warranty treatment are confirmed. The seller calls the frame T1000; the relationship to an older indexed T1200 claim and exact revision is unresolved."
+  },
+  "last_reviewed": "2026-09-25"
 }

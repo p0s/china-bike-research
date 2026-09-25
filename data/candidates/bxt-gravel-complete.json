@@ -13,7 +13,7 @@
     "drivetrain": "Shimano GRX 1x11 hydraulic: ST-RX600, RD-RX810, FC-RX600, CS-R7000, and BR-RX600",
     "wheels": "TANDELL carbon wheels",
     "tires": "Innova 700x40C installed; this is not treated as maximum clearance",
-    "tire_clearance_conflict": "Two current exact BXT-135 manufacturer pages publish incompatible 45C and 47C maxima",
+    "tire_clearance_conflict": "Current BXT-GRAVEL-135 page title/description say 45C while its table says 47C; a separate BXT-135 page states 47C; archived-card revision remains unmapped",
     "frame_material": "T700+T800 carbon frame with T700 carbon fork; fiber proportions, lay-up, and molding process are unpublished",
     "frame_stiffness_status": "Unresolved. Public BXT-135 owner reports describe excessive frame movement in one unverified build and a firmer front end attributed to the handlebar in a different custom build. These component- and build-specific observations are not directly comparable and do not establish a frame-only stiffness ranking or defect."
   },
@@ -30,7 +30,9 @@
     "bxt-135-clearance-47c-2026-08-30",
     "bxt-135-clearance-45c-2026-08-30",
     "bxt-135-reddit-owner-report-2026-09-22",
-    "bxt-135-polish-owner-build-2026-09-22"
+    "bxt-135-polish-owner-build-2026-09-22",
+    "bxt-135-clearance-45c-recheck-2026-09-25",
+    "bxt-135-clearance-47c-recheck-2026-09-25"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -43,6 +45,6 @@
   },
   "source_refs": "IMG_6889.png#R1, IMG_6894.png#L2",
   "source_url": "https://bxtbikes.com/products/bxt-gravel-bike-carbon-fiber-disc-brake-700-40c-super-light-road-bike-gravel-bicycle-full-internal-routing-shimano-grx-600-11-sp",
-  "source_note": "Card imagery, color system and build details align with BXT-135. Weight and drivetrain are exact-build evidence. Maximum clearance remains unknown because current exact manufacturer pages conflict and the archived cards expose no revision bridge.",
-  "last_reviewed": "2026-09-22"
+  "source_note": "Current exact BXT-135 pages remain incompatible: one page title/description says 45C while its table says 47C, and a separate BXT-135 page also says 47C. The archived complete-bike card has no revision bridge; no maximum is selected.",
+  "last_reviewed": "2026-09-25"
 }

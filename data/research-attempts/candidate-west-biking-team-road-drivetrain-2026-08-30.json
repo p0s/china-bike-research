@@ -481,8 +481,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "west-biking-team-road-current-options-2026-08-30"
+    "west-biking-team-road-current-options-2026-08-30",
+    "west-biking-team-road-jd-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/west-biking-team-road-50-area-sweep-2026-08-30.json. Current exact-model indexes publish Shimano 105 R7120 mechanical and Shimano Ultegra R8170 Di2 2x12 hydraulic-disc build options."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/west-biking-team-road-50-area-sweep-2026-08-30.json. Current exact-model indexes publish Shimano 105 R7120 mechanical and Shimano Ultegra R8170 Di2 2x12 hydraulic-disc build options.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "west-biking-team-road-jd-current-2026-09-23"
+    ],
+    "note": "A current JD model index links an XS T800-carbon team-edition item with R7120 mechanical 2x12, hydraulic disc brakes and carbon wheels; the candidate now records that listing-specific drivetrain. Its item page exposes no readable checkout price, seller authority is unverified, and this listing is not linked to the retained 2026-08-08 coupon price; the R8170 image option remains separate."
+  }
 }

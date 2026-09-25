@@ -1,0 +1,52 @@
+{
+  "id": "candidate-flying-pigeon-carbon-road-unknown-tire-clearance-b153-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "flying-pigeon-carbon-road-unknown"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-flying-pigeon-carbon-road-unknown-tire-clearance-2026-08-29",
+  "retry_reason": "One distinct B153 exact-record web query on 2026-09-25 followed the earlier field-specific campaign history.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-153-flying-pigeon-carbon-road-unknown-tire-clearance",
+    "extends_attempt_id": "candidate-flying-pigeon-carbon-road-unknown-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-153-scope.json",
+    "reason": "The frozen B153 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-flying-pigeon-carbon-road-unknown-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact frame/model identity for the retained carbon-road listing remains unverified. The recorded official homepage and known X900 route were not reopened.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Flying Pigeon 飞鸽 X900 carbon road bike 4291 listing exact model 2026",
+          "route": "One bounded current web query for this exact candidate record; results screened against existing source history and the retained product/build identity.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The query surfaced generic Flying Pigeon road-bike catalog results, while indexed X900 matches resolve to unrelated steel 征途900 mountain bikes. No exact carbon-road X900 product page or mapping to the retained CNY 4,291 card was found; no generic brand fact is transferred."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The query surfaced generic Flying Pigeon road-bike catalog results, while indexed X900 matches resolve to unrelated steel 征途900 mountain bikes. No exact carbon-road X900 product page or mapping to the retained CNY 4,291 card was found; no generic brand fact is transferred.",
+  "searched_at": "2026-09-25"
+}

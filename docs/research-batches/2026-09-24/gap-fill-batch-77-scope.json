@@ -1,0 +1,115 @@
+{
+  "batch": 77,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 366,
+      "conflicted": 34,
+      "found": 44,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "These seven exact candidates retain official price references, but their earlier extended searches did not establish a current attributable mainland seller option for the same package. A single exact-item search per candidate checks the current seller route without repeating the completed broad search campaigns.",
+    "exact_models": 7,
+    "atomic_gaps": 7,
+    "targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "specialized-roubaix-sl8-comp-105",
+        "model": "Specialized Roubaix SL8 Comp Shimano 105, China product 218669",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-specialized-roubaix-sl8-comp-105-price-2026-09-01",
+        "official_reference_cny": 27990
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "specialized-s-works-crux-2024-sram-red-xplr",
+        "model": "Specialized 2024 S-Works Crux SRAM Red XPLR, China product 221367",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01",
+        "official_reference_cny": 84990
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "specialized-s-works-crux-frameset",
+        "model": "Specialized S-Works Crux frameset, China product 223486",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-specialized-s-works-crux-frameset-price-2026-09-01",
+        "official_reference_cny": 33990
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "xlab-ad9",
+        "model": "X-LAB AD9 Dura-Ace R9270 Di2 / Vision Metron 60 SL complete bike",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-xlab-ad9-price-2026-09-01",
+        "official_reference_cny": 53980
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "laget-aero-one",
+        "model": "LAGET AERO ONE titanium frameset",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-laget-aero-one-price-2026-09-01",
+        "official_reference_cny": 58800
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "laget-pioneer-one",
+        "model": "LAGET PIONEER ONE titanium frameset",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-laget-pioneer-one-price-2026-09-01",
+        "official_reference_cny": 21900
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-force-pr1600",
+        "model": "Hi-Light R9 FORCE PR1600 titanium complete bike",
+        "gap_code": "price-not-observed",
+        "prior_attempt_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29",
+        "official_reference_cny": 22900
+      }
+    ],
+    "campaign_extension": {
+      "allowed_channels": [
+        "web"
+      ],
+      "max_new_attempts_per_model": 1
+    }
+  },
+  "research_route": {
+    "source_class": "mainland-marketplace-product-page",
+    "action": "Search once per exact candidate for one current public mainland seller item on JD, Tmall, Taobao, or a named domestic dealer. Open at most one exact item per candidate. Verify product identity, package/options, visible CNY amount, availability/current order context, observation date, and any displayed price conditions.",
+    "stop_rule": "At most seven new web attempts total; one exact item page per candidate. Do not log in, enter account-only checkout, contact sellers, use XHS, transfer another generation/trim, or treat an official list price or search snippet alone as a current observed seller price. If a visible marketplace option price is established, record it as a listing-option observation and do not call it the checkout total unless that is directly shown."
+  },
+  "done_criteria": [
+    "Add a dated source and candidate price observation only when an exact current mainland seller item supports the same package and an attributable CNY option amount; preserve official list-price history and all package conditions.",
+    "For each candidate without such an exact item, add one retry attempt with the strongest supported blocked, rejected, or no-result status and leave observed price absent.",
+    "Run focused validation, coverage acceptance/check, and `npm run check` once for the coherent batch. No image report unless image records change.",
+    "Local B77 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

@@ -12,7 +12,7 @@
     "frame": "Fully 3D-printed titanium frame with carbon fork and UDH",
     "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published",
     "frame_construction": "Fully 3D-printed unibody frame; brushed or sandblasted finish depending color",
-    "stiffness_evidence": "Exact-model retailer describes the printed high-strength titanium structure as strong and suitable for long-distance riding; no quantified stiffness protocol is published",
+    "stiffness_evidence": "The exact-model manufacturer page publishes no stiffness value or test protocol. Retailer language describes strength qualitatively, and the manufacturer brand story's general high-stiffness claim is not model-specific; no measured or attributable exact-model stiffness result was found.",
     "bottom_bracket": "T47 × 85.5 mm",
     "tire_clearance_mm": 45,
     "tire_clearance_basis": "Manufacturer maximum 700×45C",
@@ -40,13 +40,16 @@
   ],
   "status": "official-mainland-frameset-documented",
   "source_url": "https://lagetbike.com/productinfo/3545905.html",
-  "source_note": "Official page lists the fully 3D-printed titanium frameset at CNY 21,900.",
+  "source_note": "The exact manufacturer page opened 2026-09-23 identifies DISCOVERY ONE PRO brushed silver as a 3D-printed gravel model, with a 1.38 kg size-S claim, CNY 21,900 retail and a 700×45C maximum. TiParts identifies the frame as titanium; alloy grade is unknown. Fork/hardware inclusion for the weight is unstated, and the exact Taobao listing showed CNY 21,900 on 2026-08-27 without establishing a current checkout. No model-specific stiffness result or protocol is published.",
   "manufacturing": "3D-printed titanium gravel frame",
   "source_ids": [
     "titanium-laget-discovery-one-pro-official",
     "laget-discovery-one-pro-tiparts-2026-08-27",
     "laget-brand-story-2026-08-27",
-    "laget-discovery-one-pro-taobao-2026-08-27"
+    "laget-discovery-one-pro-taobao-2026-08-27",
+    "laget-discovery-one-pro-official-current-2026-09-23",
+    "laget-brand-story-current-2026-09-23",
+    "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-23"
 }

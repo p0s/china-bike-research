@@ -1,0 +1,67 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "Both exact current manufacturers state 54 cm UD-matte weights, but differ by 30 g with no shared weighing protocol or revision explanation; a distinct manual search found no reconciliation.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Seraph TT-X68-new UDH exact 54 cm frame weight current listing",
+          "route": "Exact T47/UDH manufacturer product page",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "note": "Seraph states 983±50 g at 54 cm UD matte; the same nominal basis is not reconciled with TanTan’s 953±50 g statement.",
+          "result_url": "https://www.seraphbikes.com/tt-x68-new-udh-hanger-superlight-disc-road-bike-frame-t47-bottom-bracket-max-tire-70032c-available-size-495254565861cm-p7181862.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TanTan TT-X68-new UDH exact 54 cm frame weight current listing",
+          "route": "Second exact T47/UDH manufacturer product page",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "note": "TanTan states 953±50 g at 54 cm UD matte; it does not explain the 30 g difference from Seraph.",
+          "result_url": "https://www.tantanbikes.com/TT-X68-New-UDH-hanger-Superlight-Disc-Road-Bike-Frame-T47-Bottom-Bracket-Max-Tire-70032C-Available-Size-495254565861cm-p7192663.html"
+        },
+        {
+          "attempt": 3,
+          "query": "\"TT-X68-new UDH\" \"54\" frame weight manual specification",
+          "route": "Distinct exact-model technical manual search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No technical manual or revision-specific weighing protocol was found. The two current manufacturer claims remain 30 g apart on the same nominal 54 cm UD-matte basis; do not average or select one."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "seraph-tt-x68-new-weight-recheck-2026-09-24",
+    "tantan-tt-x68-new-weight-recheck-2026-09-24",
+    "seraph-tt-x68-new-weight-recheck-2026-09-25",
+    "tantan-tt-x68-new-weight-recheck-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "Do not average the two claims or assign a single scalar; manufacturer clarification or revision-specific weighing basis is still needed.",
+  "retry_of": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-22",
+  "retry_reason": "Fresh exact manufacturer-page rechecks on 2026-09-24 confirmed the same-basis 30 g disagreement and added no explanation.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "seraph-tt-x68-new-weight-recheck-2026-09-25",
+      "tantan-tt-x68-new-weight-recheck-2026-09-25"
+    ],
+    "note": "Current Seraph and TanTan pages both state 54 cm UD matte, but list 983 ± 50 g and 953 ± 50 g respectively without a shared weighing protocol. Preserve the 30 g conflict; select no weight."
+  }
+}

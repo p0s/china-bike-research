@@ -1,0 +1,40 @@
+{
+  "batch": 85,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-85-scope.json"
+  ],
+  "result": {
+    "exact_models_checked": 9,
+    "atomic_gaps_checked": 10,
+    "research_ledger_fields_resolved": 9,
+    "source_reuse_resolutions_added": 9,
+    "unresolved_fields": 1,
+    "catalog_fact_changes": 0,
+    "source_records_added": 0,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-giant-propel-gen4-community-lead-price-2026-08-17","disposition":"Reused exact China page's CNY 54,800 suggested price accessed 2026-08-30; candidate's later date, stock, and checkout are unverified."},
+      {"attempt_id":"candidate-hi-light-g0-price-2026-09-01","disposition":"Reused exact manufacturer page's CNY 15,900 listing as accessed 2026-09-01; page returned 403 on 2026-09-23, so live stock and checkout remain unverified."},
+      {"attempt_id":"candidate-java-aluminum-24s-frame-material-2026-08-29","disposition":"Reused exact listing and JAVA catalog support for an aluminum VITTORIA ER7 duplicate observation; fork, cockpit, wheels, and option remain unknown."},
+      {"attempt_id":"candidate-java-aluminum-24s-identity-source-2026-08-29","disposition":"Reused the recorded seller-card-to-ER7 identity bridge; preserved duplicate-observation status and unresolved selected groupset/option."},
+      {"attempt_id":"candidate-missing-china-price-giant-defy-advanced-price-2026-09-01","disposition":"Reused exact mainland Defy Advanced 2 CNY 14,800 suggested price accessed 2026-09-01; live dealer stock and checkout remain unknown."},
+      {"attempt_id":"candidate-missing-china-price-giant-revolt-advanced-price-2026-09-01","disposition":"Reused exact mainland Revolt Advanced 2 CNY 15,800 reference price accessed 2026-09-01; current stock and checkout remain unknown."},
+      {"attempt_id":"candidate-missing-china-price-merida-reacto-price-2026-09-01","disposition":"Reused exact REACTO 6000 CN 27 CNY 23,800 reference price accessed 2026-09-01; candidate price date and checkout/stock remain distinct."},
+      {"attempt_id":"candidate-missing-china-price-merida-scultura-price-2026-09-01","disposition":"Reused exact SCULTURA 6000 25 CNY 16,800 listing accessed 2026-09-01; it does not prove the candidate's earlier 2026-08-17 observation date."},
+      {"attempt_id":"candidate-missing-china-price-merida-silex-price-2026-09-01","disposition":"Reused exact model-year-2025 SILEX 7000 CNY 20,800 suggested price accessed 2026-09-01; preserve the candidate's separate 2026-08-28 observation date and unknown fulfillment."}
+    ],
+    "unresolved_attempts": [
+      {"attempt_id":"candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01","reason":"The accepted US manufacturer source supports a USD reference price but not the candidate's CNY 15,990 China catalog offer; left without source-reuse resolution."}
+    ],
+    "data_outcome": "Nine ledger items now have explicit source-to-fact resolutions. The Specialized price evidence stays open, and no buyer-facing catalog gap is closed. Inventory remains 707 atomic gaps."
+  },
+  "validation": {
+    "read_only_audit": "pass: one Luna audit, no browsing or edits",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "research_queue": "evidence-found decreased from 242 to 233; the Specialized Roubaix price attempt remains unresolved",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates",
+    "full_gate": "not rerun: this batch changed only research-resolution metadata; B82 full gate passed with unchanged code"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "meihanda-phantom-p10"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "美涵达 Xtreme Phantom P10 flat bar gravel complete bicycle weight 7005 U6000",
+          "route": "Opened newly surfaced Meihanda Phantom series page once; body tables do not map to P10",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "The newly opened series page title includes P10, but its tables discuss Merida Phantom Lanhu/Suruidao and Phantom 100/500/700. Generic “Weight | 9.5 lbs” is not attributable to P10; no weight transferred.",
+          "result_url": "https://meihanda.com/shop/meihanda-xtreme-phantom-series/"
+        }
+      ],
+      "blocker": "The newly opened series page title includes P10, but its tables discuss Merida Phantom Lanhu/Suruidao and Phantom 100/500/700. Generic “Weight | 9.5 lbs” is not attributable to P10; no weight transferred."
+    }
+  },
+  "notes": "The newly opened series page title includes P10, but its tables discuss Merida Phantom Lanhu/Suruidao and Phantom 100/500/700. Generic “Weight | 9.5 lbs” is not attributable to P10; no weight transferred.",
+  "campaign_extension": {
+    "id": "b141-meihanda-phantom-p10-complete-weight",
+    "extends_attempt_id": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

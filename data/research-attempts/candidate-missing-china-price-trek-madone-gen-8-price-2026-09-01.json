@@ -482,5 +482,11 @@
     "trek-china-madone-sl-range-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-036-50-area-sweep-2026-09-01.json. The current Trek China catalog publishes CNY 21,800 for the exact Madone SL 5 Gen 8; dealer stock and final checkout remain caveated."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-036-50-area-sweep-2026-09-01.json. The current Trek China catalog publishes CNY 21,800 for the exact Madone SL 5 Gen 8; dealer stock and final checkout remain caveated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["trek-china-madone-sl-range-2026-08-17"],
+    "note": "Disposition: exact-SKU official catalog-price evidence reused. The category page lists CNY 21,800 for products 46218 and 57653, including the candidate's product 57653; source access was 2026-09-01. Dealer stock and checkout remain unverified."
+  }
 }

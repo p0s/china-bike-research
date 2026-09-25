@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xmcarbonspeed-cs-gr01-store-2026-09-01"
+    "xmcarbonspeed-cs-gr01-store-2026-09-01",
+    "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-xmcarbonspeed-cs-gr01-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact storefront exposes selectable size and finish plus add-to-cart."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-xmcarbonspeed-cs-gr01-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact storefront exposes selectable size and finish plus add-to-cart.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xmcarbonspeed-cs-gr01-store-2026-09-01",
+      "xmcarbonspeed-cs-gr01-store-stale-recheck-2026-09-25"
+    ],
+    "note": "The retrieved official page shows US$669 and add-to-cart but is labeled Crawled: 4 weeks ago, so current availability and checkout are open. Its description says XS-XXL while the visible selector begins at S; do not imply the full size range is currently selectable."
+  }
 }

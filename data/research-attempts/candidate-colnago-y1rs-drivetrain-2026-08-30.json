@@ -489,5 +489,11 @@
     "colnago-y1rs-current-specs-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The tracked product is a frame kit sold without a drivetrain; multiple separate Colnago complete configurations confirm that drivetrain is non-applicable."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. The tracked product is a frame kit sold without a drivetrain; multiple separate Colnago complete configurations confirm that drivetrain is non-applicable.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["colnago-y1rs-china-launch-2026-08-30", "colnago-y1rs-current-specs-2026-08-30"],
+    "note": "The CNY 59,800 tracked product is the Y1Rs frame kit without a drivetrain; the manufacturer's separate complete-bike configurations are not assigned to it."
+  }
 }

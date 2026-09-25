@@ -1,0 +1,82 @@
+{
+  "batch_id": "gap-fill-batch-09-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 08 is delivered locally with its passing full gate. No catalog or source records changed because its new public posts did not satisfy the exact-model evidence threshold.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 08. The same six fields remain queue-ready. Batch 09 uses unused source domains or test-publication routes and stays within the remaining attempt budget for each target channel.",
+  "exact_model_count": 5,
+  "atomic_field_count": 6,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build reviewed in the 2023 BIKETO report; keep the APEX 12-speed Tmall selection separate from the reviewed APEX AXS/X1 Eagle build",
+      "fields": ["current-configuration"],
+      "attempt_id": "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "channel": "public-post",
+      "next_attempt_number": 3,
+      "planned_route": "Weibo indexed public posts"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["price"],
+      "attempt_id": "candidate-airwolf-yf-r003-price-2026-09-22",
+      "channel": "public-post",
+      "next_attempt_number": 3,
+      "planned_route": "Bilibili public buyer/review posts"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new with UDH and 700x32C listing; exclude the distinct 35C New-Version and older BSA revisions",
+      "fields": ["frame-stiffness"],
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "channel": "public-post",
+      "next_attempt_number": 3,
+      "planned_route": "Bilibili exact-revision owner/review posts"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["frame-stiffness"],
+      "attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "channel": "public-post",
+      "next_attempt_number": 3,
+      "planned_route": "Bilibili exact-model owner/review posts"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316 gravel-race frameset",
+      "fields": ["frame-stiffness"],
+      "attempt_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "channel": "web",
+      "next_attempt_number": 2,
+      "planned_route": "Independent cycling test-publication search"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "velobuild-cx-002-2023",
+      "exact_identity": "VeloBuild CX-002 2023 full-internal-routing cyclocross frameset",
+      "fields": ["frame-stiffness"],
+      "attempt_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "channel": "web",
+      "next_attempt_number": 2,
+      "planned_route": "Independent cycling test-publication search"
+    }
+  ],
+  "research_instructions": [
+    "Execute one model/source query at a time. Add no more than the single listed attempt per field in this batch.",
+    "Use only exact-generation evidence. For stiffness, accept only a measurement or credible controlled comparison that identifies the frozen frame revision.",
+    "Search only ordinary indexed public pages; do not access XHS or bypass its failed CDP preflight.",
+    "Treat search-result snippets as discovery; inspect any apparent exact source before accepting a claim.",
+    "If the result URL duplicates an existing attempt in the same field/channel, record it as deduplicated in the results document and do not append it to the ledger.",
+    "No seller contact, private content, purchase, image download, image-rights inference, external GitHub mutation, or publication."
+  ],
+  "done_criteria": "Research the six frozen fields on the planned distinct routes, integrate only exact qualifying evidence, keep attempt ledgers within their channel budgets, and preserve unresolved fields with evidence-backed reasons and reopening triggers. Add a dated result matrix, accept monotonic coverage only if catalog/source changes require it, run npm run check once for this batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

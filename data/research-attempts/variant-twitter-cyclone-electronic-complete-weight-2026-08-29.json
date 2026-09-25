@@ -160,7 +160,7 @@
       ]
     },
     "web": {
-      "status": "conflicted",
+      "status": "found",
       "conflict": "The retained China snapshot says 8.7 kg, while the current exact official configuration and an exact current owner report say 9.2 kg. Configuration, date and measurement basis remain explicit.",
       "attempts": [
         {
@@ -502,12 +502,22 @@
       ]
     }
   },
-  "status": "conflicted",
+  "status": "found",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "twitter-cyclone-et-official-2026-08-29",
-    "public-twitter-cyclone-et-owner-build-2026-08-29"
+    "public-twitter-cyclone-et-owner-build-2026-08-29",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The retained China snapshot says 8.7 kg, while the current exact official alloy/carbon-wheel table says 9.2 kg and an exact owner reports 9.2 kg equipped. The historic value is retained with an explicit conflict basis."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The retained China snapshot says 8.7 kg, while the current exact official alloy/carbon-wheel table says 9.2 kg and an exact owner reports 9.2 kg equipped. The historic value is retained with an explicit conflict basis.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-live-recheck-2026-09-25",
+      "public-twitter-cyclone-et-owner-build-2026-08-29"
+    ],
+    "note": "Current exact Cyclone 3rd ET manufacturer page and an exact-build owner report both support 9.2 kg (manufacturer: net; owner: equipped). Size, accessories and measurement method are not fully specified. Update the current reference to 9,200 g, while preserving the older 8.7 kg anonymous mainland search-card observation as a separate historical claim."
+  }
 }

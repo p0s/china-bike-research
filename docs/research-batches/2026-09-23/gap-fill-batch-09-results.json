@@ -1,0 +1,142 @@
+{
+  "batch_id": "gap-fill-batch-09-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-09-scope.json",
+  "scope_count": {
+    "exact_models": 5,
+    "atomic_fields": 6
+  },
+  "completed_at": "2026-09-23",
+  "research_mode": "Sequential exact-model indexed searches across the frozen Weibo, Bilibili, and independent test-publication routes. No new model facts were accepted.",
+  "external_limits": {
+    "xhs": {
+      "status": "not-used",
+      "queries_dispatched": 0,
+      "note": "No XHS route was opened or queried. The Batch 06 extension doctor was unavailable at its CDP endpoint; no direct-browser workaround was attempted."
+    },
+    "weibo": {
+      "status": "robots-blocked",
+      "note": "The Weibo domain returned a non-retryable robots.txt block. Search-engine results were unrelated vehicle posts."
+    }
+  },
+  "results": [
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "current-configuration",
+      "status": "unresolved-temporarily-exhausted",
+      "note": "The third public-post attempt found no exact current configuration. Weibo was robots-blocked and indexed results were unrelated; prior Bilibili results were generic PARDUS content. Both required channels are now exhausted without a current mainland SKU/BOM mapped to the reviewed build.",
+      "attempt_record_id": "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "query": "site:weibo.com 瑞豹 Uragano EVO 2026 APEX AXS X1 Eagle 车主 配置",
+      "reopen_when": "An accessible current mainland offer exposes the exact SKU and BOM or explicitly maps it to the reviewed APEX AXS/X1 Eagle build."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "status": "unresolved-blocked",
+      "note": "The third public-post attempt returned generic gravel-buying videos and no exact YF-R003 mainland CNY amount or package. The official route remains blocked by verification; 1688, JD, Chinertown and Bilibili did not surface an exact mainland offer.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-price-2026-09-22",
+      "query": "site:bilibili.com Airwolf YF-R003 价格 车架 车主 砾石",
+      "reopen_when": "Ordinary official access is restored or an accessible exact mainland offer states CNY price, selected package, stock and delivery basis."
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "frame-stiffness",
+      "status": "unresolved-temporarily-exhausted",
+      "note": "Bilibili returned unrelated bicycles and generic T47/stiffness commentary, not an owner report or measurement for the exact 32C/UDH revision. Both required channels have reached three attempts without exact-revision stiffness evidence.",
+      "attempt_record_id": "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "query": "site:bilibili.com TT-X68-new UDH T47 70032C 车主 骑行 刚性",
+      "reopen_when": "An instrumented test or credible controlled comparison explicitly identifies the TT-X68-new 32C/UDH/T47 revision."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "frame-stiffness",
+      "status": "unresolved-blocked",
+      "note": "Bilibili results were unrelated models. No exact YF-R003 measurement or controlled comparison was found; the public-post channel is exhausted and the official product page remains verification-gated.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "query": "site:bilibili.com Airwolf YF-R003 车架 刚性 评测 骑行",
+      "reopen_when": "Ordinary official access is restored or a distinct attributable exact-revision stiffness measurement/controlled comparison is published."
+    },
+    {
+      "record_id": "mondince-fm316",
+      "field": "frame-stiffness",
+      "status": "unresolved-open",
+      "note": "road.cc had no exact FM316 test or stiffness report. Public-post attempts are exhausted; a distinct web attempt remains available.",
+      "attempt_record_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "query": "site:road.cc \"Mondince FM316\" stiffness flex test review",
+      "reopen_when": "An exact FM316 measurement or attributable named, controlled frame comparison becomes available."
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "frame-stiffness",
+      "status": "unresolved-open",
+      "note": "road.cc had no exact CX-002 test or measured stiffness report. Public-post attempts are exhausted; a distinct web attempt remains available.",
+      "attempt_record_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "query": "site:road.cc \"VeloBuild CX-002\" stiffness flex test review",
+      "reopen_when": "A measured result or useful attributable comparative ride identifies the 2023 full-internal-routing CX-002."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-airwolf-yf-r003-price-2026-09-22",
+      "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "open": 2,
+      "temporarily-exhausted": 12
+    },
+    "research_queue": {
+      "ready": 2,
+      "evidence-found": 860,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "note": "Uragano current configuration and both Airwolf fields plus Seraph stiffness moved out of the ready queue as temporarily exhausted or blocked. Mondince and VeloBuild stiffness remain ready because a distinct web attempt remains open."
+  },
+  "reopening_triggers": [
+    "Current exact mainland Uragano EVO configuration or SKU/BOM mapping.",
+    "Accessible exact Airwolf YF-R003 mainland offer or official route restored without verification barrier.",
+    "Measured or controlled exact-revision stiffness evidence for Airwolf YF-R003, Seraph TT-X68-new 32C/UDH, Mondince FM316, or VeloBuild CX-002 2023."
+  ],
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via codex-pnpm-check; privacy, data validation, research ledger (1461 atomic fields; 15448 public-post and 35467 web attempts), coverage, 306 tests, 584-page build, and SEO audit passed",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

@@ -1,0 +1,67 @@
+{
+  "id": "variant-twitter-cyclone-electronic-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-cyclone-electronic"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+    "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+    "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+    "twitter-cyclone-et-usa-store-current-2026-09-24"
+  ],
+  "retry_after": null,
+  "retry_of": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The bounded query returned no new current exact-model public route; carried-forward public-post evidence remains distinct and the latest mainland price status still needs recheck.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "骓特 CYCLONE-3rd (ET) TX 整车 购买 轮峰",
+          "route": "One distinct B145 exact-model web search; no new exact-model page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The single new exact-model query returned no results. Existing accepted public-post and web evidence is carried forward; the catalog purchase-route gap is driven by its conditional dated mainland price."
+        }
+      ]
+    }
+  },
+  "notes": "This B145 record contains only the authorized web query; public-post was not run. The predecessor record retains its earlier public-post evidence. The new web query returned no results, and the dated mainland promotion remains conditional.",
+  "campaign_extension": {
+    "id": "b145-twitter-cyclone-electronic-purchase-route",
+    "extends_attempt_id": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+      "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+      "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+      "twitter-cyclone-et-usa-store-current-2026-09-24"
+    ],
+    "note": "Reuse the linked JD/Tmall evidence and exact U.S. store route. The U.S. page supports a US$1,489 international made-to-order offer, while mainland pages do not verify selected SKU, inventory or final checkout. The conditional mainland promotion does not establish a current purchase route; keep the gap open."
+  }
+}

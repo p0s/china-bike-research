@@ -487,5 +487,14 @@
     "twitter-little-white-rabbit-jd-options-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-little-white-rabbit-batch-023-50-area-sweep-2026-08-30.json. Two current mainland indexes explicitly identify the exact Little White Rabbit custom listing family."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-little-white-rabbit-batch-023-50-area-sweep-2026-08-30.json. Two current mainland indexes explicitly identify the exact Little White Rabbit custom listing family.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-little-white-rabbit-tmall-mirror-2026-08-30",
+      "twitter-little-white-rabbit-jd-options-2026-08-30"
+    ],
+    "note": "The two indexes identify the Little White Rabbit custom listing family and its indexed options, but do not identify the retained card's selected drivetrain, wheels or size."
+  }
 }

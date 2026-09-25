@@ -16,7 +16,8 @@
     "An original order-detail SKU or equivalent evidence tying the listing photographs to an exact wheel selection",
     "Resolution of the listing's 50-versus-51 size-grid and BB86-versus-BB92 wording conflicts",
     "Readable component markings confirming the exact production-batch shifters, derailleurs, crank, cassette, and brakes",
-    "Dependable provenance for any used example or claimed remaining stock"
+    "Dependable provenance for any used example or claimed remaining stock",
+    "The 9.5 kg seller claim is not mapped to the retained carbon-wheel configuration; the 9.9 kg claim applies to an alloy-wheel selection."
   ],
   "status": "superseded",
   "research_priority": "high",
@@ -27,7 +28,9 @@
   "source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21",
     "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
-    "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
+    "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+    "twitter-v3-25yr-rs-store-recheck-2026-09-23",
+    "twitter-v3-25yr-manufacturer-recheck-2026-09-24"
   ],
   "facts": {
     "listing_identity": "Taobao item GRAVEL-V3顺泰; listed launch Summer 2024; the wheel-and-color selection matrix includes six colors and separate alloy- and carbon-wheel options",
@@ -45,12 +48,14 @@
     "cockpit": "Carbon integrated handlebar/stem, nominally 420×90 mm, plus proprietary aero carbon seatpost",
     "sizes": "Older materials and the described size-51 configuration indicate 45 / 48 / 51 / 54, but the visible Taobao selector transcription says 45 / 48 / 50 / 54",
     "geometry_size_51": "Supplied listing transcription: 550 mm stack, 385 mm reach, 540 mm effective top tube, 130 mm head tube and 1,021 mm wheelbase; verify against the exact archived product graphic",
-    "complete_weight_g": 9500,
     "tire_clearance_mm": 40,
     "tire_clearance_basis": "Exact-model 2024 instruction-manual mirror maximum for the matching press-fit generation",
-    "complete_weight_basis": "Historical seller claim for one 2024 configuration; pictured wheel selection, size, pedals, accessories and weighing method unresolved",
-    "frame_stiffness_status": "No exact historical-selection numeric or sufficiently specific independent stiffness result found after 50 registered source areas"
+    "complete_weight_basis": "Historical seller claim of 9.5 kg for one 2024 configuration; the pictured wheel selection is unmapped, so this does not establish the carbon-wave build's weight. A separate 9.9 kg claim applies to the alloy-wheel selection. Size, pedals, accessories and weighing method are unknown.",
+    "frame_stiffness_status": "No exact historical-selection numeric or sufficiently specific independent stiffness result found after 50 registered source areas",
+    "complete_weight_g": 9500,
+    "complete_weight_status": "Seller-reported 9.5 kg for one unmapped 2024 configuration; not verified for this retained carbon-wave selection."
   },
-  "source_note": "The retained historical listing supports a 9.5 kg claim for one 2024 configuration but does not map the pictured bike to one wheel selection or publish size/accessory basis. The CNY 3,991 alloy-wheel option and newer T47 prices are not transferred. No exact-selection stiffness result was found.",
-  "last_reviewed": "2026-09-01"
+  "source_note": "The historical seller material does not map a complete-bike weight to this exact 2024 RS carbon-wave configuration. A 9.5 kg claim is recorded for an unspecified build, while the exact alloy-wheel selection lists 9.9 kg. The CNY 3,991 alloy-wheel option and newer T47 prices are not transferred. Keep this build's weight unknown until the selected wheel package and weighing basis are documented.",
+  "last_reviewed": "2026-09-25",
+  "price_status": "No current mainland price or dependable stock evidence for the exact discontinued 2024 RS carbon-wheel selection. The historical CNY 3,991 amount applies only to its alloy-wheel selection; current 25yr USD prices are a different revision and market."
 }

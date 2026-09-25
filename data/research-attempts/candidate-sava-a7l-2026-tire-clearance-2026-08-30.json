@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-r08-tire-compatibility-2026-08-30"
+    "sava-r08-tire-compatibility-2026-08-30",
+    "sava-a7l-r08-current-spec-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-a7l-2026-50-area-sweep-2026-08-30.json. Current exact-frame manufacturer maximum is 25C."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-a7l-2026-50-area-sweep-2026-08-30.json. Current exact-frame manufacturer maximum is 25C.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-r08-tire-compatibility-2026-08-30",
+      "sava-a7l-r08-current-spec-recheck-2026-09-24"
+    ],
+    "note": "The manufacturer compatibility guide supports a conservative 25C maximum for the exact R08 frame. The current product page shows 25C fitted but does not claim this is the maximum."
+  }
 }

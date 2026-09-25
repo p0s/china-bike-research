@@ -505,8 +505,23 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "twitter-cyclone-et-official-2026-08-29",
-    "twitter-cyclone-et-jd-2026-08-29"
+    "twitter-cyclone-et-jd-2026-08-29",
+    "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+    "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+    "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+    "twitter-cyclone-et-usa-store-current-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. A current official made-to-order international route and current exact-model JD index exist; the dated mainland coupon range remains historical and final mainland checkout terms require verification."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. A current official made-to-order international route and current exact-model JD index exist; the dated mainland coupon range remains historical and final mainland checkout terms require verification.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+      "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+      "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+      "twitter-cyclone-et-usa-store-current-2026-09-24"
+    ],
+    "note": "The current US store supports an exact WheelTop EDS TX international offer; current mainland Tmall and JD evidence does not expose the retained selected SKU or a verified final checkout, so the US route does not close mainland purchase availability."
+  }
 }

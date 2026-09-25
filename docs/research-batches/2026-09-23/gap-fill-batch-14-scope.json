@@ -1,0 +1,118 @@
+{
+  "batch_id": "gap-fill-batch-14-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps reports zero ready fields, 69 found research statuses, and 212 images across 277 catalog targets. Fresh npm run --silent research:queue reports 0 ready, 764 evidence-found, 45 deferred, 498 blocked, and 60 conflicted. The first queue entries include current catalog gaps with found attempts and ledger-only evidence fields that require disposition.",
+  "selection_basis": "Selected the first six exact catalog-gap records and next four distinct ledger-only records from the fresh evidence-found queue. Split evidence-only review across four exact records and direct source research across six disjoint records; total scope is 10 exact models and 20 atomic fields.",
+  "exact_model_count": 10,
+  "atomic_field_count": 20,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-x7",
+      "exact_identity": "TWITTER 骓特 X7 high-configuration complete-bike candidate",
+      "fields": ["complete-weight"],
+      "attempt_ids": ["candidate-twitter-x7-complete-weight-2026-08-30"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-sl-one",
+      "exact_identity": "WEST BIKING 西骑者 SL-ONE carbon road-bike candidate",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-west-biking-sl-one-drivetrain-2026-08-30"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-team-road",
+      "exact_identity": "WEST BIKING 西骑者 Team edition carbon road-bike candidate",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-west-biking-team-road-drivetrain-2026-08-30"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "felt-ia-2",
+      "exact_identity": "FELT IA 2.0 complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "frame-stiffness"],
+      "attempt_ids": [
+        "candidate-felt-ia-2-complete-weight-2026-08-30",
+        "candidate-felt-ia-2-drivetrain-2026-08-30",
+        "candidate-felt-ia-2-frame-material-2026-08-30",
+        "candidate-felt-ia-2-frame-stiffness-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "exact_identity": "UPLAND 阿普兰 R70 complete-bike candidate",
+      "fields": ["complete-weight"],
+      "attempt_ids": ["candidate-upland-r70-complete-weight-2026-08-30"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "exact_identity": "Giant TCR Advanced 3-GC mainland-price candidate",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "exact_identity": "DE ROSA 德罗萨 New 838 candidate",
+      "fields": ["drivetrain", "frame-material", "frame-stiffness"],
+      "attempt_ids": [
+        "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+        "candidate-de-rosa-new-838-frame-material-2026-08-30",
+        "candidate-de-rosa-new-838-frame-stiffness-2026-08-30"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cosmosworks-carbon-e-road",
+      "exact_identity": "cosmosworks / 宇宙E-BIKE mixed NOMAD / Oi! lead",
+      "fields": ["identity-source"],
+      "attempt_ids": ["candidate-cosmosworks-carbon-e-road-identity-source-2026-08-29"],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-phantom-rx24",
+      "exact_identity": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed candidate",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-cycletrack-phantom-rx24-drivetrain-2026-08-29",
+        "candidate-cycletrack-phantom-rx24-frame-material-2026-08-29",
+        "candidate-cycletrack-phantom-rx24-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-time-tt",
+      "exact_identity": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9 candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-cycletrack-time-tt-complete-weight-2026-08-29",
+        "candidate-cycletrack-time-tt-drivetrain-2026-08-29",
+        "candidate-cycletrack-time-tt-frame-material-2026-08-29",
+        "candidate-cycletrack-time-tt-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-review"
+    }
+  ],
+  "integration_instructions": [
+    "Root researches only the six records marked owner=root; the read-only Luna evidence reviewer assesses only its four disjoint records and returns findings without editing files or researching overlapping models.",
+    "For every field inspect the exact attempt and accepted sources before new web research. Use exact-model current primary evidence for current facts; do not infer a precise weight, full BOM, trim, material grade, or stiffness score.",
+    "Integrate a catalog value only when an attributable source directly supports that exact model and field. If a previously found value is already integrated, add a dated source-reuse resolution naming the source and preserving its caveats. If the prior finding is insufficient or ambiguous, keep it unresolved with a precise reason and reopen trigger.",
+    "Do not add images unless exact product identity, documented reusable rights, credit, alt text, and fallback are all established. Do not make external GitHub changes."
+  ],
+  "done_criteria": "Assess all 20 frozen fields, integrate verified direct evidence or record a specific unresolved disposition, write a results matrix, run research:check and coverage:accept if ledgers/catalog change, run npm run check once for this coherent batch, run npm run image:report only if image records change, and inspect final diff and batch JSON validity.",
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

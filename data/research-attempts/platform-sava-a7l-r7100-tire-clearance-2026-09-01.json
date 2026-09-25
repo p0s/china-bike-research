@@ -482,5 +482,11 @@
     "sava-r08-tire-compatibility-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-sava-a7l-r7100-batch-033-50-area-sweep-2026-09-01.json. The current manufacturer compatibility guide publishes a conservative 25C maximum for R08."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-sava-a7l-r7100-batch-033-50-area-sweep-2026-09-01.json. The current manufacturer compatibility guide publishes a conservative 25C maximum for R08.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-r08-tire-compatibility-2026-08-30"],
+    "note": "The manufacturer's conservative 25C compatibility limit is specific to the R08 frame used by the A7L platform. It is a nominal tire-width compatibility claim, not a measured physical frame or fork gap."
+  }
 }

@@ -1,0 +1,121 @@
+{
+  "batch": 65,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "B60 checked 25 remote image resources, all unreachable without HTTP status or content type. A fresh data:gaps image-ID inventory identifies 11 current image records not included in B60. Check the first 10 only to remain within the repository maximum of 10 exact products per writer; leave Yoeleo Altera G21 for a later bounded batch.",
+    "exact_products": 10,
+    "image_records": 10,
+    "resource_endpoints": 10,
+    "writer": "one local writer; no research agent or repository image copying",
+    "previously_checked_batch": "B60 exact 25 IDs in gap-fill-batch-60-results.json",
+    "unchecked_current_image_ids": [
+      "elves-mori-aerox-primary-image",
+      "evolve-cima-gr-primary-image",
+      "incolor-speedster-sr-plus-primary-image",
+      "incolor-speedster-sr-primary-image",
+      "incolor-ssr-official-primary-image",
+      "incolor-voyager-official-primary-image",
+      "quick-gr-one-primary-image",
+      "spcycle-g028-primary-image",
+      "tfsa-jh37-primary-image",
+      "winspace-g5-primary-image",
+      "yoeleo-altera-g21-primary-image"
+    ]
+  },
+  "targets": [
+    {
+      "image_id": "elves-mori-aerox-primary-image",
+      "record": "ELVES Mori Aerox",
+      "url": "https://uk.elvesbike.com/u_file/2606/18/products/20260618163157227467.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+    },
+    {
+      "image_id": "evolve-cima-gr-primary-image",
+      "record": "Evolve CIMA GR",
+      "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg"
+    },
+    {
+      "image_id": "incolor-speedster-sr-plus-primary-image",
+      "record": "Incolor Speedster SR Plus",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260709/44a68269648859f3a3544fc0ee809351.jpg"
+    },
+    {
+      "image_id": "incolor-speedster-sr-primary-image",
+      "record": "Incolor Speedster SR",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260709/cbef1a0f63fd2e4268b64c9b3e2b2e6c.jpg"
+    },
+    {
+      "image_id": "incolor-ssr-official-primary-image",
+      "record": "Incolor SSR",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260710/86b4f73ce68254ed6cbc6c40582b048e.jpg"
+    },
+    {
+      "image_id": "incolor-voyager-official-primary-image",
+      "record": "Incolor Voyager",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260702/dafcb254db4b4a9e7a96b09f88ab6852.jpg"
+    },
+    {
+      "image_id": "quick-gr-one-primary-image",
+      "record": "Quick Pro GR:ONE",
+      "url": "https://www.quickprousa.com/cdn/shop/files/GRONE_AbyssGray.png?v=1781733761&width=1946"
+    },
+    {
+      "image_id": "spcycle-g028-primary-image",
+      "record": "SP-Cycle G028",
+      "url": "https://usaimages.oss-us-west-1.aliyuncs.com/6230/product/detail/20260515/1778837727142_0.jpg"
+    },
+    {
+      "image_id": "tfsa-jh37-primary-image",
+      "record": "TFSA JH37",
+      "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif"
+    },
+    {
+      "image_id": "winspace-g5-primary-image",
+      "record": "WINSPACE G5",
+      "url": "https://www.winspace.cc/cdn/shop/files/G5FrameNauticalBlue.webp?v=1782181071&width=1080"
+    }
+  ],
+  "runtime_check": {
+    "command": "npm run --silent image:report -- --ids=<10 frozen image IDs> --json",
+    "acceptance": "Only a current HTTP 2xx/3xx response with image/* content type and matching URL can support a healthy_check record. Host-blocked or unreachable responses do not prove the remote image is broken; do not change the URL or image data on those results.",
+    "no_copy": "Do not download, mirror, or otherwise copy third-party image content."
+  },
+  "done_criteria": [
+    "Run one image-health report for only the 10 frozen exact image IDs.",
+    "If any endpoint is verified healthy, record its exact status, content type, URL and check date; run coverage acceptance and the full repository gate once for image-record changes.",
+    "If results are blocked or unreachable without HTTP status/content type, preserve image records and record the bounded result without calling the image broken.",
+    "Do not run a second report in this batch, and do not inspect or copy image contents.",
+    "Local B65 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B65 batch only; no push, pull request, merge, publication or production action."
+}

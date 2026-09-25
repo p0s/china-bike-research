@@ -1,0 +1,72 @@
+{
+  "batch": 49,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 }
+  },
+  "selection": {
+    "basis": "The two remaining price-reference-range gaps are published exact framesets with CNY ranges last observed 2026-08-06. Their exact-model price sweeps were last recorded 2026-09-01. Recheck current public manufacturer/store evidence for a current exact fixed amount or quote; do not treat negotiated quotes, other generations, package variants, or USD references as mainland observed prices.",
+    "selected_atomic_fields": 2,
+    "selected_exact_targets": 2
+  },
+  "targets": [
+    {
+      "record_type": "published-variant",
+      "record_id": "carbonda-cfr696-frameset",
+      "exact_identity": "Carbonda CFR696 UDH gravel frameset; current generation and package must be identified in any priced selection",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "gap_code": "price-reference-range",
+      "priority_score": 26,
+      "existing_attempt_id": "variant-carbonda-cfr696-frameset-price-2026-09-01",
+      "existing_attempt_status": "blocked",
+      "existing_price_record": { "id": "carbonda-cfr696-2026-08", "currency": "CNY", "low": 3000, "high": 6000, "observed_at": "2026-08-06" },
+      "existing_source_ids": ["carbonda-cfr696-official", "carbonda-cfr696-official-recheck-2026-09-23"]
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "ican-gra04-frameset",
+      "exact_identity": "ICAN GRA04 full-carbon gravel frameset; current exact package and domestic delivery terms must be identified in any priced selection",
+      "owner": "root-writer",
+      "evidence_only_assignment": "one Luna Max agent; report current public evidence only, make no repository edits",
+      "field": "mainland-observed-price",
+      "gap_code": "price-reference-range",
+      "priority_score": 26,
+      "existing_attempt_id": "variant-ican-gra04-frameset-price-2026-09-01",
+      "existing_attempt_status": "blocked",
+      "existing_price_record": { "id": "ican-gra04-2026-08", "currency": "CNY", "low": 3800, "high": 5200, "observed_at": "2026-08-06" },
+      "existing_source_ids": ["ican-gra04-official", "ican-gra04-official-current-2026-09-01", "ican-gra04-hosted-review-current-2026-09-23"]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "price_acceptance": "Add a current amount only when a public source ties it to the exact frameset/package and states currency. Keep public listing, direct quote, fixed MSRP, and foreign-currency references distinct; do not contact sellers, enter checkout, or convert a global price into an observed CNY price.",
+    "recording": "Add one dated mainland-observed-price attempt per variant so the completed broad sweeps remain immutable. Update existing price records only when current evidence supports the exact model/package and usable price type; otherwise preserve the current range and record the unresolved boundary.",
+    "stop_criteria": "Process Carbonda CFR696 and ICAN GRA04 sequentially, one source at a time. Stop at an exact public price or a concrete quote-only, package, access, or market boundary.",
+    "tooling_prerequisite": "scripts/data-gaps.mjs currently selects scoped price aliases for candidates but not published variants; extend latest research-state selection to variant mainland-observed-price attempts and add a focused regression test so B49's newer status is visible beside each reference-range gap."
+  },
+  "delivery": "Local B49 batch only. No push, pull request, merge, publication, or production action."
+}

@@ -481,6 +481,12 @@
   "accepted_source_ids": [
     "merida-china-reacto-6000-cn-27-official-2026-08-17"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["merida-china-reacto-6000-cn-27-official-2026-08-17"],
+    "note": "Disposition: exact-model reference-price evidence reused. The manufacturer REACTO 6000 CN 27 page supports CNY 23,800 as accessed 2026-09-01. Keep source access date separate from the candidate's recorded price date; stock and checkout remain unverified. Reopen on dated current order evidence."
+  },
   "retry_after": null,
   "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-merida-reacto-batch-031-50-area-sweep-2026-09-01.json. The current exact mainland manufacturer page retains a CNY 23,800 suggested retail price."
 }

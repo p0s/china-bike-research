@@ -483,8 +483,18 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-r10-pro-gen3-current-options-2026-08-30"
+    "twitter-r10-pro-gen3-current-options-2026-08-30",
+    "twitter-r10-pro-configuration-index-2026-09-02"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-r10-pro-gen3-50-area-sweep-2026-08-30.json. WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 closed-wheel builds are both current, and the retained card does not select one."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-r10-pro-gen3-50-area-sweep-2026-08-30.json. WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 closed-wheel builds are both current, and the retained card does not select one.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-r10-pro-gen3-current-options-2026-08-30",
+      "twitter-r10-pro-configuration-index-2026-09-02"
+    ],
+    "note": "Exact-family listings include WheelTop EVO and Shimano 105 R7120 mechanical builds. The JD snapshot was about a month old at recheck and does not establish the retained Gen 3 selection."
+  }
 }

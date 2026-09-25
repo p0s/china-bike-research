@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-arow-sl-official-2026-08-17"
+    "tavelo-arow-sl-official-2026-08-17",
+    "tavelo-arow-sl-neo-black-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "tavelo-arow-sl-neo-black-official-recheck-2026-09-23"
+    ],
+    "note": "Official Arow SL Neo Black global frameset page has a selectable size and Add to Cart/Buy Now; it is not a checkout route for the community lead's exact custom complete bike, and mainland availability is unknown. Reopen trigger: Reopen on a seller route listing the exact community build or its matching complete-bike SKU."
+  }
 }

@@ -1,0 +1,39 @@
+{
+  "batch": 88,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-88-scope.json",
+    "docs/research-batches/2026-09-24/gap-fill-batch-88-scope-amendment-01.json",
+    "docs/research-batches/2026-09-24/gap-fill-batch-88-scope-amendment-02.json"
+  ],
+  "result": {
+    "exact_models_checked": 9,
+    "atomic_gaps_checked": 10,
+    "source_reuse_resolutions_added": 10,
+    "catalog_records_changed": 6,
+    "source_records_added": 4,
+    "candidate_stiffness_evidence_gaps_closed": 2,
+    "target_gaps_remaining": 8,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-twitter-cyclone-sport-complete-weight-2026-08-30","disposition":"9.1 kg alloy-rim and 8.9 kg wave-carbon-rim references exist; retained wheel build is unknown, so no single weight is assigned."},
+      {"attempt_id":"variant-elves-falath-r7170-purchase-route-2026-08-17","disposition":"Current South African and Australian exact-build routes are documented; current mainland seller authority, checkout, and warranty remain unverified."},
+      {"attempt_id":"variant-twitter-cyclone-electronic-purchase-route-2026-08-29","disposition":"Current official US WheelTop EDS TX route is recorded; mainland listings do not verify the retained selected SKU or final checkout."},
+      {"attempt_id":"variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17","disposition":"Exact China product endpoint returned 404 on 2026-09-24; the current US offer is an overseas route and no mainland checkout is verified."},
+      {"attempt_id":"variant-twitter-v3-rs-sensah-purchase-route-2026-09-01","disposition":"Exact RS-24S/Sensah international ordering evidence is recorded; mainland family and indexed manufacturer pages do not verify mainland availability or checkout."},
+      {"attempt_id":"variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01","disposition":"Exact WheelTop US listing and US order route are recorded; mainland selected-build stock and checkout remain unverified."},
+      {"attempt_id":"candidate-pinarello-f5-complete-weight-2026-08-30","disposition":"8.25 kg applies to the MY26 105 Di2/MOST Ultrafast 45 reference build; retained card model year and wheel option remain unresolved."},
+      {"attempt_id":"candidate-pinarello-f5-frame-stiffness-2026-08-30","disposition":"Current MY26 manufacturer claim is qualitative without a numeric result or public protocol; added as caveated stiffness evidence while preserving the protected legacy field."},
+      {"attempt_id":"candidate-sava-dream-maker-frame-stiffness-2026-08-30","disposition":"Exact R17 article supports qualitative front-end/T47 rigidity and testing claims without a numeric result or protocol; added as caveated stiffness evidence."},
+      {"attempt_id":"candidate-look-765-electronic-complete-weight-2026-08-30","disposition":"7.9 kg R50D and 8.8 kg R38D references apply to different wheel builds; retained card wheel option is unresolved."}
+    ],
+    "data_outcome": "Two candidate stiffness-evidence gaps closed. Five mainland purchase-route questions and three build-specific complete-weight questions remain open. Total gap inventory decreased 707 to 705; evidence-found queue decreased 213 to 203. Candidate facts.frame_stiffness remains as a protected historical field alongside the recognized facts.stiffness_evidence key. No image records changed."
+  },
+  "validation": {
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1308 sources, 212 images, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "coverage": "pass after monotonic acceptance: 212 images, 73 price observations, 1308 sources, and 236 candidates",
+    "focused_regression_tests": "pass: four batch 044/045 route assertions",
+    "full_gate": "pass: developer-storage-cache wrapper; privacy, validation, research, coverage, 324 tests, build of 584 pages, and SEO audit with 458 indexable/126 noindex pages",
+    "diff_check": "pass"
+  }
+}

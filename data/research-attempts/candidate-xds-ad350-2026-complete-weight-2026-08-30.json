@@ -487,5 +487,13 @@
     "xds-ad350-2026-official-weight-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad350-2026-batch-024-50-area-sweep-2026-08-30.json. The official XDS account claims 9.28 kg for the exact 2026 AD350; the indexed manufacturer title does not expose the weighing basis."
+  "notes": "B123 reused the exact 2026 XDS AD350 official-account video-index title claiming 9.28 kg; size, pedals, accessories and weighing protocol remain unstated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "xds-ad350-2026-official-weight-2026-08-30"
+    ],
+    "note": "B123 reused the exact 2026 XDS AD350 official-account video-index title claiming 9.28 kg; size, pedals, accessories and weighing protocol remain unstated."
+  }
 }

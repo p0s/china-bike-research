@@ -1,0 +1,51 @@
+{
+  "id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+  "field": "price",
+  "retry_of": "candidate-quick-pro-ur-one-price-2026-09-01",
+  "retry_reason": "A current exact Dura-Ace manufacturer route and a separately indexed mainland price lead justify one focused seller-item check.",
+  "searched_at": "2026-09-24",
+  "priority": "high",
+  "status": "blocked",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "campaign_extension": {
+    "id": "gap-fill-batch-76-quick-pro-ur-one-price",
+    "extends_attempt_id": "candidate-quick-pro-ur-one-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-76-scope.json",
+    "reason": "Recent exact Dura-Ace manufacturer and MyBike.parts routes merit one bounded JD/Tmall seller check for the unresolved mainland CNY checkout.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-quick-pro-ur-one-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The search exposed a secondary mainland price report but no exact live mainland seller item, selectable Dura-Ace build, stock, or order terms.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro UR:ONE Dura-Ace R9270 Di2 2x12 京东 天猫 中国 价格",
+          "route": "One focused public JD/Tmall exact-build seller-item search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://mybike.parts/bike_parts/1802-quick-pro-ur-one",
+          "note": "The surfaced MyBike.parts page reports ¥53,998 for a China Dura-Ace complete bike, citing review videos. It is a secondary review/aggregator, not a current seller item; it exposes no matching selectable build, live offer, stock, or order terms. The separate official page shows Global/USD and US$6,899. No mainland Dura-Ace checkout amount is supported; the ¥27,998 MyBike.parts 105 Di2 build was not transferred."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-ur-one"
+  },
+  "notes": "Disposition: unresolved. Keep candidate observed_price absent; preserve official/global references and the secondary ¥53,998 report only as a non-checkout lead."
+}

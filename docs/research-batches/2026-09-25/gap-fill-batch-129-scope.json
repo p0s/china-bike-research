@@ -1,0 +1,183 @@
+{
+  "batch": 129,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selection_note": "The fresh queue has no ready or evidence-found items. Deferred entries have future retry dates (the earliest listed is 2026-10-23); select the ten highest-priority conflict entries with no retry date across nine exact records. Resolve only with exact-source evidence; preserve conflicts when unresolved."
+  },
+  "scope": {
+    "exact_target_models": [
+      "pardus-spark-rs-community-lead",
+      "twitter-t8-closed-wheel",
+      "twitter-little-white-rabbit",
+      "twitter-r10-pro-gen3",
+      "twitter-x7",
+      "basso-venta-disc",
+      "de-rosa-new-838",
+      "felt-ia-2",
+      "upland-r70"
+    ],
+    "exact_model_count": 9,
+    "selected_fields": [
+      "candidate:pardus-spark-rs-community-lead:complete-weight-missing",
+      "candidate:twitter-t8-closed-wheel:complete-weight-missing",
+      "candidate:twitter-little-white-rabbit:drivetrain-missing",
+      "candidate:twitter-r10-pro-gen3:drivetrain-missing",
+      "candidate:twitter-t8-closed-wheel:drivetrain-missing",
+      "candidate:twitter-x7:drivetrain-missing",
+      "candidate:basso-venta-disc:clearance-unverified",
+      "candidate:de-rosa-new-838:clearance-unverified",
+      "candidate:felt-ia-2:clearance-unverified",
+      "candidate:upland-r70:drivetrain-missing"
+    ],
+    "attempt_ids": [
+      "candidate-pardus-spark-rs-community-lead-complete-weight-2026-08-30",
+      "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+      "candidate-twitter-little-white-rabbit-drivetrain-2026-08-30",
+      "candidate-twitter-r10-pro-gen3-drivetrain-2026-08-30",
+      "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30",
+      "candidate-twitter-x7-drivetrain-2026-08-30",
+      "candidate-basso-venta-disc-tire-clearance-2026-08-29",
+      "candidate-de-rosa-new-838-tire-clearance-recheck-2026-09-24",
+      "candidate-felt-ia-2-tire-clearance-2026-08-30",
+      "candidate-upland-r70-drivetrain-2026-08-30"
+    ],
+    "queue_conflict_priorities": [
+      {
+        "attempt_id": "candidate-pardus-spark-rs-community-lead-complete-weight-2026-08-30",
+        "score": 122,
+        "record_id": "pardus-spark-rs-community-lead",
+        "field": "complete-weight-missing"
+      },
+      {
+        "attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+        "score": 111,
+        "record_id": "twitter-t8-closed-wheel",
+        "field": "complete-weight-missing"
+      },
+      {
+        "attempt_id": "candidate-twitter-little-white-rabbit-drivetrain-2026-08-30",
+        "score": 109,
+        "record_id": "twitter-little-white-rabbit",
+        "field": "drivetrain-missing"
+      },
+      {
+        "attempt_id": "candidate-twitter-r10-pro-gen3-drivetrain-2026-08-30",
+        "score": 109,
+        "record_id": "twitter-r10-pro-gen3",
+        "field": "drivetrain-missing"
+      },
+      {
+        "attempt_id": "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30",
+        "score": 109,
+        "record_id": "twitter-t8-closed-wheel",
+        "field": "drivetrain-missing"
+      },
+      {
+        "attempt_id": "candidate-twitter-x7-drivetrain-2026-08-30",
+        "score": 109,
+        "record_id": "twitter-x7",
+        "field": "drivetrain-missing"
+      },
+      {
+        "attempt_id": "candidate-basso-venta-disc-tire-clearance-2026-08-29",
+        "score": 103,
+        "record_id": "basso-venta-disc",
+        "field": "clearance-unverified"
+      },
+      {
+        "attempt_id": "candidate-de-rosa-new-838-tire-clearance-recheck-2026-09-24",
+        "score": 103,
+        "record_id": "de-rosa-new-838",
+        "field": "clearance-unverified"
+      },
+      {
+        "attempt_id": "candidate-felt-ia-2-tire-clearance-2026-08-30",
+        "score": 103,
+        "record_id": "felt-ia-2",
+        "field": "clearance-unverified"
+      },
+      {
+        "attempt_id": "candidate-upland-r70-drivetrain-2026-08-30",
+        "score": 103,
+        "record_id": "upland-r70",
+        "field": "drivetrain-missing"
+      }
+    ],
+    "research_boundary": "One existing Luna Max evidence-only reviewer. Inspect only these exact records, their listed attempt histories, and accepted source records first. Work sequentially one exact model/source at a time and stop at decisive evidence. Return direct URLs, actual access dates, source class, supported claims, conflicts and limitations, with a source-reuse recommendation or evidence-backed unresolved disposition. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these ten frozen entries.",
+      "No transfer across generations, builds, trims, markets, sizes or product types.",
+      "No guessed weights, drivetrain options, tire maxima or exact-build facts; distinguish whole-bike testimony from frame-only measurements.",
+      "No new XHS capture, login, CAPTCHA, challenge handling or bypass.",
+      "Do not submit quote/order forms, add items to cart, contact sellers or purchase.",
+      "No new image files, downloads, redistribution or hosting.",
+      "No GitHub, production, publication, price-table or image-table changes without the writer's evidence integration."
+    ],
+    "not_selected_from_remaining_queue": [
+      "variant-bianchi-oltre-race-bom-2026-08-17",
+      "variant-bianchi-oltre-race-complete-weight-2026-08-17",
+      "candidate-hongfu-gravel-frame-material-2026-08-30",
+      "candidate-hongfu-gravel-identity-source-2026-08-30",
+      "platform-incolor-ssr-price-2026-08-17",
+      "candidate-missing-china-price-canyon-grail-price-2026-08-17",
+      "candidate-missing-china-price-specialized-crux-warranty-support-2026-08-17",
+      "candidate-pardus-spark-rs-community-lead-price-2026-08-17",
+      "platform-seka-exaero-gr-frame-stiffness-2026-08-28",
+      "candidate-tavelo-arden-price-2026-08-17",
+      "variant-twitter-cyclone-electronic-complete-weight-2026-08-29",
+      "candidate-twitter-cyclone-r7120-complete-weight-2026-09-01",
+      "platform-yoeleo-altera-g21-frame-weight-2026-08-27",
+      "candidate-hongfu-gravel-tire-clearance-2026-08-30",
+      "candidate-hongfu-gravel-price-current-mainland-seller-recheck-2026-09-24",
+      "candidate-hongfu-gravel-frame-weight-2026-08-30",
+      "candidate-java-fuoco-2025-complete-weight-2026-08-30",
+      "candidate-twitter-carbon-road-gravel-unknown-complete-weight-2026-08-30",
+      "candidate-xds-ad500-2025-complete-weight-2026-08-30",
+      "candidate-xds-ad7-complete-weight-2026-08-30",
+      "candidate-twitter-carbon-road-gravel-unknown-tire-clearance-2026-08-30",
+      "candidate-winspace-m6-complete-weight-2026-08-30",
+      "candidate-winspace-t1600-complete-weight-2026-08-30",
+      "candidate-icanian-sn04-frame-weight-2026-09-01",
+      "candidate-winspace-m6-drivetrain-2026-08-30",
+      "candidate-winspace-t1600-drivetrain-2026-08-30",
+      "candidate-bianchi-sprint-icr-complete-weight-2026-09-01",
+      "candidate-icanian-sn04-frame-material-2026-09-01",
+      "variant-elves-falath-r7170-bom-2026-08-17",
+      "candidate-icanian-p9-frame-weight-2026-09-01",
+      "candidate-sava-r9-complete-weight-2026-09-01",
+      "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+      "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17",
+      "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24",
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28",
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24",
+      "candidate-airwolf-yf-r003-frame-material-2026-09-22",
+      "candidate-airwolf-yf-r003-frame-revision-2026-09-22",
+      "candidate-elves-mori-community-lead-identity-2026-08-17",
+      "candidate-elves-mori-community-lead-price-2026-08-17",
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27",
+      "candidate-mondince-fm316-availability-2026-09-22",
+      "candidate-pardus-robin-evo-community-lead-frame-material-2026-08-28",
+      "candidate-pardus-spark-rs-community-lead-frame-material-2026-08-28",
+      "platform-pardus-super-sport-gen2-frame-material-2026-08-28",
+      "candidate-seraph-tt-x68-new-udh-frame-revision-2026-09-22",
+      "variant-twitter-cyclone-gen3-et-cockpit-2026-08-17",
+      "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28",
+      "candidate-velobuild-cx-002-2023-geometry-2026-09-22",
+      "candidate-spect-mira-tire-clearance-2026-08-30",
+      "variant-twitter-v3-rs-sensah-frame-weight-2026-09-24"
+    ],
+    "not_selected_deferred_count": 43,
+    "not_selected_blocked_count": 551
+  }
+}

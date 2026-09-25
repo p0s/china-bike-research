@@ -1,20 +1,44 @@
 {
   "id": "platform-af01-frame-material-2026-08-28",
-  "target": { "record_type": "platform", "record_id": "af01" },
+  "target": {
+    "record_type": "platform",
+    "record_id": "af01"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "AF01 Standard carbon grade one piece molding", "route": "manufacturer exact-model page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://afbicycles.com/products/af01-standard-carbon-gravel-frame", "note": "Manufacturer specifies T800 + M46 carbon and one-piece molding with embedded aluminum fork inserts; no ply schedule is published." }
+        {
+          "attempt": 1,
+          "query": "AF01 Standard carbon grade one piece molding",
+          "route": "manufacturer exact-model page",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://afbicycles.com/products/af01-standard-carbon-gravel-frame",
+          "note": "Manufacturer specifies T800 + M46 carbon and one-piece molding with embedded aluminum fork inserts; no ply schedule is published."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["af01-official"],
+  "accepted_source_ids": [
+    "af01-official",
+    "af01-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "Published material and construction claims are retained without inferring factory ownership or execution quality."
+  "notes": "Published material and construction claims are retained without inferring factory ownership or execution quality.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "af01-official-recheck-2026-09-23"
+    ],
+    "note": "Current manufacturer page specifies T800+M46 carbon, one-piece molding, and aluminum inserts embedded in the fork carbon structure; manufacturer claim, no ply schedule. Reopen on an updated specification or detailed layup."
+  }
 }

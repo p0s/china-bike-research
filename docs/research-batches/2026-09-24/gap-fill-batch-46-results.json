@@ -1,0 +1,158 @@
+{
+  "batch": 46,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-46-scope.json",
+  "writer_limit": {
+    "exact_targets": 6,
+    "atomic_fields": 6
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-missing-china-price-merida-scultura-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-merida-scultura",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "merida-scultura-6000-25-official-mainland-price-recheck-2026-09-24",
+        "merida-china-official-mall-current-list-recheck-2026-09-24"
+      ],
+      "result": "The exact mainland model page confirms ¥16,800 suggested retail but no current observed listing. The official mall's public product-list response contains template placeholders and no exact SKU, amount, stock, or checkout state. Existing official_price remains; no observed_price was added."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-merida-silex-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-merida-silex",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "merida-silex-7000-25-official-price-recheck-2026-09-24",
+        "merida-china-official-mall-current-list-recheck-2026-09-24"
+      ],
+      "result": "The exact SILEX 7000 25 page confirms ¥20,800 suggested retail but provides only dealer/size-finder actions. The official mall public list does not expose a matching product or current amount. Existing official_price remains; no observed_price was added."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-specialized-tarmac-sl8",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "specialized-tarmac-sl8-comp-105di2-china-current-price-recheck-2026-09-24"
+      ],
+      "result": "The exact China product page identifies Tarmac SL8 Comp 105 Di2 but the rendered response contains no price or checkout value. The existing ¥30,990 official mainland reference is retained with its 2026-08-17 date; no current observed price was added."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-trek-checkpoint-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-trek-checkpoint",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "trek-checkpoint-sl5-axs-gen3-china-current-price-recheck-2026-09-24"
+      ],
+      "result": "The latest available web extract for the exact Trek China product route was crawled two weeks earlier and contains only a category shell. It does not refresh the previously recorded ¥27,800 mainland list reference, and provides no current amount or stock."
+    },
+    {
+      "attempt_id": "candidate-missing-china-price-trek-madone-gen-8-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:missing-china-price-trek-madone-gen-8",
+      "field": "mainland-observed-price",
+      "status": "found",
+      "source_ids": [
+        "trek-madone-sl5-gen8-china-current-catalog-price-recheck-2026-09-24"
+      ],
+      "result": "Trek China's current catalog data layer lists exact Madone SL 5 Gen 8 product IDs 46218 (white/black) and 57653 (red/black) at ¥21,800. Added candidate observed_price for the listed CNY value; size-level inventory and final checkout remain unverified. The earlier official_price is unchanged."
+    },
+    {
+      "attempt_id": "candidate-specialized-roubaix-sl8-sport-105-current-mainland-observed-price-2026-09-24",
+      "target": "candidate:specialized-roubaix-sl8-sport-105",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24"
+      ],
+      "result": "The exact China product route resolves to Roubaix SL8 Sport 105 but its current response contains only a title and input placeholders; no local CNY amount or availability is visible. The foreign-currency reference stays separate, and no observed mainland price was added."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "merida-scultura-6000-25-official-mainland-price-recheck-2026-09-24",
+      "merida-china-official-mall-current-list-recheck-2026-09-24",
+      "merida-silex-7000-25-official-price-recheck-2026-09-24",
+      "specialized-tarmac-sl8-comp-105di2-china-current-price-recheck-2026-09-24",
+      "trek-checkpoint-sl5-axs-gen3-china-current-price-recheck-2026-09-24",
+      "trek-madone-sl5-gen8-china-current-catalog-price-recheck-2026-09-24",
+      "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-missing-china-price-merida-scultura-current-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-merida-silex-current-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-specialized-tarmac-sl8-current-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-trek-checkpoint-current-mainland-observed-price-2026-09-24",
+      "candidate-missing-china-price-trek-madone-gen-8-current-mainland-observed-price-2026-09-24",
+      "candidate-specialized-roubaix-sl8-sport-105-current-mainland-observed-price-2026-09-24"
+    ],
+    "candidate_observed_prices_added": 1,
+    "standalone_price_records_added": 0,
+    "candidate_reviews_refreshed": 6,
+    "image_records_added": 0,
+    "third_party_images_rehosted": 0,
+    "images_added_to_website": 0,
+    "tooling": [
+      "scripts/data-gaps.mjs now attaches scoped mainland-observed-price attempts to candidate price gaps",
+      "tests/gaps.test.mjs covers the research-status mapping"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 38,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 68,
+      "temporarily-exhausted": 11
+    },
+    "atomic_research_status_counts": {
+      "atomic_fields": 1481,
+      "found": 861,
+      "temporarily-exhausted": 42,
+      "blocked": 517,
+      "conflicted": 61,
+      "open": 0
+    },
+    "research_queue_counts": {
+      "as_of": "2026-09-23",
+      "ready": 0,
+      "evidence-found": 253,
+      "deferred": 42,
+      "blocked": 519,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline now protects 212 images and 277 catalog targets",
+    "npm_run_check": "invoked once and stopped at privacy scan because the checkpoint contained an absolute local path; after replacing it with a repository-relative checkout identifier, privacy, validate, research:check, coverage:check, tests, build, and SEO were run directly and passed",
+    "focused_tests": "passed: 12 tests in tests/gaps.test.mjs",
+    "full_tests": "ordinary sandbox run hit loopback listen EPERM; one approved host-path retry passed 316 tests",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable and 126 noindex",
+    "image_report": "not run: no image records changed",
+    "git_diff_check": "passed"
+  },
+  "delivery": "Local B46 batch only; no push, pull request, merge, publication, or production action."
+}

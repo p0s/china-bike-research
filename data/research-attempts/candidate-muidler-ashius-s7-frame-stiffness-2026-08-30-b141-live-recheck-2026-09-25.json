@@ -1,0 +1,52 @@
+{
+  "id": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "muidler-ashius-s7"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "MUIDLER 媚影 阿修斯 S7 官方 车型说明 轮胎间隙 车架材质 刚性测试",
+          "route": "Fresh B141 exact-model web search; no new exact source surfaced",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No exact S7 stiffness test or sufficiently specific independent assessment surfaced."
+        }
+      ],
+      "blocker": "No exact S7 stiffness test or sufficiently specific independent assessment surfaced."
+    }
+  },
+  "notes": "No exact S7 stiffness test or sufficiently specific independent assessment surfaced.",
+  "campaign_extension": {
+    "id": "b141-muidler-ashius-s7-frame-stiffness",
+    "extends_attempt_id": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

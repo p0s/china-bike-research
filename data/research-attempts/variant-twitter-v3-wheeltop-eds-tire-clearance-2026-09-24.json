@@ -1,0 +1,70 @@
+{
+  "id": "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-wheeltop-eds"
+  },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "Exact T47 WheelTop sources identify a fitted 40C tire but give no maximum; the only 45C maximum belongs to a conflicting BB86 table.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 WheelTop EDS TX T47 maximum tire clearance",
+          "route": "Exact regional WheelTop product page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "Holographic L54 WheelTop EDS TX 2×12 page shows 700×40C fitted but no maximum; fitted size is not a clearance limit.",
+          "result_url": "https://twitterbikeusa.com/products/%F0%9F%86%93-free-shipping-delivery-3-days-gravel-v3-wireless-wheeltop-eds-tx-2-12-speed-holographic-l-54cm"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Gravel V3 mainland WheelTop EDS TX maximum tire clearance",
+          "route": "Current official mainland configuration page/index",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "note": "The indexed manufacturer page identifies WheelTop EDS TX but exposes no maximum; direct page access timed out. The 45C claim belongs to a different BB86 listing.",
+          "result_url": "https://www.twitter-bikes.com/twviewbike/8998.html"
+        },
+        {
+          "attempt": 3,
+          "query": "TWITTER Gravel V3 Wireless WheelTop EDS TX T47 maximum tire clearance regional manufacturer",
+          "route": "Distinct regional manufacturer build page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The current regional page confirms T47 and WheelTop EDS TX 2×12 and lists fitted INNOVA PRO 700×40C tires, but states no maximum. A separate BB86 manual mirror’s 40C claim is excluded from this T47 variant.",
+          "result_url": "https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "twitter-v3-wheeltop-clearance-recheck-2026-09-24",
+    "twitter-v3-cn-wheel-option-page-recheck-2026-09-24",
+    "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-24",
+    "twitter-v3-bb86-manual-mirror-generation-exclusion-recheck-2026-09-24",
+    "twitter-v3-wheeltop-clearance-recheck-2026-09-25",
+    "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "Maximum clearance remains unknown for the exact T47 WheelTop build; do not substitute fitted tire size or the BB86 listing maximum.",
+  "retry_of": "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-22",
+  "retry_reason": "Fresh exact regional and mainland configuration-page checks on 2026-09-24 confirmed the fitted-size/no-maximum distinction and the unresolved BB86 conflict.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-v3-wheeltop-clearance-recheck-2026-09-25",
+      "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-25"
+    ],
+    "note": "Current T47 WheelTop EDS regional pages list fitted Maxxis or Innova 700×40C tires but no maximum. Do not transfer a 45C maximum from the separate BB86 listing or treat fitted 40C as maximum clearance."
+  }
+}

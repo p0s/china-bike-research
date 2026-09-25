@@ -488,8 +488,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "java-vittoria-r7170-chile-2026-08-29"
+    "java-vittoria-r7170-chile-2026-08-29",
+    "java-vittoria-r7170-chile-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-7170-50-area-sweep-2026-08-29.json. The exact current reference build establishes a carbon frame, fork, cockpit and seatpost."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-7170-50-area-sweep-2026-08-29.json. The exact current reference build establishes a carbon frame, fork, cockpit and seatpost.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vittoria-r7170-chile-current-2026-09-23",
+      "java-vittoria-r7170-chile-2026-08-29"
+    ],
+    "note": "The Chilean R7170 regional reference describes a full-carbon frame, fork, hybrid handlebar and seatpost. Do not propagate it to the retained mainland card without an exact trim crosswalk."
+  }
 }

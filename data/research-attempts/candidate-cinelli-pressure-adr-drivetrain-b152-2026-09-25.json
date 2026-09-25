@@ -1,0 +1,55 @@
+{
+  "id": "candidate-cinelli-pressure-adr-drivetrain-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cinelli-pressure-adr"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-cinelli-pressure-adr-drivetrain-2026-08-29",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-cinelli-pressure-adr-drivetrain",
+    "extends_attempt_id": "candidate-cinelli-pressure-adr-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-cinelli-pressure-adr-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Cinelli Pressure ADR CNY 12599 mainland complete build weight drivetrain",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The retained CNY 12,599 coupon card identifies only Pressure ADR and does not map to one of the official page’s 105 mechanical, 105 Di2, or Ultegra Di2 alternatives. No matching complete-bike weight or selected drivetrain is established; the known official page was not reopened.",
+          "result_url": "https://cinelli-milano.com/products/pressure-adr-2024-105-disc-di2"
+        }
+      ],
+      "blocker": "The official source offers 105 mechanical, 105 Di2, and Ultegra Di2 alternatives, with no mapping from the retained card to an option."
+    }
+  },
+  "accepted_source_ids": [
+    "cinelli-pressure-adr-official-2026-08-29"
+  ],
+  "notes": "B168 local source audit: no linked source supports the retained exact drivetrain field. The retained CNY 12,599 coupon card identifies only Pressure ADR and does not map to one of the official page’s 105 mechanical, 105 Di2, or Ultegra Di2 alternatives. No matching complete-bike weight or selected drivetrain is established; the known official page was not reopened.",
+  "searched_at": "2026-09-25"
+}

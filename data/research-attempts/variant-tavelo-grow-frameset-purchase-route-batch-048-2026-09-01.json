@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-grow-official-store-2026-09-01"
+    "tavelo-grow-official-store-2026-09-01",
+    "tavelo-grow-official-store-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-tavelo-grow-frameset-batch-048-50-area-sweep-2026-09-01.json. Current exact-model manufacturer-store route found at US$1,650, with mainland terms to confirm."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-tavelo-grow-frameset-batch-048-50-area-sweep-2026-09-01.json. Current exact-model manufacturer-store route found at US$1,650, with mainland terms to confirm.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "tavelo-grow-official-store-2026-09-01",
+      "tavelo-grow-official-store-recheck-2026-09-25"
+    ],
+    "note": "The current Tavelo products page lists the exact Grow frameset at US$1,650 and provides an official retailer finder. This supports a global purchase route; selected-size checkout and mainland delivery, tax and warranty eligibility remain unverified."
+  }
 }

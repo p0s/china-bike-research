@@ -1,0 +1,360 @@
+{
+  "batch_id": "gap-fill-batch-31-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-31-scope.json",
+  "scope_count": {
+    "exact_models": 6,
+    "atomic_fields": 25,
+    "root_fields": 0,
+    "luna_evidence_fields": 25
+  },
+  "new_source_records": [
+    "sava-china-dealer-directory-recheck-2026-09-23",
+    "sava-a7l-2026-page-recheck-2026-09-23",
+    "sava-gelaro-s4-official-recheck-2026-09-23",
+    "sava-gelaro-s8-official-recheck-2026-09-23",
+    "seka-exaero-gr-official-recheck-2026-09-23",
+    "seka-spear-rdc-official-page-recheck-2026-09-23",
+    "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+    "seka-spear-development-manual-reopen-2026-09-23"
+  ],
+  "new_price_records": [],
+  "new_images_added": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "sava-a4",
+    "sava-gelaro",
+    "sava-gelaro-s8",
+    "seka-exaero-gr",
+    "seka-spear-rdc"
+  ],
+  "results": [
+    {
+      "record_id": "sava-a4",
+      "field": "identity",
+      "status": "global-manufacturer-identity-mainland-sku-unmapped",
+      "attempt_record_id": "candidate-sava-a4-identity-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Official global page identifies A4 code RO8 CR-A4-R4700-20S; no mainland SKU mapping.",
+      "next_trigger": "Reopen on official China SKU mapping or a distinct generation."
+    },
+    {
+      "record_id": "sava-a4",
+      "field": "image",
+      "status": "official-model-gallery-color-rights-unresolved",
+      "attempt_record_id": "candidate-sava-a4-image-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Purple gallery image is model-level; color/configuration and reusable rights are unproven. Existing remote reference only; no new image.",
+      "next_trigger": "Reopen on exact color match and reusable-rights documentation."
+    },
+    {
+      "record_id": "sava-a4",
+      "field": "purchase-route",
+      "status": "global-cart-mainland-orderability-unknown",
+      "attempt_record_id": "candidate-sava-a4-purchase-route-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23",
+        "sava-china-dealer-directory-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Global Add to cart exists; mainland directory showed no A4 purchase listing. Mainland stock, checkout and terms remain unknown.",
+      "next_trigger": "Reopen when exact mainland listing or checkout is visible."
+    },
+    {
+      "record_id": "sava-a4",
+      "field": "tire-clearance",
+      "status": "manufacturer-claimed-up-to-28c",
+      "attempt_record_id": "candidate-sava-a4-tire-clearance-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Global page image caption states 700x25C stock and up to 28C compatibility; this is not a measured clearance.",
+      "next_trigger": "Reopen for written wheel/rim-specific maximum-clearance basis."
+    },
+    {
+      "record_id": "sava-a7l-r7100",
+      "field": "bottom-bracket",
+      "status": "current-page-trim-mismatch-unresolved",
+      "attempt_record_id": "variant-sava-a7l-r7100-bottom-bracket-2026-08-17",
+      "source_ids": [
+        "sava-a7l-2026-page-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "BB86-24R appears on current R08-R7120-24S 2x12 page, not frozen R7100 2x11 target; value not transferred.",
+      "next_trigger": "Reopen with matching R7100 2x11 identity/source."
+    },
+    {
+      "record_id": "sava-a7l-r7100",
+      "field": "cockpit",
+      "status": "current-page-trim-mismatch-unresolved",
+      "attempt_record_id": "variant-sava-a7l-r7100-cockpit-2026-08-17",
+      "source_ids": [
+        "sava-a7l-2026-page-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Integrated 400x100 bar is listed for R08-R7120-24S 2x12, not the frozen target.",
+      "next_trigger": "Reopen with exact matching R7100 build page/manual."
+    },
+    {
+      "record_id": "sava-a7l-r7100",
+      "field": "geometry",
+      "status": "current-page-trim-mismatch-unresolved",
+      "attempt_record_id": "variant-sava-a7l-r7100-geometry-2026-08-17",
+      "source_ids": [
+        "sava-a7l-2026-page-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Five-size chart belongs to current R08-R7120-24S 2x12 page; exact R7100 geometry remains unknown.",
+      "next_trigger": "Reopen with exact matching R7100 geometry source."
+    },
+    {
+      "record_id": "sava-a7l-r7100",
+      "field": "tires",
+      "status": "current-page-trim-mismatch-unresolved",
+      "attempt_record_id": "variant-sava-a7l-r7100-tires-2026-08-17",
+      "source_ids": [
+        "sava-a7l-2026-page-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "700x25C is listed for R08-R7120-24S 2x12, not the frozen target.",
+      "next_trigger": "Reopen with exact matching R7100 build source."
+    },
+    {
+      "record_id": "sava-a7l-r7100",
+      "field": "wheels",
+      "status": "current-page-trim-mismatch-unresolved",
+      "attempt_record_id": "variant-sava-a7l-r7100-wheels-2026-08-17",
+      "source_ids": [
+        "sava-a7l-2026-page-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "700C carbon 24H, 50 mm wheelset is listed for R08-R7120-24S 2x12, not the frozen target.",
+      "next_trigger": "Reopen with exact matching R7100 build source."
+    },
+    {
+      "record_id": "sava-gelaro",
+      "field": "bottom-bracket",
+      "status": "variant-evidence-not-platform-wide",
+      "attempt_record_id": "platform-sava-gelaro-bottom-bracket-2026-08-27",
+      "source_ids": [
+        "sava-gelaro-s4-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Exact S4 R21-GRX400-20S lists BBT47/T47; it does not prove a shared platform value. Removed the unsupported family-level assignment.",
+      "next_trigger": "Reopen on explicit family-wide spec or matching variant evidence."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "cockpit",
+      "status": "partial-main-spec-supported-integration-conflict",
+      "attempt_record_id": "variant-sava-gelaro-s8-cockpit-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Named GRX820 block supports aluminum flared 400x480 mm bar; duplicate RX810 block conflicts on integrated status, which is no longer asserted.",
+      "next_trigger": "Reopen on a clean exact-S8 cockpit spec."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "complete-weight",
+      "status": "approximate-weight-basis-conflicted",
+      "attempt_record_id": "variant-sava-gelaro-s8-complete-weight-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Named GRX820 block claims about 10.2 kg; pedal exclusion is stated in a duplicate RX810 block and cannot be assigned to GRX820.",
+      "next_trigger": "Reopen with exact build, size, included equipment and weighing method."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "drivetrain",
+      "status": "manufacturer-1x12-with-duplicate-label-conflict",
+      "attempt_record_id": "variant-sava-gelaro-s8-drivetrain-2026-08-28",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Main GRX820 block lists 1x12 RX820/RX822 components; duplicate lower RX810 label retained as a page conflict.",
+      "next_trigger": "Reopen if SAVA corrects the duplicated label or component list."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "geometry",
+      "status": "conflicted-duplicate-size-charts",
+      "attempt_record_id": "variant-sava-gelaro-s8-geometry-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Five-size chart resembles A7L; six-size geometry is under duplicate RX810 block. No settled GRX820 geometry published.",
+      "next_trigger": "Reopen on clean S8 GRX820 chart/manual."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "tire-clearance",
+      "status": "manufacturer-claimed-45c",
+      "attempt_record_id": "variant-sava-gelaro-s8-tire-clearance-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Named S8 GRX820 spec lists 700x40C stock tires and up to 45C compatibility; measured width depends on rim/tire.",
+      "next_trigger": "Reopen on exact-S8 revised limit or measured setup basis."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "tires",
+      "status": "manufacturer-stock-700x40c",
+      "attempt_record_id": "variant-sava-gelaro-s8-tires-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Named GRX820 block lists 700x40C; duplicate block repeats this nominal size.",
+      "next_trigger": "Reopen if an exact S8 SKU lists another fitted tire."
+    },
+    {
+      "record_id": "sava-gelaro-s8",
+      "field": "wheels",
+      "status": "manufacturer-700c-aluminum-24h-model-unresolved",
+      "attempt_record_id": "variant-sava-gelaro-s8-wheels-2026-08-17",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Named GRX820 block lists aluminum 700C 24H; DR-35 model label is under duplicate RX810 block and not assigned.",
+      "next_trigger": "Reopen on exact GRX820 wheel model/SKU."
+    },
+    {
+      "record_id": "seka-exaero-gr",
+      "field": "frame-weight",
+      "status": "manufacturer-unpainted-size-54-claim",
+      "attempt_record_id": "platform-seka-exaero-gr-frame-weight-2026-08-27",
+      "source_ids": [
+        "seka-exaero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Exact ExAero GR page reconfirms 980 +/- 35 g for unpainted size 54, excluding paint and hardware.",
+      "next_trigger": "Reopen for painted/SKU-specific or independent measured weight."
+    },
+    {
+      "record_id": "seka-exaero-gr",
+      "field": "geometry",
+      "status": "retained-exact-manufacturer-chart",
+      "attempt_record_id": "platform-seka-exaero-gr-geometry-2026-08-27",
+      "source_ids": [
+        "seka-exaero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current page confirms six sizes and chart link; linked chart is image-only. Retained manufacturer extraction supports stored 49-61 table, 423 mm chainstay and 70-74 mm BB drop.",
+      "next_trigger": "Reopen if SEKA replaces the chart or publishes a revised geometry."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "bom",
+      "status": "official-frameset-package-not-custom-bike-bom",
+      "attempt_record_id": "candidate-seka-spear-rdc-bom-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Official package lists frame, fork, seatpost, Rapier bar, related accessories and aero bottle-cage set; it does not establish the custom complete-bike BOM.",
+      "next_trigger": "Reopen with exact complete-bike SKU or attributable full custom build spec."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "bottom-bracket",
+      "status": "manufacturer-frame-standard-bsa-68",
+      "attempt_record_id": "candidate-seka-spear-rdc-bottom-bracket-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-official-page-recheck-2026-09-23",
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer pages list BSA threaded 68 mm frame standard; BB inclusion in candidate custom build is unknown.",
+      "next_trigger": "Reopen if exact generation differs or standard changes."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "frame",
+      "status": "material-supported-weight-basis-ambiguous",
+      "attempt_record_id": "candidate-seka-spear-rdc-frame-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-official-page-recheck-2026-09-23",
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Material/one-piece molding supported; 685 +/- 35 g bare claim and 729 +/- 35 g M Shadow Black figure have distinct/unclear bases; neither is assigned as MR measurement.",
+      "next_trigger": "Reopen when SEKA clarifies basis or independent MR measurement exists."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "geometry",
+      "status": "size-availability-supported-numeric-rdc-geometry-unknown",
+      "attempt_record_id": "candidate-seka-spear-rdc-geometry-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-official-page-recheck-2026-09-23",
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+        "seka-spear-development-manual-reopen-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Seven sizes are listed, but retained manual is not explicitly mapped to RDC generation. Removed unsupported stack/reach range; dimensions remain unknown.",
+      "next_trigger": "Reopen on text-readable geometry explicitly matched to SPEAR RDC."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "identity",
+      "status": "base-frameset-identity-custom-build-unverified",
+      "attempt_record_id": "candidate-seka-spear-rdc-identity-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Official product is Spear RDC Frameset, which supports base platform identity but not the exact custom complete build.",
+      "next_trigger": "Reopen with attributable exact complete-bike SKU/build record."
+    },
+    {
+      "record_id": "seka-spear-rdc",
+      "field": "image",
+      "status": "official-frameset-gallery-remote-only",
+      "attempt_record_id": "candidate-seka-spear-rdc-image-2026-08-17",
+      "source_ids": [
+        "seka-spear-rdc-frameset-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Existing credited remote gallery image depicts the frameset at exact-platform level; it does not depict the custom build, and reusable rights are not documented.",
+      "next_trigger": "Reopen only for a rights-cleared exact-build image if needed."
+    }
+  ],
+  "integration_notes": [
+    "Integrated only exact-model claims; the current SAVA A7L page is a different 2x12 R08-R7120 build than the frozen R7100 2x11 target.",
+    "Removed the platform-wide Gelaro BB value because the accessible S4 specification alone does not establish a shared family standard.",
+    "Removed integrated=true from the S8 cockpit because the duplicated page blocks conflict on one-piece/integrated status; retained the main named GRX820 aluminum bar material, flare and dimensions.",
+    "Preserved S8 complete weight as an approximate manufacturer claim but revised its basis because the page assigns pedal exclusion only in a duplicate differently labeled RX810 block.",
+    "Removed numerical SPEAR geometry from candidate size text because the retained manufacturer manual is titled Spear without explicit RDC-generation mapping.",
+    "No image was rehosted; the existing SPEAR image remains a remote, credited frameset reference and 212 primary image records remain unchanged.",
+    "No price observation was added; global list prices, current mainland checkout and the custom complete-build price mapping were not newly established.",
+    "Two exact protected values were corrected using scoped field retirements: the unsupported platform-wide Gelaro BB and the S8 integrated-cockpit boolean. Supported exact-variant facts remain active.",
+    "The first full-gate run surfaced the now-corrected all-gaps audit expectation: removing the unsupported platform-wide Gelaro BB exposes one additional unknown field, which is recorded as an active gap."
+  ],
+  "validation": {
+    "coverage_accept": "PASS: npm run --silent coverage:accept; monotonic baseline accepted for 212 images and 277 catalog targets.",
+    "focused_tests": "PASS: node --test tests/data.test.mjs; 69 passed, 0 failed. The newly exposed platform gap is asserted by tests/research-50-audit.test.mjs; 2 passed, 0 failed. npm run --silent coverage:check and git diff --check passed.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy scan, dataset validation, research check, coverage check, 307 tests, 584-page build and SEO audit passed.",
+    "counts": "41 brands, 38 platforms, 41 variants, 73 prices, 1,140 sources, 212 primary images, 236 candidates, 1,465 atomic research records.",
+    "image_report": "Not run; no image records changed."
+  },
+  "new_retirement_records": [
+    "retire-sava-gelaro-platform-bb-unsupported-2026-09-23",
+    "retire-sava-gelaro-s8-integrated-cockpit-2026-09-23"
+  ]
+}

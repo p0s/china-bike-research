@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-a7l-r08-current-2026-08-30"
+    "sava-a7l-r08-current-2026-08-30",
+    "sava-a7l-r08-storefront-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-a7l-r7100-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront exposes US$1,699, stock state and add-to-cart."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-a7l-r7100-batch-042-50-area-sweep-2026-09-01.json. Current exact official storefront exposes US$1,699, stock state and add-to-cart.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "sava-a7l-r08-current-2026-08-30",
+      "sava-a7l-r08-storefront-live-recheck-2026-09-25"
+    ],
+    "note": "Leave the exact target route open. The live US$1,699/In stock route is for R08-R7120-24S, not the retained R7100 mechanical build; mainland shipping, tax, warranty and checkout are unverified."
+  }
 }

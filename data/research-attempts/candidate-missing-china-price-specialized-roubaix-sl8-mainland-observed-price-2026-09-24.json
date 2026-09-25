@@ -1,0 +1,32 @@
+{
+  "id": "candidate-missing-china-price-specialized-roubaix-sl8-mainland-observed-price-2026-09-24",
+  "field": "mainland-observed-price",
+  "searched_at": "2026-09-24",
+  "status": "blocked",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The official China homepage search result exposed a product-card catalog amount, but the exact Tiagra detail page returned only its title and blank inputs. The seller's current selected package, price conditions, stock and final mainland checkout could not be verified, so the catalog amount is not accepted as observed checkout evidence.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized Roubaix SL8 Tiagra 闪电 中国 价格 旗舰店",
+          "route": "Specialized China official-homepage search result and exact Tiagra detail page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.specialized.com.cn/cn/zh/roubaix-sl8---shimano-tiagra/p/4221830",
+          "note": "The official-homepage search result (crawled last week) showed ‘Roubaix SL8 - Shimano Tiagra’, ¥15,990.00 with ¥17,990.00 also displayed, and ‘Buy Now’. The exact product detail page was opened once; extraction showed only the matching title and blank inputs, with no price, package selection, offer terms, stock or checkout. The catalog lead is documented separately and does not establish observed purchase price."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-roubaix-sl8"
+  },
+  "notes": "Disposition: unresolved. Keep observed_price absent and retain the dated catalog offer separately. Reopen when the exact China product or seller page visibly supplies a current selected Tiagra package amount and price conditions or checkout context."
+}

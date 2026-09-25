@@ -490,5 +490,13 @@
     "vook-v8-frame-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/vook-v8e-pro-50-area-sweep-2026-08-30.json. The exact V8 platform manufacturer page publishes maximum tire clearance of 32C."
+  "notes": "B123 reused the exact V8 platform manufacturer maximum of 32C for the V8E Pro chassis. 32C is the nominal tire-size designation, not a measured internal width in millimeters.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "vook-v8-frame-current-2026-08-30"
+    ],
+    "note": "B123 reused the exact V8 platform manufacturer maximum of 32C for the V8E Pro chassis. 32C is the nominal tire-size designation, not a measured internal width in millimeters."
+  }
 }

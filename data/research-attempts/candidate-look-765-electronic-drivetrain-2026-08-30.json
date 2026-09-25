@@ -485,8 +485,18 @@
   "status": "found",
   "accepted_source_ids": [
     "look-765-optimum-current-105-di2-2026-08-30",
-    "look-765-optimum-mainland-options-2026-08-30"
+    "look-765-optimum-mainland-options-2026-08-30",
+    "look-765-optimum-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Every exact electronic variant exposed by the retained mainland listing uses Shimano 105 Di2 electronic 2x12 hydraulic disc."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Every exact electronic variant exposed by the retained mainland listing uses Shimano 105 Di2 electronic 2x12 hydraulic disc.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "look-765-optimum-current-recheck-2026-09-23",
+      "look-765-optimum-mainland-options-2026-08-30"
+    ],
+    "note": "Current LOOK page confirms Shimano 105 Di2 12-speed on an EU RS171-wheel SKU; accepted JD evidence identifies mainland R7170 electronic variants. Retained card wheel selection remains unresolved."
+  }
 }

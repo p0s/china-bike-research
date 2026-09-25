@@ -1,0 +1,52 @@
+{
+  "id": "candidate-irefox-by446-complete-weight-2026-08-30-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "irefox-by446"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-irefox-by446-complete-weight-2026-08-30",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-irefox-by446-complete-weight",
+    "extends_attempt_id": "candidate-irefox-by446-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One fresh exact-model search checked complete-weight; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-irefox-by446-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The manufacturer catalog result names ORIN DI2, NIMPLE DI2, VULPES DI2 and LIGHT DI2, not BY446. Model mismatch; no weight or drivetrain value qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX 火之狐 BY446 山地全地形车 官方型号参数 配置 整车重量 变速系统",
+          "route": "Newly surfaced IREFOX catalog result, not the BY446 model.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The manufacturer catalog result names ORIN DI2, NIMPLE DI2, VULPES DI2 and LIGHT DI2, not BY446. Model mismatch; no weight or drivetrain value qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The manufacturer catalog result names ORIN DI2, NIMPLE DI2, VULPES DI2 and LIGHT DI2, not BY446. Model mismatch; no weight or drivetrain value qualifies."
+}

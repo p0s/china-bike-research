@@ -1,0 +1,289 @@
+{
+  "batch_id": "gap-fill-batch-12-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-12-scope.json",
+  "scope_count": {
+    "exact_models": 8,
+    "atomic_fields": 25
+  },
+  "completed_at": "2026-09-23",
+  "results": [
+    {
+      "record_id": "basso-venta-disc",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-basso-venta-disc-frame-material-2026-08-29",
+      "source_ids": ["basso-venta-disc-retailer-2026-08-29"],
+      "note": "Existing candidate fact is supported for the older-generation Venta Disc 105 by the retailer: UD Torayca TR50/MR60 monocoque frame and full-carbon TR50 fork. Current Venta R construction is not transferred."
+    },
+    {
+      "record_id": "basso-venta-disc",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-basso-venta-disc-frame-stiffness-2026-08-29",
+      "source_ids": ["basso-venta-disc-roadcc-2026-08-29"],
+      "note": "Existing fact retains the exact 2023 review's qualitative lower-frame stiffness and comfortable rear-end description. No numeric stiffness or deflection measurement is claimed."
+    },
+    {
+      "record_id": "basso-venta-disc",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-basso-venta-disc-identity-source-2026-08-29",
+      "source_ids": ["basso-venta-disc-retailer-2026-08-29"],
+      "note": "The accepted exact retailer source identifies the old Venta Disc 105 model; its identity remains separate from current Venta R and does not identify the unrelated mainland listing's trim."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "bottom-bracket",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
+      "source_ids": ["bianchi-oltre-race-dealer-2026-08-17"],
+      "note": "The exact Oltre Race 105 dealer source supports PF86.5/SM-BB72-41B; this regional specification is already recorded on the platform."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "frame",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "variant-bianchi-oltre-race-frame-2026-08-17",
+      "source_ids": ["bianchi-oltre-race-armenia-2026-08-17"],
+      "note": "The exact regional Oltre Race 105 12-speed page supports the carbon aero frame and full-carbon fork; region-specific equipment remains separate from the mainland reference build."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-bianchi-oltre-race-frame-material-2026-08-30",
+      "source_ids": ["bianchi-oltre-race-current-official-2026-08-30"],
+      "note": "The current exact YTB8D page supports an aero-carbon frame and full-carbon aero fork; fiber grade and lay-up remain unpublished."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "geometry",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-bianchi-oltre-race-geometry-2026-08-30",
+      "source_ids": ["bianchi-oltre-race-current-official-2026-08-30"],
+      "note": "The exact YTB8D platform already stores the current manufacturer eight-size geometry table in millimetres and degrees."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "image",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "variant-bianchi-oltre-race-image-2026-08-17",
+      "source_ids": ["bianchi-oltre-race-current-official-2026-08-30"],
+      "note": "The existing exact YTB8D primary image is a remote official-page embed with Bianchi credit, exact alt text and no asserted rehosting license."
+    },
+    {
+      "record_id": "bianchi-oltre-race",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-bianchi-oltre-race-tire-clearance-2026-08-30",
+      "source_ids": ["bianchi-oltre-race-manual-2026-08-30"],
+      "note": "The exact Bianchi Oltre Race Disc manual's 28 mm maximum is already recorded; higher secondary fit claims are not substituted for it."
+    },
+    {
+      "record_id": "bianchi-sprint-icr",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bianchi-sprint-icr-tire-clearance-2026-09-01",
+      "source_ids": ["bianchi-sprint-icr-uk-clearance-2026-09-01"],
+      "note": "The exact current regional Sprint ICR manufacturer page's 700×32C maximum is already recorded on the candidate; it is not a fitted-tire claim."
+    },
+    {
+      "record_id": "bigrock-sohtea",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bigrock-sohtea-frame-stiffness-2026-09-01",
+      "source_ids": ["china-cycling-bigrock-sohtea-long-term"],
+      "note": "Existing candidate fact preserves exact regular-Sohtea owner-review descriptions of lateral stiffness and out-of-saddle response as qualitative evidence only."
+    },
+    {
+      "record_id": "bigrock-sohtea",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bigrock-sohtea-frame-weight-2026-09-01",
+      "source_ids": ["bigrock-sohtea-panda-podium-2026-08-17", "china-cycling-bigrock-sohtea-long-term"],
+      "note": "The candidate already stores XXS–XL frame-only claims with ±5% tolerance and an approximately 780 g regular-XS corroboration; XXL weight is unpublished."
+    },
+    {
+      "record_id": "bigrock-sohtea",
+      "field": "price",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bigrock-sohtea-price-2026-09-01",
+      "source_ids": ["bigrock-sohtea-panda-podium-2026-08-17", "ecb-reference-rates-2026-08-31"],
+      "note": "The candidate already records the regular frameset at US$1,199 and an ECB-derived CNY 8,057 reference. This is not a mainland checkout or delivered price."
+    },
+    {
+      "record_id": "bigrock-sohtea",
+      "field": "purchase-route",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bigrock-sohtea-purchase-route-2026-08-17",
+      "source_ids": ["bigrock-sohtea-panda-podium-2026-08-17"],
+      "note": "The exact product page exposes a foreign add-to-cart route, now recorded on the candidate. Mainland stock, delivery, duties and checkout remain unknown."
+    },
+    {
+      "record_id": "bxt-055",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-bxt-055-frame-stiffness-2026-09-01",
+      "source_ids": ["bxt-055-owner-stiffness-2026-09-01"],
+      "note": "The platform already records an exact-owner qualitative BXT-055 versus BXT-135 stiffness comparison; it is not instrumented evidence."
+    },
+    {
+      "record_id": "bxt-055",
+      "field": "geometry",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-bxt-055-geometry-2026-09-01",
+      "source_ids": ["bxt-055-bikeinsights-geometry-2026-09-01"],
+      "note": "The platform already stores the six-size 2026 table as an independent transcription attributed to bxtbikes.com, not primary geometry evidence."
+    },
+    {
+      "record_id": "bxt-gravel-complete",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bxt-gravel-complete-complete-weight-2026-08-28",
+      "source_ids": ["bxt-135-supplier-weight-2026-08-30"],
+      "note": "The exact BXT-135 GRX 1×11/carbon-wheel offer's 7.85 kg reference is already recorded; size, paint and weighing exclusions remain unstated."
+    },
+    {
+      "record_id": "bxt-gravel-complete",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-bxt-gravel-complete-drivetrain-2026-08-28",
+      "source_ids": ["bxt-135-official-build-2026-08-30"],
+      "note": "The exact BXT-135 GRX 1×11 build and named hydraulic components are already stored; the separate 2×11 sibling is excluded."
+    },
+    {
+      "record_id": "camp-ace-gen3-105",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-gen3-105-complete-weight-2026-08-29",
+      "source_ids": ["camp-ace-gen3-105-official-2026-08-29"],
+      "note": "The candidate stores CAMP's approximately 7.1 kg small-bike claim excluding pedals and small accessories; it is not a precise all-sizes value."
+    },
+    {
+      "record_id": "camp-ace-gen3-105",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-gen3-105-drivetrain-2026-08-29",
+      "source_ids": ["camp-ace-gen3-105-official-2026-08-29"],
+      "note": "The exact ACE Gen 3 105 source supports the recorded Shimano 105 Di2 2×12 components and Novatec R5 wheels."
+    },
+    {
+      "record_id": "camp-ace-gen3-105",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-gen3-105-frame-material-2026-08-29",
+      "source_ids": ["camp-ace-gen3-105-official-2026-08-29"],
+      "note": "The exact manufacturer page supports a Toray T800 high-strength carbon frame and fork; detailed lay-up and molding remain unpublished."
+    },
+    {
+      "record_id": "camp-ace-gen3-105",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-gen3-105-identity-source-2026-08-29",
+      "source_ids": ["camp-ace-gen3-105-official-2026-08-29"],
+      "note": "CAMP's exact ACE Gen 3 105 manufacturer page identifies the model and links its official CNY 12,999 offer."
+    },
+    {
+      "record_id": "camp-ace-qed",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-qed-complete-weight-2026-08-29",
+      "source_ids": ["camp-ace-qed-official-2026-08-08"],
+      "note": "The candidate stores CAMP's approximately 8.7 kg small-bike claim excluding pedals and small accessories; it is not a precise all-sizes value."
+    },
+    {
+      "record_id": "camp-ace-qed",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-qed-drivetrain-2026-08-29",
+      "source_ids": ["camp-ace-qed-official-2026-08-08"],
+      "note": "The exact ACE QED source supports the recorded Magene QED electronic 2×12 build, named crank/cassette, and hydraulic brakes."
+    },
+    {
+      "record_id": "camp-ace-qed",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-qed-frame-material-2026-08-29",
+      "source_ids": ["camp-ace-qed-official-2026-08-08"],
+      "note": "The exact ACE QED manufacturer page supports its Toray T800 carbon thru-axle frame and fork; detailed lay-up and molding are unpublished."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": ["data/candidates/bigrock-sohtea.json"],
+    "platform_variant_price_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-basso-venta-disc-frame-material-2026-08-29",
+      "candidate-basso-venta-disc-frame-stiffness-2026-08-29",
+      "candidate-basso-venta-disc-identity-source-2026-08-29",
+      "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
+      "variant-bianchi-oltre-race-frame-2026-08-17",
+      "platform-bianchi-oltre-race-frame-material-2026-08-30",
+      "platform-bianchi-oltre-race-geometry-2026-08-30",
+      "variant-bianchi-oltre-race-image-2026-08-17",
+      "platform-bianchi-oltre-race-tire-clearance-2026-08-30",
+      "candidate-bianchi-sprint-icr-tire-clearance-2026-09-01",
+      "candidate-bigrock-sohtea-frame-stiffness-2026-09-01",
+      "candidate-bigrock-sohtea-frame-weight-2026-09-01",
+      "candidate-bigrock-sohtea-price-2026-09-01",
+      "candidate-bigrock-sohtea-purchase-route-2026-08-17",
+      "platform-bxt-055-frame-stiffness-2026-09-01",
+      "platform-bxt-055-geometry-2026-09-01",
+      "candidate-bxt-gravel-complete-complete-weight-2026-08-28",
+      "candidate-bxt-gravel-complete-drivetrain-2026-08-28",
+      "candidate-camp-ace-gen3-105-complete-weight-2026-08-29",
+      "candidate-camp-ace-gen3-105-drivetrain-2026-08-29",
+      "candidate-camp-ace-gen3-105-frame-material-2026-08-29",
+      "candidate-camp-ace-gen3-105-identity-source-2026-08-29",
+      "candidate-camp-ace-qed-complete-weight-2026-08-29",
+      "candidate-camp-ace-qed-drivetrain-2026-08-29",
+      "candidate-camp-ace-qed-frame-material-2026-08-29"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 789,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "images": 212,
+    "catalog_targets": 277,
+    "note": "data:gaps category counts are unchanged; 25 more already-integrated atomic evidence items now have dated source-reuse resolutions and no longer appear in the evidence-found queue."
+  },
+  "validation": {
+    "research_check": "passed; 1461 atomic fields, 15448 public-post and 35469 web attempts",
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via developer-storage-cache and codex-pnpm-check; privacy, data validation (236 candidates), research ledger, coverage, 307 tests, 584-page build, and SEO audit passed (456 indexable / 128 noindex)",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed before the full gate; rerun after final batch-record edits"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

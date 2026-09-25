@@ -1,0 +1,61 @@
+{
+  "id": "candidate-hi-light-g0-price-b148-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-g0"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-hi-light-g0-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light 航轮 G0 车架组 现货 官方店 人民币 价格 2026 mainland",
+          "route": "Fresh exact-model mainland observed-price query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No current exact mainland CNY listing surfaced. The official CNY 15,900 amount is suggested retail and the recorded mainland mall route returned placeholders. Search also surfaced Japanese dealer prices in JPY, excluded as foreign-market evidence; no new page was opened."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "titanium-hi-light-g0-official"
+  ],
+  "retry_after": null,
+  "notes": "The mainland observed-price gap remains; MSRP and foreign JPY amounts do not establish a current mainland seller listing.",
+  "retry_of": "candidate-hi-light-g0-price-2026-09-01",
+  "retry_reason": "A new current mainland price query tests for seller listing changes since the 2026-09-01 extended campaign.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-148-hi-light-g0-price",
+    "extends_attempt_id": "candidate-hi-light-g0-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-148-scope.json",
+    "reason": "A fresh dated exact-model query checks for a current mainland seller listing after the 2026-09-01 campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "titanium-hi-light-g0-official"
+    ],
+    "note": "Reuse the linked exact official manufacturer page for CNY 15,900 dated retail evidence. The 2026-09-25 mainland query found no current seller listing, and the later manufacturer route returned 403; live stock and checkout remain unknown. Keep price-not-observed open and reopen on new current order evidence."
+  }
+}

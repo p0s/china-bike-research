@@ -6,7 +6,7 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -487,8 +487,21 @@
   "accepted_source_ids": [
     "winspace-t1600-105-di2-2026-08-30",
     "winspace-t1600-ultegra-di2-2026-08-30",
-    "winspace-t1600-dura-ace-di2-2026-08-30"
+    "winspace-t1600-dura-ace-di2-2026-08-30",
+    "winspace-t1600-105-di2-current-recheck-2026-09-25",
+    "winspace-t1600-ultegra-di2-current-recheck-2026-09-25",
+    "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-t1600-batch-024-50-area-sweep-2026-08-30.json. The three option-specific manufacturer weights are preserved as references; no single value is assigned and no T1600 Ultra value is transferred."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-t1600-batch-024-50-area-sweep-2026-08-30.json. The three option-specific manufacturer weights are preserved as references; no single value is assigned and no T1600 Ultra value is transferred.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "winspace-t1600-105-di2-current-recheck-2026-09-25",
+      "winspace-t1600-ultegra-di2-current-recheck-2026-09-25",
+      "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25"
+    ],
+    "note": "Current original-T1600 manufacturer pages confirm distinct size-M/no-pedals references of approximately 8.0 kg (105 Di2), 7.6 kg (Ultegra Di2), and 7.2 kg (Dura-Ace Di2). The CNY 22,400 coupon card is not mapped to a trim; T1600 Ultra is excluded. The retained mainland coupon trim remains unmapped, so the selected build field stays unresolved."
+  }
 }

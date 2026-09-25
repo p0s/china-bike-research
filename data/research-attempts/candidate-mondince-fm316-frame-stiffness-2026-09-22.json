@@ -13,7 +13,7 @@
   ],
   "channels": {
     "web": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -23,11 +23,27 @@
           "accessed_at": "2026-09-22",
           "note": "Generic stiffness adjectives and test claims lack a measured result or named comparator.",
           "result_url": "https://www.mondincecycle.com/product/2026-aero-design-t47-bracket-gravel-bike-frame-fm316"
+        },
+        {
+          "attempt": 2,
+          "query": "site:road.cc \"Mondince FM316\" stiffness flex test review",
+          "route": "road.cc independent test-publication search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model road.cc test or stiffness report surfaced."
+        },
+        {
+          "attempt": 3,
+          "query": "site:cyclingtips.com \"Mondince FM316\" stiffness flex test review",
+          "route": "CyclingTips independent review-publication search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model independent test or stiffness report surfaced."
         }
       ]
     },
     "public-post": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -37,12 +53,29 @@
           "accessed_at": "2026-09-22",
           "note": "Comfort compared with an unnamed prior frame does not establish a frame-stiffness comparison.",
           "result_url": "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+        },
+        {
+          "attempt": 2,
+          "query": "site:chinertown.com \"Mondince FM316\" stiffness OR flex OR test",
+          "route": "Chinertown exact-model owner-forum search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "Thread reports rider use and qualitative road-feel impressions, but no measured stiffness or controlled comparator; remarks about a more solid setup describe the different FM326.",
+          "result_url": "https://chinertown.com/index.php/topic,6336.225.html"
+        },
+        {
+          "attempt": 3,
+          "query": "site:reddit.com \"Mondince FM316\" stiffness flex torsional ride",
+          "route": "Reddit exact-model owner-report search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No additional exact-model measured stiffness result or controlled comparison surfaced."
         }
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Next: measured exact-model test or attributable named comparative ride evidence. Partial channels remain open."
+  "retry_after": "2026-10-23",
+  "notes": "No stiffness result established. The Chinertown FM316 ride report is retained as rejected for this field because its ride impressions are not a measured test or controlled comparison; the web and public-post channels remain open. Public-post channel reached its three-attempt limit; the web channel remains open. A separate road.cc test-publication search returned no exact FM316 result; the web channel remains open. No exact FM316 measurement or controlled comparison was found across the three web attempts; no value is inferred."
 }

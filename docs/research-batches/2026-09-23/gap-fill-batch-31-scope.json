@@ -1,0 +1,180 @@
+{
+  "batch_id": "gap-fill-batch-31-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 434,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "queue_filter_matches": {
+      "source_reuse": 19,
+      "known_duplicate": 2,
+      "completed_campaign_and_50_attempts": 224,
+      "other_attempts_50_or_more": 42,
+      "excluded_union": 270,
+      "eligible_unswept_fields": 164
+    }
+  },
+  "selection_basis": "First 25 atomic evidence-found fields in fresh queue order after excluding source-reuse-resolved fields, the known java-aluminum-24s duplicate, completed 50-area campaign fields, and all other rows with at least 50 recorded channel approaches; cap at 10 exact target records. Exclusion categories can overlap; excluded_union is the distinct-row count.",
+  "exact_model_count": 6,
+  "atomic_field_count": 25,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "sava-a4",
+    "sava-a7l-r7100",
+    "sava-gelaro",
+    "sava-gelaro-s8",
+    "seka-exaero-gr",
+    "seka-spear-rdc"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a4",
+      "exact_identity": "SAVA A4",
+      "fields": [
+        "identity",
+        "image",
+        "purchase-route",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-sava-a4-identity-2026-08-17",
+        "candidate-sava-a4-image-2026-08-17",
+        "candidate-sava-a4-purchase-route-2026-08-17",
+        "candidate-sava-a4-tire-clearance-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-a7l-r7100",
+      "exact_identity": "SAVA A7L R7100 2×11 complete-bike variant",
+      "fields": [
+        "bottom-bracket",
+        "cockpit",
+        "geometry",
+        "tires",
+        "wheels"
+      ],
+      "attempt_ids": [
+        "variant-sava-a7l-r7100-bottom-bracket-2026-08-17",
+        "variant-sava-a7l-r7100-cockpit-2026-08-17",
+        "variant-sava-a7l-r7100-geometry-2026-08-17",
+        "variant-sava-a7l-r7100-tires-2026-08-17",
+        "variant-sava-a7l-r7100-wheels-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "exact_identity": "SAVA Gelaro carbon road-bike platform",
+      "fields": [
+        "bottom-bracket"
+      ],
+      "attempt_ids": [
+        "platform-sava-gelaro-bottom-bracket-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s8",
+      "exact_identity": "SAVA Gelaro S8 GRX820 complete-bike variant",
+      "fields": [
+        "cockpit",
+        "complete-weight",
+        "drivetrain",
+        "geometry",
+        "tire-clearance",
+        "tires",
+        "wheels"
+      ],
+      "attempt_ids": [
+        "variant-sava-gelaro-s8-cockpit-2026-08-17",
+        "variant-sava-gelaro-s8-complete-weight-2026-08-17",
+        "variant-sava-gelaro-s8-drivetrain-2026-08-28",
+        "variant-sava-gelaro-s8-geometry-2026-08-17",
+        "variant-sava-gelaro-s8-tire-clearance-2026-08-17",
+        "variant-sava-gelaro-s8-tires-2026-08-17",
+        "variant-sava-gelaro-s8-wheels-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "seka-exaero-gr",
+      "exact_identity": "SEKA ExAero GR platform",
+      "fields": [
+        "frame-weight",
+        "geometry"
+      ],
+      "attempt_ids": [
+        "platform-seka-exaero-gr-frame-weight-2026-08-27",
+        "platform-seka-exaero-gr-geometry-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seka-spear-rdc",
+      "exact_identity": "SEKA SPEAR RDC candidate build",
+      "fields": [
+        "bom",
+        "bottom-bracket",
+        "frame",
+        "geometry",
+        "identity",
+        "image"
+      ],
+      "attempt_ids": [
+        "candidate-seka-spear-rdc-bom-2026-08-17",
+        "candidate-seka-spear-rdc-bottom-bracket-2026-08-17",
+        "candidate-seka-spear-rdc-frame-2026-08-17",
+        "candidate-seka-spear-rdc-geometry-2026-08-17",
+        "candidate-seka-spear-rdc-identity-2026-08-17",
+        "candidate-seka-spear-rdc-image-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research only these 25 frozen fields, sequentially one exact target and source at a time; stop at decisive exact-model evidence.",
+    "Do not repeat completed 50-area campaign fields, fields with source-reuse resolutions, or rows with at least 50 recorded channel attempts. Reuse accepted exact-model evidence only when it answers the exact field.",
+    "Distinguish platform, exact complete-bike variant, selected SKU, size, market, package, price/checkout, and measurement basis; do not transfer sibling or regional facts.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited states with explicit reason and reopen trigger; never infer exact values or treat missing data as negative evidence.",
+    "For image fields, do not download or rehost third-party assets without documented reusable rights, exactness, credit and alt text.",
+    "Luna is evidence-only: no repository edits, seller contact, XHS use, recursive delegation, or out-of-scope research. Root integrates as sole writer.",
+    "Return every field with source URL or retained source ID, source class/publisher, actual access date, exact configuration match, supported claim, limitation, disposition and concrete reopen trigger."
+  ]
+}

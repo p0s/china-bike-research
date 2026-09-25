@@ -1,0 +1,52 @@
+{
+  "id": "platform-bianchi-oltre-race-frame-weight-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "platform",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "frame-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "platform-bianchi-oltre-race-frame-weight-2026-08-30",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Do not transfer Oltre RC or full-bike weights.",
+  "campaign_extension": {
+    "id": "b137-bianchi-oltre-race-frame-weight",
+    "extends_attempt_id": "platform-bianchi-oltre-race-frame-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-137-scope.json",
+    "reason": "One exact-field web attempt was authorized after the frozen predecessor sweep; no repeated route or additional source area was authorized.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-bianchi-oltre-race-frame-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No new exact Oltre Race frame-only mass or size/finish basis surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race YTB8D exact frame-only weight size finish basis",
+          "route": "One focused exact-model search for an Oltre Race frame-only measurement",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.bianchi.com/shop/bikes/road/aero/oltre/oltre-race-3/",
+          "note": "The current exact manufacturer page URL is already recorded in the predecessor history and was not reopened. Search results did not show frame-only mass; an unrelated Oltre RC weight and previously logged discussion do not establish the Oltre Race value."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Do not transfer Oltre RC or full-bike weights."
+}

@@ -1,0 +1,265 @@
+{
+  "batch": 166,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-166-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "exact_records": 7,
+    "atomic_fields": 18,
+    "read_only_evidence_audit": "The Luna evidence agent reviewed the linked sources, current attempts, and applicable 50-area histories. None of the 18 fields had evidence sufficient to promote a value for the retained exact candidate. Existing source records were linked to field-specific blocked dispositions; earlier attempts and the B151 qualitative PARDUS stiffness note were preserved.",
+    "research_attempts_added": 0,
+    "research_attempts_updated_in_place": 18,
+    "new_queries": 0,
+    "page_opens": 0,
+    "new_sources": 0,
+    "candidate_fact_changes": 0,
+    "catalog_gap_entries_reduced": 0,
+    "images_added": 0,
+    "image_records_changed": 0,
+    "attempts": [
+      {
+        "record_id": "alums-da54",
+        "field": "complete-weight",
+        "attempt_id": "candidate-alums-da54-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "alvas-da54-independent-review-2026-08-29"
+        ],
+        "unresolved_reason": "The opened KOU8 claim is 8.9 kg with no size, equipment, or weighing basis and no source-record ID; the linked Australian review reports an 8.4 kg Ultegra/Helux build that does not map to the retained mainland listing.",
+        "result_url": "https://www.kou8.com/wenzhang/c911a410-25d4-11f1-a6c1-01d429d18fb4"
+      },
+      {
+        "record_id": "alums-da54",
+        "field": "drivetrain",
+        "attempt_id": "candidate-alums-da54-drivetrain-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "alvas-da54-official-2026-08-29",
+          "alvas-da54-australia-2026-08-29"
+        ],
+        "unresolved_reason": "The global Ultegra Di2 and Australian 105 Di2 builds do not identify the drivetrain of the retained mainland option; the KOU8 7120 claim is unmapped.",
+        "result_url": "https://www.kou8.com/wenzhang/c911a410-25d4-11f1-a6c1-01d429d18fb4"
+      },
+      {
+        "record_id": "falco-t91-t912",
+        "field": "complete-weight",
+        "attempt_id": "candidate-falco-t91-t912-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "falco-t912-official-current-2026-09-23",
+          "falco-t912-retailer-2026-08-29"
+        ],
+        "unresolved_reason": "The 10.5 kg reports belong to separate DA9280 and 105 R7100 reference builds, not a selected retained option; no qualifying size or weighing basis is established.",
+        "result_url": "https://www.jd.com/book/13186d743a138b267f83.html"
+      },
+      {
+        "record_id": "falco-t91-t912",
+        "field": "drivetrain",
+        "attempt_id": "candidate-falco-t91-t912-drivetrain-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "falco-t912-jd-2026-08-29",
+          "falco-t912-official-current-2026-09-23",
+          "falco-t912-retailer-2026-08-29"
+        ],
+        "unresolved_reason": "The exact-source options describe different builds, and the retained T912 mainland configuration is not selected.",
+        "result_url": "https://www.jd.com/book/13186d743a138b267f83.html"
+      },
+      {
+        "record_id": "falco-t91-t912",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-falco-t91-t912-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "falco-t912-official-current-2026-09-23"
+        ],
+        "unresolved_reason": "The official T912 source does not state a maximum; fitted tire widths do not establish one.",
+        "result_url": "https://www.jd.com/book/13186d743a138b267f83.html"
+      },
+      {
+        "record_id": "gios-aerolite",
+        "field": "complete-weight",
+        "attempt_id": "candidate-gios-aerolite-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "gios-aero-lite-taiwan-current-2026-09-23"
+        ],
+        "unresolved_reason": "The linked Taiwan source covers an older AERO LITE platform and builds, not the retained listing whose generation and trim are unresolved."
+      },
+      {
+        "record_id": "gios-aerolite",
+        "field": "drivetrain",
+        "attempt_id": "candidate-gios-aerolite-drivetrain-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "gios-aero-lite-taiwan-current-2026-09-23",
+          "gios-apac-aero-lite-gen5-current-2026-09-23"
+        ],
+        "unresolved_reason": "The linked sources describe older Di2 builds and a separate GEN5 generation; neither maps to the retained listing."
+      },
+      {
+        "record_id": "gios-aerolite",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-gios-aerolite-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "gios-apac-aero-lite-gen5-current-2026-09-23"
+        ],
+        "unresolved_reason": "GEN5 compatibility with 32C is not a maximum and does not map to the unresolved listing generation."
+      },
+      {
+        "record_id": "kung-horizon",
+        "field": "complete-weight",
+        "attempt_id": "candidate-kung-horizon-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kung-horizon-jd-2026-08-30",
+          "kung-horizon-biketo-2018"
+        ],
+        "unresolved_reason": "The JD index lists distinct current HORIZON trims without bike weights; Biketo reports only a frame weight for an older generation.",
+        "result_url": "https://www.jd.com/xinghao/13182df9fbe0567b03bf.html"
+      },
+      {
+        "record_id": "kung-horizon",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-kung-horizon-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "kung-horizon-jd-2026-08-30",
+          "kung-horizon-biketo-2018"
+        ],
+        "unresolved_reason": "Biketo’s 28C statement is for an older frame and is not a maximum; the current JD trims do not state clearance or map to the retained option.",
+        "result_url": "https://www.jd.com/xinghao/13182df9fbe0567b03bf.html"
+      },
+      {
+        "record_id": "nscr-carbon-gravel-storage",
+        "field": "drivetrain",
+        "attempt_id": "candidate-nscr-carbon-gravel-storage-drivetrain-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08"
+        ],
+        "unresolved_reason": "The seller snapshot supplies a 400 ml storage claim but no exact product identity bridge or selected drivetrain."
+      },
+      {
+        "record_id": "nscr-carbon-gravel-storage",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-nscr-carbon-gravel-storage-frame-stiffness-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08"
+        ],
+        "unresolved_reason": "The seller snapshot does not establish an exact product identity or meaningful stiffness evidence."
+      },
+      {
+        "record_id": "nscr-carbon-gravel-storage",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-nscr-carbon-gravel-storage-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08"
+        ],
+        "unresolved_reason": "The seller snapshot does not establish an exact product identity or a maximum tire clearance."
+      },
+      {
+        "record_id": "paragon-jazz-2026",
+        "field": "complete-weight",
+        "attempt_id": "candidate-paragon-jazz-2026-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "paragon-jazz-jd-2026-08-30",
+          "paragon-jazz-jd-index-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "The JD sources distinguish JAZZ/JAZZ Plus and contain title or option conflicts; neither supplies a selected complete-bike weight."
+      },
+      {
+        "record_id": "paragon-jazz-2026",
+        "field": "frame-stiffness",
+        "attempt_id": "candidate-paragon-jazz-2026-frame-stiffness-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "paragon-jazz-jd-2026-08-30",
+          "paragon-jazz-jd-index-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "The linked JD sources do not provide an exact-model stiffness result, and the selected configuration remains conflicted."
+      },
+      {
+        "record_id": "paragon-jazz-2026",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-paragon-jazz-2026-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "paragon-jazz-jd-2026-08-30",
+          "paragon-jazz-jd-index-recheck-2026-09-23"
+        ],
+        "unresolved_reason": "No linked source states an exact-model maximum tire clearance."
+      },
+      {
+        "record_id": "pardus-super-sport",
+        "field": "complete-weight",
+        "attempt_id": "candidate-pardus-super-sport-complete-weight-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "pardus-super-sport-review-biketo-2026-08-30"
+        ],
+        "unresolved_reason": "The 9.5 kg Biketo review bike has an unspecified build and weighing basis and is not the retained fluorescent 105 HDB package."
+      },
+      {
+        "record_id": "pardus-super-sport",
+        "field": "tire-clearance",
+        "attempt_id": "candidate-pardus-super-sport-tire-clearance-b151-2026-09-25",
+        "final_status": "blocked",
+        "source_ids": [
+          "pardus-super-sport-review-biketo-2026-08-30",
+          "pardus-super-sport-original-official-2026-08-30"
+        ],
+        "unresolved_reason": "The review’s 23C test tires are not a maximum, and the original-generation official source states no maximum."
+      }
+    ]
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public_post": 15450,
+      "web": 35890
+    },
+    "research_status_counts": {
+      "blocked": 363,
+      "conflicted": 35,
+      "found": 15,
+      "open": 26,
+      "temporarily-exhausted": 4
+    },
+    "queue": {
+      "ready": 26,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 541,
+      "conflicted": 1
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_acceptance": "accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "developer-storage-cache run -- codex-pnpm-check check",
+      "outcome": "passed after removing an absolute local path from B165 documentation",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation": "1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+      "tests": "333/333 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "git_diff_check": "passed",
+    "image_report": "not run; no image records changed"
+  }
+}

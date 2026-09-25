@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
+import { validateImageHealthCheck } from './image-health.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -618,7 +619,7 @@ export function validateDataset(data = loadDataset()) {
       for (const key of ['amount_cny', 'low_cny', 'high_cny']) {
         if (candidatePrice[key] !== undefined && (typeof candidatePrice[key] !== 'number' || candidatePrice[key] <= 0)) errors.push(`candidate ${candidate.id}: invalid ${priceKey}.${key}`);
       }
-      if (candidatePrice.price_type === 'reference-conversion') {
+      if (['reference-conversion', 'seller-listing-reference-conversion'].includes(candidatePrice.price_type)) {
         if (priceKey !== 'official_price') errors.push(`candidate ${candidate.id}: reference conversion must use official_price`);
         if (typeof candidatePrice.original_amount !== 'number' || candidatePrice.original_amount <= 0) errors.push(`candidate ${candidate.id}: reference conversion needs original_amount`);
         if (typeof candidatePrice.original_currency !== 'string' || !candidatePrice.original_currency.trim() || candidatePrice.original_currency === 'CNY') errors.push(`candidate ${candidate.id}: reference conversion needs a foreign original_currency`);
@@ -682,6 +683,17 @@ export function validateDataset(data = loadDataset()) {
     if (!isObject(image.rights) || !rightsValues.has(image.rights?.status)) errors.push(`image ${image.id}: invalid rights status`);
     if (typeof image.alt !== 'string' || image.alt.trim().length < 10) errors.push(`image ${image.id}: alt text is too short`);
     if (typeof image.credit !== 'string' || image.credit.trim().length < 3) errors.push(`image ${image.id}: credit is required`);
+    errors.push(...validateImageHealthCheck(image));
+    if (image.review_evidence !== undefined) {
+      const review = image.review_evidence;
+      if (!review || typeof review !== 'object' || Array.isArray(review)) errors.push(`image ${image.id}: review_evidence must be an object`);
+      else {
+        if (!isDate(review.reviewed_at)) errors.push(`image ${image.id}: invalid review_evidence.reviewed_at`);
+        if (typeof review.conclusion !== 'string' || !review.conclusion.trim()) errors.push(`image ${image.id}: review_evidence.conclusion is required`);
+        if (!Array.isArray(review.source_ids) || !review.source_ids.length) errors.push(`image ${image.id}: review_evidence.source_ids is required`);
+        for (const sourceId of review.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`image ${image.id}: missing review source ${sourceId}`);
+      }
+    }
     for (const variantId of image.variant_ids ?? []) {
       const variant = variantsById.get(variantId);
       if (!variant) errors.push(`image ${image.id}: missing variant ${variantId}`);

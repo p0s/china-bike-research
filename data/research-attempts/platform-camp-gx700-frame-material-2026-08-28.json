@@ -1,20 +1,45 @@
 {
   "id": "platform-camp-gx700-frame-material-2026-08-28",
-  "target": { "record_type": "platform", "record_id": "camp-gx700" },
+  "target": {
+    "record_type": "platform",
+    "record_id": "camp-gx700"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "CAMP GX700 T800 carbon frame construction", "route": "manufacturer current exact-model product page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.campbicycle.com/gravel_92368/gx700.html", "note": "Current page identifies a Toray T800 carbon thru-axle frame and fork plus T700 and T800 carbon cockpit and seatpost; lay-up and molding process remain unpublished." }
+        {
+          "attempt": 1,
+          "query": "CAMP GX700 T800 carbon frame construction",
+          "route": "manufacturer current exact-model product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.campbicycle.com/gravel_92368/gx700.html",
+          "note": "Current page identifies a Toray T800 carbon thru-axle frame and fork plus T700 and T800 carbon cockpit and seatpost; lay-up and molding process remain unpublished."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["camp-gx700-official-2026-08-28"],
+  "accepted_source_ids": [
+    "camp-gx700-official-2026-08-28",
+    "camp-gx700-cn-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "Exact published fiber information is recorded without inferring unlisted construction details."
+  "notes": "Exact published fiber information is recorded without inferring unlisted construction details.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "camp-gx700-official-2026-08-28",
+      "camp-gx700-cn-official-recheck-2026-09-23"
+    ],
+    "note": "Current manufacturer page specifies T800 carbon frame/fork and T700+T800 integrated bar/seatpost; layup details are unpublished. Reopen if CAMP changes generation/material or publishes layup detail."
+  }
 }

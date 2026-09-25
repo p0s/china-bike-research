@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "seka-exaero-gr-official-store-2026-09-01"
+    "seka-exaero-gr-official-store-2026-09-01",
+    "seka-exaero-gr-current-store-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-seka-exaero-gr-frameset-batch-048-50-area-sweep-2026-09-01.json. Current exact-model official Shop Now route found for US and Canada; mainland terms remain confirm-before-payment."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-seka-exaero-gr-frameset-batch-048-50-area-sweep-2026-09-01.json. Current exact-model official Shop Now route found for US and Canada; mainland terms remain confirm-before-payment.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "seka-exaero-gr-official-store-2026-09-01",
+      "seka-exaero-gr-current-store-recheck-2026-09-25"
+    ],
+    "note": "The current official homepage lists standard ExAero GR at US$3,299, but Shop Now leads to the distinct ExAero GR RDC frameset page, which showed sold out. This does not establish a current route for standard GR; keep the field open."
+  }
 }

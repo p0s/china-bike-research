@@ -1,0 +1,61 @@
+{
+  "id": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s8"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "retry_of": "variant-sava-gelaro-s8-bottom-bracket-2026-08-17",
+  "retry_reason": "The exact 2026 R21-GRX820-12S manufacturer product page was reviewed for the current build and its BB Drop row was checked against the separate shell-standard field.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-s8-bottom-bracket-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The linked 20-page manual has no extractable text in the browser view, and the focused search surfaced only a third-party manual for S6/S4 rather than the exact S8 build.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S8 R21-GRX820-12S bottom-bracket standard",
+          "route": "current exact-model manufacturer product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact page publishes no bottom-bracket standard or shell dimensions. Its BB Drop geometry field does not identify the shell standard.",
+          "result_url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+        },
+        {
+          "attempt": 2,
+          "query": "SAVA Gelaro S8 bottom-bracket standard in linked user manual",
+          "route": "manufacturer-linked SAVA user manual PDF",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact S8 page links this 20-page PDF as User Manual, but the browser exposes no extractable text; visual specification content could not be verified.",
+        "result_url": "https://cdn.shopify.com/s/files/1/0385/7176/9995/files/SAVA_Bicycle_Instructions.pdf?v=1729563520"
+      },
+      {
+        "attempt": 3,
+        "query": "SAVA Gelaro S8 GRX820 bottom bracket 五通 标准 尺寸 车架装配 技术资料",
+        "route": "focused public search for exact-build technical or assembly documentation",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "No exact S8 technical source surfaced. A third-party manual result identified S6/S4 rather than this build, so it is rejected; no BB standard or shell dimension is established."
+      }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "sava-gelaro-s8-official-recheck-2026-09-24",
+    "sava-bicycle-instructions-manual-2026-09-24"
+  ],
+  "notes": "The S8 standard and shell dimensions remain unknown. The exact product page omits them, the linked generic manual cannot be checked through its text view, and a third-party S6/S4 manual is not exact-build evidence. BB Drop is a frame geometry value, not a shell standard.",
+  "searched_at": "2026-09-24"
+}

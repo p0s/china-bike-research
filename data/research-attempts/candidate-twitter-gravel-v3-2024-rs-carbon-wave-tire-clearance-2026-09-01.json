@@ -485,5 +485,11 @@
     "twitter-gravel-v3-2024-manual-mirror-2026-08-27"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/twitter-gravel-v3-2024-rs-carbon-wave-50-area-sweep-2026-09-01.json. The matching 2024 press-fit exact-model manual mirror publishes a 700x40C maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/twitter-gravel-v3-2024-rs-carbon-wave-50-area-sweep-2026-09-01.json. The matching 2024 press-fit exact-model manual mirror publishes a 700x40C maximum; reliability is medium because the copy is hosted by an independent mirror.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-gravel-v3-2024-manual-mirror-2026-08-27"],
+    "note": "Retain 700x40C maximum from the independent exact-model mirror only for the matching 2024 press-fit 45/48/51/54 frame. Treat spec reliability as medium and preserve the existing BB86/BB92 conflict; do not apply it to other Gravel V3 generations."
+  }
 }

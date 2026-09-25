@@ -1,0 +1,62 @@
+{
+  "batch": 80,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "Four exact published variants still lack a bottom-bracket standard. Each has a same-day bounded recheck with two web attempts and no campaign extension; a third, distinct exact-build documentary route remains within the three-attempt simple-record limit. The new attempt is limited to that one route per target. No platform-wide or sibling-trim inference is allowed.",
+    "exact_models": 4,
+    "atomic_gaps": 4,
+    "targets": [
+      { "record_type": "variant", "record_id": "camp-gx600-pes", "model": "CAMP GX600 PES", "gap_code": "bottom-bracket-missing", "prior_attempt_id": "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24" },
+      { "record_type": "variant", "record_id": "camp-gx700-grx820", "model": "CAMP GX700 GRX 1×12", "gap_code": "bottom-bracket-missing", "prior_attempt_id": "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24" },
+      { "record_type": "variant", "record_id": "sava-gelaro-s8", "model": "SAVA Gelaro S8 GRX820", "gap_code": "bottom-bracket-missing", "prior_attempt_id": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24" },
+      { "record_type": "variant", "record_id": "sava-gelaro-sf6-cues", "model": "SAVA Gelaro SF6 CUES U6000 1×11", "gap_code": "bottom-bracket-missing", "prior_attempt_id": "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24" }
+    ],
+    "campaign_extension": {
+      "allowed_channels": ["web"],
+      "max_new_attempts_per_model": 1
+    }
+  },
+  "research_route": {
+    "source_class": "exact-build-manufacturer-assembly-or-technical-documentation",
+    "action": "Proceed sequentially in target order. For each exact build, search one focused query for the exact model's bottom-bracket standard or shell dimensions in official assembly/service/technical documentation, then inspect at most one exact documentation page. Record exact URL, access date, whether the source binds the value to this exact build or only to a family, and any ambiguity. Return evidence only; do not edit repository files.",
+    "acceptance_rule": "A bottom-bracket value can resolve the exact variant gap only when a credible source directly identifies the exact build and explicitly gives the standard or shell dimensions. A shared-platform value requires platform-level evidence. Crankset compatibility, BB drop, similar model names, generic manuals, other trims, retailer text without exact build identity, or common-industry convention are not sufficient.",
+    "stop_rule": "At most one new web attempt and one documentation page per model. Do not log in, contact sellers, use XHS, bypass access controls, loop retries, infer a value, or continue after a challenge/rate limit. If evidence is missing, mismatched, generic, or inaccessible, return the strongest supported no-result/rejected/blocked disposition and preserve the gap."
+  },
+  "done_criteria": [
+    "Return one concise evidence disposition per target with exact URL, accessed date, exactness, explicit bottom-bracket value if present, and admissibility.",
+    "Append one bounded web attempt to each existing 2026-09-24 research record. Add a source record and update only an exact-variant bottom-bracket field when admissible evidence supports it.",
+    "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "Local B80 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "batch": 83,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-83-scope.json",
+    "docs/research-batches/2026-09-24/gap-fill-batch-83-scope-amendment-01.json"
+  ],
+  "result": {
+    "exact_models_checked": 18,
+    "atomic_gaps_closed": 0,
+    "image_checks_recorded": 18,
+    "image_records_updated": 18,
+    "source_records_added": 0,
+    "dispositions": [
+      {"image_id":"bianchi-oltre-race-ytb8d-primary-image-2026-08-30","classification":"unreachable","url":"https://www.bianchi.com/wp-content/uploads/2026/07/OltreRace-FQ_Ph-scaled.jpg","http_status":null,"content_type":null},
+      {"image_id":"camp-gx600-primary-image","classification":"unreachable","url":"https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260520/GX600-%E9%97%AA%E9%93%B6%E9%BB%91.jpg","http_status":null,"content_type":null},
+      {"image_id":"camp-gx700-primary-image","classification":"unreachable","url":"https://campbicycle.oss-cn-shenzhen.aliyuncs.com/Data/campbicycle/upload/image/20260519/GX700-%E5%BD%A9%E5%A2%A8%E9%9D%92.jpg","http_status":null,"content_type":null},
+      {"image_id":"carbonda-cfr696-primary-image","classification":"unreachable","url":"https://carbonda.com/upload/allimg/240910/cfr-696-01.jpg","http_status":null,"content_type":null},
+      {"image_id":"ican-gra04-official-primary-image","classification":"unreachable","url":"https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-01.avif","http_status":null,"content_type":null},
+      {"image_id":"ican-graro-primary-image","classification":"unreachable","url":"https://icancycling.com/cdn/shop/files/ICAN_Graro_gravel_bike_frame.jpg?v=1775792859","http_status":null,"content_type":null},
+      {"image_id":"lightcarbon-lcg071s-pro-primary-image","classification":"unreachable","url":"https://mybike.parts/bike_parts/672.png?1781036385=","http_status":null,"content_type":null},
+      {"image_id":"rinasclta-gr025-primary-image","classification":"unreachable","url":"https://rinascltabike.com/wp-content/uploads/2025/05/Rinasclta-carbon-gravel-framset-GR025-max-50mm-tire-clearance.jpg","http_status":null,"content_type":null},
+      {"image_id":"sava-a7l-r08-2026-exact-primary-image","classification":"unreachable","url":"https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-01-2026-sava-a7l-carbon-road-bike-silver-front-45-degree-main.jpg?v=1783501707&width=1080","http_status":null,"content_type":null},
+      {"image_id":"sava-gelaro-primary-image","classification":"unreachable","url":"https://savadeck-bike.com/cdn/shop/files/DSC_2049.jpg?v=1746492698&width=1080","http_status":null,"content_type":null},
+      {"image_id":"sava-gelaro-s8-primary-image","classification":"unreachable","url":"https://savadeck-bike.com/cdn/shop/files/GelaroS8-ClassicBlack.png?v=1779789542&width=1080","http_status":null,"content_type":null},
+      {"image_id":"sava-gelaro-sf-primary-image","classification":"unreachable","url":"https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6020-Black.jpg?v=1755591722&width=1080","http_status":null,"content_type":null},
+      {"image_id":"scott-addict-rc-40-primary-image","classification":"unreachable","url":"https://www.diliecicli.it/cdn/shop/files/ADDICTRC40.webp?v=1691319669","http_status":null,"content_type":null},
+      {"image_id":"twitter-cyclone-electronic-official-et-primary-image","classification":"unreachable","url":"https://twitterbikeusa.com/cdn/shop/files/cyclone-3rd-et-matte-black-gray_ac30abe9-52ef-437f-a31b-6a63720eaac1.jpg?v=1783124937&width=867","http_status":null,"content_type":null},
+      {"image_id":"twitter-cyclone-gen3-et-primary-image","classification":"unreachable","url":"https://www.twittercycles.com/uploads/images/%E9%BB%91%E8%89%B2.webp","http_status":null,"content_type":null},
+      {"image_id":"twitter-gravel-v3-2024-listing-primary-image","classification":"unreachable","url":"https://img.alicdn.com/bao/uploaded/i1/3021506430/O1CN017OYwnS1xMzrJi7mmi_%21%214611686018427381630-2-item_pic.png","http_status":null,"content_type":null},
+      {"image_id":"twitter-gravel-v3-primary-image","classification":"unreachable","url":"https://www.twittercycles.com/uploads/images/%E9%BB%91%E6%B7%B1%E7%81%B0_1757147129.webp","http_status":null,"content_type":null},
+      {"image_id":"twitter-t3-tt-primary-image","classification":"unreachable","url":"https://www.twittercycles.com/uploads/images/%E9%BB%91%E7%BA%A2_1767937369.webp","http_status":null,"content_type":null}
+    ],
+    "data_outcome": "All 18 one-time checks were unreachable and returned no HTTP status or content type. The records preserve those exact limited results without inferring an outage cause. No source or catalog fact changed; the 707-gap inventory, including 37 image-health gaps, remains unchanged."
+  },
+  "validation": {
+    "scope_and_results_json": "pass: jq -e",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates; no coverage acceptance was needed",
+    "image_report": "pass: one report; 18 exact records classified unreachable on 2026-09-24",
+    "full_gate": "not rerun: this batch changed only evidence metadata, as specified by the repository validation instruction; B82 full gate passed with unchanged code"
+  }
+}

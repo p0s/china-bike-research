@@ -6,7 +6,7 @@
   },
   "field": "tire-clearance",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -488,8 +488,19 @@
     "bxt-135-clearance-45c-2026-08-30",
     "bxt-135-clearance-47c-2026-08-30",
     "bxt-135-official-2026-08-28",
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "bxt-135-clearance-45c-recheck-2026-09-25",
+    "bxt-135-clearance-47c-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. Two current exact BXT-135 manufacturer pages publish incompatible 45C and 47C maxima, and the archived cards expose no revision bridge. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. Two current exact BXT-135 manufacturer pages publish incompatible 45C and 47C maxima, and the archived cards expose no revision bridge. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bxt-135-clearance-45c-recheck-2026-09-25",
+      "bxt-135-clearance-47c-recheck-2026-09-25"
+    ],
+    "note": "Current BXT-GRAVEL-135 page title/description say 45C while its table says 47C; a separate BXT-135 page states 47C. No revision bridge maps either page to the archived complete-bike card."
+  }
 }

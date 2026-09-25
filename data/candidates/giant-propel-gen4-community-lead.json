@@ -6,7 +6,7 @@
   "why_interesting": "A current official mainland page now resolves the exact fourth-generation Propel Advanced SL 1 trim, CNY 54,800 suggested price and Ultegra Di2 BOM. Official Giant testing supplies protocol-backed frame and fork stiffness values.",
   "missing": [
     "Mainland-delivered complete-bike weight and weighing basis; 6.8 kg size S is an exact official Japan trim reference",
-    "Current mainland stock, selected size/color, final checkout and dealer warranty handling",
+    "Exact size/color stock, final checkout and transaction-specific warranty still require dealer/store confirmation",
     "Rights-cleared exact-trim image for publication"
   ],
   "status": "publication-gate-not-met",
@@ -22,32 +22,157 @@
     "giant-china-dealer-locator-2026-08-17",
     "giant-china-warranty-2026-08-17",
     "giant-propel-advanced-sl1-mainland-2026-08-30",
+    "giant-propel-advanced-sl1-mainland-current-2026-09-23",
+    "giant-propel-advanced-sl1-global-current-2026-09-23",
+    "giant-china-warranty-current-2026-09-23",
     "giant-propel-gen4-testing-2026-08-30",
-    "giant-propel-advanced-sl1-japan-2026-08-30"
+    "giant-propel-advanced-sl1-japan-2026-08-30",
+    "giant-propel-gen4-testing-current-2026-09-23",
+    "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24",
+    "giant-propel-sl1-china-weight-recheck-2026-09-24",
+    "giant-propel-sl1-japan-weight-recheck-2026-09-24"
   ],
   "facts": {
     "frame": "Advanced SL-grade composite frame and Advanced SL full-composite fork",
     "tire_clearance_mm": 32,
-    "sizes": "XS-XL; exact-generation range geometry reference",
+    "sizes": "XS-XL; the global 2026 page supplies a full frame geometry table; mainland-specific geometry is not yet text-verified",
+    "geometry_by_size": {
+      "size_order": [
+        "XS",
+        "S",
+        "M",
+        "M/L",
+        "L",
+        "XL"
+      ],
+      "seat_tube_length_mm": [
+        680,
+        710,
+        740,
+        770,
+        800,
+        830
+      ],
+      "seat_tube_angle_deg": [
+        74.5,
+        74.0,
+        73.5,
+        73.0,
+        73.0,
+        72.5
+      ],
+      "top_tube_length_mm": [
+        520,
+        535,
+        550,
+        565,
+        580,
+        600
+      ],
+      "head_tube_length_mm": [
+        120,
+        130,
+        145,
+        165,
+        185,
+        200
+      ],
+      "head_tube_angle_deg": [
+        71.0,
+        72.3,
+        73.0,
+        73.0,
+        73.0,
+        73.0
+      ],
+      "fork_rake_mm": [
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+      ],
+      "trail_mm": [
+        70.5,
+        62.5,
+        57.8,
+        57.8,
+        57.8,
+        57.8
+      ],
+      "wheelbase_mm": [
+        976,
+        977,
+        980,
+        991,
+        1006,
+        1020
+      ],
+      "chainstay_length_mm": [
+        405,
+        405,
+        405,
+        405,
+        405,
+        405
+      ],
+      "bottom_bracket_drop_mm": [
+        72,
+        70,
+        70,
+        67,
+        67,
+        65
+      ],
+      "stack_mm": [
+        517,
+        528,
+        545,
+        562,
+        581,
+        596
+      ],
+      "reach_mm": [
+        376,
+        383,
+        388,
+        393,
+        402,
+        412
+      ],
+      "standover_height_mm": [
+        734,
+        755,
+        775,
+        794,
+        821,
+        834
+      ]
+    },
+    "geometry_basis": "Giant global 2026 exact-model page; current China geometry is shown as images and was not independently compared. Use this as a global frame reference, not a verified China-market fit chart.",
     "exact_trim": "2027 fourth-generation Giant Propel Advanced SL 1",
     "complete_weight_reference": "6.8 kg in size S on the official Japan page for the same named 2027 trim; the mainland page does not publish complete-bike weight",
+    "complete_weight_g": 6800,
+    "complete_weight_basis": "Giant Japan's official MY2027 Propel Advanced SL 1 page lists 6.8 kg in size S. The listed build specifies an Advanced SL composite frame and fork, Contact SLR 0 Aero cockpit, Ultegra Di2, SLR 0 50 wheels and CADEX Aero 700x28 tires; pedals are N/A. The page lists a computer mount, two bottle cages, tubeless valves and sealant but does not say whether those extras are included in the weight. Giant says individual weight may vary slightly. This Japan-market size-S reference is not verified as the mainland stock build, whose page does not publish complete-bike weight.",
     "drivetrain": "Shimano Ultegra Di2 electronic hydraulic 2x12 with 11-34T cassette and 52/36T Giant Power Pro power-meter crank",
     "mainland_suggested_price_cny": 54800,
     "frame_pedaling_stiffness_n_per_mm": 84,
     "frame_torsional_stiffness_n_per_degree": 124,
     "fork_stiffness_n_per_mm": 60,
     "frame_stiffness_evidence": "Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results",
-    "stiffness_evidence": "Manufacturer testing for fourth-generation 2027 Propel: frame pedaling stiffness 84 N/mm, frame torsional stiffness 124 N/degree and fork stiffness 60 N/mm. Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results"
+    "stiffness_evidence": "Manufacturer testing for fourth-generation 2027 Propel: frame pedaling stiffness 84 N/mm, frame torsional stiffness 124 N/degree and fork stiffness 60 N/mm. Giant manufacturer protocol fixes the dropouts and dummy fork, inclines the frame 10 degrees and applies force at the pedal eye; values are manufacturer testing rather than independent lab results",
+    "bill_of_materials": "The exact mainland Advanced SL 1 page lists Shimano Ultegra Di2 2×12, an 11–34 cassette, 52/36 Giant Power Pro crank, Giant SLR 0 50 wheels, and CADEX Aero 700×28 tires. Other components are not inferred from this list."
   },
-  "support_note": "Giant provides an official mainland dealer locator and warranty policy; neither establishes current fourth-generation Propel trim stock or price.",
-  "last_reviewed": "2026-08-30",
-  "source_note": "Current official mainland evidence resolves the exact trim, CNY 54,800 suggested price and Ultegra Di2 BOM. Official Japan supplies a 6.8 kg size-S reference, and Giant publishes protocol-backed manufacturer stiffness values. Regional weight caveat remains explicit.",
+  "support_note": "Giant's current mainland page offers an official dealer locator and online-buy route, but no exact size/color stock or checkout was verified. The current China warranty policy provides conditional frame/fork/component coverage only for eligible mainland purchases assembled by authorized dealers; transaction-specific eligibility still needs dealer confirmation.",
+  "last_reviewed": "2026-09-24",
+  "source_note": "Current official mainland evidence resolves the exact trim, CNY 54,800 suggested price and Ultegra Di2 BOM. Giant global provides geometry and 32 mm clearance with a regional caveat; the China geometry remains image-only. Giant testing currently reports manufacturer stiffness values for the fourth-generation frame. Warranty policy is documented; the official gallery has no verified reuse license, so no image is added.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798",
   "official_price": {
     "amount_cny": 54800,
     "currency": "CNY",
     "price_type": "official-mainland-list",
-    "observed_at": "2026-08-30",
+    "observed_at": "2026-09-24",
     "price_basis": "Exact Giant China Propel Advanced SL 1 suggested retail price; current stock, selected size/color and final checkout remain unverified"
   }
 }

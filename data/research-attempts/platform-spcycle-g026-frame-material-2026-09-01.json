@@ -481,5 +481,13 @@
     "spcycle-g026-official-2026-08-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-spcycle-g026-batch-043-50-area-sweep-2026-09-01.json. Current exact manufacturer page specifies high-modulus T1000 full carbon fibre."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-spcycle-g026-batch-043-50-area-sweep-2026-09-01.json. Current exact manufacturer page specifies high-modulus T1000 full carbon fibre.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "spcycle-g026-official-2026-08-25"
+    ],
+    "note": "The exact G026 manufacturer page identifies T1000 carbon and the target records the matching high-modulus T1000 grade. No unreported fiber proportions or stiffness result are inferred."
+  }
 }

@@ -1,0 +1,55 @@
+{
+  "id": "candidate-trinx-tornado-900-tire-clearance-b149-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "trinx-tornado-900"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-trinx-tornado-900-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TRINX TDO 900 maximum tire clearance manufacturer 700x28C",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.b4bike.com/road-bikes/trinx/tdo/tdo-900/",
+          "note": "Opened the exact-URL-audited B4Bike TDO 900 specification page. It identifies the white/silver and blue/white model builds and fitted Grand Sport Race 700C×28C tires, but publishes no maximum clearance."
+        }
+      ],
+      "blocker": "The exact-model official and B4Bike pages show fitted 700×28C but state no maximum clearance."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "trinx-tornado-900-official-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "B167 local source audit: no linked source supports the retained exact tire-clearance field. No qualifying exact-model evidence was found for this field in B149; preserve the value as unknown pending a future distinct source or state change.",
+  "retry_of": "candidate-trinx-tornado-900-tire-clearance-2026-08-30",
+  "retry_reason": "A distinct dated exact-model query on 2026-09-25 followed the earlier extended campaign and checked for new direct evidence without reopening recorded URLs.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-149-trinx-tornado-900-tire-clearance",
+    "extends_attempt_id": "candidate-trinx-tornado-900-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+    "reason": "The B149 frozen scope authorizes one distinct dated exact-model web query to test for new weight or maximum-clearance evidence after the earlier 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

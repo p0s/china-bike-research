@@ -6,8 +6,8 @@
   "type": "complete-bike",
   "why_interesting": "The retained seller image visibly carries a G530 chainstay mark and shows a high-configuration carbon road bike; a current exact-model retailer page and mainland index corroborate G530 with a Shimano 105 2x12 hydraulic-disc configuration.",
   "facts": {
-    "frame_material": "Carbon G530 aero-road platform; the current exact retailer build specifies a Toray T800 carbon frame and fork",
-    "drivetrain": "Shimano 105 2x12 mechanical shifting with hydraulic disc brakes on the visually matched current G530 configuration",
+    "frame_material": "Carbon G530 aero-road platform; a current retailer-indexed listing claims a Toray T800 frame, but direct page access timed out and the retained build’s exact grade and fork remain unverified.",
+    "drivetrain": "A current retailer-indexed G530 listing claims Shimano 105 2x12 mechanical shifting with hydraulic discs for that listed configuration; direct page access timed out, and the retained China build’s exact BOM remains unresolved.",
     "frame_construction": "Aero road frame with internal routing and disc-brake complete-build configurations",
     "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent assessment was found across the 50-area sweep"
   },
@@ -20,7 +20,8 @@
   "source_ids": [
     "gito-g530-retailer-2026-08-29",
     "gito-g530-taobao-index-2026-08-29",
-    "gito-chinese-retail-2026-08-29"
+    "gito-chinese-retail-2026-08-29",
+    "gito-g530-888bike-index-current-2026-09-23"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -33,6 +34,6 @@
   },
   "source_refs": "IMG_6860.png#R2",
   "source_url": "https://www.888bike.net/en/product/3286/gito-530-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B8%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-road-bike",
-  "source_note": "The visible G530 chainstay marking is corroborated by current exact-model and mainland indexes. Only the matching G530 carbon-platform and Shimano 105 2x12 hydraulic-disc facts are accepted; the retailer's 8.8 kg size-460 value, wheelset and fitted tire are not transferred to this retained seller card.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "The retained marking identifies G530. A current 888Bike indexed result claims a Toray T800 carbon frame and a separate Shimano 105 2x12 mechanical/hydraulic-disc build; direct page fetch timed out, and those parts are not transferred to the retained China configuration.",
+  "last_reviewed": "2026-09-23"
 }

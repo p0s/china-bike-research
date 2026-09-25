@@ -1,0 +1,53 @@
+{
+  "id": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cycletrack-phantom-rx24"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "骑迹 CYCLETRACK Phantom 魅影 RX 24速 整车重量 最大胎宽 轮组配置",
+          "route": "Opened newly surfaced CYCLETRACK manufacturer Phantom RX24 product page once",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The exact manufacturer RX 24-speed/alloy-rim reference is around 8.5 kg, with 44/48/52 cm sizes listed but no weight-to-size mapping, pedal inclusion or method. It does not resolve the retained card build’s wheel option and weight basis.",
+          "result_url": "https://cycletrack.cn/products/cycletrack-phantom-700c-24-speed-carbon-fiber-road-bike-hydraulic-disc-brake-full-carbon-roadbike-bicycle-for-men-women"
+        }
+      ],
+      "blocker": "The exact manufacturer RX 24-speed/alloy-rim reference is around 8.5 kg, with 44/48/52 cm sizes listed but no weight-to-size mapping, pedal inclusion or method. It does not resolve the retained card build’s wheel option and weight basis."
+    }
+  },
+  "notes": "The exact manufacturer RX 24-speed/alloy-rim reference is around 8.5 kg, with 44/48/52 cm sizes listed but no weight-to-size mapping, pedal inclusion or method. It does not resolve the retained card build’s wheel option and weight basis.",
+  "campaign_extension": {
+    "id": "b141-cycletrack-phantom-rx24-complete-weight",
+    "extends_attempt_id": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

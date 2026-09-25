@@ -1,0 +1,62 @@
+{
+  "id": "candidate-twitter-gravel-v3-105-tire-clearance-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-gravel-v3-105"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-twitter-gravel-v3-105-tire-clearance-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-gravel-v3-105-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Twitter Gravel V3 Shimano 105 max tire clearance frame stiffness test",
+          "route": "One newly opened official exact-platform T900 frameset specification page after literal-URL absence check",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "Opened once after confirming the URL was absent from the audit. Lines 318-337 identify the Gravel V3 Disc T900 page and line 335 states 700×40C maximum tire clearance. This supports the frame/platform maximum; the separate 105 R7120 complete-bike option is not explicitly linked to that trim-specific wheel setup.",
+          "result_url": "https://twitterbikeusa.com/en-ca/products/twitter-gravel-v3-disc-carbon-road-frame-set-t900-700c-endurance-gravel-racing"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "twitter-gravel-v3-t900-clearance-official-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "Opened once after confirming the URL was absent from the audit. Lines 318-337 identify the Gravel V3 Disc T900 page and line 335 states 700×40C maximum tire clearance. This supports the frame/platform maximum; the separate 105 R7120 complete-bike option is not explicitly linked to that trim-specific wheel setup.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-twitter-gravel-v3-105-tire-clearance",
+    "extends_attempt_id": "candidate-twitter-gravel-v3-105-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-gravel-v3-t900-clearance-official-2026-09-25"
+    ],
+    "note": "The candidate already records the official T900 platform maximum of 700×40C and says the separate 105 complete-bike trim linkage is unverified."
+  }
+}

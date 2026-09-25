@@ -482,8 +482,19 @@
   "status": "found",
   "accepted_source_ids": [
     "leinak-leina-jd-2026-08-30",
-    "leinak-leina-bilibili-2026-08-30"
+    "leinak-leina-bilibili-2026-08-30",
+    "leinak-leina-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. Current exact and brand-associated sources establish Toray-carbon/full-carbon construction."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. Current exact and brand-associated sources establish Toray-carbon/full-carbon construction.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "leinak-leina-jd-2026-08-30",
+      "leinak-leina-bilibili-2026-08-30",
+      "leinak-leina-jd-index-recheck-2026-09-23"
+    ],
+    "note": "Dated exact 雷娜 listing supports a Toray-carbon frame; brand-associated 雷娜·星耀 post says full-carbon. Current JD recheck returned no exact model text. Retain as model/range evidence, not proof of the retained seller-card selected build."
+  }
 }

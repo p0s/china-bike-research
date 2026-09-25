@@ -479,8 +479,19 @@
   "status": "found",
   "accepted_source_ids": [
     "twitter-cyclone-gen3-et-usa-2026-08-17",
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-twitter-cyclone-gen3-et-batch-032-50-area-sweep-2026-09-01.json. The exact current ET pages identify a high-modulus carbon frame and full-carbon fork; no model-specific fiber grade is assigned."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-twitter-cyclone-gen3-et-batch-032-50-area-sweep-2026-09-01.json. The exact current ET pages identify a high-modulus carbon frame and full-carbon fork; no model-specific fiber grade is assigned.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-gen3-et-usa-2026-08-17",
+      "twitter-cyclone-gen3-et-china-2026-08-17",
+      "twitter-cyclone-et-official-live-recheck-2026-09-25"
+    ],
+    "note": "The exact ET evidence supports a high-modulus carbon frame and full-carbon fork. Model-specific carbon grade, lay-up and molding remain unpublished."
+  }
 }

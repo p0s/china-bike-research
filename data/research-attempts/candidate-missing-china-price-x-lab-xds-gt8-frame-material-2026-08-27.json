@@ -28,8 +28,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xlab-gt8-official-2026-08-17"
+    "xlab-gt8-official-2026-08-17",
+    "xlab-gt8-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "The exact published grade or construction is recorded; undisclosed fiber, alloy or lay-up details remain explicitly unknown."
+  "notes": "The exact published grade or construction is recorded; undisclosed fiber, alloy or lay-up details remain explicitly unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "xlab-gt8-official-current-2026-09-23"
+    ],
+    "note": "manufacturer-material-supported-for-listed-gt8-build: The current GT8 page specifies an XDS Toray T-800 carbon frame and fork; no more detailed layup is stated. Reopen trigger: Reopen if the manufacturer revises the material specification or distinguishes a trim."
+  }
 }

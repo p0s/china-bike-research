@@ -1,0 +1,28 @@
+{
+  "batch": 170,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command":"npm run --silent data:gaps",
+    "as_of":"2026-09-25",
+    "catalog_gap_entries":667,
+    "catalog_records":263,
+    "research_queue_counts":{"ready":0,"evidence-found":0,"deferred":43,"blocked":567,"conflicted":1},
+    "image_health_gaps":2,
+    "selection":"The only two image-health-unverified gaps in the fresh inventory. B162's scoped checker returned no HTTP response for both URLs and explicitly made no retry."
+  },
+  "scope": {
+    "exact_images": [
+      {"image_id":"evolve-cima-gr-primary-image","record_file":"data/images/evolve-cima-gr.json","target_record_id":"evolve-cima-gr-frameset","url":"https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg","stored_health_check":{"checked_at":"2026-09-25","status":202,"content_type":"text/html"}},
+      {"image_id":"tfsa-jh37-primary-image","record_file":"data/images/tfsa-jh37.json","target_record_id":"tfsa-jh37-frameset","url":"https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif","stored_health_check":{"checked_at":"2026-09-25","status":202,"content_type":"text/html"}}
+    ],
+    "image_count":2,
+    "command":"npm run --silent image:report -- --ids evolve-cima-gr-primary-image,tfsa-jh37-primary-image --json",
+    "research_boundary":"Run the exact scoped image report once as the sole retry after B162. Do not broaden the check, download or rehost assets, change image URLs, or make another attempt if a response fails. Root is sole writer. If every current resource returns HTTP 2xx/3xx with image/* content within the 30-day window, record the exact health evidence and let data:gaps verify closure. Otherwise record the latest check result without calling the image broken unless the HTTP response supports that classification; retain the health gap.",
+    "excluded":[
+      "No source, price, image-subject, licensing, attribution, or UI changes.",
+      "No image added, downloaded, replaced, or rehosted; no external delivery."
+    ]
+  }
+}

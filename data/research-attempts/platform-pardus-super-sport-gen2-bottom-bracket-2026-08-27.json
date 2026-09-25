@@ -22,5 +22,13 @@
   },
   "status": "found",
   "accepted_source_ids": ["pardus-super-sport-gen2-official-2026-08-27"],
-  "notes": "Resolved the shared platform bottom-bracket and hanger fields."
+  "notes": "Resolved the shared platform bottom-bracket and hanger fields.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-super-sport-gen2-official-2026-08-27"
+    ],
+    "note": "The exact official Super Sport Gen2 platform source states a BSA 68 mm bottom bracket. The official page could not be fetched on the current recheck, so the existing accepted source remains the evidence."
+  }
 }

@@ -1,0 +1,142 @@
+{
+  "batch": 56,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 51,
+      "temporarily-exhausted": 3
+    }
+  },
+  "campaign_audit": {
+    "command": "npm run --silent research:50-audit",
+    "campaign_id": "all-gaps-50-approaches-2026-08-29",
+    "fields": 990,
+    "complete": 990,
+    "incomplete": 0,
+    "current_gaps": 430,
+    "uncovered_current_fields": 11
+  },
+  "selection": {
+    "basis": "Five actionable non-image gaps across three exact models are among the campaign audit's uncovered current fields. B54/B55 price gaps, the same-day image-report deviation, and all fields with a future retry date are excluded.",
+    "exact_models": 3,
+    "target_records": 3,
+    "atomic_gap_instances": 5,
+    "evidence_only_writer": "one Luna Max agent, sequentially; no repository writes",
+    "root_writer": "append source provenance and new route attempts to the existing active ledgers; preserve prior attempts"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "model": "Seraph / TanTan TT-X68-new UDH",
+      "gaps": [
+        {
+          "code": "price-not-observed",
+          "research_field": "price",
+          "prior_attempt_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+          "prior_status": "found-but-unresolved",
+          "new_route_scope": "Distinct accessible public mainland exact seller/item routes for the TT-X68-new UDH frame and selected package; current CNY price, options and conditions must be visible.",
+          "already_checked_sources": [
+            "seraph-tt-x68-new-storefront-2026-09-23",
+            "public exact buyer discussion at reddit.com/r/ChineseCarbon/comments/1w4ldod/best_tantanseraph_complete_bike_x42_x71_r18_or/"
+          ]
+        },
+        {
+          "code": "frame-weight-missing",
+          "research_field": "frame-weight",
+          "prior_attempt_id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+          "prior_status": "conflicted",
+          "new_route_scope": "A distinct current exact-model official spec/manual route that can clarify whether the two 54 cm UDH bare-frame weight claims use the same model revision, finish and measurement basis. Keep the conflict unless reconciled.",
+          "already_checked_sources": [
+            "seraph-tt-x68-new-weight-recheck-2026-09-24",
+            "tantan-tt-x68-new-weight-recheck-2026-09-24"
+          ]
+        }
+      ]
+    },
+    {
+      "record_type": "published-variant",
+      "id": "twitter-v3-wheeltop-eds",
+      "model": "TWITTER Gravel V3, T47 / WheelTop EDS 2x12",
+      "gaps": [
+        {
+          "code": "clearance-unverified",
+          "research_field": "tire-clearance",
+          "prior_attempt_id": "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24",
+          "prior_status": "conflicted",
+          "new_route_scope": "A distinct exact T47 configuration source stating maximum tire width or measurable frame/fork clearance; distinguish fitted tire size from maximum and exclude BB86-generation claims.",
+          "already_checked_sources": [
+            "twitter-v3-wheeltop-clearance-recheck-2026-09-24",
+            "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+          ]
+        }
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "model": "Airwolf YF-R003",
+      "gaps": [
+        {
+          "code": "price-missing",
+          "research_field": "price",
+          "prior_attempt_id": "candidate-airwolf-yf-r003-price-2026-09-24",
+          "prior_status": "blocked",
+          "new_route_scope": "Distinct accessible public seller/item route for the exact YF-R003 frameset with current mainland CNY selected-package price and conditions.",
+          "already_checked_sources": ["airwolf-yf-r003-access-check-2026-09-24"]
+        },
+        {
+          "code": "stiffness-evidence-missing",
+          "research_field": "frame-stiffness",
+          "prior_attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-24",
+          "prior_status": "blocked",
+          "new_route_scope": "Distinct public exact-frame test or detailed independent review with a named method, comparator or measured stiffness data. Subjective owner impressions and marketing adjectives do not resolve this field.",
+          "already_checked_sources": ["airwolf-yf-r003-access-check-2026-09-24"]
+        }
+      ]
+    }
+  ],
+  "exclusions": {
+    "future_retry_fields": [
+      "candidate:seraph-tt-x68-new-udh:frame-stiffness (retry after 2026-10-23)",
+      "candidate:mondince-fm316:frame-stiffness (retry after 2026-10-23)",
+      "candidate:velobuild-cx-002-2023:frame-stiffness (retry after 2026-10-23)"
+    ],
+    "same_day_completed_batches": ["B54 SEKA ExAero price", "B55 Mondince FM316 price", "B55 VeloBuild CX-002 2023 price"],
+    "image_report": "No image scope in B56. Do not run image:report again on 2026-09-24; the accidental default run already probed all 198 remote images."
+  },
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "sequential_source_lane": true,
+    "no_same_day_source_retries": true,
+    "preserve_prior_attempts": true,
+    "no_external_mutations": true
+  },
+  "delivery": "Local B56 batch only; no push, pull request, merge, publication, or production action."
+}

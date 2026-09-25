@@ -1,0 +1,55 @@
+{
+  "id": "candidate-lightcarbon-lcr015s-v-price-b156-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcr015s-v"
+  },
+  "field": "price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-lightcarbon-lcr015s-v-price-2026-09-01",
+  "retry_reason": "The frozen B156 scope authorizes one bounded current exact-MPN query after review of the prior source, attempt, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcr015s-v-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No qualifying exact current CNY amount was established by this bounded query.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCR015S-V current China frameset price CNY selected cockpit package 2026",
+          "route": "One bounded current exact-MPN web query; no new page opened",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The newly opened AmoyBrand China page identifies LCR015S-V and China origin, but displays no amount and only offers contact/message pricing. No seller contact was made; the page does not establish a price.",
+          "result_url": "https://www.amoybrand.cn/lightcarbon-full-internal-cable-routing-rim-brake-road-frame_c5173.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "lightcarbon-lcr015s-v-amoybrand-no-price-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "The newly opened AmoyBrand China page identifies LCR015S-V and China origin, but displays no amount and only offers contact/message pricing. No seller contact was made; the page does not establish a price.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-156-lightcarbon-lcr015s-v-price",
+    "extends_attempt_id": "candidate-lightcarbon-lcr015s-v-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-156-scope.json",
+    "reason": "The frozen B156 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

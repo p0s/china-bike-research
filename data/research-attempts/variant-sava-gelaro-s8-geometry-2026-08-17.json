@@ -33,8 +33,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-gelaro-s8-official-2026-08-08"
+    "sava-gelaro-s8-official-2026-08-08",
+    "sava-gelaro-s8-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "sava-gelaro-s8-official-recheck-2026-09-23"
+    ],
+    "note": "The page has a five-size chart resembling A7L and a six-size R21 table under a duplicate RX810 block. Exact GRX820 geometry is conflicted; no chart is integrated. Reopen trigger: Reopen for a clean S8 GRX820 geometry chart or manual."
+  }
 }

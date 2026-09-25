@@ -479,9 +479,20 @@
   "status": "found",
   "accepted_source_ids": [
     "twitter-cyclone-gen3-et-usa-2026-08-17",
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
+    "twitter-cyclone-gen3-et-mainland-page-recheck-2026-09-24"
   ],
   "retry_after": null,
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/variant-twitter-cyclone-gen3-et-batch-034-50-area-sweep-2026-09-01.json. The 2 original applications retain their original queries, routes, outcomes, dates, URLs, notes, accepted sources and retry history and are assigned to matching registered areas. Current official made-to-order US$1,489 route and exact mainland identity route are live; final mainland CNY checkout remains unverified.",
-  "minimum_distinct_approaches": 50
+  "minimum_distinct_approaches": 50,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
+      "twitter-cyclone-gen3-et-mainland-page-recheck-2026-09-24"
+    ],
+    "note": "The current exact China product endpoint returned 404 while the US offer remains an overseas route; no exact mainland selected SKU or checkout is verified."
+  }
 }

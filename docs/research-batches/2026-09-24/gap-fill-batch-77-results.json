@@ -1,0 +1,72 @@
+{
+  "batch": 77,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-77-scope.json",
+  "result": {
+    "exact_models_checked": 7,
+    "atomic_gaps_closed": 0,
+    "attempts_added": 7,
+    "source_records_added": 0,
+    "price_records_added": 0,
+    "candidate_changes": 0,
+    "image_changes": 0,
+    "dispositions": [
+      {
+        "candidate_id": "specialized-roubaix-sl8-comp-105",
+        "status": "rejected",
+        "reason": "A Shanghai Tmall Hooos item for ROUBAIX SL8 COMP displayed CNY 27,990, but it did not identify the 105/105 Di2 trim, China product 218669, or an exact selectable matching option. Do not assign its price to this candidate."
+      },
+      {
+        "candidate_id": "specialized-s-works-crux-2024-sram-red-xplr",
+        "status": "no-result",
+        "reason": "No exact current mainland seller item for product 221367 and its SRAM Red XPLR package surfaced. Official references, a JD category, and older deal snippets do not establish a current option."
+      },
+      {
+        "candidate_id": "specialized-s-works-crux-frameset",
+        "status": "no-result",
+        "reason": "No exact current mainland seller item for frameset product 223486 surfaced. The official overseas product page and an older JD category are not current mainland seller offers."
+      },
+      {
+        "candidate_id": "xlab-ad9",
+        "status": "rejected",
+        "reason": "A domestic dealer post identifies the exact AD9 Dura-Ace / Vision Metron 60 SL package at CNY 51,980, but it is dated 2024-09-30 and only documents first-batch reservations at that time. It does not establish a current offer."
+      },
+      {
+        "candidate_id": "laget-aero-one",
+        "status": "no-result",
+        "reason": "The exact official CNY 58,800 retail reference and a foreign retailer page surfaced, but no current mainland seller item with an attributable option and order context was found."
+      },
+      {
+        "candidate_id": "laget-pioneer-one",
+        "status": "no-result",
+        "reason": "The exact official CNY 21,900 retail reference and foreign retailer pages surfaced, but no current mainland seller item with an attributable option and order context was found."
+      },
+      {
+        "candidate_id": "hi-light-r9-force-pr1600",
+        "status": "no-result",
+        "reason": "The exact official CNY 22,900 reference and unrelated R9 products surfaced, but no current mainland seller item for the Force PR1600 complete package was found."
+      }
+    ],
+    "data_outcome": "All seven observed_price fields remain absent. No source, price, candidate, or image record changed; only dated research-attempt records and test coverage assertions were updated. The historical X-LAB seller post is recorded as a rejected lead, not a current observation."
+  },
+  "post_batch_inventory": {
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "price_not_observed": 36,
+    "research_status_counts": {
+      "blocked": 373,
+      "conflicted": 34,
+      "found": 37,
+      "temporarily-exhausted": 4
+    }
+  },
+  "validation": {
+    "research_check": "pass: 1503 atomic fields; 15450 public-post attempts; 35592 web attempts",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1539 atomic research records",
+    "focused_data_tests": "pass: 73/73",
+    "coverage_accept": "pass: 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, 236 candidates",
+    "full_gate": "pass: npm run check; 324/324 tests; 584 pages built; SEO audit 458 indexable and 126 noindex"
+  }
+}

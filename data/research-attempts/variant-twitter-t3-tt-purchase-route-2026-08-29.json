@@ -494,8 +494,18 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "twitter-t3-tt-official-2026-08-29",
-    "twitter-t3-tt-regional-retailer-2026-08-29"
+    "twitter-t3-tt-regional-retailer-2026-08-29",
+    "twitter-t3-tt-official-route-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t3-tt-50-area-sweep-2026-08-29.json. A current official made-to-order international route and a current regional specialist route exist; the retained mainland observation is dated and exact domestic checkout continuity still requires confirmation."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t3-tt-50-area-sweep-2026-08-29.json. A current official made-to-order international route and a current regional specialist route exist; the retained mainland observation is dated and exact domestic checkout continuity still requires confirmation.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-t3-tt-official-2026-08-29",
+      "twitter-t3-tt-official-route-recheck-2026-09-25"
+    ],
+    "note": "The current exact manufacturer page supports an official made-to-order route with WheelTop TX-TT7110 or SRAM Rival AXS options and six listed WheelTop sizes. The country selector includes China, but no mainland delivery quote or final checkout terms were verified."
+  }
 }

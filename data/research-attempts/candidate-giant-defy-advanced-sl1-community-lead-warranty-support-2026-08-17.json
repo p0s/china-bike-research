@@ -33,8 +33,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "giant-china-warranty-2026-08-17"
+    "giant-china-warranty-2026-08-17",
+    "giant-china-warranty-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Current Giant China warranty terms are documented, but the community build's year and authorized purchase/assembly evidence remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-china-warranty-current-2026-09-23"
+    ],
+    "note": "Current brand terms support conditional lifetime general-frame and 10-year non-suspension road-fork coverage for eligible mainland purchases assembled by an authorized dealer. The lead's model year, invoice, assembly and warranty-card status are not established, so this is not confirmed coverage for that bike."
+  }
 }

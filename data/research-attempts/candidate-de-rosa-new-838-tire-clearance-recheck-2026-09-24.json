@@ -1,0 +1,72 @@
+{
+  "id": "candidate-de-rosa-new-838-tire-clearance-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-new-838"
+  },
+  "field": "tire-clearance",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-de-rosa-new-838-tire-clearance-2026-08-30",
+  "retry_reason": "Rechecked the conflicting exact manufacturer product page and white paper with current primary sources; one page timed out and the PDF still omits the unit.",
+  "campaign_extension": {
+    "id": "de-rosa-new-838-clearance-docs-b69",
+    "extends_attempt_id": "candidate-de-rosa-new-838-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-69-scope.json",
+    "reason": "Recheck the two exact current manufacturer sources after an unresolved conflict; the scope bounds this follow-up to the product page and white paper.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 2
+  },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "The current white paper says ‘Tyre clearance 30’ with no unit, while the prior exact product page says 32 mm and could not be rechecked because it timed out.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "DE ROSA New 838 current exact product-page tire clearance",
+          "route": "Exact De Rosa 838 product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact product page timed out with a 400 response. Its prior 32 mm claim could not be re-read; no inference was made from the timeout.",
+          "result_url": "https://derosa.it/model/838/"
+        },
+        {
+          "attempt": 2,
+          "query": "De Rosa 838 current technical white paper tire clearance",
+          "route": "Exact De Rosa 838 manufacturer white paper, page 9",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "note": "The 2026 white paper identifies the 838 and states ‘Tyre clearance 30’ without a unit, numbered generation, tire-size qualifier or measurement condition. It does not reconcile the prior product-page value.",
+          "result_url": "https://derosa.it/app/uploads/2026/06/De-Rosa-838-white-paper-ITA.pdf"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "de-rosa-new-838-current-specs-2026-08-30",
+    "de-rosa-838-white-paper-2026-08-30",
+    "de-rosa-838-white-paper-recheck-2026-09-24",
+    "de-rosa-838-model-current-2026-09-23",
+    "de-rosa-838-white-paper-eng-recheck-2026-09-25"
+  ],
+  "notes": "Keep the numeric maximum unknown. The page timeout does not validate the prior 32 mm claim, and the unitless 30 in the current PDF must not be silently interpreted as millimeters.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "de-rosa-new-838-current-specs-2026-08-30",
+      "de-rosa-838-model-current-2026-09-23",
+      "de-rosa-838-white-paper-recheck-2026-09-24",
+      "de-rosa-838-white-paper-eng-recheck-2026-09-25"
+    ],
+    "note": "The current exact product page says up to 32 mm; the English white paper says “Tyre clearance 30” without a unit, tire qualifier or measurement condition. Keep the maximum unresolved."
+  }
+}

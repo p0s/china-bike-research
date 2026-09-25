@@ -1,0 +1,113 @@
+{
+  "batch": 143,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 671,
+    "catalog_records": 263,
+    "image_health_gap_entries": 2,
+    "selected_image_ids": [
+      "evolve-cima-gr-primary-image",
+      "tfsa-jh37-primary-image"
+    ],
+    "research_queue_after_b142": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 3
+    }
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "evolve-cima-gr-frameset",
+        "name": "CIMA GR frameset",
+        "record_type": "published-variant",
+        "image_id": "evolve-cima-gr-primary-image"
+      },
+      {
+        "id": "tfsa-jh37-frameset",
+        "name": "JH37 frameset",
+        "record_type": "published-variant",
+        "image_id": "tfsa-jh37-primary-image"
+      }
+    ],
+    "exact_record_count": 2,
+    "atomic_gap_entries": 2,
+    "image_records": [
+      {
+        "image_id": "evolve-cima-gr-primary-image",
+        "record": {
+          "record_type": "published-variant",
+          "record_id": "evolve-cima-gr-frameset",
+          "name": "CIMA GR frameset"
+        },
+        "file": "data/images/evolve-cima-gr.json",
+        "current_url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+        "current_source_id": "evolve-cima-gr-official-2026-08-17",
+        "credit": "Product image © Evolve",
+        "rights": {
+          "status": "official-page-embed",
+          "copyright_holder": "Evolve",
+          "usage_note": "Remote embed from the cited manufacturer product page. Copyright remains with the image owner; no redistribution license is asserted."
+        },
+        "last_health_check": {
+          "checked_at": "2026-09-25",
+          "resources": [
+            {
+              "target_id": "evolve-cima-gr-primary-image",
+              "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+              "classification": "wrong-content-type",
+              "status": 202,
+              "content_type": "text/html"
+            }
+          ]
+        }
+      },
+      {
+        "image_id": "tfsa-jh37-primary-image",
+        "record": {
+          "record_type": "published-variant",
+          "record_id": "tfsa-jh37-frameset",
+          "name": "JH37 frameset"
+        },
+        "file": "data/images/tfsa-jh37.json",
+        "current_url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+        "current_source_id": "tfsa-jh37-official",
+        "credit": "Product image © TFSA",
+        "rights": {
+          "status": "official-page-embed",
+          "copyright_holder": "TFSA",
+          "usage_note": "Remote embed from the cited TFSA product page. Copyright remains with the image owner; no redistribution license is asserted."
+        },
+        "last_health_check": {
+          "checked_at": "2026-09-25",
+          "resources": [
+            {
+              "target_id": "tfsa-jh37-primary-image",
+              "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+              "classification": "wrong-content-type",
+              "status": 202,
+              "content_type": "text/html"
+            }
+          ]
+        }
+      }
+    ],
+    "research_boundary": "One Luna Max evidence-only researcher checks these two exact model identities sequentially. For each, inspect the current image metadata and all predecessor source URLs first; do not repeat prior queries or reopen recorded URLs. Use at most one new distinct web query and open at most one newly surfaced exact manufacturer product page. Return the exact remote image URL only when the page directly identifies the exact model and its displayed image; include the page title/publisher/URL/access date and any alt or visual-match basis. Root is sole writer. If an exact new official image URL is found, root will health-check that new URL once before replacing the current remote URL; never download or rehost image bytes.",
+    "claim_rules": [
+      "Keep official product images as remote page embeds; existing credit and rights metadata must remain truthful.",
+      "Do not change a URL based on a generic family/model page, another color/trim, unrelated carousel image, or search thumbnail.",
+      "A failed image URL may be replaced only by a new exact-model official page image with source provenance and confirmed model match.",
+      "Do not retry the existing 202 text/html URL; it already received its one approved-host retry in B142."
+    ],
+    "excluded": [
+      "No image download or local file creation, rehosting, seller contact, quote/cart/purchase, external message, personal browser, XHS, Weibo, CAPTCHA/login, or agent writes.",
+      "No changes to alt text, credit, rights, fallback, visibility, product claims, or unrelated image records."
+    ]
+  },
+  "external_delivery": "none"
+}

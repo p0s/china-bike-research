@@ -1,0 +1,20 @@
+{
+  "id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "twitter-gravel-v3-2024-rs-carbon-wave" },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": { "web": {
+    "status": "blocked",
+    "blocker": "The retained 2024 listing's CNY 3,991 amount is tied only to its alloy-wheel selection; the carbon-wheel selection remains unpriced, and the current factory-store result is a later 25yr revision in USD.",
+    "attempts": [
+      { "attempt": 1, "query": "骓特 Gravel V3 2024 RS 碳轮 碳波 24速 价格 淘宝", "route": "Current exact-model marketplace and manufacturer-store search", "outcome": "identity-mismatch", "accessed_at": "2026-09-24", "note": "The retained GRAVEL-V3顺泰 listing distinguishes alloy- and carbon-wheel options; its supplied CNY 3,991 selection is explicitly 粉白色-铝轮（碳把）, not the carbon-wheel candidate. Current official-store results identify the later 25yr RS-24S model and show a foreign-market USD price, which is not transferred to this discontinued 2024 selection.", "result_url": "https://e.tb.cn/h.8Qt1aFaeRwOEBih" },
+      { "attempt": 2, "query": "TWITTER Gravel V3 2024 RS carbon wheel current mainland stock price", "route": "Current manufacturer catalog and indexed mainland storefronts", "outcome": "no-result", "accessed_at": "2026-09-24", "note": "Current results surfaced newer V3 25yr or electronic builds, not a current mainland offer for the exact 2024 RS carbon-wheel selection. The older exact listing does not establish stock or a current carbon-wheel price." }
+    ]
+  } },
+  "status": "blocked",
+  "accepted_source_ids": ["twitter-gravel-v3-2024-taobao-2026-08-21", "twitter-v3-25yr-rs-store-recheck-2026-09-23", "twitter-v3-25yr-manufacturer-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "No current mainland price was assigned; retain the historical alloy-wheel price only for its exact selection and keep the carbon-wheel candidate's historical price gap open."
+}

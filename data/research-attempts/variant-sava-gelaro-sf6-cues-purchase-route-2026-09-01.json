@@ -483,5 +483,11 @@
     "sava-jd-official-storefront-2026-08-26"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-gelaro-sf6-cues-batch-045-50-area-sweep-2026-09-01.json. The exact global store exposes stock, delivery and add-to-cart, while the mainland official JD storefront is attributable; final mainland checkout remains unverified."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-gelaro-sf6-cues-batch-045-50-area-sweep-2026-09-01.json. The exact global store exposes stock, delivery and add-to-cart, while the mainland official JD storefront is attributable; final mainland checkout remains unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-gelaro-sf6-official-2026-08-28", "sava-jd-official-storefront-2026-08-26"],
+    "note": "The exact global R21-U6000-11S store page shows low stock, delivery, and Add-to-cart; the JD page supports a mainland SF6 storefront but no exact-option checkout. Preserve the global route and do not assert local U6000 stock or a completed mainland purchase."
+  }
 }

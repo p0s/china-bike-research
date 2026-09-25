@@ -1,0 +1,41 @@
+{
+  "id": "candidate-missing-china-price-merida-scultura-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "missing-china-price-merida-scultura"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Current exact manufacturer pages expose suggested retail or dynamic placeholders, not an exact-model observed CNY listing or checkout value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Merida SCULTURA 6000 25 current mainland official listing and checkout price",
+          "route": "Exact Merida China model page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The current exact mainland page confirms the CNY 16,800 suggested retail and build, but has only dealer and size-finder actions; no current listed checkout amount is shown.",
+          "result_url": "https://www.merida.cn/index/bikefinder/detail/id/23.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Merida SCULTURA 6000 25 exact SKU in official China mall current public catalog",
+          "route": "Merida China official mall public product-list route",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The current public mall response contains template placeholders but no model name, SKU, listed amount, stock, or checkout state.",
+          "result_url": "https://mall.merida.cn/index.php?action=pro_list&cat=0&controller=site"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "merida-scultura-6000-25-official-mainland-price-recheck-2026-09-24",
+    "merida-china-official-mall-current-list-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The official mainland CNY 16,800 suggested retail remains separate from a current observed price. No candidate observed_price value is added."
+}

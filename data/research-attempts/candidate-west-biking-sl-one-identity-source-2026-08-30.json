@@ -481,8 +481,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "west-biking-sl-one-current-options-2026-08-30"
+    "west-biking-sl-one-current-options-2026-08-30",
+    "west-biking-sl-one-taobao-search-index-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/west-biking-sl-one-50-area-sweep-2026-08-30.json. Current exact-model indexing identifies the SL-ONE family and its R7120 and R7170 options; the retained card does not select one option."
+  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/west-biking-sl-one-50-area-sweep-2026-08-30.json. Current exact-model indexing identifies the SL-ONE family and its R7120 and R7170 options; the retained card does not select one option.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "west-biking-sl-one-current-options-2026-08-30",
+      "west-biking-sl-one-taobao-search-index-2026-09-23"
+    ],
+    "note": "The 2026-09-23 Taobao search-index result identifies a WEST BIKING SL-ONE listing and names a WEST BIKING flagship-store seller, but it does not independently verify seller authorization. The JD item click hit its ordinary risk handler; no bypass was attempted."
+  }
 }

@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "titanium-laget-pioneer-one-official"
+    "titanium-laget-pioneer-one-official",
+    "laget-pioneer-one-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-laget-pioneer-one-batch-032-50-area-sweep-2026-09-01.json. The exact page identifies a 3D-printed titanium road frame with carbon fork."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-laget-pioneer-one-batch-032-50-area-sweep-2026-09-01.json. The exact page identifies a 3D-printed titanium road frame with carbon fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "titanium-laget-pioneer-one-official",
+      "laget-pioneer-one-official-recheck-2026-09-23"
+    ],
+    "note": "The accepted manufacturer source identifies a 3D-printed titanium frame with carbon fork. The current page describes 3D-printed construction but does not publish titanium grade; preserve the dated exact-model material evidence."
+  }
 }

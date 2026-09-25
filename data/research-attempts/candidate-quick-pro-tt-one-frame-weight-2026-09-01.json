@@ -483,5 +483,11 @@
     "quick-pro-tt-one-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-041-50-area-sweep-2026-09-01.json. Current exact storefront publishes a 1,089 g frame and 399 g fork, both with ±5% tolerance."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-041-50-area-sweep-2026-09-01.json. Current exact storefront publishes a 1,089 g frame and 399 g fork, both with ±5% tolerance.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-pro-tt-one-official-2026-08-17"],
+    "note": "Disposition: exact TT:ONE frame and fork weights reused at 1,089 g and 399 g respectively, each with ±5% tolerance. These are separate frame-only and fork figures, not complete-bike weight; size, finish, and hardware basis are unspecified."
+  }
 }

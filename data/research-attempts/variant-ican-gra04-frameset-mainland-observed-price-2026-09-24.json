@@ -1,0 +1,21 @@
+{
+  "id": "variant-ican-gra04-frameset-mainland-observed-price-2026-09-24",
+  "target": { "record_type": "variant", "record_id": "ican-gra04-frameset" },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": { "web": {
+    "status": "blocked",
+    "blocker": "The exact current official GRA04 page is quote-only; public index searches did not verify an exact current mainland listing, and the surfaced forum quote is historical USD for a BB86 package rather than the current T47 variant.",
+    "attempts": [
+      { "attempt": 1, "query": "ICAN GRA04 current mainland CNY frameset price exact T47 model", "route": "Current official ICAN GRA04 product page", "outcome": "no-result", "accessed_at": "2026-09-24", "note": "The exact current page shows Get a quote but no amount or currency. The quote form requires contact details and was not submitted.", "result_url": "https://www.icanbikes.com/Products-list/full-carbon-racing-gravel-frame-gra04/" },
+      { "attempt": 2, "query": "ICAN GRA04 current exact public mainland listing Taobao JD Pinduoduo 1688 Goofish", "route": "Public exact-model marketplace index search", "outcome": "no-result", "accessed_at": "2026-09-24", "note": "Index-only searches did not surface a verifiable current GRA04 mainland listing or selected public amount. This does not prove that no private or unindexed seller listing exists." },
+      { "attempt": 3, "query": "ICAN GRA04 655 USD quote BB86 T47 date", "route": "Public historical product-price discussion", "outcome": "identity-mismatch", "accessed_at": "2026-09-24", "note": "A December 2024 post relays a USD 655 email quote for a package including frame, fork, seatpost, handlebar and headset, but describes BB86; the current official page identifies T47. This is historical, package-conflicted foreign pricing, not a current mainland amount.", "result_url": "https://chinertown.com/index.php?topic=4766.90" }
+    ]
+  } },
+  "status": "blocked",
+  "accepted_source_ids": ["ican-gra04-price-route-current-recheck-2026-09-24", "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Keep the existing CNY 3,800–5,200 approximate reference dated 2026-08-06; no current CNY amount supports refreshing or replacing it."
+}

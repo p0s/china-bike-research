@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "giant-china-warranty-2026-08-17"
+    "giant-china-warranty-2026-08-17",
+    "giant-china-warranty-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-china-warranty-current-2026-09-23"
+    ],
+    "note": "Current Giant China policy lists lifetime general-frame coverage and 10-year non-suspension road-fork coverage for forks sold from 2024-01-01, but only for eligible mainland purchases assembled by authorized dealers and subject to proof/exclusions. It is general brand policy, not an exact serial-number claim."
+  }
 }

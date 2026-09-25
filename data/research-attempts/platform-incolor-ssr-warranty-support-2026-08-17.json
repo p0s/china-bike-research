@@ -59,8 +59,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "incolor-services-official-2026-08-17"
+    "incolor-services-official-2026-08-17",
+    "incolor-ssr-product-current-2026-09-23",
+    "incolor-ssr-warranty-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Current official service terms support the exact SSR platform's carbon frame and fork, with exclusions and third-party build components outside scope.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "incolor-ssr-product-current-2026-09-23",
+      "incolor-ssr-warranty-current-2026-09-23"
+    ],
+    "note": "The exact SSR product page links INCOLOR's service terms, which give eligible original purchasers lifetime coverage from receipt for carbon frames and forks. Coverage is conditional and excludes non-INCOLOR build components, collision, misuse, poor assembly and wear."
+  }
 }

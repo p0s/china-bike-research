@@ -482,8 +482,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "gito-g525-retailer-2026-08-29"
+    "gito-g525-retailer-2026-08-29",
+    "gito-g525-888bike-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. The current exact G525 specialist listing explicitly identifies a carbon aero-road bike."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. The current exact G525 specialist listing explicitly identifies a carbon aero-road bike.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g525-888bike-current-2026-09-23"
+    ],
+    "note": "Seller title/SKU calls the G525 a carbon frame; conflicting body copy lowers confidence and exact grade remains unknown."
+  }
 }

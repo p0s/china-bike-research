@@ -478,7 +478,10 @@
     }
   },
   "status": "blocked",
-  "accepted_source_ids": [],
+  "accepted_source_ids": [
+    "rinasclta-gr025-product-recheck-2026-09-24",
+    "rinasclta-gr025-geometry-comparison-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-rinasclta-gr025-batch-042-50-area-sweep-2026-09-01.json. No attributable numeric exact-model geometry table was found. Size selectors and product dimensions do not establish stack, reach, angles or wheelbase."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-rinasclta-gr025-batch-042-50-area-sweep-2026-09-01.json. No attributable numeric exact-model geometry table was found. Batch 40 recheck (2026-09-24): the official GR025 product page lists XS–XL selectors but no coordinates; its linked geometry comparison page returned only a heading with no chart or values. Size selectors and product dimensions do not establish stack, reach, angles or wheelbase; remain blocked without repeating the 50-area campaign."
 }

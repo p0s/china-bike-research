@@ -1,0 +1,63 @@
+{
+  "batch_id": "gap-fill-batch-07-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "The worktree contains the completed local Batch 01-06 changes; Batch 06 validation and outcome are recorded in gap-fill-batch-06-results.json. The current branch HEAD remains the base commit because these batches are local and uncommitted.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 06. Selected all six ready atomic fields in priority order, across five exact candidate records; within the per-writer limit of 10 exact models and 25 fields.",
+  "exact_model_count": 5,
+  "atomic_field_count": 6,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build reviewed in the 2023 BIKETO report; keep the APEX 12-speed Tmall selection separate from the reviewed APEX AXS/X1 Eagle build",
+      "fields": ["current-configuration"],
+      "prior_attempt_ids": ["candidate-pardus-uragano-evo-current-configuration-2026-08-27"],
+      "existing_source_ids": ["public-pardus-uragano-evo-build-2026-08-17", "biketo-pardus-uragano-evo-review-2023", "pardus-current-gravel-catalog-2026-08-27", "pardus-uragano-evo-apex-tmall-2026-08-27", "pardus-uragano-evo-uae-seller-2026-08-27", "pardus-china-support-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["price", "frame-stiffness"],
+      "prior_attempt_ids": ["candidate-airwolf-yf-r003-price-2026-09-22", "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["airwolf-yf-r003-owner-2026-09-05", "airwolf-yf-r003-source-2026-09-05", "airwolf-yf-r003-owner-recheck-2026-09-22", "airwolf-yf-r003-access-check-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new with UDH and 700x32C listing; keep the distinct 35C New-Version revision out of scope as supporting evidence",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["seraph-tt-x68-new-storefront-2026-09-23", "tantan-tt-x68-new-storefront-2026-09-22", "tantan-tt-x68-new-version-35c-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316 gravel-race frameset",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-mondince-fm316-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["mondince-fm316-source-2026-09-05", "mondince-fm316-current-specification-2026-09-22", "mondince-fm316-owner-followup-2026-09-22", "mondince-fm316-guide-price-2026-09-22"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "velobuild-cx-002-2023",
+      "exact_identity": "VeloBuild CX-002 2023 full-internal-routing cyclocross frameset",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"],
+      "existing_source_ids": ["velobuild-cx-002-2023-source-2026-09-05", "velobuild-cx002-spec-sheets-2026-09-22", "velobuild-cx002-owner-thread-2026-09-22", "velobuild-cx002-geometry-sheet-2026-09-22", "velobuild-cx-002-2023-storefront-price-2026-09-23"]
+    }
+  ],
+  "research_instructions": [
+    "Research one exact model/source at a time. Use only routes that are materially distinct from those listed in Batch 06 results and the predecessor ledgers; do not repeat a route merely to obtain a fresh date.",
+    "Use the model-specific official or current seller route only when it can directly establish the field. For public-community evidence, use accessible public forums or owner reports; the XHS extension doctor failed its required CDP preflight in Batch 06, so do not open XHS directly or attempt a workaround.",
+    "For Airwolf YF-R003, do not bypass or retry the verification interstitial. A historical foreign owner amount is not current mainland price evidence.",
+    "For Uragano EVO, distinguish a current marketplace snapshot, a factory build, and the 2023 reviewed custom build. Do not claim current stock from a dated historical page or merge unlike BOMs.",
+    "For stiffness, accept only an instrumented measurement or credible controlled exact-frame comparison. Generic resin claims, qualitative marketing, rider impressions, and another revision do not resolve this field.",
+    "Record literal queries and exact route labels when retained. If a research result is handed off only as a normalized summary, label it as such; never invent the literal query or source details.",
+    "No manufacturer/seller contact, private content, purchase, image download, image-rights inference, catalog publication, or external GitHub mutation."
+  ],
+  "done_criteria": "Integrate only exact-model evidence that closes an atomic field. Preserve all other gaps with a precise evidence-backed state and concrete reopening trigger; do not call an unrun channel exhausted. Add a dated result matrix for all six fields, accept monotonic coverage, run npm run check once for the coherent batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

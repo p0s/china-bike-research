@@ -1,0 +1,184 @@
+{
+  "batch_id": "gap-fill-batch-24-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps: 41 published variants, 222 candidates; 335 blocked, 35 conflicted, 68 found and 14 temporarily exhausted field states. Fresh research queue: 591 evidence-found, 45 deferred, 498 blocked, 60 conflicted and 0 ready. Queue rows with any existing resolution were excluded before selection.",
+  "selection_basis": "The next unresolved evidence-found exact candidate groups in queue order, frozen at nine models/25 fields. The duplicated java-aluminum-24s observation is excluded. LOOK 765 complete-weight (61 priority points) remains for a later batch to stay within the 25-field cap.",
+  "exact_model_count": 9,
+  "atomic_field_count": 25,
+  "unresolved_evidence_found_fields_after_resolution_filter": 572,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "lightcarbon-speed7-complete",
+    "lightcarbon-speed7-frameset",
+    "look-765-electronic",
+    "meihanda-phantom-p10",
+    "meihanda-xtreme-gravel",
+    "meinier-superlight-2",
+    "merida-scultura-endurance-4000-community-lead",
+    "missile-e6000",
+    "missing-china-price-canyon-aeroad"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-complete",
+      "exact_identity": "LightCarbon Speed7 105 mechanical complete bike",
+      "model_group": "lightcarbon-speed7-complete",
+      "fields": [
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-lightcarbon-speed7-complete-tire-clearance-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-frameset",
+      "exact_identity": "LightCarbon Speed7 frameset lead",
+      "model_group": "lightcarbon-speed7-frameset",
+      "fields": [
+        "frame-weight",
+        "identity-source",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-lightcarbon-speed7-frameset-frame-weight-2026-08-17",
+        "candidate-lightcarbon-speed7-frameset-identity-source-2026-09-01",
+        "candidate-lightcarbon-speed7-frameset-tire-clearance-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "look-765-electronic",
+      "exact_identity": "LOOK 洛克 765 electronic",
+      "model_group": "look-765-electronic",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "frame-stiffness",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-look-765-electronic-drivetrain-2026-08-30",
+        "candidate-look-765-electronic-frame-material-2026-08-30",
+        "candidate-look-765-electronic-frame-stiffness-2026-08-30",
+        "candidate-look-765-electronic-tire-clearance-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-phantom-p10",
+      "exact_identity": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "model_group": "meihanda-phantom-p10",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "identity-source",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-meihanda-phantom-p10-drivetrain-2026-08-30",
+        "candidate-meihanda-phantom-p10-frame-material-2026-08-30",
+        "candidate-meihanda-phantom-p10-identity-source-2026-08-30",
+        "candidate-meihanda-phantom-p10-tire-clearance-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-xtreme-gravel",
+      "exact_identity": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
+      "model_group": "meihanda-xtreme-gravel",
+      "fields": [
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-meihanda-xtreme-gravel-frame-material-2026-08-30",
+        "candidate-meihanda-xtreme-gravel-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meinier-superlight-2",
+      "exact_identity": "MEINIER full-carbon road bike, exact model unresolved",
+      "model_group": "meinier-superlight-2",
+      "fields": [
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-meinier-superlight-2-frame-material-2026-08-30",
+        "candidate-meinier-superlight-2-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "exact_identity": "Merida Scultura Endurance 4000",
+      "model_group": "merida-scultura-endurance-4000-community-lead",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness",
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-merida-scultura-endurance-4000-community-lead-complete-weight-2026-09-01",
+        "candidate-merida-scultura-endurance-4000-community-lead-frame-stiffness-2026-09-01",
+        "candidate-merida-scultura-endurance-4000-community-lead-price-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missile-e6000",
+      "exact_identity": "MISSILE 米赛尔 水星6000",
+      "model_group": "missile-e6000",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-missile-e6000-complete-weight-2026-08-30",
+        "candidate-missile-e6000-drivetrain-2026-08-30",
+        "candidate-missile-e6000-frame-material-2026-08-30",
+        "candidate-missile-e6000-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-aeroad",
+      "exact_identity": "Canyon Aeroad CFR Di2",
+      "model_group": "missing-china-price-canyon-aeroad",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-canyon-aeroad-complete-weight-2026-09-01",
+        "candidate-missing-china-price-canyon-aeroad-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research each frozen exact candidate sequentially, one model and source at a time; use current exact-model sources and stop at decisive evidence.",
+    "Do not repeat a completed 50-approach sweep. Reuse accepted exact-model evidence where valid, then do only a focused current recheck required for a dated fact or evidence-backed unknown.",
+    "Keep selected build, configuration, market, seller-card price, mainland checkout, freight, tax and live stock distinct; do not transfer a sibling or regional build fact.",
+    "Preserve unknown, blocked, inaccessible and conflicted facts with source-backed caveats; do not infer an exact value or rely on generic marketplace category listings for model-specific claims.",
+    "This batch is evidence-only for Luna and write-only for root. Do not edit repository files, contact sellers, use XHS, recurse, or report prior out-of-scope notes as B24 evidence. Return source URLs/classes/access dates, supported findings, limits, dispositions and reopen triggers for each field."
+  ]
+}

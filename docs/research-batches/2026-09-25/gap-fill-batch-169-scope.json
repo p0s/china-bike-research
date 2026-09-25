@@ -1,0 +1,37 @@
+{
+  "batch": 169,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_status_counts": {"blocked":384,"conflicted":35,"found":15,"open":5,"temporarily-exhausted":4},
+    "research_queue_counts": {"ready":5,"evidence-found":0,"deferred":43,"blocked":562,"conflicted":1},
+    "selection": "All five ready items in the fresh queue after B168; each is one exact candidate price field from the still-open B148 attempt."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id":"lightcarbon-lcg074s-d","name":"LightCarbon LCG074S-D","record_type":"candidate","field":"price-missing","previous_attempt_id":"candidate-lightcarbon-lcg074s-d-price-b148-2026-09-25","new_attempt_id":"candidate-lightcarbon-lcg074s-d-price-b169-2026-09-25","campaign_extension_id":"gap-fill-batch-169-lightcarbon-lcg074s-d-price","previous_query":"LightCarbon LCG074S-D separate stem micro suspension frame price CNY China 2026"},
+      {"id":"lightcarbon-lcg087-d","name":"LightCarbon LCG087-D","record_type":"candidate","field":"price-missing","previous_attempt_id":"candidate-lightcarbon-lcg087-d-price-b148-2026-09-25","new_attempt_id":"candidate-lightcarbon-lcg087-d-price-b169-2026-09-25","campaign_extension_id":"gap-fill-batch-169-lightcarbon-lcg087-d-price","previous_query":"LightCarbon LCG087-D integrated cockpit gravel frameset current price CNY China 2026"},
+      {"id":"lightcarbon-lcg087s-d","name":"LightCarbon LCG087S-D","record_type":"candidate","field":"price-missing","previous_attempt_id":"candidate-lightcarbon-lcg087s-d-price-b148-2026-09-25","new_attempt_id":"candidate-lightcarbon-lcg087s-d-price-b169-2026-09-25","campaign_extension_id":"gap-fill-batch-169-lightcarbon-lcg087s-d-price","previous_query":"LightCarbon LCG087S-D gravel frameset with stem price CNY 2026 China"},
+      {"id":"lightcarbon-lcr020-d","name":"LightCarbon LCR020-D","record_type":"candidate","field":"price-missing","previous_attempt_id":"candidate-lightcarbon-lcr020-d-price-b148-2026-09-25","new_attempt_id":"candidate-lightcarbon-lcr020-d-price-b169-2026-09-25","campaign_extension_id":"gap-fill-batch-169-lightcarbon-lcr020-d-price","previous_query":"LightCarbon LCR020-D frame set price 2026 2027 China CNY"},
+      {"id":"missing-china-price-specialized-crux","name":"Specialized Crux Comp GRX","record_type":"candidate","field":"price-missing","previous_attempt_id":"candidate-missing-china-price-specialized-crux-price-b148-2026-09-25","new_attempt_id":"candidate-missing-china-price-specialized-crux-price-b169-2026-09-25","campaign_extension_id":"gap-fill-batch-169-specialized-crux-price","previous_query":"Specialized Crux Comp GRX 2026 product 223483 exact model public price China CNY"}
+    ],
+    "exact_record_count": 5,
+    "atomic_gap_entries": 5,
+    "research_boundary": "Use one read-only Luna evidence researcher; root is sole writer. Before any query, inspect the exact candidate, all linked source and attempt records, campaign history, and exact query/URL history. This scope authorizes one new B169 dated web-attempt record per field with a formal campaign extension (max_new_attempts=1, allowed_channels=[web], extending that field's previous_attempt_id). Run at most one distinct current exact-model web query per target. Open at most one genuinely new product/seller page per target, only after verifying the complete URL is absent by exact-literal search across repository data and docs; do not reopen any recorded URL. Preserve all prior attempts and campaign history. Search result snippets can discover a lead but cannot substantiate a price. If there is no qualifying public amount, leave price and candidate data unchanged and set the new attempt to blocked with the exact-model reason and relevant source IDs.",
+    "price_rules": [
+      "A price-missing field may be filled only with a dated public manufacturer or seller amount attributable to the exact frameset or exact Crux Comp GRX model; record currency, price type, seller, observation date, and conditions. A quote-only form, search snippet, family-level amount, or ambiguous option does not qualify.",
+      "A foreign-currency exact-model asking price may be stored only as a clearly typed reference with its exchange-rate provenance; do not describe it as mainland observed or a transaction price.",
+      "For Specialized Crux, preserve model-year and GRX build exactness. Exclude other Crux trims, foreign-market list prices, stale offers, and MSRP where the candidate specifically requires a public dated amount."
+    ],
+    "excluded": [
+      "No seller contact, login, CAPTCHA, quote request, cart, purchase, or hidden checkout probing.",
+      "No image changes, unrelated candidate or catalog changes, source reuse beyond these five price fields, or external delivery.",
+      "The Luna agent must not edit files; root alone integrates qualifying results and updates attempts."
+    ]
+  }
+}

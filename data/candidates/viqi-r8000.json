@@ -7,20 +7,21 @@
   "brand_id": "viqi",
   "why_interesting": "A dated mainland-China card and current exact-family indexes align on a VIQI / 微琦 R8000 mechanical 22-speed gravel-road complete bike at a ¥6,687.25 coupon-price lead.",
   "facts": {
-    "listing_identity": "VIQI / 微琦 R8000 carbon gravel-road complete bike",
-    "drivetrain": "Shimano Ultegra R8000 mechanical 2x11 (22-speed)",
-    "frame_material": "Exact current listing claim: carbon-fiber gravel-road frame; fiber grade, lay-up and fork construction are unpublished"
+    "listing_identity": "VIQI / 微琦 R8000 gravel-road complete-bike marketplace listing with an R8000 22-speed option; no exact manufacturer page found",
+    "drivetrain": "JD marketplace-listed Shimano Ultegra R8000 mechanical 2x11 (22-speed); not manufacturer-verified",
+    "frame_material": "unverified; the marketplace title calls the bike carbon-fiber gravel-road, but does not identify the frame material"
   },
   "missing": [
     "Exact complete-bike weight and weighing basis",
     "Manufacturer-confirmed maximum tire clearance",
-    "Carbon grade, lay-up, fork construction and exact frame, wheel, cockpit, brake, tire and size-specific BOM",
+    "Frame-specific material confirmation; carbon grade, lay-up, fork construction and exact frame, wheel, cockpit, brake, tire and size-specific BOM",
     "Public purchase route, checkout conditions, returns, and domestic warranty"
   ],
   "status": "exact-r8000-drivetrain-weight-clearance-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "viqi-r8000-current-jd-2026-08-30"
+    "viqi-r8000-current-jd-2026-08-30",
+    "viqi-r8000-current-jd-recheck-2026-09-24"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -32,6 +33,6 @@
     "observation_count": 1
   },
   "source_url": "https://www.jd.com/book/1318a62bdcf3128f2713.html",
-  "source_note": "Current exact-family indexing establishes Shimano Ultegra R8000 mechanical 2x11. No controlled complete weight or manufacturer maximum tire clearance was found after the full 50-area sweep; a listed 40 mm wheel option is rim depth, not tire clearance.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The JD listing and 2026-09-24 index recheck identify a VIQI R8000 gravel-road listing, but the marketplace title does not identify frame or fork material. No exact manufacturer page was found; keep frame material, fork construction, carbon grade and lay-up unverified.",
+  "last_reviewed": "2026-09-25"
 }

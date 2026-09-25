@@ -1,0 +1,21 @@
+{
+  "batch": 107,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 121
+  },
+  "scope": {
+    "exact_target_records": ["candidate:missing-china-price-specialized-roubaix-sl8"],
+    "atomic_gap": "current exact mainland-China price / observed selected-build amount",
+    "existing_state": "The exact China catalog card has a dated CNY 15,990 from CNY 17,990 offer, and a current homepage index repeated the card; the opened detail exposed no price or purchase terms, so observed_price remains null.",
+    "research_boundary": "Recheck the current exact Specialized China product page and at most one exact official China dealer route for the Tiagra build. Accept a current CNY amount only with exact trim attribution and visible current offer context; otherwise preserve the dated catalog reference separately from an observed checkout price.",
+    "excluded": [
+      "No transfer from US MSRP or another Roubaix trim.",
+      "No price inference from search snippets or outdated dealer pages.",
+      "No image, other model, or unrelated candidate changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

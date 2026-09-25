@@ -21,7 +21,7 @@ test('homepage is the unified bike and frame-build comparison', () => {
   assert.match(html, /data-catalog-root/);
   assert.match(html, /data-inline-compare/);
   assert.match(html, /Frame estimate/);
-  assert.match(html, /Est\. ¥9,998/);
+  assert.match(html, /Est\. ¥9,987/);
   assert.match(html, /Full-bike price/);
   assert.match(html, /placeholder="Search model, use or drivetrain"/);
   assert.match(html, /class="product-fit"><span>Best for<\/span>/);
@@ -195,6 +195,13 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(sparseDetail, /property="og:type" content="website"/);
   assert.doesNotMatch(sparseDetail, /"@type":"Product"/);
 
+  const airwolfPriceReference = candidates.find((entry) => entry.candidate.id === 'airwolf-yf-r003');
+  const airwolfPriceDetail = renderCandidateModel(context, airwolfPriceReference);
+  assert.match(airwolfPriceDetail, /Frame package ¥9,644 · Foreign seller FX estimate · 2026-09-25/);
+  assert.match(airwolfPriceDetail, /currency conversion of a foreign seller listing, not a confirmed mainland checkout price/);
+  assert.match(airwolfPriceDetail, /adjust the allowance to avoid double-counting included parts/);
+  assert.doesNotMatch(airwolfPriceDetail, /Official FX estimate/);
+
   const oldTwitterCarbon = candidates.find((entry) => entry.candidate.id === 'twitter-gravel-v3-2024-rs-carbon-wave');
   const oldTwitterCarbonDetail = renderCandidateModel(context, oldTwitterCarbon);
   assert.match(oldTwitterCarbonDetail, /<strong>Not sold new<\/strong><span>Superseded by 2025 Gravel V3<\/span>/);
@@ -258,6 +265,25 @@ test('candidate details expose frame material and stiffness evidence without inv
   assert.match(detail, /<dt>Frame material<\/dt><dd>Toray T800 and M40X carbon<\/dd>/);
   assert.match(detail, /<dt>Stiffness evidence<\/dt><dd>Manufacturer comparison; test protocol not published\.<\/dd>/);
   assert.doesNotMatch(detail, /stiffness score/i);
+});
+
+test('candidate fitted tire observations are labeled and are not sorted as verified maximum clearance', () => {
+  const entry = candidates.find((item) => item.candidate.id === 'triaero-a9');
+  const detail = renderCandidateModel({ data, products, base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-09-24T00:00:00Z') }, entry);
+  assert.match(detail, /28 mm fitted/);
+  assert.match(detail, /Manufacturer-confirmed maximum tire clearance/);
+  const idOffset = html.indexOf('data-id="candidate-triaero-a9"');
+  assert.notEqual(idOffset, -1);
+  const openingTag = html.slice(html.lastIndexOf('<div', idOffset), html.indexOf('>', idOffset) + 1);
+  assert.doesNotMatch(openingTag, /data-tire-clearance-sort=/);
+
+  const rs9 = candidates.find((item) => item.candidate.id === 'xlab-rs9');
+  const rs9Detail = renderCandidateModel({ data, products, base: '/', repositoryUrl: 'https://github.com/example/china-bike-research', siteUrl: 'https://example.com', now: new Date('2026-09-24T00:00:00Z') }, rs9);
+  assert.match(rs9Detail, /32 mm fitted/);
+  const rs9IdOffset = html.indexOf('data-id="candidate-xlab-rs9"');
+  assert.notEqual(rs9IdOffset, -1);
+  const rs9OpeningTag = html.slice(html.lastIndexOf('<div', rs9IdOffset), html.indexOf('>', rs9IdOffset) + 1);
+  assert.doesNotMatch(rs9OpeningTag, /data-tire-clearance-sort=/);
 });
 
 test('candidates without a recorded category show an honest unknown instead of undefined', () => {
@@ -351,6 +377,23 @@ test('complete-bike pages expose researched build components and weight basis wi
   assert.match(gx700Detail, /Shifters: ST-RX820 · RD: RD-RX822 · Crank: FC-RX610 36T · Cassette: CS-M6100 12-speed 10–51T/);
 });
 
+test('exact-variant bottom-bracket labels render without filling the shared platform field', () => {
+  const context = {
+    data,
+    products,
+    base: '/china-bike-research',
+    repositoryUrl: 'https://github.com/example/china-bike-research',
+    siteUrl: 'https://example.github.io',
+    now: new Date('2026-09-24T00:00:00Z')
+  };
+  const s4 = products.find((entry) => entry.variant.id === 'sava-gelaro-s4-grx400');
+  const s8 = products.find((entry) => entry.variant.id === 'sava-gelaro-s8');
+  assert.equal(s4.variant.bottom_bracket, 'BBT47');
+  assert.equal(s4.platform.frame.bottom_bracket, undefined);
+  assert.match(renderModel(context, s4), /<dt>Bottom bracket<\/dt><dd>BBT47<\/dd>/);
+  assert.doesNotMatch(renderModel(context, s8), /BBT47/);
+});
+
 test('superseded published bikes show availability instead of a historical price headline', () => {
   const context = {
     data,
@@ -389,7 +432,7 @@ test('candidate rows expose verified complete-bike facts and honest FX estimates
   assert.match(html, /Merida SCULTURA 6000 25[\s\S]*?¥16,800[\s\S]*?Shimano 105 Di2 2×12[\s\S]*?8\.2 kg/);
   assert.match(html, /Merida Scultura Endurance 4000[\s\S]*?¥14,800[\s\S]*?Official · 2026-08-17/);
   assert.match(html, /Canyon Grail CF 7[\s\S]*?¥11,700–14,700[\s\S]*?Official price conflict · 2026-08-17/);
-  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-08-17/);
+  assert.match(html, /TSB \/ Titan Super Bond 泰世邦 PIONEER ONE[\s\S]*?Est\. ¥27,900[\s\S]*?Frame ¥21,900 · Official · 2026-09-23/);
 });
 
 test('candidate detail preserves official price conflicts and direct source links', () => {
@@ -642,7 +685,7 @@ test('model pages pair visible breadcrumbs with source and freshness context', (
   const detail = renderModel(context, product);
   assert.match(detail, /<nav class="breadcrumbs" aria-label="Breadcrumb">[\s\S]*Complete bikes[\s\S]*aria-current="page"/);
   assert.match(detail, /data-catalog-back/);
-  assert.match(detail, /Evidence reviewed through <time datetime="2026-09-22">/);
+  assert.match(detail, /Evidence reviewed through <time datetime="2026-09-25">/);
   assert.match(detail, /href="#source-records">View sources<\/a>/);
   assert.match(detail, /<details class="detail-panel" id="source-records">/);
 });
@@ -678,8 +721,8 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   assert.match(html, /parts already included in that package remain in the frame price/);
   assert.match(html, /No attributable mainland consumer price is recorded/);
   assert.match(html, /cover a 2× hydraulic shift-and-brake kit, not every remaining complete-build part/);
-  assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3998" data-frame-price-high="3998"/);
-  assert.match(html, /<span data-calculated-price>Est\. ¥9,998<\/span>/);
+  assert.match(html, /data-id="lightcarbon-lcg071s-pro-frameset"[^>]*data-frame-price-low="3987" data-frame-price-high="3987"/);
+  assert.match(html, /<span data-calculated-price>Est\. ¥9,987<\/span>/);
   assert.match(html, /data-frameset-price-tip=""/);
   assert.match(html, /data-stage="candidate"[^>]*data-id="candidate-hi-light-g0"[^>]*data-price-sort="[^"]+" data-price-filter="[^"]+" data-frame-price-low="[^"]+" data-frame-price-high="[^"]+"/);
   assert.match(html, /data-id="candidate-hi-light-g0"[\s\S]*?<span class="metric-main" data-calculated-price>Est\. ¥[\d,]+(?:–[\d,]+)?<\/span><span class="metric-sub price-state">Frame ¥/);
@@ -695,8 +738,8 @@ test('frameset totals expose the reviewed default as a buyer-editable calculator
   };
   const publishedFrame = products.find((item) => item.variant.id === 'lightcarbon-lcg071s-pro-frameset');
   const publishedDetail = renderModel(context, publishedFrame);
-  assert.match(publishedDetail, /data-model-frame-price-low="3998" data-model-frame-price-high="3998" data-model-default-allowance="6000"/);
-  assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,998/);
+  assert.match(publishedDetail, /data-model-frame-price-low="3987" data-model-frame-price-high="3987" data-model-default-allowance="6000"/);
+  assert.match(publishedDetail, /data-model-calculated-price>Est\. ¥9,987/);
   assert.match(publishedDetail, /data-model-price-brief/);
   assert.match(publishedDetail, /Included package/);
   assert.doesNotMatch(publishedDetail, /<dt>Drivetrain<\/dt>/);

@@ -1,0 +1,32 @@
+{
+  "batch": 116,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-116-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:tsb-titan-super-bond-pioneer-one",
+      "candidate:twitter-carbon-road-gravel-unknown",
+      "variant:twitter-cyclone-electronic",
+      "platform:twitter-cyclone-electronic"
+    ],
+    "disposition": "Source-reuse-resolved the PIONEER ONE size-S frame-weight claim and 32C maximum, listing-level TWITTER Gravel V3 RS identity, and Cyclone 3rd ET threaded T47x24 bottom bracket. The Cyclone bottom-bracket source URL later returned 404, so its exact manufacturer-published value remains dated, not newly reverified. Unsupported TWITTER RS drivetrain/fork details and incomplete Cyclone BOM/frame-material evidence remain open.",
+    "catalog_gap_instances_before": 706,
+    "catalog_gap_instances_after": 706,
+    "evidence_found_before": 108,
+    "evidence_found_after": 104,
+    "catalog_values_changed": 0,
+    "research_attempts_resolved": 4,
+    "source_records_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1316 sources, 212 primary image records, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1316 sources and 236 candidates protected",
+    "diff_check": "pass: git diff --check",
+    "full_gate": "not run; source-reuse resolution only, no catalog value changed",
+    "image_report": "not run; no image record changed"
+  }
+}

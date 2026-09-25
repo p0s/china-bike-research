@@ -482,5 +482,11 @@
     "sava-a4-bilibili-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-041-50-area-sweep-2026-09-01.json. An exact-model independent ride review reports good perceived frame rigidity and direct acceleration; qualitative community evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-041-50-area-sweep-2026-09-01.json. An exact-model independent ride review reports good perceived frame rigidity and direct acceleration; qualitative community evidence only.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-a4-bilibili-review-2026-09-01"],
+    "note": "The exact-model independent ride review supports subjective reports of frame rigidity and direct acceleration. The candidate labels this as qualitative rider evidence, not a measured deflection result or reproducible stiffness protocol."
+  }
 }

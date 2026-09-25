@@ -1,0 +1,47 @@
+{
+  "batch": 54,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-54-scope.json",
+  "scope": {
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1
+  },
+  "dispositions": [
+    {
+      "record_type": "candidate",
+      "id": "seka-exaero-road",
+      "gap": "price-missing",
+      "status": "unresolved-no-exact-public-current-package-price",
+      "source_ids_added": ["seka-exaero-road-smzdm-price-lead-2026-09-24"],
+      "attempt_id": "candidate-seka-exaero-road-mainland-observed-price-2026-09-24",
+      "finding": "Distinct public marketplace and retailer searches surfaced no exact current mainland road-frameset item. A secondary launch article's indexed text contained Standard starting-price and RDC maximum-price references, but the page timed out and no amount could be assigned to an exact selected package or current checkout.",
+      "catalog_price_added": false,
+      "reopen_when": "An accessible exact mainland seller item identifies RDC or Standard trim, package contents, current amount, date, and purchase conditions."
+    }
+  ],
+  "gaps_resolved": 0,
+  "gaps_unresolved": 1,
+  "changes": {
+    "sources_added": 1,
+    "research_attempts_added": 1,
+    "candidate_records_updated": 1,
+    "price_observations_added": 0,
+    "images_added": 0
+  },
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via the approved pnpm-check route after accepting the monotonic coverage baseline and updating ledger coverage assertions",
+    "privacy": "passed",
+    "data_validation": "41 brands, 38 platforms, 41 variants, 73 prices, 1294 sources, 212 primary images, 236 candidates, 1514 atomic research records",
+    "research_validation": "1499 atomic research fields",
+    "coverage": "passed; 212 images, 73 price observations, 1294 sources, and 236 candidates protected; baseline acceptance retained 212 images and 277 catalog targets",
+    "tests": "321 passed, 0 failed",
+    "build": "584 pages for 41 products",
+    "seo": "passed; 584 pages, 458 indexable, 126 noindex",
+    "focused_tests": "79 passed, 0 failed across data and research-queue tests",
+    "initial_gate_failures": "The first full check correctly rejected an unaccepted new source/attempt in the coverage baseline and then exposed stale exact research-record counts plus the newly reopened blocked SEKA gap. After accepting the baseline and updating those assertions, the full gate passed.",
+    "image_report": "not run; no image records changed"
+  },
+  "delivery": "Local B54 batch only; no push, pull request, merge, publication, or production action."
+}

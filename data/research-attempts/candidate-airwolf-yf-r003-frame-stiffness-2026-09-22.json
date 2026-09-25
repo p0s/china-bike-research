@@ -28,7 +28,7 @@
       "blocker": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
     },
     "public-post": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -38,12 +38,28 @@
           "accessed_at": "2026-09-22",
           "note": "Foreign historical build price and brief ride impressions do not establish this field for current mainland framesets.",
           "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/"
+        },
+        {
+          "attempt": 2,
+          "query": "site:chinertown.com \"Airwolf YF-R003\" stiffness OR flex OR ride review",
+          "route": "Chinertown exact-model owner-forum search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model measured stiffness test or controlled comparison surfaced. A separate Bike Insights geometry result had no stiffness data and was not treated as evidence."
+        },
+        {
+          "attempt": 3,
+          "query": "site:bilibili.com Airwolf YF-R003 车架 刚性 评测 骑行",
+          "route": "Bilibili exact-model owner/review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Indexed videos were unrelated models; no exact YF-R003 measured stiffness test or controlled ride comparison surfaced."
         }
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
+  "notes": "No measured exact-model stiffness evidence found. The official route remains verification-gated; the owner thread has subjective ride comments only, and the Chinertown search found no exact stiffness test. Public-post channel is exhausted. The exact official product route remains verification-gated; no measured or controlled stiffness evidence was found."
 }

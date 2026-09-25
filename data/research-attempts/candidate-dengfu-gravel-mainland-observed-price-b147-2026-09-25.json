@@ -1,0 +1,34 @@
+{
+  "id": "candidate-dengfu-gravel-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "dengfu-gravel"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-dengfu-gravel-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current public mainland CNY price or exact R20 price offer was found.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Dengfu R20 Disc Gravel Bike Frame CNY price China mainland current 2026",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The exact official R20 product page is already recorded and provides a contact/customization route without a public numeric price. The search did not surface a new exact priced offer; recorded URLs were not reopened."
+        }
+      ]
+    }
+  },
+  "notes": "The exact official R20 product page is already recorded and provides a contact/customization route without a public numeric price. The search did not surface a new exact priced offer; recorded URLs were not reopened."
+}

@@ -490,5 +490,11 @@
     "cinelli-pressure-roadcc-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cinelli-pressure-50-area-sweep-2026-08-29.json. An independent exact-generation review describes a stiff frameset with good ride quality; qualitative evidence, not a numeric lab result."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/cinelli-pressure-50-area-sweep-2026-08-29.json. An independent exact-generation review describes a stiff frameset with good ride quality; qualitative evidence, not a numeric lab result.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["cinelli-pressure-roadcc-2026-08-29"],
+    "note": "The candidate preserves the exact-generation road.cc review's qualitative stiff-frame and ride-quality description; it is not a numeric stiffness measurement and its Ultegra build is not transferred."
+  }
 }

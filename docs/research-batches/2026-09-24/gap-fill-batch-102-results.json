@@ -1,0 +1,36 @@
+{
+  "batch": 102,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-102-scope.json"],
+  "result": {
+    "exact_target_records_audited": 1,
+    "attempts_audited": 5,
+    "source_reuse_resolutions_added": 5,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 134,
+    "evidence_found_after": 129,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-sunpeed-victory-e-2026-complete-weight-2026-08-30","source_ids":["sunpeed-victory-expert-bikewhat-2026-08-30","sunpeed-victory-expert-brasil-2026-08-30"],"caveat":"8.1 kg measured size-L test and separate 7.5 kg regional claim remain conflicting bases; neither is changed or averaged."},
+      {"attempt_id":"candidate-sunpeed-victory-e-2026-drivetrain-2026-08-30","source_ids":["sunpeed-victory-expert-brasil-2026-08-30","sunpeed-victory-expert-bikewhat-2026-08-30","sunpeed-victory-expert-jd-2026-08-30"],"caveat":"105 Di2 2×12 R7150/R7170 identity supported; selected-option checkout remains unverified."},
+      {"attempt_id":"candidate-sunpeed-victory-e-2026-frame-material-2026-08-30","source_ids":["sunpeed-victory-expert-bikewhat-2026-08-30","sunpeed-victory-expert-brasil-2026-08-30"],"caveat":"T800 + T1000 identifies the tested frame; do not generalize beyond that build."},
+      {"attempt_id":"candidate-sunpeed-victory-e-2026-frame-stiffness-2026-08-30","source_ids":["sunpeed-victory-expert-bikewhat-2026-08-30"],"caveat":"Qualitative ride observations only; no numeric frame-stiffness result or protocol."},
+      {"attempt_id":"candidate-sunpeed-victory-e-2026-identity-source-2026-08-30","source_ids":["sunpeed-victory-expert-official-2026-08-30","sunpeed-victory-expert-jd-2026-08-30","sunpeed-victory-expert-bikewhat-2026-08-30"],"caveat":"Pooled anonymous Taobao snapshot excluded from exact-model identity proof; no seller authority or warranty inferred."}
+    ],
+    "remaining_candidate_unknowns": [
+      "Manufacturer-confirmed maximum tire clearance.",
+      "Selected mainland size, complete BOM, exact option checkout, and domestic returns/warranty."
+    ],
+    "disposition": "All five accepted exact-source claims were already represented on the candidate with limitations intact. No catalog values were guessed or changed."
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1314 sources, 212 primary image records, 236 candidates and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1314 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; only research attempt resolution metadata and batch documents changed",
+    "image_report": "not run; no image record changed"
+  }
+}

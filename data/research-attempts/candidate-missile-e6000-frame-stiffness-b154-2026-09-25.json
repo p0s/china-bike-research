@@ -1,0 +1,52 @@
+{
+  "id": "candidate-missile-e6000-frame-stiffness-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missile-e6000"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missile-e6000-frame-stiffness-2026-08-30",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missile-e6000-frame-stiffness-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "MISSILE 水星6000 2025 最大轮胎宽度 tire clearance frame stiffness test",
+          "route": "One bounded current web query screened against existing source history and exact retained model/build identity",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search snippets and already recorded exact-product pages provide no qualifying exact-model numerical or independent stiffness assessment."
+        }
+      ],
+      "blocker": "The one bounded query and already recorded exact-model sources did not provide evidence meeting this field’s frozen acceptance rule."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Search snippets and already recorded exact-product pages provide no qualifying exact-model numerical or independent stiffness assessment.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-missile-e6000-frame-stiffness",
+    "extends_attempt_id": "candidate-missile-e6000-frame-stiffness-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

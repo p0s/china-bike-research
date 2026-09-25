@@ -482,5 +482,11 @@
     "bxt-055-owner-stiffness-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-bxt-055-batch-047-50-area-sweep-2026-09-01.json. Current exact-model owner comparison against BXT-135 found; no instrumented result."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-bxt-055-batch-047-50-area-sweep-2026-09-01.json. Current exact-model owner comparison against BXT-135 found; no instrumented result.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bxt-055-owner-stiffness-2026-09-01"],
+    "note": "The candidate already records the exact owner's qualitative BXT-055 versus BXT-135 comparison. It is not an independent or instrumented stiffness measurement."
+  }
 }

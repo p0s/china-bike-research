@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-a4-official-global-2026-08-17"
+    "sava-a4-official-global-2026-08-17",
+    "sava-a4-official-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Exact global A4 geometry accepted."
+  "notes": "Round-four official/web completion. Exact global A4 geometry accepted.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "sava-a4-official-current-recheck-2026-09-23"
+    ],
+    "note": "Global page lists 440/470/510/540/560 sizes (XS–XL); mainland chart equivalence is not established."
+  }
 }

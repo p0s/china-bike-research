@@ -495,5 +495,6 @@
     "triaero-a9-jd-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. The exact indexed mainland option states Shimano electronic 7170, establishing Shimano 105 Di2 R7170 2x12."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. The exact indexed mainland option states Shimano electronic 7170, establishing Shimano 105 Di2 R7170 2x12.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["triaero-a9-jd-2026-08-30"],"note":"The exact mainland Pikachu A9 option identifies Shimano 105 Di2 R7170 2×12. The candidate preserves that the exact component-level BOM and selected size are unavailable."}
 }

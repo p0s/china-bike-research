@@ -1,0 +1,57 @@
+{
+  "id": "candidate-bxt-gravel-complete-frame-stiffness-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "bxt-gravel-complete"
+  },
+  "field": "frame-stiffness",
+  "retry_of": "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "BXT Gravel complete exact frame stiffness independent measured test review",
+          "route": "One frozen B158 exact-model web query; recorded owner reports and product listings were not reopened.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No new exact independent stiffness result surfaced. Existing owner reports have unverified build/revision or describe a custom GRX 2x11/CSC build unlike the retained GRX 1x11/TANDELL candidate, and neither gives a comparable measured frame result. No page was opened."
+        }
+      ],
+      "blocker": "Available owner impressions are build/revision-confounded and provide no comparable measured stiffness result."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "bxt-135-official-2026-08-28",
+    "bxt-055-official",
+    "bxt-135-reddit-owner-report-2026-09-22",
+    "bxt-135-polish-owner-build-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Available owner impressions are build/revision-confounded and provide no comparable measured stiffness result.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-158-bxt-gravel-complete-frame-stiffness",
+    "extends_attempt_id": "candidate-bxt-gravel-complete-frame-stiffness-2026-08-28",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+    "reason": "The frozen B158 scope authorizes one dated exact-record web query after review of the completed 50-area campaign, latest attempt, and linked sources.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "searched_at": "2026-09-25",
+  "priority": "medium"
+}

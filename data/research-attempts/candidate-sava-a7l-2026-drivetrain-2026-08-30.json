@@ -480,8 +480,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-a7l-r08-current-2026-08-30"
+    "sava-a7l-r08-current-2026-08-30",
+    "sava-a7l-r08-current-spec-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-a7l-2026-50-area-sweep-2026-08-30.json. Current exact BOM is mixed SENSAH/EMPIRE PRO hydraulic control with Shimano 105 R7100 derailleurs and 2x12 gearing."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-a7l-2026-50-area-sweep-2026-08-30.json. Current exact BOM is mixed SENSAH/EMPIRE PRO hydraulic control with Shimano 105 R7100 derailleurs and 2x12 gearing.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-a7l-r08-current-spec-recheck-2026-09-24"
+    ],
+    "note": "Current exact page lists SENSAH HRD hydraulic 2x12 controls/brakes, Shimano 105 R7100 derailleurs and the stated crank/cassette/chain. It labels the build R08-R7120-24S but does not confirm EMPIRE PRO; the catalog preserves that distinction."
+  }
 }

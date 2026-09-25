@@ -483,8 +483,18 @@
   "status": "found",
   "accepted_source_ids": [
     "gito-g525-retailer-2026-08-29",
-    "gito-g525-taobao-index-2026-08-29"
+    "gito-g525-taobao-index-2026-08-29",
+    "gito-g525-888bike-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. The visible G525 and Shimano 105 markings align with the current exact G525 24-speed hydraulic-disc catalog and mainland G525/530 index."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. The visible G525 and Shimano 105 markings align with the current exact G525 24-speed hydraulic-disc catalog and mainland G525/530 index.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g525-888bike-current-2026-09-23",
+      "gito-g525-taobao-index-2026-08-29"
+    ],
+    "note": "G525 title claims Shimano 105 24-speed hydraulic disc, but body/tags refer to G530/R7120/R7170, so exact G525 layout is unresolved."
+  }
 }

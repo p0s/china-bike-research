@@ -1,0 +1,437 @@
+{
+  "batch_id": "gap-fill-batch-33-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-33-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 24,
+    "root_fields": 0,
+    "luna_evidence_fields": 24
+  },
+  "new_source_records": [
+    "twitter-cyclone-et-official-recheck-2026-09-23",
+    "twitter-cycles-warranty-recheck-2026-09-23",
+    "twitterbikeusa-warranty-recheck-2026-09-23",
+    "twitter-v3-25yr-rs-store-recheck-2026-09-23",
+    "twitter-v3-wheeltop-usa-recheck-2026-09-23",
+    "voicevelo-g-major-pandapodium-recheck-2026-09-23",
+    "voicevelo-g-major-biketo-review-recheck-2026-09-23",
+    "winspace-g5-au-official-recheck-2026-09-23",
+    "xds-gt350-bikecity-hk-recheck-2026-09-23",
+    "xds-gt600-jd-search-recheck-2026-09-23",
+    "xds-gt600-official-recheck-2026-09-23",
+    "xds-gt600-jd-item-recheck-2026-09-23",
+    "yoeleo-altera-g21-official-recheck-2026-09-23",
+    "yoeleo-altera-g21-cn-recheck-2026-09-23",
+    "yoeleo-altera-g21-engineering-recheck-2026-09-23",
+    "af01-official-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "candidate_price_observations_added": [],
+  "new_images_added": [],
+  "image_records_updated": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "twitter-cyclone-electronic",
+    "twitter-v3-rs-sensah",
+    "twitter-v3-wheeltop-eds",
+    "voicevelo-g-major",
+    "winspace-g5",
+    "xds-gt350",
+    "xds-gt600",
+    "yoeleo-altera-g21",
+    "seraph-tt-x68-new-udh",
+    "af01"
+  ],
+  "results": [
+    {
+      "attempt_record_id": "variant-twitter-cyclone-electronic-frame-2026-08-17",
+      "record_id": "twitter-cyclone-electronic",
+      "field": "frame",
+      "status": "prior exact evidence retained; current page unavailable",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-china-2026-08-17",
+        "twitter-cyclone-et-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Earlier captured manufacturer evidence identifies the Cyclone 3rd ET carbon aero frame and T47×24 BB; the current official URL returned 404, so current specification availability is unverified. Reopen when an accessible current exact-model manufacturer page is available."
+    },
+    {
+      "attempt_record_id": "variant-twitter-cyclone-electronic-warranty-support-2026-08-17",
+      "record_id": "twitter-cyclone-electronic",
+      "field": "warranty-support",
+      "status": "mainland terms unresolved; regional conflict preserved",
+      "source_ids": [
+        "twitter-cycles-warranty-recheck-2026-09-23",
+        "twitterbikeusa-warranty-recheck-2026-09-23",
+        "twitterbikeusa-warranty-2026-08-17",
+        "twitterbikefactory-warranty-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "The China policy still has placeholders; USA direct-site terms now say two years versus the previously accepted one-year text, and HK distributor terms are regional. Mainland coverage remains unresolved. Reopen with a usable current China policy or exact mainland order terms."
+    },
+    {
+      "attempt_record_id": "variant-twitter-v3-rs-sensah-price-2026-08-28",
+      "record_id": "twitter-v3-rs-sensah",
+      "field": "price",
+      "status": "dated mainland observation retained; current mainland price unknown",
+      "source_ids": [
+        "market-snapshot-2026-08-05",
+        "twitter-v3-25yr-rs-store-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retain the dated CNY 3,991 anonymized mainland observation. The current USD 1,289.99 regional card is not a mainland price and has internally conflicting BB details; exact match to the retained T47 build is unestablished. Reopen on an attributable current mainland checkout for this exact build."
+    },
+    {
+      "attempt_record_id": "variant-twitter-v3-wheeltop-eds-price-2026-08-28",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "field": "price",
+      "status": "dated mainland observations retained; current mainland price unknown",
+      "source_ids": [
+        "market-snapshot-2026-08-05",
+        "taobao-snapshot-2026-08-08",
+        "twitter-v3-wheeltop-usa-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retain CNY 5,191 checkout snapshot and CNY 4,951 Taobao search-card coupon as distinct dated mainland observations. Current USA listing at USD 1,750 is not a mainland quote. Reopen on a current exact-build mainland checkout."
+    },
+    {
+      "attempt_record_id": "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "field": "complete-weight",
+      "status": "regional manufacturer claim; measurement basis unknown",
+      "source_ids": [
+        "twitter-v3-wheeltop-usa-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current regional manufacturer listing claims 9.9 kg for a complete WheelTop EDS TX 2×12 bike; size, weighing method, pedals and accessories are unstated. Reopen with a size- and accessory-bounded exact-build weight or documented weighing."
+    },
+    {
+      "attempt_record_id": "candidate-voicevelo-g-major-frame-stiffness-2026-08-28",
+      "record_id": "voicevelo-g-major",
+      "field": "frame-stiffness",
+      "status": "qualitative build-specific review retained",
+      "source_ids": [
+        "voicevelo-g-major-biketo-review-2024-01-17",
+        "voicevelo-g-major-biketo-review-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retain the size-51 / VG3 / SRAM XPLR review as qualitative evidence of slightly weak lateral stiffness, normal vertical stiffness and soft pedaling feedback; it is not a measured stiffness result. Reopen on exact-frame measurements or an attributable exact-build test."
+    },
+    {
+      "attempt_record_id": "candidate-voicevelo-g-major-purchase-route-2026-08-17",
+      "record_id": "voicevelo-g-major",
+      "field": "purchase-route",
+      "status": "global retailer route confirmed; mainland route unknown",
+      "source_ids": [
+        "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Panda Podium lists exact G Major frameset SKU VFV-01-GMAJOR, options, USD 2,099 card price and Add to Cart route. This establishes a global retail route, not mainland availability or checkout. Reopen on an exact mainland seller/order route."
+    },
+    {
+      "attempt_record_id": "candidate-voicevelo-g-major-frame-material-2026-08-28",
+      "record_id": "voicevelo-g-major",
+      "field": "frame-material",
+      "status": "construction description; grade/layup unknown",
+      "source_ids": [
+        "voicevelo-g-major-biketo-review-recheck-2026-09-23",
+        "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Sources describe impact-priority tube shaping and SAS compliance design; VG1/VG3 are paint designations, and fiber grade/resin/layup remain unpublished. Reopen on an exact manufacturer material or layup specification."
+    },
+    {
+      "attempt_record_id": "candidate-voicevelo-g-major-identity-2026-08-17",
+      "record_id": "voicevelo-g-major",
+      "field": "identity",
+      "status": "exact frameset identity confirmed",
+      "source_ids": [
+        "voicevelo-g-major-pandapodium-recheck-2026-09-23",
+        "voicevelo-g-major-biketo-review-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current retailer SKU and the review support the Voicevelo G Major disc-brake gravel frameset identity; the review components/size belong only to its test build. Reopen if evidence identifies another generation or a materially different candidate build."
+    },
+    {
+      "attempt_record_id": "candidate-voicevelo-g-major-image-2026-08-17",
+      "record_id": "voicevelo-g-major",
+      "field": "image",
+      "status": "reuse rights not established; image remains absent",
+      "source_ids": [
+        "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retailer gallery depicts the listed G Major, but no reusable image rights were established. Leave image absent and do not rehost. Reopen with explicit reuse rights or a manufacturer press asset with documented terms."
+    },
+    {
+      "attempt_record_id": "platform-winspace-g5-geometry-2026-08-27",
+      "record_id": "winspace-g5",
+      "field": "geometry",
+      "status": "current manufacturer chart confirmed",
+      "source_ids": [
+        "winspace-g5-official",
+        "winspace-g5-au-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current manufacturer regional chart covers XS–XXL and matches the listed G5 geometry; no mainland-specific revision was identified. Reopen if the manufacturer publishes a revised chart or identifies a different generation."
+    },
+    {
+      "attempt_record_id": "platform-winspace-g5-frame-material-2026-08-27",
+      "record_id": "winspace-g5",
+      "field": "frame-material",
+      "status": "manufacturer T700/T800 blend confirmed",
+      "source_ids": [
+        "winspace-g5-au-official-2026-08-27",
+        "winspace-g5-au-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer identifies the G5 frame as a Toray T700/T800 blend with full-carbon fork; layup schedule remains unpublished. Reopen on a revised specification or detailed layup."
+    },
+    {
+      "attempt_record_id": "candidate-xds-gt350-complete-weight-2026-08-28",
+      "record_id": "xds-gt350",
+      "field": "complete-weight",
+      "status": "Hong Kong build claim; not mainland trim",
+      "source_ids": [
+        "xds-gt350-retailer-2026-08-28",
+        "xds-gt350-bikecity-hk-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Hong Kong distributor claims 11.05 kg for its complete 10-speed GT350, sizes 460/490; measurement basis and selected size/accessories are unstated. Do not transfer to mainland trim. Reopen on exact mainland weight and measurement basis."
+    },
+    {
+      "attempt_record_id": "candidate-xds-gt350-frame-material-2026-08-28",
+      "record_id": "xds-gt350",
+      "field": "frame-material",
+      "status": "Hong Kong build material confirmed; mainland mapping unknown",
+      "source_ids": [
+        "xds-gt350-retailer-2026-08-28",
+        "xds-gt350-bikecity-hk-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Hong Kong listing specifies X6 aluminum frame and carbon fork; alloy series/fiber grade are not stated and mainland trim mapping is unproven. Reopen on an exact mainland SKU specification."
+    },
+    {
+      "attempt_record_id": "candidate-xds-gt600-complete-weight-2026-08-27",
+      "record_id": "xds-gt600",
+      "field": "complete-weight",
+      "status": "current non-XHS evidence insufficient",
+      "source_ids": [
+        "xds-gt600-jd-search-recheck-2026-09-23",
+        "xds-gt600-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current non-XHS JD search shows no weight and official dynamic page has no readable specification. The archived 11.5 kg claim remains tied to its older SRAM Apex build and is not current-trim verification. Reopen on an accessible exact-trim weight and stated basis."
+    },
+    {
+      "attempt_record_id": "candidate-xds-gt600-fitted-tire-2026-08-27",
+      "record_id": "xds-gt600",
+      "field": "fitted-tire",
+      "status": "current non-XHS evidence insufficient",
+      "source_ids": [
+        "xds-gt600-jd-search-recheck-2026-09-23",
+        "xds-gt600-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current non-XHS pages do not show installed tire size. Preserve the older 700×40C archived-build lead without applying it to a current exact trim. Reopen on an exact-build listing or manufacturer specification."
+    },
+    {
+      "attempt_record_id": "candidate-xds-gt600-frame-material-2026-08-28",
+      "record_id": "xds-gt600",
+      "field": "frame-material",
+      "status": "exact trim mapping unresolved",
+      "source_ids": [
+        "xds-gt600-jd-search-recheck-2026-09-23",
+        "xds-gt600-official-recheck-2026-09-23",
+        "xds-gt600-jd-item-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "JD search-card carbon wording is a weak lead without exact candidate generation/trim mapping; official page and item details were unreadable. Current exact candidate material remains unverified by this non-XHS check. Reopen on accessible official specs mapped to the exact GT600 trim/generation."
+    },
+    {
+      "attempt_record_id": "platform-yoeleo-altera-g21-geometry-2026-08-27",
+      "record_id": "yoeleo-altera-g21",
+      "field": "geometry",
+      "status": "current manufacturer geometry confirmed",
+      "source_ids": [
+        "yoeleo-altera-g21-current-2026-08-27",
+        "yoeleo-altera-g21-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current manufacturer chart confirms geometry across sizes 45/49/52/54/56/58/60. Reopen if a new chart or generation is published."
+    },
+    {
+      "attempt_record_id": "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
+      "record_id": "yoeleo-altera-g21",
+      "field": "tire-clearance",
+      "status": "1x maximum confirmed; 2x unknown",
+      "source_ids": [
+        "yoeleo-altera-g21-official-2026-08-16",
+        "yoeleo-altera-g21-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer maximum is 700×53 mm or 650b×2.1 in only with a single chainring; 2× maximum remains unknown. Reopen on manufacturer confirmation or measured exact-build fit."
+    },
+    {
+      "attempt_record_id": "platform-yoeleo-altera-g21-frame-material-2026-08-28",
+      "record_id": "yoeleo-altera-g21",
+      "field": "frame-material",
+      "status": "manufacturer material/process confirmed; layup unknown",
+      "source_ids": [
+        "yoeleo-altera-g21-cn-recheck-2026-09-23",
+        "yoeleo-altera-g21-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer specifies high-modulus Toray T800 UD carbon and ProMoldCore/latex internal molding; ply schedule is unpublished. Reopen on a material/specification change or detailed layup."
+    },
+    {
+      "attempt_record_id": "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28",
+      "record_id": "yoeleo-altera-g21",
+      "field": "frame-stiffness",
+      "status": "manufacturer protocol confirmed; numeric stiffness unknown",
+      "source_ids": [
+        "yoeleo-altera-g21-engineering-2026-08-28",
+        "yoeleo-altera-g21-engineering-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer reports design targets and fatigue/impact protocols (100,000 cycles at 1,100 N; 50,000 vertical cycles at 1,200 N; 22.5 kg impact drop), not numeric deflection or comparative stiffness. Reopen on measured rigidity/deflection or independent comparison."
+    },
+    {
+      "attempt_record_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "price-not-observed",
+      "status": "prior source-reuse resolution retained; mainland observed price unresolved",
+      "source_ids": [
+        "seraph-tt-x68-new-storefront-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Already source-reuse-resolved before Batch 33. Exact Seraph page displays USD 629; ECB reference cross-rate gives CNY 4,214, a foreign reference only. Mainland selected checkout remains unobserved. Reopen on exact mainland delivered quote/checkout."
+    },
+    {
+      "attempt_record_id": "candidate-seraph-tt-x68-new-udh-package-2026-09-22",
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "package",
+      "status": "named package confirmed; selected option unknown",
+      "source_ids": [
+        "seraph-tt-x68-new-storefront-2026-09-23",
+        "tantan-tt-x68-new-storefront-2026-09-22"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Seraph named package lists frame, fork, seatpost, handlebar, spacers, headset and thru-axles; TanTan offers a no-handlebar option, so chosen contents remain order-specific. Reopen on exact selected-option order confirmation/invoice."
+    },
+    {
+      "attempt_record_id": "platform-af01-frame-material-2026-08-28",
+      "record_id": "af01",
+      "field": "frame-material",
+      "status": "current manufacturer material/construction claim confirmed",
+      "source_ids": [
+        "af01-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current manufacturer page specifies T800+M46 carbon, one-piece molding, and aluminum inserts embedded in the fork carbon structure; manufacturer claim, no ply schedule. Reopen on an updated specification or detailed layup."
+    }
+  ],
+  "updated_research_attempts": [
+    "variant-twitter-cyclone-electronic-frame-2026-08-17",
+    "variant-twitter-cyclone-electronic-warranty-support-2026-08-17",
+    "variant-twitter-v3-rs-sensah-price-2026-08-28",
+    "variant-twitter-v3-wheeltop-eds-price-2026-08-28",
+    "variant-twitter-v3-wheeltop-eds-complete-weight-2026-08-28",
+    "candidate-voicevelo-g-major-frame-stiffness-2026-08-28",
+    "candidate-voicevelo-g-major-purchase-route-2026-08-17",
+    "candidate-voicevelo-g-major-frame-material-2026-08-28",
+    "candidate-voicevelo-g-major-identity-2026-08-17",
+    "candidate-voicevelo-g-major-image-2026-08-17",
+    "platform-winspace-g5-geometry-2026-08-27",
+    "platform-winspace-g5-frame-material-2026-08-27",
+    "candidate-xds-gt350-complete-weight-2026-08-28",
+    "candidate-xds-gt350-frame-material-2026-08-28",
+    "candidate-xds-gt600-complete-weight-2026-08-27",
+    "candidate-xds-gt600-fitted-tire-2026-08-27",
+    "candidate-xds-gt600-frame-material-2026-08-28",
+    "platform-yoeleo-altera-g21-geometry-2026-08-27",
+    "platform-yoeleo-altera-g21-tire-clearance-2026-08-27",
+    "platform-yoeleo-altera-g21-frame-material-2026-08-28",
+    "platform-yoeleo-altera-g21-frame-stiffness-2026-08-28",
+    "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+    "candidate-seraph-tt-x68-new-udh-package-2026-09-22",
+    "platform-af01-frame-material-2026-08-28"
+  ],
+  "notes": [
+    "Current mainland price and warranty were not inferred from regional policies or foreign storefront prices.",
+    "GT600 XHS-derived leads were excluded from this batch review; current accessible non-XHS pages did not resolve exact-trim details.",
+    "Voicevelo retailer gallery rights were not established; no image was rehosted or added."
+  ],
+  "validation_plan": [
+    "npm run --silent validate (passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1,167 sources, 212 image records, 236 candidates, 1,465 research records)",
+    "npm run --silent research:check (passed: 1,461 atomic fields)",
+    "npm run --silent coverage:accept (passed; monotonic evidence/source relationships accepted, 212 images and 277 catalog targets)",
+    "npm run --silent coverage:check (passed)",
+    "node --test tests/research-attempts.test.mjs tests/coverage.test.mjs (23/23 passed)",
+    "node --test tests/render.test.mjs (39/39 passed after freshness assertion update)",
+    "git diff --check (passed)",
+    "approved developer-storage cache wrapper invoking npm run check (passed: 307 tests, 584-page build, SEO 456 indexable / 128 noindex)",
+    "npm run image:report not run because no image records changed"
+  ],
+  "validated_counts": {
+    "brands": 41,
+    "platforms": 38,
+    "variants": 41,
+    "dated_price_records": 73,
+    "sources": 1167,
+    "primary_image_records": 212,
+    "candidates": 236,
+    "research_records": 1465,
+    "atomic_research_fields": 1461
+  },
+  "full_gate": {
+    "status": "passed",
+    "tests": "307/307",
+    "build_pages": 584,
+    "seo": {
+      "indexable": 456,
+      "noindex": 128,
+      "status": "passed"
+    }
+  },
+  "fresh_gap_inventory_after_batch": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    }
+  },
+  "fresh_queue_after_batch": {
+    "ready": 0,
+    "evidence-found": 362,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  }
+}

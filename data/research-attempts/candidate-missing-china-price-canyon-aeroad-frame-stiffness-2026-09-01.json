@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "canyon-aeroad-cfr-di2-official-2026-08-17"
+    "canyon-aeroad-cfr-di2-official-2026-08-17",
+    "canyon-aeroad-cfr-di2-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-canyon-aeroad-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page describes a benchmark stiffness-to-weight carbon lay-up used by its pro riders; qualitative manufacturer evidence without a public stiffness protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-canyon-aeroad-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page describes a benchmark stiffness-to-weight carbon lay-up used by its pro riders; qualitative manufacturer evidence without a public stiffness protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "canyon-aeroad-cfr-di2-official-recheck-2026-09-23"
+    ],
+    "note": "Canyon calls the CFR lay-up benchmark stiffness-to-weight; marketing statement without a public test protocol or independent measurement."
+  }
 }

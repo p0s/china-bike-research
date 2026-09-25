@@ -70,8 +70,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "bianchi-oltre-race-armenia-2026-08-17",
-    "bianchi-oltre-race-dealer-2026-08-17"
+    "bianchi-oltre-race-dealer-2026-08-17",
+    "bianchi-oltre-race-hungary-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Use accepted specs as exact-model references only. Preserve the Fulcrum-versus-Velomann build conflict and do not silently replace the existing China-market observation."
+  "notes": "Rechecked the regional evidence and current 2026 Hungary page. Armenia lists Velomann V30R for its regional 105 build; Hungary lists Fulcrum Racing 818 but identifies model code YTB8DF rather than the retained YTB8D. Regional parts and model-code differences leave the target BOM unresolved.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bianchi-oltre-race-armenia-2026-08-17",
+      "bianchi-oltre-race-dealer-2026-08-17",
+      "bianchi-oltre-race-hungary-recheck-2026-09-23"
+    ],
+    "note": "Rechecked the regional evidence and current 2026 Hungary page. Armenia lists Velomann V30R for its regional 105 build; Hungary lists Fulcrum Racing 818 but identifies model code YTB8DF rather than the retained YTB8D. Regional parts and model-code differences leave the target BOM unresolved."
+  }
 }

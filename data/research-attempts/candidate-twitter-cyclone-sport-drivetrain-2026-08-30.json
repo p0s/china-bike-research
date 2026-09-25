@@ -488,8 +488,19 @@
   "status": "found",
   "accepted_source_ids": [
     "twitter-cyclone-sport-official-2026-08-30",
-    "twitter-cyclone-sport-mainland-2026-08-30"
+    "twitter-cyclone-sport-mainland-2026-08-30",
+    "twitter-cyclone-sport-official-404-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-sport-batch-023-50-area-sweep-2026-08-30.json. Both exact Sport wheel builds share one RETROSPEC/SENSAH-based hydraulic 2x12 BOM."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-sport-batch-023-50-area-sweep-2026-08-30.json. Both exact Sport wheel builds share one RETROSPEC/SENSAH-based hydraulic 2x12 BOM.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-sport-official-2026-08-30",
+      "twitter-cyclone-sport-mainland-2026-08-30",
+      "twitter-cyclone-sport-official-404-recheck-2026-09-25"
+    ],
+    "note": "The saved exact manufacturer evidence supports a shared RETROSPEC/SENSAH hydraulic 2x12 option family across the two wheel builds. More detailed component models in the old candidate string are not supported by the saved source summaries; the exact official URL returned 404 on 2026-09-25."
+  }
 }

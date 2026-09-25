@@ -1,0 +1,36 @@
+{
+  "id": "candidate-look-765-electronic-complete-weight-retained-build-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "look-765-electronic"
+  },
+  "field": "complete-weight-retained-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact manufacturer weight is for the R50D size-M build, while the retained candidate's wheel option is unresolved; the weight measurement basis is also unspecified.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LOOK 765 Optimum 105 Di2 R50D current manufacturer complete weight",
+          "route": "Current LOOK Cycle exact-build manufacturer product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "LOOK identifies SKU 29656 with 105 Di2, R50D carbon wheels and Hutchinson Fusion 5 700x30 tires, and claims 7.9 kg in size M. Pedal/accessory and measurement basis are not specified; this does not identify the retained candidate's wheel option.",
+          "result_url": "https://www.lookcycle.com/it-it/prodotti/bici/strada/endurance/765-optimum-105-di2-r50d"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "look-765-optimum-r50d-weight-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep 7.9 kg as a current R50D size-M reference only. Do not assign it to the retained candidate while its wheel build remains unknown; the previous 8.8 kg R38D figure is not a current reobservation.",
+  "searched_at": "2026-09-24"
+}

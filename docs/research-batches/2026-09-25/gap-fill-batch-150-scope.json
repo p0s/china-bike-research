@@ -1,0 +1,235 @@
+{
+  "batch": 150,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 376,
+      "conflicted": 35,
+      "found": 10,
+      "open": 21,
+      "temporarily-exhausted": 4
+    },
+    "price_gap_counts": {
+      "price-missing": 26,
+      "price-not-observed": 37,
+      "price-reference-range": 2
+    },
+    "selection": "Seven highest-priority non-excluded candidate models with unresolved specification fields from the fresh 2026-09-25 npm run --silent data:gaps inventory. Excluded every exact candidate targeted by B145-B149 and every candidate with a research attempt or review dated 2026-09-25. Twenty-five atomic specification fields are frozen."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "huanyu-az-one",
+        "name": "HUANYU 寰宇单车 AZ ONE / 青龙·赤子",
+        "record_type": "candidate",
+        "priority_score": 95,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-huanyu-az-one-complete-weight-2026-08-29",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-huanyu-az-one-drivetrain-2026-08-29",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-huanyu-az-one-tire-clearance-2026-08-29",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-huanyu-az-one-frame-material-recheck-2026-09-24",
+            "field": "frame-material"
+          }
+        ]
+      },
+      {
+        "id": "rockbros-pegasus-road",
+        "name": "ROCKBROS 洛克兄弟 Pegasus / 飞马 series",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-rockbros-pegasus-road-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-rockbros-pegasus-road-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-rockbros-pegasus-road-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-rockbros-pegasus-road-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness"
+          }
+        ]
+      },
+      {
+        "id": "leinax-youlong-2",
+        "name": "LEINAK 雷纳克 游龙 2.0",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-leinax-youlong-2-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-leinax-youlong-2-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-leinax-youlong-2-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          }
+        ]
+      },
+      {
+        "id": "pardus-spark",
+        "name": "PARDUS 瑞豹 Spark",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-pardus-spark-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-pardus-spark-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-pardus-spark-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          }
+        ]
+      },
+      {
+        "id": "rolling-stone-comp",
+        "name": "ROLLING STONE 滚石 COMPASS",
+        "record_type": "candidate",
+        "priority_score": 81,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-rolling-stone-comp-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-rolling-stone-comp-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-rolling-stone-comp-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          }
+        ]
+      },
+      {
+        "id": "kontax-power-evo",
+        "name": "KONTAX 超探 RS80 POWER EVO",
+        "record_type": "candidate",
+        "priority_score": 71,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "frame-weight-missing",
+            "attempt_id": "candidate-kontax-power-evo-frame-weight-2026-09-01",
+            "field": "frame-weight"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-kontax-power-evo-tire-clearance-2026-09-01",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-kontax-power-evo-frame-material-2026-09-01",
+            "field": "frame-material"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-kontax-power-evo-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness"
+          }
+        ]
+      },
+      {
+        "id": "quick-t10",
+        "name": "QUICK 快客 T10 integrated aero frameset",
+        "record_type": "candidate",
+        "priority_score": 71,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "frame-weight-missing",
+            "attempt_id": "candidate-quick-t10-frame-weight-2026-09-01",
+            "field": "frame-weight"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-quick-t10-tire-clearance-2026-09-01",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-quick-t10-frame-material-2026-09-01",
+            "field": "frame-material"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-quick-t10-frame-stiffness-2026-09-01",
+            "field": "frame-stiffness"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 7,
+    "atomic_gap_entries": 25,
+    "research_boundary": "Reuse the same user-authorized Luna Max evidence-only agent; root remains the sole writer. For each exact model, inspect the candidate file, linked source records, relevant attempts, and any registered campaign history before lookup. Use exactly one distinct web query per model and open at most one genuinely new product/technical page for that model. Before opening, literal-search the final URL across data/ and docs/ and do not open if already present or if absence cannot be proven. Preserve each prior search and its full extended-campaign coverage through a bounded campaign_extension where required.",
+    "field_rules": [
+      "Complete-bike weight must match the retained exact build and preserve size, included equipment/accessories, approximation, and weighing basis; do not convert frame weight to full-bike weight.",
+      "Drivetrain claims need exact series, speeds, layout, actuation, and selected build; component photos or family-level menus do not establish the retained seller option.",
+      "Tire clearance requires a stated exact-model maximum; fitted tire width is compatibility evidence only.",
+      "Frame weight and construction details apply only to the exact frameset and stated size/finish/hardware basis. Do not infer carbon grade, lay-up, molding process, or stiffness.",
+      "HUANYU AZ ONE is a seller-card build whose configuration remains unresolved; do not transfer specs among Qinglong/Chizi/AZ ONE listings.",
+      "ROCKBROS Pegasus results must map to the retained seller option rather than another PGZ generation or complete build.",
+      "PARDUS Spark is a multi-generation family aggregate; do not merge Spark Sport, Gen3, PES, QED, or selected-card builds.",
+      "Keep QUICK T10 separate from QUICK TT:ONE and other QUICK time-trial frames."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No image download, rehosting, or change; no price, image, or unrelated catalog edits. Only the 25 frozen fields, supporting source and attempt records, coverage baseline if required, test coverage count if stale, and dated batch documentation may change."
+    ]
+  },
+  "external_delivery": "none"
+}

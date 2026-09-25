@@ -1,0 +1,38 @@
+{
+  "batch": 98,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-98-scope.json"
+  ],
+  "result": {
+    "exact_models_audited": 9,
+    "attempts_audited": 23,
+    "source_reuse_resolutions_added": 21,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 166,
+    "evidence_found_after": 145,
+    "unresolved_attempts": [
+      {
+        "attempt_id": "platform-scott-addict-rc-40-geometry-2026-09-01",
+        "reason": "The accepted review documents the 2023-generation geometry table, while the target now cites the 2026 manufacturer manual. This batch did not compare every value across those distinct sources, so the older attempt was not used to resolve current geometry provenance."
+      },
+      {
+        "attempt_id": "variant-spcycle-g028-frameset-purchase-route-2026-09-01",
+        "reason": "The exact official route observation is dated 2026-09-01 and was not rechecked in this source-reuse-only batch. Current availability remains unverified."
+      }
+    ],
+    "disposition": "Twenty-one exact-source claims were already integrated into target records with their material caveats. Two claims remain open because the geometry provenance is split across generations/sources and the purchase-route observation is stale for a current-status claim. No values were guessed or changed."
+  },
+  "validation": {
+    "source_review": "pass: primary read-only comparison of only the 23 scoped attempts, their accepted source records and target records; no external browsing",
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1314 sources, 212 primary images, 236 candidates and 1542 research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1314 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; only evidence-resolution metadata changed",
+    "image_report": "not run; no image record changed"
+  }
+}

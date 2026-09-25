@@ -1,0 +1,67 @@
+{
+  "batch": 82,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The exact UPLAND R70 model remains a high-priority tire-clearance gap. Existing manufacturer pages and a 50-area field-specific sweep distinguish fitted 25C/28C tires from the unpublished maximum; a separate current official compatibility/technical guide is a distinct route that could establish the maximum without using fitted width as a proxy.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "upland-r70",
+        "model": "UPLAND 阿普兰 R70",
+        "gap_code": "clearance-unverified",
+        "prior_attempt_id": "candidate-upland-r70-tire-clearance-2026-08-30",
+        "new_attempt_id": "candidate-upland-r70-tire-clearance-recheck-2026-09-24"
+      }
+    ],
+    "campaign_extension": {
+      "extends_attempt_id": "candidate-upland-r70-tire-clearance-2026-08-30",
+      "allowed_channels": ["web"],
+      "max_new_attempts": 1
+    }
+  },
+  "research_route": {
+    "source_class": "current-exact-model-manufacturer-tire-compatibility-guide",
+    "action": "Search once for a current official UPLAND R70 frame/tire compatibility guide or technical page distinct from the already checked exact product, race-engineering, and broad catalog routes. Open at most one resulting official guide page. Record exact URL, access date, fit scope, numeric maximum and units only if explicitly published for the R70 frame.",
+    "acceptance_rule": "Only an explicit manufacturer maximum attributable to the exact R70 frame can fill maximum tire clearance. Fitted 25C/28C tires, retailer-installed sizes, image appearance, ambiguous rim/tire dimensions, generic model-family guidance, and unsupported conversion to millimeters cannot establish the maximum.",
+    "stop_rule": "At most one public web search and one official guide page for the exact model. Do not contact the seller or manufacturer, use login, XHS, access-control bypass, or repeat a blocked route. If no exact guide or maximum is found, record a bounded no-result and retain the gap."
+  },
+  "done_criteria": [
+    "Return one exact-model evidence disposition with URL, accessed date, stated maximum and units if present, and attribution/fit scope.",
+    "Append one web attempt to the formal B82 extension record and add a source plus exact candidate clearance fact only if admissible.",
+    "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "Local B82 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

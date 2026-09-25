@@ -1,0 +1,15 @@
+{
+  "id": "retire-scott-addict-rc-40-wrong-manual-geometry-2026-09-25",
+  "record_type": "platforms",
+  "record_id": "scott-addict-rc-40",
+  "action": "retire",
+  "reason": "The 2026 Addict manual does not identify RC 40 model 290362. Matching size names do not establish platform identity; restore the exact-generation BikeRadar table and reject the endurance-manual transfer.",
+  "evidence_source_ids": [
+    "scott-addict-rc-40-identity-review-2026-09-25"
+  ],
+  "protected_item": {
+    "kind": "relationship",
+    "value": "frame.geometry.source_id=scott-addict-2026-manual-recheck-2026-09-24"
+  },
+  "reviewed_at": "2026-09-25"
+}

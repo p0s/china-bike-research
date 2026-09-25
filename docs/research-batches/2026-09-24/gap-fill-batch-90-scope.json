@@ -1,0 +1,33 @@
+{
+  "batch": 90,
+  "date": "2026-09-24",
+  "inventory_before": {
+    "as_of": "2026-09-24",
+    "atomic_gaps": 705,
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 193,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "rationale": "This found-status mainland purchase-route attempt is attached to an active published variant. Its latest CNY 4,999 record is only a public-market report and the current official-flagship marketplace listing may establish a selected-build checkout or may remain generic; a bounded exact-page recheck can determine whether a safe current price observation closes the live gap.",
+    "targets": [
+      {"record_type":"published-variant","record_id":"pardus-super-sport-gen2-egr","model":"PARDUS Super Sport Gen2 L-TWOO eGR","gap":"purchase-route","attempt_id":"variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01","current_price_id":"pardus-super-sport-gen2-egr-market-2026-08-25","current_price_status":"current-market-report","official_listing_source_id":"pardus-super-sport-gen2-taobao-2026-08-28"}
+    ]
+  },
+  "research_route": {
+    "action": "Read-only audit of the exact variant, current price, source and attempt; open the one recorded official-flagship Taobao item page once.",
+    "integration_rule": "A new dated CNY price record may be added only if the page visibly identifies the exact L-TWOO eGR build, current amount/discount conditions, and an available stock or add-to-cart state. Keep the prior price observation. If seller identity, selected build, price or availability is inaccessible or ambiguous, add a source-reuse resolution with the exact limitation and leave the price/gap unchanged.",
+    "boundaries": [
+      "One exact model and one atomic gap only.",
+      "Do not login, challenge-bypass, contact sellers, or retry the page if it blocks access.",
+      "Do not infer exact eGR stock, CNY checkout, invoice, shipping or domestic warranty from a generic Super Sport Gen2 result.",
+      "Do not change recommendation, image, component facts, or publication status."
+    ]
+  }
+}

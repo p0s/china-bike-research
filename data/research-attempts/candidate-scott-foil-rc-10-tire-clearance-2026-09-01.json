@@ -482,5 +482,13 @@
     "scott-foil-rc-platform-official-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-scott-foil-rc-10-batch-037-50-area-sweep-2026-09-01.json. The current-generation official Foil RC page and manual publish a 30 mm maximum tire size; the exact model page identifies the same Foil RC generation."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-scott-foil-rc-10-batch-037-50-area-sweep-2026-09-01.json. The current-generation official Foil RC page and manual publish a 30 mm maximum tire size; the exact model page identifies the same Foil RC generation.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-foil-rc-platform-official-2026-09-01"
+    ],
+    "note": "The current official Foil RC platform page states a 30 mm maximum for the same generation as model 425337. Record this as nominal tire-size compatibility, not measured casing or physical frame/fork clearance."
+  }
 }

@@ -492,8 +492,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "triaero-a9-official-2026-08-30"
+    "triaero-a9-official-2026-08-30",
+    "triaero-a9-official-stale-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. Current exact A9 product routes state 700x28C / fits 28 mm. A conflicting 45 mm collection template was rejected."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. Current exact A9 product routes state 700x28C / fits 28 mm. A conflicting 45 mm collection template was rejected.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "triaero-a9-official-2026-08-30",
+      "triaero-a9-official-stale-recheck-2026-09-25"
+    ],
+    "note": "Leave maximum tire clearance open. Exact A9 evidence supports 700x28C / fits 28 mm only; a 45 mm collection template is incompatible, and the 2026-09-25 retrieval was labeled Crawled: last year. Do not turn fitted size into a maximum."
+  }
 }

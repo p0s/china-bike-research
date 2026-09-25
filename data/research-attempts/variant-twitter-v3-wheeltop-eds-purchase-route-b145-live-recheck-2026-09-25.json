@@ -1,0 +1,53 @@
+{
+  "id": "variant-twitter-v3-wheeltop-eds-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-wheeltop-eds"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced ChinaGoods page timed out once; no retry was made and search snippets are not accepted evidence.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 WheelTop EDS 2x12 电变 国内 旗舰店 现货 整车",
+          "route": "One distinct B145 exact-model web search; one newly surfaced result-page open attempt",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The result URL passed the pre-open exact repository check, then its only permitted open failed with 400 Timeout fetching. No current exact route was verified.",
+          "result_url": "https://www.chinagoods.com/store/goodsdetail/1989244552660185089"
+        }
+      ]
+    }
+  },
+  "notes": "The result URL passed the pre-open exact repository check, then its only permitted open failed with 400 Timeout fetching. No current exact route was verified.",
+  "campaign_extension": {
+    "id": "b145-twitter-v3-wheeltop-eds-purchase-route",
+    "extends_attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

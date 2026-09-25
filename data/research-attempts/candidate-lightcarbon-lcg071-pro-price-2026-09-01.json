@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcg071-pro-owner-price-2025-11-30"
+    "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+    "lightcarbon-lcg071-pro-official-price-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcg071-pro-batch-039-50-area-sweep-2026-09-01.json. An exact owner itemization isolates a US$629 LCG071-PRO frameset package; paint, wheels, accessories, shipping and fee are separately itemized."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcg071-pro-batch-039-50-area-sweep-2026-09-01.json. An exact owner itemization isolates a US$629 LCG071-PRO frameset package; paint, wheels, accessories, shipping and fee are separately itemized.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+      "lightcarbon-lcg071-pro-official-price-recheck-2026-09-23"
+    ],
+    "note": "The exact owner post itemizes US$629 for a specified LCG071-PRO package on 2025-11-30; this is a dated owner-reported international package, not a current quote or mainland checkout. The exact manufacturer page rechecked 2026-09-23 remains contact-for-price with no public amount. Retain the dated observation and keep a current mainland price unresolved."
+  }
 }

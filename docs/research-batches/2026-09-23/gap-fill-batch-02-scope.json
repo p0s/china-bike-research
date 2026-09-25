@@ -1,0 +1,28 @@
+{
+  "batch_id": "gap-fill-batch-02-2026-09-23",
+  "base_commit": "24e323d06e99a62f2d8946c35be9d4c0ce72594c",
+  "frozen_at": "2026-09-23",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "dengfu-gravel",
+    "model_id": "dengfu-r20",
+    "exact_identity": "Dengfu R20 Disc Gravel Bike Frame, current official model page https://www.dengfubikes.com/Road-Frame/R20.html"
+  },
+  "atomic_fields": [
+    "current-public-price-or-exact-quote",
+    "frame-material-and-construction",
+    "size-and-finish-specific-frame-weight",
+    "manufacturer-maximum-tire-clearance",
+    "numerical-frame-geometry",
+    "bottom-bracket-and-frame-standards",
+    "package-contents-and-mainland-support-terms"
+  ],
+  "boundaries": [
+    "Do not infer values from other Dengfu frames, dealer bundles, or unselected builds.",
+    "Do not treat a customization/contact route as a price quote; no seller or manufacturer contact is in scope.",
+    "Use only public sources; no login, private messages, or access-control bypass.",
+    "Keep stiffness outside this batch because its separate 50-area campaign is already recorded."
+  ],
+  "done_criteria": "For every frozen field, either add an exact-model sourced value with dated provenance and caveats, or record the specific routes checked, why the evidence is absent or mismatched, and a concrete reopening trigger. Add no inferred specifications. For catalog data changes, accept the monotonic coverage baseline and run npm run check once. No image work is in scope.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, publication, or contact with Dengfu or sellers."
+}

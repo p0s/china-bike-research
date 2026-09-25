@@ -480,6 +480,12 @@
   "accepted_source_ids": [
     "merida-silex-7000-25-official-cny-reference-2026-08-17"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["merida-silex-7000-25-official-cny-reference-2026-08-17"],
+    "note": "Disposition: exact model-year-2025 SILEX 7000 suggested-retail evidence reused. The manufacturer page supports CNY 20,800 as accessed 2026-09-01. Preserve the separate candidate price observation date of 2026-08-28; dealer stock, checkout total, and fulfillment remain unverified. Reopen on dated current order evidence."
+  },
   "retry_after": null,
   "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-merida-silex-batch-044-50-area-sweep-2026-09-01.json. Current exact mainland manufacturer page lists CNY 20,800 suggested retail and dealer routing."
 }

@@ -21,9 +21,9 @@
       "seatpost": "T700 carbon",
       "handlebar": "aluminum"
     },
-    "bottom_bracket_status": "No attributable shell standard found after 50 registered source areas",
+    "bottom_bracket_status": "No attributable shell standard found after 50 registered source areas; the exact GX600 page rechecked on 2026-09-24 still omits a bottom-bracket standard and shell dimensions.",
     "frame_weight_status": "No frame-only size, finish or included-hardware weight found after 50 registered source areas",
-    "geometry_status": "No attributable numeric geometry table found after 50 registered source areas; only 450/480/500 size choices and a visual chart are published"
+    "geometry_status": "No attributable numeric geometry table found after 50 registered source areas. The current page lists 700C×450/480/500 mm sizes only; its linked size.avif chart returned 403 on 2026-09-24, so geometry remains unknown."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -38,7 +38,8 @@
   "source_ids": [
     "camp-gx600-official",
     "camp-gx600-official-2026-08-17",
-    "camp-gx600-official-2026-08-28"
+    "camp-gx600-official-2026-08-28",
+    "camp-gx600-geometry-recheck-2026-09-24"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-24"
 }

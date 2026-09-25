@@ -8,16 +8,23 @@
   "missing": [
     "Map the public R7000 review to an exact model year and generation",
     "Claimed complete weight and numeric geometry for the reviewed older generation",
-    "Current dealer stock and final mainland transaction price"
+    "No dated mainland price for the older R7000 build; current dealer stock and final transaction price remain unknown"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
   "source_ids": [
     "public-merida-scultura-endurance-4000-2026-08-17",
     "merida-scultura-endurance-4000-china-2026-08-17",
+    "merida-scultura-endurance-4000-current-2026-09-23",
     "merida-warranty-official-2026-08-17",
     "merida-scultura-endurance-4000-official-global-2026-08-20",
-    "merida-scultura-endurance-4000-roadcc-2026-09-01"
+    "merida-scultura-endurance-4000-roadcc-2026-09-01",
+    "merida-scultura-endurance-4000-roadcc-price-current-2026-09-23",
+    "merida-scultura-endurance-4000-japan-price-current-2026-09-23",
+    "merida-china-sales-channels-current-2026-09-23",
+    "merida-china-dealer-locator-current-2026-09-23",
+    "merida-china-warranty-current-2026-09-23",
+    "merida-scultura-endurance-4000-roadcc-recheck-2026-09-23"
   ],
   "observed_price": {
     "amount_cny": 14800,
@@ -34,11 +41,11 @@
     "tires": "Maxxis Detonator 32C",
     "tire_clearance_mm": 34,
     "mounts": "Fender provision",
-    "complete_weight_g": 9030,
-    "complete_weight_basis": "Exact earlier-generation independent test-bike review; approximate complete weight with the reviewed CF3/R7000 configuration",
+    "complete_weight_g": 8970,
+    "complete_weight_basis": "earlier-generation independent test-bike review: road.cc 2023 bike, size L/568 mm, 8,970 g reported. Configuration and weighing protocol are review-specific and do not establish the custom community build.",
     "stiffness_evidence": "Independent exact-generation review found more than enough frame and fork stiffness, no detectable flex and efficient power transfer; qualitative ride assessment without an instrumented protocol"
   },
-  "support_note": "Purchase through the official dealer finder. Merida's policy requires first-owner designated-dealer purchase, warranty card and receipt, with service through the original dealer or a Merida store.",
-  "source_note": "The earlier-generation CF3/R7000 community build remains separate from the newer R7100 product. An exact-period independent review reports about 9.03 kg and sufficient frame/fork stiffness without detectable flex.",
-  "last_reviewed": "2026-09-01"
+  "support_note": "Merida's current China routes include its authorized dealer locator, official online mall, JD flagship and Douyin flagship. Its current policy requires first-owner designated-dealer purchase, valid warranty card and receipt, with service through the original dealer or a Merida store; carbon frames are covered for the first owner's lifetime. The old community build's actual seller, invoice, owner and warranty-card status are unknown, and unofficial online purchases are excluded.",
+  "source_note": "The earlier-generation CF3/R7000 community build remains separate from the current 25′ R7100 page, which lists CNY 14,800. The exact-period independent review reports about 9.03 kg and qualitative stiffness; current evidence does not price the older mainland build. UK £2,250 and Japanese ¥374,000 historical leads are foreign-market values and must not be converted or assigned to this custom/community build.\n\nBatch 24 direct review-page recheck (2026-09-23) reads 8.97 kg for the 2023 size-L/568 mm test bike; this corrects the earlier 9.03 kg transcription. The current China CNY 14,800 MSRP belongs to the 25′ R7100 model and is not a price for this older R7000 build.",
+  "last_reviewed": "2026-09-23"
 }

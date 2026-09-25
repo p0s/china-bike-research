@@ -480,8 +480,17 @@
   "status": "found",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "paragon-jazz-jd-2026-08-30"
+    "paragon-jazz-jd-2026-08-30",
+    "paragon-jazz-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/paragon-jazz-2026-50-area-sweep-2026-08-30.json. Both exact sources identify a carbon-frame JAZZ; fiber grade and fork construction remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/paragon-jazz-2026-50-area-sweep-2026-08-30.json. Both exact sources identify a carbon-frame JAZZ; fiber grade and fork construction remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "paragon-jazz-jd-index-recheck-2026-09-23"
+    ],
+    "note": "seller-carbon-frame-claim-grade-unknown: Current JD listing title and option label describe a carbon frame. Grade and fork construction are unstated; direct item detail returned blank. Reopen trigger: Reopen with manufacturer specification or readable selected-item details."
+  }
 }

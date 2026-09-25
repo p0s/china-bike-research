@@ -1,0 +1,44 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-price-b148-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-specialized-crux-price-recheck-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized Crux Comp GRX 2026 product 223483 exact model public price China CNY",
+          "route": "Fresh exact-build public-price query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No qualifying exact mainland CNY seller amount surfaced. The recorded mainland exact-product route currently has no public price; it was not reopened. Foreign-market or different-build results were excluded."
+        }
+      ],
+      "blocker": "The only new current amount found is a Japanese-market ¥495,000 list amount for matching product 223483; B169 excludes foreign-market list prices for this mainland price field. Existing mainland sources provide no current CNY amount."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "specialized-crux-comp-china-2026-08-17",
+    "specialized-crux-comp-grx-official-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "No qualifying dated exact-model seller or manufacturer amount found; the current mainland price remains unknown.\nB169 same-day supplemental query: Specialized Crux Comp Shimano GRX 4223483 中国 官方售价 2026. Opened the verified-new Specialized Japan page https://www.specialized.com/jp/ja/crux-comp/p/4223483?color=5381938-4223483; it shows ¥495,000 for Crux Comp / Shimano GRX product 223483 but does not state model year or price type, and stock or checkout was not checked. This foreign-market amount is preserved only in batch evidence and was not added to the mainland candidate.",
+  "retry_of": "candidate-missing-china-price-specialized-crux-price-recheck-2026-09-24",
+  "retry_reason": "A fresh 2026-09-25 query checks for a new current exact-build mainland listing since the 2026-09-24 route recheck."
+}

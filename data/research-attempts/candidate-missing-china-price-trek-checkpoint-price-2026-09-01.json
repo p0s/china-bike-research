@@ -481,5 +481,11 @@
     "trek-china-checkpoint-product-47071-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-checkpoint-batch-045-50-area-sweep-2026-09-01.json. The exact mainland product record retains the official CNY 27,800 list observation; stock and checkout remain unverified."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-checkpoint-batch-045-50-area-sweep-2026-09-01.json. The exact mainland product record retains the official CNY 27,800 list observation; stock and checkout remain unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["trek-china-checkpoint-product-47071-2026-08-17"],
+    "note": "Disposition: exact-model official indexed list-price evidence reused. The source identifies Checkpoint SL 5 AXS Gen 3 product 47071 at CNY 27,800; the dynamic product page did not directly expose price or stock. Checkout remains unverified."
+  }
 }

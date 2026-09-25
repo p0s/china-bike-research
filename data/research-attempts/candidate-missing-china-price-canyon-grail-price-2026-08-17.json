@@ -18,7 +18,7 @@
     },
     "web": {
       "status": "conflicted",
-      "conflict": "Opened official page is CNY 14,700; official search crawl showed CNY 11,700 promotion. Preserve both.",
+      "conflict": "The current exact China page shows CNY 13,700 from CNY 14,700 on 2026-09-25. The earlier CNY 11,700 official crawl was not reproduced and remains an unresolved historical promotion. Record CNY 13,700 as the latest displayed offer; member access/size selection, stock and final landed total remain unverified.",
       "attempts": [
         {
           "attempt": 1,
@@ -52,8 +52,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "canyon-grail-cf7-china-2026-08-17",
-    "canyon-grail-cf7-promotional-crawl-2026-08-17"
+    "canyon-grail-cf7-promotional-crawl-2026-08-17",
+    "canyon-grail-cf7-china-current-2026-09-23",
+    "canyon-grail-cf7-china-price-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: conflicted. Unknowns and blocks are not negative evidence."
+  "notes": "The current exact China page shows CNY 13,700 from CNY 14,700 on 2026-09-25. The earlier CNY 11,700 official crawl was not reproduced and remains an unresolved historical promotion. Record CNY 13,700 as the latest displayed offer; member access/size selection, stock and final landed total remain unverified.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "canyon-grail-cf7-china-current-2026-09-23",
+      "canyon-grail-cf7-china-price-recheck-2026-09-25"
+    ],
+    "note": "The current exact China page shows CNY 13,700 from CNY 14,700 on 2026-09-25. The earlier CNY 11,700 official crawl was not reproduced and remains an unresolved historical promotion. Record CNY 13,700 as the latest displayed offer; member access/size selection, stock and final landed total remain unverified."
+  }
 }

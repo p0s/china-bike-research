@@ -1,0 +1,89 @@
+{
+  "batch": 127,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 707,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 26,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selection_note": "Select the highest-priority fresh evidence-found entries. Some exact model names appeared in older batch scopes, but these atomic attempt IDs remain unresolved in the current queue and are distinct from the fields integrated in those batches. Do not expand beyond the listed fields or repeat any source-reuse-resolved field."
+  },
+  "scope": {
+    "exact_target_models": [
+      "twitter-carbon-road-gravel-unknown",
+      "twitter-cyclone-electronic",
+      "twitter-cyclone-gen3-7170",
+      "twitter-cyclone-gen3-et",
+      "twitter-cyclone-sport",
+      "twitter-gravel-v3-2024-rs-carbon-wave",
+      "twitter-storm-knight",
+      "twitter-t10-pro",
+      "twitter-t8-closed-wheel",
+      "viqi-r8000"
+    ],
+    "exact_model_count": 10,
+    "selected_fields": [
+      "candidate:twitter-carbon-road-gravel-unknown:drivetrain",
+      "candidate:twitter-carbon-road-gravel-unknown:frame-material",
+      "variant:twitter-cyclone-electronic:bom",
+      "platform:twitter-cyclone-electronic:frame-material",
+      "variant:twitter-cyclone-electronic:image",
+      "candidate:twitter-cyclone-gen3-7170:frame-stiffness",
+      "variant:twitter-cyclone-gen3-et:bom",
+      "platform:twitter-cyclone-gen3-et:frame-material",
+      "variant:twitter-cyclone-gen3-et:complete-weight",
+      "candidate:twitter-cyclone-sport:drivetrain",
+      "candidate:twitter-gravel-v3-2024-rs-carbon-wave:complete-weight",
+      "candidate:twitter-storm-knight:identity-source",
+      "candidate:twitter-t10-pro:drivetrain",
+      "candidate:twitter-t8-closed-wheel:frame-material",
+      "candidate:viqi-r8000:frame-material"
+    ],
+    "attempt_ids": [
+      "candidate-twitter-carbon-road-gravel-unknown-drivetrain-2026-08-30",
+      "candidate-twitter-carbon-road-gravel-unknown-frame-material-2026-08-30",
+      "variant-twitter-cyclone-electronic-bom-2026-08-29",
+      "platform-twitter-cyclone-electronic-frame-material-2026-08-29",
+      "variant-twitter-cyclone-electronic-image-2026-08-29",
+      "candidate-twitter-cyclone-gen3-7170-frame-stiffness-2026-09-01",
+      "variant-twitter-cyclone-gen3-et-bom-2026-09-01",
+      "platform-twitter-cyclone-gen3-et-frame-material-2026-09-01",
+      "variant-twitter-cyclone-gen3-et-complete-weight-2026-08-17",
+      "candidate-twitter-cyclone-sport-drivetrain-2026-08-30",
+      "candidate-twitter-gravel-v3-2024-rs-carbon-wave-complete-weight-2026-09-01",
+      "candidate-twitter-storm-knight-identity-source-2026-08-30",
+      "candidate-twitter-t10-pro-drivetrain-2026-08-30",
+      "candidate-twitter-t8-closed-wheel-frame-material-2026-08-30",
+      "candidate-viqi-r8000-frame-material-2026-08-30"
+    ],
+    "research_boundary": "One existing Luna Max evidence-only reviewer. Inspect only these exact records, listed attempt histories and accepted sources first. Work one exact model/source at a time and stop at decisive evidence. Return direct URLs, actual access dates, source class, exactly supported claims, conflicts, build/market/size caveats, and either a source-reuse recommendation or evidence-backed open reason. Do not edit repository files.",
+    "excluded": [
+      "No fields outside the 15 frozen entries.",
+      "Do not repeat any field already source-reuse-resolved in a prior batch.",
+      "Do not transfer facts across model year, trim, market, size or product type.",
+      "No new image file, third-party image hosting, or image-rights assumption; preserve unknown rights and exactness.",
+      "No new XHS capture, login, CAPTCHA, challenge handling or bypass; use existing sanitized public evidence only.",
+      "No GitHub or production delivery."
+    ],
+    "not_selected_from_remaining_queue": [
+      "variant:sava-a7l-r7100:image",
+      "candidate:xds-ad350-2026:frame-material",
+      "candidate:xlab-rs9:frame-stiffness",
+      "variant:xmcarbonspeed-cs-gr01-frameset:price",
+      "candidate:triaero-a9:clearance-unverified",
+      "variant:sava-a7l-r7100:purchase-route",
+      "variant:twitter-t3-tt:purchase-route",
+      "variant:twitter-v3-2024-rs-sensah-alloy:purchase-route",
+      "variant:ican-graro-frameset:purchase-route",
+      "variant:xmcarbonspeed-cs-gr01-frameset:purchase-route",
+      "variant:scott-addict-rc-40:purchase-route"
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadDataset } from '../src/lib/data.mjs';
@@ -6,6 +7,13 @@ import { summarizeResearchAttempts, validateResearchAttempts } from '../src/lib/
 function main() {
   const data = loadDataset();
   const errors = validateResearchAttempts(data.researchAttempts, data);
+  const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  for (const record of data.researchAttempts) {
+    const scopeFile = record.campaign_extension?.scope_file;
+    if (scopeFile && !fs.existsSync(path.resolve(repositoryRoot, scopeFile))) {
+      errors.push(`research attempt ${record.id}: missing campaign extension scope ${scopeFile}`);
+    }
+  }
   if (errors.length) {
     console.error(`Research-attempt validation failed with ${errors.length} error(s):`);
     for (const error of errors) console.error(`- ${error}`);

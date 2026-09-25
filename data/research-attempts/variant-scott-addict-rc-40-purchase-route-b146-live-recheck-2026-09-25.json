@@ -1,0 +1,53 @@
+{
+  "id": "variant-scott-addict-rc-40-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "scott-addict-rc-40"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-scott-addict-rc-40-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-scott-addict-rc-40-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The new JD category page mentions Addict RC 40 but lacks model code/year, seller identity and price, so it does not establish the retained 290362 mainland route.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Scott Addict RC 40 290362 mainland China official listing current 2026 price JD Tmall",
+          "route": "One distinct B146 exact-model web search; one new page open",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "The new JD category page passed exact-URL pre-open audit. Its coffee-color size-S listing and 6折 label are not sufficient to identify the target model code or current checkout.",
+          "result_url": "https://www.jd.com/hprm/1318639516ba307604f5.html"
+        }
+      ]
+    }
+  },
+  "notes": "The new JD category page passed exact-URL pre-open audit. Its coffee-color size-S listing and 6折 label are not sufficient to identify the target model code or current checkout.",
+  "campaign_extension": {
+    "id": "b146-scott-addict-rc-40-purchase-route",
+    "extends_attempt_id": "variant-scott-addict-rc-40-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -28,8 +28,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "camp-gx600-official-2026-08-17"
+    "camp-gx600-official-2026-08-17",
+    "camp-gx600-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "camp-gx600-official-recheck-2026-09-23"
+    ],
+    "note": "Current mainland CAMP page identifies GX600 PES 1×12 and CNY 5,688, Add to Cart and JD Buy Now; size selection and stock-dependent cancellation apply. Reopen on selected SKU and checkout/stock status."
+  }
 }

@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "winspace-g5-official"
+    "winspace-g5-official",
+    "winspace-g5-official-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-winspace-g5-frameset-batch-047-50-area-sweep-2026-09-01.json. Current Add to cart route and lead time found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-winspace-g5-frameset-batch-047-50-area-sweep-2026-09-01.json. Current Add to cart route and lead time found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "winspace-g5-official-current-recheck-2026-09-25"
+    ],
+    "note": "The current exact official page provides XS–XXL selectors, Add to cart, checkout-calculated shipping and a 15–20-business-day lead time. Selected-size stock, mainland eligibility, tax and final checkout remain unverified."
+  }
 }

@@ -19,7 +19,11 @@
     "pardus-robin-evo-official-2026-08-17",
     "pardus-robin-evo-ultegra-di2-official-2026-08-20",
     "pardus-robin-evo-third-generation-official-2026-08-28",
-    "pardus-china-support-2026-09-22"
+    "pardus-china-support-2026-09-22",
+    "pardus-robin-evo-ultegra-di2-current-recheck-2026-09-23",
+    "pardus-robin-evo-current-price-route-recheck-2026-09-24",
+    "pardus-robin-evo-third-generation-official-recheck-2026-09-25",
+    "pardus-robin-evo-ultegra-official-access-recheck-2026-09-25"
   ],
   "facts": {
     "drivetrain": "Custom build: Shimano Dura-Ace R9270 with 10-36 cassette",
@@ -28,10 +32,12 @@
     "complete_weight_g": 6200,
     "wheels": "Breo 40 mm custom wheelset",
     "tires": "28C tubeless rear and 25C front",
-    "complete_weight_basis": "Exact public XS competition-build report; generation mapping, scale protocol and full configuration remain unpublished",
+    "complete_weight_basis": "Exact public XS competition-build report claims 6.2 kg; generation mapping, scale protocol and full configuration remain unpublished. The current official standard page gives frame/fork/cockpit weights only and does not map the custom build to a generation or state its complete-build weighing basis.",
     "frame_stiffness_status": "No generation-safe controlled or sufficiently specific independent stiffness result found after 50 registered source areas",
-    "support_route": "PARDUS China customer-service contact page and dealer locator; exact-generation warranty duration and claim eligibility remain unverified"
+    "support_route": "PARDUS China customer-service contact page and dealer locator; exact-generation warranty duration and claim eligibility remain unverified",
+    "current_factory_price_reference": "The current China ROBIN EVO Ultegra Di2 page has a price label but no visible numeric amount. Current indexed numerical results refer to older rim-brake trims or foreign-market material and do not identify the XS Dura-Ace competition build."
   },
-  "source_note": "The exact public XS competition build reports 6.2 kg, but remains unmapped between incompatible official generations. No generation-safe stiffness result was established after 50 areas. Current official pages still provide no exact-build mainland price or manufacturer maximum tire clearance. Support-route review on 2026-09-22 confirms the manufacturer contact and dealer route only; it does not extend the dated build evidence or establish warranty coverage.",
-  "last_reviewed": "2026-09-22"
+  "source_note": "The exact public XS competition build reports 6.2 kg, but remains unmapped between incompatible official generations. No generation-safe stiffness result was established after 50 areas. Current official pages still provide no exact-build mainland price or manufacturer maximum tire clearance. The 2026-09-23 standard Ultegra Di2 page lists a 750 g size-M frame, 290 g fork and 295 g cockpit plus buy/store-search links, but no complete-bike weight or mapping to the custom build. Support-route review on 2026-09-22 confirms manufacturer contact and dealer routes only; it does not establish custom-build stock or warranty coverage.\n\nBatch 65 recheck (2026-09-25): the exact 2024 Robin EVO page confirms UHMS-EPS+ with T1100/M40 reinforcement and 710 g at size M, but the XS custom Dura-Ace build remains unmapped to that generation. The separate Ultegra Di2 route timed out; no grade is transferred.",
+  "last_reviewed": "2026-09-25",
+  "price_status": "No current mainland numeric price is published for the exact XS Dura-Ace competition build. Historical or foreign prices do not map to this build."
 }

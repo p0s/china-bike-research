@@ -479,8 +479,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pardus-spark-sport-official-cn-2026-08-17"
+    "pardus-spark-sport-official-cn-2026-08-17",
+    "pardus-spark-sport-105-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-spark-sport-pes-batch-036-50-area-sweep-2026-09-01.json. The current exact Spark Sport platform page claims 20 percent higher pedaling stiffness than the prior model due to tube shapes and HS-grade carbon; manufacturer comparison without a public protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-spark-sport-pes-batch-036-50-area-sweep-2026-09-01.json. The current exact Spark Sport platform page claims 20 percent higher pedaling stiffness than the prior model due to tube shapes and HS-grade carbon; manufacturer comparison without a public protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-spark-sport-105-current-recheck-2026-09-23"
+    ],
+    "note": "platform-claim-not-pes-specific-measurement: The manufacturer’s 20% prior-model pedaling-stiffness claim is for the Spark Sport—105 branch, not a PES-specific measured result. Reopen trigger: Reopen with PES-specific test data or specification."
+  }
 }

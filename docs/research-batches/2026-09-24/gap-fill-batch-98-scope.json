@@ -1,0 +1,45 @@
+{
+  "batch": 98,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 166,
+  "scope": [
+    {"record_type":"candidate","record_id":"rolling-stone-comp","attempt_id":"candidate-rolling-stone-comp-frame-stiffness-2026-08-30","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"rolling-stone-comp","attempt_id":"candidate-rolling-stone-comp-identity-source-2026-08-30","atomic_gap":"identity-source"},
+    {"record_type":"variant","record_id":"scott-addict-rc-40","attempt_id":"variant-scott-addict-rc-40-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"platform","record_id":"scott-addict-rc-40","attempt_id":"platform-scott-addict-rc-40-frame-material-2026-09-01","atomic_gap":"frame-material"},
+    {"record_type":"platform","record_id":"scott-addict-rc-40","attempt_id":"platform-scott-addict-rc-40-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"platform","record_id":"scott-addict-rc-40","attempt_id":"platform-scott-addict-rc-40-frame-weight-2026-09-01","atomic_gap":"frame-weight"},
+    {"record_type":"platform","record_id":"scott-addict-rc-40","attempt_id":"platform-scott-addict-rc-40-geometry-2026-09-01","atomic_gap":"geometry"},
+    {"record_type":"candidate","record_id":"scott-foil-rc-10","attempt_id":"candidate-scott-foil-rc-10-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"scott-foil-rc-10","attempt_id":"candidate-scott-foil-rc-10-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"scott-foil-rc-10","attempt_id":"candidate-scott-foil-rc-10-tire-clearance-2026-09-01","atomic_gap":"tire-clearance"},
+    {"record_type":"candidate","record_id":"seka-exaero-road","attempt_id":"candidate-seka-exaero-road-frame-stiffness-batch-048-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"seka-spear-rdc","attempt_id":"candidate-seka-spear-rdc-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"seka-spear-rdc","attempt_id":"candidate-seka-spear-rdc-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"seka-spear-rdc","attempt_id":"candidate-seka-spear-rdc-tire-clearance-2026-09-01","atomic_gap":"tire-clearance"},
+    {"record_type":"platform","record_id":"spcycle-g026","attempt_id":"platform-spcycle-g026-frame-material-2026-09-01","atomic_gap":"frame-material"},
+    {"record_type":"variant","record_id":"spcycle-g026-frameset","attempt_id":"variant-spcycle-g026-frameset-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"variant","record_id":"spcycle-g028-frameset","attempt_id":"variant-spcycle-g028-frameset-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"variant","record_id":"spcycle-g028-frameset","attempt_id":"variant-spcycle-g028-frameset-purchase-route-2026-09-01","atomic_gap":"purchase-route"},
+    {"record_type":"candidate","record_id":"specialized-crux-10r-frameset","attempt_id":"candidate-specialized-crux-10r-frameset-frame-weight-2026-09-01","atomic_gap":"frame-weight"},
+    {"record_type":"candidate","record_id":"specialized-crux-10r-frameset","attempt_id":"candidate-specialized-crux-10r-frameset-price-2026-09-01","atomic_gap":"price"},
+    {"record_type":"candidate","record_id":"specialized-roubaix-sl8-comp-105","attempt_id":"candidate-specialized-roubaix-sl8-comp-105-complete-weight-2026-09-01","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"specialized-roubaix-sl8-comp-105","attempt_id":"candidate-specialized-roubaix-sl8-comp-105-frame-stiffness-2026-09-01","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"specialized-roubaix-sl8-comp-105","attempt_id":"candidate-specialized-roubaix-sl8-comp-105-tire-clearance-2026-09-01","atomic_gap":"tire-clearance"}
+  ],
+  "allowed_work": "One Luna evidence-only worker may audit only these 23 exact attempts across nine exact models. For each, read only the attempt's accepted source records and its target record. Process one exact model and source at a time. No web, external route, new model, or edits. Return a compact row per attempt: whether each accepted source exists and is exact-model/build appropriate; the exact value and caveats it supports; whether that value is already present in the target; and resolve/leave-open recommendation with a short reason. The primary writer may add source-reuse resolution metadata only where the target field, exact build, accepted source and all material caveats align; otherwise preserve the gap.",
+  "stop_conditions": [
+    "Do not transfer a family, generation, region, trim, size or build-specific fact to a broader or mismatched target.",
+    "Do not infer values, redate old observations, browse, rewrite campaign history, or edit catalog values from source reuse alone.",
+    "Stop on missing, contradictory, ambiguous or unsupported evidence and explain the precise blocker."
+  ],
+  "done_criteria": [
+    "Audit at most 23 listed attempts and nine exact models, one source at a time.",
+    "Resolve only already-integrated claims with exact source and caveats; leave unsupported claims open.",
+    "Fresh data:gaps and research:queue quantify post-batch state; run validate, research:check, coverage accept/check and git diff --check. No full gate unless catalog/source/code/UI records change; no image report because no image records are in scope."
+  ]
+}

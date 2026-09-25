@@ -1,0 +1,92 @@
+{
+  "batch": 56,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-56-scope.json",
+  "scope": {
+    "exact_models": 3,
+    "target_records": 3,
+    "atomic_gap_instances": 5
+  },
+  "outcomes": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "gap": "price-not-observed",
+      "status": "open",
+      "disposition": "Distinct mainland marketplace searches returned no exact TT-X68-new UDH 32C selected package or current CNY price. The prior foreign USD storefront reference remains a non-mainland indication only; the web attempt budget is exhausted and the public-post lane remains open.",
+      "sources_added": [],
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+      "catalog_price_added": false
+    },
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "gap": "frame-weight-missing",
+      "status": "conflicted",
+      "disposition": "The exact current Seraph and TanTan pages state 983±50 g and 953±50 g respectively at 54 cm UD matte. A distinct exact-model manual search found no shared weighing protocol or revision explanation. Preserve the 30 g conflict; do not average or select a scalar.",
+      "sources_added": [],
+      "attempt_id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+      "catalog_value_added": false
+    },
+    {
+      "record_type": "variant",
+      "id": "twitter-v3-wheeltop-eds",
+      "gap": "clearance-unverified",
+      "status": "conflicted",
+      "disposition": "The current regional manufacturer page identifies the T47 / WheelTop EDS TX build and fitted 700×40C tires, but states no maximum. A Manuals+ mirror states 700×40C max for a BB86 generation; that claim is excluded from the T47 build.",
+      "sources_added": [
+        "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-24",
+        "twitter-v3-bb86-manual-mirror-generation-exclusion-recheck-2026-09-24"
+      ],
+      "attempt_id": "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24",
+      "catalog_value_added": false
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "gap": "price-missing",
+      "status": "blocked",
+      "disposition": "No current public mainland seller/item with an exact selected CNY package and conditions was found. The only newly surfaced lead is a search-indexed global storefront range of USD 609–629, crawled about two months earlier; the exact official product route remains verification-gated. No CNY price was assigned.",
+      "sources_added": [
+        "airwolf-yf-r003-global-catalog-index-recheck-2026-09-24"
+      ],
+      "attempt_id": "candidate-airwolf-yf-r003-price-2026-09-24",
+      "catalog_price_added": false
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "gap": "stiffness-evidence-missing",
+      "status": "blocked",
+      "disposition": "A distinct exact-frame test search surfaced only the already-checked owner build, which has subjective ride comments but no measured stiffness, method, or comparator. The official product page remains verification-gated; no qualifying stiffness evidence was found.",
+      "sources_added": [],
+      "attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-24",
+      "catalog_value_added": false
+    }
+  ],
+  "gaps_resolved": 0,
+  "gaps_unresolved": 5,
+  "changes": {
+    "sources_added": 3,
+    "research_attempt_records_extended": 5,
+    "candidate_records_updated": 1,
+    "variant_records_updated": 1,
+    "mainland_prices_added": 0,
+    "specification_values_added": 0,
+    "images_added": 0
+  },
+  "researcher": "One Luna Max evidence-only agent; root integrated the evidence and wrote repository files.",
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via codex-pnpm-check check",
+    "privacy": "passed",
+    "data_validation": "passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1299 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, 1514 atomic research records",
+    "research_validation": "passed: 1499 atomic fields; 15448 public-post and 35564 web attempts",
+    "coverage": "passed: 212 images, 73 price observations, 1299 sources, 236 candidates protected; baseline acceptance retained 212 images and 277 catalog targets",
+    "tests": "321 passed, 0 failed",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not required; no image records changed"
+  },
+  "delivery": "Local B56 batch only; no push, pull request, merge, publication, or production action."
+}

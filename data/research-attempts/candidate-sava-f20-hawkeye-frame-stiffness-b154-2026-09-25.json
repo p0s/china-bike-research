@@ -1,0 +1,52 @@
+{
+  "id": "candidate-sava-f20-hawkeye-frame-stiffness-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-f20-hawkeye"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-sava-f20-hawkeye-frame-stiffness-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sava-f20-hawkeye-frame-stiffness-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Hawkeye F20 \"stiffness\" test frame assessment",
+          "route": "One bounded current web query screened against existing source history and exact retained model/build identity",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The exact product route was already recorded. Search results and marketing language provide no SAVA F20-specific measured result or sufficiently specific independent assessment."
+        }
+      ],
+      "blocker": "The one bounded query and already recorded exact-model sources did not provide evidence meeting this field’s frozen acceptance rule."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The exact product route was already recorded. Search results and marketing language provide no SAVA F20-specific measured result or sufficiently specific independent assessment.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-sava-f20-hawkeye-frame-stiffness",
+    "extends_attempt_id": "candidate-sava-f20-hawkeye-frame-stiffness-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

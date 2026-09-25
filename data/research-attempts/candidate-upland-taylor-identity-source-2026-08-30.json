@@ -495,5 +495,13 @@
     "upland-taylor-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/upland-taylor-50-area-sweep-2026-08-30.json. The current manufacturer page matches the retained Taylor name, CNY 10,999 amount and mechanical Shimano 105 configuration."
+  "notes": "B122 reused the exact Taylor CNY 10,999 manufacturer page matching the retained mechanical-105 model/build identity; retained marketplace seller, checkout and warranty are not established.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "upland-taylor-official-2026-08-30"
+    ],
+    "note": "B122 reused the exact Taylor CNY 10,999 manufacturer page matching the retained mechanical-105 model/build identity; retained marketplace seller, checkout and warranty are not established."
+  }
 }

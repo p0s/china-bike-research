@@ -1,0 +1,59 @@
+{
+  "batch": 66,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-66-scope.json",
+  "report_command": "npm run --silent image:report -- --ids=yoeleo-altera-g21-primary-image --json",
+  "report": {
+    "checked_at": "2026-09-24",
+    "resources_checked": 1,
+    "results": [
+      {
+        "id": "yoeleo-altera-g21-primary-image",
+        "classification": "unreachable"
+      }
+    ],
+    "http_status_observed": 0,
+    "content_type_observed": 0,
+    "image_records_changed": 0,
+    "image_health_gaps_resolved": 0,
+    "disposition": "No HTTP status or content type was returned. This does not distinguish local network restriction from remote host unavailability and does not establish a broken image; preserve the existing image record."
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "changed_files": [],
+  "validation": {
+    "status": "report completed; no image or catalog records changed",
+    "full_check": "not run; documentation-only result and no data, image record, or code changed",
+    "image_report": "one bounded image-health report completed"
+  },
+  "delivery": "Local B66 batch only; no push, pull request, merge, publication or production action."
+}

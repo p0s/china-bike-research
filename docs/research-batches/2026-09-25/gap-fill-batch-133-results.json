@@ -1,0 +1,115 @@
+{
+  "batch": 133,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-133-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "atomic_fields": 12,
+    "disposition": "All twelve frozen attempts were rechecked against current exact-model pages or bounded saved sources. Conflicting weights, unclear revisions, fitted-only tire sizes, inaccessible listings, historical family-level evidence, and unmapped builds remain explicitly unresolved; no unsupported value was selected.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_queue_before": 21,
+    "conflicted_queue_after": 9,
+    "research_attempts_dispositioned": 12,
+    "source_reuse_found": 0,
+    "conflicts_reconfirmed": 12,
+    "catalog_records_updated": 9,
+    "source_records_added": 19,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 9
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:sava-r9:complete-weight-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["sava-blade-r9-cyclopro-weight-current-recheck-2026-09-25", "sava-blade-r9-99spokes-current-access-recheck-2026-09-25"],
+      "caveat": "CycloPro lists 7.27 kg for a sold-out R9270/Dura-Ace 2025/R23 build and includes pedals, but gives no size or method. 99Spokes' saved 16.3 lb (~7.39 kg) record could not be reopened; generation and weighing basis are not shown to match."
+    },
+    {
+      "field": "candidate:seraph-tt-x68-new-udh:frame-weight-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["seraph-tt-x68-new-weight-recheck-2026-09-25", "tantan-tt-x68-new-weight-recheck-2026-09-25"],
+      "caveat": "The two manufacturer storefronts state 983±50 g and 953±50 g at 54 cm UD matte, respectively; neither establishes a shared weighing protocol."
+    },
+    {
+      "field": "variant:twitter-v3-wheeltop-eds:clearance-unverified",
+      "disposition": "conflict reconfirmed; maximum remains unknown",
+      "source_ids": ["twitter-v3-wheeltop-clearance-recheck-2026-09-25", "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-25"],
+      "caveat": "Current T47 WheelTop pages list fitted Maxxis or Innova 700×40C tires but publish no maximum; fitted size is not a clearance specification."
+    },
+    {
+      "field": "candidate:bxt-gravel-complete:clearance-unverified",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["bxt-135-clearance-45c-recheck-2026-09-25", "bxt-135-clearance-47c-recheck-2026-09-25"],
+      "caveat": "The BXT-GRAVEL-135 page says 45C in its title/description and 47C in its table; a separate BXT-135 page states 47C. No revision bridge maps either frame page to the archived complete-bike card."
+    },
+    {
+      "field": "candidate:xlab-rs9:clearance-unverified",
+      "disposition": "conflict reconfirmed; manufacturer maximum remains unknown",
+      "source_ids": ["xlab-rs9-official-clearance-page-recheck-2026-09-25", "xlab-rs9-bikeinsights-clearance-recheck-2026-09-25"],
+      "caveat": "The current official URL returned a generic page without specifications; Bike Insights lists 30 mm. A saved owner post reports fitted 32C but does not establish a maximum."
+    },
+    {
+      "field": "candidate:airwolf-yf-r003:frame-material",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["airwolf-yf-r003-official-access-recheck-2026-09-25", "airwolf-yf-r003-owner-recheck-2026-09-25"],
+      "caveat": "The current manufacturer page returned 403; its saved indexed claim says T1200, while a reopened owner build names YF-R003 and T1000. No manufacturer layup or revision evidence reconciles them."
+    },
+    {
+      "field": "candidate:airwolf-yf-r003:frame-revision",
+      "disposition": "conflict reconfirmed; revision unmapped",
+      "source_ids": ["airwolf-yf-r003-official-access-recheck-2026-09-25", "airwolf-yf-r003-owner-recheck-2026-09-25"],
+      "caveat": "The owner report identifies a YF-R003 package, but the inaccessible current storefront offers no revision bridge connecting that package to a current frame revision."
+    },
+    {
+      "field": "candidate:elves-mori-community-lead:identity",
+      "disposition": "conflict reconfirmed; family-level source reused",
+      "source_ids": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+      "caveat": "Saved community evidence supports a Mori-family frame lead only; it does not identify the exact subtrim or establish a relationship to AeroX. The posts were not reopened."
+    },
+    {
+      "field": "candidate:elves-mori-community-lead:price",
+      "disposition": "conflict reconfirmed; historical family-level source reused",
+      "source_ids": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+      "caveat": "Saved posts report a Mori-family frame-only amount above CNY 6,000, without an exact checkout amount, subtrim mapping, or current price. The posts were not reopened."
+    },
+    {
+      "field": "candidate:hi-light-g7-2-grx-gr1600:price",
+      "disposition": "conflict reconfirmed; historical build-specific sources reused",
+      "source_ids": ["hi-light-g7-2-official-price-access-recheck-2026-09-25", "hi-light-g7-2-taobao-price-access-recheck-2026-09-25"],
+      "caveat": "Saved official evidence states CNY 17,500 for RX810 2×11 with DT Swiss GR1600; saved Taobao option 7 states CNY 14,999 for a different GRX810 1×11/custom-wheel build. Both pages were inaccessible today, so neither current price is verified."
+    },
+    {
+      "field": "candidate:mondince-fm316:availability",
+      "disposition": "conflict reconfirmed; current availability unknown",
+      "source_ids": ["mondince-fm316-current-specification-recheck-2026-09-25", "mondince-fm316-recent-delivery-community-report-recheck-2026-09-25", "mondince-fm316-older-owner-report-recheck-2026-09-25"],
+      "caveat": "The official page gives MOQ 1 for private standard-color orders and MOQ 30 in factory-capacity text, and asks customers to check availability. Recent delivery and older two-frame reports do not prove current stock or reorder terms."
+    },
+    {
+      "field": "candidate:pardus-robin-evo-community-lead:frame-material",
+      "disposition": "conflict reconfirmed; exact 2024 evidence not mapped to custom build",
+      "source_ids": ["pardus-robin-evo-third-generation-official-recheck-2026-09-25", "pardus-robin-evo-ultegra-official-access-recheck-2026-09-25"],
+      "caveat": "The exact 2024 Robin EVO page states UHMS-EPS+ with T1100 and M40 reinforcement; the separate Ultegra page timed out. No accepted evidence maps the custom competition build to the 2024 generation."
+    }
+  ],
+  "validation": {
+    "focused_render_tests": "pass: 41/41 tests in tests/render.test.mjs",
+    "focused_data_tests": "pass: 73/73 tests in tests/data.test.mjs",
+    "full_gate": "pass: codex-pnpm-check check; privacy, validate, research check, coverage check, 328/328 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets before test-only assertion corrections",
+    "diff_check": "pass: git diff --check before result/checkpoint documentation",
+    "image_report": "not run; no image records changed"
+  }
+}

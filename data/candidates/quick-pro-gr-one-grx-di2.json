@@ -12,7 +12,7 @@
   ],
   "status": "mainland-listing-config-mapping-unresolved",
   "research_priority": "high",
-  "price_status": "Current official US$4,799 global reference; no exact mapped mainland CNY checkout after 50 registered areas",
+  "price_status": "No current mainland CNY amount is mapped to the exact GRX Di2 1×12 build. The official Taobao listing's numbered options remain unmapped; a current JD result identifies a different GRX Di2 2×12 option. The US$4,799 global reference remains separate.",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, and local warranty evidence",
   "source_ids": [
     "quick-pro-gr-one-grx-di2-official-2026-08-17",
@@ -26,7 +26,11 @@
     "quick-pro-gr-one-ride-review-2026-08-27",
     "public-quick-pro-gr-one-build-2026-08-17",
     "public-quick-pro-gr-one-product-card-2026-08-24",
-    "quick-pro-gr-one-cyclenet-build-2026-09-22"
+    "quick-pro-gr-one-cyclenet-build-2026-09-22",
+    "quick-gr-one-review-summary-recheck-2026-09-23",
+    "quick-pro-gr-one-grx-di2-quickproca-2026-09-23",
+    "quick-pro-gr-one-taobao-current-price-route-recheck-2026-09-24",
+    "quick-pro-gr-one-jd-2x12-option-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 32600,
@@ -39,13 +43,13 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.quickprousa.com/products/gr-one-shimano",
-  "source_note": "Current exact global price remains US$4,799. The official mainland listing’s numbered options remain unmapped to the exact GRX Di2 1×12 bill of materials, so no CNY amount is promoted after 50 areas. September 22 adds a separately attributed regional retailer build weight below; it does not select a mainland checkout option.",
+  "source_note": "Current exact global price remains US$4,799. The official mainland listing’s numbered options remain unmapped to the exact GRX Di2 1×12 bill of materials, so no CNY amount is promoted after 50 areas. September 22 adds a separately attributed regional retailer build weight below; it does not select a mainland checkout option.\n\nBatch 36 recheck: the North American authorized-dealer GR:ONE GRX Di2 page describes high-strength/high-modulus carbon but gives no T1100/M65 grade. Keep that regional generic description separate from the mainland model source's T1100+M65 claim.",
   "facts": {
     "drivetrain": "Shimano GRX RX825 Di2 1×12",
     "frame": "Toray T1100 + M65 high-modulus carbon",
     "frame_material": "Toray T1100 + M65 high-strength and high-modulus carbon",
     "frame_construction": "Monolith one-piece monocoque molding with fully internal routing and a carbon seatpost",
-    "stiffness_evidence": "An exact-model review reports noticeable designed flex at the seatpost cutout and a comfortable, fast ride; this is qualitative ride evidence, not a measured lateral-stiffness result",
+    "stiffness_evidence": "A 2025-12-03 Quick Pro GR:ONE review summary describes noticeable flex at the seatpost cutout and a comfortable ride on a custom frameset build. It does not establish the GRX Di2 build and provides no measured stiffness value or protocol; platform-level qualitative feedback only.",
     "frame_weight_g": 919,
     "frame_weight_basis": "Current official mainland listing: size M including paint and frame accessories, ±5%; fork 459 g and seatpost 169 g are separate",
     "bottom_bracket": "T47-68 threaded",
@@ -55,7 +59,7 @@
     "complete_weight_status": "No exact complete-bike weight, size or weighing protocol found after 50 registered source areas; published frame, fork and seatpost weights are not summed"
   },
   "support_note": "Official support page states a five-year frameset warranty for the original purchaser, one-year Shimano/SRAM coverage on complete bikes, mostly assembled delivery, and typical standard-bike delivery around three weeks; mainland-China service and delivery are not confirmed.",
-  "last_reviewed": "2026-09-22",
+  "last_reviewed": "2026-09-24",
   "alternative_builds": [
     {
       "id": "cyclenet-spec-one-grx827",

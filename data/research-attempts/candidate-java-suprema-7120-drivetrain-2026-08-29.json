@@ -492,8 +492,21 @@
   "status": "found",
   "accepted_source_ids": [
     "java-suprema-colombia-2026-08-29",
-    "java-suprema-uruguay-2026-08-29"
+    "java-suprema-uruguay-2026-08-29",
+    "java-suprema-colombia-index-recheck-2026-09-23",
+    "java-suprema-uruguay-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Both current regional reference builds document Shimano 105 R7120 mechanical 2x12, without assigning either full trim to the mainland card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Both current regional reference builds document Shimano 105 R7120 mechanical 2x12, without assigning either full trim to the mainland card.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-suprema-colombia-index-recheck-2026-09-23",
+      "java-suprema-uruguay-index-recheck-2026-09-23",
+      "java-suprema-colombia-2026-08-29",
+      "java-suprema-uruguay-2026-08-29"
+    ],
+    "note": "Both regional references list Shimano 105 R7120 mechanical 2x12; current rechecks were stale/inaccessible. Preserve this as a regional reference only because the mainland seller's selected option is unverified."
+  }
 }

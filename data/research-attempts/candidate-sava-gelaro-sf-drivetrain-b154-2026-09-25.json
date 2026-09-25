@@ -1,0 +1,52 @@
+{
+  "id": "candidate-sava-gelaro-sf-drivetrain-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-gelaro-sf"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-sava-gelaro-sf-drivetrain-2026-08-30",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sava-gelaro-sf-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro SF6 selected build R21-U6020 10-speed versus R21-U6000 11-speed mainland flat-bar drivetrain Shimano CUES",
+          "route": "One bounded current web query screened against existing source history and exact retained model/build identity",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Official material presents both R21-U6020 1×10 and R21-U6000 1×11 configurations. The retained Taobao card does not select either build, so no drivetrain is assigned."
+        }
+      ],
+      "blocker": "The one bounded query and already recorded exact-model sources did not provide evidence meeting this field’s frozen acceptance rule."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "Official material presents both R21-U6020 1×10 and R21-U6000 1×11 configurations. The retained Taobao card does not select either build, so no drivetrain is assigned.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-sava-gelaro-sf-drivetrain",
+    "extends_attempt_id": "candidate-sava-gelaro-sf-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

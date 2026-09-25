@@ -488,5 +488,6 @@
     "spect-mira-cyclistshub-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. Current exact sources consistently identify a T1100 + M90 carbon lay-up."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. Current exact sources consistently identify a T1100 + M90 carbon lay-up.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["spect-mira-cyclegears-2026-08-30","spect-mira-speedingeasy-2026-08-30","spect-mira-cyclistshub-2026-08-30"],"note":"Exact SPECT Mira sources support the candidate's reported T1100 + M90 lay-up. Final delivered production revision remains unverified."}
 }

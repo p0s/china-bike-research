@@ -1,0 +1,35 @@
+{
+  "id": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-defy-advanced"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. The only ¥14,800 figure is previously recorded suggested retail, not a current seller checkout or stock observation; no new price source qualifies. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Giant Defy Advanced 2\" 捷安特 中国大陆 官方 整车 重量 价格",
+          "route": "Search results showed the predecessor Giant China product page with ¥14,800 suggested retail; that old URL was not reopened. No new seller checkout or stock observation surfaced.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The only ¥14,800 figure is previously recorded suggested retail, not a current seller checkout or stock observation; no new price source qualifies. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. The only ¥14,800 figure is previously recorded suggested retail, not a current seller checkout or stock observation; no new price source qualifies. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries."
+}

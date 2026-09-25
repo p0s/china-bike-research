@@ -1,20 +1,44 @@
 {
   "id": "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "rinasclta-q-aero-gr" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "rinasclta-q-aero-gr"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "Rinasclta Q-AERO GR T800 T1000 Wind Eye", "route": "manufacturer exact-model product page", "outcome": "found", "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD", "accessed_at": "2026-08-28", "note": "The exact page identifies Toray T800 + T1000 carbon and the Wind Eye aero seatstay design; resin system and ply schedule are not published." }
+        {
+          "attempt": 1,
+          "query": "Rinasclta Q-AERO GR T800 T1000 Wind Eye",
+          "route": "manufacturer exact-model product page",
+          "outcome": "found",
+          "result_url": "https://rinascltabike.com/product/gravel-frame-udh-q-aero-gr/?currency=USD",
+          "accessed_at": "2026-08-28",
+          "note": "The exact page identifies Toray T800 + T1000 carbon and the Wind Eye aero seatstay design; resin system and ply schedule are not published."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["rinasclta-q-aero-gr-official-2026-08-27"],
+  "accepted_source_ids": [
+    "rinasclta-q-aero-gr-official-2026-08-27",
+    "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The most specific attributable material and construction are recorded without inferring a lay-up."
+  "notes": "The most specific attributable material and construction are recorded without inferring a lay-up.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+    ],
+    "note": "Manufacturer claims Toray T800+T1000; no ply schedule, resin system or independent verification is supplied. No historical search-channel attempts were rewritten."
+  }
 }

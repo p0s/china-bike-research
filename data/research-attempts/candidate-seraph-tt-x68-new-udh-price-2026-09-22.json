@@ -13,7 +13,7 @@
   ],
   "channels": {
     "web": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -32,11 +32,19 @@
           "accessed_at": "2026-09-22",
           "note": "35C page identity differs; no accepted price evidence for the frozen 32C model.",
           "result_url": "https://tantanbicycles.com/tt-x68-new-version-t47-light-disc-road-bicycle-carbon-frame-bike-70035c-full-toray-t1000-flat-mount-brake-frameset-p7192636.html"
+        },
+        {
+          "attempt": 3,
+          "query": "TT-X68-new UDH 32C 车架 价格 site:1688.com OR site:jd.com OR site:tmall.com",
+          "route": "Distinct mainland marketplace exact-model search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Searches across 1688 and JD/Tmall returned only generic UDH frames or no exact listing; no selected CNY package, checkout price, stock, or delivery conditions were visible."
         }
       ]
     },
     "public-post": {
-      "status": "open",
+      "status": "found",
       "attempts": [
         {
           "attempt": 1,
@@ -46,12 +54,34 @@
           "accessed_at": "2026-09-22",
           "note": "Prospective buyer links the 35C listing; does not resolve the frozen model’s price.",
           "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1w4ldod/best_tantanseraph_complete_bike_x42_x71_r18_or/"
+        },
+        {
+          "attempt": 2,
+          "query": "TT-X68-new UDH 32C T47 车主 装车 价格",
+          "route": "opened Chinertown public forum thread, pages 1–2",
+          "outcome": "found",
+          "accessed_at": "2026-09-24",
+          "note": "Thread context describes the new X68 replacement as T47/UDH/32C; an Aug 18 pre-release reply names TT-X68-NEW-T47 and reports a US$629 black-matte package excluding shipping. Size, final 32C SKU equivalence, quote destination, availability, and current mainland CNY price remain unverified.",
+          "result_url": "https://chinertown.com/index.php/topic,7471.15.html"
         }
       ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "seraph-tt-x68-new-storefront-2026-09-23",
+    "ecb-reference-rates-2026-09-22",
+    "seraph-tt-x68-new-udh-chinertown-quote-recheck-2026-09-24"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seraph-tt-x68-new-storefront-2026-09-23",
+      "ecb-reference-rates-2026-09-22"
+    ],
+    "note": "The exact Seraph page displays US$629 for the listed TT-X68-new UDH package; conversion at the ECB 22 September USD/CNY cross-rate gives a CNY 4,214 reference. This is not a selected mainland delivered quote or checkout total."
+  },
   "retry_after": null,
-  "notes": "No selected mainland delivered CNY price; differing foreign options are not equivalent quotes. Next: exact selected SKU/revision documentation or an attributable owner/build record; partial channel budgets remain open."
+  "notes": "No selected mainland delivered CNY price; differing foreign options are not equivalent quotes. The web channel reached its three-attempt limit without an exact offer. A public forum reports a pre-release US$629 package quote, but variant match, purchase status, availability, and mainland conditions remain unverified."
 }

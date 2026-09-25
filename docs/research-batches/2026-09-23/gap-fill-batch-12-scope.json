@@ -1,0 +1,108 @@
+{
+  "batch_id": "gap-fill-batch-12-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 11 passed the full gate. The fresh gap inventory has zero ready work and 814 evidence-found queue entries after explicit source-reuse resolutions were removed. The eight highest-ranked exact records not inspected in Batch 11 contain 25 fields.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 11. Skip Batch 11's eight unresolved models because no new lead is present; inspect the next eight distinct exact records, capped at 25 fields.",
+  "exact_model_count": 8,
+  "atomic_field_count": 25,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "basso-venta-disc",
+      "exact_identity": "BASSO Venta Disc older-generation frameset candidate",
+      "fields": ["frame-material", "frame-stiffness", "identity-source"],
+      "attempt_ids": [
+        "candidate-basso-venta-disc-frame-material-2026-08-29",
+        "candidate-basso-venta-disc-frame-stiffness-2026-08-29",
+        "candidate-basso-venta-disc-identity-source-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "variant-and-platform",
+      "record_id": "bianchi-oltre-race",
+      "exact_identity": "Bianchi Oltre Race published complete-bike variant and exact platform",
+      "fields": ["bottom-bracket", "frame", "frame-material", "geometry", "image", "tire-clearance"],
+      "attempt_ids": [
+        "variant-bianchi-oltre-race-bottom-bracket-2026-08-17",
+        "variant-bianchi-oltre-race-frame-2026-08-17",
+        "platform-bianchi-oltre-race-frame-material-2026-08-30",
+        "platform-bianchi-oltre-race-geometry-2026-08-30",
+        "variant-bianchi-oltre-race-image-2026-08-17",
+        "platform-bianchi-oltre-race-tire-clearance-2026-08-30"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bianchi-sprint-icr",
+      "exact_identity": "Bianchi Sprint ICR 105 Di2, size 57 / YTBR6 candidate",
+      "fields": ["tire-clearance"],
+      "attempt_ids": ["candidate-bianchi-sprint-icr-tire-clearance-2026-09-01"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bigrock-sohtea",
+      "exact_identity": "BIGROCK Sohtea frameset candidate",
+      "fields": ["frame-stiffness", "frame-weight", "price", "purchase-route"],
+      "attempt_ids": [
+        "candidate-bigrock-sohtea-frame-stiffness-2026-09-01",
+        "candidate-bigrock-sohtea-frame-weight-2026-09-01",
+        "candidate-bigrock-sohtea-price-2026-09-01",
+        "candidate-bigrock-sohtea-purchase-route-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "bxt-055",
+      "exact_identity": "BXT-055 carbon frame platform",
+      "fields": ["frame-stiffness", "geometry"],
+      "attempt_ids": [
+        "platform-bxt-055-frame-stiffness-2026-09-01",
+        "platform-bxt-055-geometry-2026-09-01"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bxt-gravel-complete",
+      "exact_identity": "BXT Gravel complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain"],
+      "attempt_ids": [
+        "candidate-bxt-gravel-complete-complete-weight-2026-08-28",
+        "candidate-bxt-gravel-complete-drivetrain-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-gen3-105",
+      "exact_identity": "CAMP ACE Gen 3 Shimano 105 complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-camp-ace-gen3-105-complete-weight-2026-08-29",
+        "candidate-camp-ace-gen3-105-drivetrain-2026-08-29",
+        "candidate-camp-ace-gen3-105-frame-material-2026-08-29",
+        "candidate-camp-ace-gen3-105-identity-source-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-qed",
+      "exact_identity": "CAMP ACE QED electronic complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material"],
+      "attempt_ids": [
+        "candidate-camp-ace-qed-complete-weight-2026-08-29",
+        "candidate-camp-ace-qed-drivetrain-2026-08-29",
+        "candidate-camp-ace-qed-frame-material-2026-08-29"
+      ]
+    }
+  ],
+  "integration_instructions": [
+    "Inspect each attempt and each accepted source for one exact model at a time before editing that model's records.",
+    "When the accepted source directly establishes the exact field and the same fact is already represented in the catalog, add a dated source-reuse resolution with the source IDs, precise claim, exact model/trim match, and caveats.",
+    "Do not mark an item resolved solely because an accepted source exists. If the claim is not integrated, the source is ambiguous, or the field remains unknown, preserve the unknown and give the exact reason and a reopening trigger.",
+    "Do not repeat searches; these fields already have accepted exact-model evidence. No price conversion, numeric inference, sibling transfer, image-rights inference, new source record, or image addition without evidence directly supporting it.",
+    "No external GitHub mutation, publication, or XHS access."
+  ],
+  "done_criteria": "Inspect all 25 frozen fields and source records. Reconcile only directly supported findings using source-reuse metadata, preserve unresolved caveats, write a result matrix, accept monotonic coverage after ledger changes, run npm run check once for the batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

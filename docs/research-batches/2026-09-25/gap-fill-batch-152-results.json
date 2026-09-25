@@ -1,0 +1,168 @@
+{
+  "batch": 152,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 669,
+    "catalog_gap_entries_after": 669,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 12,
+    "complete_weight_fields_filled": 0,
+    "drivetrain_fields_filled": 0,
+    "maximum_clearance_fields_filled": 0,
+    "frame_stiffness_fields_filled": 0,
+    "atomic_gap_entries_left_unresolved": 12,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 12,
+    "campaign_extensions_added": 12,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1728,
+    "research_attempts_after": 1740,
+    "research_fields_after": 1503,
+    "web_attempts_after": 35807,
+    "public_post_attempts_after": 15450,
+    "research_status_counts_after": {
+      "blocked": 322,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1421,
+    "candidate_facts_changed": 0,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 4,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 4,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 2,
+    "page_opens_returning_no_content_or_http_404": 2,
+    "page_open_failures": [
+      {
+        "url": "https://www.sohu.com/a/1056986540_122645100",
+        "outcome": "timeout",
+        "retry_count": 0
+      },
+      {
+        "url": "https://savadeck-bike.com/es/products/sava-dream-maker-di2-full-carbon-bike",
+        "outcome": "HTTP 404",
+        "retry_count": 0
+      }
+    ],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "Searches and page reviews yielded no qualifying exact-build weight, selected-build drivetrain, maximum tire clearance, or frame-stiffness evidence. Search-result and already-recorded pages were not reopened. Two newly opened pages returned content but did not establish the frozen field for the retained exact build."
+  },
+  "model_results": [
+    {
+      "model_id": "cinelli-pressure-adr",
+      "gaps": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "new_query": "Cinelli Pressure ADR CNY 12599 mainland complete build weight drivetrain",
+      "result": "The retained CNY 12,599 coupon card does not map to one of the official page’s 105 mechanical, 105 Di2, or Ultegra Di2 alternatives. No selected drivetrain or matching complete-bike weight is established; the known official page was not reopened.",
+      "disposition": "both-fields-unresolved-option-not-mapped"
+    },
+    {
+      "model_id": "pardus-spark-tourist",
+      "gaps": [
+        "complete-weight"
+      ],
+      "new_query": "PARDUS Spark Tourist PES white Magene 1x12 2026 complete bike measured weight",
+      "result": "The exact white 2026 Magene PES 1×12 size-M build is identified at CNY 5,499, but the manufacturer, community, official-store and 50-area records publish no complete weight or weighing basis; no exact weight surfaced in the query.",
+      "disposition": "complete-weight-unresolved"
+    },
+    {
+      "model_id": "pardus-spark-sport-pes",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "PARDUS Spark Sport PES 2026 manufacturer maximum tire width 700C",
+      "result": "Existing official evidence gives fitted 700×28C, not maximum clearance. A new exact-model Sohu review route was audited absent and opened once, but timed out without content; it was not retried.",
+      "disposition": "maximum-clearance-unresolved-timeout"
+    },
+    {
+      "model_id": "upland-taylor",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "UPLAND Taylor 阿普兰 官方 最大胎宽 刚性 test 2026",
+      "result": "The known exact Taylor page gives fitted 700×28C and about 8.5 kg bare, but no maximum or stiffness result. Search surfaced that already-recorded page plus a different UPLAND model; no new page was opened.",
+      "disposition": "clearance-and-stiffness-unresolved"
+    },
+    {
+      "model_id": "legit-ac1",
+      "gaps": [
+        "complete-weight"
+      ],
+      "new_query": "LEGIT 陆极客 AC1 银白涂鸦 R7120 UNAAS HARD SE 整车重量 2026",
+      "result": "The exact selected R7120/UNAAS HARD SE build is identified, but the manufacturer’s known page publishes frameset weight only and the current JD result was a generic category page; no selected complete-bike weight was found.",
+      "disposition": "complete-weight-unresolved"
+    },
+    {
+      "model_id": "pardus-robin-sport-pes",
+      "gaps": [
+        "complete-weight"
+      ],
+      "new_query": "PARDUS Robin Sport PES Magene electronic 2x12 complete build measured weight 2026",
+      "result": "The exact PES manufacturer route contains no complete weight. A Shimano 105 Robin Sport review is a different selected build and cannot supply its weight; neither known page was reopened.",
+      "disposition": "complete-weight-unresolved-build-mismatch"
+    },
+    {
+      "model_id": "java-vittoria-7170",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "JAVA Vittoria Air R7170 exact maximum tire clearance 2026",
+      "result": "A new Xedap.vn 2026 Vittoria 7170 page was audited absent and opened once. It does not state maximum width and its wheel specification differs from the retained closed-wheel reference build.",
+      "disposition": "maximum-clearance-unresolved-build-mismatch"
+    },
+    {
+      "model_id": "sava-dream-maker",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "SAVA Dream Maker R17 R7170 maximum tire width clearance 2026",
+      "result": "Existing exact manufacturer evidence states fitted 700×25C, while the saved compatibility guide omits R17. A new Spanish manufacturer page URL was audited absent and opened once, but returned HTTP 404; no retry was made.",
+      "disposition": "maximum-clearance-unresolved-page-404"
+    },
+    {
+      "model_id": "sunpeed-victory-e-2026",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "SUNPEED Victory Expert 105 Di2 2026 maximum tire width clearance",
+      "result": "Recorded Brazil data gives fitted 700×30C and a size-L test gives no maximum. The new search surfaced a generic Victory 105 Di2 retailer result that did not establish the exact 2026 Expert build or maximum; no page was opened.",
+      "disposition": "maximum-clearance-unresolved-exact-build"
+    },
+    {
+      "model_id": "sunpeed-wudi-e-2026",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "new_query": "SUNPEED 2026 Invincible Sport R7120 maximum tire clearance frame fork",
+      "result": "A new Sunpeed Perú page was audited absent and opened once. It identifies an Invincible Sport with alloy wheels and fitted 700×28C but no maximum or explicit 2026 identity; its components do not match the retained 2026 R7120 option closely enough to transfer facts.",
+      "disposition": "maximum-clearance-unresolved-build-mismatch"
+    }
+  ],
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35807 web attempts",
+    "coverage_baseline": "accepted monotonic coverage for 212 images / 277 catalog targets after the 12 new protected attempt records",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 331/331 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed on the accumulated worktree after final B153 records and checkpoint"
+  }
+}

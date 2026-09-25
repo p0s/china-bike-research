@@ -1,0 +1,16 @@
+{
+  "id": "retire-seka-exaero-road-ambiguous-price-price-basis-2026-09-24",
+  "record_type": "candidates",
+  "record_id": "seka-exaero-road",
+  "action": "retire",
+  "reason": "Withdraw observed_price.price_basis: the ¥11,900 launch headline is not assignable to an exact frameset because the post describes complete-system pricing by cockpit.",
+  "evidence_source_ids": [
+    "seka-exaero-road-launch-weibo-report-2026-09-24",
+    "seka-exaero-road-cn-official-recheck-2026-09-24"
+  ],
+  "protected_item": {
+    "kind": "field",
+    "value": "observed_price.price_basis"
+  },
+  "reviewed_at": "2026-09-24"
+}

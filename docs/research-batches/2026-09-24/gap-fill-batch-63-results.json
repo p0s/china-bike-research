@@ -1,0 +1,71 @@
+{
+  "batch": 63,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-63-scope.json",
+  "target": {
+    "record_type": "candidate",
+    "id": "huanyu-az-one",
+    "model": "HUANYU AZ ONE / 青龙·赤子",
+    "gap_code": "frame-material-detail-missing"
+  },
+  "research": {
+    "worker": "one Luna Max evidence-only follow-up agent; no repository writes",
+    "query": "\"HUANYU AZ ONE\" \"青龙·赤子\" 车架 碳纤维 材料",
+    "accessed_at": "2026-09-24",
+    "route": "One exact-name public web search; opened only the exact-candidate page returned by search, which was the project's own derivative research profile.",
+    "url": "https://china-bikes.p0s.eu/models/huanyu-az-one/",
+    "finding": "The page identifies the exact AZ ONE / 青龙·赤子 candidate but states that no exact current manufacturer, dealer, independent-test or carbon-construction source was found. It provides no material value and is based on an anonymized Taobao search-card lead.",
+    "material_detail_admissible": false,
+    "disposition": "No exact material claim accepted. Candidate frame material stays unknown; no nearby HUANYU model or generic carbon claim was transferred."
+  },
+  "changed_files": [
+    "data/research-attempts/candidate-huanyu-az-one-frame-material-recheck-2026-09-24.json",
+    "tests/data.test.mjs",
+    "data/coverage-baseline.json"
+  ],
+  "candidate_effect": {
+    "frame_material": null,
+    "research_status": "blocked",
+    "gap_resolved": false,
+    "candidate_status": "unpublished"
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "validation": {
+    "focused": "npm run --silent research:check passed: 1500 atomic research fields, 15449 public-post attempts, and 35569 web attempts.",
+    "coverage_accept": "Accepted monotonic coverage protection for 212 images and 277 catalog targets after adding the formal campaign-extension attempt.",
+    "full_gate": "codex-pnpm-check check passed: privacy; 41 brands, 38 platforms, 41 variants, 73 prices, 1301 sources, 212 images, 16 videos, 11 groupsets, 10 build parts, 236 candidates, 1518 research records; research and coverage checks; 323/323 tests; 584-page build for 41 products; SEO 458 indexable and 126 noindex.",
+    "image_report": "not run; no image records changed"
+  },
+  "integration_note": "The exact-name page returned by search was the project's own existing candidate research profile, not an independent product or material source. The route did not authorize another query or a follow-up item. It is recorded only as a rejected research attempt.",
+  "delivery": "Local B63 batch only; no push, pull request, merge, publication, or production action."
+}

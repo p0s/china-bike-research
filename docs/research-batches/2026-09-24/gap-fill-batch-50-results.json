@@ -1,0 +1,134 @@
+{
+  "batch": 50,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-50-scope.json",
+  "writer_limit": { "exact_models": 1, "variants": 2, "atomic_gap_instances": 20 },
+  "researcher": "one Luna Max evidence-only agent; root retained sole repository write authority",
+  "dispositions": [
+    {
+      "gap_code": "frame-material-detail-missing",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-existing-coarse-carbon-only",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24", "taobao-snapshot-2026-08-08"],
+      "result": "No exact SPEEDZ source establishes fiber grade or frame construction. Retain only the existing coarse carbon material label; no LCR017-D or other sibling-model construction claims were transferred."
+    },
+    {
+      "gap_code": "frame-weight-missing",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The official catalog V2 fetch timed out, and no current exact SPEEDZ product page or weight was found. Keep frame weight unknown."
+    },
+    {
+      "gap_code": "bottom-bracket-missing",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The current exact-model catalog route remains inaccessible; no SPEEDZ shell label or dimensions were recovered. Existing same-day variant rechecks already record this boundary; no duplicate or same-date retry was created."
+    },
+    {
+      "gap_code": "geometry-missing",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "No exact SPEEDZ geometry chart was found. The indexed LCROX-D and LCR015-D charts do not identify this model, so geometry remains unknown."
+    },
+    {
+      "gap_code": "clearance-unverified",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "No exact-model maximum tire clearance was found. Do not infer a maximum from a fitted tire or an adjacent LightCarbon frame."
+    },
+    {
+      "gap_code": "stiffness-evidence-missing",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "No new exact-model controlled stiffness result or sufficiently specific independent assessment surfaced. Preserve the existing dated 50-area outcome."
+    },
+    {
+      "gap_code": "complete-weight-missing",
+      "gap_instances": 1,
+      "variants": ["lightcarbon-speedz-complete"],
+      "status": "unresolved-blocked",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "result": "The anonymized snapshot exposes no public item URL, selected size, or weight basis. The current exact Taobao item search found no verifiable matching listing; no complete-bike weight was assigned."
+    },
+    {
+      "gap_code": "bom-incomplete",
+      "gap_instances": 3,
+      "fields": ["wheels", "tires", "cockpit"],
+      "variants": ["lightcarbon-speedz-complete"],
+      "status": "unresolved-blocked",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "result": "No current exact listing with readable selected component options was found. Existing wheel, tire and cockpit observations do not identify a complete current SPEEDZ selection; keep each BOM field unknown."
+    },
+    {
+      "gap_code": "image-exactness",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-rights-and-identity-boundary",
+      "source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24", "project-image-placeholders"],
+      "result": "No exact product-image candidate with verifiable SPEEDZ identity and reusable rights was found. Images labeled Speed7/速7/LCR017-D were not mapped to SPEEDZ. Retain the project-owned placeholder with its current exactness disclosure, credit, alt text and fallback."
+    },
+    {
+      "gap_code": "purchase-route",
+      "gap_instances": 2,
+      "variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"],
+      "status": "unresolved-blocked",
+      "source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "result": "The snapshot has no public listing URL or seller identity, the current exact Taobao item search found no verifiable match, and the current official-site search returned no exact SPEEDZ product page. No purchasable exact variant route was established."
+    }
+  ],
+  "findings": {
+    "official": "The 2025–26 LightCarbon catalog V2 route timed out in the existing 2026-09-24 recheck; the Luna agent's current exact-site search found no SPEEDZ product page.",
+    "marketplace": "The current exact Taobao item search returned no verifiable match. This is an indexed-route boundary, not proof that no listing exists.",
+    "identity": "The anonymized 2026-08-08 snapshot is the only checked evidence using the literal label SPEEDZ. No source maps that label to 速7, Speed7, or LCR017-D.",
+    "images": "The existing project-owned placeholder remains visible as a placeholder; no third-party media was copied, downloaded, or rehosted.",
+    "new_source_records": 0,
+    "new_research_attempt_records": 0,
+    "catalog_values_changed": 0,
+    "image_records_changed": 0,
+    "why_no_duplicate_attempts": "Current same-day catalog/bottom-bracket rechecks already record the official access boundary. Other relevant fields have immutable 50-area attempts; a retry requires a formally extended campaign, which was out of this focused scope. B50 found no exact new source to support such an extension or a value update. The exact-site and exact-Taobao no-match observations are preserved here with the scope and results rather than rewriting those records."
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 },
+    "atomic_research_fields": 1495,
+    "research_attempt_records": 1505
+  },
+  "validation": {
+    "scope_json": "passed",
+    "result_json": "passed",
+    "image_report": "not run: image records unchanged",
+    "npm_run_check": "passed via the approved pnpm check wrapper: privacy, validation, research ledger, coverage, 318 tests, build of 584 pages, and SEO 458 indexable/126 noindex"
+  },
+  "delivery": "Local B50 batch only; no push, pull request, merge, publication, or production action."
+}

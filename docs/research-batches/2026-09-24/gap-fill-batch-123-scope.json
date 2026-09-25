@@ -1,0 +1,57 @@
+{
+  "batch": 123,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_entries": 707,
+    "gap_count_method": "Count all entries in .records[].gaps[] from a fresh npm run --silent data:gaps report.",
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 65,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selected_queue_priority_each": 100,
+    "selection_note": "Ten queue-ordered evidence-found fields after excluding exact models with recent unresolved audits in B108-B122 and immediately adjacent recent batches."
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:vook-v8e-pro",
+      "candidate:xds-ad350-2026",
+      "candidate:xds-ad500-2025"
+    ],
+    "selected_fields": [
+      "candidate:vook-v8e-pro:complete-weight",
+      "candidate:vook-v8e-pro:drivetrain",
+      "candidate:vook-v8e-pro:frame-material",
+      "candidate:vook-v8e-pro:identity-source",
+      "candidate:vook-v8e-pro:tire-clearance",
+      "candidate:xds-ad350-2026:complete-weight",
+      "candidate:xds-ad350-2026:drivetrain",
+      "candidate:xds-ad350-2026:frame-material",
+      "candidate:xds-ad500-2025:drivetrain",
+      "candidate:xds-ad500-2025:frame-material"
+    ],
+    "attempt_ids": [
+      "candidate-vook-v8e-pro-complete-weight-2026-08-30",
+      "candidate-vook-v8e-pro-drivetrain-2026-08-30",
+      "candidate-vook-v8e-pro-frame-material-2026-08-30",
+      "candidate-vook-v8e-pro-identity-source-2026-08-30",
+      "candidate-vook-v8e-pro-tire-clearance-2026-08-30",
+      "candidate-xds-ad350-2026-complete-weight-2026-08-30",
+      "candidate-xds-ad350-2026-drivetrain-2026-08-30",
+      "candidate-xds-ad350-2026-frame-material-2026-08-30",
+      "candidate-xds-ad500-2025-drivetrain-2026-08-30",
+      "candidate-xds-ad500-2025-frame-material-2026-08-30"
+    ],
+    "research_boundary": "Evidence-only Luna Max review; inspect only frozen records, attempts and accepted sources first. Work one exact candidate and one source at a time. Check one current primary exact-model source only when needed. Return direct URLs, source IDs or proposed IDs, access date, source class, supported claims and caveats. Primary writer integrates supported results and corrects unsupported statements only within these frozen fields.",
+    "excluded": [
+      "No fields outside the ten frozen targets.",
+      "Do not reopen B119-B122 unresolved fields or adjacent recently audited models without new direct evidence.",
+      "Do not transfer XDS values across model year, trim, market or selected build; do not transfer Vook option values to sibling builds.",
+      "No new image records, third-party image hosting, or rights assumptions.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

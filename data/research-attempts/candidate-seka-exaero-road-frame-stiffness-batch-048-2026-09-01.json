@@ -482,5 +482,13 @@
     "seka-exaero-road-stiffness-current-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-exaero-road-batch-048-50-area-sweep-2026-09-01.json. Manufacturer comparative front, rear and torsional stiffness figures versus Spear found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-exaero-road-batch-048-50-area-sweep-2026-09-01.json. Manufacturer comparative front, rear and torsional stiffness figures versus Spear found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "seka-exaero-road-stiffness-current-2026-09-01"
+    ],
+    "note": "The current source's comparative stiffness figures and caveats are already recorded: +21.2% front lateral, +7.6% rear lateral, and +13.4% torsional (367 to 416) versus Spear. These are manufacturer claims reproduced by a retailer; units/protocol are undisclosed."
+  }
 }

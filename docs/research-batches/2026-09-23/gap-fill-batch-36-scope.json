@@ -1,0 +1,252 @@
+{
+  "batch_id": "gap-fill-batch-36-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "queue_counts_before": {
+    "ready": 0,
+    "evidence-found": 320,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  },
+  "selection_exclusions": {
+    "source_reuse_resolved": 20,
+    "known_java_aluminum_24s_duplicate": 2,
+    "at_least_50_distinct_approach_areas": 249,
+    "excluded_union": 271,
+    "eligible_rows": 49
+  },
+  "selection_basis": "First queue-ordered evidence-found rows after excluding source-reuse-resolved rows, the known java-aluminum-24s duplicate, and records with at least 50 distinct recorded approach areas. Freeze the first 10 exact targets up to 25 fields; this selection yields 20 fields across 10 targets.",
+  "exact_model_count": 10,
+  "atomic_field_count": 20,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 20,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "exact_identity": "Quick Pro XR:ONE GRX Di2 1×12",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "quick-pro-xr-one-grx-di2-official-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-crux",
+      "exact_identity": "Specialized Crux Comp GRX",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28",
+        "candidate-missing-china-price-specialized-crux-frame-stiffness-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0,
+        "frame-stiffness": 0
+      },
+      "existing_source_ids": [
+        "specialized-crux-comp-grx-official-2026-08-17",
+        "specialized-crux-comp-grx-ciclonline-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-checkpoint",
+      "exact_identity": "Trek Checkpoint SL 5 AXS Gen 3",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "weight-basis"
+      ],
+      "attempt_ids": [
+        "candidate-mondince-fm316-weight-basis-2026-09-22"
+      ],
+      "approach_area_counts": {
+        "weight-basis": 0
+      },
+      "existing_source_ids": [
+        "mondince-fm316-current-specification-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo",
+      "exact_identity": "PARDUS 瑞豹 Uragano EVO",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "price",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-evo-drivetrain-2026-08-27",
+        "candidate-pardus-uragano-evo-frame-material-2026-08-27",
+        "candidate-pardus-uragano-evo-price-2026-08-27",
+        "candidate-pardus-uragano-evo-tire-clearance-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "drivetrain": 0,
+        "frame-material": 0,
+        "price": 0,
+        "tire-clearance": 0
+      },
+      "existing_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27",
+        "taobao-snapshot-2026-08-08",
+        "pardus-uragano-evo-apex-tmall-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-evo-community-lead-frame-material-2026-08-28",
+        "candidate-pardus-uragano-evo-community-lead-frame-stiffness-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0,
+        "frame-stiffness": 0
+      },
+      "existing_source_ids": [
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-sport",
+      "exact_identity": "PARDUS 瑞豹 Uragano Sport",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-sport-frame-material-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "pardus-uragano-sport-cn-official-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "exact_identity": "Quick Pro GR:ONE GRX Di2 1×12",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "quick-pro-gr-one-taobao-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-xr-one-frameset-aelous-gravel",
+      "exact_identity": "Quick Pro XR:ONE frameset with Aelous Gravel cockpit",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "quick-pro-xr-one-frame-official-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "rinasclta-q-aero-gr",
+      "exact_identity": "Rinasclta Q-AERO GR",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "exact-model-identity",
+        "frame-material",
+        "frame-weight",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
+        "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28",
+        "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
+        "candidate-rinasclta-q-aero-gr-purchase-route-2026-08-27",
+        "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27",
+        "candidate-rinasclta-q-aero-gr-warranty-support-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "exact-model-identity": 0,
+        "frame-material": 0,
+        "frame-weight": 0,
+        "purchase-route": 0,
+        "tire-clearance": 0,
+        "warranty-support": 0
+      },
+      "existing_source_ids": [
+        "rinasclta-q-aero-gr-official-2026-08-27",
+        "rinasclta-warranty-2026-08-27"
+      ]
+    }
+  ],
+  "acceptance_rules": [
+    "Research only the frozen fields sequentially, one exact target and source at a time; stop at decisive evidence.",
+    "Distinguish exact model/generation, complete bike versus frameset, market, selected option, price/checkout conditions, size and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior observations without refreshing access dates unless actually rechecked.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with a concrete reason and reopen trigger; never infer.",
+    "Keep third-party images remote unless reusable rights are documented; preserve exactness, credit, alt text and fallback metadata.",
+    "Evidence agent is read-only: no repository edits, no XHS, no seller contact, no recursive delegation and no out-of-scope research. Root is sole writer.",
+    "Return one disposition for every frozen attempt id with exact source URL/id, source class/publisher, actual access date, supported claim, caveat and reopen trigger."
+  ]
+}

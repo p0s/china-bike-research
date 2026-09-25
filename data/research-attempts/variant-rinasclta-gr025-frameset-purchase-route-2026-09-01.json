@@ -478,8 +478,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "rinasclta-gr025-store-eur-2026-09-01"
+    "rinasclta-gr025-store-eur-2026-09-01",
+    "rinasclta-gr025-product-recheck-2026-09-24",
+    "rinasclta-gr025-route-timeout-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-rinasclta-gr025-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact storefront exposes selectable size and finish plus add-to-cart."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-rinasclta-gr025-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact storefront exposes selectable size and finish plus add-to-cart.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "rinasclta-gr025-store-eur-2026-09-01",
+      "rinasclta-gr025-product-recheck-2026-09-24",
+      "rinasclta-gr025-route-timeout-recheck-2026-09-25"
+    ],
+    "note": "The 2026-09-25 direct open timed out. Keep the older €561/add-to-cart claim dated to its readable access; the 2026-09-24 recheck showed selectors but no price. Current route, stock and checkout remain unconfirmed, so leave the current purchase-route gap open."
+  }
 }

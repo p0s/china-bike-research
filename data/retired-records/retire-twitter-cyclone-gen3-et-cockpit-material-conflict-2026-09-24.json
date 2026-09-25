@@ -1,0 +1,15 @@
+{
+  "id": "retire-twitter-cyclone-gen3-et-cockpit-material-conflict-2026-09-24",
+  "record_type": "variants",
+  "record_id": "twitter-cyclone-gen3-et",
+  "action": "retire",
+  "reason": "The current exact ET page gives conflicting cockpit configurations: one lists a high-modulus carbon cockpit and another says every build has an alloy cockpit. No exact selector or build mapping resolves which material applies, so the material claim is removed while the page's consistent integrated and fully internal routing claims remain.",
+  "evidence_source_ids": [
+    "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+  ],
+  "protected_item": {
+    "kind": "field",
+    "value": "cockpit.material"
+  },
+  "reviewed_at": "2026-09-24"
+}

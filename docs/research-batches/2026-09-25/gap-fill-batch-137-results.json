@@ -1,0 +1,107 @@
+{
+  "batch": 137,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-137-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "atomic_fields_reviewed": 11,
+    "disposition": "One exact SAVA Gelaro S4 GRX400 global manufacturer purchase route was rechecked and recorded. The page does not establish mainland delivery or checkout. The other ten requested values remained unknown or unqualified after one bounded search each.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_added": 11,
+    "new_sources_added": 1,
+    "catalog_records_updated": 1,
+    "specification_values_changed": 0,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "website_image_records": 212,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "variant:elves-falath-r7170:complete-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "A search-only owner build around 7.5 kg uses different parts and wheels; previously recorded regional listings are also not the retained exact build. No page was opened and no exact complete-bike mass was established."
+    },
+    {
+      "field": "platform:twitter-t3-tt:tire-clearance",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "A DCFever search result for the exact T3 WheelTop TX-TT7110 build shows fitted 700×28C tires but no maximum. Fitted size does not establish maximum clearance; the classified page was not opened."
+    },
+    {
+      "field": "platform:sava-a7l-r7100:frame-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The SAVA A7L PRO search result reports about 8.9 kg for a complete R08/R7100-family bike, not frame-only mass. The page was not opened and no frame weight was inferred."
+    },
+    {
+      "field": "platform:twitter-gravel-v3:frame-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The opened Twitter Bikes Factory Store page claims about 1,150 g unpainted at size M for the Gravel V3 25yr RS-24S/SENSAH build. It does not establish that frame as identical to the WheelTop EDS 2×12 target, so the mass was not transferred."
+    },
+    {
+      "field": "platform:rinasclta-gr025:geometry",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The already-recorded GR025 manufacturer page resurfaced without a readable numeric geometry chart and was not reopened. The surfaced 2022 Granite chart is a different model."
+    },
+    {
+      "field": "variant:carbonda-cfr696-frameset:mainland-observed-price",
+      "disposition": "no-result",
+      "source_ids": [],
+      "caveat": "The manufacturer route remains quote-only; new forum snippets were historical foreign-currency offers or for a non-UDH version. No current mainland price or checkout observation was found."
+    },
+    {
+      "field": "variant:ican-gra04-frameset:mainland-observed-price",
+      "disposition": "no-result",
+      "source_ids": [],
+      "caveat": "A search-only Alibaba GRA04 wholesale listing showed US$675, minimum order two, and export delivery. It is not a mainland retail or checkout price and was not recorded as a price observation."
+    },
+    {
+      "field": "platform:sava-gelaro-s8:frame-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "Search surfaced complete-bike weights and mismatched Gelaro models only; no exact S8 frame-only mass with size or finish basis was found."
+    },
+    {
+      "field": "variant:sava-gelaro-s8:bottom-bracket",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The exact manufacturer page had already been recorded and was not reopened. Search did not surface the S8 shell standard or dimensions; general standards and another model manual are not transferable."
+    },
+    {
+      "field": "platform:bianchi-oltre-race:frame-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The previously recorded exact Bianchi page was not reopened and search exposed no frame-only mass. Oltre RC and full-bike weights do not establish the Oltre Race frame value."
+    },
+    {
+      "field": "variant:sava-gelaro-s4-grx400:purchase-route",
+      "disposition": "found: global manufacturer route",
+      "source_ids": ["sava-gelaro-s4-global-storefront-purchase-route-recheck-2026-09-25"],
+      "caveat": "The exact R21-GRX400-20S global SAVA page displayed Add to Cart and '10 em estoque' (10 in stock) at access on 2026-09-25. This does not verify current mainland inventory, delivery, local warranty, landed cost, or CNY checkout; the page's stock snapshot may be stale. No cart or checkout action was taken."
+    }
+  ],
+  "validation": {
+    "coverage_acceptance": "passed; monotonic baseline accepted for 212 images and 277 catalog targets",
+    "focused_test": "passed: node --test tests/data.test.mjs (73/73)",
+    "full_gate": "passed via codex-pnpm-check check: privacy, validation, research ledger, coverage, 328/328 tests, 584-page build, SEO 458 indexable / 126 noindex",
+    "image_report": "not run: no image record changed",
+    "git_diff_check": "passed after final records and result file; JSON files parsed successfully"
+  },
+  "external_delivery": "none"
+}

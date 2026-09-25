@@ -485,5 +485,13 @@
     "twitter-t8-closed-wheel-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-batch-023-50-area-sweep-2026-08-30.json. Current exact manufacturer page explicitly identifies T8 closed-wheel and both build/weight pairs."
+  "notes": "Historical exact-model manufacturer evidence identifies the T8 closed-wheel family and lists two option-specific build/weight pairs. The 2026-09-24 live page recheck timed out, so current page availability is unconfirmed; do not assign either weight to the retained unselected build.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-t8-closed-wheel-official-2026-08-30"
+    ],
+    "note": "Historical exact-model manufacturer evidence identifies the T8 closed-wheel family and lists two option-specific build/weight pairs. The 2026-09-24 live page recheck timed out, so current page availability is unconfirmed; do not assign either weight to the retained unselected build."
+  }
 }

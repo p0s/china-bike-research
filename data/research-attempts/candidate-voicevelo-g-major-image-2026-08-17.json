@@ -69,8 +69,17 @@
   "status": "found",
   "accepted_source_ids": [
     "round3-the-best-gravel-frameset-in-2024-voicevelo-g-major-ebc041877b",
-    "voicevelo-g-major-panda-podium-2026-08-17"
+    "voicevelo-g-major-panda-podium-2026-08-17",
+    "voicevelo-g-major-pandapodium-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+    ],
+    "note": "Retailer gallery depicts the listed G Major, but no reusable image rights were established. Leave image absent and do not rehost. Reopen with explicit reuse rights or a manufacturer press asset with documented terms."
+  }
 }

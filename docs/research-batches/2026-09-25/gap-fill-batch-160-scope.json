@@ -1,0 +1,60 @@
+{
+  "batch": 160,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 74,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "scope": {
+    "exact_record_count": 1,
+    "atomic_gap_entries": 1,
+    "query_targets": [],
+    "source_reuse_targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "airwolf-yf-r003",
+        "name": "Airwolf YF-R003",
+        "field": "price",
+        "catalog_gap_code": "price-not-observed",
+        "attempt_id": "candidate-airwolf-yf-r003-price-b148-2026-09-25",
+        "accepted_source_ids": [
+          "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+          "ecb-reference-rates-2026-09-23"
+        ],
+        "integrated_fact": "The item-specific eBay page displays US$1,437.79 and is already recorded as a CNY 9,644 ECB reference conversion. Size/color, shipping destination, delivery eligibility, taxes and checkout total are unverified; this is not a mainland CNY offer, so the catalog price-not-observed gap remains."
+      }
+    ],
+    "held_open_without_new_search": [
+      {
+        "models": [
+          "huanyu-az-one",
+          "rockbros-pegasus-road",
+          "falco-t91-t912",
+          "gios-aerolite",
+          "leinax-youlong-2",
+          "pardus-spark"
+        ],
+        "fields": 20,
+        "reason": "Their latest B150/B151 scoped web attempts were made on 2026-09-25 and remain open. No subsequent source lead or product-state change is recorded to justify another extension; do not repeat model-level queries or reopen recorded URLs."
+      }
+    ],
+    "research_boundary": "Add a source-reuse resolution to the latest already accepted Airwolf price attempt after confirming the foreign seller reference and its caveats are present in the exact candidate record. Do not create a duplicate attempt or represent the reference as a mainland price. No new web or public-post search, page open, price update, source record, image, or unrelated catalog change is authorized by this frozen scope.",
+    "excluded": [
+      "No agent edits; root is the sole writer.",
+      "No seller outreach, external messages, quote submission, cart, checkout or purchase.",
+      "No images, price records, new sources, unrelated specifications or candidate facts.",
+      "No GitHub mutation, commit, push, PR, merge, publish or production write."
+    ]
+  }
+}

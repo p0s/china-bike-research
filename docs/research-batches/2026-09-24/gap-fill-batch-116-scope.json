@@ -1,0 +1,45 @@
+{
+  "batch": 116,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 108,
+    "selected_queue_targets": [
+      "candidate:tsb-titan-super-bond-pioneer-one:frame-weight",
+      "candidate:tsb-titan-super-bond-pioneer-one:tire-clearance",
+      "candidate:twitter-carbon-road-gravel-unknown:drivetrain",
+      "candidate:twitter-carbon-road-gravel-unknown:frame-material",
+      "candidate:twitter-carbon-road-gravel-unknown:identity-source",
+      "variant:twitter-cyclone-electronic:bom",
+      "platform:twitter-cyclone-electronic:bottom-bracket",
+      "platform:twitter-cyclone-electronic:frame-material"
+    ],
+    "selected_queue_priority_each": 100
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:tsb-titan-super-bond-pioneer-one",
+      "candidate:twitter-carbon-road-gravel-unknown",
+      "variant:twitter-cyclone-electronic",
+      "platform:twitter-cyclone-electronic"
+    ],
+    "atomic_gaps": [
+      "candidate:tsb-titan-super-bond-pioneer-one:frame-weight",
+      "candidate:tsb-titan-super-bond-pioneer-one:tire-clearance",
+      "candidate:twitter-carbon-road-gravel-unknown:drivetrain",
+      "candidate:twitter-carbon-road-gravel-unknown:frame-material",
+      "candidate:twitter-carbon-road-gravel-unknown:identity-source",
+      "variant:twitter-cyclone-electronic:bom",
+      "platform:twitter-cyclone-electronic:bottom-bracket",
+      "platform:twitter-cyclone-electronic:frame-material"
+    ],
+    "research_boundary": "Audit only each exact target, its current queue attempt, and source records already accepted for that attempt. Review one exact source at a time. Add source-reuse resolutions only where the existing source directly supports the populated exact-model field with caveats. Do not infer build facts for the unresolved TWITTER road/gravel lead; keep unsupported, model-ambiguous, or incomplete claims open. No external requests.",
+    "excluded": [
+      "No other models or atomic gaps.",
+      "No new web/public-post/seller requests or source files.",
+      "No image or price changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

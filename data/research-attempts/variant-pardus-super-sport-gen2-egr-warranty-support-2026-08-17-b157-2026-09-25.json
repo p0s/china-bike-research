@@ -1,0 +1,42 @@
+{
+  "id": "variant-pardus-super-sport-gen2-egr-warranty-support-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "pardus-super-sport-gen2-egr"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-pardus-super-sport-gen2-egr-warranty-support-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-pardus-super-sport-gen2-egr-warranty-support-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Super Sport Gen2 EGR exact geometry bottom bracket shell warranty official 2026",
+          "route": "One frozen B157 exact-model web query; see result URL and field-specific evidence disposition.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The newly opened Pardus Europe warranty page limits its lifetime frame-kit coverage to European countries and dealer registration. It does not establish China warranty coverage or support for the exact eGR build.",
+          "result_url": "https://pardusbicycle.com/warranty/"
+        }
+      ],
+      "blocker": "The newly opened Pardus Europe warranty page limits its lifetime frame-kit coverage to European countries and dealer registration. It does not establish China warranty coverage or support for the exact eGR build."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The newly opened Pardus Europe warranty page limits its lifetime frame-kit coverage to European countries and dealer registration. It does not establish China warranty coverage or support for the exact eGR build."
+}

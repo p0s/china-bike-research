@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "merida-china-scultura-6000-25-official-2026-08-17"
+    "merida-china-scultura-6000-25-official-2026-08-17",
+    "merida-scultura-6000-25-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-merida-scultura-batch-036-50-area-sweep-2026-09-01.json. The exact model page attributes stronger stiffness to its AWS process and says NACA tube shapes balance aerodynamics and stiffness; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-merida-scultura-batch-036-50-area-sweep-2026-09-01.json. The exact model page attributes stronger stiffness to its AWS process and says NACA tube shapes balance aerodynamics and stiffness; qualitative manufacturer evidence only.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "merida-scultura-6000-25-current-recheck-2026-09-23"
+    ],
+    "note": "Exact China page attributes stiffness to AWS processing and NACA-section design; no model-specific protocol or numeric result is published."
+  }
 }

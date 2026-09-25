@@ -1,0 +1,52 @@
+{
+  "id": "candidate-twitter-x7-complete-weight-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-x7"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-twitter-x7-complete-weight-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No new exact source tied a complete-bike weight to the retained high-configuration listing; the stored manufacturer 'from 7.6 kg' option remains a different selector build.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 X7 high configuration complete weight 轮组 2x12 105",
+          "route": "One distinct B144 exact-model web search; no new exact build source opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 150 distinct queries. Search surfaced no new exact X7 primary page. Existing TWITTER Bike USA evidence is a generic from-7.6-kg claim for an ES7000 1x14 XS/46 selector configuration; size, wheelset, method, and retained high-configuration mapping remain unverified."
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 150 distinct queries. Search surfaced no new exact X7 primary page. Existing TWITTER Bike USA evidence is a generic from-7.6-kg claim for an ES7000 1x14 XS/46 selector configuration; size, wheelset, method, and retained high-configuration mapping remain unverified.",
+  "campaign_extension": {
+    "id": "b144-twitter-x7-complete-weight",
+    "extends_attempt_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

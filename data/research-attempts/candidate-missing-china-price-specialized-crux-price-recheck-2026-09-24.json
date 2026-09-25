@@ -1,0 +1,51 @@
+{
+  "id": "candidate-missing-china-price-specialized-crux-price-recheck-2026-09-24",
+  "field": "price",
+  "retry_of": "candidate-missing-china-price-specialized-crux-price-2026-08-17",
+  "retry_reason": "The mainland manufacturer route was rechecked on 2026-09-23 but exposed no price; one public seller-item search tests a separate current JD/Tmall route.",
+  "searched_at": "2026-09-24",
+  "priority": "high",
+  "status": "blocked",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "campaign_extension": {
+    "id": "gap-fill-batch-74-specialized-crux-price",
+    "extends_attempt_id": "candidate-missing-china-price-specialized-crux-price-2026-08-17",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-74-scope.json",
+    "reason": "The 2026-09-23 mainland manufacturer recheck exposed no price; a separate exact JD/Tmall seller-item search can test for a current CNY listing.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-specialized-crux-price-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The focused JD/Tmall search found no exact current seller item that identifies 2026 Crux Comp GRX product 223483 and exposes a CNY amount.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "2026 Specialized Crux Comp Shimano GRX 223483 中国 京东 天猫 价格",
+          "route": "One focused public JD/Tmall seller-item search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://mall.jd.com/view_search-2933871-32280913-99-1-24-1.html",
+          "note": "The result was a Specialized official JD storefront category page, not an exact item. A separate JD price-results snippet showed a CRUX COMP complete bike but did not establish product 223483, the GRX trim, or model year. The official Specialized China page appeared but showed no price in the search result. No item page was opened; no CNY amount or current item availability was verified."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux"
+  },
+  "notes": "Disposition: unresolved. Keep price evidence absent and preserve the exact 2026 U.S. product reference and live but price-empty mainland manufacturer route separately. Reopen only when a public exact mainland seller item exposes a current CNY amount and package context."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "merida-china-official-mall-current-list-recheck-2026-09-24",
+  "type": "manufacturer-storefront-list-recheck",
+  "title": "Merida China official mall public product-list route recheck",
+  "publisher": "Merida China Official Mall",
+  "language": "zh-Hans",
+  "accessed_at": "2026-09-24",
+  "url": "https://mall.merida.cn/index.php?action=pro_list&cat=0&controller=site",
+  "reliability": {
+    "identity": "high",
+    "price": "low",
+    "route": "medium"
+  },
+  "notes": "The public product-list response renders template placeholders such as {{item.name}} and ¥{{item.sku_price}} without product identities, SKU prices, stock, or checkout state. It does not support an exact observed price for either scoped Merida model."
+}

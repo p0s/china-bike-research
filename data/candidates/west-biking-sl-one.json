@@ -7,8 +7,9 @@
   "why_interesting": "Current exact-model mainland indexes establish both mechanical and electronic Shimano 105 hydraulic-disc SL-ONE builds, but the retained ¥16,910 card does not expose its selected option.",
   "facts": {
     "listing_identity": "WEST BIKING / 西骑者 SL-ONE carbon aero road-bike family",
-    "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 or Shimano 105 R7170 Di2 electronic 2x12; both hydraulic-disc 24-speed builds",
-    "frame_material": "Exact current listing claim: full-carbon / carbon-fiber road frame; grade, lay-up and fork construction are unpublished"
+    "drivetrain_options": "The 2026-08-30 JD index listed R7120 mechanical and R7170 Di2 2×12 options; the current 2026-09-23 JD index confirms distinct 24-speed listings but does not select a SKU. The current Taobao search index supports only a 105 24-speed mechanical/hydraulic-disc SL-ONE listing; it does not map that to the retained card.",
+    "frame_material": "Marketplace listing claims full-carbon/carbon-fiber construction; grade, lay-up, and fork construction are unpublished and manufacturer confirmation is absent.",
+    "identity_source": "A 2026-09-23 Taobao search-index result identifies a WEST BIKING SL-ONE listing and names a flagship-store seller, but does not independently verify seller authorization."
   },
   "missing": [
     "Selected drivetrain, exact current SKU, and complete BOM",
@@ -20,7 +21,9 @@
   "status": "exact-sl-one-family-selected-option-weight-clearance-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "west-biking-sl-one-current-options-2026-08-30"
+    "west-biking-sl-one-current-options-2026-08-30",
+    "west-biking-sl-one-taobao-search-index-2026-09-23",
+    "west-biking-sl-one-jd-index-recheck-2026-09-23"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -33,6 +36,6 @@
   },
   "source_refs": "IMG_6871.png#L1",
   "source_url": "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
-  "source_note": "Exact current mainland indexes publish both R7120 mechanical and R7170 Di2 SL-ONE builds. The retained card does not select one, and no controlled weight or manufacturer maximum clearance was found across 50 areas.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "The Aug 30 mainland indexes identified R7120 mechanical and R7170 Di2 SL-ONE options. The Sep 23 check of the linked JD brand route and current Hooos Tao tag page did not surface an exact SL-ONE item, so the live selected drivetrain and its link to the retained price remain unverified. Batch 27 exact-field disposition dated 2026-09-23; retain model/trim and mainland-market limits in the research record.",
+  "last_reviewed": "2026-09-23"
 }

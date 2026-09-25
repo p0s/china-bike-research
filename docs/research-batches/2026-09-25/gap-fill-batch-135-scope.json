@@ -1,0 +1,88 @@
+{
+  "batch": 135,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "selection_note": "Select the ten highest-scored eligible complete-bike gap entries in the current blocked queue. They cover one exact published variant and its shared SPEEDZ platform. Do not repeat the 2026-09-24 site-search query or timed-out catalog V2 URL; use at most one distinct, direct current manufacturer product/detail route per field, and stop when it cannot establish an exact value."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id":"lightcarbon-speedz-complete","name":"LightCarbon SPEEDZ complete build"}
+    ],
+    "exact_record_count": 1,
+    "atomic_gap_entries": 10,
+    "selected_fields": [
+      "variant:lightcarbon-speedz-complete:complete-weight-missing",
+      "platform:lightcarbon-speedz:tire-clearance-unverified",
+      "platform:lightcarbon-speedz:geometry-missing",
+      "variant:lightcarbon-speedz-complete:image-exactness",
+      "platform:lightcarbon-speedz:frame-material-detail-missing",
+      "variant:lightcarbon-speedz-complete:bom-incomplete",
+      "platform:lightcarbon-speedz:frame-weight-missing",
+      "variant:lightcarbon-speedz-complete:bottom-bracket-missing",
+      "variant:lightcarbon-speedz-complete:purchase-route",
+      "platform:lightcarbon-speedz:frame-stiffness-evidence-missing"
+    ],
+    "selected_attempts": [
+      {"record_type":"variant","record_id":"lightcarbon-speedz-complete","name":"SPEEDZ complete","gap":"complete-weight-missing","attempt_id":"variant-lightcarbon-speedz-complete-complete-weight-follow-up-2026-09-24","score":165},
+      {"record_type":"platform","record_id":"lightcarbon-speedz","name":"SPEEDZ","gap":"tire-clearance","attempt_id":"platform-lightcarbon-speedz-tire-clearance-official-search-2026-09-24","score":163},
+      {"record_type":"platform","record_id":"lightcarbon-speedz","name":"SPEEDZ","gap":"geometry","attempt_id":"platform-lightcarbon-speedz-geometry-official-search-2026-09-24","score":161},
+      {"record_type":"variant","record_id":"lightcarbon-speedz-complete","name":"SPEEDZ complete","gap":"image-exactness","attempt_id":"variant-lightcarbon-speedz-complete-image-2026-08-29","score":159},
+      {"record_type":"platform","record_id":"lightcarbon-speedz","name":"SPEEDZ","gap":"frame-material-detail","attempt_id":"platform-lightcarbon-speedz-frame-material-official-search-2026-09-24","score":155},
+      {"record_type":"variant","record_id":"lightcarbon-speedz-complete","name":"SPEEDZ complete","gap":"bom-incomplete","attempt_id":"variant-lightcarbon-speedz-complete-bom-2026-08-29","score":151},
+      {"record_type":"platform","record_id":"lightcarbon-speedz","name":"SPEEDZ","gap":"frame-weight","attempt_id":"platform-lightcarbon-speedz-frame-weight-official-search-2026-09-24","score":151},
+      {"record_type":"variant","record_id":"lightcarbon-speedz-complete","name":"SPEEDZ complete","gap":"bottom-bracket","attempt_id":"variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24","score":150},
+      {"record_type":"variant","record_id":"lightcarbon-speedz-complete","name":"SPEEDZ complete","gap":"purchase-route","attempt_id":"variant-lightcarbon-speedz-complete-purchase-route-2026-08-29","score":149},
+      {"record_type":"platform","record_id":"lightcarbon-speedz","name":"SPEEDZ","gap":"frame-stiffness","attempt_id":"platform-lightcarbon-speedz-frame-stiffness-2026-08-29","score":147}
+    ],
+    "accepted_sources": {
+      "variant-lightcarbon-speedz-complete-complete-weight-follow-up-2026-09-24": [],
+      "platform-lightcarbon-speedz-tire-clearance-official-search-2026-09-24": [],
+      "platform-lightcarbon-speedz-geometry-official-search-2026-09-24": [],
+      "variant-lightcarbon-speedz-complete-image-2026-08-29": [],
+      "platform-lightcarbon-speedz-frame-material-official-search-2026-09-24": [],
+      "variant-lightcarbon-speedz-complete-bom-2026-08-29": [],
+      "platform-lightcarbon-speedz-frame-weight-official-search-2026-09-24": [],
+      "variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "variant-lightcarbon-speedz-complete-purchase-route-2026-08-29": [],
+      "platform-lightcarbon-speedz-frame-stiffness-2026-08-29": []
+    },
+    "shared_current_sources": ["lightcarbon-speedz-catalog-recheck-2026-09-24", "taobao-snapshot-2026-08-08"],
+    "bounded_extensions": [
+      {"attempt_id":"variant-lightcarbon-speedz-complete-complete-weight-follow-up-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-lightcarbon-speedz-tire-clearance-official-search-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-lightcarbon-speedz-geometry-official-search-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"variant-lightcarbon-speedz-complete-image-2026-08-29","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-lightcarbon-speedz-frame-material-official-search-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"variant-lightcarbon-speedz-complete-bom-2026-08-29","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-lightcarbon-speedz-frame-weight-official-search-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"variant-lightcarbon-speedz-complete-purchase-route-2026-08-29","allowed_channels":["web"],"max_new_attempts":1},
+      {"attempt_id":"platform-lightcarbon-speedz-frame-stiffness-2026-08-29","allowed_channels":["web"],"max_new_attempts":1}
+    ],
+    "research_boundary": "One Luna Max evidence-only reviewer; root is the sole writer. Read the frozen records, parent histories, existing source records, and the 2026-09-24 catalog timeout before new research. Inspect one source at a time for this exact product/platform. Use distinct direct current manufacturer product/detail sources; do not repeat the 2026-09-24 exact-name search or the timed-out V2 catalog URL. Stop when a relevant source is decisive or no direct exact route is exposed. For every field report access date, exact title, publisher/source class, URL, claim, and caveat. Geometry, clearance, build, revision, and stiffness claims require exact-model matching; do not transfer sibling builds. Images may be checked for identity only; do not download, host, or change rights metadata.",
+    "excluded": [
+      "No fields outside the ten frozen complete-bike gap entries or the single SPEEDZ complete build and shared platform.",
+      "Do not add the separate SPEEDZ frameset image or its separate purchase-route/BB fields in this batch; reuse shared platform evidence only when the exact fact matches.",
+      "No repeated exact-name site-search query or V2 catalog fetch after the 2026-09-24 no-result/timeout.",
+      "No login, CAPTCHA, challenge handling, XHS or Weibo capture, private post access, purchases, cart, seller contact, or quote.",
+      "No image downloads, rehosting, image record changes, external messages, commits, pushes, PRs, merges, or publishing.",
+      "Preserve unavailable, unknown, qualitative-only, and unsupported values; do not infer weight, geometry, tire maximum, build components, image rights, or stiffness scores."
+    ],
+    "not_selected_from_remaining_queue": [
+      {"attempt_id":"variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17","record_id":"twitter-v3-rs-sensah","reason":"retry_after is 2026-11-17."},
+      {"record_id":"lightcarbon-speedz-frameset","reason":"Separate frameset entry and image/purchase-route/BB fields are outside the one-model, ten-field B135 scope; shared platform evidence can be reused only when exact."},
+      {"record_id":"cosmosworks-carbon-e-road","reason":"Next lower-priority blocked target after the frozen top ten; its candidate identity combines NOMAD and Oi! leads and needs a separate bounded batch."}
+    ]
+  }
+}

@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-t10-pro-official-2026-08-17"
+    "twitter-t10-pro-official-2026-08-17",
+    "twitter-t10-pro-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-t10-pro-batch-033-50-area-sweep-2026-09-01.json. The exact page describes the full-carbon frame, fork and cockpit as designed for maximum speed and stiffness; qualitative manufacturer claim only."
+  "notes": "B121 live recheck confirms only the manufacturer's qualitative speed/stiffness description for the exact T10 Pro - 2rd frame, fork and cockpit; no measured stiffness protocol is published.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-t10-pro-official-recheck-2026-09-24"
+    ],
+    "note": "B121 live recheck confirms only the manufacturer's qualitative speed/stiffness description for the exact T10 Pro - 2rd frame, fork and cockpit; no measured stiffness protocol is published."
+  }
 }

@@ -1,20 +1,46 @@
 {
   "id": "candidate-voicevelo-g-major-frame-material-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "voicevelo-g-major" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "voicevelo-g-major"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "Voicevelo G Major carbon construction VG1 SAS impact strength", "route": "independent exact-retail-version review", "outcome": "found", "result_url": "https://www.biketo.com/product/52593.html", "accessed_at": "2026-08-28", "note": "The review documents the impact-strength-priority tube design, locally thicker walls and SAS compliance zone. No fiber grade is published, and VG1 is identified as a paint designation." }
+        {
+          "attempt": 1,
+          "query": "Voicevelo G Major carbon construction VG1 SAS impact strength",
+          "route": "independent exact-retail-version review",
+          "outcome": "found",
+          "result_url": "https://www.biketo.com/product/52593.html",
+          "accessed_at": "2026-08-28",
+          "note": "The review documents the impact-strength-priority tube design, locally thicker walls and SAS compliance zone. No fiber grade is published, and VG1 is identified as a paint designation."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["voicevelo-g-major-biketo-review-2024-01-17"],
+  "accepted_source_ids": [
+    "voicevelo-g-major-biketo-review-2024-01-17",
+    "voicevelo-g-major-biketo-review-recheck-2026-09-23",
+    "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The incorrect implication that VG1 names a carbon grade is removed; exact construction survives while the grade remains unknown."
+  "notes": "The incorrect implication that VG1 names a carbon grade is removed; exact construction survives while the grade remains unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "voicevelo-g-major-biketo-review-recheck-2026-09-23",
+      "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+    ],
+    "note": "Sources describe impact-priority tube shaping and SAS compliance design; VG1/VG3 are paint designations, and fiber grade/resin/layup remain unpublished. Reopen on an exact manufacturer material or layup specification."
+  }
 }

@@ -490,8 +490,22 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "java-road-catalog-2026-08-29",
-    "java-vittoria-r7170-chile-2026-08-29"
+    "java-vittoria-r7170-chile-2026-08-29",
+    "java-vittoria-r7170-chile-current-2026-09-23",
+    "java-vittoria-eurobike-current-2026-09-23",
+    "java-vittoria-eurobike-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-7170-50-area-sweep-2026-08-29.json. Seller pixels, official family catalog and an exact current R7170 page establish the product identity while preserving the price split."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-7170-50-area-sweep-2026-08-29.json. Seller pixels, official family catalog and an exact current R7170 page establish the product identity while preserving the price split.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vittoria-r7170-chile-current-2026-09-23",
+      "java-vittoria-eurobike-current-2026-09-23",
+      "java-vittoria-r7170-chile-2026-08-29",
+      "java-vittoria-eurobike-2026-08-29"
+    ],
+    "note": "JAVA Chile identifies the regional R7170 reference and EUROBIKE supports the broader VITTORIA family. Neither establishes the retained mainland listing's exact selected configuration."
+  }
 }

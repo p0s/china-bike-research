@@ -484,8 +484,21 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "xds-ad7-green-demon-taiwan-2026-08-30",
-    "xds-ad7-green-demon-vbike-2026-08-30"
+    "xds-ad7-green-demon-vbike-2026-08-30",
+    "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25",
+    "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad7-batch-025-50-area-sweep-2026-08-30.json. Both regional references are retained and no single value is assigned to the mainland coupon card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad7-batch-025-50-area-sweep-2026-08-30.json. Both regional references are retained and no single value is assigned to the mainland coupon card.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xds-ad7-green-demon-taiwan-2026-08-30",
+      "xds-ad7-green-demon-vbike-2026-08-30",
+      "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25",
+      "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25"
+    ],
+    "note": "The historical Taiwan listing states 8.2 kg, while the current Hong Kong V Bike listing states approximately 8.5 kg at 480 mm and is sold out. The currently readable Taiwan product detail lists no weight. Size, region, wheels and retained mainland build are not reconciled."
+  }
 }

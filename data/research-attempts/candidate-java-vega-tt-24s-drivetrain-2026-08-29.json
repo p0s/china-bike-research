@@ -493,8 +493,21 @@
   "accepted_source_ids": [
     "java-vega-chile-2026-08-29",
     "java-vega-mexico-2026-08-29",
-    "java-vega-eurobike-2026-08-29"
+    "java-vega-eurobike-2026-08-29",
+    "java-vega-chile-current-2026-09-23",
+    "java-vega-eurobike-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Current exact sources establish an L-TWOO ER9 electronic 2x12 reference configuration."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Current exact sources establish an L-TWOO ER9 electronic 2x12 reference configuration.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vega-chile-current-2026-09-23",
+      "java-vega-eurobike-current-2026-09-23",
+      "java-vega-chile-2026-08-29",
+      "java-vega-eurobike-2026-08-29"
+    ],
+    "note": "Current regional JAVA and EUROBIKE evidence supports an L-TWOO ER9 electronic 2x12 reference build. It does not prove the retained mainland seller's selected component configuration."
+  }
 }

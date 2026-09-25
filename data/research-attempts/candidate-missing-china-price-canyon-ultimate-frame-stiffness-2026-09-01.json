@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "canyon-ultimate-cfr-axs-official-2026-08-17"
+    "canyon-ultimate-cfr-axs-official-2026-08-17",
+    "canyon-ultimate-cfr-axs-us-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-canyon-ultimate-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page describes the fifth-generation CFR frame as the pinnacle of stiffness-to-weight; qualitative manufacturer evidence without a public protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-canyon-ultimate-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page describes the fifth-generation CFR frame as the pinnacle of stiffness-to-weight; qualitative manufacturer evidence without a public protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "canyon-ultimate-cfr-axs-official-2026-08-17",
+      "canyon-ultimate-cfr-axs-us-recheck-2026-09-23"
+    ],
+    "note": "Canyon calls the fifth-generation Ultimate CFR the pinnacle of stiffness-to-weight; this is qualitative marketing with no public measurement protocol."
+  }
 }

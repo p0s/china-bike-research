@@ -1,0 +1,55 @@
+{
+  "id": "candidate-paragon-jazz-2026-tire-clearance-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "paragon-jazz-2026"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-paragon-jazz-2026-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-paragon-jazz-2026-tire-clearance",
+    "extends_attempt_id": "candidate-paragon-jazz-2026-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-paragon-jazz-2026-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARAGON 鹏来格 JAZZ 2026 整车重量 最大胎宽 车架刚性 official specifications",
+          "route": "One bounded current exact-model web query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search results exposed conflicting JAZZ/JAZZ Plus and 105 Di2 titles; no exact selected build, complete-weight basis, maximum tire limit, or independent stiffness result. Existing JD URL was not reopened."
+        }
+      ],
+      "blocker": "No linked source states an exact-model maximum tire clearance."
+    }
+  },
+  "accepted_source_ids": [
+    "paragon-jazz-jd-2026-08-30",
+    "paragon-jazz-jd-index-recheck-2026-09-23"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact tire-clearance field. Search results exposed conflicting JAZZ/JAZZ Plus and 105 Di2 titles; no exact selected build, complete-weight basis, maximum tire limit, or independent stiffness result. Existing JD URL was not reopened.",
+  "searched_at": "2026-09-25"
+}

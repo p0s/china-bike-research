@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-arow-sl-official-2026-08-17"
+    "tavelo-arow-sl-official-2026-08-17",
+    "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Qualified platform image only: the existing remote official photo depicts Arow SL Neo Black, not the community build’s exact color or components. Retain manufacturer credit and remote embedding; no redistribution license is asserted. Reopen for a build-exact image with documented rights.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
+    ],
+    "note": "Qualified platform image only: the existing remote official photo depicts Arow SL Neo Black, not the community build’s exact color or components. Retain manufacturer credit and remote embedding; no redistribution license is asserted. Reopen for a build-exact image with documented rights."
+  }
 }

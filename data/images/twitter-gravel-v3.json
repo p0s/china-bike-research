@@ -19,5 +19,17 @@
   },
   "credit": "Product image © Twitter Bikes",
   "alt": "Twitter Gravel V3 carbon gravel bike",
-  "reviewed_at": "2026-08-07"
+  "reviewed_at": "2026-08-07",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "twitter-gravel-v3-primary-image",
+        "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E6%B7%B1%E7%81%B0_1757147129.webp",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/webp"
+      }
+    ]
+  }
 }

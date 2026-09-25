@@ -1,0 +1,52 @@
+{
+  "id": "candidate-upland-r80-tire-clearance-2026-08-30-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "upland-r80"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-upland-r80-tire-clearance-2026-08-30",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-upland-r80-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish tire-clearance for the exact retained target build. New official Ultegra page lists fitted Maxxis High Road 700×28C but no maximum-clearance figure; fitted width is not a maximum. Reviewed both scoped predecessor attempts (100 unique queries/routes total); prior official R80/category, UCI, JD, Taobao and mirror URLs were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"UPLAND R80\" 阿普兰 迈金 PES 整车重量 最大胎宽 官方配置",
+          "route": "Opened new official UPLAND R80 page https://www.upland.bike/zh/product/303.html (redirected from /product/303.html): Ultegra R8150 build about 8.1 kg bare excluding pedals/computer mount, CNY 15,999, fitted 700×28C. It differs from retained Magene PES CNY 8,999; no maximum clearance.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "New official Ultegra page lists fitted Maxxis High Road 700×28C but no maximum-clearance figure; fitted width is not a maximum. Reviewed both scoped predecessor attempts (100 unique queries/routes total); prior official R80/category, UCI, JD, Taobao and mirror URLs were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish tire-clearance for the exact retained target build. New official Ultegra page lists fitted Maxxis High Road 700×28C but no maximum-clearance figure; fitted width is not a maximum. Reviewed both scoped predecessor attempts (100 unique queries/routes total); prior official R80/category, UCI, JD, Taobao and mirror URLs were not reopened. New query checked against predecessor queries.",
+  "campaign_extension": {
+    "id": "b139-upland-r80-tire-clearance",
+    "extends_attempt_id": "candidate-upland-r80-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

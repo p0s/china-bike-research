@@ -1,0 +1,52 @@
+{
+  "id": "candidate-elro-f1-drivetrain-2026-08-29-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "elro-f1"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-elro-f1-drivetrain-2026-08-29",
+  "retry_reason": "The frozen B157 scope authorizes one bounded current exact-model web query after review of the latest predecessor attempt, linked sources, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-elro-f1-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELRO F1 exact model drivetrain build specification frame stiffness test 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The recorded indexed OBIKE F1 listing identifies a carbon road bike and 24 speeds but not the exact components or selected gearing. The ELRO mark remains an identity conflict, so drivetrain details are unresolved."
+        }
+      ],
+      "blocker": "The recorded indexed OBIKE F1 listing identifies a carbon road bike and 24 speeds but not the exact components or selected gearing. The ELRO mark remains an identity conflict, so drivetrain details are unresolved."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The recorded indexed OBIKE F1 listing identifies a carbon road bike and 24 speeds but not the exact components or selected gearing. The ELRO mark remains an identity conflict, so drivetrain details are unresolved.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-157-elro-f1-drivetrain",
+    "extends_attempt_id": "candidate-elro-f1-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+    "reason": "The frozen B157 scope authorizes one dated exact-record query after reviewing the latest predecessor source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -6,13 +6,13 @@
   },
   "field": "cockpit",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "web"
   ],
   "channels": {
     "web": {
-      "status": "found",
+      "status": "conflicted",
       "attempts": [
         {
           "attempt": 1,
@@ -22,14 +22,37 @@
           "accessed_at": "2026-08-17",
           "note": "Manufacturer exact page lists the component/options.",
           "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Twitter Cyclone 3rd ET current official cockpit material and dimensions conflict",
+          "route": "re-read exact USA ET manufacturer specification and every-build text",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://twitterbikeusa.com/products/cyclone-3rd-et",
+          "note": "Same exact-model page gives 420×90 mm high-modulus carbon in the detailed specifications and 400×90 mm alloy in its every-build paragraph; it does not map either to the selected build."
         }
-      ]
+      ],
+      "conflict": "The current exact USA ET page lists a 420×90 mm high-modulus carbon integrated cockpit in its specification, then later states every build uses an alloy 400×90 mm cockpit. No selected-build mapping resolves the contradiction."
     }
   },
-  "status": "found",
+  "status": "conflicted",
   "accepted_source_ids": [
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-gen3-et-usa-2026-08-17",
+    "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25",
+    "twitter-cyclone-gen3-et-mainland-page-access-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "The 2026-09-25 USA manufacturer page still says 420×90 mm carbon in the overview/table and 400×90 mm alloy in its every-build text; the mainland manufacturer URL returns 404. No exact-option mapping selects a cockpit.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-live-recheck-2026-09-25",
+      "twitter-cyclone-gen3-et-mainland-page-access-recheck-2026-09-25"
+    ],
+    "note": "The 2026-09-25 USA manufacturer page still says 420×90 mm carbon in the overview/table and 400×90 mm alloy in its every-build text; the mainland manufacturer URL returns 404. No exact-option mapping selects a cockpit."
+  }
 }

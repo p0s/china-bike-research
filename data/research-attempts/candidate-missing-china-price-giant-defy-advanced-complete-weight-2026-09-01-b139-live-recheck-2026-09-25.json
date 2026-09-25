@@ -1,0 +1,52 @@
+{
+  "id": "candidate-missing-china-price-giant-defy-advanced-complete-weight-2026-09-01-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-defy-advanced"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missing-china-price-giant-defy-advanced-complete-weight-2026-09-01",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-giant-defy-advanced-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish complete-weight for the exact retained target build. New official Japan article 「DEFY」シリーズがフルモデルチェンジ (https://www.giant.co.jp/news/bike/9628/) reports MY2024 Japan DEFY ADVANCED 2 at 8.9 kg in size M, 105 mechanical 12-speed. Japan market and weighing/pedal basis are not mapped to the retained mainland build. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Giant Defy Advanced 2\" 捷安特 中国大陆 官方 整车 重量 价格",
+          "route": "Search results showed the predecessor Giant China product page with ¥14,800 suggested retail; that old URL was not reopened. No new seller checkout or stock observation surfaced.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "New official Japan article 「DEFY」シリーズがフルモデルチェンジ (https://www.giant.co.jp/news/bike/9628/) reports MY2024 Japan DEFY ADVANCED 2 at 8.9 kg in size M, 105 mechanical 12-speed. Japan market and weighing/pedal basis are not mapped to the retained mainland build. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish complete-weight for the exact retained target build. New official Japan article 「DEFY」シリーズがフルモデルチェンジ (https://www.giant.co.jp/news/bike/9628/) reports MY2024 Japan DEFY ADVANCED 2 at 8.9 kg in size M, 105 mechanical 12-speed. Japan market and weighing/pedal basis are not mapped to the retained mainland build. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Giant China id=1837, JD item and Giant Japan/TOUR routes were not reopened. New query checked against predecessor queries.",
+  "campaign_extension": {
+    "id": "b139-missing-china-price-giant-defy-advanced-complete-weight",
+    "extends_attempt_id": "candidate-missing-china-price-giant-defy-advanced-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

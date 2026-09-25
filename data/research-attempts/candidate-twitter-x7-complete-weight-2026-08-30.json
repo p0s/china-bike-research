@@ -486,8 +486,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-x7-official-2026-08-30"
+    "twitter-x7-official-2026-08-30",
+    "twitter-x7-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-x7-50-area-sweep-2026-08-30.json. The exact current manufacturer page claims a neutral family value from approximately 7.6 kg; size, configuration and weighing basis are unstated."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-x7-50-area-sweep-2026-08-30.json. The exact current manufacturer page claims a neutral family value from approximately 7.6 kg; size, configuration and weighing basis are unstated. Focused exact-model review on 2026-09-23: The current global/Canada builder default lists 7.6 kg with ES7000 wireless 1×14 at XS/46 cm; separate generic starting-weight claims are not tied to the retained high configuration.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "twitter-x7-official-2026-08-30",
+      "twitter-x7-official-current-2026-09-23"
+    ],
+    "note": "The current manufacturer page displays 7.6 kg and specifies net weight from 7.6 kg; its selector shows SENTYEH ES7000, matte black and XS by default, but the page does not state that this is an exact weight for that combination or give a weighing basis. The candidate records the family claim; no numeric weight is assigned to the retained mainland price builds."
+  }
 }

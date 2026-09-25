@@ -485,8 +485,19 @@
   "status": "found",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "phoenix-799-ebuy7-2026-08-30"
+    "phoenix-799-ebuy7-2026-08-30",
+    "phoenix-799-ebuy7-current-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "phoenix-799-ebuy7-2026-08-30",
+      "phoenix-799-ebuy7-current-recheck-2026-09-23"
+    ],
+    "note": "Current page identifies Phoenix item 799, while the retained card identifies a 700C presentation. The current page lists rim size as Other and does not establish an exact 700C selection."
+  },
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/phoenix-700c-carbon-e-road-50-area-sweep-2026-08-30.json. The retained 700C card and current model-799 page establish the family identity while preserving the unresolved 6 Ah versus 10 Ah selection."
 }

@@ -482,5 +482,13 @@
   ],
   "retry_after": null,
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/candidate-tavelo-arow-sl-community-lead-batch-033-50-area-sweep-2026-09-01.json. The 3 original 2026-08-17 applications retain their original queries, routes, outcomes, dates, URLs and notes and are assigned to matching registered areas. The retained exact public post reports 6.2 kg; no BOM, size or independent scale protocol was established, so the basis remains a single community report.",
-  "minimum_distinct_approaches": 50
+  "minimum_distinct_approaches": 50,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "public-tavelo-arow-sl-build-2026-08-17"
+    ],
+    "note": "The exact public post reports a 6.2 kg custom build, matching the candidate's 6,200 g report. This is one community build with no stated size, complete BOM or scale protocol; do not present it as a manufacturer weight."
+  }
 }

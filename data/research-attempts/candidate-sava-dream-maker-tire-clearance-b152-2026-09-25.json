@@ -1,0 +1,53 @@
+{
+  "id": "candidate-sava-dream-maker-tire-clearance-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sava-dream-maker"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-sava-dream-maker-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-sava-dream-maker-tire-clearance",
+    "extends_attempt_id": "candidate-sava-dream-maker-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sava-dream-maker-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Dream Maker R17 R7170 maximum tire width clearance 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "Existing exact manufacturer evidence states fitted 700×25C, while the saved compatibility guide omits R17. A newly surfaced Spanish manufacturer product route was literal-audited absent before one open attempt, but returned HTTP 404; no claim can be read from it and no retry was made.",
+          "result_url": "https://savadeck-bike.com/es/products/sava-dream-maker-di2-full-carbon-bike"
+        }
+      ],
+      "blocker": "The single new page-open attempt returned HTTP 404; the frozen batch allowed one page per model and no retry was performed."
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "Existing exact manufacturer evidence states fitted 700×25C, while the saved compatibility guide omits R17. A newly surfaced Spanish manufacturer product route was literal-audited absent before one open attempt, but returned HTTP 404; no claim can be read from it and no retry was made.",
+  "searched_at": "2026-09-25"
+}

@@ -1,0 +1,71 @@
+{
+  "batch": 62,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-62-scope.json",
+  "target": {
+    "record_type": "candidate",
+    "id": "laget-pioneer",
+    "model": "LAGET PIONEER titanium road frameset",
+    "gap_code": "price-not-observed"
+  },
+  "research": {
+    "worker": "one Luna Max evidence-only follow-up agent; no repository writes",
+    "query": "LAGET PIONEER 钛合金 公路车架 车架组 价格 旗舰店",
+    "accessed_at": "2026-09-24",
+    "route": "One fresh public exact-model item search followed by opening the official LAGET PIONEER page surfaced by search; no current seller checkout listing was found.",
+    "url": "https://lagetbike.com/productinfo/2337831.html",
+    "finding": "The exact official China page identifies LAGET PIONEER and repeats CNY 7,900 as retail price. The page does not establish a purchasable checkout, current stock, seller offer, or package contents. Search metadata marked the unchanged official page crawled on 2026-09-24.",
+    "price_admissible": false,
+    "disposition": "No current exact mainland checkout price accepted. Keep the existing official MSRP and candidate observed_price null; do not infer package contents or availability."
+  },
+  "changed_files": [
+    "data/research-attempts/candidate-laget-pioneer-mainland-observed-price-2026-09-24.json",
+    "tests/data.test.mjs"
+  ],
+  "candidate_effect": {
+    "official_price": "CNY 7,900; existing dated official MSRP retained",
+    "observed_price": null,
+    "research_status": "blocked",
+    "gap_resolved": false,
+    "candidate_status": "unpublished"
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+    "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+    "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "validation": {
+    "focused": "npm run --silent research:check passed: 1500 atomic research fields, 15449 public-post attempts, and 35568 web attempts.",
+    "coverage_accept": "Accepted monotonic coverage protection for 212 images and 277 catalog targets after adding the research record.",
+    "full_gate": "codex-pnpm-check check passed: privacy; 41 brands, 38 platforms, 41 variants, 73 prices, 1301 sources, 212 images, 16 videos, 11 groupsets, 10 build parts, 236 candidates, 1517 research records; research and coverage checks; 323/323 tests; 584-page build for 41 products; SEO 458 indexable and 126 noindex.",
+    "image_report": "not run; no image records changed"
+  },
+  "integration_note": "The frozen scope referenced a prior `price` attempt whose found status documents the official MSRP. The unresolved checkout observation is a distinct field in the repository contract (`mainland-observed-price`); the validator correctly rejects retrying the found MSRP field. The one fresh web attempt is therefore recorded independently for the exact open gap, with no campaign extension or extra search. The frozen `campaign_extension` done criterion could not apply to this distinct field and was not used.",
+  "delivery": "Local B62 batch only; no push, pull request, merge, publication, or production action."
+}

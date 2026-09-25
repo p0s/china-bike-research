@@ -488,5 +488,11 @@
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. The exact manufacturer page publishes Shimano GRX 1x11 hydraulic with ST-RX600, RD-RX810, FC-RX600, CS-R7000, and BR-RX600. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. The exact manufacturer page publishes Shimano GRX 1x11 hydraulic with ST-RX600, RD-RX810, FC-RX600, CS-R7000, and BR-RX600. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bxt-135-official-build-2026-08-30"],
+    "note": "The candidate already records the exact BXT-135 GRX 1×11 build with ST-RX600, RD-RX810, FC-RX600, CS-R7000, BR-RX600, and hydraulic brakes; the distinct 2×11 sibling remains excluded."
+  }
 }

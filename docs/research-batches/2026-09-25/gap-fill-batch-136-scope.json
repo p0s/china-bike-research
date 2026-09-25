@@ -1,0 +1,77 @@
+{
+  "batch": 136,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "selection_note": "Continue after the higher-scored SPEEDZ complete-build pass found no distinct direct source. Select the next highest-scored blocked technical fields on exact published CAMP builds; do not repeat recent direct-page, chart, or JD routes."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "camp-gx600-pes",
+        "name": "CAMP GX600 PES 1×12",
+        "platform_id": "camp-gx600"
+      },
+      {
+        "id": "camp-gx700-grx820",
+        "name": "CAMP GX700 GRX 1×12",
+        "platform_id": "camp-gx700"
+      }
+    ],
+    "exact_record_count": 2,
+    "atomic_gap_entries": 7,
+    "selected_fields": [
+      "platform:camp-gx600:tire-clearance",
+      "platform:camp-gx600:geometry",
+      "platform:camp-gx600:frame-weight",
+      "variant:camp-gx600-pes:bottom-bracket",
+      "platform:camp-gx700:geometry",
+      "platform:camp-gx700:frame-weight",
+      "variant:camp-gx700-grx820:bottom-bracket"
+    ],
+    "selected_attempts": [
+      {"record_type":"platform","record_id":"camp-gx600","name":"GX600","gap":"tire-clearance","attempt_id":"platform-camp-gx600-tire-clearance-2026-09-01","score":87},
+      {"record_type":"platform","record_id":"camp-gx600","name":"GX600","gap":"geometry","attempt_id":"platform-camp-gx600-geometry-2026-09-01","score":85},
+      {"record_type":"platform","record_id":"camp-gx600","name":"GX600","gap":"frame-weight","attempt_id":"platform-camp-gx600-frame-weight-2026-09-01","score":75},
+      {"record_type":"variant","record_id":"camp-gx600-pes","name":"GX600 PES","gap":"bottom-bracket","attempt_id":"variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24","score":74},
+      {"record_type":"platform","record_id":"camp-gx700","name":"GX700","gap":"geometry","attempt_id":"platform-camp-gx700-geometry-2026-09-01","score":63},
+      {"record_type":"platform","record_id":"camp-gx700","name":"GX700","gap":"frame-weight","attempt_id":"platform-camp-gx700-frame-weight-2026-09-01","score":53},
+      {"record_type":"variant","record_id":"camp-gx700-grx820","name":"GX700 GRX 1×12","gap":"bottom-bracket","attempt_id":"variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24","score":52}
+    ],
+    "shared_current_sources": [
+      "camp-gx600-official-recheck-2026-09-23",
+      "camp-gx600-geometry-recheck-2026-09-24",
+      "camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "camp-gx700-cn-official-recheck-2026-09-23",
+      "camp-gx700-geometry-recheck-2026-09-24",
+      "camp-gx700-grx820-official-jd-store-recheck-2026-09-24"
+    ],
+    "bounded_extensions": [
+      {"attempt_id":"platform-camp-gx600-tire-clearance-2026-09-01","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"platform-camp-gx600-geometry-2026-09-01","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"platform-camp-gx600-frame-weight-2026-09-01","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"platform-camp-gx700-geometry-2026-09-01","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"platform-camp-gx700-frame-weight-2026-09-01","allowed_channels":["web"],"max_new_sources":1},
+      {"attempt_id":"variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24","allowed_channels":["web"],"max_new_sources":1}
+    ],
+    "research_boundary": "One Luna Max evidence-only reviewer; root is sole writer. Review one exact model and one missing field at a time. Seek at most one newly discovered, direct CAMP-manufacturer technical source per field. A single exact-field query may identify one best matching page, which may be opened once. Report exact URL/title, publisher and source class, access date, claim, and caveat. A route counts only if it names the exact GX600 or GX700 frame/build and directly supports that field.",
+    "excluded": [
+      "Do not repeat https://www.campbicycle.com/en/gx600.html, https://www.campbicycle.com/gravel_92368/gx600.html, https://www.campbicycle.com/gravel_92368/gx700.html, the generic size.avif geometry charts (403 on 2026-09-24), https://mall.jd.com/index-12210175.html (timed out on 2026-09-24), or the GX700 JD item inspected on 2026-09-24.",
+      "Do not repeat previously exhausted 50-area sweeps or retrieve other-model geometry, clearance, frame-weight, or bottom-bracket data.",
+      "No XHS, Weibo, login, CAPTCHA, challenge handling, seller contact, purchase, cart, quote, external message, source write, catalog write, image download, or image rehosting.",
+      "Do not infer maximum clearance from the fitted tire, geometry from size options, frame weight from complete-bike weight, or a bottom-bracket standard from crank or axle descriptions.",
+      "No source or value is added to the catalog unless it directly establishes the exact model/build and field. Preserve unresolved values with the exact reason."
+    ]
+  }
+}

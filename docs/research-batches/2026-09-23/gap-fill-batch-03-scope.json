@@ -1,0 +1,24 @@
+{
+  "batch_id": "gap-fill-batch-03-2026-09-23",
+  "base_commit": "24e323d06e99a62f2d8946c35be9d4c0ce72594c",
+  "frozen_at": "2026-09-23",
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "flying-pigeon-carbon-road-unknown",
+      "exact_identity": "Unresolved Flying Pigeon carbon-road marketplace listing from the 2026-08-08 anonymized Taobao snapshot",
+      "fields": [
+        "source-record-linkage"
+      ],
+      "evidence_basis": "The candidate already records source_snapshot_id=taobao-snapshot-2026-08-08 and source_refs=IMG_6857.png#L2. The corresponding registered aggregate source record exists at data/sources/taobao-snapshot-2026-08-08.json.",
+      "boundaries": [
+        "Link the existing snapshot as provenance only; it does not establish the exact bicycle model or verify the apparent X900 marking.",
+        "Do not use the low-confidence coupon price or screenshot as a current market price or exact-build specification.",
+        "Do not expose the local screenshot, seller identity, or private capture details."
+      ]
+    }
+  ],
+  "atomic_field_count": 1,
+  "done_criteria": "Add the existing registered snapshot to the candidate source_ids so the catalog gap checker recognizes its documented provenance; preserve needs-exact-model status and all unresolved specification gaps. Confirm source-missing is cleared, coverage remains monotonic, and npm run check passes.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, or publication."
+}

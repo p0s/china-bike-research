@@ -1,0 +1,99 @@
+{
+  "batch": 42,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 333,
+      "conflicted": 35,
+      "found": 69,
+      "open": 4,
+      "temporarily-exhausted": 11
+    },
+    "research_queue_counts": {
+      "ready": 4,
+      "evidence-found": 251,
+      "deferred": 42,
+      "blocked": 497,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "Select the four bottom-bracket fields newly left open by B41's single-current-page checks. They are the complete ready queue and are the highest-priority actionable fields; the remaining two B41 bottom-bracket rows are blocked and need a material new accessible source.",
+    "selected_atomic_fields": 4,
+    "selected_exact_targets": 4
+  },
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "exact_identity": "CAMP GX600 PES, Magene 1×12; exact page at current gravel product route",
+      "owner": "root-writer",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24"],
+      "attempt_status": "open",
+      "existing_source_ids": ["camp-gx600-geometry-recheck-2026-09-24", "camp-gx600-official-recheck-2026-09-23"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "exact_identity": "CAMP GX700 GRX820 1×12 build",
+      "owner": "root-writer",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24"],
+      "attempt_status": "open",
+      "existing_source_ids": ["camp-gx700-geometry-recheck-2026-09-24", "camp-gx700-cn-official-recheck-2026-09-23"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s8",
+      "exact_identity": "SAVA Gelaro S8 R21-GRX820-12S",
+      "owner": "root-writer",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24"],
+      "attempt_status": "open",
+      "existing_source_ids": ["sava-gelaro-s8-official-recheck-2026-09-24"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-sf6-cues",
+      "exact_identity": "SAVA Gelaro SF6 R21-U6000-11S",
+      "owner": "root-writer",
+      "fields": ["bottom-bracket"],
+      "attempt_ids": ["variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24"],
+      "attempt_status": "open",
+      "existing_source_ids": ["sava-gelaro-sf6-official-recheck-2026-09-24"]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "For each exact build, inspect an official manual or current exact product/region option page first, followed by one independent exact-build source only when needed to corroborate a compatibility claim.",
+    "recording": "Only record an explicit exact-build bottom-bracket label and shell dimensions. Store family-shared facts only with direct evidence of the same frame standard. Preserve unknowns and cite source IDs in the retry ledger.",
+    "sibling_boundary": "Do not transfer GX600 trim labels to GX600 PES, or SAVA Gelaro sibling values to S8/SF6, without evidence tying the exact frame/build to that standard.",
+    "no_sweep_repetition": "Do not repeat any registered 50-area campaign. Stop at decisive exact-build evidence or a concrete source/access limitation; do not exhaust a retry ledger after fewer than three valid attempts.",
+    "preserve_unknowns": true
+  },
+  "stop_criteria": "Process the four exact builds sequentially, one source at a time. Close only fields supported for the target build. If current manuals and exact listings omit the field, record the checked routes and leave the field open or explicitly blocked as the evidence warrants."
+}

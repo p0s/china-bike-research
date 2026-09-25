@@ -1,0 +1,487 @@
+{
+  "batch_id": "gap-fill-batch-14-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-14-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 20
+  },
+  "results": [
+    {
+      "record_id": "twitter-x7",
+      "field": "complete-weight",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "source_ids": [
+        "twitter-x7-official-2026-08-30",
+        "twitter-x7-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike"
+      ],
+      "note": "The current manufacturer page displays 7.6 kg and specifies net weight from 7.6 kg; its selector shows SENTYEH ES7000, matte black and XS by default, but the page does not state that this is an exact weight for that combination or give a weighing basis. The candidate records the family claim; no numeric weight is assigned to the retained mainland price builds. Reopen when: A current exact configuration and a stated weighing basis linked to the retained mainland price build."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "drivetrain",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "source_ids": [
+        "west-biking-sl-one-current-options-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc"
+      ],
+      "note": "The accepted exact-model indexes already support the candidate-recorded R7120 mechanical and R7170 Di2 2x12 options, but do not select the retained price build. Today the linked JD brand route did not surface SL-ONE and the current Hooos Tao tag page did not contain it; no current exact SKU-to-price mapping is established. Reopen when a live exact offer identifies the selected build and links it to a retained or new mainland price. Reopen when: A live exact SL-ONE SKU/BOM that maps the selected drivetrain option to a retained or newly observed mainland price."
+    },
+    {
+      "record_id": "west-biking-team-road",
+      "field": "drivetrain",
+      "status": "integrated-exact-listing",
+      "attempt_record_id": "candidate-west-biking-team-road-drivetrain-2026-08-30",
+      "source_ids": [
+        "west-biking-team-road-jd-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/xinghao/1318f839e4269a08e856.html"
+      ],
+      "note": "A current JD model index links an XS T800-carbon team-edition item with R7120 mechanical 2x12, hydraulic disc brakes and carbon wheels; the candidate now records that listing-specific drivetrain. Its item page exposes no readable checkout price, seller authority is unverified, and this listing is not linked to the retained 2026-08-08 coupon price; the R8170 image option remains separate. The candidate now records this exact listing-specific option; its retained price link and readable checkout remain unresolved."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "complete-weight",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-expert-current-2026-08-30",
+        "felt-ia-2-race-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2",
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Felt current product pages accessed 2026-09-23 restate size-M weights of 9.37 kg FRD, 9.5 kg PRO, 10.3 kg EXPERT and 10.44 kg RACE. These remain trim-specific manufacturer values; the retained CNY 88,998 card does not identify a trim, and Felt says stock specifications can vary with component supply. Reopen when: An exact Felt trim mapped to the retained mainland CNY 88,998 observation, with a comparable size and weight basis."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "drivetrain",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-expert-current-2026-08-30",
+        "felt-ia-2-race-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2",
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Current Felt pages confirm Dura-Ace Di2 2x12 on FRD, Ultegra Di2 2x12 on PRO and EXPERT, and 105 Di2 2x12 on RACE. The retained mainland price card still has no trim bridge; Felt warns that dealer stock specifications may vary. Reopen when: An exact Felt trim mapped to the retained mainland CNY 88,998 observation."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "frame-material",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-felt-ia-2-frame-material-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-expert-current-2026-08-30",
+        "felt-ia-2-race-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2",
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Current pages confirm FRD and PRO use the FRD 12K Carbon Light frame and fork, while EXPERT and RACE use UD Carbon Standard. The retained mainland card does not identify a trim, so neither construction is selected for it. Reopen when: An exact Felt trim mapped to the retained mainland CNY 88,998 observation."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-felt-ia-2-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-08-30",
+        "felt-ia-2-pro-current-2026-08-30",
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2",
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645"
+      ],
+      "note": "Current FRD and PRO pages make a qualitative unmatched stiffness-to-weight claim for their 12K construction, but publish no numeric test or protocol. This claim is not extended to EXPERT/RACE UD-carbon trims or to the retained price card whose trim is unknown. Reopen when: A trim-specific measured stiffness protocol, or an exact mainland trim mapping if only the manufacturer claim is needed."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "complete-weight",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "source_ids": [
+        "upland-r70-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/product/308.html"
+      ],
+      "note": "The accepted exact manufacturer source states approximately 8.3 kg bare without pedals or computer mount for its displayed 105 Di2 build; the candidate already records that approximate claim. The exact manufacturer URL timed out on 2026-09-23, so no fresh page confirmation or exact retained-price mapping was obtained. Reopen on a normally accessible exact SKU with a stated weight method and option mapping. Reopen when: A normally accessible exact R70 SKU with explicit weight method and mapping to the retained price option."
+    },
+    {
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "field": "price",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "source_ids": [
+        "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398"
+      ],
+      "note": "The exact TCR Advanced 3-GC source records a CNY 6,998 suggested list price, already retained in the candidate note, not a checkout observation. Its id=1398 page yielded no readable content on 2026-09-23. Giant currently lists a different TCR Advanced 3 page at id=3470 for CNY 7,998 with a disc-generation frame; that is not transferred to the older 3-GC Tiagra rim-brake candidate. The mainland observed transaction price remains unresolved. Reopen when: A current mainland transaction or checkout observation for the exact older 3-GC Tiagra rim-brake generation."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "source_ids": [
+        "de-rosa-japan-new-838-options-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.derosa.jp/archives/4959"
+      ],
+      "note": "The current official Japan source confirms 105 Di2 and Campagnolo Chorus build options, but the retained mainland price card still does not identify its selected build."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-de-rosa-new-838-frame-material-2026-08-30",
+      "source_ids": [
+        "de-rosa-838-model-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://derosa.it/model/838/"
+      ],
+      "note": "The current manufacturer model page supports a carbon frame of approximately 900 g; exact fiber grade, blend and lay-up remain unpublished."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-de-rosa-new-838-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "de-rosa-838-model-current-2026-09-23",
+        "de-rosa-838-launch-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://derosa.it/model/838/",
+        "https://derosa.it/new-838-luxury-without-compromise/"
+      ],
+      "note": "Current manufacturer model and launch pages make qualitative rigidity claims only; there is no numeric test or independent measurement."
+    },
+    {
+      "record_id": "cosmosworks-carbon-e-road",
+      "field": "identity-source",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-cosmosworks-carbon-e-road-identity-source-2026-08-29",
+      "source_ids": [
+        "cosmosworks-nomad-current-2026-09-23",
+        "cosmosworks-nomad-promotion-current-2026-09-23",
+        "cosmosworks-oi-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cosmosebike.com/products/nomad",
+        "https://cosmosebike.com/en/blogs/%E6%96%B0%E8%81%9E/weixin-618-nomad-sale",
+        "https://cosmosebike.com/products/oi"
+      ],
+      "note": "Current official sources distinguish NOMAD from Oi! and place the retained price cue and frame/clearance cues on different models; the mixed lead cannot be assigned to one SKU. Reopen when: An exact listing or manufacturer record tying the retained mixed lead to either NOMAD or Oi!."
+    },
+    {
+      "record_id": "cycletrack-phantom-rx24",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-phantom-rx24-drivetrain-2026-08-29",
+      "source_ids": [
+        "cycletrack-phantom-current-2026-09-23",
+        "cycletrack-jd-road-listings-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women",
+        "https://www.jd.com/hprm/6144d369c7c1b5142b1a.html"
+      ],
+      "note": "The current exact manufacturer page lists the RX 24-speed component set and JD shows separate options; shift actuation is not explicitly labelled mechanical and the retained wheel option is unknown."
+    },
+    {
+      "record_id": "cycletrack-phantom-rx24",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-phantom-rx24-frame-material-2026-08-29",
+      "source_ids": [
+        "cycletrack-phantom-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women"
+      ],
+      "note": "The current exact product page specifies a carbon frame and fork but no fiber grade."
+    },
+    {
+      "record_id": "cycletrack-phantom-rx24",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-phantom-rx24-identity-source-2026-08-29",
+      "source_ids": [
+        "cycletrack-phantom-current-2026-09-23",
+        "cycletrack-jd-road-listings-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women",
+        "https://www.jd.com/hprm/6144d369c7c1b5142b1a.html"
+      ],
+      "note": "Current official and JD pages identify Phantom / 魅影 while also exposing other distinct Phantom builds; retain the RX 24-speed identity and do not merge options."
+    },
+    {
+      "record_id": "cycletrack-time-tt",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-time-tt-complete-weight-2026-08-29",
+      "source_ids": [
+        "cycletrack-time-tt-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike"
+      ],
+      "note": "The manufacturer lists around 9.6 kg for the M-size ER9/carbon-wheel reference build; pedal inclusion and measurement method are unstated."
+    },
+    {
+      "record_id": "cycletrack-time-tt",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-time-tt-drivetrain-2026-08-29",
+      "source_ids": [
+        "cycletrack-time-tt-current-2026-09-23",
+        "cycletrack-jd-road-listings-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike",
+        "https://www.jd.com/hprm/6144d369c7c1b5142b1a.html"
+      ],
+      "note": "Current manufacturer and JD sources support the ER9-TT drivetrain and closed-wheel TT build; a separate road build remains distinct."
+    },
+    {
+      "record_id": "cycletrack-time-tt",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-time-tt-frame-material-2026-08-29",
+      "source_ids": [
+        "cycletrack-time-tt-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike"
+      ],
+      "note": "The current exact manufacturer page specifies a T800 carbon frame and fork."
+    },
+    {
+      "record_id": "cycletrack-time-tt",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cycletrack-time-tt-identity-source-2026-08-29",
+      "source_ids": [
+        "cycletrack-time-tt-current-2026-09-23",
+        "cycletrack-jd-road-listings-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cycletrack.cn/products/cycletrack-time-carbon-fiber-tt-bicycle-racing-triathlon-road-bike-time-trial-bike",
+        "https://www.jd.com/hprm/6144d369c7c1b5142b1a.html"
+      ],
+      "note": "Current official and JD sources identify TIME / 时光 TT and distinguish it from the separate road build."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [
+      "cosmosworks-carbon-e-road",
+      "cycletrack-phantom-rx24",
+      "cycletrack-time-tt",
+      "de-rosa-new-838",
+      "felt-ia-2",
+      "missing-china-price-giant-tcr-advanced",
+      "twitter-x7",
+      "upland-r70",
+      "west-biking-sl-one",
+      "west-biking-team-road"
+    ],
+    "platform_variant_price_records_changed": [],
+    "source_records_added": [
+      "cosmosworks-nomad-current-2026-09-23",
+      "cosmosworks-nomad-promotion-current-2026-09-23",
+      "cosmosworks-oi-current-2026-09-23",
+      "cycletrack-jd-road-listings-current-2026-09-23",
+      "cycletrack-phantom-current-2026-09-23",
+      "cycletrack-time-tt-current-2026-09-23",
+      "de-rosa-838-launch-current-2026-09-23",
+      "de-rosa-838-model-current-2026-09-23",
+      "de-rosa-japan-new-838-options-current-2026-09-23",
+      "felt-ia-2-expert-current-2026-09-23",
+      "felt-ia-2-frd-current-2026-09-23",
+      "felt-ia-2-pro-current-2026-09-23",
+      "felt-ia-2-race-current-2026-09-23",
+      "twitter-x7-official-current-2026-09-23",
+      "west-biking-team-road-jd-current-2026-09-23"
+    ],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-cosmosworks-carbon-e-road-identity-source-2026-08-29",
+      "candidate-cycletrack-phantom-rx24-drivetrain-2026-08-29",
+      "candidate-cycletrack-phantom-rx24-frame-material-2026-08-29",
+      "candidate-cycletrack-phantom-rx24-identity-source-2026-08-29",
+      "candidate-cycletrack-time-tt-complete-weight-2026-08-29",
+      "candidate-cycletrack-time-tt-drivetrain-2026-08-29",
+      "candidate-cycletrack-time-tt-frame-material-2026-08-29",
+      "candidate-cycletrack-time-tt-identity-source-2026-08-29",
+      "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "candidate-de-rosa-new-838-frame-material-2026-08-30",
+      "candidate-de-rosa-new-838-frame-stiffness-2026-08-30",
+      "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "candidate-felt-ia-2-frame-material-2026-08-30",
+      "candidate-felt-ia-2-frame-stiffness-2026-08-30",
+      "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "candidate-twitter-x7-complete-weight-2026-08-30",
+      "candidate-upland-r70-complete-weight-2026-08-30",
+      "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "candidate-west-biking-team-road-drivetrain-2026-08-30"
+    ],
+    "coverage_baseline_updated": true
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 68,
+      "temporarily-exhausted": 14
+    },
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 751,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "images": 212,
+    "catalog_targets": 277,
+    "note": "The drivetrain gap count fell by one when the exact JD team-edition R7120 listing was integrated. Thirteen ledger-only findings left the evidence-found queue after source-reuse resolution; seven still-open catalog gaps from this batch remain evidence-found. Images were unchanged."
+  },
+  "reopening_triggers": [
+    {
+      "record_id": "twitter-x7",
+      "field": "complete-weight",
+      "when": "A current exact configuration and a stated weighing basis linked to the retained mainland price build."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "drivetrain",
+      "when": "A live exact SL-ONE SKU/BOM that maps the selected drivetrain option to a retained or newly observed mainland price."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "complete-weight",
+      "when": "An exact Felt trim mapped to the retained mainland CNY 88,998 observation, with a comparable size and weight basis."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "drivetrain",
+      "when": "An exact Felt trim mapped to the retained mainland CNY 88,998 observation."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "frame-material",
+      "when": "An exact Felt trim mapped to the retained mainland CNY 88,998 observation."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "frame-stiffness",
+      "when": "A trim-specific measured stiffness protocol, or an exact mainland trim mapping if only the manufacturer claim is needed."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "complete-weight",
+      "when": "A normally accessible exact R70 SKU with explicit weight method and mapping to the retained price option."
+    },
+    {
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "field": "price",
+      "when": "A current mainland transaction or checkout observation for the exact older 3-GC Tiagra rim-brake generation."
+    },
+    {
+      "record_id": "cosmosworks-carbon-e-road",
+      "field": "identity-source",
+      "when": "An exact listing or manufacturer record tying the retained mixed lead to either NOMAD or Oi!."
+    }
+  ],
+  "external_limits": [
+    "No item-level readable checkout price or seller authority was available for the West Biking Team edition JD listing.",
+    "The current Upland R70 manufacturer URL timed out; no retry was made.",
+    "The exact older Giant TCR Advanced 3-GC page returned no readable current price; the newer disc-generation price was not transferred."
+  ],
+  "validation": {
+    "research_check": "passed; 1461 atomic research fields with 15448 public-post and 35469 web attempts",
+    "coverage_accept": "passed; monotonic baseline accepted for 212 images and 277 catalog targets",
+    "npm_run_check": "passed via developer-storage-cache and codex-pnpm-check; privacy, data validation, research ledger, coverage, 307 tests, 584-page build, and SEO audit passed (456 indexable / 128 noindex)",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed after source, candidate, research-attempt and batch-result edits"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

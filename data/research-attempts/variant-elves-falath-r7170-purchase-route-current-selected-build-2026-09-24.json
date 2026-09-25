@@ -1,0 +1,55 @@
+{
+  "id": "variant-elves-falath-r7170-purchase-route-current-selected-build-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "elves-falath-r7170"
+  },
+  "field": "purchase-route-current-selected-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current ELVES manufacturer route pages list no mainland-China store or exact complete R7170 listing; the official EUR shop shows frames and components only, and exact Chinese marketplace searches yielded no live seller detail.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath Pro Disc 105 R7170 current exact mainland complete-bike order route",
+          "route": "Current ELVES exact-model manufacturer product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The Falath Pro Disc manufacturer page provides 2022 frameset specifications, not a complete R7170 mainland build or selected order route.",
+          "result_url": "https://www.elvesbike.com/more.php?id=93&lm=8"
+        },
+        {
+          "attempt": 2,
+          "query": "ELVES current official mainland stores and complete R7170 storefront listing",
+          "route": "Current ELVES store directory and official EUR storefront",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The official directory lists global and regional shops but no mainland-China store. The linked EUR storefront shows frame/component collections and no Falath Pro Disc complete R7170 listing or mainland checkout.",
+          "result_url": "https://www.elvesbike.com/dis.php?lm=25"
+        },
+        {
+          "attempt": 3,
+          "query": "ELVES Falath Pro Disc R7170 exact mainland marketplace seller detail",
+          "route": "Exact Chinese marketplace web search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Searches found no live exact seller detail. The retained Taobao evidence is an anonymized snapshot with no source URL."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "elves-falath-pro-product-route-recheck-2026-09-24",
+    "elves-regional-store-directory-recheck-2026-09-24",
+    "elves-official-online-store-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The exact mainland route, seller authority, selected SKU, availability and checkout remain unknown. Do not infer a current route from the generic EUR storefront or the anonymized Taobao snapshot.",
+  "searched_at": "2026-09-24"
+}

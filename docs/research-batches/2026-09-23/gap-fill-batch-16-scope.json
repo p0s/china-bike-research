@@ -1,0 +1,189 @@
+{
+  "batch_id": "gap-fill-batch-16-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps inventory: 41 published variants, 222 candidates; counts include 103 clearance, 82 complete-weight, 39 drivetrain, 26 price, 25 purchase-route and 78 stiffness gaps. Fresh research queue: 726 evidence-found, 45 deferred, 498 blocked and 60 conflicted, with 0 ready. This batch selects high-priority found-ledger fields without a 50-approach extension requirement.",
+  "selection_basis": "Ten distinct model groups selected from the prioritized evidence-found queue. All twelve frozen fields have existing found evidence and no minimum_distinct_approaches campaign. The four Luna-owned model groups are disjoint from root-owned models; root remains the sole writer.",
+  "exact_model_count": 10,
+  "atomic_field_count": 12,
+  "exact_models": [
+    "giant-propel-gen4-community-lead",
+    "hi-light-g7-2",
+    "ican-graro",
+    "incolor-ssr",
+    "irefox-profound-400",
+    "laget-discovery-slr",
+    "merida-scultura-endurance-4000",
+    "missing-china-price-canyon-grail",
+    "missing-china-price-merida-silex",
+    "pardus-super-sport-gen2"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-gen4-community-lead",
+      "exact_identity": "Giant Propel Advanced SL 1 fourth-generation mainland trim",
+      "model_group": "giant-propel-gen4-community-lead",
+      "fields": [
+        "frame"
+      ],
+      "attempt_ids": [
+        "candidate-giant-propel-gen4-community-lead-frame-2026-08-17"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g7-2",
+      "exact_identity": "Hi-Light G7.2 titanium gravel frameset",
+      "model_group": "hi-light-g7-2",
+      "fields": [
+        "frame-weight"
+      ],
+      "attempt_ids": [
+        "candidate-hi-light-g7-2-frame-weight-2026-08-27"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "exact_identity": "Hi-Light G7.2 GRX GR1600 complete-bike build",
+      "model_group": "hi-light-g7-2",
+      "fields": [
+        "complete-weight"
+      ],
+      "attempt_ids": [
+        "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "ican-graro",
+      "exact_identity": "ICAN Graro carbon gravel platform",
+      "model_group": "ican-graro",
+      "fields": [
+        "frame-weight"
+      ],
+      "attempt_ids": [
+        "platform-ican-graro-frame-weight-2026-08-27"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "incolor-ssr",
+      "exact_identity": "Incolor Speedster Radical SSR frameset",
+      "model_group": "incolor-ssr",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "platform-incolor-ssr-purchase-route-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "exact_identity": "Irefox Profound 400 exact complete-bike build",
+      "model_group": "irefox-profound-400",
+      "fields": [
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-irefox-profound-400-drivetrain-2026-08-28"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-slr",
+      "exact_identity": "Laget Discovery SLR titanium gravel frameset",
+      "model_group": "laget-discovery-slr",
+      "fields": [
+        "frame-weight"
+      ],
+      "attempt_ids": [
+        "candidate-laget-discovery-slr-frame-weight-2026-08-27"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "exact_identity": "Merida Scultura Endurance 4000 mainland price lead",
+      "model_group": "merida-scultura-endurance-4000",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-merida-scultura-endurance-4000-community-lead-price-2026-08-17"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-grail",
+      "exact_identity": "Canyon Grail CF 7 China price and route lead",
+      "model_group": "canyon-grail-cf7",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-canyon-grail-purchase-route-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-merida-silex",
+      "exact_identity": "Merida SILEX 7000 25 mainland purchase lead",
+      "model_group": "merida-silex-7000-25",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-merida-silex-purchase-route-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "pardus-super-sport-gen2",
+      "exact_identity": "PARDUS Super Sport Gen2 platform",
+      "model_group": "pardus-super-sport-gen2",
+      "fields": [
+        "bottom-bracket"
+      ],
+      "attempt_ids": [
+        "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "pardus-super-sport-gen2-egr",
+      "exact_identity": "PARDUS Super Sport Gen2 eGR complete-bike build",
+      "model_group": "pardus-super-sport-gen2",
+      "fields": [
+        "bom"
+      ],
+      "attempt_ids": [
+        "variant-pardus-super-sport-gen2-egr-bom-2026-08-17"
+      ],
+      "owner": "root"
+    }
+  ],
+  "integration_instructions": [
+    "Root integrates findings and is the only writer. Each source page must support the exact target field; keep price, size, build and seller boundaries explicit.",
+    "Luna reviewer is evidence-only for its four assigned model groups. Do not edit, recurse, access XHS, or overlap root-owned targets.",
+    "Use current primary or exact listing sources where practical. Reuse accepted evidence when the catalog already contains the sourced fact; preserve unverified methods, seller authority, shipping, stock and checkout conditions.",
+    "No images are in scope. Do not publish foreign-currency conversions as mainland checkout prices. Keep any unresolved trigger exact."
+  ],
+  "scope_correction": "Metadata erratum recorded after evidence review: the frozen exact_models list, atomic_field_count 12 and four-model Luna assignment already included this Giant Propel frame field, but its target row was omitted from the serialized targets array. This restores the omitted in-scope row without expanding scope.",
+  "done_criteria": "Assess all 12 fields; integrate exact supported facts and dated sources or record evidence-backed unresolved dispositions. Add a batch results matrix, run research:check and coverage:accept for data/ledger updates, run npm run check once for this batch, and review the diff. No image report unless image records change.",
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication or production change."
+}

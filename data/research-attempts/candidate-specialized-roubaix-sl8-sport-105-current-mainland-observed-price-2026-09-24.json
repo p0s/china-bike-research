@@ -1,0 +1,29 @@
+{
+  "id": "candidate-specialized-roubaix-sl8-sport-105-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "specialized-roubaix-sl8-sport-105"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact China product response exposes model identity only; older indexed list prices are not current observations.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized 2025 Roubaix SL8 Sport Shimano 105 exact mainland China current price",
+          "route": "Specialized China exact product page, product 4221827",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact current China route resolves to Roubaix SL8 Sport 105 but returns only a title and input placeholders, with no local price or availability. A catalog excerpt crawled over a year ago is stale and excluded.",
+          "result_url": "https://www.specialized.com.cn/cn/zh/roubaix-sl8-sport---shimano-105/p/4221827?color=5428640-4221827"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Do not use the older CNY 19,990/22,990 catalog excerpt as a current observation. The exact current China-page price remains unresolved."
+}

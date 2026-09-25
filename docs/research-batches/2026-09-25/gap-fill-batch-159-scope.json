@@ -1,0 +1,87 @@
+{
+  "batch": 159,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 74,
+      "evidence-found": 5,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "scope": {
+    "exact_record_count": 4,
+    "atomic_gap_entries": 4,
+    "query_targets": [],
+    "source_reuse_targets": [
+      {
+        "record_type": "variant",
+        "record_id": "twitter-t3-tt",
+        "name": "T3 TT WheelTop TX-TT7110 2×12",
+        "field": "purchase-route",
+        "attempt_id": "variant-twitter-t3-tt-purchase-route-b145-live-recheck-2026-09-25",
+        "accepted_source_ids": ["twitter-t3-tt-official-route-recheck-2026-09-25"],
+        "integrated_fact": "Current exact official page offers made-to-order WheelTop TX-TT7110 or SRAM Rival AXS builds, lists six sizes for the WheelTop option and US$2,349, and includes China in the country selector; mainland delivery and checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-s4-grx400",
+        "name": "Gelaro S4 GRX400",
+        "field": "purchase-route",
+        "attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-global-recheck-2026-09-25",
+        "accepted_source_ids": [
+          "sava-gelaro-s4-global-storefront-purchase-route-recheck-2026-09-25"
+        ],
+        "integrated_fact": "The exact R21-GRX400-20S global manufacturer page showed Add to Cart and a 10-in-stock label on 2026-09-25; mainland stock, delivery, warranty and CNY checkout remain unverified. The official JD storefront is separately documented."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "ican-graro-frameset",
+        "name": "Graro frameset",
+        "field": "purchase-route",
+        "attempt_id": "variant-ican-graro-frameset-purchase-route-b146-live-recheck-2026-09-25",
+        "accepted_source_ids": [
+          "ican-graro-ready-to-ship-route-2026-09-25"
+        ],
+        "integrated_fact": "The exact current manufacturer listing says Ready to ship, lists US$899 and sizes 49/52/54/56/58, offers China Warehouse and Add to Cart; selected size/color stock, mainland delivery, CNY total and final checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "lightcarbon-lcg071s-pro-frameset",
+        "name": "LCG071S-PRO frameset",
+        "field": "purchase-route",
+        "attempt_id": "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-b146-live-recheck-2026-09-25",
+        "accepted_source_ids": ["lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25"],
+        "integrated_fact": "The current exact-model manufacturer mirror identifies China as origin, lists sizes and payment methods, and offers an inquiry form; it shows no public price, live stock, mainland checkout, shipping, tax or returns terms."
+      }
+    ],
+    "held_open_without_new_search": [
+      {
+        "models": [
+          "huanyu-az-one",
+          "rockbros-pegasus-road",
+          "falco-t91-t912",
+          "gios-aerolite",
+          "leinax-youlong-2",
+          "pardus-spark"
+        ],
+        "fields": 20,
+        "reason": "Their latest B150/B151 scoped web attempts were made on 2026-09-25 and remain open. No subsequent source lead or product-state change is recorded to justify another extension; do not repeat the same model-level query or reopen a recorded URL."
+      }
+    ],
+    "research_boundary": "This batch performs local source reuse only. For each exact variant purchase-route field, add a source-reuse resolution to its latest already accepted attempt after confirming that the caveated fact and accepted source IDs are present in the matching variant. Do not create duplicate attempts. No new web or public-post search, page open, image work, price update, or unrelated catalog change is authorized by this frozen scope.",
+    "excluded": [
+      "No agent edits; root is the sole writer.",
+      "No XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout or purchase.",
+      "No images, new source records, prices, unrelated specifications, or candidate facts.",
+      "No GitHub mutation, commit, push, PR, merge, publish, or production write."
+    ]
+  }
+}

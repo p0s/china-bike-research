@@ -1,0 +1,88 @@
+{
+  "batch": 50,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 }
+  },
+  "selection": {
+    "basis": "The fresh priority-sorted report puts the two published LightCarbon SPEEDZ variants at the top with 17 displayed gap entries covering 20 atomic gap instances: six shared platform facts apply to both variants, while their selected build, image and purchase-route facts remain variant-specific. Existing evidence is dated 2026-08-08 through 2026-09-24, so this recheck is limited to current exact-model manufacturer/catalog and exact configuration evidence.",
+    "selected_exact_models": 1,
+    "selected_variants": 2,
+    "selected_atomic_gap_instances": 20,
+    "not_selected": "The price field is not in scope: these variants have dated observed-price evidence and no current price gap in the fresh inventory."
+  },
+  "targets": [
+    {
+      "record_type": "published-model-platform",
+      "record_id": "lightcarbon-speedz",
+      "exact_identity": "LightCarbon SPEEDZ road frame/platform; do not transfer geometry or construction claims from LCROX-D, LCR015-D or other model codes.",
+      "owner": "root-integrator",
+      "evidence_only_assignment": "one Luna Max agent researches this one exact model, sequentially and without repository edits; root owns all data integration.",
+      "gap_codes_and_entries": [
+        { "code": "clearance-unverified", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "geometry-missing", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "frame-material-detail-missing", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "frame-weight-missing", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "bottom-bracket-missing", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "stiffness-evidence-missing", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "complete-weight-missing", "affected_variants": ["lightcarbon-speedz-complete"], "atomic_gap_instances": 1 },
+        { "code": "bom-incomplete", "fields": ["wheels", "tires", "cockpit"], "affected_variants": ["lightcarbon-speedz-complete"], "atomic_gap_instances": 3 },
+        { "code": "image-exactness", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 },
+        { "code": "purchase-route", "affected_variants": ["lightcarbon-speedz-complete", "lightcarbon-speedz-frameset"], "atomic_gap_instances": 2 }
+      ],
+      "existing_attempts": [
+        "variant-lightcarbon-speedz-complete-complete-weight-2026-08-29",
+        "platform-lightcarbon-speedz-tire-clearance-2026-08-29",
+        "platform-lightcarbon-speedz-geometry-2026-08-29",
+        "variant-lightcarbon-speedz-complete-image-2026-08-29",
+        "platform-lightcarbon-speedz-frame-material-2026-08-29",
+        "variant-lightcarbon-speedz-complete-bom-2026-08-29",
+        "platform-lightcarbon-speedz-frame-weight-2026-08-29",
+        "variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24",
+        "variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24",
+        "variant-lightcarbon-speedz-complete-purchase-route-2026-08-29",
+        "variant-lightcarbon-speedz-frameset-image-2026-08-29",
+        "variant-lightcarbon-speedz-frameset-purchase-route-2026-08-29",
+        "platform-lightcarbon-speedz-frame-stiffness-2026-08-29"
+      ],
+      "evidence_order": [
+        "Current exact-model LightCarbon product and 2025–26 catalog routes; record access failures without implying a specification is absent.",
+        "Current exact mainland model/configuration listing for selected wheels, tires, cockpit, and complete-bike weight; keep selected listing facts distinct from manufacturer defaults.",
+        "Exact-model visual routes; add or replace an image only when exactness, credit, alt text, source and usable rights/fallback are established. Keep third-party imagery remote unless reusable rights are documented."
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "selected_exact_models": 1,
+    "selected_atomic_gap_instances": 20,
+    "one_exact_model_source_at_a_time": true,
+    "price_acceptance": "Price is excluded because current price is not a fresh inventory gap. Never let a related SPEEDZ price resolve a different package or selected build.",
+    "unknowns": "Retain unknown, conflicted, inaccessible, or rights-limited facts with a dated attempt and a specific reason; do not transfer adjacent model claims.",
+    "image_safety": "Do not download, rehost, or copy third-party files without documented reusable rights; preserve exactness, credit, alt text, source and fallback metadata.",
+    "stop_criteria": "For each selected field, stop at exact credible evidence or the first decisive access, package, model-identity, or image-rights boundary. Do not repeat the prior 50-area sweeps.",
+    "delivery": "Local B50 batch only; no push, pull request, merge, publication, or production action."
+  }
+}

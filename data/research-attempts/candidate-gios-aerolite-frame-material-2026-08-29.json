@@ -501,8 +501,19 @@
   "status": "found",
   "accepted_source_ids": [
     "gios-aero-lite-taiwan-2026-08-29",
-    "gios-aero-lite-apac-2026-08-29"
+    "gios-aero-lite-apac-2026-08-29",
+    "gios-aero-lite-taiwan-current-2026-09-23",
+    "gios-apac-aero-lite-gen5-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gios-aerolite-50-area-sweep-2026-08-29.json. Official regional sources establish carbon-monocoque construction across the plausible AERO LITE generations; exact layup remains generation-specific."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gios-aerolite-50-area-sweep-2026-08-29.json. Official regional sources establish carbon-monocoque construction across the plausible AERO LITE generations; exact layup remains generation-specific.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gios-aero-lite-taiwan-current-2026-09-23",
+      "gios-apac-aero-lite-gen5-current-2026-09-23"
+    ],
+    "note": "Current regional AERO LITE pages support carbon-monocoque construction across prior Taiwan and current APAC GEN5 generations; the retained China generation remains unknown."
+  }
 }

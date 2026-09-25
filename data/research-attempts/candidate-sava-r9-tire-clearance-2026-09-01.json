@@ -485,5 +485,6 @@
     "sava-blade-r9-canada-clearance-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. The current exact regional manufacturer page publishes a 32 mm maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. The current exact regional manufacturer page publishes a 32 mm maximum.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["sava-blade-r9-canada-clearance-2026-09-01"],"note":"The exact regional manufacturer page states a 32 mm maximum, matching the candidate field. This is an official regional specification; it does not establish mainland build-option mapping."}
 }

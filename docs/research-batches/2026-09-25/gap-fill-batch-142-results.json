@@ -1,0 +1,191 @@
+{
+  "batch": 142,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-142-scope.json",
+  "initial_sandbox_report": "docs/research-batches/2026-09-25/gap-fill-batch-142-image-health.json",
+  "approved_host_retry_report": "docs/research-batches/2026-09-25/gap-fill-batch-142-image-health-approved-host-retry.json",
+  "result": {
+    "image_records_checked": 11,
+    "remote_resources_checked": 11,
+    "healthy": 9,
+    "http_200_image_content_type": 9,
+    "wrong_content_type": 2,
+    "wrong_content_type_details": [
+      {
+        "id": "evolve-cima-gr-primary-image",
+        "status": 202,
+        "content_type": "text/html"
+      },
+      {
+        "id": "tfsa-jh37-primary-image",
+        "status": 202,
+        "content_type": "text/html"
+      }
+    ],
+    "catalog_image_health_gap_entries_before": 11,
+    "catalog_image_health_gap_entries_after": 2,
+    "catalog_gap_entries_before": 680,
+    "catalog_gap_entries_after": 671,
+    "catalog_records": 263,
+    "catalog_gap_entries_reduced": 9,
+    "image_records_updated": 11,
+    "new_images_added": 0,
+    "website_image_records": 212,
+    "image_urls_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "research_attempts_after": 1618,
+    "research_fields_after": 1503,
+    "research_queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 3
+    },
+    "external_delivery": "none"
+  },
+  "image_results": [
+    {
+      "image_id": "elves-mori-aerox-primary-image",
+      "record_ids": [
+        "elves-mori-aerox-frameset"
+      ],
+      "file": "data/images/elves-mori-aerox.json",
+      "target_id": "elves-mori-aerox-primary-image",
+      "url": "https://uk.elvesbike.com/u_file/2606/18/products/20260618163157227467.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "evolve-cima-gr-primary-image",
+      "record_ids": [
+        "evolve-cima-gr-frameset"
+      ],
+      "file": "data/images/evolve-cima-gr.json",
+      "target_id": "evolve-cima-gr-primary-image",
+      "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+      "classification": "wrong-content-type",
+      "status": 202,
+      "content_type": "text/html"
+    },
+    {
+      "image_id": "incolor-speedster-sr-primary-image",
+      "record_ids": [
+        "incolor-speedster-sr-frameset"
+      ],
+      "file": "data/images/incolor-speedster-sr-primary-image.json",
+      "target_id": "incolor-speedster-sr-primary-image",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260709/cbef1a0f63fd2e4268b64c9b3e2b2e6c.jpg",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "incolor-speedster-sr-plus-primary-image",
+      "record_ids": [
+        "incolor-speedster-sr-plus-frameset"
+      ],
+      "file": "data/images/incolor-speedster-sr-plus-primary-image.json",
+      "target_id": "incolor-speedster-sr-plus-primary-image",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260709/44a68269648859f3a3544fc0ee809351.jpg",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "incolor-ssr-official-primary-image",
+      "record_ids": [
+        "incolor-ssr-frameset"
+      ],
+      "file": "data/images/incolor-ssr-official-primary-image.json",
+      "target_id": "incolor-ssr-official-primary-image",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260710/86b4f73ce68254ed6cbc6c40582b048e.jpg",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "incolor-voyager-official-primary-image",
+      "record_ids": [
+        "incolor-voyager-frameset"
+      ],
+      "file": "data/images/incolor-voyager-official-primary-image.json",
+      "target_id": "incolor-voyager-official-primary-image",
+      "url": "https://www.incolor.vip/uploads/upload/images/20260702/dafcb254db4b4a9e7a96b09f88ab6852.jpg",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "quick-gr-one-primary-image",
+      "record_ids": [
+        "quick-gr-one-frameset"
+      ],
+      "file": "data/images/quick-gr-one.json",
+      "target_id": "quick-gr-one-primary-image",
+      "url": "https://www.quickprousa.com/cdn/shop/files/GRONE_AbyssGray.png?v=1781733761&width=1946",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "image_id": "spcycle-g028-primary-image",
+      "record_ids": [
+        "spcycle-g028-frameset"
+      ],
+      "file": "data/images/spcycle-g028.json",
+      "target_id": "spcycle-g028-primary-image",
+      "url": "https://usaimages.oss-us-west-1.aliyuncs.com/6230/product/detail/20260515/1778837727142_0.jpg",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "tfsa-jh37-primary-image",
+      "record_ids": [
+        "tfsa-jh37-frameset"
+      ],
+      "file": "data/images/tfsa-jh37.json",
+      "target_id": "tfsa-jh37-primary-image",
+      "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+      "classification": "wrong-content-type",
+      "status": 202,
+      "content_type": "text/html"
+    },
+    {
+      "image_id": "winspace-g3-primary-image",
+      "record_ids": [
+        "winspace-g3-frameset"
+      ],
+      "file": "data/images/winspace-g3.json",
+      "target_id": "winspace-g3-primary-image",
+      "url": "https://www.winspace.cc/cdn/shop/files/1_048e29a6-a464-4273-ab46-1816bb4e947e.jpg?v=1753683304&width=1080",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    },
+    {
+      "image_id": "winspace-g5-primary-image",
+      "record_ids": [
+        "winspace-g5-frameset"
+      ],
+      "file": "data/images/winspace-g5.json",
+      "target_id": "winspace-g5-primary-image",
+      "url": "https://www.winspace.cc/cdn/shop/files/G5FrameNauticalBlue.webp?v=1782181071&width=1080",
+      "classification": "healthy",
+      "status": 200,
+      "content_type": "image/jpeg"
+    }
+  ],
+  "validation": {
+    "initial_report": "The network-restricted run classified all 11 resources unreachable; exact same frozen set was retried once via approved host path.",
+    "approved_host_retry": "9/11 resources returned HTTP 200 with image content-type. Two returned HTTP 202 text/html; these are recorded as wrong-content-type and remain unresolved. No retry beyond the single approved same-set retry.",
+    "image_data_update": "Only dated health_check metadata was updated on the 11 exact existing image records. URLs, rights, credit, alt text, fallback, visibility and bytes were unchanged.",
+    "data_validation": "passed: npm run --silent validate (41 brands, 38 platforms, 41 variants, 76 prices, 1418 sources, 212 image records, 236 candidates, 1618 research attempts).",
+    "full_gate": "passed: developer-storage-cache + codex-pnpm-check check; privacy, data/research/coverage validation, 328/328 tests, 584-page build, SEO 458 indexable / 126 noindex.",
+    "git_diff_check": "passed: 11 image JSON records, both image-health reports, B142 scope/results JSON and the 25-line checkpoint parsed without trailing whitespace; tracked diff check was clean."
+  },
+  "external_delivery": "none"
+}

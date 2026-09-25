@@ -503,8 +503,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-et-official-2026-08-29"
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. Exact official and current indexed-marketplace records support high-modulus carbon frame and fork construction with aero shaping and internal routing."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. Exact official and current indexed-marketplace records support high-modulus carbon frame and fork construction with aero shaping and internal routing.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-2026-08-29",
+      "twitter-cyclone-et-official-live-recheck-2026-09-25"
+    ],
+    "note": "The exact current ET manufacturer page identifies a high-modulus carbon frame and full-carbon fork. Fiber grade, lay-up and molding process are not stated."
+  }
 }

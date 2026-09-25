@@ -79,8 +79,21 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "incolor-ssr-price-pdf-lead-2026-08-17",
-    "incolor-ssr-panda-podium-2026-08-17"
+    "incolor-ssr-panda-podium-2026-08-17",
+    "incolor-ssr-product-current-2026-09-23",
+    "incolor-ssr-current-price-page-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: conflicted. Unknowns and blocks are not negative evidence."
+  "notes": "The current exact INCOLOR SSR page is accessible and links to the official Tmall store, but shows no RMB amount or selected purchase package. The old PDF search lead remains unverified, and Panda Podium shows no price; no current exact price is assigned.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "incolor-ssr-price-pdf-lead-2026-08-17",
+      "incolor-ssr-panda-podium-2026-08-17",
+      "incolor-ssr-product-current-2026-09-23",
+      "incolor-ssr-current-price-page-recheck-2026-09-25"
+    ],
+    "note": "The current exact INCOLOR SSR page is accessible and links to the official Tmall store, but shows no RMB amount or selected purchase package. The old PDF search lead remains unverified, and Panda Podium shows no price; no current exact price is assigned."
+  }
 }

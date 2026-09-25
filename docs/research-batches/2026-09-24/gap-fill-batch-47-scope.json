@@ -1,0 +1,146 @@
+{
+  "batch": 47,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 38,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 68,
+      "temporarily-exhausted": 11
+    },
+    "research_queue_counts": {
+      "as_of": "2026-09-23",
+      "ready": 0,
+      "evidence-found": 253,
+      "deferred": 42,
+      "blocked": 519,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "Choose the next six highest-ranked exact mainland observed-price candidate gaps after excluding B43, B45 and B46 price targets and Quick Pro UR:ONE, whose exact price route was rechecked on 2026-09-24 in B39. The selected target priorities are 90, 71, 62, 54, 51 and 49.",
+    "selected_atomic_fields": 6,
+    "selected_exact_targets": 6
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "exact_identity": "Giant TCR Advanced 3-GC mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 90,
+      "existing_attempt_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "giant-china-tcr-advanced-3-gc-official-2026-08-17",
+        "giant-china-tcr-advanced-3-gc-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r6-105-al",
+      "exact_identity": "Hi-Light 航轮 R6 105 AL mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 71,
+      "existing_attempt_id": "candidate-hi-light-r6-105-al-price-2026-08-29",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "titanium-hi-light-r6-105-al-official",
+        "hi-light-r6-frameset-official-2026-08-29",
+        "hi-light-r6-japan-distributor-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "exact_identity": "Quick Pro GR:ONE GRX Di2 1×12 mainland complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 62,
+      "existing_attempt_id": "candidate-quick-pro-gr-one-grx-di2-price-2026-09-01",
+      "existing_attempt_status": "blocked",
+      "existing_source_ids": [
+        "quick-pro-gr-one-grx-di2-official-2026-08-17",
+        "quick-pro-gr-one-complete-official-2026-08-17",
+        "quick-pro-gr-one-grx-di2-quickproca-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "argon18-krypton-pro",
+      "exact_identity": "Argon 18 Krypton Pro exact frameset candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 54,
+      "existing_attempt_id": "candidate-argon18-krypton-pro-price-2026-09-01",
+      "existing_attempt_status": "blocked",
+      "existing_source_ids": [
+        "argon18-krypton-pro-official-2026-08-29",
+        "argon18-krypton-assembly-guide-2026-08-29",
+        "usd-cny-central-parity-2026-07-31"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new UDH frameset candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 51,
+      "existing_attempt_id": "candidate-seraph-tt-x68-new-udh-price-2026-09-22",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "seraph-tt-x68-new-udh-source-2026-09-05",
+        "seraph-tt-x68-new-storefront-2026-09-22",
+        "seraph-tt-x68-new-storefront-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "exact_identity": "IREFOX Profound 400 exact complete-bike candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "priority_score": 49,
+      "existing_attempt_id": "candidate-irefox-profound-400-price-2026-09-01",
+      "existing_attempt_status": "blocked",
+      "existing_source_ids": [
+        "irefox-profound-400-official-2026-08-28",
+        "irefox-profound-400-official-current-2026-09-23",
+        "irefox-profound-400-biketo-review-current-2026-09-23"
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "price_acceptance": "Add a candidate observed_price only for an exact current mainland CNY listing or checkout amount. Keep historical, official reference, foreign-currency, and converted prices separate; preserve seller, option, stock, shipping, and checkout caveats.",
+    "recording": "Add current dated source provenance and one narrow mainland-observed-price attempt per target. The prior 50-area price sweeps are not repeated; this batch checks exact current product/storefront routes only.",
+    "stop_criteria": "Process the six exact targets sequentially. Stop each at exact current price evidence or one concrete access/identity/option limit; do not enter login, challenge handling, or bypass routes."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "variant-pardus-super-sport-gen2-egr-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "pardus-super-sport-gen2-egr"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "Only indexed snippets surfaced, not a page proving seller identity, selected eGR SKU, current availability or checkout. The exact Taobao page previously failed its one-time recheck and was not retried.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Super Sport Gen2 eGR 4999元 2026在售 官方旗舰店",
+          "route": "One distinct B146 exact-model web search; no new page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Baidu snippets are retained as leads only. The official dealer locator and current Taobao route were not opened; the exact mainland order route remains unconfirmed."
+        }
+      ]
+    }
+  },
+  "notes": "Baidu snippets are retained as leads only. The official dealer locator and current Taobao route were not opened; the exact mainland order route remains unconfirmed.",
+  "campaign_extension": {
+    "id": "b146-pardus-super-sport-gen2-egr-purchase-route",
+    "extends_attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -489,5 +489,6 @@
     "spect-dealers-speedingeasy-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. The sources establish SPECT / 空力公式 Mira and the CNY 6,999 frameset package; no mainland legal entity is inferred."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. The sources establish SPECT / 空力公式 Mira and the CNY 6,999 frameset package; no mainland legal entity is inferred.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["spect-mira-wildto-2026-08-30","spect-mira-speedingeasy-2026-08-30","spect-dealers-speedingeasy-2026-08-30"],"note":"Exact launch and regional distributor sources identify SPECT / 空力公式 Mira; the dealer directory establishes regional dealers only. The anonymous Taobao snapshot is excluded from model-identity support, and no mainland legal entity is inferred."}
 }

@@ -484,8 +484,21 @@
   "status": "found",
   "accepted_source_ids": [
     "felt-ia-2-frd-current-2026-08-30",
-    "felt-ia-2-pro-current-2026-08-30"
+    "felt-ia-2-pro-current-2026-08-30",
+    "felt-ia-2-frd-current-2026-09-23",
+    "felt-ia-2-pro-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. FRD and PRO exact pages supply a qualitative 12K stiffness-to-weight claim; it is not generalized to UD Carbon Standard trims."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. FRD and PRO exact pages supply a qualitative 12K stiffness-to-weight claim; it is not generalized to UD Carbon Standard trims.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "felt-ia-2-frd-current-2026-08-30",
+      "felt-ia-2-pro-current-2026-08-30",
+      "felt-ia-2-frd-current-2026-09-23",
+      "felt-ia-2-pro-current-2026-09-23"
+    ],
+    "note": "Current FRD and PRO pages make a qualitative unmatched stiffness-to-weight claim for their 12K construction, but publish no numeric test or protocol. This claim is not extended to EXPERT/RACE UD-carbon trims or to the retained price card whose trim is unknown."
+  }
 }

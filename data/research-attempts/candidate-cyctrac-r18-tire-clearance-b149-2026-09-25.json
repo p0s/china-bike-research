@@ -1,0 +1,55 @@
+{
+  "id": "candidate-cyctrac-r18-tire-clearance-b149-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cyctrac-r18"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-cyctrac-r18-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER R18 Racing ED R7170 maximum tire clearance 28C",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://twitterbikeusa.com/products/r18-racing-ed-cyctrac-carbon-road-bike",
+          "note": "Opened the exact-URL-audited Twitter Bikes USA regional page. It identifies R18 and fitted Maxxis 700×28C, but its default WheelTop GEX build differs from the retained mainland R7170 build. No maximum is stated; the page’s 7.8 kg default-build figure is excluded."
+        }
+      ],
+      "blocker": "The official R18 source lists fitted 700×28C, not a maximum; the opened USA page is a WheelTop GEX regional build, not the retained R7170 build."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "twitter-r18-official-current-2026-09-23"
+  ],
+  "retry_after": null,
+  "notes": "B167 local source audit: no linked source supports the retained exact tire-clearance field. No qualifying exact-model evidence was found for this field in B149; preserve the value as unknown pending a future distinct source or state change.",
+  "retry_of": "candidate-cyctrac-r18-tire-clearance-2026-08-29",
+  "retry_reason": "A distinct dated exact-model query on 2026-09-25 followed the earlier extended campaign and checked for new direct evidence without reopening recorded URLs.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-149-cyctrac-r18-tire-clearance",
+    "extends_attempt_id": "candidate-cyctrac-r18-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+    "reason": "The B149 frozen scope authorizes one distinct dated exact-model web query to test for new weight or maximum-clearance evidence after the earlier 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

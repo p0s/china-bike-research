@@ -1,0 +1,34 @@
+{
+  "id": "candidate-hi-light-r6-105-al-current-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-r6-105-al"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No new current exact-model mainland transaction-price evidence; retain the dated official retail reference separately.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light 航轮 R6 105 AL 2026 latest exact mainland CNY price 8300 current listing",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The exact official China product page is already recorded; its 2026-09-24 recheck was unreadable and was not retried. The existing ¥8,300 figure is dated official retail observed 2026-08-29, not a current observed sale price. The query produced no new bicycle-price result."
+        }
+      ]
+    }
+  },
+  "notes": "The exact official China product page is already recorded; its 2026-09-24 recheck was unreadable and was not retried. The existing ¥8,300 figure is dated official retail observed 2026-08-29, not a current observed sale price. The query produced no new bicycle-price result."
+}

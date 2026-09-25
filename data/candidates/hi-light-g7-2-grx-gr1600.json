@@ -53,9 +53,10 @@
         "price_basis": "Manufacturer RX810 / GR1600 complete-bike specification"
       },
       "source_ids": [
-        "titanium-hi-light-g7-2-grx-gr1600-official"
+        "titanium-hi-light-g7-2-grx-gr1600-official",
+        "hi-light-g7-2-grx-gr1600-official-recheck-2026-09-23"
       ],
-      "notes": "Manufacturer publishes a complete BOM but leaves the complete-bike weight field blank."
+      "notes": "Manufacturer publishes a complete BOM but leaves the complete-bike weight field blank. This is a dated manufacturer specification (last direct page access was 2026-08-27); the official page returned 403 on 2026-09-23, so current availability is unconfirmed."
     },
     {
       "id": "taobao-config-4-grx600",
@@ -145,12 +146,16 @@
   ],
   "status": "selected-marketplace-build-documented",
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/176.html",
-  "source_note": "Official page lists the G7.2 GRX GR1600 complete bike at CNY 17,500; the selected Taobao option is stored separately.",
+  "source_note": "Official page lists the G7.2 GRX GR1600 complete bike at CNY 17,500; the selected Taobao option is stored separately.\n\nBatch 35 recheck: the manufacturer exact GRX/GR1600 and frame pages returned 403 on 2026-09-23; search-index snippets were older. Preserve the last dated official GRX 2×11 build separately from the selected Taobao 1×11 option. Titanium grade remains unpublished and no current listing/clearance value was confirmed.\n\nBatch 65 (2026-09-25): the saved official CNY 17,500 RX810 2×11/DT Swiss GR1600 claim and CNY 14,999 Taobao option 7 (GRX810 1×11/custom carbon wheels/35C) are different builds. Official page returned 403; Taobao was unopenable. Current price and availability remain unverified.",
   "manufacturing": "titanium complete bike",
   "source_ids": [
     "titanium-hi-light-g7-2-grx-gr1600-official",
     "hi-light-g7-2-frameset-official-2026-08-27",
-    "hi-light-g7-2-taobao-selected-options-2026-08-27"
+    "hi-light-g7-2-taobao-selected-options-2026-08-27",
+    "hi-light-g7-2-grx-gr1600-official-recheck-2026-09-23",
+    "hi-light-g7-2-frameset-official-recheck-2026-09-23",
+    "hi-light-g7-2-official-price-access-recheck-2026-09-25",
+    "hi-light-g7-2-taobao-price-access-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-25"
 }

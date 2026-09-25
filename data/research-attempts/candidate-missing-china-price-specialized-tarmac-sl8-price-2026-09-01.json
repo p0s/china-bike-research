@@ -482,5 +482,11 @@
     "specialized-china-tarmac-sl8-comp-price-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-tarmac-sl8-batch-038-50-area-sweep-2026-09-01.json. The current exact China product and catalog publish CNY 30,990; stock and final checkout remain untested."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-tarmac-sl8-batch-038-50-area-sweep-2026-09-01.json. The current exact China product and catalog publish CNY 30,990; stock and final checkout remain untested.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["specialized-china-tarmac-sl8-comp-price-2026-08-17"],
+    "note": "Disposition: official mainland listing-price evidence reused. The exact Tarmac SL8 Comp 105 Di2 product is listed at CNY 30,990; the source was accessed 2026-09-01. Current stock and final checkout remain untested."
+  }
 }

@@ -490,6 +490,12 @@
     "java-vittoria-eurobike-2026-08-29",
     "java-vittoria-jd-2026-08-29"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["taobao-snapshot-2026-08-08", "java-road-catalog-2026-08-29", "java-vittoria-eurobike-2026-08-29", "java-vittoria-jd-2026-08-29"],
+    "note": "Disposition: the recorded seller-card-to-VITTORIA ER7 identity bridge is reused for this duplicate observation. Catalog evidence distinguishes ER7 aluminum and carbon variants; event and JD sources are family/range level. Keep this merged with the existing ER7 observation; the exact groupset and selected option remain unknown. Reopen if the retained card identity is contradicted."
+  },
   "retry_after": null,
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-aluminum-24s-50-area-sweep-2026-08-29.json. Retained pixels, official catalog and current exhibitor evidence establish VITTORIA ER7 2026 and the aluminum-frame family; the observation is merged into the existing ER7 record."
 }

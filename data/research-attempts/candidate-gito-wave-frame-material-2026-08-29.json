@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
+    "gito-chinese-retail-2026-08-29",
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-wave-50-area-sweep-2026-08-29.json. The retained seller title explicitly identifies a GITO carbon-fiber road bike; exact model and carbon grade remain unresolved."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-wave-50-area-sweep-2026-08-29.json. The retained seller title explicitly identifies a GITO carbon-fiber road bike; exact model and carbon grade remain unresolved.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "gito-chinese-retail-2026-08-29"
+    ],
+    "note": "The retained anonymized seller snapshot calls the listing carbon, but the exact GITO frame model and grade remain unresolved. A fresh exact-name search on 2026-09-23 found generic GITO carbon listings without a reliable identity link to this wave-wheel listing; do not transfer G320/G530 material claims."
+  }
 }

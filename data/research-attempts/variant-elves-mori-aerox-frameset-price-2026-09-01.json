@@ -481,8 +481,19 @@
   "status": "found",
   "accepted_source_ids": [
     "elves-mori-aerox-global-store-2026-09-01",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "elves-mori-aerox-global-store-current-2026-09-23",
+    "ecb-reference-rates-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-elves-mori-aerox-frameset-batch-046-50-area-sweep-2026-09-01.json. Current direct US$998 sale price and CNY reference conversion found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-elves-mori-aerox-frameset-batch-046-50-area-sweep-2026-09-01.json. Current direct US$998 sale price and CNY reference conversion found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "elves-mori-aerox-global-store-current-2026-09-23",
+      "ecb-reference-rates-2026-09-22"
+    ],
+    "note": "The current official regional store lists US$998 sale versus US$1,100 regular. At the 22 September ECB cross-rate this is approximately CNY 6,687 for comparison only; it is not a mainland checkout price and excludes unverified delivery, taxes, paint and optional cockpit costs."
+  }
 }

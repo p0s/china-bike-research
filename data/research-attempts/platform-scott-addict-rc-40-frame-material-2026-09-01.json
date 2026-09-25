@@ -484,5 +484,14 @@
     "scott-addict-rc-40-bikeradar-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-scott-addict-rc-40-batch-041-50-area-sweep-2026-09-01.json. The exact regional product page and exact-model review identify HMX carbon for both frame and fork."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-scott-addict-rc-40-batch-041-50-area-sweep-2026-09-01.json. The exact regional product page and exact-model review identify HMX carbon for both frame and fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-rc-40-poland-2026-08-17",
+      "scott-addict-rc-40-bikeradar-review-2026-09-01"
+    ],
+    "note": "Both exact-model sources identify the HMX frame and fork, matching the platform record. Do not transfer the material claim to another Addict generation."
+  }
 }

@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-starship-105-official-2026-08-17"
+    "sava-starship-105-official-2026-08-17",
+    "sava-starship-r13-current-build-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-starship-r13-batch-043-50-area-sweep-2026-09-01.json. Current exact manufacturer page publishes approximately 8.5 kg."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-starship-r13-batch-043-50-area-sweep-2026-09-01.json. The exact R13 105 manufacturer page publishes approximately 8.5 kg; size and weighing basis are unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-starship-105-official-2026-08-17",
+      "sava-starship-r13-current-build-2026-09-22"
+    ],
+    "note": "Retain the approximate 8.5 kg manufacturer claim only for this exact R13 105 candidate, with size, pedals, accessories, and weighing protocol unpublished. The later regional page describes a mixed-control configuration and does not map that BOM or weight to the mainland cards; do not transfer the claim to those cards."
+  }
 }

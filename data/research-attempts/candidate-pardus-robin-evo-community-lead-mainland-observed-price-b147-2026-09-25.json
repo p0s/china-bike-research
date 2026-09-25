@@ -1,0 +1,34 @@
+{
+  "id": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-robin-evo-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current mainland CNY listing matches the retained Robin EVO XS Dura-Ace R9270 custom build.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Robin EVO Dura-Ace R9270 XS 6.2kg custom complete bike CNY mainland listing",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search results were old, non-mainland or distinct factory-generation listings. The current official 2024-generation page is already recorded; an older official route timed out previously and was not retried. Standard Ultegra evidence does not price or map the XS R9270 competition build."
+        }
+      ]
+    }
+  },
+  "notes": "Search results were old, non-mainland or distinct factory-generation listings. The current official 2024-generation page is already recorded; an older official route timed out previously and was not retried. Standard Ultegra evidence does not price or map the XS R9270 competition build."
+}

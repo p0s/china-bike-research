@@ -1,0 +1,48 @@
+{
+  "id": "variant-sava-gelaro-s4-grx400-purchase-route-global-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s4-grx400"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-24",
+  "retry_reason": "A newly surfaced exact-build SAVA global storefront route can be checked for current public orderability; it does not establish mainland fulfillment.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S4 GRX400 exact-build public purchase route availability current manufacturer storefront",
+          "route": "Newly surfaced SAVA global storefront product page, Portuguese locale",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://savadeck-bike.com/pt/products/sava-gelaro-s4-grx400-carbon-gravel-bike",
+          "note": "Exact R21-GRX400-20S product page displays Add to Cart and '10 em estoque' (10 in stock). This supports a public global manufacturer route at page access, but not mainland delivery, local warranty, landed cost, or CNY checkout; the stock snapshot may be stale. No cart or checkout action was taken."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-gelaro-s4-global-storefront-purchase-route-recheck-2026-09-25"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": ["sava-gelaro-s4-global-storefront-purchase-route-recheck-2026-09-25"],
+    "note": "The exact R21-GRX400-20S global manufacturer page showed Add to Cart and a 10-in-stock label when accessed on 2026-09-25; its stock crawl is dated and mainland delivery, warranty and CNY checkout remain unverified."
+  },
+  "notes": "Found a current public exact-build global manufacturer route. Mainland delivery, warranty, final cost, and exact local availability remain unknown; do not treat the global stock label as proof of mainland availability."
+}
