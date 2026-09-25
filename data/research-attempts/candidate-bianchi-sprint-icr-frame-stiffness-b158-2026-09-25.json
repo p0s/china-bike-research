@@ -1,0 +1,52 @@
+{
+  "id": "candidate-bianchi-sprint-icr-frame-stiffness-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "bianchi-sprint-icr"
+  },
+  "field": "frame-stiffness",
+  "retry_of": "candidate-bianchi-sprint-icr-frame-stiffness-2026-09-01",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-bianchi-sprint-icr-frame-stiffness-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Sprint ICR 105 Di2 YTBR6 frame stiffness independent measurement test",
+          "route": "One frozen B158 exact-build web query; recorded YTBR6 pages were not reopened.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No current independent stiffness test for the exact YTBR6 105 Di2 build surfaced. The existing official YTBR6 page identifies the build but does not measure stiffness; other results were recorded routes, unrelated models, or nonspecific owner posts. No page was opened."
+        }
+      ],
+      "blocker": "No qualifying independent frame-stiffness evidence for the exact YTBR6 build surfaced."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No qualifying independent frame-stiffness evidence for the exact YTBR6 build surfaced.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-158-bianchi-sprint-icr-frame-stiffness",
+    "extends_attempt_id": "candidate-bianchi-sprint-icr-frame-stiffness-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+    "reason": "The frozen B158 scope authorizes one dated exact-record web query after review of the completed 50-area campaign, latest attempt, and linked sources.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "searched_at": "2026-09-25",
+  "priority": "high"
+}

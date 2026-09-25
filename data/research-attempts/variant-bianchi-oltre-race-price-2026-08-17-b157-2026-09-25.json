@@ -1,0 +1,41 @@
+{
+  "id": "variant-bianchi-oltre-race-price-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-bianchi-oltre-race-price-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-bianchi-oltre-race-price-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race exact model geometry tire clearance current price warranty frame stiffness official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "No current exact-model mainland CNY price or checkout was established. The retained August marketplace observation is dated, while foreign-currency offers and current listings with different model codes do not establish a current mainland price."
+        }
+      ],
+      "blocker": "No current exact-model mainland CNY price or checkout was established. The retained August marketplace observation is dated, while foreign-currency offers and current listings with different model codes do not establish a current mainland price."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No current exact-model mainland CNY price or checkout was established. The retained August marketplace observation is dated, while foreign-currency offers and current listings with different model codes do not establish a current mainland price."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "candidate-pardus-robin-evo-community-lead-warranty-support-2026-09-23",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-robin-evo-community-lead"
+  },
+  "field": "warranty-support",
+  "priority": "high",
+  "searched_at": "2026-09-23",
+  "retry_of": "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17",
+  "retry_reason": "A newly reviewed PARDUS China support page establishes the current general contact and dealer route after the prior retry date; it still does not state terms for the community build's unresolved generation.",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "attempts": [],
+      "from_attempt_id": "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17"
+    },
+    "web": {
+      "status": "carried-forward",
+      "attempts": [],
+      "from_attempt_id": "candidate-pardus-robin-evo-community-lead-warranty-support-2026-08-17"
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": ["pardus-china-support-2026-09-22"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["pardus-china-support-2026-09-22"],
+    "note": "The PARDUS China contact page establishes a general support route and dealer locator for this brand. It does not establish Robin EVO warranty duration, exclusions, eligibility, or coverage of the competition build's unresolved generation."
+  },
+  "retry_after": null,
+  "notes": "Only the general support route is resolved; exact-generation warranty coverage remains unknown. The previous public-post searches are carried forward without rerunning the XHS lane."
+}

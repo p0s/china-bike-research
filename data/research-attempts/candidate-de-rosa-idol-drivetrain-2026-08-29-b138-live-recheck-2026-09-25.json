@@ -1,0 +1,52 @@
+{
+  "id": "candidate-de-rosa-idol-drivetrain-2026-08-29-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-idol"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-de-rosa-idol-drivetrain-2026-08-29",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-de-rosa-idol-drivetrain",
+    "extends_attempt_id": "candidate-de-rosa-idol-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One exact-model search checked drivetrain; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-de-rosa-idol-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The official page identifies build GIRO-2026-IDOL, reports 870 g frame-only weight, and lists Shimano Ultegra Di2. It gives no complete-bike weight; its drivetrain does not map to the retained candidate price card. The English/Italian routes are the same previously attempted product page, so no new source/value qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "De Rosa Idol 2026 bici completa peso Shimano 105 Di2 taglia concessionario",
+          "route": "Official Italian Idol GIRO 2026 page; localized route of an already-attempted English page.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The official page identifies build GIRO-2026-IDOL, reports 870 g frame-only weight, and lists Shimano Ultegra Di2. It gives no complete-bike weight; its drivetrain does not map to the retained candidate price card. The English/Italian routes are the same previously attempted product page, so no new source/value qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The official page identifies build GIRO-2026-IDOL, reports 870 g frame-only weight, and lists Shimano Ultegra Di2. It gives no complete-bike weight; its drivetrain does not map to the retained candidate price card. The English/Italian routes are the same previously attempted product page, so no new source/value qualifies."
+}

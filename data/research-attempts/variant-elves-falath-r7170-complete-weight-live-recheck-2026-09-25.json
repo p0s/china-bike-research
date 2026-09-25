@@ -1,0 +1,51 @@
+{
+  "id": "variant-elves-falath-r7170-complete-weight-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "elves-falath-r7170"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-elves-falath-r7170-complete-weight-2026-08-17",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; A custom owner build mass and frameset weights do not establish the exact complete bike.",
+  "campaign_extension": {
+    "id": "b137-elves-falath-r7170-complete-weight",
+    "extends_attempt_id": "variant-elves-falath-r7170-complete-weight-2026-08-17",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-137-scope.json",
+    "reason": "One exact-field web attempt was authorized after the frozen predecessor sweep; no repeated route or additional source area was authorized.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-elves-falath-r7170-complete-weight-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No qualifying exact R7170 complete-bike mass or basis surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath Pro Disc R7170 exact build complete-bike weight size 105 R7170",
+          "route": "One focused public web search for the exact Falath R7170 complete build",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search results included a roughly 7.5 kg Carousell owner build with different parts and wheels and previously recorded ELVES regional listings. None establishes the retained Falath R7170 build or its complete-bike weighing basis; no result page was opened."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "A custom owner build mass and frameset weights do not establish the exact complete bike."
+}

@@ -1,0 +1,103 @@
+{
+  "batch": 130,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-130-scope.json",
+  "result": {
+    "exact_target_models": 8,
+    "atomic_fields": 10,
+    "disposition": "All ten frozen conflicts were rechecked and dispositioned without guessing. The current Canyon China offer of CNY 13,700 is recorded separately from the preserved historical price conflict; the other nine facts remain unresolved because the available sources differ by model code, identity, build, market, policy wording or measurement basis.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_queue_before": 51,
+    "conflicted_queue_after": 41,
+    "conflicts_reconfirmed": 10,
+    "research_fields_left_open": 10,
+    "catalog_records_updated": 8,
+    "source_records_added": 13,
+    "current_candidate_price_observations_added": 1,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence_found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 41
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1367 sources, 212 primary images, 236 candidates, 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "pass: codex-pnpm-check check; privacy, validate, research check, coverage check, 328/328 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  },
+  "field_results": [
+    {
+      "field": "variant:bianchi-oltre-race:bom",
+      "disposition": "conflict reconfirmed; target BOM remains unresolved",
+      "source_ids": ["bianchi-oltre-race-armenia-2026-08-17", "bianchi-oltre-race-dealer-2026-08-17", "bianchi-oltre-race-hungary-recheck-2026-09-23"],
+      "caveat": "Armenia lists Velomann V30R wheels; the Hungary page lists Fulcrum Racing 818 but identifies the 2026 YTB8DF model code, not the retained YTB8D. Do not transfer the regional BOM."
+    },
+    {
+      "field": "variant:bianchi-oltre-race:complete-weight",
+      "disposition": "conflict reconfirmed; no exact universal target weight assigned",
+      "source_ids": ["bianchi-oltre-race-speed-cycles-weight-2026-08-30", "bianchi-oltre-race-allegro-weight-2026-08-30", "bianchi-oltre-race-speed-cycles-weight-current-recheck-2026-09-25", "bianchi-oltre-race-allegro-weight-current-recheck-2026-09-25"],
+      "caveat": "Speed Cycles lists 8.70 kg for size 53. The live Allegro listing now identifies a 2026 YTB8DI57ZK size-57 bike and lists 8.4 kg. Seller weighing and accessory bases are unstated; the live Allegro model code does not match the retained YTB8D."
+    },
+    {
+      "field": "candidate:hongfu-gravel:frame-material",
+      "disposition": "conflict reconfirmed; generic candidate material remains unknown",
+      "source_ids": ["hongfu-fm188-internal-current-recheck-2026-09-25", "hongfu-fm188-new-cx-current-recheck-2026-09-25", "hongfu-fm279-current-recheck-2026-09-25"],
+      "caveat": "The manufacturer distinguishes FM188 Internal (T800/T1000), New CX FM188 (Toray T800 UD) and FM279 (Toray T800 UD); the candidate is not mapped to one generation."
+    },
+    {
+      "field": "candidate:hongfu-gravel:identity-source",
+      "disposition": "conflict reconfirmed; exact identity not selected",
+      "source_ids": ["hongfu-gravel-category-current-recheck-2026-09-25", "hongfu-fm188-internal-current-recheck-2026-09-25", "hongfu-fm188-new-cx-current-recheck-2026-09-25", "hongfu-fm279-current-recheck-2026-09-25"],
+      "caveat": "The current manufacturer gravel category lists multiple plausible products, including two distinct FM188 pages and FM279, without identifying the candidate's frame."
+    },
+    {
+      "field": "platform:incolor-ssr:price",
+      "disposition": "conflict reconfirmed; no current RMB price found",
+      "source_ids": ["incolor-ssr-price-pdf-lead-2026-08-17", "incolor-ssr-panda-podium-2026-08-17", "incolor-ssr-product-current-2026-09-23", "incolor-ssr-current-price-page-recheck-2026-09-25"],
+      "caveat": "The live official SSR page links to the official Tmall store but displays no price or selected package. The older PDF lead was not verified in the underlying document."
+    },
+    {
+      "field": "candidate:missing-china-price-canyon-grail:price",
+      "disposition": "conflict reconfirmed; current offer CNY 13,700 recorded, prior promo conflict retained",
+      "source_ids": ["canyon-grail-cf7-china-2026-08-17", "canyon-grail-cf7-promotional-crawl-2026-08-17", "canyon-grail-cf7-china-current-2026-09-23", "canyon-grail-cf7-china-price-recheck-2026-09-25"],
+      "caveat": "The current exact China page shows CNY 13,700 from CNY 14,700; the previous CNY 11,700 crawl was not reproduced and remains historical. The page is member-only, requires size selection, and excludes VAT/customs from its CNY 749 delivery/packaging estimate."
+    },
+    {
+      "field": "candidate:missing-china-price-specialized-crux:warranty-support",
+      "disposition": "conflict reconfirmed; exact retained-bike eligibility unresolved",
+      "source_ids": ["round3-specialized-china-warranty-8f335b54cd", "round3-specialized-china-terms-78ff9e5eba", "round3-specialized-china-faq-63941cf802", "specialized-china-warranty-current-recheck-2026-09-25", "specialized-china-terms-current-recheck-2026-09-25"],
+      "caveat": "The current regional warranty page describes lifetime coverage for registered frames/forks for the first owner or two years if unregistered, with 90-day registration; current China sale terms say up to one year. The PDF was unreadable and the retained Crux purchase/registration history is unknown."
+    },
+    {
+      "field": "candidate:pardus-spark-rs-community-lead:price",
+      "disposition": "conflict reconfirmed; custom build price remains unknown",
+      "source_ids": ["round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8", "pardus-spark-rs-tmall-price-2026-08-30", "public-pardus-spark-rs-build-2026-08-17", "pardus-spark-rs-current-official-store-index-2026-09-24", "pardus-spark-rs-official-store-index-reopen-2026-09-25"],
+      "caveat": "The indexed CNY 11,499 low belongs to standard Spark RS listing options including 105 Di2, on a crawl about one week old. It does not identify a selected option or price the retained custom mechanical-105 build."
+    },
+    {
+      "field": "platform:seka-exaero-gr:frame-stiffness",
+      "disposition": "conflict reconfirmed; separate axes and evidence bases retained",
+      "source_ids": ["seka-exaero-gr-official-2026-08-27", "seka-exaero-gr-cyclingweekly-review-2026-08-17", "seka-exaero-gr-official-recheck-2026-09-24", "seka-exaero-gr-stiffness-current-recheck-2026-09-25"],
+      "caveat": "SEKA publishes 106 N/mm rear vertical compliance and up to 16 mm post movement while claiming lateral stiffness is preserved. Cycling Weekly reports lateral flex affecting shifting above about 360 W in one large-frame test. Neither supplies a universal score or threshold."
+    },
+    {
+      "field": "candidate:tavelo-arden:price",
+      "disposition": "conflict reconfirmed; mainland CNY price remains unresolved",
+      "source_ids": ["tavelo-arden-china-launch-2026-08-17", "tavelo-arden-official-2026-08-17", "tavelo-arden-race-official-recheck-2026-09-23", "tavelo-arden-race-price-current-recheck-2026-09-25"],
+      "caveat": "The exact Arden Race global frameset page lists USD 1,899; a secondary card shows USD 1,799 against USD 1,899. The dated China report gives CNY 9,999 Race and CNY 12,999 SL framesets without cockpit. Current mainland stock, selected checkout, and exact generic-candidate trim remain unverified."
+    }
+  ]
+}

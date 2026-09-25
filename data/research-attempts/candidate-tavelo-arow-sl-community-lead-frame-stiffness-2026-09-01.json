@@ -483,5 +483,6 @@
     "tavelo-arow-sl-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tavelo-arow-sl-community-lead-batch-033-50-area-sweep-2026-09-01.json. The current exact frameset page claims enhanced headtube and downtube stiffness; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tavelo-arow-sl-community-lead-batch-033-50-area-sweep-2026-09-01.json. The current exact frameset page claims enhanced headtube and downtube stiffness; qualitative manufacturer evidence only.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["tavelo-arow-sl-official-2026-08-17"],"note":"The exact Arow SL frameset source supports only the qualitative claim of enhanced headtube/downtube stiffness. It is not a numeric protocol or a measurement of the custom complete build."}
 }

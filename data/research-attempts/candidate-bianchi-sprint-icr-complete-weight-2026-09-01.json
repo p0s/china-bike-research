@@ -6,7 +6,7 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-09-01",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -483,8 +483,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "bianchi-sprint-icr-probike-weight-2026-09-01",
-    "bianchi-sprint-icr-allegro-weight-2026-09-01"
+    "bianchi-sprint-icr-allegro-weight-2026-09-01",
+    "bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25",
+    "bianchi-sprint-icr-allegro-current-weight-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/bianchi-sprint-icr-batch-031-50-area-sweep-2026-09-01.json. Current exact dealer claims conflict at 8.5 and 9.0 kg and do not share a complete weighing basis, so no universal weight is assigned."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/bianchi-sprint-icr-batch-031-50-area-sweep-2026-09-01.json. Current exact dealer claims conflict at 8.5 and 9.0 kg and do not share a complete weighing basis, so no universal weight is assigned.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25",
+      "bianchi-sprint-icr-allegro-current-weight-recheck-2026-09-25"
+    ],
+    "note": "Probike states 9 kg for exact YTBR6i57SK without a size-specific weighing or pedal basis. Allegro states 8.5 kg for its size-53 listing without pedal or measurement basis. The dealer claims are not aligned; no universal value is selected."
+  }
 }

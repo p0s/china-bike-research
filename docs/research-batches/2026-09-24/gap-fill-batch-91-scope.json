@@ -1,0 +1,33 @@
+{
+  "batch": 91,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 705,
+  "evidence_found_before": 192,
+  "scope": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-r8-r8170",
+      "exact_model": "SAVA / 萨瓦 Aurora 驭风 R8 R08-R8170-24S",
+      "attempt_id": "candidate-sava-r8-r8170-frame-stiffness-2026-08-30",
+      "atomic_gap": "stiffness-evidence-missing",
+      "gap_label": "No meaningful frame stiffness evidence",
+      "existing_exact_source_id": "sava-aurora-r8-r8170-current-2026-08-30",
+      "current_source_url": "https://savadeck-bike.com/products/aurora-r8-ultegra-di2-carbon-road-bike",
+      "allowed_work": "Open the exact-model manufacturer page once; record whether it currently supports the existing qualitative stiffness/power-transfer wording, and whether it publishes any numeric test or protocol. If the current page is silent, retain only the dated prior exact-model claim with its date and caveat. Populate structured stiffness_evidence without asserting a numeric result; resolve the found attempt only if supported evidence is explicitly represented.",
+      "stop_conditions": [
+        "Do not retry an inaccessible page in this batch.",
+        "Do not infer a numeric stiffness value or test protocol.",
+        "Do not change candidate identity, publication status, price, image, or domestic warranty route.",
+        "Do not exceed this one exact model and one atomic gap."
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Exact current-page result is source-attributed and dated.",
+    "Candidate stiffness_evidence distinguishes qualitative manufacturer language from measured data and records absence of a numeric protocol.",
+    "Attempt is resolved only when evidence is represented; the data:gaps inventory confirms the target gap is removed if the evidence meets its contract.",
+    "Run focused validation and the full npm run check once for this data-changing batch; do not change images."
+  ]
+}

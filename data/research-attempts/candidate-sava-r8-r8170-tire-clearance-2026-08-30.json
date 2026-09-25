@@ -485,5 +485,11 @@
     "sava-r08-tire-compatibility-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact-frame manufacturer maximum is 25C; newer R22/R23 maxima are not transferred."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact-frame manufacturer maximum is 25C; newer R22/R23 maxima are not transferred.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-r08-tire-compatibility-2026-08-30"],
+    "note": "The manufacturer guide supports a conservative nominal 25C maximum for the R08 frame used by the R8170 candidate. This is a compatibility label, not a measured casing width or physical frame/fork gap; newer R22/R23 limits are not transferable."
+  }
 }

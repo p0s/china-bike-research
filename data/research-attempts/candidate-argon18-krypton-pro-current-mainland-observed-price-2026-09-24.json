@@ -1,0 +1,32 @@
+{
+  "id": "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "argon18-krypton-pro"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current manufacturer page exposes a global USD frameset price, and its FAQ directs buyers to authorized dealers for full price lists; no current mainland CNY frameset listing or checkout was identified.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Argon 18 Krypton Pro exact frameset current China price and mainland authorized seller",
+          "route": "Argon 18 current frameset product page and support pricing route",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The official exact-model frameset page lists US$3,375; Argon 18 says full price lists are available through authorized retailers. This recheck found no exact mainland CNY listing or checkout; Taiwan complete-bike prices and global USD prices were excluded.",
+          "result_url": "https://www.argon18.com/en/bikes/all-road/krypton-pro"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "argon18-krypton-pro-current-global-price-recheck-2026-09-24",
+    "argon18-authorized-dealer-pricing-policy-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the dated CNY 22,914 global reference conversion separate from the unverified mainland seller/checkout price."
+}

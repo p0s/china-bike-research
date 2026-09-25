@@ -1,0 +1,68 @@
+{
+  "batch": 74,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 365,
+      "conflicted": 34,
+      "found": 45,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The exact 2026 Specialized Crux Comp GRX candidate has a live mainland manufacturer route but the 2026-09-23 recheck showed no price or checkout. One current exact seller-item search may establish a dated mainland price without transferring foreign-market prices.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "missing-china-price-specialized-crux",
+    "gap_code": "price-missing",
+    "prior_attempt_id": "candidate-missing-china-price-specialized-crux-price-2026-08-17",
+    "campaign_extension": {
+      "allowed_channels": [
+        "web"
+      ],
+      "max_new_attempts": 1
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-crux",
+    "model": "2026 Specialized Crux Comp Shimano GRX, product reference 223483",
+    "field": "price",
+    "market": "mainland China",
+    "expected_basis": "A current publicly readable mainland seller item with the exact 2026 GRX complete-bike trim, visible CNY amount, and dated listing or current order context. The exact mainland manufacturer route and foreign prices remain separate evidence."
+  },
+  "research_route": {
+    "source_class": "mainland-marketplace-product-page",
+    "action": "Use one focused public web search for the exact 2026 Specialized Crux Comp Shimano GRX / product 223483 on JD or Tmall. Open at most one exact public item and verify the model/trim, CNY amount, stock or order route, and visible price conditions.",
+    "stop_rule": "One additional public web attempt only as a formal extension of the prior 50-area campaign. Stop after one exact item page or if none appears. Do not log in, enter account-only checkout, contact sellers, or transfer a foreign price, frameset price, other Crux trim, or other model year."
+  },
+  "done_criteria": [
+    "If one current exact mainland item confirms the 2026 Crux Comp GRX trim and CNY amount, add a dated price observation with the supported price type and conditions; preserve all prior regional evidence.",
+    "If no public exact item confirms a current CNY amount, keep the price record absent and add one blocked/no-result attempt with a retrigger condition.",
+    "Run focused validation and `npm run check` once for this coherent batch. No image report unless image records change.",
+    "Local B74 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

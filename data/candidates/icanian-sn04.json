@@ -17,7 +17,12 @@
     "ican-sn04-official-2026-08-08",
     "ican-sn04-current-collection-2026-09-01",
     "ican-sn04-technical-article-2026-09-01",
-    "ican-sn04-corporate-product-2026-09-01"
+    "ican-sn04-corporate-product-2026-09-01",
+    "ican-sn04-current-product-page-2026-09-23",
+    "ican-sn04-current-collection-2026-09-23",
+    "ican-sn04-technical-article-current-2026-09-23",
+    "ican-sn04-storefront-weight-material-recheck-2026-09-25",
+    "ican-sn04-corporate-weight-material-recheck-2026-09-25"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -28,13 +33,14 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6876.png#L1",
-  "last_reviewed": "2026-09-01",
-  "source_note": "Current exact ICAN evidence supports 26x4.8 tire fit with a 26x4.0 limit for size 16 and qualitative front-end stiffness. Current manufacturer pages conflict on both frame weight and carbon lay-up, so those values remain unresolved.",
+  "last_reviewed": "2026-09-25",
+  "source_note": "Current exact product and collection pages support the listed size-specific tire options. The comparison value 122 mm is the rounded nominal-width equivalent of the 26×4.8 option listed for sizes 18/20; it is not a measured casing dimension and does not apply to size 16, which is limited to 26×4.0. Other wheel/tire pairings remain separate. Current manufacturer pages still conflict on frame weight (2,560 g storefront versus 2,507 g introduction and 2,057 ± 40 g corporate table) and carbon lay-up (T700 versus T700/T800). No weight or lay-up is selected.",
   "facts": {
-    "tire_clearance": "26×4.8 maximum for sizes 18/20; 26×4.0 maximum for size 16; exact product also lists 29×2.25-3.0 and 27.5×3.0-3.25 options",
-    "tire_clearance_basis": "Current exact manufacturer product and collection pages; nominal tire sizes",
-    "frame_weight_status": "Current manufacturer conflict: 2,560 g versus 2,507 g and 2,057 +/- 40 g",
-    "frame_material_status": "Current manufacturer conflict: Toray T700 versus T700/T800",
-    "stiffness_evidence": "Exact-model manufacturer pages claim improved stiffness and tapered-headtube front-end stiffness; qualitative evidence without a numeric protocol"
+    "tire_clearance": "26×4.8 maximum for sizes 18/20 (≈122 mm nominal); 26×4.0 maximum for size 16 (≈102 mm nominal); exact product also lists 29×2.25-3.0 and 27.5×3.0-3.25 options",
+    "tire_clearance_mm": 122,
+    "tire_clearance_basis": "Largest manufacturer-listed nominal width is 26×4.8 for sizes 18/20, converted from 4.8 in to 121.92 mm and rounded to 122; size 16 is limited to 26×4.0 (101.6 mm nominal), with separate 29×2.25–3.0 and 27.5×3.0–3.25 options. Actual tire casing width varies with tire and rim; this is a nominal size comparison, not a measured frame gap or a universal fit for every size.",
+    "frame_weight_status": "Manufacturer conflict: storefront 2,560 g; corporate-page introduction 2,507 g; same corporate page table 2,057 ± 40 g",
+    "frame_material_status": "Manufacturer conflict: Toray T700 versus T700/T800 across the current storefront and corporate product page",
+    "stiffness_evidence": "Exact-model manufacturer pages claim high-modulus construction and improved tapered-head/front-end stiffness, but publish no numeric value or reproducible protocol."
   }
 }

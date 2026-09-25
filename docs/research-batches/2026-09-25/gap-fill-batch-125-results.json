@@ -1,0 +1,102 @@
+{
+  "batch": 125,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-125-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:voicevelo-g-major",
+      "candidate:west-biking-team-road",
+      "candidate:xlab-ad8",
+      "candidate:xlab-ad9",
+      "platform:xmcarbonspeed-cs-gr01",
+      "variant:yoeleo-altera-g21-frameset"
+    ],
+    "disposition": "All ten frozen fields received a dated source-reuse or documented-open disposition. Eight fields now have supported facts or references integrated. Current X-LAB AD8 mainland price and Yoeleo in-stock purchase route remain open: the former official page recheck returned no readable text, and the checked Yoeleo color was sold out. A new global Yoeleo reference observation records USD 1,420 converted at the 2026-09-23 ECB rate to CNY 9,524; it is not a mainland checkout amount or current available offer. The catalog gap count therefore rises by one when the latest observation is correctly treated as non-available.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 708,
+    "evidence_found_before": 49,
+    "evidence_found_after": 39,
+    "research_attempts_resolved": 10,
+    "research_fields_left_open": 2,
+    "source_records_added": 4,
+    "catalog_records_updated": 3,
+    "price_observations_added": 1,
+    "mainland_price_added": 0,
+    "test_files_updated": 1,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:voicevelo-g-major:frame-weight",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["voicevelo-g-major-panda-podium-2026-08-17"],
+      "caveat": "Retailer claim is 790 g ±3% for size 51 in VG1 paint, excluding accessories; it is not a complete-bike weight or independent weighing."
+    },
+    {
+      "field": "candidate:west-biking-team-road:frame-material",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["west-biking-team-road-current-options-2026-08-30", "west-biking-team-road-jd-current-2026-09-23"],
+      "caveat": "Marketplace indexing supports the qualified T800 team-edition frame-family claim only. Fork material, lay-up, price-card trim mapping and seller authority remain unknown."
+    },
+    {
+      "field": "candidate:west-biking-team-road:identity-source",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["west-biking-team-road-jd-current-2026-09-23"],
+      "caveat": "The current index identifies item 10235955457194 and an XS R7120 option; it does not verify the seller or retained ¥23,800 card mapping."
+    },
+    {
+      "field": "candidate:xlab-ad8:frame-stiffness",
+      "disposition": "resolved-qualitative",
+      "source_ids": ["xlab-ad8-bicycling-review-2026-09-01"],
+      "caveat": "Exact-model review supports qualitative stiffness, power-transfer and response impressions; no instrumented frame-deflection measurement is reported."
+    },
+    {
+      "field": "candidate:xlab-ad8:price",
+      "disposition": "documented-open",
+      "source_ids": ["xlab-ad8-official-cn-price-2026-08-27", "xlab-ad8-official-cn-price-unreadable-recheck-2026-09-25"],
+      "caveat": "Keep ¥26,980 as a dated reference for the exact R7170 Di2 / Branta C50 TEAM build based on the 2026-09-01 readable access. The 2026-09-25 recheck returned no readable text and did not confirm current price, stock or checkout."
+    },
+    {
+      "field": "candidate:xlab-ad9:frame-stiffness",
+      "disposition": "resolved-qualitative",
+      "source_ids": ["xlab-ad9-cyclingnews-review-2026-09-01"],
+      "caveat": "Riding evidence describes an approximately 1,200 W sprint context without obvious power-transfer loss; this is not a measured stiffness result or deflection protocol."
+    },
+    {
+      "field": "platform:xmcarbonspeed-cs-gr01:frame-material",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["xmcarbonspeed-cs-gr01-official-2026-09-01"],
+      "caveat": "Exact manufacturer page supports T800 carbon construction; resin, lay-up and fork construction remain unpublished."
+    },
+    {
+      "field": "platform:xmcarbonspeed-cs-gr01:geometry",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["xmcarbonspeed-cs-gr01-bikeinsights-geometry-2026-09-01"],
+      "caveat": "Secondary geometry database provides the six-size 2024 table attributed to manufacturer data; ambiguous bottom-bracket-drop cells were excluded."
+    },
+    {
+      "field": "variant:yoeleo-altera-g21-frameset:price",
+      "disposition": "resolved-as-global-reference",
+      "source_ids": ["yoeleo-altera-g21-collection-current-2026-09-25", "yoeleo-altera-g21-artisan-black-current-2026-09-25", "ecb-reference-rates-2026-09-23"],
+      "caveat": "Four named stock colors list at USD 1,420; reference conversion is CNY 9,524 at 6.7073876084 CNY/USD dated 2026-09-23. The checked Artisan Black page was sold out; shipping, tax and mainland checkout are unknown."
+    },
+    {
+      "field": "variant:yoeleo-altera-g21-frameset:purchase-route",
+      "disposition": "documented-open",
+      "source_ids": ["yoeleo-altera-g21-collection-current-2026-09-25", "yoeleo-altera-g21-artisan-black-current-2026-09-25"],
+      "caveat": "The official product route exists, but the checked Artisan Black page showed sold-out/notify-me. Other-color availability, selected-size checkout and mainland delivery remain unverified."
+    }
+  ],
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 74 prices, 1332 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_test": "pass: public dataset expected-coverage test after updating the price-observation count from 73 to 74",
+    "full_gate": "pass: npm run --silent check; 326/326 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "sandbox_note": "The first sandbox gate run exposed the stale price-count assertion and seven localhost-bind EPERM errors. After correcting the expected data count, the focused test passed and the full gate passed on the approved host path.",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

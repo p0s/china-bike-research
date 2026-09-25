@@ -8,16 +8,18 @@
   "why_interesting": "Fully 3D-printed titanium gravel frameset with 50 mm clearance, a documented 1.45 kg size-S frame and UDH.",
   "facts": {
     "frame_weight_g": 1450,
-    "frame_weight_basis": "Official size-S frame weight; included carbon fork and hardware are not stated to be part of the 1.45 kg figure",
+    "frame_weight_basis": "Current official page lists 1.45 kg for size S but does not state whether fork or hardware are included or provide a weighing protocol.",
     "frame": "Fully 3D-printed titanium frame with carbon fork and UDH",
-    "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published",
+    "frame_material": "3D-printed titanium frame; exact titanium alloy grade is not published The current 2026-09-23 product page does not restate the alloy; retain the material claim as the earlier dated official observation.",
     "frame_construction": "Fully 3D-printed gravel frame with sandblasted finish and anodized logo",
     "bottom_bracket": "T47 × 85.5 mm",
     "tire_clearance_mm": 50,
     "tire_clearance_basis": "Manufacturer maximum 700×50C",
     "derailleur_hanger": "UDH",
     "sizes": "S, M and L",
-    "stiffness_evidence": "No exact-model instrumented stiffness result or sufficiently specific independent ride assessment was found after the 50-area sweep; 3D-printing and strength language was not converted into a stiffness claim."
+    "stiffness_evidence": "No exact-model instrumented stiffness result or sufficiently specific independent ride assessment was found after the 50-area sweep; 3D-printing and strength language was not converted into a stiffness claim.",
+    "official_retail_price_cny": 25900,
+    "official_retail_price_basis": "Listed official retail price observed 2026-09-23; not a checkout quote."
   },
   "official_price": {
     "amount_cny": 25900,
@@ -40,12 +42,13 @@
   ],
   "status": "official-mainland-frameset-documented",
   "source_url": "https://lagetbike.com/productinfo/2337830.html",
-  "source_note": "Official page lists the fully 3D-printed titanium frameset at CNY 25,900.",
+  "source_note": "The 2026-08-27 official observation described a fully 3D-printed titanium frame; the exact alloy grade was not stated. On 2026-09-23 the official page again listed a 1.45 kg size-S frame, CNY 25,900 official retail and 700×50C maximum, but did not restate the frame alloy. The weight basis and included components remain unspecified; price is a published retail figure, not checkout.",
   "manufacturing": "3D-printed titanium gravel frame",
   "source_ids": [
     "titanium-laget-discovery-one-flagship-official",
     "laget-brand-story-2026-08-27",
-    "laget-discovery-one-flagship-taobao-2026-08-27"
+    "laget-discovery-one-flagship-taobao-2026-08-27",
+    "laget-discovery-one-flagship-official-recheck-2026-09-23"
   ],
   "last_reviewed": "2026-09-01"
 }

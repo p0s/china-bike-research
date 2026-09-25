@@ -1,0 +1,27 @@
+{
+  "batch": 113,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 117,
+    "selected_queue_targets": [
+      "candidate:trinx-gtr-c6:drivetrain",
+      "candidate:trinx-gtr-c6:frame-material",
+      "candidate:trinx-gtr-c6:identity-source"
+    ],
+    "selected_queue_priority_each": 100
+  },
+  "scope": {
+    "exact_target_records": ["candidate:trinx-gtr-c6"],
+    "atomic_gaps": ["drivetrain", "frame-material", "identity-source"],
+    "evidence_to_reconcile": "The candidate already contains a China-market 1x12 drivetrain, carbon frame/fork with unpublished grade and process, and an exact GTR C6 China-market model mapping. Its listed sources include a dated JD option page, the TRINX catalog, a dated deal listing, and a company-attributed design entry.",
+    "research_boundary": "Review one source at a time, only from the existing record set. Add source-reuse resolutions for claims already integrated with caveats; do not imply an exact production BOM, carbon grade, lay-up, current checkout, or warranty. If any claim lacks exact support, leave that field unresolved.",
+    "excluded": [
+      "No new web or public-post requests.",
+      "No price, complete-weight, tire-maximum, stiffness, or image changes.",
+      "No other model or candidate changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

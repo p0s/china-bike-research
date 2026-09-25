@@ -11,12 +11,14 @@
   ],
   "status": "official-global-frameset",
   "research_priority": "high",
-  "price_status": "Current visible official global US$1,900 checkout converted to CNY; embedded US$1,780 copy and mainland checkout terms remain caveated",
+  "price_status": "Current visible official global US$1,900 checkout converted to CNY as a reference; embedded US$1,780 copy remains a discrepancy and mainland checkout terms remain caveated",
   "required_before_dashboard": "Mainland-China purchase route, dated checkout price, landed cost, and domestic warranty handling",
   "source_ids": [
     "winspace-t1550-official-2026-08-17",
     "usd-cny-central-parity-2026-07-31",
-    "winspace-t1550-gen2-owner-review-2026-09-01"
+    "winspace-t1550-gen2-owner-review-2026-09-01",
+    "winspace-t1550-gen2-current-recheck-2026-09-23",
+    "winspace-road-frame-clearance-faq-recheck-2026-09-23"
   ],
   "official_price": {
     "amount_cny": 12900,
@@ -29,7 +31,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://www.winspace.cc/products/t15502ndgen",
-  "source_note": "The current storefront visibly lists US$1,900 while embedded specification copy still says US$1,780. The visible selected-product amount is converted for reference; mainland checkout and final option terms remain unverified.",
+  "source_note": "Current exact page recheck retains the global US$1,900/US$1,780 discrepancy, 828 ±35 g unpainted size-M claim and qualitative stiffness language; mainland checkout remains unresolved.",
   "facts": {
     "frame": "Toray T1000+T800 one-piece carbon",
     "frame_weight_g": 828,
@@ -37,10 +39,11 @@
     "tire_clearance_mm": 32,
     "sizes": "440, 470, 490, 520 and 550 mm",
     "frame_weight_basis": "Current exact manufacturer claim: 828 ±35 g for an unpainted size-M frame",
-    "stiffness_evidence": "An exact-model owner comparison using the same wheels, parts and tires reports increased vertical, lateral, bottom-bracket and rear-end stiffness versus the prior T1550, with no perceived sprint flex. Qualitative comparison only, not an instrumented protocol."
+    "stiffness_evidence": "An exact-model owner comparison using the same wheels, parts and tires reports increased vertical, lateral, bottom-bracket and rear-end stiffness versus the prior T1550, with no perceived sprint flex. Qualitative comparison only, not an instrumented protocol.",
+    "price_status": "Current exact page shows US$1,900 storefront and US$1,780 embedded specification copy; no mainland CNY checkout."
   },
   "support_note": "Official page states a limited three-year frameset warranty and includes frame, fork, seatpost, headset, cable stoppers and direct-mount hanger.",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-23",
   "reference_price_kind": "observed",
   "observed_price": {
     "amount_cny": 12900,

@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "ican-gra04-official-current-2026-09-01"
+    "ican-gra04-official-current-2026-09-01",
+    "ican-gra04-hosted-review-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-ican-gra04-frameset-batch-046-50-area-sweep-2026-09-01.json. Manufacturer-hosted exact-model owner stiffness report found, with provenance caveat."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-ican-gra04-frameset-batch-046-50-area-sweep-2026-09-01.json. Manufacturer-hosted exact-model owner stiffness report found, with provenance caveat.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "ican-gra04-hosted-review-current-2026-09-23"
+    ],
+    "note": "The exact GRA04 page hosts a rider's subjective report of strong pedal response and lateral stiffness during a gravel-race sprint. This is manufacturer-hosted testimony, not an independent or instrumented measurement; no numeric stiffness value is supported."
+  }
 }

@@ -11,8 +11,10 @@
     "material": "carbon",
     "fork_material": "unknown",
     "bottom_bracket": "unknown",
+    "bottom_bracket_status": "The official 2025–26 catalog V2 fetch timed out on 2026-09-24; exact-model search found no SPEEDZ-specific bottom-bracket label or dimensions.",
     "derailleur_hanger": "unknown",
-    "cable_routing": "unknown"
+    "cable_routing": "unknown",
+    "geometry_status": "No current official SPEEDZ geometry chart found in the 2025–26 catalog recheck; the catalog fetch timed out and indexed charts were for other model codes (LCROX-D and LCR015-D). No geometry was transferred; a separate SPEEDZ chart may still exist."
   },
   "category_details": {
     "discipline": "road",
@@ -24,7 +26,8 @@
   "internal_storage": false,
   "china_availability": "mainland-marketplace-observed",
   "source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "lightcarbon-speedz-catalog-recheck-2026-09-24"
   ],
-  "last_reviewed": "2026-08-08"
+  "last_reviewed": "2026-09-24"
 }

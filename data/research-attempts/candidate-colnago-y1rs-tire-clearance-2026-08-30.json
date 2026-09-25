@@ -488,5 +488,11 @@
     "colnago-y1rs-current-specs-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. Current exact-model manufacturer specifications publish a nominal maximum tire size of 32 mm."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/colnago-y1rs-50-area-sweep-2026-08-30.json. Current exact-model manufacturer specifications publish a nominal maximum tire size of 32 mm.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["colnago-y1rs-current-specs-2026-08-30"],
+    "note": "The exact Y1Rs current manufacturer technical specification's nominal 32 mm maximum is already recorded on the candidate."
+  }
 }

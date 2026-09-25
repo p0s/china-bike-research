@@ -482,5 +482,6 @@
     "xlab-ad8-bicycling-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-xlab-ad8-batch-045-50-area-sweep-2026-09-01.json. An exact-model independent review describes a stiff chassis, strong power transfer and immediate response; qualitative evidence only."
+  "notes": "B125 source reuse: the exact AD8 Bicycling review describes a stiff chassis, strong power transfer and immediate response under hard efforts. Preserve this as qualitative ride evidence, not an instrumented deflection measurement.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["xlab-ad8-bicycling-review-2026-09-01"], "note": "The exact-model review supports qualitative stiffness evidence only; it provides no instrumented frame-deflection measurement."}
 }

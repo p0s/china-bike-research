@@ -1,0 +1,109 @@
+{
+  "batch": 52,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 }
+  },
+  "selection": {
+    "basis": "Select eight stale, non-50-approach gaps among six exact model families and seven variant records. The newest scoped gap attempts are dated 2026-09-22; none is a retry-after-future item. This excludes the active 50-area campaigns, same-day 2026-09-24 retries, and the unresolved SEKA ExAero versus ExAero RDC family lead.",
+    "exact_models": 6,
+    "target_records": 7,
+    "atomic_gap_instances": 8,
+    "evidence_only_writer": "one Luna Max agent; sequential model/source research; no repository writes",
+    "root_writer": "integrate only evidence that meets the exact target contract"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "seraph-tt-x68-new-udh",
+      "model": "Seraph / TanTan TT-X68-new UDH",
+      "gaps": ["frame-weight-missing"],
+      "attempts": [{"id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-22", "status": "conflicted", "searched_at": "2026-09-22"}],
+      "guardrails": "Keep frame-only weights separate from complete-build weights; do not transfer measurements from the previous-generation non-UDH frame."
+    },
+    {
+      "record_type": "published-variant",
+      "id": "twitter-v3-rs-sensah",
+      "model": "TWITTER Gravel V3",
+      "build": "RS / Sensah 2x12",
+      "gaps": ["frame-weight-missing"],
+      "attempts": [{"id": "variant-twitter-v3-rs-sensah-frame-weight-2026-09-22", "status": "conflicted", "searched_at": "2026-09-22"}],
+      "guardrails": "Keep model-year, frame generation, size and bare-frame-versus-build bases explicit; do not borrow a nearby V3 generation."
+    },
+    {
+      "record_type": "published-variant",
+      "id": "twitter-v3-wheeltop-eds",
+      "model": "TWITTER Gravel V3",
+      "build": "WheelTop EDS 2x12",
+      "gaps": ["clearance-unverified"],
+      "attempts": [{"id": "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-22", "status": "conflicted", "searched_at": "2026-09-22"}],
+      "guardrails": "Seek the manufacturer's maximum for the exact frame generation and 1x/2x configuration; distinguish fit reports from maximum clearance."
+    },
+    {
+      "record_type": "candidate",
+      "id": "airwolf-yf-r003",
+      "model": "Airwolf YF-R003",
+      "gaps": ["price-missing", "stiffness-evidence-missing"],
+      "attempts": [
+        {"id": "candidate-airwolf-yf-r003-price-2026-09-22", "status": "blocked", "searched_at": "2026-09-22"},
+        {"id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22", "status": "blocked", "searched_at": "2026-09-22"}
+      ],
+      "guardrails": "A foreign or quote-only amount is not a current mainland price. Use stiffness evidence only from a controlled or sufficiently specific exact-frame assessment; marketing adjectives do not qualify."
+    },
+    {
+      "record_type": "candidate",
+      "id": "mondince-fm316",
+      "model": "Mondince FM316",
+      "gaps": ["price-not-observed"],
+      "attempts": [{"id": "candidate-mondince-fm316-price-2026-09-22", "status": "found", "searched_at": "2026-09-22"}],
+      "guardrails": "Only a dated, exact-option mainland CNY listing or checkout observation counts as observed price; preserve seller and package uncertainty."
+    },
+    {
+      "record_type": "candidate",
+      "id": "velobuild-cx-002-2023",
+      "model": "VeloBuild CX-002 2023 internal-routing",
+      "gaps": ["price-not-observed"],
+      "attempts": [{"id": "candidate-velobuild-cx-002-2023-price-2026-09-22", "status": "found", "searched_at": "2026-09-22"}],
+      "guardrails": "A foreign direct-sale amount or other CX-002 generation is not a mainland 2023 observed price. Keep frame and build package explicit."
+    },
+    {
+      "record_type": "candidate",
+      "id": "evolve-cima-road",
+      "model": "Evolve CIMA road",
+      "gaps": ["price-not-observed"],
+      "attempts": [{"id": "candidate-evolve-cima-road-price-2026-09-22", "status": "found", "searched_at": "2026-09-22"}],
+      "guardrails": "Preserve exact CIMA trim and mainland package; a regional or official list price is not a mainland observed checkout."
+    }
+  ],
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "stop_at_decisive_evidence": true,
+    "no_private_contact_or_quote_submission": true,
+    "no_repeat_50_area_campaigns": true,
+    "no_research_before_scope_freeze": true
+  },
+  "delivery": "Local B52 batch only; no push, pull request, merge, publication, or production action."
+}

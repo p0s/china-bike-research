@@ -1,0 +1,43 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-bottom-bracket-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "retry_of": "variant-lightcarbon-speedz-complete-bottom-bracket-2026-08-17",
+  "retry_reason": "The current official 2025-26 catalog was checked again and exact-model search was repeated for the unresolved SPEEDZ specification.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-lightcarbon-speedz-complete-bottom-bracket-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The official catalog request timed out, so the exact SPEEDZ specification could not be checked.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ complete bottom bracket current official catalog",
+          "route": "manufacturer 2025–26 catalog V2",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The catalog fetch timed out. Exact-model search did not locate a SPEEDZ page or chart; no SPEEDZ bottom-bracket label or shell dimensions could be verified.",
+          "result_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20Frame%2BComponent%20Catalog%20-V2.pdf"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "lightcarbon-speedz-catalog-recheck-2026-09-24"
+  ],
+  "notes": "No exact SPEEDZ bottom-bracket label or shell dimensions were verified. Keep both complete-build and frameset fields unknown until an accessible exact specification is available.",
+  "searched_at": "2026-09-24"
+}

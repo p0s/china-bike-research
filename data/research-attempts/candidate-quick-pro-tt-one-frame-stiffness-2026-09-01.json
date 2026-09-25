@@ -483,5 +483,11 @@
     "quick-pro-tt-one-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-041-50-area-sweep-2026-09-01.json. Current exact storefront says the high-modulus frame balances stiffness and low weight for power transfer; this is qualitative manufacturer evidence without a public numeric protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-tt-one-batch-041-50-area-sweep-2026-09-01.json. Current exact storefront says the high-modulus frame balances stiffness and low weight for power transfer; this is qualitative manufacturer evidence without a public numeric protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-pro-tt-one-official-2026-08-17"],
+    "note": "Disposition: qualitative manufacturer statement reused for the exact TT:ONE frame's stiffness and low-weight balance for power transfer. No numeric result or public measurement protocol is provided."
+  }
 }

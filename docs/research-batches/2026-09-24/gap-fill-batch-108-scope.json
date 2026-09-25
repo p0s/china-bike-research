@@ -1,0 +1,23 @@
+{
+  "batch": 108,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 121,
+    "selected_queue_target": "variant:sava-a7l-r7100:complete-weight",
+    "selected_queue_priority": 100
+  },
+  "scope": {
+    "exact_target_records": ["variant:sava-a7l-r7100"],
+    "atomic_gap": "complete-bike weight and basis for the exact A7L R7100 mixed 2x12 build",
+    "known_mismatch": "The retained A7L R7100 variant currently contains an approximately 8.6 kg claim, but the current SAVA manufacturer page labels that figure as the separate A7L R08-R7120-24S build. Mainland index evidence identifies R7100 but does not supply its weight.",
+    "research_boundary": "Check one current exact A7L R7100 manufacturer or official-mainland listing route. Accept a numeric weight only when the source maps to the R7100 build and gives its size and weighing basis where available; otherwise remove the unsupported R08-R7120 weight and basis with exact scoped retirements, and preserve the R7100 weight as missing.",
+    "excluded": [
+      "No transfer from A7L R08 / R7120 or generic A7L family claims.",
+      "No image evaluation or image-record change.",
+      "No price, other model, or unrelated variant changes.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

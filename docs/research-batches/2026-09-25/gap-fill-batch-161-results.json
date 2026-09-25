@@ -1,0 +1,111 @@
+{
+  "batch": 161,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-161-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 74,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "work": {
+    "exact_records": 5,
+    "atomic_fields": 5,
+    "source_reuse_resolutions": [
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-g0",
+        "field": "price",
+        "attempt_id": "candidate-hi-light-g0-price-b148-2026-09-25",
+        "source_ids": ["titanium-hi-light-g0-official"],
+        "result": "CNY 15,900 dated official-retail evidence remains integrated; the current mainland seller amount, stock and checkout remain unverified."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-scultura",
+        "field": "price",
+        "attempt_id": "candidate-missing-china-price-merida-scultura-price-b148-2026-09-25",
+        "source_ids": ["merida-china-scultura-6000-25-official-2026-08-17"],
+        "result": "CNY 16,800 suggested retail remains integrated; current dealer stock and checkout remain unverified."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-silex",
+        "field": "price",
+        "attempt_id": "candidate-missing-china-price-merida-silex-price-b148-2026-09-25",
+        "source_ids": ["merida-silex-7000-25-official-cny-reference-2026-08-17"],
+        "result": "CNY 20,800 model-year-2025 suggested retail remains integrated; dealer stock, checkout and fulfillment remain unverified."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-tarmac-sl8",
+        "field": "price",
+        "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-price-b148-2026-09-25",
+        "source_ids": ["specialized-china-tarmac-sl8-comp-price-2026-08-17"],
+        "result": "CNY 30,990 official list-price reference remains integrated; current exact mainland seller price, stock and checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-electronic",
+        "field": "purchase-route",
+        "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-b145-live-recheck-2026-09-25",
+        "source_ids": [
+          "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+          "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+          "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+          "twitter-cyclone-et-usa-store-current-2026-09-24"
+        ],
+        "result": "The exact U.S. route is international made-to-order at US$1,489; selected mainland SKU, inventory, delivery and final checkout remain unknown."
+      }
+    ],
+    "existing_attempt_resolution_annotations_added": 5,
+    "research_attempt_records_added": 0,
+    "new_searches": 0,
+    "new_sources": 0,
+    "price_records_added": 0,
+    "catalog_value_changes": 0,
+    "images_added": 0,
+    "held_open_without_new_search": {
+      "count": 69,
+      "reason": "The latest inconclusive attempts are dated 2026-09-25; the local source audit found no later relevant lead or product-state change. Keep these fields open until new evidence or state change justifies another bounded extension."
+    }
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public-post": 15450,
+      "web": 35890
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 15,
+      "open": 69,
+      "temporarily-exhausted": 4
+    },
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "images": 212
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets; coverage check passed in full gate",
+    "full_gate": "passed: privacy and data validation passed; 333/333 tests; 584 pages built; SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed",
+    "image_report": "not run: no image record changed"
+  }
+}

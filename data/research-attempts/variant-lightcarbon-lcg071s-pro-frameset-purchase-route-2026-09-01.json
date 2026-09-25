@@ -482,8 +482,19 @@
   "accepted_source_ids": [
     "lightcarbon-lcg071s-official",
     "lightcarbon-lcg071s-order-options-2026-08-27",
-    "lightcarbon-faq-official-2026-09-01"
+    "lightcarbon-faq-official-2026-09-01",
+    "lightcarbon-lcg071s-pro-package-recheck-2026-09-23",
+    "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-lightcarbon-lcg071s-pro-frameset-batch-041-50-area-sweep-2026-09-01.json. Current official pages establish a direct one-set email/inquiry order route, selectable paid options and accepted payment methods; the route remains quote-based."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-lightcarbon-lcg071s-pro-frameset-batch-041-50-area-sweep-2026-09-01.json. Current official pages establish a direct one-set email/inquiry order route, selectable paid options and accepted payment methods; the route remains quote-based.\n\nBatch 23 current recheck: The official route is direct inquiry from China with PayPal or bank transfer; public evidence does not establish current stock, public checkout, freight, tax, returns or delivery terms.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcg071s-pro-package-recheck-2026-09-23",
+      "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23"
+    ],
+    "note": "The official route is direct inquiry from China with PayPal or bank transfer; public evidence does not establish current stock, public checkout, freight, tax, returns or delivery terms."
+  }
 }

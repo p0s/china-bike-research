@@ -1,0 +1,52 @@
+{
+  "id": "candidate-upland-r70-tire-clearance-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "upland-r70"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "retry_of": "candidate-upland-r70-tire-clearance-2026-08-30",
+  "retry_reason": "A new focused search can test for a distinct current official UPLAND R70 compatibility guide; the prior fitted 25C/28C tire observations do not establish a maximum frame clearance.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-82-upland-r70-clearance",
+    "extends_attempt_id": "candidate-upland-r70-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-82-scope.json",
+    "reason": "One focused search checks for a distinct current official R70 tire/frame compatibility guide that might state the maximum frame clearance; fitted 25C/28C tires remain excluded as maximum evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-upland-r70-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The focused search surfaced no distinct current official R70 tire/frame compatibility guide or page stating a maximum.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "阿普兰 UPLAND R70 轮胎兼容 最大胎宽 车架 兼容指南 官方",
+          "route": "focused public web search for a distinct current official exact-model tire compatibility guide",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.upland.bike/zh/product/308.html",
+          "note": "The search surfaced the previously checked exact-model product page, not a distinct compatibility guide; it was not reopened. The result text shows a fitted MICHELIN 700×25C tire only. No explicit maximum width or units were established, and fitted width is not admissible as the frame maximum."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "The one authorized official-guide search found no distinct exact-model source stating a maximum tire width. Preserve the unresolved maximum; do not promote fitted 25C/28C sizes to a clearance limit.",
+  "searched_at": "2026-09-24"
+}

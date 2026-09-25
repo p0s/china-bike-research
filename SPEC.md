@@ -92,7 +92,9 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 - `brands/`: manufacturer relationship, support, aliases, and brand-level evidence.
 - `platforms/`: category and facts shared by one physical product generation.
 - `variants/`: exact complete-bike or frameset configurations.
+- An exact-variant frame compatibility fact such as a bottom-bracket label may live on the variant when evidence identifies only that build; keep the shared platform field unknown until the value is supported across that platform.
 - `prices/`: dated observations; never timeless product properties.
+- A foreign seller listing may be recorded as a dated candidate FX reference only with its original amount, currency, conversion rate, and market/package caveats; render it as a foreign seller estimate and never treat it as a mainland observed price.
 - `sources/`: source identity, date, reliability, and supported claims.
 - `images/`: subject accuracy, source, rights status, credit, and compatibility metadata for historical fallbacks; buyer-facing failure behavior is omission.
 - `videos/`: exact model/platform or candidate mapping, channel provenance, editorial format, commercial context, and privacy-safe embed identity.
@@ -100,7 +102,7 @@ Use `data/candidates/` when a promising product lacks enough evidence. A candida
 - `build-parts/`: exact selectable component or package records used by the configurator, including slot coverage, weight basis, dated price observation, compatibility, and provenance.
 - `recommendations/`: compact buyer-facing labels, updated only when evidence changes the conclusion.
 - `candidates/` and `exclusions/`: unresolved or rejected products with reasons.
-- `research/`: dated import ledgers that reconcile source bundles, dispositions, priority targets, and research queues without becoming buyer-facing product records.
+- `research/`: dated import ledgers that reconcile source bundles, dispositions, priority targets, and research queues without becoming buyer-facing product records. `source-reuse` closes a found-evidence pass; `conflict-reconfirmed` records a current review that leaves contradictory or unqualified evidence unresolved and suppresses duplicate immediate work. A later attempt may reopen either disposition when a new source or relevant state change appears.
 
 Do not duplicate platform facts across variants. A new component configuration on the same platform is normally a new variant, not a new platform. New categories may add category-specific fields, validation, and UI only as needed.
 
@@ -130,6 +132,8 @@ Never infer specifications across generations, sizes, or similarly named models 
 Research completion is tracked per exact target and missing field. High-priority gaps normally receive up to three distinct public-post attempts and three distinct web/official attempts. Stop early when exact attributable evidence is accepted. Mark a gap temporarily exhausted only after every required channel reaches its attempt limit; record queries, routes, rejection reasons, search date, and a retry date. A temporarily exhausted search remains an unknown, never negative evidence. See `docs/research-stopping-policy.md`.
 
 An explicitly commissioned extended campaign may require 50 genuinely distinct source areas or research approaches for every frozen information field. Such a record sets `minimum_distinct_approaches` to `50`; each attempt names one registered `approach_area_id`, every registered area is used exactly once, and query and route identities remain distinct across channels. Finding evidence does not waive the campaign-wide approach requirement. One source-area sweep may inform several fields on the same exact target only when each field was actually checked and receives its own result note. Aggregate publication status and runtime image reachability are not information fields and stay outside this research count.
+
+A later retry of an extended-campaign field must link a `campaign_extension` to the prior attempt and a dated, frozen batch scope file. The extension records its date, reason, allowed new channels, and maximum new-attempt count. It preserves the original 50-area evidence and does not silently authorize another full sweep.
 
 ## 5. Price rules
 
@@ -161,6 +165,7 @@ An explicitly commissioned extended campaign may require 50 genuinely distinct s
 - Never commit raw third-party image files or bulk-mirror galleries. Historical project-owned placeholder assets may remain in Git for data compatibility, but buyer-facing pages do not render them. A Git-hosted sourced derivative is allowed only through the exact path, size, privacy, source-link, attribution, removal-route, and validation contract above.
 - Never present another configuration as exact.
 - Scheduled image-health reporting checks every responsive derivative and fails on confirmed broken or wrong-content-type resources. Temporary blocking and network unreachability at unrelated third-party hosts remain non-fatal because the interface hides failed images without losing product facts; project-operated quoted-media failures block delivery.
+- A dated image-health check may suppress the runtime-verification gap only when every current remote resource for that image returned HTTP 2xx or 3xx with an `image/*` content type in the preceding 30 days. URL changes, incomplete checks, failures, future dates, and checks older than 30 days keep the gap open. Health status establishes endpoint response only; it does not establish model exactness, image rights, attribution, or future availability.
 - YouTube videos use a validated video ID and a click-to-load `youtube-nocookie.com` embed. Initial model-page rendering must not request a YouTube thumbnail, player, script, or iframe. The external YouTube link remains available without loading the embed.
 - Do not publish names, accounts, contacts, addresses, order or tracking IDs, payment data, private messages, private permission correspondence, credentials, GPS, or EXIF metadata.
 

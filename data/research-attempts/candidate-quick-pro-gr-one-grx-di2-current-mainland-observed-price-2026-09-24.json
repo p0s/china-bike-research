@@ -1,0 +1,55 @@
+{
+  "id": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-gr-one-grx-di2"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The surfaced exact GR:ONE seller route was foreign and the JD flagship result was old and did not show the 1×12 item.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Quick Pro GR:ONE GRX Di2 1x12 official mainland Taobao current option mapping",
+          "route": "Exact official-enterprise-store Taobao product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact public Taobao item route did not return readable content. Its dated 2026-08-27 option labels and amounts remain unmapped to the target 1×12 component package and are not treated as current.",
+          "result_url": "https://item.taobao.com/item.htm?id=998206973974"
+        },
+        {
+          "attempt": 2,
+          "query": "Quick Pro GR:ONE current JD listing exact 1x12 GRX Di2 CNY price",
+          "route": "JD marketplace product search",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-24",
+          "note": "A current JD result names configuration three with Shimano GRX electronic 2×12, which is not this 1×12 candidate. No target-specific price was attached.",
+          "result_url": "https://so.m.jd.com/chanpin/1769514.html?sort=5"
+        },
+        {
+          "attempt": 3,
+          "query": "Quick Pro GR:ONE Shimano GRX Di2 1x12 京东 天猫 中国 价格 现货",
+          "route": "Public JD flagship and exact-model mainland seller search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The exact Quick Pro USA page exposed US$4,799 with add-to-cart, which is foreign-market evidence. The JD flagship result was over a year old and showed no exact GRX Di2 1×12 item. No current mainland item or CNY amount was found.",
+          "result_url": "https://www.quickprousa.com/products/gr-one-shimano"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "quick-pro-gr-one-taobao-current-price-route-recheck-2026-09-24",
+    "quick-pro-gr-one-jd-2x12-option-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The official US$4,799 global reference and older numbered Taobao option prices remain separate from a current mainland amount for this exact 1×12 build."
+}

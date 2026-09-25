@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-t8-closed-wheel-official-2026-08-30"
+    "twitter-t8-closed-wheel-official-2026-08-30",
+    "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-batch-023-50-area-sweep-2026-08-30.json. Exact current frame, fork and aero seatpost are high-modulus carbon."
+  "notes": "Historical 50-area sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-batch-023-50-area-sweep-2026-08-30.json. B121 audited the assigned exact-model manufacturer source record: it supports T8 identity/options/weights but does not state frame, fork, seatpost or wheel materials. The current page recheck timed out on 2026-09-24. The previous field interpretation was overbroad; assign no material value and keep this gap open.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-t8-closed-wheel-official-2026-08-30",
+      "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-24"
+    ],
+    "note": "Leave frame material open. The saved exact-model page supports identity/options/weights but states no frame, fork, seatpost or wheel material; the 2026-09-24 page recheck timed out."
+  }
 }

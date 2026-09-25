@@ -1,0 +1,38 @@
+{
+  "id": "candidate-xlab-ad9-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "xlab-ad9" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-xlab-ad9-price-2026-09-01",
+  "retry_reason": "The earlier campaign retained a CNY 53,980 official build reference but did not establish a current seller option for the same wheel package. One focused mainland seller-item recheck tests that exact package and current ordering context.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-xlab-ad9-price",
+    "extends_attempt_id": "candidate-xlab-ad9-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland seller-item search checks the official AD9 Dura-Ace / Vision Metron 60 SL package after the earlier campaign retained only official price evidence.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-xlab-ad9-price-2026-09-01", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact-package domestic-dealer post is dated 2024-09-30 and only records first-batch reservations at that time; it does not establish a current 2026 offer or availability.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "X-LAB AD9 Dura-Ace R9270 Di2 Vision Metron 60 SL 整车 价格 中国",
+        "route": "One focused public mainland seller search for the exact AD9 Dura-Ace / Vision Metron 60 SL complete package",
+        "outcome": "rejected",
+        "accessed_at": "2026-09-24",
+        "result_url": "https://www.yoojia.com/dongtai/1257744002",
+        "note": "The public domestic-dealer post names the exact package `AD9 DA DI2-Vision Metron 60SL`, shows CNY 51,980, and identifies a Shanghai X-LAB flagship-store seller. It is dated 2024-09-30 and says first-batch stock had been reserved while reservations were open then; it gives no current availability or 2026 order route. Retain this only as historical seller context, not a current price observation."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Preserve the official CNY 53,980 reference; the 2024 seller reservation price is stale and is not entered as a current candidate observed price."
+}

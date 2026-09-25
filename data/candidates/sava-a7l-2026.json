@@ -19,22 +19,26 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6862.png#L1",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
     "sava-a7l-official-image-2026-08-17",
     "sava-a7l-r08-current-2026-08-30",
     "sava-r08-tire-compatibility-2026-08-30",
-    "sava-a7l-mainland-current-2026-08-30"
+    "sava-a7l-mainland-current-2026-08-30",
+    "sava-a7l-r7100-official-recheck-2026-09-24",
+    "sava-a7l-r08-current-spec-recheck-2026-09-24"
   ],
   "source_url": "https://savadeck-bike.com/products/sava-a7l-2026-full-carbon-road-bike-24-speed",
   "facts": {
     "listing_identity": "2026 SAVA / 萨瓦 A7L R08 24-speed",
-    "complete_weight": "Approximately 8.6 kg; varies by size",
-    "drivetrain": "SENSAH/EMPIRE PRO 2x12 hydraulic controls and brakes with Shimano 105 R7100 derailleurs, FC-PR6-B1 50/34 crank, CS-R9012 11-34 cassette and S-X12R chain",
+    "complete_weight": "Manufacturer page claims approximately 8.6 kg for the R08-R7120-24S build shown with 50 mm carbon wheels; weight varies by size and weighing basis is unstated. The retained card does not resolve its selected wheel option, so this is not assigned as its complete weight.",
+    "drivetrain": "Current page labels the build R08-R7120-24S and lists SENSAH HRD 2x12 hydraulic controls/brakes with Shimano 105 R7100 derailleurs, FC-PR6-B1 50/34, CS-R9012 11-34 and S-X12R chain. EMPIRE PRO is not confirmed by the page.",
     "tire_clearance": "25C manufacturer maximum for the exact R08 frame",
-    "frame_material": "T800 carbon frame, fork and seatpost",
-    "frame_stiffness": "Manufacturer qualitative rigidity/lightweight improvement claim; no numeric protocol"
+    "frame_material": "T800 carbon R08 frame, fork and seatpost; layup and molding process are not stated.",
+    "frame_stiffness": "Manufacturer qualitative rigidity/lightweight improvement claim; no numeric protocol",
+    "tire_clearance_mm": 25,
+    "stiffness_evidence": "An earlier manufacturer page, checked 2026-09-01, described a qualitative rigidity/lightweight improvement. The current 2026-09-24 product-page check does not repeat a stiffness claim; no numeric stiffness result or public protocol is available."
   },
   "existing_record_id": "sava-a7l-r7100",
-  "source_note": "Merged into the canonical A7L R7100 record. The retained CNY 4,599 observation is stored separately; current exact evidence corrects the drivetrain to a mixed SENSAH/Shimano 2x12 build and establishes R08 T800 construction and a 25C maximum."
+  "source_note": "The 2026-09-24 official-page recheck confirms the exact A7L R08-R7120-24S configuration, approximate size-variable weight, listed drivetrain and T800 construction. The manufacturer compatibility guide separately states a conservative 25C maximum for the R08 frame; the page’s 25C fitted tire is not used as maximum evidence. The product-page weight is shown with 50 mm carbon wheels and is not assigned to the retained card while its selected wheel option remains unknown."
 }

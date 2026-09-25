@@ -482,5 +482,13 @@
     "titanium-hi-light-r9-2025-official"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/hi-light-r9-2025-50-area-sweep-2026-09-01.json. The current exact manufacturer page resolves a 700x28C maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/hi-light-r9-2025-50-area-sweep-2026-09-01.json. The current exact manufacturer page resolves a 700x28C maximum.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "titanium-hi-light-r9-2025-official"
+    ],
+    "note": "The exact 2025 manufacturer page lists a 700x28C maximum. Direct opening returned 403 on 2026-09-23 and the indexed content was stale; preserve the sourced maximum with its 2026-09-01 evidence date rather than claiming a fresh manufacturer-page confirmation."
+  }
 }

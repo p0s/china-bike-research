@@ -484,8 +484,17 @@
   "status": "found",
   "accepted_source_ids": [
     "gito-g530-retailer-2026-08-29",
-    "gito-g530-taobao-index-2026-08-29"
+    "gito-g530-taobao-index-2026-08-29",
+    "gito-g530-888bike-index-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-high-unknown-50-area-sweep-2026-08-29.json. The visible high configuration aligns with the current exact G530 Shimano 105 2x12 hydraulic-disc build and mainland index."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-high-unknown-50-area-sweep-2026-08-29.json. The visible high configuration aligns with the current exact G530 Shimano 105 2x12 hydraulic-disc build and mainland index.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g530-888bike-index-current-2026-09-23"
+    ],
+    "note": "Current retailer index claims a separate G530 105 2x12 mechanical/hydraulic build; direct page timed out and retained China BOM is not mapped."
+  }
 }

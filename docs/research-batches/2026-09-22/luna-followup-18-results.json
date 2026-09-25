@@ -1,0 +1,171 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-18-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 10,
+  "reviewed_fields": 10,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 716,
+  "coarse_gap_count_after": 716,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "sunpeed-victory-e-2026",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current SUNPEED Victory Expert regional page lists fitted Continental 700x30C tires but no manufacturer maximum clearance. The page confirms the exact Victory Expert family and build context without establishing a safe maximum.",
+      "sources": [
+        "https://sunpeedbikes.com.br/index.php/sunpeed-victory-expert-2025-2/",
+        "https://www.sunpeed.com/page75?_l=en&product_id=330"
+      ],
+      "proof": "The current regional specification read on 2026-09-22 gives 700x30C as the fitted tire and publishes no maximum-clearance statement; the current official product route does not add an attributable maximum.",
+      "next_trigger": "Exact Victory Expert frame or fork document stating maximum compatible tire width for the retained 2026 listing.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sunpeed-wudi-e-2026",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current SUNPEED Invincible/无敌 routes identify the 2026 family and retained mechanical Sport option, but no exact selected-build maximum tire clearance is published. Indexed official and mainland listing routes do not turn a fitted road tire into a maximum.",
+      "sources": [
+        "https://www.sunpeed.com/page75?_l=en&product_id=384",
+        "https://www.jd.com/jiage/131839548897f3d043e9.html",
+        "https://www.smzdm.com/p/174939303/"
+      ],
+      "proof": "The current official route was checked but did not expose a usable technical maximum; current JD and SMZDM identity/listing routes also provide no exact selected-build clearance value. No value was transferred from sibling SUNPEED models.",
+      "next_trigger": "Exact 2026 Invincible Sport frame/fork specification or a controlled measurement tied to the retained R7120 alloy-wheel option.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-cyclone-r7120",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current TWITTER Cyclone 3rd R7120 Small page documents fitted MAXXIS Pursuer 700x28C tires and six frame sizes, but no manufacturer maximum tire clearance.",
+      "sources": [
+        "https://twitterbikeusa.com/products/cyclone-3rd-r7120-small",
+        "https://www.twittercycles.com/products/cyclone-3rd-r7120-road-bike.html"
+      ],
+      "proof": "The current exact USA product page read on 2026-09-22 lists 700x28C as equipment and does not state a maximum; the global URL remains unavailable rather than evidence of a different maximum.",
+      "next_trigger": "Exact Cyclone 3rd frame/fork clearance document or a controlled measurement tied to the R7120 generation.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t10-pro",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current TWITTER T10 Pro 2rd page documents fitted MAXXIS Pursuer 700x28C tires across the three factory drivetrain options, but no manufacturer maximum clearance.",
+      "sources": [
+        "https://twitterbikeusa.com/products/t10-pro-2rd-twitter-carbon-road-bike",
+        "https://www.twitterbikefactory.com/pages/faq"
+      ],
+      "proof": "The current exact product page read on 2026-09-22 distinguishes the 700x28C fitted tire from a maximum and publishes no clearance limit; the FAQ does not supply a model-specific maximum.",
+      "next_trigger": "Exact T10 Pro 2rd frame/fork specification or a controlled measurement tied to the selected retained drivetrain build.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt350",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current XDS GT350 Hong Kong retailer page confirms the retained 460/490 mm trim, X6 aluminum frame, carbon fork and fitted 700x40C tires, but publishes no maximum tire clearance.",
+      "sources": [
+        "https://www.bikecity.hk/products/xds-gt350-%E6%B2%B9%E5%A3%93%E7%A2%9F%E5%88%B9%E5%85%A7%E8%B5%B0%E7%B7%9A10%E9%80%9F%E7%A4%AB%E7%9F%B3%E5%85%AC%E8%B7%AF%E8%BB%8A-xds-gt350-10-speed-gravel-bike"
+      ],
+      "proof": "The current exact retailer read on 2026-09-22 gives 700x40C as fitted equipment and no maximum; the documented 11.05 kg and Hong Kong component trim do not imply a clearance limit.",
+      "next_trigger": "XDS or exact-trim frame/fork document stating maximum clearance for the GT350 chassis.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "xds-gt600",
+      "outcome": "tire-clearance-unresolved",
+      "finding": "Current XDS GT600 retailer/listing routes continue to show the archived carbon/Apex build with fitted 700x40C tires but no exact-generation manufacturer maximum; current marketplace variants remain mixed.",
+      "sources": [
+        "https://fxbike.vn/san-pham/xe-dap-gravel-xds-gt600/",
+        "https://www.jd.com/hprm/67281de7c78c4042c166.html",
+        "https://china-bikes.p0s.eu/models/xds-gt600/"
+      ],
+      "proof": "Current reads identify 700x40C as fitted equipment and preserve the archived SRAM Apex/carbon identity; no exact-generation maximum is published and newer marketplace configurations cannot be merged into it.",
+      "next_trigger": "Exact GT600 generation manual or frame/fork specification with a maximum-clearance statement.",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-frameset",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "A current reread of the exact LCR017D review reports a solid build and behavior under load, while its later comment attributes higher stiffness to the box-shaped downtube. The retained Speed7 mechanical-105 package is not the reviewed quality/build, and no controlled frame-only result is published.",
+      "sources": [
+        "https://www.hambini.com/review-lightcarbon-lcr-017d/",
+        "https://www.reddit.com/r/bicycling/comments/1o51p10/lightcarbon_lcr017d_review/",
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
+      ],
+      "proof": "The exact LCR017D review is a custom Z3 build and explicitly describes qualitative behavior; the retained Speed7 package and factory quality tier are unresolved. The evidence is informative but cannot be promoted to the selected frameset as a frame-only stiffness result.",
+      "next_trigger": "Independent or controlled stiffness evidence tied to the retained Speed7/LCR017-D frameset specification, or a reproducible frame-only protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-tr-one",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "Current official TR:ONE page confirms the exact triathlon frameset, 700x32c maximum and size geometry, but supplies no stiffness measurement or independent ride comparison. Structural and race-position language is not converted into a stiffness value.",
+      "sources": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://raceit.cc/en/products/cuadro-quick-pro-tr-one"
+      ],
+      "proof": "The current official specification read on 2026-09-22 lists the exact model, 700x32c maximum and geometry; no public deflection, lateral-stiffness or reproducible comparative protocol is present.",
+      "next_trigger": "Exact TR:ONE independent ride assessment or published frame-stiffness test with protocol and selected frame configuration.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "rinasclta-gr025",
+      "outcome": "geometry-unresolved",
+      "finding": "Current exact Rinasclta GR025 product page publishes XS–XL availability, standards, frame and fork weights and 700x50C maximum, but no numeric stack/reach/geometry table. A geometry index also reports no geometry data for GR025.",
+      "sources": [
+        "https://rinascltabike.com/product/gr025-gravel-frame-700c-50mm/",
+        "https://geometrygeeks.bike/bike/rinasclta-gr025-2025/"
+      ],
+      "proof": "The current manufacturer page was read on 2026-09-22 and its technical sections contain no numeric geometry chart; the independent geometry index likewise has no data. Generic Rinasclta or Granite geometry cannot be transferred.",
+      "next_trigger": "Exact GR025 geometry drawing or manufacturer table with stack, reach, angles and wheelbase by size.",
+      "fields": [
+        "geometry"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-aero-one",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "A current exact-model Laget interview reports FEA, fatigue/static/drop testing and says lateral stiffness was measured against benchmark carbon aero frames, but it publishes no comparative value or test protocol. This is attributable manufacturer-interview evidence, not a reproducible public stiffness result.",
+      "sources": [
+        "https://tipartstitanium.com/blogs/products/lets-talk-about-the-laget-aero-one-an-interview-with-bob-from-laget",
+        "https://lagetbike.com/productinfo/134815.html"
+      ],
+      "proof": "The exact Aero One interview read on 2026-09-22 identifies the product and the claimed validation, including benchmark comparison, while withholding the measured values and protocol. The catalog keeps the frame-stiffness field unresolved rather than inferring a ranking.",
+      "next_trigger": "Public numeric lateral-stiffness comparison or an independent exact Aero One test with disclosed protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only batch; no catalog or code changes. Batch 17 full gate remains valid for unchanged inputs.",
+    "focused": "Public disposition rows and exact scope identity checked by manage_batch.py; no new website images or image metadata added.",
+    "full_gate": "Not rerun for this evidence-only batch; last complete gate passed at batch-17 commit e9f0135 (304 tests, 584 pages, SEO 456 indexable / 128 noindex)."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

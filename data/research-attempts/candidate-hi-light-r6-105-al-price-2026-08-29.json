@@ -488,5 +488,13 @@
     "titanium-hi-light-r6-105-al-official"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r6-105-al-50-area-sweep-2026-08-29.json. The exact official page publishes CNY 8,300 retail. No attributable current mainland checkout observation was found, so the catalog continues to label this an official reference price rather than an observed transaction price."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r6-105-al-50-area-sweep-2026-08-29.json. The exact official page publishes CNY 8,300 retail. No attributable current mainland checkout observation was found, so the catalog continues to label this an official reference price rather than an observed transaction price.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "titanium-hi-light-r6-105-al-official"
+    ],
+    "note": "The exact manufacturer complete-bike record lists CNY 8,300 retail, last read on 2026-08-29. Direct opening returned 403 on 2026-09-23 and the indexed page was stale; preserve it as an official reference, not an observed current checkout."
+  }
 }

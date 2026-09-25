@@ -1,0 +1,79 @@
+{
+  "batch": 49,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-49-scope.json",
+  "writer_limit": { "exact_targets": 2, "atomic_fields": 2 },
+  "dispositions": [
+    {
+      "attempt_id": "variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24",
+      "target": "published-variant:carbonda-cfr696-frameset",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["carbonda-cfr696-current-official-price-route-recheck-2026-09-24", "carbonda-cfr696-forum-us-price-context-recheck-2026-09-24"],
+      "result": "The current official exact-model page was inaccessible (HTTP 403) and its index did not expose a current amount. A public forum anecdote reports an undated US$480 base item with paint, shipping and other costs extra, but leaves generation and package uncertain. Keep the approximate CNY 3,000–6,000 reference observed 2026-08-06; neither source supports a current mainland amount."
+    },
+    {
+      "attempt_id": "variant-ican-gra04-frameset-mainland-observed-price-2026-09-24",
+      "target": "published-variant:ican-gra04-frameset",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["ican-gra04-price-route-current-recheck-2026-09-24", "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24"],
+      "result": "The current official GRA04 page is quote-only and shows no amount or currency; its contact form was not submitted. Index searches did not verify a current mainland listing. A December 2024 USD 655 forum-relayed quote describes a BB86 package while the current page identifies T47, so it is historical foreign-currency package-conflicted evidence. Keep the approximate CNY 3,800–5,200 reference observed 2026-08-06."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "carbonda-cfr696-current-official-price-route-recheck-2026-09-24",
+      "carbonda-cfr696-forum-us-price-context-recheck-2026-09-24",
+      "ican-gra04-price-route-current-recheck-2026-09-24",
+      "ican-gra04-historical-usd-package-discussion-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24",
+      "variant-ican-gra04-frameset-mainland-observed-price-2026-09-24"
+    ],
+    "published_variants_reviewed": 2,
+    "price_records_added_or_updated": 0,
+    "image_records_changed": 0,
+    "tooling_and_tests": [
+      "Price gaps now surface the newest scoped mainland-price retry for candidates and published variants while retaining older immutable attempt records.",
+      "The gap report exposes resolution_kind; tests cover candidate retries, published reference-range retries, and exact variant bottom-bracket behavior.",
+      "Research-ledger expectations now reflect 1505 attempt records and 1495 atomic fields."
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 },
+    "atomic_research_fields": 1495,
+    "research_attempt_records": 1505
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline protects 212 images and 277 catalog targets",
+    "focused_tests": "passed: 86 tests across tests/data.test.mjs and tests/gaps.test.mjs",
+    "npm_run_check": "passed via the approved pnpm check wrapper: 318 tests, 584 built pages, SEO 458 indexable and 126 noindex",
+    "privacy": "passed: no common personal-data, local-path, credential, private-network, order-ID, chat-export, or unvalidated media-binary patterns",
+    "git_diff_check": "passed",
+    "image_report": "not run: no image records changed"
+  },
+  "delivery": "Local B49 batch only; no push, pull request, merge, publication, or production action."
+}

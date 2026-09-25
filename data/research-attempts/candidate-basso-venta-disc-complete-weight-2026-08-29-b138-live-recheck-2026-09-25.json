@@ -1,0 +1,52 @@
+{
+  "id": "candidate-basso-venta-disc-complete-weight-2026-08-29-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "basso-venta-disc"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-basso-venta-disc-complete-weight-2026-08-29",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-basso-venta-complete-weight",
+    "extends_attempt_id": "candidate-basso-venta-disc-complete-weight-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One exact-model search checked complete-weight; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-basso-venta-disc-complete-weight-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "EXIsport item 105555 snippet reports 9.05 kg for size M without pedals, but authorization and match to the retained CNY 6,888 build are unverified; the candidate already records this mass only as an unselected reference-build range. Bike-room snippet is preowned and reports no weight. No exact retained-build complete weight qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Basso Venta Disc 105 Microtech MCT 2023 complete bike weight kg size M authorized dealer",
+          "route": "Search result snippets for a previously recorded EXIsport item and a used Bike-room listing; neither page was opened.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "EXIsport item 105555 snippet reports 9.05 kg for size M without pedals, but authorization and match to the retained CNY 6,888 build are unverified; the candidate already records this mass only as an unselected reference-build range. Bike-room snippet is preowned and reports no weight. No exact retained-build complete weight qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "EXIsport item 105555 snippet reports 9.05 kg for size M without pedals, but authorization and match to the retained CNY 6,888 build are unverified; the candidate already records this mass only as an unselected reference-build range. Bike-room snippet is preowned and reports no weight. No exact retained-build complete weight qualifies."
+}

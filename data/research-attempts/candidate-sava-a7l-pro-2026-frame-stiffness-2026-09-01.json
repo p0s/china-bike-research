@@ -476,8 +476,18 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "sava-a7l-pro-bikelabhq-review-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a7l-pro-2026-batch-036-50-area-sweep-2026-09-01.json. The exact page publishes T800 construction and aerodynamic positioning but no numeric stiffness result or sufficiently specific independent frame assessment."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a7l-pro-2026-batch-036-50-area-sweep-2026-09-01.json. The exact page publishes T800 construction and aerodynamic positioning but no numeric stiffness result or sufficiently specific independent frame assessment. Follow-up batch12 accepts qualified qualitative evidence; the absence of a numeric controlled result remains unchanged.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "sava-a7l-pro-bikelabhq-review-2026-09-22"
+    ],
+    "note": "Newly recorded exact-model review sources provide meaningful qualitative evidence under SPEC. Preserve original50-area attempts. Source class and whole-bike/custom-build limitations remain explicit; no numeric stiffness ranking."
+  }
 }

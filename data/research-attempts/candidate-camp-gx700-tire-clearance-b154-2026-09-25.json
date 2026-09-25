@@ -1,0 +1,52 @@
+{
+  "id": "candidate-camp-gx700-tire-clearance-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "camp-gx700"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-camp-gx700-tire-clearance-2026-08-29",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-camp-gx700-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX700 frame stiffness independent test maximum tire clearance 700x45C",
+          "route": "One bounded current web query screened against existing source history and exact retained model/build identity",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The official page reports a fitted 700×45C tire, not the frame maximum. Exact maximum clearance remains unknown."
+        }
+      ],
+      "blocker": "The one bounded query and already recorded exact-model sources did not provide evidence meeting this field’s frozen acceptance rule."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The official page reports a fitted 700×45C tire, not the frame maximum. Exact maximum clearance remains unknown.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-camp-gx700-tire-clearance",
+    "extends_attempt_id": "candidate-camp-gx700-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "batch_id": "gap-fill-batch-20-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-20-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 20,
+    "root_fields": 8,
+    "luna_evidence_fields": 12
+  },
+  "new_images_added": 0,
+  "new_source_records": [
+    "hi-light-r9-force-pr1600-indexed-2026-09-23",
+    "hi-light-r9-frame-indexed-2026-09-23",
+    "huanyu-azone-jd-index-2026-09-23",
+    "ican-gra04-hosted-review-current-2026-09-23",
+    "icanian-p9-frame-page-current-2026-09-23",
+    "ican-sn04-current-product-page-2026-09-23",
+    "ican-sn04-current-collection-2026-09-23",
+    "ican-sn04-technical-article-current-2026-09-23",
+    "irefox-current-catalog-2026-09-23",
+    "java-fuoco-top-105-current-regional-2026-09-23",
+    "lampo-official-home-index-2026-09-23"
+  ],
+  "updated_source_records": [
+    "ican-graro-official-current-2026-09-23"
+  ],
+  "new_price_records": [
+    "ican-graro-official-2026-09-23"
+  ],
+  "results": [
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "complete-weight",
+      "status": "manufacturer-claim-preserved",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-complete-weight-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-force-pr1600-indexed-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/168.html"
+      ],
+      "note": "The exact manufacturer index reports 8.3 kg, but its crawl is about two months old and direct access returned 403. Size, pedals, and weighing method are unstated; this is not an independently measured weight.",
+      "next_trigger": "Accessible exact build evidence with size and weighing basis."
+    },
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "drivetrain",
+      "status": "exact-listed-build-preserved-with-index-caveat",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-drivetrain-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-force-pr1600-indexed-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/168.html"
+      ],
+      "note": "The indexed exact page lists SRAM Force 22 mechanical 2x11 and its BOM. The index is stale by about two months and direct opening returned 403.",
+      "next_trigger": "Accessible exact manufacturer BOM showing a changed build."
+    },
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "frame-material",
+      "status": "exact-platform-material-main-tube-grade-unknown",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-frame-material-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-force-pr1600-indexed-2026-09-23",
+        "hi-light-r9-frame-indexed-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/168.html",
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "note": "Evidence supports a titanium R9 frame and carbon fork. 3Al/2.5V is stated for integrated dropouts only; main-tube grade is unknown. Both index crawls are about two months old and direct opens returned 403.",
+      "next_trigger": "An accessible current R9 frame/BOM page that changes material or grade."
+    },
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "frame-stiffness",
+      "status": "qualitative-construction-claim-only",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-frame-stiffness-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-frame-indexed-2026-09-23",
+        "hi-light-manufacturing-official-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html",
+        "https://cn.tibicycle.com/Production.html"
+      ],
+      "note": "The R9 page describes hydroformed tubing and the manufacturer attributes stiffness improvements to that process; no R9-specific measurement or reproducible protocol was found. Objective stiffness remains unknown.",
+      "next_trigger": "A reproducible R9 stiffness, torsion, or deflection test."
+    },
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "tire-clearance",
+      "status": "nominal-manufacturer-maximum-supported",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-tire-clearance-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-frame-indexed-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "note": "The exact R9 manufacturer index states a nominal 700x28C maximum, matching the fitted tire size. The index is an old crawl; this is not a measured casing-width guarantee.",
+      "next_trigger": "A current exact R9 specification with a different maximum."
+    },
+    {
+      "record_id": "hi-light-r9-force-pr1600",
+      "field": "price",
+      "status": "dated-official-reference-checkout-unverified",
+      "attempt_record_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29",
+      "source_ids": [
+        "hi-light-r9-force-pr1600-indexed-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/168.html"
+      ],
+      "note": "The index repeats CNY 22,900 retail, but its crawl is about two months old and direct access returned 403. Preserve the existing 2026-08-29 official reference date; current stock and checkout are unknown.",
+      "next_trigger": "A normally accessible current official listing or exact mainland checkout observation."
+    },
+    {
+      "record_id": "huanyu-az-one",
+      "field": "identity-source",
+      "status": "separate-marketplace-alias-not-linked",
+      "attempt_record_id": "candidate-huanyu-az-one-identity-source-2026-08-29",
+      "source_ids": [
+        "huanyu-azone-jd-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/1318ef33768c430b38e7.html?catID=13806&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default"
+      ],
+      "note": "JD shows separate HUANYU AZone TT and 青龙 TT listings but does not link them to the retained AZ ONE / 青龙·赤子 card. The seller-card identity remains a lead only.",
+      "next_trigger": "A manufacturer, authorized seller, or exact listing explicitly linking both names."
+    },
+    {
+      "record_id": "ican-gra04",
+      "field": "frame-stiffness",
+      "status": "manufacturer-hosted-subjective-rider-report",
+      "attempt_record_id": "platform-ican-gra04-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "ican-gra04-hosted-review-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.icanbikes.com/Products-list/full-carbon-racing-gravel-frame-gra04/"
+      ],
+      "note": "A rider review hosted on ICAN's exact GRA04 page reports pedal response and lateral stiffness during a race sprint. This is subjective hosted testimony, not independent or instrumented evidence; no numeric value is assigned.",
+      "next_trigger": "Independent or instrumented GRA04 stiffness/deflection evidence."
+    },
+    {
+      "record_id": "ican-graro-frameset",
+      "field": "price",
+      "status": "current-storefront-price-and-dated-reference-conversion",
+      "attempt_record_id": "variant-ican-graro-frameset-price-2026-09-01",
+      "source_ids": [
+        "ican-graro-official-current-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://icanwheels.com/products/graro",
+        "https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?d0bb0e298ded076d477269db16796dfe="
+      ],
+      "note": "The current ICAN storefront lists US$899 for the frameset package. A dated CNY 6,023 comparison conversion is recorded; it is not a mainland checkout total.",
+      "next_trigger": "A change in selected variant, currency, storefront price, or destination checkout."
+    },
+    {
+      "record_id": "icanian-p9",
+      "field": "frame-material",
+      "status": "exact-manufacturer-material",
+      "attempt_record_id": "candidate-icanian-p9-frame-material-2026-09-01",
+      "source_ids": [
+        "icanian-p9-frame-page-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.icanian.com/product/carbon-enduro-frame-carbon-mtb-bike-frame-icanian/"
+      ],
+      "note": "The current exact P9 frame page identifies a Toray T700/T800 carbon lay-up. This does not resolve conflicting frame-weight references.",
+      "next_trigger": "An exact current P9 material/BOM revision."
+    },
+    {
+      "record_id": "icanian-p9",
+      "field": "frame-stiffness",
+      "status": "manufacturer-qualitative-claim-only",
+      "attempt_record_id": "candidate-icanian-p9-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "icanian-p9-frame-page-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.icanian.com/product/carbon-enduro-frame-carbon-mtb-bike-frame-icanian/"
+      ],
+      "note": "The manufacturer describes stiffness in key zones and compliance on rough terrain without a metric or protocol. Objective stiffness remains unknown.",
+      "next_trigger": "A reproducible P9 stiffness or deflection measurement."
+    },
+    {
+      "record_id": "icanian-p9",
+      "field": "tire-clearance",
+      "status": "configuration-specific-nominal-fit",
+      "attempt_record_id": "candidate-icanian-p9-tire-clearance-2026-09-01",
+      "source_ids": [
+        "icanian-p9-frame-page-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.icanian.com/product/carbon-enduro-frame-carbon-mtb-bike-frame-icanian/"
+      ],
+      "note": "The page lists 27.5x3.0 or 29x2.3 nominal sizes; XD narrows 27.5 to 2.5. These are not measured casing widths.",
+      "next_trigger": "A selected wheel/drivetrain configuration or updated manufacturer limit."
+    },
+    {
+      "record_id": "icanian-sn04",
+      "field": "frame-stiffness",
+      "status": "qualitative-construction-only-objective-measure-unknown",
+      "attempt_record_id": "candidate-icanian-sn04-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "ican-sn04-technical-article-current-2026-09-23",
+        "ican-sn04-current-product-page-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://icancycling.com/blogs/articles/ican-carbon-fatbike-full-suspension-frame-sno4",
+        "https://icancycling.com/products/carbon-full-suspension-fat-bike-frame-sn04"
+      ],
+      "note": "Current SN04 manufacturer sources make qualitative tapered-head/front-end stiffness claims only. No numeric measurement or reproducible protocol supports an objective value.",
+      "next_trigger": "A repeatable SN04 stiffness measurement or protocol-matched comparison."
+    },
+    {
+      "record_id": "icanian-sn04",
+      "field": "tire-clearance",
+      "status": "size-specific-nominal-fit-options",
+      "attempt_record_id": "candidate-icanian-sn04-tire-clearance-2026-09-01",
+      "source_ids": [
+        "ican-sn04-current-product-page-2026-09-23",
+        "ican-sn04-current-collection-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://icancycling.com/products/carbon-full-suspension-fat-bike-frame-sn04",
+        "https://icancycling.com/collections/sn04-full-suspension-fatbike"
+      ],
+      "note": "Manufacturer evidence lists 26x3.8-4.8, 29x2.25-3.0, and 27.5x3.0-3.25 options; size 16 is limited to 26x4.0 while a displayed build uses 26x4.8. Preserve the size distinction.",
+      "next_trigger": "An updated exact frame size or wheel/tire compatibility specification."
+    },
+    {
+      "record_id": "irefox-by446",
+      "field": "frame-material",
+      "status": "seller-carbon-claim-exact-grade-unverified",
+      "attempt_record_id": "candidate-irefox-by446-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "irefox-current-catalog-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://irefox.net/cn/"
+      ],
+      "note": "The retained seller row claims a carbon frame, while the current official catalog omits BY446. No exact grade, fork material, lay-up, or process is supported.",
+      "next_trigger": "An exact BY446 manufacturer page, frame marking, or BOM."
+    },
+    {
+      "record_id": "java-carbon-hydraulic-unknown",
+      "field": "frame-material",
+      "status": "generic-seller-claim-model-unresolved",
+      "attempt_record_id": "candidate-java-carbon-hydraulic-unknown-frame-material-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "The retained seller listing is the only exact-row source and supports only a generic carbon-frame claim. Current search did not identify a matching official JAVA SKU; grade, fork, and model remain unknown.",
+      "next_trigger": "A matching official JAVA product page or readable exact seller SKU."
+    },
+    {
+      "record_id": "java-fuoco-2025",
+      "field": "drivetrain",
+      "status": "regional-exact-build-with-mainland-selection-caveat",
+      "attempt_record_id": "candidate-java-fuoco-2025-drivetrain-2026-08-30",
+      "source_ids": [
+        "java-fuoco-top-105-current-regional-2026-09-23",
+        "java-fuoco-top-105-mainland-index-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/fuoco-top-105-2"
+      ],
+      "note": "The exact regional listing supports Shimano 105 R7120 controls, 2x12 mechanical shifting, R7100 derailleurs/crank, and hydraulic disc brakes. Its variation warning means it does not prove every mainland seller unit is identical.",
+      "next_trigger": "A live mainland SKU selecting and listing the same complete build."
+    },
+    {
+      "record_id": "java-fuoco-2025",
+      "field": "frame-material",
+      "status": "regional-exact-trim-t700-with-market-mapping-caveat",
+      "attempt_record_id": "candidate-java-fuoco-2025-frame-material-2026-08-30",
+      "source_ids": [
+        "java-fuoco-top-105-current-regional-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/fuoco-top-105-2"
+      ],
+      "note": "The exact regional FUOCO TOP 105-2 listing specifies a Toray T700 carbon frame and fork. It does not prove every mainland trim has the same BOM.",
+      "next_trigger": "A mainland manufacturer/dealer specification tied to the retained SKU."
+    },
+    {
+      "record_id": "java-lampo-carbon-road",
+      "field": "frame-material",
+      "status": "seller-and-brand-range-claims-exact-model-unresolved",
+      "attempt_record_id": "candidate-java-lampo-carbon-road-frame-material-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "lampo-mainland-launch-2026-08-29",
+        "lampo-official-home-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lampo.cn/"
+      ],
+      "note": "The seller card claims full carbon, and LAMPO-authored launch coverage describes a mainland range including a full-carbon model. The official homepage uses 蓝豹 while the card says 蓝波; exact mapping, grade, and selected build remain unknown.",
+      "next_trigger": "An exact LAMPO model/variant linked to the seller card with its material BOM."
+    },
+    {
+      "record_id": "java-lampo-carbon-road",
+      "field": "identity-source",
+      "status": "brand-present-exact-seller-and-java-relationship-unresolved",
+      "attempt_record_id": "candidate-java-lampo-carbon-road-identity-source-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "lampo-mainland-launch-2026-08-29",
+        "lampo-official-home-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lampo.cn/"
+      ],
+      "note": "Evidence supports a LAMPO bicycle brand and mainland range, but the official name is 蓝豹 versus seller-card 蓝波. Exact model, seller authorization, and any Java corporate relationship are unverified.",
+      "next_trigger": "An official cross-reference linking the seller card to a LAMPO model and relationship."
+    }
+  ],
+  "validation": {
+    "focused": "PASS: privacy, validate (41 brands, 38 platforms, 41 variants, 72 prices, 1,036 sources, 212 primary images, 236 candidates), research:check (1,461 atomic fields), and git diff --check.",
+    "coverage": "PASS: npm run coverage:accept accepted monotonic baseline for 212 images and 277 catalog targets; subsequent coverage:check passed.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy, validation, research, coverage, 307/307 tests, 584-page build, and SEO passed. The expected price count was updated from 71 to 72 for the new dated Graro observation.",
+    "image_report": "Not required because no image records changed."
+  }
+}

@@ -43,7 +43,7 @@
     }
   },
   "status": "temporarily-exhausted",
-  "accepted_source_ids": [],
+  "accepted_source_ids": ["camp-gx700-geometry-recheck-2026-09-24"],
   "retry_after": "2026-11-17",
-  "notes": "Round-three systematic search. specs: temporarily-exhausted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: temporarily-exhausted. Batch 40 recheck (2026-09-24): the current mainland page identifies the GX700 1×12 build and lists 700C×450/480/510 mm choices but no numeric geometry in accessible text; the linked generic size.avif chart returned 403 Forbidden. Its crank row conflicts with this 1×12 build; no coordinates are inferred and geometry remains temporarily exhausted."
 }

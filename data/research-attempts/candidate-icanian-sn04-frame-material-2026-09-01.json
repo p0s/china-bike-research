@@ -6,7 +6,7 @@
   },
   "field": "frame-material",
   "priority": "high",
-  "searched_at": "2026-09-01",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -483,8 +483,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "ican-sn04-official-2026-08-08",
-    "ican-sn04-corporate-product-2026-09-01"
+    "ican-sn04-corporate-product-2026-09-01",
+    "ican-sn04-storefront-weight-material-recheck-2026-09-25",
+    "ican-sn04-corporate-weight-material-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-sn04-batch-033-50-area-sweep-2026-09-01.json. Current manufacturer pages conflict between Toray T700 and T700/T800 construction."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-sn04-batch-033-50-area-sweep-2026-09-01.json. Current manufacturer pages conflict between Toray T700 and T700/T800 construction.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "ican-sn04-storefront-weight-material-recheck-2026-09-25",
+      "ican-sn04-corporate-weight-material-recheck-2026-09-25"
+    ],
+    "note": "Current manufacturer sources conflict: the storefront identifies Toray T700; the corporate page says T700/T800. No lay-up is selected."
+  }
 }

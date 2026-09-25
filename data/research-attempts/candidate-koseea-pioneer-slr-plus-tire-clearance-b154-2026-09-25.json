@@ -1,0 +1,52 @@
+{
+  "id": "candidate-koseea-pioneer-slr-plus-tire-clearance-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "koseea-pioneer-slr-plus"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-koseea-pioneer-slr-plus-tire-clearance-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-koseea-pioneer-slr-plus-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "KOSEEA Pioneer SLR+ frame tire clearance torsional stiffness test",
+          "route": "One bounded current web query screened against existing source history and exact retained model/build identity",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The 30C and 32mm references concern conflicting or different trims; neither is transferred to the retained Pioneer SLR+ candidate."
+        }
+      ],
+      "blocker": "The one bounded query and already recorded exact-model sources did not provide evidence meeting this field’s frozen acceptance rule."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The 30C and 32mm references concern conflicting or different trims; neither is transferred to the retained Pioneer SLR+ candidate.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-koseea-pioneer-slr-plus-tire-clearance",
+    "extends_attempt_id": "candidate-koseea-pioneer-slr-plus-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

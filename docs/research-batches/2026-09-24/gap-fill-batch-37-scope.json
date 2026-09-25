@@ -1,0 +1,283 @@
+{
+  "batch_id": "gap-fill-batch-37-2026-09-24",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-24",
+  "gap_inventory_as_of": "2026-09-23",
+  "gap_inventory_scope": {
+    "published_variants": 41,
+    "candidates": 222
+  },
+  "gap_counts": {
+    "bom-incomplete": 2,
+    "bottom-bracket-missing": 7,
+    "candidate-blockers": 222,
+    "clearance-unverified": 103,
+    "complete-weight-missing": 82,
+    "drivetrain-missing": 39,
+    "frame-material-detail-missing": 15,
+    "frame-weight-missing": 26,
+    "geometry-missing": 5,
+    "image-exactness": 4,
+    "image-health-unverified": 37,
+    "price-missing": 26,
+    "price-not-observed": 39,
+    "price-reference-range": 2,
+    "purchase-route": 25,
+    "stiffness-evidence-missing": 78
+  },
+  "research_status_counts": {
+    "blocked": 335,
+    "conflicted": 35,
+    "found": 69,
+    "temporarily-exhausted": 14
+  },
+  "queue_counts_before": {
+    "ready": 0,
+    "evidence-found": 300,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  },
+  "selection_exclusions": {
+    "source_reuse_resolved": 20,
+    "known_java_aluminum_24s_duplicate": 2,
+    "at_least_50_distinct_approach_areas": 249,
+    "excluded_union": 271,
+    "eligible_rows": 29
+  },
+  "selection_basis": "First queue-ordered evidence-found rows after excluding source-reuse-resolved rows, the known java-aluminum-24s duplicate, and records with at least 50 distinct recorded approach areas. Freeze the first 10 exact targets up to 25 fields; this selection yields 20 fields across 10 targets.",
+  "exact_model_count": 10,
+  "atomic_field_count": 20,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 20,
+  "targets": [
+    {
+      "record_type": "platform",
+      "record_id": "sava-a7l-r7100",
+      "exact_identity": "A7L R7100",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-sava-a7l-r7100-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "sava-a7l-official-global-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "exact_identity": "Gelaro",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-sava-gelaro-frame-material-2026-08-28",
+        "platform-sava-gelaro-frame-stiffness-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0,
+        "frame-stiffness": 0
+      },
+      "existing_source_ids": [
+        "sava-gelaro-s4-official-2026-08-28",
+        "sava-gelaro-s4-independent-review-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro-s8",
+      "exact_identity": "Gelaro S8 GRX820",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-sava-gelaro-s8-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "sava-gelaro-s8-official-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro-sf",
+      "exact_identity": "Gelaro SF",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-sava-gelaro-sf-frame-material-2026-08-28",
+        "platform-sava-gelaro-sf-frame-stiffness-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0,
+        "frame-stiffness": 0
+      },
+      "existing_source_ids": [
+        "sava-gelaro-sf6-official-2026-08-28",
+        "sava-gelaro-sf6-independent-review-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "exact_identity": "Addict RC 40",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "bottom-bracket",
+        "cockpit",
+        "geometry",
+        "tires",
+        "wheels"
+      ],
+      "attempt_ids": [
+        "variant-scott-addict-rc-40-bottom-bracket-2026-08-17",
+        "variant-scott-addict-rc-40-cockpit-2026-08-17",
+        "variant-scott-addict-rc-40-geometry-2026-08-17",
+        "variant-scott-addict-rc-40-tires-2026-08-17",
+        "variant-scott-addict-rc-40-wheels-2026-08-17"
+      ],
+      "approach_area_counts": {
+        "bottom-bracket": 0,
+        "cockpit": 0,
+        "geometry": 0,
+        "tires": 0,
+        "wheels": 0
+      },
+      "existing_source_ids": [
+        "scott-addict-rc-40-poland-2026-08-17",
+        "scott-addict-2026-manual-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "seka-exaero-gr",
+      "exact_identity": "ExAero GR",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-seka-exaero-gr-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "seka-exaero-gr-official-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "exact_identity": "SEKA ExAero / ExAero RDC",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "current-mainland-frameset-price",
+        "exact-model-identity",
+        "frame-weight",
+        "owner-build-weight",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-seka-exaero-road-price-2026-08-27",
+        "candidate-seka-exaero-road-identity-2026-08-27",
+        "candidate-seka-exaero-road-frame-weight-2026-08-27",
+        "candidate-seka-exaero-road-owner-build-weight-2026-08-27",
+        "candidate-seka-exaero-road-tire-clearance-2026-08-27"
+      ],
+      "approach_area_counts": {
+        "current-mainland-frameset-price": 0,
+        "exact-model-identity": 0,
+        "frame-weight": 0,
+        "owner-build-weight": 0,
+        "tire-clearance": 0
+      },
+      "existing_source_ids": [
+        "public-seka-exaero-launch-price-2026-08-27",
+        "seka-exaero-road-official-2026-08-27",
+        "public-seka-exaero-build-2026-08-17",
+        "public-seka-exaero-rdc-owner-build-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "spcycle-g028",
+      "exact_identity": "G028",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "platform-spcycle-g028-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "spcycle-g028-official-2026-08-25"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "specialized-crux-10r-frameset",
+      "exact_identity": "Specialized Crux 10r frameset",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-material": 0
+      },
+      "existing_source_ids": [
+        "specialized-crux-10r-frameset-official-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "specialized-roubaix-sl8-sport-105",
+      "exact_identity": "Specialized 2025 Roubaix SL8 Sport Shimano 105",
+      "owner": "luna-evidence-only",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28"
+      ],
+      "approach_area_counts": {
+        "frame-stiffness": 0
+      },
+      "existing_source_ids": [
+        "specialized-roubaix-sl8-sport-105-taiwan-2026-08-28"
+      ]
+    }
+  ],
+  "acceptance_rules": [
+    "Research only frozen fields sequentially, one exact target and source at a time; stop at decisive evidence.",
+    "Distinguish exact model/generation, complete bike versus frameset, market, selected option, price/checkout conditions, size and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior observations without refreshing access dates unless actually rechecked.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with a concrete reason and reopen trigger; never infer.",
+    "Keep third-party images remote unless reusable rights are documented; preserve exactness, credit, alt text and fallback metadata.",
+    "Evidence agent is read-only: no repository edits, no XHS, no seller contact, no recursive delegation and no out-of-scope research. Root is sole writer.",
+    "Return one disposition per frozen attempt ID with exact source URL/ID, source class/publisher, actual access date, supported claim, caveat and reopen trigger."
+  ]
+}

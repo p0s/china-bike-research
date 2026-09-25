@@ -1,0 +1,197 @@
+{
+  "batch_id": "gap-fill-batch-28-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh data:gaps: 41 published variants, 222 candidates; gap counts {\"bom-incomplete\":2,\"bottom-bracket-missing\":6,\"candidate-blockers\":222,\"clearance-unverified\":103,\"complete-weight-missing\":82,\"drivetrain-missing\":39,\"frame-material-detail-missing\":15,\"frame-weight-missing\":26,\"geometry-missing\":5,\"image-exactness\":4,\"image-health-unverified\":37,\"price-missing\":26,\"price-not-observed\":39,\"price-reference-range\":2,\"purchase-route\":25,\"stiffness-evidence-missing\":78}; field states {\"blocked\":335,\"conflicted\":35,\"found\":68,\"temporarily-exhausted\":14}. Fresh research:queue counts {\"ready\":0,\"evidence-found\":509,\"deferred\":45,\"blocked\":498,\"conflicted\":60}; after filtering attempts with source-reuse resolutions and the java-aluminum-24s duplicate, 488 evidence-found queue rows remain eligible for a new check.",
+  "selection_basis": "The next unresolved evidence-found exact model groups in fresh research:queue order after B27. Exclude every attempt already holding a source-reuse resolution and the known java-aluminum-24s duplicate. Cap at 10 exact models and 25 atomic fields.",
+  "exact_model_count": 10,
+  "atomic_field_count": 25,
+  "unresolved_evidence_found_fields_after_resolution_filter": 488,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "missing-china-price-x-lab-xds-gt8",
+    "muidler-ashius-s7",
+    "nscr-carbon-gravel-storage",
+    "paragon-jazz-2026",
+    "pardus-robin-evo-community-lead",
+    "pardus-robin-sport-pes",
+    "pardus-spark",
+    "pardus-spark-rs-community-lead",
+    "pardus-spark-sport-pes",
+    "pardus-super-sport"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-x-lab-xds-gt8",
+      "exact_identity": "X-LAB GT8 GRX Di2",
+      "model_group": "missing-china-price-x-lab-xds-gt8",
+      "fields": [
+        "frame-stiffness",
+        "price",
+        "purchase-route",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-x-lab-xds-gt8-frame-stiffness-2026-08-27",
+        "candidate-xlab-gt8-price-2026-08-27",
+        "candidate-xlab-gt8-purchase-route-2026-08-27",
+        "candidate-missing-china-price-x-lab-xds-gt8-frame-material-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "muidler-ashius-s7",
+      "exact_identity": "MUIDLER 媚影 阿修斯 S7",
+      "model_group": "muidler-ashius-s7",
+      "fields": [
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-muidler-ashius-s7-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "nscr-carbon-gravel-storage",
+      "exact_identity": "NSCR Carbon gravel bike with storage",
+      "model_group": "nscr-carbon-gravel-storage",
+      "fields": [
+        "complete-weight",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-nscr-carbon-gravel-storage-complete-weight-2026-08-30",
+        "candidate-nscr-carbon-gravel-storage-frame-material-2026-08-30",
+        "candidate-nscr-carbon-gravel-storage-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "paragon-jazz-2026",
+      "exact_identity": "PARAGON 鹏来格 JAZZ 2026",
+      "model_group": "paragon-jazz-2026",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-paragon-jazz-2026-drivetrain-2026-08-30",
+        "candidate-paragon-jazz-2026-frame-material-2026-08-30",
+        "candidate-paragon-jazz-2026-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-evo-community-lead",
+      "exact_identity": "PARDUS Robin EVO competition build",
+      "model_group": "pardus-robin-evo-community-lead",
+      "fields": [
+        "complete-weight",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-robin-evo-community-lead-complete-weight-2026-09-01",
+        "candidate-pardus-robin-evo-community-lead-purchase-route-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-sport-pes",
+      "exact_identity": "PARDUS 瑞豹 Robin Sport PES",
+      "model_group": "pardus-robin-sport-pes",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "frame-stiffness",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-robin-sport-pes-drivetrain-2026-08-30",
+        "candidate-pardus-robin-sport-pes-frame-material-2026-08-30",
+        "candidate-pardus-robin-sport-pes-frame-stiffness-2026-08-30",
+        "candidate-pardus-robin-sport-pes-tire-clearance-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark",
+      "exact_identity": "PARDUS 瑞豹 Spark",
+      "model_group": "pardus-spark",
+      "fields": [
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-spark-frame-material-2026-08-30",
+        "candidate-pardus-spark-frame-stiffness-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-rs-community-lead",
+      "exact_identity": "PARDUS Spark RS custom build",
+      "model_group": "pardus-spark-rs-community-lead",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-spark-rs-community-lead-purchase-route-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-sport-pes",
+      "exact_identity": "PARDUS 瑞豹 Spark Sport PES",
+      "model_group": "pardus-spark-sport-pes",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-spark-sport-pes-complete-weight-2026-09-01",
+        "candidate-pardus-spark-sport-pes-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-super-sport",
+      "exact_identity": "PARDUS 瑞豹 Super Sport (original generation)",
+      "model_group": "pardus-super-sport",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-super-sport-drivetrain-2026-08-30",
+        "candidate-pardus-super-sport-frame-material-2026-08-30",
+        "candidate-pardus-super-sport-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research the frozen scope sequentially, one exact model and one source at a time; use current exact-model sources and stop at decisive evidence.",
+    "Do not repeat a completed 50-area sweep or any field with an existing source-reuse resolution. Reuse accepted exact-model evidence when valid and make focused current checks only where needed.",
+    "Distinguish selected build, model family, generation, market, seller card, checkout, freight, tax, stock and technical measurement basis; do not transfer sibling or regional build facts.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with source-backed caveats; never infer exact values or treat absence as negative evidence.",
+    "Luna is evidence-only: do not edit repository files, contact sellers, use XHS, recurse or research out-of-scope fields. Root is the sole writer and integrates the report.",
+    "Return each field with source URL/class/publisher, actual access date, supported claim, configuration match, limitations, disposition and a concrete reopen trigger."
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "batch_id": "gap-fill-batch-29-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps: 41 published variants, 222 candidates; gap counts {\"bom-incomplete\":2,\"bottom-bracket-missing\":6,\"candidate-blockers\":222,\"clearance-unverified\":103,\"complete-weight-missing\":82,\"drivetrain-missing\":39,\"frame-material-detail-missing\":15,\"frame-weight-missing\":26,\"geometry-missing\":5,\"image-exactness\":4,\"image-health-unverified\":37,\"price-missing\":26,\"price-not-observed\":39,\"price-reference-range\":2,\"purchase-route\":25,\"stiffness-evidence-missing\":78}; field states {\"blocked\":335,\"conflicted\":35,\"found\":68,\"temporarily-exhausted\":14}. Fresh research:queue counts {\"ready\":0,\"evidence-found\":484,\"deferred\":45,\"blocked\":498,\"conflicted\":60}; after filtering existing source-reuse resolutions and the java-aluminum-24s duplicate, 463 evidence-found rows remain eligible.",
+  "selection_basis": "First eligible groups in the fresh research:queue after filtering every source-reuse-resolved attempt and the known java-aluminum-24s duplicate; cap at 10 exact target records and 25 atomic fields. The PARDUS Super Sport Gen2 platform and eGR variant remain separate exact target records because their frozen fields differ.",
+  "exact_model_count": 10,
+  "atomic_field_count": 25,
+  "unresolved_evidence_found_fields_after_resolution_filter": 463,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "pardus-super-sport-gen2",
+    "pardus-super-sport-gen2-egr",
+    "pardus-uragano-evo",
+    "pardus-uragano-evo-community-lead",
+    "pardus-uragano-sport",
+    "phillips-carbon-road-unknown",
+    "phoenix-700c-carbon-e-road",
+    "pinarello-f5",
+    "qingsha-carbon-folding",
+    "quick-gr-one"
+  ],
+  "targets": [
+    {
+      "record_type": "platform",
+      "record_id": "pardus-super-sport-gen2",
+      "exact_identity": "PARDUS Super Sport Gen2",
+      "model_group": "pardus-super-sport-gen2",
+      "fields": [
+        "geometry"
+      ],
+      "attempt_ids": [
+        "platform-pardus-super-sport-gen2-geometry-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "pardus-super-sport-gen2-egr",
+      "exact_identity": "PARDUS Super Sport Gen2 eGR",
+      "model_group": "pardus-super-sport-gen2-egr",
+      "fields": [
+        "frame",
+        "image",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "variant-pardus-super-sport-gen2-egr-frame-2026-08-17",
+        "variant-pardus-super-sport-gen2-egr-image-2026-09-01",
+        "variant-pardus-super-sport-gen2-egr-tire-clearance-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo",
+      "exact_identity": "PARDUS 瑞豹 Uragano EVO",
+      "model_group": "pardus-uragano-evo",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-evo-main-complete-weight-2026-08-27",
+        "candidate-pardus-uragano-evo-frame-stiffness-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build",
+      "model_group": "pardus-uragano-evo-community-lead",
+      "fields": [
+        "complete-weight",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-evo-complete-weight-2026-08-27",
+        "candidate-pardus-uragano-evo-community-lead-purchase-route-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-sport",
+      "exact_identity": "PARDUS 瑞豹 Uragano Sport",
+      "model_group": "pardus-uragano-sport",
+      "fields": [
+        "current-configuration",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-pardus-uragano-sport-current-configuration-2026-08-27",
+        "candidate-pardus-uragano-sport-tire-clearance-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "phillips-carbon-road-unknown",
+      "exact_identity": "PHILLIPS 菲利普 SACHEM 24-speed",
+      "model_group": "phillips-carbon-road-unknown",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-phillips-carbon-road-unknown-complete-weight-2026-08-30",
+        "candidate-phillips-carbon-road-unknown-drivetrain-2026-08-30",
+        "candidate-phillips-carbon-road-unknown-frame-material-2026-08-30",
+        "candidate-phillips-carbon-road-unknown-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "phoenix-700c-carbon-e-road",
+      "exact_identity": "Phoenix 凤凰 799 700C carbon electric-assist road bike",
+      "model_group": "phoenix-700c-carbon-e-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-phoenix-700c-carbon-e-road-complete-weight-2026-08-30",
+        "candidate-phoenix-700c-carbon-e-road-drivetrain-2026-08-30",
+        "candidate-phoenix-700c-carbon-e-road-frame-material-2026-08-30",
+        "candidate-phoenix-700c-carbon-e-road-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pinarello-f5",
+      "exact_identity": "PINARELLO F5",
+      "model_group": "pinarello-f5",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-pinarello-f5-drivetrain-2026-08-30",
+        "candidate-pinarello-f5-frame-material-2026-08-30",
+        "candidate-pinarello-f5-tire-clearance-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "qingsha-carbon-folding",
+      "exact_identity": "轻鲨 QingSha QS91-20 blue / blue-carbon-wheel",
+      "model_group": "qingsha-carbon-folding",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-qingsha-carbon-folding-drivetrain-2026-08-30",
+        "candidate-qingsha-carbon-folding-frame-material-2026-08-30",
+        "candidate-qingsha-carbon-folding-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "quick-gr-one",
+      "exact_identity": "QUICK GR:ONE",
+      "model_group": "quick-gr-one",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-quick-gr-one-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research the frozen scope sequentially, one exact target and one source at a time; use current exact-model sources and stop at decisive evidence.",
+    "Do not repeat any completed 50-area sweep or field with an existing source-reuse resolution. Reuse accepted exact-model evidence and make focused current checks only where genuinely needed.",
+    "Distinguish platform from exact build, selected SKU, size, market, seller card, checkout, stock and technical measurement basis; do not transfer sibling or regional facts.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with source-backed caveats; never infer exact values or treat absence as negative evidence.",
+    "The Gen2 eGR image field already has a completed 50-area record and an accepted sanitized rights-reviewed exact-variant image source. Do not repeat that sweep, download an image, or change image files; report the existing image/source disposition only.",
+    "Luna is evidence-only: do not edit repository files, contact sellers, use XHS, recurse or research out-of-scope fields. Root is the sole writer and integrates the report.",
+    "Return each field with source URL or retained source ID, source class/publisher, actual access date, supported claim, configuration match, limitations, disposition and a concrete reopen trigger; identify reused versus newly checked evidence."
+  ]
+}

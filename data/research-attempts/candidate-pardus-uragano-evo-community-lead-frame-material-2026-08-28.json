@@ -1,15 +1,46 @@
 {
   "id": "candidate-pardus-uragano-evo-community-lead-frame-material-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "pardus-uragano-evo-community-lead" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-evo-community-lead"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "found", "attempts": [
-    { "attempt": 1, "query": "PARDUS Uragano EVO HS carbon construction", "route": "exact-model editorial review", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.biketo.com/product/52352.html?all=1", "note": "Exact reviewed generation identifies PARDUS HS carbon, dropped stays, T47x68, 27.2 mm seatpost and 700x45C maximum; exact fiber supplier and lay-up are unpublished." }
-  ] } },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Uragano EVO HS carbon construction",
+          "route": "exact-model editorial review",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.biketo.com/product/52352.html?all=1",
+          "note": "Exact reviewed generation identifies PARDUS HS carbon, dropped stays, T47x68, 27.2 mm seatpost and 700x45C maximum; exact fiber supplier and lay-up are unpublished."
+        }
+      ]
+    }
+  },
   "status": "found",
-  "accepted_source_ids": ["pardus-uragano-evo-biketo-2026-08-27"],
+  "accepted_source_ids": [
+    "pardus-uragano-evo-biketo-2026-08-27",
+    "pardus-uragano-evo-biketo-recheck-2026-09-23",
+    "public-pardus-uragano-evo-build-2026-08-17"
+  ],
   "retry_after": null,
-  "notes": "The duplicate community lead is linked to the exact Uragano EVO record, where these generation-bounded facts are already normalized."
+  "notes": "The duplicate community lead is linked to the exact Uragano EVO record, where these generation-bounded facts are already normalized.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "pardus-uragano-evo-biketo-recheck-2026-09-23",
+      "public-pardus-uragano-evo-build-2026-08-17"
+    ],
+    "note": "The 2023 BIKETO review supports HS-grade carbon for its reviewed platform sample but does not identify the community build's frame/generation. No historical search-channel attempts were rewritten."
+  }
 }

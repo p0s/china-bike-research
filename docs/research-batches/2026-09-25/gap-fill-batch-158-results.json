@@ -1,0 +1,191 @@
+{
+  "batch": 158,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 667,
+    "catalog_gap_entries_after": 667,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 10,
+    "atomic_gap_entries_resolved_by_exact_existing_evidence": 3,
+    "atomic_gap_entries_left_unresolved": 7,
+    "research_queries_run": 7,
+    "research_attempt_records_added": 7,
+    "research_attempt_records_modified_for_source_reuse": 3,
+    "campaign_extensions_added": 5,
+    "ordinary_retries_added": 2,
+    "research_attempts_before": 1816,
+    "research_attempts_after": 1823,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35890,
+    "research_status_counts_after": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_modified": 0,
+    "source_records_after": 1424,
+    "candidate_facts_changed": 0,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none",
+    "source_reuse_ledger_fields_closed": 3,
+    "research_queue_counts_before": {
+      "ready": 74,
+      "evidence-found": 8,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "research_queue_counts_after": {
+      "ready": 74,
+      "evidence-found": 5,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "model_results": [
+    {
+      "model_id": "lightcarbon-speed7-frameset",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "attempt_id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-b154-2026-09-25",
+      "result": "The candidate still records the accepted qualitative exact-chassis review observation, its custom-build and non-numeric caveats, and the linked source.",
+      "disposition": "source-reuse-resolved"
+    },
+    {
+      "model_id": "pardus-super-sport",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "attempt_id": "candidate-pardus-super-sport-frame-stiffness-b151-2026-09-25",
+      "result": "The candidate still records the original-generation subjective review impression with its review-build caveat and linked source.",
+      "disposition": "source-reuse-resolved"
+    },
+    {
+      "model_id": "twitter-gravel-v3-105",
+      "gaps": [
+        "tire-clearance"
+      ],
+      "attempt_id": "candidate-twitter-gravel-v3-105-tire-clearance-b154-2026-09-25",
+      "result": "The candidate still records the 700x40C platform maximum and explicitly limits transfer to the separately documented 105 complete-bike trim; source remains linked.",
+      "disposition": "source-reuse-resolved"
+    },
+    {
+      "model_id": "airwolf-yf-r003",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "Airwolf YF-R003 exact frame stiffness test flex measured independent review 2026",
+      "attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-b158-2026-09-25",
+      "result": "No qualifying measurement or independent stiffness result surfaced; existing owner impressions are subjective and official product access remains blocked.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "alums-da54",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "ALVAS DA54 exact model independent frame stiffness test measured review 2026",
+      "attempt_id": "candidate-alums-da54-frame-stiffness-b158-2026-09-25",
+      "result": "The one newly opened MyBike.parts review describes an Australian Ultegra/Helux build and handling but makes no frame-stiffness claim; it does not establish the retained mainland build.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "argon18-krypton-pro",
+      "gaps": [
+        "price"
+      ],
+      "new_query": "Argon 18 Krypton Pro exact current mainland China CNY price selected build 2026",
+      "attempt_id": "candidate-argon18-krypton-pro-price-b158-2026-09-25",
+      "result": "No exact mainland CNY seller listing or checkout amount surfaced; already recorded US-dollar global pricing and dealer routing do not establish mainland price.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "bianchi-sprint-icr",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "Bianchi Sprint ICR 105 Di2 YTBR6 frame stiffness independent measurement test",
+      "attempt_id": "candidate-bianchi-sprint-icr-frame-stiffness-b158-2026-09-25",
+      "result": "No current independent stiffness test for the exact YTBR6 build surfaced; the recorded official specification does not report stiffness.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "bigrock-sohtea",
+      "gaps": [
+        "warranty-support"
+      ],
+      "new_query": "BIGROCK Sohtea exact model manufacturer China warranty after sales official current 2026",
+      "attempt_id": "candidate-bigrock-sohtea-warranty-support-b158-2026-09-25",
+      "result": "A generic Vietnam policy was not exact-model China evidence; the accepted Team Edition warranty source is a different trim, and the regular frameset listing lacks warranty terms.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "bxt-gravel-complete",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "BXT Gravel complete exact frame stiffness independent measured test review",
+      "attempt_id": "candidate-bxt-gravel-complete-frame-stiffness-b158-2026-09-25",
+      "result": "No independent comparable stiffness measurement surfaced; existing reports are build- or revision-confounded.",
+      "disposition": "unresolved"
+    },
+    {
+      "model_id": "camp-ace-gen3-105",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "CAMP ACE III 105 third generation exact frame stiffness independent measured test",
+      "attempt_id": "candidate-camp-ace-gen3-105-frame-stiffness-b158-2026-09-25",
+      "result": "The only newly surfaced exact-looking Sohu page passed URL absence audit but its one permitted open returned 400 Timeout fetching; no retry; the official page has no stiffness evidence.",
+      "disposition": "unresolved"
+    }
+  ],
+  "search_and_page_summary": {
+    "distinct_new_queries": 7,
+    "page_open_attempts": 2,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 2,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 1,
+    "page_open_failures": [
+      {
+        "url": "https://www.sohu.com/a/1057474909_122645100",
+        "error": "400 Timeout fetching; no retry."
+      }
+    ],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "opened_pages": [
+      {
+        "url": "https://mybike.parts/youtube-cycling-reviews/793-the-velographer-episode-195-this-budget-aero-bike-shocked-me-alvas-da54-review",
+        "finding": "The page identifies an Australian Ultegra/Helux review build and handling impressions but makes no frame-stiffness claim and does not identify the mainland candidate build."
+      },
+      {
+        "url": "https://www.sohu.com/a/1057474909_122645100",
+        "finding": "The URL was new to the repository, but its only permitted open failed with 400 Timeout fetching; no retry."
+      }
+    ],
+    "note": "Seven exact-model web queries were run by the evidence-only worker. Three ledger-only source-reuse resolutions introduced no new search or source. No new source or image record was added."
+  },
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35890 web attempts",
+    "coverage_baseline": "monotonic baseline accepted; coverage check passed for 212 images, 76 prices, 1424 sources, and 236 candidates",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 332/332 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed after result and checkpoint updates",
+    "image_report": "not run: no image record changed"
+  }
+}

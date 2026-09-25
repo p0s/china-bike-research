@@ -478,8 +478,15 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "spcycle-g028-hb068-current-2026-09-01"
+    "spcycle-g028-hb068-current-2026-09-01",
+    "spcycle-g028-purchase-route-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g028-frameset-batch-047-50-area-sweep-2026-09-01.json. Current Buy now and Add to cart route found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g028-frameset-batch-047-50-area-sweep-2026-09-01.json. Current Buy now and Add to cart route found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["spcycle-g028-purchase-route-recheck-2026-09-24"],
+    "note": "Exact official storefront route is live with Buy now/Add to cart, US$738 sale price and 48 items shown. Buyer bears import/taxes; the two-year warranty covers the frameset only. Mainland delivery and final checkout remain unknown."
+  }
 }

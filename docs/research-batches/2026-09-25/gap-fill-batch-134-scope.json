@@ -1,0 +1,73 @@
+{
+  "batch": 134,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 9
+    },
+    "selection_note": "Select all eight eligible conflicted attempts after B133, across seven exact models, in queue order. Do not touch the future-dated Twitter V3 RS Sensah clearance retry."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id": "pardus-spark-rs-community-lead", "name": "PARDUS Spark RS custom build"},
+      {"id": "pardus-super-sport-gen2", "name": "PARDUS Super Sport Gen2"},
+      {"id": "seraph-tt-x68-new-udh", "name": "Seraph / TanTan TT-X68-new UDH"},
+      {"id": "twitter-cyclone-gen3-et", "name": "TWITTER Cyclone Gen 3 ET electronic"},
+      {"id": "twitter-v3-rs-sensah", "name": "TWITTER Gravel V3 RS / Sensah 2×12"},
+      {"id": "velobuild-cx-002-2023", "name": "VeloBuild CX-002 (2023 internal routing)"},
+      {"id": "spect-mira", "name": "SPECT 空力公式 Mira frameset"}
+    ],
+    "exact_record_count": 7,
+    "selected_fields": [
+      "candidate:pardus-spark-rs-community-lead:frame-material",
+      "platform:pardus-super-sport-gen2:frame-material",
+      "candidate:seraph-tt-x68-new-udh:frame-revision",
+      "variant:twitter-cyclone-gen3-et:cockpit",
+      "variant:twitter-v3-rs-sensah:complete-weight",
+      "candidate:velobuild-cx-002-2023:geometry",
+      "candidate:spect-mira:tire-clearance",
+      "variant:twitter-v3-rs-sensah:frame-weight"
+    ],
+    "selected_attempts": [
+      {"record_type":"candidate","record_id":"pardus-spark-rs-community-lead","name":"PARDUS Spark RS custom build","gap":"frame-material","attempt_id":"candidate-pardus-spark-rs-community-lead-frame-material-2026-08-28","score":60},
+      {"record_type":"platform","record_id":"pardus-super-sport-gen2","name":"Super Sport Gen2","gap":"frame-material","attempt_id":"platform-pardus-super-sport-gen2-frame-material-2026-08-28","score":60},
+      {"record_type":"candidate","record_id":"seraph-tt-x68-new-udh","name":"Seraph / TanTan TT-X68-new UDH","gap":"frame-revision","attempt_id":"candidate-seraph-tt-x68-new-udh-frame-revision-2026-09-22","score":60},
+      {"record_type":"variant","record_id":"twitter-cyclone-gen3-et","name":"Cyclone Gen 3 ET electronic","gap":"cockpit","attempt_id":"variant-twitter-cyclone-gen3-et-cockpit-2026-08-17","score":60},
+      {"record_type":"variant","record_id":"twitter-v3-rs-sensah","name":"Gravel V3 RS / Sensah 2×12","gap":"complete-weight","attempt_id":"variant-twitter-v3-rs-sensah-complete-weight-2026-08-28","score":60},
+      {"record_type":"candidate","record_id":"velobuild-cx-002-2023","name":"VeloBuild CX-002 (2023 internal routing)","gap":"geometry","attempt_id":"candidate-velobuild-cx-002-2023-geometry-2026-09-22","score":60},
+      {"record_type":"candidate","record_id":"spect-mira","name":"SPECT 空力公式 Mira frameset","gap":"tire-clearance","attempt_id":"candidate-spect-mira-tire-clearance-2026-08-30","score":57},
+      {"record_type":"variant","record_id":"twitter-v3-rs-sensah","name":"Gravel V3 RS / Sensah 2×12","gap":"frame-weight","attempt_id":"variant-twitter-v3-rs-sensah-frame-weight-2026-09-24","score":54}
+    ],
+    "accepted_sources": {
+      "candidate-pardus-spark-rs-community-lead-frame-material-2026-08-28": ["pardus-spark-rs-current-official-2026-08-28", "public-pardus-spark-rs-build-2026-08-17"],
+      "platform-pardus-super-sport-gen2-frame-material-2026-08-28": ["pardus-super-sport-gen2-official-2026-08-28", "pardus-super-sport-egr-888bike-2026-08-28"],
+      "candidate-seraph-tt-x68-new-udh-frame-revision-2026-09-22": ["seraph-tt-x68-new-storefront-2026-09-22", "tantan-tt-x68-new-version-35c-2026-09-22"],
+      "variant-twitter-cyclone-gen3-et-cockpit-2026-08-17": ["twitter-cyclone-gen3-et-china-2026-08-17", "twitter-cyclone-gen3-et-usa-2026-08-17", "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"],
+      "variant-twitter-v3-rs-sensah-complete-weight-2026-08-28": ["twitter-v3-official-2026-08-28", "twitter-v3-rs-factory-store-2026-08-28", "twitter-v3-25yr-manufacturer-2026-09-22", "twitter-v3-25yr-store-conflict-2026-09-22"],
+      "candidate-velobuild-cx-002-2023-geometry-2026-09-22": ["velobuild-cx002-spec-sheets-2026-09-22", "velobuild-cx002-geometry-sheet-2026-09-22"],
+      "candidate-spect-mira-tire-clearance-2026-08-30": ["spect-mira-cyclegears-2026-08-30", "spect-mira-cyclistshub-2026-08-30"],
+      "variant-twitter-v3-rs-sensah-frame-weight-2026-09-24": ["twitter-v3-rs-sensah-frame-weight-recheck-2026-09-24", "twitter-v3-25yr-store-conflict-2026-09-22"]
+    },
+    "research_boundary": "One Luna Max evidence-only reviewer; root is sole writer. Read the frozen records and accepted sources before new research. Work through one exact model and one source at a time; first look for a current exact-model primary source, then stop when evidence is decisive. Report actual access date, title, publisher/source class, direct URL, exact supported claim, and caveat for each field. Reuse source IDs only where the exact claim and target match. Do not write repository files.",
+    "excluded": [
+      "No fields outside the eight frozen attempts or seven exact models.",
+      "Do not recheck variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17 before its 2026-11-17 retry date.",
+      "Do not transfer specifications or evidence across generations, trims, builds, sizes, sellers, or markets.",
+      "Public-post research is limited to currently public, non-private pages; no XHS or Weibo capture, login, CAPTCHA, challenge handling, or bypass in this batch.",
+      "No purchases, carts, quotes, seller contact, image downloads, rehosting, image record changes, external messages, commits, pushes, PRs, merges, or publishing.",
+      "Preserve unknowns, conflicts, channel blockers, and access limitations; do not infer missing values."
+    ],
+    "not_selected_from_remaining_queue": [
+      {"attempt_id":"variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17","record_id":"twitter-v3-rs-sensah","reason":"retry_after is 2026-11-17, so this field is not eligible for B134."},
+      {"attempt_id":"variant-lightcarbon-speedz-complete-complete-weight-follow-up-2026-09-24","record_id":"lightcarbon-speedz-complete","reason":"Highest next blocked score, but not a conflicted item. B134 is limited to the eligible conflicted queue before opening a distinct exact-model blocker campaign."}
+    ]
+  }
+}

@@ -484,8 +484,19 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "muidler-trademark-index-2026-08-30",
-    "muidler-current-range-smzdm-2026-08-30"
+    "muidler-current-range-smzdm-2026-08-30",
+    "muidler-s7-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/muidler-ashius-s7-50-area-sweep-2026-08-30.json. The retained exact card establishes 阿修斯 S7, while current registry and range indexes corroborate the MUIDLER 媚影 spelling without supplying S7 specifications."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/muidler-ashius-s7-50-area-sweep-2026-08-30.json. The retained exact card establishes 阿修斯 S7, while current registry and range indexes corroborate the MUIDLER 媚影 spelling without supplying S7 specifications.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "muidler-trademark-index-2026-08-30",
+      "muidler-s7-jd-index-recheck-2026-09-23"
+    ],
+    "note": "historical-card-identity-current-index-no-s7-official-identity-unresolved: The anonymized Aug 8 card reads 媚影阿修斯S7 and shows MUIDLER branding; the trademark index links MUIDLER with 媚影 but not S7. The current JD image index no longer shows S7. Official manufacturer identity and English model rendering remain unknown. Reopen trigger: Reopen with a current manufacturer or seller item page naming S7 and its official identity."
+  }
 }

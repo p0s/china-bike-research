@@ -481,5 +481,11 @@
     "twitter-gravel-v3-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-gravel-v3-105-batch-036-50-area-sweep-2026-09-01.json. The current exact configurable page publishes a 9.7-9.9 kg range across selectable builds; exact Shimano 105 wheel, size and accessory basis remain unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-gravel-v3-105-batch-036-50-area-sweep-2026-09-01.json. The exact configurable page publishes a 9.7-9.9 kg range across selectable builds; the 9.9 kg value is its upper endpoint, not a proven weight of the selected Shimano 105 build. Size, wheels and accessories remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-gravel-v3-official-2026-08-17"],
+    "note": "Retain the exact page's 9.7-9.9 kg configurable-build range and list 9,900 g only as its upper endpoint. This does not establish the exact 105 selection's measured weight; size, wheels, accessories and weighing method remain unspecified."
+  }
 }

@@ -492,8 +492,21 @@
   "status": "found",
   "accepted_source_ids": [
     "java-suprema-colombia-2026-08-29",
-    "java-suprema-uruguay-2026-08-29"
+    "java-suprema-uruguay-2026-08-29",
+    "java-suprema-colombia-index-recheck-2026-09-23",
+    "java-suprema-uruguay-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Current exact regional builds establish carbon construction while preserving their T800 versus 3K wording difference."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. Current exact regional builds establish carbon construction while preserving their T800 versus 3K wording difference.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-suprema-colombia-index-recheck-2026-09-23",
+      "java-suprema-uruguay-index-recheck-2026-09-23",
+      "java-suprema-colombia-2026-08-29",
+      "java-suprema-uruguay-2026-08-29"
+    ],
+    "note": "Regional references describe carbon but disagree on grade (Colombia T800, Uruguay 3K). Current rechecks do not resolve the difference or map either frame to the retained mainland seller selection; keep exact grade/build unresolved."
+  }
 }

@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pardus-super-sport-gen2-taobao-2026-08-28"
+    "pardus-super-sport-gen2-taobao-2026-08-28",
+    "pardus-super-sport-gen2-taobao-page-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-pardus-super-sport-gen2-egr-batch-047-50-area-sweep-2026-09-01.json. Current official-flagship Taobao lead found at the retained CNY 4,999 coupon price."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-pardus-super-sport-gen2-egr-batch-047-50-area-sweep-2026-09-01.json. Current official-flagship Taobao lead found at the retained CNY 4,999 coupon price.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "pardus-super-sport-gen2-taobao-2026-08-28",
+      "pardus-super-sport-gen2-taobao-page-recheck-2026-09-24"
+    ],
+    "note": "The one approved current open of the exact Taobao item page returned a non-retryable cannot-be-opened result. The older indexed listing has low price/spec reliability; today seller identity, exact L-TWOO eGR option, promotion terms, stock/add-to-cart and selected checkout could not be verified. Keep the 2026-08-25 CNY 4,999 report-only observation and current-market-report status; do not create an exact price record."
+  }
 }

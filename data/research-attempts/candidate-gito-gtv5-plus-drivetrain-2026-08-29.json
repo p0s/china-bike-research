@@ -483,8 +483,18 @@
   "status": "found",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "gito-g530-retailer-2026-08-29"
+    "gito-g530-retailer-2026-08-29",
+    "gito-g530-888bike-index-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-gtv5-plus-50-area-sweep-2026-08-29.json. The retained seller image explicitly states Shimano mechanical 105 and the current exact G530 page specifies the matching 2x12 hydraulic-disc family."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-gtv5-plus-50-area-sweep-2026-08-29.json. The retained seller image explicitly states Shimano mechanical 105 and the current exact G530 page specifies the matching 2x12 hydraulic-disc family.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "gito-g530-888bike-index-current-2026-09-23"
+    ],
+    "note": "Archived snapshot says Shimano mechanical 105; exact series/gear count/brake system unknown. Current G530 indexed listing is a separate build and direct page timed out."
+  }
 }

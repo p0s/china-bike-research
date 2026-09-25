@@ -1,0 +1,424 @@
+{
+  "batch_id": "gap-fill-batch-36-2026-09-23",
+  "completed_at": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-36-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 20,
+    "root_fields": 0,
+    "luna_evidence_fields": 20
+  },
+  "new_source_records": [
+    "quick-pro-xr-one-grx-di2-quickprokorea-2026-09-23",
+    "specialized-crux-comp-grx-official-recheck-2026-09-23",
+    "trek-checkpoint-sl5-axs-gen3-official-2026-09-23",
+    "trek-checkpoint-gen3-current-official-recheck-2026-09-23",
+    "mondince-fm316-product-spec-2026-09-23",
+    "mondince-weight-method-2026-09-23",
+    "pardus-uragano-evo-price-index-hooos-2026-09-23",
+    "quick-pro-gr-one-grx-di2-quickproca-2026-09-23",
+    "quick-pro-xr-one-frameset-quickproca-2026-09-23",
+    "rinasclta-q-aero-gr-official-recheck-2026-09-23",
+    "rinasclta-warranty-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "candidate_price_observations_added": [],
+  "new_images_added": [],
+  "image_records_updated": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "missing-china-price-quick-pro-xr-one",
+    "missing-china-price-specialized-crux",
+    "missing-china-price-trek-checkpoint",
+    "mondince-fm316",
+    "pardus-uragano-evo",
+    "pardus-uragano-evo-community-lead",
+    "pardus-uragano-sport",
+    "quick-pro-gr-one-grx-di2",
+    "quick-pro-xr-one-frameset-aelous-gravel",
+    "rinasclta-q-aero-gr"
+  ],
+  "results": [
+    {
+      "attempt_record_id": "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27",
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "field": "frame-material",
+      "status": "qualified",
+      "source_ids": [
+        "quick-pro-xr-one-grx-di2-quickprokorea-2026-09-23",
+        "quick-pro-xr-one-grx-di2-official-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Korea-market exact page supports broad high-modulus carbon only; no mainland grade/layup or revision mapping. Preserve mainland source and regional caveat.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28",
+      "record_id": "missing-china-price-specialized-crux",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "specialized-crux-comp-grx-official-recheck-2026-09-23",
+        "specialized-crux-comp-grx-official-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current exact U.S. GRX trim confirms FACT 10r carbon; do not propagate to another market/year.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-specialized-crux-frame-stiffness-2026-08-28",
+      "record_id": "missing-china-price-specialized-crux",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "source_ids": [
+        "specialized-crux-comp-grx-official-recheck-2026-09-23",
+        "specialized-crux-comp-grx-ciclonline-2026-08-28"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer ride adjectives and editorial ride impressions are qualitative; no stiffness-specific measurement or protocol found.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28",
+      "record_id": "missing-china-price-trek-checkpoint",
+      "field": "frame-material",
+      "status": "supported-with-access-caveat",
+      "source_ids": [
+        "trek-checkpoint-sl5-axs-gen3-official-2026-09-23",
+        "trek-checkpoint-gen3-current-official-recheck-2026-09-23",
+        "trek-checkpoint-sl-gen3-official-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Exact 2027 U.S. listing rendered only a shell; indexed trim detail plus accessible Gen 3 family page support OCLV 500, bounded to the U.S. 2027 trim.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-mondince-fm316-weight-basis-2026-09-22",
+      "record_id": "mondince-fm316",
+      "field": "weight-basis",
+      "status": "qualified",
+      "source_ids": [
+        "mondince-fm316-product-spec-2026-09-23",
+        "mondince-weight-method-2026-09-23",
+        "mondince-fm316-current-specification-2026-09-22"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "M size is 1,150 g raw; manufacturer method defines range weights as size-M raw/unpainted, excluding paint, decals and hardware. Separately listed 42 g cover inclusion is unclear.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-drivetrain-2026-08-27",
+      "record_id": "pardus-uragano-evo",
+      "field": "drivetrain",
+      "status": "qualified",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "BIKETO's 2023 exact reviewed build uses Apex AXS/X1 Eagle AXS 1×12, 40T and 11–50T; not universal across current seller options.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-frame-material-2026-08-27",
+      "record_id": "pardus-uragano-evo",
+      "field": "frame-material",
+      "status": "qualified",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "BIKETO describes its exact 2023 Uragano EVO sample as HS-grade carbon; supplier, grade details and layup are unpublished.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-price-2026-08-27",
+      "record_id": "pardus-uragano-evo",
+      "field": "price",
+      "status": "conflicted",
+      "source_ids": [
+        "pardus-uragano-evo-price-index-hooos-2026-09-23",
+        "pardus-uragano-evo-apex-tmall-2026-08-27",
+        "pardus-uragano-evo-biketo-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Conflict remains: 2023 review-reported retail ¥23,999, dated selected official Tmall option ¥18,999 on 2026-08-27, and a current Hooos snippet ¥13,999 without selected SKU or checkout. No new price observation is justified.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-tire-clearance-2026-08-27",
+      "record_id": "pardus-uragano-evo",
+      "field": "tire-clearance",
+      "status": "qualified",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "BIKETO states a nominal 700×45C maximum; no measured rim/tire fit protocol.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-community-lead-frame-material-2026-08-28",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "frame-material",
+      "status": "unresolved-build-mapping",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-recheck-2026-09-23",
+        "public-pardus-uragano-evo-build-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "The 2023 BIKETO review supports HS-grade carbon for its reviewed platform sample but does not identify the community build's frame/generation.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-evo-community-lead-frame-stiffness-2026-08-28",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "frame-stiffness",
+      "status": "unresolved-build-mapping",
+      "source_ids": [
+        "pardus-uragano-evo-biketo-recheck-2026-09-23",
+        "public-pardus-uragano-evo-build-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "The review describes firm ride tuning, but this is subjective and unmeasured and is not mapped to the community build.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-pardus-uragano-sport-frame-material-2026-08-27",
+      "record_id": "pardus-uragano-sport",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "pardus-uragano-sport-official-current-2026-09-23",
+        "pardus-uragano-sport-cn-official-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current mainland Sport—105 page confirms HS-EPS+ carbon for this exact Sport trim; do not transfer it to Uragano EVO.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27",
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "field": "frame-material",
+      "status": "qualified-regional",
+      "source_ids": [
+        "quick-pro-gr-one-grx-di2-quickproca-2026-09-23",
+        "quick-pro-gr-one-frame-official-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "North American authorized-dealer page supports broad high-strength/high-modulus carbon only and does not name T1100/M65 or prove mainland trim equivalence.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28",
+      "record_id": "quick-pro-xr-one-frameset-aelous-gravel",
+      "field": "frame-material",
+      "status": "qualified-regional",
+      "source_ids": [
+        "quick-pro-xr-one-frameset-quickproca-2026-09-23",
+        "quick-pro-xr-one-frame-official-2026-08-17"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "North American authorized-dealer page supports broad monocoque high-strength/high-modulus carbon only; exact grade and cockpit bundle remain unverified.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "exact-model-identity",
+      "status": "supported",
+      "source_ids": [
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23",
+        "rinasclta-q-aero-gr-official-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current exact manufacturer SKU identifies Q-AERO GR frameset RF-QA-GR-27; this is a frameset identity, not a complete-bike build.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "frame-material",
+      "status": "supported-with-claim-caveat",
+      "source_ids": [
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer claims Toray T800+T1000; no ply schedule, resin system or independent verification is supplied.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "frame-weight",
+      "status": "qualified",
+      "source_ids": [
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer's per-size values and ±20 g tolerance are explicit. Generic 5 kg field is unlabeled and is not assigned to frame weight.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-purchase-route-2026-08-27",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "purchase-route",
+      "status": "qualified-global-route",
+      "source_ids": [
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Global direct-store route exists; mainland checkout, shipping, tax and landed cost are unverified.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "tire-clearance",
+      "status": "supported-as-listed-limit",
+      "source_ids": [
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer lists 700×50C maximum; actual fit varies with rim/tire combination and was not measured.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    },
+    {
+      "attempt_record_id": "candidate-rinasclta-q-aero-gr-warranty-support-2026-08-27",
+      "record_id": "rinasclta-q-aero-gr",
+      "field": "warranty-support",
+      "status": "conflicted-policy-terms",
+      "source_ids": [
+        "rinasclta-warranty-recheck-2026-09-23",
+        "rinasclta-warranty-2026-08-27",
+        "rinasclta-q-aero-gr-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Two-year policy is stated, but shipping responsibilities conflict within the manufacturer's own policy; do not choose one interpretation.",
+      "reopen_trigger": "See source/candidate note for the specific evidence that would resolve the remaining caveat."
+    }
+  ],
+  "updated_research_attempts": [
+    "candidate-missing-china-price-quick-pro-xr-one-frame-material-2026-08-27",
+    "candidate-missing-china-price-specialized-crux-frame-material-2026-08-28",
+    "candidate-missing-china-price-specialized-crux-frame-stiffness-2026-08-28",
+    "candidate-missing-china-price-trek-checkpoint-frame-material-2026-08-28",
+    "candidate-mondince-fm316-weight-basis-2026-09-22",
+    "candidate-pardus-uragano-evo-drivetrain-2026-08-27",
+    "candidate-pardus-uragano-evo-frame-material-2026-08-27",
+    "candidate-pardus-uragano-evo-price-2026-08-27",
+    "candidate-pardus-uragano-evo-tire-clearance-2026-08-27",
+    "candidate-pardus-uragano-evo-community-lead-frame-material-2026-08-28",
+    "candidate-pardus-uragano-evo-community-lead-frame-stiffness-2026-08-28",
+    "candidate-pardus-uragano-sport-frame-material-2026-08-27",
+    "candidate-quick-pro-gr-one-grx-di2-frame-material-2026-08-27",
+    "candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-material-2026-08-28",
+    "candidate-rinasclta-q-aero-gr-identity-2026-08-27",
+    "candidate-rinasclta-q-aero-gr-frame-material-2026-08-28",
+    "candidate-rinasclta-q-aero-gr-frame-weight-2026-08-27",
+    "candidate-rinasclta-q-aero-gr-purchase-route-2026-08-27",
+    "candidate-rinasclta-q-aero-gr-tire-clearance-2026-08-27",
+    "candidate-rinasclta-q-aero-gr-warranty-support-2026-08-27"
+  ],
+  "notes": [
+    "One Luna evidence-only agent researched all 20 frozen attempts; root integrated the source records, candidate facts and attempt resolutions.",
+    "All 20 attempts retain status=found and have source-reuse resolutions; no prior search-channel history was rewritten.",
+    "PARDUS Uragano EVO price remains conflicted; no current exact checkout was verified, so the CNY 13,999 index snippet was not added as a price observation.",
+    "No new price-history records or images were added."
+  ],
+  "validation_plan": {
+    "checks": [
+      {
+        "command": "npm run --silent research:check",
+        "status": "passed",
+        "result": "1,461 atomic research fields validated"
+      },
+      {
+        "command": "npm run --silent validate",
+        "status": "passed",
+        "result": "41 brands, 38 platforms, 41 variants, 73 prices, 1,205 sources, 212 primary image records, 236 candidates, 1,465 atomic research records"
+      },
+      {
+        "command": "npm run --silent coverage:accept",
+        "status": "passed",
+        "result": "monotonic evidence coverage accepted"
+      },
+      {
+        "command": "npm run --silent coverage:check",
+        "status": "passed",
+        "result": "212 images, 73 prices, 1,205 sources, 236 candidates protected"
+      },
+      {
+        "command": "npm run --silent privacy",
+        "status": "passed",
+        "result": "no privacy or local-path patterns"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed",
+        "result": "no whitespace errors"
+      }
+    ],
+    "full_gate": "developer-storage-cache run -- npm run check passed"
+  },
+  "full_gate": {
+    "status": "passed",
+    "tests": "307/307",
+    "build_pages": 584,
+    "seo": {
+      "indexable": 458,
+      "noindex": 126,
+      "status": "passed"
+    }
+  },
+  "validated_counts": {
+    "brands": 41,
+    "platforms": 38,
+    "variants": 41,
+    "dated_price_records": 73,
+    "sources": 1205,
+    "primary_image_records": 212,
+    "candidates": 236,
+    "research_records": 1465,
+    "atomic_research_fields": 1461,
+    "visible_candidate_rows": 215
+  },
+  "fresh_gap_inventory_after_batch": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    }
+  },
+  "fresh_queue_after_batch": {
+    "as_of": "2026-09-23",
+    "ready": 0,
+    "evidence-found": 300,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  }
+}

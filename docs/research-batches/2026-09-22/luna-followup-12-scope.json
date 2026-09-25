@@ -1,0 +1,118 @@
+{
+  "batch_id": "luna-followup-12-2026-09-22",
+  "base_commit": "eeff47b0dfdbdb7b8fa073c4b94f6eb65ee0a612",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 17,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-f20-hawkeye",
+      "fields": [
+        "price",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "bianchi-sprint-icr",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-speed7-complete",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "argon18-krypton-pro",
+      "fields": [
+        "price",
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a7l-pro-2026",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+      "fields": [
+        "price",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-advanced-3",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-spark-tourist",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "fields": [
+        "price",
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pinarello-f5-my26-current-2026-08-30"
+    "pinarello-f5-my26-current-2026-08-30",
+    "pinarello-f5-my26-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pinarello-f5-50-area-sweep-2026-08-30.json. Manufacturer describes improved head-tube and Aero Keel bottom-bracket stiffness without a numeric deflection protocol."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pinarello-f5-50-area-sweep-2026-08-30.json. Manufacturer describes improved head-tube and Aero Keel bottom-bracket stiffness without a numeric deflection protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "pinarello-f5-my26-current-2026-08-30",
+      "pinarello-f5-my26-current-recheck-2026-09-23"
+    ],
+    "note": "The current MY26 F5 manufacturer claim is qualitative and has no numeric result or public protocol. It is recorded as caveated stiffness evidence; retained-card model year remains unresolved."
+  }
 }

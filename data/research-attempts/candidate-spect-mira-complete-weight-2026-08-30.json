@@ -487,5 +487,6 @@
     "spect-mira-cyclegears-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. The exact CNY 6,999 item is a frameset package, so complete-bike weight is not applicable; the quoted 900–940 g frame range is recorded separately with its limitations."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. The exact CNY 6,999 item is a frameset package, so complete-bike weight is not applicable; the quoted 900–940 g frame range is recorded separately with its limitations.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["spect-mira-wildto-2026-08-30","spect-mira-cyclegears-2026-08-30"],"note":"The target is a frameset and the exact sources document a frame/fork/cockpit package, so complete-bike weight is not applicable. The 900–940 g launch frame estimate stays separate from delivered-frame weight; no complete-bike weight is inferred."}
 }

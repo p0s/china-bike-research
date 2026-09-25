@@ -1,0 +1,126 @@
+{
+  "batch": 126,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-126-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "exact_target_records": [
+      "candidate:bxt-gravel-complete",
+      "candidate:tavelo-arow-sl-community-lead",
+      "variant:rinasclta-gr025-frameset",
+      "variant:carbonda-cfr696-frameset",
+      "variant:ican-gra04-frameset",
+      "variant:bianchi-oltre-race",
+      "variant:seka-exaero-gr-frameset",
+      "variant:tavelo-grow-frameset",
+      "platform:winspace-g3",
+      "variant:winspace-g3-frameset",
+      "variant:winspace-g5-frameset"
+    ],
+    "disposition": "All 13 evidence-found queue fields received source-reuse or documented-open dispositions. Current pages support the exact BXT-135 material claim, Tavelo's community-only 6.2 kg build report, the ICAN quote-form route, Tavelo's global retailer route, and current Winspace G3/G5 prices and storefront routes. Four exact current routes remain unverified because a page timed out, returned 403, resolved to a different Bianchi year/build, or sent SEKA's standard GR Shop Now path to a sold-out RDC variant. Six catalog purchase-route flags remain in this scope; ICAN and Tavelo have current global/contact routes but no verified mainland checkout. Two new dated global Winspace reference prices use the ECB 2026-09-23 USD/CNY cross-rate; no mainland price was added.",
+    "catalog_gap_entries_before": 708,
+    "catalog_gap_entries_after": 707,
+    "evidence_found_before": 39,
+    "evidence_found_after": 26,
+    "research_attempts_resolved": 13,
+    "research_fields_left_open": 4,
+    "catalog_gaps_still_flagged_in_scope_after": 6,
+    "source_records_added": 6,
+    "catalog_records_updated": 8,
+    "price_observations_added": 2,
+    "mainland_price_added": 0,
+    "test_files_updated": 1,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:bxt-gravel-complete:frame-material",
+      "disposition": "resolved-with-limits",
+      "source_ids": ["bxt-135-official-build-2026-08-30"],
+      "caveat": "Exact BXT-135 GRX 1×11 carbon-wheel complete build supports a T700+T800 frame and T700 fork; no fiber proportions, lay-up or molding process are published."
+    },
+    {
+      "field": "candidate:tavelo-arow-sl-community-lead:complete-weight",
+      "disposition": "resolved-as-community-report",
+      "source_ids": ["public-tavelo-arow-sl-build-2026-08-17"],
+      "caveat": "The post reports one 6.2 kg custom build, matching 6,200 g; size, full BOM and scale protocol are unstated, so it is not a manufacturer weight."
+    },
+    {
+      "field": "variant:rinasclta-gr025-frameset:purchase-route",
+      "disposition": "documented-open",
+      "source_ids": ["rinasclta-gr025-store-eur-2026-09-01", "rinasclta-gr025-product-recheck-2026-09-24", "rinasclta-gr025-route-timeout-recheck-2026-09-25"],
+      "caveat": "The dated official listing showed €561 and add-to-cart; the 2026-09-25 exact-page open timed out. Current route, stock, price and checkout remain unconfirmed."
+    },
+    {
+      "field": "variant:carbonda-cfr696-frameset:purchase-route",
+      "disposition": "documented-open",
+      "source_ids": ["carbonda-cfr696-official", "carbonda-cfr696-current-official-price-route-recheck-2026-09-24"],
+      "caveat": "The prior official page showed a Get a quote form; the current recheck returned HTTP 403. No quote was submitted, and current route availability and price remain unconfirmed."
+    },
+    {
+      "field": "variant:ican-gra04-frameset:purchase-route",
+      "disposition": "resolved-current-quote-route",
+      "source_ids": ["ican-gra04-official-current-2026-09-01", "ican-gra04-price-route-current-recheck-2026-09-24"],
+      "caveat": "The exact current manufacturer page provides a Get a quote form for the T47, UD-matte, size-M page. The form was not submitted; quote amount and mainland delivery, tax and warranty remain unknown."
+    },
+    {
+      "field": "variant:bianchi-oltre-race:purchase-route",
+      "disposition": "documented-open",
+      "source_ids": ["bianchi-oltre-race-dealer-2026-08-17", "bianchi-oltre-race-hungary-recheck-2026-09-23", "bianchi-oltre-race-allegro-current-recheck-2026-09-25"],
+      "caveat": "The live Allegro URL now identifies 2026 YTB8DI57ZK size 57, while the Hungary page identifies YTB8DF. Neither verifies the exact target YTB8D/2025 route or its mainland availability."
+    },
+    {
+      "field": "variant:seka-exaero-gr-frameset:purchase-route",
+      "disposition": "documented-open",
+      "source_ids": ["seka-exaero-gr-official-store-2026-09-01", "seka-exaero-gr-current-store-recheck-2026-09-25"],
+      "caveat": "The homepage lists standard ExAero GR at US$3,299, but Shop Now leads to the distinct ExAero GR RDC page, which showed sold out. That does not establish the standard GR route."
+    },
+    {
+      "field": "variant:tavelo-grow-frameset:purchase-route",
+      "disposition": "resolved-global-route-with-market-caveat",
+      "source_ids": ["tavelo-grow-official-store-2026-09-01", "tavelo-grow-official-store-recheck-2026-09-25"],
+      "caveat": "Current official products page lists Grow at US$1,650 and a retailer-finder route; selected-size checkout and mainland delivery, tax and warranty eligibility remain unverified."
+    },
+    {
+      "field": "platform:winspace-g3:geometry",
+      "disposition": "resolved-with-secondary-source",
+      "source_ids": ["winspace-g3-bikeinsights-geometry-2026-09-01"],
+      "caveat": "Bike Insights' exact 2025 G3 table provides five sizes and the stored metrics attributed to manufacturer geometry; retain secondary-source attribution."
+    },
+    {
+      "field": "variant:winspace-g3-frameset:price",
+      "disposition": "resolved-current-global-reference",
+      "source_ids": ["winspace-g3-official-current-recheck-2026-09-25", "ecb-reference-rates-2026-09-23"],
+      "caveat": "Current official global list price is US$1,550; the dated ECB reference conversion is CNY 10,396. It is not a mainland checkout price."
+    },
+    {
+      "field": "variant:winspace-g3-frameset:purchase-route",
+      "disposition": "resolved-global-route-with-market-caveat",
+      "source_ids": ["winspace-g3-official-current-recheck-2026-09-25"],
+      "caveat": "The exact page shows size selectors, Add to cart and a 10–15-business-day build-to-order lead time; selected-size stock and mainland checkout costs remain unverified."
+    },
+    {
+      "field": "variant:winspace-g5-frameset:price",
+      "disposition": "resolved-current-global-reference",
+      "source_ids": ["winspace-g5-official-current-recheck-2026-09-25", "ecb-reference-rates-2026-09-23"],
+      "caveat": "Current official global list price is US$2,200; the dated ECB reference conversion is CNY 14,756. It is not a mainland checkout price."
+    },
+    {
+      "field": "variant:winspace-g5-frameset:purchase-route",
+      "disposition": "resolved-global-route-with-market-caveat",
+      "source_ids": ["winspace-g5-official-current-recheck-2026-09-25"],
+      "caveat": "The exact page shows size options, Add to cart, checkout-calculated shipping and a 15–20-business-day lead time; selected-size stock and mainland terms remain unverified."
+    }
+  ],
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1338 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_tests": "pass: five targeted dataset tests for B126-updated fields and expected dataset coverage",
+    "full_gate": "pass: npm run --silent check; 326/326 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

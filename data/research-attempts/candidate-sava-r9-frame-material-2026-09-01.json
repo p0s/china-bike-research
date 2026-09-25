@@ -485,5 +485,6 @@
     "sava-blade-r9-global-current-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. The current exact 2026 product page publishes Toray T800 with T1000 reinforcement."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. The current exact 2026 product page publishes Toray T800 with T1000 reinforcement.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["sava-blade-r9-global-current-2026-09-01"],"note":"The exact current 2026 Blade R9 source supports the Toray T800 frame and fork with T1000 reinforcement already recorded on the candidate. The retained mainland marketplace trim mapping remains unconfirmed."}
 }

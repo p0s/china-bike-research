@@ -1,0 +1,51 @@
+{
+  "id": "candidate-velobuild-cx-002-2023-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "velobuild-cx-002-2023"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Distinct public mainland searches found no exact 2023 CX-002 mainland seller listing with a current CNY amount and selected package. The only exact product route was the foreign VeloBuild brand storefront in USD.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "VeloBuild 2023 CX-002 exact product page current mainland price",
+          "route": "Exact manufacturer product listing recheck",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The exact 2023 listing displays US$499 before selected size, BB, finish, cockpit and paint options; it is a foreign direct-sale listing, not a mainland CNY price or delivery total.",
+          "result_url": "https://www.velobuild.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing"
+        },
+        {
+          "attempt": 2,
+          "query": "VeloBuild CX-002 2023 内走线 车架 淘宝 价格 人民币",
+          "route": "Public mainland product and retailer search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.velobuildmall.com/products/velobuild-2023-new-cx-002-carbon-fiber-cyclocross-frame-full-inner-routing",
+          "note": "Results surfaced the already-reviewed global manufacturer listing and the foreign VeloBuildMall storefront; no mainland CNY listing was identified. VeloBuildMall displays a USD $499 base before options."
+        },
+        {
+          "attempt": 3,
+          "query": "VeloBuild CX-002 2023 site:jd.com OR site:tmall.com OR site:taobao.com",
+          "route": "Public mainland marketplace search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "JD results were unrelated, and no exact 2023 CX-002 mainland product item appeared. The additional exact-item query surfaced the same foreign VeloBuildMall listing plus older-generation/forum results, which were excluded."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["velobuild-cx-002-2023-velobuildmall-foreign-storefront-2026-09-24"],
+  "retry_after": null,
+  "notes": "Disposition: unresolved. The foreign USD base remains a reference only. Distinct public mainland retailer searches found no exact 2023 CX-002 item with a selected package, CNY amount, or domestic purchase conditions."
+}

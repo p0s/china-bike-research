@@ -1,0 +1,150 @@
+{
+  "batch_id": "gap-fill-batch-18-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh `npm run --silent data:gaps` and `npm run --silent research:queue` inventories: 41 published variants and 222 candidate scope entries; queue counts are 701 evidence-found, 45 deferred, 498 blocked, 60 conflicted and 0 ready. A read-only ledger filter found 690 evidence-found fields without a recorded resolution.",
+  "selection_basis": "Select 24 high-priority evidence-found atomic fields without prior resolutions across 10 exact model groups. Root owns five groups and 10 fields; one explicitly requested Luna Max agent owns five disjoint GITO groups and 14 fields as evidence-only research. Root remains the sole writer and integrates results after evidence collection.",
+  "exact_model_count": 10,
+  "atomic_field_count": 24,
+  "exact_models": [
+    "falco-t91-t912",
+    "frrx-carbon-road-unknown",
+    "giant-propel-gen4-community-lead",
+    "gios-aerolite",
+    "hi-light-g0",
+    "gito-carbon-aero-entry",
+    "gito-carbon-hydraulic-unknown",
+    "gito-carbon-road-high-unknown",
+    "gito-carbon-road-plus",
+    "gito-gtv5-plus"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "falco-t91-t912",
+      "exact_identity": "FALCO 三火 T912 / 寰宇单车 multi-configuration lead",
+      "model_group": "falco-t91-t912",
+      "fields": ["identity-source"],
+      "attempt_ids": ["candidate-falco-t91-t912-identity-source-2026-08-29"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "frrx-carbon-road-unknown",
+      "exact_identity": "FRRX carbon road range with exact SKU unresolved",
+      "model_group": "frrx-carbon-road-unknown",
+      "fields": ["identity-source"],
+      "attempt_ids": ["candidate-frrx-carbon-road-unknown-identity-source-2026-08-29"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-gen4-community-lead",
+      "exact_identity": "Giant Propel Advanced SL 1 fourth-generation mainland community lead",
+      "model_group": "giant-propel-gen4-community-lead",
+      "fields": ["drivetrain", "frame-stiffness", "identity"],
+      "attempt_ids": [
+        "candidate-giant-propel-gen4-community-lead-drivetrain-2026-08-30",
+        "candidate-giant-propel-gen4-community-lead-frame-stiffness-2026-08-30",
+        "candidate-giant-propel-gen4-community-lead-identity-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gios-aerolite",
+      "exact_identity": "GIOS AERO LITE; generation and trim unresolved",
+      "model_group": "gios-aerolite",
+      "fields": ["frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gios-aerolite-frame-material-2026-08-29",
+        "candidate-gios-aerolite-identity-source-2026-08-29"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g0",
+      "exact_identity": "Hi-Light 航轮 G0 frameset",
+      "model_group": "hi-light-g0",
+      "fields": ["frame-material", "frame-stiffness", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-hi-light-g0-frame-material-2026-09-01",
+        "candidate-hi-light-g0-frame-stiffness-2026-09-01",
+        "candidate-hi-light-g0-tire-clearance-2026-09-01"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-aero-entry",
+      "exact_identity": "GITO G325 carbon aero entry-build lead",
+      "model_group": "gito-carbon-aero-entry",
+      "fields": ["frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gito-carbon-aero-entry-frame-material-2026-08-29",
+        "candidate-gito-carbon-aero-entry-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "exact_identity": "GITO 捷拓 G525 Shimano 105 hydraulic-disc lead",
+      "model_group": "gito-carbon-hydraulic-unknown",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gito-carbon-hydraulic-unknown-drivetrain-2026-08-29",
+        "candidate-gito-carbon-hydraulic-unknown-frame-material-2026-08-29",
+        "candidate-gito-carbon-hydraulic-unknown-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-high-unknown",
+      "exact_identity": "GITO 捷拓 G530 high-configuration lead",
+      "model_group": "gito-carbon-road-high-unknown",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gito-carbon-road-high-unknown-drivetrain-2026-08-29",
+        "candidate-gito-carbon-road-high-unknown-frame-material-2026-08-29",
+        "candidate-gito-carbon-road-high-unknown-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-plus",
+      "exact_identity": "GITO 捷拓 G320 build (exact trim unresolved)",
+      "model_group": "gito-carbon-road-plus",
+      "fields": ["frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gito-carbon-road-plus-frame-material-2026-08-29",
+        "candidate-gito-carbon-road-plus-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-gtv5-plus",
+      "exact_identity": "GITO 捷拓 G530 seller-listed 8.3 kg build",
+      "model_group": "gito-gtv5-plus",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-gito-gtv5-plus-complete-weight-2026-08-29",
+        "candidate-gito-gtv5-plus-drivetrain-2026-08-29",
+        "candidate-gito-gtv5-plus-frame-material-2026-08-29",
+        "candidate-gito-gtv5-plus-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Use current, primary or otherwise credible sources attributable to each exact model and distinguish generic model evidence from the retained marketplace build.",
+    "For each exact model, handle one source at a time and stop at decisive evidence; leave model-generation, trim, BOM or seller mismatches unresolved.",
+    "Do not infer specifications, manufacture a mainland price, contact sellers, or add images without documented reusable rights.",
+    "Luna is evidence-only: return URLs, access dates, supported facts, caveats, disposition and reopen trigger for the five assigned GITO groups; do not edit files, use XHS or recurse. Root alone integrates all results and changes files."
+  ]
+}

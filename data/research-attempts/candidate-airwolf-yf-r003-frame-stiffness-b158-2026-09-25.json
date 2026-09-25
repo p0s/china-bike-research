@@ -1,0 +1,43 @@
+{
+  "id": "candidate-airwolf-yf-r003-frame-stiffness-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yf-r003"
+  },
+  "field": "frame-stiffness",
+  "retry_of": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-24",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Airwolf YF-R003 exact frame stiffness test flex measured independent review 2026",
+          "route": "One frozen B158 exact-model web query; existing official and owner URLs were not reopened.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No qualifying stiffness measurement or exact-model independent stiffness result surfaced. The existing owner report is subjective and has no measurement or comparator. Official product access checks returned a verification interstitial or 403; no recorded URL was reopened and no retry was made."
+        }
+      ],
+      "blocker": "The bounded exact-model search found no qualifying frame-stiffness evidence; existing owner impressions are unmeasured and the official listing remains inaccessible."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "airwolf-yf-r003-access-check-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The bounded exact-model search found no qualifying frame-stiffness evidence; existing owner impressions are unmeasured and the official listing remains inaccessible.",
+  "searched_at": "2026-09-25",
+  "priority": "medium"
+}

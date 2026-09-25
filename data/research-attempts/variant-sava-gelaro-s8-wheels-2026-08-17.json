@@ -33,8 +33,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-gelaro-s8-official-2026-08-08"
+    "sava-gelaro-s8-official-2026-08-08",
+    "sava-gelaro-s8-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "sava-gelaro-s8-official-recheck-2026-09-23"
+    ],
+    "note": "The named S8 GRX820 block lists a 700C aluminum 24H wheelset. A DR-35 model name appears in the duplicate RX810 block and is not assigned to GRX820. Reopen trigger: Reopen for an exact GRX820 wheelset model/SKU."
+  }
 }

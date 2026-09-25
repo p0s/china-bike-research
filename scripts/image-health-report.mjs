@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadDataset } from '../src/lib/data.mjs';
+import { remoteImageResources } from '../src/lib/image-health.mjs';
 
 const concurrency = 6;
 const timeoutMs = 12_000;
@@ -67,18 +68,51 @@ async function inspectBatch(images) {
 export function imageHealthTargets(data = loadDataset()) {
   const catalogTargets = data.images
     .filter((image) => image.hosting.mode === 'remote' && image.buyer_visibility !== 'omit')
-    .flatMap((image) => image.hosting.variants?.length
-      ? image.hosting.variants.map((variant) => ({ id: `${image.id}:${variant.purpose}`, url: variant.url }))
-      : [{ id: image.id, url: image.hosting.remote_url }]);
+    .flatMap(remoteImageResources);
   const groupsetTargets = data.groupsets
     .filter((groupset) => groupset.image?.remote_url)
     .map((groupset) => ({ id: `groupset:${groupset.id}`, url: groupset.image.remote_url }));
   return [...catalogTargets, ...groupsetTargets];
 }
 
+export function filterImageHealthTargets(targets, imageIds) {
+  if (!imageIds?.length) return targets;
+  const requested = new Set(imageIds);
+  const selected = targets.filter((target) => [...requested].some((id) => target.id === id || target.id.startsWith(`${id}:`)));
+  const found = new Set(selected.flatMap((target) => [...requested].filter((id) => target.id === id || target.id.startsWith(`${id}:`))));
+  const unknown = [...requested].filter((id) => !found.has(id));
+  if (unknown.length) throw new Error(`unknown remote image id(s): ${unknown.join(', ')}`);
+  return selected;
+}
+
+export function formatImageHealthJson(results, checkedAt) {
+  return JSON.stringify({
+    checked_at: checkedAt,
+    results: results.map(({ id, url, classification, status, contentType }) => ({
+      id, url, classification,
+      ...(status === undefined ? {} : { status }),
+      ...(contentType === undefined ? {} : { content_type: contentType })
+    }))
+  }, null, 2);
+}
+
+function requestedImageIds(args) {
+  const index = args.findIndex((arg) => arg === '--ids' || arg.startsWith('--ids='));
+  if (index < 0) return [];
+  const value = args[index].startsWith('--ids=') ? args[index].slice(6) : args[index + 1] ?? '';
+  return value.split(',').map((id) => id.trim()).filter(Boolean);
+}
+
 async function main() {
-  const targets = imageHealthTargets();
+  const args = process.argv.slice(2);
+  const targets = filterImageHealthTargets(imageHealthTargets(), requestedImageIds(args));
   const results = await inspectBatch(targets);
+  const checkedAt = new Date().toISOString().slice(0, 10);
+  if (args.includes('--json')) {
+    console.log(formatImageHealthJson(results, checkedAt));
+    if (args.includes('--strict') && results.some(isBlockingImageResult)) process.exitCode = 1;
+    return;
+  }
   const summary = Object.fromEntries(['healthy', 'host-blocked', 'wrong-content-type', 'broken', 'unreachable'].map((key) => [key, results.filter((result) => result.classification === key).length]));
   for (const result of results) {
     const detail = result.status ? `${result.status} ${result.contentType || 'unknown content type'}` : result.error;

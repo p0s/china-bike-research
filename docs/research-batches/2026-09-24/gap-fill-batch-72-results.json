@@ -1,0 +1,31 @@
+{
+  "batch": 72,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-72-scope.json",
+  "outcome": "No exact current public mainland seller price was found for the X-LAB AD8 R7170 Di2 / Branta C50 TEAM package; observed_price remains unknown.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "query": "\"X-LAB AD8\" \"R7170 Di2\" \"Branta C50 TEAM\" 价格",
+    "result": "No exact mainland seller detail page surfaced. A 99Spokes 2026 model page labels CNY 26,980 as ‘Manufacturer Price’ and has inconsistent wheel information; the China Bikes profile is an official-reference lead. Neither is current seller checkout evidence.",
+    "disposition": "No amount assigned. Preserve the existing official CNY 26,980 reference; do not transfer the separate ¥21,980 standard/105-electronic Taobao package."
+  },
+  "integration": {
+    "candidate": "data/candidates/xlab-ad8.json",
+    "change": "No product value or source record changed; observed_price remains absent.",
+    "research_attempt": "data/research-attempts/candidate-xlab-ad8-mainland-observed-price-2026-09-24.json",
+    "attempt_status": "blocked"
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "price_not_observed": "36 -> 36",
+    "disposition": "No gap closed; the non-seller model-database result is explicitly excluded from observed purchase price."
+  },
+  "validation": {
+    "focused": "Passed `npm run --silent research:check` (1503 atomic research fields; 15450 public-post and 35579 web attempts) and `npm run --silent validate` (1304 sources, 1526 atomic research records).",
+    "coverage": "`npm run --silent coverage:accept` accepted the monotonic research-ledger update for 212 images and 277 catalog targets; `coverage:check` passed.",
+    "full_gate": "`npm run check` passed: privacy scan, data validation, research validation, coverage, 323/323 tests, 584-page build, and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B72 batch only; no push, pull request, merge, publication or production action."
+}

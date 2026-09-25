@@ -1,0 +1,96 @@
+{
+  "batch": 163,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-163-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    }
+  },
+  "work": {
+    "exact_records": 4,
+    "atomic_fields": 4,
+    "new_queries": 0,
+    "new_page_opens": 0,
+    "retries": 0,
+    "new_sources": 0,
+    "image_records_changed": 0,
+    "images_added": 0,
+    "dispositions": [
+      {
+        "record_id": "lightcarbon-speedz-complete",
+        "field": "image-exactness",
+        "image_id": "lightcarbon-speedz-primary-image",
+        "source_ids_reviewed": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+        "result": "The manufacturer catalog recheck timed out and did not map the marketplace label SPEEDZ to Speed7/速7/LCR017-D. No image rights were established for public-post photos. Keep the shared project-owned placeholder for this record and the SPEEDZ frameset."
+      },
+      {
+        "record_id": "lightcarbon-speedz-frameset",
+        "field": "image-exactness",
+        "image_id": "lightcarbon-speedz-primary-image",
+        "source_ids_reviewed": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+        "result": "The exact identity mapping and image rights remain unestablished; retain the same project-owned placeholder shared with the complete variant."
+      },
+      {
+        "record_id": "elves-falath-r7170",
+        "field": "image-exactness",
+        "image_id": "elves-falath-r7170-primary-image",
+        "source_ids_reviewed": [
+          "elves-falath-pro-image-exactness-current-2026-09-24",
+          "elves-image-use-terms-current-2026-09-24",
+          "elves-falath-pro-105-sa-bom-recheck-2026-09-25",
+          "elves-falath-pro-complete-au-bom-recheck-2026-09-25"
+        ],
+        "result": "The official Falath Pro Disc 2022 page identifies the frame family, not the selected mainland R7170 complete build; ELVES terms document no image reuse grant. Regional build pages do not establish this retained configuration. Keep the project-owned illustrative fallback.",
+        "existing_source_urls": [
+          "https://www.elvesbike.com/more.php?id=93&lm=8",
+          "https://www.elvesbike.com/terms.php"
+        ]
+      },
+      {
+        "record_id": "twitter-v3-2024-rs-sensah-alloy",
+        "field": "image-exactness",
+        "image_id": "twitter-gravel-v3-2024-listing-primary-image",
+        "source_ids_reviewed": [
+          "twitter-gravel-v3-2024-taobao-2026-08-21",
+          "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+          "twitter-gravel-v3-2025-successor-route-recheck-2026-09-25"
+        ],
+        "result": "The 2024 listing did not assign its photos to the retained Sensah 2×12 alloy build or provide image reuse rights. The newer official route is for the 2025 successor. Keep the existing same-model/different-market-build classification and caveats."
+      }
+    ],
+    "disposition": "The latest source audit supplied no new exact-image or rights lead. Existing project-owned placeholders and remote image caveats remain unchanged; no candidate image was added or replaced."
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "scope_and_results_json": "valid",
+    "git_diff_check": "passed",
+    "full_gate": "not run: no catalog or image-record changes; scope/results documentation only"
+  }
+}

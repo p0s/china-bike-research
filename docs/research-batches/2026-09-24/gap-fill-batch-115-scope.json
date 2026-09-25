@@ -1,0 +1,44 @@
+{
+  "batch": 115,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 108,
+    "selected_queue_targets": [
+      "variant:sava-a7l-r7100:image",
+      "platform:scott-addict-rc-40:geometry",
+      "variant:spcycle-g028-frameset:purchase-route",
+      "candidate:specialized-roubaix-sl8-sport-105:price"
+    ],
+    "selected_queue_priority_each": 100
+  },
+  "scope": {
+    "exact_target_records": [
+      "variant:sava-a7l-r7100",
+      "platform:scott-addict-rc-40",
+      "variant:spcycle-g028-frameset",
+      "candidate:specialized-roubaix-sl8-sport-105"
+    ],
+    "atomic_gaps": [
+      "variant:sava-a7l-r7100:image",
+      "platform:scott-addict-rc-40:geometry",
+      "variant:spcycle-g028-frameset:purchase-route",
+      "candidate:specialized-roubaix-sl8-sport-105:price"
+    ],
+    "sources_to_review": [
+      "sava-a7l-r7100-official-recheck-2026-09-24",
+      "scott-addict-rc-40-poland-recheck-2026-09-24",
+      "spcycle-g028-official-recheck-2026-09-24",
+      "specialized-roubaix-sl8-sport-105-china-current-price-recheck-2026-09-24",
+      "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24"
+    ],
+    "research_boundary": "Audit only the frozen current source records and exact target/attempt records. Inspect one source at a time. Resolve only exact current model, generation, build, route or rights evidence. Do not transfer regional/sibling data or treat stale checkout controls as current. If a source has no matching evidence, keep the gap open and state the exact reason. No new web/public-post requests or files.",
+    "excluded": [
+      "No other models or atomic gaps.",
+      "No source, price, image, variant or candidate records added.",
+      "No new images or rights assertions.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

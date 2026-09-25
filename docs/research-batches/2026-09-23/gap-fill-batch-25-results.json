@@ -1,0 +1,401 @@
+{
+  "batch_id": "gap-fill-batch-25-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-25-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 21,
+    "root_fields": 0,
+    "luna_evidence_fields": 21
+  },
+  "new_source_records": [
+    "canyon-grail-cf7-fr-technical-recheck-2026-09-23",
+    "canyon-ultimate-cfr-axs-us-recheck-2026-09-23",
+    "elves-falath-evo-spec-recheck-2026-09-23",
+    "elves-vanyar-pro-disc-2024-recheck-2026-09-23",
+    "giant-revolt-advanced-2-uk-recheck-2026-09-23",
+    "merida-reacto-6000-cn27-current-recheck-2026-09-23",
+    "merida-reacto-v-cyclingnews-recheck-2026-09-23",
+    "merida-reacto-v-platform-clearance-recheck-2026-09-23",
+    "merida-scultura-6000-25-current-recheck-2026-09-23",
+    "quick-gr-one-review-summary-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "missing-china-price-canyon-grail",
+    "missing-china-price-canyon-ultimate",
+    "missing-china-price-elves-falath-evo",
+    "missing-china-price-elves-vanyar",
+    "missing-china-price-giant-defy-advanced",
+    "missing-china-price-giant-revolt-advanced",
+    "missing-china-price-merida-reacto",
+    "missing-china-price-merida-scultura",
+    "missing-china-price-merida-silex",
+    "missing-china-price-quick-pro-gr-one"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "missing-china-price-canyon-grail",
+      "model": "Canyon Grail CF 7",
+      "field": "complete-weight",
+      "status": "accepted-size-M-claim-detail-refresh-unavailable",
+      "attempt_record_id": "candidate-missing-china-price-canyon-grail-complete-weight-2026-08-30",
+      "source_ids": [
+        "canyon-grail-cf-7-official-2026-08-17",
+        "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html"
+      ],
+      "note": "Canyon France page 4149 claims 9.26 kg for size M standard spec without pedals; accepted detailed read is 2026-08-30. The current landing page loaded but detailed fetch timed out, so the current check did not refresh the specification or establish a mainland build.",
+      "next_trigger": "An accessible current China specification or a defined measurement of the exact mainland build."
+    },
+    {
+      "record_id": "missing-china-price-canyon-grail",
+      "model": "Canyon Grail CF 7",
+      "field": "drivetrain",
+      "status": "accepted-exact-model-regional-BOM-refresh-unavailable",
+      "attempt_record_id": "candidate-missing-china-price-canyon-grail-drivetrain-2026-08-30",
+      "source_ids": [
+        "canyon-grail-cf-7-official-2026-08-17",
+        "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html"
+      ],
+      "note": "Accepted Canyon France product evidence lists GRX mechanical 2×12, RX610 controls, RX820 derailleurs, RX600 46/30 crank and Shimano 105 R7101 11–34 cassette. Current detailed fetch timed out; this is a France-market BOM, not proof of mainland options.",
+      "next_trigger": "Accessible current technical details or an exact mainland BOM."
+    },
+    {
+      "record_id": "missing-china-price-canyon-grail",
+      "model": "Canyon Grail CF 7",
+      "field": "tire-clearance",
+      "status": "accepted-exact-model-regional-42mm-maximum-refresh-unavailable",
+      "attempt_record_id": "candidate-missing-china-price-canyon-grail-tire-clearance-2026-08-30",
+      "source_ids": [
+        "canyon-grail-cf-7-official-2026-08-17",
+        "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html"
+      ],
+      "note": "Accepted Canyon France spec gives 42 mm maximum for frame and fork; current detailed fetch timed out. Regional spec is not a mainland mounted-tire measurement.",
+      "next_trigger": "Accessible current China fit specification or an exact mainland compatibility statement."
+    },
+    {
+      "record_id": "missing-china-price-canyon-ultimate",
+      "model": "Canyon Ultimate CFR AXS",
+      "field": "complete-weight",
+      "status": "qualified-us-size-M-manufacturer-claim",
+      "attempt_record_id": "candidate-missing-china-price-canyon-ultimate-complete-weight-2026-09-01",
+      "source_ids": [
+        "canyon-ultimate-cfr-axs-official-2026-08-17",
+        "canyon-ultimate-cfr-axs-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-us/road-bikes/race-bikes/ultimate/cfr/ultimate-cfr-axs/4071.html"
+      ],
+      "note": "Current US exact page claims 14.95 lb (about 6.78 kg) for standard size M. It is a manufacturer reference without a stated measurement method and does not establish a mainland build.",
+      "next_trigger": "A mainland-specific spec or defined measurement."
+    },
+    {
+      "record_id": "missing-china-price-canyon-ultimate",
+      "model": "Canyon Ultimate CFR AXS",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-positioning",
+      "attempt_record_id": "candidate-missing-china-price-canyon-ultimate-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "canyon-ultimate-cfr-axs-official-2026-08-17",
+        "canyon-ultimate-cfr-axs-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.canyon.com/en-us/road-bikes/race-bikes/ultimate/cfr/ultimate-cfr-axs/4071.html"
+      ],
+      "note": "Canyon calls the fifth-generation Ultimate CFR the pinnacle of stiffness-to-weight; this is qualitative marketing with no public measurement protocol.",
+      "next_trigger": "A quantified or independent exact-frame stiffness result."
+    },
+    {
+      "record_id": "missing-china-price-elves-falath-evo",
+      "model": "ELVES Falath EVO frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-exact-EVO-manufacturer-claim",
+      "attempt_record_id": "candidate-missing-china-price-elves-falath-evo-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "elves-falath-evo-spec-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://elvesbike.com/more.php?id=142&lm=8"
+      ],
+      "note": "Exact Falath EVO manufacturer page describes T1000 reinforcement at the head tube and bottom bracket and stiffness/power-transfer intent. This is not numeric or independently measured.",
+      "next_trigger": "An instrumented test of the exact EVO generation."
+    },
+    {
+      "record_id": "missing-china-price-elves-falath-evo",
+      "model": "ELVES Falath EVO frameset",
+      "field": "frame-weight",
+      "status": "exact-size-46-unpainted-manufacturer-claim",
+      "attempt_record_id": "candidate-missing-china-price-elves-falath-evo-frame-weight-2026-09-01",
+      "source_ids": [
+        "elves-falath-evo-spec-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://elvesbike.com/more.php?id=142&lm=8"
+      ],
+      "note": "Exact Falath EVO page lists 1,050 g for size 46 unpainted; fork and seatpost are listed separately.",
+      "next_trigger": "A changed frame generation or updated official size/weight table."
+    },
+    {
+      "record_id": "missing-china-price-elves-falath-evo",
+      "model": "ELVES Falath EVO frameset",
+      "field": "price",
+      "status": "exact-EVO-price-unresolved-EVO-plus-price-not-transferable",
+      "attempt_record_id": "candidate-missing-china-price-elves-falath-evo-price-2026-09-01",
+      "source_ids": [
+        "elves-falath-evo-spec-recheck-2026-09-23",
+        "elves-falath-evo-frameset-official-2026-08-17"
+      ],
+      "sources_checked": [
+        "https://elvesbike.com/more.php?id=142&lm=8",
+        "https://store.elvesbike.com/products/elves-falath-evo-carbon-road-disc-framesets-uci-approved"
+      ],
+      "note": "Exact Falath EVO page has no price. Accepted ELVES storefront lists US$1,100 for Falath EVO+, a distinct name; this is not an exact EVO mainland offer.",
+      "next_trigger": "An exact EVO mainland seller offer/checkout or an official exact-EVO price."
+    },
+    {
+      "record_id": "missing-china-price-elves-vanyar",
+      "model": "ELVES Vanyar Pro Disc 2024 frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-manufacturer-claim",
+      "attempt_record_id": "candidate-missing-china-price-elves-vanyar-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "elves-vanyar-pro-disc-official-2026-08-17",
+        "elves-vanyar-pro-disc-2024-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame"
+      ],
+      "note": "Exact 2024 Vanyar Pro Disc page describes T800/T1000 construction and stiffness/power-transfer intent; no numeric result or protocol.",
+      "next_trigger": "An instrumented exact-generation stiffness test."
+    },
+    {
+      "record_id": "missing-china-price-elves-vanyar",
+      "model": "ELVES Vanyar Pro Disc 2024 frameset",
+      "field": "frame-weight",
+      "status": "accepted-size-47-claim-table-not-visible-today",
+      "attempt_record_id": "candidate-missing-china-price-elves-vanyar-frame-weight-2026-09-01",
+      "source_ids": [
+        "elves-vanyar-pro-disc-official-2026-08-17",
+        "elves-vanyar-pro-disc-2024-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame"
+      ],
+      "note": "Accepted manufacturer evidence lists 870 g for size 47, unpainted without metal parts, ±30 g; size 62 is listed at 1,050 g. The weight table did not surface on today’s page opening.",
+      "next_trigger": "A visible revised official weight table or defined measurement."
+    },
+    {
+      "record_id": "missing-china-price-elves-vanyar",
+      "model": "ELVES Vanyar Pro Disc 2024 frameset",
+      "field": "tire-clearance",
+      "status": "exact-2024-manufacturer-maximum-30c",
+      "attempt_record_id": "candidate-missing-china-price-elves-vanyar-tire-clearance-2026-09-01",
+      "source_ids": [
+        "elves-vanyar-pro-disc-official-2026-08-17",
+        "elves-vanyar-pro-disc-2024-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame"
+      ],
+      "note": "Exact 2024 Vanyar Pro Disc page states up to 30C. Manufacturer maximum; no measured mounted width or rim condition is given.",
+      "next_trigger": "Revised frame-generation spec or a defined mounted-tire test."
+    },
+    {
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "model": "Giant Defy Advanced 2",
+      "field": "warranty-support",
+      "status": "mainland-brand-policy-supported-individual-eligibility-open",
+      "attempt_record_id": "candidate-giant-defy-advanced-warranty-support-2026-08-27",
+      "source_ids": [
+        "giant-china-warranty-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/custom/13"
+      ],
+      "note": "Current Giant China policy requires eligible mainland purchase/use, authorized-store purchase and assembly, proof and stated ownership/use conditions. It lists lifetime frame coverage and a 10-year road-fork term for sales after 2024-01-01. This is brand policy, not confirmation for this bike or serial number.",
+      "next_trigger": "Bike purchase proof, warranty card, authorized-dealer/assembly evidence and claim decision."
+    },
+    {
+      "record_id": "missing-china-price-giant-revolt-advanced",
+      "model": "Giant Revolt Advanced 2",
+      "field": "tire-clearance",
+      "status": "2026-UK-2x-maximum-45mm",
+      "attempt_record_id": "candidate-missing-china-price-giant-revolt-advanced-tire-clearance-2026-08-30",
+      "source_ids": [
+        "giant-revolt-advanced-2-uk-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant-bicycles.com/gb/revolt-advanced-2"
+      ],
+      "note": "Current Giant UK 2026 page specifies 45 mm maximum with a 2× drivetrain in the long flip-chip position; 53 mm applies only to 1× in long position. Do not transfer the 1× figure or assume all mainland trims match.",
+      "next_trigger": "A different mainland drivetrain/generation spec or a defined measured setup."
+    },
+    {
+      "record_id": "missing-china-price-merida-reacto",
+      "model": "Merida REACTO 6000 CN 27",
+      "field": "frame-stiffness",
+      "status": "qualitative-CF3-CF5-target-equivalence",
+      "attempt_record_id": "candidate-missing-china-price-merida-reacto-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "merida-reacto-6000-cn27-current-recheck-2026-09-23",
+        "merida-reacto-v-cyclingnews-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug.html",
+        "https://www.cyclingnews.com/bikes/road/the-illegal-seagull-meridas-new-aero-bike-has-a-uci-illegal-configuration-only-amateurs-can-use/"
+      ],
+      "note": "China page identifies the latest-generation CF3 build; Cyclingnews reports CF3 and CF5 share molds and stiffness targets. This is qualitative target equivalence, not an instrumented exact-build result.",
+      "next_trigger": "Exact CF3 measurement or revised manufacturer stiffness targets."
+    },
+    {
+      "record_id": "missing-china-price-merida-reacto",
+      "model": "Merida REACTO 6000 CN 27",
+      "field": "tire-clearance",
+      "status": "exact-CF3-generation-bridge-to-32mm-platform-maximum",
+      "attempt_record_id": "candidate-missing-china-price-merida-reacto-tire-clearance-2026-08-30",
+      "source_ids": [
+        "merida-reacto-6000-cn27-current-recheck-2026-09-23",
+        "merida-reacto-v-platform-clearance-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug.html",
+        "https://www.merida.cn/index/bike/chexitese?slug=reacto"
+      ],
+      "note": "China product page identifies the latest-generation CF3; manufacturer platform page states a 32 mm fifth-generation Reacto maximum. This is a frame maximum, not a measured mounted width.",
+      "next_trigger": "Generation/spec change or defined mounted-tire evidence."
+    },
+    {
+      "record_id": "missing-china-price-merida-scultura",
+      "model": "Merida SCULTURA 6000 25",
+      "field": "complete-weight",
+      "status": "exact-mainland-size-M-reference-8200g",
+      "attempt_record_id": "candidate-missing-china-price-merida-scultura-complete-weight-2026-09-01",
+      "source_ids": [
+        "merida-scultura-6000-25-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/index/bikefinder/detail/id/23.html"
+      ],
+      "note": "Current China SCULTURA 6000 25 page gives an 8.2 kg size-M reference for CF3 V; size, paint and supply substitutions can change weight. Not a controlled independent measurement.",
+      "next_trigger": "Exact measured build or changed 2025 specification."
+    },
+    {
+      "record_id": "missing-china-price-merida-scultura",
+      "model": "Merida SCULTURA 6000 25",
+      "field": "frame-stiffness",
+      "status": "qualitative-mainland-manufacturer-claims",
+      "attempt_record_id": "candidate-missing-china-price-merida-scultura-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "merida-scultura-6000-25-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/index/bikefinder/detail/id/23.html"
+      ],
+      "note": "Exact China page attributes stiffness to AWS processing and NACA-section design; no model-specific protocol or numeric result is published.",
+      "next_trigger": "Exact-model stiffness measurement."
+    },
+    {
+      "record_id": "missing-china-price-merida-scultura",
+      "model": "Merida SCULTURA 6000 25",
+      "field": "tire-clearance",
+      "status": "accepted-CF3-platform-30mm-maximum-platform-refresh-failed",
+      "attempt_record_id": "candidate-missing-china-price-merida-scultura-tire-clearance-2026-09-01",
+      "source_ids": [
+        "merida-scultura-6000-25-current-recheck-2026-09-23",
+        "merida-scultura-v-platform-clearance-2026-09-01"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/index/bikefinder/detail/id/23.html",
+        "https://www.merida-bikes.com/p/product-news-bikes/the-new-scultura-v-team-500.html"
+      ],
+      "note": "China page identifies CF3 V; accepted SCULTURA V platform page specifies 30 mm for shared CF3/CF5 frame and fork. Its 2026-09-23 recheck returned HTTP 400, so that platform evidence was not refreshed today.",
+      "next_trigger": "Official platform page becomes accessible or a revised size-specific spec appears."
+    },
+    {
+      "record_id": "missing-china-price-merida-silex",
+      "model": "Merida SILEX 7000 25",
+      "field": "warranty-support",
+      "status": "brand-policy-supported-individual-eligibility-open",
+      "attempt_record_id": "candidate-missing-china-price-merida-silex-warranty-support-2026-08-17",
+      "source_ids": [
+        "merida-china-warranty-current-2026-09-23",
+        "merida-china-sales-channels-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.merida.cn/zh-tw/p/%E4%BF%9D%E5%9B%BA%E5%A3%B0%E6%98%8E/%E4%BF%9D%E5%9B%BA%E5%A3%B0%E6%98%8E",
+        "https://www.merida.cn/zh-tw/p/wangluo/wangluoxiaoshou"
+      ],
+      "note": "Current policy requires first-owner authorized-dealer purchase, valid card/proof and dealer or Merida-store service; carbon frames have lifetime coverage under policy. The online declaration names official mall/JD/Douyin channels and excludes unauthorized online purchases. It does not establish this bike’s seller, invoice, owner or eligibility.",
+      "next_trigger": "Exact transaction, proof/card, owner status and authorized-channel/assembly records."
+    },
+    {
+      "record_id": "missing-china-price-quick-pro-gr-one",
+      "model": "Quick Pro GR:ONE China price target",
+      "field": "frame-stiffness",
+      "status": "qualitative-custom-build-review-only",
+      "attempt_record_id": "candidate-missing-china-price-quick-pro-gr-one-frame-stiffness-2026-08-28",
+      "source_ids": [
+        "quick-pro-gr-one-ride-review-2026-08-27",
+        "quick-gr-one-review-summary-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride"
+      ],
+      "note": "Review summary describes noticeable designed flex at the seatpost cutout and a comfortable, fast rear ride for an exact GR:ONE custom build. It is secondary summary evidence, not an instrumented stiffness result.",
+      "next_trigger": "Full exact-model review/inspection or a measured stiffness protocol."
+    },
+    {
+      "record_id": "missing-china-price-quick-pro-gr-one",
+      "model": "Quick Pro GR:ONE China price target",
+      "field": "purchase-route",
+      "status": "dated-exact-frameset-route-current-official-check-blocked",
+      "attempt_record_id": "candidate-quick-gr-one-purchase-route-2026-08-27",
+      "source_ids": [
+        "quick-gr-one-china-official-2026-08-25",
+        "quick-pro-gr-one-frameset-taobao-2026-08-28"
+      ],
+      "sources_checked": [
+        "https://www.quick-bikes.com.cn/product/32.html",
+        "https://item.taobao.com/item.htm?id=950771838272"
+      ],
+      "note": "Official China page returned 403 today; its accepted 2026-08-25 access showed inventory and buy/cart controls but no price. Exact Taobao listing on 2026-08-28 showed ice-crack silver, size M, SKU 6032567658829, CNY 13,600, visible stock and 15-day presale dispatch. This is a dated frameset offer, not a current complete-bike checkout.",
+      "next_trigger": "Official page becomes accessible or exact SKU current stock/checkout is visible."
+    }
+  ],
+  "recheck_limitations": [
+    {
+      "url": "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html",
+      "result": "Landing page loaded; detailed technical fetch timed out; accepted 2026-08-30 specifications retained with regional qualification."
+    },
+    {
+      "url": "https://www.quick-bikes.com.cn/product/32.html",
+      "result": "403 on 2026-09-23; 2026-08-25 official access and 2026-08-28 exact Taobao offer remain dated evidence."
+    },
+    {
+      "url": "https://www.merida.cn/index/bike/chexitese?slug=scultura",
+      "result": "HTTP 400 on 2026-09-23; accepted 2026-09-01 platform maximum retained and linked to current exact China CF3 V model."
+    }
+  ],
+  "validation": {
+    "focused_tests": "node --test tests/data.test.mjs passed (69 tests)",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "developer-storage-cache run -- npm run check passed",
+    "privacy": "passed",
+    "data_validation": "41 brands, 38 platforms, 41 variants, 73 prices, 1,083 sources, 212 primary images, 236 candidates, 1,465 research records",
+    "research_validation": "1,461 atomic fields; 15,448 public-post and 35,469 web attempts",
+    "tests": "307 passed",
+    "build": "584 pages",
+    "seo": "584 pages; 456 indexable; 128 noindex"
+  }
+}

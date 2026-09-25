@@ -1,0 +1,35 @@
+{
+  "batch": 119,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-119-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:twitter-little-white-rabbit",
+      "candidate:twitter-r10-pro-gen3",
+      "candidate:twitter-storm-knight",
+      "candidate:twitter-t10-pro",
+      "candidate:twitter-t8-closed-wheel"
+    ],
+    "disposition": "Seven fields received caveated source-reuse resolutions: Little White Rabbit frame-material and identity; R10 Pro Gen3 platform-level frame material and listing identity; Storm Knight drivetrain and carbon-fiber brand/listing claim; T10 Pro's manufacturer base-weight estimate. Three remain unresolved: Storm Knight's R10 Pro-family relationship is not established by accepted sources; T10 Pro's accepted source note does not enumerate the drivetrain options; and T8 closed-wheel weight remains conflicted at the attempt level, so its two manufacturer build estimates do not clear the selected-build research gap.",
+    "atomic_gap_instances_before": 706,
+    "atomic_gap_instances_after": 707,
+    "gap_count_note": "The frozen scope recorded 706. A fresh `data:gaps` report after B119 contains 707 entries under `records[].gaps[]`; this batch changed no catalog records or values, so the one-entry difference is an unresolved measurement/ledger discrepancy, not an observed B119 catalog change. Use the fresh raw count of 707 for the next inventory.",
+    "evidence_found_before": 94,
+    "evidence_found_after": 87,
+    "catalog_values_changed": 0,
+    "research_attempts_resolved": 7,
+    "research_attempts_left_open_or_conflicted": 3,
+    "source_records_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1316 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1316 sources and 236 candidates protected",
+    "diff_check": "pass: git diff --check",
+    "full_gate": "not run; source-reuse metadata only, no catalog value changed",
+    "image_report": "not run; no image record changed"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "variant-camp-gx700-grx820-bottom-bracket-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "camp-gx700-grx820"
+  },
+  "field": "bottom-bracket",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24",
+  "retry_reason": "A distinct current Chinese manufacturer product page surfaced; one bounded page review checks whether it gives the target GRX build shell standard.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The official page contains no bottom-bracket standard or shell dimensions and has a crank detail conflict with the retained variant.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX700 GRX820 exact bottom-bracket standard — newly surfaced Chinese official page",
+          "route": "Newly surfaced current CAMP GX700 Chinese product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.campbicycle.com/zh/gx700.html",
+          "note": "The page publishes no bottom-bracket standard or shell dimensions. Its 26–36T FC-RX610 crank row also conflicts with the target 1×12 build and cannot establish the frame shell."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "camp-gx700-official-live-recheck-2026-09-25"
+  ],
+  "retry_after": "2026-11-28",
+  "notes": "The current Chinese page was opened once and does not state the shell or installed bearing standard. Do not transfer a value from the Deore trim or infer it from the crank."
+}

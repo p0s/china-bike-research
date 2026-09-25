@@ -493,8 +493,22 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "java-road-catalog-2026-08-29",
-    "java-vega-eurobike-2026-08-29"
+    "java-vega-eurobike-2026-08-29",
+    "java-vega-chile-current-2026-09-23",
+    "java-vega-eurobike-current-2026-09-23",
+    "java-vega-chile-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Seller pixels, official catalog and current exhibitor evidence establish exact Vega TT 24S identity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Seller pixels, official catalog and current exhibitor evidence establish exact Vega TT 24S identity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vega-chile-current-2026-09-23",
+      "java-vega-eurobike-current-2026-09-23",
+      "java-vega-chile-2026-08-29",
+      "java-vega-eurobike-2026-08-29"
+    ],
+    "note": "The Chile page and EUROBIKE entry confirm JAVA Vega TT/VEGA-TT identity regionally. They do not provide a crosswalk to the retained mainland listing's exact selected trim."
+  }
 }

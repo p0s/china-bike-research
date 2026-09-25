@@ -481,8 +481,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-gelaro-sf6-official-2026-08-28"
+    "sava-gelaro-sf6-official-2026-08-28",
+    "sava-gelaro-sf6-clearance-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The current exact-model page identifies a Toray T800 carbon frame and full-carbon fork."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. The current exact-model page identifies a Toray T800 carbon frame and full-carbon fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-gelaro-sf6-official-2026-08-28",
+      "sava-gelaro-sf6-clearance-recheck-2026-09-24"
+    ],
+    "note": "The manufacturer page supports a Toray T800 carbon frame and fork for the R21-U6000-11S build. The current page also offers an R21-U6020 10-speed option but does not prove that option has an identical component build. Keep the candidate material at family level and leave the selected build unresolved."
+  }
 }

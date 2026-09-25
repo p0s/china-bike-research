@@ -1,0 +1,52 @@
+{
+  "id": "platform-rinasclta-gr025-geometry-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "platform",
+    "record_id": "rinasclta-gr025"
+  },
+  "field": "geometry",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "platform-rinasclta-gr025-geometry-2026-09-01",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Do not transfer Granite geometry to GR025.",
+  "campaign_extension": {
+    "id": "b137-rinasclta-gr025-geometry",
+    "extends_attempt_id": "platform-rinasclta-gr025-geometry-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-137-scope.json",
+    "reason": "One exact-field web attempt was authorized after the frozen predecessor sweep; no repeated route or additional source area was authorized.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-rinasclta-gr025-geometry-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No new readable numeric geometry table with GR025 size mapping surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Rinasclta GR025 exact geometry chart size coordinates stack reach",
+          "route": "One focused exact-model search for a readable GR025 geometry chart",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://rinascltabike.com/product/gr025-gravel-frame-700c-50mm/",
+          "note": "Search returned the already-recorded GR025 manufacturer route without a readable numeric geometry chart; it was not reopened. A 2022 Granite geometry chart is a different model."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Do not transfer Granite geometry to GR025."
+}

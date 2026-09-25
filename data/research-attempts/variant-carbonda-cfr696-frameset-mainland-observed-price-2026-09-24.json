@@ -1,0 +1,20 @@
+{
+  "id": "variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24",
+  "target": { "record_type": "variant", "record_id": "carbonda-cfr696-frameset" },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": { "web": {
+    "status": "blocked",
+    "blocker": "The official exact-model page is currently unreadable and exposes no fixed CNY amount; the only surfaced owner amount is undated USD with generation and package unspecified.",
+    "attempts": [
+      { "attempt": 1, "query": "Carbonda CFR696 UDH current price official manufacturer listing", "route": "Current Carbonda CFR-696 manufacturer page", "outcome": "blocked", "accessed_at": "2026-09-24", "note": "The exact official page returned HTTP 403. Search indexing confirmed CFR-696 identity and a UDH option but did not expose a current price or quote. No contact or quote form was used.", "result_url": "https://carbonda.com/road/cfr-696.html" },
+      { "attempt": 2, "query": "Carbonda CFR696 UDH current mainland CNY price", "route": "Current exact-model public marketplace and owner-index search", "outcome": "identity-mismatch", "accessed_at": "2026-09-24", "note": "No verifiable current mainland listing surfaced. A forum reply reports an undated US$480 base-item payment with paint, shipping and other costs extra; it does not identify current UDH generation or package and cannot refresh the CNY reference range.", "result_url": "https://forum.ridinggravel.com/post/chinese-carbon-gravel-build-carbonda-8254658?trail=6050" }
+    ]
+  } },
+  "status": "blocked",
+  "accepted_source_ids": ["carbonda-cfr696-current-official-price-route-recheck-2026-09-24", "carbonda-cfr696-forum-us-price-context-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Keep the existing CNY 3,000–6,000 approximate reference dated 2026-08-06. Neither the official 403 nor an undated, incomplete USD owner report supports a current CNY update."
+}

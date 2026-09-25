@@ -489,8 +489,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "pardus-spark-rs-regional-weight-2026-08-30",
-    "pardus-spark-rs-rival-weight-2026-08-30"
+    "pardus-spark-rs-rival-weight-2026-08-30",
+    "public-pardus-spark-rs-build-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-spark-rs-community-lead-batch-025-50-area-sweep-2026-08-30.json. Factory option weights are preserved as references and no value is assigned to the owner build."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-spark-rs-community-lead-batch-025-50-area-sweep-2026-08-30.json. Factory option weights are preserved as references and no value is assigned to the owner build.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "public-pardus-spark-rs-build-2026-08-17",
+      "pardus-spark-rs-regional-weight-2026-08-30",
+      "pardus-spark-rs-rival-weight-2026-08-30"
+    ],
+    "note": "Reuse only option-specific regional weights (8.5 kg alloy, 8.0 kg carbon, 7.8 kg Rival/carbon). The public owner build publishes no weight; do not assign any option value to the custom bike."
+  }
 }

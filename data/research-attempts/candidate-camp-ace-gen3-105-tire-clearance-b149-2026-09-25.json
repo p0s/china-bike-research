@@ -1,0 +1,55 @@
+{
+  "id": "candidate-camp-ace-gen3-105-tire-clearance-b149-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "camp-ace-gen3-105"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-camp-ace-gen3-105-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP ACE III 105 manufacturer maximum tire clearance 30C 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://mybike.parts/bike_parts/2483-camp-ace-iii",
+          "note": "Opened the exact-URL-audited MyBike.parts ACE III aggregator page. Its Q&A says 700×32 is supported according to specifications while also noting other sources say 30C max and that actual clearance varies. This indirect, conflicting response does not establish the exact build’s manufacturer maximum."
+        }
+      ],
+      "blocker": "The official ACE Gen 3 source lists fitted 700×30C only; the indirect MyBike Q&A conflicts and is not an authoritative exact-model maximum."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "camp-ace-gen3-105-official-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "B167 local source audit: no linked source supports the retained exact tire-clearance field. No qualifying exact-model evidence was found for this field in B149; preserve the value as unknown pending a future distinct source or state change.",
+  "retry_of": "candidate-camp-ace-gen3-105-tire-clearance-2026-08-29",
+  "retry_reason": "A distinct dated exact-model query on 2026-09-25 followed the earlier extended campaign and checked for new direct evidence without reopening recorded URLs.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-149-camp-ace-gen3-105-tire-clearance",
+    "extends_attempt_id": "candidate-camp-ace-gen3-105-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+    "reason": "The B149 frozen scope authorizes one distinct dated exact-model web query to test for new weight or maximum-clearance evidence after the earlier 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

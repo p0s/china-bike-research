@@ -480,8 +480,12 @@
   "status": "found",
   "accepted_source_ids": [
     "yoeleo-altera-g21-collection-current-2026-09-01",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "yoeleo-altera-g21-collection-current-2026-09-25",
+    "yoeleo-altera-g21-artisan-black-current-2026-09-25",
+    "ecb-reference-rates-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-yoeleo-altera-g21-frameset-batch-047-50-area-sweep-2026-09-01.json. Current US$1,420 named Altera stock-color price and CNY reference conversion found."
+  "notes": "B125 current recheck: the official collection still lists four named Altera G21 stock-color packages at US$1,420. The checked Artisan Black page was sold out; the new CNY 9,524 figure is a reference conversion, not mainland checkout or an available price.",
+  "resolution": {"kind": "source-reuse", "resolved_at": "2026-09-25", "source_ids": ["yoeleo-altera-g21-collection-current-2026-09-25", "ecb-reference-rates-2026-09-23"], "note": "Current official collection and ECB reference rates support the USD list price and dated CNY conversion. Keep the sold-out status and mainland cost caveats; current purchasability is handled by the separate route field."}
 }

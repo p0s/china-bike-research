@@ -1,0 +1,104 @@
+{
+  "batch": 133,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 21
+    },
+    "selection_note": "Select the ten highest-scored eligible conflicted target models after B132. Two records each contribute a second field (Airwolf YF-R003 and ELVES Mori); one higher-scored Twitter V3 Sensah clearance conflict is excluded because its retry_after is 2026-11-17."
+  },
+  "scope": {
+    "exact_target_models": [
+      {"id": "sava-r9", "name": "SAVA 萨瓦 R9 / 天刺 R9"},
+      {"id": "seraph-tt-x68-new-udh", "name": "Seraph / TanTan TT-X68-new UDH"},
+      {"id": "twitter-v3-wheeltop-eds", "name": "TWITTER Gravel V3 WheelTop EDS 2×12"},
+      {"id": "bxt-gravel-complete", "name": "BXT Gravel complete"},
+      {"id": "xlab-rs9", "name": "X-LAB RS9"},
+      {"id": "airwolf-yf-r003", "name": "Airwolf YF-R003"},
+      {"id": "elves-mori-community-lead", "name": "ELVES Mori gravel frameset community lead"},
+      {"id": "hi-light-g7-2-grx-gr1600", "name": "Hi-Light 航轮 G7.2 GRX/GR1600"},
+      {"id": "mondince-fm316", "name": "Mondince FM316"},
+      {"id": "pardus-robin-evo-community-lead", "name": "PARDUS Robin EVO competition build"}
+    ],
+    "exact_record_count": 10,
+    "selected_fields": [
+      "candidate:sava-r9:complete-weight-missing",
+      "candidate:seraph-tt-x68-new-udh:frame-weight-missing",
+      "variant:twitter-v3-wheeltop-eds:clearance-unverified",
+      "candidate:bxt-gravel-complete:clearance-unverified",
+      "candidate:xlab-rs9:clearance-unverified",
+      "candidate:airwolf-yf-r003:frame-material",
+      "candidate:airwolf-yf-r003:frame-revision",
+      "candidate:elves-mori-community-lead:identity",
+      "candidate:elves-mori-community-lead:price",
+      "candidate:hi-light-g7-2-grx-gr1600:price",
+      "candidate:mondince-fm316:availability",
+      "candidate:pardus-robin-evo-community-lead:frame-material"
+    ],
+    "selected_attempts": [
+      {"record_type":"candidate","record_id":"sava-r9","name":"SAVA 萨瓦 R9 / 天刺 R9","gap":"complete-weight-missing","attempt_id":"candidate-sava-r9-complete-weight-2026-09-01","score":67},
+      {"record_type":"candidate","record_id":"seraph-tt-x68-new-udh","name":"Seraph / TanTan TT-X68-new UDH","gap":"frame-weight-missing","attempt_id":"candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24","score":67},
+      {"record_type":"variant","record_id":"twitter-v3-wheeltop-eds","name":"Gravel V3 WheelTop EDS 2×12","gap":"clearance-unverified","attempt_id":"variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24","score":66},
+      {"record_type":"candidate","record_id":"bxt-gravel-complete","name":"BXT Gravel complete","gap":"clearance-unverified","attempt_id":"candidate-bxt-gravel-complete-tire-clearance-2026-08-28","score":63},
+      {"record_type":"candidate","record_id":"xlab-rs9","name":"X-LAB RS9","gap":"clearance-unverified","attempt_id":"candidate-xlab-rs9-tire-clearance-recheck-2026-09-24","score":61},
+      {"record_type":"candidate","record_id":"airwolf-yf-r003","name":"Airwolf YF-R003","gap":"frame-material","attempt_id":"candidate-airwolf-yf-r003-frame-material-2026-09-22","score":60},
+      {"record_type":"candidate","record_id":"airwolf-yf-r003","name":"Airwolf YF-R003","gap":"frame-revision","attempt_id":"candidate-airwolf-yf-r003-frame-revision-2026-09-22","score":60},
+      {"record_type":"candidate","record_id":"elves-mori-community-lead","name":"ELVES Mori gravel frameset (subtrim unconfirmed)","gap":"identity","attempt_id":"candidate-elves-mori-community-lead-identity-2026-08-17","score":60},
+      {"record_type":"candidate","record_id":"elves-mori-community-lead","name":"ELVES Mori gravel frameset (subtrim unconfirmed)","gap":"price","attempt_id":"candidate-elves-mori-community-lead-price-2026-08-17","score":60},
+      {"record_type":"candidate","record_id":"hi-light-g7-2-grx-gr1600","name":"Hi-Light 航轮 G7.2","gap":"price","attempt_id":"candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27","score":60},
+      {"record_type":"candidate","record_id":"mondince-fm316","name":"Mondince FM316","gap":"availability","attempt_id":"candidate-mondince-fm316-availability-2026-09-22","score":60},
+      {"record_type":"candidate","record_id":"pardus-robin-evo-community-lead","name":"PARDUS Robin EVO competition build","gap":"frame-material","attempt_id":"candidate-pardus-robin-evo-community-lead-frame-material-2026-08-28","score":60}
+    ],
+    "attempt_ids": [
+      "candidate-sava-r9-complete-weight-2026-09-01",
+      "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+      "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24",
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28",
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24",
+      "candidate-airwolf-yf-r003-frame-material-2026-09-22",
+      "candidate-airwolf-yf-r003-frame-revision-2026-09-22",
+      "candidate-elves-mori-community-lead-identity-2026-08-17",
+      "candidate-elves-mori-community-lead-price-2026-08-17",
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27",
+      "candidate-mondince-fm316-availability-2026-09-22",
+      "candidate-pardus-robin-evo-community-lead-frame-material-2026-08-28"
+    ],
+    "accepted_source_ids_by_attempt": {
+      "candidate-sava-r9-complete-weight-2026-09-01": ["sava-blade-r9-cyclopro-weight-2026-09-01", "sava-blade-r9-99spokes-weight-2026-09-01"],
+      "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24": ["seraph-tt-x68-new-weight-recheck-2026-09-24", "tantan-tt-x68-new-weight-recheck-2026-09-24"],
+      "variant-twitter-v3-wheeltop-eds-tire-clearance-2026-09-24": ["twitter-v3-wheeltop-clearance-recheck-2026-09-24", "twitter-v3-cn-wheel-option-page-recheck-2026-09-24", "twitter-v3-wheeltop-regional-usa-clearance-recheck-2026-09-24", "twitter-v3-bb86-manual-mirror-generation-exclusion-recheck-2026-09-24"],
+      "candidate-bxt-gravel-complete-tire-clearance-2026-08-28": ["bxt-055-official", "bxt-135-clearance-45c-2026-08-30", "bxt-135-clearance-47c-2026-08-30", "bxt-135-official-2026-08-28", "taobao-snapshot-2026-08-08"],
+      "candidate-xlab-rs9-tire-clearance-recheck-2026-09-24": ["public-xlab-rs9-build-2026-08-27", "xlab-rs9-official-cn-spec-2026-08-27", "xlab-rs9-bikeinsights-2026-08-27"],
+      "candidate-airwolf-yf-r003-frame-material-2026-09-22": ["airwolf-yf-r003-source-2026-09-05", "airwolf-yf-r003-owner-recheck-2026-09-22"],
+      "candidate-airwolf-yf-r003-frame-revision-2026-09-22": ["airwolf-yf-r003-source-2026-09-05", "airwolf-yf-r003-owner-recheck-2026-09-22"],
+      "candidate-elves-mori-community-lead-identity-2026-08-17": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+      "candidate-elves-mori-community-lead-price-2026-08-17": ["public-elves-mori-family-build-2026-08-17", "public-elves-mori-frame-price-2026-08-17"],
+      "candidate-hi-light-g7-2-grx-gr1600-price-2026-08-27": ["titanium-hi-light-g7-2-grx-gr1600-official", "hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "candidate-mondince-fm316-availability-2026-09-22": ["mondince-fm316-current-specification-2026-09-22", "mondince-fm316-owner-followup-2026-09-22", "mondince-fm316-recent-delivery-community-report-2026-09-24"],
+      "candidate-pardus-robin-evo-community-lead-frame-material-2026-08-28": ["pardus-robin-evo-third-generation-official-2026-08-28", "pardus-robin-evo-official-2026-08-17", "public-pardus-robin-evo-build-2026-08-17"]
+    },
+    "research_boundary": "One Luna Max evidence-only reviewer. Read the frozen exact records and accepted sources, then check current credible exact-model sources sequentially one model/source at a time. Return actual access date, page title, publisher/source class, direct URL, exact supported claim, conflict/caveat, and a source-reuse or conflict-reconfirmed recommendation for every field. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these twelve frozen attempts or ten exact models.",
+      "Do not revisit Twitter V3 RS Sensah clearance before its 2026-11-17 retry date.",
+      "Do not transfer specifications, prices, revisions, subtrims, or availability across models, sizes, generations, markets, variants, sellers, or builds.",
+      "For price, use only visible public listing/checkout facts; no cart, quote, purchase, seller contact, or account-only route.",
+      "No XHS capture, login, CAPTCHA, challenge handling, or bypass.",
+      "No images, image downloads, redistribution, external messages, commits, pushes, PRs, merges, or publishing.",
+      "Preserve unknowns, conflicts, and access limitations; do not infer missing values."
+    ],
+    "not_selected_from_remaining_queue": [
+      {"attempt_id":"variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17","record_id":"twitter-v3-rs-sensah","reason":"retry_after is 2026-11-17, so it is not eligible for this batch."},
+      {"attempt_id":"candidate-pardus-spark-rs-community-lead-frame-material-2026-08-28","record_id":"pardus-spark-rs-community-lead","reason":"Next unselected unique model after the ten-model cap."},
+      {"attempt_id":"platform-pardus-super-sport-gen2-frame-material-2026-08-28","record_id":"pardus-super-sport-gen2","reason":"Next unselected unique model after the ten-model cap."}
+    ]
+  }
+}

@@ -479,8 +479,22 @@
   },
   "status": "found",
   "accepted_source_ids": [
+    "scott-addict-2026-manual-recheck-2026-09-24",
     "scott-addict-rc-40-bikeradar-review-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Exact 2023-generation review publishes the seven-size RC geometry table."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Exact 2023-generation review publishes the seven-size RC geometry table.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-2026-manual-recheck-2026-09-24"
+    ],
+    "note": "Use the official 2026 Addict manual geometry table for the current RC 40 platform; the 2023-generation BikeRadar geometry remains a distinct older observation and must not label the current table."
+  },
+  "closeout_correction": {
+    "reviewed_at": "2026-09-25",
+    "source_id": "scott-addict-rc-40-identity-review-2026-09-25",
+    "note": "Closeout correction 2026-09-25: the 2026 Addict manual is not attributable to RC 40 model 290362. Retain only the previously sourced exact-generation BikeRadar geometry; matching size names are insufficient. The preserved resolution above is historical and superseded by this correction."
+  }
 }

@@ -482,5 +482,13 @@
     "seka-spear-catalog-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-spear-rdc-batch-042-50-area-sweep-2026-09-01.json. Official exact-model catalog publishes 32C maximum tire size."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-spear-rdc-batch-042-50-area-sweep-2026-09-01.json. Official exact-model catalog publishes 32C maximum tire size.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "seka-spear-catalog-2026-09-01"
+    ],
+    "note": "The exact Spear RDC catalog states a 32C maximum tire size, matching the target. This is nominal tire-size compatibility, not a measured casing width or physical frame/fork clearance."
+  }
 }

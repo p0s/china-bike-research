@@ -6,7 +6,7 @@
   },
   "field": "availability",
   "priority": "medium",
-  "searched_at": "2026-09-22",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "web",
     "public-post"
@@ -28,7 +28,7 @@
       "conflict": "Same official page advertises single-unit private orders, bulk-only orders and MOQ 30 without consistent scope."
     },
     "public-post": {
-      "status": "open",
+      "status": "found",
       "attempts": [
         {
           "attempt": 1,
@@ -38,6 +38,15 @@
           "accessed_at": "2026-09-22",
           "note": "Historical small order is not current mainland fulfilment proof.",
           "result_url": "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+        },
+        {
+          "attempt": 2,
+          "query": "\"Mondince FM316\" frameset \"one\" order ship owner",
+          "route": "Distinct public Reddit exact-model post search; opened one returned owner post",
+          "outcome": "found",
+          "accessed_at": "2026-09-24",
+          "note": "The exact post reports a recent size-M FM316 frame receipt and completed build. It does not state order date, seller, market, explicit unit count, or current new-order availability. Its live relative-age display conflicts with the search-index date. Accepted as recent community-reported fulfilment only; insufficient to resolve current single-unit availability.",
+          "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1vjqmct/mondince_fm316/"
         }
       ]
     }
@@ -45,8 +54,22 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "mondince-fm316-current-specification-2026-09-22",
-    "mondince-fm316-owner-followup-2026-09-22"
+    "mondince-fm316-owner-followup-2026-09-22",
+    "mondince-fm316-recent-delivery-community-report-2026-09-24",
+    "mondince-fm316-current-specification-recheck-2026-09-25",
+    "mondince-fm316-recent-delivery-community-report-recheck-2026-09-25",
+    "mondince-fm316-older-owner-report-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Current single-unit fulfilment remains unverified. Next: consistent exact ordering terms or an attributable current individual offer."
+  "notes": "The exact public-post route found a recent community-reported size-M frame receipt, but the order date, seller, market, explicit quantity and current reorder option are absent; live age and index date conflict. This does not resolve current single-unit availability or the official ordering-term conflict. Keep availability null; only a current attributable individual offer or consistent exact ordering terms can resolve it.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "mondince-fm316-current-specification-recheck-2026-09-25",
+      "mondince-fm316-recent-delivery-community-report-recheck-2026-09-25",
+      "mondince-fm316-older-owner-report-recheck-2026-09-25"
+    ],
+    "note": "Current manufacturer page allows MOQ 1 for private standard-color orders but its factory section says MOQ 30 and a banner directs buyers to check availability. A recent owner report says a size-M frame arrived the previous week; an older report says a past order contained two frames. Neither identifies current stock or current reorder terms."
+  }
 }

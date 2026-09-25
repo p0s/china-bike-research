@@ -1,0 +1,142 @@
+{
+  "batch": 131,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-131-scope.json",
+  "result": {
+    "exact_target_models": 8,
+    "atomic_fields": 10,
+    "disposition": "All ten frozen fields were rechecked with exact-source and build/market boundaries preserved. The Cyclone ET current 9.2 kg claim was selected as its current reference; the AD500 mainland report was recorded as a 9.23 kg without-pedals reference. The remaining nine attempts are conflict-reconfirmed, including the unresolved selected delivery build for AD500.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_queue_before": 41,
+    "conflicted_queue_after": 31,
+    "research_attempts_dispositioned": 10,
+    "source_reuse_found": 1,
+    "conflicts_reconfirmed": 9,
+    "catalog_records_updated": 8,
+    "source_records_added": 8,
+    "mainland_complete_weight_references_added": 1,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 31
+    },
+    "catalog_gaps_reduced": 1,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 76 prices, 1375 sources, 212 primary images, 236 candidates, 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "pass: codex-pnpm-check check; privacy, validate, research check, coverage check, 328/328 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "focused_test_after_description_adjustment": "pass: 73/73 tests in tests/data.test.mjs",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  },
+  "field_results": [
+    {
+      "field": "variant:twitter-cyclone-electronic:complete-weight",
+      "disposition": "source reused; current bounded 9.2 kg reference recorded",
+      "source_ids": [
+        "twitter-cyclone-et-official-live-recheck-2026-09-25",
+        "public-twitter-cyclone-et-owner-build-2026-08-29"
+      ],
+      "caveat": "Manufacturer says 9.2 kg net and the exact-build owner says 9.2 kg equipped; size and measurement/accessory basis remain incomplete. Historic 8.7 kg marketplace card is preserved."
+    },
+    {
+      "field": "candidate:twitter-cyclone-r7120:complete-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "twitter-cyclone-r7120-weight-current-recheck-2026-09-25",
+        "twitter-cyclone-r7120-global-page-404-recheck-2026-09-25"
+      ],
+      "caveat": "Current regional page lists 8.7 kg net; the former global 9.3 kg page returned 404. Size and method are unstated."
+    },
+    {
+      "field": "platform:yoeleo-altera-g21:frame-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "yoeleo-altera-g21-frame-weight-current-recheck-2026-09-25",
+        "yoeleo-altera-g21-official-2026-08-16"
+      ],
+      "caveat": "Current size-56 page gives 1,170 g painted / 1,050 g raw; prior page version gives 1,150 g raw and size-49 guide gives 980 ±50 g. Keep size/finish/page version bases."
+    },
+    {
+      "field": "candidate:hongfu-gravel:tire-clearance",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "hongfu-fm188-internal-current-2026-08-30",
+        "hongfu-fm279-current-2026-08-30",
+        "hongfu-gravel-category-current-recheck-2026-09-25"
+      ],
+      "caveat": "Distinct FM188 Internal, New CX FM188 and FM279 models remain possible; candidate identity is unmapped, so no maximum is assigned."
+    },
+    {
+      "field": "candidate:hongfu-gravel:price",
+      "disposition": "no current exact mainland price; historical conflict reconfirmed",
+      "source_ids": [
+        "round3-hongfu-gravel-frame-marketplace-d0992a43ae",
+        "hongfu-fm188-alibaba-price-2026-08-30",
+        "hongfu-fm279-alibaba-current-2026-08-30"
+      ],
+      "caveat": "No current exact-model retail checkout amount found; export/quantity quotes do not price the unmapped candidate."
+    },
+    {
+      "field": "candidate:hongfu-gravel:frame-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "hongfu-fm188-current-2026-08-30",
+        "hongfu-fm279-current-2026-08-30",
+        "hongfu-fm279-alibaba-current-2026-08-30"
+      ],
+      "caveat": "Size-dependent frame-weight figures belong to named FM188/FM279 frames and do not map to the generic candidate."
+    },
+    {
+      "field": "candidate:java-fuoco-2025:complete-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "java-fuoco-top-105-current-regional-recheck-2026-09-25",
+        "java-fuoco-top-105-retailer-weight-2026-08-30",
+        "java-fuoco-top-105-owner-weight-2026-08-30"
+      ],
+      "caveat": "Regional page says about 8.7 kg; retailer says 8.6–8.9 kg; owner/shop report says 9.445 kg. Size, measurement basis and mapping to 2025 mainland build remain unresolved."
+    },
+    {
+      "field": "candidate:twitter-carbon-road-gravel-unknown:complete-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "twitter-v3-25yr-manufacturer-current-recheck-2026-09-25",
+        "twitter-v3-25yr-store-current-recheck-2026-09-25",
+        "twitter-gravel-v3-2024-taobao-2026-08-21"
+      ],
+      "caveat": "The current 25yr pages disagree internally and target generation/build remains unmapped from the generic 2024 V3 RS listing."
+    },
+    {
+      "field": "candidate:xds-ad500-2025:complete-weight",
+      "disposition": "mainland reference recorded; retained delivery build unresolved",
+      "source_ids": [
+        "xds-ad500-2025-mainland-weight-2026-08-30",
+        "xds-ad500-retailer-2026-08-08",
+        "xds-ad500-vietnam-current-recheck-2026-09-25"
+      ],
+      "caveat": "Mainland public report is 9.23 kg without pedals with size/method details limited; Hong Kong and Vietnam builds remain separate regional references."
+    },
+    {
+      "field": "candidate:xds-ad7:complete-weight",
+      "disposition": "conflict reconfirmed",
+      "source_ids": [
+        "xds-ad7-green-demon-taiwan-2026-08-30",
+        "xds-ad7-green-demon-taiwan-current-recheck-2026-09-25",
+        "xds-ad7-green-demon-vbike-current-weight-recheck-2026-09-25"
+      ],
+      "caveat": "Historical Taiwan listing is 8.2 kg; current Hong Kong listing is about 8.5 kg at 480 mm and sold out. Retained mainland basis remains unresolved."
+    }
+  ]
+}

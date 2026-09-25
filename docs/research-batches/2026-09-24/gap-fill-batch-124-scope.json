@@ -1,0 +1,51 @@
+{
+  "batch": 124,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_entries": 707,
+    "gap_count_method": "Count all entries in .records[].gaps[] from a fresh npm run --silent data:gaps report.",
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 56,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selected_queue_priority_each": 100,
+    "selection_note": "Next eligible evidence-found fields after excluding exact models audited in B108-B123 and immediately adjacent recent unresolved source checks."
+  },
+  "scope": {
+    "exact_target_records": [
+      "candidate:winspace-m6",
+      "candidate:winspace-t1600",
+      "candidate:xds-ad7"
+    ],
+    "selected_fields": [
+      "candidate:winspace-m6:frame-material",
+      "candidate:winspace-m6:tire-clearance",
+      "candidate:winspace-t1600:frame-material",
+      "candidate:winspace-t1600:frame-stiffness",
+      "candidate:winspace-t1600:tire-clearance",
+      "candidate:xds-ad7:drivetrain",
+      "candidate:xds-ad7:frame-material"
+    ],
+    "attempt_ids": [
+      "candidate-winspace-m6-frame-material-2026-08-30",
+      "candidate-winspace-m6-tire-clearance-2026-08-30",
+      "candidate-winspace-t1600-frame-material-2026-08-30",
+      "candidate-winspace-t1600-frame-stiffness-2026-08-30",
+      "candidate-winspace-t1600-tire-clearance-2026-08-30",
+      "candidate-xds-ad7-drivetrain-2026-08-30",
+      "candidate-xds-ad7-frame-material-2026-08-30"
+    ],
+    "research_boundary": "Evidence-only Luna Max review; inspect only the frozen records, attempts and accepted sources first. Work one exact candidate and one source at a time. Check one current primary exact-model source only where needed. Return direct source URLs, source IDs or proposed IDs, actual access date, source class, supported claims and caveats. Primary writer integrates supported results and corrects unsupported statements only within the frozen fields.",
+    "excluded": [
+      "No fields outside the seven frozen targets.",
+      "Do not reopen unresolved B119-B123 fields or adjacent recent models without new direct evidence.",
+      "Do not transfer Winspace or XDS values across model year, trim, market, frame size or selected build.",
+      "No new image records, third-party image hosting or rights assumptions.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

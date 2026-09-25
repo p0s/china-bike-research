@@ -28,8 +28,24 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "scott-addict-2026-manual-2026-08-17"
+    "scott-addict-2026-manual-2026-08-17",
+    "scott-addict-2026-manual-recheck-2026-09-24",
+    "scott-addict-rc-40-poland-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Disposition: qualified. 2026 Addict manual provides full geometry for sizes 47–61; that size set matches the exact RC 40 page. It is an Addict-family chart, not an RC 40-labeled chart. Reopen trigger: Reopen if SCOTT publishes an RC 40-specific chart or revises the 2026 manual.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-2026-manual-recheck-2026-09-24",
+      "scott-addict-rc-40-poland-recheck-2026-09-24"
+    ],
+    "note": "Disposition: qualified. 2026 Addict manual provides full geometry for sizes 47–61; that size set matches the exact RC 40 page. It is an Addict-family chart, not an RC 40-labeled chart. Reopen trigger: Reopen if SCOTT publishes an RC 40-specific chart or revises the 2026 manual."
+  },
+  "closeout_correction": {
+    "reviewed_at": "2026-09-25",
+    "source_id": "scott-addict-rc-40-identity-review-2026-09-25",
+    "note": "Closeout correction 2026-09-25: the 2026 Addict manual is not attributable to RC 40 model 290362. Retain only the previously sourced exact-generation BikeRadar geometry; matching size names are insufficient. The preserved resolution above is historical and superseded by this correction."
+  }
 }

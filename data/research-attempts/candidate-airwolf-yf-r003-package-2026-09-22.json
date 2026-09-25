@@ -44,8 +44,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "airwolf-yf-r003-owner-recheck-2026-09-22"
+    "airwolf-yf-r003-owner-recheck-2026-09-22",
+    "airwolf-yf-r003-access-check-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Found as a historical owner package only; current selected seller package remains unverified."
+  "notes": "Found as a historical owner package only; current selected seller package remains unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "airwolf-yf-r003-owner-recheck-2026-09-22",
+      "airwolf-yf-r003-access-check-2026-09-22"
+    ],
+    "note": "Owner post identifies a historical YF-R003 package of frame, fork, headset, HB009 integrated cockpit and seatpost, with owner-described T1000. It does not establish current seller contents or revision. Reopen on an accessible current exact product page and selected-option contents."
+  }
 }

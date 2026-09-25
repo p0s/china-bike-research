@@ -33,6 +33,12 @@ A channel may also be `open` after at least one unsuccessful attempt while its a
 
 Temporary exhaustion is not negative evidence. It means “not found through the recorded routes on this date.” Exhausted gaps receive a retry date and reopen when a new model year, source lead, restored page, tooling improvement, or conflicting catalog change appears.
 
+When an exhausted, blocked, or conflicted field is reopened, preserve its original ledger record and add a new dated record for the same target and field. Set `retry_of` to the latest prior record and explain the changed source or state in `retry_reason`. A channel that has no new lead may use `status: "carried-forward"`, an empty `attempts` array, and `from_attempt_id` pointing to that predecessor; this reuses its unresolved status without counting or rewriting old searches. Search only newly justified routes in other channels. The new record becomes the field's current queue status, while earlier records remain part of the history. Extended 50-approach campaigns require an explicit campaign extension before retry records are added.
+
+A formal extension is recorded in the retry's `campaign_extension` object with a unique `id`, matching `extends_attempt_id` and `authorized_at`, the relative `scope_file`, a concise `reason`, `allowed_channels`, and `max_new_attempts`. The scope file freezes the exact target field and new route before research; the retry may not exceed that route budget. Campaign summaries continue to count the original 50-area sweep as complete while reporting the follow-up's current disposition separately.
+
+If a bounded extension ends `open` because its permitted route was inconclusive, a later extension may continue only when a genuinely new source lead or product-state change justifies it. Add a dated record linked to the latest attempt, carry forward unchanged channels, and freeze a new exact route with its own one-batch budget; do not repeat a prior query or reopen a recorded page without a new reason. This preserves the original 50-area campaign and each extension's independent limit.
+
 CAPTCHA, login, and Security Verification remain human-only. HTTP 412, 300013, or rate limiting stops the current job with no same-session retry or bypass; on a later turn, one content-free normal-access probe may clear the breaker when ordinary cards load, without requiring a particular user phrase.
 
 ## Durable ledger

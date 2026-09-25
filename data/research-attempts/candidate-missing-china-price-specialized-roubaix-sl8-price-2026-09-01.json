@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "specialized-roubaix-sl8-tiagra-official-2026-08-17"
+    "specialized-roubaix-sl8-tiagra-official-2026-08-17",
+    "specialized-roubaix-sl8-tiagra-cn-detail-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-roubaix-sl8-batch-035-50-area-sweep-2026-09-01.json. The retained exact China catalog observation records CNY 15,990 from CNY 17,990 on 2026-08-17; current duration, stock and checkout remain caveated."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-specialized-roubaix-sl8-batch-035-50-area-sweep-2026-09-01.json. The retained exact China catalog observation records CNY 15,990 from CNY 17,990 on 2026-08-17; current duration, stock and checkout remain caveated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "specialized-roubaix-sl8-tiagra-official-2026-08-17",
+      "specialized-roubaix-sl8-tiagra-cn-detail-recheck-2026-09-24"
+    ],
+    "note": "The older exact catalog observation remains dated reference evidence. The current China product page confirms the Tiagra model identity but exposes no current CNY amount, selected option, stock, or purchase control. Keep observed_price null and do not present the historical lead as a current checkout price."
+  }
 }

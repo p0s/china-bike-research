@@ -1,0 +1,12 @@
+{
+  "batch": 83,
+  "date": "2026-09-24",
+  "amends": "docs/research-batches/2026-09-24/gap-fill-batch-83-scope.json",
+  "amendment": 1,
+  "reason": "B83 changes only dated image-health evidence metadata and no code. The repository validation instruction says not to rerun the full gate after evidence-metadata-only changes; the B82 full gate remains valid for unchanged code.",
+  "validation_adjustment": {
+    "previous": "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "current": "Run npm run validate and coverage:check. Run coverage:accept only if coverage:check reports a stale baseline. Do not rerun npm run check for this evidence-metadata-only batch."
+  },
+  "scope_changes": false
+}

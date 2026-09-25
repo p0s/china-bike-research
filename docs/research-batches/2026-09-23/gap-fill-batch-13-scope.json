@@ -1,0 +1,106 @@
+{
+  "batch_id": "gap-fill-batch-13-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 12 passed the full gate. Fresh data:gaps still reports zero ready fields; the research queue has 789 evidence-found items, 45 deferred, 498 blocked, and 60 conflicted. Batch 11's eight unresolved fields have explicit reopen triggers and no new leads, so they are excluded from immediate repetition.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 12. Select the next eight distinct exact target records from the evidence-found queue after excluding Batch 11's unchanged unresolved fields; scope the top 25 fields.",
+  "exact_model_count": 8,
+  "atomic_field_count": 25,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "camp-ace-qed",
+      "exact_identity": "CAMP ACE QED electronic complete-bike candidate",
+      "fields": ["identity-source"],
+      "attempt_ids": ["candidate-camp-ace-qed-identity-source-2026-08-29"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700",
+      "exact_identity": "CAMP GX700 gravel complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-camp-gx700-complete-weight-2026-08-29",
+        "candidate-camp-gx700-drivetrain-2026-08-29",
+        "candidate-camp-gx700-frame-material-2026-08-29",
+        "candidate-camp-gx700-identity-source-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "exact_identity": "CAMP GX700 travel-loaded complete-bike candidate",
+      "fields": ["frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-camp-gx700-travel-frame-material-2026-08-29",
+        "candidate-camp-gx700-travel-identity-source-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "carbonda-cfr707",
+      "exact_identity": "Carbonda CFR707 gravel frameset candidate",
+      "fields": ["frame-material", "frame-weight", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-carbonda-cfr707-frame-material-2026-08-30",
+        "candidate-carbonda-cfr707-frame-weight-2026-08-30",
+        "candidate-carbonda-cfr707-tire-clearance-2026-08-30"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cervelo-aspero-5-current",
+      "exact_identity": "Cervelo Áspero-5 current-generation candidate",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-cervelo-aspero-5-current-price-2026-09-01"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure",
+      "exact_identity": "Cinelli Pressure aero road-bike candidate",
+      "fields": ["drivetrain", "frame-material", "frame-stiffness", "identity-source", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-cinelli-pressure-drivetrain-2026-08-29",
+        "candidate-cinelli-pressure-frame-material-2026-08-29",
+        "candidate-cinelli-pressure-frame-stiffness-2026-08-29",
+        "candidate-cinelli-pressure-identity-source-2026-08-29",
+        "candidate-cinelli-pressure-tire-clearance-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure-adr",
+      "exact_identity": "Cinelli Pressure ADR aero road-bike candidate",
+      "fields": ["frame-material", "frame-stiffness", "identity-source", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-cinelli-pressure-adr-frame-material-2026-08-29",
+        "candidate-cinelli-pressure-adr-frame-stiffness-2026-08-29",
+        "candidate-cinelli-pressure-adr-identity-source-2026-08-29",
+        "candidate-cinelli-pressure-adr-tire-clearance-2026-08-29"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "colnago-y1rs",
+      "exact_identity": "Colnago Y1Rs complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "frame-stiffness", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-colnago-y1rs-complete-weight-2026-08-30",
+        "candidate-colnago-y1rs-drivetrain-2026-08-30",
+        "candidate-colnago-y1rs-frame-material-2026-08-30",
+        "candidate-colnago-y1rs-frame-stiffness-2026-08-30",
+        "candidate-colnago-y1rs-tire-clearance-2026-08-30"
+      ]
+    }
+  ],
+  "integration_instructions": [
+    "Inspect each attempt and every accepted source for one exact model at a time before updating that model's records.",
+    "For evidence already integrated into the exact candidate, add a dated source-reuse resolution naming the accepted source and stating the exact supported claim and all material caveats.",
+    "Where the source establishes a new useful fact not yet in the candidate, integrate it only if the evidence directly supports the exact model and field; retain conflicts, size/configuration limits, and missing mainland details.",
+    "Do not infer a precise weight from approximate claims, select among unresolved trims, turn fitted tires into maximum-clearance claims, or convert qualitative stiffness into a score.",
+    "Do not repeat searches, add sources or images, or make external GitHub changes."
+  ],
+  "done_criteria": "Inspect all 25 frozen fields and accepted sources, integrate directly supported evidence or preserve an exact unresolved disposition, write a results matrix, accept monotonic coverage for ledger/catalog changes, run npm run check once for the batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

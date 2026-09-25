@@ -482,5 +482,14 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g028-frameset-batch-047-50-area-sweep-2026-09-01.json. Current US$738 official sale price and CNY reference conversion found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g028-frameset-batch-047-50-area-sweep-2026-09-01.json. Current US$738 official sale price and CNY reference conversion found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "spcycle-g028-hb068-current-2026-09-01",
+      "ecb-reference-rates-2026-08-31"
+    ],
+    "note": "The target's CNY 4,959 figure is a dated reference conversion of the exact G028 package with HB-068 at US$738 using the 2026-08-31 ECB cross-rate. Selected paint, shipping, tax, mainland eligibility and checkout total may differ."
+  }
 }

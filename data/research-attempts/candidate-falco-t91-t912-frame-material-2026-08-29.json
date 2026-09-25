@@ -495,5 +495,13 @@
     "falco-t912-jd-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/falco-t91-t912-50-area-sweep-2026-08-29.json. Manufacturer and mainland exact-model sources establish a carbon-fiber T912 frameset; only a regional retailer supplies a T700 grade claim, so the grade is not promoted."
+  "notes": "The retained exact JD source identifies a carbon-fiber T912 frame, but the current manufacturer page does not state frame material and today’s JD crawl no longer surfaced the exact listing. No grade is established.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "falco-t912-jd-2026-08-29"
+    ],
+    "note": "The retained exact JD source identifies a carbon-fiber T912 frame, but the current manufacturer page does not state frame material and today’s JD crawl no longer surfaced the exact listing. No grade is established."
+  }
 }

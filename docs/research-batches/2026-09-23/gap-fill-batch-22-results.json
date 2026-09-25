@@ -1,0 +1,418 @@
+{
+  "batch_id": "gap-fill-batch-22-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-22-scope.json",
+  "scope_count": {
+    "exact_models": 8,
+    "atomic_fields": 24,
+    "root_fields": 9,
+    "luna_evidence_fields": 15
+  },
+  "new_images_added": 0,
+  "new_source_records": [
+    "legit-ac1-manufacturer-current-2026-09-23",
+    "legit-ac1-mainland-index-recheck-2026-09-23",
+    "leinak-leina-jd-index-recheck-2026-09-23",
+    "leinak-jd-storefront-current-2026-09-23",
+    "leinak-youlong-2-douyin-index-current-2026-09-23",
+    "lightcarbon-lcg071-pro-official-price-recheck-2026-09-23",
+    "laget-pioneer-official-recheck-2026-09-23",
+    "laget-pioneer-one-official-recheck-2026-09-23",
+    "laget-pioneer-one-cyclenet-2026-09-01",
+    "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+  ],
+  "updated_source_records": [],
+  "new_price_records": [],
+  "results": [
+    {
+      "record_id": "laget-discovery-one-pro",
+      "field": "frame-stiffness",
+      "status": "model-specific-stiffness-unknown-after-source-reuse",
+      "attempt_record_id": "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27",
+      "source_ids": [
+        "laget-discovery-one-pro-official-current-2026-09-23",
+        "laget-discovery-one-pro-tiparts-2026-08-27",
+        "laget-brand-story-current-2026-09-23",
+        "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3545905.html",
+        "https://tipartstitanium.com/products/laget-discovery-one-pro-titanium-gravel-frameset-3d-printed-titanium-1-380g-s-700x45c"
+      ],
+      "note": "Official page publishes no stiffness value or method; retailer strength language is qualitative and brand-wide stiffness claims are not model-specific.",
+      "next_trigger": "An exact-model instrumented test with a stated method or a specific independent comparison."
+    },
+    {
+      "record_id": "laget-discovery-one-pro",
+      "field": "frame-material",
+      "status": "titanium-3d-printed-frame-grade-unknown",
+      "attempt_record_id": "candidate-laget-discovery-one-pro-frame-material-2026-08-27",
+      "source_ids": [
+        "laget-discovery-one-pro-official-current-2026-09-23",
+        "laget-discovery-one-pro-tiparts-2026-08-27",
+        "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3545905.html",
+        "https://tipartstitanium.com/products/laget-discovery-one-pro-titanium-gravel-frameset-3d-printed-titanium-1-380g-s-700x45c"
+      ],
+      "note": "Manufacturer confirms exact 3D-printed frame; TiParts identifies titanium. Alloy grade is unpublished.",
+      "next_trigger": "Manufacturer material or grade clarification, or a distinct variant."
+    },
+    {
+      "record_id": "laget-discovery-one-pro",
+      "field": "frame-weight",
+      "status": "size-s-manufacturer-claim-hardware-basis-unknown",
+      "attempt_record_id": "candidate-laget-discovery-one-pro-frame-weight-2026-08-27",
+      "source_ids": [
+        "laget-discovery-one-pro-official-current-2026-09-23",
+        "titanium-laget-discovery-one-pro-official",
+        "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3545905.html"
+      ],
+      "note": "Manufacturer lists 1.38 kg for size S; fork and hardware inclusion are unstated.",
+      "next_trigger": "Manufacturer-published weight breakdown or a changed size-specific figure."
+    },
+    {
+      "record_id": "laget-discovery-one-pro",
+      "field": "price",
+      "status": "official-retail-and-dated-listing-price-checkout-unverified",
+      "attempt_record_id": "candidate-laget-discovery-one-pro-price-2026-08-27",
+      "source_ids": [
+        "laget-discovery-one-pro-official-current-2026-09-23",
+        "laget-discovery-one-pro-taobao-2026-08-27",
+        "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3545905.html",
+        "https://item.taobao.com/item.htm?id=984904408137"
+      ],
+      "note": "Official retail is CNY 21,900; the exact Taobao listing also showed CNY 21,900 on 2026-08-27. No current checkout total or stock is established.",
+      "next_trigger": "Current exact seller checkout or a manufacturer price change."
+    },
+    {
+      "record_id": "laget-discovery-one-pro",
+      "field": "tire-clearance",
+      "status": "manufacturer-700x45c-maximum",
+      "attempt_record_id": "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27",
+      "source_ids": [
+        "laget-discovery-one-pro-official-current-2026-09-23",
+        "titanium-laget-discovery-one-pro-official",
+        "laget-discovery-one-pro-brushed-silver-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3545905.html"
+      ],
+      "note": "Manufacturer states a 700×45C maximum; this is nominal, not a measured casing-width guarantee.",
+      "next_trigger": "Manufacturer revision or a stated fit/casing qualification."
+    },
+    {
+      "record_id": "laget-discovery-slr",
+      "field": "price",
+      "status": "official-retail-checkout-unverified",
+      "attempt_record_id": "candidate-laget-discovery-slr-price-2026-09-01",
+      "source_ids": [
+        "laget-discovery-slr-official-current-2026-09-23",
+        "titanium-laget-discovery-slr-official"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3301187.html"
+      ],
+      "note": "Current exact manufacturer page lists CNY 14,900 retail. Stock, selected package, shipping and checkout total remain unverified.",
+      "next_trigger": "Manufacturer price update or exact dated checkout."
+    },
+    {
+      "record_id": "laget-discovery-slr",
+      "field": "frame-material",
+      "status": "semi-3d-printed-titanium-construction-grade-unknown",
+      "attempt_record_id": "candidate-laget-discovery-slr-frame-material-2026-08-27",
+      "source_ids": [
+        "laget-discovery-slr-official-current-2026-09-23",
+        "laget-discovery-slr-bilibili-2026-08-27"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/3301187.html",
+        "https://www.bilibili.com/video/BV1cwbVzhEN3/"
+      ],
+      "note": "Manufacturer describes a 3D-printed titanium front triangle joined to a hand-welded rear triangle and a carbon fork; titanium grade is unknown.",
+      "next_trigger": "Manufacturer grade or variant-specific construction clarification."
+    },
+    {
+      "record_id": "laget-pioneer",
+      "field": "frame-material",
+      "status": "titanium-supported-by-dated-official-source",
+      "attempt_record_id": "candidate-laget-pioneer-frame-material-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-official",
+        "laget-pioneer-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2337831.html"
+      ],
+      "note": "Accepted official source identifies titanium with a carbon fork. The 2026-09-23 retrieval was marked crawled about three weeks earlier and its visible text says hand-welded without restating titanium or grade.",
+      "next_trigger": "Manufacturer clarification or a distinct generation."
+    },
+    {
+      "record_id": "laget-pioneer",
+      "field": "frame-weight",
+      "status": "size-s-manufacturer-claim-basis-unknown",
+      "attempt_record_id": "candidate-laget-pioneer-frame-weight-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-official",
+        "laget-pioneer-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2337831.html"
+      ],
+      "note": "Manufacturer claim is 1.55 kg for size S; finish and included hardware are unspecified.",
+      "next_trigger": "Manufacturer weight breakdown or conflicting exact-model measurement."
+    },
+    {
+      "record_id": "laget-pioneer",
+      "field": "tire-clearance",
+      "status": "manufacturer-700x32c-maximum",
+      "attempt_record_id": "candidate-laget-pioneer-tire-clearance-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-official",
+        "laget-pioneer-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2337831.html"
+      ],
+      "note": "Manufacturer maximum is 700×32C. Do not transfer figures from Pioneer One or Discovery SLR.",
+      "next_trigger": "Manufacturer revision or a stated measurement/fit basis."
+    },
+    {
+      "record_id": "laget-pioneer",
+      "field": "price-not-observed",
+      "status": "official-retail-only-market-checkout-unobserved",
+      "attempt_record_id": "candidate-laget-pioneer-price-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-official",
+        "laget-pioneer-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2337831.html"
+      ],
+      "note": "Manufacturer lists CNY 7,900 retail on the exact page opened 2026-09-23. Candidate observed price remains null; MSRP is not a buyer-observed marketplace checkout.",
+      "next_trigger": "Exact public seller price with date and selected option."
+    },
+    {
+      "record_id": "laget-pioneer-one",
+      "field": "frame-material",
+      "status": "titanium-supported-by-dated-official-source",
+      "attempt_record_id": "candidate-laget-pioneer-one-frame-material-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-one-official",
+        "laget-pioneer-one-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2955225.html"
+      ],
+      "note": "Accepted official source identifies a 3D-printed titanium frame and carbon fork. Current retrieved text describes 3D-printed construction but does not state alloy grade.",
+      "next_trigger": "Manufacturer material/grade clarification or a distinct version."
+    },
+    {
+      "record_id": "laget-pioneer-one",
+      "field": "frame-weight",
+      "status": "size-s-manufacturer-claim-basis-unknown",
+      "attempt_record_id": "candidate-laget-pioneer-one-frame-weight-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-one-official",
+        "laget-pioneer-one-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2955225.html"
+      ],
+      "note": "Manufacturer lists 1.35 kg for size S; hardware and finish basis are unstated.",
+      "next_trigger": "Manufacturer weight breakdown or conflicting exact-model measurement."
+    },
+    {
+      "record_id": "laget-pioneer-one",
+      "field": "tire-clearance",
+      "status": "manufacturer-32c-retailer-33c-conflict",
+      "attempt_record_id": "candidate-laget-pioneer-one-tire-clearance-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-one-official",
+        "laget-pioneer-one-official-recheck-2026-09-23",
+        "laget-pioneer-one-tiparts-2026-08-17",
+        "laget-pioneer-one-cyclenet-2026-09-01"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2955225.html",
+        "https://tipartstitanium.com/products/laget-pioneer-one-titanium-road-frameset-3d-printed-titanium-polished-silver-1350g-s-32mm-tyre-clearance",
+        "https://cyclenet.co.nz/products/laget-pioneer-one-3d-printed-road-frameset"
+      ],
+      "note": "Manufacturer and TiParts state 32C; Cyclenet NZ states 33C. Keep the manufacturer maximum and preserve the unresolved measurement/generation discrepancy.",
+      "next_trigger": "Manufacturer explanation of 32C versus 33C or an exact fit test."
+    },
+    {
+      "record_id": "laget-pioneer-one",
+      "field": "price-not-observed",
+      "status": "official-retail-only-market-checkout-unobserved",
+      "attempt_record_id": "candidate-laget-pioneer-one-price-2026-09-01",
+      "source_ids": [
+        "titanium-laget-pioneer-one-official",
+        "laget-pioneer-one-official-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/2955225.html"
+      ],
+      "note": "Manufacturer lists CNY 21,900 retail on the exact page opened 2026-09-23. Candidate observed price remains null; MSRP is not a buyer-observed marketplace checkout.",
+      "next_trigger": "Exact public seller price with date and selected option."
+    },
+    {
+      "record_id": "legit-ac1",
+      "field": "drivetrain",
+      "status": "dated-mainland-r7120-selection-current-availability-unconfirmed",
+      "attempt_record_id": "candidate-legit-ac1-drivetrain-2026-08-30",
+      "source_ids": [
+        "legit-ac1-mainland-build-2026-08-30",
+        "legit-ac1-mechanical-bom-2026-08-30",
+        "legit-ac1-mainland-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/xinghao/131864bf491c70e9ba7e.html?catID=13806&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_totalsales15_desc",
+        "https://www.dogoodco.in/products/legit-ac1-aero-bike-blue-mist-carbon-wheels-and-handlebar"
+      ],
+      "note": "Dated exact mainland listing selected Shimano 105 R7120 mechanical 2×12 for Silver White Graffiti; the current JD recheck was generic and does not confirm availability or a current BOM.",
+      "next_trigger": "Accessible exact mainland SKU/component list or a seller variation change."
+    },
+    {
+      "record_id": "legit-ac1",
+      "field": "frame-material",
+      "status": "current-manufacturer-t700-exact-platform",
+      "attempt_record_id": "candidate-legit-ac1-frame-material-2026-08-30",
+      "source_ids": [
+        "legit-ac1-current-specs-2026-08-30",
+        "legit-ac1-manufacturer-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://winspace.jp/products/legit-ac1"
+      ],
+      "note": "Current exact manufacturer page specifies T700 carbon. Fork/seatpost grade, fiber proportions, lay-up and molding details remain unpublished.",
+      "next_trigger": "Manufacturer specification expanding or contradicting the T700 statement."
+    },
+    {
+      "record_id": "legit-ac1",
+      "field": "tire-clearance",
+      "status": "current-manufacturer-700x32c-maximum",
+      "attempt_record_id": "candidate-legit-ac1-tire-clearance-2026-08-30",
+      "source_ids": [
+        "legit-ac1-current-specs-2026-08-30",
+        "legit-ac1-manufacturer-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://winspace.jp/products/legit-ac1"
+      ],
+      "note": "Exact manufacturer page states 700×32C maximum; no casing-width guarantee is given.",
+      "next_trigger": "Manufacturer revision or wheel/casing-specific fit statement."
+    },
+    {
+      "record_id": "leinax-leina-road",
+      "field": "drivetrain",
+      "status": "two-regional-options-retained-mainland-selection-unknown",
+      "attempt_record_id": "candidate-leinax-leina-road-drivetrain-2026-08-30",
+      "source_ids": [
+        "leinak-leina-jd-2026-08-30",
+        "leinak-leina-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default"
+      ],
+      "note": "Dated exact 雷娜 index lists Shimano 105 mechanical 2×12 and 105 Di2 2×12 options; the retained CNY 7,999 card is not mapped to either. Current page recheck was generic and had no exact model text.",
+      "next_trigger": "Exact seller variation or BOM tied to the retained card."
+    },
+    {
+      "record_id": "leinax-leina-road",
+      "field": "frame-material",
+      "status": "toray-carbon-range-reference-mainland-build-unresolved",
+      "attempt_record_id": "candidate-leinax-leina-road-frame-material-2026-08-30",
+      "source_ids": [
+        "leinak-leina-jd-2026-08-30",
+        "leinak-leina-bilibili-2026-08-30",
+        "leinak-leina-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/6524cb7b78d948999d5.html?electedExtAttrSet=&extAttrValue=expand_name%2C&page=2&sort_type=sort_default",
+        "https://www.bilibili.com/video/BV15SYVzAEbR/"
+      ],
+      "note": "Dated exact 雷娜 source supports a Toray-carbon frame and the brand-associated 星耀 post says full carbon; the current JD recheck found no exact model content. Treat as range evidence, not selected mainland proof.",
+      "next_trigger": "Exact retained option with manufacturer material statement."
+    },
+    {
+      "record_id": "leinax-leina-road",
+      "field": "identity-source",
+      "status": "seller-and-store-identity-supported-exact-current-sku-unconfirmed",
+      "attempt_record_id": "candidate-leinax-leina-road-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "leinak-current-range-jd-2026-08-30",
+        "leinak-jd-store-2026-08-30",
+        "leinak-leina-jd-2026-08-30",
+        "leinak-jd-storefront-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://mall.jd.com/introduction-16484185.html"
+      ],
+      "note": "Retained card and dated JD records identify 雷娜; current storefront displays 雷纳克自行车旗舰店. Store intro is seller-authored context, and current exact-model index recheck was generic; current SKU availability is not confirmed.",
+      "next_trigger": "Exact current product page or conflict with retained-card identity."
+    },
+    {
+      "record_id": "leinax-youlong-2",
+      "field": "frame-material",
+      "status": "retained-seller-carbon-claim-only",
+      "attempt_record_id": "candidate-leinax-youlong-2-frame-material-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08"
+      ],
+      "sources_checked": [],
+      "note": "Retained seller-card pixels call 游龙 2.0 a full-carbon road bike. This is a seller claim; no independent grade, lay-up or manufacturer BOM was found.",
+      "next_trigger": "Manufacturer BOM for the retained selected option."
+    },
+    {
+      "record_id": "leinax-youlong-2",
+      "field": "identity-source",
+      "status": "exact-card-name-public-index-corroboration-specification-unverified",
+      "attempt_record_id": "candidate-leinax-youlong-2-identity-source-2026-08-30",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "leinak-current-range-jd-2026-08-30",
+        "leinak-jd-store-2026-08-30",
+        "leinak-youlong-2-douyin-index-2026-08-30",
+        "leinak-jd-storefront-current-2026-09-23",
+        "leinak-youlong-2-douyin-index-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://mall.jd.com/introduction-16484185.html",
+        "https://www.douyin.com/video/7670069226154185454"
+      ],
+      "note": "Retained card and public index use 游龙 2.0; current JD storefront identifies 雷纳克自行车旗舰店. Douyin direct page was blank, so the search-index excerpt corroborates naming only, not specifications or seller authorization.",
+      "next_trigger": "Exact product-title conflict or manufacturer cross-reference."
+    },
+    {
+      "record_id": "lightcarbon-lcg071-pro",
+      "field": "price",
+      "status": "dated-owner-package-price-current-quote-and-mainland-checkout-unknown",
+      "attempt_record_id": "candidate-lightcarbon-lcg071-pro-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcg071-pro-owner-price-2025-11-30",
+        "lightcarbon-lcg071-pro-official-price-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.reddit.com/r/ChineseCarbon/comments/1paful4/my_experience_with_the_lcg071pro_from_light_carbon/",
+        "https://www.lightcarbon.com/lightcarbon-new-gravel-frameset-with-integrated-handlebar_p170.html"
+      ],
+      "note": "Exact owner post itemizes US$629 for a specified frameset package on 2025-11-30. Manufacturer page rechecked 2026-09-23 still requires contact for price; neither source establishes a current quote or mainland checkout.",
+      "next_trigger": "Dated manufacturer/authorized seller quote or exact mainland checkout with package basis."
+    }
+  ],
+  "validation": {
+    "focused": "PASS: privacy, validate (41 brands, 38 platforms, 41 variants, 72 prices, 1,058 sources, 212 primary images, 236 candidates), research:check (1,461 atomic fields), and git diff --check.",
+    "coverage": "PASS: npm run coverage:accept accepted the monotonic baseline for 212 images and 277 catalog targets; coverage:check passed in the full gate.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy, validation, research, coverage, 307/307 tests, 584-page build, and SEO passed.",
+    "image_report": "Not required because no image records changed."
+  }
+}

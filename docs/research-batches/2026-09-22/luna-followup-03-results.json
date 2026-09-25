@@ -1,0 +1,132 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-03-2026-09-22",
+  "status": "completed-with-qualified-discovery",
+  "reviewed_models": 5,
+  "reviewed_fields": 24,
+  "full_field_closures": 0,
+  "partial_fields_updated": 2,
+  "coarse_gap_count_before": 721,
+  "coarse_gap_count_after": 721,
+  "method": "Fresh exact-model routes plus existing ledger context. Identity-dependent fields stop when the model or selected build cannot be identified. This is not a new fifty-approach campaign. Old attempts and dates are preserved.",
+  "results": [
+    {
+      "candidate_id": "cosmosworks-carbon-e-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Current primary pages still describe NOMAD and Oi! separately. Their facts cannot be assembled into the retained mixed-model price card. Dependent fields were stopped at this identity gate.",
+      "sources": [
+        "https://cosmosebike.com/",
+        "https://cosmosebike.com/products/nomad",
+        "https://cosmosebike.com/products/oi"
+      ],
+      "next_trigger": "Original selected marketplace SKU or manufacturer mapping to one exact model.",
+      "proof": "worker current manufacturer reads; older promotion source retained with its original date"
+    },
+    {
+      "candidate_id": "muidler-ashius-s7",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "outcome": "qualified-marketplace-references-integrated",
+      "finding": "Exact S7 discovery adds two qualified reference facts. Primary selected-build fields remain unknown; no weight, clearance or stiffness value found.",
+      "sources": [
+        "https://www.jd.com/tupian/131885ef8cfd087d3edb.html",
+        "https://item.jd.com/10227262345796.html",
+        "https://www.jd.com/xinkuan/131885ef8cfd087d3edb.html",
+        "https://www.jd.com/xinkuan/1318bd8e6a1135c7efdd.html",
+        "https://www.jd.com/xinkuan/13188723328c5e829753.html"
+      ],
+      "next_trigger": "Full exact item details and selected-option mapping to a dated price.",
+      "proof": "worker index reads; parent directly verified the exact index entry; parent item fetch was inaccessible",
+      "accepted_source_ids": [
+        "muidler-s7-jd-index-2026-09-22"
+      ]
+    },
+    {
+      "candidate_id": "viqi-integrated-road-unknown",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Current indexes contain distinct flat-bar gravel and drop-bar road configurations. No route joins the retained card to one model; dependent fields retain unknowns.",
+      "sources": [
+        "https://www.jd.com/brand/13185d8963f986b34b67.html?brand=VIQI&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_redissale_desc",
+        "https://mall.jd.com/introduction-12028042.html",
+        "https://wiki.smzdm.com/p/5je9y8d/",
+        "https://www.yoycart.com/Product/734532842858/",
+        "https://www.jd.com/jiage/6728ceee307a7e069d03.html?electedExtAttrSet=7851%2C&extAttrValue=expand_name%2C%40349447%3A%3A7851&sort_type=sort_default"
+      ],
+      "next_trigger": "Retained listing SKU or selected option identifying one current VIQI product.",
+      "proof": "worker current source reads; JD price route exposed no usable retained-product bridge"
+    },
+    {
+      "candidate_id": "huanyu-az-one",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-material"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Related AZone and Qinglong TT listings were found, but their relationship to the retained Qinglong Chizi / AZ ONE build and price remains unproven. No sibling claims transferred.",
+      "sources": [
+        "https://www.jd.com/jiage/1318ef33768c430b38e7.html?catID=13806&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default",
+        "https://item.jd.com/10225706955012.html",
+        "https://item.jd.com/10233570048927.html",
+        "https://www.jd.com/jiage/13183a25800c25ef3df7.html"
+      ],
+      "next_trigger": "Exact retained SKU or manufacturer/dealer build mapping; spelling variation alone is not a decisive distinction.",
+      "proof": "worker current index reads; direct item detail unavailable or timed out; own catalog used only for existing context"
+    },
+    {
+      "candidate_id": "dengfu-gravel",
+      "fields": [
+        "price",
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "outcome": "specifications-unresolved",
+      "finding": "Exact current R20 page and its geometry image do not supply the five scoped fields. The image contains size geometry only; no tire maximum, material, mass, price or stiffness result. Manufacturer-wide carbon wording is not an exact R20 specification.",
+      "sources": [
+        "https://www.dengfubikes.com/Road-Frame/R20.html",
+        "https://www.dengfubikes.com/static/upload/image/20260502/1777696457547181.jpg",
+        "https://www.dengfubikes.com/",
+        "https://www.dengfubike.com/collections/all/road"
+      ],
+      "next_trigger": "Exact R20 specification sheet, public quote or controlled measurement.",
+      "proof": "worker source reads plus parent direct product read and visual inspection of the manufacturer geometry image",
+      "image_evidence": {
+        "sha256": "8504cf52a91b174fc915f968624bbcf835fa41db5eb7d62ce30fb9f2b304ae22",
+        "bytes": 101669,
+        "publication": "Image retained only in temporary local inspection; no third-party image copied into the repository."
+      }
+    }
+  ],
+  "continuation": "All-remaining request remains active; the next bounded batch is planned separately.",
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128,
+    "focused": "Existing MUIDLER/sibling-boundary data test passed after adjusting it to allow qualified references while retaining unknown primary fields."
+  }
+}

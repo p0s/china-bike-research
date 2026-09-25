@@ -20,9 +20,9 @@
     "configuration_notes": {
       "seatpost": "T700 + T800 carbon"
     },
-    "geometry_status": "No attributable numeric exact-model geometry table found after 50 registered source areas; unrelated VSF GX and other GX700-name products were rejected",
+    "geometry_status": "No attributable numeric exact-model geometry table found after 50 registered source areas. The current page lists 700C×450/480/510 mm sizes only; its linked size.avif chart returned 403 on 2026-09-24, so geometry remains unknown. The 1×12 page's 26–36T crank row is a separate build-detail conflict.",
     "claimed_frame_weight_status": "No frame-only mass found after 50 registered source areas; the approximately 10.2 kg figure is for the small complete bike without pedals and small accessories",
-    "bottom_bracket_status": "No exact shell or installed bottom-bracket standard found after 50 registered source areas; not inferred from the FC-RX610 crank"
+    "bottom_bracket_status": "No exact shell or installed bottom-bracket standard found after 50 registered source areas; the exact GX700 page rechecked on 2026-09-24 still omits it. No standard is inferred from the FC-RX610 crank."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -41,7 +41,10 @@
     "camp-gx700-official-2026-08-17",
     "camp-gx700-official-2026-08-28",
     "public-camp-gx700-spec-post-2026-08-28",
-    "camp-gx700-tmall-2026-08-28"
+    "camp-gx700-tmall-2026-08-28",
+    "camp-gx700-cn-official-recheck-2026-09-23",
+    "camp-gx700-geometry-recheck-2026-09-24",
+    "camp-gx700-official-live-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-25"
 }

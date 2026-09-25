@@ -35,8 +35,17 @@
   "status": "found",
   "accepted_source_ids": [
     "sava-gelaro-s8-official-2026-08-08",
-    "sava-gelaro-s8-official-2026-08-28"
+    "sava-gelaro-s8-official-2026-08-28",
+    "sava-gelaro-s8-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Current official evidence confirms about 10.2 kg excluding pedals; size, other accessories and weighing method remain unknown. The public-post lane is blocked for this session."
+  "notes": "Current official evidence confirms about 10.2 kg excluding pedals; size, other accessories and weighing method remain unknown. The public-post lane is blocked for this session.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "sava-gelaro-s8-official-recheck-2026-09-23"
+    ],
+    "note": "The named GRX820 block claims approximately 10.2 kg. A duplicate RX810 block gives the same number excluding pedals; the weight basis for GRX820 remains unclear. Reopen trigger: Reopen when SAVA states exact-build size, pedal/accessory inclusion and weighing method."
+  }
 }

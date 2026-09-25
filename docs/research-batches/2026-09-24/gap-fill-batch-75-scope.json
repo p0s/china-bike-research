@@ -1,0 +1,62 @@
+{
+  "batch": 75,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 365,
+      "conflicted": 34,
+      "found": 45,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The health inventory contains 37 unverified image gaps. This bounded batch selects 10 distinct, higher-priority remote primary-image records, with one published model per image record; the direct health report can either verify current image responses or document that a host blocks verification.",
+    "exact_models": 10,
+    "atomic_gaps": 10,
+    "targets": [
+      { "image_id": "camp-gx600-primary-image", "record_id": "camp-gx600-pes", "record_name": "GX600 PES" },
+      { "image_id": "twitter-cyclone-electronic-official-et-primary-image", "record_id": "twitter-cyclone-electronic", "record_name": "Cyclone 3rd ET electronic" },
+      { "image_id": "twitter-cyclone-gen3-et-primary-image", "record_id": "twitter-cyclone-gen3-et", "record_name": "Cyclone 3rd ET 2026 complete bike" },
+      { "image_id": "camp-gx700-primary-image", "record_id": "camp-gx700-grx820", "record_name": "GX700 GRX 1×12" },
+      { "image_id": "twitter-t3-tt-primary-image", "record_id": "twitter-t3-tt", "record_name": "T3 TT" },
+      { "image_id": "rinasclta-gr025-primary-image", "record_id": "rinasclta-gr025-frameset", "record_name": "GR025 frameset" },
+      { "image_id": "twitter-gravel-v3-2024-listing-primary-image", "record_id": "twitter-v3-2024-rs-sensah-alloy", "record_name": "Gravel V3 2024 RS / Sensah 2×12 alloy" },
+      { "image_id": "carbonda-cfr696-primary-image", "record_id": "carbonda-cfr696-frameset", "record_name": "CFR696 frameset" },
+      { "image_id": "ican-gra04-official-primary-image", "record_id": "ican-gra04-frameset", "record_name": "GRA04 frameset" },
+      { "image_id": "sava-gelaro-s8-primary-image", "record_id": "sava-gelaro-s8", "record_name": "Gelaro S8 GRX820" }
+    ]
+  },
+  "research_route": {
+    "action": "Run the repository's `npm run image:report` once for these 10 exact image IDs with JSON output. Inspect each current remote resource's response status and content type.",
+    "stop_rule": "Do not check unscoped IDs or retry failed/unreachable URLs in this batch. Record current verification limits accurately. Never download or rehost remote third-party images as part of this health check."
+  },
+  "done_criteria": [
+    "For an image whose complete current resource set returns a successful 2xx/3xx image content type, write the dated health_check facts to that existing image record; this can close its image-health-unverified gap.",
+    "For host-blocked or unreachable resources, retain the unverified gap and record the observed status without treating it as proof that the image is broken.",
+    "No image URLs, product photos, hosting modes, or image exactness claims change. Run `npm run check` once if any image health metadata changes; no full gate is needed for a report-only no-change batch.",
+    "Local B75 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

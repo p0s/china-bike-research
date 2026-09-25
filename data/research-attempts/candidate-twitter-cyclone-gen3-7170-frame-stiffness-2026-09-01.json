@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-3rd-r7120-official-2026-08-17"
+    "twitter-cyclone-3rd-r7120-official-2026-08-17",
+    "twitter-cyclone-3rd-r7120-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-gen3-7170-batch-034-50-area-sweep-2026-09-01.json. The exact page claims aerodynamic stability and efficient power delivery for the full-carbon chassis; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-gen3-7170-batch-034-50-area-sweep-2026-09-01.json. The exact page claims aerodynamic stability and efficient power delivery for the full-carbon chassis; qualitative manufacturer evidence only.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-3rd-r7120-official-2026-08-17",
+      "twitter-cyclone-3rd-r7120-official-live-recheck-2026-09-25"
+    ],
+    "note": "The exact R7120 manufacturer page supports qualitative aerodynamic-stability and efficient-power-delivery claims only; no stiffness measurement or protocol is published. Candidate name is R7120 but stored ID suffix 7170 differs, so retain the identity caveat."
+  }
 }

@@ -486,5 +486,11 @@
     "bxt-135-supplier-weight-2026-08-30"
   ],
   "retry_after": "2026-09-10",
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. A verified manufacturer-supplier exact-build listing publishes 7.85 kg as a reference weight; size, paint, and exclusions are unstated. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. A verified manufacturer-supplier exact-build listing publishes 7.85 kg as a reference weight; size, paint, and exclusions are unstated. Earlier bounded attempts from 2026-08-28 are retained verbatim and assigned to their matching registered approach areas.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bxt-135-supplier-weight-2026-08-30"],
+    "note": "The exact BXT-135 GRX 1x11/carbon-wheel listing already supplies the candidate's 7.85 kg reference weight. Size, paint, and weighing exclusions remain unstated, so the value is not generalized."
+  }
 }

@@ -1,16 +1,51 @@
 {
   "id": "candidate-roubaix-sl8-sport-bom-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "specialized-roubaix-sl8-sport-105" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "specialized-roubaix-sl8-sport-105"
+  },
   "field": "bom",
   "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "Roubaix SL8 Sport Shimano 105 Product ID 221827 specifications", "route": "exact manufacturer product page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Exact drivetrain, brakes, wheels, tires, cockpit and bottom bracket are published.", "result_url": "https://www.specialized.com/us/en/roubaix-sl8-sport-shimano-105/p/4221827" }] }
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Roubaix SL8 Sport Shimano 105 Product ID 221827 specifications",
+          "route": "exact manufacturer product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-27",
+          "note": "Exact drivetrain, brakes, wheels, tires, cockpit and bottom bracket are published.",
+          "result_url": "https://www.specialized.com/us/en/roubaix-sl8-sport-shimano-105/p/4221827"
+        }
+      ]
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["specialized-roubaix-sl8-sport-105-official-2026-08-27"],
+  "accepted_source_ids": [
+    "specialized-roubaix-sl8-sport-105-official-2026-08-27",
+    "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-23",
+    "specialized-roubaix-sl8-sport-105-china-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "Global Product ID 221827 BOM is usable for the research-stage profile; local China package mapping remains open."
+  "notes": "Global Product ID 221827 BOM is usable for the research-stage profile; local China package mapping remains open.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-23",
+      "specialized-roubaix-sl8-sport-105-china-recheck-2026-09-23"
+    ],
+    "note": "Current global Product ID 221827 package supports the catalog BOM. The same page narrative says Future Shock 3.0 while technical specs say 3.1; China package match is not exposed. Reopen trigger: Reopen on a readable exact China-market BOM or manufacturer correction of the 3.0/3.1 conflict."
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "id": "candidate-laget-pioneer-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "laget-pioneer"
+  },
+  "field": "mainland-observed-price",
+  "required_channels": [
+    "web"
+  ],
+  "status": "blocked",
+  "searched_at": "2026-09-24",
+  "retry_after": null,
+  "priority": "medium",
+  "accepted_source_ids": [],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The fresh search surfaced the official MSRP page but no current exact seller checkout or availability evidence.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LAGET PIONEER 钛合金 公路车架 车架组 价格 旗舰店",
+          "route": "One fresh public exact-model item search followed by opening the official LAGET PIONEER product page returned by the search; no seller checkout item was identified.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://lagetbike.com/productinfo/2337831.html",
+          "note": "The official LAGET China page identifies the PIONEER model and displays a retail price of CNY 7,900. Search metadata reported that the page was crawled on 2026-09-24, but the page does not show a current purchasable checkout, stock, seller offer, or frameset package contents. This repeats the existing official MSRP evidence and does not qualify as a mainland observed checkout price. PIONEER ONE, PIONEER SLR, a 2026 limited color at CNY 8,900, foreign-market amounts, and assembled-bike prices were excluded."
+        }
+      ]
+    }
+  },
+  "notes": "No accepted current checkout price found. Preserve the existing CNY 7,900 official MSRP separately; candidate observed_price remains null and the mainland price-not-observed gap remains open. This is tracked as mainland-observed-price, separate from the prior found price/MSRP field."
+}

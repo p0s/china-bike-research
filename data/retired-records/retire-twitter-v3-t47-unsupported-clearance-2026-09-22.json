@@ -1,0 +1,17 @@
+{
+  "id": "retire-twitter-v3-t47-unsupported-clearance-2026-09-22",
+  "record_type": "platforms",
+  "record_id": "twitter-gravel-v3",
+  "action": "retire",
+  "reason": "The 45C maximum originated in a storefront now explicitly specifying BB86. The manufacturer T47 table supplies fitted40C only. No revision bridge supports this inherited T47 maximum.",
+  "evidence_source_ids": [
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22",
+    "twitter-v3-original-store-path-recheck-2026-09-22"
+  ],
+  "protected_item": {
+    "kind": "field",
+    "value": "tire_clearance.published_max_mm"
+  },
+  "reviewed_at": "2026-09-22"
+}

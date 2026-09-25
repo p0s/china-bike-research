@@ -5,18 +5,18 @@
   "kind": "complete-bike",
   "market": "mainland-china-marketplace",
   "editorial": {
-    "verdict": "Current exact 2026 A7L R08 build with a mixed SENSAH/Shimano 2x12 hydraulic drivetrain, T800-carbon chassis and two dated mainland price observations; confirm warranty and final checkout before purchase.",
+    "verdict": "Mainland-indexed A7L R7100 build with T800-carbon chassis and two dated mainland price observations; confirm exact components, warranty and final checkout before purchase.",
     "best_for": [
       "road"
     ],
     "strengths": [
-      "Approximately 8.6 kg current manufacturer claim",
       "Exact R08 T800 frame and conservative 25C manufacturer maximum",
       "Two dated mainland-China price observations"
     ],
     "caveats": [
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
       "The mixed SENSAH/Shimano BOM is not a full Shimano 105 groupset",
+      "Complete-bike weight and the current purchase route remain unverified because the live storefront page describes the different R08-R7120-24S build",
       "Confirm exact size, returns, domestic warranty and final checkout total before paying"
     ]
   },
@@ -27,7 +27,11 @@
     "sava-a7l-official-global-2026-08-17",
     "sava-a7l-r08-current-2026-08-30",
     "sava-r08-tire-compatibility-2026-08-30",
-    "sava-a7l-mainland-current-2026-08-30"
+    "sava-a7l-mainland-current-2026-08-30",
+    "sava-a7l-r08-r7120-recheck-2026-09-24",
+    "sava-a7l-r08-current-spec-recheck-2026-09-24",
+    "sava-a7l-r7100-official-recheck-2026-09-24",
+    "sava-a7l-r08-storefront-live-recheck-2026-09-25"
   ],
   "drivetrain": {
     "brand": "SENSAH / Shimano",
@@ -57,8 +61,6 @@
     "integrated": true,
     "dimensions": "400×100 mm"
   },
-  "claimed_complete_weight_g": 8600,
-  "claimed_complete_weight_basis": "Current exact manufacturer approximate complete-bike weight; varies by size, while pedals, accessories and weighing protocol are unpublished",
-  "purchase_route": "Current exact SAVA global-direct storefront lists US$1,699, stock status and add-to-cart for R08-R7120-24S; mainland shipping, tax, warranty and final checkout remain unverified.",
-  "last_reviewed": "2026-09-01"
+  "purchase_route": "Current exact SAVA global-direct storefront lists US$1,699, stock status and add-to-cart for R08-R7120-24S; this is a different hydraulic build from the target R7100 mechanical variant, so its current target-model route, mainland shipping, tax, warranty and final checkout remain unverified.",
+  "last_reviewed": "2026-09-25"
 }

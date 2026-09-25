@@ -1,0 +1,69 @@
+{
+  "id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-t8-closed-wheel"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08",
+    "twitter-t8-closed-wheel-official-2026-08-30",
+    "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25",
+    "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+  ],
+  "retry_after": null,
+  "retry_of": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+          "route": "Opened newly surfaced TWITTER manufacturer catalog once",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The new official catalog lists the two T8 build alternatives but no weights. Existing approximate 9.2 kg WheelTop and 9.3 kg Shimano claims remain unassigned because the retained card does not select a configuration.",
+          "result_url": "https://www.twittercycles.com/products/"
+        }
+      ],
+      "conflict": "The new official catalog lists the two T8 build alternatives but no weights. Existing approximate 9.2 kg WheelTop and 9.3 kg Shimano claims remain unassigned because the retained card does not select a configuration."
+    }
+  },
+  "notes": "The new official catalog lists the two T8 build alternatives but no weights. Existing approximate 9.2 kg WheelTop and 9.3 kg Shimano claims remain unassigned because the retained card does not select a configuration.",
+  "campaign_extension": {
+    "id": "b141-twitter-t8-closed-wheel-complete-weight",
+    "extends_attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "twitter-t8-closed-wheel-official-2026-08-30",
+      "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25",
+      "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+    ],
+    "note": "The 2026-09-25 official catalog confirms two T8 configuration choices but publishes no complete weights. The retained marketplace card does not select a configuration, so the approximate 9.2 kg WheelTop and 9.3 kg Shimano claims remain unassigned. Keep complete weight unresolved until an exact selected-build source appears."
+  }
+}

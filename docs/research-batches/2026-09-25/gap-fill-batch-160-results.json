@@ -1,0 +1,75 @@
+{
+  "batch": 160,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-160-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 74,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "work": {
+    "exact_records": 1,
+    "atomic_fields": 1,
+    "source_reuse_resolution": {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "attempt_id": "candidate-airwolf-yf-r003-price-b148-2026-09-25",
+      "source_ids": [
+        "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+        "ecb-reference-rates-2026-09-23"
+      ],
+      "result": "The exact eBay seller ask of US$1,437.79 and CNY 9,644 ECB reference conversion are already integrated. The mainland price-not-observed catalog gap remains because size/color, mainland availability, delivery and checkout are unverified."
+    },
+    "existing_attempt_resolution_annotations_added": 1,
+    "research_attempt_records_added": 0,
+    "new_searches": 0,
+    "new_sources": 0,
+    "price_records_added": 0,
+    "catalog_value_changes": 0,
+    "images_added": 0,
+    "held_open_fields": {
+      "count": 20,
+      "models": [
+        "huanyu-az-one",
+        "rockbros-pegasus-road",
+        "falco-t91-t912",
+        "gios-aerolite",
+        "leinax-youlong-2",
+        "pardus-spark"
+      ],
+      "reason": "The latest B150/B151 attempts are dated 2026-09-25; no subsequent source lead or product-state change justifies another search."
+    }
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public-post": 15450,
+      "web": 35890
+    },
+    "queue": {
+      "ready": 74,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets; coverage check passed",
+    "full_gate": "passed: privacy and data validation passed; 333/333 tests; 584 pages built; SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed",
+    "image_report": "not run: no image record changed"
+  }
+}

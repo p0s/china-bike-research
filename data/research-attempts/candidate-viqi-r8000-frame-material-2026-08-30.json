@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "viqi-r8000-current-jd-2026-08-30"
+    "viqi-r8000-current-jd-2026-08-30",
+    "viqi-r8000-current-jd-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/viqi-r8000-50-area-sweep-2026-08-30.json. Current exact-family indexing calls the R8000 gravel-road bike carbon fiber; grade, lay-up and fork construction remain unpublished."
+  "notes": "Historical 50-area sweep recorded in data/research-campaigns/viqi-r8000-50-area-sweep-2026-08-30.json. B122 reassessment found that the accepted JD listing title describes a carbon-fiber gravel bike but does not identify the frame material; the current JD index also does not. One bounded official-source search found no exact manufacturer product page. The previous frame-specific interpretation was overbroad; keep frame material, fork construction, grade and lay-up unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "viqi-r8000-current-jd-2026-08-30",
+      "viqi-r8000-current-jd-recheck-2026-09-24"
+    ],
+    "note": "Leave frame material open. The JD listing title describes a carbon-fiber gravel-road bike but does not identify frame material; the 2026-09-24 index recheck likewise provides no frame-specific material, and no exact manufacturer product page was found."
+  }
 }

@@ -1,0 +1,71 @@
+{
+  "batch": 87,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "research_queue_baseline": {
+    "command": "npm run --silent research:queue",
+    "ready": 0,
+    "evidence-found": 223,
+    "deferred": 43,
+    "blocked": 551,
+    "conflicted": 61
+  },
+  "selection": {
+    "basis": "The next ten evidence-found ledger-only fields in the fresh queue, excluding the Specialized Roubaix price already reviewed and left unresolved in B85. Each selected attempt currently has accepted source IDs and no source-reuse resolution. This batch audits only those existing local sources and exact recorded claims.",
+    "exact_models": 6,
+    "atomic_gaps": 10,
+    "targets": [
+      {"record_type":"candidate","record_id":"quick-pro-ur-one-frameset","model":"Quick Pro UR:ONE frameset","field":"frame-stiffness","attempt_id":"candidate-quick-pro-ur-one-frameset-frame-stiffness-2026-09-01"},
+      {"record_type":"candidate","record_id":"quick-pro-ur-one-frameset","model":"Quick Pro UR:ONE frameset","field":"frame-weight","attempt_id":"candidate-quick-pro-ur-one-frameset-frame-weight-2026-09-01"},
+      {"record_type":"candidate","record_id":"quick-pro-xr-one-frameset-aelous-gravel","model":"Quick Pro XR:ONE frameset with Aelous Gravel cockpit","field":"frame-weight","attempt_id":"candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-weight-2026-09-01"},
+      {"record_type":"platform","record_id":"rinasclta-gr025","model":"Rinasclta GR025","field":"frame-material","attempt_id":"platform-rinasclta-gr025-frame-material-2026-09-01"},
+      {"record_type":"platform","record_id":"rinasclta-gr025","model":"Rinasclta GR025","field":"frame-stiffness","attempt_id":"platform-rinasclta-gr025-frame-stiffness-2026-09-01"},
+      {"record_type":"variant","record_id":"rinasclta-gr025-frameset","model":"Rinasclta GR025 frameset","field":"price","attempt_id":"variant-rinasclta-gr025-frameset-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"rinasclta-q-aero-gr","model":"Rinasclta Q-AERO GR","field":"price","attempt_id":"candidate-rinasclta-q-aero-gr-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"rockbros-pegasus-road","model":"ROCKBROS Pegasus / 飞马 series","field":"frame-material","attempt_id":"candidate-rockbros-pegasus-road-frame-material-2026-08-30"},
+      {"record_type":"candidate","record_id":"rockbros-pegasus-road","model":"ROCKBROS Pegasus / 飞马 series","field":"identity-source","attempt_id":"candidate-rockbros-pegasus-road-identity-source-2026-08-30"},
+      {"record_type":"candidate","record_id":"rolling-stone-comp","model":"ROLLING STONE COMPASS","field":"frame-material","attempt_id":"candidate-rolling-stone-comp-frame-material-2026-08-30"}
+    ]
+  },
+  "research_route": {
+    "action": "One read-only Luna Max audit, sequentially checking each exact catalog record, named research attempt, and accepted source record. No browsing, writes, new source records, or new research attempts.",
+    "acceptance_rule": "Add resolution.kind=source-reuse only when an accepted source directly supports the exact claim already recorded for the exact model. Preserve date, market, size, component/build, material scope, and measurement caveats; do not let reference or foreign-market prices become mainland prices, and do not upgrade qualitative stiffness wording to measured performance.",
+    "stop_rule": "Audit only these ten frozen fields across six models. Leave ambiguity, source-to-model mismatch, or unsupported claims unresolved with a concise reason. Do not substitute a sibling model, infer missing values, change catalog facts, or add sources."
+  },
+  "done_criteria": [
+    "Return field-by-field source/fact matches and caveats for the ten frozen targets.",
+    "Integrate only justified source-reuse resolutions and record unresolved fields; do not change catalog facts or source records.",
+    "Run npm run validate, npm run research:check, and coverage:check; run coverage:accept only if required. Do not rerun npm run check for metadata-only changes.",
+    "Local B87 only; no push, pull request, merge, publication, or production action."
+  ]
+}

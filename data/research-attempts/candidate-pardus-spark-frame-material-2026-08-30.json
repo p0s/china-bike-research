@@ -488,8 +488,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pardus-spark-sport-105-current-2026-08-30"
+    "pardus-spark-sport-105-current-2026-08-30",
+    "pardus-spark-sport-105-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/pardus-spark-50-area-sweep-2026-08-30.json. The exact current prior-platform Spark Sport page resolves the qualified branch-specific frame and fork construction."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/pardus-spark-50-area-sweep-2026-08-30.json. The exact current prior-platform Spark Sport page resolves the qualified branch-specific frame and fork construction.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-spark-sport-105-current-recheck-2026-09-23"
+    ],
+    "note": "carbon-construction-supported-for-spark-sport-105-branch: Current Spark Sport—105 page states an HS-EPS+ carbon frame and HS-HPT carbon fork. This is branch-specific; carbon grade is not given. Reopen trigger: Reopen for a different Spark generation or trim’s own specification."
+  }
 }

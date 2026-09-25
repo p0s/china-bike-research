@@ -1,0 +1,40 @@
+{
+  "id": "candidate-lightcarbon-lcg074-d-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcg074-d"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-lightcarbon-lcg074-d-price-recheck-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcg074-d-price-recheck-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact manufacturer route remains inquiry-only and provides no public numeric CNY price.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCG074-D 集成把立砾石车架组 中国大陆 价格 CNY 2026",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The exact official product page is already recorded and was rechecked 2026-09-24; it specifies a frameset package but directs buyers to contact the manufacturer without a numeric price. A surfaced official catalog PDF snippet showed specifications rather than price and was not opened. No current numeric CNY offer was found."
+        }
+      ]
+    }
+  },
+  "notes": "The exact official product page is already recorded and was rechecked 2026-09-24; it specifies a frameset package but directs buyers to contact the manufacturer without a numeric price. A surfaced official catalog PDF snippet showed specifications rather than price and was not opened. No current numeric CNY offer was found."
+}

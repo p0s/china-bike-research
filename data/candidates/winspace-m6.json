@@ -22,7 +22,13 @@
     "winspace-m6-105-di2-2026-08-30",
     "winspace-m6-ultegra-di2-2026-08-30",
     "winspace-m6-mainland-options-2026-08-30",
-    "winspace-m6-regional-spec-2026-08-30"
+    "winspace-m6-regional-spec-2026-08-30",
+    "winspace-m6-cyclingnews-review-2026-09-22",
+    "winspace-m6-cyclistshub-review-2026-09-22",
+    "winspace-m6-105-di2-current-recheck-2026-09-25",
+    "winspace-m6-105-mechanical-current-recheck-2026-09-25",
+    "winspace-m6-regional-spec-current-recheck-2026-09-25",
+    "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
   ],
   "observed_at": "2026-08-08",
   "observed_price": {
@@ -33,15 +39,16 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6864.png#R2",
-  "last_reviewed": "2026-09-02",
+  "last_reviewed": "2026-09-25",
   "facts": {
     "listing_identity": "WINSPACE / 银贝斯 M6 complete-bike family; retained CNY 13,599.20 coupon card",
     "complete_weight_references": "Approximately 8.6 kg 105 mechanical, 8.1 kg 105 Di2 and 7.8 kg Ultegra Di2; each size M without pedals; retained trim unresolved",
     "drivetrain_options": "Shimano 105 R7120 mechanical 2x12, Shimano 105 R7170 Di2 2x12 or Shimano Ultegra R8170 Di2 2x12; all hydraulic disc; retained trim unresolved",
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Manufacturer regional maximum: 700x32C",
-    "frame_material": "T700+T800+M40+M60 carbon-fiber frame with full-carbon fork; exact proportions, ply schedule and molding process are unpublished"
+    "frame_material": "T700+T800+M40+M60 carbon-fiber frame with full-carbon fork; exact proportions, ply schedule and molding process are unpublished",
+    "stiffness_evidence": "Exact M6 ride reviews describe effective power transfer; the 105 Di2 Cyclingnews tester wanted a more direct response during hard out-of-saddle climbs, while the Ultegra Di2 CyclistsHub tester found more vibration fatigue than on the T1600. These are mixed, build-specific qualitative comparisons, not controlled frame-only measurements."
   },
   "source_url": "https://www.winspace.cc/products/m6-105-mechanic",
-  "source_note": "Current manufacturer build pages define the shared M6 carbon construction and option-specific weights and drivetrains; none selects the retained mainland coupon card. The 32C value remains a manufacturer regional maximum, not an inference from fitted 28C tires. No controlled exact M6 frame-stiffness result was established."
+  "source_note": "Current manufacturer build pages define the shared M6 carbon construction and option-specific weights and drivetrains; none selects the retained mainland coupon card. The 32C value remains a manufacturer regional maximum, not an inference from fitted 28C tires. No controlled exact M6 frame-stiffness result was established. September 22 independent reviews add meaningful qualitative stiffness comparisons for documented M6 builds; they do not resolve the retained coupon trim or establish a numeric ranking."
 }

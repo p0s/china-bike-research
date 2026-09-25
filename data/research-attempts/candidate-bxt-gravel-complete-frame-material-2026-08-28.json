@@ -489,5 +489,13 @@
     "bxt-135-official-build-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. The 2 original applications are retained verbatim and assigned to matching registered areas. The now-confirmed exact BXT-135 complete-bike page resolves frame and fork material."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/bxt-gravel-complete-50-area-sweep-2026-08-30.json. The 2 original applications are retained verbatim and assigned to matching registered areas. The now-confirmed exact BXT-135 complete-bike page resolves frame and fork material.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "bxt-135-official-build-2026-08-30"
+    ],
+    "note": "The exact BXT-135 GRX 1×11 complete-build page supports the recorded T700+T800 carbon frame and T700 fork. Keep this tied to that exact carbon-wheel build; fiber proportions, lay-up and molding process are unpublished."
+  }
 }

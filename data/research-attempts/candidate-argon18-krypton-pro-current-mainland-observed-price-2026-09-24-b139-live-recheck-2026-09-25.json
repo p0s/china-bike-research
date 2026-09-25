@@ -1,0 +1,35 @@
+{
+  "id": "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "argon18-krypton-pro"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official catalog has international build information but no mainland CNY checkout price. A foreign sold-out frameset listing was not opened. Reviewed both scoped predecessor attempts (51 unique queries/routes total); official product/frameset and launch routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Argon 18 Krypton Pro\" 碳架 重量 中国大陆 授权经销商 人民币 售价",
+          "route": "Opened official Argon 18 Product Catalogue 2025 PDF: https://storage.googleapis.com/argon18craft/files/Tech-Cards/2025/A18-MY2025-Product-Catalogue-EN-1.pdf, Krypton Pro pages 14–15. It has international build/geometry info, no mainland price or frame mass.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Official catalog has international build information but no mainland CNY checkout price. A foreign sold-out frameset listing was not opened. Reviewed both scoped predecessor attempts (51 unique queries/routes total); official product/frameset and launch routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official catalog has international build information but no mainland CNY checkout price. A foreign sold-out frameset listing was not opened. Reviewed both scoped predecessor attempts (51 unique queries/routes total); official product/frameset and launch routes were not reopened. New query checked against predecessor queries."
+}

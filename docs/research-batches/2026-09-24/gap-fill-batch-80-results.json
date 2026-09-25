@@ -1,0 +1,52 @@
+{
+  "batch": 80,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-80-scope.json"
+  ],
+  "result": {
+    "exact_models_checked": 4,
+    "atomic_gaps_closed": 0,
+    "attempts_added": 4,
+    "research_records_added": 0,
+    "source_records_added": 0,
+    "variant_changes": 0,
+    "image_changes": 0,
+    "dispositions": [
+      {
+        "variant_id": "camp-gx600-pes",
+        "status": "no-result",
+        "query": "CAMP GX600 PES 五通 BB 标准 尺寸 技术手册 说明书",
+        "reason": "No exact-model technical or assembly source surfaced with a bottom-bracket standard or shell dimensions."
+      },
+      {
+        "variant_id": "camp-gx700-grx820",
+        "status": "no-result",
+        "query": "CAMP GX700 GRX820 1x12 五通 BB 标准 尺寸 技术手册 装配",
+        "reason": "The search surfaced the already-checked exact CAMP GX700 page but no new technical documentation; the page was not reopened. Shimano crank references do not establish the frame shell."
+      },
+      {
+        "variant_id": "sava-gelaro-s8",
+        "status": "rejected",
+        "query": "SAVA Gelaro S8 GRX820 bottom bracket 五通 标准 尺寸 车架装配 技术资料",
+        "reason": "No exact S8 technical source surfaced. A third-party manual result identified S6/S4 rather than this build, so it is not admissible."
+      },
+      {
+        "variant_id": "sava-gelaro-sf6-cues",
+        "status": "no-result",
+        "query": "SAVA Gelaro SF6 CUES U6000 1x11 五通 BB 标准 技术资料 装配手册",
+        "reason": "No exact SF6 technical source stated the frame bottom-bracket standard or shell dimensions. Shimano CUES crank documentation addresses component compatibility only."
+      }
+    ],
+    "data_outcome": "All four exact-variant bottom-bracket fields remain unknown. No source, platform, variant, image, or product-value data changed; each existing research record gained one bounded third web attempt. The fresh post-batch inventory remains at 707 atomic gaps."
+  },
+  "validation": {
+    "scope_json": "pass: jq empty",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1541 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35607 web attempts",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates",
+    "image_report": "not run because image records did not change",
+    "full_gate": "pass: npm run check; privacy scan passed; 324/324 tests; 584 pages built; SEO audit passed with 458 indexable and 126 noindex"
+  }
+}

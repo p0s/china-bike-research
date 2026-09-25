@@ -479,8 +479,19 @@
   "status": "found",
   "accepted_source_ids": [
     "winspace-g3-pro-di2-official-2026-08-17",
-    "ecb-reference-rates-2026-08-31"
+    "ecb-reference-rates-2026-08-31",
+    "winspace-g3-pro-di2-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-winspace-g3-batch-044-50-area-sweep-2026-09-01.json. Current exact direct page lists US$4,099; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-winspace-g3-batch-044-50-area-sweep-2026-09-01.json. Current exact direct page lists US$4,099; the CNY figure is a dated official-rate reference conversion. Focused exact-model review on 2026-09-23: Exact G3 Pro Di2 global complete-bike listing shows US$4,099; shipping/taxes are at checkout. The page mentions China warehouses but no mainland CNY amount.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "winspace-g3-pro-di2-official-2026-08-17",
+      "ecb-reference-rates-2026-08-31",
+      "winspace-g3-pro-di2-current-recheck-2026-09-23"
+    ],
+    "note": "Exact G3 Pro Di2 global complete-bike listing shows US$4,099; shipping/taxes are at checkout. The page mentions China warehouses but no mainland CNY amount."
+  }
 }

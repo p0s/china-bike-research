@@ -19,5 +19,17 @@
   },
   "credit": "Product image © Twitter Bikes",
   "alt": "Black and red Twitter T3 TT bike with WheelTop EVO electronic shifting",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "twitter-t3-tt-primary-image",
+        "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E7%BA%A2_1767937369.webp",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/webp"
+      }
+    ]
+  }
 }

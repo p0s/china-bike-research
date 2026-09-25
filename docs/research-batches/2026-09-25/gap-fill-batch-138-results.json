@@ -1,0 +1,113 @@
+{
+  "batch": 138,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "atomic_fields_reviewed": 17,
+    "disposition": "No new source qualified to fill the selected candidate fields. Searches produced no exact model page, mismatched trims, previously recorded routes, or complete-bike values that could not be tied to the retained price card. All 17 attempts now carry a dated, field-specific unresolved reason.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_added": 17,
+    "research_attempts_after": 1575,
+    "new_sources_added": 0,
+    "catalog_records_updated": 0,
+    "specification_values_changed": 0,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "website_image_records": 212,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "record_id": "muidler-ashius-s7",
+      "fields": ["complete-weight", "drivetrain"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "The single exact-model search returned unrelated vehicle S7 pages; no MUIDLER bicycle product page was found or opened. Neither field has qualifying evidence."
+    },
+    {
+      "record_id": "dengfu-gravel",
+      "fields": ["frame-weight", "tire-clearance"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "The exact R20 manufacturer URL resurfaced but was already in the prior history and was not reopened. Search snippets gave neither a frame-only weight nor maximum clearance."
+    },
+    {
+      "record_id": "irefox-by446",
+      "fields": ["complete-weight", "drivetrain"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "The newly surfaced manufacturer catalog named other models and did not include BY446; no facts transfer to this target."
+    },
+    {
+      "record_id": "twitter-r10-pro-gen3",
+      "fields": ["complete-weight", "tire-clearance"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "Official R10 Disc and R10 ET results were different builds from the R10 Pro Gen 3 closed-wheel target; neither page was opened or used."
+    },
+    {
+      "record_id": "twitter-x7",
+      "fields": ["tire-clearance"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "Search returned automotive X7 results and no exact TWITTER bicycle page; no maximum tire clearance qualifies."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "fields": ["complete-weight", "tire-clearance"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "Results included unrelated SL1 bikes and generic West Biking listings, but no new exact SL-ONE official or authorized-retailer page."
+    },
+    {
+      "record_id": "gito-carbon-aero-entry",
+      "fields": ["complete-weight", "drivetrain"],
+      "disposition": "blocked",
+      "source_ids": ["gito-g325-888bike-current-2026-09-23"],
+      "caveat": "The surfaced 888Bike page was already recorded. It lists LTWOO R9 2×11 and Shimano 105 R7120 2×12 options with approximate 8.95 kg / 8.88 kg weights, but omits weighing basis and does not map either build to the retained CNY 2,999 entry card. No fresh source or value was added."
+    },
+    {
+      "record_id": "de-rosa-idol",
+      "fields": ["complete-weight", "drivetrain"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "The official 2026 GIRO page is a localized route of a previously tried product page. Its 870 g figure is frame-only and its Ultegra Di2 build is not mapped to the retained candidate price card."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "fields": ["complete-weight"],
+      "disposition": "blocked",
+      "source_ids": [],
+      "caveat": "The official Japan 105 Di2 page lists sizes 46–56 and ¥495,000, says the sale was limited with no further production, and gives no complete-bike weight. Its generation/build match to the retained candidate remains uncertain."
+    },
+    {
+      "record_id": "basso-venta-disc",
+      "fields": ["complete-weight"],
+      "disposition": "blocked",
+      "source_ids": ["basso-venta-disc-retailer-2026-08-29"],
+      "caveat": "The search snippet for already-recorded EXIsport item 105555 says 9.05 kg for size M without pedals, but the page was not opened, authorization and match to the retained CNY 6,888 build are unverified, and the candidate already retains this only as an unselected 8.5–9.05 kg reference range."
+    }
+  ],
+  "validation": {
+    "focused_test": "passed: node --test tests/data.test.mjs (73/73)",
+    "full_gate": "passed via codex-pnpm-check check: privacy, validation (1575 research records), research ledger (1503 fields, 15450 public-post / 35642 web attempts), monotonic coverage, 328/328 tests, 584-page build, SEO 458 indexable / 126 noindex",
+    "coverage_acceptance": "passed: monotonic baseline accepted 17 new research-attempt records; 212 images and 277 catalog targets retained",
+    "test_adjustment": "The 50-area campaign assertion now selects the original minimum_distinct_approaches=50 record when a later one-attempt extension exists.",
+    "image_report": "not run: no image record changed",
+    "git_diff_check": "passed after final result and checkpoint review; all 20 B138/checkpoint files parsed and whitespace-checked"
+  },
+  "external_delivery": "none"
+}

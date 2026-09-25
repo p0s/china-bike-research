@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-arow-polestar-panda-podium-2026-09-01"
+    "tavelo-arow-polestar-panda-podium-2026-09-01",
+    "tavelo-arow-race-polestar-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-tavelo-arow-batch-037-50-area-sweep-2026-09-01.json. The exact Polestar option table publishes 950 ±40 g for a painted size-XS frame including accessories, with size-specific increases."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-tavelo-arow-batch-037-50-area-sweep-2026-09-01.json. The exact Polestar option table publishes 950 ±40 g for a painted size-XS frame including accessories, with size-specific increases. Current focused recheck 2026-09-23: The exact Race Polestar page lists 820 g for raw-finish size XS (420), excluding paint. Existing 950 g size-XS painted frame including accessories is a distinct basis and is retained separately.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "tavelo-arow-polestar-panda-podium-2026-09-01",
+      "tavelo-arow-race-polestar-recheck-2026-09-23"
+    ],
+    "note": "The exact Race Polestar page lists 820 g for raw-finish size XS (420), excluding paint. Existing 950 g size-XS painted frame including accessories is a distinct basis and is retained separately."
+  }
 }

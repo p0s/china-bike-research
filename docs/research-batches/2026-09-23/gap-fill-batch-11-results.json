@@ -1,0 +1,217 @@
+{
+  "batch_id": "gap-fill-batch-11-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-11-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 17
+  },
+  "completed_at": "2026-09-23",
+  "results": [
+    {
+      "record_id": "twitter-x7",
+      "field": "complete-weight",
+      "status": "unresolved-incomplete-basis",
+      "note": "The manufacturer source says approximately 7.6 kg from the X7 family but gives no size, selected configuration, or weighing basis. The candidate retains the claim as text; converting it to a numeric complete-bike weight would overstate the evidence.",
+      "attempt_record_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "reopen_when": "An attributable exact-build weight supplies a size, selected equipment, and weighing basis."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "drivetrain",
+      "status": "unresolved-build-selection",
+      "note": "The exact model is sold with 105 R7120 mechanical and 105 R7170 Di2 options. The retained record does not identify which SKU/build was observed, so neither option can be selected as its drivetrain.",
+      "attempt_record_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "reopen_when": "The retained listing or an attributable exact-build record identifies its selected SL-ONE drivetrain."
+    },
+    {
+      "record_id": "west-biking-team-road",
+      "field": "drivetrain",
+      "status": "unresolved-build-selection",
+      "note": "The Team edition family has 105 R7120 mechanical and Ultegra R8170 Di2 options. No source maps the retained record to one of those builds.",
+      "attempt_record_id": "candidate-west-biking-team-road-drivetrain-2026-08-30",
+      "reopen_when": "The retained listing or an attributable exact-build record identifies its selected Team edition drivetrain."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "complete-weight",
+      "status": "unresolved-trim-selection",
+      "note": "Current size-M manufacturer values exist for FRD, PRO, EXPERT, and RACE trims, but the retained IA 2.0 record does not select a trim. None of the four weights is assigned to it.",
+      "attempt_record_id": "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "reopen_when": "The retained record identifies one exact IA 2.0 trim and size."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "drivetrain",
+      "status": "unresolved-trim-selection",
+      "note": "The current FRD, PRO, EXPERT, and RACE builds use different drivetrain groups. The retained card has no trim/SKU identifier, so its drivetrain remains unset.",
+      "attempt_record_id": "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "reopen_when": "The retained record identifies one exact IA 2.0 trim/SKU."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "complete-weight",
+      "status": "unresolved-incomplete-basis",
+      "note": "The manufacturer claim is approximately 8.3 kg bare without pedals or computer mount, but it is not a precise numeric value or a complete-bike configuration weight. The existing candidate preserves the claim as text.",
+      "attempt_record_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "reopen_when": "An attributable exact-build measurement states its size, installed equipment, and weighing basis."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "field": "drivetrain",
+      "status": "unresolved-build-selection",
+      "note": "Exact-family evidence lists 105 Di2, Campagnolo Chorus, and a configuration-hidden mainland 105 HDB option. No source identifies the drivetrain on the retained build.",
+      "attempt_record_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "reopen_when": "An attributable listing or build record identifies the retained New 838 drivetrain."
+    },
+    {
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "field": "price-not-observed",
+      "status": "unresolved-checkout-price",
+      "note": "The current mainland manufacturer page publishes a CNY 6,998 suggested retail price, which is already retained. It does not establish an observed checkout or delivered price for a selected seller/offer.",
+      "attempt_record_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "reopen_when": "A current exact mainland offer exposes the selected SKU, checkout price, and delivery/discount basis."
+    },
+    {
+      "record_id": "af01",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "note": "The AF01 platform already records the official finished size-M frame at 1,200 g ±50 g and preserves the raw 980 g ±50 g figure and its different basis. The attempt now links that integrated fact explicitly.",
+      "attempt_record_id": "platform-af01-frame-weight-2026-08-27",
+      "source_ids": ["af01-official"]
+    },
+    {
+      "record_id": "af01",
+      "field": "geometry",
+      "status": "integrated-source-reuse",
+      "note": "The AF01 platform already contains the six-size manufacturer geometry table linked to the manual. Units and any absent geometry remain as originally documented.",
+      "attempt_record_id": "platform-af01-geometry-2026-08-27",
+      "source_ids": ["af01-manual-2026-08-27"]
+    },
+    {
+      "record_id": "af01",
+      "field": "price",
+      "status": "integrated-source-reuse",
+      "note": "The frameset variant already links a global US$1,099 offer and ECB-derived CNY reference. This is not a mainland checkout/delivery quote; that geographic limitation remains explicit.",
+      "attempt_record_id": "variant-af01-frameset-price-2026-09-01",
+      "source_ids": ["af01-official", "ecb-reference-rates-2026-08-31"]
+    },
+    {
+      "record_id": "af01",
+      "field": "purchase-route",
+      "status": "integrated-source-reuse",
+      "note": "The exact manufacturer frameset page already records the Add to cart route. Selected options, mainland delivery, tax, and final checkout remain unknown.",
+      "attempt_record_id": "variant-af01-frameset-purchase-route-2026-09-01",
+      "source_ids": ["af01-official"]
+    },
+    {
+      "record_id": "airwolf-yfr068",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "note": "The candidate already stores the exact-owner qualitative comparison with Giant TCX and the supplied-stem torsional-flex confounder. It is not a measured frame-stiffness result.",
+      "attempt_record_id": "candidate-airwolf-yfr068-frame-stiffness-2026-08-27",
+      "source_ids": ["airwolf-yfr068-chinertown-2026-08-27"]
+    },
+    {
+      "record_id": "airwolf-yfr068",
+      "field": "price",
+      "status": "integrated-source-reuse",
+      "note": "The candidate already records the exact global US$599 listing and ECB-derived CNY reference. Current mainland price, stock, and checkout route remain unverified.",
+      "attempt_record_id": "candidate-airwolf-yfr068-price-2026-09-01",
+      "source_ids": ["airwolf-yfr068-official-store-2026-08-27", "ecb-reference-rates-2026-08-31"]
+    },
+    {
+      "record_id": "alums-da54",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "note": "The candidate already records the manufacturer’s ALVAS X1 high-modulus carbon claim and preserves the unpublished fiber supplier, grade, and lay-up.",
+      "attempt_record_id": "candidate-alums-da54-frame-material-2026-08-29",
+      "source_ids": ["alvas-da54-official-2026-08-29", "alvas-da54-australia-2026-08-29"]
+    },
+    {
+      "record_id": "alums-da54",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "note": "The exact manufacturer DA54 page already supports ALVAS/DA54 identity; the separate ALUMS transcription correction remains documented in the candidate notes.",
+      "attempt_record_id": "candidate-alums-da54-identity-source-2026-08-29",
+      "source_ids": ["alvas-da54-official-2026-08-29"]
+    },
+    {
+      "record_id": "alums-da54",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse-with-caveat",
+      "note": "The candidate already records Bike Insights’ secondary 32 mm value, attributes it to alvas.bike, and states that the live manufacturer text gives fitted 28C tires but no maximum. Primary maximum-clearance confirmation remains a separate blocker.",
+      "attempt_record_id": "candidate-alums-da54-tire-clearance-2026-08-29",
+      "source_ids": ["alvas-da54-bikeinsights-2026-08-29"]
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "platform_variant_price_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "platform-af01-frame-weight-2026-08-27",
+      "platform-af01-geometry-2026-08-27",
+      "variant-af01-frameset-price-2026-09-01",
+      "variant-af01-frameset-purchase-route-2026-09-01",
+      "candidate-airwolf-yfr068-frame-stiffness-2026-08-27",
+      "candidate-airwolf-yfr068-price-2026-09-01",
+      "candidate-alums-da54-frame-material-2026-08-29",
+      "candidate-alums-da54-identity-source-2026-08-29",
+      "candidate-alums-da54-tire-clearance-2026-08-29"
+    ],
+    "tooling_files_changed": [
+      "scripts/research-queue.mjs",
+      "tests/research-queue.test.mjs"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidate_records": 236,
+      "gap_report_records": 263
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 814,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "images": 212,
+    "catalog_targets": 277,
+    "note": "The coarse data gap counts are unchanged. Queue evidence-found fell from 860 to 814 after the queue stopped repeating 46 latest attempts with explicit source-reuse resolutions."
+  },
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via developer-storage-cache and codex-pnpm-check; privacy, data validation (236 candidates), research ledger (1461 atomic fields; 15448 public-post and 35469 web attempts), coverage, 307 tests, 584-page build, and SEO audit passed (456 indexable / 128 noindex)",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed before the full gate; rerun after final batch-record edits"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

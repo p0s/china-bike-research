@@ -16,18 +16,20 @@
   "research_priority": "high",
   "price_status": "official mainland suggested retail; stock and checkout unverified",
   "required_before_dashboard": "Complete-bike/frame weight; Exact wheel/tire build; Bottom-bracket standard; Numerical geometry and sizes; Current stock/checkout and warranty policy",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
     "giant-china-revolt-advanced-2-official-2026-08-17",
-    "giant-revolt-advanced-2-global-clearance-2026-08-30"
+    "giant-revolt-advanced-2-global-clearance-2026-08-30",
+    "giant-revolt-advanced-2-uk-recheck-2026-09-23",
+    "giant-revolt-advanced-2-mainland-price-route-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 15800,
     "currency": "CNY",
     "price_type": "official-mainland-list",
-    "observed_at": "2026-09-01"
+    "observed_at": "2026-09-24"
   },
-  "source_note": "Current exact mainland and global manufacturer pages establish the trim, CNY 15,800 list price and qualified 45 mm 2x maximum. Giant publishes no controlled exact-frame stiffness result or standard complete-bike weight.",
+  "source_note": "Current exact mainland and global manufacturer pages establish the trim, CNY 15,800 list price and qualified 45 mm 2x maximum. Giant publishes no controlled exact-frame stiffness result or standard complete-bike weight.\n\nBatch 25 rechecked the current 2026 Giant UK 2× page: maximum 45 mm applies in the long flip-chip position; 53 mm is only for 1×. Treat this as UK specification evidence pending a mainland-trim match.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852",
   "facts": {
     "drivetrain": "Shimano GRX RX-820 2×12 with FSA Omega 48/32 crank",

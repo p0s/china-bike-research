@@ -1,0 +1,51 @@
+{
+  "id": "platform-lightcarbon-speedz-tire-clearance-official-search-2026-09-24",
+  "target": {
+    "record_type": "platform",
+    "record_id": "lightcarbon-speedz"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "platform-lightcarbon-speedz-tire-clearance-2026-08-29",
+  "retry_reason": "The official catalog fetch timed out; one distinct current exact-name manufacturer-domain search tests an alternate official specification route.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-67-speedz-tire-clearance",
+    "extends_attempt_id": "platform-lightcarbon-speedz-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-67-scope.json",
+    "reason": "One exact-name manufacturer-domain lookup tests for a current SPEEDZ specification route outside the prior 50-area sweep and timed-out V2 catalog fetch.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-lightcarbon-speedz-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The bounded official-domain exact-name search found no matching SPEEDZ specification page.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon SPEEDZ frame carbon weight tire clearance geometry bottom bracket frameset",
+          "route": "One current LightCarbon manufacturer-domain exact-name web search, excluding the timed-out V2 PDF",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact SPEEDZ product or catalog page surfaced. Other LightCarbon model results were excluded, so no maximum tire-clearance value is supported."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Maximum tire clearance remains unknown; no value from another LightCarbon model was transferred."
+}

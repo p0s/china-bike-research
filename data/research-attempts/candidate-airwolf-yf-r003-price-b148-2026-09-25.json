@@ -1,0 +1,47 @@
+{
+  "id": "candidate-airwolf-yf-r003-price-b148-2026-09-25",
+  "target": {"record_type": "candidate", "record_id": "airwolf-yf-r003"},
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-airwolf-yf-r003-price-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Airwolf YF-R003 current 2026 mainland China public price CNY frame set",
+          "route": "Distinct current exact-model seller-listing query",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.ebay.com/itm/800534168051",
+          "note": "Opened the item-specific YFR003 Carbon Gravel Frame listing after confirming its exact URL was absent from repository data and docs. It displays US$1,437.79 for a listed frame package; size/color and delivery total are unselected. Record only a foreign seller FX reference; this is not a mainland CNY offer or confirmed revision."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+    "ecb-reference-rates-2026-09-23"
+  ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "airwolf-yf-r003-ebay-seller-listing-price-2026-09-25",
+      "ecb-reference-rates-2026-09-23"
+    ],
+    "note": "The exact YFR003 eBay listing's US$1,437.79 ask and CNY 9,644 ECB reference conversion are already integrated in the candidate record. This foreign seller reference does not establish a mainland CNY offer; size/color, delivery eligibility, taxes and final checkout remain unknown."
+  },
+  "retry_after": null,
+  "notes": "A dated exact-model foreign seller asking price is now recorded as an FX reference; mainland CNY availability and observed price remain unknown.",
+  "retry_of": "candidate-airwolf-yf-r003-price-2026-09-24",
+  "retry_reason": "A fresh 2026-09-25 query found a previously unrecorded exact-model public seller listing, adding dated foreign-price evidence while leaving mainland availability unverified."
+}

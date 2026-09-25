@@ -1,20 +1,44 @@
 {
   "id": "platform-spcycle-g028-frame-material-2026-08-28",
-  "target": { "record_type": "platform", "record_id": "spcycle-g028" },
+  "target": {
+    "record_type": "platform",
+    "record_id": "spcycle-g028"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "SPcycle G028 T1000 T1100 carbon construction", "route": "manufacturer exact-model product page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html", "note": "Exact page identifies T1000 plus T1100 carbon and full internal routing; it does not publish the lay-up schedule or molding process." }
+        {
+          "attempt": 1,
+          "query": "SPcycle G028 T1000 T1100 carbon construction",
+          "route": "manufacturer exact-model product page",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.sp-cycle.com/Spcycle-G028-Carbon-Gravel-Bike-Frame-700x57C-UDH-Hanger-Full-Internal-Cable-Gravel-Bicycle-Carbon-Frameset-p6993835.html",
+          "note": "Exact page identifies T1000 plus T1100 carbon and full internal routing; it does not publish the lay-up schedule or molding process."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["spcycle-g028-official-2026-08-25"],
+  "accepted_source_ids": [
+    "spcycle-g028-official-2026-08-25",
+    "spcycle-g028-official-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "The exact published fiber grades are recorded without inferring stiffness, lay-up quality or manufacturing execution."
+  "notes": "Disposition: supported. Exact SP-G028 page claims T1000 and T1100 fiber but does not state proportions, layup, or separate frame/fork grades. Reopen trigger: Reopen if the manufacturer publishes a revised exact G028 material specification.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "spcycle-g028-official-recheck-2026-09-24"
+    ],
+    "note": "Disposition: supported. Exact SP-G028 page claims T1000 and T1100 fiber but does not state proportions, layup, or separate frame/fork grades. Reopen trigger: Reopen if the manufacturer publishes a revised exact G028 material specification."
+  }
 }

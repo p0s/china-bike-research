@@ -492,5 +492,14 @@
     "upland-r80-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/upland-r80-50-area-sweep-2026-08-30.json. The exact current public video index bridges the retained CNY 8,999 card to the R80 Magene PES 24-speed option; the manufacturer page defines the exact R80 frame family."
+  "notes": "B122 reused the public-video listing to bridge the retained CNY 8,999 Magene build and the manufacturer page to establish the exact R80 family; neither establishes current marketplace checkout, seller authority or warranty.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "upland-r80-douyin-2026-08-30",
+      "upland-r80-official-2026-08-30"
+    ],
+    "note": "B122 reused the public-video listing to bridge the retained CNY 8,999 Magene build and the manufacturer page to establish the exact R80 family; neither establishes current marketplace checkout, seller authority or warranty."
+  }
 }

@@ -487,8 +487,17 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "pardus-super-sport-original-official-2026-08-30",
-    "pardus-super-sport-fluorescent-index-2026-08-30"
+    "pardus-super-sport-fluorescent-index-2026-08-30",
+    "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-super-sport-50-area-sweep-2026-08-30.json. The current exact title identifies 22-speed Shimano 105 and the manufacturer page specifies the original R7000 2×11/R7020 HDB build."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-super-sport-50-area-sweep-2026-08-30.json. The current exact title identifies 22-speed Shimano 105 and the manufacturer page specifies the original R7000 2×11/R7020 HDB build.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+    ],
+    "note": "official-super-sport-105-hdb-build-11-speed-supported: Current SUPER SPORT—105 HDB page lists Shimano 105 R7000 2×11 with 50/34T and 11–28T gearing, and R7020 hydraulic controls/brakes. Keep it distinct from newer generations and other trims. Reopen trigger: Reopen if PARDUS changes or separates this exact 11-speed build."
+  }
 }

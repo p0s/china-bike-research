@@ -1,0 +1,51 @@
+{
+  "id": "candidate-giant-propel-gen4-community-lead-bom-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead"
+  },
+  "field": "bom",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-giant-propel-gen4-community-lead-bom-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-giant-propel-gen4-community-lead-bom-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Propel Advanced Gen 4 exact retained build bill of materials bottom bracket official 2026",
+          "route": "One frozen B157 exact-model web query; see result URL and field-specific evidence disposition.",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "Reuse the recorded exact mainland Advanced SL 1 page. It lists Ultegra Di2 2×12, an 11–34 cassette, 52/36 Power Pro crank, SLR 0 50 wheels, and CADEX Aero 700×28 tires. The URL was not reopened during B157.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+  ],
+  "retry_after": null,
+  "notes": "Reuse the recorded exact mainland Advanced SL 1 page. It lists Ultegra Di2 2×12, an 11–34 cassette, 52/36 Power Pro crank, SLR 0 50 wheels, and CADEX Aero 700×28 tires. The URL was not reopened during B157.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+    ],
+    "note": "The exact mainland Advanced SL 1 BOM is integrated in the candidate facts and the source note; this ledger-only field is closed by reusing that source."
+  }
+}

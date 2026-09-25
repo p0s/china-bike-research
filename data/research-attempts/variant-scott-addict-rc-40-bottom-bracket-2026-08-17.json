@@ -28,8 +28,24 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "scott-addict-rc-40-poland-2026-08-17"
+    "scott-addict-2026-manual-recheck-2026-09-24",
+    "scott-addict-rc-40-poland-2026-08-17",
+    "scott-addict-rc-40-poland-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Disposition: qualified. 2026 model 290362 lists Shimano BB-RS500-PB; the manual specifies a 41×86.5 mm BB shell. Poland-market specification; mainland BOM equivalence is unconfirmed. Reopen trigger: Reopen if the exact mainland SKU lists a different BB.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-2026-manual-recheck-2026-09-24",
+      "scott-addict-rc-40-poland-recheck-2026-09-24"
+    ],
+    "note": "Disposition: qualified. 2026 model 290362 lists Shimano BB-RS500-PB; the manual specifies a 41×86.5 mm BB shell. Poland-market specification; mainland BOM equivalence is unconfirmed. Reopen trigger: Reopen if the exact mainland SKU lists a different BB."
+  },
+  "closeout_correction": {
+    "reviewed_at": "2026-09-25",
+    "source_id": "scott-addict-rc-40-identity-review-2026-09-25",
+    "note": "Closeout correction 2026-09-25: exact regional page supports Shimano BB-RS500-PB only. Remove housing dimensions borrowed from the 2026 Addict manual. The preserved resolution above is historical and superseded by this correction."
+  }
 }

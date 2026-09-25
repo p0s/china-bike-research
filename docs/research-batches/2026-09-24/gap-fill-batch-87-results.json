@@ -1,0 +1,39 @@
+{
+  "batch": 87,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-87-scope.json"
+  ],
+  "result": {
+    "exact_models_checked": 6,
+    "atomic_gaps_checked": 10,
+    "research_ledger_fields_resolved": 10,
+    "source_reuse_resolutions_added": 10,
+    "unresolved_fields": 0,
+    "catalog_fact_changes": 0,
+    "source_records_added": 0,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-quick-pro-ur-one-frameset-frame-stiffness-2026-09-01","disposition":"Reused subjective exact-model whole-bike ride-review evidence for high BB stiffness and sharp response; not frame-isolated or instrumented."},
+      {"attempt_id":"candidate-quick-pro-ur-one-frameset-frame-weight-2026-09-01","disposition":"Reused manufacturer claim of 629 g for a size-M frame, repeated by review; not an independent painted-frame weighing."},
+      {"attempt_id":"candidate-quick-pro-xr-one-frameset-aelous-gravel-frame-weight-2026-09-01","disposition":"Reused 839 g size-M manufacturer claim repeated by selected mainland listing; not independently weighed and accepted sources do not establish ±5% tolerance."},
+      {"attempt_id":"platform-rinasclta-gr025-frame-material-2026-09-01","disposition":"Reused exact official GR025 full Torayca T800/T1000 carbon and UD finish claim."},
+      {"attempt_id":"platform-rinasclta-gr025-frame-stiffness-2026-09-01","disposition":"Reused qualitative official high stiffness-to-weight claim; no numeric result or public protocol."},
+      {"attempt_id":"variant-rinasclta-gr025-frameset-price-2026-09-01","disposition":"Reused direct-store €561 offer and dated CNY reference conversion; checkout, delivery, tax, stock, and returns remain unverified; not a mainland price."},
+      {"attempt_id":"candidate-rinasclta-q-aero-gr-price-2026-09-01","disposition":"Reused global US$639 offer and dated CNY 4,294 reference conversion; selected-option total and mainland checkout remain unverified."},
+      {"attempt_id":"candidate-rockbros-pegasus-road-frame-material-2026-08-30","disposition":"Reused generic carbon-frame description only; did not transfer a named PGZ trim's Toray grade to the unresolved seller option."},
+      {"attempt_id":"candidate-rockbros-pegasus-road-identity-source-2026-08-30","disposition":"Reused ROCKBROS / 洛克兄弟 Pegasus / 飞马 PGZ-series identity only; preserved trim and corporate-entity distinctions."},
+      {"attempt_id":"candidate-rolling-stone-comp-frame-material-2026-08-30","disposition":"Reused full-carbon COMPASS frame and independent-review Toray UD statement; exact fiber grade and current seller package remain unresolved."}
+    ],
+    "data_outcome": "All ten existing source-backed evidence entries now have explicit source-to-claim resolutions. The corresponding catalog facts were already present, or market/source limits prevented a safe mainland price observation; no buyer-facing gap closed. Inventory remains 707 atomic gaps."
+  },
+  "validation": {
+    "read_only_audit": "pass: one Luna Max local audit, no browsing or edits",
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1304 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "research_queue": "evidence-found decreased from 223 to 213; catalog inventory remains 707",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets after coverage:check reported new protected resolution metadata",
+    "coverage_check": "pass: 212 images, 73 price observations, 1304 sources, and 236 candidates",
+    "git_diff_check": "pass",
+    "full_gate": "not rerun: B87 changed only research-resolution metadata"
+  }
+}

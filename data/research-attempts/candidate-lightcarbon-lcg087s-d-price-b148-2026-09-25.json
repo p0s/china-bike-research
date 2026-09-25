@@ -1,0 +1,54 @@
+{
+  "id": "candidate-lightcarbon-lcg087s-d-price-b148-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcg087s-d"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcg087s-d-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCG087S-D gravel frameset with stem price CNY 2026 China",
+          "route": "Fresh exact-model public-price query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No public amount surfaced. The exact official stem-version page is already recorded and had no public price; it was not reopened. Search results supplied no attributable amount."
+        }
+      ],
+      "blocker": "No dated public price for the exact LCG087S-D package was found; no price was transferred from the LCG087-D sibling configuration."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "lightcarbon-lcg087s-d-official-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "No qualifying dated exact-model seller or manufacturer amount found; the mainland price remains unknown.\nB169 same-day supplemental query: LightCarbon LCG087S-D 车架组 含独立把立 公开价格 2026. The exact model surfaced but no public amount did. The recorded exact official source is quote-only and was not reopened.",
+  "retry_of": "candidate-lightcarbon-lcg087s-d-price-2026-09-01",
+  "retry_reason": "A current exact-model public-price query on 2026-09-25 is a bounded follow-up to the 2026-09-01 extended campaign and checks for a new dated amount.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-148-lightcarbon-lcg087s-d-price",
+    "extends_attempt_id": "candidate-lightcarbon-lcg087s-d-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-148-scope.json",
+    "reason": "A new dated public price query checks whether the current listing state changed after the 2026-09-01 campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

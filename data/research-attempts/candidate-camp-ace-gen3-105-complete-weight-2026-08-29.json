@@ -483,5 +483,11 @@
     "camp-ace-gen3-105-official-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/camp-ace-gen3-105-50-area-sweep-2026-08-29.json. The manufacturer publishes approximately 7.1 kg for a small bike excluding pedals and small accessories."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/camp-ace-gen3-105-50-area-sweep-2026-08-29.json. The manufacturer publishes approximately 7.1 kg for a small bike excluding pedals and small accessories.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["camp-ace-gen3-105-official-2026-08-29"],
+    "note": "The candidate already records the manufacturer's approximately 7.1 kg small-bike claim excluding pedals and small accessories; it is not a precise all-sizes complete-bike weight."
+  }
 }

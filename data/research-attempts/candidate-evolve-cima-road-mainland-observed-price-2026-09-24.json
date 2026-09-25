@@ -1,0 +1,43 @@
+{
+  "id": "candidate-evolve-cima-road-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "evolve-cima-road"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "极也 Evolve CIMA road exact mainland frameset listed price",
+          "route": "Official Chinese-language manufacturer product page",
+          "outcome": "found",
+          "accessed_at": "2026-09-24",
+          "note": "CIMA Artist – Wilderness is listed at CNY 14,800 with selectable sizes and add-to-cart. The listed package includes frame, fork, seatpost and essential parts; optional Kreuza bar is extra. Core CIMA road specifications match this candidate, but delivered checkout, shipping and selected-size stock remain unverified.",
+          "result_url": "https://www.evolvebicycles.cn/product/cima-artist-wilderness/"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "evolve-cima-artist-wilderness-mainland-price-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Record CNY 14,800 as the exact official mainland listed price for the named CIMA Artist – Wilderness frameset package; preserve the global CIMA Speed Navy White price as a separate foreign reference.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "evolve-cima-artist-wilderness-mainland-price-2026-09-24"
+    ],
+    "note": "The official Evolve China product page lists the CIMA Artist – Wilderness frameset at CNY 14,800 and exposes size selection/add-to-cart. The optional cockpit is separate; shipping, checkout total and selected-size stock remain unverified."
+  }
+}

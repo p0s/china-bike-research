@@ -484,8 +484,18 @@
   "accepted_source_ids": [
     "gito-g320-retailer-2026-08-29",
     "gito-g320-regional-options-2026-08-29",
-    "gito-chinese-retail-2026-08-29"
+    "gito-chinese-retail-2026-08-29",
+    "gito-g320-888bike-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-plus-50-area-sweep-2026-08-29.json. Retained pixels and current exact-model evidence establish G320 and GITO / 捷拓 while preserving trim ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-plus-50-area-sweep-2026-08-29.json. Retained pixels and current exact-model evidence establish G320 and GITO / 捷拓 while preserving trim ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g320-888bike-current-2026-09-23",
+      "gito-chinese-retail-2026-08-29"
+    ],
+    "note": "Current title/SKU identify GITO G320, but the exact retained seller card option is unresolved."
+  }
 }

@@ -483,5 +483,14 @@
     "titanium-laget-pioneer-one-official"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. The current TSB page identifies Ti 3Al-2.5V and 3D printing; the exact LAGET page identifies the carbon fork."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. TSB identifies PIONEER ONE under its LAGET bike section with Ti 3Al-2.5V and 3D-printed construction; LAGET's exact page identifies a carbon fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "titanium-tsb-titan-super-bond-pioneer-one-official",
+      "titanium-laget-pioneer-one-official"
+    ],
+    "note": "Keep the exact model crosswalk explicit: the TSB source identifies PIONEER ONE in the LAGET bike section and supports Ti 3Al-2.5V / 3D-printed construction; LAGET's exact page supports the carbon fork. No further material detail is inferred."
+  }
 }

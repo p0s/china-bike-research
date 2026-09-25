@@ -19,12 +19,14 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6879.png#R2",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
     "sava-gelaro-s4-official-image-2026-08-17",
     "sava-gelaro-s4-official-2026-08-28",
     "sava-gelaro-s4-independent-review-2026-08-28",
-    "sava-gelaro-s4-mainland-current-2026-08-30"
+    "sava-gelaro-s4-mainland-current-2026-08-30",
+    "sava-gelaro-s4-official-recheck-2026-09-24",
+    "sava-gelaro-s4-current-spec-recheck-2026-09-24"
   ],
   "source_url": "https://savadeck-bike.com/products/sava-gelaro-s4-grx400-carbon-gravel-bike",
   "facts": {
@@ -33,8 +35,12 @@
     "drivetrain": "Shimano GRX400 mechanical 2x10 hydraulic disc",
     "tire_clearance": "700x40C fitted; 45C manufacturer maximum",
     "frame_material": "R21 T800 carbon frame and fork",
-    "frame_stiffness": "Manufacturer qualitative lateral-stiffness claim plus independent no-noticeable-BB-flex report; no measured stiffness magnitude"
+    "frame_stiffness": "Manufacturer qualitative lateral-stiffness claim plus independent no-noticeable-BB-flex report; no measured stiffness magnitude",
+    "complete_weight_g": 10200,
+    "complete_weight_basis": "Manufacturer approximate complete-bike claim for exact R21-GRX400-20S; weight varies by frame size and the page does not specify size, wheel selection, pedals/accessories, or weighing method.",
+    "tire_clearance_mm": 45,
+    "stiffness_evidence": "Manufacturer publishes a qualitative lateral-stiffness claim. A separate PMKD long-term R21 S4/S6 review reports no noticeable bottom-bracket-area flex while climbing and useful stay compliance; these are qualitative ride observations, not measured stiffness. The review’s T700/press-fit description conflicts with the current S4 manufacturer T800/BBT47 specification and is not used to revise material or bottom-bracket facts."
   },
   "existing_record_id": "sava-gelaro-s4-grx400",
-  "source_note": "Merged into the canonical Gelaro S4 GRX400 record. The retained CNY 7,999 official-store observation is stored separately; current exact evidence resolves the R21 T800 build, GRX400 2x10, 10.2 kg reference and 45C maximum."
+  "source_note": "The 2026-09-24 official-page recheck confirms exact R21-GRX400-20S, approximately 10.2 kg varying by size, T800 frame/fork, GRX400 2x10 hydraulic build, and 700x40C fitted/45C maximum. Weight remains an approximate manufacturer claim with unspecified weighing basis. Qualitative stiffness evidence is attributed to the earlier manufacturer claim and separate long-term review, not presented as an instrumented measurement; conflicting review material/BB descriptions are excluded."
 }

@@ -485,5 +485,11 @@
     "sava-aurora-r8-r8170-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact manufacturer claim is approximately 8.8 kg, varying by size."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Current exact manufacturer claim is approximately 8.8 kg, varying by size.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-aurora-r8-r8170-current-2026-08-30"],
+    "note": "The exact R08-R8170-24S manufacturer page supports approximately 8.8 kg, matching the 8,800 g candidate value. Weight varies by size; reference size, pedals, accessories, and weighing method are unspecified."
+  }
 }

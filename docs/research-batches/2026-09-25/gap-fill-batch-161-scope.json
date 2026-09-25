@@ -1,0 +1,93 @@
+{
+  "batch": 161,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 74,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "scope": {
+    "exact_record_count": 5,
+    "atomic_gap_entries": 5,
+    "query_targets": [],
+    "source_reuse_targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-g0",
+        "name": "Hi-Light G0",
+        "field": "price",
+        "catalog_gap_code": "price-not-observed",
+        "attempt_id": "candidate-hi-light-g0-price-b148-2026-09-25",
+        "accepted_source_ids": ["titanium-hi-light-g0-official"],
+        "integrated_fact": "The official manufacturer page supports CNY 15,900 as dated official retail evidence (accessed 2026-09-01). The exact mainland seller-price query on 2026-09-25 returned no current listing; the manufacturer route later returned 403. Current seller stock and checkout remain unverified, so price-not-observed stays open."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-scultura",
+        "name": "Merida SCULTURA 6000 25",
+        "field": "price",
+        "catalog_gap_code": "price-not-observed",
+        "attempt_id": "candidate-missing-china-price-merida-scultura-price-b148-2026-09-25",
+        "accepted_source_ids": ["merida-china-scultura-6000-25-official-2026-08-17"],
+        "integrated_fact": "The exact China model page supports CNY 16,800 as suggested retail. The 2026-09-25 search found no current exact mainland seller listing; the later official-mall route contains placeholders. Dealer stock and checkout remain unverified; preserve the source and candidate observation dates separately and keep price-not-observed open."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-silex",
+        "name": "Merida SILEX 7000 25",
+        "field": "price",
+        "catalog_gap_code": "price-not-observed",
+        "attempt_id": "candidate-missing-china-price-merida-silex-price-b148-2026-09-25",
+        "accepted_source_ids": ["merida-silex-7000-25-official-cny-reference-2026-08-17"],
+        "integrated_fact": "The exact model-year-2025 manufacturer page supports CNY 20,800 as suggested retail. The 2026-09-25 search found no current exact mainland seller listing; the later official-mall route contains placeholders. Dealer stock, checkout total and fulfillment remain unverified, so price-not-observed stays open."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-specialized-tarmac-sl8",
+        "name": "Specialized Tarmac SL8 Comp 105 Di2",
+        "field": "price",
+        "catalog_gap_code": "price-not-observed",
+        "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-price-b148-2026-09-25",
+        "accepted_source_ids": ["specialized-china-tarmac-sl8-comp-price-2026-08-17"],
+        "integrated_fact": "The exact China product page supports CNY 30,990 as an official list-price reference. The 2026-09-25 search found no current exact mainland seller listing, and the 2026-09-24 page recheck exposed no live price or stock. Current checkout remains unverified, so price-not-observed stays open."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "twitter-cyclone-electronic",
+        "name": "TWITTER Cyclone 3rd ET",
+        "field": "purchase-route",
+        "catalog_gap_code": "purchase-route",
+        "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-b145-live-recheck-2026-09-25",
+        "accepted_source_ids": [
+          "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+          "twitter-cyclone-et-jd-flagship-recheck-2026-09-24",
+          "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+          "twitter-cyclone-et-usa-store-current-2026-09-24"
+        ],
+        "integrated_fact": "The current U.S. store supports an exact WheelTop EDS TX international made-to-order route at US$1,489; it does not establish mainland fulfillment. Current mainland Tmall and JD evidence does not expose the selected SKU, verified inventory or final checkout. Keep the conditional mainland promotion and purchase-route gap distinct."
+      }
+    ],
+    "held_open_without_new_search": {
+      "count": 69,
+      "reason": "The remaining ready rows have current extended-campaign histories and latest inconclusive attempts dated 2026-09-25. The local source audit found no later relevant lead or product-state change; do not repeat queries or reopen recorded URLs until one appears."
+    },
+    "research_boundary": "Add source-reuse resolutions to the five latest listed attempts after confirming the supported fact and each source ID are already integrated in the exact candidate or variant. Do not create duplicate attempts or change catalog values. No new web or public-post search, page open, price record, source record, image, or unrelated catalog change is authorized by this frozen scope.",
+    "excluded": [
+      "The Specialized Crux price field remains open: its latest warranty-versus-terms evidence is not price evidence and no supported official price is integrated.",
+      "No agent edits; root is the sole writer.",
+      "No seller outreach, external messages, quote submission, cart, checkout or purchase.",
+      "No images, price records, new sources, unrelated specifications or candidate facts.",
+      "No GitHub mutation, commit, push, PR, merge, publish or production write."
+    ]
+  }
+}

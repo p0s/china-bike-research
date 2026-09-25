@@ -1,0 +1,80 @@
+{
+  "batch": 64,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-64-scope.json",
+  "target": {
+    "record_type": "candidate",
+    "id": "mondince-fm316",
+    "model": "Mondince FM316 gravel frameset",
+    "research_field": "availability"
+  },
+  "research": {
+    "worker": "one Luna Max evidence-only follow-up agent; no repository writes",
+    "query": "\"Mondince FM316\" frameset \"one\" order ship owner",
+    "platform": "public Reddit, r/ChineseCarbon",
+    "accessed_at": "2026-09-24",
+    "opened_items": 1,
+    "url": "https://www.reddit.com/r/ChineseCarbon/comments/1vjqmct/mondince_fm316/",
+    "finding": "The exact post says the author received a size-M FM316 frame the previous week and completed a build; the package reportedly included a headset, storage-compartment bag and plugs/grommets. The live page displayed '4d ago' on 2026-09-24, while the search index showed a conflicting 2026-08-09 date. The post gives no seller, order date, market, explicit quantity or current option to place a new order.",
+    "source_class": "community report",
+    "availability_admissible": false,
+    "disposition": "Accepted only as recent exact-model delivery evidence. Current single-unit orderability and mainland stock remain unknown; the official single-order/MOQ-30 wording conflict is unresolved."
+  },
+  "changed_files": [
+    "data/sources/mondince-fm316-recent-delivery-community-report-2026-09-24.json",
+    "data/candidates/mondince-fm316.json",
+    "data/research-attempts/candidate-mondince-fm316-availability-2026-09-22.json"
+  ],
+  "candidate_effect": {
+    "facts.availability_evidence": "Updated with the recent community-report summary and its timing/orderability caveats.",
+    "availability_gap_resolved": false,
+    "candidate_status": "unpublished"
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "post_batch_research_queue": {
+    "command": "npm run --silent research:queue",
+    "ready": 0,
+    "evidence_found": 254,
+    "deferred": 43,
+    "blocked": 538,
+    "conflicted": 61
+  },
+  "validation": {
+    "status": "passed",
+    "focused_research_check": "npm run --silent research:check passed: 1500 atomic research fields, 15450 public-post attempts and 35569 web attempts.",
+    "coverage_accept": "Accepted monotonic coverage protection for 212 images and 277 catalog targets after adding one source, one candidate-source relationship and one evidence attempt.",
+    "full_check": "codex-pnpm-check check passed: privacy; 41 brands, 38 platforms, 41 variants, 73 prices, 1302 sources, 212 images, 16 videos, 11 groupsets, 10 build parts, 236 candidates and 1518 research records; research and coverage checks; 323/323 tests; 584-page build for 41 products; SEO 458 indexable and 126 noindex.",
+    "image_report": "not run; no image records changed"
+  },
+  "delivery": "Local B64 batch only; no push, pull request, merge, publication or production action."
+}

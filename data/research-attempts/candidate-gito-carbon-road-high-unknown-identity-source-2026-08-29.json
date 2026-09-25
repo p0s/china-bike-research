@@ -485,8 +485,18 @@
   "accepted_source_ids": [
     "gito-g530-retailer-2026-08-29",
     "gito-g530-taobao-index-2026-08-29",
-    "gito-chinese-retail-2026-08-29"
+    "gito-chinese-retail-2026-08-29",
+    "gito-g530-888bike-index-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-high-unknown-50-area-sweep-2026-08-29.json. Retained pixels and current exact-model/mainland indexes establish G530 and GITO / 捷拓; exact SKU remains unresolved."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-road-high-unknown-50-area-sweep-2026-08-29.json. Retained pixels and current exact-model/mainland indexes establish G530 and GITO / 捷拓; exact SKU remains unresolved.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g530-888bike-index-current-2026-09-23",
+      "gito-chinese-retail-2026-08-29"
+    ],
+    "note": "Retailer index identifies GITO 530 and retained frame marking is G530; direct page access timed out and trim/year remain unresolved."
+  }
 }

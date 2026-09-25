@@ -33,8 +33,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pardus-spark-rs-official-2026-08-17"
+    "pardus-spark-rs-official-2026-08-17",
+    "pardus-spark-rs-rival-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-spark-rs-rival-current-recheck-2026-09-23"
+    ],
+    "note": "standard-rival-route-not-custom-build: The standard Spark RS Rival eTap AXS page has buy/store-search links. It does not establish a route, stock or checkout for the separately retained custom build. Reopen trigger: Reopen when a current seller/order page matches the custom build."
+  }
 }

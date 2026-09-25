@@ -1,0 +1,85 @@
+{
+  "batch": 61,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 360,
+      "conflicted": 34,
+      "found": 51,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "Choose one exact, unpriced candidate whose last price evidence sweep was 2026-09-01. The 50-area sweep found no attributable price; one fresh public exact-model search can test whether a current model-specific offer has appeared since that observation.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one existing Luna Max agent; read-only source research, no repository writes",
+    "root_writer": "integrate only admissible exact evidence, record one campaign extension and dated result, and validate the local batch"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "lightcarbon-lcg074-d",
+      "model": "LightCarbon LCG074-D integrated-cockpit micro-suspension gravel frameset",
+      "gap_code": "price-missing",
+      "research_field": "price",
+      "priority_score": 46,
+      "attempt_id": "candidate-lightcarbon-lcg074-d-price-2026-09-01",
+      "campaign_id": "candidate-lightcarbon-lcg074-d-batch-039-50-area-sweep-2026-09-01",
+      "current_state": "candidate price, official_price and observed_price are null. The exact manufacturer product page lists specifications but no public price. The 2026-09-01 exact-model 50-area sweep found no attributable current exact-frame price or mainland checkout; anecdotal wheel/paint/parts/DDP package prices and an unscoped European recollection were excluded.",
+      "new_route_scope": "One fresh public web search for a currently available, exact LCG074-D frameset offer on a named manufacturer, authorized-dealer or marketplace listing. Open at most one exact product item reached by that query. Stop at decisive evidence. If the new route shows no exact product and current numeric price, record the bounded no-result; do not restart the 50-area sweep.",
+      "acceptance_requirements": [
+        "The listing must identify LCG074-D, not another LCG074 family frame or a visually similar LightCarbon model.",
+        "The offer must be for the frameset itself, with any included cockpit or bundle components stated; do not assign a full-build or accessory-bundle amount to the frame.",
+        "Record seller and market, currency and amount, public listing/availability context, URL, and actual access date.",
+        "A current exact official or attributable seller price may be recorded in its original currency and market; do not create a CNY conversion without a dated exchange-rate observation.",
+        "Search snippets, stale indexes, private-message or quote-only amounts, owner recollections, non-identical models, and unsupported package assumptions do not qualify."
+      ],
+      "already_checked_sources": [
+        "lightcarbon-lcg074-d-official-2026-08-29",
+        "lightcarbon-road-frames-category-2026-08-29",
+        "lightcarbon-about-official-2026-08-29"
+      ],
+      "excluded_routes": [
+        "repeating the prior 50-area campaign",
+        "unattributed owner bundles or recollections",
+        "other LCG074 variants or adjacent LightCarbon models",
+        "private messages, quote-only checkout, or login-gated offers",
+        "foreign currency converted without a separate dated reference-rate source"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use the single frozen public web route and stop after its exact item is accepted or rejected.",
+    "If accepted, add a dated source and matching price observation in the original currency/market; update the candidate price state only when the schema and exact frame package are satisfied.",
+    "If no accepted current exact price is found, add one concise retry attempt with a formal one-route campaign_extension pointing to this scope; preserve the existing 50-area record and all earlier attempts.",
+    "Keep the record unpublished unless all separate publication criteria are independently met.",
+    "Run focused validation and the full repository gate once for any data/evidence batch that changes catalog or research-attempt records. No image records are in scope.",
+    "Local B61 batch only; no push, pull request, merge, publication, or production action."
+  ],
+  "delivery": "Local B61 batch only; no push, pull request, merge, publication, or production action."
+}

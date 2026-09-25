@@ -1,0 +1,37 @@
+{
+  "batch": 68,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-68-scope.json",
+  "outcome": "Closed the Giant Propel Advanced SL 1 structured complete-weight gap with a qualified Japan-market size-S reference.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "source_id": "giant-propel-sl1-japan-weight-recheck-2026-09-24",
+    "title": "Propel Advanced SL 1 | Aero Road Bike, プロペル アドバンスド SL 1, エアロロードバイク | Giant Bicycles Japan 日本",
+    "publisher": "Giant Japan",
+    "url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027",
+    "accessed_at": "2026-09-24",
+    "claim": "The exact 2027 fourth-generation Propel Advanced SL 1 page lists 6.8 kg for size S.",
+    "limitations": "Japan-market reference, not a verified mainland stock build. Listed accessories may or may not be included in the weight. Giant notes individual-weight variation and possible specification changes."
+  },
+  "integration": {
+    "record": "data/candidates/giant-propel-gen4-community-lead.json",
+    "field": "facts.complete_weight_g",
+    "value": 6800,
+    "basis": "Structured with the exact Japan-market, size-S, listed-build and individual-variation caveats; mainland stock-build weight remains unknown.",
+    "research_attempt": "data/research-attempts/candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17.json",
+    "ledger_resolution": "source-reuse; accepted the current exact-model source without creating a duplicate search record",
+    "test_update": "tests/data.test.mjs now expects the supported Giant reference while retaining unknown weight for three other candidates."
+  },
+  "inventory_delta": {
+    "atomic_gaps": "708 -> 707",
+    "complete_weight_missing": "82 -> 81",
+    "research_found": "50 -> 49",
+    "evidence_found_queue": "254 -> 253"
+  },
+  "validation": {
+    "focused": "research:check and validate passed after integration.",
+    "full_gate": "npm run check passed: privacy, validation, research, coverage, 323/323 tests, 584-page build and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not run; no image records changed."
+  },
+  "delivery": "Local B68 batch only; no push, pull request, merge, publication or production action."
+}

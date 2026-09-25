@@ -1,0 +1,132 @@
+{
+  "batch": 44,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    }
+  },
+  "selection": {
+    "basis": "Select the highest-ranked non-ledger evidence-found gaps for exact complete-bike weight and purchase-route status, excluding the four price targets completed in Batch 43. Existing findings are leads for a fresh field-specific mapping check; they do not authorize transferring reference-build values to a configuration-ambiguous retained record.",
+    "selected_atomic_fields": 5,
+    "selected_exact_targets": 5,
+    "queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 42,
+      "blocked": 505,
+      "conflicted": 61
+    }
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-cyclone-sport",
+      "exact_identity": "TWITTER Cyclone third-generation Sport Edition / 龙卷风三代运动版 RS-24S",
+      "owner": "root-writer",
+      "field": "complete-weight-retained-build",
+      "existing_attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "twitter-cyclone-sport-official-2026-08-30",
+        "twitter-cyclone-sport-mainland-2026-08-30"
+      ],
+      "queue_score": 89,
+      "known_boundary": "Retained evidence gives 9.1 kg with 38 mm alloy rims or 8.9 kg with 50 mm carbon rims; the retained card wheel option is unresolved."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-gen4-community-lead",
+      "exact_identity": "Giant Propel Advanced SL 1 fourth-generation 2027 complete-bike lead",
+      "owner": "root-writer",
+      "field": "complete-weight-retained-build",
+      "existing_attempt_id": "candidate-giant-propel-gen4-community-lead-complete-weight-2026-08-17",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24",
+        "giant-propel-advanced-sl1-japan-2026-08-30"
+      ],
+      "queue_score": 86,
+      "known_boundary": "Official Japan reference states 6.8 kg in size S; mainland complete-bike weight and cross-market build equivalence are not established."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "pinarello-f5",
+      "exact_identity": "PINARELLO F5 complete-bike candidate, retained card model year and selected wheel option unresolved",
+      "owner": "root-writer",
+      "field": "complete-weight-retained-build",
+      "existing_attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "pinarello-f5-my26-current-recheck-2026-09-23",
+        "pinarello-f5-my26-reference-weight-2026-08-30"
+      ],
+      "queue_score": 67,
+      "known_boundary": "An exact MY26 105 Di2/MOST Ultrafast 45 reference build is claimed at 8.25 kg by a retailer; it is not yet mapped to the retained card."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "look-765-electronic",
+      "exact_identity": "LOOK 765 Optimum electronic-shifting complete-bike candidate with wheel option unresolved",
+      "owner": "root-writer",
+      "field": "complete-weight-retained-build",
+      "existing_attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "look-765-optimum-current-recheck-2026-09-23",
+        "look-765-optimum-r50d-current-2026-08-30"
+      ],
+      "queue_score": 61,
+      "known_boundary": "Current 105 Di2/R50D reference is 7.9 kg in size M; an earlier R38D build is 8.8 kg. The retained card's wheel build is unresolved."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "elves-falath-r7170",
+      "exact_identity": "ELVES Falath Pro Disc Shimano 105 R7170 complete-bike published variant",
+      "owner": "root-writer",
+      "field": "purchase-route-current-selected-build",
+      "existing_attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "elves-falath-pro-official-current-2026-09-23",
+        "elves-falath-pro-disc-product-current-2026-09-23"
+      ],
+      "queue_score": 68,
+      "known_boundary": "Current route was marked promotion-conditional; recheck exact selected build, route status, and any visible availability without inferring checkout or stock."
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "Check the current exact-model manufacturer page first, then an attributable authorized seller if the manufacturer page lacks the selected-build field.",
+    "weight_acceptance": "Only record a complete-bike value when exact year/trim/build, size, and weighing basis are attributable. Keep manufacturer or retailer reference builds separate from an unidentified retained option; do not average, choose, or transfer between wheel builds.",
+    "purchase_route_acceptance": "Record only the exact mainland route and directly visible status. Do not infer selected SKU, stock, checkout, delivery, or payment from a generic product link.",
+    "recording": "If a current exact-source check resolves the retained field, add dated provenance and the supported fact. If not, keep the value unknown and record the concrete identity, option, or access blocker on the new field-specific attempt.",
+    "stop_criteria": "Process five targets sequentially. Stop each target at decisive exact evidence or one concrete access/identity/option limitation; do not repeat the earlier found attempt as a retry."
+  }
+}

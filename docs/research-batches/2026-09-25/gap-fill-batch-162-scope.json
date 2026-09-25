@@ -1,0 +1,65 @@
+{
+  "batch": 162,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gap_counts": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    }
+  },
+  "scope": {
+    "exact_record_count": 2,
+    "atomic_gap_entries": 2,
+    "image_health_targets": [
+      {
+        "record_type": "published-variant",
+        "record_id": "evolve-cima-gr-frameset",
+        "field": "image-health-unverified",
+        "image_id": "evolve-cima-gr-primary-image",
+        "image_file": "data/images/evolve-cima-gr.json",
+        "source_id": "evolve-cima-gr-official-2026-08-17",
+        "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+        "prior_check": {
+          "checked_at": "2026-09-25",
+          "classification": "wrong-content-type",
+          "status": 202,
+          "content_type": "text/html"
+        }
+      },
+      {
+        "record_type": "published-variant",
+        "record_id": "tfsa-jh37-frameset",
+        "field": "image-health-unverified",
+        "image_id": "tfsa-jh37-primary-image",
+        "image_file": "data/images/tfsa-jh37.json",
+        "source_id": "tfsa-jh37-official",
+        "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+        "prior_check": {
+          "checked_at": "2026-09-25",
+          "classification": "wrong-content-type",
+          "status": 202,
+          "content_type": "text/html"
+        }
+      }
+    ],
+    "research_boundary": "Run one image:report pass limited to the two exact image IDs above. Record only the resulting check metadata in those two image records if it changes the evidence state. Do not follow alternate URLs, open product pages, replace or download images, change rights, edit unrelated records, or retry either resource again in this batch.",
+    "excluded": [
+      "The four image-exactness gaps remain outside this batch because exact subject identity or reusable image rights still require separate evidence.",
+      "No image asset additions or replacements, source records, or product facts.",
+      "No GitHub mutation, commit, push, PR, merge, publish or production write."
+    ]
+  }
+}

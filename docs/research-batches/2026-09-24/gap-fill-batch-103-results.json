@@ -1,0 +1,37 @@
+{
+  "batch": 103,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-103-scope.json"],
+  "result": {
+    "exact_target_records_audited": 1,
+    "attempts_audited": 4,
+    "source_reuse_resolutions_added": 4,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 129,
+    "evidence_found_after": 125,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-sunpeed-wudi-e-2026-complete-weight-2026-08-30","source_ids":["sunpeed-invincible-2026-review-2026-08-30"],"caveat":"8.6 kg for XL mechanical/alloy-wheel complete bike with pedals; scale method and other accessory inclusion unstated."},
+      {"attempt_id":"candidate-sunpeed-wudi-e-2026-drivetrain-2026-08-30","source_ids":["sunpeed-invincible-2026-jd-2026-08-30","sunpeed-invincible-2026-smzdm-2026-08-30"],"caveat":"Exact 2026 Sport option is R7120 mechanical 2×12; expired deal is identity corroboration only, not current checkout."},
+      {"attempt_id":"candidate-sunpeed-wudi-e-2026-frame-material-2026-08-30","source_ids":["sunpeed-invincible-2026-official-2026-08-30","sunpeed-invincible-2026-jd-2026-08-30"],"caveat":"Carbon frame and fork only; supplier, grade, and lay-up remain unpublished."},
+      {"attempt_id":"candidate-sunpeed-wudi-e-2026-identity-source-2026-08-30","source_ids":["sunpeed-invincible-2026-official-2026-08-30","sunpeed-invincible-2026-jd-2026-08-30","sunpeed-invincible-2026-smzdm-2026-08-30"],"caveat":"Exact option identity supported; pooled Taobao snapshot excluded; no current stock, checkout, or warranty inferred."}
+    ],
+    "remaining_candidate_unknowns": [
+      "Manufacturer-confirmed maximum tire clearance.",
+      "Exact frame grade, wheel model, cockpit and selected-size BOM.",
+      "Controlled exact-frame stiffness evidence.",
+      "Current stock, checkout conditions, returns, and domestic warranty."
+    ],
+    "disposition": "All four accepted source claims already match the exact 2026 Invincible Sport R7120 alloy-wheel option with caveats intact. No product values or images changed."
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1314 sources, 212 primary image records, 236 candidates and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1314 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; only research attempt resolution metadata and batch documents changed",
+    "image_report": "not run; no image record changed"
+  }
+}

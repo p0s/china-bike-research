@@ -488,5 +488,14 @@
     "twitter-r10-pro-gen3-current-options-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-r10-pro-gen3-batch-023-50-area-sweep-2026-08-30.json. The current R10pro platform is high-modulus carbon; exact Gen 3 grade and lay-up remain unpublished."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-r10-pro-gen3-batch-023-50-area-sweep-2026-08-30.json. The current R10pro platform is high-modulus carbon; exact Gen 3 grade and lay-up remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-r10pro-frame-official-2026-08-30",
+      "twitter-r10-pro-gen3-current-options-2026-08-30"
+    ],
+    "note": "The manufacturer specifies high-modulus carbon for the R10pro platform and the option index identifies the Gen3 family. Keep this at platform level; no Gen3-specific fiber grade or lay-up is established."
+  }
 }

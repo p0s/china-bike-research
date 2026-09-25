@@ -1,0 +1,53 @@
+{
+  "id": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-t8-closed-wheel"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+          "route": "Opened newly surfaced TWITTER manufacturer catalog once",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The current official T8 catalog does not state maximum tire clearance.",
+          "result_url": "https://www.twittercycles.com/products/"
+        }
+      ],
+      "blocker": "The current official T8 catalog does not state maximum tire clearance."
+    }
+  },
+  "notes": "The current official T8 catalog does not state maximum tire clearance.",
+  "campaign_extension": {
+    "id": "b141-twitter-t8-closed-wheel-tire-clearance",
+    "extends_attempt_id": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

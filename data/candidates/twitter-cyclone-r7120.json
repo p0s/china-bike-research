@@ -21,7 +21,9 @@
   },
   "source_ids": [
     "twitter-cyclone-r7120-official-2026-08-17",
-    "twitter-cyclone-r7120-global-current-2026-09-01"
+    "twitter-cyclone-r7120-global-current-2026-09-01",
+    "twitter-cyclone-r7120-weight-current-recheck-2026-09-25",
+    "twitter-cyclone-r7120-global-page-404-recheck-2026-09-25"
   ],
   "facts": {
     "drivetrain": "Shimano 105 R7120 hydraulic 2×12",
@@ -29,13 +31,13 @@
     "bottom_bracket": "T47×24",
     "tires": "Maxxis 700×28C fitted; manufacturer maximum unresolved",
     "sizes": "43.5, 46, 48, 50, 52 and 54",
-    "complete_weight_status": "Current manufacturer conflict: 8.7 kg regional configurable page versus 9.3 kg global specification; size, accessories and weighing protocol do not reconcile the values",
-    "complete_weight_basis": "Regional exact-page base estimate retained for the catalog row; treat as conflicted with the current 9.3 kg global specification",
+    "complete_weight_status": "The current regional exact R7120 page lists 8.7 kg net; the previously recorded global 9.3 kg page returned 404 on 2026-09-25. Size, accessories and weighing protocol remain unstated; no mainland selected-build weight is established.",
+    "complete_weight_basis": "catalog row remains conflicted: the regional manufacturer page claims 8.7 kg net, while the historical global page claimed 9.3 kg and returned 404 on 2026-09-25. Size-specific basis, accessories and measurement method remain unstated; no mainland selected-build weight is established.",
     "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 28C tire is not treated as clearance",
     "frame_material": "High-modulus carbon frame with full-carbon fork; exact fiber grade and lay-up unpublished",
     "stiffness_evidence": "Manufacturer describes the exact Cyclone 3rd chassis as engineered for aerodynamic stability and efficient power delivery; qualitative claim without a numeric protocol"
   },
   "source_note": "Current exact manufacturer pages agree on the high-modulus carbon platform and qualitative power-delivery claim but conflict on complete weight: 8.7 kg regionally versus 9.3 kg globally. Both show fitted 700x28C tires without a manufacturer maximum.",
   "source_refs": "IMG_6896.png#L2",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-25"
 }

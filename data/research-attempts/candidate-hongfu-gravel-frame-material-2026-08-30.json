@@ -488,8 +488,21 @@
   "accepted_source_ids": [
     "hongfu-fm188-internal-current-2026-08-30",
     "hongfu-fm188-current-2026-08-30",
-    "hongfu-fm279-current-2026-08-30"
+    "hongfu-fm279-current-2026-08-30",
+    "hongfu-fm188-internal-current-recheck-2026-09-25",
+    "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+    "hongfu-fm279-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. Every exact option claim is retained with its model/page boundary."
+  "notes": "Current manufacturer pages distinguish FM188 Internal (T800/T1000), New CX FM188 (Toray T800 UD), and FM279 (Toray T800 UD). The generic Hongfu Gravel candidate is not mapped to one frame generation; do not assign a material stack.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "hongfu-fm188-internal-current-recheck-2026-09-25",
+      "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+      "hongfu-fm279-current-recheck-2026-09-25"
+    ],
+    "note": "Current manufacturer pages distinguish FM188 Internal (T800/T1000), New CX FM188 (Toray T800 UD), and FM279 (Toray T800 UD). The generic Hongfu Gravel candidate is not mapped to one frame generation; do not assign a material stack."
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "id": "candidate-elro-f1-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "elro-f1"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-elro-f1-complete-weight-2026-08-29",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-elro-f1-complete-weight-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "欧拜克 OBIKE F1 24速 公路自行车 整车重量 最大轮胎宽度 型号规格",
+          "route": "Fresh B141 exact-model web search; no exact F1 source surfaced",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No exact OBIKE F1/ELRO-marked product source surfaced. HENG F-1, Olympia F1 and OBIKE F9 are different identities; no weight transferred."
+        }
+      ],
+      "blocker": "No exact OBIKE F1/ELRO-marked product source surfaced. HENG F-1, Olympia F1 and OBIKE F9 are different identities; no weight transferred."
+    }
+  },
+  "notes": "No exact OBIKE F1/ELRO-marked product source surfaced. HENG F-1, Olympia F1 and OBIKE F9 are different identities; no weight transferred.",
+  "campaign_extension": {
+    "id": "b141-elro-f1-complete-weight",
+    "extends_attempt_id": "candidate-elro-f1-complete-weight-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

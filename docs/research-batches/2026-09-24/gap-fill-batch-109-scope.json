@@ -1,0 +1,23 @@
+{
+  "batch": 109,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 120,
+    "selected_queue_target": "candidate:missing-china-price-specialized-roubaix-sl8:price",
+    "selected_queue_priority": 100
+  },
+  "scope": {
+    "exact_target_records": ["candidate:missing-china-price-specialized-roubaix-sl8"],
+    "atomic_gap": "Current mainland CNY price evidence for the exact Specialized Roubaix SL8 Tiagra candidate",
+    "evidence_to_reconcile": "B107 added the exact current China product-page source and documented that it identifies the Tiagra trim but exposes no CNY amount, selected option, stock, or purchase control. The older 2026-08-17 catalog observation remains historical/reference evidence.",
+    "research_boundary": "Use only the already collected B107 result. Add a source-reuse resolution to the found price attempt, preserve observed_price as null, and do not infer a current price, stock state, checkout amount, duration, or warranty.",
+    "excluded": [
+      "No new web or public-post requests.",
+      "No price record, candidate value, route, or other-model changes.",
+      "No image evaluation or image-record change.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

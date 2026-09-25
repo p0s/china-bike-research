@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "carbonda-cfr696-official"
+    "carbonda-cfr696-official",
+    "carbonda-cfr696-current-official-price-route-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-carbonda-cfr696-frameset-batch-047-50-area-sweep-2026-09-01.json. Current official Get a quote route found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-carbonda-cfr696-frameset-batch-047-50-area-sweep-2026-09-01.json. Current official Get a quote route found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "carbonda-cfr696-official",
+      "carbonda-cfr696-current-official-price-route-recheck-2026-09-24"
+    ],
+    "note": "The prior exact official CFR696 page showed a Get a quote form and no fixed price; the 2026-09-24 recheck returned HTTP 403. No quote was submitted, so current route availability and price remain unconfirmed; keep the gap open."
+  }
 }

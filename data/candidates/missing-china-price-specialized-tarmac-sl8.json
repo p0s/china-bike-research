@@ -11,11 +11,13 @@
   ],
   "status": "official-mainland-price",
   "research_priority": "high",
-  "price_status": "Current official mainland CNY 30,990 list price; stock and final checkout untested",
+  "price_status": "Official mainland CNY 30,990 list-price reference observed 2026-08-17; current exact page price, stock, and final checkout are unverified",
   "required_before_dashboard": "Current stock, final checkout conditions, and exact China warranty handling",
   "source_ids": [
     "specialized-china-tarmac-sl8-comp-price-2026-08-17",
-    "specialized-tarmac-sl8-comp-spec-2026-08-17"
+    "specialized-tarmac-sl8-comp-spec-2026-08-17",
+    "specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23",
+    "specialized-tarmac-sl8-comp-105di2-china-current-price-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 30990,
@@ -24,7 +26,7 @@
     "observed_at": "2026-08-17"
   },
   "source_url": "https://www.specialized.com.cn/cn/zh/tarmac-sl8-comp---shimano-105-di2/p/4221578",
-  "source_note": "Current exact product 4221578 publishes CNY 30,990 in China, 7.68 kg in size 56 and a 33% stiffness-to-weight improvement over SL7. Stock, final checkout and the full comparative test protocol remain unpublished.",
+  "source_note": "The earlier official mainland source records a CNY 30,990 list-price reference; the 2026-09-24 exact China page response showed the model title but no current price or checkout data. The 7.68 kg size-56 reference and 33% stiffness-to-weight claim come from the U.S. product page and remain regional manufacturer claims. Stock, final checkout and the full comparative test protocol remain unpublished.",
   "facts": {
     "drivetrain": "Shimano 105 R7170 Di2 2×12",
     "complete_weight_g": 7680,
@@ -39,5 +41,5 @@
     "complete_weight_basis": "Current exact manufacturer claim for the production-painted size-56 build; actual weight varies by color, size and component variation",
     "stiffness_evidence": "Manufacturer reports a 33% stiffness-to-weight improvement over Tarmac SL7, with greater pedal stiffness and bar precision; comparative manufacturer result without a fully public protocol"
   },
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-24"
 }

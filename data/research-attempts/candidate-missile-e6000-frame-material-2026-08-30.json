@@ -488,8 +488,18 @@
   "status": "found",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "missile-mercury-6000-jd-2026-08-30"
+    "missile-mercury-6000-jd-2026-08-30",
+    "missile-mercury-6000-jd-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. The retained exact card says full carbon and the current exact-model index independently describes carbon-fiber construction."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. The retained exact card says full carbon and the current exact-model index independently describes carbon-fiber construction.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "missile-mercury-6000-jd-recheck-2026-09-23"
+    ],
+    "note": "Retained exact card says full carbon; current JD exact listing describes a carbon-fiber complete bike. Neither states frame/fork split or carbon grade."
+  }
 }

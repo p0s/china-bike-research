@@ -15,12 +15,15 @@
     "frame_construction": "Internal brake/electronic-routing-capable carbon frame with conventional 27.2 mm seatpost and UDH",
     "stiffness_evidence": "Biketo ride review describes the frame tuning as on the stiff side on coarse gravel; this is a qualitative ride observation, not a measured stiffness score",
     "tire_clearance_mm": 45,
-    "tire_clearance_basis": "Exact-model review states a 700×45C manufacturer maximum",
+    "tire_clearance_basis": "BIKETO's reviewed model states a nominal 700×45C maximum; no rim/tire measured fit protocol.",
     "wheels": "PARDUS PW3 DB aluminum",
     "tires": "Continental Terra Trail 700×40C",
     "cockpit": "MVMT M-Bronze carbon gravel handlebar with separate stem",
     "brakes": "SRAM Apex AXS hydraulic with 160 mm center-lock rotors",
-    "mounts": "Front and rear racks, fenders, three bottle positions and four mounts on each fork leg"
+    "mounts": "Front and rear racks, fenders, three bottle positions and four mounts on each fork leg",
+    "price_recheck_status": "Conflicting, non-equivalent references: 2023 review-reported official retail CNY 23,999; dated official Tmall selected option CNY 18,999 on 2026-08-27 (brown-green, size S, SKU 6023726818481); current third-party index snippet CNY 13,999 with no selected option or checkout. No new current price observation is established.",
+    "price_status": "Current exact checkout unresolved; retain existing dated selected-option observation and historical reported retail separately.",
+    "drivetrain_basis": "BIKETO's 2023 reviewed build only: SRAM Apex AXS 1×12 with X1 Eagle AXS rear derailleur, 40T and 11–50T cassette."
   },
   "reference_price_kind": "official",
   "official_price": {
@@ -49,7 +52,10 @@
         "price_basis": "Subsidy price; exact option and component package unresolved"
       },
       "notes": "The archived observation identifies Uragano EVO but does not expose enough option detail to equate it with the reviewed 2023 Apex AXS build.",
-      "source_ids": ["taobao-snapshot-2026-08-08"]
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "pardus-uragano-evo-biketo-recheck-2026-09-23"
+      ]
     },
     {
       "id": "official-store-apex-12-speed-brown-green-s",
@@ -62,7 +68,9 @@
         "price_basis": "Brown-green, size S, selected SKU 6023726818481"
       },
       "notes": "The exact option was selected in the PARDUS official flagship-store listing. The page identifies a carbon frame, aluminum rims, hydraulic disc brakes and 12 speeds, but provides no complete-bike weight or detailed bill of materials.",
-      "source_ids": ["pardus-uragano-evo-apex-tmall-2026-08-27"]
+      "source_ids": [
+        "pardus-uragano-evo-apex-tmall-2026-08-27"
+      ]
     }
   ],
   "missing": [
@@ -78,7 +86,10 @@
   "source_ids": [
     "pardus-uragano-evo-biketo-2026-08-27",
     "public-pardus-uragano-evo-build-2026-08-17",
-    "pardus-uragano-evo-apex-tmall-2026-08-27"
+    "pardus-uragano-evo-apex-tmall-2026-08-27",
+    "pardus-uragano-evo-biketo-recheck-2026-09-23",
+    "pardus-uragano-evo-price-index-hooos-2026-09-23"
   ],
-  "last_reviewed": "2026-08-27"
+  "last_reviewed": "2026-09-23",
+  "source_note": "Batch 36 recheck: the 2023 BIKETO article confirms its reviewed Apex AXS/X1 Eagle AXS build and 700×45C stated maximum; it is not a current universal BOM. A current Hooos index snippet shows CNY 13,999 for an official-store Apex listing but no selected SKU/checkout. Keep the dated official Tmall CNY 18,999 brown-green size-S observation and 2023 ¥23,999 reported retail distinct; do not replace or add a price observation from the snippet."
 }

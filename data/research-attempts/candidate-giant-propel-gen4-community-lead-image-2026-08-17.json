@@ -60,8 +60,17 @@
   "status": "found",
   "accepted_source_ids": [
     "round3-new-2027-giant-propel-gen4-in-depth-review-012b465f21",
-    "giant-propel-gen4-official-2026-08-17"
+    "giant-propel-gen4-official-2026-08-17",
+    "giant-propel-advanced-sl1-mainland-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-propel-advanced-sl1-mainland-current-2026-09-23"
+    ],
+    "note": "The exact China product page exposes official Propel Advanced SL 1 gallery images, confirming an exact-trim remote image source. No reusable-rights terms or credit permission were found, so the candidate's rights-cleared image gap remains unresolved and no image asset is added."
+  }
 }

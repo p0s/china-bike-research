@@ -1,14 +1,44 @@
 {
   "id": "candidate-airwolf-yfr068-geometry-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "airwolf-yfr068" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yfr068"
+  },
   "field": "geometry",
   "priority": "medium",
   "searched_at": "2026-08-27",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "found", "attempts": [
-    { "attempt": 1, "query": "Airwolf YFR068 geometry", "route": "secondary exact-model database", "outcome": "found", "result_url": "https://bikeinsights.com/bikes/633cbe1ce4468a0023a8f469-airwolf-yfr068", "accessed_at": "2026-08-27", "note": "Full secondary table found, but no matching official current chart." }
-  ] } },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Airwolf YFR068 geometry",
+          "route": "secondary exact-model database",
+          "outcome": "found",
+          "result_url": "https://bikeinsights.com/bikes/633cbe1ce4468a0023a8f469-airwolf-yfr068",
+          "accessed_at": "2026-08-27",
+          "note": "Full secondary table found, but no matching official current chart."
+        }
+      ]
+    }
+  },
   "status": "found",
-  "accepted_source_ids": ["airwolf-yfr068-geometry-bikeinsights-2026-08-27"],
-  "notes": "Representative size-54 values are surfaced only as secondary context, not structured official geometry."
+  "accepted_source_ids": [
+    "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
+    "airwolf-yfr068-official-recheck-2026-09-23"
+  ],
+  "notes": "Representative size-54 values are surfaced only as secondary context, not structured official geometry.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
+      "airwolf-yfr068-official-recheck-2026-09-23"
+    ],
+    "note": "Secondary size-54 chart gives stack 555 mm, reach 388 mm, head angle 72°, chainstay 420 mm and wheelbase 1,010 mm. Official page returned 403; chart may be an older generation and is not promoted as official. Reopen with official geometry tied to the current generation."
+  }
 }

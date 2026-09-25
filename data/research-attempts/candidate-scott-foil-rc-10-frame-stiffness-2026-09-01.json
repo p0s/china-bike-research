@@ -483,5 +483,14 @@
     "scott-foil-rc-platform-official-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-scott-foil-rc-10-batch-037-50-area-sweep-2026-09-01.json. SCOTT says the current Foil RC carbon redesign reduced weight without sacrificing stiffness; qualitative manufacturer evidence without a public protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-scott-foil-rc-10-batch-037-50-area-sweep-2026-09-01.json. SCOTT says the current Foil RC carbon redesign reduced weight without sacrificing stiffness; qualitative manufacturer evidence without a public protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-foil-rc-10-official-2026-08-17",
+      "scott-foil-rc-platform-official-2026-09-01"
+    ],
+    "note": "The exact 425337 and matching current-generation Foil RC platform sources state the carbon lay-up saved weight without sacrificing stiffness. This is a qualitative manufacturer claim without a public stiffness protocol."
+  }
 }

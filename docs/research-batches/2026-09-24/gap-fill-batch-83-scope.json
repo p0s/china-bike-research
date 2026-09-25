@@ -1,0 +1,69 @@
+{
+  "batch": 83,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "Eighteen distinct current primary-image records remain untested by image:report; the 17 records checked in B81 are excluded even though unreachable URLs remain open gaps. A single scoped report may resolve only URLs returning a successful status and image content type.",
+    "exact_models": 18,
+    "atomic_gaps": 18,
+    "targets": [
+      {"record_type":"image","record_id":"bianchi-oltre-race-ytb8d-primary-image-2026-08-30","product_id":"bianchi-oltre-race","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"camp-gx600-primary-image","product_id":"camp-gx600-pes","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"camp-gx700-primary-image","product_id":"camp-gx700-grx820","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"carbonda-cfr696-primary-image","product_id":"carbonda-cfr696-frameset","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"ican-gra04-official-primary-image","product_id":"ican-gra04-frameset","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"ican-graro-primary-image","product_id":"ican-graro-frameset","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"lightcarbon-lcg071s-pro-primary-image","product_id":"lightcarbon-lcg071s-pro-frameset","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"rinasclta-gr025-primary-image","product_id":"rinasclta-gr025-frameset","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"sava-a7l-r08-2026-exact-primary-image","product_id":"sava-a7l-r7100","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"sava-gelaro-primary-image","product_id":"sava-gelaro-s4-grx400","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"sava-gelaro-s8-primary-image","product_id":"sava-gelaro-s8","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"sava-gelaro-sf-primary-image","product_id":"sava-gelaro-sf6-cues","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"scott-addict-rc-40-primary-image","product_id":"scott-addict-rc-40","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"twitter-cyclone-electronic-official-et-primary-image","product_id":"twitter-cyclone-electronic","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"twitter-cyclone-gen3-et-primary-image","product_id":"twitter-cyclone-gen3-et","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"twitter-gravel-v3-2024-listing-primary-image","product_id":"twitter-v3-2024-rs-sensah-alloy","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"twitter-gravel-v3-primary-image","product_id":"twitter-v3-rs-sensah","gap_code":"image-health-unverified"},
+      {"record_type":"image","record_id":"twitter-t3-tt-primary-image","product_id":"twitter-t3-tt","gap_code":"image-health-unverified"}
+    ]
+  },
+  "report": {
+    "command": "npm run image:report -- --ids=<18 exact image record IDs> --json",
+    "rule": "Run once for the frozen targets. Do not retry unreachable URLs or infer an outage cause. Preserve exact URLs and record the returned check date, HTTP status, content type, and classification; mark a gap verified only when report evidence meets the repository's success criteria."
+  },
+  "done_criteria": [
+    "Run one frozen image-health report and integrate its exact URL, status, content type, classification, and check date for every target.",
+    "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "Local B83 only; no push, pull request, merge, publication, or production action."
+  ]
+}

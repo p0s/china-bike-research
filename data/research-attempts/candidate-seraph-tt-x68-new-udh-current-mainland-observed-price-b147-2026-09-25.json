@@ -1,0 +1,34 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current mainland delivered CNY amount was found for the exact TT-X68-new UDH frameset.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Seraph TT-X68-new UDH 32C 中国大陆 车架组 CNY 现货 2026",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The exact Seraph and TanTan product pages are already recorded and were not reopened. Search reiterated global USD offers, not mainland delivered CNY pricing. The separately titled 35C revision remains a different model revision."
+        }
+      ]
+    }
+  },
+  "notes": "The exact Seraph and TanTan product pages are already recorded and were not reopened. Search reiterated global USD offers, not mainland delivered CNY pricing. The separately titled 35C revision remains a different model revision."
+}

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-pinarello-f5-complete-weight-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pinarello-f5"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-pinarello-f5-complete-weight-2026-08-30",
+  "retry_reason": "B144 authorized one distinct model query after predecessor-history review; its previously recorded page URL was opened in error, excluded, and not revisited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The surfaced page URL was already present in the candidate source_url, source registry, and predecessor attempts and was opened in error; its content is not treated as new evidence. No new weight source bridges the retained CNY 26,800 card.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PINARELLO F5 26800 China complete bike wheelset weight model year",
+          "route": "One distinct B144 search; the surfaced URL was already recorded and is excluded",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 100 distinct queries. The page open is excluded from B144 evidence because its URL was already recorded. Existing retailer evidence remains an 8.25 kg MY26/105 Di2/MOST 45 reference only; the retained card's model year and wheel option are unresolved.",
+          "result_url": "https://pinarello.com/china/zh/bikes/%E5%85%AC%E8%B7%AF%E8%BD%A6/%E7%AB%9E%E8%B5%9B/new-pinarello-f/new-pinarello-f5-105-di2"
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 100 distinct queries. The page open is excluded from B144 evidence because its URL was already recorded. Existing retailer evidence remains an 8.25 kg MY26/105 Di2/MOST 45 reference only; the retained card's model year and wheel option are unresolved.",
+  "campaign_extension": {
+    "id": "b144-pinarello-f5-complete-weight",
+    "extends_attempt_id": "candidate-pinarello-f5-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

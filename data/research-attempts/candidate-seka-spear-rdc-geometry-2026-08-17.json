@@ -59,8 +59,21 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "seka-spear-rdc-geometry-official-2026-08-17"
+    "seka-spear-rdc-geometry-official-2026-08-17",
+    "seka-spear-rdc-official-page-recheck-2026-09-23",
+    "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+    "seka-spear-development-manual-reopen-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Exact table accepted; preserve M/MR and L/LR labels."
+  "notes": "Round-four official/web completion. Exact table accepted; preserve M/MR and L/LR labels.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seka-spear-rdc-official-page-recheck-2026-09-23",
+      "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+      "seka-spear-development-manual-reopen-2026-09-23"
+    ],
+    "note": "Official pages list XS/S/M/MR/L/LR/XL availability and link a chart; retained manual title is Spear without an explicit RDC generation mapping. Keep size availability but leave numerical RDC geometry unresolved. Reopen trigger: Reopen for a text-readable manufacturer geometry chart explicitly matched to SPEAR RDC."
+  }
 }

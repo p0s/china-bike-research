@@ -1,0 +1,61 @@
+{
+  "id": "candidate-airwolf-yf-r003-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "airwolf-yf-r003"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web",
+    "public-post"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact official product route remains behind request verification. Distinct searches found no exact current mainland CNY selected-package listing; the only new catalog lead is a stale foreign USD index result.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Airwolf YF-R003 current exact mainland frameset price",
+          "route": "Exact official product page live-access recheck",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The route again returned a request-verification interstitial. No product body or price was read; the challenge was not bypassed.",
+          "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        },
+        {
+          "attempt": 2,
+          "query": "Airwolf YFR003 Pearl White frameset global catalog price",
+          "route": "Distinct official global catalog index search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The indexed global catalog shows USD 609–629 for a Pearl White YFR003 listing but was last crawled about two months ago; it is neither a current mainland CNY quote nor a selected delivered price.",
+          "result_url": "https://airwolfcarbonbike.com/shop/page/13/"
+        },
+        {
+          "attempt": 3,
+          "query": "Airwolf YF-R003 车架 淘宝 价格 车架组",
+          "route": "Mainland marketplace exact-model price search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact public mainland seller/item with a current selected CNY package and conditions appeared. The global catalog index lead is stale foreign USD pricing, not a mainland offer."
+        }
+      ]
+    },
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-airwolf-yf-r003-price-2026-09-22",
+      "attempts": []
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "airwolf-yf-r003-access-check-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "No current mainland price can be recorded. Earlier public-post searches remain carried forward; the official global storefront search result is stale and not a mainland quote.",
+  "retry_of": "candidate-airwolf-yf-r003-price-2026-09-22",
+  "retry_reason": "Fresh live access probe on 2026-09-24 checked whether the exact official route recovered since 2026-09-22; it remains verification-gated."
+}

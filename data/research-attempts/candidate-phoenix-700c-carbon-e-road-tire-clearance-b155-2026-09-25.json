@@ -1,0 +1,52 @@
+{
+  "id": "candidate-phoenix-700c-carbon-e-road-tire-clearance-b155-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "phoenix-700c-carbon-e-road"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-phoenix-700c-carbon-e-road-tire-clearance-2026-08-30",
+  "retry_reason": "A newly scoped exact-model query tests the remaining field after reviewing current linked sources and prior attempt/campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-phoenix-700c-carbon-e-road-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact-field value meeting the frozen acceptance rule was found; the current source set does not establish the retained build value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Phoenix 凤凰 799 carbon 700C electric road bike maximum tire width frame stiffness test",
+          "route": "One bounded current web query screened against existing exact-model source history",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The already recorded Ebuy7 source identifies Phoenix model 799 but states no maximum clearance and does not resolve the retained 700C card battery option. Search surfaced no exact technical page to open."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The already recorded Ebuy7 source identifies Phoenix model 799 but states no maximum clearance and does not resolve the retained 700C card battery option. Search surfaced no exact technical page to open.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-155-phoenix-700c-carbon-e-road-tire-clearance",
+    "extends_attempt_id": "candidate-phoenix-700c-carbon-e-road-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-155-scope.json",
+    "reason": "The frozen B155 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

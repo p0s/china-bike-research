@@ -1,0 +1,97 @@
+{
+  "batch_id": "gap-fill-batch-01-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-01-scope.json",
+  "reviewed_at": "2026-09-23",
+  "status": "reviewed-unresolved",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-tcr-advanced",
+    "exact_identity": "Giant TCR Advanced 3-GC, mainland China page id=1398, Shimano Tiagra 2x10 rim-brake complete build"
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
+      "publisher": "Giant China",
+      "result": "The official URL returned a generic prompt with no readable product content on 2026-09-23. The previously captured 2026-09-01 source remains the dated evidence for model identity, Tiagra 2x10 rim brakes, carbon frame/full-carbon fork, and fitted 700x25C tires."
+    },
+    {
+      "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3470",
+      "publisher": "Giant China",
+      "result": "Current TCR Advanced 3 listing is a different tenth-generation disc build. Its Shimano PressFit specification, disc frame, geometry image, and fitted tubeless tires were not transferred to the 3-GC rim-brake candidate."
+    },
+    {
+      "url": "https://static.giant-bicycles.com/pdf/giant-tcr-advanced-3-en-nz-352.pdf",
+      "publisher": "Giant New Zealand",
+      "result": "The indexed 2018 TCR Advanced 3 document lists Tiagra, rim brakes, Shimano RS500 bottom bracket, and geometry for XS through XL, but it does not identify the mainland 3-GC build or prove generation equivalence. No specifications were transferred."
+    },
+    {
+      "url": "https://static.giant-bicycles.com/pdf/giant-tcr-advanced-3-en-gb-352.pdf",
+      "publisher": "Giant United Kingdom",
+      "result": "Regional 2018 TCR Advanced 3 material likewise does not establish identity with the mainland 3-GC. No specifications were transferred."
+    },
+    {
+      "url": "https://www.jd.com/jiage/13183b8d174c03651991.html",
+      "publisher": "JD marketplace index",
+      "result": "Exact-name TCR ADV 3-GC listing snippets show 20-speed configurations and selected size options, but no complete geometry table, weight, bottom bracket, or maximum clearance. The listing snippet is insufficient to establish missing technical facts."
+    },
+    {
+      "url": "https://www.whgiant.com/article/n6iyfc01",
+      "publisher": "Wuhan Giant dealer",
+      "result": "A recent comparison mentions the 3-GC and its approximate price/build category but provides no numerical geometry, weight, bottom bracket, or maximum tire clearance. It is not an exact technical specification source."
+    },
+    {
+      "url": "https://www.olx.kz/d/kk/obyavlenie/novyy-velosiped-giant-tcr-advanced-3-shimano-tiagra-karbon-IDqWiLC.html",
+      "publisher": "OLX Kazakhstan seller listing",
+      "result": "The exact 3-GC title and rim-brake/Tiagra build appear, with S/M/ML/L options, but this is a non-mainland seller listing and has no numerical geometry, measured weight, bottom-bracket, or clearance evidence."
+    },
+    {
+      "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
+      "publisher": "Giant China image route search",
+      "result": "Searches for an exact 3-GC image on Giant's indexed image hosts returned no result. No stable exact-trim asset URL or additional reuse basis was established."
+    }
+  ],
+  "field_results": [
+    {
+      "field": "complete-weight",
+      "status": "unresolved",
+      "finding": "No exact 3-GC complete-bike weight with size, pedals/accessories, and measurement basis was found. Regional or newer disc-build weights are not attributable to this build.",
+      "reopen_when": "An exact mainland 3-GC manufacturer specification or a verifiable measurement of the exact stock build is available."
+    },
+    {
+      "field": "frame-weight",
+      "status": "unresolved",
+      "finding": "No exact 3-GC frame-only weight was found. Complete-bike or different-generation frame weights cannot substitute.",
+      "reopen_when": "A manufacturer document identifies the exact 3-GC frame revision and size-specific frame-only weight, or a transparent exact-frame measurement appears."
+    },
+    {
+      "field": "bottom-bracket",
+      "status": "unresolved",
+      "finding": "The current mainland disc model lists Shimano PressFit, and a 2018 foreign-market rim model lists Shimano RS500, but neither source proves the exact 3-GC frame standard.",
+      "reopen_when": "An exact 3-GC manual, manufacturer specification, or attributable inspection identifies the shell standard."
+    },
+    {
+      "field": "geometry",
+      "status": "unresolved",
+      "finding": "No exact mainland 3-GC numerical geometry table was found. Marketplace size options do not establish frame geometry, and the regional 2018 table is not generation-matched.",
+      "reopen_when": "Giant publishes a 3-GC geometry table or an exact-generation frame identifier is tied to a manufacturer geometry document."
+    },
+    {
+      "field": "tire-clearance",
+      "status": "unresolved",
+      "finding": "The dated exact China source specifies fitted 700x25C tires only. This does not establish maximum clearance; newer disc-generation 32C claims do not apply.",
+      "reopen_when": "An exact 3-GC maximum-tire specification or a documented exact-frame clearance measurement is available."
+    },
+    {
+      "field": "exact-image-asset",
+      "status": "unresolved",
+      "finding": "No exact 3-GC product-image URL with the required attribution and rights metadata was found. The existing page image remains a different TCR Advanced trim and no image was added.",
+      "reopen_when": "Giant provides a stable 3-GC image route or a rights-cleared exact-model source can be documented under the repository media contract."
+    }
+  ],
+  "integration": {
+    "supported_catalog_facts_added": 0,
+    "images_added": 0,
+    "files_changed_outside_batch_documentation": 0
+  },
+  "next_action": "Start a separate bounded batch from a fresh data:gaps report; prioritize an exact model with a current primary source that can close at least one field."
+}

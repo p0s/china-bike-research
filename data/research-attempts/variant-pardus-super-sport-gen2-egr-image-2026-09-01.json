@@ -480,5 +480,13 @@
     "public-pardus-super-sport-gen2-launch-2026-08-28"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "public-pardus-super-sport-gen2-launch-2026-08-28"
+    ],
+    "note": "Retain the existing sanitized, rights-reviewed exact-eGR image promoted as primary. This batch made no image-file or image-record change."
+  },
   "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-pardus-super-sport-gen2-egr-batch-045-50-area-sweep-2026-09-01.json. An existing sanitized, rights-reviewed exact-variant public-post image is promoted from gallery to primary; no new XHS work or image download was performed."
 }

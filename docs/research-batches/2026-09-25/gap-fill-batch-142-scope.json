@@ -1,0 +1,223 @@
+{
+  "batch": 142,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 680,
+    "catalog_records": 263,
+    "image_health_gap_entries": 11,
+    "image_health_unique_image_ids": 11,
+    "remaining_image_health_gaps": 11,
+    "research_queue_after_b141": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 3
+    }
+  },
+  "scope": {
+    "exact_target_models": [],
+    "image_records": 11,
+    "atomic_gap_entries": 11,
+    "remote_resources": 11,
+    "selected_fields": [
+      {
+        "image_id": "elves-mori-aerox-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "elves-mori-aerox-frameset",
+            "name": "Mori AeroX frameset"
+          }
+        ],
+        "file": "data/images/elves-mori-aerox.json",
+        "resources": [
+          {
+            "target_id": "elves-mori-aerox-primary-image",
+            "url": "https://uk.elvesbike.com/u_file/2606/18/products/20260618163157227467.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000"
+          }
+        ]
+      },
+      {
+        "image_id": "evolve-cima-gr-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "evolve-cima-gr-frameset",
+            "name": "CIMA GR frameset"
+          }
+        ],
+        "file": "data/images/evolve-cima-gr.json",
+        "resources": [
+          {
+            "target_id": "evolve-cima-gr-primary-image",
+            "url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "incolor-speedster-sr-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "incolor-speedster-sr-frameset",
+            "name": "Speedster SR frameset"
+          }
+        ],
+        "file": "data/images/incolor-speedster-sr-primary-image.json",
+        "resources": [
+          {
+            "target_id": "incolor-speedster-sr-primary-image",
+            "url": "https://www.incolor.vip/uploads/upload/images/20260709/cbef1a0f63fd2e4268b64c9b3e2b2e6c.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "incolor-speedster-sr-plus-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "incolor-speedster-sr-plus-frameset",
+            "name": "Speedster SR+ frameset"
+          }
+        ],
+        "file": "data/images/incolor-speedster-sr-plus-primary-image.json",
+        "resources": [
+          {
+            "target_id": "incolor-speedster-sr-plus-primary-image",
+            "url": "https://www.incolor.vip/uploads/upload/images/20260709/44a68269648859f3a3544fc0ee809351.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "incolor-ssr-official-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "incolor-ssr-frameset",
+            "name": "Speedster Radical SSR frameset"
+          }
+        ],
+        "file": "data/images/incolor-ssr-official-primary-image.json",
+        "resources": [
+          {
+            "target_id": "incolor-ssr-official-primary-image",
+            "url": "https://www.incolor.vip/uploads/upload/images/20260710/86b4f73ce68254ed6cbc6c40582b048e.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "incolor-voyager-official-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "incolor-voyager-frameset",
+            "name": "Voyager frameset"
+          }
+        ],
+        "file": "data/images/incolor-voyager-official-primary-image.json",
+        "resources": [
+          {
+            "target_id": "incolor-voyager-official-primary-image",
+            "url": "https://www.incolor.vip/uploads/upload/images/20260702/dafcb254db4b4a9e7a96b09f88ab6852.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "quick-gr-one-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "quick-gr-one-frameset",
+            "name": "GR:ONE frameset"
+          }
+        ],
+        "file": "data/images/quick-gr-one.json",
+        "resources": [
+          {
+            "target_id": "quick-gr-one-primary-image",
+            "url": "https://www.quickprousa.com/cdn/shop/files/GRONE_AbyssGray.png?v=1781733761&width=1946"
+          }
+        ]
+      },
+      {
+        "image_id": "spcycle-g028-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "spcycle-g028-frameset",
+            "name": "G028 frameset"
+          }
+        ],
+        "file": "data/images/spcycle-g028.json",
+        "resources": [
+          {
+            "target_id": "spcycle-g028-primary-image",
+            "url": "https://usaimages.oss-us-west-1.aliyuncs.com/6230/product/detail/20260515/1778837727142_0.jpg"
+          }
+        ]
+      },
+      {
+        "image_id": "tfsa-jh37-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "tfsa-jh37-frameset",
+            "name": "JH37 frameset"
+          }
+        ],
+        "file": "data/images/tfsa-jh37.json",
+        "resources": [
+          {
+            "target_id": "tfsa-jh37-primary-image",
+            "url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif"
+          }
+        ]
+      },
+      {
+        "image_id": "winspace-g3-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "winspace-g3-frameset",
+            "name": "G3 frameset"
+          }
+        ],
+        "file": "data/images/winspace-g3.json",
+        "resources": [
+          {
+            "target_id": "winspace-g3-primary-image",
+            "url": "https://www.winspace.cc/cdn/shop/files/1_048e29a6-a464-4273-ab46-1816bb4e947e.jpg?v=1753683304&width=1080"
+          }
+        ]
+      },
+      {
+        "image_id": "winspace-g5-primary-image",
+        "record_ids": [
+          {
+            "record_type": "published-variant",
+            "record_id": "winspace-g5-frameset",
+            "name": "G5 frameset"
+          }
+        ],
+        "file": "data/images/winspace-g5.json",
+        "resources": [
+          {
+            "target_id": "winspace-g5-primary-image",
+            "url": "https://www.winspace.cc/cdn/shop/files/G5FrameNauticalBlue.webp?v=1782181071&width=1080"
+          }
+        ]
+      }
+    ],
+    "research_boundary": "Run the repository image-health report once for only these frozen image IDs. It uses HEAD and, if needed, a small Range GET, then cancels response bodies; no image bytes are saved. If sandbox networking alone makes resources unreachable, one same-set retry on the approved host path is allowed; do not retry genuine host errors. Record the dated classification/status/content type on the exact existing remote resource only. Do not alter URL, rights, credit, alt text, fallback, visibility, or hosted bytes.",
+    "excluded": [
+      "No image download, asset creation, rehosting, external message, seller contact, or personal browser.",
+      "Do not mark blocked, broken, wrong-content-type, or unreachable images as healthy.",
+      "No image rights or visual exactness changes; this batch checks only resource reachability/content type."
+    ]
+  },
+  "external_delivery": "none"
+}

@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-22",
+  "command": "npm run --silent image:report",
+  "resources_checked": 212,
+  "summary": {
+    "healthy": 207,
+    "wrong-content-type": 2,
+    "broken": 1,
+    "unreachable": 2
+  },
+  "non_healthy": [
+    {
+      "classification": "wrong-content-type",
+      "image_id": "evolve-cima-gr-primary-image",
+      "response": "202 text/html"
+    },
+    {
+      "classification": "broken",
+      "image_id": "hi-light-g7-2-official-primary-image",
+      "response": "567 text/markdown; charset=UTF-8"
+    },
+    {
+      "classification": "unreachable",
+      "image_id": "laget-discovery-one-flagship-official-primary-image",
+      "response": "fetch failed"
+    },
+    {
+      "classification": "unreachable",
+      "image_id": "laget-discovery-one-pro-official-primary-image",
+      "response": "fetch failed"
+    },
+    {
+      "classification": "wrong-content-type",
+      "image_id": "tfsa-jh37-primary-image",
+      "response": "202 text/html"
+    }
+  ],
+  "interpretation": "Live HTTP outcomes only. HTTP 202 HTML, HTTP 567 and connection failures do not by themselves prove permanently broken assets. The catalog hides failed third-party images. No image asset or URL changed, no remote media copied, and no retry of unchanged URLs after this host-network check.",
+  "gap_counter_limit": "data:gaps always emits image-health-unverified for remote primary images; successful runtime checks do not persistently reduce that counter."
+}

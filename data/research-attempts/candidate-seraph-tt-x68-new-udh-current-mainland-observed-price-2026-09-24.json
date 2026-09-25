@@ -1,0 +1,46 @@
+{
+  "id": "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "seraph-tt-x68-new-udh"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Exact Seraph and TanTan pages expose distinct foreign USD package prices; no current mainland CNY listing or delivered quote for the exact T47/UDH 32C revision was found.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Seraph TT-X68-new UDH exact 32C T47 current mainland CNY listing",
+          "route": "Exact Seraph global storefront and China-market seller search",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact global Seraph page lists US$629; no exact mainland CNY price was returned. The 35C New-Version page and older BSA model were excluded as different revisions.",
+          "result_url": "https://www.seraphbikes.com/tt-x68-new-udh-hanger-superlight-disc-road-bike-frame-t47-bottom-bracket-max-tire-70032c-available-size-495254565861cm-p7181862.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TanTan TT-X68-New UDH 32C exact current China delivered quote",
+          "route": "Exact TanTan global storefront and public mainland listing search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "TanTan's exact global page lists US$579 with selectable size, paint, handlebar, stem and seatpost options; search surfaced no exact mainland CNY seller listing or delivered quote. The different package price is not combined with Seraph's US$629.",
+          "result_url": "https://www.tantanbikes.com/TT-X68-New-UDH-hanger-Superlight-Disc-Road-Bike-Frame-T47-Bottom-Bracket-Max-Tire-70032C-Available-Size-495254565861cm-p7192663.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "seraph-tt-x68-new-global-price-recheck-2026-09-24",
+    "tantan-tt-x68-new-global-price-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep both dated global references separate; neither is a mainland price observation."
+}

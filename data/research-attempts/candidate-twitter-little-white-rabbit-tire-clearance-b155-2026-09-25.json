@@ -1,0 +1,52 @@
+{
+  "id": "candidate-twitter-little-white-rabbit-tire-clearance-b155-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-little-white-rabbit"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-twitter-little-white-rabbit-tire-clearance-2026-08-30",
+  "retry_reason": "A newly scoped exact-model query tests the remaining field after reviewing current linked sources and prior attempt/campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-little-white-rabbit-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact-field value meeting the frozen acceptance rule was found; the current source set does not establish the retained build value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 Little White Rabbit 小白兔 定制款 Shimano 24-speed Wheeltop electronic complete weight maximum tire clearance frame stiffness",
+          "route": "One bounded current web query screened against existing exact-model source history",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The current exact listing family still does not identify the retained chassis or publish a manufacturer-stated maximum tire clearance."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The current exact listing family still does not identify the retained chassis or publish a manufacturer-stated maximum tire clearance.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-155-twitter-little-white-rabbit-tire-clearance",
+    "extends_attempt_id": "candidate-twitter-little-white-rabbit-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-155-scope.json",
+    "reason": "The frozen B155 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

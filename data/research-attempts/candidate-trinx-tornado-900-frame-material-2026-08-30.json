@@ -494,5 +494,14 @@
     "trinx-tornado-900-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-tornado-900-50-area-sweep-2026-08-30.json. Chinese launch coverage identifies T800 carbon; the manufacturer corroborates carbon frame, fork, cockpit and seatpost."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-tornado-900-50-area-sweep-2026-08-30.json. Chinese launch coverage identifies a T800 frame with carbon fork, handlebar and seatpost; manufacturer notes corroborate carbon frame, fork and cockpit. Cockpit integration is unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "trinx-tornado-900-biketo-2026-08-30",
+      "trinx-tornado-900-official-2026-08-30"
+    ],
+    "note": "The existing candidate wording was narrowed to the supported T800 carbon frame and carbon fork, handlebar and seatpost. Neither source establishes that the cockpit is integrated; integration and assembly details remain explicitly unverified."
+  }
 }

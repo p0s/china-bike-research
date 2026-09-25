@@ -11,12 +11,16 @@
   ],
   "status": "official-mainland-price",
   "research_priority": "high",
-  "price_status": "official mainland-China list price",
+  "price_status": "Current official Trek China catalog listing at CNY 21,800; size-specific availability and checkout unverified",
   "required_before_dashboard": "Current stock, dealer/checkout conditions, and exact China warranty handling",
   "source_ids": [
     "trek-china-madone-sl-range-2026-08-17",
     "trek-madone-sl5-gen8-official-spec-2026-08-17",
-    "trek-madone-gen8-faq-clearance-2026-09-01"
+    "trek-madone-gen8-faq-clearance-2026-09-01",
+    "trek-madone-sl5-gen8-mens-health-review-2026-09-22",
+    "trek-madone-sl5-gen8-china-page-recheck-2026-09-23",
+    "trek-madone-gen8-faq-recheck-2026-09-23",
+    "trek-madone-sl5-gen8-china-current-catalog-price-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 21800,
@@ -24,8 +28,16 @@
     "price_type": "official-retail",
     "observed_at": "2026-08-17"
   },
+  "observed_price": {
+    "amount_cny": 21800,
+    "currency": "CNY",
+    "price_type": "official-mainland-catalog-listing",
+    "observed_at": "2026-09-24",
+    "price_basis": "Trek China current catalog lists exact Madone SL 5 Gen 8 product IDs 46218 (white/black) and 57653 (red/black) at CNY 21,800",
+    "conditions": "Current official catalog listing; size-specific availability, dealer fulfillment, and final checkout were not visible"
+  },
   "source_url": "https://www.trekbikes.com/cn/zh_CN/%E8%87%AA%E8%A1%8C%E8%BD%A6/%E5%85%AC%E8%B7%AF%E8%87%AA%E8%A1%8C%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%AC%E8%B7%AF%E8%BD%A6/madone/madone-sl/c/B213-2/",
-  "source_note": "Current Trek China evidence lists CNY 21,800 and 8.70 kg for the exact Madone SL 5 Gen 8. Construction, aerodynamics and IsoFlow claims do not establish a frame-stiffness result, which remains unresolved after 50 areas.",
+  "source_note": "Historical Trek China evidence records CNY 21,800 and 8.70 kg for the exact Madone SL 5 Gen 8; those observations retain their original dates. The2026-09-22 review adds attributed qualitative ride evidence without adopting marketing performance numbers. Focused exact-model recheck on 2026-09-23: see the batch 26 result for regional-build qualifiers and current route/page access outcomes.",
   "facts": {
     "drivetrain": "Shimano 105 mechanical 2×12",
     "complete_weight_g": 8700,
@@ -36,8 +48,9 @@
     "brakes": "Shimano 105 hydraulic disc",
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Manufacturer Gen 8 maximum at measured tire width",
-    "complete_weight_basis": "Current exact Trek product claim for the stock Madone SL 5 Gen 8 configuration; published size and protocol limitations remain",
-    "frame_stiffness_status": "No exact SL 5 numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
+    "complete_weight_basis": "Accepted exact China product observation on 2026-09-01: 8.70 kg for the stock Madone SL 5 Gen 8 mechanical Shimano 105 2×12 configuration; today the exact route redirected to a category/title shell. The retained observation has no size or weighing protocol.",
+    "frame_stiffness_status": "Qualitative ride evidence is available; no numeric frame-only measurement is recorded.",
+    "stiffness_evidence": "Men’s Health South Africa reviewer Art Mukhari reports responsive climbing and efficient power transfer during a sprint after a stated month on the Madone SL 5 Gen 8, alongside comfort. Subjective whole-bike ride evidence from an affiliate-supported editorial publisher; no controlled frame-only stiffness measurement or numeric ranking."
   },
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-24"
 }

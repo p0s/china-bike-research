@@ -6,19 +6,22 @@
   "type": "complete-bike",
   "why_interesting": "Exact official global gravel build and imagery; mainland purchase, price and warranty remain unresolved.",
   "missing": [
-    "Resolve the current ¥14,700 page versus non-reproduced ¥11,700 promotion",
-    "Exact size stock and final landed checkout total"
+    "Selected-size stock, current checkout state and final landed total including applicable VAT/customs"
   ],
   "status": "official-global-reference",
   "research_priority": "medium",
-  "price_status": "official mainland price conflict; verify live size-specific checkout",
+  "price_status": "Official China product page showed CNY 13,700 on 2026-09-25, reduced from CNY 14,700; member-only page requires size selection. Estimated delivery/packaging is CNY 749 and VAT/customs are excluded. Selected-size stock and final landed total remain unverified.",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
-  "last_reviewed": "2026-08-30",
+  "last_reviewed": "2026-09-25",
   "source_ids": [
     "canyon-grail-cf-7-official-2026-08-17",
     "canyon-grail-cf7-china-2026-08-17",
+    "canyon-grail-cf7-china-current-2026-09-23",
     "canyon-grail-cf7-promotional-crawl-2026-08-17",
-    "canyon-china-warranty-2026-08-17"
+    "canyon-china-warranty-2026-08-17",
+    "canyon-china-warranty-current-2026-09-23",
+    "canyon-grail-cf7-fr-technical-recheck-2026-09-23",
+    "canyon-grail-cf7-china-price-recheck-2026-09-25"
   ],
   "observed_price": {
     "low_cny": 11700,
@@ -28,9 +31,9 @@
     "price_type": "official-conflict",
     "price_basis": "official China page and an official promotional crawl that could not be reproduced on page open"
   },
-  "source_url": "https://www.canyon.com/en-fr/gravel-bikes/race/grail/cf/grail-cf-7/4149.html",
-  "support_note": "Canyon China states a two-year quality warranty, a six-year guarantee for Canyon-designed frame, fork, handlebar and seatpost parts, and a 30-day return route, subject to eligibility.",
-  "source_note": "The opened exact mainland page showed ¥14,700 with size selection and order flow; an official crawl separately showed a ¥11,700 promotion. Both are preserved until live checkout resolves the promotion and stock conditions.",
+  "source_url": "https://www.canyon.com.cn/zh-cn/%E7%A0%BE%E7%9F%B3-%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD/grail/cf/grail-cf-7/4149.html",
+  "support_note": "Canyon China's current policy gives a 2-year warranty for Canyon-designed frame/fork/handlebar/seatpost and original components (subject to their maker's terms), plus a 6-year non-transferable guarantee for Canyon-designed parts for the original owner; both cover delivery-time material/workmanship defects. Eligible claims include covered reassembly, shipping and customs, while collision, wear, corrosion and misuse exclusions apply. This is the brand policy for the current China route, not confirmation of a particular bike's purchase date or claim eligibility.",
+  "source_note": "The direct China manufacturer page was reopened 2026-09-25: it shows CNY 13,700 with CNY 14,700 crossed out, requires member access, and provides size selection. It estimates CNY 749 delivery/packaging but excludes VAT and customs; no order was submitted, so selected-size stock and final landed cost remain unverified. The earlier 2026-08-17 CNY 11,700 promotional crawl was not reproduced and is retained in prior_price_observations.",
   "facts": {
     "frame": "Canyon Grail CF carbon complete-bike platform",
     "complete_weight_g": 9260,
@@ -38,5 +41,12 @@
     "drivetrain": "Shimano GRX mechanical 2×12 hydraulic: RX610 controls, RD-RX820 rear derailleur, FD-RX820 front derailleur, RX600 46/30 crank, and Shimano 105 R7101 11–34 cassette",
     "tire_clearance_mm": 42,
     "tire_clearance_basis": "Current exact-model manufacturer maximum for both frame and fork"
+  },
+  "current_observed_price": {
+    "amount_cny": 13700,
+    "currency": "CNY",
+    "observed_at": "2026-09-25",
+    "price_type": "official-current-mainland-listing",
+    "price_basis": "Exact Canyon China Grail CF 7 page price; CNY 14,700 crossed out, CNY 749 estimated delivery/packaging excluded from the amount; VAT and customs excluded. The page is member-only and requires size selection."
   }
 }

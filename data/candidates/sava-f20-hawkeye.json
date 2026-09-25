@@ -17,6 +17,7 @@
   "last_reviewed": "2026-09-01",
   "source_ids": [
     "sava-hawkeye-f20-official-2026-08-17",
+    "sava-road-tire-compatibility-guide-2026-09-22",
     "public-sava-hawkeye-price-2026-08-17",
     "usd-cny-central-parity-2026-07-31"
   ],
@@ -31,7 +32,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://savadeck-bike.com/products/2023-sava-hawkeye-7-2-full-carbon-road-bike-24-speed",
-  "source_note": "Current exact global-store evidence lists US$1,899, approximately 8.7 kg varying by size, carbon wheels, BB92 and Shimano 105 R7120. Mainland CNY checkout, manufacturer maximum clearance and exact-model stiffness remain unresolved after 50 areas.",
+  "source_note": "Current exact global-store evidence lists US$1,899, approximately 8.7 kg varying by size, carbon wheels, BB92 and Shimano 105 R7120. The current manufacturer compatibility guide maps the exact R16 Hawkeye F20 frame to a nominal 28C maximum; mainland CNY checkout and exact-model stiffness remain unresolved after 50 areas.",
   "price_status": "official foreign/reference evidence; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Exact mainland SKU, stock, duties/returns and warranty handling",
   "facts": {
@@ -45,8 +46,11 @@
     "sizes": "49, 52, 54, 56 cm",
     "complete_weight_g": 8700,
     "complete_weight_basis": "Current exact manufacturer approximate claim; weight varies by size, while pedals, accessories and weighing protocol are unpublished",
-    "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 25C tire is not treated as clearance",
+    "tire_clearance_status": "Manufacturer R16 maximum 28C recorded; fitted 25C tire is not treated as clearance",
+    "tire_clearance_mm": 28,
+    "tire_clearance_basis": "Current SAVA manufacturer compatibility guide maps the R16 frame, including Hawkeye F20, to up to 28C; nominal tire designation with no rim-width or measured-clearance protocol",
     "price_status": "Current US$1,899 global price only; no attributable mainland CNY checkout amount after 50 registered areas",
     "frame_stiffness_status": "No exact-model numeric or sufficiently specific independent frame-stiffness result found after 50 registered source areas"
-  }
+  },
+  "last_reviewed": "2026-09-22"
 }

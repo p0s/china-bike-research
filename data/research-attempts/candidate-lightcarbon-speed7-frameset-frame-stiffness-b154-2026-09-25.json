@@ -1,0 +1,62 @@
+{
+  "id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-b154-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-speed7-frameset"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-lightcarbon-speed7-frameset-frame-stiffness-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests a remaining field after reviewing the retained candidate, linked evidence, and prior attempt history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon Speed7 LCR017-D frame stiffness test measurement review",
+          "route": "One bounded query screened against the already recorded independent exact-chassis review; known URL not reopened",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "The previously recorded review of a personally assembled LCR017-D reports solid behavior under load. Qualitative and build-specific only: no numeric or controlled frame-only test, and not proof for the retained mechanical-105 package. The page was not reopened; separate reader comments were excluded.",
+          "result_url": "https://www.hambini.com/review-lightcarbon-lcr-017d/"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "lightcarbon-lcr017d-hambini-review-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "The previously recorded review of a personally assembled LCR017-D reports solid behavior under load. Qualitative and build-specific only: no numeric or controlled frame-only test, and not proof for the retained mechanical-105 package. The page was not reopened; separate reader comments were excluded.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-154-lightcarbon-speed7-frameset-frame-stiffness",
+    "extends_attempt_id": "candidate-lightcarbon-speed7-frameset-frame-stiffness-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+    "reason": "The frozen B154 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "lightcarbon-lcr017d-hambini-review-2026-09-22"
+    ],
+    "note": "The candidate already records this accepted qualitative exact-chassis Hambini assessment with its personal-build and non-numeric caveats."
+  }
+}

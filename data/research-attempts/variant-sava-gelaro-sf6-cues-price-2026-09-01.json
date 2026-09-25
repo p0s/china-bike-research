@@ -483,5 +483,11 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-gelaro-sf6-cues-batch-045-50-area-sweep-2026-09-01.json. Current exact direct page lists US$1,499; the CNY figure is a dated reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-sava-gelaro-sf6-cues-batch-045-50-area-sweep-2026-09-01.json. Current exact direct page lists US$1,499; the CNY figure is a dated reference conversion.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-gelaro-sf6-official-2026-08-28", "ecb-reference-rates-2026-08-31"],
+    "note": "The exact R21-U6000-11S global manufacturer listing is US$1,499; the dated ECB rate supports only a reference CNY conversion. No mainland observed price or checkout amount is established, so the China-market price gap remains."
+  }
 }

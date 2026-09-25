@@ -1,0 +1,51 @@
+{
+  "id": "candidate-missing-china-price-elves-vanyar-price-recheck-2026-09-24",
+  "field": "price",
+  "retry_of": "candidate-missing-china-price-elves-vanyar-price-2026-09-01",
+  "retry_reason": "A current exact 2024 manufacturer route was rechecked on 2026-09-23; one separate mainland seller search tests the remaining CNY checkout gap.",
+  "searched_at": "2026-09-24",
+  "priority": "high",
+  "status": "blocked",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "campaign_extension": {
+    "id": "gap-fill-batch-76-elves-vanyar-price",
+    "extends_attempt_id": "candidate-missing-china-price-elves-vanyar-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-76-scope.json",
+    "reason": "The exact 2024 Vanyar manufacturer route was rechecked recently; one bounded JD/Tmall seller search can test for a mainland CNY offer.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-elves-vanyar-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact public global manufacturer page surfaced, but no mainland seller item or CNY offer appeared.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Vanyar Pro Disc 2024 车架组 京东 天猫 中国 价格",
+          "route": "One focused public mainland seller-item search for the exact 2024 Vanyar Pro Disc frameset",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://my.elvesbike.com/products/2024-elves-vanyar-full-carbon-disc-road-framesets-superlight-disc-road-frame",
+          "note": "Search surfaced the exact 2024 global manufacturer product pages but no exact mainland seller item or visible CNY offer. The US$1,100 global price is foreign-market evidence and was excluded; other Vanyar years and models were not transferred."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-elves-vanyar"
+  },
+  "notes": "Disposition: unresolved. Keep candidate observed_price absent and retain the US$1,100 global reference separately. Reopen if an exact current mainland frameset item exposes CNY and package conditions."
+}

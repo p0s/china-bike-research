@@ -96,17 +96,27 @@ export function buildResearch50Campaign(data = loadDataset(), options = {}) {
   };
 }
 
-function attemptCoverage(attempt) {
-  const applications = (attempt?.required_channels ?? []).flatMap((channel) => attempt.channels?.[channel]?.attempts ?? []);
+function campaignCoverageRecord(attempt, recordsById) {
+  let record = attempt;
+  while (record?.campaign_extension?.extends_attempt_id && recordsById.has(record.campaign_extension.extends_attempt_id)) {
+    record = recordsById.get(record.campaign_extension.extends_attempt_id);
+  }
+  return record;
+}
+
+function attemptCoverage(attempt, recordsById) {
+  const campaignRecord = campaignCoverageRecord(attempt, recordsById);
+  const applications = (campaignRecord?.required_channels ?? []).flatMap((channel) => campaignRecord.channels?.[channel]?.attempts ?? []);
   return {
     applications: applications.length,
     areas: new Set(applications.map((entry) => entry.approach_area_id).filter(Boolean)).size,
-    requirement: attempt?.minimum_distinct_approaches ?? null
+    requirement: campaignRecord?.minimum_distinct_approaches ?? null
   };
 }
 
 export function auditResearch50Campaign(campaign, data = loadDataset(), asOf = new Date().toISOString().slice(0, 10)) {
   const attemptIndex = latestResearchAttemptIndex(data.researchAttempts ?? []);
+  const recordsById = new Map((data.researchAttempts ?? []).map((record) => [record.id, record]));
   const currentFields = new Map();
   for (const record of buildGapReport(data, asOf).records) {
     for (const gap of record.gaps) {
@@ -117,7 +127,7 @@ export function auditResearch50Campaign(campaign, data = loadDataset(), asOf = n
   const campaignKeys = new Set(campaign.fields.map((field) => field.key));
   const fields = campaign.fields.map((field) => {
     const attempt = attemptIndex.get(field.key) ?? null;
-    const coverage = attemptCoverage(attempt);
+    const coverage = attemptCoverage(attempt, recordsById);
     const complete = coverage.requirement === campaign.minimum_distinct_approaches &&
       coverage.applications >= campaign.minimum_distinct_approaches &&
       coverage.areas >= campaign.minimum_distinct_approaches;

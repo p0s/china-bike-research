@@ -1,0 +1,149 @@
+{
+  "batch": 146,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 10,
+    "atomic_gap_entries_resolved": 0,
+    "atomic_gap_entries_left_open": 10,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 9,
+    "research_attempts_before": 1638,
+    "research_attempts_after": 1647,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 397,
+      "conflicted": 35,
+      "found": 9,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 2,
+    "source_records_after": 1420,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "price_records_changed": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "unique_page_urls_opened": 5,
+    "new_page_urls_verified_absent_before_open": 5,
+    "previously_recorded_urls_opened": 0,
+    "previously_recorded_urls_skipped": 3,
+    "page_fetches_with_content": 5,
+    "page_opens_returning_no_content_or_timeout": 0,
+    "retries_after_page_open_failure": 0,
+    "attempt_ledger_note": "The SAVA Gelaro S4 query ran, but no new field-level attempt record was added: that field already has a same-day found attempt, and the research validator does not allow another same-day record. Its existing attempt was left unchanged; the query and disposition are recorded here.",
+    "note": "All five opened URLs passed an exact-literal absence check before opening. Existing route histories were reviewed without reopening their recorded URLs. Search snippets were not accepted as exact listing or checkout evidence."
+  },
+  "model_results": [
+    {
+      "model_id": "carbonda-cfr696-frameset",
+      "gaps": ["purchase-route"],
+      "new_query": "Carbonda CFR696 UDH gravel frameset current stock CNY direct seller checkout",
+      "opened_url": "https://veloot.de/product/carbonda-cfr-696-gravel-carbon-frameset",
+      "evidence": "The surfaced Veloot page reported an expired €580 offer and did not establish the retained UDH package or a current mainland-China route.",
+      "disposition": "unresolved-current-mainland-route-not-established"
+    },
+    {
+      "model_id": "ican-gra04-frameset",
+      "gaps": ["purchase-route"],
+      "new_query": "ICAN GRA04 T47 UDH carbon gravel frameset mainland factory store current purchase",
+      "existing_evidence": "The current exact official route remains quote-based; prior USD quote evidence predates the retained T47 package. No new exact current fixed-price offer surfaced, and no page was opened.",
+      "disposition": "unresolved-current-price-and-exact-package-checkout-not-established"
+    },
+    {
+      "model_id": "bianchi-oltre-race",
+      "gaps": ["purchase-route"],
+      "new_query": "Bianchi Oltre Race YTB8D 2025 mainland China current seller listing CNY Shimano 105",
+      "existing_evidence": "Reviewed regional listings identify different 2026 or YTB8DF builds and do not establish a current mainland route for the retained 2025 YTB8D identity. No new page was opened.",
+      "disposition": "unresolved-exact-generation-mainland-route-not-established"
+    },
+    {
+      "model_id": "sava-gelaro-s4-grx400",
+      "gaps": ["purchase-route"],
+      "new_query": "SAVA Gelaro S4 R21-GRX400-20S mainland China current official JD stock CNY",
+      "skipped_recorded_url": "https://www.jd.com/hprm/131820696360d00ce6a0.html",
+      "existing_evidence": "The exact JD URL was already present in earlier batch results and research history, so it was not reopened. Existing global USD-route and official JD storefront evidence still do not establish selected-option mainland checkout.",
+      "attempt_ledger_disposition": "No new attempt identity was appended because the exact field already has a same-day found record; the query and result are recorded in this batch result instead.",
+      "disposition": "unresolved-mainland-checkout-not-established"
+    },
+    {
+      "model_id": "sava-gelaro-sf6-cues",
+      "gaps": ["purchase-route"],
+      "new_query": "SAVA Gelaro SF6 CUES U6000 11 speed mainland China current price JD official route stock",
+      "opened_url": "https://www.jd.com/book/1318889ee09ee9b13c14.html",
+      "evidence": "The opened JD booking/catalog page did not identify SF6. Search snippets mentioning U6000 options do not establish the exact build, seller, price or checkout.",
+      "disposition": "unresolved-exact-mainland-listing-not-identified"
+    },
+    {
+      "model_id": "ican-graro-frameset",
+      "gaps": ["purchase-route"],
+      "new_query": "ICAN Graro carbon gravel frameset mainland China current price authorized 2026",
+      "opened_url": "https://icanwheels.com/products/ready-to-ship-graro-frame",
+      "source_id_added": "ican-graro-ready-to-ship-route-2026-09-25",
+      "evidence": "The current exact manufacturer page says Ready to ship, lists US$899 and sizes 49/52/54/56/58, offers China Warehouse as a location option and Add to Cart, and identifies the frameset package. Selected-size/color stock, mainland delivery eligibility or cost, CNY total, taxes, warranty, returns and final checkout remain unverified.",
+      "disposition": "exact-direct-route-reference-added-mainland-terms-unresolved"
+    },
+    {
+      "model_id": "xmcarbonspeed-cs-gr01-frameset",
+      "gaps": ["purchase-route"],
+      "new_query": "XMCarbonSpeed CS-GR01 mainland China official current listing CNY authorized dealer",
+      "skipped_recorded_url": "https://www.xmcarbonspeed.cc/products/cs-gr01-gravel-frame",
+      "existing_evidence": "The exact recorded page's latest recheck was labeled crawled four weeks earlier, so it was not reopened. The new search did not surface an exact current offer.",
+      "disposition": "unresolved-current-exact-offer-not-reverified"
+    },
+    {
+      "model_id": "lightcarbon-lcg071s-pro-frameset",
+      "gaps": ["purchase-route"],
+      "new_query": "LightCarbon LCG071S PRO current China frameset order price checkout quote official 2026",
+      "opened_url": "https://de.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html",
+      "source_id_added": "lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25",
+      "evidence": "The current German-language manufacturer mirror identifies LCG071S-PRO, China origin, sizes 49/52/55/58, PayPal or bank transfer, and a product inquiry form. No public price, stock, checkout, selected package, delivery, tax or return terms are shown. The owner-reported US$595 transaction lacks a year and freight/tax basis.",
+      "disposition": "exact-manufacturer-inquiry-route-added-price-and-delivery-unresolved"
+    },
+    {
+      "model_id": "pardus-super-sport-gen2-egr",
+      "gaps": ["purchase-route"],
+      "new_query": "PARDUS Super Sport Gen2 eGR 4999元 2026在售 官方旗舰店",
+      "skipped_recorded_url": "https://item.taobao.com/item.htm?id=1035008500060",
+      "existing_evidence": "The exact Taobao item had already been opened unsuccessfully on 2026-09-24 and was not retried. Search snippets reporting a 12-speed eGR, stock and ¥4,999 do not verify seller identity, selected SKU or checkout.",
+      "disposition": "unresolved-market-snippets-not-verified-as-exact-checkout"
+    },
+    {
+      "model_id": "scott-addict-rc-40",
+      "gaps": ["purchase-route"],
+      "new_query": "Scott Addict RC 40 290362 mainland China official listing current 2026 price JD Tmall",
+      "opened_url": "https://www.jd.com/hprm/1318639516ba307604f5.html",
+      "evidence": "The JD category page includes an Addict RC 40 label, coffee color, size S and a 6折 label, but no model code/year, seller identity or price. It does not establish a mainland route for exact model 290362.",
+      "disposition": "unresolved-exact-model-mainland-route-not-established"
+    }
+  ],
+  "validation": {
+    "coverage_acceptance": "passed: 212 image records and 277 catalog targets protected; 2 sources and 9 attempt records added monotonically",
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1420 sources, 212 image records, 236 candidates, 1647 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35714 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1420 sources, 236 candidates",
+      "tests": "329/329 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "sandbox_note": "The normal sandbox full-gate run failed only because seven reliability-preview-server tests could not bind 127.0.0.1 (EPERM). The exact full gate passed when retried with the narrowly scoped loopback exception.",
+    "git_diff_check": "passed"
+  },
+  "image_report": "not run; no image records changed",
+  "external_delivery": "none"
+}

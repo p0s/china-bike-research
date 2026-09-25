@@ -488,5 +488,14 @@
     "xds-ad350-2026-current-options-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad350-2026-batch-024-50-area-sweep-2026-08-30.json. Current exact 2026 evidence establishes L-TWOO RX hydraulic 2x12 and the Branta 50/34T power-meter crank; the 2025 1x12 generation is excluded."
+  "notes": "B123 reused the exact 2026 regional specification for L-TWOO RX hydraulic 2x12 with Branta 50/34T power-meter crank and 12-speed cassette; mainland JD indexing separately supports 2026 24-speed positioning, not the retained card BOM.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "xds-ad350-2026-hk-spec-2026-08-30",
+      "xds-ad350-2026-current-options-2026-08-30"
+    ],
+    "note": "B123 reused the exact 2026 regional specification for L-TWOO RX hydraulic 2x12 with Branta 50/34T power-meter crank and 12-speed cassette; mainland JD indexing separately supports 2026 24-speed positioning, not the retained card BOM."
+  }
 }

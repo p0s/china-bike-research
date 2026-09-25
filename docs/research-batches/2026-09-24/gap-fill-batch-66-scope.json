@@ -1,0 +1,64 @@
+{
+  "batch": 66,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "B60 checked 25 image resources and B65 checked 10 additional image records. This is the only current image-health gap not included in either frozen set; one exact endpoint check closes the remaining untested image batch without exceeding the per-writer limit.",
+    "exact_products": 1,
+    "image_records": 1,
+    "resource_endpoints": 1,
+    "previous_batches": [
+      "B60: 25 remote image resources, all unreachable without HTTP status or content type",
+      "B65: 10 remote image resources, all unreachable without HTTP status or content type"
+    ]
+  },
+  "target": {
+    "image_id": "yoeleo-altera-g21-primary-image",
+    "record": "YOELEO Altera G21",
+    "gap_code": "image-health-unverified",
+    "url": "https://cdn.shopify.com/s/files/1/0094/1142/8410/files/yoeleo-altera-g21-black-atisan-frame.webp?v=1773386351"
+  },
+  "runtime_check": {
+    "command": "npm run --silent image:report -- --ids=yoeleo-altera-g21-primary-image --json",
+    "acceptance": "Only a current HTTP 2xx/3xx response with image/* content type and a matching URL supports a healthy_check record. Host-blocked or unreachable results do not prove that the remote image is broken.",
+    "no_copy": "Do not download, mirror, or otherwise copy the image."
+  },
+  "done_criteria": [
+    "Run one image-health report for the one frozen image ID.",
+    "If healthy, record the exact status, content type, URL and check date; run coverage acceptance and the full repository gate once for the image-record change.",
+    "If blocked or unreachable without HTTP status/content type, preserve image records and record the bounded result without calling the image broken.",
+    "Do not run another report in this batch and do not inspect or copy image contents.",
+    "Local B66 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B66 batch only; no push, pull request, merge, publication or production action."
+}

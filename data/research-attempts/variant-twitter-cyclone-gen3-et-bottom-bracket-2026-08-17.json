@@ -28,8 +28,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-gen3-et-china-2026-08-17"
+    "twitter-cyclone-gen3-et-china-2026-08-17",
+    "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Qualified regional manufacturer claim: the USA Cyclone 3rd ET page specifies a threaded T47×24 mm bottom bracket. Mainland trim equivalence is unconfirmed; reopen on an exact mainland specification or a changed official standard.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+    ],
+    "note": "Qualified regional manufacturer claim: the USA Cyclone 3rd ET page specifies a threaded T47×24 mm bottom bracket. Mainland trim equivalence is unconfirmed; reopen on an exact mainland specification or a changed official standard."
+  }
 }

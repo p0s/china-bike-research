@@ -1,0 +1,41 @@
+{
+  "id": "variant-sava-gelaro-s8-bottom-bracket-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s8"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Do not infer the frame shell from the crank or from another SAVA model.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact S8 shell standard or dimensions surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S8 GRX820 exact bottom bracket shell standard dimensions",
+          "route": "One focused exact-model search for a Gelaro S8 bottom-bracket specification",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://savadeck-bike.com/collections/t800-carbon-fiber-frame-bikes/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s",
+          "note": "The exact manufacturer page surfaced but its URL is already recorded in the predecessor history and was not reopened. No shell standard or dimensions were found in the search result; general standards and another model manual are not exact S8 evidence."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Do not infer the frame shell from the crank or from another SAVA model."
+}

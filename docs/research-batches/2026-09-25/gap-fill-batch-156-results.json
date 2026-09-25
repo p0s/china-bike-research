@@ -1,0 +1,138 @@
+{
+  "batch": 156,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-156-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 667,
+    "catalog_gap_entries_after": 667,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 10,
+    "price_fields_filled": 0,
+    "atomic_gap_entries_left_unresolved": 10,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 10,
+    "campaign_extensions_added": 10,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1784,
+    "research_attempts_after": 1794,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35861,
+    "research_status_counts_after": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 1,
+    "source_records_after": 1424,
+    "candidate_facts_changed": 1,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "model_results": [
+    {
+      "model_id": "lightcarbon-lcr007-v",
+      "field": "price",
+      "new_query": "LightCarbon LCR007-V current China manufacturer frameset price CNY exact package 2026",
+      "result": "The prior official LCR007-V page publishes no price. The exact AmoyBrand URL was absent from the recorded data before opening, but the fetch failed with '(400) Redirect loop detected'; it was not retried.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcr014-v",
+      "field": "price",
+      "new_query": "LightCarbon LCR014-V current China manufacturer frameset price CNY exact package 2026",
+      "result": "The current official LCR014-V page publishes no price. Search results identified only recorded, sibling-model, or regional pages; none supplied an attributable current CNY amount for this exact frameset package, and no page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcr0x-d",
+      "field": "price",
+      "new_query": "LightCarbon LCR0X-D current China frameset price CNY exact package 2026",
+      "result": "The current official LCR0X-D page publishes no price. A used listing was for a complete bike rather than the exact frame package; no qualifying current CNY amount surfaced and no page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcr0x-v",
+      "field": "price",
+      "new_query": "LightCarbon LCR0X-V current China frameset price CNY exact package 2026",
+      "result": "The current official LCR0X-V page publishes no price. Search results did not provide an attributable exact-package current CNY amount; no new page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lctt05-d",
+      "field": "price",
+      "new_query": "LightCarbon LCTT05-D current China TT frameset price CNY exact proprietary kit 2026",
+      "result": "The current official LCTT05-D page publishes no price. The previously recorded US$1,150–1,450 indicative range lacks a dated transaction, selected proprietary kit, or checkout basis and is not an exact current CNY observation; no new page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcr015s-v",
+      "field": "price",
+      "new_query": "LightCarbon LCR015S-V current China frameset price CNY selected cockpit package 2026",
+      "result": "The newly opened AmoyBrand China page identifies LCR015S-V and China origin, but displays no amount and only offers contact/message pricing. No seller contact was made; the page does not establish a price.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcrxs-d",
+      "field": "price",
+      "new_query": "LightCarbon LCRXS-D current China frameset price CNY exact package 2026",
+      "result": "The current official LCRXS-D page publishes no price. Search results included unrelated model-price snippets and did not establish an exact current package amount; no new page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lcrxs-v",
+      "field": "price",
+      "new_query": "LightCarbon LCRXS-V current China frameset price CNY HBR05 HBR07 cockpit package 2026",
+      "result": "The current official LCRXS-V page publishes no price. Sibling listings did not establish an exact package amount, and the HBR05/HBR07 package conflict remains unresolved; no new page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lctr003",
+      "field": "price",
+      "new_query": "LightCarbon LCTR003 current China track frameset price CNY exact package 2026",
+      "result": "The current official LCTR003 page publishes no price. A generic Alibaba US$420–490 card did not identify LCTR003 or its package and was excluded; no new page was opened.",
+      "disposition": "price-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-lctt001",
+      "field": "price",
+      "new_query": "LightCarbon LCTT001 current China time trial frameset price CNY exact package 2026",
+      "result": "The current official LCTT001 page publishes no price. Supplier-directory results identified the product but supplied no amount, MOQ, or package; no new page was opened.",
+      "disposition": "price-unresolved"
+    }
+  ],
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 2,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 2,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 1,
+    "page_open_failures": [
+      {
+        "url": "https://www.amoybrand.com/lightcarbon-super-light-carbon-road-frameset-lcr007-v_c5171.html",
+        "error": "(400) Redirect loop detected",
+        "retries": 0
+      }
+    ],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "One newly surfaced AmoyBrand URL failed on its first open and was not retried. One distinct exact-MPN AmoyBrand page opened and confirmed contact-only pricing. No known source URL was reopened."
+  },
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35861 web attempts",
+    "coverage_baseline": "accepted monotonic coverage for 212 images / 277 catalog targets after ten protected attempt records and one source addition",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 332/332 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed: git diff --check",
+    "image_report": "not run: no image record changed"
+  }
+}

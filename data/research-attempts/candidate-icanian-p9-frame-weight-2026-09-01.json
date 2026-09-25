@@ -6,7 +6,7 @@
   },
   "field": "frame-weight",
   "priority": "high",
-  "searched_at": "2026-09-01",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -481,8 +481,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "icanian-p9-official-2026-08-08",
-    "icanian-p9-complete-bike-current-2026-09-01"
+    "icanian-p9-complete-bike-current-2026-09-01",
+    "icanian-p9-frame-weight-current-recheck-2026-09-25",
+    "icanian-p9-complete-bike-frame-weight-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-p9-batch-033-50-area-sweep-2026-09-01.json. Current exact manufacturer pages conflict: the frame page lists 2,570 +/- 40 g through M and 2,620 +/- 40 g in L, while the complete-bike page claims 2,400 +/- 20 g."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-icanian-p9-batch-033-50-area-sweep-2026-09-01.json. Current exact manufacturer pages conflict: the frame page lists 2,570 +/- 40 g through M and 2,620 +/- 40 g in L, while the complete-bike page claims 2,400 +/- 20 g.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "icanian-p9-frame-weight-current-recheck-2026-09-25",
+      "icanian-p9-complete-bike-frame-weight-current-recheck-2026-09-25"
+    ],
+    "note": "The frame-only page states 2,570 ± 40 g XS/S/M and 2,620 ± 40 g L; the complete-bike page says 2,400 ± 20 g and labels its table entry XS while also listing S/M/L. The manufacturer sources conflict; no frame weight is selected."
+  }
 }

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-de-rosa-new-838-complete-weight-2026-08-30-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-new-838"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-de-rosa-new-838-complete-weight-2026-08-30",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-de-rosa-838-complete-weight",
+    "extends_attempt_id": "candidate-de-rosa-new-838-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One exact-model search checked complete-weight; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-de-rosa-new-838-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The official Japan page lists size 46–56, Shimano 105 Di2 12-speed and ¥495,000, and says the sale was limited with no further production. It gives no complete-bike weight. Its 2023 imagery and limited-sale notice leave the link to the retained current candidate unclear; no weight qualifies.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "De Rosa New 838 2026 complete bicycle weight Shimano 105 Di2 retail model size 52",
+          "route": "New official Japan product page, 838 Shimano 105 Di2 complete bike.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.derosa.jp/products/new-838-shimano-105-di2-complete",
+          "note": "The official Japan page lists size 46–56, Shimano 105 Di2 12-speed and ¥495,000, and says the sale was limited with no further production. It gives no complete-bike weight. Its 2023 imagery and limited-sale notice leave the link to the retained current candidate unclear; no weight qualifies."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The official Japan page lists size 46–56, Shimano 105 Di2 12-speed and ¥495,000, and says the sale was limited with no further production. It gives no complete-bike weight. Its 2023 imagery and limited-sale notice leave the link to the retained current candidate unclear; no weight qualifies."
+}

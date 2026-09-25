@@ -489,8 +489,17 @@
     "pardus-super-sport-original-official-2026-08-30",
     "pardus-super-sport-fluorescent-index-2026-08-30",
     "pardus-super-sport-launch-biketo-2026-08-30",
-    "pardus-super-sport-review-biketo-2026-08-30"
+    "pardus-super-sport-review-biketo-2026-08-30",
+    "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-super-sport-50-area-sweep-2026-08-30.json. The exact current card/index, manufacturer page and dated launch/review establish the original SUPER SPORT generation and keep Gen 2 separate."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-super-sport-50-area-sweep-2026-08-30.json. The exact current card/index, manufacturer page and dated launch/review establish the original SUPER SPORT generation and keep Gen 2 separate.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-super-sport-105-hdb-current-recheck-2026-09-23"
+    ],
+    "note": "exact-title-and-configuration-supported-generation-label-qualified: Manufacturer title is SUPER SPORT—105 HDB and footer names 山东泰山瑞豹复合材料有限公司. “Original generation” is not literal page text; it is qualified by the 11-speed R7000/R7020 build. Reopen trigger: Reopen if PARDUS publishes a generation-specific catalog entry or a conflicting successor mapping."
+  }
 }

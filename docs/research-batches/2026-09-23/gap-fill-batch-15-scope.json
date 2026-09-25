@@ -1,0 +1,226 @@
+{
+  "batch_id": "gap-fill-batch-15-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps reports 41 published variants, 222 candidates and 39 drivetrain gaps. Fresh npm run --silent research:queue reports 0 ready, 751 evidence-found, 45 deferred, 498 blocked and 60 conflicted. Selection begins after excluding Batch 14 model groups; it takes the next prioritized distinct model groups and caps the batch at 25 atomic fields.",
+  "selection_basis": "Selected six prioritized exact-model groups for direct source research and four disjoint exact-model groups for one read-only Luna Max evidence review. Related platform and variant records share a model_group; no model group is researched by both owners.",
+  "exact_model_count": 10,
+  "atomic_field_count": 25,
+  "exact_models": [
+    "cyctrac-r18",
+    "de-rosa-idol",
+    "elro-f1",
+    "elves-falath-r7170",
+    "elves-mori-aerox",
+    "evolve-cima-gr",
+    "falco-t91-t912",
+    "frrx-carbon-road-unknown",
+    "giant-defy-advanced-sl1-community-lead",
+    "giant-propel-advanced-3"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "cyctrac-r18",
+      "exact_identity": "TWITTER 骓特 R18 (Racing ED) / Cyctrac candidate",
+      "model_group": "cyctrac-r18",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-cyctrac-r18-complete-weight-2026-08-29",
+        "candidate-cyctrac-r18-drivetrain-2026-08-29",
+        "candidate-cyctrac-r18-frame-material-2026-08-29",
+        "candidate-cyctrac-r18-identity-source-2026-08-29"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-idol",
+      "exact_identity": "DE ROSA 德罗萨 Idol candidate",
+      "model_group": "de-rosa-idol",
+      "fields": [
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-de-rosa-idol-frame-material-2026-08-29",
+        "candidate-de-rosa-idol-identity-source-2026-08-29"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elro-f1",
+      "exact_identity": "OBIKE 欧拜克 F1 (ELRO-marked listing) candidate",
+      "model_group": "elro-f1",
+      "fields": [
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-elro-f1-frame-material-2026-08-29",
+        "candidate-elro-f1-identity-source-2026-08-29"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "elves-falath-r7170",
+      "exact_identity": "ELVES Falath Pro Disc R7170 exact complete-bike variant",
+      "model_group": "elves-falath-r7170",
+      "fields": [
+        "frame",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "variant-elves-falath-r7170-frame-2026-08-17",
+        "variant-elves-falath-r7170-tire-clearance-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "elves-falath-r7170",
+      "exact_identity": "ELVES Falath Pro Disc platform used by the R7170 variant",
+      "model_group": "elves-falath-r7170",
+      "fields": [
+        "frame-material",
+        "frame-stiffness",
+        "geometry"
+      ],
+      "attempt_ids": [
+        "platform-elves-falath-r7170-frame-material-2026-08-30",
+        "platform-elves-falath-r7170-frame-stiffness-2026-08-30",
+        "platform-elves-falath-r7170-geometry-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "elves-mori-aerox",
+      "exact_identity": "ELVES Mori AeroX platform",
+      "model_group": "elves-mori-aerox",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "platform-elves-mori-aerox-frame-stiffness-2026-09-01"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "elves-mori-aerox-frameset",
+      "exact_identity": "ELVES Mori AeroX frameset offer",
+      "model_group": "elves-mori-aerox",
+      "fields": [
+        "price",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-elves-mori-aerox-frameset-price-2026-09-01",
+        "variant-elves-mori-aerox-frameset-purchase-route-2026-09-01"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "evolve-cima-gr",
+      "exact_identity": "EVOLVE CIMA GR frameset platform",
+      "model_group": "evolve-cima-gr",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "geometry"
+      ],
+      "attempt_ids": [
+        "platform-evolve-cima-gr-frame-stiffness-2026-09-01",
+        "platform-evolve-cima-gr-frame-weight-2026-08-27",
+        "platform-evolve-cima-gr-geometry-2026-08-27"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "evolve-cima-gr-frameset",
+      "exact_identity": "EVOLVE CIMA GR frameset offer",
+      "model_group": "evolve-cima-gr",
+      "fields": [
+        "price",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-evolve-cima-gr-frameset-price-2026-09-01",
+        "variant-evolve-cima-gr-frameset-purchase-route-2026-09-01"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "falco-t91-t912",
+      "exact_identity": "FALCO 三火 T912 / 寰宇单车 candidate",
+      "model_group": "falco-t91-t912",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-falco-t91-t912-frame-material-2026-08-29"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "frrx-carbon-road-unknown",
+      "exact_identity": "FRRX 法克斯 carbon road range candidate, exact SKU unresolved",
+      "model_group": "frrx-carbon-road-unknown",
+      "fields": [
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-frrx-carbon-road-unknown-frame-material-2026-08-29"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "exact_identity": "Giant Defy Advanced SL 1 mainland community lead",
+      "model_group": "giant-defy-advanced-sl1-community-lead",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-giant-defy-advanced-sl1-community-lead-purchase-route-2026-08-17"
+      ],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-advanced-3",
+      "exact_identity": "GIANT 捷安特 Propel Advanced 3 candidate",
+      "model_group": "giant-propel-advanced-3",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-giant-propel-advanced-3-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-review"
+    }
+  ],
+  "integration_instructions": [
+    "Inspect only the frozen attempt and accepted sources before current public research; one exact model and one source at a time. Stop at decisive credible exact-model evidence.",
+    "The Luna Max reviewer is evidence-only and must not edit files, recurse, research any root-owned model, or use XHS. Root integrates all findings after the review returns.",
+    "For direct claims, add dated source records and candidate/catalog facts only when the exact value is supported. Preserve build, generation, price, and source-identity ambiguity. Unknown is not a negative fact.",
+    "For source reuse, add a dated source-reuse resolution only when the candidate already carries the sourced fact. Keep any unsatisfied mapping as an unresolved finding with an exact reopen trigger.",
+    "Do not add images unless exact identity and documented reusable rights, credit, alt text, and fallback are established. No external GitHub actions."
+  ],
+  "done_criteria": "Assess all 25 frozen fields, integrate verified evidence or record exact unresolved dispositions, add a batch results matrix, run research:check and coverage:accept if data/ledger changes, run npm run check once for this coherent batch, and inspect JSON plus final diff. No image report unless image records change.",
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

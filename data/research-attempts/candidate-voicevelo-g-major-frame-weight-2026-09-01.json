@@ -482,5 +482,11 @@
     "voicevelo-g-major-panda-podium-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-voicevelo-g-major-batch-047-50-area-sweep-2026-09-01.json. Current exact-SKU retailer basis for the 790 g claim found."
+  "notes": "B125 source reuse: exact G Major frameset SKU VFV-01-GMAJOR retailer claim is 790 g ±3% for size 51 in VG1 paint, excluding accessories. Preserve the stated size/paint basis and identify it as retailer-restated, not independently weighed.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": ["voicevelo-g-major-panda-podium-2026-08-17"],
+    "note": "The exact-SKU retailer source supports only its size-51 VG1-paint 790 g ±3% claim, excluding accessories; it is not complete-bike weight or independent weighing."
+  }
 }

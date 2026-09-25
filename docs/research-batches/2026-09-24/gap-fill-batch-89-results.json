@@ -1,0 +1,34 @@
+{
+  "batch": 89,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-89-scope.json"],
+  "result": {
+    "exact_models_checked": 2,
+    "atomic_gaps_checked": 10,
+    "source_reuse_resolutions_added": 10,
+    "current_specification_source_records_added": 2,
+    "merged_candidate_records_updated": 2,
+    "structured_candidate_fields_added": 5,
+    "actionable_gap_inventory_change": 0,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-sava-a7l-2026-complete-weight-2026-08-30","disposition":"Current R08-R7120-24S page claims about 8.6 kg for a 50 mm carbon-wheel build, varying by size. Retained card wheel selection and weighing basis are unknown, so its exact weight remains open."},
+      {"attempt_id":"candidate-sava-a7l-2026-drivetrain-2026-08-30","disposition":"Current page lists SENSAH HRD 2x12 controls/brakes and Shimano 105 R7100 components; the R08-R7120-24S label/component-series mismatch is preserved and EMPIRE PRO is not asserted."},
+      {"attempt_id":"candidate-sava-a7l-2026-frame-material-2026-08-30","disposition":"Current exact page confirms T800 carbon frame, fork and seatpost; layup and molding process are not stated."},
+      {"attempt_id":"candidate-sava-a7l-2026-frame-stiffness-2026-08-30","disposition":"Earlier manufacturer page supported a qualitative rigidity/lightweight claim; current page does not repeat it. The candidate note dates and qualifies the earlier claim; no numeric result or protocol is available."},
+      {"attempt_id":"candidate-sava-a7l-2026-tire-clearance-2026-08-30","disposition":"Manufacturer compatibility guide supports 25C maximum for R08. Current page lists 25C fitted only, so the guide remains the maximum-width source."},
+      {"attempt_id":"candidate-sava-gelaro-s4-complete-weight-2026-08-30","disposition":"Current exact R21-GRX400-20S page claims about 10.2 kg, varying by size; encoded as an approximate manufacturer claim with unknown weighing basis."},
+      {"attempt_id":"candidate-sava-gelaro-s4-drivetrain-2026-08-30","disposition":"Current exact page confirms mechanical Shimano GRX400 2x10 with hydraulic disc brakes and the RX400/46-30/11-34 component package."},
+      {"attempt_id":"candidate-sava-gelaro-s4-frame-material-2026-08-30","disposition":"Current exact page confirms T800 carbon frame and fork; conflicting older review material claim is excluded."},
+      {"attempt_id":"candidate-sava-gelaro-s4-frame-stiffness-2026-08-30","disposition":"Earlier manufacturer claim and separate long-term ride observations provide qualitative evidence only; current page is silent on stiffness, and the review is not a measured test."},
+      {"attempt_id":"candidate-sava-gelaro-s4-tire-clearance-2026-08-30","disposition":"Current exact R21 page lists 700x40C fitted and 45C maximum; this is a nominal tire-width compatibility claim."}
+    ],
+    "data_outcome": "The two candidate records were already marked merged-into-exact-record and are excluded from the buyer-impact gap report. Their facts and evidence notes were improved, but the 705-gap catalog inventory is unchanged. Evidence-found queue decreased from 203 to 193. No published variant, image, price, recommendation, warranty route, or publication status changed."
+  },
+  "validation": {
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1310 sources, 212 images, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic fields; 15450 public-post and 35608 web attempts",
+    "coverage": "pass after monotonic acceptance: 212 images, 73 price observations, 1310 sources, and 236 candidates",
+    "full_gate": "pass: developer-storage-cache wrapper; privacy, validation, research, coverage, 324 tests, build of 584 pages, and SEO audit with 458 indexable/126 noindex pages",
+    "diff_check": "pass"
+  }
+}

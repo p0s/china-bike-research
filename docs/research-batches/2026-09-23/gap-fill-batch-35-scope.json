@@ -1,0 +1,186 @@
+{
+  "batch_id": "gap-fill-batch-35-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 341,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "queue_filter_matches": {
+      "source_reuse_resolved_rows": 20,
+      "known_duplicate_java_aluminum_24s": 2,
+      "rows_with_50_or_more_distinct_approach_areas": 266,
+      "excluded_union": 271,
+      "eligible_unswept_fields": 70,
+      "selected_fields": 21,
+      "selected_exact_targets": 10
+    }
+  },
+  "selection_basis": "First queue-ordered evidence-found rows after excluding source-reuse-resolved rows, the known java-aluminum-24s duplicate, and rows with 50 or more distinct recorded approach areas. The exclusions overlap, so the union is counted once. Stop at 10 exact targets or 25 fields; this selection yields 21 fields across 10 targets.",
+  "exact_model_count": 10,
+  "atomic_field_count": 21,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 21,
+  "exact_models": [
+    "dengfu-gravel",
+    "evolve-cima-road",
+    "giant-defy-advanced-sl1-community-lead",
+    "hi-light-g7-2-grx-gr1600",
+    "incolor-ssr",
+    "irefox-profound-400",
+    "laget-discovery-one-flagship",
+    "missing-china-price-giant-defy-advanced",
+    "missing-china-price-merida-silex",
+    "missing-china-price-quick-pro-gr-one"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "dengfu-gravel",
+      "exact_identity": "Dengfu R20 Disc Gravel Bike Frame",
+      "owner": "luna-evidence-only",
+      "fields": ["warranty-support"],
+      "attempt_ids": ["candidate-dengfu-gravel-warranty-support-2026-08-17"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "evolve-cima-road",
+      "exact_identity": "Evolve CIMA road",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-stiffness", "package", "warranty-support"],
+      "attempt_ids": [
+        "candidate-evolve-cima-road-frame-stiffness-2026-09-22",
+        "candidate-evolve-cima-road-package-2026-09-22",
+        "candidate-evolve-cima-road-warranty-support-2026-09-22"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "exact_identity": "Giant Defy Advanced SL 1",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material"],
+      "attempt_ids": ["candidate-giant-defy-advanced-sl1-community-lead-frame-material-2026-08-28"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "exact_identity": "Hi-Light 航轮 G7.2 GRX GR1600 complete bike",
+      "owner": "luna-evidence-only",
+      "fields": ["drivetrain", "frame-material", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27",
+        "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27",
+        "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "incolor-ssr",
+      "exact_identity": "Incolor Speedster Radical SSR",
+      "owner": "luna-evidence-only",
+      "fields": ["identity", "image"],
+      "attempt_ids": [
+        "platform-incolor-ssr-identity-2026-08-17",
+        "platform-incolor-ssr-image-2026-08-17"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "exact_identity": "IREFOX Profound 400",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material", "frame-stiffness"],
+      "attempt_ids": [
+        "candidate-irefox-profound-400-frame-material-2026-08-28",
+        "candidate-irefox-profound-400-frame-stiffness-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-one-flagship",
+      "exact_identity": "LAGET DISCOVERY ONE flagship",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material", "frame-weight", "price", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-laget-discovery-one-flagship-frame-material-2026-08-27",
+        "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27",
+        "candidate-laget-discovery-one-flagship-price-2026-08-27",
+        "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "exact_identity": "Giant Defy Advanced 2",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material", "frame-stiffness"],
+      "attempt_ids": [
+        "candidate-missing-china-price-giant-defy-advanced-frame-material-2026-08-28",
+        "candidate-missing-china-price-giant-defy-advanced-frame-stiffness-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-merida-silex",
+      "exact_identity": "Merida SILEX 7000 25",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material", "frame-stiffness"],
+      "attempt_ids": [
+        "candidate-missing-china-price-merida-silex-frame-material-2026-08-28",
+        "candidate-missing-china-price-merida-silex-frame-stiffness-2026-08-28"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-quick-pro-gr-one",
+      "exact_identity": "Quick Pro GR:ONE China price target",
+      "owner": "luna-evidence-only",
+      "fields": ["frame-material"],
+      "attempt_ids": ["candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28"]
+    }
+  ],
+  "acceptance_rules": [
+    "Research only the frozen fields sequentially, one exact target and source at a time; stop at decisive evidence.",
+    "Distinguish exact model/generation, complete bike versus frameset, market, selected option, price/checkout conditions, size and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior observations without refreshing access dates unless actually rechecked.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with a concrete reason and reopen trigger; never infer.",
+    "Keep third-party images remote unless reusable rights are documented; preserve exactness, credit, alt text and fallback metadata.",
+    "Evidence agent is read-only: no repository edits, no XHS, no seller contact, no recursive delegation and no out-of-scope research. Root is sole writer.",
+    "Return one disposition for every frozen attempt id with exact source URL/id, source class/publisher, actual access date, supported claim, caveat and reopen trigger."
+  ]
+}

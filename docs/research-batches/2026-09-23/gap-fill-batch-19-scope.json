@@ -1,0 +1,145 @@
+{
+  "batch_id": "gap-fill-batch-19-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh data:gaps inventory: 41 published variants, 222 candidate entries. Fresh research:queue after Batch 18: 0 ready, 677 evidence-found, 45 deferred, 498 blocked, 60 conflicted. The selection takes the top ten distinct exact model groups in evidence-found priority order and all 23 unresolved atomic fields attached to those groups.",
+  "selection_basis": "Prioritize the highest-ranked evidence-found fields after Batch 18. Freeze ten exact model groups and 23 fields. The first five groups (13 fields) are assigned to one explicitly requested Luna Max evidence-only lane; root owns the other five groups (10 fields) and remains the sole writer.",
+  "exact_model_count": 10,
+  "atomic_field_count": 23,
+  "exact_models": [
+    "twitter-x7",
+    "west-biking-sl-one",
+    "felt-ia-2",
+    "upland-r70",
+    "de-rosa-new-838",
+    "missing-china-price-giant-tcr-advanced",
+    "gito-wave",
+    "hi-light-g7-2",
+    "hi-light-r6-105-al",
+    "hi-light-r9-2025"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-x7",
+      "exact_identity": "TWITTER 骓特 X7 high configuration",
+      "model_group": "twitter-x7",
+      "fields": ["complete-weight", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-twitter-x7-complete-weight-2026-08-30",
+        "candidate-twitter-x7-frame-material-2026-08-30",
+        "candidate-twitter-x7-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-sl-one",
+      "exact_identity": "WEST BIKING 西骑者 SL-ONE",
+      "model_group": "west-biking-sl-one",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+        "candidate-west-biking-sl-one-frame-material-2026-08-30",
+        "candidate-west-biking-sl-one-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "felt-ia-2",
+      "exact_identity": "FELT IA 2.0",
+      "model_group": "felt-ia-2",
+      "fields": ["complete-weight", "drivetrain"],
+      "attempt_ids": [
+        "candidate-felt-ia-2-complete-weight-2026-08-30",
+        "candidate-felt-ia-2-drivetrain-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "exact_identity": "UPLAND 阿普兰 R70",
+      "model_group": "upland-r70",
+      "fields": ["complete-weight", "frame-material", "frame-stiffness", "identity-source"],
+      "attempt_ids": [
+        "candidate-upland-r70-complete-weight-2026-08-30",
+        "candidate-upland-r70-frame-material-2026-08-30",
+        "candidate-upland-r70-frame-stiffness-2026-08-30",
+        "candidate-upland-r70-identity-source-2026-08-30"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "exact_identity": "DE ROSA 德罗萨 New 838",
+      "model_group": "de-rosa-new-838",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-de-rosa-new-838-drivetrain-2026-08-30"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "exact_identity": "Giant TCR Advanced 3-GC",
+      "model_group": "missing-china-price-giant-tcr-advanced",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-wave",
+      "exact_identity": "GITO 捷拓 波浪 carbon-wheel listing (exact frame model unresolved)",
+      "model_group": "gito-wave",
+      "fields": ["frame-material"],
+      "attempt_ids": ["candidate-gito-wave-frame-material-2026-08-29"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g7-2",
+      "exact_identity": "Hi-Light 航轮 G7.2",
+      "model_group": "hi-light-g7-2",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-hi-light-g7-2-price-2026-09-01"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r6-105-al",
+      "exact_identity": "Hi-Light 航轮 R6 105 AL",
+      "model_group": "hi-light-r6-105-al",
+      "fields": ["frame-material", "frame-stiffness", "tire-clearance", "price"],
+      "attempt_ids": [
+        "candidate-hi-light-r6-105-al-frame-material-2026-08-29",
+        "candidate-hi-light-r6-105-al-frame-stiffness-2026-08-29",
+        "candidate-hi-light-r6-105-al-tire-clearance-2026-08-29",
+        "candidate-hi-light-r6-105-al-price-2026-08-29"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r9-2025",
+      "exact_identity": "Hi-Light 航轮 R9 (2025)",
+      "model_group": "hi-light-r9-2025",
+      "fields": ["frame-material", "tire-clearance", "price"],
+      "attempt_ids": [
+        "candidate-hi-light-r9-2025-frame-material-2026-09-01",
+        "candidate-hi-light-r9-2025-tire-clearance-2026-09-01",
+        "candidate-hi-light-r9-2025-price-2026-09-01"
+      ],
+      "owner": "root"
+    }
+  ],
+  "acceptance_rules": [
+    "Use the freshest credible exact-model source available and record actual access dates; browse current pages rather than relying on model memory.",
+    "Resolve only the exact listed build or price; keep unmatched trims, model ambiguity, measurement basis, and purchase/checkout uncertainty explicit.",
+    "Update only the ten scoped candidates, sources, and attempts; do not change price history or add images unless exactness and reusable rights are established.",
+    "One evidence-only Luna Max lane covers the first five groups only. It returns source URLs, access dates, supported facts, caveats, field dispositions, and reopen triggers; it does not edit, use XHS, contact sellers, or recurse. Root alone integrates results and writes files."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "batch": 112,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 118,
+    "selected_queue_target": "candidate:sava-starship-r13:complete-weight",
+    "selected_queue_priority": 100
+  },
+  "scope": {
+    "exact_target_records": ["candidate:sava-starship-r13"],
+    "atomic_gap": "Evidence integration for the SAVA Starship R13 105 approximate complete-bike weight",
+    "evidence_to_reconcile": "The candidate already records an approximately 8.5 kg manufacturer claim from the exact Starship R13 105 page. The basis omits size, pedals, accessories, and weighing method. A later regional page recheck describes a mixed-control build and does not map that BOM to the retained mainland price cards.",
+    "research_boundary": "Use only existing exact manufacturer sources. Add a source-reuse resolution preserving the approximate 8.5 kg value and caveats for the exact R13 105 candidate; explicitly do not transfer it to the unmapped mainland cards or claim a size-specific weight.",
+    "excluded": [
+      "No size-specific estimate or build assembly.",
+      "No price-card, drivetrain, or other model changes.",
+      "No image evaluation or image-record change.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

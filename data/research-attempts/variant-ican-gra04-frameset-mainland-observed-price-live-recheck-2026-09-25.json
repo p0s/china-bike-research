@@ -1,0 +1,35 @@
+{
+  "id": "variant-ican-gra04-frameset-mainland-observed-price-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "ican-gra04-frameset"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-ican-gra04-frameset-mainland-observed-price-2026-09-24",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Do not record a mainland price from foreign wholesale listing text.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The only new exact GRA04 price lead is export wholesale with a two-unit minimum.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ICAN GRA04 frameset current mainland China price CNY exact model",
+          "route": "One focused exact-model search for a current mainland GRA04 frameset price",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.alibaba.com/pla/Carbon-Fiber-Gravel-Bike-Frame-Lightweight_1601656205661.html",
+          "note": "A search-result-only Alibaba listing titled for GRA04 showed US$675, minimum order two, and export delivery. It was not opened and is a wholesale foreign-currency offer, not a current mainland price observation or retail checkout."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Do not record a mainland price from foreign wholesale listing text."
+}

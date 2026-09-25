@@ -1,0 +1,31 @@
+{
+  "batch": 108,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-108-scope.json",
+  "result": {
+    "exact_target_records": ["variant:sava-a7l-r7100"],
+    "current_exact_product_page": "The current SAVA page labels its product A7L R08-R7120-24S, with SENSAH HRD 2x12 hydraulic controls and Shimano 105 R7100 derailleurs. It says approximately 8.6 kg varying by size without publishing a size-specific figure or weighing basis.",
+    "weight_disposition": "The page identifies a different build from the target A7L R7100 mechanical configuration; removed the unsupported 8.6 kg claim and its basis. Exact R7100 complete-bike weight remains unknown.",
+    "catalog_value_changes": "Removed one unsupported weight claim and its basis; refreshed last_reviewed and clarified editorial copy.",
+    "source_records_added": 1,
+    "retirement_records_added": 2,
+    "research_attempt_records_added": 0,
+    "research_attempts_resolved": 1,
+    "catalog_gap_instances_before": 706,
+    "catalog_gap_instances_after": 706,
+    "evidence_found_before": 121,
+    "evidence_found_after": 120,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1316 sources, 212 primary image records, 236 candidates and 1543 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35609 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1316 sources and 236 candidates protected",
+    "focused_tests": "pass: bilingual-seo.test.mjs and data.test.mjs, 100 tests",
+    "full_gate": "pass: npm run check; 326 tests, 584 pages, SEO 458 indexable and 126 noindex",
+    "diff_check": "pass",
+    "image_report": "not run; no image record changed"
+  }
+}

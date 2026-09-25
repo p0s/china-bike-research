@@ -1,0 +1,134 @@
+{
+  "batch_id": "gap-fill-batch-21-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps: 41 published variants, 222 candidates; 335 blocked, 35 conflicted, 68 found, and 14 temporarily exhausted field states. Fresh npm run --silent research:queue: 646 evidence-found, 45 deferred, 498 blocked, 60 conflicted, and 0 ready. Selection filters attempts that already have a resolution and excludes the merged java-aluminum-24s duplicate; it takes the next 25 fields across 8 distinct model groups in priority order.",
+  "selection_basis": "Freeze 8 exact model groups and 25 unresolved atomic fields from the current queue. The first five groups (16 fields) are assigned to the single Luna Max evidence-only lane; root owns the remaining three groups (9 fields) and remains the sole writer.",
+  "exact_model_count": 8,
+  "atomic_field_count": 25,
+  "exact_models": [
+    "java-suprema-7120",
+    "java-vega-tt-24s",
+    "java-vittoria-7170",
+    "java-vittoria-er7-2026",
+    "kontax-power-evo",
+    "koseea-pioneer-slr-plus",
+    "kung-horizon",
+    "laget-aero-one"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "java-suprema-7120",
+      "exact_identity": "JAVA 佳沃 Suprema 7120 / 终结者",
+      "model_group": "java-suprema-7120",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-java-suprema-7120-complete-weight-2026-08-29",
+        "candidate-java-suprema-7120-drivetrain-2026-08-29",
+        "candidate-java-suprema-7120-frame-material-2026-08-29",
+        "candidate-java-suprema-7120-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vega-tt-24s",
+      "exact_identity": "JAVA 佳沃 Vega TT 24S",
+      "model_group": "java-vega-tt-24s",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-java-vega-tt-24s-complete-weight-2026-08-29",
+        "candidate-java-vega-tt-24s-drivetrain-2026-08-29",
+        "candidate-java-vega-tt-24s-frame-material-2026-08-29",
+        "candidate-java-vega-tt-24s-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-7170",
+      "exact_identity": "JAVA 佳沃 Vittoria 7170 closed-wheel build",
+      "model_group": "java-vittoria-7170",
+      "fields": ["complete-weight", "drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-java-vittoria-7170-complete-weight-2026-08-29",
+        "candidate-java-vittoria-7170-drivetrain-2026-08-29",
+        "candidate-java-vittoria-7170-frame-material-2026-08-29",
+        "candidate-java-vittoria-7170-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-er7-2026",
+      "exact_identity": "JAVA 佳沃 Vittoria ER7 2026",
+      "model_group": "java-vittoria-er7-2026",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-java-vittoria-er7-2026-drivetrain-2026-08-29",
+        "candidate-java-vittoria-er7-2026-frame-material-2026-08-29",
+        "candidate-java-vittoria-er7-2026-identity-source-2026-08-29"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kontax-power-evo",
+      "exact_identity": "KONTAX 超探 RS80 POWER EVO",
+      "model_group": "kontax-power-evo",
+      "fields": ["identity-source"],
+      "attempt_ids": ["candidate-kontax-power-evo-identity-source-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "koseea-pioneer-slr-plus",
+      "exact_identity": "KOSEEA 科西亚 Pioneer SLR+",
+      "model_group": "koseea-pioneer-slr-plus",
+      "fields": ["frame-material", "frame-weight", "identity-source"],
+      "attempt_ids": [
+        "candidate-koseea-pioneer-slr-plus-frame-material-2026-09-01",
+        "candidate-koseea-pioneer-slr-plus-frame-weight-2026-09-01",
+        "candidate-koseea-pioneer-slr-plus-identity-source-2026-09-01"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kung-horizon",
+      "exact_identity": "KUNG 攻 HORIZON 天际 complete bike",
+      "model_group": "kung-horizon",
+      "fields": ["drivetrain", "frame-material", "identity-source"],
+      "attempt_ids": [
+        "candidate-kung-horizon-drivetrain-2026-08-30",
+        "candidate-kung-horizon-frame-material-2026-08-30",
+        "candidate-kung-horizon-identity-source-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-aero-one",
+      "exact_identity": "LAGET AERO ONE",
+      "model_group": "laget-aero-one",
+      "fields": ["frame-material", "frame-weight", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-laget-aero-one-frame-material-2026-09-01",
+        "candidate-laget-aero-one-frame-weight-2026-09-01",
+        "candidate-laget-aero-one-tire-clearance-2026-09-01"
+      ],
+      "owner": "root"
+    }
+  ],
+  "acceptance_rules": [
+    "Use current, credible, exact-model evidence and record actual observation or access dates; prefer primary sources and Chinese sources when they improve mainland accuracy.",
+    "Resolve only exact builds, identities, and price records; preserve trim ambiguity, measurement limits, model conflicts, and unavailable facts instead of guessing.",
+    "Reuse already accepted exact-model sources when they still support the field; do not repeat the completed 50-area sweeps or search areas without a concrete unresolved question.",
+    "Update only these scoped attempts, candidates, sources, price records if supported, and batch artifacts; preserve protected baseline resolutions and image rights.",
+    "One Luna Max evidence-only lane covers the first five groups. It returns URLs, access dates, source classes, supported facts, caveats, field dispositions, and reopen triggers; it does not edit, use XHS, contact sellers, or recurse. Root alone integrates findings and writes files."
+  ]
+}

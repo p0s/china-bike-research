@@ -1,0 +1,53 @@
+{
+  "id": "candidate-camp-gx700-travel-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "camp-gx700-travel"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-camp-gx700-travel-complete-weight-2026-08-29",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-camp-gx700-travel-complete-weight-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP 坎普 GX700 travel loaded bikepacking set exact build current manufacturer dealer weight groupset clearance",
+          "route": "Opened newly surfaced official CAMP GX700 page once; fetch timed out/400",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The newly surfaced official page timed out/returned 400 and was not retried. Search snippet describes a standard small GX700 around 10.2 kg excluding pedals/small accessories, not the travel-loaded listing; it is not recorded as a source.",
+          "result_url": "https://www.campbicycle.com/zh/gx700.html"
+        }
+      ],
+      "blocker": "The newly surfaced official page timed out/returned 400 and was not retried. Search snippet describes a standard small GX700 around 10.2 kg excluding pedals/small accessories, not the travel-loaded listing; it is not recorded as a source."
+    }
+  },
+  "notes": "The newly surfaced official page timed out/returned 400 and was not retried. Search snippet describes a standard small GX700 around 10.2 kg excluding pedals/small accessories, not the travel-loaded listing; it is not recorded as a source.",
+  "campaign_extension": {
+    "id": "b141-camp-gx700-travel-complete-weight",
+    "extends_attempt_id": "candidate-camp-gx700-travel-complete-weight-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

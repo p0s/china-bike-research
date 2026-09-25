@@ -1,0 +1,32 @@
+{
+  "id": "candidate-xlab-ad8-mainland-observed-price-2026-09-24",
+  "field": "mainland-observed-price",
+  "searched_at": "2026-09-24",
+  "status": "blocked",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The focused query surfaced no exact public mainland seller detail page for the preferred R7170 Di2 / Branta C50 TEAM package. The nearest model-database result labels CNY 26,980 a manufacturer price and contains inconsistent wheel information; it is not seller checkout evidence.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"X-LAB AD8\" \"R7170 Di2\" \"Branta C50 TEAM\" 价格",
+          "route": "Focused public search for an exact mainland seller item",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://99spokes.com/bikes/xlab/2026/ad8-r7170-di2-12s-branta-c50-team",
+          "note": "No exact public mainland seller detail page appeared. 99Spokes labels CNY 26,980 ‘Manufacturer Price’ rather than a seller offer and its summary conflicts with the wheel description in the build section; the China Bikes profile is also an official-reference lead, not a seller page. Neither establishes current seller, selected package, stock, checkout or purchase conditions. The existing ¥21,980 Taobao offer is a different 105-electronic/steel-spoke package and was not transferred."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xlab-ad8"
+  },
+  "notes": "Disposition: unresolved. Keep observed_price absent and retain the CNY 26,980 official R7170 Di2 / Branta C50 TEAM reference separately. Reopen when a current public mainland seller item proves the matching package and price conditions."
+}

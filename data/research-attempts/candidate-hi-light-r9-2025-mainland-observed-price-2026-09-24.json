@@ -1,0 +1,31 @@
+{
+  "id": "candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24",
+  "field": "mainland-observed-price",
+  "searched_at": "2026-09-24",
+  "status": "blocked",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The focused public search surfaced no exact current mainland seller detail page for the Hi-Light 航轮 R9 (2025) titanium frameset. The other results were a model profile with an official reference price, foreign offers, and an aggregator mixing Hi-Light and Hanglun R9 listings; none establishes a current exact-package CNY checkout.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light 航轮 R9 2025 钛合金 车架组 车架 价格",
+          "route": "Focused public web search for an exact mainland frameset listing",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact current mainland seller detail page surfaced. A model profile repeated the separate official retail reference; foreign marketplace listings and an aggregator mixing Hi-Light and Hanglun R9 offers did not establish the exact frameset, seller checkout, selected package, promotion, stock or purchase conditions. No result was opened and no adjacent model price was transferred."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-r9-2025"
+  },
+  "notes": "Disposition: unresolved. Keep observed_price absent. The dated CNY 8,900 official retail reference is not a current transaction price. Reopen when a publicly readable exact mainland seller item identifies the frameset package, amount, date and purchase conditions."
+}

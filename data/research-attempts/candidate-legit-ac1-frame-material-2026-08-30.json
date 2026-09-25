@@ -486,8 +486,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "legit-ac1-current-specs-2026-08-30"
+    "legit-ac1-current-specs-2026-08-30",
+    "legit-ac1-manufacturer-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/legit-ac1-50-area-sweep-2026-08-30.json. The current exact AC1 page publishes T700 carbon and frame, fork and seatpost reference weights."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/legit-ac1-50-area-sweep-2026-08-30.json. The current exact AC1 page publishes T700 carbon and frame, fork and seatpost reference weights.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "legit-ac1-current-specs-2026-08-30",
+      "legit-ac1-manufacturer-current-2026-09-23"
+    ],
+    "note": "WINSPACE's exact AC1 page rechecked 2026-09-23 specifies T700 carbon. It does not publish fork/seatpost grade, fiber proportions, lay-up or molding details; keep those unknown."
+  }
 }

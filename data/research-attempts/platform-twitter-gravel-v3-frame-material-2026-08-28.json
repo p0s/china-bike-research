@@ -1,21 +1,54 @@
 {
   "id": "platform-twitter-gravel-v3-frame-material-2026-08-28",
-  "target": { "record_type": "platform", "record_id": "twitter-gravel-v3" },
+  "target": {
+    "record_type": "platform",
+    "record_id": "twitter-gravel-v3"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
+  "required_channels": [
+    "web"
+  ],
   "channels": {
     "web": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "TWITTER Gravel V3 25yr frame carbon construction", "route": "manufacturer current platform page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html", "note": "Manufacturer identifies a high-modulus carbon frame and fork, internal routing, integrated carbon cockpit and current T47 platform; no exact fiber grade is published." },
-        { "attempt": 2, "query": "TWITTER Gravel V3 25yr RS monocoque frame", "route": "official factory-store exact RS page", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike", "note": "Factory storefront additionally describes monocoque construction; exact lay-up and molding protocol remain unpublished." }
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 25yr frame carbon construction",
+          "route": "manufacturer current platform page",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html",
+          "note": "Manufacturer identifies a high-modulus carbon frame and fork, internal routing, integrated carbon cockpit and current T47 platform; no exact fiber grade is published."
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Gravel V3 25yr RS monocoque frame",
+          "route": "official factory-store exact RS page",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike",
+          "note": "Factory storefront additionally describes monocoque construction; exact lay-up and molding protocol remain unpublished."
+        }
       ]
     }
   },
   "status": "found",
-  "accepted_source_ids": ["twitter-v3-official-2026-08-28", "twitter-v3-rs-factory-store-2026-08-28"],
+  "accepted_source_ids": [
+    "twitter-v3-official-2026-08-28",
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-25yr-manufacturer-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "Exact published construction claims are retained without inferring a carbon grade or stiffness score."
+  "notes": "Qualified manufacturer claim for the named Gravel V3 (25yr) revision: high-modulus carbon-fiber frame; no exact fiber grade or layup is published. Do not generalize to other revisions.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-v3-25yr-manufacturer-recheck-2026-09-24"
+    ],
+    "note": "Qualified manufacturer claim for the named Gravel V3 (25yr) revision: high-modulus carbon-fiber frame; no exact fiber grade or layup is published. Do not generalize to other revisions."
+  }
 }

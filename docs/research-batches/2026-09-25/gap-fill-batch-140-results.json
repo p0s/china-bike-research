@@ -1,0 +1,43 @@
+{
+  "batch": 140,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-140-scope.json",
+  "image_health_report": "docs/research-batches/2026-09-25/gap-fill-batch-140-image-health.json",
+  "result": {
+    "image_records_checked": 25,
+    "remote_resources_checked": 25,
+    "healthy": 25,
+    "http_200_image_content_type": 25,
+    "catalog_image_health_gap_entries_before": 37,
+    "catalog_image_health_gap_entries_after": 11,
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 680,
+    "catalog_records": 263,
+    "catalog_gap_entries_reduced": 26,
+    "shared_image_note": "The exact twitter-gravel-v3-primary-image record is referenced by two variants, so 25 checked image records cover 26 catalog gap entries.",
+    "image_records_updated": 25,
+    "new_images_added": 0,
+    "website_image_records": 212,
+    "image_urls_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "research_attempts_after": 1593,
+    "research_fields_after": 1503,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "external_delivery": "none"
+  },
+  "validation": {
+    "image_report": "The first restricted-sandbox run returned unreachable for all 25 URLs. One retry on the same frozen set with outbound access reported 25/25 healthy, each HTTP 200 with image content type; response bodies were canceled and no image bytes were written.",
+    "data_validation": "passed: 41 brands, 38 platforms, 41 variants, 76 prices, 1416 sources, 212 image records, 236 candidates, 1593 atomic research records",
+    "full_gate": "passed via developer-storage-cache + codex-pnpm-check check: privacy; research ledger (1503 fields, 15450 public-post / 35660 web attempts); coverage; 328/328 tests; 584-page build; SEO 458 indexable / 126 noindex",
+    "image_report_retries": "One bounded retry per image after the sandbox network result; no further retries were made.",
+    "git_diff_check": "passed: all 25 image records, report/scope/results JSON, and the 25-line checkpoint parsed and matched with no trailing whitespace; tracked diff check was clean"
+  },
+  "external_delivery": "none"
+}

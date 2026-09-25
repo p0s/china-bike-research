@@ -1,0 +1,144 @@
+{
+  "batch": 152,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 669,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 332,
+      "conflicted": 35,
+      "found": 10,
+      "open": 64,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Ten exact candidate IDs with 12 older high-priority weight, drivetrain, clearance, and stiffness gaps selected from the fresh post-B151 npm run --silent data:gaps inventory. Exclude every exact target in B145-B151 and every candidate reviewed or searched on 2026-09-25."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "cinelli-pressure-adr",
+        "name": "CINELLI 西耐力 Pressure ADR",
+        "record_type": "candidate",
+        "priority_score": 59,
+        "last_reviewed": "2026-08-29",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-cinelli-pressure-adr-complete-weight-2026-08-29", "field": "complete-weight"},
+          {"code": "drivetrain-missing", "attempt_id": "candidate-cinelli-pressure-adr-drivetrain-2026-08-29", "field": "drivetrain"}
+        ]
+      },
+      {
+        "id": "pardus-spark-tourist",
+        "name": "PARDUS Spark Tourist PES",
+        "record_type": "candidate",
+        "priority_score": 50,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-pardus-spark-tourist-complete-weight-2026-09-01", "field": "complete-weight"}
+        ]
+      },
+      {
+        "id": "pardus-spark-sport-pes",
+        "name": "PARDUS 瑞豹 Spark Sport PES",
+        "record_type": "candidate",
+        "priority_score": 48,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-pardus-spark-sport-pes-tire-clearance-2026-09-01", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "upland-taylor",
+        "name": "UPLAND 阿普兰 Taylor",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "last_reviewed": "2026-09-24",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-upland-taylor-tire-clearance-2026-08-30", "field": "tire-clearance"},
+          {"code": "stiffness-evidence-missing", "attempt_id": "candidate-upland-taylor-frame-stiffness-2026-08-30", "field": "frame-stiffness"}
+        ]
+      },
+      {
+        "id": "legit-ac1",
+        "name": "LEGIT 陆极客 AC1",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-legit-ac1-complete-weight-2026-08-30", "field": "complete-weight"}
+        ]
+      },
+      {
+        "id": "pardus-robin-sport-pes",
+        "name": "PARDUS 瑞豹 Robin Sport PES",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "complete-weight-missing", "attempt_id": "candidate-pardus-robin-sport-pes-complete-weight-2026-08-30", "field": "complete-weight"}
+        ]
+      },
+      {
+        "id": "java-vittoria-7170",
+        "name": "JAVA 佳沃 Vittoria 7170 closed-wheel build",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-java-vittoria-7170-tire-clearance-2026-08-29", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "sava-dream-maker",
+        "name": "SAVA 萨瓦 造梦者 / Dream Maker",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-sava-dream-maker-tire-clearance-2026-08-30", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "sunpeed-victory-e-2026",
+        "name": "SUNPEED 速比特 Victory Expert / 胜利 E 105 Di2 (2026 listing)",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-sunpeed-victory-e-2026-tire-clearance-2026-08-30", "field": "tire-clearance"}
+        ]
+      },
+      {
+        "id": "sunpeed-wudi-e-2026",
+        "name": "SUNPEED 速比特 2026 Invincible Sport / 无敌 R7120 alloy-wheel option",
+        "record_type": "candidate",
+        "priority_score": 35,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {"code": "clearance-unverified", "attempt_id": "candidate-sunpeed-wudi-e-2026-tire-clearance-2026-08-30", "field": "tire-clearance"}
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 12,
+    "research_boundary": "Reuse the same user-authorized Luna Max evidence-only agent; root remains the sole writer. For each exact candidate, inspect its record, linked sources, field attempts, and registered campaign history before one distinct current web query. Open at most one genuinely new product/technical page per candidate. Before opening, literal-search the final URL across data/ and docs/; skip if present or if absence is uncertain. Stop after these ten targets; do not reopen a known URL or retry a failed page.",
+    "field_rules": [
+      "Complete-bike weight must match the retained exact build and preserve size, included equipment/accessories, approximation, and weighing basis. Do not transfer frame weight, sibling trim values, or unqualified review-bike weights.",
+      "Drivetrain claims need exact series, speed, layout, actuation, and selected build; do not infer the listing configuration from a family menu.",
+      "Tire clearance requires an explicit exact-model maximum; fitted tire width and recommended tire width are not maximum clearance.",
+      "Frame stiffness requires an exact-model numeric result or sufficiently specific independent assessment. Mark subjective or build-specific impressions clearly and preserve numeric/protocol limitations.",
+      "PARDUS Spark Tourist PES and Spark Sport PES are separate builds; PARDUS Robin Sport PES is not the Spark family.",
+      "Keep the two SUNPEED retained options distinct and do not transfer clearance between model families.",
+      "Keep all facts tied to the exact retained model and date; preserve unknowns and conflicts."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No image changes, prices, or unrelated specifications. Only frozen fields, directly supporting sources/attempts, coverage baseline if required, attempt-count test expectation if stale, and dated batch documentation may change.",
+      "No commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "external_delivery": "none"
+}

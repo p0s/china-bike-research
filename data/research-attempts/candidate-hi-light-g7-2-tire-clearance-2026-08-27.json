@@ -1,16 +1,49 @@
 {
   "id": "candidate-hi-light-g7-2-tire-clearance-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "hi-light-g7-2" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-g7-2"
+  },
   "field": "tire-clearance",
   "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "found", "attempts": [{ "attempt": 1, "query": "Hi-Light G7.2 official tire clearance", "route": "official exact-model Chinese page", "outcome": "found", "accessed_at": "2026-08-27", "note": "Official specification states ETRTO 47-622 and 700×45C maximum.", "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html" }] }
+    "public-post": {
+      "status": "not-run",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light G7.2 official tire clearance",
+          "route": "official exact-model Chinese page",
+          "outcome": "found",
+          "accessed_at": "2026-08-27",
+          "note": "Official specification states ETRTO 47-622 and 700×45C maximum.",
+          "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html"
+        }
+      ]
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["titanium-hi-light-g7-2-official"],
+  "accepted_source_ids": [
+    "titanium-hi-light-g7-2-official",
+    "hi-light-g7-2-official-current-2026-09-01"
+  ],
   "retry_after": null,
-  "notes": "Exact-model maximum accepted from the manufacturer page."
+  "notes": "Exact-model maximum accepted from the manufacturer page.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "hi-light-g7-2-official-current-2026-09-01"
+    ],
+    "note": "The official exact-model page lists a 700x45C maximum. Its direct route returned 403 during the current research run, so the dated 2026-09-01 official page record remains the accepted source and is not presented as a fresh live verification."
+  }
 }

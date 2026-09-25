@@ -1,0 +1,27 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-04b-v3-clearance-correction-2026-09-22",
+  "status": "unsupported-platform-maximum-retired",
+  "reviewed_models": 3,
+  "reviewed_fields": 4,
+  "finding": "Removed T47 platform45C maximum inherited by RS and WheelTop variants. Fitted40C stays documented; maximum returns to unknown. Storefront monocoque claim remains separate from T47 construction.",
+  "accepted_source_ids": [
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22",
+    "twitter-v3-original-store-path-recheck-2026-09-22"
+  ],
+  "proof": "Parent directly read the original localized storefront table after the rendered-page check exposed the inherited value; current manufacturer and English storefront evidence reused from batch04.",
+  "unknowns": "Exact T47 maximum clearance and T47 molding protocol; no values inferred.",
+  "continuation": "Batch07 researcher remains active; all-remaining request continues.",
+  "coarse_gap_count_before": 722,
+  "coarse_gap_count_after": 724,
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128,
+    "adjustments": "Updated four existing dataset-dependent assertions for corrected capacity, review date, research-record total and newly exposed campaign gap."
+  }
+}

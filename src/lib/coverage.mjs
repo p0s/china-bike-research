@@ -608,8 +608,10 @@ function validateRetirements(data, baseline, retirements) {
     }
     const scopedItem = retirement.protected_item;
     if (scopedItem !== undefined) {
-      if (!isObject(scopedItem) || !['field', 'relationship'].includes(scopedItem.kind) || typeof scopedItem.value !== 'string' || !scopedItem.value) {
-        errors.push(`retirement ${retirement.id}: protected_item must identify one field or relationship`);
+      if (!isObject(scopedItem) || !['field', 'relationship', 'candidate-price'].includes(scopedItem.kind) || typeof scopedItem.value !== 'string' || !scopedItem.value) {
+        errors.push(`retirement ${retirement.id}: protected_item must identify one field, relationship, or candidate price`);
+      } else if (scopedItem.kind === 'candidate-price' && (retirement.record_type !== 'candidates' || !['observed_price', 'official_price'].includes(scopedItem.value))) {
+        errors.push(`retirement ${retirement.id}: candidate-price must identify an observed or official candidate price`);
       }
     }
     if (retirement.action === 'replace' && !retirement.replacement) errors.push(`retirement ${retirement.id}: replacement is required`);
@@ -625,13 +627,15 @@ function validateRetirements(data, baseline, retirements) {
     if (!baseline?.records?.[retirement.record_type]?.includes(retirement.record_id)) {
       errors.push(`retirement ${retirement.id}: ${key} is not protected by the baseline`);
     }
-    if (scopedItem && isObject(scopedItem) && ['field', 'relationship'].includes(scopedItem.kind) && typeof scopedItem.value === 'string' && scopedItem.value) {
+    if (scopedItem && isObject(scopedItem) && ['field', 'relationship', 'candidate-price'].includes(scopedItem.kind) && typeof scopedItem.value === 'string' && scopedItem.value) {
       const itemKey = `${key}#${scopedItem.kind}:${scopedItem.value}`;
       if (protectedItems.has(itemKey)) errors.push(`retirement ${retirement.id}: duplicate retirement for ${itemKey}`);
       protectedItems.add(itemKey);
       const protectedValues = scopedItem.kind === 'field'
         ? baseline?.fields?.[retirement.record_type]?.[retirement.record_id]
-        : baseline?.relationships?.[retirement.record_type]?.[retirement.record_id];
+        : scopedItem.kind === 'relationship'
+          ? baseline?.relationships?.[retirement.record_type]?.[retirement.record_id]
+          : baseline?.price_targets?.candidates?.[retirement.record_id];
       if (!protectedValues?.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is not protected by the baseline`);
       const activeRecord = recordMap(data, retirement.record_type).get(retirement.record_id);
       if (!activeRecord) {
@@ -639,7 +643,9 @@ function validateRetirements(data, baseline, retirements) {
       } else {
         const activeValues = scopedItem.kind === 'field'
           ? collectFieldPaths(activeRecord, '', unprotectedFieldRoots[retirement.record_type] ?? new Set())
-          : collectRelationships(activeRecord);
+          : scopedItem.kind === 'relationship'
+            ? collectRelationships(activeRecord)
+            : priceKinds(activeRecord);
         if (activeValues.includes(scopedItem.value)) errors.push(`retirement ${retirement.id}: ${itemKey} is still active`);
       }
     } else {
@@ -781,7 +787,11 @@ export function validateCoverage(data, current, baseline, retirements = [], { re
   for (const [candidateId, requiredKinds] of Object.entries(baseline.price_targets?.candidates ?? {})) {
     if (!candidatesById.has(candidateId)) continue;
     const currentKinds = priceKinds(candidatesById.get(candidateId));
-    for (const kind of missingItems(requiredKinds, currentKinds)) errors.push(`candidates:${candidateId} lost protected ${kind}`);
+    for (const kind of missingItems(requiredKinds, currentKinds)) {
+      if (!retiredProtectedItems.has(`candidates:${candidateId}#candidate-price:${kind}`)) {
+        errors.push(`candidates:${candidateId} lost protected ${kind}`);
+      }
+    }
   }
 
   if (requireCurrentBaseline) {

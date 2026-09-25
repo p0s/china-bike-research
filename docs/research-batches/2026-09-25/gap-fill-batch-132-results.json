@@ -1,0 +1,103 @@
+{
+  "batch": 132,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-132-scope.json",
+  "result": {
+    "exact_target_models": 7,
+    "atomic_fields": 10,
+    "disposition": "All ten frozen attempts were reopened against current exact pages. Four WINSPACE fields retain current trim-specific weights or drivetrain options, but the mainland coupon cards remain unmapped. The other six fields retain evidence-backed clearance, weight, material, and regional-BOM conflicts or unknowns; no unsupported value was selected.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "conflicted_queue_before": 31,
+    "conflicted_queue_after": 21,
+    "research_attempts_dispositioned": 10,
+    "source_reuse_found": 0,
+    "conflicts_reconfirmed": 10,
+    "catalog_records_updated": 6,
+    "source_records_added": 11,
+    "source_records_rechecked_and_notes_updated": 5,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 21
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:twitter-carbon-road-gravel-unknown:clearance-unverified",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["twitter-gravel-v3-2024-manual-mirror-2026-08-27", "twitter-v3-25yr-manufacturer-current-recheck-2026-09-25", "twitter-v3-25yr-store-current-recheck-2026-09-25"],
+      "caveat": "Current manufacturer page lists fitted 700×40C but no maximum; the 25yr store claims 700×45C maximum with standard chainring and a 2024 manual mirror states 700×40C maximum. The retained listing generation/revision remains unmapped."
+    },
+    {
+      "field": "candidate:winspace-m6:complete-weight-missing",
+      "disposition": "conflict reconfirmed; source references reused",
+      "source_ids": ["winspace-m6-105-mechanical-current-recheck-2026-09-25", "winspace-m6-105-di2-current-recheck-2026-09-25", "winspace-m6-ultegra-di2-current-recheck-2026-09-25"],
+      "caveat": "Current size-M/no-pedals references are approximately 8.6 kg 105 mechanical, 8.1 kg 105 Di2, and 7.8 kg Ultegra Di2. None maps to the retained CNY 13,599.20 coupon card."
+    },
+    {
+      "field": "candidate:winspace-t1600:complete-weight-missing",
+      "disposition": "conflict reconfirmed; source references reused",
+      "source_ids": ["winspace-t1600-105-di2-current-recheck-2026-09-25", "winspace-t1600-ultegra-di2-current-recheck-2026-09-25", "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25"],
+      "caveat": "Current original-T1600 size-M/no-pedals references are approximately 8.0 kg 105 Di2, 7.6 kg Ultegra Di2, and 7.2 kg Dura-Ace Di2. None maps to the retained CNY 22,400 card; no T1600 Ultra data was transferred."
+    },
+    {
+      "field": "candidate:icanian-sn04:frame-weight-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["ican-sn04-storefront-weight-material-recheck-2026-09-25", "ican-sn04-corporate-weight-material-recheck-2026-09-25"],
+      "caveat": "The storefront states 2,560 g; corporate-page introduction states 2,507 g and its own table states 2,057 ± 40 g. No frame weight is selected."
+    },
+    {
+      "field": "candidate:winspace-m6:drivetrain-missing",
+      "disposition": "conflict reconfirmed; option matrix refreshed",
+      "source_ids": ["winspace-m6-105-mechanical-current-recheck-2026-09-25", "winspace-m6-105-di2-current-recheck-2026-09-25", "winspace-m6-ultegra-di2-current-recheck-2026-09-25"],
+      "caveat": "Current exact pages distinguish hydraulic-disc 2×12 builds with Shimano 105 mechanical R7120, 105 Di2 R7170/R7150, and Ultegra Di2 R8170/R8150. The retained coupon trim remains unmapped."
+    },
+    {
+      "field": "candidate:winspace-t1600:drivetrain-missing",
+      "disposition": "conflict reconfirmed; option matrix refreshed",
+      "source_ids": ["winspace-t1600-105-di2-current-recheck-2026-09-25", "winspace-t1600-ultegra-di2-current-recheck-2026-09-25", "winspace-t1600-dura-ace-di2-current-recheck-2026-09-25"],
+      "caveat": "Current original-T1600 pages distinguish hydraulic-disc 2×12 builds with 105 Di2 R7170/R7150, Ultegra Di2 R8170/R8150, and Dura-Ace Di2 R9270/R9250. The retained card remains unmapped; T1600 Ultra is excluded."
+    },
+    {
+      "field": "candidate:bianchi-sprint-icr:complete-weight-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["bianchi-sprint-icr-probike-current-weight-recheck-2026-09-25", "bianchi-sprint-icr-allegro-current-weight-recheck-2026-09-25"],
+      "caveat": "Probike states 9 kg for YTBR6i57SK without size-specific weighing or pedal basis. Allegro states 8.5 kg for size 53 without pedal or measurement basis. Neither supports a universal weight."
+    },
+    {
+      "field": "candidate:icanian-sn04:frame-material-detail-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["ican-sn04-storefront-weight-material-recheck-2026-09-25", "ican-sn04-corporate-weight-material-recheck-2026-09-25"],
+      "caveat": "The storefront states Toray T700; the corporate page states T700/T800. No lay-up is selected."
+    },
+    {
+      "field": "published-variant:elves-falath-r7170:bom-incomplete",
+      "disposition": "conflict reconfirmed; mainland wheel package blocked",
+      "source_ids": ["elves-falath-pro-disc-product-current-2026-09-23", "elves-falath-pro-105-sa-bom-recheck-2026-09-25", "elves-falath-pro-complete-au-bom-recheck-2026-09-25"],
+      "caveat": "The South Africa 105 R7170 page gives drivetrain, tires and cockpit but no wheelset. The Australia 105 Di2 option lists 56 mm HB56D wheels but is not mapped to the retained mainland build. Wheel package remains unknown."
+    },
+    {
+      "field": "candidate:icanian-p9:frame-weight-missing",
+      "disposition": "conflict reconfirmed",
+      "source_ids": ["icanian-p9-frame-weight-current-recheck-2026-09-25", "icanian-p9-complete-bike-frame-weight-current-recheck-2026-09-25"],
+      "caveat": "The frame-only page states 2,570 ± 40 g XS/S/M and 2,620 ± 40 g L; the complete-bike page says 2,400 ± 20 g while its table labels XS and also lists S/M/L. No frame weight is selected."
+    }
+  ],
+  "validation": {
+    "focused_data_tests": "pass: 73/73 tests in tests/data.test.mjs",
+    "full_gate": "pass: codex-pnpm-check check; privacy scan, validate, research check, coverage check, 328/328 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets; protected 1386 source records",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

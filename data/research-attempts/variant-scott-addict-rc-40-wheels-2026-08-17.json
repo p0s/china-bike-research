@@ -28,8 +28,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "scott-addict-rc-40-poland-2026-08-17"
+    "scott-addict-rc-40-poland-2026-08-17",
+    "scott-addict-rc-40-poland-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Disposition: qualified. Exact page lists Syncros RP2.0 Disc, 28 spokes front and rear. Current page does not state rim material; mainland BOM equivalence is unconfirmed. Reopen trigger: Reopen if an exact mainland listing or SCOTT bill of materials changes the wheelset.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-rc-40-poland-recheck-2026-09-24"
+    ],
+    "note": "Disposition: qualified. Exact page lists Syncros RP2.0 Disc, 28 spokes front and rear. Current page does not state rim material; mainland BOM equivalence is unconfirmed. Reopen trigger: Reopen if an exact mainland listing or SCOTT bill of materials changes the wheelset."
+  }
 }

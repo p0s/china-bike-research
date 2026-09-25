@@ -481,8 +481,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "west-biking-sl-one-current-options-2026-08-30"
+    "west-biking-sl-one-current-options-2026-08-30",
+    "west-biking-sl-one-taobao-search-index-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/west-biking-sl-one-50-area-sweep-2026-08-30.json. Current exact listing evidence calls SL-ONE full carbon / carbon fiber; grade, lay-up and fork construction remain unpublished."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/west-biking-sl-one-50-area-sweep-2026-08-30.json. Current exact listing evidence calls SL-ONE full carbon / carbon fiber; grade, lay-up and fork construction remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "west-biking-sl-one-current-options-2026-08-30",
+      "west-biking-sl-one-taobao-search-index-2026-09-23"
+    ],
+    "note": "The current Taobao search-index result calls an SL-ONE listing full-carbon, consistent with the older JD listing claim. This is marketplace listing evidence, not a manufacturer material declaration; grade, lay-up, fork construction, and retained-card mapping remain unknown."
+  }
 }

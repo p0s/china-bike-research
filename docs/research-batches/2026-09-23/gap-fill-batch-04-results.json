@@ -1,0 +1,58 @@
+{
+  "batch_id": "gap-fill-batch-04-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-04-scope.json",
+  "reviewed_at": "2026-09-23",
+  "status": "reviewed-unresolved; retry-cycle-recorded",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete",
+    "exact_identity": "LightCarbon SPEEDZ complete build recorded with Shimano 105 mechanical 2x12",
+    "field": "cockpit"
+  },
+  "sources_checked": [
+    {
+      "url": "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html",
+      "publisher": "LightCarbon",
+      "result": "The current manufacturer page identifies LCR017-D and includes an HBR17 integrated handlebar in that frameset package. It does not map that frame to the published SPEEDZ complete build or its 105 mechanical 2x12 configuration."
+    },
+    {
+      "url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf",
+      "publisher": "LightCarbon Chinese catalog",
+      "result": "The catalog maps 速7 to LCR017-D but lists HBR14 sizing for that entry. It does not map SPEEDZ to 速7 or specify the exact complete build. This also differs from the current product page's HBR17 frameset package; neither package is transferred to SPEEDZ."
+    }
+  ],
+  "field_result": {
+    "status": "unresolved",
+    "finding": "Three fresh web approaches did not identify the cockpit fitted to the exact SPEEDZ complete build. The prior three public-post searches were carried forward; they found no exact opened cockpit claim. A public search result for the project's separate Speed7 lead is not independent evidence. No component value was added.",
+    "reopen_when": "An official source or opened exact public listing ties the SPEEDZ 105 mechanical 2x12 complete build to the frame/model and names its configured cockpit.",
+    "retry_after": "2026-10-23"
+  },
+  "integration": {
+    "catalog_facts_added": [],
+    "accepted_sources_added": 0,
+    "images_added": 0,
+    "research_attempt_added": "data/research-attempts/variant-lightcarbon-speedz-complete-cockpit-2026-09-23.json",
+    "retry_history_preserved": true,
+    "files_changed": [
+      "data/research-attempts/variant-lightcarbon-speedz-complete-cockpit-2026-09-23.json",
+      "data/coverage-baseline.json",
+      "src/lib/research-attempts.mjs",
+      "scripts/research-queue.mjs",
+      "tests/research-attempts.test.mjs",
+      "tests/research-queue.test.mjs",
+      "docs/research-stopping-policy.md",
+      "docs/research-batches/2026-09-23/gap-fill-batch-04-scope.json",
+      "docs/research-batches/2026-09-23/gap-fill-batch-04-results.json"
+    ],
+    "tooling_reason": "The old ledger allowed a field only one three-attempt record, while the queue made it ready again after retry_after. Added an append-only retry record link and carried-forward channel state so refreshed research can be recorded without deleting or counting old searches twice."
+  },
+  "validation": {
+    "focused_tests": "node --test tests/research-attempts.test.mjs tests/research-queue.test.mjs passed (14 tests)",
+    "research_check": "npm run --silent research:check passed; 1461 unique atomic fields with 15435 public-post and 35456 web attempts",
+    "coverage_baseline": "npm run --silent coverage:accept passed",
+    "full_gate": "codex-pnpm-check check passed: 306 tests; 584 pages built; SEO 456 indexable and 128 noindex",
+    "privacy": "passed",
+    "diff_check": "git diff --check passed; batch JSON parses"
+  },
+  "delivery_boundary": "Local only; no push, pull request, merge, publication, seller contact, or image added."
+}

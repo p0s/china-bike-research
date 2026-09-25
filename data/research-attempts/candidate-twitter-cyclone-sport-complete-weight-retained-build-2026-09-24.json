@@ -1,0 +1,36 @@
+{
+  "id": "candidate-twitter-cyclone-sport-complete-weight-retained-build-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-cyclone-sport"
+  },
+  "field": "complete-weight-retained-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact manufacturer endpoint returns 404. Earlier weight claims belong to two different wheel options, and the retained card does not identify its wheel option.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Cyclone 3rd Sport RS-24S current manufacturer complete-bike weight",
+          "route": "Current exact-model TWITTER manufacturer product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact manufacturer page returned 404. Other current Cyclone pages do not identify this third-generation Sport RS-24S build; do not infer discontinuation or transfer a sibling value.",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-rs-24s-road-bike.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "twitter-cyclone-sport-manufacturer-weight-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the retained build's complete weight unknown. Dated 9.1 kg/38 mm alloy-rim and 8.9 kg/50 mm wave-carbon-rim references remain option-specific and do not identify the retained wheel choice.",
+  "searched_at": "2026-09-24"
+}

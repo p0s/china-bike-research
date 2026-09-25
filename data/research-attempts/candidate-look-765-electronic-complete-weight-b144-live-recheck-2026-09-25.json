@@ -1,0 +1,52 @@
+{
+  "id": "candidate-look-765-electronic-complete-weight-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "look-765-electronic"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-look-765-electronic-complete-weight-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No new source identified the retained CNY 17,999 card's selected wheel/build option.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LOOK 765 electronic 17999 2025 R7170 wheels complete bicycle weight",
+          "route": "One distinct B144 exact-model web search; no new eligible product page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 100 distinct queries. Existing sources support 7.9 kg size M for a 105 Di2/R50D carbon-wheel build and 8.8 kg for an earlier R38D build; the retained card exposes wheel alternatives without selecting one."
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 100 distinct queries. Existing sources support 7.9 kg size M for a 105 Di2/R50D carbon-wheel build and 8.8 kg for an earlier R38D build; the retained card exposes wheel alternatives without selecting one.",
+  "campaign_extension": {
+    "id": "b144-look-765-electronic-complete-weight",
+    "extends_attempt_id": "candidate-look-765-electronic-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-tires-2026-09-23",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "tires",
+  "priority": "high",
+  "searched_at": "2026-09-23",
+  "retry_of": "variant-lightcarbon-speedz-complete-tires-2026-08-17",
+  "retry_reason": "The retry date passed on 2026-09-20, so current official and exact-name public sources were checked again for the fitted tires on the retained SPEEDZ complete build.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-lightcarbon-speedz-complete-tires-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "site:lightcarbon.com SPEEDZ tires fitted tire complete bike 105",
+          "route": "Current LightCarbon manufacturer product pages",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "The current LCR017-D manufacturer page gives a maximum tire clearance of 700C*32C for the frameset and does not identify a SPEEDZ complete-build tire or link that frame to this retained build. Maximum clearance is not fitted-tire evidence.",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html"
+        },
+        {
+          "attempt": 2,
+          "query": "\"LightCarbon SPEEDZ\" tires; \"LC-SPEED 7\" complete bike 轮胎; site:lightcarbon.com SPEEDZ 轮胎 整车",
+          "route": "English and Chinese public web search across manufacturer and indexed sources",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Results returned the official LCR017-D/速7 frameset catalog and unrelated products, but no official complete-bike specification or independent opened exact SPEEDZ listing names a fitted tire. The catalog alias does not prove that SPEEDZ is the same build."
+        },
+        {
+          "attempt": 3,
+          "query": "\"LightCarbon SPEEDZ\" Shimano 105 mechanical 2x12 tire model; \"速7\" 105 机械 外胎",
+          "route": "Exact-build and marketplace-index search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "The only exact SPEEDZ result was the project's page reproducing the anonymized 2026-08-08 Taobao search-card snapshot. It records a complete bike and 105 setup, but exposes no fitted tire; raw screenshots and seller identities are not public. No independent exact listing surfaced."
+        }
+      ]
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [],
+  "retry_after": "2026-10-23",
+  "notes": "The exact SPEEDZ build's fitted tire model and size remain unknown. Do not substitute LCR017-D's maximum clearance or tire details from Speed7/速7, another trim, or a different build. Reopen when an official source or opened exact listing names the tire on this complete build."
+}

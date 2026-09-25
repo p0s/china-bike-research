@@ -1,0 +1,53 @@
+{
+  "batch": 114,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 114,
+    "selected_queue_targets": [
+      "variant:sava-a7l-r7100:image",
+      "platform:scott-addict-rc-40:geometry",
+      "variant:spcycle-g028-frameset:purchase-route",
+      "candidate:specialized-roubaix-sl8-sport-105:price",
+      "candidate:triaero-a9:frame-material",
+      "candidate:trinx-tornado-900:complete-weight",
+      "candidate:trinx-tornado-900:drivetrain",
+      "candidate:trinx-tornado-900:frame-material",
+      "candidate:trinx-tornado-900:identity-source",
+      "candidate:tsb-titan-super-bond-pioneer-one:frame-material"
+    ],
+    "selected_queue_priority_each": 100
+  },
+  "scope": {
+    "exact_target_records": [
+      "variant:sava-a7l-r7100",
+      "platform:scott-addict-rc-40",
+      "variant:spcycle-g028-frameset",
+      "candidate:specialized-roubaix-sl8-sport-105",
+      "candidate:triaero-a9",
+      "candidate:trinx-tornado-900",
+      "candidate:tsb-titan-super-bond-pioneer-one"
+    ],
+    "atomic_gaps": [
+      "variant:sava-a7l-r7100:image",
+      "platform:scott-addict-rc-40:geometry",
+      "variant:spcycle-g028-frameset:purchase-route",
+      "candidate:specialized-roubaix-sl8-sport-105:price",
+      "candidate:triaero-a9:frame-material",
+      "candidate:trinx-tornado-900:complete-weight",
+      "candidate:trinx-tornado-900:drivetrain",
+      "candidate:trinx-tornado-900:frame-material",
+      "candidate:trinx-tornado-900:identity-source",
+      "candidate:tsb-titan-super-bond-pioneer-one:frame-material"
+    ],
+    "research_boundary": "Audit only the sources and claims already recorded in the exact target records and listed research attempts. Review one exact source at a time. Add source-reuse resolutions only where an existing source directly supports the exact field with the existing caveats. Preserve unknown, stale, market-mismatched, unsupported, rights-limited or inaccessible cases as open; do not add or alter catalog values unless the frozen claim is already present and exact source support is verified.",
+    "excluded": [
+      "No new web, public-post, or seller requests.",
+      "No source, price, image, variant, or candidate records added.",
+      "No changes to other exact models or fields.",
+      "No changes to image rights or image files.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

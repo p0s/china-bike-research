@@ -485,5 +485,11 @@
     "sava-dream-maker-r7170-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact R17 build uses T1000 carbon frame, fork, seatpost and integrated handlebar."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Current exact R17 build uses T1000 carbon frame, fork, seatpost and integrated handlebar.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-dream-maker-r7170-current-2026-08-30"],
+    "note": "The exact R17-R7170-24S manufacturer page supports the stated T1000 carbon frame, fork, seatpost, and integrated cockpit. Preserve this build-specific scope; it does not establish material details for other R17 options."
+  }
 }

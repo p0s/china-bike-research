@@ -1,16 +1,55 @@
 {
   "id": "candidate-laget-discovery-one-flagship-price-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "laget-discovery-one-flagship" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "laget-discovery-one-flagship"
+  },
   "field": "price",
   "priority": "medium",
   "searched_at": "2026-08-27",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "found", "attempts": [
-    { "attempt": 1, "query": "LAGET Discovery ONE flagship official price", "route": "manufacturer exact frameset page", "outcome": "found", "result_url": "https://lagetbike.com/productinfo/2337830.html", "accessed_at": "2026-08-27", "note": "Manufacturer lists CNY 25,900 for the exact frameset." },
-    { "attempt": 2, "query": "LAGET DISCOVERY ONE flagship 3D titanium", "route": "Taobao exact listing with S-size option selected", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=1051152113706", "accessed_at": "2026-08-27", "note": "Selected S-size anodized-gold frameset shows CNY 25,900 after the displayed CNY 100 coupon." }
-  ] } },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LAGET Discovery ONE flagship official price",
+          "route": "manufacturer exact frameset page",
+          "outcome": "found",
+          "result_url": "https://lagetbike.com/productinfo/2337830.html",
+          "accessed_at": "2026-08-27",
+          "note": "Manufacturer lists CNY 25,900 for the exact frameset."
+        },
+        {
+          "attempt": 2,
+          "query": "LAGET DISCOVERY ONE flagship 3D titanium",
+          "route": "Taobao exact listing with S-size option selected",
+          "outcome": "found",
+          "result_url": "https://item.taobao.com/item.htm?id=1051152113706",
+          "accessed_at": "2026-08-27",
+          "note": "Selected S-size anodized-gold frameset shows CNY 25,900 after the displayed CNY 100 coupon."
+        }
+      ]
+    }
+  },
   "status": "found",
-  "accepted_source_ids": ["titanium-laget-discovery-one-flagship-official", "laget-discovery-one-flagship-taobao-2026-08-27"],
+  "accepted_source_ids": [
+    "titanium-laget-discovery-one-flagship-official",
+    "laget-discovery-one-flagship-taobao-2026-08-27",
+    "laget-discovery-one-flagship-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "Official and selected Taobao observations both show CNY 25,900 for the flagship frameset."
+  "notes": "Official and selected Taobao observations both show CNY 25,900 for the flagship frameset.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "laget-discovery-one-flagship-official-recheck-2026-09-23",
+      "laget-discovery-one-flagship-taobao-2026-08-27"
+    ],
+    "note": "Current page reconfirms size-S 1.45 kg, ¥25,900 retail and 700×50C. It omits alloy/material; retain the earlier dated titanium claim and unspecified weight basis. No historical search-channel attempts were rewritten."
+  }
 }

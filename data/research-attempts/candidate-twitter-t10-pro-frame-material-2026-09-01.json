@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-t10-pro-official-2026-08-17"
+    "twitter-t10-pro-official-2026-08-17",
+    "twitter-t10-pro-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-t10-pro-batch-032-50-area-sweep-2026-09-01.json. The current exact T10 Pro page identifies a high-modulus carbon frame, full-carbon fork, carbon cockpit, seatpost and wheels; no model-specific fiber grade is assigned."
+  "notes": "B121 live recheck of the exact T10 Pro - 2rd manufacturer page confirms high-modulus frame and full-carbon fork; exact fiber grade and lay-up remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-t10-pro-official-recheck-2026-09-24"
+    ],
+    "note": "B121 live recheck of the exact T10 Pro - 2rd manufacturer page confirms high-modulus frame and full-carbon fork; exact fiber grade and lay-up remain unpublished."
+  }
 }

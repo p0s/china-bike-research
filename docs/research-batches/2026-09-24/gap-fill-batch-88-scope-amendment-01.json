@@ -1,0 +1,27 @@
+{
+  "batch": 88,
+  "date": "2026-09-24",
+  "supersedes": "docs/research-batches/2026-09-24/gap-fill-batch-88-scope.json#selection.targets",
+  "reason": "A pre-research integrity check found that eight of the original ten linked attempts already had resolution.kind=source-reuse, so they are not unresolved targets. No audit or integration had started. Retain the two unreviewed entries and replace the eight previously resolved entries with the next eight found-status catalog gaps whose research attempt has no resolution.",
+  "selection": {
+    "exact_models": 9,
+    "atomic_gaps": 10,
+    "targets": [
+      {"record_type":"candidate","record_id":"twitter-cyclone-sport","model":"TWITTER 骓特 Cyclone sport","gap":"complete-weight-missing","attempt_id":"candidate-twitter-cyclone-sport-complete-weight-2026-08-30"},
+      {"record_type":"published-variant","record_id":"elves-falath-r7170","model":"Falath Pro Disc R7170 build","gap":"purchase-route","attempt_id":"variant-elves-falath-r7170-purchase-route-2026-08-17"},
+      {"record_type":"published-variant","record_id":"twitter-cyclone-electronic","model":"Cyclone 3rd ET electronic","gap":"purchase-route","attempt_id":"variant-twitter-cyclone-electronic-purchase-route-2026-08-29"},
+      {"record_type":"published-variant","record_id":"twitter-cyclone-gen3-et","model":"Cyclone Gen 3 ET electronic","gap":"purchase-route","attempt_id":"variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17"},
+      {"record_type":"published-variant","record_id":"twitter-v3-rs-sensah","model":"Gravel V3 RS / Sensah 2×12","gap":"purchase-route","attempt_id":"variant-twitter-v3-rs-sensah-purchase-route-2026-09-01"},
+      {"record_type":"published-variant","record_id":"twitter-v3-wheeltop-eds","model":"Gravel V3 WheelTop EDS 2×12","gap":"purchase-route","attempt_id":"variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01"},
+      {"record_type":"candidate","record_id":"pinarello-f5","model":"PINARELLO F5","gap":"complete-weight-missing","attempt_id":"candidate-pinarello-f5-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"pinarello-f5","model":"PINARELLO F5","gap":"stiffness-evidence-missing","attempt_id":"candidate-pinarello-f5-frame-stiffness-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-dream-maker","model":"SAVA 萨瓦 造梦者 / Dream Maker","gap":"stiffness-evidence-missing","attempt_id":"candidate-sava-dream-maker-frame-stiffness-2026-08-30"},
+      {"record_type":"candidate","record_id":"look-765-electronic","model":"LOOK 洛克 765 electronic","gap":"complete-weight-missing","attempt_id":"candidate-look-765-electronic-complete-weight-2026-08-30"}
+    ]
+  },
+  "research_route": {
+    "action": "Use B88's read-only local audit contract for the amended targets: inspect each exact catalog record, found attempt and accepted source. Do not browse or edit.",
+    "integration_rule": "After audit, populate only a directly supported exact missing value in the existing candidate or variant and cite the accepted source; remove only the precisely resolved missing-field label. Otherwise add a source-reuse resolution that states why the gap remains open.",
+    "stop_rule": "Only these ten amended fields across nine exact models; do not touch the eight already-resolved targets that were removed."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "platform-twitter-t3-tt-tire-clearance-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "platform",
+    "record_id": "twitter-t3-tt"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "platform-twitter-t3-tt-tire-clearance-2026-08-29",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Fitted 700x28C does not prove maximum clearance.",
+  "campaign_extension": {
+    "id": "b137-twitter-t3-tt-clearance",
+    "extends_attempt_id": "platform-twitter-t3-tt-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-137-scope.json",
+    "reason": "One exact-field web attempt was authorized after the frozen predecessor sweep; no repeated route or additional source area was authorized.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-twitter-t3-tt-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The only new exact-build lead gives fitted tire size, not the manufacturer maximum.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER T3 TT WheelTop TX-TT7110 2x12 manufacturer maximum tire clearance",
+          "route": "One focused exact-model search for manufacturer-published maximum clearance",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.dcfever.com/trading/view.php?id=11042536",
+          "note": "A DCFever seller listing describes a T3 WheelTop TX-TT7110 build and fitted 700x28C tires, but publishes no maximum tire clearance. The classified listing was not opened and cannot replace manufacturer maximum-clearance evidence."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Fitted 700x28C does not prove maximum clearance."
+}

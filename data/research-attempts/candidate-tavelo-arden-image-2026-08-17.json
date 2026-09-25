@@ -60,8 +60,17 @@
   "status": "found",
   "accepted_source_ids": [
     "public-tavelo-arden-owner-2026-08-17",
-    "tavelo-arden-official-2026-08-17"
+    "tavelo-arden-official-2026-08-17",
+    "tavelo-arden-race-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "tavelo-arden-race-official-recheck-2026-09-23"
+    ],
+    "note": "Current manufacturer page confirms the exact Arden Race frameset gallery; the existing official image record stays a remote embed with its original source attribution and no redistribution license. No image file or image record was added or changed. Reopen trigger: Reopen if Tavelo grants redistribution rights or supplies a separately licensed image."
+  }
 }

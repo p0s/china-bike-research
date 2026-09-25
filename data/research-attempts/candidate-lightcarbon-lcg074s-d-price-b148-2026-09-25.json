@@ -1,0 +1,54 @@
+{
+  "id": "candidate-lightcarbon-lcg074s-d-price-b148-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcg074s-d"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcg074s-d-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCG074S-D separate stem micro suspension frame price CNY China 2026",
+          "route": "Fresh exact-model public-price query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No public amount surfaced. The exact official stem-model page in repository history is quote-only; it was not reopened. Search snippets and forum material supplied no attributable price."
+        }
+      ],
+      "blocker": "No dated public price was found for the exact LCG074S-D frameset; the exact manufacturer source is quote-only and the similar LCG074-D result is a different model."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "lightcarbon-lcg074s-d-official-2026-08-29"
+  ],
+  "retry_after": null,
+  "notes": "No qualifying dated exact-model seller or manufacturer amount found; the mainland price remains unknown.\nB169 same-day supplemental query: LCG074S-D 套装 价格 LightCarbon 官方 2026. No public amount surfaced; results included the different LCG074-D catalog entry. The recorded exact official source is quote-only and was not reopened.",
+  "retry_of": "candidate-lightcarbon-lcg074s-d-price-2026-09-01",
+  "retry_reason": "A current exact-model public-price query on 2026-09-25 is a bounded follow-up to the 2026-09-01 extended campaign and checks for a new dated amount.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-148-lightcarbon-lcg074s-d-price",
+    "extends_attempt_id": "candidate-lightcarbon-lcg074s-d-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-148-scope.json",
+    "reason": "A new dated public price query checks whether the current listing state changed after the 2026-09-01 campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

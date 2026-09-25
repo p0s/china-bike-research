@@ -68,8 +68,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-a4-official-global-2026-08-17"
+    "sava-a4-official-global-2026-08-17",
+    "sava-a4-official-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; images: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; images: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "sava-a4-official-current-recheck-2026-09-23"
+    ],
+    "note": "The official A4 gallery includes model-level Purple imagery. Keep the existing remote reference with credit and fallback; exact selected color/build and reusable redistribution rights are not established, so no image was rehosted. Reopen trigger: Reopen when exact-color matching and documented reusable rights are available."
+  }
 }

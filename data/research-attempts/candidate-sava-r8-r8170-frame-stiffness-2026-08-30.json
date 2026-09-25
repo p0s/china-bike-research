@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "sava-aurora-r8-r8170-current-2026-08-30"
+    "sava-aurora-r8-r8170-current-2026-08-30",
+    "sava-aurora-r8-r8170-stiffness-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. Manufacturer describes exceptional stiffness and power transfer without a numeric stiffness protocol."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-r8-r8170-50-area-sweep-2026-08-30.json. The 2026-09-24 exact manufacturer recheck confirms only qualitative stiffness and power-transfer marketing language, with no numeric value, method, or protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-aurora-r8-r8170-current-2026-08-30",
+      "sava-aurora-r8-r8170-stiffness-recheck-2026-09-24"
+    ],
+    "note": "The exact current manufacturer page supports attributed qualitative stiffness and power-transfer wording only. The catalog now records that claim with the exact-model check date and explicitly states that no numeric result, measurement method, or test protocol is published; it does not present marketing language as measured stiffness."
+  }
 }

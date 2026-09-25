@@ -484,8 +484,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "xds-ad500-2025-mainland-spec-2026-08-30"
+    "xds-ad500-2025-mainland-spec-2026-08-30",
+    "xds-ad500-retailer-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad500-2025-batch-025-50-area-sweep-2026-08-30.json. The X6 aluminum frame is exact and consistent; the separate carbon-versus-aluminum fork conflict remains explicit."
+  "notes": "B123 reused exact 2025 evidence for the X6 aluminum frame. The mainland report lists a carbon thru-axle fork, while the separate Hong Kong retailer lists an aluminum fork; preserve this market/batch conflict and do not choose one fork for the retained card.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "xds-ad500-2025-mainland-spec-2026-08-30",
+      "xds-ad500-retailer-2026-08-08"
+    ],
+    "note": "B123 reused exact 2025 evidence for the X6 aluminum frame. The mainland report lists a carbon thru-axle fork, while the separate Hong Kong retailer lists an aluminum fork; preserve this market/batch conflict and do not choose one fork for the retained card."
+  }
 }

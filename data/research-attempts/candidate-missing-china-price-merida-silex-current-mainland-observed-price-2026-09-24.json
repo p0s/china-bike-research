@@ -1,0 +1,41 @@
+{
+  "id": "candidate-missing-china-price-merida-silex-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "missing-china-price-merida-silex"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "Current exact manufacturer pages expose suggested retail or a dynamic official-mall template, not an exact-model observed CNY listing or checkout value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Merida SILEX 7000 25 current mainland official listing and checkout price",
+          "route": "Exact Merida SILEX 7000 25 manufacturer page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact page confirms CNY 20,800 suggested retail and the CF2 II build, but only exposes dealer/size-finder actions rather than a current listing or checkout amount.",
+          "result_url": "https://www.merida.cn/zh-tw/bikefinder/bike/98/%3Aslug.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Merida SILEX 7000 25 exact SKU in official China mall current public catalog",
+          "route": "Merida China official mall public product-list route",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The public product-list response renders interpolation placeholders and no exact SILEX listing, price, stock, or checkout data.",
+          "result_url": "https://mall.merida.cn/index.php?action=pro_list&cat=0&controller=site"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "merida-silex-7000-25-official-price-recheck-2026-09-24",
+    "merida-china-official-mall-current-list-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Retain the official mainland CNY 20,800 suggested retail reference. No current observed price was verified, so candidate.observed_price remains absent."
+}

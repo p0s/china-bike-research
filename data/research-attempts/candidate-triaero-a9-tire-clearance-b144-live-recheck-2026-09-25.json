@@ -1,0 +1,53 @@
+{
+  "id": "candidate-triaero-a9-tire-clearance-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "triaero-a9"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-triaero-a9-tire-clearance-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-triaero-a9-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The page documents a fitted 28 mm tire on another A9 build but states no maximum tire clearance; the selected maximum remains unverified.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TRIAERO 冠捷 A9 105 Di2 700x28 maximum tire clearance mm official",
+          "route": "One distinct B144 exact-model search and one newly surfaced manufacturer page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The newly opened exact A9 page identifies a 52 cm Force eTap build and says it fits 28 mm / uses 700x28C. It does not establish maximum clearance or the retained Pikachu 105 Di2 build. Existing sources already support the same fitted-size observation.",
+          "result_url": "https://triaero.com/products/carbon-full-bike-a9-discoloration"
+        }
+      ]
+    }
+  },
+  "notes": "The newly opened exact A9 page identifies a 52 cm Force eTap build and says it fits 28 mm / uses 700x28C. It does not establish maximum clearance or the retained Pikachu 105 Di2 build. Existing sources already support the same fitted-size observation.",
+  "campaign_extension": {
+    "id": "b144-triaero-a9-tire-clearance",
+    "extends_attempt_id": "candidate-triaero-a9-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

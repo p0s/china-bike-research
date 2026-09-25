@@ -482,5 +482,11 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-quick-gr-one-frameset-batch-046-50-area-sweep-2026-09-01.json. Current US$2,099 price and CNY reference conversion found."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-quick-gr-one-frameset-batch-046-50-area-sweep-2026-09-01.json. Current US$2,099 price and CNY reference conversion found.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-gr-one-global-store-2026-09-01", "ecb-reference-rates-2026-08-31"],
+    "note": "Disposition: global-store price evidence reused for the exact GR:ONE frameset at US$2,099, with the recorded dated CNY reference conversion. This is not a mainland price or checkout; the variant's catalog price remains unset."
+  }
 }

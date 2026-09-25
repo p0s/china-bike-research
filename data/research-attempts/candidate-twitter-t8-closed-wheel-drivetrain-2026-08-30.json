@@ -482,8 +482,18 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
-    "twitter-t8-closed-wheel-official-2026-08-30"
+    "twitter-t8-closed-wheel-official-2026-08-30",
+    "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-50-area-sweep-2026-08-30.json. WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 are both exact current configurations; the retained card does not select one."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t8-closed-wheel-50-area-sweep-2026-08-30.json. WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12 are both exact current configurations; the retained card does not select one.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-t8-closed-wheel-official-2026-08-30",
+      "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"
+    ],
+    "note": "The historical exact manufacturer capture lists WheelTop EVO 2x12 and Shimano 105 R7120 mechanical 2x12. Neither is mapped to the retained card; the page timed out on 2026-09-25."
+  }
 }

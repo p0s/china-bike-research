@@ -1,0 +1,171 @@
+{
+  "batch": 145,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 11,
+    "atomic_gap_entries_resolved": 0,
+    "atomic_gap_entries_left_open": 11,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 11,
+    "research_attempts_before": 1627,
+    "research_attempts_after": 1638,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 390,
+      "conflicted": 35,
+      "found": 16,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1418,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "unique_page_urls_opened": 4,
+    "new_page_urls_verified_absent_before_open": 3,
+    "previously_recorded_urls_opened": 0,
+    "previously_recorded_urls_skipped": 5,
+    "page_fetches_with_content": 2,
+    "page_opens_returning_no_content_or_timeout": 2,
+    "page_content_excluded_due_to_url_audit_deviation": 1,
+    "url_audit_deviations": 1,
+    "retries_after_page_open_failure": 0,
+    "note": "The SAVA A7L listing was opened after a manual-transcription error in the pre-open URL audit; the exact corrected URL could not be proven to have been checked before opening. Exclude that page and every claim drawn from it. No search snippets were accepted as evidence. Existing sources were not reopened."
+  },
+  "model_results": [
+    {
+      "model_id": "elves-falath-r7170",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "ELVES Falath Pro Disc R7170 mainland China current complete-bike seller order route",
+      "existing_evidence": "Recorded South Africa and Australia seller pages describe distinct regional R7170 routes, prices, and configurations. Neither establishes a current mainland-China route for the retained listing.",
+      "disposition": "unresolved-mainland-route-not-established"
+    },
+    {
+      "model_id": "icanian-p9",
+      "gaps": [
+        "clearance-unverified"
+      ],
+      "new_query": "ICANIAN P9 tire clearance maximum 27.5 3.0 29 2.3 manufacturer",
+      "skipped_recorded_url": "https://www.icanian.com/product/full-carbon-enduro-full-suspension-mtb-bike-icanian-p9/",
+      "source_ids": [
+        "icanian-p9-frame-page-current-2026-09-23",
+        "icanian-p9-complete-bike-current-2026-09-01"
+      ],
+      "evidence": "The frame page lists nominal 27.5×3.0 or 29×2.3, with an XD 27.5×2.5 caveat; the complete-bike page recommends 27.5×2.8. The known page was skipped after exact URL audit.",
+      "disposition": "conflict-reconfirmed-maximum-unresolved"
+    },
+    {
+      "model_id": "sava-a7l-r7100",
+      "gaps": [
+        "complete-weight-missing",
+        "purchase-route"
+      ],
+      "new_query": "SAVA A7L R7100 mechanical 105 2x12 mainland China product listing weight purchase route",
+      "url_audit_deviation": {
+        "reason": "The agent confirmed it could not prove the exact corrected URL was literal-searched before the page open. Do not use the page or its claims as evidence; do not retry.",
+        "opened_listing": "888BIKE product 8701; exact corrected result URL was reported by the researcher but is not persisted because its pre-open literal audit could not be verified."
+      },
+      "disposition": "unresolved-url-audit-deviation-content-excluded"
+    },
+    {
+      "model_id": "twitter-cyclone-electronic",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "骓特 CYCLONE-3rd (ET) TX 整车 购买 轮峰",
+      "result": "The one distinct query returned no new exact-model route. The predecessor public-post evidence remains in its original record; no public-post search was run in B145.",
+      "disposition": "no-new-route-latest-mainland-price-remains-conditional"
+    },
+    {
+      "model_id": "twitter-cyclone-gen3-et",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "Twitter Bikes Cyclone Gen 3 ET WheelTop EDS-TX complete bike buy mainland China",
+      "skipped_recorded_url": "https://twitterbikeusa.com/products/cyclone-3rd-et",
+      "result": "The known USA route was already recorded and skipped. An unverified .shop result was not opened or accepted.",
+      "disposition": "unresolved-mainland-route-not-established"
+    },
+    {
+      "model_id": "twitter-v3-rs-sensah",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "TWITTER Gravel V3 RS SENSAH 2x12 机械 现货 整车 购买 大陆店铺",
+      "opened_url": "https://www.xb2bx.com/2025-twitter-gravel-v3-carbon-fiber-gravel-bike-700-40c-sensah-rs-2-12s-hydraulic-brake-bicycle-with-carbon-wheels-for-men-women-12000050987768258",
+      "evidence": "The listing identifies a Gravel V3 / Sensah 2×12 build, but its visible package uses carbon rims while the retained exact variant specifies alloy rims.",
+      "disposition": "unresolved-wheel-build-mismatch"
+    },
+    {
+      "model_id": "twitter-v3-wheeltop-eds",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "TWITTER Gravel V3 WheelTop EDS 2x12 电变 国内 旗舰店 现货 整车",
+      "opened_url": "https://www.chinagoods.com/store/goodsdetail/1989244552660185089",
+      "result": "Exact URL passed pre-open repository check; its single page open returned 400 Timeout fetching. No retry; snippet not accepted.",
+      "disposition": "unresolved-page-timeout"
+    },
+    {
+      "model_id": "twitter-t3-tt",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "骓特 T3 TT TX-TT7110 轮峰 2x12 大陆 现货 购买 整车",
+      "reused_source_id": "twitter-t3-tt-official-route-recheck-2026-09-25",
+      "source_url": "https://twitterbikeusa.com/products/triathlon-t3-tt",
+      "evidence": "The already-recorded current official page offers the exact WheelTop TX-TT7110 build, six sizes, and US$2,349; its country selector includes China. Mainland delivery price and final checkout remain unverified. The URL was not reopened. The catalog still flags the dated CNY promotion as conditional.",
+      "disposition": "international-route-reconfirmed-domestic-terms-unverified"
+    },
+    {
+      "model_id": "rinasclta-gr025-frameset",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "Rinasclta GR025 frameset 2026 order purchase route mainland China stock",
+      "skipped_recorded_url": "https://rinascltabike.com/product/gr025-gravel-frame-700c-50mm/",
+      "existing_evidence": "The current recheck on 2026-09-25 recorded a page timeout. Older listed price and add-to-cart evidence does not establish current availability, shipping, or checkout.",
+      "disposition": "unresolved-current-route-not-reverified"
+    },
+    {
+      "model_id": "twitter-v3-2024-rs-sensah-alloy",
+      "gaps": [
+        "purchase-route"
+      ],
+      "new_query": "TWITTER Gravel V3 2024 alloy Sensah RS 24速 current seller in stock mainland",
+      "opened_url": "https://www.alibaba.com/product-detail/Twitter-Gravel-V3-RS-24S-Hydr_1601714463653.html",
+      "result": "Exact URL passed pre-open repository check; its one permitted open returned zero lines. No retry; snippet and later-generation evidence were excluded.",
+      "disposition": "unresolved-page-content-unavailable"
+    }
+  ],
+  "validation": {
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1418 sources, 212 image records, 236 candidates, 1638 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35705 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1418 sources, 236 candidates",
+      "tests": "328/328 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "note": "Coverage acceptance recorded the 11 new attempt identities. The standard sandbox denied localhost binds in seven server tests; the exact full gate then passed with the narrowly scoped loopback exception."
+  },
+  "external_delivery": "none"
+}

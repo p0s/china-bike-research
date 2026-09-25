@@ -1,0 +1,55 @@
+{
+  "id": "candidate-quick-t10-frame-stiffness-b150-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-t10"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-quick-t10-frame-stiffness-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "QUICK 快客 T10 integrated aero frameset exact frame weight maximum tire clearance carbon construction stiffness",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "No controlled exact-T10 stiffness evidence surfaced."
+        }
+      ],
+      "blocker": "No controlled exact-T10 stiffness evidence surfaced."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "quick-current-road-catalog-2026-09-01",
+    "quick-tt-one-official-2026-09-01"
+  ],
+  "retry_after": null,
+  "notes": "B165 local source audit: no linked source supports the retained exact frame-stiffness field; B150 found no qualifying evidence for this frozen field; preserve it as unknown pending a distinct exact source or material state change.",
+  "retry_of": "candidate-quick-t10-frame-stiffness-2026-09-01",
+  "retry_reason": "One distinct model-level web query on 2026-09-25 followed the earlier search/campaign history to test for new direct evidence.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-150-quick-t10-frame-stiffness",
+    "extends_attempt_id": "candidate-quick-t10-frame-stiffness-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-150-scope.json",
+    "reason": "The frozen B150 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

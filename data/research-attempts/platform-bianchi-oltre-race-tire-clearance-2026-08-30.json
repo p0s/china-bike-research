@@ -484,5 +484,11 @@
     "bianchi-oltre-race-manual-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bianchi-oltre-race-50-area-sweep-2026-08-30.json. The exact Bianchi-hosted Oltre Race Disc manual publishes a 28 mm maximum tyre width."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/bianchi-oltre-race-50-area-sweep-2026-08-30.json. The exact Bianchi-hosted Oltre Race Disc manual publishes a 28 mm maximum tyre width.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["bianchi-oltre-race-manual-2026-08-30"],
+    "note": "Bianchi's exact Oltre Race Disc manual already publishes 28 mm as the tire-width maximum; higher secondary fit claims remain excluded from the platform maximum."
+  }
 }

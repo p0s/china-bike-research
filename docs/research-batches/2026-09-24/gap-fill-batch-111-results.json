@@ -1,0 +1,27 @@
+{
+  "batch": 111,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-111-scope.json",
+  "result": {
+    "exact_target_records": ["candidate:sava-gelaro-sf"],
+    "disposition": "Reconciled the existing T800 frame/fork claim to the exact R21-U6000-11S manufacturer page. The current page also offers an R21-U6020 option but does not establish that its component build is identical; the family-level material claim remains and exact selected build stays unresolved.",
+    "catalog_gap_instances_before": 706,
+    "catalog_gap_instances_after": 706,
+    "evidence_found_before": 119,
+    "evidence_found_after": 118,
+    "catalog_values_changed": 0,
+    "research_attempts_resolved": 1,
+    "source_records_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1316 sources, 212 primary image records, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1316 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; existing research evidence was reconciled without catalog-value changes",
+    "image_report": "not run; no image record changed"
+  }
+}

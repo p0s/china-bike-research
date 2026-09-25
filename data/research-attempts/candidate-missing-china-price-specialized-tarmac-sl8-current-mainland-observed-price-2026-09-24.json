@@ -1,0 +1,29 @@
+{
+  "id": "candidate-missing-china-price-specialized-tarmac-sl8-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "missing-china-price-specialized-tarmac-sl8"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact China product response identifies the trim but exposes no price value or checkout state.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Specialized Tarmac SL8 Comp Shimano 105 Di2 exact mainland China CNY current listing price",
+          "route": "Specialized China exact product page, product 4221578",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact China page returns the model heading and input placeholders only. No price or checkout value is visible; the current homepage price found for a Tarmac SL8 Expert Rival AXS is a different build and is excluded.",
+          "result_url": "https://www.specialized.com.cn/cn/zh/tarmac-sl8-comp---shimano-105-di2/p/4221578"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["specialized-tarmac-sl8-comp-105di2-china-current-price-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Keep the existing CNY 30,990 official price reference. No current observed mainland price is added for the exact Comp 105 Di2 model."
+}

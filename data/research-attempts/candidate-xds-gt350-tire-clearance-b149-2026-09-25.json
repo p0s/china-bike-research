@@ -1,0 +1,55 @@
+{
+  "id": "candidate-xds-gt350-tire-clearance-b149-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xds-gt350"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-xds-gt350-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "XDS 喜德盛 GT350 maximum tire clearance 700x40C exact trim",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search surfaced previously recorded BikeCity/V Bike routes and other GT350 trims. The documented Hong Kong 1×10/X6 aluminum/carbon-fork trim lists fitted 700×40C only; no credible exact-trim maximum or unambiguous mainland generation mapping surfaced. No page was opened."
+        }
+      ],
+      "blocker": "The Hong Kong 1×10 trim lists fitted 700×40C only; no maximum or mainland generation/trim mapping is established."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "xds-gt350-retailer-2026-08-28",
+    "xds-gt350-bikecity-hk-recheck-2026-09-23"
+  ],
+  "retry_after": null,
+  "notes": "B167 local source audit: no linked source supports the retained exact tire-clearance field. No qualifying exact-model evidence was found for this field in B149; preserve the value as unknown pending a future distinct source or state change.",
+  "retry_of": "candidate-xds-gt350-tire-clearance-2026-09-01",
+  "retry_reason": "A distinct dated exact-model query on 2026-09-25 followed the earlier extended campaign and checked for new direct evidence without reopening recorded URLs.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-149-xds-gt350-tire-clearance",
+    "extends_attempt_id": "candidate-xds-gt350-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+    "reason": "The B149 frozen scope authorizes one distinct dated exact-model web query to test for new weight or maximum-clearance evidence after the earlier 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

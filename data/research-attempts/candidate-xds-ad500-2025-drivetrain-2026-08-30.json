@@ -488,5 +488,14 @@
     "xds-ad500-retailer-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad500-2025-batch-025-50-area-sweep-2026-08-30.json. Current exact sources establish the L-TWOO ER9 electronic hydraulic 2x12, 11-32T and 50/34T power-meter-crank core."
+  "notes": "B123 reused exact 2025 mainland and regional sources for the L-TWOO ER9 electronic hydraulic 2x12 core, 11-32T cassette and 50/34T Branta power-meter crank; differing market builds remain separate.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "xds-ad500-2025-mainland-spec-2026-08-30",
+      "xds-ad500-retailer-2026-08-08"
+    ],
+    "note": "B123 reused exact 2025 mainland and regional sources for the L-TWOO ER9 electronic hydraulic 2x12 core, 11-32T cassette and 50/34T Branta power-meter crank; differing market builds remain separate."
+  }
 }

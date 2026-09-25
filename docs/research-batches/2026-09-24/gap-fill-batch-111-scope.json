@@ -1,0 +1,23 @@
+{
+  "batch": 111,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_instances": 706,
+    "research_queue_evidence_found": 119,
+    "selected_queue_target": "candidate:sava-gelaro-sf:frame-material",
+    "selected_queue_priority": 100
+  },
+  "scope": {
+    "exact_target_records": ["candidate:sava-gelaro-sf"],
+    "atomic_gap": "Frame material evidence integration for the unresolved-build SAVA Gelaro SF candidate",
+    "evidence_to_reconcile": "The accepted manufacturer page identifies a T800-carbon frame/fork for the R21-U6000-11S option. The 2026-09-24 exact page recheck shows the family page offers both R21-U6020 10-speed and R21-U6000 11-speed options, without establishing that their component builds are identical.",
+    "research_boundary": "Use only the two already collected exact manufacturer sources. Add a source-reuse resolution that preserves the existing family-level material fact and explicitly leaves selected-build identity unresolved; add no value and make no new source request.",
+    "excluded": [
+      "No cross-option drivetrain or complete-build inference.",
+      "No price, purchase route, or other model changes.",
+      "No image evaluation or image-record change.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

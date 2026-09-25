@@ -1,0 +1,53 @@
+{
+  "id": "variant-sava-gelaro-sf6-cues-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-sf6-cues"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced JD booking/catalog page does not identify SF6; snippets do not establish the exact selected option or checkout.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro SF6 CUES U6000 11 speed mainland China current price JD official route stock",
+          "route": "One distinct B146 exact-model web search; one new page open",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-25",
+          "note": "The new JD page passed exact-URL pre-open audit but page text contained no SF6 match. The existing exact global U6000-11S route is USD; no exact mainland option or CNY checkout was observed.",
+          "result_url": "https://www.jd.com/book/1318889ee09ee9b13c14.html"
+        }
+      ]
+    }
+  },
+  "notes": "The new JD page passed exact-URL pre-open audit but page text contained no SF6 match. The existing exact global U6000-11S route is USD; no exact mainland option or CNY checkout was observed.",
+  "campaign_extension": {
+    "id": "b146-sava-gelaro-sf6-cues-purchase-route",
+    "extends_attempt_id": "variant-sava-gelaro-sf6-cues-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

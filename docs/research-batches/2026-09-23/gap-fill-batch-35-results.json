@@ -1,0 +1,416 @@
+{
+  "batch_id": "gap-fill-batch-35-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-35-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 21,
+    "root_fields": 0,
+    "luna_evidence_fields": 21
+  },
+  "new_source_records": [
+    "dengfu-r20-warranty-recheck-2026-09-23",
+    "evolve-cima-road-official-recheck-2026-09-23",
+    "evolve-cima-road-review-recheck-2026-09-23",
+    "evolve-warranty-policy-recheck-2026-09-23",
+    "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23",
+    "hi-light-g7-2-grx-gr1600-official-recheck-2026-09-23",
+    "hi-light-g7-2-frameset-official-recheck-2026-09-23",
+    "laget-discovery-one-flagship-official-recheck-2026-09-23",
+    "giant-china-defy-advanced-2-official-recheck-2026-09-23",
+    "giant-overdrive-technology-recheck-2026-09-23",
+    "giant-defy-advanced-2-tour-review-recheck-2026-09-23",
+    "merida-silex-7000-25-official-recheck-2026-09-23",
+    "merida-silex-7000-radfahren-review-recheck-2026-09-23",
+    "merida-silex-first-ride-review-recheck-2026-09-23",
+    "quick-pro-gr-one-china-page-recheck-2026-09-23",
+    "quick-pro-gr-one-taobao-access-recheck-2026-09-23",
+    "quick-pro-gr-one-benelux-current-2026-09-23"
+  ],
+  "new_price_records": [],
+  "candidate_price_observations_added": [],
+  "new_images_added": [],
+  "image_records_updated": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "dengfu-gravel",
+    "evolve-cima-road",
+    "giant-defy-advanced-sl1-community-lead",
+    "hi-light-g7-2-grx-gr1600",
+    "laget-discovery-one-flagship",
+    "missing-china-price-giant-defy-advanced",
+    "missing-china-price-merida-silex",
+    "missing-china-price-quick-pro-gr-one"
+  ],
+  "results": [
+    {
+      "attempt_record_id": "candidate-dengfu-gravel-warranty-support-2026-08-17",
+      "record_id": "dengfu-gravel",
+      "field": "warranty-support",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "dengfu-r20-warranty-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current brand policy supports two-year carbon-frame-defect coverage for qualifying direct original purchasers, but does not prove eligibility for this R20 or third-party sale."
+    },
+    {
+      "attempt_record_id": "candidate-evolve-cima-road-frame-stiffness-2026-09-22",
+      "record_id": "evolve-cima-road",
+      "field": "frame-stiffness",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "evolve-cima-road-review-recheck-2026-09-23",
+        "evolve-cima-road-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Review supplies only a subjective comparison versus Winspace SLC5; sample was manufacturer-supplied and no instrumented whole-frame stiffness result exists."
+    },
+    {
+      "attempt_record_id": "candidate-evolve-cima-road-package-2026-09-22",
+      "record_id": "evolve-cima-road",
+      "field": "package",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "evolve-cima-road-official-recheck-2026-09-23",
+        "evolve-cima-road-review-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Frame, fork and seatpost are listed; bottle cages and bar tape are extra and the integrated handlebar is optional. Confirm remaining hardware and finish."
+    },
+    {
+      "attempt_record_id": "candidate-evolve-cima-road-warranty-support-2026-09-22",
+      "record_id": "evolve-cima-road",
+      "field": "warranty-support",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "evolve-warranty-policy-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current policy states lifetime frame/fork coverage for the first owner and two years for seatpost/KREUZA handlebar subject to conditions; exact channel eligibility remains to be checked."
+    },
+    {
+      "attempt_record_id": "candidate-giant-defy-advanced-sl1-community-lead-frame-material-2026-08-28",
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "field": "frame-material",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "2026 UK SL 1 trim uses Advanced SL-grade composite and full-composite OverDrive Aero steerer; community bicycle identity and China/generation mapping remain unresolved."
+    },
+    {
+      "attempt_record_id": "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27",
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "field": "drivetrain",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "hi-light-g7-2-grx-gr1600-official-recheck-2026-09-23",
+        "titanium-hi-light-g7-2-grx-gr1600-official"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated official 2×11 RX810 / 48-31 / 11-32 / GR1600 build remains separate from the selected Taobao 1×11 configuration; official page inaccessible at recheck."
+    },
+    {
+      "attempt_record_id": "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27",
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "field": "frame-material",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "hi-light-g7-2-frameset-official-recheck-2026-09-23",
+        "hi-light-g7-2-frameset-official-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Manufacturer source describes a titanium frame but exact grade remains unpublished; current official frame page inaccessible."
+    },
+    {
+      "attempt_record_id": "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27",
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "field": "tire-clearance",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "hi-light-g7-2-frameset-official-recheck-2026-09-23",
+        "hi-light-g7-2-frameset-official-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retain the dated official 700×45C maximum; current page was inaccessible, so no current listing or fit confirmation."
+    },
+    {
+      "attempt_record_id": "platform-incolor-ssr-identity-2026-08-17",
+      "record_id": "incolor-ssr",
+      "field": "identity",
+      "status": "supported",
+      "source_ids": [
+        "incolor-ssr-product-current-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current exact SSR page confirms product identity and links to the official Tmall store; it does not establish live stock or checkout."
+    },
+    {
+      "attempt_record_id": "platform-incolor-ssr-image-2026-08-17",
+      "record_id": "incolor-ssr",
+      "field": "image",
+      "status": "unresolved-after-recheck",
+      "source_ids": [
+        "incolor-ssr-product-current-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Existing official remote image remains unchanged; its asset timed out. No new image or rehost was made because reusable rights were not established."
+    },
+    {
+      "attempt_record_id": "candidate-irefox-profound-400-frame-material-2026-08-28",
+      "record_id": "irefox-profound-400",
+      "field": "frame-material",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "irefox-profound-400-official-current-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current manufacturer catalog identifies Profound 400 as T700 carbon; it does not publish fiber supplier, lay-up or molding process."
+    },
+    {
+      "attempt_record_id": "candidate-irefox-profound-400-frame-stiffness-2026-08-28",
+      "record_id": "irefox-profound-400",
+      "field": "frame-stiffness",
+      "status": "unresolved-after-recheck",
+      "source_ids": [
+        "irefox-profound-400-biketo-review-current-2026-09-23",
+        "irefox-profound-400-official-current-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Exact review describes comfort and stable handling but gives no stiffness-specific or measured result; those ride impressions are not a stiffness claim."
+    },
+    {
+      "attempt_record_id": "candidate-laget-discovery-one-flagship-frame-material-2026-08-27",
+      "record_id": "laget-discovery-one-flagship",
+      "field": "frame-material",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "titanium-laget-discovery-one-flagship-official",
+        "laget-discovery-one-flagship-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Earlier dated official page described 3D-printed titanium; current page omits alloy/material and exact grade remains unknown."
+    },
+    {
+      "attempt_record_id": "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27",
+      "record_id": "laget-discovery-one-flagship",
+      "field": "frame-weight",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "laget-discovery-one-flagship-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current page lists size-S frame at 1.45 kg but leaves component inclusion and weighing method unspecified."
+    },
+    {
+      "attempt_record_id": "candidate-laget-discovery-one-flagship-price-2026-08-27",
+      "record_id": "laget-discovery-one-flagship",
+      "field": "price",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "laget-discovery-one-flagship-official-recheck-2026-09-23",
+        "laget-discovery-one-flagship-taobao-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current official retail listing shows CNY 25,900; this is not a checkout amount and no new price-history observation was created."
+    },
+    {
+      "attempt_record_id": "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27",
+      "record_id": "laget-discovery-one-flagship",
+      "field": "tire-clearance",
+      "status": "supported",
+      "source_ids": [
+        "laget-discovery-one-flagship-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current official product page lists 700×50C maximum."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-giant-defy-advanced-frame-material-2026-08-28",
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "field": "frame-material",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "giant-china-defy-advanced-2-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current mainland page confirms Advanced-Grade Composite and full-composite OverDrive One steerer; no fiber supplier or lay-up is published."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-giant-defy-advanced-frame-stiffness-2026-08-28",
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "field": "frame-stiffness",
+      "status": "unresolved-after-recheck",
+      "source_ids": [
+        "giant-china-defy-advanced-2-official-recheck-2026-09-23",
+        "giant-overdrive-technology-recheck-2026-09-23",
+        "giant-defy-advanced-2-tour-review-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Generic OverDrive claims and a generation-mismatched 2024 ride review do not establish stiffness for this exact mainland build; no model-specific measurement found."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-merida-silex-frame-material-2026-08-28",
+      "record_id": "missing-china-price-merida-silex",
+      "field": "frame-material",
+      "status": "supported-with-caveat",
+      "source_ids": [
+        "merida-silex-7000-25-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current exact SILEX 7000 25 page identifies carbon CF2 II frame and CF2 fork; fiber grade and lay-up remain unpublished."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-merida-silex-frame-stiffness-2026-08-28",
+      "record_id": "missing-china-price-merida-silex",
+      "field": "frame-stiffness",
+      "status": "unresolved-after-recheck",
+      "source_ids": [
+        "merida-silex-7000-radfahren-review-recheck-2026-09-23",
+        "merida-silex-first-ride-review-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "No current-build measured result. Older 2023 non-stock-generation comments are not transferable; current reviews offer no comparable stiffness data."
+    },
+    {
+      "attempt_record_id": "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28",
+      "record_id": "missing-china-price-quick-pro-gr-one",
+      "field": "frame-material",
+      "status": "qualified-recheck",
+      "source_ids": [
+        "quick-pro-gr-one-china-page-recheck-2026-09-23",
+        "quick-pro-gr-one-taobao-access-recheck-2026-09-23",
+        "quick-pro-gr-one-benelux-current-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current authorized Benelux GR:ONE page supports T1100+M65 and monocoque only for that regional revision; it does not establish mainland equivalence."
+    }
+  ],
+  "updated_research_attempts": [
+    "candidate-dengfu-gravel-warranty-support-2026-08-17",
+    "candidate-evolve-cima-road-frame-stiffness-2026-09-22",
+    "candidate-evolve-cima-road-package-2026-09-22",
+    "candidate-evolve-cima-road-warranty-support-2026-09-22",
+    "candidate-giant-defy-advanced-sl1-community-lead-frame-material-2026-08-28",
+    "candidate-hi-light-g7-2-grx-gr1600-drivetrain-2026-08-27",
+    "candidate-hi-light-g7-2-grx-gr1600-frame-material-2026-08-27",
+    "candidate-hi-light-g7-2-grx-gr1600-tire-clearance-2026-08-27",
+    "platform-incolor-ssr-identity-2026-08-17",
+    "platform-incolor-ssr-image-2026-08-17",
+    "candidate-irefox-profound-400-frame-material-2026-08-28",
+    "candidate-irefox-profound-400-frame-stiffness-2026-08-28",
+    "candidate-laget-discovery-one-flagship-frame-material-2026-08-27",
+    "candidate-laget-discovery-one-flagship-frame-weight-2026-08-27",
+    "candidate-laget-discovery-one-flagship-price-2026-08-27",
+    "candidate-laget-discovery-one-flagship-tire-clearance-2026-08-27",
+    "candidate-missing-china-price-giant-defy-advanced-frame-material-2026-08-28",
+    "candidate-missing-china-price-giant-defy-advanced-frame-stiffness-2026-08-28",
+    "candidate-missing-china-price-merida-silex-frame-material-2026-08-28",
+    "candidate-missing-china-price-merida-silex-frame-stiffness-2026-08-28",
+    "candidate-missing-china-price-quick-pro-gr-one-frame-material-2026-08-28"
+  ],
+  "notes": [
+    "All 21 frozen attempts have source-reuse resolutions and accepted source IDs; historical search-channel history is preserved.",
+    "No new price-history records or images were added. LAGET's current listed retail price is documented in candidate evidence facts, not as a new price observation.",
+    "Incolor's existing remote official image remains unchanged; the asset timed out and reusable rights were not established.",
+    "Unknown, inaccessible, subjective, regional and generation-mismatched facts remain explicitly caveated."
+  ],
+  "validation_plan": {
+    "checks": [
+      {
+        "command": "npm run --silent research:check",
+        "status": "passed",
+        "result": "1,461 atomic research fields validated"
+      },
+      {
+        "command": "npm run --silent validate",
+        "status": "passed",
+        "result": "41 brands, 38 platforms, 41 variants, 73 prices, 1,194 sources, 212 primary image records, 236 candidates, 1,465 atomic research records"
+      },
+      {
+        "command": "npm run --silent coverage:accept",
+        "status": "passed",
+        "result": "monotonic coverage baseline accepted"
+      },
+      {
+        "command": "npm run --silent coverage:check",
+        "status": "passed",
+        "result": "212 images, 73 prices, 1,194 sources, 236 candidates protected"
+      },
+      {
+        "command": "npm run --silent privacy",
+        "status": "passed",
+        "result": "no privacy or local-path patterns"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed",
+        "result": "no whitespace errors"
+      }
+    ],
+    "full_gate": "developer-storage-cache run -- npm run check passed"
+  },
+  "full_gate": {
+    "status": "passed",
+    "tests": "307/307",
+    "build_pages": 584,
+    "seo": {
+      "indexable": 458,
+      "noindex": 126,
+      "status": "passed"
+    }
+  },
+  "validated_counts": {
+    "brands": 41,
+    "platforms": 38,
+    "variants": 41,
+    "dated_price_records": 73,
+    "sources": 1194,
+    "primary_image_records": 212,
+    "candidates": 236,
+    "research_records": 1465,
+    "atomic_research_fields": 1461,
+    "visible_candidate_rows": 215
+  },
+  "fresh_gap_inventory_after_batch": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    }
+  },
+  "fresh_queue_after_batch": {
+    "as_of": "2026-09-23",
+    "ready": 0,
+    "evidence-found": 320,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  }
+}

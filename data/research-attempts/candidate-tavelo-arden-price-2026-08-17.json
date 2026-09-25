@@ -53,8 +53,21 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "tavelo-arden-china-launch-2026-08-17",
-    "tavelo-arden-official-2026-08-17"
+    "tavelo-arden-official-2026-08-17",
+    "tavelo-arden-race-official-recheck-2026-09-23",
+    "tavelo-arden-race-price-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. prices: conflicted. Unknowns and blocks are not negative evidence."
+  "notes": "The current global product page lists the exact Arden Race frameset at USD 1,899; a secondary product card shows USD 1,799 against USD 1,899. This global USD route does not establish current mainland CNY checkout or whether the generic Arden candidate is the Race versus SL frameset; retain the dated CNY 9,999/12,999 launch references without treating them as current.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "tavelo-arden-china-launch-2026-08-17",
+      "tavelo-arden-official-2026-08-17",
+      "tavelo-arden-race-official-recheck-2026-09-23",
+      "tavelo-arden-race-price-current-recheck-2026-09-25"
+    ],
+    "note": "The current global product page lists the exact Arden Race frameset at USD 1,899; a secondary product card shows USD 1,799 against USD 1,899. This global USD route does not establish current mainland CNY checkout or whether the generic Arden candidate is the Race versus SL frameset; retain the dated CNY 9,999/12,999 launch references without treating them as current."
+  }
 }

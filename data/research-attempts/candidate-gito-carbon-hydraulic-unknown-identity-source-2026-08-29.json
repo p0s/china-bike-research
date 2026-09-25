@@ -484,8 +484,20 @@
   "accepted_source_ids": [
     "gito-g525-retailer-2026-08-29",
     "gito-g525-taobao-index-2026-08-29",
-    "gito-chinese-retail-2026-08-29"
+    "gito-chinese-retail-2026-08-29",
+    "gito-g525-888bike-current-2026-09-23",
+    "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. Visible G525 and Shimano 105 markings are corroborated by current exact-model and mainland indexes; 捷拓 is retained as the supported Chinese rendering."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/gito-carbon-hydraulic-unknown-50-area-sweep-2026-08-29.json. Visible G525 and Shimano 105 markings are corroborated by current exact-model and mainland indexes; 捷拓 is retained as the supported Chinese rendering.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "gito-g525-888bike-current-2026-09-23",
+      "gito-g525-taobao-index-2026-08-29",
+      "taobao-snapshot-2026-08-08"
+    ],
+    "note": "Title/SKU and retained image identify G525, but retailer body contamination by G530 leaves exact generation relationship unresolved."
+  }
 }

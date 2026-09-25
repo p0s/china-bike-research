@@ -483,5 +483,13 @@
     "winspace-g3-bikeinsights-geometry-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-winspace-g3-batch-043-50-area-sweep-2026-09-01.json. Source-linked exact-model geometry provides five real sizes and is cross-checked against the authorized regional listing."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-winspace-g3-batch-043-50-area-sweep-2026-09-01.json. Source-linked exact-model geometry provides five real sizes and is cross-checked against the authorized regional listing.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "winspace-g3-bikeinsights-geometry-2026-09-01"
+    ],
+    "note": "The exact Bike Insights 2025 G3 table supplies five sizes (XS/440 through XL/540) and the stored geometry metrics, attributed to manufacturer geometry. Preserve the secondary-source attribution; the manufacturer's current product page was not treated as numeric geometry evidence."
+  }
 }

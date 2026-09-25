@@ -1,0 +1,63 @@
+{
+  "id": "variant-twitter-v3-rs-sensah-frame-weight-2026-09-22",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-rs-sensah"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-09-22",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 RS Sensah frame-only weight official",
+          "route": "manufacturer exact page/manual/geometry chart",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "Manufacturer page gives complete configuration weights but no frame-only number.",
+          "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Gravel V3 RS Sensah frame weight regional store",
+          "route": "official regional catalog/PDF/store",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-17",
+          "note": "USA listing is different wireless configuration and does not isolate frame weight.",
+          "result_url": "https://twitterbikeusa.com/products/gravel-v3-wireless-twitter-gravel-road-bike"
+        },
+        {
+          "attempt": 3,
+          "query": "TWITTER Gravel V3 RS Sensah frame weight exact-SKU dealer",
+          "route": "authorized exact-SKU dealer or credible launch/spec publication",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-17",
+          "note": "No exact frame-only measurement located."
+        }
+      ],
+      "conflict": "Prior 1150 g resolution attributed a storefront claim to T47; current storefront specifies BB86 and the manufacturer T47 table supplies no frame-only mass."
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22"
+  ],
+  "retry_after": null,
+  "notes": "Replaces the August ledger without altering its original attempts or source-reuse resolution, preserved below as superseded_resolution. Current revision conflict retracts the unsupported 1150 g T47 scalar. See luna-followup-04a-results.json. Current reads are supplemental evidence from batch04, not a second attempt campaign.",
+  "superseded_resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-08-28",
+    "source_ids": [
+      "twitter-v3-rs-factory-store-2026-08-28"
+    ],
+    "note": "A later exact current-generation factory-store source published a size-M unpainted frame claim after the original three-route pass."
+  }
+}

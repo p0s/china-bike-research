@@ -1,0 +1,12 @@
+{
+  "batch": 88,
+  "date": "2026-09-24",
+  "supersedes": "docs/research-batches/2026-09-24/gap-fill-batch-88-scope.json#research_route.action",
+  "reason": "Five amended targets are volatile purchase-route facts whose accepted sources date from 2026-08-17 through 2026-09-01. Current-source rechecks are required before using them to fill a live route gap.",
+  "research_route": {
+    "action": "One read-only Luna Max pass. Audit all ten amended targets' local record and accepted sources. In addition, browse exactly one currently accessible official or authorized exact-model route page for each of the five published-variant purchase-route targets (Elves Falath R7170; TWITTER Cyclone electronic; TWITTER Cyclone Gen 3 ET; TWITTER Gravel V3 RS Sensah; TWITTER Gravel V3 WheelTop EDS). No seller contact, login, challenge handling, scraping bypass, or external writes. Do not browse the other five targets unless an accepted source itself points to a required clarification.",
+    "return_contract": "For all ten targets, return direct source-to-fact assessment, supported exact value or route, caveats, and whether the catalog field can be populated. For each route recheck, include source title, exact public URL, access date, observed purchase path and what remains unverified. A current purchase route requires a live public official/authorized path for that exact build; a brand home page, product family page, or different trim is not enough. If no page can be accessed, leave the route gap open and report the precise limitation.",
+    "integration_rule": "The primary writer creates dated source records for any newly accessed page and integrates only directly supported exact values into the corresponding candidate or variant, with accepted sources linked. Remove only the exact missing-field label when fully resolved; otherwise retain it and record a source-reuse or fresh-recheck limitation.",
+    "stop_rule": "Only the ten amended fields across nine exact models and the five named route-page rechecks. Stop at the first decisive exact source per route. No additional searches, candidate substitutions, or catalog scope expansion."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "batch": 148,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 397,
+      "conflicted": 35,
+      "found": 9,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "price_gap_counts": {
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2
+    },
+    "selection": "Ten highest-priority remaining exact-model candidate price gaps in fresh inventory order after excluding the ten B147 targets and same-day-researched models. Carbonda CFR707 is excluded because its latest price attempt is temporarily exhausted until 2026-11-17. Ten candidate records and ten atomic price fields are frozen."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "lightcarbon-lcg074s-d",
+        "name": "LightCarbon LCG074S-D",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-lightcarbon-lcg074s-d-price-2026-09-01"}]
+      },
+      {
+        "id": "lightcarbon-lcg087-d",
+        "name": "LightCarbon LCG087-D",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-lightcarbon-lcg087-d-price-2026-09-01"}]
+      },
+      {
+        "id": "lightcarbon-lcg087s-d",
+        "name": "LightCarbon LCG087S-D",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-lightcarbon-lcg087s-d-price-2026-09-01"}]
+      },
+      {
+        "id": "lightcarbon-lcr020-d",
+        "name": "LightCarbon LCR020-D",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-lightcarbon-lcr020-d-price-2026-09-01"}]
+      },
+      {
+        "id": "missing-china-price-specialized-crux",
+        "name": "Specialized Crux Comp GRX",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-missing-china-price-specialized-crux-price-recheck-2026-09-24"}]
+      },
+      {
+        "id": "airwolf-yf-r003",
+        "name": "Airwolf YF-R003",
+        "record_type": "candidate",
+        "priority_score": 43,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-airwolf-yf-r003-price-2026-09-24"}]
+      },
+      {
+        "id": "hi-light-g0",
+        "name": "Hi-Light 航轮 G0",
+        "record_type": "candidate",
+        "priority_score": 41,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-hi-light-g0-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "missing-china-price-merida-scultura",
+        "name": "Merida SCULTURA 6000 25",
+        "record_type": "candidate",
+        "priority_score": 38,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-missing-china-price-merida-scultura-current-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "missing-china-price-merida-silex",
+        "name": "Merida SILEX 7000 25",
+        "record_type": "candidate",
+        "priority_score": 38,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-missing-china-price-merida-silex-current-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "missing-china-price-specialized-tarmac-sl8",
+        "name": "Specialized Tarmac SL8 Comp 105 Di2",
+        "record_type": "candidate",
+        "priority_score": 38,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-missing-china-price-specialized-tarmac-sl8-current-mainland-observed-price-2026-09-24"}]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 10,
+    "research_boundary": "Use the user's single Luna evidence-only researcher; root remains sole writer. Before opening any result page, inspect all linked source, attempt, campaign and source_url histories for that exact model; exact-literal search the proposed final URL across repository data and docs. If present or pre-open absence cannot be proven, skip without reopening. Per target: at most one distinct exact-model web query and one genuinely new product/seller page.",
+    "price_rules": [
+      "For price-missing fields, record only dated exact-model public manufacturer or seller prices with their type and basis; a request-a-quote form without an actual amount does not fill a price gap.",
+      "For price-not-observed fields, require current exact-build mainland CNY transaction or seller-listing evidence. An MSRP, subsidy, coupon estimate, global USD conversion, foreign-market amount, search snippet, seller-family result or unclear selected option is not an observed price.",
+      "Preserve selected model, generation, build/package, seller, date and conditional terms. Do not infer authorization, stock, shipping, tax, warranty, returns or final checkout.",
+      "One distinct query per exact target. Reuse existing sources without reopening; do not retry inaccessible pages. No login, quote submission, seller contact, cart, purchase or hidden checkout probing."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, external message, seller outreach, quote/cart/purchase, image download/rehosting or delivery action.",
+      "No updates outside the ten frozen price fields, supporting source records, research attempt records and dated batch documentation."
+    ]
+  },
+  "external_delivery": "none"
+}

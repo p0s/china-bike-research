@@ -1,0 +1,448 @@
+{
+  "batch": 141,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 680,
+    "catalog_records": 263,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 104,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 11,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 75
+    },
+    "research_status_counts": {
+      "blocked": 373,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    },
+    "selection_note": "Select ten named product/build identities from the fresh inventory with exact-model residual evidence gaps. Exclude fields rechecked in B139 and the B140 image-health-only batch. Prior broad web sweeps are not repeated; each selected field allows one distinct new web check."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "muidler-ashius-s7",
+        "name": "MUIDLER 媚影 阿修斯 S7",
+        "record_type": "candidate"
+      },
+      {
+        "id": "camp-gx700-travel",
+        "name": "CAMP 坎普 GX700 travel-loaded build",
+        "record_type": "candidate"
+      },
+      {
+        "id": "cycletrack-phantom-rx24",
+        "name": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+        "record_type": "candidate"
+      },
+      {
+        "id": "cycletrack-time-tt",
+        "name": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9",
+        "record_type": "candidate"
+      },
+      {
+        "id": "java-vittoria-er7-2026",
+        "name": "JAVA 佳沃 Vittoria ER7 2026",
+        "record_type": "candidate"
+      },
+      {
+        "id": "elro-f1",
+        "name": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+        "record_type": "candidate"
+      },
+      {
+        "id": "hi-light-r9-2025",
+        "name": "Hi-Light 航轮 R9 (2025)",
+        "record_type": "candidate"
+      },
+      {
+        "id": "meihanda-phantom-p10",
+        "name": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+        "record_type": "candidate"
+      },
+      {
+        "id": "twitter-t8-closed-wheel",
+        "name": "TWITTER 骓特 T8 closed-wheel build",
+        "record_type": "candidate"
+      },
+      {
+        "id": "camp-gx600",
+        "name": "CAMP GX600",
+        "record_type": "platform",
+        "affected_variant_ids": [
+          "camp-gx600-pes"
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 25,
+    "selected_fields": [
+      {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7",
+        "model": "MUIDLER 媚影 阿修斯 S7",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-muidler-ashius-s7-tire-clearance-2026-08-30",
+        "new_attempt_id": "candidate-muidler-ashius-s7-tire-clearance-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-muidler-ashius-s7-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7",
+        "model": "MUIDLER 媚影 阿修斯 S7",
+        "field": "frame-material",
+        "gap_code": "frame-material-detail-missing",
+        "attempt_id": "candidate-muidler-ashius-s7-frame-material-2026-08-30",
+        "new_attempt_id": "candidate-muidler-ashius-s7-frame-material-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-muidler-ashius-s7-frame-material"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "muidler-ashius-s7",
+        "model": "MUIDLER 媚影 阿修斯 S7",
+        "field": "frame-stiffness",
+        "gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30",
+        "new_attempt_id": "candidate-muidler-ashius-s7-frame-stiffness-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-muidler-ashius-s7-frame-stiffness"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel",
+        "model": "CAMP 坎普 GX700 travel-loaded build",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-camp-gx700-travel-complete-weight-2026-08-29",
+        "new_attempt_id": "candidate-camp-gx700-travel-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx700-travel-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel",
+        "model": "CAMP 坎普 GX700 travel-loaded build",
+        "field": "drivetrain",
+        "gap_code": "drivetrain-missing",
+        "attempt_id": "candidate-camp-gx700-travel-drivetrain-2026-08-29",
+        "new_attempt_id": "candidate-camp-gx700-travel-drivetrain-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx700-travel-drivetrain"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel",
+        "model": "CAMP 坎普 GX700 travel-loaded build",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-camp-gx700-travel-tire-clearance-2026-08-29",
+        "new_attempt_id": "candidate-camp-gx700-travel-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx700-travel-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "camp-gx700-travel",
+        "model": "CAMP 坎普 GX700 travel-loaded build",
+        "field": "frame-stiffness",
+        "gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-camp-gx700-travel-frame-stiffness-2026-08-29",
+        "new_attempt_id": "candidate-camp-gx700-travel-frame-stiffness-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx700-travel-frame-stiffness"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "cycletrack-phantom-rx24",
+        "model": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29",
+        "new_attempt_id": "candidate-cycletrack-phantom-rx24-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-cycletrack-phantom-rx24-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "cycletrack-phantom-rx24",
+        "model": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-cycletrack-phantom-rx24-tire-clearance-2026-08-29",
+        "new_attempt_id": "candidate-cycletrack-phantom-rx24-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-cycletrack-phantom-rx24-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "cycletrack-time-tt",
+        "model": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29",
+        "new_attempt_id": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-cycletrack-time-tt-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "java-vittoria-er7-2026",
+        "model": "JAVA 佳沃 Vittoria ER7 2026",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-java-vittoria-er7-2026-complete-weight-2026-08-29",
+        "new_attempt_id": "candidate-java-vittoria-er7-2026-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-java-vittoria-er7-2026-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "java-vittoria-er7-2026",
+        "model": "JAVA 佳沃 Vittoria ER7 2026",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29",
+        "new_attempt_id": "candidate-java-vittoria-er7-2026-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-java-vittoria-er7-2026-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "elro-f1",
+        "model": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-elro-f1-complete-weight-2026-08-29",
+        "new_attempt_id": "candidate-elro-f1-complete-weight-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-elro-f1-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "elro-f1",
+        "model": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-elro-f1-tire-clearance-2026-08-29",
+        "new_attempt_id": "candidate-elro-f1-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-elro-f1-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025",
+        "model": "Hi-Light 航轮 R9 (2025)",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24",
+        "new_attempt_id": "candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": null,
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025",
+        "model": "Hi-Light 航轮 R9 (2025)",
+        "field": "frame-weight",
+        "gap_code": "frame-weight-missing",
+        "attempt_id": "candidate-hi-light-r9-2025-frame-weight-2026-09-01",
+        "new_attempt_id": "candidate-hi-light-r9-2025-frame-weight-2026-09-01-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-hi-light-r9-2025-frame-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "hi-light-r9-2025",
+        "model": "Hi-Light 航轮 R9 (2025)",
+        "field": "frame-stiffness",
+        "gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-hi-light-r9-2025-frame-stiffness-2026-09-01",
+        "new_attempt_id": "candidate-hi-light-r9-2025-frame-stiffness-2026-09-01-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-hi-light-r9-2025-frame-stiffness"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "meihanda-phantom-p10",
+        "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30",
+        "new_attempt_id": "candidate-meihanda-phantom-p10-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-meihanda-phantom-p10-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "model": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30",
+        "new_attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "conflicted",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-twitter-t8-closed-wheel-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "model": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "drivetrain",
+        "gap_code": "drivetrain-missing",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30",
+        "new_attempt_id": "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "conflicted",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-twitter-t8-closed-wheel-drivetrain"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "model": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30",
+        "new_attempt_id": "candidate-twitter-t8-closed-wheel-tire-clearance-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-twitter-t8-closed-wheel-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "model": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "frame-stiffness",
+        "gap_code": "stiffness-evidence-missing",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-frame-stiffness-2026-08-30",
+        "new_attempt_id": "candidate-twitter-t8-closed-wheel-frame-stiffness-2026-08-30-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-twitter-t8-closed-wheel-frame-stiffness"
+      },
+      {
+        "record_type": "platform",
+        "record_id": "camp-gx600",
+        "model": "CAMP GX600",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "platform-camp-gx600-tire-clearance-2026-09-01",
+        "new_attempt_id": "platform-camp-gx600-tire-clearance-2026-09-01-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx600-pes-tire-clearance",
+        "catalog_gap_record_type": "published-variant",
+        "catalog_gap_record_id": "camp-gx600-pes"
+      },
+      {
+        "record_type": "platform",
+        "record_id": "camp-gx600",
+        "model": "CAMP GX600",
+        "field": "geometry",
+        "gap_code": "geometry-missing",
+        "attempt_id": "platform-camp-gx600-geometry-2026-09-01",
+        "new_attempt_id": "platform-camp-gx600-geometry-2026-09-01-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx600-pes-geometry",
+        "catalog_gap_record_type": "published-variant",
+        "catalog_gap_record_id": "camp-gx600-pes"
+      },
+      {
+        "record_type": "platform",
+        "record_id": "camp-gx600",
+        "model": "CAMP GX600",
+        "field": "frame-weight",
+        "gap_code": "frame-weight-missing",
+        "attempt_id": "platform-camp-gx600-frame-weight-2026-09-01",
+        "new_attempt_id": "platform-camp-gx600-frame-weight-2026-09-01-b141-live-recheck-2026-09-25",
+        "predecessor_status": "blocked",
+        "predecessor_approaches": 50,
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b141-camp-gx600-pes-frame-weight",
+        "catalog_gap_record_type": "published-variant",
+        "catalog_gap_record_id": "camp-gx600-pes"
+      }
+    ],
+    "research_boundary": "One Luna Max evidence-only researcher works sequentially, one exact model at a time. Review each predecessor attempt and its linked campaign history first; do not repeat exact queries or reopen recorded URLs. At most one new distinct web query and one newly surfaced exact-model manufacturer or clearly authorized retailer/review page per model; a single page may support multiple selected fields only when each fact applies to the exact retained build. Return title, publisher/source class, exact URL, access date, quoted/paraphrased fact, model/configuration match, size/equipment/market basis, predecessor-history check, and field-by-field qualification. Root is sole writer; the agent writes no files.",
+    "claim_rules": [
+      "A complete-bike weight must match the exact selected build and state available size, equipment, and measurement basis; do not transfer sibling trims.",
+      "A frame-only weight must be frame-only and state size, finish, and included-hardware basis when given.",
+      "A maximum tire clearance must be explicit for the exact frame; fitted tire width is not a maximum.",
+      "A drivetrain fact must identify the exact trim and transmission; preserve multiple available configurations when the retained listing does not select one.",
+      "A mainland price must be a current exact-product CNY transaction or checkout observation, with date, product selection and seller authority assessed; MSRP and foreign prices do not qualify.",
+      "Frame material needs explicit exact-model construction evidence; stiffness needs meaningful exact-model instrumented or otherwise specific evidence, not construction language.",
+      "Geometry must be attributable to the exact model and retain its size row and measurement units; do not infer chart values from an image.",
+      "A newly surfaced official or authorized exact-model source can resolve only facts it directly supports. Preserve unavailable, ambiguous, conflicting or unsupported values as unresolved."
+    ],
+    "excluded": [
+      "No XHS, Weibo, login, CAPTCHA, challenge handling, personal browser profile, seller contact, quote request, cart, purchase, external message, image download/rehosting, or agent file writes.",
+      "Do not repeat predecessor queries or reopen predecessor URLs; do not infer exact facts from sibling models, fitted tire sizes, visual carbon appearance, or non-matching builds.",
+      "Stop after the one new exact page per model, or immediately on an inaccessible or mismatched page; no further retries."
+    ],
+    "schema_amendment": {
+      "amended_at": "2026-09-25",
+      "reason": "Align the three Camp GX600 research targets with their actual platform-scoped predecessor attempts; retain camp-gx600-pes as the affected catalog variant. Model count, field count, sources, and research boundaries are unchanged. This correction was made before the GX600 fresh lookup."
+    }
+  },
+  "external_delivery": "none"
+}

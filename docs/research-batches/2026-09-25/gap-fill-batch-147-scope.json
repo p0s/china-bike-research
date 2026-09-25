@@ -1,0 +1,113 @@
+{
+  "batch": 147,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 670,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 397,
+      "conflicted": 35,
+      "found": 9,
+      "open": 1,
+      "temporarily-exhausted": 4
+    },
+    "price_gap_counts": {
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2
+    },
+    "selection": "Ten highest-priority remaining exact-model candidate price gaps in the fresh inventory, excluding targets already rechecked on 2026-09-25 and the temporarily-exhausted Giant Defy Advanced SL 1. Hongfu's generic gravel lead is excluded because exact model/generation remains unresolved; LightCarbon LCG074-D is the next exact model price gap. Ten candidate records and ten atomic price fields are frozen."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "pardus-spark-rs-community-lead",
+        "name": "PARDUS Spark RS custom build",
+        "record_type": "candidate",
+        "priority_score": 98,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "dengfu-gravel",
+        "name": "Dengfu R20 Disc Gravel Bike Frame",
+        "record_type": "candidate",
+        "priority_score": 91,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-dengfu-gravel-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "pardus-robin-evo-community-lead",
+        "name": "PARDUS Robin EVO competition build",
+        "record_type": "candidate",
+        "priority_score": 74,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "hi-light-r6-105-al",
+        "name": "Hi-Light 航轮 R6 105 AL",
+        "record_type": "candidate",
+        "priority_score": 71,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "missing-china-price-giant-revolt-advanced",
+        "name": "Giant Revolt Advanced 2",
+        "record_type": "candidate",
+        "priority_score": 68,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "tavelo-arow-sl-community-lead",
+        "name": "Tavelo Arow SL custom build",
+        "record_type": "candidate",
+        "priority_score": 59,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "twitter-gravel-v3-2024-rs-carbon-wave",
+        "name": "TWITTER 骓特 Gravel V3 2024 RS 2×12",
+        "record_type": "candidate",
+        "priority_score": 52,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "seraph-tt-x68-new-udh",
+        "name": "Seraph / TanTan TT-X68-new UDH",
+        "record_type": "candidate",
+        "priority_score": 51,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-seraph-tt-x68-new-udh-current-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "irefox-profound-400",
+        "name": "IREFOX Profound 400",
+        "record_type": "candidate",
+        "priority_score": 49,
+        "gaps": [{"code": "price-not-observed", "attempt_id": "candidate-irefox-profound-400-current-mainland-observed-price-2026-09-24"}]
+      },
+      {
+        "id": "lightcarbon-lcg074-d",
+        "name": "LightCarbon LCG074-D",
+        "record_type": "candidate",
+        "priority_score": 46,
+        "gaps": [{"code": "price-missing", "attempt_id": "candidate-lightcarbon-lcg074-d-price-recheck-2026-09-24"}]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 10,
+    "research_boundary": "Use one Luna evidence-only researcher; root remains sole writer. Before opening any result page, inspect every linked source, attempt and campaign history, plus all source_url values for the target/candidate/platform; exact-literal search the proposed final URL across repository data and docs. If present or the pre-open audit cannot be proven, skip without reopening. Per model: at most one distinct exact-model web query and one genuinely new product/seller page open.",
+    "price_rules": [
+      "Only add a current observed CNY transaction/listing price when the evidence identifies the exact retained model and build/package and shows a dated public mainland seller or manufacturer offer. Preserve seller and price basis; distinguish checkout price, MSRP, quote, owner report, search card and promotion.",
+      "A USD global-store reference, old official list price, search snippet, generic model-family offer, unresolved custom build, unselected option, price range, or inaccessible page is not a current observed mainland transaction price.",
+      "Do not infer frame/complete-bike package, generation, selected SKU, seller authorization, stock, mainland delivery, tax, warranty, returns or final checkout. Keep unresolved or conflicting facts explicit.",
+      "Use one distinct query per exact target. Reuse existing sources without reopening; do not retry an inaccessible page or URL. No login, quote submission, seller contact, cart, purchase or hidden checkout probing."
+    ],
+    "excluded": [
+      "No agent edits; no XHS, Weibo, personal browser, login/CAPTCHA, external message, seller outreach, quote/cart/purchase, image download/rehosting, or delivery action.",
+      "No updates outside the ten frozen price fields, supporting source records, research attempt records and dated batch documentation."
+    ]
+  },
+  "external_delivery": "none"
+}

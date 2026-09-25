@@ -484,5 +484,13 @@
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-youlong-2-50-area-sweep-2026-08-30.json. The exact retained seller pixels explicitly call 游龙 2.0 a full-carbon road bike."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-youlong-2-50-area-sweep-2026-08-30.json. The exact retained seller pixels explicitly call 游龙 2.0 a full-carbon road bike.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08"
+    ],
+    "note": "The retained exact seller-card pixels call 游龙 2.0 a full-carbon road bike. This is a seller claim only; no independent grade, lay-up or manufacturer BOM was found, so keep material specificity limited to the exact card wording."
+  }
 }

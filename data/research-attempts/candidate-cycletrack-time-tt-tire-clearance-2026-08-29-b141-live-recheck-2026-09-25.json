@@ -1,0 +1,53 @@
+{
+  "id": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cycletrack-time-tt"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CYCLETRACK TIME 时光 ER9 TT 车架 最大轮胎宽度 manufacturer specification",
+          "route": "Fresh B141 exact-model web search; no new maximum-clearance source surfaced",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Only a JD brand/category page surfaced, not an exact maximum-clearance specification. Previously recorded manufacturer TIME page was not reopened; its fitted 700×28C is not a maximum.",
+          "result_url": "https://www.jd.com/brand/13189ae1bbfadae99ede.html"
+        }
+      ],
+      "blocker": "Only a JD brand/category page surfaced, not an exact maximum-clearance specification. Previously recorded manufacturer TIME page was not reopened; its fitted 700×28C is not a maximum."
+    }
+  },
+  "notes": "Only a JD brand/category page surfaced, not an exact maximum-clearance specification. Previously recorded manufacturer TIME page was not reopened; its fitted 700×28C is not a maximum.",
+  "campaign_extension": {
+    "id": "b141-cycletrack-time-tt-tire-clearance",
+    "extends_attempt_id": "candidate-cycletrack-time-tt-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+    "reason": "One distinct B141 web check was authorized after the selected field’s prior 50-area history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

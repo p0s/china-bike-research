@@ -1,0 +1,79 @@
+{
+  "batch": 124,
+  "date": "2026-09-24",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-124-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:winspace-m6",
+      "candidate:winspace-t1600",
+      "candidate:xds-ad7"
+    ],
+    "disposition": "All seven frozen evidence-found fields were source-reuse resolved after a current-page recheck. WINSPACE's exact M6 builds support the shared frame/fork carbon construction; the Japan page publishes 700×32C. The original T1600 105 Di2 page supports Toray T1000+T1100/Kevlar construction and qualitative stiffness/power-transfer wording; its Japan page publishes 700×32C. XDS AD7 regional Green Demon pages support the listed 105 Di2 hydraulic 2×12 drivetrain and Taiwan AD7 detail supports the T700/T800 carbon frame and carbon fork. All retained mainland trim/build ambiguities remain explicit; tire 32C is nominal tire size, not measured physical clearance.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "evidence_found_before": 56,
+    "evidence_found_after": 49,
+    "research_attempts_resolved": 7,
+    "research_fields_left_open": 0,
+    "source_records_added": 7,
+    "catalog_records_updated": 3,
+    "test_files_updated": 0,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "candidate:winspace-m6:frame-material",
+      "disposition": "resolved",
+      "source_ids": ["winspace-m6-105-di2-current-recheck-2026-09-25", "winspace-m6-105-mechanical-current-recheck-2026-09-25"],
+      "caveat": "Exact build pages support T700+T800+M40+M60 frame and full-carbon fork for their named builds; retained mainland coupon trim and fiber proportions remain unresolved."
+    },
+    {
+      "field": "candidate:winspace-m6:tire-clearance",
+      "disposition": "resolved",
+      "source_ids": ["winspace-m6-regional-spec-current-recheck-2026-09-25"],
+      "caveat": "Current manufacturer regional page publishes 700×32C; this is nominal tire size, not 32 mm measured internal clearance or proof of the retained mainland build."
+    },
+    {
+      "field": "candidate:winspace-t1600:frame-material",
+      "disposition": "resolved",
+      "source_ids": ["winspace-t1600-105-di2-current-recheck-2026-09-25"],
+      "caveat": "Exact original T1600 105 Di2 page supports Toray T1000+T1100 carbon, Kevlar and full-carbon fork; T1600 Ultra is excluded, while retained trim and lay-up proportions remain unknown."
+    },
+    {
+      "field": "candidate:winspace-t1600:frame-stiffness",
+      "disposition": "resolved",
+      "source_ids": ["winspace-t1600-105-di2-current-recheck-2026-09-25"],
+      "caveat": "Manufacturer supports only qualitative engineered-for-stiffness and power-transfer language; no numeric magnitude, structural protocol or independent exact-frame measurement."
+    },
+    {
+      "field": "candidate:winspace-t1600:tire-clearance",
+      "disposition": "resolved",
+      "source_ids": ["winspace-t1600-regional-spec-current-recheck-2026-09-25"],
+      "caveat": "Current original-T1600 manufacturer regional page publishes 700×32C; nominal tire-size limit, not measured 32 mm physical clearance; T1600 Ultra is distinct."
+    },
+    {
+      "field": "candidate:xds-ad7:drivetrain",
+      "disposition": "resolved",
+      "source_ids": ["xds-ad7-green-demon-hk-current-recheck-2026-09-25"],
+      "caveat": "The exact Hong Kong Green Demon listing supports 105 Di2 hydraulic 2×12, 11–34T and 50/34T; it does not establish the retained mainland coupon checkout's complete BOM."
+    },
+    {
+      "field": "candidate:xds-ad7:frame-material",
+      "disposition": "resolved",
+      "source_ids": ["xds-ad7-green-demon-taiwan-current-recheck-2026-09-25"],
+      "caveat": "Current Taiwan AD7 product detail supports T700/T800 carbon aero frame and carbon fork among multiple listed configurations; it does not identify the retained mainland SKU."
+    }
+  ],
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1328 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": "pass: npm run --silent check; 326/326 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "sandbox_note": "Initial sandbox run failed only seven localhost-bind tests with EPERM; the identical full gate passed on the approved host-path retry.",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

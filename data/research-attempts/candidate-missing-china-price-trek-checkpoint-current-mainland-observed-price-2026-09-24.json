@@ -1,0 +1,29 @@
+{
+  "id": "candidate-missing-china-price-trek-checkpoint-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "missing-china-price-trek-checkpoint"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact current Trek China product URL renders only a category shell; region-mismatched listings cannot establish a mainland CNY price.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Trek Checkpoint SL 5 AXS Gen 3 product 47071 current China price and listing",
+          "route": "Trek China exact product route",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact mainland product URL returned only a category title, locale and footer, with no current CNY amount or stock. A Singapore-region result for the same product ID displays SGD and is excluded.",
+          "result_url": "https://www.trekbikes.com/cn/zh_CN/f/F224-1/checkpoint-sl-5-axs-gen-3/47071?pr_rd_page=1"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["trek-checkpoint-sl5-axs-gen3-china-current-price-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Keep the existing CNY 27,800 official list reference. The current exact China route does not expose a fresh observed price, so candidate.observed_price remains absent."
+}

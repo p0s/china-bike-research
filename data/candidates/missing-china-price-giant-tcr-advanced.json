@@ -15,11 +15,14 @@
   ],
   "status": "official-mainland-complete-bike",
   "research_priority": "high",
-  "price_status": "official mainland suggested retail; stock and checkout unverified",
+  "price_status": "Baidu Shopping comparison observed CNY 5,998 as the current listed low for the exact TCR ADV 3-GC at JD Giant official flagship; live seller-page price, size/color stock, and checkout remain unverified. Official suggested retail remains CNY 6,998.",
   "required_before_dashboard": "Complete-bike and frame weight; Bottom-bracket standard; Numerical geometry and exact size list; Tire clearance; Current stock/checkout and warranty policy; Direct image asset URL",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-24",
   "source_ids": [
-    "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+    "giant-china-tcr-advanced-3-gc-official-2026-08-17",
+    "giant-china-tcr-advanced-3-gc-recheck-2026-09-23",
+    "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+    "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24"
   ],
   "official_price": {
     "amount_cny": 6998,
@@ -27,7 +30,15 @@
     "price_type": "official-mainland-list",
     "observed_at": "2026-09-01"
   },
-  "source_note": "Current exact mainland manufacturer evidence confirms the TCR Advanced 3-GC Tiagra rim-brake build and CNY 6,998 list price; disc-generation and historic sibling values are excluded, including current disc-generation numeric stiffness tests.",
+  "observed_price": {
+    "amount_cny": 5998,
+    "currency": "CNY",
+    "price_type": "marketplace-listed-low",
+    "observed_at": "2026-09-24",
+    "price_basis": "Baidu Shopping reports the exact TCR ADV 3-GC listing at CNY 5,998 from 京东捷安特官方旗舰店; the comparison page was crawled about two weeks before access",
+    "conditions": "Listed low for a size L listing; the page also shows ML, M, S, and XS options. The current JD product page did not expose its dynamic price, and size/color availability, coupons, shipping, and final checkout remain unverified."
+  },
+  "source_note": "The exact 3-GC manufacturer source records a CNY 6,998 suggested list price, not a checkout value. Baidu Shopping's indexed comparison currently reports a CNY 5,998 listing low for this exact 20-speed trim from the JD Giant official flagship; its snapshot was crawled about two weeks before access, and the live JD price, selected-size stock and checkout remain unverified. The current TCR Advanced 3 page at id=3470 lists CNY 7,998 for a different disc-generation build; that and historic sibling values are excluded.",
   "source_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398",
   "facts": {
     "drivetrain": "Shimano Tiagra 2×10",

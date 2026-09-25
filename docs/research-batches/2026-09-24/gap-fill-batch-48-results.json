@@ -1,0 +1,116 @@
+{
+  "batch": 48,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-48-scope.json",
+  "writer_limit": { "exact_targets": 6, "atomic_fields": 6 },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24",
+      "target": "candidate:pardus-spark-rs-community-lead",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["pardus-spark-rs-current-official-store-index-2026-09-24"],
+      "result": "The current official-store index reports a CNY 11,499 low for a Spark RS 105 Di2 card but exposes several sizes and groupsets without mapping the low to a selected option. It does not match the retained custom mechanical-105 build with R8170 upgrades, so no candidate price was assigned."
+    },
+    {
+      "attempt_id": "candidate-dengfu-gravel-mainland-observed-price-2026-09-24",
+      "target": "candidate:dengfu-gravel",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["dengfu-r20-current-price-route-recheck-2026-09-24"],
+      "result": "The exact current R20 manufacturer page offers customization and contact routes but no price or quote; indexed catalog prices belong to other Dengfu models."
+    },
+    {
+      "attempt_id": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24",
+      "target": "candidate:pardus-robin-evo-community-lead",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["pardus-robin-evo-current-price-route-recheck-2026-09-24"],
+      "result": "The exact current China Ultegra Di2 page has a price label but no visible number. Indexed numerical results identify older rim-brake or foreign-market trims, not the generation-unmapped XS Dura-Ace competition build."
+    },
+    {
+      "attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+      "target": "candidate:giant-defy-advanced-sl1-community-lead",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["giant-china-defy-current-series-price-route-recheck-2026-09-24", "giant-china-dealer-locator-current-2026-09-23"],
+      "result": "The current mainland catalog surfaces Defy Advanced SL 0 but no SL 1 price; the locator exposes only a generic dealer route, and the public build is not mapped to the 2026 UK trim."
+    },
+    {
+      "attempt_id": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24",
+      "target": "candidate:tavelo-arow-sl-community-lead",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["tavelo-arow-sl-current-frameset-price-route-recheck-2026-09-24"],
+      "result": "The official page lists the selected XS Arow SL Neo Black frameset at USD 2,080 sale / USD 2,150 list. This global frameset reference is recorded separately; it is neither a mainland CNY price nor the custom complete-bike price."
+    },
+    {
+      "attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-2026-09-24",
+      "target": "candidate:twitter-gravel-v3-2024-rs-carbon-wave",
+      "field": "mainland-observed-price",
+      "status": "unresolved-blocked",
+      "source_ids": ["twitter-gravel-v3-2024-taobao-2026-08-21", "twitter-v3-25yr-rs-store-recheck-2026-09-23", "twitter-v3-25yr-manufacturer-recheck-2026-09-24"],
+      "result": "The retained exact 2024 listing's CNY 3,991 amount is for the alloy-wheel selection only. Current store results concern the later 25yr revision and foreign-market USD price; exact 2024 carbon-wheel price and current stock remain unknown."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "pardus-spark-rs-current-official-store-index-2026-09-24",
+      "dengfu-r20-current-price-route-recheck-2026-09-24",
+      "pardus-robin-evo-current-price-route-recheck-2026-09-24",
+      "giant-china-defy-current-series-price-route-recheck-2026-09-24",
+      "tavelo-arow-sl-current-frameset-price-route-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24",
+      "candidate-dengfu-gravel-mainland-observed-price-2026-09-24",
+      "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24",
+      "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+      "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24",
+      "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-2026-09-24"
+    ],
+    "candidate_reviews_refreshed": 6,
+    "candidate_observed_prices_added": 0,
+    "candidate_global_frameset_price_references_added": 1,
+    "standalone_price_records_added": 0,
+    "image_records_added": 0,
+    "images_added_to_website": 0,
+    "tooling_and_tests": [
+      "The Spark RS test expectation now covers both dated store-index observations and preserves the custom-build boundary.",
+      "Research-ledger count expectations now include six new atomic mainland-price fields."
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 },
+    "atomic_research_fields": 1493,
+    "research_attempt_records": 1503
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via the approved pnpm check wrapper: 317 tests, build 584 pages, SEO 458 indexable and 126 noindex",
+    "git_diff_check": "passed after the batch-result and checkpoint update",
+    "image_report": "not run: no image records changed"
+  },
+  "delivery": "Local B48 batch only; no push, pull request, merge, publication, or production action."
+}

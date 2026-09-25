@@ -479,8 +479,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcr014-d-alibaba-supplier-2026-09-01"
+    "lightcarbon-lcr014-d-alibaba-supplier-2026-09-01",
+    "lightcarbon-lcr014-d-supplier-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr014-d-batch-040-50-area-sweep-2026-09-01.json. The exact manufacturer-supplier product page publishes US$350 with MOQ 10 sets and identifies the included frame, fork, seatpost and clamp."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr014-d-batch-040-50-area-sweep-2026-09-01.json. The exact manufacturer-supplier product page publishes US$350 with MOQ 10 sets and identifies the included frame, fork, seatpost and clamp.\n\nBatch 23 current recheck: The exact listing page returned no readable text on 2026-09-23. Keep the old US$350/MOQ-10 entry as an older indexed bulk reference; current exact offer and single-unit mainland price remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcr014-d-supplier-recheck-2026-09-23"
+    ],
+    "note": "The exact listing page returned no readable text on 2026-09-23. Keep the old US$350/MOQ-10 entry as an older indexed bulk reference; current exact offer and single-unit mainland price remain unknown."
+  }
 }

@@ -480,8 +480,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "van-rysel-rcr-f-family-official-2026-09-01"
+    "van-rysel-rcr-f-family-official-2026-09-01",
+    "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-van-rysel-rcr-batch-038-50-area-sweep-2026-09-01.json. The current RCR-F manufacturer page reports 7% greater head-tube stiffness than RCR Pro; a relative manufacturer claim without a public absolute protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-van-rysel-rcr-batch-038-50-area-sweep-2026-09-01.json. The current RCR-F manufacturer page reports 7% greater head-tube stiffness than RCR Pro; a relative manufacturer claim without a public absolute protocol. Current focused recheck 2026-09-23: Decathlon UK states the exact RCR-F Pro layup is 7% stiffer than RCR Pro; relative manufacturer claim, no absolute value or public test protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "van-rysel-rcr-f-family-official-2026-09-01",
+      "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
+    ],
+    "note": "Decathlon UK states the exact RCR-F Pro layup is 7% stiffer than RCR Pro; relative manufacturer claim, no absolute value or public test protocol."
+  }
 }

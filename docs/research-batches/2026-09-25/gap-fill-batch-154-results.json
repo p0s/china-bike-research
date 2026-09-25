@@ -1,0 +1,164 @@
+{
+  "batch": 154,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-154-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 669,
+    "catalog_gap_entries_after": 667,
+    "catalog_gap_entries_reduced": 2,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 14,
+    "complete_weight_fields_filled": 0,
+    "drivetrain_fields_filled": 0,
+    "maximum_clearance_fields_filled": 1,
+    "frame_material_fields_filled": 0,
+    "frame_stiffness_fields_filled": 1,
+    "atomic_gap_entries_left_unresolved": 12,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 14,
+    "campaign_extensions_added": 14,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1762,
+    "research_attempts_after": 1776,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35843,
+    "research_status_counts_after": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 1,
+    "source_records_after": 1422,
+    "candidate_facts_changed": 2,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 1,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 1,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 1,
+    "page_open_failures": [],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "prior_history_reviewed": {
+      "target_predecessor_attempt_records": 14,
+      "campaign_histories": "reviewed for each target before searching"
+    },
+    "note": "One official Twitter Bike USA T900 frameset page was opened once after literal URL absence verification. All other discovered exact or sibling routes were already recorded or were not sufficiently attributable; no known page was reopened and no failed page was retried. The known timed-out Chinese Twitter route was already documented before this batch and was skipped without retry."
+  },
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35843 web attempts",
+    "coverage_baseline": "accepted monotonic coverage for 212 images / 277 catalog targets after 14 new protected attempt records and two evidence updates",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 331/331 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed on the accumulated worktree after final B154 records and checkpoint",
+    "image_report": "not run: no image record changed"
+  },
+  "model_results": [
+    {
+      "model_id": "sava-f20-hawkeye",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "SAVA Hawkeye F20 \"stiffness\" test frame assessment",
+      "result": "The exact product route was already recorded; generic marketing contains no F20-specific stiffness measurement or sufficiently specific independent assessment.",
+      "disposition": "stiffness-unresolved-no-exact-model-assessment"
+    },
+    {
+      "model_id": "sava-gelaro-sf",
+      "gaps": [
+        "drivetrain"
+      ],
+      "new_query": "SAVA Gelaro SF6 selected build R21-U6020 10-speed versus R21-U6000 11-speed mainland flat-bar drivetrain Shimano CUES",
+      "result": "Official material shows both 1×10 R21-U6020 and 1×11 R21-U6000 options, while the retained Taobao card selects neither.",
+      "disposition": "drivetrain-unresolved-build-not-selected"
+    },
+    {
+      "model_id": "missile-e6000",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "MISSILE 水星6000 2025 最大轮胎宽度 tire clearance frame stiffness test",
+      "result": "Search snippets and recorded exact-product pages establish neither a stated maximum tire clearance nor a qualifying stiffness result.",
+      "disposition": "both-fields-unresolved-no-qualifying-exact-evidence"
+    },
+    {
+      "model_id": "camp-gx700",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "CAMP GX700 frame stiffness independent test maximum tire clearance 700x45C",
+      "result": "The official page lists a fitted 700×45C tire but no maximum clearance; it has no exact-model stiffness assessment.",
+      "disposition": "both-fields-unresolved-fitted-width-is-not-maximum"
+    },
+    {
+      "model_id": "koseea-pioneer-slr-plus",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "KOSEEA Pioneer SLR+ frame tire clearance torsional stiffness test",
+      "result": "The 30C and 32mm references concern conflicting or different trims; neither transfers to SLR+. No exact SLR+ stiffness result qualifies.",
+      "disposition": "both-fields-unresolved-trim-conflict-and-no-test"
+    },
+    {
+      "model_id": "twitter-gravel-v3-105",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "Twitter Gravel V3 Shimano 105 max tire clearance frame stiffness test",
+      "result": "Opened one new official T900 frameset page after URL absence audit. It states 700×40C maximum for the Gravel V3 Disc platform; the separately recorded 105 R7120 complete-bike page does not link that maximum to the selected trim. A general thru-axle claim is not a frame-stiffness assessment.",
+      "disposition": "platform-clearance-filled-trim-link-caveat; stiffness-unresolved"
+    },
+    {
+      "model_id": "lightcarbon-speed7-frameset",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "LightCarbon Speed7 LCR017-D frame stiffness test measurement review",
+      "result": "The already recorded independent review of a personally assembled exact LCR017-D says it had solid behavior under load. This is qualitative and build-specific, with no numeric or controlled frame-only result and no proof for the retained mechanical-105 package.",
+      "disposition": "qualitative-stiffness-evidence-filled; numeric-and-package-applicability-unresolved"
+    },
+    {
+      "model_id": "quick-pro-tr-one",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "Quick Pro TR ONE frameset frame stiffness ride review test",
+      "result": "Results concerned sibling AR:ONE, ER:ONE, or GR:ONE products and generic marketing; no TR:ONE-specific assessment qualifies.",
+      "disposition": "stiffness-unresolved-sibling-evidence-excluded"
+    },
+    {
+      "model_id": "laget-aero-one",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "LAGET AERO ONE 3D printed titanium frame stiffness ride review measurement",
+      "result": "Prior interview notes mention tests against carbon aero frames but give no result values or protocol; no public exact-model assessment qualifies.",
+      "disposition": "stiffness-unresolved-no-published-result-or-protocol"
+    },
+    {
+      "model_id": "laget-pioneer",
+      "gaps": [
+        "frame-stiffness"
+      ],
+      "new_query": "LAGET PIONEER hand-welded titanium frame stiffness independent ride test deflection",
+      "result": "Recorded product pages contain marketing claims only. Pioneer ONE is a distinct model and its evidence is excluded.",
+      "disposition": "stiffness-unresolved-distinct-model-excluded"
+    }
+  ]
+}

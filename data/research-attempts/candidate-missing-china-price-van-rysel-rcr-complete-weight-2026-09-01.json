@@ -475,13 +475,26 @@
           "accessed_at": "2026-09-01",
           "note": "The public web archive area was checked at exact-model and exact-generation level for Van Rysel RCR-F Pro Shimano 105 Di2; it yielded no additional attributable evidence. This area was applied specifically to complete-weight; it did not establish an additional acceptable value for this field."
         }
-      ]
+      ],
+      "conflict": "Current exact UK manufacturer and Decathlon pages identify the same grey RCR-F Pro 105 Di2 but state different complete weights and bases: 8.0 kg unspecified vs 8.2 kg size M tubeless."
     }
   },
   "status": "found",
   "accepted_source_ids": [
-    "van-rysel-rcr-f-pro-official-global-2026-08-17"
+    "van-rysel-rcr-f-pro-official-global-2026-08-17",
+    "van-rysel-rcr-f-pro-105-di2-uk-manufacturer-recheck-2026-09-23",
+    "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-van-rysel-rcr-batch-038-50-area-sweep-2026-09-01.json. The current exact Van Rysel page publishes 8.0 kg; size and weighing protocol are not stated."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-van-rysel-rcr-batch-038-50-area-sweep-2026-09-01.json. The current exact Van Rysel page publishes 8.0 kg; size and weighing protocol are not stated. Current 2026-09-23 exact UK product pages conflict: Van Rysel 8.0 kg without size/protocol; Decathlon 8.2 kg size M tubeless. Preserve both as unresolved conflict.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "van-rysel-rcr-f-pro-official-global-2026-08-17",
+      "van-rysel-rcr-f-pro-105-di2-uk-manufacturer-recheck-2026-09-23",
+      "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
+    ],
+    "note": "The prior 50-area field sweep remains found as recorded. A focused 2026-09-23 recheck found current exact UK product-page weights conflict: Van Rysel 8.0 kg without size/protocol; Decathlon 8.2 kg in size M with tubeless assembly. Preserve both and do not normalize."
+  }
 }

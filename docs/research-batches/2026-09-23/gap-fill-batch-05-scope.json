@@ -1,0 +1,26 @@
+{
+  "batch_id": "gap-fill-batch-05-2026-09-23",
+  "base_commit": "24e323d06e99a62f2d8946c35be9d4c0ce72594c",
+  "frozen_at": "2026-09-23",
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-complete",
+      "platform_id": "lightcarbon-speedz",
+      "exact_identity": "LightCarbon SPEEDZ complete build recorded with Shimano 105 mechanical 2x12",
+      "fields": [
+        "fitted tire model and size for the exact complete build"
+      ],
+      "prior_research": "Standard six-attempt research was marked temporarily exhausted on 2026-08-17 with retry_after 2026-09-20. Fresh local queue reports the field ready on 2026-09-23.",
+      "boundaries": [
+        "Accept only a current official source or an opened exact public listing that identifies the SPEEDZ complete build and its fitted tire model/size.",
+        "Do not treat a frame maximum-clearance specification as the fitted tire specification.",
+        "Do not transfer tire information from LCR017-D, Speed7/速7, another trim, or an unidentified build unless an exact model/build mapping is proved.",
+        "Do not contact sellers, use private content, or bypass authentication or challenges."
+      ]
+    }
+  ],
+  "atomic_field_count": 1,
+  "done_criteria": "Use current public manufacturer, authorized, or opened exact listing evidence. Add the exact fitted tire model/size if attributable; otherwise record three distinct fresh web routes and the precise mismatch/absence plus a reopening trigger. Preserve the prior public-post searches by carrying that channel forward. Run npm run check after any catalog or code change; run npm run image:report only if image data changes.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, publication, or seller contact."
+}

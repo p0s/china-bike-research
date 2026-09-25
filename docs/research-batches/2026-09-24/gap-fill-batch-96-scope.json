@@ -1,0 +1,33 @@
+{
+  "batch": 96,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 168,
+  "scope": [
+    {
+      "record_type": "candidate",
+      "record_id": "sava-gelaro-sf",
+      "attempt_id": "candidate-sava-gelaro-sf-tire-clearance-2026-08-30",
+      "atomic_gap": "tire-clearance",
+      "existing_source_ids": [
+        "sava-gelaro-sf6-official-2026-08-28",
+        "sava-gelaro-sf6-specifications-2026-08-25"
+      ],
+      "known_issue": "The candidate and attempt assert a 45C maximum, while the only accepted source note records 700×40C fitted and does not support that maximum."
+    }
+  ],
+  "allowed_work": "Read the exact target, attempt, and two named SAVA SF6 sources. One Luna evidence-only worker may open the current exact-model manufacturer product page once to check whether it explicitly states maximum tire size. If the source states only a fitted 40C tire, correct the unsupported 45C maximum to a dated fitted-tire observation with maximum unknown and preserve the gap. If a maximum is explicitly stated for the exact frame, record it with its nominal-size caveat. Add only a dated source record if the current page supplies new evidence. No other model, general guide, source campaign, or seller route is in scope.",
+  "stop_conditions": [
+    "Do not infer maximum clearance from fitted tire width or from a different Gelaro build.",
+    "Stop after one current manufacturer page open; do not retry blocked, unavailable, or challenge routes.",
+    "Preserve the unresolved 10-speed versus 11-speed candidate-build ambiguity."
+  ],
+  "done_criteria": [
+    "The exact-model source either supports a maximum or the unsupported 45C assertion is removed in favor of a clearly labeled fitted-tire observation.",
+    "The candidate retains a maximum-unknown state unless explicit source evidence proves a maximum.",
+    "Fresh data:gaps and research:queue quantify the post-change state.",
+    "Run data validation, research checks, coverage acceptance/check, the full `npm run check` gate once for this data-changing batch, and `git diff --check`. No image report because no image record is in scope."
+  ]
+}

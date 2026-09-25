@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "tavelo-arden-official-2026-08-17"
+    "tavelo-arden-official-2026-08-17",
+    "tavelo-arden-race-official-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Race version only; preserve size/drive-train conditions."
+  "notes": "Round-four official/web completion. Race version only; preserve size/drive-train conditions.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "tavelo-arden-race-official-recheck-2026-09-23"
+    ],
+    "note": "Manufacturer claims 780±25 g frame at size L/c-t 500 mm, with paint and accessories excluded; fork is 355 g and seatpost 115 g without saddle clamp. No complete-bike weight is established. Reopen trigger: Reopen on exact complete-build parts, size and a manufacturer or measured bike weight."
+  }
 }

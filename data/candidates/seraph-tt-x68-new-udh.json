@@ -5,7 +5,7 @@
   "why_interesting": "TT-X68 recurs in ChineseCarbon top posts; this record identifies the current T47/UDH revision, not the older BSA frame.",
   "facts": {
     "frame_material": "T1000 carbon per storefront",
-    "frame_weight_basis": "Unresolved: current Seraph 983±50 g versus TanTan 953±50 g, both 54 cm UD matte. No single numeric weight is selected.",
+    "frame_weight_basis": "Unresolved: current Seraph claim 983 ± 50 g and TanTan claim 953 ± 50 g, both stated at 54 cm UD matte; no shared weighing protocol is published. No single numeric weight is selected.",
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Exact T47/UDH storefront lists 700×32C; confirm measured fit",
     "bottom_bracket": "T47 threaded",
@@ -13,8 +13,21 @@
     "sizes": "49, 52, 54, 56, 58, 61 cm",
     "included_package": "Seraph named bundle: frame, fork, seatpost, handlebar, spacers, headset and thru-axles; TanTan also offers a no-handlebar selection, so confirm the chosen option.",
     "international_price_reference": "Seraph US$629 and TanTan US$579 displayed on 2026-09-22; options differ and no mainland delivered CNY quote is established.",
-    "frame_weight_conflict": "The earlier 953 g value remains attributable to TanTan; current Seraph differs by 30 g without a documented explanation."
+    "frame_weight_conflict": "The directly rechecked pages retain a 30 g difference at the same stated size and finish; weighing protocol and explanation are absent."
   },
+  "official_price": {
+    "amount_cny": 4214,
+    "currency": "CNY",
+    "price_type": "reference-conversion",
+    "observed_at": "2026-09-23",
+    "original_amount": 629,
+    "original_currency": "USD",
+    "conversion_rate_cny_per_original_unit": 6.70007851,
+    "conversion_rate_date": "2026-09-22",
+    "price_basis": "Exact Seraph TT-X68-new UDH product-page price of US$629 converted using the ECB reference cross-rate; listed package includes frame, fork, seatpost, handlebar, spacers, headset and thru-axle.",
+    "conditions": "Reference only; selected options, mainland price, shipping, tax, duties, stock and actual transaction rate are unverified."
+  },
+  "reference_price_kind": "official",
   "missing": [
     "Exact China delivered quote and selected package availability",
     "Confirm bottom-bracket shell width and selected crank compatibility",
@@ -31,7 +44,18 @@
     "chinesecarbon-top-discovery-2026-09-05",
     "seraph-tt-x68-new-storefront-2026-09-22",
     "tantan-tt-x68-new-storefront-2026-09-22",
-    "tantan-tt-x68-new-version-35c-2026-09-22"
+    "tantan-tt-x68-new-version-35c-2026-09-22",
+    "seraph-tt-x68-new-storefront-2026-09-23",
+    "ecb-reference-rates-2026-09-22",
+    "seraph-tt-x68-new-global-price-recheck-2026-09-24",
+    "tantan-tt-x68-new-global-price-recheck-2026-09-24",
+    "seraph-tt-x68-new-weight-recheck-2026-09-24",
+    "tantan-tt-x68-new-weight-recheck-2026-09-24",
+    "seraph-tt-x68-new-udh-chinertown-quote-recheck-2026-09-24",
+    "seraph-tt-x68-new-weight-recheck-2026-09-25",
+    "tantan-tt-x68-new-weight-recheck-2026-09-25",
+    "tantan-tt-x68-new-version-35c-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-09-22"
+  "price_status": "Current foreign storefront references remain US$629 for Seraph and US$579 for TanTan with package/option differences; no exact mainland CNY seller listing or delivered quote was found. The CNY conversion is reference-only.",
+  "last_reviewed": "2026-09-25"
 }

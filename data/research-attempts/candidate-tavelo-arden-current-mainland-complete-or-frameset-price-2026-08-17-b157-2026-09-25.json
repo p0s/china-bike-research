@@ -1,0 +1,41 @@
+{
+  "id": "candidate-tavelo-arden-current-mainland-complete-or-frameset-price-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "tavelo-arden"
+  },
+  "field": "current-mainland-complete-or-frameset-price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-tavelo-arden-current-mainland-complete-or-frameset-price-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-tavelo-arden-current-mainland-complete-or-frameset-price-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Tavelo Arden exact current mainland China CNY price geometry official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "No current mainland CNY checkout amount was established. The domestic launch report is dated launch pricing, while the current global Race frameset page is USD 1,899 and does not establish mainland checkout or delivery."
+        }
+      ],
+      "blocker": "No current mainland CNY checkout amount was established. The domestic launch report is dated launch pricing, while the current global Race frameset page is USD 1,899 and does not establish mainland checkout or delivery."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No current mainland CNY checkout amount was established. The domestic launch report is dated launch pricing, while the current global Race frameset page is USD 1,899 and does not establish mainland checkout or delivery."
+}

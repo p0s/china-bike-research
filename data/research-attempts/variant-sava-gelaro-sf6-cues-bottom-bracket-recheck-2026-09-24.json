@@ -1,0 +1,56 @@
+{
+  "id": "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-sf6-cues"
+  },
+  "field": "bottom-bracket",
+  "priority": "medium",
+  "retry_of": "variant-sava-gelaro-sf6-cues-bottom-bracket-2026-08-17",
+  "retry_reason": "The exact SF6 page was rechecked and its linked official user manual, a newly checked source not included in the prior 2026-08-28 pass, was reviewed for the exact R21-U6000-11S build.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The linked 20-page manual has no extractable text in the browser view, and the focused search found no exact-build technical source stating a bottom-bracket standard or shell dimensions.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro SF6 R21-U6000-11S bottom-bracket standard",
+          "route": "current exact-model manufacturer product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact 2025 SF6 page publishes no bottom-bracket standard or shell dimensions; other drivetrain options are not used to infer this field.",
+          "result_url": "https://savadeck-bike.com/products/sava-gelaro-sf6-cues-carbon-gravel-bike"
+        },
+        {
+          "attempt": 2,
+          "query": "SAVA Gelaro SF6 R21-U6000-11S bottom-bracket standard in linked user manual",
+          "route": "manufacturer-linked SAVA user manual PDF",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact SF6 page links this 20-page PDF as User Manual, but the browser exposes no extractable text; visual specification content could not be verified.",
+        "result_url": "https://cdn.shopify.com/s/files/1/0385/7176/9995/files/SAVA_Bicycle_Instructions.pdf?v=1729563520"
+      },
+      {
+        "attempt": 3,
+        "query": "SAVA Gelaro SF6 CUES U6000 1x11 五通 BB 标准 技术资料 装配手册",
+        "route": "focused public search for exact-build technical or assembly documentation",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "No exact SF6 technical source surfaced stating the frame bottom-bracket standard or shell dimensions. Shimano CUES crank documentation addresses component compatibility only and does not establish this frame specification."
+      }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "sava-gelaro-sf6-official-recheck-2026-09-24",
+    "sava-bicycle-instructions-manual-2026-09-24"
+  ],
+  "retry_after": "2026-11-28",
+  "notes": "The exact SF6 standard and shell dimensions remain unknown. The current model page omits them, the linked generic manual cannot be checked through its text view, and the focused search found no exact-build technical source. Sibling Gelaro T47 evidence is not transferred.",
+  "searched_at": "2026-09-24"
+}

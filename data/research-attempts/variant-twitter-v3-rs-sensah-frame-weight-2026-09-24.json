@@ -1,0 +1,59 @@
+{
+  "id": "variant-twitter-v3-rs-sensah-frame-weight-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-rs-sensah"
+  },
+  "field": "frame-weight",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "conflicted",
+      "conflict": "Current exact T47 manufacturer evidence gives only complete-bike mass; the approximate frame-only value comes from a store table identifying BB86.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 T47 RS-24S frame-only weight manufacturer page",
+          "route": "Exact manufacturer specification page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The current T47 RS-24S table states 9.9 kg for the complete configuration and gives no frame-only mass.",
+          "result_url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER V3 RS frame-only weight store claim bottom-bracket identity",
+          "route": "Conflicting factory-store listing",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-24",
+          "note": "The approximately 1,150 g unpainted size-M claim accompanies BB86 specifications and cannot be assigned to the T47 Sensah variant.",
+          "result_url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike"
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "twitter-v3-rs-sensah-frame-weight-recheck-2026-09-24",
+    "twitter-v3-25yr-store-conflict-2026-09-22",
+    "twitter-v3-25yr-manufacturer-recheck-2026-09-25",
+    "twitter-v3-25yr-store-recheck-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "The current manufacturer T47 page publishes no bare-frame mass. The approximately 1,150 g unpainted size-M value belongs to the factory-store BB86 listing, so the T47 frame weight remains unknown.",
+  "retry_of": "variant-twitter-v3-rs-sensah-frame-weight-2026-09-22",
+  "retry_reason": "A fresh exact manufacturer-table review on 2026-09-24 confirmed complete-bike mass only; the seller frame claim remains tied to conflicting BB86 details.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-v3-25yr-manufacturer-recheck-2026-09-25",
+      "twitter-v3-25yr-store-recheck-2026-09-25"
+    ],
+    "note": "The current manufacturer T47 page publishes no bare-frame mass. The approximately 1,150 g unpainted size-M value belongs to the factory-store BB86 listing, so the T47 frame weight remains unknown."
+  }
+}

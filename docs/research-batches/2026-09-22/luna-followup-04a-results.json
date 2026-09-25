@@ -1,0 +1,26 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-04a-v3-weight-correction-2026-09-22",
+  "reviewed_models": 1,
+  "reviewed_fields": 2,
+  "status": "published-weight-attribution-corrected",
+  "finding": "Published T47 RS24 alloy build now uses its manufacturer 9.9 kg claim with size and pedal basis unstated. Storefront 9.6 kg and 1150 g frame claims currently accompany a BB86 table; neither is assigned to T47. Frame-only mass returns to unknown.",
+  "accepted_source_ids": [
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22"
+  ],
+  "historical_evidence": "Old frame-weight ledger replaced using a documented retirement; original attempts and superseded source-reuse resolution are preserved in the replacement. No historical observations rewritten.",
+  "proof": "Reuses batch04 parent direct current manufacturer/storefront reads. No new independent recheck claimed.",
+  "next_trigger": "Exact T47 frame-only mass or documented bridge between revisions.",
+  "continuation": "All-remaining research continues with one Luna Max evidence worker.",
+  "coarse_gap_count_before": 721,
+  "coarse_gap_count_after": 722,
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128
+  }
+}

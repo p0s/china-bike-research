@@ -492,8 +492,21 @@
     "java-road-catalog-2026-08-29",
     "java-vittoria-eurobike-2026-08-29",
     "java-vittoria-jd-2026-08-29",
-    "java-vittoria-er7-north-america-2026-08-29"
+    "java-vittoria-er7-north-america-2026-08-29",
+    "java-road-catalog-recheck-2026-09-23",
+    "java-vittoria-er7-north-america-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. Five seller observations and current official, regional, event and marketplace evidence establish VITTORIA ER7 while preserving material and trim ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. Five seller observations and current official, regional, event and marketplace evidence establish VITTORIA ER7 while preserving material and trim ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-road-catalog-recheck-2026-09-23",
+      "java-vittoria-er7-north-america-recheck-2026-09-23",
+      "java-road-catalog-2026-08-29",
+      "java-vittoria-er7-north-america-2026-08-29"
+    ],
+    "note": "Official catalog and North American references support the ER7 family and distinct trims, but do not identify which trim each of the five retained mainland seller observations represents."
+  }
 }

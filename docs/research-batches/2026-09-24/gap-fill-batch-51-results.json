@@ -1,0 +1,102 @@
+{
+  "batch": 51,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-51-scope.json",
+  "writer_limit": {
+    "exact_models": 10,
+    "atomic_gap_instances": 12
+  },
+  "researcher": "root writer; one Luna Max evidence-only review for ELVES Falath Pro Disc R7170",
+  "dispositions": [
+    {
+      "gap_code": "image-health-unverified",
+      "gap_instances": 10,
+      "image_records": [
+        "camp-gx600-primary-image",
+        "twitter-cyclone-electronic-official-et-primary-image",
+        "twitter-cyclone-gen3-et-primary-image",
+        "twitter-gravel-v3-primary-image",
+        "camp-gx700-primary-image",
+        "twitter-t3-tt-primary-image",
+        "rinasclta-gr025-primary-image",
+        "twitter-gravel-v3-2024-listing-primary-image",
+        "carbonda-cfr696-primary-image"
+      ],
+      "status": "unresolved-unreachable-from-check-runner",
+      "checked_at": "2026-09-24",
+      "result": "The scoped image report returned unreachable for all nine remote resources; no HTTP status or content type was available. The dated per-resource outcomes are recorded without treating a transient request failure as proof that an image is broken. All ten affected variant gaps remain open."
+    },
+    {
+      "gap_code": "image-exactness",
+      "gap_instances": 1,
+      "target": "variant:twitter-v3-2024-rs-sensah-alloy",
+      "status": "unresolved-generation-and-build-mismatch",
+      "source_ids": [
+        "twitter-gravel-v3-2024-public-listing-image-2026-08-21"
+      ],
+      "result": "The retained white Gravel V3 RS listing photo supports only a 24-speed hydraulic build and standard-depth-wheel appearance. The reused listing mixes generations and does not establish the selected 2024 Sensah/alloy option, exact component batch, or paint. Its prior 50-area campaign was not repeated; keep same-model-different-market-build accuracy."
+    },
+    {
+      "gap_code": "image-exactness",
+      "gap_instances": 1,
+      "target": "variant:elves-falath-r7170",
+      "status": "unresolved-exact-build-and-rights-not-established",
+      "source_ids": [
+        "elves-falath-pro-image-exactness-current-2026-09-24",
+        "elves-image-use-terms-current-2026-09-24"
+      ],
+      "result": "Current official photos identify the Falath Pro Disc 2022 frame family, not the selected Shimano 105 R7170 build or its wheels, paint, and mainland seller package. The official terms provide no image reuse grant. Keep the project-owned illustrative placeholder and exactness gap."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "elves-falath-pro-image-exactness-current-2026-09-24",
+      "elves-image-use-terms-current-2026-09-24"
+    ],
+    "research_attempts_added": 0,
+    "remote_image_records_with_health_results": 9,
+    "local_or_remote_image_assets_added": 0,
+    "tooling_and_tests": [
+      "image:report accepts an exact --ids filter and machine-readable --json output; unfiltered human-readable reporting remains the default.",
+      "Fresh, complete HTTP 2xx/3xx image/* results suppress the runtime gap only while they match every current remote resource and are no more than 30 days old. Stale, future, failed, URL-mismatched, or incomplete checks keep the gap open.",
+      "Image-health metadata validation and tests cover exact filtering, JSON output, current-URL matching, expiry, failed and incomplete outcomes, and the data-gaps integration."
+    ],
+    "coverage_baseline": "Accepted monotonically after the full gate identified the two new sources and image metadata as new protected information."
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 358,
+      "conflicted": 34,
+      "found": 55,
+      "temporarily-exhausted": 3
+    }
+  },
+  "validation": {
+    "focused_tests": "passed: tests/data.test.mjs and tests/image-health.test.mjs (80 tests)",
+    "npm_run_check": "passed via the approved pnpm-check route: privacy, data validation, 1495 research fields, coverage, 321 tests, 584 built pages, SEO 458 indexable/126 noindex",
+    "image_report": "ran once for the nine frozen image IDs; all nine returned unreachable without HTTP status/content type",
+    "git_diff_check": "passed after final B51 results, checkpoint and B52 scope documentation edits"
+  },
+  "delivery": "Local B51 batch only; no push, pull request, merge, publication, or production action."
+}

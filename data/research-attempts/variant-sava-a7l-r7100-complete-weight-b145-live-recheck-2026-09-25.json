@@ -1,0 +1,52 @@
+{
+  "id": "variant-sava-a7l-r7100-complete-weight-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-a7l-r7100"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-sava-a7l-r7100-complete-weight-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-a7l-r7100-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "A newly surfaced listing was opened without a verifiable exact corrected-URL pre-open audit. Exclude the page and every claim drawn from it; do not retry.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA A7L R7100 mechanical 105 2x12 mainland China product listing weight purchase route",
+          "route": "The one B145 A7L exact-model web search addressed complete weight and route",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "One query addressed the A7L retained build weight and route. The surfaced page is excluded because the pre-open literal URL audit cannot be confirmed; no page-derived claim is accepted."
+        }
+      ]
+    }
+  },
+  "notes": "One query addressed the A7L retained build weight and route. The surfaced page is excluded because the pre-open literal URL audit cannot be confirmed; no page-derived claim is accepted.",
+  "campaign_extension": {
+    "id": "b145-sava-a7l-r7100-complete-weight",
+    "extends_attempt_id": "variant-sava-a7l-r7100-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

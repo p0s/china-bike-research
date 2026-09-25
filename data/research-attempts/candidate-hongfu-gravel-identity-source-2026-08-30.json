@@ -488,8 +488,23 @@
   "accepted_source_ids": [
     "hongfu-current-gravel-category-2026-08-30",
     "hongfu-fm188-internal-current-2026-08-30",
-    "hongfu-fm279-current-2026-08-30"
+    "hongfu-fm279-current-2026-08-30",
+    "hongfu-gravel-category-current-recheck-2026-09-25",
+    "hongfu-fm188-internal-current-recheck-2026-09-25",
+    "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+    "hongfu-fm279-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. The FM188/FM279 identity set is explicit; no silent model choice is made."
+  "notes": "The current manufacturer gravel category lists three relevant pages, including two differently described FM188 versions and FM279. These sources establish plausible manufacturer identities but do not identify which frame matches the generic candidate.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "hongfu-gravel-category-current-recheck-2026-09-25",
+      "hongfu-fm188-internal-current-recheck-2026-09-25",
+      "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+      "hongfu-fm279-current-recheck-2026-09-25"
+    ],
+    "note": "The current manufacturer gravel category lists three relevant pages, including two differently described FM188 versions and FM279. These sources establish plausible manufacturer identities but do not identify which frame matches the generic candidate."
+  }
 }

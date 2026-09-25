@@ -482,5 +482,11 @@
     "twitter-cyclone-r7120-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-r7120-batch-036-50-area-sweep-2026-09-01.json. The exact regional page says the full-carbon chassis is engineered for aerodynamic stability and efficient power delivery; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-r7120-batch-036-50-area-sweep-2026-09-01.json. The exact regional page says the full-carbon chassis is engineered for aerodynamic stability and efficient power delivery; qualitative manufacturer evidence only.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-cyclone-r7120-official-2026-08-17"],
+    "note": "Attribute the exact regional page's aerodynamic-stability and efficient-power-delivery wording to the manufacturer. No measured stiffness result, numeric claim or reproducible protocol is established."
+  }
 }

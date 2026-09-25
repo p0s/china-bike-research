@@ -6,7 +6,7 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-09-01",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -484,8 +484,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "sava-blade-r9-cyclopro-weight-2026-09-01",
-    "sava-blade-r9-99spokes-weight-2026-09-01"
+    "sava-blade-r9-99spokes-weight-2026-09-01",
+    "sava-blade-r9-cyclopro-weight-current-recheck-2026-09-25",
+    "sava-blade-r9-99spokes-current-access-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. Exact-model claims span 7.27 to about 7.39 kg with different generations and unpublished weighing bases, so no single weight is assigned."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/sava-r9-batch-031-50-area-sweep-2026-09-01.json. Exact-model claims span 7.27 to about 7.39 kg with different generations and unpublished weighing bases, so no single weight is assigned.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "sava-blade-r9-cyclopro-weight-current-recheck-2026-09-25",
+      "sava-blade-r9-99spokes-current-access-recheck-2026-09-25"
+    ],
+    "note": "Current CycloPro R9270 listing states 7.27 kg and lists pedals; it is labeled 2025/R23 and sold out, with size and weighing method unstated. The saved 99Spokes 2025 index says 16.3 lb (~7.39 kg), but its page returned 403 today. Keep the build claims separate; no retained marketplace option is selected."
+  }
 }

@@ -482,5 +482,6 @@
     "ecb-reference-rates-2026-08-31"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-rinasclta-gr025-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact direct storefront lists €561; the CNY figure is a dated official-rate reference conversion."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-rinasclta-gr025-frameset-batch-042-50-area-sweep-2026-09-01.json. Current exact direct storefront lists €561; the CNY figure is a dated official-rate reference conversion.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["rinasclta-gr025-store-eur-2026-09-01","ecb-reference-rates-2026-08-31"],"note":"Disposition: exact direct-store €561 offer and dated CNY reference conversion reused. Destination shipping, tax, stock, returns, and final selected-option checkout remain unverified; conversion is not a mainland price."}
 }

@@ -1,0 +1,161 @@
+{
+  "batch_id": "gap-fill-batch-07-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-07-scope.json",
+  "scope_count": {
+    "exact_models": 5,
+    "atomic_fields": 6
+  },
+  "completed_at": "2026-09-23",
+  "research_mode": "One evidence-only Luna agent researched the frozen exact-model targets; the task writer integrated results and updated the attempt ledger. The agent made no repository edits.",
+  "external_limits": {
+    "xhs": {
+      "status": "not-used",
+      "queries_dispatched": 0,
+      "note": "No XHS route was opened or queried. The Batch 06 extension doctor was unavailable at its CDP endpoint, so no direct-browser workaround was attempted."
+    }
+  },
+  "results": [
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "current-configuration",
+      "status": "unresolved",
+      "note": "No current mainland SKU/BOM was mapped to the 2023 BIKETO-reviewed APEX AXS/X1 Eagle build. The current official-store APEX 12-speed offer remains a separate, incompletely specified package. A foreign Fuvelo listing is marked coming soon and has a different Rival/XPLR BOM; JD searches did not establish an exact current configuration. The fresh public-discussion search surfaced the 2023 review only.",
+      "attempt_record_id": "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "sources_checked": [
+        "https://www.biketo.com/product/52352.html?all=1",
+        "https://fuvelo.com/pardus-uragano-evo-rival-etap",
+        "https://item.jd.com/10079495638395.html",
+        "https://www.jd.com/xinkuan/13186a47b4d523281e0a.html?electedExtAttrSet=4900%2C&extAttrValue=expand_name%2C%4085767%3A%3A4900&sort_type=sort_winsdate_desc"
+      ],
+      "supplemental_queries": [
+        {
+          "query": "PARDUS Uragano EVO APEX AXS X1 Eagle 配置 现货 2026",
+          "outcome": "rejected",
+          "note": "Foreign retailer and mismatched build; not a current mainland SKU."
+        },
+        {
+          "query": "site:item.jd.com 瑞豹 飓风 URAGANO EVO APEX 砾石 公路车 12速",
+          "outcome": "no-result",
+          "note": "No exact JD product; only unrelated results."
+        },
+        {
+          "query": "normalized JD category-page inspection; literal query not retained",
+          "outcome": "no-result",
+          "note": "An Uragano EVO title snippet appeared in discovery, but the opened category page had no matching model text. This is recorded as normalized because the literal query was not retained."
+        }
+      ],
+      "reopen_when": "An accessible current mainland offer exposes an exact SKU and BOM, or an explicit source maps the selected offer to the reviewed APEX AXS/X1 Eagle build."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "status": "unresolved",
+      "note": "The official product page remains behind a verification interstitial and was not retried or bypassed. Exact-model 1688 and JD searches surfaced no current mainland CNY offer. The historical overseas owner amount is not a current mainland quote.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-price-2026-09-22",
+      "reopen_when": "Ordinary official access is restored or a distinct accessible mainland source supplies an exact-model CNY amount, selected package, availability, and delivery basis."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No exact-model measured or controlled stiffness result surfaced. Chinertown had no exact test; the existing owner build contains subjective ride comments only. A repeated Bike Insights geometry route contained no stiffness data and was not counted as a new attempt.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "sources_checked": [
+        "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+        "https://bikeinsights.com/bike-geometries/6a8035f5663ca9001a9820b2-2026-airwolf-yf-r003-base-xs"
+      ],
+      "reopen_when": "A reproducible exact-revision stiffness/deflection measurement or credible controlled comparison becomes available."
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No controlled or measured result for the exact 32C/UDH revision was found. The Chinertown search returned no exact test; a separate road.cc domain search also returned no result. The 35C New-Version page and older BSA revision are not substitutes.",
+      "attempt_record_id": "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "supplemental_queries": [
+        "site:chinertown.com \"TT-X68-New\" OR \"TT-X68-new UDH\" stiffness OR flex test review",
+        "site:road.cc \"TT-X68\" carbon frame review stiffness"
+      ],
+      "reopen_when": "An instrumented or controlled stiffness test identifies the exact TT-X68-new 32C/UDH revision."
+    },
+    {
+      "record_id": "mondince-fm316",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "The Chinertown FM316 thread reports rider use and qualitative road feel but no measurement or controlled comparator; its more-solid comparison refers to the different FM326 setup. It is rejected for stiffness evidence.",
+      "attempt_record_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "sources_checked": [
+        "https://chinertown.com/index.php/topic,6336.225.html",
+        "https://www.reddit.com/r/gravelcycling/comments/1ox2cd1/mondince_fm316/"
+      ],
+      "reopen_when": "An exact FM316 stiffness measurement or attributable named, controlled frame comparison becomes available."
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "No exact 2023 CX-002 measured stiffness test or controlled comparator surfaced on MTBR. Existing Chinertown owner discussion is general ride/comfort commentary and does not resolve stiffness.",
+      "attempt_record_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "sources_checked": [
+        "https://chinertown.com/index.php?topic=3965.15"
+      ],
+      "reopen_when": "A measured result or useful attributable comparative ride identifies the 2023 full-internal-routing CX-002."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-airwolf-yf-r003-price-2026-09-22",
+      "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue": {
+      "ready": 6,
+      "evidence-found": 860,
+      "deferred": 41,
+      "blocked": 496,
+      "conflicted": 60
+    },
+    "note": "The same six targets remain ready because each still has an incomplete channel budget; Batch 08 must freeze a fresh scope before additional research."
+  },
+  "reopening_triggers": [
+    "A current mainland Uragano EVO SKU and BOM that maps to the reviewed build.",
+    "An accessible exact YF-R003 mainland price with selected package and delivery basis.",
+    "Measured or controlled stiffness evidence identifying the exact Airwolf YF-R003, Seraph TT-X68-new 32C/UDH, Mondince FM316, or VeloBuild CX-002 2023 revision."
+  ],
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via codex-pnpm-check; privacy, data validation, research ledger (1461 atomic fields; 15439 public-post and 35465 web attempts), coverage, 306 tests, 584-page build, and SEO audit passed",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

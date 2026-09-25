@@ -1,0 +1,35 @@
+{
+  "id": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-merida-reacto"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official China finder confirms exact REACTO 6000 CN 27 identity, CF3 frame/fork, 3XS–L and 105 Di2 52/36T, but no current mainland price or checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Merida REACTO 6000 CN 27\" 美利达 大陆官方 销售 配置 价格 重量",
+          "route": "Opened official MERIDA China model finder: https://www.merida.cn/index/bikefinder/index.html (车款查找 - MERIDA BIKES). Exact CN 27 entry is visible; no price or weight is published.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Official China finder confirms exact REACTO 6000 CN 27 identity, CF3 frame/fork, 3XS–L and 105 Di2 52/36T, but no current mainland price or checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official China finder confirms exact REACTO 6000 CN 27 identity, CF3 frame/fork, 3XS–L and 105 Di2 52/36T, but no current mainland price or checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taiwan product/category and mainland shop routes were not reopened. New query checked against predecessor queries."
+}

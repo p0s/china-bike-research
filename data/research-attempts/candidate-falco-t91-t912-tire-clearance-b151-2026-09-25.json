@@ -1,0 +1,55 @@
+{
+  "id": "candidate-falco-t91-t912-tire-clearance-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "falco-t91-t912"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-falco-t91-t912-tire-clearance-2026-08-29",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-falco-t91-t912-tire-clearance",
+    "extends_attempt_id": "candidate-falco-t91-t912-tire-clearance-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-falco-t91-t912-tire-clearance-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "FALCO T912 三火 complete-bike weight max tire clearance manufacturer 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://www.jd.com/book/13186d743a138b267f83.html",
+          "note": "The single JD reservation/category page was generic and contained no FALCO, T912, or 10.5 claim. The existing 10.5 kg value applies only to a DA9280 2x12 reference build among multiple retained mainland options; fitted tires do not establish maximum clearance."
+        }
+      ],
+      "blocker": "The official T912 source does not state a maximum; fitted tire widths do not establish one."
+    }
+  },
+  "accepted_source_ids": [
+    "falco-t912-official-current-2026-09-23"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact tire-clearance field. The single JD reservation/category page was generic and contained no FALCO, T912, or 10.5 claim. The existing 10.5 kg value applies only to a DA9280 2x12 reference build among multiple retained mainland options; fitted tires do not establish maximum clearance.",
+  "searched_at": "2026-09-25"
+}

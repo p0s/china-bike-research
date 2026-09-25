@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "spcycle-g026-official-2026-08-25"
+    "spcycle-g026-official-2026-08-25",
+    "spcycle-g026-official-route-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g026-frameset-batch-043-50-area-sweep-2026-09-01.json. Current exact page exposes stock, buy-now, add-to-cart and the included package."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-spcycle-g026-frameset-batch-043-50-area-sweep-2026-09-01.json, with a current exact-page recheck. The page displays “50 items available,” Buy Now and Add to Cart, but option-specific stock, mainland delivery and final checkout remain unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "spcycle-g026-official-route-recheck-2026-09-24"
+    ],
+    "note": "The current exact SP-G026 official-store page displays “50 items available” and Buy Now/Add to Cart. These visible page controls establish a current direct-store route only; option-specific availability, mainland shipping, final checkout price and warranty remain unverified."
+  }
 }

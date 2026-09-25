@@ -1,0 +1,107 @@
+{
+  "batch": 42,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-42-scope.json",
+  "writer_limit": {
+    "exact_targets": 4,
+    "atomic_fields": 4
+  },
+  "dispositions": [
+    {
+      "attempt_id": "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:camp-gx600-pes",
+      "field": "bottom-bracket",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "camp-gx600-geometry-recheck-2026-09-24",
+        "camp-gx600-pes-bottom-bracket-recheck-2026-09-24"
+      ],
+      "result": "The current exact CAMP page identifies the 1×12 PES build but gives no bottom-bracket standard or shell dimensions. Its official Buy Now route to JD timed out before an exact listing could be inspected. Keep unknown; do not transfer another GX600 trim's value."
+    },
+    {
+      "attempt_id": "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:camp-gx700-grx820",
+      "field": "bottom-bracket",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "camp-gx700-geometry-recheck-2026-09-24",
+        "camp-gx700-grx820-official-jd-store-recheck-2026-09-24"
+      ],
+      "result": "The current exact page omits BB information and lists a 26–36T crank alongside 1×12 drivetrain details, leaving build identity conflicted. The CAMP-linked JD 12-speed GX700 listing exposes no readable specification text. Keep unknown; no sibling-trim value transferred."
+    },
+    {
+      "attempt_id": "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:sava-gelaro-s8 (R21-GRX820-12S)",
+      "field": "bottom-bracket",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-24",
+        "sava-bicycle-instructions-manual-2026-09-24"
+      ],
+      "result": "The current exact page omits the shell standard and dimensions; BB Drop is geometry only. Its linked 20-page manual has no extractable browser text, and its visual contents could not be verified. Keep unknown."
+    },
+    {
+      "attempt_id": "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24",
+      "target": "variant:sava-gelaro-sf6-cues (R21-U6000-11S)",
+      "field": "bottom-bracket",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "sava-gelaro-sf6-official-recheck-2026-09-24",
+        "sava-bicycle-instructions-manual-2026-09-24"
+      ],
+      "result": "The current exact page omits the shell standard and dimensions. The linked 20-page manual has no extractable browser text, and its visual contents could not be verified. Keep unknown; do not transfer the S4 sibling value."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "camp-gx700-grx820-official-jd-store-recheck-2026-09-24",
+      "sava-bicycle-instructions-manual-2026-09-24"
+    ],
+    "research_attempts_updated": [
+      "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+      "variant-camp-gx700-grx820-bottom-bracket-recheck-2026-09-24",
+      "variant-sava-gelaro-s8-bottom-bracket-recheck-2026-09-24",
+      "variant-sava-gelaro-sf6-cues-bottom-bracket-recheck-2026-09-24"
+    ],
+    "catalog_values_filled": 0,
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "repository_gate": "passed on one approved host-path retry after the sandbox denied preview-server loopback: 312/312 tests, build 584 pages for 41 products, SEO 584 pages (458 indexable, 126 noindex)",
+    "image_report": "not needed; no image records changed"
+  },
+  "delivery": "Local batch; no push, pull request, merge, publication, or production action."
+}

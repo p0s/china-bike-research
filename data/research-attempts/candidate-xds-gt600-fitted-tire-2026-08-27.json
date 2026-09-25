@@ -1,21 +1,51 @@
 {
   "id": "candidate-xds-gt600-fitted-tire-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "xds-gt600" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xds-gt600"
+  },
   "field": "fitted-tire",
   "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
     "public-post": {
       "status": "found",
       "attempts": [
-        { "attempt": 1, "query": "喜德盛 GT600 重量 胎宽", "route": "canonical sequential XHS detail archive", "outcome": "found", "accessed_at": "2026-08-27", "note": "An exact retailer post documents fitted 700×40C tires on the pictured build.", "result_url": "https://www.xiaohongshu.com/explore/6873301100000000130102e5" }
+        {
+          "attempt": 1,
+          "query": "喜德盛 GT600 重量 胎宽",
+          "route": "canonical sequential XHS detail archive",
+          "outcome": "found",
+          "accessed_at": "2026-08-27",
+          "note": "An exact retailer post documents fitted 700×40C tires on the pictured build.",
+          "result_url": "https://www.xiaohongshu.com/explore/6873301100000000130102e5"
+        }
       ]
     },
-    "web": { "status": "not-run", "attempts": [] }
+    "web": {
+      "status": "not-run",
+      "attempts": []
+    }
   },
   "status": "found",
-  "accepted_source_ids": ["public-xds-gt600-retailer-build-2026-08-27"],
+  "accepted_source_ids": [
+    "public-xds-gt600-retailer-build-2026-08-27",
+    "xds-gt600-jd-search-recheck-2026-09-23",
+    "xds-gt600-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The installed tire size is resolved for this build. Maximum manufacturer clearance remains unknown and is not inferred from the fitted tire."
+  "notes": "The installed tire size is resolved for this build. Maximum manufacturer clearance remains unknown and is not inferred from the fitted tire.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "xds-gt600-jd-search-recheck-2026-09-23",
+      "xds-gt600-official-recheck-2026-09-23"
+    ],
+    "note": "Current non-XHS pages do not show installed tire size. Preserve the older 700×40C archived-build lead without applying it to a current exact trim. Reopen on an exact-build listing or manufacturer specification."
+  }
 }

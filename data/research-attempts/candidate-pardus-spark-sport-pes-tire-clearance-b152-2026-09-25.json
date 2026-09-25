@@ -1,0 +1,53 @@
+{
+  "id": "candidate-pardus-spark-sport-pes-tire-clearance-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-spark-sport-pes"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-pardus-spark-sport-pes-tire-clearance-2026-09-01",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-pardus-spark-sport-pes-tire-clearance",
+    "extends_attempt_id": "candidate-pardus-spark-sport-pes-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pardus-spark-sport-pes-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Spark Sport PES 2026 manufacturer maximum tire width 700C",
+          "route": "One bounded current exact-model web query",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "Existing current official evidence gives fitted 700×28C, not a maximum, and older Spark-family limits cannot be transferred. The new exact-model Sohu review URL was literal-audited absent before one page-open attempt; it timed out before content was available, so it supplies no clearance evidence and was not retried.",
+          "result_url": "https://www.sohu.com/a/1056986540_122645100"
+        }
+      ],
+      "blocker": "The single new exact-model page-open attempt timed out without page content; the frozen batch allowed one page per model and no retry was performed."
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "Existing current official evidence gives fitted 700×28C, not a maximum, and older Spark-family limits cannot be transferred. The new exact-model Sohu review URL was literal-audited absent before one page-open attempt; it timed out before content was available, so it supplies no clearance evidence and was not retried.",
+  "searched_at": "2026-09-25"
+}

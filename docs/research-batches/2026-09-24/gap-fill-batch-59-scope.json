@@ -1,0 +1,72 @@
+{
+  "batch": 59,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    }
+  },
+  "selection": {
+    "basis": "Continue one high-priority exact candidate price gap whose last broad field sweep was on 2026-09-01; test a fresh public mainland seller or marketplace route for the exact named build.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one Luna Max agent; research only, no repository writes",
+    "root_writer": "integrate only admissible evidence, update the single frozen price ledger if warranted, and record batch results"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "sava-f20-hawkeye",
+      "model": "SAVA Hawkeye F20 105 24-speed",
+      "gap_code": "price-not-observed",
+      "research_field": "price",
+      "gap_semantics": "mainland-observed-price",
+      "priority_score": 35,
+      "attempt_id": "candidate-sava-f20-hawkeye-price-2026-09-01",
+      "current_state": "candidate price is null; existing price sweep searched 50 registered areas on 2026-09-01 and accepted only a current USD global-store amount plus a historical 2023 XHS post for a different Ultegra trim; no dated exact-build mainland CNY observation is recorded",
+      "new_route_scope": "One fresh public web search of current mainland seller/flagship pages for the exact SAVA Hawkeye F20 105 24-speed build, requiring an identifiable seller, exact build match, visible CNY amount, and current listing/stock or date context. Stop at the first decisive exact item. Do not use the global USD store amount, foreign prices, the older Ultegra build, search snippets alone, login/private-message/checkout-gated quotes, or XHS without dedicated Chrome preflight.",
+      "already_checked_sources": [
+        "sava-hawkeye-f20-official-2026-08-17",
+        "public-sava-hawkeye-price-2026-08-17",
+        "usd-cny-central-parity-2026-07-31"
+      ],
+      "excluded_routes": [
+        "current SAVA global-store product price in USD",
+        "historical Ultegra R8170 XHS post",
+        "foreign-market sellers or reference conversions",
+        "login, private message, quote-only checkout, or verification-gated pages",
+        "Xiaohongshu because dedicated research Chrome preflight has not been performed"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use only the frozen exact SAVA F20 build and the fresh public mainland seller/marketplace route; stop at decisive evidence.",
+    "If an exact current listing is found, add a dated source record and price observation only when the seller, exact build, CNY amount, and listing/stock or date context are supported.",
+    "If no exact result is found, append one concise attempt to the existing price ledger while preserving all previous attempts; do not assert that no such listing exists.",
+    "Keep the candidate unpublished unless the repository's complete publication criteria are independently met.",
+    "Run focused validation, then the full repository gate once for this coherent data batch; no image records are in scope.",
+    "Local B59 batch only; no push, pull request, merge, publication, or production action."
+  ],
+  "delivery": "Local B59 batch only; no push, pull request, merge, publication, or production action."
+}

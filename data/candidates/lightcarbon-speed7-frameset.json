@@ -8,7 +8,7 @@
   "missing": [
     "Exact retained CNY 5,599 included package and current checkout",
     "Domestic warranty/after-sales entity for the retained seller route",
-    "Controlled independent exact-frame stiffness evidence"
+    "Numeric or controlled frame-only stiffness result and proof of applicability to the retained CNY 5,599 mechanical-105 package"
   ],
   "status": "speed7-alias-and-current-platform-specifications-confirmed",
   "research_priority": "high",
@@ -31,15 +31,18 @@
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Official Chinese catalog maximum for Speed7/速7 (LCR017-D)",
     "listing_identity": "Official Chinese catalog maps Speed7/速7 to LCR017-D",
-    "frame_stiffness_status": "No independent numeric exact-platform stiffness result found after 50 registered source areas"
+    "frame_stiffness_status": "One qualitative independent exact-chassis ride assessment is recorded; numeric or controlled frame-only stiffness and applicability to the retained package remain unknown.",
+    "stiffness_evidence": "An independent Hambini Engineering review of a personally assembled LightCarbon LCR017-D reports “solid behavior under load.” This is a qualitative, build-specific ride assessment of the exact chassis with a selected factory quality specification, not a numeric or controlled frame-only stiffness test and not proof of the retained Speed7 mechanical-105 package. Separate public-comment claims about mass and downtube stiffness are not used."
   },
-  "source_note": "The official Chinese catalog maps 速7 to LCR017-D and publishes 870±30 g for a matte size-52 frame and a 32C maximum. The retained CNY 5,599 package contents and checkout remain unresolved.",
-  "last_reviewed": "2026-09-01",
+  "source_note": "The official Chinese catalog maps Speed7/速7 to LCR017-D and supplies the 870±30 g size-52 frame claim and 32C maximum. An already-recorded 2024 independent review of a personally assembled LCR017-D describes solid behavior under load; retain this only as qualitative, review-build-specific evidence. It is not a numeric/controlled frame-only result or proof about the retained mechanical-105 package. The 8.2 kg and box-downtube claims in separate comments are not used.",
+  "last_reviewed": "2026-09-25",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
     "lightcarbon-chinese-catalog-official-2026-08-29",
     "lightcarbon-lcr017-d-official-2026-08-29",
-    "lightcarbon-road-catalog-2026-2027"
+    "lightcarbon-road-catalog-2026-2027",
+    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23",
+    "lightcarbon-lcr017d-hambini-review-2026-09-22"
   ],
   "source_url": "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
 }

@@ -1,0 +1,99 @@
+{
+  "batch_id": "gap-fill-batch-23-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps: 41 published variants, 222 candidates; 335 blocked, 35 conflicted, 68 found, and 14 temporarily exhausted field states. Fresh npm run --silent research:queue: 599 evidence-found, 45 deferred, 498 blocked, 60 conflicted, and 0 ready. After excluding the merged java-aluminum-24s duplicate and attempts already holding a resolution, the first seven exact-model groups contain nine evidence-found atomic fields.",
+  "selection_basis": "Freeze the next seven unresolved LightCarbon exact-model groups in queue order: one current LCG071S-PRO variant/package plus six distinct LCR road-frame price leads. The scope is nine atomic fields, below the 25-field cap. One Luna Max lane supplies evidence only; root integrates and writes all seven models.",
+  "exact_model_count": 7,
+  "atomic_field_count": 9,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 9,
+  "exact_models": [
+    "lightcarbon-lcg071s-pro-frameset",
+    "lightcarbon-lcr014-d",
+    "lightcarbon-lcr015-d",
+    "lightcarbon-lcr015-v",
+    "lightcarbon-lcr015s-d",
+    "lightcarbon-lcr017-d",
+    "lightcarbon-lcr017s-d"
+  ],
+  "targets": [
+    {
+      "record_type": "variant/published-variant",
+      "record_id": "lightcarbon-lcg071s-pro-frameset",
+      "exact_identity": "LightCarbon LCG071S-PRO frameset; retained package and current price/purchase-route fields",
+      "model_group": "lightcarbon-lcg071s-pro-frameset",
+      "fields": ["package", "price", "purchase-route"],
+      "attempt_ids": [
+        "variant-lightcarbon-lcg071s-package-2026-08-27",
+        "variant-lightcarbon-lcg071s-pro-frameset-price-2026-09-01",
+        "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr014-d",
+      "exact_identity": "LightCarbon LCR014-D disc frameset candidate",
+      "model_group": "lightcarbon-lcr014-d",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr014-d-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr015-d",
+      "exact_identity": "LightCarbon LCR015-D disc frameset candidate",
+      "model_group": "lightcarbon-lcr015-d",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr015-d-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr015-v",
+      "exact_identity": "LightCarbon LCR015-V rim-brake frameset candidate",
+      "model_group": "lightcarbon-lcr015-v",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr015-v-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr015s-d",
+      "exact_identity": "LightCarbon LCR015S-D disc frameset candidate",
+      "model_group": "lightcarbon-lcr015s-d",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr015s-d-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr017-d",
+      "exact_identity": "LightCarbon LCR017-D disc frameset candidate",
+      "model_group": "lightcarbon-lcr017-d",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr017-d-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr017s-d",
+      "exact_identity": "LightCarbon LCR017S-D disc frameset candidate",
+      "model_group": "lightcarbon-lcr017s-d",
+      "fields": ["price"],
+      "attempt_ids": ["candidate-lightcarbon-lcr017s-d-price-2026-09-01"],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Use current, exact model sources and record actual access dates. Prefer the LightCarbon manufacturer for current public package specifications; a current seller listing is needed for a dated buyer price or order status.",
+    "Keep package contents, options, freight, tax, stock, seller identity, selected frame generation, currency, and checkout price distinct. Contact-for-price is not a price observation.",
+    "Reuse exact model sources already accepted when they still support the field; do not repeat a completed 50-area sweep or infer current availability from an old owner post.",
+    "Update only these scoped attempts, candidate or variant data, source records, supported dated price records, and batch artifacts; preserve protected source and resolution evidence and image rights.",
+    "The single Luna Max lane is evidence-only for all seven assigned models and returns direct URLs, actual access dates, source classes, supported findings, caveats, dispositions, and reopen triggers. It does not write, contact sellers, use XHS, or recurse. Root integrates and remains the sole writer."
+  ]
+}

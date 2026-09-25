@@ -1,0 +1,52 @@
+{
+  "id": "candidate-cosmosworks-carbon-e-road-drivetrain-b153-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "cosmosworks-carbon-e-road"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-cosmosworks-carbon-e-road-drivetrain-2026-08-29",
+  "retry_reason": "One distinct B153 exact-record web query on 2026-09-25 followed the earlier field-specific campaign history.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-153-cosmosworks-carbon-e-road-drivetrain",
+    "extends_attempt_id": "candidate-cosmosworks-carbon-e-road-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-153-scope.json",
+    "reason": "The frozen B153 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-cosmosworks-carbon-e-road-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The retained card conflates two distinct platforms and the query found no exact SKU bridge. Previously recorded NOMAD, Oi!, and NOMAD-promotion pages were not reopened.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "cosmosworks 宇宙E-BIKE NOMAD Oi CNY 14999 UDH 40mm exact listing 2026",
+          "route": "One bounded current web query for this exact candidate record; results screened against existing source history and the retained product/build identity.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The fresh query reconfirmed the recorded cross-model split: the CNY 14,999 promotion is tied to NOMAD, whose current page reports a 13.8 kg starting complete-bike weight, while the separate Oi! page carries T800/T1000, UDH, and 40 mm claims. No source joins these into one SKU matching the retained mixed card; no NOMAD or Oi! value is assigned to it."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The fresh query reconfirmed the recorded cross-model split: the CNY 14,999 promotion is tied to NOMAD, whose current page reports a 13.8 kg starting complete-bike weight, while the separate Oi! page carries T800/T1000, UDH, and 40 mm claims. No source joins these into one SKU matching the retained mixed card; no NOMAD or Oi! value is assigned to it.",
+  "searched_at": "2026-09-25"
+}

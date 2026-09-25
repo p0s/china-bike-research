@@ -1,0 +1,46 @@
+{
+  "batch": 73,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-73-scope.json",
+  "outcome": "The exact mainland purchase route for the SAVA Gelaro S4 GRX400 remains unverified. A JD card showed S4 and GRX400-20S but did not establish the Gelaro/R21 identity or current orderability; the item page redirected to verification.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "query": "SAVA Gelaro S4 GRX400 R21-GRX400-20S 京东 天猫",
+    "result_urls": [
+      "https://www.jd.com/hprm/131820696360d00ce6a0.html",
+      "https://item.jd.com/10137723785617.html"
+    ],
+    "result": "The JD result card title identified a SAVA 越界 S4, pearl white, GRX400-20S build in size 47/XS and showed 22+ reviews. It omitted Gelaro and manufacturer code R21-GRX400-20S, and showed no CNY amount, stock, or order terms. Opening the item redirected to a JD verification/risk page with no product content. No login or verification attempt was made.",
+    "disposition": "No price or purchase condition inferred. Preserve the dated ¥7,999 coupon search-card observation and separate global US$1,799 reference; purchase-route gap remains open."
+  },
+  "integration": {
+    "variant": "data/variants/sava-gelaro-s4-grx400.json",
+    "change": "No catalog product value, price record, source record, or image changed.",
+    "research_attempt": "data/research-attempts/variant-sava-gelaro-s4-grx400-purchase-route-2026-09-24.json",
+    "attempt_status": "blocked",
+    "validator_change": "A formal scoped extension may recheck a found 50-area campaign when a separately scoped exact condition remains unresolved; the prior accepted evidence and 50-area record remain intact.",
+    "validator_files": [
+      "src/lib/research-attempts.mjs",
+      "tests/research-attempts.test.mjs"
+    ]
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "purchase_route": "25 -> 25",
+    "research_status_counts": {
+      "blocked": "364 -> 365",
+      "conflicted": "34 -> 34",
+      "found": "46 -> 45",
+      "temporarily-exhausted": "4 -> 4"
+    },
+    "disposition": "No catalog gap closed; this bounded follow-up replaced an overbroad found status with a blocked disposition for the still-unresolved exact mainland orderability condition."
+  },
+  "validation": {
+    "focused": "Passed research:check (1503 atomic research fields; 15450 public-post and 35580 web attempts), validate (1304 sources and 1527 research records), and the focused research-attempt test file (13/13).",
+    "coverage": "coverage:accept and coverage:check passed for 212 images, 73 prices, 1304 sources, and 236 candidates.",
+    "full_gate": "developer-storage-cache run -- npm run check passed: privacy scan, data validation, research validation, coverage, 324/324 tests, 584-page build, and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B73 batch only; no push, pull request, merge, publication, or production action."
+}

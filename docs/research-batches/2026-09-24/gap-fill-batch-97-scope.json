@@ -1,0 +1,31 @@
+{
+  "batch": 97,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 167,
+  "scope": [
+    {
+      "record_type": "published-variant",
+      "record_id": "spcycle-g026-frameset",
+      "attempt_id": "variant-spcycle-g026-frameset-purchase-route-2026-09-01",
+      "atomic_gap": "purchase-route",
+      "source_id": "spcycle-g026-official-2026-08-25",
+      "url": "https://www.sp-cycle.com/Spcycle-G026-Carbon-Gravel-Bike-Frame-700x50C-UDH-Thread-T47-865-Storage-Box-Gravel-Bicycle-Carbon-Frameset-p7023451.html",
+      "known_issue": "The exact official page was last checked 2026-09-01 and then showed stock and order controls; current status and price may have changed."
+    }
+  ],
+  "allowed_work": "One Luna evidence-only worker may open only the exact official SPcycle G026 frameset URL once and report visible current purchase-route facts (stock label, Buy Now/Add to Cart controls, listed prices, options, and access date). No account, cart, checkout, seller contact, alternate model, third-party seller or additional route. The primary writer may add a dated source recheck, update this exact variant's purchase-route text and last_reviewed, and resolve the exact attempt only to the extent supported by the page.",
+  "stop_conditions": [
+    "Stop after the single exact official page open; do not retry blocked, unavailable, or challenge routes.",
+    "Do not infer successful checkout, mainland shipping, final price, warranty, or current stock from a route control alone.",
+    "Do not change price observations unless the exact current page visibly presents a new amount and package basis; retain prior dated prices."
+  ],
+  "done_criteria": [
+    "Current exact-page evidence is either recorded with all conditions or the route gap remains explicitly unresolved.",
+    "Fresh data:gaps and research:queue quantify the post-batch state.",
+    "Run validate, research:check, monotonic coverage acceptance/check and git diff --check; run the full npm run check gate once if source or catalog records change. No image report because no image record is in scope."
+  ]
+}

@@ -494,5 +494,14 @@
     "trinx-tornado-900-jd-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-tornado-900-50-area-sweep-2026-08-30.json. Manufacturer and mainland sources establish Shimano 105 R7120 mechanical 2x12 with hydraulic BR-R7170 brakes."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-tornado-900-50-area-sweep-2026-08-30.json. Manufacturer component details and mainland blue-white TDO 900 indexing align on Shimano 105 R7120 2x12 with BR-R7170 hydraulic discs.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "trinx-tornado-900-official-2026-08-30",
+      "trinx-tornado-900-jd-2026-08-30"
+    ],
+    "note": "The maker's exact component listing and mainland blue-white TDO 900 / 24-speed index support the retained 105 R7120 mechanical 2x12 with hydraulic BR-R7170 discs. Unlisted complete-BOM substitutions and selected size remain unknown."
+  }
 }

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-upland-r70-complete-weight-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "upland-r70"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-upland-r70-complete-weight-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced listing timed out on its single permitted open; no retry was made and its search snippet is not evidence.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "UPLAND R70 8999 9597 complete weight 105 Di2 size",
+          "route": "One distinct B144 exact-model search and one newly surfaced result-page open attempt",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 150 distinct queries. Existing exact manufacturer evidence says approximately 8.3 kg bare for a displayed 105 Di2 R7170/R7150 build, with no size or method and no retained-card mapping. The new snippet's approximately 8.4 kg mechanical build was not accepted.",
+          "result_url": "https://upland-web.bikedd.com/product/307.html"
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 150 distinct queries. Existing exact manufacturer evidence says approximately 8.3 kg bare for a displayed 105 Di2 R7170/R7150 build, with no size or method and no retained-card mapping. The new snippet's approximately 8.4 kg mechanical build was not accepted.",
+  "campaign_extension": {
+    "id": "b144-upland-r70-complete-weight",
+    "extends_attempt_id": "candidate-upland-r70-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

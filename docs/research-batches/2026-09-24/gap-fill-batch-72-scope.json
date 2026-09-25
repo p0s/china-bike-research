@@ -1,0 +1,65 @@
+{
+  "batch": 72,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 363,
+      "conflicted": 34,
+      "found": 47,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The X-LAB AD8 candidate has an exact official mainland R7170 Di2 / Branta C50 TEAM build and dated CNY 26,980 list price, but no observed mainland seller price. A current matching seller listing could close one purchase-comparison gap.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "xlab-ad8",
+    "gap_code": "price-not-observed",
+    "prior_attempt_id": "candidate-xlab-ad8-price-2026-09-01",
+    "new_field_id": "mainland-observed-price"
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "xlab-ad8",
+    "model": "X-LAB AD8 R7170 Di2 / Branta C50 TEAM complete bike",
+    "field": "observed_price",
+    "market": "mainland China",
+    "expected_basis": "A current exact mainland seller page for the same R7170 Di2 / Branta C50 TEAM complete-bike package with a published CNY amount and visible SKU/package and purchase qualifications. Preserve the CNY 26,980 official list price separately."
+  },
+  "research_route": {
+    "source_class": "mainland-marketplace-listing",
+    "action": "Run one focused public search for an exact current X-LAB AD8 R7170 Di2 / Branta C50 TEAM seller listing. Open the first exact public seller detail page once to verify package, amount, date and conditions.",
+    "stop_rule": "Stop after the first decisive exact seller page or after the focused search yields no exact matching package. Exclude the known Taobao 105 electronic / steel-spoke carbon-wheel standard build because it is a different package. Do not use account-only checkout, contact sellers, open unrelated trims, or cross login, CAPTCHA or verification."
+  },
+  "done_criteria": [
+    "If an exact current mainland seller listing matches the official build and publishes a usable CNY amount, add a dated observed_price with seller, package and conditions while preserving the official list price.",
+    "Do not transfer the known CNY 21,980 Taobao price for the distinct standard/105-electronic build or any custom owner build to the preferred official configuration.",
+    "If no exact matching listing is readable, keep observed_price absent and document a blocked/no-result attempt with a clear retrigger condition.",
+    "For a data change, run focused validation and `npm run check` once for this coherent batch. No image report unless image records change.",
+    "Local B72 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B72 batch only; no push, pull request, merge, publication or production action."
+}

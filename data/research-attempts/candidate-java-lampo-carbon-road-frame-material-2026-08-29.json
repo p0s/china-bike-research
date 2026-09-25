@@ -488,9 +488,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "taobao-snapshot-2026-08-08",
-    "lampo-mainland-launch-2026-08-29"
+    "lampo-mainland-launch-2026-08-29",
+    "lampo-official-home-index-2026-09-23",
+    "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-lampo-carbon-road-50-area-sweep-2026-08-29.json. The retained title explicitly says full carbon and attributable launch coverage confirms a full-carbon LAMPO road range member; exact grade and model remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-lampo-carbon-road-50-area-sweep-2026-08-29.json. The retained title explicitly says full carbon and attributable launch coverage confirms a full-carbon LAMPO road range member; exact grade and model remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "lampo-mainland-launch-2026-08-29",
+      "lampo-official-home-index-2026-09-23"
+    ],
+    "note": "The retained seller card claims full-carbon construction, and LAMPO-authored mainland launch coverage reports a LAMPO road range including a full-carbon model. The current official homepage index labels the brand LAMPO 蓝豹 while the seller card says 蓝波; exact model, grade, selected build and the Java corporate relationship remain unverified."
+  }
 }

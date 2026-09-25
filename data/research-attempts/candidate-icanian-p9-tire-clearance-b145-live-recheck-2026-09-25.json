@@ -1,0 +1,64 @@
+{
+  "id": "candidate-icanian-p9-tire-clearance-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "icanian-p9"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "icanian-p9-frame-page-current-2026-09-23",
+    "icanian-p9-complete-bike-current-2026-09-01"
+  ],
+  "retry_after": null,
+  "retry_of": "candidate-icanian-p9-tire-clearance-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-icanian-p9-tire-clearance-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "Recorded manufacturer pages remain inconsistent: frame-only page gives nominal 27.5x3.0 or 29x2.3 (XD narrows 27.5 to 2.5), while complete-bike page recommends 27.5x2.8. No maximum or reconciled casing limit is established.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ICANIAN P9 tire clearance maximum 27.5 3.0 29 2.3 manufacturer",
+          "route": "One distinct B145 exact-model web search; no new exact-model page opened",
+          "outcome": "conflict",
+          "accessed_at": "2026-09-25",
+          "note": "The one distinct query resurfaced an already-recorded complete-bike URL, which was skipped after exact-string audit. No new maximum evidence appeared; preserve the existing nominal-size conflict."
+        }
+      ]
+    }
+  },
+  "notes": "The one distinct query resurfaced an already-recorded complete-bike URL, which was skipped after exact-string audit. No new maximum evidence appeared; preserve the existing nominal-size conflict.",
+  "campaign_extension": {
+    "id": "b145-icanian-p9-tire-clearance",
+    "extends_attempt_id": "candidate-icanian-p9-tire-clearance-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "icanian-p9-frame-page-current-2026-09-23",
+      "icanian-p9-complete-bike-current-2026-09-01"
+    ],
+    "note": "Recorded manufacturer pages remain inconsistent: frame-only page gives nominal 27.5x3.0 or 29x2.3 (XD narrows 27.5 to 2.5), while complete-bike page recommends 27.5x2.8. No maximum or reconciled casing limit is established."
+  }
+}

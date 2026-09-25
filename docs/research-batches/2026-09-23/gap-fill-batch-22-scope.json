@@ -1,0 +1,167 @@
+{
+  "batch_id": "gap-fill-batch-22-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh npm run --silent data:gaps: 41 published variants, 222 candidates; research statuses {'blocked': 335, 'conflicted': 35, 'found': 68, 'temporarily-exhausted': 14}. Fresh npm run --silent research:queue: counts {'ready': 0, 'evidence-found': 621, 'deferred': 45, 'blocked': 498, 'conflicted': 60}; after filtering existing resolutions and excluding merged java-aluminum-24s, 603 evidence-found items remain. Select the next 8 model groups in priority order, stopping at 24 atomic fields under the 25-field batch limit.",
+  "selection_basis": "Freeze 8 exact model groups and 24 unresolved atomic fields. One Luna Max evidence-only lane reviews the first four groups (15 fields); root owns the remaining four (9 fields) and remains the sole writer.",
+  "exact_model_count": 8,
+  "atomic_field_count": 24,
+  "exact_models": [
+    "laget-discovery-one-pro",
+    "laget-discovery-slr",
+    "laget-pioneer",
+    "laget-pioneer-one",
+    "legit-ac1",
+    "leinax-leina-road",
+    "leinax-youlong-2",
+    "lightcarbon-lcg071-pro"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-one-pro",
+      "exact_identity": "LAGET DISCOVERY ONE PRO",
+      "model_group": "laget-discovery-one-pro",
+      "fields": [
+        "frame-stiffness",
+        "frame-material",
+        "frame-weight",
+        "price",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27",
+        "candidate-laget-discovery-one-pro-frame-material-2026-08-27",
+        "candidate-laget-discovery-one-pro-frame-weight-2026-08-27",
+        "candidate-laget-discovery-one-pro-price-2026-08-27",
+        "candidate-laget-discovery-one-pro-tire-clearance-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-slr",
+      "exact_identity": "LAGET DISCOVERY SLR",
+      "model_group": "laget-discovery-slr",
+      "fields": [
+        "price",
+        "frame-material"
+      ],
+      "attempt_ids": [
+        "candidate-laget-discovery-slr-price-2026-09-01",
+        "candidate-laget-discovery-slr-frame-material-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer",
+      "exact_identity": "LAGET PIONEER",
+      "model_group": "laget-pioneer",
+      "fields": [
+        "frame-material",
+        "frame-weight",
+        "tire-clearance",
+        "price-not-observed"
+      ],
+      "attempt_ids": [
+        "candidate-laget-pioneer-frame-material-2026-09-01",
+        "candidate-laget-pioneer-frame-weight-2026-09-01",
+        "candidate-laget-pioneer-tire-clearance-2026-09-01",
+        "candidate-laget-pioneer-price-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer-one",
+      "exact_identity": "LAGET PIONEER ONE",
+      "model_group": "laget-pioneer-one",
+      "fields": [
+        "frame-material",
+        "frame-weight",
+        "tire-clearance",
+        "price-not-observed"
+      ],
+      "attempt_ids": [
+        "candidate-laget-pioneer-one-frame-material-2026-09-01",
+        "candidate-laget-pioneer-one-frame-weight-2026-09-01",
+        "candidate-laget-pioneer-one-tire-clearance-2026-09-01",
+        "candidate-laget-pioneer-one-price-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "legit-ac1",
+      "exact_identity": "LEGIT 陆极客 AC1",
+      "model_group": "legit-ac1",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-legit-ac1-drivetrain-2026-08-30",
+        "candidate-legit-ac1-frame-material-2026-08-30",
+        "candidate-legit-ac1-tire-clearance-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-leina-road",
+      "exact_identity": "LEINAK 雷纳克 雷娜 carbon road",
+      "model_group": "leinax-leina-road",
+      "fields": [
+        "drivetrain",
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-leinax-leina-road-drivetrain-2026-08-30",
+        "candidate-leinax-leina-road-frame-material-2026-08-30",
+        "candidate-leinax-leina-road-identity-source-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-youlong-2",
+      "exact_identity": "LEINAK 雷纳克 游龙 2.0",
+      "model_group": "leinax-youlong-2",
+      "fields": [
+        "frame-material",
+        "identity-source"
+      ],
+      "attempt_ids": [
+        "candidate-leinax-youlong-2-frame-material-2026-08-30",
+        "candidate-leinax-youlong-2-identity-source-2026-08-30"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcg071-pro",
+      "exact_identity": "LightCarbon LCG071-PRO",
+      "model_group": "lightcarbon-lcg071-pro",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-lightcarbon-lcg071-pro-price-2026-09-01"
+      ],
+      "owner": "root"
+    }
+  ],
+  "acceptance_rules": [
+    "Use current, credible, exact-model evidence and record the actual access date; prefer primary and Chinese sources when they improve mainland accuracy.",
+    "Reuse already accepted same-model sources when they still support the field; do not repeat completed 50-area sweeps without a concrete unresolved question.",
+    "Keep size, hardware basis, selected option, price audience, generation, and retailer/market limits explicit; preserve unknowns and conflicts.",
+    "Update only frozen attempts, candidate records, source records, and this batch's artifacts; add images only with documented reusable rights.",
+    "Luna is evidence-only, handles its four exact model groups sequentially, does not edit, use XHS, contact sellers, or recurse; root alone integrates findings and writes."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "candidate-twitter-cyclone-sport-complete-weight-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-cyclone-sport"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced page returned 404 on its single permitted open; no retry was made. The retained listing's wheel option remains unselected.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 Cyclone third generation Sport RS-24S 3387.25 complete weight alloy carbon wheel",
+          "route": "One distinct B144 exact-model search and one newly surfaced product-page open attempt",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 100 distinct queries. Existing exact-model source summaries distinguish 9.1 kg with 38 mm alloy rims and 8.9 kg with 50 mm wave-carbon rims; neither maps to the retained CNY 3,387 card. The new result's 9.2/9.0 kg snippet was not accepted.",
+          "result_url": "https://www.twitterbikefactory.com/hu-am/products/twitter-cyclone-3rd-rs24-carbon-fiber-road-bike"
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 100 distinct queries. Existing exact-model source summaries distinguish 9.1 kg with 38 mm alloy rims and 8.9 kg with 50 mm wave-carbon rims; neither maps to the retained CNY 3,387 card. The new result's 9.2/9.0 kg snippet was not accepted.",
+  "campaign_extension": {
+    "id": "b144-twitter-cyclone-sport-complete-weight",
+    "extends_attempt_id": "candidate-twitter-cyclone-sport-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

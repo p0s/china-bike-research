@@ -23,12 +23,28 @@
           "accessed_at": "2026-09-22",
           "note": "Request-verification interstitial; current product content unavailable.",
           "result_url": "https://airwolfcarbonbike.com/product/airwolf-yfr003-pearl-white-carbon-gravel-frame-disc-brake-bike-frameset-70050c-max-tire-xs-s-m-l-xl/"
+        },
+        {
+          "attempt": 2,
+          "query": "site:1688.com \"YF-R003\" Airwolf 碳纤维 gravel 车架 价格",
+          "route": "1688 exact-model marketplace search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact YF-R003 mainland product or current price surfaced; the official product page was not retried or bypassed."
+        },
+        {
+          "attempt": 3,
+          "query": "site:item.jd.com Airwolf YF-R003 车架 价格 碳纤维",
+          "route": "JD exact-item marketplace search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact YF-R003 listing or CNY quote surfaced; unrelated product results were rejected."
         }
       ],
-      "blocker": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
+      "blocker": "The exact official page remains behind a request-verification interstitial; two distinct mainland marketplace searches did not surface an exact current offer. Do not retry or bypass the official interstitial."
     },
     "public-post": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -38,12 +54,28 @@
           "accessed_at": "2026-09-22",
           "note": "Foreign historical build price and brief ride impressions do not establish this field for current mainland framesets.",
           "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/"
+        },
+        {
+          "attempt": 2,
+          "query": "site:chinertown.com \"Airwolf YF-R003\" price OR cost OR 车架价格",
+          "route": "Chinertown exact-model public-owner forum search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-model current mainland CNY quote or selected package surfaced."
+        },
+        {
+          "attempt": 3,
+          "query": "site:bilibili.com Airwolf YF-R003 价格 车架 车主 砾石",
+          "route": "Bilibili public buyer/review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Indexed videos discussed unrelated gravel models; no exact YF-R003 mainland CNY quote or package surfaced."
         }
       ]
     }
   },
-  "status": "open",
+  "status": "blocked",
   "accepted_source_ids": [],
   "retry_after": null,
-  "notes": "Official route blocked by verification; public-post attempt incomplete. Next: restored ordinary access or a distinct exact-model source."
+  "notes": "Official route blocked by verification; 1688 and JD searches found no exact current mainland offer. Public-post channel remains open; next evidence must be an accessible exact-model mainland CNY offer with selected package and delivery basis. A distinct Chinertown exact-price search also returned no result. Public-post channel is exhausted; web channel remains blocked at the official verification interstitial after marketplace searches found no exact offer."
 }

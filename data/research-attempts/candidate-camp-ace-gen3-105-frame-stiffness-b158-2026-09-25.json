@@ -1,0 +1,53 @@
+{
+  "id": "candidate-camp-ace-gen3-105-frame-stiffness-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "camp-ace-gen3-105"
+  },
+  "field": "frame-stiffness",
+  "retry_of": "candidate-camp-ace-gen3-105-frame-stiffness-2026-08-29",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-camp-ace-gen3-105-frame-stiffness-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP ACE III 105 third generation exact frame stiffness independent measured test",
+          "route": "One frozen B158 exact-model query; one newly surfaced Sohu URL opened after literal repository URL absence check.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The new exact Sohu comparison URL (https://www.sohu.com/a/1057474909_122645100) passed the absence audit, but its only permitted open failed with 400 Timeout fetching. No retry was made. The other surfaced Sohu URL was already recorded in docs/research-batches/2026-09-22/luna-followup-14-results.json and was skipped. The recorded official CAMP page describes the build but has no stiffness evidence.",
+          "result_url": "https://www.sohu.com/a/1057474909_122645100"
+        }
+      ],
+      "blocker": "The only new exact-looking comparison page timed out on its single permitted open; no qualifying stiffness evidence was verified."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The only new exact-looking comparison page timed out on its single permitted open; no qualifying stiffness evidence was verified.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-158-camp-ace-gen3-105-frame-stiffness",
+    "extends_attempt_id": "candidate-camp-ace-gen3-105-frame-stiffness-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+    "reason": "The frozen B158 scope authorizes one dated exact-record web query after review of the completed 50-area campaign, latest attempt, and linked sources.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "searched_at": "2026-09-25",
+  "priority": "high"
+}

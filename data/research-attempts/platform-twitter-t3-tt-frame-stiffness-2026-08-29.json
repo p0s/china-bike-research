@@ -493,8 +493,18 @@
   "status": "found",
   "accepted_source_ids": [
     "twitter-t3-tt-official-2026-08-29",
-    "public-twitter-t3-tt-owner-2026-08-29"
+    "public-twitter-t3-tt-owner-2026-08-29",
+    "twitter-t3-tt-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-t3-tt-50-area-sweep-2026-08-29.json. The manufacturer supplies only qualitative maximum-stiffness marketing, while one owner reports twitchier handling than other TT bikes used. No measured stiffness, deflection or independent comparative protocol was found."
+  "notes": "B121 live recheck confirms only a qualitative manufacturer stiffness statement; retain the separate single-owner twitchier-handling report as an anecdote. Neither source measures stiffness or deflection.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-t3-tt-official-recheck-2026-09-24",
+      "public-twitter-t3-tt-owner-2026-08-29"
+    ],
+    "note": "B121 live recheck confirms only a qualitative manufacturer stiffness statement; retain the separate single-owner twitchier-handling report as an anecdote. Neither source measures stiffness or deflection."
+  }
 }

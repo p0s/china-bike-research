@@ -59,8 +59,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "voicevelo-g-major-panda-podium-2026-08-17"
+    "voicevelo-g-major-panda-podium-2026-08-17",
+    "voicevelo-g-major-pandapodium-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: temporarily-exhausted; prices: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "voicevelo-g-major-pandapodium-recheck-2026-09-23"
+    ],
+    "note": "Panda Podium lists exact G Major frameset SKU VFV-01-GMAJOR, options, USD 2,099 card price and Add to Cart route. This establishes a global retail route, not mainland availability or checkout. Reopen on an exact mainland seller/order route."
+  }
 }

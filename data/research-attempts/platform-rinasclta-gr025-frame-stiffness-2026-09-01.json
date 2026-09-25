@@ -481,5 +481,6 @@
     "rinasclta-gr025-official"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-rinasclta-gr025-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page claims a high stiffness-to-weight ratio for the T800/T1000 frame; qualitative claim without a public protocol."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-rinasclta-gr025-batch-037-50-area-sweep-2026-09-01.json. The exact manufacturer page claims a high stiffness-to-weight ratio for the T800/T1000 frame; qualitative claim without a public protocol.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["rinasclta-gr025-official"],"note":"Disposition: reused the exact GR025 manufacturer's high stiffness-to-weight claim for its T800/T1000 frame as qualitative marketing evidence only. No numeric result or public measurement protocol is supplied."}
 }

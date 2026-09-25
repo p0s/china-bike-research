@@ -507,5 +507,11 @@
     "twitter-cyclone-et-official-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact current official ET page publishes a six-size geometry table; the manufacturer values were accepted."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-electronic-50-area-sweep-2026-08-29.json. The exact official ET page publishes a six-size geometry table; the manufacturer values were accepted. The URL returned 404 on the 2026-09-23 recheck.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-cyclone-et-official-2026-08-29"],
+    "note": "Retain the six-size reach/stack/chainstay/wheelbase table as a dated manufacturer specification for Cyclone 3rd ET. The source page was captured 2026-09-01 but returned 404 on 2026-09-23; current accessibility is not implied."
+  }
 }

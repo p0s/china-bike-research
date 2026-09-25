@@ -1,0 +1,45 @@
+{
+  "id": "candidate-giant-propel-gen4-community-lead-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact manufacturer page publishes suggested retail and a direct-purchase link, but the official storefront and JD category views did not expose an exact product listing or checkout amount.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Propel Advanced SL 1 Gen 4 current mainland checkout price",
+          "route": "Current exact Giant China product page and its direct online-purchase link",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact page lists CNY 54,800 as suggested retail and links to direct online purchase. The linked official storefront returned no readable text; exact-model searches of the official JD category exposed no matching product detail or checkout amount.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant Propel Advanced SL 1 current official online shop listing",
+          "route": "Manufacturer-linked official Giant online store",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The direct online-purchase link opened the official e.giant.com.cn domain, but the browser view exposed zero text and no inspectable SKU or price.",
+          "result_url": "https://e.giant.com.cn/"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the CNY 54,800 suggested price separate from a checkout observation. Exact size/color stock and an observed mainland sale amount remain unknown.",
+  "searched_at": "2026-09-24"
+}

@@ -20,15 +20,16 @@
     "observation_count": 1
   },
   "source_refs": "IMG_6883.png#R1",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-25",
   "research_priority": "high",
   "price_status": "official global reference only; mainland CNY price unverified",
   "required_before_dashboard": "Dated mainland-China RMB observation and purchase route; Current mainland stock, checkout conditions and warranty handling",
   "source_ids": [
-    "twitter-cyclone-3rd-r7120-official-2026-08-17"
+    "twitter-cyclone-3rd-r7120-official-2026-08-17",
+    "twitter-cyclone-3rd-r7120-official-live-recheck-2026-09-25"
   ],
   "source_url": "https://twitterbikeusa.com/products/cyclone-3rd-r7120-small",
-  "source_note": "Current exact manufacturer evidence publishes the 8.7 kg estimate, high-modulus carbon frame/full-carbon fork and qualitative aerodynamic-stability/power-delivery claim. Mainland checkout and warranty handling remain unresolved.",
+  "source_note": "The exact R7120 manufacturer page supports a qualitative aerodynamic-stability and efficient-power-delivery claim only, not measured frame stiffness. The candidate is named R7120 while its stored ID suffix is 7170; retain that identity caveat. Mainland checkout and warranty handling remain unresolved.",
   "facts": {
     "drivetrain": "Shimano 105 R7120 2×12",
     "complete_weight_g": 8700,
@@ -36,6 +37,6 @@
     "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas",
     "complete_weight_basis": "Current exact manufacturer estimate; size, pedals, accessories and weighing protocol unpublished",
     "frame_material": "High-modulus carbon frame with full-carbon fork; exact fiber grade and lay-up unpublished",
-    "stiffness_evidence": "Manufacturer describes the exact Cyclone 3rd chassis as providing aerodynamic stability and efficient power delivery; qualitative claim without a numeric protocol"
+    "stiffness_evidence": "The exact Cyclone 3rd R7120 manufacturer page describes aerodynamic stability and efficient power delivery as design goals; this is qualitative marketing language, not a stiffness measurement or protocol. Candidate ID suffix 7170 differs from the R7120 trim designation."
   }
 }

@@ -1,0 +1,51 @@
+{
+  "id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-24",
+  "field": "purchase-route",
+  "retry_of": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-01",
+  "retry_reason": "A current public JD item lookup can verify the mainland selected-build availability condition that the accepted storefront evidence did not establish.",
+  "searched_at": "2026-09-24",
+  "status": "blocked",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "campaign_extension": {
+    "id": "gap-fill-batch-73-sava-gelaro-s4-purchase-route",
+    "extends_attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-73-scope.json",
+    "reason": "A bounded current public JD item lookup was justified by the existing official storefront and dated mainland Tmall search-card observation; it checks public orderability without entering account-only checkout.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The JD card showed S4 and GRX400-20S but omitted Gelaro and the manufacturer build code; the item opened to a verification page with no item content. No CNY amount, stock, or order terms were visible.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SAVA Gelaro S4 GRX400 R21-GRX400-20S 京东 天猫",
+          "route": "One focused public JD/Tmall search, then one exact-looking JD item open",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://item.jd.com/10137723785617.html",
+          "note": "The JD search card title read 萨瓦SAVA碳纤维公路车全地形越野自行车纯油压碟刹弯把碎石瓜车越界S4 珍珠白〖GRX400-20S〗 47 XS〖建议165CM-175CM〗 and showed 22+ reviews. It did not identify Gelaro or manufacturer code R21-GRX400-20S, nor show a CNY amount, stock, or order terms. The item URL redirected to a JD verification/risk page with no item content; no verification or login was attempted. The search-results page was https://www.jd.com/hprm/131820696360d00ce6a0.html."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "variant",
+    "record_id": "sava-gelaro-s4-grx400"
+  },
+  "notes": "Disposition: unresolved. Keep the mainland purchase route unverified and preserve the existing promotion-conditional price status and earlier dated Taobao and global reference observations. Reopen only when a public exact-build item exposes current availability and purchase conditions."
+}

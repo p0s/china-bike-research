@@ -1,0 +1,24 @@
+{
+  "batch": 101,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "queue_command": "npm run --silent research:queue",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 139,
+  "scope_method": "Highest-priority next exact candidate with five evidence-found atomic fields in the fresh research queue; one model and five gaps.",
+  "scope": [
+    {"record_type":"candidate","record_id":"spect-mira","attempt_id":"candidate-spect-mira-complete-weight-2026-08-30","atomic_gap":"complete-weight"},
+    {"record_type":"candidate","record_id":"spect-mira","attempt_id":"candidate-spect-mira-drivetrain-2026-08-30","atomic_gap":"drivetrain"},
+    {"record_type":"candidate","record_id":"spect-mira","attempt_id":"candidate-spect-mira-frame-material-2026-08-30","atomic_gap":"frame-material"},
+    {"record_type":"candidate","record_id":"spect-mira","attempt_id":"candidate-spect-mira-frame-stiffness-2026-08-30","atomic_gap":"frame-stiffness"},
+    {"record_type":"candidate","record_id":"spect-mira","attempt_id":"candidate-spect-mira-identity-source-2026-08-30","atomic_gap":"identity-source"}
+  ],
+  "allowed_work": "One evidence-only Luna worker may inspect only each scoped attempt JSON, its accepted source records, and the exact SPECT Mira candidate. Report whether each material source fact is already represented with matching generation/production status and caveats. Recommend `source-reuse` only for fully represented sourced claims. Keep delivered-frame weight/stiffness, production revision, and the existing clearance conflict open unless existing accepted sources resolve them exactly. No browsing, no edits, no sibling models, and no sources outside the five scoped attempts.",
+  "done_criteria": [
+    "All five attempts receive an evidence-path-backed source-reuse or unresolved recommendation.",
+    "Primary writer integrates only exact source-reuse resolutions; no unsupported weight, compatibility, stiffness or production claim is added.",
+    "Fresh data:gaps and research:queue quantify the post-batch state.",
+    "Run validate, research:check, monotonic coverage acceptance/check and git diff --check; no full gate or image report unless source/catalog/image records change."
+  ]
+}

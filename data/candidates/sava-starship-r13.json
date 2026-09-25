@@ -22,18 +22,22 @@
     "observation_count": 2
   },
   "source_ids": [
-    "sava-starship-105-official-2026-08-17"
+    "sava-starship-105-official-2026-08-17",
+    "sava-r13-starship-tire-guide-2026-09-22",
+    "sava-starship-r13-current-build-2026-09-22"
   ],
   "facts": {
-    "drivetrain": "Official global build: Shimano 105 R7100/R7120 hydraulic 2×12",
+    "drivetrain": "Historical2026-08-17 global reference: Shimano105 R7100/R7120 hydraulic2×12; current regional page lists Sensh HRD controls with R7100 derailleurs, and retained mainland trim mapping remains unresolved",
     "complete_weight_g": 8500,
     "frame": "T800 carbon frame, fork, handlebar and seatpost",
     "sizes": "49, 52, 54, 56 and 58",
-    "tire_clearance_status": "No exact maximum compatible tire width or clearance protocol found after 50 registered source areas; fitted 700×25C tires are not a maximum",
+    "tire_clearance_status": "Manufacturer R13 maximum28C recorded; fitted700×25C in older evidence and current regional fitted28C remain distinct observations",
     "complete_weight_basis": "Current exact manufacturer approximate complete-bike claim: approximately 8.5 kg; size, pedals, accessories and weighing protocol are unpublished",
-    "frame_stiffness_status": "No meaningful exact-model stiffness evidence found after 50 registered source areas; generic carbon and performance wording is not treated as a result"
+    "frame_stiffness_status": "No meaningful exact-model stiffness evidence found after 50 registered source areas; generic carbon and performance wording is not treated as a result",
+    "tire_clearance_mm": 28,
+    "tire_clearance_basis": "Manufacturer R13/Falcon/Starship family compatibility guide: up to28C; nominal tire designation, no rim-width or measured-clearance protocol published"
   },
-  "source_note": "The exact official R13 105 build publishes fitted 700×25C tires but no maximum compatible tire width. No maximum is inferred after the 50-area sweep.",
+  "source_note": "Current manufacturer guide explicitly maps R13/Starship to a28C maximum. The current regional product page identifies R13 and fitted28C; older25C and global-build observations retain their source dates. Current regional BOM differs, and the two mainland price cards still require separate trim mapping.",
   "source_refs": "IMG_6867.png#R1, IMG_6877.png#L2",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-22"
 }

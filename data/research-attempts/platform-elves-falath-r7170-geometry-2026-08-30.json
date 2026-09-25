@@ -497,8 +497,18 @@
   "status": "found",
   "accepted_source_ids": [
     "elves-falath-pro-official-2026-08-17",
-    "elves-falath-pro-disc-bikeinsights-2026-08-30"
+    "elves-falath-pro-disc-bikeinsights-2026-08-30",
+    "elves-falath-pro-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The current exact manufacturer geometry graphic and manufacturer-sourced transcription resolve the seven-size Falath Pro Disc table."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/elves-falath-r7170-batch-026-50-area-sweep-2026-08-30.json. The current exact manufacturer geometry graphic and manufacturer-sourced transcription resolve the seven-size Falath Pro Disc table.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "elves-falath-pro-official-current-2026-09-23",
+      "elves-falath-pro-disc-bikeinsights-2026-08-30"
+    ],
+    "note": "The current manufacturer page links the exact Falath Pro Disc geometry graphic; the accepted manufacturer-sourced transcription preserves the seven sizes already recorded. No geometry is transferred from the rim-brake sibling."
+  }
 }

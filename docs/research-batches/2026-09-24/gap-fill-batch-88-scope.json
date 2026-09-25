@@ -1,0 +1,71 @@
+{
+  "batch": 88,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "research_queue_baseline": {
+    "command": "npm run --silent research:queue",
+    "ready": 0,
+    "evidence-found": 213,
+    "deferred": 43,
+    "blocked": 551,
+    "conflicted": 61
+  },
+  "selection": {
+    "basis": "The first ten concrete catalog gaps in the fresh data:gaps inventory whose linked research attempts are already status=found. These fields may be added to their exact candidate or variant only if the accepted source directly supports the missing value; otherwise retain the gap and record a source-reuse resolution explaining the limit.",
+    "exact_models": 9,
+    "atomic_gaps": 10,
+    "targets": [
+      {"record_type":"candidate","record_id":"twitter-x7","model":"TWITTER 骓特 X7 high configuration","gap":"complete-weight-missing","attempt_id":"candidate-twitter-x7-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"west-biking-sl-one","model":"WEST BIKING 西骑者 SL-ONE","gap":"drivetrain-missing","attempt_id":"candidate-west-biking-sl-one-drivetrain-2026-08-30"},
+      {"record_type":"candidate","record_id":"de-rosa-new-838","model":"DE ROSA 德罗萨 New 838","gap":"drivetrain-missing","attempt_id":"candidate-de-rosa-new-838-drivetrain-2026-08-30"},
+      {"record_type":"candidate","record_id":"felt-ia-2","model":"FELT IA 2.0","gap":"complete-weight-missing","attempt_id":"candidate-felt-ia-2-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"felt-ia-2","model":"FELT IA 2.0","gap":"drivetrain-missing","attempt_id":"candidate-felt-ia-2-drivetrain-2026-08-30"},
+      {"record_type":"candidate","record_id":"upland-r70","model":"UPLAND 阿普兰 R70","gap":"complete-weight-missing","attempt_id":"candidate-upland-r70-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"icanian-sn04","model":"ICAN / ICANIAN SN04 full-suspension fat-bike frameset","gap":"clearance-unverified","attempt_id":"candidate-icanian-sn04-tire-clearance-2026-09-01"},
+      {"record_type":"candidate","record_id":"twitter-cyclone-sport","model":"TWITTER 骓特 Cyclone sport","gap":"complete-weight-missing","attempt_id":"candidate-twitter-cyclone-sport-complete-weight-2026-08-30"},
+      {"record_type":"published-variant","record_id":"elves-falath-r7170","model":"Falath Pro Disc R7170 build","gap":"purchase-route","attempt_id":"variant-elves-falath-r7170-purchase-route-2026-08-17"},
+      {"record_type":"candidate","record_id":"icanian-p9","model":"ICANIAN 冠捷 P9 enduro frameset","gap":"clearance-unverified","attempt_id":"candidate-icanian-p9-tire-clearance-2026-09-01"}
+    ]
+  },
+  "research_route": {
+    "action": "One read-only Luna Max audit of the exact catalog records, found research attempts, and their accepted local source records. Do not browse or edit; identify the strongest exact source, supported value/basis, and any issue that prevents closing the gap.",
+    "integration_rule": "The primary writer may add a supported value to the existing candidate facts or exact variant purchase route, add its accepted source ID, and remove only the now-resolved missing-field label. Preserve full-bike versus frame-only basis, size, exact option/trim, source date, measurement/claim class, and purchase market. Never guess an exact value or represent stale/foreign evidence as a current mainland observation.",
+    "stop_rule": "Only these ten fields across nine models. Leave any gap open when an accepted source is mismatched, stale for a volatile fact, incomplete, or insufficiently exact; do not change unrelated fields or add sources."
+  },
+  "done_criteria": [
+    "Return field-by-field evidence and caveats for all ten frozen gaps.",
+    "Populate only directly supported missing values and add source-reuse resolutions; leave unsupported gaps explicitly open.",
+    "Run npm run validate, npm run research:check, npm run coverage:check; accept coverage baseline only if the check flags new protected information. Run npm run check once only if catalog changes affect executable behavior or required gate applies.",
+    "Local B88 only; no push, pull request, merge, publication, or production action."
+  ]
+}

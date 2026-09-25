@@ -1,0 +1,43 @@
+{
+  "id": "candidate-bigrock-sohtea-warranty-support-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "bigrock-sohtea"
+  },
+  "field": "warranty-support",
+  "retry_of": "candidate-bigrock-sohtea-warranty-support-2026-08-17",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-bigrock-sohtea-warranty-support-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "BIGROCK Sohtea exact model manufacturer China warranty after sales official current 2026",
+          "route": "One frozen B158 exact-model warranty query; recorded regular-frameset and Japan product-list URLs were not reopened.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Search surfaced only a generic Vietnam warranty policy, not exact-model China support. The accepted team-edition warranty source applies to a different trim; the regular Sohtea listing identifies the frameset SKU but not its China warranty. No page was opened."
+        }
+      ],
+      "blocker": "No exact Sohtea regular-frameset China warranty or after-sales policy was established."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "round3-bigrock-sohtea-team-edition-90464dd51d"
+  ],
+  "retry_after": null,
+  "notes": "No exact Sohtea regular-frameset China warranty or after-sales policy was established.",
+  "searched_at": "2026-09-25",
+  "priority": "high"
+}

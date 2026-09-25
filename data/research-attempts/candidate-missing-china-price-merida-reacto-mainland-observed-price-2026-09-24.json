@@ -1,0 +1,54 @@
+{
+  "id": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-merida-reacto"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact Reacto 6000 page surfaced is Taiwan-region; no current mainland seller item or CNY checkout price appeared in the official JD flagship search.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Merida REACTO 6000 CN 27 current mainland observed checkout price",
+          "route": "Current exact Merida China product page and linked official mall",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The current exact page lists CNY 23,800 as suggested retail and links a dealer locator and official mall. The linked official mall response exposes a template with no rendered exact SKU or price, so no checkout amount was observed.",
+          "result_url": "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Merida REACTO 6000 CN 27 official mainland mall exact listing",
+          "route": "Merida-linked official online mall",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "Opening the official mall exposed only unresolved dynamic template tokens and no product listing or price; exact-model searches did not return a current checkout item.",
+          "result_url": "https://mall.merida.cn/index.php?action=pro_list&cat=0&controller=site"
+        },
+        {
+          "attempt": 3,
+          "query": "美利达 Merida REACTO 6000 CN 27 2027 京东 天猫 价格 现货",
+          "route": "Current Merida model page and mainland JD flagship search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The exact REACTO 6000 page was Taiwan-region and listed suggested retail of NT$23,800; it is not mainland price evidence. The JD flagship search surfaced no Reacto 6000 listing. No CNY seller amount was assigned.",
+          "result_url": "https://www.merida.cn/zh-tw/bikefinder/bike/126/%3Aslug/color/%E5%B9%B3%E4%B8%80%E7%89%B9%E7%8F%A0%E9%BB%91.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "merida-reacto-6000-cn27-mainland-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the official CNY 23,800 suggested price distinct from an observed listing or checkout amount. The mainland transaction-price gap remains open.",
+  "searched_at": "2026-09-24"
+}

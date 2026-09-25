@@ -486,5 +486,6 @@
     "spect-mira-cyclistshub-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. Independent launch reporting says SPECT judged the development frame too stiff and was softening the lay-up; no numeric or delivered-production-frame test exists."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/spect-mira-50-area-sweep-2026-08-30.json. Independent launch reporting says SPECT judged the development frame too stiff and was softening the lay-up; no numeric or delivered-production-frame test exists.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["spect-mira-cyclistshub-2026-08-30"],"note":"Independent launch reporting supports this exact development-frame history only: SPECT considered it too stiff and re-tuned the lay-up. No numeric stiffness protocol or delivered production frame measurement exists."}
 }

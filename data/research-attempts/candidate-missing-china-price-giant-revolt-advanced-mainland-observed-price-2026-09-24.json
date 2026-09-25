@@ -1,0 +1,45 @@
+{
+  "id": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-revolt-advanced"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The official Giant China page confirms suggested retail but only offers a store locator; no current orderable mainland seller item or checkout amount was verified.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Revolt Advanced 2 current mainland exact checkout price",
+          "route": "Current exact Giant China product page and official store links",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The exact mainland page lists CNY 15,800 as suggested retail and a nearby-store locator, but no checkout price. Its linked JD store timed out, and its Tmall link redirected to a world.tmall.com host the browser could not safely open. A search result for a 2024 JD promotion was historical and not used.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant Revolt Advanced 2 中国 京东 天猫 价格 现货",
+          "route": "Current official Giant China exact-product page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "The official page identifies Giant Revolt Advanced 2 and lists suggested retail of CNY 15,800, with a store locator but no orderable seller item or checkout terms. Retain the official MSRP as a separate reference; it does not resolve the observed seller-price gap.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1852"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "giant-revolt-advanced-2-mainland-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "The official suggested retail value is maintained separately. Do not convert it into an observed checkout price or claim size/color stock; the observed mainland price gap remains open.",
+  "searched_at": "2026-09-24"
+}

@@ -1,0 +1,86 @@
+{
+  "batch": 143,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-143-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 671,
+    "catalog_gap_entries_after": 671,
+    "catalog_gap_entries_reduced": 0,
+    "image_health_gap_entries_before": 2,
+    "image_health_gap_entries_after": 2,
+    "exact_models_reviewed": 2,
+    "atomic_gap_entries_reviewed": 2,
+    "new_source_records": 0,
+    "image_records_updated": 0,
+    "image_urls_changed": 0,
+    "new_images_added": 0,
+    "website_image_records": 212,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "research_queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 3
+    },
+    "external_delivery": "none"
+  },
+  "image_results": [
+    {
+      "image_id": "evolve-cima-gr-primary-image",
+      "record_id": "evolve-cima-gr-frameset",
+      "current_url": "https://www.evolvebicycles.com/wp-content/uploads/2026/05/CIMA-GR-Sailfish-Pearl1-1.jpg",
+      "current_health": {
+        "checked_at": "2026-09-25",
+        "classification": "wrong-content-type",
+        "status": 202,
+        "content_type": "text/html"
+      },
+      "new_query": "Evolve CIMA GR exact official frameset product image",
+      "query_deduplication": "Exact query absent from the audited predecessor histories; five Evolve field attempts, linked 50-area campaign batch 046, and the global all-gaps campaign were checked. Seven recorded source/image URLs were not reopened.",
+      "new_page": {
+        "title": "CIMA GR – Sahara Nude",
+        "publisher": "Evolve",
+        "source_class": "official manufacturer product page",
+        "url": "https://www.evolvebicycles.com/product/cima-gr-sahara-nude/",
+        "accessed_at": "2026-09-25",
+        "evidence": "Page identifies CIMA GR and its gallery labels the displayed assets as Sahara Nude; page text also confirms that colorway. It does not expose a direct image asset URL in the inspected page text."
+      },
+      "disposition": "unresolved-no-qualifying-image-replacement",
+      "reason": "The newly surfaced official page depicts Sahara Nude, while the current image record is Sailfish Pearl. A different colorway is not an exact image replacement, and no Sailfish asset URL was obtained. Preserve the current remote URL and its rights, credit, alt text, and fallback metadata; do not retry its HTTP 202 text/html response."
+    },
+    {
+      "image_id": "tfsa-jh37-primary-image",
+      "record_id": "tfsa-jh37-frameset",
+      "current_url": "https://www.tfsabike.com/wp-content/uploads/2026/05/37-2.avif",
+      "current_health": {
+        "checked_at": "2026-09-25",
+        "classification": "wrong-content-type",
+        "status": 202,
+        "content_type": "text/html"
+      },
+      "new_query": "TFSA JH37 exact manufacturer frameset product image embed",
+      "query_deduplication": "Exact query absent from the audited predecessor histories; four TFSA field attempts, linked 50-area campaign batch 048, and the global all-gaps campaign were checked. Six recorded source/image URLs were not reopened.",
+      "new_page": null,
+      "search_result_note": {
+        "title": "Carbon Bike Frame Manufacturers & Suppliers - TFSA",
+        "publisher": "TFSA / Hubei Huazhong Carbon Fiber",
+        "source_class": "generic manufacturer homepage/catalog",
+        "url": "https://www.tfsabike.com/",
+        "accessed_at": "2026-09-25",
+        "evidence": "Search snippet lists a JH-37 catalog item but provides no exact product-detail page or image asset URL. The generic page was not opened; snippets and third-party results are not image-match evidence."
+      },
+      "disposition": "unresolved-no-qualifying-image-replacement",
+      "reason": "No new exact-model manufacturer product page or exact image URL was established. Preserve the current remote URL and its rights, credit, alt text, and fallback metadata; do not retry its HTTP 202 text/html response."
+    }
+  ],
+  "validation": {
+    "research_boundary": "One distinct exact-model query per target; only the newly surfaced Evolve exact-model manufacturer page was opened. No recorded predecessor URLs were reopened.",
+    "image_record_changes": "None. Existing URLs, source IDs, rights, credits, alt text, fallback metadata, visibility, and bytes are unchanged.",
+    "image_report": "Not run because no image URL or image record was changed.",
+    "full_gate": "Not run because this evidence-only batch changed no catalog, source, image, or code records; the B142 full gate remains valid for unchanged inputs.",
+    "next_action": "Keep both image-health gaps open. Reconsider only when an exact Evolve Sailfish Pearl image asset or exact TFSA JH37 manufacturer image endpoint can be established and then health-checked once."
+  },
+  "external_delivery": "none"
+}

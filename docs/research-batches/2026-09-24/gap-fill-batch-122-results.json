@@ -1,0 +1,35 @@
+{
+  "batch": 122,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-122-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:upland-r80",
+      "candidate:upland-taylor",
+      "candidate:viqi-r8000"
+    ],
+    "disposition": "Nine of ten evidence-found fields were resolved with accepted exact Upland sources or the exact VIQI R8000 JD listing family. Taylor's approximately 8.5 kg bare claim retains unstated size/method; VIQI's 22-speed claim is marketplace-listed, not manufacturer-verified. The exact VIQI frame material remains open: its marketplace title does not identify the frame itself, and one bounded official-source search found no exact manufacturer product page. The unsupported carbon-frame assertion was changed to unverified.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "evidence_found_before": 74,
+    "evidence_found_after": 65,
+    "research_attempts_resolved": 9,
+    "research_fields_left_open": 1,
+    "source_records_added": 1,
+    "catalog_records_updated": 3,
+    "test_files_updated": 1,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1321 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_test": "pass: node --test tests/data.test.mjs; 73/73 tests",
+    "full_gate": "pass: npm run check; 326/326 tests, 584 built pages, SEO 458 indexable / 126 noindex",
+    "sandbox_note": "The sandboxed gate exposed a stale assertion that stated VIQI frame material as fact and seven localhost EPERM failures; after correcting the data test, the identical gate passed once on the approved host path.",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

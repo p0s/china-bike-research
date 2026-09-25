@@ -1,0 +1,96 @@
+{
+  "batch_id": "luna-followup-21-2026-09-22",
+  "base_commit": "96a72bf8e6ce0c013ef76566f0e96f7f0968772d",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 8,
+  "atomic_fields": 13,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "vook-v8e-pro",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "xmcarbonspeed-cs-gr01",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "fields": [
+        "tire-clearance",
+        "geometry",
+        "frame-weight",
+        "bottom-bracket"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-cyclone-gen3-et",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-t3-tt",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "fields": [
+        "geometry",
+        "frame-weight",
+        "bottom-bracket"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "bianchi-oltre-race",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-sf6-cues",
+      "fields": [
+        "bottom-bracket"
+      ],
+      "historical_states": [
+        "temporarily-exhausted"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

@@ -1,0 +1,69 @@
+{
+  "batch": 73,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 364,
+      "conflicted": 34,
+      "found": 46,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The exact SAVA Gelaro S4 GRX400 variant has a dated mainland Tmall search-card observation and a current exact manufacturer page plus official JD-store route, but its price status remains promotion-conditional and exact current mainland order availability is unverified. A bounded current item recheck could resolve one purchase-route gap.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "sava-gelaro-s4-grx400",
+    "gap_code": "purchase-route",
+    "prior_attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-2026-09-01",
+    "campaign_extension": {
+      "allowed_channels": [
+        "web"
+      ],
+      "max_new_attempts": 1
+    }
+  },
+  "target": {
+    "record_type": "published-variant",
+    "record_id": "sava-gelaro-s4-grx400",
+    "model": "SAVA Gelaro S4 GRX400, manufacturer build R21-GRX400-20S",
+    "field": "purchase-route",
+    "market": "mainland China",
+    "expected_basis": "A current publicly readable exact mainland product item that identifies the S4 GRX400 build, current seller/official route, visible CNY amount and purchase/availability conditions. Preserve the 2026-08-08 CNY 7,999 coupon search-card observation and the separate global US$1,799 reference."
+  },
+  "research_route": {
+    "source_class": "mainland-marketplace-product-page",
+    "action": "Use one focused public web search for the exact SAVA Gelaro S4 GRX400 item on the official JD/Tmall routes. If one exact accessible item appears, open it once and verify selected build, CNY amount, visible stock or order route, and terms.",
+    "stop_rule": "One additional public web attempt only, as a formal extension of the prior 50-area campaign. Stop after one exact item page or after the focused query yields none. Do not log in, enter account-only checkout, contact the seller, use XHS, or transfer the U.S. direct-store price or other SAVA configurations."
+  },
+  "done_criteria": [
+    "If one current exact mainland item confirms the matching S4 GRX400 build and order availability, add a dated seller price observation and update status only to the extent directly supported; preserve the earlier Taobao and global reference observations.",
+    "If no exact publicly readable item confirms current availability, retain the promotion-conditional price status and record the bounded recheck as blocked/no-result with a retrigger condition.",
+    "For a data change, run focused validation and `npm run check` once for this coherent batch. No image report unless image records change.",
+    "Local B73 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B73 batch only; no push, pull request, merge, publication or production action."
+}

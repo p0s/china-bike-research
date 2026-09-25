@@ -6,7 +6,7 @@
   },
   "field": "complete-weight",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -487,8 +487,21 @@
   "accepted_source_ids": [
     "winspace-m6-105-mechanical-2026-08-30",
     "winspace-m6-105-di2-2026-08-30",
-    "winspace-m6-ultegra-di2-2026-08-30"
+    "winspace-m6-ultegra-di2-2026-08-30",
+    "winspace-m6-105-mechanical-current-recheck-2026-09-25",
+    "winspace-m6-105-di2-current-recheck-2026-09-25",
+    "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. The three option-specific manufacturer weights are preserved as references; no single value is assigned to the retained card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. The three option-specific manufacturer weights are preserved as references; no single value is assigned to the retained card.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "winspace-m6-105-mechanical-current-recheck-2026-09-25",
+      "winspace-m6-105-di2-current-recheck-2026-09-25",
+      "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
+    ],
+    "note": "Current manufacturer pages re-confirm distinct size-M/no-pedals references of approximately 8.6 kg (105 mechanical), 8.1 kg (105 Di2), and 7.8 kg (Ultegra Di2). The CNY 13,599.20 coupon card is not mapped to a trim. The retained mainland coupon trim remains unmapped, so the selected build field stays unresolved."
+  }
 }

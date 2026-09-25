@@ -1,0 +1,250 @@
+{
+  "batch": 156,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Fresh post-B155 inventory. Ten exact LightCarbon MPN price gaps were selected from the unreviewed pricing queue. Their field-specific attempts date to 2026-09-01, none is deferred by retry_after, and the selected model IDs are disjoint from B138-B155 and all records or fields searched/reviewed on 2026-09-25."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "lightcarbon-lcr007-v",
+        "name": "LightCarbon LCR007-V",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcr007-v-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcr014-v",
+        "name": "LightCarbon LCR014-V",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcr014-v-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcr0x-d",
+        "name": "LightCarbon LCR0X-D",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcr0x-d-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcr0x-v",
+        "name": "LightCarbon LCR0X-V",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcr0x-v-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lctt05-d",
+        "name": "LightCarbon LCTT05-D",
+        "record_type": "candidate",
+        "priority_score": 37,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lctt05-d-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcr015s-v",
+        "name": "LightCarbon LCR015S-V",
+        "record_type": "candidate",
+        "priority_score": 29,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcr015s-v-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcrxs-d",
+        "name": "LightCarbon LCRXS-D",
+        "record_type": "candidate",
+        "priority_score": 29,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcrxs-d-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lcrxs-v",
+        "name": "LightCarbon LCRXS-V",
+        "record_type": "candidate",
+        "priority_score": 29,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lcrxs-v-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lctr003",
+        "name": "LightCarbon LCTR003",
+        "record_type": "candidate",
+        "priority_score": 29,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lctr003-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      },
+      {
+        "id": "lightcarbon-lctt001",
+        "name": "LightCarbon LCTT001",
+        "record_type": "candidate",
+        "priority_score": 29,
+        "last_reviewed": "2026-09-01",
+        "gaps": [
+          {
+            "code": "price-missing",
+            "attempt_id": "candidate-lightcarbon-lctt001-price-2026-09-01",
+            "field": "price",
+            "status": "blocked",
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 10,
+    "research_boundary": "One Luna evidence-only researcher; root remains sole writer. Inspect each exact candidate, current source links, price predecessor attempt and registered campaign history before one bounded exact-MPN web query. For any surfaced page, literal-search the exact URL across data/ and docs/ before opening; skip if already recorded or absence is uncertain. Open at most one genuinely new relevant manufacturer or exact current seller page per model. Do not reopen known pages or retry a failed page. No seller contact or quote requests. Stop after these ten MPNs.",
+    "query_targets": [
+      {
+        "model_id": "lightcarbon-lcr007-v",
+        "query": "LightCarbon LCR007-V current China manufacturer frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcr014-v",
+        "query": "LightCarbon LCR014-V current China manufacturer frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcr0x-d",
+        "query": "LightCarbon LCR0X-D current China frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcr0x-v",
+        "query": "LightCarbon LCR0X-V current China frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lctt05-d",
+        "query": "LightCarbon LCTT05-D current China TT frameset price CNY exact proprietary kit 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcr015s-v",
+        "query": "LightCarbon LCR015S-V current China frameset price CNY selected cockpit package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcrxs-d",
+        "query": "LightCarbon LCRXS-D current China frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lcrxs-v",
+        "query": "LightCarbon LCRXS-V current China frameset price CNY HBR05 HBR07 cockpit package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lctr003",
+        "query": "LightCarbon LCTR003 current China track frameset price CNY exact package 2026"
+      },
+      {
+        "model_id": "lightcarbon-lctt001",
+        "query": "LightCarbon LCTT001 current China time trial frameset price CNY exact package 2026"
+      }
+    ],
+    "field_rules": [
+      "A price can be recorded only when source identifies the exact MPN/package, current amount, currency, and actual observation date; report CNY mainland or manufacturer price basis clearly.",
+      "A quote-only form, unsourced range, old export price, used complete-bike amount, regional package, or sibling MPN does not establish the exact current CNY price.",
+      "Keep older candidate observations unchanged; if a qualifying candidate price is found, add a dated record in data/prices and link its source and candidate."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No changes to unrelated fields or images; only the frozen price field and directly supporting price/source/attempt records, coverage baseline if required, attempt-count expectation if stale, and dated batch documentation may change.",
+      "No commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "external_delivery": "none"
+}

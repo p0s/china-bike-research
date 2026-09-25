@@ -1,0 +1,358 @@
+{
+  "batch_id": "gap-fill-batch-15-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-15-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 25
+  },
+  "results": [
+    {
+      "record_id": "cyctrac-r18",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cyctrac-r18-complete-weight-2026-08-29",
+      "source_ids": [
+        "twitter-r18-official-current-2026-09-23",
+        "twitter-r18-jd-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.twittercycles.com/products/R18Racing%20EDBike.html",
+        "https://www.jd.com/tupian/1318e81fb1ea5b.html"
+      ],
+      "note": "Current manufacturer specifications state 7.7 kg net for the R7170 build and the retained JD listing maps that build to the China observation. Size, pedals and weighing method remain unstated."
+    },
+    {
+      "record_id": "cyctrac-r18",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cyctrac-r18-drivetrain-2026-08-29",
+      "source_ids": [
+        "twitter-r18-official-current-2026-09-23",
+        "twitter-r18-jd-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.twittercycles.com/products/R18Racing%20EDBike.html",
+        "https://www.jd.com/tupian/1318e81fb1ea5b.html"
+      ],
+      "note": "The current exact manufacturer page lists Shimano 105 R7170 Di2 2x12; the retained listing identifies the same electronic build."
+    },
+    {
+      "record_id": "cyctrac-r18",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cyctrac-r18-frame-material-2026-08-29",
+      "source_ids": [
+        "twitter-r18-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.twittercycles.com/products/R18Racing%20EDBike.html"
+      ],
+      "note": "The exact page identifies a T800/T1000 carbon frame and T800 fork."
+    },
+    {
+      "record_id": "cyctrac-r18",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cyctrac-r18-identity-source-2026-08-29",
+      "source_ids": [
+        "twitter-r18-official-current-2026-09-23",
+        "twitter-r18-regional-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.twittercycles.com/products/R18Racing%20EDBike.html",
+        "https://twitterbikeusa.com/en-ca/products/r18-racing-ed-cyctrac-carbon-road-bike"
+      ],
+      "note": "Official source calls the model R18 Racing ED; the regional listing preserves the Cyctrac alias. The exact manufacturer-to-marketplace seller relationship remains unverified."
+    },
+    {
+      "record_id": "de-rosa-idol",
+      "field": "frame-material",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-de-rosa-idol-frame-material-2026-08-29",
+      "source_ids": [
+        "derosa-idol-model-current-2026-09-23",
+        "derosa-idol-japan-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://derosa.it/model/idol/",
+        "https://www.derosa.jp/products/new-idol-complete"
+      ],
+      "note": "Current official sources verify a carbon fifth-generation Idol, but do not identify the generation or construction of the retained CNY 13,880 listing. Reopen when the listing maps to a model year/generation."
+    },
+    {
+      "record_id": "de-rosa-idol",
+      "field": "identity-source",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-de-rosa-idol-identity-source-2026-08-29",
+      "source_ids": [
+        "derosa-idol-model-current-2026-09-23",
+        "derosa-idol-japan-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://derosa.it/model/idol/",
+        "https://www.derosa.jp/products/new-idol-complete"
+      ],
+      "note": "Official pages establish current Idol identity and Japan trims; retained mainland listing generation and selected build are unknown. Reopen when seller evidence identifies the exact year and BOM."
+    },
+    {
+      "record_id": "elro-f1",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-elro-f1-frame-material-2026-08-29",
+      "source_ids": [
+        "obike-f1-smzdm-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://wiki.smzdm.com/gongluche/b_65192/"
+      ],
+      "note": "The retained exact product index identifies OBIKE F1 as carbon-fiber and 24-speed. The frame grade and ELRO marking remain unverified."
+    },
+    {
+      "record_id": "elro-f1",
+      "field": "identity-source",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-elro-f1-identity-source-2026-08-29",
+      "source_ids": [
+        "obike-f1-smzdm-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://wiki.smzdm.com/gongluche/b_65192/"
+      ],
+      "note": "Current official/JD searches found no exact OBIKE F1 page; the ELRO marking on the seller image is unexplained. Reopen when an exact product source ties ELRO to OBIKE F1."
+    },
+    {
+      "record_id": "elves-falath-r7170",
+      "field": "frame",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "variant-elves-falath-r7170-frame-2026-08-17",
+      "source_ids": [
+        "elves-falath-pro-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8"
+      ],
+      "note": "Current official Falath Pro Disc page identifies the 2022 frame used for the R7170 build."
+    },
+    {
+      "record_id": "elves-falath-r7170",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "variant-elves-falath-r7170-tire-clearance-2026-08-17",
+      "source_ids": [
+        "elves-falath-pro-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8"
+      ],
+      "note": "Manufacturer specifies maximum 700x28C; no broader clearance is inferred."
+    },
+    {
+      "record_id": "elves-falath-r7170",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-elves-falath-r7170-frame-material-2026-08-30",
+      "source_ids": [
+        "elves-falath-pro-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8"
+      ],
+      "note": "Manufacturer states Toray T800 with T1000 reinforcement at the head tube and bottom bracket."
+    },
+    {
+      "record_id": "elves-falath-r7170",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-elves-falath-r7170-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "elves-falath-pro-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8"
+      ],
+      "note": "Exact-model manufacturer evidence is qualitative only; no numeric stiffness or independent protocol is published."
+    },
+    {
+      "record_id": "elves-falath-r7170",
+      "field": "geometry",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-elves-falath-r7170-geometry-2026-08-30",
+      "source_ids": [
+        "elves-falath-pro-official-current-2026-09-23",
+        "elves-falath-pro-disc-bikeinsights-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.elvesbike.com/more.php?id=93&lm=8",
+        "https://bikeinsights.com/bikes/607c0939ff600600297d524e-elves-falath-pro-disc?build=carbon&version=2021"
+      ],
+      "note": "The seven-size table remains tied to the existing exact manufacturer-sourced transcription; the current manufacturer page links its geometry graphic."
+    },
+    {
+      "record_id": "elves-mori-aerox",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-elves-mori-aerox-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "elves-mori-aerox-japan-owner-review-current-2026-09-23",
+        "elves-mori-aerox-bicycling-sa-review-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://note.com/hakurai/n/n6de022f74605",
+        "https://www.bicycling.co.za/bikes-gear/bikes/long-term-test-elves-mori-aero-x/"
+      ],
+      "note": "Two exact-model ride reports provide qualitative impressions only; no instrumented stiffness magnitude or protocol is available."
+    },
+    {
+      "record_id": "elves-mori-aerox-frameset",
+      "field": "price",
+      "status": "integrated-reference-price",
+      "attempt_record_id": "variant-elves-mori-aerox-frameset-price-2026-09-01",
+      "source_ids": [
+        "elves-mori-aerox-global-store-current-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://usa.elvesbike.com/products/elves-mori-aerox-carbon-aero-gravel-framesets",
+        "https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?d0bb0e298ded076d477269db16796dfe="
+      ],
+      "note": "Current US$998 sale price converts to CNY 6,687 reference estimate at the 22 September ECB cross-rate; it is not a mainland checkout price."
+    },
+    {
+      "record_id": "elves-mori-aerox-frameset",
+      "field": "purchase-route",
+      "status": "unresolved",
+      "attempt_record_id": "variant-elves-mori-aerox-frameset-purchase-route-2026-09-01",
+      "source_ids": [
+        "elves-mori-aerox-global-store-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://usa.elvesbike.com/products/elves-mori-aerox-carbon-aero-gravel-framesets"
+      ],
+      "note": "Regional Add to Cart/Buy Now is available, but China shipping eligibility, tax and final checkout remain unverified. Reopen when the store confirms mainland delivery and exact total."
+    },
+    {
+      "record_id": "evolve-cima-gr",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-evolve-cima-gr-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "evolve-cima-gr-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/"
+      ],
+      "note": "Manufacturer reports +1.2% head-tube and +7.5% bottom-bracket stiffness versus an unnamed model; benchmark and protocol are undisclosed."
+    },
+    {
+      "record_id": "evolve-cima-gr",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-evolve-cima-gr-frame-weight-2026-08-27",
+      "source_ids": [
+        "evolve-cima-gr-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/"
+      ],
+      "note": "Current manufacturer page confirms 750 g unpainted size M; existing size-specific painted figures remain separate."
+    },
+    {
+      "record_id": "evolve-cima-gr",
+      "field": "geometry",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-evolve-cima-gr-geometry-2026-08-27",
+      "source_ids": [
+        "evolve-cima-gr-official-current-2026-09-23",
+        "evolve-cima-gr-pandapodium-2026-08-27"
+      ],
+      "sources_checked": [
+        "https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/",
+        "https://www.pandapodium.cc/product/deposit-evolve-cima-gr-carbon-gravel-bike-frameset/"
+      ],
+      "note": "Current official page links a geometry graphic; six-size values remain tied to the earlier exact-model authorized-retailer table."
+    },
+    {
+      "record_id": "evolve-cima-gr-frameset",
+      "field": "price",
+      "status": "integrated-reference-price",
+      "attempt_record_id": "variant-evolve-cima-gr-frameset-price-2026-09-01",
+      "source_ids": [
+        "evolve-cima-gr-official-current-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/",
+        "https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?d0bb0e298ded076d477269db16796dfe="
+      ],
+      "note": "Current official frameset price is US$1,999; the new CNY 13,393 record is an ECB reference conversion only, not a mainland checkout price."
+    },
+    {
+      "record_id": "evolve-cima-gr-frameset",
+      "field": "purchase-route",
+      "status": "unresolved",
+      "attempt_record_id": "variant-evolve-cima-gr-frameset-purchase-route-2026-09-01",
+      "source_ids": [
+        "evolve-cima-gr-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.evolvebicycles.com/product/cima-gr-sailfish-pearl/"
+      ],
+      "note": "Official Add to Cart exists, but availability requires email/live chat and mainland delivery, tax and warranty handling are unverified. Reopen when mainland delivery and a selected finish/stock are confirmed."
+    },
+    {
+      "record_id": "falco-t91-t912",
+      "field": "frame-material",
+      "status": "integrated-marketplace-claim",
+      "attempt_record_id": "candidate-falco-t91-t912-frame-material-2026-08-29",
+      "source_ids": [
+        "falco-t912-jd-2026-08-29",
+        "falco-t912-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/13189ae1bbfadae99ede.html",
+        "https://www.falcospeed.com/Falco-T912-Triathlon-bikes-p6710798.html"
+      ],
+      "note": "The retained exact JD source supports carbon-fiber frame construction; today’s index fetch did not surface T912, and the current manufacturer page does not state frame material. No grade or manufacturer-confirmed frame claim is recorded."
+    },
+    {
+      "record_id": "frrx-carbon-road-unknown",
+      "field": "frame-material",
+      "status": "integrated-range-level",
+      "attempt_record_id": "candidate-frrx-carbon-road-unknown-frame-material-2026-08-29",
+      "source_ids": [
+        "frrx-jd-range-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/13186163a47cd7873993.html"
+      ],
+      "note": "Current listings substantiate carbon frames across the FRRX road range. The retained price rows are not mapped to an exact SKU; reopen when one row is linked to one item."
+    },
+    {
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "field": "purchase-route",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-giant-defy-advanced-sl1-community-lead-purchase-route-2026-08-17",
+      "source_ids": [
+        "giant-china-dealer-locator-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+      ],
+      "note": "The locator establishes only a generic brand dealer/online route. Reopen when a public mainland dealer page names Defy Advanced SL 1 with stock/order route and price."
+    },
+    {
+      "record_id": "giant-propel-advanced-3",
+      "field": "frame-stiffness",
+      "status": "integrated-qualitative-claim",
+      "attempt_record_id": "candidate-giant-propel-advanced-3-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "giant-china-propel-advanced-3-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=3416"
+      ],
+      "note": "The exact mainland manufacturer page says the new Propel frame has significantly increased stiffness; no numeric test or protocol is published."
+    }
+  ]
+}

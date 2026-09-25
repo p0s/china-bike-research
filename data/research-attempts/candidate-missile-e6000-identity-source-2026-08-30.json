@@ -489,8 +489,21 @@
   "accepted_source_ids": [
     "taobao-snapshot-2026-08-08",
     "missile-current-range-official-2026-08-30",
-    "missile-mercury-6000-jd-2026-08-30"
+    "missile-mercury-6000-jd-2026-08-30",
+    "missile-mercury-6000-jd-recheck-2026-09-23",
+    "missile-mercury-6000-jd-item-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. Seller pixels, manufacturer identity and exact current indexing establish MISSILE 米赛尔 / 水星6000 while preserving sibling-model boundaries."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. Seller pixels, manufacturer identity and exact current indexing establish MISSILE 米赛尔 / 水星6000 while preserving sibling-model boundaries.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "missile-current-range-official-2026-08-30",
+      "missile-mercury-6000-jd-recheck-2026-09-23",
+      "missile-mercury-6000-jd-item-recheck-2026-09-23"
+    ],
+    "note": "Current JD exact listing identifies MISSILE 米赛尔 水星6000 / 2025 variant. Its retrieved weight/price are blank; stock and checkout are unverified."
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "batch": 123,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-123-scope.json",
+  "result": {
+    "exact_target_records": [
+      "candidate:vook-v8e-pro",
+      "candidate:xds-ad350-2026",
+      "candidate:xds-ad500-2025"
+    ],
+    "disposition": "Nine of ten fields were source-reuse-resolved. Vook weight, drivetrain, material, identity and 32C platform maximum retain their exact build and measurement caveats; 32C is a nominal tire-size designation, not a measured internal width. XDS AD350 2026 weight and drivetrain were resolved, while frame/fork material remains open for the retained mainland build because the accepted launch source is from 2025 and the inspected 2026 specification is regional. XDS AD500's ER9 drivetrain and X6 aluminum frame were resolved while preserving the regional fork-material conflict.",
+    "catalog_gap_entries_before": 707,
+    "catalog_gap_entries_after": 707,
+    "evidence_found_before": 65,
+    "evidence_found_after": 56,
+    "research_attempts_resolved": 9,
+    "research_fields_left_open": 1,
+    "source_records_added": 0,
+    "catalog_records_updated": 3,
+    "test_files_updated": 1,
+    "mainland_price_added": 0,
+    "images_changed": 0,
+    "external_delivery": "none"
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1321 sources, 212 primary image records, 16 curated videos, 11 groupsets, 10 build parts, 236 candidates and 1544 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35610 web attempts",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_test": "pass: node --test tests/data.test.mjs; 73/73 tests",
+    "full_gate": "pass: npm run check; 326/326 tests, 584 built pages, SEO 456 indexable / 128 noindex",
+    "sandbox_note": "The sandboxed gate's seven localhost tests could not bind 127.0.0.1 due EPERM; the identical full gate passed on the approved host-path retry.",
+    "diff_check": "pass: git diff --check",
+    "image_report": "not run; no image record changed"
+  }
+}

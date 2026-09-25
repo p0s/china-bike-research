@@ -1,0 +1,130 @@
+{
+  "batch": 40,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 70,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "The fresh gap inventory contains exactly five geometry-missing published-variant rows. Freeze those five rows; no source research has been performed for this batch before scope creation.",
+    "selected_atomic_fields": 5,
+    "selected_exact_targets": 5
+  },
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-complete",
+      "exact_identity": "LightCarbon SPEEDZ complete build, on the SPEEDZ platform",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["geometry"],
+      "attempt_ids": ["variant-lightcarbon-speedz-complete-geometry-2026-08-17"],
+      "attempt_status": "blocked",
+      "previous_distinct_source_areas": 1,
+      "existing_source_ids": ["taobao-snapshot-2026-08-08"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-frameset",
+      "exact_identity": "LightCarbon SPEEDZ frameset, on the SPEEDZ platform",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["geometry"],
+      "attempt_ids": ["variant-lightcarbon-speedz-frameset-geometry-2026-08-17"],
+      "attempt_status": "blocked",
+      "previous_distinct_source_areas": 1,
+      "existing_source_ids": ["taobao-snapshot-2026-08-08"]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx600-pes",
+      "exact_identity": "CAMP GX600 PES",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["geometry"],
+      "attempt_ids": ["variant-camp-gx600-pes-geometry-2026-08-17"],
+      "attempt_status": "temporarily-exhausted",
+      "previous_distinct_source_areas": 1,
+      "existing_source_ids": [
+        "camp-gx600-official",
+        "camp-gx600-official-2026-08-17",
+        "camp-gx600-official-2026-08-28",
+        "camp-gx600-official-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "camp-gx700-grx820",
+      "exact_identity": "CAMP GX700 GRX 1×12 build",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["geometry"],
+      "attempt_ids": ["variant-camp-gx700-grx820-geometry-2026-08-17"],
+      "attempt_status": "temporarily-exhausted",
+      "previous_distinct_source_areas": 1,
+      "existing_source_ids": [
+        "camp-gx700-official",
+        "camp-gx700-official-2026-08-17",
+        "camp-gx700-official-2026-08-28",
+        "public-camp-gx700-spec-post-2026-08-28",
+        "camp-gx700-tmall-2026-08-28",
+        "camp-gx700-cn-official-recheck-2026-09-23"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "rinasclta-gr025-frameset",
+      "exact_identity": "Rinasclta GR025 frameset",
+      "owner": "root-writer; luna-evidence-only",
+      "fields": ["geometry"],
+      "attempt_ids": ["platform-rinasclta-gr025-geometry-2026-09-01"],
+      "attempt_status": "blocked",
+      "previous_distinct_source_areas": 50,
+      "existing_source_ids": [
+        "rinasclta-gr025-official",
+        "rinasclta-gr025-store-eur-2026-09-01",
+        "ecb-reference-rates-2026-08-31"
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "Current exact-model manufacturer geometry chart or manual; do not infer from similar frames or unrelated regional variants.",
+    "recording": "Return exact chart labels, size names, units and legible values; omit blanks and flag ambiguous cells. Do not derive missing coordinates.",
+    "shared_platform": "The same current SPEEDZ platform chart may support both frozen SPEEDZ variant rows only if the source explicitly identifies that platform and no build-specific geometry difference is shown.",
+    "no_sweep_repetition": "Do not repeat the registered 50-area GR025 sweep or expand any target to another broad source campaign; check one current exact-model primary source per model, then stop at decisive evidence.",
+    "evidence_only": "The Luna agent must not edit repository files, change Git state, or exceed these five frozen fields.",
+    "preserve_unknowns": true
+  },
+  "stop_criteria": "For each model, stop after its current exact-model primary geometry source is checked. Record a dated supported chart or the actual access/publication limitation and leave the gap unresolved; do not substitute a different model, trim, or inferred geometry."
+}

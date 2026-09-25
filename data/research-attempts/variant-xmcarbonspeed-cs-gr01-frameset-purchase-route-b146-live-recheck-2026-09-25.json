@@ -1,0 +1,52 @@
+{
+  "id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-b146-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "xmcarbonspeed-cs-gr01-frameset"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01",
+  "retry_reason": "B146 authorized one distinct exact-model web follow-up after the frozen predecessor query, source and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact product page was already recorded and its dated recheck was labeled crawled four weeks earlier. New company/catalog pages did not identify a current exact CS-GR01 offer.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "XMCarbonSpeed CS-GR01 mainland China official current listing CNY authorized dealer",
+          "route": "One distinct B146 exact-model web search; no new page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No page was opened. The current exact route, price and selector availability remain unverified."
+        }
+      ]
+    }
+  },
+  "notes": "No page was opened. The current exact route, price and selector availability remain unverified.",
+  "campaign_extension": {
+    "id": "b146-xmcarbonspeed-cs-gr01-frameset-purchase-route",
+    "extends_attempt_id": "variant-xmcarbonspeed-cs-gr01-frameset-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-146-scope.json",
+    "reason": "B146 authorizes one bounded exact-model web query per target after predecessor URLs and histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

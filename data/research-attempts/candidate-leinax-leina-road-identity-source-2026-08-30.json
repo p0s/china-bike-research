@@ -485,8 +485,21 @@
     "leinak-current-range-jd-2026-08-30",
     "leinak-jd-store-2026-08-30",
     "leinak-leina-jd-2026-08-30",
-    "leinak-leina-bilibili-2026-08-30"
+    "leinak-leina-bilibili-2026-08-30",
+    "leinak-jd-storefront-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. Current sources establish LEINAK 雷纳克 / 雷娜 and correct the earlier LEINAX transcription without renaming stable record IDs."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. Current sources establish LEINAK 雷纳克 / 雷娜 and correct the earlier LEINAX transcription without renaming stable record IDs.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "leinak-current-range-jd-2026-08-30",
+      "leinak-jd-store-2026-08-30",
+      "leinak-leina-jd-2026-08-30",
+      "leinak-jd-storefront-current-2026-09-23"
+    ],
+    "note": "The retained card and dated JD records identify 雷娜; the current JD storefront identifies itself as 雷纳克自行车旗舰店. The store introduction is seller-authored and the current exact-model index recheck is generic, so this confirms displayed naming context but not current SKU availability or seller claims."
+  }
 }

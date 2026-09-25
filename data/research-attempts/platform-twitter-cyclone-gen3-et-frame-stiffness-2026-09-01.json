@@ -481,5 +481,11 @@
     "twitter-cyclone-et-official-2026-08-29"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-twitter-cyclone-gen3-et-batch-034-50-area-sweep-2026-09-01.json. The exact page says the full-carbon frame and fork are engineered for stiffness and efficient power transfer; qualitative manufacturer evidence only."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/platform-twitter-cyclone-gen3-et-batch-034-50-area-sweep-2026-09-01.json. The exact page says the full-carbon frame and fork are engineered for stiffness and efficient power transfer; qualitative manufacturer evidence only, with no numeric test or protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-cyclone-et-official-2026-08-29"],
+    "note": "Retain only the exact-model manufacturer's qualitative stiffness and power-transfer wording. No measured stiffness result, numeric claim or protocol is implied."
+  }
 }

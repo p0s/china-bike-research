@@ -1,0 +1,56 @@
+{
+  "id": "candidate-pinarello-f5-complete-weight-retained-build-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pinarello-f5"
+  },
+  "field": "complete-weight-retained-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The manufacturer publishes no complete-bike weight. A retailer claims 8.25 kg for an MY26 105 Di2/MOST Ultrafast 45 build, but size and weighing setup are absent and authorized-dealer status could not be confirmed.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Pinarello F5 105 Di2 MY26 official complete-bike weight",
+          "route": "Current Pinarello Global official product page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The manufacturer confirms MY26 F5 105 Di2 12-speed and MOST Ultrafast 45 wheels but publishes no complete-bike weight.",
+          "result_url": "https://pinarello.com/global/en/bikes/road/competition/new-pinarello-f/new-pinarello-f5-105-di2"
+        },
+        {
+          "attempt": 2,
+          "query": "Pinarello F5 Season 2026 105 Di2 MOST Ultrafast 45 complete weight",
+          "route": "Current specialist retailer product listing",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Banjo Cycles claims 8.25 kg for the Season 2026 105 Di2/MOST Ultrafast 45 build but states no size, pedals or accessory basis. Its authorized-dealer status is unconfirmed, so the claim does not map to the retained generic card.",
+          "result_url": "https://www.banjocycles.com/bikes/road-bikes/f5-105-di2-road-bike-etna-black-matt__42564"
+        },
+        {
+          "attempt": 3,
+          "query": "Pinarello UK authorized dealer locator Banjo Cycles",
+          "route": "Current manufacturer UK dealer locator",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The accessible locator view did not confirm Banjo Cycles as an authorized dealer. Lack of confirmation does not prove the retailer is unauthorized.",
+          "result_url": "https://pinarello.com/uk/en/store-locator"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "pinarello-f5-my26-official-weight-recheck-2026-09-24",
+    "pinarello-f5-banjo-weight-recheck-2026-09-24",
+    "pinarello-uk-store-locator-authority-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Retain the retailer's 8.25 kg as a reference only; model year, selected wheels, retailer authority, size and measurement basis do not resolve the retained card's complete weight.",
+  "searched_at": "2026-09-24"
+}

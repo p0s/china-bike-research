@@ -4,9 +4,9 @@
   "model_id": "paragon-jazz-2026",
   "category": "road",
   "type": "complete-bike",
-  "why_interesting": "The retained seller card and current JD index align on the PARAGON 鹏来格 JAZZ carbon-frame, Shimano 105 R7100 2×12, carbon-wheel build.",
+  "why_interesting": "The retained 2026 seller card shows a JAZZ carbon-frame, 105 and carbon-wheel build, while current JD options conflict over the selected drivetrain.",
   "facts": {
-    "drivetrain": "Shimano 105 R7100 mechanical 2×12 (24-speed); the separately listed JAZZ Plus Di2 option is not merged",
+    "drivetrain": "Prior marketplace index reported Shimano 105 R7100 mechanical 2×12 (24-speed); current JD title says 105Di2 while the JAZZ option says 105 kit / 24-speed, so selected drivetrain remains unresolved. JAZZ Plus Di2 is separate.",
     "frame_material": "Carbon-fiber frame; exact fiber grade and fork construction are not published",
     "wheels": "Carbon wheelset on the retained JAZZ configuration"
   },
@@ -18,7 +18,8 @@
   "status": "exact-model-and-core-build-confirmed-selected-sku-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "paragon-jazz-jd-2026-08-30"
+    "paragon-jazz-jd-2026-08-30",
+    "paragon-jazz-jd-index-recheck-2026-09-23"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -31,6 +32,6 @@
   },
   "source_refs": "IMG_6879.png#L2",
   "source_url": "https://www.jd.com/book/13180e57736baf601a8e.html",
-  "source_note": "The exact retained card states 2026 JAZZ, carbon frame, Shimano 105 R7100 24-speed and carbon race wheels. Current JD indexing independently pairs PARAGON with 鹏来格 and exposes JAZZ carbon-frame/105/carbon-wheel 24-speed options while naming JAZZ Plus as the separate Di2 build. No complete weight, maximum tire clearance or controlled stiffness result was found.",
+  "source_note": "The exact retained card states 2026 JAZZ, carbon frame, Shimano 105 R7100 24-speed and carbon race wheels. Current JD indexing identifies PARAGON 鹏来格 JAZZ and keeps JAZZ Plus as the separate Di2 option, but its title says 105Di2 while the JAZZ option label says 105 kit / 24-speed; the direct item page was blank. The year remains based on the retained card, not the current index. No complete weight, verified maximum tire clearance or controlled stiffness result was found.",
   "last_reviewed": "2026-08-30"
 }

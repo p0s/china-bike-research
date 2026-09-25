@@ -1,0 +1,52 @@
+{
+  "id": "candidate-trinx-gtr-c6-complete-weight-2026-08-30-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "trinx-gtr-c6"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-trinx-gtr-c6-complete-weight-2026-08-30",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-trinx-gtr-c6-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish complete-weight for the exact retained target build. No new exact page surfaced; recorded 2024 official catalog lists fitted tire only and no complete-bike mass. Reviewed all three related predecessor attempts (100 unique queries/routes total); TRINX category, 2024 PDF, JD, SMZDM and other historical URLs were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"TRINX GTR C6\" 千里达 碳架 整车重量 最大胎宽 官网 参数",
+          "route": "No new exact page surfaced. The official regional 2024 catalog URL is already recorded and was not reopened; prior evidence gives a fitted 700×40C tire but no complete mass or max-clearance statement.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No new exact page surfaced; recorded 2024 official catalog lists fitted tire only and no complete-bike mass. Reviewed all three related predecessor attempts (100 unique queries/routes total); TRINX category, 2024 PDF, JD, SMZDM and other historical URLs were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish complete-weight for the exact retained target build. No new exact page surfaced; recorded 2024 official catalog lists fitted tire only and no complete-bike mass. Reviewed all three related predecessor attempts (100 unique queries/routes total); TRINX category, 2024 PDF, JD, SMZDM and other historical URLs were not reopened. New query checked against predecessor queries.",
+  "campaign_extension": {
+    "id": "b139-trinx-gtr-c6-complete-weight",
+    "extends_attempt_id": "candidate-trinx-gtr-c6-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+    "reason": "One new exact-model web recheck was authorized in the frozen B139 batch after reviewing the predecessor 50-approach sweep; no unsupported fact is promoted.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

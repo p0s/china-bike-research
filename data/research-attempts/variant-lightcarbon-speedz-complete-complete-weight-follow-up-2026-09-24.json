@@ -1,0 +1,48 @@
+{
+  "id": "variant-lightcarbon-speedz-complete-complete-weight-follow-up-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "lightcarbon-speedz-complete"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "variant-lightcarbon-speedz-complete-complete-weight-2026-08-29",
+  "retry_reason": "A focused LightCarbon official-site search route separately tests whether an exact SPEEDZ product page exists after the catalog PDF fetch timed out; the extension was frozen before this query.",
+  "campaign_extension": {
+    "id": "lightcarbon-speedz-complete-weight-web-recheck-2026-09-24",
+    "extends_attempt_id": "variant-lightcarbon-speedz-complete-complete-weight-2026-08-29",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-110-scope.json",
+    "reason": "One official exact-model/site-search route was frozen to check for a current SPEEDZ complete-bike weight page separately from the timed-out catalog PDF.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-lightcarbon-speedz-complete-complete-weight-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The one authorized official exact-model/site-search route returned no exact SPEEDZ result; unrelated LCE930 exhibition weights do not resolve the selected build.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "approach_area_id": "manufacturer-site-search",
+          "query": "site:lightcarbon.com SPEEDZ complete build complete bike weight",
+          "route": "LightCarbon official exact-model/site-search route — complete-weight",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact SPEEDZ product page or weight result appeared. Search results included LightCarbon LCE930 exhibition pages with approximate 19 kg and 18 kg e-MTB builds; they are a different model and cannot support SPEEDZ. No page was opened and no complete-bike weight was accepted."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "This bounded extension preserves the prior 50-area campaign. The exact SPEEDZ complete-bike weight remains unknown; do not transfer LCE930, Speed7, or LCR017-D facts."
+}

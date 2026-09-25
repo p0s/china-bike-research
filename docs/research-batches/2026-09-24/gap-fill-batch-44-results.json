@@ -1,0 +1,148 @@
+{
+  "batch": 44,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-44-scope.json",
+  "writer_limit": {
+    "exact_targets": 5,
+    "atomic_fields": 5
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-twitter-cyclone-sport-complete-weight-retained-build-2026-09-24",
+      "target": "candidate:twitter-cyclone-sport",
+      "field": "complete-weight-retained-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "twitter-cyclone-sport-manufacturer-weight-recheck-2026-09-24"
+      ],
+      "result": "The current exact TWITTER manufacturer URL returned 404. Prior 9.1 kg alloy-rim and 8.9 kg carbon-rim references remain option-specific; the retained wheel choice is unresolved, so no weight was assigned."
+    },
+    {
+      "attempt_id": "candidate-giant-propel-gen4-community-lead-complete-weight-retained-build-2026-09-24",
+      "target": "candidate:giant-propel-gen4-community-lead",
+      "field": "complete-weight-retained-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "giant-propel-sl1-china-weight-recheck-2026-09-24",
+        "giant-propel-sl1-japan-weight-recheck-2026-09-24"
+      ],
+      "result": "Giant China publishes no complete-bike weight. Giant Japan claims 6.8 kg for a specified 2027 size-S reference build; exact equivalence to the retained mainland build is unproven, so the value remains reference-only."
+    },
+    {
+      "attempt_id": "candidate-pinarello-f5-complete-weight-retained-build-2026-09-24",
+      "target": "candidate:pinarello-f5",
+      "field": "complete-weight-retained-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "pinarello-f5-my26-official-weight-recheck-2026-09-24",
+        "pinarello-f5-banjo-weight-recheck-2026-09-24",
+        "pinarello-uk-store-locator-authority-recheck-2026-09-24"
+      ],
+      "result": "Pinarello's current MY26 page has no weight. Banjo claims 8.25 kg for a Season 2026 105 Di2/MOST Ultrafast 45 build, but size and weighing basis are absent and its dealer authority was not confirmed; the retained model year and wheel option remain unresolved."
+    },
+    {
+      "attempt_id": "candidate-look-765-electronic-complete-weight-retained-build-2026-09-24",
+      "target": "candidate:look-765-electronic",
+      "field": "complete-weight-retained-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "look-765-optimum-r50d-weight-recheck-2026-09-24"
+      ],
+      "result": "LOOK's current page claims 7.9 kg in size M for SKU 29656 with R50D wheels. Pedal/accessory and measurement basis are unspecified and the retained wheel option is unresolved, so the value stays reference-only."
+    },
+    {
+      "attempt_id": "variant-elves-falath-r7170-purchase-route-current-selected-build-2026-09-24",
+      "target": "variant:elves-falath-r7170",
+      "field": "purchase-route-current-selected-build",
+      "status": "unresolved-blocked",
+      "source_ids": [
+        "elves-falath-pro-product-route-recheck-2026-09-24",
+        "elves-regional-store-directory-recheck-2026-09-24",
+        "elves-official-online-store-recheck-2026-09-24"
+      ],
+      "result": "Current ELVES manufacturer routes list no mainland-China store, and the EUR official shop has no Falath Pro Disc complete R7170 listing. Exact Chinese-marketplace searches produced no live seller detail; the anonymized Taobao snapshot does not establish a current route, selected SKU, stock or checkout."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "twitter-cyclone-sport-manufacturer-weight-recheck-2026-09-24",
+      "giant-propel-sl1-china-weight-recheck-2026-09-24",
+      "giant-propel-sl1-japan-weight-recheck-2026-09-24",
+      "pinarello-f5-my26-official-weight-recheck-2026-09-24",
+      "pinarello-f5-banjo-weight-recheck-2026-09-24",
+      "pinarello-uk-store-locator-authority-recheck-2026-09-24",
+      "look-765-optimum-r50d-weight-recheck-2026-09-24",
+      "elves-falath-pro-product-route-recheck-2026-09-24",
+      "elves-regional-store-directory-recheck-2026-09-24",
+      "elves-official-online-store-recheck-2026-09-24"
+    ],
+    "research_attempts_added": [
+      "candidate-twitter-cyclone-sport-complete-weight-retained-build-2026-09-24",
+      "candidate-giant-propel-gen4-community-lead-complete-weight-retained-build-2026-09-24",
+      "candidate-pinarello-f5-complete-weight-retained-build-2026-09-24",
+      "candidate-look-765-electronic-complete-weight-retained-build-2026-09-24",
+      "variant-elves-falath-r7170-purchase-route-current-selected-build-2026-09-24"
+    ],
+    "candidate_review_dates_refreshed": 3,
+    "new_retained_build_weight_values_assigned": 0,
+    "current_purchase_route_disclosures_updated": 1,
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "third_party_images_rehosted": 0
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    },
+    "atomic_research_status_counts": {
+      "atomic_fields": 1470,
+      "found": 859,
+      "temporarily-exhausted": 42,
+      "blocked": 508,
+      "conflicted": 61,
+      "open": 0
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 42,
+      "blocked": 510,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "catalog_validation": "passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1249 sources, 212 primary images, 16 videos, 11 groupsets, 10 build parts, 236 candidates, 1480 research attempts",
+    "research_validation": "passed: 1470 atomic fields; 15448 public-post and 35497 web attempts",
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "focused_tests": "passed: public coverage count and Batch 44 unresolved-boundary tests",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages; 458 indexable; 126 noindex",
+    "repository_gate": "not fully green: the pre-fix escalated full run passed 312 of 313 tests and exposed one stale attempt-count assertion. After correcting the expected total and adding a Batch 44 boundary test, both affected tests passed individually. The post-fix normal npm run check was blocked only by loopback preview tests returning listen EPERM on 127.0.0.1; automatic review rejected a second escalated retry in this batch.",
+    "image_report": "not needed; no image records changed"
+  },
+  "delivery": "Local batch; no push, pull request, merge, publication, or production action."
+}

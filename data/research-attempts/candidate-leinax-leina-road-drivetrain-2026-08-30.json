@@ -482,8 +482,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "leinak-leina-jd-2026-08-30"
+    "leinak-leina-jd-2026-08-30",
+    "leinak-leina-jd-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. The current exact range documents separate Shimano 105 mechanical and Di2 2×12 large-groupset options; the retained selection remains unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/leinax-leina-road-50-area-sweep-2026-08-30.json. The current exact range documents separate Shimano 105 mechanical and Di2 2×12 large-groupset options; the retained selection remains unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "leinak-leina-jd-2026-08-30",
+      "leinak-leina-jd-index-recheck-2026-09-23"
+    ],
+    "note": "The dated exact 雷娜 index lists separate Shimano 105 mechanical 2x12 and 105 Di2 2x12 options. Current recheck showed no exact listing text, and neither dated source maps the retained CNY 7,999 card to either configuration; preserve both reference options and leave selection unresolved."
+  }
 }

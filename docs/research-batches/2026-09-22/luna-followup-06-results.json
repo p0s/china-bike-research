@@ -1,0 +1,173 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-06-2026-09-22",
+  "status": "completed-with-qualified-conflict",
+  "reviewed_models": 9,
+  "reviewed_fields": 25,
+  "full_field_closures": 0,
+  "catalog_changes": 1,
+  "coarse_gap_count_before": 722,
+  "coarse_gap_count_after": 722,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-team-road",
+      "outcome": "selected-build-unresolved",
+      "finding": "The team edition still exposes R7120 or R8170 options without an attributable complete weight, maximum tire clearance or stiffness result.",
+      "sources": [
+        "https://www.jd.com/xinghao/1318f839e4269a08e856.html",
+        "https://mall.jd.com/introduction-10445692.html"
+      ],
+      "next_trigger": "Exact retained SKU and manufacturer specification.",
+      "proof": "JD exact route redirected to error; store introduction establishes store identity only. Own catalog used as prior context, not independent evidence.",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "basso-venta-disc",
+      "outcome": "clearance-conflict-documented",
+      "finding": "Exact old Venta Disc review states 32 mm, but an owner reports a 28 mm manufacturer answer and retailer support calls 32 mm theoretical. This discrepancy is now visible in attributed metadata. Reviewed 105 test-bike weights and drivetrain remain separate from the unselected mainland build.",
+      "sources": [
+        "https://road.cc/content/review/basso-venta-disc-105-305363",
+        "https://www.reddit.com/r/bicycling/comments/1762043/basso_venta_2023_tire_clearance/",
+        "https://www.mtbiker.cz/shop/cyklistika/kola/silnicni/basso-venta-disc-shimano-105-microtech-mct-28-kolo-stealth-p207614.html"
+      ],
+      "next_trigger": "Direct manufacturer generation-specific maximum; retained selected trim for weight/drivetrain.",
+      "proof": "Worker exact review read; parent current community post and retailer support reply read. Parent review page opened but follow-up text retrieval timed out; retailer export fetch failed.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-idol",
+      "outcome": "generation-unresolved",
+      "finding": "Current New Idol references Ultegra Di2 12-speed at 8.0 kg in size 51 without pedals/cages and 34C clearance, with a 105 Di2 alternative. Retained CNY13880 card has no generation/build bridge; current-generation facts are not assigned to it.",
+      "sources": [
+        "https://derosa.it/model/idol/",
+        "https://www.derosa.jp/products/new-idol-complete",
+        "https://derosa.it/app/uploads/2026/01/De-Rosa-Idol-White-Paper-1.pdf"
+      ],
+      "next_trigger": "Retained listing generation and selected build.",
+      "proof": "Worker current manufacturer/regional manufacturer and technical PDF reads.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "outcome": "complete-weight-unresolved",
+      "finding": "Current white paper supplies frame/fork mass, not a selected complete-bike mass. Existing 30 versus 32 mm clearance conflict is unchanged and outside this one-field scope.",
+      "sources": [
+        "https://derosa.it/model/838/",
+        "https://derosa.it/app/uploads/2026/06/De-Rosa-838-white-paper-ITA.pdf"
+      ],
+      "next_trigger": "Selected complete build with attributable weight basis.",
+      "proof": "Worker technical PDF read; product-page fetch timed out.",
+      "fields": [
+        "complete-weight"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "falco-t91-t912",
+      "outcome": "selected-build-unresolved",
+      "finding": "Current manufacturer T912 Dura-Ace 9280 2x12 reference is 10.5 kg with pedals excluded, already present in source metadata. China index exposes several substantially different packages; retained range selects none. Maximum clearance remains unpublished.",
+      "sources": [
+        "https://www.falcospeed.com/Falco-T912-Triathlon-bikes-p6710798.html",
+        "https://www.jd.com/brand/13189ae1bbfadae99ede.html"
+      ],
+      "next_trigger": "Exact retained configuration and manufacturer tire maximum.",
+      "proof": "Worker current manufacturer and mainland option-index reads; unchanged reference confirmation, not new catalog evidence.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "frrx-carbon-road-unknown",
+      "outcome": "identity-unresolved",
+      "finding": "Current FRRX indexes contain distinct 16–33-speed, cable/hydraulic and external/internal-routing products with different title weights. No exact SKU maps to the retained card; no tire maximum identified.",
+      "sources": [
+        "https://www.jd.com/jiage/13186163a47cd7873993.html",
+        "https://www.jd.com/xinkuan/13186163a47cd7873993.html"
+      ],
+      "next_trigger": "Retained exact SKU/model and selected configuration.",
+      "proof": "Worker current marketplace index reads; title-level discoveries not merged.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gios-aerolite",
+      "outcome": "generation-unresolved",
+      "finding": "Current Taiwan AERO LITE and APAC GEN5 specifications differ in frame/fork masses and generation. GEN5 states 32C compatibility and R8170/R7120 options; neither identifies retained CNY11999 generation. No complete weight accepted.",
+      "sources": [
+        "https://www.giostw.com/aero-lite",
+        "https://www.gios-apac.com/bikes/detail1.php?24="
+      ],
+      "next_trigger": "Exact retained frame generation and build.",
+      "proof": "Worker current regional official pages read; generation-specific references retained separately.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-aero-entry",
+      "outcome": "selected-build-unresolved",
+      "finding": "G325 retailer references LTWOO R9 2x11 and Shimano 105 R7120 2x12 builds with different weights and fitted 28C, not a tire maximum. Retained CNY2999.10 option is not mapped. No selected-build scalar accepted.",
+      "sources": [
+        "https://www.888bike.net/en/product/tag/shimano-105-r7120"
+      ],
+      "next_trigger": "Exact retained drivetrain/wheels/SKU and maximum specification.",
+      "proof": "Worker current exact retailer page read; existing canonical source URL retained to avoid malformed copied slugs.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-plus",
+      "outcome": "selected-build-unresolved",
+      "finding": "G320 retailer references LTWOO R9 2x11 and Shimano 105 R7120 2x12 builds around 8.95 and 8.88 kg with configuration-dependent prices, 45 mm wheels and fitted 28C. Retained CNY4999 option and weighing basis remain unresolved; fitted tires are not a maximum.",
+      "sources": [
+        "https://www.888bike.net/en/product/7515/gito-g320-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-shimano-105-r7120-24-%E0%B8%AA%E0%B8%9B%E0%B8%B5%E0%B8%94-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-45mm-%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%81-aero-bike"
+      ],
+      "next_trigger": "Exact retained drivetrain/wheels/SKU and maximum specification.",
+      "proof": "Worker current exact retailer page read; existing canonical source URL retained to avoid malformed copied slugs.",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance"
+      ]
+    }
+  ],
+  "validation": {
+    "gate": "codex-pnpm-check check",
+    "result": "passed",
+    "tests_passed": 290,
+    "pages_built": 584,
+    "seo_indexable": 456,
+    "seo_noindex": 128
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

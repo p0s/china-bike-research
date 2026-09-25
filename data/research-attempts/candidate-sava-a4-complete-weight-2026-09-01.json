@@ -481,5 +481,11 @@
     "sava-a4-official-global-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-042-50-area-sweep-2026-09-01.json. Current exact manufacturer page publishes approximately 9.5 kg, varying by size."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-sava-a4-batch-042-50-area-sweep-2026-09-01.json. Current exact manufacturer page publishes approximately 9.5 kg, varying by size.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-a4-official-global-2026-08-17"],
+    "note": "The exact A4 manufacturer page supports an approximate 9.5 kg complete-bike claim. The candidate retains a size-variable value and states that the reference size, pedals, accessories, and weighing protocol are unpublished."
+  }
 }

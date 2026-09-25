@@ -69,8 +69,19 @@
   "status": "found",
   "accepted_source_ids": [
     "pardus-super-sport-egr-888bike-2026-08-17",
-    "pardus-super-sport-launch-wildto-2026-08-17"
+    "pardus-super-sport-launch-wildto-2026-08-17",
+    "pardus-super-sport-gen2-official-current-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-super-sport-egr-888bike-2026-08-17",
+      "pardus-super-sport-launch-wildto-2026-08-17",
+      "pardus-super-sport-gen2-official-current-2026-09-23"
+    ],
+    "note": "The two retained exact-eGR sources report 40C; both refreshes failed. Current PARDUS page states 700×40C maximum for the 105 branch, so retain 40C as qualified platform/exact-variant evidence, not a newly confirmed eGR-specific specification."
+  },
   "notes": "Round-four official/web completion. Two exact-model routes agree on 40C maximum compatibility."
 }

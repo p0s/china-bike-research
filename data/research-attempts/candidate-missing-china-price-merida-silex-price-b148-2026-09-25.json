@@ -1,0 +1,61 @@
+{
+  "id": "candidate-missing-china-price-merida-silex-price-b148-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-merida-silex"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-merida-silex-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "open",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "美利达 SILEX 7000 25款 整车 现货 GRX820 2026 门店实售价",
+          "route": "Fresh exact-build mainland observed-price query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No current exact mainland seller listing with an observed CNY amount surfaced. The recorded official amount is suggested retail and the saved mainland mall route has placeholders. Japanese and Taiwanese results were foreign-market evidence and excluded; no new page was opened."
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "merida-silex-7000-25-official-cny-reference-2026-08-17"
+  ],
+  "retry_after": null,
+  "notes": "The observed-price gap remains; foreign offers and official suggested retail do not establish a current mainland transaction or listing.",
+  "retry_of": "candidate-missing-china-price-merida-silex-price-2026-09-01",
+  "retry_reason": "A new exact-build mainland price query checks for current seller-state changes since the 2026-09-01 extended campaign.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-148-merida-silex-price",
+    "extends_attempt_id": "candidate-missing-china-price-merida-silex-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-148-scope.json",
+    "reason": "A new dated exact-build search checks for current mainland seller listings after the 2026-09-01 campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "merida-silex-7000-25-official-cny-reference-2026-08-17"
+    ],
+    "note": "Reuse the linked model-year-2025 manufacturer page for CNY 20,800 suggested retail. The 2026-09-25 search found no current exact mainland seller listing and the official mall showed placeholders; dealer stock, checkout total and fulfillment remain unknown. Keep price-not-observed open."
+  }
+}

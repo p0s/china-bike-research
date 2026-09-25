@@ -1,0 +1,130 @@
+{
+  "batch_id": "gap-fill-batch-17-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh read-only inventories run directly through node scripts/data-gaps.mjs and node scripts/research-queue.mjs because the npm wrapper was blocked by a busy shared cache lease. The gap inventory reports 41 published variants and 222 candidates; the queue reports 715 evidence-found, 45 deferred, 498 blocked, 60 conflicted and 0 ready.",
+  "selection_basis": "Select 16 high-priority evidence-found atomic fields across 10 exact model groups. No selected field requires a minimum-distinct-approach campaign. Root owns five groups and nine fields; the explicitly authorized Luna evidence-only agent owns five disjoint groups and seven fields. Root is the only writer and will integrate sourced findings after both research lanes finish.",
+  "exact_model_count": 10,
+  "atomic_field_count": 16,
+  "exact_models": [
+    "giant-propel-gen4-community-lead",
+    "hi-light-g7-2",
+    "irefox-profound-400",
+    "laget-discovery-slr",
+    "missing-china-price-canyon-grail",
+    "elves-falath-r7170",
+    "giant-defy-advanced-sl1-community-lead",
+    "incolor-ssr",
+    "laget-discovery-one-pro",
+    "merida-scultura-endurance-4000-community-lead"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "giant-propel-gen4-community-lead",
+      "exact_identity": "Giant Propel Advanced SL 1 fourth-generation mainland community lead",
+      "model_group": "giant-propel-gen4-community-lead",
+      "fields": ["geometry", "image", "purchase-route", "tire-clearance", "warranty-support"],
+      "attempt_ids": [
+        "candidate-giant-propel-gen4-community-lead-geometry-2026-08-17",
+        "candidate-giant-propel-gen4-community-lead-image-2026-08-17",
+        "candidate-giant-propel-gen4-community-lead-purchase-route-2026-08-17",
+        "candidate-giant-propel-gen4-community-lead-tire-clearance-2026-08-17",
+        "candidate-giant-propel-gen4-community-lead-warranty-support-2026-08-17"
+      ],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g7-2",
+      "exact_identity": "Hi-Light G7.2 titanium gravel frameset",
+      "model_group": "hi-light-g7-2",
+      "fields": ["tire-clearance"],
+      "attempt_ids": ["candidate-hi-light-g7-2-tire-clearance-2026-08-27"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "irefox-profound-400",
+      "exact_identity": "IREFOX Profound 400 gravel bike",
+      "model_group": "irefox-profound-400",
+      "fields": ["tire-clearance"],
+      "attempt_ids": ["candidate-irefox-profound-400-tire-clearance-2026-08-28"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-slr",
+      "exact_identity": "LAGET Discovery SLR frameset",
+      "model_group": "laget-discovery-slr",
+      "fields": ["tire-clearance"],
+      "attempt_ids": ["candidate-laget-discovery-slr-tire-clearance-2026-08-27"],
+      "owner": "root"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-grail",
+      "exact_identity": "Canyon Grail CF 7 mainland price lead",
+      "model_group": "missing-china-price-canyon-grail",
+      "fields": ["warranty-support"],
+      "attempt_ids": ["candidate-missing-china-price-canyon-grail-warranty-support-2026-08-17"],
+      "owner": "root"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "elves-falath-r7170",
+      "exact_identity": "ELVES Falath Pro Disc R7170 build",
+      "model_group": "elves-falath-r7170",
+      "fields": ["warranty-support"],
+      "attempt_ids": ["variant-elves-falath-r7170-warranty-support-2026-08-17"],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "giant-defy-advanced-sl1-community-lead",
+      "exact_identity": "Giant Defy Advanced SL 1 mainland community lead",
+      "model_group": "giant-defy-advanced-sl1-community-lead",
+      "fields": ["warranty-support"],
+      "attempt_ids": ["candidate-giant-defy-advanced-sl1-community-lead-warranty-support-2026-08-17"],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "incolor-ssr",
+      "exact_identity": "INCOLOR Speedster Radical SSR frameset platform",
+      "model_group": "incolor-ssr",
+      "fields": ["warranty-support"],
+      "attempt_ids": ["platform-incolor-ssr-warranty-support-2026-08-17"],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-discovery-one-pro",
+      "exact_identity": "LAGET Discovery One Pro gravel frame",
+      "model_group": "laget-discovery-one-pro",
+      "fields": ["frame-stiffness"],
+      "attempt_ids": ["candidate-laget-discovery-one-pro-frame-stiffness-2026-08-27"],
+      "owner": "luna-evidence-review"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "exact_identity": "MERIDA Scultura Endurance 4000 older R7000 community build",
+      "model_group": "merida-scultura-endurance-4000-community-lead",
+      "fields": ["price", "purchase-route", "warranty-support"],
+      "attempt_ids": [
+        "candidate-merida-scultura-endurance-4000-community-lead-price-2026-08-17",
+        "candidate-merida-scultura-endurance-4000-community-lead-purchase-route-2026-08-17",
+        "candidate-merida-scultura-endurance-4000-community-lead-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-review"
+    }
+  ],
+  "acceptance_rules": [
+    "Use current sources and exact-model attribution; record access dates and source class.",
+    "Only resolve a field when evidence supports that exact generation, build, or platform; otherwise record a clear unresolved disposition and reopen trigger.",
+    "Do not download or publish third-party image files without documented reusable rights; an official remote image may remain a source lead without a rights claim.",
+    "Luna is evidence-only: return URLs, dates, claims, caveats and dispositions; do not edit files or use XHS. Root alone integrates evidence and changes files."
+  ]
+}

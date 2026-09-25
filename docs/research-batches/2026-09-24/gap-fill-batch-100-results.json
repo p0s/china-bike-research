@@ -1,0 +1,45 @@
+{
+  "batch": 100,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-100-scope.json"
+  ],
+  "result": {
+    "exact_target_records_audited": 10,
+    "attempts_audited": 14,
+    "source_reuse_resolutions_added": 6,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 145,
+    "evidence_found_after": 139,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-sava-r9-frame-material-2026-09-01","source_ids":["sava-blade-r9-global-current-2026-09-01"],"caveat":"Current exact 2026 frame/fork construction is supported; retained marketplace trim mapping remains unknown."},
+      {"attempt_id":"candidate-sava-r9-tire-clearance-2026-09-01","source_ids":["sava-blade-r9-canada-clearance-2026-09-01"],"caveat":"Exact regional manufacturer maximum is 32 mm; mainland build mapping remains unverified."},
+      {"attempt_id":"candidate-specialized-s-works-crux-2024-sram-red-xplr-complete-weight-2026-09-01","source_ids":["specialized-s-works-crux-global-spec-2026-09-01"],"caveat":"7,280 g production-painted size-56 manufacturer claim; actual weight varies and China-SKU measurement remains unknown."},
+      {"attempt_id":"candidate-specialized-s-works-crux-2024-sram-red-xplr-frame-stiffness-2026-09-01","source_ids":["specialized-s-works-crux-global-spec-2026-09-01"],"caveat":"Qualitative manufacturer language only; no instrumented result or protocol."},
+      {"attempt_id":"candidate-specialized-s-works-crux-frameset-frame-stiffness-2026-09-01","source_ids":["specialized-s-works-crux-granfondo-review-2026-09-01"],"caveat":"Qualitative prior-generation independent review only; not Crux 5 and not instrumented."},
+      {"attempt_id":"candidate-specialized-s-works-crux-frameset-frame-weight-2026-09-01","source_ids":["specialized-s-works-crux-frameset-global-2026-09-01"],"caveat":"725 g frame-only claim distinguished from 1.46 kg size-56 painted system; source is prior generation, not Crux 5."}
+    ],
+    "unresolved_attempts": [
+      {"attempt_id":"candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01","reason":"Accepted US manufacturer source does not support the candidate's CNY mainland price lead."},
+      {"attempt_id":"variant-sava-a7l-r7100-complete-weight-2026-09-01","reason":"Accepted R08 R7120 105 source is a different component build from the mixed mechanical R7100/Sensah target."},
+      {"attempt_id":"variant-sava-a7l-r7100-image-2026-09-01","reason":"Accepted source is a different build and supplies no exact target image or documented reuse rights."},
+      {"attempt_id":"candidate-sava-gelaro-sf-frame-material-2026-08-30","reason":"Accepted source supports the frame but does not establish the entire frame-and-fork grade claim."},
+      {"attempt_id":"candidate-sava-starship-r13-complete-weight-2026-09-01","reason":"Accepted global R7120 build does not map to the candidate's regional Sensah/R7100 options or retained mainland build."},
+      {"attempt_id":"platform-scott-addict-rc-40-geometry-2026-09-01","reason":"Accepted BikeRadar geometry is 2023 generation; target table is attributed to the 2026 manufacturer manual."},
+      {"attempt_id":"variant-spcycle-g028-frameset-purchase-route-2026-09-01","reason":"The exact official route is represented as a dated 2026-09-01 observation but was not rechecked for current 2026-09-24 availability; scope excludes reuse to claim current status."},
+      {"attempt_id":"candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01","reason":"US list price and ECB reference conversion do not establish a mainland price or checkout."}
+    ],
+    "disposition": "Six exact target/source correspondences were already fully represented with material caveats. Eight remain open because evidence is for a different build, generation, market, unsupported full claim, or stale current route. No product values were guessed or changed."
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1314 sources, 212 primary image records, 236 candidates and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1314 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; only research attempt resolution metadata and batch documents changed",
+    "image_report": "not run; no image record changed"
+  }
+}

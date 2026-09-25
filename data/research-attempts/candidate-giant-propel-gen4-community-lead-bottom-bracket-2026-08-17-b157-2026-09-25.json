@@ -1,0 +1,41 @@
+{
+  "id": "candidate-giant-propel-gen4-community-lead-bottom-bracket-2026-08-17-b157-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-propel-gen4-community-lead"
+  },
+  "field": "bottom-bracket",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-giant-propel-gen4-community-lead-bottom-bracket-2026-08-17",
+  "retry_reason": "B157 authorizes one bounded exact-model web query after reviewing the latest predecessor attempt and linked sources; this field is an ordinary retry, not an extended-approach campaign.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-giant-propel-gen4-community-lead-bottom-bracket-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Propel Advanced Gen 4 exact retained build bill of materials bottom bracket official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The exact mainland Advanced SL 1 page and recorded Propel references did not establish the bottom-bracket shell standard for this build; no sibling-trim or generic manual value was transferred."
+        }
+      ],
+      "blocker": "The exact mainland Advanced SL 1 page and recorded Propel references did not establish the bottom-bracket shell standard for this build; no sibling-trim or generic manual value was transferred."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The exact mainland Advanced SL 1 page and recorded Propel references did not establish the bottom-bracket shell standard for this build; no sibling-trim or generic manual value was transferred."
+}

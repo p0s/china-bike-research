@@ -1,0 +1,53 @@
+{
+  "id": "candidate-alums-da54-frame-stiffness-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "alums-da54"
+  },
+  "field": "frame-stiffness",
+  "retry_of": "candidate-alums-da54-frame-stiffness-2026-08-29",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-alums-da54-frame-stiffness-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ALVAS DA54 exact model independent frame stiffness test measured review 2026",
+          "route": "One frozen B158 query; one newly surfaced MyBike.parts review page opened after literal repository URL absence check.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The opened MyBike.parts summary (https://mybike.parts/youtube-cycling-reviews/793-the-velographer-episode-195-this-budget-aero-bike-shocked-me-alvas-da54-review; accessed 2026-09-25) describes an Australian Ultegra Di2/Helux review bike and handling impressions, but makes no specific frame-stiffness claim and does not identify the retained mainland build. It does not resolve this field.",
+          "result_url": "https://mybike.parts/youtube-cycling-reviews/793-the-velographer-episode-195-this-budget-aero-bike-shocked-me-alvas-da54-review"
+        }
+      ],
+      "blocker": "The only newly opened exact-model review covers a different-market build and contains no frame-stiffness claim."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The only newly opened exact-model review covers a different-market build and contains no frame-stiffness claim.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-158-alums-da54-frame-stiffness",
+    "extends_attempt_id": "candidate-alums-da54-frame-stiffness-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+    "reason": "The frozen B158 scope authorizes one dated exact-record web query after review of the completed 50-area campaign, latest attempt, and linked sources.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "searched_at": "2026-09-25",
+  "priority": "high"
+}

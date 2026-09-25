@@ -485,5 +485,11 @@
     "sava-gelaro-sf6-official-2026-08-28"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. Both documented current SF6 builds carry the same approximate 10.4 kg claim; size, pedals, accessories and method are unstated."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-gelaro-sf-50-area-sweep-2026-08-30.json. Both documented current SF6 builds carry the same approximate 10.4 kg claim; size, pedals, accessories and method are unstated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["sava-gelaro-sf6-specifications-2026-08-25", "sava-gelaro-sf6-official-2026-08-28"],
+    "note": "The published SF6 R21-U6020 10-speed and R21-U6000 11-speed builds both carry an approximate 10.4 kg claim, matching the candidate's 10,400 g entry and its two-build basis. Size, pedals, accessories, and weighing method are unspecified."
+  }
 }

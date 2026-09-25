@@ -10,7 +10,8 @@
     "frame_construction": "Internal routing, 3B Gen2 seatpost-clamp system, BB86.5 press fit and 12 mm thru axles",
     "bottom_bracket": "Press Fit 86.5 x 41 mm",
     "reference_builds": "Documented 105 2x11/Microtech builds range from 8.5 to 9.05 kg and use 28 mm tires; an Ultegra option also existed. The retained listing does not identify which build, year or condition applies.",
-    "stiffness_evidence": "An independent exact-model road.cc test describes a very responsive frame with strong lower-frame stiffness and a comfortable rear end; qualitative ride evidence, not a numeric deflection result"
+    "stiffness_evidence": "An independent exact-model road.cc test describes a very responsive frame with strong lower-frame stiffness and a comfortable rear end; qualitative ride evidence, not a numeric deflection result",
+    "tire_clearance_conflict": "Exact 2023 review states 32 mm; an owner reports a 28 mm answer from Basso, while specialist retailer support calls the manufacturer maximum unpublished and 32 mm only theoretical. No single verified maximum is selected."
   },
   "missing": [
     "Exact model year, drivetrain, complete BOM, complete-bike weight and manufacturer-confirmed maximum tire clearance",
@@ -19,7 +20,10 @@
   "status": "discontinued-platform-trim-unverified",
   "source_ids": [
     "basso-venta-disc-retailer-2026-08-29",
-    "basso-venta-disc-roadcc-2026-08-29"
+    "basso-venta-disc-roadcc-2026-08-29",
+    "basso-venta-disc-review-clearance-2026-09-22",
+    "basso-venta-disc-owner-clearance-conflict-2026-09-22",
+    "basso-venta-disc-retailer-clearance-2026-09-22"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -32,6 +36,6 @@
   },
   "source_refs": "IMG_6878.png#L1",
   "source_url": "https://road.cc/content/review/basso-venta-disc-105-305363",
-  "source_note": "Current Basso catalog results show the successor Venta R; old-generation Venta Disc sources are retained separately. Exact reference builds confirm TR50/MR60 construction and qualitative stiffness but conflict on complete weight and do not identify the CNY 6,888 listing's trim, condition or seller authority.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "Current Basso catalog results show the successor Venta R; old-generation Venta Disc sources are retained separately. Exact reference builds confirm TR50/MR60 construction and qualitative stiffness but conflict on complete weight and do not identify the CNY 6,888 listing's trim, condition or seller authority. September 22 clearance review found conflicting evidence; review, retailer guidance and community report retain separate attribution.",
+  "last_reviewed": "2026-09-22"
 }

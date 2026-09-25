@@ -1,0 +1,76 @@
+{
+  "batch": 61,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-61-scope.json",
+  "target": {
+    "record_type": "candidate",
+    "id": "lightcarbon-lcg074-d",
+    "model": "LightCarbon LCG074-D integrated-cockpit micro-suspension gravel frameset",
+    "gap_code": "price-missing"
+  },
+  "research": {
+    "worker": "one Luna Max evidence-only follow-up agent; no repository writes",
+    "query": "LightCarbon LCG074-D integrated cockpit micro suspension gravel frameset price",
+    "accessed_at": "2026-09-24",
+    "route": "One public exact-model web search followed by the official LCG074-D product page",
+    "url": "https://www.lightcarbon.com/lightcarbon-gravel-frameset-micro-suspension-pivot-design-with-integrated-handlebar_p254.html",
+    "finding": "The official page identifies LightCarbon Composite Technology Co., Ltd. in Xiamen, China and the exact LCG074-D product/package (frame, fork, handlebar, stem and seatpost). It gives no numeric price or currency, shows no current stock/availability, and directs buyers to contact the manufacturer. Search metadata marked the page crawled on 2026-09-24.",
+    "price_admissible": false,
+    "disposition": "No current exact price accepted. The candidate remains unpriced; no conversion, seller quote, bundle amount, or stock claim was inferred."
+  },
+  "changed_files": [
+    "data/candidates/lightcarbon-lcg074-d.json",
+    "data/research-attempts/candidate-lightcarbon-lcg074-d-price-recheck-2026-09-24.json",
+    "data/sources/lightcarbon-lcg074-d-official-price-recheck-2026-09-24.json",
+    "data/coverage.json",
+    "tests/data.test.mjs",
+    "docs/research-batches/2026-09-24/gap-fill-batch-59-results.json"
+  ],
+  "candidate_effect": {
+    "current_price": null,
+    "official_price": null,
+    "observed_price": null,
+    "source_recheck_added": "lightcarbon-lcg074-d-official-price-recheck-2026-09-24",
+    "research_status": "blocked",
+    "gap_resolved": false,
+    "candidate_status": "unpublished"
+  },
+  "post_batch_inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 360,
+      "conflicted": 34,
+      "found": 51,
+      "temporarily-exhausted": 4
+    }
+  },
+  "validation": {
+    "focused": "npm run --silent research:check passed: 1499 atomic research fields, 15449 public-post attempts, 35567 web attempts.",
+    "full_gate": "codex-pnpm-check check passed: privacy; 41 brands, 38 platforms, 41 variants, 73 prices, 1301 sources, 212 images, 16 videos, 11 groupsets, 10 build parts, 236 candidates, 1516 research records; research validation; monotonic coverage; 323/323 tests; 584-page build for 41 products; SEO 458 indexable and 126 noindex.",
+    "coverage_accept": "Accepted the monotonic baseline for the intended one new source and one new research attempt; protected totals remain 212 images and 277 catalog targets.",
+    "image_report": "not run for B61; no image records changed"
+  },
+  "delivery": "Local B61 batch only; no push, pull request, merge, publication, or production action."
+}

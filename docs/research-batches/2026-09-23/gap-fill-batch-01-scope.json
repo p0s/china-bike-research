@@ -1,0 +1,29 @@
+{
+  "batch_id": "gap-fill-batch-01-2026-09-23",
+  "base_commit": "24e323d06e99a62f2d8946c35be9d4c0ce72594c",
+  "frozen_at": "2026-09-23",
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "fields": [
+        "complete-weight",
+        "frame-weight",
+        "bottom-bracket",
+        "geometry",
+        "tire-clearance",
+        "exact-image-asset"
+      ],
+      "exact_identity": "Giant TCR Advanced 3-GC, mainland China page id=1398, Shimano Tiagra 2x10 rim-brake complete build",
+      "known_boundaries": [
+        "Do not transfer specifications from the later disc generation, other market regions, or other 3/Advanced trims.",
+        "Fitted 700x25C tires do not establish maximum clearance.",
+        "Separate frame-only weight from complete-bike weight and state the basis for each.",
+        "An image asset is not a new website image unless exact display metadata and rights are documented."
+      ]
+    }
+  ],
+  "atomic_field_count": 6,
+  "done_criteria": "For each frozen field, record a current exact-model source and supported value, or a precise unresolved/conflict disposition with routes checked and a concrete reopening trigger. Integrate only supported facts. Preserve source observation dates and all historical price records. Run the repository gate after any catalog data change; for image metadata or asset changes also run image:report.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, or publication in this batch."
+}

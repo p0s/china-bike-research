@@ -485,9 +485,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
+    "upland-r70-indexed-current-2026-09-23",
     "upland-r70-official-2026-08-30",
     "upland-r70-race-engineering-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-batch-023-50-area-sweep-2026-08-30.json. Exact current R70 uses a Toray T700 main structure with T800 reinforcement and T800 fork."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-batch-023-50-area-sweep-2026-08-30.json. Exact current R70 uses a Toray T700 main structure with T800 reinforcement and T800 fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "upland-r70-indexed-current-2026-09-23",
+      "upland-r70-race-engineering-2026-08-30"
+    ],
+    "note": "The current indexed product-page excerpt describes T700/T800 carbon construction and a T800 fork; the 2026-08-11 UPLAND article describes T700 structure reinforced with T800 in key areas. This supports platform-level carbon construction, not an exact retained-build BOM."
+  }
 }

@@ -480,5 +480,13 @@
     "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/nscr-carbon-gravel-storage-50-area-sweep-2026-08-30.json. The retained exact card describes a carbon-fiber gravel bike; grade and fork construction remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/nscr-carbon-gravel-storage-50-area-sweep-2026-08-30.json. The retained exact card describes a carbon-fiber gravel bike; grade and fork construction remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08"
+    ],
+    "note": "seller-carbon-and-eps-claims-only: The retained card describes carbon-fiber construction and advertises an EPS process. Carbon grade, fork material and the process claim are not independently verified; no current exact-model manufacturer specification surfaced. Reopen trigger: Reopen with an exact-model manufacturer construction specification."
+  }
 }

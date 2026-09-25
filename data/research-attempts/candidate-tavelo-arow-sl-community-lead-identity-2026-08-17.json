@@ -44,8 +44,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "public-tavelo-arow-sl-build-2026-08-17"
+    "public-tavelo-arow-sl-build-2026-08-17",
+    "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Qualified identity only: the public post title associates a reported 6.2 kg custom build with Arow SL; the current manufacturer page confirms the Arow SL Neo Black frameset but not this build’s year, size, complete BOM or weighing protocol. Reopen when exact-build evidence identifies those details.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "public-tavelo-arow-sl-build-2026-08-17",
+      "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
+    ],
+    "note": "Qualified identity only: the public post title associates a reported 6.2 kg custom build with Arow SL; the current manufacturer page confirms the Arow SL Neo Black frameset but not this build’s year, size, complete BOM or weighing protocol. Reopen when exact-build evidence identifies those details."
+  }
 }

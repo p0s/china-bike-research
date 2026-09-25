@@ -1,0 +1,92 @@
+{
+  "batch": 136,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-136-scope.json",
+  "result": {
+    "exact_target_models": 2,
+    "atomic_fields": 7,
+    "disposition": "The current official Chinese GX700 page adds date-stamped manufacturer evidence but does not publish numeric geometry, frame-only weight, or bottom-bracket standard. All scoped numeric gaps remain unknown; no value was inferred.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_added": 3,
+    "new_sources_added": 1,
+    "catalog_records_updated": 2,
+    "specification_values_changed": 0,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "website_image_records": 212,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "platform:camp-gx600:tire-clearance",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "The search surfaced a CAMP Deore trim page, not the exact GX600 PES build; it was not opened. No maximum clearance is attributed to the PES model."
+    },
+    {
+      "field": "platform:camp-gx600:geometry",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "No new exact GX600 geometry table was found. The blocked generic size chart and earlier geometry routes were not repeated."
+    },
+    {
+      "field": "platform:camp-gx600:frame-weight",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "No frame-only weight was found for the exact GX600 PES platform/build."
+    },
+    {
+      "field": "variant:camp-gx600-pes:bottom-bracket",
+      "disposition": "unknown",
+      "source_ids": [],
+      "caveat": "No exact build source established the shell standard or dimensions."
+    },
+    {
+      "field": "platform:camp-gx700:geometry",
+      "disposition": "unknown",
+      "source_ids": ["camp-gx700-official-live-recheck-2026-09-25"],
+      "caveat": "The current manufacturer page lists sizes but supplies no numeric geometry values in page text. A linked size-chart image does not provide verified numeric evidence."
+    },
+    {
+      "field": "platform:camp-gx700:frame-weight",
+      "disposition": "unknown",
+      "source_ids": ["camp-gx700-official-live-recheck-2026-09-25"],
+      "caveat": "The page reports about 10.2 kg for a small complete bike without pedals and small accessories; that does not establish bare-frame weight."
+    },
+    {
+      "field": "variant:camp-gx700-grx820:bottom-bracket",
+      "disposition": "unknown",
+      "source_ids": ["camp-gx700-official-live-recheck-2026-09-25"],
+      "caveat": "The current page gives no bottom-bracket shell standard or dimensions; its FC-RX610 crank row is insufficient to infer the frame shell."
+    }
+  ],
+  "source_added": {
+    "id": "camp-gx700-official-live-recheck-2026-09-25",
+    "url": "https://www.campbicycle.com/zh/gx700.html",
+    "source_class": "current manufacturer product page",
+    "accessed_at": "2026-09-25",
+    "supported_context": "Official page identifies GX700 size options, T800 frame/fork, build components and approximately 10.2 kg small complete-bike weight, excluding pedals and small accessories. The page states build/part variation and weight may vary by size/color.",
+    "not_supported": ["numeric geometry", "frame-only weight", "bottom-bracket standard or dimensions"]
+  },
+  "validation": {
+    "coverage_acceptance": "passed; monotonic baseline accepted for 212 images and 277 catalog targets",
+    "full_gate": "passed via codex-pnpm-check check: privacy, validation, research ledger, coverage, 328/328 tests, 584-page build, SEO 458 indexable / 126 noindex",
+    "focused_test": "passed: node --test tests/data.test.mjs (73/73)",
+    "image_report": "not run: no image record changed",
+    "git_diff_check": "passed: git diff --check; result and scope JSON parsed successfully"
+  },
+  "process_note": "A post-addition coverage baseline protected the new source link on the prior histories. The prior dates and 50-area approach lists were restored unchanged, and the source relationship was restored in accepted_source_ids; three bounded follow-up attempt records preserve the new field-specific no-result details.",
+  "external_delivery": "none"
+}

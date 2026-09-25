@@ -480,9 +480,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "taobao-snapshot-2026-08-08",
-    "irefox-current-catalog-2026-08-09"
+    "irefox-current-catalog-2026-08-09",
+    "irefox-current-catalog-2026-09-23",
+    "taobao-snapshot-2026-08-08"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/irefox-by446-50-area-sweep-2026-08-30.json. The retained exact seller card supports only the carbon-frame statement; the current official catalog confirms that no stronger exact-model bridge is available."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/irefox-by446-50-area-sweep-2026-08-30.json. The retained exact seller card supports only the carbon-frame statement; the current official catalog confirms that no stronger exact-model bridge is available.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "irefox-current-catalog-2026-09-23"
+    ],
+    "note": "The retained seller card supports only a carbon-frame claim for the exact IREFOX BY446 row. The directly opened official catalog on 2026-09-23 omits BY446; no exact grade, fork material, lay-up or manufacturing process can be assigned."
+  }
 }

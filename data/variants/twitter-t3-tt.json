@@ -15,7 +15,7 @@
       "Dated mainland-China price observation"
     ],
     "caveats": [
-      "Maximum tire clearance and frame-only weight remain unpublished",
+      "The 700×30C maximum is a current frameset claim; frame-weight basis and complete-bike weighing method remain separate",
       "The 9.5 kg claim does not state size, pedals, accessories or weighing method",
       "One owner reports finicky WheelTop/app behavior, twitchier handling and easily chipped paint",
       "Search-card pricing may be coupon, listed, subsidy, or otherwise conditional",
@@ -27,9 +27,12 @@
     "twitter-bikes-gravel-catalog-2026-08-08",
     "twitter-t3-tt-official-2026-08-08",
     "twitter-t3-tt-official-2026-08-29",
+    "twitter-t3-tt-frameset-current-2026-09-22",
     "twitter-t3-tt-regional-retailer-2026-08-29",
     "twitter-t3-tt-bikeinsights-2026-08-29",
-    "public-twitter-t3-tt-owner-2026-08-29"
+    "public-twitter-t3-tt-owner-2026-08-29",
+    "twitter-t3-tt-official-recheck-2026-09-24",
+    "twitter-t3-tt-official-route-recheck-2026-09-25"
   ],
   "drivetrain": {
     "brand": "WheelTop",
@@ -52,5 +55,8 @@
   },
   "claimed_complete_weight_g": 9500,
   "claimed_complete_weight_basis": "Current exact-model manufacturer claim for the RS 60 mm carbon-rim WheelTop TX-TT7110 build; size, pedals, accessories and weighing method were not stated",
-  "purchase_route": "Current official made-to-order international route from US$2,349 with stated free shipping and duties to 35+ countries, plus a dated 2026-08-08 mainland marketplace observation for the visible WheelTop EVO 24-speed configuration. Confirm current mainland SKU continuity, stock, selected-option checkout total, shipping, returns and domestic warranty before paying."
+  "claimed_frame_weight_g": 1350,
+  "claimed_frame_weight_basis": "Current exact-model manufacturer frameset claim for the T3 TT carbon frame; finish, hardware inclusion and weighing method were not stated",
+  "purchase_route": "Current exact official T3 TT page offers made-to-order WheelTop TX-TT7110 or SRAM Rival AXS builds, lists six sizes for the WheelTop option and displays US$2,349. Its country selector includes China, but mainland delivery quote and final checkout terms are unverified. The dated mainland marketplace observation remains a separate historical configuration reference.",
+  "last_reviewed": "2026-09-25"
 }

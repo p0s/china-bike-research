@@ -479,8 +479,19 @@
   "status": "found",
   "accepted_source_ids": [
     "trek-madone-sl5-gen8-official-spec-2026-08-17",
-    "trek-madone-gen8-faq-clearance-2026-09-01"
+    "trek-madone-gen8-faq-clearance-2026-09-01",
+    "trek-madone-gen8-faq-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-032-50-area-sweep-2026-09-01.json. The current manufacturer Gen 8 FAQ publishes a 32 mm measured-width maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-032-50-area-sweep-2026-09-01.json. The current manufacturer Gen 8 FAQ publishes a 32 mm measured-width maximum. Current focused recheck 2026-09-23: Trek’s Gen 8 FAQ states a 32 mm maximum measured tire width. This is platform-family guidance; no SL 5 exception is published.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "trek-madone-sl5-gen8-official-spec-2026-08-17",
+      "trek-madone-gen8-faq-clearance-2026-09-01",
+      "trek-madone-gen8-faq-recheck-2026-09-23"
+    ],
+    "note": "Trek’s Gen 8 FAQ states a 32 mm maximum measured tire width. This is platform-family guidance; no SL 5 exception is published."
+  }
 }

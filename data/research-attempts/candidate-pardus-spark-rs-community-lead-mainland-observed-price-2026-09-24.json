@@ -1,0 +1,45 @@
+{
+  "id": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-spark-rs-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "A current JD search surfaced a mechanical R7120 Spark RS option, but the linked item triggered a risk handler and no exact custom-build price, seller identity, or orderability was verified.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Spark RS custom white mechanical 105 with R8170 upgrade current mainland price",
+          "route": "Current indexed PARDUS official-store product card",
+          "outcome": "identity-mismatch",
+          "accessed_at": "2026-09-24",
+          "note": "The official-store index reports a CNY 11,499 low for a Spark RS size-XL 105 Di2 product card, but also lists multiple sizes and groupset options without mapping the low to a selected option. That factory build does not match the retained white custom build with mechanical 105 and R8170 upgrades; no candidate price was assigned.",
+          "result_url": "https://shopping.baidu.com/spu/item?fr=video&spu_id=shv2_000f7430e834c5c69496f288433982a4"
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Spark RS 机械105 整车 京东 天猫 旗舰店 价格",
+          "route": "Current JD marketplace listing and linked item",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The JD result described a Spark RS R7120 mechanical aluminum-wheel XL option but showed no CNY amount or seller details. Its linked item redirected to JD risk handling; access stopped there. The listing did not establish the retained custom mechanical-105 build or current orderability.",
+          "result_url": "https://www.jd.com/hprm/6994dc5392b4997a4da5.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "pardus-spark-rs-current-official-store-index-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "A current indexed factory-trim price was found, but does not map to the candidate's custom build. Keep the candidate price gap open until the exact build is priced."
+}

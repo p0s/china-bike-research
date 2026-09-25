@@ -1,0 +1,32 @@
+{
+  "batch_id": "luna-followup-04b-v3-clearance-correction-2026-09-22",
+  "base_commit": "c7ec5db3836b859289e6aaea715083b4a4394187",
+  "model_limit": 3,
+  "atomic_fields": 4,
+  "targets": [
+    {
+      "record_type": "platform",
+      "record_id": "twitter-gravel-v3",
+      "fields": [
+        "tire-clearance",
+        "frame-construction"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-rs-sensah",
+      "fields": [
+        "tire-clearance"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "fields": [
+        "tire-clearance"
+      ]
+    }
+  ],
+  "trigger": "Rendered-page validation found the published T47 platform also inherited the disputed storefront clearance. Exact original source currently specifies BB86.",
+  "done_criteria": "Remove unsupported T47 maximum and qualify revision-dependent construction; preserve fitted40C, original source history, variants and prices."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "candidate-missing-china-price-giant-tcr-advanced-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "missing-china-price-giant-tcr-advanced"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant TCR ADV 3-GC current mainland JD official flagship listing price",
+          "route": "Exact JD product page and Baidu Shopping price comparison",
+          "outcome": "found",
+          "accessed_at": "2026-09-24",
+          "note": "Baidu Shopping's exact-model comparison shows CNY 5,998 as the current low for a size L TCR ADV 3-GC listing at 京东捷安特官方旗舰店. The JD product page confirms the exact store/model but its dynamic price did not render in this read. Treat the amount as an aggregator-observed listed low; selected-size availability, coupons, shipping, and checkout are unresolved.",
+          "result_url": "https://item.jd.com/10113006839231.html"
+        }
+      ]
+    }
+  },
+  "status": "found",
+  "accepted_source_ids": [
+    "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+    "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Current marketplace listing comparison was recorded separately from the dated official CNY 6,998 suggested retail price; the listing amount is not represented as a completed checkout.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+      "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24"
+    ],
+    "note": "Baidu Shopping reports CNY 5,998 as the listed low for the exact TCR ADV 3-GC from JD Giant official flagship, for a size L listing; its index was crawled about two weeks before access. The live JD listing exposed no amount, so size/color stock, coupons, shipping, and checkout remain unverified. This resolves the observed-listing research field, not a completed-sale or in-stock claim."
+  }
+}

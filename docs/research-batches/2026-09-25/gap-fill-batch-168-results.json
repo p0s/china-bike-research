@@ -1,0 +1,59 @@
+{
+  "batch": 168,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-168-scope.json",
+  "external_delivery": "none",
+  "work": {
+    "exact_records": 8,
+    "atomic_fields": 10,
+    "read_only_evidence_audit": "The Luna evidence agent audited linked candidate records, source records, and the latest B152 attempts. No existing source supports a retained exact-build value for these fields. The ten open attempts were updated in place with field-specific blocked reasons and existing source references; prior attempts were preserved.",
+    "research_attempts_added": 0,
+    "research_attempts_updated_in_place": 10,
+    "new_queries": 0,
+    "page_opens": 0,
+    "new_sources": 0,
+    "candidate_fact_changes": 0,
+    "catalog_gap_entries_reduced": 0,
+    "images_added": 0,
+    "image_records_changed": 0,
+    "unresolved_fields": [
+      {"record_id":"cinelli-pressure-adr","field":"complete-weight","source_ids":["cinelli-pressure-adr-official-2026-08-29","cinelli-pressure-adr-bikeradar-2026-08-29"],"reason":"The retained CNY card does not identify which of the official 105 mechanical, 105 Di2, or Ultegra Di2 builds it selects; no matching complete-bike weight is published."},
+      {"record_id":"cinelli-pressure-adr","field":"drivetrain","source_ids":["cinelli-pressure-adr-official-2026-08-29","cinelli-pressure-adr-bikeradar-2026-08-29"],"reason":"Official alternatives and the regional review do not map the retained mainland price to one exact drivetrain build."},
+      {"record_id":"pardus-spark-tourist","field":"complete-weight","source_ids":["pardus-spark-tourist-pes-taobao-2026-08-29","pardus-spark-tourist-platform-official-2026-08-29"],"reason":"The white 2026 PES 1×12 size-M build is identified, but neither source gives its complete-bike weight or weighing basis."},
+      {"record_id":"upland-taylor","field":"frame-stiffness","source_ids":["upland-taylor-official-2026-08-30","upland-taylor-marketplace-2026-08-30"],"reason":"The exact model sources provide no meaningful frame-stiffness evidence."},
+      {"record_id":"upland-taylor","field":"tire-clearance","source_ids":["upland-taylor-official-2026-08-30","upland-taylor-marketplace-2026-08-30"],"reason":"The official source lists fitted 700×28C but does not state maximum tire clearance."},
+      {"record_id":"legit-ac1","field":"complete-weight","source_ids":["legit-ac1-mainland-build-2026-08-30","legit-ac1-current-specs-2026-08-30"],"reason":"The retained build is identified, but source weights cover only the frame, fork, and seatpost, not the complete bicycle."},
+      {"record_id":"pardus-robin-sport-pes","field":"complete-weight","source_ids":["pardus-robin-sport-pes-current-2026-08-30","pardus-robin-sport-pes-mainland-index-2026-08-30"],"reason":"The current exact-build pages give no complete-bike weight; the available 105 review describes a different build."},
+      {"record_id":"java-vittoria-7170","field":"tire-clearance","source_ids":["java-vittoria-r7170-chile-current-2026-09-23"],"reason":"The regional R7170 source lists fitted 700×28C, not a maximum, and does not establish that build as the retained mainland configuration."},
+      {"record_id":"sunpeed-victory-e-2026","field":"tire-clearance","source_ids":["sunpeed-victory-expert-brasil-2026-08-30","sunpeed-victory-expert-official-2026-08-30"],"reason":"The exact-model sources list fitted 700×30C but provide no maximum clearance."},
+      {"record_id":"sunpeed-wudi-e-2026","field":"tire-clearance","source_ids":["sunpeed-invincible-2026-jd-2026-08-30"],"reason":"The retained 2026 R7120 alloy-wheel option is identified, but its source gives no maximum tire clearance; a regional page does not establish the same build."}
+    ]
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {"public_post":15450,"web":35890},
+    "research_status_counts": {"blocked":384,"conflicted":35,"found":15,"open":5,"temporarily-exhausted":4},
+    "queue": {"ready":5,"evidence-found":0,"deferred":43,"blocked":562,"conflicted":1},
+    "image_gaps": {"image-exactness":4,"image-health-unverified":2},
+    "images": 212
+  },
+  "validation": {
+    "research_check":"passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_acceptance":"accepted monotonic baseline for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command":"developer-storage-cache run -- codex-pnpm-check check",
+      "outcome":"passed",
+      "privacy":"passed",
+      "data_validation":"41 brands, 38 platforms, 41 variants, 76 prices, 1,424 sources, 212 image records, 236 candidates, 1,823 atomic research records",
+      "research_validation":"1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+      "tests":"333/333 passed",
+      "build":"584 pages",
+      "seo":"458 indexable; 126 noindex"
+    },
+    "git_diff_check":"passed",
+    "image_report":"not run; no image records changed"
+  }
+}

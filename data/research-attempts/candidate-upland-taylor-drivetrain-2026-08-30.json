@@ -496,5 +496,14 @@
     "upland-taylor-marketplace-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-taylor-50-area-sweep-2026-08-30.json. The retained CNY 10,999 build is Shimano 105 R7120 mechanical 2x12 with hydraulic BR-R7170 brakes."
+  "notes": "B122 reused the exact Taylor CNY 10,999 mechanical-build evidence for Shimano 105 R7120 mechanical 2x12 and hydraulic BR-R7170 brakes; keep the separate Pro Di2 option distinct.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "upland-taylor-official-2026-08-30",
+      "upland-taylor-marketplace-2026-08-30"
+    ],
+    "note": "B122 reused the exact Taylor CNY 10,999 mechanical-build evidence for Shimano 105 R7120 mechanical 2x12 and hydraulic BR-R7170 brakes; keep the separate Pro Di2 option distinct."
+  }
 }

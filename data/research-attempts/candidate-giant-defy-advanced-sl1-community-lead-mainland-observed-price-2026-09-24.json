@@ -1,0 +1,56 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced SL 1 2026 China official price",
+          "route": "Current Giant China Defy series catalog",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The official mainland Defy series page identifies the SL 0 but exposes no matching SL 1 product or price. This does not establish that no dealer can quote the model.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_series.html?id=123"
+        },
+        {
+          "attempt": 2,
+          "query": "Giant China Defy Advanced SL 1 current authorized dealer stock price",
+          "route": "Current official China dealer locator and indexed exact-model results",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The locator offers only a generic store route and current exact-model searches did not surface a public mainland SL 1 listing, stock state, or amount. The foreign-market 2026 specification and any community custom build remain separate.",
+          "result_url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+        },
+        {
+          "attempt": 3,
+          "query": "Giant Defy Advanced SL 1 2026 中国 价格 天猫 京东 旗舰店",
+          "route": "Public mainland e-commerce and flagship listing search",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "note": "Search surfaced official mainland Defy Advanced 1 and Defy Advanced SL 0 product pages, both different trims; UK/Japan hits were foreign prices. No exact SL 1 mainland listing, CNY amount, package, current stock, or listing date was found.",
+          "result_url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1790"
+        }
+      ],
+      "blocker": "No current exact SL 1 mainland listing surfaced in the official catalog, dealer locator, or one public marketplace/flagship search; similar trims and foreign-market quotes are excluded."
+    }
+  },
+  "status": "temporarily-exhausted",
+  "accepted_source_ids": [
+    "giant-china-defy-current-series-price-route-recheck-2026-09-24",
+    "giant-china-dealer-locator-current-2026-09-23",
+    "giant-defy-advanced-sl1-uk-official-recheck-2026-09-23"
+  ],
+  "retry_after": "2026-12-24",
+  "notes": "The official mainland series catalog, dealer locator, and one distinct public marketplace/flagship search did not find an exact Defy Advanced SL 1 mainland price. Search results for other trims and foreign markets are not transferable. Leave current mainland price unresolved."
+}

@@ -1,0 +1,165 @@
+{
+  "batch": 38,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-38-scope.json",
+  "writer_limit": {
+    "exact_targets": 5,
+    "atomic_fields": 9
+  },
+  "dispositions": [
+    {
+      "attempt_id": "candidate-tavelo-arow-sl-community-lead-identity-2026-08-17",
+      "target": "candidate:tavelo-arow-sl-community-lead",
+      "field": "identity",
+      "status": "qualified",
+      "source_ids": [
+        "public-tavelo-arow-sl-build-2026-08-17",
+        "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
+      ],
+      "result": "The public post title associates a reported 6.2 kg custom build with Arow SL, and the current manufacturer page confirms the Arow SL Neo Black frameset. The post does not establish build year, size, complete BOM, or weighing protocol; do not present it as an identified exact build."
+    },
+    {
+      "attempt_id": "candidate-tavelo-arow-sl-community-lead-image-2026-08-17",
+      "target": "candidate:tavelo-arow-sl-community-lead",
+      "field": "image",
+      "status": "qualified-platform-image",
+      "source_ids": [
+        "tavelo-arow-sl-neo-black-official-recheck-2026-09-24"
+      ],
+      "result": "The existing remote photo shows the Neo Black platform/frameset, not the community build's exact color or components. Existing manufacturer credit, alt text, official-page-embed rights, and remote URL are retained; no redistribution license is asserted."
+    },
+    {
+      "attempt_id": "platform-tavelo-grow-frame-material-2026-08-28",
+      "target": "platform:tavelo-grow",
+      "field": "frame-material",
+      "status": "supported-manufacturer-claim",
+      "source_ids": [
+        "tavelo-grow-official-recheck-2026-09-24"
+      ],
+      "result": "The current manufacturer page identifies a Toray T800 carbon frame. Resin system, ply schedule, and independent fiber verification are unpublished."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-gen3-et-bottom-bracket-2026-08-17",
+      "target": "variant:twitter-cyclone-gen3-et",
+      "field": "bottom-bracket",
+      "status": "qualified-regional-manufacturer-claim",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+      ],
+      "result": "The USA Cyclone 3rd ET page specifies a threaded T47×24 mm bottom bracket with hollow, sealed bearings. Mainland-trim equivalence is unconfirmed."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-gen3-et-cockpit-2026-08-17",
+      "target": "variant:twitter-cyclone-gen3-et",
+      "field": "cockpit",
+      "status": "conflicted",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-usa-2026-08-17",
+        "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+      ],
+      "result": "The exact USA page lists a 420×90 mm high-modulus carbon cockpit, then says every build uses an alloy 400×90 mm cockpit. Material and dimensions remain unset with narrow retirements for cockpit.material and cockpit.dimensions; supported integrated and fully internal routing claims remain."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-gen3-et-geometry-2026-08-17",
+      "target": "variant:twitter-cyclone-gen3-et",
+      "field": "geometry",
+      "status": "qualified-regional-manufacturer-claim",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+      ],
+      "result": "Six-size USA geometry retains legible stack, reach, chainstay, and wheelbase values. Blank columns and the unclear -68.37 BB-drop entry are omitted; mainland equivalence remains unconfirmed."
+    },
+    {
+      "attempt_id": "variant-twitter-cyclone-gen3-et-tires-2026-08-17",
+      "target": "variant:twitter-cyclone-gen3-et",
+      "field": "tires",
+      "status": "qualified-regional-manufacturer-claim",
+      "source_ids": [
+        "twitter-cyclone-gen3-et-usa-recheck-2026-09-24"
+      ],
+      "result": "The USA page lists fitted RS folding reflective-edge 700×28C tires. This does not establish maximum clearance or mainland-build equivalence."
+    },
+    {
+      "attempt_id": "platform-twitter-gravel-v3-frame-material-2026-08-28",
+      "target": "platform:twitter-gravel-v3",
+      "field": "frame-material",
+      "status": "qualified-revision-specific-manufacturer-claim",
+      "source_ids": [
+        "twitter-v3-25yr-manufacturer-recheck-2026-09-24"
+      ],
+      "result": "The manufacturer names the Gravel V3 (25yr) revision and describes a high-modulus carbon-fiber frame. Exact fiber grade and layup are unpublished; do not generalize to other revisions."
+    },
+    {
+      "attempt_id": "candidate-velobuild-cx-002-2023-frame-weight-2026-09-22",
+      "target": "candidate:velobuild-cx-002-2023",
+      "field": "frame-weight",
+      "status": "qualified-manufacturer-claim",
+      "source_ids": [
+        "velobuild-cx002-spec-sheets-2026-09-22",
+        "velobuild-cx002-official-listing-recheck-2026-09-24"
+      ],
+      "result": "The product-linked sheet states 1000 g for size M, clear coat, without metal parts. Tolerance and weighing protocol are unstated. The current listing text does not expose the number; the distinct size-56 owner report is not a direct contradiction."
+    }
+  ],
+  "changes": {
+    "new_sources": [
+      "tavelo-arow-sl-neo-black-official-recheck-2026-09-24",
+      "tavelo-grow-official-recheck-2026-09-24",
+      "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
+      "twitter-v3-25yr-manufacturer-recheck-2026-09-24",
+      "velobuild-cx002-official-listing-recheck-2026-09-24"
+    ],
+    "new_price_records": 0,
+    "new_image_records": 0,
+    "image_records_rechecked": 1,
+    "third_party_images_rehosted": 0,
+    "retirement_records": [
+      "retire-twitter-cyclone-gen3-et-cockpit-material-conflict-2026-09-24",
+      "retire-twitter-cyclone-gen3-et-cockpit-dimensions-conflict-2026-09-24"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 70,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 61
+    }
+  },
+  "validation": {
+    "coverage_accept": "passed: monotonic baseline for 212 images and 277 catalog targets",
+    "image_report": "completed: 198 remote resources returned fetch failed/unreachable in this environment; no URL changed",
+    "repository_gate": "privacy, data validation, research ledger, coverage, build, and SEO checks passed. Full test run produced 309 passes and one failed wording assertion; after correcting it, tests/data.test.mjs passed 70/70. The corrected assertion was not rerun in the full suite.",
+    "build": "passed: 584 pages for 41 products",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex"
+  },
+  "delivery": "Local batch complete. No push, pull request, merge, publication, or production action."
+}

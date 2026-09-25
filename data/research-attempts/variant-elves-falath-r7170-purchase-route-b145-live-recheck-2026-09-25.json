@@ -1,0 +1,52 @@
+{
+  "id": "variant-elves-falath-r7170-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "elves-falath-r7170"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-elves-falath-r7170-purchase-route-2026-08-17",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No eligible exact mainland route surfaced in the one authorized query; existing South Africa and Australia routes do not establish mainland availability.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "ELVES Falath Pro Disc R7170 mainland China current complete-bike seller order route",
+          "route": "One distinct B145 exact-model web search; no new exact-model page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor query history was audited and this query was distinct. No new eligible exact mainland seller route surfaced; existing regional routes remain separate."
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor query history was audited and this query was distinct. No new eligible exact mainland seller route surfaced; existing regional routes remain separate.",
+  "campaign_extension": {
+    "id": "b145-elves-falath-r7170-purchase-route",
+    "extends_attempt_id": "variant-elves-falath-r7170-purchase-route-2026-08-17",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

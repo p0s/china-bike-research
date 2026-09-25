@@ -1,0 +1,144 @@
+{
+  "batch_id": "gap-fill-batch-16-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-16-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 12
+  },
+  "scope_correction": "The scope erratum restores the Giant Propel frame target already counted by the frozen model list and 12-field total; it does not add work beyond the pre-research scope.",
+  "new_images_added": 0,
+  "validation": {
+    "research_check": "Passed: 1,461 atomic fields, 15,448 public-post attempts and 35,469 web attempts.",
+    "coverage_accept": "Passed: 212 images and 277 catalog targets.",
+    "privacy": "Passed after removing the absolute local path from the checkpoint.",
+    "validate": "Passed: 41 brands, 38 platforms, 41 variants, 71 prices, 1,000 sources and 236 candidates.",
+    "coverage_check": "Passed: 212 images, 71 price observations, 1,000 sources and 236 candidates.",
+    "tests": "Passed 307/307 on the host path after the normal sandbox denied localhost binding for preview-server tests.",
+    "build": "Passed: 584 pages for 41 products.",
+    "seo_check": "Passed: 584 pages; 456 indexable and 128 noindex.",
+    "full_gate": "The wrapped check was attempted but stopped at privacy when the checkpoint contained an absolute local path. After correcting it, each gate component passed individually. The normal sandbox then denied the shared developer-cache lock, so no end-to-end npm run check success is claimed."
+  },
+  "results": [
+    {
+      "record_id": "giant-propel-gen4-community-lead",
+      "field": "frame",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-giant-propel-gen4-community-lead-frame-2026-08-17",
+      "source_ids": ["giant-propel-advanced-sl1-mainland-current-2026-09-23"],
+      "sources_checked": ["https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"],
+      "note": "The exact mainland Advanced SL 1 page confirms an Advanced SL-grade composite frame and fork for the fourth-generation trim.",
+      "next_trigger": "Reopen if the mainland page changes generation or the named SL 1 trim no longer maps to the candidate."
+    },
+    {
+      "record_id": "hi-light-g7-2",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-hi-light-g7-2-frame-weight-2026-08-27",
+      "source_ids": ["hi-light-g7-2-villain-retailer-2026-08-27"],
+      "sources_checked": ["https://villain.shop/products/hi-light-g7-2-titanium-frameset", "https://cn.tibicycle.com/BICYCLES_detail_1/119.html"],
+      "note": "A retailer lists 1,850 g for a size-M frame and 491 g for the fork separately. The current official page returned 403; independent or official weight confirmation remains absent.",
+      "next_trigger": "A manufacturer weight statement or independently weighed exact G7.2 frame with size and hardware basis."
+    },
+    {
+      "record_id": "hi-light-g7-2-grx-gr1600",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-hi-light-g7-2-grx-gr1600-complete-weight-2026-08-27",
+      "source_ids": ["hi-light-g7-2-taobao-selected-options-2026-08-27"],
+      "sources_checked": ["https://item.taobao.com/item.htm?id=665657868481", "https://cn.tibicycle.com/BICYCLES_detail_1/176.html"],
+      "note": "Selected option 7 advertises approximately 8.0 kg for the complete build. Size, pedals and method are unstated, and the manufacturer listing has a blank weight field; this remains a seller claim.",
+      "next_trigger": "An exact-build independent measurement with size, pedals and method, or a manufacturer specification."
+    },
+    {
+      "record_id": "ican-graro",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-ican-graro-frame-weight-2026-08-27",
+      "source_ids": ["ican-graro-official-current-2026-09-23"],
+      "sources_checked": ["https://icanwheels.com/products/graro"],
+      "note": "The manufacturer lists finish-specific painted examples: 1,073±20 g and 1,095±20 g at size 52, and 1,130±20 g at size 54. The fork is separate. The catalog retains separate values instead of an average.",
+      "next_trigger": "Reopen only for a changed exact finish, size, or manufacturer weight table."
+    },
+    {
+      "record_id": "incolor-ssr",
+      "field": "purchase-route",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-incolor-ssr-purchase-route-2026-08-17",
+      "source_ids": ["incolor-ssr-product-current-2026-09-23"],
+      "sources_checked": ["https://www.incolor.vip/ssr", "https://www.incolor.vip/services"],
+      "note": "The exact SSR product page links to INCOLOR's official Tmall store. Exact listing stock, size, checkout total and transaction-specific warranty remain unknown.",
+      "next_trigger": "An exact SSR official-store listing showing a current selectable option and its warranty/checkout terms."
+    },
+    {
+      "record_id": "irefox-profound-400",
+      "field": "drivetrain",
+      "status": "integrated-source-correction",
+      "attempt_record_id": "candidate-irefox-profound-400-drivetrain-2026-08-28",
+      "source_ids": ["irefox-profound-400-biketo-review-current-2026-09-23"],
+      "sources_checked": ["https://www.biketo.com/product/52110.html?all=1", "https://irefox.net/bikes/175_1.html"],
+      "note": "The 2023 review sample uses R7000 mechanical 2×11, a 50/34T crank and a SunRace 34T cog. It does not state the cassette small cog or full range, correcting the unsupported prior 11–34T precision; this sample is not generalized to all seller builds.",
+      "next_trigger": "An exact-build manufacturer specification or parts evidence that shows both cassette sprocket endpoints."
+    },
+    {
+      "record_id": "laget-discovery-slr",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-laget-discovery-slr-frame-weight-2026-08-27",
+      "source_ids": ["laget-discovery-slr-official-current-2026-09-23"],
+      "sources_checked": ["https://lagetbike.com/productinfo/3301187.html"],
+      "note": "The exact official page lists 1.55 kg for size S; inclusion of hardware is not stated.",
+      "next_trigger": "Manufacturer clarification or reliable size-S frameset measurement with hardware basis."
+    },
+    {
+      "record_id": "merida-scultura-endurance-4000-community-lead",
+      "field": "price",
+      "status": "unresolved",
+      "attempt_record_id": "candidate-merida-scultura-endurance-4000-community-lead-price-2026-08-17",
+      "source_ids": ["merida-scultura-endurance-4000-current-2026-09-23", "merida-scultura-endurance-4000-china-2026-08-17"],
+      "sources_checked": ["https://www.merida.cn/index/bikefinder/detail/id/70/color/%E5%B9%B3%E9%95%9C%E4%B8%80%E7%81%B0%E9%93%B6.html"],
+      "note": "The current page identifies the 25′ R7100 12-speed product, while the community lead is an older R7000 build. The retained CNY 14,800 official reference belongs to the 25′ product and is not transferred to the older build; its exact price remains unknown.",
+      "next_trigger": "A dated official or authorized-dealer offer mapped to the older R7000 generation/build."
+    },
+    {
+      "record_id": "missing-china-price-canyon-grail",
+      "field": "purchase-route",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-missing-china-price-canyon-grail-purchase-route-2026-08-17",
+      "source_ids": ["canyon-grail-cf7-china-current-2026-09-23"],
+      "sources_checked": ["https://www.canyon.com.cn/zh-cn/%E7%A0%BE%E7%9F%B3-%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD/grail/cf/grail-cf-7/4149.html"],
+      "note": "The official member-only China page provides a size selector and order flow. It currently shows CNY 13,700 plus CNY 749 estimated delivery/packaging, excluding VAT/customs; no order was placed and size stock/final landed cost remain unresolved.",
+      "next_trigger": "Selected-size availability and a live landed checkout; handle price reconciliation in a separately scoped price field."
+    },
+    {
+      "record_id": "missing-china-price-merida-silex",
+      "field": "purchase-route",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-missing-china-price-merida-silex-purchase-route-2026-08-17",
+      "source_ids": ["merida-china-sales-channels-current-2026-09-23"],
+      "sources_checked": ["https://www.merida.cn/zh-tw/p/wangluo/wangluoxiaoshou"],
+      "note": "The current-served Merida declaration authorizes its online mall, JD flagship and Douyin flagship channels and excludes warranty for unauthorized online stores. It does not establish a live SILEX 7000 listing or inventory.",
+      "next_trigger": "A current official SILEX 7000 item page or dealer result with exact size and order/stock state."
+    },
+    {
+      "record_id": "pardus-super-sport-gen2",
+      "field": "bottom-bracket",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "platform-pardus-super-sport-gen2-bottom-bracket-2026-08-27",
+      "source_ids": ["pardus-super-sport-gen2-official-2026-08-27"],
+      "sources_checked": ["https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446"],
+      "note": "The accepted exact official platform source specifies BSA 68 mm. The same source also lists UDH; the current direct page was inaccessible on recheck.",
+      "next_trigger": "Reopen if PARDUS changes the frame generation or bottom-bracket standard."
+    },
+    {
+      "record_id": "pardus-super-sport-gen2-egr",
+      "field": "bom",
+      "status": "integrated-partial-bom",
+      "attempt_record_id": "variant-pardus-super-sport-gen2-egr-bom-2026-08-17",
+      "source_ids": ["pardus-super-sport-egr-888bike-2026-08-28"],
+      "sources_checked": ["https://www.888bike.net/en/product/11484"],
+      "note": "The exact retailer SKU supports the existing partial BOM: L-TWOO eGR 1×12, 50T, 11–42T, 35 mm aluminum wheels, hydraulic disc brakes, integrated carbon cockpit and up to 700×40C. The current listing could not be fetched today, and unlisted components remain unknown.",
+      "next_trigger": "A current exact SKU specification or invoice-level build sheet for unlisted parts."
+    }
+  ]
+}

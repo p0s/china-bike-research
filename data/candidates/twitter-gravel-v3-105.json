@@ -21,7 +21,8 @@
     "observation_count": 1
   },
   "source_ids": [
-    "twitter-gravel-v3-official-2026-08-17"
+    "twitter-gravel-v3-official-2026-08-17",
+    "twitter-gravel-v3-t900-clearance-official-2026-09-25"
   ],
   "facts": {
     "drivetrain": "Official option: Shimano 105 R7120 2×12; storefront lists other builds",
@@ -29,11 +30,13 @@
     "bottom_bracket": "T47×24",
     "tires": "700×40C tanwall fitted; manufacturer maximum unresolved",
     "complete_weight_basis": "Current exact manufacturer range of 9.7-9.9 kg across selectable builds; exact Shimano 105 wheel selection, size, pedals, accessories and weighing protocol unpublished",
-    "tire_clearance_status": "Manufacturer maximum not found after 50 registered source areas; fitted 40C tire is not treated as clearance",
+    "tire_clearance_status": "The official T900 frameset page states a 700×40C maximum for the Gravel V3 Disc platform; the selected 105 R7120 complete-bike option is documented on a separate page, without a trim-specific clearance linkage.",
     "frame_material": "High-modulus carbon frame and carbon fork with thru-axles and full internal routing; exact fiber grade and lay-up unpublished",
-    "frame_stiffness_status": "No numeric or sufficiently specific independent exact-build frame-stiffness result found after 50 registered source areas"
+    "frame_stiffness_status": "No numeric or sufficiently specific independent exact-build frame-stiffness result found after 50 registered source areas",
+    "tire_clearance_mm": 40,
+    "tire_clearance_basis": "Official maximum for the Gravel V3 Disc T900 frame is 700×40C. The page is a standalone frameset listing; the separately recorded complete-bike page offers Shimano 105 R7120 but does not explicitly map the maximum to that trim, so this is a platform/frame limit rather than a trim-specific wheel-fit claim."
   },
-  "source_note": "The current exact configurable page lists the Shimano 105 R7120 option, high-modulus carbon frame/fork and a 9.7-9.9 kg build range. Fitted 700x40C tires do not establish a manufacturer maximum, and no frame-stiffness result was found after 50 areas.",
+  "source_note": "The current official configurable Gravel V3 page lists a Shimano 105 R7120 option and fitted 700×40C tires. A separately recorded official Gravel V3 Disc T900 frameset page now states a 700×40C maximum; this is attributed to the frame platform, not to a specific trim-level wheel setup. The price card remains unmapped to a complete build, and no frame-stiffness result qualifies.",
   "source_refs": "IMG_6860.png#L1",
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-25"
 }

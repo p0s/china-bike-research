@@ -482,5 +482,11 @@
     "titanium-laget-pioneer-one-official"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. The exact current LAGET manufacturer page publishes a 700x32C maximum."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-tsb-titan-super-bond-pioneer-one-batch-033-50-area-sweep-2026-09-01.json. The exact LAGET manufacturer page publishes a 700x32C maximum.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["titanium-laget-pioneer-one-official"],
+    "note": "Retain 700x32C as the LAGET manufacturer-stated maximum for PIONEER ONE; no larger or alternate-frame value is inferred."
+  }
 }

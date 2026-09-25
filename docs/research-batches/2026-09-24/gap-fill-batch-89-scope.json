@@ -1,0 +1,42 @@
+{
+  "batch": 89,
+  "date": "2026-09-24",
+  "inventory_before": {
+    "as_of": "2026-09-24",
+    "atomic_gaps": 705,
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 203,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "exact_models": 2,
+    "atomic_gaps": 10,
+    "rationale": "Two exact SAVA candidate records have source-backed manufacturer findings already recorded but lack source-to-claim ledger resolutions and structured weight, clearance, and stiffness fields. A current exact-model official-page check can confirm those specifications before normalizing the candidate records.",
+    "targets": [
+      {"record_type":"candidate","record_id":"sava-a7l-2026","model":"SAVA A7L R08 24-speed (2026)","gap":"complete-weight","attempt_id":"candidate-sava-a7l-2026-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-a7l-2026","model":"SAVA A7L R08 24-speed (2026)","gap":"drivetrain","attempt_id":"candidate-sava-a7l-2026-drivetrain-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-a7l-2026","model":"SAVA A7L R08 24-speed (2026)","gap":"frame-material","attempt_id":"candidate-sava-a7l-2026-frame-material-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-a7l-2026","model":"SAVA A7L R08 24-speed (2026)","gap":"frame-stiffness","attempt_id":"candidate-sava-a7l-2026-frame-stiffness-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-a7l-2026","model":"SAVA A7L R08 24-speed (2026)","gap":"tire-clearance","attempt_id":"candidate-sava-a7l-2026-tire-clearance-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-gelaro-s4","model":"SAVA Gelaro S4 R21-GRX400-20S","gap":"complete-weight","attempt_id":"candidate-sava-gelaro-s4-complete-weight-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-gelaro-s4","model":"SAVA Gelaro S4 R21-GRX400-20S","gap":"drivetrain","attempt_id":"candidate-sava-gelaro-s4-drivetrain-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-gelaro-s4","model":"SAVA Gelaro S4 R21-GRX400-20S","gap":"frame-material","attempt_id":"candidate-sava-gelaro-s4-frame-material-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-gelaro-s4","model":"SAVA Gelaro S4 R21-GRX400-20S","gap":"frame-stiffness","attempt_id":"candidate-sava-gelaro-s4-frame-stiffness-2026-08-30"},
+      {"record_type":"candidate","record_id":"sava-gelaro-s4","model":"SAVA Gelaro S4 R21-GRX400-20S","gap":"tire-clearance","attempt_id":"candidate-sava-gelaro-s4-tire-clearance-2026-08-30"}
+    ]
+  },
+  "research_route": {
+    "action": "Read-only local audit of the two exact candidate records and ten found attempts, plus one current official manufacturer product page per exact model. Check whether the live page still identifies the exact R08 and R21 builds and supports the weight, drivetrain, frame material, qualitative stiffness, and maximum tire sizes.",
+    "integration_rule": "If current official evidence still supports the exact claim, add its dated source record, structured numeric complete_weight_g and tire_clearance_mm with caveated bases where applicable, and recognized stiffness_evidence while retaining protected legacy frame_stiffness. Add source-reuse resolutions to the matching ten attempts. If a claim is changed, conflicted, inaccessible, or no longer exact, preserve the unknown and document the reason; do not infer across SAVA trims.",
+    "boundaries": [
+      "No more than these two exact models and ten fields.",
+      "Do not change prices, image records, route, warranty, recommendation, or publication status.",
+      "Do not treat approximate size-variable weights as controlled measurements.",
+      "Stop at the first decisive exact official product page for each model; no seller contact, login, challenge bypass, or writes."
+    ]
+  }
+}

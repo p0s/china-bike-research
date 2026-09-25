@@ -37,8 +37,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "bianchi-oltre-race-dealer-2026-08-17"
+    "bianchi-oltre-race-dealer-2026-08-17",
+    "bianchi-oltre-race-hungary-recheck-2026-09-23",
+    "bianchi-oltre-race-manufacturer-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "bianchi-oltre-race-dealer-2026-08-17",
+      "bianchi-oltre-race-hungary-recheck-2026-09-23",
+      "bianchi-oltre-race-manufacturer-recheck-2026-09-23"
+    ],
+    "note": "Dated 2025 YTB8D listing specifies a non-integrated Velomann alloy Aero Compact bar/stem. Current Hungary page identifies 2026 YTB8DF and is not proof of this target trim; manufacturer page returned invalid-URL. Reopen with exact YTB8D listing/manual."
+  }
 }

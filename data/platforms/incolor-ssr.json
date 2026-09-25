@@ -13,6 +13,12 @@
     "fork_material": "carbon",
     "construction": "Dual-steerer 34 mm head-tube structure, integrated seat mast, side-positioned T1100 ply overlaps and three-times-higher 80T pitch-carbon use claimed by the manufacturer",
     "stiffness_evidence": "The manufacturer identifies the dual-steerer load path, side-positioned T1100 ply overlaps, increased 80T pitch-carbon use and retained deep-section bottom bracket as stiffness measures; no numeric deflection protocol or independent comparative stiffness result is published.",
+    "warranty_claim": {
+      "duration_years": null,
+      "duration_text": "Lifetime from receipt for eligible carbon frames and forks",
+      "basis": "Current official INCOLOR service terms",
+      "note": "For eligible original purchasers and normal-use quality/design failures; collision, misuse, poor assembly, natural disasters and wear are excluded. Mainland freight for covered issues is paid by INCOLOR. The platform warranty does not cover non-INCOLOR build components."
+    },
     "bottom_bracket": "Asymmetric T47, 76.75 mm shell",
     "cable_routing": "fully-internal-electronic-only",
     "claimed_frame_weight_g": 750,
@@ -155,16 +161,22 @@
     "eligibility": "pass",
     "note": "The exact-model retailer states a 36C maximum with a 1× drivetrain and 32C with 2×; actual measured width still depends on rim and tire.",
     "published_max_mm": 36,
-    "drivetrain_limits_mm": { "single": 36, "double": 32 }
+    "drivetrain_limits_mm": {
+      "single": 36,
+      "double": 32
+    }
   },
   "mounts": [],
   "internal_storage": false,
   "china_availability": "mainland-official-store",
   "source_ids": [
     "incolor-ssr-official-2026-08-29",
+    "incolor-ssr-product-current-2026-09-23",
     "incolor-ssr-panda-podium-2026-08-17",
     "incolor-services-official-2026-08-29",
-    "incolor-ssr-taobao-2026-08-29"
+    "incolor-ssr-taobao-2026-08-29",
+    "incolor-ssr-warranty-current-2026-09-23",
+    "incolor-ssr-current-price-page-recheck-2026-09-25"
   ],
-  "last_reviewed": "2026-08-29"
+  "last_reviewed": "2026-09-25"
 }

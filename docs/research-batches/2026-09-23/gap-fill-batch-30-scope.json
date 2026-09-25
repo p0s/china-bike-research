@@ -1,0 +1,174 @@
+{
+  "batch_id": "gap-fill-batch-30-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 68,
+      "temporarily-exhausted": 14
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 459,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "queue_filter_counts": {
+      "source_reuse": 19,
+      "known_duplicate": 2,
+      "completed_50_area_field": 200,
+      "attempts_50_or_more": 49
+    },
+    "eligible_unswept_fields": 189
+  },
+  "selection_basis": "First 25 atomic evidence-found fields in fresh queue order after filtering existing source-reuse resolutions, the known java-aluminum-24s duplicate, every field listed by a completed >=50-area campaign, and any attempt with >=50 recorded channel attempts; cap at 10 exact target records. Do not repeat completed area sweeps.",
+  "exact_model_count": 5,
+  "atomic_field_count": 25,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "quick-pro-gr-one-grx-di2",
+    "quick-pro-tr-one",
+    "quick-pro-tt-one",
+    "quick-pro-xr-one-frameset-aelous-gravel",
+    "sava-a4"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "exact_identity": "Quick Pro GR:ONE GRX Di2 1×12",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-tr-one",
+      "exact_identity": "Quick Pro TR:ONE",
+      "fields": [
+        "bom",
+        "bottom-bracket",
+        "frame",
+        "geometry",
+        "identity",
+        "image",
+        "price",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-tr-one-bom-2026-08-17",
+        "candidate-quick-pro-tr-one-bottom-bracket-2026-08-17",
+        "candidate-quick-pro-tr-one-frame-2026-08-17",
+        "candidate-quick-pro-tr-one-geometry-2026-08-17",
+        "candidate-quick-pro-tr-one-identity-2026-08-17",
+        "candidate-quick-pro-tr-one-image-2026-08-17",
+        "candidate-quick-pro-tr-one-price-2026-08-17",
+        "candidate-quick-pro-tr-one-purchase-route-2026-08-17",
+        "candidate-quick-pro-tr-one-tire-clearance-2026-08-17",
+        "candidate-quick-pro-tr-one-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-tt-one",
+      "exact_identity": "Quick Pro TT ONE",
+      "fields": [
+        "bottom-bracket",
+        "complete-or-frame-weight",
+        "frame",
+        "geometry",
+        "identity",
+        "image",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-tt-one-bottom-bracket-2026-08-17",
+        "candidate-quick-pro-tt-one-complete-or-frame-weight-2026-08-17",
+        "candidate-quick-pro-tt-one-frame-2026-08-17",
+        "candidate-quick-pro-tt-one-geometry-2026-08-17",
+        "candidate-quick-pro-tt-one-identity-2026-08-17",
+        "candidate-quick-pro-tt-one-image-2026-08-17",
+        "candidate-quick-pro-tt-one-purchase-route-2026-08-17",
+        "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
+        "candidate-quick-pro-tt-one-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-pro-xr-one-frameset-aelous-gravel",
+      "exact_identity": "Quick Pro XR:ONE frameset with Aelous Gravel cockpit",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "sava-a4",
+      "exact_identity": "SAVA A4",
+      "fields": [
+        "bom",
+        "bottom-bracket",
+        "frame",
+        "geometry"
+      ],
+      "attempt_ids": [
+        "candidate-sava-a4-bom-2026-08-17",
+        "candidate-sava-a4-bottom-bracket-2026-08-17",
+        "candidate-sava-a4-frame-2026-08-17",
+        "candidate-sava-a4-geometry-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research only the frozen fields, sequentially, one exact target and one source at a time; stop at decisive exact-model evidence.",
+    "Do not repeat completed 50-area campaigns, any field with resolution.kind=source-reuse, or any excluded queue row. Reuse accepted exact-model evidence when adequate.",
+    "Distinguish platform, frameset, complete build, selected SKU, size, market, seller card, price/checkout, stock, and measurement basis; do not transfer sibling or regional facts.",
+    "Preserve unknown, conflicted, inaccessible, and rights-limited states with explicit reason and reopen trigger; never infer exact values or treat missing information as negative evidence.",
+    "For image fields, do not download or rehost third-party assets unless reusable rights are documented; retain remote sources, exactness, credit, alt text, and fallback metadata.",
+    "Luna is evidence-only: no repository edits, seller contact, XHS use, recursive delegation, or out-of-scope research. Root integrates as sole writer.",
+    "Return each field with source URL or retained source ID, source class/publisher, actual access date, exact configuration match, supported claim, limitation, disposition, and a concrete reopen trigger."
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "batch_id": "gap-fill-batch-13-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-13-scope.json",
+  "scope_count": {
+    "exact_models": 8,
+    "atomic_fields": 25
+  },
+  "completed_at": "2026-09-23",
+  "results": [
+    {
+      "record_id": "camp-ace-qed",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-ace-qed-identity-source-2026-08-29",
+      "source_ids": ["camp-ace-qed-official-2026-08-08"],
+      "note": "The exact manufacturer page identifies ACE QED and its CNY 8,999 official route; maximum tire clearance and detailed lay-up remain unpublished."
+    },
+    {
+      "record_id": "camp-gx700",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-complete-weight-2026-08-29",
+      "source_ids": ["camp-gx700-official-2026-08-28"],
+      "note": "The candidate retains CAMP's approximately 10.2 kg small-bike claim excluding pedals and small accessories; it is not an all-sizes exact weight."
+    },
+    {
+      "record_id": "camp-gx700",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-drivetrain-2026-08-29",
+      "source_ids": ["camp-gx700-official-2026-08-28"],
+      "note": "The exact manufacturer page supports the recorded Shimano GRX mechanical 1×12 parts and configuration."
+    },
+    {
+      "record_id": "camp-gx700",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-frame-material-2026-08-29",
+      "source_ids": ["camp-gx700-official-2026-08-28"],
+      "note": "The exact page supports the recorded Toray T800 frame/fork and T700+T800 cockpit/seatpost; lay-up remains unpublished."
+    },
+    {
+      "record_id": "camp-gx700",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-identity-source-2026-08-29",
+      "source_ids": ["camp-gx700-official-2026-08-28", "camp-gx700-tmall-2026-08-28"],
+      "note": "Manufacturer and official Tmall records identify the standard 2026 GRX 1×12 GX700; final color/size checkout remains unverified."
+    },
+    {
+      "record_id": "camp-gx700-travel",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-travel-frame-material-2026-08-29",
+      "source_ids": ["taobao-snapshot-2026-08-08", "camp-gx700-official-2026-08-28"],
+      "note": "The dated listing identifies GX700 and the manufacturer page supports only its base-family T800 frame/fork; travel bundle contents and trim are unproven."
+    },
+    {
+      "record_id": "camp-gx700-travel",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-camp-gx700-travel-identity-source-2026-08-29",
+      "source_ids": ["taobao-snapshot-2026-08-08", "camp-gx700-official-2026-08-28"],
+      "note": "Sources establish a dated GX700 listing and underlying family, not a separate factory travel SKU or exact model-year bridge."
+    },
+    {
+      "record_id": "carbonda-cfr707",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-carbonda-cfr707-frame-material-2026-08-30",
+      "source_ids": ["carbonda-cfr707-official-2026-08-17"],
+      "note": "The candidate records the exact T700+T800 EPS monolith frame and full-Toray-carbon EPS fork."
+    },
+    {
+      "record_id": "carbonda-cfr707",
+      "field": "frame-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-carbonda-cfr707-frame-weight-2026-08-30",
+      "source_ids": ["carbonda-cfr707-official-2026-08-17"],
+      "note": "The exact size-M 1,300 ±50 g frame claim includes alloy parts; paint/finish basis and other sizes remain unstated."
+    },
+    {
+      "record_id": "carbonda-cfr707",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-carbonda-cfr707-tire-clearance-2026-08-30",
+      "source_ids": ["carbonda-cfr707-official-2026-08-17"],
+      "note": "The manufacturer publishes 700C × 50 mm maximum clearance and separately supports 650B × 2.1 in."
+    },
+    {
+      "record_id": "cervelo-aspero-5-current",
+      "field": "price",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cervelo-aspero-5-current-price-2026-09-01",
+      "source_ids": ["cervelo-aspero5-official-2026-08-29", "ecb-reference-rates-2026-08-31"],
+      "note": "The candidate records the exact US$5,500 current frameset offer and ECB-derived CNY 36,959 reference; mainland checkout is unknown."
+    },
+    {
+      "record_id": "cinelli-pressure",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-drivetrain-2026-08-29",
+      "source_ids": ["cinelli-pressure-jd-2026-08-29"],
+      "note": "The mainland index supports the first-generation 105 Di2 2×12/R7170 and hydraulic-brake option; selected checkout and full BOM remain unpublished."
+    },
+    {
+      "record_id": "cinelli-pressure",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-frame-material-2026-08-29",
+      "source_ids": ["cinelli-pressure-catalog-2023-2026-08-29"],
+      "note": "The official first-generation catalog supports high-modulus T800 carbon monocoque frame and fork with proprietary lay-up; Pressure 2 is excluded."
+    },
+    {
+      "record_id": "cinelli-pressure",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-frame-stiffness-2026-08-29",
+      "source_ids": ["cinelli-pressure-roadcc-2026-08-29"],
+      "note": "The exact-generation review provides a qualitative stiff-frame/ride-quality assessment, not a numeric test; its Ultegra build details are not transferred."
+    },
+    {
+      "record_id": "cinelli-pressure",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-identity-source-2026-08-29",
+      "source_ids": ["cinelli-pressure-catalog-2023-2026-08-29", "cinelli-pressure-jd-2026-08-29"],
+      "note": "Official catalog and current mainland index establish first-generation lineage and a partial 105 Di2/3T-wheel build; exact selected-SKU checkout is unknown."
+    },
+    {
+      "record_id": "cinelli-pressure",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-tire-clearance-2026-08-29",
+      "source_ids": ["cinelli-pressure-catalog-2023-2026-08-29"],
+      "note": "The official first-generation catalog's 700×30C maximum is recorded; later Pressure 2 figures are excluded."
+    },
+    {
+      "record_id": "cinelli-pressure-adr",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-adr-frame-material-2026-08-29",
+      "source_ids": ["cinelli-pressure-adr-official-2026-08-29"],
+      "note": "The exact Pressure ADR carbon-monocoque frame and Columbus carbon-monocoque fork are recorded; no grade is published and manufacturer weight figures conflict internally."
+    },
+    {
+      "record_id": "cinelli-pressure-adr",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-adr-frame-stiffness-2026-08-29",
+      "source_ids": ["cinelli-pressure-adr-bikeradar-2026-08-29"],
+      "note": "BikeRadar's exact-ADR firm-but-forgiving, responsive handling description is qualitative, not a numeric stiffness measurement."
+    },
+    {
+      "record_id": "cinelli-pressure-adr",
+      "field": "identity-source",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-adr-identity-source-2026-08-29",
+      "source_ids": ["cinelli-pressure-adr-official-2026-08-29"],
+      "note": "The current manufacturer page identifies the exact Pressure ADR model; the mainland card does not select its complete-bike trim."
+    },
+    {
+      "record_id": "cinelli-pressure-adr",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-cinelli-pressure-adr-tire-clearance-2026-08-29",
+      "source_ids": ["cinelli-pressure-adr-official-2026-08-29"],
+      "note": "The exact current Pressure ADR manufacturer page's 700×30 mm maximum is recorded."
+    },
+    {
+      "record_id": "colnago-y1rs",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-colnago-y1rs-complete-weight-2026-08-30",
+      "source_ids": ["colnago-y1rs-china-launch-2026-08-30"],
+      "note": "The CNY 59,800 mainland package is a frame kit, so a complete-bike weight is non-applicable; its 965 g unpainted frame and 450 g fork are separately recorded."
+    },
+    {
+      "record_id": "colnago-y1rs",
+      "field": "drivetrain",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-colnago-y1rs-drivetrain-2026-08-30",
+      "source_ids": ["colnago-y1rs-china-launch-2026-08-30", "colnago-y1rs-current-specs-2026-08-30"],
+      "note": "The mainland product is a Y1Rs frame kit without a drivetrain; Colnago's separate complete-bike builds are not assigned to it."
+    },
+    {
+      "record_id": "colnago-y1rs",
+      "field": "frame-material",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-colnago-y1rs-frame-material-2026-08-30",
+      "source_ids": ["colnago-y1rs-layup-faq-2026-08-30"],
+      "note": "The candidate records the retail Y1Rs model-specific area-tuned carbon lay-up; fiber grades, proportions, and ply schedule are unpublished."
+    },
+    {
+      "record_id": "colnago-y1rs",
+      "field": "frame-stiffness",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-colnago-y1rs-frame-stiffness-2026-08-30",
+      "source_ids": ["colnago-y1rs-official-2026-08-08", "colnago-y1rs-layup-faq-2026-08-30"],
+      "note": "The candidate records Colnago's relative 3.5% stiffer-than-previous-model claim and construction context; there is no public test protocol or independent measurement."
+    },
+    {
+      "record_id": "colnago-y1rs",
+      "field": "tire-clearance",
+      "status": "integrated-source-reuse",
+      "attempt_record_id": "candidate-colnago-y1rs-tire-clearance-2026-08-30",
+      "source_ids": ["colnago-y1rs-current-specs-2026-08-30"],
+      "note": "The current exact-model manufacturer specification's nominal 32 mm maximum is already recorded."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "platform_variant_price_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-camp-ace-qed-identity-source-2026-08-29",
+      "candidate-camp-gx700-complete-weight-2026-08-29",
+      "candidate-camp-gx700-drivetrain-2026-08-29",
+      "candidate-camp-gx700-frame-material-2026-08-29",
+      "candidate-camp-gx700-identity-source-2026-08-29",
+      "candidate-camp-gx700-travel-frame-material-2026-08-29",
+      "candidate-camp-gx700-travel-identity-source-2026-08-29",
+      "candidate-carbonda-cfr707-frame-material-2026-08-30",
+      "candidate-carbonda-cfr707-frame-weight-2026-08-30",
+      "candidate-carbonda-cfr707-tire-clearance-2026-08-30",
+      "candidate-cervelo-aspero-5-current-price-2026-09-01",
+      "candidate-cinelli-pressure-drivetrain-2026-08-29",
+      "candidate-cinelli-pressure-frame-material-2026-08-29",
+      "candidate-cinelli-pressure-frame-stiffness-2026-08-29",
+      "candidate-cinelli-pressure-identity-source-2026-08-29",
+      "candidate-cinelli-pressure-tire-clearance-2026-08-29",
+      "candidate-cinelli-pressure-adr-frame-material-2026-08-29",
+      "candidate-cinelli-pressure-adr-frame-stiffness-2026-08-29",
+      "candidate-cinelli-pressure-adr-identity-source-2026-08-29",
+      "candidate-cinelli-pressure-adr-tire-clearance-2026-08-29",
+      "candidate-colnago-y1rs-complete-weight-2026-08-30",
+      "candidate-colnago-y1rs-drivetrain-2026-08-30",
+      "candidate-colnago-y1rs-frame-material-2026-08-30",
+      "candidate-colnago-y1rs-frame-stiffness-2026-08-30",
+      "candidate-colnago-y1rs-tire-clearance-2026-08-30"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 764,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "images": 212,
+    "catalog_targets": 277,
+    "note": "The coarse gap counts are unchanged; 25 additional exact evidence fields already integrated in the catalog now carry dated source-reuse resolutions and have left the evidence-found queue."
+  },
+  "validation": {
+    "research_check": "passed; 1461 atomic fields, 15448 public-post and 35469 web attempts",
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via developer-storage-cache and codex-pnpm-check; privacy, data validation (236 candidates), research ledger, coverage, 307 tests, 584-page build, and SEO audit passed (456 indexable / 128 noindex)",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed before the full gate; rerun after final batch-record edits"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

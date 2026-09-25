@@ -477,8 +477,18 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "trek-madone-sl5-gen8-mens-health-review-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-036-50-area-sweep-2026-09-01.json. The exact product and Gen 8 platform pages publish construction, aerodynamics and IsoFlow claims but no numeric frame-stiffness result or sufficiently specific independent assessment for the SL 5; SLR evidence was not transferred."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-trek-madone-gen-8-batch-036-50-area-sweep-2026-09-01.json. The exact product and Gen 8 platform pages publish construction, aerodynamics and IsoFlow claims but no numeric frame-stiffness result or sufficiently specific independent assessment for the SL 5; SLR evidence was not transferred.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "trek-madone-sl5-gen8-mens-health-review-2026-09-22"
+    ],
+    "note": "New exact SL5Gen8 editorial ride evidence qualifies as meaningful qualitative evidence under SPEC. Preserve original50-area attempts. Whole-bike subjectivity, publisher affiliate disclosure and absence of controlled numeric measurement remain explicit."
+  }
 }

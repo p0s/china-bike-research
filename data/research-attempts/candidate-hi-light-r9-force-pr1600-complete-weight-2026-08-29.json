@@ -485,8 +485,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "titanium-hi-light-r9-force-pr1600-official"
+    "titanium-hi-light-r9-force-pr1600-official",
+    "hi-light-r9-force-pr1600-indexed-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r9-force-pr1600-50-area-sweep-2026-08-29.json. The exact manufacturer page lists 8.3 kg for the complete R9 Force PR1600; size, pedals and measurement method are not stated."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hi-light-r9-force-pr1600-50-area-sweep-2026-08-29.json. The exact manufacturer page lists 8.3 kg for the complete R9 Force PR1600; size, pedals and measurement method are not stated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "hi-light-r9-force-pr1600-indexed-2026-09-23"
+    ],
+    "note": "The exact manufacturer index still reports 8.3 kg, consistent with the candidate. The indexed crawl is about two months old, direct opening returned 403, and size, included pedals, and method are unstated; keep the manufacturer claim, not an independently measured weight."
+  }
 }

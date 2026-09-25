@@ -1,0 +1,883 @@
+{
+  "batch": 157,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "source": "npm run --silent data:gaps and npm run --silent research:queue",
+    "gap_entries_before": 667,
+    "records_before": 263,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 2,
+      "price-missing": 26,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 73
+    },
+    "research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "research_queue_counts": {
+      "ready": 74,
+      "evidence-found": 8,
+      "deferred": 43,
+      "blocked": 501,
+      "conflicted": 4
+    },
+    "scope_counts": {
+      "published_variants": 41,
+      "candidates": 222
+    }
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "pardus-super-sport-gen2-egr",
+        "name": "Super Sport Gen2 eGR",
+        "record_types": [
+          "variant"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "bottom-bracket",
+            "attempt_id": "variant-pardus-super-sport-gen2-egr-bottom-bracket-2026-08-17",
+            "record_type": "variant",
+            "record_id": "pardus-super-sport-gen2-egr",
+            "field": "bottom-bracket",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "geometry",
+            "attempt_id": "variant-pardus-super-sport-gen2-egr-geometry-2026-08-17",
+            "record_type": "variant",
+            "record_id": "pardus-super-sport-gen2-egr",
+            "field": "geometry",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "warranty-support",
+            "attempt_id": "variant-pardus-super-sport-gen2-egr-warranty-support-2026-08-17",
+            "record_type": "variant",
+            "record_id": "pardus-super-sport-gen2-egr",
+            "field": "warranty-support",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "pardus-company-official",
+            "title": "PARDUS company and carbon process information",
+            "url": "https://pardusbicycle.com/"
+          },
+          {
+            "id": "pardus-super-sport-egr-888bike-2026-08-17",
+            "title": "PARDUS SUPG2 SPORT 2026 EGR electronic",
+            "url": "https://www.888bike.net/en/product/11484/pardus-supg2-sport-2026-%E0%B9%80%E0%B8%AA%E0%B7%89%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%AD%E0%B8%99-%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-shimano-105-pes-egr"
+          },
+          {
+            "id": "pardus-super-sport-egr-888bike-2026-08-28",
+            "title": "PARDUS SUPG2 SPORT 2026 eGR electronic build",
+            "url": "https://www.888bike.net/en/product/11484"
+          },
+          {
+            "id": "pardus-super-sport-gen2-douyin-2026-08-27",
+            "title": "PARDUS Super Sport Gen2 configuration and eGR review",
+            "url": "https://www.douyin.com/shipin/7336682947082225679"
+          },
+          {
+            "id": "pardus-super-sport-gen2-official-2026-08-27",
+            "title": "PARDUS SUPG2 SPORT 105",
+            "url": "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446"
+          },
+          {
+            "id": "pardus-super-sport-gen2-official-2026-08-28",
+            "title": "PARDUS SUPG2 SPORT current platform",
+            "url": "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446"
+          },
+          {
+            "id": "pardus-super-sport-gen2-official-current-2026-09-23",
+            "title": "PARDUS SUPG2 SPORT—105 current geometry and clearance page",
+            "url": "https://parduscycle.com/Hightxq.aspx?color=20880&id=43719&pz=20879&t=27446"
+          },
+          {
+            "id": "pardus-super-sport-gen2-taobao-2026-08-28",
+            "title": "PARDUS Super Sport Gen2 complete-bike listing",
+            "url": "https://item.taobao.com/item.htm?id=1035008500060"
+          },
+          {
+            "id": "pardus-super-sport-gen2-taobao-page-recheck-2026-09-24",
+            "title": "Taobao PARDUS Super Sport Gen2 item page access recheck",
+            "url": "https://item.taobao.com/item.htm?id=1035008500060"
+          },
+          {
+            "id": "pardus-super-sport-launch",
+            "title": "PARDUS Super Sport Gen2 launch coverage",
+            "url": "https://www.wildto.com/news/58865.html"
+          },
+          {
+            "id": "pardus-super-sport-launch-wildto-2026-08-17",
+            "title": "2026 PARDUS partner-conference Super Sport Gen2 launch coverage",
+            "url": "https://www.wildto.com/news/58865.html"
+          },
+          {
+            "id": "public-pardus-super-sport-gen2-launch-2026-08-28",
+            "title": "PARDUS Super Sport Gen2 eGR launch build",
+            "url": "https://www.xiaohongshu.com/explore/69ba72b0000000001d01a1ae"
+          },
+          {
+            "id": "public-pardus-super-sport-gen2-owner-weight-2026-08-28",
+            "title": "PARDUS Super Sport Gen2 XS frame and fork scale measurements",
+            "url": "https://www.xiaohongshu.com/explore/6a24e51c000000000803ceef"
+          }
+        ]
+      },
+      {
+        "id": "sava-gelaro-s8",
+        "name": "Gelaro S8 GRX820",
+        "record_types": [
+          "platform",
+          "variant"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "bottom-bracket",
+            "attempt_id": "platform-sava-gelaro-s8-bottom-bracket-2026-09-01",
+            "record_type": "platform",
+            "record_id": "sava-gelaro-s8",
+            "field": "bottom-bracket",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          },
+          {
+            "code": "frame-weight",
+            "attempt_id": "variant-sava-gelaro-s8-frame-weight-2026-08-17",
+            "record_type": "variant",
+            "record_id": "sava-gelaro-s8",
+            "field": "frame-weight",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-28",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "sava-2026-carbon-lineup-2026-08-08",
+            "title": "2026 SAVA carbon-fiber bicycle lineup",
+            "url": "https://savadeck-bike.com/sv-pt/collections/2026-sava-carbon-fiber-bikes"
+          },
+          {
+            "id": "sava-bicycle-instructions-manual-2026-09-24",
+            "title": "SAVA Bicycle Instructions user manual",
+            "url": "https://cdn.shopify.com/s/files/1/0385/7176/9995/files/SAVA_Bicycle_Instructions.pdf?v=1729563520"
+          },
+          {
+            "id": "sava-gelaro-s8-global-official-2026-09-01",
+            "title": "SAVA Gelaro S8 GRX820 carbon gravel bike 12S",
+            "url": "https://savadeck-bike.com/collections/t800-carbon-fiber-frame-bikes/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s?variant=47076042899595"
+          },
+          {
+            "id": "sava-gelaro-s8-official-2026-08-17",
+            "title": "SAVA Gelaro S8 GRX820 carbon gravel bike",
+            "url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+          },
+          {
+            "id": "sava-gelaro-s8-official-2026-08-28",
+            "title": "2026 SAVA Gelaro S8 GRX820 carbon gravel bike",
+            "url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+          },
+          {
+            "id": "sava-gelaro-s8-official-recheck-2026-09-23",
+            "title": "SAVA Gelaro S8 GRX820 current manufacturer page recheck",
+            "url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+          },
+          {
+            "id": "sava-gelaro-s8-official-recheck-2026-09-24",
+            "title": "SAVA Gelaro S8 GRX820",
+            "url": "https://savadeck-bike.com/products/sava-gelaro-s8-grx820-carbon-gravel-bike-12s"
+          },
+          {
+            "id": "taobao-snapshot-2026-08-08",
+            "title": "Anonymized Taobao search-card snapshot — 2026-08-08",
+            "url": null
+          }
+        ]
+      },
+      {
+        "id": "tavelo-arden",
+        "name": "Tavelo Arden Race Frameset",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "current-mainland-complete-or-frameset-price",
+            "attempt_id": "candidate-tavelo-arden-current-mainland-complete-or-frameset-price-2026-08-17",
+            "record_type": "candidate",
+            "record_id": "tavelo-arden",
+            "field": "current-mainland-complete-or-frameset-price",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "geometry",
+            "attempt_id": "candidate-tavelo-arden-geometry-2026-08-17",
+            "record_type": "candidate",
+            "record_id": "tavelo-arden",
+            "field": "geometry",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "public-tavelo-arden-owner-2026-08-17",
+            "title": "Tavelo ARDEN Bubble Silver owner post",
+            "url": "https://www.xiaohongshu.com/explore/6a73adc5000000002501460f"
+          },
+          {
+            "id": "tavelo-arden-china-launch-2026-08-17",
+            "title": "Tavelo ARDEN domestic launch",
+            "url": "https://www.cyclingchina.net/site/html/2026/industry_0510/10451.html"
+          },
+          {
+            "id": "tavelo-arden-official-2026-08-17",
+            "title": "Tavelo ARDEN Race frameset",
+            "url": "https://tavelo.cc/products/tavelo-arden-race-frameset"
+          },
+          {
+            "id": "tavelo-arden-race-official-2026-08-29",
+            "title": "Tavelo Arden Race frameset",
+            "url": "https://tavelo.cc/products/tavelo-arden-race-frameset"
+          },
+          {
+            "id": "tavelo-arden-race-official-recheck-2026-09-23",
+            "title": "Tavelo Arden Race frameset current page recheck",
+            "url": "https://tavelo.cc/products/tavelo-arden-race-frameset"
+          },
+          {
+            "id": "tavelo-arden-race-price-current-recheck-2026-09-25",
+            "title": "TAVELO Arden Race frameset current global price recheck",
+            "url": "https://tavelo.cc/products/tavelo-arden-race-frameset"
+          },
+          {
+            "id": "tavelo-warranty-official-2026-08-17",
+            "title": "Tavelo lifetime warranty",
+            "url": "https://www.tavelo.cc/pages/lifetime-warranty"
+          },
+          {
+            "id": "tavelo-warranty-official-2026-08-27",
+            "title": "Tavelo after-sales and warranty policy",
+            "url": "https://www.tavelo.com.cn/contact-after-sales-service"
+          },
+          {
+            "id": "tavelo-warranty-official-recheck-2026-09-23",
+            "title": "Tavelo global frameset warranty current recheck",
+            "url": "https://tavelo.cc/pages/lifetime-warranty"
+          },
+          {
+            "id": "usd-cny-central-parity-2026-07-31",
+            "title": "RMB central parity rate announcement, 31 July 2026",
+            "url": "https://fec.mofcom.gov.cn/article/zyfw/jrfw/jrfwywzn/jrfwwh/hlfxglzy/202607/7208.html"
+          }
+        ]
+      },
+      {
+        "id": "bianchi-oltre-race",
+        "name": "Oltre Race",
+        "record_types": [
+          "platform",
+          "variant"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "frame-stiffness",
+            "attempt_id": "platform-bianchi-oltre-race-frame-stiffness-2026-08-30",
+            "record_type": "platform",
+            "record_id": "bianchi-oltre-race",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          },
+          {
+            "code": "geometry",
+            "attempt_id": "variant-bianchi-oltre-race-geometry-2026-08-17",
+            "record_type": "variant",
+            "record_id": "bianchi-oltre-race",
+            "field": "geometry",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "price",
+            "attempt_id": "variant-bianchi-oltre-race-price-2026-08-17",
+            "record_type": "variant",
+            "record_id": "bianchi-oltre-race",
+            "field": "price",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "tire-clearance",
+            "attempt_id": "variant-bianchi-oltre-race-tire-clearance-2026-08-17",
+            "record_type": "variant",
+            "record_id": "bianchi-oltre-race",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "warranty-support",
+            "attempt_id": "variant-bianchi-oltre-race-warranty-support-2026-08-17",
+            "record_type": "variant",
+            "record_id": "bianchi-oltre-race",
+            "field": "warranty-support",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "bianchi-oltre-race-allegro-current-recheck-2026-09-25",
+            "title": "Bianchi Oltre Race Allegro listing identity recheck",
+            "url": "https://allegro.pl/produkt/rower-bianchi-oltre-race-105-12sp-ytb8d-2025-57-cm-abc4398c-4494-4d3d-8200-d998f06e5a95"
+          },
+          {
+            "id": "bianchi-oltre-race-allegro-weight-2026-08-30",
+            "title": "Bianchi Oltre Race 105 YTB8D size-57 weight and checkout reference",
+            "url": "https://allegro.pl/produkt/rower-bianchi-oltre-race-105-12sp-ytb8d-2025-57-cm-abc4398c-4494-4d3d-8200-d998f06e5a95"
+          },
+          {
+            "id": "bianchi-oltre-race-allegro-weight-current-recheck-2026-09-25",
+            "title": "Bianchi Oltre Race size-57 seller weight recheck",
+            "url": "https://allegro.pl/produkt/rower-bianchi-oltre-race-105-12sp-ytb8d-2025-57-cm-abc4398c-4494-4d3d-8200-d998f06e5a95"
+          },
+          {
+            "id": "bianchi-oltre-race-armenia-2026-08-17",
+            "title": "Bianchi Oltre Race 105 12SP",
+            "url": "https://www.bianchi.am/am/oltre-race-105-12sp"
+          },
+          {
+            "id": "bianchi-oltre-race-current-official-2026-08-30",
+            "title": "Bianchi Oltre Race YTB8D current product, geometry and gallery",
+            "url": "https://www.bianchi.com/shop/bikes/road/aero/oltre/oltre-race-3/?v=90c0481dbc33"
+          },
+          {
+            "id": "bianchi-oltre-race-dealer-2026-08-17",
+            "title": "Bianchi Oltre Race 105 12-speed (2025)",
+            "url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611"
+          },
+          {
+            "id": "bianchi-oltre-race-global-2026-08-17",
+            "title": "Bianchi Oltre Race 105 12sp (YTB8D)",
+            "url": "https://www.bianchi.com/store/int_EN/bikes/road/racing/oltre/oltre-race/oltre-race.html"
+          },
+          {
+            "id": "bianchi-oltre-race-hungary-recheck-2026-09-23",
+            "title": "Bianchi Oltre Race Hungary dealer listing recheck",
+            "url": "https://bianchi.hu/bianchi-oltre-race-105-12sp-kerekpar-2025-37611"
+          },
+          {
+            "id": "bianchi-oltre-race-manual-2026-08-30",
+            "title": "Bianchi Oltre Race Disc technical manual",
+            "url": "https://www.bianchi.com/wp-content/uploads/2023/07/LIBRETTO_sprint_v2.pdf"
+          },
+          {
+            "id": "bianchi-oltre-race-speed-cycles-weight-2026-08-30",
+            "title": "Bianchi Oltre Race 105 YTB8D size-53 weight reference",
+            "url": "https://speed-cycles.com/velos/bianchi/velo-carbone-oltre-race-105-disc-12v-gris-noir-mat-zl-bianchi-2025.html"
+          },
+          {
+            "id": "bianchi-oltre-race-speed-cycles-weight-current-recheck-2026-09-25",
+            "title": "Bianchi Oltre Race 105 size-53 seller weight recheck",
+            "url": "https://speed-cycles.com/velos/bianchi/velo-carbone-oltre-race-105-disc-12v-gris-noir-mat-zl-bianchi-2025.html"
+          },
+          {
+            "id": "taobao-snapshot-2026-08-08",
+            "title": "Anonymized Taobao search-card snapshot — 2026-08-08",
+            "url": null
+          }
+        ]
+      },
+      {
+        "id": "giant-propel-gen4-community-lead",
+        "name": "Giant Propel Advanced SL 1 (Gen 4)",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "bom",
+            "attempt_id": "candidate-giant-propel-gen4-community-lead-bom-2026-08-17",
+            "record_type": "candidate",
+            "record_id": "giant-propel-gen4-community-lead",
+            "field": "bom",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          },
+          {
+            "code": "bottom-bracket",
+            "attempt_id": "candidate-giant-propel-gen4-community-lead-bottom-bracket-2026-08-17",
+            "record_type": "candidate",
+            "record_id": "giant-propel-gen4-community-lead",
+            "field": "bottom-bracket",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-17",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "giant-china-dealer-locator-2026-08-17",
+            "title": "Giant China authorized dealer locator",
+            "url": "https://u-api.giant.com.cn/index.php/store.html?from=giant"
+          },
+          {
+            "id": "giant-china-warranty-2026-08-17",
+            "title": "Giant China warranty policy",
+            "url": "https://www.giant.com.cn/index.php/index/custom/13"
+          },
+          {
+            "id": "giant-china-warranty-current-2026-09-23",
+            "title": "Giant China current warranty policy",
+            "url": "https://www.giant.com.cn/index.php/index/custom/13"
+          },
+          {
+            "id": "giant-propel-advanced-sl1-global-current-2026-09-23",
+            "title": "Giant Propel Advanced SL 1 current global geometry and clearance",
+            "url": "https://www.giant-bicycles.com/ro/propel-advanced-sl-1"
+          },
+          {
+            "id": "giant-propel-advanced-sl1-japan-2026-08-30",
+            "title": "Giant Propel Advanced SL 1 2027 Japan weight reference",
+            "url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027?partnumber=9074049103"
+          },
+          {
+            "id": "giant-propel-advanced-sl1-mainland-2026-08-30",
+            "title": "Giant Propel Advanced SL 1 fourth generation mainland model",
+            "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+          },
+          {
+            "id": "giant-propel-advanced-sl1-mainland-current-2026-09-23",
+            "title": "Giant Propel Advanced SL 1 current mainland page",
+            "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+          },
+          {
+            "id": "giant-propel-advanced-sl1-mainland-price-route-recheck-2026-09-24",
+            "title": "Giant China Propel Advanced SL 1 current mainland price and online-route recheck",
+            "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=3798"
+          },
+          {
+            "id": "giant-propel-gen4-bikerumor-2026-08-17",
+            "title": "4th Gen Giant Propel Aero Bike is Built for Three Types of Speed",
+            "url": "https://bikerumor.com/4th-gen-giant-propel-aero-bike-launch-2026/"
+          },
+          {
+            "id": "giant-propel-gen4-official-2026-08-17",
+            "title": "Giant Propel Advanced 2 (2027)",
+            "url": "https://www.giant-bicycles.com/us/propel-advanced-2-2027"
+          },
+          {
+            "id": "giant-propel-gen4-testing-2026-08-30",
+            "title": "Giant fourth-generation Propel testing protocol and stiffness results",
+            "url": "https://www.giant-bicycles.com/global/propel-testing"
+          },
+          {
+            "id": "giant-propel-gen4-testing-current-2026-09-23",
+            "title": "Giant fourth-generation Propel testing protocol and stiffness results",
+            "url": "https://www.giant-bicycles.com/global/propel-testing"
+          },
+          {
+            "id": "giant-propel-sl1-china-weight-recheck-2026-09-24",
+            "title": "Giant China Propel Advanced SL 1 mainland weight recheck",
+            "url": "https://giant.com.cn/index.php/index/gear_view.html?id=3798"
+          },
+          {
+            "id": "giant-propel-sl1-japan-weight-recheck-2026-09-24",
+            "title": "Giant Japan 2027 Propel Advanced SL 1 size-S weight recheck",
+            "url": "https://www.giant-bicycles.com/jp/propel-advanced-sl-1-2027"
+          },
+          {
+            "id": "public-giant-propel-advanced-community-writeup-2026-08-20",
+            "title": "Giant Propel Advanced mixed-generation community writeup",
+            "url": "https://www.xiaohongshu.com/explore/6a79e4e5000000002c006f2e"
+          },
+          {
+            "id": "public-giant-propel-advanced-sl1-gen4-dealer-2026-08-20",
+            "title": "2027 Propel Advanced SL 1 Gen 4 dealer listing",
+            "url": "https://www.xiaohongshu.com/explore/6a5e054f000000001c00e5c8"
+          },
+          {
+            "id": "public-giant-propel-advanced-sl1-my25-2026-08-20",
+            "title": "25款 Propel Advanced SL 1 identity post",
+            "url": "https://www.xiaohongshu.com/explore/69772ecb000000001a036c81"
+          },
+          {
+            "id": "public-giant-propel-gen4-2026-08-17",
+            "title": "Giant Propel Gen 4 model lead",
+            "url": "https://www.xiaohongshu.com/explore/6a2a5d45000000000e021801"
+          },
+          {
+            "id": "public-giant-propel-gen4-adv-sl-copy-2026-08-20",
+            "title": "Giant Propel Gen 4 Advanced SL series comparison copy",
+            "url": "https://www.xiaohongshu.com/explore/69aa4c73000000001b016b83"
+          }
+        ]
+      },
+      {
+        "id": "de-rosa-idol",
+        "name": "DE ROSA 德罗萨 Idol",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 103,
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-de-rosa-idol-tire-clearance-2026-08-29",
+            "record_type": "candidate",
+            "record_id": "de-rosa-idol",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "priority_score": 103,
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          },
+          {
+            "code": "frame-stiffness",
+            "attempt_id": "candidate-de-rosa-idol-frame-stiffness-2026-08-29",
+            "record_type": "candidate",
+            "record_id": "de-rosa-idol",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "derosa-idol-archived-2026-08-29",
+            "title": "De Rosa Idol 105 Di2 Carbon Road Bike",
+            "url": "https://www.merlincycles.com/en-uk/de-rosa-idol-105-di2-carbon-road-bike-280534.html"
+          },
+          {
+            "id": "derosa-idol-japan-2026-08-29",
+            "title": "NEW IDOL complete bike",
+            "url": "https://www.derosa.jp/products/new-idol-complete"
+          },
+          {
+            "id": "derosa-idol-japan-current-2026-09-23",
+            "title": "De Rosa Japan New Idol complete-bike configurations",
+            "url": "https://www.derosa.jp/products/new-idol-complete"
+          },
+          {
+            "id": "derosa-idol-model-current-2026-09-23",
+            "title": "De Rosa Idol current model page",
+            "url": "https://derosa.it/model/idol/"
+          },
+          {
+            "id": "derosa-idol-official-2026-08-29",
+            "title": "Idol",
+            "url": "https://derosa.it/model/idol/"
+          }
+        ]
+      },
+      {
+        "id": "basso-venta-disc",
+        "name": "BASSO Venta Disc",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 103,
+        "gaps": [
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-basso-venta-disc-drivetrain-2026-08-29",
+            "record_type": "candidate",
+            "record_id": "basso-venta-disc",
+            "field": "drivetrain",
+            "status": "blocked",
+            "priority_score": 103,
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "basso-venta-disc-owner-clearance-conflict-2026-09-22",
+            "title": "Basso Venta 2023 tire clearance owner report",
+            "url": "https://www.reddit.com/r/bicycling/comments/1762043/basso_venta_2023_tire_clearance/"
+          },
+          {
+            "id": "basso-venta-disc-retailer-2026-08-29",
+            "title": "BASSO Venta Disc Shimano 105 Microtech MCT",
+            "url": "https://www.exisport.com/sk/module/asdata_product_list_export/export?id_product=105555"
+          },
+          {
+            "id": "basso-venta-disc-retailer-clearance-2026-09-22",
+            "title": "Basso Venta Disc 105 Microtech customer-support clearance response",
+            "url": "https://www.mtbiker.cz/shop/cyklistika/kola/silnicni/basso-venta-disc-shimano-105-microtech-mct-28-kolo-stealth-p207614.html"
+          },
+          {
+            "id": "basso-venta-disc-review-clearance-2026-09-22",
+            "title": "Basso Venta Disc 105 2023 clearance statement",
+            "url": "https://road.cc/content/review/basso-venta-disc-105-305363"
+          },
+          {
+            "id": "basso-venta-disc-roadcc-2026-08-29",
+            "title": "Basso Venta Disc 105 2023",
+            "url": "https://road.cc/content/review/basso-venta-disc-105-305363"
+          }
+        ]
+      },
+      {
+        "id": "irefox-by446",
+        "name": "IREFOX 火之狐 BY446 all-terrain",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 109,
+        "gaps": [
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-irefox-by446-tire-clearance-2026-08-30",
+            "record_type": "candidate",
+            "record_id": "irefox-by446",
+            "field": "tire-clearance",
+            "status": "blocked",
+            "priority_score": 109,
+            "searched_at": "2026-08-30",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "irefox-current-catalog-2026-08-09",
+            "title": "IREFOX current Chinese catalog",
+            "url": "https://irefox.net/cn/"
+          },
+          {
+            "id": "irefox-current-catalog-2026-09-23",
+            "title": "IREFOX current Chinese catalog",
+            "url": "https://irefox.net/cn/"
+          },
+          {
+            "id": "taobao-snapshot-2026-08-08",
+            "title": "Anonymized Taobao search-card snapshot — 2026-08-08",
+            "url": null
+          }
+        ]
+      },
+      {
+        "id": "twitter-gravel-v3-2024-rs-carbon-wave",
+        "name": "TWITTER 骓特 Gravel V3 2024 RS 2×12",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "price",
+            "attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-price-2026-09-01",
+            "record_type": "candidate",
+            "record_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+            "field": "price",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-frame-stiffness-2026-09-01",
+            "record_type": "candidate",
+            "record_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "priority_score": 58,
+            "searched_at": "2026-09-01",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "twitter-gravel-v3-2024-taobao-2026-08-21",
+            "title": "骓特 GRAVEL-V3 顺泰 mechanical / hydraulic Taobao listing",
+            "url": "https://e.tb.cn/h.8Qt1aFaeRwOEBih"
+          },
+          {
+            "id": "twitter-gravel-v3-2024-public-listing-image-2026-08-21",
+            "title": "TWITTER Gravel V3 public listing images",
+            "url": "https://tao.hooos.com/goods_jqVJ2MpS0tJNazVpjatBBOTJte-KaykkBHjRBabOZxFp.html"
+          },
+          {
+            "id": "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+            "title": "TWITTER Gravel V3 carbon frameset instruction-manual mirror",
+            "url": "https://manuals.plus/ae/1005003697488669"
+          },
+          {
+            "id": "twitter-v3-25yr-rs-store-recheck-2026-09-23",
+            "title": "Twitter Bikes V3 25yr RS 24-speed store listing recheck",
+            "url": "https://www.twitterbikefactory.com/products/twitter-bikes-gravel-v3-25yr-rs-24s-carbon-fiber-gravel-bike"
+          },
+          {
+            "id": "twitter-v3-25yr-manufacturer-recheck-2026-09-24",
+            "title": "TWITTER Gravel V3 25yr frame material recheck",
+            "url": "https://www.twittercycles.com/products/gravel-v3-gravel-bike.html"
+          }
+        ]
+      },
+      {
+        "id": "elro-f1",
+        "name": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+        "record_types": [
+          "candidate"
+        ],
+        "priority_score": 100,
+        "gaps": [
+          {
+            "code": "drivetrain",
+            "attempt_id": "candidate-elro-f1-drivetrain-2026-08-29",
+            "record_type": "candidate",
+            "record_id": "elro-f1",
+            "field": "drivetrain",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          },
+          {
+            "code": "frame-stiffness",
+            "attempt_id": "candidate-elro-f1-frame-stiffness-2026-08-29",
+            "record_type": "candidate",
+            "record_id": "elro-f1",
+            "field": "frame-stiffness",
+            "status": "blocked",
+            "priority_score": 100,
+            "searched_at": "2026-08-29",
+            "retry_after": null
+          }
+        ],
+        "current_source_ids_and_urls": [
+          {
+            "id": "obike-f1-smzdm-2026-08-29",
+            "title": "OBIKE 欧拜克 F1 carbon-fiber road bike, 24-speed",
+            "url": "https://wiki.smzdm.com/gongluche/b_65192/"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 22,
+    "research_boundary": "One Luna evidence-only researcher; root remains sole writer. Review each exact target's linked sources, predecessor attempt, and campaign history. Run one distinct current web query per model. Literal-check every candidate URL across data/ and docs/ before opening; skip recorded URLs and open at most one genuinely new relevant official or exact-model page per model. No seller contact or quote requests. Stop after these ten models and 22 fields.",
+    "query_targets": [
+      {
+        "model_id": "pardus-super-sport-gen2-egr",
+        "query": "PARDUS Super Sport Gen2 EGR exact geometry bottom bracket shell warranty official 2026"
+      },
+      {
+        "model_id": "sava-gelaro-s8",
+        "query": "SAVA Gelaro S8 exact frame weight bottom bracket standard official 2026"
+      },
+      {
+        "model_id": "tavelo-arden",
+        "query": "Tavelo Arden exact current mainland China CNY price geometry official 2026"
+      },
+      {
+        "model_id": "bianchi-oltre-race",
+        "query": "Bianchi Oltre Race exact model geometry tire clearance current price warranty frame stiffness official 2026"
+      },
+      {
+        "model_id": "giant-propel-gen4-community-lead",
+        "query": "Giant Propel Advanced Gen 4 exact retained build bill of materials bottom bracket official 2026"
+      },
+      {
+        "model_id": "de-rosa-idol",
+        "query": "De Rosa Idol exact current model maximum tire clearance frame stiffness independent test official 2026"
+      },
+      {
+        "model_id": "basso-venta-disc",
+        "query": "Basso Venta Disc exact model drivetrain build specification official 2026"
+      },
+      {
+        "model_id": "irefox-by446",
+        "query": "IREFOX BY446 exact road frame maximum tire clearance official 2026"
+      },
+      {
+        "model_id": "twitter-gravel-v3-2024-rs-carbon-wave",
+        "query": "TWITTER 骓特 Gravel V3 2024 RS Carbon Wave exact selection current mainland CNY price and independent frame stiffness assessment"
+      },
+      {
+        "model_id": "elro-f1",
+        "query": "ELRO F1 exact model drivetrain build specification frame stiffness test 2026"
+      }
+    ],
+    "field_rules": [
+      "Only exact model/build claims may change catalog facts.",
+      "Preserve unselected build options; never map family specs onto a retained build.",
+      "Record frame-only vs complete-bike weight and fitted vs maximum clearance as stated.",
+      "Geometry must match generation and size.",
+      "Frame stiffness needs independent testing or a scoped qualitative assessment, not marketing language.",
+      "Price needs exact identity, current amount, currency, package and observation date; no sibling amounts or inferred FX.",
+      "Keep unknown, conflicting, inaccessible, and nonqualifying evidence unresolved with a reason."
+    ],
+    "excluded": [
+      "No XHS, login/CAPTCHA, seller outreach, quote requests, cart, checkout, or purchase.",
+      "No images, unrelated code/UI edits, commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "scope_adjustment": {
+    "amended_at": "2026-09-25",
+    "reason": "Before research began, removed JAVA/LAMPO because its candidate explicitly says exact model unresolved; replaced it with the exact 2024 TWITTER Gravel V3 RS Carbon Wave selection after confirming both predecessor fields are retry-eligible.",
+    "research_started_before_amendment": false
+  }
+}

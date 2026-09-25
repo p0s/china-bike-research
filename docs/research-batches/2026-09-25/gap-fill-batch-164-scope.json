@@ -1,0 +1,72 @@
+{
+  "batch": 164,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "scope": {
+    "exact_record_count": 2,
+    "atomic_gap_entries": 3,
+    "query_targets": [],
+    "conflict_reconfirmation_targets": [
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "name": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "complete-weight",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "twitter-t8-closed-wheel-official-2026-08-30",
+          "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25",
+          "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+        ],
+        "conflict": "The current official catalog lists the two build alternatives without weights. The retained card does not select the claimed approximately 9.2 kg WheelTop or 9.3 kg Shimano configuration, so neither weight can be assigned to it."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-t8-closed-wheel",
+        "name": "TWITTER 骓特 T8 closed-wheel build",
+        "field": "drivetrain",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30-b141-live-recheck-2026-09-25",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "twitter-t8-closed-wheel-official-2026-08-30",
+          "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+        ],
+        "conflict": "The current official catalog lists both WheelTop EVO-24S and Shimano 105/R7120-24S configurations; the retained marketplace card does not identify which option was selected."
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-little-white-rabbit",
+        "name": "TWITTER 骓特 Little White Rabbit / 小白兔 custom",
+        "field": "drivetrain",
+        "attempt_id": "candidate-twitter-little-white-rabbit-drivetrain-b155-2026-09-25",
+        "source_ids": [
+          "twitter-little-white-rabbit-tmall-mirror-2026-08-30",
+          "twitter-little-white-rabbit-jd-options-2026-08-30"
+        ],
+        "conflict": "The linked Tmall mirror and JD option matrix expose both mechanical and WheelTop wireless-electronic configurations; the retained custom card does not select one. Neither drivetrain should be assigned."
+      }
+    ],
+    "research_boundary": "For each listed latest attempt, locally verify that the current conflict note and exact source records remain linked to the matching candidate, then add a conflict-reconfirmed disposition to that attempt. Do not change the unknown weight or drivetrain fields, create retry attempts, or reopen any URL. No new web or public-post search, page open, source record, image, or unrelated catalog change is authorized.",
+    "excluded": [
+      "The separate TWITTER Gravel V3 RS / Sensah tire-clearance conflict is outside scope; its current attempt has retry_after 2026-11-17 and no new lead is recorded.",
+      "No agent edits; root is the sole writer.",
+      "No external messages, seller contact, quotes, cart, checkout or purchase.",
+      "No GitHub mutation, commit, push, PR, merge, publish or production write."
+    ]
+  }
+}

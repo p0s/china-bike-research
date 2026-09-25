@@ -1,0 +1,113 @@
+{
+  "batch": 155,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-155-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 667,
+    "catalog_gap_entries_after": 667,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 4,
+    "atomic_gap_entries_reviewed": 8,
+    "complete_weight_fields_filled": 0,
+    "drivetrain_fields_filled": 0,
+    "maximum_clearance_fields_filled": 0,
+    "frame_material_fields_filled": 0,
+    "frame_stiffness_fields_filled": 0,
+    "atomic_gap_entries_left_unresolved": 8,
+    "research_queries_run": 4,
+    "research_attempt_records_added": 8,
+    "campaign_extensions_added": 8,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1776,
+    "research_attempts_after": 1784,
+    "research_fields_after": 1503,
+    "public_post_attempts_after": 15450,
+    "web_attempts_after": 35851,
+    "research_status_counts_after": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 1,
+    "source_records_after": 1423,
+    "candidate_facts_changed": 1,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 4,
+    "page_urls_opened": 1,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 1,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 1,
+    "page_open_failures": [],
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "prior_history_reviewed": {
+      "twitter_little_white_rabbit_query_literals_checked": 300,
+      "quick_pro_query_literals_checked": 200,
+      "phoenix_query_literals_checked": 150,
+      "giant_defy_query_literals_checked": 100,
+      "target_predecessor_attempts": 8
+    },
+    "note": "Only the new Giant Australia 2026 page was opened. The Twitter T8, Quick Pro XR:ONE and Korea pages had already been recorded and were skipped; Phoenix results did not identify an exact technical page. No retries."
+  },
+  "validation": {
+    "research_check": "passed: 1503 atomic fields, 15450 public-post attempts, 35851 web attempts",
+    "coverage_baseline": "accepted monotonic coverage for 212 images / 277 catalog targets after eight protected attempt records and one source addition",
+    "full_gate_command": "codex-pnpm-check check",
+    "full_gate": "passed: privacy, data validation, research ledger, coverage, 331/331 tests, build 584 pages, SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed on the accumulated worktree after final B155 records and checkpoint",
+    "image_report": "not run: no image record changed"
+  },
+  "model_results": [
+    {
+      "model_id": "twitter-little-white-rabbit",
+      "gaps": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "TWITTER 骓特 Little White Rabbit 小白兔 定制款 Shimano 24-speed Wheeltop electronic complete weight maximum tire clearance frame stiffness",
+      "result": "Existing official-store and JD option sources identify the listing family and both 24-speed mechanical and Wheeltop wireless-electronic options, but the retained card selects neither. No exact complete-bike weight, underlying chassis, maximum clearance or qualifying stiffness evidence was found. The surfaced T8 page was already present in the data and coverage baseline and was skipped.",
+      "disposition": "four-fields-unresolved; drivetrain-conflict-retained"
+    },
+    {
+      "model_id": "missing-china-price-quick-pro-xr-one",
+      "gaps": [
+        "complete-weight"
+      ],
+      "new_query": "Quick Pro XR:ONE GRX Di2 1x12 complete bike weight size M manufacturer",
+      "result": "Existing exact-build sources provide an 839 g size-M frame and 449 g fork, not complete-bike weight. The exact Quick Pro page and Korea page were already recorded and were not reopened; frame and fork values are not summed.",
+      "disposition": "complete-weight-unresolved-frame-and-fork-values-excluded"
+    },
+    {
+      "model_id": "phoenix-700c-carbon-e-road",
+      "gaps": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "new_query": "Phoenix 凤凰 799 carbon 700C electric road bike maximum tire width frame stiffness test",
+      "result": "The already recorded Ebuy7 source identifies model 799 but gives no maximum clearance or controlled stiffness result and does not resolve the retained card’s battery option. Search results supplied no exact technical page worth opening.",
+      "disposition": "both-fields-unresolved-no-new-exact-technical-evidence"
+    },
+    {
+      "model_id": "giant-defy-advanced-sl1-community-lead",
+      "gaps": [
+        "complete-weight"
+      ],
+      "new_query": "Giant Defy Advanced SL 1 2026 complete bike weight 7.4 kg measured size official",
+      "result": "Opened one new official Giant Australia 2026 page after literal-URL absence audit. It says each bike should be weighed by a dealer because weight varies by size, finish, hardware and accessories (lines 184, 445-447), but gives no numeric weight and cannot map the community 7.4 kg report to a year, size or build.",
+      "disposition": "complete-weight-unresolved; official-build-variability-clarification-recorded"
+    }
+  ]
+}

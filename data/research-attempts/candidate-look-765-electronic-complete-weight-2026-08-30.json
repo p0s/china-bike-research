@@ -488,5 +488,14 @@
     "look-765-optimum-tour-test-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Exact build-specific values include 7.9 kg size M for the current R50D SKU and 8.8 kg for an earlier R38D test build; neither is assigned to the wheel-ambiguous retained card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/look-765-electronic-50-area-sweep-2026-08-30.json. Exact build-specific values include 7.9 kg size M for the current R50D SKU and 8.8 kg for an earlier R38D test build; neither is assigned to the wheel-ambiguous retained card.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "look-765-optimum-r50d-current-2026-08-30",
+      "look-765-optimum-tour-test-2026-08-30"
+    ],
+    "note": "The 7.9 kg R50D and 8.8 kg R38D values belong to different wheel builds; the retained candidate card does not resolve its wheel option, so neither value is assigned."
+  }
 }

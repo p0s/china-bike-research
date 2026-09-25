@@ -1,0 +1,56 @@
+{
+  "id": "candidate-pardus-spark-drivetrain-b150-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-spark"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pardus-spark-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS 瑞豹 Spark Gen3 official 2026 exact complete bike weight drivetrain max tire clearance selected build",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Existing options belong to different Spark Sport/Gen3/PES/QED branches and do not establish the drivetrain of the selected cards."
+        }
+      ],
+      "blocker": "Existing options belong to different Spark Sport/Gen3/PES/QED branches and do not establish the drivetrain of the selected cards."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "pardus-spark-sport-qed-current-2026-08-30",
+    "pardus-spark-sport-105-current-2026-08-30",
+    "pardus-spark-gen3-current-index-2026-08-30"
+  ],
+  "retry_after": null,
+  "notes": "B165 local source audit: no linked source supports the retained exact drivetrain field; B150 found no qualifying evidence for this frozen field; preserve it as unknown pending a distinct exact source or material state change.",
+  "retry_of": "candidate-pardus-spark-drivetrain-2026-08-30",
+  "retry_reason": "One distinct model-level web query on 2026-09-25 followed the earlier search/campaign history to test for new direct evidence.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-150-pardus-spark-drivetrain",
+    "extends_attempt_id": "candidate-pardus-spark-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-150-scope.json",
+    "reason": "The frozen B150 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

@@ -490,5 +490,13 @@
     "pardus-robin-sport-pes-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-robin-sport-pes-50-area-sweep-2026-08-30.json. The current exact manufacturer page states maximum tire clearance of 700x40C for frame and fork."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-robin-sport-pes-50-area-sweep-2026-08-30.json. The current exact manufacturer page states maximum tire clearance of 700x40C for frame and fork.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-robin-sport-pes-current-2026-08-30"
+    ],
+    "note": "40c-compatibility-claim-maximum-versus-fitted-basis-unclear: Retained manufacturer wording says 700×40C frame/fork compatibility, but the stored note does not establish maximum versus fitted-width basis. Sep 23 refresh timed out; keep the basis qualified. Reopen trigger: Reopen when the exact PES page states maximum clearance and whether width is fitted or measured."
+  }
 }

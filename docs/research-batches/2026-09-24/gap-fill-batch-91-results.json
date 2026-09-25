@@ -1,0 +1,30 @@
+{
+  "batch": 91,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-91-scope.json"],
+  "result": {
+    "exact_models_checked": 1,
+    "atomic_gaps_checked": 1,
+    "current_source_records_added": 1,
+    "structured_candidate_fields_added": 1,
+    "attempts_resolved": 1,
+    "actionable_gap_inventory_change": -1,
+    "attempt_id": "candidate-sava-r8-r8170-frame-stiffness-2026-08-30",
+    "source_id": "sava-aurora-r8-r8170-stiffness-recheck-2026-09-24",
+    "disposition": "The exact R08-R8170-24S manufacturer page opened on 2026-09-24 and supports an attributed qualitative stiffness and power-transfer marketing claim. It publishes no numeric result, measurement method, or test protocol. Added a dated structured caveat and source; retained the numeric evidence unknown.",
+    "inventory": {
+      "catalog_gaps_before": 705,
+      "catalog_gaps_after": 704,
+      "evidence_found_before": 192,
+      "evidence_found_after": 191
+    },
+    "remaining_record_blocker": "The candidate remains unpublished because its current domestic warranty route and final checkout conditions are unresolved; this was outside B91 scope."
+  },
+  "validation": {
+    "data_validation": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1312 sources, 212 primary image records, 236 candidates, and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic research fields; 15450 public-post and 35608 web attempts",
+    "coverage": "pass after monotonic acceptance: 212 images, 73 price observations, 1312 sources, and 236 candidates",
+    "full_gate": "pass via developer-storage-cache: privacy scan, 324 tests, build of 584 pages, SEO audit with 458 indexable/126 noindex pages",
+    "diff_check": "pass"
+  }
+}

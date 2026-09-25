@@ -1,0 +1,48 @@
+{
+  "id": "variant-twitter-cyclone-gen3-et-purchase-route-current-mainland-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-cyclone-gen3-et"
+  },
+  "field": "purchase-route-current-selected-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact WheelTop ET manufacturer endpoint returns 404, and the current JD flagship order route stops at a verification page; available nearby official product pages describe different builds.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Cyclone 3rd ET exact WheelTop TX current mainland purchase route",
+          "route": "Exact TWITTER manufacturer ET product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact manufacturer product endpoint returned 404. A current Cyclone 3rd R7170 page offers a domestic dealer quotation but specifies Shimano 105 R7170 and carbon-wheel choices, not the retained WheelTop EDS TX alloy-wheel build.",
+          "result_url": "https://www.twittercycles.com/products/cyclone-3rd-et-road-bike.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Cyclone 3rd ET current mainland seller SKU and stock",
+          "route": "Current JD exact-model index and official TWITTER store",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "JD public results include Cyclone ET and WheelTop 24-speed listings, but opening the official flagship route redirects to JD verification. The retained selected SKU and current availability cannot be confirmed.",
+          "result_url": "https://www.jd.com/hprm/1318cf0c0179015db691.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "twitter-cyclone-gen3-et-mainland-page-recheck-2026-09-24",
+    "twitter-cyclone-7170-official-route-reference-2026-09-24",
+    "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+    "twitter-cyclone-et-jd-flagship-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep current foreign ordering evidence separate from an exact mainland selected-build offer. Mainland stock, exact seller SKU, and checkout remain unknown.",
+  "searched_at": "2026-09-24"
+}

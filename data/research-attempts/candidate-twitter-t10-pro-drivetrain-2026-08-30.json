@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-t10-pro-official-2026-08-17"
+    "twitter-t10-pro-official-2026-08-17",
+    "twitter-t10-pro-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/twitter-t10-pro-50-area-sweep-2026-08-30.json. The exact current storefront resolves the option family while explicitly preserving the retained card-to-option uncertainty."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/twitter-t10-pro-50-area-sweep-2026-08-30.json. The exact current storefront resolves the option family while explicitly preserving the retained card-to-option uncertainty.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-t10-pro-official-2026-08-17",
+      "twitter-t10-pro-official-live-recheck-2026-09-25"
+    ],
+    "note": "The current exact T10 Pro page offers SENSAH HRD6900, WheelTop EDS TX wireless and Shimano 105 R7120 hydraulic 2x12 options. The retained mainland card is not mapped to a selected drivetrain option."
+  }
 }

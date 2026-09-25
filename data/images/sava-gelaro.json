@@ -19,5 +19,17 @@
   },
   "credit": "Product image © SAVA",
   "alt": "SAVA Gelaro S4 GRX400 carbon gravel bike",
-  "reviewed_at": "2026-08-07"
+  "reviewed_at": "2026-08-07",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "sava-gelaro-primary-image",
+        "url": "https://savadeck-bike.com/cdn/shop/files/DSC_2049.jpg?v=1746492698&width=1080",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/jpeg"
+      }
+    ]
+  }
 }

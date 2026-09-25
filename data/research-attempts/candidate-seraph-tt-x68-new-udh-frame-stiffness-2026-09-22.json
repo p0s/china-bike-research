@@ -13,7 +13,7 @@
   ],
   "channels": {
     "web": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -32,11 +32,19 @@
           "accessed_at": "2026-09-22",
           "note": "35C page identity differs; no accepted frame-stiffness evidence for the frozen 32C model.",
           "result_url": "https://tantanbicycles.com/tt-x68-new-version-t47-light-disc-road-bicycle-carbon-frame-bike-70035c-full-toray-t1000-flat-mount-brake-frameset-p7192636.html"
+        },
+        {
+          "attempt": 3,
+          "query": "site:chinertown.com \"TT-X68-New\" OR \"TT-X68-new UDH\" stiffness OR flex test review",
+          "route": "Chinertown exact-revision forum search; supplemental road.cc check listed in Batch 07 results",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "No exact-revision measured or controlled result surfaced. A separate site:road.cc \"TT-X68\" carbon frame review stiffness search also returned no result; both literal queries are recorded in Batch 07 results because this channel had only one ledger slot remaining."
         }
       ]
     },
     "public-post": {
-      "status": "open",
+      "status": "temporarily-exhausted",
       "attempts": [
         {
           "attempt": 1,
@@ -46,12 +54,29 @@
           "accessed_at": "2026-09-22",
           "note": "Prospective buyer links the 35C listing; does not resolve the frozen model’s frame-stiffness.",
           "result_url": "https://www.reddit.com/r/ChineseCarbon/comments/1w4ldod/best_tantanseraph_complete_bike_x42_x71_r18_or/"
+        },
+        {
+          "attempt": 2,
+          "query": "site:reddit.com \"TT-X68-new\" owner ride stiffness flex test",
+          "route": "Reddit TanTan/Seraph rider discussion",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-23",
+          "note": "The rider reports subjective bottom-bracket-area flex for a TT-X68 but does not identify the frozen 32C/UDH/T47 revision or provide a controlled stiffness result.",
+          "result_url": "https://www.reddit.com/r/gravelbike/comments/1u8zhfv/tantanseraph_frames/"
+        },
+        {
+          "attempt": 3,
+          "query": "site:bilibili.com TT-X68-new UDH T47 70032C 车主 骑行 刚性",
+          "route": "Bilibili exact-revision owner/review search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Indexed results were unrelated bicycles and generic T47/stiffness discussion; no exact TT-X68-new 32C/UDH owner or measured test surfaced."
         }
       ]
     }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "No measured or firsthand exact-revision stiffness evidence; older BSA reviews and prospective-buyer claims are insufficient. Next: exact selected SKU/revision documentation or an attributable owner/build record; partial channel budgets remain open."
+  "retry_after": "2026-10-23",
+  "notes": "No measured or firsthand exact-revision stiffness evidence; older BSA reviews and prospective-buyer claims are insufficient. The web channel reached its three-attempt limit; public-post channel remains open for an attributable owner/build record. A Reddit rider thread describes an unspecified TT-X68 generation and qualitative BB-area flex; it does not map to the exact T47/UDH revision. Both required channels have now reached their three-attempt budgets without exact-revision stiffness evidence."
 }

@@ -2,9 +2,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGapReport } from './data-gaps.mjs';
 import { loadDataset } from '../src/lib/data.mjs';
+import { latestResearchAttemptIndex } from '../src/lib/research-attempts.mjs';
 
 const nonAtomicCodes = new Set(['candidate-blockers', 'image-health-unverified']);
 const bucketNames = ['ready', 'evidence-found', 'deferred', 'blocked', 'conflicted'];
+const closedResolutionKinds = new Set(['source-reuse', 'conflict-reconfirmed']);
 
 export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISOString().slice(0, 10)) {
   const report = buildGapReport(data, asOf);
@@ -26,6 +28,10 @@ export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISO
   for (const record of report.records) {
     for (const gap of record.gaps) {
       if (nonAtomicCodes.has(gap.code)) continue;
+      if (closedResolutionKinds.has(gap.research?.resolution_kind)) {
+        representedAttemptIds.add(gap.research.attempt_id);
+        continue;
+      }
       const item = {
         record_type: record.record_type,
         record_id: record.id,
@@ -49,8 +55,9 @@ export function buildResearchQueue(data = loadDataset(), asOf = new Date().toISO
     variant: new Map(data.variants.map((record) => [record.id, record.name]))
   };
   const priorityScores = { high: 100, medium: 60, low: 30 };
-  for (const attempt of data.researchAttempts ?? []) {
+  for (const attempt of latestResearchAttemptIndex(data.researchAttempts ?? []).values()) {
     if (representedAttemptIds.has(attempt.id)) continue;
+    if (closedResolutionKinds.has(attempt.resolution?.kind)) continue;
     const item = {
       record_type: attempt.target.record_type,
       record_id: attempt.target.record_id,

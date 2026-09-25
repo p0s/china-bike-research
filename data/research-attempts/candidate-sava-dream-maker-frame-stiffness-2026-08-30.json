@@ -485,5 +485,13 @@
     "sava-dream-maker-engineering-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Manufacturer reports qualitative front-end and T47 rigidity measures and fatigue/impact/rigidity testing without a numeric stiffness magnitude."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sava-dream-maker-50-area-sweep-2026-08-30.json. Manufacturer reports qualitative front-end and T47 rigidity measures and fatigue/impact/rigidity testing without a numeric stiffness magnitude.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "sava-dream-maker-engineering-2026-08-30"
+    ],
+    "note": "The exact R17 article supports qualitative front-end/T47 rigidity claims and mentions fatigue, impact, and rigidity testing, but reports no numeric stiffness magnitude or public protocol; the claim is recorded as caveated stiffness evidence."
+  }
 }

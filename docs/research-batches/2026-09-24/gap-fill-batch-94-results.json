@@ -1,0 +1,28 @@
+{
+  "batch": 94,
+  "date": "2026-09-24",
+  "scope_files": [
+    "docs/research-batches/2026-09-24/gap-fill-batch-94-scope.json"
+  ],
+  "result": {
+    "attempts_checked": 3,
+    "source_reuse_resolutions_added": 3,
+    "new_sources_added": 0,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 191,
+    "evidence_found_after": 188,
+    "disposition": "All three found claims were already present in the exact candidate or variant records with their evidence sources. The missing research-attempt resolutions were added. Two are listed or official catalog prices, not completed-checkout evidence; the Cyclone route remains conditional because its selected option, live stock, and checkout are unverified."
+  },
+  "validation": {
+    "source_and_target_audit": "pass: Luna read-only audit confirmed exact target, sources, stored values, and limitations for all three attempts",
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1312 sources, 212 image records, 236 candidates, and 1542 research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 price observations, 1312 sources, and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run because only research-attempt resolution metadata and the evidence-coverage baseline changed; no catalog behavior, source record, or application code changed",
+    "image_report": "not run because no image record changed"
+  }
+}

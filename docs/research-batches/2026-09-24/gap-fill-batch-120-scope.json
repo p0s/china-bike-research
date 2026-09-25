@@ -1,0 +1,63 @@
+{
+  "batch": 120,
+  "date": "2026-09-24",
+  "inventory": {
+    "as_of": "2026-09-24",
+    "catalog_gap_entries": 707,
+    "gap_count_method": "Count all entries in `.records[].gaps[]` from a fresh `npm run --silent data:gaps` report.",
+    "prior_scope_ledger_count": 706,
+    "gap_count_discrepancy": "B119 changed no catalog records, but the fresh raw report contains one more entry than the prior scope ledger. Preserve both figures and investigate the measurement discrepancy separately.",
+    "research_queue": {
+      "ready": 0,
+      "evidence_found": 87,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 61
+    },
+    "selected_queue_priority_each": 100,
+    "selected_fields": [
+      "variant:sava-a7l-r7100:image",
+      "platform:scott-addict-rc-40:geometry",
+      "variant:spcycle-g028-frameset:purchase-route",
+      "candidate:specialized-roubaix-sl8-sport-105:price",
+      "candidate:twitter-carbon-road-gravel-unknown:drivetrain",
+      "candidate:twitter-carbon-road-gravel-unknown:frame-material",
+      "variant:twitter-cyclone-electronic:bom",
+      "platform:twitter-cyclone-electronic:frame-material",
+      "variant:twitter-cyclone-electronic:image",
+      "candidate:twitter-cyclone-gen3-7170:frame-material"
+    ]
+  },
+  "scope": {
+    "exact_target_records": [
+      "variant:sava-a7l-r7100",
+      "platform:scott-addict-rc-40",
+      "variant:spcycle-g028-frameset",
+      "candidate:specialized-roubaix-sl8-sport-105",
+      "candidate:twitter-carbon-road-gravel-unknown",
+      "variant:twitter-cyclone-electronic",
+      "platform:twitter-cyclone-electronic",
+      "candidate:twitter-cyclone-gen3-7170"
+    ],
+    "attempt_ids": [
+      "variant-sava-a7l-r7100-image-2026-09-01",
+      "platform-scott-addict-rc-40-geometry-2026-09-01",
+      "variant-spcycle-g028-frameset-purchase-route-2026-09-01",
+      "candidate-specialized-roubaix-sl8-sport-105-price-2026-09-01",
+      "candidate-twitter-carbon-road-gravel-unknown-drivetrain-2026-08-30",
+      "candidate-twitter-carbon-road-gravel-unknown-frame-material-2026-08-30",
+      "variant-twitter-cyclone-electronic-bom-2026-08-29",
+      "platform-twitter-cyclone-electronic-frame-material-2026-08-29",
+      "variant-twitter-cyclone-electronic-image-2026-08-29",
+      "candidate-twitter-cyclone-gen3-7170-frame-material-2026-09-01"
+    ],
+    "research_boundary": "Inspect each exact attempt and its accepted source records first. For volatile price and route fields, check one current exact-model source where accessible. Use exact manufacturer/brand evidence for model specifications. Stop at decisive evidence; retain unresolved build, generation, market, selection, measurement or rights caveats. One Luna Max reader may report evidence only; the primary writer integrates it.",
+    "excluded": [
+      "No fields outside the ten frozen queue targets.",
+      "No personal or private data; no login, CAPTCHA, bypass, or broad scrape.",
+      "Do not download or host third-party images without documented reusable rights.",
+      "Do not infer material, build, option, price or model relationships from adjacent records.",
+      "No GitHub or production delivery."
+    ]
+  }
+}

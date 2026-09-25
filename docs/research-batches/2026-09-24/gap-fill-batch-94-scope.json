@@ -1,0 +1,55 @@
+{
+  "batch": 94,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "evidence_found_before": 191,
+  "scope": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "attempt_id": "candidate-missing-china-price-giant-tcr-advanced-current-mainland-observed-price-2026-09-24",
+      "atomic_gap": "mainland-observed-price",
+      "source_ids": [
+        "giant-tcr-advanced-3-gc-jd-official-listing-recheck-2026-09-24",
+        "giant-tcr-advanced-3-gc-baidu-current-price-recheck-2026-09-24"
+      ],
+      "stored_value": "CNY 5,998 listed low for exact TCR ADV 3-GC, size L listing, reported by Baidu Shopping as from the JD Giant official flagship; crawl was about two weeks old, and live price, stock, coupons, shipping, and checkout are unverified."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "attempt_id": "candidate-missing-china-price-trek-madone-gen-8-current-mainland-observed-price-2026-09-24",
+      "atomic_gap": "mainland-observed-price",
+      "source_ids": [
+        "trek-madone-sl5-gen8-china-current-catalog-price-recheck-2026-09-24"
+      ],
+      "stored_value": "Official current Trek China catalog lists exact Madone SL 5 Gen 8 product IDs 46218 and 57653 at CNY 21,800; size-specific availability, dealer fulfillment, and checkout are unverified."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "twitter-cyclone-electronic",
+      "attempt_id": "variant-twitter-cyclone-electronic-purchase-route-current-mainland-2026-09-24",
+      "atomic_gap": "purchase-route-current-selected-build",
+      "source_ids": [
+        "twitter-cyclone-et-tmall-current-recheck-2026-09-24",
+        "twitter-cyclone-et-jd-index-recheck-2026-09-24",
+        "twitter-cyclone-et-jd-flagship-recheck-2026-09-24"
+      ],
+      "stored_value": "Current mainland route evidence exists for the exact Cyclone 3rd ET model; selected option, stock, and checkout are unverified, so purchase status remains configuration-or-promotion-range."
+    }
+  ],
+  "allowed_work": "Reconcile only the three named found attempts against their already stored source records and target records. If each exact claim and caveat is supported, set a dated source-reuse resolution that names the accepted sources and preserves the remaining checkout or stock limitation. Do not browse, change prices, infer availability, or broaden the scope.",
+  "stop_conditions": [
+    "Stop an individual resolution if the target record, source IDs, or stored value does not match the exact-model source evidence.",
+    "Do not convert a listed price into a completed checkout price or a current in-stock claim.",
+    "Do not mark the conditional Cyclone route as fully purchasable."
+  ],
+  "done_criteria": [
+    "Each of the three attempts has an evidence-backed source-reuse resolution or an explicit unresolved disposition.",
+    "Candidate price values and the Cyclone conditional route retain all existing caveats.",
+    "Fresh data:gaps and research:queue show the buyer-impact catalog gap count and evidence-found queue count after reconciliation.",
+    "Run focused data, research, coverage, and diff validation. Do not rerun the full gate for evidence-metadata-only changes."
+  ]
+}

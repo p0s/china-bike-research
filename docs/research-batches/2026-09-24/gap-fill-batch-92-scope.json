@@ -1,0 +1,32 @@
+{
+  "batch": 92,
+  "date": "2026-09-24",
+  "inventory_command": "npm run --silent data:gaps",
+  "inventory_as_of": "2026-09-24",
+  "catalog_gaps_before": 704,
+  "image_health_gaps_before": 37,
+  "scope": [
+    {"record_type":"image","image_id":"camp-gx600-primary-image","gap_instance":"camp-gx600-pes"},
+    {"record_type":"image","image_id":"twitter-cyclone-electronic-official-et-primary-image","gap_instance":"twitter-cyclone-electronic"},
+    {"record_type":"image","image_id":"twitter-cyclone-gen3-et-primary-image","gap_instance":"twitter-cyclone-gen3-et"},
+    {"record_type":"image","image_id":"twitter-gravel-v3-primary-image","gap_instances":["twitter-v3-rs-sensah","twitter-v3-wheeltop-eds"]},
+    {"record_type":"image","image_id":"camp-gx700-primary-image","gap_instance":"camp-gx700-grx820"},
+    {"record_type":"image","image_id":"twitter-t3-tt-primary-image","gap_instance":"twitter-t3-tt"},
+    {"record_type":"image","image_id":"rinasclta-gr025-primary-image","gap_instance":"rinasclta-gr025-frameset"},
+    {"record_type":"image","image_id":"twitter-gravel-v3-2024-listing-primary-image","gap_instance":"twitter-v3-2024-rs-sensah-alloy"},
+    {"record_type":"image","image_id":"carbonda-cfr696-primary-image","gap_instance":"carbonda-cfr696-frameset"},
+    {"record_type":"image","image_id":"ican-gra04-official-primary-image","gap_instance":"ican-gra04-frameset"}
+  ],
+  "allowed_work": "Run the repository image-health report once for the ten frozen IDs. Record checked_at, exact URL, HTTP status, content type, and classification. Add a health_check only for resources confirmed healthy and only when every current remote resource for that image is healthy; preserve non-healthy, blocked, and unreachable results as unknown without inferring an outage.",
+  "stop_conditions": [
+    "Do not change image subject accuracy, media files, image ownership, credits, alt text, or rights metadata.",
+    "Do not retry a URL in this batch.",
+    "Do not inspect or mutate image IDs outside this frozen list."
+  ],
+  "done_criteria": [
+    "All ten IDs receive one report result for each current remote resource.",
+    "Only a fully healthy resource set can receive a date-stamped health_check.",
+    "Fresh data:gaps inventory establishes the number of catalog image-health gaps actually closed.",
+    "Run npm run check once after image metadata changes; no image:report rerun."
+  ]
+}

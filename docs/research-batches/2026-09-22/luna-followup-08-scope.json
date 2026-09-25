@@ -1,0 +1,99 @@
+{
+  "batch_id": "luna-followup-08-2026-09-22",
+  "base_commit": "935daa45914af7443fa2b97cabd0190cdc7da22b",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 7,
+  "atomic_fields": 25,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-robin-evo-community-lead",
+      "fields": [
+        "price",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "generic-custom-carbon-road",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r6-105-al",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-tt-frame-hydraulic",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kontax-power-evo",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "my-way-custom-carbon-frame",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "quick-t10",
+      "fields": [
+        "frame-weight",
+        "tire-clearance",
+        "frame-material",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

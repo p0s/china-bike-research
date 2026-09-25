@@ -1,0 +1,35 @@
+{
+  "id": "candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24-b141-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-r9-2025"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-hi-light-r9-2025-mainland-observed-price-2026-09-24",
+  "retry_reason": "One B141 exact-model web recheck was authorized after the frozen scope excluded every recorded query and URL; unresolved values stay unpromoted.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light 航轮 R9 2025 titanium frameset China current price checkout frame only weight",
+          "route": "Fresh B141 exact-model web search; only previously recorded official product route surfaced and was not reopened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No new exact current mainland checkout page surfaced. The previously recorded official CNY 8,900 retail reference is not a transaction observation and was not reopened."
+        }
+      ],
+      "blocker": "No new exact current mainland checkout page surfaced. The previously recorded official CNY 8,900 retail reference is not a transaction observation and was not reopened."
+    }
+  },
+  "notes": "No new exact current mainland checkout page surfaced. The previously recorded official CNY 8,900 retail reference is not a transaction observation and was not reopened."
+}

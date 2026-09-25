@@ -6,7 +6,7 @@
   },
   "field": "drivetrain",
   "priority": "high",
-  "searched_at": "2026-08-30",
+  "searched_at": "2026-09-25",
   "minimum_distinct_approaches": 50,
   "required_channels": [
     "public-post",
@@ -488,8 +488,21 @@
     "winspace-m6-105-mechanical-2026-08-30",
     "winspace-m6-105-di2-2026-08-30",
     "winspace-m6-ultegra-di2-2026-08-30",
-    "winspace-m6-mainland-options-2026-08-30"
+    "winspace-m6-mainland-options-2026-08-30",
+    "winspace-m6-105-mechanical-current-recheck-2026-09-25",
+    "winspace-m6-105-di2-current-recheck-2026-09-25",
+    "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. The exact option matrix is recorded without assigning a drivetrain to the retained coupon card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/winspace-m6-batch-024-50-area-sweep-2026-08-30.json. The exact option matrix is recorded without assigning a drivetrain to the retained coupon card.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "winspace-m6-105-mechanical-current-recheck-2026-09-25",
+      "winspace-m6-105-di2-current-recheck-2026-09-25",
+      "winspace-m6-ultegra-di2-current-recheck-2026-09-25"
+    ],
+    "note": "Current exact M6 pages re-confirm hydraulic-disc builds: 105 mechanical R7120, 105 Di2 R7170/R7150, and Ultegra Di2 R8170/R8150, all 2×12. None identifies the retained CNY 13,599.20 coupon trim. The retained mainland coupon trim remains unmapped, so the selected build field stays unresolved."
+  }
 }

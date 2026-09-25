@@ -487,8 +487,25 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "hongfu-fm188-internal-current-2026-08-30",
-    "hongfu-fm279-current-2026-08-30"
+    "hongfu-fm279-current-2026-08-30",
+    "hongfu-fm188-internal-current-recheck-2026-09-25",
+    "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+    "hongfu-fm279-current-recheck-2026-09-25",
+    "hongfu-gravel-category-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. Exact option-specific maxima are preserved without assigning either to the generic candidate."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. Exact option-specific maxima are preserved without assigning either to the generic candidate.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "hongfu-fm188-internal-current-2026-08-30",
+      "hongfu-fm279-current-2026-08-30",
+      "hongfu-fm188-internal-current-recheck-2026-09-25",
+      "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+      "hongfu-fm279-current-recheck-2026-09-25",
+      "hongfu-gravel-category-current-recheck-2026-09-25"
+    ],
+    "note": "The manufacturer gives 700x45 mm or 27.5x2.0 for FM188 Internal and 700x42 mm for FM279; the current category lists FM188 Internal, New CX FM188 and FM279. The generic candidate is unmapped, so neither maximum is assigned."
+  }
 }

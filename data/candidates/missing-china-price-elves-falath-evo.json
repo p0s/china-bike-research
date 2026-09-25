@@ -12,12 +12,13 @@
   ],
   "status": "official-global-reference",
   "research_priority": "high",
-  "price_status": "Current official global US$1,100 checkout converted to CNY; EVO/EVO+ naming and mainland checkout, shipping and tax remain caveated",
+  "price_status": "Accepted 2026-09-01 Falath EVO+ global US$1,100 reference only; exact Falath EVO mainland price and checkout remain unknown.",
   "required_before_dashboard": "China purchase route, dated RMB price, checkout conditions, and domestic warranty handling",
   "source_ids": [
     "elves-falath-evo-official-2026-08-17",
     "elves-falath-evo-frameset-official-2026-08-17",
-    "usd-cny-central-parity-2026-07-31"
+    "usd-cny-central-parity-2026-07-31",
+    "elves-falath-evo-spec-recheck-2026-09-23"
   ],
   "official_price": {
     "amount_cny": 7468,
@@ -30,7 +31,7 @@
     "conversion_rate_date": "2026-07-31"
   },
   "source_url": "https://elvesbike.com/more.php?id=142&lm=8",
-  "source_note": "The current exact storefront lists US$1,100 and selectable options. The CNY value is a dated reference conversion, not a mainland checkout; EVO/EVO+ suffix use and final selected package remain explicit caveats.",
+  "source_note": "The current exact storefront lists US$1,100 and selectable options. The CNY value is a dated reference conversion, not a mainland checkout; EVO/EVO+ suffix use and final selected package remain explicit caveats.\n\nBatch 25 direct exact-EVO page recheck confirms its frame details and weight but publishes no price. Keep the separate EVO+ global-store price out of the exact EVO mainland-price field.",
   "facts": {
     "frame": "Toray T800+T1000 full carbon, EPS molded",
     "frame_weight_g": 1050,
@@ -39,10 +40,10 @@
     "sizes": "46, 49, 52, 54, 56, 59 and 61",
     "brakes": "Flat-mount disc, up to 160 mm rotor",
     "frame_weight_basis": "Current exact manufacturer claim: 1,050 g for size 46, unpainted; fork 415 g and seatpost 250 g are listed separately",
-    "stiffness_evidence": "ELVES says the exact Falath EVO+ uses T1000 reinforcement at the head tube and bottom bracket plus its lay-up to create a super-stiff frame and direct power transfer. Exact-model qualitative manufacturer evidence, not a numeric deflection protocol or independent comparison."
+    "stiffness_evidence": "ELVES describes the exact Falath EVO as using T1000 reinforcement at the head tube and bottom bracket to promote stiffness and power transfer. Exact-model qualitative manufacturer evidence; no numeric protocol or independent comparison."
   },
   "support_note": "Official page states UCI approval, EN 14766 and ISO 4210-6:2023 compliance, Di2/eTap compatibility, full internal routing, 415 g fork, 250 g seatpost and a five-year global frame warranty.",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-23",
   "reference_price_kind": "observed",
   "observed_price": {
     "amount_cny": 7468,

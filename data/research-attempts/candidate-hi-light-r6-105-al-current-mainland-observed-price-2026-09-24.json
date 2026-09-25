@@ -1,0 +1,54 @@
+{
+  "id": "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hi-light-r6-105-al"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact official product route returned 403 and exposed no current amount or availability; no independent exact mainland checkout listing surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hi-Light R6 105 AL exact China product page and official current price",
+          "route": "Manufacturer exact product page and bicycle catalog",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact product page did not return readable content. The manufacturer catalog names R6 105 AL but its indexed copy is about two months old and does not show a current price; CNY 8,300 remains dated 2026-08-29.",
+          "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/165.html"
+        },
+        {
+          "attempt": 2,
+          "query": "Hi-Light R6 105 AL current mainland JD, Tmall, Taobao, or other seller listing",
+          "route": "Public exact-model mainland retailer search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "Search results surfaced the dated official price and a Vietnam-built R6 listing, but no exact R6 105 AL mainland CNY listing or checkout. The assembled R6 and foreign-market listing were excluded.",
+          "result_url": "https://cn.tibicycle.com/BICYCLES_detail_1/165.html"
+        },
+        {
+          "attempt": 3,
+          "query": "Hi-Light 航轮 R6 105 AL 铝合金 公路车 京东 天猫 价格 现货",
+          "route": "Exact official manufacturer product page and public seller search",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The exact official product route surfaced in public search but direct access returned 403 Forbidden. The result exposed no current price or orderability. No fresh CNY amount was accepted; the 2026-08-29 official CNY 8,300 retail reference remains separate.",
+          "result_url": "https://cn.tibicycle.com/seoDetails/1615567806210142208.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "hi-light-r6-105-al-official-price-route-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Keep the 2026-08-29 official CNY 8,300 retail reference; do not create a current observed-price value without a readable exact mainland listing."
+}

@@ -49,8 +49,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "round3-quick-pro-tr-one-first-look-3faf45308b"
+    "round3-quick-pro-tr-one-first-look-3faf45308b",
+    "quick-pro-tr-one-official-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: found. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "quick-pro-tr-one-official-current-recheck-2026-09-23"
+    ],
+    "note": "Manufacturer states a maximum tire size of 700×32C."
+  }
 }

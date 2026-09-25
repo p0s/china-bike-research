@@ -1,0 +1,92 @@
+{
+  "batch": 51,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 37,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": { "blocked": 358, "conflicted": 34, "found": 55, "temporarily-exhausted": 3 }
+  },
+  "selection": {
+    "basis": "The fresh report has 37 image-health-unverified variant gaps. Select nine exact models with nine remote primary image resources; one Twitter Gravel V3 image is shared by two published build variants, so this covers ten health-gap instances. Add one exact Elves Falath R7170 image-exactness check, for ten exact models and eleven frozen gap instances total.",
+    "selected_exact_models": 10,
+    "selected_atomic_gap_instances": 12,
+    "root_writer_targets": 9,
+    "luna_evidence_only_targets": 1
+  },
+  "targets": [
+    {
+      "record_type": "remote-image",
+      "owner": "root-writer",
+      "image_ids": [
+        "camp-gx600-primary-image",
+        "twitter-cyclone-electronic-official-et-primary-image",
+        "twitter-cyclone-gen3-et-primary-image",
+        "twitter-gravel-v3-primary-image",
+        "camp-gx700-primary-image",
+        "twitter-t3-tt-primary-image",
+        "rinasclta-gr025-primary-image",
+        "twitter-gravel-v3-2024-listing-primary-image",
+        "carbonda-cfr696-primary-image"
+      ],
+      "affected_variants": [
+        "camp-gx600-pes",
+        "twitter-cyclone-electronic",
+        "twitter-cyclone-gen3-et",
+        "twitter-v3-rs-sensah",
+        "twitter-v3-wheeltop-eds",
+        "camp-gx700-grx820",
+        "twitter-t3-tt",
+        "rinasclta-gr025-frameset",
+        "twitter-v3-2024-rs-sensah-alloy",
+        "carbonda-cfr696-frameset"
+      ],
+      "gap_codes_and_instances": {
+        "image-health-unverified": 10,
+        "image-exactness": 1
+      },
+      "image_exactness_boundary": "The TWITTER Gravel V3 2024 RS image may be reclassified only if current exact-option evidence supports the selected Sensah/alloy build; do not infer exactness from successful image loading or a nearby generation."
+    },
+    {
+      "record_type": "published-variant-image",
+      "record_id": "elves-falath-r7170",
+      "image_id": "elves-falath-r7170-primary-image",
+      "gap_code": "image-exactness",
+      "atomic_gap_instances": 1,
+      "owner": "root-integrator",
+      "evidence_only_assignment": "one Luna Max agent checks current exact Falath Pro Disc R7170 manufacturer image routes and documented remote-use or reusable-rights terms; no repository edits."
+    }
+  ],
+  "tooling_prerequisite": {
+    "problem": "data:gaps marks every remote primary image as unverified even immediately after image:report has confirmed a successful image response; image:report currently lacks an exact-image filter and machine-readable output.",
+    "change": "Add scoped JSON output to image:report, persist a dated per-resource health check on selected image records, and suppress image-health-unverified only when every current remote URL returned an image response within the preceding 30 days. Preserve the gap when a check is absent, stale, blocked, unhealthy, or incomplete.",
+    "tests": "Cover exact image filtering, JSON results, fresh healthy suppression, and stale/failed/incomplete checks retaining the gap.",
+    "research_limit": "Check only the nine frozen remote image IDs plus any exact Elves asset surfaced by the evidence-only check. Do not fetch the full site image inventory."
+  },
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "image_rights": "A health response establishes only endpoint response and content type on the check date. It does not establish image subject accuracy, reuse rights, attribution, or future availability. Keep third-party files remote unless reusable rights are documented; preserve the exact model/build, credit, alt text, source and fallback metadata.",
+    "stop_criteria": "Run the bounded image health check once for the frozen resource IDs. For Elves, stop at an exact manufacturer asset with usable rights terms or a concrete identity/rights boundary; do not repeat the prior 50-area sweep.",
+    "delivery": "Local B51 batch only; no push, pull request, merge, publication, or production action."
+  }
+}

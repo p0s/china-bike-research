@@ -1,0 +1,207 @@
+{
+  "batch": 53,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 358,
+      "conflicted": 34,
+      "found": 52,
+      "open": 2,
+      "temporarily-exhausted": 3
+    }
+  },
+  "selection": {
+    "basis": "From the fresh post-B52 inventory, select ten exact remote image records with image-health-unverified gaps and no health check dated 2026-09-24. Exclude all B51 IDs, the same-day B51 checks, image exactness already scoped in B51, and active 50-approach information fields.",
+    "exact_models": 10,
+    "target_records": 10,
+    "atomic_gap_instances": 10,
+    "evidence_lane": "Root runs one scoped endpoint health report; no image downloads, rehosting, or rights assumptions.",
+    "root_writer": "one writer; exact IDs only"
+  },
+  "targets": [
+    {
+      "image_id": "ican-gra04-official-primary-image",
+      "url": "https://www.icanbikes.com/wp-content/uploads/2024/06/Full-Carbon-Racing-Gravel-Frame-with-UDH-GRA04-01.avif",
+      "source_id": "ican-gra04-official",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "ican-gra04-frameset",
+          "name": "GRA04 frameset",
+          "platform_id": "ican-gra04"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "sava-gelaro-s8-primary-image",
+      "url": "https://savadeck-bike.com/cdn/shop/files/GelaroS8-ClassicBlack.png?v=1779789542&width=1080",
+      "source_id": "sava-gelaro-s8-official-2026-08-08",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "sava-gelaro-s8",
+          "name": "Gelaro S8 GRX820",
+          "platform_id": "sava-gelaro-s8"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "bianchi-oltre-race-ytb8d-primary-image-2026-08-30",
+      "url": "https://www.bianchi.com/wp-content/uploads/2026/07/OltreRace-FQ_Ph-scaled.jpg",
+      "source_id": "bianchi-oltre-race-current-official-2026-08-30",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "bianchi-oltre-race",
+          "name": "Oltre Race",
+          "platform_id": "bianchi-oltre-race"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "sava-a7l-r08-2026-exact-primary-image",
+      "url": "https://savadeck-bike.com/cdn/shop/files/sava-a7l-2026-full-carbon-road-bike-24-speed-01-2026-sava-a7l-carbon-road-bike-silver-front-45-degree-main.jpg?v=1783501707&width=1080",
+      "source_id": "sava-a7l-r08-current-2026-08-30",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "sava-a7l-r7100",
+          "name": "A7L R7100",
+          "platform_id": "sava-a7l-r7100"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "sava-gelaro-primary-image",
+      "url": "https://savadeck-bike.com/cdn/shop/files/DSC_2049.jpg?v=1746492698&width=1080",
+      "source_id": "sava-gelaro-s4-official",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "sava-gelaro-s4-grx400",
+          "name": "Gelaro S4 GRX400",
+          "platform_id": "sava-gelaro"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "sava-gelaro-sf-primary-image",
+      "url": "https://savadeck-bike.com/cdn/shop/files/Gelaro_SF6-U6020-Black.jpg?v=1755591722&width=1080",
+      "source_id": "sava-gelaro-sf6-official",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "sava-gelaro-sf6-cues",
+          "name": "Gelaro SF6 CUES U6000 1×11",
+          "platform_id": "sava-gelaro-sf"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "ican-graro-primary-image",
+      "url": "https://icancycling.com/cdn/shop/files/ICAN_Graro_gravel_bike_frame.jpg?v=1775792859",
+      "source_id": "ican-graro-official",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "ican-graro-frameset",
+          "name": "Graro frameset",
+          "platform_id": "ican-graro"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "xmcarbonspeed-cs-gr01-primary-image",
+      "url": "https://ueeshop.ly200-cdn.com/u_file/UPBC/UPBC678/2407/30/products/27066bdad4.jpg?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2Cq_100%2Fresize%2Cm_lfit%2Ch_1000%2Cw_1000",
+      "source_id": "xmcarbonspeed-gr01-official",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "xmcarbonspeed-cs-gr01-frameset",
+          "name": "CS-GR01 frameset",
+          "platform_id": "xmcarbonspeed-cs-gr01"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "lightcarbon-lcg071s-pro-primary-image",
+      "url": "https://mybike.parts/bike_parts/672.png?1781036385=",
+      "source_id": "lightcarbon-image-reference",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "lightcarbon-lcg071s-pro-frameset",
+          "name": "LCG071S-PRO frameset",
+          "platform_id": "lightcarbon-lcg071s-pro"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    },
+    {
+      "image_id": "scott-addict-rc-40-primary-image",
+      "url": "https://www.diliecicli.it/cdn/shop/files/ADDICTRC40.webp?v=1691319669",
+      "source_id": "scott-addict-rc-40-retailer-2026-08-08",
+      "exact_model_records": [
+        {
+          "record_type": "published-variant",
+          "record_id": "scott-addict-rc-40",
+          "name": "Addict RC 40",
+          "platform_id": "scott-addict-rc-40"
+        }
+      ],
+      "gap_instances": 1,
+      "previous_health_check": null
+    }
+  ],
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "report_once": true,
+    "health_semantics": "Only status 2xx/3xx with image/* content type is healthy. Host blocking or unreachable is not proof the resource is permanently broken and must leave gaps open. Health does not establish exact image subject or reuse rights.",
+    "no_downloads": true,
+    "no_image_asset_changes": true,
+    "no_same_day_retries": true,
+    "no_50_approach_retry": true
+  },
+  "delivery": "Local B53 batch only; no push, pull request, merge, publication, or production action."
+}

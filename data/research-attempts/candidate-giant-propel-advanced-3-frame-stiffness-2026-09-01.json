@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "giant-china-propel-advanced-3-official-2026-08-17"
+    "giant-china-propel-advanced-3-official-2026-08-17",
+    "giant-china-propel-advanced-3-official-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-giant-propel-advanced-3-batch-037-50-area-sweep-2026-09-01.json. The exact mainland page says the new Propel frame has significantly increased stiffness and a higher stiffness-to-weight ratio; qualitative manufacturer evidence only."
+  "notes": "Current exact Propel Advanced 3 manufacturer page states significantly increased frame stiffness but supplies no numeric result or public test protocol.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-china-propel-advanced-3-official-current-2026-09-23"
+    ],
+    "note": "Current exact Propel Advanced 3 manufacturer page states significantly increased frame stiffness but supplies no numeric result or public test protocol."
+  }
 }

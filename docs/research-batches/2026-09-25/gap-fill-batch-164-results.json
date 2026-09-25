@@ -1,0 +1,106 @@
+{
+  "batch": 164,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-164-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "work": {
+    "exact_records": 2,
+    "atomic_fields": 3,
+    "conflict_reconfirmed": [
+      {
+        "record_id": "twitter-t8-closed-wheel",
+        "field": "complete-weight",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-complete-weight-2026-08-30-b141-live-recheck-2026-09-25",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "twitter-t8-closed-wheel-official-2026-08-30",
+          "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25",
+          "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+        ],
+        "result": "The current official catalog lists the T8 alternatives but no weights. The exact retained marketplace card does not select the approximate 9.2 kg WheelTop or 9.3 kg Shimano configuration, so no value was assigned."
+      },
+      {
+        "record_id": "twitter-t8-closed-wheel",
+        "field": "drivetrain",
+        "attempt_id": "candidate-twitter-t8-closed-wheel-drivetrain-2026-08-30-b141-live-recheck-2026-09-25",
+        "source_ids": [
+          "taobao-snapshot-2026-08-08",
+          "twitter-t8-closed-wheel-official-2026-08-30",
+          "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+        ],
+        "result": "The current official catalog confirms WheelTop EVO-24S and Shimano 105/R7120-24S options, but the retained card does not select one. Both remain unassigned. All previously accepted source IDs were preserved."
+      },
+      {
+        "record_id": "twitter-little-white-rabbit",
+        "field": "drivetrain",
+        "attempt_id": "candidate-twitter-little-white-rabbit-drivetrain-b155-2026-09-25",
+        "source_ids": [
+          "twitter-little-white-rabbit-tmall-mirror-2026-08-30",
+          "twitter-little-white-rabbit-jd-options-2026-08-30"
+        ],
+        "result": "Linked Tmall and JD listings show mechanical and WheelTop wireless-electronic options, but no exact option belongs to the retained custom card. Neither was assigned."
+      }
+    ],
+    "resolution_annotations_added": 3,
+    "research_attempt_records_added": 0,
+    "new_searches": 0,
+    "new_sources": 0,
+    "catalog_value_changes": 0,
+    "images_added": 0,
+    "excluded_conflict": {
+      "record_id": "twitter-v3-rs-sensah",
+      "field": "clearance-unverified",
+      "attempt_id": "variant-twitter-v3-rs-sensah-tire-clearance-2026-08-17",
+      "retry_after": "2026-11-17",
+      "reason": "No new source lead; left untouched until the recorded retry date."
+    }
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public-post": 15450,
+      "web": 35890
+    },
+    "data_gaps_research_status_counts": {
+      "blocked": 320,
+      "conflicted": 35,
+      "found": 15,
+      "open": 69,
+      "temporarily-exhausted": 4
+    },
+    "queue": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 1
+    },
+    "image_gaps": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    },
+    "images": 212
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "accepted_source_audit": "passed: source IDs remain linked and prior accepted evidence was preserved",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets; coverage check passed in full gate",
+    "full_gate": "passed: privacy and data validation passed; 333/333 tests; 584 pages built; SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed",
+    "image_report": "not run: no image record changed"
+  }
+}

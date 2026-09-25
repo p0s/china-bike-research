@@ -479,8 +479,19 @@
   "status": "found",
   "accepted_source_ids": [
     "winspace-slc3-official-2026-08-17",
-    "winspace-road-frame-clearance-faq-2026-09-01"
+    "winspace-road-frame-clearance-faq-2026-09-01",
+    "winspace-road-frame-clearance-faq-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-winspace-slc3-batch-032-50-area-sweep-2026-09-01.json. The current manufacturer collection FAQ says SLC3.0 generally supports measured-width tires up to 32 mm depending on rim internal width."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-missing-china-price-winspace-slc3-batch-032-50-area-sweep-2026-09-01.json. The current manufacturer collection FAQ says SLC3.0 generally supports measured-width tires up to 32 mm depending on rim internal width. Focused exact-model review on 2026-09-23: Winspace FAQ names SLC3.0 as optimized for 28 mm and generally supports up to 32 mm measured width depending on rim internal width; not a measurement across every rim.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "winspace-slc3-official-2026-08-17",
+      "winspace-road-frame-clearance-faq-2026-09-01",
+      "winspace-road-frame-clearance-faq-recheck-2026-09-23"
+    ],
+    "note": "Winspace FAQ names SLC3.0 as optimized for 28 mm and generally supports up to 32 mm measured width depending on rim internal width; not a measurement across every rim."
+  }
 }

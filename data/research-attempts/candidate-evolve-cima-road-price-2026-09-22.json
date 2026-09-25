@@ -57,8 +57,14 @@
       ]
     }
   },
-  "status": "open",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": ["evolve-cima-road-official-2026-09-22", "ecb-reference-rates-2026-09-22"],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["evolve-cima-road-official-2026-09-22", "ecb-reference-rates-2026-09-22"],
+    "note": "The exact Evolve CIMA Navy White official package is listed at US$2,299 for frame, fork and seatpost, excluding its optional US$200 cockpit; ECB conversion gives CNY 15,403 as a foreign reference only. No mainland delivered quote or selected total is established."
+  },
   "retry_after": null,
   "notes": "Mainland selected-package price remains unknown. Next: a distinct exact road-CIMA seller/owner price lead or remaining public-post attempts. Private XHS archive SHA-256 50df37bdc4684c9af810bb827874aa2697aa12c44231330cb148d92738b50bdf; 3 detailed posts, 24 comments, 18 media references, target reached without rate limit. Archive validity does not establish price sufficiency."
 }

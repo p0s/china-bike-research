@@ -1,0 +1,196 @@
+{
+  "batch": 153,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-25",
+    "catalog_gap_entries": 669,
+    "catalog_records": 263,
+    "published_variants": 41,
+    "candidates": 222,
+    "research_status_counts": {
+      "blocked": 322,
+      "conflicted": 35,
+      "found": 10,
+      "open": 74,
+      "temporarily-exhausted": 4
+    },
+    "selection": "Five highest-priority eligible candidate records remaining after excluding every model scoped in B138-B152 and records reviewed or searched on 2026-09-25. Twenty-two older exact-field gaps fit within the 25-field cap."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "cosmosworks-carbon-e-road",
+        "name": "cosmosworks / 宇宙E-BIKE mixed NOMAD / Oi! lead",
+        "record_type": "candidate",
+        "priority_score": 101,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-cosmosworks-carbon-e-road-complete-weight-2026-08-29",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-cosmosworks-carbon-e-road-drivetrain-2026-08-29",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-cosmosworks-carbon-e-road-tire-clearance-2026-08-29",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-cosmosworks-carbon-e-road-frame-material-2026-08-29",
+            "field": "frame-material"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-cosmosworks-carbon-e-road-frame-stiffness-2026-08-29",
+            "field": "frame-stiffness"
+          }
+        ]
+      },
+      {
+        "id": "viqi-integrated-road-unknown",
+        "name": "ViQi 微琦 Integrated carbon road bike, model unclear",
+        "record_type": "candidate",
+        "priority_score": 101,
+        "last_reviewed": "2026-08-30",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-viqi-integrated-road-unknown-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-viqi-integrated-road-unknown-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-viqi-integrated-road-unknown-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-viqi-integrated-road-unknown-frame-material-2026-08-30",
+            "field": "frame-material"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-viqi-integrated-road-unknown-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness"
+          }
+        ]
+      },
+      {
+        "id": "flying-pigeon-carbon-road-unknown",
+        "name": "Flying Pigeon 飞鸽 carbon-road listing (model unresolved; X900 unverified)",
+        "record_type": "candidate",
+        "priority_score": 95,
+        "last_reviewed": "2026-08-29",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-flying-pigeon-carbon-road-unknown-complete-weight-2026-08-29",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-flying-pigeon-carbon-road-unknown-drivetrain-2026-08-29",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-flying-pigeon-carbon-road-unknown-tire-clearance-2026-08-29",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "frame-material-detail-missing",
+            "attempt_id": "candidate-flying-pigeon-carbon-road-unknown-frame-material-2026-08-29",
+            "field": "frame-material"
+          }
+        ]
+      },
+      {
+        "id": "meihanda-xtreme-gravel",
+        "name": "Meihanda 美涵达 / Xtreme carbon gravel bike, exact model unresolved",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-meihanda-xtreme-gravel-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-meihanda-xtreme-gravel-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-meihanda-xtreme-gravel-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-meihanda-xtreme-gravel-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness"
+          }
+        ]
+      },
+      {
+        "id": "meinier-superlight-2",
+        "name": "MEINIER full-carbon road bike, exact model unresolved",
+        "record_type": "candidate",
+        "priority_score": 87,
+        "last_reviewed": "2026-09-23",
+        "gaps": [
+          {
+            "code": "complete-weight-missing",
+            "attempt_id": "candidate-meinier-superlight-2-complete-weight-2026-08-30",
+            "field": "complete-weight"
+          },
+          {
+            "code": "drivetrain-missing",
+            "attempt_id": "candidate-meinier-superlight-2-drivetrain-2026-08-30",
+            "field": "drivetrain"
+          },
+          {
+            "code": "clearance-unverified",
+            "attempt_id": "candidate-meinier-superlight-2-tire-clearance-2026-08-30",
+            "field": "tire-clearance"
+          },
+          {
+            "code": "stiffness-evidence-missing",
+            "attempt_id": "candidate-meinier-superlight-2-frame-stiffness-2026-08-30",
+            "field": "frame-stiffness"
+          }
+        ]
+      }
+    ],
+    "exact_record_count": 5,
+    "atomic_gap_entries": 22,
+    "research_boundary": "Reuse the user-authorized Luna Max evidence-only agent; root remains the sole writer. For each selected candidate, inspect its current record, linked sources, latest field attempts, and registered campaign history before one distinct current web query. Open at most one genuinely new product or technical page per candidate. Before opening, literal-search the final URL across data/ and docs/; skip if present or absence is uncertain. Preserve model identity uncertainty; do not transfer facts between unrelated products, families, or possible trims. Stop after these five targets; do not reopen a known URL or retry a failed page.",
+    "field_rules": [
+      "Complete-bike weight must match a retained exact build and state size, included equipment/accessories, approximation, and weighing basis; do not transfer frame weight or an unqualified review-bike value.",
+      "Drivetrain claims need exact series, speed, layout, actuation, and selected build; do not infer an option from a family menu.",
+      "Maximum tire clearance requires explicit exact-model maximum evidence; fitted or recommended tire width is insufficient.",
+      "Frame-material detail must be directly attributed to the exact model; do not infer fiber grade or lay-up from a generic seller listing.",
+      "Frame stiffness requires an exact-model numeric result or sufficiently specific independent assessment; qualify subjective/build-specific impressions and preserve protocol limitations.",
+      "These candidates have uncertain product/trim identity; first establish the exact record-to-product mapping, otherwise preserve the gap without transferring family or sibling values."
+    ],
+    "excluded": [
+      "No agent edits; no XHS/Weibo, personal browser, login/CAPTCHA, seller outreach, external messages, quote submission, cart, checkout, or purchase.",
+      "No prices, images, or unrelated specifications. Only the frozen fields, directly supporting source/attempt records, coverage baseline if required, attempt-count expectation if stale, and dated batch documentation may change.",
+      "No commit, push, PR, merge, publish, or production change."
+    ]
+  },
+  "external_delivery": "none"
+}

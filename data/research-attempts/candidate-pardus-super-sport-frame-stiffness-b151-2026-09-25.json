@@ -1,0 +1,61 @@
+{
+  "id": "candidate-pardus-super-sport-frame-stiffness-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-super-sport"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "found",
+  "retry_after": null,
+  "retry_of": "candidate-pardus-super-sport-frame-stiffness-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-pardus-super-sport-frame-stiffness",
+    "extends_attempt_id": "candidate-pardus-super-sport-frame-stiffness-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-pardus-super-sport-frame-stiffness-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS 瑞豹 Super Sport original 105 HDB fluorescent complete bike weight maximum tire clearance stiffness official",
+          "route": "One bounded current exact-model web query",
+          "outcome": "found",
+          "accessed_at": "2026-09-25",
+          "note": "Existing original-generation Biketo review reports a 9.5 kg test bike and the subjective impression that its frame did not feel insufficiently stiff. The qualitative model-level stiffness observation is recorded with the review-build caveat; no numeric or controlled frame-only result exists. Weight basis and 23C test tires do not establish the retained build weight or maximum clearance. Known official URL was skipped."
+        }
+      ]
+    }
+  },
+  "accepted_source_ids": [
+    "pardus-super-sport-review-biketo-2026-08-30"
+  ],
+  "notes": "Existing original-generation Biketo review reports a 9.5 kg test bike and the subjective impression that its frame did not feel insufficiently stiff. The qualitative model-level stiffness observation is recorded with the review-build caveat; no numeric or controlled frame-only result exists. Weight basis and 23C test tires do not establish the retained build weight or maximum clearance. Known official URL was skipped.",
+  "searched_at": "2026-09-25",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "pardus-super-sport-review-biketo-2026-08-30"
+    ],
+    "note": "The candidate already records the accepted original-generation Biketo subjective impression with the review-build caveat; it does not claim a numeric test."
+  }
+}

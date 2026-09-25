@@ -1,0 +1,72 @@
+{
+  "batch": 67,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The fresh queue has zero ready fields but the highest-priority remaining record is the exact LightCarbon SPEEDZ model; its core specifications remain unpopulated, and the prior official 2025-26 PDF fetch timed out. This batch tests one distinct, current official manufacturer web/catalog route rather than repeating the timed-out PDF or prior image checks.",
+    "exact_models": 1,
+    "atomic_gaps": 5,
+    "prior_attempts": [
+      "platform-lightcarbon-speedz-frame-material-2026-08-29",
+      "platform-lightcarbon-speedz-frame-weight-2026-08-29",
+      "platform-lightcarbon-speedz-tire-clearance-2026-08-29",
+      "platform-lightcarbon-speedz-geometry-2026-08-29",
+      "variant-lightcarbon-speedz-frameset-bottom-bracket-recheck-2026-09-24"
+    ]
+  },
+  "target": {
+    "model": "LightCarbon SPEEDZ",
+    "platform_id": "lightcarbon-speedz",
+    "fields": [
+      "frame material or construction",
+      "frame weight",
+      "maximum tire clearance",
+      "frame geometry",
+      "frameset bottom-bracket standard"
+    ]
+  },
+  "research_route": {
+    "source_class": "manufacturer-primary",
+    "allowed_route": "Current official LightCarbon product/catalog pages other than the previously timed-out 2025-26 Catalog V2 PDF.",
+    "stop_rule": "One exact-model route/search only. Stop at the first decisive exact-model source or after the bounded official-domain lookup finds no matching SPEEDZ specification. Do not transfer measurements or parts from another LightCarbon model.",
+    "evidence_capture": "Record the exact URL, page/document title, access date, model identity, directly supported fields and any conflicts or limitations. No image inspection, copying, or third-party source search in this batch."
+  },
+  "done_criteria": [
+    "Preserve current unknowns unless the exact SPEEDZ source directly supports a value.",
+    "Add dated source provenance and update only exact fields directly supported by evidence.",
+    "Record bounded no-result, access block, or conflict as an explicit unresolved result without treating it as proof of nonexistence.",
+    "Run focused research validation and the full npm run check once if any data/source/research record changes; docs-only no-result record needs no full gate.",
+    "Local B67 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B67 batch only; no push, pull request, merge, publication or production action."
+}

@@ -478,8 +478,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "pardus-spark-gen3-owner-2026-08-30"
+    "pardus-spark-gen3-owner-2026-08-30",
+    "pardus-spark-sport-pes-owner-post-current-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-spark-sport-pes-batch-036-50-area-sweep-2026-09-01.json. A current exact 2026 Spark Sport 3 PES size-XS owner build reports approximately 8.5 kg; pedals, scale protocol and stock-component continuity remain unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-pardus-spark-sport-pes-batch-036-50-area-sweep-2026-09-01.json. A current exact 2026 Spark Sport 3 PES size-XS owner build reports approximately 8.5 kg; pedals, scale protocol and stock-component continuity remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "pardus-spark-gen3-owner-2026-08-30",
+      "pardus-spark-sport-pes-owner-post-current-recheck-2026-09-23"
+    ],
+    "note": "prior-owner-weight-not-reproducible-in-current-post: The stored owner report says about 8.5 kg for an XS 2026 Spark Sport PES build. Current visible text does not show the weight, size or PES trim, so the value remains an unverified lead rather than a current comparable weight. Reopen trigger: Reopen when owner evidence visibly supports the exact trim, size, weight and equipment basis."
+  }
 }

@@ -1,0 +1,378 @@
+{
+  "batch_id": "gap-fill-batch-19-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-19-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 23,
+    "root_fields": 10,
+    "luna_evidence_fields": 13
+  },
+  "new_images_added": 0,
+  "new_source_records": [
+    "upland-r70-indexed-current-2026-09-23",
+    "west-biking-sl-one-taobao-search-index-2026-09-23"
+  ],
+  "results": [
+    {
+      "record_id": "twitter-x7",
+      "field": "complete-weight",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-twitter-x7-complete-weight-2026-08-30",
+      "source_ids": [
+        "twitter-x7-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike"
+      ],
+      "note": "The TWITTER Bikes USA product page, which identifies its publisher as the U.S. distributor, says from 7.6 kg. It does not state a weighing method or bind that value to the retained mainland card; keep it as a distributor-reported family claim, not an exact selected-build weight.",
+      "next_trigger": "A measured retained build with its exact size, included equipment, and weighing method."
+    },
+    {
+      "record_id": "twitter-x7",
+      "field": "frame-material",
+      "status": "integrated-source-reuse-with-caveat",
+      "attempt_record_id": "candidate-twitter-x7-frame-material-2026-08-30",
+      "source_ids": [
+        "twitter-x7-official-current-2026-09-23",
+        "twitter-x7-regional-options-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike",
+        "https://twitterbikeusa.com/products/x7-twitter-carbon-aero-road-bike"
+      ],
+      "note": "The X7 product page and regional options page describe carbon construction and list T1000/T1100/T1K grades, but the grades and parts are not bound to the retained mainland build. Keep platform material as carbon and do not assign an exact build lay-up.",
+      "next_trigger": "A manufacturer specification or BOM tying exact fiber grades to the selected mainland SKU."
+    },
+    {
+      "record_id": "twitter-x7",
+      "field": "identity-source",
+      "status": "integrated-distributor-provenance-with-market-mapping-unresolved",
+      "attempt_record_id": "candidate-twitter-x7-identity-source-2026-08-30",
+      "source_ids": [
+        "twitter-x7-official-current-2026-09-23",
+        "twitter-usa-distributor-provenance-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://twitterbikeusa.com/en-ca/products/x7-twitter-carbon-aero-road-bike",
+        "https://twitterbikeusa.com/pages/about-us"
+      ],
+      "note": "The exact product page identifies the X7 family, and its About page identifies the publisher as TWITTER’s U.S. distributor. This supports family identity only; it does not establish the retained mainland configuration or a mainland seller.",
+      "next_trigger": "A mainland manufacturer SKU or authorized mainland listing tied to the retained card."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "drivetrain",
+      "status": "evidence-backed-unresolved-selected-build",
+      "attempt_record_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "source_ids": [
+        "west-biking-sl-one-current-options-2026-08-30",
+        "west-biking-sl-one-taobao-search-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
+        "https://tao.hooos.com/tag_105%E5%A5%97%E4%BB%B6.html"
+      ],
+      "note": "The 2026-08-30 JD index listed R7120 mechanical and R7170 Di2 options, but the 2026-09-23 Taobao search-index result supports only a 105 24-speed mechanical/hydraulic-disc SL-ONE listing. The current JD index did not surface SL-ONE, and the retained card selects no build; R7120/R7170 and a current electronic option remain unverified.",
+      "next_trigger": "A live exact mainland SKU that visibly selects and lists the retained build."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "frame-material",
+      "status": "integrated-marketplace-claim-with-caveat",
+      "attempt_record_id": "candidate-west-biking-sl-one-frame-material-2026-08-30",
+      "source_ids": [
+        "west-biking-sl-one-current-options-2026-08-30",
+        "west-biking-sl-one-taobao-search-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
+        "https://tao.hooos.com/tag_105%E5%A5%97%E4%BB%B6.html"
+      ],
+      "note": "The current Taobao search-index result calls an SL-ONE listing full-carbon, consistent with the older JD listing claim. This is marketplace listing evidence, not a manufacturer material declaration; grade, lay-up, fork construction, and retained-card mapping remain unknown.",
+      "next_trigger": "Manufacturer material documentation tied to the exact SL-ONE revision."
+    },
+    {
+      "record_id": "west-biking-sl-one",
+      "field": "identity-source",
+      "status": "evidence-backed-unresolved-seller-authority",
+      "attempt_record_id": "candidate-west-biking-sl-one-identity-source-2026-08-30",
+      "source_ids": [
+        "west-biking-sl-one-current-options-2026-08-30",
+        "west-biking-sl-one-taobao-search-index-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc",
+        "https://tao.hooos.com/tag_105%E5%A5%97%E4%BB%B6.html"
+      ],
+      "note": "The 2026-09-23 Taobao search-index result identifies a WEST BIKING SL-ONE listing and names a WEST BIKING flagship-store seller, but it does not independently verify seller authorization. The JD item click hit its ordinary risk handler; no bypass was attempted.",
+      "next_trigger": "A normally accessible exact listing with verifiable seller authority or manufacturer cross-reference."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "complete-weight",
+      "status": "integrated-trim-options-with-measurement-caveat",
+      "attempt_record_id": "candidate-felt-ia-2-complete-weight-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Current Felt pages list size-M weights of FRD 9.37 kg, PRO 9.5 kg, EXPERT 10.3 kg, and RACE 10.44 kg. The weighing method is unstated, the retained mainland price card does not identify a trim, and Felt warns dealer-stock specifications can vary; no one figure is assigned to that card.",
+      "next_trigger": "The retained price card resolving to one trim and an exact size/measurement basis."
+    },
+    {
+      "record_id": "felt-ia-2",
+      "field": "drivetrain",
+      "status": "integrated-trim-options-selection-unresolved",
+      "attempt_record_id": "candidate-felt-ia-2-drivetrain-2026-08-30",
+      "source_ids": [
+        "felt-ia-2-frd-current-2026-09-23",
+        "felt-ia-2-pro-current-2026-09-23",
+        "felt-ia-2-expert-current-2026-09-23",
+        "felt-ia-2-race-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://feltbicycles.com/products/ia-2-0-frd-shimano-dura-ace-di2?variant=57207462854981",
+        "https://feltbicycles.com/products/ia-2-0-pro-shimano-ultegra-di2?variant=57207471800645",
+        "https://feltbicycles.com/products/ia-2-0-expert-shimano-ultegra-di2?variant=57207481532741",
+        "https://feltbicycles.com/products/ia-2-0-race-shimano-105-di2?variant=57207484186949"
+      ],
+      "note": "Current Felt pages list FRD Dura-Ace Di2 2x12, PRO and EXPERT Ultegra Di2 2x12, and RACE 105 Di2 2x12. The retained mainland price card does not identify a trim, and dealer-stock specifications may vary.",
+      "next_trigger": "The retained mainland card resolving to one current IA 2.0 trim."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "complete-weight",
+      "status": "integrated-indexed-manufacturer-claim-with-build-unresolved",
+      "attempt_record_id": "candidate-upland-r70-complete-weight-2026-08-30",
+      "source_ids": [
+        "upland-r70-indexed-current-2026-09-23",
+        "upland-r70-official-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/product/308.html"
+      ],
+      "note": "The live index excerpt for the exact UPLAND manufacturer page says approximately 8.3 kg bare, excluding pedals and computer mount, for the displayed 105 Di2 build. Direct page opening timed out; size and weighing method are unstated, and the retained cards do not select this drivetrain.",
+      "next_trigger": "A readable exact offer selecting the Di2 build and stating size and weighing basis."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "frame-material",
+      "status": "integrated-manufacturer-platform-material",
+      "attempt_record_id": "candidate-upland-r70-frame-material-2026-08-30",
+      "source_ids": [
+        "upland-r70-indexed-current-2026-09-23",
+        "upland-r70-race-engineering-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/product/308.html",
+        "https://www.upland.bike/zh/617.html"
+      ],
+      "note": "The current indexed product-page excerpt describes T700/T800 carbon construction and a T800 fork; the 2026-08-11 UPLAND article describes T700 structure reinforced with T800 in key areas. This supports platform-level carbon construction, not an exact retained-build BOM.",
+      "next_trigger": "A selected retained-build BOM that conflicts with or narrows the platform construction."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "frame-stiffness",
+      "status": "evidence-backed-unresolved-no-measurement",
+      "attempt_record_id": "candidate-upland-r70-frame-stiffness-2026-08-30",
+      "source_ids": [
+        "upland-r70-race-engineering-2026-08-30",
+        "upland-r70-indexed-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/617.html",
+        "https://www.upland.bike/zh/product/308.html"
+      ],
+      "note": "UPLAND makes qualitative structural-strength claims about T800 reinforcement, but provides no reproducible stiffness measurement or protocol. Keep measured frame stiffness unknown; reopen only with an exact-revision instrumented test or controlled comparison.",
+      "next_trigger": "A reproducible instrumented test or controlled exact-model comparison with protocol."
+    },
+    {
+      "record_id": "upland-r70",
+      "field": "identity-source",
+      "status": "integrated-manufacturer-identity-option-unresolved",
+      "attempt_record_id": "candidate-upland-r70-identity-source-2026-08-30",
+      "source_ids": [
+        "upland-r70-indexed-current-2026-09-23",
+        "upland-r70-race-engineering-2026-08-30"
+      ],
+      "sources_checked": [
+        "https://www.upland.bike/zh/product/308.html",
+        "https://www.upland.bike/zh/617.html"
+      ],
+      "note": "The exact UPLAND manufacturer product page and its race article identify R70; the product page was available only through a live search-index excerpt because direct opening timed out. This does not map each retained seller card to one R70 drivetrain option.",
+      "next_trigger": "A seller SKU or manufacturer cross-reference matching each retained offer."
+    },
+    {
+      "record_id": "de-rosa-new-838",
+      "field": "drivetrain",
+      "status": "evidence-backed-unresolved-selected-build",
+      "attempt_record_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "source_ids": [
+        "de-rosa-japan-new-838-options-current-2026-09-23",
+        "de-rosa-838-model-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.derosa.jp/archives/4959",
+        "https://derosa.it/model/838/"
+      ],
+      "note": "Current official De Rosa Japan material lists 105 Di2 and Campagnolo Chorus complete-bike options. These are regional options; the retained mainland price card still does not identify its selected drivetrain.",
+      "next_trigger": "The retained mainland listing exposing its selected option or an exact seller/manufacturer mapping."
+    },
+    {
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "field": "price",
+      "status": "official-list-preserved-current-transaction-unresolved",
+      "attempt_record_id": "candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01",
+      "source_ids": [
+        "giant-china-tcr-advanced-3-gc-official-2026-08-17"
+      ],
+      "sources_checked": [
+        "https://www.giant.com.cn/index.php/index/bike_view.html?id=1398"
+      ],
+      "note": "The exact TCR Advanced 3-GC official source records CNY 6,998 suggested retail, last successfully read on 2026-09-01; its id=1398 page yielded no readable content on 2026-09-23. The current id=3470 TCR Advanced 3 page lists CNY 7,998 for a disc-generation build and is excluded. Current 3-GC stock and checkout price remain unknown.",
+      "next_trigger": "A current exact 3-GC SKU offer with stock, selected size, and checkout total."
+    },
+    {
+      "record_id": "gito-wave",
+      "field": "frame-material",
+      "status": "seller-claim-preserved-exact-model-unresolved",
+      "attempt_record_id": "candidate-gito-wave-frame-material-2026-08-29",
+      "source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "gito-chinese-retail-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://www.ruten.com.tw/item/22614417383708/"
+      ],
+      "note": "The retained anonymized seller snapshot calls the listing carbon, but the exact GITO frame model and grade remain unresolved. A fresh exact-name search on 2026-09-23 found generic GITO carbon listings without a reliable identity link to this wave-wheel listing; do not transfer G320/G530 material claims.",
+      "next_trigger": "A readable frame marking, exact SKU, or manufacturer cross-reference linking the seller listing to a GITO frame."
+    },
+    {
+      "record_id": "hi-light-g7-2",
+      "field": "price",
+      "status": "dated-official-list-preserved-checkout-unverified",
+      "attempt_record_id": "candidate-hi-light-g7-2-price-2026-09-01",
+      "source_ids": [
+        "hi-light-g7-2-official-current-2026-09-01"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/119.html"
+      ],
+      "note": "The last successfully read exact manufacturer page listed CNY 6,500 retail on 2026-09-01. Direct opening returned 403 on 2026-09-23; the search-index excerpt was last crawled about three months earlier. Retain the dated official reference only; current stock and checkout remain unverified.",
+      "next_trigger": "A fresh readable official page or exact domestic offer with current stock and checkout conditions."
+    },
+    {
+      "record_id": "hi-light-r6-105-al",
+      "field": "frame-material",
+      "status": "integrated-exact-frame-material",
+      "attempt_record_id": "candidate-hi-light-r6-105-al-frame-material-2026-08-29",
+      "source_ids": [
+        "titanium-hi-light-r6-105-al-official",
+        "hi-light-r6-japan-distributor-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/165.html",
+        "https://hilight.jp/r6"
+      ],
+      "note": "The exact R6 frame is supported as 3Al–2.5V titanium with a carbon fork by the official regional frame evidence. The R6 105 AL complete-bike page did not expose a complete BOM on its last readable capture; do not infer the rest of the build from the model suffix.",
+      "next_trigger": "A mainland R6 105 AL BOM showing a different frame or fork material."
+    },
+    {
+      "record_id": "hi-light-r6-105-al",
+      "field": "frame-stiffness",
+      "status": "evidence-backed-unresolved-no-measurement",
+      "attempt_record_id": "candidate-hi-light-r6-105-al-frame-stiffness-2026-08-29",
+      "source_ids": [
+        "hi-light-r6-japan-distributor-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://hilight.jp/r6"
+      ],
+      "note": "The distributor describes conventional non-hydroformed tubing, which is qualitative construction context only. No exact-model numeric stiffness/deflection measurement or controlled comparison was found; the measured field remains unresolved.",
+      "next_trigger": "An exact-model instrumented stiffness/deflection measurement or protocol-matched comparison."
+    },
+    {
+      "record_id": "hi-light-r6-105-al",
+      "field": "tire-clearance",
+      "status": "integrated-exact-frameset-maximum",
+      "attempt_record_id": "candidate-hi-light-r6-105-al-tire-clearance-2026-08-29",
+      "source_ids": [
+        "hi-light-r6-frameset-official-2026-08-29"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/115.html"
+      ],
+      "note": "The exact R6 frameset source lists ETRTO 35-622 / 700x35C maximum. The 2026-09-23 direct-open failure was on the separate R6 105 AL complete-bike page; the existing dated frameset maximum is retained without claiming a new live confirmation.",
+      "next_trigger": "A current exact R6 frameset revision specification that changes the published maximum."
+    },
+    {
+      "record_id": "hi-light-r6-105-al",
+      "field": "price",
+      "status": "dated-official-list-preserved-checkout-unverified",
+      "attempt_record_id": "candidate-hi-light-r6-105-al-price-2026-08-29",
+      "source_ids": [
+        "titanium-hi-light-r6-105-al-official"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/165.html"
+      ],
+      "note": "The exact manufacturer complete-bike record lists CNY 8,300 retail, last read on 2026-08-29. Direct opening returned 403 on 2026-09-23 and the indexed page was stale; preserve it as an official reference, not an observed current checkout.",
+      "next_trigger": "A fresh readable official page or exact mainland checkout observation."
+    },
+    {
+      "record_id": "hi-light-r9-2025",
+      "field": "frame-material",
+      "status": "integrated-exact-model-material",
+      "attempt_record_id": "candidate-hi-light-r9-2025-frame-material-2026-09-01",
+      "source_ids": [
+        "titanium-hi-light-r9-2025-official"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "note": "The exact 2025 manufacturer page describes hydroformed variable-wall titanium construction, including 3Al/2.5V CNC dropouts and formed head-tube/bottom-bracket sections. Direct opening returned 403 on 2026-09-23, so retain the last-readable 2026-09-01 source date.",
+      "next_trigger": "A current exact 2025 frame record showing a different material or construction."
+    },
+    {
+      "record_id": "hi-light-r9-2025",
+      "field": "tire-clearance",
+      "status": "integrated-exact-model-maximum",
+      "attempt_record_id": "candidate-hi-light-r9-2025-tire-clearance-2026-09-01",
+      "source_ids": [
+        "titanium-hi-light-r9-2025-official"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "note": "The exact 2025 manufacturer page lists a 700x28C maximum. Direct opening returned 403 on 2026-09-23 and the indexed content was stale; preserve the sourced maximum with its 2026-09-01 evidence date rather than claiming a fresh manufacturer-page confirmation.",
+      "next_trigger": "A current exact 2025 frame record with a different published clearance maximum."
+    },
+    {
+      "record_id": "hi-light-r9-2025",
+      "field": "price",
+      "status": "dated-official-list-preserved-checkout-unverified",
+      "attempt_record_id": "candidate-hi-light-r9-2025-price-2026-09-01",
+      "source_ids": [
+        "titanium-hi-light-r9-2025-official"
+      ],
+      "sources_checked": [
+        "https://cn.tibicycle.com/BICYCLES_detail_1/174.html"
+      ],
+      "note": "The exact 2025 manufacturer page lists CNY 8,900 retail as last read on 2026-09-01. Direct opening returned 403 on 2026-09-23 and the indexed content was stale; keep this as dated official list price, not current stock or checkout evidence.",
+      "next_trigger": "A fresh readable official page or exact mainland checkout observation."
+    }
+  ],
+  "validation": {
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy, data validation (41 brands, 38 platforms, 41 variants, 71 prices, 1,025 sources, 212 primary images, 236 candidates), research validation (1,461 atomic fields), coverage, 307/307 tests, 584-page build, and SEO audit all passed.",
+    "image_report": "Not required; no image records changed."
+  }
+}

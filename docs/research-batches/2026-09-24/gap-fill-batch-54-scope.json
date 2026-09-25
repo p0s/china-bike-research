@@ -1,0 +1,79 @@
+{
+  "batch": 54,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 358,
+      "conflicted": 34,
+      "found": 52,
+      "open": 2,
+      "temporarily-exhausted": 3
+    }
+  },
+  "selection": {
+    "basis": "The fresh post-B53 inventory has one stale non-50, non-same-day non-image atomic field outside the frozen 50-approach campaign: the mainland frameset-price gap for the SEKA ExAero road family.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one Luna Max agent; sequential public-source research; no repository writes",
+    "root_writer": "integrate only evidence meeting the exact package and price contract"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "seka-exaero-road",
+      "model": "SEKA ExAero road family",
+      "gap": "price-missing",
+      "research_field": "mainland-observed-price",
+      "prior_attempt_id": "candidate-seka-exaero-road-price-2026-08-27",
+      "prior_attempt_date": "2026-08-27",
+      "prior_attempt_status": "found",
+      "existing_trim_boundary": "Current official China page distinguishes ExAero RDC and Standard; ExAero GR is separate. Record any amount only with exact RDC/Standard trim and package identity.",
+      "already_checked_routes": [
+        "Exact global manufacturer product page (2026-08-27)",
+        "Exact official China road page (2026-09-24; no price; linked Taobao page did not open)",
+        "Public XHS launch post (2026-08-27; ¥11,900起 not mappable to exact frameset trim)",
+        "Public Weibo launch report (2026-09-24; price table describes complete-system/cockpit packages)"
+      ],
+      "new_route_scope": "Search only distinct public mainland retailer or exact public item routes not already represented by the listed sources. Do not repeat the same official page, linked store URL, XHS launch post or Weibo report during this same-day batch.",
+      "guardrails": [
+        "Do not treat ¥11,900起 as a frameset price; the source describes complete-system prices by cockpit.",
+        "Do not transfer ExAero GR, ExAero RDC, or Standard prices across trims.",
+        "A value resolves only if source identifies exact trim, package, price type, observation date and conditions.",
+        "No login, seller contact, quote form, checkout, private message or challenge bypass."
+      ]
+    }
+  ],
+  "research_rules": {
+    "exact_model_limit": 10,
+    "atomic_gap_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "stop_at_decisive_evidence": true,
+    "no_same_day_source_retries": true,
+    "no_50_approach_retry": true,
+    "no_external_mutations": true
+  },
+  "delivery": "Local B54 batch only; no push, pull request, merge, publication, or production action."
+}

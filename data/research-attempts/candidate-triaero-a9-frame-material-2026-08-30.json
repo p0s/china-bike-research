@@ -495,5 +495,11 @@
     "triaero-a9-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. The exact manufacturer page identifies Toray T700 + T800 carbon construction."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/triaero-a9-50-area-sweep-2026-08-30.json. The exact manufacturer page identifies the Toray T700 + T800 carbon frame only; fork and seatpost material are unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["triaero-a9-official-2026-08-30"],
+    "note": "Narrowed the candidate frame/material text to the manufacturer-supported Toray T700 + T800 carbon frame. The source's fork and seatpost weight claims do not identify their material, so both remain explicitly unverified."
+  }
 }

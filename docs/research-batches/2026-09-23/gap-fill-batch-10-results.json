@@ -1,0 +1,88 @@
+{
+  "batch_id": "gap-fill-batch-10-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-10-scope.json",
+  "scope_count": {
+    "exact_models": 2,
+    "atomic_fields": 2
+  },
+  "completed_at": "2026-09-23",
+  "results": [
+    {
+      "record_id": "mondince-fm316",
+      "field": "frame-stiffness",
+      "status": "unresolved-temporarily-exhausted",
+      "note": "CyclingTips returned no exact FM316 test or stiffness report. The independent publication route, manufacturer route, and public-post channel did not provide an exact measurement or controlled comparison; no stiffness value is inferred.",
+      "attempt_record_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "query": "site:cyclingtips.com \"Mondince FM316\" stiffness flex test review",
+      "reopen_when": "An exact FM316 stiffness measurement or attributable named, controlled frame comparison becomes available."
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "frame-stiffness",
+      "status": "unresolved-temporarily-exhausted",
+      "note": "CyclingWeekly returned no exact CX-002 test or stiffness report. The independent publication route, manufacturer route, and public-post channel did not provide an exact 2023 measurement or controlled comparison; no stiffness value is inferred.",
+      "attempt_record_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "query": "site:cyclingweekly.com \"VeloBuild CX-002\" stiffness flex test review",
+      "reopen_when": "A measured result or useful attributable comparative ride identifies the 2023 full-internal-routing CX-002."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    },
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 860,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "note": "The six fields from Batches 07-10 no longer appear in ready: each now has a temporarily exhausted or blocked disposition. The 860 evidence-found entries remain for queue-semantics review before choosing the next integration batch."
+  },
+  "reopening_triggers": [
+    "An exact-generation Uragano EVO current SKU/BOM or Airwolf YF-R003 mainland price becomes available after its retry date or a material source change.",
+    "An instrumented or controlled stiffness result identifies Mondince FM316 or VeloBuild CX-002 2023."
+  ],
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via codex-pnpm-check; privacy, data validation, research ledger (1461 atomic fields; 15448 public-post and 35469 web attempts), coverage, 306 tests, 584-page build, and SEO audit passed",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

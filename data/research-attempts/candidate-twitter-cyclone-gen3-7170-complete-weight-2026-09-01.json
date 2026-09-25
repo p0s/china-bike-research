@@ -481,5 +481,11 @@
     "twitter-cyclone-3rd-r7120-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-gen3-7170-batch-034-50-area-sweep-2026-09-01.json. The exact current page publishes an 8.7 kg estimate; size, pedals, accessories and weighing protocol are unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-gen3-7170-batch-034-50-area-sweep-2026-09-01.json. The exact R7120 manufacturer page publishes an 8.7 kg estimate; the page title says Small, but size, pedals, accessories and weighing protocol for the estimate are unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-cyclone-3rd-r7120-official-2026-08-17"],
+    "note": "Retain 8,700 g only as a global manufacturer's approximate complete-bike estimate for the exact 3rd R7120 model. The page title says Small, but the estimate's size basis and pedals/accessories are unspecified; this is not a measured mainland build weight."
+  }
 }

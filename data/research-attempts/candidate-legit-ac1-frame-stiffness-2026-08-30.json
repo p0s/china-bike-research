@@ -484,8 +484,18 @@
       ]
     }
   },
-  "status": "blocked",
-  "accepted_source_ids": [],
+  "status": "found",
+  "accepted_source_ids": [
+    "legit-ac1-105hillclimb-ride-comparison-2026-09-22"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/legit-ac1-50-area-sweep-2026-08-30.json. No controlled exact AC1 frame stiffness result was established after all 50 areas; lightweight and responsive launch wording is not treated as structural evidence."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/legit-ac1-50-area-sweep-2026-08-30.json. No controlled exact AC1 frame stiffness result was established after all 50 areas; lightweight and responsive launch wording is not treated as structural evidence.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-22",
+    "source_ids": [
+      "legit-ac1-105hillclimb-ride-comparison-2026-09-22"
+    ],
+    "note": "Accept the exact-model qualitative rear-compliance comparison with tested-build and component confounders explicit. SPEC does not require instrumented frame isolation for qualitative evidence. Original50-area history preserved."
+  }
 }

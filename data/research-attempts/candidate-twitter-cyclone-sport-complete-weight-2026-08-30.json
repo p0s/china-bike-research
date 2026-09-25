@@ -490,5 +490,13 @@
     "twitter-cyclone-sport-official-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-sport-batch-023-50-area-sweep-2026-08-30.json. Exact current references are 9.1 kg for the alloy-rim build and 8.9 kg for the wave-carbon-rim build; the retained card cannot inherit a single value."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-cyclone-sport-batch-023-50-area-sweep-2026-08-30.json. Exact current references are 9.1 kg for the alloy-rim build and 8.9 kg for the wave-carbon-rim build; the retained card cannot inherit a single value.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "twitter-cyclone-sport-official-2026-08-30"
+    ],
+    "note": "Current references are 9.1 kg with alloy rims or 8.9 kg with wave-carbon rims; the retained card does not select either wheel build, so no single complete weight is assigned."
+  }
 }

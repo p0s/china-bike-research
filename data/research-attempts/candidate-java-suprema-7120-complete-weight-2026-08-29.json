@@ -492,8 +492,21 @@
   "status": "found",
   "accepted_source_ids": [
     "java-suprema-colombia-2026-08-29",
-    "java-suprema-uruguay-2026-08-29"
+    "java-suprema-uruguay-2026-08-29",
+    "java-suprema-colombia-index-recheck-2026-09-23",
+    "java-suprema-uruguay-index-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. A labeled current Colombian reference build is 8.5 kg without size or equipment basis; a distinct size-52 Uruguayan trim is approximately 8.4 kg."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-suprema-7120-50-area-sweep-2026-08-29.json. A labeled current Colombian reference build is 8.5 kg without size or equipment basis; a distinct size-52 Uruguayan trim is approximately 8.4 kg.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-suprema-colombia-index-recheck-2026-09-23",
+      "java-suprema-uruguay-index-recheck-2026-09-23",
+      "java-suprema-colombia-2026-08-29",
+      "java-suprema-uruguay-2026-08-29"
+    ],
+    "note": "Regional reference claims remain distinct: Colombia 8.5 kg with no size or method; Uruguay approximately 8.4 kg for size 52. The 2026-09-23 Colombia index was stale and Uruguay page returned 403. Neither establishes the retained mainland selected build's complete weight."
+  }
 }

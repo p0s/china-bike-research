@@ -479,8 +479,19 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcr015-d-alibaba-supplier-2026-09-01"
+    "lightcarbon-lcr015-d-alibaba-supplier-2026-09-01",
+    "lightcarbon-lcr015-d-supplier-current-2026-09-23",
+    "ecb-reference-rates-2026-09-22"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr015-d-batch-040-50-area-sweep-2026-09-01.json. A current public Alibaba supplier index attributes the exact US$480–550, MOQ-1 frameset listing to the legal Lightcarbon company."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr015-d-batch-040-50-area-sweep-2026-09-01.json. A current public Alibaba supplier index attributes the exact US$480–550, MOQ-1 frameset listing to the legal Lightcarbon company.\n\nBatch 23 current recheck: The current exact supplier card lists US$500–590/MOQ 1; convert as CNY 3,350–3,953 using ECB's 2026-09-22 cross-rate. The product page is unreadable and the supplier-card amount is not a checkout.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcr015-d-supplier-current-2026-09-23",
+      "ecb-reference-rates-2026-09-22"
+    ],
+    "note": "The current exact supplier card lists US$500–590/MOQ 1; convert as CNY 3,350–3,953 using ECB's 2026-09-22 cross-rate. The product page is unreadable and the supplier-card amount is not a checkout."
+  }
 }

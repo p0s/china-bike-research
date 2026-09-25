@@ -487,8 +487,20 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "missile-mercury-6000-jd-recheck-2026-09-23",
+    "missile-mercury-6000-jd-item-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. The retained exact card advertises approximately 9.3 kg; size, pedals, accessories and measurement method remain unknown."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/missile-e6000-50-area-sweep-2026-08-30.json. The retained exact card advertises approximately 9.3 kg; size, pedals, accessories and measurement method remain unknown.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "taobao-snapshot-2026-08-08",
+      "missile-mercury-6000-jd-recheck-2026-09-23",
+      "missile-mercury-6000-jd-item-recheck-2026-09-23"
+    ],
+    "note": "Retained exact seller card advertises approximately 9.3 kg without size or measurement basis. Current JD exact item has a blank weight field; no current measured/verified weight is established."
+  }
 }

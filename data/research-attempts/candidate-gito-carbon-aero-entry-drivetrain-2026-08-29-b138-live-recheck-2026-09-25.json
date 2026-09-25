@@ -1,0 +1,52 @@
+{
+  "id": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29-b138-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "gito-carbon-aero-entry"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29",
+  "retry_reason": "One scoped B138 web recheck after the earlier broad search; no unsupported fact is promoted.",
+  "campaign_extension": {
+    "id": "b138-gito-g325-drivetrain",
+    "extends_attempt_id": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-138-scope.json",
+    "reason": "One fresh exact-model search checked drivetrain; this record preserves the model/build boundary and any unavailable or mismatched evidence.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-gito-carbon-aero-entry-drivetrain-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The page lists LTWOO R9 2×11 and Shimano 105 R7120 2×12 options and approximate 8.95 kg / 8.88 kg weights, but gives no weighing basis and does not map either build to the retained CNY 2,999 entry card. It is not confirmed as an authorized mainland seller. No scoped candidate value qualifies; existing source gito-g325-888bike-current-2026-09-23 remains the provenance record.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "GITO G325 碳纤维公路车 entry build 官方整车重量 变速配置 规格",
+          "route": "The 888Bike G325 SKU 10139 page was already present in the repository source history; the opened page is excluded as a new source.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The page lists LTWOO R9 2×11 and Shimano 105 R7120 2×12 options and approximate 8.95 kg / 8.88 kg weights, but gives no weighing basis and does not map either build to the retained CNY 2,999 entry card. It is not confirmed as an authorized mainland seller. No scoped candidate value qualifies; existing source gito-g325-888bike-current-2026-09-23 remains the provenance record."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "The page lists LTWOO R9 2×11 and Shimano 105 R7120 2×12 options and approximate 8.95 kg / 8.88 kg weights, but gives no weighing basis and does not map either build to the retained CNY 2,999 entry card. It is not confirmed as an authorized mainland seller. No scoped candidate value qualifies; existing source gito-g325-888bike-current-2026-09-23 remains the provenance record."
+}

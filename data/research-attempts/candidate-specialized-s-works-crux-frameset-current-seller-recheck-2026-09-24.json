@@ -1,0 +1,37 @@
+{
+  "id": "candidate-specialized-s-works-crux-frameset-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "specialized-s-works-crux-frameset" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-specialized-s-works-crux-frameset-price-2026-09-01",
+  "retry_reason": "The extended search retained the official CNY 33,990 reference but no current exact seller option. One focused marketplace recheck tests for a mainland item matching frameset product 223486.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-specialized-crux-frameset-price",
+    "extends_attempt_id": "candidate-specialized-s-works-crux-frameset-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland seller-item search checks exact frameset product 223486 after the earlier campaign established only official list price.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-specialized-s-works-crux-frameset-price-2026-09-01", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact current mainland seller item for frameset product 223486 surfaced.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "Specialized S-Works Crux frameset 223486 中国 价格 天猫 淘宝 京东 车架组",
+        "route": "One focused public mainland marketplace search for exact frameset product 223486",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "Results included the current overseas manufacturer item for product 223486 and a JD Specialized frameset category page crawled four months earlier, but no exact current mainland seller item, selected option, or order context. The CNY 33,990 catalog amount remains official reference evidence only."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "No current matching mainland seller offer was found; preserve the official-list reference and leave candidate observed_price absent."
+}

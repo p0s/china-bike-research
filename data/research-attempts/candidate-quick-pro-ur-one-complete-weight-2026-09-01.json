@@ -477,7 +477,9 @@
     }
   },
   "status": "blocked",
-  "accepted_source_ids": [],
+  "accepted_source_ids": [
+    "quick-pro-ur-one-dura-ace-official-recheck-2026-09-24"
+  ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-batch-034-50-area-sweep-2026-09-01.json. The current exact manufacturer page publishes component and frame weights but no complete-bike weight; the 6.5 kg owner build remains configuration-specific and unverified."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-ur-one-batch-034-50-area-sweep-2026-09-01.json. Batch 39 recheck (2026-09-24): the exact manufacturer page lists frame 629 g ±5%, fork 339 g ±5%, and seatpost 115 g ±5%, but no complete-bike weight. Its anonymous 5.9 kg no-pedal review is not a manufacturer claim; MyBike.parts' 7.1 kg value is for a separate 105 Di2 build. The 6.5 kg owner and 6.5 kg regional RaceIt build remain configuration-specific. No official exact-build complete weight was found, so this field remains blocked and unresolved."
 }

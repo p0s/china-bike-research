@@ -1,0 +1,29 @@
+{
+  "batch": 90,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-90-scope.json"],
+  "result": {
+    "exact_models_checked": 1,
+    "atomic_gaps_checked": 1,
+    "source_reuse_resolutions_added": 1,
+    "source_records_added": 1,
+    "price_observations_added": 0,
+    "actionable_gap_inventory_change": 0,
+    "attempt_id": "variant-pardus-super-sport-gen2-egr-purchase-route-2026-09-01",
+    "disposition": "The exact Taobao item page (item 1035008500060) was opened once on 2026-09-24 and returned a non-retryable cannot-be-opened error. The existing indexed report describes CNY 4,999 from CNY 6,699 as an official-flagship listing but rates price and specification reliability low. Seller identity/badge, exact L-TWOO eGR option, current terms, stock and checkout were not verified, so no new exact price was added and the purchase-route gap remains.",
+    "inventory": {
+      "catalog_gaps_before": 705,
+      "catalog_gaps_after": 705,
+      "evidence_found_before": 193,
+      "evidence_found_after": 192
+    }
+  },
+  "validation": {
+    "data_validation": "pass",
+    "research_check": "pass",
+    "coverage": "pass after monotonic acceptance at 1311 sources",
+    "focused_test": "pass: batch 047 route assertion",
+    "full_gate": "pass via developer-storage-cache: 324 tests, build of 584 pages, SEO audit with 458 indexable/126 noindex pages",
+    "diff_check": "pass"
+  }
+}

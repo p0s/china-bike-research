@@ -1,0 +1,56 @@
+{
+  "id": "candidate-legit-ac1-complete-weight-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "legit-ac1"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-legit-ac1-complete-weight-2026-08-30",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-legit-ac1-complete-weight",
+    "extends_attempt_id": "candidate-legit-ac1-complete-weight-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-legit-ac1-complete-weight-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LEGIT 陆极客 AC1 银白涂鸦 R7120 UNAAS HARD SE 整车重量 2026",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The retained exact Silver White Graffiti R7120/UNAAS HARD SE build remains identified, but the known manufacturer page gives frameset weights and the current JD recheck surfaced a generic category page. Neither establishes complete-bike weight for the selected build; no new page was opened.",
+          "result_url": "https://winspace.jp/products/legit-ac1"
+        }
+      ],
+      "blocker": "The selected R7120/UNAAS build is identified, but the linked specifications provide frame, fork, and seatpost weights only, not complete-bike weight."
+    }
+  },
+  "accepted_source_ids": [
+    "legit-ac1-mainland-build-2026-08-30",
+    "legit-ac1-current-specs-2026-08-30"
+  ],
+  "notes": "B168 local source audit: no linked source supports the retained exact complete-weight field. The retained exact Silver White Graffiti R7120/UNAAS HARD SE build remains identified, but the known manufacturer page gives frameset weights and the current JD recheck surfaced a generic category page. Neither establishes complete-bike weight for the selected build; no new page was opened.",
+  "searched_at": "2026-09-25"
+}

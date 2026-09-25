@@ -1,0 +1,52 @@
+{
+  "id": "variant-rinasclta-gr025-frameset-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "rinasclta-gr025-frameset"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The current manufacturer product-page recheck timed out on 2026-09-25; it was not reopened and no current availability or checkout evidence was produced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Rinasclta GR025 frameset 2026 order purchase route mainland China stock",
+          "route": "One distinct B145 exact-model web search; no new exact-model page opened",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The distinct query resurfaced a URL already recorded in predecessor source/attempt/campaign history. Prior listed price and add-to-cart are not current evidence after the dated page timeout."
+        }
+      ]
+    }
+  },
+  "notes": "The distinct query resurfaced a URL already recorded in predecessor source/attempt/campaign history. Prior listed price and add-to-cart are not current evidence after the dated page timeout.",
+  "campaign_extension": {
+    "id": "b145-rinasclta-gr025-frameset-purchase-route",
+    "extends_attempt_id": "variant-rinasclta-gr025-frameset-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

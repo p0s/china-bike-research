@@ -488,8 +488,25 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "twitter-gravel-v3-2024-taobao-2026-08-21",
-    "twitter-v3-rs-factory-store-2026-08-28"
+    "twitter-v3-rs-factory-store-2026-08-28",
+    "twitter-v3-25yr-manufacturer-2026-09-22",
+    "twitter-v3-25yr-store-conflict-2026-09-22",
+    "twitter-v3-25yr-manufacturer-current-recheck-2026-09-25",
+    "twitter-v3-25yr-store-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. The superseded 2024 alloy selection is claimed at 9.9 kg while the current T47 size-50 no-pedal build is claimed at 9.6 kg. The retained generation is unresolved, so no value is selected."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. The superseded 2024 alloy selection is claimed at 9.9 kg while the current T47 size-50 no-pedal build is claimed at 9.6 kg. The retained generation is unresolved, so no value is selected. Supplemental 2026-09-22 review: current 25yr manufacturer table gives T47 and 9.9 kg, while the storefront gives BB86, 9.6 kg and 45C. The former T47 attribution for the storefront reference is corrected. See docs/research-batches/2026-09-22/luna-followup-04-results.json; all historical attempts and dates are preserved.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-gravel-v3-2024-taobao-2026-08-21",
+      "twitter-v3-rs-factory-store-2026-08-28",
+      "twitter-v3-25yr-manufacturer-2026-09-22",
+      "twitter-v3-25yr-store-conflict-2026-09-22",
+      "twitter-v3-25yr-manufacturer-current-recheck-2026-09-25",
+      "twitter-v3-25yr-store-current-recheck-2026-09-25"
+    ],
+    "note": "Current V3 25yr manufacturer and store pages list 9.9 kg for RS-24S, while the store overview also claims 9.6 kg at size 50 without pedals and its table lists 9.9 kg. The retained candidate is a generic 2024 V3 RS alloy-wheel option; no generation or exact build mapping resolves these claims."
+  }
 }

@@ -1,0 +1,446 @@
+{
+  "batch_id": "gap-fill-batch-30-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-30-scope.json",
+  "scope_count": {
+    "exact_models": 5,
+    "atomic_fields": 25,
+    "root_fields": 0,
+    "luna_evidence_fields": 25
+  },
+  "new_source_records": [
+    "quick-pro-tr-one-official-current-recheck-2026-09-23",
+    "quick-pro-global-about-policy-recheck-2026-09-23",
+    "quick-pro-tr-one-china-catalog-recheck-2026-09-23",
+    "quick-pro-tt-one-official-current-recheck-2026-09-23",
+    "quick-pro-tt-one-china-catalog-recheck-2026-09-23",
+    "sava-a4-official-current-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "new_images_added": [],
+  "primary_image_records_unchanged": 212,
+  "updated_candidate_records": [
+    "quick-pro-gr-one-grx-di2",
+    "quick-pro-tr-one",
+    "quick-pro-tt-one",
+    "sava-a4"
+  ],
+  "results": [
+    {
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "model": "Quick Pro GR:ONE GRX Di2 1×12",
+      "field": "frame-stiffness",
+      "status": "qualitative-platform-review-not-exact-trim",
+      "attempt_record_id": "candidate-quick-pro-gr-one-grx-di2-frame-stiffness-2026-08-27",
+      "source_ids": [
+        "quick-gr-one-review-summary-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://mybike.parts/youtube-cycling-reviews/741-quick-pro-gr-one-review-and-winter-test-ride"
+      ],
+      "note": "The 2025-12-03 review summary describes noticeable flex at the GR:ONE seatpost cutout and a comfortable ride. It does not establish the GRX Di2 build and reports no measured stiffness method/value; retain only as attributed platform-level qualitative feedback.",
+      "next_trigger": "Reopen for an exact GRX Di2 build review or a same-frame instrumented test with a stated method."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "bom",
+      "status": "partial-generic-frameset-contents-cockpit-package-unresolved",
+      "attempt_record_id": "candidate-quick-pro-tr-one-bom-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23",
+        "quick-pro-global-about-policy-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://www.quickprousa.com/pages/about?view=about-us"
+      ],
+      "note": "Quick Pro generic standard frameset contents are frame, fork, seatpost, thru-axles, headset bearings and 40 mm spacers; BB is excluded. TR:ONE product features include storage/hydration and a computer mount, but the exact box list and cockpit inclusion are unspecified.",
+      "next_trigger": "Reopen when an exact TR:ONE SKU or checkout publishes a complete package list."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "bottom-bracket",
+      "status": "manufacturer-spec-t47-68-bb-excluded",
+      "attempt_record_id": "candidate-quick-pro-tr-one-bottom-bracket-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23",
+        "quick-pro-global-about-policy-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://www.quickprousa.com/pages/about?view=about-us"
+      ],
+      "note": "Exact TR:ONE page specifies T47-68; generic Quick Pro frameset terms exclude the bottom bracket.",
+      "next_trigger": "Reopen if the exact model specification or package inclusion changes."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "frame",
+      "status": "manufacturer-carbon-grade-unspecified",
+      "attempt_record_id": "candidate-quick-pro-tr-one-frame-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order"
+      ],
+      "note": "Manufacturer describes high-strength/high-modulus carbon; no exact carbon grade is named.",
+      "next_trigger": "Reopen if Quick Pro publishes an exact carbon grade or variant-specific construction."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "geometry",
+      "status": "manufacturer-geometry-xs-through-l",
+      "attempt_record_id": "candidate-quick-pro-tr-one-geometry-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order"
+      ],
+      "note": "Current exact-model geometry table covers XS, S, M and L.",
+      "next_trigger": "Reopen on a revised table or new size."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "identity",
+      "status": "global-model-identity-mainland-sku-unmapped",
+      "attempt_record_id": "candidate-quick-pro-tr-one-identity-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23",
+        "quick-pro-tr-one-china-catalog-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://www.quick-bikes.com.cn/product/38.html"
+      ],
+      "note": "Global manufacturer title is “TR:ONE FRAME”. A China catalog result surfaced but its direct page returned 403; no mainland SKU/generation mapping was verified.",
+      "next_trigger": "Reopen when the China page is accessible or an exact mainland SKU is attributable."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "image",
+      "status": "official-model-level-image-remote-rights-and-color-unresolved",
+      "attempt_record_id": "candidate-quick-pro-tr-one-image-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order"
+      ],
+      "note": "Official gallery exists at model level, but it does not establish a selected color/configuration match or rights to rehost. No image asset was added.",
+      "next_trigger": "Reopen for an exact-color asset with documented reuse rights, credit and alt text."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "price",
+      "status": "global-usd-price-mainland-price-unresolved",
+      "attempt_record_id": "candidate-quick-pro-tr-one-price-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23",
+        "quick-pro-tr-one-china-catalog-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://www.quick-bikes.com.cn/product/38.html"
+      ],
+      "note": "Global storefront lists US$3,599. China catalog search result had blank price fields and direct access returned 403; no mainland price is established. Existing dated CNY launch observation is retained unchanged.",
+      "next_trigger": "Reopen when an accessible exact mainland listing or checkout exposes a dated price."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "purchase-route",
+      "status": "global-cart-only-china-checkout-unverified",
+      "attempt_record_id": "candidate-quick-pro-tr-one-purchase-route-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23",
+        "quick-pro-tr-one-china-catalog-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order",
+        "https://www.quick-bikes.com.cn/product/38.html"
+      ],
+      "note": "Global Add to cart is shown. The China listing’s direct page returned 403, so current mainland orderability, stock and checkout are unverified.",
+      "next_trigger": "Reopen when the mainland product page or checkout can be read live."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "tire-clearance",
+      "status": "manufacturer-maximum-700x32c",
+      "attempt_record_id": "candidate-quick-pro-tr-one-tire-clearance-2026-08-17",
+      "source_ids": [
+        "quick-pro-tr-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tr-one-pre-order"
+      ],
+      "note": "Manufacturer states a maximum tire size of 700×32C.",
+      "next_trigger": "Reopen if the page adds a size or wheel-specific qualification or revises the maximum."
+    },
+    {
+      "record_id": "quick-pro-tr-one",
+      "model": "Quick Pro TR:ONE",
+      "field": "warranty-support",
+      "status": "global-five-year-frameset-policy-china-service-unknown",
+      "attempt_record_id": "candidate-quick-pro-tr-one-warranty-support-2026-08-17",
+      "source_ids": [
+        "quick-pro-global-about-policy-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/pages/about?view=about-us"
+      ],
+      "note": "Global policy states five-year frameset warranty for the original purchaser with authorized-dealer/retailer proof; non-transferable. China warranty acceptance and service handling remain unknown.",
+      "next_trigger": "Reopen for an official China-specific warranty and support statement."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "bottom-bracket",
+      "status": "manufacturer-spec-t47-68",
+      "attempt_record_id": "candidate-quick-pro-tt-one-bottom-bracket-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Current exact TT:ONE page specifies T47-68 threaded BB.",
+      "next_trigger": "Reopen if a regional exact SKU lists a different standard."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "complete-or-frame-weight",
+      "status": "frame-fork-only-complete-weight-unknown",
+      "attempt_record_id": "candidate-quick-pro-tt-one-complete-or-frame-weight-2026-09-23-correction",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Manufacturer lists frame 1,089 g ±5% and fork 399 g ±5%; size basis is unstated. No complete-bike weight is published.",
+      "next_trigger": "Reopen for a complete-build claim or a frame/fork value with specified size and inclusion basis.",
+      "supersedes_attempt_record_id": "candidate-quick-pro-tt-one-complete-or-frame-weight-2026-08-17",
+      "replaces_attempt_record_id": "candidate-quick-pro-tt-one-complete-or-frame-weight-2026-09-23"
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "frame",
+      "status": "manufacturer-carbon-grade-unspecified",
+      "attempt_record_id": "candidate-quick-pro-tt-one-frame-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Manufacturer describes high-strength/high-modulus carbon; no exact grade is named.",
+      "next_trigger": "Reopen if Quick Pro publishes an exact carbon grade or variant-specific construction."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "geometry",
+      "status": "manufacturer-geometry-xxs-through-l",
+      "attempt_record_id": "candidate-quick-pro-tt-one-geometry-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Current exact-model geometry table covers XXS through L.",
+      "next_trigger": "Reopen on a revised geometry table or new size."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "identity",
+      "status": "global-model-identity-mainland-generation-unmapped",
+      "attempt_record_id": "candidate-quick-pro-tt-one-identity-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23",
+        "quick-pro-tt-one-china-catalog-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame",
+        "https://www.quick-bikes.com.cn/product/30.html"
+      ],
+      "note": "Global manufacturer title is “TT:ONE Frame”. China product route was not directly accessible on recheck (HTTP 403), so a mainland generation/SKU mapping is not refreshed.",
+      "next_trigger": "Reopen when an exact mainland SKU/generation is accessible and attributable."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "image",
+      "status": "official-model-level-image-remote-rights-and-color-unresolved",
+      "attempt_record_id": "candidate-quick-pro-tt-one-image-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Official gallery is model-level; exact color/SKU match and rehosting rights were not established. No asset was added.",
+      "next_trigger": "Reopen for an exact-configuration asset with documented rights, credit and alt text."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "purchase-route",
+      "status": "global-cart-only-china-checkout-unverified",
+      "attempt_record_id": "candidate-quick-pro-tt-one-purchase-route-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23",
+        "quick-pro-tt-one-china-catalog-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame",
+        "https://www.quick-bikes.com.cn/product/30.html"
+      ],
+      "note": "Global storefront lists US$2,999 and an Add to cart route. China product page returned 403; current mainland orderability, price and checkout remain unverified.",
+      "next_trigger": "Reopen when the mainland product page or checkout can be read live."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "tire-clearance",
+      "status": "manufacturer-maximum-700x32c",
+      "attempt_record_id": "candidate-quick-pro-tt-one-tire-clearance-2026-08-17",
+      "source_ids": [
+        "quick-pro-tt-one-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/products/tt-one-frame"
+      ],
+      "note": "Manufacturer states maximum 700×32C tires.",
+      "next_trigger": "Reopen if the manufacturer revises its maximum or clarifies a setup-specific limit."
+    },
+    {
+      "record_id": "quick-pro-tt-one",
+      "model": "Quick Pro TT ONE",
+      "field": "warranty-support",
+      "status": "global-five-year-frameset-policy-china-service-unknown",
+      "attempt_record_id": "candidate-quick-pro-tt-one-warranty-support-2026-08-17",
+      "source_ids": [
+        "quick-pro-global-about-policy-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.quickprousa.com/pages/about?view=about-us"
+      ],
+      "note": "Global policy states five-year frameset warranty for the original purchaser with authorized-dealer/retailer proof; non-transferable. China warranty acceptance and service handling remain unknown.",
+      "next_trigger": "Reopen for an official China-specific warranty and support statement."
+    },
+    {
+      "record_id": "quick-pro-xr-one-frameset-aelous-gravel",
+      "model": "Quick Pro XR:ONE frameset with Aelous Gravel cockpit",
+      "field": "price",
+      "status": "historical-exact-mainland-listing-current-refresh-failed",
+      "attempt_record_id": "candidate-quick-pro-xr-one-frameset-aelous-gravel-price-2026-08-28",
+      "source_ids": [
+        "quick-pro-xr-one-frameset-taobao-2026-08-28"
+      ],
+      "sources_checked": [
+        "https://item.taobao.com/item.htm?id=1021496957303"
+      ],
+      "note": "Retained 2026-08-28 observation for glass-yellow size M, SKU 6197664799748: CNY 10,998, visible stock and 15-day presale dispatch. Direct current page check on 2026-09-23 could not open; preserve the historical date and do not imply current price/stock/checkout or cockpit package inclusion.",
+      "next_trigger": "Reopen when the exact selected SKU listing and checkout are accessible again."
+    },
+    {
+      "record_id": "sava-a4",
+      "model": "SAVA A4",
+      "field": "bom",
+      "status": "current-global-exact-model-bom-mainland-package-unmapped",
+      "attempt_record_id": "candidate-sava-a4-bom-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://savadeck-bike.com/sv/products/a4-carbon-road-bike-20s"
+      ],
+      "note": "Global model code RO8 CR-A4-R4700-20S lists T800 frame/fork/seatpost, Tiagra R4700 derailleurs, SENSAH hydraulic controls, Prowheel 50/34, 11–34 cassette, KMC chain, aluminum 700C wheels, 700×25C tires, integrated aluminum handlebar, saddle and included aluminum pedals. Exact mainland SKU/package match is unverified.",
+      "next_trigger": "Reopen when an exact mainland SKU/package list is visible or the manufacturer changes the global BOM."
+    },
+    {
+      "record_id": "sava-a4",
+      "model": "SAVA A4",
+      "field": "bottom-bracket",
+      "status": "global-exact-model-bb86-mainland-match-unverified",
+      "attempt_record_id": "candidate-sava-a4-bottom-bracket-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://savadeck-bike.com/sv/products/a4-carbon-road-bike-20s"
+      ],
+      "note": "The listed RO8 CR-A4-R4700-20S configuration specifies BB86; mainland variant equivalence remains unverified.",
+      "next_trigger": "Reopen if an exact mainland SKU gives a different standard."
+    },
+    {
+      "record_id": "sava-a4",
+      "model": "SAVA A4",
+      "field": "frame",
+      "status": "global-exact-model-t800-mainland-match-unverified",
+      "attempt_record_id": "candidate-sava-a4-frame-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://savadeck-bike.com/sv/products/a4-carbon-road-bike-20s"
+      ],
+      "note": "The exact global page claims T800 carbon for frame, fork and seatpost. Do not transfer this to a mainland configuration without a SKU match.",
+      "next_trigger": "Reopen when an exact mainland configuration or revised manufacturer spec is available."
+    },
+    {
+      "record_id": "sava-a4",
+      "model": "SAVA A4",
+      "field": "geometry",
+      "status": "global-exact-model-sizes-440-to-560-mainland-chart-unverified",
+      "attempt_record_id": "candidate-sava-a4-geometry-2026-08-17",
+      "source_ids": [
+        "sava-a4-official-current-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://savadeck-bike.com/sv/products/a4-carbon-road-bike-20s"
+      ],
+      "note": "Global page lists 440/470/510/540/560 sizes (XS–XL); mainland chart equivalence is not established.",
+      "next_trigger": "Reopen if the manufacturer publishes a matched mainland chart or changes the global table."
+    }
+  ],
+  "integration_notes": [
+    "Integrated dated source rechecks and resolutions for all 25 frozen fields.",
+    "Kept US storefront amounts separate from mainland prices; preserved the prior XR:ONE price as an 2026-08-28 observation after the current page failed to open.",
+    "Qualified Quick Pro GR:ONE stiffness feedback as platform-level, qualitative and not exact to the GRX Di2 build.",
+    "Added only the SAVA global listed BOM details supported by model code; mainland equivalence remains unverified.",
+    "No price observation was refreshed and no image was downloaded or added.",
+    "No XHS, seller contact, GitHub mutation, PR, merge, publication or production change occurred.",
+    "Removed a local machine path from the prior batch validation note after the repository privacy scan flagged it.",
+    "Verified every scoped field against the exact attempt record field before finalizing; corrected the TT:ONE frame versus frame-weight attempt mapping.",
+    "Replaced the TT:ONE combined-weight attempt after validation exposed a cross-assigned resolution note. The corrected record preserves historical channel attempts verbatim; scoped retirements document the mistaken original mapping and invalid intermediate draft."
+  ],
+  "validation": {
+    "coverage_accept": "PASS: npm run --silent coverage:accept; monotonic baseline accepted for 212 images and 277 catalog targets after the scoped attempt correction.",
+    "focused_tests": "PASS: node --test tests/data.test.mjs; 69 passed, 0 failed before the final corrected attempt replacement; subsequent full gate passed all 307 tests.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy scan, dataset validation, research:check, coverage:check, 307 tests, 584-page build and SEO audit passed on final state.",
+    "counts": "41 brands, 38 platforms, 41 variants, 73 prices, 1,132 sources, 212 primary images, 236 candidates, 1,465 atomic research records.",
+    "image_report": "Not run; no image records changed."
+  },
+  "new_research_attempt_records": [
+    "candidate-quick-pro-tt-one-complete-or-frame-weight-2026-09-23-correction"
+  ],
+  "new_retirement_records": [
+    "replace-quick-pro-tt-one-weight-attempt-misassigned-resolution-2026-09-23",
+    "replace-quick-pro-tt-one-weight-attempt-correction-draft-2026-09-23"
+  ]
+}

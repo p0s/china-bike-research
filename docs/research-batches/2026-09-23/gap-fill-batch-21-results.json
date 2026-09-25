@@ -1,0 +1,410 @@
+{
+  "batch_id": "gap-fill-batch-21-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-21-scope.json",
+  "scope_count": {
+    "exact_models": 8,
+    "atomic_fields": 25,
+    "root_fields": 9,
+    "luna_evidence_fields": 16
+  },
+  "new_images_added": 0,
+  "new_source_records": [
+    "java-suprema-colombia-index-recheck-2026-09-23",
+    "java-suprema-uruguay-index-recheck-2026-09-23",
+    "java-road-catalog-recheck-2026-09-23",
+    "java-vega-chile-current-2026-09-23",
+    "java-vega-eurobike-current-2026-09-23",
+    "java-vittoria-r7170-chile-current-2026-09-23",
+    "java-vittoria-eurobike-current-2026-09-23",
+    "java-vittoria-er7-north-america-recheck-2026-09-23",
+    "kontax-power-evo-page-recheck-2026-09-23",
+    "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23",
+    "kung-horizon-jd-index-recheck-2026-09-23",
+    "laget-aero-one-official-current-2026-09-23"
+  ],
+  "updated_source_records": [],
+  "new_price_records": [],
+  "results": [
+    {
+      "record_id": "java-suprema-7120",
+      "field": "complete-weight",
+      "status": "regional-claims-preserved-mainland-weight-unknown",
+      "attempt_record_id": "candidate-java-suprema-7120-complete-weight-2026-08-29",
+      "source_ids": [
+        "java-suprema-colombia-index-recheck-2026-09-23",
+        "java-suprema-uruguay-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://bicicletasjavacolombia.com/producto/bike/suprema",
+        "https://javabikes.com.uy/bicicleta-de-ruta-java-suprema-24v-frenos-de-disco"
+      ],
+      "note": "Colombia index repeats 8.5 kg without size or method; Uruguay index repeats approximately 8.4 kg for size 52. The first crawl is stale and the second page returned 403. Neither establishes the retained mainland build.",
+      "next_trigger": "Accessible current exact seller/manufacturer build with a stated size and weighing basis."
+    },
+    {
+      "record_id": "java-suprema-7120",
+      "field": "drivetrain",
+      "status": "regional-r7120-reference-mainland-selection-unknown",
+      "attempt_record_id": "candidate-java-suprema-7120-drivetrain-2026-08-29",
+      "source_ids": [
+        "java-suprema-colombia-index-recheck-2026-09-23",
+        "java-suprema-uruguay-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://bicicletasjavacolombia.com/producto/bike/suprema",
+        "https://javabikes.com.uy/bicicleta-de-ruta-java-suprema-24v-frenos-de-disco"
+      ],
+      "note": "Both regional references list Shimano R7120 mechanical 2x12, but the stale/inaccessible rechecks cannot map that build to the retained mainland selected option.",
+      "next_trigger": "Exact mainland SKU or manufacturer crosswalk naming the selected BOM."
+    },
+    {
+      "record_id": "java-suprema-7120",
+      "field": "frame-material",
+      "status": "carbon-reference-grade-conflict-and-mainland-mapping-unknown",
+      "attempt_record_id": "candidate-java-suprema-7120-frame-material-2026-08-29",
+      "source_ids": [
+        "java-suprema-colombia-index-recheck-2026-09-23",
+        "java-suprema-uruguay-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://bicicletasjavacolombia.com/producto/bike/suprema",
+        "https://javabikes.com.uy/bicicleta-de-ruta-java-suprema-24v-frenos-de-disco"
+      ],
+      "note": "Regional sources say carbon but conflict on grade (T800 versus 3K); neither is tied to the retained mainland option or alias 终结者.",
+      "next_trigger": "Exact selected mainland option with manufacturer material/grade evidence."
+    },
+    {
+      "record_id": "java-suprema-7120",
+      "field": "identity-source",
+      "status": "regional-name-no-mainland-alias-crosswalk",
+      "attempt_record_id": "candidate-java-suprema-7120-identity-source-2026-08-29",
+      "source_ids": [
+        "java-suprema-colombia-index-recheck-2026-09-23",
+        "java-suprema-uruguay-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://bicicletasjavacolombia.com/producto/bike/suprema",
+        "https://javabikes.com.uy/bicicleta-de-ruta-java-suprema-24v-frenos-de-disco"
+      ],
+      "note": "Regional sources name Suprema but do not link that build to the retained mainland Suprema 7120 card or its 终结者 alias.",
+      "next_trigger": "Manufacturer or exact seller record explicitly cross-referencing the mainland name and regional SKU."
+    },
+    {
+      "record_id": "java-vega-tt-24s",
+      "field": "complete-weight",
+      "status": "regional-9-8kg-claim-basis-incomplete",
+      "attempt_record_id": "candidate-java-vega-tt-24s-complete-weight-2026-08-29",
+      "source_ids": [
+        "java-vega-chile-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vega-tt-24s"
+      ],
+      "note": "Chile reports 9.8 kg for a regional complete-bike reference; size, accessories and weighing method are unstated, so mainland complete weight remains unknown.",
+      "next_trigger": "Exact mainland selected build with size and weighing method."
+    },
+    {
+      "record_id": "java-vega-tt-24s",
+      "field": "drivetrain",
+      "status": "regional-er9-2x12-reference-mainland-selection-unknown",
+      "attempt_record_id": "candidate-java-vega-tt-24s-drivetrain-2026-08-29",
+      "source_ids": [
+        "java-vega-chile-current-2026-09-23",
+        "java-vega-eurobike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vega-tt-24s",
+        "https://eurobike.com/frankfurt/en/exhibitor-search.detail.html/shenzhen-chuang-xin-wei-bicycle-co-ltd/mf_1_0052401347_5243703_10000795202601.html"
+      ],
+      "note": "JAVA Chile and EUROBIKE support an ER9 electronic 2x12 regional reference build; neither maps it to the retained mainland selection.",
+      "next_trigger": "Current mainland SKU/component list tied to the retained card."
+    },
+    {
+      "record_id": "java-vega-tt-24s",
+      "field": "frame-material",
+      "status": "regional-t800-carbon-reference-mainland-mapping-unknown",
+      "attempt_record_id": "candidate-java-vega-tt-24s-frame-material-2026-08-29",
+      "source_ids": [
+        "java-vega-chile-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vega-tt-24s"
+      ],
+      "note": "Chile lists a J-AIR T800 carbon frame and fork and carbon seatpost for its regional reference build; mainland trim equivalence is unverified.",
+      "next_trigger": "Exact mainland selected trim with manufacturer BOM."
+    },
+    {
+      "record_id": "java-vega-tt-24s",
+      "field": "identity-source",
+      "status": "regional-product-identity-no-mainland-trim-crosswalk",
+      "attempt_record_id": "candidate-java-vega-tt-24s-identity-source-2026-08-29",
+      "source_ids": [
+        "java-vega-chile-current-2026-09-23",
+        "java-vega-eurobike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vega-tt-24s",
+        "https://eurobike.com/frankfurt/en/exhibitor-search.detail.html/shenzhen-chuang-xin-wei-bicycle-co-ltd/mf_1_0052401347_5243703_10000795202601.html"
+      ],
+      "note": "Regional JAVA and exhibitor pages confirm Vega TT/VEGA-TT identity, but not the exact mainland seller-selected trim.",
+      "next_trigger": "Explicit manufacturer/seller cross-reference to the retained mainland SKU."
+    },
+    {
+      "record_id": "java-vittoria-7170",
+      "field": "complete-weight",
+      "status": "regional-9-2kg-net-claim-basis-incomplete",
+      "attempt_record_id": "candidate-java-vittoria-7170-complete-weight-2026-08-29",
+      "source_ids": [
+        "java-vittoria-r7170-chile-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vittoria-air-r7170"
+      ],
+      "note": "Chile claims 9.2 kg net for the regional R7170 build but gives no size or weighing method; do not assign it to either mainland price observation.",
+      "next_trigger": "Exact mainland R7170 build with size and weighing basis."
+    },
+    {
+      "record_id": "java-vittoria-7170",
+      "field": "drivetrain",
+      "status": "regional-r7170-di2-reference-mainland-selection-unknown",
+      "attempt_record_id": "candidate-java-vittoria-7170-drivetrain-2026-08-29",
+      "source_ids": [
+        "java-vittoria-r7170-chile-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vittoria-air-r7170"
+      ],
+      "note": "Regional listing specifies Shimano 105 Di2 R7170 2x12 with hydraulic discs; mainland trim mapping remains unverified.",
+      "next_trigger": "Mainland SKU/component list linked to the retained card."
+    },
+    {
+      "record_id": "java-vittoria-7170",
+      "field": "frame-material",
+      "status": "regional-full-carbon-reference-mainland-mapping-unknown",
+      "attempt_record_id": "candidate-java-vittoria-7170-frame-material-2026-08-29",
+      "source_ids": [
+        "java-vittoria-r7170-chile-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vittoria-air-r7170"
+      ],
+      "note": "Regional R7170 reference describes full-carbon frame, fork, hybrid handlebar and seatpost; do not propagate without a mainland trim crosswalk.",
+      "next_trigger": "Exact selected mainland option with manufacturer material BOM."
+    },
+    {
+      "record_id": "java-vittoria-7170",
+      "field": "identity-source",
+      "status": "regional-r7170-and-family-identity-no-mainland-crosswalk",
+      "attempt_record_id": "candidate-java-vittoria-7170-identity-source-2026-08-29",
+      "source_ids": [
+        "java-vittoria-r7170-chile-current-2026-09-23",
+        "java-vittoria-eurobike-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.cl/product/vittoria-air-r7170",
+        "https://eurobike.com/frankfurt/en/exhibitor-search.detail.html/shenzhen-chuang-xin-wei-bicycle-co-ltd/mf_1_0052401347_5243704_10000795202601.html"
+      ],
+      "note": "JAVA Chile documents an R7170 regional build and EUROBIKE confirms the broader VITTORIA family; neither identifies the retained mainland option.",
+      "next_trigger": "Exact manufacturer or seller crosswalk to the mainland R7170 closed-wheel SKU."
+    },
+    {
+      "record_id": "java-vittoria-er7-2026",
+      "field": "drivetrain",
+      "status": "regional-er7-options-mainland-selected-option-unknown",
+      "attempt_record_id": "candidate-java-vittoria-er7-2026-drivetrain-2026-08-29",
+      "source_ids": [
+        "java-vittoria-er7-north-america-2026-08-29",
+        "java-vittoria-er7-north-america-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://javabikenorthamerica.com/products/vittoria-er7"
+      ],
+      "note": "Earlier detailed regional evidence lists ER7 electronic 2x12 or 1x12 options; current page shell does not expose the option table. The mainland card selection is unknown.",
+      "next_trigger": "Readable current page or exact mainland BOM tied to each seller observation."
+    },
+    {
+      "record_id": "java-vittoria-er7-2026",
+      "field": "frame-material",
+      "status": "carbon-and-aluminum-trims-preserved",
+      "attempt_record_id": "candidate-java-vittoria-er7-2026-frame-material-2026-08-29",
+      "source_ids": [
+        "java-road-catalog-2026-08-29",
+        "java-road-catalog-recheck-2026-09-23",
+        "java-vittoria-er7-north-america-2026-08-29",
+        "java-vittoria-er7-north-america-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.com/Products/5.html",
+        "https://javabikenorthamerica.com/products/vittoria-er7"
+      ],
+      "note": "Dated official catalog distinguishes carbon and aluminum ER7 versions; current catalog had no readable text. North American title identifies one carbon-frame/alloy-wheel reference. Keep retained mainland variants split.",
+      "next_trigger": "Exact seller option/material evidence for each retained ER7 observation."
+    },
+    {
+      "record_id": "java-vittoria-er7-2026",
+      "field": "identity-source",
+      "status": "er7-family-confirmed-mainland-trims-unmapped",
+      "attempt_record_id": "candidate-java-vittoria-er7-2026-identity-source-2026-08-29",
+      "source_ids": [
+        "java-road-catalog-2026-08-29",
+        "java-road-catalog-recheck-2026-09-23",
+        "java-vittoria-er7-north-america-2026-08-29",
+        "java-vittoria-er7-north-america-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.javabikes.com/Products/5.html",
+        "https://javabikenorthamerica.com/products/vittoria-er7"
+      ],
+      "note": "Official and regional sources support the ER7 family and distinct trims, but do not identify which trim each of five retained mainland seller observations represents.",
+      "next_trigger": "Exact SKU mapping for each retained seller observation."
+    },
+    {
+      "record_id": "kontax-power-evo",
+      "field": "identity-source",
+      "status": "dated-official-identity-supported-current-recheck-inaccessible",
+      "attempt_record_id": "candidate-kontax-power-evo-identity-source-2026-09-01",
+      "source_ids": [
+        "kontax-rs80-power-evo-official-2026-09-01",
+        "kontax-power-evo-page-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.kontaxbike.cn/pd161433538.html"
+      ],
+      "note": "The exact official page read 2026-09-01 supports RS80 POWER EVO identity and size/color options. Current direct recheck was inaccessible and exact search added no evidence; no current availability claim is made.",
+      "next_trigger": "Normally accessible current exact KONTAX page or dated manufacturer announcement."
+    },
+    {
+      "record_id": "koseea-pioneer-slr-plus",
+      "field": "frame-material",
+      "status": "exact-regional-full-carbon-frame-and-fork",
+      "attempt_record_id": "candidate-koseea-pioneer-slr-plus-frame-material-2026-09-01",
+      "source_ids": [
+        "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.uaecycle.com/en-sa/collections/roadbike/products/koseea-pioneer-slr-105-di2-carbon-road-bike"
+      ],
+      "note": "Exact UAEcycle Pioneer SLR+ listing states full-carbon frame/fork with Toray T1000 reinforcement; listing is sold out/pre-order and does not establish mainland selected trim.",
+      "next_trigger": "Manufacturer BOM tied to the retained mainland card."
+    },
+    {
+      "record_id": "koseea-pioneer-slr-plus",
+      "field": "frame-weight",
+      "status": "regional-size-dependent-frame-claim-hardware-basis-limited",
+      "attempt_record_id": "candidate-koseea-pioneer-slr-plus-frame-weight-2026-09-01",
+      "source_ids": [
+        "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.uaecycle.com/en-sa/collections/roadbike/products/koseea-pioneer-slr-105-di2-carbon-road-bike"
+      ],
+      "note": "The listing claims approximately 985 g for a size-dependent frame, excluding hardware and paint; this is seller-published, not an independently measured weight, and does not establish the retained mainland option.",
+      "next_trigger": "Exact mainland option and a complete stated weight basis."
+    },
+    {
+      "record_id": "koseea-pioneer-slr-plus",
+      "field": "identity-source",
+      "status": "exact-model-retailer-page-mainland-selection-unconfirmed",
+      "attempt_record_id": "candidate-koseea-pioneer-slr-plus-identity-source-2026-09-01",
+      "source_ids": [
+        "koseea-pioneer-slr-plus-uaecycle-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.uaecycle.com/en-sa/collections/roadbike/products/koseea-pioneer-slr-105-di2-carbon-road-bike"
+      ],
+      "note": "Current exact-model retailer page identifies KOSEEA Pioneer SLR+ and 105 Di2 build context, but its sold-out/pre-order state and regional listing do not prove mapping to the retained mainland card.",
+      "next_trigger": "Manufacturer or seller cross-reference to the exact mainland SKU."
+    },
+    {
+      "record_id": "kung-horizon",
+      "field": "drivetrain",
+      "status": "stale-indexed-r7120-reference-mainland-option-unconfirmed",
+      "attempt_record_id": "candidate-kung-horizon-drivetrain-2026-08-30",
+      "source_ids": [
+        "kung-horizon-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/1318d5556559cbbb311f.html"
+      ],
+      "note": "Older JD index content associates HORIZON with R7120 mechanical builds across multiple distinct trims; current direct recheck showed no HORIZON text and the index is about three months stale. Do not assign to the retained CNY 6,999 card.",
+      "next_trigger": "Current exact manufacturer or seller BOM for the retained option."
+    },
+    {
+      "record_id": "kung-horizon",
+      "field": "frame-material",
+      "status": "stale-indexed-carbon-reference-mainland-option-unconfirmed",
+      "attempt_record_id": "candidate-kung-horizon-frame-material-2026-08-30",
+      "source_ids": [
+        "kung-horizon-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/1318d5556559cbbb311f.html"
+      ],
+      "note": "Older index content described full-carbon builds across multiple distinct trims; current direct recheck showed no HORIZON text. Retained card material remains unverified.",
+      "next_trigger": "Current exact retained SKU with manufacturer material statement."
+    },
+    {
+      "record_id": "kung-horizon",
+      "field": "identity-source",
+      "status": "current-direct-index-recheck-no-exact-current-hit",
+      "attempt_record_id": "candidate-kung-horizon-identity-source-2026-08-30",
+      "source_ids": [
+        "kung-horizon-jd-index-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.jd.com/jiage/1318d5556559cbbb311f.html"
+      ],
+      "note": "Earlier index evidence identifies HORIZON listings, but today's direct recheck exposed no HORIZON text and the remaining indexed content is stale; it cannot establish current listing availability or selected trim.",
+      "next_trigger": "Current exact manufacturer/seller listing linked to the retained HORIZON card."
+    },
+    {
+      "record_id": "laget-aero-one",
+      "field": "frame-material",
+      "status": "manufacturer-titanium-3d-printed-frame-confirmed",
+      "attempt_record_id": "candidate-laget-aero-one-frame-material-2026-09-01",
+      "source_ids": [
+        "laget-aero-one-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/134815.html"
+      ],
+      "note": "Manufacturer page describes the AERO ONE as a 3D-printed titanium road frame with a titanium fork; no alloy grade or process parameters beyond printing are stated.",
+      "next_trigger": "Manufacturer material/process specification that changes or refines the published description."
+    },
+    {
+      "record_id": "laget-aero-one",
+      "field": "frame-weight",
+      "status": "manufacturer-size-m-claim-hardware-basis-unknown",
+      "attempt_record_id": "candidate-laget-aero-one-frame-weight-2026-09-01",
+      "source_ids": [
+        "laget-aero-one-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/134815.html"
+      ],
+      "note": "Manufacturer lists 1.63 kg for size M, but does not state whether hardware, finish or small parts are included; preserve as a manufacturer claim, not a normalized measurement.",
+      "next_trigger": "Exact weight breakdown and component/hardware basis."
+    },
+    {
+      "record_id": "laget-aero-one",
+      "field": "tire-clearance",
+      "status": "manufacturer-nominal-700x30c-maximum",
+      "attempt_record_id": "candidate-laget-aero-one-tire-clearance-2026-09-01",
+      "source_ids": [
+        "laget-aero-one-official-current-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://lagetbike.com/productinfo/134815.html"
+      ],
+      "note": "Manufacturer lists a nominal maximum of 700×30C; no measured casing-width tolerance or wheel/rim basis is given.",
+      "next_trigger": "Manufacturer revision with a different nominal maximum or measured compatibility statement."
+    }
+  ],
+  "validation": {
+    "focused": "PASS: privacy, validate (41 brands, 38 platforms, 41 variants, 72 prices, 1,048 sources, 212 primary images, 236 candidates), research:check (1,461 atomic fields), and git diff --check.",
+    "coverage": "PASS: npm run coverage:accept accepted the monotonic baseline for 212 images and 277 catalog targets; coverage:check passed in the full gate.",
+    "full_gate": "PASS: developer-storage-cache run -- npm run check; privacy, data validation, research validation, coverage, 307/307 tests, 584-page build, and SEO passed.",
+    "image_report": "Not required because no image records changed."
+  }
+}

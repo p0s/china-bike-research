@@ -1,0 +1,82 @@
+{
+  "batch": 63,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "One high-priority frame-material-detail gap belongs to a candidate whose exact seller-card name is AZ ONE / 青龙·赤子. A current JD index showed a separate AZone / 青龙 TT item and did not corroborate the candidate identity. One fresh exact-name search can test whether a manufacturer or attributable seller page identifies the exact candidate and publishes material construction detail.",
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one existing Luna Max agent; read-only exact source research, no repository writes",
+    "root_writer": "integrate only an exact-model material claim with a credible current source, or record one bounded no-result retry with a formal campaign extension"
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "id": "huanyu-az-one",
+      "model": "HUANYU 寰宇单车 AZ ONE / 青龙·赤子 triathlon bike seller-card lead",
+      "gap_code": "frame-material-detail-missing",
+      "research_field": "frame-material",
+      "priority_score": 14,
+      "attempt_id": "candidate-huanyu-az-one-frame-material-2026-08-29",
+      "campaign_id": "huanyu-az-one-50-area-sweep-2026-08-29",
+      "current_state": "The candidate record contains no frame material detail and its exact model-to-AZ ONE alias remains unresolved. The 2026-09-23 JD index names a separate HUANYU AZone / 青龙 TT item and explicitly does not link it to the retained AZ ONE / 青龙·赤子 seller-card identity.",
+      "new_route_scope": "One fresh public web search using the exact seller-card names AZ ONE and 青龙·赤子 plus frame/carbon/material terms. Open at most one exact product item returned by that query. Stop if exact identity is not established; do not repeat the prior 50-area sweep or continue to sibling models.",
+      "acceptance_requirements": [
+        "The opened source must identify AZ ONE / 青龙·赤子 specifically and distinguish it from AZone, 青龙 TT or other HUANYU products.",
+        "A material-detail value must go beyond generic carbon, titanium or alloy; preserve the source's claim class and wording such as fiber grade, lay-up or construction.",
+        "Prefer an exact manufacturer source. A seller claim may be recorded only with explicit attribution and caveat; do not convert it into a verified engineering fact.",
+        "Do not infer material from price, appearance, adjacent models, or a generic HUANYU product family.",
+        "A search snippet without an inspectable attributable exact-model page is not accepted."
+      ],
+      "already_checked_sources": [
+        "taobao-snapshot-2026-08-08",
+        "huanyu-azone-jd-index-2026-09-23"
+      ],
+      "excluded_routes": [
+        "repeating the completed 50-area sweep",
+        "other HUANYU models or unlinked AZone / 青龙 TT pages",
+        "generic carbon labels, unsupported grade inference or appearance-based claims",
+        "login, private message, seller contact or purchase"
+      ]
+    }
+  ],
+  "done_criteria": [
+    "Use one fresh exact-name public web search and open at most one exact product item.",
+    "If accepted, add one dated exact source and populate only the supported candidate material detail with claim class and source caveat.",
+    "If unresolved, append a concise retry attempt with a one-route campaign_extension to the prior blocked 50-area field and this frozen scope; preserve all earlier evidence.",
+    "Run focused research validation and the full repository gate once for any data or research-attempt change; no images are in scope.",
+    "Local B63 batch only; no push, pull request, merge, publication, or production action."
+  ],
+  "delivery": "Local B63 batch only; no push, pull request, merge, publication, or production action."
+}

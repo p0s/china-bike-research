@@ -485,5 +485,6 @@
     "sunpeed-victory-expert-brasil-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sunpeed-victory-e-2026-50-area-sweep-2026-08-30.json. The independent test measured the size-L bike at 8.1 kg. A separate 7.5 kg regional claim lacks size and method and remains a disclosed conflict rather than the catalog value."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/sunpeed-victory-e-2026-50-area-sweep-2026-08-30.json. The independent test measured the size-L bike at 8.1 kg. A separate 7.5 kg regional claim lacks size and method and remains a disclosed conflict rather than the catalog value.",
+  "resolution": {"kind":"source-reuse","resolved_at":"2026-09-24","source_ids":["sunpeed-victory-expert-bikewhat-2026-08-30","sunpeed-victory-expert-brasil-2026-08-30"],"note":"The exact-model test supports 8.1 kg measured for size L; the regional page separately claims 7.5 kg without size or method. The candidate preserves both as conflicting bases; neither is substituted or averaged."}
 }

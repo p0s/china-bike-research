@@ -481,5 +481,13 @@
     "seka-spear-white-paper-2026-09-01"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-spear-rdc-batch-038-50-area-sweep-2026-09-01.json. The exact manufacturer white paper reports a 14.5% stiffness-to-weight improvement over Exceed RDC; manufacturer comparative result with limited public protocol detail."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-seka-spear-rdc-batch-038-50-area-sweep-2026-09-01.json. The exact manufacturer white paper reports a 14.5% stiffness-to-weight improvement over Exceed RDC; manufacturer comparative result with limited public protocol detail.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "seka-spear-white-paper-2026-09-01"
+    ],
+    "note": "The exact Spear RDC manufacturer white paper reports a 14.5% stiffness-to-weight improvement over Exceed RDC. The target preserves that this is a comparative manufacturer result with limited protocol detail."
+  }
 }

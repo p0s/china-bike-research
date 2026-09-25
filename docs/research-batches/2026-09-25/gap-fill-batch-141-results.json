@@ -1,0 +1,362 @@
+{
+  "batch": 141,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-141-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "atomic_fields_reviewed": 25,
+    "disposition": "No selected catalog gap was closed. One newly opened exact-model Phantom RX24 page supports only an approximate alloy-rim reference weight without measurement basis; one current T8 manufacturer catalog supports two drivetrain alternatives but does not identify the retained listing option. Other surfaced sources were inaccessible, mismatched, previously recorded, or did not publish the requested exact field. Unsupported values remain unresolved.",
+    "catalog_gap_entries_before": 680,
+    "catalog_gap_entries_after": 680,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_added": 25,
+    "research_attempts_after": 1618,
+    "research_fields_after": 1503,
+    "research_attempt_counts": {
+      "public-post": 15450,
+      "web": 35685
+    },
+    "new_sources_added": 2,
+    "candidate_records_updated": 2,
+    "specification_values_changed": 0,
+    "published_price_records_added": 0,
+    "image_records_updated": 0,
+    "website_image_records": 212,
+    "new_images_added": 0,
+    "research_queue_before": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "research_queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 3
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "source_results": [
+    {
+      "source_id": "cycletrack-phantom-rx24-official-alt-page-2026-09-25",
+      "disposition": "added as supporting reference-build evidence; not accepted as selected-build weight or max-clearance proof",
+      "title": "Cycletrack PHANTOM 700C 24 Speed L-TWOO RX Carbon Fiber Road Bike Hydraulic Disc Brake Carbon Roadbike Bicycle",
+      "publisher": "CYCLETRACK / Huizhou Cycletrack Bike Co., Ltd.",
+      "type": "manufacturer-product-page",
+      "url": "https://cycletrack.cn/products/cycletrack-phantom-700c-24-speed-carbon-fiber-road-bike-hydraulic-disc-brake-full-carbon-roadbike-bicycle-for-men-women",
+      "accessed_at": "2026-09-25",
+      "fields": "Exact RX 24-speed page lists 44/48/52 cm sizes, alloy rims, fitted CST 700x25C and approximate “around 8.5kg”; no mass-to-size, pedals or measurement method, and no maximum tire clearance."
+    },
+    {
+      "source_id": "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25",
+      "disposition": "added as current evidence for available manufacturer configurations; does not select the retained listing build",
+      "title": "TWITTER Bikes product catalog: T8 tri-spoke wheel+disc wheel",
+      "publisher": "Shenzhen First Technology Co., Ltd. / TWITTER Bikes",
+      "type": "manufacturer-catalog",
+      "url": "https://www.twittercycles.com/products/",
+      "accessed_at": "2026-09-25",
+      "fields": "Catalog lists both WheelTop EVO-24S and Shimano 105/R7120-24S options; it gives no weight, maximum tire clearance or stiffness and does not map the retained listing to one drivetrain option."
+    }
+  ],
+  "field_results": [
+    {
+      "record_type": "candidate",
+      "record_id": "muidler-ashius-s7",
+      "model": "MUIDLER 媚影 阿修斯 S7",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "MUIDLER 媚影 阿修斯 S7 官方 车型说明 轮胎间隙 车架材质 刚性测试",
+      "accepted_source_ids": [],
+      "note": "No exact new MUIDLER S7 source states maximum tire clearance; no sibling-model value transferred."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "muidler-ashius-s7",
+      "model": "MUIDLER 媚影 阿修斯 S7",
+      "field": "frame-material",
+      "disposition": "blocked",
+      "query": "MUIDLER 媚影 阿修斯 S7 官方 车型说明 轮胎间隙 车架材质 刚性测试",
+      "accepted_source_ids": [
+        "muidler-s7-jd-index-2026-09-22"
+      ],
+      "note": "No exact S7 frame/fork material or construction statement surfaced; marketplace title and visual carbon appearance remain insufficient."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "muidler-ashius-s7",
+      "model": "MUIDLER 媚影 阿修斯 S7",
+      "field": "frame-stiffness",
+      "disposition": "blocked",
+      "query": "MUIDLER 媚影 阿修斯 S7 官方 车型说明 轮胎间隙 车架材质 刚性测试",
+      "accepted_source_ids": [],
+      "note": "No exact S7 stiffness test or sufficiently specific independent assessment surfaced."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "model": "CAMP 坎普 GX700 travel-loaded build",
+      "field": "complete-weight",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX700 travel loaded bikepacking set exact build current manufacturer dealer weight groupset clearance",
+      "result_url": "https://www.campbicycle.com/zh/gx700.html",
+      "accepted_source_ids": [],
+      "note": "The newly surfaced official page timed out/returned 400 and was not retried. Search snippet describes a standard small GX700 around 10.2 kg excluding pedals/small accessories, not the travel-loaded listing; it is not recorded as a source."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "model": "CAMP 坎普 GX700 travel-loaded build",
+      "field": "drivetrain",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX700 travel loaded bikepacking set exact build current manufacturer dealer weight groupset clearance",
+      "result_url": "https://www.campbicycle.com/zh/gx700.html",
+      "accepted_source_ids": [],
+      "note": "The official page timed out/returned 400. Its snippet mentions standard 1×12 GRX but does not identify the loaded candidate trim; no transfer made."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "model": "CAMP 坎普 GX700 travel-loaded build",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX700 travel loaded bikepacking set exact build current manufacturer dealer weight groupset clearance",
+      "result_url": "https://www.campbicycle.com/zh/gx700.html",
+      "accepted_source_ids": [],
+      "note": "The official page timed out/returned 400. Its snippet shows a fitted 700×45C tire on the standard GX700, not a maximum clearance or the loaded candidate trim."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "camp-gx700-travel",
+      "model": "CAMP 坎普 GX700 travel-loaded build",
+      "field": "frame-stiffness",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX700 travel loaded bikepacking set exact build current manufacturer dealer weight groupset clearance",
+      "result_url": "https://www.campbicycle.com/zh/gx700.html",
+      "accepted_source_ids": [],
+      "note": "The official page timed out/returned 400; no exact-frame stiffness result was surfaced. No retry."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-phantom-rx24",
+      "model": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+      "field": "complete-weight",
+      "disposition": "blocked",
+      "query": "骑迹 CYCLETRACK Phantom 魅影 RX 24速 整车重量 最大胎宽 轮组配置",
+      "result_url": "https://cycletrack.cn/products/cycletrack-phantom-700c-24-speed-carbon-fiber-road-bike-hydraulic-disc-brake-full-carbon-roadbike-bicycle-for-men-women",
+      "accepted_source_ids": [],
+      "note": "The exact manufacturer RX 24-speed/alloy-rim reference is around 8.5 kg, with 44/48/52 cm sizes listed but no weight-to-size mapping, pedal inclusion or method. It does not resolve the retained card build’s wheel option and weight basis."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-phantom-rx24",
+      "model": "CYCLETRACK 骑迹 Phantom 魅影 / L-TWOO RX 24-speed",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "骑迹 CYCLETRACK Phantom 魅影 RX 24速 整车重量 最大胎宽 轮组配置",
+      "result_url": "https://cycletrack.cn/products/cycletrack-phantom-700c-24-speed-carbon-fiber-road-bike-hydraulic-disc-brake-full-carbon-roadbike-bicycle-for-men-women",
+      "accepted_source_ids": [],
+      "note": "The exact page lists a fitted CST 700×25C tire; it does not state a maximum tire clearance."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-time-tt",
+      "model": "CYCLETRACK 骑迹 TIME 时光 TT / L-TWOO ER9",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "CYCLETRACK TIME 时光 ER9 TT 车架 最大轮胎宽度 manufacturer specification",
+      "result_url": "https://www.jd.com/brand/13189ae1bbfadae99ede.html",
+      "accepted_source_ids": [],
+      "note": "Only a JD brand/category page surfaced, not an exact maximum-clearance specification. Previously recorded manufacturer TIME page was not reopened; its fitted 700×28C is not a maximum."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-er7-2026",
+      "model": "JAVA 佳沃 Vittoria ER7 2026",
+      "field": "complete-weight",
+      "disposition": "blocked",
+      "query": "JAVA 佳沃 Vittoria ER7 2026 complete bicycle weight 700x28 maximum tire width China specification",
+      "result_url": "https://javabikes.com/goodDetail/77",
+      "accepted_source_ids": [],
+      "note": "Search surfaced an ER7 CB frame/frameset result, not a complete bicycle or the retained seller trim; it states no complete-bike weight. Page not opened."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-er7-2026",
+      "model": "JAVA 佳沃 Vittoria ER7 2026",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "JAVA 佳沃 Vittoria ER7 2026 complete bicycle weight 700x28 maximum tire width China specification",
+      "result_url": "https://javabikes.com/goodDetail/77",
+      "accepted_source_ids": [],
+      "note": "Search surfaced an ER7 frame result without a maximum-clearance figure for the retained complete build. Page not opened."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elro-f1",
+      "model": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+      "field": "complete-weight",
+      "disposition": "blocked",
+      "query": "欧拜克 OBIKE F1 24速 公路自行车 整车重量 最大轮胎宽度 型号规格",
+      "accepted_source_ids": [],
+      "note": "No exact OBIKE F1/ELRO-marked product source surfaced. HENG F-1, Olympia F1 and OBIKE F9 are different identities; no weight transferred."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elro-f1",
+      "model": "OBIKE 欧拜克 F1 (ELRO-marked listing)",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "欧拜克 OBIKE F1 24速 公路自行车 整车重量 最大轮胎宽度 型号规格",
+      "accepted_source_ids": [],
+      "note": "No exact OBIKE F1/ELRO-marked product source surfaced; no maximum-clearance fact qualified."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r9-2025",
+      "model": "Hi-Light 航轮 R9 (2025)",
+      "field": "mainland-observed-price",
+      "disposition": "blocked",
+      "query": "Hi-Light 航轮 R9 2025 titanium frameset China current price checkout frame only weight",
+      "accepted_source_ids": [],
+      "note": "No new exact current mainland checkout page surfaced. The previously recorded official CNY 8,900 retail reference is not a transaction observation and was not reopened."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r9-2025",
+      "model": "Hi-Light 航轮 R9 (2025)",
+      "field": "frame-weight",
+      "disposition": "blocked",
+      "query": "Hi-Light 航轮 R9 2025 titanium frameset China current price checkout frame only weight",
+      "accepted_source_ids": [],
+      "note": "No new exact R9 (2025) frame-only weight evidence surfaced; complete-bike and other-generation weights remain inapplicable."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-r9-2025",
+      "model": "Hi-Light 航轮 R9 (2025)",
+      "field": "frame-stiffness",
+      "disposition": "blocked",
+      "query": "Hi-Light 航轮 R9 2025 titanium frameset China current price checkout frame only weight",
+      "accepted_source_ids": [],
+      "note": "No new exact numeric stiffness result or sufficiently specific independent frame assessment surfaced."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-phantom-p10",
+      "model": "Meihanda 美涵达 / Xtreme Phantom / 幻影 P10 flat-bar gravel",
+      "field": "complete-weight",
+      "disposition": "blocked",
+      "query": "美涵达 Xtreme Phantom P10 flat bar gravel complete bicycle weight 7005 U6000",
+      "result_url": "https://meihanda.com/shop/meihanda-xtreme-phantom-series/",
+      "accepted_source_ids": [],
+      "note": "The newly opened series page title includes P10, but its tables discuss Merida Phantom Lanhu/Suruidao and Phantom 100/500/700. Generic “Weight | 9.5 lbs” is not attributable to P10; no weight transferred."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t8-closed-wheel",
+      "model": "TWITTER 骓特 T8 closed-wheel build",
+      "field": "complete-weight",
+      "disposition": "conflicted",
+      "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+      "result_url": "https://www.twittercycles.com/products/",
+      "accepted_source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "twitter-t8-closed-wheel-official-2026-08-30",
+        "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25"
+      ],
+      "note": "The new official catalog lists the two T8 build alternatives but no weights. Existing approximate 9.2 kg WheelTop and 9.3 kg Shimano claims remain unassigned because the retained card does not select a configuration."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t8-closed-wheel",
+      "model": "TWITTER 骓特 T8 closed-wheel build",
+      "field": "drivetrain",
+      "disposition": "conflicted",
+      "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+      "result_url": "https://www.twittercycles.com/products/",
+      "accepted_source_ids": [
+        "taobao-snapshot-2026-08-08",
+        "twitter-t8-closed-wheel-official-2026-08-30",
+        "twitter-t8-closed-wheel-official-timeout-recheck-2026-09-25",
+        "twitter-t8-closed-wheel-current-manufacturer-catalog-2026-09-25"
+      ],
+      "note": "The current official catalog explicitly lists both WheelTop EVO-24S and Shimano 105/R7120-24S options for T8 tri-spoke+disc. It confirms the alternatives but does not identify the retained marketplace card’s selected option."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t8-closed-wheel",
+      "model": "TWITTER 骓特 T8 closed-wheel build",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+      "result_url": "https://www.twittercycles.com/products/",
+      "accepted_source_ids": [],
+      "note": "The current official T8 catalog does not state maximum tire clearance."
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-t8-closed-wheel",
+      "model": "TWITTER 骓特 T8 closed-wheel build",
+      "field": "frame-stiffness",
+      "disposition": "blocked",
+      "query": "TWITTER 骓特 T8 封闭轮 WheelTop EVO Shimano 105 R7120 车重 配置 官方",
+      "result_url": "https://www.twittercycles.com/products/",
+      "accepted_source_ids": [],
+      "note": "The current official T8 catalog reports no model-specific measured or tested frame-stiffness result."
+    },
+    {
+      "record_type": "platform",
+      "record_id": "camp-gx600",
+      "catalog_gap_record_type": "published-variant",
+      "catalog_gap_record_id": "camp-gx600-pes",
+      "model": "CAMP GX600",
+      "field": "tire-clearance",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX600 PES 车架重量 几何尺寸 轮胎最大容纳 官方规格表",
+      "result_url": "https://www.campbicycle.com/road-bike/502521.html",
+      "accepted_source_ids": [],
+      "note": "Search surfaced only a distinct Deore/non-PES GX600 page (not opened); it cannot establish PES clearance. The exact PES route was already recorded and not reopened. A fitted 700×35C is not a maximum."
+    },
+    {
+      "record_type": "platform",
+      "record_id": "camp-gx600",
+      "catalog_gap_record_type": "published-variant",
+      "catalog_gap_record_id": "camp-gx600-pes",
+      "model": "CAMP GX600",
+      "field": "geometry",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX600 PES 车架重量 几何尺寸 轮胎最大容纳 官方规格表",
+      "result_url": "https://www.campbicycle.com/road-bike/502521.html",
+      "accepted_source_ids": [],
+      "note": "No fresh numeric geometry table surfaced. The distinct Deore/non-PES result was not opened; previously recorded exact PES chart image is not fresh machine-readable geometry."
+    },
+    {
+      "record_type": "platform",
+      "record_id": "camp-gx600",
+      "catalog_gap_record_type": "published-variant",
+      "catalog_gap_record_id": "camp-gx600-pes",
+      "model": "CAMP GX600",
+      "field": "frame-weight",
+      "disposition": "blocked",
+      "query": "CAMP 坎普 GX600 PES 车架重量 几何尺寸 轮胎最大容纳 官方规格表",
+      "result_url": "https://www.campbicycle.com/road-bike/502521.html",
+      "accepted_source_ids": [],
+      "note": "No frame-only mass surfaced. Previously recorded snippet’s approximately 9.1 kg is a complete-bike small-size estimate and does not answer frame weight."
+    }
+  ],
+  "validation": {
+    "scope_target_check": "passed: all 25 predecessor targets and fields match the amended frozen scope; 10 identities / 25 fields, 24 formal campaign extensions.",
+    "research_ledger": "passed: npm run --silent research:check; 1503 unique fields, 15450 public-post and 35685 web attempts.",
+    "coverage_acceptance": "passed: npm run --silent coverage:accept; protected 212 images and 277 catalog targets while raising protected source count to 1418 and research-attempt count to 1618.",
+    "full_gate": "passed: developer-storage-cache + codex-pnpm-check; privacy scan, 1418 sources/1618 attempt records, research ledger (1503 unique fields; 15450 public-post / 35685 web attempts), coverage, 328/328 tests, 584-page build, SEO 458 indexable / 126 noindex. The sandbox denied the shared admin lock once; the exact check passed on one approved host-path retry.",
+    "image_report": "not run: no image record changed",
+    "git_diff_check": "passed: git diff --check on changed tracked candidate/baseline/test paths; all 25 new attempt JSON files, two source records, B141 scope/results JSON and the 25-line checkpoint parsed with no trailing whitespace."
+  },
+  "external_delivery": "none"
+}

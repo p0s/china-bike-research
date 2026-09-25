@@ -19,5 +19,17 @@
   },
   "credit": "Product image © Twitter Bikes",
   "alt": "Black Twitter Cyclone Gen 3 ET electronic road bike",
-  "reviewed_at": "2026-08-08"
+  "reviewed_at": "2026-08-08",
+  "health_check": {
+    "checked_at": "2026-09-25",
+    "resources": [
+      {
+        "target_id": "twitter-cyclone-gen3-et-primary-image",
+        "url": "https://www.twittercycles.com/uploads/images/%E9%BB%91%E8%89%B2.webp",
+        "classification": "healthy",
+        "status": 200,
+        "content_type": "image/webp"
+      }
+    ]
+  }
 }

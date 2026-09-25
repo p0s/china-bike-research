@@ -1,0 +1,140 @@
+{
+  "batch": 151,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 669,
+    "catalog_gap_entries_reduced": 1,
+    "catalog_records": 263,
+    "exact_models_reviewed": 9,
+    "atomic_gap_entries_reviewed": 25,
+    "complete_weight_fields_filled": 0,
+    "drivetrain_fields_filled": 0,
+    "maximum_clearance_fields_filled": 0,
+    "numeric_stiffness_fields_filled": 0,
+    "qualitative_stiffness_evidence_fields_added": 1,
+    "atomic_gap_entries_left_unresolved": 24,
+    "research_queries_run": 9,
+    "research_attempt_records_added": 25,
+    "campaign_extensions_added": 25,
+    "ordinary_retries_added": 0,
+    "research_attempts_before": 1703,
+    "research_attempts_after": 1728,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 332,
+      "conflicted": 35,
+      "found": 10,
+      "open": 64,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1421,
+    "candidate_facts_changed": 1,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 9,
+    "page_urls_opened": 5,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 5,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 3,
+    "page_opens_returning_no_content_or_timeout": 2,
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "Two new seller pages timed out. Three other new pages returned content: a KOU8 article with ALVAS build claims not mapped to the retained price option, a JD model index with multiple KUNG HORIZON trims, and a generic FALCO booking category without exact-model content. PARAGON and GIOS searches did not produce a new page; the recorded PARDUS review URL was not reopened."
+  },
+  "model_results": [
+    {
+      "model_id": "paragon-jazz-2026",
+      "gaps": ["complete-weight", "tire-clearance", "frame-stiffness"],
+      "new_query": "PARAGON 鹏来格 JAZZ 2026 整车重量 最大胎宽 车架刚性 official specifications",
+      "result": "Existing JD indexing conflicts between JAZZ/JAZZ Plus names and kit/build titles. No exact complete weight, maximum, or stiffness result; known JD URL was skipped.",
+      "disposition": "all-three-fields-unresolved-build-title-conflict"
+    },
+    {
+      "model_id": "pardus-super-sport",
+      "gaps": ["complete-weight", "tire-clearance", "frame-stiffness"],
+      "new_query": "PARDUS 瑞豹 Super Sport original 105 HDB fluorescent complete bike weight maximum tire clearance stiffness official",
+      "result": "The recorded original-generation Biketo review reports a 9.5 kg test bike and a subjective impression that the frame did not feel insufficiently stiff. The review is build-specific, has no controlled or numeric frame-only result, and its 23C tires do not state a maximum. No page was reopened.",
+      "disposition": "weight-and-clearance-unresolved; qualitative-generation-level-stiffness-evidence-recorded-with-test-build-caveat; numeric-or-controlled-stiffness-remains-missing",
+      "accepted_source_ids": ["pardus-super-sport-review-biketo-2026-08-30"]
+    },
+    {
+      "model_id": "qingsha-carbon-folding",
+      "gaps": ["complete-weight", "tire-clearance", "frame-stiffness"],
+      "new_query": "轻鲨 QS91-20 蓝色碳纤维轮组 整车重量 最大胎宽 刚性 official manufacturer",
+      "result": "One newly surfaced Alibaba page timed out at line 0. A discovery snippet did not tie its claims to the retained blue/blue-carbon-wheel option or provide a valid weighing basis.",
+      "disposition": "all-three-fields-unresolved-page-timeout-and-option-identity"
+    },
+    {
+      "model_id": "west-biking-team-road",
+      "gaps": ["complete-weight", "tire-clearance", "frame-stiffness"],
+      "new_query": "WEST BIKING 西骑者 competition team edition R7120 complete bike weight maximum tire clearance stiffness test",
+      "result": "One new ChinaGoods page timed out. Existing JD R7120 XS and R8170 options are not mapped to the retained listing; no exact weight basis, maximum, or stiffness result was found.",
+      "disposition": "all-three-fields-unresolved-page-timeout-and-option-mapping"
+    },
+    {
+      "model_id": "nscr-carbon-gravel-storage",
+      "gaps": ["drivetrain", "tire-clearance", "frame-stiffness"],
+      "new_query": "NSCR carbon gravel integrated storage 400ml complete weight drivetrain maximum tire clearance frame stiffness",
+      "result": "Search results were the local profile or unrelated storage-gravel models. The seller-card 400 ml and 8.5 kg claims still lack an exact product identity bridge.",
+      "disposition": "all-three-fields-unresolved-exact-product-identity-unknown"
+    },
+    {
+      "model_id": "alums-da54",
+      "gaps": ["complete-weight", "drivetrain"],
+      "new_query": "ALVAS 爱瓦士 DA54 mainland CNY complete bike selected drivetrain build weight",
+      "result": "A newly opened KOU8 user-content article dated 2026-03-22 identifies DA54 and claims Shimano 7120 24-speed hydraulic disc and 8.9 kg (lines 58-59 and 87). It omits size, included equipment, and weighing basis and does not map the configuration to the retained CNY 11,439 listing.",
+      "disposition": "both-fields-unresolved-retained-mainland-option-unmapped"
+    },
+    {
+      "model_id": "kung-horizon",
+      "gaps": ["complete-weight", "tire-clearance"],
+      "new_query": "KUNG HORIZON 天际 exact complete bike weight maximum tire width 2026",
+      "result": "A new JD model index lists distinct 7170 electric-shift and 7120 mechanical/hydraulic HORIZON options (lines 92-94 and 139-141) plus HORIZON FEO (lines 126-127), but no weight or maximum clearance. No trim maps to the retained CNY 6,999 option.",
+      "disposition": "both-fields-unresolved-multiple-trims-and-no-measurements"
+    },
+    {
+      "model_id": "falco-t91-t912",
+      "gaps": ["complete-weight", "drivetrain", "tire-clearance"],
+      "new_query": "FALCO T912 三火 complete-bike weight max tire clearance manufacturer 2026",
+      "result": "The one new JD booking/category page was generic and contained no FALCO, T912, or 10.5 text. Existing 10.5 kg manufacturer evidence belongs to a DA9280 2x12 reference build among several retained options; fitted tires are not a maximum.",
+      "disposition": "all-three-fields-unresolved-reference-build-and-option-mismatch"
+    },
+    {
+      "model_id": "gios-aerolite",
+      "gaps": ["complete-weight", "drivetrain", "tire-clearance"],
+      "new_query": "GIOS AERO LITE 2026 China CNY 11999 complete bike drivetrain weight max tire width",
+      "result": "Results distinguish the older 30T AERO LITE from GEN5 sources; neither is mapped to the retained CNY 11,999 listing. Snippets were not used. Frame/fork weights are not complete-bike weight, and fitted 25C is not a maximum.",
+      "disposition": "all-three-fields-unresolved-generation-and-trim"
+    }
+  ],
+  "validation": {
+    "research_validation": "passed: 1503 atomic fields; 15450 public-post and 35795 web attempts",
+    "coverage_acceptance": "passed: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1421 sources, 212 image records, 236 candidates, 1728 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35795 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1421 sources, 236 candidates",
+      "tests": "331/331 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex",
+      "sandbox_note": "The normal sandbox run passed all data, privacy, coverage, build prerequisites and 324 tests; seven preview-server tests were blocked by loopback EPERM. The exact full gate passed on one narrowly scoped retry with loopback access."
+    },
+    "git_diff_check": "passed; all new JSON parsed and whitespace-checked",
+    "image_report": "not run; no image records changed",
+    "external_delivery": "none"
+  },
+  "external_delivery": "none"
+}

@@ -1,0 +1,97 @@
+{
+  "batch": 135,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-135-scope.json",
+  "result": {
+    "exact_target_models": 1,
+    "atomic_fields": 10,
+    "disposition": "No new direct exact-model manufacturer route was exposed in the frozen review. Keep unsupported SPEEDZ specifications unknown; reuse existing evidence only for the bounded listing-level carbon and 105-setup claims.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_dispositioned": 0,
+    "new_sources_added": 0,
+    "source_reuse_found": 2,
+    "catalog_records_updated": 0,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "field": "variant:lightcarbon-speedz-complete:complete-weight",
+      "disposition": "unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "The anonymized listing gives no weight; the exact-name search had no result and the official V2 catalog fetch timed out. Do not transfer another model's weight."
+    },
+    {
+      "field": "platform:lightcarbon-speedz:tire-clearance",
+      "disposition": "unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08", "lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "No exact SPEEDZ maximum was verified; the catalog fetch timed out and the search exposed no exact manufacturer page."
+    },
+    {
+      "field": "platform:lightcarbon-speedz:geometry",
+      "disposition": "unknown",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "No SPEEDZ geometry chart was verified; charts for LCROX-D and LCR015-D belong to different models."
+    },
+    {
+      "field": "variant:lightcarbon-speedz-complete:image-exactness",
+      "disposition": "unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "caveat": "The historical anonymized snapshot has no public image URL or established reuse rights and does not map the catalog image to this build."
+    },
+    {
+      "field": "platform:lightcarbon-speedz:frame-material-detail",
+      "disposition": "source-reuse for generic carbon only; detail unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "caveat": "The snapshot labels the offer carbon but gives no fiber grade, layup, or construction detail."
+    },
+    {
+      "field": "variant:lightcarbon-speedz-complete:bom",
+      "disposition": "source-reuse for literal 105 setup only; remainder unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "caveat": "The listing says '105 setup shown' but does not establish the full build or its wheels, tires, and cockpit."
+    },
+    {
+      "field": "platform:lightcarbon-speedz:frame-weight",
+      "disposition": "unknown",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "No exact SPEEDZ frame-weight value was established; the official catalog fetch timed out."
+    },
+    {
+      "field": "variant:lightcarbon-speedz-complete:bottom-bracket",
+      "disposition": "unknown",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "The exact catalog route timed out and exposed no bottom-bracket specification."
+    },
+    {
+      "field": "variant:lightcarbon-speedz-complete:purchase-route",
+      "disposition": "unknown",
+      "source_ids": ["taobao-snapshot-2026-08-08"],
+      "caveat": "The anonymized historical snapshot has no public listing URL; the previously recorded official inventory did not identify a SPEEDZ offer. Current availability is unverified."
+    },
+    {
+      "field": "platform:lightcarbon-speedz:frame-stiffness",
+      "disposition": "unknown",
+      "source_ids": ["lightcarbon-speedz-catalog-recheck-2026-09-24"],
+      "caveat": "No exact-model stiffness result was found; a general test-method page does not establish a SPEEDZ result or score."
+    }
+  ],
+  "validation": {
+    "result_json": "jq syntax validation and git diff --check",
+    "full_gate": "not run: no source, catalog, code, price, or image data changed",
+    "image_report": "not run: no image record changed"
+  }
+}

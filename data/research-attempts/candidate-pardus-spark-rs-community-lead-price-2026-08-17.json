@@ -491,8 +491,22 @@
   "accepted_source_ids": [
     "round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8",
     "pardus-spark-rs-tmall-price-2026-08-30",
-    "public-pardus-spark-rs-build-2026-08-17"
+    "public-pardus-spark-rs-build-2026-08-17",
+    "pardus-spark-rs-current-official-store-index-2026-09-24",
+    "pardus-spark-rs-official-store-index-reopen-2026-09-25"
   ],
   "retry_after": "2026-09-10",
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pardus-spark-rs-community-lead-batch-025-50-area-sweep-2026-08-30.json. The 4 original applications are retained with their original queries, routes, outcomes, dates, notes and URLs, then assigned to matching registered areas. The factory price reference and custom-build identity remain separate. The four original 2026-08-17/28 applications remain intact."
+  "notes": "The current opened index relies on a crawl about one week old and shows CNY 11,499 for standard Spark RS/105 Di2 option cards without identifying the selected option. It does not price the retained custom mechanical-105 bike; no exact custom-build price is assigned.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "round3-pardus-spark-rs-disc-rival-pro-bike-4b8e9748e8",
+      "pardus-spark-rs-tmall-price-2026-08-30",
+      "public-pardus-spark-rs-build-2026-08-17",
+      "pardus-spark-rs-current-official-store-index-2026-09-24",
+      "pardus-spark-rs-official-store-index-reopen-2026-09-25"
+    ],
+    "note": "The current opened index relies on a crawl about one week old and shows CNY 11,499 for standard Spark RS/105 Di2 option cards without identifying the selected option. It does not price the retained custom mechanical-105 bike; no exact custom-build price is assigned."
+  }
 }

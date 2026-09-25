@@ -1,0 +1,37 @@
+{
+  "id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "specialized-s-works-crux-2024-sram-red-xplr" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01",
+  "retry_reason": "The extended search retained the official CNY 84,990 reference but no current exact seller option. One focused marketplace recheck tests for a mainland item matching product 221367 and the SRAM Red XPLR build.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-specialized-crux-red-price",
+    "extends_attempt_id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland seller-item search checks exact product 221367 after the earlier campaign established only official list price.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-specialized-s-works-crux-2024-sram-red-xplr-price-2026-09-01", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact current mainland seller item for product 221367 and the SRAM Red XPLR package surfaced.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "Specialized 2024 S-Works Crux SRAM Red XPLR 221367 中国 淘宝 京东 天猫 价格",
+        "route": "One focused public mainland marketplace search for exact product 221367 and its Red XPLR build",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "Results included official/international product pages, a JD seller category without an exact item, and older deal/article snippets. None exposed a current exact mainland seller option, amount, or order context. The CNY 84,990 official-list reference is not seller-price evidence."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "No current matching mainland seller offer was found; preserve the official-list reference and leave candidate observed_price absent."
+}

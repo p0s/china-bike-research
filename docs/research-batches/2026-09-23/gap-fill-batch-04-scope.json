@@ -1,0 +1,26 @@
+{
+  "batch_id": "gap-fill-batch-04-2026-09-23",
+  "base_commit": "24e323d06e99a62f2d8946c35be9d4c0ce72594c",
+  "frozen_at": "2026-09-23",
+  "targets": [
+    {
+      "record_type": "variant",
+      "record_id": "lightcarbon-speedz-complete",
+      "platform_id": "lightcarbon-speedz",
+      "exact_identity": "LightCarbon SPEEDZ complete build recorded with Shimano 105 mechanical 2x12",
+      "fields": [
+        "cockpit component identity"
+      ],
+      "prior_research": "Standard six-attempt research was marked temporarily exhausted on 2026-08-17 with retry_after 2026-09-20. Fresh local queue reports it ready on 2026-09-23.",
+      "boundaries": [
+        "Accept a cockpit value only when a public source identifies the exact SPEEDZ model/build or the exact selected listing configuration.",
+        "Do not infer cockpit make or model from generic LightCarbon catalog photos or similarly named builds.",
+        "Do not contact sellers, use private content, or cross authentication or access challenges.",
+        "Do not change the bike's image, price, drivetrain, or other components in this batch."
+      ]
+    }
+  ],
+  "atomic_field_count": 1,
+  "done_criteria": "Use current public manufacturer/authorized or opened exact public listing evidence. Add an exact sourced cockpit component if attributable; otherwise document the distinct routes checked, the reason no value was accepted, and a concrete reopening trigger. Record attempt state without rewriting historical attempts. Run npm run check only if catalog data changes.",
+  "delivery_boundary": "One local delivery only. No push, pull request, merge, publication, or seller contact."
+}

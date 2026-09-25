@@ -1,0 +1,68 @@
+{
+  "batch": 79,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "Ten high-priority unresolved candidate price gaps with a previously reviewed official, dealer, or marketplace route that did not establish a current exact seller option. A new exact seller-item check can test whether current mainland order evidence is available. Selection follows the fresh gap inventory; no different models or fields are in scope.",
+    "exact_models": 10,
+    "atomic_gaps": 10,
+    "targets": [
+      { "record_type": "candidate", "record_id": "pardus-spark-rs-community-lead", "model": "PARDUS Spark RS custom mechanical-105 build", "gap_code": "price-missing", "prior_attempt_id": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "dengfu-gravel", "model": "Dengfu R20 Disc Gravel Bike Frame", "gap_code": "price-missing", "prior_attempt_id": "candidate-dengfu-gravel-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "hongfu-gravel", "model": "Hongfu current gravel frame", "gap_code": "price-missing", "prior_attempt_id": "candidate-hongfu-gravel-price-2026-08-17" },
+      { "record_type": "candidate", "record_id": "pardus-robin-evo-community-lead", "model": "PARDUS Robin EVO XS Dura-Ace competition build", "gap_code": "price-missing", "prior_attempt_id": "candidate-pardus-robin-evo-community-lead-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "hi-light-r6-105-al", "model": "Hi-Light 航轮 R6 105 AL", "gap_code": "price-not-observed", "prior_attempt_id": "candidate-hi-light-r6-105-al-current-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "giant-defy-advanced-sl1-community-lead", "model": "Giant Defy Advanced SL 1", "gap_code": "price-missing", "prior_attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "missing-china-price-giant-revolt-advanced", "model": "Giant Revolt Advanced 2", "gap_code": "price-not-observed", "prior_attempt_id": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "quick-pro-gr-one-grx-di2", "model": "Quick Pro GR:ONE GRX Di2 1×12", "gap_code": "price-not-observed", "prior_attempt_id": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "missing-china-price-merida-reacto", "model": "Merida REACTO 6000 CN 27", "gap_code": "price-not-observed", "prior_attempt_id": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24" },
+      { "record_type": "candidate", "record_id": "tavelo-arow-sl-community-lead", "model": "Tavelo Arow SL custom complete build", "gap_code": "price-missing", "prior_attempt_id": "candidate-tavelo-arow-sl-community-lead-mainland-observed-price-2026-09-24" }
+    ],
+    "campaign_extension": {
+      "allowed_channels": ["web"],
+      "max_new_attempts_per_model": 1
+    }
+  },
+  "research_route": {
+    "source_class": "current-mainland-seller-item-price",
+    "action": "Proceed sequentially in target order. For each exact model, make one focused public search for a current mainland seller item and open at most one exact item page. Record URL, accessed date, exact selectable model/build, visible CNY amount, seller identity at the shop level, availability/order path, and any limits. Return evidence only; do not edit repository files.",
+    "acceptance_rule": "A seller-listed CNY amount can resolve the observation only when the exact target model and retained package/option match and the page exposes a current, orderable mainland seller item. A search snippet, official MSRP, foreign offer, unmapped option number, different trim, stale campaign, or price without current ordering context cannot resolve the gap.",
+    "stop_rule": "At most one web attempt and one exact item page per model. Do not log in, contact sellers, use XHS, bypass access controls, loop retries, infer prices, or continue after a challenge/rate limit. If evidence is missing, mismatched, stale, or inaccessible, return the strongest supported no-result/rejected/blocked disposition and preserve the gap."
+  },
+  "done_criteria": [
+    "Return one concise evidence disposition per target with exact URL, observed/access date, exactness, seller/orderability evidence, and whether the amount is admissible.",
+    "After integrating evidence, add one bounded retry per target and update candidate price data only for admissible exact current seller observations.",
+    "Run focused validation, coverage acceptance/check, and npm run check once for the coherent batch.",
+    "Local B79 batch only; no push, pull request, merge, publication, or production action."
+  ]
+}

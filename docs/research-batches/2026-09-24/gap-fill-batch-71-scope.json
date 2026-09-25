@@ -1,0 +1,65 @@
+{
+  "batch": 71,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 362,
+      "conflicted": 34,
+      "found": 48,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The exact Specialized Roubaix SL8 Tiagra candidate already has an exact U.S. manufacturer page, but no current observed mainland-China listing amount. A current exact mainland source could resolve one useful purchase-comparison gap.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "missing-china-price-specialized-roubaix-sl8",
+    "gap_code": "price-not-observed",
+    "prior_attempt_id": "candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01",
+    "new_field_id": "mainland-observed-price"
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-specialized-roubaix-sl8",
+    "model": "Specialized Roubaix SL8 Tiagra",
+    "field": "observed_price",
+    "market": "mainland China",
+    "expected_basis": "A current exact-model China seller or official store page that identifies the Tiagra build/package and publishes a CNY amount with visible conditions. Preserve existing U.S. pricing separately; do not transfer another trim, region or a historical launch price."
+  },
+  "research_route": {
+    "source_class": "mainland-official-or-retailer-listing",
+    "action": "Run one focused public web search for a current exact Specialized Roubaix SL8 Tiagra mainland-China listing. If an exact official or seller detail page is surfaced, open it once and verify model, trim/package, CNY amount and published conditions.",
+    "stop_rule": "Stop after the first decisive exact China listing or after the focused search yields no exact seller item. Do not open unrelated trim or overseas listings, use account-only checkout, contact a seller, or cross login, CAPTCHA or verification."
+  },
+  "done_criteria": [
+    "If an exact current mainland listing publishes a usable CNY amount, add dated observed_price with source attribution and conditions while retaining the U.S. source only for U.S. evidence.",
+    "Do not use U.S. pricing, generic model-family pages, other trims, seller-index fragments, or launch references as an observed mainland transaction price.",
+    "If no exact China listing is readable, keep observed_price absent and document a blocked/no-result attempt with the explicit reason and a retrigger condition.",
+    "For a data change, run focused validation and `npm run check` once for this coherent batch. No image report unless image records change.",
+    "Local B71 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B71 batch only; no push, pull request, merge, publication or production action."
+}

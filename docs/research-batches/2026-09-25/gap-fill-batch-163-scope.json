@@ -1,0 +1,80 @@
+{
+  "batch": 163,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "external_delivery": "none",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-25",
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_queue_counts": {
+      "ready": 69,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    },
+    "image_gap_counts": {
+      "image-exactness": 4,
+      "image-health-unverified": 2
+    }
+  },
+  "scope": {
+    "exact_record_count": 4,
+    "atomic_gap_entries": 4,
+    "image_exactness_targets": [
+      {
+        "record_type": "published-variant",
+        "record_id": "lightcarbon-speedz-complete",
+        "name": "SPEEDZ complete",
+        "field": "image-exactness",
+        "attempt_id": "variant-lightcarbon-speedz-complete-image-2026-08-29",
+        "image_id": "lightcarbon-speedz-primary-image",
+        "image_file": "data/images/lightcarbon-speedz.json",
+        "current_accuracy": "illustrative",
+        "current_gap": "The model campaign did not map the marketplace label SPEEDZ to the official Speed7/速7/LCR017-D product identity, and public-post photo rights were not established."
+      },
+      {
+        "record_type": "published-variant",
+        "record_id": "lightcarbon-speedz-frameset",
+        "name": "SPEEDZ frameset",
+        "field": "image-exactness",
+        "attempt_id": "variant-lightcarbon-speedz-frameset-image-2026-08-29",
+        "image_id": "lightcarbon-speedz-primary-image",
+        "image_file": "data/images/lightcarbon-speedz.json",
+        "current_accuracy": "illustrative",
+        "current_gap": "Shares the SPEEDZ identity and image-rights uncertainty with the complete variant; keep the project-owned fallback until the exact mapping and usable image basis are documented."
+      },
+      {
+        "record_type": "published-variant",
+        "record_id": "elves-falath-r7170",
+        "name": "Falath Pro Disc R7170 build",
+        "field": "image-exactness",
+        "attempt_id": "variant-elves-falath-r7170-image-2026-08-17",
+        "image_id": "elves-falath-r7170-primary-image",
+        "image_file": "data/images/elves-falath-r7170.json",
+        "current_accuracy": "illustrative",
+        "current_gap": "Official Falath Pro Disc frame imagery does not establish this selected R7170 complete build; current page terms provide no image reuse grant."
+      },
+      {
+        "record_type": "published-variant",
+        "record_id": "twitter-v3-2024-rs-sensah-alloy",
+        "name": "Gravel V3 2024 RS / Sensah 2×12 alloy",
+        "field": "image-exactness",
+        "attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-image-exact-listing-recheck-2026-09-24",
+        "image_id": "twitter-gravel-v3-2024-listing-primary-image",
+        "image_file": "data/images/twitter-gravel-v3-2024.json",
+        "current_accuracy": "same-model-different-market-build",
+        "current_gap": "The current listing image is not mapped to the retained 2024 RS Sensah 2×12 alloy option; the opened classified did not assign its photos to that build and did not state reuse rights."
+      }
+    ],
+    "research_boundary": "Use one read-only evidence reviewer; root remains the sole writer. Audit each exact target's image record, latest attempt, 50-approach history, and sources added after that attempt. A new web query and at most one new page open per target are allowed only when a genuinely new exact-model image or rights lead exists; literal-search each proposed URL in data/ and docs/ before opening it. Use manufacturer or exact authorized-seller pages only; do not access XHS, social/community posts, personal profiles, CAPTCHA, or login routes in this batch. Return exact URL, actual access date, exact subject match, owner/credit, supported rights basis, and unresolved caveats. Do not edit files, download or copy image assets, or infer a product alias/build from appearance alone.",
+    "excluded": [
+      "No changes to image records or catalog facts without root integration after the frozen review.",
+      "No image downloads, local copies, generated product depictions, or unsupported reuse claims.",
+      "No new campaign extensions for other fields or any of the 69 open specification/price fields.",
+      "No GitHub mutation, commit, push, PR, merge, publish or production write."
+    ]
+  }
+}

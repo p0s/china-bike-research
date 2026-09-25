@@ -483,11 +483,30 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "felt-ia-2-frd-current-2026-08-30",
-    "felt-ia-2-pro-current-2026-08-30",
     "felt-ia-2-expert-current-2026-08-30",
-    "felt-ia-2-race-current-2026-08-30"
+    "felt-ia-2-expert-current-2026-09-23",
+    "felt-ia-2-frd-current-2026-08-30",
+    "felt-ia-2-frd-current-2026-09-23",
+    "felt-ia-2-pro-current-2026-08-30",
+    "felt-ia-2-pro-current-2026-09-23",
+    "felt-ia-2-race-current-2026-08-30",
+    "felt-ia-2-race-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. Current exact manufacturer pages publish size-M weights of 9.37 kg FRD, 9.5 kg PRO, 10.3 kg EXPERT, and 10.44 kg RACE; the retained card does not select one."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. Current exact manufacturer pages publish size-M weights of 9.37 kg FRD, 9.5 kg PRO, 10.3 kg EXPERT, and 10.44 kg RACE; the retained card does not select one. Focused exact-model review on 2026-09-23: Felt lists size-M complete-bike weights by trim: FRD 9.37 kg, PRO 9.5 kg, EXPERT 10.3 kg, RACE 10.44 kg. Weight method is unstated; the family also includes a framekit, which is not a complete bike.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "felt-ia-2-expert-current-2026-08-30",
+      "felt-ia-2-expert-current-2026-09-23",
+      "felt-ia-2-frd-current-2026-08-30",
+      "felt-ia-2-frd-current-2026-09-23",
+      "felt-ia-2-pro-current-2026-08-30",
+      "felt-ia-2-pro-current-2026-09-23",
+      "felt-ia-2-race-current-2026-08-30",
+      "felt-ia-2-race-current-2026-09-23"
+    ],
+    "note": "Felt current product pages accessed 2026-09-23 restate size-M weights of 9.37 kg FRD, 9.5 kg PRO, 10.3 kg EXPERT and 10.44 kg RACE. These remain trim-specific manufacturer values; the retained CNY 88,998 card does not identify a trim, and Felt says stock specifications can vary with component supply."
+  }
 }

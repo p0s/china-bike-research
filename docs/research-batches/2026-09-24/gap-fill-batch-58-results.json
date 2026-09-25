@@ -1,0 +1,61 @@
+{
+  "batch": 58,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-58-scope.json",
+  "scope": {
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1
+  },
+  "outcomes": [
+    {
+      "record_type": "candidate",
+      "id": "giant-defy-advanced-sl1-community-lead",
+      "gap": "price-missing",
+      "status": "unresolved",
+      "disposition": "A distinct public mainland e-commerce/flagship search surfaced the official Defy Advanced 1 and Defy Advanced SL 0 pages, but they are different trims. UK/Japan prices were foreign-market results. No exact SL 1 mainland listing, CNY amount, package, current stock, or listing date was found, so the candidate price remains null. This bounded route does not establish that no such listing exists.",
+      "excluded_results": [
+        {
+          "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1543",
+          "product": "Defy Advanced 1",
+          "displayed_suggested_price": "CNY 18,800",
+          "reason_excluded": "Different trim; not evidence for Advanced SL 1."
+        },
+        {
+          "url": "https://www.giant.com.cn/index.php/index/bike_view.html?id=1790",
+          "product": "Defy Advanced SL 0",
+          "displayed_suggested_price": "CNY 73,800",
+          "reason_excluded": "Different trim; not evidence for Advanced SL 1."
+        }
+      ],
+      "sources_added": [],
+      "attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-mainland-observed-price-2026-09-24",
+      "price_observation_added": false
+    }
+  ],
+  "gaps_resolved": 0,
+  "gaps_unresolved": 1,
+  "changes": {
+    "sources_added": 0,
+    "research_attempt_records_extended": 1,
+    "candidate_records_updated": 0,
+    "mainland_prices_added": 0,
+    "specification_values_added": 0,
+    "images_added": 0
+  },
+  "researcher": "One Luna evidence-only agent searched the frozen route; root directly checked the surfaced official mainland product pages and integrated the result.",
+  "validation": {
+    "status": "passed",
+    "full_check": "passed via codex-pnpm-check check",
+    "privacy": "passed",
+    "data_validation": "passed: 41 brands, 38 platforms, 41 variants, 73 prices, 1300 sources, 212 primary image records, 236 candidates, and 1514 atomic research records",
+    "research_validation": "passed: 1499 atomic fields; 15449 public-post and 35565 web attempts",
+    "coverage": "passed: 212 images, 73 price observations, 1300 sources, and 236 candidates protected; baseline acceptance retained 277 catalog targets",
+    "tests": "321 passed, 0 failed",
+    "build": "passed: 584 pages for 41 products",
+    "build_cleanup_warning": "build passed but could not remove a 784 KB generated .dist-previous-* backup; it was left intact",
+    "seo": "passed: 584 pages, 458 indexable, 126 noindex",
+    "image_report": "not required; no image records changed"
+  },
+  "delivery": "Local B58 batch only; no push, pull request, merge, publication, or production action."
+}

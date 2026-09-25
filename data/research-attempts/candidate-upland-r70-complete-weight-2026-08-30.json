@@ -491,8 +491,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "upland-r70-official-2026-08-30"
+    "upland-r70-official-2026-08-30",
+    "upland-r70-indexed-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-50-area-sweep-2026-08-30.json. The current exact manufacturer page claims approximately 8.3 kg bare without pedals or computer mount."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/upland-r70-50-area-sweep-2026-08-30.json. The current exact manufacturer page claims approximately 8.3 kg bare without pedals or computer mount. Focused exact-model review on 2026-09-23: Accepted exact page observation reports approximately 8.3 kg bare for the displayed 105 Di2 build, excluding pedals and computer mount. The 2026-09-23 direct refresh timed out; retained seller cards do not select this build, and size/method are unstated.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "upland-r70-official-2026-08-30"
+    ],
+    "note": "The accepted exact manufacturer source states approximately 8.3 kg bare without pedals or computer mount for its displayed 105 Di2 build; the candidate already records that approximate claim. The exact manufacturer URL timed out on 2026-09-23, so no fresh page confirmation or exact retained-price mapping was obtained. Reopen on a normally accessible exact SKU with a stated weight method and option mapping."
+  }
 }

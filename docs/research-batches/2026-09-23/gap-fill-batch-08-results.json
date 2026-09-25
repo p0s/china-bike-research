@@ -1,0 +1,152 @@
+{
+  "batch_id": "gap-fill-batch-08-2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-08-scope.json",
+  "scope_count": {
+    "exact_models": 5,
+    "atomic_fields": 6
+  },
+  "completed_at": "2026-09-23",
+  "research_mode": "Sequential public-route searches of the frozen fields; no XHS access. No catalog or source-record edits were justified.",
+  "external_limits": {
+    "xhs": {
+      "status": "not-used",
+      "queries_dispatched": 0,
+      "note": "No XHS route was opened or queried. The Batch 06 extension doctor was unavailable at its CDP endpoint; no direct-browser workaround was attempted."
+    }
+  },
+  "results": [
+    {
+      "record_id": "pardus-uragano-evo-community-lead",
+      "field": "current-configuration",
+      "status": "unresolved",
+      "note": "The Bilibili search returned generic PARDUS product/discount videos but no exact current Uragano EVO SKU or BOM. The opened playlist page was unrelated. Batch 07's separate Fuvelo/JD searches also did not establish a current mainland build.",
+      "attempt_record_id": "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "query": "site:bilibili.com 瑞豹 Uragano EVO 飓风 2026 APEX AXS X1 Eagle 配置 车主",
+      "reopen_when": "An accessible current mainland offer exposes an exact SKU and BOM, or explicitly maps it to the reviewed APEX AXS/X1 Eagle build."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "status": "unresolved",
+      "note": "A distinct Chinertown search found no current mainland CNY quote or selected package. The official page remains verification-gated and the historical German owner amount does not establish a current mainland price.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-price-2026-09-22",
+      "query": "site:chinertown.com \"Airwolf YF-R003\" price OR cost OR 车架价格",
+      "reopen_when": "Ordinary official access is restored or an accessible mainland source supplies an exact-model CNY amount, selected package, availability, and delivery basis."
+    },
+    {
+      "record_id": "seraph-tt-x68-new-udh",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "A Reddit rider reports subjective bottom-bracket-area flex on a TT-X68 after about 4,000 km, but does not identify the frozen 32C/UDH/T47 revision or provide a controlled stiffness result. The report is rejected for this exact-revision field.",
+      "attempt_record_id": "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "query": "site:reddit.com \"TT-X68-new\" owner ride stiffness flex test",
+      "source_url": "https://www.reddit.com/r/gravelbike/comments/1u8zhfv/tantanseraph_frames/",
+      "reopen_when": "An instrumented or controlled stiffness test identifies the exact TT-X68-new 32C/UDH revision."
+    },
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "The public search returned only the exact Reddit owner thread already recorded in Batch 06. It adds no distinct source or stiffness result, so no duplicate attempt was appended. The owner's saddle-compliance comment is not a frame-stiffness measurement or controlled comparison.",
+      "attempt_record_id": "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22",
+      "query": "site:reddit.com/r/ChineseCarbon \"Airwolf YF-R003\" stiffness flex ride",
+      "deduplicated_source_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+      "ledger_action": "not-appended; duplicate result URL within this field's public-post channel",
+      "reopen_when": "A distinct exact-revision measured stiffness/deflection result or controlled comparison becomes available."
+    },
+    {
+      "record_id": "mondince-fm316",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "A distinct Reddit search returned no additional exact-model measured stiffness result or controlled comparison. Public-post channel is temporarily exhausted; manufacturer/web routes remain open.",
+      "attempt_record_id": "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "query": "site:reddit.com \"Mondince FM316\" stiffness flex torsional ride",
+      "reopen_when": "An exact FM316 stiffness measurement or attributable named, controlled frame comparison becomes available."
+    },
+    {
+      "record_id": "velobuild-cx-002-2023",
+      "field": "frame-stiffness",
+      "status": "unresolved",
+      "note": "A Reddit owner says a VeloBuild CX-002 build rides well and reports no complaints after about 500 km, but gives no stiffness result or controlled comparator and does not identify the frozen 2023 full-internal-routing revision. Rejected for this field; public-post channel is temporarily exhausted.",
+      "attempt_record_id": "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22",
+      "query": "site:reddit.com \"VeloBuild CX-002\" frame stiffness flex test",
+      "source_url": "https://www.reddit.com/r/ChineseCarbon/comments/1r5i9x2/nbd_velobuild_cx002/",
+      "reopen_when": "A measured result or useful attributable comparative ride identifies the 2023 full-internal-routing CX-002."
+    }
+  ],
+  "related_evidence_not_integrated": [
+    {
+      "record_id": "airwolf-yf-r003",
+      "field": "price",
+      "source_url": "https://www.reddit.com/r/ChineseCarbon/comments/1taxf7e/custom_china_gravel_build_85_kg_2200_total/",
+      "note": "The already-recorded German owner build reports about EUR 450 for the YF-R003 frame/fork/HB009 package plus about EUR 100 shipping/VAT. It remains a foreign owner-reported amount and does not close the current mainland price gap. Any separate catalog treatment needs its own frozen price scope and schema review."
+    }
+  ],
+  "integrated_changes": {
+    "candidate_catalog_records_changed": [],
+    "source_records_added": [],
+    "images_added": 0,
+    "research_attempt_records_updated": [
+      "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
+      "candidate-airwolf-yf-r003-price-2026-09-22",
+      "candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22",
+      "candidate-mondince-fm316-frame-stiffness-2026-09-22",
+      "candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"
+    ],
+    "deduplicated_searches_not_appended": [
+      "candidate-airwolf-yf-r003-frame-stiffness-2026-09-22"
+    ]
+  },
+  "post_batch_inventory": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 40,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 333,
+      "conflicted": 35,
+      "found": 69,
+      "open": 5,
+      "temporarily-exhausted": 11
+    },
+    "research_queue": {
+      "ready": 6,
+      "evidence-found": 860,
+      "deferred": 41,
+      "blocked": 496,
+      "conflicted": 60
+    },
+    "note": "All six targets remain ready because at least one required channel remains open or blocked without a separate closed record; their existing gaps are still actionable in later frozen batches."
+  },
+  "reopening_triggers": [
+    "A current mainland Uragano EVO SKU/BOM mapped to the reviewed build.",
+    "An accessible exact YF-R003 mainland CNY price with package and delivery basis.",
+    "A measured or controlled stiffness source that identifies the exact Airwolf, Seraph 32C/UDH, Mondince FM316, or VeloBuild CX-002 2023 revision."
+  ],
+  "validation": {
+    "coverage_accept": "passed; monotonic baseline protects 212 images and 277 catalog targets",
+    "npm_run_check": "passed via codex-pnpm-check; privacy, data validation, research ledger (1461 atomic fields; 15444 public-post and 35465 web attempts), coverage, 306 tests, 584-page build, and SEO audit passed",
+    "npm_run_image_report": "not-needed; no image records changed",
+    "diff_check": "passed"
+  },
+  "delivery_boundary": "Local worktree only; no push, pull request, merge, publication, or production change."
+}

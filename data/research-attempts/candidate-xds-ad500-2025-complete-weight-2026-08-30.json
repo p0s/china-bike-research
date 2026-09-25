@@ -487,8 +487,20 @@
   "accepted_source_ids": [
     "xds-ad500-retailer-2026-08-08",
     "xds-ad500-2025-mainland-weight-2026-08-30",
-    "xds-ad500-vietnam-current-2026-08-30"
+    "xds-ad500-vietnam-current-2026-08-30",
+    "xds-ad500-vietnam-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad500-2025-batch-025-50-area-sweep-2026-08-30.json. All three exact references are preserved without assigning a single complete weight to the retained card."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/xds-ad500-2025-batch-025-50-area-sweep-2026-08-30.json. All three exact references are preserved without assigning a single complete weight to the retained card.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "xds-ad500-2025-mainland-weight-2026-08-30",
+      "xds-ad500-retailer-2026-08-08",
+      "xds-ad500-vietnam-current-2026-08-30",
+      "xds-ad500-vietnam-current-recheck-2026-09-25"
+    ],
+    "note": "The exact-2025 mainland public build report provides a 9.23 kg measurement without pedals; size and method detail are limited. Record it as a mainland reference. Hong Kong (~8.9 kg at 450 mm) and Vietnam (10.2 kg, alloy fork) remain separate regional builds; the retained card delivery build remains unresolved."
+  }
 }

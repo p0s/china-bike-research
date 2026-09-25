@@ -1,0 +1,203 @@
+{
+  "batch_id": "gap-fill-batch-32-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state": {
+    "as_of": "2026-09-23",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_queue_counts": {
+      "ready": 0,
+      "evidence-found": 410,
+      "deferred": 45,
+      "blocked": 498,
+      "conflicted": 60
+    },
+    "queue_filter_matches": {
+      "source_reuse": 20,
+      "known_duplicate": 2,
+      "completed_campaign_and_50_attempts": 224,
+      "other_attempts_50_or_more": 42,
+      "excluded_union": 271,
+      "eligible_unswept_fields": 139
+    }
+  },
+  "selection_basis": "First 25 atomic evidence-found fields in fresh queue order after excluding source-reuse-resolved rows, the known java-aluminum-24s duplicate, fields covered by the completed all-gaps 50-area campaign, and all other rows with at least 50 recorded channel approaches; at most 10 exact target records. Exclusion categories overlap.",
+  "exact_model_count": 8,
+  "atomic_field_count": 25,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 25,
+  "exact_models": [
+    "seka-spear-rdc",
+    "specialized-crux-10r-frameset",
+    "specialized-roubaix-sl8-sport-105",
+    "tavelo-arden",
+    "tavelo-arow-sl-community-lead",
+    "tavelo-grow",
+    "tfsa-jh37-frameset",
+    "tsb-titan-super-bond-pioneer-one"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "seka-spear-rdc",
+      "exact_identity": "SEKA SPEAR RDC custom complete-bike candidate",
+      "fields": [
+        "price",
+        "purchase-route",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-seka-spear-rdc-price-2026-08-17",
+        "candidate-seka-spear-rdc-purchase-route-2026-08-17",
+        "candidate-seka-spear-rdc-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "specialized-crux-10r-frameset",
+      "exact_identity": "Specialized Crux 10R frameset candidate",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-specialized-crux-10r-frameset-frame-stiffness-2026-08-28"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "specialized-roubaix-sl8-sport-105",
+      "exact_identity": "Specialized 2025 Roubaix SL8 Sport Shimano 105 complete-bike candidate",
+      "fields": [
+        "bom",
+        "complete-weight",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-roubaix-sl8-sport-bom-2026-08-27",
+        "candidate-roubaix-sl8-sport-complete-weight-2026-08-27",
+        "candidate-roubaix-sl8-sport-purchase-route-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tavelo-arden",
+      "exact_identity": "Tavelo ARDEN frameset candidate",
+      "fields": [
+        "bom",
+        "bottom-bracket",
+        "complete-or-frame-weight",
+        "frame",
+        "identity",
+        "image",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-tavelo-arden-bom-2026-08-17",
+        "candidate-tavelo-arden-bottom-bracket-2026-08-17",
+        "candidate-tavelo-arden-complete-or-frame-weight-2026-08-17",
+        "candidate-tavelo-arden-frame-2026-08-17",
+        "candidate-tavelo-arden-identity-2026-08-17",
+        "candidate-tavelo-arden-image-2026-08-17",
+        "candidate-tavelo-arden-purchase-route-2026-08-17",
+        "candidate-tavelo-arden-tire-clearance-2026-08-17",
+        "candidate-tavelo-arden-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tavelo-arow-sl-community-lead",
+      "exact_identity": "Tavelo Arow SL custom build community-lead candidate",
+      "fields": [
+        "purchase-route",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-tavelo-arow-sl-community-lead-purchase-route-2026-08-17",
+        "candidate-tavelo-arow-sl-community-lead-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "platform",
+      "record_id": "tavelo-grow",
+      "exact_identity": "Tavelo Grow platform",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "geometry"
+      ],
+      "attempt_ids": [
+        "platform-tavelo-grow-frame-stiffness-2026-08-28",
+        "platform-tavelo-grow-frame-weight-2026-08-27",
+        "platform-tavelo-grow-geometry-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "variant",
+      "record_id": "tfsa-jh37-frameset",
+      "exact_identity": "TFSA JH37 frameset variant",
+      "fields": [
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "variant-tfsa-jh37-frameset-purchase-route-2026-08-27"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tsb-titan-super-bond-pioneer-one",
+      "exact_identity": "TSB Titan Super Bond PIONEER ONE frameset candidate",
+      "fields": [
+        "price",
+        "purchase-route",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-tsb-titan-super-bond-pioneer-one-price-2026-08-17",
+        "candidate-tsb-titan-super-bond-pioneer-one-purchase-route-2026-08-17",
+        "candidate-tsb-titan-super-bond-pioneer-one-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research only these 25 frozen fields, sequentially one exact target and source at a time; stop at decisive exact-model evidence.",
+    "Do not repeat source-reuse resolutions, the known duplicate, completed all-gaps 50-area fields, or rows with at least 50 recorded channel approaches.",
+    "For every finding, distinguish exact model/generation, frameset versus complete-bike package, market/region, price/checkout conditions, size, and measurement basis.",
+    "Use current primary and exact-model sources for current facts; preserve prior dated observations without refreshing their dates unless rechecked.",
+    "Preserve unknown, conflicted, inaccessible, and rights-limited states with concrete reasons and reopen triggers; never infer.",
+    "Keep third-party images remote unless documented reusable rights, exactness, credit, alt text, and fallback conditions are established.",
+    "Luna is evidence-only: no repository edits, seller contact, XHS use, recursive delegation, or out-of-scope research.",
+    "Return every frozen field with exact URL/source ID, source class/publisher, actual access date, exactness, supported claim, caveat, disposition, and concrete reopen trigger."
+  ]
+}

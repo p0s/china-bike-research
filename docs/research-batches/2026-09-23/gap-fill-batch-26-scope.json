@@ -1,0 +1,195 @@
+{
+  "batch_id": "gap-fill-batch-26-2026-09-23",
+  "repository": "p0s/china-bike-research",
+  "checkout": "task-owned worktree: china-bike-research/gap-fill-2026-09-22",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Fresh data:gaps: 41 published variants, 222 candidates; gap counts {\"bom-incomplete\": 2, \"bottom-bracket-missing\": 6, \"candidate-blockers\": 222, \"clearance-unverified\": 103, \"complete-weight-missing\": 82, \"drivetrain-missing\": 39, \"frame-material-detail-missing\": 15, \"frame-weight-missing\": 26, \"geometry-missing\": 5, \"image-exactness\": 4, \"image-health-unverified\": 37, \"price-missing\": 26, \"price-not-observed\": 39, \"price-reference-range\": 2, \"purchase-route\": 25, \"stiffness-evidence-missing\": 78}; field states {\"blocked\": 335, \"conflicted\": 35, \"found\": 68, \"temporarily-exhausted\": 14}. Fresh research:queue: {\"blocked\": 498, \"conflicted\": 60, \"deferred\": 45, \"evidence-found\": 545, \"ready\": 0}; 543 unresolved evidence-found queue fields remain after excluding resolved attempts and the known java-aluminum-24s duplicate.",
+  "selection_basis": "The next unresolved evidence-found exact model groups in research:queue order, capped at 10 models and 25 fields; exclude the duplicate java-aluminum-24s observation and every attempt already holding a resolution.",
+  "exact_model_count": 10,
+  "atomic_field_count": 24,
+  "unresolved_evidence_found_fields_after_resolution_filter": 543,
+  "root_field_count": 0,
+  "luna_evidence_field_count": 24,
+  "exact_models": [
+    "missing-china-price-quick-pro-xr-one",
+    "missing-china-price-specialized-crux",
+    "missing-china-price-specialized-roubaix-sl8",
+    "missing-china-price-specialized-tarmac-sl8",
+    "missing-china-price-tavelo-arow",
+    "missing-china-price-tavelo-attack",
+    "missing-china-price-trek-checkpoint",
+    "missing-china-price-trek-domane",
+    "missing-china-price-trek-madone-gen-8",
+    "missing-china-price-van-rysel-rcr"
+  ],
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "exact_identity": "Quick Pro XR:ONE GRX Di2 1×12",
+      "model_group": "missing-china-price-quick-pro-xr-one",
+      "fields": [
+        "price"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-crux",
+      "exact_identity": "Specialized Crux Comp GRX",
+      "model_group": "missing-china-price-specialized-crux",
+      "fields": [
+        "complete-weight",
+        "purchase-route"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-specialized-crux-complete-weight-2026-09-01",
+        "candidate-missing-china-price-specialized-crux-purchase-route-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-roubaix-sl8",
+      "exact_identity": "Specialized Roubaix SL8 Tiagra",
+      "model_group": "missing-china-price-specialized-roubaix-sl8",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-specialized-roubaix-sl8-complete-weight-2026-09-01",
+        "candidate-missing-china-price-specialized-roubaix-sl8-drivetrain-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-specialized-tarmac-sl8",
+      "exact_identity": "Specialized Tarmac SL8 Comp 105 Di2",
+      "model_group": "missing-china-price-specialized-tarmac-sl8",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-specialized-tarmac-sl8-complete-weight-2026-09-01",
+        "candidate-missing-china-price-specialized-tarmac-sl8-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-tavelo-arow",
+      "exact_identity": "Tavelo Arow Race Polestar frameset",
+      "model_group": "missing-china-price-tavelo-arow",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-tavelo-arow-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-tavelo-arow-frame-weight-2026-09-01",
+        "candidate-missing-china-price-tavelo-arow-tire-clearance-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-tavelo-attack",
+      "exact_identity": "Tavelo Attack frameset",
+      "model_group": "missing-china-price-tavelo-attack",
+      "fields": [
+        "frame-stiffness",
+        "frame-weight",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-tavelo-attack-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-tavelo-attack-frame-weight-2026-09-01",
+        "candidate-missing-china-price-tavelo-attack-tire-clearance-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-checkpoint",
+      "exact_identity": "Trek Checkpoint SL 5 AXS Gen 3",
+      "model_group": "missing-china-price-trek-checkpoint",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28",
+        "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-domane",
+      "exact_identity": "Trek Domane SL 5 Gen 4",
+      "model_group": "missing-china-price-trek-domane",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-trek-domane-complete-weight-2026-09-01",
+        "candidate-missing-china-price-trek-domane-frame-stiffness-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "exact_identity": "Trek Madone SL 5 Gen 8",
+      "model_group": "missing-china-price-trek-madone-gen-8",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-trek-madone-gen-8-complete-weight-2026-09-01",
+        "candidate-missing-china-price-trek-madone-gen-8-tire-clearance-2026-09-01"
+      ],
+      "owner": "luna-evidence-only"
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "exact_identity": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "model_group": "missing-china-price-van-rysel-rcr",
+      "fields": [
+        "complete-weight",
+        "frame-stiffness",
+        "purchase-route",
+        "tire-clearance",
+        "warranty-support"
+      ],
+      "attempt_ids": [
+        "candidate-missing-china-price-van-rysel-rcr-complete-weight-2026-09-01",
+        "candidate-missing-china-price-van-rysel-rcr-frame-stiffness-2026-09-01",
+        "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17",
+        "candidate-missing-china-price-van-rysel-rcr-tire-clearance-2026-09-01",
+        "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17"
+      ],
+      "owner": "luna-evidence-only"
+    }
+  ],
+  "acceptance_rules": [
+    "Research the frozen scope sequentially, one exact model and one source at a time; use current exact-model sources and stop at decisive evidence.",
+    "Do not repeat a completed 50-area sweep. Reuse accepted exact-model evidence when valid, and make only focused current checks needed to disposition the frozen field.",
+    "Distinguish selected build, model family, generation, market, seller card, checkout, freight, tax, stock and technical measurement basis; do not transfer sibling or regional build facts.",
+    "Preserve unknown, conflicted, inaccessible and rights-limited facts with source-backed caveats; never infer exact values or treat absence as negative evidence.",
+    "Luna is evidence-only: do not edit repository files, contact sellers, use XHS, recurse or research out-of-scope fields. Root is the sole writer and integrates the report.",
+    "Return each field with source URL/class/publisher, actual access date, supported claim, configuration match, limitations, disposition and a concrete reopen trigger."
+  ]
+}

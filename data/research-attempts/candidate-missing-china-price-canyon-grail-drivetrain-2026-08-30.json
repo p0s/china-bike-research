@@ -487,8 +487,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "canyon-grail-cf-7-official-2026-08-17"
+    "canyon-grail-cf-7-official-2026-08-17",
+    "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-canyon-grail-50-area-sweep-2026-08-30.json. Current exact product 4149 evidence resolves the GRX mechanical 2x12 BOM."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/missing-china-price-canyon-grail-50-area-sweep-2026-08-30.json. Current exact product 4149 evidence resolves the GRX mechanical 2x12 BOM.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "canyon-grail-cf-7-official-2026-08-17",
+      "canyon-grail-cf7-fr-technical-recheck-2026-09-23"
+    ],
+    "note": "Accepted Canyon France product evidence lists GRX mechanical 2×12, RX610 controls, RX820 derailleurs, RX600 46/30 crank and Shimano 105 R7101 11–34 cassette. Current detailed fetch timed out; this is a France-market BOM, not proof of mainland options."
+  }
 }

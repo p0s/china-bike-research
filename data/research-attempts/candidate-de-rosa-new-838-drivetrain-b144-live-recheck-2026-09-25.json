@@ -1,0 +1,53 @@
+{
+  "id": "candidate-de-rosa-new-838-drivetrain-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-new-838"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+  "retry_reason": "B144 authorized one distinct model query after predecessor-history review; its previously recorded page URL was opened in error, excluded, and not revisited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The surfaced exact-model URL was already present in five predecessor attempt records and was opened in error; its content is not treated as new evidence. No eligible new source bridges the retained CNY 9,999 card to a drivetrain.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "DE ROSA New 838 9999 mainland exact bike drivetrain 105 HDB",
+          "route": "One distinct B144 exact-model web search; the surfaced URL was already recorded and is excluded",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 150 distinct queries. The search surfaced a previously recorded De Rosa 838 Giro URL. Because the frozen scope prohibited reopening recorded URLs, exclude that page's contents from B144 evidence and retain only existing drivetrain options; the selected mainland build remains unresolved.",
+          "result_url": "https://derosa.it/product/838-giro/"
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 150 distinct queries. The search surfaced a previously recorded De Rosa 838 Giro URL. Because the frozen scope prohibited reopening recorded URLs, exclude that page's contents from B144 evidence and retain only existing drivetrain options; the selected mainland build remains unresolved.",
+  "campaign_extension": {
+    "id": "b144-de-rosa-new-838-drivetrain",
+    "extends_attempt_id": "candidate-de-rosa-new-838-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

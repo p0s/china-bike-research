@@ -1,0 +1,97 @@
+{
+  "batch": 159,
+  "date": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-159-scope.json",
+  "external_delivery": "none",
+  "inventory_start": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "queue": {
+      "ready": 74,
+      "evidence-found": 5,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "work": {
+    "exact_records": 4,
+    "atomic_fields": 4,
+    "source_reuse_resolutions": [
+      {
+        "record_type": "variant",
+        "record_id": "twitter-t3-tt",
+        "field": "purchase-route",
+        "attempt_id": "variant-twitter-t3-tt-purchase-route-b145-live-recheck-2026-09-25",
+        "source_ids": ["twitter-t3-tt-official-route-recheck-2026-09-25"],
+        "result": "Closed the ledger row from the exact current official made-to-order route; China can be selected, while mainland delivery and checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "sava-gelaro-s4-grx400",
+        "field": "purchase-route",
+        "attempt_id": "variant-sava-gelaro-s4-grx400-purchase-route-global-recheck-2026-09-25",
+        "source_ids": ["sava-gelaro-s4-global-storefront-purchase-route-recheck-2026-09-25"],
+        "result": "Closed the ledger row from the exact R21-GRX400-20S global manufacturer listing. The displayed stock is a dated observation; mainland delivery, warranty and CNY checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "ican-graro-frameset",
+        "field": "purchase-route",
+        "attempt_id": "variant-ican-graro-frameset-purchase-route-b146-live-recheck-2026-09-25",
+        "source_ids": ["ican-graro-ready-to-ship-route-2026-09-25"],
+        "result": "Closed the ledger row from the exact Ready-to-ship US$899 manufacturer listing with a China Warehouse option. Selected stock, mainland delivery and final checkout remain unverified."
+      },
+      {
+        "record_type": "variant",
+        "record_id": "lightcarbon-lcg071s-pro-frameset",
+        "field": "purchase-route",
+        "attempt_id": "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-b146-live-recheck-2026-09-25",
+        "source_ids": ["lightcarbon-lcg071s-pro-german-route-recheck-2026-09-25"],
+        "result": "Closed the ledger row as an exact manufacturer inquiry route. The page has no public price, live stock or checkout; a selected-package quote and delivery terms remain unknown."
+      }
+    ],
+    "research_attempt_records_added": 0,
+    "existing_attempt_resolution_annotations_added": 4,
+    "new_searches": 0,
+    "new_sources": 0,
+    "catalog_value_changes": 0,
+    "images_added": 0,
+    "held_open_fields": {
+      "count": 20,
+      "models": [
+        "huanyu-az-one",
+        "rockbros-pegasus-road",
+        "falco-t91-t912",
+        "gios-aerolite",
+        "leinax-youlong-2",
+        "pardus-spark"
+      ],
+      "reason": "The latest B150/B151 attempts are dated 2026-09-25; no newer source lead or product-state change justifies another search. Prior attempts and their open status are preserved."
+    }
+  },
+  "inventory_after": {
+    "catalog_gap_entries": 667,
+    "catalog_records": 263,
+    "research_records": 1823,
+    "atomic_research_fields": 1503,
+    "research_attempts": {
+      "public-post": 15450,
+      "web": 35890
+    },
+    "queue": {
+      "ready": 74,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 498,
+      "conflicted": 4
+    }
+  },
+  "validation": {
+    "research_check": "passed: 1,503 atomic fields; 15,450 public-post and 35,890 web attempts",
+    "coverage_accept": "accepted monotonic baseline for 212 images and 277 catalog targets; coverage check passed",
+    "full_gate": "passed on second run after the intentional coverage baseline acceptance: privacy and data validation passed; 333/333 tests; 584 pages built; SEO 458 indexable / 126 noindex",
+    "git_diff_check": "passed",
+    "image_report": "not run: no image record changed"
+  }
+}

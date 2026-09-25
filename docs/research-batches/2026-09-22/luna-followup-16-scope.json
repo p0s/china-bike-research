@@ -1,0 +1,113 @@
+{
+  "batch_id": "luna-followup-16-2026-09-22",
+  "base_commit": "2071a05b80ea6574b09dd2a08e20897ded89d5bd",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 12,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "carbonda-cfr707",
+      "fields": [
+        "price",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "ican-graro",
+      "fields": [
+        "geometry",
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-winspace-slc3",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr007-v",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr014-v",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr0x-d",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr0x-v",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt05-d",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "meihanda-phantom-p10",
+      "fields": [
+        "complete-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

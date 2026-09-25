@@ -479,8 +479,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "twitter-cyclone-et-official-2026-08-29"
+    "twitter-cyclone-et-official-2026-08-29",
+    "twitter-cyclone-et-official-live-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-twitter-cyclone-gen3-et-batch-034-50-area-sweep-2026-09-01.json. The exact current page publishes drivetrain, brakes, wheels, tires, cockpit, sizes and included-box details."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-twitter-cyclone-gen3-et-batch-034-50-area-sweep-2026-09-01.json. The exact current page publishes drivetrain, brakes, wheels, tires, cockpit, sizes and included-box details.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-cyclone-et-official-2026-08-29",
+      "twitter-cyclone-et-official-live-recheck-2026-09-25"
+    ],
+    "note": "The current exact ET page specifies the WheelTop EDS TX 2x12 build, brakes, wheelset, tires and cockpit, with the component details recorded on the variant. Treat these as the listed ET option, not every Cyclone trim. The page's cockpit statements conflict; leave cockpit material and dimensions unresolved and preserve the existing cockpit_status caveat."
+  }
 }

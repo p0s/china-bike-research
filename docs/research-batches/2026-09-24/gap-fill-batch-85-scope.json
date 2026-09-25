@@ -1,0 +1,71 @@
+{
+  "batch": 85,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "research_queue_baseline": {
+    "command": "npm run --silent research:queue",
+    "ready": 0,
+    "evidence-found": 242,
+    "deferred": 43,
+    "blocked": 551,
+    "conflicted": 61
+  },
+  "selection": {
+    "basis": "The next ten highest-score evidence-found ledger-only fields in the fresh research queue, covering nine exact models. They have accepted source IDs but no source-reuse resolution. The audit checks only current local source and fact alignment; it must not treat global or suggested prices as mainland checkout observations.",
+    "exact_models": 9,
+    "atomic_gaps": 10,
+    "targets": [
+      {"record_type":"candidate","record_id":"giant-propel-gen4-community-lead","model":"Giant Propel Advanced SL 1 (Gen 4)","field":"price","attempt_id":"candidate-giant-propel-gen4-community-lead-price-2026-08-17"},
+      {"record_type":"candidate","record_id":"hi-light-g0","model":"Hi-Light 航轮 G0","field":"price","attempt_id":"candidate-hi-light-g0-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"java-aluminum-24s","model":"JAVA 佳沃 Vittoria ER7 2026 aluminum-frame duplicate observation","field":"frame-material","attempt_id":"candidate-java-aluminum-24s-frame-material-2026-08-29"},
+      {"record_type":"candidate","record_id":"java-aluminum-24s","model":"JAVA 佳沃 Vittoria ER7 2026 aluminum-frame duplicate observation","field":"identity-source","attempt_id":"candidate-java-aluminum-24s-identity-source-2026-08-29"},
+      {"record_type":"candidate","record_id":"missing-china-price-giant-defy-advanced","model":"Giant Defy Advanced 2","field":"price","attempt_id":"candidate-missing-china-price-giant-defy-advanced-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"missing-china-price-giant-revolt-advanced","model":"Giant Revolt Advanced 2","field":"price","attempt_id":"candidate-missing-china-price-giant-revolt-advanced-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"missing-china-price-merida-reacto","model":"Merida REACTO 6000 CN 27","field":"price","attempt_id":"candidate-missing-china-price-merida-reacto-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"missing-china-price-merida-scultura","model":"Merida SCULTURA 6000 25","field":"price","attempt_id":"candidate-missing-china-price-merida-scultura-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"missing-china-price-merida-silex","model":"Merida SILEX 7000 25","field":"price","attempt_id":"candidate-missing-china-price-merida-silex-price-2026-09-01"},
+      {"record_type":"candidate","record_id":"missing-china-price-specialized-roubaix-sl8","model":"Specialized Roubaix SL8 Tiagra","field":"price","attempt_id":"candidate-missing-china-price-specialized-roubaix-sl8-price-2026-09-01"}
+    ]
+  },
+  "research_route": {
+    "action": "One read-only Luna audit, sequentially checking each exact candidate file, named research attempt, and its accepted source records. No browsing, writes, new source records, or new research attempts.",
+    "acceptance_rule": "Add resolution.kind=source-reuse only if the accepted source directly supports the exact fact already recorded for that candidate and caveats are preserved. For any Chinese suggested retail or global currency amount, state clearly that it does not establish current mainland checkout price or stock. For JAVA, resolve identity only when the exact listing-to-candidate identity bridge is already recorded; retain duplicate-observation semantics.",
+    "stop_rule": "At most these ten fields across nine models. Leave any mismatch unresolved with a concise reason; do not substitute sibling trims or infer current availability."
+  },
+  "done_criteria": [
+    "Return field-by-field source/fact matches and caveats for the ten frozen targets.",
+    "Integrate only justified source-reuse resolutions and record unresolved items; do not change catalog facts or sources.",
+    "Run npm run validate, npm run research:check, and coverage:check; run coverage:accept only if required. Do not rerun npm run check for metadata-only changes.",
+    "Local B85 only; no push, pull request, merge, publication, or production action."
+  ]
+}

@@ -490,8 +490,21 @@
   "accepted_source_ids": [
     "java-road-catalog-2026-08-29",
     "java-vittoria-er7-north-america-2026-08-29",
-    "taobao-snapshot-2026-08-08"
+    "taobao-snapshot-2026-08-08",
+    "java-road-catalog-recheck-2026-09-23",
+    "java-vittoria-er7-north-america-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. Official, regional and retained seller evidence establishes separate carbon and aluminum ER7 versions without merging their trims."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vittoria-er7-2026-50-area-sweep-2026-08-29.json. Official, regional and retained seller evidence establishes separate carbon and aluminum ER7 versions without merging their trims.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-road-catalog-recheck-2026-09-23",
+      "java-vittoria-er7-north-america-recheck-2026-09-23",
+      "java-road-catalog-2026-08-29",
+      "java-vittoria-er7-north-america-2026-08-29"
+    ],
+    "note": "Dated official catalog evidence distinguishes carbon and aluminum ER7 frames; the current catalog recheck returned no readable content. The regional page shell labels one trim carbon frame/alloy wheels. Retained seller cards remain split; do not collapse the two frame variants."
+  }
 }

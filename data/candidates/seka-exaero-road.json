@@ -3,11 +3,13 @@
   "name": "SEKA ExAero / ExAero RDC",
   "category": "road-aero",
   "type": "frameset",
-  "why_interesting": "A new purpose-built aero road platform with an 820 g RDC frame claim, a 935 g standard frame, unusually broad cockpit sizing and a documented 6.67 kg owner build.",
+  "why_interesting": "A purpose-built aero road platform with current official RDC and Standard frame-weight claims and broad cockpit sizing; a matched complete owner-build weight remains unverified.",
   "missing": [
     "Exact mainland package and price mapping for standard versus RDC",
     "Full numeric seven-size geometry transcription",
-    "Current mainland checkout, delivery and warranty handling for each trim"
+    "Current mainland checkout, delivery and warranty handling for each trim",
+    "Current exact RDC or Standard frameset price and checkout mapping",
+    "Eligible public owner-build weight with exact trim, size, components, scale reading and included accessories"
   ],
   "status": "research-lead",
   "research_priority": "medium",
@@ -17,27 +19,25 @@
     "public-seka-exaero-launch-price-2026-08-27",
     "public-seka-exaero-rdc-owner-build-2026-08-27",
     "public-seka-exaero-owner-2026-08-17",
-    "seka-exaero-road-stiffness-current-2026-09-01"
+    "seka-exaero-road-stiffness-current-2026-09-01",
+    "seka-exaero-road-cn-official-recheck-2026-09-24",
+    "seka-exaero-road-launch-weibo-report-2026-09-24",
+    "seka-exaero-road-smzdm-price-lead-2026-09-24"
   ],
   "facts": {
     "frame": "T1100/M46J-claimed carbon with one-piece molding, fully internal routing and UDH",
     "frame_weight_g": 820,
-    "frame_weight_basis": "RDC, size 54, unpainted, excluding paint and metal hardware, ±35 g; standard frame is 935 g on the same basis",
+    "frame_weight_basis": "RDC size 54 bare frame 820 g; Standard size 54 bare frame 935 g; each ±35 g, excluding paint and metal parts (current China page).",
     "bottom_bracket": "BSA 68 threaded",
     "derailleur_hanger": "UDH",
     "tire_clearance_mm": 32,
     "sizes": "44, 49, 52, 54, 56, 58 and 61; official chainstays are 408 mm across the range",
     "drivetrain": "Shimano Di2 and SRAM AXS routing documented; removable front-derailleur mount",
     "cockpit": "Gladius standard or ALTA +25 mm, each offered in 19 combinations; MAG aero bottles are sold separately",
-    "stiffness_evidence": "Manufacturer comparative structural claims reproduced by a current specialist retailer: versus SEKA Spear, front lateral stiffness +21.2%, rear lateral stiffness +7.6%, and overall torsional stiffness +13.4% (367 to 416). Test protocol and units are undisclosed; not independent lab evidence."
+    "stiffness_evidence": "Manufacturer comparative structural claims reproduced by a current specialist retailer: versus SEKA Spear, front lateral stiffness +21.2%, rear lateral stiffness +7.6%, and overall torsional stiffness +13.4% (367 to 416). Test protocol and units are undisclosed; not independent lab evidence.",
+    "model_identity": "Current SEKA China road page distinguishes ExAero RDC and Standard; ExAero GR is a separate product. No road-generation code is stated."
   },
-  "observed_price": {
-    "amount_cny": 11900,
-    "currency": "CNY",
-    "observed_at": "2026-08-14",
-    "price_basis": "Public exact-model launch post headline, starting frameset price; trim and included-package mapping unresolved"
-  },
-  "price_status": "Public starting price; do not assume it is the 820 g RDC package.",
-  "source_note": "This is the 32 mm road ExAero generation, not ExAero GR. Current exact-model evidence supports 820 g RDC and 935 g standard size-54 frame claims, BSA 68, UDH and seven sizes. Manufacturer comparative claims report +21.2% front lateral, +7.6% rear lateral and +13.4% overall torsional stiffness versus Spear, without a disclosed protocol.",
-  "last_reviewed": "2026-09-01"
+  "price_status": "Unresolved: the current official China page shows no frameset price; the dated ¥11,900起 launch post describes complete-system prices by cockpit, not an exact RDC or Standard frameset checkout. A distinct secondary launch article surfaced Standard starting-price and RDC maximum-price references, but its page timed out and its indexed figures do not identify a selected package or current checkout.",
+  "source_note": "Current China manufacturer page confirms distinct RDC and Standard road frames, 54-size bare-frame weights (820 g RDC and 935 g Standard, ±35 g, excluding paint and metal parts) and 32 mm nominal clearance. The page links its official Taobao store but shows no price; the linked store failed to open. The 2026-08-14 ¥11,900起 public headline is not assignable to an exact frameset because the post describes its table as complete-system retail by cockpit configuration. A separate secondary launch article surfaced indexed Standard starting-price and RDC maximum-price references, but the page timed out and no selected-package or current-checkout price could be verified. No eligible public non-XHS owner build with exact trim, components and weighing basis was found; the prior 6.67 kg lead is not promoted as a normalized build weight.",
+  "last_reviewed": "2026-09-24"
 }

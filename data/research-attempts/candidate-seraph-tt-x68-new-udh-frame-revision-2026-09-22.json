@@ -6,7 +6,7 @@
   },
   "field": "frame-revision",
   "priority": "medium",
-  "searched_at": "2026-09-22",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "web",
     "public-post"
@@ -44,8 +44,19 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "seraph-tt-x68-new-storefront-2026-09-22",
-    "tantan-tt-x68-new-version-35c-2026-09-22"
+    "tantan-tt-x68-new-version-35c-2026-09-22",
+    "seraph-tt-x68-new-weight-recheck-2026-09-25",
+    "tantan-tt-x68-new-version-35c-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Do not transfer 35C clearance or alternate weight tolerance. Next: exact manufacturer SKU/revision cross-reference."
+  "notes": "Current Seraph UDH page is the 32C listing; TanTan separately names a T47 35C New-Version page. No shared SKU or revision cross-reference maps these listings, and the public-post channel remains not run.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "seraph-tt-x68-new-weight-recheck-2026-09-25",
+      "tantan-tt-x68-new-version-35c-recheck-2026-09-25"
+    ],
+    "note": "Current Seraph UDH page is the 32C listing; TanTan separately names a T47 35C New-Version page. No shared SKU or revision cross-reference maps these listings, and the public-post channel remains not run."
+  }
 }

@@ -1,0 +1,70 @@
+{
+  "batch_id": "gap-fill-batch-08-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 07 is recorded in gap-fill-batch-07-results.json; its full local gate passed. No catalog facts were added because the evidence did not resolve its six fields.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 07. The six queue-ready fields remain open with unused public-post channel capacity. This batch targets exactly one distinct public route for each of those fields.",
+  "exact_model_count": 5,
+  "atomic_field_count": 6,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "pardus-uragano-evo-community-lead",
+      "exact_identity": "PARDUS Uragano EVO gravel build reviewed in the 2023 BIKETO report; keep the APEX 12-speed Tmall selection separate from the reviewed APEX AXS/X1 Eagle build",
+      "fields": ["current-configuration"],
+      "prior_attempt_ids": ["candidate-pardus-uragano-evo-current-configuration-2026-08-27"],
+      "remaining_public_post_attempts": 2
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["price"],
+      "prior_attempt_ids": ["candidate-airwolf-yf-r003-price-2026-09-22"],
+      "remaining_public_post_attempts": 2
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "seraph-tt-x68-new-udh",
+      "exact_identity": "Seraph / TanTan TT-X68-new with UDH and 700x32C listing; exclude the distinct 35C New-Version revision as supporting evidence",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-seraph-tt-x68-new-udh-frame-stiffness-2026-09-22"],
+      "remaining_public_post_attempts": 2
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yf-r003",
+      "exact_identity": "Airwolf YF-R003 gravel frame/build lead",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-airwolf-yf-r003-frame-stiffness-2026-09-22"],
+      "remaining_public_post_attempts": 1
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "mondince-fm316",
+      "exact_identity": "Mondince FM316 gravel-race frameset",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-mondince-fm316-frame-stiffness-2026-09-22"],
+      "remaining_public_post_attempts": 1
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "velobuild-cx-002-2023",
+      "exact_identity": "VeloBuild CX-002 2023 full-internal-routing cyclocross frameset",
+      "fields": ["frame-stiffness"],
+      "prior_attempt_ids": ["candidate-velobuild-cx-002-2023-frame-stiffness-2026-09-22"],
+      "remaining_public_post_attempts": 1
+    }
+  ],
+  "research_instructions": [
+    "Research one exact model/source at a time and append at most one distinct public-post attempt per field in this batch.",
+    "Do not query XHS or bypass its failed CDP preflight. Use an accessible public forum, post, or indexed community source.",
+    "Do not repeat source routes, copy generic frame claims, infer configuration or price, or accept subjective ride language as measured stiffness.",
+    "If a query produces exact qualifying evidence, inspect that source before creating a source record or editing the candidate. Stop that field at decisive evidence.",
+    "Preserve unknowns and record the literal query, route, date, outcome, exact URL where available, and concrete reopening trigger.",
+    "No seller contact, private content, purchase, image download, rights inference, external GitHub mutation, or publication."
+  ],
+  "done_criteria": "Research the six frozen fields on the specified unused public-post routes, integrate only exact qualifying evidence, update each attempt ledger within the remaining per-channel attempt budget, and preserve every unresolved field with a precise reason. Write a dated result matrix, accept monotonic coverage only if catalog/source changes require it, run npm run check once for this coherent batch, and run npm run image:report only if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

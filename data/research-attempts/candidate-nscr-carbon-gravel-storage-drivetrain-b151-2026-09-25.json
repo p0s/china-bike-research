@@ -1,0 +1,54 @@
+{
+  "id": "candidate-nscr-carbon-gravel-storage-drivetrain-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "nscr-carbon-gravel-storage"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-nscr-carbon-gravel-storage-drivetrain-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-nscr-carbon-gravel-storage-drivetrain",
+    "extends_attempt_id": "candidate-nscr-carbon-gravel-storage-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-nscr-carbon-gravel-storage-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "NSCR carbon gravel integrated storage 400ml complete weight drivetrain maximum tire clearance frame stiffness",
+          "route": "One bounded current exact-model web query",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search results were the local research profile and unrelated storage-gravel models. The retained seller-card 400 ml and 8.5 kg claims have no exact product/model identity bridge, so selected drivetrain, maximum clearance, and stiffness remain unknown."
+        }
+      ],
+      "blocker": "The seller snapshot supplies a 400 ml storage claim but no exact product identity bridge or selected drivetrain."
+    }
+  },
+  "accepted_source_ids": [
+    "taobao-snapshot-2026-08-08"
+  ],
+  "notes": "B166 local source audit: no linked source supports the retained exact drivetrain field. Search results were the local research profile and unrelated storage-gravel models. The retained seller-card 400 ml and 8.5 kg claims have no exact product/model identity bridge, so selected drivetrain, maximum clearance, and stiffness remain unknown.",
+  "searched_at": "2026-09-25"
+}

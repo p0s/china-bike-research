@@ -1,0 +1,34 @@
+{
+  "id": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "twitter-gravel-v3-2024-rs-carbon-wave"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-twitter-gravel-v3-2024-rs-carbon-wave-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current mainland price or stock evidence matches the retained 2024 Gravel V3 RS carbon-wheel configuration.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER 骓特 Gravel V3 2024 RS 2x12 碳轮 2026 大陆 现价 在售",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Search results were later or different builds. The Chinagoods WheelTop wireless electronic listing URL is already recorded for a different build and was skipped. The existing ¥3,991 amount applies only to the historical alloy-wheel selection; no carbon-wheel price/current stock evidence was found."
+        }
+      ]
+    }
+  },
+  "notes": "Search results were later or different builds. The Chinagoods WheelTop wireless electronic listing URL is already recorded for a different build and was skipped. The existing ¥3,991 amount applies only to the historical alloy-wheel selection; no carbon-wheel price/current stock evidence was found."
+}

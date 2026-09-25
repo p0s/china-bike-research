@@ -492,5 +492,11 @@
     "camp-gx700-official-2026-08-28"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/camp-gx700-50-area-sweep-2026-08-29.json. The exact table publishes Shimano GRX ST-RX820, RD-RX822, FC-RX610 and a 10–51T CS-M6100 cassette in a 1×12 layout."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/camp-gx700-50-area-sweep-2026-08-29.json. The exact table publishes Shimano GRX ST-RX820, RD-RX822, FC-RX610 and a 10–51T CS-M6100 cassette in a 1×12 layout.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": ["camp-gx700-official-2026-08-28"],
+    "note": "The exact GX700 manufacturer page already supports the candidate's Shimano GRX mechanical 1×12 build with the recorded controls, derailleurs, crank and cassette."
+  }
 }

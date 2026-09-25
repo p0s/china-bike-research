@@ -1,0 +1,100 @@
+{
+  "batch_id": "gap-fill-batch-11-2026-09-23",
+  "base_commit": "0532176cd490ee30ad012725517e0f1c8d30b281",
+  "branch": "codex/luna-gap-followup-2026-09-22",
+  "frozen_at": "2026-09-23",
+  "starting_state_note": "Batch 10 passed the full gate and moved the last two open web fields into temporarily-exhausted status. Fresh inventory shows zero ready fields and 860 evidence-found fields; these are ranked catalog gaps whose attempt ledgers already record accepted evidence.",
+  "selection_basis": "Fresh npm run --silent data:gaps and npm run --silent research:queue after Batch 10. Select the top 10 distinct exact model records in the evidence-found bucket, covering 17 fields; integrate only after inspecting each accepted source and checking existing catalog/source metadata.",
+  "exact_model_count": 10,
+  "atomic_field_count": 17,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "twitter-x7",
+      "exact_identity": "TWITTER 骓特 X7 high-configuration complete-bike candidate",
+      "fields": ["complete-weight"],
+      "attempt_ids": ["candidate-twitter-x7-complete-weight-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-sl-one",
+      "exact_identity": "WEST BIKING 西骑者 SL-ONE complete-bike candidate",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-west-biking-sl-one-drivetrain-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "west-biking-team-road",
+      "exact_identity": "WEST BIKING 西骑者 Team edition carbon road complete-bike candidate",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-west-biking-team-road-drivetrain-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "felt-ia-2",
+      "exact_identity": "FELT IA 2.0 complete-bike candidate",
+      "fields": ["complete-weight", "drivetrain"],
+      "attempt_ids": ["candidate-felt-ia-2-complete-weight-2026-08-30", "candidate-felt-ia-2-drivetrain-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "upland-r70",
+      "exact_identity": "UPLAND 阿普兰 R70 complete-bike candidate",
+      "fields": ["complete-weight"],
+      "attempt_ids": ["candidate-upland-r70-complete-weight-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "de-rosa-new-838",
+      "exact_identity": "DE ROSA 德罗萨 New 838 complete-bike candidate",
+      "fields": ["drivetrain"],
+      "attempt_ids": ["candidate-de-rosa-new-838-drivetrain-2026-08-30"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-giant-tcr-advanced",
+      "exact_identity": "Giant TCR Advanced candidate with no mainland observed checkout price",
+      "fields": ["price-not-observed"],
+      "attempt_ids": ["candidate-missing-china-price-giant-tcr-advanced-price-2026-09-01"]
+    },
+    {
+      "record_type": "platform-and-variant",
+      "record_id": "af01",
+      "exact_identity": "X-LAB AF01 carbon road platform and AF01 frameset offer",
+      "fields": ["frame-weight", "geometry", "price", "purchase-route"],
+      "attempt_ids": [
+        "platform-af01-frame-weight-2026-08-27",
+        "platform-af01-geometry-2026-08-27",
+        "variant-af01-frameset-price-2026-09-01",
+        "variant-af01-frameset-purchase-route-2026-09-01"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "airwolf-yfr068",
+      "exact_identity": "Airwolf YFR068 frameset candidate",
+      "fields": ["frame-stiffness", "price"],
+      "attempt_ids": ["candidate-airwolf-yfr068-frame-stiffness-2026-08-27", "candidate-airwolf-yfr068-price-2026-09-01"]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "alums-da54",
+      "exact_identity": "ALUMS DA54 frameset candidate",
+      "fields": ["frame-material", "identity-source", "tire-clearance"],
+      "attempt_ids": [
+        "candidate-alums-da54-frame-material-2026-08-29",
+        "candidate-alums-da54-identity-source-2026-08-29",
+        "candidate-alums-da54-tire-clearance-2026-08-29"
+      ]
+    }
+  ],
+  "integration_instructions": [
+    "Inspect the exact research-attempt records and every accepted source record before integrating each model; use one exact model/source at a time.",
+    "Reuse accepted evidence only when it directly establishes the frozen exact model and field. Preserve source class, exact trim, size/basis, date, geography, options, and caveats.",
+    "Do not refresh source dates, infer missing values, merge sibling models, or convert a foreign price into a mainland offer.",
+    "If any accepted source is missing, mismatched, or insufficient, leave that field unresolved and state the precise reason; do not conduct new broad research within this frozen integration batch.",
+    "No image rights inference or image addition unless source metadata explicitly supports reuse. No external GitHub mutation or publication."
+  ],
+  "done_criteria": "Inspect all 17 frozen evidence-found fields. Integrate only exact supported facts and dated/source-linked observations; leave unsupported fields explicitly unresolved. Write a result matrix, accept monotonic coverage after data/source changes, run npm run check once for this coherent batch, and run npm run image:report if image records change.",
+  "delivery_boundary": "Local worktree only. No push, pull request, merge, publication, or production change."
+}

@@ -484,8 +484,18 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "phoenix-799-ebuy7-2026-08-30"
+    "phoenix-799-ebuy7-2026-08-30",
+    "phoenix-799-ebuy7-current-recheck-2026-09-23"
   ],
   "retry_after": null,
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "phoenix-799-ebuy7-2026-08-30",
+      "phoenix-799-ebuy7-current-recheck-2026-09-23"
+    ],
+    "note": "Current seller page calls the frame carbon fiber and its Q&A calls it T700. Fork material and frame lay-up are not specified; retain seller attribution."
+  },
   "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/phoenix-700c-carbon-e-road-50-area-sweep-2026-08-30.json. The exact-family page identifies a carbon frame and describes it as T700; fork construction and lay-up details remain unknown."
 }

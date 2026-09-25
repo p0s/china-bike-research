@@ -478,8 +478,25 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "scott-addict-rc-40-poland-2026-08-17"
+    "scott-addict-rc-40-poland-2026-08-17",
+    "scott-addict-rc-40-poland-recheck-2026-09-24",
+    "scott-addict-rc-40-poland-route-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Current exact regional page exposes dealer inquiry and size-availability checking."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Current exact regional page exposes dealer inquiry and size-availability checking.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "scott-addict-rc-40-poland-2026-08-17",
+      "scott-addict-rc-40-poland-recheck-2026-09-24",
+      "scott-addict-rc-40-poland-route-recheck-2026-09-25"
+    ],
+    "note": "The current SCOTT Poland page supports a regional dealer-inquiry/size-availability route for model 290362 and directs buyers to ask for price. No mainland route, service terms, price or direct checkout is established."
+  },
+  "closeout_correction": {
+    "reviewed_at": "2026-09-25",
+    "source_id": "scott-addict-rc-40-identity-review-2026-09-25",
+    "note": "The current SCOTT Poland page supports a regional dealer-inquiry/size-availability route for model 290362 and directs buyers to ask for price. No mainland route, service terms, price or direct checkout is established. The preserved resolution above is historical and superseded by this correction."
+  }
 }

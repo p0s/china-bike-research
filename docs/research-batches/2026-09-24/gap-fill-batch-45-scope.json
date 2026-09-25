@@ -1,0 +1,133 @@
+{
+  "batch": 45,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "DATA_GAPS_AS_OF=2026-09-24 npm run --silent data:gaps",
+    "published_variants": 41,
+    "candidates": 222,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 337,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 11
+    },
+    "queue_counts": {
+      "ready": 0,
+      "evidence-found": 251,
+      "deferred": 42,
+      "blocked": 510,
+      "conflicted": 61
+    }
+  },
+  "selection": {
+    "basis": "After excluding the four price targets handled in Batch 43 and the five weight/route targets handled in Batch 44, select the next highest-scored actionable queue items: one exact mainland observed-price field and four exact-model mainland purchase-route fields. Existing evidence-found status is a research lead, not proof of the requested current field.",
+    "selected_atomic_fields": 5,
+    "selected_exact_targets": 5
+  },
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "hi-light-g0",
+      "exact_identity": "Hi-Light 航轮 G0 titanium gravel frameset candidate",
+      "owner": "root-writer",
+      "field": "mainland-observed-price",
+      "existing_attempt_id": "candidate-hi-light-g0-price-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "titanium-hi-light-g0-official",
+        "hi-light-g0-villain-current-2026-09-23",
+        "hi-light-g0-171works-current-2026-09-23"
+      ],
+      "queue_score": 53,
+      "known_boundary": "Official source lists CNY 15,900, but the candidate gap requires an observed mainland checkout/listing value; do not relabel MSRP or an international reference as checkout evidence."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "twitter-cyclone-electronic",
+      "exact_identity": "TWITTER Cyclone 3rd ET electronic complete-bike variant",
+      "owner": "root-writer",
+      "field": "purchase-route-current-mainland",
+      "existing_attempt_id": "variant-twitter-cyclone-electronic-purchase-route-2026-08-29",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "twitter-cyclone-et-official-recheck-2026-09-23",
+        "twitter-cyclone-et-jd-2026-08-29"
+      ],
+      "queue_score": 52,
+      "known_boundary": "A current overseas manufacturer route and an exact-model mainland JD index were previously found; selected build, current mainland seller detail and directly visible availability/checkout terms must be checked independently."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "twitter-cyclone-gen3-et",
+      "exact_identity": "TWITTER Cyclone Gen 3 ET electronic complete-bike variant",
+      "owner": "root-writer",
+      "field": "purchase-route-current-mainland",
+      "existing_attempt_id": "variant-twitter-cyclone-gen3-et-purchase-route-2026-08-17",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "twitter-cyclone-gen3-et-usa-recheck-2026-09-24",
+        "twitter-cyclone-gen3-et-china-2026-08-17"
+      ],
+      "queue_score": 52,
+      "known_boundary": "A current overseas made-to-order page and mainland identity route were previously found; exact current mainland build offer, stock and checkout must not be inferred from identity routing."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "twitter-v3-rs-sensah",
+      "exact_identity": "TWITTER Gravel V3 RS / Sensah 2×12 complete-bike variant",
+      "owner": "root-writer",
+      "field": "purchase-route-current-mainland",
+      "existing_attempt_id": "variant-twitter-v3-rs-sensah-purchase-route-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "twitter-v3-25yr-rs-store-recheck-2026-09-23",
+        "twitter-v3-25yr-manufacturer-recheck-2026-09-24"
+      ],
+      "queue_score": 52,
+      "known_boundary": "A factory-store offer and manufacturer inquiry route exist, but the current exact mainland seller, terms and availability need direct verification."
+    },
+    {
+      "record_type": "published-variant",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "exact_identity": "TWITTER Gravel V3 WheelTop EDS 2×12 complete-bike variant",
+      "owner": "root-writer",
+      "field": "purchase-route-current-mainland",
+      "existing_attempt_id": "variant-twitter-v3-wheeltop-eds-purchase-route-2026-09-01",
+      "existing_attempt_status": "found",
+      "existing_source_ids": [
+        "twitter-v3-wheeltop-usa-recheck-2026-09-23",
+        "twitter-v3-wheeltop-regional-2026-08-28"
+      ],
+      "queue_score": 52,
+      "known_boundary": "A current overseas regional listing and manufacturer inquiry route exist; neither establishes a current mainland selected-build offer or local checkout."
+    }
+  ],
+  "research_rules": {
+    "exact_target_limit": 10,
+    "atomic_field_limit": 25,
+    "one_exact_model_source_at_a_time": true,
+    "source_priority": "Check the current exact-model mainland manufacturer or seller page first, then a directly attributable marketplace listing if needed.",
+    "price_acceptance": "Add a mainland observed-price record only when an exact model and CNY listing/checkout amount are directly visible. Official MSRP alone does not close an observed-checkout gap.",
+    "purchase_route_acceptance": "Record only the exact variant route and directly visible current listing or inquiry status. Do not infer SKU selection, mainland stock, warranty, delivery, payment or checkout from a generic manufacturer page or overseas listing.",
+    "recording": "Add dated source provenance and a field-specific dated attempt for each target. Update displayed route or price only when directly supported; retain unknown or promotion-conditional states with a concrete reason otherwise.",
+    "stop_criteria": "Process five exact targets sequentially. Stop at decisive exact evidence or one concrete access, identity or option limitation; do not restart exhaustive channel sweeps or bypass login/challenge gates."
+  }
+}

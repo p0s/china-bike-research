@@ -1,20 +1,82 @@
 {
   "id": "candidate-pardus-uragano-evo-current-configuration-2026-08-27",
-  "target": { "record_type": "candidate", "record_id": "pardus-uragano-evo-community-lead" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-uragano-evo-community-lead"
+  },
   "field": "current-configuration",
   "priority": "high",
   "searched_at": "2026-08-27",
-  "required_channels": ["public-post", "web"],
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
   "channels": {
-    "public-post": { "status": "not-run", "attempts": [] },
-    "web": { "status": "temporarily-exhausted", "attempts": [
-      { "attempt": 1, "query": "PARDUS Uragano EVO official 2026", "route": "official China catalog", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "Current catalog exposes RX600 and Sport, not EVO.", "result_url": "https://parduscycle.com/Hightxq.aspx?color=6216&id=21402&pz=6215&t=27447" },
-      { "attempt": 2, "query": "PARDUS Uragano EVO JD", "route": "official marketplace storefront", "outcome": "no-result", "accessed_at": "2026-08-27", "note": "No exact current EVO configuration or stock was exposed.", "result_url": "https://pardus.jd.com/" },
-      { "attempt": 3, "query": "PARDUS Uragano EVO Rival XPLR", "route": "foreign exact-model retailer", "outcome": "rejected", "accessed_at": "2026-08-27", "note": "Sold-out foreign configuration cannot establish the current domestic SKU.", "result_url": "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202" }
-    ] }
+    "public-post": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Uragano EVO\" \"X1 Eagle\" \"APEX AXS\" 瑞豹 现货 配置 车主",
+          "route": "public web search for an exact current owner or community listing",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Search results returned the 2023 reviewed custom build and the existing catalog page, but no current mainland SKU or bill of materials mapped to that build.",
+          "result_url": "https://www.biketo.com/product/52352.html?all=1"
+        },
+        {
+          "attempt": 2,
+          "query": "site:bilibili.com 瑞豹 Uragano EVO 飓风 2026 APEX AXS X1 Eagle 配置 车主",
+          "route": "Bilibili indexed public-video search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "The indexed results were generic PARDUS product and discount videos; the opened playlist page was unrelated and no exact current Uragano SKU or BOM was exposed."
+        },
+        {
+          "attempt": 3,
+          "query": "site:weibo.com 瑞豹 Uragano EVO 2026 APEX AXS X1 Eagle 车主 配置",
+          "route": "Weibo indexed public-post search",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-23",
+          "note": "Weibo access was blocked by robots.txt and indexed results were unrelated vehicle posts; no exact current Uragano SKU or BOM was found."
+        }
+      ]
+    },
+    "web": {
+      "status": "temporarily-exhausted",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Uragano EVO official 2026",
+          "route": "official China catalog",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "Current catalog exposes RX600 and Sport, not EVO.",
+          "result_url": "https://parduscycle.com/Hightxq.aspx?color=6216&id=21402&pz=6215&t=27447"
+        },
+        {
+          "attempt": 2,
+          "query": "PARDUS Uragano EVO JD",
+          "route": "official marketplace storefront",
+          "outcome": "no-result",
+          "accessed_at": "2026-08-27",
+          "note": "No exact current EVO configuration or stock was exposed.",
+          "result_url": "https://pardus.jd.com/"
+        },
+        {
+          "attempt": 3,
+          "query": "PARDUS Uragano EVO Rival XPLR",
+          "route": "foreign exact-model retailer",
+          "outcome": "rejected",
+          "accessed_at": "2026-08-27",
+          "note": "Sold-out foreign configuration cannot establish the current domestic SKU.",
+          "result_url": "https://www.uaecycle.com/products/pardus-uragano-evo-rival-xplr?variant=45557981610202"
+        }
+      ]
+    }
   },
-  "status": "open",
+  "status": "temporarily-exhausted",
   "accepted_source_ids": [],
-  "retry_after": null,
-  "notes": "Exact current mainland EVO configuration remains unresolved."
+  "retry_after": "2026-10-23",
+  "notes": "Exact current mainland EVO configuration remains unresolved. Batch 07 also checked distinct marketplace routes; the foreign retailer showed a different Rival/XPLR package and JD results did not establish the exact domestic SKU or BOM. Batch 08 Bilibili search returned no current exact-build evidence. Batch 09 exhausted the public-post channel after Bilibili and Weibo searches found no current exact-build evidence. Reopen only on accessible current SKU/BOM evidence."
 }

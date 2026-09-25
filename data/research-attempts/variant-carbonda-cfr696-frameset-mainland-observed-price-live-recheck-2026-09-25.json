@@ -1,0 +1,35 @@
+{
+  "id": "variant-carbonda-cfr696-frameset-mainland-observed-price-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "carbonda-cfr696-frameset"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24",
+  "retry_reason": "One bounded B137 exact-field web search tested a newly surfaced source; Historical foreign or model-option-mismatched references are not mainland price observations.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact current mainland CNY frame-only price or checkout observation surfaced.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Carbonda CFR696 frameset current mainland China CNY price exact frame option",
+          "route": "One focused exact-model search for a current mainland CFR696 frameset price",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://carbonda.com/road/cfr-696.html",
+          "note": "The manufacturer route already recorded in the predecessor history surfaced again but was not reopened; it provides a quote route, not a public current mainland price. New forum snippets were historical foreign-currency offers for a non-UDH frame or other foreign prices."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Historical foreign or model-option-mismatched references are not mainland price observations."
+}

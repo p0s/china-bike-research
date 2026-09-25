@@ -1,0 +1,51 @@
+{
+  "id": "candidate-missing-china-price-trek-domane-price-recheck-2026-09-24",
+  "field": "price",
+  "retry_of": "candidate-missing-china-price-trek-domane-price-2026-09-01",
+  "retry_reason": "A current mainland Bikemart seller route was rechecked on 2026-09-23 and merits one focused exact-item checkout check.",
+  "searched_at": "2026-09-24",
+  "priority": "high",
+  "status": "blocked",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "campaign_extension": {
+    "id": "gap-fill-batch-76-trek-domane-price",
+    "extends_attempt_id": "candidate-missing-china-price-trek-domane-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-76-scope.json",
+    "reason": "The exact Bikemart mainland route was recently rechecked, allowing one bounded seller-item check for current product-57629 price and availability.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-missing-china-price-trek-domane-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The official catalog repeats CNY 20,800 for product 57629 but no exact seller-detail order route, stock, or checkout terms were exposed.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Trek Domane SL 5 Gen 4 57629 京东 天猫 中国 价格",
+          "route": "One focused public mainland seller-item search for exact Trek product 57629",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.trekbikes.com/cn/zh_CN/%E8%87%AA%E8%A1%8C%E8%BD%A6/%E5%85%AC%E8%B7%AF%E8%87%AA%E8%A1%8C%E8%BD%A6/%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%AC%E8%B7%AF%E8%87%AA%E8%A1%8C%E8%BD%A6/domane/c/B221/",
+          "note": "The official Trek China catalog lists exact product 57629 at CNY 20,800 and was crawled today, but it is a category listing with no exact detail-page order path, selected-size stock, or checkout conditions. This repeats the official catalog list reference and does not support a new observed checkout price."
+        }
+      ]
+    }
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-trek-domane"
+  },
+  "notes": "Disposition: unresolved. Preserve the official CNY 20,800 catalog reference; keep candidate observed_price absent until a current exact mainland seller item shows checkout conditions."
+}

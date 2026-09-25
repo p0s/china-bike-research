@@ -1,0 +1,52 @@
+{
+  "id": "candidate-argon18-krypton-pro-price-b158-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "argon18-krypton-pro"
+  },
+  "field": "price",
+  "retry_of": "candidate-argon18-krypton-pro-price-2026-09-01",
+  "retry_reason": "The frozen B158 scope authorizes one bounded exact-model web query after reviewing the latest relevant attempt, linked evidence, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-argon18-krypton-pro-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Argon 18 Krypton Pro exact current mainland China CNY price selected build 2026",
+          "route": "One frozen B158 exact-model mainland-price query; recorded official global price and dealer-policy URLs were not reopened.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "No exact mainland CNY seller listing or checkout amount surfaced. The already recorded official global page lists US$3,375, and the dealer FAQ directs buyers to authorized retailers; neither establishes a current mainland build or price. No page was opened."
+        }
+      ],
+      "blocker": "No current exact mainland China CNY price for a selected Krypton Pro build was established."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No current exact mainland China CNY price for a selected Krypton Pro build was established.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-158-argon18-krypton-pro-price",
+    "extends_attempt_id": "candidate-argon18-krypton-pro-price-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-158-scope.json",
+    "reason": "The frozen B158 scope authorizes one dated exact-record web query after review of the completed 50-area campaign, latest attempt, and linked sources.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "searched_at": "2026-09-25",
+  "priority": "high"
+}

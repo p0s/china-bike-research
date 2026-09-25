@@ -19,7 +19,7 @@
     "claimed_seatpost_weight_g": 190,
     "weight_conflict_note": "A separate marketing line on the same page says 1,250 g without a clear basis.",
     "stiffness_evidence": "Manufacturer claims the exact T800/T1000 GR025 offers a high stiffness-to-weight ratio; qualitative claim without a public stiffness protocol",
-    "geometry_status": "No attributable numeric exact-model geometry table found after 50 registered source areas; XS–XL selectors do not establish fit coordinates"
+    "geometry_status": "No attributable numeric exact-model geometry table found after 50 registered source areas. The current official page lists XS–XL selectors only; its linked comparison page exposed no chart or values on 2026-09-24."
   },
   "tire_clearance": {
     "wheel_size": "700c",
@@ -34,7 +34,9 @@
   "internal_storage": false,
   "china_availability": "direct-factory",
   "source_ids": [
-    "rinasclta-gr025-official"
+    "rinasclta-gr025-official",
+    "rinasclta-gr025-product-recheck-2026-09-24",
+    "rinasclta-gr025-geometry-comparison-recheck-2026-09-24"
   ],
-  "last_reviewed": "2026-09-01"
+  "last_reviewed": "2026-09-24"
 }

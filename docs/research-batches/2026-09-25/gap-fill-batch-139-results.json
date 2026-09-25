@@ -1,0 +1,113 @@
+{
+  "batch": 139,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-139-scope.json",
+  "result": {
+    "exact_target_models": 10,
+    "atomic_fields_reviewed": 18,
+    "disposition": "No new fact met the exact configuration and market requirements for the selected fields. Official pages supplied regional, neighboring-trim, or identity context, but their values do not transfer. All 18 attempts now have dated field-specific unresolved reasons.",
+    "catalog_gap_entries_before": 706,
+    "catalog_gap_entries_after": 706,
+    "catalog_records_before": 263,
+    "catalog_records_after": 263,
+    "research_attempts_added": 18,
+    "research_attempts_after": 1593,
+    "research_fields_after": 1503,
+    "new_sources_added": 0,
+    "catalog_records_updated": 0,
+    "specification_values_changed": 0,
+    "published_price_records_added": 0,
+    "images_changed": 0,
+    "website_image_records": 212,
+    "queue_after": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "catalog_gaps_reduced": 0,
+    "external_delivery": "none"
+  },
+  "field_results": [
+    {
+      "record_id": "missing-china-price-giant-defy-advanced",
+      "fields": [
+        { "field": "mainland-observed-price", "disposition": "blocked", "source_ids": [], "caveat": "The predecessor Giant China page's ¥14,800 is suggested retail and not a new seller checkout/stock observation. A new official Japan article reports 8.9 kg for a MY2024 size-M model, but that market and weighing basis do not map to the retained mainland build." },
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "Japan-market MY2024 size-M weight is not transferable to the exact mainland candidate build." }
+      ]
+    },
+    {
+      "record_id": "missing-china-price-merida-reacto",
+      "fields": [
+        { "field": "mainland-observed-price", "disposition": "blocked", "source_ids": [], "caveat": "The new official China finder confirms REACTO 6000 CN 27, CF3 frame/fork, 3XS–L, and 105 Di2 52/36T, but publishes no mainland transaction price." },
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "The official China model finder contains no complete-bike weight; the previous broad search did not establish a controlled exact-build mass." }
+      ]
+    },
+    {
+      "record_id": "quick-pro-gr-one-grx-di2",
+      "fields": [
+        { "field": "mainland-observed-price", "disposition": "blocked", "source_ids": [], "caveat": "The official collection lists the exact 1×12 build from US$4,799 in Global/USD with North American dealer context, not a mainland CNY checkout." },
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "The official collection publishes no weight. A secondary snippet lacked authorization and described a different wheel BOM." }
+      ]
+    },
+    {
+      "record_id": "quick-pro-ur-one",
+      "fields": [
+        { "field": "mainland-observed-price", "disposition": "blocked", "source_ids": [], "caveat": "No new exact official/authorized mainland item page surfaced; the old CNY report was not reopened, and a Thailand THB result lacked verified seller authority." },
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "The already-recorded 6.5 kg ±5% RaceIt build lacks size/pedal/method basis and does not map to the selectable target configurations; it was not reopened." }
+      ]
+    },
+    {
+      "record_id": "argon18-krypton-pro",
+      "fields": [
+        { "field": "mainland-observed-price", "disposition": "blocked", "source_ids": [], "caveat": "The official 2025 catalog gives international build options but no mainland CNY checkout price." },
+        { "field": "frame-weight", "disposition": "blocked", "source_ids": [], "caveat": "The official 2025 catalog provides build and geometry details, not frame-only grams or size/finish/hardware basis; older-generation mass is not transferable." }
+      ]
+    },
+    {
+      "record_id": "giant-propel-advanced-3",
+      "fields": [
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "Search surfaced the already-recorded Giant China catalog entry, which gives no weight; no new exact specification page surfaced." }
+      ]
+    },
+    {
+      "record_id": "lightcarbon-speed7-complete",
+      "fields": [
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "No new external exact page surfaced. Factory weights for 7120/7170/8170 builds do not apply to the retained mechanical-105 complete bike." }
+      ]
+    },
+    {
+      "record_id": "pardus-uragano-f",
+      "fields": [
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "Official result was a sibling URAGANO GRX RX600 11-speed build; the exact Thai listing had unverified seller authorization." },
+        { "field": "tire-clearance", "disposition": "blocked", "source_ids": [], "caveat": "Official URAGANO/URAGANO Sport pages are sibling products, not Uragano F; no exact maximum clearance qualifies." }
+      ]
+    },
+    {
+      "record_id": "trinx-gtr-c6",
+      "fields": [
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "The already-recorded 2024 official catalog lists fitted 700×40C tires but no complete-bike mass; its URL was not reopened." },
+        { "field": "tire-clearance", "disposition": "blocked", "source_ids": [], "caveat": "A fitted 700×40C tire is not a stated maximum tire clearance." }
+      ]
+    },
+    {
+      "record_id": "upland-r80",
+      "fields": [
+        { "field": "complete-weight", "disposition": "blocked", "source_ids": [], "caveat": "A new official R80 Ultegra build reports about 8.1 kg bare, excluding pedals/computer mount, but it differs from the retained Magene PES 24-speed CNY 8,999 build and lacks size basis." },
+        { "field": "tire-clearance", "disposition": "blocked", "source_ids": [], "caveat": "The official page fits 700×28C tires but does not state maximum clearance." }
+      ]
+    }
+  ],
+  "validation": {
+    "record_schema_correction": "Passed after aligning retry field names, required channels, and one-attempt extensions to predecessor records; scope amendment preserves the frozen model/field set.",
+    "focused_test": "passed: node --test tests/data.test.mjs (73/73)",
+    "coverage_acceptance": "passed: monotonic baseline accepted 18 research attempts; 212 images and 277 catalog targets retained",
+    "full_gate": "passed via developer-storage-cache + codex-pnpm-check check: privacy; validation (1593 research attempts); research ledger (1503 fields, 15450 public-post / 35660 web attempts); coverage; 328/328 tests; 584-page build; SEO 458 indexable / 126 noindex",
+    "test_adjustment": "Historical 50-approach assertions now select the original minimum_distinct_approaches=50 sweep when later bounded extensions exist; research record-count assertion updated to 1593.",
+    "image_report": "not run: no image record changed",
+    "git_diff_check": "passed: all 18 attempt files, scope/results JSON, and the 25-line checkpoint parsed and had no trailing whitespace; tracked coverage/test diff check was clean"
+  },
+  "external_delivery": "none"
+}

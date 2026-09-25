@@ -500,8 +500,19 @@
   "status": "found",
   "accepted_source_ids": [
     "derosa-idol-official-2026-08-29",
-    "derosa-idol-japan-2026-08-29"
+    "derosa-idol-japan-2026-08-29",
+    "derosa-idol-model-current-2026-09-23",
+    "derosa-idol-japan-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/de-rosa-idol-50-area-sweep-2026-08-29.json. Official exact-model sources verify DE ROSA / 德罗萨 Idol while preserving generation and trim ambiguity."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/de-rosa-idol-50-area-sweep-2026-08-29.json. Official exact-model sources verify DE ROSA / 德罗萨 Idol while preserving generation and trim ambiguity.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "derosa-idol-model-current-2026-09-23",
+      "derosa-idol-japan-current-2026-09-23"
+    ],
+    "note": "Current official sources identify the current model as De Rosa New Idol; the retained marketplace listing remains generation-unresolved, so newer build details are not assigned."
+  }
 }

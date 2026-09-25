@@ -1,0 +1,36 @@
+{
+  "batch": 104,
+  "date": "2026-09-24",
+  "scope_files": ["docs/research-batches/2026-09-24/gap-fill-batch-104-scope.json"],
+  "result": {
+    "exact_target_records_audited": 2,
+    "attempts_audited": 6,
+    "source_reuse_resolutions_added": 4,
+    "catalog_value_changes": 0,
+    "catalog_gaps_before": 704,
+    "catalog_gaps_after": 704,
+    "evidence_found_before": 125,
+    "evidence_found_after": 121,
+    "resolved_attempts": [
+      {"attempt_id":"candidate-tavelo-arow-sl-community-lead-frame-stiffness-2026-09-01","source_ids":["tavelo-arow-sl-official-2026-08-17"],"caveat":"Exact frameset page supports qualitative enhanced headtube/downtube stiffness only; no numeric protocol or custom-complete-bike measurement."},
+      {"attempt_id":"candidate-triaero-a9-drivetrain-2026-08-30","source_ids":["triaero-a9-jd-2026-08-30"],"caveat":"Exact Pikachu A9 option identifies Shimano 105 Di2 R7170; selected size and component-level BOM remain unavailable."},
+      {"attempt_id":"candidate-triaero-a9-frame-stiffness-2026-08-30","source_ids":["triaero-a9-plover-2026-08-30"],"caveat":"Size-52 rider-specific qualitative review only; whole-bike confounding and no numeric stiffness result."},
+      {"attempt_id":"candidate-triaero-a9-identity-source-2026-08-30","source_ids":["triaero-a9-jd-2026-08-30","triaero-a9-official-2026-08-30","triaero-a9-uci-2026-08-30","triaero-company-ican-2026-08-30"],"caveat":"Exact-model identity and ICAN brand relationship supported; pooled Taobao source excluded; no legal entity or seller relationship inferred."}
+    ],
+    "unresolved_attempts": [
+      {"attempt_id":"candidate-triaero-a9-frame-material-2026-08-30","reason":"Accepted official source establishes T700/T800 for the frame only, not the candidate's combined frame/fork/seatpost material claim."},
+      {"attempt_id":"candidate-triaero-a9-tire-clearance-2026-08-30","reason":"Exact sources state 700×28C/fits 28 mm but do not publish 28 mm as a maximum. Do not infer a maximum from a fitted/compatible tire size."}
+    ],
+    "data_issue_for_followup": "The candidate currently sets tire_clearance_mm to 28 while its basis says the exact routes only specify/fit 28 mm. Verify the schema/rendering meaning of this field and consider a separate scoped correction so a fitted-tire observation is not presented as a maximum.",
+    "disposition": "Four source-reuse links are defensible. Two exact claims remain unresolved. No candidate values changed in B104."
+  },
+  "validation": {
+    "validate": "pass: 41 brands, 38 platforms, 41 variants, 73 prices, 1314 sources, 212 primary image records, 236 candidates and 1542 atomic research records",
+    "research_check": "pass: 1503 atomic research fields",
+    "coverage_accept": "pass: monotonic baseline for 212 images and 277 catalog targets",
+    "coverage_check": "pass: 212 images, 73 prices, 1314 sources and 236 candidates protected",
+    "diff_check": "pass",
+    "full_gate": "not run; only research attempt resolution metadata and batch documents changed",
+    "image_report": "not run; no image record changed"
+  }
+}

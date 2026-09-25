@@ -1,0 +1,191 @@
+{
+  "batch_id": "gap-fill-batch-23-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-23-scope.json",
+  "scope_count": {
+    "exact_models": 7,
+    "atomic_fields": 9,
+    "root_fields": 0,
+    "luna_evidence_fields": 9
+  },
+  "new_source_records": [
+    "lightcarbon-lcg071s-pro-package-recheck-2026-09-23",
+    "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23",
+    "lightcarbon-lcr014-d-supplier-recheck-2026-09-23",
+    "lightcarbon-lcr015-d-supplier-current-2026-09-23",
+    "lightcarbon-lcr015-v-supplier-current-2026-09-23",
+    "lightcarbon-lcr015s-d-supplier-recheck-2026-09-23",
+    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23",
+    "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23"
+  ],
+  "new_price_records": [
+    "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23"
+  ],
+  "updated_candidate_price_references": [
+    "lightcarbon-lcr014-d",
+    "lightcarbon-lcr015-d",
+    "lightcarbon-lcr015-v",
+    "lightcarbon-lcr015s-d",
+    "lightcarbon-lcr017-d",
+    "lightcarbon-lcr017s-d"
+  ],
+  "new_images_added": 0,
+  "results": [
+    {
+      "record_id": "lightcarbon-lcg071s-pro-frameset",
+      "field": "package",
+      "status": "package-clarified-with-unitemized-parts",
+      "attempt_record_id": "variant-lightcarbon-lcg071s-package-2026-08-27",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-package-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html"
+      ],
+      "note": "Fork and stem-system options listed; SP02 default, SP03 +US$10; T47 BB paid, storage bag optional. Headset, spacers, axles, handlebar and small-parts list remain unitemized.",
+      "next_trigger": "Current model-specific order sheet or written package confirmation."
+    },
+    {
+      "record_id": "lightcarbon-lcg071s-pro-frameset",
+      "field": "price",
+      "status": "recent-owner-reference-transaction-year-unknown",
+      "attempt_record_id": "variant-lightcarbon-lcg071s-pro-frameset-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://www.reddit.com/r/ChineseCarbon/comments/1vj4vbo/nbd_lcg071spro/"
+      ],
+      "note": "Recent owner post reports US$595 frame, with US$200 paint and US$50 post/saddle separately; converted to CNY 3,987. Transaction dates omit years; not a current manufacturer quote or mainland checkout.",
+      "next_trigger": "Dated current quote or invoice with package and delivery basis."
+    },
+    {
+      "record_id": "lightcarbon-lcg071s-pro-frameset",
+      "field": "purchase-route",
+      "status": "official-inquiry-route-terms-incomplete",
+      "attempt_record_id": "variant-lightcarbon-lcg071s-pro-frameset-purchase-route-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcg071s-pro-package-recheck-2026-09-23",
+        "lightcarbon-lcg071s-pro-owner-report-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/new-carbon-gravel-frameset-with-integrated-stem-system_p171.html"
+      ],
+      "note": "Official direct inquiry from China; PayPal/bank transfer. Current stock, mainland checkout, delivery, tax and returns unverified.",
+      "next_trigger": "Current written manufacturer quote or attributable mainland checkout."
+    },
+    {
+      "record_id": "lightcarbon-lcr014-d",
+      "field": "price",
+      "status": "historical-moq10-bulk-reference-current-offer-unverified",
+      "attempt_record_id": "candidate-lightcarbon-lcr014-d-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr014-d-alibaba-supplier-2026-09-01",
+        "lightcarbon-lcr014-d-supplier-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.alibaba.com/product-detail/Affordable-Carbon-Road-Disc-Frame-Carbon_1600163068333.html"
+      ],
+      "note": "Page returned no readable text; retain US$350/MOQ-10 indexed bulk reference as historical. No current single-unit checkout.",
+      "next_trigger": "Current exact-model offer with MOQ and delivery terms."
+    },
+    {
+      "record_id": "lightcarbon-lcr015-d",
+      "field": "price",
+      "status": "current-supplier-card-range-checkout-unverified",
+      "attempt_record_id": "candidate-lightcarbon-lcr015-d-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr015-d-supplier-current-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://www.alibaba.com/countrysearch/CN/frame-bicycle-carbon.html",
+        "https://www.alibaba.com/product-detail/Lightcarbon-new-aero-carbon-700c-road_60769820537.html"
+      ],
+      "note": "Current exact card US$500–590/MOQ 1; CNY 3,350–3,953 ECB reference conversion. Product detail page unreadable; not checkout.",
+      "next_trigger": "Exact order page or seller quote confirming package, inventory and delivered total."
+    },
+    {
+      "record_id": "lightcarbon-lcr015-v",
+      "field": "price",
+      "status": "current-card-range-live-stock-unverified",
+      "attempt_record_id": "candidate-lightcarbon-lcr015-v-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr015-v-supplier-current-2026-09-23",
+        "ecb-reference-rates-2026-09-22"
+      ],
+      "sources_checked": [
+        "https://autopart.alibaba.com/product/bike-parts-from-china",
+        "https://www.alibaba.com/product-detail/IN-STOCK-Carbon-Road-Frames-Full_1600161216480.html"
+      ],
+      "note": "Exact card US$499–570/MOQ 1; CNY 3,343–3,819 conversion. 'IN STOCK' is a seller-card claim; live inventory and checkout unverified.",
+      "next_trigger": "Current checkout or seller confirmation of inventory, configuration and mainland delivery."
+    },
+    {
+      "record_id": "lightcarbon-lcr015s-d",
+      "field": "price",
+      "status": "historical-range-current-exact-listing-absent",
+      "attempt_record_id": "candidate-lightcarbon-lcr015s-d-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr015s-d-alibaba-supplier-2026-09-01",
+        "lightcarbon-lcr015s-d-supplier-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.alibaba.com/countrysearch/CN/frame-bicycle-carbon.html"
+      ],
+      "note": "Current index/search did not surface exact LCR015S-D; retain US$465–515/MOQ-1 as historical only. Current price/stock unknown.",
+      "next_trigger": "Exact current listing or written quote."
+    },
+    {
+      "record_id": "lightcarbon-lcr017-d",
+      "field": "price",
+      "status": "official-price-unpublished-owner-quote-historical",
+      "attempt_record_id": "candidate-lightcarbon-lcr017-d-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr017-d-official-price-recheck-2026-09-23",
+        "lightcarbon-lcr017-d-owner-quote-2026-05-23"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-frameset-with-integrated-handlebar_p240.html",
+        "https://www.reddit.com/r/ChineseCarbon/comments/1tj8d7e/picking_a_bike_frame_and_wheels/"
+      ],
+      "note": "Official page is inquiry-only with no public price. Preserve the US$599 owner frame quote as historical; mainland checkout unknown.",
+      "next_trigger": "Current exact-model quote with package/delivery terms."
+    },
+    {
+      "record_id": "lightcarbon-lcr017s-d",
+      "field": "price",
+      "status": "official-price-unpublished-owner-quote-historical",
+      "attempt_record_id": "candidate-lightcarbon-lcr017s-d-price-2026-09-01",
+      "source_ids": [
+        "lightcarbon-lcr017s-d-official-price-recheck-2026-09-23",
+        "lightcarbon-lcr017s-d-owner-quote-2025-04-09"
+      ],
+      "sources_checked": [
+        "https://www.lightcarbon.com/lightcarbon-super-light-disc-brake-road-carbon-bike-frameset-with-stem_p241.html",
+        "https://www.bdc-mag.com/forum/t/telaio-in-carbonio-no-brand.185010/page-245"
+      ],
+      "note": "Official page has no public price. Preserve 2025 US$555 owner quote and separately stated US$167 Italy shipping as historical only.",
+      "next_trigger": "Current exact-model quote with mainland package and delivery terms."
+    }
+  ],
+  "validation": {
+    "focused": [
+      "npm run --silent validate passed",
+      "npm run --silent research:check passed",
+      "npm run --silent coverage:accept passed; monotonic baseline retained"
+    ],
+    "full_gate": {
+      "command": "developer-storage-cache run -- npm run check",
+      "result": "passed",
+      "privacy": "passed",
+      "coverage": "passed (212 images, 73 price observations, 1,066 sources, 236 candidates)",
+      "tests": "307 passed, 0 failed",
+      "build": "584 pages for 41 products",
+      "seo": "passed (584 pages; 456 indexable, 128 noindex)"
+    },
+    "image_report_required": false,
+    "image_report_reason": "No image records changed."
+  }
+}

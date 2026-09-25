@@ -1,0 +1,55 @@
+{
+  "id": "candidate-giant-defy-advanced-sl1-community-lead-complete-weight-b155-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "giant-defy-advanced-sl1-community-lead"
+  },
+  "field": "complete-weight",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-giant-defy-advanced-sl1-community-lead-complete-weight-2026-09-01",
+  "retry_reason": "A newly scoped exact-model query tests the remaining field after reviewing current linked sources and prior attempt/campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-complete-weight-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact-field value meeting the frozen acceptance rule was found; the current source set does not establish the retained build value.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced SL 1 2026 complete bike weight 7.4 kg measured size official",
+          "route": "One newly opened exact 2026 manufacturer product page after literal-URL absence check",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The 2026 Australian manufacturer page says each bike should be dealer-weighed because weight varies by size, finish, hardware and accessories (lines 184, 445-447). It publishes no numeric value and cannot map the community-reported 7.4 kg bike to a year, size or build.",
+          "result_url": "https://www.giant-bicycles.com/au/defy-advanced-sl-1"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "giant-defy-advanced-sl1-australia-official-weight-recheck-2026-09-25"
+  ],
+  "retry_after": null,
+  "notes": "The 2026 Australian manufacturer page says each bike should be dealer-weighed because weight varies by size, finish, hardware and accessories (lines 184, 445-447). It publishes no numeric value and cannot map the community-reported 7.4 kg bike to a year, size or build.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-155-giant-defy-advanced-sl1-community-lead-complete-weight",
+    "extends_attempt_id": "candidate-giant-defy-advanced-sl1-community-lead-complete-weight-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-155-scope.json",
+    "reason": "The frozen B155 scope authorizes one dated exact-record query after reviewing prior source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

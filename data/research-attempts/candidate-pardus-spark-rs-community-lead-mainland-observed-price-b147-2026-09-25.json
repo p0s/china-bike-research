@@ -1,0 +1,34 @@
+{
+  "id": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "pardus-spark-rs-community-lead"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-pardus-spark-rs-community-lead-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current CNY offer identifies the retained PARDUS Spark RS custom build and its selected component package.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "PARDUS Spark RS 白色 105机械 R8170升级 Airwolf碳轮 自组价格 2026",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The single query returned a historical 2022 Spark RS report and current-market snippets for nonmatching factory trims. The exact white mechanical-105/R8170/Airwolf-wheel custom build remains generation- and configuration-unmapped; no qualifying exact current CNY price was found. Existing official product URLs were not reopened."
+        }
+      ]
+    }
+  },
+  "notes": "The single query returned a historical 2022 Spark RS report and current-market snippets for nonmatching factory trims. The exact white mechanical-105/R8170/Airwolf-wheel custom build remains generation- and configuration-unmapped; no qualifying exact current CNY price was found. Existing official product URLs were not reopened."
+}

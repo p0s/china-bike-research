@@ -68,8 +68,21 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "seka-spear-rdc-official-2026-08-17"
+    "seka-spear-rdc-official-2026-08-17",
+    "seka-spear-rdc-official-page-recheck-2026-09-23",
+    "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+    "seka-warranty-cn-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Round-four official/web completion. Direct-factory route with mainland caveat."
+  "notes": "Round-four official/web completion. Direct-factory route with mainland caveat.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "seka-spear-rdc-official-page-recheck-2026-09-23",
+      "seka-spear-rdc-frameset-store-recheck-2026-09-23",
+      "seka-warranty-cn-recheck-2026-09-23"
+    ],
+    "note": "China policy points buyers to a dealer, official WeChat or Taobao; current global store route is a frameset listing, not the custom complete-bike build. Mainland exact-SKU stock/checkout is unknown. Reopen trigger: Reopen when an exact mainland custom-build listing or dealer checkout is visible."
+  }
 }

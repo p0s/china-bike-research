@@ -1,15 +1,45 @@
 {
   "id": "candidate-missing-china-price-giant-defy-advanced-frame-material-2026-08-28",
-  "target": { "record_type": "candidate", "record_id": "missing-china-price-giant-defy-advanced" },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-defy-advanced"
+  },
   "field": "frame-material",
   "priority": "medium",
   "searched_at": "2026-08-28",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "found", "attempts": [
-    { "attempt": 1, "query": "Giant Defy Advanced 2 frame material construction", "route": "manufacturer mainland and global exact-model pages", "outcome": "found", "accessed_at": "2026-08-28", "result_url": "https://www.giant-bicycles.com/us/defy-advanced-2", "note": "Global page describes High Performance Grade raw carbon and Modified Monocoque Construction; mainland page uses Advanced-Grade Composite, so the grade names remain market-bounded." }
-  ] } },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Defy Advanced 2 frame material construction",
+          "route": "manufacturer mainland and global exact-model pages",
+          "outcome": "found",
+          "accessed_at": "2026-08-28",
+          "result_url": "https://www.giant-bicycles.com/us/defy-advanced-2",
+          "note": "Global page describes High Performance Grade raw carbon and Modified Monocoque Construction; mainland page uses Advanced-Grade Composite, so the grade names remain market-bounded."
+        }
+      ]
+    }
+  },
   "status": "found",
-  "accepted_source_ids": ["giant-china-defy-advanced-2-official-2026-08-17", "giant-defy-advanced-2-official-global-2026-08-28"],
+  "accepted_source_ids": [
+    "giant-china-defy-advanced-2-official-2026-08-17",
+    "giant-defy-advanced-2-official-global-2026-08-28",
+    "giant-china-defy-advanced-2-official-recheck-2026-09-23"
+  ],
   "retry_after": null,
-  "notes": "The published construction is recorded without declaring the two market-specific grade labels equivalent."
+  "notes": "The published construction is recorded without declaring the two market-specific grade labels equivalent.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "giant-china-defy-advanced-2-official-recheck-2026-09-23"
+    ],
+    "note": "Current mainland page confirms Advanced-Grade Composite and the composite OverDrive One steerer. Stiffness remains unsupported for this exact build. No historical search-channel attempts were rewritten."
+  }
 }

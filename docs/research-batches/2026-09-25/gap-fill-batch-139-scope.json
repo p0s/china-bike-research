@@ -1,0 +1,260 @@
+{
+  "batch": 139,
+  "date": "2026-09-25",
+  "frozen_at": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 1,
+      "deferred": 43,
+      "blocked": 550,
+      "conflicted": 1
+    },
+    "selection_note": "Select ten candidate identities with blocked exact-model facts and no future retry date. Exclude all identities scoped by batches 125-138. Include repeated price checks only where they can seek a newly surfaced current mainland checkout source; predecessor routes and URLs must not be repeated."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "missing-china-price-giant-defy-advanced",
+        "name": "Giant Defy Advanced 2"
+      },
+      {
+        "id": "missing-china-price-merida-reacto",
+        "name": "Merida REACTO 6000 CN 27"
+      },
+      {
+        "id": "quick-pro-gr-one-grx-di2",
+        "name": "Quick Pro GR:ONE GRX Di2 1×12"
+      },
+      {
+        "id": "quick-pro-ur-one",
+        "name": "Quick Pro UR:ONE"
+      },
+      {
+        "id": "argon18-krypton-pro",
+        "name": "Argon 18 Krypton Pro"
+      },
+      {
+        "id": "giant-propel-advanced-3",
+        "name": "GIANT 捷安特 Propel Advanced 3"
+      },
+      {
+        "id": "lightcarbon-speed7-complete",
+        "name": "LightCarbon Speed7 105 mechanical complete bike"
+      },
+      {
+        "id": "pardus-uragano-f",
+        "name": "PARDUS Uragano F"
+      },
+      {
+        "id": "trinx-gtr-c6",
+        "name": "TRINX 千里达 GTR C6"
+      },
+      {
+        "id": "upland-r80",
+        "name": "UPLAND 阿普兰 R80"
+      }
+    ],
+    "exact_record_count": 10,
+    "atomic_gap_entries": 18,
+    "selected_fields": [
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-defy-advanced",
+        "model": "Giant Defy Advanced 2",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-giant-defy-advanced",
+        "model": "Giant Defy Advanced 2",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-missing-china-price-giant-defy-advanced-complete-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-missing-china-price-giant-defy-advanced-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-reacto",
+        "model": "Merida REACTO 6000 CN 27",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-missing-china-price-merida-reacto-mainland-observed-price-2026-09-24",
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "missing-china-price-merida-reacto",
+        "model": "Merida REACTO 6000 CN 27",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-missing-china-price-merida-reacto-complete-weight-2026-08-30",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-missing-china-price-merida-reacto-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "quick-pro-gr-one-grx-di2",
+        "model": "Quick Pro GR:ONE GRX Di2 1×12",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24",
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "quick-pro-gr-one-grx-di2",
+        "model": "Quick Pro GR:ONE GRX Di2 1×12",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-quick-pro-gr-one-grx-di2-complete-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-quick-pro-gr-one-grx-di2-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "quick-pro-ur-one",
+        "model": "Quick Pro UR:ONE",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "quick-pro-ur-one",
+        "model": "Quick Pro UR:ONE",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-quick-pro-ur-one-complete-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-quick-pro-ur-one-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "argon18-krypton-pro",
+        "model": "Argon 18 Krypton Pro",
+        "field": "mainland-observed-price",
+        "gap_code": "price-not-observed",
+        "attempt_id": "candidate-argon18-krypton-pro-current-mainland-observed-price-2026-09-24",
+        "max_new_attempts": 1
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "argon18-krypton-pro",
+        "model": "Argon 18 Krypton Pro",
+        "field": "frame-weight",
+        "gap_code": "frame-weight-missing",
+        "attempt_id": "candidate-argon18-krypton-pro-frame-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-argon18-krypton-pro-frame-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "giant-propel-advanced-3",
+        "model": "GIANT 捷安特 Propel Advanced 3",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-giant-propel-advanced-3-complete-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-giant-propel-advanced-3-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "lightcarbon-speed7-complete",
+        "model": "LightCarbon Speed7 105 mechanical complete bike",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-lightcarbon-speed7-complete-complete-weight-2026-08-17",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-lightcarbon-speed7-complete-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "pardus-uragano-f",
+        "model": "PARDUS Uragano F",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-pardus-uragano-f-complete-weight-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-pardus-uragano-f-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "pardus-uragano-f",
+        "model": "PARDUS Uragano F",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-pardus-uragano-f-tire-clearance-2026-09-01",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-pardus-uragano-f-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "trinx-gtr-c6",
+        "model": "TRINX 千里达 GTR C6",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-trinx-gtr-c6-complete-weight-2026-08-30",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-trinx-gtr-c6-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "trinx-gtr-c6",
+        "model": "TRINX 千里达 GTR C6",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-trinx-gtr-c6-tire-clearance-2026-08-30",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-trinx-gtr-c6-tire-clearance"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "upland-r80",
+        "model": "UPLAND 阿普兰 R80",
+        "field": "complete-weight",
+        "gap_code": "complete-weight-missing",
+        "attempt_id": "candidate-upland-r80-complete-weight-2026-08-30",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-upland-r80-complete-weight"
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "upland-r80",
+        "model": "UPLAND 阿普兰 R80",
+        "field": "tire-clearance",
+        "gap_code": "clearance-unverified",
+        "attempt_id": "candidate-upland-r80-tire-clearance-2026-08-30",
+        "max_new_attempts": 1,
+        "campaign_extension_id": "b139-upland-r80-tire-clearance"
+      }
+    ],
+    "research_boundary": "Use one Luna Max evidence-only agent; root is the sole writer. Research ten exact candidate products sequentially, one model at a time. Inspect the complete predecessor attempts and recorded URLs/queries first; do not repeat them. At most one new search and one newly surfaced exact-model official or authorized-retailer page per model; one shared page may support all selected fields for that model. Return source title, publisher/class, exact URL, access date, exact fact, price/weight/size/equipment basis, predecessor-history check, and qualification decision for each field. No agent file writes.",
+    "claim_rules": [
+      "A mainland price must be a current exact-product CNY checkout/listing observation, identify the selected model or build, and state whether the seller is official/authorized when known; foreign price conversions and MSRP alone do not qualify.",
+      "Complete-bike mass must apply to a named exact configuration and state size/equipment basis when given; do not transfer frameset or sibling-build mass.",
+      "A frame weight must be frame-only and state size, finish, and included hardware basis when given.",
+      "Tire clearance must be a stated maximum for the exact frame; fitted tire width is not a maximum.",
+      "Preserve conflicting trims, non-mainland markets, inaccessible pages, missing measurement basis, and unknown values; do not infer.",
+      "Only sources directly attributable to the exact target identity qualify; seller identity and page date must be assessed before recording a price."
+    ],
+    "excluded": [
+      "No XHS, Weibo, login, CAPTCHA, challenge handling, personal browser profile, seller contact, quote request, cart, purchase, external message, image download/rehosting, or agent file writes.",
+      "Do not reopen any URL or repeat any exact query recorded by a predecessor attempt. Avoid sibling products and ambiguous builds.",
+      "Stop at one newly surfaced exact-model page or immediately on inaccessible or mismatched evidence; leave unsupported fields unresolved with explicit reasons."
+    ],
+    "schema_amendment": {
+      "amended_at": "2026-09-25",
+      "reason": "A first validator pass showed that several selected predecessor fields had already completed 50 distinct approaches and require a campaign-extension envelope. This amendment adds one web attempt for those already-frozen fields only; the 10-model/18-field scope and evidence limits are unchanged."
+    }
+  }
+}

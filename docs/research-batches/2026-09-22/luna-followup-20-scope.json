@@ -1,0 +1,112 @@
+{
+  "batch_id": "luna-followup-20-2026-09-22",
+  "base_commit": "2ac4b7b5109233c41ef78158f3f0666fcf464209",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 11,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-elves-vanyar",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-tavelo-attack",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "carbonda-cfr696-frameset",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "ican-gra04-frameset",
+      "fields": [
+        "price"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-grail",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-gelaro-s8",
+      "fields": [
+        "frame-weight",
+        "bottom-bracket"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "sava-a7l-r7100",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "variant",
+      "record_id": "twitter-v3-wheeltop-eds",
+      "fields": [
+        "frame-weight"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tsb-titan-super-bond-pioneer-one",
+      "fields": [
+        "frame-stiffness"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

@@ -481,8 +481,15 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "west-biking-team-road-current-options-2026-08-30"
+    "west-biking-team-road-current-options-2026-08-30",
+    "west-biking-team-road-jd-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/west-biking-team-road-50-area-sweep-2026-08-30.json. Current exact-model indexing identifies the competition team-edition family and its R7120 and R8170 options; the retained card does not select one option."
+  "notes": "B125 source reuse: current JD index identifies item 10235955457194 as an XS R7120 mechanical team-edition listing. This establishes an indexed listing only; it does not verify seller authority or link the listing to the retained ¥23,800 price card.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": ["west-biking-team-road-jd-current-2026-09-23"],
+    "note": "The current marketplace model index supports the exact indexed team-edition listing identity and its XS R7120 option, not the seller or retained price-card mapping."
+  }
 }

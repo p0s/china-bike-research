@@ -1,0 +1,56 @@
+{
+  "id": "variant-camp-gx600-pes-bottom-bracket-recheck-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "camp-gx600-pes"
+  },
+  "field": "bottom-bracket",
+  "priority": "medium",
+  "retry_of": "variant-camp-gx600-pes-bottom-bracket-2026-08-17",
+  "retry_reason": "CAMP now exposes an exact GX600 manufacturer page at its current gravel product URL; the prior check used the older /en/gx600.html route.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact manufacturer page omits the bottom-bracket standard and shell dimensions, its linked official JD storefront timed out before an exact listing could be inspected, and the focused technical-document search surfaced no exact-build source.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "CAMP GX600 PES exact bottom-bracket specification",
+          "route": "current exact-model mainland manufacturer page",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "The accessible GX600 PES page identifies the target build but publishes no bottom-bracket standard or shell dimensions.",
+          "result_url": "https://www.campbicycle.com/gravel_92368/gx600.html"
+        },
+        {
+          "attempt": 2,
+          "query": "CAMP GX600 PES exact JD listing bottom-bracket specification",
+          "route": "current exact-model manufacturer's Buy Now link to official JD storefront",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "CAMP's exact GX600 page links Buy Now to its JD storefront, but opening that official store route timed out before an exact GX600 PES listing or specification could be inspected.",
+          "result_url": "https://mall.jd.com/index-12210175.html"
+        },
+        {
+          "attempt": 3,
+          "query": "CAMP GX600 PES 五通 BB 标准 尺寸 技术手册 说明书",
+          "route": "focused public search for exact-build technical or assembly documentation",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-24",
+          "note": "No exact-model technical or assembly source surfaced with a bottom-bracket standard or shell dimensions."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "camp-gx600-geometry-recheck-2026-09-24",
+    "camp-gx600-pes-bottom-bracket-recheck-2026-09-24"
+  ],
+  "retry_after": "2026-11-28",
+  "notes": "The exact manufacturer page, linked official JD storefront attempt, and focused technical-document search provide no verifiable exact-build BB evidence. Keep the field unknown; do not transfer values from other GX600 trims.",
+  "searched_at": "2026-09-24"
+}

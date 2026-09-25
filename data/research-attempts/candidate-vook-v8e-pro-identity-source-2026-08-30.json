@@ -491,5 +491,13 @@
     "vook-v8-frame-current-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the existing 50-area exact-model sweep in data/research-campaigns/vook-v8e-pro-50-area-sweep-2026-08-30.json. The exact manufacturer page identifies V8E Pro and its V8 platform, including the L-TWOO eGR 1x13 configuration."
+  "notes": "B123 reused the exact VOOK manufacturer page identifying the V8E Pro complete road bike and its V8 platform; this does not validate the retained mainland price or purchase route.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "vook-v8e-pro-current-2026-08-30"
+    ],
+    "note": "B123 reused the exact VOOK manufacturer page identifying the V8E Pro complete road bike and its V8 platform; this does not validate the retained mainland price or purchase route."
+  }
 }

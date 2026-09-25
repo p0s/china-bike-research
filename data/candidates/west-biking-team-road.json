@@ -4,23 +4,25 @@
   "model_id": "west-biking-team-road",
   "category": "road-aero",
   "type": "complete-bike",
-  "why_interesting": "The high-price retained team-edition card maps to a current exact model family with Shimano 105 mechanical and Ultegra Di2 hydraulic-disc builds, but it does not expose which configuration was selected.",
+  "why_interesting": "The retained team-edition card maps to the current model family; a separate live JD listing identifies an XS R7120 build, but its link to the retained price remains unverified.",
   "facts": {
     "listing_identity": "WEST BIKING / 西骑者 competition team-edition T800 carbon road-bike family",
     "drivetrain_options": "Shimano 105 R7120 mechanical 2x12 or Shimano Ultegra R8170 Di2 electronic 2x12; both hydraulic-disc 24-speed builds",
+    "drivetrain": "The current JD-indexed XS (155-165 cm) T800-carbon team-edition build is Shimano 105 R7120 mechanical 2x12 with hydraulic disc brakes and carbon wheels. This listing is not mapped to the retained price observations; R8170 is a separate listed option.",
     "frame_material": "T800-carbon competition team-edition frame family; lay-up and fork construction are unpublished"
   },
   "missing": [
-    "Selected drivetrain, exact model year/SKU, and complete BOM",
+    "Link between the current JD R7120 XS item and retained 2026-08-08 price observations; exact checkout, full BOM, exact model year and seller authority",
     "Exact complete-bike weight and weighing basis",
     "Frame lay-up and fork construction",
     "Manufacturer-confirmed maximum tire clearance",
     "Seller authority, exact domestic warranty route, and final checkout conditions"
   ],
-  "status": "exact-team-family-selected-option-weight-clearance-unresolved",
+  "status": "current-jd-r7120-listing-found-retained-price-link-unresolved",
   "source_ids": [
     "taobao-snapshot-2026-08-08",
-    "west-biking-team-road-current-options-2026-08-30"
+    "west-biking-team-road-current-options-2026-08-30",
+    "west-biking-team-road-jd-current-2026-09-23"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -33,6 +35,6 @@
   },
   "source_refs": "IMG_6870.png#L1",
   "source_url": "https://www.jd.com/xinghao/1318f839e4269a08e856.html",
-  "source_note": "Exact current mainland indexes publish both R7120 mechanical and R8170 Di2 team-edition builds. The retained card does not select one, and no controlled weight or manufacturer maximum clearance was found across 50 areas.",
-  "last_reviewed": "2026-08-30"
+  "source_note": "A live JD model index links a specific XS R7120 mechanical hydraulic-disc team-edition build with T800 carbon and carbon wheels. Its item page exposes no readable checkout price or BOM in this review, the seller was not verified, and it is not mapped to the retained Aug 8 price observations. R8170 remains a separate configuration; no controlled weight or manufacturer maximum clearance was found in the earlier bounded sweep.",
+  "last_reviewed": "2026-09-23"
 }

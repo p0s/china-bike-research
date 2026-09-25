@@ -488,5 +488,14 @@
     "trinx-gtr-c6-catalog-2024"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-gtr-c6-50-area-sweep-2026-08-30.json. Current mainland 12-speed / LTWOO indexing aligns with the exact official LTWOO GR7010 1x12 catalog build."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/trinx-gtr-c6-50-area-sweep-2026-08-30.json. Current mainland 12-speed / LTWOO indexing aligns with the exact official LTWOO GR7010 1x12 catalog build.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "trinx-gtr-c6-jd-2026-08-30",
+      "trinx-gtr-c6-catalog-2024"
+    ],
+    "note": "Retain the documented LTWOO/GR7010 mechanical 1x12 configuration with 42T crank and 11-46T cassette. The marketplace index contains a conflicting 11-speed token; use the 12-speed detail only because it aligns with the exact cataloged 1x12 build, and do not imply the complete production BOM is fixed."
+  }
 }

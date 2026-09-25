@@ -1,0 +1,39 @@
+{
+  "batch": 79,
+  "amendment": 2,
+  "date": "2026-09-24",
+  "scope_file": "gap-fill-batch-79-scope.json",
+  "supersedes_amendment": "gap-fill-batch-79-scope-amendment-01.json",
+  "reason": "The amendment-01 replacement Quick Pro UR:ONE was already the subject of a B76 retry whose current-day campaign extension authorizes exactly one web attempt; a second same-day attempt cannot be appended without exceeding its frozen one-attempt scope. Preserve the search result as an out-of-scope check and substitute an equally scored, unextended current-day candidate with remaining attempt budget.",
+  "excluded_target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-ur-one",
+    "prior_attempt_id": "candidate-quick-pro-ur-one-price-recheck-2026-09-24",
+    "disposition": "deferred-within-goal",
+    "reason": "The B76 campaign extension has max_new_attempts=1 and that allowance is already consumed. Do not mutate the earlier B76 scope, add an unrelated research field, or misdate a second attempt. The B79 search result is retained in this amendment and results document only."
+  },
+  "replacement_target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-defy-advanced",
+    "model": "Giant Defy Advanced 2",
+    "gap_code": "price-not-observed",
+    "prior_attempt_id": "candidate-missing-china-price-giant-defy-advanced-mainland-observed-price-2026-09-24",
+    "priority_score": 62,
+    "eligibility": "latest web attempt is blocked with two of three attempts used on 2026-09-24; no prior retry or campaign extension"
+  },
+  "preserved_limits": {
+    "exact_models": 10,
+    "atomic_gaps": 10,
+    "one_new_web_attempt_per_model": true,
+    "research_order": "Keep all original targets except the two explicitly excluded entries; perform the Giant Defy Advanced 2 replacement in target 6's position.",
+    "no_repository_edits_by_research_agent": true
+  },
+  "out_of_scope_check": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-ur-one",
+    "query": "Quick Pro UR:ONE 快客 公路车 京东 天猫 旗舰店 价格 现货",
+    "result_url": "https://www.quick-bikes.com.cn/product/27.html",
+    "disposition": "No exact mainland UR:ONE item, CNY amount, or order path; the Chinese page surfaced AR:ONE, JD had no UR:ONE item, and the other surfaced offer was foreign.",
+    "integration": "Do not add another attempt to the existing one-attempt B76 extension. Preserve this out-of-scope evidence here without treating it as a B79 ledger attempt."
+  }
+}

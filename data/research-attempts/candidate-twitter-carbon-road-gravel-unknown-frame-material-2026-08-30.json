@@ -491,5 +491,15 @@
     "twitter-gravel-v3-2024-taobao-2026-08-21"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. Both possible generations are carbon-frame Gravel V3 builds; exact grade, lay-up and molding process remain unpublished for the retained option."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/twitter-carbon-road-gravel-unknown-50-area-sweep-2026-08-30.json. Both possible generations are carbon-frame Gravel V3 builds; exact grade, lay-up and molding process remain unpublished for the retained option.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "twitter-v3-rs-jd-2026-08-30",
+      "twitter-v3-official-2026-08-28",
+      "twitter-gravel-v3-2024-taobao-2026-08-21"
+    ],
+    "note": "The possible Gravel V3 generations support a carbon frame, but the retained generation/revision is unresolved and the historical source does not establish fork material for this listing. Carbon grade, lay-up and molding remain unpublished."
+  }
 }

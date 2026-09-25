@@ -1,15 +1,54 @@
 {
   "id": "variant-bxt-055-frameset-purchase-route-2026-08-27",
-  "target": { "record_type": "variant", "record_id": "bxt-055-frameset" },
+  "target": {
+    "record_type": "variant",
+    "record_id": "bxt-055-frameset"
+  },
   "field": "purchase-route",
   "priority": "medium",
   "searched_at": "2026-08-27",
-  "required_channels": ["web"],
-  "channels": { "web": { "status": "found", "attempts": [
-    { "attempt": 1, "query": "BXT-055 buy official worldwide", "route": "manufacturer direct checkout", "outcome": "found", "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC", "accessed_at": "2026-08-27", "note": "Exact option is listed in stock with destination-specific worldwide shipping." }
-    ,{ "attempt": 2, "query": "BXT 055 车架", "route": "signed-in exact-model Taobao item", "outcome": "found", "result_url": "https://item.taobao.com/item.htm?id=1065680679902", "accessed_at": "2026-08-27", "note": "BXT自行车官方企业店 lists exact item code BXT-Gravel-055 with selectable colors and sizes, stock and 15-day preorder dispatch." }
-  ] } },
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "found",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "BXT-055 buy official worldwide",
+          "route": "manufacturer direct checkout",
+          "outcome": "found",
+          "result_url": "https://bxtbikes.com/products/bxt-055-gravel-frameset-new-t1000-carbon-disc-brake-udh-hanger-700x50c-t47-thread-bb-endurance-road-bicycle-27-5er-%E5%89%AF%E6%9C%AC",
+          "accessed_at": "2026-08-27",
+          "note": "Exact option is listed in stock with destination-specific worldwide shipping."
+        },
+        {
+          "attempt": 2,
+          "query": "BXT 055 车架",
+          "route": "signed-in exact-model Taobao item",
+          "outcome": "found",
+          "result_url": "https://item.taobao.com/item.htm?id=1065680679902",
+          "accessed_at": "2026-08-27",
+          "note": "BXT自行车官方企业店 lists exact item code BXT-Gravel-055 with selectable colors and sizes, stock and 15-day preorder dispatch."
+        }
+      ]
+    }
+  },
   "status": "found",
-  "accepted_source_ids": ["bxt-055-official", "bxt-055-taobao-2026-08-27"],
-  "notes": "Both the manufacturer-direct and identity-safe mainland Taobao routes are stored."
+  "accepted_source_ids": [
+    "bxt-055-official",
+    "bxt-055-taobao-2026-08-27",
+    "bxt-055-official-recheck-2026-09-23"
+  ],
+  "notes": "Both the manufacturer-direct and identity-safe mainland Taobao routes are stored.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "bxt-055-official-recheck-2026-09-23",
+      "bxt-055-taobao-2026-08-27"
+    ],
+    "note": "Current global model-055 page lists USD 599, options/Add to Cart, default 48 cm/no handlebar, in-stock/ready-to-ship language and 15–30-day production terms; no China-specific rate/checkout. Taobao exact 54 cm black item was CNY 4,999 on 2026-08-27; current Taobao checkout was not re-read. Reopen on current selected mainland option and checkout/stock readback."
+  }
 }

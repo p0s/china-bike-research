@@ -1,0 +1,167 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-19-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 10,
+  "reviewed_fields": 10,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 716,
+  "coarse_gap_count_after": 716,
+  "results": [
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "The current LAGET Pioneer page identifies the exact hand-welded titanium frame and its CNY 7,900 reference, but no independent ride assessment or reproducible frame-stiffness result is published.",
+      "sources": [
+        "https://lagetbike.com/productinfo/2337831.html"
+      ],
+      "proof": "The current exact manufacturer route was rechecked on 2026-09-22; its material, weight, clearance and price content contains no numeric stiffness value or disclosed test protocol. Aero One evidence is a different LAGET model and is not transferred.",
+      "next_trigger": "Exact Pioneer independent review or a published frame-stiffness test tied to the hand-welded Pioneer chassis.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "laget-pioneer-one",
+      "outcome": "frame-stiffness-unresolved",
+      "finding": "The current LAGET Pioneer One page identifies the exact 3D-printed titanium frame and CNY 21,900 reference, but no exact-model stiffness measurement or independent ride comparison is published.",
+      "sources": [
+        "https://lagetbike.com/productinfo/2955225.html"
+      ],
+      "proof": "The current exact manufacturer route was rechecked on 2026-09-22; its 3D-printing, weight and clearance details do not provide a reproducible stiffness result. Aero One interview evidence is a separate model and is not transferred.",
+      "next_trigger": "Exact Pioneer One independent review or public numeric stiffness comparison with protocol.",
+      "fields": [
+        "frame-stiffness"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcr015s-v",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCR015S-V manufacturer routes continue to identify the exact stem-based rim-brake frame and specifications but remain inquiry-only; no attributable exact-package amount is published.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-full-internal-cable-routing-rim-brake-road-frame_p164.html",
+        "https://www.lightcarbon.com/uploadfile/downloads/2025-2026%20LightCarbon%20%E8%BD%A6%E6%9E%B6%2B%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95%20%28%E4%B8%AD%E6%96%87%E7%89%88%29.pdf"
+      ],
+      "proof": "The current manufacturer page and catalog identify LCR015S-V, but no exact selected-package checkout or public amount is shown. Prices for LCR015-V or other sibling packages are not transferred.",
+      "next_trigger": "Exact LCR015S-V quote or checkout identifying frame, fork, stem, seatpost and selected finish.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcrxs-d",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCRXS-D manufacturer page identifies the disc frame with integrated carbon stem and technical specifications, but remains contact/quote-only with no attributable exact-package price.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-new-road-disc-brake-frame-with-integrated-carbon-stem_p122.html",
+        "https://www.lightcarbon.com/road-frames_c5"
+      ],
+      "proof": "The current exact product route lists payment and technical fields but no amount or selected checkout. A historical secondary £500 record is not current exact-package evidence.",
+      "next_trigger": "Current exact LCRXS-D quote or checkout with package contents and currency.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lcrxs-v",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCRXS-V manufacturer page identifies the rim-brake integrated-stem frame but remains inquiry-only and provides no exact selected-package amount; cockpit compatibility conflicts remain.",
+      "sources": [
+        "https://www.lightcarbon.com/all-new-road-caliper-brake-frame-design-with-integrated-stem_p166.html",
+        "https://www.lightcarbon.com/road-frames_c5"
+      ],
+      "proof": "Current manufacturer routes expose specifications and contact purchase flow but no exact price; LCR015-V or LCR015S-D sibling prices cannot resolve the LCRXS-V package.",
+      "next_trigger": "Current exact LCRXS-V quote or checkout that identifies cockpit, fork, seatpost, finish and currency.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctr003",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCTR003 track/fixie frame page identifies the exact item and standards but shows contact/quote purchase only; no attributable amount, MOQ or selected package is published.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-fixie-carbon-track-bike-frame_p34.html",
+        "https://nl.lightcarbon.com/lightcarbon-fixie-carbon-track-bike-frame_p34.html"
+      ],
+      "proof": "Current manufacturer-language routes identify LCTR003 and list technical specifications, but no price appears. A generic fixie supplier card does not identify this exact model.",
+      "next_trigger": "Exact LCTR003 quote or checkout with currency, minimum quantity and package contents.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt001",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCTT001 time-trial frame page remains inquiry-only. It identifies the exact item but publishes no attributable amount, MOQ or selected package.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-aerodynamic-time-trial-carbon-frameset_p28.html",
+        "https://www.lightcarbon.com/road-frames_c5"
+      ],
+      "proof": "The current manufacturer route has technical content and a contact purchase path without a numeric offer; Alibaba directory identities do not establish a selected LCTT001 package price.",
+      "next_trigger": "Exact LCTT001 quote or checkout with currency, MOQ and included frame, fork and cockpit parts.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "lightcarbon-lctt004",
+      "outcome": "price-unresolved",
+      "finding": "Current LightCarbon LCTT004 integrated triathlon frame page remains inquiry-only. No attributable exact-package amount, MOQ or checkout is published.",
+      "sources": [
+        "https://www.lightcarbon.com/lightcarbon-integrated-pro-triathlon-carbon-frameset_p30.html",
+        "https://www.lightcarbon.com/road-frames_c5"
+      ],
+      "proof": "The current exact product route identifies LCTT004 and its technical package but exposes no numeric offer; supplier-directory mentions do not identify a selected package or transaction basis.",
+      "next_trigger": "Exact LCTT004 quote or checkout with currency, MOQ and included integrated cockpit/package parts.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-aeroad",
+      "outcome": "mainland-price-unresolved",
+      "finding": "Current Canyon Aeroad CFR Di2 regional pages continue to publish foreign-market retail offers and the exact 7.12 kg size-M build, but no mainland-China CNY checkout or delivery route for product 4480 is attributable.",
+      "sources": [
+        "https://www.canyon.com/en-id/road-bikes/aero-bikes/aeroad/cfr/aeroad-cfr-di2/4480.html",
+        "https://www.canyon.com/en-us/road-bikes/aero-bikes/aeroad/cfr/aeroad-cfr-di2/4480.html"
+      ],
+      "proof": "Current regional reads show US-dollar/foreign-market offers and preserve the exact product identity; no mainland storefront checkout or China delivery route was found. The reference conversion remains labeled as such.",
+      "next_trigger": "Canyon mainland-China product 4480 page or final CNY checkout with shipping, tax, stock and warranty terms.",
+      "fields": [
+        "price"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "missing-china-price-canyon-ultimate",
+      "outcome": "mainland-price-unresolved",
+      "finding": "Current Canyon Ultimate CFR AXS regional pages continue to publish foreign-market retail offers and the exact 6.78 kg size-M build, but no mainland-China CNY checkout or delivery route for product 4071 is attributable.",
+      "sources": [
+        "https://www.canyon.com/en-us/road-bikes/race-bikes/ultimate/cfr/ultimate-cfr-axs/4071.html",
+        "https://www.canyon.com/zh-sg/%E5%85%AC%E8%B7%AF-%E8%BD%A6/%E7%AB%9E%E8%B5%9B-%E8%BD%A6/ultimate/cfr/ultimate-cfr-axs/4071.html"
+      ],
+      "proof": "Current US and regional Asia pages confirm exact model identity and foreign-market pricing context; no mainland-China CNY checkout, stock, tax or delivery route was found. The reference conversion remains a foreign-price estimate.",
+      "next_trigger": "Canyon mainland-China product 4071 page or final CNY checkout with shipping, tax, stock and warranty terms.",
+      "fields": [
+        "price"
+      ]
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only batch; no catalog or code changes.",
+    "focused": "Public disposition rows and exact scope identity checked by manage_batch.py; no images or website assets changed.",
+    "full_gate": "Not rerun for this evidence-only batch; batch-17 complete gate remains valid for unchanged code paths."
+  },
+  "continuation": "Continue the existing all-remaining request in separately frozen bounded batches."
+}

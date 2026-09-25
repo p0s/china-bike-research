@@ -28,8 +28,24 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "scott-addict-rc-40-poland-2026-08-17"
+    "scott-addict-2026-manual-recheck-2026-09-24",
+    "scott-addict-rc-40-poland-2026-08-17",
+    "scott-addict-rc-40-poland-recheck-2026-09-24"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. specs: found. Unknowns and blocks are not negative evidence."
+  "notes": "Disposition: qualified. Exact page lists stock Schwalbe ONE Race-Guard Fold 700×28C; manual gives 38 mm platform maximum. Nominal stock size is distinct from maximum clearance; mounted width varies. Reopen trigger: Reopen on a changed exact-trim specification or manual limit.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-2026-manual-recheck-2026-09-24",
+      "scott-addict-rc-40-poland-recheck-2026-09-24"
+    ],
+    "note": "Disposition: qualified. Exact page lists stock Schwalbe ONE Race-Guard Fold 700×28C; manual gives 38 mm platform maximum. Nominal stock size is distinct from maximum clearance; mounted width varies. Reopen trigger: Reopen on a changed exact-trim specification or manual limit."
+  },
+  "closeout_correction": {
+    "reviewed_at": "2026-09-25",
+    "source_id": "scott-addict-rc-40-identity-review-2026-09-25",
+    "note": "Closeout correction 2026-09-25: exact page supports stock Schwalbe ONE Race-Guard Fold 700x28C only. Maximum clearance remains unknown; the 2026 Addict manual is excluded. The preserved resolution above is historical and superseded by this correction."
+  }
 }

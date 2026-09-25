@@ -1,0 +1,34 @@
+{
+  "id": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-b147-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "missing-china-price-giant-revolt-advanced"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-missing-china-price-giant-revolt-advanced-mainland-observed-price-2026-09-24",
+  "retry_reason": "B147 authorizes one distinct exact-model web follow-up after predecessor source, attempt and campaign histories were reviewed.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "No current exact-build mainland seller transaction or checkout price was established.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Giant Revolt Advanced 2 2026 GRX RX-820 2x12 mainland China current JD Tmall price stock",
+          "route": "One distinct B147 exact-model web query; no page opened because no qualifying new exact current mainland CNY price source surfaced.",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "The exact Giant China page is already recorded and was not reopened. Its ¥15,800 is suggested retail for the mainland GRX RX-820 2×12 build, not an observed transaction price. A JD route timed out previously and was not retried; the query added no qualifying price evidence."
+        }
+      ]
+    }
+  },
+  "notes": "The exact Giant China page is already recorded and was not reopened. Its ¥15,800 is suggested retail for the mainland GRX RX-820 2×12 build, not an observed transaction price. A JD route timed out previously and was not retried; the query added no qualifying price evidence."
+}

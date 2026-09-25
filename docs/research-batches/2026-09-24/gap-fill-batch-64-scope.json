@@ -1,0 +1,86 @@
+{
+  "batch": 64,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "current_gaps": 430,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 50,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The current research queue has no ready fields, but it identifies one remaining open public-post channel for a current single-unit availability question. The official FM316 page has conflicting individual-order and MOQ-30 language; one exact public-post route could supply current fulfilment evidence without contacting a seller or repeating the already checked official web route.",
+    "queue_snapshot": {
+      "command": "npm run --silent research:queue",
+      "ready": 0,
+      "evidence_found": 254,
+      "deferred": 43,
+      "blocked": 538,
+      "conflicted": 61,
+      "open_public_post_channels": 1
+    },
+    "exact_models": 1,
+    "target_records": 1,
+    "atomic_gap_instances": 1,
+    "evidence_only_writer": "one existing Luna Max agent; read-only public-post research, no repository writes",
+    "root_writer": "append one dated attempt to the existing Mondince availability ledger and integrate only evidence that establishes current exact-model single-unit fulfilment"
+  },
+  "target": {
+    "record_type": "candidate",
+    "id": "mondince-fm316",
+    "model": "Mondince FM316 gravel frameset",
+    "gap_code": "candidate-blockers",
+    "research_field": "availability",
+    "attempt_id": "candidate-mondince-fm316-availability-2026-09-22",
+    "current_state": "The exact official FM316 page says it welcomes single frameset orders but separately states MOQ 30 for bulk orders. A 2026-09-22 public-post attempt found only a historical small order, not current mainland fulfilment proof. The web channel remains conflicted; the public-post channel has one completed no-result attempt and remains open.",
+    "new_route_scope": "Run one fresh public-post search for an attributable, current exact FM316 single-unit order or offer. Open at most one exact post returned by that query, and stop at decisive evidence or no-result.",
+    "acceptance_requirements": [
+      "The post must identify Mondince FM316 specifically, not FM316-derived or FM336 products.",
+      "It must provide dated evidence of a current single-unit order or offer; a historical purchase, generic product promotion, or seller contact invitation is insufficient.",
+      "Keep author identity and private transaction details out of the repository. Record only a privacy-safe summary and public URL.",
+      "Treat a public seller claim as attributed seller evidence and a buyer report as community-report evidence; neither silently overrides contradictory official ordering terms.",
+      "Do not infer current mainland stock, price or package contents from identity alone."
+    ],
+    "already_checked_routes": [
+      "Exact current official FM316 product and FAQ page, accessed 2026-09-22",
+      "One exact FM316 owner ordering discussion, accessed 2026-09-22"
+    ],
+    "excluded_routes": [
+      "Xiaohongshu, because its dedicated Chrome preflight has not been performed",
+      "seller contact, private messages, login/challenge-gated sources, or purchase",
+      "repeating the official-page web comparison within this batch"
+    ]
+  },
+  "done_criteria": [
+    "Use one distinct fresh public-post search and open at most one exact FM316 post.",
+    "If accepted, add one dated source record and update only the supported availability value with source class and caveat.",
+    "If unresolved, append the attempt and preserve the current availability as unknown/conflicted with the exact reason.",
+    "Run focused research validation and the complete repository gate once after a research-ledger or data change; no image records are in scope.",
+    "Local B64 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B64 batch only; no push, pull request, merge, publication or production action."
+}

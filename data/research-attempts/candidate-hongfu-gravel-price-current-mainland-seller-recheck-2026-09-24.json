@@ -1,0 +1,68 @@
+{
+  "id": "candidate-hongfu-gravel-price-current-mainland-seller-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "hongfu-gravel"
+  },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-hongfu-gravel-price-2026-08-17",
+  "retry_reason": "A fresh current mainland seller search tested whether a priced exact item can resolve the generic Hongfu gravel candidate after the prior broad campaign left FM188 and FM279 references conflicted.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-79-hongfu-gravel-price",
+    "extends_attempt_id": "candidate-hongfu-gravel-price-2026-08-17",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-79-scope.json",
+    "reason": "One bounded public exact-model seller search checks whether a current mainland CNY item maps to the generic Hongfu gravel candidate without transferring the older FM279 export reference.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-hongfu-gravel-price-2026-08-17",
+      "attempts": []
+    },
+    "web": {
+      "status": "conflicted",
+      "conflict": "The candidate remains an unspecified current Hongfu gravel frame, while surfaced amounts identify an older FM279 export offer; the newly checked routes do not identify which exact frame build the generic candidate represents.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Hongfu gravel frame 砾石车架 车架组 鸿福 价格 现货 中国",
+          "route": "Current public Alibaba Hongfu frameset results and manufacturer FM279 page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.alibaba.com/countrysearch/CN/hongfu-frameset.html",
+          "note": "Alibaba surfaced a 2019 FM279 export offer at US$425–510 with MOQ 1 set from Shenzhen Hongfu Sports Goods Co., Ltd. This is an export-wholesale price for a specific older FM279, not a current mainland CNY seller price for the generic current gravel-frame candidate. The official FM279 page exposed no price. Do not transfer the amount or identify the candidate as FM279."
+        }
+      ]
+    }
+  },
+  "status": "conflicted",
+  "accepted_source_ids": [
+    "round3-hongfu-gravel-frame-marketplace-d0992a43ae",
+    "round3-hongfu-fm279-gravel-frame-fa3ede485c",
+    "hongfu-fm188-alibaba-price-2026-08-30",
+    "hongfu-fm279-alibaba-current-2026-08-30"
+  ],
+  "notes": "Preserve the earlier FM188/FM279 evidence conflict. The bounded current seller check produced only a specific old export-wholesale FM279 amount, which does not resolve or price the generic candidate.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "round3-hongfu-gravel-frame-marketplace-d0992a43ae",
+      "round3-hongfu-fm279-gravel-frame-fa3ede485c",
+      "hongfu-fm188-alibaba-price-2026-08-30",
+      "hongfu-fm279-alibaba-current-2026-08-30"
+    ],
+    "note": "The bounded current mainland seller check found no attributable exact-model retail or checkout price; the only current indexed amount remained an older FM279 export/quantity quote. Existing FM188/FM279 foreign-market or wholesale amounts do not price the unmapped generic candidate."
+  }
+}

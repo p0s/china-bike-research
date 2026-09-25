@@ -1,0 +1,53 @@
+{
+  "id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-b145-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-2024-rs-sensah-alloy"
+  },
+  "field": "purchase-route",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01",
+  "retry_reason": "B145 authorized one distinct exact-model web follow-up after the frozen predecessor query and URL histories were audited.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The newly surfaced Alibaba page returned no content on its single permitted open; no retry was made and its search snippet is insufficient.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 2024 alloy Sensah RS 24速 current seller in stock mainland",
+          "route": "One distinct B145 exact-model web search; one newly surfaced result-page open attempt",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "The exact URL passed the pre-open repository check but returned zero lines. Later-generation official evidence and older non-current listings were excluded.",
+          "result_url": "https://www.alibaba.com/product-detail/Twitter-Gravel-V3-RS-24S-Hydr_1601714463653.html"
+        }
+      ]
+    }
+  },
+  "notes": "The exact URL passed the pre-open repository check but returned zero lines. Later-generation official evidence and older non-current listings were excluded.",
+  "campaign_extension": {
+    "id": "b145-twitter-v3-2024-rs-sensah-alloy-purchase-route",
+    "extends_attempt_id": "variant-twitter-v3-2024-rs-sensah-alloy-purchase-route-2026-09-01",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-145-scope.json",
+    "reason": "B145 authorizes one exact-model web query per target field after predecessor history and URLs were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

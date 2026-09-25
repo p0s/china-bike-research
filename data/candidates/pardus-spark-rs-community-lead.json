@@ -10,7 +10,7 @@
     "Exact custom-build complete weight, transaction price and selected factory-versus-owner BOM",
     "Manufacturer-confirmed maximum tire clearance",
     "Controlled exact-generation frame-stiffness magnitude and reproducible protocol",
-    "Current mainland dealer stock, warranty and service route"
+    "Current mainland dealer stock and exact-generation warranty terms"
   ],
   "status": "publication-gate-not-met",
   "research_priority": "high",
@@ -23,7 +23,12 @@
     "pardus-spark-rs-r7120-current-2026-08-30",
     "pardus-spark-rs-tmall-price-2026-08-30",
     "pardus-spark-rs-regional-weight-2026-08-30",
-    "pardus-spark-rs-rival-weight-2026-08-30"
+    "pardus-spark-rs-rival-weight-2026-08-30",
+    "pardus-china-support-2026-09-22",
+    "pardus-spark-rs-rival-current-recheck-2026-09-23",
+    "pardus-spark-rs-current-official-store-index-2026-09-24",
+    "pardus-spark-rs-official-store-index-reopen-2026-09-25",
+    "pardus-spark-rs-current-official-recheck-2026-09-25"
   ],
   "facts": {
     "drivetrain": "Custom build: Shimano 105 mechanical with R8170 crank/chain upgrade",
@@ -34,12 +39,14 @@
     "tires": "Pirelli P Zero Race TLR",
     "cockpit": "PARDUS M-BRONZE integrated carbon cockpit",
     "current_factory_reference": "Classic Spark RS page: HS-EPS+ frame, HS-HPT fork, M-BRONZE HB24 cockpit and Shimano 105 R7120 mechanical 2x12; not serial-mapped to the custom bike",
-    "current_factory_price_reference": "CNY 11,999 official-store index for a Spark RS Shimano 105 Di2 24-speed factory build; not the custom owner-build transaction price",
+    "current_factory_price_reference": "A 2026-08-30 official-store index displayed CNY 11,999 for a Spark RS 105 Di2 24-speed factory build. A 2026-09-24 index recheck now reports a CNY 11,499 low for a product card titled size-XL 105 Di2, but exposes several size and groupset options without mapping the low to a selected option. Neither observation establishes the custom owner-build price.",
     "complete_weight_references": "Approximately 8.5 kg size M with alloy wheels, 8.0 kg size M with carbon wheels and 7.8 kg for a regional Rival/carbon build; custom build weight unresolved",
     "fitted_tire_references": "Current official Spark RS factory builds show 25C or 28C fitted tires; no manufacturer maximum was found",
-    "frame_stiffness_status": "Manufacturer supplies only qualitative pedaling-stiffness and wind-tunnel context; no numeric reproducible exact-generation protocol was found and the custom generation remains unresolved"
+    "frame_stiffness_status": "Manufacturer supplies only qualitative pedaling-stiffness and wind-tunnel context; no numeric reproducible exact-generation protocol was found and the custom generation remains unresolved",
+    "support_route": "PARDUS China customer-service contact page and dealer locator; exact-generation warranty duration and claim eligibility remain unverified"
   },
-  "source_note": "Current exact factory and regional references are preserved as option-specific context. None is assigned to the unresolved owner build; fitted tire sizes are not treated as maximum clearance, and qualitative stiffness marketing is not converted into a measured result.",
-  "last_reviewed": "2026-08-30",
+  "source_note": "Current standard Spark RS Rival eTap AXS manufacturer page exposes buy/store-search links, but does not map the separately retained white custom build to that SKU, route, stock or checkout. The latest official-store index reports a CNY 11,499 low on an ambiguously selected size-XL 105 Di2 product card; that stock configuration is not the custom mechanical-105 build with R8170 upgrades and is not assigned as its price. The exact-generation warranty and maximum tire clearance remain unresolved.",
+  "last_reviewed": "2026-09-25",
+  "price_status": "A current official-store index reports a CNY 11,499 low for a stock 105 Di2 listing but does not map the amount to a selected option or the retained custom mechanical-105 build. No price is assigned to the custom candidate.",
   "source_url": "https://parduscycle.com/Hightxq.aspx?color=17540&id=27456&pz=17539&t=27444"
 }

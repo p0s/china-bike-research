@@ -1,0 +1,144 @@
+{
+  "review_date": "2026-09-22",
+  "batch_id": "luna-followup-05-2026-09-22",
+  "status": "completed-unresolved",
+  "reviewed_models": 8,
+  "reviewed_fields": 25,
+  "full_field_closures": 0,
+  "catalog_changes": 0,
+  "coarse_gap_count_before": 722,
+  "coarse_gap_count_after": 722,
+  "results": [
+    {
+      "candidate_id": "meihanda-xtreme-gravel",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Phantom manufacturer pages do not map to the retained carbon Xtreme listing. Phantom 500/700 reference aluminum frames/carbon forks, alternative hydraulic drivetrains, fitted 40C and qualitative rigidity. No attributable complete mass or maximum; a distinct Phantom 700 review cannot bridge the SKU.",
+      "sources": [
+        "https://meihanda.com/shop/meihanda-xtreme-phantom-series/",
+        "https://www.sohu.com/a/1066891403_122645100"
+      ],
+      "next_trigger": "Exact retained model/SKU and selected build.",
+      "proof": "Current manufacturer and distinct-model secondary review read."
+    },
+    {
+      "candidate_id": "meinier-superlight-2",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "identity-unresolved",
+      "finding": "Current DS618 uses DS118 with Shimano 105 R7120 hydraulic 2x12; DS118 states 32C maximum. Neither model is linked to the retained Superlight 2 card. No complete weight or controlled stiffness.",
+      "sources": [
+        "https://www.meinierbikes.com/products/carbon-road-bike-2x12-speed-aerodynamic-design",
+        "https://www.meinierbikes.com/products/upgraded-ds-118-lightweight-carbon-fiber-road-bike-frame-udh-hanger"
+      ],
+      "next_trigger": "Exact retained model/SKU mapping to DS618/DS118.",
+      "proof": "Current manufacturer reads; support-only references not transferred."
+    },
+    {
+      "candidate_id": "rockbros-pegasus-road",
+      "fields": [
+        "complete-weight",
+        "drivetrain",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "Regional PGZ 1.0 lists R7120/R7100 2x12 and 28 mm maximum; US page internally differs between 8.1 kg display and 8.55 kg M table, with Australian table also 8.55 kg M. Other PGZ builds differ. Retained CNY16800 trim unidentified; no controlled stiffness.",
+      "sources": [
+        "https://rockbrosusa.com/products/rockbros-pegasus-shimano-r7120-kit-road-bike",
+        "https://rockbros.com.au/pages/pgz-rh-1-0-road-bike-xs-s"
+      ],
+      "next_trigger": "Exact retained PGZ trim and weight basis.",
+      "proof": "Current regional brand-store reads; internal weight discrepancy preserved."
+    },
+    {
+      "candidate_id": "twitter-little-white-rabbit",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "specifications-unresolved",
+      "finding": "Exact custom-title mirror offers electronic 24-speed listing but no complete weight, tire maximum or model-specific stiffness. Existing mechanical/electronic options remain unresolved. Unselected promotion prices were not added.",
+      "sources": [
+        "https://tao.hooos.com/goods_ezZ6dg9SDtdemn4PNVT88Jczt0-A7AqqefKMGpkeZZFZ.html"
+      ],
+      "next_trigger": "Selected drivetrain, wheels and size plus manufacturer specification.",
+      "proof": "Current listing-mirror read; historical JD context retained."
+    },
+    {
+      "candidate_id": "twitter-r10-pro-gen3",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "Regional R10 Pro ET lists 9.3 kg for WheelTop EDS TX and fitted 28C, which does not establish retained mainland Gen3 EVO/105 build weight, maximum clearance or controlled stiffness.",
+      "sources": [
+        "https://www.twitter-bikes.com/twviewbike/8997.html",
+        "https://twitterbikeusa.com/en-ca/products/r10-pro-disc-et"
+      ],
+      "next_trigger": "Exact mainland selected build and primary specification.",
+      "proof": "Chinese manufacturer direct read returned502; its search snippet is discovery only. Regional page readable."
+    },
+    {
+      "candidate_id": "twitter-t8-closed-wheel",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "specifications-unresolved",
+      "finding": "Current indexing confirms T8 closed-wheel alternatives but provides no maximum clearance or stiffness result. Direct primary page unavailable; historical manufacturer claims retain original dates.",
+      "sources": [
+        "https://www.twitter-bikes.com/twviewbike/12311.html"
+      ],
+      "next_trigger": "Readable exact primary maximum clearance or controlled stiffness result.",
+      "proof": "Search indexing only; direct fetch timed out. Not a successful primary-page recheck."
+    },
+    {
+      "candidate_id": "twitter-x7",
+      "fields": [
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "specifications-unresolved",
+      "finding": "Previously read current regional X7 page supplies fitted30C, not a maximum, and no controlled stiffness. Existing source classification and facts remain unchanged.",
+      "sources": [
+        "https://twitterbikeusa.com/products/x7-twitter-carbon-aero-road-bike",
+        "https://twitterbikeusa.com/pages/about-us"
+      ],
+      "next_trigger": "Exact maximum clearance specification or controlled stiffness measurement.",
+      "proof": "Explicit reuse of earlier2026-09-22 batch02 reads, not new batch05 reads."
+    },
+    {
+      "candidate_id": "west-biking-sl-one",
+      "fields": [
+        "complete-weight",
+        "tire-clearance",
+        "frame-stiffness"
+      ],
+      "outcome": "selected-build-unresolved",
+      "finding": "JD index identifies an SL-ONE R7170 option; existing R7120 option also remains possible. No attributable weight, maximum clearance or stiffness result.",
+      "sources": [
+        "https://www.jd.com/brand/1318c3d1c46dbe60104a.html?electedExtAttrSet=8240%2C&extAttrValue=expand_name%2C%40127626%3A%3A8240&sort_type=sort_redissale_desc"
+      ],
+      "next_trigger": "Exact retained SKU/build and manufacturer specification.",
+      "proof": "Current JD index read; selected-item route reached a risk handler and stopped without retry or bypass. Own catalog used only for context."
+    }
+  ],
+  "validation": {
+    "scope": "Evidence-only report; catalog/code unchanged since c0dd07f.",
+    "reused_gate": "290 tests,584 pages and SEO passed at c0dd07f; full gate not rerun."
+  },
+  "continuation": "Proceed to separately frozen batch06 under existing all-remaining authority."
+}

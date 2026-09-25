@@ -492,8 +492,18 @@
   "status": "found",
   "accepted_source_ids": [
     "java-vega-chile-2026-08-29",
-    "java-vega-mexico-2026-08-29"
+    "java-vega-mexico-2026-08-29",
+    "java-vega-chile-current-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Two current exact regional pages establish a carbon frame and fork; the Chilean page specifies J-AIR T800."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/java-vega-tt-24s-50-area-sweep-2026-08-29.json. Two current exact regional pages establish a carbon frame and fork; the Chilean page specifies J-AIR T800.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "java-vega-chile-current-2026-09-23",
+      "java-vega-chile-2026-08-29"
+    ],
+    "note": "The current Chilean regional reference describes J-AIR T800 carbon frame and fork and carbon seatpost. Treat this as regional evidence, not a confirmed specification for the retained mainland option."
+  }
 }

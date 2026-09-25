@@ -1,0 +1,53 @@
+{
+  "id": "candidate-lightcarbon-lcg074-d-price-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "lightcarbon-lcg074-d"
+  },
+  "field": "price",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "searched_at": "2026-09-24",
+  "retry_after": null,
+  "priority": "high",
+  "accepted_source_ids": [],
+  "retry_of": "candidate-lightcarbon-lcg074-d-price-2026-09-01",
+  "retry_reason": "A fresh exact-model search surfaced the official LCG074-D product page as newly crawled on 2026-09-24; B61 limited the follow-up to one current-price recheck of that exact manufacturer route.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-61-lightcarbon-lcg074-d-price",
+    "extends_attempt_id": "candidate-lightcarbon-lcg074-d-price-2026-09-01",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-61-scope.json",
+    "reason": "A current search index surfaced the exact official page with a 2026-09-24 crawl signal after the 2026-09-01 50-area sweep, justifying one fresh direct price check.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-lightcarbon-lcg074-d-price-2026-09-01",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The current exact official product page is quote-only and publishes no numeric price, currency, or current stock/availability context.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "LightCarbon LCG074-D integrated cockpit micro suspension gravel frameset price",
+          "route": "One public exact-model web search followed by opening the official LCG074-D manufacturer product page",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://www.lightcarbon.com/lightcarbon-gravel-frameset-micro-suspension-pivot-design-with-integrated-handlebar_p254.html",
+          "note": "The result identifies LightCarbon Composite Technology Co., Ltd. in Xiamen, China and the exact LCG074-D integrated-handlebar micro-suspension gravel frameset. The product page specifies a frame, fork, handlebar, stem and seatpost package, but shows no numeric price, currency, or current stock/availability; it directs buyers to contact the manufacturer. Search metadata marks the page crawled on 2026-09-24. It does not support a price observation."
+        }
+      ]
+    }
+  },
+  "notes": "The fresh exact-page recheck confirms the LCG074-D identity and current quote-only route but adds no amount or availability evidence. Keep candidate price fields null; reopen only if a public exact frameset offer gives a current numeric price and package context."
+}

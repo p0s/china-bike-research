@@ -1,0 +1,46 @@
+{
+  "id": "variant-twitter-v3-wheeltop-eds-purchase-route-current-mainland-2026-09-24",
+  "target": {
+    "record_type": "variant",
+    "record_id": "twitter-v3-wheeltop-eds"
+  },
+  "field": "purchase-route-current-selected-build",
+  "priority": "medium",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The Tmall-indexed V3 family listing does not reveal a WheelTop build option, while the manufacturer configuration page exposes WheelTop but no current order route and direct access timed out.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "TWITTER Gravel V3 WheelTop EDS TX 2x12 exact mainland purchase listing",
+          "route": "Current Tmall-indexed TWITTER Gravel V3 family product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The current page identifies the TWITTER flagship seller and a Tmall V3 route, but no WheelTop EDS TX option, selected SKU, inventory, or checkout is visible.",
+          "result_url": "https://tao.hooos.com/goods_jqVJ2MpS0tJNazVpjatBBOTJte-KaykkBHjRBabOZxFp.html"
+        },
+        {
+          "attempt": 2,
+          "query": "TWITTER Gravel V3 official mainland WheelTop EDS TX build page and order route",
+          "route": "Current official Chinese GRAVEL V3 product page",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The manufacturer's current search-index excerpt lists WheelTop EDS TX 2x12, but direct page access timed out and no price, seller stock, or purchase/checkout action is exposed by the indexed excerpt.",
+          "result_url": "https://www.twitter-bikes.com/twviewbike/8998.html"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [
+    "twitter-v3-tmall-family-current-recheck-2026-09-24",
+    "twitter-v3-cn-wheel-option-page-recheck-2026-09-24"
+  ],
+  "retry_after": null,
+  "notes": "Retain the existing overseas $1,750 offer as a separate regional reference. Current exact mainland WheelTop SKU, stock, shipping, and checkout remain unknown.",
+  "searched_at": "2026-09-24"
+}

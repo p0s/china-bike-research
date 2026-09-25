@@ -6,7 +6,7 @@
   },
   "field": "identity",
   "priority": "medium",
-  "searched_at": "2026-08-17",
+  "searched_at": "2026-09-25",
   "required_channels": [
     "public-post"
   ],
@@ -49,5 +49,14 @@
     "public-elves-mori-frame-price-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Round-three systematic search. public: conflicted. Unknowns and blocks are not negative evidence."
+  "notes": "Round-three systematic search. public: conflicted. Unknowns and blocks are not negative evidence.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "public-elves-mori-family-build-2026-08-17",
+      "public-elves-mori-frame-price-2026-08-17"
+    ],
+    "note": "Reused saved 2026-08-17 public Mori-family sources only; they do not establish the exact Mori subtrim or its relationship to AeroX. No XHS page was reopened."
+  }
 }

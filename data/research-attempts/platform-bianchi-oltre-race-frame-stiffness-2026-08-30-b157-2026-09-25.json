@@ -1,0 +1,52 @@
+{
+  "id": "platform-bianchi-oltre-race-frame-stiffness-2026-08-30-b157-2026-09-25",
+  "target": {
+    "record_type": "platform",
+    "record_id": "bianchi-oltre-race"
+  },
+  "field": "frame-stiffness",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "retry_of": "platform-bianchi-oltre-race-frame-stiffness-2026-08-30",
+  "retry_reason": "The frozen B157 scope authorizes one bounded current exact-model web query after review of the latest predecessor attempt, linked sources, and campaign history.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "platform-bianchi-oltre-race-frame-stiffness-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "Bianchi Oltre Race exact model geometry tire clearance current price warranty frame stiffness official 2026",
+          "route": "One frozen B157 exact-model web query; recorded URLs were not reopened.",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "note": "No independent measured stiffness result or reproducible test for the exact YTB8D Oltre Race was established. Marketing responsiveness claims and Oltre RC results are not transferred."
+        }
+      ],
+      "blocker": "No independent measured stiffness result or reproducible test for the exact YTB8D Oltre Race was established. Marketing responsiveness claims and Oltre RC results are not transferred."
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "No independent measured stiffness result or reproducible test for the exact YTB8D Oltre Race was established. Marketing responsiveness claims and Oltre RC results are not transferred.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-157-bianchi-oltre-race-frame-stiffness",
+    "extends_attempt_id": "platform-bianchi-oltre-race-frame-stiffness-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-157-scope.json",
+    "reason": "The frozen B157 scope authorizes one dated exact-record query after reviewing the latest predecessor source, attempt, and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

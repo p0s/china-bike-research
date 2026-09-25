@@ -478,8 +478,17 @@
   },
   "status": "found",
   "accepted_source_ids": [
-    "lightcarbon-lcr017-d-owner-quote-2026-05-23"
+    "lightcarbon-lcr017-d-owner-quote-2026-05-23",
+    "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr017-d-batch-039-50-area-sweep-2026-09-01.json. An exact-model prospective owner reports a manufacturer quotation of US$599 for the frame, with paint, US shipping and PayPal charge separately stated."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-lightcarbon-lcr017-d-batch-039-50-area-sweep-2026-09-01.json. An exact-model prospective owner reports a manufacturer quotation of US$599 for the frame, with paint, US shipping and PayPal charge separately stated.\n\nBatch 23 current recheck: The exact manufacturer page remains inquiry-only with no public price on 2026-09-23. Preserve the historical US$599 owner quotation, but current package and mainland checkout remain unverified.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-23",
+    "source_ids": [
+      "lightcarbon-lcr017-d-official-price-recheck-2026-09-23"
+    ],
+    "note": "The exact manufacturer page remains inquiry-only with no public price on 2026-09-23. Preserve the historical US$599 owner quotation, but current package and mainland checkout remain unverified."
+  }
 }

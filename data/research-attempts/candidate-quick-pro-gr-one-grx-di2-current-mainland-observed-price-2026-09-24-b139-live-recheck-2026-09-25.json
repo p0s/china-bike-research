@@ -1,0 +1,35 @@
+{
+  "id": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24-b139-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "quick-pro-gr-one-grx-di2"
+  },
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-25",
+  "retry_of": "candidate-quick-pro-gr-one-grx-di2-current-mainland-observed-price-2026-09-24",
+  "retry_reason": "One scoped B139 fresh web recheck; exact-model evidence was reviewed and no unsupported fact is promoted.",
+  "required_channels": [
+    "web"
+  ],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official Global/USD starting price is US$4,799 with North America dealer context, not a mainland CNY checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"Quick Pro GR:ONE GRX Di2 1x12\" 快客 中国 官方 现车 重量 价格",
+          "route": "Opened official QuickPro Gravel - All collection: https://www.quickprousa.com/collections/gravel-all. Exact GR:ONE GRX Di2 1×12s is Build from US$4,799 under Global/USD and North America dealer context; no weight.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "Official Global/USD starting price is US$4,799 with North America dealer context, not a mainland CNY checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries."
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "notes": "One B139 web pass did not establish mainland-observed-price for the exact retained target build. Official Global/USD starting price is US$4,799 with North America dealer context, not a mainland CNY checkout. Reviewed both scoped predecessor attempts (53 unique queries/routes total); Taobao, JD, QuickPro product and Cyclenet routes were not reopened. New query checked against predecessor queries."
+}

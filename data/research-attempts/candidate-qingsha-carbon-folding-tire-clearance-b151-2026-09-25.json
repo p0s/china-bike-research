@@ -1,0 +1,53 @@
+{
+  "id": "candidate-qingsha-carbon-folding-tire-clearance-b151-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "qingsha-carbon-folding"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-qingsha-carbon-folding-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B151 model-level web query on 2026-09-25 followed the earlier search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-151-qingsha-carbon-folding-tire-clearance",
+    "extends_attempt_id": "candidate-qingsha-carbon-folding-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-151-scope.json",
+    "reason": "The frozen B151 scope authorizes one dated exact-model query after the earlier 50-area campaign.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-qingsha-carbon-folding-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "轻鲨 QS91-20 蓝色碳纤维轮组 整车重量 最大胎宽 刚性 official manufacturer",
+          "route": "One bounded current exact-model web query",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-25",
+          "result_url": "https://germany.alibaba.com/product-detail/High-Quality-Lightb-Shark-QS91-20_1601576702424.html",
+          "note": "The one page-open attempt timed out at line 0. A discovery snippet did not establish the selected blue/blue-carbon-wheel option or weighing basis; none of the snippet claims are accepted."
+        }
+      ],
+      "blocker": "The single page-open attempt timed out; no retry was performed. The frozen batch allowed only one genuinely new page per model."
+    }
+  },
+  "accepted_source_ids": [],
+  "notes": "The one page-open attempt timed out at line 0. A discovery snippet did not establish the selected blue/blue-carbon-wheel option or weighing basis; none of the snippet claims are accepted.",
+  "searched_at": "2026-09-25"
+}

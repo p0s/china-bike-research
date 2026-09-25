@@ -1,0 +1,72 @@
+{
+  "batch": 69,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 361,
+      "conflicted": 34,
+      "found": 49,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The candidate has one actionable fit-related gap, with two exact-model manufacturer sources in direct conflict: the current 838 product page reports 32 mm maximum while the current 838 white paper reports 30 mm. Recheck the conflicting primary sources before assigning a value.",
+    "exact_models": 1,
+    "atomic_gaps": 1,
+    "record_id": "de-rosa-new-838",
+    "gap_code": "clearance-unverified",
+    "prior_attempt_id": "candidate-de-rosa-new-838-tire-clearance-2026-08-30"
+  },
+  "target": {
+    "record_type": "candidate",
+    "record_id": "de-rosa-new-838",
+    "model": "DE ROSA New 838",
+    "field": "facts.tire_clearance_mm",
+    "expected_basis": "Only assign a manufacturer maximum if the current exact New 838 product page and current 838 white paper converge or otherwise provide a source-backed explanation for the discrepancy. Do not substitute fitted tire size or measurements from another De Rosa model."
+  },
+  "research_route": {
+    "source_class": "manufacturer-primary",
+    "sources": [
+      {
+        "url": "https://derosa.it/model/838/",
+        "purpose": "Check the current exact 838 product page for its published maximum tire clearance and model identity."
+      },
+      {
+        "url": "https://derosa.it/app/uploads/2026/06/De-Rosa-838-white-paper-ITA.pdf",
+        "purpose": "Check the current exact 838 white paper for its published maximum and any generation or build qualifier."
+      }
+    ],
+    "stop_rule": "Check these two exact manufacturer sources sequentially and stop. No sibling models, retailers, generic tire-fit claims, or unrelated fields."
+  },
+  "done_criteria": [
+    "Record current source identity, URLs, access date, exact page and white-paper claims, and any material generation or build context.",
+    "If the two primary sources converge or one clearly supersedes the other, add the supported numeric maximum and precise basis to the candidate, link the sources, and resolve the old conflict without inventing an explanation.",
+    "If the conflict remains, preserve the candidate's unknown numeric value, add dated current source rechecks and a new conflicted attempt, and explain why no value is assigned.",
+    "For a data change, run focused validation and `npm run check` once for this coherent batch. No image report unless image records change.",
+    "Local B69 batch only; no push, pull request, merge, publication or production action."
+  ],
+  "delivery": "Local B69 batch only; no push, pull request, merge, publication or production action."
+}

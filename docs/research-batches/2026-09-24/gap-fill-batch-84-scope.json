@@ -1,0 +1,75 @@
+{
+  "batch": 84,
+  "date": "2026-09-24",
+  "inventory": {
+    "command": "npm run --silent data:gaps",
+    "as_of": "2026-09-24",
+    "published_variants": 41,
+    "candidates": 222,
+    "atomic_gaps": 707,
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 6,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 81,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 36,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 374,
+      "conflicted": 34,
+      "found": 36,
+      "temporarily-exhausted": 4
+    }
+  },
+  "selection": {
+    "basis": "The research queue has three Quick Pro ER:ONE evidence-found ledger fields whose accepted sources and exact-model facts already appear in the candidate. A source-reuse resolution can clear each ledger item without new searches or fabricated attempts, while preserving source caveats and all unrelated open requirements.",
+    "exact_models": 1,
+    "atomic_gaps": 3,
+    "target": {
+      "record_type": "candidate",
+      "record_id": "quick-pro-er-one",
+      "fields": [
+        {
+          "field": "complete-weight",
+          "attempt_id": "candidate-quick-pro-er-one-complete-weight-2026-09-01",
+          "accepted_source_ids": ["quick-pro-er-one-ultegra-official-2026-08-17"],
+          "recorded_fact": "7100 g; manufacturer claim 7.1 kg ±5% for the carbon-spoke Ultegra Di2 build; size and selected RORE wheel model unspecified"
+        },
+        {
+          "field": "price",
+          "attempt_id": "candidate-quick-pro-er-one-price-2026-09-01",
+          "accepted_source_ids": ["quick-pro-er-one-ultegra-official-2026-08-17"],
+          "recorded_fact": "CNY 33,900 reference conversion from US$4,999 using the 2026-07-31 rate; not a mainland checkout price"
+        },
+        {
+          "field": "frame-stiffness",
+          "attempt_id": "candidate-quick-pro-er-one-frame-stiffness-2026-09-01",
+          "accepted_source_ids": ["quick-pro-er-one-cyclistshub-review-2026-09-01"],
+          "recorded_fact": "Qualitative owner-reported power response and perceived stiffness; wheels contribute; no numeric or instrumented frame-isolation result"
+        }
+      ]
+    }
+  },
+  "research_route": {
+    "action": "Read-only audit of the exact candidate, the three accepted source records, and their research attempts. Add resolution.kind=source-reuse only where each accepted source directly supports a fact already recorded for that target and the limitation is retained in the resolution note. Do not browse, add a source, edit catalog facts, or reuse a related trim.",
+    "acceptance_rule": "A ledger field may be source-reuse-resolved only when the candidate already records the matching fact and its caveat, and the resolution.source_ids are already accepted for that attempt. The numeric-stiffness gap and mainland checkout/delivery/warranty gaps stay open.",
+    "stop_rule": "One exact model and three fields only. If any source-to-fact match is ambiguous, leave that field unresolved and report why."
+  },
+  "done_criteria": [
+    "Return one bounded read-only evidence audit for the three exact-model fields.",
+    "Integrate only justified source-reuse resolutions, then run npm run validate, npm run research:check, and npm run coverage:check.",
+    "Do not rerun npm run check for this research-metadata-only change; no catalog, source, or code facts are changed.",
+    "Local B84 only; no push, pull request, merge, publication, or production action."
+  ]
+}

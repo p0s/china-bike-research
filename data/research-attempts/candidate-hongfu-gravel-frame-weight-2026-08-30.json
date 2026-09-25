@@ -487,8 +487,23 @@
   "status": "conflicted",
   "accepted_source_ids": [
     "hongfu-fm188-current-2026-08-30",
-    "hongfu-fm279-current-2026-08-30"
+    "hongfu-fm279-current-2026-08-30",
+    "hongfu-fm188-internal-current-recheck-2026-09-25",
+    "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+    "hongfu-fm279-current-recheck-2026-09-25"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. Option-specific weight ranges and tolerances are preserved without assigning one frame weight to the generic candidate."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/hongfu-gravel-batch-025-50-area-sweep-2026-08-30.json. Option-specific weight ranges and tolerances are preserved without assigning one frame weight to the generic candidate.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "hongfu-fm188-current-2026-08-30",
+      "hongfu-fm279-current-2026-08-30",
+      "hongfu-fm188-internal-current-recheck-2026-09-25",
+      "hongfu-fm188-new-cx-current-recheck-2026-09-25",
+      "hongfu-fm279-current-recheck-2026-09-25"
+    ],
+    "note": "FM188 New CX and FM279 pages give size-dependent 1,070–1,190 g frame-weight ranges with ±40 g tolerance; an FM279 seller separately lists 1,110 ±40 g at size 54. The generic candidate is not mapped to either exact model, and these are frame weights, not complete-bike weights."
+  }
 }

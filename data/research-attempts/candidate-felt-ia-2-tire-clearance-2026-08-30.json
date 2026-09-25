@@ -488,5 +488,14 @@
     "felt-ia-2-regional-clearance-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. Exact current-platform evidence conflicts: the guide says 28 mm maximum with 4 mm clearance while an authorized regional page recommends 25 to 32 mm."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/felt-ia-2-50-area-sweep-2026-08-30.json. Exact current-platform evidence conflicts: the guide says 28 mm maximum with 4 mm clearance while an authorized regional page recommends 25 to 32 mm.",
+  "resolution": {
+    "kind": "conflict-reconfirmed",
+    "resolved_at": "2026-09-25",
+    "source_ids": [
+      "felt-ia-2-platform-guide-2026-08-30",
+      "felt-ia-2-regional-clearance-2026-08-30"
+    ],
+    "note": "The platform guide says 28 mm maximum with 4 mm clearance; the regional page recommends 25–32 mm. The sources do not establish one maximum for the retained configuration."
+  }
 }

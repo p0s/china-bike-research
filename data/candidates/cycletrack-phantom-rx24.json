@@ -8,8 +8,8 @@
   "facts": {
     "frame_material": "Carbon frame and carbon fork; the exact current RX 24-speed page does not publish a fiber grade, and conflicting T700, T800 and T1000 claims from other Phantom generations or trims are not assigned",
     "frame_construction": "Aero road frame with fully internal cable routing and hydraulic flat-mount disc brakes",
-    "drivetrain": "L-TWOO RX mechanical 2x12 / 24-speed with hydraulic disc brakes, SENICX PR1 50/34 crank, ATA cassette and KMC chain",
-    "reference_builds": "The exact official alloy-rim reference build is listed around 8.5 kg; a separate Shimano 105 alloy-wheel build was independently reported at 8.7 kg",
+    "drivetrain": "L-TWOO RX 24-speed, SENICX PR1 34/50 crank, ATA cassette and KMC chain; the current exact-model manufacturer page does not explicitly label shift actuation as mechanical",
+    "reference_builds": "The exact official L-TWOO RX 24-speed/alloy-rim reference page lists an approximate 8.5 kg and sizes 44/48/52 cm, but does not link the mass to a size or state pedal inclusion or weighing method; a separate Shimano 105 alloy-wheel build was independently reported at 8.7 kg.",
     "stiffness_evidence": "No exact-model numeric stiffness result or sufficiently specific independent frame-stiffness assessment was found across the 50-area sweep"
   },
   "missing": [
@@ -21,7 +21,10 @@
   "source_ids": [
     "cycletrack-phantom-rx-official-2026-08-29",
     "cycletrack-phantom-jd-2026-08-29",
-    "cycletrack-phantom-independent-2026-08-29"
+    "cycletrack-phantom-independent-2026-08-29",
+    "cycletrack-phantom-current-2026-09-23",
+    "cycletrack-jd-road-listings-current-2026-09-23",
+    "cycletrack-phantom-rx24-official-alt-page-2026-09-25"
   ],
   "source_snapshot_id": "taobao-snapshot-2026-08-08",
   "observed_at": "2026-08-08",
@@ -34,6 +37,6 @@
   },
   "source_refs": "IMG_6861.png#R1",
   "source_url": "https://cycletrack.cn/products/cycletrack-phantom-ltwoo-24-speed-carbon-fiber-road-bike-bicycle-for-men-women",
-  "source_note": "The exact official RX 24-speed page lists an alloy-rim reference build around 8.5 kg, while current JD indexes expose both alloy- and carbon-wheel options. The retained price observation does not reveal its selected wheel option, so complete weight remains unassigned. Fitted 25C tires are not treated as maximum clearance.",
-  "last_reviewed": "2026-08-29"
+  "source_note": "Current manufacturer and JD evidence identify the Phantom RX 24-speed family and preserve distinct wheel options. The manufacturer page specifies the RX component set but does not explicitly label shift actuation as mechanical. The retained price observation still does not select a wheel option; no exact complete weight is assigned.",
+  "last_reviewed": "2026-09-25"
 }

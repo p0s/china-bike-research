@@ -1,0 +1,41 @@
+{
+  "batch": 74,
+  "date": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-74-scope.json",
+  "outcome": "No dated mainland CNY price was found for the exact 2026 Specialized Crux Comp Shimano GRX, product 223483.",
+  "research": {
+    "agent": "One Luna evidence-only agent",
+    "accessed_at": "2026-09-24",
+    "query": "2026 Specialized Crux Comp Shimano GRX 223483 中国 京东 天猫 价格",
+    "result_urls": [
+      "https://mall.jd.com/view_search-2933871-32280913-99-1-24-1.html",
+      "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+    ],
+    "result": "The result surfaced the Specialized official JD storefront category page but no exact item. A separate JD price snippet showed a CRUX COMP complete bike without establishing product 223483, the GRX trim, or model year. The exact Specialized China page appeared without a price in search results; no item page was opened.",
+    "disposition": "No amount assigned. Preserve the exact foreign-market product references separately and keep the mainland price gap open."
+  },
+  "integration": {
+    "candidate": "data/candidates/missing-china-price-specialized-crux.json",
+    "change": "No price record, source record, or candidate fact changed.",
+    "research_attempt": "data/research-attempts/candidate-missing-china-price-specialized-crux-price-recheck-2026-09-24.json",
+    "attempt_status": "blocked"
+  },
+  "inventory_delta": {
+    "atomic_gaps": "707 -> 707",
+    "price_missing": "27 -> 27",
+    "research_status_counts": {
+      "blocked": "365 -> 365",
+      "conflicted": "34 -> 34",
+      "found": "45 -> 45",
+      "temporarily-exhausted": "4 -> 4"
+    },
+    "disposition": "No catalog gap closed; the one bounded web attempt confirmed no exact current seller item and preserved the prior blocked status."
+  },
+  "validation": {
+    "focused": "Passed research:check (1503 atomic research fields; 15450 public-post and 35581 web attempts), validate (1304 sources and 1528 research records), and data tests (73/73).",
+    "coverage": "coverage:accept and coverage:check passed for 212 images, 73 prices, 1304 sources, and 236 candidates.",
+    "full_gate": "developer-storage-cache run -- npm run check passed: privacy scan, data validation, research validation, coverage, 324/324 tests, 584-page build, and SEO audit (458 indexable, 126 noindex).",
+    "image_report": "Not needed; no image records changed."
+  },
+  "delivery": "Local B74 batch only; no push, pull request, merge, publication, or production action."
+}

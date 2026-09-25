@@ -1,0 +1,449 @@
+{
+  "batch_id": "gap-fill-batch-26-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-26-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 24,
+    "root_fields": 0,
+    "luna_evidence_fields": 24
+  },
+  "new_source_records": [
+    "quick-pro-xr-one-tmall-recheck-2026-09-23",
+    "specialized-crux-comp-grx-sw-recheck-2026-09-23",
+    "specialized-crux-comp-china-route-recheck-2026-09-23",
+    "specialized-roubaix-sl8-tiagra-us-recheck-2026-09-23",
+    "specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23",
+    "tavelo-arow-race-polestar-recheck-2026-09-23",
+    "tavelo-attack-recheck-2026-09-23",
+    "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23",
+    "trek-domane-sl5-gen4-bikemart-recheck-2026-09-23",
+    "trek-domane-sl5-gen4-us-page-recheck-2026-09-23",
+    "trek-madone-sl5-gen8-china-page-recheck-2026-09-23",
+    "trek-madone-gen8-faq-recheck-2026-09-23",
+    "van-rysel-rcr-f-pro-105-di2-uk-manufacturer-recheck-2026-09-23",
+    "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23",
+    "decathlon-china-rcrf-route-recheck-2026-09-23",
+    "decathlon-china-bicycle-warranty-pdf-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "updated_candidate_records": [
+    "missing-china-price-quick-pro-xr-one",
+    "missing-china-price-specialized-crux",
+    "missing-china-price-specialized-roubaix-sl8",
+    "missing-china-price-specialized-tarmac-sl8",
+    "missing-china-price-tavelo-arow",
+    "missing-china-price-tavelo-attack",
+    "missing-china-price-trek-checkpoint",
+    "missing-china-price-trek-domane",
+    "missing-china-price-trek-madone-gen-8",
+    "missing-china-price-van-rysel-rcr"
+  ],
+  "new_images_added": 0,
+  "primary_image_records_unchanged": 212,
+  "results": [
+    {
+      "record_id": "missing-china-price-quick-pro-xr-one",
+      "model": "Quick Pro XR:ONE GRX Di2 1×12",
+      "field": "price",
+      "status": "dated-exact-tmall-offer-current-page-inaccessible",
+      "attempt_record_id": "candidate-missing-china-price-quick-pro-xr-one-price-2026-08-28",
+      "source_ids": [
+        "quick-pro-xr-one-tmall-2026-08-28",
+        "quick-pro-xr-one-tmall-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://detail.tmall.com/item.htm?id=1014176452648"
+      ],
+      "note": "Prior exact Tmall SKU observation is CNY 19,398 for configuration 2, GRX Di2 1×12, glass-yellow, size M on 2026-08-28. Current page was inaccessible; this is not a current checkout quote.",
+      "next_trigger": "Reopen when the exact item and selected SKU show a current price."
+    },
+    {
+      "record_id": "missing-china-price-specialized-crux",
+      "model": "Specialized Crux Comp GRX",
+      "field": "complete-weight",
+      "status": "accepted-swiss-size-56-reference",
+      "attempt_record_id": "candidate-missing-china-price-specialized-crux-complete-weight-2026-09-01",
+      "source_ids": [
+        "specialized-crux-comp-grx-official-2026-08-17",
+        "specialized-crux-comp-grx-sw-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com/ch/en/crux-comp-shimano-grx/p/4223483"
+      ],
+      "note": "Specialized Switzerland lists 8.55 kg for the exact Crux Comp GRX in size 56. Manufacturer says weight varies by color, size and component variation; this is a regional reference.",
+      "next_trigger": "Reopen if a mainland build specification differs."
+    },
+    {
+      "record_id": "missing-china-price-specialized-crux",
+      "model": "Specialized Crux Comp GRX",
+      "field": "purchase-route",
+      "status": "exact-china-route-title-shell-ordering-unresolved",
+      "attempt_record_id": "candidate-missing-china-price-specialized-crux-purchase-route-2026-08-17",
+      "source_ids": [
+        "specialized-crux-comp-china-2026-08-17",
+        "specialized-crux-comp-china-route-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com.cn/cn/zh/crux-comp---shimano-grx/p/4223483"
+      ],
+      "note": "The exact Specialized China product route currently renders only a title/input shell; the route exists, but current stock, ordering action, price and checkout remain unverified.",
+      "next_trigger": "Reopen when a China buy/store/stock action is visible."
+    },
+    {
+      "record_id": "missing-china-price-specialized-roubaix-sl8",
+      "model": "Specialized Roubaix SL8 Tiagra",
+      "field": "complete-weight",
+      "status": "accepted-us-size-56-reference",
+      "attempt_record_id": "candidate-missing-china-price-specialized-roubaix-sl8-complete-weight-2026-09-01",
+      "source_ids": [
+        "specialized-roubaix-sl8-tiagra-current-2026-09-01",
+        "specialized-roubaix-sl8-tiagra-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com/us/en/roubaix-sl8-shimano-tiagra/p/4221830"
+      ],
+      "note": "Specialized US lists 9.46 kg for the exact Roubaix SL8 Tiagra build in size 56; weight varies by color, size and components.",
+      "next_trigger": "Reopen if a mainland specification differs."
+    },
+    {
+      "record_id": "missing-china-price-specialized-roubaix-sl8",
+      "model": "Specialized Roubaix SL8 Tiagra",
+      "field": "drivetrain",
+      "status": "accepted-us-exact-tiagra-bom",
+      "attempt_record_id": "candidate-missing-china-price-specialized-roubaix-sl8-drivetrain-2026-09-01",
+      "source_ids": [
+        "specialized-roubaix-sl8-tiagra-current-2026-09-01",
+        "specialized-roubaix-sl8-tiagra-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com/us/en/roubaix-sl8-shimano-tiagra/p/4221830"
+      ],
+      "note": "The exact US Tiagra build lists 4720 controls and rear derailleur, 105 R7000 front derailleur, 11–34 cassette and 50/34 crank. Regional BOM, not a China-specific configuration.",
+      "next_trigger": "Reopen if the current mainland product page lists different components."
+    },
+    {
+      "record_id": "missing-china-price-specialized-tarmac-sl8",
+      "model": "Specialized Tarmac SL8 Comp 105 Di2",
+      "field": "complete-weight",
+      "status": "accepted-us-size-56-reference",
+      "attempt_record_id": "candidate-missing-china-price-specialized-tarmac-sl8-complete-weight-2026-09-01",
+      "source_ids": [
+        "specialized-tarmac-sl8-comp-spec-2026-08-17",
+        "specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com/us/en/tarmac-sl8-comp-shimano-105-di2/p/4221578"
+      ],
+      "note": "Specialized US lists 7.68 kg for the exact 2026 Comp 105 Di2 build in size 56; weight varies by color, size and components.",
+      "next_trigger": "Reopen if a mainland specification differs."
+    },
+    {
+      "record_id": "missing-china-price-specialized-tarmac-sl8",
+      "model": "Specialized Tarmac SL8 Comp 105 Di2",
+      "field": "frame-stiffness",
+      "status": "comparative-manufacturer-claim-no-protocol",
+      "attempt_record_id": "candidate-missing-china-price-specialized-tarmac-sl8-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "specialized-tarmac-sl8-comp-spec-2026-08-17",
+        "specialized-tarmac-sl8-comp-105di2-us-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.specialized.com/us/en/tarmac-sl8-comp-shimano-105-di2/p/4221578"
+      ],
+      "note": "Specialized claims 33% better stiffness-to-weight than Tarmac SL7 for the SL8 platform; comparative manufacturer evidence without a fully public test protocol.",
+      "next_trigger": "Reopen for an exact-variant measurement or disclosed test protocol."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-arow",
+      "model": "Tavelo Arow Race Polestar frameset",
+      "field": "frame-stiffness",
+      "status": "qualitative-platform-claim-only",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-arow-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "tavelo-arow-race-polestar-official-2026-08-17",
+        "tavelo-arow-race-polestar-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-arow-race-polestar"
+      ],
+      "note": "The manufacturer says the Arow head tube and down tube stiffness were enhanced; this is qualitative platform language, not a Polestar-specific measured result.",
+      "next_trigger": "Reopen for exact Polestar comparative or measured evidence."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-arow",
+      "model": "Tavelo Arow Race Polestar frameset",
+      "field": "frame-weight",
+      "status": "accepted-raw-finish-size-xs-frame-claim",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-arow-frame-weight-2026-09-01",
+      "source_ids": [
+        "tavelo-arow-polestar-panda-podium-2026-09-01",
+        "tavelo-arow-race-polestar-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-arow-race-polestar"
+      ],
+      "note": "The exact Race Polestar page lists 820 g for raw-finish size XS (420), excluding paint. Existing 950 g size-XS painted frame including accessories is a distinct basis and is retained separately.",
+      "next_trigger": "Reopen for a painted selected-size manufacturer weight with method."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-arow",
+      "model": "Tavelo Arow Race Polestar frameset",
+      "field": "tire-clearance",
+      "status": "accepted-manufacturer-32mm-maximum",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-arow-tire-clearance-2026-09-01",
+      "source_ids": [
+        "tavelo-arow-race-polestar-official-2026-08-17",
+        "tavelo-arow-polestar-panda-podium-2026-09-01",
+        "tavelo-arow-race-polestar-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-arow-race-polestar"
+      ],
+      "note": "The exact Race Polestar listing gives a 32 mm maximum; measurement method is not stated.",
+      "next_trigger": "Reopen if Tavelo publishes a measured-width basis or changes the specification."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-attack",
+      "model": "Tavelo Attack frameset",
+      "field": "frame-stiffness",
+      "status": "promotional-qualitative-claim-only",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-attack-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "tavelo-attack-official-2026-08-17",
+        "tavelo-attack-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-attack"
+      ],
+      "note": "The exact page says “stiff enough to win a sprint”; promotional qualitative language only.",
+      "next_trigger": "Reopen for a measured or comparative stiffness result."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-attack",
+      "model": "Tavelo Attack frameset",
+      "field": "frame-weight",
+      "status": "accepted-from-size-xs-frame-claim",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-attack-frame-weight-2026-09-01",
+      "source_ids": [
+        "tavelo-attack-official-2026-08-17",
+        "tavelo-attack-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-attack"
+      ],
+      "note": "The manufacturer lists frame weight from 860 g in size XS (430); finish and weighing protocol are unstated.",
+      "next_trigger": "Reopen for a selected-size weight and stated method."
+    },
+    {
+      "record_id": "missing-china-price-tavelo-attack",
+      "model": "Tavelo Attack frameset",
+      "field": "tire-clearance",
+      "status": "accepted-manufacturer-32mm-maximum",
+      "attempt_record_id": "candidate-missing-china-price-tavelo-attack-tire-clearance-2026-09-01",
+      "source_ids": [
+        "tavelo-attack-japan-clearance-2026-09-01",
+        "tavelo-attack-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.tavelo.cc/products/tavelo-attack"
+      ],
+      "note": "The exact manufacturer listing gives 32 mm maximum tire size; measurement method is unstated.",
+      "next_trigger": "Reopen for a measured-width basis or revised specification."
+    },
+    {
+      "record_id": "missing-china-price-trek-checkpoint",
+      "model": "Trek Checkpoint SL 5 AXS Gen 3",
+      "field": "complete-weight",
+      "status": "accepted-us-retailer-size-ml-setup-stated",
+      "attempt_record_id": "candidate-missing-china-price-trek-checkpoint-complete-weight-2026-08-28",
+      "source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
+        "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike"
+      ],
+      "note": "Bike Mart lists 9.50 kg for the exact 2026 US build in size ML with TLR sealant and no tubes; the listing showed unavailable. This does not establish a mainland build.",
+      "next_trigger": "Reopen if Trek publishes a mainland weight or the retailer changes the protocol."
+    },
+    {
+      "record_id": "missing-china-price-trek-checkpoint",
+      "model": "Trek Checkpoint SL 5 AXS Gen 3",
+      "field": "drivetrain",
+      "status": "accepted-us-retailer-exact-build",
+      "attempt_record_id": "candidate-missing-china-price-trek-checkpoint-drivetrain-2026-08-28",
+      "source_ids": [
+        "trek-checkpoint-sl5-gen3-bikemart-2026-08-28",
+        "trek-checkpoint-sl5-axs-gen3-bikemart-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.bikemart.com/collections/trek-sale/products/2026-checkpoint-sl-5-axs-gen-3-gravel-road-bike"
+      ],
+      "note": "Bike Mart lists the exact 2026 US build as SRAM Apex AXS 12-speed XPLR, 40T crank and 11–44 cassette. Availability at that retailer was unavailable when checked.",
+      "next_trigger": "Reopen if Trek’s mainland build differs."
+    },
+    {
+      "record_id": "missing-china-price-trek-domane",
+      "model": "Trek Domane SL 5 Gen 4",
+      "field": "complete-weight",
+      "status": "accepted-us-retailer-size-56-setup-stated",
+      "attempt_record_id": "candidate-missing-china-price-trek-domane-complete-weight-2026-09-01",
+      "source_ids": [
+        "trek-domane-sl5-gen4-bikemart-2026-09-01",
+        "trek-domane-sl5-gen4-bikemart-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.bikemart.com/collections/bikes/products/2026-domane-sl-5-gen-4-road-bike"
+      ],
+      "note": "Bike Mart lists 9.09 kg for the exact 2026 US Domane SL 5 Gen 4 in size 56 with TLR sealant and no tubes; component-year variation is possible.",
+      "next_trigger": "Reopen if a current mainland build or official weight protocol differs."
+    },
+    {
+      "record_id": "missing-china-price-trek-domane",
+      "model": "Trek Domane SL 5 Gen 4",
+      "field": "frame-stiffness",
+      "status": "dated-qualitative-manufacturer-copy-current-shell",
+      "attempt_record_id": "candidate-missing-china-price-trek-domane-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "trek-domane-sl5-gen4-official-2026-08-17",
+        "trek-domane-sl5-gen4-us-page-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road-bikes/domane/domane-sl/domane-sl-5-gen-4/p/57629/"
+      ],
+      "note": "The 2026-09-01 manufacturer observation described 500 Series OCLV as balancing light weight, strength and stiffness. Current page rendered only a title shell; no quantitative method is published.",
+      "next_trigger": "Reopen when current technical copy is readable or Trek publishes a test."
+    },
+    {
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "model": "Trek Madone SL 5 Gen 8",
+      "field": "complete-weight",
+      "status": "accepted-mainland-observation-current-page-shell",
+      "attempt_record_id": "candidate-missing-china-price-trek-madone-gen-8-complete-weight-2026-09-01",
+      "source_ids": [
+        "trek-madone-sl5-gen8-official-spec-2026-08-17",
+        "trek-madone-sl5-gen8-china-page-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.trekbikes.com/cn/zh_CN/自行车/公路自行车/高性能公路车/madone/madone-sl/madone-sl-5-gen-8/p/57653/"
+      ],
+      "note": "The 2026-09-01 exact China product observation reports 8.70 kg for the mechanical Shimano 105 2×12 build. Today the page redirected to a category/title shell; the old note lacks size and protocol.",
+      "next_trigger": "Reopen when exact product details return."
+    },
+    {
+      "record_id": "missing-china-price-trek-madone-gen-8",
+      "model": "Trek Madone SL 5 Gen 8",
+      "field": "tire-clearance",
+      "status": "accepted-gen8-platform-32mm-measured-width-maximum",
+      "attempt_record_id": "candidate-missing-china-price-trek-madone-gen-8-tire-clearance-2026-09-01",
+      "source_ids": [
+        "trek-madone-sl5-gen8-official-spec-2026-08-17",
+        "trek-madone-gen8-faq-clearance-2026-09-01",
+        "trek-madone-gen8-faq-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://electra.trekbikes.com/us/en_US/FAQ/madone-gen8/"
+      ],
+      "note": "Trek’s Gen 8 FAQ states a 32 mm maximum measured tire width. This is platform-family guidance; no SL 5 exception is published.",
+      "next_trigger": "Reopen if Trek documents a trim-specific exception."
+    },
+    {
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "model": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "field": "complete-weight",
+      "status": "conflicted-current-uk-exact-product-pages-8kg-vs-8-2kg",
+      "attempt_record_id": "candidate-missing-china-price-van-rysel-rcr-complete-weight-2026-09-01",
+      "source_ids": [
+        "van-rysel-rcr-f-pro-official-global-2026-08-17",
+        "van-rysel-rcr-f-pro-105-di2-uk-manufacturer-recheck-2026-09-23",
+        "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505",
+        "https://www.decathlon.co.uk/p/road-bike-rcr-f-pro-shimano-105-di2-12v-grey/358179/c180c425m8913505"
+      ],
+      "note": "Current exact UK product pages conflict: Van Rysel lists 8.0 kg without size/protocol, while Decathlon lists 8.2 kg for size M with tubeless assembly. Both identify the grey RCR-F Pro 105 Di2. Preserve both; do not normalize.",
+      "next_trigger": "Reopen when the manufacturer explains the difference or supplies comparable size and protocol."
+    },
+    {
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "model": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "field": "frame-stiffness",
+      "status": "comparative-manufacturer-claim-no-protocol",
+      "attempt_record_id": "candidate-missing-china-price-van-rysel-rcr-frame-stiffness-2026-09-01",
+      "source_ids": [
+        "van-rysel-rcr-f-family-official-2026-09-01",
+        "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.decathlon.co.uk/p/road-bike-rcr-f-pro-shimano-105-di2-12v-grey/358179/c180c425m8913505"
+      ],
+      "note": "Decathlon UK states the exact RCR-F Pro layup is 7% stiffer than RCR Pro; relative manufacturer claim, no absolute value or public test protocol.",
+      "next_trigger": "Reopen for the comparative test basis or an exact China-build comparison."
+    },
+    {
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "model": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "field": "purchase-route",
+      "status": "china-family-route-rendered-navigation-only",
+      "attempt_record_id": "candidate-missing-china-price-van-rysel-rcr-purchase-route-2026-08-17",
+      "source_ids": [
+        "decathlon-china-rcrf-route-2026-08-17",
+        "decathlon-china-rcrf-route-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.decathlon.com.cn/product-detail?dsm_code=365199"
+      ],
+      "note": "The prior route mapping connects Decathlon China code 365199 to the RCR-F family. Today it rendered navigation/footer only, with no exact SKU, price, stock or checkout.",
+      "next_trigger": "Reopen when an exact China product page or SKU-specific buy/stock action renders."
+    },
+    {
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "model": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "field": "tire-clearance",
+      "status": "accepted-uk-exact-product-32mm-maximum",
+      "attempt_record_id": "candidate-missing-china-price-van-rysel-rcr-tire-clearance-2026-09-01",
+      "source_ids": [
+        "van-rysel-rcr-f-pro-decathlon-2026-09-01",
+        "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.decathlon.co.uk/p/road-bike-rcr-f-pro-shimano-105-di2-12v-grey/358179/c180c425m8913505"
+      ],
+      "note": "The exact Decathlon UK listing specifies 32 mm maximum tire clearance. Regional specification; method is unstated and China-build equivalence is not proven.",
+      "next_trigger": "Reopen if a mainland specification differs or a measurement method is published."
+    },
+    {
+      "record_id": "missing-china-price-van-rysel-rcr",
+      "model": "Van Rysel RCR-F Pro Shimano 105 Di2",
+      "field": "warranty-support",
+      "status": "uk-terms-do-not-establish-china-eligibility",
+      "attempt_record_id": "candidate-missing-china-price-van-rysel-rcr-warranty-support-2026-08-17",
+      "source_ids": [
+        "decathlon-china-bike-warranty-2026-08-17",
+        "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23",
+        "decathlon-china-bicycle-warranty-pdf-recheck-2026-09-23"
+      ],
+      "sources_checked": [
+        "https://www.decathlon.co.uk/p/road-bike-rcr-f-pro-shimano-105-di2-12v-grey/358179/c180c425m8913505",
+        "https://aftersales.decathlon.com/pdf/CN_adult_202209.pdf"
+      ],
+      "note": "UK listing terms state 5 years frame/fork and 2 years parts/labour excluding wear items, but do not establish China coverage. The Decathlon China warranty PDF returned HTTP 503; prior SKU-dependent policy evidence does not resolve this exact model.",
+      "next_trigger": "Reopen when current China terms identify this SKU and its coverage."
+    }
+  ],
+  "recheck_limitations": [
+    "The current Quick Pro XR:ONE Tmall page was inaccessible; its CNY 19,398 observation is dated 2026-08-28 and is not a current checkout quote.",
+    "Specialized China Crux and Van Rysel China routes rendered only title/navigation shells; current ordering and stock remain unresolved.",
+    "Specialized and Trek regional weight/BOM sources are explicitly retained as regional references and not promoted to mainland build facts.",
+    "Van Rysel UK exact pages disagree on complete weight (8.0 kg unsized vs 8.2 kg size M tubeless); the attempt remains conflicted.",
+    "No B26 source established reusable rights for a new image."
+  ],
+  "validation": {
+    "focused_data_tests": "PASS: node --test tests/data.test.mjs (69/69)",
+    "coverage_accept": "PASS: monotonic baseline accepted; 212 images and 277 catalog targets protected",
+    "full_gate": "PASS: privacy scan; 41 brands, 38 platforms, 41 variants, 73 prices, 1099 sources, 212 primary images, 236 candidates, 1465 research records; 307 tests; 584-page build; SEO 456 indexable/128 noindex",
+    "image_report": "not-run: no image records changed"
+  }
+}

@@ -482,6 +482,12 @@
   "accepted_source_ids": [
     "quick-pro-er-one-ultegra-official-2026-08-17"
   ],
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["quick-pro-er-one-ultegra-official-2026-08-17"],
+    "note": "Disposition: manufacturer claim reused. The exact Ultegra Di2 page states 7.1 kg ±5% for the carbon-spoke complete build, matching the candidate's 7,100 g fact. Size and selected RORE wheel model remain unspecified; do not treat this as a measured value or transfer it to another configuration."
+  },
   "retry_after": null,
   "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-quick-pro-er-one-batch-041-50-area-sweep-2026-09-01.json. Current exact Ultegra Di2 storefront publishes 7.1 kg ±5% for the carbon-spoke complete build."
 }

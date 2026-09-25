@@ -482,5 +482,11 @@
     "twitter-cyclone-r7120-official-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-r7120-batch-036-50-area-sweep-2026-09-01.json. The current exact regional page identifies a high-modulus carbon frame and full-carbon fork; exact fiber grade and lay-up remain unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/candidate-twitter-cyclone-r7120-batch-036-50-area-sweep-2026-09-01.json. The exact regional page identifies a high-modulus carbon frame and full-carbon fork; exact fiber grade and lay-up remain unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": ["twitter-cyclone-r7120-official-2026-08-17"],
+    "note": "Retain high-modulus carbon frame/full-carbon fork only for the exact regional R7120 page's Small configuration. Exact fiber grade and lay-up are not published."
+  }
 }

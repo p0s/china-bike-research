@@ -1,0 +1,55 @@
+{
+  "id": "candidate-sunpeed-wudi-e-2026-tire-clearance-b152-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "sunpeed-wudi-e-2026"
+  },
+  "field": "tire-clearance",
+  "priority": "high",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "retry_after": null,
+  "retry_of": "candidate-sunpeed-wudi-e-2026-tire-clearance-2026-08-30",
+  "retry_reason": "One distinct B152 model-level web query on 2026-09-25 followed the earlier exact-field search/campaign record.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-152-sunpeed-wudi-e-2026-tire-clearance",
+    "extends_attempt_id": "candidate-sunpeed-wudi-e-2026-tire-clearance-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-152-scope.json",
+    "reason": "The frozen B152 scope authorizes one dated exact-model query after reviewing prior evidence and campaign history.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-sunpeed-wudi-e-2026-tire-clearance-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "SUNPEED 2026 Invincible Sport R7120 maximum tire clearance frame fork",
+          "route": "One bounded current exact-model web query",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-25",
+          "note": "The new Sunpeed Perú page was literal-audited absent before one open attempt. It identifies Invincible Sport, alloy wheels, and fitted 700×28C but gives no maximum, no explicit 2026 identity, and a component setup that does not match the retained 2026 R7120 option. No specification is transferred.",
+          "result_url": "https://sunpeed.com.pe/producto/sunpeed-invincible-sport/"
+        }
+      ],
+      "blocker": "The JD source maps the retained 2026 R7120 alloy-wheel option but gives no maximum; the opened Peru page lists fitted 700×28C without explicit 2026 identity and does not match the retained option."
+    }
+  },
+  "accepted_source_ids": [
+    "sunpeed-invincible-2026-jd-2026-08-30"
+  ],
+  "notes": "B168 local source audit: no linked source supports the retained exact tire-clearance field. The new Sunpeed Perú page was literal-audited absent before one open attempt. It identifies Invincible Sport, alloy wheels, and fitted 700×28C but gives no maximum, no explicit 2026 identity, and a component setup that does not match the retained 2026 R7120 option. No specification is transferred.",
+  "searched_at": "2026-09-25"
+}

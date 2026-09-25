@@ -485,5 +485,13 @@
     "pinarello-f5-my26-reference-weight-2026-08-30"
   ],
   "retry_after": null,
-  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pinarello-f5-50-area-sweep-2026-08-30.json. A current exact MY26 105 Di2/MOST Ultrafast 45 build is listed at 8.25 kg, but the retained configuration-hidden card cannot inherit it."
+  "notes": "Extended 50-area exact-model sweep recorded in data/research-campaigns/pinarello-f5-50-area-sweep-2026-08-30.json. A current exact MY26 105 Di2/MOST Ultrafast 45 build is listed at 8.25 kg, but the retained configuration-hidden card cannot inherit it.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "pinarello-f5-my26-reference-weight-2026-08-30"
+    ],
+    "note": "The 8.25 kg figure is for a MY26 105 Di2/MOST Ultrafast 45 reference build; the retained card does not resolve model year or wheel option, so the reference is not assigned as its complete weight."
+  }
 }

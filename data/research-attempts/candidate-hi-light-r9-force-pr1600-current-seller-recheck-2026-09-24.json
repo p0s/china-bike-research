@@ -1,0 +1,37 @@
+{
+  "id": "candidate-hi-light-r9-force-pr1600-current-seller-recheck-2026-09-24",
+  "target": { "record_type": "candidate", "record_id": "hi-light-r9-force-pr1600" },
+  "field": "price",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_of": "candidate-hi-light-r9-force-pr1600-price-2026-08-29",
+  "retry_reason": "The indexed exact manufacturer page retained a CNY 22,900 official reference but did not expose current seller ordering. One focused marketplace search tests for a current exact complete-bike offer.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-77-hi-light-r9-price",
+    "extends_attempt_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-77-scope.json",
+    "reason": "One bounded current mainland seller-item search tests the exact R9 Force PR1600 complete bike after the earlier campaign retained official retail only.",
+    "allowed_channels": ["web"],
+    "max_new_attempts": 1
+  },
+  "required_channels": ["public-post", "web"],
+  "channels": {
+    "public-post": { "status": "carried-forward", "from_attempt_id": "candidate-hi-light-r9-force-pr1600-price-2026-08-29", "attempts": [] },
+    "web": {
+      "status": "blocked",
+      "blocker": "No current mainland seller item for the exact R9 Force PR1600 complete-bike package surfaced.",
+      "attempts": [{
+        "attempt": 1,
+        "query": "Hi-Light R9 FORCE PR1600 钛合金整车 价格 黑色 中国",
+        "route": "One focused public mainland seller-item search for the exact Hi-Light R9 Force PR1600 complete bike",
+        "outcome": "no-result",
+        "accessed_at": "2026-09-24",
+        "note": "Search surfaced the exact official R9 page/profile at CNY 22,900, unrelated R9 folding bikes, and older products, but no current item for the Force PR1600 complete-bike package with a seller option amount or order context."
+      }]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "notes": "Preserve official retail CNY 22,900; leave candidate observed_price absent until a current exact mainland seller item is documented."
+}

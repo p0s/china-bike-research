@@ -23,7 +23,7 @@
     "observed_at": "2026-08-08"
   },
   "source_url": "https://cn.tibicycle.com/BICYCLES_detail_1/119.html",
-  "source_note": "The current official Chinese exact-model page lists CNY 6,500 retail, 700x45C maximum, BSA bottom bracket and six-size geometry. A separate retailer supplies size-M frame and fork weights. No meaningful stiffness result was found.",
+  "source_note": "Last successfully read exact-model manufacturer page (2026-09-01) listed CNY 6,500 retail, 700x45C maximum, BSA bottom bracket and six sizes. Direct opening returned 403 on 2026-09-23; the search-index excerpt was last crawled about three months earlier, so current stock/checkout and a fresh page confirmation remain unverified.",
   "manufacturing": "titanium gravel frame",
   "facts": {
     "frame": "Titanium gravel frame with carbon fork",
@@ -37,7 +37,7 @@
     "axles": "12×100 mm front and 12×142 mm rear",
     "stiffness_evidence": "No exact-model instrumented stiffness result or sufficiently specific independent ride assessment was found after two full 50-area sweeps; titanium tube-shape and strength language was not treated as stiffness evidence."
   },
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-23",
   "observed_price": {
     "amount_cny": 6500,
     "currency": "CNY",
@@ -45,5 +45,5 @@
     "price_basis": "Current exact-model manufacturer retail price for the G7.2 frameset; package, stock, shipping and checkout total require confirmation.",
     "observation_count": 1
   },
-  "price_status": "current exact manufacturer retail price"
+  "price_status": "Last-readable dated official retail reference; current stock and checkout unverified"
 }

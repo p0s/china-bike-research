@@ -38,11 +38,93 @@ test('gap report exposes the latest atomic research status without hiding the ga
   assert.equal(report.research_status_counts['temporarily-exhausted'], 1);
 });
 
+test('candidate price gaps expose a scoped mainland observed-price research retry', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.id === 'missing-china-price-merida-scultura');
+  delete candidate.observed_price;
+  data.researchAttempts = [
+    {
+      id: 'candidate-missing-china-price-merida-scultura-price-2026-08-17',
+      target: { record_type: 'candidate', record_id: candidate.id },
+      field: 'price',
+      priority: 'high',
+      searched_at: '2026-08-30',
+      required_channels: ['web'],
+      channels: { web: { status: 'blocked', attempts: [] } },
+      status: 'blocked',
+      notes: 'Fixture for an earlier price sweep.'
+    },
+    {
+      id: 'candidate-missing-china-price-merida-scultura-mainland-observed-price-2026-09-24',
+      target: { record_type: 'candidate', record_id: candidate.id },
+      field: 'mainland-observed-price',
+      priority: 'medium',
+      searched_at: '2026-09-24',
+      required_channels: ['web'],
+      channels: { web: { status: 'blocked', attempts: [] } },
+      status: 'blocked',
+      notes: 'Fixture for newer scoped observed-price research state.'
+    }
+  ];
+  const report = buildGapReport(data, '2026-09-24');
+  const record = report.records.find((item) => item.id === candidate.id);
+  const gap = record.gaps.find((item) => item.code === 'price-not-observed');
+  assert.equal(gap.research.attempt_id, 'candidate-missing-china-price-merida-scultura-mainland-observed-price-2026-09-24');
+  assert.equal(gap.research.status, 'blocked');
+});
+
+test('published price-range gaps expose the latest scoped mainland observed-price research', () => {
+  const data = structuredClone(loadDataset());
+  const variant = data.variants.find((item) => item.id === 'carbonda-cfr696-frameset');
+  data.researchAttempts = [
+    {
+      id: 'variant-carbonda-cfr696-frameset-price-2026-09-01',
+      target: { record_type: 'variant', record_id: variant.id },
+      field: 'price',
+      priority: 'high',
+      searched_at: '2026-09-01',
+      required_channels: ['web'],
+      channels: { web: { status: 'blocked', attempts: [] } },
+      status: 'blocked',
+      notes: 'Fixture for an earlier exact-model price sweep.'
+    },
+    {
+      id: 'variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24',
+      target: { record_type: 'variant', record_id: variant.id },
+      field: 'mainland-observed-price',
+      priority: 'medium',
+      searched_at: '2026-09-24',
+      required_channels: ['web'],
+      channels: { web: { status: 'blocked', attempts: [] } },
+      status: 'blocked',
+      notes: 'Fixture for newer scoped observed-price research.'
+    }
+  ];
+  const report = buildGapReport(data, '2026-09-24');
+  const record = report.records.find((item) => item.id === variant.id);
+  const gap = record.gaps.find((item) => item.code === 'price-reference-range');
+  assert.equal(gap.research.attempt_id, 'variant-carbonda-cfr696-frameset-mainland-observed-price-2026-09-24');
+  assert.equal(gap.research.status, 'blocked');
+});
+
 test('gap report recognizes an exact frame-weight claim stored on a complete-bike variant', () => {
   const report = buildGapReport(loadDataset(), '2026-08-18');
   const record = report.records.find((item) => item.id === 'elves-falath-r7170');
   assert.ok(record);
   assert.doesNotMatch(JSON.stringify(record.gaps), /frame-weight-missing/);
+});
+
+test('bottom-bracket evidence can close an exact variant gap without populating a shared platform field', () => {
+  const data = structuredClone(loadDataset());
+  const s4 = data.variants.find((item) => item.id === 'sava-gelaro-s4-grx400');
+  const s4Platform = data.platforms.find((item) => item.id === 'sava-gelaro');
+  s4.bottom_bracket = 'BBT47';
+  s4Platform.frame.bottom_bracket = undefined;
+  const report = buildGapReport(data, '2026-09-24');
+  const s4Record = report.records.find((item) => item.id === s4.id);
+  const s8Record = report.records.find((item) => item.id === 'sava-gelaro-s8');
+  assert.ok(!s4Record.gaps.some((gap) => gap.code === 'bottom-bracket-missing'));
+  assert.ok(s8Record.gaps.some((gap) => gap.code === 'bottom-bracket-missing'));
 });
 
 test('gap report always exposes decision-critical trim gaps for complete-bike candidates', () => {
@@ -80,6 +162,18 @@ test('gap report distinguishes a fitted tire from verified maximum clearance', (
   };
   const record = buildGapReport(data, '2026-08-27').records.find((item) => item.platform_id === platform.id);
   assert.ok(record.gaps.some((gap) => gap.code === 'clearance-unverified'));
+});
+
+test('gap report keeps a candidate fitted tire observation separate from maximum clearance', () => {
+  const data = structuredClone(loadDataset());
+  const candidate = data.candidates.find((item) => item.id === 'triaero-a9');
+  candidate.facts.tire_clearance_mm = 28;
+  candidate.facts.tire_clearance_basis = 'Fitted tire observation: exact routes state 700x28C but no manufacturer maximum.';
+  const record = buildGapReport(data, '2026-09-24').records.find((item) => item.id === 'triaero-a9');
+  assert.ok(record.gaps.some((gap) => gap.code === 'clearance-unverified'));
+  const rs9 = data.candidates.find((item) => item.id === 'xlab-rs9');
+  const rs9Record = buildGapReport(data, '2026-09-24').records.find((item) => item.id === rs9.id);
+  assert.ok(rs9Record.gaps.some((gap) => gap.code === 'clearance-unverified'));
 });
 
 test('gap report preserves weight and selected-price basis as separate research targets', () => {

@@ -1,0 +1,52 @@
+{
+  "id": "candidate-west-biking-sl-one-drivetrain-b144-live-recheck-2026-09-25",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "west-biking-sl-one"
+  },
+  "field": "drivetrain",
+  "priority": "high",
+  "searched_at": "2026-09-25",
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_after": null,
+  "retry_of": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+  "retry_reason": "B144 authorized one distinct exact-model web recheck after predecessor queries were audited; the selected card field remains unresolved.",
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "No exact seller SKU/build bridge identifies the drivetrain on the retained CNY 16,910 listing.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "WEST BIKING SL-ONE 16910 exact build drivetrain R7120 R7170",
+          "route": "One distinct B144 exact-model web search; no exact seller SKU page opened",
+          "outcome": "no-result",
+          "accessed_at": "2026-09-25",
+          "note": "Predecessor history contained 100 distinct queries. Existing JD/Taobao records show separate SL-ONE drivetrain listings but do not map either option to the retained card; no new exact seller SKU source surfaced."
+        }
+      ]
+    }
+  },
+  "notes": "Predecessor history contained 100 distinct queries. Existing JD/Taobao records show separate SL-ONE drivetrain listings but do not map either option to the retained card; no new exact seller SKU source surfaced.",
+  "campaign_extension": {
+    "id": "b144-west-biking-sl-one-drivetrain",
+    "extends_attempt_id": "candidate-west-biking-sl-one-drivetrain-2026-08-30",
+    "authorized_at": "2026-09-25",
+    "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-144-scope.json",
+    "reason": "B144 authorizes one bounded web follow-up after prior exact-model query and URL histories were reviewed.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  }
+}

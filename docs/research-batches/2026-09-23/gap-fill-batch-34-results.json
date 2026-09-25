@@ -1,0 +1,394 @@
+{
+  "batch_id": "gap-fill-batch-34-2026-09-23",
+  "completed_at": "2026-09-23",
+  "scope_file": "docs/research-batches/2026-09-23/gap-fill-batch-34-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 21,
+    "root_fields": 0,
+    "luna_evidence_fields": 21
+  },
+  "new_source_records": [
+    "airwolf-yfr068-official-recheck-2026-09-23",
+    "bianchi-oltre-race-hungary-recheck-2026-09-23",
+    "bianchi-oltre-race-manufacturer-recheck-2026-09-23",
+    "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+    "bigrock-japan-products-recheck-2026-09-23",
+    "bxt-055-official-recheck-2026-09-23",
+    "camp-gx600-official-recheck-2026-09-23",
+    "camp-gx700-cn-official-recheck-2026-09-23",
+    "carbonda-cfr696-official-recheck-2026-09-23",
+    "carbonda-cfr707-official-recheck-2026-09-23"
+  ],
+  "new_price_records": [],
+  "candidate_price_observations_added": [],
+  "new_images_added": [],
+  "image_records_updated": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "airwolf-yfr068",
+    "bianchi-oltre-race",
+    "bigrock-sohtea",
+    "bxt-055-frameset",
+    "camp-gx600-pes",
+    "camp-gx700",
+    "camp-gx700-grx820",
+    "carbonda-cfr696",
+    "carbonda-cfr707"
+  ],
+  "results": [
+    {
+      "attempt_record_id": "candidate-airwolf-yf-r003-package-2026-09-22",
+      "record_id": "airwolf-yf-r003",
+      "field": "package",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yf-r003-owner-recheck-2026-09-22",
+        "airwolf-yf-r003-access-check-2026-09-22"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Owner post identifies a historical YF-R003 package of frame, fork, headset, HB009 integrated cockpit and seatpost, with owner-described T1000. It does not establish current seller contents or revision. Reopen on an accessible current exact product page and selected-option contents."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-identity-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "exact-model-identity",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated storefront identifies YFR068/A5; current exact page returned 403. Legal manufacturer and mainland support entity remain unresolved. Reopen with accessible current product and legal-entity information."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-frame-material-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "frame-material",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated storefront claims Toray T1100 UD frame, carbon fork and seatpost; layup/molding details are absent and current page returned 403. Reopen with an accessible current exact-model specification."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-frame-weight-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "frame-weight",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated storefront claims 1,061 g at size 54, with finish/hardware/tolerance basis unstated; current page returned 403. Reopen with current exact-source mass and its basis."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-geometry-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "geometry",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "airwolf-yfr068-geometry-bikeinsights-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Secondary size-54 chart gives stack 555 mm, reach 388 mm, head angle 72°, chainstay 420 mm and wheelbase 1,010 mm. Official page returned 403; chart may be an older generation and is not promoted as official. Reopen with official geometry tied to the current generation."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-purchase-route-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "purchase-route",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated exact storefront had options, in-stock language and Add to Cart; current page returned 403 and mainland fulfillment/checkout was not established. Reopen with accessible exact listing and destination-specific checkout."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-tire-clearance-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "tire-clearance",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated storefront maximum is 700×40C; larger owner reports were not adopted. Current page returned 403. Reopen with current exact-model limit or measured-fit evidence."
+    },
+    {
+      "attempt_record_id": "candidate-airwolf-yfr068-warranty-support-2026-08-27",
+      "record_id": "airwolf-yfr068",
+      "field": "warranty-support",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "airwolf-yfr068-official-store-2026-08-27",
+        "airwolf-yfr068-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated page states two years but does not identify the warrantor or mainland claims process; current page returned 403. Do not represent as verified mainland coverage. Reopen on current written terms naming the warrantor and local process."
+    },
+    {
+      "attempt_record_id": "variant-bianchi-oltre-race-cockpit-2026-08-17",
+      "record_id": "bianchi-oltre-race",
+      "field": "cockpit",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "bianchi-oltre-race-dealer-2026-08-17",
+        "bianchi-oltre-race-hungary-recheck-2026-09-23",
+        "bianchi-oltre-race-manufacturer-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated 2025 YTB8D listing specifies a non-integrated Velomann alloy Aero Compact bar/stem. Current Hungary page identifies 2026 YTB8DF and is not proof of this target trim; manufacturer page returned invalid-URL. Reopen with exact YTB8D listing/manual."
+    },
+    {
+      "attempt_record_id": "variant-bianchi-oltre-race-tires-2026-08-17",
+      "record_id": "bianchi-oltre-race",
+      "field": "tires",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "bianchi-oltre-race-dealer-2026-08-17",
+        "bianchi-oltre-race-hungary-recheck-2026-09-23",
+        "bianchi-oltre-race-manufacturer-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated 2025 YTB8D listing specifies Vittoria Rubino IV G2.0 700×28C, 60 TPI. Current YTB8DF also lists 700×28C but does not verify the older code. Reopen with current exact YTB8D BOM documentation."
+    },
+    {
+      "attempt_record_id": "variant-bianchi-oltre-race-wheels-2026-08-17",
+      "record_id": "bianchi-oltre-race",
+      "field": "wheels",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "bianchi-oltre-race-dealer-2026-08-17",
+        "bianchi-oltre-race-hungary-recheck-2026-09-23",
+        "bianchi-oltre-race-manufacturer-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated 2025 YTB8D listing specifies Fulcrum Racing 818, aluminum C19 2WF-R, 34 mm profile, tubeless-ready. The current YTB8DF page does not verify that older trim; regional wheel listings conflict. Reopen with exact YTB8D BOM documentation."
+    },
+    {
+      "attempt_record_id": "candidate-bigrock-sohtea-identity-2026-08-17",
+      "record_id": "bigrock-sohtea",
+      "field": "identity",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "round3-bigrock-sohtea-the-chinese-aethos-half-a-year-later-22e55cb19e",
+        "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+        "bigrock-japan-products-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current retailer lists exact Sohtea frameset SKU BIGROCK-01-SOHTEA and an owner video identifies the model; current Japan manufacturer list does not show Sohtea but does not prove discontinuation. Reopen on manufacturer confirmation or a current exact listing."
+    },
+    {
+      "attempt_record_id": "candidate-bigrock-sohtea-image-2026-08-17",
+      "record_id": "bigrock-sohtea",
+      "field": "image",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "bigrock-sohtea-panda-podium-recheck-2026-09-23",
+        "bigrock-japan-products-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Retailer gallery is mapped to the exact Sohtea listing, but reusable rights are not documented and no manufacturer Sohtea asset was found in the checked list. Keep image remote/unrehosted. Reopen with documented rights or an authorized manufacturer asset."
+    },
+    {
+      "attempt_record_id": "variant-bxt-055-frameset-purchase-route-2026-08-27",
+      "record_id": "bxt-055-frameset",
+      "field": "purchase-route",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "bxt-055-official-recheck-2026-09-23",
+        "bxt-055-taobao-2026-08-27"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current global model-055 page lists USD 599, options/Add to Cart, default 48 cm/no handlebar, in-stock/ready-to-ship language and 15–30-day production terms; no China-specific rate/checkout. Taobao exact 54 cm black item was CNY 4,999 on 2026-08-27; current Taobao checkout was not re-read. Reopen on current selected mainland option and checkout/stock readback."
+    },
+    {
+      "attempt_record_id": "variant-camp-gx600-pes-purchase-route-2026-08-17",
+      "record_id": "camp-gx600-pes",
+      "field": "purchase-route",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "camp-gx600-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current mainland CAMP page identifies GX600 PES 1×12 and CNY 5,688, Add to Cart and JD Buy Now; size selection and stock-dependent cancellation apply. Reopen on selected SKU and checkout/stock status."
+    },
+    {
+      "attempt_record_id": "platform-camp-gx700-frame-material-2026-08-28",
+      "record_id": "camp-gx700",
+      "field": "frame-material",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "camp-gx700-official-2026-08-28",
+        "camp-gx700-cn-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current manufacturer page specifies T800 carbon frame/fork and T700+T800 integrated bar/seatpost; layup details are unpublished. Reopen if CAMP changes generation/material or publishes layup detail."
+    },
+    {
+      "attempt_record_id": "variant-camp-gx700-grx820-complete-weight-2026-08-17",
+      "record_id": "camp-gx700-grx820",
+      "field": "complete-weight",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "camp-gx700-official-2026-08-28",
+        "camp-gx700-cn-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Page claims about 10.2 kg for a small complete bike excluding pedals/small accessories, but its 26–36T crank detail conflicts with the target 1×12 variant. Preserve the approximate claim without treating the build mapping as exact. Reopen on evidence tying weight to the GRX 1×12 SKU."
+    },
+    {
+      "attempt_record_id": "variant-camp-gx700-grx820-purchase-route-2026-08-17",
+      "record_id": "camp-gx700-grx820",
+      "field": "purchase-route",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "camp-gx700-cn-official-recheck-2026-09-23",
+        "camp-gx700-tmall-2026-08-28"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Current mainland page shows CNY 9,999, Add to Cart and JD Buy Now with size/color selection and stock-dependent cancellation; prior Tmall listing also showed CNY 9,999. The current drivetrain detail conflicts with target 1×12, and checkout was not completed. Reopen with exact selected-SKU and checkout readback."
+    },
+    {
+      "attempt_record_id": "platform-carbonda-cfr696-frame-material-2026-08-28",
+      "record_id": "carbonda-cfr696",
+      "field": "frame-material",
+      "status": "supported within exact-model/market caveat",
+      "source_ids": [
+        "carbonda-cfr696-official",
+        "carbonda-cfr696-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated manufacturer claim specifies full Toray carbon, UD weave and EPS molding; no grade/layup or test results. Current page returned 403. Reopen with accessible current exact-model material and test documentation."
+    },
+    {
+      "attempt_record_id": "platform-carbonda-cfr696-frame-stiffness-2026-08-28",
+      "record_id": "carbonda-cfr696",
+      "field": "frame-stiffness",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "carbonda-cfr696-owner-forum-2026-08-28",
+        "carbonda-cfr696-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Owners report 10,000+ miles, stable descending/braking and no perceived flex; qualitative community ride evidence with generation details absent. No numeric stiffness result. Reopen with exact-generation measurements or a documented controlled comparison."
+    },
+    {
+      "attempt_record_id": "candidate-carbonda-cfr707-purchase-route-2026-08-17",
+      "record_id": "carbonda-cfr707",
+      "field": "purchase-route",
+      "status": "dated/conditional evidence retained; current exact scope unresolved or qualified",
+      "source_ids": [
+        "carbonda-cfr707-official-2026-08-17",
+        "carbonda-cfr707-official-recheck-2026-09-23"
+      ],
+      "accessed_at": "2026-09-23",
+      "note": "Dated exact manufacturer page provided a Get-a-quote route, with no fixed price/stock/completed checkout; current page returned HTTP 520. Reopen when exact page or attributable current quote is accessible."
+    }
+  ],
+  "updated_research_attempts": [
+    "candidate-airwolf-yf-r003-package-2026-09-22",
+    "candidate-airwolf-yfr068-identity-2026-08-27",
+    "candidate-airwolf-yfr068-frame-material-2026-08-27",
+    "candidate-airwolf-yfr068-frame-weight-2026-08-27",
+    "candidate-airwolf-yfr068-geometry-2026-08-27",
+    "candidate-airwolf-yfr068-purchase-route-2026-08-27",
+    "candidate-airwolf-yfr068-tire-clearance-2026-08-27",
+    "candidate-airwolf-yfr068-warranty-support-2026-08-27",
+    "variant-bianchi-oltre-race-cockpit-2026-08-17",
+    "variant-bianchi-oltre-race-tires-2026-08-17",
+    "variant-bianchi-oltre-race-wheels-2026-08-17",
+    "candidate-bigrock-sohtea-identity-2026-08-17",
+    "candidate-bigrock-sohtea-image-2026-08-17",
+    "variant-bxt-055-frameset-purchase-route-2026-08-27",
+    "variant-camp-gx600-pes-purchase-route-2026-08-17",
+    "platform-camp-gx700-frame-material-2026-08-28",
+    "variant-camp-gx700-grx820-complete-weight-2026-08-17",
+    "variant-camp-gx700-grx820-purchase-route-2026-08-17",
+    "platform-carbonda-cfr696-frame-material-2026-08-28",
+    "platform-carbonda-cfr696-frame-stiffness-2026-08-28",
+    "candidate-carbonda-cfr707-purchase-route-2026-08-17"
+  ],
+  "notes": [
+    "Airwolf and Carbonda current-page failures preserve older accepted claims as dated, not current-confirmed.",
+    "Bianchi current 2026 YTB8DF specifications were not transferred to the YTB8D target; its dated component evidence remains separate.",
+    "BIGROCK gallery media remains remote because reusable rights were not documented.",
+    "Camp GX700 current weight/route claims remain qualified because the current crank detail conflicts with the target 1×12 variant."
+  ],
+  "validation_plan": [
+    "npm run --silent research:check passed (1,461 atomic research fields)",
+    "npm run --silent coverage:accept passed (monotonic evidence/source relationships accepted)",
+    "npm run --silent coverage:check passed (212 images, 73 price observations, 1,177 sources, 236 candidates)",
+    "Focused candidate discovery assertion passed (1/1)",
+    "developer-storage-cache run -- npm run check passed: privacy, validation, research and coverage checks; 307/307 tests; 584-page build; SEO 458 indexable / 126 noindex",
+    "npm run image:report not run because no image records changed"
+  ],
+  "full_gate": {
+    "status": "passed",
+    "tests": "307/307",
+    "build_pages": 584,
+    "seo": {
+      "indexable": 458,
+      "noindex": 126,
+      "status": "passed"
+    }
+  },
+  "validated_counts": {
+    "brands": 41,
+    "platforms": 38,
+    "variants": 41,
+    "dated_price_records": 73,
+    "sources": 1177,
+    "primary_image_records": 212,
+    "candidates": 236,
+    "research_records": 1465,
+    "atomic_research_fields": 1461,
+    "visible_candidate_rows": 215
+  },
+  "fresh_gap_inventory_after_batch": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 103,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 26,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 335,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    }
+  },
+  "fresh_queue_after_batch": {
+    "as_of": "2026-09-23",
+    "ready": 0,
+    "evidence-found": 341,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  }
+}

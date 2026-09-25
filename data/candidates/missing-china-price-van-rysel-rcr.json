@@ -8,14 +8,14 @@
   "missing": [
     "Exact mainland stock and checkout result for the reported RCR-F Pro 105 Di2 offer",
     "Exact RCR-F eligibility under the China warranty policy",
-    "Numerical geometry, BB and tire-clearance specification",
+    "Mainland-specific geometry, BB and tire-clearance specification",
     "Resolve the product-page comparison conflict over tires/powermeter"
   ],
   "status": "mainland-price-reported",
   "research_priority": "medium",
   "price_status": "secondary report of an official mainland markdown; current stock and checkout unverified",
   "required_before_dashboard": "Current official mainland stock and checkout for the exact 105 Di2 trim; China warranty/service policy; Numerical geometry, BB and tire-clearance specification; Resolve the product-page comparison conflict over tires/powermeter",
-  "last_reviewed": "2026-09-01",
+  "last_reviewed": "2026-09-23",
   "source_ids": [
     "van-rysel-rcr-f-pro-official-global-2026-08-17",
     "van-rysel-rcr-f-pro-china-trade-report-2026-08-17",
@@ -23,10 +23,14 @@
     "decathlon-china-bike-warranty-2026-08-17",
     "van-rysel-rcr-f-pro-smzdm-price-2026-08-28",
     "van-rysel-rcr-f-pro-decathlon-2026-09-01",
-    "van-rysel-rcr-f-family-official-2026-09-01"
+    "van-rysel-rcr-f-family-official-2026-09-01",
+    "van-rysel-rcr-f-pro-105-di2-uk-manufacturer-recheck-2026-09-23",
+    "decathlon-uk-rcr-f-pro-105di2-recheck-2026-09-23",
+    "decathlon-china-rcrf-route-recheck-2026-09-23",
+    "decathlon-china-bicycle-warranty-pdf-recheck-2026-09-23"
   ],
   "support_note": "An official Decathlon China product route and adult-bicycle warranty document are available; exact RCR-F stock, checkout and coverage remain unresolved.",
-  "source_note": "Current exact manufacturer evidence supports 8.0 kg, a 32 mm maximum and a 7% head-tube-stiffness increase versus RCR Pro. The separate Decathlon 8.2 kg field remains a weight conflict and is not substituted.",
+  "source_note": "Regional exact-product checks confirm the 8.0/8.2 kg conflict, 7% relative stiffness claim and 32 mm maximum, but do not resolve mainland purchase availability or exact China warranty eligibility.",
   "source_url": "https://www.vanrysel.com/en-GB/product/road-bike-rcr-f-pro-shimano-105-di2-12v-grey_358179--c180c425m8913505",
   "observed_price": {
     "amount_cny": 19999,
@@ -46,7 +50,10 @@
     "tires": "Continental GP5000 S TLR",
     "tire_clearance_mm": 32,
     "tire_clearance_basis": "Exact Decathlon product specification; compatible maximum, not fitted nominal width",
-    "complete_weight_basis": "Current exact Van Rysel manufacturer claim; size, pedals, accessories and weighing protocol unpublished; a separate Decathlon regional catalog says 8.2 kg",
-    "stiffness_evidence": "Manufacturer reports the RCR-F head tube is 7% stiffer than RCR Pro to improve sprint performance; relative manufacturer claim without a public absolute protocol"
+    "complete_weight_basis": "Van Rysel exact UK manufacturer page: 8.0 kg, size/protocol unstated; separate Decathlon regional catalog says 8.2 kg for size M with tubeless assembly. Same grey 105 Di2 product identity; unresolved conflict.",
+    "stiffness_evidence": "Manufacturer reports the RCR-F head tube is 7% stiffer than RCR Pro to improve sprint performance; relative manufacturer claim without a public absolute protocol",
+    "complete_weight_alternative_g": 8200,
+    "complete_weight_alternative_basis": "Decathlon UK exact grey RCR-F Pro 105 Di2 listing: size M with tubeless assembly; conflicts with the Van Rysel manufacturer page’s unsized 8.0 kg claim.",
+    "complete_weight_status": "Conflicting exact UK product-page claims: 8.0 kg with no size/protocol vs 8.2 kg in size M with tubeless assembly; do not normalize."
   }
 }

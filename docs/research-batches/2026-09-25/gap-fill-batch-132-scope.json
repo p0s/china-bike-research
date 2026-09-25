@@ -1,0 +1,231 @@
+{
+  "batch": 132,
+  "date": "2026-09-25",
+  "inventory": {
+    "data_gaps_as_of": "2026-09-24",
+    "captured_at": "2026-09-25",
+    "catalog_gap_entries": 706,
+    "catalog_records": 263,
+    "research_queue": {
+      "ready": 0,
+      "evidence-found": 0,
+      "deferred": 43,
+      "blocked": 551,
+      "conflicted": 31
+    },
+    "selection_note": "Select the ten highest-scored remaining conflicted attempts after B131 disposition; they span the exact models and fields below."
+  },
+  "scope": {
+    "exact_target_models": [
+      {
+        "id": "twitter-carbon-road-gravel-unknown",
+        "name": "TWITTER 骓特 Gravel V3 RS 24-speed alloy-wheel listing"
+      },
+      {
+        "id": "winspace-m6",
+        "name": "WINSPACE 银贝斯 M6"
+      },
+      {
+        "id": "winspace-t1600",
+        "name": "WINSPACE 银贝斯 T1600"
+      },
+      {
+        "id": "icanian-sn04",
+        "name": "ICAN / ICANIAN SN04 full-suspension fat-bike frameset"
+      },
+      {
+        "id": "bianchi-sprint-icr",
+        "name": "Bianchi Sprint ICR 105 Di2 (YTBR6)"
+      },
+      {
+        "id": "elves-falath-r7170",
+        "name": "Falath Pro Disc R7170 build"
+      },
+      {
+        "id": "icanian-p9",
+        "name": "ICANIAN 冠捷 P9 enduro frameset"
+      }
+    ],
+    "exact_record_count": 7,
+    "selected_fields": [
+      "candidate:twitter-carbon-road-gravel-unknown:clearance-unverified",
+      "candidate:winspace-m6:complete-weight-missing",
+      "candidate:winspace-t1600:complete-weight-missing",
+      "candidate:icanian-sn04:frame-weight-missing",
+      "candidate:winspace-m6:drivetrain-missing",
+      "candidate:winspace-t1600:drivetrain-missing",
+      "candidate:bianchi-sprint-icr:complete-weight-missing",
+      "candidate:icanian-sn04:frame-material-detail-missing",
+      "published-variant:elves-falath-r7170:bom-incomplete",
+      "candidate:icanian-p9:frame-weight-missing"
+    ],
+    "attempt_ids": [
+      "candidate-twitter-carbon-road-gravel-unknown-tire-clearance-2026-08-30",
+      "candidate-winspace-m6-complete-weight-2026-08-30",
+      "candidate-winspace-t1600-complete-weight-2026-08-30",
+      "candidate-icanian-sn04-frame-weight-2026-09-01",
+      "candidate-winspace-m6-drivetrain-2026-08-30",
+      "candidate-winspace-t1600-drivetrain-2026-08-30",
+      "candidate-bianchi-sprint-icr-complete-weight-2026-09-01",
+      "candidate-icanian-sn04-frame-material-2026-09-01",
+      "variant-elves-falath-r7170-bom-2026-08-17",
+      "candidate-icanian-p9-frame-weight-2026-09-01"
+    ],
+    "accepted_source_ids_by_attempt": {
+      "candidate-twitter-carbon-road-gravel-unknown-tire-clearance-2026-08-30": [
+        "twitter-gravel-v3-2024-manual-mirror-2026-08-27",
+        "twitter-v3-factory-store-2026-08-25",
+        "twitter-v3-25yr-manufacturer-2026-09-22",
+        "twitter-v3-25yr-store-conflict-2026-09-22"
+      ],
+      "candidate-winspace-m6-complete-weight-2026-08-30": [
+        "winspace-m6-105-mechanical-2026-08-30",
+        "winspace-m6-105-di2-2026-08-30",
+        "winspace-m6-ultegra-di2-2026-08-30"
+      ],
+      "candidate-winspace-t1600-complete-weight-2026-08-30": [
+        "winspace-t1600-105-di2-2026-08-30",
+        "winspace-t1600-ultegra-di2-2026-08-30",
+        "winspace-t1600-dura-ace-di2-2026-08-30"
+      ],
+      "candidate-icanian-sn04-frame-weight-2026-09-01": [
+        "ican-sn04-official-2026-08-08",
+        "ican-sn04-corporate-product-2026-09-01"
+      ],
+      "candidate-winspace-m6-drivetrain-2026-08-30": [
+        "winspace-m6-105-mechanical-2026-08-30",
+        "winspace-m6-105-di2-2026-08-30",
+        "winspace-m6-ultegra-di2-2026-08-30",
+        "winspace-m6-mainland-options-2026-08-30"
+      ],
+      "candidate-winspace-t1600-drivetrain-2026-08-30": [
+        "winspace-t1600-105-di2-2026-08-30",
+        "winspace-t1600-ultegra-di2-2026-08-30",
+        "winspace-t1600-dura-ace-di2-2026-08-30",
+        "winspace-t1600-mainland-options-2026-08-30"
+      ],
+      "candidate-bianchi-sprint-icr-complete-weight-2026-09-01": [
+        "bianchi-sprint-icr-probike-weight-2026-09-01",
+        "bianchi-sprint-icr-allegro-weight-2026-09-01"
+      ],
+      "candidate-icanian-sn04-frame-material-2026-09-01": [
+        "ican-sn04-official-2026-08-08",
+        "ican-sn04-corporate-product-2026-09-01"
+      ],
+      "variant-elves-falath-r7170-bom-2026-08-17": [
+        "elves-falath-pro-105-sa-2026-08-17",
+        "elves-falath-pro-official-2026-08-17",
+        "elves-falath-pro-complete-au-2026-08-17"
+      ],
+      "candidate-icanian-p9-frame-weight-2026-09-01": [
+        "icanian-p9-official-2026-08-08",
+        "icanian-p9-complete-bike-current-2026-09-01"
+      ]
+    },
+    "selected_attempts": [
+      {
+        "record_type": "candidate",
+        "record_id": "twitter-carbon-road-gravel-unknown",
+        "name": "TWITTER 骓特 Gravel V3 RS 24-speed alloy-wheel listing",
+        "gap": "clearance-unverified",
+        "attempt_id": "candidate-twitter-carbon-road-gravel-unknown-tire-clearance-2026-08-30",
+        "score": 87
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "winspace-m6",
+        "name": "WINSPACE 银贝斯 M6",
+        "gap": "complete-weight-missing",
+        "attempt_id": "candidate-winspace-m6-complete-weight-2026-08-30",
+        "score": 83
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "winspace-t1600",
+        "name": "WINSPACE 银贝斯 T1600",
+        "gap": "complete-weight-missing",
+        "attempt_id": "candidate-winspace-t1600-complete-weight-2026-08-30",
+        "score": 83
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "icanian-sn04",
+        "name": "ICAN / ICANIAN SN04 full-suspension fat-bike frameset",
+        "gap": "frame-weight-missing",
+        "attempt_id": "candidate-icanian-sn04-frame-weight-2026-09-01",
+        "score": 81
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "winspace-m6",
+        "name": "WINSPACE 银贝斯 M6",
+        "gap": "drivetrain-missing",
+        "attempt_id": "candidate-winspace-m6-drivetrain-2026-08-30",
+        "score": 81
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "winspace-t1600",
+        "name": "WINSPACE 银贝斯 T1600",
+        "gap": "drivetrain-missing",
+        "attempt_id": "candidate-winspace-t1600-drivetrain-2026-08-30",
+        "score": 81
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "bianchi-sprint-icr",
+        "name": "Bianchi Sprint ICR 105 Di2 (YTBR6)",
+        "gap": "complete-weight-missing",
+        "attempt_id": "candidate-bianchi-sprint-icr-complete-weight-2026-09-01",
+        "score": 80
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "icanian-sn04",
+        "name": "ICAN / ICANIAN SN04 full-suspension fat-bike frameset",
+        "gap": "frame-material-detail-missing",
+        "attempt_id": "candidate-icanian-sn04-frame-material-2026-09-01",
+        "score": 79
+      },
+      {
+        "record_type": "published-variant",
+        "record_id": "elves-falath-r7170",
+        "name": "Falath Pro Disc R7170 build",
+        "gap": "bom-incomplete",
+        "attempt_id": "variant-elves-falath-r7170-bom-2026-08-17",
+        "score": 70
+      },
+      {
+        "record_type": "candidate",
+        "record_id": "icanian-p9",
+        "name": "ICANIAN 冠捷 P9 enduro frameset",
+        "gap": "frame-weight-missing",
+        "attempt_id": "candidate-icanian-p9-frame-weight-2026-09-01",
+        "score": 67
+      }
+    ],
+    "research_boundary": "One Luna Max evidence-only reviewer; reopen these exact records and accepted sources first. Work sequentially one exact model/source at a time. Return direct URL, actual access date, title, source class, exact supported claim, conflicts/caveat and a resolution recommendation per field. Do not edit repository files.",
+    "excluded": [
+      "No fields outside these ten frozen entries.",
+      "Do not transfer claims across models, generations, markets, sizes, builds or product types.",
+      "Do not convert wholesale or indexed prices into current checkout observations; no quotes, cart, purchase or seller contact.",
+      "No new XHS capture, login, CAPTCHA, challenge handling or bypass.",
+      "No images, image downloads, redistribution or external delivery.",
+      "Preserve unknowns, conflicts and source access limits; do not infer values."
+    ],
+    "not_selected_from_remaining_queue": [
+      {
+        "attempt_id": "candidate-sava-r9-complete-weight-2026-09-01",
+        "record_id": "sava-r9",
+        "gap": "complete-weight-missing",
+        "score": 67
+      },
+      {
+        "attempt_id": "candidate-seraph-tt-x68-new-udh-frame-weight-2026-09-24",
+        "record_id": "seraph-tt-x68-new-udh",
+        "gap": "frame-weight-missing",
+        "score": 67
+      }
+    ]
+  }
+}

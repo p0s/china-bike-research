@@ -1,0 +1,53 @@
+{
+  "id": "candidate-huanyu-az-one-frame-material-recheck-2026-09-24",
+  "target": {
+    "record_type": "candidate",
+    "record_id": "huanyu-az-one"
+  },
+  "field": "frame-material",
+  "priority": "high",
+  "searched_at": "2026-09-24",
+  "retry_after": null,
+  "required_channels": [
+    "public-post",
+    "web"
+  ],
+  "status": "blocked",
+  "accepted_source_ids": [],
+  "retry_of": "candidate-huanyu-az-one-frame-material-2026-08-29",
+  "retry_reason": "A fresh exact-name public web search was authorized by B63 after the 2026-09-23 JD index surfaced a separate AZone / 青龙 TT listing without an identity bridge to the AZ ONE / 青龙·赤子 candidate.",
+  "campaign_extension": {
+    "id": "gap-fill-batch-63-huanyu-az-one-frame-material",
+    "extends_attempt_id": "candidate-huanyu-az-one-frame-material-2026-08-29",
+    "authorized_at": "2026-09-24",
+    "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-63-scope.json",
+    "reason": "One fresh exact-name web query tests for a current, attributable AZ ONE / 青龙·赤子 material source without repeating the completed 50-area sweep.",
+    "allowed_channels": [
+      "web"
+    ],
+    "max_new_attempts": 1
+  },
+  "channels": {
+    "public-post": {
+      "status": "carried-forward",
+      "from_attempt_id": "candidate-huanyu-az-one-frame-material-2026-08-29",
+      "attempts": []
+    },
+    "web": {
+      "status": "blocked",
+      "blocker": "The exact-name search surfaced only the project's own derivative research profile, which repeats that frame-material evidence is unavailable; no manufacturer or seller material source was found.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "\"HUANYU AZ ONE\" \"青龙·赤子\" 车架 碳纤维 材料",
+          "route": "One fresh public exact-name web search followed by opening the exact-candidate research profile returned by search; no external product item or material source was identified.",
+          "outcome": "rejected",
+          "accessed_at": "2026-09-24",
+          "result_url": "https://china-bikes.p0s.eu/models/huanyu-az-one/",
+          "note": "The project’s own research profile identifies the exact candidate as AZ ONE / 青龙·赤子 but states that no exact current manufacturer, dealer, independent test or carbon-construction source was found. It is derived from an anonymized Taobao search-card snapshot and adds no material evidence. The profile is not an independent source and is not accepted for this field. No AZone / 青龙 TT or other HUANYU model claim is transferred."
+        }
+      ]
+    }
+  },
+  "notes": "No exact frame-material detail was accepted. Keep candidate material unknown; reopen only when an exact, attributable AZ ONE / 青龙·赤子 product source publishes a material grade or construction detail."
+}

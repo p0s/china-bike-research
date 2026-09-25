@@ -1,0 +1,144 @@
+{
+  "batch": 149,
+  "date": "2026-09-25",
+  "completed_at": "2026-09-25",
+  "scope_file": "docs/research-batches/2026-09-25/gap-fill-batch-149-scope.json",
+  "result": {
+    "catalog_gap_entries_before": 670,
+    "catalog_gap_entries_after": 670,
+    "catalog_gap_entries_reduced": 0,
+    "catalog_records": 263,
+    "exact_models_reviewed": 10,
+    "atomic_gap_entries_reviewed": 11,
+    "atomic_gap_entries_left_open": 11,
+    "weight_fields_filled": 0,
+    "maximum_clearance_fields_filled": 0,
+    "research_queries_run": 10,
+    "research_attempt_records_added": 11,
+    "campaign_extensions_added": 11,
+    "research_attempts_before": 1667,
+    "research_attempts_after": 1678,
+    "research_fields_after": 1503,
+    "research_status_counts_after": {
+      "blocked": 376,
+      "conflicted": 35,
+      "found": 10,
+      "open": 21,
+      "temporarily-exhausted": 4
+    },
+    "source_records_added": 0,
+    "source_records_after": 1421,
+    "candidate_fields_changed": 0,
+    "image_records_after": 212,
+    "new_images_added": 0,
+    "image_records_changed": 0,
+    "image_bytes_downloaded_or_rehosted": 0,
+    "external_delivery": "none"
+  },
+  "search_and_page_summary": {
+    "distinct_new_queries": 10,
+    "page_urls_opened": 3,
+    "previously_recorded_urls_opened": 0,
+    "new_page_urls_verified_absent_before_open": 3,
+    "known_source_urls_reopened": 0,
+    "page_fetches_with_content": 3,
+    "page_opens_returning_no_content_or_timeout": 0,
+    "retries_after_page_open_failure": 0,
+    "url_audit_deviations": 0,
+    "note": "The three newly opened pages supplied only contextual or fitted-tire evidence and were not added as sources for the unresolved maximum field; their exact URLs and caveats are retained in attempt records. Search snippets were not used as specifications."
+  },
+  "model_results": [
+    {
+      "model_id": "missing-china-price-giant-tcr-advanced",
+      "gaps": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "new_query": "Giant TCR Advanced 3-GC 2025 Tiagra rim brake complete bike weight maximum tire clearance",
+      "result": "The exact mainland Tiagra rim-brake 3-GC build remains without a size/equipment-qualified complete weight or manufacturer maximum; disc-generation 33 mm material was excluded.",
+      "disposition": "unresolved-exact-generation-and-build-evidence-not-found"
+    },
+    {
+      "model_id": "camp-ace-gen3-105",
+      "gap": "tire-clearance",
+      "new_query": "CAMP ACE III 105 manufacturer maximum tire clearance 30C 2026",
+      "result": "MyBike.parts ACE III Q&A conflicts between 32C support and a 30C maximum and does not state an authoritative exact-model maximum.",
+      "disposition": "unresolved-indirect-conflicting-aggregator-claim"
+    },
+    {
+      "model_id": "camp-ace-qed",
+      "gap": "tire-clearance",
+      "new_query": "CAMP ACE QED Magene electronic maximum tire clearance 2026",
+      "result": "The surfaced QED Q&A was unanswered; ACE III evidence is another build.",
+      "disposition": "unresolved-no-direct-exact-model-maximum"
+    },
+    {
+      "model_id": "trinx-tornado-900",
+      "gap": "tire-clearance",
+      "new_query": "TRINX TDO 900 maximum tire clearance manufacturer 700x28C",
+      "result": "B4Bike confirms exact TDO 900 build context and fitted 700×28C but gives no maximum.",
+      "disposition": "unresolved-fitted-width-is-not-maximum"
+    },
+    {
+      "model_id": "java-suprema-7120",
+      "gap": "tire-clearance",
+      "new_query": "JAVA 佳沃 Suprema 7120 终结者 最大轮胎宽度 28C 官方",
+      "result": "Regional and consumer results give fitted widths or conflicting unsupported maxima without a direct exact-mainland-build maximum.",
+      "disposition": "unresolved-trim-and-maximum-unverified"
+    },
+    {
+      "model_id": "java-vega-tt-24s",
+      "gap": "tire-clearance",
+      "new_query": "JAVA Vega TT 24S ER9 最大 轮胎 clearance max tire size",
+      "result": "The 28 mm geometry-row result and regional builds do not state maximum or map to the mainland trim.",
+      "disposition": "unresolved-mainland-trim-and-maximum-unverified"
+    },
+    {
+      "model_id": "gito-gtv5-plus",
+      "gap": "tire-clearance",
+      "new_query": "GITO G530 maximum tire clearance official tire width",
+      "result": "No exact GITO G530 maximum source surfaced; truck-tire results are unrelated and no previously timed-out URL was retried.",
+      "disposition": "unresolved-no-exact-model-source"
+    },
+    {
+      "model_id": "cyctrac-r18",
+      "gap": "tire-clearance",
+      "new_query": "TWITTER R18 Racing ED R7170 maximum tire clearance 28C",
+      "result": "Twitter Bikes USA identifies R18 and fitted 700×28C on a WheelTop GEX regional build, but no maximum; its 7.8 kg is not the retained R7170 build.",
+      "disposition": "unresolved-no-maximum-and-regional-build-mismatch"
+    },
+    {
+      "model_id": "xds-gt350",
+      "gap": "tire-clearance",
+      "new_query": "XDS 喜德盛 GT350 maximum tire clearance 700x40C exact trim",
+      "result": "Previously recorded Hong Kong GT350 trim supports fitted 700×40C only; no exact-trim maximum and mainland generation remains ambiguous.",
+      "disposition": "unresolved-exact-trim-and-maximum-unverified"
+    },
+    {
+      "model_id": "xds-gt600",
+      "gap": "tire-clearance",
+      "new_query": "XDS 喜德盛 GT600 carbon gravel maximum tire clearance exact generation official",
+      "result": "X-LAB GT8’s 55 mm figure is another model; the archived GT600’s fitted 700×40C does not establish maximum.",
+      "disposition": "unresolved-exact-generation-maximum-not-found"
+    }
+  ],
+  "validation": {
+    "research_validation": "passed: 1503 atomic fields; 15450 public-post and 35745 web attempts",
+    "coverage_acceptance": "passed: monotonic baseline accepted for 212 images and 277 catalog targets",
+    "full_gate": {
+      "command": "npm run --silent check",
+      "outcome": "passed",
+      "privacy": "passed",
+      "data_validation": "41 brands, 38 platforms, 41 variants, 76 prices, 1421 sources, 212 image records, 236 candidates, 1678 research attempts",
+      "research_validation": "1503 atomic fields; 15450 public-post and 35745 web attempts",
+      "coverage": "passed: 212 images, 76 price observations, 1421 sources, 236 candidates",
+      "tests": "331/331 passed",
+      "build": "584 pages",
+      "seo": "458 indexable; 126 noindex"
+    },
+    "sandbox_note": "Initial normal gate stopped at the monotonic coverage guard; after the approved coverage acceptance it exposed a stale expected research-attempt count and sandbox-only loopback EPERM in seven preview tests. Updated the expected count to 1678; the exact full gate passed with narrowly scoped loopback access.",
+    "git_diff_check": "passed"
+  },
+  "image_report": "not run; no image records changed",
+  "external_delivery": "none"
+}

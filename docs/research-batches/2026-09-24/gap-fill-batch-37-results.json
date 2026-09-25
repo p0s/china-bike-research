@@ -1,0 +1,469 @@
+{
+  "batch_id": "gap-fill-batch-37-2026-09-24",
+  "completed_at": "2026-09-24",
+  "scope_file": "docs/research-batches/2026-09-24/gap-fill-batch-37-scope.json",
+  "scope_count": {
+    "exact_models": 10,
+    "atomic_fields": 20,
+    "root_fields": 0,
+    "luna_evidence_fields": 20
+  },
+  "new_source_records": [
+    "sava-a7l-r7100-official-recheck-2026-09-24",
+    "sava-gelaro-s4-official-recheck-2026-09-24",
+    "sava-gelaro-r21-pmkd-review-recheck-2026-09-24",
+    "sava-gelaro-s8-official-recheck-2026-09-24",
+    "sava-gelaro-sf6-official-recheck-2026-09-24",
+    "sava-gelaro-sf6-dailycarry-review-recheck-2026-09-24",
+    "scott-addict-rc-40-poland-recheck-2026-09-24",
+    "scott-addict-2026-manual-recheck-2026-09-24",
+    "seka-exaero-gr-official-recheck-2026-09-24",
+    "seka-exaero-road-cn-official-recheck-2026-09-24",
+    "seka-exaero-road-launch-weibo-report-2026-09-24",
+    "spcycle-g028-official-recheck-2026-09-24",
+    "specialized-crux-10r-frameset-official-recheck-2026-09-24",
+    "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24"
+  ],
+  "new_price_records": [],
+  "candidate_price_observations_added": [],
+  "new_images_added": [],
+  "image_records_updated": [],
+  "primary_image_records_unchanged": 212,
+  "updated_records": [
+    "sava-a7l-r7100",
+    "sava-gelaro",
+    "sava-gelaro-s8",
+    "sava-gelaro-sf",
+    "scott-addict-rc-40",
+    "seka-exaero-gr",
+    "seka-exaero-road",
+    "spcycle-g028",
+    "specialized-crux-10r-frameset",
+    "specialized-roubaix-sl8-sport-105"
+  ],
+  "updated_research_attempts": [
+    "platform-sava-a7l-r7100-frame-material-2026-08-28",
+    "platform-sava-gelaro-frame-material-2026-08-28",
+    "platform-sava-gelaro-frame-stiffness-2026-08-28",
+    "platform-sava-gelaro-s8-frame-material-2026-08-28",
+    "platform-sava-gelaro-sf-frame-material-2026-08-28",
+    "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
+    "variant-scott-addict-rc-40-bottom-bracket-2026-08-17",
+    "variant-scott-addict-rc-40-cockpit-2026-08-17",
+    "variant-scott-addict-rc-40-geometry-2026-08-17",
+    "variant-scott-addict-rc-40-tires-2026-08-17",
+    "variant-scott-addict-rc-40-wheels-2026-08-17",
+    "platform-seka-exaero-gr-frame-material-2026-08-28",
+    "candidate-seka-exaero-road-price-2026-08-27",
+    "candidate-seka-exaero-road-identity-2026-08-27",
+    "candidate-seka-exaero-road-frame-weight-2026-08-27",
+    "candidate-seka-exaero-road-owner-build-weight-2026-08-27",
+    "candidate-seka-exaero-road-tire-clearance-2026-08-27",
+    "platform-spcycle-g028-frame-material-2026-08-28",
+    "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28",
+    "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28"
+  ],
+  "results": [
+    {
+      "attempt_record_id": "platform-sava-a7l-r7100-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-a7l-r7100",
+      "field": "frame-material",
+      "status": "qualified",
+      "source_ids": [
+        "sava-a7l-r7100-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current exact page supports T800 for the A7L frame, but its R08-R7120-24S label conflicts with the R7100 components in the target trim; do not claim an unambiguous R7100 crosswalk.",
+      "reopen_trigger": "Reopen when SAVA publishes a clear R7100 SKU-to-frame specification."
+    },
+    {
+      "attempt_record_id": "platform-sava-gelaro-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "field": "frame-material",
+      "status": "conflicted",
+      "source_ids": [
+        "sava-gelaro-s4-official-recheck-2026-09-24",
+        "sava-gelaro-r21-pmkd-review-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current S4 manufacturer page says R21 T800; the older R21 S4/S6 review calls its frame Toray T700 UD, and the reviewed generation is unclear.",
+      "reopen_trigger": "Reopen with a generation-matched frame document or test."
+    },
+    {
+      "attempt_record_id": "platform-sava-gelaro-frame-stiffness-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-gelaro",
+      "field": "frame-stiffness",
+      "status": "qualified",
+      "source_ids": [
+        "sava-gelaro-r21-pmkd-review-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Owner reports no noticeable bottom-bracket flex while climbing and stay compliance after 1,800+ km; subjective evidence, not a measured stiffness result, and exact generation is unclear.",
+      "reopen_trigger": "Reopen with controlled, generation-specific stiffness evidence."
+    },
+    {
+      "attempt_record_id": "platform-sava-gelaro-s8-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-gelaro-s8",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "sava-gelaro-s8-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact 2026 R21-GRX820-12S manufacturer page specifies T800-carbon frame and fork; layup is unpublished.",
+      "reopen_trigger": "Reopen if SAVA changes or clarifies the exact S8 frame specification."
+    },
+    {
+      "attempt_record_id": "platform-sava-gelaro-sf-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-gelaro-sf",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "sava-gelaro-sf6-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact 2025 SF6 R21-U6000-11S manufacturer page specifies T800-carbon frame and fork; layup is unpublished and the page offers another drivetrain option.",
+      "reopen_trigger": "Reopen if SAVA changes or clarifies the SF6 generation or material."
+    },
+    {
+      "attempt_record_id": "platform-sava-gelaro-sf-frame-stiffness-2026-08-28",
+      "record_type": "platform",
+      "record_id": "sava-gelaro-sf",
+      "field": "frame-stiffness",
+      "status": "qualified",
+      "source_ids": [
+        "sava-gelaro-sf6-dailycarry-review-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact SF6 review describes vibration damping and responsiveness but publishes no stiffness/deflection measurement or test method; affiliate links are present.",
+      "reopen_trigger": "Reopen with an exact-build independent test or controlled frame measurement."
+    },
+    {
+      "attempt_record_id": "variant-scott-addict-rc-40-bottom-bracket-2026-08-17",
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "field": "bottom-bracket",
+      "status": "qualified",
+      "source_ids": [
+        "scott-addict-rc-40-poland-recheck-2026-09-24",
+        "scott-addict-2026-manual-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "2026 model 290362 lists Shimano BB-RS500-PB; the manual specifies a 41×86.5 mm BB shell. Poland-market specification; mainland BOM equivalence is unconfirmed.",
+      "reopen_trigger": "Reopen if the exact mainland SKU lists a different BB."
+    },
+    {
+      "attempt_record_id": "variant-scott-addict-rc-40-cockpit-2026-08-17",
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "field": "cockpit",
+      "status": "qualified",
+      "source_ids": [
+        "scott-addict-rc-40-poland-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact regional page lists a two-piece Syncros RR 1.5 stem and alloy Creston 2.0 Compact bar; size-specific dimensions are not given and mainland equivalence is unconfirmed.",
+      "reopen_trigger": "Reopen on a mainland SKU bill of materials or changed exact product listing."
+    },
+    {
+      "attempt_record_id": "variant-scott-addict-rc-40-geometry-2026-08-17",
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "field": "geometry",
+      "status": "qualified",
+      "source_ids": [
+        "scott-addict-2026-manual-recheck-2026-09-24",
+        "scott-addict-rc-40-poland-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "2026 Addict manual provides full geometry for sizes 47–61; that size set matches the exact RC 40 page. It is an Addict-family chart, not an RC 40-labeled chart.",
+      "reopen_trigger": "Reopen if SCOTT publishes an RC 40-specific chart or revises the 2026 manual."
+    },
+    {
+      "attempt_record_id": "variant-scott-addict-rc-40-tires-2026-08-17",
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "field": "tires",
+      "status": "qualified",
+      "source_ids": [
+        "scott-addict-rc-40-poland-recheck-2026-09-24",
+        "scott-addict-2026-manual-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact page lists stock Schwalbe ONE Race-Guard Fold 700×28C; manual gives 38 mm platform maximum. Nominal stock size is distinct from maximum clearance; mounted width varies.",
+      "reopen_trigger": "Reopen on a changed exact-trim specification or manual limit."
+    },
+    {
+      "attempt_record_id": "variant-scott-addict-rc-40-wheels-2026-08-17",
+      "record_type": "variant",
+      "record_id": "scott-addict-rc-40",
+      "field": "wheels",
+      "status": "qualified",
+      "source_ids": [
+        "scott-addict-rc-40-poland-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact page lists Syncros RP2.0 Disc, 28 spokes front and rear. Current page does not state rim material; mainland BOM equivalence is unconfirmed.",
+      "reopen_trigger": "Reopen if an exact mainland listing or SCOTT bill of materials changes the wheelset."
+    },
+    {
+      "attempt_record_id": "platform-seka-exaero-gr-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "seka-exaero-gr",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "seka-exaero-gr-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current exact GR page confirms Toray M46J and T1100 carbon and one-piece monocoque structure; no ply schedule is published. This is distinct from road ExAero.",
+      "reopen_trigger": "Reopen if SEKA changes the GR material specification."
+    },
+    {
+      "attempt_record_id": "candidate-seka-exaero-road-price-2026-08-27",
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "field": "current-mainland-frameset-price",
+      "status": "unresolved",
+      "source_ids": [
+        "seka-exaero-road-cn-official-recheck-2026-09-24",
+        "seka-exaero-road-launch-weibo-report-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current official China page shows no price and the linked Taobao store failed to open. The dated ¥11,900起 post describes complete-system prices by cockpit, so it cannot be assigned to an exact RDC/Standard frameset.",
+      "reopen_trigger": "Reopen on an accessible official item page with exact trim, option, price type, date and checkout conditions."
+    },
+    {
+      "attempt_record_id": "candidate-seka-exaero-road-identity-2026-08-27",
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "field": "exact-model-identity",
+      "status": "supported",
+      "source_ids": [
+        "seka-exaero-road-cn-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current official China page identifies road ExAero and distinguishes RDC and Standard; ExAero GR is a separate product. No generation code is stated.",
+      "reopen_trigger": "Reopen if SEKA changes the product names or trim relationship."
+    },
+    {
+      "attempt_record_id": "candidate-seka-exaero-road-frame-weight-2026-08-27",
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "field": "frame-weight",
+      "status": "supported",
+      "source_ids": [
+        "seka-exaero-road-cn-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current official China page gives size-54 bare-frame weights of 820 g RDC and 935 g Standard, ±35 g, excluding paint and metal parts; these are frame weights, not complete framesets.",
+      "reopen_trigger": "Reopen if SEKA changes the trim-specific weight figures or measurement basis."
+    },
+    {
+      "attempt_record_id": "candidate-seka-exaero-road-owner-build-weight-2026-08-27",
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "field": "owner-build-weight",
+      "status": "unresolved",
+      "source_ids": [
+        "seka-exaero-road-cn-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Official page provides frame/frameset specifications, not a complete owner build. No eligible public non-XHS exact build with trim, size, components, scale weight and included items was found; the historical 6.67 kg lead is not normalized.",
+      "reopen_trigger": "Reopen on a public exact ExAero build documenting trim, size, components, scale reading and included accessories/pedals."
+    },
+    {
+      "attempt_record_id": "candidate-seka-exaero-road-tire-clearance-2026-08-27",
+      "record_type": "candidate",
+      "record_id": "seka-exaero-road",
+      "field": "tire-clearance",
+      "status": "supported",
+      "source_ids": [
+        "seka-exaero-road-cn-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current road ExAero page lists 32 mm clearance without distinguishing RDC from Standard; this is not a measured mounted-tire fit.",
+      "reopen_trigger": "Reopen if SEKA publishes trim-specific clearance or changes the road-platform value."
+    },
+    {
+      "attempt_record_id": "platform-spcycle-g028-frame-material-2026-08-28",
+      "record_type": "platform",
+      "record_id": "spcycle-g028",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "spcycle-g028-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact SP-G028 page claims T1000 and T1100 fiber but does not state proportions, layup, or separate frame/fork grades.",
+      "reopen_trigger": "Reopen if the manufacturer publishes a revised exact G028 material specification."
+    },
+    {
+      "attempt_record_id": "candidate-specialized-crux-10r-frameset-frame-material-2026-08-28",
+      "record_type": "candidate",
+      "record_id": "specialized-crux-10r-frameset",
+      "field": "frame-material",
+      "status": "supported",
+      "source_ids": [
+        "specialized-crux-10r-frameset-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Current exact U.S. Product ID 223491 page confirms FACT 10r Carbon; no further fiber grade or layup is supplied.",
+      "reopen_trigger": "Reopen if another generation or regional product has different material."
+    },
+    {
+      "attempt_record_id": "candidate-specialized-roubaix-sl8-sport-105-frame-stiffness-2026-08-28",
+      "record_type": "candidate",
+      "record_id": "specialized-roubaix-sl8-sport-105",
+      "field": "frame-stiffness",
+      "status": "qualified",
+      "source_ids": [
+        "specialized-roubaix-sl8-sport-105-official-recheck-2026-09-24"
+      ],
+      "accessed_at": "2026-09-24",
+      "note": "Exact Sport 105 page calls the rear triangle rigid but provides no measured stiffness. Future Shock 3.0 overview language conflicts with 3.1 in the technical table.",
+      "reopen_trigger": "Reopen with an exact Sport 105 independent test or controlled frame measurement."
+    }
+  ],
+  "validated_counts": {
+    "brands": 41,
+    "platforms": 38,
+    "variants": 41,
+    "dated_price_records": 73,
+    "sources": 1219,
+    "primary_image_records": 212,
+    "candidates": 236,
+    "research_records": 1465,
+    "atomic_research_fields": 1461
+  },
+  "fresh_gap_inventory_after_batch": {
+    "as_of": "2026-09-23",
+    "scope": {
+      "published_variants": 41,
+      "candidates": 222
+    },
+    "gap_counts": {
+      "bom-incomplete": 2,
+      "bottom-bracket-missing": 7,
+      "candidate-blockers": 222,
+      "clearance-unverified": 102,
+      "complete-weight-missing": 82,
+      "drivetrain-missing": 39,
+      "frame-material-detail-missing": 15,
+      "frame-weight-missing": 26,
+      "geometry-missing": 5,
+      "image-exactness": 4,
+      "image-health-unverified": 37,
+      "price-missing": 27,
+      "price-not-observed": 39,
+      "price-reference-range": 2,
+      "purchase-route": 25,
+      "stiffness-evidence-missing": 78
+    },
+    "research_status_counts": {
+      "blocked": 334,
+      "conflicted": 35,
+      "found": 69,
+      "temporarily-exhausted": 14
+    }
+  },
+  "fresh_queue_after_batch": {
+    "as_of": "2026-09-23",
+    "ready": 1,
+    "evidence-found": 280,
+    "deferred": 45,
+    "blocked": 498,
+    "conflicted": 60
+  },
+  "full_gate": {
+    "status": "passed",
+    "command": "developer-storage-cache run -- npm run check",
+    "tests": "308/308",
+    "build_pages": 584,
+    "seo": {
+      "indexable": 458,
+      "noindex": 126,
+      "status": "passed"
+    }
+  },
+  "validation_plan": {
+    "checks": [
+      {
+        "command": "npm run --silent privacy",
+        "status": "passed",
+        "result": "no personal-data, local-path, credential, private-network, order-ID, chat-export, or unvalidated media-binary patterns"
+      },
+      {
+        "command": "npm run --silent validate",
+        "status": "passed",
+        "result": "41 brands, 38 platforms, 41 variants, 73 prices, 1,219 sources, 212 primary image records, 236 candidates, 1,465 atomic research records"
+      },
+      {
+        "command": "npm run --silent research:check",
+        "status": "passed",
+        "result": "1,461 atomic research fields validated"
+      },
+      {
+        "command": "npm run --silent coverage:accept",
+        "status": "passed",
+        "result": "monotonic baseline accepted for exact evidence updates, documented Scott geometry replacement, and SEKA candidate-price retraction"
+      },
+      {
+        "command": "npm run --silent coverage:check",
+        "status": "passed",
+        "result": "212 images, 73 price observations, 1,219 sources and 236 candidates protected"
+      },
+      {
+        "command": "node --test tests/*.test.mjs",
+        "status": "passed",
+        "result": "308/308 tests"
+      },
+      {
+        "command": "npm run --silent build",
+        "status": "passed",
+        "result": "584 pages for 41 products"
+      },
+      {
+        "command": "npm run --silent seo:check",
+        "status": "passed",
+        "result": "584 pages; 458 indexable; 126 noindex"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed",
+        "result": "no whitespace errors"
+      }
+    ],
+    "full_gate": "passed after final evidence integration and test/coverage updates"
+  },
+  "notes": [
+    "All current page reads in the evidence report were accessed 2026-09-24; historical publication/observation dates were retained separately.",
+    "No price-history records, candidate observed-price amount, or image records were newly added. The ambiguous SEKA launch headline remains explicitly unresolved.",
+    "Regional-market caveats, the Gelaro T700/T800 conflict, unmeasured stiffness claims, and the absent eligible SEKA owner-build weight remain explicit.",
+    "All changes are local in the task-owned worktree. No push, pull request, merge, publication, or production action.",
+    "Withdrew the pre-existing ¥11,900 candidate frameset amount after the launch post recheck showed it was not an exact RDC/Standard frameset price; the dated headline remains in source evidence."
+  ],
+  "candidate_price_observations_withdrawn": [
+    "seka-exaero-road observed_price ¥11,900 (headline dated 2026-08-14): withdrawn as an exact frameset amount because the post describes complete-system pricing by cockpit configuration"
+  ],
+  "retired_records": [
+    "retire-scott-addict-rc-40-2023-geometry-source-2026-09-24",
+    "retire-seka-exaero-road-ambiguous-launch-price-2026-09-24",
+    "retire-seka-exaero-road-ambiguous-price-currency-2026-09-24",
+    "retire-seka-exaero-road-ambiguous-price-observed-at-2026-09-24",
+    "retire-seka-exaero-road-ambiguous-price-price-basis-2026-09-24",
+    "retire-seka-exaero-road-ambiguous-price-kind-2026-09-24"
+  ],
+  "supporting_validation_changes": [
+    "scripts/coverage.mjs: allow narrowly scoped, evidence-backed candidate-price retractions while requiring the named price to be absent",
+    "tests/coverage.test.mjs: verify price retraction requires both matching protected-field retirements and the candidate-price retirement",
+    "tests/data.test.mjs and tests/render.test.mjs: assert the updated 2026 Scott geometry, components and tire limit",
+    "tests/research-50-audit.test.mjs: include the now-unresolved SEKA exact-frameset price in the live-gap audit"
+  ],
+  "image_report": "Not run because no image records changed; 212 primary image records remain."
+}

@@ -1,0 +1,121 @@
+{
+  "batch_id": "luna-followup-11-2026-09-22",
+  "base_commit": "d3e6f97f1d0876d0ceae9f2d2125de6a58df497b",
+  "researcher": "one Luna agent, Max reasoning, evidence only",
+  "model_limit": 10,
+  "atomic_fields": 20,
+  "targets": [
+    {
+      "record_type": "candidate",
+      "record_id": "alums-da54",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cinelli-pressure-adr",
+      "fields": [
+        "complete-weight",
+        "drivetrain"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "cycletrack-phantom-rx24",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "elro-f1",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-hydraulic-unknown",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "gito-carbon-road-high-unknown",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "java-vittoria-er7-2026",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "kung-horizon",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "leinax-leina-road",
+      "fields": [
+        "complete-weight",
+        "tire-clearance"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    },
+    {
+      "record_type": "candidate",
+      "record_id": "tavelo-arow-sl-community-lead",
+      "fields": [
+        "price",
+        "drivetrain"
+      ],
+      "historical_states": [
+        "blocked"
+      ]
+    }
+  ],
+  "done_criteria": "Each exact field receives attributable evidence or a precise unresolved disposition, actual checked routes and next trigger. Stop at decisive evidence; stop dependent fields at unresolved identity.",
+  "boundaries": "No worker writes, children, XHS, external messages, purchases, private data or access bypass. Preserve historical dates; distinguish current reads, discovery snippets, failed access and reused evidence."
+}

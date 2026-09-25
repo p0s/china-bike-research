@@ -481,5 +481,13 @@
     "scott-addict-rc-40-poland-2026-08-17"
   ],
   "retry_after": null,
-  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Current exact regional manufacturer page claims 7.9 kg for model 290362; size, pedals, accessories and weighing protocol are unpublished."
+  "notes": "Field-specific application of the 50-area exact-model sweep in data/research-campaigns/variant-scott-addict-rc-40-batch-043-50-area-sweep-2026-09-01.json. Current exact regional manufacturer page claims 7.9 kg for model 290362; size, pedals, accessories and weighing protocol are unpublished.",
+  "resolution": {
+    "kind": "source-reuse",
+    "resolved_at": "2026-09-24",
+    "source_ids": [
+      "scott-addict-rc-40-poland-2026-08-17"
+    ],
+    "note": "The exact model 290362 regional manufacturer page claimed approximately 7.9 kg; size, pedals, accessories and weighing protocol are unpublished. Keep this as the dated regional claim, not a mainland or independent weighing."
+  }
 }

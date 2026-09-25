@@ -1,0 +1,29 @@
+{
+  "id": "candidate-irefox-profound-400-current-mainland-observed-price-2026-09-24",
+  "target": {"record_type": "candidate", "record_id": "irefox-profound-400"},
+  "field": "mainland-observed-price",
+  "priority": "medium",
+  "searched_at": "2026-09-24",
+  "required_channels": ["web"],
+  "channels": {
+    "web": {
+      "status": "blocked",
+      "blocker": "The current indexed official China catalog names the model but has no price or sales route; public exact-model results surfaced only the 2023 launch promotion.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "query": "IREFOX Profound 400 exact current mainland seller listing and checkout price",
+          "route": "IREFOX current Chinese manufacturer catalog and public retailer search",
+          "outcome": "blocked",
+          "accessed_at": "2026-09-24",
+          "note": "The official Chinese catalog names PROFOUND 400 but shows no price or purchase route. Search results surfaced the exact 2023 launch price/promotion article and no current exact-model listing or checkout; those old amounts remain historical.",
+          "result_url": "https://irefox.net/cn/bikes/"
+        }
+      ]
+    }
+  },
+  "status": "blocked",
+  "accepted_source_ids": ["irefox-profound-400-current-cn-catalog-price-recheck-2026-09-24"],
+  "retry_after": null,
+  "notes": "Keep the CNY 7,299 list and 2023 conditional promotions as historical launch evidence; do not refresh their dates or treat them as current."
+}
