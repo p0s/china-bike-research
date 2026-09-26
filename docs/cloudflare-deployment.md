@@ -31,31 +31,45 @@ base branch and reads proposed commits as data, so changing a scanner within a
 pull request cannot disable that check.
 The workflow pins Wrangler 4.135.0. The token never enters browser assets.
 The checked-in custom-domain route binds only `chinesebikes.xyz`. The legacy
-`china-bikes.p0s.eu` hostname already has a proxied DNS record and is GitHub
-Pages' current custom domain, so it should not also be added as a Worker Custom
-Domain. After the new domain serves correctly, deploy a Single Redirect in the
-`p0s.eu` Cloudflare zone with wildcard request URL
+`china-bikes.p0s.eu` hostname is not a Worker Custom Domain. It redirects at
+Cloudflare before reaching its former GitHub Pages origin. Its Single Redirect
+in the `p0s.eu` zone uses wildcard request URL
 `http*://china-bikes.p0s.eu/*`, target
 `https://chinesebikes.xyz/${2}`, status `301`, and **Preserve query string**
-enabled. The zone rule must redirect every path, including static assets,
-before the existing GitHub Pages origin is reached.
-In the `chinesebikes.xyz` zone, proxy `www` and redirect
+enabled. It covers document and asset paths.
+In the `chinesebikes.xyz` zone, proxied `www` redirects
 `http*://www.chinesebikes.xyz/*` to `https://chinesebikes.xyz/${2}` with the
-same settings. The apex custom domain is created by Wrangler.
+same settings. The apex is the Worker Custom Domain.
+
+The domain remains registered at Spaceship, with Cloudflare DNS and hosting.
+Cloudflare DNSSEC is enabled and its DS record is installed at Spaceship;
+validate the signed chain after any nameserver or registrar change. The four
+short-term Spaceship domains `chinabikes.xyz`, `chinesecarbonbikes.xyz`,
+`chinesecarbon.xyz`, and `chineseroadbikes.xyz` each forward apex and `www`
+with a path- and query-preserving `301` to the canonical host. Keep these
+redirects while their domains are registered, and do not publish duplicate
+content on them. The primary domain remains auto-renewed; review the four
+short-term registrations before their September 2027 expiry.
+
+Google Search Console owns `chinesebikes.xyz` as a Domain property, has the
+canonical sitemap submitted, and has a Change of Address move in progress from
+the old URL-prefix property. Check sitemap fetch/indexing after Google processes
+the submission; a successful submission is not indexing proof. Keep both
+properties verified and keep the old host redirect active during the move.
 
 Configure these Worker secrets in Cloudflare after the backend is ready:
 
 - `ANALYTICS_INGEST_URL` — the HTTPS `stats.p0s.eu/ingest/v1` endpoint;
 - `ANALYTICS_INGEST_TOKEN` — the site-scoped bearer token.
 
-To retain analytics at cutover, the gateway must bind the Worker token to
-`chinesebikes.xyz`, validate the frozen
-ingestion payload, discard transient IP and user-agent data after derivation,
-and retain only the documented page-request and country data. Live analytics
+The private gateway binds the existing Worker token and website record to
+`chinesebikes.xyz`, validates the frozen
+ingestion payload, discards transient IP and user-agent data after derivation,
+and retains only the documented page-request and country data. Live analytics
 retention is 13 months; encrypted operational backup copies expire within 30
 days after live removal. A missing or failing collector never changes the site
-response. DNS and the final production deployment remain an operator step after
-the pull request is reconciled.
+response. Umami's existing website was renamed to the canonical domain so its
+history remains in the same record.
 
 ## Smoke checks
 
