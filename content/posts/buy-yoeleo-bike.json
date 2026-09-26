@@ -2,7 +2,7 @@
   "slug": "buy-yoeleo-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "chinese-bike-prices-for-international-buyers",
   "model_ids": [
@@ -20,7 +20,7 @@
   "translations": {
     "en": {
       "title": "Buying a YOELEO bike: global store or regional warehouse?",
-      "description": "Compare YOELEO regional and global ordering, clarify shipping and tax promises, and use an older owner build to separate production from transit.",
+      "description": "Compare YOELEO global and European buying routes, stock, shipping terms and a dated owner account before ordering a specific frame or bike.",
       "intro": "A regional store can be useful, but only if your bike is actually in that region. For YOELEO, the first job is to connect the model you want with the shop, warehouse and terms that apply to that exact order.",
       "sections": [
         {
@@ -36,18 +36,50 @@
           "id": "terms",
           "heading": "Resolve the shipping promises before checkout",
           "paragraphs": [
-            "Read the [shipping policy](https://www.yoeleobike.com/en-de/policies/shipping-policy) as well as the general delivery page. Pages can describe different routes or contain overlapping estimates. If the wording does not clearly match your order, ask for a written answer instead of selecting the most attractive sentence.",
-            "Have the seller break the timeline into preparation, dispatch and transit. Ask which portion is an estimate and what happens if the item is unavailable. If the price is advertised as covering import charges, confirm your destination and who resolves an extra carrier invoice.",
-            "An all-inclusive service is a contractual promise about a shipment, not a blanket statement that customs rules do not apply. US, Canada, EU and UK orders need their own answers."
-          ]
+            "Two current YOELEO pages need to be read together. The [shipping policy](https://www.yoeleobike.com/en-de/policies/shipping-policy) points European customers toward a German-warehouse regional site, while the [general delivery page](https://www.yoeleobike.com/pages/shipping-and-delivery) lists country-specific prepaid-tax shipping methods. Those are different claims about different routes. Do not assume the better-sounding sentence applies to your cart.",
+            "Ask the actual seller to state the invoice company, physical warehouse for your exact size, whether import charges are included to your address, and the return destination. Then ask whether its timetable starts at order, stock allocation or carrier handover."
+          ],
+          "worksheet": {
+            "caption": "Compare YOELEO routes for one exact build",
+            "columns": [
+              "Question",
+              "Global shop",
+              "European route"
+            ],
+            "rows": [
+              [
+                "Exact model, size and finish",
+                "Confirm availability",
+                "Confirm physical stock"
+              ],
+              [
+                "Seller on invoice and return address",
+                "Record",
+                "Record"
+              ],
+              [
+                "Dispatch warehouse and date",
+                "Record",
+                "Record"
+              ],
+              [
+                "Taxes / charges included to your address",
+                "Written answer",
+                "Written answer"
+              ],
+              [
+                "Matching cockpit, wheels and drivetrain",
+                "List actual components",
+                "List actual components"
+              ]
+            ]
+          }
         },
         {
           "id": "owners",
           "heading": "An older R11 build explains a useful distinction",
           "paragraphs": [
-            "A [2021 R11 owner build](https://chinertown.com/index.php?topic=3237.0) described ordering in December, dispatch in March and roughly two weeks of transit to Switzerland. The owner’s overall experience was positive, but most of the wait preceded the shipment.",
-            "This is a historical account, not a current YOELEO delivery estimate. It is also a Swiss destination, not evidence of EU import treatment. Its transferable lesson is simple: asking how fast the courier is does not tell you when production will finish.",
-            "Look for a review of your own generation and build. An older electronic-shifting installation may use different routing and components; a successful old build is not a compatibility certificate for the parts in your shopping cart."
+            "An [R11 owner writing about a 2021 order](https://chinertown.com/index.php?topic=3237.0) described ordering in December, dispatch in March and about two weeks of transit to Switzerland. Most of that reported wait preceded shipment. It is a useful way to split the clock, but neither a current YOELEO lead time nor evidence of EU customs treatment. The ALTERA G21 pictured in this guide is a different frame."
           ]
         },
         {
@@ -63,7 +95,7 @@
     },
     "zh-Hans": {
       "title": "YOELEO 购买指南：全球商城还是区域仓？",
-      "description": "比较 YOELEO 全球与区域渠道，问清运输及税费承诺，并借历史车主装车经历区分生产和在途时间。",
+      "description": "比较 YOELEO 全球与欧洲购买渠道、库存、运输条款及有日期的车主经历，再决定具体车架或整车订单。",
       "intro": "区域商店可能很方便，前提是你想买的车确实在那里。买 YOELEO，先把具体车型与适用的商城、仓库、条款对应起来。",
       "sections": [
         {
@@ -79,18 +111,50 @@
           "id": "terms",
           "heading": "结算前，把运输承诺问明白",
           "paragraphs": [
-            "除一般运输页，也读[运输政策](https://www.yoeleobike.com/en-de/policies/shipping-policy)。不同页面可能描述不同渠道，或出现重叠的时间估计。如果无法对应你的订单，应取得书面答复，别挑最好听的一句当保证。",
-            "请卖家把备货、发出、在途分别说明，并确认哪些只是估计、缺货时如何处理。若宣称包含进口费用，要确认目的地适用，以及额外快递账单由谁解决。",
-            "包进口费用是对具体运输的约定，不等于海关规则整体不适用。美国、加拿大、欧盟和英国订单应分别确认。"
-          ]
+            "YOELEO 的两个当前页面应放在一起看：[运输政策](https://www.yoeleobike.com/en-de/policies/shipping-policy)让欧洲客户走德国仓区域站，[一般交付页](https://www.yoeleobike.com/pages/shipping-and-delivery)则列出部分国家的预付税费运输方式。它们讲的是不同渠道，不能直接挑好听的一句套到自己的购物车。",
+            "请实际卖家写明开票公司、准确尺码的实物仓库、到你地址已包含哪些进口费用，以及退货地址。再问时间估计从下单、分配库存，还是交给承运商开始算。"
+          ],
+          "worksheet": {
+            "caption": "为同一套 YOELEO 配置比较渠道",
+            "columns": [
+              "问题",
+              "全球商城",
+              "欧洲渠道"
+            ],
+            "rows": [
+              [
+                "准确型号、尺码、颜色",
+                "确认可订",
+                "确认实物库存"
+              ],
+              [
+                "发票卖家及退货地址",
+                "记录",
+                "记录"
+              ],
+              [
+                "发货仓及日期",
+                "记录",
+                "记录"
+              ],
+              [
+                "到你的地址已包含哪些税费",
+                "书面答复",
+                "书面答复"
+              ],
+              [
+                "相同把组、轮组、传动",
+                "列出实际部件",
+                "列出实际部件"
+              ]
+            ]
+          }
         },
         {
           "id": "owners",
           "heading": "老 R11 装车帖带来的实用提醒",
           "paragraphs": [
-            "[2021 年 R11 车主装车帖](https://chinertown.com/index.php?topic=3237.0)描述了十二月下单、三月发货，以及约两周运到瑞士。车主总体满意，但大部分等待发生在发货之前。",
-            "这是历史记录，不是当前 YOELEO 交期，也不是欧盟进口处理证据，因为目的地是瑞士。可迁移的提醒很简单：问快递有多快，不能得知生产什么时候完成。",
-            "寻找你这一代车型和配置的评测。旧电子变速装车可能采用不同走线和部件；老车成功装好，不代表购物车里的新组合已获得兼容认证。"
+            "[R11 车主的 2021 年订单记录](https://chinertown.com/index.php?topic=3237.0)称十二月下单、三月发货，随后约两周送达瑞士。等待的大部分发生在发货前。它适合说明要把时间拆开看，却不能代表当前 YOELEO 交期或欧盟清关。文中 ALTERA G21 照片是另一款车架。"
           ]
         },
         {

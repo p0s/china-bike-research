@@ -2,7 +2,7 @@
   "slug": "buying-a-groupset-for-frame-build",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "frameset-vs-complete-bike-cost-in-china",
   "model_ids": [
@@ -34,10 +34,49 @@
           "id": "package",
           "heading": "Do not translate a package name into assumed contents",
           "paragraphs": [
-            "Small and large groupset packages are common retail descriptions, but they are not a substitute for an inventory. Ask for exact model codes and quantities for shifters, derailleurs, crankset, bottom bracket, cassette, chain, brake calipers, hoses, rotors, adapters and electronic-system accessories as applicable.",
-            "Mark each item as supplied, already owned or still needed. Check whether left and right controls are both present and whether a listed brake is a complete usable assembly or only one component. Confirm what is new, what packaging it comes in and what support the seller provides.",
-            "If a package photograph and text disagree, ask the seller to resolve the discrepancy in writing. A photo containing a rotor is not a dependable promise that two matching rotors are in the box."
-          ]
+            "Retailers use “small groupset” and “large groupset” for different bundles. Ask for model codes and quantities, then mark each row supplied, already owned or still needed. For a 1× build, a front derailleur may be “not applicable”; that is different from accidentally leaving one out of a 2× build.",
+            "Resolve any mismatch between the photo and the written list before paying. A photographed rotor does not tell you whether the box contains one or two, their sizes, or their mounting interface."
+          ],
+          "worksheet": {
+            "caption": "Groupset inventory — fill in the exact codes",
+            "columns": [
+              "Parts",
+              "Details to record",
+              "Supplied / owned / needed"
+            ],
+            "rows": [
+              [
+                "Controls and derailleurs",
+                "Left / right; exact generation; 1× or 2×",
+                "Fill in"
+              ],
+              [
+                "Crankset and bottom bracket",
+                "Crank length, chainrings, spindle and frame interface",
+                "Fill in"
+              ],
+              [
+                "Cassette and chain",
+                "Speeds, tooth range, freehub and joining link",
+                "Fill in"
+              ],
+              [
+                "Brakes and hoses",
+                "Front / rear calipers; hose and fitting requirements",
+                "Fill in"
+              ],
+              [
+                "Rotors and mounting parts",
+                "Quantity, diameter, mounting system, adapters",
+                "Fill in"
+              ],
+              [
+                "Electronic accessories, if applicable",
+                "Batteries, charger, wires and mounting pieces",
+                "Fill in"
+              ]
+            ]
+          }
         },
         {
           "id": "compatibility",
@@ -53,6 +92,7 @@
           "heading": "Choose gearing for the ride, then check the combination",
           "paragraphs": [
             "Write down your route and load: short fast rides, sustained climbs or luggage change what a useful low gear feels like. Compare a proposed setup with one you have ridden, then have the exact chainring, cassette and derailleur combination checked against the manufacturer’s limits.",
+            "For a simple gearing illustration, 34 ÷ 34 gives a lowest ratio of 1.00, while 40 ÷ 44 is about 0.91. With the same wheel and tire, the latter travels less distance per crank turn. These are arithmetic examples, not approved component combinations; check the exact derailleur and chainring specifications before buying.",
             "Do not assume that adding a larger cassette later is a free adjustment. It may affect the permitted derailleur setup and other parts. Likewise, choose crank length as a fit decision, not simply whichever option is discounted.",
             "Ask the workshop for an assembly quote covering routing, cutting and finishing only after it has seen the component list. Installation requirements differ; generic internet torque values are not a replacement for the exact manual."
           ]
@@ -77,10 +117,49 @@
           "id": "package",
           "heading": "别把套餐名称直接当成内含清单",
           "paragraphs": [
-            "小套、大套是常见销售简称，却不能替代装箱清单。按实际系统询问准确型号和数量：手变、前后拨、牙盘、中轴、飞轮、链条、夹器、油管、碟片、转换座及电子系统附件。",
-            "把每项标为提供、已有或仍需购买。确认左右控制器是否齐全，所谓“刹车”是可用总成还是某个零件，并核对新品状态、包装和卖家售后。",
-            "照片与文字不一致时，请卖家书面澄清。照片里有碟片，不能可靠保证箱里有两片匹配碟片。"
-          ]
+            "不同卖家的“小套”“大套”可能不是一回事。索取型号与数量，再把每行标为已包含、自己已有或仍需购买。单盘车不需要前拨，可以写“不适用”；这与双盘方案不小心漏买前拨不同。",
+            "照片与清单不一致，先解决再付款。照片里出现碟片，并不能告诉你箱里有一片还是两片、尺寸多大、采用什么安装接口。"
+          ],
+          "worksheet": {
+            "caption": "套件核对表：填写准确型号",
+            "columns": [
+              "部件",
+              "需记录的细节",
+              "包含／已有／待购"
+            ],
+            "rows": [
+              [
+                "控制器与拨链器",
+                "左右、准确代际、单盘或双盘",
+                "填写"
+              ],
+              [
+                "牙盘与中轴",
+                "曲柄长度、齿数、轴心及车架接口",
+                "填写"
+              ],
+              [
+                "飞轮与链条",
+                "速别、齿数范围、塔基、连接扣",
+                "填写"
+              ],
+              [
+                "夹器与油管",
+                "前后夹器、油管及接头要求",
+                "填写"
+              ],
+              [
+                "碟片与安装件",
+                "数量、直径、安装接口、转换座",
+                "填写"
+              ],
+              [
+                "适用的电子附件",
+                "电池、充电器、线材及安装小件",
+                "填写"
+              ]
+            ]
+          }
         },
         {
           "id": "compatibility",
@@ -96,6 +175,7 @@
           "heading": "先按骑行选齿比，再确认组合",
           "paragraphs": [
             "写下路线和负载：短途快骑、长爬坡或带行李，会改变对低档的需求。先与自己骑过的方案比较，再按厂家限制核对准确牙盘、飞轮和后拨组合。",
+            "用一个简单算例：34 ÷ 34 的最低齿比是 1.00，40 ÷ 44 约为 0.91。轮组和轮胎相同时，后者每转一圈曲柄前进的距离更短。这只是算术示例，不是已核实兼容的配件组合；购买前仍要核对准确后拨与牙盘规格。",
             "别假设以后换更大飞轮只是免费调整，它可能影响允许的后拨搭配和其他部件。曲柄长度同样应按合身选择，不是哪个折扣大就选哪个。",
             "车店看到清单后再报价走线、裁切和装配。系统安装要求不同，通用网络扭矩值不能替代准确手册。"
           ]
