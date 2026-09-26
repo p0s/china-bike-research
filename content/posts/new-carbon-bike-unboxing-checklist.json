@@ -2,7 +2,7 @@
   "slug": "new-carbon-bike-unboxing-checklist",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "north-america-bike-delivery",
   "model_ids": [
@@ -27,35 +27,74 @@
   "translations": {
     "en": {
       "title": "Your new carbon bike arrived: an unboxing and workshop checklist",
-      "description": "Document delivery, check the packing list and arrange a proper assembly inspection before turning a new frameset into its first ride.",
+      "description": "A practical carbon bike delivery checklist: document the box, inventory the agreed parts, identify issues and prepare a safe workshop handover.",
       "intro": "The box has arrived. Resist the urge to turn every tool at once. A calm first hour can preserve the evidence, find missing parts and make the workshop handover much easier.",
       "sections": [
         {
           "id": "record",
           "heading": "Record the box before changing the scene",
           "paragraphs": [
-            "Photograph the outside of the packaging, shipping label and any visible damage before unpacking. Keep identifying order details private when sharing online. A continuous unboxing video can be useful, but it does not replace the seller’s claim requirements or guarantee a refund.",
-            "Open carefully, retain protective materials and lay out the supplied items. Avoid discarding small bags with the packing foam. A tiny headset piece can be harder to replace than the large part it was packed beside.",
-            "If the shipment appears damaged, follow the carrier’s reporting process and contact the seller promptly with the order reference and clear photographs. Keep the packaging until the issue is resolved."
+            "Before opening, photograph all sides of the carton, shipping label and any crushed or wet areas. Keep the order number and your address private when sharing pictures. Open carefully and save the packaging and small bags until the contents match the invoice.",
+            "If the carton looks damaged, ask the carrier how it records arrival damage and notify the seller promptly with the order reference. A video may help, but follow the actual claim procedure rather than assuming a recording guarantees a refund."
+          ],
+          "bullets": [
+            "Photograph the closed box and visible damage before moving protective packing.",
+            "Put each small bag on a clean surface; photograph parts together and separately.",
+            "Keep the carton, foam and labels until any mismatch or damage claim is resolved."
           ]
         },
         {
           "id": "inventory",
           "heading": "Compare the contents with the agreed order",
           "paragraphs": [
-            "Check model, generation, size, finish and cockpit dimensions against the invoice. Inventory the fork, seatpost, axles, hanger, headset pieces and hardware that were promised. Mark missing or different items before assembly.",
-            "Keep a simple issue list with one clear photo and description per problem. Distinguish a wrong part, a missing part, cosmetic damage and a suspected structural issue; they call for different responses.",
-            "Do not install or alter an incorrect component while waiting for an answer. A seller can more easily assess an untouched mismatch than a part modified to make the build continue."
+            "Compare the delivered frame generation, size, finish and cockpit dimensions with the final agreed order. Then use the parts list below, marking promised, received and missing. A frame name by itself will not catch a different bar width or absent top cover.",
+            "Make a short issue list, one photo and one sentence for each mismatch. Tell the seller before assembly or modification so the disagreement stays easy to document."
+          ],
+          "bullets": [
+            "Frame, fork, size label and finish match the invoice.",
+            "Seatpost, saddle clamp or wedge, and cockpit match the selected options.",
+            "Front and rear axles, derailleur hanger and its fasteners are present.",
+            "Headset bearings, compression ring, top cover, spacers and routing pieces match the agreed list.",
+            "Mounts, plugs, storage fittings and manuals are present where the order promised them."
           ]
         },
         {
           "id": "inspection",
           "heading": "A visual check is a screening step",
           "paragraphs": [
-            "Look for obvious damage or a mismatch, but do not treat a clean appearance as proof of structural safety. Tapping sounds, phone photographs and internet guesses cannot certify a carbon component.",
-            "If you suspect damage, stop assembly and riding, document the concern and seek the seller’s and a qualified mechanic’s assessment. Do not sand, drill, file or experimentally load a suspect area to investigate it yourself.",
-            "Use the exact manufacturer instructions for inspection and assembly requirements. This checklist organizes the handover; it is not a substitute for model-specific procedures or a professional assessment."
-          ]
+            "Sort what you find before acting. A wrong or missing part usually calls for an order correction. Visible damage needs prompt documentation. A suspected structural problem needs the bike kept out of use until the seller and a qualified mechanic have assessed it.",
+            "Do not drill, sand, file, tap-test or load a suspect carbon area yourself. A clean surface is not structural proof either. Use the exact manufacturer’s instructions and ask the workshop to inspect the actual frame before irreversible assembly."
+          ],
+          "worksheet": {
+            "caption": "What you found → next step",
+            "columns": [
+              "Finding",
+              "Record",
+              "Next step"
+            ],
+            "rows": [
+              [
+                "Wrong size or component",
+                "Invoice and part labels",
+                "Ask seller to correct before use"
+              ],
+              [
+                "Promised part missing",
+                "Packing list and all small bags",
+                "Ask seller for the missing item"
+              ],
+              [
+                "Cosmetic or arrival damage",
+                "Clear close-up and carton photo",
+                "Contact seller and carrier as applicable"
+              ],
+              [
+                "Suspected structural damage",
+                "Photos; no testing or alteration",
+                "Stop assembly and seek qualified assessment"
+              ]
+            ]
+          }
         },
         {
           "id": "handover",
@@ -70,35 +109,74 @@
     },
     "zh-Hans": {
       "title": "新碳纤维自行车到了：开箱与交给车店前的核对表",
-      "description": "记录签收、核对装箱单，并在新车架首次上路前安排适当装配检查，让到货问题更容易处理。",
+      "description": "碳纤维车到货后怎样检查：拍下包装、清点订单部件、区分问题，再把资料交给车店。",
       "intro": "箱子终于到了，先别急着把所有工具都拿出来转一遍。冷静的第一个小时，能保留证据、发现缺件，也让交给车店更顺利。",
       "sections": [
         {
           "id": "record",
           "heading": "改变现场之前，先记录纸箱",
           "paragraphs": [
-            "开箱前拍包装外部、物流标签和可见损坏。网上分享时遮住个人及订单识别信息。连续开箱视频可能有用，但不替代卖家索赔要求，也不保证退款。",
-            "小心打开，保留保护材料，将部件摆开。别把小配件袋随泡棉一起丢掉；一小块碗组零件可能比旁边的大件更难补。",
-            "若运输明显损坏，按承运商流程报告，并及时向卖家提供订单号和清晰照片。问题解决前保留包装。"
+            "开箱前拍纸箱各面、物流标签，以及压坏或受潮的地方。网上分享照片时遮住订单号和地址。小心打开，在内容与发票对上之前，保留包装和小配件袋。",
+            "箱子明显受损，先问承运商怎样记录到货损坏，并尽快把订单号和照片发给卖家。视频可能有帮助，但应遵循实际索赔流程，不能认为拍了视频就保证退款。"
+          ],
+          "bullets": [
+            "移动保护材料前，拍完整纸箱与可见损坏。",
+            "把每个小配件袋放在干净台面，先合照再分别拍。",
+            "错件或损坏问题解决前，保留箱子、泡棉和标签。"
           ]
         },
         {
           "id": "inventory",
           "heading": "按确认订单核对内容",
           "paragraphs": [
-            "对照发票核对型号、代际、尺码、涂装及把组尺寸，清点承诺提供的前叉、座管、桶轴、尾钩、碗组与硬件。装车前标出缺少或不同的项目。",
-            "每个问题用一张清晰照片和简短说明记录，区分错件、缺件、外观损伤与疑似结构问题；它们需要不同处理。",
-            "等待答复时不要安装或改造错误配件。未经修改的错件，比为了继续装车而加工过的部件更容易判断。"
+            "按最终订单核对车架代际、尺码、颜色和把组尺寸，再依下方清单逐项标记“承诺提供、实收、缺少”。只看车架名称，发现不了把宽错误或缺上盖。",
+            "每个不符问题各写一句话、配一张照片。装配或改造前告诉卖家，让差异始终容易核对。"
+          ],
+          "bullets": [
+            "车架、前叉、尺码标签及颜色与发票一致。",
+            "座管、坐垫夹或楔块、把组符合所选选项。",
+            "前后桶轴、尾钩和固定件齐全。",
+            "碗组轴承、压环、上盖、垫圈、走线件与约定清单一致。",
+            "订单承诺的支架、堵头、储物件和手册已收到。"
           ]
         },
         {
           "id": "inspection",
           "heading": "外观检查只是初步筛查",
           "paragraphs": [
-            "检查明显损坏和不符，但外观干净不证明结构安全。敲击声音、手机照片和网友猜测，都不能认证碳纤维部件安全。",
-            "怀疑损坏时，停止装配和骑行，记录问题，请卖家与合格技师评估。不要自行打磨、钻孔、锉削或试验加载可疑部位。",
-            "检查和装配要求应以准确厂家说明为准。这张表用于组织交接，不替代车型专用流程或专业评估。"
-          ]
+            "先给问题分类。错件或缺件通常需要卖家纠正订单；可见损伤要及时留证；疑似结构问题则在卖家和合格技师评估前不能使用。",
+            "不要自行钻孔、打磨、锉削、敲击测试或加载可疑碳纤维区域。外表干净也不证明结构安全。按准确厂商说明，让车店在不可逆装配前检查实物。"
+          ],
+          "worksheet": {
+            "caption": "发现什么 → 下一步",
+            "columns": [
+              "问题",
+              "留存资料",
+              "下一步"
+            ],
+            "rows": [
+              [
+                "尺码或部件错误",
+                "发票与部件标签",
+                "使用前请卖家纠正"
+              ],
+              [
+                "承诺的部件缺少",
+                "装箱单与全部小袋",
+                "向卖家索取缺件"
+              ],
+              [
+                "外观或运输损伤",
+                "特写与纸箱照片",
+                "按情况联系卖家及承运商"
+              ],
+              [
+                "疑似结构损伤",
+                "照片；不测试、不改造",
+                "停止装配，寻求合格评估"
+              ]
+            ]
+          }
         },
         {
           "id": "handover",

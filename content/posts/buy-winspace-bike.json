@@ -2,7 +2,7 @@
   "slug": "buy-winspace-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "europe-bike-delivery",
   "model_ids": [
@@ -20,33 +20,72 @@
   "translations": {
     "en": {
       "title": "Buying a Winspace bike: direct shop, local dealer or complete build?",
-      "description": "How to compare Winspace buying routes, warehouse fulfillment, fit, support and owner experiences before ordering a frameset or complete bike.",
-      "intro": "Winspace gives you more than one way to buy. That is useful only if you compare the same thing: a frame in a box, a dealer’s assembled bike and a regionally fulfilled complete bike are three different offers.",
+      "description": "Buy a Winspace T1550 through the brand or a dealer: compare frame versus assembled bike, regional fulfillment, fit and after-sale support.",
+      "intro": "Winspace offers a real choice between the brand shop, listed dealers and regionally fulfilled complete bikes. Get the same T1550 generation and build priced three ways before deciding where to buy.",
       "sections": [
         {
           "id": "route",
           "heading": "Get two quotes for the same bike",
           "paragraphs": [
-            "Start at the [official dealer directory](https://www.winspace.cc/pages/authorized-dealers) and the [brand shop](https://www.winspace.cc/). Ask a nearby listed dealer for the exact model and generation you want, then compare it with the direct offer. The T1550 name alone is not a complete specification: generation, finish and package contents need to match.",
-            "A dealer quote can include work that a frame price omits. Ask whether assembly, fitting changes and the first adjustment are included, and who submits a warranty claim. Give direct ordering credit for any configuration advantage, but charge your build for the work it still needs."
-          ]
+            "Start with the [Winspace dealer directory](https://www.winspace.cc/pages/authorized-dealers), which lists named shops in Canada, the US and several European countries, and compare one dealer with the [brand shop](https://www.winspace.cc/). Ask for the exact T1550 generation, size, finish and cockpit. A name shared across generations is not a component list.",
+            "A dealer offer may include the build, fit changes and a first adjustment; a direct frameset quote usually needs a separate workshop budget. Use the same wheelset and drivetrain in both offers. If a dealer proposes a different specification, write down the change rather than treating the totals as equivalent."
+          ],
+          "worksheet": {
+            "caption": "T1550 route comparison — one configuration",
+            "columns": [
+              "Question",
+              "Brand frameset",
+              "Brand complete bike",
+              "Listed dealer"
+            ],
+            "rows": [
+              [
+                "Generation, size, cockpit",
+                "Confirm",
+                "Confirm",
+                "Confirm"
+              ],
+              [
+                "Wheels and drivetrain",
+                "Add to build budget",
+                "List actual parts",
+                "List actual parts"
+              ],
+              [
+                "Warehouse or assembly origin",
+                "Confirm dispatch",
+                "Confirm regional offer",
+                "Confirm stock location"
+              ],
+              [
+                "Fit, assembly and first check",
+                "Local workshop quote",
+                "Ask what is included",
+                "Ask what is included"
+              ],
+              [
+                "Claim contact and return route",
+                "Confirm",
+                "Confirm",
+                "Confirm"
+              ]
+            ]
+          }
         },
         {
           "id": "warehouse",
           "heading": "A warehouse is a fact about your order",
           "paragraphs": [
-            "Winspace’s [shipping page](https://www.winspace.cc/pages/shipping) describes fulfillment from multiple regions. Ask which warehouse will dispatch your exact size and color. Also distinguish parcel dispatch from the final assembly and last-mile process used for some complete-bike orders.",
-            "The [complete-bike page](https://www.winspace.cc/pages/completebikes) promotes regional fulfillment in Europe and the US. Confirm whether the quoted delivered price covers your address and what happens if the carrier requests money. Do not carry a US or EU offer over to Canada without a Canadian quote.",
-            "If you have a ride or event booked, work backward from a ready-to-ride date: receipt, inspection, assembly and adjustment all belong after shipping. A tracking label is a progress update, not a bicycle."
+            "Winspace’s [complete-bike page](https://www.winspace.cc/pages/completebikes) advertises EU shipping from within the EU and US assembly and shipping for US orders. Its [general shipping page](https://www.winspace.cc/pages/shipping) describes several fulfillment regions. Those statements describe routes, not proof that your T1550 size and finish are in regional stock today.",
+            "Ask for the dispatch or assembly location, what the delivered price includes at your address, and when the exact configuration will be ready. A Canadian buyer needs a Canadian answer rather than extrapolating a US offer. Leave inspection and final adjustment time after delivery on your calendar."
           ]
         },
         {
           "id": "experience",
           "heading": "Owners help expose the gaps in the quote",
           "paragraphs": [
-            "In a [November 2024 discussion](https://chinertown.com/index.php?topic=5449.0), a T1550 owner described being happy with a previous Black Friday purchase. That is a positive ownership report about that generation and transaction; it does not establish current stock or predict every support experience.",
-            "Another buyer’s [April 2025 account](https://chinertown.com/index.php/topic,5878.0.html) described a disputed damaged-frame return and delays. It is a single, unverified customer account, not an adjudicated finding. The practical lesson is to agree the arrival-damage process, preserve packaging and record the condition before assembly.",
-            "Those stories belong beside each other. Looking only for praise removes useful preparation; looking only for complaints hides the many transactions that never become a forum thread."
+            "A [November 2024 T1550 owner](https://chinertown.com/index.php?topic=5449.0) liked their Black Friday purchase. Another buyer’s [April 2025 post](https://chinertown.com/index.php/topic,5878.0.html) describes a disputed damaged-frame return. The second is an unverified individual account, not an adjudicated finding. Together they suggest a practical step: agree the arrival-damage procedure and record the packaging before assembly.",
+            "Neither post can tell you today’s stock or support outcome. The invoice and current terms for your seller should answer those questions."
           ]
         },
         {
@@ -62,33 +101,72 @@
     },
     "zh-Hans": {
       "title": "Winspace 购车指南：官网直购、当地经销还是整车？",
-      "description": "下单 Winspace 车架或整车前，比较官网、经销、发货仓、合身与售后，并了解有日期的车主经历。",
-      "intro": "Winspace 有不止一种购买方式。比较时必须先对齐商品：一箱车架、经销商装好的车、区域交付的整车，是三种不同报价。",
+      "description": "Winspace T1550 如何选择品牌直购或经销商：对齐车架与整车报价、区域交付、合身和售后。",
+      "intro": "Winspace 可以通过品牌商城、名单内经销商或区域交付整车购买。先让三个渠道为同一代 T1550、同一套配置报价，再决定去哪里买。",
       "sections": [
         {
           "id": "route",
           "heading": "先为同一辆车拿到两份报价",
           "paragraphs": [
-            "从[官方经销商名单](https://www.winspace.cc/pages/authorized-dealers)和[品牌商城](https://www.winspace.cc/)开始。请附近名单内经销商报价你想要的具体车型与代际，再与直购比较。仅有 T1550 名称还不够；代际、颜色和套餐内容都应一致。",
-            "经销商报价可能包含裸车架价格没有的工作。确认装配、合身调整和初次调试是否包含，以及保修由谁提交。直购能提供特殊配置是优势，但剩余工作仍要计入预算。"
-          ]
+            "先查 [Winspace 官方经销商名单](https://www.winspace.cc/pages/authorized-dealers)：加拿大、美国及多个欧洲国家都有具名店铺，再选一家与[品牌商城](https://www.winspace.cc/)比较。问准 T1550 代际、尺码、颜色及把组。同名不同代，不是一张配置单。",
+            "经销商报价可能含装配、合身调整和初次调试；直购车架通常还要另算车店工时。两边应使用相同轮组与传动。若经销商建议换配置，就把差异写出来再比较。"
+          ],
+          "worksheet": {
+            "caption": "T1550 渠道对照：先对齐配置",
+            "columns": [
+              "问题",
+              "品牌车架",
+              "品牌整车",
+              "名单内经销商"
+            ],
+            "rows": [
+              [
+                "代际、尺码、把组",
+                "确认",
+                "确认",
+                "确认"
+              ],
+              [
+                "轮组与传动",
+                "加入装车预算",
+                "列出实际部件",
+                "列出实际部件"
+              ],
+              [
+                "仓库或装配地点",
+                "确认发货地",
+                "确认区域方案",
+                "确认库存地"
+              ],
+              [
+                "合身、装配、初次检查",
+                "车店另报价",
+                "询问内含内容",
+                "询问内含内容"
+              ],
+              [
+                "索赔联系人与退货地",
+                "确认",
+                "确认",
+                "确认"
+              ]
+            ]
+          }
         },
         {
           "id": "warehouse",
           "heading": "发货仓是具体订单的信息",
           "paragraphs": [
-            "[运输说明](https://www.winspace.cc/pages/shipping)介绍了多个区域的履约安排。要问你的尺码和颜色究竟由哪个仓发出。部分整车还涉及末端装配与配送，不能把包裹发出等同于全部流程完成。",
-            "[整车页面](https://www.winspace.cc/pages/completebikes)宣传欧洲和美国区域交付。确认到手价是否覆盖你的地址，以及承运商再收钱时怎么办。没有加拿大具体报价，就不能照搬美国或欧盟方案。",
-            "若已有活动日期，要从真正能骑的日子倒推：签收、检查、装配、调整都在运输之后。单号是进度，不是一辆车。"
+            "[Winspace 整车页](https://www.winspace.cc/pages/completebikes)宣传欧盟订单从欧盟境内发、美国订单在美国装配并发出；[运输页](https://www.winspace.cc/pages/shipping)介绍多个地区的履约安排。这些是渠道说明，不证明目标 T1550 尺码和颜色此刻有区域现货。",
+            "问清实际发货或装配地点、到你的地址的总价包含什么，以及这套准确配置何时准备好。加拿大买家应取得加拿大报价，不能照搬美国方案。签收后还要为检查和最终调整留时间。"
           ]
         },
         {
           "id": "experience",
           "heading": "车主经历能找出报价中的空白",
           "paragraphs": [
-            "在 [2024 年 11 月讨论](https://chinertown.com/index.php?topic=5449.0)中，一位 T1550 车主对之前黑五购买的车表示满意。这是针对该代际和交易的积极报告，不能证明当前库存或预测每次售后。",
-            "另一位买家在 [2025 年 4 月帖子](https://chinertown.com/index.php/topic,5878.0.html)中描述了损坏车架退货争议及延误。这是未经独立核实的单一客户叙述，不是裁决结果。实用启示是先确认到货损坏流程、保留包装，并在装配前记录状态。",
-            "两类故事应一起读。只找好评会错过准备事项；只找投诉，又会忽略那些从未变成论坛帖的普通交易。"
+            "[2024 年 11 月一位 T1550 车主](https://chinertown.com/index.php?topic=5449.0)满意此前黑五购买；另一位买家在[2025 年 4 月帖子](https://chinertown.com/index.php/topic,5878.0.html)描述损坏车架退货争议。后者是未经独立核实的个人叙述，并非裁决结论。两者给出的具体动作是：先问清到货损坏流程，并在装车前拍下包装。",
+            "老帖无法告诉你今天的库存与售后结果；这些应由实际卖家的发票和当前条款回答。"
           ]
         },
         {

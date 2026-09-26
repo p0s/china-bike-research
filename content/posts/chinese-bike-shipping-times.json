@@ -2,7 +2,7 @@
   "slug": "chinese-bike-shipping-times",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "chinese-bike-prices-for-international-buyers",
   "model_ids": [
@@ -34,10 +34,44 @@
           "id": "clocks",
           "heading": "Write down four milestones",
           "paragraphs": [
-            "First comes allocation: is the exact frame and cockpit available for your order? Next comes preparation or production, including any paint. Then comes transport, clearance and final delivery. Finally comes inspection, assembly and adjustment.",
-            "Ask the seller to attach its estimate to a milestone. Ready in three weeks might mean a painted frame ready for collection, not a finished bike at your door. Likewise, a local warehouse can shorten transit without resolving a missing cockpit.",
-            "Create a timeline with expected dates and blank actual dates. A useful order update changes one of those fields. A reassuring message that does not identify the current stage is less informative."
-          ]
+            "Ask the seller which date its estimate describes. “Ready in three weeks” might mean a painted frame awaiting collection. It might not include the missing cockpit, customs or the workshop queue. Use a timeline that ends with a rideable bike.",
+            "Put the seller’s current estimate in the middle column and record what actually happened in the last. An update such as “paint approved, awaiting cockpit” now tells you exactly which date is still uncertain."
+          ],
+          "worksheet": {
+            "caption": "Order timeline — fill in dates, not just a total number of weeks",
+            "columns": [
+              "Milestone",
+              "Expected date",
+              "Actual date / evidence"
+            ],
+            "rows": [
+              [
+                "Frame and all required parts allocated",
+                "Ask seller",
+                "Stock confirmed for your order"
+              ],
+              [
+                "Paint and preparation finished",
+                "Ask seller",
+                "Configuration approved for dispatch"
+              ],
+              [
+                "Parcel accepted by carrier",
+                "Ask seller",
+                "First carrier acceptance scan"
+              ],
+              [
+                "Customs cleared and parcel delivered",
+                "Carrier estimate",
+                "Delivery record"
+              ],
+              [
+                "Inspection and assembly complete",
+                "Arrange with workshop",
+                "Bike checked and ready"
+              ]
+            ]
+          }
         },
         {
           "id": "examples",
@@ -52,9 +86,13 @@
           "id": "tracking",
           "heading": "Read scans, not just the tracking number",
           "paragraphs": [
-            "A seller can create a label before handing a parcel to the carrier. Look for the first acceptance scan, then the next actual movement. A gap between scans does not by itself establish loss, nor does a created label establish dispatch.",
-            "Ask for clarification through the seller when the stated milestone is missed. A concise message works well: the agreed dispatch estimate was this date; the carrier currently shows this status; please confirm the parcel’s location and the next expected action.",
-            "Keep the conversation and order evidence in one place. If a payment method has a dispute deadline, understand it when you pay and track it independently; repeated promises should not make you lose a protection window."
+            "A tracking number means the shipment has a label. The first carrier acceptance scan is stronger evidence that the parcel has entered the transport network. Gaps between later scans can occur; a silent tracking page alone cannot tell you where a delay happened.",
+            "When an agreed milestone slips, send the order number, promised date and current carrier status, then ask for the next action and a revised date. Track any payment-provider dispute deadline separately from the seller’s estimates."
+          ],
+          "bullets": [
+            "Label created, no acceptance scan: ask whether the carrier has collected the parcel.",
+            "Waiting for customs information: ask the carrier what document or payment it needs and check who agreed to supply it.",
+            "Delivered, but a required part is missing: move the problem to the packing list; faster shipping has stopped being the relevant question."
           ]
         },
         {
@@ -77,10 +115,44 @@
           "id": "clocks",
           "heading": "写下四个时间节点",
           "paragraphs": [
-            "先是分配：具体车架和把组是否已为你备好？然后是备货或生产，包括喷漆；接着是运输、清关和送达；最后是检查、装配与调整。",
-            "请卖家把时间估计对应节点。“三周准备好”可能只表示喷漆车架可供揽收，不是整车到家。本地仓也许减少在途，却不能解决缺把组。",
-            "做一张时间线，填预计日期，把实际日期留空。有效进度更新应改变其中一个字段。没说明当前阶段的安慰消息，信息量更少。"
-          ]
+            "先问卖家的估计对应哪一天。“三周准备好”可能只是喷漆完成、等待揽收，还没算缺的把组、清关和车店排期。时间线应当一直列到真正能骑。",
+            "中间一列填卖家的当前估计，最后一列记实际进展。这样，“涂装已确认，仍等把组”就能对应到具体未定的日期。"
+          ],
+          "worksheet": {
+            "caption": "订单时间线：填写日期，而不只是“几周”",
+            "columns": [
+              "节点",
+              "预计日期",
+              "实际日期／凭据"
+            ],
+            "rows": [
+              [
+                "车架及全部必需件分配到订单",
+                "询问卖家",
+                "确认该订单实物库存"
+              ],
+              [
+                "喷漆与备货完成",
+                "询问卖家",
+                "确认待发配置"
+              ],
+              [
+                "承运商揽收",
+                "询问卖家",
+                "首次揽收扫描"
+              ],
+              [
+                "完成清关并送达",
+                "承运商估计",
+                "签收记录"
+              ],
+              [
+                "检查、装配完成",
+                "与车店约定",
+                "检查完毕，可以骑行"
+              ]
+            ]
+          }
         },
         {
           "id": "examples",
@@ -95,9 +167,13 @@
           "id": "tracking",
           "heading": "看扫描记录，不只看单号",
           "paragraphs": [
-            "卖家可能先生成面单，再把包裹交给承运商。看首次揽收扫描及之后的真实移动。扫描间隔本身不证明丢件，单号生成也不证明发出。",
-            "约定节点错过时，通过卖家询问。简明消息即可：约定发货估计是某日，承运商当前显示某状态，请确认包裹位置和下一步预计动作。",
-            "将沟通和订单证据放在一起。支付方式若有争议时限，付款时就了解并单独记录；不要因反复承诺而错过保护窗口。"
+            "有单号表示已生成面单，承运商首次揽收扫描才更能说明包裹进入运输网络。之后的扫描可能有间隔；物流页暂时不动，本身无法确定延误在哪里发生。",
+            "约定节点错过时，提供订单号、承诺日期及当前物流状态，问清下一步动作和新日期。支付平台的争议时限要独立记录，不能跟着卖家的估计不断往后推。"
+          ],
+          "bullets": [
+            "只有面单、没有揽收：问承运商是否已实际收件。",
+            "等待清关资料：向承运商确认缺什么文件或费用，再核对由谁提供。",
+            "已签收但缺必需件：回到装箱单逐项处理；此时问题已不是运输速度。"
           ]
         },
         {

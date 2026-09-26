@@ -67,7 +67,7 @@ function copyFor(post, ctx) { return post.translations[ctx.locale ?? 'en']; }
 function bilingual(ctx, en, zh) { return ctx.locale === 'zh-Hans' ? zh : en; }
 function sourceList(ctx, post) {
   const t = (en, zh) => bilingual(ctx, en, zh);
-  if (post.researched_at) return `<section class="article-sources" id="article-sources"><h2>${t('Sources', '来源')}</h2><p>${t('Official pages and linked owner accounts researched', '官方页面与所链接车主记录核查于')} <time datetime="${post.researched_at}">${post.researched_at}</time>. <a href="${url(ctx.base, '/methodology/')}">${t('Research methodology', '研究方法')}</a>.</p></section>`;
+  if (post.researched_at) return `<section class="article-sources" id="article-sources"><h2>${t('Sources', '来源')}</h2><p>${t('Source review began', '资料核查始于')} <time datetime="${post.researched_at}">${post.researched_at}</time>. <a href="${url(ctx.base, '/methodology/')}">${t('Research methodology', '研究方法')}</a>.</p></section>`;
   return `<section class="article-sources" id="article-sources"><h2>${t('Sources and method', '来源与方法')}</h2><p>${t('China Bikes compiled this guide from linked model records and sources, with AI-assisted editing and translation. It is desk research, not a hands-on test. Prices and specifications retain their own evidence dates; this edit did not recheck stock or checkout prices.', 'China Bikes 根据车型记录与来源整理本文，并使用 AI 辅助编辑和翻译。这是资料研究，不是实物测试。价格和规格保留各自的证据日期，本次编辑未重新核实库存或结算价。')} <a href="${url(ctx.base, '/methodology/')}">${t('Research methodology', '研究方法')}</a>.</p></section>`;
 }
 function renderSection(ctx, post, section) {

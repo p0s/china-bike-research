@@ -2,7 +2,7 @@
   "slug": "chinese-bike-frame-sizing",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "38mm-tires-on-aero-road-bikes",
   "model_ids": [
@@ -27,7 +27,7 @@
   "translations": {
     "en": {
       "title": "How to size a Chinese bike frame before ordering online",
-      "description": "Build a fit worksheet around your current bike, compare stack and reach, and check cockpit and seatpost adjustment before committing to a frameset.",
+      "description": "Compare stack, reach and cockpit options before ordering a Chinese bike frame. Includes a fit worksheet to share with your seller and bike fitter.",
       "intro": "Two bikes marked medium can put your hands in different places. When returning a frame involves international shipping, a sizing label is a particularly expensive thing to guess from.",
       "sections": [
         {
@@ -43,9 +43,9 @@
           "id": "geometry",
           "heading": "Compare coordinates, not clothing sizes",
           "paragraphs": [
-            "Frame stack and reach describe the head-tube reference position relative to the bottom bracket. They are useful comparison coordinates, not the final location of your hands. Headset covers, spacers, stem geometry, handlebar reach and hood placement all contribute after that reference point.",
-            "Compare the exact charts side by side. Similar effective top-tube lengths do not guarantee the same fit, and a nominal 54 from one brand need not match a 54 elsewhere. Seat angle and the available saddle adjustment also affect how your contact points come together.",
-            "Use a manufacturer’s height chart as a starting shortlist. [Winspace’s sizing guidance](https://www.winspace.cc/pages/size-chart), for example, asks for more context than simply choosing a familiar letter. If between sizes, ask the fitter to show how each complete setup reaches your target position."
+            "Frame stack is the vertical distance from the bottom-bracket center to the top-center of the head tube; reach is the horizontal distance between those points. Together they describe where the front of the frame ends. Your hands sit farther along a chain of headset cover, spacers, stem, handlebar and hoods.",
+            "For a made-up example, compare a current frame at 560 mm stack and 380 mm reach with a candidate at 545 mm and 390 mm. The candidate’s head-tube reference point is 15 mm lower and 10 mm farther forward. That does not mean “add 15 mm of spacers and buy a 10 mm shorter stem”: steering angle, stem angle and the rest of the cockpit also change the result.",
+            "Compare the whole setup, including saddle position and the manufacturer’s adjustment limits. A nominal 54 from one brand need not match a 54 elsewhere. Use [Winspace’s size guidance](https://www.winspace.cc/pages/size-chart), or the relevant brand chart, to shortlist sizes; ask a fitter to explain how each shortlisted setup reaches your target position."
           ]
         },
         {
@@ -59,18 +59,67 @@
         },
         {
           "id": "worksheet",
-          "heading": "Send a fit brief, not just your height",
+          "heading": "Fill this in before asking “which size?”",
           "paragraphs": [
-            "Make a short brief with two columns: current comfortable setup and proposed setup. Include exact frame, chart source, stack and reach, cockpit dimensions, spacers, saddle position and what still needs confirmation. Keep units consistent.",
-            "Send it to the seller and the person assembling the bike. Ask them to identify unavailable parts and unresolved limits, rather than merely replying that the size should be fine. If there is a disagreement, resolve it before approving custom paint.",
-            "Keep the fit decision separate from color and discounts. It is easier to be patient about a missing finish than to make a beautifully painted frame shorter after it arrives."
-          ]
+            "Copy this table into your notes. Use millimeters and the same measurement method for both bikes. Leave an unknown blank; the empty cells are the questions to resolve with your fitter and seller.",
+            "Send the completed brief with the geometry links and a sentence about your normal ride and any discomfort. Ask for the proposed cockpit and spacer setup, not just a frame-size recommendation. Approve paint after the position works on paper."
+          ],
+          "worksheet": {
+            "caption": "Fit brief — current bike versus proposed build",
+            "columns": [
+              "Item",
+              "Current comfortable setup",
+              "Proposed setup / question"
+            ],
+            "rows": [
+              [
+                "Frame model, year and size",
+                "Fill in",
+                "Fill in"
+              ],
+              [
+                "Geometry chart link; stack / reach (mm)",
+                "Fill in",
+                "Fill in"
+              ],
+              [
+                "Stem length / angle; bar reach / drop",
+                "Fill in",
+                "Confirm supplied cockpit"
+              ],
+              [
+                "Bar width and where it is measured",
+                "Fill in",
+                "Confirm measurement convention"
+              ],
+              [
+                "Headset cover and spacers below stem",
+                "Fill in",
+                "Check manual limits"
+              ],
+              [
+                "Saddle model, height and setback",
+                "Use fitter’s measurement method",
+                "Check achievable position"
+              ],
+              [
+                "Seatpost offset and insertion limits",
+                "Fill in",
+                "Confirm exact post"
+              ],
+              [
+                "What should stay / what should change",
+                "Describe comfort and riding",
+                "Have fitter explain the changes"
+              ]
+            ]
+          }
         }
       ]
     },
     "zh-Hans": {
       "title": "网购中国品牌车架，如何先确认尺码",
-      "description": "用现有自行车建立合身参考，比较 stack 与 reach，并在购买车架前核对把组、座管及调整空间。",
+      "description": "购买车架前，怎样比较 stack、reach 和把组尺寸？附可直接填写的合身表，方便与卖家及装车技师核对。",
       "intro": "同样写着 M 的两辆车，手的位置可能完全不同。退车架要跨国运输时，靠尺码标签猜尺寸尤其昂贵。",
       "sections": [
         {
@@ -86,9 +135,9 @@
           "id": "geometry",
           "heading": "比较坐标，不是比较衣服尺码",
           "paragraphs": [
-            "车架 stack 与 reach 描述头管参考点相对中轴的位置，适合比较，却不是最终手的位置。碗组上盖、垫圈、把立几何、弯把前伸及手变安装位置都会继续影响结果。",
-            "把准确几何表并排。相近的水平上管不保证相同合身，一个品牌的 54 也不必等于另一个的 54。座管角度和坐垫调整范围同样影响最终接触点。",
-            "厂家身高表适合作初筛。例如 [Winspace 尺码建议](https://www.winspace.cc/pages/size-chart)也需要更多背景，而不只是熟悉的字母。介于两码时，请 fitter 展示两种完整设置怎样达到目标姿势。"
+            "Stack 是中轴中心到头管顶部中心的垂直距离，reach 是这两个点之间的水平距离。它们描述车架前端的位置；从这里到双手，还要经过碗组上盖、垫圈、把立、弯把和手变。",
+            "举个假设例子：旧车架的 stack/reach 为 560/380 mm，候选车架为 545/390 mm。候选车架的头管参考点低了 15 mm、向前多了 10 mm。但这不等于“加 15 mm 垫圈，再换短 10 mm 的把立”：头管角度、把立角度及其余把组尺寸也会影响结果。",
+            "要比较完整设置，包括坐垫位置和厂家允许的调整范围。一个品牌的 54 码不必等于另一个品牌的 54 码。可先用 [Winspace 尺码建议](https://www.winspace.cc/pages/size-chart)或对应品牌的表筛选，再请合身顾问解释各方案怎样达到目标姿势。"
           ]
         },
         {
@@ -102,12 +151,61 @@
         },
         {
           "id": "worksheet",
-          "heading": "发送合身需求，而不只是身高",
+          "heading": "问“选什么码”之前，先填这张表",
           "paragraphs": [
-            "做两列简表：当前舒适设置、拟购设置。包含准确车架、几何来源、stack/reach、把组、垫圈、坐垫位置和待确认项，单位统一。",
-            "发给卖家和装车者，请他们明确缺货部件及未解决限制，而不只是回答“应该可以”。有分歧时，先解决再批准定制涂装。",
-            "把合身决定与颜色、折扣分开。等一种颜色补货，比收到后想把漂亮车架缩短容易得多。"
-          ]
+            "把表复制到笔记中，长度统一用毫米，两辆车采用相同测量方法。未知项留空；这些空格就是要和合身顾问、卖家一起解决的问题。",
+            "发出表格时附上几何链接，简述常骑路线和不舒服的地方。请对方给出把组与垫圈方案，而不只是推荐一个车架尺码。姿势方案确认后，再批准涂装。"
+          ],
+          "worksheet": {
+            "caption": "购车合身表：现有车与拟购配置",
+            "columns": [
+              "项目",
+              "当前舒适设置",
+              "拟购设置／待确认"
+            ],
+            "rows": [
+              [
+                "车架型号、年份、尺码",
+                "填写",
+                "填写"
+              ],
+              [
+                "几何表链接；stack / reach（mm）",
+                "填写",
+                "填写"
+              ],
+              [
+                "把立长度／角度；弯把前伸／落差",
+                "填写",
+                "确认实际提供的把组"
+              ],
+              [
+                "把宽及测量位置",
+                "填写",
+                "确认测量口径"
+              ],
+              [
+                "碗组上盖及把立下垫圈",
+                "填写",
+                "核对手册限制"
+              ],
+              [
+                "坐垫型号、高度、后移量",
+                "按合身顾问的测量方法",
+                "确认能达到目标位置"
+              ],
+              [
+                "座管后飘及插入限制",
+                "填写",
+                "确认准确座管"
+              ],
+              [
+                "想保留什么／改变什么",
+                "描述舒适度与骑行方式",
+                "请合身顾问解释调整方案"
+              ]
+            ]
+          }
         }
       ]
     }

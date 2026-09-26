@@ -2,7 +2,7 @@
   "slug": "buy-elves-bike",
   "publication_status": "scheduled",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-09-27",
   "researched_at": "2026-09-22",
   "image_id": "frameset-vs-complete-bike-cost-in-china",
   "model_ids": [
@@ -20,7 +20,7 @@
   "translations": {
     "en": {
       "title": "Buying an Elves frameset: distributors, custom paint and realistic lead times",
-      "description": "Find the right Elves seller, put the exact frame and cockpit in writing, and understand what dated owner orders reveal about production and delivery.",
+      "description": "Order an Elves frameset through a verified seller, approve the paint and cockpit specification, and understand production, shipping and return terms.",
       "intro": "The color configurator is the fun part. Before falling in love with a finish, work out who is taking the order, which generation you are buying and when the frame will actually be ready to leave the factory.",
       "sections": [
         {
@@ -36,18 +36,48 @@
           "id": "paint",
           "heading": "Turn your paint idea into an approved specification",
           "paragraphs": [
-            "Agree the color references, finish and logo placement in writing, and ask how the seller confirms the design before production. Screens vary; a digital swatch is not a calibrated promise about the finished object. For an important color match, ask what physical or photographic reference the seller can provide.",
-            "Also settle the point at which changes or cancellation become unavailable. Customization can change both lead time and return options. A small paint revision after approval can restart work, so finalize the fit and cockpit before approving the decoration.",
-            "Request a separate estimate for production and shipping. If a seller says two weeks, establish whether that means ready for collection, handed to the carrier or delivered to you."
-          ]
+            "Elves’ [terms](https://elvesbike.com/terms.php) describe many frames as made to order and give an ordinary estimate of six to ten weeks for manufacturing and delivery, with seasonal variation. That is a general published estimate, not a dispatch promise for your paint job. Ask the seller for your order’s production completion date and a separate transit estimate.",
+            "Approve a written paint specification before work starts. A screen swatch can shift with display settings, so ask what reference the painter will actually use. Also ask when changes or cancellation become unavailable, and whether the chosen finish affects a return."
+          ],
+          "worksheet": {
+            "caption": "Paint approval — attach to the order",
+            "columns": [
+              "Decision",
+              "Your approved answer"
+            ],
+            "rows": [
+              [
+                "Exact frame generation and size",
+                "Fill in"
+              ],
+              [
+                "Color references and finish",
+                "Attach agreed references"
+              ],
+              [
+                "Logo placement and orientation",
+                "Attach approved design"
+              ],
+              [
+                "Cockpit width / stem length and seatpost option",
+                "Fill in"
+              ],
+              [
+                "Approval date; last date to change or cancel",
+                "Seller to confirm"
+              ],
+              [
+                "Estimated production completion and dispatch",
+                "Seller to confirm"
+              ]
+            ]
+          }
         },
         {
           "id": "owners",
           "heading": "The same thread contains very different waits",
           "paragraphs": [
-            "In the [Falath Evo owner thread](https://chinertown.com/index.php/topic,4032.165.html), a buyer posting in July 2025 was still waiting after an order placed in June. An August update described dispatch after about ten weeks. Another buyer posting in February 2026 reported a little over a month and praised the packaging.",
-            "These are individual orders under different conditions. They do not establish a normal Elves lead time, and a buyer’s report of the factory’s explanation is not independent confirmation of the cause. What they do show is why a fixed event date needs a buffer.",
-            "When asking a forum owner for context, the useful details are order month, exact generation, paint choice, destination and dispatch date. Without those, a quick arrival elsewhere cannot settle whether your custom order is late."
+            "The [Falath Evo thread](https://chinertown.com/index.php/topic,4032.165.html) includes a 2025 order dispatched after about ten weeks and a different 2026 buyer reporting a little over a month. For a custom frame, use these dates to ask which milestone your seller means by “ready.” They are separate owner reports, not a current brand average."
           ]
         },
         {
@@ -63,7 +93,7 @@
     },
     "zh-Hans": {
       "title": "Elves 车架购买指南：区域代理、定制涂装与等待时间",
-      "description": "找到合适的 Elves 卖家，书面确认车架和把组，并从有日期的车主订单了解生产与交货差异。",
+      "description": "Elves 车架如何从官方渠道购买：确认卖家、涂装与把组、生产及运输阶段和退货条款。",
       "intro": "选颜色是最开心的环节。但在爱上某种涂装之前，先弄清谁接单、买的是哪一代，以及车架什么时候真正能出厂。",
       "sections": [
         {
@@ -79,18 +109,48 @@
           "id": "paint",
           "heading": "把涂装想法变成确认过的规格",
           "paragraphs": [
-            "书面确认颜色参考、表面效果及标志位置，并问生产前如何确认设计。屏幕显示有差异，电子色块不是对成品颜色的校准保证。若配色很关键，问卖家能提供何种实物或照片参考。",
-            "还要确认何时起不能修改或取消。定制会影响交期和退货条件。设计批准后再改一点颜色，也可能需要重新安排工作；先确定合身与把组，再确认装饰。",
-            "把生产和运输时间分别问清。“两周”究竟指可以取件、交给承运商，还是送到你手里？"
-          ]
+            "[Elves 条款](https://elvesbike.com/terms.php)说明不少车架按单生产，并给出制造加交付通常六至十周的估计，也提醒淡季可能缩短。这是一般说明，不是你的涂装订单的发货承诺。请卖家分别给出生产完成日和运输估计。",
+            "生产前批准书面涂装规格。屏幕色块会随显示设置变化，问清喷漆实际使用的参考样。还要问何时不能修改或取消，以及所选涂装是否影响退货。"
+          ],
+          "worksheet": {
+            "caption": "涂装确认单：与订单一起保存",
+            "columns": [
+              "决定",
+              "你确认的答案"
+            ],
+            "rows": [
+              [
+                "准确车架代际及尺码",
+                "填写"
+              ],
+              [
+                "颜色参考与表面效果",
+                "附已同意参考"
+              ],
+              [
+                "标志位置和方向",
+                "附批准设计"
+              ],
+              [
+                "把宽／把立长度与座管选项",
+                "填写"
+              ],
+              [
+                "批准日期；最晚修改或取消日",
+                "请卖家确认"
+              ],
+              [
+                "预计生产完成及发货日期",
+                "请卖家确认"
+              ]
+            ]
+          }
         },
         {
           "id": "owners",
           "heading": "同一讨论里，也有完全不同的等待",
           "paragraphs": [
-            "在 [Falath Evo 车主讨论](https://chinertown.com/index.php/topic,4032.165.html)中，一位 2025 年 7 月发帖的买家仍在等六月订单，八月更新称约十周后发出。另一位 2026 年 2 月买家报告一个多月，并称赞包装。",
-            "这些订单条件不同，不能据此计算 Elves 的正常交期。买家转述厂家的解释，也不是对原因的独立证实。它们说明：若有固定活动日期，必须留余量。",
-            "向车主追问时，最有用的是下单月份、具体代际、涂装、目的地和发货日。缺少这些信息，别人的快速到货不能判断你的定制单是否异常。"
+            "[Falath Evo 讨论](https://chinertown.com/index.php/topic,4032.165.html)中，一笔 2025 年订单约十周后发出；另一位 2026 年买家报告一个多月。买定制车架时，可用这些节点追问卖家“准备好”究竟指哪一步。它们是两笔独立经历，不是当前品牌平均交期。"
           ]
         },
         {
