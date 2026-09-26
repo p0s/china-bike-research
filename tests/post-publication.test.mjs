@@ -5,10 +5,17 @@ import {loadSchedule,validateSchedule,publishedPosts,nextPublication,preparePubl
 import {loadDataset,joinProducts,joinCatalogCandidates} from '../src/lib/data.mjs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
-const posts=loadPosts(root),queue=loadSchedule(root,posts);
+const posts=loadPosts(root),committedQueue=loadSchedule(root,posts);
+const queue=structuredClone(committedQueue);
+for(const entry of queue.entries)entry.published_at=null;
 const start=new Date(queue.entries[0].scheduled_at);
 const data=loadDataset();
 const ctx={data,products:joinProducts(data),catalogCandidates:joinCatalogCandidates(data),base:'',siteUrl:'https://chinesebikes.xyz',siteLastmod:data.meta.snapshot_date};
+test('the committed queue remains valid as releases are prepared',()=>{
+ const prepared=committedQueue.entries.filter(entry=>entry.published_at!==null).length;
+ assert.equal(publishedPosts(posts,committedQueue,new Date('2030-01-01T00:00:00Z')).length,4+prepared);
+ assert.equal(nextPublication(committedQueue,{},new Date('2030-01-01')).action,prepared?'verify':'publish');
+});
 test('the fixed twenty-entry calendar starts three days after the request and preserves every random gap',()=>{
  assert.equal(queue.entries.length,20);
  assert.equal(start.toISOString(),'2026-09-25T12:20:00.000Z');
