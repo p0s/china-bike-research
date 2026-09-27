@@ -30,7 +30,7 @@ import {
   collectionStructuredData,
   datasetStructuredData,
   latestDate,
-  productPageStructuredData,
+  modelPageStructuredData,
   websiteStructuredData,
   webApplicationStructuredData
 } from './lib/seo.mjs';
@@ -1295,13 +1295,6 @@ export function renderModel(ctx, product) {
   const storyTitle = publishedStoryTitle(product, weight, tireClearance);
   const heroImage = imageUrl(ctx, product.image);
   const imageFigure = heroImage ? productGalleryFigure(ctx, product) : '';
-  const seoProperties = [
-    ['Product type', variant.kind === 'frameset' ? 'Frameset' : 'Complete bike'],
-    ['Frame material', frameMaterialLabel(product)],
-    ...(tireClearance.value !== '—' ? [['Maximum tire clearance', tireClearance.value]] : []),
-    ...(weight !== '—' ? [['Weight', weight]] : []),
-    ...(variant.kind === 'complete-bike' ? [['Drivetrain', drivetrainLabel(ctx, product)]] : [])
-  ];
   const body = `<section class="model-page"><div class="page">${breadcrumbs(ctx, modelName, modelTrail, { catalogBack: true })}${evidenceContext(ctx, reviewedThrough, { sourceTarget: 'source-records' })}<div class="model-grid${heroImage ? '' : ' has-no-image'}">
     ${imageFigure}
     <div class="model-summary"><div class="model-brand"><a class="model-brand-filter" href="${url(ctx.base, '/')}?brand=${encodeURIComponent(brand.id)}#catalog" aria-label="${escapeAttr(brandLabel)} — show this brand in the catalog">${escapeHtml(brandLabel)}</a>${variant.kind === 'frameset' ? '<span class="type-pill">Frame estimate</span>' : ''}${statusFlag(product)}</div><h1>${escapeHtml(variant.name)}</h1><div class="model-price"${modelPriceAttributes}><strong${variant.kind === 'frameset' ? ' data-model-calculated-price' : ''}>${escapeHtml(publishedPriceLabel(product))}</strong>${infoTip('Price details', priceTooltipLines(ctx, product))}<span>${escapeHtml(priceSubline)}</span></div><div class="model-actions"><button class="secondary-button model-compare-button" type="button" data-add-to-comparison data-product-id="${escapeAttr(variant.id)}" data-product-name="${escapeAttr(`${brand.name} ${variant.name}`)}">Add to comparison</button><a class="primary-button" href="${url(ctx.base, '/build/')}?base=${encodeURIComponent(variant.id)}">${variant.kind === 'frameset' ? 'Build this frame' : 'Modify this bike'}</a><a class="text-button" href="${url(ctx.base, '/')}#catalog" data-model-compare-link>Choose another bike</a></div><dl class="model-facts">${detailFacts.map(([label, value, tip]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}${label === 'Drivetrain' ? electronicGroupsetReference(ctx, value) : ''}${tip}</dd></div>`).join('')}</dl></div>
@@ -1324,17 +1317,13 @@ export function renderModel(ctx, product) {
     image: heroImage,
     imageAlt: product.image?.alt ?? `${brand.name} ${variant.name}`,
     ogType: 'product',
-    structuredData: productPageStructuredData({
+    structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,
       path: `/models/${variant.id}/`,
       name: `${brand.name} ${variant.name}`,
-      model: variant.name,
-      brand: brand.name,
       description: variant.editorial.verdict,
-      category: categoryLabel(platform.category),
       image: heroImage,
-      properties: seoProperties,
       trail: modelTrail
     }),
     body
@@ -1460,18 +1449,14 @@ export function renderCandidateModel(ctx, entry) {
     image: candidateHeroImage,
     imageAlt: entry.image?.alt ?? candidate.name,
     ogType: candidateSeoProduct ? 'product' : 'website',
-    structuredData: productPageStructuredData({
+    structuredData: modelPageStructuredData({
       siteUrl: ctx.siteUrl,
       base: ctx.base,
       path: `/models/${candidate.id}/`,
       name: pageTitle,
-      model: candidate.name,
-      brand: brand?.name ?? '',
       description: reason,
-      category,
       image: candidateHeroImage,
-      properties: facts,
-      includeProduct: candidateSeoProduct
+      includeSubject: candidateSeoProduct
     }),
     body
   });
