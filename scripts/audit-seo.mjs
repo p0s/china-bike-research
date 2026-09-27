@@ -46,7 +46,15 @@ for (const file of files) {
     }
   }
   for (const match of html.matchAll(/<script type="application\/(?:ld\+)?json">([^<]+)<\/script>/g)) {
-    try { JSON.parse(match[1]); } catch { errors.push(`${file}: invalid embedded JSON`); }
+    try {
+      const data = JSON.parse(match[1]);
+      if (match[0].startsWith('<script type="application/ld+json">')) {
+        for (const node of data['@graph'] ?? [data]) {
+          if (node['@type'] === 'Product') errors.push(`${file}: Product schema without a current offer or genuine review`);
+          if (node['@type'] === 'Dataset' && !node.creator?.name) errors.push(`${file}: Dataset creator missing`);
+        }
+      }
+    } catch { errors.push(`${file}: invalid embedded JSON`); }
   }
 }
 for (const url of sitemapSet) if (!indexable.has(url)) errors.push(`Sitemap URL has no indexable generated page: ${url}`);

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   datasetStructuredData,
   latestDate,
-  productPageStructuredData,
+  modelPageStructuredData,
   sitemapXml,
   websiteStructuredData
 } from '../src/lib/seo.mjs';
@@ -20,39 +20,35 @@ test('homepage structured data identifies the site without duplicating the catal
   assert.equal(JSON.stringify(data).includes('offers'), false);
 });
 
-test('model structured data provides product and breadcrumb identity without a price offer', () => {
-  const data = productPageStructuredData({
+test('model structured data identifies the researched subject without claiming a current offer or review', () => {
+  const data = modelPageStructuredData({
     siteUrl: 'https://china-bikes.example',
     base: '/guide',
     path: '/models/example/',
     name: 'Example Gravel',
-    model: 'Gravel',
-    brand: 'Example',
     description: 'An exact model.',
-    category: 'Gravel bike',
-    image: '/guide/assets/example.webp',
-    properties: [['Maximum tire clearance', '45 mm']]
+    image: '/guide/assets/example.webp'
   });
-  const product = data['@graph'].find((entry) => entry['@type'] === 'Product');
-  assert.equal(product.url, 'https://china-bikes.example/guide/models/example/');
-  assert.deepEqual(product.image, ['https://china-bikes.example/guide/assets/example.webp']);
-  assert.equal(product.additionalProperty[0].value, '45 mm');
-  assert.equal('offers' in product, false);
+  const subject = data['@graph'].find((entry) => entry['@type'] === 'Thing');
+  const page = data['@graph'].find((entry) => entry['@type'] === 'WebPage');
+  assert.equal(subject.url, 'https://china-bikes.example/guide/models/example/');
+  assert.deepEqual(subject.image, ['https://china-bikes.example/guide/assets/example.webp']);
+  assert.deepEqual(page.mainEntity, { '@id': subject['@id'] });
+  assert.equal(data['@graph'].some((entry) => entry['@type'] === 'Product'), false);
+  assert.equal(JSON.stringify(data).includes('offers'), false);
   assert.ok(data['@graph'].some((entry) => entry['@type'] === 'BreadcrumbList'));
 });
 
-test('unresolved model pages omit Product schema while retaining page breadcrumbs', () => {
-  const data = productPageStructuredData({
+test('unresolved model pages omit subject schema while retaining page breadcrumbs', () => {
+  const data = modelPageStructuredData({
     siteUrl: 'https://china-bikes.example',
     base: '',
     path: '/models/model-unclear/',
     name: 'Model unclear',
-    model: 'Model unclear',
     description: 'Identity unresolved.',
-    category: '',
-    includeProduct: false
+    includeSubject: false
   });
-  assert.equal(data['@graph'].some((entry) => entry['@type'] === 'Product'), false);
+  assert.equal(data['@graph'].some((entry) => entry['@type'] === 'Thing'), false);
   assert.ok(data['@graph'].some((entry) => entry['@type'] === 'WebPage'));
 });
 
@@ -89,6 +85,11 @@ test('dataset schema mirrors visible downloads without commercial claims', () =>
   });
   const dataset = data['@graph'].find((entry) => entry['@type'] === 'Dataset');
   assert.equal(dataset.dateModified, '2026-08-28');
+  assert.deepEqual(dataset.creator, {
+    '@type': 'Organization',
+    name: 'China Bikes',
+    url: 'https://china-bikes.example/'
+  });
   assert.equal(dataset.distribution.length, 2);
   assert.equal(dataset.distribution[0].contentUrl, 'https://china-bikes.example/data/catalog.json');
   assert.equal(JSON.stringify(data).includes('offers'), false);

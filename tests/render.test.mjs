@@ -179,7 +179,8 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.match(quickDetail, /About Quick/);
   assert.match(quickDetail, /Price record and sources/);
   assert.match(quickDetail, /property="og:type" content="product"/);
-  assert.match(quickDetail, /"@type":"Product"/);
+  assert.match(quickDetail, /"@type":"Thing"/);
+  assert.doesNotMatch(quickDetail, /"@type":"Product"/);
   assert.doesNotMatch(quickDetail, /"offers":/);
   assert.doesNotMatch(quickDetail, /Ask the seller in Chinese|Seller\/authenticity|Current seller/);
 
@@ -193,7 +194,7 @@ test('candidate bikes have concise internal research profiles with visible facts
   assert.doesNotMatch(sparseDetail, /Frame_weight_basis/);
   assert.match(sparseDetail, /Identity not confirmed/);
   assert.match(sparseDetail, /property="og:type" content="website"/);
-  assert.doesNotMatch(sparseDetail, /"@type":"Product"/);
+  assert.doesNotMatch(sparseDetail, /"@type":"Thing"|"@type":"Product"/);
 
   const airwolfPriceReference = candidates.find((entry) => entry.candidate.id === 'airwolf-yf-r003');
   const airwolfPriceDetail = renderCandidateModel(context, airwolfPriceReference);
@@ -319,7 +320,8 @@ test('published frame pages show exact-model galleries and component weight cont
   assert.match(quickDetail, /<dt>Seatpost weight<\/dt><dd>169 g<\/dd>/);
   assert.match(quickDetail, /5 sizes \(XS\/426–XL\/546\) · stack 524–599 mm · reach 370–405 mm/);
   assert.match(quickDetail, /property="og:type" content="product"/);
-  assert.match(quickDetail, /"name":"Maximum tire clearance"/);
+  assert.match(quickDetail, /<dt>Tire clearance<\/dt><dd>/);
+  assert.doesNotMatch(quickDetail, /"@type":"Product"/);
   assert.doesNotMatch(quickDetail, /"offers":/);
 
   const incolor = products.find((entry) => entry.variant.id === 'incolor-voyager-frameset');
@@ -705,6 +707,7 @@ test('methodology visibly supports its Dataset and DataDownload schema', () => {
   assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.json">Catalog JSON<\/a>/);
   assert.match(methodology, /href="\/china-bike-research\/data\/catalog\.csv">Catalog CSV<\/a>/);
   assert.match(methodology, /"@type":"Dataset"/);
+  assert.match(methodology, /"creator":\{"@type":"Organization","name":"China Bikes"/);
   assert.match(methodology, /"@type":"DataDownload"/);
   assert.doesNotMatch(methodology, /"offers"|"@type":"Product"/);
 });

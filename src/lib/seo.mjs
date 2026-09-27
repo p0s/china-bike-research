@@ -56,18 +56,14 @@ export function websiteStructuredData({ siteUrl, base, description }) {
   };
 }
 
-export function productPageStructuredData({
+export function modelPageStructuredData({
   siteUrl,
   base,
   path,
   name,
-  model,
-  brand,
   description,
-  category,
   image = '',
-  properties = [],
-  includeProduct = true,
+  includeSubject = true,
   trail = []
 }) {
   const pageUrl = absoluteUrl(siteUrl, base, path);
@@ -83,26 +79,16 @@ export function productPageStructuredData({
     inLanguage: 'en'
   };
   const graph = [page, breadcrumbData];
-  if (includeProduct) {
-    const productId = `${pageUrl}#product`;
-    page.mainEntity = { '@id': productId };
+  if (includeSubject) {
+    const subjectId = `${pageUrl}#subject`;
+    page.mainEntity = { '@id': subjectId };
     graph.push({
-      '@type': 'Product',
-      '@id': productId,
+      '@type': 'Thing',
+      '@id': subjectId,
       name,
-      model,
       description,
       url: pageUrl,
-      ...(brand ? { brand: { '@type': 'Brand', name: brand } } : {}),
-      ...(category ? { category } : {}),
-      ...(image ? { image: [absoluteMediaUrl(siteUrl, image)] } : {}),
-      ...(properties.length ? {
-        additionalProperty: properties.map(([propertyName, value]) => ({
-          '@type': 'PropertyValue',
-          name: propertyName,
-          value
-        }))
-      } : {})
+      ...(image ? { image: [absoluteMediaUrl(siteUrl, image)] } : {})
     });
   }
   return { '@context': 'https://schema.org', '@graph': graph };
@@ -192,6 +178,11 @@ export function datasetStructuredData({
         url: pageUrl,
         dateModified,
         license,
+        creator: {
+          '@type': 'Organization',
+          name: 'China Bikes',
+          url: absoluteUrl(siteUrl, base, '/')
+        },
         isAccessibleForFree: true,
         inLanguage: 'en',
         distribution: distributions.map((distribution) => ({
