@@ -20,3 +20,16 @@ Four validated local public-post archives supplied six additional, individually 
 | X-LAB AD8 | Blue owner build | `post-005-image-02.webp` in X-LAB AD8 ZIP | Owner's Shimano 105 build, not a promised retail configuration. |
 
 All six derivatives were visually reviewed for faces, registration numbers, account identifiers, and location identifiers. `webpmux -info` confirmed no EXIF, XMP, or ICC payload in the detail variants. The source records identify the validated immutable archive by SHA-256 and bytes; image records identify the selected original by SHA-256 and both optimized assets by SHA-256, dimensions, and bytes.
+
+## Follow-up curation of the local XHS archives
+
+The follow-up review indexed 98 locally held XHS ZIPs; 88 contain images and the bike-topic subset contains roughly 805 distinct image entries by archive CRC and size. Query titles alone did not establish model identity: the BXT-055 and XM CS-GR01 searches, for example, returned no exact-model posts. Four more reviewed, source-attributed card/detail pairs were selected for distinct buyer-facing views:
+
+| Model | Added view | Original archive image | Review note |
+| --- | --- | --- | --- |
+| X-LAB AD8 | Owner cockpit and spacer stack | `post-005-image-07.webp` in validated AD8 ZIP | Same owner build already credited; components and fit are examples. |
+| X-LAB AD9 | 30th anniversary cockpit | `post-010-image-03.webp` in validated AD9 ZIP | Exact platform, different anniversary finish/build; no stock-component claim. |
+| Quick Pro XR:ONE | Bare frame and fork with visible mounts | `post-002-image-01.webp` in validated XR:ONE ZIP | Dealer size M display; accessory inclusion is unverified. |
+| Quick Pro XR:ONE | Bottom bracket shell close-up | `post-002-image-05.webp` in validated XR:ONE ZIP | Shows the shell area without asserting its technical standard. |
+
+Each derivative is at most 480 px/40 KB for cards and 1,200 px/88 KB for detail, and retains source/archive/original/derivative hashes, public creator credit, a canonical source-post link, privacy review, and a removal route. The public repository still excludes raw captures. An AD8/AD9 sizing-chart photo was rejected because the chart's model and revision could not be independently identified. A purported RS9 boxed frameset visibly reads RS8, so it was rejected; repeated whole-bike angles, video covers with people or text overlays, nonmatching builds, and color-only repeats were not copied. This is a selected editorial set, not an archive mirror.
