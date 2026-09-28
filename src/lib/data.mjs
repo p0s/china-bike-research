@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { validateResearchAttempts } from './research-attempts.mjs';
 import { validateImageHealthCheck } from './image-health.mjs';
+import { editorialReviewIssues } from './editorial-review.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 
@@ -510,6 +511,10 @@ export function validateDataset(data = loadDataset()) {
       }
     }
     const thresholds = variant.editorial?.price_thresholds_cny;
+    for (const issue of editorialReviewIssues(variant.editorial)) errors.push(`variant ${variant.id}: ${issue}`);
+    if (variant.editorial?.review && !(variant.source_ids ?? []).some((id) => data.sources.some((source) => source.id === id && /^https:\/\//.test(source.url ?? '')))) {
+      errors.push(`variant ${variant.id}: editorial review needs a public source`);
+    }
     if (thresholds && !(thresholds.great_buy_below <= thresholds.fair_buy_below && thresholds.fair_buy_below <= thresholds.not_compelling_above)) errors.push(`variant ${variant.id}: invalid threshold ordering`);
     for (const sourceId of variant.source_ids ?? []) if (!sourceIds.has(sourceId)) errors.push(`variant ${variant.id}: missing source ${sourceId}`);
   }

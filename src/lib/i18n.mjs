@@ -73,7 +73,7 @@ export function localizeJson(value, options = {}, key = '') {
   if (typeof value !== 'string') return value;
   // IDs, categories used by filters, source URLs and media paths are not translations.
   if (['url', '@id', 'item', 'mainEntityOfPage', 'citation'].includes(key)) return localizedHref(value, options);
-  if (['name', 'description', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial'].includes(key)) return translate(value, options.locale);
+  if (['name', 'description', 'reviewBody', 'label', 'title', 'value', 'price', 'tireClearance', 'weight', 'drivetrain', 'imageAccuracy', 'imageAlt', 'categoryLabel', 'frameMaterial'].includes(key)) return translate(value, options.locale);
   return value;
 }
 export function localizeHtml(html, options = {}) {
