@@ -77,7 +77,8 @@ test('brand pages add supported context instead of generic keyword copy', () => 
   for (const landing of landings.brandPages) {
     const html = renderLandingPage(context, landing);
     assert.match(html, /Brand context/);
-    assert.match(html, new RegExp(landing.brand.manufacturing.summary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    const displaySummary = landing.brand.manufacturing.summary.replace(/\bmainland\b(?![-\s]+China\b)/gi, (word) => `${word} China`);
+    assert.match(html, new RegExp(displaySummary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
     assert.match(html, /Manufacturing relationship/);
     assert.match(html, /Warranty/);
     assert.doesNotMatch(html, /research-stage profile/i);

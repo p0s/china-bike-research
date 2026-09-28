@@ -1,4 +1,4 @@
-import { localePath, localizeHtml } from './i18n.mjs';
+import { clarifyMainlandInDisplayHtml, localePath, localizeHtml } from './i18n.mjs';
 import { translate } from '../../assets/i18n.js';
 export function escapeHtml(value='') {
   return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
@@ -105,5 +105,5 @@ export function layout({base='', repositoryUrl, title='', description, current='
   <script type="module" src="${url(base,'/assets/site.js')}"></script>
 </body>
 </html>`;
-  return localizeHtml(html, { base, locale, siteUrl });
+  return clarifyMainlandInDisplayHtml(localizeHtml(html, { base, locale, siteUrl }));
 }

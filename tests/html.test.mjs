@@ -11,6 +11,24 @@ test('base-aware URLs work for GitHub project pages', () => {
   assert.equal(url('', '/'), '/');
 });
 
+test('reader-facing mainland labels name China without changing URLs or embedded data', () => {
+  const html = layout({
+    repositoryUrl: 'https://github.com/example/guide',
+    title: 'Mainland guide',
+    description: 'Mainland prices and non-mainland references',
+    path: '/models/bike/',
+    body: '<p>Mainland seller; non-mainland reference; mainland China source.</p><a href="/mainland-offers/">Mainland offer</a><span data-tooltip-lines="[&quot;Mainland price&quot;]">Details</span><script type="application/json">{"id":"mainland-offer"}</script><script type="application/json" id="catalog-data">[{"id":"mainland-offer","priceDetails":"Mainland price"}]</script>'
+  });
+  assert.match(html, /<title>Mainland China guide/);
+  assert.match(html, /Mainland China seller; outside mainland China reference; mainland China source/);
+  assert.match(html, /href="\/mainland-offers\/">Mainland China offer/);
+  assert.match(html, /data-tooltip-lines="\[&quot;Mainland China price&quot;\]"/);
+  assert.match(html, /content="Mainland China prices and outside mainland China references"/);
+  assert.match(html, /"id":"mainland-offer"/);
+  assert.match(html, /"id":"mainland-offer","priceDetails":"Mainland China price"/);
+  assert.doesNotMatch(html, /mainland China China/i);
+});
+
 test('layout emits base-aware social and structured metadata without repository identity', () => {
   const html = layout({
     base: '/guide',
